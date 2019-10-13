@@ -5276,7 +5276,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific Python Development Environment providing MATLAB-like features.
 
-	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder2](https://www.archlinux.org/packages/?name=spyder2) (Python 2) or [spyder3](https://www.archlinux.org/packages/?name=spyder3) (Python 3)
+	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder](https://www.archlinux.org/packages/?name=spyder)
 
 *   **[Thonny](https://en.wikipedia.org/wiki/Thonny "wikipedia:Thonny")** — Python IDE for beginners.
 
@@ -5682,7 +5682,7 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 #### Keybinding managers
 
-See [Keyboard Shortcuts#Xorg](/index.php/Keyboard_Shortcuts#Xorg "Keyboard Shortcuts").
+See [Keyboard shortcuts#Xorg](/index.php/Keyboard_shortcuts#Xorg "Keyboard shortcuts").
 
 #### Input methods
 
@@ -6814,7 +6814,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[TeXworks](https://en.wikipedia.org/wiki/TeXworks "wikipedia:TeXworks")** — Simple TeX front-end program modeled after TeXShop.
 
-	[https://tug.org/texworks/](https://tug.org/texworks/) || [texworks](https://aur.archlinux.org/packages/texworks/)
+	[https://tug.org/texworks/](https://tug.org/texworks/) || [texworks](https://www.archlinux.org/packages/?name=texworks)
 
 *   **TikZiT** — Graphical tool for rapidly creating graphs and diagrams using [PGF/TikZ](https://en.wikipedia.org/wiki/PGF/TikZ "wikipedia:PGF/TikZ").
 
@@ -6946,7 +6946,7 @@ See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 
 *   **Foliate** — Simple and modern GTK eBook reader.
 
-	[https://johnfactotum.github.io/foliate/](https://johnfactotum.github.io/foliate/) || [foliate](https://aur.archlinux.org/packages/foliate/)
+	[https://johnfactotum.github.io/foliate/](https://johnfactotum.github.io/foliate/) || [foliate](https://www.archlinux.org/packages/?name=foliate)
 
 *   **GNOME Books** — E-book manager application for GNOME with EPUB, Mobipocket, FictionBook, DjVu and Comicbook support.
 

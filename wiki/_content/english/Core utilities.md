@@ -6,7 +6,7 @@ Related articles
 *   [pacman](/index.php/Pacman "Pacman")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
 
-*Core utilities* are the basic, fundamental tools of a [GNU](/index.php/GNU "GNU")/[Linux](/index.php/Linux "Linux") system. On Arch Linux they are found in the [base group](/index.php/Base_group "Base group"). This article provides an incomplete overview of them, links their documentation and describes useful alternatives. The scope of this article includes, but is not limited to, the [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). Most core utilities are traditional [Unix](https://en.wikipedia.org/wiki/Unix "wikipedia:Unix") tools (see [Heirloom](/index.php/Heirloom "Heirloom")) and many were standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") but have been developed further to provide more features.
+*Core utilities* are the basic, fundamental tools of a [GNU](/index.php/GNU "GNU")/[Linux](/index.php/Linux "Linux") system. This article provides an incomplete overview of them, links their documentation and describes useful alternatives. The scope of this article includes, but is not limited to, the [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). Most core utilities are traditional [Unix](https://en.wikipedia.org/wiki/Unix "wikipedia:Unix") tools (see [Heirloom](/index.php/Heirloom "Heirloom")) and many were standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") but have been developed further to provide more features.
 
 Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented primarily in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for shell builtin commands. Additionally most utilities print their usage when run with the `--help` flag.
 
@@ -21,11 +21,12 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
 *   [2 Nonessentials](#Nonessentials)
 *   [3 Alternatives](#Alternatives)
     *   [3.1 cp alternatives](#cp_alternatives)
-    *   [3.2 find alternatives](#find_alternatives)
-    *   [3.3 diff alternatives](#diff_alternatives)
-    *   [3.4 grep alternatives](#grep_alternatives)
-        *   [3.4.1 Code searchers](#Code_searchers)
-        *   [3.4.2 Interactive filters](#Interactive_filters)
+    *   [3.2 ls alternatives](#ls_alternatives)
+    *   [3.3 find alternatives](#find_alternatives)
+    *   [3.4 diff alternatives](#diff_alternatives)
+    *   [3.5 grep alternatives](#grep_alternatives)
+        *   [3.5.1 Code searchers](#Code_searchers)
+        *   [3.5.2 Interactive filters](#Interactive_filters)
 *   [4 See also](#See_also)
 
 ## Essentials
@@ -94,11 +95,17 @@ The [moreutils](https://www.archlinux.org/packages/?name=moreutils) package prov
 
 ## Alternatives
 
-Alternatives to the core utilities in the [base](https://www.archlinux.org/groups/x86_64/base/) group are [BusyBox](/index.php/BusyBox "BusyBox"), the [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) and [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
+Alternative core utilities are provided by [BusyBox](/index.php/BusyBox "BusyBox"), the [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) and [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
 
 ### cp alternatives
 
 Using [rsync#As cp/mv alternative](/index.php/Rsync#As_cp/mv_alternative "Rsync") allows you to resume a failed transfer, to show the transfer status, to skip already existing files and to make sure of the destination files integrity using checksums.
+
+### ls alternatives
+
+*   **lsd** — Modern ls with a lot of pretty colors and awesome icons. Written in Rust.
+
+	[https://github.com/Peltoche/lsd](https://github.com/Peltoche/lsd) || [lsd](https://www.archlinux.org/packages/?name=lsd)
 
 ### find alternatives
 

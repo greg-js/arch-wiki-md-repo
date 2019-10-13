@@ -48,7 +48,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl"):
 
 ### Perl 5
 
-The [perl](https://www.archlinux.org/packages/?name=perl) package for Perl 5 is installed as part of the [base](https://www.archlinux.org/groups/x86_64/base/) group during Arch Linux installation.
+The [perl](https://www.archlinux.org/packages/?name=perl) package for Perl 5 is installed as part of the [base](https://www.archlinux.org/packages/?name=base) group during Arch Linux installation.
 
 ### Perl 6
 

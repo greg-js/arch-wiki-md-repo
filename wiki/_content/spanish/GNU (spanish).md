@@ -12,7 +12,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/es:GNU "wikipedia:es:GNU"):
 
 Debido a que el kernel de GNU, [Hurd](https://www.gnu.org/s/hurd/hurd.html), no está listo para producción [[1]](https://www.gnu.org/software/hurd/hurd/status.html) GNU se utiliza generalmente con el kernel de Linux. [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") es una distribución de GNU/Linux de este tipo, que utiliza software de GNU como el intérprete de línea de órdenes [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), *coreutils* de GNU, *toolchain* de GNU y muchas otras utilidades y bibliotecas. Esta página no intenta listar todos los paquetes GNU que son [casi 400](https://www.gnu.org/software/software.html#allgnupkgs) y solo destaca algunos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Texinfo](#Texinfo)
 *   [2 Sistema Base](#Sistema_Base)
@@ -23,7 +27,7 @@ Debido a que el kernel de GNU, [Hurd](https://www.gnu.org/s/hurd/hurd.html), no 
 
 ## Texinfo
 
-Los programas de GNU se documentan utilizando la sintaxis de composición tipográfica [Texinfo](https://en.wikipedia.org/wiki/es:Texinfo "wikipedia:es:Texinfo"). Puede ver los documentos de información utilizando el programa `info`, proporcionado por el paquete [texinfo](https://www.archlinux.org/packages/?name=texinfo), que forma parte de [base](https://www.archlinux.org/groups/x86_64/base/).
+Los programas de GNU se documentan utilizando la sintaxis de composición tipográfica [Texinfo](https://en.wikipedia.org/wiki/es:Texinfo "wikipedia:es:Texinfo"). Puede ver los documentos de información utilizando el programa `info`, proporcionado por el paquete [texinfo](https://www.archlinux.org/packages/?name=texinfo), que forma parte de [base](https://www.archlinux.org/packages/?name=base).
 
 Si bien la mayoría de los programas de GNU también tienen [páginas de manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), los documentos de información tienden a ser más completos.
 
@@ -51,7 +55,7 @@ Si bien la mayoría de los programas de GNU también tienen [páginas de manual]
 
 ## Toolchain
 
-La mayoría de las herramientas de [toolchain de GNU](https://en.wikipedia.org/wiki/es:GNU_toolchain "wikipedia:es:GNU toolchain") están en el grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), excepto *glibc*, que está en [base](https://www.archlinux.org/groups/x86_64/base/) y GDB, que no está en ningún grupo.
+La mayoría de las herramientas de [toolchain de GNU](https://en.wikipedia.org/wiki/es:GNU_toolchain "wikipedia:es:GNU toolchain") están en el grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), excepto *glibc*, que está en [base](https://www.archlinux.org/packages/?name=base) y GDB, que no está en ningún grupo.
 
 *   **[GNU make](https://en.wikipedia.org/wiki/es:Make "wikipedia:es:Make")** — Utilidad para mantener grupos de programas.
 
@@ -63,7 +67,7 @@ La mayoría de las herramientas de [toolchain de GNU](https://en.wikipedia.org/w
 
 *   **[glibc](https://en.wikipedia.org/wiki/es:glibc "wikipedia:es:glibc")** — Implementación de GNU de la biblioteca C.
 
-	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) (parte de [base](https://www.archlinux.org/groups/x86_64/base/))
+	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) (parte de [base](https://www.archlinux.org/packages/?name=base))
 
 *   **[GNU Binutils](https://en.wikipedia.org/wiki/es:GNU_Binutils "wikipedia:es:GNU Binutils")** — Un conjunto de programas para ensamblar y manipular archivos binarios y de objetos. Incluye [ld](https://en.wikipedia.org/wiki/GNU_linker "wikipedia:GNU linker").
 

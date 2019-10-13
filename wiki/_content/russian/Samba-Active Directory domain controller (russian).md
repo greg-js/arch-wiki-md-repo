@@ -8,27 +8,31 @@
 
 Эта статья объясняет, как настроить новый контроллер домена Active Directory. Предполагается, что после установки все файлы настроек находятся в неизменённом состоянии. Эта статья была написана и протестирована на свежей установке, без каких-либо других установок (сетевое соединение статического IPv4, назначение имени хоста, добавление [OpenSSH](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Secure Shell (Русский)") и [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)")), которые не должны иметь никакого влияния на настройки [Samba](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)"). Большинство приведенных ниже команд потребует повышенных привелегий (прав суперпользователя). Несмотря на здравый смысл, проще запустить несколько этих коротких команд из сессии root, чем получать права по мере необходимости.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Резервирование](#.D0.A0.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [2.1 Объяснение параметров (аргументов)](#.D0.9E.D0.B1.D1.8A.D1.8F.D1.81.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.BE.D0.B2_.28.D0.B0.D1.80.D0.B3.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.BE.D0.B2.29)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Резервирование](#Резервирование)
+    *   [2.1 Объяснение параметров (аргументов)](#Объяснение_параметров_(аргументов))
     *   [2.2 Interactive provision explanations](#Interactive_provision_explanations)
-*   [3 Настройка демонов](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B4.D0.B5.D0.BC.D0.BE.D0.BD.D0.BE.D0.B2)
+*   [3 Настройка демонов](#Настройка_демонов)
     *   [3.1 NTPD](#NTPD)
     *   [3.2 BIND](#BIND)
-    *   [3.3 Клиентские утилиты Kerberos](#.D0.9A.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D1.81.D0.BA.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_Kerberos)
+    *   [3.3 Клиентские утилиты Kerberos](#Клиентские_утилиты_Kerberos)
     *   [3.4 DNS](#DNS)
     *   [3.5 Samba](#Samba)
-*   [4 Тестирование установки](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
+*   [4 Тестирование установки](#Тестирование_установки)
     *   [4.1 DNS](#DNS_2)
-    *   [4.2 Аутентификация NT](#.D0.90.D1.83.D1.82.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_NT)
+    *   [4.2 Аутентификация NT](#Аутентификация_NT)
     *   [4.3 Kerberos](#Kerberos)
-*   [5 Расширенная настройка](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+*   [5 Расширенная настройка](#Расширенная_настройка)
     *   [5.1 DNS](#DNS_3)
     *   [5.2 SSL](#SSL)
     *   [5.3 DHCP](#DHCP)
-*   [6 Что делать дальше](#.D0.A7.D1.82.D0.BE_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C_.D0.B4.D0.B0.D0.BB.D1.8C.D1.88.D0.B5)
+*   [6 Что делать дальше](#Что_делать_дальше)
 
 ## Установка
 
@@ -497,11 +501,11 @@ checkvalues()
                 -*)
                         echo "Error: Invalid parameter '${2}' passed to ${1}."
                         exit 1
-                ;;
+                ;;
 
                 *)
                         return 0
-                ;;
+                ;;
         esac
 }
 
@@ -551,77 +555,77 @@ while [ -n "$1" ]; do
                         checkvalues ${1} ${2}
                         ACTION=${2}
                         shift 2
-                ;;
+                ;;
 
                 -c | --krb5cc)
                         checkvalues ${1} ${2}
                         KRB5CC=${2}
                         shift 2
-                ;;
+                ;;
 
                 -d | --domain)
                         checkvalues ${1} ${2}
                         DOMAIN=${2}
                         shift 2
-                ;;
+                ;;
 
                 -h | --help)
                         showhelp
                         exit 0
-                ;;
+                ;;
 
                 -H | --hostname)
                         checkvalues ${1} ${2}
                         HNAME=${2%%.*}
                         shift 2
-                ;;
+                ;;
 
                 -i | --ip)
                         checkvalues ${1} ${2}
                         IP=${2}
                         shift 2
-                ;;
+                ;;
 
                 -k | --keytab)
                         checkvalues ${1} ${2}
                         KEYTAB=${2}
                         shift 2
-                ;;
+                ;;
 
                 -m | --mitkrb5)
                         KRB5MIT=YES
                         shift 1
-                ;;
+                ;;
 
                 -n | --nameserver)
                         checkvalues ${1} ${2}
                         NAMESERVER=${2}
                         shift 2
-                ;;
+                ;;
 
                 -p | --principal)
                         checkvalues ${1} ${2}
                         PRINCIPAL=${2}
                         shift 2
-                ;;
+                ;;
 
                 -r | --realm)
                         checkvalues ${1} ${2}
                         REALM=${2}
                         shift 2
-                ;;
+                ;;
 
                 -z | --zone)
                         checkvalues ${1} ${2}
                         ZONE=${2}
                         shift 2
-                ;;
+                ;;
 
                 *)
                         echo "Error!!! Unknown command line opion!"
                         echo "Try" `basename $0` "--help."
                         exit 1
-                ;;
+                ;;
         esac
 done
 
@@ -630,13 +634,13 @@ done
 case "$ACTION" in
         add | Add | ADD)
                 ACTION=ADD
-        ;;
+        ;;
         del | delete | Delete | DEL | DELETE)
                 ACTION=DEL
-        ;;
+        ;;
         *)
                 echo "Error: invalid action \"$ACTION\"." && exit 3
-        ;;
+        ;;
 esac
 [ -z "$KRB5CC" ] && KRB5CC=/run/dhcpd.krb5cc
 [ -z "$DOMAIN" ] && echo "Error: invalid domain." && exit 4
@@ -723,7 +727,7 @@ case "$ACTION" in
         else
            add_ptr
         fi
-    ;;
+    ;;
 
     DEL)
         kerberos_creds
@@ -736,11 +740,11 @@ case "$ACTION" in
         if [ "${?}" == 0 ]; then
             delete_ptr
         fi
-    ;;
+    ;;
 
     *)
         echo "Error: Invalid action '$ACTION'!" && exit 12
-    ;;
+    ;;
 
 esac
 
@@ -855,6 +859,6 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 
 Если вы зашли настолько далеко, что не покинули указанных выше испытаний, - вы на верном пути. Поздравляем! Вот некоторые темы, по расширению вашего сервера AD:
 
-[Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration") - This article explains how to attach Linux clients to an Active Directory domain.
+[Active Directory integration](/index.php/Active_Directory_integration "Active Directory integration") - This article explains how to attach Linux clients to an Active Directory domain.
 
 [SOGo](/index.php/SOGo "SOGo") - The OpenChange project provides a Microsoft Exchange compatible mail server using only open source software.

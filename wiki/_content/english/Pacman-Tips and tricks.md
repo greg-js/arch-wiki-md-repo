@@ -104,7 +104,7 @@ $ expac -S -H M '%k\t%n' *packages*
 
 ```
 
-To list explicitly installed packages not in [base](https://www.archlinux.org/groups/x86_64/base/) nor [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) with size and description:
+To list explicitly installed packages not in [base](https://www.archlinux.org/packages/?name=base) nor [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) with size and description:
 
 ```
 $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n
@@ -138,14 +138,14 @@ $ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 **Note:** To get a list of packages installed as dependencies but no longer required by any installed package, see [#Removing unused packages (orphans)](#Removing_unused_packages_(orphans)).
 
-List explicitly installed packages not in the [base](https://www.archlinux.org/groups/x86_64/base/) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups:
+List explicitly installed packages not in the [base](https://www.archlinux.org/packages/?name=base) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups:
 
 ```
 $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
 
 ```
 
-List all installed packages unrequired by other packages, and which are not in the [base](https://www.archlinux.org/groups/x86_64/base/) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups:
+List all installed packages unrequired by other packages, and which are not in the [base](https://www.archlinux.org/packages/?name=base) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups:
 
 ```
 $ comm -23 <(pacman -Qqt | sort) <(pacman -Sqg base base-devel | sort)
@@ -287,7 +287,7 @@ Dependencies are alphabetically sorted and doubles are removed.
 **Note:** To only show the tree of local installed packages, use `pacman -Qi`.
 
 ```
-$ pacman -Si *packages* | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
+$ LC_ALL=C pacman -Si *packages* | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
 
 ```
 

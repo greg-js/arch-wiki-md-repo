@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=567759) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=582501) na versão em inglês.
 
 Artigos relacionados
 
@@ -238,14 +238,14 @@ $ systemctl help *unit*
 Desliga e reinicia o sistema:
 
 ```
-$ systemctl reboot
+$ reboot
 
 ```
 
 Desliga e encerra o sistema:
 
 ```
-$ systemctl poweroff
+$ poweroff
 
 ```
 
@@ -396,7 +396,7 @@ RestartSec=30
 
 ## Targets
 
-O *systemd* usa *targets* que servem a um propósito semelhante, como [níveis de execução](https://en.wikipedia.org/wiki/pt:N%C3%ADvel_de_execu%C3%A7%C3%A3o "wikipedia:pt:Nível de execução"), mas agem um pouco diferente. Cada *target* é nomeado em vez de numerado e destina-se a servir uma finalidade específica com a possibilidade de ter múltiplos ativos ao mesmo tempo. Alguns *target*s são implementados herdando todos os serviços de outro *target* e adicionando serviços adicionais a ele. Há *target*s do *systemd* que imitam os níveis de execução SystemVinit comuns para que possa mudar *target*s usando o comando familiar `telinit RUNLEVEL`.
+O *systemd* usa *targets* para agrupar units por meio de dependências e como pontos de sincronização padronizada. Eles servem a um propósito semelhante, como [níveis de execução](https://en.wikipedia.org/wiki/pt:N%C3%ADvel_de_execu%C3%A7%C3%A3o "wikipedia:pt:Nível de execução"), mas agem um pouco diferente. Cada *target* é nomeado em vez de numerado e destina-se a servir uma finalidade específica com a possibilidade de ter múltiplos ativos ao mesmo tempo. Alguns *target*s são implementados herdando todos os serviços de outro *target* e adicionando serviços adicionais a ele. Há *target*s do *systemd* que imitam os níveis de execução SystemVinit comuns para que possa mudar *target*s usando o comando familiar `telinit RUNLEVEL`.
 
 ### Obter targets atuais
 

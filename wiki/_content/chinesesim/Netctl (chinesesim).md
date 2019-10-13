@@ -52,7 +52,7 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 
 ## 安装
 
-[netctl](https://www.archlinux.org/packages/?name=netctl) 是 [base](https://www.archlinux.org/groups/x86_64/base/) 包组的成员，所以系统中应当已经安装了。否则可以手工[安装](/index.php/Install "Install")。 netctl 有一些用于自动连接的[#特殊 systemd 单元](#特殊_systemd_单元)需要一些附加依赖包，详情参阅该章节。 下表列出 netctl 的其他可选依赖包：
+[netctl](https://www.archlinux.org/packages/?name=netctl) 是 [base](https://www.archlinux.org/packages/?name=base) 包组的成员，所以系统中应当已经安装了。否则可以手工[安装](/index.php/Install "Install")。 netctl 有一些用于自动连接的[#特殊 systemd 单元](#特殊_systemd_单元)需要一些附加依赖包，详情参阅该章节。 下表列出 netctl 的其他可选依赖包：
 
 | 功能 | 依赖 |
 | WPA | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) |

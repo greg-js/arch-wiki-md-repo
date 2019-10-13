@@ -33,7 +33,7 @@ Related articles
 
 ## 安装
 
-要使用 *fdisk* 及相关工具，请使用 [util-linux](https://www.archlinux.org/packages/?name=util-linux) 软件包，这个软件包已经位于 [base](https://www.archlinux.org/groups/x86_64/base/) 软件包组。
+要使用 *fdisk* 及相关工具，请使用 [util-linux](https://www.archlinux.org/packages/?name=util-linux) 软件包，这个软件包已经位于 [base](https://www.archlinux.org/packages/?name=base) 软件包组。
 
 ## 显示分区
 

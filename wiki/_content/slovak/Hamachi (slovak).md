@@ -1,15 +1,19 @@
 [Hamachi](https://en.wikipedia.org/wiki/Hamachi_(software) je komerčný (uzavretý) VPN software. Pomocou tohto nástroja môžete prepojiť dva alebo viac počítačov. Využíva sa pri tom ich vlastná virtuálna sieť pre priamu bezpečnú komunikáciu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Inštalácia](#In.C5.A1tal.C3.A1cia)
-*   [2 Konfigurácia](#Konfigur.C3.A1cia)
-    *   [2.1 Používanie hamachi v príkazovom riadku ako bežný užívateľ](#Pou.C5.BE.C3.ADvanie_hamachi_v_pr.C3.ADkazovom_riadku_ako_be.C5.BEn.C3.BD_u.C5.BE.C3.ADvate.C4.BE)
-    *   [2.2 Automatické nastavenie vlastnej prezývky](#Automatick.C3.A9_nastavenie_vlastnej_prez.C3.BDvky)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Inštalácia](#Inštalácia)
+*   [2 Konfigurácia](#Konfigurácia)
+    *   [2.1 Používanie hamachi v príkazovom riadku ako bežný užívateľ](#Používanie_hamachi_v_príkazovom_riadku_ako_bežný_užívateľ)
+    *   [2.2 Automatické nastavenie vlastnej prezývky](#Automatické_nastavenie_vlastnej_prezývky)
 *   [3 Spustenie Hamachi](#Spustenie_Hamachi)
     *   [3.1 Systemd](#Systemd)
 *   [4 GUI](#GUI)
-*   [5 Tiež pozrite](#Tie.C5.BE_pozrite)
+*   [5 Tiež pozrite](#Tiež_pozrite)
 
 ## Inštalácia
 

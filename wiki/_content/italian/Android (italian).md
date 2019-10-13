@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sviluppo Android su Arch](#Sviluppo_Android_su_Arch)
     *   [1.1 Ottenere SDK e i plugins IDE](#Ottenere_SDK_e_i_plugins_IDE)

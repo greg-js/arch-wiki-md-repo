@@ -169,7 +169,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 | qpdfview | Poppler | libspectre* | DjVuLibre* | ✘ | ✔ | GPLv2 |
 | [Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf") | custom | ✘ | ✘ | ✘ | ✘ | GPLv3 |
 | Xreader | Poppler | libspectre* | DjVuLibre* | libgxps* | ✔ | GPLv2 |
-| [Zathura](/index.php/Zathura "Zathura") | Poppler* / libmupdf* | libspectre* | DjVuLibre* | libmupdf* | ✔ | zlib |
+| [Zathura](/index.php/Zathura "Zathura") | Poppler* / libmupdf* | libspectre* | DjVuLibre* | libmupdf* | ✘ | zlib |
 
 	(* means optional)
 
@@ -252,7 +252,7 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 *   **[PDFtk](https://en.wikipedia.org/wiki/PDFtk "wikipedia:PDFtk")** — Simple tool for doing everyday things with PDF documents
 
-	[http://www.pdfhacks.com/pdftk](http://www.pdfhacks.com/pdftk) || [pdftk](https://aur.archlinux.org/packages/pdftk/), [pdftk-bin](https://aur.archlinux.org/packages/pdftk-bin/)
+	[http://www.pdfhacks.com/pdftk](http://www.pdfhacks.com/pdftk) || [pdftk](https://www.archlinux.org/packages/?name=pdftk)
 
 *   **Stapler** — Light alternative to PDFtk using the [PyPDF2](#Python) library.
 

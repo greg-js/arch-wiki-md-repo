@@ -584,15 +584,10 @@ Instead of copying all these files manually, you may want to try exporting an ad
 
 ```
 
-On systems with fontconfig version **2.13.0** and above, it may be needed to replace the shipped libfontconfig file with version **2.12.6** library file and force VMware to use that file instead of the newer system file. This applies for at least VMware version **12.5.9**. As root do:
+On systems with fontconfig version **2.13.0** and above, it may be needed to force VMware to use the shipped libfontconfig file instead of the newer system file. In such case, it is also necessary to provide a shared object library file `libexpat.so.0` for the shipped fontconfig. This applies for at least VMware version **12.5.9**. As root do:
 
 ```
-# cd /usr/lib/vmware/lib/libfontconfig.so.1
-# wget [https://archive.archlinux.org/packages/f/fontconfig/fontconfig-2.12.6-1-x86_64.pkg.tar.xz](https://archive.archlinux.org/packages/f/fontconfig/fontconfig-2.12.6-1-x86_64.pkg.tar.xz)
-# tar -xvf fontconfig-2.12.6-1-x86_64.pkg.tar.xz usr/lib/libfontconfig.so.1.10.1
-# mv libfontconfig.so.1 libfontconfig.so.1.old
-# mv ./usr/lib/libfontconfig.so.1.10.1 ./libfontconfig.so.1
-# rm -r ./usr ./fontconfig-2.12.6-1-x86_64.pkg.tar.xz
+# ln -s /usr/lib/libexpat.so /usr/lib/vmware/lib/libfontconfig.so.1/libexpat.so.0
 # export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libfontconfig.so.1:$LD_LIBRARY_PATH
 
 ```

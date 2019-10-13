@@ -6,7 +6,7 @@
 *   [Раздача интернета](/index.php/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B0%D1%87%D0%B0_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0 "Раздача интернета")
 *   [Router](/index.php/Router "Router")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration](/index.php/Network_configuration "Network configuration"). Дата последней синхронизации: 7 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=580707).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration](/index.php/Network_configuration "Network configuration"). Дата последней синхронизации: 8 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=584710).
 
 В этой статье описана настройка подключения к сети.
 
@@ -158,7 +158,7 @@ $ dmesg | grep atl1
 
 ### iproute2
 
-[iproute2](https://en.wikipedia.org/wiki/ru:iproute2 "wikipedia:ru:iproute2") - набор инструментов в составе [группы пакетов base](/index.php/Package_group_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#base "Package group (Русский)"), включающий интерфейс командной строки для управления [сетевыми интерфейсами](#Сетевые_интерфейсы), [IP-адресами](#IP-адреса) и [таблицей маршрутизации](#Таблицы_маршрутизации). Не забудьте, что настройки, сделанные посредством `ip`, не сохранятся после перезагрузки. Для применения постоянных настроек можно использовать [сетевой менеджер](#Сетевые_менеджеры) или автоматизировать *ip*-команды посредством скриптов или [файлов юнитов systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Написание_файлов_юнитов "Systemd (Русский)"). Также обратите внимание, что `ip` команды часто имеют сокращённую форму, но в этой статье для большей ясности они указаны полностью.
+[iproute2](https://en.wikipedia.org/wiki/ru:iproute2 "wikipedia:ru:iproute2") — зависимость [мета-пакета](/index.php/%D0%9C%D0%B5%D1%82%D0%B0-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0 "Мета-пакета") [base](https://www.archlinux.org/packages/?name=base), включающий интерфейс командной строки для управления [сетевыми интерфейсами](#Сетевые_интерфейсы), [IP-адресами](#IP-адреса) и [таблицей маршрутизации](#Таблицы_маршрутизации). Не забудьте, что настройки, сделанные посредством `ip`, не сохранятся после перезагрузки. Для применения постоянных настроек можно использовать [сетевой менеджер](#Сетевые_менеджеры) или автоматизировать *ip*-команды посредством скриптов или [файлов юнитов systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Написание_файлов_юнитов "Systemd (Русский)"). Также обратите внимание, что `ip` команды часто имеют сокращённую форму, но в этой статье для большей ясности они указаны полностью.
 
 ### Сетевые интерфейсы
 
@@ -299,9 +299,9 @@ $ ip -6 route show
 | Сетевой менеджер | Графический интерфейс | [Archiso](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | Утилиты командной строки | Поддержка [PPP](https://en.wikipedia.org/wiki/ru:PPP_(%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9_%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB) "wikipedia:ru:PPP (сетевой протокол)")
 (например, 3G-модем) | [DHCP-клиент](#DHCP) | [Юниты](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Написание_файлов_юнитов "Systemd (Русский)") systemd |
 | [ConnMan](/index.php/ConnMan "ConnMan") | 8 неофиц. | Нет | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Да (с [ofono](https://aur.archlinux.org/packages/ofono/)) | встроенный | `connman.service` |
-| [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)") | 2 неофиц. | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Да | [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)") или [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*интерфейс*.service`, `netctl-auto@*интерфейс*.service` |
+| [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)") | 2 неофиц. | Да ([base](https://www.archlinux.org/packages/?name=base)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Да | [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)") или [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*интерфейс*.service`, `netctl-auto@*интерфейс*.service` |
 | [NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)") | Да | Нет | [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1), [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1) | Да | встроенный, [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)") или [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `NetworkManager.service` |
-| [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") | Нет | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | [networkctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1) | Нет [[4]](https://github.com/systemd/systemd/issues/481) | встроенный | `systemd-networkd.service`, `systemd-resolved.service` |
+| [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") | Нет | Да ([base](https://www.archlinux.org/packages/?name=base)) | [networkctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1) | Нет [[4]](https://github.com/systemd/systemd/issues/481) | встроенный | `systemd-networkd.service`, `systemd-resolved.service` |
 | [Wicd](/index.php/Wicd "Wicd") | Да | Нет | [wicd-cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-cli.8), [wicd-curses(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-curses.8) | Нет | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | `wicd.service` |
 
 Для беспроводных подключений доступно приложение с графическим интерфейсом [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar"), которое управляет WiFi-сетями посредством [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools). Для проводных подключений не работает.
@@ -400,13 +400,24 @@ SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
 
 ```
 
-Паттерн пути устройства (DEVPATH) должен подходить для обоих названий устройств, и нового, и старого, поскольку правило udev может срабатывать в процессе загрузки более одного раза. Например, для второго правила в примере выше назначается название устройства `en`, и если указать путь `"/devices/pci*/*1c.0/*/net/**enp***"`, то паттерн не подойдет. Если после этого системное правило по умолчанию сработает во второй раз, то название изменится обратно на, к примеру, `enp1s0`.
+Чтобы получить `DEVPATH` всех подключённых устройств, посмотрите куда указывают символические ссылки в `/sys/class/net/`. Например:
 
-Если вы используете USB-интерфейс (например, подключаясь через телефон Android) с динамическим MAC-адресом и хотите иметь возможность использовать разные USB-порты, вы можете создать правило на основе данных о производителе и ID устройства:
+ `file /sys/class/net/*` 
+```
+/sys/class/net/enp0s20f0u4u1: symbolic link to ../../devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.1/2-4.1:1.0/net/enp0s20f0u4u1
+/sys/class/net/enp0s31f6:     symbolic link to ../../devices/pci0000:00/0000:00:1f.6/net/enp0s31f6
+/sys/class/net/lo:            symbolic link to ../../devices/virtual/net/lo
+/sys/class/net/wlp4s0:        symbolic link to ../../devices/pci0000:00/0000:00:1c.6/0000:04:00.0/net/wlp4s0
 
- `/etc/udev/rules.d/10-network.rules`  `SUBSYSTEM=="net", ACTION="add", ENV{ID_VENDOR_ID}=="12ab", ENV{ID_MODEL_ID}=="3cd4", NAME="net2"` 
+```
 
-Если необходимо [проверить](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Проверка_правил_перед_загрузкой "Udev (Русский)") созданное правило, его можно запустить непосредственно из пространства пользователя, например командой `udevadm --debug test /sys/*DEVPATH*`. Не забудьте предварительно отключить интерфейс, который собираетесь переименовать (например, выполнив `ip link set enp1s0 down`).
+Паттерн пути устройства (DEVPATH) должен подходить для обоих названий устройств, и нового, и старого, поскольку правило udev может срабатывать в процессе загрузки более одного раза. Например, для второго правила в примере выше назначается название устройства `en`, и если указать путь `"/devices/pci*/*1c.0/*/net/enp*"`, то паттерн не подойдет. Если после этого системное правило по умолчанию сработает во второй раз, то название изменится обратно на, к примеру, `enp1s0`.
+
+Если вы используете USB-интерфейс (например, подключаясь через Android-смартфон) с динамическим MAC-адресом и хотите иметь возможность использовать разные USB-порты, вы можете создать правило на основе данных о производителе и ID устройства:
+
+ `/etc/udev/rules.d/10-network.rules`  `SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="12ab", ATTRS{idProduct}=="3cd4", NAME="net2"` 
+
+Если необходимо [проверить](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Проверка_правил_перед_загрузкой "Udev (Русский)") созданное правило, его можно запустить непосредственно из пространства пользователя, например командой `udevadm --debug test /sys/class/net/*`. Не забудьте предварительно отключить интерфейс, который собираетесь переименовать (например, выполнив `ip link set enp1s0 down`).
 
 **Примечание:** При выборе статических имен **вы должны избегать использования формата "eth*X*" и "wlan*X*"**, поскольку это может привести к "гонке" между ядром и udev во время загрузки системы. Вместо этого лучше взять имена интерфейсов, которые не используются по умолчанию в ядре, например: `net0`, `net1`, `wifi0`, `wifi1`. Для получения дополнительной информации, пожалуйста, смотрите документацию по [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames)
 

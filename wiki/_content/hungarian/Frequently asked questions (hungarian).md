@@ -95,7 +95,7 @@ Get involved, contribute your code/solution to the community. If it is well rega
 
 ### When will the new release be made available?
 
-Arch Linux releases are simply a live environment for installation or rescue, which include the [base](https://www.archlinux.org/groups/x86_64/base/) group and a few [other packages](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). The releases are issued usually in the first half of every month.
+Arch Linux releases are simply a live environment for installation or rescue, which include the [base](https://www.archlinux.org/packages/?name=base) group and a few [other packages](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). The releases are issued usually in the first half of every month.
 
 ### Is Arch Linux a stable distribution? Will I get frequent breakage?
 

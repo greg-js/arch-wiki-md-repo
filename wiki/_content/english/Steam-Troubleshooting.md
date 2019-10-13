@@ -237,7 +237,7 @@ xerror_handler: X failed, continuing
 
 ```
 
-Install the package [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils).
+Install the package [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) (or [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) if using an old GPU).
 
 ## Audio issues
 

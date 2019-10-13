@@ -282,4 +282,4 @@ See the General troubleshooting article on [Session permissions](/index.php/Gene
 
 ### Passwords are forgotten on system restart
 
-Install a keyring application like [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet") or [lxqt_wallet](https://aur.archlinux.org/packages/lxqt_wallet/) for network shares or an [SSH agent](/index.php/SSH_keys#SSH_agents "SSH keys") if appropriate.
+Install a keyring application like [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet") or [lxqt_wallet](https://aur.archlinux.org/packages/lxqt_wallet/) for network shares or an [SSH agent](/index.php/SSH_agent "SSH agent") if appropriate.

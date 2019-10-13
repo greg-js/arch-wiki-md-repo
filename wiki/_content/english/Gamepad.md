@@ -27,9 +27,13 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [7.1 Dance pads](#Dance_pads)
     *   [7.2 Logitech Thunderpad Digital](#Logitech_Thunderpad_Digital)
     *   [7.3 Nintendo Gamecube Controller](#Nintendo_Gamecube_Controller)
-    *   [7.4 Nintendo Switch Wired Pro Controller](#Nintendo_Switch_Wired_Pro_Controller)
-        *   [7.4.1 Dolphin (Gamecube Controller Emulation)](#Dolphin_(Gamecube_Controller_Emulation))
-        *   [7.4.2 Steam](#Steam)
+    *   [7.4 Nintendo Switch Pro Controller and Joy-Cons](#Nintendo_Switch_Pro_Controller_and_Joy-Cons)
+        *   [7.4.1 Kernel Nintendo HID Driver](#Kernel_Nintendo_HID_Driver)
+            *   [7.4.1.1 joycond Userspace Daemon](#joycond_Userspace_Daemon)
+            *   [7.4.1.2 Using hid-nintendo with Steam Games](#Using_hid-nintendo_with_Steam_Games)
+            *   [7.4.1.3 Using hid-nintendo with SDL2 Games](#Using_hid-nintendo_with_SDL2_Games)
+        *   [7.4.2 Dolphin (Gamecube Controller Emulation)](#Dolphin_(Gamecube_Controller_Emulation))
+        *   [7.4.3 Steam](#Steam)
     *   [7.5 PlayStation 3/4 controller](#PlayStation_3/4_controller)
         *   [7.5.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
         *   [7.5.2 Using Playstation 3 controllers with Steam](#Using_Playstation_3_controllers_with_Steam)
@@ -332,11 +336,32 @@ udev can be reloaded with the new configuration by executing
 
 ```
 
-### Nintendo Switch Wired Pro Controller
+### Nintendo Switch Pro Controller and Joy-Cons
+
+#### Kernel Nintendo HID Driver
+
+The hid-nintendo kernel HID driver is currently in review on the linux-input mailing list. It is likely to be mainlined for the kernel 5.5 release. The most recent version of the changeset is currently being maintained in this[[1]](https://github.com/DanielOgorchock/linux) git repository. The driver provides support for rumble, battery level, and control of the player and home LEDs. It supports the Nintendo Switch Pro Controller over both USB and bluetooth in addition to the joy-cons.
+
+##### joycond Userspace Daemon
+
+The hid-nintendo kernel driver does not handle the combination of two joy-cons into one virtual input device. That functionality has been left up to userspace. [joycond-git](https://aur.archlinux.org/packages/joycond-git/) is a userspace daemon that combines two kernel joy-con evdev devices into one virtual input device using uinput. An application can use two joy-cons as if they are a single controller. When the daemon is active, switch controllers will be placed in a pseudo pairing mode, and the LEDs will start flashing. Holding the triggers can be used to pair controllers and make them usable. To pair two joy-cons together, press one trigger on each joy-con.
+
+##### Using hid-nintendo with Steam Games
+
+The hid-nintendo driver currently conflicts with steam using hidraw to implement its own pro controller driver. If you wish to use the Steam implementation, the hid-nintendo driver can be blacklisted. Alternatively if you want to use hid-nintendo with a Steam game directly, Steam can be started without access to hidraw using firejail:
+
+```
+ $ firejail --noprofile --blacklist=/sys/class/hidraw/ steam
+
+```
+
+##### Using hid-nintendo with SDL2 Games
+
+To add a mapping for the joy-cons or the pro controller to an SDL2 game, [controllermap](https://aur.archlinux.org/packages/controllermap/) can be run in the game's directory. This has been tested to work with rocket league with its steam input support disabled.
 
 #### Dolphin (Gamecube Controller Emulation)
 
-Shinyquagsire23 made a git repo called "HID Joy-Con Whispering"[[1]](https://github.com/shinyquagsire23/HID-Joy-Con-Whispering), which contains a driver for the Joy Cons and the Switch Pro Controller over USB. Currently, it does not support rumble or gyroscope.
+Shinyquagsire23 made a git repo called "HID Joy-Con Whispering"[[2]](https://github.com/shinyquagsire23/HID-Joy-Con-Whispering), which contains a userspace driver for the Joy Cons and the Switch Pro Controller over USB. Currently, it does not support rumble or gyroscope. For rumble support, see the hid-nintendo kernel driver section above.
 
 After running make, load the uinput module:
 

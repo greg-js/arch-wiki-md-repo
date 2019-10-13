@@ -14,15 +14,19 @@ Ceph 是一个专注于分布式的、弹性可扩展的、高可靠的、性能
 
 The official documentation [states](http://ceph.com/docs/master/install/#deploy-a-cluster-manually) "the manual procedure is primarily for exemplary purposes for those developing deployment scripts with Chef, Juju, Puppet, etc.".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 术语](#.E6.9C.AF.E8.AF.AD)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-    *   [2.1 软件包](#.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [2.2 NTP 客户端](#NTP_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-*   [3 启动一个存储集群](#.E5.90.AF.E5.8A.A8.E4.B8.80.E4.B8.AA.E5.AD.98.E5.82.A8.E9.9B.86.E7.BE.A4)
-    *   [3.1 启动一个监视器](#.E5.90.AF.E5.8A.A8.E4.B8.80.E4.B8.AA.E7.9B.91.E8.A7.86.E5.99.A8)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 术语](#术语)
+*   [2 安装](#安装)
+    *   [2.1 软件包](#软件包)
+    *   [2.2 NTP 客户端](#NTP_客户端)
+*   [3 启动一个存储集群](#启动一个存储集群)
+    *   [3.1 启动一个监视器](#启动一个监视器)
+*   [4 参阅](#参阅)
 
 ## 术语
 
@@ -45,9 +49,9 @@ The official documentation [states](http://ceph.com/docs/master/install/#deploy-
 
 ### NTP 客户端
 
-**警告:** 应当同步监视器节点的时钟以避免[时钟偏移](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.B6.E9.92.9F.E5.81.8F.E7.A7.BB "Time (简体中文)")，否则将导致集群性能下降甚至停止工作。[官方文档](http://docs.ceph.com/docs/master/rados/configuration/mon-config-ref/#clock:)建议所有节点都应采取某种方式同步时钟。
+**警告:** 应当同步监视器节点的时钟以避免[时钟偏移](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#时钟偏移 "Time (简体中文)")，否则将导致集群性能下降甚至停止工作。[官方文档](http://docs.ceph.com/docs/master/rados/configuration/mon-config-ref/#clock:)建议所有节点都应采取某种方式同步时钟。
 
-在节点上安装并运行时钟同步客户端，可参阅[时钟同步](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.B6.E9.92.9F.E5.90.8C.E6.AD.A5 "Time (简体中文)")。
+在节点上安装并运行时钟同步客户端，可参阅[时钟同步](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#时钟同步 "Time (简体中文)")。
 
 ## 启动一个存储集群
 

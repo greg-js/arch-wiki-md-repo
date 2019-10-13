@@ -203,7 +203,7 @@ Las siguientes publicaciones del foro brindan instrucciones para usar dos factor
 *   GnuPG: [Post regarding GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=943338#p943338) Esta publicación tiene las instrucciones genéricas.
 *   OpenSSL: [Post regarding OpenSSL encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=947805#p947805) Esta publicación solo tiene los hooks `ssldec`.
 *   OpenSSL: [Post regarding OpenSSL salted bf-cbc encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=155393) Esta publicación tiene los hooks `bfkf` de initcpio, install y el script generador del archivo de claves cifrado.
-*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) con un hook `lukskey` de initcpio. O [#Cifrado/arranque y un encabezado LUKS separado en USB](#Cifrado/arranque_y_un_encabezado_LUKS_separado_en_USB) a continuación con un hook encrypt personalizado para initcpio.
+*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) con un hook `lukskey` de initcpio. O [#/boot cifrado y un encabezado LUKS separado en USB](#/boot_cifrado_y_un_encabezado_LUKS_separado_en_USB) a continuación con un hook encrypt personalizado para initcpio.
 
 Tenga en cuenta que:
 
@@ -355,7 +355,7 @@ Se distinguen los siguientes casos:
 
 	Véase también [Securely wipe disk#Flash memory](/index.php/Securely_wipe_disk#Flash_memory "Securely wipe disk").
 
-*   El dispositivo está cifrado con la modalidad plain de dm-crypt, o el encabezado LUKS se almacena [por separado](#Cifrado/arranque_y_un_encabezado_LUKS_separado_en_USB):
+*   El dispositivo está cifrado con la modalidad plain de dm-crypt, o el encabezado LUKS se almacena [por separado](#/boot_cifrado_y_un_encabezado_LUKS_separado_en_USB):
     *   Si se requiere una [negación plausible](https://en.wikipedia.org/wiki/es:Cifrado_negable "wikipedia:es:Cifrado negable"), TRIM **nunca** debe ser usado debido a las consideraciones dadas en la parte superior de esta sección, o el uso del cifrado se dará a conocer.
     *   Si no se requiere una negación plausible, se puede usar TRIM por sus mejoras de rendimiento, siempre que los peligros de seguridad descritos en la parte superior de esta sección no sean motivo de preocupación.
 

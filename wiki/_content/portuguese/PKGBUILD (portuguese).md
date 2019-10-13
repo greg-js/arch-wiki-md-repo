@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-06-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=575196) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=584720) na versão em inglês.
 
 Artigos relacionados
 
@@ -138,11 +138,11 @@ A URL do site oficial do software sendo empacotado.
 
 ### license
 
-A licença sob a qual o software é distribuído. O pacote [licenses](https://www.archlinux.org/packages/?name=licenses) (parte do [grupo base](/index.php/Grupo_base "Grupo base")) contém muitas licenças comumente usadas, que são instaladas em `/usr/share/licenses/common`. Se um pacote é licenciado sob uma dessas licenças, o valor deve ser definido para o nome do diretório (ex.: `license=('GPL')`). Se a licença adequada não estiver incluída, diversas coisas devem ser feitas:
+A licença sob a qual o software é distribuído. O pacote [licenses](https://www.archlinux.org/packages/?name=licenses) (uma dependência do [metapacote](/index.php/Metapacote "Metapacote") [base](https://www.archlinux.org/packages/?name=base)) contém muitas licenças comumente usadas, que são instaladas em `/usr/share/licenses/common`. Se um pacote é licenciado sob uma dessas licenças, o valor deve ser definido para o nome do diretório (ex.: `license=('GPL')`). Se a licença adequada não estiver incluída, diversas coisas devem ser feitas:
 
 1.  Adicione `custom` ao vetor `license`. Opcionalmente, você pode substituir `custom` com `custom:*nome da licença*`. Uma vez que uma licença é usada em dois ou mais pacotes em um repositório oficial (incluindo [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community")), ela se torna parte do pacote [licenses](https://www.archlinux.org/packages/?name=licenses).
 2.  Instale a licença em: `/usr/share/licenses/*pkgname*/` (ex.: `/usr/share/licenses/foobar/LICENSE`). Uma boa forma de fazer isso é usando: `install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"` 
-3.  Se a licença é encontrada apenas em um site, então você precisa inclui-la separadamente no pacote.
+3.  Se a licença é encontrada apenas em um site, então você precisa incluí-la separadamente no pacote.
 
 *   As licenças [BSD](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_BSD "wikipedia:pt:Licença BSD"), [ISC](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_ISC "wikipedia:pt:Licença ISC"), [MIT](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_MIT "wikipedia:pt:Licença MIT"), [zlib/png](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_zlib "wikipedia:pt:Licença zlib") e [Python](https://en.wikipedia.org/wiki/pt:Python "wikipedia:pt:Python") são casos especiais e não podem ser incluídos no pacote [licenses](https://www.archlinux.org/packages/?name=licenses). Para manter a consistência no vetor `license`, é tratado como licença comum (`license=('BSD')`, `license=('ISC')`, `license=('MIT')`, `license=('ZLIB')` e `license=('Python')`), mas tecnicamente cada uma é uma licença personalizada, porque cada uma possui sua própria linha de copyright. Quaisquer pacotes licenciados sob essas quatro devem ter uma licença única armazenada em `/usr/share/licenses/*pkgname*`.
 *   Alguns pacotes podem não estar cobertos por uma única licença. Nestes casos, múltiplas entradas podem ser feitas no vetor `license` como, por exemplo, `license=('GPL' "custom:*nome da licença*")`.

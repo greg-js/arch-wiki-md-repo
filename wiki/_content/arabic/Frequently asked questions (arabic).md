@@ -93,7 +93,7 @@ Related articles
 
 ### متى سيتوفر الإصدار الجديد من آرتش؟
 
-إصدارات توزيعة آرتش هي بيئة حيّة للتثبيت أو الصيانة، تتضمن الحزم الموجودة في المجموعة [base](https://www.archlinux.org/groups/x86_64/base/) وبعض [الحزم الأخرى](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). تصدر الإصدارات عادةً في النصف الأوّل من كل شهر.
+إصدارات توزيعة آرتش هي بيئة حيّة للتثبيت أو الصيانة، تتضمن الحزم الموجودة في المجموعة [base](https://www.archlinux.org/packages/?name=base) وبعض [الحزم الأخرى](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). تصدر الإصدارات عادةً في النصف الأوّل من كل شهر.
 
 ### هل توزيعة آرتش مستقرة؟ وهل ستواجهني انهيارات متكررة؟
 

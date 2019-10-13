@@ -1,7 +1,7 @@
 Related articles
 
 *   [Advanced Linux Sound Architecture (Русский)](/index.php/Advanced_Linux_Sound_Architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Advanced Linux Sound Architecture (Русский)")
-*   [Desktop notifications (Русский)](/index.php/Desktop_notifications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop notifications (Русский)")
+*   [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")
 
 **Состояние перевода:** На этой странице представлен перевод статьи [Volnoti](/index.php/Volnoti "Volnoti"). Дата последней синхронизации: 21 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Volnoti&diff=0&oldid=495356).
 
@@ -11,13 +11,17 @@ Related articles
 
 Volnoti может быть полезен для проверки изменения уровня громкости, если вы используете легковесный оконный менеджер, такой как [Openbox](/index.php/Openbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Openbox (Русский)"), который обычно не поставляется вместе с демоном сообщений, особенно в комбинации с медиаклавишами ноутбука/клавиатуры.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка и использование](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [2.1 Запуск Volnoti](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Volnoti)
-    *   [2.2 Настройка для Xbindkeys](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B4.D0.BB.D1.8F_Xbindkeys)
-    *   [2.3 Настройки для i3](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.B4.D0.BB.D1.8F_i3)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Настройка и использование](#Настройка_и_использование)
+    *   [2.1 Запуск Volnoti](#Запуск_Volnoti)
+    *   [2.2 Настройка для Xbindkeys](#Настройка_для_Xbindkeys)
+    *   [2.3 Настройки для i3](#Настройки_для_i3)
 
 ## Установка
 

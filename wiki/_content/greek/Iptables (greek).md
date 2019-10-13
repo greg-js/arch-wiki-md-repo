@@ -40,7 +40,7 @@
 
 ## Εγκατάσταση
 
-Ο stock πυρήνας του Arch Linux είναι compiled με την υποστήριξη του iptables. Θα χρειαστείτε μόνο να [εγκαταστήσετε](/index.php/Pacman "Pacman") τα userland εργαλεία, τα οποία παρέχονται με το πακέτο [iptables](https://www.archlinux.org/packages/?name=iptables) στα [official repositories](/index.php/Official_repositories "Official repositories"). (Το πακέτο [iproute2](https://www.archlinux.org/packages/?name=iproute2) από το [base](https://www.archlinux.org/groups/x86_64/base/) group έχει ως εξάρτηση το iptables, οπότε το πακέτο iptables θα πρέπει να είναι εγκατεστημένο στο σύστημά σας by default.)
+Ο stock πυρήνας του Arch Linux είναι compiled με την υποστήριξη του iptables. Θα χρειαστείτε μόνο να [εγκαταστήσετε](/index.php/Pacman "Pacman") τα userland εργαλεία, τα οποία παρέχονται με το πακέτο [iptables](https://www.archlinux.org/packages/?name=iptables) στα [official repositories](/index.php/Official_repositories "Official repositories"). (Το πακέτο [iproute2](https://www.archlinux.org/packages/?name=iproute2) από το [base](https://www.archlinux.org/packages/?name=base) group έχει ως εξάρτηση το iptables, οπότε το πακέτο iptables θα πρέπει να είναι εγκατεστημένο στο σύστημά σας by default.)
 
 ## Βασικές έννοιες
 

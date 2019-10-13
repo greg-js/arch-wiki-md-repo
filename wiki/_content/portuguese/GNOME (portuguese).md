@@ -1,8 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=579324) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=584610) na versão em inglês.
 
 Artigos relacionados
 
-*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GTK](/index.php/GTK_(Portugu%C3%AAs) "GTK (Português)")
 *   [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)")
 *   [GNOME/Tips and tricks](/index.php/GNOME/Tips_and_tricks "GNOME/Tips and tricks")
 *   [GNOME/Troubleshooting](/index.php/GNOME/Troubleshooting "GNOME/Troubleshooting")
@@ -13,6 +13,7 @@ Artigos relacionados
 *   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
 *   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
+*   [GNOME/Software](/index.php/GNOME/Software "GNOME/Software")
 *   [Repositórios oficiais#gnome-unstable](/index.php/Reposit%C3%B3rios_oficiais#gnome-unstable "Repositórios oficiais")
 
 [GNOME](https://en.wikipedia.org/wiki/pt:GNOME "wikipedia:pt:GNOME") (/(ɡ)noʊm/) é um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
@@ -101,6 +102,7 @@ Selecione a sessão: *GNOME*, *GNOME Clássico* ou *GNOME sobre Xorg* a partir d
 
 *   Para a sessão do GNOME sobre Xorg, adicione ao arquivo `~/.xinitrc` (veja [aqui](https://gitlab.gnome.org/GNOME/gtk/issues/1390#note_344758) para detalhes):
     ```
+    export XDG_SESSION_TYPE=x11
     export GDK_BACKEND=x11
     exec gnome-session
     ```
@@ -125,23 +127,23 @@ fi
 
 **Nota:**
 
-*   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland "Wayland").
-*   Wayland com o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA") atualmente sofre de um desempenho muito ruim: [FS#53284](https://bugs.archlinux.org/task/53284).
+*   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland "Wayland"). Aplicativos usando certas bibliotecas gráficas, tal como Qt, podem ser forçadas a usar o Wayland definindo variáveis de ambiente. Veja [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") para mais informações.
+*   Quando estiver usando o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA"), aplicativos não nativos de Wayland vão sofrer de um desempenho muito ruim por causa de XWayland sem aceleração de hardware. [Espera-se](https://blogs.gnome.org/uraeus/2019/09/23/fedora-workstation-31-whats-new/) resolver isso em outuno de 2020, mas ainda não há um cronograma comprometido pela [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
-Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM faz aplicativos em [Qt](/index.php/Qt "Qt") como [VLC](/index.php/VLC "VLC"), calibre e SMPlayer usarem Wayland. Além da variável QT_QPA_PLATFORM, você deve também instalar o pacote [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland). Para adicionar suporte para outras bibliotecas gráficas, veja [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland").
+Iniciar manualmente uma sessão Wayland é possível com `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
 
 Para iniciar ao autenticar no tty1, adicione o seguinte ao seu `.bash_profile`:
 
 ```
 if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
-   QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+   XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```
 
 ### Aplicativos do GNOME no Wayland
 
-Quando a sessão *GNOME* é usada, aplicativos do GNOME serão executados usando o Wayland. Para casos de depuração, o [manual do GTK+](https://developer.gnome.org/gtk3/stable/gtk-running.html) lista opções e variáveis de ambiente.
+Quando a sessão *GNOME* é usada, aplicativos do GNOME serão executados usando o Wayland. Para casos de depuração, o [manual do GTK](https://developer.gnome.org/gtk3/stable/gtk-running.html) lista opções e variáveis de ambiente.
 
 ## Navegação
 
@@ -276,7 +278,7 @@ O bando de dados do Tracker pode ser consultado usando o comando *tracker-sparql
 
 ### Configurações avançadas
 
-Como anotado acima, muitas opções de configuração tal como alterar o tema do [GTK+](/index.php/GTK%2B "GTK+") ou o tema do [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela"), não são expostas no painel de Configurações do sistema (*gnome-control-center*). Aqueles usuários que desejem alterar essas configurações pode desejar usar o Ajustes do GNOME ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), uma ferramenta gráfica conveniente que expõe muitas das configurações.
+Como anotado acima, muitas opções de configuração tal como alterar o tema do [GTK](/index.php/GTK_(Portugu%C3%AAs) "GTK (Português)") ou o tema do [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela"), não são expostas no painel de Configurações do sistema (*gnome-control-center*). Aqueles usuários que desejem alterar essas configurações pode desejar usar o Ajustes do GNOME ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), uma ferramenta gráfica conveniente que expõe muitas das configurações.
 
 Configurações do GNOME (que são armazenadas no banco de dados DConf) também podem ser alteradas usando o [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (uma ferramenta gráfica de configuração de DConf) ou a ferramenta de linha de comando [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html). O Ajustes do GNOME não faz nada no plano de fundo do GUI; note que você não encontrará nela todas as configurações descritas nas seções a seguir.
 
@@ -284,7 +286,7 @@ Configurações do GNOME (que são armazenadas no banco de dados DConf) também 
 
 ##### Temas
 
-O GNOME usa Adwaita por padrão. Para aplicar Adwaita dark apenas para aplicativos GTK+2, use o link simbólico a seguir:
+O GNOME usa Adwaita por padrão. Para aplicar Adwaita dark apenas para aplicativos GTK 2, use o link simbólico a seguir:
 
 ```
 $ ln -s /usr/share/themes/Adwaita-dark ~/.themes/Adwaita
@@ -293,7 +295,7 @@ $ ln -s /usr/share/themes/Adwaita-dark ~/.themes/Adwaita
 
 Para selecionar novos temas (mova-os para o diretório apropriado e) use o Ajustes do GNOME ou os comandos de GSettings abaixo:
 
-Para o tema do GTK+:
+Para o tema do GTK:
 
 ```
 $ gsettings set org.gnome.desktop.interface gtk-theme *nome-do-tema*
@@ -307,9 +309,9 @@ $ gsettings set org.gnome.desktop.interface icon-theme *nome-do-tema*
 
 ```
 
-**Nota:** O gerenciador de janela segue o tema do GTK+. Usar `org.gnome.desktop.wm.preferences theme` está obsoleto e é ignorado.
+**Nota:** O gerenciador de janela segue o tema do GTK. Usar `org.gnome.desktop.wm.preferences theme` está obsoleto e é ignorado.
 
-Veja [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") e [Icons#Manually](/index.php/Icons#Manually "Icons").
+Veja [GTK (Português)#Temas](/index.php/GTK_(Portugu%C3%AAs)#Temas "GTK (Português)") e [Ícones#Manualmente](/index.php/%C3%8Dcones#Manualmente "Ícones").
 
 ##### Altura da barra de título
 

@@ -56,17 +56,13 @@ It is also needed to set the following settings [[2]](https://www.dell.com/commu
 
 This model only supports the S0 (s2idle) sleep mode. [[3]](https://patchwork.kernel.org/patch/9758513/) Change the suspend mode to `s2idle` by adding the `mem_sleep_default=s2idle` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). **Note:** As of 2018/11/18, this does not seem required anymore: the kernel automatically sets it correctly.
 
-Devices using a Hynix SSD are affected by this bug. [[4]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1801875) The SSD is not supposed to be put into D3 state which results in 4-5% battery drain per hour during suspend. A patch set is available but will not be merged. [[5]](https://lore.kernel.org/patchwork/patch/1007283/)
-
-You can install a patched kernel from the AUR [linux-hynix](https://aur.archlinux.org/packages/linux-hynix/) The battery drain during suspend should drop to 1-2% per hour.
-
 ### Screen not rotating
 
 You need to install [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) for automatic screen rotation to work.
 
 ### Fingerprint sensor
 
-The fingerprint sensor on this computer is not yet supported. [[6]](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/td-p/5090723) . There is an open [fprint](/index.php/Fprint "Fprint") bug opened to track progress on this issue [[7]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/52)
+The fingerprint sensor on this computer is not yet supported. [[4]](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/td-p/5090723) . There is an open [fprint](/index.php/Fprint "Fprint") bug opened to track progress on this issue [[5]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/52)
 
 ### Soundcard turning off and coil whine
 
@@ -76,7 +72,7 @@ By default, the soundcard automatically turns of which leads to delays when ther
 
 ### Reduce throttling
 
-The CPU seems to throttle already at around 50 to 60°C. You can install [throttled](https://www.archlinux.org/packages/?name=throttled) to raise this limit. It also has the option to change the short and long term power limit and allows undervolting. It raises the temperature limit by default to 90°C. Intel's product page lists 100°C as the temperature limit. [[8]](https://ark.intel.com/content/www/de/de/ark/products/95452/intel-core-i5-7y54-processor-4m-cache-up-to-3-20-ghz.html) Though it is not recommenced to run it at such a high temperature. You can change these settings at
+The CPU seems to throttle already at around 50 to 60°C. You can install [throttled](https://www.archlinux.org/packages/?name=throttled) to raise this limit. It also has the option to change the short and long term power limit and allows undervolting. It raises the temperature limit by default to 90°C. Intel's product page lists 100°C as the temperature limit. [[6]](https://ark.intel.com/content/www/de/de/ark/products/95452/intel-core-i5-7y54-processor-4m-cache-up-to-3-20-ghz.html) Though it is not recommenced to run it at such a high temperature. You can change these settings at
 
 ```
 /etc/lenovo_fix.conf

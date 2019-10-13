@@ -1,6 +1,6 @@
 The [Linux](/index.php/Linux "Linux") kernel and the [GNU](/index.php/GNU "GNU") userland are written primarily in [C](https://en.wikipedia.org/wiki/C_(programming_language) "wikipedia:C (programming language)").
 
-Arch Linux uses the [GNU C Library](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) as the C standard library; it is part of the [base group](/index.php/Base_group "Base group").
+Arch Linux uses the [GNU C Library](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) as the C standard library; it is a dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package").
 
 You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") to develop software in C, [C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++") or [Objective-C](https://en.wikipedia.org/wiki/Objective-C "wikipedia:Objective-C").
 

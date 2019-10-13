@@ -24,7 +24,7 @@
 
 ## 安装
 
-su 是 [util-linux](https://www.archlinux.org/packages/?name=util-linux) 包的一部分，默认已经作为 [base](https://www.archlinux.org/groups/x86_64/base/) 组的一部分安装到 Arch 中了。
+su 是 [util-linux](https://www.archlinux.org/packages/?name=util-linux) 包的一部分，默认已经作为 [base](https://www.archlinux.org/packages/?name=base) 组的一部分安装到 Arch 中了。
 
 ## 用法
 

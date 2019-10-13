@@ -167,7 +167,7 @@ $ expac -S -H M '%k\t%n' *packages*
 
 ```
 
-Чтобы получить список явно установленных пакетов не из [base](https://www.archlinux.org/groups/x86_64/base/) и не из [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) с размерами и описанием:
+Чтобы получить список явно установленных пакетов не из [base](https://www.archlinux.org/packages/?name=base) и не из [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) с размерами и описанием:
 
 ```
 $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n
@@ -201,14 +201,14 @@ $ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 **Примечание:** Чтобы получить список пакетов, установленных ранее как зависимости, но теперь никому не принадлежащие, смотрите [#Удаление неиспользуемых пакетов](#Удаление_неиспользуемых_пакетов).
 
-Следующая команда выведет список всех установленных пакетов, которые не принадлежат [base](https://www.archlinux.org/groups/x86_64/base/) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
+Следующая команда выведет список всех установленных пакетов, которые не принадлежат [base](https://www.archlinux.org/packages/?name=base) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
 ```
 $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
 
 ```
 
-Список всех установленных пакетов, которые не зависят от других пакетов и которые не принадлежат [base](https://www.archlinux.org/groups/x86_64/base/) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
+Список всех установленных пакетов, которые не зависят от других пакетов и которые не принадлежат [base](https://www.archlinux.org/packages/?name=base) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
 ```
 $ comm -23 <(pacman -Qqt | sort) <(pacman -Sqg base base-devel | sort)

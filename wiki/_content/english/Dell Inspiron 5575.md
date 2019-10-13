@@ -124,7 +124,7 @@ The solution is to disable Legacy Boot in the BIOS, so the UEFI mode will be the
 
 #### Screen Corruption
 
-Running the linux 5.2 kernel can cause screen corruption/scrambling. Passing **iommu=soft** as [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") fixes the issue.
+Running the linux 5.2 kernel can cause screen corruption/scrambling. Passing **iommu=soft** as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") fixes the issue.
 
 ### Network
 

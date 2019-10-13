@@ -21,7 +21,7 @@ Los grupos de paquetes más importantes son:
 
 ### base
 
-El grupo [base](https://www.archlinux.org/groups/x86_64/base/) contiene:
+El grupo [base](https://www.archlinux.org/packages/?name=base) contiene:
 
 *   software esencial como el [kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)"), [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), las [utilidades principales](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)") y [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 *   software no esencial como [dhcpcd](/index.php/Dhcpcd_(Espa%C3%B1ol) "Dhcpcd (Español)"), [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), [nano](/index.php/Nano_(Espa%C3%B1ol) "Nano (Español)") y [vi](/index.php/Vi "Vi").

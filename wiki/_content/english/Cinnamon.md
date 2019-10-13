@@ -44,6 +44,8 @@ Related articles
 
 Cinnamon can be [installed](/index.php/Install "Install") with the package [cinnamon](https://www.archlinux.org/packages/?name=cinnamon).
 
+**Note:** If you have an Intel GPU, make sure you are [not using xf86-video-intel](/index.php/Intel_graphics#Installation "Intel graphics") with Cinnamon as it may freeze at random times otherwise, but you can still move the mouse. Use the [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4) driver instead by removing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (KDE also [recommends this](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)).
+
 ## Starting
 
 ### Graphical log-in

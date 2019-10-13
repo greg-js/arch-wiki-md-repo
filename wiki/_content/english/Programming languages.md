@@ -56,7 +56,7 @@ Note that some languages listed above also support some functional programming.
 
 ## Shell languages
 
-[Bash](/index.php/Bash "Bash") is part of the [base group](/index.php/Base_group "Base group"). For others, see [Command-line shell](/index.php/Command-line_shell "Command-line shell").
+[Bash](/index.php/Bash "Bash") is a dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package"). For others, see [Command-line shell](/index.php/Command-line_shell "Command-line shell").
 
 ## See also
 

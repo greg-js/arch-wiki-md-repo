@@ -14,31 +14,35 @@
 
 makepkg 是由 [pacman](https://www.archlinux.org/packages/?name=pacman) 包提供的。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 配置](#.E9.85.8D.E7.BD.AE)
-    *   [1.1 打包人信息](#.E6.89.93.E5.8C.85.E4.BA.BA.E4.BF.A1.E6.81.AF)
-    *   [1.2 包输出](#.E5.8C.85.E8.BE.93.E5.87.BA)
-    *   [1.3 验证签名](#.E9.AA.8C.E8.AF.81.E7.AD.BE.E5.90.8D)
-*   [2 使用](#.E4.BD.BF.E7.94.A8)
-*   [3 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
-    *   [3.1 编译结果优化](#.E7.BC.96.E8.AF.91.E7.BB.93.E6.9E.9C.E4.BC.98.E5.8C.96)
-    *   [3.2 生成新 md5sums](#.E7.94.9F.E6.88.90.E6.96.B0_md5sums)
-    *   [3.3 减少编译时间](#.E5.87.8F.E5.B0.91.E7.BC.96.E8.AF.91.E6.97.B6.E9.97.B4)
-        *   [3.3.1 并行编译](#.E5.B9.B6.E8.A1.8C.E7.BC.96.E8.AF.91)
-        *   [3.3.2 使用内存文件系统进行编译](#.E4.BD.BF.E7.94.A8.E5.86.85.E5.AD.98.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E8.BF.9B.E8.A1.8C.E7.BC.96.E8.AF.91)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 配置](#配置)
+    *   [1.1 打包人信息](#打包人信息)
+    *   [1.2 包输出](#包输出)
+    *   [1.3 验证签名](#验证签名)
+*   [2 使用](#使用)
+*   [3 使用技巧](#使用技巧)
+    *   [3.1 编译结果优化](#编译结果优化)
+    *   [3.2 生成新 md5sums](#生成新_md5sums)
+    *   [3.3 减少编译时间](#减少编译时间)
+        *   [3.3.1 并行编译](#并行编译)
+        *   [3.3.2 使用内存文件系统进行编译](#使用内存文件系统进行编译)
         *   [3.3.3 ccache](#ccache)
-    *   [3.4 生成新校验和](#.E7.94.9F.E6.88.90.E6.96.B0.E6.A0.A1.E9.AA.8C.E5.92.8C)
-    *   [3.5 使用其它压缩算法](#.E4.BD.BF.E7.94.A8.E5.85.B6.E5.AE.83.E5.8E.8B.E7.BC.A9.E7.AE.97.E6.B3.95)
+    *   [3.4 生成新校验和](#生成新校验和)
+    *   [3.5 使用其它压缩算法](#使用其它压缩算法)
     *   [3.6 Utilizing multiple cores on compression](#Utilizing_multiple_cores_on_compression)
     *   [3.7 Show packages with specific packager](#Show_packages_with_specific_packager)
     *   [3.8 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
-*   [4 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
+*   [4 问题处理](#问题处理)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
-    *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS.2FCPPFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
+    *   [4.2 CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS/CXXFLAGS/CPPFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
     *   [4.3 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
-    *   [4.4 WARNING:Referencing $srcdir in PKGBUILD](#WARNING:Referencing_.24srcdir_in_PKGBUILD)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+    *   [4.4 WARNING:Referencing $srcdir in PKGBUILD](#WARNING:Referencing_$srcdir_in_PKGBUILD)
+*   [5 参阅](#参阅)
 
 ## 配置
 
@@ -99,7 +103,7 @@ Packager       : John Doe <john@doe.com>
 
 ```
 
-**注意:** 在抱怨丢失(编译)依赖之前，记得 [base](https://www.archlinux.org/groups/x86_64/base/) 组是被视为在所有的 Arch Linux 系统中安装的。在使用 makepkg 编译时，[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 组默认假设安装过。
+**注意:** 在抱怨丢失(编译)依赖之前，记得 [base](https://www.archlinux.org/packages/?name=base) 组是被视为在所有的 Arch Linux 系统中安装的。在使用 makepkg 编译时，[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 组默认假设安装过。
 
 要编译软件包，用户必须首先建立一个 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")，或者编译脚本(在 [创建软件包](/index.php/%E5%88%9B%E5%BB%BA%E8%BD%AF%E4%BB%B6%E5%8C%85 "创建软件包") 中有详细描述)，或者从 [ABS 编译系统](/index.php/Arch_Build_System "Arch Build System")、 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 或其他来源获取。
 
@@ -119,7 +123,7 @@ $ makepkg --syncdeps
 
 ```
 
-注意这些依赖必须在已配置的软件源之中。另外，用户也可以在编译前手动安装需要的依赖(`pacman -S --asdeps dep1 dep2`)。如果添加了 `-r`/`--rmdeps` 选项，*makepkg* 会在结束前删除不再需要的编译依赖，如果需要持续编译软件包，请考虑使用 [删除未使用软件包](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks") 的方式处理。
+注意这些依赖必须在已配置的软件源之中。另外，用户也可以在编译前手动安装需要的依赖(`pacman -S --asdeps dep1 dep2`)。如果添加了 `-r`/`--rmdeps` 选项，*makepkg* 会在结束前删除不再需要的编译依赖，如果需要持续编译软件包，请考虑使用 [删除未使用软件包](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_(orphans) "Pacman/Tips and tricks") 的方式处理。
 
 一旦所有的依赖都满足并且软件包成功编译，一个软件包文件 (`pkgname-pkgver.pkg.tar.xz`) 会在工作目录下创建。想安装，运行
 
@@ -289,7 +293,7 @@ COMPRESSGZ=(**pigz** -c -f -n)
 This shows all packages installed on the system with the packager named *packagername*:
 
 ```
-$ expac "%n %p" | grep "*packagername*" | column -t
+$ expac "%n %p" | grep "*packagername*" | column -t
 
 ```
 

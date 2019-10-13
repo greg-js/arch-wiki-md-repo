@@ -34,7 +34,7 @@
 
 ## Установка
 
-Для использования *fdisk* и связанных с ним утилит требуется пакет [util-linux](https://www.archlinux.org/packages/?name=util-linux), который является частью группы [base](https://www.archlinux.org/groups/x86_64/base/).
+Для использования *fdisk* и связанных с ним утилит требуется пакет [util-linux](https://www.archlinux.org/packages/?name=util-linux), который является частью группы [base](https://www.archlinux.org/packages/?name=base).
 
 ## Список разделов
 

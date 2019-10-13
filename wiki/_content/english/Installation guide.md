@@ -2,7 +2,7 @@ This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch
 
 For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki "ArchWiki") articles or the various programs' [man pages](/index.php/Man_page "Man page"), both linked from this guide. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 
-Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-compatible machine with a minimum of 512 MiB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MiB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
+Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-compatible machine with a minimum of 512 MiB RAM. A basic installation should take less than 800 MiB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -23,7 +23,7 @@ Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wiki
     *   [1.9 Mount the file systems](#Mount_the_file_systems)
 *   [2 Installation](#Installation)
     *   [2.1 Select the mirrors](#Select_the_mirrors)
-    *   [2.2 Install the base packages](#Install_the_base_packages)
+    *   [2.2 Install essential packages](#Install_essential_packages)
 *   [3 Configure the system](#Configure_the_system)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
@@ -207,18 +207,27 @@ The higher a mirror is placed in the list, the more priority it is given when do
 
 This file will later be copied to the new system by *pacstrap*, so it is worth getting right.
 
-### Install the base packages
+### Install essential packages
 
-Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) script to install the [base](https://www.archlinux.org/groups/x86_64/base/) package group:
-
-```
-# pacstrap /mnt base
+Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) script to install the [base](https://www.archlinux.org/packages/?name=base) package, Linux [kernel](/index.php/Kernel "Kernel") and firmware for common hardware:
 
 ```
+# pacstrap /mnt base linux linux-firmware
 
-This group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or specific wireless firmware; see [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) for comparison.
+```
 
-To [install](/index.php/Install "Install") packages and other groups such as [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), append the names to *pacstrap* (space separated) or to individual [pacman](/index.php/Pacman "Pacman") commands after the [#Chroot](#Chroot) step.
+**Tip:** You can substitute [linux](https://www.archlinux.org/packages/?name=linux) for a [kernel](/index.php/Kernel "Kernel") package of your choice. You can omit the installation of the kernel or the firmware package if you know what you are doing.
+
+The [base](https://www.archlinux.org/packages/?name=base) package does not include all tools from the live installation, so installing other packages may be necessary for a fully functional base system. In particular, consider installing:
+
+*   userspace utilities for the management of [file systems](/index.php/File_systems "File systems") that will be used on the system,
+*   utilities for accessing [RAID](/index.php/RAID "RAID") or [LVM](/index.php/LVM "LVM") partitions,
+*   specific firmware for other devices not included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware),
+*   software necessary for [networking](/index.php/Networking "Networking"),
+*   a [text editor](/index.php/Text_editor "Text editor"),
+*   packages for accessing documentation in [man](/index.php/Man "Man") and [info](/index.php/Info "Info") pages: [man-db](https://www.archlinux.org/packages/?name=man-db), [man-pages](https://www.archlinux.org/packages/?name=man-pages) and [texinfo](https://www.archlinux.org/packages/?name=texinfo).
+
+To [install](/index.php/Install "Install") other packages or package groups, append the names to the *pacstrap* command above (space separated) or use [pacman](/index.php/Pacman "Pacman") after the [chroot](#Chroot) step. For comparison, packages available in the live system can be found in [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
 
 ## Configure the system
 
@@ -231,7 +240,7 @@ Generate an [fstab](/index.php/Fstab "Fstab") file (use `-U` or `-L` to define b
 
 ```
 
-Check the resulting file in `/mnt/etc/fstab` afterwards, and edit it in case of errors.
+Check the resulting `/mnt/etc/fstab` file, and edit it in case of errors.
 
 ### Chroot
 
@@ -299,16 +308,16 @@ Add matching entries to [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ho
 
 If the system has a permanent IP address, it should be used instead of `127.0.1.1`.
 
-Complete the [network configuration](/index.php/Network_configuration "Network configuration") for the newly installed environment.
+Complete the [network configuration](/index.php/Network_configuration "Network configuration") for the newly installed environment, that includes [installing](/index.php/Install "Install") packages such as [iputils](https://www.archlinux.org/packages/?name=iputils) and your preferred [network management](/index.php/Network_management "Network management") software.
 
 ### Initramfs
 
-Creating a new *initramfs* is usually not required, because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of the [linux](https://www.archlinux.org/packages/?name=linux) package with *pacstrap*.
+Creating a new *initramfs* is usually not required, because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of the [kernel](/index.php/Kernel "Kernel") package with *pacstrap*.
 
 For [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modify [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) and recreate the initramfs image:
 
 ```
-# mkinitcpio -p linux
+# mkinitcpio -P
 
 ```
 

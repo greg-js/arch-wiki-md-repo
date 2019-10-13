@@ -16,13 +16,13 @@ With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly
 *   [1 Preparing for EFISTUB](#Preparing_for_EFISTUB)
 *   [2 Booting EFISTUB](#Booting_EFISTUB)
     *   [2.1 Using a boot manager](#Using_a_boot_manager)
-    *   [2.2 Using UEFI Shell](#Using_UEFI_Shell)
-    *   [2.3 Using UEFI directly](#Using_UEFI_directly)
-        *   [2.3.1 efibootmgr](#efibootmgr)
-        *   [2.3.2 efibootmgr with .efi file](#efibootmgr_with_.efi_file)
-        *   [2.3.3 UEFI Shell](#UEFI_Shell)
-        *   [2.3.4 More tools](#More_tools)
-        *   [2.3.5 Using a startup.nsh script](#Using_a_startup.nsh_script)
+    *   [2.2 Using UEFI directly](#Using_UEFI_directly)
+        *   [2.2.1 efibootmgr](#efibootmgr)
+        *   [2.2.2 efibootmgr with .efi file](#efibootmgr_with_.efi_file)
+        *   [2.2.3 UEFI Shell](#UEFI_Shell)
+        *   [2.2.4 More tools](#More_tools)
+        *   [2.2.5 Using a startup.nsh script](#Using_a_startup.nsh_script)
+    *   [2.3 Using UEFI Shell](#Using_UEFI_Shell)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Cannot create a new boot entry with efibootmgr](#Cannot_create_a_new_boot_entry_with_efibootmgr)
     *   [3.2 Newly created boot entries are removed](#Newly_created_boot_entries_are_removed)
@@ -44,26 +44,6 @@ First, you must create an [EFI system partition](/index.php/EFI_system_partition
 ### Using a boot manager
 
 There are several UEFI boot managers which can provide additional options or simplify the process of UEFI booting - especially if you have multiple kernels/operating systems. See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for more information.
-
-### Using UEFI Shell
-
-It is possible to launch an EFISTUB kernel from UEFI Shell as if it is a normal UEFI application:
-
-```
-> fs0:
-> \vmlinuz-linux root=PARTUUID=3518bb68-d01e-45c9-b973-0b5d918aae96 rw initrd=\initramfs-linux.img
-
-```
-
-In this case, the kernel parameters are passed as normal parameters to the launched EFISTUB kernel file.
-
-To avoid needing to remember all of your kernel parameters every time, you can save the executable command to a shell script such as `archlinux.nsh` on your UEFI System Partition, then run it with:
-
-```
-> fs0:
-> archlinux
-
-```
 
 ### Using UEFI directly
 
@@ -202,6 +182,26 @@ vmlinuz-linux rw root=/dev/sd*X* [rootfs=*myfs*] [rootflags=*myrootflags*] \
 ```
 
 This method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort. **The script must be a single long line.** Sections in brackets are optional and given only as a guide. Shell style linebreaks are for visual clarification only. FAT filesystems use the backslash as path separator and in this case, the backslash declares the initramfs is located in the root of the ESP partition. Only Intel microcode is loaded in the booting parameters line; AMD microcode is read from disk later during the boot process; this is done automatically by the kernel.
+
+### Using UEFI Shell
+
+If you do not want to create a permanent boot entry it is possible to launch the kernel from UEFI Shell as if it is a normal UEFI application:
+
+```
+> fs0:
+> \vmlinuz-linux root=PARTUUID=3518bb68-d01e-45c9-b973-0b5d918aae96 rw initrd=\initramfs-linux.img
+
+```
+
+In this case, the kernel parameters are passed as normal parameters to the launched EFISTUB kernel file.
+
+To avoid needing to remember all of your kernel parameters every time, you can save the executable command to a shell script such as `archlinux.nsh` on your UEFI System Partition, then run it with:
+
+```
+> fs0:
+> archlinux
+
+```
 
 ## Troubleshooting
 

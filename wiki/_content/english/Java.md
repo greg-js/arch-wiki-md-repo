@@ -7,7 +7,7 @@ From the [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_lan
 
 	Java is a programming language originally developed by Sun Microsystems and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++ but has a simpler object model and fewer low-level facilities. Java applications are typically compiled to bytecode that can run on any Java virtual machine ([JVM](https://en.wikipedia.org/wiki/Java_virtual_machine "wikipedia:Java virtual machine")) regardless of computer architecture.
 
-Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.net/) versions 7, 8, 10, 11, and 12\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
+Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.net/) versions 7, 8, 10, 11, and 13\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -34,7 +34,7 @@ Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.ne
     *   [4.3 Impersonate another window manager](#Impersonate_another_window_manager)
     *   [4.4 Illegible fonts](#Illegible_fonts)
     *   [4.5 Missing text in some applications](#Missing_text_in_some_applications)
-    *   [4.6 Gray window | Applications not resizing with WM | menus immediately closing](#Gray_window_|_Applications_not_resizing_with_WM_|_menus_immediately_closing)
+    *   [4.6 Gray window, applications not resizing with WM, menus immediately closing](#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing)
     *   [4.7 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
     *   [4.8 JavaFX's MediaPlayer constructor throws an exception](#JavaFX's_MediaPlayer_constructor_throws_an_exception)
     *   [4.9 Java applications cannot open external links](#Java_applications_cannot_open_external_links)
@@ -75,7 +75,7 @@ Most executables of the Java installation are provided by direct links in `/usr/
 	[Java Development Kit](https://en.wikipedia.org/wiki/Java_Development_Kit "wikipedia:Java Development Kit") - needed for Java development, depends on full JRE.
 
 | Version | Headless JRE | Full JRE | JDK | Documentation | Sources |
-| [OpenJDK 12](https://openjdk.java.net/projects/jdk/12/) | [jre-openjdk-headless](https://www.archlinux.org/packages/?name=jre-openjdk-headless) | [jre-openjdk](https://www.archlinux.org/packages/?name=jre-openjdk) | [jdk-openjdk](https://www.archlinux.org/packages/?name=jdk-openjdk) | [openjdk-doc](https://www.archlinux.org/packages/?name=openjdk-doc) | [openjdk-src](https://www.archlinux.org/packages/?name=openjdk-src) |
+| [OpenJDK 13](https://openjdk.java.net/projects/jdk/13/) | [jre-openjdk-headless](https://www.archlinux.org/packages/?name=jre-openjdk-headless) | [jre-openjdk](https://www.archlinux.org/packages/?name=jre-openjdk) | [jdk-openjdk](https://www.archlinux.org/packages/?name=jdk-openjdk) | [openjdk-doc](https://www.archlinux.org/packages/?name=openjdk-doc) | [openjdk-src](https://www.archlinux.org/packages/?name=openjdk-src) |
 | [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/) | [jre11-openjdk-headless](https://www.archlinux.org/packages/?name=jre11-openjdk-headless) | [jre11-openjdk](https://www.archlinux.org/packages/?name=jre11-openjdk) | [jdk11-openjdk](https://www.archlinux.org/packages/?name=jdk11-openjdk) | [openjdk11-doc](https://www.archlinux.org/packages/?name=openjdk11-doc) | [openjdk11-src](https://www.archlinux.org/packages/?name=openjdk11-src) |
 | [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
 | [OpenJDK 8](https://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
@@ -98,7 +98,7 @@ Most executables of the Java installation are provided by direct links in `/usr/
 [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main) is the open-source implementation of [JavaFX](https://en.wikipedia.org/wiki/JavaFX "wikipedia:JavaFX"). You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
 
 | Version | Runtime and Developement | Documentation | Sources |
-| [OpenJFX 12](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) |
+| [OpenJFX 13](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) |
 | [OpenJFX 11](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java11-openjfx](https://www.archlinux.org/packages/?name=java11-openjfx) | [java11-openjfx-doc](https://www.archlinux.org/packages/?name=java11-openjfx-doc) | [java11-openjfx-src](https://www.archlinux.org/packages/?name=java11-openjfx-src) |
 | [OpenJFX 8](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java8-openjfx](https://www.archlinux.org/packages/?name=java8-openjfx) | [java8-openjfx-doc](https://www.archlinux.org/packages/?name=java8-openjfx-doc) | [java8-openjfx-src](https://www.archlinux.org/packages/?name=java8-openjfx-src) |
 
@@ -305,7 +305,7 @@ In addition to the suggestions mentioned below in [#Better font rendering](#Bett
 
 If some applications are completely missing texts it may help to use the options under [#Tips and tricks](#Tips_and_tricks) as suggested in [FS#40871](https://bugs.archlinux.org/task/40871).
 
-### Gray window | Applications not resizing with WM | menus immediately closing
+### Gray window, applications not resizing with WM, menus immediately closing
 
 The standard Java GUI toolkit has a hard-coded list of "non-reparenting" window managers. If using one that is not on that list, there can be some problems with running some Java applications. One of the most common problems is "gray blobs", when the Java application renders as a plain gray box instead of rendering the GUI. Another one might be menus responding to your click, but closing immediately.
 

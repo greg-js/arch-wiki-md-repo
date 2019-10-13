@@ -17,6 +17,8 @@ Los paquetes en Arch Linux son construidos utilizando [makepkg](/index.php/Makep
 
 Vea la documentación de [Creando paquetes (Español)](/index.php/Creando_paquetes_(Espa%C3%B1ol) "Creando paquetes (Español)") para mayor información
 
+**Sugerencia:** Use el paquete [namcap](https://www.archlinux.org/packages/?name=namcap) para verificar los errores mas comunes en los archivos `PKGBUILD`.
+
 ## Variables
 
 Las siguientes son variables que pueden ser encontradas en el archivo `PKGBUILD`:

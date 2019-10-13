@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=568394) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=581129) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -95,7 +95,12 @@ sendo que:
 
 ### setuptools
 
-A cena de empacotamento de Python migrou em grande parte do *distutils* para o *setuptools*, que está ativamente desenvolvido e funciona como uma importação de substituição ao `setup.py`. A principal diferença para os empacotadores é que *setuptools* é empacotado separadamente do próprio Python e deve ser especificado como um `makedepends`.
+A cena de empacotamento de Python migrou em grande parte do *distutils* para o *setuptools*, que está ativamente desenvolvido e funciona como uma importação de substituição ao `setup.py`. A principal diferença para os empacotadores é que *setuptools* é empacotado separadamente do próprio Python e deve ser especificado como um `makedepends`:
+
+```
+makedepends=('python-setuptools')
+
+```
 
 Se o pacote resultante incluir executáveis que [importam o módulo `pkg_resources`](https://setuptools.readthedocs.io/en/latest/setuptools.html#automatic-script-creation), os *setuptools* devem ser adicionalmente especificados como `depends` das funções de `package_*()` divididas; alternativamente, se o PKGBUILD apenas instalar o pacote Python para uma única versão do Python, *setuptools* deve ser movido de `makedepends` para `depends`.
 

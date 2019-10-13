@@ -2,7 +2,7 @@ Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
 
-**翻译状态：** 本文是英文页面 [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-14，点击[这里](https://wiki.archlinux.org/index.php?title=NTFS-3G&diff=0&oldid=521903)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-06，点击[这里](https://wiki.archlinux.org/index.php?title=NTFS-3G&diff=0&oldid=573885)可以查看翻译后英文页面的改动。
 
 Linux内核目前只支持对微软NTFS文件系统的读取。 [NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) 是微软 NTFS 文件系统的一个开源实现，同时支持读和写。NTFS-3G 开发者使用 FUSE 文件系统来辅助开发，同时对可移植性有益。
 
@@ -23,11 +23,14 @@ Linux内核目前只支持对微软NTFS文件系统的读取。 [NTFS-3G](http:/
     *   [4.5 允许用户挂载](#允许用户挂载)
 *   [5 缩放NTFS分区](#缩放NTFS分区)
 *   [6 疑难解答](#疑难解答)
-    *   [6.1 损坏的NTFS文件系统](#损坏的NTFS文件系统)
-    *   [6.2 元数据保存在Windows中，拒绝挂载](#元数据保存在Windows中，拒绝挂载)
-    *   [6.3 Deleting Windows hibernate metadata](#Deleting_Windows_hibernate_metadata)
-    *   [6.4 挂载失败](#挂载失败)
-*   [7 参见](#参见)
+    *   [6.1 Compressed files](#Compressed_files)
+    *   [6.2 损坏的NTFS文件系统](#损坏的NTFS文件系统)
+    *   [6.3 元数据保存在Windows中，拒绝挂载](#元数据保存在Windows中，拒绝挂载)
+    *   [6.4 删除Windows休眠元数据](#删除Windows休眠元数据)
+    *   [6.5 挂载失败](#挂载失败)
+    *   [6.6 Windows mount failure](#Windows_mount_failure)
+*   [7 Beta features & releases](#Beta_features_&_releases)
+*   [8 参见](#参见)
 
 ## 安装
 
@@ -174,6 +177,15 @@ Linux系统通常将目录的权限设为755，将文件的权限设为644。如
 
 ## 疑难解答
 
+### Compressed files
+
+If you have a Windows 10 partition and when accessing files/directories,
+
+1.  you see broken symbolic links to 'unsupported reparse point', *or*
+2.  you see the error message "cannot access <*filename*>: Input/output error" (in this case you see in /var/log/messages "Could not load plugin /usr/lib64/ntfs-3g/ntfs-plugin-80000017.so: Success")
+
+then install [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/). This plugin handles compressed files.
+
 ### 损坏的NTFS文件系统
 
 如果NTFS文件系统有错，ntfs-3g会以只读方式挂载它。要修复NTFS系统，启动Windows并使用它的磁盘检查程序，chkdsk。考虑到 ntfsfix 只能修复一些错误，如果失败，chkdsk 可能会成功。
@@ -195,7 +207,7 @@ NTFS partition /dev/sda2 was processed successfully.
 
 ### 元数据保存在Windows中，拒绝挂载
 
-当与Windows 8 或 10双引导时,试图挂载一个可见的Windows可能会出现如下错误:
+当与 Windows 8 或 10双引导时,试图挂载一个可见的Windows可能会出现如下错误:
 
 ```
 The disk contains an unclean file system (0, 0).
@@ -207,7 +219,7 @@ read-only with the 'ro' mount option.
 
 ```
 
-问题是因为Windows 8中引入"快速启动"特性。启用快速启动后，所有分区的元数据的一部分被还原到它们在以前关闭的状态。因此，在 Linux 上所做的更改可能会丢失。这会发生在任何选择"关闭"或"休眠" NTFS 分区的Windows 8 或 10 下。然而，通过选择"重新启动"，离开 Windows 是看似安全的。
+问题是因为Windows 8中引入"快速启动"特性。启用快速启动后，所有分区的元数据的一部分被还原到它们在以前关闭的状态。因此，在 Linux 上所做的更改可能会丢失。这会发生在任何选择"关闭"或"休眠" NTFS 分区的Windows 8 或 10 下。然而，通过选择"重新启动"关闭 Windows 是安全的。
 
 要启用对其他操作系统的系统分区写入，请确保禁用快速重启。通过以管理员身份执行命令:
 
@@ -218,20 +230,41 @@ powercfg /h off
 
 你可以在 *控制面板 >硬件与声音> 电源选项 > 系统设置 > 当电源键按下时做什么*， 去掉勾选*启用快速启动*
 
-### Deleting Windows hibernate metadata
+### 删除Windows休眠元数据
 
-As an alternative to above clean shutdown method, there is a way to completely destroy NTFS metadata that was saved after hibernating. This method is only feasible if you're not able or unwilling to boot into Windows and shut it down completely. This is by placing **remove_hiberfile** option when you're mounting your NTFS file system using ntfs-3g.
+作为一个以上干净关机方法的替代方法，有一个办法可以彻底删除休眠后保存的 NTFS 元数据。这个方法只适用于当你不能或不想启动至 Windows，并希望它完全关闭。这个办法是在使用 ntfs-3g 挂载 NTFS 分区时使用 **remove_hiberfile** 选项。
 
 ```
 # mount -t ntfs-3g -o remove_hiberfile /dev/*your_NTFS_partition* */mount/point*
 
 ```
 
-**Warning:** Please note that this method means that the saved Windows session will be completely lost. Use this option under your own responsibility.
+**警告:** 这个方法意味着已保存的 Windows 会话将彻底丢失。使用该选项后果自负。
 
 ### 挂载失败
 
-如果你按本指南内容操作也无法挂载你的 NTFS 分区，可以尝试一下在 `fstab` 中的所有 ntfs 分区里加上 [UUID](/index.php/UUID "UUID")。参见 [示例](/index.php/Fstab#UUIDs "Fstab").
+如果你按本指南内容操作也无法挂载你的 NTFS 分区，可以尝试一下在 `fstab` 中的所有 ntfs 分区里加上 [UUID](/index.php/UUID "UUID")。参见 [示例](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UUID "Fstab (简体中文)").
+
+### Windows mount failure
+
+Windows will not recognize a NTFS partition that does not have a corresponding partition type. A common pitfall when creating an NTFS partition to work with Windows is forgetting to set the partition type as NTFS. See [fdisk](/index.php/Fdisk "Fdisk") or one of the [partitioning tools](/index.php/Partitioning_tools "Partitioning tools").
+
+## Beta features & releases
+
+There is a [web page](http://jp-andre.pagesperso-orange.fr/advanced-ntfs-3g.html) on "advanced features" (add-ons) [1], maintained by Jean-Pierre André, one of the ntfs-3g authors. That page also provides new versions, not yet incorporated to the official releases.
+
+Currently these add-ons support:
+
+*   System compression
+*   OneDrive
+*   Duplicated files
+
+In the page [1] there is a pointer to the "updated version" of the system compression plugin [mentioned above](#Compressed_files). In fact, the update is small; all updates are in:
+
+*   README.md
+*   configure.ac, with slight modification. See the attachment
+
+The web page [1] is surely written by J.-P. André. The page [NTFS-3G Advanced](https://www.tuxera.com/community/ntfs-3g-advanced/) in the official site in tuxera.com has a link to the [OpenIndiana page](http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html), which in turn links to [1].
 
 ## 参见
 

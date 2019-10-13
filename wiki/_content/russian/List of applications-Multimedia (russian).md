@@ -349,7 +349,7 @@
 
 #### Аудиосистемы
 
-Смотрите основную статью: [Звуковая система](/index.php/Sound_system "Sound system").
+Смотрите основную статью: [Звуковая система](/index.php/%D0%97%D0%B2%D1%83%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0 "Звуковая система").
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Звуковой сервер](https://en.wikipedia.org/wiki/Sound_server "wikipedia:Sound server").
 

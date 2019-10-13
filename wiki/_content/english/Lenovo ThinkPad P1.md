@@ -61,7 +61,7 @@ There are two difficulties with configuring graphics on ThinkPad P1: there is no
 
 ### Discrete only
 
-As the P1 is an hybrid device with both an integrated and discrete video card, the NVIDIA drivers have to be setup to use Optimus in order to properly work with external outputs and the integrated laptop screen. Setup NVIDIA Optimus as instructed in [NVIDIA Optimus#Using nvidia](/index.php/NVIDIA_Optimus#Using_nvidia "NVIDIA Optimus"). Note that this method will keep your NVIDIA graphics card always on, which might dramatically shorten your battery life.
+As the P1 is an hybrid device with both an integrated and discrete video card, the NVIDIA drivers have to be setup to use Optimus in order to properly work with external outputs and the integrated laptop screen. Setup NVIDIA Optimus as instructed in [NVIDIA Optimus#Use NVIDIA graphics only](/index.php/NVIDIA_Optimus#Use_NVIDIA_graphics_only "NVIDIA Optimus"). Note that this method will keep your NVIDIA graphics card always on, which might dramatically shorten your battery life.
 
 #### Black screen after X starts with NVIDIA drivers
 

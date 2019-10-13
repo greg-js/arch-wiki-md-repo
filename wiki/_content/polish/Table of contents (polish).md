@@ -28,7 +28,7 @@
 | <small>6.4.1.</small> [Przeglądarki internetowe](/index.php/Category:Web_browser_(Polski) "Category:Web browser (Polski)") <small>(2) (również w [Aplikacje internetowe](/index.php/Category:Internet_applications_(Polski) "Category:Internet applications (Polski)"))</small> |
 | <small>6.5.</small> [Serwery web](/index.php/Category:Web_server_(Polski) "Category:Web server (Polski)") <small>(1)</small> |
 | <small>7.</small> [Sortowanie według tematu](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)") <small>(0)</small> |
-| <small>7.1.</small> [O Arch Linuksie](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)") <small>(7)</small> |
+| <small>7.1.</small> [O Arch Linuksie](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)") <small>(8)</small> |
 | <small>7.1.1.</small> [Proces instalacji](/index.php/Category:Installation_process_(Polski) "Category:Installation process (Polski)") <small>(2) (również w [Sortowanie według tematu](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)"))</small> |
 | <small>7.2.</small> [Rozwijanie Archa](/index.php/Category:Arch_development_(Polski) "Category:Arch development (Polski)") <small>(4)</small> |
 | <small>7.2.1.</small> [Rozwijanie Pacmana](/index.php/Category:Pacman_development_(Polski) "Category:Pacman development (Polski)") <small>(1)</small> |

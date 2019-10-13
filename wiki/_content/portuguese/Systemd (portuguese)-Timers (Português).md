@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=567404) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=582921) na versão em inglês.
 
 Artigos relacionados
 
@@ -189,7 +189,7 @@ Você pode configurar o systemd para enviar um e-mail quando uma unit falhar. Cr
 
  `/usr/local/bin/systemd-email` 
 ```
-#!/bin/bash
+#!/bin/sh
 
 /usr/bin/sendmail -t <<ERRMAIL
 To: $1

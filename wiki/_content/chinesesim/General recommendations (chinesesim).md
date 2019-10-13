@@ -263,7 +263,7 @@ Arch 编译系统提供了编译官方库软件的脚本，而 [AUR](/index.php/
 
 用户可以使用[Samba](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)")进行 Windows 与 Arch Linux 间的网络传输。
 
-要将 Arch Linux 系统连接到 Active Directory 认证的网络，请阅读文章[Active Directory 整合](/index.php/Active_Directory_Integration "Active Directory Integration").
+要将 Arch Linux 系统连接到 Active Directory 认证的网络，请阅读文章[Active Directory 整合](/index.php/Active_Directory_integration "Active Directory integration").
 
 参阅 [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
 

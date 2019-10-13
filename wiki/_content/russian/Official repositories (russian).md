@@ -8,7 +8,7 @@
 *   [PKGBUILD (Русский)](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")
 *   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Official repositories](/index.php/Official_repositories "Official repositories"). Дата последней синхронизации: 3 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=582024).
+**Состояние перевода:** На этой странице представлен перевод статьи [Official repositories](/index.php/Official_repositories "Official repositories"). Дата последней синхронизации: 8 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=584711).
 
 [Репозиторий](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9 "wikipedia:ru:Репозиторий") — хранилище пакетов программ, которые можно загрузить и установить на компьютер.
 
@@ -53,7 +53,7 @@
 *   Управления и восстановления поддерживаемых [файловых систем](/index.php/File_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "File systems (Русский)")
 *   Процесса установки системы (например, [openssh](https://www.archlinux.org/packages/?name=openssh))
 
-а также все необходимые зависимости этих пакетов (необязательно из [makedepends](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#makedepends "PKGBUILD (Русский)")) и [группы base](/index.php/Package_group_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#base "Package group (Русский)").
+а также все необходимые зависимости этих пакетов (необязательно из [makedepends](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#makedepends "PKGBUILD (Русский)")) и [мета-пакета](/index.php/%D0%9C%D0%B5%D1%82%D0%B0-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82 "Мета-пакет") [base](https://www.archlinux.org/packages/?name=base).
 
 *core* имеет достаточно строгие требования к качеству. Разработчики/пользователи должны подтвердить (в ответ на *signoff*-запрос в почтовой рассылке) работоспособность обновлений, прежде чем они будут приняты. Для малоиспользуемых пакетов обычно достаточно следующих шагов: информирование пользователей об обновлении, запрос подтверждений, удержание пакета в [#testing](#testing) около недели (в зависимости от серьёзности изменений), отсутствие серьёзных баг-репортов и неявное подтверждение от мейнтейнера пакета.
 

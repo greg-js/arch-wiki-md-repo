@@ -1,6 +1,6 @@
 Related articles
 
-*   [FAQ (Polski)](/index.php?title=FAQ_(Polski)&action=edit&redlink=1 "FAQ (Polski) (page does not exist)")
+*   [Frequently asked questions (Polski)](/index.php/Frequently_asked_questions_(Polski) "Frequently asked questions (Polski)")
 *   [Installation guide (Polski)](/index.php/Installation_guide_(Polski) "Installation guide (Polski)")
 *   [Beginners' guide (Polski)](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)")
 *   [List of applications (Polski)](/index.php?title=List_of_applications_(Polski)&action=edit&redlink=1 "List of applications (Polski) (page does not exist)")
@@ -15,9 +15,9 @@ Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawa
 
 *   [1 Administracja systemem](#Administracja_systemem)
     *   [1.1 Użytkownicy i grupy](#Użytkownicy_i_grupy)
-    *   [1.2 Eskalacja uprawnień](#Eskalacja_uprawnień)
+    *   [1.2 Podniesienie uprawnień](#Podniesienie_uprawnień)
     *   [1.3 Zarządzanie usługami](#Zarządzanie_usługami)
-    *   [1.4 Utrzymywanie systemu](#Utrzymywanie_systemu)
+    *   [1.4 Bieżąca konserwacja systemu](#Bieżąca_konserwacja_systemu)
 *   [2 Zarządzanie pakietami](#Zarządzanie_pakietami)
     *   [2.1 pacman](#pacman)
     *   [2.2 Repositories](#Repositories)
@@ -79,31 +79,33 @@ Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawa
 
 ## Administracja systemem
 
-Ta sekcja mówi o zadaniach administracyjnycj i zarządzaniem systemem. Jeśli chcesz wiedzieć więcej, odwiedź [Core utilities (Polski)](/index.php?title=Core_utilities_(Polski)&action=edit&redlink=1 "Core utilities (Polski) (page does not exist)") i [Category:System administration (Polski)](/index.php/Category:System_administration_(Polski) "Category:System administration (Polski)")
+Ta sekcja mówi o zadaniach administracyjnych i zarządzaniu systemem. Jeśli chcesz wiedzieć więcej, odwiedź [Core utilities](/index.php/Core_utilities "Core utilities") i [Category:System administration](/index.php/Category:System_administration "Category:System administration")
 
 ### Użytkownicy i grupy
 
-Na nowej instalacji posiadasz tylko konto super-użytkownika, lepiej znanego jako "root". Logowanie się jako root przez dłuższy okres czasu, może nawet odsłanianie go przez [SSH (Polski)](/index.php?title=SSH_(Polski)&action=edit&redlink=1 "SSH (Polski) (page does not exist)"), [jest niebezpieczne](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Zamiast tego, powiniwneś stworzyć i używać do większości zadań nieuprzywilejowanego konta użytkownika, a konta root tylko do administracji systemem. Zobacz [Users and groups (Polski)#Zarządzanie użytkownikami](/index.php?title=Users_and_groups_(Polski)&action=edit&redlink=1 "Users and groups (Polski) (page does not exist)") żeby uzyskać więcej informacji.
+Na nowej instalacji posiadasz tylko konto super-użytkownika, lepiej znanego jako "root". Logowanie się jako root przez dłuższy okres czasu, może nawet odsłanianie go przez [SSH](/index.php/SSH "SSH"), [jest niebezpieczne](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Zamiast tego, powinieneś stworzyć i używać do większości zadań nieuprzywilejowanego konta użytkownika, a konta root tylko do administracji systemem. Zobacz [Users and groups](/index.php/Users_and_groups "Users and groups") żeby uzyskać więcej informacji o tym, jak utworzyć i skonfigurować nowe konto użytkownika.
 
-Grupy i użytkownicy są mechanizmem *kontroli dostępu*; administratorzy mogą dostosować członkostwo i własności grup żeby przyznać lub odmówić użytkownikom i usługom dostęp do zasobów systemu. Przeczytaj [Users and groups (Polski)](/index.php?title=Users_and_groups_(Polski)&action=edit&redlink=1 "Users and groups (Polski) (page does not exist)") żeby uzyskać detale dotyczące potencjalnych zagrożeń dla bezpieczeństwa.
+Grupy i użytkownicy są mechanizmem *kontroli dostępu*; administratorzy mogą dostosować członkostwo i właściwości grup żeby przyznać lub odmówić użytkownikom i usługom dostępu do zasobów systemu. Przeczytaj [Users and groups](/index.php/Users_and_groups "Users and groups") żeby uzyskać dodatkowe informacje dotyczące potencjalnych zagrożeń dla bezpieczeństwa.
 
-### Eskalacja uprawnień
+### Podniesienie uprawnień
 
-Komenda [su (Polski)](/index.php?title=Su_(Polski)&action=edit&redlink=1 "Su (Polski) (page does not exist)") (substitute user) umożliwia przyjęcie tożsamości innego użytkownika systemu (najczęściej root'a) z poziomu zalogowaneo użytkownika, natomiast komenda [sudo (Polski)](/index.php?title=Sudo_(Polski)&action=edit&redlink=1 "Sudo (Polski) (page does not exist)") (substitute user do) tymczasowo podnosi uprawninia dla pojedynczej komendy.
+Komenda [su](/index.php/Su "Su") (ang. *substitute user*) umożliwia przyjęcie tożsamości innego użytkownika systemu (najczęściej root'a) z poziomu zalogowanego użytkownika, natomiast komenda [sudo](/index.php/Sudo "Sudo") (ang. *substitute user do*) tymczasowo podnosi uprawnienia dla pojedynczej komendy.
 
 ### Zarządzanie usługami
 
-Arch Linux używa [systemd (Polski)](/index.php?title=Systemd_(Polski)&action=edit&redlink=1 "Systemd (Polski) (page does not exist)") jako procesu [init (Polski)](/index.php?title=Init_(Polski)&action=edit&redlink=1 "Init (Polski) (page does not exist)"). Jest on menadżerem systemu i usług dla linuxa. Jeśli chcesz utrzymać swój system w dobrej kondycji, dobrym pomysłem jest żeby poznać jego podstawy. Interakcje z *systemd* są wykonywane za pośrednictwem komendy *systemctl*. Przeczytaj [systemd (Polski)#Podstawowe użycie systemctl](/index.php?title=Systemd_(Polski)&action=edit&redlink=1 "Systemd (Polski) (page does not exist)") żeby uzyskać więcej informacji.
+Arch Linux używa [systemd](/index.php/Systemd "Systemd") jako procesu [uruchamiającego](/index.php/Init "Init"). Jest on menadżerem systemu i usług dla Linuxa. Jeśli chcesz utrzymać swój system w dobrej kondycji, zalecane jest, aby poznać jego podstawy. Interakcje z *systemd* są wykonywane za pośrednictwem komendy *systemctl*. Przeczytaj [systemd](/index.php/Systemd "Systemd") żeby uzyskać więcej informacji.
 
-### Utrzymywanie systemu
+### Bieżąca konserwacja systemu
 
-Arch jest systemem o częstych aktualizacjach i zmianach w pakietach, więc użytkownicy muszą poświęcić trochę czasu na [system maintenance (Polski)](/index.php?title=System_maintenance_(Polski)&action=edit&redlink=1 "System maintenance (Polski) (page does not exist)"). Przeczytaj [Security (Polski)](/index.php?title=Security_(Polski)&action=edit&redlink=1 "Security (Polski) (page does not exist)") żeby dowiedzieć się jak zabezpieczyć swój system przed atakami.
+Arch jest systemem o częstych aktualizacjach i zmianach w pakietach, więc użytkownicy muszą poświęcić trochę czasu na [konserwację systemu](/index.php/System_maintenance "System maintenance"), aby poprawić jego działanie i zwiększyć jego wydajność.
+
+Ważne jest także zadbanie o bezpieczeństwo systemu. Przeczytaj [Security](/index.php/Security "Security") żeby dowiedzieć się jak zabezpieczyć swój system przed atakami.
 
 ## Zarządzanie pakietami
 
-Ta sekcja zawiera pomocne informacje dotyczące zarządzania pakietami. Zeby przeczytać o tym więcej odwiedź [FAQ (Polski)#Package management](/index.php?title=FAQ_(Polski)&action=edit&redlink=1 "FAQ (Polski) (page does not exist)") i [Category:Package management (Polski)](/index.php/Category:Package_management_(Polski) "Category:Package management (Polski)")
+Ta sekcja zawiera pomocne informacje dotyczące zarządzania pakietami. Zeby przeczytać o tym więcej odwiedź [Frequently asked questions (Polski)#Package management](/index.php/Frequently_asked_questions_(Polski)#Package_management "Frequently asked questions (Polski)") i [Category:Package management (Polski)](/index.php/Category:Package_management_(Polski) "Category:Package management (Polski)")
 
-**Note:** It is imperative to keep up to date with changes in Arch Linux that require manual intervention **before** upgrading your system. Subscribe to the [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) or check the front page [Arch news](https://www.archlinux.org/) every time before you update. Alternatively, you may find it useful to subscribe to [this RSS feed](https://www.archlinux.org/feeds/news/) or follow [@archlinux](https://twitter.com/archlinux) on Twitter.
+**Note:** Należy śledzić informacje o aktualizacjach pakietów, które wymagają interwencji użytkownika, *zanim* zostanie wszczęta aktualizacja. Subscribe to the [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) or check the front page [Arch news](https://www.archlinux.org/) every time before you update. Alternatively, you may find it useful to subscribe to [this RSS feed](https://www.archlinux.org/feeds/news/) or follow [@archlinux](https://twitter.com/archlinux) on Twitter.
 
 ### pacman
 
@@ -245,7 +247,7 @@ A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of prote
 
 To share files among the machines in a network, follow the [NFS](/index.php/NFS "NFS") or the [SSHFS](/index.php/SSHFS "SSHFS") article.
 
-Use [Samba](/index.php/Samba "Samba") to join a Windows network. To configure the machine to use Active Directory for authentication, read [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration").
+Use [Samba](/index.php/Samba "Samba") to join a Windows network. To configure the machine to use Active Directory for authentication, read [Active Directory integration](/index.php/Active_Directory_integration "Active Directory integration").
 
 See also [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
 

@@ -20,7 +20,11 @@ Related articles
 
 **注意:** 本指南要求当前系统能够运行目标 Arch Linux 构架的程序。x86_64 系统可通过 i686-pacman 搭建起32位的 chroot 环境。参见 [Arch64 Install bundled 32bit system](/index.php/Arch64_Install_bundled_32bit_system "Arch64 Install bundled 32bit system")。但从32位系统搭建64位的环境并不容易。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 从一个主机运行Arch Linux](#从一个主机运行Arch_Linux)
     *   [1.1 安装和配置](#安装和配置)
@@ -172,7 +176,7 @@ Related articles
 
 #### 选择镜像和下载基本工具
 
-After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors"), [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") and [install](/index.php/Install "Install") what you need: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors"), [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") and [install](/index.php/Install "Install") what you need: [base](https://www.archlinux.org/packages/?name=base), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
 
 #### 安装提示
 

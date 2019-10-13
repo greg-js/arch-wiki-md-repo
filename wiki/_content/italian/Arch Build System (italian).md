@@ -2,7 +2,11 @@ Quest'articolo fornisce una panoramica dell' Arch Build System insieme ad una gu
 
 **Nota:** ABS viene sincronizzato una volta al giorno, per questo motivo è fisiologico un ritardo nell'aggiornamento rispetto ai pacchetti presenti effettivamente nei repository.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Cosa è ABS?](#Cosa_è_ABS?)
     *   [1.1 Cos'è un sistema ports-like?](#Cos'è_un_sistema_ports-like?)
@@ -97,7 +101,7 @@ Prima di poter effettivamente compilare qualcosa, comunque, è necessario [insta
 
 Con privilegi di root modifica `/etc/abs.conf` per includere i repository che desideri aggiungere:
 
-Rimuovere il `!` davanti ai repository che vuoi abilitare (esempio): `REPOS=(core extra community !testing)`
+Rimuovere il `!` davanti ai repository che vuoi abilitare (esempio): `REPOS=(core extra community !testing)`
 
 ### L'albero ABS
 
@@ -164,7 +168,7 @@ PACKAGER="myname <myemail@myserver.com>
 ```
 
 ```
-$ expac "%n %p" | grep "myname" | column -t
+$ expac "%n %p" | grep "myname" | column -t
 archey3 myname
 binutils myname
 gcc myname
@@ -217,7 +221,7 @@ Modificare il PKGBUILD per aggiungere o rimuovere il supporto a determinati comp
 Eseguire makepkg da utente normale (con lo switch `-s` per installare con la risoluzione automatica delle dipendenze (richiede la presenza del pacchetto [sudo](https://www.archlinux.org/packages/?name=sudo).)
 
  `$ makepkg -s` 
-**Attenzione:** Prima di lamentarsi riguardo la mancanza delle dipendenze di compilazione. ricordarsi che il gruppo [base](https://www.archlinux.org/groups/x86_64/base/) si suppone già installato su qualsiasi sistema Arch Linux. Il gruppo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) si suppone già installato quando si compila con makepkg. Consultare [#Strumenti d'installazione](#Strumenti_d'installazione)
+**Attenzione:** Prima di lamentarsi riguardo la mancanza delle dipendenze di compilazione. ricordarsi che il gruppo [base](https://www.archlinux.org/packages/?name=base) si suppone già installato su qualsiasi sistema Arch Linux. Il gruppo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) si suppone già installato quando si compila con makepkg. Consultare [#Strumenti d'installazione](#Strumenti_d'installazione)
 
 Installare da root:
 

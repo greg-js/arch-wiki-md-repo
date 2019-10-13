@@ -95,7 +95,7 @@ Involúcrese, contribuya con el código/solución a la comunidad. Si está bien 
 
 ### ¿Para cuándo la nueva versión disponible?
 
-Los lanzamientos de Arch Linux son simplemente un entorno live para la instalación o el rescate, que incluyen el grupo [base](https://www.archlinux.org/groups/x86_64/base/) y unos pocos [paquetes adicionales](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). Las versiones se liberan, por lo general, en la primera mitad de cada mes.
+Los lanzamientos de Arch Linux son simplemente un entorno live para la instalación o el rescate, que incluyen el grupo [base](https://www.archlinux.org/packages/?name=base) y unos pocos [paquetes adicionales](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). Las versiones se liberan, por lo general, en la primera mitad de cada mes.
 
 ### ¿Es Arch Linux una distribución estable? ¿Tiene problemas con frecuencia?
 

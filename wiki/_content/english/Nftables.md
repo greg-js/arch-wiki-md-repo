@@ -47,13 +47,15 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
     *   [5.1 Simple stateful firewall](#Simple_stateful_firewall)
         *   [5.1.1 Single machine](#Single_machine)
     *   [5.2 Prevent brute-force attacks](#Prevent_brute-force_attacks)
-*   [6 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Working with Docker](#Working_with_Docker)
+*   [7 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the userspace utilities package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
-**Tip:** Most [iptables front-ends](/index.php/Iptables#Front-ends "Iptables") feature no direct or indirect support of nftables, but may introduce it.[[1]](https://www.spinics.net/lists/netfilter/msg58215.html) One graphical front-end that supports both, nftables and iptables, is [firewalld](/index.php/Firewalld "Firewalld").[[2]](https://firewalld.org/2018/07/nftables-backend)
+**Tip:** Most [iptables front-ends](/index.php/Iptables#Front-ends "Iptables") feature no direct or indirect support of nftables, but may introduce it.[[2]](https://www.spinics.net/lists/netfilter/msg58215.html) One graphical front-end that supports both, nftables and iptables, is [firewalld](/index.php/Firewalld "Firewalld").[[3]](https://firewalld.org/2018/07/nftables-backend)
 
 ## Usage
 
@@ -206,7 +208,7 @@ To add a base chain specify hook and priority values:
 
 For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a list of hooks for other families.
 
-`*priority*` takes an integer value. Chains with lower numbers are processed first and can be negative. [[3]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
+`*priority*` takes an integer value. Chains with lower numbers are processed first and can be negative. [[4]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
 
 For example, to add a base chain that filters input packets:
 
@@ -755,6 +757,35 @@ Be sure to make your changes permanent when satisifed.
 ### Prevent brute-force attacks
 
 [Sshguard](/index.php/Sshguard "Sshguard") is program that can detect brute-force attacks and modify firewalls based on IP addresses it temporarily blacklists. See [Sshguard#nftables](/index.php/Sshguard#nftables "Sshguard") on how to set up nftables to be used with it.
+
+## Troubleshooting
+
+### Working with Docker
+
+Using nftables can interfere with [Docker](/index.php/Docker "Docker") networking (and probably other container runtimes as well). In particular the drop policy for the `forward` chain will block packets originating in docker containers. If you want to keep the `forward` rule in your `inet` table, you can use the following:
+
+1.  [Install](/index.php/Install "Install") [iptables-nft](https://www.archlinux.org/packages/?name=iptables-nft) to provide an iptables compatible interface for nftables that docker can use.
+2.  Use the following for the `forward` chain in your `inet` table:
+
+    ```
+    chain forward {
+      type filter hook forward priority security; policy drop
+      mark 1 accept
+
+    ```
+
+3.  Add a rule to the DOCKER-USER chain in the `ip filter` table to mark packets if docker is running:
+
+    ```
+    table ip filter {
+      chain DOCKER-USER {
+        mark set 1
+      }
+    }
+
+    ```
+
+This works by marking packets if docker is active, and accepting the packets in this case, since docker has already filtered them (the forward chain defined by docker uses a drop policy).
 
 ## See also
 

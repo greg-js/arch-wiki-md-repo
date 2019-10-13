@@ -33,7 +33,7 @@ There are a number of ways to create a bridge.
 
 ### With iproute2
 
-This section describes the management of a network bridge using the *ip* tool from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+This section describes the management of a network bridge using the *ip* tool from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is required by the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package").
 
 Create a new bridge and change its state to up:
 

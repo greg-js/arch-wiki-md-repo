@@ -113,7 +113,7 @@ Por lo general, el espacio disponilbe después del [MBR](/index.php/Master_Boot_
 
 ### Instalación
 
-[Instale](/index.php?title=Install_(Espa%C3%B1ol%3D&action=edit&redlink=1 "Install (Español= (page does not exist)") el paquete [grub](https://www.archlinux.org/packages/?name=grub). Este reemplazará a [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), si está instalado. Después ejecute:
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [grub](https://www.archlinux.org/packages/?name=grub). Este reemplazará a [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), si está instalado. Después ejecute:
 
 ```
 # grub-install --target=i386-pc /dev/sd**X**

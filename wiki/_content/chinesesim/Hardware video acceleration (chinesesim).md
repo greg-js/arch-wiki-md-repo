@@ -49,8 +49,8 @@ Linux 中有多种方式可以实现视频加速:
 
 [Intel graphics](/index.php/Intel_graphics "Intel graphics") 开源驱动支持 VA-API:
 
-*   HD Graphics 系列自从 [Broadwell](https://github.com/intel/media-driver/#supported-platforms) [(~2015)](https://en.wikipedia.org/wiki/Template:Intel_processor_roadmap) 开始由 [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) 提供支持
-*   GMA 4500 [系列](https://01.org/linuxmedia/vaapi) 和更新的 GPU 直到 [Coffee Lake](https://en.wikipedia.org/wiki/Coffee_Lake) 由 [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) 提供支持
+*   HD Graphics 系列自从 [Broadwell](https://github.com/intel/media-driver/#supported-platforms) [(~2015)](https://en.wikipedia.org/wiki/Template:Intel_processor_roadmap "wikipedia:Template:Intel processor roadmap") 开始由 [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) 提供支持
+*   GMA 4500 [系列](https://01.org/linuxmedia/vaapi) 和更新的 GPU 直到 [Coffee Lake](https://en.wikipedia.org/wiki/Coffee_Lake "wikipedia:Coffee Lake") 由 [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) 提供支持
 *   GMA 4500 H.264 解码由 [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) 提供支持, 参见 [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel").
 *   Broadwell 到 Skylake 的 VP9 解码和 Haswell 到 Skylake 的混合 VP8 编码由 [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/)提供支持。 [VP9 decoding on Haswell crashes](https://github.com/intel/intel-hybrid-driver/issues/21).
 

@@ -549,7 +549,7 @@ Kernel entropy pool is not initialized yet, waiting until it is.
 
 ```
 
-To fix this, you can pass the `random.trust_cpu=on` [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") if your CPU supports the *RDRAND* instruction, or you can use [haveged](/index.php/Haveged "Haveged") which also provides entropy, albeit it is of allegedly low quality. See [Debian’s article on the topic](https://wiki.debian.org/BoottimeEntropyStarvation "debian:BoottimeEntropyStarvation") for other solutions.
+To fix this, you can pass the `random.trust_cpu=on` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") if your CPU supports the *RDRAND* instruction, or you can use [haveged](/index.php/Haveged "Haveged") which also provides entropy, albeit it is of allegedly low quality. See [Debian’s article on the topic](https://wiki.debian.org/BoottimeEntropyStarvation "debian:BoottimeEntropyStarvation") for other solutions.
 
 ### Incomplete removal of gdm
 

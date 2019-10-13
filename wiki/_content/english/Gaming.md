@@ -237,11 +237,11 @@ See also main article: [Improving performance](/index.php/Improving_performance 
 
 **Note:** The method shown below **only** works on AMD GPUs running the **[AMDGPU](/index.php/AMDGPU "AMDGPU")** drivers.
 
-See [AMDGPU#ACO_compiler](/index.php/AMDGPU#ACO_compiler "AMDGPU")
+See [AMDGPU#ACO compiler](/index.php/AMDGPU#ACO_compiler "AMDGPU")
 
 ### Fsync patch
 
-See [Steam#Fsync_patch](/index.php/Steam#Fsync_patch "Steam").
+See [Steam#Fsync patch](/index.php/Steam#Fsync_patch "Steam").
 
 ### Improving frame rates and responsiveness with scheduling policies
 

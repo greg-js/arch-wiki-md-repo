@@ -209,7 +209,7 @@ xrandr --setprovideroutputsource 3 0
 This will make them visible and recognized in Display settings.
 
 *   Restart `displaylink.service`.
-*   Re-connecte USB cable.
+*   Re-connect the USB cable.
 *   Check if `udl` driver is loaded and monitors are connected.
 
 ### Screen redraw is broken

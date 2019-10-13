@@ -87,6 +87,8 @@ Please note that stateless autoconfiguration works on the condition that IPv6 ic
 
 If you are using an other firewall frontend (ufw, shorewall, etc) consult their documentation on how to enable the `ipv6-icmp` packets.
 
+If your chosen network management solution does not support configuring the DNS resolver with stateless IPv6 (e.g. netctl), then it is possible to use [rdnssd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rdnssd.8) from the [ndisc6](https://www.archlinux.org/packages/?name=ndisc6) package for that.
+
 ### For gateways
 
 To properly hand out IPv6s to the network clients we will need to use an advertising daemon. The standard tool for this job is [radvd](https://www.archlinux.org/packages/?name=radvd) and is available in [official repositories](/index.php/Official_repositories "Official repositories"). Configuration of radvd is fairly simple. Edit `/etc/radvd.conf` to include

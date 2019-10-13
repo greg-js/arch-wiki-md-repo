@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Package group#Difference to a meta package](/index.php/Package_group#Difference_to_a_meta_package "Package group")
+*   [Meta package and package group#Difference between meta package and package group](/index.php/Meta_package_and_package_group#Difference_between_meta_package_and_package_group "Meta package and package group")

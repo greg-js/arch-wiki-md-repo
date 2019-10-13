@@ -63,7 +63,7 @@ Mount พาร์ทิชั่น root ที่ `/mnt` หลังจาก
 
 ### ติดตั้งแพคเกจพื้นฐาน
 
-ใช้สคริปต์ [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) เพื่อติดตั้งโปรแกรมจากกลุ่ม [base](https://www.archlinux.org/groups/x86_64/base/):
+ใช้สคริปต์ [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) เพื่อติดตั้งโปรแกรมจากกลุ่ม [base](https://www.archlinux.org/packages/?name=base):
 
 ```
 # pacstrap /mnt base

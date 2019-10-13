@@ -5,34 +5,38 @@ VNC 服务是一个远程显示守护进程，它向用户提供一些远程功�
 1.  直接控制本地 X 会话；
 2.  在一台机器上的后台并行 X 会话，即并不显示在物理显示器上而是虚拟显示器。即使用户断开连接，在服务器上运行的所有程序依旧可以运行。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 运行 VNC 服务](#.E8.BF.90.E8.A1.8C_VNC_.E6.9C.8D.E5.8A.A1)
-    *   [2.1 初次设置](#.E5.88.9D.E6.AC.A1.E8.AE.BE.E7.BD.AE)
-        *   [2.1.1 创建环境和密码文件](#.E5.88.9B.E5.BB.BA.E7.8E.AF.E5.A2.83.E5.92.8C.E5.AF.86.E7.A0.81.E6.96.87.E4.BB.B6)
-        *   [2.1.2 编辑 xstartup 文件](#.E7.BC.96.E8.BE.91_xstartup_.E6.96.87.E4.BB.B6)
-        *   [2.1.3 权限](#.E6.9D.83.E9.99.90)
-    *   [2.2 启动服务](#.E5.90.AF.E5.8A.A8.E6.9C.8D.E5.8A.A1)
-*   [3 在物理显示器上（5900端口）运行VNC服务](#.E5.9C.A8.E7.89.A9.E7.90.86.E6.98.BE.E7.A4.BA.E5.99.A8.E4.B8.8A.EF.BC.885900.E7.AB.AF.E5.8F.A3.EF.BC.89.E8.BF.90.E8.A1.8CVNC.E6.9C.8D.E5.8A.A1)
-    *   [3.1 使用 TigerVNC 的 x0vncserver （推荐）](#.E4.BD.BF.E7.94.A8_TigerVNC_.E7.9A.84_x0vncserver_.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)
-    *   [3.2 使用 x11vnc （推荐）](#.E4.BD.BF.E7.94.A8_x11vnc_.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)
-    *   [3.3 使用一个 dirty hack （不推荐）](#.E4.BD.BF.E7.94.A8.E4.B8.80.E4.B8.AA_dirty_hack_.EF.BC.88.E4.B8.8D.E6.8E.A8.E8.8D.90.EF.BC.89)
-        *   [3.3.1 基本设置](#.E5.9F.BA.E6.9C.AC.E8.AE.BE.E7.BD.AE)
-        *   [3.3.2 给 xorg-server 打补丁](#.E7.BB.99_xorg-server_.E6.89.93.E8.A1.A5.E4.B8.81)
-*   [4 连接 VNC 服务](#.E8.BF.9E.E6.8E.A5_VNC_.E6.9C.8D.E5.8A.A1)
-    *   [4.1 无密码验证](#.E6.97.A0.E5.AF.86.E7.A0.81.E9.AA.8C.E8.AF.81)
-    *   [4.2 图形界面客户端示例](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.AE.A2.E6.88.B7.E7.AB.AF.E7.A4.BA.E4.BE.8B)
-*   [5 使用 SSH 隧道加密 VNC 服务](#.E4.BD.BF.E7.94.A8_SSH_.E9.9A.A7.E9.81.93.E5.8A.A0.E5.AF.86_VNC_.E6.9C.8D.E5.8A.A1)
-    *   [5.1 服务端配置](#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E9.85.8D.E7.BD.AE)
-    *   [5.2 客户端配置](#.E5.AE.A2.E6.88.B7.E7.AB.AF.E9.85.8D.E7.BD.AE)
-    *   [5.3 在 Android 设备上通过 SSH 连接 VNC 服务器](#.E5.9C.A8_Android_.E8.AE.BE.E5.A4.87.E4.B8.8A.E9.80.9A.E8.BF.87_SSH_.E8.BF.9E.E6.8E.A5_VNC_.E6.9C.8D.E5.8A.A1.E5.99.A8)
-*   [6 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [6.1 在开关机时启动关闭 VNC 服务](#.E5.9C.A8.E5.BC.80.E5.85.B3.E6.9C.BA.E6.97.B6.E5.90.AF.E5.8A.A8.E5.85.B3.E9.97.AD_VNC_.E6.9C.8D.E5.8A.A1)
-    *   [6.2 复制远程机器剪贴板内容到本地](#.E5.A4.8D.E5.88.B6.E8.BF.9C.E7.A8.8B.E6.9C.BA.E5.99.A8.E5.89.AA.E8.B4.B4.E6.9D.BF.E5.86.85.E5.AE.B9.E5.88.B0.E6.9C.AC.E5.9C.B0)
-    *   [6.3 解决无光标问题](#.E8.A7.A3.E5.86.B3.E6.97.A0.E5.85.89.E6.A0.87.E9.97.AE.E9.A2.98)
-    *   [6.4 连接到 OS X（Mac）系统](#.E8.BF.9E.E6.8E.A5.E5.88.B0_OS_X.EF.BC.88Mac.EF.BC.89.E7.B3.BB.E7.BB.9F)
-*   [7 中文原内容](#.E4.B8.AD.E6.96.87.E5.8E.9F.E5.86.85.E5.AE.B9)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 运行 VNC 服务](#运行_VNC_服务)
+    *   [2.1 初次设置](#初次设置)
+        *   [2.1.1 创建环境和密码文件](#创建环境和密码文件)
+        *   [2.1.2 编辑 xstartup 文件](#编辑_xstartup_文件)
+        *   [2.1.3 权限](#权限)
+    *   [2.2 启动服务](#启动服务)
+*   [3 在物理显示器上（5900端口）运行VNC服务](#在物理显示器上（5900端口）运行VNC服务)
+    *   [3.1 使用 TigerVNC 的 x0vncserver （推荐）](#使用_TigerVNC_的_x0vncserver_（推荐）)
+    *   [3.2 使用 x11vnc （推荐）](#使用_x11vnc_（推荐）)
+    *   [3.3 使用一个 dirty hack （不推荐）](#使用一个_dirty_hack_（不推荐）)
+        *   [3.3.1 基本设置](#基本设置)
+        *   [3.3.2 给 xorg-server 打补丁](#给_xorg-server_打补丁)
+*   [4 连接 VNC 服务](#连接_VNC_服务)
+    *   [4.1 无密码验证](#无密码验证)
+    *   [4.2 图形界面客户端示例](#图形界面客户端示例)
+*   [5 使用 SSH 隧道加密 VNC 服务](#使用_SSH_隧道加密_VNC_服务)
+    *   [5.1 服务端配置](#服务端配置)
+    *   [5.2 客户端配置](#客户端配置)
+    *   [5.3 在 Android 设备上通过 SSH 连接 VNC 服务器](#在_Android_设备上通过_SSH_连接_VNC_服务器)
+*   [6 提示和技巧](#提示和技巧)
+    *   [6.1 在开关机时启动关闭 VNC 服务](#在开关机时启动关闭_VNC_服务)
+    *   [6.2 复制远程机器剪贴板内容到本地](#复制远程机器剪贴板内容到本地)
+    *   [6.3 解决无光标问题](#解决无光标问题)
+    *   [6.4 连接到 OS X（Mac）系统](#连接到_OS_X（Mac）系统)
+*   [7 中文原内容](#中文原内容)
 
 ## 安装
 
@@ -61,14 +65,14 @@ Log file is /home/facade/.vnc/mars:1.log
 
 ```
 
-VNC服务运行的默认端口是 :1 ，它代表服务运行的TCP端口（5900+n = 端口号）。在此例中，它运行在 5900+1=5901 。再次执行VNC服务会创建另一个实例，并运行在下一个更高的空闲端口上，例如 :2 或说 5902。
+VNC服务运行的默认端口是 :1 ，它代表服务运行的TCP端口（5900+n = 端口号）。在此例中，它运行在 5900+1=5901 。再次执行VNC服务会创建另一个实例，并运行在下一个更高的空闲端口上，例如 :2 或说 5902。
 
 **注意:** 在物理内存允许的条件下，Linux系统可以拥有任意数量的VNC服务——它们互相并行。
 
 使用 -kill 开关来关闭VNC服务：
 
 ```
-$ vncserver -kill :1
+$ vncserver -kill :1
 
 ```
 
@@ -106,7 +110,7 @@ $ chmod 700 ~/.vnc
 Vncserver 通过开关（命令行参数）来提供灵活性。下面的例子启动具有特定分辨率、允许多用户同时观看/控制且设置 dpi 为 96 的 VNC 服务。
 
 ```
-$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 :1
+$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 :1
 
 ```
 
@@ -126,7 +130,7 @@ $ vncserver -help
 TigerVNC 提供名为 x0vncserver 的二进制文件，它具有和 x11vnc 相类似的功能。例如：
 
 ```
-x0vncserver -display :0 -passwordfile ~/.vnc/passwd
+x0vncserver -display :0 -passwordfile ~/.vnc/passwd
 
 ```
 
@@ -260,7 +264,7 @@ $ vncviewer -passwd /path/to/server-passwd-file
 若希望从 LAN 保护之外访问 VNC 服务，你需要考虑明文密码及客户端与服务端之间未加密通信的问题。VNC 服务可以很简单地使用 SSH 隧道进行加密。另外，不要使用此方法对外界打开另一个端口，因为通信会沿用户之前对 WAN 打开的 SSH 端口在隧道中依次进行。在这种情况下，强烈推荐使用 -localhost 开关运行 vncserver。该开关仅允许接收*从本机*发起的连接，并顺理成章地仅允许物理 SSH 连接并认证到机器上的用户。（This switch only allows connections *from the localhost* -- and by analogy only by users physically ssh'ed and authenticated on the box!）
 
 ```
-$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
+$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
 
 ```
 

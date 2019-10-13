@@ -1,5 +1,5 @@
 **Base** may refer to:
 
-*   the [base package group](/index.php/Base_package_group "Base package group")
+*   the [base meta package](/index.php/Base_meta_package "Base meta package")
 *   [LibreOffice](/index.php/LibreOffice "LibreOffice") Base
 *   [OpenOffice](/index.php/OpenOffice "OpenOffice") Base

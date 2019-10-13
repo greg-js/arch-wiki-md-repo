@@ -319,6 +319,8 @@ To run a Clutter app on Wayland, set `CLUTTER_BACKEND=wayland`.
 
 To run a SDL2 application on Wayland, set `SDL_VIDEODRIVER=wayland`.
 
+**Note:** Many proprietary games come bundled with old versions of SDL, which don't support Wayland and might break entirely if you set `SDL_VIDEODRIVER=wayland`. To force the application to run with XWayland, set `SDL_VIDEODRIVER=x11`.
+
 ### GLFW
 
 To use GLFW with the Wayland backend, install the [glfw-wayland](https://www.archlinux.org/packages/?name=glfw-wayland) package (instead of [glfw-x11](https://www.archlinux.org/packages/?name=glfw-x11)).

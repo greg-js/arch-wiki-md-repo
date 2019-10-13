@@ -6,7 +6,11 @@ Artículos relacionados
 
 *bspwm* es un [gestor de ventanas tipo mosaico](https://es.wikipedia.org/wiki/Gestor_de_ventanas#Gestores_de_ventanas_de_mosaico) que organiza las ventanas en un [árbol binario completo](https://es.wikipedia.org/wiki/%C3%81rbol_binario). Tiene soporte para [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) y múltiples monitores, y se configura y controla a través de mensajes.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -220,7 +224,7 @@ Esto puede pasar si está usando aplicaciones GTK3, y especialmente en el caso d
 
 ### Problemas con aplicaciones Java
 
-Si, por ejemplo, las aplicaciones Java no pueden cambiar de tamaño o sus menús se cierran espontáneamente, véase [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM,_menus_immediately_closing "Java").
+Si, por ejemplo, las aplicaciones Java no pueden cambiar de tamaño o sus menús se cierran espontáneamente, véase [Java#Gray window | Applications not resizing with WM | menus immediately closing](/index.php/Java#Gray_window_|_Applications_not_resizing_with_WM_|_menus_immediately_closing "Java").
 
 ## Véase también
 

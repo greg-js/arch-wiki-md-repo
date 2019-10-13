@@ -9,3 +9,7 @@ Universal Media Server is available in the [AUR](/index.php/AUR "AUR") via [ums]
 ## Configuration
 
 UMS can be run on a per-user basis. Run the executable at `/opt/ums/UMS.sh` once, then copy the config file at `/opt/ums/UMS.conf` to `~/.config/UMS/UMS.conf` and edit it. The `port`, `folders`, and `minimized` options in `UMS.conf` are especially noteworthy.
+
+## Running
+
+To start the daemon as a particular user, [start/enable](/index.php/Start/enable "Start/enable") the template unit `ums@*user*.service`

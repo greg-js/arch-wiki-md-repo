@@ -135,7 +135,7 @@ By default Steam simply appends your option string to the launch command. To set
 
 Valve has [released](https://steamcommunity.com/app/221410/discussions/0/3158631000006906163/) a special kernel patch that should help increase FPS in massively-threaded applications. There are few methods to get and use this patch:
 
-*   Use binary kernel provided directly from Valve. See [Unofficial_user_repositories#valveaur](/index.php/Unofficial_user_repositories#valveaur "Unofficial user repositories") and once you add this repository, kernel packages [linux-fsync](https://aur.archlinux.org/packages/linux-fsync/) and [linux-fsync-headers](https://aur.archlinux.org/packages/linux-fsync-headers/) become available. You will likely need to replace some regular packages (e.g. [nvidia](https://www.archlinux.org/packages/?name=nvidia)) with [DKMS](/index.php/DKMS "DKMS") packages (e.g. [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)) as well.
+*   Use binary kernel provided directly from Valve. See [Unofficial user repositories#valveaur](/index.php/Unofficial_user_repositories#valveaur "Unofficial user repositories") and once you add this repository, kernel packages [linux-fsync](https://aur.archlinux.org/packages/linux-fsync/) and [linux-fsync-headers](https://aur.archlinux.org/packages/linux-fsync-headers/) become available. You will likely need to replace some regular packages (e.g. [nvidia](https://www.archlinux.org/packages/?name=nvidia)) with [DKMS](/index.php/DKMS "DKMS") packages (e.g. [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)) as well.
 *   Install [linux-fsync](https://aur.archlinux.org/packages/linux-fsync/) kernel.
 
 ### Proton Steam-Play

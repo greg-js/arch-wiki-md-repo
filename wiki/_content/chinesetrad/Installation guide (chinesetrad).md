@@ -4,7 +4,7 @@
 
 更詳細的資源可以參考 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") 文章，或者閱讀該命令的 [man page](/index.php/Man_page "Man page")。如需要互動式幫助，可以使用 [IRC channel](/index.php/IRC_channel "IRC channel") 及 [英文論壇](https://bbs.archlinux.org/)。
 
-Arch Linux 可在任何 RAM 不小於 512MB 的 [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") 相容機器上運作。用 [base](https://www.archlinux.org/groups/x86_64/base/) 軟體包群組內的所有軟體包進行基本安裝將佔用小於 800MB 的硬碟空間。由於安裝過程中需要從遠端軟體庫取得軟體包，因此需要連線到網際網路。
+Arch Linux 可在任何 RAM 不小於 512MB 的 [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") 相容機器上運作。用 [base](https://www.archlinux.org/packages/?name=base) 軟體包群組內的所有軟體包進行基本安裝將佔用小於 800MB 的硬碟空間。由於安裝過程中需要從遠端軟體庫取得軟體包，因此需要連線到網際網路。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -183,9 +183,9 @@ This file will later be copied to the new system by *pacstrap*, so it is worth g
 
 ### Install the base packages 安裝系統基本套件
 
-Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) script to install the [base](https://www.archlinux.org/groups/x86_64/base/) package group:
+Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) script to install the [base](https://www.archlinux.org/packages/?name=base) package group:
 
-使用 [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 腳本安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 套件組：
+使用 [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 腳本安裝 [base](https://www.archlinux.org/packages/?name=base) 套件組：
 
 ```
 # pacstrap /mnt base

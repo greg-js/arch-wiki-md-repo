@@ -159,6 +159,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 | [i3status](https://www.archlinux.org/packages/?name=i3status) | `~/.i3status.conf` | [c3f7fc4](http://code.stapelberg.de/git/i3status/commit/?id=c3f7fc4) |
 | [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) |
 | [Inkscape](/index.php/Inkscape "Inkscape") | `~/.inkscape` | [0.47](http://wiki.inkscape.org/wiki/index.php/Release_notes/0.47#Preferences) | [[21]](https://bugs.launchpad.net/inkscape/+bug/199720) |
+| [Kakoune](/index.php/Kakoune "Kakoune") |
 | latexmk (in [texlive-core](https://www.archlinux.org/packages/?name=texlive-core)) | `~/.latexmkrc` |
 | [lftp](https://www.archlinux.org/packages/?name=lftp) | `~/.lftp` | [21dc400](https://github.com/lavv17/lftp/commit/21dc400) | [[22]](https://www.mail-archive.com/lftp@uniyar.ac.ru/msg04301.html) |
 | [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/) | `~/.gogdownloader` | [d430af6](https://github.com/Sude-/lgogdownloader/commit/d430af6) | [[23]](https://github.com/Sude-/lgogdownloader/issues/4) |
@@ -168,7 +169,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 
  | [[24]](https://bugs.documentfoundation.org/show_bug.cgi?id=32263) |
 | [Streamlink](/index.php/Streamlink "Streamlink") | `~/.livestreamerrc` | [ea80591](https://github.com/chrippa/livestreamer/commit/ea80591) | [[25]](https://github.com/chrippa/livestreamer/pull/106) |
-| [llpp](/index.php/Llpp "Llpp") | [3ab86f0](http://repo.or.cz/w/llpp.git/commit/3ab86f0) | Currently llpp places the configuration directly under `XDG_CONFIG_HOME` instead of creating a directory. |
+| [llpp](/index.php/Llpp "Llpp") | [3ab86f0](http://repo.or.cz/w/llpp.git/commit/3ab86f0) | Currently *llpp* places the configuration directly under `XDG_CONFIG_HOME` instead of creating a directory. |
 | [mc](/index.php/Mc "Mc") | `~/.mc` | 
 
 [1b99570](https://github.com/MidnightCommander/mc/commit/1b99570) [0b71156](https://github.com/MidnightCommander/mc/commit/0b71156) [ce401d7](https://github.com/MidnightCommander/mc/commit/ce401d7)
@@ -351,7 +352,7 @@ $ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config`
 `~/.bazaar
 ~/.bzr.log`
 
- | [2.3.0](https://bugs.launchpad.net/bzr/+bug/195397/comments/15) | [[78]](https://bugs.launchpad.net/bzr/+bug/195397) | Discussion in upstream bug states that bazaar wil use `~/.config/bazaar` if it exists. The logfile `~/.bzr.log` might still be written. |
+ | [2.3.0](https://bugs.launchpad.net/bzr/+bug/195397/comments/15) | [[78]](https://bugs.launchpad.net/bzr/+bug/195397) | Discussion in upstream bug states that bazaar will use `~/.config/bazaar` if it exists. The logfile `~/.bzr.log` might still be written. |
 | [buchhaltung-git](https://aur.archlinux.org/packages/buchhaltung-git/) | 
 
 `~/.buchhaltung`
@@ -542,10 +543,10 @@ $ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug`
 
  | [[105]](https://github.com/npm/npm/issues/6675) | `$ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc` `npmrc` 
 ```
-prefix=${XDG_DATA_HOME}/npm
-cache=${XDG_CACHE_HOME}/npm
-tmp=${XDG_RUNTIME_DIR}/npm
-init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
+prefix=$XDG_DATA_HOME/npm
+cache=$XDG_CACHE_HOME/npm
+tmp=$XDG_RUNTIME_DIR/npm
+init-module=$XDG_CONFIG_HOME/npm/config/npm-init.js
 
 ```
 
@@ -553,7 +554,7 @@ init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
 
  |
 | [nuget](https://www.archlinux.org/packages/?name=nuget) | `~/.nuget/packages` | [[106]](https://docs.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders) | `$ export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages` |
-| [NVIDIA](/index.php/NVIDIA "NVIDIA") | `~/.nv` | Uses XDG_CACHE_HOME if set, otherwise improperly falls back to ~/.nv instead of ~/.cache. |
+| [NVIDIA](/index.php/NVIDIA "NVIDIA") | `~/.nv` | Uses `XDG_CACHE_HOME` if set, otherwise improperly falls back to `~/.nv` instead of `~/.cache`. |
 | [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) | `~/.nvidia-settings-rc` | `$ nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings` |
 | [nvm](https://aur.archlinux.org/packages/nvm/) | `~/.nvm` | `$ export NVM_DIR="$XDG_DATA_HOME"/nvm` |
 | [Octave](/index.php/Octave "Octave") | 
@@ -583,7 +584,7 @@ The `local_list` option must be given an absolute path.
 Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/PlatformUtils-posix.cc#L20) `~/.local/share`.
 
  |
-| [OpenSSL](/index.php/OpenSSL "OpenSSL") | `~/.rnd` | Seeding file .rnd's location can be set with RANDFILE environment variable per [FAQ](https://www.openssl.org/docs/faq.html). |
+| [OpenSSL](/index.php/OpenSSL "OpenSSL") | `~/.rnd` | Seeding file `.rnd`'s location can be set with `RANDFILE` environment variable per [FAQ](https://www.openssl.org/docs/faq.html). |
 | [parallel](https://www.archlinux.org/packages/?name=parallel) | `~/.parallel` | [20170422](https://git.savannah.gnu.org/cgit/parallel.git/commit/?id=685018f532f4e2d24b84eb28d5de3d759f0d1af1) | `$ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel` |
 | [Pass](/index.php/Pass "Pass") | `~/.password-store` | `$ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass` |
 | [Pidgin](/index.php/Pidgin "Pidgin") | `~/.purple` | [[109]](https://developer.pidgin.im/ticket/4911) | `$ pidgin --config="$XDG_DATA_HOME"/purple` |
@@ -601,7 +602,7 @@ $ export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
 $ export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 $ export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"`
 
-It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdir "$XDG_CACHE_HOME/pg"`
+It is required to create both directories: `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdir "$XDG_CACHE_HOME/pg"`
 
  |
 | [PulseAudio](/index.php/PulseAudio "PulseAudio") | `~/.esd_auth` | Very likely generated by the `module-esound-protocol-unix.so` module. It can be configured to use a different location but it makes much more sense to just comment out this module in `/etc/pulse/default.pa` or `"$XDG_CONFIG_HOME"/pulse/default.pa`. |
@@ -619,7 +620,9 @@ It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdi
 | [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby") | `~/.gem` | 
 
 `$ export GEM_HOME="$XDG_DATA_HOME"/gem
-$ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem` Make sure to remove `gem: --user-install` from `/etc/gemrc`
+$ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem`
+
+Make sure to remove `gem: --user-install` from `/etc/gemrc`
 
  |
 | [Rust#Rustup](/index.php/Rust#Rustup "Rust") | `~/.rustup` | [[114]](https://github.com/rust-lang-nursery/rustup.rs/issues/247) | `$ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup` |
@@ -983,9 +986,9 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 ## See also
 
 *   [GNOME Goal: XDG Base Directory Specification Usage](https://wiki.gnome.org/Initiatives/GnomeGoals/XDGConfigFolders)
-*   [Rob Pike: "Dotfiles" being hidden is a UNIXv2 mistake](https://plus.google.com/+RobPikeTheHuman/posts/R58WgWwN9jp).
-*   [systemd-path(1)](https://www.freedesktop.org/software/systemd/man/systemd-path.html)
-*   [file-hierarchy(7)](https://www.freedesktop.org/software/systemd/man/file-hierarchy.html)
+*   [Rob Pike: "Dotfiles" being hidden is a UNIXv2 mistake](https://web.archive.org/web/20180827160401/plus.google.com/+RobPikeTheHuman/posts/R58WgWwN9jp).
+*   [systemd-path(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-path.1)
+*   [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7)
 *   [Grawity's notes on dotfiles](https://github.com/grawity/dotfiles/blob/master/.dotfiles.notes).
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).

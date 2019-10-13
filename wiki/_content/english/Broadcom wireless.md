@@ -121,6 +121,8 @@ To make the module load at boot, refer to [Kernel modules](/index.php/Kernel_mod
 
 ### Setting broadcom-wl in monitor mode
 
+Monitor mode is used to capture 802.11 frames over the air. This can be useful for diagnosing issues on a network or testing the security of your wireless network. Often, monitor mode is required to capture certain frames for wireless penetration testing, but it may be unethical or even illegal to capture frames on any network you do not own, manage or have permission to perform penetration testing against.
+
 To set broadcom-wl in monitor mode you have to set 1 to `/proc/brcm_monitor0)`:
 
 ```

@@ -78,7 +78,7 @@ Udev itself included a utility called `/lib/udev/modem-modeswitch`. In udev 157 
 
 ## Connection
 
-In general, at this point you should note if [#Mode Switching](#Mode_Switch) left you with additional /dev/ttyUSB* serial like device, or an Ethernet like device, such as en* interface. You can do that by shell commands such as
+In general, at this point you should note if [#Mode switchinging](#Mode_switching) left you with additional /dev/ttyUSB* serial like device, or an Ethernet like device, such as en* interface. You can do that by shell commands such as
 
 ```
 $ ls /dev/ttyUSB*
@@ -86,7 +86,7 @@ $ ip link
 
 ```
 
-, or with [journalctl](/index.php/Journalctl "Journalctl"). And follow [Network Configuration](/index.php/Network_Configuration "Network Configuration") accordingly. Some further notes are:
+, or with [journalctl](/index.php/Journalctl "Journalctl"). And follow [Network configuration](/index.php/Network_configuration "Network configuration") accordingly. Some further notes are:
 
 ### Serial like interface
 

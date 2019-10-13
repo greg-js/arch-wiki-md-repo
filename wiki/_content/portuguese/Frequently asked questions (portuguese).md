@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=566736) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2019-10-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=585498) na versão em inglês.
 
 Artigos relacionados
 
@@ -40,7 +40,6 @@ Artigos relacionados
     *   [2.10 Uma atualização de pacote foi lançada, mas o pacman diz que o sistema está atualizado](#Uma_atualização_de_pacote_foi_lançada,_mas_o_pacman_diz_que_o_sistema_está_atualizado)
     *   [2.11 Upstream do projeto *X* lançou uma nova versão. Quanto tempo vai levar para o pacote do Arch ser atualizado para essa nova versão?](#Upstream_do_projeto_X_lançou_uma_nova_versão._Quanto_tempo_vai_levar_para_o_pacote_do_Arch_ser_atualizado_para_essa_nova_versão?)
     *   [2.12 Se eu precisar de uma versão mais antiga de uma biblioteca instalada, posso simplesmente fazer um link simbólico para a versão mais recente?](#Se_eu_precisar_de_uma_versão_mais_antiga_de_uma_biblioteca_instalada,_posso_simplesmente_fazer_um_link_simbólico_para_a_versão_mais_recente?)
-    *   [2.13 Por que há pacotes não essenciais (p.ex., netctl) no grupo base?](#Por_que_há_pacotes_não_essenciais_(p.ex.,_netctl)_no_grupo_base?)
 *   [3 Instalação](#Instalação)
     *   [3.1 O Arch precisa de um instalador. Talvez um instalador gráfico?](#O_Arch_precisa_de_um_instalador._Talvez_um_instalador_gráfico?)
     *   [3.2 Eu instalei o Arch e agora eu estou em um shell! O que faço agora?](#Eu_instalei_o_Arch_e_agora_eu_estou_em_um_shell!_O_que_faço_agora?)
@@ -95,7 +94,7 @@ Envolva-se, contribua seu código/solução para a comunidade. Se for bem aceito
 
 ### Quando o novo lançamento estará disponível?
 
-Os lançamentos do Arch Linux são apenas um ambiente *live* para instalação ou resgate, que inclui o grupo [base](https://www.archlinux.org/groups/x86_64/base/) e alguns [outros pacotes](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64). Os lançamentos são geralmente emitidos na primeira metade de cada mês.
+Os lançamentos do Arch Linux são apenas um ambiente *live* para instalação ou resgate, que inclui o [metapacote](/index.php/Metapacote "Metapacote") [base](https://www.archlinux.org/packages/?name=base) e alguns [outros pacotes](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64). Os lançamentos são geralmente emitidos na primeira metade de cada mês.
 
 ### O Arch Linux é uma distribuição estável? Vou presenciar frequentes quebras?
 
@@ -213,14 +212,6 @@ Se você tiver sorte, pode funcionar por um tempo. Independentemente disso, não
 *   Uma alternativa de colocar o arquivo da antigo biblioteca no sistema de arquivos, sem rastreamento, poderia ser esquecida e potenciais bugs de segurança não seriam notados/corrigidos.
 
 Em vez disso, prefira algo como, por exemplo, usar/escrever um [pacote compat](https://aur.archlinux.org/packages/?SeB=n&K=compat), que fornece a versão necessária da biblioteca.
-
-### Por que há pacotes não essenciais (p.ex., netctl) no grupo base?
-
-Há propostas para melhorar isso. Algumas discussões da lista de discussão:
-
-[https://lists.archlinux.org/pipermail/arch-dev-public/2019-January/029435.html](https://lists.archlinux.org/pipermail/arch-dev-public/2019-January/029435.html)
-
-[https://lists.archlinux.org/pipermail/arch-dev-public/2019-February/029452.html](https://lists.archlinux.org/pipermail/arch-dev-public/2019-February/029452.html)
 
 ## Instalação
 

@@ -9,7 +9,11 @@ Related articles
 
 本文介绍了一些常规的故障排除方法。有关特定应用程序的问题，请参阅该特定程序的 wiki 页面。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 常用手段](#常用手段)
     *   [1.1 注意细节](#注意细节)
@@ -232,11 +236,11 @@ kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
 kernel: CR2: 0000000000000000 CR3: 00000007c6456000 CR4: 00000000001406e0
 kernel: Call Trace:
 **kernel:  do_one_initcall+0x50/0x190** [4]
-kernel:  ? do_init_module+0x27/0x1f2
+kernel:  ? do_init_module+0x27/0x1f2
 kernel:  do_init_module+0x5f/0x1f2
 kernel:  load_module+0x23f3/0x2be0
 kernel:  SYSC_init_module+0x16b/0x1a0
-kernel:  ? SYSC_init_module+0x16b/0x1a0
+kernel:  ? SYSC_init_module+0x16b/0x1a0
 kernel:  SyS_init_module+0xe/0x10
 kernel:  entry_SYSCALL_64_fastpath+0x1a/0xa5
 kernel: RIP: 0033:0x7f301f3a2a0a
@@ -292,7 +296,7 @@ kernel: ---[ end Kernel panic - not syncing: Fatal exception
 
 *fuser* 是一个用于识别进程占用的资源（如打开的文件、文件系统和 TCP/UDP 端口）的命令行工具。
 
-*fuser* 由软件包 [psmisc](https://www.archlinux.org/packages/?name=psmisc) 提供，已经由 [base](https://www.archlinux.org/groups/x86_64/base/) 组安装。更多信息请查看 [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1)。
+*fuser* 由软件包 [psmisc](https://www.archlinux.org/packages/?name=psmisc) 提供，已经由 [base](https://www.archlinux.org/packages/?name=base) 组安装。更多信息请查看 [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1)。
 
 ## 会话权限
 

@@ -255,7 +255,7 @@ Un servidor de seguridad puede proporcionar una capa de protección adicional so
 
 Para compartir archivos entre las máquinas en una red, siga el artículo [NFS](/index.php/NFS_(Espa%C3%B1ol) "NFS (Español)") o el [SSHFS](/index.php/SSHFS_(Espa%C3%B1ol) "SSHFS (Español)").
 
-Utilice [Samba](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") para unirse a una red de Windows. Para configurar la máquina para utilizar la autenticación de Active Directory, véase [integración con Active Directory](/index.php/Active_Directory_Integration "Active Directory Integration").
+Utilice [Samba](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") para unirse a una red de Windows. Para configurar la máquina para utilizar la autenticación de Active Directory, véase [integración con Active Directory](/index.php/Active_Directory_integration "Active Directory integration").
 
 Véase también la categoría sobre [compartir recursos](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)").
 

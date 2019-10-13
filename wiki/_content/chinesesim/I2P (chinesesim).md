@@ -6,18 +6,22 @@
 
 	许多有I2P接口的应用程序都可用，包括邮件，P2P，IRC聊天等等。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 使用](#.E4.BD.BF.E7.94.A8)
-*   [3 匿名站点](#.E5.8C.BF.E5.90.8D.E7.AB.99.E7.82.B9)
-*   [4 参见](#.E5.8F.82.E8.A7.81)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 使用](#使用)
+*   [3 匿名站点](#匿名站点)
+*   [4 参见](#参见)
 
 ## 安装
 
 I2P可用于提供编译的 [i2p](https://aur.archlinux.org/packages/i2p/)包 源代码和提供预编译二进制文件的 [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/)包; 两者都需要[Java]运行时环境，可以使用OpenJDK，对于ARM平台推荐使用Oracle Java。 I2P主页还提供用于在用户主目录中进行命令行（无头）安装的预编译二进制包。 如果安装类型I2P将通过i2p网络自动更新。
 
-如果这些Java实现是不可取的; [i2pd](https://aur.archlinux.org/packages/i2pd/)是一个完整的C ++客户端，可以适应资源有限的硬件。
+如果这些Java实现是不可取的; [i2pd](https://www.archlinux.org/packages/?name=i2pd)是一个完整的C ++客户端，可以适应资源有限的硬件。
 
 ## 使用
 

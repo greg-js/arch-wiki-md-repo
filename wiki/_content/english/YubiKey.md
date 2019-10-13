@@ -218,7 +218,7 @@ If the transport mode OTP is enabled, the two YubiKey Slots, long press and shor
 
 #### Configuration of the slots
 
-These slots can have one of the following credentials configured: a [Yubico OTP](https://developers.yubico.com/OTP/) (which is what comes preconfigured in the short press slot on a new key), a static password, a challenge-response credential, an OATH-HOTP credential. All this functionality is found in the `ykman slot` commands.
+These slots can have one of the following credentials configured: a [Yubico OTP](https://developers.yubico.com/OTP/) (which is what comes preconfigured in the short press slot on a new key), a static password, a challenge-response credential, an OATH-HOTP credential. All this functionality is found in the `ykman otp` commands.
 
 **Note:** A slot has either a Yubico OTP or a challenge-response credential configured. More general: One, and only one, type of the above listed possible credential per slot.
 
@@ -490,7 +490,7 @@ For a native open-source implementation of KeePass have a look at:
 [keepassxc](https://www.archlinux.org/packages/?name=keepassxc) ([see keepassxc.org](https://keepassxc.org/)) a KeePassX fork that integrated YubiKey into KeePassX v2.
 The integration covers Challenge-Response as security factor to open the database, but also the generation of OTP using the YubiKey.
 
-In order to have a KeePassXC database work on Android (using the [Keepass2Android app](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)), you need to use version 1.06 ([currently in beta](https://play.google.com/apps/testing/keepass2android.keepass2android); 1.06b) of the app. You also need to save the database file in the KDBX 4 format, since Keepass2Android do not support the KDBX 3 format.
+In order to have a KeePassXC database work on Android (using the [Keepass2Android app](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)), you need to use version 1.06 of the app. You also need to save the database file in the KDBX 4 format, since Keepass2Android do not support the KDBX 3 format.
 
 YubiKey support in Keepass2Android (which is compatible with KeePassXC) is tracked [on GitHub](https://github.com/PhilippC/keepass2android/issues/4).
 

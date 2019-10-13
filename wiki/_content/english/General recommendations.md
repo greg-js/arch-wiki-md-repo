@@ -252,7 +252,7 @@ A firewall can provide an extra layer of protection on top of the Linux networki
 
 To share files among the machines in a network, follow the [NFS](/index.php/NFS "NFS") or the [SSHFS](/index.php/SSHFS "SSHFS") article.
 
-Use [Samba](/index.php/Samba "Samba") to join a Windows network. To configure the machine to use Active Directory for authentication, read [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration").
+Use [Samba](/index.php/Samba "Samba") to join a Windows network. To configure the machine to use Active Directory for authentication, read [Active Directory integration](/index.php/Active_Directory_integration "Active Directory integration").
 
 See also [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
 

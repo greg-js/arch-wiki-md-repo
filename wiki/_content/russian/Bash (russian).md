@@ -1,13 +1,14 @@
-Related articles
+Ссылки по теме
 
-*   [Bash/Functions](/index.php/Bash/Functions "Bash/Functions")
-*   [Environment variables](/index.php/Environment_variables "Environment variables")
-*   [Readline](/index.php/Readline "Readline")
-*   [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt")
+*   [Bash/Функции](/index.php/Bash/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8 "Bash/Функции")
+*   [Bash/Настройка приглашения](/index.php/Bash/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8%D0%B3%D0%BB%D0%B0%D1%88%D0%B5%D0%BD%D0%B8%D1%8F "Bash/Настройка приглашения")
+*   [Переменные окружения](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F "Переменные окружения")
+*   [Readline (Русский)](/index.php/Readline_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Readline (Русский)")
 *   [Fortune](/index.php/Fortune "Fortune")
-*   [Pkgfile](/index.php/Pkgfile "Pkgfile")
+*   [pkgfile (Русский)](/index.php/Pkgfile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pkgfile (Русский)")
+*   [Командная оболочка](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B0 "Командная оболочка")
 
-**Bash** (Bourne-again Shell) - это [оболочка командной строки](/index.php/Command-line_shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Command-line shell (Русский)")/язык программирования, созданная [GNU Project](/index.php/GNU_Project "GNU Project"). Название является отсылкой к предшественнику - давно устаревшей Bourne shell. Bash можно запустить на большинстве UNIX-like систем, включая GNU/Linux.
+**Bash** (Bourne-again Shell) — [оболочка командной строки](/index.php/Command-line_shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Command-line shell (Русский)")/язык программирования, созданная [GNU Project](/index.php/GNU_Project "GNU Project"). Название является отсылкой к предшественнику - давно устаревшей Bourne shell. Bash можно запустить на большинстве UNIX-like систем, включая GNU/Linux.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

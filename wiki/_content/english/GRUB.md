@@ -943,3 +943,4 @@ See [this blog post](https://blog.stigok.com/2017/12/30/decrypt-and-mount-luks-d
 *   [Wikipedia:BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [How to configure GRUB](http://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme)
 *   [Boot with GRUB](http://www.linuxjournal.com/article/4622)
+*   [Detecting efi files and booting them from grub](https://forum.manjaro.org/t/detecting-efi-files-and-booting-them-from-grub/38083)

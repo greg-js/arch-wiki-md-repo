@@ -2,7 +2,11 @@ Il riepilogo in basso è utile per compilare kernel personalizzati da **kernel.o
 
 Alternativamente, si puù usare ABS per compilare ed installare il proprio kernel; vedere: [Kernels (Italiano)#Compilazione](/index.php/Kernels_(Italiano)#Compilazione "Kernels (Italiano)"). Usare l'esistente PKGBUILD di [linux](https://www.archlinux.org/packages/?name=linux) automatizzerà quasi tutto il processo e si otterrà un pacchetto. Tuttavia, alcuni utenti Arch preferiscono la via *tradizionale*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Recupero dei sorgenti](#Recupero_dei_sorgenti)
     *   [1.1 Riguardo /usr/src/](#Riguardo_/usr/src/)

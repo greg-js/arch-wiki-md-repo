@@ -15,7 +15,11 @@
 
 **註記:** ABS 一天同步一次，因此它和軟體庫上的版本稍微會有一點差距。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 什麼是 Arch 組建系統？](#什麼是_Arch_組建系統？)
     *   [1.1 什麼是類似 ports 的系統?](#什麼是類似_ports_的系統?)
@@ -111,7 +115,7 @@ ABS 並非 Arch Linux 下必需功能，但它是相當好用的原始碼編譯�
 移除適當軟體庫前面的 `!`。舉例來說：
 
 ```
-REPOS=(core extra community !testing)
+REPOS=(core extra community !testing)
 
 ```
 
@@ -186,7 +190,7 @@ PACKAGER="myname <myemail@myserver.com>"
 ```
 
 ```
-$ expac "%n %p" | grep "myname" | column -t
+$ expac "%n %p" | grep "myname" | column -t
 archey3 myname
 binutils myname
 gcc myname
@@ -255,7 +259,7 @@ $ makepkg -s
 
 ```
 
-**註記:** 若出現缺少的 (make) 相依性，請記得，預設假定所有的 Arch Linux 系統已經安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 群組。當使用 **makepkg** 組建時也假定已安裝 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 群組。參閱[#安裝工具](#安裝工具)。
+**註記:** 若出現缺少的 (make) 相依性，請記得，預設假定所有的 Arch Linux 系統已經安裝 [base](https://www.archlinux.org/packages/?name=base) 群組。當使用 **makepkg** 組建時也假定已安裝 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 群組。參閱[#安裝工具](#安裝工具)。
 
 以 root 身分安裝：
 

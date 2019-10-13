@@ -5,7 +5,7 @@ Related articles
 *   [Vulkan](/index.php/Vulkan "Vulkan")
 *   [Wayland](/index.php/Wayland "Wayland")
 
-**Navi 10** is the GPU architecture featured in AMD's [Radeon RX 5000 series](https://en.wikipedia.org/wiki/AMD_Radeon_5000_series). Since it's very new hardware, software support for it is not yet completely ready. This page will lay out the procedure to make Navi 10 based GPUs work under Arch Linux.
+**Navi 10** is the GPU architecture featured in AMD's [Radeon RX 5000 series](https://en.wikipedia.org/wiki/AMD_Radeon_5000_series "wikipedia:AMD Radeon 5000 series"). Since it's very new hardware, software support for it is not yet completely ready. This page will lay out the procedure to make Navi 10 based GPUs work under Arch Linux.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -65,10 +65,11 @@ SigLevel = Optional
 
 ```
 
-Then update your system and install the following packages, replacing anything it prompts to:
+Then update your system and install the following packages in the following order, replacing anything it prompts to:
 
 ```
-amdvlk clang-git libclc-git libdrm-git llvm-git llvm-libs-git mesa-git opencl-mesa-git vulkan-mesa-layer-git vulkan-radeon-git xf86-video-amdgpu-git lib32-mesa-git lib32-mesa-git lib32-vulkan-radeon-git lib32-vulkan-mesa-layer-git
+1\. mesa-git
+2\. amdvlk clang-git libclc-git libdrm-git llvm-libs-git  opencl-mesa-git vulkan-mesa-layer-git vulkan-radeon-git xf86-video-amdgpu-git lib32-mesa-git lib32-vulkan-radeon-git lib32-vulkan-mesa-layer-git
 
 ```
 
@@ -78,7 +79,7 @@ These packages will provide support for the latest mesa stack, as well as suppor
 
 You need LLVM 9.0 or newer: [[1]](https://releases.llvm.org/9.0.0/docs/ReleaseNotes.html#changes-to-the-amdgpu-target)
 
-This should be selected as a dependency for [mesa](https://www.archlinux.org/packages/?name=mesa) / [mesa-git](https://aur.archlinux.org/packages/mesa-git/) above, either provided by the [llvm-git](https://aur.archlinux.org/packages/llvm-git/) family of packages, or via [llvm](https://www.archlinux.org/packages/?name=llvm) when 9.0 is considered stable by its archlinux maintainer
+This should be selected as a dependency for [mesa](https://www.archlinux.org/packages/?name=mesa) / [mesa-git](https://aur.archlinux.org/packages/mesa-git/) above, either provided by the [llvm-git](https://aur.archlinux.org/packages/llvm-git/) family of packages, or via [llvm](https://www.archlinux.org/packages/?name=llvm).
 
 ### AMDGPU PRO
 

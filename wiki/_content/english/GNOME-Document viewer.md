@@ -18,6 +18,7 @@ Document viewer uses the poppler library as a backend.
     *   [2.4 Inverse search with SyncTeX doesn't work](#Inverse_search_with_SyncTeX_doesn't_work)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Annotation handling](#Annotation_handling)
+    *   [3.2 Use as default PDF viewer](#Use_as_default_PDF_viewer)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -68,6 +69,17 @@ The default author for note text animations is equal to the [GECOS comment](/ind
 usermod -c “Your full new Real Name” yourusername
 
 ```
+
+### Use as default PDF viewer
+
+To set the default association for [xdg-open](/index.php/Default_applications#xdg-open "Default applications"),
+
+```
+xdg-mime default org.gnome.Evince.desktop application/pdf
+
+```
+
+[Other resource openers](/index.php/Default_applications "Default applications") can be configured similarly.
 
 ## See also
 

@@ -43,7 +43,7 @@ Artículos relacionados
 
 ## Instalación
 
-El paquete [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) es parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/), por lo tanto ya esta [instalado](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") en su sistema.
+El paquete [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) es parte del grupo [base](https://www.archlinux.org/packages/?name=base), por lo tanto ya esta [instalado](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") en su sistema.
 
 [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) es una interfaz [GTK](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") del demonio *dhcpcd*, y opcionalmente [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)"). Estas interfaces ofrecen un diálogo de configuración y la capacidad de introducir una contraseña para las redes inalámbricas.
 

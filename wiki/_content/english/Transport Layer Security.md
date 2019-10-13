@@ -23,7 +23,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security 
 
 ## Implementations
 
-There are four TLS implementations available in the [official repositories](/index.php/Official_repositories "Official repositories"). OpenSSL and GnuTLS might already be installed on your system as they are required by many packages in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+There are four TLS implementations available in the [official repositories](/index.php/Official_repositories "Official repositories"). OpenSSL should already be installed on your system as it is an indirect dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package") ([base](https://www.archlinux.org/packages/?name=base) > [coreutils](https://www.archlinux.org/packages/?name=coreutils) > [openssl](https://www.archlinux.org/packages/?name=openssl)). GnuTLS might already be installed on your system as it is required by many packages.
 
 *   **[OpenSSL](/index.php/OpenSSL "OpenSSL")** — A robust, commercial-grade, and full-featured toolkit for the TLS and SSL protocols; also a general-purpose cryptography library.
 
@@ -43,7 +43,7 @@ There are four TLS implementations available in the [official repositories](/ind
 
 ## Certificate authorities
 
-With TLS one of a set of [certificate authorities](https://en.wikipedia.org/wiki/Certificate_authority "wikipedia:Certificate authority") (CAs) signs for the authenticity of a [public key certificate](https://en.wikipedia.org/wiki/public_key_certificate "wikipedia:public key certificate") from a server. A client system connecting to the server via TLS may verify its certificate's authenticity by relying on a CA certificate obtained via a separate path. On Arch Linux the certificate authorities are provided by the [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates) package, which is indirectly part of the [base group](/index.php/Base_group "Base group"), because of the dependency chain ([pacman](/index.php/Pacman "Pacman") > [curl](https://www.archlinux.org/packages/?name=curl) > [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates)), and has the following dependency tree (excerpt):
+With TLS one of a set of [certificate authorities](https://en.wikipedia.org/wiki/Certificate_authority "wikipedia:Certificate authority") (CAs) signs for the authenticity of a [public key certificate](https://en.wikipedia.org/wiki/public_key_certificate "wikipedia:public key certificate") from a server. A client system connecting to the server via TLS may verify its certificate's authenticity by relying on a CA certificate obtained via a separate path. On Arch Linux the certificate authorities are provided by the [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates) package, which is most likely already installed because of the dependency chain ([pacman](/index.php/Pacman "Pacman") > [curl](https://www.archlinux.org/packages/?name=curl) > [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates)), and has the following dependency tree (excerpt):
 
 *   [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates)
     Is just an anchor point, other packages depend on.

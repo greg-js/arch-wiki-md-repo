@@ -11,7 +11,11 @@ makepkg è utilizzato per compilare e creare pacchetti installabili da [Pacman](
 
 makepkg è incluso nel pacchetto [pacman](https://www.archlinux.org/packages/?name=pacman).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configurazione](#Configurazione)
     *   [1.1 Flag di compilazione e architettura](#Flag_di_compilazione_e_architettura)
@@ -23,7 +27,7 @@ makepkg è incluso nel pacchetto [pacman](https://www.archlinux.org/packages/?na
     *   [3.1 Sostituzione automatica checksums nel PKGBUILD](#Sostituzione_automatica_checksums_nel_PKGBUILD)
         *   [3.1.1 Opzione 1](#Opzione_1)
         *   [3.1.2 Opzione 2](#Opzione_2)
-    *   [3.2 ATTENZIONE: Il pacchetto contiene riferimenti a $srcdir](#ATTENZIONE:_Il_pacchetto_contiene_riferimenti_a_.24srcdir)
+    *   [3.2 ATTENZIONE: Il pacchetto contiene riferimenti a $srcdir](#ATTENZIONE:_Il_pacchetto_contiene_riferimenti_a_$srcdir)
 *   [4 Altre risorse](#Altre_risorse)
 
 ## Configurazione
@@ -146,7 +150,7 @@ Ciò è utile se più utenti compilano pacchetti su un sistema, o si stanno dist
 
 ### Controllo firma
 
-La procedura che segue non è necessaria per compilare con makepkg, per la configurazione iniziale procedere con [Utilizzo](#Usage_.28Italiano.29). Per disabilitare temporaneamente il controllo della firma, richiamare il comando di makpkg con l'opzione `--skippgpcheck`.
+La procedura che segue non è necessaria per compilare con makepkg, per la configurazione iniziale procedere con [Utilizzo](#Usage_(Italiano)). Per disabilitare temporaneamente il controllo della firma, richiamare il comando di makpkg con l'opzione `--skippgpcheck`.
 
 Se il file della firma con estensione .sig è parte dell'array sorgenti del [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)"), makepkg valida l'autenticità dei file sorgente. Ad esempio, la firma pkgname-pkgver.tar.gz.sig è utilizzata per controllare l'integrità del file pkgname-pkgver.tar.gz con il programma gpg. Se si vuole, le firme di altri sviluppatori possono essere aggiunte manualmente al keyring gpg. Per maggiori informazioni vedere l'articolo [GnuPG](/index.php/GnuPG "GnuPG").
 
@@ -193,7 +197,7 @@ Prima di continuare, assicurarsi che sia installato il gruppo di strumenti [base
 
 ```
 
-**Nota:** Prima di lamentarsi di eventuali mancanze di (make)dipendenze, ricordare che si assume che il gruppo di pacchetti [base](https://www.archlinux.org/groups/x86_64/base/) sia correttamente installato sul sistema Arch Linux. Il gruppo "base-devel" è fondamentale per poter compilare e creare pacchetti con **makepkg**.
+**Nota:** Prima di lamentarsi di eventuali mancanze di (make)dipendenze, ricordare che si assume che il gruppo di pacchetti [base](https://www.archlinux.org/packages/?name=base) sia correttamente installato sul sistema Arch Linux. Il gruppo "base-devel" è fondamentale per poter compilare e creare pacchetti con **makepkg**.
 
 Per creare un pacchetto, si deve innanzitutto creare un [PKGBUILD](/index.php/PKGBUILD_(Italiano) "PKGBUILD (Italiano)"), o creare uno script, così come descritto in [Creating Packages](/index.php/Creating_packages_(Italiano) "Creating packages (Italiano)"), oppure ottenerne uno da [ABS](/index.php/Arch_Build_System_(Italiano) "Arch Build System (Italiano)"), da [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"), o da altre fonti.
 

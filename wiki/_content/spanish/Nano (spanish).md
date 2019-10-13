@@ -1,6 +1,10 @@
 [GNU nano](http://www.nano-editor.org/) (o nano) es un editor de texto cuya finalidad es presentar una interface simple y opciones de comandos intuitivos de editores de textos basados en consola. *nano* incorpora características incluyendo resaltado colorida de sintaxis, conversión de tipos de archivos DOS/Mac, revisor de ortografía y codificación [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8"). *nano* inicia con un buffer vacío, normalmente ocupa menos de 1.5 MB de memoria.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -24,7 +28,7 @@
 
 ## Instalación
 
-Puedes [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [nano](https://www.archlinux.org/packages/?name=nano) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories"). Es probable que ya esté en tu sistema, está incluido en el grupo [base](https://www.archlinux.org/groups/x86_64/base/)
+Puedes [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [nano](https://www.archlinux.org/packages/?name=nano) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories"). Es probable que ya esté en tu sistema, está incluido en el grupo [base](https://www.archlinux.org/packages/?name=base)
 
 ## Configuración
 

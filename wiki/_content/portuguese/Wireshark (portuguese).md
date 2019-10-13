@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=573341) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=584509) na versão em inglês.
 
 O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de código aberto. Ele é usado para solucionar de problemas de rede, análise, desenvolvimento de software e protocolo de comunicação e educação.
 
@@ -22,7 +22,7 @@ O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de
 
 [Instale](/index.php/Instale "Instale") o pacote [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) para a GUI do Wireshark ou [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) para apenas a CLI `tshark`.
 
-**Nota:** A interface GTK+ obsoleta foi removida no Wireshark 3.0.
+**Nota:** A interface GTK obsoleta foi removida no Wireshark 3.0.
 
 ## Privilégios de captura
 
@@ -80,7 +80,7 @@ ip.src==192.168.0.0/16 and ip.dst==192.168.0.0/16
 
 ### Filtrar pacotes por porta
 
-Veja todo tráfego em 2 portas ou mais:
+Veja todo tráfego em duas portas ou mais:
 
 ```
 tcp.port==80||tcp.port==3306

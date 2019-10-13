@@ -7,6 +7,8 @@
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)")
 
+**Состояние перевода:** На этой странице представлен перевод статьи [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Дата последней синхронизации: 11 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=584410).
+
 Основную статью по настройке сети можно найти на странице [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
 Настройка беспроводного соединения происходит в два этапа. На первом этапе необходимо определить и установить правильный драйвер сетевого интерфейса (обычно драйвер находится на установочном носителе, но иногда его приходится устанавливать вручную), после чего произвести настройку. Второй этап заключается в выборе способа управления беспроводными соединениями. В этой статье описаны оба этапа, а также представлены ссылки на утилиты управления беспроводными соединениями.
@@ -81,7 +83,8 @@
         *   [7.4.2 iwlegacy](#iwlegacy)
         *   [7.4.3 iwlwifi](#iwlwifi)
             *   [7.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
-        *   [7.4.4 Disabling LED blink](#Disabling_LED_blink)
+            *   [7.4.3.2 Firmware stack traces](#Firmware_stack_traces)
+        *   [7.4.4 Отключение мерцания LED-индикатора](#Отключение_мерцания_LED-индикатора)
     *   [7.5 Broadcom](#Broadcom)
     *   [7.6 Other drivers/devices](#Other_drivers/devices)
         *   [7.6.1 Tenda w322u](#Tenda_w322u)
@@ -98,7 +101,7 @@
 
 Стандартное ядро Arch Linux имеет модульную архитектуру, поэтому многие драйверы для аппаратного обеспечения расположены на жёстком диске и доступны как [модули](/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0 "Модули ядра"). При загрузке менеджер устройств [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") определяет аппаратное обеспечение вашего компьютера и загружает соответствующие модули (драйверы), в результате чего создаётся сетевой *интерфейс*.
 
-Некоторым беспроводным устройствам для работы помимо драйвера необходима ещё и прошивка. Во входящем в группу [base](https://www.archlinux.org/groups/x86_64/base/) пакете [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) содержится большое количество образов прошивок, однако проприетаные прошивки в него не входят и должны устанавливаться отдельно. Подробное описание установки дано в разделе [#Установка драйвера/прошивки](#Установка_драйвера/прошивки).
+Некоторым беспроводным устройствам для работы помимо драйвера необходима ещё и прошивка. Во входящем в группу [base](https://www.archlinux.org/packages/?name=base) пакете [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) содержится большое количество образов прошивок, однако проприетаные прошивки в него не входят и должны устанавливаться отдельно. Подробное описание установки дано в разделе [#Установка драйвера/прошивки](#Установка_драйвера/прошивки).
 
 **Примечание:** Если нужный модуль не был загружен менеджером udev при старте системы, просто [загрузите его вручную](/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0#Управление_модулями_вручную "Модули ядра"). Иногда udev может загружать более одного драйвера для устройства, что приведёт к конфликту и помешает успешному конфигурированию. В этом случае [запретите загрузку](/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0#Запрет_загрузки "Модули ядра") ненужного модуля.
 
@@ -399,6 +402,63 @@ WPA2 Personal, или WPA2-PSK — одна из реализаций техно
 
 ### Соответствие регламентам
 
+Регулятивный домен ([regulatory domain](https://en.wikipedia.org/wiki/IEEE_802.11#Regulatory_domains_and_legal_compliance "wikipedia:IEEE 802.11")) — страны, совместно использующие общий регламент радиосвязи, определённый одним из регулятивных органов (FCC в США, ETSI для стран Европы и т.д.). С помощью параметра *regdomain* драйвер беспроводной сетевой платы настраивается в соответствии с местными законами. *Regdomain* использует двухбуквенные коды стран в соответствии с [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ru:ISO_3166-1_alpha-2 "wikipedia:ru:ISO 3166-1 alpha-2"). Например, *regdomain* для США обозначается "US", для России — "RU", и т.д.
+
+*Regdomain* определяет доступность беспроводных каналов. Так, на частоте 2.4GHz разрешено использовать каналы 1-11 в США, 1-14 — в Японии, и каналы 1-13 в большей части остального мира. На частоте 5GHz правила доступа к каналам несколько сложнее. В Википедии можно найти подробную информацию о доступности каналов: [[1]](https://en.wikipedia.org/wiki/List_of_WLAN_channels "wikipedia:List of WLAN channels"), [[2]](https://en.wikipedia.org/wiki/ru:Wi-Fi#.D0.AE.D1.80.D0.B8.D0.B4.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81 "wikipedia:ru:Wi-Fi").
+
+Принадлежность к домену также определяет предельное значение [эквивалентной изотропно-излучаемой мощности](https://en.wikipedia.org/wiki/ru:%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B8%D0%B7%D0%BE%D1%82%D1%80%D0%BE%D0%BF%D0%BD%D0%BE_%D0%B8%D0%B7%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D0%BC%D0%B0%D1%8F_%D0%BC%D0%BE%D1%89%D0%BD%D0%BE%D1%81%D1%82%D1%8C "wikipedia:ru:Эффективная изотропно излучаемая мощность") (Equivalent Isotropically Radiated Power, EIRP) беспроводных устройств. Это значение определяет мощность сигнала и измеряется в единицах [дБм](https://en.wikipedia.org/wiki/ru:%D0%94%D0%B5%D1%86%D0%B8%D0%B1%D0%B5%D0%BB#.D0.9E.D0.BF.D0.BE.D1.80.D0.BD.D1.8B.D0.B5_.D0.B2.D0.B5.D0.BB.D0.B8.D1.87.D0.B8.D0.BD.D1.8B_.D0.B8_.D0.BE.D0.B1.D0.BE.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8F_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5.D0.B9 "wikipedia:ru:Децибел") или мВт. На частоте 2.4GHz максимальное значение мощности составляет 30дБм в США и Канаде, 20дБм в большинстве стран Европы, и 20-30дБм в остальном мире. На частоте 5GHz максимумы обычно выше. Допустимые значения мощности можно найти в [этой базе данных](http://git.kernel.org/cgit/linux/kernel/git/linville/wireless-regdb.git/tree/db.txt) (значения дБм во втором наборе скобок в каждой линии).
+
+В некоторых случаях может быть полезно указать неверный *regdomain* — например, чтобы получить воможность осуществлять передачу через неиспользуемый канал, если остальные каналы перегружены, или чтобы повысить мощность и, как следствие, дальность передачи. Однако делать это **не рекомендуется**, поскольку это приведёт к нарушению местного законодательства и может нарушить работу других радио-устройстств.
+
+Для настройки *regdomain* установите пакет [crda](https://www.archlinux.org/packages/?name=crda) и перезагрузитесь, чтобы перезапустить модуль `cfg80211` и все относящиеся к нему драйвера. Проверьте лог загрузки, чтобы убедиться, что CRDA был запущен модулем `cfg80211`:
+
+```
+$ dmesg | grep cfg80211
+
+```
+
+Назначьте *regdomain* (например, для США):
+
+```
+# iw reg set US
+
+```
+
+И проверьте настройки:
+
+```
+$ iw reg get
+
+```
+
+**Примечание:** По умолчанию ваше устройство может быть настроено на "страну 00", которая означает условный "мировой домен" и содержит обобщённые настройки. Если изменить этот параметр не удаётся, то скорее всего причиной неправильная настройка CRDA.
+
+В некоторых случаях настройку *regdomain* изменить не получится. В некоторых устройствах параметр домена зашит в прошивку/EEPROM, что ограничивает поведение устройства. В данном случае изменение домена в ПО может только [ужесточить ограничения](http://wiki.openwrt.org/doc/howto/wireless.utilities#iw), но не ослабить их. Например, китайское (CN) устройство может быть настроено на домен US, но поднять максимум EIRP с 20дБм до разрешённого в США значения 30дБм не получится.
+
+Чтобы проверить, задан ли домен в прошивке устройства Atheros, выполните команду:
+
+```
+$ dmesg | grep ath:
+
+```
+
+Для других чипсетов в качестве паттерна поиска можно указать "EEPROM", "regdomain" или просто название драйвера устройства.
+
+Чтобы убедиться, что смена домена прошла успешно, и узнать количество доступных каналов и их разрешённую мощность, выполните
+
+```
+$ iw list | grep -A 15 Frequencies:
+
+```
+
+Постоянная настройка выполняется с помощью раскомментирования нужного домена в файле `/etc/conf.d/wireless-regdom`.
+
+[WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)") также может управлять доменом посредством строки `country=` в файле `/etc/wpa_supplicant/wpa_supplicant.conf`
+
+В модуле ядра [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) можно настроить домен, добавив [опцию](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Настройка_параметров_модуля "Kernel modules (Русский)") `options cfg80211 ieee80211_regdom=EU`. Это часть [старой реализации](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter) технологии регулятивного домена.
+
+Дополнительную информацию по настройке и использованию регулятивного домена можно найти в документации [wireless.kernel.org](http://wireless.kernel.org/en/developers/Regulatory/).
+
 ## Решение проблем
 
 В этом разделе содержатся основные рекомендации по решению проблем, не связанных непосредственно с драйверами и прошивками. Для получения такой информации смотрите следующий раздел [#Решение проблем с драйверами и прошивками](#Решение_проблем_с_драйверами_и_прошивками).
@@ -467,7 +527,7 @@ wlan0: deauthenticating from XX:XX:XX:XX:XX:XX by local choice (reason=3)
 
 ### Не удалось получить IP адрес
 
-*   Если получение IP адреса неоднократно не удаётся при использовании клиента по умолчанию [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), попробуйте установить и использовать [dhclient](https://www.archlinux.org/packages/?name=dhclient) вместо него. Не забудьте выбрать *dhclient* как первичный DHCP клиент в вашем [менеджере соединений](#Автоматическая_настройка)!
+*   Если получение IP адреса неоднократно не удаётся при использовании клиента по умолчанию [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), попробуйте установить и использовать [dhclient](https://www.archlinux.org/packages/?name=dhclient) вместо него. Не забудьте выбрать *dhclient* как первичный DHCP клиент в вашем [менеджере соединений](#Ручная/автоматическая_настройка)!
 
 *   Если вы можете получить IP для проводного интерфейса, но не можете для беспроводного, попробуйте отключить энергосберегающие функции вашей беспроводной карты:
 
@@ -561,167 +621,314 @@ ieee80211 phy0: wlan0: No probe response from AP xx:xx:xx:xx:xx:xx after 500ms, 
 
 #### rt2x00
 
-Для чипсетов Ralink (как rt2500,rt61,rt73 др.). Совместимы с wpa_supplicant, используют wext как интерфейс драйвера. Этот драйвер сейчас (в 2.6.24) является частью ядра и может быть загружен вручную например так...
+Единый драйвер для чипсетов Ralink, замещает драйвера `rt2500`, `rt61`, `rt73` и другие. Входит в ядро Linux начиная с версии 2.6.24\. Необходимо только загрузить нужный для вашей карты модуль — `rt2400pci`, `rt2500pci`, `rt2500usb`, `rt61pci` или `rt73usb`, а он уже автоматически подтянет соответствующие модули драйвера `rt2x00`.
 
- `modprobe rt2500pci` 
+Список поддерживаемых устройств можно найти на [странице проекта](https://web.archive.org/web/20150507023412/http://rt2x00.serialmonkey.com/wiki/index.php/Hardware).
 
-(замените при необходимости на rt2500pci например, т.е. rt2400pci, rt2500usb, rt61pci, rt73usb)
+	Примечания
 
-Для некоторых чипов необходимы прошивки (firmware). Смотри [rt2x00 статью wiki](/index.php/Using_the_new_rt2x00_beta_driver "Using the new rt2x00 beta driver").
+*   Начиная с версии ядра 3.0, rt2x00 включает также драйвера `rt2800pci` и `rt2800usb`.
+*   Начиная с версии ядра 3.0 the staging drivers `rt2860sta` и `rt2870sta` [были заменены](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=fefecc6989b4b24276797270c0e229c07be02ad3) by the mainline drivers `rt2800pci` и `rt2800usb` .
+*   Некоторые устройства имеют широкий набор опций, настроить их можно с помощью входящей в пакет [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) утилиты *iwpriv*.
 
 #### rt3090
 
+Для устройств с чипсетом rt3090 можно использовать драйвер `rt2800pci`, однако качественная работа не гарантирована (например, временами не удаётся получить скорость выше 2Mb/s).
+
 #### rt3290
+
+Чипсет rt3290 распознаётся модулем ядра `rt2800pci`, однако у некоторых могут возникнуть проблемы. В этом случае можно попробовать вернуться к проприетарным драйверам Ralink. [[2]](https://bbs.archlinux.org/viewtopic.php?id=161952)
 
 #### rt3573
 
+Чипсет 2012 года. Для стабильной работы могут потребоваться проприетарные драйвера Ralink, которые используются многими производителями беспроводного оборудования. [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1164228#p1164228)
+
 #### rt5572
+
+Чипсет 2012 года с поддержкой полосы пропускания 5GHz. Может потребоваться скомпилировать и установить проприетарные драйвера Ralink. Руководство по компиляции: [[4]](http://bernaerts.dyndns.org/linux/229-ubuntu-precise-dlink-dwa160-revb2).
 
 #### mt7612u
 
+Чипсет 2014 года, выпущенный под новым коммерческим именем Mediatek. Есть варианты чипсетов AC1200 или AC1300\. Производитель предлагает драйвера для Linux на [странице поддержки](https://www.mediatek.com/products/broadbandWifi/mt7612u).
+
 ### Realtek
+
+Список чипсетов Realtek и их спецификации: [[5]](https://wikidevi.com/wiki/Realtek).
 
 #### rtl8192cu
 
+Драйвер для этого чипсета включён в состав ядра, но иногда появляются проблема с установкой соединения (хотя сканирование активных сетей работает).
+
+В драйвер [8192cu-dkms](https://aur.archlinux.org/packages/8192cu-dkms/) вошли многие исправления; установите его, если входящий в ядро дравер работает плохо.
+
 #### rtl8723ae/rtl8723be
+
+Модули `rtl8723ae` и `rtl8723be` входят в mainline-ядро Linux.
+
+На картах с этими чипсетами возможны ошибки в работе функции энергосбережения. Это проявляется в случайных разрывах соединения, которые не обнаруживаются высокоуровневыми сетевыми менеджерами ([netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"), [NetworkManager](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)")). Обнаружить ошибку можно командами `dmesg -w` или `journalctl -f`, найдя сообщения, относящиеся к энергосбережению (powersave) и модулю `rtl8723ae`/`rtl8723be`. Если это ваш случай, используйте опцию ядра `fwlps=0`, чтобы предотвратить "засыпание" карты и разрывы соединения.
+
+ `/etc/modprobe.d/rtl8723ae.conf`  `options rtl8723ae fwlps=0` 
+
+или
+
+ `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
+
+Если у вас проблемы с качеством сигнала, возможно, у вашего устройства работает только одна антенна, а программный автовыбор антенны не работает. Вы можете вручную выбрать рабочую антенну параметрами ядра `ant_sel=1` или `ant_sel=2`. [[6]](https://bbs.archlinux.org/viewtopic.php?id=208472)
 
 #### rtl88xxau
 
+Чипсеты Realtek rtl8811au/rtl8812au/rtl8814au/rtl8821au разработаны для различных USB-адаптеров в диапазоне от AC600 до AC1900\. Драйвера к ним содержатся в нескольких пакетах:
+
+| Чипсет | Версия драйвера | Пакет | Примечания |
+| rtl8811au, rtl8812au, rtl8814au and rtl8821au | 5.6.4.1 | [rtl88xxau-aircrack-dkms-git](https://aur.archlinux.org/packages/rtl88xxau-aircrack-dkms-git/) | Модули ядра aircrack-ng для чипсетов 8811au, 8812au, 8814au и 8821au с режимом мониторинга и поддержкой инъекций (injection support). |
+| rtl8812au | 5.2.20 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | Последний официальный драйвер Realtek, *только* для rtl8812au. |
+| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | Рекомендуются только для rtl8812au версий 5.6.4.1 или 5.2.20. |
+| rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Возможно, работает также и для rtl8813au. Предположительно обладает лучшей работоспособностью, чем [rtl88xxau-aircrack-dkms-git](https://aur.archlinux.org/packages/rtl88xxau-aircrack-dkms-git/) |
+
+Воспользуйтесь [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)") чтобы убедиться, что установлены правильные заголовки ядра (kernel headers).
+
 #### rtl8822bu
+
+В пакет [rtl8822bu-dkms-git](https://aur.archlinux.org/packages/rtl8822bu-dkms-git/) входит модуль ядра для чипсета Realtek 8822bu, используемого в адаптерах Edimax EW7822ULC USB3 и Asus AC53 Nano USB 802.11ac.
 
 #### rtl8xxxu
 
+Проблемы с модулем ядра `rtl8xxxu` могут быть решены компиляцией стороннего модуля для специфического чипсета. Исходный код можно найти в [GitHub-репозитории](https://github.com/lwfinger?tab=repositories).
+
+Некоторые драйвера могут быть уже добавлены в АУР, например [rtl8723bu-git](https://aur.archlinux.org/packages/rtl8723bu-git/) или [rtl8723bu-git-dkms](https://aur.archlinux.org/packages/rtl8723bu-git-dkms/).
+
 ### Atheros
+
+Командой проекта [MadWifi](http://madwifi-project.org/) было создано три драйвера для устройств с чипсетом Atheros:
+
+*   `madwifi` — устаревший драйвер. Не входит в состав ядра Linux начиная с версии 2.6.39.1\. [[7]](https://mailman.archlinux.org/pipermail/arch-dev-public/2011-June/020669.html)
+*   `ath5k` — более новый драйвер, заменивший `madwifi`. Довольно неплох, но отсутствует поддержка некоторых чипсетов (см. ниже).
+*   `ath9k` — новейший из этих трёх драйверов, предназначен для последних чипсетов Atheros. Поддерживаются все платы с технологией 802.11n.
+
+Также существуют другие драйвера для устройств Atheros, найти их можно в [документации Linux Wireless](http://wireless.kernel.org/en/users/Drivers/Atheros#PCI_.2F_PCI-E_.2F_AHB_Drivers).
 
 #### ath5k
 
-Планируется, что с течением времени ath_pci станет частью истории, и его заменит ath5k. Для использования этого открытого драйвера добавьте его загрузку в rc.conf:
+Полезные ссылки:
+
+*   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
+*   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
+
+Если веб-страницы временами грузятся очень медленно, или если беспроводному устройству не удаётся получить динамический IP-адрес, попытайтесь переключиться с аппаратного шифрования на программное, загрузив модуль `ath5k` с опцией `nohwcrypt=1`. Подробнее см. [Kernel module#Настройка параметров модуля](/index.php/Kernel_module_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Настройка_параметров_модуля "Kernel module (Русский)").
+
+У некоторых ноутбуков может возникнуть проблема с LED-индикатором беспроводной связи, который постоянно мигает и становится то красным, то синим. Чтобы решить эту проблему, выполните:
 
 ```
-MODULES=(ath5k ... ...)
+# echo none > /sys/class/leds/ath5k-phy0::tx/trigger
+# echo none > /sys/class/leds/ath5k-phy0::rx/trigger
 
 ```
 
-Проверьте, что в секции MODULES отсутствуют параметры ath_hal и ath_pci.
+Альтернативное решение описано в [этом багрепорте](https://bugzilla.redhat.com/show_bug.cgi?id=618232).
 
 #### ath9k
 
-ath9k - это официальный драйвер компании Atheros для карт с новейшими 802.11n чипсетами (максимальная пропускная способность около 180 Мб/с). Чтобы просмотреть весь список поддерживаемого оборудования, проверьте [supported chipsets](http://wireless.kernel.org/en/users/Drivers/ath9k).
+Полезные ссылки:
 
-Доступные режимы: Station, AP и Adhoc.
+*   [http://wireless.kernel.org/en/users/Drivers/ath9k](http://wireless.kernel.org/en/users/Drivers/ath9k)
+*   [http://wiki.debian.org/ath9k](http://wiki.debian.org/ath9k)
 
-ath9k включен в состав ядра, начиная с версии 2.6.27\. Для дискуссий по поддержке и разработке создан [mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel).
+Начиная с версии ядра 3.15.1 некоторые пользователи ощутили уменьшение полосы пропускания. В некоторых случаях проблема может быть решена добавлением одной строки в файл `/etc/modprobe.d/ath9k.conf`:
+
+```
+options ath9k nohwcrypt=1
+
+```
+
+**Примечание:** Проверьте командой `lsmod` название используемого модуля; измените название, если оно отличается от `ath9k` (например, `ath9k_htc`).
+
+Если у вас проблемы со стабильностью соединения, можно попробовать установить пакет [backports-patched](https://aur.archlinux.org/packages/backports-patched/). Связаться с разработчиками и обсудить изменения можно через [почтовую рассылку](https://lists.ath9k.org/mailman/listinfo/ath9k-devel).
 
 ##### Power saving
+
+[Linux Wireless](http://wireless.kernel.org/en/users/Documentation/dynamic-power-save) утверждает, что динамическое энергосбережение включено для одноплатных Atheros ath9k новее версии AR9280, однако для некоторых устройств (например, AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) всё же сообщает, что энергосбережение отключено. В этом случае включите его вручную.
+
+На некоторых устройствах (например, AR9285) включение энергосбережения может привести к следующей ошибке:
+
+ `# iw dev wlan0 set power_save on` 
+```
+command failed: Operation not supported (-95)
+
+```
+
+Для решения необходимо установить опцию `ps_enable=1` для модуля `ath9k`:
+
+ `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=1` 
 
 ### Intel
 
 #### ipw2100 and ipw2200
 
-Смотря какой чипсет у вас имеется, используйте следующее:
+Эти модули полностью поддерживаются ядром, но для них необходима прошивка. В зависимости от вашего чипсета [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") либо [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw), либо [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Затем [перезапустите](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Управление_модулями_вручную "Kernel modules (Русский)") модуль.
 
-```
-pacman -S ipw2100-fw
+**Совет:** Можно также выбрать следующие [опции модуля](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Настройка_параметров_модуля "Kernel modules (Русский)"):
 
-```
-
-или:
-
-```
-pacman -S ipw2200-fw
-
-```
-
-Вам необходимо перезагрузиться, чтобы изменения были приняты.
+*   `rtap_iface=1` — включить radiotap-интерфейс.
+*   `led=1` — включить LED-индикатор наличия/отсутствия беспроводного соединения.
 
 #### iwlegacy
 
+[iwlegacy](http://wireless.kernel.org/en/users/Drivers/iwlegacy) — драйвер для чипов Intel версий 3945 и 4965\. Прошивки для них входят в пакет [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
+
+Менеджер устройств [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") должен загрузить драйвер автоматически, в противном случае загрузите `iwl3945` или `iwl4965` вручную. Подробнее см. [Kernel module](/index.php/Kernel_module_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel module (Русский)").
+
+Если у вас проблемы с подключением к сети вообще, случайные сбои карты во время загрузки, или просто очень низкое качество связи, попробуйте выключить 802.11n:
+
+ `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
+
+Если проблемы во время загрузки остались и вы используете драйвер Nouveau, попробуйте [включить KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau"), чтобы предотвратить конфликт оборудования. [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667)
+
 #### iwlwifi
+
+[iwlwifi](http://wireless.kernel.org/en/users/Drivers/iwlwifi) — беспроводной драйвер для современных беспроводных чипов Intel, таких как 5100AGN, 5300AGN и 5350AGN. Список поддерживаемых устройств: [[9]](http://wireless.kernel.org/en/users/Drivers/iwlwifi#Supported_Devices).
+
+Прошивки входят в пакет [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware). В пакете [linux-firmware-iwlwifi-git](https://aur.archlinux.org/packages/linux-firmware-iwlwifi-git/) могут содержаться последние обновления.
+
+Если у вас проблемы с соединением вообще или качество связи очень низкое, попробуйте отключить 802.11n и включить программное шифрование:
+
+ `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=1 swcrypto=1` 
+
+Если у вас проблемы с медленной скоростью uplink в режиме 802.11n, например 20 МБ/с, попробуйте включить antenna aggregation:
+
+ `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
+
+Если установить в значение `8` это не отключает ничего, но переподключает transmission antenna aggregation. [[10]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9), [[11]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+
+Если это не сработало, попытайтесь отключить [режим энергосбережения](/index.php/Power_saving#Network_interfaces "Power saving") беспроводного адаптера.
+
+Решить проблемы с помощью рекомендаций выше получается [не всегда](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473). У некоторых наладить беспроводную связь помогло отключение одной из опций в настройках маршрутизатора. По [ссылке](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) вы найдёте список опций работы устройств на частоте 5MHz, с которым имеет смысл поэкспериментировать.
 
 ##### Bluetooth coexistence
 
-#### Disabling LED blink
+Если у вас проблемы с подключением bluetooth-наушников и обслуживанию хорошей downlink скорости, попробуйте отключить bluetooth coexistence [[12]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+
+ `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
+
+##### Firmware stack traces
+
+У вас могут возникнуть проблемы выводом драйвера stack traces & errors, что может стать причиной "заикания".
+
+ `dmesg`  `Microcode SW error detected.  Restarting 0x2000000.` 
+
+Чтобы решить эту проблему, выполните downgrade пакета [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) или переименуйте последнюю версию прошивки вашего устройства, чтобы загрузилась старая версия (которая не входит в список игнорируемых [pacman'ом](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакетов).
+
+#### Отключение мерцания LED-индикатора
+
+**Примечание:** Помогает с драйверами `iwlegacy` и `iwlwifi`.
+
+Настройка модуля по умолчанию — мигание LED при работе. Некоторые находят это неприятным. Чтобы индикатор горел постоянно при работе Wi-Fi, можно использовать [временные файлы](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Временные_файлы "Systemd (Русский)"):
+
+ `/etc/tmpfiles.d/phy0-led.conf` 
+```
+w /sys/class/leds/phy0-led/trigger - - - - phy0radio
+
+```
+
+Чтобы изменения заработали, выполните `systemd-tmpfiles --create phy0-led.conf` или перезагрузитесь.
+
+Чтобы посмотреть все возможные триггеры LED-индикатора:
+
+```
+# cat /sys/class/leds/phy0-led/trigger
+
+```
+
+**Совет:** Если у вас нет файла `/sys/class/leds/phy0-led`, попробуйте опцию `led_mode="1"` [параметры модуля](/index.php/Kernel_module_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Настройка_параметров_модуля "Kernel module (Русский)"). Она должна работать для драйверов `iwlwifi` и `iwlegacy`.
 
 ### Broadcom
+
+Изучите статью [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless").
 
 ### Other drivers/devices
 
 #### Tenda w322u
 
+Для этой карты Tenda подходят рекомендации для `rt2870sta`. См. [#rt2x00](#rt2x00).
+
 #### orinoco
 
-Часть, которая идёт с пакетом ядра и уже должна быть установлена.
+Драйвера входят в пакет ядра и должны быть уже установлены.
+
+Среди чипсетов Orinoco есть чипы Hermes II. Для них можно использовать драйвер `wlags49_h2_cs` вместо `orinoco_cs`, если нужна поддержка WPA. Чтобы использовать драйвер, сначала установите [запрет загрузки](/index.php/%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8 "Запрет загрузки") `orinoco_cs`.
 
 #### prism54
 
-Скачайте файлы прошивки (firmware) для вашей карточки [с этого сайта](http://www.prism54.org/). Переименуйте файл прошивки в 'isl3890'. Если не существует, создайте директорию /lib/firmware и поместите файл 'isl3890' туда. Это должно быть сделано. ([forum source](https://bbs.archlinux.org/viewtopic.php?t=16569&start=0&postdays=0&postorder=asc&highlight=siocsifflags+such+file++directory))
+Драйвер `p54` входит в ядро, но вам придётся загрузить прошивку карты [с сайта](http://linuxwireless.org/en/users/Drivers/p54#firmware) и установить её в каталог `/usr/lib/firmware`.
+
+**Примечание:** Есть также старый драйвер `prism54`, который может конфликтовать с более новыми драйверами (`p54pci` или `p54usb`). Убедитесь, что установлен [запрет загрузки](/index.php/%D0%97%D0%B0%D0%BF%D1%80%D0%B5%D1%82_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8 "Запрет загрузки") `prism54`.
 
 #### ACX100/111
 
-Установите пакеты 'tiacx' и 'tiacx-firmware' из репозитория core.
+**Важно:** Драйвера для этих устройств [не работают](https://mailman.archlinux.org/pipermail/arch-dev-public/2011-June/020669.html) с последними версиями ядра.
 
-```
-pacman -S tiacx tiacx-firmware
+Пакеты: `tiacx` `tiacx-firmware` (удалены из официальных репозиториев и AUR)
 
-```
-
-Драйвер должен сказать, какая прошивка (firmware) ему необходима; проверьте /var/log/messages.log или через команду dmesg. Переместите прошивку в '/lib/firmware'. Я делаю так:
-
-```
-ln -s /usr/share/tiacx/acx111_2.3.1.31/tiacx111c16 /lib/firmware
-
-```
-
-Hint: Если драйвер захламляет лог ядра, например потому, что запущен Kismet, вы должны добавить следующее в /etc/modprobe.d/modprobe.conf:
-
-```
-options acx debug=0
-
-```
+См. также [официальную wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title=Main_Page).
 
 #### zd1211rw
 
-[zd1211rw](http://zd1211.wiki.sourceforge.net/) драйвер для ZyDAS ZD1211 802.11b/g USB WLAN чипсетов и он включен в ядро, в настоящее время. Смотри список поддерживаемого оборудования [здесь](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices). Только вам необходимо сначала установить файлы прошивки:
-
- `pacman -S zd1211-firmware` 
+[zd1211rw](http://zd1211.wiki.sourceforge.net/) — драйвер для ZyDAS ZD1211 802.11b/g USB WLAN чипсетов. В настоящее время включен в ядро. Список поддерживаемого оборудования можно найти [здесь](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices). Предварительно придётся [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") файлы прошивки из пакета [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/).
 
 #### hostap_cs
 
+[Host AP](http://hostap.epitest.fi/) — драйвер Linux для беспроводных карт на основе чипсета Intersil's Prism2/2.5/3\. Драйвер включён в ядро Linux.
+
 ### ndiswrapper
 
-Ndiswrapper не настоящий драйвер, но с ним вы можете использовать неродные Linux драйвера для ваших беспроводных устройств. Это очень помогает во многих ситуациях. Для использования его у вас должны быть *.inf файл из windows-драйверов (*.sys файл также должен присутствовать в этой же директории). Для установки ndiswrapper вам необходимо проделать следующие шаги:
+Ndiswrapper — скрипт-обёртка, который позволяет использовать некоторые драйвера Windows для Linux. Вам потребуются файлы `.inf` и `.sys` из драйвера Windows.
 
-Установить ndiswrapper используя pacman:
+**Важно:** Убедитесь, что драйвера соответствуют вашей архитектуре (x86 vs. x86_64).
 
- `pacman -S ndiswrapper ndiswrapper-utils` 
+**Совет:** Если вам нужно извлечь эти файлы из файла `*.exe`, то можно воспользоваться пакетом [cabextract](https://www.archlinux.org/packages/?name=cabextract).
 
-*Note:* Beyond kernel-ядру необходим пакет ndiswrapper-beyond вместо ndiswrapper!
+Выполните следующие шаги, чтобы настроить ndiswrapper.
 
-*Note:* Если у вас на машине нет доступа в интернет, вы можете скачать эти пакеты заранее к себе на компьютер с одного из зеркал, таких как [http://www2.cddc.vt.edu/linux/distributions/archlinux/extra/os/i686/](http://www2.cddc.vt.edu/linux/distributions/archlinux/extra/os/i686/) . (Note: это устаревшее зеркало, лучше использовать [ftp://ftp.archlinux.org/core/os/i686/](ftp://ftp.archlinux.org/core/os/i686/) ) Вам необходим пакет ndiswrapper (или ndiswrapper-beyond как было сказано выше) и пакет ndiswrapper-utils. Также вы можете скачать последнее ядро kernel26 (или beyond), т.к. на CD не всегда последнее ядро.
+1\. Установите [ndiswrapper-dkms](https://www.archlinux.org/packages/?name=ndiswrapper-dkms)
 
-Когда установка завершена, выполните следующие шаги для настройки ndiswrapper.
-
-```
-ndiswrapper -i filename.inf
-ndiswrapper -l
-ndiswrapper -m
-depmod -a
-```
-
-Сейчас установка ndiswrapper полностью завершена; вам только необходимо отредактировать /etc/rc.conf для загрузки модуля при старте системы (ниже приведён мой простейший конфиг; у вас может немного отличаться):
-
- `MODULES=(ndiswrapper snd-intel8x0 !usbserial)` 
-
-Важно убедиться, что ndiswrapper присутствует в этом списке, также добавить другие необходимые модули. Лучший способ проверить, что ndiswrapper загружен:
+2\. Установите драйвер в `/etc/ndiswrapper/*`
 
 ```
-modprobe ndiswrapper
-iwconfig
+# ndiswrapper -i filename.inf
+
 ```
 
-и wlan0 должен присутствовать. Посмотрите следующую страницу при обнаружении проблем: [Установка Ndiswrapper](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/).
+3\. Просмотрите все установленные драйвера для ndiswrapper
+
+```
+$ ndiswrapper -l
+
+```
+
+4\. Запишите настройки ndiswrapper в файл `/etc/modprobe.d/ndiswrapper.conf`:
+
+```
+# ndiswrapper -m
+# depmod -a
+
+```
+
+Теперь установка ndiswrapper почти завершена; следуйте инструкциям [Kernel module#Автоматическое управление модулями](/index.php/Kernel_module_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Автоматическое_управление_модулями "Kernel module (Русский)"), чтобы настроить автоматическую загрузку модуля при запуске системы.
+
+Важно убедиться, что ndiswrapper существует на этой линии (???), так что просто добавьте его к другим модулям. Чтобы убедиться, что ndiswrapper будет работать, выполните:
+
+```
+# modprobe ndiswrapper
+# iwconfig
+
+```
+
+Интерфейс *wlan0* теперь должен существовать. Если появились проблемы, полезную информацию можно найти на страницах [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) и [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
 
 ### backports-patched
+
+Пакет [backports-patched](https://aur.archlinux.org/packages/backports-patched/) содержит драйвера из новых версияй ядра, предназначенные для бэкпорта в системах со старым ядром. Проект стартовал в 2007 году и изначально назывался compat-wireless, затем compat-drivers, и в настоящее время переименован в backports.
+
+Если вы используете старую версию ядра и имеете проблемы с беспроводным соединением, то драйвера из этого пакета могут помочь.
 
 ## Смотрите также
 

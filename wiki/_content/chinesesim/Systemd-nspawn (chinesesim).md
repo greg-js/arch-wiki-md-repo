@@ -68,7 +68,7 @@ Related articles
 
 然后，创建一个目录来保存容器。在这个用例中我们将使用 `~/MyContainer`。
 
-接下来，我们使用 pacstrap 在容器中安装一个基本的arch系统。我们至少需要安装[base](https://www.archlinux.org/groups/x86_64/base/) 包组.
+接下来，我们使用 pacstrap 在容器中安装一个基本的arch系统。我们至少需要安装[base](https://www.archlinux.org/packages/?name=base) 包组.
 
 ```
 # pacstrap -i -c ~/MyContainer base [additional pkgs/groups]
@@ -77,7 +77,7 @@ Related articles
 
 **Tip:** `-i` 选项将**避免**自动确认包的选择。由于不需要在容器中安装 Linux 内核，因此可以从包列表选择中删除它以节省空间。详情见 [Pacman#Usage](/index.php/Pacman#Usage "Pacman")。
 
-**Note:** [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) 包被 [linux](https://www.archlinux.org/packages/?name=linux) 依赖，它被包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 包组中并且不是运行容器的关键，会导致 `systemd-tmpfiles-setup.service` 在 `systemd-nspawn` 的引导过程中会出现一些问题。在建立容器时安装 [base](https://www.archlinux.org/groups/x86_64/base/) 组但排除掉 [linux](https://www.archlinux.org/packages/?name=linux) 包以及他的依赖是有可能的，用 `pacstrap -i -c ~/MyContainer base --ignore linux [additional pkgs/groups]`。`--ignore` 标志将会非常简单的传达给 [pacman](https://www.archlinux.org/packages/?name=pacman)。详情见 [FS#46591](https://bugs.archlinux.org/task/46591)。
+**Note:** [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) 包被 [linux](https://www.archlinux.org/packages/?name=linux) 依赖，它被包含在 [base](https://www.archlinux.org/packages/?name=base) 包组中并且不是运行容器的关键，会导致 `systemd-tmpfiles-setup.service` 在 `systemd-nspawn` 的引导过程中会出现一些问题。在建立容器时安装 [base](https://www.archlinux.org/packages/?name=base) 组但排除掉 [linux](https://www.archlinux.org/packages/?name=linux) 包以及他的依赖是有可能的，用 `pacstrap -i -c ~/MyContainer base --ignore linux [additional pkgs/groups]`。`--ignore` 标志将会非常简单的传达给 [pacman](https://www.archlinux.org/packages/?name=pacman)。详情见 [FS#46591](https://bugs.archlinux.org/task/46591)。
 
 安装完成后，引导至容器中：
 

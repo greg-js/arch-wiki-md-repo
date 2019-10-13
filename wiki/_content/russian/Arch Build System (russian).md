@@ -10,6 +10,8 @@
 *   [PKGBUILD (Русский)](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)")
 *   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
 
+**Состояние перевода:** На этой странице представлен перевод статьи [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Дата последней синхронизации: 8 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=580621).
+
 Система сборки Arch (Arch Build System, ABS) предназначена для сборки пакетов в Arch Linux. Она представляет собой набор инструметов, целью которого является преобразование исходного кода программы в устанавливаемый двоичный .pkg.tar.xz пакет. С помощью инструментов ABS можно собирать пакеты из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), а также модифицированные пакеты, создаваемые пользователями под собственные нужды.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

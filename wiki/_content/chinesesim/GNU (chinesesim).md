@@ -11,7 +11,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/GNU "wikipedia:GNU"):
 
 因为GNU内核, [Hurd](https://www.gnu.org/s/hurd/hurd.html), 还没能生产 [[1]](https://www.gnu.org/software/hurd/hurd/status.html) GNU 通常使用 Linux 内核. [Arch Linux (简体中文)](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)") 就是这样一种 GNU/Linux 发行版, 使用的是比如说 [Bash (简体中文)](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)") shell, GNU 核心工具, the GNU 工具链和许多其他工具和库. 这个页面不打算列出所有 [将近400个](https://www.gnu.org/software/software.html#allgnupkgs) GNU 包，只列出一些重要的.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Texinfo](#Texinfo)
 *   [2 基本系统](#基本系统)
@@ -22,7 +26,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/GNU "wikipedia:GNU"):
 
 ## Texinfo
 
-GNU 软件是用 [Texinfo](https://en.wikipedia.org/wiki/Texinfo "wikipedia:Texinfo") 排版语法来编排的. 你可以通过`info` 程序查阅info文档, 这由 [texinfo](https://www.archlinux.org/packages/?name=texinfo) 包提供, 这是 [base](https://www.archlinux.org/groups/x86_64/base/)的一部分.
+GNU 软件是用 [Texinfo](https://en.wikipedia.org/wiki/Texinfo "wikipedia:Texinfo") 排版语法来编排的. 你可以通过`info` 程序查阅info文档, 这由 [texinfo](https://www.archlinux.org/packages/?name=texinfo) 包提供, 这是 [base](https://www.archlinux.org/packages/?name=base)的一部分.
 
 大部分GNU软件都提供了 [Man page (简体中文)](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Man page (简体中文)"), 这个Info文档更全面.
 
@@ -50,7 +54,7 @@ GNU 软件是用 [Texinfo](https://en.wikipedia.org/wiki/Texinfo "wikipedia:Texi
 
 ## 工具链
 
-大部分来自 [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain") 的工具都在 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 组里, 除了 *glibc* 在 [base](https://www.archlinux.org/groups/x86_64/base/)里而GBD都不在它们两个组里.
+大部分来自 [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain") 的工具都在 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 组里, 除了 *glibc* 在 [base](https://www.archlinux.org/packages/?name=base)里而GBD都不在它们两个组里.
 
 *   **[GNU make](https://en.wikipedia.org/wiki/Make_(software) "wikipedia:Make (software)")** — GNU make工具用于维护程序组.
 
@@ -62,7 +66,7 @@ GNU 软件是用 [Texinfo](https://en.wikipedia.org/wiki/Texinfo "wikipedia:Texi
 
 *   **[glibc](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library")** — GNU的C库实现 library.
 
-	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) ([base](https://www.archlinux.org/groups/x86_64/base/)的一部分)
+	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) ([base](https://www.archlinux.org/packages/?name=base)的一部分)
 
 *   **[GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils "wikipedia:GNU Binutils")** — 一组用来汇编和操作二进制和模板文件的程序。包括 [ld](https://en.wikipedia.org/wiki/GNU_linker "wikipedia:GNU linker").
 

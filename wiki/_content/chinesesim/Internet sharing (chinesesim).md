@@ -13,7 +13,11 @@ Related articles
 
 这篇文章解释了如何从一台机器向其他机器分享网络连接。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 依赖](#依赖)
 *   [2 配置](#配置)

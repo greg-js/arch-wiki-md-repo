@@ -1,6 +1,10 @@
 Arch Linux uses S-nail as its POSIX `mailx` incarnation. S-nail is MIME capable and has extensions for line editing, S/MIME, SMTP, IMAP, POP3, and more. Mailx is the *user side* of the Unix mail system, whereas the *system side* was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail"). S-nail can also send directly to external SMTP servers, so no local MTA is required.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Example usage](#Example_usage)
@@ -9,14 +13,14 @@ Arch Linux uses S-nail as its POSIX `mailx` incarnation. S-nail is MIME capable 
 *   [5 Interactive usage](#Interactive_usage)
     *   [5.1 Usage](#Usage)
     *   [5.2 Message composition](#Message_composition)
-*   [6 Using S/MIME](#Using_S.2FMIME)
+*   [6 Using S/MIME](#Using_S/MIME)
 *   [7 Workaround missing OpenPGP support](#Workaround_missing_OpenPGP_support)
 *   [8 Using an IMAP mailbox](#Using_an_IMAP_mailbox)
 *   [9 See also](#See_also)
 
 ## Installation
 
-The [s-nail](https://www.archlinux.org/packages/?name=s-nail) package is part of the Arch Linux [base](https://www.archlinux.org/groups/x86_64/base/) group, and should be installed for most users.
+[Install](/index.php/Install "Install") the [s-nail](https://www.archlinux.org/packages/?name=s-nail) package.
 
 ## Example usage
 
@@ -300,8 +304,8 @@ set mime-counter-evidence=0xE
 mimetype model/vrml wrl vrml
 
 # Create some new commands so that, e.g., `ls /tmp' will..
-commandalias ls !ls -latro
-commandalias ps !ps axu
+commandalias ls !ls -latro
+commandalias ps !ps axu
 
 ```
 
@@ -385,7 +389,7 @@ S-nail doesn't yet support OpenPGP. However, using a macro it is possible to at 
        print
  }
  define RK {
-   !printf 'Key IDs to gpg --recv-keys: ';\
+   !printf 'Key IDs to gpg --recv-keys: ';\
      read keyids;\
      gpg --recv-keys ${keyids};
  }

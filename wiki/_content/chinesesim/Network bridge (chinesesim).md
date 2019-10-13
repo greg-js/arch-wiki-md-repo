@@ -8,18 +8,22 @@ Related articles
 
 本文讲述如何创建至少包含一个以太网设备的网桥，这种应用常见于[QEMU](/index.php/QEMU "QEMU")、设置基于软件的访问点等场景。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 创建网桥](#.E5.88.9B.E5.BB.BA.E7.BD.91.E6.A1.A5)
-    *   [1.1 通过 bridge-utils](#.E9.80.9A.E8.BF.87_bridge-utils)
-    *   [1.2 通过 iproute2](#.E9.80.9A.E8.BF.87_iproute2)
-    *   [1.3 通过 netctl](#.E9.80.9A.E8.BF.87_netctl)
-    *   [1.4 通过 systemd-networkd](#.E9.80.9A.E8.BF.87_systemd-networkd)
-    *   [1.5 通过 NetworkManager](#.E9.80.9A.E8.BF.87_NetworkManager)
-*   [2 分配 IP 地址](#.E5.88.86.E9.85.8D_IP_.E5.9C.B0.E5.9D.80)
-*   [3 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [3.1 网桥使用无线网络端口](#.E7.BD.91.E6.A1.A5.E4.BD.BF.E7.94.A8.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C.E7.AB.AF.E5.8F.A3)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 创建网桥](#创建网桥)
+    *   [1.1 通过 bridge-utils](#通过_bridge-utils)
+    *   [1.2 通过 iproute2](#通过_iproute2)
+    *   [1.3 通过 netctl](#通过_netctl)
+    *   [1.4 通过 systemd-networkd](#通过_systemd-networkd)
+    *   [1.5 通过 NetworkManager](#通过_NetworkManager)
+*   [2 分配 IP 地址](#分配_IP_地址)
+*   [3 提示与技巧](#提示与技巧)
+    *   [3.1 网桥使用无线网络端口](#网桥使用无线网络端口)
+*   [4 参阅](#参阅)
 
 ## 创建网桥
 
@@ -27,7 +31,7 @@ Related articles
 
 ### 通过 bridge-utils
 
-本节讲述用 [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) 软件包里面的 *brctl* 工具管理网桥。该软件包已进入官方仓库（[official repositories](/index.php/Official_repositories "Official repositories")）。*brctl* 的完整选项清单请参阅 [brctl(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/brctl.8)。
+本节讲述用 [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) 软件包里面的 *brctl* 工具管理网桥。该软件包已进入官方仓库（[official repositories](/index.php/Official_repositories "Official repositories")）。*brctl* 的完整选项清单请参阅 [brctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/brctl.8)。
 
 新建一个网桥：
 
@@ -67,7 +71,7 @@ $ brctl show
 
 ### 通过 iproute2
 
-本节讲述用 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 软件包里面的 *ip* 工具管理网桥。该软件包包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 包组中。
+本节讲述用 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 软件包里面的 *ip* 工具管理网桥。该软件包包含在 [base](https://www.archlinux.org/packages/?name=base) 包组中。
 
 创建一个网桥并设置其状态为已启动：
 
@@ -92,7 +96,7 @@ $ brctl show
 
 ```
 
-要显示现存的网桥及其关联的端口，可以用 *bridge* 工具（它也是 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 的组成部分）。详阅 [bridge(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bridge.8)。
+要显示现存的网桥及其关联的端口，可以用 *bridge* 工具（它也是 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 的组成部分）。详阅 [bridge(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bridge.8)。
 
 ```
 # bridge link show

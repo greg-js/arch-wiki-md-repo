@@ -19,7 +19,11 @@
 
 大多数命令行工具的文档都存放在 [man page](/index.php/Man_page "Man page") 里面，来自 [GNU Project](/index.php/GNU_Project "GNU Project") 的工具放在 [Info manual](/index.php/Info_manual "Info manual") 里面，一些 [shell](/index.php/Shell "Shell") 为它的内置命令提供了 `help` 命令。另外，大多数命令加上 `--help` 参数时会显示自身的使用说明。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 文件管理](#文件管理)
     *   [1.1 ls](#ls)
@@ -137,7 +141,7 @@ Zsh 用户可在命令前加上 `noglob`，避免隐式扩展。
 
 ### find
 
-*find* 是 [findutils](https://www.archlinux.org/packages/?name=findutils) 软件包的一部分, 它属于 [base](https://www.archlinux.org/groups/x86_64/base/) 软件包组。
+*find* 是 [findutils](https://www.archlinux.org/packages/?name=findutils) 软件包的一部分, 它属于 [base](https://www.archlinux.org/packages/?name=base) 软件包组。
 
 **提示：** [fd](https://www.archlinux.org/packages/?name=fd) 是 `find` 的一个更加简单、快速、友好的替代方案，它有着更合理的默认值（比如忽略隐藏文件、文件夹和 `.gitignore` 等文件，可用 `fd PATTERN` 代替 `find -iname '*PATTERN*'`）。它具有彩色输出（类似 `ls`），unicode 支持，正则表达式支持等等。
 
@@ -205,7 +209,7 @@ Zsh 用户可在命令前加上 `noglob`，避免隐式扩展。
 
 *   **gawk** — GNU 版本的 awk, 参考 [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1).
 
-	[https://www.gnu.org/software/gawk/](https://www.gnu.org/software/gawk/) || [gawk](https://www.archlinux.org/packages/?name=gawk) （已经包含在[base](https://www.archlinux.org/groups/x86_64/base/)中）
+	[https://www.gnu.org/software/gawk/](https://www.gnu.org/software/gawk/) || [gawk](https://www.archlinux.org/packages/?name=gawk) （已经包含在[base](https://www.archlinux.org/packages/?name=base)中）
 
 *   **nawk** — 真正的 AWK 实现，参考 [nawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nawk.1).
 
@@ -261,7 +265,7 @@ sda
 
 [ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") 显示关于网络设备，IP 地址，路由表和其他 Linux [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") 软件栈的对象信息。通过附加各种命令，你可以操纵或配置大多数对象。
 
-**注意:** *ip* 命令在 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 包中提供，这个包已经包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 组。
+**注意:** *ip* 命令在 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 包中提供，这个包已经包含在 [base](https://www.archlinux.org/packages/?name=base) 组。
 
 | 子命令 | 作用 | 手册页名称 |
 | ip addr | 协议地址管理 | [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8) |

@@ -243,7 +243,7 @@ Consult [Nouveau](/index.php/Nouveau "Nouveau") for general info on the driver. 
 
 ### Nvidia
 
-Consult [Nvidia](/index.php/Nvidia "Nvidia") for general info on the driver. The drivers work out of the box when booting the mac in csm- or legacy-mode. See [here](https://bbs.archlinux.org/viewtopic.php?id=162289) for some discussion on the topic.
+Consult [NVIDIA](/index.php/NVIDIA "NVIDIA") for general info on the driver. The drivers work out of the box when booting the mac in csm- or legacy-mode. See [here](https://bbs.archlinux.org/viewtopic.php?id=162289) for some discussion on the topic.
 
 Running the drivers in **efi-mode** requires setting some PCI registers before the kernel modules get loaded, preferably using a udev hook or GRUB script. You can also use a efi shell script in REFind as stated [here](https://bbs.archlinux.org/viewtopic.php?pid=1833995#p1833995). Otherwise, the screen just remains black when X starts. Follow these [instructions](http://askubuntu.com/questions/264247/proprietary-nvidia-drivers-with-efi-on-mac-to-prevent-overheating/613573#613573) in order to find the appropriate PCI device IDs for which to set the registers. This approach has been confirmed to work and is still being actively discussed inside the above mentioned [thread](https://bbs.archlinux.org/viewtopic.php?pid=1522950#p1522950). The latest NVIDIA drivers are no longer supported for this MacBook's GPU you will instead need to use these ones [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/)! Once installed create a config by running the command:
 

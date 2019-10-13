@@ -62,13 +62,13 @@ Related articles
 
 Далее создадим папку для хранения контейнера, в примере используется `~/MyContainer`.
 
-Далее, мы используем pacstrap для установки базового экземпляра системы в контейнере. Как минимум нам нужно установить [base](https://www.archlinux.org/groups/x86_64/base/) группу
+Далее, мы используем pacstrap для установки базового экземпляра системы в контейнере. Как минимум нам нужно установить [base](https://www.archlinux.org/packages/?name=base) группу
 
 1.  pacstrap -i -c -d ~/MyContainer base [additional pkgs/groups]
 
 **Tip:** `-i` Опция автовыбора пакетов. AТак как вам не нужно установить ядро Linux в контейнере, вы можете удалить его из списка выбора пакета для экономии места. Подробнее [Pacman#Usage](/index.php/Pacman#Usage "Pacman").
 
-**Note:** Пакет [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) требуемый [linux](https://www.archlinux.org/packages/?name=linux), который входит в [base](https://www.archlinux.org/groups/x86_64/base/) группу и не требуется для запуска контейнера, вызывает некоторые проблемы с `systemd-tmpfiles-setup.service` во время процесса загрузки с `systemd-nspawn`. Можно установить [base](https://www.archlinux.org/groups/x86_64/base/) группу, но исключая пакет [linux](https://www.archlinux.org/packages/?name=linux) и его зависимости при сборке контейнера с помощью `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. Флаг `--ignore` будет просто передан [pacman](https://www.archlinux.org/packages/?name=pacman). См. [FS#46591](https://bugs.archlinux.org/task/46591) для получения дополнительной информации.
+**Note:** Пакет [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) требуемый [linux](https://www.archlinux.org/packages/?name=linux), который входит в [base](https://www.archlinux.org/packages/?name=base) группу и не требуется для запуска контейнера, вызывает некоторые проблемы с `systemd-tmpfiles-setup.service` во время процесса загрузки с `systemd-nspawn`. Можно установить [base](https://www.archlinux.org/packages/?name=base) группу, но исключая пакет [linux](https://www.archlinux.org/packages/?name=linux) и его зависимости при сборке контейнера с помощью `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. Флаг `--ignore` будет просто передан [pacman](https://www.archlinux.org/packages/?name=pacman). См. [FS#46591](https://bugs.archlinux.org/task/46591) для получения дополнительной информации.
 
 После того, как ваша установка будет завершена, загружается в контейнер:
 

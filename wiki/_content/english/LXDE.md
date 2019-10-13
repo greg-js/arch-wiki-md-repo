@@ -36,11 +36,13 @@ From project [home page](http://lxde.org/):
     *   [3.9 LXPanel icons](#LXPanel_icons)
     *   [3.10 LXPanel menus](#LXPanel_menus)
     *   [3.11 Use a different window manager](#Use_a_different_window_manager)
+    *   [3.12 Using a composite manager](#Using_a_composite_manager)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
-    *   [4.2 LXPanel crashes](#LXPanel_crashes)
-    *   [4.3 LXPanel Task Bar icon size](#LXPanel_Task_Bar_icon_size)
-    *   [4.4 Fake transparency in LXTerminal](#Fake_transparency_in_LXTerminal)
+    *   [4.1 Some apps unable to start](#Some_apps_unable_to_start)
+    *   [4.2 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
+    *   [4.3 LXPanel crashes](#LXPanel_crashes)
+    *   [4.4 LXPanel Task Bar icon size](#LXPanel_Task_Bar_icon_size)
+    *   [4.5 Fake transparency in LXTerminal](#Fake_transparency_in_LXTerminal)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -71,7 +73,7 @@ See also [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 ### Application menu editing
 
-The application menu works by resolving the `.desktop` files located in `/usr/share/applications/` and `~/.local/share/applications/`. To add or edit a menu item, see [desktop entries](/index.php/Desktop_entries "Desktop entries"). Third party menu editor can be found in the [AUR](/index.php/AUR "AUR") (e.g. [lxmed](https://aur.archlinux.org/packages/lxmed/)).
+The application menu works by resolving the `.desktop` files located in `/usr/share/applications/` and `~/.local/share/applications/`. To add or edit a menu item, see [desktop entries](/index.php/Desktop_entries "Desktop entries"). Third party menu editors can be found in the [AUR](/index.php/AUR "AUR") (e.g. [lxmed](https://aur.archlinux.org/packages/lxmed/)). There also official ones like [alacarte](https://www.archlinux.org/packages/?name=alacarte) (gnome), [mozo](https://www.archlinux.org/packages/?name=mozo) (mate) , etc..
 
 ### Autostart
 
@@ -169,7 +171,32 @@ window_manager=compiz
 
 Alternatively use `*WM* --replace` as defined in [#Autostart](#Autostart), where *WM* is the name of the window manager executable being started. This means that *openbox* will be started first on each login and will then immediately be replaced. Note that Openbox and LXDE do not share the same `rc.xml` and keyboard shortcuts may differ. See [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
+### Using a composite manager
+
+LXDE doesnt enable compositing by default that leads to screen tearing problem. If you not okay with this, you can sacrifice a little bit more resources to enable window compositing either by installing compositing manager or you can also subtitute lxde with another window manager that support compositing.
+
 ## Troubleshooting
+
+### Some apps unable to start
+
+Recent shift of LXDE to gtk3 introduce some bugs that may cause segmentation fault and preventing application to start (most notably the customize look and fell settings or known as lxappearance). Until this problem fully fixed, you can try using JWM to bypass gtk3 segfault:
+
+*   install JWM
+
+```
+$ sudo pacman -S jwm
+
+```
+
+*   subtitute LXDE with jwm, open terminal and run:
+
+```
+$ jwm
+
+```
+
+*   this may cause a little glitch but now you should be able to open segfault app normally
+*   after you are done, relogin to refresh LXDE desktop
 
 ### NTFS with Chinese characters
 

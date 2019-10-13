@@ -313,7 +313,7 @@ Relevant websites:
 
 *   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/))
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
-*   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
+*   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([gentium-plus-font](https://www.archlinux.org/packages/?name=gentium-plus-font)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
 
 #### Unsorted

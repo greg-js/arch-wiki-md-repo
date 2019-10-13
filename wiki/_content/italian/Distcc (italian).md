@@ -39,7 +39,7 @@ edita
 
 ```
 MAKEFLAGS="-j14"
-BUILDENV=(fakeroot distcc color !ccache !xdelta)
+BUILDENV=(fakeroot distcc color !ccache !xdelta)
 
 ```
 

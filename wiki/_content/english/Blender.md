@@ -20,9 +20,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Ble
     *   [3.5 Verge3D](#Verge3D)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Blender is slow to select objects](#Blender_is_slow_to_select_objects)
-    *   [4.2 Blender UI graphical corruption on AMDGPU driver](#Blender_UI_graphical_corruption_on_AMDGPU_driver)
-    *   [4.3 Blender does not show the AMD card as an OpenCL rendering device](#Blender_does_not_show_the_AMD_card_as_an_OpenCL_rendering_device)
-    *   [4.4 Interface text](#Interface_text)
+    *   [4.2 Blender does not show the AMD card as an OpenCL rendering device](#Blender_does_not_show_the_AMD_card_as_an_OpenCL_rendering_device)
+    *   [4.3 Interface text](#Interface_text)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -62,12 +61,6 @@ RenderMan is a Linux compatible proprietary rendering plugin that is free for us
 ### Blender is slow to select objects
 
 When using onboard Intel graphics it may take 5-10 seconds to select an object. Change *Selection* in *File > User Preferences > System* to *OpenGL Occlusion Queries*.
-
-### Blender UI graphical corruption on AMDGPU driver
-
-You may experience graphical corruption on the Blender user interface. Until this is fixed, the workaround is to use Triple Buffering for blender, that however may increase VRAM usage. This can be enabled by going to *File > User Preferences > System*, changing the *Window Draw Method* to *Triple Buffering*.
-
-Another workaround for this bug is to use the development version of Blender ([blender-git](https://aur.archlinux.org/packages/blender-git/)). This fixes the graphical corruption on AMDGPU drivers without needing to enable **Triple Buffering**.
 
 ### Blender does not show the AMD card as an OpenCL rendering device
 

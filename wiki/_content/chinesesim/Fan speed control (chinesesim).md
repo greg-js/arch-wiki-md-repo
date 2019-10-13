@@ -8,11 +8,15 @@ Fancontrol, 是[lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)
 
 对于一些戴尔笔记本，可以由[i8kutils](#i8kutils)代替。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 传感器驱动](#.E4.BC.A0.E6.84.9F.E5.99.A8.E9.A9.B1.E5.8A.A8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 传感器驱动](#传感器驱动)
     *   [1.1 lm-sensors](#lm-sensors)
-        *   [1.1.1 增加 fan_div](#.E5.A2.9E.E5.8A.A0_fan_div)
+        *   [1.1.1 增加 fan_div](#增加_fan_div)
 *   [2 Configuration](#Configuration)
     *   [2.1 Tweaking](#Tweaking)
 *   [3 fancontrol](#fancontrol)

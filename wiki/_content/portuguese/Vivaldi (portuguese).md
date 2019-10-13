@@ -18,7 +18,7 @@
 
 Vivaldi pode ser instalado com [vivaldi](https://aur.archlinux.org/packages/vivaldi/) ou [vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/). Pacotes pré-construídos podem, alternativamente, ser encontrados no repositório não-oficial [herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories").
 
-Para usar [Qt](/index.php/Qt "Qt") em vez de [GTK+](/index.php/GTK%2B "GTK+") nos diálogos de seleção de arquivo, apenas instale [kdialog](https://www.archlinux.org/packages/?name=kdialog).
+Para usar [Qt](/index.php/Qt "Qt") em vez de [GTK](/index.php/GTK_(Portugu%C3%AAs) "GTK (Português)") nos diálogos de seleção de arquivo, apenas instale [kdialog](https://www.archlinux.org/packages/?name=kdialog).
 
 ## Extensões
 

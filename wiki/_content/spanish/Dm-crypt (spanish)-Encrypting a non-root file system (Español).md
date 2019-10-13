@@ -49,7 +49,7 @@ Luego configure el encabezado LUKS con:
 
 ```
 
-Sustituya `*dispositivo*` por la partición creada anteriormente. Vea [Dm-crypt (Español)/Device encryption (Español)# Opciones de cifrado para la modalidad LUKS](/index.php/Dm-crypt_(Espa%C3%B1ol)/Device_encryption_(Espa%C3%B1ol)#_Opciones_de_cifrado_para_la_modalidad_LUKS "Dm-crypt (Español)/Device encryption (Español)") para conocer los detalles disponibles para `*opciones*`.
+Sustituya `*dispositivo*` por la partición creada anteriormente. Vea [Dm-crypt (Español)/Device encryption (Español)#Opciones de cifrado para la modalidad LUKS](/index.php/Dm-crypt_(Espa%C3%B1ol)/Device_encryption_(Espa%C3%B1ol)#Opciones_de_cifrado_para_la_modalidad_LUKS "Dm-crypt (Español)/Device encryption (Español)") para conocer los detalles disponibles para `*opciones*`.
 
 Para obtener acceso a la partición cifrada, desbloquéala con el mapeador de dispositivos, utilizando:
 

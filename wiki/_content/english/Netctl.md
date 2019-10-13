@@ -52,7 +52,7 @@ Related articles
 
 ## Installation
 
-[netctl](https://www.archlinux.org/packages/?name=netctl) is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it should already be installed on your system. Otherwise [install](/index.php/Install "Install") it as usual.
+[Install](/index.php/Install "Install") the [netctl](https://www.archlinux.org/packages/?name=netctl) package.
 
 *netctl's* [#Special systemd units](#Special_systemd_units) used in automating connections require some additional dependencies; see that section for more information.
 

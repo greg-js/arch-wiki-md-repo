@@ -152,7 +152,7 @@ auth      optional  pam_permit.so
 
 	`pam_exec.so` 在用户登录时执行自定义脚本
 
-*   [Active Directory Integration#Configuring PAM](/index.php/Active_Directory_Integration#Configuring_PAM "Active Directory Integration")
+*   [Active Directory integration#Configuring PAM](/index.php/Active_Directory_integration#Configuring_PAM "Active Directory integration")
 
 	使用 `pam_winbind.so` 和 `pam_krb5.so` 通过 Active Directory (LDAP, Kerberos 服务) 进行用户认证
 

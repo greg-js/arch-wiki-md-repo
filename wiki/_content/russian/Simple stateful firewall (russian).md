@@ -6,7 +6,7 @@
 *   [Router](/index.php/Router "Router")
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"). Дата последней синхронизации: 21 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=579834).
+**Состояние перевода:** На этой странице представлен перевод статьи [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"). Дата последней синхронизации: 8 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=584458).
 
 В этой статье рассмотрена настройка простого межсетевого экрана с контекстной фильтрацией ([stateful firewall](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")) посредством [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)"), с описанием основных правил и их назначения. Статья разбита на две части. В первой объяснена настройка межсетевого экрана [на одиночной машине](#Межсетевой_экран_для_одиночной_машины), во второй — [настройка NAT-шлюза](#Настройка_NAT-шлюза) в дополнение к файрволу.
 

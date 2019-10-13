@@ -128,7 +128,7 @@ See [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](h
 
 ## Shadow
 
-The user, group and password management tools on Arch Linux come from the [shadow](https://www.archlinux.org/packages/?name=shadow) package, which is part of the [base group](/index.php/Base_group "Base group").
+The user, group and password management tools on Arch Linux come from the [shadow](https://www.archlinux.org/packages/?name=shadow) package, which is a dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package").
 
 ## File list
 
@@ -437,7 +437,7 @@ This section explains the purpose of the essential groups from the [core/filesys
 Non-root workstation/desktop users often need to be added to some of following groups to allow access to hardware peripherals and facilitate system administration:
 
 | Group | Affected files | Purpose |
-| adm | Administration group, commonly used to give read access to protected logs. It has full read access to [journal](/index.php/Systemd/Journal "Systemd/Journal") files. |
+| adm | Administration group, commonly used to give read access to protected logs. It has full read access to [journal](/index.php/Journal "Journal") files. |
 | ftp | `/srv/ftp/` | Access to files served by [FTP servers](/index.php/List_of_applications/Internet#FTP_servers "List of applications/Internet"). |
 | games | `/var/games` | Access to some game software. |
 | http | `/srv/http/` | Access to files served by [HTTP servers](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet"). |
@@ -446,7 +446,7 @@ Non-root workstation/desktop users often need to be added to some of following g
 | sys | Right to administer printers in [CUPS](/index.php/CUPS "CUPS"). |
 | systemd-journal | `/var/log/journal/*` | Can be used to provide read-only access to the systemd logs, as an alternative to `adm` and `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Otherwise, only user generated messages are displayed. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | RS-232 serial ports and devices connected to them. |
-| wheel | Administration group, commonly used to give privileges to perform administrative actions. It has full read access to [journal](/index.php/Systemd/Journal "Systemd/Journal") files and the right to administer printers in [CUPS](/index.php/CUPS "CUPS"). Can also be used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default). |
+| wheel | Administration group, commonly used to give privileges to perform administrative actions. It has full read access to [journal](/index.php/Journal "Journal") files and the right to administer printers in [CUPS](/index.php/CUPS "CUPS"). Can also be used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default). |
 
 ### System groups
 

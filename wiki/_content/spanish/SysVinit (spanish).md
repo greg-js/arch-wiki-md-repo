@@ -10,7 +10,11 @@ En los sistemas basados en SysVinit, **init** es el primer proceso que se ejecut
 
 Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del trabajo se delega en los [#Scripts principales de arranque](#Scripts_principales_de_arranque). Este artículo se centra en init e inittab.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Migración a systemd](#Migración_a_systemd)
     *   [1.1 Consideraciones previas antes de pasarse a systemd](#Consideraciones_previas_antes_de_pasarse_a_systemd)

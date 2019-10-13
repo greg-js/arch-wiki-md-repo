@@ -26,7 +26,7 @@ ThinkPad X1 Carbon 7th
 | Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
 | Mobile broadband Fibocom | No¹ | ? |
 | Audio | Yes | snd_hda_intel |
-| Microphone | Partial⁴ | snd_hda_intel |
+| Microphone | Yes⁴ | snd_hda_intel |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |
@@ -40,7 +40,7 @@ ThinkPad X1 Carbon 7th
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
 2.  An official driver and a reverse engineered driver are in the works [[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) (*06cb:00bd*).
 3.  S3 suspend requires changes to BIOS settings, see section on [enabling S3](#Enabling_S3).
-4.  The internal microphone doesn't seem to work, an external microphone connected on the 3.5mm jack does work, see [Talk#Microphone](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
+4.  The internal microphone doesn't work on versions of the [linux](https://www.archlinux.org/packages/?name=linux) kernel before 5.3\. On versions newer than 5.3 the SOF firmware can be enabled to fix this see [Talk#Microphone](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
 
  |
 
@@ -219,7 +219,7 @@ NoUpgrade = usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common
 
 ### Microphone
 
-On kernel 5.2, the internal microphone is detected but [no audio is captured](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting"). The fix should arrive with [linux](https://www.archlinux.org/packages/?name=linux) kernel 5.3 which includes the [SOF](https://github.com/thesofproject/sof) audio firmware. Instruction are available on the Lenovo [forums](https://forums.lenovo.com/t5/Ubuntu/Guide-X1-Carbon-7th-Generation-Ubuntu-compatability/m-p/4503771/highlight/true#M2849).
+On kernel 5.2, the internal microphone is detected but [no audio is captured](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting"). This can be fixed with [linux](https://www.archlinux.org/packages/?name=linux) kernel 5.3 which includes the [SOF](https://github.com/thesofproject/sof) audio firmware. Instructions are available on the Lenovo [forums](https://forums.lenovo.com/lnv/attachments/lnv/lx02_en/3061/1/sof-driver-guide.docx).
 
 ## Disabling red LED in ThinkPad logo
 

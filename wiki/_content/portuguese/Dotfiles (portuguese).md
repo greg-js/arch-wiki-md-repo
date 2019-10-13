@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=579073) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=581367) na versão em inglês.
 
 Artigos relacionados
 
@@ -125,7 +125,7 @@ de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-m
 | [maximbaz](https://github.com/maximbaz/dotfiles) | zsh | i3-gaps | neovim | alacritty | tmux | py3status | thunderbird |
 | [mehalter](https://gitlab.com/mehalter/dotfiles) | zsh | i3-gaps | neovim | termite | tmux | gpymusic | i3blocks, gotop | neomutt | weechat |
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |
-| [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
+| [neersighted](https://github.com/neersighted/dotfiles) | fish | i3 | neovim | alacritty | tmux | ncmpcpp |
 | [oibind](https://github.com/oibind/dotfiles) | fish | awesome | neovim | termite | htop-vim | weechat |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
 | [pablox-cl](https://github.com/pablox-cl/dotfiles) | zsh (zplug) | gnome3 | neovim | kitty |

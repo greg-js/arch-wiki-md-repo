@@ -245,7 +245,7 @@ Isso pode acontecer se você estiver usando aplicativos GTK3 e, geralmente, para
 
 ### Problemas com aplicativos java
 
-Se você tiver problemas com o aplicações Java, tal como a janela não está redimensionando ou os menus fecham imediatamente após o clique, consulte [Java (Português)#Aplicações sem redimensionamento com o WM, menus fechando imediatamente](/index.php/Java_(Portugu%C3%AAs)#Aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente "Java (Português)").
+Se você tiver problemas com o aplicações Java, tal como a janela não está redimensionando ou os menus fecham imediatamente após o clique, consulte [Java (Português)#Janela cinza | Aplicações sem redimensionamento com o WM | menus fechando imediatamente](/index.php/Java_(Portugu%C3%AAs)#Janela_cinza_|_Aplicações_sem_redimensionamento_com_o_WM_|_menus_fechando_imediatamente "Java (Português)").
 
 ### Problemas com atalhos de teclado usando fish
 

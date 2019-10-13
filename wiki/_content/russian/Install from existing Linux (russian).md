@@ -18,7 +18,11 @@
 
 **Примечание:** Этот гайд расчитан на то, что имеющийся хост может запускать программы архитектуры нового Arch Linux. В случае с x86_64 хостом, можно даже использовать i686-pacman при сборке 32-битного окружения chroot. Смотрите [Arch64 - установка встроенной 32-битной системы](/index.php/Arch64_Install_bundled_32bit_system "Arch64 Install bundled 32bit system").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Arch Linux-based chroot](#Arch_Linux-based_chroot)
     *   [1.1 Создаём chroot](#Создаём_chroot)

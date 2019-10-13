@@ -26,7 +26,7 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 *   **[ALSA](/index.php/ALSA "ALSA")** — A Linux kernel component providing device drivers and lowest-level support for audio hardware.
 
-	[http://www.alsa-project.org/](http://www.alsa-project.org/) || present in stock kernel
+	[https://www.alsa-project.org/wiki/Main_Page](https://www.alsa-project.org/wiki/Main_Page) || present in stock kernel
 
 *   **[Open Sound System](/index.php/Open_Sound_System "Open Sound System") (OSS)** — An alternative sound architecture for Unix-like and POSIX-compatible systems. OSS version 3 was the original sound system for Linux and is in the kernel, but was superseded by ALSA in 2002 when OSS version 4 became proprietary software. OSSv4 became free software again in 2007 when 4Front Technologies released its source code and provided it under the GPL. OSS does not support as wide a variety of hardware as ALSA, but does better for some.
 
@@ -40,7 +40,7 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 *   **[JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit")** — The older edition of a sound server for pro audio use, especially for low-latency applications including recording, effects, realtime synthesis, and many others. Although this edition is the older, it retains a very active and devoted development team, and which edition to use is not clear, trial and error is often helpful.
 
-	[http://jackaudio.org/](http://jackaudio.org/) || [jack](https://www.archlinux.org/packages/?name=jack)
+	[https://jackaudio.org/](https://jackaudio.org/) || [jack](https://www.archlinux.org/packages/?name=jack)
 
 *   **JACK2** — This is the newer edition of JACK, designed explicitly towards multi-processor systems, and also includes transport over network.
 

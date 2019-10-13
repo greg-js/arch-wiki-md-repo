@@ -143,7 +143,7 @@ This optional feature is currently not yet supported by the vanilla kernel. Ther
 
 ## Fix freezes/hangs on QT applications (with Intel driver)
 
-See [Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
+See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
 ## See also
 

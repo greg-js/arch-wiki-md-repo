@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=579331) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-10-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=583327) na versão em inglês.
 
 Artigos relacionados
 
@@ -28,18 +28,19 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   [6 Grego](#Grego)
 *   [7 Italiano](#Italiano)
 *   [8 Japonês](#Japonês)
-*   [9 Lituano](#Lituano)
-*   [10 Noruego](#Noruego)
-*   [11 Persa](#Persa)
-*   [12 Polonês](#Polonês)
-*   [13 Português](#Português)
-*   [14 Romeno](#Romeno)
-*   [15 Russo](#Russo)
-*   [16 Sérvia](#Sérvia)
-*   [17 Sueco](#Sueco)
-*   [18 Turco](#Turco)
-*   [19 Ucraniano](#Ucraniano)
-*   [20 Vietnamita](#Vietnamita)
+*   [9 Luxemburguês](#Luxemburguês)
+*   [10 Lituano](#Lituano)
+*   [11 Noruego](#Noruego)
+*   [12 Persa](#Persa)
+*   [13 Polonês](#Polonês)
+*   [14 Português](#Português)
+*   [15 Romeno](#Romeno)
+*   [16 Russo](#Russo)
+*   [17 Sérvia](#Sérvia)
+*   [18 Sueco](#Sueco)
+*   [19 Turco](#Turco)
+*   [20 Ucraniano](#Ucraniano)
+*   [21 Vietnamita](#Vietnamita)
 
 ## Alemão
 
@@ -47,7 +48,6 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Fórum: [https://bbs.archlinux.de/](https://bbs.archlinux.de/)
 *   Wiki: [https://wiki.archlinux.de/](https://wiki.archlinux.de/)
 *   Arch Linux User Group Berlin: [https://archlinux.berlin/](https://archlinux.berlin/)
-*   Arch Linux User Group Luxembourg: [https://wiki.c3l.lu/doku.php?id=events:alugl](https://wiki.c3l.lu/doku.php?id=events:alugl)
 
 ## Chinês
 
@@ -108,6 +108,10 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Slack: [https://slack.archlinux.jp/](https://slack.archlinux.jp/)
 *   Planet: [https://planet.archlinux.jp/](https://planet.archlinux.jp/)
 *   Projetos: [https://github.com/ArchLinuxJP](https://github.com/ArchLinuxJP)
+
+## Luxemburguês
+
+*   Arch Linux User Group Luxembourg: [https://wiki.c3l.lu/doku.php?id=events:alugl](https://wiki.c3l.lu/doku.php?id=events:alugl)
 
 ## Lituano
 

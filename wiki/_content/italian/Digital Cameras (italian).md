@@ -4,7 +4,11 @@ Questa pagina mira a configurare correttamente libgphoto2 così che gli apparten
 
 Non tutte le fotocamere digitali sono rilevate con l'opzione --auto-detect (in gphoto2). Alcune fotocamere potrebbero essere riconosciute con un nome generico, o altre avere un nome di un modello differente. Se la fotocamera funziona, non è consigliabile intervenire per sistemare questi *dettagli*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Libgphoto2](#Libgphoto2)
     *   [1.1 Installazione e Configurazione](#Installazione_e_Configurazione)

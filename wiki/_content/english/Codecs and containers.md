@@ -151,6 +151,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 
 	[http://www.openjpeg.org/](http://www.openjpeg.org/) || [openjpeg](https://www.archlinux.org/packages/?name=openjpeg)
 
+*   **[WebP](https://en.wikipedia.org/wiki/WebP "wikipedia:WebP")** — An image format employing both lossy and lossless compression. It is currently developed by Google.
+
+	[https://developers.google.com/speed/webp/](https://developers.google.com/speed/webp/) || [libwebp](https://www.archlinux.org/packages/?name=libwebp)
+
 ### Video codecs
 
 See also [Wikipedia:Comparison of video codecs](https://en.wikipedia.org/wiki/Comparison_of_video_codecs "wikipedia:Comparison of video codecs").

@@ -1,18 +1,22 @@
 E17 yra Enlightenment (Švietimas) grafinės aplinkos Gamybos Leidimas Nr. 17 (DR17). Ši aplinka yra dar labai ankstyvoje stadijoje - nėra sulaukus net alpha versijos - todėl šiuo metu vyksta aktyvus jos vystymas. Nepaisant to, ji yra gana stabili ir nemažai vartotojų ją naudoja kasdieniam darbui.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 E17 Įdiegimas](#E17_.C4.AEdiegimas)
-    *   [1.1 Iš bendruomeninio repozito (SVN paveikslai)](#I.C5.A1_bendruomeninio_repozito_.28SVN_paveikslai.29)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 E17 Įdiegimas](#E17_Įdiegimas)
+    *   [1.1 Iš bendruomeninio repozito (SVN paveikslai)](#Iš_bendruomeninio_repozito_(SVN_paveikslai))
     *   [1.2 Kompiliavimas ir pakavimas su ArchE17 skriptu](#Kompiliavimas_ir_pakavimas_su_ArchE17_skriptu)
 *   [2 E17 Paleidimas](#E17_Paleidimas)
-*   [3 Temų Įdiegimas](#Tem.C5.B3_.C4.AEdiegimas)
+*   [3 Temų Įdiegimas](#Temų_Įdiegimas)
 *   [4 DUK](#DUK)
-    *   [4.1 Kas atsitiko Entrance ?](#Kas_atsitiko_Entrance_.3F)
-*   [5 Problemų Sprendimas](#Problem.C5.B3_Sprendimas)
-    *   [5.1 Pelės Žymeklis](#Pel.C4.97s_.C5.BDymeklis)
+    *   [4.1 Kas atsitiko Entrance ?](#Kas_atsitiko_Entrance_?)
+*   [5 Problemų Sprendimas](#Problemų_Sprendimas)
+    *   [5.1 Pelės Žymeklis](#Pelės_Žymeklis)
     *   [5.2 Ekrano atrakinimas neveikia](#Ekrano_atrakinimas_neveikia)
-    *   [5.3 Neįskaitomi šriftai](#Ne.C4.AFskaitomi_.C5.A1riftai)
+    *   [5.3 Neįskaitomi šriftai](#Neįskaitomi_šriftai)
 *   [6 Nuorodos](#Nuorodos)
 
 ## E17 Įdiegimas

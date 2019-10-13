@@ -219,10 +219,10 @@ Install [evrouter](https://aur.archlinux.org/packages/evrouter/) and add your us
 
 ```
 
-Edit the evrouter config file and change the `eventX` number to the event number teh mouse uses with
+Edit the evrouter config file and change the `eventX` number to the event number the mouse uses with
 
 ```
-$ evrouter --dump /dev/input/event*}}.
+$ evrouter --dump /dev/input/event*
 
 ```
 

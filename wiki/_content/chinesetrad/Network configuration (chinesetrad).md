@@ -9,7 +9,11 @@
 
 本頁將介紹如何設定**有線**網路連線。若您需要設定**無線**網路，請參考[無線網路設定](/index.php/Wireless_network_configuration "Wireless network configuration")。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 檢查連線](#檢查連線)
 *   [2 設定主機名稱](#設定主機名稱)
@@ -252,7 +256,7 @@ lo eth0 eth1 firewire0
 
 #### dhcpcd
 
-最簡單的方式就是使用 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")，它包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 群組中。無論是使用提供服務檔案 `dhcpcd@.service` ，以參數方式傳入介面卡名稱，或是手動通過 `dhcpcd *interface*` 將其執行。
+最簡單的方式就是使用 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")，它包含在 [base](https://www.archlinux.org/packages/?name=base) 群組中。無論是使用提供服務檔案 `dhcpcd@.service` ，以參數方式傳入介面卡名稱，或是手動通過 `dhcpcd *interface*` 將其執行。
 
 ### 靜態 IP 位址
 

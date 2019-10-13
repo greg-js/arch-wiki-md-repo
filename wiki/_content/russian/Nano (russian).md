@@ -30,7 +30,7 @@
 
 ## Установка
 
-Вы можете установить пакет [nano](https://www.archlinux.org/packages/?name=nano) из [Официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Скорее всего он уже установлен на вашей системе, т.к. входит в группу [base](https://www.archlinux.org/groups/x86_64/base/).
+Вы можете установить пакет [nano](https://www.archlinux.org/packages/?name=nano) из [Официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Скорее всего он уже установлен на вашей системе, т.к. входит в группу [base](https://www.archlinux.org/packages/?name=base).
 
 ## Насторйка
 

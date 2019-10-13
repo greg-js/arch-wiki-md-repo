@@ -390,7 +390,7 @@ bindsym --to-code {
 
 Some Java-based applications will display blank screen when opened, for example any Intellij editor. To mitigate this, the application can be started with the `_JAVA_AWT_WM_NONREPARENTING` environment variable set to 1.
 
-If you start the application from a launcher like [rofi](https://www.archlinux.org/packages/?name=rofi) or [dmenu](https://www.archlinux.org/packages/?name=dmenu), you might want to modify the application desktop entry as shown in [Desktop_entries#Modify_environment_variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
+If you start the application from a launcher like [rofi](https://www.archlinux.org/packages/?name=rofi) or [dmenu](https://www.archlinux.org/packages/?name=dmenu), you might want to modify the application desktop entry as shown in [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
 
 ## See also
 

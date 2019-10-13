@@ -241,7 +241,7 @@ There is an optional daemon called *sensord* (included with the [lm_sensors](htt
 
 In some cases, the data displayed might be incorrect or users may wish to rename the output. Use cases include:
 
-*   Incorrect temperature values due to a wrong offset (i.e. temps are reported 20 °C higher then actual).
+*   Incorrect temperature values due to a wrong offset (i.e. temps are reported 20 °C higher than actual).
 *   Users wish to rename the output of some sensors.
 *   The cores might be displayed in an incorrect order.
 

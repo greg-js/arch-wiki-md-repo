@@ -73,7 +73,7 @@ The [gpsd](https://www.archlinux.org/packages/?name=gpsd) package provides `cgps
 
 ### Time Synchronization
 
-See [Network_Time_Protocol_daemon#Using_ntpd_with_GPS](/index.php/Network_Time_Protocol_daemon#Using_ntpd_with_GPS "Network Time Protocol daemon")
+See [Network Time Protocol daemon#Using ntpd with GPS](/index.php/Network_Time_Protocol_daemon#Using_ntpd_with_GPS "Network Time Protocol daemon")
 
 ## See also
 

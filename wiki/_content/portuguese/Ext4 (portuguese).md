@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2019-04-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=565570) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=583718) na versão em inglês.
 
 Artigos relacionados
 
@@ -34,8 +34,6 @@ De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
     *   [3.6 Use journal externo para otimizar o desempenho](#Use_journal_externo_para_otimizar_o_desempenho)
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Usando criptografia baseada em arquivos](#Usando_criptografia_baseada_em_arquivos)
-        *   [4.1.1 Habilitar em um sistema de arquivos existente](#Habilitar_em_um_sistema_de_arquivos_existente)
-        *   [4.1.2 Uso](#Uso)
     *   [4.2 Habilitando somas de verificação de metadados](#Habilitando_somas_de_verificação_de_metadados)
         *   [4.2.1 Novo sistema de arquivos](#Novo_sistema_de_arquivos)
         *   [4.2.2 Converter arquivo de sistema existente](#Converter_arquivo_de_sistema_existente)
@@ -250,121 +248,17 @@ Você pode formatar um dispositivo dedicado para o journal com `mke2fs -O journa
 
 ### Usando criptografia baseada em arquivos
 
-**Nota:** O ext4 proíbe criptografar o diretório raiz (`/`) e vai produzir um erro no [kernel](/index.php/Kernel "Kernel") 4.13 o posterior [[5]](https://patchwork.kernel.org/patch/9787619/) [[6]](https://www.phoronix.com/scan.php?page=news_item&px=EXT4-Linux-4.13-Work).
-
-O ext4 oferece suporte a criptografia baseada em arquivos. Em uma árvore de diretórios marcada para criptografia, o conteúdo de arquivo, nomes de arquivos e alvos de links simbólicos são criptografados. As chaves de criptografia são armazenadas no chaveiro do kernel. Veja também a entrada do [blog do Quarkslab](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) com um registro do recurso, uma visão geral do estado de implementação e resultados de testes práticos com o kernel 4.1.
-
-A criptografia depende da opção do kernel `CONFIG_EXT4_ENCRYPTION`, que está habilitada por padrão, bem como o comando *e4crypt* do pacote [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs).
-
-Uma condição prévia é que o sistema de arquivos esteja usando um tamanho de bloco suportado para criptografia:
-
- `# tune2fs -l /dev/*dispositivo* | grep 'Block size'` 
-```
-Block size:               4096
-
-```
- `# getconf PAGE_SIZE` 
-```
-4096
-
-```
-
-Se esses valores não forem os mesmos, o sistema de arquivos não terá suporte à criptografia e você **não deve continuar**.
-
-**Atenção:** Assim que a opção de recurso de criptografia estiver ativado, os kernels anteriores a 4.1 não conseguirão montar o sistema de arquivos.
-
-#### Habilitar em um sistema de arquivos existente
-
-Para habilitar a opção do recurso de criptografia em seu sistema de arquivos:
-
-```
-# tune2fs -O encrypt /dev/*dispositivo*
-
-```
-
-**Dica:** A operação pode ser revertida com `debugfs -w -R "feature -encrypt" /dev/*dispositivo*`. Execute [fsck](/index.php/Fsck "Fsck") antes e depois para garantir a integridade do sistema de arquivos.
-
-#### Uso
-
-Para fazer um diretório criptografado:
-
-```
-$ mkdir *cofre*
-
-```
-
-**Nota:**
-
-*   A criptografia só pode ser aplicada a um diretório vazio. Novos arquivos e subdiretórios dentro de um diretório criptografado herdam sua política de criptografia. A criptografia de arquivos já existentes ainda não é suportada.
-*   Aplicativos que precisam de acesso a um diretório criptografado que está bloqueado (p.ex., na inicialização) podem falhar.
-
-Gere e adicione uma nova chave ao chaveiro dos usuários. Este passo deve ser repetido toda vez que você descarrega o seu chaveiro (p.ex., ao encerrar a sessão ou reiniciar):
-
- `$ e4crypt add_key` 
-```
-Enter passphrase (echo disabled): 
-Added key with descriptor [f88747555a6115f5]
-
-```
-
-**Dica:** Por padrão, a chave é armazenada no [session-keyring](http://man7.org/linux/man-pages/man7/session-keyring.7.html), veja [e4crypt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e4crypt.8#COMMANDS). No entanto, é possível especificar um chaveiro diferente usando `-k`. Alternativas úteis podem incluir [user-keyring](http://man7.org/linux/man-pages/man7/user-keyring.7.html) e [user-session-keyring](http://man7.org/linux/man-pages/man7/user-session-keyring.7.html), por exemplo para usar o user-keyring:
-```
-$ e4crypt add_key -k @u
-
-```
-
-**Atenção:** Se você esqueceu sua senha, não haverá outra maneira de descriptografar seus arquivos. Também não é possível alterar uma senha depois de ter sido configurada.
-
-**Nota:** Para ajudar a evitar [ataques de dicionário](https://en.wikipedia.org/wiki/Dictionary_attack aleatório é gerado automaticamente e armazenado no superbloco de sistema de arquivos ext4\. A senha *e* o sal são usados para derivar a chave de criptografia real. Como consequência disso, se você tiver vários sistemas de arquivos ext4 com criptografia habilitada montados, então `e4crypt add_key` adicionará várias chaves, uma por sistema de arquivos. Embora qualquer chave possa ser usada em qualquer sistema de arquivos, seria sábio usar apenas, em um determinado sistema de arquivos, chaves usando o sal do sistema de arquivos. Caso contrário, você corre o risco de não conseguir descriptografar arquivos no sistema de arquivos A se o sistema de arquivos B estiver desmontado. Alternativamente, você pode usar a opção `-S` para `e4crypt add_key` para especificar um sal você mesmo.
-
-Certifique-se que o descritor de chave está no chaveiro de sessão:
-
- `$ keyctl show` 
-```
-Session Keyring
-1021618178 --alswrv   1000  1000  keyring: _ses
- 176349519 --alsw-v   1000  1000   \_ logon: ext4:**f88747555a6115f5**
-
-```
-
-Atribua uma chave de descritor para uma política de criptografia no diretório:
-
-```
-$ e4crypt set_policy *f88747555a6115f5* *cofre*
-
-```
-
-O diretório *cofre* deve agora ser acessível e legível para o usuário atual desde que a chave esteja no chaveiro do usuário.
-
-Se alguém tentar acessar *cofre* sem adicionar a chave primeiro no chaveiro do usuário, os nomes de arquivos e seus conteúdos serão vistos como mensagens sem criptografia.
-
-Para obter (novamente) acesso ao diretório, basta adicionar a chave ao chaveiro do usuário:
-
- `$ e4crypt add_key` 
-```
-Enter passphrase (echo disabled): *senha_fornecida*
-Added key with descriptor [f88747555a6115f5]
-
-```
-
-**Atenção:** O início de sessão efetua o desbloqueio automático de diretórios de usuário criptografados por esse método ao usar o login do GDM ou do console.
-
-**Nota:** Por motivos de segurança, arquivos não criptografados não podem existir em um diretório criptografado. Como tal, tentar mover (`mv`) arquivos não criptografados para um diretório criptografado vai
-
-*   falhar, se ambos os diretórios estiverem no mesmo ponto de montagem do sistema de arquivos. Isso acontece porque *mv* só atualizará o índice de diretórios para apontar para o novo diretório, mas não os nós-i de dados do arquivo (que contém a referência criptográfica).
-*   ter sucesso, se ambos os diretórios estiverem em diferentes pontos de montagem do sistema de arquivos (novos nós-i de dados são criados).
-
-Em ambos os casos, é melhor copiar os arquivos (`cp`), porque isso deixa a opção para excluir com segurança o original não criptografado com *shred* ou uma ferramenta similar.
+Desde o Linux 4.1, o ext4 possui suporte nativo a criptografia de arquivos. A criptografia é aplicada no nível do diretório, e diretórios diferentes podem usar chaves de criptografia diferentes. Isso é diferente de [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), que é a criptografia em nível de dispositivo de bloco, e de [eCryptfs](/index.php/ECryptfs "ECryptfs"), que é um sistema de arquivos criptográficos empilhados. Para usar o suporte de criptografia nativa do ext4, consulte o artigo [fscrypt](/index.php/Fscrypt "Fscrypt").
 
 ### Habilitando somas de verificação de metadados
 
 Quando um sistema de arquivos foi criado com o [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) 1.44 ou posterior, as somas de verificação de metadados já devem estar ativadas por padrão. Os sistemas de arquivos existentes podem ser convertidos para permitir o suporte à soma de verificação de metadados.
 
-Se o seu CPU tem suporte a SSE 4.2, certifique-se que o [módulo do kernel](/index.php/Kernel_module "Kernel module") `crc32c_intel` esteja carregado para habilitar o algoritmo CRC32C acelerado por hardware [[7]](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking). Caso contrário, você precisará carregar o módulo `crc32c_generic`.
+Se o seu CPU tem suporte a SSE 4.2, certifique-se que o [módulo do kernel](/index.php/Kernel_module "Kernel module") `crc32c_intel` esteja carregado para habilitar o algoritmo CRC32C acelerado por hardware [[5]](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking). Caso contrário, você precisará carregar o módulo `crc32c_generic`.
 
 Para ler mais sobre metadados de somas de verificação, veja o [wiki do ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
 
-**Dica:** Use `dump2fs` para verificar os recursos que estão habilitados no sistema de arquivos:
+**Dica:** Use `dumpe2fs` para verificar os recursos que estão habilitados no sistema de arquivos:
 ```
 # dumpe2fs */dev/caminho/para/disco*
 
@@ -381,7 +275,7 @@ Para habilitar o suporte a somas de verificação de metadados ext4 ao criar um 
 
 #### Converter arquivo de sistema existente
 
-**Nota:** Um sistema de arquivos não deve estar montado.
+**Nota:** O sistema de arquivos não deve estar montado.
 
 Primeiro, a partição precisa ser verificada e otimizada usando `e2fsck`:
 
@@ -409,6 +303,6 @@ Finalmente, habilite suporte a somas de verificação:
 *   [Wiki oficial do Ext4](https://ext4.wiki.kernel.org/)
 *   [Layout de disco com Ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) descrito no seu wiki
 *   [Criptografia no Ext4](http://lwn.net/Articles/639427/) - artigo do LWN
-*   Commits do kernel para criptografia no ext4 [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   Commits do kernel para criptografia no ext4 [[6]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
 *   [Changelog do e2fsprogs](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
 *   [Somas de verificação de metadados do Ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

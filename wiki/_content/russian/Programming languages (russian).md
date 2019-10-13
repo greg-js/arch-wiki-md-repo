@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Programming languages](/index.php/Programming_languages "Programming languages"). Дата последней синхронизации: 5 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=574554).
+**Состояние перевода:** На этой странице представлен перевод статьи [Programming languages](/index.php/Programming_languages "Programming languages"). Дата последней синхронизации: 8 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=584715).
 
 Эта страница написана с целью создать список [языков программирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F "wikipedia:ru:Список языков программирования"), для которых поставляется компилятор или интерпретатор в Arch Linux.
 
@@ -56,7 +56,7 @@
 
 ## Языки командной строки
 
-[Bash (Русский)](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") является частью [группы base](/index.php/Package_group_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Package group (Русский)"). Для получения информации о других языках смотрите статью [Командная оболочка](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B0 "Командная оболочка").
+[Bash (Русский)](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") является зависимостью [мета-пакета](/index.php/%D0%9C%D0%B5%D1%82%D0%B0-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82 "Мета-пакет") [base](https://www.archlinux.org/packages/?name=base). Для получения информации о других языках смотрите статью [Командная оболочка](/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B0 "Командная оболочка").
 
 ## Смотрите также
 

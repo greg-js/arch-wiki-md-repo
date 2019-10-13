@@ -38,7 +38,6 @@ Related articles
     *   [2.10 A package update was released, but pacman says the system is up to date](#A_package_update_was_released,_but_pacman_says_the_system_is_up_to_date)
     *   [2.11 Upstream project *X* has released a new version. How long will it take for the Arch package to update to that new version?](#Upstream_project_X_has_released_a_new_version._How_long_will_it_take_for_the_Arch_package_to_update_to_that_new_version?)
     *   [2.12 If I need an older version of an installed library, can I just symlink to the newer version?](#If_I_need_an_older_version_of_an_installed_library,_can_I_just_symlink_to_the_newer_version?)
-    *   [2.13 Why are there non-essential packages (e.g. netctl) in the base group?](#Why_are_there_non-essential_packages_(e.g._netctl)_in_the_base_group?)
 *   [3 Installation](#Installation)
     *   [3.1 Arch needs an installer. Maybe a GUI installer?](#Arch_needs_an_installer._Maybe_a_GUI_installer?)
     *   [3.2 I installed Arch, and now I am at a shell! What now?](#I_installed_Arch,_and_now_I_am_at_a_shell!_What_now?)
@@ -93,7 +92,7 @@ Get involved, contribute your code/solution to the community. If it is well rega
 
 ### When will the new release be made available?
 
-Arch Linux releases are simply a live environment for installation or rescue, which include the [base](https://www.archlinux.org/groups/x86_64/base/) group and a few [other packages](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64). The releases are issued usually in the first half of every month.
+Arch Linux releases are simply a live environment for installation or rescue, which include the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package") and a few [other packages](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64). The releases are issued usually in the first half of every month.
 
 ### Is Arch Linux a stable distribution? Will I get frequent breakage?
 
@@ -211,14 +210,6 @@ If you are lucky, it might work, for a time. Regardless, it is not a proper solu
 *   A slight alternative of dumping the old library file into the filesystem, untracked, would be forgotten about, and not have potential security bugs noticed/patched.
 
 Instead, e.g. use/write a [compat package](https://aur.archlinux.org/packages/?SeB=n&K=compat), which provides the required library version.
-
-### Why are there non-essential packages (e.g. netctl) in the base group?
-
-There are proposals to improve this. Some discussion from the mailing list:
-
-[https://lists.archlinux.org/pipermail/arch-dev-public/2019-January/029435.html](https://lists.archlinux.org/pipermail/arch-dev-public/2019-January/029435.html)
-
-[https://lists.archlinux.org/pipermail/arch-dev-public/2019-February/029452.html](https://lists.archlinux.org/pipermail/arch-dev-public/2019-February/029452.html)
 
 ## Installation
 

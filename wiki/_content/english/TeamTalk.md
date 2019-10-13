@@ -52,7 +52,7 @@ You will need to configure at least one user through the server wizard to be abl
 
 *   To find the privilege key:
 
-There is not a privilege key like there is with [Teamspeak](/index.php/Teamspeak "Teamspeak") or [Mumble](/index.php/Mumble "Mumble"). You create users with the server wizard directly without using the client program. An admin user can use the client program like in Mumble to assign ACLs. By default, most users will be able to do most things that a common user will need to be able to do in a conference including creating temporary rooms, sharing video, files or desktops. Desktop sharing doesn't appear to be working on Linux.
+There is not a privilege key like there is with [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") or [Mumble](/index.php/Mumble "Mumble"). You create users with the server wizard directly without using the client program. An admin user can use the client program like in Mumble to assign ACLs. By default, most users will be able to do most things that a common user will need to be able to do in a conference including creating temporary rooms, sharing video, files or desktops. Desktop sharing doesn't appear to be working on Linux.
 
 ### Regular startup
 

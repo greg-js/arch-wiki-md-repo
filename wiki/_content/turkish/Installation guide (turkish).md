@@ -2,7 +2,7 @@ Bu belge, Arch Linux'u yüklemek için kullanılan canlı sistem kılavuzudur. K
 
 Daha ayrıntılı talimatlar için, bu kılavuzdan karşılık gelen [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") makalelerine ya da çeşitli programların [man sayfalarına](/index.php/Man_page "Man page") bakınız. İnteraktif yardım için, [IRC kanalını](/index.php/IRC_channel "IRC channel") ve [forumu](https://bbs.archlinux.org/) kullanabilirsiniz.
 
-Arch Linux en az 512 MB RAM'e sahip olan herhangi bir [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") uyumlu makinede çalışır. [base](https://www.archlinux.org/groups/x86_64/base/) grubundaki tüm paketleri içeren basit bir kurulum 800 megabyte'tan az bir disk alanı kaplar. Kurulum esnasında paketlerin veri havuzundan indirilmesi gerektiğinden, çalışan bir internet bağlantısı gereklidir.
+Arch Linux en az 512 MB RAM'e sahip olan herhangi bir [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") uyumlu makinede çalışır. [base](https://www.archlinux.org/packages/?name=base) grubundaki tüm paketleri içeren basit bir kurulum 800 megabyte'tan az bir disk alanı kaplar. Kurulum esnasında paketlerin veri havuzundan indirilmesi gerektiğinden, çalışan bir internet bağlantısı gereklidir.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -186,7 +186,7 @@ Bu dosya *pacstrap* tarafından yeni sisteme kopyalanacak, yani hata yapmamaya d
 
 ### Temel paketleri kurun
 
-[base](https://www.archlinux.org/groups/x86_64/base/) paket grupunu kurmak için, [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) yazılımını kullanın:
+[base](https://www.archlinux.org/packages/?name=base) paket grupunu kurmak için, [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) yazılımını kullanın:
 
 ```
 # pacstrap /mnt base

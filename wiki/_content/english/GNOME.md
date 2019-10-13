@@ -126,7 +126,7 @@ fi
 **Note:**
 
 *   An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary to run applications that have not yet been ported to [Wayland](/index.php/Wayland "Wayland"). Applications using certain graphics libraries, such as Qt, can be forced to use Wayland by setting environment variables. See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for more information.
-*   When using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver, non-Wayland-native applications suffer from poor performance because of the lack of hardware accelerated XWayland. This is [expected](https://blogs.gnome.org/uraeus/2019/04/03/preparing-for-fedora-workstation-30/) to be resolved in Fall 2019.
+*   When using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver, non-Wayland-native applications suffer from poor performance because of the lack of hardware accelerated XWayland. This is [expected](https://blogs.gnome.org/uraeus/2019/09/23/fedora-workstation-31-whats-new/) to be resolved in Spring 2020 but there is no committed timeline from [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 Manually starting a Wayland session is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
 

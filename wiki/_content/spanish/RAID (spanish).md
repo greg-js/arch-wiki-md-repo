@@ -10,6 +10,7 @@ Artículos relacionados
 *   [ZFS](/index.php/ZFS "ZFS")
 *   [ZFS/Virtual disks](/index.php/ZFS/Virtual_disks "ZFS/Virtual disks")
 *   [Swap (Español)#Striping](/index.php/Swap_(Espa%C3%B1ol)#Striping "Swap (Español)")
+
 *   [Btrfs#RAID](/index.php/Btrfs#RAID "Btrfs")
 
 *Redundant Array of Independent Disks* (Matriz Redundante de Discos Independientes, siglas en inglés [RAID](https://en.wikipedia.org/wiki/es:RAID "wikipedia:es:RAID")) es una tecnología de almacenamiento que combina varios componentes de unidades de disco —normalmente unidades de disco o particiones de los mismos— en una unidad lógica. Dependiendo de la implementación de RAID, la unidad lógica puede ser un sistema de archivos o una capa transparente adicional que puede contener varias particiones. Los datos se distribuyen a través de las unidades de una las muchas maneras que hay, llamadas [#Niveles RAID](#Niveles_RAID), dependiendo del nivel de redundancia y del rendimiento requeridos. El nivel RAID elegido, por lo tanto, va a depender de si lo que se quiere es prevenir la pérdida de datos en caso de un fallo del disco duro, aumentar el rendimiento o una combinación de ambos.

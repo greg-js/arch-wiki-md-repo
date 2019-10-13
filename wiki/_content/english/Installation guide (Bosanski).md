@@ -12,7 +12,7 @@
 
 4.  Kreirati fajl sistem
 
-    *   `mkfs` željenog sistema([ext2](/index.php?title=Ext2&action=edit&redlink=1 "Ext2 (page does not exist)"),[ext3](/index.php/Ext3 "Ext3"),[ext4](/index.php/Ext4 "Ext4"),[xfs](/index.php/Xfs "Xfs"))
+    *   `mkfs` željenog sistema([ext2](/index.php?title=Ext2&action=edit&redlink=1 "Ext2 (page does not exist)"),[ext3](/index.php/Ext3 "Ext3"),[ext4](/index.php/Ext4 "Ext4"),[XFS](/index.php/XFS "XFS"))
 
 5.  Mountati particije
 
@@ -43,7 +43,7 @@
         *   Instalirati syslinux: `# pacman -S syslinux`
         *   Instalirati syslinux na MBR sda diska `# syslinux-install_update -i -a -m`
         *   Provjeriti postavke unutar `/boot/syslinux/syslinux.cfg`, pogotovo liniju **APPEND root=...** da li je dobra boot particija odabrana
-    *   [grub](/index.php/Grub "Grub")
+    *   [GRUB](/index.php/GRUB "GRUB")
 
 9.  Izaci iz chroot-a(`# exit`)
 10.  Umountati particije (`# umount /dev/sdX`)

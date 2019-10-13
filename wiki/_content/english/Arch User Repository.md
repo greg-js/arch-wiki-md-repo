@@ -225,7 +225,7 @@ In the meantime, you can try updating the package yourself by editing the [PKGBU
 You are probably missing something trivial.
 
 1.  [Upgrade the system](/index.php/Pacman#Upgrading_packages "Pacman") before compiling anything with [makepkg](/index.php/Makepkg "Makepkg") as the problem may be that your system is not up-to-date.
-2.  Ensure you have both [base](https://www.archlinux.org/groups/x86_64/base/) and [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups installed.
+2.  Ensure you have the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group installed.
 3.  Try using the `-s` option with `makepkg` to check and install all the dependencies needed before starting the build process.
 
 Be sure to first read the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and the comments on the AUR page of the package in question. The reason might not be trivial after all. Custom `CFLAGS`, `LDFLAGS` and `MAKEFLAGS` can cause failures. It is also possible that the `PKGBUILD` is broken for everyone. If you cannot figure it out on your own, just report it to the maintainer e.g. by posting the errors you are getting in the comments on the AUR page.
@@ -274,7 +274,7 @@ It is possible the package has been adopted by a [TU](/index.php/TU "TU") and is
 
 Packages may be deleted if they did not fulfill the [rules of submission](/index.php/AUR_submission_guidelines#Rules_of_submission "AUR submission guidelines"). See the [aur-requests archives](https://lists.archlinux.org/pipermail/aur-requests/) for the reason for deletion.
 
-**Note:** The git repository for a deleted package typically remains available. See [AUR_submission_guidelines#Requests](/index.php/AUR_submission_guidelines#Requests "AUR submission guidelines") for details.
+**Note:** The git repository for a deleted package typically remains available. See [AUR submission guidelines#Requests](/index.php/AUR_submission_guidelines#Requests "AUR submission guidelines") for details.
 
 If the package used to exist in AUR3, it might not have been [migrated to AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). See the [#Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages) where these are preserved.
 

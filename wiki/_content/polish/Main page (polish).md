@@ -28,7 +28,7 @@ Odwiedź **[Spis treści](/index.php/Table_of_contents_(Polski) "Table of conten
 
 	Tłumaczenie oficjalnej instrukcji instalacji systemu.
 
-	[FAQ](/index.php?title=FAQ_(Polski)&action=edit&redlink=1 "FAQ (Polski) (page does not exist)")
+	[FAQ](/index.php/Frequently_asked_questions_(Polski) "Frequently asked questions (Polski)")
 
 	Lista najczęściej zadawanych pytań wraz z odpowiedziami.
 

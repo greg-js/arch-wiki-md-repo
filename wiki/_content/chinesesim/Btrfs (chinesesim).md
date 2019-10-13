@@ -74,7 +74,7 @@
 
 Btrfs 支持已经包含在[linux](https://www.archlinux.org/packages/?name=linux)和[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)的内核中.
 
-要使用一些用户空间工具的话，需要[安装](/index.php/Install "Install") 不在 [base](https://www.archlinux.org/groups/x86_64/base/) 包组中的而且基础操作必须的 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) 软件包。
+要使用一些用户空间工具的话，需要[安装](/index.php/Install "Install") 不在 [base](https://www.archlinux.org/packages/?name=base) 包组中的而且基础操作必须的 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) 软件包。
 
 如果你需要从 Btrfs 文件系统引导（比如说你的内核和内存盘在一个 Btrfs 的分区上），请检查你的 [启动引导器](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch boot process (简体中文)") 是否支持 Btrfs。
 

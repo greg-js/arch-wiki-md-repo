@@ -1,8 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=570504) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=582606) na versão em inglês.
 
 Artigos relacionados
 
-*   [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)")
+*   [Perguntas frequentes](/index.php/Perguntas_frequentes "Perguntas frequentes")
 *   [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação")
 *   [Lista de aplicativos](/index.php/List_of_applications "List of applications")
 
@@ -16,7 +16,7 @@ Esse documento é um índice anotado de artigos populares e informações import
 
 *   [1 Administração do sistema](#Administração_do_sistema)
     *   [1.1 Usuários e grupos](#Usuários_e_grupos)
-    *   [1.2 Escalação de privilégios](#Escalação_de_privilégios)
+    *   [1.2 Elevação de privilégios](#Elevação_de_privilégios)
     *   [1.3 Gerenciamento de serviço](#Gerenciamento_de_serviço)
     *   [1.4 Manutenção de sistema](#Manutenção_de_sistema)
 *   [2 Gerenciamento de pacote](#Gerenciamento_de_pacote)
@@ -66,7 +66,7 @@ Esse documento é um índice anotado de artigos populares e informações import
     *   [10.3 Impressão](#Impressão)
 *   [11 Aparência](#Aparência)
     *   [11.1 Fontes](#Fontes)
-    *   [11.2 Temas GTK+ e Qt](#Temas_GTK+_e_Qt)
+    *   [11.2 Temas GTK e Qt](#Temas_GTK_e_Qt)
 *   [12 Melhorias no console](#Melhorias_no_console)
     *   [12.1 Melhorias na completação por Tab](#Melhorias_na_completação_por_Tab)
     *   [12.2 Aliases](#Aliases)
@@ -90,9 +90,9 @@ Uma nova instalação deixa você com apenas a conta de [superusuário](https://
 
 Usuários e grupos são mecanismo para *controle de acesso*; administradores podem ajustar participação e posse de grupos para conceder ou negar a usuários e serviços acesso a recursos do sistema. Leia o artigo [Usuários e grupos](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos") para detalhes e riscos de segurança em potencial.
 
-### Escalação de privilégios
+### Elevação de privilégios
 
-Os comandos [su](/index.php/Su "Su") e [sudo](/index.php/Sudo "Sudo") permitem que você execute comandos como outro usuário. Por padrão, *su* lhe fornece um shell de login como o usuário root e *sudo*, por padrão, temporariamente lhe concede privilégios para um único comando. Veja seus respectivos artigos para diferenças.
+Os comandos [su](/index.php/Su "Su") e [sudo](/index.php/Sudo "Sudo") permitem que você execute comandos como outro usuário. Por padrão, *su* inicia um shell interativo como o usuário root e *sudo*, por padrão, temporariamente lhe concede privilégios para um único comando. Veja seus respectivos artigos para diferenças.
 
 ### Gerenciamento de serviço
 
@@ -104,9 +104,9 @@ Arch é um sistema *rolling release* e tem uma mudança rápida de pacote, entã
 
 ## Gerenciamento de pacote
 
-Essa seção contém informações úteis relacionadas ao gerenciamento de pacote. Para mais, por favor veja [FAQ (Português)#Gerenciamento de pacote](/index.php/FAQ_(Portugu%C3%AAs)#Gerenciamento_de_pacote "FAQ (Português)") e [Category:Package management (Português)](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)").
+Essa seção contém informações úteis relacionadas ao gerenciamento de pacote. Para mais, por favor veja [Perguntas frequentes#Gerenciamento de pacote](/index.php/Perguntas_frequentes#Gerenciamento_de_pacote "Perguntas frequentes") e [Category:Package management (Português)](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)").
 
-**Nota:** É imprescindível se manter atualizado com as alterações no Arch Linux que exigem intervenção manual *antes* de atualizar seu sistema. Inscreva-se na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ou confira a página inicial pelas [últimas notícias do Arch](https://www.archlinux.org/) toda vez antes de atualizar. Alternativamente, você pode achar útil se inscrever [neste feed RSS](https://www.archlinux.org/feeds/news/).
+**Nota:** É imprescindível se manter atualizado com as alterações no Arch Linux que exigem intervenção manual *antes* de atualizar seu sistema. Inscreva-se na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ou no [feed RSS de notícias recentes](https://www.archlinux.org/feeds/news/). Alternativamente, confira as [notícias do Arch](https://www.archlinux.org/) na página inicial toda vez antes de atualizar.
 
 ### pacman
 
@@ -158,7 +158,7 @@ Uma vez concluído, a tela será apagada e e o prompt de login aparecerá, deixa
 
 ### Ativação de Num Lock
 
-Num Lock é uma tecla de ativar/desativar localizada na maioria dos teclados. Para ativar a atribuição de tecla numérica do Num Lock durante a inicialização, veja [Ativando Numlock na inicialização](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+[Num Lock](https://en.wikipedia.org/wiki/pt:Num_Lock "wikipedia:pt:Num Lock") é uma tecla de ativar/desativar localizada na maioria dos teclados. Para ativar a atribuição de tecla numérica do Num Lock durante a inicialização, veja [Ativando Numlock na inicialização](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
 
 ## Interface gráfica de usuário
 
@@ -210,7 +210,7 @@ Para artigos relacionados computação portátil, junto com guias de instalaçã
 
 ### Suspensão e hibernação
 
-Veja o artigo principal: [Suspensão e hibernação](/index.php/Suspend_and_hibernate "Suspend and hibernate").
+Veja o artigo principal: [Power management#Suspend and hibernate](/index.php/Power_management#Suspend_and_hibernate "Power management").
 
 ## Multimídia
 
@@ -254,7 +254,7 @@ Um [firewall](/index.php/Firewall "Firewall") pode fornecer uma camada extra de 
 
 Para compartilhar arquivos entre máquinas em uma rede, siga o artigo [NFS](/index.php/NFS "NFS") ou o [SSHFS](/index.php/SSHFS "SSHFS").
 
-Use [Samba](/index.php/Samba "Samba") para entrar em uma rede Windows. Para configurar a máquina para usar Active Directory para autenticação, leia [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration").
+Use [Samba](/index.php/Samba "Samba") para entrar em uma rede Windows. Para configurar a máquina para usar Active Directory para autenticação, leia [Active Directory integration](/index.php/Active_Directory_integration "Active Directory integration").
 
 Veja também [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
 
@@ -306,7 +306,7 @@ A maioria das distribuições possuem um comando `locate` disponível para possi
 
 ### Entrega local de correio
 
-Uma instalação padrão não forence uma forma de sincronizar correios eletrônicos (e-mails). Para configurar *Postfix* para uma simples entrega para caixa de correio local, veja [Postfix](/index.php/Postfix "Postfix"). Outras opções são [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") e [fdm](/index.php/Fdm "Fdm").
+Uma instalação padrão não fornece uma forma de sincronizar correios eletrônicos (e-mails). Para configurar *Postfix* para uma simples entrega para caixa de correio local, veja [Postfix](/index.php/Postfix "Postfix"). Outras opções são [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD"), [msmtp](/index.php/Msmtp "Msmtp") e [fdm](/index.php/Fdm "Fdm").
 
 ### Impressão
 
@@ -324,9 +324,9 @@ Uma abundância de informações sobre o assunto pode ser localizada nos artigos
 
 Se for dispender uma quantidade significante de tempo trabalhando pelo console virtual (i.e. fora de um servidor X), usuários podem querer alterar a fonte do console para melhorar a legibilidade; veja [Console do Linux#Fontes](/index.php/Console_do_Linux#Fontes "Console do Linux").
 
-### Temas GTK+ e Qt
+### Temas GTK e Qt
 
-Uma grande parte dos aplicativos com uma interface gráfica para sistemas Linux são baseadas nos *toolkist* [GTK+](/index.php/GTK%2B "GTK+") ou [Qt](/index.php/Qt "Qt"). Veja estes artigos e [Aparência uniforme para aplicativos Qt e GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") para ideias de como melhorar a aparência de seus programas instalados e adapte-o ao seu gosto.
+Uma grande parte dos aplicativos com uma interface gráfica para sistemas Linux são baseadas nos *toolkist* [GTK](/index.php/GTK_(Portugu%C3%AAs) "GTK (Português)") ou [Qt](/index.php/Qt "Qt"). Veja estes artigos e [Aparência uniforme para aplicativos Qt e GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") para ideias de como melhorar a aparência de seus programas instalados e adapte-o ao seu gosto.
 
 ## Melhorias no console
 

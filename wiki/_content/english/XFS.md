@@ -31,7 +31,7 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
 
 ## Installation
 
-The tools to manage XFS partitions are in the [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) package, which is included in the default base installation.
+For XFS userspace utilities [install](/index.php/Install "Install") the [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) package. It contains the tools necessary to manage an XFS file system.
 
 ## Data corruption
 
@@ -160,7 +160,7 @@ To reserve an external journal with a specified size when you create an XFS file
 
 ### Sync interval
 
-XFS has it dedicated [sysctl](/index.php/Sysctl "Sysctl") variable for setting "[writeback interval](/index.php/Improving_performance#Enlarge_writeback_interval_and_buffer_size "Improving performance")". Arch has a default value of 3000, larger value is possible to set, just keep in mind that too large may result data loss in some cases:
+XFS has it dedicated [sysctl](/index.php/Sysctl "Sysctl") variable for setting "[writeback interval](/index.php/Improving_performance#Writeback_interval_and_buffer_size "Improving performance")". Arch has a default value of 3000, larger value is possible to set, just keep in mind that too large may result data loss in some cases:
 
  `/etc/sysctl.d/20-xfs-sync-interval.conf`  `fs.xfs.xfssyncd_centisecs = 10000` 
 

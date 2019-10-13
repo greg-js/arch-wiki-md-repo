@@ -96,7 +96,7 @@ El paquete [moreutils](https://www.archlinux.org/packages/?name=moreutils) propo
 
 ## Alternativas
 
-Las alternativas a las utilidades principales del grupo [base](https://www.archlinux.org/groups/x86_64/base/) son [BusyBox](/index.php/BusyBox "BusyBox"), [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) y [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
+Las alternativas a las utilidades principales del grupo [base](https://www.archlinux.org/packages/?name=base) son [BusyBox](/index.php/BusyBox "BusyBox"), [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) y [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
 
 ### Alternativas a find
 

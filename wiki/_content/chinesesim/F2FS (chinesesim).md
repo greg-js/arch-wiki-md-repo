@@ -6,7 +6,11 @@ Related articles
 
 [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") (Flash-Friendly File System) 是一个为配备了 Flash Transition Layer 的 NAND 闪存开发的文件系统，与 JFFS 或 UBIFS 不同，它依靠 FTL 来处理写入分发。 Linux 从内核3.8开始支持 F2FS 。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 创建 F2FS 文件系统](#创建_F2FS_文件系统)
 *   [2 挂载 F2FS 文件系统](#挂载_F2FS_文件系统)

@@ -91,7 +91,7 @@ Daug nesiplečiant, ar skaitėte [The Arch Way](/index.php/The_Arch_Way_(Lietuvi
 
 ### Kada bus prieinama nauja versija?
 
-Arch Linux leidiniai paprasčiausiai yra aplinka diegimui ar pagalbai, kurią sudaro [base](https://www.archlinux.org/groups/x86_64/base/) grupė ir keletas [kitų paketų](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). Nauji leidiniai dažniausiai išeina kiekvieno mėnesio pirmoje pusėje.
+Arch Linux leidiniai paprasčiausiai yra aplinka diegimui ar pagalbai, kurią sudaro [base](https://www.archlinux.org/packages/?name=base) grupė ir keletas [kitų paketų](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). Nauji leidiniai dažniausiai išeina kiekvieno mėnesio pirmoje pusėje.
 
 Einamosios versijos modelis, leidžia vienos komandos pagalba pilnai atnaujinti Arch Linux sistemą. Dėl šios priežasties versijos Arch nėra labai svarbios, nes jos iškart pasensta kai kas nors atnaujinama. Jeigu norite naujausios Arch Linux versijos, jums nereikia nieko perinstaliuoti. Paprasčiausiai pasinaudokite `pacman -Syu` komanda, ir jūsų sistema taps identiška tarsi naujai instaliuota. Dėl šios priežasties naujose Arch Linux versijose nėra kažko labai naujo ar jaudinančio. Naujos ir jaudinančios funkcijos yra išleidžiamos kai reikia, kartu su atnaujinamais paketais ir juos galima gauti iš karto pasinaudojus komanda `pacman -Syu`.
 

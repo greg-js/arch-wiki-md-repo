@@ -2,7 +2,7 @@ Detta är en guide för att installera [Arch Linux](/index.php/Arch_Linux "Arch 
 
 För mer detalierad förklaring, läs de respektive [ArchWiki](/index.php/ArchWiki "ArchWiki") artiklarna eller de vardera programmens [man page](/index.php/Man_page "Man page"). För interaktiv hjäp använd [IRC channel](/index.php/IRC_channel "IRC channel") och [forum](https://bbs.archlinux.org/) är också tillgänglig.
 
-Arch Linux borde fungera på vilken som helst [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-kompatibel system, med en minimum mänged av 512MB RAM. En grundläggande installation med all paket från [base](https://www.archlinux.org/groups/x86_64/base/) borde ta mindre än 800MB av hårddisk utrymmet. denna guid anntar en fungerande internet anslutning, för att kunna laddaner paket från internet.
+Arch Linux borde fungera på vilken som helst [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-kompatibel system, med en minimum mänged av 512MB RAM. En grundläggande installation med all paket från [base](https://www.archlinux.org/packages/?name=base) borde ta mindre än 800MB av hårddisk utrymmet. denna guid anntar en fungerande internet anslutning, för att kunna laddaner paket från internet.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

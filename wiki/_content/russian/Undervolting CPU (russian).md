@@ -4,7 +4,7 @@
 *   [CPU frequency scaling (Русский)](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CPU frequency scaling (Русский)")
 *   [Improving performance (Русский)](/index.php/Improving_performance_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Improving performance (Русский)")
 *   [Benchmarking](/index.php/Benchmarking "Benchmarking")
-*   [Fan speed control (Русский)](/index.php/Fan_speed_control_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fan speed control (Русский)")
+*   [Fan speed control](/index.php/Fan_speed_control "Fan speed control")
 
 **Состояние перевода:** На этой странице представлен перевод статьи [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU"). Дата последней синхронизации: 5 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Undervolting_CPU&diff=0&oldid=574612).
 

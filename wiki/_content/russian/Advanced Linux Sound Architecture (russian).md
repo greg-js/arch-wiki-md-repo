@@ -1,11 +1,13 @@
 Ссылки по теме
 
-*   [Sound system](/index.php/Sound_system "Sound system")
-*   [Disable PC speaker beep (Русский)](/index.php/Disable_PC_speaker_beep_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Disable PC speaker beep (Русский)")
-*   [Advanced Linux Sound Architecture/Example Configurations](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations "Advanced Linux Sound Architecture/Example Configurations")
+*   [ALSA configuration examples](/index.php/ALSA_configuration_examples "ALSA configuration examples")
+*   [ALSA troubleshooting](/index.php/ALSA_troubleshooting "ALSA troubleshooting")
+*   [Звуковая система](/index.php/%D0%97%D0%B2%D1%83%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0 "Звуковая система")
+*   [Динамик ПК](/index.php/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA_%D0%9F%D0%9A "Динамик ПК")
 *   [PulseAudio (Русский)](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio (Русский)")
+*   [Open Sound System](/index.php/Open_Sound_System "Open Sound System")
 
-[Advanced Linux Sound Architecture](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture") (**ALSA**) это компонент ядра Linux, что заменил оригинальную Open Sound System (OSSv3) в обеспечении драверов для звуковых карт. В отличие от драйверов звуковых карт, **ALSA** также содержит пользовательские библиотеки для разработчиков приложений, которые хотят использовать возможности драйвера для высокоуровневых API, что напрямую связаны с драйверами ядра.
+[Advanced Linux Sound Architecture](https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture "wikipedia:Advanced Linux Sound Architecture") (**ALSA**) — компонент ядра Linux, который заменил оригинальную Open Sound System (OSSv3) в обеспечении драверов для звуковых карт. В отличие от драйверов звуковых карт, **ALSA** также содержит пользовательские библиотеки для разработчиков приложений, которые хотят использовать возможности драйвера для высокоуровневых API, что напрямую связаны с драйверами ядра.
 
 **Примечание:** Для альтернативного звукового окружения, обратитесь к статье [Open Sound System](/index.php/Open_Sound_System "Open Sound System").
 

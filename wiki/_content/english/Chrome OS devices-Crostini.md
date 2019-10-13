@@ -6,7 +6,6 @@ Highlights:
 
 *   Officially supported, don't need to enable developer mode - leaves ChromeOS secure, no need to flash a BIOS etc.
 *   Better battery life - Battery life of Chrome with the functionality of Linux.
-*   Access to Android apps, play store etc.
 *   Audio & OpenGL are supported, but microphone and USB devices are still in progress.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -26,7 +25,6 @@ Highlights:
     *   [2.5 Video playback](#Video_playback)
     *   [2.6 GPU acceleration](#GPU_acceleration)
     *   [2.7 Fullscreen video, games and mouse capture don't work correctly](#Fullscreen_video,_games_and_mouse_capture_don't_work_correctly)
-    *   [2.8 SystemD status showed as degraded](#SystemD_status_showed_as_degraded)
 *   [3 Useful links](#Useful_links)
 
 ## Introduction
@@ -144,14 +142,40 @@ $ systemctl --user start sommelier-x@1    # For X11 GUI apps (low density)
 Make sure these services are running successfully by running:
 
 ```
-$ systemctl --user status sommelier@0
-$ systemctl --user status sommelier@1
-$ systemctl --user status sommelier-x@0
-$ systemctl --user status sommelier-x@1
+systemctl --user status sommelier@0
+systemctl --user status sommelier@1
+systemctl --user status sommelier-x@0
+systemctl --user status sommelier-x@1
 
 ```
 
-Now, when apps are installed in Arch Linux, they will automatically show up and can be launched from ChromeOS. Note that while GUI apps work, rendering is still software, with no OpenGL support yet.
+Now, when apps are installed in Arch Linux, they will automatically show up and can be launched from ChromeOS.
+
+7\. Stop & disable not required systemd services:
+
+```
+sudo systemctl disable getty@tty1.service
+sudo systemctl mask rtkit-daemon
+sudo systemctl mask systemd-udev-trigger.service
+
+```
+
+Restart the Linux subsystem to apply the changes. After restart
+
+```
+systemctl --failed
+systemctl --user --failed
+
+```
+
+should both report **0 loaded units listed** and
+
+```
+journalctl -p 3 -xb
+
+```
+
+should show **-- No entries --**
 
 ## Troubleshooting
 
@@ -239,24 +263,6 @@ OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
 ### Fullscreen video, games and mouse capture don't work correctly
 
 Currently Crostini doesn't allow linux apps to be completely fullscreen and mouse capture doesn't work correctly. So playing most Steam games is infeasible. There is an open issue about this problem: [https://bugs.chromium.org/p/chromium/issues/detail?id=927521](https://bugs.chromium.org/p/chromium/issues/detail?id=927521)
-
-### SystemD status showed as degraded
-
-Issue is caused by systemd-udev-trigger.service unit, which fails due to missing write access to the /sys. It is safe to mask it:
-
-```
-sudo systemctl mask systemd-udev-trigger.service
-
-```
-
-and restart the Linux subsystem. After restart
-
-```
-systemctl status
-
-```
-
-should report **State: running**.
 
 ## Useful links
 

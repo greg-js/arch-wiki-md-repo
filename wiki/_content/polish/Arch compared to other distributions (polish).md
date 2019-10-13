@@ -11,8 +11,7 @@
     *   [2.3 Debian](#Debian)
     *   [2.4 Mandriva](#Mandriva)
     *   [2.5 openSUSE](#openSUSE)
-    *   [2.6 Fedora](#Fedora_2)
-    *   [2.7 PCLinuxOS](#PCLinuxOS)
+    *   [2.6 PCLinuxOS](#PCLinuxOS)
 *   [3 Dystrybucje źródłowo-bazowe](#Dystrybucje_źródłowo-bazowe)
     *   [3.1 Gentoo](#Gentoo)
 *   [4 Dystrybucje minimalistyczne](#Dystrybucje_minimalistyczne)
@@ -52,16 +51,6 @@ Mandriva (wcześniej Mandrake) zdobyła sławę dzięki swojemu instalatorowi. T
 ### openSUSE
 
 openSUSE posiada doskonały system administracji systemem zwany Yast, za pomocą którego w łatwy sposób można skonfigurować prawie wszystko co się dzieje w naszym systemie. Arch nie oferuje takiego narzędzia zgodnie z The Arch Way. SUSE jest polecany mniej doświadczonym, zupełnie początkującym użytkownikom, bądź tym, którzy chcą prostszego życia oczekując działającego systemu zaraz po zainstalowaniu.
-
-### Fedora
-
-Fedora jest projektem rozwijanym przez Fedora Project i finansowanym głównie przez Red Hat. Charakteryzuje się sporą społecznością, która chętnie pomaga nowym użytkownikom. Używa pakietów RPM, którymi zarządza się menedżerem yum, jednakże oficjalne narzędzie graficzne (PackageKit) jest również dostępne w repozytoriach. W Archu oficjalnym menedżerem pakietów jest Pacman, zaś wszelakie graficzne narzędzia są nieoficjalne.
-
-Dystrybucja zawiera tylko wolne oprogramowanie, które nie budzi żadnych zastrzeżeń licencyjnych i patentowych, ale powstały repozytoria z kodekami i zamkniętymi sterownikami. Arch jest bardziej pobłażliwy.
-
-Fedora oferuje zarówno graficzny i tekstowy instalator, który zainstaluje wybrane środowisko graficzne. Arch zainstalować można wyłącznie dzięki tekstowemu instalatorowi, po czym uzyskamy tylko system bazowy.
-
-Na koniec kolejna różnica pomiędzy Fedorą, a Archem - pierwsza dystrybucja wydawana jest cyklicznie, natomiast druga jest dystrybucją rolling-realase. Obrazy są wydawane w celu wyłącznie uaktualnienia obrazu instalacyjnego raz lub dwa razy w roku.
 
 ### PCLinuxOS
 

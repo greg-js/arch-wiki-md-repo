@@ -31,7 +31,7 @@ This article explains the Arch Linux base set-up defaults for PAM to authenticat
 
 ## Installation
 
-The [pam](https://www.archlinux.org/packages/?name=pam) package is part of the [base group](/index.php/Base_group "Base group") of packages and, thereby, normally installed on an Arch system. The PAM modules are installed into `/usr/lib/security` exclusively.
+The [pam](https://www.archlinux.org/packages/?name=pam) package is a dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package") and, thereby, normally installed on an Arch system. The PAM modules are installed into `/usr/lib/security` exclusively.
 
 The repositories contain a number of optional PAM packages, the [#Configuration How-Tos](#Configuration_How-Tos) show examples.
 
@@ -150,7 +150,7 @@ PAM modules from the [Official repositories](/index.php/Official_repositories "O
 
 	shows how to use `pam_exec.so` to execute a custom script on a user login.
 
-*   [Active Directory Integration#Configuring PAM](/index.php/Active_Directory_Integration#Configuring_PAM "Active Directory Integration")
+*   [Active Directory integration#Configuring PAM](/index.php/Active_Directory_integration#Configuring_PAM "Active Directory integration")
 
 	uses `pam_winbind.so` and `pam_krb5.so` to let users authenticate via Active Directory ([LDAP](/index.php/LDAP "LDAP"), [Kerberos](/index.php/Kerberos "Kerberos")) services.
 

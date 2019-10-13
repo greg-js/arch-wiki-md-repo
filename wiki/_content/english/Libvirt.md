@@ -486,9 +486,12 @@ Check the host setup: enabling IPv6 forwarding with RA routes without accept_ra 
 
 ```
 
-Fix this by creating the following file (replace `*eth0*` with the name of your physical interface). Reboot your machine afterwards.
+Fix this by running the following command (replace `*eth0*` with the name of your physical interface):
 
- `/etc/sysctl.d/libvirt-bridge.conf`  `net.ipv6.conf.eth0.accept_ra = 2` 
+```
+# sysctl net.ipv6.conf.eth0.accept_ra=2
+
+```
 
 ### Snapshots
 

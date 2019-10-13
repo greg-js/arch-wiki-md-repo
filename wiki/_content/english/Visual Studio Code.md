@@ -25,6 +25,7 @@ The following packages provide VSCode:
 
 *   [code](https://www.archlinux.org/packages/?name=code) (open-source release)
 *   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) (Microsoft-branded release)
+*   [visual-studio-code-insiders](https://aur.archlinux.org/packages/visual-studio-code-insiders/) (Microsoft-branded release, updated daily)
 *   [code-git](https://aur.archlinux.org/packages/code-git/) (in-development open-source version)
 *   [vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/) (another open-source version with a community-driven default configuration)
 
@@ -77,7 +78,7 @@ Visual Studio Code uses DBus to pass the menu to Plasma, try installing [libdbus
 
 ### Unable to move items to trash
 
-By default, [Electron](https://electron.atom.io/) apps use `gvfs-trash` to delete files. This command is [deprecated and no longer exists](https://github.com/electron/electron/issues/15011), so the `ELECTRON_TRASH` [environment variable](/index.php/Environment_variable "Environment variable") must be used instead to specify which trash utility should be used.
+By default, [Electron](https://electron.atom.io/) apps use `gio` to delete files. Different trash implementations can be used by setting the `ELECTRON_TRASH` [environment variable](/index.php/Environment_variable "Environment variable").
 
 For example, for deleting files under [Plasma](/index.php/Plasma "Plasma"):
 
@@ -86,7 +87,7 @@ $ ELECTRON_TRASH=kioclient5 code
 
 ```
 
-At the time of writing, Electron supports `kioclient5`, `kioclient`, `trash-cli`, `gio` and `gvfs-trash` (default). More info is available at this [Github pull request page](https://github.com/electron/electron/pull/7178).
+At the time of writing, Electron supports `kioclient5`, `kioclient`, `trash-cli`, `gio` (default) and `gvfs-trash` (deprecated). More info is available at this [documentation page](https://github.com/electron/electron/blob/master/docs/api/environment-variables.md#electron_trash-linux).
 
 ### Unable to debug C#
 

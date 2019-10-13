@@ -120,7 +120,7 @@ The webcam in this laptop is capable of "Windows Hello" which has a Linux versio
 
 BIOS and firmware updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme-gen-2/downloads).
 
-The latest BIOS version, v1.08, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
+The latest BIOS version, v1.26, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
 
 ## Software
 

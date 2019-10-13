@@ -40,7 +40,7 @@ Related articles
 
 ## Installation
 
-The stock Arch Linux kernel is compiled with iptables support. You will only need to [install](/index.php/Install "Install") the userland utilities, which are provided by the package [iptables](https://www.archlinux.org/packages/?name=iptables). (The [iproute2](https://www.archlinux.org/packages/?name=iproute2) package from the [base](https://www.archlinux.org/groups/x86_64/base/) group depends on iptables, so the iptables package should be installed on your system by default.)
+The stock Arch Linux kernel is compiled with iptables support. You will only need to [install](/index.php/Install "Install") the userland utilities, which are provided by the package [iptables](https://www.archlinux.org/packages/?name=iptables). The [iptables](https://www.archlinux.org/packages/?name=iptables) package is an indirect dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package"), so it should be installed on your system by default.
 
 ### Front-ends
 

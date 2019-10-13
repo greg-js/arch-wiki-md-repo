@@ -136,7 +136,7 @@ The URL of the official site of the software being packaged.
 
 ### license
 
-The license under which the software is distributed. The [licenses](https://www.archlinux.org/packages/?name=licenses) package (part of the [base group](/index.php/Base_group "Base group")) contains many commonly used licenses, which are installed under `/usr/share/licenses/common/`. If a package is licensed under one of these licenses, the value should be set to the directory name, e.g. `license=('GPL')`. If the appropriate license is not included, several things must be done:
+The license under which the software is distributed. The [licenses](https://www.archlinux.org/packages/?name=licenses) package (a dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package")) contains many commonly used licenses, which are installed under `/usr/share/licenses/common/`. If a package is licensed under one of these licenses, the value should be set to the directory name, e.g. `license=('GPL')`. If the appropriate license is not included, several things must be done:
 
 1.  Add `custom` to the `license` array. Optionally, you can replace `custom` with `custom:*name of license*`. Once a license is used in two or more packages in an official repository (including [community](/index.php/Community_repository "Community repository")), it becomes a part of the [licenses](https://www.archlinux.org/packages/?name=licenses) package.
 2.  Install the license in: `/usr/share/licenses/*pkgname*/`, e.g. `/usr/share/licenses/foobar/LICENSE`. One good way to do this is by using: `install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"` 

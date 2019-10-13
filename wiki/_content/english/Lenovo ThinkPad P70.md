@@ -13,7 +13,11 @@ This is a guide of steps aggregated from other sources to installation of Arch o
 | Card Reader | untested |
 | Bluetooth | untested |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
 *   [2 Preliminaries](#Preliminaries)
@@ -125,7 +129,7 @@ The integrated Intel GPU should work (mostly) without configuration using the [x
 
 There is a BIOS option for turning off the Intel Integrated Graphics and only running the NVIDIA discrete card. While it is possible to get the console working with this configuration, there are no confirmed reports of X.org working in this setup.
 
-[NVIDIA Optimus#Using nvidia](/index.php/NVIDIA_Optimus#Using_nvidia "NVIDIA Optimus") contains instructions on configuring Xorg to use your Nvidia Quadro GPU. Be sure to select the "Hybrid Graphics" in your BIOS. The official [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver package supports hybrid GPU configuration without requiring the use of Noveau/PRIME or Bumblebee. The following example configuration enables the GPU using the proprietary driver. Pay close attention to the ConstrainCursor and AccelMethod directives.
+[NVIDIA Optimus#Use NVIDIA graphics only](/index.php/NVIDIA_Optimus#Use_NVIDIA_graphics_only "NVIDIA Optimus") contains instructions on configuring Xorg to use your Nvidia Quadro GPU. Be sure to select the "Hybrid Graphics" in your BIOS. The official [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver package supports hybrid GPU configuration without requiring the use of Noveau/PRIME or Bumblebee. The following example configuration enables the GPU using the proprietary driver. Pay close attention to the ConstrainCursor and AccelMethod directives.
 
  `/etc/X11/xorg.conf` 
 ```

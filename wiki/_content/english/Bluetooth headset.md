@@ -334,7 +334,7 @@ where 2 is the index of the device retrieved through `pacmd ls`.
 
 If the headphones play sound correctly until they become idle and then stutter on resume (e.g. because the sound is paused, or because no sound is played for a while), try disabling PulseAudio's automatic sink/source suspension on idle.
 
-See [PulseAudio/Troubleshooting#Bluetooth_headset_replay_problems](/index.php/PulseAudio/Troubleshooting#Bluetooth_headset_replay_problems "PulseAudio/Troubleshooting") for steps.
+See [PulseAudio/Troubleshooting#Bluetooth headset replay problems](/index.php/PulseAudio/Troubleshooting#Bluetooth_headset_replay_problems "PulseAudio/Troubleshooting") for steps.
 
 #### UUIDs has unsupported type
 

@@ -153,7 +153,7 @@ Módulos PAM de los [repositorios oficiales](/index.php/Official_repositories_(E
 
 	muestra cómo utilizar `pam_exec.so` para ejecutar un script personalizado en un inicio de sesión de usuario.
 
-*   [Active Directory Integration#Configuring PAM](/index.php/Active_Directory_Integration#Configuring_PAM "Active Directory Integration")
+*   [Active Directory integration#Configuring PAM](/index.php/Active_Directory_integration#Configuring_PAM "Active Directory integration")
 
 	utiliza `pam_winbind.so` y `pam_krb5.so` para que los usuarios se identifiquen a través de servicios Active Directory (LDAP, [Kerberos](/index.php/Kerberos "Kerberos")).
 

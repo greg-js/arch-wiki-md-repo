@@ -76,7 +76,6 @@ If you for some reason need the help of an op, do not be shy to `/query` or `/ms
 The size of our community led to the creation of multiple IRC channels. To get a list of all channels on **[chat.freenode.net](ircs://chat.freenode.net)** that contain `archlinux` in their name, use the command `/query alis list *archlinux*`.
 
 | Channel | Description |
-| [#archlinux64](ircs://chat.freenode.net/archlinux64) | x86_64 specific discussion channel, mostly in English |
 | [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) | [AUR](/index.php/AUR "AUR") general discussion |
 | [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) | [aurweb](https://projects.archlinux.org/aurweb.git/) development discussion |
 | [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Bug-centric discussion |

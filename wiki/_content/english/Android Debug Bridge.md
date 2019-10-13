@@ -178,7 +178,7 @@ $ adb restore mybackup.ab
 *   [adb-sync](https://github.com/google/adb-sync) (available as [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) – a tool to synchronize files between a PC and an Android device using the ADB protocol.
 *   [AndroidScreencast](http://xsavikx.github.io/AndroidScreencast) (available as [androidscreencast-bin](https://aur.archlinux.org/packages/androidscreencast-bin/)) – view and control your Android device from a PC (via ADB).
 *   [logcat-color](https://aur.archlinux.org/packages/logcat-color/) - a colorful and highly configurable alternative to the standard `adb logcat` command.
-*   [scrcpy](https://aur.archlinux.org/packages/scrcpy) (available as [scrcpy](https://aur.archlinux.org/packages/scrcpy/)) – display and control your Android device
+*   [scrcpy](https://github.com/Genymobile/scrcpy) (available as [scrcpy](https://aur.archlinux.org/packages/scrcpy/)) – display and control your Android device
 
 ## Troubleshooting
 

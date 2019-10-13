@@ -2,7 +2,11 @@ Controllare la velocità (e il rumore!) della ventola della CPU è facile!
 
 **Warning:** Ciò che segue potrebbe danneggiare il proprio hardware. La ventola della CPU serve per raffreddarla e in questa guida verrà spenta per un paio di secondi. Se non si è preparati a questo, non farlo!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 lm-sensors](#lm-sensors)
     *   [1.1 Incrementare fan_div](#Incrementare_fan_div)

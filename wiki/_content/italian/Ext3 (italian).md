@@ -2,9 +2,13 @@ Vi è un gran numero di fan del Third Extended Filesystem ("ext3"). A livello ke
 
 Nel corso di questo articolo, /dev/hdXY sarà utilizzato come una partizione generica. È necessario sostituirla con il nodo del dispositivo effettivo per la partizione, come /dev/hdb1 per la prima partizione del disco slave primario o /dev/sda2 per la seconda partizione del primo disco SCSI o Serial ATA.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Usare le utilità tune2fs e e2fsck](#Usare_le_utilit.C3.A0_tune2fs_e_e2fsck)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Usare le utilità tune2fs e e2fsck](#Usare_le_utilità_tune2fs_e_e2fsck)
 *   [2 Utilizzo di indicizzazione Directory](#Utilizzo_di_indicizzazione_Directory)
 *   [3 Abilitare journaling completo](#Abilitare_journaling_completo)
 *   [4 Disattivare verifiche lunghe al boot](#Disattivare_verifiche_lunghe_al_boot)

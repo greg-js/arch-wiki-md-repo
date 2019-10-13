@@ -942,9 +942,7 @@ Symptoms:
 
 ```
 
-Cause:
-
-	Removing an external LVM drive without deactivating the volume group(s) first. Before you disconnect, make sure to:
+Cause: removing an external LVM drive without deactivating the volume group(s) first. Before you disconnect, make sure to:
 
 ```
 # vgchange -an *volume group name*
@@ -968,14 +966,12 @@ Unplug the external drive and wait a few minutes:
 
 #### Suspend/resume with LVM and removable media
 
-In order for LVM to work properly with removable media --like an external USB drive-- the volume group of the external drive needs to be deactivated before suspend. If this is not done, you may get 'buffer I/O errors on the dm device (after resume).
-
-For this reason, it is not recommended to mix external and internal drives in the same volume group.
+In order for LVM to work properly with removable media – like an external USB drive – the volume group of the external drive needs to be deactivated before suspend. If this is not done, you may get 'buffer I/O errors on the dm device (after resume). For this reason, it is not recommended to mix external and internal drives in the same volume group.
 
 To automatically deactivate the volume groups with external USB drives, tag each volume group with the `sleep_umount` tag in this way:
 
 ```
-# vgchange --addtag sleep_umount <vg_external>
+# vgchange --addtag sleep_umount *vg_external*
 
 ```
 
@@ -1006,27 +1002,22 @@ vgs=$(vgs --noheadings -o vg_name $TAG)
 
 echo "Deactivating volume groups with $TAG tag: $vgs"
 
-#Unmount logical volumes belonging to all the volume groups with tag $TAG
+# Unmount logical volumes belonging to all the volume groups with tag $TAG
 for vg in $vgs; do
-   for lv_dev_path in $(lvs --noheadings  -o lv_path -S lv_active=active,vg_name=$vg); do
+    for lv_dev_path in $(lvs --noheadings  -o lv_path -S lv_active=active,vg_name=$vg); do
         echo "Unmounting logical volume $lv_dev_path"
         umount $lv_dev_path
-   done
+    done
 done
 
-#Deactivate volume groups tagged with sleep_umount
+# Deactivate volume groups tagged with sleep_umount
 for vg in $vgs; do
-        echo "Deactivating volume group $vg"
-        vgchange -an $vg
+    echo "Deactivating volume group $vg"
+    vgchange -an $vg
 done
 ```
 
-To enable the unit run:
-
-```
-# systemctl enable ext_usb_vg_deactivate.service
-
-```
+Finally, [enable](/index.php/Enable "Enable") the unit.
 
 ### Resizing a contiguous logical volume fails
 

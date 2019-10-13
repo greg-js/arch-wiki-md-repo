@@ -18,6 +18,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Keybase "wikipedia:Keybase"):
 *   [4 Keybase Filesystem (KBFS)](#Keybase_Filesystem_(KBFS))
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Keybase GUI starts automatically](#Keybase_GUI_starts_automatically)
+    *   [5.2 Tray icon using AppIndicator GNOME Shell extension](#Tray_icon_using_AppIndicator_GNOME_Shell_extension)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -98,6 +99,10 @@ All files under `/path/to/kbfs/public` are automatically signed by the client. A
 By default, keybase-gui add a desktop entry in your [autostart](/index.php/XDG_Autostart "XDG Autostart"). To disable it:
 
  `keybase ctl autostart --disable` 
+
+### Tray icon using AppIndicator GNOME Shell extension
+
+You might find that no icon shows up when Keybase starts, if you are using the [gnome-shell-extension-appindicator](https://aur.archlinux.org/packages/gnome-shell-extension-appindicator/) extension. It seems that Electron needs the [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3) to be installed, so that it can create and manage those icons.
 
 ## See also
 

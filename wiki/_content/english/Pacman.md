@@ -766,7 +766,7 @@ Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` e
 
 ### How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?
 
-To reinstall all the native packages: `pacman -Qnq | pacman -S -` (the `-S` option preserves the installation reason by default).
+To reinstall all the native packages: `pacman -Qnq | pacman -S -` or `pacman -S $(pacman -Qnq)` (the `-S` option preserves the installation reason by default).
 
 You will then need to reinstall all the foreign packages, which can be listed with `pacman -Qmq`.
 

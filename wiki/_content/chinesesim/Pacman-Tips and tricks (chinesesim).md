@@ -82,7 +82,7 @@ $ expac -S -H M '%k\t%n' *packages*
 
 ```
 
-查询不属于 [base](https://www.archlinux.org/groups/x86_64/base/) 或 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 的软件包，带大小和描述：
+查询不属于 [base](https://www.archlinux.org/packages/?name=base) 或 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 的软件包，带大小和描述：
 
 ```
 $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n

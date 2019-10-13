@@ -4,7 +4,7 @@
 
 有关更详细的说明，请阅读本指南内相应的 [ArchWiki](/index.php/ArchWiki:About_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:About (简体中文)") 文章或各类程序的[手册](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Man page (简体中文)")。有关配置的概述，请参阅 [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)。若需要交互帮助，可以使用 [IRC 频道](/index.php/IRC_channel "IRC channel") 和 [论坛](https://bbs.archlinux.org/)。
 
-Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikipedia.org/wiki/zh:X86-64 "w:zh:X86-64") 兼容机上运行。用 [base](https://www.archlinux.org/groups/x86_64/base/) 组内的软件包进行的基本安装将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
+Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikipedia.org/wiki/zh:X86-64 "w:zh:X86-64") 兼容机上运行。用 [base](https://www.archlinux.org/packages/?name=base) 组内的软件包进行的基本安装将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -215,14 +215,16 @@ live 环境可以从 [USB 安装 U 盘](/index.php/USB_flash_installation_media 
 
 ### 安装基本系统
 
-使用 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/groups/x86_64/base/) 组：
+使用 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/packages/?name=base) 软件包和 [linux](https://www.archlinux.org/packages/?name=linux) 内核：
 
 ```
-# pacstrap /mnt base
+# pacstrap /mnt base linux
 
 ```
 
-这个组并没有包含全部 live 环境中的程序，有些需要额外安装，例如 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)。[packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) 页面包含了它们的差异。
+base 软件包并没有包含全部 live 环境中的程序，有些需要额外安装，例如 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)。[packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) 页面包含了它们的差异。
+
+你可以选择别的提供内核的软件包来代替 [linux](https://www.archlinux.org/packages/?name=linux)；你甚至可以把这件事搁置，前提是你知道你在做什么且明晰这样做的风险。
 
 如果你还想安装其他软件包组比如 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)，请将他们的名字添加到 *pacstrap* 后，并用空格隔开。你也可以在 [#Chroot](#Chroot) 之后使用 [pacman](/index.php/Pacman "Pacman") 手动安装软件包或组。
 

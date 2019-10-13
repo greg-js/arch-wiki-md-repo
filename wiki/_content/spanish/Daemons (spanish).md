@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Daemons](/index.php/Daemons "Daemons"), revisada por última vez el **2019-01-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Daemons&diff=0&oldid=561789) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Daemons](/index.php/Daemons "Daemons"), revisada por última vez el **2019-10-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Daemons&diff=0&oldid=573986) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Un [demonio](https://en.wikipedia.org/wiki/es:Demonio_(inform%C3%A1tica) es un programa que se ejecuta como un proceso en segundo plano (o de fondo, sin una terminal o interfaz de usuario), comúnmente esperando que ocurran eventos y ofreciendo servicios. Un buen ejemplo es un servidor web que espera una solicitud para entregar una página, o un servidor ssh esperando a que alguien intente iniciar sesión. Si bien estas son aplicaciones completas, hay demonios cuyo trabajo no es tan visible. Los demonios son para tareas como escribir mensajes en un archivo de registro (por ejemplo, `syslog`, `metalog`) o para mantener la precisión del reloj de su sistema (por ejemplo, [ntpd](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)")). Para obtener más información, véase [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
 
@@ -35,6 +35,7 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
 | [Deluge](/index.php/Deluge "Deluge") | deluged | deluged.service | Multiplataforma y cliente BitTorrent completo - demonio principal. |
 | deluge-web | deluge-web.service | Multiplataforma y cliente BitTorrent completo - demonio para la interfaz web. |
 | [Dhcpcd](/index.php/Dhcpcd_(Espa%C3%B1ol) "Dhcpcd (Español)") | dhcpcd | dhcpcd@.service | Demonio de DHCP. |
+| [Docker](/index.php/Docker "Docker") | docker | docker.service | Una plataforma de contenedores. |
 | [Dovecot](/index.php/Dovecot "Dovecot") | dovecot | dovecot.service | Servidor IMAP y POP3. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Archivo multiplataforma de sincronización con control de versión. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Escanedados fail2ban de archivos de registros y baneados de IP que muestran los elementos maliciosos. |
@@ -125,8 +126,8 @@ shadow.service
  soundmodem | *not yet implemented* | Tarjeta de sonido multiplataforma Packet Radio Modem |
 | [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) | spamd | spamassassin.service | Servicio para filtrar el spam de los email. |
 | [OpenSSH](/index.php/OpenSSH_(Espa%C3%B1ol) "OpenSSH (Español)") | sshd | sshd.service | Demonio de OpenSSH (shell segura). |
- stunnel | stunnel.service | Permite encriptar arbitrariamente conexión TCP con SSL. |
- svnserve | svnserve.service | Servidor de Subversion. |
+| [stunnel](https://www.archlinux.org/packages/?name=stunnel) | stunnel | stunnel.service | Permite encriptar arbitrariamente conexión TCP con SSL. |
+| [subversion](/index.php/Subversion "Subversion") | svnserve | svnserve.service | Servidor de Subversion. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | Nueva generación del registro del sistema. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Sintetizador de software para MIDI. |
 | [Tinc](/index.php/Tinc "Tinc") | ? | tincd@.service | Uno para cada directorio de configuración como /etc/tinc/*<nombrevpn>*/ |

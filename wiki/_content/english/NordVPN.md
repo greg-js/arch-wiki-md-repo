@@ -66,7 +66,7 @@ Logs you out from your NordVPN Account.
 
 ### Enable NordLynx
 
-NordVPN has [introduced](https://nordvpn.com/blog/nordlynx-protocol-wireguard/) NordLynx technology which is based on [Wireguard](/index.php/Wireguard "Wireguard") protocol. Compared to default [OpenVPN](/index.php/OpenVPN "OpenVPN") technology, NordLynx provides lower latency, higher speeds and better connection stability.
+NordVPN has [introduced](https://nordvpn.com/blog/nordlynx-protocol-wireguard/) NordLynx technology which is based on [WireGuard](/index.php/WireGuard "WireGuard") protocol. Compared to default [OpenVPN](/index.php/OpenVPN "OpenVPN") technology, NordLynx provides lower latency, higher speeds and better connection stability.
 
 Enable it with the below command:
 

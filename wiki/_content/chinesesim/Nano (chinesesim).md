@@ -2,7 +2,11 @@
 
 [GNU nano](https://www.nano-editor.org/) （或 nano）是一个基于控制台的文本编辑器，旨在提供一个简单的界面和直观的命令选项。 *nano* 支持的功能包括语法高亮、DOS/Mac 文件格式转换、拼写检查和[UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8")编码。 用空缓冲区打开的*nano*通常占用少于4MB的驻留内存。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -20,7 +24,7 @@
 
 ## 安装
 
-*Nano* 对应的软件包是 [nano](https://www.archlinux.org/packages/?name=nano) 已经属于 [base](https://www.archlinux.org/groups/x86_64/base/) 组，所以通常已经安装在系统中。
+*Nano* 对应的软件包是 [nano](https://www.archlinux.org/packages/?name=nano) 已经属于 [base](https://www.archlinux.org/packages/?name=base) 组，所以通常已经安装在系统中。
 
 ## 配置
 

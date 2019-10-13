@@ -5,7 +5,11 @@ Related articles
 
 If you have invested in a high resolution mouse, adjusting the USB polling rate is a common trick to utilize the added precision it brings. The polling rate (or report rate) determines how often the mouse sends information to your computer.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Polling rate and polling interval](#Polling_rate_and_polling_interval)
 *   [2 Display polling rate](#Display_polling_rate)
@@ -121,7 +125,7 @@ To change the configuration create the following file:
 
  `/etc/modprobe.d/usbhid.conf`  `options usbhid mousepoll=4` 
 
-This example requests a polling rate of 250Hz.
+This example requests a polling rate of 250Hz. Similarly, you may use jspoll or kbpoll to change the polling rate of gamepads/joysticks or keyboards.
 
 To change the polling interval without rebooting
 
@@ -134,7 +138,7 @@ To change the polling interval without rebooting
 
 You may have to unplug the mouse and plug it back in for the change to take effect.
 
-**Note:** If the usbhid module is included on your initramfs image you may need to add `/etc/modprobe.d/usbhid.conf` to the image also. See the note at [Kernel modules#Using files in /etc/modprobe.d/](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules"). Alternatively, you can add `usbhid.mousepoll=X` to your kernel command line. See [Kernel modules#Using kernel command line](/index.php/Kernel_modules#Using_kernel_command_line "Kernel modules").
+**Note:** If the usbhid module is included on your initramfs image you may need to add `/etc/modprobe.d/usbhid.conf` to the image also. See the note at [Kernel modules#Using files in /etc/modprobe.d/](/index.php/Kernel_modules#Using_files_in_/etc/modprobe.d/ "Kernel modules"). Alternatively, you can add `usbhid.mousepoll=X` to your kernel command line. See [Kernel modules#Using kernel command line](/index.php/Kernel_modules#Using_kernel_command_line "Kernel modules").
 
 **Tip:** When using a smaller than default interval you may want to adjust the [Mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration") option [VelocityScale](http://xorg.freedesktop.org/wiki/Development/Documentation/PointerAcceleration/#VelocityScale) to match.
 

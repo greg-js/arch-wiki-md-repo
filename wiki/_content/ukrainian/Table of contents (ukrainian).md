@@ -296,7 +296,7 @@
  <small>6.12.1.2.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
  <small>6.12.2.</small> [Input methods](/index.php/Category:Input_methods "Category:Input methods") <small>(9) (also in [Localization](/index.php/Category:Localization "Category:Localization"))</small> |
  <small>6.12.3.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration "Category:Keyboard configuration") <small>(12)</small> |
- <small>6.13.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(33)</small> |
+ <small>6.13.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(34)</small> |
  <small>6.14.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(5)</small> |
  <small>6.15.</small> [Localization](/index.php/Category:Localization "Category:Localization") <small>(8)</small> |
  <small>6.15.1.</small> [Input methods](/index.php/Category:Input_methods "Category:Input methods") <small>(9) (also in [Input](/index.php/Category:Input "Category:Input"))</small> |

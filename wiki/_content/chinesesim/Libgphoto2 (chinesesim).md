@@ -8,7 +8,11 @@ Related articles
 
 本文阐述如何配置`libgphoto2`，以便访问数码相机。某些数码相机可以直接按[U盘模式](/index.php/USB_storage_devices "USB storage devices")挂载，无需libghoto2。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 前端程序](#前端程序)

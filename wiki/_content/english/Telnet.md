@@ -2,9 +2,9 @@
 
 ## Installation
 
-The [inetutils](https://www.archlinux.org/packages/?name=inetutils) package, part of the [base group](/index.php/Base_group "Base group"), includes a telnet client.
+[Install](/index.php/Install "Install") the [inetutils](https://www.archlinux.org/packages/?name=inetutils) package.
 
-A telnet server can be configured with [systemd](/index.php/Systemd "Systemd") sockets or xinetd. telnetd via systemd requires only the inetutils package. To configure a telnet server with xinetd, install [xinetd](https://www.archlinux.org/packages/?name=xinetd) as well.
+It includes a telnet client. A telnet server can be configured with [systemd](/index.php/Systemd "Systemd") sockets or xinetd. telnetd via systemd requires only the [inetutils](https://www.archlinux.org/packages/?name=inetutils) package. To configure a telnet server with xinetd, install [xinetd](https://www.archlinux.org/packages/?name=xinetd) as well.
 
 ## Configuration
 

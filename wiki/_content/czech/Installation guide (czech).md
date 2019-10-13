@@ -43,7 +43,7 @@ Komunitou spravovaná [ArchWiki](/index.php/Main_page_(%C4%8Cesky) "Main page (�
 
 ## Před instalací
 
-Arch Linux by měl být spustitelný na libovolném počítači kompatibilním s [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") s min. 512 MB RAM. Základní instalace se všemi balíčky ze skupiny [base](https://www.archlinux.org/groups/x86_64/base/) by měla zabírat méně než 800 MB místa na disku.
+Arch Linux by měl být spustitelný na libovolném počítači kompatibilním s [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") s min. 512 MB RAM. Základní instalace by měla zabírat méně než 800 MB místa na disku.
 
 ISO Arch Linuxu stáhněte z [Arch Linux download page](https://www.archlinux.org/download/).
 

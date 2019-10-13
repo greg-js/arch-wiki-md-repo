@@ -237,7 +237,7 @@ To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partit
 
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
-Syslinux legacy boot files are already preinstalled in `/mnt/usb/arch/boot/syslinux`. If you want to be able to boot your usb stick in legacy mode, install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and follow [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") instructions.
+Syslinux files for BIOS systems are already copied to `/mnt/usb/arch/boot/syslinux`. Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and follow [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") instructions to make the partition bootable.
 
 #### In Windows
 

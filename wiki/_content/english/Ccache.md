@@ -17,11 +17,12 @@ Related articles
     *   [2.2 Enable for command line](#Enable_for_command_line)
     *   [2.3 Enable with colorgcc](#Enable_with_colorgcc)
 *   [3 Misc](#Misc)
-    *   [3.1 Change the cache directory](#Change_the_cache_directory)
-    *   [3.2 Set maximum cache size](#Set_maximum_cache_size)
-    *   [3.3 Disable the cache via environment](#Disable_the_cache_via_environment)
-    *   [3.4 CLI](#CLI)
-    *   [3.5 makechrootpkg](#makechrootpkg)
+    *   [3.1 Sloppiness](#Sloppiness)
+    *   [3.2 Change the cache directory](#Change_the_cache_directory)
+    *   [3.3 Set maximum cache size](#Set_maximum_cache_size)
+    *   [3.4 Disable the cache via environment](#Disable_the_cache_via_environment)
+    *   [3.5 CLI](#CLI)
+    *   [3.6 makechrootpkg](#makechrootpkg)
 *   [4 Caveat](#Caveat)
 *   [5 See also](#See_also)
 
@@ -91,7 +92,24 @@ gcj:/usr/bin/gcj
 
 ```
 
+Newer versions of ccache will always enable color for GCC when `GCC_COLORS` is set. Color is enabled for Clang by default. If the output is not a TTY, ccache will ask the compiler to generate color, storing them in the cache, but stripping them from the output. There remains some issue in unifying [-fdiagnostics-color](https://github.com/ccache/ccache/issues/224).
+
 ## Misc
+
+### Sloppiness
+
+Ccache by default use a very conservative comparison that minimizes both false positives and, for some projects, true positives. Some of the comparisions are deemed useless and can be changed:
+
+```
+ $ ccache --set-config=sloppiness=file_macro,locale,time_macros
+
+```
+
+This tells ccache to ignore the `__FILE__` and time-related macros, which usually invalidate the cache and are considered harmful in reproducible builds anyways. Locale differences are also ignored; ccache cares about it mainly because it determines the language of diagnostic messages.
+
+The `CCACHE_SLOPPINESS` environment variable can be exported to override any pre-existing sloppiness settings.
+
+Ccache also by default caches the current directory being used for each build, which means cache misses for build pipelines that use a new, random temporary directory each time it's called. See the [Compiling in different directories](https://ccache.dev/manual/latest.html#_compiling_in_different_directories) section of the ccache manual.
 
 ### Change the cache directory
 

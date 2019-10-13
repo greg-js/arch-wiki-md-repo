@@ -350,7 +350,7 @@ In this example the container will reside in `/srv/container`:
 
 [Install](/index.php/Install "Install") the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
-Install [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) and [nyx](https://www.archlinux.org/packages/?name=nyx) and deselect [linux](https://www.archlinux.org/packages/?name=linux) as per [Systemd-nspawn#Create and boot a minimal Arch Linux distribution in a container](/index.php/Systemd-nspawn#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container "Systemd-nspawn"):
+Install [base](https://www.archlinux.org/packages/?name=base), [tor](https://www.archlinux.org/packages/?name=tor) and [nyx](https://www.archlinux.org/packages/?name=nyx) and deselect [linux](https://www.archlinux.org/packages/?name=linux) as per [Systemd-nspawn#Create and boot a minimal Arch Linux distribution in a container](/index.php/Systemd-nspawn#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container "Systemd-nspawn"):
 
 ```
 # pacstrap -i -c -d /srv/container/tor-exit base tor nyx

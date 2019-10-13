@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=579821) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-10-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=580779) na versão em inglês.
 
 Artigos relacionados
 

@@ -26,7 +26,7 @@ Essa página lista várias ferramentas de rede. *ping* e *ip* são cobertos por 
 
 Há várias implementações disponíveis:
 
-*   [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8) do [iputils](https://www.archlinux.org/packages/?name=iputils) (parte do [base](https://www.archlinux.org/groups/x86_64/base/))
+*   [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8) do [iputils](https://www.archlinux.org/packages/?name=iputils) (parte do [base](https://www.archlinux.org/packages/?name=base))
 *   [traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) do [traceroute](https://www.archlinux.org/packages/?name=traceroute)
 *   **MTR** — Combina a funcionalidade do traceroute e do ping em uma ferramenta.
 

@@ -2,7 +2,7 @@
 
 Dėl detalesnių instrukcijų, žiūrėti atitinkamus [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") straipsnius arba įvairių programų [man puslapius](/index.php/Man_page "Man page"), į kuriuos bus nukreipimai šiame vadove. Norint interaktyvios pagalbos, eiti į [IRC kanalą](/index.php/IRC_channel "IRC channel") ir/arba [forumus](https://bbs.archlinux.org/).
 
-Arch Linux turėtų veikti bet kokioje [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") architektūros mašinoje turinčioje bent 512 MB RAM. Pradinis diegimas su paketais iš [base](https://www.archlinux.org/groups/x86_64/base/) grupės turėtų užimti mažiau nei 800 MB disko vietos. Kadangi diegimo procese reikia gauti paketų iš nuotolinės saugyklos, šiame vadove daroma prielaida kad yra vikiantis interneto ryšys.
+Arch Linux turėtų veikti bet kokioje [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") architektūros mašinoje turinčioje bent 512 MB RAM. Pradinis diegimas su paketais iš [base](https://www.archlinux.org/packages/?name=base) grupės turėtų užimti mažiau nei 800 MB disko vietos. Kadangi diegimo procese reikia gauti paketų iš nuotolinės saugyklos, šiame vadove daroma prielaida kad yra vikiantis interneto ryšys.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -169,7 +169,7 @@ Kuo sąraše veidrodis aukščiau, tuo didesnis prioritetas jam skiriamas siunč
 
 ### Įdiekite pagrininius paketus
 
-Naudokitės [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) skriptu ir įdiekite [base](https://www.archlinux.org/groups/x86_64/base/) paketų grupę:
+Naudokitės [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) skriptu ir įdiekite [base](https://www.archlinux.org/packages/?name=base) paketų grupę:
 
 ```
 # pacstrap /mnt base

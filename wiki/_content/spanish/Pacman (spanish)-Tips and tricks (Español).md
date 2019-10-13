@@ -87,7 +87,7 @@ Para crear un listado de paquetes y su tamaño (deje *packages* en blanco para l
 
 ```
 
-Para listar los paquetes explícitamente instalados que no están en [base](https://www.archlinux.org/groups/x86_64/base/) ni en [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) con tamaño y descripción:
+Para listar los paquetes explícitamente instalados que no están en [base](https://www.archlinux.org/packages/?name=base) ni en [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) con tamaño y descripción:
 
 ```
  $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n
@@ -114,14 +114,14 @@ O, con segundos desde la fecha (1970-01-01 UTC):
 
 **Nota:** Para obtener una lista de paquetes instalados como dependencias pero que ya no son necesarios para ningún paquete instalado, consulte [#Eliminación de paquetes no utilizados (huérfanos)](#Eliminación_de_paquetes_no_utilizados_(huérfanos)).
 
-Lista los paquetes explícitamente instalados que no están en los grupos de [base](https://www.archlinux.org/groups/x86_64/base/) o [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) :
+Lista los paquetes explícitamente instalados que no están en los grupos de [base](https://www.archlinux.org/packages/?name=base) o [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) :
 
 ```
  $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
 
 ```
 
-Lista de todos los paquetes instalados no requeridos por otros paquetes y que no estén en los grupos de [base](https://www.archlinux.org/groups/x86_64/base/) o de [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) :
+Lista de todos los paquetes instalados no requeridos por otros paquetes y que no estén en los grupos de [base](https://www.archlinux.org/packages/?name=base) o de [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) :
 
 ```
  $ comm -23 <(pacman -Qqt | sort) <(pacman -Sqg base base-devel | sort)

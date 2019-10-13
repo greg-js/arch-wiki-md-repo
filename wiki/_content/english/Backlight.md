@@ -194,7 +194,7 @@ The utilities in the following table can be used to control screen brightness. A
 | [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) | Yes | No | C | MIT | - |
 | [brillo](https://aur.archlinux.org/packages/brillo/) | Yes | No | C | GPL-3.0-only | Supports smooth and relative adjustments. |
 | [calise](https://aur.archlinux.org/packages/calise/) | No | Yes | Python2 | GPL-3.0 | - |
-| [clight](https://aur.archlinux.org/packages/clight/) | Yes | Yes | C | GPL-3.0-or-later | Manages screen temperature and smoothly dims brightness after a timeout. Turns webcam into an ambient light sensor. |
+| [clight](https://aur.archlinux.org/packages/clight/) | Yes | Yes | C | GPL-3.0-or-later | Manages screen temperature ([Xorg](/index.php/Xorg "Xorg") only) and smoothly dims brightness after a timeout. Turns webcam into an ambient light sensor. |
 | [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/) | No | No | C | GPL-3.0-or-later | - |
 | [illum-git](https://aur.archlinux.org/packages/illum-git/) | No | No | C | AGPL-3.0 | Reacts to key presses. |
 | [light](https://www.archlinux.org/packages/?name=light) | Yes | No | C | GPL-3.0-only | - |

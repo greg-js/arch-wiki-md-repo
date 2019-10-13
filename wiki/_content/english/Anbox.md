@@ -18,6 +18,10 @@ $ sudo modprobe binder_linux
 
 ```
 
+## Note
+
+There has been cases of conflicting packages while Installing anbox-git, So Make sure you Install the Android IMG first, Install [anbox-image-gapps](https://aur.archlinux.org/packages/anbox-image-gapps/) or [anbox-image](https://aur.archlinux.org/packages/anbox-image/) first and then proceed to Install anbox main Package, Also If you have selected the gapps image make sure to edit the PACKAGEBUILD file during the installation process and replace the dependency of anbox-image to anbox-image-gapps.See [this](https://bbs.archlinux.org/viewtopic.php?id=249747/) link if you run into a common logger.cpp error.
+
 ## Usage
 
 You must execute `anbox-bridge` every time before starting `anbox` in order to get network working in anbox.

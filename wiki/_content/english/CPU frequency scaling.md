@@ -57,7 +57,7 @@ The configuration file for *cpupower* is located in `/etc/default/cpupower`. Thi
 
 ### cpupower-gui
 
-[cpupower-gui](https://aur.archlinux.org/packages/cpupower-gui/) is a graphical utility designed to assist with CPU frequency scaling. The GUI is based on [gtk](/index.php/Gtk "Gtk") and is meant to provide the same options as *cpupower*. *cpupower-gui* can change the maximum/minimum CPU frequency and governor for each core. The application handles privilege granting through [polkit](/index.php/Polkit "Polkit") and allows any logged-in user in the `wheel` [user group](/index.php/User_group "User group") to change the frequency and governor.
+[cpupower-gui](https://aur.archlinux.org/packages/cpupower-gui/) is a graphical utility designed to assist with CPU frequency scaling. The GUI is based on [GTK](/index.php/GTK "GTK") and is meant to provide the same options as *cpupower*. *cpupower-gui* can change the maximum/minimum CPU frequency and governor for each core. The application handles privilege granting through [polkit](/index.php/Polkit "Polkit") and allows any logged-in user in the `wheel` [user group](/index.php/User_group "User group") to change the frequency and governor.
 
 ## CPU frequency driver
 

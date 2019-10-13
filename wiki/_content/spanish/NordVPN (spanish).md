@@ -69,7 +69,7 @@ Cierra la sesión de su cuenta NordVPN.
 
 ### Activar NordLynx
 
-NordVPN tiene [introducida](https://nordvpn.com/blog/nordlynx-protocol-wireguard/) la tecnología NordLynx que se basa en el protocolo [Wireguard](/index.php/Wireguard "Wireguard"). NordLynx proporciona una latencia más baja, velocidades más altas y una mejor estabilidad de la conexión.
+NordVPN tiene [introducida](https://nordvpn.com/blog/nordlynx-protocol-wireguard/) la tecnología NordLynx que se basa en el protocolo [WireGuard](/index.php/WireGuard "WireGuard"). NordLynx proporciona una latencia más baja, velocidades más altas y una mejor estabilidad de la conexión.
 
 Actívela con la siguiente orden:
 

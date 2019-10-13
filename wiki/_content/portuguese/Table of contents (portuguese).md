@@ -8,7 +8,7 @@
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(9)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(Portugu%C3%AAs) "Category:Live Arch systems (Português)") <small>(2)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams_(Portugu%C3%AAs) "Category:Teams (Português)") <small>(5)</small> |
-| <small>2.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(3)</small> |
+| <small>2.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(4)</small> |
 | <small>2.1.</small> [Frameworks](/index.php/Category:Frameworks_(Portugu%C3%AAs) "Category:Frameworks (Português)") <small>(1)</small> |
 | <small>2.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems_(Portugu%C3%AAs) "Category:Issue tracking systems (Português)") <small>(1) (também em [Web applications](/index.php/Category:Web_applications_(Portugu%C3%AAs) "Category:Web applications (Português)"))</small> |
 | <small>2.3.</small> [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)") <small>(1)</small> |
@@ -100,7 +100,7 @@
 | <small>5.8.1.</small> [Arch projects](/index.php/Category:Arch_projects_(Portugu%C3%AAs) "Category:Arch projects (Português)") <small>(5) (também em [DeveloperWiki](/index.php/Category:DeveloperWiki_(Portugu%C3%AAs) "Category:DeveloperWiki (Português)"))</small> |
 | <small>5.8.2.</small> [GNU](/index.php/Category:GNU_(Portugu%C3%AAs) "Category:GNU (Português)") <small>(4)</small> |
 | <small>5.8.3.</small> [KDE](/index.php/Category:KDE_(Portugu%C3%AAs) "Category:KDE (Português)") <small>(1) (também em [Ambientes Desktop](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)"))</small> |
-| <small>5.9.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(5)</small> |
+| <small>5.9.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(6)</small> |
 | <small>5.9.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
 | <small>6.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(4)</small> |
 | <small>6.1.</small> [Backup](/index.php/Category:Backup_(Portugu%C3%AAs) "Category:Backup (Português)") <small>(1)</small> |
@@ -115,18 +115,18 @@
 | <small>6.3.2.2.</small> [Shell builtins](/index.php/Category:Shell_builtins_(Portugu%C3%AAs) "Category:Shell builtins (Português)") <small>(3)</small> |
 | <small>6.3.2.3.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)"))</small> |
 | <small>6.3.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators_(Portugu%C3%AAs) "Category:Terminal emulators (Português)") <small>(1) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"), [Emulation](/index.php/Category:Emulation_(Portugu%C3%AAs) "Category:Emulation (Português)"))</small> |
-| <small>6.4.</small> [Configuration files](/index.php/Category:Configuration_files_(Portugu%C3%AAs) "Category:Configuration files (Português)") <small>(1)</small> |
+| <small>6.4.</small> [Configuration files](/index.php/Category:Configuration_files_(Portugu%C3%AAs) "Category:Configuration files (Português)") <small>(2)</small> |
 | <small>6.5.</small> [Configuration management](/index.php/Category:Configuration_management_(Portugu%C3%AAs) "Category:Configuration management (Português)") <small>(1)</small> |
 | <small>6.6.</small> [Daemons](/index.php/Category:Daemons_(Portugu%C3%AAs) "Category:Daemons (Português)") <small>(4)</small> |
 | <small>6.6.1.</small> [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)") <small>(0) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
 | <small>6.6.1.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(2) (também em [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)"))</small> |
 | <small>6.6.1.2.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network_(Portugu%C3%AAs) "Category:Virtual Private Network (Português)") <small>(2) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"), [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)"))</small> |
 | <small>6.6.1.3.</small> [Web server](/index.php/Category:Web_server_(Portugu%C3%AAs) "Category:Web server (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |
-| <small>6.7.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(1)</small> |
+| <small>6.7.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(2)</small> |
 | <small>6.7.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
 | <small>6.8.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(4)</small> |
 | <small>6.8.1.</small> [Storage virtualization](/index.php/Category:Storage_virtualization_(Portugu%C3%AAs) "Category:Storage virtualization (Português)") <small>(1)</small> |
-| <small>6.9.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(2)</small> |
+| <small>6.9.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(3)</small> |
 | <small>6.10.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(5)</small> |
 | <small>6.10.1.</small> [Widget toolkits](/index.php/Category:Widget_toolkits_(Portugu%C3%AAs) "Category:Widget toolkits (Português)") <small>(1) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
 | <small>6.10.2.</small> [Window managers](/index.php/Category:Window_managers_(Portugu%C3%AAs) "Category:Window managers (Português)") <small>(0)</small> |

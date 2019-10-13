@@ -8,7 +8,11 @@ De [Wikipedia:Preboot Execution Environment](https://en.wikipedia.org/wiki/Prebo
 
 En esta guía, PXE se usa para arrancar los medios de instalación con una Option Rom apropiada que soporte PXE como objetivo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparación](#Preparación)
 *   [2 Instalación del servidor](#Instalación_del_servidor)

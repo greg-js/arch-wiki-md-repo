@@ -302,7 +302,7 @@ GNU/Linux 利用[使用者與群組](/index.php/Users_and_groups_(%E6%AD%A3%E9%A
 
 要建立 Windows 與 Arch Linux 機器之間的網路連線，可以使用 [Samba](/index.php/Samba "Samba")；這是 SMB/CIFS 網路協定的重新實作版本。
 
-閱讀[活動目錄整合](/index.php/Active_Directory_Integration "Active Directory Integration")，設定讓 Arch Linux 機器加入並驗證使用活動目錄 (Active Directory)。
+閱讀[活動目錄整合](/index.php/Active_Directory_integration "Active Directory integration")，設定讓 Arch Linux 機器加入並驗證使用活動目錄 (Active Directory)。
 
 ### 系統維護
 

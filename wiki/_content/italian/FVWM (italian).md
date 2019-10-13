@@ -1,6 +1,10 @@
 FVWM è stabile, potente, efficiente e basato su standard ICCCM e con supporto a multipli desktop virtuali per il sistema X Window. Si richiede un certo sforzo per imparare ad usarlo bene, dato che è quasi interamente configurato modificando file di configurazione con un editor di testo, ma coloro che persistono finiscono con un ambiente desktop che funziona esattamente come vogliono farlo funzionare. Lo sviluppo è attivo, e il supporto è eccellente. E per coloro che se lo chiedono, FVWM significa Feeble virtuale Gestione Window.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione di FVWM](#Installazione_di_FVWM)
 *   [2 Avviare FVWM](#Avviare_FVWM)

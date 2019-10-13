@@ -7,33 +7,37 @@
 
 Distcc 是一个将 C、C++、Objective C 或 Objective C++ 等程序的编译任务分发到网络中多个主机的程序。distcc 的结果和本地编译一模一样，安装后使用方便，通常比本地编译快很多。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 名词定义](#.E5.90.8D.E8.AF.8D.E5.AE.9A.E4.B9.89)
-*   [2 开始](#.E5.BC.80.E5.A7.8B)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 从机配置](#.E4.BB.8E.E6.9C.BA.E9.85.8D.E7.BD.AE)
-    *   [3.2 主机配置](#.E4.B8.BB.E6.9C.BA.E9.85.8D.E7.BD.AE)
-        *   [3.2.1 makepkg 编译](#makepkg_.E7.BC.96.E8.AF.91)
-        *   [3.2.2 非 makepkg 编译](#.E9.9D.9E_makepkg_.E7.BC.96.E8.AF.91)
-*   [4 编译](#.E7.BC.96.E8.AF.91)
-    *   [4.1 makepkg 编译](#makepkg_.E7.BC.96.E8.AF.91_2)
-    *   [4.2 非 makepkg 编译](#.E9.9D.9E_makepkg_.E7.BC.96.E8.AF.91_2)
-*   [5 监视进度](#.E7.9B.91.E8.A7.86.E8.BF.9B.E5.BA.A6)
-*   [6 "Cross Compiling" with distcc](#.22Cross_Compiling.22_with_distcc)
-    *   [6.1 32-bit x86 (i686)](#32-bit_x86_.28i686.29)
-        *   [6.1.1 Chroot method (preferred)](#Chroot_method_.28preferred.29)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 名词定义](#名词定义)
+*   [2 开始](#开始)
+*   [3 配置](#配置)
+    *   [3.1 从机配置](#从机配置)
+    *   [3.2 主机配置](#主机配置)
+        *   [3.2.1 makepkg 编译](#makepkg_编译)
+        *   [3.2.2 非 makepkg 编译](#非_makepkg_编译)
+*   [4 编译](#编译)
+    *   [4.1 makepkg 编译](#makepkg_编译_2)
+    *   [4.2 非 makepkg 编译](#非_makepkg_编译_2)
+*   [5 监视进度](#监视进度)
+*   [6 "Cross Compiling" with distcc](#"Cross_Compiling"_with_distcc)
+    *   [6.1 32-bit x86 (i686)](#32-bit_x86_(i686))
+        *   [6.1.1 Chroot method (preferred)](#Chroot_method_(preferred))
             *   [6.1.1.1 Add port numbers to DISTCC_HOSTS on the i686 chroot](#Add_port_numbers_to_DISTCC_HOSTS_on_the_i686_chroot)
             *   [6.1.1.2 Invoke makepkg from the Native Environment](#Invoke_makepkg_from_the_Native_Environment)
-        *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_.28not_recommended.29)
+        *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_(not_recommended))
     *   [6.2 Other architectures](#Other_architectures)
         *   [6.2.1 Arch Linux ARM](#Arch_Linux_ARM)
         *   [6.2.2 Additional toolchains](#Additional_toolchains)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 code 110](#code_110)
-    *   [7.3 修改 $HOME/.distcc 位置以限制硬盘使用](#.E4.BF.AE.E6.94.B9_.24HOME.2F.distcc_.E4.BD.8D.E7.BD.AE.E4.BB.A5.E9.99.90.E5.88.B6.E7.A1.AC.E7.9B.98.E4.BD.BF.E7.94.A8)
-    *   [7.4 修改日志级别](#.E4.BF.AE.E6.94.B9.E6.97.A5.E5.BF.97.E7.BA.A7.E5.88.AB)
+    *   [7.3 修改 $HOME/.distcc 位置以限制硬盘使用](#修改_$HOME/.distcc_位置以限制硬盘使用)
+    *   [7.4 修改日志级别](#修改日志级别)
 
 ## 名词定义
 
@@ -84,7 +88,7 @@ DISTCC_ARGS="--allow 192.168.0.0/24"
 相关行的示例:
 
 ```
-BUILDENV=(distcc fakeroot color !ccache check !sign)
+BUILDENV=(distcc fakeroot color !ccache check !sign)
 MAKEFLAGS="-j11"
 DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
 

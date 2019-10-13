@@ -5,7 +5,7 @@ Este documento es una guía para la instalación de [Arch Linux (Español)](/ind
 
 Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki (Español)](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas, con enlaces para ambos a lo largo de esta guía. Para obtener ayuda interactiva, dispone de los [Arch IRC channels (Español)](/index.php/Arch_IRC_channels_(Espa%C3%B1ol) "Arch IRC channels (Español)") y los [foros](https://bbs.archlinux.org/).
 
-Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MiB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) debería ocupar menos de 800 MiB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, esta guía asume que dispone de una conexión a internet funcional.
+Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MiB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/packages/?name=base) debería ocupar menos de 800 MiB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, esta guía asume que dispone de una conexión a internet funcional.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -212,16 +212,18 @@ Una copia del archivo «mirrorlist» se realizará más tarde en el nuevo sistem
 
 ### Instalar los paquetes del sistema base
 
-Utilice el script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar el grupo de paquetes [base](https://www.archlinux.org/groups/x86_64/base/):
+Utilice el script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar el grupo de paquetes [base](https://www.archlinux.org/packages/?name=base) y un [Kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") ([linux](https://www.archlinux.org/packages/?name=linux)):
 
 ```
-# pacstrap /mnt base
+# pacstrap /mnt base linux
 
 ```
 
-Este grupo de paquetes no incluye todas las herramientas disponibles en el entorno live de instalación, como son los casos de [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware inalámbrico específico; consulte [paquetes.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para ver la comparación.
+**Note:** Este grupo de paquetes no incluye todas las herramientas disponibles en el entorno live de instalación, como son los casos de [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware inalámbrico específico; consulte [paquetes.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para ver la comparación.
 
-Para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") otros paquetes o grupos de paquetes, como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por un espacio) o, posteriormente a la etapa de [#Chroot](#Chroot), con órdenes individuales con [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
+Es posible sustituir [linux](https://www.archlinux.org/packages/?name=linux) con el [Kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") de su elección, o en caso de saber lo que se hace se puede no instalar ninguno.
+
+Para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") otros paquetes o grupos de paquetes, como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por un espacio) o, posteriormente a la etapa de [#Chroot](#Chroot), con órdenes individuales con [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
 
 ## Configuración del sistema
 

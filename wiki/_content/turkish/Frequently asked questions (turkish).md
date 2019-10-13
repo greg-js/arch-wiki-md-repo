@@ -93,7 +93,7 @@ Komüniteye dahil olarak çözümlerini ve geliştirdğin kodları paylaşarak d
 
 ### Yeni sürüm ne zaman ulaşılabilir olur ?
 
-Arch Linux sürümleri basit yükleme ve kurtarma için canlı ortam oluşturur ve bu oluşum sağlanırken [base](https://www.archlinux.org/groups/x86_64/base/) grubu ve başka diğer paketleri içerir. Sürümler genellikle her ayın ilk yarısında yayımlanır.
+Arch Linux sürümleri basit yükleme ve kurtarma için canlı ortam oluşturur ve bu oluşum sağlanırken [base](https://www.archlinux.org/packages/?name=base) grubu ve başka diğer paketleri içerir. Sürümler genellikle her ayın ilk yarısında yayımlanır.
 
 ### Arch Linux kararlı bir dağıtım mı ? Sık bir şekilde bozulma meydana gelir mi ?
 

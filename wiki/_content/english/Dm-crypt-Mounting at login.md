@@ -38,7 +38,7 @@ MAPPER="/dev/mapper/home-"$CRYPT_USER
 if [ "$PAM_USER" == "$CRYPT_USER" ] && [ ! -e $MAPPER ]
 then
   tr '\0' '
-' | /usr/bin/cryptsetup open /dev/*PARTITION* home-$CRYPT_USER
+' | /usr/bin/cryptsetup open /dev/*PARTITION* home-$CRYPT_USER && mount $MAPPER
 fi
 ```
 

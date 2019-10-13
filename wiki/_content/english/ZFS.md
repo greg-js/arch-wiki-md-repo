@@ -1086,6 +1086,7 @@ Enable the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial
 ...
 [archzfs]
 Server = http://archzfs.com/$repo/x86_64
+SigLevel = Optional TrustAll
 
 ```
 
@@ -1296,7 +1297,7 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
 
 See [ZED: The ZFS Event Daemon](https://ramsdenj.com/2016/08/29/arch-linux-on-zfs-part-3-followup.html) for more information.
 
-An email forwarder, such as [S-nail](/index.php/S-nail "S-nail") (installed as part of [base](https://www.archlinux.org/groups/x86_64/base/)), is required to accomplish this. Test it to be sure it is working correctly.
+An email forwarder, such as [S-nail](/index.php/S-nail "S-nail") (installed as part of [base](https://www.archlinux.org/packages/?name=base)), is required to accomplish this. Test it to be sure it is working correctly.
 
 Uncomment the following in the configuration file:
 

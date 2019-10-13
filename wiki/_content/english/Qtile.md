@@ -54,7 +54,7 @@ $ cp /usr/share/doc/*qtile_dir*/default_config.py ~/.config/qtile/config.py
 
 Where `*qtile_dir*` is the name of the AUR package you [installed](#Installing).
 
-Alternatively, the most recent default configuration file can be downloaded from the git repository at [libqtile/resources/default_config.py](https://github.com/qtile/qtile/blob/develop/libqtile/resources/default_config.py).
+Alternatively, the most recent default configuration file can be downloaded from the git repository at [libqtile/resources/default_config.py](https://github.com/qtile/qtile/blob/master/libqtile/resources/default_config.py).
 
 Several more complete configuration file examples can be found in the [qtile-examples](https://github.com/qtile/qtile-examples) repository.
 

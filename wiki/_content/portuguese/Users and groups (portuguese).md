@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-05-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=572316) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=584712) na versão em inglês.
 
 Artigos relacionados
 
@@ -130,7 +130,7 @@ Veja [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](
 
 ## Shadow
 
-As ferramentas de gerenciamento de usuários, grupos e senhas no Arch Linux vem com o pacote [shadow](https://www.archlinux.org/packages/?name=shadow), que é parte do [grupo base](/index.php/Grupo_de_pacotes "Grupo de pacotes").
+As ferramentas de gerenciamento de usuários, grupos e senhas no Arch Linux vem com o pacote [shadow](https://www.archlinux.org/packages/?name=shadow), que é uma dependência do [metapacote](/index.php/Metapacote "Metapacote") [base](https://www.archlinux.org/packages/?name=base).
 
 ## Lista de arquivos
 
@@ -165,11 +165,11 @@ Para adicionar um novo usuário, use o comando *useradd*:
 
 	define o caminho e o nome do arquivo do shell de login padrão do usuário. Após o processo de inicialização ter concluído, o shell de login padrão é o especificado aqui. Assegure-se de que o pacote do shell escolhido está instalado se escolher algo diferente do [Bash](/index.php/Bash "Bash").
 
-**Atenção:** Para ser capaz de se autenticar, o shell de login deve ser um dos listados em `/etc/shells`, do contrário o módulo [PAM](/index.php/PAM "PAM")`pam_shell` vai negar a requisição de login. Em especial, não use o caminho `/usr/bin/bash` em vez de `/bin/bash`, a menos que propriamente configurado em `/etc/shells`.
+**Atenção:** Para ser capaz de se autenticar, o shell de login deve ser um dos listados em `/etc/shells`, do contrário o módulo [PAM](/index.php/PAM "PAM")`pam_shell` vai negar a requisição de login. Em especial, não use o caminho `/usr/bin/bash` em vez de `/bin/bash`, a menos que propriamente configurado em `/etc/shells`; veja [FS#33677](https://bugs.archlinux.org/task/33677).
 
 **Nota:** A senha para o usuário recém criado deve então ser definido, usando *passwd* conforme mostrado em [#Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usuário).
 
-Se um grupo inicial do usuário for especificado por nome e número, deve se referir a um grupo já existente. Se não especificado, o comportamento de *useradd* vai depender da variável `USERGROUPS_ENAB` contida em `/etc/login.defs`. O comportamento padrão (`USERGROUPS_ENAB yes`) é criar um grupo com o nome igual ao nome de usuário, com `GID` igual a `UID`.
+Se um grupo inicial do usuário for especificado por nome e número, deve se referir a um grupo já existente. Se não especificado, o comportamento de *useradd* vai depender da variável `USERGROUPS_ENAB` contida em `/etc/login.defs`. O comportamento padrão (`USERGROUPS_ENAB yes`) é criar um grupo com o nome igual ao nome de usuário.
 
 Quando o shell de login destina-se a ser não funcional, por exemplo quando a conta de usuário é criada para um serviço específico, `/usr/bin/nologin` pode ser especificado no lugar de uma shell comum para educadamente recusar um login (veja [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
@@ -193,7 +193,7 @@ Apesar de ser obrigatório proteger o recém criado usuário `archie` com uma se
 
 ```
 
-O comando *useradd* acima pode também criar automaticamente um grupo chamado `archie` com o mesmo GID que o UID do usuário `archie` e torna este o grupo padrão para `archie` no login. Fazer com que cada usuário tenha seu próprio grupo (com o nome do grupo igual ao nome do usuário e GID, o mesmo que o UID) é a maneira preferida de adicionar usuários.
+O comando *useradd* acima pode também criar automaticamente um grupo chamado `archie` e torna este o grupo padrão para o usuário `archie`. Fazer com que cada usuário tenha seu próprio grupo (com o nome do grupo igual ao nome do usuário) é a maneira preferida de adicionar usuários.
 
 Você poderia fazer o grupo padrão alguma outra coisa usando a opção `-g`, mas note que, em sistemas multiusuários, o uso de um único grupo padrão (por exemplo, `users`) para cada usuário não é recomendado. A razão é que, tipicamente, o método para facilitar o acesso de gravação compartilhada para grupos específicos de usuários é definir o valor [umask](/index.php/Umask_(Portugu%C3%AAs) "Umask (Português)") do usuário para `002`, o que significa que o grupo padrão sempre terá, por padrão, acesso de gravação a qualquer arquivo que você crie. Veja também [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix). Se um usuário deve ser um membro de um grupo específico, especifique aquele grupo como um grupo suplementar ao criar o usuário.
 
@@ -252,7 +252,7 @@ Para alterar o nome de login de um usuário:
 
 ```
 
-**Atenção:** Certifique-se de que você não está autenticado como o usuário cujo nome você está prestes a mudar. Abra um novo tty (`Ctrl+Alt+F1`) e se autentique como *root* ou como outro usuário e su para *root*. O *usermod* deve evitar que você faça isso por engano.
+**Atenção:** Certifique-se de que você não está autenticado como o usuário cujo nome você está prestes a mudar. Abra um novo tty (por exemplo, `Ctrl+Alt+F6`) e se autentique como *root* ou como outro usuário e [escale para *root*](/index.php/Recomenda%C3%A7%C3%B5es_gerais#Elevação_de_privilégios "Recomendações gerais"). O *usermod* deve evitar que você faça isso por engano.
 
 Alterar um nome de usuário é seguro e fácil quando feito corretamente, basta usar o comando [usermod](#Outros_exemplos_de_gerenciamento_de_usuário). Se o usuário estiver associado a um grupo com o mesmo nome, você pode renomear isso com o comando [groupmod](#Gerenciamento_de_grupo).
 
@@ -343,11 +343,11 @@ Sendo que:
 Exemplo:
 
 ```
-joao:x:1001:100:João da Silva,algum comentário aqui,,:/home/joao:/bin/bash
+joao:x:1001:1003:João da Silva,algum comentário aqui,,:/home/joao:/bin/bash
 
 ```
 
-Expandindo, isso significa: usuário `joao`, cuja senha está em `/etc/shadow`, cujo UID é 1001 e cujo grupo primário é 100\. João da Silva é o nome completo dele e existe um comentário associado a sua conta; Seu diretório inicial é `/home/joao` e ele está usando [Bash](/index.php/Bash "Bash").
+Expandindo, isso significa: usuário `joao`, cuja senha está em `/etc/shadow`, cujo UID é 1001 e cujo grupo primário é 1003\. João da Silva é o nome completo dele e existe um comentário associado a sua conta; Seu diretório inicial é `/home/joao` e ele está usando [Bash](/index.php/Bash "Bash").
 
 O comando *pwck* pode ser usado para verificar a integridade da base de dados de usuário. Ele pode ordenar a lista de usuários por GID ao mesmo tempo, o que pode ser útil para comparação:
 
@@ -356,7 +356,7 @@ O comando *pwck* pode ser usado para verificar a integridade da base de dados de
 
 ```
 
-**Nota:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o *pacman* emita mensagens relacionadas para ação, esses arquivos *.pacnew* podem, e devem, ser desconsiderados/removidos. Novos usuários e grupos padrão obrigatórios são adicionados ou re-adicionados conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
+**Atenção:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o *pacman* emita mensagens relacionadas para ação, esses arquivos *.pacnew* podem, e devem, ser desconsiderados/removidos. Novos usuários e grupos padrão obrigatórios são adicionados ou adicionados novamente conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 ## Gerenciamento de grupo
 
@@ -426,6 +426,8 @@ Se o usuário estiver atualmente autenticado, ele deve encerrar a sessão e entr
 
 O comando *grpck* pode ser usado para verificar a integridade dos arquivos de grupo do sistema.
 
+{{Atenção|Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o Pacman envie mensagens relacionadas à ação, esses arquivos *.pacnew* podem e devem ser desconsiderados/removidos. Novos usuários e grupos padrão necessários são adicionados ou adicionados novamente conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
+
 Atualizações ao pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem) criam arquivos *.pacnew*. Ao contrário dos arquivos *.pacnew* para o [#Gerenciamento de usuário](#Gerenciamento_de_usuário), essas alterações podem ser ignoradas/removidas, porque o script de instalação adiciona quaisquer novos grupos exigidos.
 
 ## Lista de grupos
@@ -439,17 +441,16 @@ Essa seção explica o propósito dos grupos essenciais do pacote [core/filesyst
 Usuários não *root* de estação de trabalho ou desktop frequentemente precisam ser adicionados a alguns dos grupos a seguir para permitir acesso a periféricos de hardware e facilitar administração de sistema:
 
 | Grupo | Arquivos afetados | Propósito |
-| adm | Grupo administrativo, geralmente usado para fornecer acesso de leitura a logs protegidos (incluindo arquivos [journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)")). |
-| ftp | `/srv/ftp/` | Acesso a arquivos servidos por servidores [FTP](https://en.wikipedia.org/wiki/pt:FTP "wikipedia:pt:FTP"). |
+| adm | Grupo administrativo, geralmente usado para fornecer acesso de leitura a logs protegidos. Tem acesso total de leitura aos arquivos de [journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)"). |
+| ftp | `/srv/ftp/` | Acesso a arquivos servidos por [servidores FTP](/index.php/List_of_applications/Internet#FTP_servers "List of applications/Internet"). |
 | games | `/var/games` | Acesso a alguns softwares de jogos. |
-| http | `/srv/http/` | Acesso a arquivos servidos por servidores [HTTP](https://en.wikipedia.org/wiki/pt:HTTP "wikipedia:pt:HTTP"). |
+| http | `/srv/http/` | Acesso a arquivos servidos por [servidores HTTP](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet"). |
 | log | Acesso a arquivos de registros de log em `/var/log/` criados pelo [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
-| rfkill | `/dev/rfkill` | Direito para controlar estado de energia de dispositivos sem fio (usado pelo *rfkill*). |
+| rfkill | `/dev/rfkill` | Direito para controlar estado de energia de dispositivos sem fio (usado pelo [rfkill](/index.php/Rfkill "Rfkill")). |
 | sys | Direito para administrar impressoras no [CUPS](/index.php/CUPS "CUPS"). |
 | systemd-journal | `/var/log/journal/*` | Pode ser usado para fornecer acesso somente leitura aos logs do systemd, como uma alternativa ao `adm` e ao `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Do contrário, apenas mensagens geradas pelo usuário são exibidas. |
-| users | Grupo padrão de usuários. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | Portas seriais RS-232 e dispositivos conectados a elas. |
-| wheel | Grupo administrativo, comumente usado a dar privilégios para realizar ações administrativas. Pode ser usado para dar acesso aos utilitários [sudo](/index.php/Sudo "Sudo") e [su](/index.php/Su "Su") (nenhum deles usa-o por padrão, sendo configurável em `/etc/pam.d/su` e `/etc/pam.d/su-l`). Também tem acesso total de leitura aos arquivos de [journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)"). |
+| wheel | Grupo administrativo, comumente usado a dar privilégios para realizar ações administrativas. Também tem acesso total de leitura aos arquivos de [journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)"). Pode também ser usado para dar acesso aos utilitários [sudo](/index.php/Sudo "Sudo") e [su](/index.php/Su "Su") (nenhum deles usa-o por padrão, sendo configurável em `/etc/pam.d/su` e `/etc/pam.d/su-l`). |
 
 ### Grupos de sistema
 
@@ -497,6 +498,7 @@ Os seguintes grupos estão atualmente sem uso para qualquer propósito:
 | network | Sem uso por padrão. Pode ser usado, por exemplo, para conceder acesso ao NetworkManager (veja [NetworkManager (Português)#Configurar as permissões de PolicyKit](/index.php/NetworkManager_(Portugu%C3%AAs)#Configurar_as_permissões_de_PolicyKit "NetworkManager (Português)")). |
 | power |
 | uuidd |
+| users | O grupo primário para usuários quando os grupos privados de usuários não são usados (geralmente não recomendado), por exemplo, ao criar usuários com `USERGROUPS_ENAB no` em `/etc/login.defs` ou a opção `-N`/`--no-user-group` de *useradd*. |
 
 ## Outras ferramentas relacionadas para esses banco de dados
 
@@ -507,4 +509,4 @@ Os seguintes grupos estão atualmente sem uso para qualquer propósito:
 
 ```
 
-Conforme avisado em [#Base de dados de usuários](#Base_de_dados_de_usuários), o uso de utilitários específicos, como `passwd` e `chfn`, é uma maneira melhor de alterar os bancos de dados. Nunca o menos, há momentos em que editá-los diretamente é cuidada. Para aqueles momentos, `vipw`, `vigr` são fornecidos. É altamente recomendável usar esses editores sob medida usando um editor de texto geral, pois eles bloqueiam os bancos de dados em relação à edição simultânea. Eles também ajudam a evitar entradas inválidas e/ou erros de sintaxe. Observe que o Arch Linux prefere o uso de ferramentas específicas, como *chage*, para modificar o banco de dados shadow usando `vipw -s` e `vigr -s` do conjunto shadow-utils. Veja também [FS#31414](https://bugs.archlinux.org/task/31414).
+Conforme avisado em [#Base de dados de usuários](#Base_de_dados_de_usuários), o uso de utilitários específicos, como `passwd` e `chfn`, é uma maneira melhor de alterar os bancos de dados. Mesmo assim, há momentos em que editá-los diretamente é cuidada. Para aqueles momentos, `vipw`, `vigr` são fornecidos. É altamente recomendável usar esses editores sob medida usando um editor de texto geral, pois eles bloqueiam os bancos de dados em relação à edição simultânea. Eles também ajudam a evitar entradas inválidas e/ou erros de sintaxe. Observe que o Arch Linux prefere o uso de ferramentas específicas, como *chage*, para modificar o banco de dados shadow usando `vipw -s` e `vigr -s` do conjunto shadow-utils. Veja também [FS#31414](https://bugs.archlinux.org/task/31414).

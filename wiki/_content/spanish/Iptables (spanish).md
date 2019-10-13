@@ -13,7 +13,11 @@ Artículos relacionados
 
 [nftables](/index.php/Nftables "Nftables") está programada para [ser liberada con el kernel de Linux 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), y vendrá a sustituir definitivamente iptables como la principal utilidad del cortafuegos de Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Frontend](#Frontend)
@@ -40,7 +44,7 @@ Artículos relacionados
 
 ## Instalación
 
-Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo necesita [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") las herramientas en el [espacio de usuario](https://en.wikipedia.org/wiki/es:Espacio_de_usuario "wikipedia:es:Espacio de usuario"), que son proporcionadas por el paquete [iptables](https://www.archlinux.org/packages/?name=iptables). El paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2) presente en el grupo [base](https://www.archlinux.org/groups/x86_64/base/) depende de iptables, por lo que el paquete iptables debe estar instalado en su sistema por defecto.
+Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo necesita [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") las herramientas en el [espacio de usuario](https://en.wikipedia.org/wiki/es:Espacio_de_usuario "wikipedia:es:Espacio de usuario"), que son proporcionadas por el paquete [iptables](https://www.archlinux.org/packages/?name=iptables). El paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2) presente en el grupo [base](https://www.archlinux.org/packages/?name=base) depende de iptables, por lo que el paquete iptables debe estar instalado en su sistema por defecto.
 
 ### Frontend
 
@@ -312,7 +316,7 @@ Ahora, supongamos que decidimos utilizar Dropbox e instalarlo en nuestro ordenad
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
-1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -340,7 +344,7 @@ Así que escribimos una nueva regla para permitir que nuestro usuario de confian
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination         
 1        0     0 ACCEPT     tcp  --  *      *       10.0.0.85            0.0.0.0/0            tcp dpt:17500 /* Friendly Dropbox */
-2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination         

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=577395) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-10-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=584445) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,7 +19,8 @@ Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](http
 
 *   [1 Instalação](#Instalação)
     *   [1.1 OpenJDK](#OpenJDK)
-    *   [1.2 Outras implementações](#Outras_implementações)
+    *   [1.2 OpenJFX](#OpenJFX)
+    *   [1.3 Outras implementações](#Outras_implementações)
 *   [2 Ferramenta de desenvolvimento](#Ferramenta_de_desenvolvimento)
     *   [2.1 Descompiladores](#Descompiladores)
 *   [3 Alternando entre JVM](#Alternando_entre_JVM)
@@ -35,7 +36,7 @@ Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](http
     *   [5.3 Personificar outro gerenciador de janela](#Personificar_outro_gerenciador_de_janela)
     *   [5.4 Fontes ilegíveis](#Fontes_ilegíveis)
     *   [5.5 Faltando texto em alguns aplicativos](#Faltando_texto_em_alguns_aplicativos)
-    *   [5.6 Aplicações sem redimensionamento com o WM, menus fechando imediatamente](#Aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente)
+    *   [5.6 Janela cinza | Aplicações sem redimensionamento com o WM | menus fechando imediatamente](#Janela_cinza_|_Aplicações_sem_redimensionamento_com_o_WM_|_menus_fechando_imediatamente)
     *   [5.7 Sistema congela ao depurar aplicativos JavaFX](#Sistema_congela_ao_depurar_aplicativos_JavaFX)
     *   [5.8 Construtor MediaPlayer do JavaFX lança uma exceção](#Construtor_MediaPlayer_do_JavaFX_lança_uma_exceção)
     *   [5.9 Aplicativos Java não podem abrir links externos](#Aplicativos_Java_não_podem_abrir_links_externos)
@@ -46,7 +47,6 @@ Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](http
     *   [6.3 Visual GTK](#Visual_GTK)
         *   [6.3.1 Suporte a GTK3](#Suporte_a_GTK3)
     *   [6.4 Melhor desempenho 2D](#Melhor_desempenho_2D)
-    *   [6.5 Gerenciadores de janela non-reparenting / Janela cinza / Programas não estão sendo desenhados corretamente](#Gerenciadores_de_janela_non-reparenting_/_Janela_cinza_/_Programas_não_estão_sendo_desenhados_corretamente)
 *   [7 Veja também](#Veja_também)
 
 ## Instalação
@@ -58,7 +58,7 @@ Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](http
 
 Os pacotes *common* são trazidos respectivamente como dependência, chamados de [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) (contendo arquivos comuns para Java Runtime Environments) e [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) (contendo arquivos comuns para Java Development Kits). O arquivo de ambiente fornecido `/etc/profile.d/jre.sh` aponta para um link simbólico `/usr/lib/jvm/default/bin`, definido pelo script auxiliar `archlinux-java`. Os links `/usr/lib/jvm/default` e `/usr/lib/jvm/default-runtime` devem **sempre** ser editados com `archlinux-java`. Ele é usado para exibir e apontar para uma ambiente Java padrão em `/usr/lib/jvm/java-${VERSÃO_MAIOR_JAVA}-${NOME_FORNECEDOR}` ou um runtime do Java em `/usr/lib/jvm/java-${VERSÃO_MAIOR_JAVA}-${NOME_FORNECEDOR}/jre`.
 
-A maioria dos executáveis da instalação do Java são fornecidos por linsk diretos em `/usr/bin`, enquanto outros estão disponíveis em `$PATH`. O script `/etc/profile.d/jdk.sh` não é mais fornecido por nenhum pacote.
+A maioria dos executáveis da instalação do Java são fornecidos por link diretos em `/usr/bin`, enquanto outros estão disponíveis em `$PATH`. O script `/etc/profile.d/jdk.sh` não é mais fornecido por nenhum pacote.
 
 ### OpenJDK
 
@@ -70,7 +70,7 @@ A maioria dos executáveis da instalação do Java são fornecidos por linsk dir
 
 	JRE completo
 
-	Ambiente de tempo de execução completo do Java - needed for executing Java GUI programs, depends on headless JRE.
+	Ambiente de tempo de execução completo do Java - necessário para executar programa gráficos Java, depende de JRE headless.
 
 	JDK
 
@@ -83,23 +83,32 @@ A maioria dos executáveis da instalação do Java são fornecidos por linsk dir
 | [OpenJDK 8](https://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
 | [OpenJDK 7](https://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
 
+**OpenJDK GA** — Compilação de General-Availability Release do OpenDJK da Oracle.
+
+	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-bin](https://aur.archlinux.org/packages/java-openjdk-bin/)
+
+**OpenJDK EA** — Compilação de Early-Access para versão de desenvolvimento da Oracle.
+
+	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-ea-bin](https://aur.archlinux.org/packages/java-openjdk-ea-bin/)
+
 **IcedTea-Web** — Java Web Start e o plugin Java obsoleto para navegador.
 
 	[https://icedtea.classpath.org/wiki/IcedTea-Web](https://icedtea.classpath.org/wiki/IcedTea-Web) || [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web)
 
-**OpenJFX 8** — A implementação código aberto do JavaFX. Você [não precisa](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) instalar esse pacote se você está fazendo uso do Java SE (a implementação da Oracle do JRE e JDK, descritos abaixo). Esse pacote só interessa usuários da implementação código aberto de Java (projeto OpenJDK).
+### OpenJFX
 
-	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
+[OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main) é a implementação código aberto do [JavaFX](https://en.wikipedia.org/wiki/pt:JavaFX "wikipedia:pt:JavaFX"). Você [não precisa](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) instalar esse pacote se você está fazendo uso do Java SE (a implementação da Oracle do JRE e JDK, descritos abaixo). Esse pacote só interessa usuários da implementação código aberto de Java (projeto OpenJDK).
 
-**OpenJFX** — Última compilação da comunidade de OpenJFX.
+| Versão | Runtime e Desenvolvimento | Documentação | Fontes |
+| [OpenJFX 12](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) |
+| [OpenJFX 11](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java11-openjfx](https://www.archlinux.org/packages/?name=java11-openjfx) | [java11-openjfx-doc](https://www.archlinux.org/packages/?name=java11-openjfx-doc) | [java11-openjfx-src](https://www.archlinux.org/packages/?name=java11-openjfx-src) |
+| [OpenJFX 8](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java8-openjfx](https://www.archlinux.org/packages/?name=java8-openjfx) | [java8-openjfx-doc](https://www.archlinux.org/packages/?name=java8-openjfx-doc) | [java8-openjfx-src](https://www.archlinux.org/packages/?name=java8-openjfx-src) |
+
+**OpenJFX GA** — Compilação de General-Availability Release do OpenJFX de Gluon.
 
 	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-bin](https://aur.archlinux.org/packages/java-openjfx-bin/)
 
-**OpenJDK EA** — OpenJDK Early-Access Build para a última versão de desenvolvimento.
-
-	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-ea-bin](https://aur.archlinux.org/packages/java-openjdk-ea-bin/)
-
-**OpenJFX EA** — OpenJFX Early-Access Build para a última versão de desenvolvimento.
+**OpenJFX EA** — Compilação de Early-Access para versão de desenvolvimento de Gluon.
 
 	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-ea-bin](https://aur.archlinux.org/packages/java-openjfx-ea-bin/)
 
@@ -111,7 +120,7 @@ A maioria dos executáveis da instalação do Java são fornecidos por linsk dir
 
 **OpenJ9** — Implementação do Eclipse de JRE, contribuído pela IBM.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk13-openj9-bin](https://aur.archlinux.org/packages/jdk13-openj9-bin/) [jdk12-openj9-bin](https://aur.archlinux.org/packages/jdk12-openj9-bin/) [jdk11-openj9-bin](https://aur.archlinux.org/packages/jdk11-openj9-bin/) [jdk10-openjdk-openj9-bin](https://aur.archlinux.org/packages/jdk10-openjdk-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
 
 **IBM J9** — Implementação da IBM da oitava edição de JRE.
 
@@ -275,14 +284,14 @@ Devido ao fato de que os drivers JDBC costumam usar a porta no URL para estabele
 
 ### IntelliJ IDEA
 
-Se você enfrentou o erro `The selected directory is not a valid home for JDK` com o caminho java sdk do sistema, você tem que instalar um novo jdk em octopi ou com pacman, então selecione o novo java sdk como JDK do IntelliJ IDEA.
+Se Intellij IDEA apresentou `The selected directory is not a valid home for JDK` com o caminho Java SDK do sistema, você pode ter que instalar um pacote JDK diferente e selecioná-lo como JDK do IntelliJ.
 
 ### Personificar outro gerenciador de janela
 
-Você pode usar o [wmname](https://www.archlinux.org/packages/?name=wmname) do [suckless.org](https://tools.suckless.org/x/wmname) para fazer a JVM acreditar que você está executando em um gerenciador de janela diferente. Isso pode resolver um problema de renderização das GUIs Java ocorrendo em gerenciadores de janela, como o [Awesome](/index.php/Awesome "Awesome"), [Dwm](/index.php/Dwm "Dwm") ou [Ratpoison](/index.php/Ratpoison "Ratpoison").
+Você pode usar o [wmname](https://www.archlinux.org/packages/?name=wmname) do [suckless.org](https://tools.suckless.org/x/wmname) para fazer a JVM acreditar que você está executando em um gerenciador de janela diferente. Isso pode resolver um problema de renderização das GUIs Java ocorrendo em gerenciadores de janela, como o [Awesome](/index.php/Awesome "Awesome"), [Dwm](/index.php/Dwm "Dwm") ou [Ratpoison](/index.php/Ratpoison "Ratpoison"). Tente definir "compiz" ou "LG3D"
 
 ```
-$ wmname LG3D
+$ wmname compiz
 
 ```
 
@@ -298,21 +307,16 @@ Além das sugestões mencionadas abaixo em [#Melhor renderização de fonte](#Me
 
 Se alguns aplicativos estão faltando textos completos, pode ajudar a usar as opções em [#Dicas e truques](#Dicas_e_truques) como sugerido em [FS#40871](https://bugs.archlinux.org/task/40871).
 
-### Aplicações sem redimensionamento com o WM, menus fechando imediatamente
+### Janela cinza | Aplicações sem redimensionamento com o WM | menus fechando imediatamente
 
 O kit de ferramentas padrão de GUI do Java possui uma lista codificada de gerenciadores de janela "*não-reparenting*". Se estiver usando um que não esteja nessa lista, pode haver alguns problemas com a execução de alguns aplicativos Java. Um dos problemas mais comuns é "blobs cinzas", quando o aplicativo Java se renderiza como uma caixa cinzenta simples em vez de renderizar a interface gráfica esperada. Outro pode ser menus respondendo ao seu clique, mas fechando imediatamente.
 
 Há várias coisas que podem ajudar:
 
 *   Para [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) ou [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), acrescente a linha `export _JAVA_AWT_WM_NONREPARENTING=1` em `/etc/profile.d/jre.sh`. Então, [carregue](/index.php/Carrega "Carrega") o arquivo `/etc/profile.d/jre.sh` ou encerre a sessão e incie-a novamente.
-*   Para JRE/JDK da Oracle, use [SetWMName](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName). Porém, seu efeito pode ser cancelado ao usar também `XMonad.Hooks.EwmhDesktops`. Neste caso, acrescentar
-
-```
->> setWMName "LG3D"
-
-```
-
-ao `LogHook` pode ajudar.
+*   Para a última versão do JDK, acrescente a line `export AWT_TOOLKIT=MToolkit` em `~/.xinitrc` antes do exec do gereciador de janela.
+*   Também, você pode tentar usar [wmname](https://www.archlinux.org/packages/?name=wmname) com a linha `wmname compiz` em seu `~/.xinitrc`.
+*   Para JRE/JDK da Oracle, use [SetWMName](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName). Porém, seu efeito pode ser cancelado ao usar também `XMonad.Hooks.EwmhDesktops`. Neste caso, acrescentar `>> setWMName "LG3D"` ao `LogHook` pode ajudar.
 
 Veja [[2]](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) para mais informações.
 
@@ -417,17 +421,6 @@ export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
 ```
 
 **Nota:** Habilitar essa opção pode fazer com que a interface do usuário de software, como os IDEs do JetBrains, se comporte mal, fazendo com que eles desenhem janelas, pop-ups e barras de ferramentas parcialmente.
-
-### Gerenciadores de janela non-reparenting / Janela cinza / Programas não estão sendo desenhados corretamente
-
-Usuários de gerenciadores de janela *non-reparenting* devem configurar a seguinte variável em seu `.xinitrc`
-
-```
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-```
-
-Não configurar isso pode resultar em programa javas não serem desenhados corretamente.
 
 ## Veja também
 

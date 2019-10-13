@@ -361,7 +361,7 @@ Arch User Repository 是储存所有用户提交的 PKGBUILD 的地方，软件�
 您很可能忘了点啥。
 
 1.  [更新系统](/index.php/Pacman#Upgrading_packages "Pacman")，系统软件过时可能导致软件包构建失败。
-2.  确保安装了 [base](https://www.archlinux.org/groups/x86_64/base/) 和 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 软件包组。
+2.  确保安装了 [base](https://www.archlinux.org/packages/?name=base) 和 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 软件包组。
 3.  在执行`makepkg`时，使用`-s`选项检查依赖关系。
 
 先阅读 PKGBUILD 和 AUR 页面的评论。可能导致编译错误的还有不正确的 CFLAGS、LDFLAGS 和 MAKEFLAGS 设置。也有可能是 PKGBUILD 写错了，如果确实如此，请通知包维护人员。例如在 AUR 页面留言。

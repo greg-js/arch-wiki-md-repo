@@ -5,7 +5,7 @@ Related articles
 *   [Xorg](/index.php/Xorg "Xorg")
 *   [Vulkan](/index.php/Vulkan "Vulkan")
 
-**amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
+[AMDGPU](https://en.wikipedia.org/wiki/AMDGPU "wikipedia:AMDGPU") is the open source graphics driver for the latest AMD Radeon graphics cards.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -154,7 +154,7 @@ If you want manual configuration, create `/etc/X11/xorg.conf.d/20-amdgpu.conf`, 
 Section "Device"
      Identifier "AMD"
      Driver "amdgpu"
- EndSection
+EndSection
 ```
 
 Using this section, you can enable features and tweak the driver settings, see [amdgpu(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/amdgpu.4) first before setting driver options.

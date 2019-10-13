@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [MySQL](/index.php/MySQL "MySQL"), revisada por última vez el **2019-01-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=MySQL&diff=0&oldid=562846) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [MySQL](/index.php/MySQL "MySQL"), revisada por última vez el **2019-10-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=MySQL&diff=0&oldid=583449) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [MySQL](https://en.wikipedia.org/wiki/es:MySQL "wikipedia:es:MySQL") es una base de datos SQL multiusuario y multihilo muy extendida, desarrollada por Oracle.
 
@@ -18,6 +18,12 @@ El motor de almacenamiento [InnoDB](https://en.wikipedia.org/wiki/es:InnoDB "wik
 	[https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/) || [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench)
 
 Para herramientas que soporten múltiples DBMS, véase [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
+
+## Herramientas de consola
+
+*   **MyCLI** — Un cliente de terminal para MySQL con autocompletado y resaltado de sintaxis.
+
+	[https://www.mycli.net](https://www.mycli.net) || [mycli](https://aur.archlinux.org/packages/mycli/)
 
 ## Acceso programado
 

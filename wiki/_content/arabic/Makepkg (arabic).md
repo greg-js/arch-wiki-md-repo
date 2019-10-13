@@ -2,19 +2,23 @@
 
 يتوفر makepkg من خلال حزمة [pacman](https://www.archlinux.org/packages/?name=pacman).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 التهيئة](#.D8.A7.D9.84.D8.AA.D9.87.D9.8A.D8.A6.D8.A9)
-    *   [1.1 المعمارية, خيارات التجميع](#.D8.A7.D9.84.D9.85.D8.B9.D9.85.D8.A7.D8.B1.D9.8A.D8.A9.2C_.D8.AE.D9.8A.D8.A7.D8.B1.D8.A7.D8.AA_.D8.A7.D9.84.D8.AA.D8.AC.D9.85.D9.8A.D8.B9)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 التهيئة](#التهيئة)
+    *   [1.1 المعمارية, خيارات التجميع](#المعمارية,_خيارات_التجميع)
         *   [1.1.1 MAKEFLAGS](#MAKEFLAGS)
-    *   [1.2 الحزمة الناتجة](#.D8.A7.D9.84.D8.AD.D8.B2.D9.85.D8.A9_.D8.A7.D9.84.D9.86.D8.A7.D8.AA.D8.AC.D8.A9)
+    *   [1.2 الحزمة الناتجة](#الحزمة_الناتجة)
     *   [1.3 Signature checking](#Signature_checking)
-*   [2 الإستعمال](#.D8.A7.D9.84.D8.A5.D8.B3.D8.AA.D8.B9.D9.85.D8.A7.D9.84)
-*   [3 خدع وتلميحات](#.D8.AE.D8.AF.D8.B9_.D9.88.D8.AA.D9.84.D9.85.D9.8A.D8.AD.D8.A7.D8.AA)
-    *   [3.1 توليد md5sums جديد](#.D8.AA.D9.88.D9.84.D9.8A.D8.AF_md5sums_.D8.AC.D8.AF.D9.8A.D8.AF)
-    *   [3.2 Makepkg يطلع على PKGBUILD مرتين](#Makepkg_.D9.8A.D8.B7.D9.84.D8.B9_.D8.B9.D9.84.D9.89_PKGBUILD_.D9.85.D8.B1.D8.AA.D9.8A.D9.86)
-    *   [3.3 تحذير: حزمة تحتوي على مرجع إلى $srcdir](#.D8.AA.D8.AD.D8.B0.D9.8A.D8.B1:_.D8.AD.D8.B2.D9.85.D8.A9_.D8.AA.D8.AD.D8.AA.D9.88.D9.8A_.D8.B9.D9.84.D9.89_.D9.85.D8.B1.D8.AC.D8.B9_.D8.A5.D9.84.D9.89_.24srcdir)
-*   [4 انظر أيضا](#.D8.A7.D9.86.D8.B8.D8.B1_.D8.A3.D9.8A.D8.B6.D8.A7)
+*   [2 الإستعمال](#الإستعمال)
+*   [3 خدع وتلميحات](#خدع_وتلميحات)
+    *   [3.1 توليد md5sums جديد](#توليد_md5sums_جديد)
+    *   [3.2 Makepkg يطلع على PKGBUILD مرتين](#Makepkg_يطلع_على_PKGBUILD_مرتين)
+    *   [3.3 تحذير: حزمة تحتوي على مرجع إلى $srcdir](#تحذير:_حزمة_تحتوي_على_مرجع_إلى_$srcdir)
+*   [4 انظر أيضا](#انظر_أيضا)
 
 ## التهيئة
 
@@ -183,7 +187,7 @@ keyring /etc/pacman.d/gnupg/pubring.gpg
 
 ```
 
-**ملاحظة:** قبل البدأ في الشكوى من فقدان إعتماديات (make) , تذكر أن مجموعة [base](https://www.archlinux.org/groups/x86_64/base/) من المفترض أن تكون مثبتة على جميع أنضمة Arch Linux . من المفترض أن المجموعة "base-devel" مثبتة قبل أي عملية بناء بـ **makepkg**.
+**ملاحظة:** قبل البدأ في الشكوى من فقدان إعتماديات (make) , تذكر أن مجموعة [base](https://www.archlinux.org/packages/?name=base) من المفترض أن تكون مثبتة على جميع أنضمة Arch Linux . من المفترض أن المجموعة "base-devel" مثبتة قبل أي عملية بناء بـ **makepkg**.
 
 لبناء حزمة . يجب أولا إنشاء الملف [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), أو بناء مخطوطة كما هو مشروح في [Creating packages](/index.php/Creating_packages "Creating packages"), أو الحصول على واحد من [ABS tree](/index.php/Arch_Build_System "Arch Build System"), [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), أو من مصدر آخر.
 

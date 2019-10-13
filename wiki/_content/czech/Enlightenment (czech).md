@@ -1,14 +1,18 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Úvod](#.C3.9Avod)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Úvod](#Úvod)
 *   [2 Enlightenment DR16](#Enlightenment_DR16)
     *   [2.1 Instalace E16](#Instalace_E16)
 *   [3 Enlightenment DR17](#Enlightenment_DR17)
-    *   [3.1 Článek E17 dále popisuje](#.C4.8Cl.C3.A1nek_E17_d.C3.A1le_popisuje)
-*   [4 Knihovny prostředí Enlightenment](#Knihovny_prost.C5.99ed.C3.AD_Enlightenment)
-    *   [4.1 Knihovny + k čemu slouží](#Knihovny_.2B_k_.C4.8Demu_slou.C5.BE.C3.AD)
-    *   [4.2 Programy, vyvýjené společně s knihovnami](#Programy.2C_vyv.C3.BDjen.C3.A9_spole.C4.8Dn.C4.9B_s_knihovnami)
-*   [5 Externí odkazy](#Extern.C3.AD_odkazy)
+    *   [3.1 Článek E17 dále popisuje](#Článek_E17_dále_popisuje)
+*   [4 Knihovny prostředí Enlightenment](#Knihovny_prostředí_Enlightenment)
+    *   [4.1 Knihovny + k čemu slouží](#Knihovny_+_k_čemu_slouží)
+    *   [4.2 Programy, vyvýjené společně s knihovnami](#Programy,_vyvýjené_společně_s_knihovnami)
+*   [5 Externí odkazy](#Externí_odkazy)
 
 ## Úvod
 

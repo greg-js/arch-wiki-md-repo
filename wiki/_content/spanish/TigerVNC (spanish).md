@@ -7,7 +7,11 @@ Vncserver es un demonio de visualización remota que permite a usuarios situados
 1.  Sesiones de X virtuales (sin cabeza) y totalmente en *paralelo* que se ejecutan en segundo plano (es decir, no en el monitor físico, sino virtualmente) en una máquina. Todas las aplicaciones que se ejecutan en el servidor pueden seguir funcionando, incluso cuando el usuario se desconecta.
 2.  Control directo de la sesión(s) local X (es decir, X se ejecuta en el monitor físico).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Ejecutar vncserver para sesiones (sin cabeza) virtuales](#Ejecutar_vncserver_para_sesiones_(sin_cabeza)_virtuales)
@@ -66,7 +70,7 @@ El puerto predeterminado en el que vncserver se ejecuta es: 1, que corresponde a
 Apague vncserver usando el parámetro -kill:
 
 ```
-$ vncserver -kill :1
+$ vncserver -kill :1
 
 ```
 
@@ -97,7 +101,7 @@ $ chmod 700 ~/.vnc
 Vncserver ofrece flexibilidad mediante la utilización de parámetros. El ejemplo siguiente inicia un vncserver con una resolución específica, lo que permite a múltiples usuarios ver/controlar de forma simultánea, y establece el dpi en el servidor virtual a 96:
 
 ```
-$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 :1
+$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 :1
 
 ```
 
@@ -117,7 +121,7 @@ $ vncserver -help
 TigerVNC ofrece el binario x0vncserver que tiene una funcionalidad similar a x11vnc por ejemplo,
 
 ```
-$ x0vncserver -display :0 -passwordfile ~/.vnc/passwd
+$ x0vncserver -display :0 -passwordfile ~/.vnc/passwd
 
 ```
 
@@ -166,7 +170,7 @@ $ vncviewer -passwd /ruta/al/archivo-passwd-del-servidor
 Si se que quiere acceso a vncserver desde fuera de la protección de una LAN, debe preocuparse por las contraseñas en texto plano y el tráfico sin cifrar desde/hacia el cliente y el servidor. Vncserver es fácilmente asegurable por túneles SSH. Además, no se necesita abrir otro puerto hacia el exterior usando este método, ya que el tráfico se canaliza literalmente a través del puerto SSH que el usuario ya tiene abierto en la WAN. Se recomienda utilizar el parámetro -localhost al ejecutar vncserver en este escenario. Este parámetro solo permite conexiones *desde el localhost* —y, por analogía, solo los usuarios físicamente autenticados y asegurados en el entorno—.
 
 ```
-$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
+$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
 
 ```
 

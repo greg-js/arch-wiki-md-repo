@@ -189,7 +189,7 @@ It is possible to mount the root image of the latest Arch Linux installation med
 
 ### Using a chroot environment
 
-The bootstrap environment is really barebones (no `nano`, no `ping`, no `cryptsetup`, no `lvm`). Therefore, we need to set up pacman in order to download the rest of the `base` and, if needed, `base-devel`.
+The bootstrap environment is really barebones (no [nano](https://www.archlinux.org/packages/?name=nano) or [lvm2](https://www.archlinux.org/packages/?name=lvm2)). Therefore, we need to set up pacman in order to download other necessary packages.
 
 #### Initializing pacman keyring
 
@@ -205,7 +205,7 @@ Before starting the installation, pacman keys need to be setup. Before running t
 
 #### Selecting a mirror and downloading basic tools
 
-After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors"), [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") and [install](/index.php/Install "Install") what you need: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors"), [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") and [install](/index.php/Install "Install") what you need: [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
 
 **Note:**
 

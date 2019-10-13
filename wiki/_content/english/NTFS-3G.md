@@ -144,6 +144,7 @@ By default, *ntfs-3g* requires root rights to mount the filesystem, even with th
 **Note:**
 
 *   The [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package does not have internal FUSE support. Rebuild the package using [ABS](/index.php/ABS "ABS"), or install [ntfs-3g-fuse](https://aur.archlinux.org/packages/ntfs-3g-fuse/).
+    *   Using the internal FUSE *will* lead to higher CPU overhead due to much smaller write buffers (4 KiB) compared to current libfuse (1 MiB). Using the `big_writes` option should raise the size back to 128 KiB.
 *   There seems to be an issue with unmounting rights, so you will still need root rights if you need to unmount the filesystem. You can also use `fusermount -u /mnt/*mountpoint*` to unmount the filesystem without root rights. Also, if you use the `*users*` option (plural) in `/etc/fstab` instead of the `user` option, you will be able to both mount and unmount the filesystem using the `mount` and `umount` commands.
 
 ## Resizing NTFS partition
@@ -170,7 +171,7 @@ There are a number of bootable CD/USB images avaliable. This list is not exhaust
 
 Note that the important programs for resizing NTFS partitions include ntfs-3g and a utility like (G)parted or fdisk, provided by the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package. Unless you are an "advanced" user it is advisable to use a tool like GParted to perform any resize operations to minimize the chance of data loss due to user error.
 
-If you already have Arch Linux installed on your system and simply want to resize an existing NTFS partition, you can use the parted and ntfs-3g packages to do it. Optionally, you can use the GParted GUI after installing the [GParted](/index.php/GParted "GParted") package.
+If you already have Arch Linux installed on your system and simply want to resize an existing NTFS partition, you can use the parted and ntfs-3g packages to do it. Optionally, you can use the GParted GUI after installing the [GParted](/index.php/GParted "GParted") package. At the core of the resizing is the [ntfsresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntfsresize.8) command.
 
 ## Troubleshooting
 
@@ -181,7 +182,9 @@ If you have a Windows 10 partition and when accessing files/directories,
 1.  you see broken symbolic links to 'unsupported reparse point', *or*
 2.  you see the error message "cannot access <*filename*>: Input/output error" (in this case you see in /var/log/messages "Could not load plugin /usr/lib64/ntfs-3g/ntfs-plugin-80000017.so: Success")
 
-then install [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/). This plugin handles compressed files.
+then install [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/). This plugin handles system-compressed files.
+
+There exists some other types of [reparse points](https://en.wikipedia.org/wiki/NTFS_reparse_points "wikipedia:NTFS reparse points") that ntfs-3g does not support by default. See [this page](https://jp-andre.pagesperso-orange.fr/junctions.html#other) for a list of available plugins.
 
 ### Damaged NTFS filesystems
 

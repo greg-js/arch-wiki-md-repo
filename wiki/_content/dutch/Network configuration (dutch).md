@@ -9,7 +9,11 @@ Related articles
 
 Op deze pagina woordt de installatie van een **bedrade** netwerkaansluiting uitgelegd. Voor configuratie van een **wireless** aansluiting, zie de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") engelstalige pagina.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Controleer de kabelaansluiting](#Controleer_de_kabelaansluiting)
 *   [2 Device driver](#Device_driver)
@@ -298,10 +302,10 @@ Er is een ruime keuze voorhanden, maar hou voor ogen dat er slechts een daemon g
 wired connection | Official
 GUI | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Console tools | Systemd units |
 | [ConnMan](/index.php/ConnMan "ConnMan") | Yes | No | No | `connmanctl` | `connman.service` |
-| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
-| [netctl](/index.php/Netctl "Netctl") | Yes | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `netctl` | `netctl-ifplugd@*interface*.service` |
+| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Yes | No | Yes ([base](https://www.archlinux.org/packages/?name=base)) | `dhcpcd` | `dhcpcd.service`, `dhcpcd@*interface*.service` |
+| [netctl](/index.php/Netctl "Netctl") | Yes | No | Yes ([base](https://www.archlinux.org/packages/?name=base)) | `netctl` | `netctl-ifplugd@*interface*.service` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | No | `nmcli`,`nmtui` | `NetworkManager.service` |
-| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | No | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `systemd-networkd.service`, `systemd-resolved.service` |
+| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | No | No | Yes ([base](https://www.archlinux.org/packages/?name=base)) | `systemd-networkd.service`, `systemd-resolved.service` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | `wicd-curses` | `wicd.service` |
 
 Zie ook de [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").

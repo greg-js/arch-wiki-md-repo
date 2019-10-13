@@ -96,7 +96,7 @@ O pacote [moreutils](https://www.archlinux.org/packages/?name=moreutils) fornece
 
 ## Alternativas
 
-Alternativas aos utilitários principais no grupo [base](https://www.archlinux.org/groups/x86_64/base/) são [BusyBox](/index.php/BusyBox "BusyBox"), o [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) e [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
+Alternativas aos utilitários principais no grupo [base](https://www.archlinux.org/packages/?name=base) são [BusyBox](/index.php/BusyBox "BusyBox"), o [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) e [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
 
 ### Alternativas ao cp
 

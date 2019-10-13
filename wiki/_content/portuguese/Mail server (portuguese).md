@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Mail server](/index.php/Mail_server "Mail server"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mail_server&diff=0&oldid=576712) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Mail server](/index.php/Mail_server "Mail server"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mail_server&diff=0&oldid=584807) na versão em inglês.
 
 Um servidor de e-mail consiste em vários componentes. Um [agente de transferência de e-mail](https://en.wikipedia.org/wiki/pt:Mail_transfer_agent "wikipedia:pt:Mail transfer agent") (MTA) recebe e envia e-mails via [SMTP](https://en.wikipedia.org/wiki/pt:Simple_Mail_Transfer_Protocol "wikipedia:pt:Simple Mail Transfer Protocol"). E-mails recebidos e aceitos são então passados para um [agente de entrega de e-mail](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), que armazena o e-mail em uma caixa de correio (geralmente nos formatos [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") ou [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir")). Se você quiser que os usuários possam acessar remotamente seus e-mails usando [clientes de e-mail](/index.php/Email_client "Email client") (MUA), será necessário executar um servidor [POP3](https://en.wikipedia.org/wiki/pt:Post_Office_Protocol "wikipedia:pt:Post Office Protocol") e/ou [IMAP](https://en.wikipedia.org/wiki/pt:Internet_Message_Access_Protocol "wikipedia:pt:Internet Message Access Protocol").
 
@@ -29,7 +29,9 @@ Um servidor de e-mail consiste em vários componentes. Um [agente de transferên
     *   [5.1 Sender Policy Framework](#Sender_Policy_Framework)
     *   [5.2 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
     *   [5.3 DKIM](#DKIM)
-*   [6 Sites de teste](#Sites_de_teste)
+*   [6 Teste](#Teste)
+    *   [6.1 Ferramentas dedicadas](#Ferramentas_dedicadas)
+    *   [6.2 Sites de teste](#Sites_de_teste)
 *   [7 Dicas e truques](#Dicas_e_truques)
 
 ## Software
@@ -148,9 +150,17 @@ Para [Postfix](/index.php/Postfix "Postfix"), veja [Postfix#Sender Rewriting Sch
 
 A implementações DKIM disponíveis são [OpenDKIM](/index.php/OpenDKIM "OpenDKIM") e [dkimproxy](https://www.archlinux.org/packages/?name=dkimproxy).
 
-## Sites de teste
+## Teste
 
-Existem vários sites úteis que podem ajudá-lo a testar os registros DNS, a capacidade de entrega e o suporte à criptografia.
+Há várias opções para ajudar você a testar registros DNS, capacidade de entrega e suporte a criptografia.
+
+### Ferramentas dedicadas
+
+*   [swaks](https://www.archlinux.org/packages/?name=swaks)
+
+### Sites de teste
+
+Existem vários sites úteis que podem ajudá-lo a testar.
 
 *   [https://mxtoolbox.com/](https://mxtoolbox.com/)
 *   [http://ismyemailworking.com/](http://ismyemailworking.com/)

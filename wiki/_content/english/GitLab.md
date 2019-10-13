@@ -42,7 +42,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
         *   [5.4.3 Apache](#Apache)
     *   [5.5 Gitlab-workhorse](#Gitlab-workhorse)
 *   [6 Useful tips](#Useful_tips)
-    *   [6.1 Hidden options](#Hidden_options)
+    *   [6.1 Rake tasks](#Rake_tasks)
     *   [6.2 Backup and restore](#Backup_and_restore)
     *   [6.3 Enable fast SSH key lookup](#Enable_fast_SSH_key_lookup)
     *   [6.4 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
@@ -535,9 +535,9 @@ upstream gitlab {
 
 ## Useful tips
 
-### Hidden options
+### Rake tasks
 
-Go to Gitlab's home directory:
+A number of setup/maintenance/etc tasks are available through rake. To list them, go to Gitlab's home directory:
 
 ```
 # cd /usr/share/webapps/gitlab

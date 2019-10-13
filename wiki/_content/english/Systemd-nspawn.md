@@ -66,16 +66,14 @@ First install [arch-install-scripts](https://www.archlinux.org/packages/?name=ar
 
 Next, create a directory to hold the container. In this example we will use `~/MyContainer`.
 
-Next, we use pacstrap to install a basic arch-system into the container. At minimum we need to install the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+Next, we use pacstrap to install a basic arch-system into the container. At minimum we need to install the [base](https://www.archlinux.org/packages/?name=base) package.
 
 ```
-# pacstrap -i -c ~/MyContainer base [additional pkgs/groups]
+# pacstrap -c ~/MyContainer base [additional pkgs/groups]
 
 ```
 
-**Tip:** The `-i` option will **avoid** auto-confirmation of package selection. As you do not need to install the Linux kernel in the container, you can remove it from the package list selection to save space. See [Pacman#Usage](/index.php/Pacman#Usage "Pacman").
-
-**Note:** The package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) required by [linux](https://www.archlinux.org/packages/?name=linux), which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group and is not necessary to run the container, causes some issues to `systemd-tmpfiles-setup.service` during the booting process with `systemd-nspawn`. It is possible to install the [base](https://www.archlinux.org/groups/x86_64/base/) group but excluding the [linux](https://www.archlinux.org/packages/?name=linux) package and its dependencies when building the container with `pacstrap -i -c ~/MyContainer base --ignore linux [additional pkgs/groups]`. The `--ignore` flag will be simply passed to [pacman](https://www.archlinux.org/packages/?name=pacman). See [FS#46591](https://bugs.archlinux.org/task/46591) for more information.
+**Note:** The [base](https://www.archlinux.org/packages/?name=base) package does not depend on the [linux](https://www.archlinux.org/packages/?name=linux) kernel package and is container-ready.
 
 Once your installation is finished, boot into the container:
 
@@ -87,6 +85,8 @@ Once your installation is finished, boot into the container:
 The `-b` option will boot the container (i.e. run `systemd` as PID=1), instead of just running a shell, and `-D` specifies the directory that becomes the container's root directory.
 
 After the container starts, log in as "root" with no password.
+
+**Tip:** If the login fails with "Login incorrect", the problem is likely the `securetty` TTY device whitelist. Add `pts/0` through `pts/9` to the container's version of the file (`~/MyContainer/etc/securetty`) and retry. See [FS#45903](https://bugs.archlinux.org/task/45903) for details.
 
 The container can be powered off by running `poweroff` from within the container. From the host, containers can be controlled by the [machinectl](#machinectl) tool.
 

@@ -4,7 +4,7 @@
 
 За по обстойни иструкции вижте съответните [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") страници или [man page](/index.php/Man_page "Man page") ръководства на самите програми, връзки и за двете от които са налични на тази страница. При нужда от помощ може да се обърнете към [чат-а](/index.php/IRC_channel "IRC channel") или да оставите своите въпроси във [форума](https://bbs.archlinux.org/).
 
-Arch Linux би трябвало да работи на всяка [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") съвместима машина с поне 512 MB RAM. Основна инсталация с всички пакети от група [base](https://www.archlinux.org/groups/x86_64/base/) може да заеме по-малко от 800 MB of дисково пространство. Тъй като инсталационният процес трябва да вземе пакети от външни хранилища, това ръководство приема, че е налична работеща интернет връзка.
+Arch Linux би трябвало да работи на всяка [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") съвместима машина с поне 512 MB RAM. Основна инсталация с всички пакети от група [base](https://www.archlinux.org/packages/?name=base) може да заеме по-малко от 800 MB of дисково пространство. Тъй като инсталационният процес трябва да вземе пакети от външни хранилища, това ръководство приема, че е налична работеща интернет връзка.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -206,7 +206,7 @@ $ pacman-key -v archlinux-*version*-x86_64.iso.sig
 
 ### Инсталиране на основни пакети
 
-Използвайте скрипта [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) за да инсталирате групата [base](https://www.archlinux.org/groups/x86_64/base/) пакети:
+Използвайте скрипта [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) за да инсталирате групата [base](https://www.archlinux.org/packages/?name=base) пакети:
 
 ```
 # pacstrap /mnt base

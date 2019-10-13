@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=577636) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-10-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=584293) na versão em inglês.
 
 Artigos relacionados
 
@@ -227,7 +227,7 @@ Neste meio tempo, você pode tentar atualizar o pacote você mesmo editando o [P
 Provavelmente está deixando escapar alguma coisa trivial.
 
 1.  [Atualize o sistema](/index.php/Pacman_(Portugu%C3%AAs)#Atualizando_pacotes "Pacman (Português)") antes de compilar qualquer coisa com [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), pois o problema pode ser que seu sistema não esteja atualizado.
-2.  Certifique-se de ter ambos os grupos [base](https://www.archlinux.org/groups/x86_64/base/) e [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) instalados.
+2.  Certifique-se de ter ambos os grupos [base](https://www.archlinux.org/packages/?name=base) e [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) instalados.
 3.  Tente usar a opção `-s` com `makepkg` para verificar e instalar todas as dependências necessárias antes de iniciar o processo de compilação.
 
 Certifique-se de ler primeiro o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e os comentários na página AUR do pacote em questão. A razão pode não ser trivial afinal. `CFLAGS`, `LDFLAGS` e `MAKEFLAGS` personalizados podem causar falhas. Também é possível que o `PKGBUILD` esteja quebrado para todos. Se você não conseguir descobrir sozinho, basta relatá-lo ao responsável, por exemplo, publicando os erros que você está recebendo nos comentários na página do AUR.
@@ -266,7 +266,7 @@ Veja [Makepkg (Português)#Melhorando os tempos de compilação](/index.php/Make
 
 ### Qual é a diferença entre pacotes foo e foo-git
 
-Muitos pacotes AUR são apresentados em versões comuns ("estáveis") e de desenvolvimento ("instáveis"). Um pacote de desenvolvimento geralmente têm um sufixo como `-cvs`, `-svn`, `-git`, `-hg`, `-bzr` ou `-darcs`. Enquanto pacotes de desenvolvimento não se destinam ao uso comum, eles podem oferecer novos recursos ou correções de erros. Como esses pacotes fazem o download da última fonte disponível quando você executa o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), um versão do pacote para rastrear possíveis atualizações não está diretamente disponível para eles. Da mesma forma, esses pacotes não podem realizar uma soma de verificação de autenticidade, em vez disso dependendo do mantenedor do repositório [Git](/index.php/Git "Git").
+Muitos pacotes AUR vêm em versões de lançamento "estáveis" e "instáveis" de desenvolvimento. Pacotes de desenvolvimento geralmente têm um [sufixo](/index.php/Diretrizes_de_pacotes_VCS#Diretrizes "Diretrizes de pacotes VCS") denotando [Sistema de Controle de Versão](/index.php/Version_Control_System "Version Control System") e não se destinam ao uso comum, mas podem oferecer novos recursos ou correções de erros. Como esses pacotes só fazem o download do último fonte disponível quando você executa o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), seu `pkgver()` no AUR no reflete as alterações no upstream. Da mesma forma, esses pacotes não podem realizar uma soma de verificação de autenticidade em qualquer [fonte VCS](/index.php/Diretrizes_de_pacotes_VCS#Fontes_VCS "Diretrizes de pacotes VCS").
 
 Veja também [Manutenção do sistema#Use pacotes de software aprovados](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Use_pacotes_de_software_aprovados "Manutenção do sistema").
 
@@ -275,6 +275,8 @@ Veja também [Manutenção do sistema#Use pacotes de software aprovados](/index.
 É possível que o pacote tenha sido adotado por um [TU](/index.php/TU_(Portugu%C3%AAs) "TU (Português)") e agora esteja no [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community").
 
 Pacotes podem ter sido excluídos, se eles não preencherem as [regras de envio](/index.php/Diretrizes_de_envio_ao_AUR#Regras_de_envio "Diretrizes de envio ao AUR"). Veja os [histórico do aur-requests](https://lists.archlinux.org/pipermail/aur-requests/) pelo motivo da exclusão.
+
+**Nota:** O repositório git para um pacote excluído geralmente fica disponível. Veja [Diretrizes de envio ao AUR#Requisições](/index.php/Diretrizes_de_envio_ao_AUR#Requisições "Diretrizes de envio ao AUR") para detalhes.
 
 Se o pacote costumava existir no AUR3, ele pode não ter sido [migrado para o AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). Veja os [#Repositórios Git para pacotes AUR3](#Repositórios_Git_para_pacotes_AUR3) nos quais eles foram preservados.
 

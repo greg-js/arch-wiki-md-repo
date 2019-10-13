@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=579059) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-10-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=584638) na versão em inglês.
 
 Artigos relacionados
 
@@ -299,9 +299,9 @@ Um gerenciador de rede permite que você gerencie configurações de conexão de
 | Gerenciador
 de rede | GUI | [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | Ferramentas CLI | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Point-to-Point_Protocol "wikipedia:pt:Point-to-Point Protocol") (ex., Modem 3G) | [Cliente DHCP](#DHCP) | Units de systemd |
 | [ConnMan](/index.php/ConnMan "ConnMan") | 8 não oficiais | Não | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Sim ((com [ofono](https://aur.archlinux.org/packages/ofono/)) | interno | `connman.service` |
-| [netctl](/index.php/Netctl "Netctl") | 2 não oficiais | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Sim | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
+| [netctl](/index.php/Netctl "Netctl") | 2 não oficiais | Sim ([base](https://www.archlinux.org/packages/?name=base)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Sim | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
 | [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Não | [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1), [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1) | Sim | interno, [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `NetworkManager.service` |
-| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [networkctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1) | [Não](https://github.com/systemd/systemd/issues/481) | interno | `systemd-networkd.service`, `systemd-resolved.service` |
+| [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | Não | Sim ([base](https://www.archlinux.org/packages/?name=base)) | [networkctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1) | [Não](https://github.com/systemd/systemd/issues/481) | interno | `systemd-networkd.service`, `systemd-resolved.service` |
 | [Wicd](/index.php/Wicd "Wicd") | Sim | Não | [wicd-cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-cli.8), [wicd-curses(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-curses.8) | Não | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | `wicd.service` |
 
 Há também o [Wifi Radar](/index.php/Wifi_Radar_(Portugu%C3%AAs) "Wifi Radar (Português)"), um aplicativo GUI que gerencia redes Wifi por meio do [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools), porém ele não gerencia conexões cabeadas.
@@ -404,13 +404,24 @@ SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
 SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
 ```
 
+Para obter o `DEVPATH` de todos os dispositivos atualmente conecados, veja para onde os links simbólicos em `/sys/class/net/` levam. Por exemplo:
+
+ `file /sys/class/net/*` 
+```
+/sys/class/net/enp0s20f0u4u1: symbolic link to ../../devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.1/2-4.1:1.0/net/enp0s20f0u4u1
+/sys/class/net/enp0s31f6:     symbolic link to ../../devices/pci0000:00/0000:00:1f.6/net/enp0s31f6
+/sys/class/net/lo:            symbolic link to ../../devices/virtual/net/lo
+/sys/class/net/wlp4s0:        symbolic link to ../../devices/pci0000:00/0000:00:1c.6/0000:04:00.0/net/wlp4s0
+
+```
+
 O caminho do dispositivo deve corresponder ao nome do dispositivo novo e antigo, uma vez que a regra pode ser executada mais de uma vez na inicialização. Por exemplo, na segunda regra, `"/devices/pci*/*1c.0/*/net/enp*"` seria errado, uma vez que irá parar de corresponder depois que o nome for alterado para `en`. Somente a regra padrão do sistema será chamada na segunda vez, fazendo com que o nome seja alterado de volta para, por exemplo, `enp1s0`.
 
-Se você estiver usando um dispositivo de rede USB (por exemplo, tethering de telefone Android) que tenha um endereço MAC dinâmico e deseje usar diferentes portas USB, poderá usar uma regra que corresponda, dependendo do fornecedor e do ID do modelo:
+Se você estiver usando um dispositivo de rede USB (por exemplo, tethering de telefone Android) que tenha um endereço MAC dinâmico e deseje usar diferentes portas USB, poderá usar uma regra que corresponda, dependendo do fornecedor e do ID do produto:
 
- `/etc/udev/rules.d/10-network.rules`  `SUBSYSTEM=="net", ACTION="add", ENV{ID_VENDOR_ID}=="12ab", ENV{ID_MODEL_ID}=="3cd4", NAME="net2"` 
+ `/etc/udev/rules.d/10-network.rules`  `SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="12ab", ATTRS{idProduct}=="3cd4", NAME="net2"` 
 
-Para [testar](/index.php/Udev#Testing_rules_before_loading "Udev") suas regras, elas podem ser acionadas diretamente do espaço de usuário, por exemplo, com `udevadm --debug test /sys/*CAMINHO_DISPOSITIVO*`. Lembre-se de primeiro retirar a interface que você está tentando renomear (ex. `ip link set enp1s0 down`).
+Para [testar](/index.php/Udev#Testing_rules_before_loading "Udev") suas regras, elas podem ser acionadas diretamente do espaço de usuário, por exemplo, com `udevadm --debug test /sys/class/net/*`. Lembre-se de primeiro retirar a interface que você está tentando renomear (ex. `ip link set enp1s0 down`).
 
 **Nota:** Ao escolher os nomes estáticos **deve-se evitar o uso de nomes no formato de "eth*X*" e "wlan*X*"**, pois eles podem levar a codiçẽos de corrida entre o kernel e udev durante a inicialização. Em vez disso, é melhor usar nomes de interface que não são usados pelo kernel como padrão, ex.: `net0`, `net1`, `wifi0`, `wifi1`. Para detalhes adicionais, por favor veja a documentação do [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
 

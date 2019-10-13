@@ -207,7 +207,7 @@ Antes de iniciar a instalação, as chaves do pacman precisam ser configuradas. 
 
 #### Selecionando um espelho e baixando ferramentas básicas
 
-Após [selecionar um espelho](/index.php/Espelhos#Habilitando_um_espelho_específico "Espelhos"), [renove as listas de pacotes](/index.php/Espelhos#Forçar_o_pacman_a_renovar_as_listas_de_pacotes "Espelhos") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+Após [selecionar um espelho](/index.php/Espelhos#Habilitando_um_espelho_específico "Espelhos"), [renove as listas de pacotes](/index.php/Espelhos#Forçar_o_pacman_a_renovar_as_listas_de_pacotes "Espelhos") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/packages/?name=base), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
 
 **Nota:**
 

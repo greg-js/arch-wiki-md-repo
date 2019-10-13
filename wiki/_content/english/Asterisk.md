@@ -4,7 +4,11 @@ Asterisk provides voice-mail services with directory, call conferencing, interac
 
 This article will show you how to configure a simple in house network enabling us to use a SIP [softphone](/index.php/Softphone "Softphone") to talk to another SIP softphone on your LAN.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -120,7 +124,7 @@ Now we have to have a way to leave messages to this voice-mail, and a way to acc
 
 ```
 exten => 100,1,Dial(SIP/me1,20)
-exten =>100,2,Voicemail(100@default)
+exten => 100,n,Voicemail(u100@default)
 
 ```
 
@@ -152,7 +156,7 @@ register => username:password@sip.specific.com
 [whatever]                   
 fromdomain=specific.com     
 host=sip.specific.com
-insecure=very    ; check with provider
+insecure=very    ; check with provider
 username=usernameduh
 secret=passwordduh
 type=peer
@@ -161,13 +165,13 @@ type=peer
 ##### extensions.conf
 
 ```
-[outboundwithCID]  ; this can be whatever
+[outboundwithCID]  ; this can be whatever
 exten => _1NXXNXXXXXX,1,SetCIDNum(15555551234)
 exten => _1NXXNXXXXXX,2,Dial(SIP/${EXTEN}@whatever)
 exten => _1NXXNXXXXXX,3,Congestion()
 exten => _1NXXNXXXXXX,103,Busy()
 
-[default]  ; This should be set in your sip.conf for incoming calls
+[default]  ; This should be set in your sip.conf for incoming calls
 
 ;These should to be changed to your actual number
 ; ie     15555555555

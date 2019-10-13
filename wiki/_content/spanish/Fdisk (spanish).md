@@ -34,7 +34,7 @@ Este artículo cubre [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk
 
 ## Instalación
 
-Para utilizar *fdisk* y sus utilidades asociadas, se requiere el paquete [util-linux](https://www.archlinux.org/packages/?name=util-linux), que es parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/).
+Para utilizar *fdisk* y sus utilidades asociadas, se requiere el paquete [util-linux](https://www.archlinux.org/packages/?name=util-linux), que es parte del grupo [base](https://www.archlinux.org/packages/?name=base).
 
 ## Listar las particiones
 

@@ -211,7 +211,7 @@ Alternatively there is [nmcli-dmenu](https://github.com/firecat53/nmcli-dmenu) w
 
 ## Configuration
 
-NetworkManager will require some additional steps to be able run properly. Make sure you have configured `/etc/hosts` as described [Network configuration (Русский)#Установка имени узла](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_имени_узла "Network configuration (Русский)").
+NetworkManager will require some additional steps to be able run properly. Make sure you have configured `/etc/hosts` as described [Network configuration (Русский)#Установка имени хоста](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_имени_хоста "Network configuration (Русский)").
 
 ### Автозапуск NetworkManager
 

@@ -87,7 +87,7 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 
 ```
 
-	6\. You might first re-install the [base](https://www.archlinux.org/groups/x86_64/base/) group alone, then install any package that triggered an install error, identified using `pacman --root /mnt -Qo <error file>`. Then repeat the [base](https://www.archlinux.org/groups/x86_64/base/) group install, until it installs cleanly without errors.
+	6\. You might first re-install the [base](https://www.archlinux.org/packages/?name=base) group alone, then install any package that triggered an install error, identified using `pacman --root /mnt -Qo <error file>`. Then repeat the [base](https://www.archlinux.org/packages/?name=base) group install, until it installs cleanly without errors.
 
 ```
  # pacman --root /mnt -S base

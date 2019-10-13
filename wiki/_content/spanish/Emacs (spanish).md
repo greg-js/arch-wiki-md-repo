@@ -1,6 +1,10 @@
 [Emacs](https://en.wikipedia.org/wiki/Emacs "wikipedia:Emacs") es un editor de texto en tiempo real extensible, configurable y auto-documentado. En el corazón de Emacs yace un intérprete de [Emacs Lisp](https://en.wikipedia.org/wiki/Emacs_Lisp "wikipedia:Emacs Lisp"), el lenguaje de programación en que el mayoría de la funcionalidad y extensiones de Emacs están implementadas. GTK es el conjunto de herramientas de X usado en GNU Emacs 22, aunque funciona igualmente bien en una interfaz de línea de comandos (CLI). Las capacidades de edición de texto de Emacs son a menudo comparadas con aquellas de [vim](/index.php/Vim_(Espa%C3%B1ol) "Vim (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Ejecutando Emacs](#Ejecutando_Emacs)

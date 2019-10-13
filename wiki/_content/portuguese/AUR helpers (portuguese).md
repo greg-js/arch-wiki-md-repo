@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=578031) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=584205) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -69,12 +69,13 @@ As colunas da [#Tabelas de comparação](#Tabelas_de_comparação) têm o seguin
 
 | Nome | Escrito em | Revisão de arquivo | Ver diff | Git clone | Analisador confiável | Resolvedor confiável | Pacotes divididos | Completação
 de shell | Especificidade |
-| [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | Não | [Não](https://github.com/pbrisbin/aurget/issues/41) | Não | Não | Não | [Não](https://github.com/pbrisbin/aurget/issues/40) | bash, zsh | – |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | bash, zsh | [modular](https://en.wikipedia.org/wiki/Modular_programming "w:Modular programming"), [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local"), [assinatura de pacote](/index.php/Assinatura_de_pacote "Assinatura de pacote"), [chroot limpo](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Sim | Não | Sim | Sim | Sim | Sim | bash, zsh | `bb-wrapper` para interfacear o *pacman*, gerenciamento de confiança |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Não | [Não](https://github.com/Kwpolska/pkgbuilder/issues/36) | Sim | Sim | Sim | [Parcial](https://github.com/Kwpolska/pkgbuilder/issues/39) | – | `pb` para interfacear o *pacman* |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Não | Sim | Sim | Não | Não | Não | – | [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local") |
-| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Sim | [Não](https://github.com/vn971/rua/issues/1) | Sim | [Sim](https://github.com/vn971/rua/commit/fc8c2f3) | Sim | [Não](https://github.com/vn971/rua/issues/21) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), inspeção de `.pkg.tar` |
+| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Sim | [Sim](https://github.com/vn971/rua/commit/0459a8b) | Sim | [Sim](https://github.com/vn971/rua/commit/fc8c2f3) | Sim | [Sim](https://github.com/vn971/rua/commit/7889045) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), inspeção de `.pkg.tar` |
+| [aurget](https://aur.archlinux.org/packages/aurget/)
+<small>([descontinuado](https://github.com/pbrisbin/aurget/issues/66#issue-485245712))</small>}} | Bash | Não | [Não](https://github.com/pbrisbin/aurget/issues/41) | Não | Não | Não | [Não](https://github.com/pbrisbin/aurget/issues/40) | bash, zsh | – |
 | [spinach](https://aur.archlinux.org/packages/spinach/)
 <small>([descontinuado](https://github.com/floft/spinach))</small> | Bash | [Sim](https://github.com/floft/spinach/commit/5455747) | Não | Não | Não | Não | Não | – | – |
 

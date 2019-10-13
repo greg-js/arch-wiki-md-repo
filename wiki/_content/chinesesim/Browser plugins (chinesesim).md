@@ -11,7 +11,11 @@
 
 除非明确说明，本页中的插件都只支持 NPAPI。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Flash Player](#Flash_Player)
     *   [1.1 Adobe Flash Player](#Adobe_Flash_Player)

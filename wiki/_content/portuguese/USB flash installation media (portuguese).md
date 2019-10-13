@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=579165) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=584602) na versão em inglês.
 
 Artigos relacionados
 
@@ -73,13 +73,15 @@ Execute o seguinte comando, substituindo `/dev/**sdx**` pela sua unidade, por ex
 
 Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informações sobre [dd](/index.php/Dd_(Portugu%C3%AAs) "Dd (Português)"). Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) para mais informações sobre `oflag=sync`.
 
+**Dica:** Se a versão UEFI da Arch ISO em USB travar ou não conseguir carregar, tente repetir o processo de criação de mídia do [dd](/index.php/Dd_(Portugu%C3%AAs) "Dd (Português)") no mesmo pendrive uma ou mais vezes.
+
 ##### Usando etcher
 
 [Etcher](https://etcher.io/) é um aplicador de imagem do sistema operacional criado com node.js e Electron, capaz que o *flashing* de um cartão SD ou unidade USB seja uma experiência agradável e segura. Ele protege você de gravar acidentalmente em seus discos rígidos e garante que todos os bytes de dados foram escritos corretamente e muito mais. Há 6 pacotes relacionados no AUR.
 
 ##### Usando Kindd
 
-[Kindd](https://github.com/LinArcX/Kindd) é um frontend gráfico baseado no Qt para dd. Está disponível como [kindd-git](https://aur.archlinux.org/packages/kindd-git/).
+[Kindd](https://github.com/LinArcX/Kindd) é um frontend gráfico baseado no Qt para dd. Está disponível como [kindd](https://aur.archlinux.org/packages/kindd/).
 
 #### No Windows
 
@@ -237,7 +239,7 @@ Para inicializar um rótulo ou um [UUID](/index.php/UUID "UUID") para selecionar
 
 **Atenção:** A incompatibilidade de rótulos ou o UUID errado impede a inicialização da mídia criada.
 
-Os arquivos de inicialização legada do Syslinux são estão pré-instalados em `/mnt/usb/arch/boot/syslinux`. Se você quiser ser capaz de inicializar seu pendrive USB no modo legado, instale o pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) e siga as instruções em [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux").
+Os arquivos Syslinux para sistemas BIOS já são copiados para `/mnt/usb/arch/boot/syslinux`. Instale o pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) e siga as instruções em [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") para tornar a partição inicializável.
 
 #### No Windows
 

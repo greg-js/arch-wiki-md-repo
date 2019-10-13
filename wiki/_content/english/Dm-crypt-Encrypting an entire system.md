@@ -1289,7 +1289,7 @@ If you prepared an EFI system partition earlier, create its mount point and moun
 
 **Note:** Btrfs snapshots will exclude `/efi`, since it is not a btrfs file system.
 
-At the [pacstrap](/index.php/Installation_guide#Install_the_base_packages "Installation guide") installation step, the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) must be installed in addition to the base group.
+At the [pacstrap](/index.php/Installation_guide#Install_essential_packages "Installation guide") installation step, the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) must be installed in addition to the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package").
 
 ### Configuring mkinitcpio
 

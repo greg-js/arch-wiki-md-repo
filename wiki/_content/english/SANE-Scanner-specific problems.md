@@ -110,7 +110,7 @@ If all the necessary packages are installed but you still get the "invalid argum
 
 ```
 
-The output should narrow down the problem. Most likely the connection isn't setup correctly. In case of a network scanner check if the IP address is right by opening the `/etc/opt/brother/scanner/brscan4//brsanenetdevice4.cfg` with an editor. In case of a USB connection check if the path to the scanner in the configuration file is setup correctly. For that compare the values of the `lsusb` command with your configuration file and change them if necessary. You might also try to follow the `brother*X*` suggestion from [Network Scanning above](/index.php/SANE/Scanner-specific_problems#Network_Scanning "SANE/Scanner-specific problems") even for non networked scanners.
+The output should narrow down the problem. Most likely the connection isn't setup correctly. In case of a network scanner check if the IP address is right by opening the `/etc/opt/brother/scanner/brscan4//brsanenetdevice4.cfg` with an editor. In case of a USB connection check if the path to the scanner in the configuration file is setup correctly. For that compare the values of the `lsusb` command with your configuration file and change them if necessary. You might also try to follow the `brother*X*` suggestion from [Network Scanning above](#Network_Scanning) even for non networked scanners.
 
 ### Scan-key-tool
 
@@ -294,7 +294,7 @@ $ scanimage --device "hpaio:/net/DeskJet_3630_series?ip=10.12.129.6" --format=pn
 
 ## Lexmark
 
-For Lexmark devices printing issues, please read [CUPS/Printer-specific_problems#Lexmark](/index.php/CUPS/Printer-specific_problems#Lexmark "CUPS/Printer-specific problems").
+For Lexmark devices printing issues, please read [CUPS/Printer-specific problems#Lexmark](/index.php/CUPS/Printer-specific_problems#Lexmark "CUPS/Printer-specific problems").
 
 Most Lexmark scanners are still (2019) not supported by SANE, and thus cannot be detected either by `sane-find-scanner` or by `scanimage -L`. Lexmark provides a non-free driver for GNU/Linux, which is supposed to support *all* its scanners. Nevertheless, the driver is only distributed for Debian, OpenSUSE, Fedora and RedHat, but not for Arch. Here is a way to install it.
 

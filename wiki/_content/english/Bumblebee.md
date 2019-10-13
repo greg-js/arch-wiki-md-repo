@@ -64,6 +64,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.19 Screen 0 deleted because of no matching config section](#Screen_0_deleted_because_of_no_matching_config_section)
     *   [6.20 Erratic, unpredictable behaviour](#Erratic,_unpredictable_behaviour)
     *   [6.21 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
+    *   [6.22 Discrete card is silently activated when egl is requested by some application](#Discrete_card_is_silently_activated_when_egl_is_requested_by_some_application)
 *   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -861,6 +862,21 @@ If Bumblebee starts/works in a random manner, check that you have set your [Netw
 ### Discrete card always on and nvidia driver cannot be unloaded
 
 Make sure `nvidia-persistenced.service` is disabled and not currently active. It is intended to keep the `nvidia` driver running at all times [[9]](https://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/README/nvidia-persistenced.html), which prevents the card being turned off.
+
+### Discrete card is silently activated when egl is requested by some application
+
+If the discrete card is activated by some program (lets say mpv with gpu backend) and stays on. The problem might be `libglvnd` which is loading nvidia drivers and activating the card.
+
+To disable this set environment variable `__EGL_VENDOR_LIBRARY_FILENAMES` (see [documentation](https://github.com/NVIDIA/libglvnd/blob/master/src/EGL/icd_enumeration.md)) to only load mesa config file:
+
+```
+__EGL_VENDOR_LIBRARY_FILENAMES="/usr/share/glvnd/egl_vendor.d/50_mesa.json"
+
+```
+
+Package nvidia-utils (and its branches) is installing nvidia config file at `/usr/share/glvnd/egl_vendor.d/10_nvidia.json` which has priority and causes libglvnd to load nvidia drivers and enable the card.
+
+The other solution is to remove the config file provided by nvidia-utils.
 
 ## See also
 

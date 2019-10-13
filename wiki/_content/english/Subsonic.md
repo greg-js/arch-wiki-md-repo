@@ -1,6 +1,10 @@
-[Subsonic](http://www.subsonic.org/pages/index.jsp) is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications.
+[Subsonic](http://www.subsonic.org/pages/index.jsp) was a music server that let you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It is no longer maintained. However, a maintained fork ([airsonic](https://aur.archlinux.org/packages/airsonic/)) exists.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -13,15 +17,13 @@
     *   [3.1 FLAC playback](#FLAC_playback)
     *   [3.2 UTF-8 file names not added to the database](#UTF-8_file_names_not_added_to_the_database)
     *   [3.3 Accessing the database](#Accessing_the_database)
-*   [4 Madsonic](#Madsonic)
-*   [5 Libresonic](#Libresonic)
+*   [4 Libresonic/Airsonic](#Libresonic/Airsonic)
+*   [5 Madsonic](#Madsonic)
 *   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [subsonic](https://aur.archlinux.org/packages/subsonic/) package.
-
-As of version 6, the software is not open source anymore, although open-source forks exist ([libresonic](https://aur.archlinux.org/packages/libresonic/), [airsonic](https://aur.archlinux.org/packages/airsonic/)).
+The old, unmaintained version of [subsonic](https://aur.archlinux.org/packages/subsonic/) is still available. In addition, as of version 6, the software was not open source. Hence it is recommended for users to instead [install](/index.php/Install "Install") the open-source fork [airsonic](https://aur.archlinux.org/packages/airsonic/).
 
 ## Configuration
 
@@ -167,7 +169,7 @@ Start Subsonic and go to `settings > transcoding`. Ensure that the default FFmpe
 
 | Name | Convert from | Convert to | Step 1 | Step 2 |
 | mp3 default | ... NOT flac ... | mp3 | ffmpeg ... |
-| mp3 flac | flac | mp3 | flac --silent --decode --stdout %s | lame --silent -h -b %b - |
+| mp3 flac | flac | mp3 | flac --silent --decode --stdout %s | lame --silent -h -b %b - |
 
 ### UTF-8 file names not added to the database
 
@@ -208,15 +210,15 @@ $ java -jar /usr/share/java/sqltool.jar --inlineRc=url=jdbc:hsqldb:file:db.copy/
 1 / 1 subsonic.script...
 ```
 
+## Libresonic/Airsonic
+
+Subsonic was subsequently forked as [Libresonic](https://github.com/Libresonic/libresonic). This was also open-source, but had removed the paid-licence checks, hence was also free [as in free beer](https://en.wikipedia.org/wiki/Free_as_in_free_beer "wikipedia:Free as in free beer"). However neither Subsonic nor Libresonic are maintained. The current fork continues with the name [Airsonic](https://github.com/airsonic/airsonic/).
+
 ## Madsonic
 
-Madsonic is a (non-free) fork of Subsonic with extra features and is available in AUR.
+[madsonic](https://aur.archlinux.org/packages/madsonic/) is a (non-free) fork of Subsonic with extra features.
 
 Once you start the server, pay close attention to the Transcoding options, as you will probably have to change the command from "Audioffmpeg" to "ffmpeg".
-
-## Libresonic
-
-[Libresonic](https://github.com/Libresonic/libresonic) is a fork of Subsonic that continues the open-source licence. It has also removed the paid-licence checks from Subsonic, hence it is also free [as in beer](https://en.wikipedia.org/wiki/Free_as_in_free_beer "wikipedia:Free as in free beer").
 
 ## See also
 

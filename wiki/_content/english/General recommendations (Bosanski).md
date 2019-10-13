@@ -218,7 +218,7 @@ Vidi glavni artikal: [Power management/Suspend and hibernate](/index.php/Power_m
 
 [Zvuk](/index.php/Sound "Sound") je omogućen od strane kernel drivera za zvuk:
 
-*   [ALSA](/index.php/ALSA "ALSA") je uključen unutar kernel i preporučen je jer obično radi out of the box (samo mora biti [unmuted](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channes "Advanced Linux Sound Architecture")).
+*   [ALSA](/index.php/ALSA "ALSA") je uključen unutar kernel i preporučen je jer obično radi out of the box (samo mora biti [unmuted](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture")).
 *   [OSS](/index.php/OSS "OSS") je alternativa u slučaju kada ALSA ne radi.
 
 Korisnici mogu dodatno instalirati i konfigurasati [zvučni server](/index.php/Sound_system#Sound_servers "Sound system") poput [PulseAudio](/index.php/PulseAudio "PulseAudio"). Za napredne zahtjeva zvuka, vidi [professional audio](/index.php/Professional_audio "Professional audio").
@@ -251,7 +251,7 @@ Firewall može pružiti dodatni nivo zaštite na vrhu Linux network stacka. Dok 
 
 Za dijeljenje fajlova između različitih mašina na mreži, prati [NFS](/index.php/NFS "NFS") ili [SSHFS](/index.php/SSHFS "SSHFS") članke.
 
-Koristi [sambu](/index.php/Samba "Samba") da pristupis Windows mreži. Za konfiguraciju mašine da koristi Active Directory za autentifikaciju, pročitaj [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration").
+Koristi [sambu](/index.php/Samba "Samba") da pristupis Windows mreži. Za konfiguraciju mašine da koristi Active Directory za autentifikaciju, pročitaj [Active Directory integration](/index.php/Active_Directory_integration "Active Directory integration").
 
 Vidi također [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
 

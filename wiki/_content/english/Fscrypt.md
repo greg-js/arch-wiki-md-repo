@@ -121,7 +121,7 @@ auth            optional   pam_fscrypt.so
 Also in `/etc/pam.d/system-login`, append the following line to the "session" section:
 
 ```
-session         optional   pam_fscrypt.so       lock_policies drop_caches
+session         optional   pam_fscrypt.so       drop_caches lock_policies
 
 ```
 

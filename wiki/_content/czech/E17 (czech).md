@@ -4,16 +4,20 @@ E17 se v současnosti intenzivně vyvíjí, je ve stádiu pre-alpha. Přestože 
 
 Nové verze jsou denně dostupné v SVN. SVN snapshoty jsou také z důvodu snadné instalace dostupné v repozitářích community - instalační instrukce jsou uvedené níže.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalace E17 z repozitářů community](#Instalace_E17_z_repozit.C3.A1.C5.99.C5.AF_community)
-    *   [1.1 Častější upgrade balíčků e17](#.C4.8Cast.C4.9Bj.C5.A1.C3.AD_upgrade_bal.C3.AD.C4.8Dk.C5.AF_e17)
-*   [2 Instalace E17 pomocí easy_e17.sh](#Instalace_E17_pomoc.C3.AD_easy_e17.sh)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalace E17 z repozitářů community](#Instalace_E17_z_repozitářů_community)
+    *   [1.1 Častější upgrade balíčků e17](#Častější_upgrade_balíčků_e17)
+*   [2 Instalace E17 pomocí easy_e17.sh](#Instalace_E17_pomocí_easy_e17.sh)
     *   [2.1 Update_e17.sh](#Update_e17.sh)
-    *   [2.2 Nastavení Entrance](#Nastaven.C3.AD_Entrance)
-*   [3 Instalace témat](#Instalace_t.C3.A9mat)
-*   [4 Problémy](#Probl.C3.A9my)
-*   [5 Externí odkazy](#Extern.C3.AD_odkazy)
+    *   [2.2 Nastavení Entrance](#Nastavení_Entrance)
+*   [3 Instalace témat](#Instalace_témat)
+*   [4 Problémy](#Problémy)
+*   [5 Externí odkazy](#Externí_odkazy)
 
 ## Instalace E17 z repozitářů community
 

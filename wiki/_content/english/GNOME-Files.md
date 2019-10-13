@@ -148,7 +148,7 @@ See [File manager functionality#Thumbnail previews](/index.php/File_manager_func
 
 **Note:** On [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened), thumbnails generation fails (all thumbnails go in `~/.cache/thumbnails/fail/`). This is due to unprivileged user namespace being disabled by default on this kernel for security reasons. Nautilus uses `bwrap` (provided by [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap)) to sandbox thumbnailers. You may decide to replace [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) with [bubblewrap-suid](https://www.archlinux.org/packages/?name=bubblewrap-suid).
 
-See [Security#Sandboxing_applications](/index.php/Security#Sandboxing_applications "Security") for more information.
+See [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security") for more information.
 
 Sometimes video thumbnails are not shown. To solve it (as mentioned in [No video thumbnails on nautilus](https://bbs.archlinux.org/viewtopic.php?id=168626)), you must install [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer), [gst-libav](https://www.archlinux.org/packages/?name=gst-libav), [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly), and remove the content of `~/.cache/thumbnails/fail/`.
 

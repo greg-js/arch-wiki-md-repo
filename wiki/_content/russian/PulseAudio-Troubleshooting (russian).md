@@ -1022,7 +1022,7 @@ load-module module-switch-on-connect
 
 ### Устройство сопряжено, но не проигрывает звук
 
-[Смотрите раздел в статье Bluetooth](/index.php/Bluetooth_headset_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#A2DP_not_working_with_PulseAudio "Bluetooth headset (Русский)")
+[Смотрите раздел в статье Bluetooth](/index.php/Bluetooth_headset#A2DP_not_working_with_PulseAudio "Bluetooth headset")
 
 Начиная с PulseAudio 2.99 и bluez 4.101, вы должны **избегать** использования интерфейса Socket. НЕ используйте:
 

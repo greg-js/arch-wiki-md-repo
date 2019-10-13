@@ -65,7 +65,12 @@ For Go packages add a makedepend on [go-pie](https://www.archlinux.org/packages/
 
 #### Haskell
 
-**Warning:** currently not clear how to build PIE enabled Haskell binaries
+Pass the following flag to runhaskell Setup configure
+
+```
+--ghc-option='-pie'
+
+```
 
 ## RPATH/RUNPATH
 

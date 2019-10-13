@@ -27,6 +27,7 @@ LXDM does not support the [XDMCP](/index.php/XDMCP "XDMCP") protocol. An alterna
     *   [3.4 Advanced Session Configuration](#Advanced_Session_Configuration)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 White flash](#White_flash)
+    *   [4.2 Logout Issue](#Logout_Issue)
 
 ## Installation
 
@@ -200,3 +201,7 @@ LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbm
 ### White flash
 
 When using the default LXDM `theme=Industrial` and a dark background image (e.g. `bg=/usr/share/backgrounds/img.png`) there may be a short bright flash before LXDM starts. This is caused by the `bg_color:` property of the selected [GTK](/index.php/GTK "GTK") theme. To avoid this change `gtk_theme=Adwaita` to `gtk_theme=Adwaita-dark` or to another dark theme.
+
+### Logout Issue
+
+If you had trouble logging out when using lxdm (e.g. stuck, display freeze, etc..) try uncomment the `reset=1` option in `/etc/lxdm/lxdm.conf` to refresh xserver on every logout.

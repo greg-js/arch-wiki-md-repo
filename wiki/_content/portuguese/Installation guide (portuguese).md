@@ -1,10 +1,10 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=582205) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-10-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=585363) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Leitura](/index.php/Help:Leitura "Help:Leitura"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
 Para instruções mais detalhadas, veja os respectivos artigos [ArchWiki](/index.php/ArchWiki_(Portugu%C3%AAs) "ArchWiki (Português)") ou as [páginas man](/index.php/P%C3%A1ginas_man "Páginas man") dos vários programas, ambos relacionados neste guia. Para uma ajuda interativa, o [canal IRC](/index.php/Canal_IRC "Canal IRC") e os [fóruns](https://bbs.archlinux.org/) também estão disponíveis.
 
-Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/pt:AMD64 "wikipedia:pt:AMD64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/groups/x86_64/base/) deve ocupar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, esse guia presume que uma conexão com a Internet esteja disponível.
+Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://en.wikipedia.org/wiki/pt:AMD64 "wikipedia:pt:AMD64") com um mínimo de 512 MB de RAM. Uma instalação básica com todos os pacotes do grupo [base](https://www.archlinux.org/packages/?name=base) deve ocupar menos de 800 MB de espaço em disco. Como o processo de instalação precisa obter pacotes de repositório remoto, esse guia presume que uma conexão com a Internet esteja disponível.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -26,7 +26,7 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
     *   [1.10 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
 *   [2 Instalação](#Instalação)
     *   [2.1 Selecionar os espelhos](#Selecionar_os_espelhos)
-    *   [2.2 Instalar os pacotes base](#Instalar_os_pacotes_base)
+    *   [2.2 Instalar os pacotes essenciais](#Instalar_os_pacotes_essenciais)
 *   [3 Configurar o sistema](#Configurar_o_sistema)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
@@ -239,18 +239,26 @@ Quanto mais alto um espelho está posicionado na lista, mais prioritário ele se
 
 Esse arquivo será posteriormente copiado para o novo sistema por *pacstrap*, então é melhor fazer direito.
 
-### Instalar os pacotes base
+### Instalar os pacotes essenciais
 
-Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar o grupo de pacotes [base](https://www.archlinux.org/groups/x86_64/base/):
-
-```
-# pacstrap /mnt base
+Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar o pacote [base](https://www.archlinux.org/packages/?name=base), um [kernel](/index.php/Kernel "Kernel") Linux e um firmware para hardwares comuns:
 
 ```
+# pacstrap /mnt base linux linux-firmware
 
-Esse grupo não inclui todas as ferramentas da instalação *live*, tal como [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) ou firmware de rede sem fio específico; veja [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para comparação.
+```
 
-Para [instalar](/index.php/Instalar "Instalar") pacotes e outros grupos, tal como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), anexe os nomes ao *pacstrap* (separados por espaço) ou a comandos [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") após a etapa do [#Chroot](#Chroot).
+**Dica:** Você pode substituir [linux](https://www.archlinux.org/packages/?name=linux) pelo pacote de [kernel](/index.php/Kernel "Kernel") que você escolher, e pode não instalar um kernel, se você souber o que está fazendo.
+
+O pacote [base](https://www.archlinux.org/packages/?name=base) não inclui todas as ferramentas da instalação *live*. Então a instalação de outros pacotes pode ser necessário para um sistema base completamente funcional. Em especial, considere instalar:
+
+*   utilitários para acessar partições [RAID](/index.php/RAID "RAID") ou [LVM](/index.php/LVM "LVM"),
+*   firmwares específicos para outros dispositivos não incluídos em [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware),
+*   softwares necessários para [rede](/index.php/Rede "Rede"),
+*   um editor de [[text editor|editores de arquivos]
+*   pacotes necessários para acessar documentação em páginas [man](/index.php/Man_(Portugu%C3%AAs) "Man (Português)") e [info](/index.php/Info_(Portugu%C3%AAs) "Info (Português)"): [man-db](https://www.archlinux.org/packages/?name=man-db), [man-pages](https://www.archlinux.org/packages/?name=man-pages) and [texinfo](https://www.archlinux.org/packages/?name=texinfo).
+
+Para [instalar](/index.php/Instala "Instala") outros pacotes ou grupos de pacotes, acrescente os nomes ao comando *pacstrap* acima (separados por espaço) ou use o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") após a etapa de [chroot](#Chroot). Para uma caomparação, pacotes disponíveis no sistema *live* podem ser encontrados em [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
 
 ## Configurar o sistema
 
@@ -263,7 +271,7 @@ Gerar um arquivo [fstab](/index.php/Fstab "Fstab") (use `-U` ou `-L` para defini
 
 ```
 
-Verifique o arquivo resultante em `/mnt/etc/fstab` em seguida e edite-o caso haja erros.
+Verifique o arquivo `/mnt/etc/fstab` resultante e edite-o caso haja erros.
 
 ### Chroot
 
@@ -338,16 +346,16 @@ Adicione entradas correspondentes ao [hosts(5)](https://jlk.fjfi.cvut.cz/arch/ma
 
 Se o sistema tem um endereço IP permanente, ele deve ser usado em vez de `127.0.1.1`.
 
-Complete a [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para o ambiente recém-instalado.
+Conclua a [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para o ambiente recém-instalado, que inclua [instala](/index.php/Instala "Instala")ção de pacotes como [iputils](https://www.archlinux.org/packages/?name=iputils) e seu software [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") preferido.
 
 ### Initramfs
 
-Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote [linux](https://www.archlinux.org/packages/?name=linux) com *pacstrap*.
+Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote de [kernel](/index.php/Kernel "Kernel") com *pacstrap*.
 
 Para [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [criptografia de sistema](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique o [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
 
 ```
-# mkinitcpio -p linux
+# mkinitcpio -P
 
 ```
 

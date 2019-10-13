@@ -133,22 +133,23 @@ fi
 
 ### GNOME
 
-When not using the GDM login manager, numlockx can be added to GNOME's start-up applications.
-
-[Install](/index.php/Install "Install") the [numlockx](https://www.archlinux.org/packages/?name=numlockx) package. Then, add a start-up command to launch `numlockx`.
+Run the following command:
 
 ```
-$ gnome-session-properties
+ $ gsettings set org.gnome.desktop.peripherals.keyboard numlock-state on
 
 ```
 
-The above command opens the **Startup Applications Preferences** applet. Click ***Add*** and enter the following:
+In order to remember last state of numlock key (whether you disabled or enabled), use:
 
-| Name: | *Numlockx* |
-| Command: | */usr/bin/numlockx on* |
-| Comment: | *Turns on numlock.* |
+```
+ $ gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state on
 
-**Note:** This is not a system-wide change, repeat these steps for each user wishing to activate NumLock after logging in.
+```
+
+**Note:** The key `numlock-state` was moved from `org.gnome.settings-daemon.peripherals.keyboard` since GNOME 3.34[[1]](https://gitlab.gnome.org/GNOME/gnome-settings-daemon/merge_requests/107)
+
+Alternatively, you can use add `numlockx on` (from [numlockx](https://www.archlinux.org/packages/?name=numlockx) to a startup script, like `~/.bashrc` (if using [Bash](/index.php/Bash "Bash")) or `~/.profile`.
 
 ### Xfce
 

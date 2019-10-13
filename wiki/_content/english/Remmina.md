@@ -3,7 +3,7 @@ Related articles
 *   [Rdesktop](/index.php/Rdesktop "Rdesktop")
 *   [xrdp](/index.php/Xrdp "Xrdp")
 
-[Remmina](http://www.remmina.org/wp/) is a remote desktop client written in GTK from the [freerdp](http://www.freerdp.com/) project. It supports the protocols SSH, VNC, RDP, NX and XDMCP.
+[Remmina](https://remmina.org/) is a remote desktop client written in GTK from the [FreeRDP](http://www.freerdp.com/) project. It supports the following protocols: SSH, VNC, RDP, NX and XDMCP.
 
 ## Installation
 
@@ -15,7 +15,7 @@ If you need RDP support, also install the optional [freerdp](https://www.archlin
 
 *   If the RDP option is not available in the Remmina dropdown menu after installing [freerdp](https://www.archlinux.org/packages/?name=freerdp), make sure to completely quit Remmina first: run `killall remmina`. When you restart Remmina, RDP should be available.
 *   As of Remmina 1.2.0, some users report RDP connections using freerdp suffer from frequent unrequested disconnections, but rdesktop RDP connections being more reliable.
-*   Password saving depends on [GNOME-Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
+*   Password saving depends on [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
 
 ## Usage
 
@@ -42,5 +42,5 @@ To minimize to tray on startup, use `-i` option.
 
 ## See also
 
-*   [Bugtracker](https://gitlab.com/Remmina/Remmina/issues) - for the application
-*   [Project wiki](https://github.com/FreeRDP/FreeRDP/wiki) - with extensive resources
+*   [Remmina GitLab Repository](https://gitlab.com/Remmina/Remmina)
+*   [FreeRDP Wiki](https://github.com/FreeRDP/FreeRDP/wiki)

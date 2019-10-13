@@ -55,16 +55,16 @@
 | [Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)") | [mkfs.btrfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.btrfs.8) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Да | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Статус стабильности](https://btrfs.wiki.kernel.org/index.php/Status) |
 | [VFAT](/index.php/FAT_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "FAT (Русский)") | [mkfs.vfat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.vfat.8) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Да | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
 | [exFAT](https://en.wikipedia.org/wiki/ru:exFAT "w:ru:exFAT") | mkfs.exfat(8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Опционально | N/A (на основе FUSE) |
-| [F2FS](/index.php/F2FS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "F2FS (Русский)") | [mkfs.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Да | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Флэш-устройства |
-| [ext3](/index.php/Ext3_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ext3 (Русский)") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
-| [ext4](/index.php/Ext4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ext4 (Русский)") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
+| [F2FS](/index.php/F2FS "F2FS") | [mkfs.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Да | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Флэш-устройства |
+| [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Да ([base](https://www.archlinux.org/packages/?name=base)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
+| [ext4](/index.php/Ext4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ext4 (Русский)") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Да ([base](https://www.archlinux.org/packages/?name=base)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
 | [HFS](https://en.wikipedia.org/wiki/ru:HFS "w:ru:HFS") | [mkfs.hfsplus(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.hfsplus.8) | [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) | Опционально | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | Файловая система [MacOS](https://en.wikipedia.org/wiki/ru:macOS "w:ru:macOS") |
-| [JFS](/index.php/JFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "JFS (Русский)") | [mkfs.jfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.jfs.8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
+| [JFS](/index.php/JFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "JFS (Русский)") | [mkfs.jfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.jfs.8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Да ([base](https://www.archlinux.org/packages/?name=base)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
 | [NILFS2](https://en.wikipedia.org/wiki/ru:NILFS "w:ru:NILFS") | [mkfs.nilfs2(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.nilfs2.8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Да | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
 | [NTFS](/index.php/NTFS-3G_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NTFS-3G (Русский)") | [mkfs.ntfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.ntfs.8) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Да | N/A (на основе FUSE) | Файловая система [Windows](https://en.wikipedia.org/wiki/ru:Windows "w:ru:Windows") |
 | [Reiser4](/index.php/Reiser4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Reiser4 (Русский)") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | Нет |
-| [ReiserFS](https://en.wikipedia.org/wiki/ru:ReiserFS "w:ru:ReiserFS") | [mkfs.reiserfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.reiserfs.8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) |
-| [XFS](/index.php/XFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XFS (Русский)") | [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Да ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
+| [ReiserFS](https://en.wikipedia.org/wiki/ru:ReiserFS "w:ru:ReiserFS") | [mkfs.reiserfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.reiserfs.8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Да ([base](https://www.archlinux.org/packages/?name=base)) |
+| [XFS](/index.php/XFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XFS (Русский)") | [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Да ([base](https://www.archlinux.org/packages/?name=base)) | 
 
 [xfs.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs.txt)
 [xfs-delayed-logging-design.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-delayed-logging-design.txt)
@@ -97,7 +97,7 @@
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
-*   **[EncFS](/index.php/EncFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EncFS (Русский)")** — это пользовательская наращиваемая криптографическая файловая система.
+*   **[EncFS](/index.php/EncFS "EncFS")** — это пользовательская наращиваемая криптографическая файловая система.
 
 	[https://vgough.github.io/encfs/](https://vgough.github.io/encfs/) || [encfs](https://www.archlinux.org/packages/?name=encfs)
 
@@ -161,7 +161,7 @@
 
 ### Кластерные файловые системы
 
-*   **[Ceph](/index.php/Ceph_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ceph (Русский)")** — унифицированная распределенная система хранения, предназначенная для отличной производительности, надежности и масштабируемости.
+*   **[Ceph](/index.php/Ceph "Ceph")** — унифицированная распределенная система хранения, предназначенная для отличной производительности, надежности и масштабируемости.
 
 	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
 

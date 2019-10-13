@@ -7,9 +7,13 @@ Related articles
 *   [UIM](/index.php/UIM "UIM")
 *   [Fcitx](/index.php/Fcitx "Fcitx")
 
-[Nimf](https://gitlab.com/hodong/nimf) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") which inherits [Dasom](/index.php/Dasom "Dasom").
+[Nimf](https://gitlab.com/nimf-i18n/nimf) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") which inherits [Dasom](/index.php/Dasom "Dasom").
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Input method engines](#Input_method_engines)
@@ -61,4 +65,4 @@ Use `nimf-settings` to edit nimf settings. You can launch `nimf-settings` from y
 
 ## See also
 
-*   [Nimf GitLab](https://gitlab.com/hodong/nimf)
+*   [Nimf GitLab](https://gitlab.com/nimf-i18n/nimf)

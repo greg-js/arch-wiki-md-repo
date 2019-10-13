@@ -10,7 +10,11 @@ Because data placed therein cannot survive a shutdown, a script responsible for 
 
 **Note:** Cache is stored **separately** from Firefox default profiles' folder (`/home/$USER/.mozilla/firefox/`): it is found by default in `/home/$USER/.cache/mozilla/firefox/<profile>`. This is similar to what Chromium and other browsers do. Therefore, sections [#Place profile in RAM using tools](#Place_profile_in_RAM_using_tools) and [#Place profile in RAM manually](#Place_profile_in_RAM_manually) **don't deal** with cache relocating and syncing but only with profile adjustments. See the note at [Profile-sync-daemon#Design goals and benefits of psd](/index.php/Profile-sync-daemon#Design_goals_and_benefits_of_psd "Profile-sync-daemon") for more details. [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") may be used to achieve the same thing as Option 2 for cache folders.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Relocate cache to RAM only](#Relocate_cache_to_RAM_only)
 *   [2 Place profile in RAM using tools](#Place_profile_in_RAM_using_tools)
@@ -20,7 +24,7 @@ Because data placed therein cannot survive a shutdown, a script responsible for 
     *   [3.3 Automation](#Automation)
         *   [3.3.1 systemd](#systemd)
         *   [3.3.2 cron job](#cron_job)
-        *   [3.3.3 Sync at login/logout](#Sync_at_login.2Flogout)
+        *   [3.3.3 Sync at login/logout](#Sync_at_login/logout)
 *   [4 See also](#See_also)
 
 ## Relocate cache to RAM only

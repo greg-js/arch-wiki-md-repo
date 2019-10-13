@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Explorando dispositivos de Android](#Explorando_dispositivos_de_Android)
 *   [2 Desarrollo en Android](#Desarrollo_en_Android)
@@ -103,7 +107,7 @@ Agregue su usuario a este grupo:
 Cambie el grupo de la carpeta:
 
 ```
-# chown -R :sdkusers /opt/android-sdk/
+# chown -R :sdkusers /opt/android-sdk/
 
 ```
 
@@ -286,7 +290,7 @@ Los dispositivos producidos por Samsung no se pueden (re-)instalar usando `fastb
 
 #### Heimdall
 
-[Heimdall](http://glassechidna.com.au/heimdall/) es un set de herramientas que funciona en varias plataformas de codigo abierto usado para instalar firmware, también conocido como ROMs en dispositivos Samsung. Puede ser instalado con el paquete [heimdall](https://aur.archlinux.org/packages/heimdall/).
+[Heimdall](http://glassechidna.com.au/heimdall/) es un set de herramientas que funciona en varias plataformas de codigo abierto usado para instalar firmware, también conocido como ROMs en dispositivos Samsung. Puede ser instalado con el paquete [heimdall](https://www.archlinux.org/packages/?name=heimdall).
 
 Las instrucciones de instalacion se encuentran en [repositorio de GitLab](https://gitlab.com/BenjaminDobell/Heimdall/tree/master/Linux) o en los [foros de XDA](http://forum.xda-developers.com/showthread.php?t=1922461).
 

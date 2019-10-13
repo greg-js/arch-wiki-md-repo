@@ -4,7 +4,11 @@ From the [I2P](https://geti2p.net/en/) homepage:
 
 	Many applications are available that interface with I2P, including mail, peer-peer, IRC chat, and others.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -17,7 +21,7 @@ I2P is available with the [i2p](https://aur.archlinux.org/packages/i2p/) package
 
 The I2P homepage also provides a precompiled binary package for command line (headless) install in the users home directory. In case of this installation type I2P will auto update itself through the i2p network.
 
-Should these Java implementations be undesirable; [i2pd](https://aur.archlinux.org/packages/i2pd/) is a full C++ client, which may suit hardware with limited resources.
+Should these Java implementations be undesirable; [i2pd](https://www.archlinux.org/packages/?name=i2pd) is a full C++ client, which may suit hardware with limited resources.
 
 ## Usage
 

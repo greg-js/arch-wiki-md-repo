@@ -424,7 +424,7 @@ C официального сайта [поддержки Mozilla](https://suppo
 
 Во время закрытия, Firefox записывает временную метку (timestamp) и текущую версию плагинов в файл `pluginreg.dat`, расположенный в директории профиля (обычно `~/.mozilla/firefox/*xxxxxxxx*.default/`).
 
-Если вы обновили плагин в то время, когда Firefox был запущен, то в файл будет записана неправильная информация. При следующем запуске Firefox покажет сообщение `Firefox has prevented the outdated plugin "XXXX" from running on ...` во время воспроизведения контента соответствующим плагином, что часто случается с официальным [плагином Adobe Flash Player](/index.php/Browser_plugins_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Adobe_Flash_Player "Browser plugins (Русский)").
+Если вы обновили плагин в то время, когда Firefox был запущен, то в файл будет записана неправильная информация. При следующем запуске Firefox покажет сообщение `Firefox has prevented the outdated plugin "XXXX" from running on ...` во время воспроизведения контента соответствующим плагином, что часто случается с официальным [плагином Adobe Flash Player](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins").
 
 Решение состоит в удалении файла `pluginreg.dat` из директории профиля. Firefox автоматически пересоздаст данный файл при следующем закрытии. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 

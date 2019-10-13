@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers"). Data da última tradução: 2019-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&diff=0&oldid=577811) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Comparison_of_tiling_window_managers&diff=0&oldid=581092) na versão em inglês.
 
 Esse artigo fornece uma comparação imparcial dos [gerenciadores de janela](/index.php/Gerenciadores_de_janela "Gerenciadores de janela") *tiling* mais populares (diferentemente dos gerenciadores *flutuantes*).
 

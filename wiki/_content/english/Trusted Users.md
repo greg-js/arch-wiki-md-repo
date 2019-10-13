@@ -30,9 +30,9 @@ Even though you could become a TU by merely fulfilling those minimum requirement
 *   patches for Arch projects
 *   involvement in a few open-source projects (even if they are your own)
 
-If you still feel up to becoming a TU after reading these lines, the first step is to find a TU who agrees to sponsor you. Once sponsored, you should write a witty application signed with your GPG key to the aur-general mailing list.
+If you still feel up to becoming a TU after reading these lines, the first step is to find two TUs who agree to sponsor you. Once sponsored, you should write a witty application signed with your GPG key to the aur-general mailing list.
 
-**Note:** Should the TU you contact decline to sponsor your application, you should make this fact known if you seek sponsorship from another TU.
+**Note:** Should a TU you contact decline to sponsor your application, you should make this fact known if you seek sponsorship from another TU.
 
 For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) and [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines").
 
@@ -76,6 +76,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [jleclanche](https://aur.archlinux.org/packages.php?K=jleclanche&SeB=m) | [Jerome Leclanche](/index.php/User:Jleclanche "User:Jleclanche") | jerome*@*leclan*.*ch |
 | [jsteel](https://aur.archlinux.org/packages.php?K=jsteel&SeB=m) | Jonathan Steel | jsteel at aur.archlinux.org |
 | [kgizdov](https://aur.archlinux.org/packages.php?K=kgizdov&SeB=m) | Konstantin Gizdov | arch@kge.pw |
+| [kpcyrd](https://aur.archlinux.org/packages.php?K=kpcyrd&SeB=m) | kpcyrd | git@rxv.cc |
 | [keenerd](https://aur.archlinux.org/packages.php?K=keenerd&SeB=m) | Kyle Keen | keenerd@gmail.com |
 | [Lordheavy](https://aur.archlinux.org/packages.php?K=lordheavy&SeB=m) | [Laurent Carlier](/index.php/User:Lordheavy "User:Lordheavy") | lordheavym at gmail com |
 | [maximbaz](https://aur.archlinux.org/packages.php?K=maximbaz&SeB=m) | Maxim Baz | archlinux at maximbaz dot com |

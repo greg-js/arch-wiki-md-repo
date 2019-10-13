@@ -119,7 +119,7 @@ General troubleshooting - Устранение общих неполадок в 
 
 *fuser* это утилита командной строки для определения процессов использующих ресурсы, таких как файлы, файловые системы и порты TCP / UDP.
 
-*fuser* содержится в пакете [psmisc](https://www.archlinux.org/packages/?name=psmisc), который должен быть уже установлен, как часть группы [base](https://www.archlinux.org/groups/x86_64/base/).
+*fuser* содержится в пакете [psmisc](https://www.archlinux.org/packages/?name=psmisc), который должен быть уже установлен, как часть группы [base](https://www.archlinux.org/packages/?name=base).
 
 ## Разрешения сессии
 

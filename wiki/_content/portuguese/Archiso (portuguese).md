@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Archiso](/index.php/Archiso "Archiso"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=571877) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Archiso](/index.php/Archiso "Archiso"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=581042) na versão em inglês.
 
 Artigos relacionados
 
@@ -30,6 +30,7 @@ Se você precisar de um detalhamento técnico dos requisitos e das etapas de cri
     *   [2.5 Alterando login automático](#Alterando_login_automático)
 *   [3 Compilando a ISO](#Compilando_a_ISO)
     *   [3.1 Recompilar a ISO](#Recompilar_a_ISO)
+    *   [3.2 Remoção do diretório de trabalho](#Remoção_do_diretório_de_trabalho)
 *   [4 Usando a ISO](#Usando_a_ISO)
 *   [5 Veja também](#Veja_também)
     *   [5.1 Documentação e tutoriais](#Documentação_e_tutoriais)
@@ -256,6 +257,10 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 ```
 
 Isso aumenta a velocidade do *bootstrap* inicial, já que ele não precisa baixar e instalar nenhum dos pacotes base que já estão instalados.
+
+### Remoção do diretório de trabalho
+
+Os arquivos temporários são copiados para o diretório de trabalho. Se o script build.sh for interrompido, verifique se não há ligações de montagem antes de excluí-lo. Caso contrário, você poderá perder dados (por exemplo, um dispositivo externo montado em `/run/media/$user/$label` fica vinculado a `work/x86_64/airootfs/run/media/$user/$label` durante o processo de compilação).
 
 ## Usando a ISO
 

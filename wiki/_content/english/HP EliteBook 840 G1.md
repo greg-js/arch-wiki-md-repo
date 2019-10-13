@@ -8,13 +8,17 @@
 | Audio | **Working** | snd_hda_intel |
 | Touchpad | **Working** | xf86-input-synaptics |
 | Camera | **Working** | uvcvideo |
-| Fingerprint reader | **Not working** |
+| Fingerprint reader | **Working** | fprintd-vfs_proprietary |
 | USB 3.0 | **Working** | xhci-hcd |
 | Memory Card Reader | **Working** |
 | Smart Card Reader | **Working** | ccid, pcsclite |
-| Function Keys | **Working (except mic.)** |
+| Function Keys | **Working** |
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 UEFI Setup](#UEFI_Setup)
@@ -25,6 +29,7 @@
     *   [1.4 Audio](#Audio)
     *   [1.5 Wireless](#Wireless)
     *   [1.6 Resume / wake on lid open](#Resume_/_wake_on_lid_open)
+    *   [1.7 Enable the microphone muting key](#Enable_the_microphone_muting_key)
 *   [2 See also](#See_also)
 
 ## Configuration
@@ -89,6 +94,31 @@ Set `CONFIG_HP_WIRELESS=y` in your kernel config to enable the hardware button (
 
 This feature needs to be enabled in the bios / uefi setup: *Advanced > Built-in device options > Wake unit from sleep when lid is opened*
 
+### Enable the microphone muting key
+
+If your mute mic key (fn+F8) does not work, you actually just need to remap this key manually.
+
+Here is an example of how you can do this by adding a custom mapping file:
+
+ `/etc/udev/hwdb.d/61-hp-mic-mute-hotkey.hwdb` 
+```
+evdev:atkbd:dmi:bvn*:bvr*:bd*:svnHewlett-Packard*:pn*EliteBook*:pvr*
+ KEYBOARD_KEY_81=f20                          # Fn+F8 on Elitebook, map to F20
+
+```
+
+**Warning:** It is strongly recommanded to understand [scancodes to keycodes mapping](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes") before doing this.
+
+Then, you just need to regenerate and reload your `hwdb.bin` file:
+
+```
+# systemd-hwdb update
+# udevadm trigger
+
+```
+
+**Note:** This also work for the HP EliteBook 840 G2 and the EliteBook 820 series.
+
 ## See also
 
 *   [UEFI, GNU/Linux and HP notebooks – problems and how to get it working](http://fomori.org/blog/?p=892)
@@ -96,3 +126,5 @@ This feature needs to be enabled in the bios / uefi setup: *Advanced > Built-in 
 *   [Changing Boot Order on Dual Boot Windows 8 and Ubuntu](http://h30434.www3.hp.com/t5/Notebook-Operating-Systems-and-Software/Changing-Boot-Order-on-Dual-Boot-Windows-8-and-Ubuntu/td-p/2503733)
 
 *   [Setting GRUB as the default boot manager on a UEFI-based system](https://bbs.archlinux.org/viewtopic.php?id=168904&p=1)
+
+*   [Activate mic mute function key, ubuntu 18.04, HP Elitebook 820](https://gist.github.com/HappyCodingRobot/df400e16d0615e98e2c1eee738925d0b)

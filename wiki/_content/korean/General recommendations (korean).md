@@ -214,7 +214,7 @@ DNS 캐싱을 통해 웹페이지들을 더 빨리 로드되게 할 수 있습�
 
 윈도와 아치 리눅스 사이의 네트워크 커뮤니케이션을 위해서는 SMB/CIFS 네트워킹 프로토콜을 재구현(reimplement)한 [Samba](/index.php/Samba "Samba")를 사용하실 수 있습니다.
 
-인증을 위해 Active Dictionary에 가입하고 사용하도록 아치 리눅스를 설정하기 위해서는[Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration") 문서를 읽으십시오.
+인증을 위해 Active Dictionary에 가입하고 사용하도록 아치 리눅스를 설정하기 위해서는[Active Directory integration](/index.php/Active_Directory_integration "Active Directory integration") 문서를 읽으십시오.
 
 ## 부팅
 

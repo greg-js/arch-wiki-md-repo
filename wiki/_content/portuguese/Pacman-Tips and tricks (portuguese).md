@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=578802) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=584739) na versão em inglês.
 
 Artigos relacionados
 
@@ -88,7 +88,7 @@ Descobrir quais pacotes são maiores pode ser útil ao tentar liberar espaço em
 O comando a seguir listará todos os pacotes instalados e seus tamanhos individuais:
 
 ```
-$ pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+$ LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
 
 ```
 
@@ -106,7 +106,7 @@ $ expac -S -H M '%k\t%n' *pacotes*
 
 ```
 
-Para listar pacotes instalados explicitamente que não estejam em [base](https://www.archlinux.org/groups/x86_64/base/) nem [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) com tamanho e descrição:
+Para listar pacotes instalados explicitamente que não estejam em [base](https://www.archlinux.org/packages/?name=base) nem [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) com tamanho e descrição:
 
 ```
 $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n
@@ -140,14 +140,14 @@ $ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 **Nota:** Para obter uma lista de pacotes instalados como dependências, mas não mais exigidos para qualquer pacote instalado, veja [#Removendo pacotes não usados (órfãos)](#Removendo_pacotes_não_usados_(órfãos)).
 
-Listar explicitamente os pacotes instalados explicitamente que não estejam no grupo [base](https://www.archlinux.org/groups/x86_64/base/) nem no [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
+Listar explicitamente os pacotes instalados explicitamente que não estejam no grupo [base](https://www.archlinux.org/packages/?name=base) nem no [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
 ```
 $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
 
 ```
 
-Listar todos os pacotes instalados não necessários para outros pacotes, e que não estejam no grupo [base](https://www.archlinux.org/groups/x86_64/base/) nem no [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
+Listar todos os pacotes instalados não necessários para outros pacotes, e que não estejam no grupo [base](https://www.archlinux.org/packages/?name=base) nem no [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
 ```
 $ comm -23 <(pacman -Qqt | sort) <(pacman -Sqg base base-devel | sort)
@@ -260,7 +260,7 @@ Adicionalmente, [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-g
 
 ### Removendo pacotes não usados (órfãos)
 
-Para remover recursivamente ófãos e seus arquivos de configuração:
+Para remover recursivamente órfãos e seus arquivos de configuração:
 
 ```
 # pacman -Rns $(pacman -Qtdq)
@@ -289,7 +289,7 @@ As dependências são ordenadas alfabeticamente e as duplas são removidas.
 **Nota:** Para só mostrar a árvore de pacotes instalados, use `pacman -Qi`.
 
 ```
-$ pacman -Si *pacotes* | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
+$ LC_ALL=C pacman -Si *pacotes* | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
 
 ```
 
@@ -788,6 +788,10 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 *   **[pkgfile](/index.php/Pkgfile_(Portugu%C3%AAs) "Pkgfile (Português)")** — Ferramenta que descobre qual pacote é dono de um arquivo.
 
 	[http://github.com/falconindy/pkgfile](http://github.com/falconindy/pkgfile) || [pkgfile](https://www.archlinux.org/packages/?name=pkgfile)
+
+*   **pkgtop** — Gerenciador de pacotes interativo e monitor de recursos projetado para o GNU/Linux.
+
+	[https://github.com/orhun/pkgtop](https://github.com/orhun/pkgtop) || [pkgtop-git](https://aur.archlinux.org/packages/pkgtop-git/)
 
 *   **pkgtools** — Coleção de scripts para pacotes do Arch Linux.
 

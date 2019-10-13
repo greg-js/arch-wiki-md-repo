@@ -2,12 +2,16 @@ Cairo Composite Manager - универсальный и расширяемый [
 
 Как и [Xcompmgr](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)"), не заменяет собой и не инициирует выход из окружения, что делает его одним из самых интересных решений для пользователей легковесных окружений (таких как [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), и др.) которые хотят украсить свой рабочий стол.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Предварительные требования](#.D0.9F.D1.80.D0.B5.D0.B4.D0.B2.D0.B0.D1.80.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.82.D1.80.D0.B5.D0.B1.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
-*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [3 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-*   [4 Дополнительная информация](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D1.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Предварительные требования](#Предварительные_требования)
+*   [2 Установка](#Установка)
+*   [3 Конфигурация](#Конфигурация)
+*   [4 Дополнительная информация](#Дополнительная_информация)
 
 ## Предварительные требования
 

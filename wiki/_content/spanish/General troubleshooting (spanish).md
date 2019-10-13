@@ -353,7 +353,7 @@ Si eso falla, intente:
 
 *fuser* es una utilidad de línea de órdenes para la identificación de los procesos que utilizan recursos como archivos, sistemas de archivos y puertos TCP/UDP.
 
-*fuser* está incluido en el paquete [psmisc](https://www.archlinux.org/packages/?name=psmisc), que debe estar ya instalado como parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Véase [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) para más detalles.
+*fuser* está incluido en el paquete [psmisc](https://www.archlinux.org/packages/?name=psmisc), que debe estar ya instalado como parte del grupo [base](https://www.archlinux.org/packages/?name=base). Véase [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) para más detalles.
 
 ## Permisos de sesión
 

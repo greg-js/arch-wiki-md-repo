@@ -134,4 +134,4 @@ To change the sensitivity, change this value somewhere between 0 and 50.
 
 ## Laggy mouse movements in Bluetooth mode
 
-Try this solution: [Bluetooth#Bluetooth_mouse_laggy_movements](/index.php/Bluetooth#Bluetooth_mouse_laggy_movements "Bluetooth")
+Try this solution: [Bluetooth#Bluetooth mouse laggy movements](/index.php/Bluetooth#Bluetooth_mouse_laggy_movements "Bluetooth")

@@ -143,7 +143,7 @@ lsblk -no UUID /dev/sd*xy*
 
 ```
 
-**Примечание:** *fallocate* может вызвать проблемы с некоторыми файловыми системами, такими как: [F2FS](/index.php/F2FS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "F2FS (Русский)") или [XFS](/index.php/XFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XFS (Русский)").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3). Как вариант, используйте *dd*, наиболее надёжный, но медленный. `# dd if=/dev/zero of=/swapfile bs=1M count=512` 
+**Примечание:** *fallocate* может вызвать проблемы с некоторыми файловыми системами, такими как: [F2FS](/index.php/F2FS "F2FS") или [XFS](/index.php/XFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XFS (Русский)").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3). Как вариант, используйте *dd*, наиболее надёжный, но медленный. `# dd if=/dev/zero of=/swapfile bs=1M count=512` 
 
 Установите права доступа (всеми читаемый файл подкачки это огромная локальная уязвимость)
 

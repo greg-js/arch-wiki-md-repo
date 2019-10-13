@@ -162,7 +162,7 @@ KillSignal=SIGINT
 
 [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
-Установите [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) и [arm](https://www.archlinux.org/packages/?name=arm) и отмените [linux](https://www.archlinux.org/packages/?name=linux), подробнее [Systemd-nspawn#Installation with pacstrap](/index.php/Systemd-nspawn#Installation_with_pacstrap "Systemd-nspawn"):
+Установите [base](https://www.archlinux.org/packages/?name=base), [tor](https://www.archlinux.org/packages/?name=tor) и [arm](https://www.archlinux.org/packages/?name=arm) и отмените [linux](https://www.archlinux.org/packages/?name=linux), подробнее [Systemd-nspawn#Installation with pacstrap](/index.php/Systemd-nspawn#Installation_with_pacstrap "Systemd-nspawn"):
 
 ```
 # pacstrap -i -c -d /srv/container/tor-exit base tor arm

@@ -38,7 +38,7 @@
 
 ## 安装
 
-Arch Linux 内核已经编译了 iptables 支持。只需要[安装](/index.php/Pacman "Pacman")在 [official repositories](/index.php/Official_repositories "Official repositories") 中提供的用户层工具 [iptables](https://www.archlinux.org/packages/?name=iptables) 包。（[base](https://www.archlinux.org/groups/x86_64/base/) 组中的 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 包依赖 iptables，因此系统中已经默认安装了 iptables 包。）
+Arch Linux 内核已经编译了 iptables 支持。只需要[安装](/index.php/Pacman "Pacman")在 [official repositories](/index.php/Official_repositories "Official repositories") 中提供的用户层工具 [iptables](https://www.archlinux.org/packages/?name=iptables) 包。（[base](https://www.archlinux.org/packages/?name=base) 组中的 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 包依赖 iptables，因此系统中已经默认安装了 iptables 包。）
 
 ## 基本概念
 

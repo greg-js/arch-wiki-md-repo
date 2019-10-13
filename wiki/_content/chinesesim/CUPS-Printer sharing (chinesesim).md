@@ -1,14 +1,23 @@
+Related articles
+
+*   [Samba](/index.php/Samba "Samba")
+*   [CUPS](/index.php/CUPS "CUPS")
+
 **翻译状态：** 本文是英文页面 [CUPS_printer_sharing](/index.php/CUPS_printer_sharing "CUPS printer sharing") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-23，点击[这里](https://wiki.archlinux.org/index.php?title=CUPS_printer_sharing&diff=0&oldid=392936)可以查看翻译后英文页面的改动。
 
 这篇文章是在系统间共享打印机的操作指南，支持GNU/Linux系统与GNU/Linux系统间共享，以及GNU/Linux系统与Microsoft Windows系统间共享。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 GNU/Linux系统间共享](#GNU.2FLinux.E7.B3.BB.E7.BB.9F.E9.97.B4.E5.85.B1.E4.BA.AB)
-    *   [1.1 使用网页操作界面](#.E4.BD.BF.E7.94.A8.E7.BD.91.E9.A1.B5.E6.93.8D.E4.BD.9C.E7.95.8C.E9.9D.A2)
-    *   [1.2 手动操作](#.E6.89.8B.E5.8A.A8.E6.93.8D.E4.BD.9C)
-        *   [1.2.1 如果您的客户端CUPS版本为1.6.x而服务器端CUPS版本<= 1.5.x](#.E5.A6.82.E6.9E.9C.E6.82.A8.E7.9A.84.E5.AE.A2.E6.88.B7.E7.AB.AFCUPS.E7.89.88.E6.9C.AC.E4.B8.BA1.6.x.E8.80.8C.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.AB.AFCUPS.E7.89.88.E6.9C.AC.3C.3D_1.5.x)
-*   [2 Between GNU/Linux and Windows](#Between_GNU.2FLinux_and_Windows)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 GNU/Linux系统间共享](#GNU/Linux系统间共享)
+    *   [1.1 使用网页操作界面](#使用网页操作界面)
+    *   [1.2 手动操作](#手动操作)
+        *   [1.2.1 如果您的客户端CUPS版本为1.6.x而服务器端CUPS版本<= 1.5.x](#如果您的客户端CUPS版本为1.6.x而服务器端CUPS版本<=_1.5.x)
+*   [2 Between GNU/Linux and Windows](#Between_GNU/Linux_and_Windows)
     *   [2.1 Linux server - Windows client](#Linux_server_-_Windows_client)
         *   [2.1.1 Sharing via IPP](#Sharing_via_IPP)
         *   [2.1.2 Sharing via Samba](#Sharing_via_Samba)
@@ -20,7 +29,7 @@
             *   [2.2.3.2 Manual configuration](#Manual_configuration)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
-    *   [3.2 Unable to add/modify a printer via SAMBA](#Unable_to_add.2Fmodify_a_printer_via_SAMBA)
+    *   [3.2 Unable to add/modify a printer via SAMBA](#Unable_to_add/modify_a_printer_via_SAMBA)
 *   [4 Other operating systems](#Other_operating_systems)
 
 ## GNU/Linux系统间共享

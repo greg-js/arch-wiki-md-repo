@@ -34,7 +34,7 @@ Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man pag
 
 ## Prima dell'installazione
 
-Arch Linux dovrebbe essere installabile su ogni macchina compatibile con l'architettura [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") e con un minimo di 512 MB di RAM. L'installazione base con solo i pacchetti presenti nel gruppo [base](https://www.archlinux.org/groups/x86_64/base/) richiede circa 800 MB di spazio su disco rigido. Siccome durante la fase di installazione vengono scaricati i pacchetti aggiornati direttamente dai repository remoti, una connessione ad internet e` fondamentale durante il processo.
+Arch Linux dovrebbe essere installabile su ogni macchina compatibile con l'architettura [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") e con un minimo di 512 MB di RAM. L'installazione base con solo i pacchetti presenti nel gruppo [base](https://www.archlinux.org/packages/?name=base) richiede circa 800 MB di spazio su disco rigido. Siccome durante la fase di installazione vengono scaricati i pacchetti aggiornati direttamente dai repository remoti, una connessione ad internet e` fondamentale durante il processo.
 
 Scaricare e avviare un disco di installazione come spiegato in [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). Ora ci si dovrebbe trovare di fronte ad una [console virtuale](https://en.wikipedia.org/wiki/Virtual_Console "w:Virtual Console"). L'utente *root* dovrebbe gia` essere loggato. La shell di default e` [Zsh](/index.php/Zsh "Zsh"). I comandi piu` comuni come [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) possono essere [autocompletati](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") dal tasto *tab*.
 
@@ -143,7 +143,7 @@ Questo file, verra` poi copiato sul sistema installato da *pacstrap*.
 
 ### Installare i pacchetti base
 
-Usare [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) per installare il gruppo di pacchetti [base](https://www.archlinux.org/groups/x86_64/base/):
+Usare [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) per installare il gruppo di pacchetti [base](https://www.archlinux.org/packages/?name=base):
 
 ```
 # pacstrap /mnt base 

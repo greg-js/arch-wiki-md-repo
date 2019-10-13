@@ -34,7 +34,7 @@
 
 ## 설치에 앞서 할 일
 
-아치 리눅스는 최소 메모리가 512MB인 [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") 호환 기계에서 실행되어야 합니다. [base](https://www.archlinux.org/groups/x86_64/base/) 그룹의 모든 패키지를 설치하는 기본 설치를 하면 800MB 미만의 디스크 공간을 차지합니다. 인터넷 연결이 되어 있어야 공식 패키지 저장소에서 패키지를 다운로드할 수 있습니다.
+아치 리눅스는 최소 메모리가 512MB인 [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") 호환 기계에서 실행되어야 합니다. [base](https://www.archlinux.org/packages/?name=base) 그룹의 모든 패키지를 설치하는 기본 설치를 하면 800MB 미만의 디스크 공간을 차지합니다. 인터넷 연결이 되어 있어야 공식 패키지 저장소에서 패키지를 다운로드할 수 있습니다.
 
 [아치 리눅스 다운로드 및 설치](/index.php/Getting_and_installing_Arch "Getting and installing Arch")에 설명된 대로 설치 매체를 다운로드하고 부팅하십시오. 첫번째 [가상 콘솔](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")로 루트 사용자로 로그인한 [Zsh](/index.php/Zsh "Zsh") 쉘 프롬프트가 제공될 것입니다. [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)과 같은 일반적인 명령어는 명령어 일부를 입력한 후 탭 키를 누르면 명령어 전체가 자동으로 완성되는 [탭 완성](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")으로 입력될 수 있습니다.
 
@@ -147,7 +147,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 ### base 패키지 설치하기
 
-[pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 스크립트를 사용해 [base](https://www.archlinux.org/groups/x86_64/base/) 패키지 그룹을 설치합니다.
+[pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 스크립트를 사용해 [base](https://www.archlinux.org/packages/?name=base) 패키지 그룹을 설치합니다.
 
 ```
 # pacstrap /mnt base 

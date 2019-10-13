@@ -440,7 +440,7 @@ By default, `updatedb` will also index the `.snapshots` directory created by sna
 
 ### Preserving log files
 
-It's recommended to create a subvolume for `/var/log` so that snapshots of `/` exclude it. That way if a snapshot of `/` is restored your log files will not also be reverted to the previous state. This make it easier to troubleshoot.
+It's recommended to create a subvolume for `/var/log` so that snapshots of `/` exclude it. That way if a snapshot of `/` is restored your log files will not also be reverted to the previous state. This makes it easier to troubleshoot.
 
 ### Cleanup based on disk usage
 

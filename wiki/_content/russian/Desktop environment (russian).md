@@ -3,7 +3,7 @@
 *   [Сравнение сред рабочего стола](/index.php/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D1%80%D0%B5%D0%B4_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Сравнение сред рабочего стола")
 *   [Category:Freedesktop.org (Русский)](/index.php/Category:Freedesktop.org_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Freedesktop.org (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Дата последней синхронизации: 17 августа 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=579918).
+**Состояние перевода:** На этой странице представлен перевод статьи [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Дата последней синхронизации: 10 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=585026).
 
 [Среда рабочего стола](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "wikipedia:ru:Среда рабочего стола") (**DE**) — реализация [метафоры рабочего стола](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9_%D1%81%D1%82%D0%BE%D0%BB "wikipedia:ru:Рабочий стол"), состоящая из набора программ, которые разделяют общий графический интерфейс (GUI).
 
@@ -46,7 +46,7 @@
 
 	[https://www.deepin.org/](https://www.deepin.org/) || [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
 
-*   **[Enlightenment](/index.php/Enlightenment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Enlightenment (Русский)")** — Enlightenment предоставляет эффективный менеджер окон, основанный на библиотеках Enlightenment Foundation, а также другие необходимые компоненты вроде файлового менеджера, значков и виджетов. Он поддерживает темы и его можно запускать на устаревших компьютерах и встраиваемых устройствах.
+*   **[Enlightenment](/index.php/Enlightenment "Enlightenment")** — Enlightenment предоставляет эффективный менеджер окон, основанный на библиотеках Enlightenment Foundation, а также другие необходимые компоненты вроде файлового менеджера, значков и виджетов. Он поддерживает темы и его можно запускать на устаревших компьютерах и встраиваемых устройствах.
 
 	[https://www.enlightenment.org/](https://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
@@ -94,7 +94,7 @@
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — легковесное окружение рабочего стола для FreeBSD, написанное на Qt 5 и использующее Fluxbox в качестве оконного менеджера.
 
-	[https://www.lumina-desktop.org/](https://www.lumina-desktop.org/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
+	[https://lumina-desktop.org/](https://lumina-desktop.org/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
 
 *   **[Moksha](/index.php/Moksha "Moksha")** — форк Enlightenment, использующийся в качестве окружения рабочего стола по умолчанию в дистрибутиве Bodhi Linux на основе Ubuntu.
 
@@ -127,7 +127,7 @@
 *   Настройки энергосбережения дисплея: [Display Power Management Signaling (Русский)](/index.php/Display_Power_Management_Signaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display Power Management Signaling (Русский)")
 *   Диалог завершения работы: [Oblogout](/index.php/Oblogout "Oblogout")
 *   Утилита для монтирования: [Список приложений#Монтирование](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Монтирование "Список приложений")
-*   Демон уведомлений: [Уведомления рабочего стола](/index.php/Desktop_notifications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop notifications (Русский)")
+*   Демон уведомлений: [Уведомления рабочего стола](/index.php/Desktop_notifications "Desktop notifications")
 *   Агент аутентификации Polkit: [Polkit (Русский)#Агенты аутентификации](/index.php/Polkit_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Агенты_аутентификации "Polkit (Русский)")
 *   Блокировщик экрана: [Список приложений#Блокировка экрана](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Блокировка_экрана "Список приложений")
 *   Приложения по умолчанию: [XDG MIME Applications (Русский)#mimeapps.list](/index.php/XDG_MIME_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#mimeapps.list "XDG MIME Applications (Русский)")

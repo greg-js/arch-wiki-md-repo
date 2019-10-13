@@ -1,6 +1,10 @@
 Este documento procura configurar hotplug de modo que los miembros del grupo de usuarios puedan tener acceso a una cámara fotográfica digital USB. Este documento es simple y no se cubren casos especiales. Sin embargo, el contenido de éste documento es principalmente un resumen de gphoto y la gente que necesite información adicional puede consultar éste sitio: Recuerda fijar tu cámara digital en modo p-t-p (algunas quizás usen el modo de almacenamiento?) . La lista de cámaras fotográficas que libgphoto2 soporta las pueden encontrar en gphoto. Si tu cámara digital no se enumera dentro de la lista podría funcionar de todos modos como medio de almacenamiento USB. Hay otro artículo en éste wiki que lo explica, Dispositivos de Almacenamiento USB.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalar hotplug y libgphoto2](#Instalar_hotplug_y_libgphoto2)
 *   [2 Configurando hotplug](#Configurando_hotplug)

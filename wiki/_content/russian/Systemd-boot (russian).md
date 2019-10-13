@@ -1,6 +1,6 @@
 Ссылки по теме
 
-*   [Arch boot process (Русский)](/index.php/Arch_boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch boot process (Русский)")
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 *   [Загрузчики](/index.php/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8 "Загрузчики")
 *   [Unified Extensible Firmware Interface (Русский)](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)")
 
@@ -10,7 +10,11 @@
 
 Прост в настройке, но способен только на запуск исполняемых EFI файлов, таких как ядро Linux [EFISTUB](/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFISTUB (Русский)"), UEFI Shell, GRUB, Windows Boot Manager.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Загрузка в режиме EFI](#Загрузка_в_режиме_EFI)

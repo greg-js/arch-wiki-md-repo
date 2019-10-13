@@ -54,6 +54,7 @@ Related articles
     *   [6.15 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
     *   [6.16 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
     *   [6.17 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
+    *   [6.18 Cannot login with my Chinese account](#Cannot_login_with_my_Chinese_account)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -467,6 +468,10 @@ WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https:/
 You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
 This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting") and Firefox does not recognise the virtual echo canceling source.
+
+### Cannot login with my Chinese account
+
+Firefox provides a local service for Chinese users, with a local account totally different from the international one. Firefox installed with the [firefox](https://www.archlinux.org/packages/?name=firefox) package uses the international account system by default, to change into the Chinese local service, you should install the add-on manager on [this page](http://mozilla.com.cn/thread-343905-1-1.html), then you can login with your Chinese account now.
 
 ## See also
 

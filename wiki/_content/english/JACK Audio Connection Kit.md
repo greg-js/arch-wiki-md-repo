@@ -47,7 +47,7 @@ There are two JACK implementations, see [this comparison](https://github.com/jac
 
 ### JACK2
 
-**JACK2** is a C++ implementation with SMP support. [Install](/index.php/Install "Install") it with the [jack2](https://www.archlinux.org/packages/?name=jack2) package. For 32-bit application support, also install the [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) package from the [multilib](/index.php/Multilib "Multilib") repository. To use the *jack_control* command, also install the [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) package.
+**JACK2** is a C++ implementation with SMP support. [Install](/index.php/Install "Install") it with the [jack2](https://www.archlinux.org/packages/?name=jack2) package. For 32-bit application support, also install the [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) package from the [multilib](/index.php/Multilib "Multilib") repository. To use the *jack_control* command, also install the [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) package.
 
 ### JACK
 
@@ -81,7 +81,7 @@ The mainline Linux kernel now supports realtime scheduling, so using a patched k
 
 ### A shell-based example setup
 
-JACK2 can be directly launched with the *jackd* executable, or controlled with the D-Bus-based *jack_control* binary. *jack_control* makes it easy to start and configure JACK2 via a shell script. Note that you must install the [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) package to use *jack_control*.
+JACK2 can be directly launched with the *jackd* executable, or controlled with the D-Bus-based *jack_control* binary. *jack_control* makes it easy to start and configure JACK2 via a shell script. Note that you must install the [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) package to use *jack_control*.
 
 Create a shell script that can be executed at X login:
 
@@ -180,7 +180,7 @@ Load QjackCtl. GUI configuration tells it to run in the system tray. It will pic
 
 This example setup utilizes a more GUI focused configuration and management of JACK
 
-*   Install [jack2](https://www.archlinux.org/packages/?name=jack2) and [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus).
+*   Install [jack2](https://www.archlinux.org/packages/?name=jack2) and [python-dbus](https://www.archlinux.org/packages/?name=python-dbus).
 *   Install [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), and tell your GUI window/desktop system to run it at startup.
 *   Make sure QjackCtl is told to:
     *   use the D-Bus interface,

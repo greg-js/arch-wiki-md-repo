@@ -22,7 +22,7 @@
 
 ## Installation
 
-*nano* is available in the [nano](https://www.archlinux.org/packages/?name=nano) package. It is likely that is already on your system, as it is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+[Install](/index.php/Install "Install") the [nano](https://www.archlinux.org/packages/?name=nano) package.
 
 ## Configuration
 

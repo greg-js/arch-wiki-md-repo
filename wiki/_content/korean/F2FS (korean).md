@@ -37,7 +37,7 @@ F2FS 파티션을 만들기 위해서는 [공식 저장소](/index.php/Official_
 
 최신 [설치 미디어 파일](https://www.archlinux.org/download/)로써 F2FS 파티션에 루트가 설정된 아치리눅스를 설치할 수 있다.
 
-1.  [#F2FS 포맷 파티션 생성](#F2FS_.ED.8F.AC.EB.A7.B7_.ED.8C.8C.ED.8B.B0.EC.85.98_.EC.83.9D.EC.84.B1)에서 기술된 것을 참고하여 F2FS로 루트 파티션을 제작한다.
+1.  [#F2FS 포맷 파티션 생성](#F2FS_포맷_파티션_생성)에서 기술된 것을 참고하여 F2FS로 루트 파티션을 제작한다.
 2.  ext2 포맷 또는 다른 부트로더가 지원하는 파일시스템으로 `/boot` 파티션을 생성한다.
 3.  [chrooted](/index.php/Change_root "Change root") 전까지 [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide")에서의 설치 과정을 따른다.
 4.  [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)를 설치한다.

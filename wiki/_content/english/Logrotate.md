@@ -26,7 +26,7 @@ By default, logrotate's *rotation* consists of renaming existing log files with 
 
 ## Installation
 
-Logrotate can be installed with the [logrotate](https://www.archlinux.org/packages/?name=logrotate) package. It is installed by default as it is member of the [base](https://www.archlinux.org/groups/x86_64/base/) group.
+Logrotate can be installed with the [logrotate](https://www.archlinux.org/packages/?name=logrotate) package.
 
 By default, logrotate runs daily using a [systemd timer](/index.php/Systemd/Timers "Systemd/Timers"): `logrotate.timer`.
 

@@ -1,6 +1,10 @@
 In networking, tunneling is using a protocol of higher level (in our case HTTP) to transport a lower level protocol (in our case TCP).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Creating the tunnel](#Creating_the_tunnel)
     *   [1.1 Using corkscrew and HTTP CONNECT](#Using_corkscrew_and_HTTP_CONNECT)
@@ -44,8 +48,7 @@ Create a script file `corkscrewtunnel.sh`
 
 ```
 #! /bin/bash
-
-corkscrew *proxyhost* *proxyport* $*
+corkscrew *proxyhost* *proxyport* "$@"
 
 ```
 
@@ -101,9 +104,11 @@ $ ProxyCommand /usr/bin/proxytunnel -p some-proxy:8080 -d www.muppetzone.com:443
 To open a connection using the openbsd netcat version:
 
 ```
-$ ssh user@final_server -o "ProxyCommand=nc -X connect -x some-proxy:$proxy_port %h %p"
+$ ssh user@final_server -o "ProxyCommand=nc -X connect -x some-proxy:$proxy_port %h %p"
 
 ```
+
+The OpenBSD netcat also supports SOCKS tunneling. See [its manpage](https://man.openbsd.org/nc.1#X) for more on the -X option.
 
 ## Using the tunnel
 

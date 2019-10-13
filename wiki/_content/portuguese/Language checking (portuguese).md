@@ -45,7 +45,7 @@ Esse artigo cobre softwares corretores/[verificadores ortográficos](https://en.
 
 Enchant está disponível como o pacote [enchant](https://www.archlinux.org/packages/?name=enchant). Para seu uso e arquivo de ordem, veja [enchant-2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/enchant-2.1).
 
-Enchant é usado por vários aplicativos pelas bibliotecas [GTK](/index.php/GTK "GTK") a seguir:
+Enchant é usado por vários aplicativos pelas bibliotecas [GTK](/index.php/GTK_(Portugu%C3%AAs) "GTK (Português)") a seguir:
 
 *   **gspell** — API flexível para implementar verificação ortográfica em aplicativos GTK.
 

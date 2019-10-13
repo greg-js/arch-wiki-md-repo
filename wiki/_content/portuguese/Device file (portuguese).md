@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Device file](/index.php/Device_file "Device file"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Device_file&diff=0&oldid=569734) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Device file](/index.php/Device_file "Device file"). Data da última tradução: 2019-10-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Device_file&diff=0&oldid=581847) na versão em inglês.
 
 Artigos relacionados
 
@@ -21,7 +21,7 @@ No Arch Linux, os nós de dispositivo são gerenciados pelo [udev](/index.php/Ud
 *   [1 Dispositivos de bloco](#Dispositivos_de_bloco)
     *   [1.1 Nomes de dispositivos de bloco](#Nomes_de_dispositivos_de_bloco)
         *   [1.1.1 SCSI](#SCSI)
-        *   [1.1.2 NVME](#NVME)
+        *   [1.1.2 NVMe](#NVMe)
         *   [1.1.3 MMC](#MMC)
         *   [1.1.4 Unidade de disco óptico SCSI](#Unidade_de_disco_óptico_SCSI)
     *   [1.2 Utilitários](#Utilitários)
@@ -53,7 +53,7 @@ Resumo:
 *   `/dev/sde` - dispositivo `e`, o quinto dispositivo descoberto.
 *   `/dev/sde7` - partition `7` on device `e`.
 
-#### NVME
+#### NVMe
 
 O nome dos dispositivos de armazenamento, como [SSDs](/index.php/SSD "SSD"), que estão conectados via [NVM Express](/index.php/NVM_Express "NVM Express") (NVMe) começa com `nvme`. É então seguido por um número iniciando em `0` para o controlador do dispositivo, `nvme0` para o primeiro controlador NVMe descoberto, `nvme1` para o segundo, e assim por diante. A próxima é a letra "n" e um número iniciando em `1` expressando o dispositivo em um controlador, ou seja, `nvme0n1` para o primeiro dispositivo descoberto no primeiro controlador descoberto, `nvme0n2` para o segundo dispositivo descoberto no primeiro controlador descoberto e assim por diante. As [partições](/index.php/Partition "Partition") existentes em cada dispositivo serão listadas com a letra "p" e o número que lhes é atribuído na tabela de partições. Por exemplo, `nvme0n1p` para a partição com o número `1` no primeiro dispositivo descoberto no primeiro controlador descoberto, `nvme0n1p2` para a partição `2`, e assim por diante.
 

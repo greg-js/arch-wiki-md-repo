@@ -1,6 +1,10 @@
 Libnotify es una fácil manera de mostrar notificaciones de escritorio e información en pequeños cuadros de dialogo. Es usado en muchas aplicaciones de código abierto tales como evolution, pidgin, etc. Tiene soporte para aplicaciones Gtk+ y Qt.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

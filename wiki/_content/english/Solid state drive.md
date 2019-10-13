@@ -230,7 +230,7 @@ If you are starting to encounter SATA related errors when using such a daemon, y
 
 ### External SSD with TRIM support
 
-Several USB-to-SATA bridge chips (like VL715, VL716 etc.) and also USB-to-PCIe bridge chips (like the [JMicron JMS583](http://www.jmicron.com/PDF/brief/jms583.pdf) used in external NVMe enclosures like [IB-1817M-C31](https://www.raidsonic.de/en/standards/searchresults.php?we_objectID=5666)) support TRIM-like commands that can be sent through the [USB Attached SCSI](https://en.wikipedia.org/wiki/USB_Attached_SCSI) driver (named "uas" under Linux).
+Several USB-to-SATA bridge chips (like VL715, VL716 etc.) and also USB-to-PCIe bridge chips (like the [JMicron JMS583](http://www.jmicron.com/PDF/brief/jms583.pdf) used in external NVMe enclosures like [IB-1817M-C31](https://www.raidsonic.de/en/standards/searchresults.php?we_objectID=5666)) support TRIM-like commands that can be sent through the [USB Attached SCSI](https://en.wikipedia.org/wiki/USB_Attached_SCSI "wikipedia:USB Attached SCSI") driver (named "uas" under Linux).
 
 But the kernel may not automatically detect this capability, and therefore might not use it. Assuming your block device in question is /dev/sdX, you can find out whether that is the case by using the command
 

@@ -910,7 +910,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific Python Development Environment providing MATLAB-like features.
 
-	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder2](https://www.archlinux.org/packages/?name=spyder2) (Python 2) or [spyder3](https://www.archlinux.org/packages/?name=spyder3) (Python 3)
+	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder](https://www.archlinux.org/packages/?name=spyder)
 
 *   **[Thonny](https://en.wikipedia.org/wiki/Thonny "wikipedia:Thonny")** — Python IDE for beginners.
 
@@ -1316,7 +1316,7 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 #### Keybinding managers
 
-See [Keyboard Shortcuts#Xorg](/index.php/Keyboard_Shortcuts#Xorg "Keyboard Shortcuts").
+See [Keyboard shortcuts#Xorg](/index.php/Keyboard_shortcuts#Xorg "Keyboard shortcuts").
 
 #### Input methods
 

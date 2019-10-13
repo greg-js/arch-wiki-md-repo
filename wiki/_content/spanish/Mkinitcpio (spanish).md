@@ -5,7 +5,11 @@ Artículos relacionados
 
 **mkinitcpio** es un creador de [initramfs](https://en.wikipedia.org/wiki/es:initrd "wikipedia:es:initrd") de última generación.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introducción](#Introducción)
 *   [2 Instalación](#Instalación)
@@ -56,7 +60,7 @@ mkinitcpio ha sido desarrollado por Arch Linux y con la ayuda de la comunidad de
 
 ## Instalación
 
-El paquete [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) está disponible en los [repositorios oficiales](/index.php/Official_repositories "Official repositories"), y se instala por defecto en tanto que se incluye en el grupo [base](https://www.archlinux.org/groups/x86_64/base/).
+El paquete [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) está disponible en los [repositorios oficiales](/index.php/Official_repositories "Official repositories"), y se instala por defecto en tanto que se incluye en el grupo [base](https://www.archlinux.org/packages/?name=base).
 
 Para los usuarios que prefieren instalar la última versión de desarrollo Git de mkinitcpio:
 

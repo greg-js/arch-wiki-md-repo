@@ -67,7 +67,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 
 ## Preparation
 
-For user space utilities [install](/index.php/Install "Install") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package, which is not part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, and is required for basic operations.
+For user space utilities [install](/index.php/Install "Install") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package, which is required for basic operations.
 
 If you need to boot from a Btrfs file system (i.e., your kernel and initramfs reside on a Btrfs partition), check if your [boot loader](/index.php/Boot_loader "Boot loader") supports Btrfs.
 

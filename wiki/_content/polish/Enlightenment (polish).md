@@ -1,3 +1,7 @@
+Related articles
+
+*   [Enlightenment](/index.php/Enlightenment "Enlightenment")
+
 From the [Enlightenment wiki](http://trac.enlightenment.org/e/wiki/Enlightenment):
 
 	*Enlightenment (ang. oświecenie, nazywany też często e) - menedżer okien dla środowiska X Window System, który może być używany samodzielnie lub wraz ze środowiskami graficznymi takimi jak GNOME (swego czasu był to domyślny menedżer okien tego środowiska) czy KDE. Jego głównym autorem jest programista i grafik Carsten Haitzler (Rasterman). Wydany na licencji BSD.*
@@ -6,10 +10,14 @@ Enlightenment znany jest z dużych możliwości konfiguracji oraz atrakcyjnej gr
 
 Menedżer dostępny jest w dwóch liniach – wydanej w 2000 roku, stabilnej DR16 oraz rozwojowej DR17\. Kod następnej serii, DR17 (lub inaczej E17), jest napisany od początku i bazuje na silnie zmodularyzowanych bibliotekach EFL (Enlightenment Foundation Libraries). DR17 ma być samodzielną powłoką graficzną, przeznaczoną dla szerokiej gamy urządzeń od urządzeń wbudowanych do stacji roboczych.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Instalacja E17](#Instalacja_E17)
-    *   [1.1 From the community repository (SVN snapshots)](#From_the_community_repository_.28SVN_snapshots.29)
+    *   [1.1 From the community repository (SVN snapshots)](#From_the_community_repository_(SVN_snapshots))
     *   [1.2 Compiling and packaging with ArchE17 script](#Compiling_and_packaging_with_ArchE17_script)
     *   [1.3 Compiling with easy_e17.sh](#Compiling_with_easy_e17.sh)
         *   [1.3.1 Update_e17.sh](#Update_e17.sh)
@@ -27,8 +35,8 @@ Menedżer dostępny jest w dwóch liniach – wydanej w 2000 roku, stabilnej DR1
     *   [5.3 Unreadable fonts](#Unreadable_fonts)
     *   [5.4 Modules and gadgets](#Modules_and_gadgets)
     *   [5.5 udisks vs. HAL](#udisks_vs._HAL)
-    *   [5.6 What is Places?](#What_is_Places.3F)
-        *   [5.6.1 Why doesn't the Places work?](#Why_doesn.27t_the_Places_work.3F)
+    *   [5.6 What is Places?](#What_is_Places?)
+        *   [5.6.1 Why doesn't the Places work?](#Why_doesn't_the_Places_work?)
         *   [5.6.2 A workaround that gets Places working](#A_workaround_that_gets_Places_working)
 *   [6 External Links](#External_Links)
 

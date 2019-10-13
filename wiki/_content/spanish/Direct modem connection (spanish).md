@@ -6,7 +6,11 @@ En este artículo se describe cómo se puede conectar directamente a Internet de
 
 Debido a la falta de desarrolladores para cuestiones de acceso telefónico, conectar Arch a Internet con una línea telefónica requiere mucha configuración manual. Si ello fuera posible, configure un router dedicado para que pueda ser utilizado como una puerta de enlace predeterminada en el marco de Arch.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Módem analógico](#Módem_analógico)
 *   [2 ISDN](#ISDN)

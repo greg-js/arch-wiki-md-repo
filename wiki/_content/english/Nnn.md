@@ -24,7 +24,7 @@ Despite its capabilities, nnn is designed to be easy to use.
     *   [1.2 Configuration](#Configuration)
         *   [1.2.1 Get selected files in terminal](#Get_selected_files_in_terminal)
         *   [1.2.2 Indicate depth level within nnn shells](#Indicate_depth_level_within_nnn_shells)
-        *   [1.2.3 cd on quit (CTRL-G)](#cd_on_quit_(CTRL-G))
+        *   [1.2.3 cd on quit (Ctrl-G)](#cd_on_quit_(Ctrl-G))
         *   [1.2.4 Add your own plugins](#Add_your_own_plugins)
 *   [2 See also](#See_also)
 
@@ -38,18 +38,17 @@ nnn can be controlled with the vim-like characters `hjkl` or the `arrow keys`. D
 
 ### Configuration
 
-nnn is configured via environment variables, by editing `~/.bashrc`. For detailed information on these settings see the included, well-documented man page `man nnn` as well as the [additional configurations](https://github.com/jarun/nnn/wiki/hacking-nnn) on the nnn wiki.
+nnn is configured via environment variables, by editing `~/.bashrc`. For detailed information on these settings see the man page [nnn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nnn.1) as well as the [nnn wiki](https://github.com/jarun/nnn/wiki).
 
-Here is a example configuration you can add to you `~/.bashrc`:
+Here is an example configuration you can add to your `~/.bashrc`:
 
  `~/.bashrc` 
 ```
 export NNN_BMS='d:~/Documents;u:/home/user/Cam Uploads;D:~/Downloads/'
 export NNN_USE_EDITOR=1                                 # use the $EDITOR when opening text files
-export NNN_NO_AUTOSELECT=1                              # do not auto select in navigate-as-you-type-mode
-export NNN_NOTE="$HOME/mynotes"                         # if you already have your own notebook, 
-export NNN_OPS_PROG=1                                   # if you have installed advcp from the AUR. Giving you progress bars for mv and cp
 export NNN_SSHFS_OPTS="sshfs -o follow_symlinks"        # make sshfs follow symlinks on the remote
+export NNN_CONTEXT_COLORS="2136"                        # use a different color for each context
+export NNN_TRASH=1                                      # trash (needs trash-cli) instead of delete
 ```
 
 The most important setting would be the `NNN_BMS` variable which lets you choose shortcuts to quickly jump to your bookmarked directories. By default they are reached with `<leader-key>` which is set to `,` (a comma). In the example configuration hitting the keys: `,D` would result in nnn jumping into `~/Downloads`. But all of these are optional, nnn will consistently behave the same on all of your machines.
@@ -71,40 +70,11 @@ If you use `!` to spawn a shell in the current directory, it could be nice to ad
 
 To have your prompt indicate that you are within a shell that will return you to nnn when you are done.
 
-This together with [#cd on quit (CTRL-G)](#cd_on_quit_(CTRL-G)) becomes a powerful combination.
+This together with [#cd on quit (Ctrl-G)](#cd_on_quit_(Ctrl-G)) becomes a powerful combination.
 
-#### cd on quit (CTRL-G)
+#### cd on quit (Ctrl-G)
 
-To exit nnn and cd to the current working directory, you could add the following to your `~/.bashrc`.
-
-**Note:** You can find similar scripts for various shells [here](https://github.com/jarun/nnn/tree/master/misc/quitcd).
- `~/.bashrc` 
-```
-n()
-{
-    export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
-
-    nnn "$@"
-
-    if [ -f $NNN_TMPFILE ]; then
-            . $NNN_TMPFILE
-            rm -f $NNN_TMPFILE > /dev/null
-    fi
-}
-
-```
-
-And then start another terminal or run:
-
- `source ~/.bashrc` 
-
-This will cause your shell to reload the `~/.bashrc`.
-
-From now on you can run nnn as:
-
- `$ n` 
-
-Which will correctly handle CTRL-G upon exiting nnn.
+See the [nnn wiki](https://github.com/jarun/nnn/wiki/Basic-use-cases#configure-cd-on-quit).
 
 #### Add your own plugins
 
