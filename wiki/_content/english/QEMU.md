@@ -348,9 +348,9 @@ $ ssh *guest-user*@localhost -p10022
 
 ### QEMU's built-in SMB server
 
-QEMU's documentation says it has a "built-in" SMB server, but actually it just starts up [Samba](/index.php/Samba "Samba") with an automatically generated `smb.conf` file located in `/tmp/qemu-smb.*random_string*` and makes it accessible to the guest at a different IP address (10.0.2.4 by default). This only works for user networking, and is useful when you don't want to start the normal [Samba](/index.php/Samba "Samba") service on the host, which the guest can also access if you have set up shares on it.
+QEMU's documentation says it has a "built-in" SMB server, but actually it just starts up [Samba](/index.php/Samba "Samba") with an automatically generated `smb.conf` file located in `/tmp/qemu-smb.*random_string*` and makes it accessible to the guest at a different IP address (10.0.2.4 by default). This only works for user networking, and is useful when you do not want to start the normal [Samba](/index.php/Samba "Samba") service on the host, which the guest can also access if you have set up shares on it.
 
-Only a single directory can be set as shared with the option `smb=`, but adding more directories (even while the virtual machine is running) could be as easy as creating symbolic links in the shared directory if QEMU configured SMB to follow symbolic links. It doesn't do so, but the configuration of the running SMB server can be changed as described below.
+Only a single directory can be set as shared with the option `smb=`, but adding more directories (even while the virtual machine is running) could be as easy as creating symbolic links in the shared directory if QEMU configured SMB to follow symbolic links. It does not do so, but the configuration of the running SMB server can be changed as described below.
 
 To enable this feature, start QEMU with a command like:
 
@@ -577,7 +577,7 @@ Note that `VBoxManage` creates two files, `*file.vmdk*` and `*file-pt.vmdk*`, th
 
 ##### Device Mapper
 
-A method that is similar to the use of a VMDK descriptor file uses the device mapper to prepend a loop device attached to the MBR file to the target partition. In case we don't need our virtual disk to have the same size as the original, we first create a file to hold the MBR:
+A method that is similar to the use of a VMDK descriptor file uses the device mapper to prepend a loop device attached to the MBR file to the target partition. In case we do not need our virtual disk to have the same size as the original, we first create a file to hold the MBR:
 
 ```
 $ dd if=/dev/zero of=*/path/to/mbr* count=2048
@@ -810,7 +810,6 @@ If the bridge is given an IP address and traffic destined for it is allowed, but
 # ip addr add 172.20.0.1/16 dev br0
 # ip link set br0 up
 # dnsmasq --interface=br0 --bind-interfaces --dhcp-range=172.20.0.2,172.20.255.254
-
 ```
 
 #### Internal networking
@@ -1254,7 +1253,7 @@ And finally, you can create the [bridge interface with netctl](/index.php/Bridge
 
 ### Shorthand configuration
 
-If you're using QEMU with various networking options a lot, you probably have created a lot of `-netdev` and `-device` argument pairs, which gets quite repetitive. You can instead use the `-nic` argument to combine `-netdev` and `-device` together, so that, for example, these arguments:
+If you are using QEMU with various networking options a lot, you probably have created a lot of `-netdev` and `-device` argument pairs, which gets quite repetitive. You can instead use the `-nic` argument to combine `-netdev` and `-device` together, so that, for example, these arguments:
 
 ```
 -netdev tap,id=network0,ifname=tap0,script=no,downscript=no,vhost=on -device virtio-net,netdev=network0
@@ -1268,7 +1267,7 @@ If you're using QEMU with various networking options a lot, you probably have cr
 
 ```
 
-Notice the lack of network IDs, and that the device was created with `model=...`. The first half of the `-nic` parameters are `-netdev` parameters, whereas the second half (after `model=...`) are related with the device. The same parameters (for example, `smb=...`) are used. There's also a special parameter for `-nic` which completely disables the default (user-mode) networking:
+Notice the lack of network IDs, and that the device was created with `model=...`. The first half of the `-nic` parameters are `-netdev` parameters, whereas the second half (after `model=...`) are related with the device. The same parameters (for example, `smb=...`) are used. There is also a special parameter for `-nic` which completely disables the default (user-mode) networking:
 
 ```
 -nic none
@@ -1604,9 +1603,9 @@ Windows will detect the network adapter and try to find a driver for it. If it f
 
 #### Balloon driver
 
-If you want to track you guest memory state (for example via `virsh` command `dommemstat`) or change guest's memory size in runtime (you still won't be able to change memory size, but can limit memory usage via inflating balloon driver) you will need to install guest balloon driver.
+If you want to track you guest memory state (for example via `virsh` command `dommemstat`) or change guest's memory size in runtime (you still will not be able to change memory size, but can limit memory usage via inflating balloon driver) you will need to install guest balloon driver.
 
-For this you will need to go to *Device Manager*, locate *PCI standard RAM Controller* in *System devices* (or unrecognized PCI controller from *Other devices*) and choose *Update driver*. In opened window you will need to choose *Browse my computer...* and select the CD-ROM (and don't forget the *Include subdirectories* checkbox). Reboot after installation. This will install the driver and you will be able to inflate the balloon (for example via hmp command `balloon *memory_size*`, which will cause balloon to take as much memory as possible in order to shrink the guest's available memory size to *memory_size*). However, you still won't be able to track guest memory state. In order to do this you will need to install *Balloon* service properly. For that open command line as administrator, go to the CD-ROM, *Balloon* directory and deeper, depending on your system and architecture. Once you are in *amd64* (*x86*) directory, run `blnsrv.exe -i` which will do the installation. After that `virsh` command `dommemstat` should be outputting all supported values.
+For this you will need to go to *Device Manager*, locate *PCI standard RAM Controller* in *System devices* (or unrecognized PCI controller from *Other devices*) and choose *Update driver*. In opened window you will need to choose *Browse my computer...* and select the CD-ROM (and do not forget the *Include subdirectories* checkbox). Reboot after installation. This will install the driver and you will be able to inflate the balloon (for example via hmp command `balloon *memory_size*`, which will cause balloon to take as much memory as possible in order to shrink the guest's available memory size to *memory_size*). However, you still will not be able to track guest memory state. In order to do this you will need to install *Balloon* service properly. For that open command line as administrator, go to the CD-ROM, *Balloon* directory and deeper, depending on your system and architecture. Once you are in *amd64* (*x86*) directory, run `blnsrv.exe -i` which will do the installation. After that `virsh` command `dommemstat` should be outputting all supported values.
 
 ### Preparing a FreeBSD guest
 
@@ -2161,7 +2160,10 @@ Anecdotally, OpenSSH takes a while to start accepting connections under insuffic
 
 ### High interrupt latency and microstuttering
 
-This problem manifests itself as small pauses (stutters) and is particularly noticeable in graphics-intensive applications, such as games. One of the causes is CPU power saving features, which are controlled by [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Change this to `performance` for all processor cores.
+This problem manifests itself as small pauses (stutters) and is particularly noticeable in graphics-intensive applications, such as games.
+
+*   One of the causes is CPU power saving features, which are controlled by [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Change this to `performance` for all processor cores.
+*   Another possible cause is PS/2 inputs. Switch from PS/2 to Virtio inputs, see [PCI passthrough via OVMF#Passing keyboard/mouse via Evdev](/index.php/PCI_passthrough_via_OVMF#Passing_keyboard/mouse_via_Evdev "PCI passthrough via OVMF").
 
 ### QXL video causes low resolution
 

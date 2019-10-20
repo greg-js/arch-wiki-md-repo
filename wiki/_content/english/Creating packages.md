@@ -233,7 +233,7 @@ PKGBUILDs for some packages can be generated automatically.
 
 *   [Go](/index.php/Go "Go"): [go-makepkg](https://github.com/seletskiy/go-makepkg)
 *   [Haskell](/index.php/Haskell "Haskell"): [cblrepo](https://github.com/magthe/cblrepo)
-*   [Node.js](/index.php/Node.js "Node.js"): [nodejs-npm2arch](https://aur.archlinux.org/packages/nodejs-npm2arch/) [npm2arch](https://github.com/simon04/npm2arch%7Cigorvisi)
+*   [Node.js](/index.php/Node.js "Node.js"): [nodejs-npm2arch](https://aur.archlinux.org/packages/nodejs-npm2arch/) [npm2arch](https://github.com/simon04/npm2arch)
 *   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [python-pypi2pkgbuild](https://aur.archlinux.org/packages/python-pypi2pkgbuild/)
 *   [Ruby](/index.php/Ruby "Ruby"): [gem2arch](https://aur.archlinux.org/packages/gem2arch/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
 *   [Rust](/index.php/Rust "Rust"): [cargo-pkgbuild](https://aur.archlinux.org/packages/cargo-pkgbuild/)

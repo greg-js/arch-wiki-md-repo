@@ -17,6 +17,7 @@ Related articles
     *   [2.1 General settings](#General_settings)
         *   [2.1.1 High quality configurations](#High_quality_configurations)
         *   [2.1.2 Custom profiles](#Custom_profiles)
+        *   [2.1.3 Native Wayland output](#Native_Wayland_output)
     *   [2.2 Key bindings](#Key_bindings)
     *   [2.3 Additional configuration files](#Additional_configuration_files)
 *   [3 Scripts](#Scripts)
@@ -148,6 +149,19 @@ $ mpv --profile=myprofile1 video.mkv
 ```
 
 and it would ignore all options except the ones for `myprofile1`.
+
+#### Native Wayland output
+
+By default mpv uses X even on [Wayland](/index.php/Wayland "Wayland") clients, like [Sway](/index.php/Sway "Sway").
+
+In order to make it work on Wayland by default either specify it from the command line:
+
+```
+$ mpv --gpu-context=wayland video.mkv 
+
+```
+
+It is also possible to add `gpu-context=wayland` to your config.
 
 ### Key bindings
 

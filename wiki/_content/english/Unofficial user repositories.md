@@ -50,35 +50,34 @@ If you want to create your own custom repository, follow [pacman/Tips and tricks
     *   [2.29 ivasilev](#ivasilev)
     *   [2.30 jlk](#jlk)
     *   [2.31 llvm-svn](#llvm-svn)
-    *   [2.32 lmrepo](#lmrepo)
-    *   [2.33 markzz](#markzz)
-    *   [2.34 maximbaz](#maximbaz)
-    *   [2.35 me176c](#me176c)
-    *   [2.36 miffe](#miffe)
-    *   [2.37 mikelpint](#mikelpint)
-    *   [2.38 Minerva W Science](#Minerva_W_Science)
-    *   [2.39 mobile](#mobile)
-    *   [2.40 nah](#nah)
-    *   [2.41 nickcao](#nickcao)
-    *   [2.42 origincode](#origincode)
-    *   [2.43 pkgbuilder](#pkgbuilder)
-    *   [2.44 post-factum kernels](#post-factum_kernels)
-    *   [2.45 QOwnNotes](#QOwnNotes)
-    *   [2.46 qt-debug](#qt-debug)
-    *   [2.47 quarry](#quarry)
-    *   [2.48 repo-ck](#repo-ck)
-    *   [2.49 seblu](#seblu)
-    *   [2.50 seiichiro](#seiichiro)
-    *   [2.51 sergej-repo](#sergej-repo)
-    *   [2.52 siosm-aur](#siosm-aur)
-    *   [2.53 sublime-text](#sublime-text)
-    *   [2.54 subtitlecomposer](#subtitlecomposer)
-    *   [2.55 trinity](#trinity)
-    *   [2.56 ungoo](#ungoo)
-    *   [2.57 valveaur](#valveaur)
-    *   [2.58 xuanrui](#xuanrui)
-    *   [2.59 xyne-x86_64](#xyne-x86_64)
-    *   [2.60 home-thaodan](#home-thaodan)
+    *   [2.32 markzz](#markzz)
+    *   [2.33 maximbaz](#maximbaz)
+    *   [2.34 me176c](#me176c)
+    *   [2.35 miffe](#miffe)
+    *   [2.36 mikelpint](#mikelpint)
+    *   [2.37 Minerva W Science](#Minerva_W_Science)
+    *   [2.38 mobile](#mobile)
+    *   [2.39 nah](#nah)
+    *   [2.40 nickcao](#nickcao)
+    *   [2.41 origincode](#origincode)
+    *   [2.42 pkgbuilder](#pkgbuilder)
+    *   [2.43 post-factum kernels](#post-factum_kernels)
+    *   [2.44 QOwnNotes](#QOwnNotes)
+    *   [2.45 qt-debug](#qt-debug)
+    *   [2.46 quarry](#quarry)
+    *   [2.47 repo-ck](#repo-ck)
+    *   [2.48 seblu](#seblu)
+    *   [2.49 seiichiro](#seiichiro)
+    *   [2.50 sergej-repo](#sergej-repo)
+    *   [2.51 siosm-aur](#siosm-aur)
+    *   [2.52 sublime-text](#sublime-text)
+    *   [2.53 subtitlecomposer](#subtitlecomposer)
+    *   [2.54 trinity](#trinity)
+    *   [2.55 ungoo](#ungoo)
+    *   [2.56 valveaur](#valveaur)
+    *   [2.57 xuanrui](#xuanrui)
+    *   [2.58 xyne-x86_64](#xyne-x86_64)
+    *   [2.59 home-thaodan](#home-thaodan)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -100,6 +99,7 @@ If you want to create your own custom repository, follow [pacman/Tips and tricks
     *   [3.18 pietma](#pietma)
     *   [3.19 pnsft-pur](#pnsft-pur)
     *   [3.20 titanium](#titanium)
+    *   [3.21 userrepository](#userrepository)
 
 ## Adding your repository to this page
 
@@ -534,18 +534,6 @@ Server = https://jlk.fjfi.cvut.cz/arch/repo
 ```
 [llvm-svn]
 Server = https://repos.uni-plovdiv.net/archlinux/$repo/$arch
-
-```
-
-### lmrepo
-
-*   **Maintainer:** [Łukasz Moskała](https://lukaszmoskala.pl)
-*   **Description:** AUR packages that I find usefull, including [openrazer](https://aur.archlinux.org/packages/openrazer-meta)
-*   **Key-ID:** [0x226981382B7115B2DF696B43C1F0BCD7CB0353DA](http://pool.sks-keyservers.net/pks/lookup?search=0x226981382B7115B2DF696B43C1F0BCD7CB0353DA&fingerprint=on&op=index), fingerprint `2269 8138 2B71 15B2 DF69 6B43 C1F0 BCD7 CB03 53DA`
-
-```
-[lmrepo]
-Server = http://arch.lukaszmoskala.pl
 
 ```
 
@@ -1141,5 +1129,16 @@ Server = https://osdn.net/projects/ponsfoot-aur/storage/pur/x86_64/
 ```
 [titanium]
 Server = https://pyrerune.github.io/titanium/$arch
+
+```
+
+### userrepository
+
+*   **Maintainer:** [Bruno Miguel](https://twitter.com/brunomiguel) <brunoalexandremiguel@gmail.com>
+*   **Description:** Repository containing software from AUR
+
+```
+[userrepository]
+Server = https://userrepository.eu
 
 ```

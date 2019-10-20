@@ -79,7 +79,7 @@ $ fwupdmgr update
 
 ## Setup for UEFI BIOS upgrade
 
-**Warning:** An update to your UEFI firmware may discard the current [bootloader](/index.php/Bootloader "Bootloader") installation. It may be necessary to recreate the NVRAM entry (for example using [efibootmgr](/index.php/Efibootmgr "Efibootmgr")) after the firmware update has been installed successful.
+**Warning:** An update to your UEFI firmware may discard the current [bootloader](/index.php/Bootloader "Bootloader") installation. It may be necessary to recreate the NVRAM entry (for example using [efibootmgr](/index.php/Efibootmgr "Efibootmgr")) after the firmware update has been installed successfully.
 
 The following requirements should be met:
 

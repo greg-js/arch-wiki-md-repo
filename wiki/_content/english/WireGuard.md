@@ -178,36 +178,7 @@ PersistentKeepalive = 25
 
 ### Example configuration for systemd-networkd
 
- `/etc/systemd/network/30-wg0.netdev` 
-```
-[NetDev]
-Name = wg0
-Kind = wireguard
-Description = Wireguard
-
-[WireGuard]
-PrivateKey = [CLIENT PRIVATE KEY]
-
-[WireGuardPeer]
-PublicKey = [SERVER PUBLIC KEY]
-PresharedKey = [PRE SHARED KEY]
-AllowedIPs = 10.0.0.0/24
-Endpoint = [SERVER ENDPOINT]:48574
-PersistentKeepalive = 25
-```
- `/etc/systemd/network/30-wg0.network` 
-```
-[Match]
-Name = wg0
-
-[Network]
-Address = 10.0.0.3/32
-DNS = 10.0.0.1
-
-[Route]
-Gateway = 10.0.0.1
-Destination = 10.0.0.0/24
-```
+See [#Using systemd-networkd](#Using_systemd-networkd).
 
 ## Specific use-case: VPN server
 
@@ -347,7 +318,7 @@ peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
 
 ### Routes are periodically reset
 
-Make sure that [NetworkManager](/index.php/NetworkManager "NetworkManager") is not managing the Wireguard interface:
+If you are not configuring Wireguard from [NetworkManager](/index.php/NetworkManager "NetworkManager"), make sure that NetworkManager is not managing the Wireguard interface:
 
  `/etc/NetworkManager/conf.d/unmanaged.conf` 
 ```

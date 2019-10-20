@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [lm_sensors](/index.php/Lm_sensors "Lm sensors"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Lm_sensors&diff=0&oldid=576871) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [lm_sensors](/index.php/Lm_sensors "Lm sensors"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Lm_sensors&diff=0&oldid=584661) na versão em inglês.
 
 Artigos relacionados
 

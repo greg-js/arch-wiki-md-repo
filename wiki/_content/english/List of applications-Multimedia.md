@@ -295,6 +295,10 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 	[https://github.com/google/guetzli](https://github.com/google/guetzli) || [guetzli](https://www.archlinux.org/packages/?name=guetzli)
 
+*   **ImCompressor** — Simple and lossless image compressor. (GUI for optipng)
+
+	[https://github.com/Huluti/ImCompressor](https://github.com/Huluti/ImCompressor) || [imcompressor](https://aur.archlinux.org/packages/imcompressor/)
+
 *   **jpegoptim** — JPEG optimization utility providing lossless and lossy compression.
 
 	[http://www.kokkonen.net/tjko/projects.html#jpegoptim](http://www.kokkonen.net/tjko/projects.html#jpegoptim) || [jpegoptim](https://www.archlinux.org/packages/?name=jpegoptim)

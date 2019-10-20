@@ -9,41 +9,45 @@
 
 Tmux 与基于 ISC 协议发布的 [GNU Screen](/index.php/Screen_Tips "Screen Tips") 类似，这个[tmux FAQ 页面](https://raw.githubusercontent.com/tmux/tmux/master/FAQ)包含两者的区别。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 快捷键前缀](#.E5.BF.AB.E6.8D.B7.E9.94.AE.E5.89.8D.E7.BC.80)
-        *   [2.1.1 复制模式](#.E5.A4.8D.E5.88.B6.E6.A8.A1.E5.BC.8F)
-    *   [2.2 打开URL](#.E6.89.93.E5.BC.80URL)
-    *   [2.3 正确设置 term](#.E6.AD.A3.E7.A1.AE.E8.AE.BE.E7.BD.AE_term)
-    *   [2.4 其他设置](#.E5.85.B6.E4.BB.96.E8.AE.BE.E7.BD.AE)
-    *   [2.5 用systemd后台自启tmux](#.E7.94.A8systemd.E5.90.8E.E5.8F.B0.E8.87.AA.E5.90.AFtmux)
-*   [3 会话初始化](#.E4.BC.9A.E8.AF.9D.E5.88.9D.E5.A7.8B.E5.8C.96)
-*   [4 提示和小技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [4.1 启动时使用默认布局](#.E5.90.AF.E5.8A.A8.E6.97.B6.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80)
-        *   [4.1.1 获取默认布局参数](#.E8.8E.B7.E5.8F.96.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80.E5.8F.82.E6.95.B0)
-        *   [4.1.2 定义默认布局](#.E5.AE.9A.E4.B9.89.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80)
-        *   [4.1.3 自动使用默认布局启动tmux](#.E8.87.AA.E5.8A.A8.E4.BD.BF.E7.94.A8.E9.BB.98.E8.AE.A4.E5.B8.83.E5.B1.80.E5.90.AF.E5.8A.A8tmux)
-        *   [4.1.4 默认会话的替代实现方式](#.E9.BB.98.E8.AE.A4.E4.BC.9A.E8.AF.9D.E7.9A.84.E6.9B.BF.E4.BB.A3.E5.AE.9E.E7.8E.B0.E6.96.B9.E5.BC.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 快捷键前缀](#快捷键前缀)
+        *   [2.1.1 复制模式](#复制模式)
+    *   [2.2 打开URL](#打开URL)
+    *   [2.3 正确设置 term](#正确设置_term)
+    *   [2.4 其他设置](#其他设置)
+    *   [2.5 用systemd后台自启tmux](#用systemd后台自启tmux)
+*   [3 会话初始化](#会话初始化)
+*   [4 提示和小技巧](#提示和小技巧)
+    *   [4.1 启动时使用默认布局](#启动时使用默认布局)
+        *   [4.1.1 获取默认布局参数](#获取默认布局参数)
+        *   [4.1.2 定义默认布局](#定义默认布局)
+        *   [4.1.3 自动使用默认布局启动tmux](#自动使用默认布局启动tmux)
+        *   [4.1.4 默认会话的替代实现方式](#默认会话的替代实现方式)
     *   [4.2 Start tmux in urxvt](#Start_tmux_in_urxvt)
-    *   [4.3 启动shell时自动启动tmux](#.E5.90.AF.E5.8A.A8shell.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8tmux)
+    *   [4.3 启动shell时自动启动tmux](#启动shell时自动启动tmux)
         *   [4.3.1 Bash](#Bash)
-    *   [4.4 启动non-login shell](#.E5.90.AF.E5.8A.A8non-login_shell)
-    *   [4.5 像标签一样使用窗口](#.E5.83.8F.E6.A0.87.E7.AD.BE.E4.B8.80.E6.A0.B7.E4.BD.BF.E7.94.A8.E7.AA.97.E5.8F.A3)
+    *   [4.4 启动non-login shell](#启动non-login_shell)
+    *   [4.5 像标签一样使用窗口](#像标签一样使用窗口)
     *   [4.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
-    *   [4.7 根据终端类型自动更正TERM环境变量](#.E6.A0.B9.E6.8D.AE.E7.BB.88.E7.AB.AF.E7.B1.BB.E5.9E.8B.E8.87.AA.E5.8A.A8.E6.9B.B4.E6.AD.A3TERM.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
-    *   [4.8 不用重启tmux就能加载新的配置](#.E4.B8.8D.E7.94.A8.E9.87.8D.E5.90.AFtmux.E5.B0.B1.E8.83.BD.E5.8A.A0.E8.BD.BD.E6.96.B0.E7.9A.84.E9.85.8D.E7.BD.AE)
-    *   [4.9 样例代码:attach已启动的会话而不是新开一个](#.E6.A0.B7.E4.BE.8B.E4.BB.A3.E7.A0.81:attach.E5.B7.B2.E5.90.AF.E5.8A.A8.E7.9A.84.E4.BC.9A.E8.AF.9D.E8.80.8C.E4.B8.8D.E6.98.AF.E6.96.B0.E5.BC.80.E4.B8.80.E4.B8.AA)
-    *   [4.10 标题栏自动更改](#.E6.A0.87.E9.A2.98.E6.A0.8F.E8.87.AA.E5.8A.A8.E6.9B.B4.E6.94.B9)
-    *   [4.11 自动布局](#.E8.87.AA.E5.8A.A8.E5.B8.83.E5.B1.80)
-    *   [4.12 使用类似Vim的快捷键设置](#.E4.BD.BF.E7.94.A8.E7.B1.BB.E4.BC.BCVim.E7.9A.84.E5.BF.AB.E6.8D.B7.E9.94.AE.E8.AE.BE.E7.BD.AE)
-*   [5 常见问题与解答](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E4.B8.8E.E8.A7.A3.E7.AD.94)
-    *   [5.1 滚动问题](#.E6.BB.9A.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [5.2 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
+    *   [4.7 根据终端类型自动更正TERM环境变量](#根据终端类型自动更正TERM环境变量)
+    *   [4.8 不用重启tmux就能加载新的配置](#不用重启tmux就能加载新的配置)
+    *   [4.9 样例代码:attach已启动的会话而不是新开一个](#样例代码:attach已启动的会话而不是新开一个)
+    *   [4.10 标题栏自动更改](#标题栏自动更改)
+    *   [4.11 自动布局](#自动布局)
+    *   [4.12 使用类似Vim的快捷键设置](#使用类似Vim的快捷键设置)
+*   [5 常见问题与解答](#常见问题与解答)
+    *   [5.1 滚动问题](#滚动问题)
+    *   [5.2 Shift+F6 not working in Midnight Commander](#Shift+F6_not_working_in_Midnight_Commander)
 *   [6 ICCCM Selection Integration](#ICCCM_Selection_Integration)
     *   [6.1 Urxvt MiddleClick Solution](#Urxvt_MiddleClick_Solution)
-*   [7 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
+*   [7 外部链接](#外部链接)
 
 ## 安装
 
@@ -79,6 +83,7 @@ bind C-a send-prefix
 ```
 
 **提示：** 使用特殊字符作为前缀，你必须使用`Alt`键(Meta键)代替`Ctrl`键。例如：`set -g prefix m-'\'`
+
 。
 
 其他几种在窗口间移动的快捷键:

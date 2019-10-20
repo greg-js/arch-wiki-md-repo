@@ -136,14 +136,14 @@ fi
 Run the following command:
 
 ```
- $ gsettings set org.gnome.desktop.peripherals.keyboard numlock-state on
+ $ gsettings set org.gnome.desktop.peripherals.keyboard numlock-state true
 
 ```
 
 In order to remember last state of numlock key (whether you disabled or enabled), use:
 
 ```
- $ gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state on
+ $ gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 
 ```
 

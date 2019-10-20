@@ -443,7 +443,14 @@ $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/pi
 
 ##### Disable top left hot corner
 
-You can disable the top left hot corner with the [gnome-shell-extension-no-topleft-hot-corner](https://aur.archlinux.org/packages/gnome-shell-extension-no-topleft-hot-corner/) package.
+Starting from GNOME 3.34 you can disable it with this:
+
+```
+$ gsettings set org.gnome.desktop.interface enable-hot-corners false
+
+```
+
+or via [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks), in *Top Bar > Activities Overview Hot Corner*
 
 #### Extensions
 

@@ -1,13 +1,13 @@
-**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-08-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=579407) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=585736) na versão em inglês.
 
 Artigos relacionados
 
 *   [fstab](/index.php/Fstab "Fstab")
-*   [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate")
+*   [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate")
 *   [Zswap](/index.php/Zswap "Zswap")
 *   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
-*   [ZFS#Swap_volume](/index.php/ZFS#Swap_volume "ZFS")
-*   [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
+*   [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS")
+*   [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
 
 Essa página fornece uma introdução a [espaço swap e paginação](https://en.wikipedia.org/wiki/pt:Pagina%C3%A7%C3%A3o_de_mem%C3%B3ria "wikipedia:pt:Paginação de memória") no GNU/Linux. Ele cobre a criação e ativação de partições swap e arquivos swap.
 
@@ -197,7 +197,11 @@ Por fim, remova a entrada relevante do `/etc/fstab`.
 
 #### systemd-swap
 
-[Instale](/index.php/Instale "Instale") o pacote [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap). Defina `swapfc_enabled=1` NA seção *Swap File Chunked* do `/etc/systemd/swap.conf`. [Inicie/habilite](/index.php/Inicie/habilite "Inicie/habilite") o serviço `systemd-swap`. Visite a página do [autor no GitHub](https://github.com/Nefelim4ag/systemd-swap) para mais informações e instalação da [configuração recomendada](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
+*systemd-swap* é um script para criar um espaço de swap híbrido a partir de swaps de zram, arquivos swap e partições swap. Não é um afiliado com o projeto systemd.
+
+[Instale](/index.php/Instale "Instale") o pacote [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap). Defina `swapfc_enabled=1` NA seção *Swap File Chunked* do `/etc/systemd/swap.conf`. [Inicie/habilite](/index.php/Inicie/habilite "Inicie/habilite") o serviço `systemd-swap`.
+
+Visite a página do [autor no GitHub](https://github.com/Nefelim4ag/systemd-swap) para mais informações e instalação da [configuração recomendada](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
 **Nota:** Se o journal fica mostrando o aviso a seguir `systemd-swap[..]: WARN: swapFC: ENOSPC` e nenhum arquivo swap está sendo criado, você precisa definir `swapfc_force_preallocated=1` no `/etc/systemd/swap.conf`.
 

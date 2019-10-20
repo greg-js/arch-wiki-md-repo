@@ -10,7 +10,11 @@
 
 配置无线网络一般分两步：第一步是识别硬件、安装正确的驱动程序并进行配置，安装盘中已经包含驱动，但是通常需要额外安装；第二步是选择一种管理无线连接的方式。这篇文章涵盖了这两方面，并提供了无线管理工具的链接地址。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 设备驱动](#设备驱动)
     *   [1.1 检查设备状态](#检查设备状态)
@@ -581,6 +585,7 @@ WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with 
 ```
 
 **注意:** 按下硬件按钮可能会让无线网卡从 *hard-blocked* 和 *soft-unblocked* 状态变为 *hard-unblocked* 和 *soft-blocked* (i.e. *soft-blocked* bit位的切换并不会有什么不可挽回的影响). 这可以通过改变 `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
+
 的一些选项来进行调整。
 
 切换无线网卡的硬件按钮是厂商专用的 [内核模块](/index.php/Kernel_module "Kernel module") 处理的, 通常是 [WMI](https://lwn.net/Articles/391230/) 模块。新硬件模块可能还没有被最新内核支持，这时可能需要查看内核 bug 系统并将硬件信息汇报给对应内核模块的维护者。

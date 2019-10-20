@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pre-Instalación](#Pre-Instalación)
 *   [2 Instalación](#Instalación)
@@ -93,8 +97,8 @@ open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/srv/:/usr/share/webapps
 También necesitas los módulos mcrypt y mysql, entonces descomenta en `/etc/php/php.ini`:
 
 ```
- ;extension=mcrypt.so
- ;extension=mysql.so
+ ;extension=mcrypt.so
+ ;extension=mysql.so
 
 ```
 

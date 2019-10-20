@@ -1,11 +1,15 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace](#Instalace)
 *   [2 Konfigurace](#Konfigurace)
-    *   [2.1 Přídání blowfish tajného klíče](#P.C5.99.C3.ADd.C3.A1n.C3.AD_blowfish_tajn.C3.A9ho_kl.C3.AD.C4.8De)
-*   [3 Přístup k phpMyAdmin](#P.C5.99.C3.ADstup_k_phpMyAdmin)
+    *   [2.1 Přídání blowfish tajného klíče](#Přídání_blowfish_tajného_klíče)
+*   [3 Přístup k phpMyAdmin](#Přístup_k_phpMyAdmin)
 *   [4 Konfigurace Lighttpd](#Konfigurace_Lighttpd)
-*   [5 Další (starší) informace](#Dal.C5.A1.C3.AD_.28star.C5.A1.C3.AD.29_informace)
+*   [5 Další (starší) informace](#Další_(starší)_informace)
 
 ## Instalace
 
@@ -81,8 +85,8 @@ Dále budete potřebovat moduly mcrypt a mysql, proto odkomentujte tyto řádky 
 	z
 
 ```
- ;extension=mcrypt.so
- ;extension=mysql.so
+ ;extension=mcrypt.so
+ ;extension=mysql.so
 
 ```
 

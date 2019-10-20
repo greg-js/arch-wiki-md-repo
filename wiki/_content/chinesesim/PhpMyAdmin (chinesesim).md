@@ -2,7 +2,11 @@
 
 [phpMyAdmin](http://www.phpmyadmin.net/)是一个基于网页的，帮助管理MySQL数据库的Apache/PHP前端。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 运行](#运行)

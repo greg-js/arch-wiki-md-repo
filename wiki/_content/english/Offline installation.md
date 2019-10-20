@@ -5,7 +5,7 @@ Related articles
 
 If you wish to install the [Archiso](/index.php/Archiso "Archiso") (e.g. [the official monthly release](https://www.archlinux.org/download/)) as it is without an Internet connection, or, if you do not want to download the packages you want again:
 
-First, follow the [Installation guide](/index.php/Installation_guide "Installation guide"), skipping the [Installation guide#Connect to the internet](/index.php/Installation_guide#Connect_to_the_internet "Installation guide") section, until the [Installation guide#Install the base packages](/index.php/Installation_guide#Install_the_base_packages "Installation guide") step.
+First, follow the [Installation guide](/index.php/Installation_guide "Installation guide"), skipping the [Installation guide#Connect to the internet](/index.php/Installation_guide#Connect_to_the_internet "Installation guide") section, until the [Installation guide#Install essential packages](/index.php/Installation_guide#Install_essential_packages "Installation guide") step.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

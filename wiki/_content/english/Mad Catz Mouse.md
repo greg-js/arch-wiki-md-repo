@@ -13,7 +13,13 @@ Mad Catz produces a series of gaming mice, for example the Saitek Cyborg R.A.T.3
 *   [5 Manual Button Mapping Fix](#Manual_Button_Mapping_Fix)
 *   [6 Use extra mouse buttons with Wine/Games](#Use_extra_mouse_buttons_with_Wine/Games)
 *   [7 R.A.T. configuration software](#R.A.T._configuration_software)
-*   [8 See also](#See_also)
+*   [8 Mouse Configurations](#Mouse_Configurations)
+    *   [8.1 Mad Catz R.A.T. 5](#Mad_Catz_R.A.T._5)
+    *   [8.2 Mad Catz M.M.O.7](#Mad_Catz_M.M.O.7)
+    *   [8.3 Mad Catz R.A.T. TE](#Mad_Catz_R.A.T._TE)
+    *   [8.4 Mad Catz M.M.O. TE](#Mad_Catz_M.M.O._TE)
+    *   [8.5 Saitek Cyborg R.A.T.3](#Saitek_Cyborg_R.A.T.3)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -142,15 +148,17 @@ Option "ButtonMapping" "1 2 3 4 5 0 0 8 9 0 0 0 13 14"
 
 Where buttons 10, 11, and 12 have been identified as 'mode' buttons, so they can be disabled by with zeros.
 
-When you have identified which button numbers correspond to the mouse 'Modes', you should be able to edit your xorg.conf file and disable them by inserting a zero in the appropriate point in the button sequence. Open in your chosen editor:
+When you have identified which button numbers correspond to the mouse 'modes', you should be able to edit your `xorg.conf` file and disable them by inserting a zero in the appropriate point in the button sequence.
+
+Open in your chosen editor:
 
 ```
 /etc/X11/xorg.conf   or
-/etc/X11/xorg.conf.d/50-vmmouse.conf
+/etc/X11/xorg.conf.d/910-rat-xx.conf
 
 ```
 
-Create a block that overwrites the mode buttons as follows:
+Create a block that overwrites the mode buttons as listed for your mouse model in chapter **Mouse Configurations**:
 
 MadCatz R.A.T.3:
 
@@ -164,51 +172,6 @@ Section "InputClass"
 EndSection
 
 ```
-
-This configuration worked for me on my old Saitek Cyborg R.A.T.3:
-
-```
-# RAT3 mouse
-Section "InputClass"
- Identifier "Mouse Remap"
- MatchProduct "Saitek Cyborg R.A.T.3 Mouse"
- MatchDevicePath "/dev/input/event*"
- Option "ButtonMapping" "1 2 3 4 5 0 0 8 9 0 0 0 13 14"
-EndSection
-
-```
-
-This works for a Mad Catz R.A.T.TE:
-
-```
-Section "InputClass"
-   Identifier     "Mouse Remap"
-   MatchProduct   "Mad Catz Mad Catz R.A.T.TE"
-   MatchDevicePath "/dev/input/event*"
-   Option         "ButtonMapping" " 1 2 3 4 5 6 7 8 9 10 11 12 0 0 0"
-   Option        "ZAxisMapping" "4 5 6 7"
-EndSection
-
-```
-
-This configuration worked for a Mad Catz R.A.T.5: Create the file **/etc/X11/xorg.conf.d/rat5.conf** with the following content (source: [[1]](http://www.bpaulin.net/articles/linux/2014/05/16/mad-catz-rat5-avec-linux/)):
-
-```
-Section "InputClass"
-   Identifier "Mad Catz R.A.T. 5"
-   MatchProduct "Mad Catz Mad Catz R.A.T.5 Mouse"
-   MatchDevicePath "/dev/input/event*"
-   Option "Buttons" "21"
-   Option "ButtonMapping" "1 2 3 4 5 0 0 9 8 7 6 10 0 0 0 0 0 0 0 0 0"
-   Option "ZAxisMapping" "4 5 11 10"
-   Option "AutoReleaseButtons" "13 14 15"
-EndSection
-
-```
-
-To work correctly, it is important to that you identify the correct "ButtonMapping" and "MatchProduct" for your specific mouse.
-
-For any any modifications to xorg.conf take effect, X must be restarted.
 
 ## Use extra mouse buttons with Wine/Games
 
@@ -257,6 +220,86 @@ Saitek/Mad Catz does not provide any official configuration software for Linux.
 There is however open an source project which allows you to configure DPI settings for each and mode [here](https://github.com/MayeulC/Saitek).
 
 It might however require some tweaking for certain R.A.T. mice, such as adding your mouse ID to the list of supported IDs.
+
+## Mouse Configurations
+
+It is recommended that you put those settings in a single file for each model you use, eg. `/etc/X11/xorg.conf.d/920-rat-mmo7.conf`.
+
+### Mad Catz R.A.T. 5
+
+```
+Section "InputClass"
+   Identifier "Mad Catz R.A.T. 5"
+   MatchProduct "Mad Catz Mad Catz R.A.T.5 Mouse"
+   MatchDevicePath "/dev/input/event*"
+   Option "Buttons" "21"
+   Option "ButtonMapping" "1 2 3 4 5 0 0 9 8 7 6 10 0 0 0 0 0 0 0 0 0"
+   Option "ZAxisMapping" "4 5 11 10"
+   Option "AutoReleaseButtons" "13 14 15"
+EndSection
+
+```
+
+### Mad Catz M.M.O.7
+
+```
+Section "InputClass"
+ Identifier "Mouse Remap 7"
+ MatchProduct "Mad Catz Mad Catz M.M.O.7 Mouse|M.M.O.7"
+ MatchIsPointer "true"
+ MatchUSBID "0738:1713"
+ Driver "evdev"
+ Option "Buttons" "24"
+ Option "ButtonMapping" "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 0 21 22 23 24"
+ Option "AutoReleaseButtons" "20"
+ Option "ZAxisMapping" "4 5 6 7"
+EndSection
+
+```
+
+### Mad Catz R.A.T. TE
+
+```
+Section "InputClass"
+   Identifier     "Mouse Remap"
+   MatchProduct   "Mad Catz Mad Catz R.A.T.TE"
+   MatchDevicePath "/dev/input/event*"
+   Option         "ButtonMapping" " 1 2 3 4 5 6 7 8 9 10 11 12 0 0 0"
+   Option        "ZAxisMapping" "4 5 6 7"
+EndSection
+
+```
+
+### Mad Catz M.M.O. TE
+
+```
+Section "InputClass"
+ Identifier "Mouse Remap TE"
+ MatchProduct "Mad Catz Mad Catz M.M.O.TE"
+ MatchIsPointer "true"
+ MatchUSBID "0738:1714"
+ Driver "evdev"
+ Option "Buttons" "24"
+ Option "ButtonMapping" "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24"
+ Option "AutoReleaseButtons" "20"
+ Option "ZAxisMapping" "4 5"    
+ Option "ConstantDeceleration" "2"
+EndSection
+
+```
+
+### Saitek Cyborg R.A.T.3
+
+```
+# RAT3 mouse
+Section "InputClass"
+ Identifier "Mouse Remap"
+ MatchProduct "Saitek Cyborg R.A.T.3 Mouse"
+ MatchDevicePath "/dev/input/event*"
+ Option "ButtonMapping" "1 2 3 4 5 0 0 8 9 0 0 0 13 14"
+EndSection
+
+```
 
 ## See also
 

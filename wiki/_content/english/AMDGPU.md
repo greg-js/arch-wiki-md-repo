@@ -47,6 +47,7 @@ Related articles
     *   [6.3 R9 390 series poor performance and/or instability](#R9_390_series_poor_performance_and/or_instability)
     *   [6.4 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_"[drm]_IP_block:gmc_v8_0_is_hung!"_kernel_error)
     *   [6.5 Cursor corruption](#Cursor_corruption)
+    *   [6.6 System freeze or crash when gaming on Vega cards](#System_freeze_or_crash_when_gaming_on_Vega_cards)
 
 ## Selecting the right driver
 
@@ -381,3 +382,7 @@ If you experience freezes and kernel crashes during a GPU intensive task with th
 If you experience issues with the mouse cursor sometimes not rendering properly, set `Option "SWCursor" "True"` in the `"Device"` section of the `/etc/X11/xorg.conf.d/20-amdgpu.conf` configuration file.
 
 If you are using `xrandr` for scaling and the cursor is flickering or disappearing, you may be able to fix it by setting the `TearFree` property: `xrandr --output HDMI-A-0 --set TearFree on`.
+
+### System freeze or crash when gaming on Vega cards
+
+[Dynamic power management](/index.php/ATI#Dynamic_power_management "ATI") may cause a complete system freeze whilst gaming due to issues in the way GPU clock speeds are managed. [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=109955) A workaround is to disable dynamic power management, see [ATI#Dynamic power management](/index.php/ATI#Dynamic_power_management "ATI") for details.

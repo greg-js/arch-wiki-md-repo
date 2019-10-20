@@ -1,21 +1,3 @@
-# Описание
+Redirect to:
 
-Краткое описание установки и возможных проблем версии 13.2.13582-9.
-
-# Установка
-
-Установка из [AUR](https://aur.archlinux.org/packages/teamviewer):
-
-```
-$ yaourt -S teamviewer
-
-```
-
-# Возможные проблемы
-
-Я столкнулся только с одной проблемой, окна ввода логина и пароля были не активны и не было связи с сервером самого Teamviewer. Решение оказалось простое, для этого нужно запустить сервис:
-
-```
-# systemctl start teamviewerd
-
-```
+*   [List of applications/Internet#Remote desktop clients](/index.php/List_of_applications/Internet#Remote_desktop_clients "List of applications/Internet")

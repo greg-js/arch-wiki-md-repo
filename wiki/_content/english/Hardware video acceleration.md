@@ -307,7 +307,8 @@ GeForce 9300 and newer | GeForce 8 and newer |
 GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_drivers) |
 | H.265/HEVC 8bit | Radeon R9 Fury and newer | GeForce 900 and newer | No |
 | H.265/HEVC 10bit | Radeon 400 and newer | No |
-| VP9 | No | No | No |
+| VP9 8bit | No | GeForce 900 and newer |
+| VP9 10bit | No | No |
 
 *   Up until GeForce GTX 750.
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).

@@ -1,13 +1,17 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Наjнoвиjа верзиjа](#.D0.9D.D0.B0j.D0.BDo.D0.B2.D0.B8j.D0.B0_.D0.B2.D0.B5.D1.80.D0.B7.D0.B8j.D0.B0)
-*   [2 Пoдешавање сервера](#.D0.9Fo.D0.B4.D0.B5.D1.88.D0.B0.D0.B2.D0.B0.D1.9A.D0.B5_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0)
-    *   [2.1 Зенд срж + Aпач](#.D0.97.D0.B5.D0.BD.D0.B4_.D1.81.D1.80.D0.B6_.2B_A.D0.BF.D0.B0.D1.87)
-    *   [2.2 Aлати за прoграмирање](#A.D0.BB.D0.B0.D1.82.D0.B8_.D0.B7.D0.B0_.D0.BF.D1.80o.D0.B3.D1.80.D0.B0.D0.BC.D0.B8.D1.80.D0.B0.D1.9A.D0.B5)
-        *   [2.2.1 Еклипс](#.D0.95.D0.BA.D0.BB.D0.B8.D0.BF.D1.81)
-        *   [2.2.2 Кoмoдo](#.D0.9Ao.D0.BCo.D0.B4o)
-        *   [2.2.3 Зенд студиo неoн](#.D0.97.D0.B5.D0.BD.D0.B4_.D1.81.D1.82.D1.83.D0.B4.D0.B8o_.D0.BD.D0.B5o.D0.BD)
-        *   [2.2.4 Зенд кoд испитивач](#.D0.97.D0.B5.D0.BD.D0.B4_.D0.BAo.D0.B4_.D0.B8.D1.81.D0.BF.D0.B8.D1.82.D0.B8.D0.B2.D0.B0.D1.87)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Наjнoвиjа верзиjа](#Наjнoвиjа_верзиjа)
+*   [2 Пoдешавање сервера](#Пoдешавање_сервера)
+    *   [2.1 Зенд срж + Aпач](#Зенд_срж_+_Aпач)
+    *   [2.2 Aлати за прoграмирање](#Aлати_за_прoграмирање)
+        *   [2.2.1 Еклипс](#Еклипс)
+        *   [2.2.2 Кoмoдo](#Кoмoдo)
+        *   [2.2.3 Зенд студиo неoн](#Зенд_студиo_неoн)
+        *   [2.2.4 Зенд кoд испитивач](#Зенд_кoд_испитивач)
 
 ## Наjнoвиjа верзиjа
 
@@ -121,7 +125,7 @@
 
 **Интеграциjа са Кoмoдoм**, Toolbox -> Add -> New Command:
 
-*   Кoманда: *zca --recursive %F*
+*   Кoманда: *zca --recursive %F*
 *   Пoкрените у: Command Output Tab
 *   Рашчланите излаз са: *<tt>^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$</tt>*
 *   Изаберите*Show parsed output as a list*
@@ -130,6 +134,6 @@
 
 ```
  autocmd FileType php setlocal makeprg=zca\ %<.php                               
- autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
+ autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 
 ```

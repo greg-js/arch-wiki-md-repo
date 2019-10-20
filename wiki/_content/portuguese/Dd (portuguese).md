@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [dd](/index.php/Dd "Dd"). Data da última tradução: 2019-08-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dd&diff=0&oldid=581123) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [dd](/index.php/Dd "Dd"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dd&diff=0&oldid=583758) na versão em inglês.
 
 Artigos relacionados
 

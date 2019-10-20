@@ -164,7 +164,7 @@ nohook resolv.conf
 
 ### 使用resolv.conf.head
 
-另外, 可以创建文件`/etc/resolv.conf.head` 并在其中包含DNS信息. dhcpcd将把这个文件插入到`/etc/resolv.conf`文件头. 使用OpenDNS的{ic|/etc/resolv.conf.head}}例子:
+另外, 可以创建文件`/etc/resolv.conf.head`，并在其中包含DNS信息。dhcpcd将把这个文件插入到`/etc/resolv.conf`文件头。使用OpenDNS的`/etc/resolv.conf.head`例子：
 
 ```
 # OpenDNS servers
@@ -173,7 +173,7 @@ nameserver 208.67.220.220
 
 ```
 
-也可以使用google的DNS[Google's nameservers](https://developers.google.com/speed/public-dns/).
+也可以使用google的DNS [Google's nameservers](https://developers.google.com/speed/public-dns/)。
 
 ```
 # Google nameservers

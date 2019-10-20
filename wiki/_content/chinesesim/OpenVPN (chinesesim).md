@@ -1,29 +1,37 @@
+Related articles
+
+*   [OpenVPN in Linux containers](/index.php/OpenVPN_in_Linux_containers "OpenVPN in Linux containers")
+
 本文中介绍了 [OpenVPN](http://openvpn.net) 的基本的安装与配置过程，适用于个人使用与小型商业使用。要了解更多信息，请访问官方网站 [HOWTO](http://openvpn.net/index.php/open-source/documentation/howto.html)、[OpenVPN 2.3 手册页](https://community.openvpn.net/openvpn/wiki/Openvpn23ManPage) 以及 [Manual](http://openvpn.net/index.php/open-source/documentation/manuals.html)。
 
 OpenVPN 是一个健壮的、高度灵活的 [VPN](https://en.wikipedia.org/wiki/VPN "wikipedia:VPN") 守护进程。它支持 [SSL/TLS](https://en.wikipedia.org/wiki/SSL/TLS "wikipedia:SSL/TLS") 安全、[Ethernet bridging](https://en.wikipedia.org/wiki/Bridging_(networking) "wikipedia:Bridging (networking)")、经由[代理](https://en.wikipedia.org/wiki/Proxy_server "wikipedia:Proxy server")的 [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol "wikipedia:Transmission Control Protocol") 或 [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol "wikipedia:User Datagram Protocol") [隧道](https://en.wikipedia.org/wiki/Tunneling_protocol "wikipedia:Tunneling protocol")和 [NAT](https://en.wikipedia.org/wiki/Network_address_translation "wikipedia:Network address translation")。另外，它也支持动态 IP 地址以及 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol")，可伸缩性足以支持数百或数千用户的使用场景，同时可移植至大多数主流操作系统平台上。
 
 OpenVPN 与 [OpenSSL](http://www.openssl.org) 库紧密相关，并由此获得许多加密功能。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 内核配置](#.E5.86.85.E6.A0.B8.E9.85.8D.E7.BD.AE)
-*   [3 准备证书和密钥数据](#.E5.87.86.E5.A4.87.E8.AF.81.E4.B9.A6.E5.92.8C.E5.AF.86.E9.92.A5.E6.95.B0.E6.8D.AE)
-*   [4 配置服务器](#.E9.85.8D.E7.BD.AE.E6.9C.8D.E5.8A.A1.E5.99.A8)
-    *   [4.1 复制默认服务器配置文件](#.E5.A4.8D.E5.88.B6.E9.BB.98.E8.AE.A4.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [4.2 使用 PAM 和密码认证](#.E4.BD.BF.E7.94.A8_PAM_.E5.92.8C.E5.AF.86.E7.A0.81.E8.AE.A4.E8.AF.81)
-    *   [4.3 使用证书认证](#.E4.BD.BF.E7.94.A8.E8.AF.81.E4.B9.A6.E8.AE.A4.E8.AF.81)
-    *   [4.4 通过服务器路由](#.E9.80.9A.E8.BF.87.E6.9C.8D.E5.8A.A1.E5.99.A8.E8.B7.AF.E7.94.B1)
-*   [5 客户端配置](#.E5.AE.A2.E6.88.B7.E7.AB.AF.E9.85.8D.E7.BD.AE)
-    *   [5.1 使用密码认证](#.E4.BD.BF.E7.94.A8.E5.AF.86.E7.A0.81.E8.AE.A4.E8.AF.81)
-    *   [5.2 证书验证](#.E8.AF.81.E4.B9.A6.E9.AA.8C.E8.AF.81)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 内核配置](#内核配置)
+*   [3 准备证书和密钥数据](#准备证书和密钥数据)
+*   [4 配置服务器](#配置服务器)
+    *   [4.1 复制默认服务器配置文件](#复制默认服务器配置文件)
+    *   [4.2 使用 PAM 和密码认证](#使用_PAM_和密码认证)
+    *   [4.3 使用证书认证](#使用证书认证)
+    *   [4.4 通过服务器路由](#通过服务器路由)
+*   [5 客户端配置](#客户端配置)
+    *   [5.1 使用密码认证](#使用密码认证)
+    *   [5.2 证书验证](#证书验证)
     *   [5.3 DNS](#DNS)
-*   [6 启动 OpenVPN](#.E5.90.AF.E5.8A.A8_OpenVPN)
-    *   [6.1 手动启动](#.E6.89.8B.E5.8A.A8.E5.90.AF.E5.8A.A8)
-    *   [6.2 systemd 服务配置](#systemd_.E6.9C.8D.E5.8A.A1.E9.85.8D.E7.BD.AE)
-    *   [6.3 让 NetworkManager 启动连接](#.E8.AE.A9_NetworkManager_.E5.90.AF.E5.8A.A8.E8.BF.9E.E6.8E.A5)
-    *   [6.4 Gnome 配置](#Gnome_.E9.85.8D.E7.BD.AE)
-*   [7 参见](#.E5.8F.82.E8.A7.81)
+*   [6 启动 OpenVPN](#启动_OpenVPN)
+    *   [6.1 手动启动](#手动启动)
+    *   [6.2 systemd 服务配置](#systemd_服务配置)
+    *   [6.3 让 NetworkManager 启动连接](#让_NetworkManager_启动连接)
+    *   [6.4 Gnome 配置](#Gnome_配置)
+*   [7 参见](#参见)
 
 ## 安装
 
@@ -362,10 +370,10 @@ case "$2" in
     if [ "$CONNECTION_ID" == "Provider" ]; then
       systemctl start openvpn@client
     fi
-  ;;
+  ;;
   down)
     systemctl stop openvpn@client
-  ;;
+  ;;
 esac
 ```
 

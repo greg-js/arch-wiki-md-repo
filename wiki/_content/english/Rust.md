@@ -31,8 +31,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
     *   [4.1 Usage](#Usage_2)
 *   [5 IDE support](#IDE_support)
     *   [5.1 Tools](#Tools)
-        *   [5.1.1 Racer](#Racer)
-        *   [5.1.2 Clippy](#Clippy)
+        *   [5.1.1 RLS](#RLS)
+        *   [5.1.2 Racer](#Racer)
+        *   [5.1.3 Clippy](#Clippy)
+        *   [5.1.4 Rustfmt](#Rustfmt)
     *   [5.2 Editors](#Editors)
         *   [5.2.1 Atom](#Atom)
         *   [5.2.2 IntelliJ IDEA](#IntelliJ_IDEA)
@@ -230,9 +232,22 @@ edition = "2018"
 
 ### Tools
 
+#### RLS
+
+[RLS](https://github.com/rust-lang/rls) provides a [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) implementation for Rust, providing IDEs, editors, and other tools with information about Rust programs. It supports functionality such as 'goto definition', symbol search, reformatting, and code completion, and enables renaming and refactorings.
+
+RLS is included in the [rust](https://www.archlinux.org/packages/?name=rust) package. To install RLS using rustup:
+
+```
+$ rustup component add rls rust-analysis rust-src
+
+```
+
 #### Racer
 
-The [Racer](https://github.com/phildawes/racer) autocomplete engine is the current best method of gaining autocomplete support. However, it requires that you also install a copy of the Rust source code, which you can obtain in one of several ways:
+[Racer](https://github.com/phildawes/racer) provides code completion support for editors and IDEs. It has been superseded by RLS (which uses Racer as a fallback).
+
+It requires that you also install a copy of the Rust source code, which you can obtain in one of several ways:
 
 *   With rustup: `rustup component add rust-src`
 *   From the AUR: [rust-src](https://aur.archlinux.org/packages/rust-src/) or [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/), in this case you must set the `RUST_SRC_PATH` environment var.
@@ -246,10 +261,23 @@ $ cargo +nightly install racer
 
 #### Clippy
 
-[Clippy](https://github.com/Manishearth/rust-clippy) takes advantage of compiler plugin support in Nightly builds of Rust to provide a large number of additional lints for detecting and warning about a larger variety of errors and non-idiomatic Rust. Install clippy using rustup with:
+[Clippy](https://github.com/rust-lang/rust-clippy) takes advantage of compiler plugin support to provide a large number of additional lints for detecting and warning about a larger variety of errors and non-idiomatic Rust.
+
+Clippy is included in the [rust](https://www.archlinux.org/packages/?name=rust) package. To install it with rustup use:
 
 ```
 $ rustup component add clippy
+
+```
+
+#### Rustfmt
+
+[Rustfmt](https://github.com/rust-lang/rustfmt) is a tool to format Rust code according to the official style guidelines.
+
+Rustup is included in the [rust](https://www.archlinux.org/packages/?name=rust) package. To install it with rustup use:
+
+```
+$ rustup component add rustfmt
 
 ```
 
@@ -257,7 +285,7 @@ $ rustup component add clippy
 
 #### Atom
 
-[Atom](/index.php/Atom "Atom") supports Rust programming when both of the next plugins installed: [language-rust](https://atom.io/packages/language-rust) and [linter-rust](https://atom.io/packages/linter-rust).
+[Atom](/index.php/Atom "Atom") support for Rust programming is provided by the [ide-rust](https://atom.io/packages/ide-rust) plugin (requires rustup).
 
 #### IntelliJ IDEA
 
@@ -265,11 +293,11 @@ $ rustup component add clippy
 
 #### Visual Studio Code
 
-[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") support for Rust can be obtained via [rust-lang.rls](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust) extension(requires rustup) or the [kalitaalexey.vscode-rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
+[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") support for Rust can be obtained via [rust-lang.rls](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust) extension (requires rustup) or the [kalitaalexey.vscode-rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
 
 #### Vim
 
-[Vim](/index.php/Vim "Vim") support for Rust can be obtained via the official [rust.vim](https://github.com/rust-lang/rust.vim) plugin.
+[Vim](/index.php/Vim "Vim") support for Rust can be obtained via the official [rust.vim](https://github.com/rust-lang/rust.vim) plugin, which provides file detection, syntax highlighting, formatting and support for the [Syntastic](https://github.com/vim-syntastic/syntastic) syntax checking plugin. Many completion engines have Rust support, like [coc](https://github.com/neoclide/coc.nvim) (via the [coc.rls](https://github.com/neoclide/coc-rls) plugin) and [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe).
 
 #### Emacs
 

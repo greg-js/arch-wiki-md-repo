@@ -15,7 +15,10 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
         *   [1.1.1 Fractional Scaling](#Fractional_Scaling)
+            *   [1.1.1.1 Wayland](#Wayland)
+            *   [1.1.1.2 Xorg](#Xorg)
         *   [1.1.2 Text Scaling](#Text_Scaling)
+            *   [1.1.2.1 GTK+ vs Gnome Shell elements on Xorg](#GTK+_vs_Gnome_Shell_elements_on_Xorg)
     *   [1.2 KDE Plasma](#KDE_Plasma)
         *   [1.2.1 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
@@ -71,7 +74,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 
 ### GNOME
 
-To enable HiDPI, *Settings > Devices > Displays*，or use gsettings:
+To enable HiDPI, navigate to *Settings > Devices > Displays > Scale* and choose an appropriate value. Or, use gsettings:
 
 ```
 $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/WindowScalingFactor', <2>}]"
@@ -79,24 +82,24 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 ```
 
-**Note:** GNOME only allows integer scaling numbers to be set. 1 = 100%, 2 = 200%, etc.
+**Note:** GNOME only allows integer scaling numbers to be set. 1 = 100%, 2 = 200%, etc. See Fractional Scaling below.
 
 #### Fractional Scaling
 
-A setting of `2, 3, etc`, which is all you can do with `scaling-factor`, may not be ideal for certain HiDPI displays and smaller screens (e.g. small tablets).
+A setting of `2, 3, etc`, which is all you can do with `scaling-factor`, may not be ideal for certain HiDPI displays and smaller screens (e.g. small tablets). Fractional scaling is possible on both Wayland and Xorg, though the process differs.
 
-*   Wayland
+##### Wayland
 
-Enable fractional Scaling experimental-feature:
+Enable the experimental fractional scaling feature:
 
 ```
 $ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
 ```
 
-then open *Settings > Devices > Displays* (the new options may only appear after a restart)
+then open *Settings > Devices > Displays* (the new options may only appear after a restart).
 
-*   Xorg
+##### Xorg
 
 You can achieve any non-integer scale factor by using a combination of GNOME's `scaling-factor` and [xrandr](/index.php/Xrandr "Xrandr"). This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone. You specify zoom-in factor with `gsettings` and zoom-out factor with [xrandr](/index.php/Xrandr "Xrandr").
 
@@ -133,10 +136,26 @@ Note also that DPI in the above example is expressed in 1024ths of an inch.
 
 #### Text Scaling
 
-Alternatively or additionally to above solution, you can scale only text by factor not limited by whole numbers, for example:
+Alternatively, or in addition to changing the display scaling, you can separately scale text. This can be done by navigating to *Fonts > Scaling Factor* in Gnome Tweaks, or using gsettings. Note that the text scaling factor need not be limited to whole integers, for example:
 
 ```
 $ gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
+
+```
+
+##### GTK+ vs Gnome Shell elements on Xorg
+
+Adjusting the text scaling as per the above only affects GTK+ elements of the GNOME desktop. This should cover everything on Wayland. However, those on an Xorg session may find that they need to make further adjustments on HiDPI environments, since the GNOME Shell UI (including the top bar, dock, application menus, etc.) relies separately on the [St](/index.php/St "St") toolkit. Note that this is a long-standing issue to which a recent patch has been submitted.[[1]](https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/486) However, as of October 2019, the proposed patch has yet to be merged with the main GNOME codebase. In the interim, Xorg users can resolve most of the Gnome shell scaling problems by manually editing the shell theme that they are currently using. The relevant CSS files are normally located at `/usr/share/themes/YOUR-THEME/gnome-shell/gnome-shell.css`. Users should increase all "font-size" elements in this file in proportion to their display scaling (doubling font sizes for 200% scaling, etc.) For example, the top of an edited CSS file for the [Adapta](https://github.com/adapta-project/adapta-gtk-theme) shell theme might look like:
+
+ `usr/share/themes/Adapta/gnome-shell/gnome-shell.css`  `stage { font-size: 20pt; font-family: Roboto, Noto Sans, Sans-Serif; color: #263238; }` 
+
+Once these changes have been saved, activate them by switching to another theme (for example, using [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)) and then reverting back again. The top bar, application menus, calendar, and other shell elements should now be correctly scaled.
+
+In addition to editing the relevant shell theme's CSS file, users on Xorg may also wish to increase the title bar font at the top of open applications. This can be done through the dconf editor (`org > gnome > desktop > wm > preferences :: titlebar-font`). Note that the `title-bar-uses-system-fonts` option should also be turned off. Alternatively, use gsettings:
+
+```
+$ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Cantarell Bold 22' ## Change as needed
+$ gsettings set org.gnome.desktop.wm.preferences titlebar-uses-system-font false
 
 ```
 
@@ -175,13 +194,22 @@ The tray icons are not scaled with the rest of the desktop, since Plasma ignores
 
 ### Xfce
 
-Xfce uses the DPI given by the X server. There is an option to override Font DPI (*Settings Manager > Appearance > Fonts > DPI > Custom DPI setting*) but it's better to adjust X server DPI instead. See [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg") for how to fix it.
+Xfce supports HiDPI scaling which can be enabled using the settings manager:
 
-To enlarge icons in system tray, *right-click on it (aim for empty space / top pixels / bottom pixels, so that you will not activate icons themselves) > Properties*, set “Maximum icon size” to 32, 48 or 64.
+1.  Go to *Settings Manager > Appearance > Settings > Window Scaling* and select 2 as the scaling factor.
+2.  Go to *Settings Manager > Window Manager > Style* and select `Default-xhdpi` theme.
 
-Xfwm comes with two hidpi themes: Default-hdpi and Default-xhdpi. You can set them under *Settings Manager > Window Manager > Style > Theme*.
+Alternatively, it is possible to do the same from command line using `xfconf-query`:
 
-You can set the default icon sizes of gtk2 menus, buttons and so on under *Settings Manager > Settings Editor > xsettings > Gtk > IconSizes*, with a line like this: `gtk-large-toolbar=96,96:gtk-small-toolbar=64,64:gtk-menu=64,64:gtk-dialog=96,96:gtk-button=64,64:gtk-dnd=64,64`. "gtk-dnd" is for the icons during drag'n'drop, the others are quite self-explanatory. You can use any value your icon theme supports.
+```
+xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2
+xfconf-query -c xfwm4 -p /general/theme -s Default-xhdpi
+
+```
+
+The steps above would set 2x scaled resolution for Xfce and other GTK 3 apps.
+
+Scaling for Qt 5 apps should be set manually, see [#Qt 5](#Qt_5).
 
 ### Cinnamon
 
@@ -396,11 +424,11 @@ There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
 ### Inkscape
 
-To scale the icons to a "usable" size go to *Preferences > Interface* and set the icon size to Large or Larger[[1]](http://www.inkscapeforum.com/viewtopic.php?t=18684)[[2]](http://wiki.inkscape.org/wiki/index.php/HiDPI).
+To scale the icons to a "usable" size go to *Preferences > Interface* and set the icon size to Large or Larger[[2]](http://www.inkscapeforum.com/viewtopic.php?t=18684)[[3]](http://wiki.inkscape.org/wiki/index.php/HiDPI).
 
 ### IntelliJ IDEA
 
-IntelliJ IDEA 15 and above should include HiDPI support.[[3]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
+IntelliJ IDEA 15 and above should include HiDPI support.[[4]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
 
 	*File > Settings > Behaviour & Appearance > Appearance*
 
@@ -419,7 +447,7 @@ Since Java 9 the GDK_SCALE environment variable is used to scale Swing applicati
 
 ### MATLAB
 
-Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor[[4]](https://www.mathworks.com/matlabcentral/answers/406956-does-matlab-support-high-dpi-screens-on-linux):
+Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor[[5]](https://www.mathworks.com/matlabcentral/answers/406956-does-matlab-support-high-dpi-screens-on-linux):
 
 ```
 >> s = settings;s.matlab.desktop.DisplayScaleFactor
@@ -431,11 +459,11 @@ The settings take effect after MATLAB is restarted.
 
 ### Mono applications
 
-According to [[5]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK 3](#GDK_3_(GTK_3)) applications.
+According to [[6]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK 3](#GDK_3_(GTK_3)) applications.
 
 ### NetBeans
 
-NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[6]](http://wiki.netbeans.org/FaqFontSize)
+NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[7]](http://wiki.netbeans.org/FaqFontSize)
 
 The editor fontsize can be controlled from *Tools > Option > Fonts & Colors*.
 
@@ -492,7 +520,7 @@ See [#Firefox](#Firefox). To access `about:config`, go to *Edit > Preferences > 
 
 **Note:** This only applies to KDE with scaling enabled.
 
-VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[7]](https://www.virtualbox.org/ticket/16604)).
+VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[8]](https://www.virtualbox.org/ticket/16604)).
 
 This can be worked around by calculating the inverse of your scaling factor and manually setting this new scaling factor for the VirtualBox execution, e.g.
 
@@ -557,7 +585,7 @@ When extending above the internal display, you may see part of the internal disp
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[9]](https://askubuntu.com/a/979551/763549).
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[10]](https://askubuntu.com/a/979551/763549).
 
 **Note:** If you are using the `modesetting` driver you will get mouse flickering. This can be solved by scaling your non-scaled screen by 0.9999x0.9999.
 

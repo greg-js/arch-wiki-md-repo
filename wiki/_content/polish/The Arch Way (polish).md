@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Wstęp](#Wstęp)
 *   [2 Prostota](#Prostota)
@@ -10,7 +14,7 @@
 
 ## Wstęp
 
-Poniższe pięć podstawowych zasad obejmuje to, co jest powszechnie określane jako Arch Way, bądź filozofią Arch Linuksa dopełnianą przez zasadę KISS (ang. Keep It Simple, Stupid).
+Poniższe pięć podstawowych zasad obejmuje to, co jest powszechnie określane jako Arch Way, czyli filozofię Arch Linuksa, uzupełnioną zasadą KISS (ang. *Keep It Simple, Stupid*).
 
 ## Prostota
 
@@ -26,7 +30,7 @@ Arch Linuksa charakteryzuje czysty, prosty kod, bez zbędnych poprawek, automaty
 
 ## Użytkowanie
 
-Choć wiele dystrybucji GNU/Linuksa próbuje być bardziej przyjaznymi dla użytkownika, Arch Linux zawsze był i pozostanie skierowany na jego potrzeby zapewniając pełną kontrolę nad systemem i czyniąc użytkownika w pełni odpowiedzialnym za system. Nauczenie się czegoś jest ważniejsze, niż osiągnięcie celu bez prawie żadnych własnych wysiłków. W skrócie przekaz brzmi "System jest dokładnie tym, co sobie zbudujesz".
+Choć wiele dystrybucji GNU/Linuksa próbuje być bardziej przyjaznymi dla użytkownika, Arch Linux zawsze był i pozostanie skierowany na jego potrzeby użytkownika zapewniając mu pełną kontrolę nad systemem i czyniąc go w pełni odpowiedzialnym za system. Nauczenie się czegoś jest ważniejsze, niż osiągnięcie celu bez żadnego wysiłku. W skrócie przekaz brzmi *Jak sobie zbudujesz, tak się wyśpisz tzn. tak będzie działał Twój system*.
 
 ## Otwartość
 
@@ -38,7 +42,7 @@ Ponadto otwartość oznacza, iż Ty sam możesz przyczynić się do rozwoju Arch
 
 ## Wolność
 
-Ostatnią zasadą przewodnią Arch Linuksa jest wolność oznaczająca, iż wszystkie decyzje dotyczące konfiguracji systemu podejmuje sam użytkownik. Poprzez utrzymanie prostego systemu, Arch Linux zapewnia swobodę dokonywania wyboru. Świeżo zainstalowany Arch Linux zawiera tylko podstawowy system bazowy, po czym dalsza konfiguracja systemu zależy już od samego użytkownika. Judd Vinet, założyciel projektu Arch Linux, powiedział "Arch Linux jest tym, czym chcesz, żeby był".
+Ostatnią zasadą przewodnią Arch Linuksa jest wolność oznaczająca, iż wszystkie decyzje dotyczące konfiguracji systemu podejmuje sam użytkownik. Poprzez utrzymanie prostego systemu, Arch Linux zapewnia swobodę dokonywania wyboru. Świeżo zainstalowany Arch Linux zawiera tylko podstawowy system bazowy, po czym dalsza konfiguracja systemu zależy już od samego użytkownika. Judd Vinet, założyciel projektu Arch Linux, powiedział *Arch Linux jest tym, czym chcesz, żeby był*.
 
 ## Zobacz również
 

@@ -2,14 +2,18 @@
 
 Questo articolo spiega come personalizzare l'aspetto di Openbox su Arch Linux. Sono menzionati anche programmi ausiliari come pannelli e tray.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Temi e aspetto](#Temi_e_aspetto)
     *   [1.1 Temi di Openbox](#Temi_di_Openbox)
     *   [1.2 Aspetto di X11](#Aspetto_di_X11)
     *   [1.3 Cursori per il mouse in X11](#Cursori_per_il_mouse_in_X11)
     *   [1.4 Temi GTK](#Temi_GTK)
-        *   [1.4.1 GTK2/GTK+](#GTK2.2FGTK.2B)
+        *   [1.4.1 GTK2/GTK+](#GTK2/GTK+)
         *   [1.4.2 GTK1](#GTK1)
         *   [1.4.3 Caratteri GTK](#Caratteri_GTK)
         *   [1.4.4 Icone GTK](#Icone_GTK)
@@ -18,7 +22,7 @@ Questo articolo spiega come personalizzare l'aspetto di Openbox su Arch Linux. S
 *   [2 Programmi consigliati](#Programmi_consigliati)
     *   [2.1 Login Manager](#Login_Manager)
     *   [2.2 Desktop Composite](#Desktop_Composite)
-    *   [2.3 Pannelli, vassoi di sistema e paginatori](#Pannelli.2C_vassoi_di_sistema_e_paginatori)
+    *   [2.3 Pannelli, vassoi di sistema e paginatori](#Pannelli,_vassoi_di_sistema_e_paginatori)
         *   [2.3.1 Pannelli](#Pannelli)
         *   [2.3.2 Vassoi di sistema](#Vassoi_di_sistema)
         *   [2.3.3 Paginatori](#Paginatori)

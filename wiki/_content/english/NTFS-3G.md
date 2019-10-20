@@ -90,6 +90,8 @@ Permissions on a Linux system are normally set to 755 for folders and 644 for fi
 
 ```
 
+Alternatively, if the Windows permissions do matter to you, you can use the [ntfsusermap(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntfsusermap.8) command to map Windows users to Linux ones. ntfs-3g will handle the translation of these permissions.
+
 ### Allowing group/user
 
 In `/etc/fstab` you can also specify other options like those who are allowed to access (read) the partition. For example, for you to allow people in the `groupid` group to have access:
@@ -133,19 +135,28 @@ For most, the above settings should suffice. Here are a few other options that a
 
 	The user id. This allows a specific user to have full access to the partition. Your uid can be found with the `id` command.
 
+	big_writes
+
+	This FUSE option enables the use of a 128 KiB write buffer as opposed to the libfuse2 default of 4 KiB. It will reduce the CPU utilization of the ntfs-3g process and generally increase write performance. One should always include it because [it is safe.](https://unix.stackexchange.com/a/544864/73443)
+
+The following option is specific to ntfs-3g only:
+
 	windows_names
 
 	prevents files, directories and extended attributes to be created with a name not allowed by windows.
 
 ### Allowing user to mount
 
-By default, *ntfs-3g* requires root rights to mount the filesystem, even with the "user" option in `/etc/fstab`. See [ntfs-3g-faq](http://www.tuxera.com/community/ntfs-3g-faq/#useroption) for details. The user option in the fstab is still required.
+By default, *ntfs-3g* requires root rights to mount the filesystem if it is a [block device](/index.php/Block_device "Block device"), even with the `user` option in `/etc/fstab`. See [ntfs-3g-faq](http://www.tuxera.com/community/ntfs-3g-faq/#useroption) for details. The `user` option in the fstab is still required.
 
 **Note:**
 
 *   The [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package does not have internal FUSE support. Rebuild the package using [ABS](/index.php/ABS "ABS"), or install [ntfs-3g-fuse](https://aur.archlinux.org/packages/ntfs-3g-fuse/).
-    *   Using the internal FUSE *will* lead to higher CPU overhead due to much smaller write buffers (4 KiB) compared to current libfuse (1 MiB). Using the `big_writes` option should raise the size back to 128 KiB.
+    *   The longer story is that "user" and "users" work via a setuid `mount` not dropping its setuid privillage so that the block device can be used without root. However, ntfs-3g has a hard-coded restriction in ntfs-3g that bails on setuid if an external libfuse is used.
+    *   There is no good technical reason for not allowing setuid for external FUSE besides a mistrust of the library. [This patch](https://github.com/AOSC-Dev/ntfs-3g/commit/c918fb79f9f340bce1a19dacf4b720d19922450d) removes the said restriction.
 *   There seems to be an issue with unmounting rights, so you will still need root rights if you need to unmount the filesystem. You can also use `fusermount -u /mnt/*mountpoint*` to unmount the filesystem without root rights. Also, if you use the `*users*` option (plural) in `/etc/fstab` instead of the `user` option, you will be able to both mount and unmount the filesystem using the `mount` and `umount` commands.
+
+For non-blockfiles like normal images, *ntfs-3g* on the command-line should work out-of-the-box with normal user privillages as the underlying FUSE calls are redirected to the setuid-root *fusermount* when direct kernel interaction is unavailable. If it does not work for you, run `ls -l /usr/bin/fusermount`; if the first field is not `-rwsr-xr-x`, it means the setuid bit is gone and has to be reset by `chmod u+s /usr/bin/fusermount`.
 
 ## Resizing NTFS partition
 

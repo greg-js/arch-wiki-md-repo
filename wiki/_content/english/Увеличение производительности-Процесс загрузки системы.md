@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Improving performance/Boot process (Русский)](/index.php/Improving_performance/Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Improving performance/Boot process (Русский)")
+*   [Improving performance/Boot process](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")

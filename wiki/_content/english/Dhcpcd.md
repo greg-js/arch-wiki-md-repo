@@ -34,9 +34,10 @@ Related articles
     *   [6.3 Problems with noncompliant routers](#Problems_with_noncompliant_routers)
     *   [6.4 dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces)
     *   [6.5 Timeout delay](#Timeout_delay)
-*   [7 Known issues](#Known_issues)
-    *   [7.1 dhcpcd@.service causes slow startup](#dhcpcd@.service_causes_slow_startup)
-*   [8 See also](#See_also)
+*   [7 Core dumps and few debugging hints](#Core_dumps_and_few_debugging_hints)
+*   [8 Known issues](#Known_issues)
+    *   [8.1 dhcpcd@.service causes slow startup](#dhcpcd@.service_causes_slow_startup)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -337,6 +338,57 @@ To have it wait indefinitely, let the unit restart after it exited:
 [Service]
 Restart=always
 ```
+
+## Core dumps and few debugging hints
+
+In general, dhcpcd [core dump](/index.php/Core_dump "Core dump") are likely without debugging symbols. Which is a severe limitation on their usefulness. With dhcpcd 8.0.6-1, pacman 5.1.3-1, and assuming
+
+*   You are able to reproduce the issue and rebuild the package from source.
+*   It is not already reported.
+
+it is better to add these symbols as follows:
+
+Obtain the source. In order to be able to get debugging symbols from the core file, [patch](/index.php/Patching_packages#applying_patches "Patching packages") PKGBUILD with something like
+
+**Note:** Although most of this paragraph is applicable to lot of packages, adding --debug, as in this patch, is not.
+
+```
+--- a/PKGBUILD    2019-10-14 15:39:54.891198157 +0000
++++ b/PKGBUILD    2019-10-14 15:44:08.967557423 +0000
+@@ -4,7 +4,7 @@
+
+ pkgname=dhcpcd
+ pkgver=8.0.6
+-pkgrel=1
++pkgrel=999
+ pkgdesc="RFC2131 compliant DHCP client daemon"
+ url="[https://roy.marples.name/projects/dhcpcd/](https://roy.marples.name/projects/dhcpcd/)"
+ arch=('x86_64')
+@@ -13,7 +13,7 @@
+ optdepends=('openresolv: resolvconf support')
+ provides=('dhcp-client')
+ backup=('etc/dhcpcd.conf')
+-options=('emptydirs')  # We Need the Empty /var/lib/dhcpcd Directory
++options=('emptydirs' 'debug' '!strip')  # We Need the Empty /var/lib/dhcpcd Directory
+ source=("[https://roy.marples.name/downloads/$pkgname/$pkgname-$pkgver.tar.xz](https://roy.marples.name/downloads/$pkgname/$pkgname-$pkgver.tar.xz)"
+         'dhcpcd_.service'
+         'dhcpcd.service')
+@@ -32,7 +32,8 @@
+@@ -32,7 +32,8 @@
+       --sbindir=/usr/bin \
+       --libexecdir=/usr/lib/dhcpcd \
+       --dbdir=/var/lib/dhcpcd \
+-      --rundir=/run
++      --rundir=/run \
++      --debug
+
+   # Build
+   make
+```
+
+For more debugging, it might be better to add `-debug` to the [pkgname](/index.php/PKGBUILD#pkgname "PKGBUILD") and [conflicts](/index.php/PKGBUILD#conflicts "PKGBUILD") and [provides](/index.php/PKGBUILD#provides "PKGBUILD") dhcpcd. However, in case of a core dump, hopefully the core will point to the few lines in the source where the failure is. So when a newer [pkgver](/index.php/PKGBUILD#pkgver "PKGBUILD") will turn out, it will both solves the problem, and get installed without a lot of manual intervention.
+
+Build, and install, your package. Once it dumps core, [back trace](/index.php/Debug_-_Getting_Traces#getting_the_trace "Debug - Getting Traces") with `/usr/bin/dhcpcd` and the core file by a debugger such [gdb](https://www.archlinux.org/packages/?name=gdb). After [reporting](/index.php/Bug_reporting_guidelines "Bug reporting guidelines") the bug, you might want to [downgrade](/index.php/Downgrade "Downgrade") the package to get a working system.
 
 ## Known issues
 

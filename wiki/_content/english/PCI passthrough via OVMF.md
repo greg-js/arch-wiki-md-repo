@@ -315,6 +315,7 @@ However, you should pay special attention to the following steps :
 *   In the "Overview" section, [set your firmware to "UEFI"](https://i.imgur.com/73r2ctM.png). If the option is grayed out, make sure that:
     *   You have correctly specified the location of your firmware in `/etc/libvirt/qemu.conf` and restart `libvirtd.service`.
     *   Your hypervisor is running as a system session and not a user session. This can be verified [by clicking, then hovering](https://i.ibb.co/N1XZCdp/Deepin-Screenshot-select-area-20190125113216.png) over the session in virt-manager. If you are accidentally running it as a user session, you must open a new connection by clicking "File" > "Add Connection..", then select the option from the drop-down menu station "QEMU/KVM" and not "QEMU/KVM user session".
+    *   It could be a libvirt bug, check out this forum thread for more information: [https://bbs.archlinux.org/viewtopic.php?pid=1869349](https://bbs.archlinux.org/viewtopic.php?pid=1869349)
 *   In the "CPUs" section, change your CPU model to "host-passthrough". If it is not in the list, you will have to type it by hand. This will ensure that your CPU is detected properly, since it causes libvirt to expose your CPU capabilities exactly as they are instead of only those it recognizes (which is the preferred default behavior to make CPU behavior easier to reproduce). Without it, some applications may complain about your CPU being of an unknown model.
 *   If you want to minimize IO overhead, go into "Add Hardware" and add a Controller for SCSI drives of the "VirtIO SCSI" model. You can then change the default IDE disk for a SCSI disk, which will bind to said controller.
     *   Windows VMs will not recognize those drives by default, so you need to download the ISO containing the drivers from [here](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/) and add an IDE (or SATA for Windows 8.1 and newer) CD-ROM storage device linking to said ISO, otherwise you will not be able to get Windows to recognize it during the installation process. When prompted to select a disk to install windows on, load the drivers contained on the CD-ROM under *vioscsi*.
@@ -406,7 +407,7 @@ Next startup the guest OS and install the virtIO drivers for those devices.
 
 #### Using a non-EFI image on an OVMF-based VM
 
-The OVMF firmware does not support booting off non-EFI mediums. If the installation process drops you in a UEFI shell right after booting, you may have an invalid EFI boot media. Try using an alternate linux/windows image to determine if you have an invalid media.
+The OVMF firmware does not support booting off non-EFI mediums. If the installation process drops you in a UEFI shell right after booting, you may have an invalid EFI boot media. Try using an alternate Linux/Windows image to determine if you have an invalid media.
 
 ## Performance tuning
 

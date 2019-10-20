@@ -2752,6 +2752,10 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 	[https://github.com/google/guetzli](https://github.com/google/guetzli) || [guetzli](https://www.archlinux.org/packages/?name=guetzli)
 
+*   **ImCompressor** — Simple and lossless image compressor. (GUI for optipng)
+
+	[https://github.com/Huluti/ImCompressor](https://github.com/Huluti/ImCompressor) || [imcompressor](https://aur.archlinux.org/packages/imcompressor/)
+
 *   **jpegoptim** — JPEG optimization utility providing lossless and lossy compression.
 
 	[http://www.kokkonen.net/tjko/projects.html#jpegoptim](http://www.kokkonen.net/tjko/projects.html#jpegoptim) || [jpegoptim](https://www.archlinux.org/packages/?name=jpegoptim)
@@ -5965,10 +5969,6 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 *   **alsi** — A system information tool for Arch Linux. It can be configured for every other system without even touching the source code of the script.
 
 	[http://trizenx.blogspot.ro/2012/08/alsi.html](http://trizenx.blogspot.ro/2012/08/alsi.html) || [alsi](https://aur.archlinux.org/packages/alsi/)
-
-*   **archey2** — Simple python script that displays the arch logo and some basic information. Python 2.x version.
-
-	[https://github.com/djmelik/archey](https://github.com/djmelik/archey) || [archey2](https://aur.archlinux.org/packages/archey2/)
 
 *   **[archey3](/index.php/Archey3 "Archey3")** — Python script to display system infomation alongside the Arch Linux logo.
 

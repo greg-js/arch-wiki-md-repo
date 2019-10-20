@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Stap 1](#Stap_1)
 *   [2 Installatie](#Installatie)
@@ -55,7 +59,13 @@ Nu volgen de specifieke detail voor elke driver, onthoud dat je het beste even d
 
 #### wlan-ng
 
- `pacman -S wlan-ng24` voor de Linux 2.4 kernel of `pacman -S wlan-ng26` voor de 2.6 kernel
+ `pacman -S wlan-ng24` 
+
+voor de Linux 2.4 kernel of
+
+ `pacman -S wlan-ng26` 
+
+voor de 2.6 kernel
 
 #### rt2x00
 
@@ -66,7 +76,12 @@ Zie de [rt2x00 wiki page](/index.php/Using_the_new_rt2x00_beta_driver "Using the
 [AUR PKGBUILD](https://aur.archlinux.org/packages.php?do_Details=1&ID=785)
 **Let op:**Madwifi-ng zit nu in de unstable package-repository. Je kunt dus gewoon de unstable repository gebruik in plaats van de pkgbuild..
 
-**Let op:**Als je Madwifi drivers van voor Januari 23, 2006 gebruik, moet je de interface opgeven die je wilt gebruiken. Recentere versies hebben dit niet nodig, en dus kun je doorgaan naar ifconfig. Deze stap is door de meeste andere drivers niet nodig hebben. Als je van je wifi0 , ath0 wil maken, moet je het volgende commando uitvoeren: `wlanconfig ath0 create wlandev wifi0 wlanmode sta` Natuurlijk gevolgd door de volgende commando's:
+**Let op:**Als je Madwifi drivers van voor Januari 23, 2006 gebruik, moet je de interface opgeven die je wilt gebruiken. Recentere versies hebben dit niet nodig, en dus kun je doorgaan naar ifconfig. Deze stap is door de meeste andere drivers niet nodig hebben. Als je van je wifi0 , ath0 wil maken, moet je het volgende commando uitvoeren:
+
+ `wlanconfig ath0 create wlandev wifi0 wlanmode sta` 
+
+Natuurlijk gevolgd door de volgende commando's:
+
 ```
 ifconfig ath0 up
 iwconfig ath0 essid <jouw-essid> key <jouw-wep-key>
@@ -163,7 +178,7 @@ depmod -a
 
 Nu zijn we bijna klaar met installeren, alleen nog je /etc/rc.conf aanpassen, zodat hij de module tijdens het booten laad (hier beneden een voorbeeld van mijn config, die van jou zou er anders uit kunnen zijn):
 
- `MODULES=(ndiswrapper snd-intel8x0 !usbserial)` 
+ `MODULES=(ndiswrapper snd-intel8x0 !usbserial)` 
 
 het is belangrijk dat ndiswrapper in deze lijn staat. Nu kun je testen of ndiswrapper laad:
 
@@ -205,7 +220,7 @@ Extra: het is ook mogelijk de driver te compileren in de kernel tree. Hoe dit mo
 
 De gebruikers van Broadcom die de 43xx reeks chipsets hebben, beschikken over een nieuw alternatief voor ndiswrapper! Eindelijk! In kernel versie 2.6.17, werd de driver bcm43xx geïntroduceerd, en ze hebben het je wel heel makkelijk gemaakt!
 
-1.  Voer uit `iwconfig` of `hwd -s` om te bepalen dat je een aangewezen kaart hebt. Mijn 'output' van hwd - s zag er zo uit: `Network    : Broadcom Corp.|BCM94306 802.11g NIC module: unknown` 
+1.  Voer uit `iwconfig` of `hwd -s` om te bepalen dat je een aangewezen kaart hebt. Mijn 'output' van hwd - s zag er zo uit: `Network    : Broadcom Corp.|BCM94306 802.11g NIC module: unknown` 
 2.  Voer uit `pacman -S bcm43xx-fwcutter` om de firmware cutter te installeren.
 3.  Download de windows driver voor jouw netwerkkaart om de firmware te extrahere.
     *   I initially downloaded the driver from Dell's support site. When that didn't work I found a link on the Ubuntu Wiki and used that file instead: [[2]](http://drinus.net/airport/wl_apsta.o). I just saved this file to my desktop, you won't need it after the next step.

@@ -203,7 +203,7 @@ install CD version
 | Lenovo ThinkPad X270 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
 | Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (Fibcom L830-EB-00) | Webcam (Yes) |
 | Lenovo ThinkPad X390 | 2019.08.01 | Yes | Yes | Yes | Yes | Not tested | Yes | Yes (Fibocom L830-EB) | Webcam (Yes) |
-| Lenovo ThinkPad X395 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Webcam (Yes), Fingerprint(No, WIP[[1]](https://forums.lenovo.com/t5/Other-Linux-Discussions/Linux-on-T495/m-p/4474320#M13440)) |
+| Lenovo ThinkPad X395 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Webcam (Yes), Fingerprint(No, WIP[[1]](https://forums.lenovo.com/t5/Other-Linux-Discussions/Linux-on-T495/m-p/4474320#M13440)) | Prevent amdgpu issues by updating to latest BIOS [[2]](https://support.lenovo.com/us/en/downloads/ds540046) |
 | [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon") | NA | Yes | Yes | Yes | Yes | Proprietary/nonfree | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -333,7 +333,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo Legion Y520 | 2019.06.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not working properly), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested June 2019 / Linux 5.1.9\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
-| Lenovo Legion Y520 | ??? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 (Yes) | Tested June 2019 / Linux 5.1.5\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. Some CPU throttling is possible [[2]](https://unix.stackexchange.com/questions/491944/cpu-temperatures-in-linux-throttling-or-wrong-reading). Fan control does not seem to work [[3]](https://unix.stackexchange.com/questions/523899/laptop-fan-always-says-its-running-at-8-rpm) |
+| Lenovo Legion Y520 | ??? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 (Yes) | Tested June 2019 / Linux 5.1.5\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. Some CPU throttling is possible [[3]](https://unix.stackexchange.com/questions/491944/cpu-temperatures-in-linux-throttling-or-wrong-reading). Fan control does not seem to work [[4]](https://unix.stackexchange.com/questions/523899/laptop-fan-always-says-its-running-at-8-rpm) |
 | Lenovo Legion Y730 | ??? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested September 2019 / Linux 5.2.13\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. Disable nouveau at kernel command line with module_blacklist=nouveau or nouveau.modeset=0 |
 | Lenovo Legion Y7000P-1060 | 2019.03.01 | Yes | Yes | Yes | Yes | Yes | Yes | No | Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Yes), Mini DisplayPort (Not tested), Touchpad (Yes), NVMe SSD (Yes), GeForce GTX 1060 Mobile (Yes) | First tested Aug 2019 / Linux 5.2.9.
 
@@ -366,7 +366,7 @@ With packages [linux](https://www.archlinux.org/packages/?name=linux) 4.6.1-2 an
 
 When you install an SSD in the place of the plate HDD drive and you want to have your HDD still inside the laptop, it is possible to install it in the place of the optical drive in a special "HDD caddy". The optical drive is of 9 mm height, but a 9,5 mm caddy (ultra slim) fits in the slot. A caddy with a SATA interface is needed. It is difficult to separate the front bezel from the original optical drive (and opening its case does not help, but brings a danger of making a mess in the opening mechanism; the only option is just to pull the bezel using a bit of force, but you risk breaking the latches).
 
-While the HDD installed instead of the optical drive operates flawlessly in Windows, it was not going to work out of the box in Linux, at least in one case. The kernel tries to establish a connection with the disk, but fails to do it (*SATA link down* entry in /var/log/messages). The solution is to force a 1.5 Gbps transfer speed (instead of 6 Gbps) by adding a *libata.force=* kernel parameter. See [[4]](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for details.
+While the HDD installed instead of the optical drive operates flawlessly in Windows, it was not going to work out of the box in Linux, at least in one case. The kernel tries to establish a connection with the disk, but fails to do it (*SATA link down* entry in /var/log/messages). The solution is to force a 1.5 Gbps transfer speed (instead of 6 Gbps) by adding a *libata.force=* kernel parameter. See [[5]](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for details.
 
 ### Lenovo K450e
 
@@ -422,7 +422,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 ### Lenovo S21e-20
 
 *   Tested with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) 802.11 wireless driver
-*   Synaptics touchpad required 3 patches to [linux](https://www.archlinux.org/packages/?name=linux):drivers/hid/hid-rmi.c on 2015-07-26 ([bug report](https://bugs.freedesktop.org/show_bug.cgi?id=91102), [kernel recipe patch](https://github.com/harisokanovic/archlinux-packages/commit/f4550c211ca7809ecf926f8074c7b7250a74bd92)). The current 4.3 kernel includes these patches. You will also need to install the xf86_64-input-synaptics package([[5]](https://www.archlinux.org/packages/?name=xf86-input-synaptics))
+*   Synaptics touchpad required 3 patches to [linux](https://www.archlinux.org/packages/?name=linux):drivers/hid/hid-rmi.c on 2015-07-26 ([bug report](https://bugs.freedesktop.org/show_bug.cgi?id=91102), [kernel recipe patch](https://github.com/harisokanovic/archlinux-packages/commit/f4550c211ca7809ecf926f8074c7b7250a74bd92)). The current 4.3 kernel includes these patches. You will also need to install the xf86_64-input-synaptics package([[6]](https://www.archlinux.org/packages/?name=xf86-input-synaptics))
 
 #### tpacpi-bat
 

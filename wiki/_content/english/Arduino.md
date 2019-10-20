@@ -309,7 +309,7 @@ Try installing its driver: [i2c-ch341-dkms](https://aur.archlinux.org/packages/i
 
 ### Application not resizing with WM, menus immediately closing
 
-see [Java#Gray window | Applications not resizing with WM | menus immediately closing](/index.php/Java#Gray_window_|_Applications_not_resizing_with_WM_|_menus_immediately_closing "Java")
+see [Java#Gray window, applications not resizing with WM, menus immediately closing](/index.php/Java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing "Java")
 
 ## See also
 

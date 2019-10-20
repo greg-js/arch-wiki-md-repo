@@ -219,7 +219,7 @@ exec bspwm
 
 ### Проблемы с приложениями Java
 
-Если у вас есть проблемы, например окно приложения Java неменяет размер, или меню закрыввется после щелчка, смотрите [Java#Gray window | Applications not resizing with WM | menus immediately closing](/index.php/Java#Gray_window_|_Applications_not_resizing_with_WM_|_menus_immediately_closing "Java").
+Если у вас есть проблемы, например окно приложения Java неменяет размер, или меню закрыввется после щелчка, смотрите [Java#Gray window, applications not resizing with WM, menus immediately closing](/index.php/Java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing "Java").
 
 ### Проблемы, связанные с использованием назначения клавиш fish
 

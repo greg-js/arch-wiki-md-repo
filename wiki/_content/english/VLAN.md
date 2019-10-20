@@ -8,7 +8,11 @@ Virtual LANs give you the ability to sub-divide a LAN. Linux can accept **VLAN**
 
 This article explains how to configure a VLAN using [iproute2](https://www.archlinux.org/packages/?name=iproute2) and [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [netctl](/index.php/Netctl "Netctl").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instant Configuration](#Instant_Configuration)
     *   [1.1 Create the VLAN device](#Create_the_VLAN_device)

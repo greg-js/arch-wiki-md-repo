@@ -456,6 +456,15 @@ The storage can now be mounted with:
 
 ```
 
+For VDI Disks with more partitions you can also use `losetup`
+
+```
+# losetup -o $offData -Pf
+
+```
+
+After this you should find the partitions under `/dev/loop*` (e.g. `/dev/loop0p1`). Then you can mount them as usual (e.g. `mount mount /dev/loop0p1 /mnt/`).
+
 You can also use [mount.vdi](https://github.com/pld-linux/VirtualBox/blob/master/mount.vdi) script that, which you can use as (install script itself to `/usr/bin/`):
 
 ```

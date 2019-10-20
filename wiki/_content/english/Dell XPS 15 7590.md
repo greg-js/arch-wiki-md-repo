@@ -215,6 +215,8 @@ LC_NUMERIC="en_US.UTF-8"
 # modify this path to the location of your backlight class
 path=/sys/class/backlight/intel_backlight
 
+read -r max < "$path"/max_brightness
+
 luminance() {
     read -r level < "$path"/actual_brightness
     factor=$((max))
@@ -223,12 +225,10 @@ luminance() {
 ' $new_brightness
 }
 
-read -r max < "$path"/max_brightness
-
-xrandr --output eDP-1 --brightness "$(luminance)"
+xrandr --output eDP-1-1 --brightness "$(luminance)"
 
 inotifywait -me modify --format '' "$path"/actual_brightness | while read; do
-    xrandr --output eDP-1 --brightness "$(luminance)"
+    xrandr --output eDP-1-1 --brightness "$(luminance)"
 done
 
 ```

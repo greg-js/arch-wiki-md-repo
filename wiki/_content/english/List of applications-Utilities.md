@@ -1600,10 +1600,6 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 	[http://trizenx.blogspot.ro/2012/08/alsi.html](http://trizenx.blogspot.ro/2012/08/alsi.html) || [alsi](https://aur.archlinux.org/packages/alsi/)
 
-*   **archey2** — Simple python script that displays the arch logo and some basic information. Python 2.x version.
-
-	[https://github.com/djmelik/archey](https://github.com/djmelik/archey) || [archey2](https://aur.archlinux.org/packages/archey2/)
-
 *   **[archey3](/index.php/Archey3 "Archey3")** — Python script to display system infomation alongside the Arch Linux logo.
 
 	[https://lclarkmichalek.github.io/archey3](https://lclarkmichalek.github.io/archey3) || [archey3](https://www.archlinux.org/packages/?name=archey3)

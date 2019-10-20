@@ -7,7 +7,11 @@ Articoli correlati
 
 La configurazione dei dispositivi wireless è un processo suddiviso in due parti: innanzitutto occorre identificare la propria scheda di rete wireless e assicurarsi che i relativi driver (reperibili sull'immagine di installazione) siano caricati, quindi occorre configurarla. La seconda parte consiste nella scelta di un metodo di gestione delle connessioni wireless. Questa pagina coprirà entrambi i punti e fornirà link aggiuntivi ai vari tool di gestione.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Drivers](#Drivers)
     *   [1.1 Verificare se il driver per la propria periferica è stato caricato](#Verificare_se_il_driver_per_la_propria_periferica_è_stato_caricato)
@@ -369,6 +373,7 @@ Indipendentemente dal metodo utilizzato, è possibile verificare l'avvenuta asso
 #### Ottenere un indirizzo IP
 
 **Nota:** Si legga la pagina [Configuring Network (Italiano)#Configurare l'indirizzo IP](/index.php/Configuring_Network_(Italiano)#Configurare_l'indirizzo_IP "Configuring Network (Italiano)") per ulteriori esempi.
+
 .
 
 Infine, associate la vostra interfaccia di rete ad un indirizzo IP. Alcuni semplici esempi:

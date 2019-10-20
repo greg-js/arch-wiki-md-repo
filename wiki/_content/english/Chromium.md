@@ -104,16 +104,11 @@ Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") can be use
 
 Be sure to install correct VA-API driver for your video card and verify VA-API has been enabled and working correctly, see [Hardware video acceleration#Verifying VA-API](/index.php/Hardware_video_acceleration#Verifying_VA-API "Hardware video acceleration").
 
-To enable video acceleration, [append](/index.php/Append "Append") the following flags to [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"):
-
- `~/.config/chromium-flags.conf` 
-```
---enable-accelerated-mjpeg-decode
---enable-accelerated-video
-
-```
+To enable video acceleration, [append](/index.php/Append "Append") the `--ignore-gpu-blacklist` flag to [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks")
 
 **Note:** Additionally [#Force GPU acceleration](#Force_GPU_acceleration) and set `--disable-gpu-driver-bug-workarounds` to remove video freezes (especially when watching in fullscreen).
+
+If you keep seeing some issues during playback, try to set also `--use-gl=egl` option.
 
 To check if it's working play a video which is using a codec supported by your VA-API driver (vainfo tell you which codecs are supported) go to chrome://media-internals/ and check video_decoder :
 

@@ -26,7 +26,7 @@ ThinkPad X1 Carbon 7th
 | Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
 | Mobile broadband Fibocom | No¹ | ? |
 | Audio | Yes | snd_hda_intel |
-| Microphone | Yes⁴ | snd_hda_intel |
+| Microphone | Yes⁴ | snd_sof, snd_sof_intel_hda |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |
@@ -40,7 +40,7 @@ ThinkPad X1 Carbon 7th
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
 2.  An official driver and a reverse engineered driver are in the works [[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) (*06cb:00bd*).
 3.  S3 suspend requires changes to BIOS settings, see section on [enabling S3](#Enabling_S3).
-4.  The internal microphone doesn't work on versions of the [linux](https://www.archlinux.org/packages/?name=linux) kernel before 5.3\. On versions newer than 5.3 the SOF firmware can be enabled to fix this see [Talk#Microphone](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
+4.  The internal microphone doesn't work on versions of the [linux](https://www.archlinux.org/packages/?name=linux) kernel before 5.3\. On version 5.3 and newer the SOF firmware can be enabled, see [Talk#Microphone](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
 
  |
 
@@ -55,10 +55,9 @@ ThinkPad X1 Carbon 7th
     *   [2.1 Updates](#Updates)
         *   [2.1.1 Automatic (Linux Vendor Firmware Service)](#Automatic_(Linux_Vendor_Firmware_Service))
         *   [2.1.2 Manual (fwupdmgr)](#Manual_(fwupdmgr))
-    *   [2.2 Enabling S3](#Enabling_S3)
-    *   [2.3 Verifying S3](#Verifying_S3)
-    *   [2.4 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
-    *   [2.5 BIOS configurations](#BIOS_configurations)
+    *   [2.2 Sleep/Suspend](#Sleep/Suspend)
+    *   [2.3 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
+    *   [2.4 BIOS configurations](#BIOS_configurations)
 *   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
     *   [3.1 throttled](#throttled)
     *   [3.2 Touchpad TLP fix](#Touchpad_TLP_fix)
@@ -140,20 +139,9 @@ Lenovo may in the future provide cabinet files that can be directly installed wi
 5.  Restart the system.
 6.  The computer will be restarted and the UEFI BIOS will be updated.
 
-### Enabling S3
+### Sleep/Suspend
 
-To enable S3 support, make sure you go into the BIOS configuration, and `Config -> Power -> Sleep State - Set to "Linux"`. This should make S3 available. To verify, after making the changes in the BIOS configuration, boot into Linux, and run the `dmesg` command again to make sure that S3 is now available.
-
-### Verifying S3
-
-To check whether S3 is recognized and usable by Linux, run:
-
-```
-dmesg | grep -i "acpi: (supports"
-
-```
-
-and check for `S3` in the list.
+The BIOS has two "Sleep State" options, Windows and Linux, which you can find in at `Config -> Power -> Sleep State`. The Linux option is the traditional S3 power state where all hardware components are turned off except for the RAM, and it should work normally. The Windows option is a newer software-based "modern standby" which works on Linux (despite the name). One possible benefit to the Windows sleep state is faster wake up time, and one possible drawback is increased power usage.
 
 ### S3 Suspend Bug with Bluetooth Devices
 
@@ -219,7 +207,9 @@ NoUpgrade = usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common
 
 ### Microphone
 
-On kernel 5.2, the internal microphone is detected but [no audio is captured](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting"). This can be fixed with [linux](https://www.archlinux.org/packages/?name=linux) kernel 5.3 which includes the [SOF](https://github.com/thesofproject/sof) audio firmware. Instructions are available on the Lenovo [forums](https://forums.lenovo.com/lnv/attachments/lnv/lx02_en/3061/1/sof-driver-guide.docx).
+On kernel up to 5.2, the internal microphones are detected but [no audio is captured](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting"). Unfortunately even on the 5.3 kernels, the microphones still don't work out of the box.
+
+You might be able to get the microphones working by following the instructions in this [docx file](https://forums.lenovo.com/lnv/attachments/lnv/lx02_en/3061/1/sof-driver-guide.docx) from the Lenovo Forums. Also check out [this post](https://bbs.archlinux.org/viewtopic.php?id=249900) from the Arch Forums.
 
 ## Disabling red LED in ThinkPad logo
 
@@ -271,3 +261,5 @@ WantedBy=multi-user.target
 *   [Dell XPS 13 9370 quirks](https://gist.github.com/greigdp/bb70fbc331a0aaf447c2d38eacb85b8f): Some pointers on getting Watt usage down to ~2W, Intel video powersaving features might be interesting, see also the [Intel graphics](/index.php/Intel_graphics "Intel graphics") page for interesting power-saving options.
 *   [Intel Blog: Best practice to debug Linux* suspend/hibernate issues](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues), including the [pm-graph](https://github.com/01org/pm-graph) tool to analyze power usage during suspend
 *   [How to fix volume control (ALSA problem)](https://forums.linuxmint.com/viewtopic.php?t=91453) This is where the volume fix came from originally.
+*   [Windows System Power States](https://docs.microsoft.com/en-us/windows/win32/power/system-power-states)
+*   [System Power Management Sleep States at kernel.org](https://www.kernel.org/doc/Documentation/power/states.txt)

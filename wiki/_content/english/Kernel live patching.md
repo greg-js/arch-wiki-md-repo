@@ -12,7 +12,11 @@ Kernel Live Patching (KLP) allows quick fixes to the kernel space without reboot
 
 Some projects provide the live patching utilities before KLP was officially supported, such as Oracle's ksplice, SuSE's [#kGraft](#kGraft), and RedHat's [#kpatch](#kpatch). They implemented the KLP functionality in different ways. The minimalistic functional set of patches entered mainstream kernel were derived from kpatch and kGraft.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 kpatch](#kpatch)
     *   [1.1 Installation](#Installation)
@@ -24,7 +28,7 @@ Some projects provide the live patching utilities before KLP was officially supp
 
 ### Installation
 
-Install [linux-kpatch](https://aur.archlinux.org/packages/linux-kpatch/) for an appropriate kernel and [kpatch-git](https://aur.archlinux.org/packages/kpatch-git/) for userspace tools.
+Install [kpatch](https://aur.archlinux.org/packages/kpatch/) for an appropriate kernel and [kpatch-git](https://aur.archlinux.org/packages/kpatch-git/) for userspace tools.
 
 You can also manually build a kernel that supports kpatch usage, by enabling `CONFIG_LIVEPATCH`, `CONFIG_DEBUG_INFO`, and `CONFIG_KALLSYMS`.
 

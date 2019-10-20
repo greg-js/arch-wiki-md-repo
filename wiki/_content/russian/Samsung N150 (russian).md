@@ -1,6 +1,10 @@
 Эта статья описывает установку и настройку 64х-битной версии Arch Linux на нетбук Samsung N150\. Согласно выводу dmidecode, эта статья также может быть полезной для моделей N210 и N220.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Обзор комплектующих](#Обзор_комплектующих)
 *   [2 Установка](#Установка)
@@ -135,18 +139,18 @@ case "$1" in
            var2=`echo "ibase=10; obase=16; a=($var1d+$AMOUNT); if (a<255) print a else print 255" | bc`
            echo "$0: яркость увеличена с 0x$var1 до 0x$var2"
            setpci -s $DEVICE F4.B=$var2
-           ;;
+           ;;
        down)
            #calculate new brightness
            var2=`echo "ibase=10; obase=16; a=($var1d-$AMOUNT);if (a>$MIN) print a else print $MIN" | bc`
            echo "$0: яркость уменьшена с 0x$var1 до 0x$var2"
            setpci -s $DEVICE F4.B=$var2
-           ;;
+           ;;
        set)
            # "set" позволяет выставить яркость в 0, т.е. выключить подсветку
            echo "$0: установка яркости в 0x$2"
            setpci -s $DEVICE F4.B=$2
-           ;;
+           ;;
        toggle)
            if [ $var1d -eq 0 ] ; then
                echo "повышение яркости"
@@ -155,11 +159,11 @@ case "$1" in
                echo "уменьшение яркости"
                setpci -s $DEVICE F4.B=0
            fi
-           ;;
+           ;;
        *)
            echo "использование: $0 {up|down|set <val>|toggle}"
            echo "$0: текущая яркость - 0x$var1"
-           ;;
+           ;;
 esac
 exit 0
 
@@ -201,14 +205,14 @@ state=Unknown
 case "$1" in
    on)
       state="включен"
-      ;;
+      ;;
    off)
       state="отключен"
-      ;;
+      ;;
    *)
       echo "Использование: $0 {on|off}"
       exit 2
-      ;;
+      ;;
 esac
 
 osd_cat -A center -p middle -f $FONT -d $DELAY << EOF
@@ -379,7 +383,7 @@ initrd /kernel26.img
 Заставить демонов грузиться в фоне немного сложнее, учитывая, что один демон может зависить от одного или нескольких других. Тем не менее, можно использовать преимущество известных "задержек" в процессе загрузки (напр. запуск подсистемы X11), что позволяет некоторым демонам (таких как NetworkManager) спокойно запускаться в фоне, перед тем как они действительно понадобятся.
 
 ```
-DAEMONS=(syslog-ng !network hal @networkmanager @sensors @alsa !netfs @crond)
+DAEMONS=(syslog-ng !network hal @networkmanager @sensors @alsa !netfs @crond)
 
 ```
 

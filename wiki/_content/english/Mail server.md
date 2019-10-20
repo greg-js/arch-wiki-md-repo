@@ -36,6 +36,10 @@ A mail server consists of multiple components. A [mail transfer agent](https://e
 
 All of these software except Sendmail include a mail delivery agent.
 
+*   **[dma](/index.php/Dma "Dma")** — Tiny mail transport agent.
+
+	[https://github.com/corecode/dma](https://github.com/corecode/dma) || [dma](https://aur.archlinux.org/packages/dma/)
+
 *   **[Exim](/index.php/Exim "Exim")** — A highly configurable mail transfer agent.
 
 	[https://exim.org/](https://exim.org/) || [exim](https://www.archlinux.org/packages/?name=exim)

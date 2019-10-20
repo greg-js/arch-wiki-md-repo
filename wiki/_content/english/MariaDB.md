@@ -15,15 +15,16 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Add user](#Add_user)
-    *   [2.2 Configuration files](#Configuration_files)
-    *   [2.3 Grant remote access](#Grant_remote_access)
-    *   [2.4 Disable remote access](#Disable_remote_access)
-    *   [2.5 Enable auto-completion](#Enable_auto-completion)
-    *   [2.6 Using UTF8MB4](#Using_UTF8MB4)
-    *   [2.7 Increase character limit](#Increase_character_limit)
-    *   [2.8 Using a TMPFS for tmpdir](#Using_a_TMPFS_for_tmpdir)
-    *   [2.9 Time zone tables](#Time_zone_tables)
+    *   [2.1 Improve security](#Improve_security)
+    *   [2.2 Add user](#Add_user)
+    *   [2.3 Configuration files](#Configuration_files)
+    *   [2.4 Grant remote access](#Grant_remote_access)
+    *   [2.5 Disable remote access](#Disable_remote_access)
+    *   [2.6 Enable auto-completion](#Enable_auto-completion)
+    *   [2.7 Using UTF8MB4](#Using_UTF8MB4)
+    *   [2.8 Increase character limit](#Increase_character_limit)
+    *   [2.9 Using a TMPFS for tmpdir](#Using_a_TMPFS_for_tmpdir)
+    *   [2.10 Time zone tables](#Time_zone_tables)
 *   [3 Database maintenance](#Database_maintenance)
     *   [3.1 Upgrade databases on major releases](#Upgrade_databases_on_major_releases)
     *   [3.2 Checking, optimizing and repairing databases](#Checking,_optimizing_and_repairing_databases)
@@ -57,7 +58,7 @@ Related articles
 Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards run the following command **before starting** the `mariadb.service`:
 
 ```
-# mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+# mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
 ```
 
@@ -66,13 +67,6 @@ Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards 
 Now the `mariadb.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
 
 **Tip:** If you use something different from `/var/lib/mysql` for your data dir, you need to set `datadir=<YOUR_DATADIR>` under section `[mysqld]` of your `/etc/my.cnf.d/server.cnf`.
-
-The following command will interactively guide you through a number of recommended security measures at the database level:
-
-```
-# mysql_secure_installation
-
-```
 
 To simplify administration, you might want to install a [front-end](/index.php/MySQL#Graphical_tools "MySQL").
 
@@ -84,6 +78,15 @@ To log in as `root` on the MySQL server, use the following command:
 
 ```
 $ mysql -u root -p
+
+```
+
+### Improve security
+
+The `mysql_secure_installation` command will interactively guide you through a number of recommended security measures at the database level:
+
+```
+# mysql_secure_installation
 
 ```
 
@@ -108,7 +111,7 @@ MariaDB> quit
 
 ```
 
-Depending on the scope of the changes you want to make (system-wide, user-only...), use the corresponding file. See [this entry](https://mariadb.com/kb/en/mariadb/documentation/getting-started/starting-and-stopping-mariadb/mysqld-configuration-files-and-groups/) of the KnowledgeBase for more information.
+Depending on the scope of the changes you want to make (system-wide, user-only...), use the corresponding file. See [this entry](https://mariadb.com/kb/en/library/configuring-mariadb-with-option-files/) of the Knowledge Base for more information.
 
 ### Grant remote access
 
@@ -169,7 +172,10 @@ The MySQL client completion feature is disabled by default. To enable it system-
 
 **Warning:** Before changing the character set be sure to create a backup first.
 
-**Note:** UTF8MB4 is recommended over UTF-8 since it allows full Unicode support [[2]](https://mathiasbynens.be/notes/mysql-utf8mb4) [[3]](https://stackoverflow.com/questions/30074492/what-is-the-difference-between-utf8mb4-and-utf8-charsets-in-mysql).
+**Note:**
+
+*   The [mariadb](https://www.archlinux.org/packages/?name=mariadb) package already uses `utf8mb4` as charset and `utf8mb4_unicode_ci` as collation. Users using the default (character) settings may want to skip this section.
+*   UTF8MB4 is recommended over UTF-8 since it allows full Unicode support [[2]](https://mathiasbynens.be/notes/mysql-utf8mb4) [[3]](https://stackoverflow.com/questions/30074492/what-is-the-difference-between-utf8mb4-and-utf8-charsets-in-mysql).
 
 [Append](/index.php/Append "Append") the following values to the main configuration file located at `/etc/mysql/my.cnf`:
 

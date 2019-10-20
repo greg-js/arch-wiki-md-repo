@@ -1,21 +1,25 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 介绍](#.E4.BB.8B.E7.BB.8D)
-*   [2 风格](#.E9.A3.8E.E6.A0.BC)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 介绍](#介绍)
+*   [2 风格](#风格)
     *   [2.1 QtCurve](#QtCurve)
-    *   [2.2 其它](#.E5.85.B6.E5.AE.83)
-*   [3 主题引擎](#.E4.B8.BB.E9.A2.98.E5.BC.95.E6.93.8E)
+    *   [2.2 其它](#其它)
+*   [3 主题引擎](#主题引擎)
     *   [3.1 GTK-QT-Engine](#GTK-QT-Engine)
     *   [3.2 MetaTheme](#MetaTheme)
-*   [4 其它策略](#.E5.85.B6.E5.AE.83.E7.AD.96.E7.95.A5)
-    *   [4.1 GTK2程序拥有KDE的文件对话框](#GTK2.E7.A8.8B.E5.BA.8F.E6.8B.A5.E6.9C.89KDE.E7.9A.84.E6.96.87.E4.BB.B6.E5.AF.B9.E8.AF.9D.E6.A1.86)
-*   [5 问题解决](#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [5.1 怎样为每一个工具设置风格?](#.E6.80.8E.E6.A0.B7.E4.B8.BA.E6.AF.8F.E4.B8.80.E4.B8.AA.E5.B7.A5.E5.85.B7.E8.AE.BE.E7.BD.AE.E9.A3.8E.E6.A0.BC.3F)
-        *   [5.1.1 KDE3 和 QT3 风格](#KDE3_.E5.92.8C_QT3_.E9.A3.8E.E6.A0.BC)
-        *   [5.1.2 QT4 风格](#QT4_.E9.A3.8E.E6.A0.BC)
-        *   [5.1.3 GTK2 风格](#GTK2_.E9.A3.8E.E6.A0.BC)
-        *   [5.1.4 GTK1 风格](#GTK1_.E9.A3.8E.E6.A0.BC)
-    *   [5.2 主题不作用于GTK程序](#.E4.B8.BB.E9.A2.98.E4.B8.8D.E4.BD.9C.E7.94.A8.E4.BA.8EGTK.E7.A8.8B.E5.BA.8F)
+*   [4 其它策略](#其它策略)
+    *   [4.1 GTK2程序拥有KDE的文件对话框](#GTK2程序拥有KDE的文件对话框)
+*   [5 问题解决](#问题解决)
+    *   [5.1 怎样为每一个工具设置风格?](#怎样为每一个工具设置风格?)
+        *   [5.1.1 KDE3 和 QT3 风格](#KDE3_和_QT3_风格)
+        *   [5.1.2 QT4 风格](#QT4_风格)
+        *   [5.1.3 GTK2 风格](#GTK2_风格)
+        *   [5.1.4 GTK1 风格](#GTK1_风格)
+    *   [5.2 主题不作用于GTK程序](#主题不作用于GTK程序)
 
 # 介绍
 

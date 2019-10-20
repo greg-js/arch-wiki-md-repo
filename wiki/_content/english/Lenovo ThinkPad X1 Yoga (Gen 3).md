@@ -340,11 +340,11 @@ Automatic screen rotation works well with ScreenRotator which has no configurati
 
 ## Configuration
 
-Many of the configuration options can be found in [Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Configuration](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Configuration "Lenovo ThinkPad X1 Carbon (Gen 6)"), as the X1 Carbon 6 has a very similar structure to the X1 Yoga 3.
+Many of the configuration options can be found in [Lenovo ThinkPad X1 Carbon (Gen 6)#Configuration](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Configuration "Lenovo ThinkPad X1 Carbon (Gen 6)"), as the X1 Carbon 6 has a very similar structure to the X1 Yoga 3.
 
 ### Fan Control
 
-See [Fan_speed_control#ThinkPad_laptops](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control")
+See [Fan speed control#ThinkPad laptops](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control")
 
 ### Keyboard Fn Shortcuts
 

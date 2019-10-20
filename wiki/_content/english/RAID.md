@@ -742,7 +742,7 @@ The *iostat* utility from [sysstat](https://www.archlinux.org/packages/?name=sys
 
 ### Mailing on events
 
-A smtp mail server (sendmail) or at least an email forwarder (ssmtp/msmtp) is required to accomplish this. Perhaps the most simplistic solution is to use [dma](https://aur.archlinux.org/packages/dma/) which is very tiny (installs to 0.08 MiB) and requires no setup.
+A smtp mail server (sendmail) or at least an email forwarder (ssmtp/msmtp) is required to accomplish this. Perhaps the most simplistic solution is to use [dma](/index.php/Dma "Dma") which is very tiny (installs to 0.08 MiB) and requires no setup.
 
 Edit `/etc/mdadm.conf` defining the email address to which notifications will be received.
 

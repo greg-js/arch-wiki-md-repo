@@ -125,7 +125,9 @@ When *gdb* is started, use the `bt` command to print the backtrace:
 
 ```
 
+See [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces") if debugging symbols are requested, but not found.
+
 ## See also
 
-*   [american fuzzy lop](http://lcamtuf.coredump.cx/afl/) - An tool for automated tests of the kernel and programs
+*   [american fuzzy lop](http://lcamtuf.coredump.cx/afl/) - A tool for automated tests of the kernel and programs
 *   [Filesystem fuzzing](https://lwn.net/Articles/637151/) - LWN article about testing filesystems for bugs

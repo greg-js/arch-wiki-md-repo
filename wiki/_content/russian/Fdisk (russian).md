@@ -4,7 +4,7 @@
 
 *   [Файловые системы](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Файловые системы")
 *   [gdisk](/index.php/Gdisk "Gdisk")
-*   [GNU Parted (Русский)](/index.php/GNU_Parted_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Parted (Русский)")
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
 *   [Разметка диска](/index.php/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%B0 "Разметка диска")
 
 [fdisk из пакета util-linux](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/) - интерактивная консольная утилита, которая может создать таблицу разделов и разделы на жестком диске и управлять ими. В таблице разделов описано разбиение жесткого диска на разделы.

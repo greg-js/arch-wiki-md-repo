@@ -224,7 +224,7 @@ Esto puede pasar si está usando aplicaciones GTK3, y especialmente en el caso d
 
 ### Problemas con aplicaciones Java
 
-Si, por ejemplo, las aplicaciones Java no pueden cambiar de tamaño o sus menús se cierran espontáneamente, véase [Java#Gray window | Applications not resizing with WM | menus immediately closing](/index.php/Java#Gray_window_|_Applications_not_resizing_with_WM_|_menus_immediately_closing "Java").
+Si, por ejemplo, las aplicaciones Java no pueden cambiar de tamaño o sus menús se cierran espontáneamente, véase [Java#Gray window, applications not resizing with WM, menus immediately closing](/index.php/Java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing "Java").
 
 ## Véase también
 

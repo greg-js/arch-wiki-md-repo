@@ -1,23 +1,27 @@
 Si veda [PulseAudio](/index.php/PulseAudio_(Italiano) "PulseAudio (Italiano)") per l'articolo principale.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Niente suono dopo l'installazione](#Niente_suono_dopo_l.27installazione)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Niente suono dopo l'installazione](#Niente_suono_dopo_l'installazione)
     *   [1.1 Dispositivo audio muto](#Dispositivo_audio_muto)
-    *   [1.2 Modalità Auto-Mute](#Modalit.C3.A0_Auto-Mute)
+    *   [1.2 Modalità Auto-Mute](#Modalità_Auto-Mute)
     *   [1.3 Files di configurazione non corretti](#Files_di_configurazione_non_corretti)
     *   [1.4 Contenuti Flash](#Contenuti_Flash)
     *   [1.5 Nessuna scheda audio rilevata](#Nessuna_scheda_audio_rilevata)
-    *   [1.6 Viene visualizzato solo il dispositivo "dummy output", oppure le schede audio appena connesse non vengono rilevate](#Viene_visualizzato_solo_il_dispositivo_.22dummy_output.22.2C_oppure_le_schede_audio_appena_connesse_non_vengono_rilevate)
-    *   [1.7 Impossibilie scegliere output 5.1/7.1](#Impossibilie_scegliere_output_5.1.2F7.1)
+    *   [1.6 Viene visualizzato solo il dispositivo "dummy output", oppure le schede audio appena connesse non vengono rilevate](#Viene_visualizzato_solo_il_dispositivo_"dummy_output",_oppure_le_schede_audio_appena_connesse_non_vengono_rilevate)
+    *   [1.7 Impossibilie scegliere output 5.1/7.1](#Impossibilie_scegliere_output_5.1/7.1)
     *   [1.8 KDE4](#KDE4)
-    *   [1.9 Errore "Failed to create sink input: sink is suspended"](#Errore_.22Failed_to_create_sink_input:_sink_is_suspended.22)
-*   [2 Avviare una applicazione interrompe il suono di un'altra](#Avviare_una_applicazione_interrompe_il_suono_di_un.27altra)
+    *   [1.9 Errore "Failed to create sink input: sink is suspended"](#Errore_"Failed_to_create_sink_input:_sink_is_suspended")
+*   [2 Avviare una applicazione interrompe il suono di un'altra](#Avviare_una_applicazione_interrompe_il_suono_di_un'altra)
 *   [3 Nessun output audio HDMI se si spegne il monitor per un certo periodo di tempo](#Nessun_output_audio_HDMI_se_si_spegne_il_monitor_per_un_certo_periodo_di_tempo)
-*   [4 Abilitare la soppressione dei rumori/dell'eco](#Abilitare_la_soppressione_dei_rumori.2Fdell.27eco)
-*   [5 Non è possibile aggiornare la configurazione della scheda audio da pavucontrol](#Non_.C3.A8_possibile_aggiornare_la_configurazione_della_scheda_audio_da_pavucontrol)
-*   [6 Output simultaneo verso più schede audio / dispositivi](#Output_simultaneo_verso_pi.C3.B9_schede_audio_.2F_dispositivi)
-*   [7 L'output simultaneo verso più schede audio / dispositivi non funziona](#L.27output_simultaneo_verso_pi.C3.B9_schede_audio_.2F_dispositivi_non_funziona)
+*   [4 Abilitare la soppressione dei rumori/dell'eco](#Abilitare_la_soppressione_dei_rumori/dell'eco)
+*   [5 Non è possibile aggiornare la configurazione della scheda audio da pavucontrol](#Non_è_possibile_aggiornare_la_configurazione_della_scheda_audio_da_pavucontrol)
+*   [6 Output simultaneo verso più schede audio / dispositivi](#Output_simultaneo_verso_più_schede_audio_/_dispositivi)
+*   [7 L'output simultaneo verso più schede audio / dispositivi non funziona](#L'output_simultaneo_verso_più_schede_audio_/_dispositivi_non_funziona)
 *   [8 Disabilitare il supporto ai dispositivi Bluetooth](#Disabilitare_il_supporto_ai_dispositivi_Bluetooth)
 *   [9 Problemi di riproduzione con cuffie Bluetooth](#Problemi_di_riproduzione_con_cuffie_Bluetooth)
 *   [10 Switch automatico agli headset Bluetooth o USB](#Switch_automatico_agli_headset_Bluetooth_o_USB)
@@ -25,39 +29,39 @@ Si veda [PulseAudio](/index.php/PulseAudio_(Italiano) "PulseAudio (Italiano)") p
 *   [12 Impedire il riavvio di PulseAudio una volta ucciso](#Impedire_il_riavvio_di_PulseAudio_una_volta_ucciso)
 *   [13 Avvio del demone fallito](#Avvio_del_demone_fallito)
     *   [13.1 Possibili output delle utility per il controllo degli errori di PulseAudio](#Possibili_output_delle_utility_per_il_controllo_degli_errori_di_PulseAudio)
-*   [14 Artefatti sonori, audio intermittente o gracchiante](#Artefatti_sonori.2C_audio_intermittente_o_gracchiante)
+*   [14 Artefatti sonori, audio intermittente o gracchiante](#Artefatti_sonori,_audio_intermittente_o_gracchiante)
 *   [15 Impostare il numero di frammenti e la dimensione del buffer in PulseAudio](#Impostare_il_numero_di_frammenti_e_la_dimensione_del_buffer_in_PulseAudio)
-    *   [15.1 Identificare i parametri della scheda audio in uso (1/4)](#Identificare_i_parametri_della_scheda_audio_in_uso_.281.2F4.29)
-    *   [15.2 Si calcolino la dimensione ed il numero di frammenti in millisecondi (2/4)](#Si_calcolino_la_dimensione_ed_il_numero_di_frammenti_in_millisecondi_.282.2F4.29)
-    *   [15.3 Modificare il file di configurazione di PulseAudio (3/4)](#Modificare_il_file_di_configurazione_di_PulseAudio_.283.2F4.29)
-    *   [15.4 Riavviare il demone PulseAudio (4/4)](#Riavviare_il_demone_PulseAudio_.284.2F4.29)
+    *   [15.1 Identificare i parametri della scheda audio in uso (1/4)](#Identificare_i_parametri_della_scheda_audio_in_uso_(1/4))
+    *   [15.2 Si calcolino la dimensione ed il numero di frammenti in millisecondi (2/4)](#Si_calcolino_la_dimensione_ed_il_numero_di_frammenti_in_millisecondi_(2/4))
+    *   [15.3 Modificare il file di configurazione di PulseAudio (3/4)](#Modificare_il_file_di_configurazione_di_PulseAudio_(3/4))
+    *   [15.4 Riavviare il demone PulseAudio (4/4)](#Riavviare_il_demone_PulseAudio_(4/4))
 *   [16 Il suono arriva in ritardo](#Il_suono_arriva_in_ritardo)
 *   [17 Suono intermittente e distorto](#Suono_intermittente_e_distorto)
 *   [18 I controlli del volume non funzionano correttamente](#I_controlli_del_volume_non_funzionano_correttamente)
 *   [19 Il volume delle singole applicazioni varia quando si modifica il livello del volume generale](#Il_volume_delle_singole_applicazioni_varia_quando_si_modifica_il_livello_del_volume_generale)
 *   [20 Il livello del volume si alza ogni volta che una nuova applicazione viene avviata](#Il_livello_del_volume_si_alza_ogni_volta_che_una_nuova_applicazione_viene_avviata)
-*   [21 Microfono non funzionante su ThinkPad T400/T500/T420](#Microfono_non_funzionante_su_ThinkPad_T400.2FT500.2FT420)
+*   [21 Microfono non funzionante su ThinkPad T400/T500/T420](#Microfono_non_funzionante_su_ThinkPad_T400/T500/T420)
 *   [22 Microfono non funzionante su Acer Aspire One](#Microfono_non_funzionante_su_Acer_Aspire_One)
 *   [23 Output monocanale su M-Audio Audiophile 2496](#Output_monocanale_su_M-Audio_Audiophile_2496)
 *   [24 Rumore statico durante la registrazione da microfono](#Rumore_statico_durante_la_registrazione_da_microfono)
-    *   [24.1 Determinare le schede audio installate nel sistema (1/5)](#Determinare_le_schede_audio_installate_nel_sistema_.281.2F5.29)
-    *   [24.2 Determinare la frequenza di campionamento della scheda audio (2/5)](#Determinare_la_frequenza_di_campionamento_della_scheda_audio_.282.2F5.29)
-    *   [24.3 Impostare la frequenza di campionamento nella configurazione di Pulseaudio (3/5)](#Impostare_la_frequenza_di_campionamento_nella_configurazione_di_Pulseaudio_.283.2F5.29)
-    *   [24.4 Riavviare Pulseaudio per applicare i cambiamenti(4/5)](#Riavviare_Pulseaudio_per_applicare_i_cambiamenti.284.2F5.29)
-    *   [24.5 Effettuare una prova registrando e poi ascoltando la registrazione (5/5)](#Effettuare_una_prova_registrando_e_poi_ascoltando_la_registrazione_.285.2F5.29)
+    *   [24.1 Determinare le schede audio installate nel sistema (1/5)](#Determinare_le_schede_audio_installate_nel_sistema_(1/5))
+    *   [24.2 Determinare la frequenza di campionamento della scheda audio (2/5)](#Determinare_la_frequenza_di_campionamento_della_scheda_audio_(2/5))
+    *   [24.3 Impostare la frequenza di campionamento nella configurazione di Pulseaudio (3/5)](#Impostare_la_frequenza_di_campionamento_nella_configurazione_di_Pulseaudio_(3/5))
+    *   [24.4 Riavviare Pulseaudio per applicare i cambiamenti(4/5)](#Riavviare_Pulseaudio_per_applicare_i_cambiamenti(4/5))
+    *   [24.5 Effettuare una prova registrando e poi ascoltando la registrazione (5/5)](#Effettuare_una_prova_registrando_e_poi_ascoltando_la_registrazione_(5/5))
 *   [25 Il mio dispositivo bluetooth viene rilevato ma non riproduce alcun suono](#Il_mio_dispositivo_bluetooth_viene_rilevato_ma_non_riproduce_alcun_suono)
 *   [26 Il subwoofer smette di funzionare alla fine della riproduzione di una canzone](#Il_subwoofer_smette_di_funzionare_alla_fine_della_riproduzione_di_una_canzone)
 *   [27 Pulseaudio utilizza il microfono sbagliato](#Pulseaudio_utilizza_il_microfono_sbagliato)
 *   [28 Suono intermittente quando si usa il profilo Analog Surround Sound](#Suono_intermittente_quando_si_usa_il_profilo_Analog_Surround_Sound)
-*   [29 Impossibilità di scegliere configurazioni surround diverse da "Surround 4.0"](#Impossibilit.C3.A0_di_scegliere_configurazioni_surround_diverse_da_.22Surround_4.0.22)
+*   [29 Impossibilità di scegliere configurazioni surround diverse da "Surround 4.0"](#Impossibilità_di_scegliere_configurazioni_surround_diverse_da_"Surround_4.0")
 *   [30 Assenza di suono sotto un certo livello di volume](#Assenza_di_suono_sotto_un_certo_livello_di_volume)
 *   [31 Basso livello volume del microfono integrato](#Basso_livello_volume_del_microfono_integrato)
-*   [32 I client alterano il controllo volume generale (ovvero volume al massimo dopo aver lanciato un'applicazione)](#I_client_alterano_il_controllo_volume_generale_.28ovvero_volume_al_massimo_dopo_aver_lanciato_un.27applicazione.29)
+*   [32 I client alterano il controllo volume generale (ovvero volume al massimo dopo aver lanciato un'applicazione)](#I_client_alterano_il_controllo_volume_generale_(ovvero_volume_al_massimo_dopo_aver_lanciato_un'applicazione))
 *   [33 Scheduling realtime](#Scheduling_realtime)
 *   [34 Nessun suono dopo il resume dalla sospensione](#Nessun_suono_dopo_il_resume_dalla_sospensione)
-*   [35 Canali ALSA muti a causa di un collegamento/scollegamento improprio delle cuffie](#Canali_ALSA_muti_a_causa_di_un_collegamento.2Fscollegamento_improprio_delle_cuffie)
-*   [36 Errore "invalid option" di pactl quando si specificano argomenti in formato percentuale negativo](#Errore_.22invalid_option.22_di_pactl_quando_si_specificano_argomenti_in_formato_percentuale_negativo)
-*   [37 Messaggio "Daemon already running"](#Messaggio_.22Daemon_already_running.22)
+*   [35 Canali ALSA muti a causa di un collegamento/scollegamento improprio delle cuffie](#Canali_ALSA_muti_a_causa_di_un_collegamento/scollegamento_improprio_delle_cuffie)
+*   [36 Errore "invalid option" di pactl quando si specificano argomenti in formato percentuale negativo](#Errore_"invalid_option"_di_pactl_quando_si_specificano_argomenti_in_formato_percentuale_negativo)
+*   [37 Messaggio "Daemon already running"](#Messaggio_"Daemon_already_running")
 *   [38 Il dispositivo di fallback non viene rispettato](#Il_dispositivo_di_fallback_non_viene_rispettato)
 *   [39 Il microfono non funziona su Steam o Skype quando enable-remixing ha valore no](#Il_microfono_non_funziona_su_Steam_o_Skype_quando_enable-remixing_ha_valore_no)
 
@@ -94,7 +98,7 @@ In alternativa, è possibile installare [libflashsupport-pulse](https://aur.arch
 
 **Nota:** L'installazione del pacchetto potrebbe mandare in crash il plugin flash.
 
-Se l'audio tramite flash arriva in ritardo potrebbe essere necessario utilizzare ALSA direttamente: per risolvere si [configuri PulseAudio per l'utilizzo con dmix](#ALSA_.2F_dmix_senza_che_PulseAudio_prenda_possesso_della_scheda_audio).
+Se l'audio tramite flash arriva in ritardo potrebbe essere necessario utilizzare ALSA direttamente: per risolvere si [configuri PulseAudio per l'utilizzo con dmix](#ALSA_/_dmix_senza_che_PulseAudio_prenda_possesso_della_scheda_audio).
 
 #### Nessuna scheda audio rilevata
 
@@ -432,7 +436,10 @@ E: [pulseaudio] module-udev-detect.c: You apparently ran out of inotify watches,
 $ echo 100000 > /proc/sys/fs/inotify/max_user_watches
 
 ```
-Per rendere la modifica permanente, si modifichi `/etc/sysctl.d/99-sysctl.conf` 
+
+Per rendere la modifica permanente, si modifichi
+
+ `/etc/sysctl.d/99-sysctl.conf` 
 ```
  # Increase inotify max watches per user
  fs.inotify.max_user_watches = 100000

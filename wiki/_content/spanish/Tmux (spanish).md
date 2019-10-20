@@ -72,7 +72,7 @@ set-option -g status-fg green
 set-option -g status-interval 5
 set-option -g status-left-length 30
 set-option -g status-left '#[fg=magenta]» #[fg=blue,bold]#T#[default]'
-set-option -g status-right '#[fg=cyan]»» #[fg=blue,bold] #[fg=magenta]%D %k:%M#[default]'
+set-option -g status-right '#[fg=cyan]»» #[fg=blue,bold] #[fg=magenta]%D %k:%M#[default]'
 set-option -g visual-activity on
 set-window-option -g monitor-activity on
 set-window-option -g window-status-current-fg green

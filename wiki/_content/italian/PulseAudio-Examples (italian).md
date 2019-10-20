@@ -1,29 +1,33 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Impostare l'output analogico come default](#Impostare_l.27output_analogico_come_default)
-*   [2 Usare l'uscita HDMI e analogica contemporaneamente](#Usare_l.27uscita_HDMI_e_analogica_contemporaneamente)
-*   [3 Configurazione dell'uscita HDMI](#Configurazione_dell.27uscita_HDMI)
-    *   [3.1 Trovare l'output HDMI](#Trovare_l.27output_HDMI)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Impostare l'output analogico come default](#Impostare_l'output_analogico_come_default)
+*   [2 Usare l'uscita HDMI e analogica contemporaneamente](#Usare_l'uscita_HDMI_e_analogica_contemporaneamente)
+*   [3 Configurazione dell'uscita HDMI](#Configurazione_dell'uscita_HDMI)
+    *   [3.1 Trovare l'output HDMI](#Trovare_l'output_HDMI)
     *   [3.2 Identificare la scheda corretta](#Identificare_la_scheda_corretta)
-    *   [3.3 Configurare Pulseaudio per rilevare l'uscita HDMI Nvidia](#Configurare_Pulseaudio_per_rilevare_l.27uscita_HDMI_Nvidia)
+    *   [3.3 Configurare Pulseaudio per rilevare l'uscita HDMI Nvidia](#Configurare_Pulseaudio_per_rilevare_l'uscita_HDMI_Nvidia)
 *   [4 Sistemi surround](#Sistemi_surround)
-    *   [4.1 Dividere le uscite frontali/posteriori](#Dividere_le_uscite_frontali.2Fposteriori)
+    *   [4.1 Dividere le uscite frontali/posteriori](#Dividere_le_uscite_frontali/posteriori)
     *   [4.2 Remixing LFE](#Remixing_LFE)
 *   [5 Streaming audio via rete attraverso Pulseaudio](#Streaming_audio_via_rete_attraverso_Pulseaudio)
-    *   [5.1 Supporto TCP (streaming audio via rete)](#Supporto_TCP_.28streaming_audio_via_rete.29)
+    *   [5.1 Supporto TCP (streaming audio via rete)](#Supporto_TCP_(streaming_audio_via_rete))
     *   [5.2 Supporto TCP con client anonimi](#Supporto_TCP_con_client_anonimi)
-    *   [5.3 Publishing attraverso Zeroconf (avahi)](#Publishing_attraverso_Zeroconf_.28avahi.29)
+    *   [5.3 Publishing attraverso Zeroconf (avahi)](#Publishing_attraverso_Zeroconf_(avahi))
     *   [5.4 Cambiare il server Pulseaudio usato dai clients X locali](#Cambiare_il_server_Pulseaudio_usato_dai_clients_X_locali)
     *   [5.5 Quando ogni altro tentativo risulta vano](#Quando_ogni_altro_tentativo_risulta_vano)
 *   [6 ALSA Monitor source](#ALSA_Monitor_source)
 *   [7 Pulseaudio attraverso JACK](#Pulseaudio_attraverso_JACK)
-    *   [7.1 Il metodo ancora più nuovo](#Il_metodo_ancora_pi.C3.B9_nuovo)
+    *   [7.1 Il metodo ancora più nuovo](#Il_metodo_ancora_più_nuovo)
     *   [7.2 Nuovo metodo](#Nuovo_metodo)
     *   [7.3 Vecchio metodo](#Vecchio_metodo)
-        *   [7.3.1 QjackCtl con script di avvio/shutdown](#QjackCtl_con_script_di_avvio.2Fshutdown)
+        *   [7.3.1 QjackCtl con script di avvio/shutdown](#QjackCtl_con_script_di_avvio/shutdown)
 *   [8 Pulseaudio attraverso OSS](#Pulseaudio_attraverso_OSS)
 *   [9 Pulseaudio da chroot](#Pulseaudio_da_chroot)
-*   [10 Disabilitare l'auto spawning del server PulseAudio](#Disabilitare_l.27auto_spawning_del_server_PulseAudio)
+*   [10 Disabilitare l'auto spawning del server PulseAudio](#Disabilitare_l'auto_spawning_del_server_PulseAudio)
 *   [11 Mappare il canale stereo su mono](#Mappare_il_canale_stereo_su_mono)
 
 ## Impostare l'output analogico come default
@@ -546,7 +550,7 @@ Se Pulseaudio non è configurato per connettersi ad un server specifico (si può
 
 Si consiglia di montare anche `/dev/shm` per ottenere le massime performance ed efficienza. Si noti che montando la `/home`, è possibile condividere la cartella `~/.pulse`.
 
-PulseAudio sceglie il percorso al socket in base al valore di `XDG_RUNTIME_DIR`, percui assicurarsi di importarla durante il chroot via [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") da utente normale (si veda [Sudo (Italiano)#Variabili d'ambiente](/index.php/Sudo_(Italiano)#Variabili_d.27ambiente "Sudo (Italiano)")).
+PulseAudio sceglie il percorso al socket in base al valore di `XDG_RUNTIME_DIR`, percui assicurarsi di importarla durante il chroot via [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)") da utente normale (si veda [Sudo (Italiano)#Variabili d'ambiente](/index.php/Sudo_(Italiano)#Variabili_d'ambiente "Sudo (Italiano)")).
 
 Per istruzioni specifiche su come effettuare i vari mount, si faccia riferimento al wiki relativo all'installazione di un ambiente chroot a 32 bit, specialmente si legga la [sezione aggiuntiva](https://wiki.archlinux.org/index.php?title=Arch64_Install_bundled_32bit_system#Additional_mount_option_to_allow_32-bit_apps_to_access_the_64-bit_Pulseaudio_server) relativa a Pulseaudio.
 

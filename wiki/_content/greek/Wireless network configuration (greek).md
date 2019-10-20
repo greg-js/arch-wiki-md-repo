@@ -9,7 +9,11 @@ Related articles
 
 Το δεύτερο είναι η επιλογή μεθόδου διαχείρισης των ασυρμάτων συνδέσεων. Αυτό το άρθρο καλύπτει και τα δύο μέρη, και παρέχει επιπλέον συνδέσμους που αφορούν εργαλεία διαχείρισης ασύρματων δικτύων.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Οδηγός συσκευής](#Οδηγός_συσκευής)
     *   [1.1 Έλεγχος κατάστασης οδηγού](#Έλεγχος_κατάστασης_οδηγού)

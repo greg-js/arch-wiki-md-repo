@@ -44,7 +44,6 @@ Asterisk indicates the year of first public release based on Arch Linux.
 *   [ArchBang](https://sourceforge.net/projects/archbang/) 
 *   [ArchEX](https://sourceforge.net/projects/archex/) 
 *   [Arch Hurd](https://archhurd.org/) 
-*   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
 *   [Arch Linux 32](https://archlinux32.org/) 
 *   [Arch Linux ARM](https://archlinuxarm.org/) 
 *   [ArchStrike](https://archstrike.org/) 
@@ -79,14 +78,15 @@ These distributions are no longer developed, but show some of the history surrou
 ### 2019
 
 *   [Antergos](https://sourceforge.net/projects/antergos/) 
-*   [Archphile](https://sourceforge.net/projects/archphile/) 
+*   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
 *   [BlueLight](https://github.com/BlueLightOS/bluelight) 
-*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
 *   [SwagArch](http://web.archive.org/web/20190125193812/https://swagarch.gitlab.io/) 
 
 ### 2018
 
 *   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/) 
+*   [Archphile](https://sourceforge.net/projects/archphile/) 
+*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/) 
 
 ### 2017

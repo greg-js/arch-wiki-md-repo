@@ -104,7 +104,12 @@ $ youtube-dl --list-subs *URL*
 To download a video with selected subtitles (comma separated):
 
 ```
-$ youtube-dl --write-sub --sub-lang *LANG* *URL*
+$ youtube-dl --write-sub --sub-lang *LANG* *URL* #for normal subtitle
+
+```
+
+```
+$ youtube-dl --write-auto-sub --sub-lang *LANG* *URL* #for automatic generated subtitle
 
 ```
 

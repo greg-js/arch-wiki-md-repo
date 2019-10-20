@@ -4,7 +4,11 @@ Articoli correlati
 
 Questo articolo descrive la configurazione dettagliata delle Qt e GTK+ per assicurare uno stile delle applicazioni uniforme. Questo articolo copre configurazione, motore dei temi, trucchi e troubleshooting.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduzione](#Introduzione)
 *   [2 Stile per Qt e GTK+](#Stile_per_Qt_e_GTK+)
@@ -189,6 +193,7 @@ Comunque sembra che a volte questi tool inseriscono solamente una direttiva del 
 include "/usr/share/themes/SomeTheme/gtk-2.0/gtkrc"
 ...
 ```
+
 che apparentemente non viene riconosciuta da tutte le versioni di QGtkStyle. Una soluzione è inserire manualmente il nome del tema gtk nel file .gtkrc-2.0 come sopra. Notare che comunque durante l'utilizzo delle applicazioni per la modifica degli stili GTK2 queste modifiche potrebbero essere perse.
 
 Per scegliere il proprio tema GTK nelle applicazioni Qt si deve eseguire:

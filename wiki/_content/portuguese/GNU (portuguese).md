@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=580018) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=585499) na versão em inglês.
 
 Artigos relacionados
 
@@ -26,7 +26,7 @@ Porque o kernel do GNU, [Hurd](https://www.gnu.org/s/hurd/hurd.html), não está
 
 ## Texinfo
 
-O software GNU é documentado usando a sintaxe de composição [Texinfo](https://en.wikipedia.org/wiki/pt:Texinfo "wikipedia:pt:Texinfo"). Você pode visualizar documentos de Informações usando o programa `info`, fornecido pelo pacote [texinfo](https://www.archlinux.org/packages/?name=texinfo), que faz parte do [base](https://www.archlinux.org/packages/?name=base).
+O software GNU é documentado usando a sintaxe de composição [Texinfo](https://en.wikipedia.org/wiki/pt:Texinfo "wikipedia:pt:Texinfo"). Você pode visualizar documentos de Informações usando o programa `info`, fornecido pelo pacote [texinfo](https://www.archlinux.org/packages/?name=texinfo).
 
 Embora a maioria dos softwares GNU também forneça [páginas man](/index.php/P%C3%A1ginas_man "Páginas man"), os documentos de Informações tendem a ser mais abrangentes.
 
@@ -54,7 +54,7 @@ Embora a maioria dos softwares GNU também forneça [páginas man](/index.php/P%
 
 ## Conjunto de ferramentas
 
-A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain") *(toolchain)* estão no grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), exceto *glibc* que está no [base](https://www.archlinux.org/packages/?name=base) e GDB que está em nenhum grupo.
+A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain") *(toolchain)* estão no grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), exceto *glibc* (exigido por [base](https://www.archlinux.org/packages/?name=base)) e GDB.
 
 *   **[GNU make](https://en.wikipedia.org/wiki/pt:Make "wikipedia:pt:Make")** — Utilitário GNU make para manter grupos de programas.
 
@@ -66,7 +66,7 @@ A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipe
 
 *   **[glibc](https://en.wikipedia.org/wiki/pt:GNU_C_Library "wikipedia:pt:GNU C Library")** — a implementação do GNU da biblioteca C.
 
-	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) (parte do [base](https://www.archlinux.org/packages/?name=base))
+	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) (exigido por [base](https://www.archlinux.org/packages/?name=base))
 
 *   **[GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils "wikipedia:GNU Binutils")** — Um conjunto de programas para montar e manipular arquivos binários e arquivos objeto. Inclui [ld](https://en.wikipedia.org/wiki/GNU_linker "wikipedia:GNU linker").
 

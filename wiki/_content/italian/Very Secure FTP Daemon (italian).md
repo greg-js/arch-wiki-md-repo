@@ -1,17 +1,21 @@
 **vsftpd** (Very Secure FTP Daemon) è un server FTP leggero, stabile e sicuro per sistemi UNIX-like.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
-    *   [2.1 Abilitare l'upload](#Abilitare_l.27upload)
+    *   [2.1 Abilitare l'upload](#Abilitare_l'upload)
     *   [2.2 Accesso utenti locali](#Accesso_utenti_locali)
     *   [2.3 Accesso anonimi](#Accesso_anonimi)
-    *   [2.4 Limitare navigabilità con chroot](#Limitare_navigabilit.C3.A0_con_chroot)
+    *   [2.4 Limitare navigabilità con chroot](#Limitare_navigabilità_con_chroot)
     *   [2.5 Limitare il login degli utenti](#Limitare_il_login_degli_utenti)
     *   [2.6 Limitare le connessioni](#Limitare_le_connessioni)
     *   [2.7 Utilizzo di xinetd](#Utilizzo_di_xinetd)
-    *   [2.8 Utilizzo di SSL per la sicurezza dell'FTP](#Utilizzo_di_SSL_per_la_sicurezza_dell.27FTP)
+    *   [2.8 Utilizzo di SSL per la sicurezza dell'FTP](#Utilizzo_di_SSL_per_la_sicurezza_dell'FTP)
 *   [3 Suggerimenti](#Suggerimenti)
     *   [3.1 PAM con utenti virtuali](#PAM_con_utenti_virtuali)
         *   [3.1.1 Aggiungere cartelle private per gli utenti virtuali](#Aggiungere_cartelle_private_per_gli_utenti_virtuali)
@@ -44,7 +48,7 @@ Per usare `vsftpd` con `xinetd`, vedere la sezione sottostante per le procedure 
 
 ## Configurazione
 
-La maggior parte delle impostazioni in `vsftpd` sono fatte modificando il file `/etc/vsftpd.conf`. Il file è di per se stesso ben documentato, per cui questa sezione mette in luce solo alcuni importanti cambiamenti che si potrebbe voler effettuare. Per tutte le opzioni disponibili e la documentazione, sfogliare [vsftpd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5) (5).
+La maggior parte delle impostazioni in `vsftpd` sono fatte modificando il file `/etc/vsftpd.conf`. Il file è di per se stesso ben documentato, per cui questa sezione mette in luce solo alcuni importanti cambiamenti che si potrebbe voler effettuare. Per tutte le opzioni disponibili e la documentazione, sfogliare [vsftpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vsftpd.conf.5) (5).
 
 ### Abilitare l'upload
 

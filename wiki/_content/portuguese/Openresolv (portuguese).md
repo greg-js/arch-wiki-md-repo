@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=579379) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=583029) na versão em inglês.
 
 Artigos relacionados
 
@@ -62,6 +62,7 @@ Openresolv pode ser configurado para passar servidores de nome e domínios de pe
 *   [BIND](/index.php/BIND "BIND")
 *   [dnsmasq (Português)#openresolv](/index.php/Dnsmasq_(Portugu%C3%AAs)#openresolv "Dnsmasq (Português)")
 *   [pdnsd](/index.php/Pdnsd "Pdnsd")
+*   [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor)
 *   [Unbound](/index.php/Unbound "Unbound")
 
 Veja a [documentação oficial](https://roy.marples.name/projects/openresolv/config) para instruções.

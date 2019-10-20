@@ -2,10 +2,9 @@ Related articles
 
 *   [Frequently asked questions (Polski)](/index.php/Frequently_asked_questions_(Polski) "Frequently asked questions (Polski)")
 *   [Installation guide (Polski)](/index.php/Installation_guide_(Polski) "Installation guide (Polski)")
-*   [Beginners' guide (Polski)](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)")
-*   [List of applications (Polski)](/index.php?title=List_of_applications_(Polski)&action=edit&redlink=1 "List of applications (Polski) (page does not exist)")
+*   [List of applications](/index.php/List_of_applications "List of applications")
 
-Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawaniu funkcjonalności do zainstalowanego systemu Arch. Zakłada się, że czytelnicy przeczytali i wykonali instrukcje zawarte w [Beginners' guide (Polski)](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)") lub [Installation guide (Polski)](/index.php/Installation_guide_(Polski) "Installation guide (Polski)") i zainstalowali podstawowy system. Zaznajomienie się z informacjami zawartymi w [#Administracja systemem](#Administracja_systemem) i [#Zarządzanie pakietami](#Zarządzanie_pakietami) jest *wymagane* do zrozumienia innych sekcji tej strony i pozostałych stron na wiki.
+Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawaniu funkcjonalności do zainstalowanego systemu Arch. Zakłada się, że czytelnicy przeczytali i wykonali instrukcje zawarte w [Installation guide (Polski)](/index.php/Installation_guide_(Polski) "Installation guide (Polski)") i zainstalowali podstawowy system. Zaznajomienie się z informacjami zawartymi w [#Administracja systemem](#Administracja_systemem) i [#Zarządzanie pakietami](#Zarządzanie_pakietami) jest *niezbędne* do zrozumienia innych sekcji tej strony i pozostałych stron na Wiki.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -20,66 +19,66 @@ Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawa
     *   [1.4 Bieżąca konserwacja systemu](#Bieżąca_konserwacja_systemu)
 *   [2 Zarządzanie pakietami](#Zarządzanie_pakietami)
     *   [2.1 pacman](#pacman)
-    *   [2.2 Repositories](#Repositories)
-    *   [2.3 Mirrors](#Mirrors)
+    *   [2.2 Repozytoria](#Repozytoria)
+    *   [2.3 Serwery lustrzane](#Serwery_lustrzane)
     *   [2.4 Arch Build System](#Arch_Build_System)
     *   [2.5 Arch User Repository](#Arch_User_Repository)
-*   [3 Booting](#Booting)
-    *   [3.1 Hardware auto-recognition](#Hardware_auto-recognition)
-    *   [3.2 Microcode](#Microcode)
-    *   [3.3 Retaining boot messages](#Retaining_boot_messages)
-    *   [3.4 Num Lock activation](#Num_Lock_activation)
-*   [4 Graphical user interface](#Graphical_user_interface)
-    *   [4.1 Display server](#Display_server)
-    *   [4.2 Display drivers](#Display_drivers)
-    *   [4.3 Desktop environments](#Desktop_environments)
-    *   [4.4 Window managers](#Window_managers)
-    *   [4.5 Display manager](#Display_manager)
-*   [5 Power management](#Power_management)
-    *   [5.1 ACPI events](#ACPI_events)
-    *   [5.2 CPU frequency scaling](#CPU_frequency_scaling)
-    *   [5.3 Laptops](#Laptops)
-    *   [5.4 Suspend and Hibernate](#Suspend_and_Hibernate)
+*   [3 Uruchamianie](#Uruchamianie)
+    *   [3.1 Automatyczne rozpoznawanie sprzętu](#Automatyczne_rozpoznawanie_sprzętu)
+    *   [3.2 Mikrokod](#Mikrokod)
+    *   [3.3 Ukrywanie komunikatów rozruchowych](#Ukrywanie_komunikatów_rozruchowych)
+    *   [3.4 Aktywacja Num Lock](#Aktywacja_Num_Lock)
+*   [4 Graficzny interfejs użytkownika](#Graficzny_interfejs_użytkownika)
+    *   [4.1 Serwer wyświetlania](#Serwer_wyświetlania)
+    *   [4.2 Sterowniki graficzne](#Sterowniki_graficzne)
+    *   [4.3 Środowiska pulpitu](#Środowiska_pulpitu)
+    *   [4.4 Menedżery okien](#Menedżery_okien)
+    *   [4.5 Menedżer wyświetlania](#Menedżer_wyświetlania)
+*   [5 Zarządzanie energią](#Zarządzanie_energią)
+    *   [5.1 Zdarzenia ACPI](#Zdarzenia_ACPI)
+    *   [5.2 Skalowanie procesora](#Skalowanie_procesora)
+    *   [5.3 Laptopy](#Laptopy)
+    *   [5.4 Wstrzymanie i hibernacja](#Wstrzymanie_i_hibernacja)
 *   [6 Multimedia](#Multimedia)
-    *   [6.1 Sound](#Sound)
-    *   [6.2 Browser plugins](#Browser_plugins)
-    *   [6.3 Codecs](#Codecs)
-*   [7 Networking](#Networking)
-    *   [7.1 Clock synchronization](#Clock_synchronization)
-    *   [7.2 DNS security](#DNS_security)
-    *   [7.3 Setting up a firewall](#Setting_up_a_firewall)
-    *   [7.4 Resource sharing](#Resource_sharing)
-*   [8 Input devices](#Input_devices)
-    *   [8.1 Keyboard layouts](#Keyboard_layouts)
-    *   [8.2 Mouse buttons](#Mouse_buttons)
-    *   [8.3 Laptop touchpads](#Laptop_touchpads)
-    *   [8.4 TrackPoints](#TrackPoints)
-*   [9 Optimization](#Optimization)
+    *   [6.1 Dźwięk](#Dźwięk)
+    *   [6.2 Wtyczki przeglądarek](#Wtyczki_przeglądarek)
+    *   [6.3 Kodeki](#Kodeki)
+*   [7 Sieć](#Sieć)
+    *   [7.1 Synchronizacja zegara](#Synchronizacja_zegara)
+    *   [7.2 Zabezpieczenia DNS](#Zabezpieczenia_DNS)
+    *   [7.3 Konfigurowanie zapory sieciowej](#Konfigurowanie_zapory_sieciowej)
+    *   [7.4 Udostępnianie zasobów (w tym plików)](#Udostępnianie_zasobów_(w_tym_plików))
+*   [8 Urządzenia wejściowe](#Urządzenia_wejściowe)
+    *   [8.1 Układy klawiatury](#Układy_klawiatury)
+    *   [8.2 Przyciski myszki](#Przyciski_myszki)
+    *   [8.3 Płytki dotykowe (tzw. touchpady) w laptopach](#Płytki_dotykowe_(tzw._touchpady)_w_laptopach)
+    *   [8.4 Urządzenia typu TrackPoint](#Urządzenia_typu_TrackPoint)
+*   [9 Optymalizacja](#Optymalizacja)
     *   [9.1 Benchmarking](#Benchmarking)
-    *   [9.2 Maximizing performance](#Maximizing_performance)
-    *   [9.3 Solid state drives](#Solid_state_drives)
-*   [10 System service](#System_service)
-    *   [10.1 File index and search](#File_index_and_search)
-    *   [10.2 Local mail delivery](#Local_mail_delivery)
-    *   [10.3 Printing](#Printing)
-*   [11 Appearance](#Appearance)
-    *   [11.1 Fonts](#Fonts)
-    *   [11.2 GTK and Qt themes](#GTK_and_Qt_themes)
-*   [12 Console improvements](#Console_improvements)
-    *   [12.1 Aliases](#Aliases)
-    *   [12.2 Alternative shells](#Alternative_shells)
-    *   [12.3 Bash additions](#Bash_additions)
-    *   [12.4 Colored output](#Colored_output)
-    *   [12.5 Compressed files](#Compressed_files)
-    *   [12.6 Console prompt](#Console_prompt)
+    *   [9.2 Zwiększanie wydajności](#Zwiększanie_wydajności)
+    *   [9.3 Dyski SSD](#Dyski_SSD)
+*   [10 Usługi systemowe](#Usługi_systemowe)
+    *   [10.1 Indeksowanie plików i wyszukiwanie](#Indeksowanie_plików_i_wyszukiwanie)
+    *   [10.2 Poczta lokalna](#Poczta_lokalna)
+    *   [10.3 Drukowanie](#Drukowanie)
+*   [11 Wygląd](#Wygląd)
+    *   [11.1 Czcionki](#Czcionki)
+    *   [11.2 Motywy GTK i Qt](#Motywy_GTK_i_Qt)
+*   [12 Ulepszenia konsoli](#Ulepszenia_konsoli)
+    *   [12.1 Aliasy](#Aliasy)
+    *   [12.2 Alternatywne powłoki](#Alternatywne_powłoki)
+    *   [12.3 Dodatki Bash](#Dodatki_Bash)
+    *   [12.4 Kolorowy tekst w konsoli](#Kolorowy_tekst_w_konsoli)
+    *   [12.5 Pliki skompresowane i archiwa](#Pliki_skompresowane_i_archiwa)
+    *   [12.6 Monit konsoli](#Monit_konsoli)
     *   [12.7 Emacs shell](#Emacs_shell)
-    *   [12.8 Mouse support](#Mouse_support)
-    *   [12.9 Scrollback buffer](#Scrollback_buffer)
-    *   [12.10 Session management](#Session_management)
+    *   [12.8 Obsługa myszy](#Obsługa_myszy)
+    *   [12.9 Przewijanie tekstu w konsoli](#Przewijanie_tekstu_w_konsoli)
+    *   [12.10 Zarządzanie sesją](#Zarządzanie_sesją)
 
 ## Administracja systemem
 
-Ta sekcja mówi o zadaniach administracyjnych i zarządzaniu systemem. Jeśli chcesz wiedzieć więcej, odwiedź [Core utilities](/index.php/Core_utilities "Core utilities") i [Category:System administration](/index.php/Category:System_administration "Category:System administration")
+Ta sekcja mówi o zadaniach administracyjnych i zarządzaniu systemem. Jeśli chcesz dowiedzieć więcej, odwiedź [Core utilities](/index.php/Core_utilities "Core utilities") i [Category:System administration](/index.php/Category:System_administration "Category:System administration")
 
 ### Użytkownicy i grupy
 
@@ -103,266 +102,262 @@ Ważne jest także zadbanie o bezpieczeństwo systemu. Przeczytaj [Security](/in
 
 ## Zarządzanie pakietami
 
-Ta sekcja zawiera pomocne informacje dotyczące zarządzania pakietami. Zeby przeczytać o tym więcej odwiedź [Frequently asked questions (Polski)#Package management](/index.php/Frequently_asked_questions_(Polski)#Package_management "Frequently asked questions (Polski)") i [Category:Package management (Polski)](/index.php/Category:Package_management_(Polski) "Category:Package management (Polski)")
+Ta sekcja zawiera pomocne informacje dotyczące zarządzania oprogramowaniem (pakietami). Odwiedź [Frequently asked questions (Polski)#Zarządzanie pakietami](/index.php/Frequently_asked_questions_(Polski)#Zarządzanie_pakietami "Frequently asked questions (Polski)") i [Category:Package management (Polski)](/index.php/Category:Package_management_(Polski) "Category:Package management (Polski)") aby dowiedzieć się więcej na ten temat.
 
-**Note:** Należy śledzić informacje o aktualizacjach pakietów, które wymagają interwencji użytkownika, *zanim* zostanie wszczęta aktualizacja. Subscribe to the [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) or check the front page [Arch news](https://www.archlinux.org/) every time before you update. Alternatively, you may find it useful to subscribe to [this RSS feed](https://www.archlinux.org/feeds/news/) or follow [@archlinux](https://twitter.com/archlinux) on Twitter.
+**Note:** Należy prześledzić informacje o aktualizacjach pakietów, które wymagają interwencji użytkownika, *zanim* zostanie wszczęta aktualizacja. Zapisz się do [tej listy mailingowej](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) albo sprawdzaj stronę główną [[1]](https://www.archlinux.org/) przed każdą aktualizacją pakietów. Możesz też zasubskrybować [ten kanał RSS](https://www.archlinux.org/feeds/news/) albo śledzić [@archlinux](https://twitter.com/archlinux) na Twitterze.
 
 ### pacman
 
-[pacman](/index.php/Pacman "Pacman") is the Arch Linux *pac*kage *man*ager: all users are required to become familiar with it before reading any other articles.
+[pacman](/index.php/Pacman "Pacman") jest menedżerem pakietów w Arch Linux. Każdy użytkownik powinien zapoznać się z jego działaniem przed przystąpieniem do dalszej lektury artykułów na Wiki.
 
-See [pacman tips](/index.php/Pacman_tips "Pacman tips") for suggestions on how to improve your interaction with *pacman* and package management in general.
+Przeczytaj [pacman tips](/index.php/Pacman_tips "Pacman tips") aby zapoznać się ze wskazówkami, jak usprawnić użytkowanie *pacmana* i zarządzanie pakietami w ogólności.
 
-### Repositories
+### Repozytoria
 
-See [Official repositories](/index.php/Official_repositories "Official repositories") for details about the purpose of each officially maintained repository.
+Zapoznaj się z [działem o oficjalnych repozytoriach](/index.php/Official_repositories "Official repositories") aby poznać szczegóły dotyczącego każdego z zarządzanych przez społeczność Arch repozytoriami.
 
-If you installed Arch Linux x86_64 and plan on using 32-bit applications, you will want to enable the [multilib](/index.php/Multilib "Multilib") repository.
+Jeśli zainstalowałeś Arch Linux, ale masz zamiar używać aplikacji 32-bitowych, powinieneś włączyć repozytoria [multilib](/index.php/Multilib "Multilib").
 
-[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") lists several other unsupported repositories.
+[Nieoficjalne repozytoria użytkowników](/index.php/Unofficial_user_repositories "Unofficial user repositories") zawierają listę innych repozytoriów nieoficjalnych, zarządzanych przez użytkowników.
 
-### Mirrors
+### Serwery lustrzane
 
-Visit [Mirrors](/index.php/Mirrors "Mirrors") for steps on taking full advantage of using the fastest and most up to date *pacman* mirrors. As explained in the article, a particularly good advice is to routinely check the [Mirror Status](https://www.archlinux.org/mirrors/status/) page and/or [Mirror-Status](http://www.archlinux.de/?page=MirrorStatus) for a list of mirrors that have been recently synced.
+Odwiedź stronę [Mirrors](/index.php/Mirrors "Mirrors"), aby w pełni wykorzystać potencjał serwerów lustrzanych i skonfigurować je w ten sposób, aby używać tych najszybszych i najświeższych. Jak wyjaśniono w artykule, zalecane jest aby śledzić stronę [Mirror Status](https://www.archlinux.org/mirrors/status/) lub [Mirror-Status](http://www.archlinux.de/?page=MirrorStatus) aby pozyskać listę serwerów, które zostały ostatnio zsynchronizowane.
 
 ### Arch Build System
 
-*Ports* is a system initially used by BSD distributions consisting of build scripts that reside in a directory tree on the local system. Simply put, each port contains a script within a directory intuitively named after the installable third-party application.
+*Ports* to system początkowo używany przez dystrybucje BSD, składający się ze skryptów kompilacji, które znajdują się w systemie lokalnym. Mówiąc najprościej, każdy port zawiera skrypt w katalogu intuicyjnie nazwanym na podstawie instalowalnej aplikacji.
 
-The [ABS](/index.php/ABS "ABS") tree offers the same functionality by providing build scripts called [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), which are populated with information for a given piece of software; integrity hashes, project URL, version, license and build instructions. These PKGBUILDs are later parsed by [makepkg](/index.php/Makepkg "Makepkg"), the actual program that generates packages cleanly manageable by *pacman*.
+Drzewo [ABS](/index.php/ABS "ABS") oferuje tę samą funkcjonalność, udostępniając skrypty budowania o nazwie [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), które są zawierają informacje dotyczące danego oprogramowania; skróty integralności, adres URL projektu, wersję, licencje i instrukcje budowania. PKGBUILD są następnie analizowane przez [makepkg](/index.php/Makepkg "Makepkg"), program generujący pakiety, którymi można łatwo zarządzać za pomocą *pacmana*.
 
-Every package in the repositories along with those present in the AUR are subject to recompilation with *makepkg*.
+Każda paczka w repozytoriach wraz z tymi znajdującymi się w AUR podlega kompilacji za pomocą „makepkg”.
 
 ### Arch User Repository
 
-While the ABS tree allows the ability of building software available in the official repositories, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) is the equivalent for user submitted packages. It is an unsupported repository of build scripts accessible through the [web interface](https://aur.archlinux.org/) or by an [AUR helper](/index.php/AUR_helper "AUR helper").
+Podczas gdy drzewo ABS umożliwia tworzenie oprogramowania dostępnego w oficjalnych repozytoriach, [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) jest odpowiednikiem pakietów udostępnianych przez użytkowników. Jest to nieoficjalne repozytorium skryptów kompilacji dostępnych przez [interfejs sieciowy](https://aur.archlinux.org/) lub przez [pomocnika AUR](/index.php/AUR_helper "AUR helper").
 
-## Booting
+## Uruchamianie
 
-This section contains information pertaining to the boot process. An overview of the Arch boot process can be found at [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). For more, please see [Category:Boot process](/index.php/Category:Boot_process "Category:Boot process").
+Ta sekcja zawiera informacje dotyczące procesu rozruchu. Przegląd procesu rozruchu Arch można znaleźć w [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Aby uzyskać więcej informacji, zobacz [Category: Boot process](/index.php/Category:Boot_process "Category:Boot process").
 
-### Hardware auto-recognition
+### Automatyczne rozpoznawanie sprzętu
 
-Hardware should be auto-detected by [udev](/index.php/Udev "Udev") during the boot process by default. A potential improvement in boot time can be achieved by disabling module auto-loading and specifying required modules manually, as described in [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules"). Additionally, [Xorg](/index.php/Xorg "Xorg") should be able to auto-detect required drivers using udev, but users have the option to configure the X server manually too.
+Sprzęt [domyślnie] powinien zostać automatyczne wykryty przez [udev](/index.php/Udev "Udev") podczas procesu rozruchu. Poprawę czasu rozruchu można uzyskać wyłączając automatyczne ładowanie modułu i ręcznie określając wymagane moduły, jak opisano w [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules"). Ponadto [Xorg](/index.php/Xorg "Xorg") powinien być w stanie automatycznie wykrywać wymagane sterowniki za pomocą udev, ale użytkownicy mogą również ręcznie skonfigurować serwer X.
 
-### Microcode
+### Mikrokod
 
-Processors may have [faulty behaviour](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), which the kernel can correct by updating the *microcode* on startup. Intel processors require a separate package to this effect. See [Microcode](/index.php/Microcode "Microcode") for details.
+Procesory mogą zawierać wadliwy kod [[2]](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), który jądro może poprawić, aktualizując *mikrokod* (ang. *microcode*) przy uruchomieniu systemu. Procesory Intel wymagają osobnego pakietu do tego celu. Szczegółowe informacje można znaleźć w [Microcode](/index.php/Microcode "Microcode").
 
-### Retaining boot messages
+### Ukrywanie komunikatów rozruchowych
 
-Once it concludes, the screen is cleared and the login prompt appears, leaving users unable to gather feedback from the boot process. [Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages") to overcome this limitation.
+Po zakończeniu rozruchu, ekran zostanie wyczyszczony i pojawi się monit z prośbą o zalogowanie, co uniemożliwi użytkownikom zbieranie informacji zwrotnych z procesu rozruchu. Zastosowanie wskazówek z artykułu [Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages") spowoduje pozostawienie informacji rozruchowych na ekranie.
 
-### Num Lock activation
+### Aktywacja Num Lock
 
-Num Lock is a toggle key found in most keyboards. For activating Num Lock's number key-assignment during startup, see [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+Num Lock to klawisz przełączania występujący w większości klawiatur. Aby aktywować przypisanie klawiszy numerycznych podczas uruchamiania, zapoznaj się z [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
 
-## Graphical user interface
+## Graficzny interfejs użytkownika
 
-This section provides orientation for users wishing to run graphical applications on their system. See [Category:X server](/index.php/Category:X_server "Category:X server") for additional resources.
+Ta sekcja zawiera wskazówki dla użytkowników, którzy chcą uruchamiać aplikacje graficzne w swoim systemie. Zobacz [Category: X server](/index.php/Category:X_server "Category:X server"), aby uzyskać dodatkowe informacje.
 
-### Display server
+### Serwer wyświetlania
 
-[Xorg](/index.php/Xorg "Xorg") is the public, open-source implementation of the [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") (commonly X11, or X). It is required for running applications with graphical user interfaces (GUIs), and the majority of users will want to install it.
+[Xorg](/index.php/Xorg "Xorg") to publiczna, otwarta implementacja [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") (zwykle X11 lub X). Jest niezbędny do uruchamiania aplikacji z graficznym interfejsem użytkownika (GUI), a większość użytkowników zapewne będzie chciała go zainstalować.
 
-[Wayland](/index.php/Wayland "Wayland") is a new, alternative display server protocol and the Weston reference implementation is available. There is very little support for it from applications at this early stage of development.
+[Wayland](/index.php/Wayland "Wayland") to nowy, alternatywny protokół wyświetlania i dostępna jest jego implementacja referencyjna Weston. Domyślnie z Wayland korzysta między innymi [Gnome](/index.php/Gnome "Gnome"), choć serwer ten nie posiada jeszcze tak dobrego wsparcia jak [Xorg](/index.php/Xorg "Xorg") i może powodować problemy na niektórych sprzętach.
 
-### Display drivers
+### Sterowniki graficzne
 
-The default *vesa* display driver will work with most video cards, but performance can be significantly improved and additional features harnessed by installing the appropriate driver for [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel"), or [NVIDIA](/index.php/NVIDIA "NVIDIA") products.
+Domyślny sterownik ekranu „vesa” będzie działał z większością kart graficznych, ale wydajność grafiki można znacznie poprawić i przede wszystkim wykorzystać wszystkie funkcje karty graficznej, instalując odpowiedni sterownik dla kart [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") lub [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
-### Desktop environments
+### Środowiska pulpitu
 
-Although Xorg provides the basic framework for building a graphical environment, additional components may be considered necessary for a complete user experience. [Desktop environments](/index.php/Desktop_environment "Desktop environment") such as [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") bundle together a wide range of *X clients*, such as a window manager, panel, file manager, terminal emulator, text editor, icons, and other utilities. Users with less experience may wish to install a desktop environment for a more familiar environment. See [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") for additional resources.
+Chociaż Xorg i Wayland stanowią podstawy do budowania środowiska graficznego, dodatkowe komponenty mogą być uznane za niezbędne, aby użytkownik w poczuł się w pełni komfortowo ze swoim systemem. [Środowiska pulpitu](/index.php/Desktop_environment "Desktop environment"), takie jak [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE") i [Xfce](/index.php/Xfce "Xfce") łączą w sobie szeroką gamę *klientów serwera X*, takich jak menedżer okien, panel, menedżer plików, emulator terminala, edytor tekstu, ikony i inne narzędzia. Użytkownicy o mniejszym doświadczeniu mogą chcieć zainstalować środowisko pulpitu, aby uzyskać dostęp do popularnych narzędzi i ułatwić korzystanie z komputera. Zobacz [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"), aby uzyskać dodatkowe informacje.
 
-### Window managers
+### Menedżery okien
 
-A full-fledged desktop environment provides a complete and consistent graphical user interface, but tends to consume a considerable amount of system resources. Users seeking to maximize performance or otherwise simplify their environment may opt to install a [window manager](/index.php/Window_manager "Window manager") alone and hand-pick desired extras. Most desktop environments allow use of an alternative window manager as well. [Dynamic](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [stacking](/index.php/Category:Stacking_WMs "Category:Stacking WMs"), and [tiling](/index.php/Category:Tiling_WMs "Category:Tiling WMs") window managers differ in their handling of window placement.
+Rozwinięte środowisko pulpitu zapewnia pełny i spójny graficzny interfejs użytkownika, ale zwykle zużywa znaczną ilość zasobów systemowych. Użytkownicy, którzy chcą zmaksymalizować wydajność lub w inny sposób uprościć swój system, mogą zdecydować się na instalację [menedżera okien](/index.php/Window_manager "Window manager") i dodatkowe narzędzia niezbędne do pracy z komputerem. Większość środowisk pulpitu umożliwia także korzystanie z menedżera okien alternatywnego wobec tego domyślnie dostarczanego ze środowiskiem. [Dynamiczne](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [nakładalne](/index.php/Category:Stacking_WMs "Category:Stacking WMs") i [kafelkowe](/index.php/Category:Tiling_WMs "Category:Tiling WMs") menedżery okien różnią się w obsłudze rozmieszczenia okien.
 
-### Display manager
+### Menedżer wyświetlania
 
-Most desktop environment include a [display manager](/index.php/Display_manager "Display manager") for automatically starting the graphical environment and managing user logins. Users without a desktop environment can install one separately. Alternatively you may [start X at login](/index.php/Start_X_at_login "Start X at login") as a simple alternative to a display manager.
+Większość środowisk pulpitu zawiera [menedżer wyświetlania](/index.php/Display_manager "Display manager") do automatycznego uruchamiania środowiska graficznego i zarządzania logowaniami użytkowników. Użytkownicy nieposiadający środowiska graficznego mogą zainstalować je osobno. Możesz również [bezpośrednio uruchomić serwer X](/index.php/Start_X_at_login "Start X at login") co stanowi prostą alternatywę dla menedżera wyświetlania.
 
-## Power management
+## Zarządzanie energią
 
-This section may be of use to laptop owners or users otherwise seeking power management controls. For more, please see [Category:Power management](/index.php/Category:Power_management "Category:Power management").
+Ta sekcja może być przydatna dla właścicieli laptopów lub użytkowników szukających w inny sposób kontroli nad zarządzaniem energią. Aby uzyskać więcej informacji, zobacz [Category:Power management](/index.php/Category:Power_management "Category:Power management").
 
-See [Power management](/index.php/Power_management "Power management") for more general overview.
+Zobacz [Power management](/index.php/Power_management "Power management"), aby uzyskać więcej informacji.
 
-### ACPI events
+### Zdarzenia ACPI
 
-Users can configure how the system reacts to ACPI events such as pressing the power button or closing a laptop's lid. For the new (recommended) method using [systemd](/index.php/Systemd "Systemd"), see [Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management"). For the old method, see [acpid](/index.php/Acpid "Acpid").
+Użytkownicy mogą skonfigurować sposób, w jaki system reaguje na zdarzenia ACPI, takie jak naciśnięcie przycisku zasilania lub zamknięcie pokrywy laptopa. Aby zapoznać się z nową (zalecaną) metodą zarządzania tymi zdarzeniami przy użyciu [systemd](/index.php/Systemd "Systemd"), zobacz [Zarządzanie energią za pomocą systemd](/index.php/Power_management#Power_management_with_systemd "Power management"). Aby zapoznać się ze starą metodą, zobacz [acpid](/index.php/Acpid "Acpid").
 
-### CPU frequency scaling
+### Skalowanie procesora
 
-Modern processors can decrease their frequency and voltage to reduce heat and power consumption. Less heat leads to more quiet system and prolongs the life of hardware. See [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") for details.
+Nowoczesne procesory mogą zmniejszyć częstotliwość i napięcie w celu zmniejszenia zużycia ciepła i energii. Mniej ciepła prowadzi do cichszej pracy systemu i przedłuża żywotność sprzętu. Aby uzyskać szczegółowe informacje, zobacz stronę [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
 
-### Laptops
+### Laptopy
 
-For articles related to portable computing along with model-specific installation guides, please see [Category:Laptops](/index.php/Category:Laptops "Category:Laptops"). For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
+Artykuły dotyczące komputerów przenośnych wraz z przewodnikami instalacji dla konkretnych modeli znajdują się w [Category: Laptops](/index.php/Category:Laptops "Category:Laptops"). Aby uzyskać ogólny przegląd artykułów i zaleceń dotyczących laptopów, zobacz stronę [Laptop](/index.php/Laptop "Laptop").
 
-### Suspend and Hibernate
+### Wstrzymanie i hibernacja
 
-See main article: [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
+Zobacz główny artykuł: [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
 
 ## Multimedia
 
-[Category:Multimedia](/index.php/Category:Multimedia "Category:Multimedia") includes additional resources.
+[Kategoria Multimedia](/index.php/Category:Multimedia "Category:Multimedia") zawiera dodatkowe informacje.
 
-### Sound
+### Dźwięk
 
-[Sound](/index.php/Sound "Sound") is provided by kernel sound drivers:
+[Dźwięk](/index.php/Sound "Sound") jest dostarczany przez sterowniki dźwięku dostarczane z jądrem:
 
-*   [ALSA](/index.php/ALSA "ALSA") is included with the kernel and is recommended because usually it works out of the box (it just needs to be [unmuted](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture")).
+*   [ALSA](/index.php/ALSA "ALSA") jest dołączony do jądra i jest zalecany, ponieważ zwykle działa on od razu (musi tylko zostać wyłączone [wyciszenie](/index.php/Advanced_Linux_Sound_Architecture#_Unmuting_the_channel "Advanced Linux Sound Architecture")).
 
-*   [OSS](/index.php/OSS "OSS") is a viable alternative in case ALSA does not work.
+*   [OSS](/index.php/OSS "OSS") jest realną alternatywą w sytuacji, gdy ALSA nie zadziała.
 
-Users may additionally wish to install and configure a [sound server](/index.php/Sound#Sound_servers "Sound") such as [PulseAudio](/index.php/PulseAudio "PulseAudio"). For advanced audio requirements, see [professional audio](/index.php/Professional_audio "Professional audio").
+Użytkownicy mogą dodatkowo chcieć zainstalować i skonfigurować [serwer dźwięku](/index.php/Sound#Sound_server "Sound"), taki jak [PulseAudio](/index.php/PulseAudio "PulseAudio"). Aby zapoznać się z kwestiami dotyczącymi zaawansowanej konfiguracji dźwięku zapoznaj się ze stroną [professional audio](/index.php/Professional_audio "Professional audio").
 
-### Browser plugins
+### Wtyczki przeglądarek
 
-For access to certain web content, [browser plugins](/index.php/Browser_plugins "Browser plugins") such as Adobe Acrobat Reader, Adobe Flash Player, and Java can be installed.
+Aby uzyskać dostęp do niektórych treści internetowych, można zainstalować [wtyczki przeglądarek](/index.php/Browser_plugins "Browser plugins"), takie jak Adobe Acrobat Reader, Adobe Flash Player i Java.
 
-### Codecs
+### Kodeki
 
-[Codecs](/index.php/Codecs "Codecs") are utilized by multimedia applications to encode or decode audio or video streams. In order to play encoded streams, users must ensure an appropriate codec is installed.
+[Kodeki](/index.php/Codecs "Codecs") są wykorzystywane przez aplikacje multimedialne do kodowania lub dekodowania strumieni audio lub wideo. Aby odtwarzać zakodowane strumienie, użytkownicy muszą upewnić się, że zainstalowano odpowiedni kodek.
 
-## Networking
+## Sieć
 
-This section is confined to small networking procedures. Head over to [Network configuration](/index.php/Network_configuration "Network configuration") for a full guide. For more, please see [Category:Networking](/index.php/Category:Networking "Category:Networking").
+Ta sekcja jest ograniczona do najprostszych ustawień sieciowych. Przejdź do [Network configuration](/index.php/Network_configuration "Network configuration"), aby uzyskać pełny przewodnik. Aby uzyskać więcej informacji, zobacz kategorię [Category:Network](/index.php?title=Category:Network&action=edit&redlink=1 "Category:Network (page does not exist)").
 
-### Clock synchronization
+### Synchronizacja zegara
 
-The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. See [Time synchronization](/index.php/Time_synchronization "Time synchronization") for implementations of such protocol.
+[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) to protokół do synchronizacji zegarów systemów komputerowych w sieciach danych z przełączanymi pakietami i zmiennymi opóźnieniami. Aby zapoznać się z implementacjami tego protokołu, zobacz [Time synchronization](/index.php/Time_synchronization "Time synchronization").
 
-### DNS security
+### Zabezpieczenia DNS
 
-For better security while browsing web, paying online, connecting to [SSH](/index.php/SSH "SSH") services and similar tasks consider using [DNSSEC](/index.php/DNSSEC "DNSSEC")-enabled client software which can validate signed [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") records, and [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") to encrypt DNS traffic.
+Aby zwiększyć bezpieczeństwo podczas przeglądania stron internetowych, płatności online, łączenia się z usługami [SSH](/index.php/SSH "SSH") i podobnych zadań, rozważ użycie oprogramowania klienckiego [DNSSEC](/index.php/DNSSEC "DNSSEC"), które może zatwierdzać podpisane rekordy [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") oraz [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") do szyfrowania ruchu DNS.
 
-### Setting up a firewall
+### Konfigurowanie zapory sieciowej
 
-A [firewall](/index.php/Firewall "Firewall") can provide an extra layer of protection on top of the Linux networking stack. While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")'s [iptables](/index.php/Iptables "Iptables"), it is not enabled by default. It is highly recommended to set up some form of firewall, see [Firewalls](/index.php/Firewalls "Firewalls") for the available guides.
+[Zapora sieciowa](/index.php/Firewall "Firewall") (ang. *firewall*) może zapewnić dodatkową ochronę sieci w systemie Linux. Chociaż standardowe jądro Arch jest w stanie używać [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") oraz [iptables](/index.php/Iptables "Iptables"), rozwiązanie to nie jest domyślnie włączone. Zdecydowanie zaleca się skonfigurowanie jakiejś formy zapory sieciowej. Zapoznaj się ze stroną [Firewalls](/index.php/Firewalls "Firewalls"), aby wyszukać dostępne przewodniki.
 
-### Resource sharing
+### Udostępnianie zasobów (w tym plików)
 
-To share files among the machines in a network, follow the [NFS](/index.php/NFS "NFS") or the [SSHFS](/index.php/SSHFS "SSHFS") article.
+Aby udostępnić pliki między komputerami w sieci, postępuj zgodnie z artykułami dotyczącymi [NFS](/index.php/NFS "NFS") lub [SSHFS](/index.php/SSHFS "SSHFS").
 
-Use [Samba](/index.php/Samba "Samba") to join a Windows network. To configure the machine to use Active Directory for authentication, read [Active Directory integration](/index.php/Active_Directory_integration "Active Directory integration").
+Użyj [Samba](/index.php/Samba "Samba"), aby dołączyć do sieci Windows. Aby skonfigurować urządzenie do korzystania z Active Directory, przeczytaj [Active Directory integration](/index.php/Active_Directory_integration "Active Directory integration").
 
-See also [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
+Zobacz także [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
 
-## Input devices
+## Urządzenia wejściowe
 
-This section contains popular input device configuration tips. For more, please see [Category:Input devices](/index.php/Category:Input_devices "Category:Input devices").
+Ta sekcja zawiera popularne wskazówki dotyczące konfiguracji urządzeń wejściowych takich jak myszka i klawiatura. Aby uzyskać więcej informacji, zobacz [Category:Input devices](/index.php/Category:Input_devices "Category:Input devices").
 
-### Keyboard layouts
+### Układy klawiatury
 
-Non-English or otherwise non-standard keyboards may not function as expected by default. The necessary steps to configure the keymap are different for virtual console and [Xorg](/index.php/Xorg "Xorg"), they are described in [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") respectively.
+Klawiatury w języku innym niż angielski lub w inny sposób niestandardowe mogą nie działać domyślnie (tak jest z polskim układem klawiatury). Niezbędne kroki w celu skonfigurowania układu klawiszy są różne dla konsoli wirtualnej i [Xorg](/index.php/Xorg "Xorg"). Skonfigurowanie polskiego układu klawiatury w konsoli zostało opisane w [Przewodniku instalacyjnym](/index.php/Installation_guide_(Polski) "Installation guide (Polski)"). Więcej informacji na temat konfiguracji układu klawiatury w Xorg znajdziesz w: [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
-### Mouse buttons
+### Przyciski myszki
 
-Owners of advanced or unusual mice may find that not all mouse buttons are recognized by default, or may wish to assign different actions for extra buttons. Instructions can be found in [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
+Może się okazać, że w bardziej zaawansowanych lub nietypowych myszkach, nie wszystkie przyciski działają prawidłowo. Przydatne instrukcje można znaleźć w [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse Buttons Working").
 
-### Laptop touchpads
+### Płytki dotykowe (tzw. touchpady) w laptopach
 
-Many laptops use [Synaptics](http://www.synaptics.com/) or [ALPS](http://www.alps.com/) "touchpad" pointing devices. These, and several other touchpad models, use the Synaptics input driver; see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") for installation and configuration details.
+Wiele laptopów korzysta z urządzeń wskazujących [Synaptics](http://www.synaptics.com/) lub [ALPS](http://www.alps.com/) zwanych płytkami dotykowymi (ang. *touchpads*). Niektóre płytki dotykowe używają sterownika wejściowego Synaptics (zob. [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")).
 
-### TrackPoints
+### Urządzenia typu TrackPoint
 
-See the [TrackPoint](/index.php/TrackPoint "TrackPoint") article to configure your TrackPoint device.
+Zobacz artykuł [TrackPoint](/index.php/TrackPoint "TrackPoint"), aby skonfigurować urządzenie typu TrackPoint.
 
-## Optimization
+## Optymalizacja
 
-This section aims to summarize tweaks, tools and available options useful to improve system and application performance.
+Ta sekcja ma na celu podsumowanie poprawek, narzędzi i dostępnych opcji przydatnych w celu poprawy wydajności systemu i aplikacji.
 
 ### Benchmarking
 
-[Benchmarking](/index.php/Benchmarking "Benchmarking") is the act of measuring performance and comparing the results to another system's results or a widely accepted standard through a unified procedure.
+[Benchmarking](/index.php/Benchmarking "Benchmarking") to czynność polegająca na mierzeniu wydajności i porównywaniu wyników z wynikami innych systemów z pomocą ujednoliconej procedury.
 
-### Maximizing performance
+### Zwiększanie wydajności
 
-The [Improving performance](/index.php/Improving_performance "Improving performance") article gathers information and is a basic rundown about gaining performance in Arch Linux.
+Artykuł [Improving performance](/index.php/Improving_performance "Improving performance") zawiera podsumowanie informacje dotyczących wydajności systemu Arch Linux.
 
-### Solid state drives
+### Dyski SSD
 
-The [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") article covers many aspects of solid state drives, including configuring them to maximize their lifetimes.
+Artykuł [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") zawiera informacje dotyczące dysków półprzewodnikowych (SSD), w tym dotyczące ich konfiguracji celem zwiększenia żywotności.
 
-## System service
+## Usługi systemowe
 
-This section relates to [daemons](/index.php/Daemons "Daemons"). For more, please see [Category:Daemons and system services](/index.php?title=Category:Daemons_and_system_services&action=edit&redlink=1 "Category:Daemons and system services (page does not exist)").
+Ta sekcja dotyczy tzw. [demonów](/index.php/Daemons "Daemons") (ang. *daemons*) czyli usług systemowych. Więcej informacji można znaleźć w [Category:Daemons](/index.php/Category:Daemons "Category:Daemons").
 
-### File index and search
+### Indeksowanie plików i wyszukiwanie
 
-Most distributions have a `locate` command available to be able to quickly search for files. To get this functionality in Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) is the recommended install. After the install you should run `updatedb` to index the filesystems.
+Większość dystrybucji udostępnia polecenie `locate`, które służy wyszukiwaniu plików w systemie. Aby uzyskać tę funkcjonalność w Arch Linux, należy zainstalować [mlocate](https://www.archlinux.org/packages/?name=mlocate). Po instalacji powinieneś uruchomić `updatedb`, aby zindeksować systemy plików.
 
-### Local mail delivery
+### Poczta lokalna
 
-A default base setup bestows no means for mail syncing. To configure *Postfix* for simple local mailbox delivery, see [Postfix](/index.php/Postfix "Postfix"). Other options are [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") and [fdm](/index.php/Fdm "Fdm").
+Domyślna konfiguracja podstawowa nie zapewnia synchronizacji poczty. Aby skonfigurować „Postfix” do prostego dostarczania lokalnej skrzynki pocztowej, zobacz stronę [Postfix](/index.php/Postfix "Postfix"). Inne opcje to [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") i [fdm](/index.php/Fdm "Fdm").
 
-### Printing
+### Drukowanie
 
-[CUPS](/index.php/CUPS "CUPS") is a standards-based, open source printing system developed by Apple. See [Category:Printers](/index.php/Category:Printers "Category:Printers") for printer-specific articles.
+[CUPS](/index.php/CUPS "CUPS") to system drukowania open source opracowany przez Apple. Zobacz [Category:Printers](/index.php/Category:Printers "Category:Printers"), aby zapoznać się z artykułami dotyczącymi konfiguracji drukarek.
 
-## Appearance
+## Wygląd
 
-This section contains frequently-sought "eye candy" tweaks for an aesthetically pleasing Arch experience. For more, please see [Category:Eye candy](/index.php/Category:Eye_candy "Category:Eye candy").
+Ta sekcja zawiera informacje o tzw. wodotryskach (ang. *eye candy*), czyli funkcjach poprawiających wrażenia estetyczne. Aby uzyskać więcej informacji, zobacz [Category:Eye candy](/index.php/Category:Eye_candy "Category:Eye candy").
 
-### Fonts
+### Czcionki
 
-You may wish to install a set of TrueType fonts, as only unscalable bitmap fonts are included in a basic Arch system. The [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) package provides a set of high quality, general-purpose fonts with good [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode") coverage.
+Ponieważ w podstawowym systemie Arch zawarte są jedynie nieskalowalne czcionki bitmap, aby poprawić wygląd systemu, możesz zainstalować czcionki TrueType. Pakiet [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) zapewnia zestaw wysokiej jakości czcionek ogólnego zastosowania o dobrej obsłudze znaków [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode").
 
-A plethora of information on the subject can be found in the [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") articles.
+Więcej informacji na ten temat można znaleźć w artykułach [Fonts](/index.php/Fonts "Fonts") i [Font configuration](/index.php/Font_configuration "Font configuration").
 
-If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts").
+Jeśli spędzasz dużo czasu w wierszu poleceń (tj. bez uruchamiania serwera X), możesz zmienić czcionkę używaną w konsoli, aby zwiększyć czytelność tekstu. Zobacz stronę [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console").
 
-### GTK and Qt themes
+### Motywy GTK i Qt
 
-A big part of the applications with a graphical interface for Linux systems are based on the [GTK+](/index.php/GTK%2B "GTK+") or the [Qt](/index.php/Qt "Qt") toolkits. See those articles and [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for ideas to improve the appearance of your installed programs and adapt it to your liking.
+Duża część aplikacji z interfejsem graficznym dla systemów Linux oparta jest na zestawach narzędzi [GTK+](/index.php/GTK%2B "GTK+") lub [Qt](/index.php/Qt "Qt"). Zapoznaj się z artykułem [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications"), aby znaleźć sposoby na poprawę wyglądu zainstalowanych programów i dostosowanie ich do własnych upodobań.
 
-## Console improvements
+## Ulepszenia konsoli
 
-This section applies to small modifications that better console programs' practicality. For more, please see [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
+Ta sekcja dotyczy niewielkich modyfikacji, które ułatwiają korzystanie z konsoli. Aby uzyskać więcej informacji, zobacz [Category:Shells](/index.php?title=Category:Shells&action=edit&redlink=1 "Category:Shells (page does not exist)").
 
-### Aliases
+### Aliasy
 
-Aliasing a command, or a group thereof, is a way of saving time when using the console. This is specially helpful for repetitive tasks that do not need significant alteration to their parameters between executions. Common time-saving aliases can be found in [Bash#Aliases](/index.php/Bash#Aliases "Bash"), which are easily portable to [zsh](/index.php/Zsh "Zsh") as well.
+Aliasowanie polecenia lub jego grupy to sposób na zaoszczędzenie czasu podczas korzystania z konsoli. Jest to szczególnie pomocne w przypadku powtarzających się zadań, które nie wymagają znaczącej zmiany parametrów. Typowe aliasy oszczędzające czas można znaleźć w [Bash#Aliases](/index.php/Bash#Aliases "Bash"). Można je łatwo przenosić również do [zsh](/index.php/Zsh "Zsh").
 
-### Alternative shells
+### Alternatywne powłoki
 
-[Bash](/index.php/Bash "Bash") is the shell that is installed by default in an Arch system. The live installation media, however, uses [zsh](/index.php/Zsh "Zsh") with the [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) addon package. See [Command-line shell#List of shells](/index.php/Command-line_shell#List_of_shells "Command-line shell") for more alternatives.
+[Bash](/index.php/Bash "Bash") to powłoka instalowana domyślnie w systemie Arch. Nośnik instalacyjny używa jednak [zsh](/index.php/Zsh "Zsh") z pakietem dodatkowym [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Zobacz [Command-line shell#List of shells](/index.php/Command-line_shell#List_of_shells "Command-line shell"), aby uzyskać więcej powłok.
 
-### Bash additions
+### Dodatki Bash
 
-A list of miscellaneous Bash settings, including completion enhancements, history search and [Readline](/index.php/Readline "Readline") macros is available in [Bash#Tips and tricks](/index.php/Bash#Tips_and_tricks "Bash").
+Lista różnych ustawień Bash, w tym ustawień autouzupełniania, wyszukiwania historii i makr [Readline](/index.php/Readline "Readline"), jest dostępna w [Bash # Tips and tricks](/index.php/Bash#_Tips_and_tricks "Bash").
 
-### Colored output
+### Kolorowy tekst w konsoli
 
-Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as `cope`, is another route. Install the [cope-git](https://aur.archlinux.org/packages/cope-git/) package. The [acoc](https://aur.archlinux.org/packages/acoc/) package provides a similar application.
+Zapoznaj się z działem [Color output in console](/index.php/Color_output_in_console "Color output in console").
 
-Colorizing the output of specific core utilities such as `grep` and `ls` is covered in the [Core utilities](/index.php/Core_utilities "Core utilities") article.
+### Pliki skompresowane i archiwa
 
-Man pages (or manual pages) are one of the most useful resources available to GNU/Linux users. To aid readability, the pager can be configured to render colored text as explained in [man page#Colored man pages](/index.php/Man_page#Colored_man_pages "Man page").
+Pliki skompresowane lub archiwa są często spotykane w systemie GNU/Linux. [Tar](/index.php/Tar "Tar") jest jednym z najczęściej używanych narzędzi do archiwizacji, a użytkownicy powinni zapoznać się z jego składnią (na przykład pakiety Arch Linuxa to po prostu archiwum xzip). Zobacz [Bash # Functions](/index.php/Bash#_Functions "Bash") any uzyskać dodatkowe informacje.
 
-### Compressed files
+### Monit konsoli
 
-Compressed files, or archives, are frequently encountered on a GNU/Linux system. [Tar](/index.php/Tar "Tar") is one of the most commonly used archiving tools, and users should be familiar with its syntax (Arch Linux packages, for example, are simply xzipped tarballs). See [Bash#Functions](/index.php/Bash#Functions "Bash") for other helpful commands.
-
-### Console prompt
-
-The console prompt (PS1) can be customized to a great extent. See [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt") or [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") if using Bash or Zsh, respectively.
+Monit konsoli (PS1) można w dużym stopniu dostosować. Zobacz [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") lub [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh"), jeśli używasz odpowiednio Bash lub Zsh.
 
 ### Emacs shell
 
-Emacs is known for featuring options beyond the duties of regular text editing, one of these being a full shell replacement. Consult [Emacs#Colored output issues](/index.php/Emacs#Colored_output_issues "Emacs") for a fix regarding garbled characters that may result from enabling colored output.
+Emacs jest znany z oferowania opcji wykraczających poza zwykłą edycję tekstu, jedną z nich jest zastąpienie powłoki wiersza poleceń. Skorzystaj z [Emacs#Colored output issues](/index.php/Emacs#Colored_output_issues "Emacs"), aby uzyskać pomoc w naprawieniu kolorów w Emacs, w związku z włączeniem kolorowych znaków w konsoli.
 
-### Mouse support
+### Obsługa myszy
 
-Using a mouse with the console for copy-paste operations can be preferred over [GNU Screen](/index.php/GNU_Screen "GNU Screen")'s traditional copy mode. Refer to [Console mouse support](/index.php/Console_mouse_support "Console mouse support") for comprehensive directions.
+Używanie myszy w konsoli np. do kopiowania i wklejania tekstu, może okazać się wygodniejsze niż tradycyjny tryb kopiowania [w ekranie GNU](/index.php/GNU_Screen "GNU Screen"). Szczegółowe instrukcje znajdują się w [General purpose mouse](/index.php/General_purpose_mouse "General purpose mouse").
 
-### Scrollback buffer
+### Przewijanie tekstu w konsoli
 
-To be able to save and view text which has scrolled off the screen, refer to [Scrollback buffer](/index.php/Scrollback_buffer "Scrollback buffer").
+Aby móc zatrzymać tekst, który przeskoczył poza ekran i go odczytać, zapoznaj się ze stroną [General troubleshooting#Scrollback](/index.php/General_troubleshooting#Scrollback "General troubleshooting").
 
-### Session management
+### Zarządzanie sesją
 
-Using terminal multiplexers like [tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programs may be run under sessions composed of tabs and panes that can be detached at will, so when the user either kills the terminal emulator, terminates [X](/index.php/X "X"), or logs off, the programs associated with the session will continue to run in the background as long as the terminal multiplexer server is active. Interacting with the programs requires reattaching to the session.
+Używając multiplekserów terminali, takich jak [tmux](/index.php/Tmux "Tmux") lub [GNU Screen](/index.php/GNU_Screen "GNU Screen"), programy można uruchamiać w sesjach składających się z kart i paneli, które można dowolnie odłączać, więc gdy użytkownik zakończy emulator terminala, zakończy serwer [X](/index.php/X "X") lub wyloguje się, programy powiązane z sesją będą działały w tle, dopóki serwer terminali multiplekserów będzie aktywny. Interakcja z programami wymaga przelogowania.

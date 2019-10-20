@@ -39,7 +39,7 @@ Afterwards, we can go ahead with setting up the TUN.
 ```
 # ip tuntap add dev tun0 mode tun user <your_local_user>
 # ip addr replace 10.0.0.1/24 dev tun0
-# badvpn --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr localhost:4711
+# badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr localhost:4711
 
 ```
 

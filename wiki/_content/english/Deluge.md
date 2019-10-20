@@ -38,6 +38,7 @@ Related articles
     *   [6.1 No module named service_identity](#No_module_named_service_identity)
     *   [6.2 Web ui .torrent upload does not work](#Web_ui_.torrent_upload_does_not_work)
     *   [6.3 ImportError: No module named gobject](#ImportError:_No_module_named_gobject)
+    *   [6.4 Execute script not found or not executable](#Execute_script_not_found_or_not_executable)
 *   [7 See Also](#See_Also)
 
 ## Installation
@@ -386,6 +387,24 @@ ImportError: No module named gobject
 ```
 
 Install [pygtk](https://www.archlinux.org/packages/?name=pygtk), as noted above.
+
+### Execute script not found or not executable
+
+When using the [Execute](https://dev.deluge-torrent.org/wiki/Plugins/Execute) plugin, the following error message is logged when deluge tries to execute the script:
+
+```
+[ERROR   ][deluge_execute.core           :145 ] Execute script not found or not executable
+
+```
+
+If `deluged` is running as a system service, note that it likely will not be able to access the home directory of other users. Consider putting custom scripts in `/usr/local/bin/`.
+
+Script permission issues can be debugged as the `deluge` user using [sudo](/index.php/Sudo "Sudo"):
+
+```
+$ sudo -u deluge /path/to/script
+
+```
 
 ## See Also
 

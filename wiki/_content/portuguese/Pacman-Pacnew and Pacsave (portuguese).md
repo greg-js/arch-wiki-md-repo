@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Pacnew_and_Pacsave&diff=0&oldid=571860) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Pacnew_and_Pacsave&diff=0&oldid=582907) na versão em inglês.
 
 Quando o *pacman* remove um pacote que tem um arquivo de configuração, ele normalmente cria uma cópia backup daquele arquivo de configuração e anexa *.pacsave* ao nome do arquivo. Da mesma forma, quando o *pacman* atualiza um pacote que inclui um novo arquivo de configuração pelo mantenedor, comparando-o com a configuração atualmente instalada, ele salva um arquivo *.pacnew* com a nova configuração. O *pacman* fornece um aviso quando esses arquivos são escritos.
 
@@ -75,6 +75,8 @@ Entrando nos detalhes, os resultados da comparação de soma do MD5 em três via
 	original = *X*, atual = *Y*, nova = *Z* 
 
 	Todas as três versões são diferentes, então deixa a versão atual no lugar, instala a nova versão com uma extensão *.pacnew* e avisa o usuário sobre a nova versão. Espera-se que o usuário mescle manualmente quaisquer alterações necessárias da nova versão na versão atual.
+
+Raramente, quando um pacote atualizado inclui um arquivo backup que a versão anterior não incluía, a situação é corretamente lidada como X/Y/Y ou X/Y/Z, com X sendo um valor não existente.
 
 ### .pacsave
 

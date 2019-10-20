@@ -194,7 +194,7 @@ And finally to set the desired thermal mode that you identified with the command
 
 To save more battery use [TLP](/index.php/TLP "TLP") package AND/OR [Powertop](/index.php/Powertop "Powertop").
 
-You can monitor the used power and also the temperature of your machine with the [s-tui](https://aur.archlinux.org/packages/s-tui/) tool.
+You can monitor the used power and also the temperature of your machine with the [s-tui](https://www.archlinux.org/packages/?name=s-tui) tool.
 
 ## Touchpad
 

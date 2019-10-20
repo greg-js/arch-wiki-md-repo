@@ -7,7 +7,11 @@ Articoli correlati
 
 [NetworkManager](http://projects.gnome.org/NetworkManager/) è un programma per la rilevazione e la configurazione delle reti, e con il quale, i sistemi potranno connettersi automaticamente. La funzionalità di NetworkManager può essere utile sia per reti cablate che wireless. Per quanto riguarda il wireless, NetworkManager predilige le reti conosciute, ed offre la possibilità di passare alla rete più affidabile. Le applicazioni di allerta di NetworkManager possono passare dalla modalità online a quella offline. NetworkManager può inoltre favorire le connessioni cablate a quelle wireless, oltre ad includere il supporto per connessioni modem e certi tipi di VPN. NetworkManager è stato originariamente sviluppato da RedHat ed è ora ospitato dal progetto [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione di base](#Installazione_di_base)
     *   [1.1 Supporto VPN](#Supporto_VPN)
@@ -31,7 +35,7 @@ Articoli correlati
 *   [5 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [5.1 Problemi con il traffico dati tramite il tunnel PPTP](#Problemi_con_il_traffico_dati_tramite_il_tunnel_PPTP)
     *   [5.2 Gestione di rete disabilitata](#Gestione_di_rete_disabilitata)
-    *   [5.3 NetworkManager impedisce a DHCPCD l'uso di resolv.conf.head e resolv.conf.tail](#NetworkManager_impedisce_a_DHCPCD_l.27uso_di_resolv.conf.head_e_resolv.conf.tail)
+    *   [5.3 NetworkManager impedisce a DHCPCD l'uso di resolv.conf.head e resolv.conf.tail](#NetworkManager_impedisce_a_DHCPCD_l'uso_di_resolv.conf.head_e_resolv.conf.tail)
     *   [5.4 Preservare le modifiche a resolv.conf](#Preservare_le_modifiche_a_resolv.conf)
     *   [5.5 Problemi DHCP](#Problemi_DHCP)
     *   [5.6 Problemi con hostname](#Problemi_con_hostname)
@@ -39,20 +43,20 @@ Articoli correlati
     *   [5.8 Modem 3G non rilevato](#Modem_3G_non_rilevato)
     *   [5.9 Spegnimento WLAN su computer portatili](#Spegnimento_WLAN_su_computer_portatili)
     *   [5.10 Impostazioni IP statico ripristinate a DHCP](#Impostazioni_IP_statico_ripristinate_a_DHCP)
-    *   [5.11 È impossibile editare connessioni da utente](#.C3.88_impossibile_editare_connessioni_da_utente)
+    *   [5.11 È impossibile editare connessioni da utente](#È_impossibile_editare_connessioni_da_utente)
     *   [5.12 Cancellare una rete nascosta](#Cancellare_una_rete_nascosta)
 *   [6 Suggerimenti](#Suggerimenti)
     *   [6.1 Condividere connessione internet su wifi](#Condividere_connessione_internet_su_wifi)
         *   [6.1.1 Ad-hoc](#Ad-hoc)
         *   [6.1.2 Access Point](#Access_Point)
-    *   [6.2 Verificare l'attivazione della rete all'interno di un processo cron o script](#Verificare_l.27attivazione_della_rete_all.27interno_di_un_processo_cron_o_script)
+    *   [6.2 Verificare l'attivazione della rete all'interno di un processo cron o script](#Verificare_l'attivazione_della_rete_all'interno_di_un_processo_cron_o_script)
     *   [6.3 Sblocco automatico del portachiavi dopo il login](#Sblocco_automatico_del_portachiavi_dopo_il_login)
         *   [6.3.1 Gnome](#Gnome)
         *   [6.3.2 KDE](#KDE)
         *   [6.3.3 SLiM login manager](#SLiM_login_manager)
     *   [6.4 Ignorare dispositivi specifici](#Ignorare_dispositivi_specifici)
-    *   [6.5 Connessioni più veloci](#Connessioni_pi.C3.B9_veloci)
-        *   [6.5.1 Collegarsi più velocemente disabilitando IPv6](#Collegarsi_pi.C3.B9_velocemente_disabilitando_IPv6)
+    *   [6.5 Connessioni più veloci](#Connessioni_più_veloci)
+        *   [6.5.1 Collegarsi più velocemente disabilitando IPv6](#Collegarsi_più_velocemente_disabilitando_IPv6)
         *   [6.5.2 Speed up DHCP by disabling ARP probing in dhcpcd](#Speed_up_DHCP_by_disabling_ARP_probing_in_dhcpcd)
         *   [6.5.3 Usare Servers OpenDNS](#Usare_Servers_OpenDNS)
 
@@ -304,10 +308,10 @@ if [ $CONNECTION_UUID == <connection UUID> ]; then
                   #sleep 10
                   export SSH_AUTH_SOCK=$(find /tmp/keyring-*/ -type s -user $USER -gr oup users -name ssh)
                   su $USER -c "/usr/bin/sshfs user@host:/remote/folder /local/folder/"
-                ;;
+                ;;
                down)
                   fusermount -u /local/folder
-                ;;
+                ;;
        esac
 fi
 
@@ -317,7 +321,9 @@ fi
 
 In questo esempio si desidera connettersi automaticamente a una connessione VPN definita in precedenza con NetworkManager. La prima cosa da fare è creare lo script del dispatcher che definisce che cosa fare dopo aver stabilito la connessione alla rete.
 
-**1)** Creare lo script `/etc/NetworkManager/dispatcher.d/vpn-up` 
+**1)** Creare lo script
+
+ `/etc/NetworkManager/dispatcher.d/vpn-up` 
 ```
 VPN_NAME=<name of VPN connection defined in NetworkManager>
   ESSID=<wifi network ESSID (not connection name)>

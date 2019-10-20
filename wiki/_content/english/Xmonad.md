@@ -559,7 +559,7 @@ Now you should see the file.
 
 ### Problems with Java applications
 
-If you have problems, like Java application Windows not resizing, or menus immediately closing after you click, see [Java#Gray window | Applications not resizing with WM | menus immediately closing](/index.php/Java#Gray_window_|_Applications_not_resizing_with_WM_|_menus_immediately_closing "Java").
+If you have problems, like Java application Windows not resizing, or menus immediately closing after you click, see [Java#Gray window, applications not resizing with WM, menus immediately closing](/index.php/Java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing "Java").
 
 ### Empty space at the bottom of gvim or terminals
 

@@ -32,7 +32,7 @@ Odwiedź **[Spis treści](/index.php/Table_of_contents_(Polski) "Table of conten
 
 	Lista najczęściej zadawanych pytań wraz z odpowiedziami.
 
-	[Inne zagadnienia](/index.php?title=General_Recommendations_(Polski)&action=edit&redlink=1 "General Recommendations (Polski) (page does not exist)")
+	[Zalecenia ogólne](/index.php/General_recommendations_(Polski) "General recommendations (Polski)")
 
 	Lista popularnych zagadnień oraz artykułów.
 

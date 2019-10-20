@@ -7,7 +7,7 @@
 *   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [iptables](/index.php/Iptables "Iptables"). Дата последней синхронизации: 8 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=579906).
+**Состояние перевода:** На этой странице представлен перевод статьи [iptables](/index.php/Iptables "Iptables"). Дата последней синхронизации: 17 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=585505).
 
 *iptables* — утилита командной строки для настройки интегрированного в ядро Linux [межсетевого экрана](/index.php/Firewall "Firewall"), разработка которого велась в рамках проекта [Netfilter](https://en.wikipedia.org/wiki/ru:Netfilter существует утилита *ip6tables*. В основном их синтаксис совпадает, но есть специфичные для каждого протокола опции.
 
@@ -42,7 +42,7 @@
 
 ## Установка
 
-Стандартная сборка ядра Arch Linux включает в себя поддержку iptables. Все, что потребуется – [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пользовательские утилиты, предоставляемые пакетом [iptables](https://www.archlinux.org/packages/?name=iptables) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") (пакет [iproute2](https://www.archlinux.org/packages/?name=iproute2) из группы [base](https://www.archlinux.org/packages/?name=base) зависит от iptables, поэтому пакет iptables уже должен быть установлен в вашей системе).
+Стандартная сборка ядра Arch Linux включает в себя поддержку iptables. Все, что потребуется – [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пользовательские утилиты, предоставляемые пакетом [iptables](https://www.archlinux.org/packages/?name=iptables) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Пакет [iptables](https://www.archlinux.org/packages/?name=iptables) является косвенной зависимостью [мета-пакета](/index.php/%D0%9C%D0%B5%D1%82%D0%B0-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0 "Мета-пакета") [base](https://www.archlinux.org/packages/?name=base), поэтому он уже должен быть установлен.
 
 ### Интерфейс
 

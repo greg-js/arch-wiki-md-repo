@@ -7,7 +7,11 @@ Related articles
 
 This page is mainly about how to gather more information in connection with bug reports. Even though the word "debug" is used, it's not intended as a guide for how to debug programs while developing.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 When an application fails](#When_an_application_fails)
     *   [1.1 Run it from the commandline](#Run_it_from_the_commandline)
@@ -78,7 +82,7 @@ export CXXFLAGS="$CXXFLAGS -O0 -fbuiltin -g"
 
 ```
 
-The meaning of the flags is the following: **-g** enables debug symbols and **-O0** turns off optimizations. (**-O2** is the most common optimization level. ([**-O3** is usually overkill](http://funroll-loops.info/) and [**-O4** and above behaves exactly like **-O3**](http://stackoverflow.com/questions/1778538/how-many-gcc-optimization-levels-are-there)).
+The meaning of the flags is the following: **-g** enables debug symbols and **-O0** turns off optimizations. (**-O2** is the most common optimization level. (**-O3** is usually overkill and [**-O4** and above behaves exactly like **-O3**](http://stackoverflow.com/questions/1778538/how-many-gcc-optimization-levels-are-there)).
 
 If you have a "core" file, it can be used together with gdb to get a backtrace:
 

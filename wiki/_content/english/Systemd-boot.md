@@ -59,7 +59,9 @@ To conclude the installation, [configure](#Configuration) *systemd-boot*.
 
 ### Updating the EFI boot manager
 
-Whenever there is a new version of *systemd-boot*, the boot manager must be updated by the user. This can be performed manually or the update can be automatically triggered using pacman hooks. The two approaches are described thereafter.
+Whenever there is a new version of *systemd-boot*, the boot manager can be optionally reinstalled by the user. This can be performed manually or the update can be automatically triggered using pacman hooks. The two approaches are described thereafter.
+
+**Note:** The boot manager is a standalone EFI executable and any version can be used to boot the system (partial updates do not apply, since pacman only installs the systemd-boot installer, not systemd-boot itself). However, new versions may add new features or fix bugs, so it is probably a good idea to update it anyway.
 
 #### Manual update
 

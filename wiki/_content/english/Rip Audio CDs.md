@@ -34,7 +34,7 @@ Music is usually stored on audio CDs in an uncompressed format which requires a 
 
 ## Ripping
 
-See [Optical disc drive#Ripping](/index.php/Optical_disc_drive#Ripping "Optical disc drive") for a list of available software. For example, to extract audio with *cdrtools*:
+See [Optical disc drive#Ripping](/index.php/Optical_disc_drive#Ripping "Optical disc drive") for a list of available software. For example, to extract audio with the community package [cdrtools](https://www.archlinux.org/packages/?name=cdrtools):
 
 ```
 $ cdda2wav -vall cddb=0 speed=4 -paranoia paraopts=proof -B -D /dev/sr0

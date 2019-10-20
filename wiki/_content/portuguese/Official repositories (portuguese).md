@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=568183) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=584711) na versão em inglês.
 
 Artigos relacionados
 
@@ -53,7 +53,7 @@ Esse repositório pode ser localizado em `.../core/os/` de seu [espelho](/index.
 *   gerenciamento e correção de [sistemas de arquivos](/index.php/File_systems "File systems") suportados
 *   o processo de configuração do sistema (ex.: [openssh](https://www.archlinux.org/packages/?name=openssh))
 
-assim como as dependências deles (não necessariamente [makedepends](/index.php/Makedepends_(Portugu%C3%AAs) "Makedepends (Português)")) e o [grupo base](/index.php/Grupo_de_pacotes "Grupo de pacotes").
+assim como as dependências deles (não necessariamente [makedepends](/index.php/Makedepends_(Portugu%C3%AAs) "Makedepends (Português)")) e o [metapacote](/index.php/Metapacote "Metapacote") [base](https://www.archlinux.org/packages/?name=base).
 
 *core* possui uma qualidade consideravelmente estrita de requisitos. Desenvolvedores/usuários precisam assinar (como uma confirmação) as atualizações de pacotes antes delas serem aceitas; Para pacotes com baixo uso, um motivo razoável é suficiente: informar pessoas sobre a atualização, requisitar assinaturas, manter no [#testing](#testing) por uma semana dependendo da severidade da alteração, falta de relatórios de erros relevantes, junto com o assinatura implícito do mantenedor do pacote.
 
@@ -135,7 +135,7 @@ Novos pacotes vão para o *testing* se:
 
 *testing* é o único repositório que pode ter colisões nos nomes com outros repositórios oficiais. Se ativo, ele tem de ser o primeiro repositório listado em seu arquivo `/etc/pacman.conf`.
 
-**Nota:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
+**Nota:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro"). Você deve considerar também se juntar à [Equipe de Teste do Arch](/index.php/Equipe_de_Teste_do_Arch "Equipe de Teste do Arch").
 
 ### community-testing
 

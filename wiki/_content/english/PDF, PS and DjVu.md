@@ -27,9 +27,10 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
     *   [5.7 Extract page range from PDF, split multipage PDF document](#Extract_page_range_from_PDF,_split_multipage_PDF_document)
     *   [5.8 Imposing a PDF](#Imposing_a_PDF)
     *   [5.9 Inspecting metadata](#Inspecting_metadata)
-    *   [5.10 Optimize a PDF](#Optimize_a_PDF)
+    *   [5.10 Optimize, reduce size of a PDF](#Optimize,_reduce_size_of_a_PDF)
     *   [5.11 Rasterize a PDF](#Rasterize_a_PDF)
     *   [5.12 Splitting PDF pages](#Splitting_PDF_pages)
+    *   [5.13 Add signature.png or image to one of the pages in the pdf](#Add_signature.png_or_image_to_one_of_the_pages_in_the_pdf)
 *   [6 DjVu tools](#DjVu_tools)
     *   [6.1 Convert DjVu to images](#Convert_DjVu_to_images)
     *   [6.2 Processing images](#Processing_images)
@@ -440,18 +441,19 @@ $ pdfinfo file.pdf
 
 ```
 
-### Optimize a PDF
+### Optimize, reduce size of a PDF
 
-With Ghostscript:
+With Ghostscript one of:
 
 ```
 $ ps2pdf -dPDFSETTINGS=/screen in.pdf out.pdf
+$ gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -sOutputFile=out.pdf in.pdf
 
 ```
 
 For different settings see the [documentation](https://www.ghostscript.com/doc/9.22/VectorDevices.htm#PSPDF_IN).
 
-There is also [shrinkpdf](https://aur.archlinux.org/packages/shrinkpdf/), a third-party wrapper script.
+There is also [shrinkpdf](https://aur.archlinux.org/packages/shrinkpdf/), a script wrapping gs.
 
 ### Rasterize a PDF
 
@@ -486,6 +488,10 @@ $ mutool poster -y 2 in.pdf out.pdf
 ```
 
 Can be used to undo simple [imposition](#Imposing_a_PDF).
+
+### Add signature.png or image to one of the pages in the pdf
+
+to add an image to any location in a pdf can be done with imagemagick (convert), xv, and pdftk. a [wrapper script is here](http://emmanuel.branlard.free.fr/work/linux/dev/SignPDF/SignPDF) . other hints are [here](https://unix.stackexchange.com/questions/85873/how-can-i-add-a-signature-png-to-a-pdf-in-linux).
 
 ## DjVu tools
 

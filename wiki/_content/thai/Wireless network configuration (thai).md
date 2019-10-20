@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ขั้นตอนแรก](#ขั้นตอนแรก)
 *   [2 การติดตั้ง](#การติดตั้ง)
@@ -155,7 +159,7 @@ depmod -a
 หลังจากนั้นให้คุณแก้ไขไฟล์ /etc/rc.conf เพื่อให้ระบบเรียกใช้งาน ndiswrapper ตอนเริ่มต้น โดยให้ใส่ ndiswrapper ในส่วนของ MODULES ดังตัวอย่างด้านล่าง
 
 ```
-MODULES=(ndiswrapper snd-intel8x0 !usbserial)
+MODULES=(ndiswrapper snd-intel8x0 !usbserial)
 
 ```
 
@@ -200,7 +204,7 @@ iwconfig
 
 เป็น Driver สำหรับผู้ใช้ Broadcom ซึ่งใช้ชิปรุ่น 43xx นอกเหนือจากการใช้งาน ndiswrapper โดยมันได้ถูกแนะนำพร้อมกับ kernel เวอร์ชัน 2.6.17 การติดตั้งสามารถทำได้อย่างง่ายดาย
 
-1.  ใช้คำสั่ง `iwconfig` หรือ `hwd -s` เพื่อตรวจสอบว่าคุณมีอุปกรณ์ที่ถูกต้อง ผลที่ได้จากการใช้คำสั่ง น่าจะดูคล้ายกับผลดังนี้ `Network    : Broadcom Corp.|BCM94306 802.11g NIC module: unknown` 
+1.  ใช้คำสั่ง `iwconfig` หรือ `hwd -s` เพื่อตรวจสอบว่าคุณมีอุปกรณ์ที่ถูกต้อง ผลที่ได้จากการใช้คำสั่ง น่าจะดูคล้ายกับผลดังนี้ `Network    : Broadcom Corp.|BCM94306 802.11g NIC module: unknown` 
 2.  ใช้คำสั่ง `pacman -S bcm43xx-fwcutter` เพื่อติดตั้งโปรแกรม firmware cutter
 3.  Download windows driver สำหรับอุปกรณ์ของคุณ เพื่อใช้งาน firmware
     *   คุณสามารถ download [[1]](http://drinus.net/airport/wl_apsta.o) ได้ เพียง save มันไว้บน Desktop ของคุณ

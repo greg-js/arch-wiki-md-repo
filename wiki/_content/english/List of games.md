@@ -706,7 +706,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Cataclysm: Dark Days Ahead](https://en.wikipedia.org/wiki/Cataclysm:_Dark_Days_Ahead "wikipedia:Cataclysm: Dark Days Ahead")** — Post-apocalyptic roguelike.
 
-	[http://en.cataclysmdda.com/](http://en.cataclysmdda.com/) || [cataclysm-dda](https://www.archlinux.org/packages/?name=cataclysm-dda)
+	[https://cataclysmdda.org/](https://cataclysmdda.org/) || [cataclysm-dda](https://www.archlinux.org/packages/?name=cataclysm-dda)
 
 *   **[Linley's Dungeon Crawl](https://en.wikipedia.org/wiki/Linley%27s_Dungeon_Crawl "wikipedia:Linley's Dungeon Crawl")** —
 

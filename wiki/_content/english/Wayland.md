@@ -3,7 +3,7 @@ Related articles
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[Wayland](https://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. XWayland provides a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications in Wayland.
+[Wayland](https://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called [Weston](/index.php/Weston "Weston"). XWayland provides a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications in Wayland.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,40 +12,30 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requirements](#Requirements)
-*   [2 Weston](#Weston)
-    *   [2.1 Installation](#Installation)
-    *   [2.2 Usage](#Usage)
-    *   [2.3 Configuration](#Configuration)
-        *   [2.3.1 XWayland](#XWayland)
-        *   [2.3.2 High DPI displays](#High_DPI_displays)
-        *   [2.3.3 Shell font](#Shell_font)
-    *   [2.4 Tips and tricks](#Tips_and_tricks)
-        *   [2.4.1 Screencast recording](#Screencast_recording)
-        *   [2.4.2 Window switching](#Window_switching)
-*   [3 GUI libraries](#GUI_libraries)
-    *   [3.1 GTK 3](#GTK_3)
-    *   [3.2 Qt 5](#Qt_5)
-    *   [3.3 Clutter](#Clutter)
-    *   [3.4 SDL2](#SDL2)
-    *   [3.5 GLFW](#GLFW)
-    *   [3.6 GLEW](#GLEW)
-    *   [3.7 EFL](#EFL)
-*   [4 Display managers](#Display_managers)
-*   [5 Compositors](#Compositors)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Gamma](#Gamma)
-    *   [6.2 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [6.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
-    *   [6.4 Cannot open display: :0 with Electron-based applications](#Cannot_open_display:_:0_with_Electron-based_applications)
-    *   [6.5 Screen recording](#Screen_recording)
-    *   [6.6 Remote display](#Remote_display)
-    *   [6.7 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
-        *   [6.7.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
-*   [7 See also](#See_also)
+*   [2 Compositors](#Compositors)
+*   [3 Display managers](#Display_managers)
+*   [4 GUI libraries](#GUI_libraries)
+    *   [4.1 GTK 3](#GTK_3)
+    *   [4.2 Qt 5](#Qt_5)
+    *   [4.3 Clutter](#Clutter)
+    *   [4.4 SDL2](#SDL2)
+    *   [4.5 GLFW](#GLFW)
+    *   [4.6 GLEW](#GLEW)
+    *   [4.7 EFL](#EFL)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Gamma](#Gamma)
+    *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
+    *   [5.4 Cannot open display: :0 with Electron-based applications](#Cannot_open_display:_:0_with_Electron-based_applications)
+    *   [5.5 Screen recording](#Screen_recording)
+    *   [5.6 Remote display](#Remote_display)
+    *   [5.7 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
+        *   [5.7.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
+*   [6 See also](#See_also)
 
 ## Requirements
 
-Most Wayland compositors only work on systems using [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway"), or a desktop environment that includes a compositor like [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
+Most Wayland compositors only work on systems using [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [Weston](/index.php/Weston "Weston") or [Sway](/index.php/Sway "Sway"), or a desktop environment that includes a compositor like [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
 
 For the GPU driver and Wayland compositor to be compatible they must support the same buffer API. There are two main APIs: [GBM](https://en.wikipedia.org/wiki/Generic_Buffer_Management "wikipedia:Generic Buffer Management") and [EGLStreams](https://www.phoronix.com/scan.php?page=news_item&px=XDC2016-Device-Memory-API).
 
@@ -53,247 +43,38 @@ For the GPU driver and Wayland compositor to be compatible they must support the
 | GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |
 | EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE") |
 
-## Weston
-
-Weston is the reference implementation of a Wayland compositor.
-
-### Installation
-
-[Install](/index.php/Install "Install") the [weston](https://www.archlinux.org/packages/?name=weston) package.
-
-### Usage
-
-**Tip:** Super (windows key) can be changed, see [weston.ini](#Configuration)
-
-<caption>**Keyboard Shortcuts**</caption>
-| Cmd | Action |
-| `Ctrl+Alt+Backspace` | Quit Weston |
-| `Super+Scroll` (or `PageUp`/`PageDown`) | Zoom in/out of desktop |
-| `Super+Tab` | Switch windows |
-| `Super+LMB` | Move Window |
-| `Super+MMB` | Rotate Window |
-| `Super+RMB` | Resize Window |
-| `Super+Alt+Scroll` | Change window opacity |
-| `Super+k` | Force Kill Active Window |
-| `Super+Up/Down` | Switch Prev/Next Workspace |
-| `Super+Shift+Up/Down` | Grab Current Window and Switch Workspace |
-| `Super+F*n*` | Switch to Workspace *n* (e.g. F2) |
-| `Super+s` | Take a screenshot |
-| `Super+r` | Record a screencast |
-
-To launch Weston natively (from a TTY) or to run Weston inside a running X session:
-
-```
-$ weston
-
-```
-
-Then within Weston, you can run the demos. To launch a terminal emulator:
-
-```
-$ weston-terminal
-
-```
-
-To move flowers around the screen:
-
-```
-$ weston-flower 
-
-```
-
-To display images:
-
-```
-$ weston-image image1.jpg image2.jpg...
-
-```
-
-### Configuration
-
-Weston's outputs differ slightly from those of `xorg.conf` Monitors:
-
-```
-$ ls /sys/class/drm
-card0
-card0-VGA-1
-card1
-card1-DVI-I-1
-card1-HDMI-A-1
-card1-VGA-2
-
-```
-
-`card0` is the unused built-in video adapter. The add-on adapter `card1` is cabled to one HDMI and one DVI monitor, so the output names are `HDMI-A-1` and `DVI-I-1`.
-
-Following is an example configuration file. See [weston.ini(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5) for more.
-
- `~/.config/weston.ini` 
-```
-[core]
-# xwayland support
-xwayland=true
-
-[libinput]
-enable-tap=true
-
-[shell]
-#background-image=/usr/share/backgrounds/gnome/Aqua.jpg
-background-type=scale-crop
-background-color=0xff000000
-#background-color=0xff002244
-#panel-color=0x90ff0000
-panel-color=0x00ffffff
-panel-position=bottom
-#clock-format=none
-#animation=zoom
-#startup-animation=none
-close-animation=none
-focus-animation=dim-layer
-#binding-modifier=ctrl
-num-workspaces=6
-locking=false
-cursor-theme=Adwaita
-cursor-size=24
-
-# tablet options
-#lockscreen-icon=/usr/share/icons/gnome/256x256/actions/lock.png
-#lockscreen=/usr/share/backgrounds/gnome/Garden.jpg
-#homescreen=/usr/share/backgrounds/gnome/Blinds.jpg
-#animation=fade
-
-# for Laptop displays
-[output]
-name=LVDS1
-mode=preferred
-#mode=1680x1050
-#transform=90
-
-#[output]
-#name=VGA1
-# The following sets the mode with a modeline, you can get modelines for your preffered resolutions using the cvt utility
-#mode=173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +vsync
-#transform=flipped
-
-#[output]
-#name=X1
-#mode=1024x768
-#transform=flipped-270
-
-# on screen keyboard input method
-#[input-method]
-#path=/usr/lib/weston/weston-keyboard
-
-[keyboard]
-keymap_rules=evdev
-#keymap_layout=us,de
-#keymap_variant=colemak,
-#keymap_options=grp:shifts_toggle
-#keymap_options=caps:ctrl_modifier,shift:both_capslock_cancel
-repeat-rate=30
-repeat-delay=300
-
-# keymap_options from /usr/share/X11/xkb/rules/base.lst
-#numlock-on=true
-
-[terminal]
-font=monospace
-font-size=18
-
-[launcher]
-icon=/usr/share/weston/icon_flower.png
-path=/usr/bin/weston-flower
-
-[launcher]
-icon=/usr/share/icons/gnome/32x32/apps/utilities-terminal.png
-path=/usr/bin/weston-terminal --shell=/usr/bin/bash
-
-#[launcher]
-#icon=/usr/share/icons/gnome/32x32/apps/utilities-terminal.png
-#path=/usr/bin/gnome-terminal
-
-[launcher]
-icon=/usr/share/icons/hicolor/32x32/apps/firefox.png
-path=MOZ_GTK_TITLEBAR_DECORATION=client /usr/bin/firefox
-
-#[launcher]
-#icon=/usr/share/icons/Adwaita/32x32/apps/multimedia-volume-control.png
-#path=/usr/bin/st alsamixer -c0
-
-```
-
-Minimal `weston.ini`:
-
- `~/.config/weston.ini` 
-```
-[core]
-xwayland=true
-
-[keyboard]
-keymap_layout=gb
-
-[output]
-name=LVDS1
-mode=1680x1050
-transform=90
-
-[launcher]
-icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
-path=/usr/bin/weston-terminal
-
-[launcher]
-icon=/usr/share/icons/hicolor/24x24/apps/firefox.png
-path=/usr/bin/firefox
-
-```
-
-#### XWayland
-
-[Install](/index.php/Install "Install") the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package.
-
-When you want to run an X application from within Weston, it spins up Xwayland to service the request. The following configuration is shown above:
-
- `~/.config/weston.ini` 
-```
-[core]
-xwayland=true
-
-```
-
-**Note:** if X is not already configured you may need to configure a keymap: [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg")
-
-#### High DPI displays
-
-For [Retina](https://en.wikipedia.org/wiki/Retina_Display "wikipedia:Retina Display") or [HiDPI](/index.php/HiDPI "HiDPI") displays, use:
-
- `~/.config/weston.ini` 
-```
-[output]
-name=...
-scale=2
-
-```
-
-#### Shell font
-
-Weston uses the default sans-serif font for window title bars, clocks, etc. See [Font configuration#Replace or set default fonts](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration") for instructions on how to change this font.
-
-### Tips and tricks
-
-#### Screencast recording
-
-Weston has built-in screencast recording which can be started and stopped by pressing the `Super`+`r` key combination. Screencasts are saved to the file `capture.wcap` in the current working directory of Weston. The WCAP format is a lossless video format specific to Weston, which only records the difference in frames. To be able to play the recorded screencast, the WCAP file will need to be converted to a format which a media player can understand. First, convert the capture to the YUV pixel format:
-
-```
-$ wcap-decode --yuv4mpeg2 capture.wcap > capture.y4m
-
-```
-
-The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/FFmpeg "FFmpeg") or [x264](https://www.archlinux.org/packages/?name=x264) (see `x264 -h` for more).
-
-#### Window switching
-
-To switch windows with `Super+Space` instead of `Super+Tab` change `KEY_TAB` to `KEY_SPACE` in `desktop-shell/shell.c` and recompile [weston](https://www.archlinux.org/packages/?name=weston).
+## Compositors
+
+| Name | Type | Description |
+| GNOME | Stacking | See [GNOME#Starting](/index.php/GNOME#Starting "GNOME"). |
+| sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [GitHub](https://github.com/SirCmpwn/sway) |
+| Enlightenment | Stacking and tiling | [More Info](https://www.enlightenment.org/about-wayland) |
+| KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
+| Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is an abandoned tiling WM for Wayland. |
+| Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
+| Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell (more akin to a WM than a DE) using Qt5 and Weston. The goal of the project is to build a simple but flexible and good looking Wayland desktop. |
+| Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
+| Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. Not under development. [[1]](https://github.com/raspberrypi/maynard/issues/54#issuecomment-303422302)[[2]](https://github.com/raspberrypi/maynard/issues/55#issuecomment-373808518) |
+| Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a Wayland compositor to explore 3D windowing using virtual reality. |
+| Way Cooler | Tiling | [Way Cooler](https://github.com/way-cooler/way-cooler) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
+| Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/imbavirus/mazecompositor) is a 3D Qt based Wayland compositor |
+| Cage | Kiosk | [Cage](https://www.hjdskes.nl/projects/cage/) is a Wayland compositor that displays a single fullscreen application |
+| Greenfield | Stacking | [Greenfield](https://github.com/udevbe/greenfield) is a Wayland compositor that runs in a web browser and can display remote applications |
+| Grefsen | Floating | [Grefsen](https://github.com/ec1oud/grefsen) is a Qt/Wayland compositor providing a minimal desktop environment. |
+| Waymonad | Tiling | [Waymonad](https://github.com/waymonad/waymonad) is a Wayland compositor based on ideas from and inspired by xmonad |
+| wayfire | Stacking | [Wayfire](https://github.com/WayfireWM/wayfire) is a general purpose compositor. |
+
+Some of the above may support [display managers](/index.php/Display_manager "Display manager"). Check `/usr/share/wayland-sessions/*compositor*.desktop` to see how they are started.
+
+## Display managers
+
+Below listed display managers which supports running Wayland compositors. The Type column indicates whether the display manager supports running on Wayland or not.
+
+| Name | Type | Description |
+| GDM | Runs on Wayland | [GNOME](/index.php/GNOME "GNOME") display manager. |
+| LightDM | Runs on X11 | Cross-desktop display manager. |
+| Ly | Runs in console | TUI display manager written in C |
+| SDDM | Runs on X11 | QML-based display manager. |
 
 ## GUI libraries
 
@@ -307,7 +88,7 @@ The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Waylan
 
 To enable Wayland support in Qt 5, install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package.
 
-To run a Qt 5 app with the Wayland plugin [[1]](https://wiki.qt.io/QtWayland#How_do_I_use_QtWayland.3F), use `-platform wayland` or `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable"). To force the usage of [X11](/index.php/X11 "X11") on a Wayland session, use `QT_QPA_PLATFORM=xcb`.
+To run a Qt 5 app with the Wayland plugin [[3]](https://wiki.qt.io/QtWayland#How_do_I_use_QtWayland.3F), use `-platform wayland` or `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable"). To force the usage of [X11](/index.php/X11 "X11") on a Wayland session, use `QT_QPA_PLATFORM=xcb`.
 
 ### Clutter
 
@@ -332,39 +113,6 @@ To use GLEW with the Wayland backend, install the [glew-wayland](https://www.arc
 ### EFL
 
 EFL has complete Wayland support. To run a EFL application on Wayland, see Wayland [project page](https://wayland.freedesktop.org/efl.html).
-
-## Display managers
-
-Below listed display managers which supports running Wayland compositors. The Type column indicates whether the display manager supports running on Wayland or not.
-
-| Name | Type | Description |
-| GDM | Runs on Wayland | [GNOME](/index.php/GNOME "GNOME") display manager. |
-| LightDM | Runs on X11 | Cross-desktop display manager. |
-| Ly | Runs in console | TUI display manager written in C |
-| SDDM | Runs on X11 | QML-based display manager. |
-
-## Compositors
-
-| Name | Type | Description |
-| GNOME | Stacking | See [GNOME#Starting](/index.php/GNOME#Starting "GNOME"). |
-| sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [GitHub](https://github.com/SirCmpwn/sway) |
-| Enlightenment | Stacking and tiling | [More Info](https://www.enlightenment.org/about-wayland) |
-| KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
-| Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is an abandoned tiling WM for Wayland. |
-| Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
-| Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell (more akin to a WM than a DE) using Qt5 and Weston. The goal of the project is to build a simple but flexible and good looking Wayland desktop. |
-| Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
-| Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. Not under development. [[2]](https://github.com/raspberrypi/maynard/issues/54#issuecomment-303422302)[[3]](https://github.com/raspberrypi/maynard/issues/55#issuecomment-373808518) |
-| Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a Wayland compositor to explore 3D windowing using virtual reality. |
-| Way Cooler | Tiling | [Way Cooler](https://github.com/way-cooler/way-cooler) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
-| Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/imbavirus/mazecompositor) is a 3D Qt based Wayland compositor |
-| Cage | Kiosk | [Cage](https://www.hjdskes.nl/projects/cage/) is a Wayland compositor that displays a single fullscreen application |
-| Greenfield | Stacking | [Greenfield](https://github.com/udevbe/greenfield) is a Wayland compositor that runs in a web browser and can display remote applications |
-| Grefsen | Floating | [Grefsen](https://github.com/ec1oud/grefsen) is a Qt/Wayland compositor providing a minimal desktop environment. |
-| Waymonad | Tiling | [Waymonad](https://github.com/waymonad/waymonad) is a Wayland compositor based on ideas from and inspired by xmonad |
-| wayfire | Stacking | [Wayfire](https://github.com/WayfireWM/wayfire) is a general purpose compositor. |
-
-Some of the above may support [display managers](/index.php/Display_manager "Display manager"). Check `/usr/share/wayland-sessions/*compositor*.desktop` to see how they are started.
 
 ## Troubleshooting
 

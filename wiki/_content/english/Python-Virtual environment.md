@@ -27,7 +27,7 @@
 
 A virtual environment is a directory into which some binaries and shell scripts are installed. The binaries include *python* for executing scripts and *pip* for installing other modules within the environment. There are also shell scripts (one for [bash](/index.php/Bash "Bash"), csh, and [fish](/index.php/Fish "Fish")) to activate the environment. Essentially, a virtual environment mimics a full system install of [Python](/index.php/Python "Python") and all of the desired modules without interfering with any system on which the application might run.
 
-In 2017, [python-pipenv](https://www.archlinux.org/packages/?name=python-pipenv) was published which manages all the above tools - managing virtual environments of python interpreters, package dependencies, their activation and reproducible locking of versions in Pipfiles.
+In 2017, [Pipenv](https://pipenv.readthedocs.io/) was published which manages all the above tools - managing virtual environments of python interpreters, package dependencies, their activation and reproducible locking of versions in Pipfiles.
 
 ## Installation
 
@@ -41,10 +41,9 @@ In 2017, [python-pipenv](https://www.archlinux.org/packages/?name=python-pipenv)
 *   Python 3: [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv)
 *   Python 2: [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv)
 
-For pip-env:
+For Pipenv:
 
 *   Python 3: [python-pipenv](https://www.archlinux.org/packages/?name=python-pipenv)
-*   Python 2: [python2-pipenv](https://www.archlinux.org/packages/?name=python2-pipenv)
 
 ## Usage
 
@@ -56,7 +55,7 @@ Use *venv* or *virtualenv* to create the virtual environment within your project
 
 #### venv
 
-**Note:** This method replaces the *pyvenv* script, which is deprecated since [python](https://www.archlinux.org/packages/?name=python) 3.6.
+**Note:** This method replaces the *pyvenv* script, which is removed in [python](https://www.archlinux.org/packages/?name=python) 3.8.
 
 This tool is provided by [python](https://www.archlinux.org/packages/?name=python) (3.3+):
 

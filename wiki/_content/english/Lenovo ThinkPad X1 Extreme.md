@@ -145,7 +145,7 @@ Battery charging thresholds can be configured via sysfs nodes `/sys/class/power_
 
 **Warning:** As of BIOS v1.24, overriding thermal limits will result in your laptop running out of spec under certain conditions. A proper firmware level solution [is being worked on](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) by Lenovo, and should be available eventually.
 
-A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that the CPU is limited to 38W/80C, resulting in maximum sustained frequency of around 2850 MHz on i7-8750H under heavy loads.
+A stress test using [s-tui](https://www.archlinux.org/packages/?name=s-tui) indicates that the CPU is limited to 38W/80C, resulting in maximum sustained frequency of around 2850 MHz on i7-8750H under heavy loads.
 
 This can be worked around by using [throttled](https://www.archlinux.org/packages/?name=throttled) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the CPU to run at 3100 MHz with the temperature of 95C.
 

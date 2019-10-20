@@ -7,7 +7,11 @@ Questo articolo tratta l'installazione di VMware in Arch, si potrebbe essere inv
 
 **Note:** Questo articolo supporta **solo** l'ultima versione di VMware, ovvero VMware Workstation 8 e VMware Player 4.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
@@ -19,9 +23,9 @@ Questo articolo tratta l'installazione di VMware in Arch, si potrebbe essere inv
     *   [3.1 Estrazione del BIOS di VMware](#Estrazione_del_BIOS_di_VMware)
     *   [3.2 Utilizzare un BIOS modificato](#Utilizzare_un_BIOS_modificato)
 *   [4 Risoluzione dei problemi](#Risoluzione_dei_problemi)
-    *   [4.1 Could not open /dev/vmmon: No such file or directory](#Could_not_open_.2Fdev.2Fvmmon:_No_such_file_or_directory)
-    *   [4.2 Kernel headers for version 3.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_3.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
-    *   [4.3 L'installer non parte](#L.27installer_non_parte)
+    *   [4.1 Could not open /dev/vmmon: No such file or directory](#Could_not_open_/dev/vmmon:_No_such_file_or_directory)
+    *   [4.2 Kernel headers for version 3.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_3.x-xxxx_were_not_found._If_you_installed_them[...])
+    *   [4.3 L'installer non parte](#L'installer_non_parte)
     *   [4.4 I dispositivi USB non vengono riconosciuti da VMware workstation 8](#I_dispositivi_USB_non_vengono_riconosciuti_da_VMware_workstation_8)
 *   [5 Disinstallazione](#Disinstallazione)
 

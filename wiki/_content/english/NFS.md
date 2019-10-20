@@ -25,8 +25,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
         *   [2.1.2 Restricting NFS to interfaces/IPs](#Restricting_NFS_to_interfaces/IPs)
         *   [2.1.3 Firewall configuration](#Firewall_configuration)
         *   [2.1.4 Enabling NFSv4 idmapping](#Enabling_NFSv4_idmapping)
-        *   [2.1.5 Static ports for NFSv3](#Static_ports_for_NFSv3)
-        *   [2.1.6 NFSv2 compatibility](#NFSv2_compatibility)
     *   [2.2 Client](#Client)
         *   [2.2.1 Manual mounting](#Manual_mounting)
         *   [2.2.2 Mount using /etc/fstab](#Mount_using_/etc/fstab)
@@ -199,15 +197,25 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 **Note:**
 
+*   NFSv4 idmapping does not work with the default `sec=sys` mount option. [[1]](http://dfusion.com.au/wiki/tiki-index.php?page=Why+NFSv4+UID+mapping+breaks+with+AUTH_UNIX)
 *   NFSv4 idmapping needs to be enabled on **both** the client and server.
 *   Another option is to make sure the user and group IDs (UID and GID) match on both the client and server.
 
-The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[1]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
+The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[2]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
 
-Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfs/parameters/nfs4_disable_idmapping` returns `Y` on a client/server, enable it by:
+Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfs/parameters/nfs4_disable_idmapping`/`/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `Y` on a client/server, enable it by:
+
+On the client:
 
 ```
 # echo "N" | tee /sys/module/nfs/parameters/nfs4_disable_idmapping
+
+```
+
+On the server:
+
+```
+# echo "N" | tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
 
 ```
 
@@ -228,23 +236,7 @@ To fully use *idmapping*, make sure the domain is configured in `/etc/idmapd.con
 Domain = *domain.tld*
 ```
 
-#### Static ports for NFSv3
-
-Users needing support for NFSv3 clients, may wish to consider using static ports. By default, for NFSv3 operation `rpc.statd` and `lockd` use random ephemeral ports; in order to allow NFSv3 operations through a firewall static ports need to be defined. Edit `/etc/sysconfig/nfs` to set `STATDARGS`:
-
- `/etc/sysconfig/nfs`  `STATDARGS="-p 32765 -o 32766 -T 32803"` 
-
-The `rpc.mountd` should consult `/etc/services` and bind to the same static port 20048 under normal operation; however, if it needs to be explicity defined edit `/etc/sysconfig/nfs` to set `RPCMOUNTDARGS`:
-
- `/etc/sysconfig/nfs`  `RPCMOUNTDARGS="-p 20048"` 
-
-After making these changes, several services need to be restarted; the first writes the configuration options out to `/run/sysconfig/nfs-utils` (see `/usr/lib/systemd/scripts/nfs-utils_env.sh`), the second restarts `rpc.statd` with the new ports, the last reloads `lockd` (kernel module) with the new ports. [Restart](/index.php/Restart "Restart") these services now: `nfs-config`, `rpcbind`, `rpc-statd`, and `nfs-server`.
-
-After the restarts, use `rpcinfo -p` on the server to examine the static ports are as expected. Using `rpcinfo -p <server IP>` from the client should reveal the exact same static ports.
-
-#### NFSv2 compatibility
-
-Users needing to support clients using NFSv2 (for example U-Boot), should set `RPCNFSDARGS="-V 2"` in `/etc/sysconfig/nfs`.
+See [[3]](https://unix.stackexchange.com/a/464950) for details.
 
 ### Client
 
@@ -311,17 +303,17 @@ Some additional mount options to consider:
 
 	_netdev
 
-	The `_netdev` option tells the system to wait until the network is up before trying to mount the share - [systemd](/index.php/Systemd "Systemd") assumes this for NFS, although [automount](#Mount_using_/etc/fstab_with_systemd) may be a more preferred solution.
+	The `_netdev` option tells the system to wait until the network is up before trying to mount the share - [systemd](/index.php/Systemd "Systemd") assumes this for NFS.
 
 **Note:** Setting the sixth field (`fs_passno`) to a nonzero value may lead to unexpected behaviour, e.g. hangs when the systemd automount waits for a check which will never happen.
 
 #### Mount using /etc/fstab with systemd
 
-Another method is using the systemd `automount` service. This is a better option than `_netdev`, because it remounts the network device quickly when the connection is broken and restored. As well, it solves the problem from autofs, see the example below:
+Another method is using the [x-systemd.automount](/index.php/Fstab#Remote_filesystem "Fstab") option which mounts the filesystem upon access:
 
- `/etc/fstab`  `servername:/home   */mountpoint/on/client*  nfs  noauto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0` 
+ `/etc/fstab`  `servername:/home   */mountpoint/on/client*  nfs  _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0` 
 
-One might have to reboot the client to make systemd aware of the changes to fstab. Alternatively, try [reloading](/index.php/Systemd#Using_units "Systemd") systemd and restarting `*mountpoint-on-client*.automount` to reload the `/etc/fstab` configuration.
+To make systemd aware of the changes to fstab, [reload](/index.php/Reload "Reload") systemd and restart `remote-fs.target` [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1515377#p1515377).
 
 **Tip:**
 
@@ -412,7 +404,7 @@ To mount with the increased `rsize` and `wsize` mount options:
 
 ### Automatic mount handling
 
-This trick is useful for NFS-shares on a [wireless](/index.php/Wireless "Wireless") network and/or on a network that may be unreliable. If the NFS host becomes unreachable, the NFS share will be unmounted to hopefully prevent system hangs when using the `hard` mount option [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1260240#p1260240).
+This trick is useful for NFS-shares on a [wireless](/index.php/Wireless "Wireless") network and/or on a network that may be unreliable. If the NFS host becomes unreachable, the NFS share will be unmounted to hopefully prevent system hangs when using the `hard` mount option [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1260240#p1260240).
 
 Make sure that the NFS mount points are correctly indicated in [fstab](/index.php/Fstab "Fstab"):
 

@@ -10,12 +10,12 @@ From the [USB/IP site](http://usbip.sourceforge.net/):
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Server Setup](#Server_Setup)
+    *   [2.1 Server setup](#Server_setup)
         *   [2.1.1 Binding with systemd service](#Binding_with_systemd_service)
-    *   [2.2 Client Setup](#Client_Setup)
-    *   [2.3 Disconnecting Devices](#Disconnecting_Devices)
-*   [3 Man Page](#Man_Page)
-*   [4 See Also](#See_Also)
+    *   [2.2 Client setup](#Client_setup)
+    *   [2.3 Disconnecting devices](#Disconnecting_devices)
+*   [3 Man page](#Man_page)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -23,24 +23,9 @@ From the [USB/IP site](http://usbip.sourceforge.net/):
 
 ## Usage
 
-### Server Setup
+### Server setup
 
-The server should have the physical USB device connected to it.
-
-Load the USB/IP kernel module:
-
-```
-$ sudo modprobe usbip_host
-
-```
-
-Start and Enable the USB/IP systemd service:
-
-```
-$ sudo systemctl start usbipd.service
-$ sudo systemctl enable usbipd.service
-
-```
+The server should have the physical USB device connected to it, and the `usbip_host` USB/IP [kernel module](/index.php/Kernel_module "Kernel module") loaded. Then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the USB/IP systemd service `usbipd.service`.
 
 List the connected devices:
 
@@ -89,38 +74,27 @@ In order to make binding persistent following systemd template unit file can be 
  WantedBy=multi-user.target
 ```
 
-To bind the required device. For example to share the device having *busid* 1-1:
+So, e.g., to share the device having *busid* 1-1, one should [start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `usbip-bind@1-1.service`.
+
+### Client setup
+
+Make sure the `vhci-hcd` [kernel module](/index.php/Kernel_module "Kernel module") is loaded.
+
+Then list devices available on the server:
 
 ```
-$ sudo systemctl enable usbip-bind\@1-1.service
-$ sudo systemctl start usbip-bind\@1-1.service
-
-```
-
-### Client Setup
-
-Load the VHCI kernel module:
-
-```
-$ sudo modprobe vhci-hcd
-
-```
-
-List devices available on the server:
-
-```
-$ usbip list -r <Server IP Address>
+$ usbip list -r *server_IP_address*
 
 ```
 
 Attach the required device. For example, to attach the device having *busid* 1-1.5:
 
 ```
-$ usbip attach -r <Server IP Address> -b 1-1.5
+$ usbip attach -r *server_IP_address* -b 1-1.5
 
 ```
 
-### Disconnecting Devices
+### Disconnecting devices
 
 A device can be disconnected only after detaching it on the client.
 
@@ -134,25 +108,25 @@ $ usbip port
 Detach the device:
 
 ```
-$ usbip detach -p <Port Number>
+$ usbip detach -p *port_number*
 
 ```
 
 Unbind the device on the server:
 
 ```
-$ usbip unbind -b <busid>
+$ usbip unbind -b *busid*
 
 ```
 
 **Note:** USB/IP by default requires port 3240 to be open. If a firewall is running, make sure that this port is open. For detailed instruction on configuring the firewall, go to [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
 
-## Man Page
+## Man page
 
 See [usbip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/usbip.8).
 
-## See Also
+## See also
 
-*   [Official USB/IP Project Site](http://usbip.sourceforge.net/)
+*   [Official USB/IP project site](http://usbip.sourceforge.net/)
 *   [Linux Kernel "README for usbip-utils"](https://www.kernel.org/doc/readme/tools-usb-usbip-README)
 *   ["How To Setup and use USB/IP"](https://developer.ridgerun.com/wiki/index.php?title=How_to_setup_and_use_USB/IP)

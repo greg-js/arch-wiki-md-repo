@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=576411) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=585201) na versão em inglês.
 
 Artigos relacionados
 
@@ -762,7 +762,7 @@ Certifique-se que as variáveis de ambiente relevantes (`$http_proxy`, `$ftp_pro
 
 ### Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência?
 
-Para reinstalar todos os pacotes nativos: `pacman -Qnq | pacman -S -` (a opção `-S` preserva a razão de instalação por padrão).
+Para reinstalar todos os pacotes nativos: `pacman -Qnq | pacman -S -` ou `pacman -S $(pacman -Qnq)` (a opção `-S` preserva a razão de instalação por padrão).
 
 Então você terá que reinstalar todos os pacotes externos, que podem ser listados com `pacman -Qmq`.
 

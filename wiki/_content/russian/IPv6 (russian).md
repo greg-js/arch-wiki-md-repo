@@ -4,21 +4,25 @@
 
 По умолчанию в Arch Linux включена поддержка IPv6\. Если вы ищете информацию о туннелировании IPv6 через брокера, смотрите [IPv6 tunnel broker setup](/index.php/IPv6_tunnel_broker_setup "IPv6 tunnel broker setup").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Privacy Extensions](#Privacy_Extensions)
     *   [1.1 dhcpcd](#dhcpcd)
     *   [1.2 NetworkManager](#NetworkManager)
-*   [2 Сетевое обнаружение](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D0.BE.D0.B5_.D0.BE.D0.B1.D0.BD.D0.B0.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5)
-*   [3 Статический адрес](#.D0.A1.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B0.D0.B4.D1.80.D0.B5.D1.81)
-*   [4 IPv6 и Comcast](#IPv6_.D0.B8_Comcast)
-*   [5 Отключение IPv6](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_IPv6)
-    *   [5.1 Отключение функциональности](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
-    *   [5.2 Другие программы](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B)
+*   [2 Сетевое обнаружение](#Сетевое_обнаружение)
+*   [3 Статический адрес](#Статический_адрес)
+*   [4 IPv6 и Comcast](#IPv6_и_Comcast)
+*   [5 Отключение IPv6](#Отключение_IPv6)
+    *   [5.1 Отключение функциональности](#Отключение_функциональности)
+    *   [5.2 Другие программы](#Другие_программы)
         *   [5.2.1 dhcpcd](#dhcpcd_2)
         *   [5.2.2 NetworkManager](#NetworkManager_2)
         *   [5.2.3 ntpd](#ntpd)
-*   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [6 Смотрите также](#Смотрите_также)
 
 ## Privacy Extensions
 

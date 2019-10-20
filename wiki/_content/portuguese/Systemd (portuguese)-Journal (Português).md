@@ -1,4 +1,4 @@
-Veja [systemd (Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") para o artigo principal.
+**Status de tradução:** Esse artigo é uma tradução de [systemd/Journal](/index.php/Systemd/Journal "Systemd/Journal"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd/Journal&diff=0&oldid=583479) na versão em inglês.
 
 *systemd* tem o seu próprio sistema de registro chamado de o journal e, portanto, a execução de uma daemon `syslog` não é mais necessário. Para ler o registro, utilize:
 

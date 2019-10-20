@@ -1,22 +1,26 @@
 这是对主文 [Openbox](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)") 的补充. 这篇文章涉及定制 Openbox 的外观. 有帮助的软件例如面板,托盘也有说明.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 主题和外观](#.E4.B8.BB.E9.A2.98.E5.92.8C.E5.A4.96.E8.A7.82)
-    *   [1.1 Openbox 主题](#Openbox_.E4.B8.BB.E9.A2.98)
-    *   [1.2 X11 鼠标光标](#X11_.E9.BC.A0.E6.A0.87.E5.85.89.E6.A0.87)
-    *   [1.3 GTK 主题](#GTK_.E4.B8.BB.E9.A2.98)
-    *   [1.4 桌面图标](#.E6.A1.8C.E9.9D.A2.E5.9B.BE.E6.A0.87)
-    *   [1.5 桌面壁纸](#.E6.A1.8C.E9.9D.A2.E5.A3.81.E7.BA.B8)
-*   [2 推荐的程序软件](#.E6.8E.A8.E8.8D.90.E7.9A.84.E7.A8.8B.E5.BA.8F.E8.BD.AF.E4.BB.B6)
-    *   [2.1 登录管理器](#.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.2 混合桌面视图](#.E6.B7.B7.E5.90.88.E6.A1.8C.E9.9D.A2.E8.A7.86.E5.9B.BE)
-    *   [2.3 面板,托盘,页调度程序](#.E9.9D.A2.E6.9D.BF.2C.E6.89.98.E7.9B.98.2C.E9.A1.B5.E8.B0.83.E5.BA.A6.E7.A8.8B.E5.BA.8F)
-        *   [2.3.1 面板](#.E9.9D.A2.E6.9D.BF)
-        *   [2.3.2 托盘](#.E6.89.98.E7.9B.98)
-        *   [2.3.3 页调度程序](#.E9.A1.B5.E8.B0.83.E5.BA.A6.E7.A8.8B.E5.BA.8F)
-    *   [2.4 文件管理器](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.5 应用程序启动器](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8.E5.99.A8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 主题和外观](#主题和外观)
+    *   [1.1 Openbox 主题](#Openbox_主题)
+    *   [1.2 X11 鼠标光标](#X11_鼠标光标)
+    *   [1.3 GTK 主题](#GTK_主题)
+    *   [1.4 桌面图标](#桌面图标)
+    *   [1.5 桌面壁纸](#桌面壁纸)
+*   [2 推荐的程序软件](#推荐的程序软件)
+    *   [2.1 登录管理器](#登录管理器)
+    *   [2.2 混合桌面视图](#混合桌面视图)
+    *   [2.3 面板,托盘,页调度程序](#面板,托盘,页调度程序)
+        *   [2.3.1 面板](#面板)
+        *   [2.3.2 托盘](#托盘)
+        *   [2.3.3 页调度程序](#页调度程序)
+    *   [2.4 文件管理器](#文件管理器)
+    *   [2.5 应用程序启动器](#应用程序启动器)
         *   [2.5.1 Dmenu](#Dmenu)
         *   [2.5.2 Gmrun](#Gmrun)
         *   [2.5.3 Bashrun2](#Bashrun2)
@@ -24,18 +28,18 @@
         *   [2.5.5 Launchy](#Launchy)
         *   [2.5.6 LXPanel](#LXPanel)
         *   [2.5.7 Gnome-panel](#Gnome-panel)
-    *   [2.6 剪贴板管理器](#.E5.89.AA.E8.B4.B4.E6.9D.BF.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.7 音量管理器](#.E9.9F.B3.E9.87.8F.E7.AE.A1.E7.90.86.E5.99.A8)
-        *   [2.7.1 Gvolwheel, gvtray](#Gvolwheel.2C_gvtray)
+    *   [2.6 剪贴板管理器](#剪贴板管理器)
+    *   [2.7 音量管理器](#音量管理器)
+        *   [2.7.1 Gvolwheel, gvtray](#Gvolwheel,_gvtray)
         *   [2.7.2 Obmixer](#Obmixer)
         *   [2.7.3 Volti](#Volti)
-        *   [2.7.4 Volumeicon, volwheel](#Volumeicon.2C_volwheel)
-    *   [2.8 电池 & CPU](#.E7.94.B5.E6.B1.A0_.26_CPU)
+        *   [2.7.4 Volumeicon, volwheel](#Volumeicon,_volwheel)
+    *   [2.8 电池 & CPU](#电池_&_CPU)
         *   [2.8.1 Trayfreq](#Trayfreq)
-    *   [2.9 键盘布局转换器](#.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80.E8.BD.AC.E6.8D.A2.E5.99.A8)
-        *   [2.9.1 Fbxkb, xxkb, axkb](#Fbxkb.2C_xxkb.2C_axkb)
+    *   [2.9 键盘布局转换器](#键盘布局转换器)
+        *   [2.9.1 Fbxkb, xxkb, axkb](#Fbxkb,_xxkb,_axkb)
         *   [2.9.2 xneur](#xneur)
-    *   [2.10 注销对话框](#.E6.B3.A8.E9.94.80.E5.AF.B9.E8.AF.9D.E6.A1.86)
+    *   [2.10 注销对话框](#注销对话框)
 
 ## 主题和外观
 

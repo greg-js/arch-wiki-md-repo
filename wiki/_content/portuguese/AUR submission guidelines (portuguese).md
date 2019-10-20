@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR submission guidelines](/index.php/AUR_submission_guidelines "AUR submission guidelines"). Data da última tradução: 2019-06-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_submission_guidelines&diff=0&oldid=575436) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR submission guidelines](/index.php/AUR_submission_guidelines "AUR submission guidelines"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_submission_guidelines&diff=0&oldid=582292) na versão em inglês.
 
 Artigos relacionados
 
@@ -44,7 +44,7 @@ Os PKGBUILDs enviados não devem compilar aplicativos **já presentes em qualque
 
 *   Não use `replaces` em um PKGBUILD no AUR a menos que o pacote seja renomeado, por exemplo, quando *Ethereal* se tornou *Wireshark*. Se o pacote for uma versão **alternativa de um pacote já existente**, use `conflicts` (e `provides` se esse pacote for requerido por outras pessoas). A principal diferença é: após a sincronização (-Sy), o pacman imediatamente deseja substituir um pacote 'ofensivo' instalado ao encontrar um pacote com o `replaces` correspondente em qualquer lugar em seus repositórios; o `conflicts`, por outro lado, só é avaliado na instalação do pacote, que geralmente é o comportamento desejado, porque é menos invasivo.
 
-*   O envio de **binários** deve ser **evitado** se as fontes estiverem disponíveis. O AUR não deve conter o tarball binário criado pelo makepkg, nem deve conter a lista de arquivos.
+*   Pacotes que usam [deliverables](https://en.wikipedia.org/wiki/Deliverables "wikipedia:Deliverables") **pré-compilados** quando os fontes estão disponíveis, devem usar o sufixo `-bin`. Uma exceção a isso com [Java](/index.php/Diretrizes_de_pacotes_Java#Empacotamento_de_Java_no_Arch_Linux "Diretrizes de pacotes Java"). O AUR não deve conter o tarball binário criado pelo makepkg, nem deve conter a lista de arquivos.
 
 *   Por favor, adicione uma **linha de comentário** no topo do arquivo `PKGBUILD` contendo informações sobre os atuais **mantenedores** e **contribuidores** anteriores, respeitando o seguinte formato. Lembre-se de disfarçar o seu e-mail para proteger contra spam. Linhas adicionais ou desnecessárias são facultativas.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&diff=0&oldid=578787) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&diff=0&oldid=582904) na versão em inglês.
 
 Artigos relacionados
 

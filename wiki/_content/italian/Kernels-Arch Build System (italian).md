@@ -1,6 +1,10 @@
 L'[Arch Build System](/index.php/Arch_Build_System "Arch Build System") può essere usato per creare un kernel personalizzato basato sul pacchetto [linux](https://www.archlinux.org/packages/?name=linux) ufficiale. Questo metodo di compilazione automatizza l'intero processo ed è basato su un pacchetto molto ben collaudato. Puoi modificare il PKGBUILD per usare una personale configurazione del kernel o aggiungere altre patch.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Procurarsi gli ingredienti](#Procurarsi_gli_ingredienti)
 *   [2 Modificare il PKGBUILD](#Modificare_il_PKGBUILD)

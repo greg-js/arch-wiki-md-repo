@@ -20,7 +20,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [2 Kernel configuration](#Kernel_configuration)
 *   [3 Connect to a VPN provided by a third party](#Connect_to_a_VPN_provided_by_a_third_party)
 *   [4 Create a Public Key Infrastructure (PKI) from scratch](#Create_a_Public_Key_Infrastructure_(PKI)_from_scratch)
-*   [5 A basic L3 IP routing configuration](#A_basic_L3_IP_routing_configuration)
+*   [5 A basic Layer-3 IP routing configuration](#A_basic_Layer-3_IP_routing_configuration)
     *   [5.1 Example configuration](#Example_configuration)
     *   [5.2 The server configuration file](#The_server_configuration_file)
         *   [5.2.1 Hardening the server](#Hardening_the_server)
@@ -48,7 +48,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [7.2 Prevent leaks if VPN goes down](#Prevent_leaks_if_VPN_goes_down)
         *   [7.2.1 ufw](#ufw_2)
         *   [7.2.2 vpnfailsafe](#vpnfailsafe)
-*   [8 L3 IPv4 routing](#L3_IPv4_routing)
+*   [8 Layer-3 IPv4 routing](#Layer-3_IPv4_routing)
     *   [8.1 Prerequisites for routing a LAN](#Prerequisites_for_routing_a_LAN)
         *   [8.1.1 Routing tables](#Routing_tables)
     *   [8.2 Connect the server LAN to a client](#Connect_the_server_LAN_to_a_client)
@@ -60,7 +60,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [9.2 The update-resolv-conf custom script](#The_update-resolv-conf_custom_script)
     *   [9.3 The update-systemd-resolved custom script](#The_update-systemd-resolved_custom_script)
     *   [9.4 Override DNS servers using NetworkManager](#Override_DNS_servers_using_NetworkManager)
-*   [10 L2 Ethernet bridging](#L2_Ethernet_bridging)
+*   [10 Layer-2 Ethernet bridging](#Layer-2_Ethernet_bridging)
 *   [11 Config generators](#Config_generators)
     *   [11.1 ovpngen](#ovpngen)
     *   [11.2 openvpn-unroot](#openvpn-unroot)
@@ -121,9 +121,9 @@ ta.key
 
 Alternatively, as of OpenVPN 2.4, one can use Easy-RSA to generate certificates and keys using elliptic curves. See the OpenVPN documentation for details.
 
-## A basic L3 IP routing configuration
+## A basic Layer-3 IP routing configuration
 
-**Note:** Unless otherwise explicitly stated, the rest of this article assumes a basic L3 IP routing configuration.
+**Note:** Unless otherwise explicitly stated, the rest of this article assumes a basic Layer-3 IP routing configuration.
 
 OpenVPN is an extremely versatile piece of software and many configurations are possible, in fact machines can be both servers and clients.
 
@@ -134,7 +134,7 @@ With the release of v2.4, server configurations are stored in `/etc/openvpn/serv
 The OpenVPN package comes with a collection of example configuration files for different purposes. The sample server and client configuration files make an ideal starting point for a basic OpenVPN setup with the following features:
 
 *   Uses [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") for authentication.
-*   Creates a VPN using a virtual TUN network interface (OSI L3 IP routing).
+*   Creates a VPN using a virtual TUN network interface (OSI Layer-3 IP routing).
 *   Listens for client connections on UDP port 1194 (OpenVPN's official IANA port number[[1]](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=openvpn)).
 *   Distributes virtual addresses to connecting clients from the 10.8.0.0/24 subnet.
 
@@ -629,11 +629,11 @@ Alternatively, one can allow DNS leaks. **Be sure to trust your DNS server!**
 
 #### vpnfailsafe
 
-Alternatively, the [vpnfailsafe](https://github.com/wknapik/vpnfailsafe) ([vpnfailsafe-git](https://aur.archlinux.org/packages/vpnfailsafe-git/)) script can be used by the client to prevent DNS leaks and ensure that all traffic to the internet goes over the VPN. If the VPN tunnel goes down, internet access will be cut off, except for connections to the VPN server(s). The script contains the functionality of [update-resolv-conf](#Update_resolv-conf_script), so the two do not need to be combined.
+Alternatively, the [vpnfailsafe](https://github.com/wknapik/vpnfailsafe) ([vpnfailsafe-git](https://aur.archlinux.org/packages/vpnfailsafe-git/)) script can be used by the client to prevent DNS leaks and ensure that all traffic to the internet goes over the VPN. If the VPN tunnel goes down, internet access will be cut off, except for connections to the VPN server(s). The script contains the functionality of [update-resolv-conf](#The_update-resolv-conf_custom_script), so the two do not need to be combined.
 
-## L3 IPv4 routing
+## Layer-3 IPv4 routing
 
-This section describes how to connect client/server LANs to each other using L3 IPv4 routing.
+This section describes how to connect client/server LANs to each other using Layer-3 IPv4 routing.
 
 ### Prerequisites for routing a LAN
 
@@ -761,7 +761,7 @@ If you need to edit these scripts, copy them somewhere else and edit them there,
 
 ### The update-resolv-conf custom script
 
-**Note:** Using [update-systemd-resolved script](#Update_systemd-resolved_script) is recommended by update-resolv-conf author.
+**Note:** Another script, [update-systemd-resolved](#The_update-systemd-resolved_custom_script), is recommended by the author of update-resolv-conf for systems with systemd.
 
 The [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script is available as an alternative to packaged scripts. It needs to be saved for example at `/etc/openvpn/update-resolv-conf` and made [executable](/index.php/Executable "Executable").
 
@@ -827,7 +827,7 @@ Making changes to the VPN connection with the NetworkManager GUI will remove the
 
 To verify that the correct DNS server(s) are configured, see `resolvectl status` if systemd-resolved is in use, for other resolvers see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution").
 
-## L2 Ethernet bridging
+## Layer-2 Ethernet bridging
 
 For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
 
@@ -866,7 +866,7 @@ The client expects this file to be located in `/etc/openvpn/client/foo.conf`. No
 
 ### openvpn-unroot
 
-**Note:** If you intend to use a script such as the [#Update resolv-conf script](#Update_resolv-conf_script), you must add these scripts to your config before calling openvpn-unroot on it. Failing to do so will cause problems if the scripts require root permissions.
+**Note:** If you intend to use a custom script, perhaps for configuring [#DNS](#DNS), you must add these scripts to your config before calling openvpn-unroot on it. Failing to do so will cause problems if the scripts require root permissions.
 
 The steps necessary for OpenVPN to [#Run as unprivileged user](#Run_as_unprivileged_user), can be performed automatically using [openvpn-unroot](https://github.com/wknapik/openvpn-unroot) ([openvpn-unroot-git](https://aur.archlinux.org/packages/openvpn-unroot-git/)).
 

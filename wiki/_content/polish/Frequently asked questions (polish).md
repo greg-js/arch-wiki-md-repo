@@ -58,7 +58,7 @@ Przeczytaj artykuł o [Arch Linux](/index.php/Arch_Linux_(Polski) "Arch Linux (P
 
 Prawdopodobnie nie powinieneś używać Arch Linux jeśli:
 
-*   nie masz umiejętności / czasu / chęci aby używać dystrybucji GNU/Linux opartej na zasadzie „zrób to sam”.
+*   nie masz umiejętności / czasu / chęci aby używać dystrybucji GNU/Linux opartej na zasadzie „zrób to sam” - jeśli przeraża Cię sama myśl o korzystaniu z [wiersza poleceń (konsoli)](https://pl.m.wikipedia.org/wiki/Wiersz_polece%C5%84%7C), Arch Linux nie jest na razie dla Ciebie.
 *   potrzebujesz obsługi architektury innej niż x86_64.
 *   nie chcesz używać dystrybucji, która zapewnia tylko darmowe oprogramowanie zdefiniowane przez GNU.
 *   uważasz, że system operacyjny powinien się skonfigurować sam, być od razu gotowy do użycia i zawierać na nośniku instalacyjnym pełny domyślny zestaw oprogramowania i środowisko komputerowe.
@@ -78,6 +78,8 @@ Arch Linux przestrzega hierarchii systemu plików dla systemów operacyjnych kor
 ### Jestem zupełnie początkującym użytkownikiem systemu GNU/Linux. Czy powinienem używać Arch?
 
 Jeśli jesteś początkujący i chcesz korzystać z Arch Linux, będziesz musiał poświęcić czas na naukę nowego systemu i zaakceptować fakt, że Arch Linux jest zaprojektowany jako dystrybucja z kategorii „zrób to sam”. To użytkownik składa cały system w całość i go konfiguruje.
+
+Domyślna i podstawowa instalacja Arch Linux nie zawiera żadnego środowiska pulpitu (okienek), a cała jej obsługa odbywa się (przynajmniej na początku) jedynie poprzez wiersz poleceń (konsolę). Arch nie zawiera żadnych domyślnych konfiguratorów. Oczywiście możesz później doinstalować całe spektrum oprogramowania (w tym środowiska pulpitu) znajdujące się w oficjalnych i nieoficjalnych repozytoriach Arch, w tym w [AUR](/index.php/AUR "AUR").
 
 Zanim poprosisz o pomoc, przeszukaj Google, nasze forum oraz doskonałą dokumentację dostarczoną przez Arch Wiki. Zasoby te zostały udostępnione użytkownikom nie bez powodu. Zgromadzenie tych użytecznych informacji zajęło ochotnikom wiele tysięcy godzin.
 

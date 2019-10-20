@@ -12,15 +12,16 @@
     *   [3.1 AIM](#AIM)
     *   [3.2 Discord plugin](#Discord_plugin)
     *   [3.3 Facebook](#Facebook)
-    *   [3.4 ICQ](#ICQ)
-    *   [3.5 IRC](#IRC)
-    *   [3.6 Sametime protocol](#Sametime_protocol)
-    *   [3.7 SIP/Simple protocol for Skype for Business/Office 365/Lync](#SIP/Simple_protocol_for_Skype_for_Business/Office_365/Lync)
-    *   [3.8 Skype plugin](#Skype_plugin)
-    *   [3.9 Slack plugin](#Slack_plugin)
-    *   [3.10 Rocket.Chat plugin](#Rocket.Chat_plugin)
-    *   [3.11 Telegram plugin](#Telegram_plugin)
-    *   [3.12 XMPP](#XMPP)
+    *   [3.4 Google (Hangouts)](#Google_(Hangouts))
+    *   [3.5 ICQ](#ICQ)
+    *   [3.6 IRC](#IRC)
+    *   [3.7 Sametime protocol](#Sametime_protocol)
+    *   [3.8 SIP/Simple protocol for Skype for Business/Office 365/Lync](#SIP/Simple_protocol_for_Skype_for_Business/Office_365/Lync)
+    *   [3.9 Skype plugin](#Skype_plugin)
+    *   [3.10 Slack plugin](#Slack_plugin)
+    *   [3.11 Rocket.Chat plugin](#Rocket.Chat_plugin)
+    *   [3.12 Telegram plugin](#Telegram_plugin)
+    *   [3.13 XMPP](#XMPP)
 *   [4 Security](#Security)
 *   [5 Privacy](#Privacy)
     *   [5.1 Pidgin-OTR](#Pidgin-OTR)
@@ -70,6 +71,10 @@ Then add a new account, select Discord as the protocol, enter your Discord login
 [Install](/index.php/Install "Install") the [purple-facebook](https://www.archlinux.org/packages/?name=purple-facebook) package. (or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/))
 
 Then add a new account, select Facebook as the protocol, enter your [Facebook username](https://www.facebook.com/help/211813265517027) and password and login.
+
+### Google (Hangouts)
+
+[Install](/index.php/Install "Install") the [purple-hangouts-hg](https://aur.archlinux.org/packages/purple-hangouts-hg/) package.
 
 ### ICQ
 

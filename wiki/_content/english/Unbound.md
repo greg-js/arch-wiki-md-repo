@@ -50,7 +50,7 @@ Additionally, the [expat](https://www.archlinux.org/packages/?name=expat) packag
 
 ## Configuration
 
-A default configuration is already included at `/etc/unbound/unbound.conf`. Additionally, there is a commented sample configuration file with other available options located at `/etc/unbound/unbound.conf.example`. The following sections highlight different settings for the configuration file. See [unbound.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound.conf.5) for other settings and more details.
+A default configuration is already included at `/etc/unbound/unbound.conf`. The following sections highlight different settings for the configuration file. See [unbound.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound.conf.5) for other settings and more details.
 
 Unless otherwise specified, any options listed in this section are to be placed under the `server` section in the configuration like so:
 

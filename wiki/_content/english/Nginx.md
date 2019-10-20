@@ -22,8 +22,6 @@ This article describes how to set up nginx and how to optionally integrate it wi
     *   [3.3 FastCGI](#FastCGI)
         *   [3.3.1 PHP implementation](#PHP_implementation)
             *   [3.3.1.1 nginx configuration](#nginx_configuration)
-                *   [3.3.1.1.1 Adding to main configuration](#Adding_to_main_configuration)
-                *   [3.3.1.1.2 PHP configuration file](#PHP_configuration_file)
             *   [3.3.1.2 Test configuration](#Test_configuration)
         *   [3.3.2 CGI implementation](#CGI_implementation)
             *   [3.3.2.1 fcgiwrap](#fcgiwrap)
@@ -72,104 +70,60 @@ More details and examples can be found in [http://wiki.nginx.org/Configuration](
 
 The examples below cover the most common use cases. It is assumed that you use the default location for documents (`/usr/share/nginx/html`). If that is not the case, substitute your path instead.
 
+**Tip:** A [Nginx Configuration](https://nginxconfig.io/) tool has been provided by DigitalOcean.
+
 ### Configuration example
 
  `/etc/nginx/nginx.conf` 
 ```
 user http;
-
-# May be equal to `grep processor /proc/cpuinfo | wc -l`
 worker_processes auto;
 worker_cpu_affinity auto;
 
-# PCRE JIT can speed up processing of regular expressions significantly.
-pcre_jit on;
-
 events {
-    # Should be equal to `ulimit -n`
-    worker_connections 1024;
-
-    # Let each process accept multiple connections.
     multi_accept on;
-
-    # Preferred connection method for newer linux versions.
-    use epoll;
+    worker_connections 1024;
 }
 
 http {
-    server_tokens off; # Disables the “Server” response header
     charset utf-8;
-
-    # Sendfile copies data between one FD and other from within the kernel.
-    # More efficient than read() + write(), since the requires transferring
-    # data to and from the user space.
     sendfile on;
-
-    # Tcp_nopush causes nginx to attempt to send its HTTP response head in one
-    # packet, instead of using partial frames. This is useful for prepending
-    # headers before calling sendfile, or for throughput optimization.
     tcp_nopush on;
-
-    # Don't buffer data-sends (disable Nagle algorithm). Good for sending
-    # frequent small bursts of data in real time.
-    #
     tcp_nodelay on;
-
-    # On Linux, AIO can be used starting from kernel version 2.6.22.
-    # It is necessary to enable directio, or otherwise reading will be blocking.
-    # aio threads;
-    # aio_write on;
-    # directio 8m;
-
-    # Caches information about open FDs, freqently accessed files.
-    # open_file_cache max=200000 inactive=20s;
-    # open_file_cache_valid 60s;
-    # open_file_cache_min_uses 2;
-    # open_file_cache_errors on;
-
-    # http://nginx.org/en/docs/hash.html
+    server_tokens off;
+    log_not_found off;
     types_hash_max_size 4096;
+    client_max_body_size 16M;
+
+    # MIME
     include mime.types;
     default_type application/octet-stream;
 
-    # Logging Settings
-    access_log off;
+    # logging
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log warn;
 
-    # Gzip Settings
-    gzip on;
-    gzip_comp_level 6;
-    gzip_min_length 500;
-    gzip_proxied expired no-cache no-store private auth;
-    gzip_vary on;
-    gzip_disable "MSIE [1-6]\.";
-    gzip_types
-        application/atom+xml
-        application/javascript
-        application/json
-        application/ld+json
-        application/manifest+json
-        application/rss+xml
-        application/vnd.geo+json
-        application/vnd.ms-fontobject
-        application/x-font-ttf
-        application/x-web-app-manifest+json
-        application/xhtml+xml
-        application/xml
-        font/opentype
-        image/bmp
-        image/svg+xml
-        image/x-icon
-        text/cache-manifest
-        text/css
-        text/plain
-        text/vcard
-        text/vnd.rim.location.xloc
-        text/vtt
-        text/x-component
-        text/x-cross-domain-policy;
+    # SSL
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_tickets off;
 
-    # index index.php index.html index.htm;
-    include sites-enabled/*; # See Server blocks
+    # Diffie-Hellman parameter for DHE ciphersuites
+    ssl_dhparam /etc/nginx/dhparam.pem;
+
+    # Mozilla Intermediate configuration
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+
+    # OCSP Stapling
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4 208.67.222.222 208.67.220.220 valid=60s;
+    resolver_timeout 2s;
+
+    # load configs
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
 }
 
 ```
@@ -206,29 +160,28 @@ In the example below the server listens for incoming connections on IPv4 and IPv
 ```
 ...
 server {
-        listen 80;
-        listen [::]:80;
-        server_name domainname1.dom;
-        root /usr/share/nginx/domainname1.dom/html;
-        location / {
-           index index.php index.html index.htm;
-        }
+    listen 80;
+    listen [::]:80;
+    server_name domainname1.dom;
+    root /usr/share/nginx/domainname1.dom/html;
+    location / {
+        index index.php index.html index.htm;
+    }
 }
 
 server {
-        listen 80;
-        listen [::]:80;
-        server_name domainname2.dom;
-        root /usr/share/nginx/domainname2.dom/html;
-        ...
+    listen 80;
+    listen [::]:80;
+    server_name domainname2.dom;
+    root /usr/share/nginx/domainname2.dom/html;
+    ...
 }
-...
 
 ```
 
 [Restart](/index.php/Restart "Restart") `nginx.service` to apply any changes.
 
-Make sure the hostnames are resolvable by setting up a DNS-server like [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), or have a look at [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration").
+**Note:** Make sure the hostnames are resolvable by setting up a DNS-server like [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), or have a look at [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration").
 
 ##### Managing server entries
 
@@ -244,10 +197,13 @@ Create the following directories:
 
 Create a file inside the `sites-available` directory that contains one or more server blocks:
 
- `/etc/nginx/sites-available/example` 
+ `/etc/nginx/sites-available/example.conf` 
 ```
 server {
-    ..
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    ...
 }
 
 ```
@@ -256,30 +212,28 @@ Append include `sites-enabled/*;` to the end of the `http` block:
 
  `/etc/nginx/nginx.conf` 
 ```
-...
 http {
     ...
     include sites-enabled/*;
 }
-...
 
 ```
 
-To enable a `server` block, simple create a symlink:
+To enable a site, simple create a symlink:
 
 ```
-# ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/example
-
-```
-
-To remove a `server`:
-
-```
-# unlink /etc/nginx/sites-enabled/example
+# ln -s /etc/nginx/sites-available/example.conf /etc/nginx/sites-enabled/example.conf
 
 ```
 
-[Reload](/index.php/Reload "Reload")/[restart](/index.php/Restart "Restart") `nginx.service` to enable the new configuration.
+To disable a site, unlink the active symlink:
+
+```
+# unlink /etc/nginx/sites-enabled/example.conf
+
+```
+
+[Reload](/index.php/Reload "Reload")/[restart](/index.php/Restart "Restart") `nginx.service` to enable changes to the sites configuration.
 
 #### TLS
 
@@ -411,33 +365,34 @@ Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 ##### nginx configuration
 
-###### Adding to main configuration
-
 When serving a PHP web-application, a `location` for PHP-FPM should to be included in each [server block](/index.php/Nginx#Server_blocks "Nginx") [[2]](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/), e.g.:
 
- `/etc/nginx/sites-available/example` 
+ `/etc/nginx/sites-available/example.conf` 
 ```
 server {
-    ...
-
     root /usr/share/nginx/html;
+
     location / {
         index index.html index.htm;
     }
 
-    location ~ [^/]\.php(/|$) {
-        # Correctly handle request like /test.php/foo/blah.php or /test.php/
-        fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+    location ~ \.php$ {
+        # 404
+        try_files $fastcgi_script_name =404;
 
-        try_files $uri $document_root$fastcgi_script_name =404;
-
-        # Mitigate https://httpoxy.org/ vulnerabilities
-        fastcgi_param HTTP_PROXY "";
-
-        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-        fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        # default fastcgi_params
         include fastcgi_params;
+
+        # fastcgi settings
+        fastcgi_pass			unix:/run/php-fpm/php-fpm.sock
+        fastcgi_index			index.php;
+        fastcgi_buffers			8 16k;
+        fastcgi_buffer_size		32k;
+
+        # fastcgi params
+        fastcgi_param DOCUMENT_ROOT	$realpath_root;
+        fastcgi_param SCRIPT_FILENAME	$realpath_root$fastcgi_script_name;
+        #fastcgi_param PHP_ADMIN_VALUE	"open_basedir=$base/:/usr/lib/php/:/tmp/";
     }
 }
 
@@ -473,26 +428,30 @@ fastcgi_pass 127.0.0.1:9000;
 ```
 Unix domain sockets should however be faster.
 
-###### PHP configuration file
-
-If using multiple `server` blocks with enabled PHP support, it might be easier to create a PHP config file instead:
-
- `/etc/nginx/php.conf` 
+**Tip:** To allow multiple `server` blocks using the same PHP configuration, a PHP configuration file may be used to ease management: `/etc/nginx/php_fastcgi.conf` 
 ```
 location ~ \.php$ {
+    # 404
+    try_files $fastcgi_script_name =404;
+
+    # default fastcgi_params
+    include fastcgi_params;
+
+    # fastcgi settings
     ...
 }
 
 ```
 
-To enable PHP support for a particular server, simple include `php.conf`:
+To enable PHP support for a particular server, simple include the `php_fastcgi.conf` configuration file:
 
- `/etc/nginx/nginx.conf` 
+ `/etc/nginx/sites/example.conf` 
 ```
 server {
     server_name example.com;
     ...
-    include php.conf;
+
+    include /etc/nginx/conf.d/php_fastcgi.conf;
 }
 
 ```

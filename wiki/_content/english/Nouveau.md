@@ -241,7 +241,7 @@ You have two solutions to use [Optimus](/index.php/Optimus "Optimus") on a lapto
 Xorg compositors are prone to show issues with Nouveau. Unlike most of them, [Compton](/index.php/Compton "Compton") offers lots of options to tweak for a smoother and tearing free result. A configuration which is expected to deliver a good result would be the following:
 
 ```
-compton -b --paint-on-overlay --unredir-if-possible --backend xr_glx_hybrid --vsync drm --glx-swap-method -1 --glx-no-stencil
+compton -b --unredir-if-possible --backend xr_glx_hybrid --vsync --use-damage --glx-no-stencil
 
 ```
 

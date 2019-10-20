@@ -1,7 +1,11 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Introduzione](#Introduzione)
-    *   [1.1 Versione più recente](#Versione_pi.C3.B9_recente)
+    *   [1.1 Versione più recente](#Versione_più_recente)
     *   [1.2 Caratteristiche](#Caratteristiche)
 *   [2 Installazione](#Installazione)
     *   [2.1 Configurazione di sistema](#Configurazione_di_sistema)

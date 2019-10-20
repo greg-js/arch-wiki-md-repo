@@ -95,9 +95,46 @@ The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nou
 
 #### Multihead
 
-[Multihead](/index.php/Multihead "Multihead") support works with intel-virtual-output tool, following the 'port wired to Nvidia' instructions at [Bumblebee](https://github.com/Bumblebee-Project/Bumblebee/wiki/Multi-monitor-setup) and using this post at [Stack Exchange](https://superuser.com/questions/1082617/bumblebee-with-hdmi-on-nvidia-make-usable-both-with-without-connected-monitor).
+The HDMI and DP ports are wired to the Nvidia GPU, so some additional actions required to make the multihead to work with monitors connected to this ports. Thunderbolt port is wired to Intel GPU thus allowing for external monitor to be used with Nvidia GPU off.
 
-Thunderbolt port is wired to Intel GPU thus allowing for external monitor to be used with nvidia gpu off.
+To get it work with the HDMI port:
+
+1\. Install `bumblebee` and `xf86-video-intel`.
+
+2\. Configure Xorg to use the `intel` (not the `modesetting`) video driver for the Intel GPU. Put it to the `/etc/X11/xorg.conf.d/20-intel.conf`:
+
+```
+Section "Device"
+    Identifier  "intel"
+    Driver      "intel"
+EndSection
+
+```
+
+3\. Set the `/etc/bumblebee/xorg.conf.nvidia` contents to make Xorg launched by intel-virtual-output to use the Nvidia GPU:
+
+```
+Section "Device"
+    Identifier  "nvidia"
+    Driver      "nvidia"
+EndSection
+
+```
+
+(the config provided by the package is not suitable for the MSI GS65).
+
+4\. Restart X server
+
+5\. Launch the `intel-virtual-output -b`
+
+6\. Use `xrandr` or other tool to turn on the monitor and adjust its position.
+
+```
+xrandr --output VIRTUAL1 --right-of eDP1 --preferred
+
+```
+
+External monitor should be under the VIRTUAL1 output in `xrandr -q`. If not - check that `intel-virtual-output -b` successfully run the X server on DISPLAY=:8 and the `xrandr -d :8 -q` shows the connected monitor.
 
 ### Webcam
 
@@ -252,7 +289,8 @@ Also, it could be useful to add `analog_gain_control=0` to `aec_args` to disable
 **Solutions**:
 
 *   **Arch ISO:** Add `modprobe.blacklist=nouveau` to the kernel parameters ([https://superuser.com/a/1301487](https://superuser.com/a/1301487)).
-*   **System without nouveau**: Install [nvidia](https://www.archlinux.org/packages/?name=nvidia).
+*   **System using [nvidia](https://www.archlinux.org/packages/?name=nvidia)**: Shouldn't run into this issue. [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) may not work and cause this, however.
+*   **System using nouveau**: Add `nouveau.runpm=0` to the kernel parameters. This disables runtime power-management, which causes this issue to begin with.
 
 ### Cheese Hangs While Opening Camera
 

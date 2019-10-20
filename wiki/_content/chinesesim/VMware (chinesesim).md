@@ -17,46 +17,50 @@
 *   这篇文章适用于最新的 VMware 正式版，即 VMware Workstation Pro / Player 12.5.
 *   对于旧版本的 VMware，建议安装本体后追加安装 [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) 包
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 内核模块](#.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-    *   [2.2 Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)
-        *   [2.2.1 Workstation Server服务](#Workstation_Server.E6.9C.8D.E5.8A.A1)
-*   [3 启动程序](#.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
-*   [4 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [4.1 输入Workstation Pro许可密钥](#.E8.BE.93.E5.85.A5Workstation_Pro.E8.AE.B8.E5.8F.AF.E5.AF.86.E9.92.A5)
-        *   [4.1.1 从终端](#.E4.BB.8E.E7.BB.88.E7.AB.AF)
-        *   [4.1.2 从 GUI](#.E4.BB.8E_GUI)
-    *   [4.2 解压缩 VMware BIOS](#.E8.A7.A3.E5.8E.8B.E7.BC.A9_VMware_BIOS)
-    *   [4.3 解压缩安装程序](#.E8.A7.A3.E5.8E.8B.E7.BC.A9.E5.AE.89.E8.A3.85.E7.A8.8B.E5.BA.8F)
-        *   [4.3.1 使用修改过的 BIOS](#.E4.BD.BF.E7.94.A8.E4.BF.AE.E6.94.B9.E8.BF.87.E7.9A.84_BIOS)
-    *   [4.4 在Intel和Optimus上启用3D图形](#.E5.9C.A8Intel.E5.92.8COptimus.E4.B8.8A.E5.90.AF.E7.94.A83D.E5.9B.BE.E5.BD.A2)
-*   [5 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [5.1 错误：Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#.E9.94.99.E8.AF.AF.EF.BC.9AKernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
-    *   [5.2 无法识别 USB 设备](#.E6.97.A0.E6.B3.95.E8.AF.86.E5.88.AB_USB_.E8.AE.BE.E5.A4.87)
-    *   [5.3 当远程访问VMware时，遇到不正确的用户名/密码错误](#.E5.BD.93.E8.BF.9C.E7.A8.8B.E8.AE.BF.E9.97.AEVMware.E6.97.B6.EF.BC.8C.E9.81.87.E5.88.B0.E4.B8.8D.E6.AD.A3.E7.A1.AE.E7.9A.84.E7.94.A8.E6.88.B7.E5.90.8D.2F.E5.AF.86.E7.A0.81.E9.94.99.E8.AF.AF)
-    *   [5.4 ALSA输出的问题](#ALSA.E8.BE.93.E5.87.BA.E7.9A.84.E9.97.AE.E9.A2.98)
-    *   [5.5 错误：Kernel-based Virtual Machine (KVM) is running](#.E9.94.99.E8.AF.AF.EF.BC.9AKernel-based_Virtual_Machine_.28KVM.29_is_running)
-    *   [5.6 组件问题](#.E7.BB.84.E4.BB.B6.E9.97.AE.E9.A2.98)
-        *   [5.6.1 错误：/dev/vmmon not found](#.E9.94.99.E8.AF.AF.EF.BC.9A.2Fdev.2Fvmmon_not_found)
-        *   [5.6.2 错误：/dev/vmci not found](#.E9.94.99.E8.AF.AF.EF.BC.9A.2Fdev.2Fvmci_not_found)
-        *   [5.6.3 在Linux 4.9后内核模块无法编译](#.E5.9C.A8Linux_4.9.E5.90.8E.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97.E6.97.A0.E6.B3.95.E7.BC.96.E8.AF.91)
-        *   [5.6.4 VMware模块在Linux内核4.11+上（在GCC7下）编译失败](#VMware.E6.A8.A1.E5.9D.97.E5.9C.A8Linux.E5.86.85.E6.A0.B84.11.2B.E4.B8.8A.EF.BC.88.E5.9C.A8GCC7.E4.B8.8B.EF.BC.89.E7.BC.96.E8.AF.91.E5.A4.B1.E8.B4.A5)
-        *   [5.6.5 VMware 模块在 Linux 4.13 版内核上编译失败](#VMware_.E6.A8.A1.E5.9D.97.E5.9C.A8_Linux_4.13_.E7.89.88.E5.86.85.E6.A0.B8.E4.B8.8A.E7.BC.96.E8.AF.91.E5.A4.B1.E8.B4.A5)
-    *   [5.7 安装程序启动失败](#.E5.AE.89.E8.A3.85.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
-        *   [5.7.1 用户界面初始化失败](#.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2.E5.88.9D.E5.A7.8B.E5.8C.96.E5.A4.B1.E8.B4.A5)
-    *   [5.8 VMware启动失败](#VMware.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
-        *   [5.8.1 旧的Intel微指令在启动时产生段错误](#.E6.97.A7.E7.9A.84Intel.E5.BE.AE.E6.8C.87.E4.BB.A4.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E4.BA.A7.E7.94.9F.E6.AE.B5.E9.94.99.E8.AF.AF)
-        *   [5.8.2 版本号为12.5.4的vmplayer/vmware无法启动](#.E7.89.88.E6.9C.AC.E5.8F.B7.E4.B8.BA12.5.4.E7.9A.84vmplayer.2Fvmware.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-        *   [5.8.3 版本号为12.5.3-12.5.5的vmplayer/vmware无法启动](#.E7.89.88.E6.9C.AC.E5.8F.B7.E4.B8.BA12.5.3-12.5.5.E7.9A.84vmplayer.2Fvmware.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-        *   [5.8.4 vmware 12的进程在启动之后立即终止，没有显示GUI](#vmware_12.E7.9A.84.E8.BF.9B.E7.A8.8B.E5.9C.A8.E5.90.AF.E5.8A.A8.E4.B9.8B.E5.90.8E.E7.AB.8B.E5.8D.B3.E7.BB.88.E6.AD.A2.EF.BC.8C.E6.B2.A1.E6.9C.89.E6.98.BE.E7.A4.BAGUI)
-    *   [5.9 客户机问题](#.E5.AE.A2.E6.88.B7.E6.9C.BA.E9.97.AE.E9.A2.98)
-        *   [5.9.1 无法为客户机下载VMware Tools](#.E6.97.A0.E6.B3.95.E4.B8.BA.E5.AE.A2.E6.88.B7.E6.9C.BA.E4.B8.8B.E8.BD.BDVMware_Tools)
-        *   [5.9.2 错误：Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#.E9.94.99.E8.AF.AF.EF.BC.9AGuests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
-        *   [5.9.3 Guests系统启动后网络不可用](#Guests.E7.B3.BB.E7.BB.9F.E5.90.AF.E5.8A.A8.E5.90.8E.E7.BD.91.E7.BB.9C.E4.B8.8D.E5.8F.AF.E7.94.A8)
-*   [6 卸载](#.E5.8D.B8.E8.BD.BD)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 内核模块](#内核模块)
+    *   [2.2 Systemd 服务](#Systemd_服务)
+        *   [2.2.1 Workstation Server服务](#Workstation_Server服务)
+*   [3 启动程序](#启动程序)
+*   [4 提示和技巧](#提示和技巧)
+    *   [4.1 输入Workstation Pro许可密钥](#输入Workstation_Pro许可密钥)
+        *   [4.1.1 从终端](#从终端)
+        *   [4.1.2 从 GUI](#从_GUI)
+    *   [4.2 解压缩 VMware BIOS](#解压缩_VMware_BIOS)
+    *   [4.3 解压缩安装程序](#解压缩安装程序)
+        *   [4.3.1 使用修改过的 BIOS](#使用修改过的_BIOS)
+    *   [4.4 在Intel和Optimus上启用3D图形](#在Intel和Optimus上启用3D图形)
+*   [5 疑难解答](#疑难解答)
+    *   [5.1 错误：Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#错误：Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them[...])
+    *   [5.2 无法识别 USB 设备](#无法识别_USB_设备)
+    *   [5.3 当远程访问VMware时，遇到不正确的用户名/密码错误](#当远程访问VMware时，遇到不正确的用户名/密码错误)
+    *   [5.4 ALSA输出的问题](#ALSA输出的问题)
+    *   [5.5 错误：Kernel-based Virtual Machine (KVM) is running](#错误：Kernel-based_Virtual_Machine_(KVM)_is_running)
+    *   [5.6 组件问题](#组件问题)
+        *   [5.6.1 错误：/dev/vmmon not found](#错误：/dev/vmmon_not_found)
+        *   [5.6.2 错误：/dev/vmci not found](#错误：/dev/vmci_not_found)
+        *   [5.6.3 在Linux 4.9后内核模块无法编译](#在Linux_4.9后内核模块无法编译)
+        *   [5.6.4 VMware模块在Linux内核4.11+上（在GCC7下）编译失败](#VMware模块在Linux内核4.11+上（在GCC7下）编译失败)
+        *   [5.6.5 VMware 模块在 Linux 4.13 版内核上编译失败](#VMware_模块在_Linux_4.13_版内核上编译失败)
+    *   [5.7 安装程序启动失败](#安装程序启动失败)
+        *   [5.7.1 用户界面初始化失败](#用户界面初始化失败)
+    *   [5.8 VMware启动失败](#VMware启动失败)
+        *   [5.8.1 旧的Intel微指令在启动时产生段错误](#旧的Intel微指令在启动时产生段错误)
+        *   [5.8.2 版本号为12.5.4的vmplayer/vmware无法启动](#版本号为12.5.4的vmplayer/vmware无法启动)
+        *   [5.8.3 版本号为12.5.3-12.5.5的vmplayer/vmware无法启动](#版本号为12.5.3-12.5.5的vmplayer/vmware无法启动)
+        *   [5.8.4 vmware 12的进程在启动之后立即终止，没有显示GUI](#vmware_12的进程在启动之后立即终止，没有显示GUI)
+    *   [5.9 客户机问题](#客户机问题)
+        *   [5.9.1 无法为客户机下载VMware Tools](#无法为客户机下载VMware_Tools)
+        *   [5.9.2 错误：Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#错误：Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_"[...]timeTracker_user.c:234_bugNr=148722")
+        *   [5.9.3 Guests系统启动后网络不可用](#Guests系统启动后网络不可用)
+*   [6 卸载](#卸载)
 
 ## 安装
 
@@ -82,7 +86,7 @@
 
 *   `--eulas-agreed` - 跳过各种许可协议
 *   `--console` - 使用命令行界面，而非 GUI
-*   `--custom` - 允许自定义安装目录，比如`/usr/local`（记得修改[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)一节下，`vmware-usbarbitrator.service`中的路径）
+*   `--custom` - 允许自定义安装目录，比如`/usr/local`（记得修改[#Systemd 服务](#Systemd_服务)一节下，`vmware-usbarbitrator.service`中的路径）
 *   `-I`, `--ignore-errors` - 忽略致命错误
 *   `--set-setting=vmware-workstation serialNumber XXXXX-XXXXX-XXXXX-XXXXX-XXXXX` - 设置安装时使用的序列号（有利于脚本化安装）
 *   `--required` - 只询问必要的问题（当结合`--eulas-agreed`和`--console`时可以实现静默安装）
@@ -267,7 +271,7 @@ Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowB
 
 **提示：** 可以通过 [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) 解决。
 
-如果不使用[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)来处理服务，你每次都需要以root身份手动启动`vmware-usbarbitrator`.
+如果不使用[#Systemd 服务](#Systemd_服务)来处理服务，你每次都需要以root身份手动启动`vmware-usbarbitrator`.
 
 启动：
 
@@ -346,7 +350,7 @@ Please make sure that the kernel module `vmmon' is loaded.
 
 ```
 
-这意味着未加载`vmmon`模块.参见[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)章节
+这意味着未加载`vmmon`模块.参见[#Systemd 服务](#Systemd_服务)章节
 
 #### 错误：/dev/vmci not found
 
@@ -432,7 +436,7 @@ VMware Workstation Pro 12.5.7 版本的内核模块代码需要做出一定修�
 
 ### 安装程序启动失败
 
-如果你回到了执行`.bundle`时的终端提示，则这个版本的VMware Installer也许坏掉了或者不完整，你应该删掉它（你也许也应该参照[#卸载](#.E5.8D.B8.E8.BD.BD)一节中的内容）:
+如果你回到了执行`.bundle`时的终端提示，则这个版本的VMware Installer也许坏掉了或者不完整，你应该删掉它（你也许也应该参照[#卸载](#卸载)一节中的内容）:
 
 ```
 # rm -r /etc/vmware-installer
@@ -577,7 +581,7 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 #### Guests系统启动后网络不可用
 
-这可能是 `vmnet` 模块没有加载 [[4]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/)。又见[#Systemd 服务](#Systemd_.E6.9C.8D.E5.8A.A1)自动加载。
+这可能是 `vmnet` 模块没有加载 [[4]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/)。又见[#Systemd 服务](#Systemd_服务)自动加载。
 
 ## 卸载
 

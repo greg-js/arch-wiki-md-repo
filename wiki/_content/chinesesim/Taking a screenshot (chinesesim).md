@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 import](#import)
 *   [2 scrot](#scrot)
@@ -24,8 +28,8 @@ import 命令包含在 imagemagick 软件包内。
 如果你的是多屏和双头显示，只要截两次屏，然后用imagemagick把它们粘贴在一起：
 
 ```
-import -window root -display :0.0 -screen /tmp/0.png
-import -window root -display :0.1 -screen /tmp/1.png
+import -window root -display :0.0 -screen /tmp/0.png
+import -window root -display :0.1 -screen /tmp/1.png
 convert +append /tmp/0.png /tmp/1.png screenshot.png
 rm /tmp/{0,1}.png
 

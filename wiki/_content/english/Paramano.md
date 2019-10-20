@@ -1,6 +1,10 @@
 [Paramano](https://github.com/phillid/paramano) is a Gtk3 application released under the GPL that lets you select your cores' governor or frequency from a tray icon and displays information about your battery graphically. Paramano is designed to be desktop-environment-independent so it depends only on Gtk3, a system tray and sudo. It's a nice addition to Xfce, LXDE, dwm, and so on.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Short history](#Short_history)
 *   [2 Features](#Features)

@@ -9,9 +9,9 @@
 *   [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet")
 *   [KDevelop](/index.php/KDevelop "KDevelop")
 *   [Trinity](/index.php/Trinity "Trinity")
-*   [Uniform Look for Qt and GTK Applications (Русский)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)")
+*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 20 августа 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=580574).
+**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 16 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=586191).
 
 KDE — проект, состоящий из [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (KDE Plasma), набора библиотек и фреймворков (KDE Frameworks), а также набора приложений (KDE Applications).
 
@@ -148,9 +148,9 @@ KDE Plasma можно запустить с помощью [экранного �
 
 ### Используя консоль
 
-*   Для запуска KDE Plasma с помощью [xinit/startx](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), добавьте строку `exec startkde` в файл `.xinitrc`. Также если вы хотите автоматически запускать [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") при входе в систему, ознакомьтесь со статьёй [xinitrc (Русский)#Автозапуск X при входе в систему](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Автозапуск_X_при_входе_в_систему "Xinitrc (Русский)").
+*   Для запуска KDE Plasma с помощью [xinit/startx](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), добавьте строку `exec startplasma-x11` в файл `.xinitrc`. Также если вы хотите автоматически запускать [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") при входе в систему, ознакомьтесь со статьёй [xinitrc (Русский)#Автозапуск X при входе в систему](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Автозапуск_X_при_входе_в_систему "Xinitrc (Русский)").
 
-*   Для запуска сеанса KDE Plasma с [Wayland (Русский)](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)") из консоли, выполните `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
+*   Для запуска сеанса KDE Plasma с [Wayland (Русский)](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)") из консоли, выполните `XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Настройка
 
@@ -170,7 +170,7 @@ KDE Plasma можно запустить с помощью [экранного �
 
 ###### Внешний вид Qt и GTK
 
-**Совет:** Для единого внешнего вида тем на GTK и Qt, ознакомтесь со статьёй [Uniform look for Qt and GTK applications (Русский)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform look for Qt and GTK applications (Русский)").
+**Совет:** Для получения информации о едином внешнем виде тем на GTK и Qt, ознакомтесь со статьёй [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 	Qt4
 
@@ -292,7 +292,7 @@ $ kcmshell5 autostart
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) для получения встроенной службы управления энергопотреблением Plasma. Данная служба предлагает дополнительные возможности по оптимизации энергопотребления, регулировке яркости экрана (если поддерживается) и получению информации о состоянии аккумуляторов устройств.
 
-В качестве альтернативного пакета, который не зависит от [NetworkManager (Русский)](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)") и [Bluez](/index.php/Bluez "Bluez"), можно воспользоваться [powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/).
+В качестве альтернативного пакета, который не зависит от [NetworkManager](/index.php/NetworkManager "NetworkManager") и [Bluez](/index.php/Bluez "Bluez"), можно воспользоваться [powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/).
 
 **Примечание:**
 

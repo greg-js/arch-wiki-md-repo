@@ -3,7 +3,7 @@
 *   [Кодеки](/index.php/%D0%9A%D0%BE%D0%B4%D0%B5%D0%BA%D0%B8 "Кодеки")
 *   [MPlayer (Русский)](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MPlayer (Русский)")
 *   [dvdbackup](/index.php/Dvdbackup "Dvdbackup")
-*   [MEncoder (Русский)](/index.php/MEncoder_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MEncoder (Русский)")
+*   [MEncoder](/index.php/MEncoder "MEncoder")
 *   [BluRay](/index.php/BluRay "BluRay")
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:%D0%9E%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%B8%D0%B2%D0%BE%D0%B4 "wikipedia:ru:Оптический привод"):
@@ -731,7 +731,7 @@ Nero Linux предоставляет следующие возможности:
 
 	[http://www.selur.de/](http://www.selur.de/) || [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)
 
-*   **[MEncoder](/index.php/MEncoder_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MEncoder (Русский)")** — Свободный видеодекодер для командной строки, кодирующая и фильтрующая программа, выпущенная под лицензией GNU GPL. Практически является родственником MPlayer и может конвертировать все форматы, которые понимает MPlayer во множество сжатых и несжатых форматов, используя различные кодеки. Программы-обёртки, такие как [h264enc](https://aur.archlinux.org/packages/h264enc/) и [undvd](https://aur.archlinux.org/packages/undvd/) могут предоставить более понятный интерфейс. Доступно много [графических оболочек](/index.php/MEncoder#GUI_frontends "MEncoder").
+*   **[MEncoder](/index.php/MEncoder "MEncoder")** — Свободный видеодекодер для командной строки, кодирующая и фильтрующая программа, выпущенная под лицензией GNU GPL. Практически является родственником MPlayer и может конвертировать все форматы, которые понимает MPlayer во множество сжатых и несжатых форматов, используя различные кодеки. Программы-обёртки, такие как [h264enc](https://aur.archlinux.org/packages/h264enc/) и [undvd](https://aur.archlinux.org/packages/undvd/) могут предоставить более понятный интерфейс. Доступно много [графических оболочек](/index.php/MEncoder#GUI_frontends "MEncoder").
 
 	[http://www.mplayerhq.hu/](http://www.mplayerhq.hu/) || [mencoder](https://www.archlinux.org/packages/?name=mencoder)
 

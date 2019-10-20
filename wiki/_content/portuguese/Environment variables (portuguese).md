@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=572515) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=582084) na versão em inglês.
 
 Artigos relacionados
 
@@ -79,7 +79,6 @@ Nem sempre você deseja definir uma variável de ambiente globalmente. Por exemp
 
 *   `~/.pam_environment` é o equivalente específico de usuário de `/etc/security/pam_env.conf` [[1]](https://github.com/linux-pam/linux-pam/issues/6), usado pelo módulo pam_env. Veja [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) e [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) para detalhes.
 *   Arquivos de configuração de usuário de seu [shell](/index.php/Shell_de_linha_de_comando "Shell de linha de comando"), por exemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
-*   `~/.profile` é usado por muitos shells como reserva, veja [Wikipedia:pt:Shell do Unix#Arquivos de configuração](https://en.wikipedia.org/wiki/pt:Shell_do_Unix#Arquivos_de_configura.C3.A7.C3.A3o "wikipedia:pt:Shell do Unix").
 *   [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") vai carregar variáveis de ambiente de `~/.config/environment.d/*.conf` veja [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) e [https://wiki.gnome.org/Initiatives/Wayland/SessionStart](https://wiki.gnome.org/Initiatives/Wayland/SessionStart).
 
 Para adicionar um diretório para o `PATH` para uso local, coloque o seguinte em `~/.bash_profile`:
@@ -202,7 +201,7 @@ fi
 
 O módulo [PAM](/index.php/PAM "PAM") [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) carrega as variáveis a serem definidas no ambiente dos seguintes arquivos: `/etc/security/pam_env.conf`, `/etc/environment` e `~/.pam_environment`.
 
-*   `/etc/environment` deve consistir de pares `*VARIÁVEL*=*valor*` simples em linhas separadas, por exemplo: `EDITOR=NANO` 
+*   `/etc/environment` deve consistir de pares `*VARIÁVEL*=*valor*` simples em linhas separadas, por exemplo: `EDITOR=nano` 
 
 *   `/etc/security/pam_env.conf` e `~/.pam_environment` compartilham o mesmo formato a seguir: `VARIÁVEL [DEFAULT=*valor*] [OVERRIDE=*valor*]` `@{HOME}` e `@{SHELL}` são variáveis especiais que expandem para o que está definido no `/etc/passwd`. O exemplo a seguir ilustra como expandir a variável de ambiente `HOME` em outra variável: `XDG_CONFIG_HOME   DEFAULT=@{HOME}/.config` 
     **Nota:** As variáveis `${HOME}` e `${SHELL}` não são vinculadas as variáveis de ambiente `HOME` e `SHELL`, elas não estão definidas por padrão.

@@ -2,7 +2,7 @@
 
 *   [Файловые системы](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Файловые системы")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [XFS](/index.php/XFS "XFS"). Дата последней синхронизации: 7 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=XFS&diff=0&oldid=584597).
+**Состояние перевода:** На этой странице представлен перевод статьи [XFS](/index.php/XFS "XFS"). Дата последней синхронизации: 14 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=XFS&diff=0&oldid=585648).
 
 XFS — высокопроизводительная журналируемая файловая система, созданная Silicon Graphics, Inc. XFS особенно хорошо справляется с параллельным вводом-выводом благодаря структуре на основе заголовков для групп (allocation groups), что обеспечивает исключительную масштабируемость потоков ввода-вывода, пропускной способности файловой системы, размера файлов и файловой системы при работе с несколькими устройствами хранения.
 
@@ -91,7 +91,7 @@ XFS — высокопроизводительная журналируемая 
 
 Смотрите также [xfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs.5) для получения информации о доступных параметрах монтирования.
 
-**Совет:** При использовании XFS на устройствах с [RAID (Русский)](/index.php/RAID_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RAID (Русский)"), улучшить производительность можно с помощью `largeio`, `swalloc`, увеличенными значениями `logbsize`, `allocsize` и так далее. В следующих статьях предоставлена дополнительная информация об этих флагах:
+**Совет:** При использовании XFS на устройствах с [RAID](/index.php/RAID "RAID"), улучшить производительность можно с помощью `largeio`, `swalloc`, увеличенными значениями `logbsize`, `allocsize` и так далее. В следующих статьях предоставлена дополнительная информация об этих флагах:
 
 *   [https://www.beegfs.io/wiki/StorageServerTuning](https://www.beegfs.io/wiki/StorageServerTuning)
 *   [https://help.marklogic.com/Knowledgebase/Article/View/505/0/recommended-xfs-settings-for-marklogic-server](https://help.marklogic.com/Knowledgebase/Article/View/505/0/recommended-xfs-settings-for-marklogic-server)

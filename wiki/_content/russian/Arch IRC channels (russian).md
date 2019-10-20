@@ -4,7 +4,7 @@
 *   [International communities](/index.php/International_communities "International communities")
 *   [phrik](/index.php/Phrik "Phrik")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Arch IRC channels](/index.php/Arch_IRC_channels "Arch IRC channels"). Дата последней синхронизации: 2 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Arch_IRC_channels&diff=0&oldid=566394).
+**Состояние перевода:** На этой странице представлен перевод статьи [Arch IRC channels](/index.php/Arch_IRC_channels "Arch IRC channels"). Дата последней синхронизации: 14 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Arch_IRC_channels&diff=0&oldid=585028).
 
 Вам потребуется [IRC-клиент](/index.php/List_of_applications/Internet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#IRC "List of applications/Internet (Русский)") для использования [IRC](https://en.wikipedia.org/wiki/ru:IRC включает в себя клиент [Irssi](/index.php/Irssi "Irssi").
 
@@ -76,7 +76,6 @@
 Размер нашего сообщества привёл к созданию нескольких IRC каналов. Используйте команду `/query alis list *archlinux*`, чтобы получить список всех каналов на freenode, которые содержат "archlinux" в своём названии.
 
 | Канал | Описание |
-| [#archlinux64](ircs://chat.freenode.net/archlinux64) | Канал обсуждения x86_64, в основном на английском. |
 | [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) | Общее обсуждение [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"). |
 | [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) | Обсуждение разработки [aurweb](https://projects.archlinux.org/aurweb.git/). |
 | [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Обсуждение ошибок (багов). |

@@ -392,7 +392,7 @@ The `--exclude` option causes files that match the given patterns to be excluded
 
 You may want to include additional <a class="mw-selflink selflink">rsync</a> options, such as the following. See [rsync(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) for the full list.
 
-*   If you use many hard links, consider adding the `-H` option, which is turned off by default due to its memory expense; however, it should be no problem on most modern machines. Many hard links reside under the `/usr/` directory.
+*   If you use many hard links (e.g. if you are using [Flatpak](/index.php/Flatpak "Flatpak")), consider adding the `-H` option, which is turned off by default due to its memory expense; however, it should be no problem on most modern machines. Many hard links reside under the `/usr/` directory.
 *   You may want to add rsync's `--delete` option if you are running this multiple times to the same backup folder. In this case make sure that the source path does not end with `/*`, or this option will only have effect on the files inside the subdirectories of the source directory, but it will have no effect on the files residing directly inside the source directory.
 *   If you use any sparse files, such as virtual disks, [Docker](/index.php/Docker "Docker") images and similar, you should add the `-S` option.
 *   The `--numeric-ids` option will disable mapping of user and group names; instead, numeric group and user IDs will be transfered. This is useful when backing up over [SSH](/index.php/SSH "SSH") or when using a live system to backup different system disk.

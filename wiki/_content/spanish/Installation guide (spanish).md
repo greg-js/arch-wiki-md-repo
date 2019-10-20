@@ -1,11 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Installation guide](/index.php/Installation_guide "Installation guide"), revisada por última vez el **2019-09-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=582205) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Installation guide](/index.php/Installation_guide "Installation guide"), revisada por última vez el **2019-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=585451) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema «*live*» arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que eche un vistazo a las [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)"). En particular, los ejemplos de código pueden contener marcadores de posición (resaltados en `*cursiva*`) que deberán reemplazarse manualmente.
 
 Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki (Español)](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas, con enlaces para ambos a lo largo de esta guía. Para obtener ayuda interactiva, dispone de los [Arch IRC channels (Español)](/index.php/Arch_IRC_channels_(Espa%C3%B1ol) "Arch IRC channels (Español)") y los [foros](https://bbs.archlinux.org/).
 
-Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MiB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/packages/?name=base) debería ocupar menos de 800 MiB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, esta guía asume que dispone de una conexión a internet funcional.
+Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MiB de RAM. Una instalación básica debería ocupar menos de 800 MiB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, esta guía asume que dispone de una conexión a Internet funcional.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -26,7 +26,7 @@ Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en
     *   [1.9 Montar los sistemas de archivos](#Montar_los_sistemas_de_archivos)
 *   [2 Instalación](#Instalación)
     *   [2.1 Seleccionar los servidores de réplica](#Seleccionar_los_servidores_de_réplica)
-    *   [2.2 Instalar los paquetes del sistema base](#Instalar_los_paquetes_del_sistema_base)
+    *   [2.2 Instalar paquetes esenciales](#Instalar_paquetes_esenciales)
 *   [3 Configuración del sistema](#Configuración_del_sistema)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
@@ -166,7 +166,7 @@ Véase también [Partitioning (Español)#Esquemas de particionado](/index.php/Pa
 **Nota:**
 
 *   Utilice [fdisk (Español)](/index.php/Fdisk_(Espa%C3%B1ol) "Fdisk (Español)") o [parted](/index.php/Parted "Parted") para modificar la tabla de particionado, por ejemplo, `fdisk /dev/sd*X*`.
-*   El espacio [de intercambio](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") se puede configurar en un [archivo de intercambio](/index.php/Swap_(Espa%C3%B1ol)#Archivo_swap "Swap (Español)") para los sistemas de archivos que lo admitan.
+*   El [espacio de intercambio](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") se puede configurar en un [archivo de intercambio](/index.php/Swap_(Espa%C3%B1ol)#Archivo_swap "Swap (Español)") para los sistemas de archivos que lo admitan.
 
 ### Formatear las particiones
 
@@ -210,20 +210,26 @@ Cuanto más alto se coloca un servidor de réplica en la lista, más prioridad t
 
 Una copia del archivo «mirrorlist» se realizará más tarde en el nuevo sistema por *pacstrap*, por lo tanto vale la pena hacerlo bien en esta fase.
 
-### Instalar los paquetes del sistema base
+### Instalar paquetes esenciales
 
-Utilice el script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar el grupo de paquetes [base](https://www.archlinux.org/packages/?name=base) y un [Kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") ([linux](https://www.archlinux.org/packages/?name=linux)):
-
-```
-# pacstrap /mnt base linux
+Utilice el script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar el paquete [base](https://www.archlinux.org/packages/?name=base), un [Kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") de Linux y un firmware para hardware común::
 
 ```
+# pacstrap /mnt base linux linux-firmware
 
-**Note:** Este grupo de paquetes no incluye todas las herramientas disponibles en el entorno live de instalación, como son los casos de [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware inalámbrico específico; consulte [paquetes.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para ver la comparación.
+```
 
-Es posible sustituir [linux](https://www.archlinux.org/packages/?name=linux) con el [Kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") de su elección, o en caso de saber lo que se hace se puede no instalar ninguno.
+**Sugerencia:** puede sustituir [linux](https://www.archlinux.org/packages/?name=linux) por un paquete de [kernel](/index.php/Kernel "Kernel") de su elección. Puede omitir la instalación del kernel o el paquete de firmware si sabe lo que está haciendo.
 
-Para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") otros paquetes o grupos de paquetes, como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por un espacio) o, posteriormente a la etapa de [#Chroot](#Chroot), con órdenes individuales con [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
+El paquete [base](https://www.archlinux.org/packages/?name=base) no incluye todas las herramientas presentes en el medio de instalación live, por lo que puede ser necesario instalar otros paquetes para que un sistema base sea completamente funcional. En particular, considere instalar:
+
+*   utilidades del espacio de usuario para la gestión del [sistema de archivos](/index.php/File_systems "File systems") que se utilizarán en el sistema;
+*   firmware específico para otros dispositivos no incluidos en [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware);
+*   software necesario para la conexión a [redes](/index.php/Networking "Networking");
+*   un [editor de texto](/index.php/Text_editor "Text editor");
+*   paquetes para acceder a la documentación en las páginas [man](/index.php/Man "Man") e [info](/index.php/Info "Info"): [man-db](https://www.archlinux.org/packages/?name=man-db), [man-pages](https://www.archlinux.org/packages/?name=man-pages) y [texinfo](https://www.archlinux.org/packages/?name=texinfo).
+
+Para [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") otros paquetes o grupos de paquetes añada sus nombres a la orden *pacstrap* (separados por un espacio) o utilice [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"), posteriormente, después de la etapa de [chroot](#Chroot). A modo de comparación, los paquetes disponibles en el sistema live se pueden encontrar en [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
 
 ## Configuración del sistema
 
@@ -236,7 +242,7 @@ Genere un archivo [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Esp
 
 ```
 
-Compruebe el archivo resultante en `/mnt/etc/fstab` después, y modifíquelo en caso de errores.
+Compruebe el archivo resultante en `/mnt/etc/fstab`, y modifíquelo en caso de errores.
 
 ### Chroot
 
@@ -304,16 +310,16 @@ Considere añadir una entrada similar en [hosts(5)](https://jlk.fjfi.cvut.cz/arc
 
 Si el sistema tiene una dirección IP permanente, se debe usar dicha dirección, en lugar de `127.0.1.1`.
 
-[Configure la conexión de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") de nuevo para el entorno recién instalado.
+[Configure la conexión de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") de nuevo para el entorno recién instalado, que incluye [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") paquetes como [iputils](https://www.archlinux.org/packages/?name=iputils) y software de [gestión de redes](/index.php/Network_management "Network management") preferido.
 
 ### Initramfs
 
-Normalmente no es necesario crear una imagen *initramfs* nueva, dado que [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") se ejecuta durante la instalación del paquete [linux](https://www.archlinux.org/packages/?name=linux) con *pacstrap*.
+Normalmente no es necesario crear una imagen *initramfs* nueva, dado que [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") se ejecuta durante la instalación del paquete [kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") con *pacstrap*.
 
-Para [LVM](/index.php/LVM_(Espa%C3%B1ol)#Configurar_mkinitcpio "LVM (Español)"), [cifrado del sistema](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") o [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) y regenere la imagen initramfs:
+Para [LVM](/index.php/LVM_(Espa%C3%B1ol)#Configurar_mkinitcpio "LVM (Español)"), [cifrado del sistema](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") o [RAID](/index.php/RAID_(Espa%C3%B1ol)#Configurar_mkinitcpio "RAID (Español)"), modifique [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) y regenere la imagen initramfs:
 
 ```
-# mkinitcpio -p linux
+# mkinitcpio -P
 
 ```
 

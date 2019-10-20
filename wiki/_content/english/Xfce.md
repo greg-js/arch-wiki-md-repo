@@ -48,15 +48,16 @@ Related articles
         *   [4.4.1 Changing default color theme](#Changing_default_color_theme)
         *   [4.4.2 Terminal tango color theme](#Terminal_tango_color_theme)
     *   [4.5 Open URLs by middle mouse in terminal](#Open_URLs_by_middle_mouse_in_terminal)
-    *   [4.6 Colour management](#Colour_management)
-    *   [4.7 Multiple monitors](#Multiple_monitors)
-    *   [4.8 SSH agents](#SSH_agents)
-    *   [4.9 Scroll a background window without shifting focus on it](#Scroll_a_background_window_without_shifting_focus_on_it)
-    *   [4.10 Mouse button modifier](#Mouse_button_modifier)
-    *   [4.11 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
-    *   [4.12 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
-    *   [4.13 Adding profile pictures](#Adding_profile_pictures)
-    *   [4.14 Power manager plugin label](#Power_manager_plugin_label)
+    *   [4.6 env-modules autocompletion in Terminal](#env-modules_autocompletion_in_Terminal)
+    *   [4.7 Colour management](#Colour_management)
+    *   [4.8 Multiple monitors](#Multiple_monitors)
+    *   [4.9 SSH agents](#SSH_agents)
+    *   [4.10 Scroll a background window without shifting focus on it](#Scroll_a_background_window_without_shifting_focus_on_it)
+    *   [4.11 Mouse button modifier](#Mouse_button_modifier)
+    *   [4.12 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
+    *   [4.13 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
+    *   [4.14 Adding profile pictures](#Adding_profile_pictures)
+    *   [4.15 Power manager plugin label](#Power_manager_plugin_label)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
     *   [5.2 GTK themes not working with multiple monitors](#GTK_themes_not_working_with_multiple_monitors)
@@ -489,6 +490,10 @@ On update to version 0.8 open URL with middle mouse turned off by default and ju
 [Configuration]
 MiscMiddleClickOpensUri=TRUE
 ```
+
+### env-modules autocompletion in Terminal
+
+[env-modules](https://aur.archlinux.org/packages/env-modules/) and [env-modules-tcl](https://aur.archlinux.org/packages/env-modules-tcl/) packages provide shell autocompletion for login shell. However, by default sessions in `xfce4-terminal` are not considered as *login*. To enable autocompletion for Environment Modules tick corresponding checkbox in *Preferences* or just change `CommandLoginShell` to `TRUE` in `~/.config/xfce4/terminal/terminalrc`.
 
 ### Colour management
 

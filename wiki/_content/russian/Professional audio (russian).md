@@ -20,7 +20,7 @@ Related articles
         *   [1.2.3 Quickscan JACK script](#Quickscan_JACK_script)
         *   [1.2.4 Desktop Effects vs JACK](#Desktop_Effects_vs_JACK)
         *   [1.2.5 Общий пример](#Общий_пример)
-*   [2 Realtime Kernel](#Realtime_Kernel)
+*   [2 Режим реального времени ядра](#Режим_реального_времени_ядра)
     *   [2.1 AUR](#AUR)
 *   [3 MIDI](#MIDI)
 *   [4 Переменные окружения](#Переменные_окружения)
@@ -32,9 +32,9 @@ Related articles
     *   [6.4 PreSonus AudioBox USB](#PreSonus_AudioBox_USB)
     *   [6.5 Tascam US-122](#Tascam_US-122)
     *   [6.6 RME Babyface](#RME_Babyface)
-*   [7 Restricted Software](#Restricted_Software)
-    *   [7.1 Steinberg's SDKs](#Steinberg's_SDKs)
-*   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
+*   [7 Несвободные приложения](#Несвободные_приложения)
+    *   [7.1 Steinberg'овые SDK](#Steinberg'овые_SDK)
+*   [8 Проект Arch Linux Pro Audio](#Проект_Arch_Linux_Pro_Audio)
 *   [9 Linux и Arch Linux Pro Audio в новостях](#Linux_и_Arch_Linux_Pro_Audio_в_новостях)
 *   [10 Mailing list](#Mailing_list)
 
@@ -256,13 +256,13 @@ pcm.jack {
 
 #### Quickscan JACK script
 
-Most people will probably want to run JACK in realtime mode, there are however a lot of knobs and buttons to press in order for that to happen.
+Вероятно, большинство людей захотят работать с JACK в режиме реального времени; однако, для этого требуется крутить слишком много ручек и настроек.
 
-A great way to quickly diagnose your system and find out what it is missing in order to have JACK work properly in real time mode is to run the Quickscan script.
+Отличный способ проверить системную конфигурацию после настройки JACK'а — это запустить скрипт Quickscan.
 
 [https://github.com/raboof/realtimeconfigquickscan/blob/master/realTimeConfigQuickScan.pl](https://github.com/raboof/realtimeconfigquickscan/blob/master/realTimeConfigQuickScan.pl)
 
-The output should tell you where your system is lacking and will point you to places to find more information.
+Вывод данного скрипта покажет вам узкие места(бутылочное горло) в системе и/или железе, и укажет места, где можно найти более подробную информацию по этому поводу.
 
 #### Desktop Effects vs JACK
 
@@ -272,28 +272,28 @@ In addition to the factors listed under the System Configuration section above a
 
 Общий пример настройки доступен по ссылке [JACK Audio Connection Kit#A shell-based example setup](/index.php/JACK_Audio_Connection_Kit#A_shell-based_example_setup "JACK Audio Connection Kit").
 
-## Realtime Kernel
+## Режим реального времени ядра
 
-Since a while ago, the stock Linux kernel has proven to be adequate for realtime uses. The stock kernel (with `CONFIG_PREEMPT=y`, default in Arch) can operate with a worst case latency of [upto 10ms](https://rt.wiki.kernel.org/index.php/Frequently_Asked_Questions#What_are_real-time_capabilities_of_the_stock_2.6_linux_kernel.3F) (time between the moment an interrupt occurs in hardware, and the moment the corresponding interrupt-thread gets running), although some device drivers can introduce latency much worse than that. So depending on your hardware and driver (and requirement), you might want a kernel with hard realtime capabilities.
+С недавнего времени основное ядро Linux предоставляет хорошие возможности для использования его в режиме реального времени. Основное ядро (с параметром `CONFIG_PREEMPT=y`, используемое в Арч по умолчанию) в худшем случае может работать с задержкой [до 10мс](https://rt.wiki.kernel.org/index.php/Frequently_Asked_Questions#What_are_real-time_capabilities_of_the_stock_2.6_linux_kernel.3F) (время между моментом аппаратного прерывания и моментом, соответствующим получению прерывания выполняющимся потоком), хотя, конечно же, некоторые драйверы устройств могут внести задержки намного бо́льшие, чем системные. В зависимости от вашего аппаратного обеспечения и драйверов (и требований), вы, возможно, захотите ядро с возможностями жёсткого режима реального времени.
 
-The [RT_PREEPMT](https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO) patch by Ingo Molnar and Thomas Gleixner is an interesting option for hard and firm realtime applications, reaching from professional audio to industrial control. Most audio-specific distro Linux ships with this patch applied. A realtime-preemptible kernel will also make it possible to tweak priorities of IRQ handling threads and help ensure smooth audio almost regardless of the load.
+Патч [RT_PREEPMT](https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO) от Инго Молнара (Ingo Molnar) и Томаса Глейкснера (Thomas Gleixner) является интересным вариантом для жёстких задержек и приложений режима реального времени, достигаемых в профессиональном аудио промышленного масштаба. Большинство аудио специфичных дистрибутивов Linux поставляются с применением данного патча. Режим вытесняющей многозадачности реального времени ядра также позволяет настроить приоритеты прерываний (IRQ) обработки потоков и помогает обеспечить плавный звук почти независимо от нагрузки.
 
-If you are going to compile your own kernel, remember that removing modules/options does not equate to a "leaner and meaner" kernel. It is true that the size of the kernel image is reduced, but in today's systems it is not as much of an issue as it was back in **1995**.
+Если вы собираетесь компилировать собственное ядро, помните, что удаление модулей/опций не следует приравнивать к «лёгкости и простоте» ядра. Образ ядра, конечно же, уменьшится, но в современных системах это не такая проблема, какая она была в 1995-м.
 
-In any way, you should also ensure that:
+В любом случае, вы должны обеспечить следующие параметры:
 
-*   **Timer Frequency** is set to **1000Hz** (CONFIG_HZ_1000=y; if you do not do *MIDI* you can ignore this)
-*   **APM** is **DISABLED** (CONFIG_APM=n; Troublesome with some hardware - default in x86_64)
+*   **Timer Frequency** установить в значение **1000Hz** (CONFIG_HZ_1000=y; если вы не задаёте *MIDI*, вы можете это игнорировать)
+*   **APM** в значение **DISABLED** (CONFIG_APM=n; Могут быть трудности с некоторым оборудованием - по умолчанию в x86_64)
 
-If you truly want a slim system, we suggest you go your own way and deploy one with *static /devs*. You should, however, set your CPU architecture. Selecting "Core 2 Duo" for appropriate hardware will allow for a good deal of optimisation, but not so much as you go down the scale.
+Если вы хотите действительно лёгкую систему, мы предлагаем вам пойти своим путём и развернуть систему один раз с статической аппаратной поддержкой. Однако, вам понадобится выбрать архитектуру процессора. Выбор «Core 2 Duo» с подбором соответствующего аппаратного обеспечения может послужить хорошим подспорьем для оптимизации; но тем меньше будет выигрыш, чем ниже архитектура.
 
-General issue(s) with (realtime) kernels:
+Основные проблемы с режимом реального времени ядра:
 
-*   Hyperthreading (if you suspect, disable in BIOS)
+*   Гиперпоточность (hyperthreading) (если имеются подозрения, отключите в BIOS)
 
-There are ready-to-run/compile patched kernels available in the ABS and AUR.
+Также имеются готовые скомпилированные с патчами ядра, доступные в ABS и AUR.
 
-**Note:** Before you decide to use a patched kernel, see [http://jackaudio.org/faq/realtime_vs_realtime_kernel.html](http://jackaudio.org/faq/realtime_vs_realtime_kernel.html).
+**Примечание:** Прежде чем вы решите использовать патченное ядро, загляните по ссылке: [http://jackaudio.org/faq/realtime_vs_realtime_kernel.html (англ.)](http://jackaudio.org/faq/realtime_vs_realtime_kernel.html).
 
 ### AUR
 
@@ -422,13 +422,13 @@ cannot submit datapipe for urb 0, error -28: not enough bandwidth
 
 что является нормальным, потому что это устройство USB 1 и не может обеспечить достаточную пропускную способность такого качества для более чем одного (2-канального) источника/получателя одновременно.
 
-Depending on the value of `index` it will setup two devices: `hwYYY:0` and `hwYYY:1`, which will contain available inputs and outputs. First device is most likely to contain analog output and digital input, while second one will contain analog input and digital output. To find out which devices are linked where and if they are setup correctly, you can check `/proc/asound/cardYYY/stream{0,1}` . Below is list of important endpoints that will help in correctly identifying card connections (it easy to mistake analog and digital input or output connections before you get used to the device):
+В зависимости от значения `index` будет установлено два устройства: `hwYYY:0` и `hwYYY:1`, которые будут содержать доступные входы и выходы. Первое устройство, скорее всего, будет содержать в себе аналоговый выход и цифровой вход, в то время как второй — аналоговый вход и цифровой выход. Чтобы узнать, где и как устройства соединены, — если они настроены правильно, — вы можете проверить `/proc/asound/cardYYY/stream{0,1}` . Ниже приведён список наиболее важных конечных точек (endpoints), которые помогут правильно определить соединения карты (легко перепутать аналоговые и цифровые входные или выходные соединения, прежде чем привыкаешь к устройству):
 
 ```
-EP 3 (analgoue output = TRS on back, mirrored on RCA outputs 1 and 2 on back)
-EP 4 (digital output = S/PDIF output on back, mirrored on RCA outputs 3 and 4 on back)
-EP 5 (analogue input = balanced TRS or XLR microphone, unbalanced TS line on front)
-EP 6 (digital input = S/PDIF input on back)
+EP 3 (аналоговый выход (analogue output) = разъём TRS задней панели зеркально отображается на выходах RCA 1 и 2 задней панели)
+EP 4 (цифровой выход (digital output) = выход S/PDIF задней панели зеркально отображается на выходах RCA 3 и 4 задней панели)
+EP 5 (аналоговый вход (analogue input) = балансный разъём TRS или XLR микрофона, небалансная линия TS на передней панели)
+EP 6 (цифровой вход (digital input) = вход S/PDIF задней панели)
 
 ```
 
@@ -498,12 +498,12 @@ pcm.!default {
 
 ### PreSonus Firepod
 
-1.  Startup: Either from command line or QjackCtl, the driver is called firewire.
-2.  Specs: The card contains 8/8 preamp'ed XLR plus a stereo pair, in total 10 channels.
-3.  Linking: Cards can be linked together without any problems.
-4.  Hardware Settings: Nothing particular, tweak the settings in QjackCtl to your likings.
+1.  Запуск: либо из командной строки, либо Qjackctl; драйвер называется firewire.
+2.  Характеристики: карта содержит 8/8 XLR предусилителей плюс стереопара, итого получается 10 каналов.
+3.  Сопряжение: карты могут соединяться вместе без каких-либо проблем.
+4.  Настройка оборудования: ничего особенного; меняйте настройки в Qjackctl по своему усмотрению.
 
-Volume levels are hardware and routing can be done through QjackCtl, even with more cards linked together, this is not a problem. The ffadomixer does not work with this card yet, hopefully in the future we can control more aspects of the card through a software interface like that.
+Уровни громкости аппаратные, а маршрутизация может быть выполнена в Qjackctl, даже если между собой сопряжено множество карт, — это не проблема. Ffadomixer пока ещё не работает с данной картой; надеемся, в будущем мы сможем контролировать больше аспектов карты через программный интерфейс как этот.
 
 ### PreSonus AudioBox USB
 
@@ -544,33 +544,33 @@ grep -i baby /proc/asound/cards
 
 Для Babyface не требуется особых настроек Jack. Но если вы захотите воспользоваться встроенным входом/выходом MIDI, вам нужно установить "MIDI Driver" в положение "seq" и, при необходимости, отключить "Enable Alsa Sequencer Support" для использования его в комбинации с другими устройствами MIDI (например, USB Midi клавиатура).
 
-## Restricted Software
+## Несвободные приложения
 
-### Steinberg's SDKs
+### Steinberg'овые SDK
 
-It is very clear - we can distribute neither the VST nor the ASIO headers in **binary package form**. However, whenever you are building a program which would host Windows *.dll* VST plug-ins, check for the following hints (that do not require use of any SDK):
+Естественно, мы не можем распространять заголовки ни VST, ни ASIO в форме бинарных пакетов. Тем не менее, всякий раз, когда вы собираете программу, которая будет работать с плагинами VST в виде Windows-библиотек *.dll*, проверьте следующие пакеты (которые не требуют использования какого-либо SDK):
 
 *   dssi-vst
 *   fst
 *   vestige
 
-With that said, if you are building a program which would host native *.so* VST plug-ins, then there is no escape. For such cases, Arch yet again allows us to maintain a uniform local software database. We can "install" the SDK *system-wide* - you simply have to download it yourself and place it in the packaging directory.
+С учётом вышесказанного, если вы собираете программу, которая будет работать с нативными *.so* VST плагинами, то в этом случае выхода нет. Для таких случаев Арч позволяет нам поддерживать единую локальную базу данных приложений. Мы можем «установить» общесистемную SDK — достаточно лишь скачать и поместить файл в директорию установленного пакета.
 
-[Get them from AUR](https://aur.archlinux.org/packages.php?O=0&K=steinberg-&do_Search=Go)
+[Получить их можно в AUR](https://aur.archlinux.org/packages.php?O=0&K=steinberg-&do_Search=)
 
-*Note: Steinberg does not forbid redistribution of resulting products, nor dictate what license they can be under. There are many GPL-licensed VST plug-ins. As such, distributing binary packages of software built with these restricted headers is **not** a problem, because the headers are simply **buildtime dependencies**.*
+**Примечание:** *Steinberg не запрещает распространять конечные продукты и не диктует лицензию, под которой они должны распространяться. Существует много плагинов с лицензией GPL. Таким образом, распространение бинарных пакетов или программного обеспечения, собранного с данными несвободными заголовками не проблема, потому что заголовки являются лишь временными зависимостями для сборки.*
 
-## Arch Linux Pro Audio Project
+## Проект Arch Linux Pro Audio
 
-Yes, we have one. Think of "Planet CCRMA" or "Pro Audio Overlay", less the academic connotations of the former: [ArchAudio](http://archaudio.org).
+Да, у нас есть и такое. Задумайтесь над "Planet CCRMA" или "Pro Audio Overlay", меньше научной коннотации: [ArchAudio](http://archaudio.org).
 
-What this means is that the repositories are add-ons, i.e you need to have a running, sane Arch Linux installation.
+Что значит, что сие является репозиторием дополнений, т.е. вы должны поработать над разумной установкой и настройкой Archlinux.
 
-It is a relatively new effort although the initiative has been around since 2006/2007\.
+Это относительно новое течение, хотя инициатива была проявлена ещё примерно в 2006/2007г.
 
-History: [https://bbs.archlinux.org/viewtopic.php?id=30547](https://bbs.archlinux.org/viewtopic.php?id=30547)
+История: [https://bbs.archlinux.org/viewtopic.php?id=30547](https://bbs.archlinux.org/viewtopic.php?id=30547)
 
-For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archaudio @ Freenode
+По всем вопросам, связанными с Arch- и ArchAudio- проблемами можно обратиться в наш **IRC**: #archaudio @ Freenode
 
 ## Linux и Arch Linux Pro Audio в новостях
 

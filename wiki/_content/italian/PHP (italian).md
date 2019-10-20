@@ -1,6 +1,10 @@
 [PHP](http://www.php.net/) è un linguaggio di scripting general-purpose ampiamente utilizzato. È specialmente indicato per lo sviluppo Web e può essere integrato nell'HTML.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Setup](#Setup)
@@ -11,7 +15,7 @@
     *   [4.3 pthreads](#pthreads)
     *   [4.4 mcrypt](#mcrypt)
     *   [4.5 PCNTL](#PCNTL)
-*   [5 Zend Core + Apache](#Zend_Core_.2B_Apache)
+*   [5 Zend Core + Apache](#Zend_Core_+_Apache)
 *   [6 Strumenti per lo sviluppo](#Strumenti_per_lo_sviluppo)
     *   [6.1 Komodo](#Komodo)
     *   [6.2 Netbeans](#Netbeans)
@@ -24,8 +28,8 @@
         *   [6.6.3 Eclipse Integration](#Eclipse_Integration)
         *   [6.6.4 Komodo Integration](#Komodo_Integration)
 *   [7 Risoluzione problemi](#Risoluzione_problemi)
-    *   [7.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
-    *   [7.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
+    *   [7.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_'ZipArchive'_not_found)
+    *   [7.2 /etc/php/php.ini not parsed](#/etc/php/php.ini_not_parsed)
 *   [8 Altre risorse](#Altre_risorse)
 
 ## Installazione
@@ -208,7 +212,7 @@ Aggiungere le seguenti righe nel proprio `.vimrc`:
 
 ```
 autocmd FileType php setlocal makeprg=zca\ %<.php
-autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
+autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 
 ```
 
@@ -229,7 +233,7 @@ autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 
 Toolbox -> Add -> New Command:
 
-*   Command: *zca --recursive %F*
+*   Command: *zca --recursive %F*
 *   Run in: Command Output Tab
 *   Parse output with: *`^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$`*
 *   Select *Show parsed output as a list*

@@ -159,7 +159,7 @@ DEVICESCAN -m address@domain.com
 
 ```
 
-To be able to send the email externally (i.e. not to the root mail account) a MTA (Mail Transport Agent) or a MUA (Mail User Agent) will need to be installed and configured. Common MTAs are [Msmtp](/index.php/Msmtp "Msmtp") and [SSMTP](/index.php/SSMTP "SSMTP"). Common MTUs are sendmail and [Postfix](/index.php/Postfix "Postfix"). It is enough to simply configure [S-nail](/index.php/S-nail "S-nail") if you do not want anything else, but you will need to follow [these instructions](//dominicm.com/configure-email-notifications-on-arch-linux/).
+To be able to send the email externally (i.e. not to the root mail account) a MTA (Mail Transport Agent) or a MUA (Mail User Agent) will need to be installed and configured. Common MTAs are [Msmtp](/index.php/Msmtp "Msmtp") and [SSMTP](/index.php/SSMTP "SSMTP"), but perhaps the easiest [dma](/index.php/Dma "Dma") will suffice. Common MTUs are sendmail and [Postfix](/index.php/Postfix "Postfix"). It is enough to simply configure [S-nail](/index.php/S-nail "S-nail") if you do not want anything else, but you will need to follow [these instructions](//dominicm.com/configure-email-notifications-on-arch-linux/).
 
 The `-M test` option causes a test email to be sent each time the smartd daemon starts:
 
@@ -220,7 +220,9 @@ done
 
 This script requires [libnotify](https://www.archlinux.org/packages/?name=libnotify) and [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) and a compatible desktop environment.
 
-You can execute your custom scripts with `/etc/smartd.conf`  `DEVICESCAN -m @smartdnotify` 
+You can execute your custom scripts with
+
+ `/etc/smartd.conf`  `DEVICESCAN -m @smartdnotify` 
 
 #### Power management
 

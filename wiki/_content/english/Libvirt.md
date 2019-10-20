@@ -227,7 +227,7 @@ $ virsh -c qemu:///session
 
 ## Management
 
-Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://aur.archlinux.org/packages/libguestfs/)).
+Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://www.archlinux.org/packages/?name=libguestfs)).
 
 ### virsh
 
@@ -597,28 +597,27 @@ $ virsh -c qemu:///system net-dumpxml default
 
 ## Python connectivity code
 
-The [libvirt-python](https://www.archlinux.org/packages/?name=libvirt-python) package provides a [python2](https://www.archlinux.org/packages/?name=python2) API in `/usr/lib/python2.7/site-packages/libvirt.py`.
+The [libvirt-python](https://www.archlinux.org/packages/?name=libvirt-python) package provides a Python API in `/usr/lib/python3.x/site-packages/libvirt.py`.
 
 General examples are given in `/usr/share/doc/libvirt-python-*your_libvirt_version*/examples/`
 
 Unofficial example using [qemu](https://www.archlinux.org/packages/?name=qemu) and [openssh](https://www.archlinux.org/packages/?name=openssh):
 
 ```
-#! /usr/bin/env python2
-# -*- coding: utf-8 -*-
+#! /usr/bin/env python3
 import socket
 import sys
 import libvirt
-if (__name__ == "__main__"):
-   conn = libvirt.open("qemu+ssh://xxx/system")
-   print "Trying to find node on xxx"
-   domains = conn.listDomainsID()
-   for domainID in domains:
-       domConnect = conn.lookupByID(domainID)
-       if domConnect.name() == 'xxx-node':
-           print "Found shared node on xxx with ID " + str(domainID)
-           domServ = domConnect
-           break
+
+conn = libvirt.open("qemu+ssh://xxx/system")
+print("Trying to find node on xxx")
+domains = conn.listDomainsID()
+for domainID in domains:
+    domConnect = conn.lookupByID(domainID)
+    if domConnect.name() == 'xxx-node':
+        print("Found shared node on xxx with ID {}".format(domainID))
+        domServ = domConnect
+        break
 
 ```
 

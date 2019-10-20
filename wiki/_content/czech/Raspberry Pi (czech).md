@@ -8,26 +8,30 @@
 
 	[Qt5 Raspberry](/index.php?title=Qt5_Raspberry&action=edit&redlink=1 "Qt5 Raspberry (page does not exist)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Úvod](#.C3.9Avod)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Úvod](#Úvod)
     *   [1.1 Co je to Raspberry Pi](#Co_je_to_Raspberry_Pi)
     *   [1.2 Instalace Arch Linux ARM](#Instalace_Arch_Linux_ARM)
-        *   [1.2.1 Záloha karty](#Z.C3.A1loha_karty)
+        *   [1.2.1 Záloha karty](#Záloha_karty)
         *   [1.2.2 Instalace](#Instalace)
         *   [1.2.3 Home](#Home)
-    *   [1.3 První operace](#Prvn.C3.AD_operace)
-        *   [1.3.1 Vzdálený SSH přístup](#Vzd.C3.A1len.C3.BD_SSH_p.C5.99.C3.ADstup)
+    *   [1.3 První operace](#První_operace)
+        *   [1.3.1 Vzdálený SSH přístup](#Vzdálený_SSH_přístup)
         *   [1.3.2 Lokalizace](#Lokalizace)
         *   [1.3.3 Setting the time and date using OpenNTP](#Setting_the_time_and_date_using_OpenNTP)
         *   [1.3.4 Setting the time and date manually](#Setting_the_time_and_date_manually)
-        *   [1.3.5 Změna root hesla](#Zm.C4.9Bna_root_hesla)
-        *   [1.3.6 Přidání dalšího uživatele](#P.C5.99id.C3.A1n.C3.AD_dal.C5.A1.C3.ADho_u.C5.BEivatele)
+        *   [1.3.5 Změna root hesla](#Změna_root_hesla)
+        *   [1.3.6 Přidání dalšího uživatele](#Přidání_dalšího_uživatele)
         *   [1.3.7 Sudo](#Sudo)
-    *   [1.4 Instalace programů a prostředí](#Instalace_program.C5.AF_a_prost.C5.99ed.C3.AD)
-        *   [1.4.1 Vyhledávání](#Vyhled.C3.A1v.C3.A1n.C3.AD)
+    *   [1.4 Instalace programů a prostředí](#Instalace_programů_a_prostředí)
+        *   [1.4.1 Vyhledávání](#Vyhledávání)
         *   [1.4.2 Shell](#Shell)
-        *   [1.4.3 Grafické prostředí](#Grafick.C3.A9_prost.C5.99ed.C3.AD)
+        *   [1.4.3 Grafické prostředí](#Grafické_prostředí)
 
 # Úvod
 

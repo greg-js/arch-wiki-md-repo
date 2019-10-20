@@ -40,40 +40,40 @@ Adminer can now be accessed by browsing to [http://localhost/adminer](http://loc
 
 ### Nginx
 
-Ensure that the [PHP FastCGI interface](/index.php/Nginx#FastCGI "Nginx") is configured correctly.
+**Note:** Ensure that the [PHP FastCGI interface](/index.php/Nginx#FastCGI "Nginx") has been configured correctly.
 
-Then add the following `server` block to your `/etc/nginx/nginx.conf` or place it in a file under `/etc/nginx/servers-available/` and [enable](/index.php/Nginx#Managing_server_entries "Nginx") it:
+Create a [server entry](/index.php/Nginx#Managing_server_entries "Nginx") using `/usr/share/webapps/adminer` as `root`:
 
- `/etc/nginx/nginx.conf` 
+ `/etc/nginx/sites-available/adminer.conf` 
 ```
 server {
-        listen 80;
-        server_name db.domainname.dom;
-        root /usr/share/webapps/adminer;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
 
-        # If you want to use a .htpass file, uncomment the three following lines.
-        #auth_basic "Admin-Area! Password needed!";
-        #auth_basic_user_file /usr/share/webapps/adminer/.htpass;
-        #access_log /var/log/nginx/adminer-access.log;
+    server_name adminer.domain;
+    root /usr/share/webapps/adminer;
 
-        error_log /var/log/nginx/adminer-error.log;
-        location / {
-                index index.php;
-                try_files $uri $uri/ /index.php?$args;
-        }
+    # Only allow certain IPs 
+    #allow 192.168.1.0/24;
+    #deny all;
 
-       location ~ .php$ {
-             include fastcgi.conf;
-             #fastcgi_pass localhost:9000;
-             fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-             fastcgi_index index.php;
-             fastcgi_param SCRIPT_FILENAME /usr/share/webapps/adminer$fastcgi_script_name;
-        }
+    index index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /index.php;
+
+    # PHP configuration
+    location ~ \.php$ {
+      ...
+    }
 }
 
 ```
 
-Afterwards [restart](/index.php/Restart "Restart") [nginx](/index.php/Nginx "Nginx").
+Symlink `adminer.conf` to `sites-enabled` and [restart](/index.php/Restart "Restart") [nginx](/index.php/Nginx "Nginx").
 
 ### Hiawatha
 

@@ -7,7 +7,11 @@ Artículos relacionados
 
 La configuración inalámbrica es un proceso que consta de dos partes: la primera parte consiste en identificar el controlador correcto para el dispositivo inalámbrico, asegurarse que está instalado (los cuales están disponibles en el disco de instalación, así que asegúrese de instalarlos), y configurar la interfaz. La segunda parte consiste en la elección de un método de gestión de las conexiones inalámbricas. Este artículo trata sobre las dos partes, y proporciona enlaces adicionales a las herramientas de gestión inalámbrica.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Controlador del dispositivo](#Controlador_del_dispositivo)
     *   [1.1 Comprobar el estado del controlador](#Comprobar_el_estado_del_controlador)

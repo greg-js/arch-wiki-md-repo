@@ -59,10 +59,10 @@
 | [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Да ([base](https://www.archlinux.org/packages/?name=base)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
 | [ext4](/index.php/Ext4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Ext4 (Русский)") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Да ([base](https://www.archlinux.org/packages/?name=base)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
 | [HFS](https://en.wikipedia.org/wiki/ru:HFS "w:ru:HFS") | [mkfs.hfsplus(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.hfsplus.8) | [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) | Опционально | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | Файловая система [MacOS](https://en.wikipedia.org/wiki/ru:macOS "w:ru:macOS") |
-| [JFS](/index.php/JFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "JFS (Русский)") | [mkfs.jfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.jfs.8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Да ([base](https://www.archlinux.org/packages/?name=base)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
+| [JFS](/index.php/JFS "JFS") | [mkfs.jfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.jfs.8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Да ([base](https://www.archlinux.org/packages/?name=base)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
 | [NILFS2](https://en.wikipedia.org/wiki/ru:NILFS "w:ru:NILFS") | [mkfs.nilfs2(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.nilfs2.8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Да | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
 | [NTFS](/index.php/NTFS-3G_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NTFS-3G (Русский)") | [mkfs.ntfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.ntfs.8) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Да | N/A (на основе FUSE) | Файловая система [Windows](https://en.wikipedia.org/wiki/ru:Windows "w:ru:Windows") |
-| [Reiser4](/index.php/Reiser4_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Reiser4 (Русский)") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | Нет |
+| [Reiser4](/index.php/Reiser4 "Reiser4") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | Нет |
 | [ReiserFS](https://en.wikipedia.org/wiki/ru:ReiserFS "w:ru:ReiserFS") | [mkfs.reiserfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.reiserfs.8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Да ([base](https://www.archlinux.org/packages/?name=base)) |
 | [XFS](/index.php/XFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XFS (Русский)") | [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Да ([base](https://www.archlinux.org/packages/?name=base)) | 
 
@@ -105,7 +105,7 @@
 
 	[http://sourceforge.net/projects/fuseiso/](http://sourceforge.net/projects/fuseiso/) || [fuseiso](https://www.archlinux.org/packages/?name=fuseiso)
 
-*   **[gitfs](/index.php/Gitfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Gitfs (Русский)")** — файловая система FUSE, которая полностью интегрируется с git.
+*   **[gitfs](/index.php/Gitfs "Gitfs")** — файловая система FUSE, которая полностью интегрируется с git.
 
 	[https://www.presslabs.com/gitfs/](https://www.presslabs.com/gitfs/) || [gitfs](https://aur.archlinux.org/packages/gitfs/)
 
@@ -169,7 +169,7 @@
 
 	[https://www.gluster.org/](https://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
 
-*   **[IPFS](/index.php/IPFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "IPFS (Русский)")** — одноранговый протокол гипермедиа, чтобы сделать Интернет более быстрым, безопасным и открытым. IPFS нацелена на замену HTTP и создание лучшей сети для всех нас. Использует блоки для хранения частей файла, каждый сетевой узел хранит только интересующий контент, обеспечивает дедупликацию, распространение, масштабируемую систему, ограниченную только пользователями. (В настоящее время в aplha)
+*   **[IPFS](/index.php/IPFS "IPFS")** — одноранговый протокол гипермедиа, чтобы сделать Интернет более быстрым, безопасным и открытым. IPFS нацелена на замену HTTP и создание лучшей сети для всех нас. Использует блоки для хранения частей файла, каждый сетевой узел хранит только интересующий контент, обеспечивает дедупликацию, распространение, масштабируемую систему, ограниченную только пользователями. (В настоящее время в aplha)
 
 	[https://ipfs.io/](https://ipfs.io/) || [go-ipfs](https://www.archlinux.org/packages/?name=go-ipfs)
 
@@ -208,7 +208,7 @@ sdb
 
 ## Создание файловой системы
 
-Файловые системы обычно создаются на [раздел](/index.php/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB "Раздел")е, внутри логических контейнеров, таких как [LVM](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"), [RAID](/index.php/RAID_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RAID (Русский)") и [dm-crypt](/index.php/Dm-crypt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dm-crypt (Русский)"), или в обычном файле (смотрите [w:Loop device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device")). В этом разделе описывается случай раздела.
+Файловые системы обычно создаются на [раздел](/index.php/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB "Раздел")е, внутри логических контейнеров, таких как [LVM](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"), [RAID](/index.php/RAID "RAID") и [dm-crypt](/index.php/Dm-crypt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dm-crypt (Русский)"), или в обычном файле (смотрите [w:Loop device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device")). В этом разделе описывается случай раздела.
 
 **Примечание:** Файловые системы могут быть записаны непосредственно на диск, называемый [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) или *безраздельным диском*. С этим методом связаны определенные ограничения, особенно при [загрузке](/index.php/Arch_boot_process "Arch boot process") с такого диска. Для примеров смотрите [Btrfs#Безраздельный диск Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Безраздельный_диск_Btrfs "Btrfs (Русский)").
 

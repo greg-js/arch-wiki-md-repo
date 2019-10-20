@@ -17,7 +17,11 @@
 
 **警告:** 确保在操作前 [备份](/index.php/Backup_programs "Backup programs") 所有数据。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 RAID 级别](#RAID_级别)
     *   [1.1 基本 RAID 级别](#基本_RAID_级别)

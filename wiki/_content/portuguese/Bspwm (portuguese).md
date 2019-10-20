@@ -20,12 +20,11 @@ Related articles
     *   [3.2 Regras](#Regras)
     *   [3.3 Painéis](#Painéis)
         *   [3.3.1 Usando lemonbar](#Usando_lemonbar)
-    *   [3.4 Using yabar](#Using_yabar)
-        *   [3.4.1 Usando polybar](#Usando_polybar)
-    *   [3.5 Scratchpad](#Scratchpad)
-    *   [3.6 Configurações diferentes de monitores para diferentes máquinas](#Configurações_diferentes_de_monitores_para_diferentes_máquinas)
-    *   [3.7 Configurar um desktop onde todas as janelas estão flutuando](#Configurar_um_desktop_onde_todas_as_janelas_estão_flutuando)
-    *   [3.8 Teclado](#Teclado)
+        *   [3.3.2 Usando polybar](#Usando_polybar)
+    *   [3.4 Scratchpad](#Scratchpad)
+    *   [3.5 Configurações diferentes de monitores para diferentes máquinas](#Configurações_diferentes_de_monitores_para_diferentes_máquinas)
+    *   [3.6 Configurar um desktop onde todas as janelas estão flutuando](#Configurar_um_desktop_onde_todas_as_janelas_estão_flutuando)
+    *   [3.7 Teclado](#Teclado)
 *   [4 Solução de problemas](#Solução_de_problemas)
     *   [4.1 Tela em branco e atalhos de teclado não funcionam](#Tela_em_branco_e_atalhos_de_teclado_não_funcionam)
     *   [4.2 Caixa de janela maior que o aplicativo](#Caixa_de_janela_maior_que_o_aplicativo)
@@ -129,10 +128,6 @@ echo "S" "$(panel_volume) $(panel_clock)" > "$PANEL_FIFO"
 done &
 
 ```
-
-### Using yabar
-
-Using the example panel using lemonbar requires you to set your environment (.profile), and make sure the panel scripts are on your path. Easier panel to set up is [yabar](https://aur.archlinux.org/packages/yabar/), which has just one config file.
 
 #### Usando polybar
 

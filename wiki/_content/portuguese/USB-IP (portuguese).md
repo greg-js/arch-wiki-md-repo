@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [USB/IP](/index.php/USB/IP "USB/IP"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB/IP&diff=0&oldid=585801) na versão em inglês.
+
 Do [site do USB/IP](http://usbip.sourceforge.net/):
 
 	*O projeto USB/IP visa desenvolver um sistema geral de compartilhamento de dispositivos USB através da rede IP. Para compartilhar dispositivos USB entre computadores com todas as suas funcionalidades, o USB/IP encapsula "mensagens de E/S USB" em cargas TCP/IP e as transmite entre computadores.*
@@ -9,109 +11,121 @@ Do [site do USB/IP](http://usbip.sourceforge.net/):
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
-*   [2 Página man](#Página_man)
-*   [3 Porta e firewall](#Porta_e_firewall)
-*   [4 Uso](#Uso)
-    *   [4.1 Listando e ativando módulos de kernel](#Listando_e_ativando_módulos_de_kernel)
-    *   [4.2 Listando e compartilhando dispositivos](#Listando_e_compartilhando_dispositivos)
-    *   [4.3 Computador cliente](#Computador_cliente)
-*   [5 Veja também](#Veja_também)
+*   [2 Uso](#Uso)
+    *   [2.1 Configuração do servidor](#Configuração_do_servidor)
+        *   [2.1.1 Vinculando com serviços de systemd](#Vinculando_com_serviços_de_systemd)
+    *   [2.2 Configuração do cliente](#Configuração_do_cliente)
+    *   [2.3 Desconectando dispositivos](#Desconectando_dispositivos)
+*   [3 Página man](#Página_man)
+*   [4 Veja também](#Veja_também)
 
 ## Instalação
 
 [Instale](/index.php/Instale "Instale") [usbip](https://www.archlinux.org/packages/?name=usbip).
 
-## Página man
-
-Veja [usbip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/usbip.8).
-
-## Porta e firewall
-
-USBip usa a porta 3240.
-
-Caso haja um firewall, deve-se gerar permissões para esta porta no firewall. Por exemplo, no [ufw](/index.php/Ufw "Ufw") deve-se executar:
-
-```
-# ufw allow 3240
-
-```
-
-Para instruções específicas e detalhadas de seu firewall, acesse [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls").
-
 ## Uso
 
-### Listando e ativando módulos de kernel
+### Configuração do servidor
 
-USB/IP utiliza os módulos de kernel `vhci_hcd` e `usbip`.
+O servidor deve ter um dispositivo USB conectado fisicamente a ele e o [módulo de kernel](/index.php/Kernel_module "Kernel module") de USP/IP `usbip_host` carregado. Então, [inicie](/index.php/Inicie "Inicie") e [habilite](/index.php/Habilite "Habilite") o serviço de systemd USB/IP `usbipd.service`.
 
-Para listar os módulos, pode-se usar `lsmod` com `grep` da seguinte forma:
-
-```
-$ lsmod | grep vhci_hcd
-
-```
-
-Tendo encontrado ambos, basta ativá-los:
-
-```
-# modprobe vhci-hcd usbip_host usbip_core usbcore usb_common
-
-```
-
-Para informações detalhadas, leia [Kernel module](/index.php/Kernel_module "Kernel module").
-
-### Listando e compartilhando dispositivos
-
-Liste os dispositivos que têm permissão para compartilhar/exportar:
+Liste os dispositivos conectados:
 
 ```
 $ usbip list -l
 
 ```
 
-Antes de compartilhar o dispositivo desejado, você deve que ativar o serviço USBip, em segundo plano:
+Vincule o dispositivo necessário. Por exemplo, para compartilhar o dispositivo tendo *busid* 1-1.5:
 
 ```
-# usbipd -D
-
-```
-
-Para compartilhar um dispositivo, basta usar a opção `-b` com o resultado da listagem de dispositivo filtrado com apenas o conteúdo que está após *busid* e antes dos parênteses:
-
-```
-# usbip bind -b *id_barramento*
+# usbip bind -b 1-1.5
 
 ```
 
-Então, por exemplo, se usando o comando *list* você achou o dispositivo `busid 1-1 (13d3:5188)`, desconsidere "(13d3:5188)" e "busid", e use apenas "1-1", executando:
+Para desvincular o dispositivo:
 
 ```
-# usbip bind -b 1-1
-
-```
-
-### Computador cliente
-
-Liste dispositivos USB exportáveis no servidor usando:
-
-```
-$ usbip list --remote=*ip_servidor*
+$ usbip unbind -b 1-1.5
 
 ```
 
-Tendo encontrado o dispositivo USB remoto na rede, conecte-o usando o IP do servidor e a identificação do barramento com:
+Após vincular, o dispositivo pode ser acessado do cliente.
+
+#### Vinculando com serviços de systemd
+
+Para fazer vínculo persistente seguindo o arquivo unit modelo de systemd pode ser usado:
+
+ `/etc/systemd/system/usbip-bind@.service` 
+```
+[Unit]
+ Description=USB-IP Binding on bus id %I
+ After=network-online.target usbipd.service
+ Wants=network-online.target
+ Requires=usbipd.service
+ #DefaultInstance=1-1.5
+
+ [Service]
+ Type=simple
+ ExecStart=/usr/bin/usbip bind -b %i
+ RemainAfterExit=yes
+ ExecStop=/usr/bin/usbip unbind -b %i 
+ Restart=on-failure
+
+ [Install]
+ WantedBy=multi-user.target
+```
+
+Então, por exemplo, para compartilhar o dispositivo tendo *busid* 1-1, deve-se [iniciar](/index.php/Inicia "Inicia") ou [habilitar](/index.php/Habilita "Habilita") `usbip-bind@1-1.service`.
+
+### Configuração do cliente
+
+Certifique-se que o [módulo de kernel](/index.php/Kernel_module "Kernel module") `vhci-hcd` está carregado.
+
+Então, liste os dispositivos disponíveis no servidor:
 
 ```
-# usbip attach --remote=*ip_servidor* --busid=*id_barramento*
+$ usbip list -r *endereço_IP_do_servidor*
 
 ```
 
-Então, por exemplo, se o endereço IP do servidor é "192.168.15.15" e a identificação do barramento é "1-1", execute:
+Anexe o dispositivo necessário. Por exemplo, para anexar o dispositivo tendo o *busid* 1-1.5:
 
 ```
-# usbip attach --remote=192.168.15.15 --busid=1-1
+$ usbip attach -r *endereço_IP_do_servidor* -b 1-1.5
 
 ```
+
+### Desconectando dispositivos
+
+Um dispositivo pode ser desconectado apenas após desanexá-lo no cliente.
+
+Liste os dispositivos anexados:
+
+```
+$ usbip port
+
+```
+
+Desanexe o dispositivo:
+
+```
+$ usbip detach -p *número_da_porta*
+
+```
+
+Desvincule o dispositivo no servidor:
+
+```
+$ usbip unbind -b *busid*
+
+```
+
+**Nota:** O USB/IP, por padrão, precisa que a porta 3240 esteja aberta. Se um firewall estiver em execução, certifique-se que essa porta esteja aberta. Para instruções detalhadas sobre configuração do firewall, acesse [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
+
+## Página man
+
+Veja [usbip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/usbip.8).
 
 ## Veja também
 

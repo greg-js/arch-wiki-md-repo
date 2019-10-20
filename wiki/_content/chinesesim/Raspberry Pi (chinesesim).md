@@ -6,22 +6,26 @@
 
 树莓派最初的版本于2012年发布，基于博通的BCM2835芯片（[ARM11 架构](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")）。而最新的树莓派2于2015年发布，基于博通的BCM2836芯片（双核 [ARM Cortex-A7 架构](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")）。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 前言](#.E5.89.8D.E8.A8.80)
-*   [2 系统架构](#.E7.B3.BB.E7.BB.9F.E6.9E.B6.E6.9E.84)
-*   [3 SD卡性能](#SD.E5.8D.A1.E6.80.A7.E8.83.BD)
-*   [4 在树莓派上安装ArchLinux](#.E5.9C.A8.E6.A0.91.E8.8E.93.E6.B4.BE.E4.B8.8A.E5.AE.89.E8.A3.85ArchLinux)
-*   [5 音频](#.E9.9F.B3.E9.A2.91)
-    *   [5.1 HDMI音频说明](#HDMI.E9.9F.B3.E9.A2.91.E8.AF.B4.E6.98.8E)
-*   [6 音频](#.E9.9F.B3.E9.A2.91_2)
-    *   [6.1 HDMI / 模拟 TV-输出](#HDMI_.2F_.E6.A8.A1.E6.8B.9F_TV-.E8.BE.93.E5.87.BA)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 前言](#前言)
+*   [2 系统架构](#系统架构)
+*   [3 SD卡性能](#SD卡性能)
+*   [4 在树莓派上安装ArchLinux](#在树莓派上安装ArchLinux)
+*   [5 音频](#音频)
+    *   [5.1 HDMI音频说明](#HDMI音频说明)
+*   [6 音频](#音频_2)
+    *   [6.1 HDMI / 模拟 TV-输出](#HDMI_/_模拟_TV-输出)
     *   [6.2 X.org driver](#X.org_driver)
 *   [7 Onboard Hardware Sensors](#Onboard_Hardware_Sensors)
     *   [7.1 Temperature](#Temperature)
     *   [7.2 Voltage](#Voltage)
     *   [7.3 Lightweight Monitoring Suite](#Lightweight_Monitoring_Suite)
-*   [8 Overclocking/Underclocking](#Overclocking.2FUnderclocking)
+*   [8 Overclocking/Underclocking](#Overclocking/Underclocking)
 *   [9 Tips for maximizing SD card performance](#Tips_for_maximizing_SD_card_performance)
     *   [9.1 Enable fsck on boot](#Enable_fsck_on_boot)
 *   [10 Serial Console](#Serial_Console)
@@ -35,7 +39,7 @@
 
 这篇文章并不是详尽的安装指南，我们假设读者已经成功在树梅派上部署了ArchLinux系统。
 
-**Note:** ArchLinux的ARM架构支持由 [http://archlinuxarm.org](http://archlinuxarm.org) 社区提供，而非Arch Linux社区官方支持。任何关于ARM架构下特有问题的讨论将会被关闭，详见[Arch Linux distribution support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_.2Aonly.2A "Forum etiquette") 政策
+**Note:** ArchLinux的ARM架构支持由 [http://archlinuxarm.org](http://archlinuxarm.org) 社区提供，而非Arch Linux社区官方支持。任何关于ARM架构下特有问题的讨论将会被关闭，详见[Arch Linux distribution support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_*only* "Forum etiquette") 政策
 
 ## 系统架构
 

@@ -4,7 +4,11 @@ Articoli correlati
 *   [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID")
 *   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduzione](#Introduzione)
     *   [1.1 Livelli RAID Standard](#Livelli_RAID_Standard)
@@ -210,11 +214,27 @@ Consultare [mkinitcpio](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)"
 
 Aggiungere **mdadm** oppure **mdadm_udev** nella sezione *HOOKS=* del file `/etc/mkinitcpio.conf` prima dell'hook filesystem. Questo aggiungerà il supporto per mdadm direttamente nell'immagine.
 
- `HOOKS="base udev autodetect block **mdadm_udev** filesystems usbinput fsck"` Si possono visualizzare gli hook disponibili per la sezione *HOOKS=* con il comando `# mkinitcpio -L` ed ottenere informazioni riguardo ogni hook con: `# mkinitcpio -H mdadm_udev` 
+ `HOOKS="base udev autodetect block **mdadm_udev** filesystems usbinput fsck"` 
+
+Si possono visualizzare gli hook disponibili per la sezione *HOOKS=* con il comando
+
+ `# mkinitcpio -L` 
+
+ed ottenere informazioni riguardo ogni hook con:
+
+ `# mkinitcpio -H mdadm_udev` 
 
 Aggiungere il modulo **raid456** ed il modulo del filesystem utilizzato sul raid (ext4) nella sezione *MODULES=* del file `/etc/mkinitcpio.conf`. Questo inserirà i moduli nell'immagine del kernel.
 
- `MODULES="**ext4 raid456**"` Successivamente rigenerare initrd con il comando: `# mkinitcpio -p linux` oppure se si utilizza [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) `# mkinitcpio -p linux-lts` 
+ `MODULES="**ext4 raid456**"` 
+
+Successivamente rigenerare initrd con il comando:
+
+ `# mkinitcpio -p linux` 
+
+oppure se si utilizza [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
+
+ `# mkinitcpio -p linux-lts` 
 
 ## Montaggio da un Live CD
 

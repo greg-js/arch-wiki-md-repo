@@ -7,40 +7,44 @@ Related articles
 
 [NetworkManager](http://projects.gnome.org/NetworkManager/) je program pro poskytování detekce a konfigurace pro systém automatického připojování k síti. Funkcionalita NetworkManageru může být použitelná jak pro bezdrátové tak i pro drátové sítě. Pro bezdrátové sítě, NetworkManager upřednostňuje známé bezdrátové sítě a má schopnost vhodně přepínat do nejspolehlivějších sítí. NetworkManager-vnímající aplikace mohou přepínat mezi online a offline módem. NetworkManager také upřednostňuje kabelové spoje před bezdrátovými, obsahuje podporu modemových připojení a určitých druhů VPN. NetworkManager byl původně vyvinut společností RedHat a nyní je hostován projektem [GNOME](/index.php/GNOME "GNOME").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Základní instalace](#Z.C3.A1kladn.C3.AD_instalace)
-*   [2 Grafická nástavba](#Grafick.C3.A1_n.C3.A1stavba)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Základní instalace](#Základní_instalace)
+*   [2 Grafická nástavba](#Grafická_nástavba)
     *   [2.1 GNOME](#GNOME)
     *   [2.2 KDE4](#KDE4)
     *   [2.3 Openbox](#Openbox)
-    *   [2.4 Ostatní desktopy a Okenní manažery](#Ostatn.C3.AD_desktopy_a_Okenn.C3.AD_mana.C5.BEery)
-    *   [2.5 Příkazový řádek](#P.C5.99.C3.ADkazov.C3.BD_.C5.99.C3.A1dek)
-*   [3 Nastavení](#Nastaven.C3.AD)
-    *   [3.1 Vypnutí současného síťového nastavení](#Vypnut.C3.AD_sou.C4.8Dasn.C3.A9ho_s.C3.AD.C5.A5ov.C3.A9ho_nastaven.C3.AD)
-    *   [3.2 Úprava démonů](#.C3.9Aprava_d.C3.A9mon.C5.AF)
-    *   [3.3 Síťové služby s NetworkManager Dispatcher](#S.C3.AD.C5.A5ov.C3.A9_slu.C5.BEby_s_NetworkManager_Dispatcher)
-        *   [3.3.1 Použití dispatcheru k připojení vpn přes již navázané síťové připojení](#Pou.C5.BEit.C3.AD_dispatcheru_k_p.C5.99ipojen.C3.AD_vpn_p.C5.99es_ji.C5.BE_nav.C3.A1zan.C3.A9_s.C3.AD.C5.A5ov.C3.A9_p.C5.99ipojen.C3.AD)
-    *   [3.4 Nastavení proxy](#Nastaven.C3.AD_proxy)
-*   [4 Testování](#Testov.C3.A1n.C3.AD)
-*   [5 Řešení problémů](#.C5.98e.C5.A1en.C3.AD_probl.C3.A9m.C5.AF)
+    *   [2.4 Ostatní desktopy a Okenní manažery](#Ostatní_desktopy_a_Okenní_manažery)
+    *   [2.5 Příkazový řádek](#Příkazový_řádek)
+*   [3 Nastavení](#Nastavení)
+    *   [3.1 Vypnutí současného síťového nastavení](#Vypnutí_současného_síťového_nastavení)
+    *   [3.2 Úprava démonů](#Úprava_démonů)
+    *   [3.3 Síťové služby s NetworkManager Dispatcher](#Síťové_služby_s_NetworkManager_Dispatcher)
+        *   [3.3.1 Použití dispatcheru k připojení vpn přes již navázané síťové připojení](#Použití_dispatcheru_k_připojení_vpn_přes_již_navázané_síťové_připojení)
+    *   [3.4 Nastavení proxy](#Nastavení_proxy)
+*   [4 Testování](#Testování)
+*   [5 Řešení problémů](#Řešení_problémů)
     *   [5.1 Network Management Disabled](#Network_Management_Disabled)
-    *   [5.2 NetworkManager zabraňuje DHCPCD aby používal resolv.conf.head and resolv.conf.tail](#NetworkManager_zabra.C5.88uje_DHCPCD_aby_pou.C5.BE.C3.ADval_resolv.conf.head_and_resolv.conf.tail)
-    *   [5.3 Zamezení změnám v resolv.conf](#Zamezen.C3.AD_zm.C4.9Bn.C3.A1m_v_resolv.conf)
-    *   [5.4 Problémy s DHCP](#Probl.C3.A9my_s_DHCP)
-    *   [5.5 Jak se vyhnout Gnome keyring při normálním uživatelském připojení bezdrátové sítě](#Jak_se_vyhnout_Gnome_keyring_p.C5.99i_norm.C3.A1ln.C3.ADm_u.C5.BEivatelsk.C3.A9m_p.C5.99ipojen.C3.AD_bezdr.C3.A1tov.C3.A9_s.C3.ADt.C4.9B)
-    *   [5.6 Chybějící default route](#Chyb.C4.9Bj.C3.ADc.C3.AD_default_route)
-    *   [5.7 3G modem není detekován](#3G_modem_nen.C3.AD_detekov.C3.A1n)
-    *   [5.8 VPN problémy v Networkmanageru 0.7.999](#VPN_probl.C3.A9my_v_Networkmanageru_0.7.999)
-    *   [5.9 Vypínání WLAN na laptopech](#Vyp.C3.ADn.C3.A1n.C3.AD_WLAN_na_laptopech)
-    *   [5.10 Nastavení statické IP se vrací k DHCP](#Nastaven.C3.AD_statick.C3.A9_IP_se_vrac.C3.AD_k_DHCP)
+    *   [5.2 NetworkManager zabraňuje DHCPCD aby používal resolv.conf.head and resolv.conf.tail](#NetworkManager_zabraňuje_DHCPCD_aby_používal_resolv.conf.head_and_resolv.conf.tail)
+    *   [5.3 Zamezení změnám v resolv.conf](#Zamezení_změnám_v_resolv.conf)
+    *   [5.4 Problémy s DHCP](#Problémy_s_DHCP)
+    *   [5.5 Jak se vyhnout Gnome keyring při normálním uživatelském připojení bezdrátové sítě](#Jak_se_vyhnout_Gnome_keyring_při_normálním_uživatelském_připojení_bezdrátové_sítě)
+    *   [5.6 Chybějící default route](#Chybějící_default_route)
+    *   [5.7 3G modem není detekován](#3G_modem_není_detekován)
+    *   [5.8 VPN problémy v Networkmanageru 0.7.999](#VPN_problémy_v_Networkmanageru_0.7.999)
+    *   [5.9 Vypínání WLAN na laptopech](#Vypínání_WLAN_na_laptopech)
+    *   [5.10 Nastavení statické IP se vrací k DHCP](#Nastavení_statické_IP_se_vrací_k_DHCP)
 *   [6 Tipy and triky](#Tipy_and_triky)
-    *   [6.1 Kontrola jestli je networking spouštěn cronem nebo skriptem](#Kontrola_jestli_je_networking_spou.C5.A1t.C4.9Bn_cronem_nebo_skriptem)
-    *   [6.2 Automatické odemknutí keyring po přihlášení](#Automatick.C3.A9_odemknut.C3.AD_keyring_po_p.C5.99ihl.C3.A1.C5.A1en.C3.AD)
+    *   [6.1 Kontrola jestli je networking spouštěn cronem nebo skriptem](#Kontrola_jestli_je_networking_spouštěn_cronem_nebo_skriptem)
+    *   [6.2 Automatické odemknutí keyring po přihlášení](#Automatické_odemknutí_keyring_po_přihlášení)
         *   [6.2.1 Gnome](#Gnome_2)
         *   [6.2.2 KDE](#KDE)
-    *   [6.3 Automatické připojení při bootu](#Automatick.C3.A9_p.C5.99ipojen.C3.AD_p.C5.99i_bootu)
-    *   [6.4 Ignorování určitých zařízení](#Ignorov.C3.A1n.C3.AD_ur.C4.8Dit.C3.BDch_za.C5.99.C3.ADzen.C3.AD)
+    *   [6.3 Automatické připojení při bootu](#Automatické_připojení_při_bootu)
+    *   [6.4 Ignorování určitých zařízení](#Ignorování_určitých_zařízení)
 
 ## Základní instalace
 
@@ -156,7 +160,7 @@ Upravte `/etc/rc.conf` a kde je definováno DHCP nebo statická IP adresa, okome
 ```
 #eth0="dhcp"                                                                    
 #wlan0="dhcp"                                                                   
-INTERFACES=(!eth0 !wlan0)
+INTERFACES=(!eth0 !wlan0)
 
 ```
 
@@ -215,7 +219,7 @@ V tomto případě se chceme automaticky připojit k vpn definovaném pomocí Ne
 case "$2" in
        up)
                sudo -u username DISPLAY=:0 /usr/bin/python /etc/NetworkManager/vpn-up.py
-               ;;
+               ;;
 esac
 
 ```

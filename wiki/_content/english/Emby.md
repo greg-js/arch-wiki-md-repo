@@ -18,3 +18,15 @@ sudo gpasswd -a emby audio
 ```
 
 or [change their owner](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes") to user emby.
+
+## In nspawn container
+
+Needs `CAP_IPC_LOCK` capability.
+
+Example for a systemd.nspawn file
+
+ `/etc/systemd/nspawn/emby.nspawn` 
+```
+[Exec]
+Capability=CAP_IPC_LOCK
+```

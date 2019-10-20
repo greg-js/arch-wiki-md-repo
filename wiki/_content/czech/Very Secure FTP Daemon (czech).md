@@ -1,20 +1,24 @@
 **vsftpd** (Very Secure FTP Daemon) je lehký, stabilní a bezpečný FTP server pro UNIX-like systémy.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace](#Instalace)
 *   [2 Konfigurace](#Konfigurace)
-    *   [2.1 Povolení uploadu](#Povolen.C3.AD_uploadu)
-    *   [2.2 Přihlašování lokálních uživatelů](#P.C5.99ihla.C5.A1ov.C3.A1n.C3.AD_lok.C3.A1ln.C3.ADch_u.C5.BEivatel.C5.AF)
-    *   [2.3 Anonymní přihlašování](#Anonymn.C3.AD_p.C5.99ihla.C5.A1ov.C3.A1n.C3.AD)
-    *   [2.4 Prostředí chroot](#Prost.C5.99ed.C3.AD_chroot)
-    *   [2.5 Zamezení přihlašování uživatelů](#Zamezen.C3.AD_p.C5.99ihla.C5.A1ov.C3.A1n.C3.AD_u.C5.BEivatel.C5.AF)
-    *   [2.6 Omezení připojení](#Omezen.C3.AD_p.C5.99ipojen.C3.AD)
-    *   [2.7 Použití xinetd](#Pou.C5.BEit.C3.AD_xinetd)
+    *   [2.1 Povolení uploadu](#Povolení_uploadu)
+    *   [2.2 Přihlašování lokálních uživatelů](#Přihlašování_lokálních_uživatelů)
+    *   [2.3 Anonymní přihlašování](#Anonymní_přihlašování)
+    *   [2.4 Prostředí chroot](#Prostředí_chroot)
+    *   [2.5 Zamezení přihlašování uživatelů](#Zamezení_přihlašování_uživatelů)
+    *   [2.6 Omezení připojení](#Omezení_připojení)
+    *   [2.7 Použití xinetd](#Použití_xinetd)
 *   [3 Tipy a triky](#Tipy_a_triky)
-    *   [3.1 PAM s virtuálními uživatelskými účty](#PAM_s_virtu.C3.A1ln.C3.ADmi_u.C5.BEivatelsk.C3.BDmi_.C3.BA.C4.8Dty)
-        *   [3.1.1 Přidání soukromých adresářů pro virtuální uživatelské účty](#P.C5.99id.C3.A1n.C3.AD_soukrom.C3.BDch_adres.C3.A1.C5.99.C5.AF_pro_virtu.C3.A1ln.C3.AD_u.C5.BEivatelsk.C3.A9_.C3.BA.C4.8Dty)
-*   [4 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
+    *   [3.1 PAM s virtuálními uživatelskými účty](#PAM_s_virtuálními_uživatelskými_účty)
+        *   [3.1.1 Přidání soukromých adresářů pro virtuální uživatelské účty](#Přidání_soukromých_adresářů_pro_virtuální_uživatelské_účty)
+*   [4 Další zdroje](#Další_zdroje)
 
 ## Instalace
 

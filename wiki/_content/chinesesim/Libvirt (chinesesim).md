@@ -15,7 +15,11 @@ Libvirt 的一些主要功能如下：
 *   **Network interface management（网络接口管理）**：任何运行 libvirt 守护进程的主机都可以用于管理物理的和逻辑的网络接口，枚举现有接口，配置（和创建）接口、桥接、VLAN、端口绑定。
 *   **Virtual NAT and Route based networking（虚拟 NAT 和基于路由的网络）**：任何运行 libvirt 守护进程的主机都可以管理和创建虚拟网络。Libvirt 虚拟网络使用防火墙规则实现一个路由器，为虚拟机提供到主机网络的透明访问。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 服务端](#服务端)
@@ -220,7 +224,7 @@ $ virsh -c qemu:///session
 
 ## 管理
 
-绝大部分的 libvirt 管理可以通过三个工具实现：[virt-manager](https://www.archlinux.org/packages/?name=virt-manager)（图形界面）、`virsh` 和 `guestfish`（它是 [libguestfs](https://aur.archlinux.org/packages/libguestfs/) 的一部分）。
+绝大部分的 libvirt 管理可以通过三个工具实现：[virt-manager](https://www.archlinux.org/packages/?name=virt-manager)（图形界面）、`virsh` 和 `guestfish`（它是 [libguestfs](https://www.archlinux.org/packages/?name=libguestfs) 的一部分）。
 
 ### virsh
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Disk cloning](/index.php/Disk_cloning "Disk cloning"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Disk_cloning&diff=0&oldid=580571) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Disk cloning](/index.php/Disk_cloning "Disk cloning"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Disk_cloning&diff=0&oldid=585150) na versão em inglês.
 
 Artigos relacionados
 
@@ -7,6 +7,8 @@ Artigos relacionados
 *   [Backup do sistema](/index.php/Backup_do_sistema "Backup do sistema")
 
 A clonagem de disco é o processo de criar uma imagem de uma partição ou de um disco rígido inteiro. Isso pode ser útil para copiar a unidade para outros computadores e para fins de [backup](/index.php/Backup_(Portugu%C3%AAs) "Backup (Português)") e [recuperação](/index.php/File_recovery "File recovery").
+
+**Dica:** Ao longo do tempo, [sistemas de arquivos](/index.php/File_systems "File systems") obtém novos recursos e utilitários de [mkfs](/index.php/Mkfs "Mkfs") alteram seus padrões, mas nem todos os novos recursos podem ser habilitados sem reformatação. Então, ao mover dados para uma nova unidade, em vez de clonar os dispositivos de bloco ou sistemas de arquivos, considere criar um novo sistema de arquivos ou apenas copiar os arquivos (e seus atributos, ACLs, atributos estendidos, etc.) com, por exemplo, [rsync](/index.php/Rsync#Full_system_backup "Rsync").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

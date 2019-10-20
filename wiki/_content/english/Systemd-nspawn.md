@@ -37,10 +37,9 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [4.2 Run Firefox](#Run_Firefox)
     *   [4.3 Access host filesystem](#Access_host_filesystem)
     *   [4.4 Configure networking](#Configure_networking)
-        *   [4.4.1 nsswitch.conf](#nsswitch.conf)
-        *   [4.4.2 Use host networking](#Use_host_networking)
-        *   [4.4.3 Virtual Ethernet interfaces](#Virtual_Ethernet_interfaces)
-        *   [4.4.4 Use a network bridge](#Use_a_network_bridge)
+        *   [4.4.1 Use host networking](#Use_host_networking)
+        *   [4.4.2 Virtual Ethernet interfaces](#Virtual_Ethernet_interfaces)
+        *   [4.4.3 Use a network bridge](#Use_a_network_bridge)
     *   [4.5 Run on a non-systemd system](#Run_on_a_non-systemd_system)
     *   [4.6 Specify per-container settings](#Specify_per-container_settings)
     *   [4.7 Use Btrfs subvolume as container root](#Use_Btrfs_subvolume_as_container_root)
@@ -340,14 +339,6 @@ Instead of using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolve
 Note the canonical [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") host and container .network files are from [https://github.com/systemd/systemd/tree/master/network](https://github.com/systemd/systemd/tree/master/network) .
 
 See [systemd-networkd#Usage with containers](/index.php/Systemd-networkd#Usage_with_containers "Systemd-networkd") for more complex examples.
-
-#### nsswitch.conf
-
-To make it easier to connect to a container from the host, you can enable local DNS resolution for container names. In `/etc/nsswitch.conf`, add `mymachines` to the `hosts:` section, e.g.
-
- `/etc/nsswitch.conf`  `hosts: files mymachines dns myhostname` 
-
-Then, any DNS lookup for hostname `foo` on the host will first consult `/etc/hosts`, then the names of local containers, then upstream DNS etc.
 
 #### Use host networking
 

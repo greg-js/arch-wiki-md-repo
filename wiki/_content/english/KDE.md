@@ -142,8 +142,8 @@ Plasma can be started either using a [display manager](/index.php/Display_manage
 
 ### From the console
 
-*   To start Plasma with [xinit/startx](/index.php/Xinit "Xinit"), append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
-*   To start a Plasma on Wayland session from a console, run `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
+*   To start Plasma with [xinit/startx](/index.php/Xinit "Xinit"), append `exec startplasma-x11` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
+*   To start a Plasma on Wayland session from a console, run `XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Configuration
 

@@ -41,6 +41,13 @@ Building the Arpack package can result in an error like shown below (stacktrace 
 
 Use the instructions [here](https://github.com/JuliaLinearAlgebra/Arpack.jl/pull/69) to resolve the issue.
 
+Another option is to install julia from [julia-bin](https://aur.archlinux.org/packages/julia-bin/). Then Arpack can be installed from
+
+```
+julia> import Pkg; Pkg.add("Arpack")
+
+```
+
 ## Integration with editors
 
 ### Vim

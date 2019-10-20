@@ -136,12 +136,12 @@ Now, the folders and files for your custom kernel have been created, e.g. `/boot
 
 ## Updating
 
-Assuming one has an arch kernel source that he wants to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). Follows a concrete example. In what follows, the paths are relative to the top kernel source directory, which is assumed at ~/build/linux/. In general, arch sets an arch kernel source with two local git repositories. The one at archlinux-linux/ is a local bare [git](/index.php/Git "Git") repository pointing to [git://git.archlinux.org/linux.git](git://git.archlinux.org/linux.git). The other one is at src/archlinux-linux, pulling from the first repository. Possible local patches, and building, is expected at src/archlinux-linux/.
+Assuming one has an arch kernel source that he wants to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). Follows a concrete example. In what follows, the top kernel source directory is assumed at ~/build/linux/. In general, arch sets an arch kernel source with two local git repositories. The one at archlinux-linux/ is a local bare [git](/index.php/Git "Git") repository pointing to [git://git.archlinux.org/linux.git](git://git.archlinux.org/linux.git). The other one is at src/archlinux-linux/, pulling from the first repository. Possible local patches, and building, is expected at src/archlinux-linux/.
 
 For this example, the HEAD of the locally installed bare git repository source at archlinux-linux/ was initially pointing to `4010b622f1d2 Merge branch 'dax-fix-5.3-rc3' of [git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm](git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm)`, which is somewhere between v5.2.5-arch1 and v5.2.6-arch1.
 
 ```
-$ cd archlinux-linux/
+$ cd ~/build/linux/archlinux-linux/
 $ git fetch --verbose
 
 ```
@@ -149,7 +149,7 @@ $ git fetch --verbose
 That was fetching v5.2.7-arch1, which was the newest archlinux tag.
 
 ```
-$ cd ../src/archlinux-linux/
+$ cd ~/build/linux/src/archlinux-linux/
 $ git checkout master
 $ git pull
 $ git fetch --tag --verbose
@@ -174,33 +174,17 @@ f676926c7f60 ZEN: Add CONFIG for unprivileged_userns_clone
 
 This shows few specific archlinux patches between Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. The important lines here are Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. Obviously, there might be other patches at other versions, and the commit identifiers, such as f676926c7f60, as well as the kernel version, will be different for other versions.
 
-Other than the directory archlinux-linux/, and the version file, all other 4 files at ../../src/ are symlinked to files by the same name on its parent directory.
+The up to date PKGBUILD, as well as few other archlinux specific packaging helper files, can be pulled in by the `asp` command:
 
 ```
-$ ls ../../src
-60-linux.hook  archlinux-linux	linux.preset
-90-linux.hook  config		version
-
-```
-
-The up to date version of these 4 files, as well as the newer PKGBUILD, can be pulled in by the `asp` command:
-
-```
-$ cd ../../
-$ asp update
-$ asp export linux
-$ mv --verbose linux linux-tmp
+$ cd ~/build
+$ asp update linux
+$ asp -f export linux
+$ cd ~/build/linux
 
 ```
 
-```
-$ ls linux-tmp
-60-linux.hook  config	      linux.preset
-90-linux.hook  linux.install  PKGBUILD
-
-```
-
-Now one should manually merge, probably copy, the files at linux-tmp to the files by the same name at its parent directory. After which, the directory linux-tmp/, with all the files in it, can be deleted. Then run manually most, if not all, of PKGBUILD::prepare(). This should also take care for src/version.
+Then run manually most, if not all, the shell commands of PKGBUILD::prepare().
 
 At this point, `makepkg --verifysource` should succseed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
 

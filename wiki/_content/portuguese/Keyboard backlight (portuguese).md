@@ -1,6 +1,49 @@
-**Status de tradução:** Esse artigo é uma tradução de [Keyboard backlight](/index.php/Keyboard_backlight "Keyboard backlight"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_backlight&diff=0&oldid=552138) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Keyboard backlight](/index.php/Keyboard_backlight "Keyboard backlight"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_backlight&diff=0&oldid=584286) na versão em inglês.
+
+Existem vários métodos para controlar o nível de brilho da *luz de fundo do teclado*.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Qualquer fornecedor](#Qualquer_fornecedor)
+    *   [1.1 D-Bus](#D-Bus)
 
 ## Qualquer fornecedor
+
+Há várias formas de gerenciar o nível de brilho e diferentes ferramentas auxiliares para realizar isso, tal como [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) ou [light](https://www.archlinux.org/packages/?name=light).
+
+O pseudo-sistema de arquivos `sys` expõe uma interface à luz de fundo do teclado. O atual nível de brilho pode ser obtido lendo `/sys/class/leds/tpacpi::kbd_backlight/brightness`. Por exemplo, para obter o nível máximo de brilho:
+
+```
+ cat /sys/class/leds/tpacpi::kbd_backlight/max_brightness
+
+```
+
+Para definir o brilho para 1:
+
+```
+ echo 1 | sudo tee /sys/class/leds/tpacpi::kbd_backlight/brightness
+
+```
+
+Ao usar `brightnessctl` você pode obter uma lista de controles de brilho disponíveis com `brightnessctl --list`, então para mostrar as informações de luz de fundo do kbd:
+
+```
+ brightnessctl --device='tpacpi::kbd_backlight' info
+
+```
+
+Isso mostrará o valor atual absoluto e relativo e o valor absoluto máximo. Para definir um valor diferente:
+
+```
+ brightnessctl --device='tpacpi::kbd_backlight' set 1
+
+```
+
+### D-Bus
 
 Você pode controlar a luz de fundo do teclado do seu computador através da interface [D-Bus](/index.php/D-Bus "D-Bus"). Os benefícios de usá-lo são que nenhuma modificação nos arquivos do dispositivo é necessária e é independente do fornecedor.
 
@@ -59,30 +102,3 @@ setKeyboardLight () {
 }
 
 ```
-
-## Asus
-
-**Atenção:** O seguinte caminho não é recomendado. Ele fornece permissões de gravação para qualquer pessoal para o arquivo de dispositivo de luz de fundo do teclado, o que significa que todo e qualquer usuário pode controlá-lo.
-
-O arquivo de luz de fundo do teclado é geralmente bloqueado para edição. Para desbloquear este arquivo na inicialização, você precisará criar um serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)").
-
- `/usr/lib/systemd/system/asus-kbd-backlight.service` 
-```
-[Unit]
-Description=Asus Keyboard Backlight
-Wants=systemd-backlight@leds:asus::kbd_backlight.service
-After=systemd-backlight@leds:asus::kbd_backlight.service
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-ExecStart=/bin/chmod 666 /sys/class/leds/asus::kbd_backlight/brightness
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Agora você pode usar um script de troca de luz de fundo do teclado. Por exemplo, veja [ASUS G55VW#keyboard backlight script](/index.php/ASUS_G55VW#keyboard_backlight_script "ASUS G55VW").
-
-Para um exemplo de como você pode configurar um daemon minúsculo (executando-o como root) que edita esses arquivos, conecte-os a [dbus](/index.php/Dbus "Dbus") e mapeie as teclas de brilho do teclado para [dbus](/index.php/Dbus "Dbus") chamadas de método, consulte [[1]](https://github.com/GambolingPangolin/KbdBacklight).

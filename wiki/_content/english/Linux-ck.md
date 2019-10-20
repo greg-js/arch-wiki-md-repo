@@ -70,11 +70,13 @@ Users can further customize the linux-ck package via tweaks contained in the PKG
 
 More details about these options are provided in the PKGBUILD itself. Be sure to read them carefully if compiling from AUR!
 
-**Note:** There are the related PKGBUILDs in AUR for other common kernel modules. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few. Alternatively, use the corresponding [DKMS](/index.php/DKMS "DKMS") package, for instance install [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) as described in [NVIDIA#Custom kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA").
+**Note:** There are the related PKGBUILDs in AUR for other common kernel modules.
 
 ### Use pre-compiled packages
 
 If user prefers to spend no time to compile on their own, the unofficial repo maintained by [graysky](/index.php/User:Graysky "User:Graysky") is available to the community. For details, see: [Unofficial user repositories/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck").
+
+**Note:** nvidia-ck and broadcom drivers are no longer available as pre-compiled packages on repo-ck. You'll need to compile the package from source in AUR.
 
 ## How to enable the BFQ I/O Scheduler
 

@@ -215,10 +215,10 @@ live 环境可以从 [USB 安装 U 盘](/index.php/USB_flash_installation_media 
 
 ### 安装基本系统
 
-使用 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/packages/?name=base) 软件包和 [linux](https://www.archlinux.org/packages/?name=linux) 内核：
+使用 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/packages/?name=base) 软件包和 [linux](https://www.archlinux.org/packages/?name=linux) 内核以及常规硬件的固件：
 
 ```
-# pacstrap /mnt base linux
+# pacstrap /mnt base linux linux-firmware
 
 ```
 

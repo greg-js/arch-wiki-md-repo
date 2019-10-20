@@ -2,7 +2,11 @@ The [SynCE](https://sourceforge.net/projects/synce/) project provides a means of
 
 This page is a howto for connecting your Windows Mobile device with Arch Linux. Afterwards you can sync and install cabs just like you can do with ActiveSync in Windows. It uses the KDE app synce-kde, but GNOME and *box users can relax, the only qt-deps are qscintilla-2.3.2-2 and pyqt-4.4.4-2\. And they are small.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Connecting to your phone](#Connecting_to_your_phone)

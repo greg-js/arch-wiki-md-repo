@@ -72,7 +72,7 @@ pam_service_name=vsftpd
 
 ```
 
-/etc/hosts.allow - agrega las siguientes entradas (por razones de seguridad hosts.allow puede ser configurado de otra forma. /etc/hosts.deny and /etc/hosts.allow
+/etc/hosts.allow - agrega las siguientes entradas (por razones de seguridad hosts.allow puede ser configurado de otra forma. /etc/hosts.deny y /etc/hosts.allow
 
 ```
 vsftpd: ALL

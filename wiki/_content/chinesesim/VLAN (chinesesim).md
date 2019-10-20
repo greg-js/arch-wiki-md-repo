@@ -1,21 +1,31 @@
+Related articles
+
+*   [Network Configuration](/index.php/Network_Configuration "Network Configuration")
+*   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")
+*   [Netctl](/index.php/Netctl "Netctl")
+
 **翻译状态：** 本文是英文页面 [VLAN](/index.php/VLAN "VLAN") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-04-28，点击[这里](https://wiki.archlinux.org/index.php?title=VLAN&diff=0&oldid=371497)可以查看翻译后英文页面的改动。
 
 Virtual LANs give you the ability to sub-divide a LAN. Linux can accept **VLAN** tagged traffic and presents each **VLAN ID** as a different network interface (eg: `eth0.100` for **VLAN ID** `100`)
 
 本文介绍如何通过 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 和 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 或 [netctl](/index.php/Netctl "Netctl") 配置 VLAN 。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 配置](#.E9.85.8D.E7.BD.AE)
-    *   [1.1 创建 VLAN 设备](#.E5.88.9B.E5.BB.BA_VLAN_.E8.AE.BE.E5.A4.87)
-    *   [1.2 添加 IP](#.E6.B7.BB.E5.8A.A0_IP)
-    *   [1.3 关闭设备](#.E5.85.B3.E9.97.AD.E8.AE.BE.E5.A4.87)
-    *   [1.4 移除设备](#.E7.A7.BB.E9.99.A4.E8.AE.BE.E5.A4.87)
-    *   [1.5 开机启动](#.E5.BC.80.E6.9C.BA.E5.90.AF.E5.8A.A8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 配置](#配置)
+    *   [1.1 创建 VLAN 设备](#创建_VLAN_设备)
+    *   [1.2 添加 IP](#添加_IP)
+    *   [1.3 关闭设备](#关闭设备)
+    *   [1.4 移除设备](#移除设备)
+    *   [1.5 开机启动](#开机启动)
         *   [1.5.1 systemd-networkd](#systemd-networkd)
         *   [1.5.2 netctl](#netctl)
-*   [2 排错](#.E6.8E.92.E9.94.99)
-    *   [2.1 udev 重命名虚拟设备](#udev_.E9.87.8D.E5.91.BD.E5.90.8D.E8.99.9A.E6.8B.9F.E8.AE.BE.E5.A4.87)
+*   [2 排错](#排错)
+    *   [2.1 udev 重命名虚拟设备](#udev_重命名虚拟设备)
 
 ## 配置
 
@@ -117,7 +127,7 @@ Then [enable](/index.php/Enable "Enable") `systemd-networkd.service`. See [syste
 
 #### netctl
 
-You can use [netctl](/index.php/Netctl "Netctl") for this purpose, see the self-explanatory example profiles in `/etc/netctl/examples/vlan-{dhcp,static}` .
+You can use [netctl](/index.php/Netctl "Netctl") for this purpose, see the self-explanatory example profiles in {{ic|/etc/netctl/examples/vlan-{dhcp,static} }}.
 
 ## 排错
 

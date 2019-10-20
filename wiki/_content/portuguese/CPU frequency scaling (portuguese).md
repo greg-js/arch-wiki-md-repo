@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&diff=0&oldid=579818) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&diff=0&oldid=585536) na versão em inglês.
 
 Artigos relacionados
 
@@ -20,6 +20,7 @@ O escalonamento de frequência da CPU é implementado no kernel do Linux, a infr
     *   [1.1 thermald](#thermald)
     *   [1.2 i7z](#i7z)
     *   [1.3 cpupower](#cpupower)
+    *   [1.4 cpupower-gui](#cpupower-gui)
 *   [2 Drivers de frequência de CPU](#Drivers_de_frequência_de_CPU)
     *   [2.1 Configurando frequências máxima e mínima](#Configurando_frequências_máxima_e_mínima)
     *   [2.2 Desabilitando Turbo Boost](#Desabilitando_Turbo_Boost)
@@ -55,6 +56,10 @@ A unit de systemd associada é `thermald.service`, que deve ser [iniciada](/inde
 O [cpupower](https://www.archlinux.org/packages/?name=cpupower) é um conjunto de utilitários do espaço de usuário projetado para auxiliar no dimensionamento de frequência da CPU. O pacote não é necessário para usar o escalonamento, mas é altamente recomendado porque ele fornece utilitários de linha de comando úteis e um serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") para alterar o gerenciador na inicialização.
 
 O arquivo de configuração do *cpupower* encontra-se em `/etc/default/cpupower`. Esse arquivo de configuração é lido por um script em bash em `/usr/lib/systemd/scripts/cpupower` que é ativado por *systemd* com `cpupower.service`. Você pode querer [habilitar](/index.php/Habilitar "Habilitar") `cpupower.service` para iniciar na inicialização.
+
+### cpupower-gui
+
+[cpupower-gui](https://aur.archlinux.org/packages/cpupower-gui/) é um utilitário gráfico desenvolvido para auxiliar no dimensionamento da frequência da CPU. A GUI é baseada em [GTK](/index.php/GTK_(Portugu%C3%AAs) "GTK (Português)") e deve fornecer as mesmas opções que *cpupower*. O *cpupower-gui* pode alterar a frequência e o regulador máximo/mínimo da CPU para cada núcleo. O aplicativo manipula a concessão de privilégios por meio do [polkit](/index.php/Polkit "Polkit") e permite que qualquer usuário do [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `wheel` altere a frequência e o regulador.
 
 ## Drivers de frequência de CPU
 

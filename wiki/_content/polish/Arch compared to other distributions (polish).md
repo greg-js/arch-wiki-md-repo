@@ -9,9 +9,10 @@
     *   [2.1 Ubuntu](#Ubuntu)
     *   [2.2 Fedora](#Fedora)
     *   [2.3 Debian](#Debian)
-    *   [2.4 Mandriva](#Mandriva)
-    *   [2.5 openSUSE](#openSUSE)
-    *   [2.6 PCLinuxOS](#PCLinuxOS)
+    *   [2.4 Manjaro](#Manjaro)
+    *   [2.5 Mandriva](#Mandriva)
+    *   [2.6 openSUSE](#openSUSE)
+    *   [2.7 PCLinuxOS](#PCLinuxOS)
 *   [3 Dystrybucje źródłowo-bazowe](#Dystrybucje_źródłowo-bazowe)
     *   [3.1 Gentoo](#Gentoo)
 *   [4 Dystrybucje minimalistyczne](#Dystrybucje_minimalistyczne)
@@ -43,6 +44,10 @@ Arch jest nastawiony bardziej na prostotę, elegancję, lekkość i umożliwieni
 Debian jest projektem o liczniejszej społeczności, oferującym ponad 20.000 pakietów binarnych. Arch ma mniej dostępnych pakietów, jednakże stworzenie własnej paczki jest o wiele prostsze niż w Debianie. Arch posiada nowsze pakiety w repozytoriach (często w current Archa są nowsze pakiety niż w testing Debiana!). Choć oba systemy posiadają wysokiej jakości zarządzanie pakietami, Debian nie oferuje systemu portów, opierając się raczej na jego ogromych repozytoriach binarnych.
 
 Debian jest dostępny dla wielu architektur, w tym alpha, arm, hppa, i386, x86_64, ia64, m68k, mips, mipsel, powerpc, s390 i sparc. Deweloperzy Debiana skupiają się bardziej na stabilności systemu.
+
+### Manjaro
+
+Dystrybucja ciesząca się coraz większą popularnością, nastawiona na początkujących użytkowników. Powstała na bazie Archa, jednak obecnie dzieli z nim jedynie menedżer pakietów [Pacman](/index.php/Pacman "Pacman"). Wszystkie oficjalne repozytoria Manjaro obecnie zarządzane są przez twórców projektu Manjaro i nie dzielą oprogramowania z repozytoriami Arch Linux. Manjaro umożliwia korzystanie z [AUR](/index.php/AUR "AUR"). Dystrybucja jest dostępna z preinstalowanym środowiskiem pulpitu (w zależności od wersji Xfce, KDE lub Gnome) oraz dodatkowymi programami graficznymi, umożliwiającymi konfigurację systemu i jego użytkowanie od razu w środowisku graficznym.
 
 ### Mandriva
 

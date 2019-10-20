@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Telegram](/index.php/Telegram "Telegram"). Data da última tradução: 2019-07-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=578091) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Telegram](/index.php/Telegram "Telegram"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=582842) na versão em inglês.
 
 [Telegram](https://en.wikipedia.org/wiki/pt:Telegram_(aplicativo) é um serviço de mensagens instantâneas multiplataforma baseado em nuvem com criptografia ponto a ponto opcional. A criação de conta requer um número de telefone.
 
@@ -51,6 +51,7 @@ Clientes de terceiros:
 *   [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) fornece interface de linha de comando para conectar e usar o Telegram. Para mais informações sobre o programa, visite sua página no [Github](https://github.com/vysheng/tg).
 *   [nctelegram-git](https://aur.archlinux.org/packages/nctelegram-git/) é uma interface de linha de comando para o Telegram baseado em [Ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") e precisa de [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) para funcionar. Para mais informações sobre o programa, visite sua página no [Github](https://github.com/Nanoseb/ncTelegram).
 *   [python-telegram-send](https://aur.archlinux.org/packages/python-telegram-send/) não é um cliente completo, mas é uma ferramenta de linha de comando para enviar diretamente mensagens ou arquivos via Telegram.
+*   [telega.el](https://github.com/zevlg/telega.el) -cliente Telegram do GNU Emacs.
 
 ### Clientes web
 

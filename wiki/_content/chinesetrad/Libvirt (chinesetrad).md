@@ -16,7 +16,11 @@ Libvirt 的一些主要功能如下：
 *   **Network interface management（網路介面管理）**：任何執行 libvirt 守護程序的主機都可以用于管理物理的和邏輯的網路介面，枚舉現有介面，配置（和創建）介面、橋接、VLAN、連接埠綁定。
 *   **Virtual NAT and Route based networking（虛擬NAT 和基於路由的網路）**：任何執行libvirt 守護程序的主機都可以管理和創建虛擬網路。Libvirt 虛擬網路使用[iptables防火牆](/index.php/Iptables "Iptables")規則實現一个路由器，為虛擬機器提供到主機網路的透明存取。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安裝](#安裝)
     *   [1.1 伺服器端](#伺服器端)
@@ -191,7 +195,7 @@ $ virsh -c qemu:///session
 
 ## 管理
 
-Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://aur.archlinux.org/packages/libguestfs/)).
+Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://www.archlinux.org/packages/?name=libguestfs)).
 
 ### virsh
 

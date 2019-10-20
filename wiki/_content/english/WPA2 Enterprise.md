@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Wireless network configuration#WPA2 Enterprise](/index.php?title=Wireless_network_configuration&redirect=no#WPA2_Enterprise "Wireless network configuration")
+*   [Network configuration/Wireless#WPA2 Enterprise](/index.php/Network_configuration/Wireless#WPA2_Enterprise "Network configuration/Wireless")

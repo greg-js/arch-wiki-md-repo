@@ -4,25 +4,29 @@ Aquí se trata la personalización de la aparencia de Openbox en Arch Linux, as�
 
 .
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Temas y Aparencia](#Temas_y_Aparencia)
     *   [1.1 Temas KDE](#Temas_KDE)
     *   [1.2 Temas GTK](#Temas_GTK)
-        *   [1.2.1 GTK2/GTK+](#GTK2.2FGTK.2B)
+        *   [1.2.1 GTK2/GTK+](#GTK2/GTK+)
         *   [1.2.2 GTK1](#GTK1)
     *   [1.3 Tipos GTK](#Tipos_GTK)
     *   [1.4 Iconos GTK](#Iconos_GTK)
-    *   [1.5 Temas para el cursor del ratón](#Temas_para_el_cursor_del_rat.C3.B3n)
+    *   [1.5 Temas para el cursor del ratón](#Temas_para_el_cursor_del_ratón)
     *   [1.6 Iconos del escritorio](#Iconos_del_escritorio)
 *   [2 Programas Recomendados](#Programas_Recomendados)
     *   [2.1 Gestores de sesiones](#Gestores_de_sesiones)
-    *   [2.2 Utilizar "Composite" en el escritorio](#Utilizar_.22Composite.22_en_el_escritorio)
+    *   [2.2 Utilizar "Composite" en el escritorio](#Utilizar_"Composite"_en_el_escritorio)
     *   [2.3 Lanzadores de aplicaciones](#Lanzadores_de_aplicaciones)
         *   [2.3.1 dmenu](#dmenu)
         *   [2.3.2 Gmrun](#Gmrun)
     *   [2.4 Gestores de archivos](#Gestores_de_archivos)
-    *   [2.5 Paneles, bandejas, y seleccionadores ("Pagers")](#Paneles.2C_bandejas.2C_y_seleccionadores_.28.22Pagers.22.29)
+    *   [2.5 Paneles, bandejas, y seleccionadores ("Pagers")](#Paneles,_bandejas,_y_seleccionadores_("Pagers"))
 
 ## Temas y Aparencia
 

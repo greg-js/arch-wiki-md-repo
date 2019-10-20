@@ -31,7 +31,7 @@ To open KRunner in Plasma, you can either right-click the desktop and press "run
 To set the Meta key as a shortcut to open KRunner, run
 
 ```
-kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta "org.kde.kglobalaccel,/component/krunner,,invokeShortcut,run command"
+kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta "org.kde.krunner,/App,,display"
 
 ```
 

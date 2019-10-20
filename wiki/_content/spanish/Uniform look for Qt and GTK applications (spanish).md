@@ -12,7 +12,11 @@ Los programas basados en [Qt](https://en.wikipedia.org/wiki/Qt_(toolkit) y [GTK+
 *   **Tema de íconos** - Conjunto de íconos globales.
 *   **Tema de color** - Conjunto de colores globales que se utilizan en conjunción con el estilo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Estilos](#Estilos)
     *   [1.1 QtCurve](#QtCurve)

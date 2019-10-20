@@ -16,63 +16,64 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 LVM Building Blocks](#LVM_Building_Blocks)
-*   [2 Advantages](#Advantages)
-*   [3 Disadvantages](#Disadvantages)
-*   [4 Getting started](#Getting_started)
-*   [5 Installing Arch Linux on LVM](#Installing_Arch_Linux_on_LVM)
-    *   [5.1 Create partitions](#Create_partitions)
-    *   [5.2 Create physical volumes](#Create_physical_volumes)
-    *   [5.3 Create volume group](#Create_volume_group)
-    *   [5.4 Create in one step](#Create_in_one_step)
-    *   [5.5 Create logical volumes](#Create_logical_volumes)
-    *   [5.6 Create file systems and mount logical volumes](#Create_file_systems_and_mount_logical_volumes)
-    *   [5.7 Configure mkinitcpio](#Configure_mkinitcpio)
-    *   [5.8 Kernel options](#Kernel_options)
-*   [6 Volume operations](#Volume_operations)
-    *   [6.1 Advanced options](#Advanced_options)
-    *   [6.2 Resizing volumes](#Resizing_volumes)
-        *   [6.2.1 Physical volumes](#Physical_volumes)
-            *   [6.2.1.1 Growing](#Growing)
-            *   [6.2.1.2 Shrinking](#Shrinking)
-                *   [6.2.1.2.1 Move physical extents](#Move_physical_extents)
-                *   [6.2.1.2.2 Resize physical volume](#Resize_physical_volume)
-                *   [6.2.1.2.3 Resize partition](#Resize_partition)
-        *   [6.2.2 Logical volumes](#Logical_volumes)
-            *   [6.2.2.1 Resizing the logical volume and file system in one go](#Resizing_the_logical_volume_and_file_system_in_one_go)
-            *   [6.2.2.2 Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately)
-    *   [6.3 Renaming volumes](#Renaming_volumes)
-        *   [6.3.1 Renaming a Volume Group](#Renaming_a_Volume_Group)
-        *   [6.3.2 Renaming Logical Volumes](#Renaming_Logical_Volumes)
-    *   [6.4 Remove logical volume](#Remove_logical_volume)
-    *   [6.5 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
-    *   [6.6 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
-    *   [6.7 Deactivate volume group](#Deactivate_volume_group)
-    *   [6.8 Activate volume group](#Activate_volume_group)
-    *   [6.9 Repair a logical volume group](#Repair_a_logical_volume_group)
-*   [7 Logical volume types](#Logical_volume_types)
-    *   [7.1 Snapshots](#Snapshots)
-        *   [7.1.1 Configuration](#Configuration)
-    *   [7.2 LVM cache](#LVM_cache)
-        *   [7.2.1 Create cache](#Create_cache)
-        *   [7.2.2 Remove cache](#Remove_cache)
-    *   [7.3 RAID](#RAID)
-        *   [7.3.1 Setup RAID](#Setup_RAID)
-        *   [7.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
-*   [8 Graphical configuration](#Graphical_configuration)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Boot/Shutdown-problems because of disabled lvmetad](#Boot/Shutdown-problems_because_of_disabled_lvmetad)
-    *   [9.2 LVM commands do not work](#LVM_commands_do_not_work)
-    *   [9.3 Logical Volumes do not show up](#Logical_Volumes_do_not_show_up)
-    *   [9.4 LVM on removable media](#LVM_on_removable_media)
-        *   [9.4.1 Suspend/resume with LVM and removable media](#Suspend/resume_with_LVM_and_removable_media)
-    *   [9.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
-    *   [9.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_"grub-mkconfig"_reports_"unknown_filesystem"_errors)
-    *   [9.7 Thinly-provisioned root volume device times out](#Thinly-provisioned_root_volume_device_times_out)
-    *   [9.8 Delay on shutdown](#Delay_on_shutdown)
-*   [10 See also](#See_also)
+*   [1 Background](#Background)
+    *   [1.1 LVM Building Blocks](#LVM_Building_Blocks)
+    *   [1.2 Advantages](#Advantages)
+    *   [1.3 Disadvantages](#Disadvantages)
+    *   [1.4 Getting started](#Getting_started)
+        *   [1.4.1 Graphical configuration](#Graphical_configuration)
+*   [2 Installing Arch Linux on LVM](#Installing_Arch_Linux_on_LVM)
+    *   [2.1 Create partitions](#Create_partitions)
+    *   [2.2 Create physical volumes](#Create_physical_volumes)
+    *   [2.3 Create volume group](#Create_volume_group)
+    *   [2.4 Create in one step](#Create_in_one_step)
+    *   [2.5 Create logical volumes](#Create_logical_volumes)
+    *   [2.6 Create file systems and mount logical volumes](#Create_file_systems_and_mount_logical_volumes)
+    *   [2.7 Configure mkinitcpio](#Configure_mkinitcpio)
+    *   [2.8 Kernel options](#Kernel_options)
+*   [3 Volume operations](#Volume_operations)
+    *   [3.1 Physical volumes](#Physical_volumes)
+        *   [3.1.1 Growing](#Growing)
+        *   [3.1.2 Shrinking](#Shrinking)
+            *   [3.1.2.1 Move physical extents](#Move_physical_extents)
+            *   [3.1.2.2 Resize physical volume](#Resize_physical_volume)
+            *   [3.1.2.3 Resize partition](#Resize_partition)
+    *   [3.2 Volume groups](#Volume_groups)
+        *   [3.2.1 Activating a volume group](#Activating_a_volume_group)
+        *   [3.2.2 Repairing a volume group](#Repairing_a_volume_group)
+        *   [3.2.3 Deactivating a volume group](#Deactivating_a_volume_group)
+        *   [3.2.4 Renaming a volume group](#Renaming_a_volume_group)
+        *   [3.2.5 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
+        *   [3.2.6 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
+    *   [3.3 Logical volumes](#Logical_volumes)
+        *   [3.3.1 Renaming a logical volume](#Renaming_a_logical_volume)
+        *   [3.3.2 Resizing the logical volume and file system in one go](#Resizing_the_logical_volume_and_file_system_in_one_go)
+        *   [3.3.3 Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately)
+        *   [3.3.4 Removing a logical volume](#Removing_a_logical_volume)
+*   [4 Logical volume types](#Logical_volume_types)
+    *   [4.1 Snapshots](#Snapshots)
+        *   [4.1.1 Configuration](#Configuration)
+    *   [4.2 LVM cache](#LVM_cache)
+        *   [4.2.1 Create cache](#Create_cache)
+        *   [4.2.2 Remove cache](#Remove_cache)
+    *   [4.3 RAID](#RAID)
+        *   [4.3.1 Setup RAID](#Setup_RAID)
+        *   [4.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Boot/Shutdown-problems because of disabled lvmetad](#Boot/Shutdown-problems_because_of_disabled_lvmetad)
+    *   [5.2 LVM commands do not work](#LVM_commands_do_not_work)
+    *   [5.3 Logical Volumes do not show up](#Logical_Volumes_do_not_show_up)
+    *   [5.4 LVM on removable media](#LVM_on_removable_media)
+        *   [5.4.1 Suspend/resume with LVM and removable media](#Suspend/resume_with_LVM_and_removable_media)
+    *   [5.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
+    *   [5.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_"grub-mkconfig"_reports_"unknown_filesystem"_errors)
+    *   [5.7 Thinly-provisioned root volume device times out](#Thinly-provisioned_root_volume_device_times_out)
+    *   [5.8 Delay on shutdown](#Delay_on_shutdown)
+*   [6 See also](#See_also)
 
-## LVM Building Blocks
+## Background
+
+### LVM Building Blocks
 
 Logical Volume Management utilizes the kernel's [device-mapper](http://sources.redhat.com/dm/) feature to provide a system of partitions independent of underlying disk layout. With LVM you abstract your storage and have "virtual partitions", making [extending/shrinking](#Resizing_volumes) easier (subject to potential filesystem limitations).
 
@@ -126,7 +127,7 @@ LVM logical volumes
 
 ```
 
-## Advantages
+### Advantages
 
 LVM gives you more flexibility than just using normal hard drive partitions:
 
@@ -139,14 +140,18 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 *   Snapshots allow you to backup a frozen copy of the file system, while keeping service downtime to a minimum.
 *   Support for various device-mapper targets, including transparent filesystem encryption and caching of frequently used data. This allows creating a system with (one or more) physical disks (encrypted with LUKS) and [LVM on top](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") to allow for easy resizing and management of separate volumes (e.g. for `/`, `/home`, `/backup`, etc.) without the hassle of entering a key multiple times on boot.
 
-## Disadvantages
+### Disadvantages
 
 *   Additional steps in setting up the system, more complicated.
 *   If dual-booting, note that Windows does not support LVM; you will be unable to access any LVM partitions from Windows.
 
-## Getting started
+### Getting started
 
 Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Install "Install").
+
+#### Graphical configuration
+
+There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/) covers most of the common operations, and provides simple visualizations of volume state. It can automatically resize many file systems when resizing logical volumes.
 
 ## Installing Arch Linux on LVM
 
@@ -378,17 +383,11 @@ If the root file system resides in a logical volume, the `root=` [kernel paramet
 
 ## Volume operations
 
-### Advanced options
-
-You can restrict the volumes that are activated automatically by setting the `auto_activation_volume_list` in `/etc/lvm/lvm.conf`. If in doubt, leave this option commented out.
-
-### Resizing volumes
-
-#### Physical volumes
+### Physical volumes
 
 After extending or prior to reducing the size of a device that has a physical volume on it, you need to grow or shrink the PV using `pvresize`.
 
-##### Growing
+#### Growing
 
 To expand the PV on `/dev/sda1` after enlarging the [partition](/index.php/Partition "Partition"), run:
 
@@ -401,7 +400,7 @@ This will automatically detect the new size of the device and extend the PV to i
 
 **Note:** This command can be done while the volume is online.
 
-##### Shrinking
+#### Shrinking
 
 To shrink a physical volume prior to reducing its underlying device, add the `--setphysicalvolumesize *size*` parameters to the command, *e.g.*:
 
@@ -420,7 +419,7 @@ The above command may leave you with this error:
 
 Indeed `pvresize` will refuse to shrink a PV if it has allocated extents after where its new end would be. One needs to run [pvmove](#Move_physical_extents) beforehand to relocate these elsewhere in the volume group if there is sufficient free space.
 
-###### Move physical extents
+##### Move physical extents
 
 Before moving free extents to the end of the volume, one must run `pvdisplay -v -m` to see physical segments. In the below example, there is one physical volume on `/dev/sdd1`, one volume group `vg1` and one logical volume `backup`.
 
@@ -474,7 +473,7 @@ Here, the first free segment is from 0 to 153600 and leaves us with 153601 free 
 *   this command may take a long time (one to two hours) in case of large volumes. It might be a good idea to run this command in a [Tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen") session. Any unwanted stop of the process could be fatal.
 *   once the operation is complete, run [fsck](/index.php/Fsck "Fsck") to make sure your file system is valid.
 
-###### Resize physical volume
+##### Resize physical volume
 
 Once all your free physical segments are on the last physical extents, run `vgdisplay` and see your free PE.
 
@@ -494,80 +493,51 @@ See the result:
 
 ```
 
-###### Resize partition
+##### Resize partition
 
 Last, you need to shrink the partition with your favorite [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning").
 
-#### Logical volumes
+### Volume groups
 
-**Note:** [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) provides more or less the same options as the specialized [lvextend(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvextend.8) and [lvreduce(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvreduce.8) commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r`/`--resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
+#### Activating a volume group
 
-**Warning:** While enlarging a file system can often be done on-line (*i.e.* while it is mounted), even for the root partition, shrinking will nearly always require to first unmount the file system so as to prevent data loss. Make sure your FS supports what you are trying to do.
-
-##### Resizing the logical volume and file system in one go
-
-**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. For a different type of file system see [#Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately).
-
-Extend the logical volume `mediavol` in `MyVolGroup` by 10 GiB and resize its file system *all at once*:
+**Note:** You can restrict the volumes that are activated automatically by setting the `auto_activation_volume_list` in `/etc/lvm/lvm.conf`. If in doubt, leave this option commented out.
 
 ```
-# lvresize -L +10G --resizefs MyVolGroup/mediavol
+# vgchange -a y vg0
 
 ```
 
-Set the size of logical volume `mediavol` in `MyVolGroup` to 15 GiB and resize its file system *all at once*:
+This will reactivate the volume group if for example you had a drive failure in a mirror and you swapped the drive, ran `pvcreate`, `vgextend` and `vgreduce --removemissing --force`.
+
+#### Repairing a volume group
+
+To start the rebuilding process of the degraded mirror array in this example, you would run:
 
 ```
-# lvresize -L 15G --resizefs MyVolGroup/mediavol
-
-```
-
-If you want to fill all the free space on a volume group, use the following command:
-
-```
-# lvresize -l +100%FREE --resizefs MyVolGroup/mediavol
+# lvconvert --repair /dev/vg0/mirror
 
 ```
 
-See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
-
-##### Resizing the logical volume and file system separately
-
-For file systems not supported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) will need to use the [appropriate utility](/index.php/File_systems#Types_of_file_systems "File systems") to resize the file system before shrinking the logical volume or after expanding it.
-
-To extend logical volume `mediavol` within volume group `MyVolGroup` by 2 GiB *without* touching its file system:
+You can monitor the rebuilding process (Cpy%Sync Column output) with:
 
 ```
-# lvresize -L +2G MyVolGroup/mediavol
+# lvs -a -o +devices
 
 ```
 
-Now expand the file system ([ext4](/index.php/Ext4 "Ext4") in this example) to the maximum size of the underlying logical volume:
+#### Deactivating a volume group
+
+Just invoke
 
 ```
-# resize2fs /dev/MyVolGroup/mediavol
-
-```
-
-To reduce the size of logical volume `mediavol` in `MyVolGroup` by 500 MiB, first calculate the resulting file system size and shrink the file system ([ext4](/index.php/Ext4 "Ext4") in this example) to the new size:
-
-```
-# resize2fs /dev/MyVolGroup/mediavol *NewSize*
+# vgchange -a n my_volume_group
 
 ```
 
-When the file system is shrunk, reduce the size of logical volume:
+This will deactivate the volume group and allow you to unmount the container it is stored in.
 
-```
-# lvresize -L -500M MyVolGroup/mediavol
-
-```
-
-See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
-
-### Renaming volumes
-
-#### Renaming a Volume Group
+#### Renaming a volume group
 
 Use the [vgrename(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vgrename.8) command to rename an existing volume group.
 
@@ -583,68 +553,7 @@ Either of the following commands renames the existing volume group `vg02` to `my
 
 ```
 
-#### Renaming Logical Volumes
-
-To rename an existing logical volume, use the [lvrename(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvrename.8) command.
-
-Either of the following commands renames logical volume `lvold` in volume group `vg02` to `lvnew`.
-
-```
-# lvrename /dev/vg02/lvold /dev/vg02/lvnew
-
-```
-
-```
-# lvrename vg02 lvold lvnew
-
-```
-
-### Remove logical volume
-
-**Warning:** Before you remove a logical volume, make sure to move all data that you want to keep somewhere else; otherwise, it will be lost!
-
-First, find out the name of the logical volume you want to remove. You can get a list of all logical volumes with:
-
-```
-# lvs
-
-```
-
-Next, look up the mountpoint of the chosen logical volume:
-
-```
-$ lsblk
-
-```
-
-Then unmount the filesystem on the logical volume:
-
-```
-# umount /<*mountpoint*>
-
-```
-
-Finally, remove the logical volume:
-
-```
-# lvremove <*volume_group*>/<*logical_volume*>
-
-```
-
-For example:
-
-```
-# lvremove VolGroup00/lvolhome
-
-```
-
-Confirm by typing in `y`.
-
-Update `/etc/fstab` as necessary.
-
-You can verify the removal of the logical volume by typing `lvs` as root again (see first step of this section).
-
-### Add physical volume to a volume group
+#### Add physical volume to a volume group
 
 You first create a new physical volume on the block device you wish to use, then extend your volume group
 
@@ -658,7 +567,7 @@ This of course will increase the total number of physical extents on your volume
 
 **Note:** It is considered good form to have a [partition table](/index.php/Partitioning "Partitioning") on your storage medium below LVM. Use the appropriate type code: `8e` for MBR, and `8e00` for GPT partitions.
 
-### Remove partition from a volume group
+#### Remove partition from a volume group
 
 If you created a logical volume on the partition, [remove](#Remove_logical_volume) it first.
 
@@ -704,41 +613,133 @@ And lastly, if you want to use the partition for something else, and want to avo
 
 ```
 
-### Deactivate volume group
+### Logical volumes
 
-Just invoke
+**Note:** [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) provides more or less the same options as the specialized [lvextend(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvextend.8) and [lvreduce(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvreduce.8) commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r`/`--resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
 
-```
-# vgchange -a n my_volume_group
+**Warning:** While enlarging a file system can often be done on-line (*i.e.* while it is mounted), even for the root partition, shrinking will nearly always require to first unmount the file system so as to prevent data loss. Make sure your FS supports what you are trying to do.
 
-```
+#### Renaming a logical volume
 
-This will deactivate the volume group and allow you to unmount the container it is stored in.
+To rename an existing logical volume, use the [lvrename(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvrename.8) command.
 
-### Activate volume group
-
-```
-# vgchange -a y vg0
+Either of the following commands renames logical volume `lvold` in volume group `vg02` to `lvnew`.
 
 ```
-
-This will reactivate the volume group if for example you had a drive failure in a mirror and you swapped the drive, ran `pvcreate`, `vgextend` and `vgreduce --removemissing --force`.
-
-### Repair a logical volume group
-
-To start the rebuilding process of the degraded mirror array in this example, you would run:
-
-```
-# lvconvert --repair /dev/vg0/mirror
+# lvrename /dev/vg02/lvold /dev/vg02/lvnew
 
 ```
 
-You can monitor the rebuilding process (Cpy%Sync Column output) with:
+```
+# lvrename vg02 lvold lvnew
 
 ```
-# lvs -a -o +devices
+
+#### Resizing the logical volume and file system in one go
+
+**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. For a different type of file system see [#Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately).
+
+Extend the logical volume `mediavol` in `MyVolGroup` by 10 GiB and resize its file system *all at once*:
 
 ```
+# lvresize -L +10G --resizefs MyVolGroup/mediavol
+
+```
+
+Set the size of logical volume `mediavol` in `MyVolGroup` to 15 GiB and resize its file system *all at once*:
+
+```
+# lvresize -L 15G --resizefs MyVolGroup/mediavol
+
+```
+
+If you want to fill all the free space on a volume group, use the following command:
+
+```
+# lvresize -l +100%FREE --resizefs MyVolGroup/mediavol
+
+```
+
+See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
+
+#### Resizing the logical volume and file system separately
+
+For file systems not supported by [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) will need to use the [appropriate utility](/index.php/File_systems#Types_of_file_systems "File systems") to resize the file system before shrinking the logical volume or after expanding it.
+
+To extend logical volume `mediavol` within volume group `MyVolGroup` by 2 GiB *without* touching its file system:
+
+```
+# lvresize -L +2G MyVolGroup/mediavol
+
+```
+
+Now expand the file system ([ext4](/index.php/Ext4 "Ext4") in this example) to the maximum size of the underlying logical volume:
+
+```
+# resize2fs /dev/MyVolGroup/mediavol
+
+```
+
+To reduce the size of logical volume `mediavol` in `MyVolGroup` by 500 MiB, first calculate the resulting file system size and shrink the file system ([ext4](/index.php/Ext4 "Ext4") in this example) to the new size:
+
+```
+# resize2fs /dev/MyVolGroup/mediavol *NewSize*
+
+```
+
+When the file system is shrunk, reduce the size of logical volume:
+
+```
+# lvresize -L -500M MyVolGroup/mediavol
+
+```
+
+See [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) for more detailed options.
+
+#### Removing a logical volume
+
+**Warning:** Before you remove a logical volume, make sure to move all data that you want to keep somewhere else; otherwise, it will be lost!
+
+First, find out the name of the logical volume you want to remove. You can get a list of all logical volumes with:
+
+```
+# lvs
+
+```
+
+Next, look up the mountpoint of the chosen logical volume:
+
+```
+$ lsblk
+
+```
+
+Then unmount the filesystem on the logical volume:
+
+```
+# umount /<*mountpoint*>
+
+```
+
+Finally, remove the logical volume:
+
+```
+# lvremove <*volume_group*>/<*logical_volume*>
+
+```
+
+For example:
+
+```
+# lvremove VolGroup00/lvolhome
+
+```
+
+Confirm by typing in `y`.
+
+Update `/etc/fstab` as necessary.
+
+You can verify the removal of the logical volume by typing `lvs` as root again (see first step of this section).
 
 ## Logical volume types
 
@@ -883,10 +884,6 @@ For systemd based initramfs:
 MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
 HOOKS=(base **systemd** ... block **sd-lvm2** filesystems)
 ```
-
-## Graphical configuration
-
-There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/) covers most of the common operations, and provides simple visualizations of volume state. It can automatically resize many file systems when resizing logical volumes.
 
 ## Troubleshooting
 

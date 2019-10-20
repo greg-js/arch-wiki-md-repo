@@ -8,7 +8,11 @@ From the [IPFS README.md on GitHub](https://github.com/ipfs/ipfs):
 
 	IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single BitTorrent swarm exchanging git objects.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Using a service to start the daemon](#Using_a_service_to_start_the_daemon)

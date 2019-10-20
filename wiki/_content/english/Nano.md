@@ -9,7 +9,8 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Syntax highlighting](#Syntax_highlighting)
-        *   [2.1.1 PKGBUILD](#PKGBUILD)
+        *   [2.1.1 Forth](#Forth)
+        *   [2.1.2 PKGBUILD](#PKGBUILD)
     *   [2.2 Suspension](#Suspension)
     *   [2.3 Text wrapping](#Text_wrapping)
 *   [3 Usage](#Usage)
@@ -50,18 +51,22 @@ include "/usr/share/nano/*.nanorc"
 
 ```
 
-Syntax highlighting enhancements which replace and expand the defaults can be found in the AUR, [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/). See [[1]](https://paste.xinu.at/wc17YG/) for [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language) "w:Forth (programming language)") highlighting.
+For syntax highlighting enhancements which replace and expand the defaults, [install](/index.php/Install "Install") [nano-syntax-highlighting](https://www.archlinux.org/packages/?name=nano-syntax-highlighting) or [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/).
+
+#### Forth
+
+See [https://paste.xinu.at/wc17YG/](https://paste.xinu.at/wc17YG/) for [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language) highlighting.
 
 #### PKGBUILD
 
-*   Save [https://paste.xinu.at/4ss/](https://paste.xinu.at/4ss/) (similar to [svntogit-server](https://projects.archlinux.org/svntogit/packages.git/tree)) to `/etc/nano/pkgbuild.nanorc` and include it:
+Save [https://paste.xinu.at/4ss/](https://paste.xinu.at/4ss/) (similar to [svntogit-server](https://projects.archlinux.org/svntogit/packages.git/tree)) to `/etc/nano/pkgbuild.nanorc` and include it:
 
 ```
 include "/etc/nano/pkgbuild.nanorc"
 
 ```
 
-*   [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/) has an alternate version
+**Tip:** [nano-syntax-highlighting](https://www.archlinux.org/packages/?name=nano-syntax-highlighting) has an alternate version.
 
 ### Suspension
 

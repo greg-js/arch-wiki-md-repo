@@ -357,7 +357,18 @@ The hid-nintendo driver currently conflicts with steam using hidraw to implement
 
 ##### Using hid-nintendo with SDL2 Games
 
-To add a mapping for the joy-cons or the pro controller to an SDL2 game, [controllermap](https://aur.archlinux.org/packages/controllermap/) can be run in the game's directory. This has been tested to work with rocket league with its steam input support disabled.
+To add a mapping for the joy-cons or the pro controller to an SDL2 game, [controllermap](https://aur.archlinux.org/packages/controllermap/) can be run in the game's directory of games which have their own gamecontrollerdb.txt file.
+
+Alternatively, the mappings can be added to an environment variable:
+
+ `~/.bashrc` 
+```
+# hid-nintendo SDL2 mappings
+export SDL_GAMECONTROLLERCONFIG="050000007e0500000920000001800000,Nintendo Switch Pro Controller,platform:Linux,a:b0,b:b1,x:b3,y:b2,back:b9,guide:b11,start:b10,leftstick:b12,rightstick:b13,leftshoulder:b5,rightshoulder:b6,dpup:b14,dpdown:b15,dpleft:b16,dpright:b17,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b7,righttrigger:b8,
+030000007e0500000920000011810000,Nintendo Switch Pro Controller,platform:Linux,a:b0,b:b1,x:b3,y:b2,back:b9,guide:b11,start:b10,leftstick:b12,rightstick:b13,leftshoulder:b5,rightshoulder:b6,dpup:b14,dpdown:b15,dpleft:b16,dpright:b17,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b7,righttrigger:b8,
+060000007e0500000620000000000000,Nintendo Switch Combined Joy-Cons,platform:Linux,a:b0,b:b1,x:b3,y:b2,back:b9,guide:b11,start:b10,leftstick:b12,rightstick:b13,leftshoulder:b5,rightshoulder:b6,dpup:b14,dpdown:b15,dpleft:b16,dpright:b17,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b7,righttrigger:b8,
+"
+```
 
 #### Dolphin (Gamecube Controller Emulation)
 

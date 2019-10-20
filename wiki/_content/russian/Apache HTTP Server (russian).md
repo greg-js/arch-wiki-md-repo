@@ -2,7 +2,7 @@
 
 *   [PHP](/index.php/PHP "PHP")
 *   [MySQL (Русский)](/index.php/MySQL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MySQL (Русский)")
-*   [PhpMyAdmin (Русский)](/index.php/PhpMyAdmin_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PhpMyAdmin (Русский)")
+*   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
 *   [Adminer](/index.php/Adminer "Adminer")
 *   [Xampp (Русский)](/index.php/Xampp_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xampp (Русский)")
 *   [mod_perl](/index.php/Mod_perl "Mod perl")
@@ -496,7 +496,7 @@ Include conf/extra/php5_fcgid.conf
 
 #### MySQL/MariaDB
 
-Следуйте инструкциям на странице [PHP (Русский)#MySQL/MariaDB](/index.php/PHP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#MySQL/MariaDB "PHP (Русский)").
+Следуйте инструкциям на странице [PHP#MySQL/MariaDB](/index.php/PHP#MySQL/MariaDB "PHP").
 
 После выполнения настройки, [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") службу `mysqld`, чтобы изменения вступили в силу.
 

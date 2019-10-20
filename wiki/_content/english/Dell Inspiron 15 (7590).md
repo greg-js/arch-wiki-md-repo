@@ -116,7 +116,7 @@ This would set the timeout to 5 minutes.
 
 The [TLP](/index.php/TLP "TLP") may increase battery life.
 
-You can monitor the used power and also the temperature of your machine with the [s-tui](https://aur.archlinux.org/packages/s-tui/) tool.
+You can monitor the used power and also the temperature of your machine with the [s-tui](https://www.archlinux.org/packages/?name=s-tui) tool.
 
 ### CPU Undervolting
 

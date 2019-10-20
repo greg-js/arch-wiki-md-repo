@@ -1,8 +1,17 @@
+Articoli correlati
+
+*   [fstab (Italiano)](/index.php/Fstab_(Italiano) "Fstab (Italiano)")
+*   [LVM (Italiano)](/index.php/LVM_(Italiano) "LVM (Italiano)")
+
 Questo articolo descrive come utilizzare dei nomi univoci e non modificabili per l'identificazione delle periferiche(o partizioni). Questo è stato reso possibile con l'introduzione di udev, e risulta vantaggioso anche rispetto ai nomi basati sul bus di connessione. Se la macchina ha più di un controller per i dischi SATA, SCSI o IDE, può succedere che l'ordine dei file nodo creati sia casuale. Questo può comportare ad esempio che le periferiche `/dev/**sda**` ed `/dev/**sdb**` siano invertite in modo casuale ad ogni avvio, impedendo al sistema di avviarsi, oppure determinando la scomparsa dei dispositivi a blocchi che vengono erroneamente rilevati. L'uso di nomi univoci risolve quindi il problema.
 
 **Nota:** Non è necessario seguire questa guida nel caso in cui si stia utilizzando [LVM2](/index.php/LVM_(Italiano) "LVM (Italiano)"), dato che LVM2 si occupa anche di questo automaticamente.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Metodi di nomenclatura univoca](#Metodi_di_nomenclatura_univoca)
     *   [1.1 By-label](#By-label)
@@ -44,6 +53,7 @@ Le etichette possono essere cambiate utilizzando i seguenti comandi:
 ```
 
 **Attenzione:** Questo comando cancellerà l'area di swap.
+
 Se la swap è montata, eseguire `swapoff /dev/XXX` prima e `swapon /dev/XXX` dopo.
 
 	ext2/ext3/ext4 

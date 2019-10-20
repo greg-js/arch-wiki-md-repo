@@ -232,6 +232,8 @@ Applies to: newer laptops with GTX 965M or alike when bbswitch (e.g. via Bumbleb
 
 When the dGPU power resource is turned on, it may fail to do so and hang in ACPI code ([kernel bug 156341](https://bugzilla.kernel.org/show_bug.cgi?id=156341)).
 
+When using nouveau, disabling runtime power-management stops it from changing the power state, thus avoiding this issue. To disable runtime power-management, add `nouveau.runpm=0` to the kernel parameters.
+
 For known model-specific workarounds, see [this issue](https://github.com/Bumblebee-Project/Bumblebee/issues/764#issuecomment-234494238). In other cases you can try to boot with `acpi_osi="!Windows 2015"` or `acpi_osi=! acpi_osi="Windows 2009"` added to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). (Consider reporting your laptop to that issue.)
 
 ### No screens found on a laptop/NVIDIA Optimus

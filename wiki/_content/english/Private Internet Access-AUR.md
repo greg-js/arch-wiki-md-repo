@@ -6,18 +6,24 @@ Related articles
 
 This article details the installation and usage of [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/). For the general information on the service and additional packages, see [Private Internet Access](/index.php/Private_Internet_Access "Private Internet Access").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 After installation](#After_installation)
 *   [3 Usage](#Usage)
     *   [3.1 Enabling auto-login](#Enabling_auto-login)
-        *   [3.1.1 Manually connecting to VPN](#Manually_connecting_to_VPN)
-        *   [3.1.2 Automatically connect to VPN](#Automatically_connect_to_VPN)
-        *   [3.1.3 Advanced options](#Advanced_options)
-    *   [3.2 Example configuration](#Example_configuration)
+    *   [3.2 Manually connecting to VPN](#Manually_connecting_to_VPN)
+    *   [3.3 Automatically connecting to VPN](#Automatically_connecting_to_VPN)
+        *   [3.3.1 For connman:](#For_connman:)
+        *   [3.3.2 For openvpn you can look here: OpenVPN#systemd service configuration.](#For_openvpn_you_can_look_here:_OpenVPN#systemd_service_configuration.)
+    *   [3.4 Advanced options](#Advanced_options)
+    *   [3.5 Example configuration](#Example_configuration)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Using NetworkManager's applet](#Using_NetworkManager.27s_applet)
+    *   [4.1 Using NetworkManager's applet](#Using_NetworkManager's_applet)
     *   [4.2 DNS Leaks](#DNS_Leaks)
 *   [5 See also](#See_also)
 
@@ -39,7 +45,7 @@ If there are any issues with connectivity and you are running [connman](https://
 
 ### Enabling auto-login
 
-**Note:** This is a limitation of [OpenVPN](/index.php/OpenVPN "OpenVPN"). See PIA'S Support Center: [How can I make OpenVPN remember my username and password?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/219458787-How-can-I-make-OpenVPN-remember-my-username-and-password-)
+**Note:** This is a limitation of [OpenVPN](/index.php/OpenVPN "OpenVPN"). See PIA's Support Center: [How can I make OpenVPN remember my username and password?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/219458787-How-can-I-make-OpenVPN-remember-my-username-and-password-)
 
 Enabling auto-login allows a user to connect to the VPN service without having to type any passwords on the command line (needed when using [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)). To set this up, you must do the following:
 
@@ -58,31 +64,61 @@ PASSWORD
 # chmod 0600 /etc/private-internet-access/login.conf
 # chown root:root /etc/private-internet-access/login.conf
 ```
+
 This secures the access to the file from non-root users. Read more on [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). It is **required** when activating auto-login.
 
 *   Run `pia -a` as root.
     *   If you have [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) installed, it will create the configuration files for [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). Make sure to [restart](/index.php/Restart "Restart") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to see them.
     *   If you have [connman](https://www.archlinux.org/packages/?name=connman) installed, it will create the configuration files for [connman](https://www.archlinux.org/packages/?name=connman). [Start](/index.php/Start "Start") `connman-vpn.service` if not running already. It will auto load the profiles.
-    *   Regardless, it will create the OpenVPN `.conf` files in `/etc/openvpn`.
+    *   Regardless, it will create the OpenVPN `.conf` files in `/etc/openvpn/client`.
 
 **Tip:** Disable auto-login in configurations by adding `openvpn_auto_login = False` to `/etc/private-internet-access/pia.conf` and running `pia -a`
 
-#### Manually connecting to VPN
+### Manually connecting to VPN
 
-Run `openvpn --config /etc/openvpn/client/{config_file_name}` as root. `{config_file_name}` will be listed in the /etc/openvpn directory or run `pia -l`.
+ `# sudo openvpn --config /etc/openvpn/client/{config_file_name}` 
 
-#### Automatically connect to VPN
+`{config_file_name}` will be listed in the /etc/openvpn directory or run `pia -l`.
 
-*   For [connman](https://www.archlinux.org/packages/?name=connman):
+### Automatically connecting to VPN
 
-1.  [enable](/index.php/Enable "Enable") the `connman-vpn.service`.
-2.  Run `pia -a` as root.
+#### For [connman](https://www.archlinux.org/packages/?name=connman):
 
-**Note:** These are unsupported configurations.
+*   [enable](/index.php/Enable "Enable") the `connman-vpn.service`.
 
-*   For [openvpn](https://www.archlinux.org/packages/?name=openvpn) you can look here: [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
+ `# sudo systemctl enable connman-vpn.service` 
 
-#### Advanced options
+*   Run `pia -a` as root (if you haven't already)
+
+ `# sudo pia -a` 
+
+*   Get a list of all connman services and find the name of the VPN config `(for example, Finland)` in the second column
+
+ `connmanctl services` 
+```
+...
+
+*   Finland_VPN          vpn_fi_privateinternetaccess_com_privateinternetaccess_com
+...
+```
+
+*   Connect to your VPN chosen VPN config to create a connman settings file for it:
+
+ `# connmanctl connect vpn_fi_privateinternetaccess_com_privateinternetaccess_com` 
+
+*   Edit the relevant settings file:
+
+ `# sudo vim /var/lib/connman/vpn_fi_privateinternetaccess_com_privateinternetaccess_com/settings` 
+
+*   Change the `AutoConnect=false` line to `AutoConnect=true`, save, exit, reboot
+
+**Tip:** You can also configure autoconnect in the Details tab of [cmst](https://www.archlinux.org/packages/?name=cmst)
+
+**Tip:** The VPN will keep working even after waking from suspend, unlike vanilla [openvpn](https://www.archlinux.org/packages/?name=openvpn) (see below)
+
+#### For [openvpn](https://www.archlinux.org/packages/?name=openvpn) you can look here: [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
+
+### Advanced options
 
 **Warning:** Protocols and port combinations no longer work as of Version 3.1\. See [Github Issue #17](https://github.com/flamusdiu/python-pia/issues/17) or PIA's Support - [Which encryption/auth settings should I use for ports on your gateways?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/225274288-Which-encryption-auth-settings-should-I-use-for-ports-on-your-gateways-)
 

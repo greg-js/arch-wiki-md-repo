@@ -288,4 +288,4 @@ $ cat /proc/sys/vm/swappiness
 
 ### Чередование
 
-Нет необходимости использовать [RAID](/index.php/RAID_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RAID (Русский)") для повышения производительности подкачки. Ядро самостоятельно может чередовать подкачку на нескольких устройствах, если вы присвоите им одинаковый приоритет в `/etc/fstab`. Для подробной информации смотри [The Software-RAID HOWTO](http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3).
+Нет необходимости использовать [RAID](/index.php/RAID "RAID") для повышения производительности подкачки. Ядро самостоятельно может чередовать подкачку на нескольких устройствах, если вы присвоите им одинаковый приоритет в `/etc/fstab`. Для подробной информации смотри [The Software-RAID HOWTO](http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3).

@@ -118,7 +118,7 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 **OpenJ9** — Eclipse's implementation of JRE, contributed by IBM.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk13-openj9-bin](https://aur.archlinux.org/packages/jdk13-openj9-bin/) [jdk12-openj9-bin](https://aur.archlinux.org/packages/jdk12-openj9-bin/) [jdk11-openj9-bin](https://aur.archlinux.org/packages/jdk11-openj9-bin/) [jdk10-openjdk-openj9-bin](https://aur.archlinux.org/packages/jdk10-openjdk-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk-openj9-bin](https://aur.archlinux.org/packages/jdk-openj9-bin/) [jdk13-openj9-bin](https://aur.archlinux.org/packages/jdk13-openj9-bin/) [jdk12-openj9-bin](https://aur.archlinux.org/packages/jdk12-openj9-bin/) [jdk11-openj9-bin](https://aur.archlinux.org/packages/jdk11-openj9-bin/) [jdk10-openjdk-openj9-bin](https://aur.archlinux.org/packages/jdk10-openjdk-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
 
 **IBM J9** — IBM's implementation of the eighth edition of JRE.
 

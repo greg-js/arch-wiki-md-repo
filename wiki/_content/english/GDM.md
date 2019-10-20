@@ -523,7 +523,12 @@ See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
 
 ### Use Xorg backend
 
-The [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [Xorg](/index.php/Xorg "Xorg") backend is used only if the Wayland backend cannot be started. As the Wayland backend has been [reported](https://bugzilla.redhat.com/show_bug.cgi?id=1199890) to cause problems for some users, use of the Xorg backend may be necessary. To use the Xorg backend by default, edit the `/etc/gdm/custom.conf` file and uncomment the following line:
+The [Wayland](/index.php/Wayland "Wayland") backend is used by default, and the [Xorg](/index.php/Xorg "Xorg") backend is used only if the Wayland backend cannot be started. You may wish to use the Xorg backend instead if, for example:
+
+*   The screen [flickers](https://bugzilla.redhat.com/show_bug.cgi?id=1199890)
+*   GDM [crashes](https://bbs.archlinux.org/viewtopic.php?id=249334)
+
+To use the Xorg backend by default, uncomment the following line in `/etc/gdm/custom.conf`:
 
 ```
 #WaylandEnable=false

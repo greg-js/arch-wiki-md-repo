@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Wireless network configuration#iw](/index.php/Wireless_network_configuration#iw "Wireless network configuration")
+*   [Network configuration/Wireless#iw](/index.php/Network_configuration/Wireless#iw "Network configuration/Wireless")
