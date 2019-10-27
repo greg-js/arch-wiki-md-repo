@@ -369,7 +369,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://www.openwall.com/john](https://www.openwall.com/john) || [john](https://www.archlinux.org/packages/?name=john)
 
-*   **[Hashcat](https://en.wikipedia.org/wiki/Hashcat "wikipedia:Hashcat")** — Multithreaded advanced password recovery utility.
+*   **[Hashcat](/index.php/Hashcat "Hashcat")** — Multithreaded advanced password recovery utility.
 
 	[https://hashcat.net/hashcat](https://hashcat.net/hashcat) || [hashcat](https://www.archlinux.org/packages/?name=hashcat)
 

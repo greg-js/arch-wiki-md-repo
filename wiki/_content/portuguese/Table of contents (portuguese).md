@@ -4,12 +4,12 @@
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(8)</small> |
 | <small>1.2.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
 | <small>1.2.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(3)</small> |
-| <small>1.2.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(10) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
+| <small>1.2.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(11) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(9)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(Portugu%C3%AAs) "Category:Live Arch systems (Português)") <small>(2)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams_(Portugu%C3%AAs) "Category:Teams (Português)") <small>(5)</small> |
 | <small>2.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(4)</small> |
-| <small>2.1.</small> [Frameworks](/index.php/Category:Frameworks_(Portugu%C3%AAs) "Category:Frameworks (Português)") <small>(1)</small> |
+| <small>2.1.</small> [Frameworks](/index.php/Category:Frameworks_(Portugu%C3%AAs) "Category:Frameworks (Português)") <small>(2)</small> |
 | <small>2.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems_(Portugu%C3%AAs) "Category:Issue tracking systems (Português)") <small>(1) (também em [Web applications](/index.php/Category:Web_applications_(Portugu%C3%AAs) "Category:Web applications (Português)"))</small> |
 | <small>2.3.</small> [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)") <small>(1)</small> |
 | <small>2.3.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)"))</small> |
@@ -17,7 +17,7 @@
 | <small>3.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(0)</small> |
 | <small>3.1.</small> [CPU](/index.php/Category:CPU_(Portugu%C3%AAs) "Category:CPU (Português)") <small>(2)</small> |
 | <small>3.2.</small> [Graphics](/index.php/Category:Graphics_(Portugu%C3%AAs) "Category:Graphics (Português)") <small>(1)</small> |
-| <small>3.3.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting_(Portugu%C3%AAs) "Category:Hardware detection and troubleshooting (Português)") <small>(1)</small> |
+| <small>3.3.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting_(Portugu%C3%AAs) "Category:Hardware detection and troubleshooting (Português)") <small>(2)</small> |
 | <small>3.4.</small> [Input devices](/index.php/Category:Input_devices_(Portugu%C3%AAs) "Category:Input devices (Português)") <small>(0) (também em [Input](/index.php/Category:Input_(Portugu%C3%AAs) "Category:Input (Português)"))</small> |
 | <small>3.4.1.</small> [Keyboards](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(2)</small> |
 | <small>3.4.2.</small> [Mice](/index.php/Category:Mice_(Portugu%C3%AAs) "Category:Mice (Português)") <small>(1)</small> |
@@ -91,7 +91,7 @@
 | <small>5.3.3.</small> [KDE](/index.php/Category:KDE_(Portugu%C3%AAs) "Category:KDE (Português)") <small>(1) (também em [Software projects](/index.php/Category:Software_projects_(Portugu%C3%AAs) "Category:Software projects (Português)"))</small> |
 | <small>5.3.4.</small> [Xfce](/index.php/Category:Xfce_(Portugu%C3%AAs) "Category:Xfce (Português)") <small>(1)</small> |
 | <small>5.4.</small> [File formats](/index.php/Category:File_formats_(Portugu%C3%AAs) "Category:File formats (Português)") <small>(1)</small> |
-| <small>5.5.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(10) (também em [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)"))</small> |
+| <small>5.5.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(11) (também em [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)"))</small> |
 | <small>5.6.</small> [Software companies](/index.php/Category:Software_companies_(Portugu%C3%AAs) "Category:Software companies (Português)") <small>(0)</small> |
 | <small>5.6.1.</small> [Oracle](/index.php/Category:Oracle_(Portugu%C3%AAs) "Category:Oracle (Português)") <small>(2)</small> |
 | <small>5.6.2.</small> [Red Hat](/index.php/Category:Red_Hat_(Portugu%C3%AAs) "Category:Red Hat (Português)") <small>(1)</small> |
@@ -104,7 +104,7 @@
 | <small>5.9.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
 | <small>6.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(4)</small> |
 | <small>6.1.</small> [Backup](/index.php/Category:Backup_(Portugu%C3%AAs) "Category:Backup (Português)") <small>(1)</small> |
-| <small>6.2.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(6)</small> |
+| <small>6.2.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(7)</small> |
 | <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(2)</small> |
 | <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)"))</small> |
 | <small>6.2.3.</small> [Init](/index.php/Category:Init_(Portugu%C3%AAs) "Category:Init (Português)") <small>(2)</small> |
@@ -124,7 +124,7 @@
 | <small>6.6.1.3.</small> [Web server](/index.php/Category:Web_server_(Portugu%C3%AAs) "Category:Web server (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |
 | <small>6.7.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(2)</small> |
 | <small>6.7.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
-| <small>6.8.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(4)</small> |
+| <small>6.8.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(5)</small> |
 | <small>6.8.1.</small> [Storage virtualization](/index.php/Category:Storage_virtualization_(Portugu%C3%AAs) "Category:Storage virtualization (Português)") <small>(1)</small> |
 | <small>6.9.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(3)</small> |
 | <small>6.10.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(5)</small> |
@@ -137,7 +137,7 @@
 | <small>6.11.1.1.</small> [Keyboards](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(2)</small> |
 | <small>6.11.1.2.</small> [Mice](/index.php/Category:Mice_(Portugu%C3%AAs) "Category:Mice (Português)") <small>(1)</small> |
 | <small>6.11.2.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration_(Portugu%C3%AAs) "Category:Keyboard configuration (Português)") <small>(1)</small> |
-| <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(2)</small> |
+| <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(3)</small> |
 | <small>6.13.</small> [Linux console](/index.php/Category:Linux_console_(Portugu%C3%AAs) "Category:Linux console (Português)") <small>(3)</small> |
 | <small>6.14.</small> [Localization](/index.php/Category:Localization_(Portugu%C3%AAs) "Category:Localization (Português)") <small>(2)</small> |
 | <small>6.15.</small> [Logging](/index.php/Category:Logging_(Portugu%C3%AAs) "Category:Logging (Português)") <small>(1)</small> |

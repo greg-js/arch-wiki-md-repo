@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=585201) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-10-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=586686) na versão em inglês.
 
 Artigos relacionados
 
@@ -486,8 +486,8 @@ Sincronize a base de dados de arquivos:
 
 Pesquise por um pacote contendo um arquivo, p.ex.:
 
+ `$ pacman -Fs pacman` 
 ```
-$ pacman -Fs pacman
 core/pacman 5.0.1-4
     usr/bin/pacman
     usr/share/bash-completion/completions/pacman
@@ -694,7 +694,7 @@ No caso do *pacman* travar com um erro de "escrita da base de dados" enquanto re
 
 ### Erro "Unable to find root device" após a reinicialização
 
-Muito provavelmente o [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") acabou corrompido durante uma atualização do [kernel](/index.php/Kernel "Kernel") (uso indevido da opção `--force` do *pacman* pode ser uma causa). Há duas opções; primeiro, tente a entrada *Fallback*.
+Muito provavelmente o [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") acabou corrompido durante uma atualização do [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") (uso indevido da opção `--force` do *pacman* pode ser uma causa). Há duas opções; primeiro, tente a entrada *Fallback*.
 
 **Dica:** No caso de você ter removido o *Fallback*, você pode sempre pressionar a tecla `Tab` quando o gerenciador de boot aparecer (para Syslinux) ou `e` (para GRUB), renomear `initramfs-linux-fallback.img` e pressione `Enter` ou `b` (dependendo do seu [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot")) para inicializar com os novos parâmetros.
 
@@ -772,7 +772,7 @@ Parece que uma transição anterior do *pacman* removeu ou corrompeu as bibliote
 
 Para recuperar dessa situação, você precisa desempacotar manualmente as bibliotecas necessárias para seu sistema. Primeiro descubra qual pacote contém a biblioteca em falta e, então, localize-o no cache do *pacman* (`/var/cache/pacman/pkg/`). Desempacote a biblioteca compartilhada necessária no sistema de arquivos. Isso vai permitir executar o *pacman*.
 
-Agora, você precisa [reinstalar](#Instalando_pacotes_específicos) o pacote quebrado. Note que você precisa usar a opção `--overwrite`, pois você acabou de desempacotar arquivos de sistema e o*pacman* não tem conhecimento deles. O *pacman* vai substituir corretamente nosso arquivo de biblioteca compartilhada com o do pacote.
+Agora, você precisa [reinstalar](#Instalando_pacotes_específicos) o pacote quebrado. Note que você precisa usar a opção `--overwrite`, pois você acabou de desempacotar arquivos de sistema e o *pacman* não tem conhecimento deles. O *pacman* vai substituir corretamente nosso arquivo de biblioteca compartilhada com o do pacote.
 
 É isso. Atualize o resto do sistema.
 

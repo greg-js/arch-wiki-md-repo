@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GRUB](/index.php/GRUB "GRUB"). Data da última tradução: 2019-09-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=581649) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GRUB](/index.php/GRUB "GRUB"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=585138) na versão em inglês.
 
 Artigos relacionados
 
@@ -201,11 +201,11 @@ Use a ferramenta *grub-mkconfig* para gerar `/boot/grub/grub.cfg`:
 
 ```
 
-Por padrão, os scripts de geração adicionam automaticamente entradas de menu para todos os [kernels](/index.php/Kernel "Kernel") do Arch Linux instalados na configuração gerada.
+Por padrão, os scripts de geração adicionam automaticamente entradas de menu para todos os [kernels](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") do Arch Linux instalados na configuração gerada.
 
 **Dica:**
 
-*   Depois de instalar ou remover um [kernel](/index.php/Kernel "Kernel"), você só precisa executar novamente o comando acima, o *grub-mkconfig*.
+*   Depois de instalar ou remover um [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)"), você só precisa executar novamente o comando acima, o *grub-mkconfig*.
 *   Para obter dicas sobre o gerenciamento de várias entradas do GRUB, por exemplo, ao usar os kernels [linux](https://www.archlinux.org/packages/?name=linux) e [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), consulte [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
 
 Para adicionar automaticamente entradas para outros sistemas operacionais instalados, consulte [#Detectando outros sistemas operacionais](#Detectando_outros_sistemas_operacionais).
@@ -230,9 +230,9 @@ Partições encriptadas do Windows podem precisar ser descriptografadas antes da
 
 Para passar argumentos adicionais personalizados para a imagem do Linux, você pode definir as variáveis `GRUB_CMDLINE_LINUX` e `GRUB_CMDLINE_LINUX_DEFAULT` em `/etc/default/grub`. As duas são anexadas uma à outra e passadas ao kernel ao gerar entradas de inicialização comuns. Para a entrada de inicialização de *recuperação*, apenas `GRUB_CMDLINE_LINUX` é usado na geração.
 
-Não é necessário usar ambos, mas pode ser útil. Por exemplo, você poderia usar `GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=*uuid-da-partição-swap* quiet"`, sendo `*uuid-da-partição-swap*` o [UUID](/index.php/UUID "UUID") da sua partição swap para permitir a continuação após [hibernação](/index.php/Hibernation "Hibernation"). Isso geraria uma entrada de inicialização de recuperação sem o resumo e sem `quiet` para suprimir mensagens do kernel durante uma inicialização a partir dessa entrada de menu. Porém, as outras entradas de menu (comuns) os teriam como opções.
+Não é necessário usar ambos, mas pode ser útil. Por exemplo, você poderia usar `GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=*uuid-da-partição-swap* quiet"`, sendo `*uuid-da-partição-swap*` o [UUID](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") da sua partição swap para permitir a continuação após [hibernação](/index.php/Hibernation "Hibernation"). Isso geraria uma entrada de inicialização de recuperação sem o resumo e sem `quiet` para suprimir mensagens do kernel durante uma inicialização a partir dessa entrada de menu. Porém, as outras entradas de menu (comuns) os teriam como opções.
 
-Por padrão, o *grub-mkconfig* determina o [UUID](/index.php/UUID "UUID") do sistema de arquivos raiz para a configuração. Para desabilitar isso, descomente `GRUB_DISABLE_LINUX_UUID=true`.
+Por padrão, o *grub-mkconfig* determina o [UUID](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") do sistema de arquivos raiz para a configuração. Para desabilitar isso, descomente `GRUB_DISABLE_LINUX_UUID=true`.
 
 Para gerar a entrada de recuperação do GRUB, você precisa garantir que `GRUB_DISABLE_RECOVERY` não esteja definido como `true` em `/etc/default/grub`.
 
@@ -280,7 +280,7 @@ sendo que o vetor RAID 1 contendo `/boot` está contido em ambos `/dev/sda` e `/
 
 #### /boot criptografado
 
-O GRUB também tem suporte especial para inicializar com um `/boot` criptografado. Isto é feito desbloqueando um dispositivo de bloco [LUKS](/index.php/LUKS "LUKS") para ler sua configuração e carregar qualquer [initramfs](/index.php/Initramfs "Initramfs") e [kernel](/index.php/Kernel "Kernel") dele. Esta opção tenta resolver o problema de ter uma [partição de inicialização não criptografada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+O GRUB também tem suporte especial para inicializar com um `/boot` criptografado. Isto é feito desbloqueando um dispositivo de bloco [LUKS](/index.php/LUKS "LUKS") para ler sua configuração e carregar qualquer [initramfs](/index.php/Initramfs "Initramfs") e [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") dele. Esta opção tenta resolver o problema de ter uma [partição de inicialização não criptografada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
 
 **Nota:** `/boot` **não** precisa obrigatoriamente ser mantido em uma partição separada; ele também pode ficar sob a árvore de diretórios `/` da raiz do sistema.
 
@@ -473,7 +473,7 @@ Estes dois comandos presumem o uso da ESP do Windows montada em `*esp*`. Pode ha
 
 **Nota:** O GRUB possui suporte a inicializar `bootmgr` diretamente e fazer carregamento em cadeia ([*chainloading*](https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading)) do setor de inicialização da partição não é mais necessário para inicializar Windows em uma configuração de BIOS/MBR.
 
-**Atenção:** É a **partição do sistema** que tem `/bootmgr`, não sua partição Windows "real" (geralmente `C:`). O [rótulo do sistema de arquivos](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") da partição do sistema é `Sistema Reservado` ou `SISTEMA` e a partição tem por volta de 100 para 549 MiB em tamanho. Veja [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") para mais informações.
+**Atenção:** É a **partição do sistema** que tem `/bootmgr`, não sua partição Windows "real" (geralmente `C:`). O [rótulo do sistema de arquivos](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco#by-label "Nomeação persistente de dispositivo de bloco") da partição do sistema é `Sistema Reservado` ou `SISTEMA` e a partição tem por volta de 100 para 549 MiB em tamanho. Veja [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") para mais informações.
 
 Ao longo desta seção, presume-se que sua partição do Windows é `/dev/sda1`. Uma partição diferente mudará todas as instâncias de `hd0,msdos1`.
 
@@ -690,7 +690,7 @@ Após migrar para o GPT/UEFI, pode-se querer remover o [código de inicializaç�
 
 O GRUB não possui suporte ao sistema de arquivos [F2FS](/index.php/F2FS "F2FS"). Caso a partição raiz esteja em um sistema de arquivos incompatível, uma partição alternativa `/boot` com um sistema de arquivos compatível deve ser criada. Em alguns casos, a versão de desenvolvimento do GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) pode ter suporte nativo para o sistema de arquivos.
 
-Se o GRUB é usado com um sistema de arquivos incompatível, ele não é capaz de extrair o [UUID](/index.php/UUID "UUID") da sua unidade, então ele usa nomes clássicos não-persistentes `/dev/*sdXx*`. Nesse caso, você pode ter que editar manualmente `/boot/grub/grub.cfg` e substituir `root=/dev/*sdXx*` com `root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*`. Você pode usar o comando `blkid` para obter o UUID do seu dispositivo, consulte [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+Se o GRUB é usado com um sistema de arquivos incompatível, ele não é capaz de extrair o [UUID](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") da sua unidade, então ele usa nomes clássicos não-persistentes `/dev/*sdXx*`. Nesse caso, você pode ter que editar manualmente `/boot/grub/grub.cfg` e substituir `root=/dev/*sdXx*` com `root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*`. Você pode usar o comando `blkid` para obter o UUID do seu dispositivo, consulte [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco").
 
 ### BIOS da Intel não está inicialização GPT
 
@@ -875,7 +875,7 @@ O GRUB pode levar muito tempo para carregar quando o espaço em disco está baix
 
 ### erro: sistema de arquivos desconhecido
 
-O GRUB pode emitir `erro: sistema de arquivos desconhecido` e se recusar a inicializar por alguns motivos. Se você tem certeza de que todos os [UUIDs](/index.php/UUID "UUID") estão corretos e todos os sistemas de arquivos são válidos e compatíveis, pode ser que sua [partição de inicialização de BIOS](#Instruções_específicas_de_Tabela_de_Partição_GUID_(GPT)) esteja localizada fora dos primeiros 2 TiB da unidade [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use uma ferramenta de particionamento de sua escolha para garantir que essa partição esteja totalmente localizada nos primeiros 2 TiB, depois reinstale e reconfigure o GRUB.
+O GRUB pode emitir `erro: sistema de arquivos desconhecido` e se recusar a inicializar por alguns motivos. Se você tem certeza de que todos os [UUIDs](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") estão corretos e todos os sistemas de arquivos são válidos e compatíveis, pode ser que sua [partição de inicialização de BIOS](#Instruções_específicas_de_Tabela_de_Partição_GUID_(GPT)) esteja localizada fora dos primeiros 2 TiB da unidade [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use uma ferramenta de particionamento de sua escolha para garantir que essa partição esteja totalmente localizada nos primeiros 2 TiB, depois reinstale e reconfigure o GRUB.
 
 Esse erro também pode ser causado por um sistema de arquivos [ext4](/index.php/Ext4 "Ext4") com os recursos `large_dir` ou `metadata_csum_seed` definidos.
 
@@ -943,3 +943,4 @@ Veja [esta publicação de blog](https://blog.stigok.com/2017/12/30/decrypt-and-
 *   [Wikipedia:BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [Como configurar o GRUB](http://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme)
 *   [Inicializar com GRUB](http://www.linuxjournal.com/article/4622)
+*   [Detectando arquivos efi e iniciando-os a partir do grub](https://forum.manjaro.org/t/detecting-efi-files-and-booting-them-from-grub/38083)

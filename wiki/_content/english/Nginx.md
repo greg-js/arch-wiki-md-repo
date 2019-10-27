@@ -384,7 +384,7 @@ server {
         include fastcgi_params;
 
         # fastcgi settings
-        fastcgi_pass			unix:/run/php-fpm/php-fpm.sock
+        fastcgi_pass			unix:/run/php-fpm/php-fpm.sock;
         fastcgi_index			index.php;
         fastcgi_buffers			8 16k;
         fastcgi_buffer_size		32k;

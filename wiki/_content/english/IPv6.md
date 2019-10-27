@@ -27,14 +27,15 @@ In Arch Linux, IPv6 is enabled by default.
     *   [7.1 With dibbler](#With_dibbler)
     *   [7.2 With dhcpcd](#With_dhcpcd)
     *   [7.3 With WIDE-DHCPv6](#With_WIDE-DHCPv6)
-    *   [7.4 Other clients](#Other_clients)
+    *   [7.4 systemd-networkd](#systemd-networkd_2)
+    *   [7.5 Other clients](#Other_clients)
 *   [8 Disable IPv6](#Disable_IPv6)
     *   [8.1 Disable functionality](#Disable_functionality)
     *   [8.2 Other programs](#Other_programs)
         *   [8.2.1 dhcpcd](#dhcpcd_2)
         *   [8.2.2 NetworkManager](#NetworkManager_3)
         *   [8.2.3 ntpd](#ntpd)
-    *   [8.3 systemd-networkd](#systemd-networkd_2)
+    *   [8.3 systemd-networkd](#systemd-networkd_3)
 *   [9 Prefer IPv4 over IPv6](#Prefer_IPv4_over_IPv6)
 *   [10 See also](#See_also)
 
@@ -109,6 +110,14 @@ interface LAN {
 ```
 
 The above configuration will tell clients to autoconfigure themselves using addresses from the advertised /64 block. Please note that the above configuration advertises *all available prefixes* assigned to the LAN facing interface. If you want to limit the advertised prefixes instead of `::/64` use the desired prefix, eg `2001:DB8::/64`. The `prefix` block can be repeated many times for more prefixes.
+
+To advertise DNS servers to your LAN clients you can use RDNSS feature. For example, add the following lines to `/etc/radvd.conf` to advertise Google's DNS v6 servers:
+
+```
+RDNSS 2001:4860:4860::8888 2001:4860:4860::8844 {
+};
+
+```
 
 The gateway must also allow the traffic of `ipv6-icmp` packets on all basic chains. For the [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")/[iptables](/index.php/Iptables "Iptables") add:
 
@@ -339,9 +348,27 @@ The wide-dhcpv6 client can be [started/enabled](/index.php/Started/enabled "Star
 
 **Tip:** Read dhcp6c(8) and dhcp6c.conf(5) for more information.
 
-### Other clients
+### systemd-networkd
 
-[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") claims to be capable of DHCPv6-PD but is lacking documentation on how to do it.
+ `/etc/systemd/network/lan.network` 
+```
+[Network]
+Address=192.168.1.1
+IPv6PrefixDelegation=dhcpv6
+```
+ `/etc/systemd/network/wan.network` 
+```
+[Network]
+DHCP=yes
+IPForward=yes
+IPv6Token=::1
+IPv6AcceptRouterAdvertisements=2
+IPv6AcceptRA=yes
+IPv6DuplicateAddressDetection=1
+IPv6PrivacyExtensions=kernel
+```
+
+### Other clients
 
 [dhclient](/index.php/Dhclient "Dhclient") can also request a prefix, but assigning that prefix, or parts of that prefix to interfaces must be done using a dhclient exit script. For example: [https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6](https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6).
 

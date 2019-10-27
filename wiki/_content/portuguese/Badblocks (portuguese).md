@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Badblocks](/index.php/Badblocks "Badblocks"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Badblocks&diff=0&oldid=576932) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Badblocks](/index.php/Badblocks "Badblocks"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Badblocks&diff=0&oldid=584714) na versão em inglês.
 
 *badblocks* é um programa para testar dispositivos de armazenamento para blocos defeituosos (em inglês, *bad blocks*).
 
@@ -31,7 +31,9 @@ Isso pode ser feito em um modo de gravação *(write-mode)* destrutivo que efeti
 
 ## Instalação
 
-O pacote [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) é parte do [grupo base](/index.php/Grupo_de_pacotes "Grupo de pacotes"). Veja [badblocks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/badblocks.8) para o uso.
+[Instale](/index.php/Instale "Instale") o pacote [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs).
+
+Veja [badblocks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/badblocks.8) para o uso.
 
 ## Fidelidade do dispositivo de armazenamento
 

@@ -33,7 +33,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [15 Custom GNOME sessions](#Custom_GNOME_sessions)
 *   [16 Redirect certain URLs to specific web browsers](#Redirect_certain_URLs_to_specific_web_browsers)
 *   [17 Removing film holes/film strip from video thumbnails in Nautilus](#Removing_film_holes/film_strip_from_video_thumbnails_in_Nautilus)
-*   [18 Prevent GNOME software from downloading updates](#Prevent_GNOME_software_from_downloading_updates)
+*   [18 Prevent GNOME Software from downloading updates](#Prevent_GNOME_Software_from_downloading_updates)
 *   [19 Increase volume above and beyond 100%](#Increase_volume_above_and_beyond_100%)
 *   [20 Adjust volume in smaller steps](#Adjust_volume_in_smaller_steps)
 *   [21 Show volume sound percentage next to top panel icon](#Show_volume_sound_percentage_next_to_top_panel_icon)
@@ -43,12 +43,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 
 ### Turn on NumLock on login
 
-Run the following command:
-
-```
-$ gsettings set org.gnome.settings-daemon.peripherals.keyboard numlock-state on
-
-```
+See [Activating Numlock on Bootup#GNOME](/index.php/Activating_Numlock_on_Bootup#GNOME "Activating Numlock on Bootup")
 
 ### Hotkey alternatives
 
@@ -124,18 +119,27 @@ Use the *Main Menu* application (provided by the [alacarte](https://www.archlinu
 
 ## Screencast recording
 
-GNOME features built-in screencast recording with the `Ctrl+Shift+Alt+r` key combination. A red circle is displayed in the bottom right corner of the screen when the recording is in progress. After the recording is finished, a file named `Screencast from %d%u-%c.webm` is saved in the Videos directory. In order to use the screencast feature the gst plugins need to be installed.
+GNOME features built-in screencast recording with the `Ctrl+Shift+Alt+r` key combination. A red circle is displayed in the bottom right corner of the screen when the recording is in progress. After the recording is finished, a file named `Screencast from %d%u-%c.webm` is saved in the `Videos` directory. In order to use the screencast feature the gst plugins need to be installed.
+
+**Note:** The recording filename may translated depending on your system's language.
 
 ## Screenshot
 
-Default save directory:
+[gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) by default saves the image in the directory of the last save, which you can query:
 
 ```
-$ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/*USER*/Desktop
+$ gsettings get org.gnome.gnome-screenshot last-save-directory
 
 ```
 
-Check the *gnome-screenshot* manual page for more options.
+Instead of using the above directory, you can set an auto save directory. e.g. for automatically saving screenshots to the `*user*`'s desktop directory:
+
+```
+$ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/*user*/Desktop
+
+```
+
+Check the [gnome-screenshot(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gnome-screenshot.1) man page for more options.
 
 ## Log out delay
 
@@ -154,6 +158,8 @@ To disable Shell animations (such as "Show Applications" and the wave animation 
 $ gsettings set org.gnome.desktop.interface enable-animations false
 
 ```
+
+or via [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks), in *General* tab, switch *Animations* to off.
 
 ## Retina (HiDPI) display support
 
@@ -311,16 +317,11 @@ Exec=gnome-session --session=gnome-openbox
 
 ## Redirect certain URLs to specific web browsers
 
-Use Chromium for certain types of URLs while maintaining Firefox as default browser for all other tasks.
+This shows how to use [Chromium](/index.php/Chromium "Chromium") for certain types of URLs while maintaining [Firefox](/index.php/Firefox "Firefox") as default browser for all other tasks.
 
-Be sure pcre (for pcregrep) is installed:
+Make sure [pcre](https://www.archlinux.org/packages/?name=pcre) is [installed](/index.php/Install "Install"), to use *pcregrep*.
 
-```
-# pacman -S pcre
-
-```
-
-Setup custom xdg-open:
+Setup custom *xdg-open*:
 
  `/usr/local/bin/xdg-open` 
 ```
@@ -353,7 +354,7 @@ fi
 
 ```
 
-Configure domains for redirect to Chromium:
+Configure domains for redirect to *Chromium*:
 
  `$HOME/domains.txt` 
 ```
@@ -365,7 +366,7 @@ github.com
 
 ```
 
-Setup xdg-open-web as desktop application:
+Setup *xdg-open web* as desktop application:
 
  `$HOME/.local/share/applications/xdg-open-web.desktop` 
 ```
@@ -389,7 +390,7 @@ $ update-desktop-database $HOME/.local/share/applications/
 
 ```
 
-Set xdg-open web as default Web application in GNOME settings: GNOME Settings > Details > Default Applications > set Web to xdg-open web.
+Set *xdg-open web* as default Web application in GNOME settings: Go to *GNOME Settings > Details > Default Applications* and set *Web* to *xdg-open web*.
 
 ## Removing film holes/film strip from video thumbnails in Nautilus
 
@@ -422,9 +423,9 @@ rm -r ~/.cache/thumbnails
 
 Log out and back in to your session and you should no longer have the film holes/film strip effect on your thumbnails in Nautilus.
 
-## Prevent GNOME software from downloading updates
+## Prevent GNOME Software from downloading updates
 
-By default GNOME Software will download updated packages from the Arch Linux repositories. This forces GNOME Software to refresh the package lists for pacman automatically. This is the equivalent to `pacman -Sy`. If the user ignores the GNOME software update prompt, but does install a new package, that will result in [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), which are **unsupported**. To prevent GNOME Software from refreshing the package lists set the following dconf setting:
+By default [gnome-software](https://www.archlinux.org/packages/?name=gnome-software) will download updated packages from the Arch Linux repositories. This forces GNOME Software to refresh the package lists for *pacman* automatically. This is the equivalent to `pacman -Sy`. If the user ignores the GNOME software update prompt, but does install a new package, that will result in [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), which are **unsupported**. To prevent GNOME Software from refreshing the package lists set the following dconf setting:
 
 ```
 $ gsettings set org.gnome.software download-updates false

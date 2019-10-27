@@ -1,10 +1,10 @@
-**Status de tradução:** Esse artigo é uma tradução de [XDG user directories](/index.php/XDG_user_directories "XDG user directories"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_user_directories&diff=0&oldid=576769) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [XDG user directories](/index.php/XDG_user_directories "XDG user directories"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_user_directories&diff=0&oldid=583947) na versão em inglês.
 
 Artigos relacionados
 
 *   [xdg-menu](/index.php/Xdg-menu "Xdg-menu")
 *   [Aplicativos padrão](/index.php/Default_applications "Default applications")
-*   [Suporte a XDG Base Directory](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
+*   [Suporte a XDG Base Directory](/index.php/Suporte_a_XDG_Base_Directory "Suporte a XDG Base Directory")
 
 Do [freedesktop.org](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/):
 
@@ -23,7 +23,7 @@ $ xdg-user-dirs-update
 
 ```
 
-**Dica:** Para forçar a criação de diretórios com nome em inglês, `LC_ALL=C xdg-user-dirs-update` pode ser usado.
+**Dica:** Para forçar a criação de diretórios com nome em inglês, `LC_ALL=C xdg-user-dirs-update --force` pode ser usado.
 
 Quando executado, ele também vai automaticamente:
 

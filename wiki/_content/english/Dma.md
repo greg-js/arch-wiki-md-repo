@@ -1,3 +1,7 @@
+Related articles
+
+*   [Mail server](/index.php/Mail_server "Mail server")
+
 [dma](https://github.com/corecode/dma) (*Dragonfly Mail Agent*) is a tiny Mail Transport Agent (MTA). It is able to accept mails and deliver it to local or remote destinations; however, if you want to send and receive mails with your domain name then you'll need full-featured [mail server](/index.php/Mail_server "Mail server").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -120,7 +124,7 @@ Click on *Select app* and choose desired application (usual called as **Mail**).
  AUTHPATH /etc/dma/auth.conf
  SECURETRANSFER
  STARTTLS
- MASQUERADE alias-user@gmail.com
+ MASQUERADE alias-user@example.com
 
 ```
  `/etc/dma/auth.conf` 

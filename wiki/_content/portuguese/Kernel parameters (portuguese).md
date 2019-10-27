@@ -2,9 +2,9 @@
 
 Existem três maneiras de passar opções para o kernel e, assim, controlar seu comportamento:
 
-1.  Ao compilar o kernel. Veja [Kernel#Compilation](/index.php/Kernel#Compilation "Kernel") para detalhes.
-2.  Ao iniciar o kernel (geralmente, quando chamado por um gerenciadro de boot).
-3.  Em tempo real (atraveś de arquivos no `/proc` e no `/sys`). Veja [sysctl](/index.php/Sysctl "Sysctl") para detalhes.
+1.  Ao compilar o kernel. Veja [Kernel (Português)#Compilação](/index.php/Kernel_(Portugu%C3%AAs)#Compilação "Kernel (Português)") para detalhes.
+2.  Ao iniciar o kernel (geralmente, quando chamado por um gerenciador de boot).
+3.  Em tempo real (através de arquivos no `/proc` e no `/sys`). Veja [sysctl](/index.php/Sysctl "Sysctl") para detalhes.
 
 Esta página explica mais detalhadamente o segundo método e mostra uma lista dos parâmetros do kernel mais usados no Arch Linux.
 

@@ -37,7 +37,7 @@ To connect to a real device or phone via ADB under Arch, you must:
 1.  You might want to install [android-udev](https://www.archlinux.org/packages/?name=android-udev) if you wish to connect the device to the proper `/dev/` entries.
 2.  plug in your android device via USB.
 3.  Enable USB Debugging on your phone or device:
-    *   Jelly Bean (4.2) and newer: Go to *Settings > About Phone* tap *Build Number* 7 times until you get a popup that you have become a developer. Then go to *Settings > Developer > USB debugging* and enable it. The device will ask to allow the computer with its fingerprint to connect. Allowing it permanently will copy `~/.android/adbkey.pub` onto the devices `/data/misc/adb/adb_keys` folder.
+    *   Jelly Bean (4.2) and newer: Go to *Settings > About Phone* tap *Build Number* 7 times until you get a popup that you have become a developer. Build number may be under a menu called *Software info* on newer Android OS versions. Then go to *Settings > Developer > USB debugging* and enable it. The device will ask to allow the computer with its fingerprint to connect. Allowing it permanently will copy `~/.android/adbkey.pub` onto the devices `/data/misc/adb/adb_keys` folder.
     *   Older versions: This is usually done from *Settings > Applications > Development > USB debugging*. Reboot the phone after checking this option to make sure USB debugging is enabled.
 
 If [ADB recognizes your device](#Detect_the_device) (`adb devices` shows it as `"device" and not as "unauthorized"`, or it is visible and accessible in IDE), you are done. Otherwise see the instructions below.

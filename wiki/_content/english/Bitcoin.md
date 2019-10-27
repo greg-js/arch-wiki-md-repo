@@ -100,7 +100,7 @@ A full node is a bitcoin client which starts with the initial genesis block of t
 
 There are several Bitcoin full node implementations in the [official repositories](/index.php/Official_repositories "Official repositories") and in the [AUR](/index.php/AUR "AUR").
 
-If you decide to install one: It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded (200GB as of October 2018) and verified them (which is CPU intensive) in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set. Afterwards, one may [reduce storage](https://bitcoin.org/en/full-node#reduce-storage) and [limit bandwith](https://bitcoin.org/en/full-node#reduce-traffic).
+If you decide to install one: It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded (260GB as of October 2019) and verified them (which is CPU intensive) in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set. Afterwards, one may [reduce storage](https://bitcoin.org/en/full-node#reduce-storage) and [limit bandwith](https://bitcoin.org/en/full-node#reduce-traffic).
 
 The initial download of the blockchain can be sped up by increasing the database cache as much as your RAM allows, add `dbcache=M` to `~/.bitcoin/bitcoin.conf` where M is the number of megabytes of RAM to allocate.
 

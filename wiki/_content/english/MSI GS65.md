@@ -95,9 +95,9 @@ The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nou
 
 #### Multihead
 
-The HDMI and DP ports are wired to the Nvidia GPU, so some additional actions required to make the multihead to work with monitors connected to this ports. Thunderbolt port is wired to Intel GPU thus allowing for external monitor to be used with Nvidia GPU off.
+The HDMI and DP ports are wired to the Nvidia GPU, so some additional actions required to make the multihead to work with monitors connected to this ports. Thunderbolt port is wired to Intel GPU thus allowing for external monitor to be used with Nvidia GPU off. See [Bumblebee#Output_wired_to_the_NVIDIA_chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee"), though configuration from there possibly wouldn't work as is.
 
-To get it work with the HDMI port:
+Instructions to get the external monitor working on the HDMI and DP ports on MSI GS65:
 
 1\. Install `bumblebee` and `xf86-video-intel`.
 
@@ -121,8 +121,6 @@ EndSection
 
 ```
 
-(the config provided by the package is not suitable for the MSI GS65).
-
 4\. Restart X server
 
 5\. Launch the `intel-virtual-output -b`
@@ -135,6 +133,10 @@ xrandr --output VIRTUAL1 --right-of eDP1 --preferred
 ```
 
 External monitor should be under the VIRTUAL1 output in `xrandr -q`. If not - check that `intel-virtual-output -b` successfully run the X server on DISPLAY=:8 and the `xrandr -d :8 -q` shows the connected monitor.
+
+**Limitations**
+
+It looks like the only one is inability to use VDPAU hardware video decoding, though to be honest it could be used directly on DISPLAY=:8 as an ugly hack (make sure your WM ignores the external screen first). But NVENC/NVDEC doesn't depend on X and could be used with tools like ffmpeg and gstreamer, and the Intel Quick Sync VAAPI also works, so missing VDPAU is a minor issue.
 
 ### Webcam
 

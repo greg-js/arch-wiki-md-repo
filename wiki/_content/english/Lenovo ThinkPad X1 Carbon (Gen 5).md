@@ -177,7 +177,7 @@ Charging while using the monitor via USB-Type-C is working but the dock function
 
 Downloads and instructions for updating the BIOS can be found in [[1]](https://pcsupport.lenovo.com/se/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-type-20hr-20hq/downloads/ds120390).
 
-In order to update the BIOS, you may either use a bootable ISO or the BIOS Update Utility for Linux. The update utility is only supported on UEFI BIOS version 1.34 or higher [[2]](https://download.lenovo.com/pccbbs/mobiles/n1mul23w.txt)).
+In order to update the BIOS, you may either use a bootable ISO or the BIOS Update Utility for Linux. The update utility is only supported on UEFI BIOS version 1.34 or higher [[2]](https://download.lenovo.com/pccbbs/mobiles/n1mul23w.txt).
 
 ### ISO
 

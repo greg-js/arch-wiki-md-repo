@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=584712) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-10-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=585643) na versão em inglês.
 
 Artigos relacionados
 
@@ -252,7 +252,7 @@ Para alterar o nome de login de um usuário:
 
 ```
 
-**Atenção:** Certifique-se de que você não está autenticado como o usuário cujo nome você está prestes a mudar. Abra um novo tty (por exemplo, `Ctrl+Alt+F6`) e se autentique como *root* ou como outro usuário e [escale para *root*](/index.php/Recomenda%C3%A7%C3%B5es_gerais#Elevação_de_privilégios "Recomendações gerais"). O *usermod* deve evitar que você faça isso por engano.
+**Atenção:** Certifique-se de que você não está autenticado como o usuário cujo nome você está prestes a mudar. Abra um novo tty (por exemplo, `Ctrl+Alt+F6`) e se autentique como *root* ou como outro usuário e [eleve para *root*](/index.php/Recomenda%C3%A7%C3%B5es_gerais#Elevação_de_privilégios "Recomendações gerais"). O *usermod* deve evitar que você faça isso por engano.
 
 Alterar um nome de usuário é seguro e fácil quando feito corretamente, basta usar o comando [usermod](#Outros_exemplos_de_gerenciamento_de_usuário). Se o usuário estiver associado a um grupo com o mesmo nome, você pode renomear isso com o comando [groupmod](#Gerenciamento_de_grupo).
 
@@ -426,7 +426,7 @@ Se o usuário estiver atualmente autenticado, ele deve encerrar a sessão e entr
 
 O comando *grpck* pode ser usado para verificar a integridade dos arquivos de grupo do sistema.
 
-{{Atenção|Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o Pacman envie mensagens relacionadas à ação, esses arquivos *.pacnew* podem e devem ser desconsiderados/removidos. Novos usuários e grupos padrão necessários são adicionados ou adicionados novamente conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
+**Atenção:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o Pacman envie mensagens relacionadas à ação, esses arquivos *.pacnew* podem e devem ser desconsiderados/removidos. Novos usuários e grupos padrão necessários são adicionados ou adicionados novamente conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 Atualizações ao pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem) criam arquivos *.pacnew*. Ao contrário dos arquivos *.pacnew* para o [#Gerenciamento de usuário](#Gerenciamento_de_usuário), essas alterações podem ser ignoradas/removidas, porque o script de instalação adiciona quaisquer novos grupos exigidos.
 
@@ -441,16 +441,16 @@ Essa seção explica o propósito dos grupos essenciais do pacote [core/filesyst
 Usuários não *root* de estação de trabalho ou desktop frequentemente precisam ser adicionados a alguns dos grupos a seguir para permitir acesso a periféricos de hardware e facilitar administração de sistema:
 
 | Grupo | Arquivos afetados | Propósito |
-| adm | Grupo administrativo, geralmente usado para fornecer acesso de leitura a logs protegidos. Tem acesso total de leitura aos arquivos de [journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)"). |
+| adm | Grupo administrativo, geralmente usado para fornecer acesso de leitura a logs protegidos. Tem acesso total de leitura aos arquivos de [journal](/index.php/Journal_(Portugu%C3%AAs) "Journal (Português)"). |
 | ftp | `/srv/ftp/` | Acesso a arquivos servidos por [servidores FTP](/index.php/List_of_applications/Internet#FTP_servers "List of applications/Internet"). |
 | games | `/var/games` | Acesso a alguns softwares de jogos. |
 | http | `/srv/http/` | Acesso a arquivos servidos por [servidores HTTP](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet"). |
 | log | Acesso a arquivos de registros de log em `/var/log/` criados pelo [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
-| rfkill | `/dev/rfkill` | Direito para controlar estado de energia de dispositivos sem fio (usado pelo [rfkill](/index.php/Rfkill "Rfkill")). |
+| rfkill | `/dev/rfkill` | Direito para controlar estado de energia de dispositivos sem fio (usado pelo [rfkill](/index.php/Rfkill_(Portugu%C3%AAs) "Rfkill (Português)")). |
 | sys | Direito para administrar impressoras no [CUPS](/index.php/CUPS "CUPS"). |
 | systemd-journal | `/var/log/journal/*` | Pode ser usado para fornecer acesso somente leitura aos logs do systemd, como uma alternativa ao `adm` e ao `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Do contrário, apenas mensagens geradas pelo usuário são exibidas. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | Portas seriais RS-232 e dispositivos conectados a elas. |
-| wheel | Grupo administrativo, comumente usado a dar privilégios para realizar ações administrativas. Também tem acesso total de leitura aos arquivos de [journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)"). Pode também ser usado para dar acesso aos utilitários [sudo](/index.php/Sudo "Sudo") e [su](/index.php/Su "Su") (nenhum deles usa-o por padrão, sendo configurável em `/etc/pam.d/su` e `/etc/pam.d/su-l`). |
+| wheel | Grupo administrativo, comumente usado a dar privilégios para realizar ações administrativas. Também tem acesso total de leitura aos arquivos de [journal](/index.php/Journal_(Portugu%C3%AAs) "Journal (Português)"). Pode também ser usado para dar acesso aos utilitários [sudo](/index.php/Sudo "Sudo") e [su](/index.php/Su "Su") (nenhum deles usa-o por padrão, sendo configurável em `/etc/pam.d/su` e `/etc/pam.d/su-l`). |
 
 ### Grupos de sistema
 

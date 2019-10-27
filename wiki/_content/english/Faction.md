@@ -1,6 +1,10 @@
 **Faction** is a C library for test-driven software development.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -61,7 +65,7 @@ FC
 
 ```
 
-This can be compiled using `gcc <filename.c> -D FACTION`
+This can be compiled using `gcc *filename.c* -D FACTION`
 
 ## Modes
 
@@ -114,5 +118,5 @@ In extended mode,
 
 ## See also
 
-*   [Faction Homepage](https://timetoplatypus.com/static/faction/index.html)
-*   [Faction Example Project](https://git.timetoplatypus.com/timetoplatypus/three_b)
+*   [Faction homepage](https://timetoplatypus.com/static/faction/index.html)
+*   [Faction example project](https://git.timetoplatypus.com/timetoplatypus/three_b)

@@ -2,7 +2,11 @@
 
 ## Installation
 
-Install [ktorrent](https://www.archlinux.org/packages/?name=ktorrent) package.
+Install [ktorrent](https://www.archlinux.org/packages/?name=ktorrent) package or [ktorrent](https://www.archlinux.org/packages/?name=ktorrent) using the Package Manager of Your Choice.
+
+## Troubleshooting
+
+It's been seen many times that without the package [geoip](https://www.archlinux.org/packages/?name=geoip) the kTorrent app is unable to Show any information about the seeders, leechers and the current Trackers, So Install it immediately after you Install kTorrent.Aslo it is advised to enable DHT inside the Settings to troubleshoot the slow speed and low amount of Seeders.
 
 ## Script to manage it in command line
 

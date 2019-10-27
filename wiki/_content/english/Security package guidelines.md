@@ -1,5 +1,3 @@
-**Warning:** This page is a work in progress
-
 This page describes security packaging guidelines for Arch Linux packages. For C/C++ projects the compiler and linker can apply security hardening options. Arch Linux by default applies PIE, Fortify source, stack protector, nx and relro. Hardening protections can be reviewed by running [checksec](https://www.archlinux.org/packages/?name=checksec).
 
 ```
@@ -14,13 +12,14 @@ $ checksec --file=/usr/bin/cat
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 RELRO](#RELRO)
+    *   [1.1 Haskell](#Haskell)
 *   [2 Stack Canary](#Stack_Canary)
 *   [3 NX](#NX)
     *   [3.1 C/C++](#C/C++)
 *   [4 PIE](#PIE)
     *   [4.1 C/C++](#C/C++_2)
     *   [4.2 Golang](#Golang)
-    *   [4.3 Haskell](#Haskell)
+    *   [4.3 Haskell](#Haskell_2)
 *   [5 RPATH/RUNPATH](#RPATH/RUNPATH)
 *   [6 FORTIFY](#FORTIFY)
 *   [7 Systemd services](#Systemd_services)
@@ -41,6 +40,10 @@ RELRO is a generic mitigation technique to harden the data sections of an ELF bi
 
 If an application reports partial relro, investigate if the build toolchain passes our LDFLAGS or allows overriding LDFLAGS. For Go packages investigate if the build method uses "build.go" as pure golang Makefile replacement which does not allow passing of LDFLAGS.
 
+### Haskell
+
+For Haskell it's not clear how to achieve Full RELRO at the moment.
+
 ## Stack Canary
 
 A stack canary is added by the compiler between the buffer and control data on the stack. If this well known value is corrupted, a buffer overflow occurred and the running program segfaults to prevent possible arbitrary code execution.
@@ -49,21 +52,21 @@ The GCC package has it enabled stack protection by default with the [--enable-de
 
 ## NX
 
-#### C/C++
+### C/C++
 
 Executable-space protection marks memory regions as non-executable, such that an attempt to execute machine code in these regions will cause an exception. It makes use of hardware features such as the NX bit (no-execute bit), or in some cases software emulation of those features.
 
 ## PIE
 
-#### C/C++
+### C/C++
 
 The [gcc](https://www.archlinux.org/packages/?name=gcc) package has it enabled by default for C/C++ with [--enable-default-pie](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gcc#n119).
 
-#### Golang
+### Golang
 
 For Go packages add a makedepend on [go-pie](https://www.archlinux.org/packages/?name=go-pie).
 
-#### Haskell
+### Haskell
 
 Pass the following flag to runhaskell Setup configure
 
@@ -103,7 +106,7 @@ $ systemd-analyze security pacman.service
 
 ```
 
-#### File Access
+### File Access
 
 A service can be hardened by restricting filesystem access.
 
@@ -139,7 +142,7 @@ ProtectControlGroups=true
 
 More detailed information can be found in [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5).
 
-#### User
+### User
 
 Ensure that the executed process and it's children can never gain new privileges through execve().
 
@@ -148,7 +151,7 @@ NoNewPrivileges=true
 
 ```
 
-#### Memory
+### Memory
 
 Prohibit attempts to create memory mappings that are both writable and executable, to change mappings to be executable or to crate executable shared memory. This sandboxes a process against allowing an attacker to write in to memory which is also executed. Note that enabling this is not compatible with all applications which rely on a JIT.
 
@@ -157,7 +160,7 @@ MemoryDenyWriteExecute=true
 
 ```
 
-#### System Calls
+### System Calls
 
 Locks down the [personality(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/personality.2) system call so that the kernel execution domain can not be changed.
 
@@ -180,7 +183,7 @@ SystemCallFilter=@swap
 
 ```
 
-#### Network
+### Network
 
 If the running process does not require any network access it can be fully disabled by setting up a new network namespace for the process and only configuration a loopback interface.
 
@@ -199,7 +202,7 @@ IPAddressDeny=any
 
 More information about network filtering can be found in [systemd.resource-control(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.resource-control.5).
 
-#### Various
+### Various
 
 Sets up a new UTS namespace for the execute process and disallows changing the hostname or domainname.
 

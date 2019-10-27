@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [VirtualBox](/index.php/VirtualBox "VirtualBox"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=581246) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [VirtualBox](/index.php/VirtualBox "VirtualBox"). Data da última tradução: 2019-10-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=586938) na versão em inglês.
 
 Artigos relacionados
 
@@ -97,7 +97,7 @@ Para iniciar as máquinas virtuais do VirtualBox na sua caixa Arch Linux, siga e
 [Instale](/index.php/Instale "Instale") o pacote [virtualbox](https://www.archlinux.org/packages/?name=virtualbox). Você precisará escolher um pacote para fornecer os módulos de hospedeiro:
 
 *   para o kernel [linux](https://www.archlinux.org/packages/?name=linux), escolha [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
-*   para outros [kernels](/index.php/Kernels "Kernels"), escolha [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
+*   para outros [kernels](/index.php/Kernels_(Portugu%C3%AAs) "Kernels (Português)"), escolha [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
 
 Para compilar os módulos do VirtualBox fornecidos pelo [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms), também será necessário instalar o(s) pacote(s) apropriado(s) para o(s) seu(s) kernel(s) instalado(s) (p.ex., [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) para [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) Quando o VirtualBox ou o kernel é atualizado, os módulos do kernel serão recompilados automaticamente graças ao hook do pacman de [DKMS](/index.php/DKMS "DKMS").
 
@@ -193,7 +193,7 @@ As [Adicionais para Convidado](https://www.virtualbox.org/manual/ch04.html) (*Gu
 Ambos os pacotes farão você escolher um pacote para fornecer módulos de convidados:
 
 *   para o padrão kernel [linux](https://www.archlinux.org/packages/?name=linux) padrão, escolha [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch)
-*   para outros [kernels](/index.php/Kernels "Kernels"), escolha [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
+*   para outros [kernels](/index.php/Kernels_(Portugu%C3%AAs) "Kernels (Português)"), escolha [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
 
 Para compilar os módulos do VirtualBox fornecidos pelo [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms), também será necessário instalar o(s) pacote(s) de headers apropriado(s) para o(s) seu(s) kernel(s) instalado(s) (p.ex., [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) para [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[2]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) Quando o VirtualBox ou o kernel é atualizado, os módulos do kernel serão recompilados automaticamente graças ao hook do pacman de [DKMS](/index.php/DKMS "DKMS").
 
@@ -457,6 +457,15 @@ O armazenamento pode agora ser montado com:
 # mount -t ext4 -o rw,noatime,noexec,loop,offset=101888 <armazenamento.vdi> /mntpoint/
 
 ```
+
+Para discos VDI com mais partições, você também pode usar `losetup`:
+
+```
+# losetup -o $offData -Pf
+
+```
+
+Depois disso você deve encontrar as partições como `/dev/loop*` (por exemplo, `/dev/loop0p1`). Então, você pode montá-las como de costume (por exemplo, `mount mount /dev/loop0p1 /mnt/`).
 
 Você também pode usar o script [mount.vdi](https://github.com/pld-linux/VirtualBox/blob/master/mount.vdi), o qual você pode usar como (instale o script em `/usr/bin/`):
 

@@ -23,7 +23,7 @@ This article describes how to use persistent names for your [block devices](/ind
     *   [1.3 by-id and by-path](#by-id_and_by-path)
     *   [1.4 by-partlabel](#by-partlabel)
     *   [1.5 by-partuuid](#by-partuuid)
-    *   [1.6 Static device names with Udev](#Static_device_names_with_Udev)
+    *   [1.6 Static device names with udev](#Static_device_names_with_udev)
 *   [2 Using persistent naming](#Using_persistent_naming)
     *   [2.1 fstab](#fstab)
     *   [2.2 Kernel parameters](#Kernel_parameters)
@@ -300,7 +300,7 @@ d0d0d110-0a71-4ed6-936a-304969ea36af
 
 ```
 
-### Static device names with Udev
+### Static device names with udev
 
 See [udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
 
@@ -314,7 +314,7 @@ See the main article: [fstab#Identifying filesystems](/index.php/Fstab#Identifyi
 
 ### Kernel parameters
 
-To use persistent names in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), the following prerequisites must be met. On a standard installation following the installation guide both prerequisites are met.
+To use persistent names in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), the following prerequisites must be met. On a standard installation following the installation guide both prerequisites are met:
 
 *   You are using a [mkinitcpio](/index.php/Mkinitcpio#Configuration "Mkinitcpio") initial RAM disk image
 *   You have either udev or systemd hook enabled in `/etc/mkinitcpio.conf`
@@ -335,7 +335,7 @@ root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3
 
 ```
 
-Persistent device naming using [disk id](#by-id_and_by-path) and the `/dev` path format, in this example `wwn-0x60015ee0000b237f-part2` is the id of the root partition.
+Persistent device naming [using disk id](#by-id_and_by-path) and the `/dev` path format, in this example `wwn-0x60015ee0000b237f-part2` is the id of the root partition.
 
 ```
 root=/dev/disk/by-id/wwn-0x60015ee0000b237f-part2

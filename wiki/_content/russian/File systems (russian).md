@@ -71,7 +71,7 @@
 [xfs-self-describing-metadata.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt)
 
  |
-| [ZFS](/index.php/ZFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ZFS (Русский)") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) | Нет | N/A (порт [OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS")) |
+| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) | Нет | N/A (порт [OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS")) |
 
 **Примечание:** У ядра есть свой собственный драйвер NTFS (смотрите [ntfs.txt](https://www.kernel.org/doc/Documentation/filesystems/ntfs.txt)), но он имеет ограниченную поддержку на запись файлов.
 

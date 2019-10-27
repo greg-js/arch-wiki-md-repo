@@ -271,7 +271,7 @@ $ virsh pool-list --all
 
 #### Create a new pool using virsh
 
-If wanted to *add* a storage pool, here are examples of the command form, adding a directory, and adding a LVM volume:
+If one wanted to *add* a storage pool, here are examples of the command form, adding a directory, and adding a LVM volume:
 
 ```
 $ virsh pool-define-as name type [source-host] [source-path] [source-dev] [source-name] [<target>] [--source-format format]

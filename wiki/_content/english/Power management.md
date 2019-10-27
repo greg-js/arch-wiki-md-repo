@@ -122,6 +122,10 @@ These are the more popular scripts and tools designed to help power saving:
 
 	[https://github.com/mate-desktop/mate-power-manager](https://github.com/mate-desktop/mate-power-manager) || [mate-power-manager](https://www.archlinux.org/packages/?name=mate-power-manager)
 
+*   **powerkit** — Desktop independent power manager.
+
+	[https://github.com/rodlie/powerkit](https://github.com/rodlie/powerkit) || [powerkit](https://aur.archlinux.org/packages/powerkit/)
+
 *   **Xfce Power Manager** — Power manager for Xfce.
 
 	[https://docs.xfce.org/xfce/xfce4-power-manager/start](https://docs.xfce.org/xfce/xfce4-power-manager/start) || [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager)

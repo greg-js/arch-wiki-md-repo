@@ -1,11 +1,15 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Úvod](#.C3.9Avod)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Úvod](#Úvod)
 *   [2 Instalace](#Instalace)
-*   [3 Nastavení](#Nastaven.C3.AD)
-*   [4 Používání XAMPP](#Pou.C5.BE.C3.ADv.C3.A1n.C3.AD_XAMPP)
+*   [3 Nastavení](#Nastavení)
+*   [4 Používání XAMPP](#Používání_XAMPP)
 *   [5 Odinstalace XAMPP](#Odinstalace_XAMPP)
-*   [6 Soubory mimo defaultní adresář htdocs](#Soubory_mimo_defaultn.C3.AD_adres.C3.A1.C5.99_htdocs)
+*   [6 Soubory mimo defaultní adresář htdocs](#Soubory_mimo_defaultní_adresář_htdocs)
 *   [7 Odkazy](#Odkazy)
 
 # Úvod
@@ -46,7 +50,9 @@ Postupně budete poptávání pro zadání hesla pro přístup ke stránkám, u�
 
 # Používání XAMPP
 
-Pro ovládání XAMPP jsou tyto příkazy: `sudo /opt/lampp/lampp {start,stop,restart}` 
+Pro ovládání XAMPP jsou tyto příkazy:
+
+ `sudo /opt/lampp/lampp {start,stop,restart}` 
 
 # Odinstalace XAMPP
 
@@ -74,7 +80,10 @@ Alias /shortname /full_file_path
     </directory>
 
 ```
-Změny se projeví až po restartu: `/opt/lampp/lampp restart` 
+
+Změny se projeví až po restartu:
+
+ `/opt/lampp/lampp restart` 
 
 Toto Vám umožní přistupovat i k souborům z jiných adresářů, ve výše uvedeném příkladu se na nastavený adresář dostanete přes **localhost/shortname**.
 

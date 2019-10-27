@@ -15,7 +15,6 @@ Signed [[1]](https://www.kernel.org/doc/html/v5.4-rc2/admin-guide/module-signing
 *   [1 Overview](#Overview)
 *   [2 How to sign kernel modules using a custom kernel](#How_to_sign_kernel_modules_using_a_custom_kernel)
 *   [3 Summary of what needs to be done](#Summary_of_what_needs_to_be_done)
-    *   [3.1 Want](#Want)
 *   [4 Kernel Config](#Kernel_Config)
     *   [4.1 Boot Command Line](#Boot_Command_Line)
 *   [5 Tools needed](#Tools_needed)
@@ -64,59 +63,44 @@ The starting point is based on a custom kernel package as outlined in this artic
 
 ## Summary of what needs to be done
 
-### Want
+Each kernel build needs to made aware of the key/cert being used. Fresh keys are generated with each new kernel build.
 
-```
-       Each kernel build needs to made aware of the key/cert being used.
-       Fresh keys are generated with each new kernel build.
+A kernel config parameter is now used to make kernel aware of additional signing key: `CONFIG_SYSTEM_TRUSTED_KEYS="/path/to/oot-signing_keys.pem"`.
 
-       A kernel config parameter is now used to make kernel aware of additional signing key:
-       CONFIG_SYSTEM_TRUSTED_KEYS="/path/to/oot-signing_keys.pem"
-
-       Keys and signing tools will be stored in current module build dir. 
-       Nothing needs to be done to clean this as removal is handled by the standard module cleanup.
-       Certs are thus installed in /usr/lib/modules/<kernel-vers>-<build>/certs-local
-
-```
+Keys and signing tools will be stored in current module build directory. Nothing needs to be done to clean this as removal is handled by the standard module cleanup. Certs are thus installed in `/usr/lib/modules/<kernel-vers>-<build>/certs-local`
 
 ## Kernel Config
 
-**Note:** CONFIG_SYSTEM_TRUSTED_KEYS will be added automatically as explained below.
-```
-       In addition the following config options should be set by either manually editing the 'config' file, or via:
- `% make menuconfig:` 
-```
-in the linux 'src' area and subsequently copying the updated '.config' file back to the build file 'config'
+**Note:** `CONFIG_SYSTEM_TRUSTED_KEYS` will be added automatically as explained below. In addition the following config options should be set by either manually editing the 'config' file, or via `make menuconfig` in the linux 'src' area and subsequently copying the updated '.config' file back to the build file 'config'.
 
 ```
-       Enable Loadable module suppot --->
-       Module Signature Verification           -  activate
-               CONFIG_MODULE_SIG=y
+Enable Loadable module suppot --->
+Module Signature Verification           -  activate
+        CONFIG_MODULE_SIG=y
 
-       Require modules to be validly signed -> leave off
-               CONFIG_MODULE_SIG_FORCE=n
+Require modules to be validly signed -> leave off
+        CONFIG_MODULE_SIG_FORCE=n
 
-               This allows the decision to enforce verified modules only as boot command line.
-               If you're comfortable all is working then by all means change this to 'y'
-               Command line version of this is : module.sig_enforce=1
+        This allows the decision to enforce verified modules only as boot command line.
+        If you're comfortable all is working then by all means change this to 'y'
+        Command line version of this is : module.sig_enforce=1
 
-       Automatically sign all modules  - activate
-       Which hash algorithm    -> SHA-512
+Automatically sign all modules  - activate
+Which hash algorithm    -> SHA-512
 
-       Compress modules on installation        - activate
-               Compression algorithm (XZ)
+Compress modules on installation        - activate
+        Compression algorithm (XZ)
 
-       Allow loading of modules with missing namespace imports - set to no
+Allow loading of modules with missing namespace imports - set to no
 
 ```
 
 ### Boot Command Line
 
-```
-       After you are comfortable things are working well you can enable the
-       boot command linr option to require that the kernel only permit verified modules to be loaded:
+After you are comfortable things are working well you can enable the boot command line option to require that the kernel only permit verified modules to be loaded:
 
-       `module.sig_enforce=1`
+```
+module.sig_enforce=1
 
 ```
 
@@ -130,20 +114,13 @@ in the linux 'src' area and subsequently copying the updated '.config' file back
        `% mkdir certs-local`
 
        This directory will provide the tools to create the keys, as well as signing kernel modules.
-
        Put the 4 files into certs-local:
 
-```
+               fix_config.sh
+               x509.oot.genkey
+               genkeys.sh
+               sign_manual.sh
 
-```
-                fix_config.sh
-                x509.oot.genkey
-                genkeys.sh
-                sign_manual.sh
-
-```
-
-```
        The files genkeys.sh and its config x509.oot.genkey are used to create key pairs.
        the file fix_config.sh is run after that to provide the kernel with the key info by updating
        the config file used to build the kernel.
@@ -171,18 +148,12 @@ in the linux 'src' area and subsequently copying the updated '.config' file back
        modules. As explained, below - once this is installed - all that is needed to have dkms
        automatically sign modules is to make a soft link:
 
-```
+       % cd /etc/dkms
+       % ln -s kernel-sign.conf <package-name>
 
-```
-        % cd /etc/dkms
-        % ln -s kernel-sign.conf <package-name>
+       e.g.
+       % ln -s kernel-sign.conf virtualbox
 
-        e.g.
-        % ln -s kernel-sign.conf virtualbox
-
-```
-
-```
        The link creation can easily be added to an arch package to simplify further if desired.
 
 ```
@@ -196,19 +167,18 @@ We need to make changes to kernel build as follows:
 **Note:** Add the following to the top of the prepare() function:
 
 ```
+       prepare() {
 
-        prepare() {
+           msg2 "Rebuilding local signing key..."
+           cd ../certs-local
+           ./genkeys.sh 
 
-            msg2 "Rebuilding local signing key..."
-            cd ../certs-local
-            ./genkeys.sh 
+           msg2 "Updating kernel config with new key..."
+           ./fix_config.sh ../config
+           cd ../src
 
-            msg2 "Updating kernel config with new key..."
-            ./fix_config.sh ../config
-            cd ../src
-
-            ... 
-        }
+           ... 
+       }
 
 ```
 
@@ -217,31 +187,32 @@ We need to make changes to kernel build as follows:
 **Note:** Add the following to the bottom of the _package-headers() function:
 
 ```
-_package-headers() {
+        _package-headers() {
 
-        ...
+       ...
 
-          #
-          # Out of Tree Module signing
-          # This is run in the kernel source / build directory
-          #
-          msg2 "Local Signing certs for out of tree modules..."
+         #
+         # Out of Tree Module signing
+         # This is run in the kernel source / build directory
+         #
+         msg2 "Local Signing certs for out of tree modules..."
 
-          certs_local_src="../../certs-local" 
-          key_dir=$(<${certs_local_src}/current_key_dir)
+         certs_local_src="../../certs-local" 
+         key_dir=$(<${certs_local_src}/current_key_dir)
 
-          certs_local_dst="${builddir}/certs-local"
-          signer="sign_manual.sh"
-          mkdir -p ${certs_local_dst}
-          rsync -a $certs_local_src/{current,$key_dir,$signer} $certs_local_dst/
+         certs_local_dst="${builddir}/certs-local"
+         signer="sign_manual.sh"
+         mkdir -p ${certs_local_dst}
+         rsync -a $certs_local_src/{current,$key_dir,$signer} $certs_local_dst/
 
-          # dkms tools
-          dkms_src="$certs_local_src/dkms"
-          dkms_dst="${pkgdir}/etc/dkms"
-          mkdir -p $dkms_dst
+         # dkms tools
+         dkms_src="$certs_local_src/dkms"
+         dkms_dst="${pkgdir}/etc/dkms"
+         mkdir -p $dkms_dst
 
-          rsync -a $dkms_src/{kernel-sign.conf,kernel-sign.sh} $dkms_dst/
-    }
+         rsync -a $dkms_src/{kernel-sign.conf,kernel-sign.sh} $dkms_dst/
+   }
+
 ```
 
 ## Files Required

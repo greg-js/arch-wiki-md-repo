@@ -40,3 +40,5 @@ Third step of the toolchain, also it needs to be rebuilt twice on new glibc rele
 Provided by [gcc](https://www.archlinux.org/packages/?name=gcc).
 
 Last (or first) step of the toolchain, and vital to building its entirety. Its update triggers a binutils and glibc rebuild, as well as other packages, like [linux](https://www.archlinux.org/packages/?name=linux) itself and [libtool](https://www.archlinux.org/packages/?name=libtool)
+
+The kernel has a strict check on gcc configure flags. So, if any flags are changed between package releases, even if it is the same gcc version, a kernel rebuild is required.

@@ -1,5 +1,6 @@
 Related articles
 
+*   [Swap](/index.php/Swap "Swap")
 *   [Improving performance](/index.php/Improving_performance "Improving performance")
 
 Article on utilizing video memory for system swap.
@@ -20,7 +21,9 @@ Article on utilizing video memory for system swap.
     *   [1.6 See also](#See_also)
 *   [2 Method Two](#Method_Two)
     *   [2.1 Setup](#Setup_2)
-    *   [2.2 See also](#See_also_2)
+    *   [2.2 Troubleshooting](#Troubleshooting_2)
+        *   [2.2.1 swapon: /tmp/vram/swapfile: skipping - it appears to have holes.](#swapon:_/tmp/vram/swapfile:_skipping_-_it_appears_to_have_holes.)
+    *   [2.3 See also](#See_also_2)
 
 ## Method One
 
@@ -138,29 +141,47 @@ The following command may help you getting the used swap in the different spaces
 
 ## Method Two
 
+This method works on hardware with OpenCL support using a [FUSE](/index.php/FUSE "FUSE") filesystem backing a swapfile. See [GPGPU](/index.php/GPGPU "GPGPU") for more information.
+
 ### Setup
 
-1.At the first step you have to install the [vramfs-git](https://aur.archlinux.org/packages/vramfs-git/) package from AUR.
+First, install [vramfs-git](https://aur.archlinux.org/packages/vramfs-git/). Then, create an empty directory as mount point (e.g `/tmp/vram`).
 
-2.Then you have to create an empty directory as mount point. e.g /tmp/vram.
-
-3.Now execute the following commands as sudo.
+Now run the following commands as root to set up the *vramfs* and a swapfile.
 
 ```
-vramfs /tmp/vram 256MB -f
-dd if=/dev/zero of=/tmp/vram/swapfile bs=1M count=200
+vramfs /tmp/vram 256MB -f # Substitute 256M with your target vramfs size
+dd if=/dev/zero of=/tmp/vram/swapfile bs=1M count=200 # Substitute 200 with your target swapspace size in MB
 chmod 600 /tmp/vram/swapfile
 mkswap /tmp/vram/swapfile
 swapon /tmp/vram/swapfile
 
 ```
 
-4.Your swap now should be ready. Replace "256MB" and "200" with your own values.
+Your [Swap](/index.php/Swap "Swap") should now be ready. Run `swapon` to check.
 
-**Note:** You need to repeat the above commands after each reboot.
+See [Swap#Swap file](/index.php/Swap#Swap_file "Swap") for more information.
 
-**Tip:** You can use the /tmp/vram as temp storage.
+**Note:** This is not persistent and will be gone after a system reboot.
+
+**Tip:** You can also use `/tmp/vram` as temporary storage, much like a [Tmpfs](/index.php/Tmpfs "Tmpfs").
+
+### Troubleshooting
+
+#### swapon: /tmp/vram/swapfile: skipping - it appears to have holes.
+
+The swapfile created is not contiguous. A loop device can be set up to work around this issue.
+
+```
+cd /tmp/vram
+LOOPDEV=$(losetup -f)
+truncate -s 4G swapfile # replace 4G with target swapspace size, has to be smaller than the allocated vramfs
+losetup $LOOPDEV swapfile
+mkswap $LOOPDEV
+swapon $LOOPDEV
+
+```
 
 ### See also
 
-*   [Github Repository](https://github.com/Overv/vramfs)
+*   [*vramfs* Github Repository](https://github.com/Overv/vramfs)

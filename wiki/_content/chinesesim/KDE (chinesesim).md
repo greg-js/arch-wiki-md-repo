@@ -131,7 +131,7 @@ Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD
 
 ### 从控制台启动
 
-若要使用 "[xinit/startx](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)")" 启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。若要在登录的时候开启 Xorg 请参阅[在启动时自动启用 X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")。若要从终端启动 Wayland 会话, 运行 `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`。[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland%7C在控制台启动Wayland会话)
+若要使用 "[xinit/startx](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)")" 启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startplasma-x11`。若要在登录的时候开启 Xorg 请参阅[在启动时自动启用 X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")。若要从终端启动 Wayland 会话, 运行 `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`。[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland%7C在控制台启动Wayland会话)
 
 ## 配置
 

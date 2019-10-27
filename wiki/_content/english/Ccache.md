@@ -73,8 +73,8 @@ You may want to set this line as an [environment variable](/index.php/Environmen
 Since [colorgcc](https://www.archlinux.org/packages/?name=colorgcc) is also a compiler wrapper, some care needs to be taken to ensure each wrapper is called in the correct sequence.
 
 ```
-export PATH="/usr/lib/colorgcc/bin/:$PATH"    # As per usual colorgcc installation, leave unchanged (don't add ccache)
-export CCACHE_PATH="/usr/bin"                 # Tell ccache to only use compilers here
+export PATH="/usr/lib/colorgcc/bin/:$PATH"    # As per usual colorgcc installation, leave unchanged (don't add *ccache*)
+export CCACHE_PATH="/usr/bin"                 # Tell *ccache* to only use compilers here
 
 ```
 
@@ -92,24 +92,24 @@ gcj:/usr/bin/gcj
 
 ```
 
-Newer versions of ccache will always enable color for GCC when `GCC_COLORS` is set. Color is enabled for Clang by default. If the output is not a TTY, ccache will ask the compiler to generate color, storing them in the cache, but stripping them from the output. There remains some issue in unifying [-fdiagnostics-color](https://github.com/ccache/ccache/issues/224).
+Newer versions of *ccache* will always enable color for GCC when `GCC_COLORS` is set. Color is enabled for Clang by default. If the output is not a TTY, *ccache* will ask the compiler to generate color, storing them in the cache, but stripping them from the output. There remains some issue in unifying [-fdiagnostics-color](https://github.com/ccache/ccache/issues/224).
 
 ## Misc
 
 ### Sloppiness
 
-Ccache by default use a very conservative comparison that minimizes both false positives and, for some projects, true positives. Some of the comparisions are deemed useless and can be changed:
+*ccache* by default use a very conservative comparison that minimizes both false positives and, for some projects, true positives. Some of the comparisions are deemed useless and can be changed:
 
 ```
  $ ccache --set-config=sloppiness=file_macro,locale,time_macros
 
 ```
 
-This tells ccache to ignore the `__FILE__` and time-related macros, which usually invalidate the cache and are considered harmful in reproducible builds anyways. Locale differences are also ignored; ccache cares about it mainly because it determines the language of diagnostic messages.
+This tells *ccache* to ignore the `__FILE__` and time-related macros, which usually invalidate the cache and are considered harmful in reproducible builds anyways. Locale differences are also ignored; *ccache* cares about it mainly because it determines the language of diagnostic messages.
 
 The `CCACHE_SLOPPINESS` environment variable can be exported to override any pre-existing sloppiness settings.
 
-Ccache also by default caches the current directory being used for each build, which means cache misses for build pipelines that use a new, random temporary directory each time it's called. See the [Compiling in different directories](https://ccache.dev/manual/latest.html#_compiling_in_different_directories) section of the ccache manual.
+*ccache* also by default caches the current directory being used for each build, which means cache misses for build pipelines that use a new, random temporary directory each time it's called. See the [Compiling in different directories](https://ccache.dev/manual/latest.html#_compiling_in_different_directories) section of the *ccache* manual.
 
 ### Change the cache directory
 
@@ -176,7 +176,7 @@ Then *ccache* can be configured for the chroot in the same way as explained abov
 
 *ccache* is effective **only** when compiling **exactly identical** sources. (More exactly, preprocessed sources.)
 
-In the Gentoo Linux community, a source based distro, *ccache* has been notorious for its placebo effect, compilation failure (due to undesirable leftover objects), etc. Gentoo requires to turn off *ccache* before reporting compilation failure. See the [ccache section](https://wiki.gentoo.org/wiki/Handbook:Parts/Working/Features#Caching_compilation_objects) in Gentoo Linux Handbook, and [the blog post](https://flameeyes.blog/2008/06/21/debunking-ccache-myths/) titled "Debunking ccache myths" by Diego Pettenò, an ex-Gentoo developer.
+In the Gentoo Linux community, a source based distro, *ccache* has been notorious for its placebo effect, compilation failure (due to undesirable leftover objects), etc. Gentoo requires to turn off *ccache* before reporting compilation failure. See the [*ccache* section](https://wiki.gentoo.org/wiki/Handbook:Parts/Working/Features#Caching_compilation_objects) in Gentoo Linux Handbook, and [the blog post](https://flameeyes.blog/2008/06/21/debunking-ccache-myths/) titled "Debunking ccache myths" by Diego Pettenò, an ex-Gentoo developer.
 
 ## See also
 

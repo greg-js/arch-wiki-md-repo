@@ -49,8 +49,8 @@ This page uses a table to display the correspondence of [package management](htt
 | Display files provided by a remote package | `pacman -Fl` | `dnf repoquery -l` or `repoquery -l` (from package yum-utils) | `apt-file list` | `pfl` |
 | Query the package which provides FILE | `pacman -Qo` | `rpm -qf` (installed only) or `dnf provides` (everything) or `repoquery -f` (from package yum-utils) | `dpkg -S` or `dlocate` | `zypper search -f` | `equery belongs` or `qfile` |
 | List the files that the package holds. Again, this functionality can be mimicked by other more complex commands. | `pacman -Ql` or `pacman -Fl` | `dnf repoquery -l` | `dpkg-query -L` | `rpm -ql` | `equery files` or `qlist` |
-| Displays packages which provide the given exp. aka reverse provides. Mainly a shortcut to search a specific field. Other tools might offer this functionality through the search command. | `pacman -Fo` | `dnf provides` | `apt-file search` | `zypper what-provides` or `zypper wp` | `equery belongs` (only installed packages) or `pfl` |
-| Search all packages to find the one which holds the specified file. *auto-apt* is using this functionality. | `pacman -Fs` | `dnf provides` | `apt-file search` | `zypper search -f` | `equery belongs` or `qfile` |
+| Displays packages which provide the given exp. aka reverse provides. Mainly a shortcut to search a specific field. Other tools might offer this functionality through the search command. | `pacman -F` | `dnf provides` | `apt-file search` | `zypper what-provides` or `zypper wp` | `equery belongs` (only installed packages) or `pfl` |
+| Search all packages to find the one which holds the specified file. *auto-apt* is using this functionality. | `pacman -F` | `dnf provides` | `apt-file search` | `zypper search -f` | `equery belongs` or `qfile` |
 | Show the changelog of a package | `pacman -Qc` | `rpm -q --changelog` | `apt-get changelog` | `rpm -q --changelog` | `equery changes -f` |
 
 ## Querying package lists

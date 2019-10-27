@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Pacnew_and_Pacsave_Files](/index.php/Pacnew_and_Pacsave_Files "Pacnew and Pacsave Files") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-18，点击[这里](https://wiki.archlinux.org/index.php?title=Pacnew_and_Pacsave_Files&diff=0&oldid=487323)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-26，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman%2FPacnew+and+Pacsave&diff=0&oldid=582907)可以查看翻译后英文页面的改动。
 
 在使用 pacman 移除一个带有配置文档的软件包时，pacman 通常会将配置文档复制为一个后缀名为 .pacsave 的备份文档。
 
@@ -16,7 +16,9 @@
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
 *   [4 定位 .pac* 文件](#定位_.pac*_文件)
-*   [5 .管理 .pacnew 文件](#.管理_.pacnew_文件)
+*   [5 .管理 .pac* 文件](#.管理_.pac*_文件)
+    *   [5.1 pacdiff](#pacdiff)
+    *   [5.2 三方工具](#三方工具)
 *   [6 参阅](#参阅)
 
 ## 为什么创建了这样的文件
@@ -45,6 +47,8 @@ warning: /etc/pam.d/usermod saved as /etc/pam.d/usermod.pacsave
 backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 
 ```
+
+要阻止任何软件包覆盖一个文件，请阅读 [Pacman#Skip file from being upgraded](/index.php/Pacman#Skip_file_from_being_upgraded "Pacman").
 
 ## 类型说明
 
@@ -107,10 +111,7 @@ $ find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
 
 然后:
 
-```
-$ locate -e --regex "\.pac(new|save)$"
-
-```
+ `$ locate --existing --regex "\.pac(new|save)$"` 
 
 或者使用pacman日志来找到它们：
 
@@ -121,17 +122,21 @@ $ egrep "pac(new|save)" /var/log/pacman.log
 
 注意：日志不会记录文件系统里现在有哪些文件，也不会记录哪些文件已经被移除。
 
-## .管理 .pacnew 文件
+## .管理 .pac* 文件
+
+### pacdiff
 
 Pacman 包含了 *pacdiff* 工具管理 pacnew/pacsave 文件。这个工具会搜索所有的 `pacnew` 和 `pacsave` 文件并询问要执行的操作。默认使用 [vimdiff](/index.php/Vim#Merging_files "Vim") 工具，可以通过 `DIFFPROG=your_editor pacdiff` 指定要使用的差异比较工具。参考 [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities").
 
+### 三方工具
+
 下面一些 [AUR](/index.php/AUR "AUR") 三方工具可以自动处理这些文件：
 
-*   **[Dotpac](/index.php/Dotpac "Dotpac")** — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
+*   **dotpac** — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
 
 	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
 
-*   **etc-update** — Arch port of Gentoo's *etc-update* utility, providing a simple CLI to view, merge and interactively edit changes. Trivial changes (such as comments) can be merged automatically.
+*   **etc-update** — *Gentoo*'s utility, compatible with other distributions including Arch. It provides a simple CLI to view, merge and interactively edit changes. Trivial changes, such as comments, can be merged automatically.
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
@@ -146,6 +151,10 @@ Pacman 包含了 *pacdiff* 工具管理 pacnew/pacsave 文件。这个工具会�
 *   **pacnews-git** — A simple script aimed at finding all *.pacnew* files, then editing them with [vimdiff](/index.php/Vim#Merging_files "Vim").
 
 	[https://github.com/pbrisbin/scripts/blob/master/pacnews](https://github.com/pbrisbin/scripts/blob/master/pacnews) || [pacnews-git](https://aur.archlinux.org/packages/pacnews-git/)
+
+*   **pacfiles-mode** — A package for [Emacs](/index.php/Emacs "Emacs") to manage and merge *.pacnew* files, available in [melpa](https://melpa.org/#/pacfiles-mode).
+
+	[https://github.com/UndeadKernel/pacfiles-mode](https://github.com/UndeadKernel/pacfiles-mode) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## 参阅
 

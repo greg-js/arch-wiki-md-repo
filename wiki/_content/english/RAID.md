@@ -45,6 +45,8 @@ This article explains how to create/manage a software RAID array using mdadm.
     *   [5.1 Update configuration file](#Update_configuration_file_2)
     *   [5.2 Configure mkinitcpio](#Configure_mkinitcpio)
     *   [5.3 Configure the boot loader](#Configure_the_boot_loader)
+        *   [5.3.1 Root device](#Root_device)
+        *   [5.3.2 RAID0 layout](#RAID0_layout)
 *   [6 RAID Maintenance](#RAID_Maintenance)
     *   [6.1 Scrubbing](#Scrubbing)
         *   [6.1.1 General notes on scrubbing](#General_notes_on_scrubbing)
@@ -461,6 +463,8 @@ See also [mkinitcpio#Using RAID](/index.php/Mkinitcpio#Using_RAID "Mkinitcpio").
 
 ### Configure the boot loader
 
+#### Root device
+
 Point the `root` parameter to the mapped device. E.g.:
 
 ```
@@ -476,6 +480,54 @@ root=LABEL=Root_Label
 ```
 
 See also [GRUB#RAID](/index.php/GRUB#RAID "GRUB").
+
+#### RAID0 layout
+
+**Note:** This also affects existing mdraid RAID0 users that upgrade from an older version of the Linux kernel to 5.3.4 or newer.
+
+Since version 5.3.4 of the Linux kernel, you need to explicitly tell the kernel which RAID0 layout should be used: RAID0_ORIG_LAYOUT (`1`) or RAID0_ALT_MULTIZONE_LAYOUT (`2`).[[1]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c84a1372df929033cb1a0441fb57bd3932f39ac9) You can do this by providing the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") as follows:
+
+```
+raid0.default_layout=2
+
+```
+
+The correct value depends upon the kernel version that was used to create the raid array: use `1` if created using kernel 3.14 or earlier, use `2` if using a more recent version of the kernel. One way to check this is to look at the creation time of the raid array:
+
+ `mdadm --detail /dev/md1` 
+```
+/dev/md1:
+           Version : 1.2
+     Creation Time : Thu Sep 24 10:17:41 2015
+        Raid Level : raid0
+        Array Size : 975859712 (930.65 GiB 999.28 GB)
+      Raid Devices : 3
+     Total Devices : 3
+       Persistence : Superblock is persistent
+
+       Update Time : Thu Sep 24 10:17:41 2015
+             State : clean
+    Active Devices : 3
+   Working Devices : 3
+    Failed Devices : 0
+     Spare Devices : 0
+
+        Chunk Size : 512K
+
+Consistency Policy : none
+
+              Name : archiso:root
+              UUID : 028de718:20a81234:4db79a2c:e94fd560
+            Events : 0
+
+    Number   Major   Minor   RaidDevice State
+       0     259        2        0      active sync   /dev/nvme0n1p1
+       1     259        6        1      active sync   /dev/nvme2n1p1
+       2     259        5        2      active sync   /dev/nvme1n1p2
+
+```
+
+Here we can see that this raid array was created on September 24, 2015\. The release date of Linux Kernel 3.14 was March 30, 2014, and as such this raid array is most likely created using a multizone layout (`2`).
 
 ## RAID Maintenance
 

@@ -26,7 +26,7 @@ If the host system runs Arch Linux, this can be achieved by simply installing [a
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Backup and Preparation](#Backup_and_Preparation)
+*   [1 Backup and preparation](#Backup_and_preparation)
 *   [2 From a host running Arch Linux](#From_a_host_running_Arch_Linux)
     *   [2.1 Create a new Arch installation](#Create_a_new_Arch_installation)
     *   [2.2 Create a copy of an existing Arch installation](#Create_a_copy_of_an_existing_Arch_installation)
@@ -49,7 +49,7 @@ If the host system runs Arch Linux, this can be achieved by simply installing [a
     *   [5.1 Set old swap partition as new root partition](#Set_old_swap_partition_as_new_root_partition)
     *   [5.2 Installation](#Installation)
 
-## Backup and Preparation
+## Backup and preparation
 
 Backup all your data including mails, webservers, etc. Have all information at your fingertips. Preserve all your server configurations, hostnames, etc.
 
@@ -76,9 +76,9 @@ Follow [Installation guide#Installation](/index.php/Installation_guide#Installat
 
 In the procedure, [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide") can be skipped since the host should already have a correct mirrorlist.
 
-**Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks") or using *pacstrap'*s `-c` option.
+**Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks") or using *pacstrap*'s `-c` option.
 
-**Tip:** When the grub boot-loader is used, the `grub-mkconfig` may detect devices incorrectly. This will result in `Error:no such device` when trying to boot from the stick. To solve this problem, from the host running Arch Linux, mount the newly installed partitions, `arch-chroot` to the new partition, then install and configure grub. The last step may require disabling `lvmetad` from `/etc/lvm/lvm.conf` by setting `use_lvmetad=0`.
+**Tip:** When the grub boot-loader is used, the `grub-mkconfig` may detect devices incorrectly. This will result in `Error:no such device` when trying to boot from the stick. To solve this problem, from the host running Arch Linux, mount the newly installed partitions, *arch-chroot* to the new partition, then install and configure grub. The last step may require disabling *lvmetad* from `/etc/lvm/lvm.conf` by setting `use_lvmetad=0`.
 
 ### Create a copy of an existing Arch installation
 
@@ -169,7 +169,10 @@ It is possible to mount the root image of the latest Arch Linux installation med
 
 *   To unsquash the root image, run
 
- `# unsquashfs airootfs.sfs` 
+```
+# unsquashfs airootfs.sfs
+
+```
 
 *   Before [chrooting](/index.php/Change_root "Change root") to it, we need to set up some mount points and copy the resolv.conf for networking.
 
@@ -185,7 +188,10 @@ It is possible to mount the root image of the latest Arch Linux installation med
 
 *   Now, everything is prepared to chroot into the newly installed Arch environment
 
- `# chroot squashfs-root bash` 
+```
+# chroot squashfs-root bash
+
+```
 
 ### Using a chroot environment
 
@@ -210,7 +216,7 @@ After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirror
 **Note:**
 
 *   As there is no any text editor yet, you need to exit arch-chroot and edit mirrorlist using host's text editor.
-*   When you try to install packages with pacman, you could get `*error: could not determine cachedir mount point /var/cache/pacman/pkg*`. To workaround it, you could run `mount --bind <directory-to-livecd-or-bootstrap> <directory-to-livecd-or-bootstrap>` before chrooting. See [FS#46169](https://bugs.archlinux.org/task/46169).
+*   When you try to install packages with pacman, you could get `*error: could not determine cachedir mount point /var/cache/pacman/pkg*`. To workaround it, you could run `mount --bind *directory-to-livecd-or-bootstrap* *directory-to-livecd-or-bootstrap*` before chrooting. See [FS#46169](https://bugs.archlinux.org/task/46169).
 
 ### Installation tips
 
@@ -222,7 +228,7 @@ Some host systems or configurations may require certain extra steps. See the sec
 
 ###### /dev/shm
 
-On some Debian-based host systems, `pacstrap` may produce the following error:
+On some Debian-based host systems, *pacstrap* may produce the following error:
 
  `# pacstrap /mnt base` 
 ```
@@ -267,9 +273,15 @@ The solution for *pacstrap* is to manually execute its [various tasks](https://p
 # pacman -r "$newroot" --cachedir="$newroot/var/cache/pacman/pkg" -Sy base base-devel ... ## add the packages you want
 # cp -a /etc/pacman.d/gnupg "$newroot/etc/pacman.d/"       ## copy keyring
 # cp -a /etc/pacman.d/mirrorlist "$newroot/etc/pacman.d/"  ## copy mirrorlist
+
 ```
 
-Instead of using `arch-chroot` for [Installation guide#Chroot](/index.php/Installation_guide#Chroot "Installation guide"), simply use `chroot "$newroot"`.
+Instead of using *arch-chroot* for [Installation guide#Chroot](/index.php/Installation_guide#Chroot "Installation guide"), simply use:
+
+```
+# chroot "$newroot"
+
+```
 
 ###### lvmetad
 
@@ -323,41 +335,32 @@ This will trigger later an error on boot in the initrd stage. Therefore, you hav
 
 ##### Fedora-based host
 
-On Fedora based hosts and live USBs you may encounter problems when using `genfstab` to generate your [fstab](/index.php/Fstab "Fstab"). Remove duplicate entries and the "seclabel" option where it appears, as this is Fedora-specific and will keep your system from booting normally.
+On Fedora based hosts and live USBs you may encounter problems when using *genfstab* to generate your [fstab](/index.php/Fstab "Fstab"). Remove duplicate entries and the "seclabel" option where it appears, as this is Fedora-specific and will keep your system from booting normally.
 
 ## Things to check before you reboot
 
-Before rebooting, chroot into the newly-installed system.
+Before rebooting, doublecheck a few details in your installation to achieve a successful installation. To do so, first chroot into the newly-installed system, and then:
 
-Make sure to create a user with password, so you can login via ssh. Root login is disabled by default since OpenSSH-7.1p2\.
-
-Set a root password so that you can switch to root via su later:
-
-```
-# passwd
-
-```
-
-Install [ssh](/index.php/Ssh "Ssh") and [enable](/index.php/Enable "Enable") it to start automatically at boot.
-
-Configure the [network](/index.php/Network "Network") connection to start automatically at boot.
-
-Set up a [boot loader](/index.php/Boot_loader "Boot loader") and configure it to use the swap partition you appropriated earlier as the root partition. You might want to configure your bootloader to be able to boot into your old system; it is helpful to re-use the server's existing /boot partition in the new system for this purpose.
+*   [create a user with password](/index.php/Users_and_groups#User_management "Users and groups"), so you can login via *ssh*. This is critical since root login is disabled by default since OpenSSH-7.1p2.
+*   [set a root password](/index.php/Users_and_groups#User_management "Users and groups") so that you can switch to root via *su* later
+*   [install](/index.php/Install "Install") a [ssh](/index.php/Ssh "Ssh") solution and [enable](/index.php/Enable "Enable") its server instance to start automatically at boot.
+*   set up your [network configuration](/index.php/Network_configuration "Network configuration") in order to have a connection started automatically at boot.
+*   set up a [boot loader](/index.php/Boot_loader "Boot loader") and configure it to use the swap partition you appropriated earlier as the root partition. You might want to configure your bootloader to be able to boot into your old system; it is helpful to re-use the server's existing `/boot` partition in the new system for this purpose.
 
 ## Replacing the existing system without a LiveCD
 
-Find ~700MB of free space somewhere on the disk, e.g. by partitioning a swap partition. You can disable the swap partition and set up your system there.
+Find ~700 MB of free space somewhere on the disk, e.g. by partitioning a swap partition. You can disable the swap partition and set up your system there.
 
 ### Set old swap partition as new root partition
 
-Check `cfdisk`, `/proc/swaps` or `/etc/fstab` to find your swap partition. Assuming your hard drive is located on sdaX (X will be a number).
+Check `cfdisk`, `/proc/swaps` or `/etc/fstab` to find your swap partition. Assuming your hard drive is located on `sda*X*` (`*X*` will be a number).
 
 Do the following:
 
 Disable the swap space:
 
 ```
-# swapoff /dev/sdaX
+# swapoff /dev/sda*X*
 
 ```
 
@@ -365,8 +368,8 @@ Create a filesystem on it
 
 ```
 # fdisk /dev/sda
-(set /dev/sdaX ID field to "Linux" - Hex 83)
-# mke2fs -j /dev/sdaX
+(set /dev/sda*X* ID field to "Linux" - Hex 83)
+# mke2fs -j /dev/sda*X*
 
 ```
 
@@ -380,12 +383,12 @@ Create a directory to mount it in
 Finally, mount the new directory for installing the intermediate system.
 
 ```
-# mount -t ext4 /dev/sdaX /mnt/newsys
+# mount -t ext4 /dev/sda*X* /mnt/newsys
 
 ```
 
 ### Installation
 
-If less than 700MB are available, examine the packages in the group base, and select only those required to get a system with internet connection up and running in the temporary partition. This will mean explicitly specifying individual packages to pacstrap, as well as passing it the -c option, to get packages downloaded to the host system to avoid filling up valuable space.
+[Install essentials packages](/index.php/Installation_guide#Install_essential_packages "Installation guide") and any other package required to get a system with internet connection up and running in the temporary partition, being careful with the limit of ~700 MB space. When specifying packages to be installed with *pacstrap*, consider adding the `-c` flag to avoid filling up valuable space by downloading packages to the host system.
 
-Once the new Arch Linux system is installed, reboot into the newly created system, and [rsync the entire system](/index.php/Rsync#Full_system_backup "Rsync") to the primary partition. Fix the bootloader configuration before rebooting.
+Once the new Arch Linux system is installed, fix the bootloader configuration, then reboot into the newly created system, and [rsync the entire system](/index.php/Rsync#Full_system_backup "Rsync") to the primary partition.

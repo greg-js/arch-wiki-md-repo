@@ -12,17 +12,21 @@ Linux 内核的 KMS 实现支持在 framebuffer 中使用原生分辨率和即�
 
 **注意:** [NVIDIA](/index.php/NVIDIA "NVIDIA") 闭源驱动从 364.12 开始也实现了 KMS，但是没有利用 linux 内核的实现，缺少高分辨率终端的 fbdev 驱动。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 背景](#.E8.83.8C.E6.99.AF)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-    *   [2.1 KMS 晚启动](#KMS_.E6.99.9A.E5.90.AF.E5.8A.A8)
-    *   [2.2 KMS 早启动](#KMS_.E6.97.A9.E5.90.AF.E5.8A.A8)
-*   [3 问题解决](#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [3.1 字体太小](#.E5.AD.97.E4.BD.93.E5.A4.AA.E5.B0.8F)
-    *   [3.2 启动错误信息](#.E5.90.AF.E5.8A.A8.E9.94.99.E8.AF.AF.E4.BF.A1.E6.81.AF)
-*   [4 强设模式和 EDID](#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F.E5.92.8C_EDID)
-*   [5 禁用 KMS](#.E7.A6.81.E7.94.A8_KMS)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 背景](#背景)
+*   [2 安装](#安装)
+    *   [2.1 KMS 晚启动](#KMS_晚启动)
+    *   [2.2 KMS 早启动](#KMS_早启动)
+*   [3 问题解决](#问题解决)
+    *   [3.1 字体太小](#字体太小)
+    *   [3.2 启动错误信息](#启动错误信息)
+*   [4 强设模式和 EDID](#强设模式和_EDID)
+*   [5 禁用 KMS](#禁用_KMS)
 
 ## 背景
 
@@ -48,7 +52,7 @@ Linux 内核的 KMS 实现支持在 framebuffer 中使用原生分辨率和即�
 
 ### KMS 早启动
 
-**提示：** 如果你有分辨率方面的问题，可以参考一下 [强设模式](#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F.E5.92.8C_EDID) ，也许会有帮助。
+**提示：** 如果你有分辨率方面的问题，可以参考一下 [强设模式](#强设模式和_EDID) ，也许会有帮助。
 
 KMS通常是在[initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process")之后开始初始化，但是你也可以在initramfs的阶段启用KMS:
 
@@ -77,7 +81,7 @@ MODULES=(**i915**)
 
 ### 字体太小
 
-[Fonts (简体中文)#终端字体](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.BB.88.E7.AB.AF.E5.AD.97.E4.BD.93 "Fonts (简体中文)")介绍了如何在终端中使用大字体。软件仓库中的 ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) 字体提供了很多字号，比如更大一些的 `ter-132n`。 或者，可以[#禁用 KMS](#.E7.A6.81.E7.94.A8_KMS) 以切换为更低的分辨率，使得字体外观显得更大一些。
+[Fonts (简体中文)#终端字体](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#终端字体 "Fonts (简体中文)")介绍了如何在终端中使用大字体。软件仓库中的 ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) 字体提供了很多字号，比如更大一些的 `ter-132n`。 或者，可以[#禁用 KMS](#禁用_KMS) 以切换为更低的分辨率，使得字体外观显得更大一些。
 
 ### 启动错误信息
 
@@ -126,7 +130,7 @@ For the four built-in resolutions, see table below for the name to specify:
 | 1680x1050 | edid/1680x1050.bin |
 | 1920x1080 | edid/1920x1080.bin |
 
-如果使用 KMS 早启动，则应将定制的 EDID 文件包含在 [initramfs](#KMS_.E6.97.A9.E5.90.AF.E5.8A.A8) 中，否则会运行错误。
+如果使用 KMS 早启动，则应将定制的 EDID 文件包含在 [initramfs](#KMS_早启动) 中，否则会运行错误。
 
 可以用内核源码文档 `Documentation/EDID` 中的 makefile 文件构建自己 EDID。完整信息请阅读[这里](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt)和[这里](https://www.osadl.org/Single-View.111+M5315d29dd12.0.html)。
 

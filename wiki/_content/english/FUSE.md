@@ -91,6 +91,10 @@ $ fusermount -u *mountpoint*
 
 	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
 
+*   **vramfs** — VRAM based file system.
+
+	[https://github.com/Overv/vramfs](https://github.com/Overv/vramfs) || [vramfs-git](https://aur.archlinux.org/packages/vramfs-git/)
+
 *   **xbfuse** — Mount an Xbox (360) ISO.
 
 	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)

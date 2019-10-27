@@ -4,7 +4,11 @@ A KMS engedélyezi a kijelző natív felbontását a framebufferben, és lehető
 
 2010 december 12\. óta az [intel](/index.php/Intel "Intel"), [nouveau](/index.php/Nouveau "Nouveau") és [radeon](/index.php/Radeon "Radeon") driverek minden chipkészlet esetében támogatják a KMS-t. Méghozzá automatikusan be van kapcsolva ezek esetében. A zárt-forrású [NVIDIA](/index.php/NVIDIA "NVIDIA") és [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst") driverek nem támogatják a KMS-t.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Háttér](#Háttér)
 *   [2 Hibaelhárítás](#Hibaelhárítás)

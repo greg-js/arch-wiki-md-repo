@@ -1413,7 +1413,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **aerc** — Work in progress asynchronous email client.
 
-	[https://github.com/SirCmpwn/aerc](https://github.com/SirCmpwn/aerc) || [aerc-git](https://aur.archlinux.org/packages/aerc-git/)
+	[https://git.sr.ht/~sircmpwn/aerc](https://git.sr.ht/~sircmpwn/aerc) || [aerc-git](https://aur.archlinux.org/packages/aerc-git/)
 
 *   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
 
@@ -1634,6 +1634,10 @@ The number of networks supported by these clients is very large but they (like a
 *   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
 
 	[https://wiki.gnome.org/Apps/Empathy](https://wiki.gnome.org/Apps/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
+
+*   **Franz** — [Electron](https://en.wikipedia.org/wiki/Electron_(software_framework) application. Supports Discord, Facebook Messenger, Google Hangouts, Skype, Slack, Telegram, WhatsApp, Zulip and many more.
+
+	[https://meetfranz.com/](https://meetfranz.com/) || [franz](https://aur.archlinux.org/packages/franz/)
 
 *   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — Audio/video VoIP phone and instant messenger written in Java that supports protocols such as SIP, XMPP, ICQ, IRC and many other useful features.
 
@@ -5958,6 +5962,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://www.pogo.org.uk/~mark/xosview/](http://www.pogo.org.uk/~mark/xosview/) || [xosview](https://aur.archlinux.org/packages/xosview/)
 
+*   **zps** — A small utility for listing and reaping zombie processes on GNU/Linux.
+
+	[https://github.com/orhun/zps](https://github.com/orhun/zps) || [zps](https://aur.archlinux.org/packages/zps/)
+
 #### Hardware sensor monitoring
 
 See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends "Lm sensors").
@@ -7902,7 +7910,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://www.openwall.com/john](https://www.openwall.com/john) || [john](https://www.archlinux.org/packages/?name=john)
 
-*   **[Hashcat](https://en.wikipedia.org/wiki/Hashcat "wikipedia:Hashcat")** — Multithreaded advanced password recovery utility.
+*   **[Hashcat](/index.php/Hashcat "Hashcat")** — Multithreaded advanced password recovery utility.
 
 	[https://hashcat.net/hashcat](https://hashcat.net/hashcat) || [hashcat](https://www.archlinux.org/packages/?name=hashcat)
 

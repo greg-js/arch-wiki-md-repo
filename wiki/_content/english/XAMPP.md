@@ -1,6 +1,10 @@
 [XAMPP](http://www.apachefriends.org/en/xampp.html) is an easy to install Apache distribution containing MariaDB, PHP and Perl. It contains: Apache, MariaDB, PHP & PEAR, Perl, ProFTPD, phpMyAdmin, OpenSSL, GD, Freetype2, libjpeg, libpng, gdbm, zlib, expat, Sablotron, libxml, Ming, Webalizer, pdf class, ncurses, mod_perl, FreeTDS, gettext, mcrypt, mhash, eAccelerator, SQLite and IMAP C-Client.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Using AUR package](#Using_AUR_package)
@@ -95,7 +99,9 @@ WantedBy=multi-user.target
 
 ## Usage
 
-Use the following commands to control XAMPP: `# /opt/lampp/lampp start,stop,restart` 
+Use the following commands to control XAMPP:
+
+ `# /opt/lampp/lampp start,stop,restart` 
 
 If you get this error when you start it:
 

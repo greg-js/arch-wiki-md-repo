@@ -83,6 +83,10 @@ Redshift reads the configuration file `~/.config/redshift/redshift.conf` [[2]](h
 
 ### Automatic location based on GeoClue2
 
+First check if GeoClue2 backend is operating properly by running `$ /usr/lib/geoclue-2.0/demos/where-am-i`. At this time default Archlinux API key for Mozilla services reaches limit (see [SO post](https://unix.stackexchange.com/questions/495333/geoclue2-insists-that-permission-is-forbidden) and [bugreport](https://bugs.archlinux.org/task/61494)) and Wi-Fi location banned. As workaround it's suggested to change API key to 'geoclue'.
+
+ `/etc/geoclue/geoclue.conf`  `url=[https://location.services.mozilla.com/v1/geolocate?key=geoclue](https://location.services.mozilla.com/v1/geolocate?key=geoclue)` 
+
 In order to allow access Redshift to use GeoClue2, add the following lines to `/etc/geoclue/geoclue.conf`:
 
  `/etc/geoclue/geoclue.conf` 

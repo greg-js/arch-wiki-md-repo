@@ -6,32 +6,37 @@ Related articles
 
 In spite of their scope, man pages are designed to be self-contained documents, consequentially limiting themselves to referring to other man pages when discussing related subjects. This is in sharp contrast with the hyperlink-aware [Info documents](/index.php/Info_manual "Info manual"), GNU's attempt at replacing the traditional man page format.
 
-[man-db](https://www.archlinux.org/packages/?name=man-db) implements *man* on Arch Linux, and [less](/index.php/Core_utilities#Essentials "Core utilities") is the default pager used with *man*.
-
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Accessing man pages](#Accessing_man_pages)
-*   [2 Format](#Format)
-*   [3 Searching manuals](#Searching_manuals)
-    *   [3.1 Building the manual cache with mandb](#Building_the_manual_cache_with_mandb)
-    *   [3.2 Searching for expressions in manuals](#Searching_for_expressions_in_manuals)
-    *   [3.3 Getting one-line descriptions with whatis](#Getting_one-line_descriptions_with_whatis)
-*   [4 Page width](#Page_width)
-*   [5 Reading local man pages](#Reading_local_man_pages)
-    *   [5.1 Viewer applications](#Viewer_applications)
-    *   [5.2 Conversion to HTML](#Conversion_to_HTML)
-        *   [5.2.1 mandoc](#mandoc)
-        *   [5.2.2 man2html](#man2html)
-        *   [5.2.3 man -H](#man_-H)
-        *   [5.2.4 roffit](#roffit)
-    *   [5.3 Conversion to PDF](#Conversion_to_PDF)
-*   [6 Online man pages](#Online_man_pages)
-*   [7 Noteworthy manpages](#Noteworthy_manpages)
-*   [8 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Accessing man pages](#Accessing_man_pages)
+*   [3 Format](#Format)
+*   [4 Searching manuals](#Searching_manuals)
+    *   [4.1 Building the manual cache with mandb](#Building_the_manual_cache_with_mandb)
+    *   [4.2 Searching for expressions in manuals](#Searching_for_expressions_in_manuals)
+    *   [4.3 Getting one-line descriptions with whatis](#Getting_one-line_descriptions_with_whatis)
+*   [5 Page width](#Page_width)
+*   [6 Reading local man pages](#Reading_local_man_pages)
+    *   [6.1 Viewer applications](#Viewer_applications)
+    *   [6.2 Conversion to HTML](#Conversion_to_HTML)
+        *   [6.2.1 mandoc](#mandoc)
+        *   [6.2.2 man2html](#man2html)
+        *   [6.2.3 man -H](#man_-H)
+        *   [6.2.4 roffit](#roffit)
+    *   [6.3 Conversion to PDF](#Conversion_to_PDF)
+*   [7 Online man pages](#Online_man_pages)
+*   [8 Noteworthy manpages](#Noteworthy_manpages)
+*   [9 See also](#See_also)
+
+## Installation
+
+[man-db](https://www.archlinux.org/packages/?name=man-db) implements *man* on Arch Linux, and [less](/index.php/Core_utilities#Essentials "Core utilities") is the default pager used with *man*.
+
+[man-pages](https://www.archlinux.org/packages/?name=man-pages) provides the Linux man pages.
 
 ## Accessing man pages
 

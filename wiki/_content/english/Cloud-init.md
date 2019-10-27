@@ -16,11 +16,11 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [cloud-init](https://aur.archlinux.org/packages/cloud-init/) package.
+[Install](/index.php/Install "Install") the [cloud-init](https://www.archlinux.org/packages/?name=cloud-init) package.
 
 If you intend to use the [growpart module](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#growpart) you will also need the [growpart](https://aur.archlinux.org/packages/growpart/) package.
 
-As of cloud-init 19.2 you can also use [netplan](https://netplan.io/) to render the network config. Install the [netplan](https://aur.archlinux.org/packages/netplan/) package to do so.
+As of cloud-init 19.2 you can also use [netplan](https://netplan.io/) to render the network config. Install the [netplan](https://www.archlinux.org/packages/?name=netplan) package to do so.
 
 ## Configuration
 

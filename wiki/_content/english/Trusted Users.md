@@ -46,7 +46,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [andrewSC](https://aur.archlinux.org/packages.php?K=andrewSC&SeB=m) | Andrew Crerar | andrew (at) crerar (dot) io |
 | [anthraxx](https://aur.archlinux.org/packages.php?K=anthraxx&SeB=m) | [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx") | anthraxx [at] archlinux [dot] org |
 | [arcanis](https://aur.archlinux.org/packages/?SeB=m&K=arcanis) | Evgeniy Alekseev | arcanis DOT arch AT gmail DOT com |
-| [ArchangeGabriel](https://aur.archlinux.org/packages.php?K=ArchangeGabriel&SeB=m) | Bruno Pagani | bruno.n.pagani@gmail.com |
+| [ArchangeGabriel](https://aur.archlinux.org/packages.php?K=ArchangeGabriel&SeB=m) | Bruno Pagani | archange@archlinux.org |
 | [arojas](https://aur.archlinux.org/packages/?SeB=m&K=arojas) | Antonio Rojas | arojas@archlinux.org |
 | [Barthalion](https://aur.archlinux.org/packages.php?K=Barthalion&SeB=m) | Bartłomiej Piotrowski | spam@bpiotrowski.pl |
 | [BlackIkeEagle](https://aur.archlinux.org/packages.php?K=BlackIkeEagle&SeB=m) | [Ike Devolder](/index.php/User:BlackEagle "User:BlackEagle") | ike DOT devolder AT gmail DOT com |

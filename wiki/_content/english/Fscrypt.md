@@ -92,7 +92,7 @@ For [F2FS](/index.php/F2FS "F2FS"), use `fsck.f2fs -O encrypt` or `mkfs.f2fs -O 
 
 ```
 
-This creates the file `/etc/fscrypt.conf` and the directory `/.fscrypt`.
+This creates the file `/etc/fscrypt.conf`.
 
 Then, if the file system on which you wish to use encryption is not the root file system, also run:
 

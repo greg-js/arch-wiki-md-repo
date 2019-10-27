@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=578448) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=584948) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,7 +8,7 @@ Artigos relacionados
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 *   [Recomendações gerais](/index.php/Recomenda%C3%A7%C3%B5es_gerais "Recomendações gerais")
 
-*Utilitários principais* (ou *Core utilities*) são as ferramentas básicas e fundamentais de um sistema [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")/[Linux](/index.php/Linux "Linux"). No Arch Linux eles são encontrados no [grupo base](/index.php/Grupo_de_pacotes "Grupo de pacotes"). Este artigo fornece uma visão geral incompleta deles, vincula sua documentação e descreve alternativas úteis. O escopo deste artigo inclui, mas não está limitado a, o [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). A maioria dos utilitários principais é ferramenta tradicional [Unix](https://en.wikipedia.org/wiki/pt:Unix "wikipedia:pt:Unix") (veja [Heirloom](/index.php/Heirloom "Heirloom")) e muitos foram padronizados pela [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX"), mas foram desenvolvidos para fornecer mais recursos.
+*Utilitários principais* (ou *Core utilities*) são as ferramentas básicas e fundamentais de um sistema [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")/[Linux](/index.php/Linux_(Portugu%C3%AAs) "Linux (Português)"). Este artigo fornece uma visão geral incompleta deles, vincula sua documentação e descreve alternativas úteis. O escopo deste artigo inclui, mas não está limitado a, o [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). A maioria dos utilitários principais é ferramenta tradicional [Unix](https://en.wikipedia.org/wiki/pt:Unix "wikipedia:pt:Unix") (veja [Heirloom](/index.php/Heirloom "Heirloom")) e muitos foram padronizados pela [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX"), mas foram desenvolvidos para fornecer mais recursos.
 
 A maioria das interfaces de linha de comando está principalmente documentada em [páginas man](/index.php/P%C3%A1ginas_man "Páginas man"), utilitários pelo [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU") estão documentados em [manual info](/index.php/Manual_info "Manual info"), alguns [shells](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") fornecem um `help` comando para comandos embutidos [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"). Além disso, a maioria dos utilitários imprime seu uso quando executado com o sinalizador `--help`.
 
@@ -23,11 +23,12 @@ A maioria das interfaces de linha de comando está principalmente documentada em
 *   [2 Não essenciais](#Não_essenciais)
 *   [3 Alternativas](#Alternativas)
     *   [3.1 Alternativas ao cp](#Alternativas_ao_cp)
-    *   [3.2 Alternativas ao find](#Alternativas_ao_find)
-    *   [3.3 Alternativas ao diff](#Alternativas_ao_diff)
-    *   [3.4 Alternativas ao grep](#Alternativas_ao_grep)
-        *   [3.4.1 Pesquisadores de código](#Pesquisadores_de_código)
-    *   [3.5 Filtros interativos](#Filtros_interativos)
+    *   [3.2 ls alternatives](#ls_alternatives)
+    *   [3.3 Alternativas ao find](#Alternativas_ao_find)
+    *   [3.4 Alternativas ao diff](#Alternativas_ao_diff)
+    *   [3.5 Alternativas ao grep](#Alternativas_ao_grep)
+        *   [3.5.1 Pesquisadores de código](#Pesquisadores_de_código)
+    *   [3.6 Filtros interativos](#Filtros_interativos)
 *   [4 Veja também](#Veja_também)
 
 ## Essenciais
@@ -96,11 +97,17 @@ O pacote [moreutils](https://www.archlinux.org/packages/?name=moreutils) fornece
 
 ## Alternativas
 
-Alternativas aos utilitários principais no grupo [base](https://www.archlinux.org/packages/?name=base) são [BusyBox](/index.php/BusyBox "BusyBox"), o [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) e [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
+Utilitários principais alternativos são fornecidos por [BusyBox](/index.php/BusyBox "BusyBox"), o [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) e [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
 
 ### Alternativas ao cp
 
 O uso de [rsync como uma alternativa a cp/mv](/index.php/Rsync#As_cp/mv_alternative "Rsync") permite retomar uma transferência com falha, mostrar o status da transferência, pular arquivos já existentes e certificar-se da integridade dos arquivos de destino usando somas de verificação.
+
+### ls alternatives
+
+*   **lsd** — Um *ls* moderno com muitas cores bonitas e ícones legais. Escrito em Rust.
+
+	[https://github.com/Peltoche/lsd](https://github.com/Peltoche/lsd) || [lsd](https://www.archlinux.org/packages/?name=lsd)
 
 ### Alternativas ao find
 

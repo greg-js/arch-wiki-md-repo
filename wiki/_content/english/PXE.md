@@ -18,19 +18,20 @@ In this guide, PXE is used to boot the installation media with an appropriate op
 *   [2 Server setup](#Server_setup)
     *   [2.1 Network](#Network)
     *   [2.2 DHCP + TFTP](#DHCP_+_TFTP)
-    *   [2.3 HTTP](#HTTP)
+    *   [2.3 Transferring archiso root filesystem](#Transferring_archiso_root_filesystem)
+        *   [2.3.1 HTTP](#HTTP)
+        *   [2.3.2 NFS](#NFS)
+        *   [2.3.3 NBD](#NBD)
+    *   [2.4 Existing PXE Server](#Existing_PXE_Server)
 *   [3 Installation](#Installation)
     *   [3.1 Boot](#Boot)
     *   [3.2 Post-boot](#Post-boot)
-*   [4 Alternate Methods](#Alternate_Methods)
-    *   [4.1 NFS](#NFS)
-    *   [4.2 NBD](#NBD)
-    *   [4.3 Existing PXE Server](#Existing_PXE_Server)
-    *   [4.4 Low memory systems](#Low_memory_systems)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 DHCP interface rename bug](#DHCP_interface_rename_bug)
-    *   [5.2 VirtualBox cannot boot while real machine can](#VirtualBox_cannot_boot_while_real_machine_can)
-    *   [5.3 VirtualBox falls out to EFI shell](#VirtualBox_falls_out_to_EFI_shell)
+    *   [3.3 Low memory systems](#Low_memory_systems)
+    *   [3.4 Sharing internet with PXE clients](#Sharing_internet_with_PXE_clients)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 DHCP interface rename bug](#DHCP_interface_rename_bug)
+    *   [4.2 VirtualBox cannot boot while real machine can](#VirtualBox_cannot_boot_while_real_machine_can)
+    *   [4.3 VirtualBox falls out to EFI shell](#VirtualBox_falls_out_to_EFI_shell)
 
 ## Preparation
 
@@ -46,7 +47,7 @@ Next mount the image:
 
 ## Server setup
 
-You will need to setup a DHCP, [TFTP](/index.php/TFTP "TFTP"), and [HTTP server](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet") to configure networking, load pxelinux/kernel/initramfs, and finally load the root filesystem (respectively).
+You will need to setup a DHCP (for assigning addresses and announcing configuration), [TFTP](/index.php/TFTP "TFTP") (for transferring pxelinux, kernel and initramfs), and one of the service for transferring root filesystem: [HTTP server](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet"), NFS or NBD.
 
 The Arch ISO currently only supports BIOS-style PXE booting. See [FS#50188](https://bugs.archlinux.org/task/50188) for more information.
 
@@ -86,9 +87,13 @@ tftp-root=/mnt/archiso
 
 [Start](/index.php/Start "Start") `dnsmasq.service`.
 
-### HTTP
+### Transferring archiso root filesystem
 
-Thanks to `archiso_pxe_http` initcpio hook and `archiso_pxe_nfs` initcpio hook in [archiso](/index.php/Archiso "Archiso"), it is possible to boot from HTTP or NFS. Among all alternatives, darkhttpd is by far the most trivial to setup (and the lightest-weight).
+Thanks to `archiso_pxe_http`, `archiso_pxe_nfs` and `archiso_pxe_nbd` initcpio hooks in [archiso](/index.php/Archiso "Archiso"), it is possible to boot using HTTP, NFS or NBD. Boot time is approximately the same in all three methods, but HTTP method allows you to watch a state of downloading airootfs.sfs in percents.
+
+#### HTTP
+
+Among all alternatives, darkhttpd is by far the most trivial to setup (and the lightest-weight).
 
 First, [install](/index.php/Install "Install") the [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) package.
 
@@ -102,6 +107,61 @@ listening on: http://0.0.0.0:80/
 ```
 
 Note that it is important that the server is running on port `80`. If you start *darkhttpd* without root access it will default to `8080`. The client will try to access port 80 and the boot will fail.
+
+#### NFS
+
+You will need to set up an [NFS server](/index.php/NFS "NFS") with an export at the root of your mounted installation media, which would be `/mnt/archiso` if you followed [#Preparation](#Preparation). After setting up the server, add the following line to your `/etc/exports` file:
+
+ `/etc/exports` 
+```
+/mnt/archiso 192.168.0.0/24(ro,no_subtree_check)
+
+```
+
+If the server was already running, re-export the filesystems with `exportfs -r -a -v`.
+
+The default settings in the installer expect to find the NFS at `/run/archiso/bootmnt`, so you will need to edit the boot options. To do this, press Tab on the appropriate boot menu choice and edit the `archiso_nfs_srv` option accordingly:
+
+```
+archiso_nfs_srv=${pxeserver}:/mnt/archiso
+
+```
+
+Alternatively, you can use `/run/archiso/bootmnt` for the entire process.
+
+After the kernel loads, the Arch bootstrap image will copy the root filesystem via NFS to the booting host. This can take a little while. Once this completes, you should have a running system.
+
+#### NBD
+
+[Install](/index.php/Install "Install") the [nbd](https://www.archlinux.org/packages/?name=nbd) package and configure it:
+
+ `/etc/nbd-server/config` 
+```
+[generic]
+[archiso]
+    readonly = true
+    exportname = /srv/archlinux-2017.12.01-x86_64.iso
+```
+
+[Start](/index.php/Start "Start") `nbd.service`.
+
+### Existing PXE Server
+
+If you have an existing PXE server with a [PXELINUX](/index.php/PXELINUX "PXELINUX") system setup (e.g. a combination of DHCP and [TFTP](/index.php/TFTP "TFTP")), you can add the following menu items to your `/tftpboot/pxelinux.cfg/default` file in order to boot Arch via your preferred method:
+
+```
+LABEL archlinux
+        MENU LABEL Arch Linux x86_64
+        LINUX */path/to/extracted/Arch/ISO*/arch/boot/x86_64/vmlinuz
+        INITRD */path/to/extracted/Arch/ISO*/arch/boot/intel_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/amd_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/x86_64/archiso.img
+        APPEND archisobasedir=arch archiso_http_srv=*http://httpserver/path/to/extracted/Arch/ISO*/
+        SYSAPPEND 3
+        TEXT HELP
+        Arch Linux 2018.09.01 x86_64
+        ENDTEXT
+```
+
+You can replace `archiso_http_srv` with `archiso_nfs_srv` for NFS or `archiso_nbd_srv` for NBD (see usage examples in `arch/boot/syslinux/archiso_pxe.cfg` file resided on ArchLinux iso). Whichever method you choose, you must pass `ip=` parameter to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network. Passing `BOOTIF=` is required when there are several wired interfaces on the client side and/or you want resolv.conf to be already configured inside booted archiso. You can use [sysappend mask](https://wiki.syslinux.org/wiki/index.php?title=Config#SYSAPPEND) 3 (which is 1+2) to pass these parameters automatically. For available boot parameters see [README.bootparams](https://git.archlinux.org/archiso.git/plain/docs/README.bootparams).
 
 ## Installation
 
@@ -154,7 +214,7 @@ After the root filesystem is downloaded via HTTP, you will eventually end up at 
 
 ### Post-boot
 
-Unless you want all traffic to be routed through your PXE server (which will not work anyway unless you [set it up properly](/index.php/Simple_stateful_firewall#Setting_up_a_NAT_gateway "Simple stateful firewall")), you will want to [stop](/index.php/Stop "Stop") `dnsmasq.service` and get a new lease on the install target, as appropriate for your network layout.
+Unless you want all traffic to be routed through your PXE server (which will not work anyway unless you [set it up properly](#Sharing_internet_with_PXE_clients)), you will want to [stop](/index.php/Stop "Stop") `dnsmasq.service` and get a new lease on the install target, as appropriate for your network layout.
 
 You can also kill *darkhttpd*; the target has already downloaded the root filesystem, so it is no longer needed. While you are at it, you can also unmount the installation image:
 
@@ -165,65 +225,6 @@ You can also kill *darkhttpd*; the target has already downloaded the root filesy
 
 At this point you can follow the [Installation guide](/index.php/Installation_guide "Installation guide").
 
-## Alternate Methods
-
-As implied in the syslinux menu, there are several other alternatives:
-
-### NFS
-
-You will need to set up an [NFS server](/index.php/NFS "NFS") with an export at the root of your mounted installation media, which would be `/mnt/archiso` if you followed [#Preparation](#Preparation). After setting up the server, add the following line to your `/etc/exports` file:
-
- `/etc/exports` 
-```
-/mnt/archiso 192.168.0.0/24(ro,no_subtree_check)
-
-```
-
-If the server was already running, re-export the filesystems with `exportfs -r -a -v`.
-
-The default settings in the installer expect to find the NFS at `/run/archiso/bootmnt`, so you will need to edit the boot options. To do this, press Tab on the appropriate boot menu choice and edit the `archiso_nfs_srv` option accordingly:
-
-```
-archiso_nfs_srv=${pxeserver}:/mnt/archiso
-
-```
-
-Alternatively, you can use `/run/archiso/bootmnt` for the entire process.
-
-After the kernel loads, the Arch bootstrap image will copy the root filesystem via NFS to the booting host. This can take a little while. Once this completes, you should have a running system.
-
-### NBD
-
-[Install](/index.php/Install "Install") the [nbd](https://www.archlinux.org/packages/?name=nbd) package and configure it:
-
- `/etc/nbd-server/config` 
-```
-[generic]
-[archiso]
-    readonly = true
-    exportname = /srv/archlinux-2017.12.01-x86_64.iso
-```
-
-[Start](/index.php/Start "Start") `nbd.service`.
-
-### Existing PXE Server
-
-If you have an existing PXE server with a [PXELINUX](/index.php/PXELINUX "PXELINUX") system setup (e.g. a combination of DHCP and [TFTP](/index.php/TFTP "TFTP")), you can add the following menu items to your `/tftpboot/pxelinux.cfg/default` file in order to boot Arch via your preferred method:
-
-```
-LABEL archlinux
-        MENU LABEL Arch Linux x86_64
-        LINUX */path/to/extracted/Arch/ISO*/arch/boot/x86_64/vmlinuz
-        INITRD */path/to/extracted/Arch/ISO*/arch/boot/intel_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/amd_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/x86_64/archiso.img
-        APPEND archisobasedir=arch archiso_http_srv=*http://httpserver/path/to/extracted/Arch/ISO*/
-        SYSAPPEND 3
-        TEXT HELP
-        Arch Linux 2018.09.01 x86_64
-        ENDTEXT
-```
-
-You can replace `archiso_http_srv` with `archiso_nfs_srv` for NFS or `archiso_nbd_srv` for NBD (see usage examples in `arch/boot/syslinux/archiso_pxe.cfg` file resided on ArchLinux iso). Whichever method you choose, you must pass `ip=` parameter to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network. Passing `BOOTIF=` is required when there are several wired interfaces on the client side and/or you want resolv.conf to be already configured inside booted archiso. You can use [sysappend mask](https://wiki.syslinux.org/wiki/index.php?title=Config#SYSAPPEND) 3 (which is 1+2) to pass these parameters automatically. For available boot parameters see [README.bootparams](https://git.archlinux.org/archiso.git/plain/docs/README.bootparams).
-
 ### Low memory systems
 
 The `copytoram` [initramfs](/index.php/Initramfs "Initramfs") option can be used to control whether the root filesystem should be copied to ram in its entirety in early-boot.
@@ -231,6 +232,25 @@ The `copytoram` [initramfs](/index.php/Initramfs "Initramfs") option can be used
 It highly recommended to leave this option alone, and should only be disabled if entirely necessary (systems with less than ~256MB physical memory). Append `copytoram=n` to your kernel line if you wish to do so.
 
 **Note:** As this requires loop-mounting squashfs from a mounted remote filesystem, `copytoram=n` and `[archiso_pxe_http](#HTTP)` are mutually exclusive.
+
+### Sharing internet with PXE clients
+
+If your net for pxe clients is private (for example, 192.168.1.0/24), and you want them to be able to access internet (for example, for packages installation), you should configure masquerade/source nat properly. Your pxe server must have a separate nic connected to the internet. You can use such command to pass through the internet to clients:
+
+```
+   iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
+
+```
+
+To make this rule persistent after reboot, run the following commands:
+
+```
+   iptables-save -f /etc/iptables/iptables.rules
+   systemctl enable iptables.service
+
+```
+
+See [Simple stateful firewall#Setting up a NAT gateway](/index.php/Simple_stateful_firewall#Setting_up_a_NAT_gateway "Simple stateful firewall") and [Internet sharing#Enable NAT](/index.php/Internet_sharing#Enable_NAT "Internet sharing") for more information.
 
 ## Troubleshooting
 

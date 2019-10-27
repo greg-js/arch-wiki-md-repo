@@ -1,6 +1,10 @@
 [XAMPP](http://www.apachefriends.org/en/xampp.html) è una distribuzione Apache facile da installare contenente MySQL, PHP e Perl. Il pacchetto contiene: Apache, MySQL, PHP & PEAR, Perl, ProFTPD, phpMyAdmin, OpenSSL, GD, Freetype2, libjpeg, libpng, gdbm, zlib, expat, Sablotron, libxml, Ming, Webalizer, pdf class, ncurses, mod_perl, FreeTDS, gettext, mcrypt, mhash, eAccelerator, SQLite e IMAP C-Client.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 AUR](#AUR)
@@ -8,7 +12,7 @@
 *   [2 Configurazione](#Configurazione)
 *   [3 Avvio del server](#Avvio_del_server)
 *   [4 Rimozione](#Rimozione)
-*   [5 Cambiare la cartella predefinita "htdocs"](#Cambiare_la_cartella_predefinita_.22htdocs.22)
+*   [5 Cambiare la cartella predefinita "htdocs"](#Cambiare_la_cartella_predefinita_"htdocs")
 
 ## Installazione
 
@@ -45,7 +49,9 @@ Vi verrà chiesto passo dopo passo di scegliere le password per l'accesso alle p
 
 ## Avvio del server
 
-Usate i seguenti comandi per controllare XAMPP: `sudo /opt/lampp/lampp start,stop,restart` 
+Usate i seguenti comandi per controllare XAMPP:
+
+ `sudo /opt/lampp/lampp start,stop,restart` 
 
 ## Rimozione
 
@@ -117,12 +123,15 @@ DocumentRoot "/opt/lampp/htdocs"
 È necessario modificare i permessi. È possibile utilizzare il proprio nome utente, e lasciare l'impostazione di gruppo invariate. In tal caso, qualsiasi cartella in cui si ha accesso funzionerà. Un altro modo è quello di settare utente e gruppo in 'http', che dovrebbe già esistere. In questo caso, tutte le cartelle che si desidera consentire l'accesso devono appartenere al gruppo 'http'.
 
 ```
-<IfModule !mpm_netware_module>
+<IfModule !mpm_netware_module>
 User http
 Group http
 </IfModule>
 ```
-Ora non dimenticatevi di riavviare Apache: `/opt/lampp/lampp restart` 
+
+Ora non dimenticatevi di riavviare Apache:
+
+ `/opt/lampp/lampp restart` 
 
 Questa procedura vi permetterà di "hostare" i vostri files all'interno della home o di una qualsiasi cartella.
 

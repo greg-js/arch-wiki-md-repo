@@ -241,14 +241,14 @@ Esse arquivo será posteriormente copiado para o novo sistema por *pacstrap*, en
 
 ### Instalar os pacotes essenciais
 
-Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar o pacote [base](https://www.archlinux.org/packages/?name=base), um [kernel](/index.php/Kernel "Kernel") Linux e um firmware para hardwares comuns:
+Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar o pacote [base](https://www.archlinux.org/packages/?name=base), um [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") Linux e um firmware para hardwares comuns:
 
 ```
 # pacstrap /mnt base linux linux-firmware
 
 ```
 
-**Dica:** Você pode substituir [linux](https://www.archlinux.org/packages/?name=linux) pelo pacote de [kernel](/index.php/Kernel "Kernel") que você escolher, e pode não instalar um kernel, se você souber o que está fazendo.
+**Dica:** Você pode substituir [linux](https://www.archlinux.org/packages/?name=linux) pelo pacote de [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") de sua escolha. Você pode não instalar um kernel, se souber o que está fazendo.
 
 O pacote [base](https://www.archlinux.org/packages/?name=base) não inclui todas as ferramentas da instalação *live*. Então a instalação de outros pacotes pode ser necessário para um sistema base completamente funcional. Em especial, considere instalar:
 
@@ -264,7 +264,7 @@ Para [instalar](/index.php/Instala "Instala") outros pacotes ou grupos de pacote
 
 ### Fstab
 
-Gerar um arquivo [fstab](/index.php/Fstab "Fstab") (use `-U` ou `-L` para definir por [UUID](/index.php/UUID "UUID") ou rótulos, respectivamente):
+Gerar um arquivo [fstab](/index.php/Fstab "Fstab") (use `-U` ou `-L` para definir por [UUID](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") ou rótulos, respectivamente):
 
 ```
 # genfstab -p /mnt >> /mnt/etc/fstab
@@ -350,7 +350,7 @@ Conclua a [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Co
 
 ### Initramfs
 
-Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote de [kernel](/index.php/Kernel "Kernel") com *pacstrap*.
+Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote de [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") com *pacstrap*.
 
 Para [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [criptografia de sistema](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique o [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
 

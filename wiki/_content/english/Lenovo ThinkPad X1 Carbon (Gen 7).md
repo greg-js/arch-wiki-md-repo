@@ -26,7 +26,7 @@ ThinkPad X1 Carbon 7th
 | Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
 | Mobile broadband Fibocom | No¹ | ? |
 | Audio | Yes | snd_hda_intel |
-| Microphone | Yes⁴ | snd_sof, snd_sof_intel_hda |
+| Microphone | No⁴ | snd_sof, snd_sof_intel_hda |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |

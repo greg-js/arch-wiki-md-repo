@@ -852,7 +852,7 @@ $ qdbus org.freedesktop.Akonadi.Resource.akonadi_ews_resource_0 /Settings org.kd
 
 ### "OS error 22" при выполнении Akonadi на ZFS
 
-Если ваша домашняя директория находится в пуле [ZFS (Русский)](/index.php/ZFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ZFS (Русский)"), создайте файл `~/.config/akonadi/mysql-local.conf` со следующим содержанием:
+Если ваша домашняя директория находится в пуле [ZFS](/index.php/ZFS "ZFS"), создайте файл `~/.config/akonadi/mysql-local.conf` со следующим содержанием:
 
 ```
 [mysqld]

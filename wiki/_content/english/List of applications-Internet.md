@@ -1092,7 +1092,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **aerc** — Work in progress asynchronous email client.
 
-	[https://github.com/SirCmpwn/aerc](https://github.com/SirCmpwn/aerc) || [aerc-git](https://aur.archlinux.org/packages/aerc-git/)
+	[https://git.sr.ht/~sircmpwn/aerc](https://git.sr.ht/~sircmpwn/aerc) || [aerc-git](https://aur.archlinux.org/packages/aerc-git/)
 
 *   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
 
@@ -1313,6 +1313,10 @@ The number of networks supported by these clients is very large but they (like a
 *   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
 
 	[https://wiki.gnome.org/Apps/Empathy](https://wiki.gnome.org/Apps/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
+
+*   **Franz** — [Electron](https://en.wikipedia.org/wiki/Electron_(software_framework) application. Supports Discord, Facebook Messenger, Google Hangouts, Skype, Slack, Telegram, WhatsApp, Zulip and many more.
+
+	[https://meetfranz.com/](https://meetfranz.com/) || [franz](https://aur.archlinux.org/packages/franz/)
 
 *   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — Audio/video VoIP phone and instant messenger written in Java that supports protocols such as SIP, XMPP, ICQ, IRC and many other useful features.
 

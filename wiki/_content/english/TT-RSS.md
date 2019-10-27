@@ -119,7 +119,7 @@ See also [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman")
 
 ### Set up an update daemon
 
-See [https://tt-rss.org/gitlab/fox/tt-rss/wikis/UpdatingFeeds](https://tt-rss.org/gitlab/fox/tt-rss/wikis/UpdatingFeeds) – but you should be able to simply
+See [https://git.tt-rss.org/fox/tt-rss/wiki/UpdatingFeeds](https://git.tt-rss.org/fox/tt-rss/wiki/UpdatingFeeds) – but you should be able to simply
 
 ```
 # systemctl enable tt-rss

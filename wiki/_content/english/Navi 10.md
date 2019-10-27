@@ -55,7 +55,14 @@ If you have a new enough kernel, but do not have sufficient firmware files, then
 
 ### Mesa
 
-Support for Navi 10 GPUs isn't yet available in the standard repositories. You will need the development version of mesa and its related packages. To get them, you can add the `mesa-git` repository to your system. To do that, add the following lines to `/etc/pacman.conf` just above the `[core]` section:
+Since Mesa 19.2, support for Navi 10 GPUs has been present in the standard repositories. For basic and Vulkan support, the following packages will need to be installed, along with any dependencies:
+
+```
+mesa amdvlk clang llvm-libs vulkan-mesa-layer vulkan-radeon xf86-video-amdgpu lib32-mesa lib32-vulkan-radeon
+
+```
+
+The developmental packages for mesa may still be worthwhile on new hardware like Navi 10\. To get them, you can add the `mesa-git` repository to your system. To do that, add the following lines to `/etc/pacman.conf` just above the `[core]` section:
 
  `/etc/pacman.conf` 
 ```

@@ -9,13 +9,14 @@ First you should check the common culprits that can affect the behavior of many 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 TERM](#TERM)
-*   [2 Readline](#Readline)
-*   [3 Terminfo](#Terminfo)
-*   [4 Other Applications](#Other_Applications)
-    *   [4.1 Lynx](#Lynx)
-    *   [4.2 URxvt/Rxvt](#URxvt/Rxvt)
-    *   [4.3 Zsh](#Zsh)
-    *   [4.4 Less](#Less)
+*   [2 Shell prompt](#Shell_prompt)
+*   [3 Readline](#Readline)
+*   [4 Terminfo](#Terminfo)
+*   [5 Other Applications](#Other_Applications)
+    *   [5.1 Lynx](#Lynx)
+    *   [5.2 URxvt/Rxvt](#URxvt/Rxvt)
+    *   [5.3 Zsh](#Zsh)
+    *   [5.4 Less](#Less)
 
 ## TERM
 
@@ -45,6 +46,26 @@ For [Tmux](/index.php/Tmux "Tmux"), you can set it in your `~/.tmux.conf`:
 set -g default-terminal screen-256color
 
 ```
+
+## Shell prompt
+
+Another possible reason for misbehaving Home and End keys is malformed custom shell prompt. The shell tries to calculate actual length of the prompt contained in `PS1` environment variable, but if `PS1` contains some escape sequences (e.g. for colored text), shell may assume that they are actual printable characters with non-zero length. This will obviously result in text rendering mistakes.
+
+To avoid that, you should enclose your non-printable stuff in `PS1` with `\[` and `\]` so that shell can understand that it is actually non-printable. For example, this line in your `.bashrc`
+
+```
+PS1="\e[32m\u \e[34m\w \e[37m\$ \e[0m"
+
+```
+
+should become this:
+
+```
+PS1="\[\e[32m\]\u \[\e[34m\]\w \[\e[37m\]\$ \[\e[0m\]"
+
+```
+
+For more info, please refer to [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization").
 
 ## Readline
 

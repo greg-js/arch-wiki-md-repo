@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Partitioning](/index.php/Partitioning "Partitioning"). Дата последней синхронизации: 24 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=583839).
+**Состояние перевода:** На этой странице представлен перевод статьи [Partitioning](/index.php/Partitioning "Partitioning"). Дата последней синхронизации: 24 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=587083).
 
 Ссылки по теме
 
@@ -221,7 +221,7 @@
 
 ### Примеры схем
 
-Примеры ниже используют диск `/dev/sda` и первый раздел `/dev/sda1` в качестве примера. Схема наименований блочных устройств будет отличаться при использовании NVMe-диска (например, `/dev/nvme0n1` с разделами, которые начинаются с `/dev/nvme0n1p1`), SD-карты или eMMC-диска (например, `/dev/mmcblk0` с разделами, которые начинаются с `/dev/mmcblk0p1`). См. [Device file#Block device names](/index.php/Device_file#Block_device_names "Device file") для получения более подробной информации.
+Примеры ниже используют диск `/dev/sda` и первый раздел `/dev/sda1` в качестве примера. Схема наименований блочных устройств будет отличаться при использовании [NVMe](/index.php/NVMe "NVMe")-диска (например, `/dev/nvme0n1` с разделами, которые начинаются с `/dev/nvme0n1p1`), SD-карты или eMMC-диска (например, `/dev/mmcblk0` с разделами, которые начинаются с `/dev/mmcblk0p1`). См. [Device file#Block device names](/index.php/Device_file#Block_device_names "Device file") для получения более подробной информации.
 
 **Примечание:** Загрузка UEFI не включает никаких флагов "загрузки", загрузка зависит только от загрузочных записей в NVRAM. [Parted](/index.php/Parted "Parted") и его графические оболочки используют флаг "загрузки" в GPT, чтобы указать, что раздел является системным разделом EFI.
 

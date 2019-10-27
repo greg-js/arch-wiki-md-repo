@@ -77,7 +77,7 @@ Para criar uma entrada de inicialização que carregue o kernel usando o *efiboo
 
 ```
 
-sendo `*/dev/sdX*` e `*Y*` a unidade e o número da partição onde a ESP está localizada. Altere o parâmetro `root=` para refletir sua partição raiz do Linux, consulte os [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel#Lista_de_parâmetros "Parâmetros do kernel") para formatos de nome de dispositivo suportados e [nomenclatura de dispositivo de bloco persistente](/index.php/Persistent_block_device_naming "Persistent block device naming") para obter o valor correspondente.
+sendo `*/dev/sdX*` e `*Y*` a unidade e o número da partição onde a ESP está localizada. Altere o parâmetro `root=` para refletir sua partição raiz do Linux, consulte os [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel#Lista_de_parâmetros "Parâmetros do kernel") para formatos de nome de dispositivo suportados e [nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") para obter o valor correspondente.
 
 Note que o argumento `-u`/`--unicode` entre aspas é apenas a lista de [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel"), então você pode precisar adicionar parâmetros adicionais (por exemplo, para [suspender para o disco](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") ou [microcódigo](/index.php/Microcode "Microcode")).
 

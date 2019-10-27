@@ -122,7 +122,7 @@ Para obter suporte às GPUs mais comuns, instale [xf86-video-vesa](https://www.a
 
 #### Nomenclatura de dispositivos de bloco persistentes
 
-Recomenda-se usar o [UUID](/index.php/UUID "UUID") tanto na configuração do [fstab](/index.php/Fstab "Fstab") quanto na do gerenciador de inicialização. Veja [Nomenclatura de dispositivo de bloco persistente](/index.php/Persistent_block_device_naming "Persistent block device naming") para detalhes.
+Recomenda-se usar o [UUID](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") tanto na configuração do [fstab](/index.php/Fstab "Fstab") quanto na do gerenciador de inicialização. Veja [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") para detalhes.
 
 Alternativamente, você pode criar a regra do udev para criar um link simbólico personalizado para seu pendrive. Em seguida, use este link simbólico na configuração do fstab e do gerenciador de inicialização. Veja [udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev") para detalhes.
 

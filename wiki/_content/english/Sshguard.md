@@ -81,6 +81,7 @@ BACKEND="/usr/lib/sshguard/sshg-fw-firewalld"
 #### UFW
 
 If UFW is installed and enabled, it must be given the ability to pass along DROP control to sshguard. This is accomplished by modifying `/etc/ufw/before.rules` to contain the following lines which should be inserted just after the section for loopback devices.
+
 **Note:** Users running sshd on a non-standard port should substitute that in the final line above (where 22 is the standard).
  `/etc/ufw/before.rules` 
 ```
@@ -162,7 +163,7 @@ Configuration is done in `/etc/sshguard.conf` which is required for *sshguard* t
 
 ### Blacklisting threshold
 
-By default in the Arch-provided configuration file, offenders become permanently banned once they reach a "danger" level of 120 (or 12 failed logins; see [attack dangerousness](https://www.sshguard.net/docs/terminology/#attack-dangerousness) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
+By default in the Arch-provided configuration file, offenders become permanently banned once they reach a "danger" level of 120 (or 12 failed logins; see [attack dangerousness](https://web.archive.org/web/20160908055836/http://www.sshguard.net/docs/terminology/#attack-dangerousness) for more details). This behavior can be modified by prepending a danger level to the blacklist file.
 
 ```
 BLACKLIST_FILE=200:/var/db/sshguard/blacklist.db

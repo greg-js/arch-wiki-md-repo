@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=584610) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-10-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=586572) na versão em inglês.
 
 Artigos relacionados
 
@@ -445,7 +445,14 @@ $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///caminho/para/
 
 ##### Desabilitar o canto superior esquerdo ativo
 
-Você pode desabilitar o cano superior esquerdo ativo com o pacote [gnome-shell-extension-no-topleft-hot-corner](https://aur.archlinux.org/packages/gnome-shell-extension-no-topleft-hot-corner/).
+A partir do GNOME 3.34, você pode desabilitá-lo desta forma:
+
+```
+$ gsettings set org.gnome.desktop.interface enable-hot-corners false
+
+```
+
+ou por meio de [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks), em *Barra superior > Canto ativo do panorama de atividades*
 
 #### Extensões
 

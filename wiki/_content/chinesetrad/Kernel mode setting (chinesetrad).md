@@ -1,9 +1,13 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 簡介](#.E7.B0.A1.E4.BB.8B)
-*   [2 背景](#.E8.83.8C.E6.99.AF)
-*   [3 開啟 KMS 的方法](#.E9.96.8B.E5.95.9F_KMS_.E7.9A.84.E6.96.B9.E6.B3.95)
-*   [4 更多相關資源](#.E6.9B.B4.E5.A4.9A.E7.9B.B8.E9.97.9C.E8.B3.87.E6.BA.90)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 簡介](#簡介)
+*   [2 背景](#背景)
+*   [3 開啟 KMS 的方法](#開啟_KMS_的方法)
+*   [4 更多相關資源](#更多相關資源)
 
 ## 簡介
 

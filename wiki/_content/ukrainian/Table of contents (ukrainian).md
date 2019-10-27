@@ -62,11 +62,11 @@
  <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
  <small>3.16.1.</small> [Optical disc](/index.php/Category:Optical_disc "Category:Optical disc") <small>(6)</small> |
  <small>3.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
- <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(54)</small> |
+ <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(52)</small> |
  <small>4.1.</small> [Directory services](/index.php/Category:Directory_services "Category:Directory services") <small>(3)</small> |
  <small>4.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
- <small>4.2.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
+ <small>4.2.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(8)</small> |
  <small>4.2.1.</small> [Volunteer computing](/index.php/Category:Volunteer_computing "Category:Volunteer computing") <small>(2) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
  <small>4.3.</small> [Email](/index.php/Category:Email "Category:Email") <small>(4)</small> |
  <small>4.3.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(11) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
@@ -272,7 +272,7 @@
  <small>6.7.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
  <small>6.7.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
  <small>6.8.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(5) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
- <small>6.9.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(50)</small> |
+ <small>6.9.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(51)</small> |
  <small>6.9.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(18) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
  <small>6.9.2.</small> [FUSE](/index.php/Category:FUSE "Category:FUSE") <small>(8)</small> |
  <small>6.9.3.</small> [Storage virtualization](/index.php/Category:Storage_virtualization "Category:Storage virtualization") <small>(7)</small> |
@@ -308,7 +308,7 @@
  <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(33)</small> |
  <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
  <small>6.21.</small> [Pseudo filesystems](/index.php/Category:Pseudo_filesystems "Category:Pseudo filesystems") <small>(1)</small> |
- <small>6.22.</small> [Security](/index.php/Category:Security "Category:Security") <small>(39)</small> |
+ <small>6.22.</small> [Security](/index.php/Category:Security "Category:Security") <small>(40)</small> |
  <small>6.22.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |
  <small>6.22.2.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>6.22.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(14)</small> |

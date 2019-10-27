@@ -373,7 +373,7 @@ error while loading shared libraries: libusb-0.1.so.4: cannot open shared object
 
 Use [pacman](/index.php/Pacman "Pacman") or [pkgfile](/index.php/Pkgfile "Pkgfile") to search for the package that owns the missing library:
 
- `$ pacman -Fs libusb-0.1.so.4` 
+ `$ pacman -F libusb-0.1.so.4` 
 ```
 extra/libusb-compat 0.1.5-1
     usr/lib/libusb-0.1.so.4

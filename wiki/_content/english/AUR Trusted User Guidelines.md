@@ -34,24 +34,25 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
 3.  Make sure your account details on the [AUR](/index.php/AUR "AUR") are up-to-date.
 4.  Add yourself to the [Trusted Users](/index.php/Trusted_Users "Trusted Users") page.
 5.  Subscribe to the public mailing list for Arch Linux development, [arch-dev-public](https://lists.archlinux.org/listinfo/arch-dev-public).
-6.  Remind a [BBS admin](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) to change your account on forums.
-7.  Ask some TU for the #archlinux-tu@freenode key and hang out with us in the channel. You do not have to do this, but it would be neat since this is where most dark secrets are spilled and where many new ideas are conceived.
+6.  Request subscription to the internal trusted user mailing list.
+7.  Remind a [BBS admin](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) to change your account on forums.
+8.  Ask some TU for the #archlinux-tu@freenode key and hang out with us in the channel. You do not have to do this, but it would be neat since this is where most dark secrets are spilled and where many new ideas are conceived.
     *   If you need a bouncer, ask heftig for a [Matrix](/index.php/Matrix "Matrix") invite, or execute `givemequassel` on the *soyuz.archlinux.org* server, then login using [Quassel](/index.php/Quassel "Quassel").
     *   Once in the channel, if you want an @archlinux/trusteduser/* cloak ask our [group contact](https://freenode.net/groupreg#two-types-of-group-contacts-exist-for-freenode), ioni, to get you one.
-8.  Create a PGP key for [package signing](/index.php/Package_signing "Package signing") or use your existing PGP key. Make sure the key also contains an encryption subkey so you can receive encrypted verification tokens.
-9.  Send a signed email to Florian Pritz (bluewind@xinu.at) or Bartłomiej Piotrowski (bpiotrowski@archlinux.org):
+9.  Create a PGP key for [package signing](/index.php/Package_signing "Package signing") or use your existing PGP key. Make sure the key also contains an encryption subkey so you can receive encrypted verification tokens.
+10.  Send a signed email to Florian Pritz (bluewind@xinu.at) or Bartłomiej Piotrowski (bpiotrowski@archlinux.org):
     *   Attach one SSH public key. If you do not have one, use `ssh-keygen` to generate one. Check the [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") wiki page for more information about SSH keys.
     *   Ask him to whitelist you from arch-dev-public.
     *   Tell him if you want an @archlinux.org email.
     *   Preferred username and e-mail address which initial password should be sent to in order to access dev interface (archweb). If you already have an account, ask to be added to the Trusted Users group.
-10.  Ask your sponsor:
+11.  Ask your sponsor:
     *   to give you TU status on the AUR.
     *   to open a new task in the "Keyring" project of the bug tracker following the instructions in [this message](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) in order to have your PGP key signed by three master key holders.
-11.  Install the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
-12.  [Configure your private ssh key](/index.php/AUR_submission_guidelines#Authentication "AUR submission guidelines") for `orion.archlinux.org` and `repos.archlinux.org` hosts.
-13.  Ssh to yourname@orion.archlinux.org (once you have permissions).
-14.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
-15.  Start contributing!
+12.  Install the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
+13.  [Configure your private ssh key](/index.php/AUR_submission_guidelines#Authentication "AUR submission guidelines") for `orion.archlinux.org` and `repos.archlinux.org` hosts.
+14.  Ssh to yourname@orion.archlinux.org (once you have permissions).
+15.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
+16.  Start contributing!
 
 ## The TU and the AUR
 

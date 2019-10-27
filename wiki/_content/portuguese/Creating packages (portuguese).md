@@ -1,11 +1,11 @@
-**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=574253) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2019-10-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=586473) na versão em inglês.
 
 Artigos relacionados
 
 *   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
 *   [Padrões de empacotamento do Arch](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")
 *   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
-*   [Criando pacotes para outras distribuições](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
+*   [Criando pacotes para outras distribuições](/index.php/Criando_pacotes_para_outras_distribui%C3%A7%C3%B5es "Criando pacotes para outras distribuições")
 *   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 *   [Aplicação de patch no ABS](/index.php/Aplica%C3%A7%C3%A3o_de_patch_no_ABS "Aplicação de patch no ABS")
@@ -235,7 +235,7 @@ PKGBUILDs para alguns pacotes podem ser gerados automaticamente.
 
 *   [Go](/index.php/Go "Go"): [go-makepkg](https://github.com/seletskiy/go-makepkg)
 *   [Haskell](/index.php/Haskell "Haskell"): [cblrepo](https://github.com/magthe/cblrepo)
-*   [Node.js](/index.php/Node.js "Node.js"): [nodejs-npm2arch](https://aur.archlinux.org/packages/nodejs-npm2arch/) [npm2arch](https://github.com/simon04/npm2arch%7Cigorvisi)
+*   [Node.js](/index.php/Node.js "Node.js"): [nodejs-npm2arch](https://aur.archlinux.org/packages/nodejs-npm2arch/) [npm2arch](https://github.com/simon04/npm2arch)
 *   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [python-pypi2pkgbuild](https://aur.archlinux.org/packages/python-pypi2pkgbuild/)
 *   [Ruby](/index.php/Ruby "Ruby"): [gem2arch](https://aur.archlinux.org/packages/gem2arch/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
 *   [Rust](/index.php/Rust "Rust"): [cargo-pkgbuild](https://aur.archlinux.org/packages/cargo-pkgbuild/)

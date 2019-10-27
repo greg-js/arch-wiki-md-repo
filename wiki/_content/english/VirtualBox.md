@@ -456,7 +456,7 @@ The storage can now be mounted with:
 
 ```
 
-For VDI Disks with more partitions you can also use `losetup`
+For VDI disks with more partitions you can also use `losetup`:
 
 ```
 # losetup -o $offData -Pf

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=572894) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=585320) na versão em inglês.
 
 Artigos relacionados
 
@@ -111,7 +111,7 @@ Se o sistema possui pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Portu
 
 Antes de atualizar, espera-se que os usuários visitem a [página inicial do Arch Linux](https://www.archlinux.org/) (ou até o [Arch Linux Brasil](http://www.archlinux-br.org/)) para verificar as últimas notícias ou, alternativamente, estejam inscritos no [feed RSS](https://www.archlinux.org/feeds/news/) ou na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/). Quando atualizações exigirem intervenção fora do normal do usuário (mais do que pode ser tratado simplesmente seguindo as instruções fornecidas pelo *pacman*), uma notícia apropriada será publicada.
 
-Antes de atualizar softwares fundamentais (como o [kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") ou [glibc](https://www.archlinux.org/packages/?name=glibc)) para uma nova versão, procure pelo [fórum](https://bbs.archlinux.org/) apropriado por algum relato de problema.
+Antes de atualizar softwares fundamentais (como o [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)"), [xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") ou [glibc](https://www.archlinux.org/packages/?name=glibc)) para uma nova versão, procure pelo [fórum](https://bbs.archlinux.org/) apropriado por algum relato de problema.
 
 Da mesma forma, usuários devem estar cientes de que atualizar pacotes pode trazer problemas **inesperados** que podem precisar de intervenção imediata; portanto, é desencorajado atualizar um sistema estável logo antes dele ser necessário para realizar uma tarefa importante. Em vez disso, é sábio esperar ter tempo suficiente para poder lidar com possíveis problemas pós-atualização.
 
@@ -214,7 +214,7 @@ Procure pelas seguintes pastas:
 *   `~/.cache/` -- cache de alguns programas podem crescer em tamanho
 *   `~/.local/share/` -- arquivos antigos podem estar parados lá
 
-Veja [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support") para mais informações.
+Veja [Suporte a XDG Base Directory](/index.php/Suporte_a_XDG_Base_Directory "Suporte a XDG Base Directory") para mais informações.
 
 Para manter o diretório home limpe de arquivos temporários criados no lugar errado, é uma boa ideia gerenciar uma lista de arquivos indesejados e removê-los regularmente, por exemplo, com [rmshit.py](https://github.com/lahwaacz/Scripts/blob/master/rmshit.py).
 

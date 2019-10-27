@@ -11,6 +11,7 @@
 *   [3 Templates](#Templates)
     *   [3.1 Using templates](#Using_templates)
     *   [3.2 Creating or changing templates](#Creating_or_changing_templates)
+    *   [3.3 Mail Merge](#Mail_Merge)
 *   [4 Grammar checking](#Grammar_checking)
 *   [5 Change keybindings](#Change_keybindings)
 *   [6 LaTeX fonts](#LaTeX_fonts)
@@ -46,6 +47,10 @@ AbiWord allows to make your own template files, with the desired style, text, ta
 In order to create/change a template file, simply open a new/existent document, and make the desired changes to this file. Then, use "Save As" menu option to name it as you want, with *.awt* as extension (e.g. *foobar.awt*) and save it in `~/.config/abiword/templates` folder. Now, your new template can be accessed in *File > New using Template...* by its filename (*foobar.awt* in the given example).
 
 **Note:** If not existent, `templates` folder will be created automatically upon startup inside `~/.config/abiword/`.
+
+### Mail Merge
+
+You can create a CSV file with your data to be used, and run Abiword from the command line against a template to directly render your final files. See [this guide](https://www.abisource.com/help/en-US/howto/howtomailmerge.html) for more details.
 
 ## Grammar checking
 

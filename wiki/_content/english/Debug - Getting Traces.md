@@ -20,6 +20,7 @@ This article aims to help in creating a debugging Arch package and using it to p
     *   [3.3 Qt4](#Qt4)
     *   [3.4 Qt5](#Qt5)
     *   [3.5 CMAKE (KDE) applications](#CMAKE_(KDE)_applications)
+    *   [3.6 dhcpcd](#dhcpcd)
 *   [4 Building and installing the package](#Building_and_installing_the_package)
 *   [5 Getting the trace](#Getting_the_trace)
 *   [6 Conclusion](#Conclusion)
@@ -119,6 +120,10 @@ The [qt-debug](/index.php/Unofficial_user_repositories#qt-debug "Unofficial user
 ### CMAKE (KDE) applications
 
 [KDE](/index.php/KDE "KDE") and related programs typically use [cmake](https://www.archlinux.org/packages/?name=cmake). To enable debug information and disable optimisations, change `-DCMAKE_BUILD_TYPE` to `Debug`, for KDE applications change it to `debugfull`. To enable debug information while keeping optimisations enabled, change `-DCMAKE_BUILD_TYPE` to `RelWithDebInfo`.
+
+### dhcpcd
+
+Remember to pass the `--debug` flag to the `configure` script when building [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
 
 ## Building and installing the package
 

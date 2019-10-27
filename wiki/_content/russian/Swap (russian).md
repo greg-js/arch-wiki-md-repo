@@ -1,13 +1,13 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Swap](/index.php/Swap "Swap"). Дата последней синхронизации: 15 июня 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=526278).
 
-Related articles
+Ссылки по теме
 
 *   [fstab (Русский)](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")
-*   [Power management/Suspend and hibernate (Русский)](/index.php/Power_management/Suspend_and_hibernate_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Power management/Suspend and hibernate (Русский)")
+*   [Управление питанием/Ждущий и спящий режимы#Гибернация](/index.php/%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC/%D0%96%D0%B4%D1%83%D1%89%D0%B8%D0%B9_%D0%B8_%D1%81%D0%BF%D1%8F%D1%89%D0%B8%D0%B9_%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D1%8B#Гибернация "Управление питанием/Ждущий и спящий режимы")
 *   [Zswap](/index.php/Zswap "Zswap")
 *   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
-*   [ZFS (Русский)#Swap_volume](/index.php/ZFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Swap_volume "ZFS (Русский)")
-*   [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
+*   [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS")
+*   [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
 
 Эта страница дает ознакомление с [пространством подкачки и подкачкой страниц](https://en.wikipedia.org/wiki/ru:%D0%9F%D0%BE%D0%B4%D0%BA%D0%B0%D1%87%D0%BA%D0%B0_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86 "wikipedia:ru:Подкачка страниц") в GNU/Linux. Охватывает создание, активацию файлов и разделов подкачки.
 

@@ -75,7 +75,7 @@ A especificação UEFI tem suporte para inicializar BIOS legado com sua [Compati
 3.  O firmware lê as entradas de inicialização na NVRAM para determinar qual aplicativo EFI deve ser iniciado e de onde (por exemplo, de qual disco e partição).
     *   Uma entrada de inicialização pode ser simplesmente um disco. Nesse caso, o firmware procura uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") nesse disco e tenta localizar o aplicativo EFI no caminho reserva de inicialização `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` em [sistemas com um IA32 (32 bits)](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). É assim que as mídias removíveis inicializáveis UEFI funcionam.
 4.  O firmware inicia o aplicativo EFI.
-    *   Isso poderia ser um [gerenciador de boot](#Gerenciador_de_boot) ou o [kernel](/index.php/Kernel "Kernel") do Arch usando [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)")
+    *   Isso poderia ser um [gerenciador de boot](#Gerenciador_de_boot) ou o [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") do Arch usando [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)")
     *   Ele poderia ser algum aplicativo EFI como um shell UEFI ou um [gerenciador de boot](#Gerenciador_de_boot), como [systemd-boot](/index.php/Systemd-boot "Systemd-boot") ou [rEFInd](/index.php/REFInd "REFInd").
 
 Se [Secure Boot](/index.php/Secure_Boot "Secure Boot") estiver habilitado, o processo de inicialização vai verificar a autenticidade do binário EFI pela assinatura.
@@ -121,11 +121,11 @@ Veja também [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wik
 
 ## Kernel
 
-O [kernel](/index.php/Kernel "Kernel") é o núcleo de um sistema operacional. Ele funciona em um baixo nível (*kernelspace* ou espaço de kernel) interagindo entre o hardware da máquina e os programas que usam o hardware para funcionar. Para fazer uso eficiente da CPU, o kernel usa um agendador para arbitrar quais tarefas têm prioridade em qualquer momento, criando a ilusão de que muitas tarefas são executadas simultaneamente.
+O [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") é o núcleo de um sistema operacional. Ele funciona em um baixo nível (*kernelspace* ou espaço de kernel) interagindo entre o hardware da máquina e os programas que usam o hardware para funcionar. Para fazer uso eficiente da CPU, o kernel usa um agendador para arbitrar quais tarefas têm prioridade em qualquer momento, criando a ilusão de que muitas tarefas são executadas simultaneamente.
 
 ## initramfs
 
-Depois que o [gerenciador de boot](#Gerenciador_de_boot) carrega o [kernel](/index.php/Kernel "Kernel") e os possíveis arquivos initramfs e executa o kernel, o kernel extrai os arquivos initramfs (sistema de arquivos RAM inicial) no (então vazio) rootfs (sistema de arquivos raiz inicial, especificamente um ramfs ou tmpfs). O primeiro initramfs extraído é aquele embutido no binário do kernel durante a construção do kernel, então os possíveis arquivos initramfs externos são extraídos. Assim, os arquivos no initramfs externo sobrescrevem arquivos com o mesmo nome no initramfs incorporado. O kernel então executa `/init` (no rootfs) como o primeiro processo. O *early userspace* é iniciado.
+Depois que o [gerenciador de boot](#Gerenciador_de_boot) carrega o [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") e os possíveis arquivos initramfs e executa o kernel, o kernel extrai os arquivos initramfs (sistema de arquivos RAM inicial) no (então vazio) rootfs (sistema de arquivos raiz inicial, especificamente um ramfs ou tmpfs). O primeiro initramfs extraído é aquele embutido no binário do kernel durante a construção do kernel, então os possíveis arquivos initramfs externos são extraídos. Assim, os arquivos no initramfs externo sobrescrevem arquivos com o mesmo nome no initramfs incorporado. O kernel então executa `/init` (no rootfs) como o primeiro processo. O *early userspace* é iniciado.
 
 O Arch Linux usa um arquivo vazio para o initramfs incorporado (que é o padrão ao construir o Linux). Veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para mais informações específicas do Arch sobre o initramfs externo.
 

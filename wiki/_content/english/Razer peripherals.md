@@ -16,10 +16,10 @@ Another package, [openrazer-meta](https://aur.archlinux.org/packages/openrazer-m
     *   [1.3 Using the Razer Configuration Tool](#Using_the_Razer_Configuration_Tool)
 *   [2 OpenRazer](#OpenRazer)
     *   [2.1 Compatibility](#Compatibility_2)
-        *   [2.1.1 Keyboards](#Keyboards)
-        *   [2.1.2 Mice](#Mice)
-        *   [2.1.3 Mousemats](#Mousemats)
-        *   [2.1.4 Headsets](#Headsets)
+        *   [2.1.1 Headsets](#Headsets)
+        *   [2.1.2 Keyboards](#Keyboards)
+        *   [2.1.3 Mice](#Mice)
+        *   [2.1.4 Mousemats](#Mousemats)
         *   [2.1.5 Other devices](#Other_devices)
     *   [2.2 Installation](#Installation_2)
     *   [2.3 How to use](#How_to_use)
@@ -39,23 +39,23 @@ Another package, [openrazer-meta](https://aur.archlinux.org/packages/openrazer-m
 
 *razercfg* lists the following mice models as stable:
 
-*   Razer DeathAdder Classic
+*   Razer DeathAdder 2013
 *   Razer DeathAdder 3500 DPI
 *   Razer DeathAdder Black Edition
-*   Razer DeathAdder 2013
 *   Razer DeathAdder Chroma
+*   Razer DeathAdder Classic
 *   Razer Krait
-*   Razer Naga Classic
 *   Razer Naga 2012
 *   Razer Naga 2014
+*   Razer Naga Classic
 *   Razer Naga Hex
 *   Razer Taipan
 
 And the following as stable but missing minor features:
 
-*   Razer Lachesis
-*   Razer Copperhead
 *   Razer Boomslang CE
+*   Razer Copperhead
+*   Razer Lachesis
 
 ### Installation
 
@@ -109,75 +109,75 @@ color=1:GlowingLogo:FFFFFF
 
 ### Compatibility
 
+#### Headsets
+
+*   Razer Kraken 7.1 Chroma
+*   Razer Kraken 7.1 Classic
+*   Razer Kraken 7.1 V2
+
 #### Keyboards
 
-*   Razer BlackWidow Ultimate 2012
-*   Razer BlackWidow Classic (Alternate)
 *   Razer Anansi
-*   Razer BlackWidow Ultimate 2013
-*   Razer BlackWidow Classic
-*   Razer DeathStalker Expert
 *   Razer BlackWidow Chroma
-*   Razer DeathStalker Chroma
-*   Razer Blade Stealth
-*   Razer Orbweaver Chroma
-*   Razer BlackWidow Tournament Edition Chroma
-*   Razer Blade QHD
-*   Razer Blade Pro (Late 2016)
 *   Razer BlackWidow Chroma (Overwatch)
+*   Razer BlackWidow Chroma V2
+*   Razer BlackWidow Classic
+*   Razer BlackWidow Classic (Alternate)
+*   Razer BlackWidow Tournament Edition Chroma
+*   Razer BlackWidow Ultimate 2012
+*   Razer BlackWidow Ultimate 2013
 *   Razer BlackWidow Ultimate 2016
 *   Razer BlackWidow X Chroma
-*   Razer BlackWidow X Ultimate
 *   Razer BlackWidow X Tournament Edition Chroma
-*   Razer Ornata Chroma
-*   Razer Ornata
-*   Razer Blade Stealth (Late 2016)
-*   Razer BlackWidow Chroma V2
+*   Razer BlackWidow X Ultimate
 *   Razer Blade (Late 2016)
+*   Razer Blade Pro (Late 2016)
+*   Razer Blade QHD
+*   Razer Blade Stealth
+*   Razer Blade Stealth (Late 2016)
 *   Razer Blade Stealth (Mid 2017)
+*   Razer DeathStalker Chroma
+*   Razer DeathStalker Expert
+*   Razer Orbweaver Chroma
+*   Razer Ornata
+*   Razer Ornata Chroma
 
 #### Mice
 
-*   Razer Orochi 2011
+*   Razer Abyssus 2014
+*   Razer Abyssus V2
+*   Razer DeathAdder Chroma
+*   Razer DeathAdder Elite
+*   Razer Diamondback Chroma
+*   Razer Imperator 2012
 *   Razer Mamba 2012 (Wired)
 *   Razer Mamba 2012 (Wireless)
-*   Razer Imperator 2012
-*   Razer Ouroboros 2012
-*   Razer Taipan
-*   Razer Naga Hex (Red)
-*   Razer Orochi 2013
-*   Razer Naga 2014
-*   Razer Naga Hex
-*   Razer Abyssus 2014
-*   Razer DeathAdder Chroma
+*   Razer Mamba Tournament Edition
 *   Razer Mamba (Wired)
 *   Razer Mamba (Wireless)
-*   Razer Mamba Tournament Edition
-*   Razer Orochi (Wired)
-*   Razer Diamondback Chroma
-*   Razer Naga Hex V2
+*   Razer Naga 2014
 *   Razer Naga Chroma
-*   Razer Abyssus V2
-*   Razer DeathAdder Elite
+*   Razer Naga Hex
+*   Razer Naga Hex (Red)
+*   Razer Naga Hex V2
+*   Razer Orochi 2011
+*   Razer Orochi 2013
+*   Razer Orochi (Wired)
+*   Razer Ouroboros 2012
+*   Razer Taipan
 
 #### Mousemats
 
 *   Razer Firefly
 
-#### Headsets
-
-*   Razer Kraken 7.1 Classic
-*   Razer Kraken 7.1 Chroma
-*   Razer Kraken 7.1 V2
-
 #### Other devices
 
+*   Razer Chroma Mug Holder
+*   Razer Core
 *   Razer Nostromo
 *   Razer Orbweaver
 *   Razer Tartarus
 *   Razer Tartarus Chroma
-*   Razer Core
-*   Razer Chroma Mug Holder
 
 ### Installation
 

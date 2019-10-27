@@ -1,11 +1,15 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Como instalar](#Como_instalar)
     *   [2.1 AUR](#AUR)
     *   [2.2 Manual](#Manual)
 *   [3 Compartiendo sus propios archivos](#Compartiendo_sus_propios_archivos)
-*   [4 Vínculos](#V.C3.ADnculos)
+*   [4 Vínculos](#Vínculos)
 
 # Introduction
 

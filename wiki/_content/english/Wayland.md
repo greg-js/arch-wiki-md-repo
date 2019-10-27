@@ -63,6 +63,7 @@ For the GPU driver and Wayland compositor to be compatible they must support the
 | Grefsen | Floating | [Grefsen](https://github.com/ec1oud/grefsen) is a Qt/Wayland compositor providing a minimal desktop environment. |
 | Waymonad | Tiling | [Waymonad](https://github.com/waymonad/waymonad) is a Wayland compositor based on ideas from and inspired by xmonad |
 | wayfire | Stacking | [Wayfire](https://github.com/WayfireWM/wayfire) is a general purpose compositor. |
+| Weston | Floating | [Weston](/index.php/Weston "Weston") is a Wayland compositor reference implementation. |
 
 Some of the above may support [display managers](/index.php/Display_manager "Display manager"). Check `/usr/share/wayland-sessions/*compositor*.desktop` to see how they are started.
 
@@ -128,7 +129,7 @@ redshift -m drm -PO 3000
 Otherwise some compositors feature this option during runtime:
 
 *   [GNOME](/index.php/GNOME "GNOME") provides features like [Redshift](/index.php/Redshift "Redshift") out-of-the-box and has Wayland support. Enable [Night Light](/index.php/GNOME#Night_Light "GNOME") in Display settings.
-*   Likewise, [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") provides *Night Color* which is Wayland-only.
+*   Likewise, [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") also provides *Night Color*.
 *   On Sway 1.0 and other wlroots-based compositors, [redshift-wlr-gamma-control-git](https://aur.archlinux.org/packages/redshift-wlr-gamma-control-git/) can be used.
 *   On Orbital, [redshift-wayland-git](https://aur.archlinux.org/packages/redshift-wayland-git/) can be used.
 

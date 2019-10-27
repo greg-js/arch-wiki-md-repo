@@ -219,7 +219,7 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 
 ### Example layouts
 
-The following examples use `/dev/sda` as the example disk with `/dev/sda1` as the first partition. The block device naming scheme will differ if you are partitioning a NVMe disk (e.g. `/dev/nvme0n1` with partitions starting from `/dev/nvme0n1p1`) or an SD card or eMMC disk (e.g. `/dev/mmcblk0` with partitions starting from `/dev/mmcblk0p1`). See [Device file#Block device names](/index.php/Device_file#Block_device_names "Device file") for more information.
+The following examples use `/dev/sda` as the example disk with `/dev/sda1` as the first partition. The block device naming scheme will differ if you are partitioning a [NVMe](/index.php/NVMe "NVMe") disk (e.g. `/dev/nvme0n1` with partitions starting from `/dev/nvme0n1p1`) or an SD card or eMMC disk (e.g. `/dev/mmcblk0` with partitions starting from `/dev/mmcblk0p1`). See [Device file#Block device names](/index.php/Device_file#Block_device_names "Device file") for more information.
 
 **Note:** UEFI booting does not involve any "boot" flag, booting relies solely on the boot entries in NVRAM. [Parted](/index.php/Parted "Parted") and its front-ends use a "boot" flag on GPT to indicate that a partition is an EFI system partition.
 

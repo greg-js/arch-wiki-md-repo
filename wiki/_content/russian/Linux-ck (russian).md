@@ -1,21 +1,25 @@
 [Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) — это пакет, доступный в [AUR](/index.php/AUR "AUR") и в [unofficial linux-ck repo](#2._Use_Pre-Compiled_Packages), который позволяет пользователям запускать ядро с набором патчей Кона Коливаса, включая "Brain Fuck Scheduler" (BFS).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Основная информация о пакете](#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D0.B0.D1.8F_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D1.8F_.D0.BE_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B5)
-*   [2 Варианты установки](#.D0.92.D0.B0.D1.80.D0.B8.D0.B0.D0.BD.D1.82.D1.8B_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
-    *   [2.1 Компиляция из исходников](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D1.8F_.D0.B8.D0.B7_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.B8.D0.BA.D0.BE.D0.B2)
-    *   [2.2 Использование готовых пакетов](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-        *   [2.2.1 Виды пакетов](#.D0.92.D0.B8.D0.B4.D1.8B_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-        *   [2.2.2 Добавление репозитория в /etc/pacman.conf](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8F_.D0.B2_.2Fetc.2Fpacman.conf)
-        *   [2.2.3 Примеры установки](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
-        *   [2.2.4 Предлагаемые пакеты](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BB.D0.B0.D0.B3.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
-        *   [2.2.5 Как включить BFQ I/O Scheduler](#.D0.9A.D0.B0.D0.BA_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_BFQ_I.2FO_Scheduler)
-            *   [2.2.5.1 Глобально](#.D0.93.D0.BB.D0.BE.D0.B1.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE)
-            *   [2.2.5.2 Выборочно](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80.D0.BE.D1.87.D0.BD.D0.BE)
-*   [3 Запуск VirtualBox](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_VirtualBox)
-*   [4 Немного о BFS](#.D0.9D.D0.B5.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BE_BFS)
-*   [5 Дополнительная информация](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D1.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Основная информация о пакете](#Основная_информация_о_пакете)
+*   [2 Варианты установки](#Варианты_установки)
+    *   [2.1 Компиляция из исходников](#Компиляция_из_исходников)
+    *   [2.2 Использование готовых пакетов](#Использование_готовых_пакетов)
+        *   [2.2.1 Виды пакетов](#Виды_пакетов)
+        *   [2.2.2 Добавление репозитория в /etc/pacman.conf](#Добавление_репозитория_в_/etc/pacman.conf)
+        *   [2.2.3 Примеры установки](#Примеры_установки)
+        *   [2.2.4 Предлагаемые пакеты](#Предлагаемые_пакеты)
+        *   [2.2.5 Как включить BFQ I/O Scheduler](#Как_включить_BFQ_I/O_Scheduler)
+            *   [2.2.5.1 Глобально](#Глобально)
+            *   [2.2.5.2 Выборочно](#Выборочно)
+*   [3 Запуск VirtualBox](#Запуск_VirtualBox)
+*   [4 Немного о BFS](#Немного_о_BFS)
+*   [5 Дополнительная информация](#Дополнительная_информация)
 *   [6 Linux-ck Package Changelog](#Linux-ck_Package_Changelog)
 
 ## Основная информация о пакете
@@ -196,4 +200,4 @@ BFS — это аббревиатура от Brain Fuck Scheduler. Он пред
 *   [Wikipedia's BFS Article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")
 *   [Con Kolivas' Blog](http://ck-hack.blogspot.com/)
 
-## [Linux-ck Package Changelog](/index.php/Linux-ck/Changelog "Linux-ck/Changelog")
+## [Linux-ck Package Changelog](/index.php?title=Linux-ck/Changelog&action=edit&redlink=1 "Linux-ck/Changelog (page does not exist)")

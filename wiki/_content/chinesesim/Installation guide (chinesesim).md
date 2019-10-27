@@ -1,10 +1,10 @@
-**翻译状态：** 本文是英文页面 [Installation guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-15，点击[这里](https://wiki.archlinux.org/index.php?title=Installation+guide&diff=0&oldid=568657)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-26，点击[这里](https://wiki.archlinux.org/index.php?title=Installation+guide&diff=0&oldid=585451)可以查看翻译后英文页面的改动。
 
 本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)")。请注意，代码段可能会有占位符（格式是 `*italics*`），你可能需要手动去掉它们。
 
 有关更详细的说明，请阅读本指南内相应的 [ArchWiki](/index.php/ArchWiki:About_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:About (简体中文)") 文章或各类程序的[手册](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Man page (简体中文)")。有关配置的概述，请参阅 [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7)。若需要交互帮助，可以使用 [IRC 频道](/index.php/IRC_channel "IRC channel") 和 [论坛](https://bbs.archlinux.org/)。
 
-Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikipedia.org/wiki/zh:X86-64 "w:zh:X86-64") 兼容机上运行。用 [base](https://www.archlinux.org/packages/?name=base) 组内的软件包进行的基本安装将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
+Arch Linux 能运行在超过 512 MB 内存的 [x86_64](https://en.wikipedia.org/wiki/zh:X86-64 "w:zh:X86-64") 机器上。基本安装将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -25,7 +25,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
     *   [1.9 挂载分区](#挂载分区)
 *   [2 安装](#安装)
     *   [2.1 选择镜像](#选择镜像)
-    *   [2.2 安装基本系统](#安装基本系统)
+    *   [2.2 安装必须的软件包](#安装必须的软件包)
 *   [3 配置系统](#配置系统)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
@@ -44,12 +44,12 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ### 验证签名
 
-一般建议先验证所下载文件的签名，特别是从 *HTTP 镜像源* 下载的文件，因为通常会受到恶意镜像的拦截。 [[1]](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#explanation)
+一般建议先验证所下载文件的签名，特别是从 *HTTP 镜像源* 下载的文件，因为通常会受到恶意镜像的拦截。 [[1]](http://www2.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html)
 
 在一台已经安装 [GnuPG](/index.php/GnuPG "GnuPG") 的系统上，通过下载 *PGP 签名* (under *Checksums*) 到 ISO 文件所在的路径，可以通过以下方式[验证](/index.php/GnuPG#Verify_a_signature "GnuPG")：
 
 ```
-$ gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-*version*-x86_64.iso.sig
+ $ gpg --keyserver-options auto-key-retrieve --verify archlinux-*version*-x86_64.iso.sig
 
 ```
 
@@ -160,7 +160,7 @@ live 环境可以从 [USB 安装 U 盘](/index.php/USB_flash_installation_media 
 | [SWAP] | `/dev/sd*X*2` | Linux swap (交换空间) | 大于 512 MiB |
 | UEFI with [GPT](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GUID_分区表 "Partitioning (简体中文)") |
 | 挂载点 | 分区 | [分区类型](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | 建议大小 |
-| `/mnt/boot` or `/mnt/efi` | `/dev/sd*X*1` | [EFI 系统分区](/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "EFI system partition (简体中文)") | 256–512 MiB |
+| `/mnt/boot` or `/mnt/efi` | `/dev/sd*X*1` | [EFI 系统分区](/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "EFI system partition (简体中文)") | 260–512 MiB |
 | `/mnt` | `/dev/sd*X*2` | Linux x86-64 根目录 (/) | 剩余空间 |
 | [SWAP] | `/dev/sd*X*3` | Linux swap (交换空间) | 大于 512 MiB |
 
@@ -213,18 +213,25 @@ live 环境可以从 [USB 安装 U 盘](/index.php/USB_flash_installation_media 
 
 这个文件接下来还会被 *pacstrap* 拷贝到新系统里，所以请确保设置正确。
 
-### 安装基本系统
+### 安装必须的软件包
 
-使用 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/packages/?name=base) 软件包和 [linux](https://www.archlinux.org/packages/?name=linux) 内核以及常规硬件的固件：
+使用 [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 脚本，安装 [base](https://www.archlinux.org/packages/?name=base) 软件包和 Linux [内核](/index.php/Kernel "Kernel")以及常规硬件的固件：
 
 ```
 # pacstrap /mnt base linux linux-firmware
 
 ```
 
-base 软件包并没有包含全部 live 环境中的程序，有些需要额外安装，例如 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)。[packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) 页面包含了它们的差异。
+**Tip:** 可以将 [linux](https://www.archlinux.org/packages/?name=linux) 替换为 [kernel](/index.php/Kernel "Kernel") 页面中介绍的内核软件包。如果知道自己的需求，可以不安装内核和固件软件包。
 
-你可以选择别的提供内核的软件包来代替 [linux](https://www.archlinux.org/packages/?name=linux)；你甚至可以把这件事搁置，前提是你知道你在做什么且明晰这样做的风险。
+[base](https://www.archlinux.org/packages/?name=base) 软件包并没有包含全部 live 环境中的程序，[packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) 页面包含了它们的差异。需要额外安装：
+
+*   管理所用[文件系统](/index.php/File_systems "File systems") 的用户工具
+*   访问 [RAID](/index.php/RAID "RAID") 或 [LVM](/index.php/LVM "LVM") 分区的工具
+*   未包含在 [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) 中的额外固件
+*   [联网](/index.php/Networking "Networking")需要的程序
+*   [文本编辑器](/index.php/Text_editor "Text editor"),
+*   访问 [man](/index.php/Man "Man") 和 [info](/index.php/Info "Info") 页面的工具： [man-db](https://www.archlinux.org/packages/?name=man-db), [man-pages](https://www.archlinux.org/packages/?name=man-pages) 和 [texinfo](https://www.archlinux.org/packages/?name=texinfo).
 
 如果你还想安装其他软件包组比如 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)，请将他们的名字添加到 *pacstrap* 后，并用空格隔开。你也可以在 [#Chroot](#Chroot) 之后使用 [pacman](/index.php/Pacman "Pacman") 手动安装软件包或组。
 
@@ -330,7 +337,7 @@ zh_TW.UTF-8 UTF-8
 
 如果系统有一个永久的 IP 地址，请使用这个永久的 IP 地址而不是 `127.0.1.1`。
 
-对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
+对新安装的系统，需要再次设置网络，[安装](/index.php/Install "Install") [iputils](https://www.archlinux.org/packages/?name=iputils) 或希望使用的 [网络管理](/index.php/Network_management "Network management") 软件。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
 
 ### Initramfs
 
@@ -339,7 +346,7 @@ zh_TW.UTF-8 UTF-8
 对于 [LVM](/index.php/LVM#Configure_mkinitcpio "LVM")、 [system encryption](/index.php/Dm-crypt "Dm-crypt") 或 [RAID](/index.php/RAID#Configure_mkinitcpio "RAID")，修改 [mkinitcpio.conf](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)") 并用以下命令重新创建一个 Initramfs：
 
 ```
-# mkinitcpio -p linux
+# mkinitcpio -P
 
 ```
 
@@ -356,11 +363,9 @@ zh_TW.UTF-8 UTF-8
 
 你需要安装 Linux 引导程序以在安装后启动系统，你可以使用的的引导程序在 [启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)") 中，请选择一个并且安装并配置它，比如 [GRUB](/index.php/GRUB "GRUB")。
 
-**注意:** 如果你使用 Intel 或者 AMD 的 CPU，请[启用微码更新](/index.php/Microcode "Microcode")。
-
 ## 重启
 
-输入 `exit` 或按 `Ctrl+D` 退出 chroot 环境。
+输入 `exit` 或按 `Ctrl+d` 退出 chroot 环境。
 
 可选用 `umount -R /mnt` 手动卸载被挂载的分区：这有助于发现任何「繁忙」的分区，并通过 [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) 查找原因。
 

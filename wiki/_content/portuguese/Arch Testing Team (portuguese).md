@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Testing Team](/index.php/Arch_Testing_Team "Arch Testing Team"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Testing_Team&diff=0&oldid=571119) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Testing Team](/index.php/Arch_Testing_Team "Arch Testing Team"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Testing_Team&diff=0&oldid=583812) na versão em inglês.
 
 O Equipe de Teste do Arch é um grupo dentro da comunidade Arch responsável por garantir que os pacotes enviados para os repositórios [*testing*](/index.php/Testing_(Portugu%C3%AAs) "Testing (Português)") estejam funcionais. Isto inclui, certificar-se que o pacote é instalado corretamente, que não causa quebra com pacotes dos quais ele depende, entre outros.
 

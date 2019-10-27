@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Ccache](/index.php/Ccache "Ccache"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=572622) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Ccache](/index.php/Ccache "Ccache"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=586769) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,11 +19,12 @@ Artigos relacionados
     *   [2.2 Habilitar para linha de comando](#Habilitar_para_linha_de_comando)
     *   [2.3 Habilitar com colorgcc](#Habilitar_com_colorgcc)
 *   [3 Diversos](#Diversos)
-    *   [3.1 Alterar o diretório do cache](#Alterar_o_diretório_do_cache)
-    *   [3.2 Configurar o tamanho máximo do cache](#Configurar_o_tamanho_máximo_do_cache)
-    *   [3.3 Desabilitar o cacho via ambiente](#Desabilitar_o_cacho_via_ambiente)
-    *   [3.4 CLI](#CLI)
-    *   [3.5 makechrootpkg](#makechrootpkg)
+    *   [3.1 Sloppiness](#Sloppiness)
+    *   [3.2 Alterar o diretório do cache](#Alterar_o_diretório_do_cache)
+    *   [3.3 Configurar o tamanho máximo do cache](#Configurar_o_tamanho_máximo_do_cache)
+    *   [3.4 Desabilitar o cacho via ambiente](#Desabilitar_o_cacho_via_ambiente)
+    *   [3.5 CLI](#CLI)
+    *   [3.6 makechrootpkg](#makechrootpkg)
 *   [4 Advertência](#Advertência)
 *   [5 Veja também](#Veja_também)
 
@@ -74,8 +75,8 @@ Você pode querer definir essa linha como [variável de ambiente](/index.php/Var
 Já que [colorgcc](https://www.archlinux.org/packages/?name=colorgcc) também um *wrapper* de compilador, precisa-se ter alguns cuidados para garantir que cada wrapper é chamado na sequência correta.
 
 ```
-export PATH="/usr/lib/colorgcc/bin/:$PATH"    # De acordo com a instalação usual de colorgcc, deixe inalterado (não adicione ccache)
-export CCACHE_PATH="/usr/bin"                 # Fale para o ccache usar apenas compiladores aqui
+export PATH="/usr/lib/colorgcc/bin/:$PATH"    # De acordo com a instalação usual de *colorgcc*, deixe inalterado (não adicione *ccache*)
+export CCACHE_PATH="/usr/bin"                 # Fale para o *ccache* usar apenas compiladores aqui
 
 ```
 
@@ -93,7 +94,24 @@ gcj:/usr/bin/gcj
 
 ```
 
+As versões mais recentes do *ccache* sempre habilitarão cores para o GCC quando `GCC_COLORS` estiver definido. A cor está ativada para Clang por padrão. Se a saída não for um TTY, o *ccache* solicitará que o compilador gere cores, armazenando-as no cache, mas removendo-as da saída. Ainda existe algum problema na unificação [-fdiagnostics-color](https://github.com/ccache/ccache/issues/224).
+
 ## Diversos
+
+### Sloppiness
+
+Por padrão, o *ccache* usa uma comparação muito conservadora que minimiza os falsos positivos e, em alguns projetos, os verdadeiros positivos. Algumas das comparações são consideradas inúteis e podem ser alteradas:
+
+```
+ $ ccache --set-config=sloppiness=file_macro,locale,time_macros
+
+```
+
+Isso indica ao *ccache* para ignorar as `__FILE__` e macros relacionadas ao tempo, que geralmente invalidam o cache e são consideradas prejudiciais em construções reproduzíveis de qualquer maneira. As diferenças de localidade também são ignoradas. O *ccache* se preocupa com isso principalmente porque determina o idioma das mensagens de diagnóstico.
+
+A variável de ambiente `CCACHE_SLOPPINESS` pode ser exportada para substituir qualquer configuração de "sloppiness" pré-existente.
+
+Por padrão, o *ccache* também armazena em cache o diretório atual que está sendo usado para cada compilação, o que significa falhas de cache para pipelines de compilação que usam um novo diretório temporário aleatório toda vez que é chamado. Consulte a seção [Compiling in different directories](https://ccache.dev/manual/latest.html#_compiling_in_different_directories) do manual do *ccache*.
 
 ### Alterar o diretório do cache
 
@@ -160,7 +178,7 @@ Então, *ccache* pode ser configurado para o chroot na mesma forma como explicad
 
 *ccache* é efetivo **somente** quando compilar fontes **exatamente idênticas**. (mais especificamente, fontes pré-processadas.)
 
-Na comunidade Gentoo Linux, uma distro baseada em fontes, *ccache* tem sido notório por seu efeito placebo, falha de compilação (devido a objetos indesejados), etc. O Gentoo exige que seja desligado o *ccache* antes de relatar falha de compilação. Veja a [seção ccache](https://wiki.gentoo.org/wiki/Handbook:Parts/Working/Features#Caching_compilation_objects) no Manual do Gentoo Linux, e [a publicação de blog](https://flameeyes.blog/2008/06/21/debunking-ccache-myths/) intitulado "Debunking ccache myths" por Diego Pettenò, um ex-desenvolvedor Gentoo.
+Na comunidade Gentoo Linux, uma distro baseada em fontes, *ccache* tem sido notório por seu efeito placebo, falha de compilação (devido a objetos indesejados), etc. O Gentoo exige que seja desligado o *ccache* antes de relatar falha de compilação. Veja a [seção *ccache*](https://wiki.gentoo.org/wiki/Handbook:Parts/Working/Features#Caching_compilation_objects) no Manual do Gentoo Linux, e [a publicação de blog](https://flameeyes.blog/2008/06/21/debunking-ccache-myths/) intitulado "Debunking ccache myths" por Diego Pettenò, um ex-desenvolvedor Gentoo.
 
 ## Veja também
 

@@ -18,7 +18,8 @@ Third-party apps will also be available through a marketplace soon.
 *   [2 Configuration](#Configuration)
     *   [2.1 Configuring CouchDB](#Configuring_CouchDB)
     *   [2.2 Configuring Cozy admin password](#Configuring_Cozy_admin_password)
-    *   [2.3 Starting the stack](#Starting_the_stack)
+    *   [2.3 Creating vault keys](#Creating_vault_keys)
+    *   [2.4 Starting the stack](#Starting_the_stack)
 *   [3 Creating an instance](#Creating_an_instance)
     *   [3.1 Reverse proxying](#Reverse_proxying)
         *   [3.1.1 nginx](#nginx)
@@ -57,14 +58,18 @@ $ curl -X PUT http://<couchdb_admin>:<couchdb_password>@127.0.0.1:5984/_node/cou
 Cozy itself requires an admin password for all operations at the stack level. Create it like this:
 
 ```
-# cozy-stack config passwd /etc/cozy/cozy-admin-passphrase
+$ sudo -u cozy cozy-stack config passwd /etc/cozy/cozy-admin-passphrase
 
 ```
 
-You will be prompted to enter a passphrase. Then fix the ownership:
+You will be prompted to enter a passphrase.
+
+### Creating vault keys
+
+Cozy uses a vault to store some user passwords. To create the vault keys with right ownership and permissions, just proceed like this:
 
 ```
-# chown cozy:cozy /etc/cozy/cozy-admin-passphrase
+$ sudo -u cozy cozy-stack config gen-keys /etc/cozy/vault
 
 ```
 

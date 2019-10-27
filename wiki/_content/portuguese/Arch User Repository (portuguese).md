@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-10-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=584293) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-10-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=585528) na versão em inglês.
 
 Artigos relacionados
 
@@ -227,7 +227,7 @@ Neste meio tempo, você pode tentar atualizar o pacote você mesmo editando o [P
 Provavelmente está deixando escapar alguma coisa trivial.
 
 1.  [Atualize o sistema](/index.php/Pacman_(Portugu%C3%AAs)#Atualizando_pacotes "Pacman (Português)") antes de compilar qualquer coisa com [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), pois o problema pode ser que seu sistema não esteja atualizado.
-2.  Certifique-se de ter ambos os grupos [base](https://www.archlinux.org/packages/?name=base) e [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) instalados.
+2.  Certifique-se de ter o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) instalado.
 3.  Tente usar a opção `-s` com `makepkg` para verificar e instalar todas as dependências necessárias antes de iniciar o processo de compilação.
 
 Certifique-se de ler primeiro o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e os comentários na página AUR do pacote em questão. A razão pode não ser trivial afinal. `CFLAGS`, `LDFLAGS` e `MAKEFLAGS` personalizados podem causar falhas. Também é possível que o `PKGBUILD` esteja quebrado para todos. Se você não conseguir descobrir sozinho, basta relatá-lo ao responsável, por exemplo, publicando os erros que você está recebendo nos comentários na página do AUR.

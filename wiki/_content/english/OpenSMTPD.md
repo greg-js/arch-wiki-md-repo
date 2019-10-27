@@ -6,8 +6,6 @@ Related articles
 
 [OpenSMTPD](https://www.opensmtpd.org/) is a free [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent"), developed as part of the OpenBSD project. This article builds upon [Mail server](/index.php/Mail_server "Mail server").
 
-**Note:** Starting with [version 6.4.0](https://www.opensmtpd.org/announces/release-6.4.0.txt) OpenSMTPD depends on LibreSSL. Since [libressl](https://www.archlinux.org/packages/?name=libressl) is still in testing, the [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) package is stuck in version 6.0.3p1 for now. The [opensmtpd-libressl](https://aur.archlinux.org/packages/opensmtpd-libressl/) package from the AUR is available for newer versions.
-
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -39,9 +37,9 @@ Related articles
 
 ## Configuration
 
-OpenSMTPD is configured in `/etc/smtpd`.
+OpenSMTPD is configured in `/etc/smtpd/`.
 
-**Note:** Starting with OpenSMTPD [version 6.4.0](https://www.opensmtpd.org/announces/release-6.4.0.txt) the configuration file syntax has been completely reworked, breaking compatibility with previous configuration files. The following examples are for old version 6.0.3p1.
+**Note:** Starting with OpenSMTPD [version 6.4.0](https://www.opensmtpd.org/announces/release-6.4.0.txt) the configuration file syntax has been completely reworked, breaking compatibility with previous configuration files. For instruction on migrating the configuration to the new syntax see [https://poolp.org/posts/2018-05-21/switching-to-opensmtpd-new-config/](https://poolp.org/posts/2018-05-21/switching-to-opensmtpd-new-config/).
 
 ### Local mail
 
@@ -248,7 +246,7 @@ dXNlcm5hbWUAdXNlcm5hbWUAcGFzc3dvcmQ=
 
 ### "Helo command rejected: need fully-qualified hostname"
 
-When sending email, if you get this kind of messages, set your FQDN in the file `/etc/smtpd/mailname`. Otherwise, the server name is derived from the local hostname returned by gethostname(3), either directly if it is a fully qualified domain name, or by retreiving the associated canonical name through getaddrinfo(3).
+When sending email, if you get this kind of messages, set your FQDN in the file `/etc/smtpd/mailname`. Otherwise, the server name is derived from the local [hostname](/index.php/Hostname "Hostname") returned by [gethostname(3p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gethostname.3p), either directly if it is a fully qualified domain name, or by retrieving the associated canonical name through [getaddrinfo(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getaddrinfo.3).
 
 ## See also
 

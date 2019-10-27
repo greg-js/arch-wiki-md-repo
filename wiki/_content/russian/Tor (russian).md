@@ -1,4 +1,10 @@
-[Tor](https://ru.wikipedia.org/wiki/Tor) - открытая реализация анонимной сети [луковой маршрутизации](https://ru.wikipedia.org/wiki/Луковая_маршрутизация) 2-го поколения. Он может пригодится тем, кто хочет сохранить анонимность в интернете, а также защитить трафик от третьей стороны (провайдера и других любопытных). Также, использование подобного программного обеспечения актуально для стран в которых есть [интернет-цензура](https://ru.wikipedia.org/wiki/Интернет-цензура).
+Ссылки по теме
+
+*   [GNUnet](/index.php/GNUnet "GNUnet")
+*   [I2P (Русский)](/index.php/I2P_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "I2P (Русский)")
+*   [Freenet](/index.php/Freenet "Freenet")
+
+[Tor](https://www.torproject.org) — открытая реализация анонимной сети, основанная на [луковой маршрутизации](https://en.wikipedia.org/wiki/ru:%D0%9B%D1%83%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F "wikipedia:ru:Луковая маршрутизация") 2-го поколения. Tor позволяет защититься от атак с использованием [анализа трафика](https://en.wikipedia.org/wiki/ru:HTTPS#.D0.90.D1.82.D0.B0.D0.BA.D0.B8_.D1.81_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0_.D1.82.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.B0 "wikipedia:ru:HTTPS"), что даёт пользователю возможность сохранить [анонимность](https://en.wikipedia.org/wiki/ru:%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%BE%D1%81%D1%82%D1%8C#.D0.98.D0.BD.D1.82.D0.B5.D1.80.D0.BD.D0.B5.D1.82_.D0.B8_.D0.90.D0.BD.D0.BE.D0.BD.D0.B8.D0.BC.D0.BD.D0.BE.D1.81.D1.82.D1.8C "wikipedia:ru:Анонимность") в Интернете.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -33,7 +39,7 @@
 *   [11 "Торификация"](#"Торификация")
 *   [12 Решение проблем](#Решение_проблем)
     *   [12.1 Проблема с пользовательским значением](#Проблема_с_пользовательским_значением)
-*   [13 Внешние ссылки](#Внешние_ссылки)
+*   [13 Смотрите также](#Смотрите_также)
 
 ## Принцип работы
 
@@ -505,13 +511,10 @@ RunAsDaemon 1
 
 ```
 
-## Внешние ссылки
+## Смотрите также
 
-*   [Official Website](https://www.torproject.org/)
-*   [Unix-based Tor Articles](https://trac.torproject.org/projects/tor/wiki#Unixish)
-*   [Software commonly integrated with Tor](https://trac.torproject.org/projects/tor/wiki/doc/SupportPrograms)
-*   [How to set up a Tor *Hidden Service*](https://www.torproject.org/docs/tor-hidden-service.html.en)
-
-* * *
-
-* * *
+*   [Запуск клиента Tor на Linux/BSD/Unix](https://www.torproject.org/docs/tor-doc-unix.html.en)
+*   [Список статей о Tor для Unix](https://trac.torproject.org/projects/tor/wiki#Unixish)
+*   [Программы с интеграцией Tor](https://trac.torproject.org/projects/tor/wiki/doc/SupportPrograms)
+*   [Как включить Tor *Hidden Service*](https://www.torproject.org/docs/tor-hidden-service.html.en)
+*   [Pluggable Transports для обфускации трафика Tor](https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports)

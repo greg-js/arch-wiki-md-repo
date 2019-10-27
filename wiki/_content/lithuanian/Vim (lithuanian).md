@@ -2,14 +2,18 @@ Vim yra pažengusių vartotojų tekstinis redaktorius, kuris suteikia UNIX `vi` 
 
 Vim yra suprojektuotas, norint sumažinti darbo krūvį pirštams ir riešams. Taip pat dirbant - visiškai nenaudoti pelytės. Tai gali pasirodyti keista, tačiau, kai tik susipažinsit artimiau su vim - suprasite, jog tai didelis pranašumas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Ypatybės](#Ypatyb.C4.97s)
-*   [2 Įdiegimas](#.C4.AEdiegimas)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Ypatybės](#Ypatybės)
+*   [2 Įdiegimas](#Įdiegimas)
 *   [3 Naudojimas](#Naudojimas)
     *   [3.1 Redagavimo pagrindai](#Redagavimo_pagrindai)
-    *   [3.2 Vaikštom aplinkui](#Vaik.C5.A1tom_aplinkui)
-    *   [3.3 Komandų pakartojimas](#Komand.C5.B3_pakartojimas)
+    *   [3.2 Vaikštom aplinkui](#Vaikštom_aplinkui)
+    *   [3.3 Komandų pakartojimas](#Komandų_pakartojimas)
     *   [3.4 Trynimas](#Trynimas)
 
 ## Ypatybės

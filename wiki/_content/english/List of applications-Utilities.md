@@ -1588,6 +1588,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://www.pogo.org.uk/~mark/xosview/](http://www.pogo.org.uk/~mark/xosview/) || [xosview](https://aur.archlinux.org/packages/xosview/)
 
+*   **zps** — A small utility for listing and reaping zombie processes on GNU/Linux.
+
+	[https://github.com/orhun/zps](https://github.com/orhun/zps) || [zps](https://aur.archlinux.org/packages/zps/)
+
 #### Hardware sensor monitoring
 
 See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends "Lm sensors").

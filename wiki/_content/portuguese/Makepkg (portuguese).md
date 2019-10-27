@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=582696) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=582696) na versão em inglês.
 
 Artigos relacionados
 
@@ -90,7 +90,7 @@ Se uma chave pública necessária para um pacote está faltando, o [PKGBUILD](/i
 
 ## Uso
 
-Antes de continuar, [instale](/index.php/Instale "Instale") o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/). Os pacotes que pertencem a este grupo **não** são exigidos na lista de dependência de compilação (*makedepends*) nos arquivos [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). Além disso, o grupo [base](https://www.archlinux.org/packages/?name=base) é presumido como estando instalado em **todos** os sistemas Arch.
+Antes de continuar, [instale](/index.php/Instale "Instale") o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/). Os pacotes que pertencem a este grupo **não** são exigidos na lista de dependência de compilação (*makedepends*) nos arquivos [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
 
 **Nota:** * Certifique-se de que o [sudo](/index.php/Sudo "Sudo") está configurado corretamente para comandos passados para o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 

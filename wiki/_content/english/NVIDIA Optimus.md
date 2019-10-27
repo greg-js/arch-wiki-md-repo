@@ -283,6 +283,7 @@ Use below commands to switch graphics:
 ```
 $ optimus-manager --switch intel    # Use Intel graphics
 $ optimus-manager --switch nvidia   # Use NVIDIA graphics
+$ optimus-manager --switch hybrid   # Use hybrid graphics (Requires a patch to xorg-server)
 $ optimus-manager --switch auto     # Switch to different graphics (from what is used now)
 
 ```
@@ -292,6 +293,7 @@ Also specify which graphics to use on boot:
 ```
 $ optimus-manager --set-startup intel
 $ optimus-manager --set-startup nvidia
+$ optimus-manager --switch hybrid   # Use hybrid graphics (Requires a patch to xorg-server)
 
 ```
 

@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [Nomenclatura de dispositivo de bloco persistente](/index.php/Persistent_block_device_naming "Persistent block device naming")
+*   [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco")
 
 From [Wikipédia](https://en.wikipedia.org/wiki/pt:Arquivos_de_dispositivo "wikipedia:pt:Arquivos de dispositivo"):
 
@@ -38,7 +38,7 @@ No Arch Linux, os nós de dispositivo são gerenciados pelo [udev](/index.php/Ud
 
 O início do nome do dispositivo especifica o subsistema de driver usado do kernel para operar o dispositivo de bloco.
 
-**Atenção:** Os descritores de nomes do kernel para dispositivos de bloco não são [persistentes](/index.php/Persistent_block_device_naming "Persistent block device naming") e podem alterar cada inicialização, eles não devem ser usados em arquivos de configuração.
+**Atenção:** Os descritores de nomes do kernel para dispositivos de bloco não são [persistentes](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") e podem alterar cada inicialização, eles não devem ser usados em arquivos de configuração.
 
 #### SCSI
 

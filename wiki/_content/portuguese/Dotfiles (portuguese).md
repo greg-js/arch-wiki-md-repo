@@ -1,9 +1,9 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=581367) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=581367) na versão em inglês.
 
 Artigos relacionados
 
-*   [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
-*   [X resources](/index.php/X_resources "X resources")
+*   [Suporte a XDG Base Directory](/index.php/Suporte_a_XDG_Base_Directory "Suporte a XDG Base Directory")
+*   [Recursos do X](/index.php/X_resources "X resources")
 
 A configuração de aplicativos específica do usuário é tradicionalmente armazenada nos chamados [*dotfiles*](https://en.wikipedia.org/wiki/dotfile ou [uma ferramenta dedicada](#Ferramentas)) . Além de explicar como gerenciar seus dotfiles, este artigo também contém [uma lista de repositórios de dotfiles](#Repositórios_de_usuários) dos usuários do Arch Linux.
 

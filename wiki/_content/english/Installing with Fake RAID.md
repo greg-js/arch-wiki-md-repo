@@ -4,9 +4,13 @@ Related articles
 *   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
 
-The purpose of this guide is to enable use of a RAID set created by the on-board BIOS RAID controller and thereby allow dual-booting of Linux and Windows from partitions **inside** the RAID set using GRUB. When using so-called "fake RAID" or "host RAID", the disc sets are reached from `/dev/mapper/chipsetName_randomName` and not `/dev/sdX`.
+The purpose of this guide is to enable use of a RAID set created by the on-board BIOS RAID controller and thereby allow dual-booting of Linux and Windows from partitions **inside** the RAID set using GRUB. When using so-called "fake RAID" or "host RAID", the disc sets are reached from `/dev/mapper/chipsetName_randomName` and not `/dev/sd*X*`.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 What is "fake RAID"](#What_is_"fake_RAID")
 *   [2 History](#History)
@@ -32,13 +36,13 @@ The purpose of this guide is to enable use of a RAID set created by the on-board
 
 From [Wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID"):
 
-	*Operating system-based RAID doesn't always protect the boot process and is generally impractical on desktop versions of Windows. Hardware RAID controllers are expensive and proprietary. To fill this gap, cheap "RAID controllers" were introduced that do not contain a RAID controller chip, but simply a standard disk controller chip with special firmware and drivers. During early stage boot-up, the RAID is implemented by the firmware. When a protected-mode operating system kernel such as Linux or a modern version of Microsoft Windows is loaded, the drivers take over.*
+	Operating system-based RAID doesn't always protect the boot process and is generally impractical on desktop versions of Windows. Hardware RAID controllers are expensive and proprietary. To fill this gap, cheap "RAID controllers" were introduced that do not contain a RAID controller chip, but simply a standard disk controller chip with special firmware and drivers. During early stage boot-up, the RAID is implemented by the firmware. When a protected-mode operating system kernel such as Linux or a modern version of Microsoft Windows is loaded, the drivers take over.
 
-	*These controllers are described by their manufacturers as RAID controllers, and it is rarely made clear to purchasers that the burden of RAID processing is borne by the host computer's central processing unit -- not the RAID controller itself -- thus introducing the aforementioned CPU overhead which hardware controllers do not suffer from. Firmware controllers often can only use certain types of hard drives in their RAID arrays (e.g. SATA for Intel Matrix RAID, as there is neither SCSI nor PATA support in modern Intel ICH southbridges; however, motherboard makers implement RAID controllers outside of the southbridge on some motherboards). Before their introduction, a "RAID controller" implied that the controller did the processing, and the new type has become known in technically knowledgeable circles as "fake RAID" even though the RAID itself is implemented correctly. Adaptec calls them "host RAID".*
+	These controllers are described by their manufacturers as RAID controllers, and it is rarely made clear to purchasers that the burden of RAID processing is borne by the host computer's central processing unit -- not the RAID controller itself -- thus introducing the aforementioned CPU overhead which hardware controllers do not suffer from. Firmware controllers often can only use certain types of hard drives in their RAID arrays (e.g. SATA for Intel Matrix RAID, as there is neither SCSI nor PATA support in modern Intel ICH southbridges; however, motherboard makers implement RAID controllers outside of the southbridge on some motherboards). Before their introduction, a "RAID controller" implied that the controller did the processing, and the new type has become known in technically knowledgeable circles as "fake RAID" even though the RAID itself is implemented correctly. Adaptec calls them "host RAID".
 
 See also [FakeRaidHowto @ Community Ubuntu Documentation](https://help.ubuntu.com/community/FakeRaidHowto) for more information.
 
-Despite the terminology, "fake RAID" via [dmraid](https://www.archlinux.org/packages/?name=dmraid) is a robust software RAID implementation that offers a solid system to mirror or stripe data across multiple disks with negligible overhead for any modern system. dmraid is comparable to mdraid (pure Linux software RAID) with the added benefit of being able to completely rebuild a drive after a failure **before** the system is ever booted. However, be aware that not all BIOS RAID implementations support drive rebuilding. Instead they rely on non-linux software to perform the rebuild. If your system cannot rebuild a drive in the BIOS RAID setup utility, you are strongly encouraged to use mdraid (pure Linux Software Raid via mdadm - see [RAID](/index.php/RAID "RAID")) instead of dmraid or you will find yourself unable to rebuild an array in case of a drive failure - or unable to retrieve information from your array in case of a motherboard failure without a lot of additional work.
+Despite the terminology, "fake RAID" via [dmraid](https://www.archlinux.org/packages/?name=dmraid) is a robust software RAID implementation that offers a solid system to mirror or stripe data across multiple disks with negligible overhead for any modern system. *dmraid* is comparable to *mdadm* (pure Linux software RAID) with the added benefit of being able to completely rebuild a drive after a failure **before** the system is ever booted. However, be aware that not all BIOS RAID implementations support drive rebuilding. Instead they rely on non-linux software to perform the rebuild. If your system cannot rebuild a drive in the BIOS RAID setup utility, you are strongly encouraged to use mdraid (pure Linux Software Raid via mdadm - see [RAID](/index.php/RAID "RAID")) instead of dmraid or you will find yourself unable to rebuild an array in case of a drive failure - or unable to retrieve information from your array in case of a motherboard failure without a lot of additional work.
 
 ## History
 
@@ -72,7 +76,7 @@ See [Installation guide#Pre-installation](/index.php/Installation_guide#Pre-inst
 
 ## MBR Install Example Using mdadm on and Intel FakeRAID
 
-This is here because I spent hours making this work because there is so much information out there on different ways to do it, plus outdated information. It may need integrated into this page better, with more explanation and Archlinux WIKI syntax but I am wrapping this up ATM. This is a basic command line dump that shows a successful RAID setup using the MBR partition structure.
+This is here because I spent hours making this work because there is so much information out there on different ways to do it, plus outdated information. It may need integrated into this page better, with more explanation and Arch Linux WIKI syntax but I am wrapping this up ATM. This is a basic command line dump that shows a successful RAID setup using the MBR partition structure.
 
 It looks like once you create the Array in the intel util it writes the raid metadata. So assembling/creating an array does not need to happen. I named my array ZERO in the intel util and you can see it in this example.
 
@@ -227,7 +231,7 @@ Load device-mapper and find RAID sets:
 
 ```
 
-**Warning:** Command "dmraid -ay" could fail after boot to Arch linux Release: 2011.08.19 as image file with initial ramdisk environment does not support dmraid. You could use an older Release: 2010.05\. Note that you must correct your kernel name and initrd name in grubs menu.lst after installing as these releases use different naming
+**Warning:** Command `dmraid -ay` could fail after boot to Arch Linux Release: 2011.08.19 as image file with initial ramdisk environment does not support *dmraid*. You could use an older Release: 2010.05\. Note that you must correct your kernel name and initrd name in grubs menu.lst after installing as these releases use different naming
 
 Example output:
 
@@ -238,7 +242,7 @@ Example output:
 
 ```
 
-If there is only one file (`/dev/mapper/control`), check if your controller chipset module is loaded with `lsmod`. If it is, then dmraid does not support this controller or there are no RAID sets on the system (check RAID BIOS setup again). If correct, then you may be forced to use [software RAID](/index.php/Installing_with_Software_RAID_or_LVM "Installing with Software RAID or LVM") (this means no dual-booted RAID system on this controller).
+If there is only one file (`/dev/mapper/control`), check if your controller chipset module is loaded with `lsmod`. If it is, then *dmraid* does not support this controller or there are no RAID sets on the system (check RAID BIOS setup again). If correct, then you may be forced to use [software RAID](/index.php/Installing_with_Software_RAID_or_LVM "Installing with Software RAID or LVM") (this means no dual-booted RAID system on this controller).
 
 If your chipset module is NOT loaded, load it now. For example:
 
@@ -296,11 +300,11 @@ If -- and this is probably the case -- you do not find your newly created partit
 
 *   Switch to **tty2**, re-enter the **Manually configure block devices, filesystems and mountpoints** menu and the partitions should be available.
 
-**Warning:** NEVER delete a partition in cfdisk to create 2 partitions with dmraid after **Manually configure block devices, filesystems and mountpoints** have been set. (really screws with dmraid metadata and existing partitions are worthless) Solution: delete the array from the bios and re-create to force creation under a new /dev/mapper ID, reinstall/repartition.
+**Warning:** NEVER delete a partition in cfdisk to create 2 partitions with *dmraid* after **Manually configure block devices, filesystems and mountpoints** have been set. (really screws with dmraid metadata and existing partitions are worthless) Solution: delete the array from the bios and re-create to force creation under a new /dev/mapper ID, reinstall/repartition.
 
 ### Install and configure Arch
 
-**Tip:** Utilize three consoles: the setup GUI to configure the system, a chroot to install GRUB, and finally a cfdisk reference since RAID sets have weird names.
+**Tip:** Utilize three consoles: the setup GUI to configure the system, a *chroot* to install GRUB, and finally a *cfdisk* reference since RAID sets have weird names.
 
 *   **tty1:** chroot and grub-install
 *   **tty2:** /arch/setup
@@ -338,24 +342,24 @@ See [GRUB2](/index.php/GRUB2 "GRUB2") for details on configuring GRUB2\. *grub-b
 
 ```
 
-That's all, grub-mkconfig will generate the configure automatically. You could edit /etc/default/grub to modify the configure (timeout, color, etc) before grub-mkconfig.
+That's all, *grub-mkconfig* will generate the configure automatically. You could edit `/etc/default/grub` to modify the configure (timeout, color, etc) before grub-mkconfig.
 
 ## Troubleshooting
 
 ### Booting with degraded array
 
-One drawback of the fake RAID approach on GNU/Linux is that dmraid is currently unable to handle degraded arrays, and will refuse to activate. In this scenario, one must resolve the problem from within another OS (e.g. Windows) or via the BIOS/chipset RAID utility.
+One drawback of the fake RAID approach on GNU/Linux is that *dmraid* is currently unable to handle degraded arrays, and will refuse to activate. In this scenario, one must resolve the problem from within another OS (e.g. Windows) or via the BIOS/chipset RAID utility.
 
-Alternatively, if using a mirrored (RAID 1) array, users may temporarily bypass dmraid during the boot process and boot from a single drive:
+Alternatively, if using a mirrored (RAID 1) array, users may temporarily bypass *dmraid* during the boot process and boot from a single drive:
 
 1.  Edit the **kernel** line from the [GRUB](/index.php/GRUB "GRUB") menu
     1.  Remove references to dmraid devices (e.g. change `/dev/mapper/raidSet1` to `/dev/sda1`)
-    2.  Append `disablehooks=dmraid` to prevent a kernel panic when dmraid discovers the degraded array
+    2.  Append `disablehooks=dmraid` to prevent a kernel panic when *dmraid* discovers the degraded array
 2.  Boot the system
 
 ### Error: Unable to determine major/minor number of root device
 
-If you experience a boot failure after kernel update where the boot process is unable to determine major/minor number of root device, this might just be a timing problem (i.e. dmraid -ay might be called before /dev/sd* is fully set up and detected). This can effect both the normal and LTS kernel images. Booting the 'Fallback' kernel image should work. The error will look something like this:
+If you experience a boot failure after kernel update where the boot process is unable to determine major/minor number of root device, this might just be a timing problem (i.e. `dmraid -ay` might be called before /dev/sd* is fully set up and detected). This can effect both the normal and LTS kernel images. Booting the 'Fallback' kernel image should work. The error will look something like this:
 
 ```
 Activating dmraid arrays...
@@ -369,7 +373,7 @@ Error: Unable to determine major/minor number of root device '/dev/mapper/nvidia
 To work around this problem:
 
 *   boot the Fallback kernel
-*   insert the 'sleep' hook in the HOOKS line of /etc/mkinitcpio.conf after the 'udev' hook like this:
+*   insert the `sleep` hook in the `HOOKS` line of `/etc/mkinitcpio.conf` after the `udev` hook like this:
 
 ```
 HOOKS="base udev sleep autodetect block dmraid filesystems"
@@ -380,9 +384,9 @@ HOOKS="base udev sleep autodetect block dmraid filesystems"
 
 ### dmraid mirror fails to activate
 
-Does everything above work correctly the first time, but then when you reboot dmraid cannot find the array?
+Does everything above work correctly the first time, but then when you reboot *dmraid* cannot find the array?
 
-This is because Linux software raid (mdadm) has already attempted to mount the fakeraid array during system init and left it in an umountable state. To prevent mdadm from running, move the udev rule that is responsible out of the way:
+This is because Linux software raid (*mdadm*) has already attempted to mount the fakeraid array during system init and left it in an umountable state. To prevent *mdadm* from running, move the udev rule that is responsible out of the way:
 
 ```
 # cd /lib/udev/rules.d

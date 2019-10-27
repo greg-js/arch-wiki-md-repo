@@ -76,7 +76,7 @@ This secures the access to the file from non-root users. Read more on [File perm
 
 ### Manually connecting to VPN
 
- `# sudo openvpn --config /etc/openvpn/client/{config_file_name}` 
+ `# openvpn --config /etc/openvpn/client/{config_file_name}` 
 
 `{config_file_name}` will be listed in the /etc/openvpn directory or run `pia -l`.
 
@@ -86,11 +86,11 @@ This secures the access to the file from non-root users. Read more on [File perm
 
 *   [enable](/index.php/Enable "Enable") the `connman-vpn.service`.
 
- `# sudo systemctl enable connman-vpn.service` 
+ `# systemctl enable connman-vpn.service` 
 
 *   Run `pia -a` as root (if you haven't already)
 
- `# sudo pia -a` 
+ `# pia -a` 
 
 *   Get a list of all connman services and find the name of the VPN config `(for example, Finland)` in the second column
 
@@ -108,7 +108,7 @@ This secures the access to the file from non-root users. Read more on [File perm
 
 *   Edit the relevant settings file:
 
- `# sudo vim /var/lib/connman/vpn_fi_privateinternetaccess_com_privateinternetaccess_com/settings` 
+ `# vim /var/lib/connman/vpn_fi_privateinternetaccess_com_privateinternetaccess_com/settings` 
 
 *   Change the `AutoConnect=false` line to `AutoConnect=true`, save, exit, reboot
 

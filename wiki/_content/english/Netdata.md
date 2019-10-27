@@ -1,4 +1,4 @@
-[netdata](https://github.com/firehol/netdata/) is a system for distributed real-time performance and health monitoring. *netdata* is created by the group that also created FireHOL and FireQOS.
+[netdata](https://github.com/firehol/netdata/) is a system for distributed real-time performance and health monitoring. *netdata* is created by the group that also created [FireHOL and FireQOS](/index.php/FireHOL "FireHOL").
 
 *netdata* is designed to permanently run on all systems (physical and virtual servers, containers, IoT devices), without disrupting their core function.
 
@@ -28,7 +28,7 @@ The plugins folders is at `/usr/lib/netdata` and their configuration at `/usr/li
 
 ### Behind a web server
 
-*netdata* can be run behind another server and you can configure it accordingly. The [wiki](https://github.com/firehol/netdata/wiki/Running-behind-nginx) page has example for [Apache](/index.php/Apache "Apache"), [Nginx](/index.php/Nginx "Nginx"), [lighttpd](/index.php/Lighttpd "Lighttpd") and [caddy](/index.php/Caddy "Caddy").
+*netdata* can be run behind another web server (proxy) and you can configure it accordingly. *netdata* [documentation](https://docs.netdata.cloud/) has examples for [Apache](https://docs.netdata.cloud/docs/running-behind-apache), [Nginx](https://docs.netdata.cloud/docs/running-behind-nginx), [lighttpd](https://docs.netdata.cloud/docs/running-behind-lighttpd), [haproxy](https://docs.netdata.cloud/docs/running-behind-haproxy) and [caddy](https://docs.netdata.cloud/docs/running-behind-caddy).
 
 ### Built-in web server
 
@@ -38,5 +38,6 @@ By default *netdata* is accessible at `[http://localhost:19999/](http://localhos
 
 *netdata* can be optimized for:
 
-1.  low resource (or)
-2.  high performance
+1.  [Low resources](https://docs.netdata.cloud/docs/performance)
+2.  [High performance](https://docs.netdata.cloud/docs/high-performance-netdata)
+3.  [IoT](https://docs.netdata.cloud/docs/netdata-for-iot)

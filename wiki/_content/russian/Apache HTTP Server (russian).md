@@ -4,7 +4,7 @@
 *   [MySQL (Русский)](/index.php/MySQL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MySQL (Русский)")
 *   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
 *   [Adminer](/index.php/Adminer "Adminer")
-*   [Xampp (Русский)](/index.php/Xampp_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xampp (Русский)")
+*   [XAMPP](/index.php/XAMPP "XAMPP")
 *   [mod_perl](/index.php/Mod_perl "Mod perl")
 
 [Apache HTTP Server](https://en.wikipedia.org/wiki/ru:Apache "wikipedia:ru:Apache"), или сокращенно Apache — популярный веб-сервер, разработанный Apache Software Foundation.

@@ -35,7 +35,7 @@ sudo nix-channel --update
 
 ### Using archlinux-nix
 
-[archlinux-nix](https://aur.archlinux.org/packages/archlinux-nix/) can be used to 'bootstrap' an archlinux compatable nix system setting up required groups and permissions.
+[archlinux-nix](https://aur.archlinux.org/packages/archlinux-nix/) can be used to 'bootstrap' an archlinux compatible nix system setting up required groups and permissions.
 
 After installing [nix](https://aur.archlinux.org/packages/nix/), which should install [archlinux-nix](https://aur.archlinux.org/packages/archlinux-nix/), to see available commands run:
 

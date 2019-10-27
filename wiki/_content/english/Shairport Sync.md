@@ -12,6 +12,7 @@ Shairport Sync is a fork of the original Shairport which was based on reverse-en
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Audio backend](#Audio_backend)
 *   [3 System service](#System_service)
     *   [3.1 Starting](#Starting)
     *   [3.2 Daemon Setup](#Daemon_Setup)
@@ -27,17 +28,11 @@ Shairport Sync is a fork of the original Shairport which was based on reverse-en
 
 The configuration file can be found at `/etc/shairport-sync.conf`. It contains useful comments and configuration hints. More documentation is available in the [README](https://github.com/mikebrady/shairport-sync/blob/master/README.md#configuring-shairport-sync) file.
 
-## System service
+### Audio backend
 
-Will work well only with ALSA backed (maybe with Jack and Sndio too). Also, check list of output devices, e.g. by using tools from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils): `aplay -L` and look which device is referred by `default` target. If target device is PulseAudio, like:
+Shairport Sync works well with [PulseAudio](/index.php/PulseAudio "PulseAudio"), while the timing information is not as accurate as that of Alsa or sndio, it is often impractical to remove or disable PulseAudio. In that case, the *pa* backend can be used.[[1]](https://github.com/mikebrady/shairport-sync/blob/master/README.md#more-information)
 
-```
-default
-    Default ALSA Output (currently PulseAudio Sound Server)
-
-```
-
-you must configure shairport-sync ASLA backend to use another one, like:
+If you would like to change the backend, check the list of output devices, e.g. by using tools from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils): `aplay -L` and look at the raw audio device, like:
 
 ```
 sysdefault:CARD=PCH
@@ -46,7 +41,7 @@ sysdefault:CARD=PCH
 
 ```
 
-Edit `/etc/shairport-sync.conf`:
+Edit `/etc/shairport-sync.conf` and add the devise name:
 
 ```
 // These are parameters for the "alsa" audio back end.
@@ -59,6 +54,8 @@ alsa =
 }
 
 ```
+
+## System service
 
 ### Starting
 

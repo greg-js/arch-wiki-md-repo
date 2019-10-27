@@ -76,6 +76,13 @@ This configures DuckDuckGo as your default search engine while the placeholder `
 
 Then, as described by the comment in the qutebrowser UI, you can search the Arch Linux wiki by typing `o wa <searchterm>`. Notice that the arguments required to perform a search vary across search engines. For example, to set up Google, use `https://www.google.com/search?hl=en&q={}`.
 
+If Tor is installed and running on your system and you wish to use DuckDuckGo onion page instead, the setting should be something like
+
+```
+{"DEFAULT": "https://3g2upl4pq6kufc4m.onion/?q={}", "wa": "https://wiki.archlinux.org/?search={}"}
+
+```
+
 #### Keybindings
 
 You can edit the keybindings directly from the browser with the command `:bind *key* *command*` or you can edit them directly from the file. Notice that there are many, many keybinds already in place. If you notice a lag on one of your keybind it is because some other keybind is also starting with the same key.

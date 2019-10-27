@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNU Compiler Collection](/index.php/GNU_Compiler_Collection "GNU Compiler Collection"). Data da última tradução: 2019-08-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU_Compiler_Collection&diff=0&oldid=550178) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNU Compiler Collection](/index.php/GNU_Compiler_Collection "GNU Compiler Collection"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU_Compiler_Collection&diff=0&oldid=583841) na versão em inglês.
 
 Artigos relacionados
 
@@ -12,7 +12,7 @@ O [GNU Compiler Collection](https://en.wikipedia.org/wiki/pt:GNU_Compiler_Collec
 
 Outros front-ends disponíveis são:
 
-*   [gcc-ada](https://www.archlinux.org/packages/?name=gcc-ada) para Ada
+*   [gcc-ada](https://www.archlinux.org/packages/?name=gcc-ada) para [Ada](/index.php/Ada "Ada")
 *   [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) para Fortran
 *   [gcc-go](https://www.archlinux.org/packages/?name=gcc-go) para [Go](/index.php/Go "Go")
 *   [gcc-objc](https://www.archlinux.org/packages/?name=gcc-objc) para Objective-C

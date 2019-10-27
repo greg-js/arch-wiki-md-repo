@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-08-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=578330) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=584542) na versão em inglês.
 
 Artigos relacionados
 
@@ -88,6 +88,8 @@ Observe que a autoconfiguração sem estado funciona com a condição de que pac
 ```
 
 Se você estiver usando um outro front-end de firewall (ufw, shorewall, etc), consulte sua documentação sobre como habilitar os pacotes `ipv6-icmp`.
+
+Se a sua solução de gerenciamento de rede escolhida não ter suporte a configuração do resolvedor DNS com IPv6 sem estado (por exemplo, netctl), será possível usar [rdnssd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rdnssd.8) do pacote [ndisc6](https://www.archlinux.org/packages/?name=ndisc6) para isso.
 
 ### Para gateways
 

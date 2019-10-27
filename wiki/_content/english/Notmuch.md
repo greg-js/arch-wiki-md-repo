@@ -19,7 +19,6 @@ Related articles
     *   [3.4 bower](#bower)
     *   [3.5 Neomutt](#Neomutt)
     *   [3.6 astroid](#astroid)
-    *   [3.7 ner](#ner)
 *   [4 Integrating with mutt](#Integrating_with_mutt)
     *   [4.1 notmuch-mutt problems](#notmuch-mutt_problems)
 *   [5 Integrating with NeoMutt](#Integrating_with_NeoMutt)
@@ -29,9 +28,7 @@ Related articles
 
 Notmuch is written in C and an order of magnitude faster than sup-mail. Notmuch can be terminated during the indexing process, on the next run it will continue where it left off. Also like sup-mail, it does not provide a way to permanently delete unwanted email messages (however, see [#Permanently delete emails](#Permanently_delete_emails)). It doesn't fetch or send mails, nor does it store your email addresses, you'll need to use programs like [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), [msmtp](/index.php/Msmtp "Msmtp") and *abook* for those tasks.
 
-Notmuch is available in the [official repositories](/index.php/Official_repositories "Official repositories"): [notmuch](https://www.archlinux.org/packages/?name=notmuch) or [notmuch-git](https://aur.archlinux.org/packages/notmuch-git/) from the [AUR](/index.php/AUR "AUR")
-
-It provides [python](/index.php/Python "Python"), [vim](/index.php/Vim "Vim"), and [emacs](/index.php/Emacs "Emacs") bindings.
+Install the [notmuch](https://www.archlinux.org/packages/?name=notmuch) package. It provides [python](/index.php/Python "Python"), [vim](/index.php/Vim "Vim"), and [emacs](/index.php/Emacs "Emacs") bindings.
 
 ## First time Usage
 
@@ -70,7 +67,7 @@ vim -c NotMuch
 
 ### alot
 
-alot is a standalone CLI interface for notmuch, written in python. It is available from [AUR](/index.php/AUR "AUR") as [alot](https://www.archlinux.org/packages/?name=alot) or [alot-git](https://aur.archlinux.org/packages/alot-git/).
+alot is a standalone CLI interface for notmuch, written in python. It is available as [alot](https://www.archlinux.org/packages/?name=alot) and [alot-git](https://aur.archlinux.org/packages/alot-git/).
 
 Alot uses [mailcap](https://en.wikipedia.org/wiki/Mailcap "wikipedia:Mailcap") for handling different kinds of files. This currently includes html mails, which means that you need to configure a `~/.mailcap` file in order to view html mails. As minimum, put this line into your `~/.mailcap`:
 
@@ -85,7 +82,7 @@ More file handlers can be configured of course.
 
 ### bower
 
-[bower](https://github.com/wangp/bower) is another CLI interface, this one is written in [Mercury](https://mercurylang.org/). It is available from [AUR](/index.php/AUR "AUR") as [bower-mail](https://aur.archlinux.org/packages/bower-mail/).
+[bower](https://github.com/wangp/bower) is another CLI interface, this one is written in [Mercury](https://mercurylang.org/). It is available as [bower-mail](https://aur.archlinux.org/packages/bower-mail/).
 
 ### Neomutt
 
@@ -93,15 +90,7 @@ More file handlers can be configured of course.
 
 ### astroid
 
-[Astroid](https://github.com/astroidmail/astroid) is a graphical MUA and interface to notmuch written using C++ and GTK. [astroid](https://aur.archlinux.org/packages/astroid/) (stable) and [astroid-git](https://aur.archlinux.org/packages/astroid-git/) (VCS) packages are available in [AUR](/index.php/AUR "AUR"). The GUI is designed to be very fast, preview HTML and attachments, be navigable by keyboard. It is extensively configurable and you use your favorite editor either embedded or launch it externally. Check out the [Tour](https://github.com/astroidmail/astroid/wiki) to see how astroid can be used and for a description of the complete setup, or check out the [README](https://github.com/astroidmail/astroid) for more information.
-
-### ner
-
-**Note:** Ner does not seem to be actively developed anymore. The latest commit on github is from May 2012.
-
-[ner](https://github.com/pioto/ner) - notmuch email reader - is yet another CLI interface, apparently written in C++.
-
-[ner-git](https://aur.archlinux.org/packages/ner-git/) is available from the [AUR](/index.php/AUR "AUR").
+[Astroid](https://github.com/astroidmail/astroid) is a graphical MUA and interface to notmuch written using C++ and GTK. [astroid](https://aur.archlinux.org/packages/astroid/) (stable) and [astroid-git](https://aur.archlinux.org/packages/astroid-git/) (VCS) packages are available. The GUI is designed to be very fast, preview HTML and attachments, be navigable by keyboard. It is extensively configurable and you use your favorite editor either embedded or launch it externally. Check out the [Tour](https://github.com/astroidmail/astroid/wiki) to see how astroid can be used and for a description of the complete setup, or check out the [README](https://github.com/astroidmail/astroid) for more information.
 
 ## Integrating with mutt
 

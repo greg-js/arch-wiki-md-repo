@@ -218,19 +218,25 @@ The following example configuration uses the [#Chrome OS](#Chrome_OS) fonts, add
     </edit>
   </match>
   <match>
-    <test name="family"><string>Times New Roman</string></test>
+    <test name="family"><string>Times</string></test>
     <edit name="family" mode="assign" binding="strong">
       <string>Tinos</string>
     </edit>
   </match>
   <match>
-    <test name="family"><string>Times</string></test>
+    <test name="family"><string>Times New Roman</string></test>
     <edit name="family" mode="assign" binding="strong">
       <string>Tinos</string>
     </edit>
   </match>
   <match> <!-- NOT metric-compatible! -->
     <test name="family"><string>Consolas</string></test>
+    <edit name="family" mode="assign" binding="strong">
+      <string>Cousine</string>
+    </edit>
+  </match>
+  <match>
+    <test name="family"><string>Courier</string></test>
     <edit name="family" mode="assign" binding="strong">
       <string>Cousine</string>
     </edit>

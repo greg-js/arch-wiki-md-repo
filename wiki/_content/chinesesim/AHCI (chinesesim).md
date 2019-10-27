@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [AHCI](/index.php/AHCI "AHCI") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-29，点击[这里](https://wiki.archlinux.org/index.php?title=AHCI&diff=0&oldid=462312)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [AHCI](/index.php/AHCI "AHCI") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-26，点击[这里](https://wiki.archlinux.org/index.php?title=AHCI&diff=0&oldid=573461)可以查看翻译后英文页面的改动。
 
 **AHCI**, *A*dvanced *H*ost *C*ontroller *I*nterface 的缩写，意思是 高级主机控制器接口, 这是一种SATA设备特有的工作模式.通常AHCI需要通过BIOS来开启或关闭，通过BIOS启用AHCI有两大好处：热插拔SATA驱动器（模拟USB驱动器的行为）和NCQ。该特性在 Linux kernel 2.6.19 以后开始提供支持,现在的 Arch 内核会自动加载 ahci 模块.
 
@@ -48,6 +48,12 @@ and for NCQ:
 ata2.00: 625142448 sectors, multi 16: LBA48 NCQ (depth 31/32)
 
 ```
+
+## 问题解决
+
+如果安装 Arch 后 STAT 配置从 IDE 变为 AHCI, AHCI 模块可能无法正确加载。启动时会出现找不到根分区的错误提示。
+
+这时，应该可以用 `failsafe` 启动选项进行启动，启动后请执行 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 重新生成 initramfs 镜像。
 
 ## 参阅
 

@@ -12,7 +12,11 @@ Related articles
 
 	*MATE Desktop Environment является продолжением GNOME 2\. Он предоставляет интуитивное и привлекательное окружение рабочего стола, используя традиционные методы для Linux и других Unix-подобных систем. MATE [активно разрабатывается](https://github.com/mate-desktop) для обеспечения поддержки новых технологий, сохраняя традиционный стиль рабочего стола.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Приложения](#Приложения)
 *   [2 Установка](#Установка)

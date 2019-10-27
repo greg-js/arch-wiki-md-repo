@@ -276,7 +276,7 @@ Server = http://chaotic.bangl.de/$repo/x86_64
 
 ```
 [catalyst]
-Server = https://167.86.114.169/arch/catalyst/$arch
+Server = http://167.86.114.169/arch/catalyst/$arch
 
 ```
 
@@ -288,7 +288,7 @@ Server = https://167.86.114.169/arch/catalyst/$arch
 
 ```
 [catalyst-hd234k]
-Server = https://167.86.114.169/arch/catalyst-hd234k/$arch
+Server = http://167.86.114.169/arch/catalyst-hd234k/$arch
 
 ```
 
@@ -641,7 +641,7 @@ Server = https://repo.nah.nz/$repo
 
 *   **Maintainer:** [NickCao](https://nichi.co/about)
 *   **Description:** Some (useful for some) packages from me, and some aur packages I personally use.
-*   **Key-ID:** 83F6C7F44763993A
+*   **Key-ID:** 09CC69622E8D4EE343B4E8954D0BA456DF028C15
 
 ```
 [nickcao]

@@ -248,7 +248,7 @@ $ pacman -Qs *string1* *string2* ...
 To search for package file names in remote packages:
 
 ```
-$ pacman -Fs *string1* *string2* ...
+$ pacman -F *string1* *string2* ...
 
 ```
 
@@ -306,7 +306,7 @@ $ pacman -Qo */path/to/file_name*
 To query the database to know which remote package a file belongs to:
 
 ```
-$ pacman -Fo */path/to/file_name*
+$ pacman -F */path/to/file_name*
 
 ```
 
@@ -487,8 +487,8 @@ Sync the files database:
 
 Search for a package containing a file, e.g.:
 
+ `$ pacman -F pacman` 
 ```
-$ pacman -Fs pacman
 core/pacman 5.0.1-4
     usr/bin/pacman
     usr/share/bash-completion/completions/pacman
@@ -533,7 +533,7 @@ IgnorePkg=linux
 
 ```
 
-For multiple packages use a space-separated list, or use additional `IgnorePkg` lines. Also, glob patterns can be used. If you want to skip packages just once, you can also use the `--ignore` option on the command-line - this time with a comma-separated list.
+For multiple packages use a space-separated list, or use additional `IgnorePkg` lines. Also, [glob](https://en.wikipedia.org/wiki/glob_(programming) patterns can be used. If you want to skip packages just once, you can also use the `--ignore` option on the command-line - this time with a comma-separated list.
 
 It will still be possible to upgrade the ignored packages using `pacman -S`: in this case *pacman* will remind you that the packages have been included in an `IgnorePkg` statement.
 

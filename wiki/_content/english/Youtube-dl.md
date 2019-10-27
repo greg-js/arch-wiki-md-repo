@@ -3,7 +3,7 @@ Related articles
 *   [mpv](/index.php/Mpv "Mpv")
 *   [FFmpeg](/index.php/FFmpeg "FFmpeg")
 
-[youtube-dl](https://youtube-dl.org/) is a command-line program that lets you easily download videos and audio from more than a thousand websites. See the [list of supported sites](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md).
+[youtube-dl](https://youtube-dl.org/) is a command-line program that lets you easily download videos and audio from more than a thousand websites. See the [list](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md) of supported sites.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -58,7 +58,7 @@ $ youtube-dl [OPTIONS] *URL*
 
 ### Format selection
 
-In cases where multiple formats of a video are available, *youtube-dl* will download the best ones by default.
+When multiple formats of a video are available, *youtube-dl* will download the best ones by default.
 
 To select a specific one to download, first get a list of the available formats:
 
@@ -104,12 +104,14 @@ $ youtube-dl --list-subs *URL*
 To download a video with selected subtitles (comma separated):
 
 ```
-$ youtube-dl --write-sub --sub-lang *LANG* *URL* #for normal subtitle
+$ youtube-dl --write-sub --sub-lang *LANG* *URL*
 
 ```
 
+For auto-generated subtitles:
+
 ```
-$ youtube-dl --write-auto-sub --sub-lang *LANG* *URL* #for automatic generated subtitle
+$ youtube-dl --write-auto-sub --sub-lang *LANG* *URL*
 
 ```
 

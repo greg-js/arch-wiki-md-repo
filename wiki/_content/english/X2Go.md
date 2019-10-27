@@ -29,6 +29,7 @@
     *   [4.5 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_(Windows_Clients))
     *   [4.6 Workaround for failing compositing window manager for remote session](#Workaround_for_failing_compositing_window_manager_for_remote_session)
     *   [4.7 /bin/bash: No such file or directory when connect (or what ever shell you use)](#/bin/bash:_No_such_file_or_directory_when_connect_(or_what_ever_shell_you_use))
+    *   [4.8 X2Go client: Cannot connect to remote X2Go server from local Wayland session: "The connection with the remote server was shut down"](#X2Go_client:_Cannot_connect_to_remote_X2Go_server_from_local_Wayland_session:_"The_connection_with_the_remote_server_was_shut_down")
 *   [5 See also](#See_also)
 
 ## Installation
@@ -197,6 +198,24 @@ $ gconftool-2 --type string --set /desktop/gnome/session/required_components/win
 ### /bin/bash: No such file or directory when connect (or what ever shell you use)
 
 In you ssh configuration, if you chroot a user, this user need to have his own /bin directory inside his chrooted directory. If not, you will not be able to connect.
+
+### X2Go client: Cannot connect to remote X2Go server from local Wayland session: "The connection with the remote server was shut down"
+
+X2GOClient launches as expected from a local Wayland session but attempting to connect to a remote X2Go Server fails. This problem is usually caused by Qt on Wayland.
+
+Follow the instructions in [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and change the lines starting with
+
+```
+Exec=x2goclient
+
+```
+
+to
+
+```
+Exec=env QT_QPA_PLATFORM=xcb x2goclient
+
+```
 
 ## See also
 

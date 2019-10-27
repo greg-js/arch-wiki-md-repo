@@ -543,10 +543,10 @@ $ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug`
 
  | [[105]](https://github.com/npm/npm/issues/6675) | `$ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc` `npmrc` 
 ```
-prefix=$XDG_DATA_HOME/npm
-cache=$XDG_CACHE_HOME/npm
-tmp=$XDG_RUNTIME_DIR/npm
-init-module=$XDG_CONFIG_HOME/npm/config/npm-init.js
+prefix=${XDG_DATA_HOME}/npm
+cache=${XDG_CACHE_HOME}/npm
+tmp=${XDG_RUNTIME_DIR}/npm
+init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
 
 ```
 
@@ -757,7 +757,7 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 
  | [won't fix](http://savannah.gnu.org/support/?108134) | `$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
 
-A specified `bashrc` can be sourced from `/etc/bashrc`.
+A specified `bashrc` can be sourced from `/etc/bash.bashrc`.
 
 Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive shells.
 

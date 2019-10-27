@@ -1,31 +1,42 @@
+Related articles
+
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+
 **翻译状态：** 本文是英文页面 [Software_access_point](/index.php/Software_access_point "Software access point") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-11-21，点击[这里](https://wiki.archlinux.org/index.php?title=Software_access_point&diff=0&oldid=456790)可以查看翻译后英文页面的改动。
 
-软件接入点是将电脑设置为一个本地网络的Wi-Fi接入点。节省了一个独立无线路由器。
+软接入点（也称为虚拟路由器或虚拟Wi-Fi）使计算机能够将其无线接口转换为Wi-Fi热点，无需使用独立无线路由器。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 要求](#.E8.A6.81.E6.B1.82)
-    *   [1.1 无线网卡必须支持AP模式](#.E6.97.A0.E7.BA.BF.E7.BD.91.E5.8D.A1.E5.BF.85.E9.A1.BB.E6.94.AF.E6.8C.81AP.E6.A8.A1.E5.BC.8F)
-    *   [1.2 单个Wi-Fi设备同时作为无线客户端和AP](#.E5.8D.95.E4.B8.AAWi-Fi.E8.AE.BE.E5.A4.87.E5.90.8C.E6.97.B6.E4.BD.9C.E4.B8.BA.E6.97.A0.E7.BA.BF.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.92.8CAP)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 无线链路层](#.E6.97.A0.E7.BA.BF.E9.93.BE.E8.B7.AF.E5.B1.82)
-    *   [2.2 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
-    *   [2.3 网桥设置](#.E7.BD.91.E6.A1.A5.E8.AE.BE.E7.BD.AE)
-    *   [2.4 NAT设置](#NAT.E8.AE.BE.E7.BD.AE)
-*   [3 工具](#.E5.B7.A5.E5.85.B7)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 要求](#要求)
+    *   [1.1 无线网卡必须支持AP模式](#无线网卡必须支持AP模式)
+    *   [1.2 单个Wi-Fi设备同时作为无线客户端和AP](#单个Wi-Fi设备同时作为无线客户端和AP)
+*   [2 配置](#配置)
+    *   [2.1 无线链路层](#无线链路层)
+    *   [2.2 网络配置](#网络配置)
+    *   [2.3 网桥设置](#网桥设置)
+    *   [2.4 NAT设置](#NAT设置)
+*   [3 工具](#工具)
     *   [3.1 create_ap](#create_ap)
     *   [3.2 RADIUS](#RADIUS)
-*   [4 常见问题与解答](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E4.B8.8E.E8.A7.A3.E7.AD.94)
-    *   [4.1 无线局域网很慢](#.E6.97.A0.E7.BA.BF.E5.B1.80.E5.9F.9F.E7.BD.91.E5.BE.88.E6.85.A2)
-    *   [4.2 NetworkManager的干扰](#NetworkManager.E7.9A.84.E5.B9.B2.E6.89.B0)
-    *   [4.3 无法在 5Ghz 频段启用热点模式](#.E6.97.A0.E6.B3.95.E5.9C.A8_5Ghz_.E9.A2.91.E6.AE.B5.E5.90.AF.E7.94.A8.E7.83.AD.E7.82.B9.E6.A8.A1.E5.BC.8F)
-*   [5 相关文章](#.E7.9B.B8.E5.85.B3.E6.96.87.E7.AB.A0)
+*   [4 常见问题与解答](#常见问题与解答)
+    *   [4.1 无线局域网很慢](#无线局域网很慢)
+    *   [4.2 NetworkManager的干扰](#NetworkManager的干扰)
+    *   [4.3 无法在 5Ghz 频段启用热点模式](#无法在_5Ghz_频段启用热点模式)
+*   [5 相关文章](#相关文章)
 
 ## 要求
 
 ### 无线网卡必须支持AP模式
 
-无线设备必须兼容 [nl80211标准](http://wireless.kernel.org/en/developers/Documentation/nl80211) ,并且支持 AP [工作模式](http://wireless.kernel.org/en/users/Documentation/modes)。要验证这一点，请执行 `iw list` 命令, 结果的 `Supported interface modes` 段落中应该有 `AP` 模式:
+无线设备必须兼容 [nl80211标准](http://wireless.kernel.org/en/developers/Documentation/nl80211) ,并且支持 AP [工作模式](http://wireless.kernel.org/en/users/Documentation/modes)。可通过 `iw list` 命令来验证, 输出信息到`Supported interface modes` 段落中要有 `AP` 模式:
 
  `$ iw list` 
 ```
@@ -45,7 +56,7 @@ Wiphy phy1
 
 ### 单个Wi-Fi设备同时作为无线客户端和AP
 
-软件热点的创建和系统的网络连接方式(以太网,无线网) 是独立的。许多无线设备甚至支持*并存*操作, 同时作为热点和为无线*客户端*。通过这个功能可以为现有网络创建一个软件热点，作为*无线中继器*。`iw list` 命令的输出中会显示设备是否支持并行操作:
+软热点的创建和系统的网络连接方式(以太网,无线网) 是独立的。许多无线设备甚至支持*并存*操作, 同时作为热点和为无线*客户端*。通过这个功能可以为现有网络创建一个软热点，作为*无线中继器*。`iw list` 命令的输出中会显示设备是否支持并行操作:
 
  `$ iw list` 
 ```
@@ -84,25 +95,54 @@ Wiphy phy1
 
  `/etc/hostapd/hostapd.conf` 
 ```
-ssid=YourWiFiName
-wpa_passphrase=Somepassphrase
+
+# 接口
 interface=wlan0_ap
+# 网桥
 bridge=br0
-auth_algs=3
-channel=7
+
+# 配置SSID(热点名)
+ssid=YourWiFiName
+# 设置密码
+wpa_passphrase=Somepassphrase
+
+# 驱动程序接口类型（hostap / wired / none / nl80211 / bsd）
 driver=nl80211
+# 国家/地区代码（ISO / IEC 3166-1）
+country_code=US
+
+# 工作模式（a = IEEE 802.11a（5 GHz），b = IEEE 802.11b（2.4 GHz）
 hw_mode=g
+# 信道
+channel=7
+# 允许最大连接数
+max_num_sta=5
+
+# Bit 字段: bit0 = WPA, bit1 = WPA2
+wpa=2
+# Bit 字段: 1=wpa, 2=wep, 3=both
+auth_algs=1
+
+# 加密协议
+rsn_pairwise=CCMP
+# 加密算法
+wpa_key_mgmt=WPA-PSK
+
+# hostapd事件记录器配置
 logger_stdout=-1
 logger_stdout_level=2
-max_num_sta=5
-rsn_pairwise=CCMP
-wpa=2
-wpa_key_mgmt=WPA-PSK
-wpa_pairwise=TKIP CCMP
+
+# 802.11n设备请取消注释并修改以下部分
+## 启用802.11n支持
+#ieee80211n=1
+## QoS支持
+#wmm_enabled=1
+## 使用" iw list"显示设备信息并相应地修改"ht_capab"
+#ht_capab=[HT40 ][SHORT-GI-40][TX-STBC][RX-STBC1][DSSS_CCK-40]
 
 ```
 
-**Tip:** 可以用UTF-8字符创建 SSID, 国际化的字符都可以正常显示. 用 `utf8_ssid=1` 启用这个选项. 一些客户端在识别正确的编码时可能会有问题(如:[wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant")或windows 7).
+**提示：** 可以用UTF-8字符创建 SSID, 国际化的字符都可以正常显示. 用 `utf8_ssid=1` 启用这个选项. 一些客户端在识别正确的编码时可能会有问题(如:[wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant")或windows 7).
 
 当启动 hospapd 时,请确认无线网络接口已经在之前正确启动了.
 
@@ -115,9 +155,9 @@ wpa_pairwise=TKIP CCMP
 
 为了自动启动hostapd, [Enable](/index.php/Daemon "Daemon") `hostapd.service`.
 
-**Warning:** 不同地区允许作为接入点的无线信道是不同的。根据无线设备的固件, 你应当设置正确的地区来使用合法的信道。 **不要**选择非本地区域, 这可能非法扰乱网络通讯, 在信号覆盖范围内影响你和他人设备的无线功能! 区域信道参见[Wireless network configuration#Respecting the regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration").
+**警告:** 不同地区允许作为接入点的无线信道是不同的。根据无线设备的固件, 你应当设置正确的地区来使用合法的信道。 **不要**选择非本地区域, 这可能非法扰乱网络通讯, 在信号覆盖范围内影响你和他人设备的无线功能! 区域信道参见[Wireless network configuration#Respecting the regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration").
 
-**Note:** 如果你有一个基于RTL8192CU芯片组的网卡, 请从[AUR](/index.php/AUR "AUR")中安装[hostapd-rtl871xdrv](https://aur.archlinux.org/packages/hostapd-rtl871xdrv/)并在`hostapd.conf` 文件中将`driver=nl80211` 换成 `driver=rtl871xdrv`。
+**注意:** 如果你有一个基于RTL8192CU芯片组的网卡, 请从[AUR](/index.php/AUR "AUR")中安装[hostapd-rtl871xdrv](https://aur.archlinux.org/packages/hostapd-rtl871xdrv/)并在`hostapd.conf` 文件中将`driver=nl80211` 换成 `driver=rtl871xdrv`。
 
 ### 网络配置
 
@@ -136,6 +176,8 @@ wpa_pairwise=TKIP CCMP
 
 创建一个 *网桥* 并把网络接口 (如 `eth0`) 加入其中 。**不应该**将无线网络设备 （如`wlan0`） 加到网桥；hostapd 会自行添加无线设备。参阅 [Network bridge](/index.php/Network_bridge "Network bridge")。
 
+**提示：** 如果有网桥（例如，虚拟机使用的）则可直接使用该网桥。
+
 ### NAT设置
 
 详细内容请参考[Internet sharing](/index.php/Internet_sharing "Internet sharing")，其中连接 LAN 的设备是 `net0`。 这里我们通常指的是无线设备，比如说 `wlan0`。
@@ -151,9 +193,22 @@ wpa_pairwise=TKIP CCMP
 
 ```
 
+根据需求编写`/etc/create_ap.conf`配置文件，并指定使用该配置。
+
+```
+# create_ap --config /etc/create_ap.conf
+
+```
+
+[enable](/index.php/Enable "Enable")并[start](/index.php/Start "Start") `create_ap.service`使用 `/etc/create_ap.conf`中指定的配置在启动时运行脚本。 详细信息，参见[create_ap on GitHub](https://github.com/oblique/create_ap)。
+
+**注意:** 在桥接模式下，"create_ap" 可能在启动时与当前网络配置冲突。 在这种情况下，请勿配置以太网接口的IP地址，DHCP或statip IP地址，以便于绑定到网桥
+
+。
+
 ### RADIUS
 
-可以参阅 [[1]](https://me.m01.eu/blog/2012/05/wpa-2-enterprise-from-scratch-on-a-raspberry-pi/) 的说明来运行[WPA2企业级加密](/index.php/WPA2_Enterprise "WPA2 Enterprise")的 [FreeRADIUS](http://freeradius.org/) 服务器.
+可以参阅 [[1]](https://me.m01.eu/blog/2012/05/wpa-2-enterprise-from-scratch-on-a-raspberry-pi/) 的说明来运行[WPA2企业级加密](/index.php/WPA2_Enterprise "WPA2 Enterprise")的 [FreeRADIUS](http://freeradius.org/) 服务器
 
 ## 常见问题与解答
 
@@ -163,7 +218,7 @@ wpa_pairwise=TKIP CCMP
 
 ### NetworkManager的干扰
 
-如果网络设备被NetworkManager管理的话，hostapd可能不起作用. 可以屏蔽(对)这个设备(的管理):
+如果网络设备被NetworkManager管理的话，hostapd可能不起作用。 可通过MAC屏蔽设备:
 
  `/etc/NetworkManager/NetworkManager.conf` 
 ```
@@ -172,9 +227,18 @@ unmanaged-devices=mac:<hwaddr>
 
 ```
 
+或通过接口名称：
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[keyfile]
+unmanaged-devices=interface-name:<ifname>
+
+```
+
 ### 无法在 5Ghz 频段启用热点模式
 
-对某些国家码，例如 `00`，所有 5Ghz 中可使用的频段都设置了 [`no-ir` (*no-initiating-radiation*)](https://wireless.wiki.kernel.org/en/developers/regulatory/processing_rules#post_processing_mechanisms) 标记，hostapd 无法使用它们。需要安装 [crda](https://www.archlinux.org/packages/?name=crda)，将国家码设置成允许使用这个的频段的国家。
+对某些国家码，例如 `00`，所有 5Ghz 中可使用的频段都被设置了 [`no-ir` (*no-initiating-radiation*)](https://wireless.wiki.kernel.org/en/developers/regulatory/processing_rules#post_processing_mechanisms) 标记，hostapd 无法使用它们。需要安装 [crda](https://www.archlinux.org/packages/?name=crda)，并将国家码设置成允许使用这个的频段的国家。
 
 ## 相关文章
 

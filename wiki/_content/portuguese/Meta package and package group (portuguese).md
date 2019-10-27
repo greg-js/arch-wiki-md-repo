@@ -1,6 +1,6 @@
-**Status de tradução:** Esse artigo é uma tradução de [Meta package and package group](/index.php/Meta_package_and_package_group "Meta package and package group"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Meta_package_and_package_group&diff=0&oldid=584742) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Meta package and package group](/index.php/Meta_package_and_package_group "Meta package and package group"). Data da última tradução: 2019-10-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Meta_package_and_package_group&diff=0&oldid=586624) na versão em inglês.
 
-Um **metapacote** ou **grupo de pacotes** é um conjunto de pacotes relacionados, definidos pelo [empacotador](/index.php/Empacotador "Empacotador"). Ambos podem permitir instalar ou desinstalar este conjunto de pacotes simultaneamente usando o metapacote ou o nome do grupo como um substituto para cada nome de pacote individual. Embora um grupo não seja um pacote, ele pode ser instalado de maneira semelhante a um pacote, consulte [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
+Um **metapacote** e **grupo de pacotes** podem ser definidos pelo [empacotador](/index.php/Empacotador "Empacotador") para denotar um conjunto de pacotes relacionados. Ambos podem permitir instalar ou desinstalar este conjunto de pacotes simultaneamente usando o metapacote ou o nome do grupo como um substituto para cada nome de pacote individual. Embora um grupo não seja um pacote, ele pode ser instalado de maneira semelhante a um pacote, consulte [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -28,7 +28,7 @@ O metapacote mais importante é o [base](https://www.archlinux.org/packages/?nam
 *   ferramentas POSIX como [utilitários principais](/index.php/Utilit%C3%A1rios_principais "Utilitários principais"), utilitários de processo, arquivo e compressão de arquivo
 *   ferramentas de rede como [iproute2](https://www.archlinux.org/packages/?name=iproute2)
 
-O [kernel](/index.php/Kernel "Kernel") é uma dependência opcional. Veja [o anúncio quando ele foi introduzido](https://www.archlinux.org/news/base-group-replaced-by-mandatory-base-package-manual-intervention-required/) e [os motivos para o base ser um metapacote](https://lists.archlinux.org/pipermail/arch-dev-public/2019-January/029435.html).
+O [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") é uma dependência opcional. Veja [o anúncio quando ele foi introduzido](https://www.archlinux.org/news/base-group-replaced-by-mandatory-base-package-manual-intervention-required/) e [os motivos para o base ser um metapacote](https://lists.archlinux.org/pipermail/arch-dev-public/2019-January/029435.html).
 
 ## Grupos
 

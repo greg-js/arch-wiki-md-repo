@@ -79,7 +79,7 @@ install CD version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). On Linux 5.2, add `iommu=pt` to prevent render artifacts on X. In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. If WiFi doesn't work on RTL8822BE adapter models, create a file `/etc/modprobe.d/wifi.conf` and add the following lines: `blacklist rtw_pci
 blacklist rtwpci`. Then, install [rtlwifi_new-extended-dkms](https://aur.archlinux.org/packages/rtlwifi_new-extended-dkms/) and reboot. |
-| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. Bluetooth doesn't work until a suspend/resume cycle occurs. |
+| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | To solve all these issues mentioned here easier just install the latest BIOS update from Lenovo support website. Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. Bluetooth doesn't work until a suspend/resume cycle occurs. |
 | Lenovo ThinkPad E595 | 2019-07-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | 
 
 Wifi is slow and unstable with default driver, but it works using [rtlwifi_new-dkms](https://aur.archlinux.org/packages/rtlwifi_new-dkms/).
@@ -161,7 +161,7 @@ install CD version
 | [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | ? | Yes | no beep | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader |
 | [Lenovo ThinkPad T490](/index.php/Lenovo_ThinkPad_T490 "Lenovo ThinkPad T490") | Yes | Yes | Yes | ? | Yes | Yes | Yes | NA | Thunderbolt 3 (USB-C); SD Card reader | Some problems with touchpad |
-| [Lenovo ThinkPad T495](/index.php?title=Lenovo_ThinkPad_T495&action=edit&redlink=1 "Lenovo ThinkPad T495 (page does not exist)") | Yes | Yes | Yes | ? | Yes | ? | Yes | NA | SD Card reader |
+| Lenovo ThinkPad T495 | Yes | Yes | Yes | ? | Yes | ? | Yes | NA | SD Card reader |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -191,18 +191,18 @@ install CD version
 | [IBM ThinkPad X60s](/index.php/IBM_ThinkPad_X60s "IBM ThinkPad X60s") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | Lenovo ThinkPad X61s | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD slot |
 | [Lenovo ThinkPad X100e](/index.php/Lenovo_ThinkPad_X100e "Lenovo ThinkPad X100e") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA | SD card (Yes), Webcam (Yes) |
-| [Lenovo ThinkPad X131e](/index.php?title=Lenovo_ThinkPad_X131e&action=edit&redlink=1 "Lenovo ThinkPad X131e (page does not exist)") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | SD card (Yes), Webcam (Yes), [WLAN Led seems not controlled](https://bbs.archlinux.org/viewtopic.php?id=159014) |
+| Lenovo ThinkPad X131e | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | SD card (Yes), Webcam (Yes), [WLAN Led seems not controlled](https://bbs.archlinux.org/viewtopic.php?id=159014) |
 | [Lenovo ThinkPad X200](/index.php/Lenovo_ThinkPad_X200 "Lenovo ThinkPad X200") | Yes | Yes | Yes | Yes | Yes | Yes | NA | Yes |
-| [Lenovo ThinkPad X200S](/index.php/Lenovo_ThinkPad_X200S "Lenovo ThinkPad X200S") | Yes | Yes | Yes | Yes | Yes | Not tested | NA | Not tested | Everything worked out of the box. However, fingerprint, SD card and webcam were not tested |
+| [Lenovo ThinkPad X200S](/index.php/Lenovo_ThinkPad_X200S "Lenovo ThinkPad X200S") | Yes | Yes | Yes | Yes | Yes | Yes | NA | Yes | Everything worked out of the box. However, fingerprint, SD card and webcam were not tested. Modem needs reset after sleep (sometimes). |
 | [Lenovo ThinkPad X201](/index.php/Lenovo_ThinkPad_X201 "Lenovo ThinkPad X201") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested |
 | [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes) |
 | [Lenovo ThinkPad X230](/index.php/Lenovo_ThinkPad_X230 "Lenovo ThinkPad X230") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), UMTS Modem (Yes) |
 | [Lenovo ThinkPad X240](/index.php/Lenovo_ThinkPad_X240 "Lenovo ThinkPad X240") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | WWAN LTE (yes) | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | [Lenovo ThinkPad X260](/index.php/Lenovo_ThinkPad_X260 "Lenovo ThinkPad X260") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
-| Lenovo ThinkPad X270 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
+| [Lenovo ThinkPad X270](/index.php/Lenovo_ThinkPad_X270 "Lenovo ThinkPad X270") | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
 | Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (Fibcom L830-EB-00) | Webcam (Yes) |
-| Lenovo ThinkPad X390 | 2019.08.01 | Yes | Yes | Yes | Yes | Not tested | Yes | Yes (Fibocom L830-EB) | Webcam (Yes) |
+| Lenovo ThinkPad X390 | 2019.08.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes (Fibocom L830-EB) | Webcam (Yes) |
 | Lenovo ThinkPad X395 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Webcam (Yes), Fingerprint(No, WIP[[1]](https://forums.lenovo.com/t5/Other-Linux-Discussions/Linux-on-T495/m-p/4474320#M13440)) | Prevent amdgpu issues by updating to latest BIOS [[2]](https://support.lenovo.com/us/en/downloads/ds540046) |
 | [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon") | NA | Yes | Yes | Yes | Yes | Proprietary/nonfree | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -221,8 +221,8 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [Lenovo ThinkPad Yoga 260](/index.php/Lenovo_ThinkPad_Yoga_260 "Lenovo ThinkPad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | Yes | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
-| [Lenovo Yoga 530](/index.php?title=Lenovo_Yoga_530&action=edit&redlink=1 "Lenovo Yoga 530 (page does not exist)") | 2019.09.01 | Yes | Yes | Not tested | Yes | Not tested | Not tested | Not tested | SD card (Not tested), Webcam (Yes), Fingerprint Reader (Not tested), Touchscreen (Yes), Tablet (Partial) | Trouble with touchpad, but worked with kernel parameters "i8042.noloop i8042.nomux i8042.nopnp i8042.reset" and xf86-input-synaptics |
-| [Lenovo Yoga 710](/index.php?title=Lenovo_Yoga_710&action=edit&redlink=1 "Lenovo Yoga 710 (page does not exist)") | NA | Yes | Yes | Yes | Yes | Not tested | Yes | Not tested | SD card (Yes), Webcam (Yes), Touchscreen (partially) | Touchscreen worked just from sleep, not from power off. Probably easy fix, disabled for unusage |
+| Lenovo Yoga 530 | 2019.09.01 | Yes | Yes | Not tested | Yes | Not tested | Not tested | Not tested | SD card (Not tested), Webcam (Yes), Fingerprint Reader (Not tested), Touchscreen (Yes), Tablet (Partial) | Trouble with touchpad, but worked with kernel parameters "i8042.noloop i8042.nomux i8042.nopnp i8042.reset" and xf86-input-synaptics |
+| Lenovo Yoga 710 | NA | Yes | Yes | Yes | Yes | Not tested | Yes | Not tested | SD card (Yes), Webcam (Yes), Touchscreen (partially) | Touchscreen worked just from sleep, not from power off. Probably easy fix, disabled for unusage |
 
 #### Helix Series
 
@@ -250,7 +250,7 @@ install CD version
 | [Lenovo IdeaPad Z580](/index.php/Lenovo_IdeaPad_Z580 "Lenovo IdeaPad Z580") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo IdeaPad 720s](/index.php/Lenovo_IdeaPad_720s "Lenovo IdeaPad 720s") | 2018.03.01 | Yes | Yes | NA* | Yes | Yes | Yes | NA | Fingerprint reader not working | *requires USB or USB C dongle |
 | [Lenovo IdeaPad 720s (Ryzen)](/index.php/Lenovo_IdeaPad_720s_(Ryzen) "Lenovo IdeaPad 720s (Ryzen)") | 2018.02.01 | Not tested | Not tested | Yes* | No | Not tested | Not tested | NA | Fingerprint reader not tested but most likely not working | *requires USB or USB C dongle |
-| Lenovo Ideapad 320 | 2018.03.01 | Yes | Yes | Yes | Yes | Not tested | Not tested | NA | To stop constant annoying messages by AMD-Vi, use 'iommu=soft' & 'amd_iommu=off' in kernel arguments |
+| Lenovo Ideapad 320 | 2018.03.01 | Yes | Yes | Yes | Yes | Yes | Not tested | NA | To stop constant annoying messages by AMD-Vi, use 'iommu=soft' & 'amd_iommu=off' in kernel arguments |
 | Lenovo Ideapad N24 | 2018.04.01 | Yes | Yes | NA | Yes | Not tested | Not tested | NA | Touchscreen |
 
 ###### Battery Conservation Mode on IdeaPad laptops

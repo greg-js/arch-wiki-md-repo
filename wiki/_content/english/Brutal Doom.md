@@ -4,7 +4,11 @@ The mod adds features many new graphical effects like additional blood (blood ge
 
 While primarily a gore mod, it goes further and alters the gameplay by changing the weapons, monster AI, sounds, graphics, and combat. One such change is the increased difficulty, making enemy behavior much faster, unpredictable and dangerous (many attacks do double the normal damage to the player) and altering their attacks. It makes the animations smoother and gives the player new abilities. [[1]](http://doom.wikia.com/wiki/Brutal_Doom) [[2]](https://doomwiki.org/wiki/Brutal_Doom)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Brutal Doom Mod](#Brutal_Doom_Mod)

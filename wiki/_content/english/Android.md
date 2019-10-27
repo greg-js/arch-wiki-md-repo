@@ -337,6 +337,8 @@ Fastboot (as well as [ADB](/index.php/ADB "ADB")) is included in the [android-to
 
 **Note:** Restoring firmwares using `fastboot` can be quite tricky, but you might want to browse [XDA developers forums](http://www.xda-developers.com/) for a stock firmware, which is mostly a `*.zip` file, but inside of it, comes with the firmware files and `flash-all.sh` script. For example, [Google Nexus](https://developers.google.com/android/nexus/images) firmwares include `flash-all.sh` script or another example could be for OnePlus One - [XDA thread](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541), where you can find firmwares with included `flash-all.sh` script.
 
+**Note:** If you get a `no permissions` error or execution just hangs with `< waiting for any device >` then you need to run `fastboot` with `sudo`.
+
 ### Samsung devices
 
 Samsung devices can't be flashed using **Fastboot** tool. Alternatives are only **Heimdall** and **Odin** (by using Windows and VirtualBox).

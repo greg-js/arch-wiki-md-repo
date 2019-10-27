@@ -76,9 +76,9 @@ Edit the lists of packages in `packages.x86_64` to indicate which packages are t
 
 #### Custom local repository
 
-For the purpose of preparing custom packages or packages from [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"), you could also [create a custom local repository](/index.php/Custom_local_repository "Custom local repository"). You can then add your repository by putting the following into `~/archlive/releng/pacman.conf`, above the other repository entries (for top priority):
+For the purpose of preparing custom packages or packages from [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"), you could also [create a custom local repository](/index.php/Custom_local_repository "Custom local repository"). You can then add your repository by putting the following into `~/archlive/pacman.conf`, above the other repository entries (for top priority):
 
- `~/archlive/releng/pacman.conf` 
+ `~/archlive/pacman.conf` 
 ```
 ...
 # custom repository
