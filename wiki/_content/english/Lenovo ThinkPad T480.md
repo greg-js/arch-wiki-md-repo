@@ -154,12 +154,14 @@ Lenovo T480 is tied in with Microsoft and will only boot to Windows EFI file or 
 
 When GRUB is used, it is needed to rename the GRUB .efi to one of these specific file names. Please remember to repeat these steps (or use a pacman hook) when the GRUB package was updated.
 
+1\. Mount the device containing the `/EFI` directory.
+
 ```
  mount /dev/sdXY /mnt # replace XY with the letter & number of the Arch EFI system partition
 
- # Windows .efi file
-
 ```
+
+2\. Windows .efi file
 
 ```
  mkdir -p /mnt/EFI/Microsoft/Boot
@@ -167,10 +169,7 @@ When GRUB is used, it is needed to rename the GRUB .efi to one of these specific
 
 ```
 
-```
- # EFI fallback .efi file (as defined in the EFI standard.)
-
-```
+3\. EFI fallback .efi file (as defined in the EFI standard.)
 
 ```
  mkdir -p /mnt/EFI/BOOT

@@ -2,7 +2,7 @@
 
 Ganglia is available as the [ganglia](https://aur.archlinux.org/packages/ganglia/) package on the [AUR](/index.php/AUR "AUR"), along with the web frontend [ganglia-web](https://aur.archlinux.org/packages/ganglia-web/). There is also a reduced-dependency version named [ganglia-minimal](https://aur.archlinux.org/packages/ganglia-minimal/), which would be appropriate on boxes where you don't require `gmetad` and want to avoid pulling in `rrdtool` as a dependency, which would in turn pull in Cairo and Mesa.
 
-The [Ganglia Wiki](http://sourceforge.net/apps/trac/ganglia) contains all the information you need to get started with Ganglia.
+The [Ganglia Wiki](https://github.com/ganglia/monitor-core/wiki) contains all the information you need to get started with Ganglia.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

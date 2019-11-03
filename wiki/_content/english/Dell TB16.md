@@ -17,7 +17,7 @@ Dell's [TB16](https://www.dell.com/en-us/shop/dell-business-thunderbolt-dock-tb1
 
 ### Thunderbolt Security
 
-You shoulder either:
+You should either:
 
 *   Disable Thunderbolt security in the BIOS (recommended)
 *   Use [boltctl](/index.php/Thunderbolt#User_device_authorization "Thunderbolt") to temporarily authorize or permanently enroll the *dock* ***and*** *cable*.

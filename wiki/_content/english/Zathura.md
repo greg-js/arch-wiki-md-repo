@@ -13,6 +13,7 @@
     *   [3.2 Side-by-side mode](#Side-by-side_mode)
     *   [3.3 Titlebar and statusbar tweaks](#Titlebar_and_statusbar_tweaks)
     *   [3.4 Tabbed Zathura](#Tabbed_Zathura)
+    *   [3.5 Enable Sandbox](#Enable_Sandbox)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -36,6 +37,8 @@ Links can be followed by clicking them. Additionally, one can press `f` to highl
 Zathura can search for text and copy text to the primary X selection. It supports bookmarks and can open encrypted files.
 
 The behavior and appearance of Zathura can be customised using a configuration file. Zathura has the ability to execute external shell commands. It can be opened in tabs using tabbed.
+
+Zathura provides an optional sandbox mode by using seccomp filter to provide a hardened runtime environment.
 
 ## Useful tips
 
@@ -68,6 +71,17 @@ You can open Zathura in tabs using `tabbed`.
 tabbed -c zathura -e
 
 ```
+
+### Enable Sandbox
+
+Zathura has a sandbox mode that provides a secure environment by using a strict seccomp filter. The mode can be set in zathurarc like this:
+
+```
+set sandbox strict
+
+```
+
+Some features are disabled when using strict sandbox mode, such as writing files, printing and bookmarks
 
 ## See also
 

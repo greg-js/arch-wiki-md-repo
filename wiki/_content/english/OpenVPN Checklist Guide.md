@@ -26,6 +26,10 @@ This article summarizes the install process required for OpenVPN. See [OpenVPN](
 
 ## Generate the certificates
 
+*   Create a seed for the CA creation
+
+ `# dd if=/dev/urandom of=pki/.rnd bs=256 count=1` 
+
 *   Create the "certificate authority" key
 
  `# easyrsa build-ca nopass` 

@@ -301,7 +301,7 @@ If you are not inclined to fully manually overclock your GPU, there are some ove
 
 *   **amdgpu-clocks** — A script that can be used to monitor and set custom power states for AMD GPUs. It also offers a Systemd service to apply the settings automatically upon boot.
 
-	[https://github.com/sibradzic/amdgpu-clocks](https://github.com/sibradzic/amdgpu-clocks) || NO AVAILABLE PACKAGES!
+	[https://github.com/sibradzic/amdgpu-clocks](https://github.com/sibradzic/amdgpu-clocks) || [amdgpu-clocks-git](https://aur.archlinux.org/packages/amdgpu-clocks-git/)
 
 ##### GUI tools
 

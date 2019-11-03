@@ -730,7 +730,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Nethack](https://en.wikipedia.org/wiki/NetHack "wikipedia:NetHack")** — Single player dungeon exploration game.
 
-	[http://www.nethack.org/](http://www.nethack.org/) || [nethack](https://www.archlinux.org/packages/?name=nethack)
+	[https://www.nethack.org](https://www.nethack.org) || [nethack](https://www.archlinux.org/packages/?name=nethack)
 
 *   **[Rogue](https://en.wikipedia.org/wiki/Rogue_(video_game) "wikipedia:Rogue (video game)")** — Original dungeon crawl game.
 

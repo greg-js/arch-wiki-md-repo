@@ -243,7 +243,7 @@ You can turn the blinking off by disabling the CCID mode. This slow blinking jus
 
 On a new YubiKey the Yubico OTP is preconfigured on slot 1\.
 
-**Warning:** Before you overwrite your slot 1, please be aware that one is not able to reconfigure the same trust level [see here](https://forum.yubico.com/viewtopic.php?f%3D16&t%3D1960). Meaning:
+**Warning:** Before you overwrite your slot 1, please be aware that one is not able to reconfigure the same trust level [see here](https://forum.yubico.com/viewtopic12ca.html?f%3D16&t%3D1960). Meaning:
 
 One could think that it is a good idea to reset configuration slot 1 to a new OTP. But then a "VV" prefix in your credentials must be used. Whereas the factory credentials on your Yubikey use a "CC" prefix. You can upload a "VV" credential using the Yubico personalization tool GUI or manually upload the new AES key to the [yubico.com website](https://upload.yubico.com/) in order to regain the same functionality than with the original factory configuration. VV credentials are not less secure than CC. However some services may only trust CC credentials as they believe that the user process is more prone to security vulnerabilities. This is because you could have malware on your machine or someone intercepting your key when sending it to the YubiCloud.
 

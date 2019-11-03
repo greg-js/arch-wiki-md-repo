@@ -232,7 +232,7 @@ To delete a subvolume:
 
 ```
 
-Attempting to remove the directory `*/path/to/subvolume*` without using the above command will not delete the subvolume.
+Since Linux 4.18, one can also delete a subvolume like a regular directory (`rm -r`, `rmdir`).
 
 #### Mounting subvolumes
 

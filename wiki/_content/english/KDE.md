@@ -339,7 +339,7 @@ In the past other backends were developed as well but are no longer maintained a
 
 **Note:**
 
-*   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Audio and Video > Backend*.
+*   Multiple backends can be installed at once and prioritized via the *phononsettings* application.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
 *   If using the VLC backend, you may experience crashes every time Plasma wants to send you an audible warning and in quite a number of other cases as well [[5]](https://forum.kde.org/viewtopic.php?f=289&t=135956). A possible fix is to rebuild the VLC plugins cache:
 

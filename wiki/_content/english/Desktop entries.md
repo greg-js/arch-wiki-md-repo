@@ -11,7 +11,8 @@ The [XDG Desktop Entry specification](https://specifications.freedesktop.org/des
     *   [2.1 File example](#File_example)
     *   [2.2 Key definition](#Key_definition)
     *   [2.3 Validation](#Validation)
-    *   [2.4 Update database of desktop entries](#Update_database_of_desktop_entries)
+    *   [2.4 Installation](#Installation)
+    *   [2.5 Update database of desktop entries](#Update_database_of_desktop_entries)
 *   [3 Icons](#Icons)
     *   [3.1 Common image formats](#Common_image_formats)
     *   [3.2 Converting icons](#Converting_icons)
@@ -127,6 +128,15 @@ $ desktop-file-validate <*your desktop file*>
 ```
 
 This will give you very verbose and useful warnings and error messages.
+
+### Installation
+
+Use [desktop-file-install(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/desktop-file-install.1) to install desktop file into target directory. For example:
+
+```
+$ desktop-file-install --dir=~/.local/share/applications ~/app.desktop
+
+```
 
 ### Update database of desktop entries
 

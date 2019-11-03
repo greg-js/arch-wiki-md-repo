@@ -53,6 +53,7 @@ Related articles
     *   [6.1 Data loss on reboot](#Data_loss_on_reboot)
     *   [6.2 Failed to start Pi-hole FTLDNS engine](#Failed_to_start_Pi-hole_FTLDNS_engine)
     *   [6.3 DNSMasq package conflict](#DNSMasq_package_conflict)
+    *   [6.4 Unknown Status and changes not being saved](#Unknown_Status_and_changes_not_being_saved)
 *   [7 See also](#See_also)
 
 ## Overview
@@ -386,6 +387,15 @@ It might be that `systemd-resolved.service` already occupied port 53, which is r
 ### DNSMasq package conflict
 
 Since Pi-hole-FTL 4.0, a private fork of dnsmasq is integrated in the FTL sub-project. The original [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package is now conflicting with [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and will be uninstalled when upgrading from a previous version. It's still possible to use the previous dnsmasq config files, just ensure that `conf-dir=/etc/dnsmasq.d/,*.conf` in the original `/etc/dnsmasq.conf` is not commented out.
+
+### Unknown Status and changes not being saved
+
+The issue, as seen in Task#63704, is with SystemD-created user `http`, which is created in expired state. To fix it, run:
+
+```
+ sudo chage --expiredate -1 http
+
+```
 
 ## See also
 

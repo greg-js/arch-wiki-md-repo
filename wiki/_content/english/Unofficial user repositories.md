@@ -741,7 +741,8 @@ See [/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user 
 
 ```
 [seblu]
-Server = https://al.seblu.net/$repo/$arch
+Server = https://al1.seblu.net/$repo/$arch
+Server = https://al2.seblu.net/$repo/$arch
 
 ```
 

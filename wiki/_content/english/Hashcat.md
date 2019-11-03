@@ -1,10 +1,10 @@
-[Hashcat](https://en.wikipedia.org/wiki/Hashcat "wikipedia:Hashcat") is powerfull utility for recovering passwords from hashes. It supports over 200 hashing algorithms. It uses the CPU, GPU, or anything else supported by OpenCL.
+[Hashcat](https://en.wikipedia.org/wiki/Hashcat "wikipedia:Hashcat") is a powerful password recovery tool that supports over 200 hashing algorithms. It uses OpenCL to enhance performance.
 
 ## Installation
 
 [Install](/index.php/Install "Install") [hashcat](https://www.archlinux.org/packages/?name=hashcat) package.
 
-Hashcat can't work without [OpenCL](/index.php/OpenCL "OpenCL"), so it is needed to install [GPGPU#OpenCL Runtime](/index.php/GPGPU#OpenCL_Runtime "GPGPU") package for your CPU or GPU.
+Hashcat can't work without [OpenCL](/index.php/OpenCL "OpenCL"), so you need to install the [GPGPU#OpenCL Runtime](/index.php/GPGPU#OpenCL_Runtime "GPGPU") package for your CPU or GPU.
 
 ## Usage
 

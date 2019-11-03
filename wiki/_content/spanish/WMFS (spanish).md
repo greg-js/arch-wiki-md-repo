@@ -1,15 +1,19 @@
 **Advertencia:** WMFS se encuentra obsoleto y sin soporte, por lo que se recomienda usar [WMFS2](/index.php/WMFS2_(Espa%C3%B1ol) "WMFS2 (Español)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
-    *   [3.1 Archivo de Configuración](#Archivo_de_Configuraci.C3.B3n)
-    *   [3.2 Tags & Reglas](#Tags_.26_Reglas)
-    *   [3.3 Combinación de Teclas](#Combinaci.C3.B3n_de_Teclas)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Introducción](#Introducción)
+*   [2 Instalación](#Instalación)
+*   [3 Configuración](#Configuración)
+    *   [3.1 Archivo de Configuración](#Archivo_de_Configuración)
+    *   [3.2 Tags & Reglas](#Tags_&_Reglas)
+    *   [3.3 Combinación de Teclas](#Combinación_de_Teclas)
         *   [3.3.1 Scratchpad](#Scratchpad)
-    *   [3.4 Configuración de la Barra de Estado](#Configuraci.C3.B3n_de_la_Barra_de_Estado)
+    *   [3.4 Configuración de la Barra de Estado](#Configuración_de_la_Barra_de_Estado)
     *   [3.5 Conky](#Conky)
     *   [3.6 WMFS Status Toolkit](#WMFS_Status_Toolkit)
 *   [4 Uso](#Uso)
@@ -215,7 +219,7 @@ La combinación de teclas `Alt`+`p` inicia un lanzador en la barra de título (s
 WMFS puede ser controlado desde la línea de comandos con órdenes tales como:
 
 ```
-wmfs -V :ln
+wmfs -V :ln
 
 ```
 

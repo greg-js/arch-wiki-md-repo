@@ -36,14 +36,16 @@ Related articles
     *   [4.7 DNS management](#DNS_management)
         *   [4.7.1 DNS caching and conditional forwarding](#DNS_caching_and_conditional_forwarding)
             *   [4.7.1.1 dnsmasq](#dnsmasq)
-                *   [4.7.1.1.1 Custom configuration](#Custom_configuration)
+                *   [4.7.1.1.1 Custom dnsmasq configuration](#Custom_dnsmasq_configuration)
                 *   [4.7.1.1.2 IPv6](#IPv6)
                 *   [4.7.1.1.3 DNSSEC](#DNSSEC)
             *   [4.7.1.2 systemd-resolved](#systemd-resolved)
             *   [4.7.1.3 DNS resolver with an openresolv subscriber](#DNS_resolver_with_an_openresolv_subscriber)
-        *   [4.7.2 Setting custom DNS servers in a connection](#Setting_custom_DNS_servers_in_a_connection)
-            *   [4.7.2.1 Setting custom DNS servers in a connection (GUI)](#Setting_custom_DNS_servers_in_a_connection_(GUI))
-            *   [4.7.2.2 Setting custom DNS servers in a connection (nmcli / connection file)](#Setting_custom_DNS_servers_in_a_connection_(nmcli_/_connection_file))
+        *   [4.7.2 Custom DNS servers](#Custom_DNS_servers)
+            *   [4.7.2.1 Setting custom global DNS servers](#Setting_custom_global_DNS_servers)
+            *   [4.7.2.2 Setting custom DNS servers in a connection](#Setting_custom_DNS_servers_in_a_connection)
+                *   [4.7.2.2.1 Setting custom DNS servers in a connection (GUI)](#Setting_custom_DNS_servers_in_a_connection_(GUI))
+                *   [4.7.2.2.2 Setting custom DNS servers in a connection (nmcli / connection file)](#Setting_custom_DNS_servers_in_a_connection_(nmcli_/_connection_file))
         *   [4.7.3 /etc/resolv.conf](#/etc/resolv.conf)
             *   [4.7.3.1 Unmanaged /etc/resolv.conf](#Unmanaged_/etc/resolv.conf)
             *   [4.7.3.2 Use openresolv](#Use_openresolv)
@@ -100,7 +102,7 @@ Related articles
 
 ## Installation
 
-NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), which contains a daemon, a command line interface (`nmcli`) and a curses‐based interface (`nmtui`). It has functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it. After installation, you should [enable the daemon](#Enable_NetworkManager).
+NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), which contains a daemon, a command line interface (`nmcli`) and a curses‐based interface (`nmtui`). After installation, you should [enable the daemon](#Enable_NetworkManager).
 
 Additional interfaces:
 
@@ -357,14 +359,14 @@ For those behind a captive portal, the desktop manager can automatically open a 
 
 ### DHCP client
 
-By default NetworkManager will use its internal DHCP client, based on systemd-networkd. A new [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) based DHCP client is currently being worked on, it will eventually become the `internal` DHCP client replacing the one based on systemd-networkd.[[3]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/173)[[4]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/b53e261427c925034ada6b90278b7e9077e2ea43)
+By default NetworkManager will use its internal DHCP client, based on systemd-networkd. A new [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) based DHCP client is currently being worked on, it will eventually become the `internal` DHCP client replacing the one based on systemd-networkd.[[4]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/302)
 
 To use a different DHCP client [install](/index.php/Install "Install") one of the alternatives:
 
 *   [dhclient](https://www.archlinux.org/packages/?name=dhclient) - ISC’s DHCP client.
 *   [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) - [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
 
-**Warning:** NetworkManger does not support using dhcpcd for IPv6\. See [NetworkManager issue #5](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5).
+**Note:** NetworkManger does not support using dhcpcd for IPv6\. See [NetworkManager issue #5](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5). If dhcpcd is set as the DHCP client, Networkmanager will use the internal DHCP client for DHCPv6.
 
 To change the DHCP client backend, set the option `main.dhcp=*dhcp_client_name*` with a configuration file in `/etc/NetworkManager/conf.d/`. E.g.:
 
@@ -394,9 +396,12 @@ dns=dnsmasq
 
 Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The original DNS servers can be found in `/run/NetworkManager/no-stub-resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `drill example.com` and verifying the server and query times.
 
-**Note:** You do not need to start `dnsmasq.service` or edit `/etc/dnsmasq.conf`. NetworkManager will start dnsmasq without using the systemd service and without reading the dnsmasq's default configuration file(s).
+**Note:**
 
-###### Custom configuration
+*   You do not need to start `dnsmasq.service` or edit `/etc/dnsmasq.conf`. NetworkManager will start dnsmasq without using the systemd service and without reading the dnsmasq's default configuration file(s).
+*   The dnsmasq instance started by NetworkManager will bind to `127.0.0.1:53`, you cannot run any other software (including `dnsmasq.service`) on the same address and port.
+
+###### Custom dnsmasq configuration
 
 Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
 
@@ -447,13 +452,30 @@ Because NetworkManager advertises a single "interface" to *resolvconf*, it is no
 
 This can be partially mitigated if you set `private="*"` in `/etc/resolvconf.conf`[[6]](https://roy.marples.name/projects/openresolv/config). Any queries for domains that are not in search domain list will not get forwarded. They will be handled according to the local resolver's configuration, for example, forwarded to another DNS server or resolved recursively from the DNS root.
 
-#### Setting custom DNS servers in a connection
+#### Custom DNS servers
 
-##### Setting custom DNS servers in a connection (GUI)
+##### Setting custom global DNS servers
+
+To set DNS servers for all connections, specify them in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5) using the syntax `servers=*serveripaddress1*,*serveripaddress2*,*serveripaddress3*` in a section named `[global-dns-domain-*]`. For example:
+
+ `/etc/NetworkManager/conf.d/dns-servers.conf` 
+```
+[global-dns-domain-*]
+servers=::1,127.0.0.1
+```
+
+**Note:**
+
+*   If you use [NetworkManager's dnsmasq or systemd-resolved plugin](/index.php/NetworkManager#DNS_caching_and_conditional_forwarding "NetworkManager") or [openresolv subscribers](/index.php/NetworkManager#DNS_resolver_with_an_openresolv_subscriber "NetworkManager"), then do not specify loopback addreses with the `servers=` option, it can break DNS resolution.
+*   The specified servers do not get sent to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), the connection's DNS servers are used instead.
+
+##### Setting custom DNS servers in a connection
+
+###### Setting custom DNS servers in a connection (GUI)
 
 Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 
-##### Setting custom DNS servers in a connection (nmcli / connection file)
+###### Setting custom DNS servers in a connection (nmcli / connection file)
 
 To setup DNS Servers per connection, you can use the `dns` field (and the associated `dns-search` and `dns-options`) in the [connection settings](#Edit_a_connection).
 
@@ -487,11 +509,15 @@ To stop NetworkManager from touching `/etc/resolv.conf`, set `main.dns=none` wit
 dns=none
 ```
 
+**Tip:** You might also want to set `main.systemd-resolved=false`, so that NetworkManager does not send the DNS configuration to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved").
+
 **Note:** See [#DNS caching and conditional forwarding](#DNS_caching_and_conditional_forwarding), to configure NetworkManager using other DNS backends like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), instead of using `main.dns=none`.
 
 After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
 
 ##### Use openresolv
+
+**Note:** Do not set `rc-manager=resolvconf` when [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) is installed. *systemd-resolved* provides limited support for the *resolvconf* interface and NetworkManager supports communicating with systemd-resolved trough D-Bus without using *resolvconf*.
 
 To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set `main.rc-manager=resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
@@ -1004,7 +1030,7 @@ You can also edit the connection (and persist it to disk) or delete it. NetworkM
 
 ### Using iwd as the Wi-Fi backend
 
-To enable the experimental [iwd](/index.php/Iwd "Iwd") backend create the following configuration file:
+Install [networkmanager-iwd](https://aur.archlinux.org/packages/networkmanager-iwd/) or enable the experimental [iwd](/index.php/Iwd "Iwd") backend creating the following configuration file:
 
  `/etc/NetworkManager/conf.d/wifi_backend.conf` 
 ```

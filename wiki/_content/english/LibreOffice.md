@@ -60,7 +60,10 @@ LibreOffice includes support for [GTK](/index.php/GTK "GTK") and [Qt](/index.php
 
 LibreOffice will try to autodetect the most suitable VCL UI interface based on your desktop environment. To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde5`, or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`.
 
-**Note:** When using the [LXDE](/index.php/LXDE "LXDE") desktop environment, setting `SAL_USE_VCLPLUGIN` in `/etc/profile.d/libreoffice-fresh.sh` has no effect since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment.
+**Note:**
+
+*   When using the [LXDE](/index.php/LXDE "LXDE") desktop environment, setting `SAL_USE_VCLPLUGIN` in `/etc/profile.d/libreoffice-fresh.sh` has no effect since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment. [upstream bug](https://sourceforge.net/p/lxde/bugs/868/)
+*   In LibreOffice 6.4, the `kde5` backend will be [renamed](https://gerrit.libreoffice.org/plugins/gitiles/core/+/2113f3e7ee0ca5c07f224a54b627777b3a7b5fb0%5E%21/) to `kf5`.
 
 However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
 

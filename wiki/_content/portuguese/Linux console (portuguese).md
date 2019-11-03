@@ -9,7 +9,7 @@ Artigos relacionados
 
 De acordo com [Wikipédia](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console"):
 
-	O **console Linux** é um console do sistema interno ao [kernel Linux](/index.php/Kernel_Linux "Kernel Linux"). O console Linux fornece uma maneira de o kernel e outros processos enviarem a saída de texto ao usuário e receberem entrada de texto do usuário. O usuário normalmente insere texto com um teclado de computador e lê o texto de saída em um monitor de computador. O kernel Linux tem suporte a consoles virtuais - consoles que são logicamente separados, mas que acessam o mesmo teclado físico e tela.
+	O **console Linux** é um console do sistema interno ao [kernel Linux](/index.php/Kernel_Linux_(Portugu%C3%AAs) "Kernel Linux (Português)"). O console Linux fornece uma maneira de o kernel e outros processos enviarem a saída de texto ao usuário e receberem entrada de texto do usuário. O usuário normalmente insere texto com um teclado de computador e lê o texto de saída em um monitor de computador. O kernel Linux tem suporte a consoles virtuais - consoles que são logicamente separados, mas que acessam o mesmo teclado físico e tela.
 
 Este artigo descreve os conceitos básicos do console do Linux e como configurar a exibição da fonte. A configuração do teclado é descrita na subpágina [/Configuração de teclado](/index.php/Console_do_Linux/Configura%C3%A7%C3%A3o_de_teclado "Console do Linux/Configuração de teclado").
 

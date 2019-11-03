@@ -21,7 +21,7 @@ pass is a simple password manager for the command line. Pass is a shell script t
         *   [7.1.1 git Configuration](#git_Configuration)
         *   [7.1.2 Mapping File](#Mapping_File)
         *   [7.1.3 Password Store Layout](#Password_Store_Layout)
-    *   [7.2 Central git server for Pass in combination with GnuPG(SSH example)](#Central_git_server_for_Pass_in_combination_with_GnuPG(SSH_example))
+    *   [7.2 Central Git server for pass in combination with GnuPG (SSH example)](#Central_Git_server_for_pass_in_combination_with_GnuPG_(SSH_example))
         *   [7.2.1 Install a bare Git repository for Pass on the server](#Install_a_bare_Git_repository_for_Pass_on_the_server)
         *   [7.2.2 Import authorized public SSH keys](#Import_authorized_public_SSH_keys)
         *   [7.2.3 On the client](#On_the_client)
@@ -51,7 +51,7 @@ $ pass insert archlinux.org/wiki/username
 
 ```
 
-To get a view of the password store do the following. Note the example output which shows the hiearchy we just created.
+To get a view of the password store do the following. Note the example output which shows the hierarchy we just created.
 
  `$ pass` 
 ```
@@ -69,14 +69,14 @@ $ pass generate archlinux.org/wiki/username *n*
 
 ```
 
-To retreive a password, enter the gpg passphrase at the following prompt, again using the same hierarchical example name from above:
+To retrieve a password, enter the gpg passphrase at the following prompt, again using the example name from above:
 
 ```
 $ pass archlinux.org/wiki/username
 
 ```
 
-Users of Xorg with [xclip](https://www.archlinux.org/packages/?name=xclip) installed can retrieve the password directly onto the clipboard temporarily (*e.g.,* to paste into web forms). To do so, do the following (again with the same example hierarchical name from above):
+Users of Xorg with [xclip](https://www.archlinux.org/packages/?name=xclip) installed can retrieve the password directly onto the clipboard temporarily (e.g., to paste into web forms). To do so, do the following (again with the same example hierarchical name from above):
 
 ```
 $ pass -c archlinux.org/wiki/username
@@ -199,9 +199,9 @@ As usual with pass, the helper assumes that the password is contained in the fir
 
 For this to work, you have to use `pass insert --multiline` to create a multi line password store entry.
 
-### Central git server for Pass in combination with GnuPG(SSH example)
+### Central Git server for pass in combination with GnuPG (SSH example)
 
-You are able to setup a password management system by setting up a central git server for Pass. This allows you to synchronize your central password repository through multiple client environments.
+You are able to setup a password management system by setting up a central Git server for Pass. This allows you to synchronize your central password repository through multiple client environments.
 
 #### Install a bare Git repository for Pass on the server
 

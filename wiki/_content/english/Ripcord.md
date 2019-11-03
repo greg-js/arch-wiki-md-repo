@@ -1,4 +1,4 @@
-[Ripcord](https://cancel.fm/ripcord/) is a lightweight desktop chat client for group-centric services like [Slack](/index.php/Slack "Slack") and [Discord](/index.php/Discord "Discord") built upon the [Qt](/index.php/Qt "Qt") toolkit. It is proprietary software and currently distributed as freeware, with the intention of eventually reaching a commercial release while maintaining at least the Discord portion usable free of charge.
+[Ripcord](https://cancel.fm/ripcord/) is a lightweight desktop chat client for group-centric services like [Slack](/index.php/Slack "Slack") and [Discord](/index.php/Discord "Discord") built upon the [Qt](/index.php/Qt "Qt") toolkit. It is proprietary, closed-source software released under a [shareware license](https://cancel.fm/ripcord/shareware-redistribution/) which allows the Discord module to be used free of charge while locking Slack usage behind purchase.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

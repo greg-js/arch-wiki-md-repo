@@ -100,6 +100,8 @@ $ vcs import src < ros2.repos
 
 ```
 
+Note: Replace "master" with whatever distribution is desired (e.g. "dashing").
+
 Presently some fixes are required:
 
 Edit `build/qt_gui_cpp/sip/qt_gui_cpp_sip/Makefile:12`, replacing `$$[QT_INSTALL_LIBS]` with `/usr/lib`. [Github issue](https://github.com/ros-visualization/rviz/issues/1382#issuecomment-507007580)

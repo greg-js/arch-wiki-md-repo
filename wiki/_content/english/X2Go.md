@@ -201,7 +201,7 @@ In you ssh configuration, if you chroot a user, this user need to have his own /
 
 ### X2Go client: Cannot connect to remote X2Go server from local Wayland session: "The connection with the remote server was shut down"
 
-X2GOClient launches as expected from a local Wayland session but attempting to connect to a remote X2Go Server fails. This problem is usually caused by Qt on Wayland.
+X2Go client launches as expected from a local Wayland session but attempting to connect to a remote X2Go server fails. This problem is usually caused by Qt on Wayland.
 
 Follow the instructions in [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and change the lines starting with
 

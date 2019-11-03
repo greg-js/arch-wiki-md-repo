@@ -4,7 +4,7 @@ Related articles
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 *   [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")
 
-[iwd](https://iwd.wiki.kernel.org/) (iNet wireless daemon) is a wireless daemon for Linux written by Intel that aims to replace [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). The core goal of the project is to optimize resource utilization by not depending on any external libraries and instead utilizing features provided by the Linux Kernel to the maximum extent possible. [[1]](https://www.youtube.com/watch?v=F2Q86cphKDo)
+[iwd](https://iwd.wiki.kernel.org/) (iNet wireless daemon) is a wireless daemon for Linux written by Intel. The core goal of the project is to optimize resource utilization by not depending on any external libraries and instead utilizing features provided by the Linux Kernel to the maximum extent possible. [[1]](https://www.youtube.com/watch?v=F2Q86cphKDo)
 
 iwd can work in standalone mode or in combination with comprehensive network managers like [ConnMan](/index.php/ConnMan "ConnMan"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager#Using_iwd_as_the_Wi-Fi_backend "NetworkManager").
 
@@ -36,6 +36,7 @@ iwd can work in standalone mode or in combination with comprehensive network man
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
     *   [5.2 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
+    *   [5.3 Wireless device is not renamed by udev](#Wireless_device_is_not_renamed_by_udev)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -225,9 +226,9 @@ More example tests can be [found in the test cases](https://git.kernel.org/pub/s
 
 ## Optional configuration
 
-File `/etc/iwd/main.conf` can be used for main configuration.
+File `/etc/iwd/main.conf` can be used for main configuration. See [iwd.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iwd.config.5).
 
-By default, `iwd` stores the network configuration in `/var/lib/iwd` directory. The configuration file is named as `*network*.*type*` where *network* is network SSID and *type* is network type i.e. one of "open", "wep", "psk", "8021x". The file is used to store the encrypted `PreSharedKey` and optionally the cleartext `Passphrase` and can be created by the user without invoking `iwctl`. The file can also be used for other configuration pertaining to that network SSID.
+By default, `iwd` stores the network configuration in `/var/lib/iwd` directory. The configuration file is named as `*network*.*type*` where *network* is network SSID and *type* is network type i.e. one of "open", "wep", "psk", "8021x". The file is used to store the encrypted `PreSharedKey` and optionally the cleartext `Passphrase` and can be created by the user without invoking `iwctl`. The file can also be used for other configuration pertaining to that network SSID. For more settings, see [iwd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iwd.network.5).
 
 A minimal example file to connect to a WPA2/PSK secured network with SSID "spaceship" and passphrase "test1234":
 
@@ -237,7 +238,7 @@ A minimal example file to connect to a WPA2/PSK secured network with SSID "space
 PreSharedKey=aafb192ce2da24d8c7805c956136f45dd612103f086034c402ed266355297295
 ```
 
-The PreSharedKey can be calculated with wpa_passphrase (from [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)) from the SSID and the WIFI passphrase:
+The PreSharedKey can be calculated from the SSID and the WiFi passphrase using *wpa_passphrase* (from [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)) or [wpa-psk](https://aur.archlinux.org/packages/wpa-psk/):
 
  `$ wpa_passphrase "spaceship" "test1234"` 
 ```
@@ -268,7 +269,7 @@ By default when `iwd` is in disconnected state, it periodically scans for availa
  `/etc/iwd/main.conf` 
 ```
 [Scan]
-disable_periodic_scan=true
+DisablePeriodicScan=true
 ```
 
 ### Enable built-in network configuration
@@ -280,7 +281,7 @@ To activate iwd's network configuration feature, create/edit `/etc/iwd/main.conf
  `/etc/iwd/main.conf` 
 ```
 [General]
-enable_network_config=true
+EnableNetworkConfiguration=true
 ```
 
 There is also ability to set route metric with `route_priority_offset`:
@@ -313,16 +314,16 @@ Add the following section to `/etc/iwd/main.conf` for `systemd-resolved`:
 
  `/etc/iwd/main.conf` 
 ```
-[General]
-dns_resolve_method=systemd
+[Network]
+NameResolvingService=systemd
 ```
 
 For `resolvconf`:
 
  `/etc/iwd/main.conf` 
 ```
-[General]
-dns_resolve_method=resolvconf
+[Network]
+NameResolvingService=resolvconf
 ```
 
 ### Deny console (local) user from modifying the settings
@@ -411,6 +412,28 @@ After=systemd-udevd.service systemd-networkd.service
 ```
 
 See [FS#61367](https://bugs.archlinux.org/task/61367).
+
+### Wireless device is not renamed by udev
+
+Upgrade to [iwd](https://www.archlinux.org/packages/?name=iwd) 1.0 introduces the systemd network link configuration file:
+
+ `/usr/lib/systemd/network/80-iwd.link` 
+```
+[Match]
+Type=wlan
+
+[Link]
+NamePolicy=keep kernel
+```
+
+This prevents udev from renaming the interface to `wlp#s#`. As a result the wireless link name `wlan#` is kept after boot.
+
+If this results to issues disabling this file helps:
+
+```
+# ln -s /dev/null /etc/systemd/network/80-iwd.link
+
+```
 
 ## See also
 

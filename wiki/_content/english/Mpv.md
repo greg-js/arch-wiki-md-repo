@@ -154,14 +154,14 @@ and it would ignore all options except the ones for `myprofile1`.
 
 By default mpv uses X even on [Wayland](/index.php/Wayland "Wayland") clients, like [Sway](/index.php/Sway "Sway").
 
-In order to make it work on Wayland by default either specify it from the command line:
+In order to make it work on Wayland, either specify it from the command line:
 
 ```
 $ mpv --gpu-context=wayland video.mkv 
 
 ```
 
-It is also possible to add `gpu-context=wayland` to your config.
+Or add `gpu-context=wayland` to your config.
 
 ### Key bindings
 

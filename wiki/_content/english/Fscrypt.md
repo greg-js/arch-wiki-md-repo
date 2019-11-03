@@ -258,7 +258,7 @@ Otherwise, replace the home directory:
 If everything is working as expected, you can delete the old home directory:
 
 ```
-# find /home/oldhome -type f | xargs shred -u
+# find /home/oldhome -type f -print0 | xargs -0 shred -u
 # rm -rf /home/oldhome
 
 ```

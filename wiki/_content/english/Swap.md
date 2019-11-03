@@ -222,16 +222,11 @@ The *swappiness* [sysctl](/index.php/Sysctl "Sysctl") parameter represents the k
 To check the current swappiness value:
 
 ```
-$ cat /sys/fs/cgroup/memory/memory.swappiness
+$ sysctl vm.swappiness
 
 ```
 
-or
-
-```
-$ cat /proc/sys/vm/swappiness
-
-```
+Alternatively, the files `/sys/fs/cgroup/memory/memory.swappiness` or `/proc/sys/vm/swappiness` can be read in order to obtain the raw integer value.
 
 **Note:** As `/proc` is a lot less organized and is kept only for compatibility purposes, you are encouraged to use `/sys` instead.
 

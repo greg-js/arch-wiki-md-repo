@@ -24,10 +24,10 @@
     *   [5.1 State](#State_5)
     *   [5.2 Who](#Who_5)
     *   [5.3 Actionable](#Actionable_5)
-    *   [5.4 Mirroring The Archive](#Mirroring_The_Archive)
-*   [6 State](#State_6)
-    *   [6.1 Who](#Who_6)
-    *   [6.2 Actionable](#Actionable_6)
+*   [6 Mirroring The Archive](#Mirroring_The_Archive)
+    *   [6.1 State](#State_6)
+    *   [6.2 Who](#Who_6)
+    *   [6.3 Actionable](#Actionable_6)
 *   [7 Make archive of DevOps meeting notes](#Make_archive_of_DevOps_meeting_notes)
     *   [7.1 Who](#Who_7)
     *   [7.2 Actionable](#Actionable_7)
@@ -118,9 +118,9 @@
 
 *   Deferred
 
-### Mirroring The Archive
+## Mirroring The Archive
 
-## State
+### State
 
 *   No mirrored archives
 

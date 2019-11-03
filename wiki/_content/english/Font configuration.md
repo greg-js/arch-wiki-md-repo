@@ -42,11 +42,11 @@ Though Fontconfig is used often in modern Unix and Unix-like operating systems, 
     *   [4.1 Distorted fonts](#Distorted_fonts)
     *   [4.2 Calibri, Cambria, Monaco, etc. not rendering properly](#Calibri,_Cambria,_Monaco,_etc._not_rendering_properly)
     *   [4.3 Applications overriding hinting](#Applications_overriding_hinting)
-    *   [4.4 Applications not picking up hinting from DE's settings](#Applications_not_picking_up_hinting_from_DE's_settings)
-    *   [4.5 Incorrect hinting in GTK applications on non-Gnome systems](#Incorrect_hinting_in_GTK_applications_on_non-Gnome_systems)
+    *   [4.4 Applications not picking up hinting from GNOME settings](#Applications_not_picking_up_hinting_from_GNOME_settings)
+    *   [4.5 Incorrect hinting in GTK applications](#Incorrect_hinting_in_GTK_applications)
     *   [4.6 Helvetica font problem in generated PDFs](#Helvetica_font_problem_in_generated_PDFs)
-    *   [4.7 FreeType Breaking Bitmap Fonts](#FreeType_Breaking_Bitmap_Fonts)
-    *   [4.8 Debugging FreeType Fonts](#Debugging_FreeType_Fonts)
+    *   [4.7 FreeType breaking bitmap fonts](#FreeType_breaking_bitmap_fonts)
+    *   [4.8 Debugging FreeType fonts](#Debugging_FreeType_fonts)
 *   [5 See also](#See_also)
 
 ## Font paths
@@ -569,7 +569,7 @@ You can also force using scalable fonts at all sizes by [disabling embedded bitm
 
 Some applications or desktop environments may override default fontconfig hinting and anti-aliasing settings. This may happen with [GNOME](/index.php/GNOME "GNOME") 3, for example while you are using Qt applications like [vlc](https://www.archlinux.org/packages/?name=vlc) or [smplayer](https://www.archlinux.org/packages/?name=smplayer). Use the specific configuration program for the application in such cases. For GNOME, try [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
-### Applications not picking up hinting from DE's settings
+### Applications not picking up hinting from GNOME settings
 
 For instance, under GNOME it sometimes happens that Firefox applies full hinting even when it's set to "none" in GNOME's settings, which results in sharp and widened fonts. In this case you would have to add hinting settings to your `fonts.conf` file:
 
@@ -588,22 +588,31 @@ For instance, under GNOME it sometimes happens that Firefox applies full hinting
 
 In this example, hinting is set to "grayscale".
 
-### Incorrect hinting in GTK applications on non-Gnome systems
+### Incorrect hinting in GTK applications
 
-[GNOME](/index.php/GNOME "GNOME") uses the XSETTINGS system to configure font rendering. Outside of GNOME, GTK applications rely on fontconfig, but some fonts get the hinting wrong causing them to look too bold or too light.
-
-A simple solution is using [xsettingsd](https://www.archlinux.org/packages/?name=xsettingsd) or [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) to provide the configuration, for example:
+In some desktop environments, especially outside [GNOME](/index.php/GNOME "GNOME") and [Plasma](/index.php/Plasma "Plasma"), some GTK applications could not read font configuration properly. In order to solve this issue, install [xsettingsd](https://www.archlinux.org/packages/?name=xsettingsd) or [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) and execute it at every system startup. See also [xsettingsd wiki](https://github.com/derat/xsettingsd/wiki/Settings) for more information. It can be configured with the following common configuration:
 
  `~/.xsettingsd` 
 ```
 Xft/Hinting 1
-Xft/RGBA "rgb"
 Xft/HintStyle "hintslight"
 Xft/Antialias 1
+Xft/RGBA "rgb"
 
 ```
 
-Alternatively you could just write the font configuration as `Xft.*` directives in `~/.Xresources` without using a settings daemon. See [#Applications without fontconfig support](#Applications_without_fontconfig_support).
+If that is not working in some other applications, you could install [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) and provide the following configuration:
+
+ `~/.Xresources` 
+```
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.antialias: 1
+Xft.rgba: rgb 
+
+```
+
+Then you can execute the script `xrdb -merge ~/.Xresources` at every system startup to apply the options. See also [X resources](/index.php/X_resources "X resources") and [#Applications without fontconfig support](#Applications_without_fontconfig_support).
 
 ### Helvetica font problem in generated PDFs
 
@@ -625,9 +634,9 @@ then the bitmap font provided by [xorg-fonts-75dpi](https://www.archlinux.org/pa
 
 You may also experience similar problem when you open a PDF which requires Helvetica but does not have it embedded for viewing.
 
-### FreeType Breaking Bitmap Fonts
+### FreeType breaking bitmap fonts
 
-Some users are reporting problems ([FS#52502](https://bugs.archlinux.org/task/52502)) with bitmap fonts having changed names after upgrading [freetype2](https://www.archlinux.org/packages/?name=freetype2) to version 2.7.1, creating havok in terminal emulators and several other programs such as [dwm](https://aur.archlinux.org/packages/dwm/) or [dmenu](https://www.archlinux.org/packages/?name=dmenu) by falling back to another (different) font. This was caused by the changes to the PCF font family format, which is described in their *release notes* [[4]](https://sourceforge.net/projects/freetype/files/freetype2/2.7.1/). Users transitioning from the old format might want to create a *font alias* to remedy the problems, like the solution which is described in [[5]](https://forum.manjaro.org/t/terminus-font-name-fix-after-freetype2-update-to-2-7-1-1/15530), given here too:
+Some users are reporting problems ([FS#52502](https://bugs.archlinux.org/task/52502)) with bitmap fonts having changed names after upgrading [freetype2](https://www.archlinux.org/packages/?name=freetype2) to version 2.7.1, creating havok in terminal emulators and several other programs such as [dwm](https://aur.archlinux.org/packages/dwm/) or [dmenu](https://www.archlinux.org/packages/?name=dmenu) by falling back to another (different) font. This was caused by the changes to the PCF font family format, which is described in their *release notes* [[3]](https://sourceforge.net/projects/freetype/files/freetype2/2.7.1/). Users transitioning from the old format might want to create a *font alias* to remedy the problems, like the solution which is described in [[4]](https://forum.manjaro.org/t/terminus-font-name-fix-after-freetype2-update-to-2-7-1-1/15530), given here too:
 
 Assume we want to create an alias for [terminus-font](https://www.archlinux.org/packages/?name=terminus-font), which was renamed from `Terminus` to `xos4 Terminus` in the previously described [freetype2](https://www.archlinux.org/packages/?name=freetype2) update:
 
@@ -651,7 +660,7 @@ Assume we want to create an alias for [terminus-font](https://www.archlinux.org/
 
 Everything should now work as it did before the update, the *font alias* should not be in effect, but make sure to either reload `.Xresources` or restart the display server first so the affected programs can use the alias.
 
-### Debugging FreeType Fonts
+### Debugging FreeType fonts
 
 [freetype2-demos](https://www.archlinux.org/packages/?name=freetype2-demos) provides tools for debugging FreeType font configuration. `ftview` is a GUI in which you can tweak font rendering settings with a live preview. For example:
 

@@ -145,7 +145,7 @@ Alternative: for some Canon Pixma all-in-one printer/scanners, which are not det
 
 ### CanoScan LiDE 200 and black stripe in the middle of the scanned image
 
-Bug affects [sane](https://www.archlinux.org/packages/?name=sane) 1.0.26, 1.0.27 and related to the GENESYS backend [1](https://bbs.archlinux.org/viewtopic.php?id=233725), [2](https://bugs.launchpad.net/prj20071101/+bug/1731459). Install [sane-git](https://aur.archlinux.org/packages/sane-git/) and run `scanimage --clear-calibration`. On next scan image will be clear.
+Bug affects [sane](https://www.archlinux.org/packages/?name=sane) 1.0.26, 1.0.27 (fixed in 1.0.28) and related to the GENESYS backend [1](https://bbs.archlinux.org/viewtopic.php?id=233725), [2](https://bugs.launchpad.net/prj20071101/+bug/1731459). Install [sane-git](https://aur.archlinux.org/packages/sane-git/) and run `scanimage --clear-calibration`. On next scan image will be clear.
 
 ## Epson
 

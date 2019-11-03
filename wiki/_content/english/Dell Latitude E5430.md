@@ -80,7 +80,7 @@ It has been reported to come with the chip Broadcom BCM43228 embedded in a Dell 
 
 ```
 
-The driver to be used must be either the open source b43 together with blob firmware [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), or the proprietary wl module via [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
+The driver to be used must be either the reverse-engineered open-source `[b43](/index.php/B43 "B43")` module together with blob firmware [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), or the proprietary `wl` module via [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
 
 See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") and [Dell Wireless 1540 on WikiDevi](https://wikidevi.com/wiki/Dell_Wireless_1540_(DW1540)) for more info.
 

@@ -21,6 +21,7 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
     *   [3.4 Solaar 'Permission denied'](#Solaar_'Permission_denied')
     *   [3.5 Wireless Keyboard doesn't work while booting (can't enter luks passphrase)](#Wireless_Keyboard_doesn't_work_while_booting_(can't_enter_luks_passphrase))
     *   [3.6 MouseJack Vulnerability](#MouseJack_Vulnerability)
+    *   [3.7 Keyboard or mouse does not wake pc from sleep](#Keyboard_or_mouse_does_not_wake_pc_from_sleep)
 
 ## Installation
 
@@ -69,12 +70,12 @@ idx=1   Mouse   M525
 Solaar has a GUI and CLI. Example CLI pairing session:
 
 ```
-$ solaar-cli unpair mouse
+$ solaar unpair mouse
 Unpaired 1: Wireless Mouse M525 [M525:DAFA335E]
-$ solaar-cli pair
+$ solaar pair
 Pairing: turn your new device on (timing out in 20 seconds).
 Paired device 1: Wireless Mouse M525 [M525:DAFA335E]
-$ solaar-cli show
+$ solaar show
 -: Unifying Receiver [/dev/hidraw0:08D89AA6] with 1 devices
 1: Wireless Mouse M525 [M525:DAFA335E]
 
@@ -157,12 +158,12 @@ to your evdev.conf. Now third button is emulated by pressing both buttons simult
 Is it possible to have the error:
 
 ```
-$ solaar-cli show
-solaar-cli: error: [Errno 13] Permission denied: '/dev/hidraw2'
+$ solaar show
+solaar: error: [Errno 13] Permission denied: '/dev/hidraw2'
 
 ```
 
-In this case, you can physically remove the Unifying Receiver and re-insert it, and re-run the command (as described in the second point of installation part on the official site [[1]](https://pwr.github.io/Solaar/installation.html)).
+In this case, you can physically remove the Unifying Receiver and re-insert it, and re-run the command (as described in the second point of installation part on the official site [[1]](https://github.com/3v1n0/Solaar/blob/master/docs/installation.md)).
 
 ### Wireless Keyboard doesn't work while booting (can't enter luks passphrase)
 
@@ -201,9 +202,20 @@ for getting current firmware. Affected versions include:
 
 ```
 
-You should therefore update the firmware, like instructed [here](https://community.logitech.com/s/question/0D531000058b3B7CAI/logitech-response-to-research-findings). You can do this via [fwupd](/index.php/Fwupd "Fwupd") like this:
+You should therefore update the firmware via [fwupd](/index.php/Fwupd "Fwupd") like so:
 
 ```
 fwupdmgr refresh && fwupdmgr get-updates
 
 ```
+
+If everything looks good, apply the update:
+
+```
+fwupdmgr update
+
+```
+
+### Keyboard or mouse does not wake pc from sleep
+
+Follow the instructions in the Installation section on the official site [[2]](https://github.com/3v1n0/Solaar/blob/master/docs/installation.md)).

@@ -744,11 +744,21 @@ For making rc.local work with systemd, see: [http://superuser.com/questions/2783
 
 Mounting `/home` on your SD card through fstab occasionally appears to lead to a problem described in [this](https://bbs.archlinux.org/viewtopic.php?pid=913240#p913240) forum thread, where the SD card gives a "FILESYSTEM CHECK FAILED" error during init on alternating boot-ups. This appears to have to do with the slower nature of SD-cards, and the system trying to mount the card before it is fully initialised.
 
-An alternative method for mounting the SD card is adding `( sleep 4; mount /dev/mmcblk0p1 -t xfs -o defaults,noatime /home )&` to `/etc/rc.local`, and removing the entry of your SD card from `/etc/fstab`.
+An alternative method for mounting the SD card is adding
+
+ `( sleep 4; mount /dev/mmcblk0p1 -t xfs -o defaults,noatime /home )&` 
+
+to `/etc/rc.local`, and removing the entry of your SD card from `/etc/fstab`.
 
 This command mounts the SD card with a 4 second delay, assuming you partitioned the card with the xfs filesystem. The ampersand after the command backgrounds the process, allowing the system to continue booting while the card mounts.
 
-Find your SD card's UUID by issuing `$ ls -l /dev/disk/by-uuid/` or `# blkid` 
+Find your SD card's UUID by issuing
+
+ `$ ls -l /dev/disk/by-uuid/` 
+
+or
+
+ `# blkid` 
 
 ### Regulating the CPU fan
 
@@ -815,6 +825,13 @@ See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives").
 
 ### Updating the BIOS
 
+Aspire one been shipped with two kind of InsydeH2O BIOS firmware:
+
+*   Legacy BIOS V1.0.0 comes with preinstalled Windows 7 Starter 32 bit, called just "*BIOS*"
+*   UEFI V2.0.0 comes with preinstalled Windows 8, called "*BIOS - UEFI for Windows 8 (Not for Upgrades)*"
+
+"Not for Upgrades" means not for those, who "upgraded" Windows 7 with Windows 8\. Official Acer BIOS update utility for Windows forbids update BIOS V1.* to UEFI V2.* (installer raises an error "*Not allow to flash secure BIOS on current platform*"). Fortunately even old AMD C-60 hardware (e.g. Acer Aspire One 725-c68kk) able to run UEFI V2.* with x86_64 support and there is a way to force install it.
+
 #### Using FreeDOS
 
 This method needs to be tested and finetuned. Note that not all USB-disks are possible to boot from.
@@ -862,7 +879,7 @@ flashit KAV10.fd /mc /all /dc
 
 #### Using Flashrom
 
-Flashrom can be used to flash the BIOS directly from Linux. It does not currently seem to support AA1, but it might be worth watching the flashrom-svn package in AUR. See also: [http://www.coreboot.org/Flashrom](http://www.coreboot.org/Flashrom)
+Flashrom can be used to flash the BIOS directly from Linux. It does not currently seem to support AA1, but it might be worth watching the flashrom-svn package in AUR. See also: [https://flashrom.org/Flashrom](https://flashrom.org/Flashrom)
 
 #### Instructions by Acer for AOA110 and AOA150
 

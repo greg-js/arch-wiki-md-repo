@@ -21,7 +21,9 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
     *   [4.3 pip](#pip)
     *   [4.4 Build-time 2to3 translation](#Build-time_2to3_translation)
 *   [5 Check](#Check)
-*   [6 Notes](#Notes)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Using site-packages](#Using_site-packages)
+    *   [6.2 Test directory in site-package](#Test_directory_in_site-package)
 
 ## Package naming
 
@@ -180,17 +182,17 @@ check(){
 
 ```
 
-If there is a compiled C extension, the tests need to be run using a `$PYTHONPATH` hack in order to find and load it.
+If there is a compiled C extension, the tests need to be run using a `$PYTHONPATH`, that reflects the current major and minor version of Python in order to find and load it.
 
 ```
 check(){
-    cd "$srcdir/foo-$pkgver"
+  cd "$pkgname-$pkgver"
+  local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+  # For nosetests
+  PYTHONPATH="$PWD/build/lib.linux-$CARCH-${python_version}" nosetests
 
-    # For nosetests
-    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" nosetests
-
-    # For pytest
-    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" pytest
+  # For pytest
+  PYTHONPATH="$PWD/build/lib.linux-$CARCH-${python_version}" pytest
 }
 ```
 
@@ -209,6 +211,20 @@ check(){
 
 ```
 
-## Notes
+## Tips and tricks
 
-Please do not install a directory named just `tests`, as it easily conflicts with other Python packages (for example, `/usr/lib/python2.7/site-packages/tests/`).
+### Using site-packages
+
+Sometimes during building, testing or installation it is required to refer to the system's `site-packages` directory. To not hardcode the directory, use a call to the system Python version to retrieve the path and store it in a local variable:
+
+```
+check(){
+  cd "$pkgname-$pkgver"
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  ...
+}
+```
+
+### Test directory in site-package
+
+Make sure to not install a directory named just `tests` into `site-packages` (e.g. `/usr/lib/python2.7/site-packages/tests/`), as it easily conflicts with other Python packages.

@@ -1,15 +1,24 @@
+Related articles
+
+*   [WMFS2](/index.php/WMFS2 "WMFS2")
+*   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
+
 [WMFS](http://wmfs.info/) (Window Manager From Scratch) is a lightweight and highly configurable tiling window manager for X. It can be configured with a configuration file, supports Xft ([Freetype](http://www.freetype.org/)) fonts and is compliant with the Extended Window Manager Hints ([EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html)) specifications. It is still under heavy development
 
 The code structure of wmfs starts to become too old and is not adapted to the new ideas and concepts of the project anymore. So it has been rewritten (again from scratch). Changes and configuration is described in this [wiki](https://github.com/xorg62/wmfs/wiki).
 
 Rest of this page can be applied only to older version of WMFS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Configuration file](#Configuration_file)
-    *   [2.2 Tags & Rules](#Tags_.26_Rules)
+    *   [2.2 Tags & Rules](#Tags_&_Rules)
     *   [2.3 Key Bindings](#Key_Bindings)
         *   [2.3.1 Scratchpad](#Scratchpad)
     *   [2.4 Statusbar configuration](#Statusbar_configuration)
@@ -202,7 +211,7 @@ The keybinding `Alt`+`p` starts a launcher in the titlebar (similar to [dmenu](/
 WMFS can be controlled from the command line with commands such as
 
 ```
-wmfs -V :ln
+wmfs -V :ln
 
 ```
 

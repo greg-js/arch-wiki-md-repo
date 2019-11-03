@@ -195,9 +195,11 @@ This example setup utilizes a more GUI focused configuration and management of J
 
 ### Playing nice with ALSA
 
+**Note:** There are several bugs in [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) and [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) 1.1.9-2 that will cause audio to not play or errors regarding buffers with this setup. Please read [[1]](https://bbs.archlinux.org/viewtopic.php?id=250116) for workarounds and potential solutions.
+
 To allow Alsa programs to play while jack is running you must install the jack plugin for alsa with [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins).
 
-And enable it by editing (or creating) /etc/asound.conf (system wide settings) to have these lines:
+And enable it by editing (or creating) /etc/asound.conf (system wide settings) to have these lines if you have a simple 2-channel setup:
 
 ```
 # convert alsa API over jack API
@@ -207,25 +209,27 @@ And enable it by editing (or creating) /etc/asound.conf (system wide settings) t
 # use this as default
 pcm.!default {
     type plug
-    slave { pcm "jack" }
+    slave.pcm "jack"
+    hint.description "Jack Audio"
+}
+```
+
+If you have a different number of output/input channels or your first two channels aren't the ones you wish to route audio to, you cannot use the predefined jack pcm source from `/etc/alsa/conf.d/50-jack.conf`, but rather something like:
+
+```
+# the first jack port goes to an output we don't use and there are no recording devices
+pcm.!jack {
+   type jack
+       playback_ports {
+           0 system:playback_2
+           1 system:playback_3
+       }
 }
 
-ctl.mixer0 {
-    type hw
-    card 1
-}
-
-# pcm type jack
-pcm.jack {
-    type jack
-    playback_ports {
-        0 system:playback_1
-        1 system:playback_2
-    }
-    capture_ports {
-        0 system:capture_1
-        1 system:capture_2
-    }
+pcm.!default {
+    type plug
+    slave.pcm "jack"
+    hint.description "Jack Audio"
 }
 ```
 

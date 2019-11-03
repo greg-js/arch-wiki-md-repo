@@ -130,14 +130,6 @@ Edit `/etc/sshguard.conf` and change the value of `BACKEND` to the following:
 
  `/etc/sshguard.conf`  `BACKEND="/usr/lib/sshguard/sshg-fw-nft-sets"` 
 
-Additionally you will need to [edit](/index.php/Edit "Edit") the `sshguard.service` so that [iptables](/index.php/Iptables "Iptables") is not run:
-
-```
-[Service]
-ExecStartPre= 
-
-```
-
 When you [start/enable](/index.php/Start/enable "Start/enable") the `sshguard.service`, two new tables named `sshguard` in the `ip` and `ip6` address families are added which filter incoming traffic through sshguard's list of IP addresses. The chains in the `sshguard` table have a priority of -10 and will be processed before other rules of lower priority. See [sshguard-setup(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshguard-setup.7) and [nftables](/index.php/Nftables "Nftables") for more information.
 
 ## Usage

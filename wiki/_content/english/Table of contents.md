@@ -53,7 +53,7 @@
 | <small>3.9.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(15)</small> |
 | <small>3.9.17.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(3)</small> |
 | <small>3.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
-| <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(19)</small> |
+| <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(18)</small> |
 | <small>3.11.1.</small> [Android](/index.php/Category:Android "Category:Android") <small>(3)</small> |
 | <small>3.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(25)</small> |
@@ -62,7 +62,7 @@
 | <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
 | <small>3.16.1.</small> [Optical disc](/index.php/Category:Optical_disc "Category:Optical disc") <small>(6)</small> |
 | <small>3.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
-| <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(52)</small> |
+| <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(53)</small> |
 | <small>4.1.</small> [Directory services](/index.php/Category:Directory_services "Category:Directory services") <small>(3)</small> |
 | <small>4.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>4.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |

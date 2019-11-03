@@ -1122,5 +1122,6 @@ You can use the following website to get your device's coordinates along with a 
 50.822755, -4.365627 "Stewart Little" # Holsworthy, UK
 -33.988687, 25.472376 "lquidfire" # Port Elizabeth, South Africa
 -22.85694,-43.25912 "blx32" # Rio de Janeiro, Rio de Janeiro, Brazil
+50.101669, 19.870413 "BartekS88" # Krakow, Poland
 
 ```

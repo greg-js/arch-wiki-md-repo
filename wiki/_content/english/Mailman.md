@@ -12,7 +12,11 @@ For this guide we are going to suppose that you are using a machine called "arch
 
 **A caveat**: you can use a Mailman installation to manage lists for several domains, but two lists cannot have the same name even though its domains are different!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Mailman installation](#Mailman_installation)
 *   [2 Mailman configuration](#Mailman_configuration)

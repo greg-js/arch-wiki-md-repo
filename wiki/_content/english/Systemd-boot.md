@@ -40,7 +40,7 @@ It is simple to configure but it can only start EFI executables such as the Linu
 
 ### Installing the EFI boot manager
 
-To install the *systemd-boot* EFI boot manager, first make sure the system has booted in UEFI mode and that [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") are accessible. This can be checked by running the command `efivar --list`.
+To install the *systemd-boot* EFI boot manager, first make sure the system has booted in UEFI mode and that [UEFI variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface") are accessible. This can be checked by running the command `efivar --list` or, if [efivar](https://www.archlinux.org/packages/?name=efivar) is not installed, by doing `ls /sys/firmware/efi/efivars` (if the directory exists, the system is booted in UEFI mode).
 
 It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). To keep the kernel updated, it is simpler and therefore **recommended** to mount the ESP to `/boot`. If the ESP is **not** mounted to `/boot`, the kernel and initramfs files must be copied onto that ESP. See [EFI system partition#Alternative mount points](/index.php/EFI_system_partition#Alternative_mount_points "EFI system partition") for details.
 

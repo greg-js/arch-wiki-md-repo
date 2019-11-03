@@ -231,6 +231,9 @@ dhcp-option=121,x.x.x.x/yy,z.z.z.z
 # Ideally set the lease time to 5m only at first to test everything works okay before you set long-lasting records.
 dhcp-range=192.168.111.50,192.168.111.100,12h
 
+# Provide IPv6 DHCP leases through Router Advertisements (RAs) for aaaa:bbbb:cccc:dddd::/64 subnet
+dhcp-range=aaaa:bbbb:cccc:dddd::,ra-only,infinite
+
 # If you’d like to have dnsmasq assign static IPs to some clients, bind the LAN computers
 # NIC MAC addresses:
 dhcp-host=aa:bb:cc:dd:ee:ff,192.168.111.50

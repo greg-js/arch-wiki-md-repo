@@ -24,6 +24,10 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
 *   [7 DNS servers](#DNS_servers)
     *   [7.1 Authoritative-only servers](#Authoritative-only_servers)
     *   [7.2 Conditional forwarding](#Conditional_forwarding)
+        *   [7.2.1 Software combination support](#Software_combination_support)
+            *   [7.2.1.1 openresolv user support](#openresolv_user_support)
+            *   [7.2.1.2 openresolv subscriber support](#openresolv_subscriber_support)
+            *   [7.2.1.3 Other solutions](#Other_solutions)
 *   [8 See also](#See_also)
 
 ## Name Service Switch
@@ -196,6 +200,40 @@ It is possible to use specific DNS resolvers when querying specific domain names
 To implement it, you need to use a [local resolver](#DNS_servers) because glibc does not support it.
 
 In a dynamic environment (laptops and to some extents desktops), you need to configure your resolver based on the network(s) you are connected to. The best way to do that is to use [openresolv](/index.php/Openresolv "Openresolv") because it supports [multiple subscribers](/index.php/Openresolv#Subscribers "Openresolv"). Some [network managers](/index.php/Network_manager "Network manager") support it, either through openresolv, or by configuring the resolver directly.
+
+#### Software combination support
+
+##### openresolv user support
+
+<caption>DHCP Clients</caption>
+| Software | Support ? |
+| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Unknown |
+| [iwd](/index.php/Iwd "Iwd") | Unknown |
+
+<caption>Network managers</caption>
+| Software | Support ? |
+| NetworkManager | Partial |
+| [netctl](/index.php/Netctl "Netctl") | Unknown |
+
+<caption>VPN Clients</caption>
+| Software | Support ? |
+| [OpenConnect](/index.php/OpenConnect "OpenConnect") | Unknown |
+| [OpenVPN](/index.php/OpenVPN "OpenVPN") | Unknown |
+| [strongSwan](/index.php/StrongSwan "StrongSwan") | Unknown |
+| [WireGuard](/index.php/WireGuard "WireGuard") | Unknown |
+
+##### openresolv subscriber support
+
+| Software | Support ? |
+| [BIND](/index.php/BIND "BIND") | Unknown |
+| [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | Yes |
+| [pdnsd](/index.php/Pdnsd "Pdnsd") | Unknown |
+| [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Unknown |
+| [Unbound](/index.php/Unbound "Unbound") | Unknown |
+
+##### Other solutions
+
+NetworkManager [supports conditional forwarding without openresolv](/index.php/NetworkManager#DNS_caching_and_conditional_forwarding "NetworkManager").
 
 **Note:** Although you could use other conditions for forwarding (for example, source IP address), "conditional forwarding" appears to be the name used for the "domain queried" condition.
 

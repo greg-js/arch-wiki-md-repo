@@ -5,7 +5,11 @@ De [Wikipedia: D (lenguaje de programación)](https://en.wikipedia.org/wiki/es:D
 
 	"D es un lenguaje de programación de propósito general desarrollado por Walter Bright cuya primera versión apareció en 1999\. Se origina como un rediseño de C++, con un enfoque más pragmático, pero no es un lenguaje puramente derivado del anterior. D ha mantenido algunas características de C++ y también está influido por otros conceptos de otros lenguajes como Java, C# y Eiffel. Una versión estable fue lanzada el 2 de enero de 2007.".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Probando la instalación](#Probando_la_instalación)
@@ -26,7 +30,7 @@ import std.stdio;
 
 void main() {
    string yourName = "archer";
-   writefln("Hello %s!", yourName);
+   writefln("Hello %s!", yourName);
 }
 
 ```

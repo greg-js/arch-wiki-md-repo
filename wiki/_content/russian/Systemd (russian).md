@@ -10,7 +10,7 @@
 *   [Увеличение производительности/Процесс загрузки системы](/index.php/%D0%A3%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8/%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Увеличение производительности/Процесс загрузки системы")
 *   [Разрешить пользователям выключение системы](/index.php/%D0%A0%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B8%D1%82%D1%8C_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%D0%BC_%D0%B2%D1%8B%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Разрешить пользователям выключение системы")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [systemd](/index.php/Systemd "Systemd"). Дата последней синхронизации: 10 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=565707).
+**Состояние перевода:** На этой странице представлен перевод статьи [systemd](/index.php/Systemd "Systemd"). Дата последней синхронизации: 31 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=587502).
 
 Цитата с [веб-страницы проекта](https://freedesktop.org/wiki/Software/systemd/):
 
@@ -47,7 +47,7 @@
 *   [5 Таймеры](#Таймеры)
 *   [6 Монтирование](#Монтирование)
     *   [6.1 Автомонтирование разделов GPT](#Автомонтирование_разделов_GPT)
-*   [7 Полезные советы](#Полезные_советы)
+*   [7 Советы и рекомендации](#Советы_и_рекомендации)
     *   [7.1 Запуск сервисов после подключения к сети](#Запуск_сервисов_после_подключения_к_сети)
     *   [7.2 Включение установленных юнитов по умолчанию](#Включение_установленных_юнитов_по_умолчанию)
     *   [7.3 Песочница для приложений](#Песочница_для_приложений)
@@ -245,14 +245,14 @@ $ systemctl help *юнит*
 Завершить работу и перезагрузить систему:
 
 ```
-$ systemctl reboot
+$ reboot
 
 ```
 
 Завершить работу и выключить компьютер (с отключением питания):
 
 ```
-$ systemctl poweroff
+$ poweroff
 
 ```
 
@@ -404,7 +404,7 @@ RestartSec=30
 
 ## Цели
 
-*systemd* использует *цели* (англ. *target*), которые выполняют ту же задачу, что и уровни запуска (англ. runlevel), но действуют немного по-другому. Каждая цель имеет имя, а не номер, и, предназначена для конкретных задач; несколько целей могут быть активны одновременно. Некоторые цели реализованы путём наследования служб из других целей с добавлением своих служб. В *systemd* также имеются цели, имитирующие общие уровни запуска SystemVinit, поэтому вы можете переключаться между целями, используя привычную команду `telinit RUNLEVEL`.
+*systemd* использует *цели* (англ. *target*) для группировки юнитов по зависимостям и в качестве стандартизированных точек синхронизации. Они выполняют ту же задачу, что и уровни запуска (англ. runlevel), но действуют немного по-другому. Каждая цель имеет имя, а не номер, и, предназначена для конкретных задач; несколько целей могут быть активны одновременно. Некоторые цели реализованы путём наследования служб из других целей с добавлением своих служб. В *systemd* также имеются цели, имитирующие общие уровни запуска SystemVinit, поэтому вы можете переключаться между целями, используя привычную команду `telinit RUNLEVEL`.
 
 ### Получение информации о текущих целях
 
@@ -513,7 +513,7 @@ w    /proc/acpi/wakeup     -    -    -    -   USBE
 
 Автомонтирование раздела может быть отключено путём изменения [GUID типа](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") раздела или установкой атрибута 63 "do not automount"; см. [gdisk#Prevent GPT partition automounting](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk").
 
-## Полезные советы
+## Советы и рекомендации
 
 ### Запуск сервисов после подключения к сети
 
@@ -530,9 +530,9 @@ w    /proc/acpi/wakeup     -    -    -    -   USBE
 
 Также должна быть включена служба ожидания сети того приложения, которое управляет сетью; только тогда `network-online.target` будет соответствовать состоянию сети.
 
-*   Пользователям [NetworkManager](/index.php/NetworkManager "NetworkManager") следует [включить](#Использование_юнитов) `NetworkManager-wait-online.service`.
-
-*   Для пользователей [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") юнит `systemd-networkd-wait-online.service` включается автоматически, когда `systemd-networkd.service` тоже включен; проверьте это командой `systemctl is-enabled systemd-networkd-wait-online.service`, больше ничего не требуется.
+*   В [NetworkManager](/index.php/NetworkManager "NetworkManager") служба `NetworkManager-wait-online.service` включается вместе с `NetworkManager.service`. Проверить состояние службы можно командой `systemctl is-enabled NetworkManager-wait-online.service`. Если служба не включена, то [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") `NetworkManager.service` ещё раз.
+*   В случае [netctl](/index.php/Netctl "Netctl") [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `netctl-wait-online.service`.
+*   Для пользователей [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") юнит `systemd-networkd-wait-online.service` включается вместе со службой `systemd-networkd.service`; проверьте это командой `systemctl is-enabled systemd-networkd-wait-online.service`.
 
 Подробнее можно почитать в systemd wiki: [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/).
 

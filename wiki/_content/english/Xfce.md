@@ -77,7 +77,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group. You may also wish to install the [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) group which includes extra plugins and a number of useful utilities such as the [mousepad](https://www.archlinux.org/packages/?name=mousepad) editor, but [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/). Xfce uses the [Xfwm](/index.php/Xfwm "Xfwm") window manager by default.
+[Install](/index.php/Install "Install") the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group. You may also wish to install the [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/) group which includes extra plugins and a number of useful utilities such as the [mousepad](https://www.archlinux.org/packages/?name=mousepad) editor. Xfce uses the [Xfwm](/index.php/Xfwm "Xfwm") window manager by default.
 
 ## Starting
 

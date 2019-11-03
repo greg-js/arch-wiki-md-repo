@@ -1,11 +1,15 @@
 [Go](http://golang.org/) is a statically-typed language with syntax loosely derived from that of [C](/index.php/C "C"), adding garbage collected memory management, type safety, some dynamic-typing capabilities, additional built-in types such as variable-length arrays and key-value maps, and a large standard library.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Test your installation](#Test_your_installation)
     *   [1.2 $GOPATH](#$GOPATH)
-    *   [1.3 Enable cross compilation for other platforms](#Enable_cross_compilation_for_other_platforms)
+    *   [1.3 Cross compiling to other platforms](#Cross_compiling_to_other_platforms)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Jetbrains Go Plugin](#Jetbrains_Go_Plugin)
 *   [3 See also](#See_also)
@@ -78,30 +82,64 @@ Run `go help gopath` for more information.
 
 **Tip:** `$GOPATH` works like `$PATH` and can contain multiple entries, this can be useful to split out packages downloaded with `go get` and your own source code; e.g. `GOPATH=$HOME/go:$HOME/mygo`
 
-### Enable cross compilation for other platforms
+### Cross compiling to other platforms
 
-The following paragraph will outline the basics steps to enable cross-compilation support for *Darwin*, *FreeBSD* and *MS Windows*.
+The `go` command can natively cross-compile to [a number of platforms](https://golang.org/doc/install/source#introduction).
 
-Download a copy of the source code from the [official website](https://golang.org/) and extracts its content to e.g. `~/downloads/go`.
-
-Build your downloaded Go with your system Go:
+If [cgo](https://golang.org/cmd/cgo/) is not required for your build, then simply specify the target OS and architecture as env vars to `go build`:
 
 ```
- $ cd ~/downloads/go/src
- $ GOROOT_BOOTSTRAP=/usr/lib/go GOOS=linux GOARCH=amd64 ./make.bash --no-clean
+$ GOOS=linux GOARCH=arm64 go build .
 
 ```
 
-You can now build your system Go using the downloaded Go as bootstrap with the following command:
+See [the official documentation](https://golang.org/doc/install/source#environment) for the valid combinations of `$GOOS` and `$GOARCH`.
+
+On the other hand, if [cgo](https://golang.org/cmd/cgo/) is required for your build, you have to provide the path to your `C/C++` cross-compilers, via the `$CC/$CXX` env vars.
+
+Say you want to cross-compile for `$GOOS=linux` and `$GOARCH=arm64`.
+
+You need first to install the [aarch64-linux-gnu-gcc](https://www.archlinux.org/packages/?name=aarch64-linux-gnu-gcc) cross-compiler.
+
+Here is a sample program that requires `cgo`, so that we can test the cross-compilation process:
 
 ```
- $ cd /usr/lib/go/src; for os in darwin freebsd windows; do for arch in amd64 386; do sudo GOROOT_BOOTSTRAP="$HOME/downloads/go" GOOS=$os GOARCH=$arch ./make.bash --no-clean; done; done
+$ cat > hello.go <<EOF
+package main
+
+// #include <stdio.h>
+// void hello() {  puts("Hello, Arch!"); }
+import "C"
+
+func main() { C.hello() }
+EOF
 
 ```
 
-**Note:** These commands will need to be run following each Go package update.
+Then, you can cross-compile it like this:
 
-For more information, see [FS#30287](https://bugs.archlinux.org/task/30287).
+```
+$ GOOS=linux GOARCH=arm64 CGO_ENABLED=1 CC=/usr/bin/aarch64-linux-gnu-gcc go build hello.go
+
+```
+
+You can check that the architecture of the generated binary is actually `aarch64`:
+
+```
+$ file hello
+hello: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=b1d92ae8840a019f36cc2aee4606b6ae4a581bf1, for GNU/Linux 3.7.0, not stripped
+
+```
+
+If you copy `hello` to a suitable host, you can test-run it:
+
+```
+[alarm@rpi3 ~]$ uname -a
+Linux alarm 5.3.8-1-ARCH #1 SMP Tue Oct 29 19:31:23 MDT 2019 aarch64 GNU/Linux
+[alarm@arpi3 ~]$ ./hello
+Hello, Arch!
+
+```
 
 ## Troubleshooting
 
@@ -115,4 +153,5 @@ If you are using a Jetbrains IDE and the Go plugin cannot find your Go SDK path,
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Go_(programming_language) "wikipedia:Go (programming language)")
 *   [Examples with small descriptions](https://gobyexample.com/)
 *   [Interactive Go training tour](http://tour.golang.org)
+*   [Go cross compilation](https://rakyll.org/cross-compilation/)
 *   [IDEs and Plugins for Go](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins)

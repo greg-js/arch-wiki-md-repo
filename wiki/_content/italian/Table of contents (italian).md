@@ -71,7 +71,7 @@
 | <small>6.8.</small> [Localization](/index.php/Category:Localization_(Italiano) "Category:Localization (Italiano)") <small>(1)</small> |
 | <small>6.9.</small> [Multimedia](/index.php/Category:Multimedia_(Italiano) "Category:Multimedia (Italiano)") <small>(15)</small> |
 | <small>6.10.</small> [Gestore dei Pacchetti](/index.php/Category:Package_management_(Italiano) "Category:Package management (Italiano)") <small>(15)</small> |
-| <small>6.11.</small> [Risparmio energetico](/index.php/Category:Power_management_(Italiano) "Category:Power management (Italiano)") <small>(8)</small> |
+| <small>6.11.</small> [Risparmio energetico](/index.php/Category:Power_management_(Italiano) "Category:Power management (Italiano)") <small>(7)</small> |
 | <small>6.12.</small> [Sicurezza](/index.php/Category:Security_(Italiano) "Category:Security (Italiano)") <small>(12)</small> |
 | <small>6.12.1.</small> [Server Proxy](/index.php/Category:Proxy_servers_(Italiano) "Category:Proxy servers (Italiano)") <small>(1) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |
 | <small>6.12.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Italiano) "Category:Secure Shell (Italiano)") <small>(2) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |

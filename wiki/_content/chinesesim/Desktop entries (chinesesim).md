@@ -1,16 +1,44 @@
 Related articles
 
-**翻译状态：** 本文是英文页面 [Desktop_entries](/index.php/Desktop_entries "Desktop entries") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-03，点击[这里](https://wiki.archlinux.org/index.php?title=Desktop_entries&diff=0&oldid=519256)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Desktop entries](/index.php/Desktop_entries "Desktop entries") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-29，点击[这里](https://wiki.archlinux.org/index.php?title=Desktop+entries&diff=0&oldid=587379)可以查看翻译后英文页面的改动。
 
 [XDG 桌面配置项规范](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html)为应用程序和[桌面环境](/index.php/Desktop_environment "Desktop environment")的菜单整合提供了一个标准方法。只要桌面环境遵守[菜单规范](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html)，应用程序图标就可以显示在系统菜单中。
 
-每个桌面项必须包含 `Type` 和 `Name`，还可以选择定义自己在程序菜单中的显示方式。
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 分类](#分类)
+*   [2 应用程序配置项](#应用程序配置项)
+    *   [2.1 范例文件](#范例文件)
+    *   [2.2 关键字定义](#关键字定义)
+    *   [2.3 安装](#安装)
+    *   [2.4 更新桌面文件数据库](#更新桌面文件数据库)
+*   [3 图标](#图标)
+    *   [3.1 通用图像格式](#通用图像格式)
+    *   [3.2 图标格式转换](#图标格式转换)
+    *   [3.3 Obtaining icons](#Obtaining_icons)
+    *   [3.4 Icon path](#Icon_path)
+*   [4 工具](#工具)
+    *   [4.1 gendesk](#gendesk)
+        *   [4.1.1 用法](#用法)
+    *   [4.2 lsdesktopf](#lsdesktopf)
+    *   [4.3 fbrokendesktop](#fbrokendesktop)
+*   [5 提示与技巧](#提示与技巧)
+    *   [5.1 从终端启动程序](#从终端启动程序)
+    *   [5.2 隐藏窗口启动](#隐藏窗口启动)
+    *   [5.3 修改环境变量](#修改环境变量)
+*   [6 参阅](#参阅)
+
+## 分类
 
 桌面配置项大致分为三类：
 
 	应用程序 
 
-	文件后缀是 *.desktop*，定义如何启动程序，支持哪些 MIME。
+	文件后缀是 *.desktop*，包含程序启动方式，[XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") 使用的 `MimeType`等。将带 [XDG 自动启动程序](/index.php/XDG_Autostart "XDG Autostart")设置的文件放到特定位置，可以[自动启动](/index.php/Autostarting "Autostarting")应用程序。
 
 	链接 
 
@@ -21,36 +49,6 @@ Related articles
 	文件后缀是 *.directory*，定义应用程序菜单中的子菜单。
 
 下列章节概述如何创建它们并使其生效。
-
-`.desktop` 文件中还定义了数据文件的 MIME 类型关联。[Default applications (简体中文)](/index.php/Default_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Default applications (简体中文)") 介绍了它们的配置方法。
-
-[XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") 会使用应用程序项的 `MimeType` 字段。
-
-将 [XDG 自动启动程序](/index.php/XDG_Autostart "XDG Autostart")项放到特定位置，可以[自动启动](/index.php/Autostarting "Autostarting")应用程序。
-
-<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
-
-## Contents
-
-<label class="toctogglelabel" for="toctogglecheckbox"></label>
-
-*   [1 应用程序配置项](#应用程序配置项)
-    *   [1.1 范例文件](#范例文件)
-    *   [1.2 关键字定义](#关键字定义)
-*   [2 图标](#图标)
-    *   [2.1 通用图像格式](#通用图像格式)
-    *   [2.2 图标格式转换](#图标格式转换)
-    *   [2.3 Obtaining icons](#Obtaining_icons)
-*   [3 工具](#工具)
-    *   [3.1 gendesk](#gendesk)
-        *   [3.1.1 用法](#用法)
-    *   [3.2 lsdesktopf](#lsdesktopf)
-    *   [3.3 fbrokendesktop](#fbrokendesktop)
-*   [4 提示与技巧](#提示与技巧)
-    *   [4.1 从终端启动程序](#从终端启动程序)
-    *   [4.2 隐藏窗口启动](#隐藏窗口启动)
-    *   [4.3 修改环境变量](#修改环境变量)
-*   [5 参阅](#参阅)
 
 ## 应用程序配置项
 
@@ -92,6 +90,8 @@ Categories=Education;Languages;Java;
 
 ```
 
+**Note:** 仅 `Type` 和 `Name` 是必须的。
+
 ### 关键字定义
 
 全部有效的桌面配置项可参阅[freedesktop.org网站](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys)。 举例：`Type`关键字（类型）定义了三类桌面项：应用程序（Application (type 1)），链接（Link (type 2)）和目录（Directory (type 3)）。
@@ -118,6 +118,24 @@ This should be avoided, as it will only be confusing to users. The `Name` key sh
 
 *   `GenericName` should state what you would generally call an application that does what this specific application offers (i.e. Firefox is a "Web Browser").
 *   `Comment` is intended to contain any usefull additional information.
+
+### 安装
+
+用 [desktop-file-install(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/desktop-file-install.1) 将文件安装到目标目录:
+
+```
+desktop-file-install --dir=~/.local/share/applications ~/app.desktop
+
+```
+
+### 更新桌面文件数据库
+
+要将 `~/.local/share/applications` 下的设置生效，执行下面命令:
+
+```
+$ update-desktop-database ~/.local/share/applications
+
+```
 
 ## 图标
 
@@ -184,6 +202,14 @@ $ find /path/to/source/package -regex ".*\.\(svg\|png\|xpm\|gif\|ico\)$"
 ```
 
 If the developers of an application do not include icons in their source packages, the next step would be to search on their web sites. Some projects, like i.e. *tvbrowser* have an [artwork/logo page](http://enwiki.tvbrowser.org/index.php/Banners,_Logos_and_other_Promotion_Material) where additional icons may be found. If a project is multi-platform, there may be the case that even if the linux/unix package does not come with an icon, the Windows package might provide one. If the project uses a [Version control system](https://en.wikipedia.org/wiki/Version_control_system "wikipedia:Version control system") like CVS/SVN/etc. and you have some experience with it, you also might consider browsing it for icons. If everything fails, the project might simply have no icon/logo yet.
+
+### Icon path
+
+The [freedesktop.org standard](https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html) specifies in which order and directories programs should look for icons:
+
+1.  `$HOME/.icons` (for backwards compatibility)
+2.  `$XDG_DATA_DIRS/icons`
+3.  `/usr/share/pixmaps`
 
 ## 工具
 

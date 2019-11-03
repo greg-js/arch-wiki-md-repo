@@ -75,15 +75,22 @@ It is advisable to keep OS X installed, because MacBook firmware updates can onl
 
 ## Partitioning
 
-By default, the MacBook's drive is formatted using GPT and contains at least 3 partitions:
+MacBooks are partitioned using the [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") scheme by default. For MacBooks running OS X versions up to and including 10.12, the partition layout will typically look like this:
 
-*   **EFI**: the ~200 MB [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
-*   **OS X**: the main partition containing your OS X installation. It is formatted using [HFS+](/index.php/File_systems "File systems").
-*   **Recovery**: A recovery partition used for special purposes.
+*   **EFI**: the ~200 MB [EFI system partition](/index.php/EFI_system_partition "EFI system partition")
+*   **Macintosh HD**: the main partition containing your OS X installation, formatted using [HFS+](/index.php/File_systems "File systems")
+*   **Recovery HD**: a secondary HFS+ partition containing utilities for restoring backups, formatting and re-installing OS X, typically booted by holding `Cmd+r` while your MacBook is starting up
 
-As a general rule, partitioning is no different from any other hardware that Arch Linux can be installed on. If you plan on keeping OS X for the purpose of dual booting, you need to manually shrink the main OS X HFS+ partition from within OS X's Disk Utility program.
+For 2013/2014 MacBooks running macOS 10.13 or later, the partition layout is simpler:
 
-**Note:** The OS X **Recovery partition** is not visible inside OS X `Disk Utility`. However, the partition will be automatically moved after the OS X partition if you resize it.
+*   **EFI**: the ~200 MB [EFI system partition](/index.php/EFI_system_partition "EFI system partition")
+*   **Macintosh HD**: an [APFS](/index.php/File_systems "File systems") container partition containing volumes for Apple's EFI loaders, the macOS system/user files, the recovery image and for [swap](/index.php/Swap "Swap") in macOS.
+
+As a general rule, partitioning is no different from any other hardware that Arch Linux can be installed on. If you plan on keeping OS X for the purpose of dual booting, you need to manually shrink the main OS X HFS+/APFS partition from within OS X's Disk Utility program.
+
+**Note:** The OS X **Recovery** partition is not visible inside Disk Utility. However, the partition will be automatically moved after the OS X partition if you resize it. On MacBooks using APFS, the Recovery image is stored in the main APFS partition, resizing the APFS partition will move all macOS data.
+
+**Tip:** You can see the true partition structure of your system from within OS X by opening a terminal and running `diskutil list`. Alternatively, if you have already launched the Arch installation media, you can retrieve similar information by running `fdisk -l`.
 
 **Warning:** If your OS X partition is encrypted with FileVault 2, you **must** disable the disk encryption before proceeding. After the OS X partition has been resized, FileVault 2 can be re-enabled.
 
@@ -91,7 +98,9 @@ As a general rule, partitioning is no different from any other hardware that Arc
 
 ## Installation
 
-Installation is similar to any other standard laptop. Please refer to the official [Installation guide](/index.php/Installation_guide "Installation guide"). The Apple boot manager is accessible by holding the `Alt` button during power on. As any other computer that does not have a CDROM drive, you need to use an [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media").
+Installation is similar to any other standard laptop. Please refer to the official [Installation guide](/index.php/Installation_guide "Installation guide") for more detailed instructions, as the following content mainly describes deviations from those instructions that are specific to this MacBook model.
+
+As this Mac model does not include a [CD](/index.php/Optical_disc_drive "Optical disc drive") or [DVD drive](/index.php/Optical_disc_drive "Optical disc drive"), you may wish to copy the Arch installation media onto a [USB flash drive](/index.php/USB_flash_installation_media "USB flash installation media"). With the Arch installation media on a flash drive, you can boot it by holding down the `Alt` (or `Option`) key while your Mac starts up, and then selecting the applicable EFI Boot option when the Apple boot manager appears.
 
 As this model of notebook has a high DPI display, the console font displayed will be extremely small and depending on your preferences is likely to be uncomfortable to use. You may wish to change this for a more legible font, an example of which is;
 
@@ -106,34 +115,40 @@ Thunderbolt Ethernet adapters and USB-to-Ethernet adapters are usually picked up
 
 Another easy option is to use USB tethering with an Android device. For more information, see [Android tethering](/index.php/Android_tethering "Android tethering").
 
-If you have neither, the only option is to use the onboard wireless adapter. Depending on your model, you may have the Broadcom BCM43602, which is supported by the open source brcmfac which is included by default in the kernel (see [here](/index.php/Broadcom_wireless#brcm80211 "Broadcom wireless")). If this is the case, you should have wireless available from the installer.
+If you have neither, the only option is to use the onboard wireless adapter. Depending on your model, you may have the Broadcom BCM43602, which is supported by the open source [brcmfac](/index.php/Broadcom_wireless#brcm80211 "Broadcom wireless") module that is built-in to the Linux kernel and typically enabled by default. If this is the case, you should have wireless available from the installer with no further configuration necessary.
 
-Unfortunately, other BCM43xx chipsets may only be supported by a [proprietary driver](/index.php/Broadcom_wireless "Broadcom wireless") which is unavailable in the installation environment. It is possible to build the package driver [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) on a separate system, but it **must** be built against the exact same kernel version used by the installer. Build the package in a separate machine as follows:
+Other BCM43XX chipsets may only be supported by a proprietary driver such as [b43](/index.php/Broadcom_wireless#b43 "Broadcom wireless") or [wl](/index.php/Broadcom_wireless#broadcom-wl "Broadcom wireless"). The [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) package is included in the Arch installer media, but may need to be manually enabled before the chipset will function correctly. The `b43` driver is also built-in to the kernel and included in the installation media, but it requires external proprietary firmware from the [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) package which will need to be downloaded from another machine connected to the internet.
 
-```
-$ curl -O [https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz](https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz)
-$ tar -zxvf broadcom-wl.tar.gz
-$ cd broadcom-wl
-$ makepkg -s
+You can list the network interfaces available from the installer environment by running `ip link show`. If you can see your wireless interface in the list, you should now be able to use `wifi-menu` to select and connect to your wireless network.
+
+If the [Linux loopback device](https://en.wikipedia.org/wiki/Loopback#Virtual_loopback_interface "wikipedia:Loopback") is the only listed interface, you may need to load an alternative Broadcom driver. To do this, begin by ensuring that all Broadcom drivers have been unloaded.
 
 ```
-
-**Note:** For older MacBooks the linked chipset will not work. Instead, use [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) by cloning the repository and then following the instructions above. You will then also need to use `modprobe b43` instead of `modprobe wl` in the steps below.
-
-This will give you a package (`broadcom-wl-*.pkg.tar.xz`) which can be installed using [pacman](/index.php/Pacman "Pacman"). Put this package on a USB drive, mount it, and install the package using:
-
-```
-# pacman -U broadcom-wl-*.pkg.tar.xz
-# rmmod b43
-# rmmod ssb
-# rmmod bcma
-# modprobe wl
+$ rmmod ssb
+$ rmmod bcma
+$ rmmod b43
+$ rmmod wl
 
 ```
 
-You may now use `wifi-menu` to connect to your network of choice.
+Then try loading `brcmfmac` again.
 
-**Note:** The driver will need to be reinstalled after booting into the system for the first time. For more information, please see [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"))
+```
+$ modprobe bcma
+
+```
+
+Wait a few seconds and then list your network interfaces again. If you still can't see your wireless interface, unload `brcmfmac` again and try reloading `wl`.
+
+```
+$ rmmod bcma
+$ modprobe wl
+
+```
+
+If the wireless interface is still not listed, you will need to compile the [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) package on another computer with [pacman](/index.php/Pacman "Pacman") installed, put the generated package file on a second USB storage device, install the package within the Arch live environment and then load the `b43` module, much like above. See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") and [makepkg](/index.php/Makepkg "Makepkg") for more information.
+
+**Note:** If you used the `wl` or `b43` drivers, they will need to be manually installed to your new Arch system, this can be done by synchronising the [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)/[broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) or [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) packages as necessary, either during setup or after booting into your new Arch system.
 
 ## Setup bootloader
 

@@ -123,6 +123,8 @@ gsettings set org.gnome.desktop.interface cursor-size *cursor_theme_size*
 
 ```
 
+**Note:** By default, on Wayland, Gnome applications should be unable to display your cursor themes located in `~/.local/share/icons`. As a workaround, you can [add that path to XCURSOR_PATH](#Environment_variable).
+
 #### MATE
 
 In MATE one can use mate-control-center or gsettings. To change the theme:
@@ -192,6 +194,10 @@ $ XCURSOR_THEME=SomeThemeName xclock
 ```
 
 XCURSOR_SIZE is optional if your cursor theme supports multiple sizes.
+
+If cursor themes are installed in `~/.local/share/icons`, in order to avoid possible issues, add that path to XCURSOR_PATH. For example:
+
+ `~/.bash_profile`  `export XCURSOR_PATH=${$XCURSOR_PATH}:~/.local/share/icons` 
 
 ### Display managers
 

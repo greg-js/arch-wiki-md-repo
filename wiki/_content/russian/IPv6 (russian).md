@@ -2,7 +2,7 @@
 
 *   [IPv6 tunnel broker setup](/index.php/IPv6_tunnel_broker_setup "IPv6 tunnel broker setup")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [IPv6](/index.php/IPv6 "IPv6"). Дата последней синхронизации: 24 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=587081).
+**Состояние перевода:** На этой странице представлен перевод статьи [IPv6](/index.php/IPv6 "IPv6"). Дата последней синхронизации: 28 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=587192).
 
 В Arch Linux протокол IPv6 включён по умолчанию.
 
@@ -30,7 +30,7 @@
     *   [7.2 dhcpcd](#dhcpcd_2)
     *   [7.3 WIDE-DHCPv6](#WIDE-DHCPv6)
     *   [7.4 systemd-networkd](#systemd-networkd_2)
-    *   [7.5 Other clients](#Other_clients)
+    *   [7.5 Другие клиенты](#Другие_клиенты)
 *   [8 Отключение IPv6](#Отключение_IPv6)
     *   [8.1 Отключение функциональности](#Отключение_функциональности)
     *   [8.2 Другие программы](#Другие_программы)
@@ -111,6 +111,14 @@ interface LAN {
 ```
 
 Такая настройка скажет клиентам выбрать адреса из объявленного блока `/64`. Обратите внимание, что эта настройка объявляет *все доступные префиксы*, привязанные к сетевому интерфейсу. Если вы хотите указать конкретные префиксы, то замените `::/64` на необходимый, например, `2001:DB8::/64`. Блок настроек `prefix` нужно повторить для каждого указанного префикса.
+
+Чтобы объявить DNS-сервера клиентам вашей локальной сети, можно использовать предлагаемую протоколом обнаружения соседей [функциональность RDNSS](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB_%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%BE%D1%81%D0%B5%D0%B4%D0%B5%D0%B9#.D0.A2.D0.B5.D1.85.D0.BD.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D0.B5.D1.82.D0.B0.D0.BB.D0.B8 "wikipedia:ru:Протокол обнаружения соседей"). Например, добавьте следующие строки к файлу `/etc/radvd.conf`, чтобы объявить DNSv6-сервер Google:
+
+```
+RDNSS 2001:4860:4860::8888 2001:4860:4860::8844 {
+};
+
+```
 
 Шлюз должен также разрешать трафик `ipv6-icmp` во всех основных цепочках межсетевого экрана. Для [брэндмауэра](/index.php/Simple_stateful_firewall_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Simple stateful firewall (Русский)")/[iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") добавьте правила:
 
@@ -356,7 +364,7 @@ IPv6DuplicateAddressDetection=1
 IPv6PrivacyExtensions=kernel
 ```
 
-### Other clients
+### Другие клиенты
 
 [dhclient](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#DHCP "Network configuration (Русский)") также может запрашивать сетевой префикс, но для присваивания этого префикса или его части нужно использовать специальный скрипт. Пример программы: [https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6](https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6).
 

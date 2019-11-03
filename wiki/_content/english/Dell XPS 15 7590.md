@@ -200,7 +200,7 @@ If using a desktop environment with an OLED screen, you may notice the backlight
 For this to work, you must first install [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) and [bc](https://www.archlinux.org/packages/?name=bc). Then, create the following file:
 
 ```
-$ cat /usr/local/bin/xbacklightmon
+$ nano /usr/local/bin/xbacklightmon
 
 ```
 
@@ -225,10 +225,16 @@ luminance() {
 ' $new_brightness
 }
 
-xrandr --output eDP-1-1 --brightness "$(luminance)"
+# support both intel and nvidia
+DEVICE=eDP-1
+if [ ! -z "$(xrandr -q --output $DEVICE 2>&1)" ]; then
+  DEVICE=eDP-1-1
+fi
+
+xrandr --output $DEVICE --brightness "$(luminance)"
 
 inotifywait -me modify --format '' "$path"/actual_brightness | while read; do
-    xrandr --output eDP-1-1 --brightness "$(luminance)"
+    xrandr --output $DEVICE --brightness "$(luminance)"
 done
 
 ```
@@ -243,22 +249,28 @@ $ chmod 755 /usr/local/bin/xbacklightmon
 
 You may test this by running the file, and using the backlight keys to test if the brightness updates.
 
-To run the script automatically on startup, write the following file:
+To run the script automatically on startup, create a xbacklightmon.service file containing the following:
 
- `$HOME/.config/systemd/user/xbacklightmon.service` 
 ```
- [Unit]
- Description=Ugly fix to be able to control the brightness of OLED screens via keyboard brightness
- After=multi-user.target
+$ mkdir -p $HOME/.config/systemd/user/
+$ nano $HOME/.config/systemd/user/xbacklightmon.service
 
- [Service]
- Type=simple
- ExecStart=/usr/local/bin/xbacklightmon
- Restart=on-failure
- RestartSec=1
+```
 
- [Install]
- WantedBy=default.target
+```
+[Unit]
+Description=Ugly fix to be able to control the brightness of OLED screens via keyboard brightness
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/xbacklightmon
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=default.target}}
+
 ```
 
 And to enable on startup

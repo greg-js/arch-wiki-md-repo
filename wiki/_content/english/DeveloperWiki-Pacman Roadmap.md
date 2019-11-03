@@ -2,10 +2,14 @@ This page does not provide a traditional roadmap. [Pacman](/index.php/Pacman "Pa
 
 Instead, this page provides a brief overview of major features being discussed for future inclusion in pacman. This does not represent a complete list of all areas of pacman development (or even areas currently being developed...). All discussion about pacman development should take place on the [pacman-dev](https://mailman.archlinux.org/pipermail/pacman-dev/) mailing list.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Potential Release Schedule](#Potential_Release_Schedule)
-    *   [1.1 Pacman 5.1](#Pacman_5.1)
+    *   [1.1 Pacman 6.0](#Pacman_6.0)
 *   [2 New Feature Ideas](#New_Feature_Ideas)
     *   [2.1 Package Signing - Polishing](#Package_Signing_-_Polishing)
     *   [2.2 Optdepend Handling](#Optdepend_Handling)
@@ -17,7 +21,9 @@ Instead, this page provides a brief overview of major features being discussed f
 
 This is **not** a for sure list by any means. This is simply to keep the main development team focused on a given release and what needs to be polished before we can push a major version out the door.
 
-### Pacman 5.1
+### Pacman 6.0
+
+Alternatives system
 
 Applied:
 

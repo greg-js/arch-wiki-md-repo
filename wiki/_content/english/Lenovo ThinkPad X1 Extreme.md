@@ -37,7 +37,9 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [2.2 Battery charge thresholds](#Battery_charge_thresholds)
     *   [2.3 CPU throttling workaround](#CPU_throttling_workaround)
     *   [2.4 CPU undervolting](#CPU_undervolting)
-*   [3 Specifications](#Specifications)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Some graphical applications not responsive](#Some_graphical_applications_not_responsive)
+*   [4 Specifications](#Specifications)
 
 ## Hardware compatibility
 
@@ -156,6 +158,14 @@ This can be worked around by using [throttled](https://www.archlinux.org/package
 Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU"). Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs, but your mileage may vary.
 
 The effects of undervolting on system stability will vary depending on individual hardware (a.k.a. "the silicon lottery").
+
+## Troubleshooting
+
+### Some graphical applications not responsive
+
+Some applications like Firefox or Telegram can experience periodic drawing lag for less than second every several seconds.
+
+It may be the Intel driver [SNA Issue](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
 ## Specifications
 

@@ -110,7 +110,7 @@ $ screen -r *session_name*
 
 ### Customizing Screen
 
-You can modify the default settings for Screen according to your preference either through a personal `.screenrc` file which contains commands to be executed at startup (e.g. `~/.screenrc`) or on the fly using the colon (`-`) command.
+You can modify the default settings for Screen according to your preference either through a personal `.screenrc` file which contains commands to be executed at startup (e.g. `~/.screenrc`) or on the fly in command mode (e.g. `Ctrl+a` `:vbell off`).
 
 ## Tips and tricks
 

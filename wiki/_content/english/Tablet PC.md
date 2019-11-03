@@ -10,6 +10,8 @@ This article aggregates information to get Arch Linux working on a tablet PC. Th
 *   [2 Stylus](#Stylus)
 *   [3 Rotation](#Rotation)
     *   [3.1 Stylus and screen rotation](#Stylus_and_screen_rotation)
+        *   [3.1.1 With xsetwacom](#With_xsetwacom)
+        *   [3.1.2 With xinput](#With_xinput)
     *   [3.2 XFCE: Stylus and screen rotation](#XFCE:_Stylus_and_screen_rotation)
     *   [3.3 Touchscreen rotation](#Touchscreen_rotation)
 *   [4 Automatic rotation](#Automatic_rotation)
@@ -68,6 +70,8 @@ Save the file and restart the xserver for changes to take effect.
 
 ### Stylus and screen rotation
 
+#### With xsetwacom
+
 To set the screen and stylus input to portrait mode:
 
 ```
@@ -98,7 +102,54 @@ xsetwacom set "Wacom Co.,Ltd. Pen and multitouch sensor Pen stylus" Rotate cw
 
 ```
 
-Source: [http://xournal.sourceforge.net/manual.html](http://xournal.sourceforge.net/manual.html)
+Source: [http://xournal.sourceforge.net/manual.html](http://xournal.sourceforge.net/manual.html) If you still cannot change the rotation, you can try to use xinput.
+
+#### With xinput
+
+You can also use [xinput](/index.php/Xinput "Xinput") to turn the stylus, like you would rotate a touchscreen.
+
+To set the screen and stylus input to portrait mode:
+
+```
+ xrandr -o left
+ xinput set-prop <Name of Stylus|Touch Screen> --type=float "Coordinate Transformation Matrix"  0 -1 1 1 0 0 0 0 1
+
+```
+
+To return to landscape mode:
+
+```
+ xrandr -o normal
+ xinput set-prop <Name of Stylus|Touch Screen> --type=float "Coordinate Transformation Matrix"  0  0 0 0 0 0 0 0 0 
+
+```
+
+If your stylus is only listed as keyboard while using "xinput list", these are my results:
+
+ `$ xinput list` 
+```
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ SynPS/2 Synaptics TouchPad              	id=14	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ ELAN0732:00 04F3:272A Pen               	id=11	[slave  keyboard (3)] #My Pen
+```
+
+You can try touching the screen with the pen:
+
+ `$ xinput list` 
+```
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ SynPS/2 Synaptics TouchPad              	id=14	[slave  pointer  (2)]
+⎜   ↳ ELAN0732:00 04F3:272A Pen Pen (0)       	id=17	[slave  pointer  (2)] #My Pen Pointer
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ ELAN0732:00 04F3:272A Pen               	id=11	[slave  keyboard (3)] #My Pen Keyboard
+```
+
+Using the now listed pointer, the commands should work as expected, turning the stylus.
+
+This worked on my HP Envy x360.
 
 ### XFCE: Stylus and screen rotation
 

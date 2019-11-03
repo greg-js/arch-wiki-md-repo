@@ -46,6 +46,8 @@ This article builds upon [Mail server](/index.php/Mail_server "Mail server"). Th
         *   [6.2.3 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_/_Sieve)
     *   [6.3 Rule-based mail processing](#Rule-based_mail_processing)
     *   [6.4 Sender Policy Framework](#Sender_Policy_Framework)
+        *   [6.4.1 With python-postfix-policyd-spf](#With_python-postfix-policyd-spf)
+        *   [6.4.2 With postfix-policyd-spf-perl](#With_postfix-policyd-spf-perl)
     *   [6.5 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
 *   [7 Troubleshooting](#Troubleshooting_2)
     *   [7.1 Warning: "database /etc/postfix/*.db is older than source file .."](#Warning:_"database_/etc/postfix/*.db_is_older_than_source_file_..")
@@ -570,7 +572,9 @@ Placing policy services at the end of the queue reduces load, as only legitimate
 
 ### Sender Policy Framework
 
-To use the [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework") with Postfix, [install](/index.php/Install "Install") [python-postfix-policyd-spf](https://aur.archlinux.org/packages/python-postfix-policyd-spf/).
+To use the [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework") with Postfix, you can [install](/index.php/Install "Install") [python-postfix-policyd-spf](https://aur.archlinux.org/packages/python-postfix-policyd-spf/) or [postfix-policyd-spf-perl](https://aur.archlinux.org/packages/postfix-policyd-spf-perl/).
+
+#### With python-postfix-policyd-spf
 
 Edit `/etc/python-policyd-spf/policyd-spf.conf` to your needs. An extensively commented version can be found at `/etc/python-policyd-spf/policyd-spf.conf.commented`. Pay some extra attention to the HELO check policy, as standard settings strictly reject HELO failures.
 
@@ -598,9 +602,39 @@ smtpd_recipient_restrictions=
      check_policy_service unix:private/policy-spf
 ```
 
+Now reload the `postfix` service.
+
 You can test your Setup with the following:
 
  `/etc/python-policyd-spf/policyd-spf.conf`  `defaultSeedOnly = 0` 
+
+#### With postfix-policyd-spf-perl
+
+Do the same process with postfix as [with python-postfix-policyd-spf](#With_python-postfix-policyd-spf), but with the following differences:
+
+Timeout for the policyd in `main.cf` file:
+
+ `/etc/postfix/main.cf`  `policy_time_limit = 3600` 
+
+Transport:
+
+ `/etc/postfix/master.cf` 
+```
+policy  unix  -       n       n       -       0       spawn
+     user=nobody argv=/usr/lib/postfix/postfix-policyd-spf-perl
+```
+
+Add the policyd to the `smtpd_recipient_restrictions`:
+
+**Warning:** Specify `check_policy_service` after `reject_unauth_destination` or else your system can become an open relay.
+ `/etc/postfix/main.cf` 
+```
+smtpd_recipient_restrictions=
+     ...
+     reject_unauth_destination
+     check_policy_service unix:private/policy-spf
+     ...
+```
 
 ### Sender Rewriting Scheme
 

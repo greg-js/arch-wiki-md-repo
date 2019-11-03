@@ -217,6 +217,39 @@ Available presets for GS65:
 
 If keyboard lights remain off, be sure you've rebooted after installing msi-perkeyrgb to refresh udev and that the brightness is turned to maximum with Fn+PgUp, then try the command again.
 
+For switching colors with a key, create a script file:
+
+ `$ ./.msi-rgb-switch.sh` 
+
+and put the following content inside:
+
+```
+profs=(aqua chakra default disco drain freeway plain rainbow-split roulette disable)
+fn="./.msi-rgb"
+touch $fn
+prof=$(cat $fn)
+if [ -z $prof ]; then
+    echo "0" > $fn
+    vl=0
+else
+    nv=$(($((prof+1)) > 9 ? 0 : $((prof+1))))
+    echo $nv > $fn
+    vl=$nv
+fi
+if [ ${profs[$vl]} = "disable" ]; then
+    msi-perkeyrgb -m GS65 -d
+else
+    msi-perkeyrgb -m GS65 -p ${profs[$vl]}
+fi
+
+```
+
+then
+
+ `$ chmod +x ./.msi-rgb-switch.sh` 
+
+and map the script to a shortcut key. This will rotate to the next rgb color automatically
+
 #### Button Mapping
 
 ##### Airplane Mode Key Combination

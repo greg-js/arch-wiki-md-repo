@@ -266,13 +266,15 @@ See [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun").
 
 ### Using optimus-manager
 
-[Optimus-manager](https://github.com/Askannz/optimus-manager) is one of the easiest solutions for graphics switching between Nvidia and Intel with a single command. Graphical systray applet is also available.
+[Optimus-manager](https://github.com/Askannz/optimus-manager) is one of the easiest solutions for graphics switching between NVIDIA and Intel with a single command. Graphical systray applet is also available.
 
 #### Installation
 
-Install the required [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [optimus-manager](https://aur.archlinux.org/packages/optimus-manager/). Optionally install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) for power saving and [optimus-manager-qt](https://aur.archlinux.org/packages/optimus-manager-qt/) for system tray applet.
+Install the required [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [optimus-manager](https://aur.archlinux.org/packages/optimus-manager/). Optionally install [optimus-manager-qt](https://aur.archlinux.org/packages/optimus-manager-qt/) for system tray applet.
 
 Also [start and enable](/index.php/Systemd#Using_units "Systemd") `optimus-manager.service`.
+
+**Note:** By default, optimus-manager only changes which graphics driver is active; it does not automatically turn off the NVIDIA GPU when not in use. To enable power management, see the [upstream guide](https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options). Configurations that include a Turing architecture (or newer) GPU and an Intel Coffee Lake (or newer) CPU can use power management features built into the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver; see [[7]](http://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/dynamicpowermanagement.html) for setup instructions.
 
 #### Usage
 

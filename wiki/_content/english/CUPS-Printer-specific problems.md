@@ -138,7 +138,7 @@ Brother provides custom drivers on their website, either in source tarball, rpm,
 
 #### Manually installing from the RPM packages
 
-**Warning:** This should ideally be automated in a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
+**Warning:** This should ideally be automated in a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
 [Install](/index.php/Install "Install") the [rpmextract](https://www.archlinux.org/packages/?name=rpmextract) package, and extract both rpm packages using `rpmextract.sh`. Extracting both files will create a var and a usr directory - move the contents of both directories into the corresponding root directories.
 
@@ -151,7 +151,7 @@ For some of the drivers 32 bit libraries may need to be installed from [multilib
 [Install](/index.php/Install "Install") [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) and run:
 
 ```
-snmpwalk -c public $PRINTER_IP | grep -A 1 3.6.1.4.1.2435.2.4.3.99.3.1.6.1.2
+$ snmpwalk -c public $PRINTER_IP | grep -A 1 3.6.1.4.1.2435.2.4.3.99.3.1.6.1.2
 
 ```
 
@@ -199,19 +199,19 @@ At this point, you will have the relevant data to get a valid firmware download 
 Post this file to Brother:
 
 ```
-curl -X POST -d @request.xml [https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate](https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate) -H "Content-Type:text/xml" > response.xml
+$ curl -X POST -d @request.xml [https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate](https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate) -H "Content-Type:text/xml" > response.xml
 
 ```
 
-In `response.xml` you will find a `<PATH>` tag that contains the firmware download URL. Next, download the firmware, push it to the printer, and let the printer process it. Before that is done, change the Admin password to something known, it will be used as the user to log into the FTP site (VERY bad practice, don't do this).
+In `response.xml` you will find a `<PATH>` tag that contains the firmware download URL. Next, download the firmware, push it to the printer, and let the printer process it. Before that is done, change the Admin password to something known, it will be used as the user to log into the FTP site (VERY bad practice, do not do this).
 
 ```
-wget [http://update-akamai.brother.co.jp/CS/LZ4266_W.djf](http://update-akamai.brother.co.jp/CS/LZ4266_W.djf)
-ftp $PRINTER_IP
- bin
- hash
- send LZ4266_W.djf
- bye
+$ wget [http://update-akamai.brother.co.jp/CS/LZ4266_W.djf](http://update-akamai.brother.co.jp/CS/LZ4266_W.djf)
+$ ftp $PRINTER_IP|
+ftp> bin
+ftp> hash
+ftp> send LZ4266_W.djf
+ftp> bye
 
 ```
 
@@ -260,7 +260,7 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 | MF635Cx | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
 | MF4720w |
 | MF4770n |
-| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Avoid the [web interface](/index.php/CUPS#Web_interface "CUPS") when adding the printer as it won't find the PPD file. |
+| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Avoid the [web interface](/index.php/CUPS#Web_interface "CUPS") when adding the printer as it will not find the PPD file. |
 | MX490 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/)
 [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/) |
 | MX492 |
@@ -393,7 +393,6 @@ This is a GUI using escputil and cups drivers. It supports nearly all USB printe
 "Source" code of the driver is available on the [avasys website](http://www.avasys.jp), in Japanese, however it includes a 32 bit binary which will cause problem on 64 bit system.
 
 *   [Install](/index.php/Install "Install") the [psutils](https://www.archlinux.org/packages/?name=psutils), [bc](https://www.archlinux.org/packages/?name=bc), [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) packages ([lib32-libstdc++5](https://aur.archlinux.org/packages/lib32-libstdc%2B%2B5/) on 64bit).
-
 *   Download the source code of the driver.
 *   Compile and install the driver.
 
@@ -410,16 +409,11 @@ If you have any problems on a 64 system, some other lib32 libraries may be requi
 
 Some of the PPD files in [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) are missing paper size definitions for media that is supported by the printers and the filter. It is relatively straightforward to add the missing media types to the PPD files.
 
-To begin, download the PKGBUILD for the [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) package, either with an AUR helper or from a snapshot tarball. Once in the directory with the PKGBUILD, download and extract the source of the package by running
-
-```
-$ makepkg --nobuild
-
-```
+To begin, download the PKGBUILD for the [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) package, either with an AUR helper or from a snapshot tarball. Once in the directory with the PKGBUILD, download and extract the source of the package by running `makepkg --nobuild`.
 
 Change directory to to `src/epson-inkjet-printer-escpr2-$PKGVER`. Open the file `src/optBase.h` in a text editor for reference.
 
-Identify the PPD used by your printer in the `ppd` directory. For example, a Workforce 7710 printer uses `Epson-WF-7710_Series-epson-escpr2-en.ppd`. Let's call it `your_ppd_filename`. Convert the relevant PPD to a PPD compiler source file using the `ppdi` utility from the [cups](https://www.archlinux.org/packages/?name=cups) package.
+Identify the PPD used by your printer in the `ppd` directory. For example, a Workforce 7710 printer uses `Epson-WF-7710_Series-epson-escpr2-en.ppd`. Let us call it `your_ppd_filename`. Convert the relevant PPD to a PPD compiler source file using the `ppdi` utility from the [cups](https://www.archlinux.org/packages/?name=cups) package.
 
 ```
 $ ppdi -o your_ppd_filename.drv ppd/your_ppd_filename.ppd
@@ -447,7 +441,7 @@ CustomMedia "TUSB/US B(11x17 in) (Borderless)" 792.00 1224.00 0.00 0.00 0.00 0.0
 
 ```
 
-Once you've added your custom size, recompile `your_ppd_filename.drv` into a PPD file with ppdc (also from [cups](https://www.archlinux.org/packages/?name=cups)):
+Once you have added your custom size, recompile `your_ppd_filename.drv` into a PPD file with ppdc (also from [cups](https://www.archlinux.org/packages/?name=cups)):
 
 ```
 $ ppdc your_ppd_filename.drv
@@ -500,7 +494,7 @@ To run the setup tool with the command line frontend:
 To set up directly the configuration of a network connected HP printer:
 
 ```
-# hp-setup -i *<ip address>*
+# hp-setup -i *ip_address*
 
 ```
 
@@ -520,11 +514,9 @@ To generate a URI for a given ip address:
 
 PPD files are in `/usr/share/ppd/HP/`.
 
-If your printer is [listed as requiring a binary plugin](https://developers.hp.com/hp-linux-imaging-and-printing/binary_plugin.html), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR"). If the binary plugin [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) is a requirement you will need to [start](/index.php/Start "Start") the `org.cups.cupsd.service` before the PPD is recognized by [hplip](https://www.archlinux.org/packages/?name=hplip).
+If your printer is [listed as requiring a binary plugin](https://developers.hp.com/hp-linux-imaging-and-printing/binary_plugin.html), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR"). If the binary plugin [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) is a requirement you will need to [start](/index.php/Start "Start") the `org.cups.cupsd.service` before the PPD is recognized by {[Template:Kg](/index.php?title=Template:Kg&action=edit&redlink=1 "Template:Kg (page does not exist)").
 
-**Note:**
-
-[hplip](https://www.archlinux.org/packages/?name=hplip) depends on [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) which prevents the drivers list from appearing when a printer is added to CUPS via the web user interface (following error : "Unable to get list of printer drivers"). Possible workarounds:
+**Note:** [hplip](https://www.archlinux.org/packages/?name=hplip) depends on [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) which prevents the drivers list from appearing when a printer is added to CUPS via the web user interface (following error : "Unable to get list of printer drivers"). Possible workarounds:
 
 *   **Either:** Install [hplip](https://www.archlinux.org/packages/?name=hplip) first, then retrieve the PPD file that matches your printer from `/usr/share/ppd/HP/`. Next, remove [hplip](https://www.archlinux.org/packages/?name=hplip) entirely as well as any unnecessary dependencies. Finally, install the printer manually using the CUPS web UI, selecting the PPD file you retrieved, and then re-install [hplip](https://www.archlinux.org/packages/?name=hplip). After a reboot, you should have a fully working printer.
 *   **Or:** Remove [hplip](https://www.archlinux.org/packages/?name=hplip), [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) and [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) along with any unnecessary dependencies. Reinstall [hplip](https://www.archlinux.org/packages/?name=hplip) and restart CUPS. Install your printer using the CUPS web UI, which should now be able to find the drivers automatically. No reboot needed.
@@ -618,12 +610,12 @@ Keep in mind you can use the automated installer but doing so will leave the res
 
 ## Ricoh
 
-Install [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlmono-ricoh/) if your device is black and white, or [openprinting-ppds-pxlcolor-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlcolor-ricoh/) if it's color. Note that Ricoh copiers are sometimes branded as Savin, Gestetner, Lanier, Rex-Rotary, Nashuatec, and/or IKON. So, if you have a device bearing one of these brands, it may be supported by these drivers as well.
+Install [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlmono-ricoh/) if your device is black and white, or [openprinting-ppds-pxlcolor-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlcolor-ricoh/) if it is color. Note that Ricoh copiers are sometimes branded as Savin, Gestetner, Lanier, Rex-Rotary, Nashuatec, and/or IKON. So, if you have a device bearing one of these brands, it may be supported by these drivers as well.
 
 *   [List of supported black and white models](https://www.openprinting.org/driver/pxlmono-Ricoh)
 *   [List of supported color models](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
-For winprinters (Ricoh series SP100 and SP200) try out [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/).
+For cheap [GDI-only winprinters](https://en.wikipedia.org/wiki/en:Graphics_Device_Interface#GDI_printers "wikipedia:en:Graphics Device Interface"), which does not support PCL (Ricoh series SP100 and SP200) try out [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/).
 
 | Printer | Driver/filter | Notes |
 | SP 112 | [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/) |
@@ -672,7 +664,7 @@ Once you have downloaded the drivers, execute the driver installer and accept th
 
 Note that the driver is 32 bit, so some 32 bit libraries will be required on an x86_64 system.
 
-For the scanner, create an /etc/sane.d directory if it doesn't already exist, because it's need by the installer:
+For the scanner, create an `/etc/sane.d` directory if it does not already exist, because it is needed by the installer:
 
 ```
 # mkdir -p /etc/sane.d
@@ -701,7 +693,7 @@ FujiXerox does not support Linux on this model. An old rpm [is available](http:/
 
 A slightly adapted [custom driver](https://rickvanderzwet.nl/trac/personal/wiki/XeroxPhaser6125N) has been found to work out of the box.
 
-To install the tarball, run
+To install the tarball, run:
 
 ```
 # tar -C / --keep-newer-files -xvzf cups-xerox-phaser-6125n-1.0.0.tar.gz

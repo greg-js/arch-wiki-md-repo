@@ -250,7 +250,7 @@ If you want to launch an application with another version of java than the defau
 ```
 #!/bin/sh
 
-export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH
+export PATH="/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH"
 exec /path/to/application "$@"
 
 ```

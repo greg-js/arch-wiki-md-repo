@@ -1869,7 +1869,7 @@ KillMode=none
 WantedBy=multi-user.target
 ```
 
-**Note:** According to [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) and `5` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
+**Note:** According to [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) and `5` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your guest system will not be able to shutdown correctly.
 
 Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, with the variables `type`, `args` and `altcmd` set. Example configs:
 

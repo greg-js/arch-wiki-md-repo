@@ -159,7 +159,7 @@ Categories=Network;
 ## 官网版本
 
 1.  在2019年10月24日这个特殊的日子，Linux QQ全新回归，从心出发·趣无止境
-2.  下载安装请查看官网
+2.  下载安装请查看[官网](https://im.qq.com/linuxqq/download.html)或者安装[qq-linux](https://aur.archlinux.org/packages/qq-linux/)
 
 ## 提示与技巧
 

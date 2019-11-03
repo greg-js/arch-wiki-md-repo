@@ -66,15 +66,16 @@ However, if the [DHCP](/index.php/DHCP "DHCP") and [VPN](/index.php/VPN "VPN") c
 
 ##### Manually
 
-In local DNS stub mode, alternative DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file:
+In local DNS stub mode, custom DNS server(s) can be set in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file:
 
  `/etc/systemd/resolved.conf.d/dns_servers.conf` 
 ```
 [Resolve]
-DNS=91.239.100.100 89.233.43.71
+DNS=192.168.35.1 fd7b:d0bd:7a6e::1
+Domains=~.
 ```
 
-**Note:** [Network managers](/index.php/Network_manager "Network manager") have their own DNS settings that override *systemd-resolved'*s default.
+**Note:** Without the `Domains=~.` option in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5), *systemd-resolved* might use the per-link DNS servers, if any of them set `Domains=~.` in the per-link configuration. This option will not affect queries of domain names that match the more specific search domains specified in per-link configuration, they will still be resolved using their respective per-link DNS servers.
 
 ##### Fallback
 

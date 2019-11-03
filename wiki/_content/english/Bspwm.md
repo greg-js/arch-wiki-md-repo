@@ -26,11 +26,12 @@ Related articles
     *   [3.7 Keyboard](#Keyboard)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Blank screen and keybindings don't work](#Blank_screen_and_keybindings_don't_work)
-    *   [4.2 Window box larger than the actual application](#Window_box_larger_than_the_actual_application)
-    *   [4.3 Problems with Java applications](#Problems_with_Java_applications)
-    *   [4.4 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
-    *   [4.5 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_"Could_not_grab_key_43_with_modfield_68"_on_start)
-    *   [4.6 Firefox context menu automatically selects first option on right click](#Firefox_context_menu_automatically_selects_first_option_on_right_click)
+    *   [4.2 Cursor themes don't apply to the desktop](#Cursor_themes_don't_apply_to_the_desktop)
+    *   [4.3 Window box larger than the actual application](#Window_box_larger_than_the_actual_application)
+    *   [4.4 Problems with Java applications](#Problems_with_Java_applications)
+    *   [4.5 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
+    *   [4.6 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_"Could_not_grab_key_43_with_modfield_68"_on_start)
+    *   [4.7 Firefox context menu automatically selects first option on right click](#Firefox_context_menu_automatically_selects_first_option_on_right_click)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -220,6 +221,10 @@ For keyboard shortcuts you will have to setup a hotkey daemon like [sxhkd](https
 
 *   Make sure you are starting sxhkd (in the background as it is blocking).
 *   Make sure `~/.config/bspwm/bspwmrc` is executable.
+
+### Cursor themes don't apply to the desktop
+
+See [Cursor themes#Change X shaped default cursor](/index.php/Cursor_themes#Change_X_shaped_default_cursor "Cursor themes")
 
 ### Window box larger than the actual application
 

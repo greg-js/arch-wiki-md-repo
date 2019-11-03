@@ -424,7 +424,7 @@ See [#Running a Tor server](#Running_a_Tor_server).
 
 [Start/enable](/index.php/Start/enable "Start/enable") `tor.service`. Alternatively, launch it with `sudo -u tor /usr/bin/tor`.
 
-To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOCKS5H proxy, with port `9050` (plain tor with standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
+To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOCKS5H proxy, with port `9050` (plain tor with standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
 
 ## Web browsing
 
@@ -589,7 +589,7 @@ XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 --continue-at - --f
 One can run ensure a [java application proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) its connections through Tor by appending the following command line options:
 
 ```
-   export JAVA_OPTIONS="$JAVA_OPTIONS -DsocksProxyHost=localhost -DsocksProxyPort=9050"
+export JAVA_OPTIONS="$JAVA_OPTIONS -DsocksProxyHost=localhost -DsocksProxyPort=9050"
 
 ```
 

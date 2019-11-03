@@ -43,7 +43,7 @@ See also [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Lim
 *   Another Linux environment, e.g. a LiveCD or USB flash media, or from another existing Linux distribution.
 *   Matching architecture environments; i.e. the chroot from and chroot to. The architecture of the current environment can be discovered with: `uname -m` (e.g. i686 or x86_64).
 *   Kernel modules loaded that are needed in the chroot environment.
-*   Swap enabled if needed: `# swapon /dev/sd*xY*` 
+*   [Swap](/index.php/Swap "Swap") enabled if needed: `# swapon /dev/sd*xY*` 
 *   Internet connection established if needed.
 
 ## Usage

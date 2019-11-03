@@ -94,6 +94,10 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 	[http://freecode.com/projects/scrot](http://freecode.com/projects/scrot) || [scrot](https://www.archlinux.org/packages/?name=scrot)
 
+*   **Shotgun** — Minimal X screenshot utility written in Rust. According to the author it is twice as fast as maim.
+
+	[https://github.com/neXromancers/shotgun](https://github.com/neXromancers/shotgun) || [shotgun](https://www.archlinux.org/packages/?name=shotgun)
+
 *   **Shutter** — Rich screenshot and editing program. Supports [delay](https://hyp.is/AVQUNTRUH9ZO4OKSlue9/askubuntu.com/questions/252281/how-do-i-take-screenshots-with-a-delay/260178).
 
 	[http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://aur.archlinux.org/packages/shutter/)

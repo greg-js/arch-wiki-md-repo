@@ -118,7 +118,7 @@ Alternatively, edit the global startup script `/etc/X11/xinit/xinitrc`.
 To make temporary changes:
 
 ```
-$ xmodmap -e "keycode  46 = l L l L lstroke Lstroke lstroke"
+$ xmodmap -e "keycode 46 = l L l L lstroke Lstroke lstroke"
 $ xmodmap -e "keysym a = e E"
 
 ```

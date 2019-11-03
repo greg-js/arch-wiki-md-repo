@@ -4,7 +4,7 @@ Related articles
 *   [TrackPoint](/index.php/TrackPoint "TrackPoint")
 *   [HiDPI](/index.php/HiDPI "HiDPI")
 
-[Lenovo ThinkPad X230](http://www.lenovo.com/hk/en/productcatalog/pdf/X230-datasheet.pdf)
+Lenovo ThinkPad X230 [official page](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x230), [datasheet](http://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf), [hardware maintenance manual](https://us.download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles_pdf/x230_x230i_hmm_en_0b48666_01.pdf).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

@@ -18,13 +18,11 @@ Highlights:
     *   [1.1 Enabling Linux support](#Enabling_Linux_support)
     *   [1.2 Replacing the default Debian Linux container with Arch Linux](#Replacing_the_default_Debian_Linux_container_with_Arch_Linux)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Network not working on Pixelbook](#Network_not_working_on_Pixelbook)
-    *   [2.2 DNS resolution not working](#DNS_resolution_not_working)
-    *   [2.3 App not opening in chrome OS (infinite spinner)](#App_not_opening_in_chrome_OS_(infinite_spinner))
-    *   [2.4 Audio playback](#Audio_playback)
-    *   [2.5 Video playback](#Video_playback)
-    *   [2.6 GPU acceleration](#GPU_acceleration)
-    *   [2.7 Fullscreen video, games and mouse capture don't work correctly](#Fullscreen_video,_games_and_mouse_capture_don't_work_correctly)
+    *   [2.1 App not opening in chrome OS (infinite spinner)](#App_not_opening_in_chrome_OS_(infinite_spinner))
+    *   [2.2 Audio playback](#Audio_playback)
+    *   [2.3 Video playback](#Video_playback)
+    *   [2.4 GPU acceleration](#GPU_acceleration)
+    *   [2.5 Fullscreen video, games and mouse capture don't work correctly](#Fullscreen_video,_games_and_mouse_capture_don't_work_correctly)
 *   [3 Useful links](#Useful_links)
 
 ## Introduction
@@ -129,13 +127,13 @@ lxc console penguin
 
 ```
 
-[Install](/index.php/Install "Install") the [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) package. Additionally install [wayland](https://www.archlinux.org/packages/?name=wayland) and [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) to be able to use GUI tools. Then enable and start the services.
+[Install](/index.php/Install "Install") the [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) package. Additionally install [wayland](https://www.archlinux.org/packages/?name=wayland) and [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) to be able to use GUI tools. Then enable and start the services (for Wayland GUI, X11 GUI, Wayland GUI low density and X11 GUI low density accordingly):
 
 ```
-$ systemctl --user enable sommelier@0     # For Wayland GUI apps
-$ systemctl --user enable sommelier-x@0   # For X11 GUI apps
-$ systemctl --user start sommelier@1      # For Wayland GUI apps (low density)
-$ systemctl --user start sommelier-x@1    # For X11 GUI apps (low density)
+$ systemctl --user enable sommelier@0
+$ systemctl --user enable sommelier-x@0
+$ systemctl --user start sommelier@1
+$ systemctl --user start sommelier-x@1
 
 ```
 
@@ -151,16 +149,7 @@ systemctl --user status sommelier-x@1
 
 Now, when apps are installed in Arch Linux, they will automatically show up and can be launched from ChromeOS.
 
-7\. Stop & disable not required systemd services:
-
-```
-sudo systemctl disable getty@tty1.service
-sudo systemctl mask rtkit-daemon
-sudo systemctl mask systemd-udev-trigger.service
-
-```
-
-Restart the Linux subsystem to apply the changes. After restart
+7\. Restart the Linux subsystem to apply the changes. After restart
 
 ```
 systemctl --failed
@@ -175,29 +164,9 @@ journalctl -p 3 -xb
 
 ```
 
-should show **-- No entries --**
+should report **-- No entries --**
 
 ## Troubleshooting
-
-### Network not working on Pixelbook
-
-[https://tedyin.com/posts/archlinux-on-pixelbook/](https://tedyin.com/posts/archlinux-on-pixelbook/) reports that the below setting needs to be set to get the network working on the pixelbook. Make sure to restart your container after you set it.
-
-```
-lxc profile set default security.syscalls.blacklist "keyctl errno 38"
-
-```
-
-### DNS resolution not working
-
-DNS resolution stopped working in the container after my install. To get it working again I had to create [/etc/resolv.conf](/index.php//etc/resolv.conf "/etc/resolv.conf").
-
-As of Jan 2019, my container wasn't able to resolve ".org" DNS, I had to modify [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5) (only the hosts line).
-
-```
- hosts: files dns
-
-```
 
 ### App not opening in chrome OS (infinite spinner)
 
@@ -267,7 +236,5 @@ Currently Crostini doesn't allow linux apps to be completely fullscreen and mous
 ## Useful links
 
 1.  [Running Custom Containers Under Chrome OS](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md)
-2.  [How to install Arch Linux with Jupyter Notebook](https://www.reddit.com/r/Crostini/wiki/howto/run-arch-linux)
+2.  [/r/Crostini](https://www.reddit.com/r/Crostini/)
 3.  [Powerline Web Fonts for Chromebook](https://github.com/wernight/powerline-web-fonts)
-4.  [Pixelbook Setup](https://gist.github.com/cassiozen/93da03b91c8dae7c990e58e3e6b90615)
-5.  [/r/Crostini](https://www.reddit.com/r/Crostini/)

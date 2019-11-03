@@ -1,13 +1,14 @@
 Related articles
 
 *   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
+*   [nnn](/index.php/Nnn "Nnn")
 *   [vifm](/index.php/Vifm "Vifm")
 
-**翻译状态：** 本文是英文页面 [Ranger](/index.php/Ranger "Ranger") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-24，点击[这里](https://wiki.archlinux.org/index.php?title=Ranger&diff=0&oldid=494276)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Ranger](/index.php/Ranger "Ranger") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-29，点击[这里](https://wiki.archlinux.org/index.php?title=Ranger&diff=0&oldid=583919)可以查看翻译后英文页面的改动。
 
 [ranger](https://ranger.github.io/) 是一个基于文本的文件管理器，以 Python 编写。不同层级的目录分别在一个面板的三列中进行展示. 可以通过快捷键, 书签, 鼠标以及历史命令在它们之间移动. 当选中文件或目录时, 会自动显示文件或目录的内容.
 
-主要特性有: vi 风格的快捷键, 书签, 选择, 标签, 选项卡, 命令历史, 创建符号链接的能力, 多种终端模式, 以及任务视图. ranger 可以定制命令和快捷键，包括绑定到外部脚本。最接近的竞争者是 [Vifm](/index.php/Vifm "Vifm")， 它有 2 个面板以及 vi 风格的快捷键，但是总体特性相对较少。
+主要特性有: [vi](/index.php/Vi "Vi") 风格的快捷键, 书签, 选择, 标签, 选项卡, 命令历史, 创建符号链接的能力, 多种终端模式, 以及任务视图. ranger 可以定制命令和快捷键，包括绑定到外部脚本。最接近的竞争者是 [Vifm](/index.php/Vifm "Vifm")， 它有 2 个面板以及 vi 风格的快捷键，但是总体特性相对较少。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -18,20 +19,22 @@ Related articles
 *   [1 安装](#安装)
 *   [2 用法](#用法)
 *   [3 定制](#定制)
-    *   [3.1 命令定义](#命令定义)
-    *   [3.2 配色方案](#配色方案)
-    *   [3.3 文件关联](#文件关联)
+    *   [3.1 移动到回收站](#移动到回收站)
+    *   [3.2 命令定义](#命令定义)
+    *   [3.3 配色方案](#配色方案)
+    *   [3.4 文件关联](#文件关联)
 *   [4 提示与技巧](#提示与技巧)
     *   [4.1 存档相关](#存档相关)
         *   [4.1.1 解压缩](#解压缩)
         *   [4.1.2 压缩](#压缩)
     *   [4.2 外部驱动](#外部驱动)
     *   [4.3 镜像挂载](#镜像挂载)
-    *   [4.4 在当前目录打开新标签](#在当前目录打开新标签)
-    *   [4.5 Shell tips](#Shell_tips)
-        *   [4.5.1 目录同步](#目录同步)
-        *   [4.5.2 Start a shell from ranger](#Start_a_shell_from_ranger)
-        *   [4.5.3 避免在 ranger 启动的 shell 内创建新的 ranger](#避免在_ranger_启动的_shell_内创建新的_ranger)
+    *   [4.4 PDF file preview](#PDF_file_preview)
+    *   [4.5 在当前目录打开新标签](#在当前目录打开新标签)
+    *   [4.6 Shell tips](#Shell_tips)
+        *   [4.6.1 目录同步](#目录同步)
+        *   [4.6.2 Start a shell from ranger](#Start_a_shell_from_ranger)
+        *   [4.6.3 避免在 ranger 启动的 shell 内创建新的 ranger](#避免在_ranger_启动的_shell_内创建新的_ranger)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Artifacts in image preview](#Artifacts_in_image_preview)
 *   [6 参见](#参见)
@@ -48,12 +51,17 @@ Related articles
 | 快捷键 | 命令 |
 | `?` | 打开帮助手册或列出快捷键、命令以及设置项 |
 | `l`, `Enter` | 打开文件 |
+| `j`, `k` | 选择当前目录中的文件 |
+| `h`, `l` | 在目录树中上移和下移 |
 
 ## 定制
 
 启动之后 ranger 会创建一个目录 `~/.config/ranger/`。可以使用以下命令复制默认配置文件到这个目录:
 
- `ranger --copy-config=all` 
+```
+$ ranger --copy-config=all
+
+```
 
 了解一些基本的 python 知识可能对定制 ranger 会有帮助。
 
@@ -68,14 +76,25 @@ from ranger.api.commands import *
 
 ```
 
-如果想添加一个把文件移动到目录 `~/.Trash/` 的快捷键 `DD`, 把以下这一行添加到 `~/.config/ranger/rc.conf`:
+相信配置选项请参考 [ranger(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ranger.1)。
+
+### 移动到回收站
+
+如果想添加一个把文件移动到目录 `~/.local/share/Trash/files/` 的快捷键 `DD`, 把以下这一行添加到 `~/.config/ranger/rc.conf`:
 
 ```
-map DD shell mv -t /home/${USER}/.Trash %s
+map DD shell mv %s /home/${USER}/.local/share/Trash/files/
 
 ```
 
-可以在 [man ranger](http://ranger.nongnu.org/ranger.1.html) 中查阅所有配置.
+或使用 [glib2](https://www.archlinux.org/packages/?name=glib2) 软件包提供的 GIO 命令:
+
+```
+map DD shell gio trash %s
+
+```
+
+一般的图形文件管理器都支持查看或清空回收站，此外还可以使用 `gio list trash://` 命令查看，用 `gio trash --empty` 命令清空回收站。
 
 ### 命令定义
 
@@ -117,10 +136,12 @@ ext tex = kile "$@"
 
 ```
 
-使用 [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) 来打开所有文件:
+使用 [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) 来打开所有文件，设置 `$EDITOR` 和 `$PAGER`:
 
 ```
-has xdg-open, flag f = xdg-open "$1"
+else = xdg-open "$1"
+label editor = "$EDITOR" -- "$@"
+label pager  = "$PAGER" -- "$@"
 
 ```
 
@@ -301,6 +322,12 @@ class mount(Command):
         obj.signal_bind('after', mount_finished)
         self.fm.loader.add(obj)
 ```
+
+### PDF file preview
+
+By default, ranger will preview PDF files as text. However, you can preview PDF files as an image in ranger by first converting the PDF file to an image. Ranger stores the image previews in `~/.cache/ranger/`. You either need to create this directory manually or set `preview_images` to `true` in `~/.config/ranger/rc.conf` to tell `ranger` to create it automatically at the next start. However, note that `preview_images` does not need to be set to `true` the whole time to preview PDF file as images, only `~/.cache/ranger` directory is needed.
+
+To enable this feature, uncomment the appropriate lines in `/usr/share/doc/ranger/config/scope.sh`, or add/uncomment these lines in your local file `~/.config/ranger/scope.sh`.
 
 ### 在当前目录打开新标签
 

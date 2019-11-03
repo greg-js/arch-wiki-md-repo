@@ -559,12 +559,12 @@ package() {
 
 ## Ricoh
 
-Если ваше устройство черно-белое, установите [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlmono-ricoh/), а если цветное - [openprinting-ppds-pxlcolor-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlcolor-ricoh/). Обратите внимание, что копировальные устройства Ricoh иногда называются Savin, Gestetner, Lanier, Rex-Rotary, Nashuatec и/или IKON. Итак, если у вас есть устройство с одним из этих брендов, оно также поддерживается этими драйверами.
+Если ваше устройство чёрно-белое, установите [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlmono-ricoh/), а если цветное — [openprinting-ppds-pxlcolor-ricoh](https://aur.archlinux.org/packages/openprinting-ppds-pxlcolor-ricoh/). Обратите внимание, что копировальные устройства Ricoh иногда называются Savin, Gestetner, Lanier, Rex-Rotary, Nashuatec и/или IKON. Итак, если у вас есть устройство с одним из этих брендов, оно также поддерживается этими драйверами.
 
 *   [Список поддерживаемых черно-белых моделей](https://www.openprinting.org/driver/pxlmono-Ricoh)
 *   [Список поддерживаемых цветных моделей](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
-Для принтеров виндоус (серии Ricoh SP100 и SP200) попробуйте [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/).
+Для работы с дешёвыми "[винпринтерами](https://en.wikipedia.org/wiki/en:Winprinter "wikipedia:en:Winprinter")", которые поддерживают только GDI (серии Ricoh SP100 и SP200), попробуйте [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/).
 
 | Принтер | Драйвер/фильтр | Примечание |
 | SP 112 | [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/) |

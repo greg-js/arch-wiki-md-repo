@@ -311,6 +311,8 @@ Notice that the config is for three fingers swipe.
 
 [Gebaar](https://github.com/Coffee2CodeNL/gebaar-libinput) is another gesture recognizer. Unlike Fusuma, it doesn't support pinching (support is planned in the future though) and threshholds, but in addition to swiping left, right, up and down with 3/4 fingers, it also supports diagonal swipes, which Fusuma does not.
 
+There is a fork of gebaar at [Gebaar](https://github.com/Osleg/gebaar-libinput) which could be installed through [gebaar-libinput-git](https://aur.archlinux.org/packages/gebaar-libinput-git/) which supports pinch gestures and adds additional features to original gebaar. Take in mind that this version is currently under active development and introduces config changes which makes it incompatable to original [Gebaar](https://github.com/Coffee2CodeNL/gebaar-libinput)
+
 #### GnomeExtendedGestures
 
 For deeper integration with GNOME, there is [GnomeExtendedGestures](https://github.com/mpiannucci/GnomeExtendedGestures) ([gnome-shell-extension-extended-gestures-git](https://aur.archlinux.org/packages/gnome-shell-extension-extended-gestures-git/)). Three finger horizontal and vertical gestures can be configured to perform gnome-shell actions (such as toggling the application overview or cycling between them).

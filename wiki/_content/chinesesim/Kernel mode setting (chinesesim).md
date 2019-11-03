@@ -4,7 +4,7 @@
 *   [Intel](/index.php/Intel_Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel Graphics (简体中文)")
 *   [Nouveau](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Kernel_Mode_Setting](/index.php/Kernel_Mode_Setting "Kernel Mode Setting") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-12-15，点击[这里](https://wiki.archlinux.org/index.php?title=Kernel_Mode_Setting&diff=0&oldid=496790)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-29，点击[这里](https://wiki.archlinux.org/index.php?title=Kernel+mode+setting&diff=0&oldid=586589)可以查看翻译后英文页面的改动。
 
 内核级[显示模式设置](https://en.wikipedia.org/wiki/Mode-setting "wikipedia:Mode-setting") (KMS) ，作用是可以在内核级别而不是最终用户级别切换显示分辨率和颜色深度。
 
@@ -25,7 +25,9 @@ Linux 内核的 KMS 实现支持在 framebuffer 中使用原生分辨率和即�
 *   [3 问题解决](#问题解决)
     *   [3.1 字体太小](#字体太小)
     *   [3.2 启动错误信息](#启动错误信息)
-*   [4 强设模式和 EDID](#强设模式和_EDID)
+*   [4 Forcing modes and EDID](#Forcing_modes_and_EDID)
+    *   [4.1 Forcing modes](#Forcing_modes)
+    *   [4.2 Forcing modes](#Forcing_modes_2)
 *   [5 禁用 KMS](#禁用_KMS)
 
 ## 背景
@@ -48,7 +50,7 @@ Linux 内核的 KMS 实现支持在 framebuffer 中使用原生分辨率和即�
 
 闭源的 [NVIDIA](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)") 驱动从 364.12 开始支持 KMS，但是需要 [手动启用](/index.php/NVIDIA#DRM_kernel_mode_setting "NVIDIA")。
 
-闭源的 [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") 启动不支持 KMS. 要使用 KMS，需要替换为开源的 [ATI](/index.php/ATI "ATI") 驱动。
+闭源的 [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") 启动不支持 KMS. 要使用 KMS，需要替换为开源的 [AMDGPU](/index.php/AMDGPU "AMDGPU") 或 [ATI](/index.php/ATI "ATI") 驱动。
 
 ### KMS 早启动
 
@@ -56,11 +58,12 @@ Linux 内核的 KMS 实现支持在 framebuffer 中使用原生分辨率和即�
 
 KMS通常是在[initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process")之后开始初始化，但是你也可以在initramfs的阶段启用KMS:
 
-将启动模块加入`/etc/mkinitcpio.conf`的 MODULES 行。
+将[视频驱动](/index.php/Xorg#Driver_installation "Xorg")模块加入`/etc/mkinitcpio.conf`的 MODULES 行。
 
-*   Radeon 卡加入：[radeon](/index.php/Radeon "Radeon")
+*   [AMDGPU](/index.php/AMDGPU "AMDGPU") 驱动加入 `amdgpu`; 老的 [ATI](/index.php/ATI "ATI") 驱动加入 `radeon`
 *   Intel 卡加入：[i915](/index.php/Intel "Intel")
-*   Nvidia 卡加入：[nouveau](/index.php/Nouveau "Nouveau")
+*   开源的 [Nouveau](/index.php/Nouveau "Nouveau") 驱动加入：[nouveau](/index.php/Nouveau "Nouveau")
+*   [QEMU](/index.php/QEMU "QEMU") 显卡： VirtIO 加入 `virtio-gpu`， QXL 加入 `qxl` for QXL，Cirrus 加入 `cirrus`
 
 例如对 Intel 显卡,将 `i915` 模块加入到 `/etc/mkinitcpio.conf` 的 `MODULES`行：
 
@@ -91,38 +94,40 @@ MODULES=(**i915**)
 
  `/etc/modprobe.d/modprobe.conf`  `options drm_kms_helper poll=0` 
 
-## 强设模式和 EDID
+## Forcing modes and EDID
 
-In case that your monitor/TV is not sending the appropriate [EDID](https://en.wikipedia.org/wiki/EDID "wikipedia:EDID") or similar problems, you will notice that the native resolution is not automatically configured or no display at all. The kernel has a provision to load the binary EDID data, and provides as well data to set four of the most typical resolutions.
+If your native resolution is not automatically configured or no display at all is detected, then your monitor might send none or just a skewed [EDID](https://en.wikipedia.org/wiki/EDID "wikipedia:EDID") file. The kernel will try to catch this case and will set one of the most typical resolutions.
 
-If you have the EDID file for your monitor the process is easy. If you do not have, you can either use one of the built-in resolution-EDID binaries (or generate one during kernel compilation, [more info here](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/EDID/HOWTO.txt)) or build your own EDID.
+In case you have the EDID file for your monitor you merely need to explicitly enforce it (see below). However most often one does not have direct access to a sane file and it is necessary to either extract an existing one and fix it or to generate a new one.
 
-In case you have an EDID file (e.g. extracted from Windows drivers for your monitor or using `get-edid` command from [read-edid](https://www.archlinux.org/packages/?name=read-edid)), create a dir `edid` under `/usr/lib/firmware`:
+Generating new EDID binaries for various resolutions and configurations is possible during kernel compilation by following the [upstream documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt) (also see [here](https://www.osadl.org/Single-View.111+M5315d29dd12.0.html) for a short guide). Other solutions are outlined in details in this [article](https://kodi.wiki/view/Creating_and_using_edid.bin_via_xorg.conf). Extracting an existing one is in most cases easier, e.g. if your monitor works fine under Windows you might have luck extracting the EDID from the corresponding driver, or if a similar monitor works which has the same settings you may use `get-edid` from the [read-edid](https://www.archlinux.org/packages/?name=read-edid) package.
 
-```
-# mkdir /usr/lib/firmware/edid
-
-```
-
-and then copy your binary into the `/usr/lib/firmware/edid` directory.
+After having prepared your EDID place it in a folder, e.g. called `edid` under `/usr/lib/firmware` and copy your binary into it.
 
 To load it at boot, specify the following in the [kernel command line](/index.php/Kernel_command_line "Kernel command line"):
 
 ```
- drm_kms_helper.edid_firmware=edid/your_edid.bin
+drm_kms_helper.edid_firmware=edid/your_edid.bin
 
 ```
 
-You can also specify it only for a specified connection:
+or alternatively (since kernel 4.15), one may also enforce the EDID information on a lower level, using:
+
+```
+drm.edid_firmware=edid/your_edid.bin
+
+```
+
+In order to apply it only to a specific connector use:
 
 ```
 drm_kms_helper.edid_firmware=VGA-1:edid/your_edid.bin
 
 ```
 
-For the four built-in resolutions, see table below for the name to specify:
+For the built-in resolutions, refer to the table below. The **Name** column specifies the name which one is supposed to use in order to enforce its usage.
 
-| **Resolution** | **Name to specify** |
+| **Resolution** | **Name** |
 | 800x600 | edid/800x600.bin |
 | 1024x768 | edid/1024x768.bin |
 | 1280x1024 | edid/1280x1024.bin |
@@ -130,9 +135,56 @@ For the four built-in resolutions, see table below for the name to specify:
 | 1680x1050 | edid/1680x1050.bin |
 | 1920x1080 | edid/1920x1080.bin |
 
-如果使用 KMS 早启动，则应将定制的 EDID 文件包含在 [initramfs](#KMS_早启动) 中，否则会运行错误。
+If you are doing [early KMS](#Early_KMS_start), you must include the custom EDID file in the initramfs, otherwise you will run into problems.
 
-可以用内核源码文档 `Documentation/EDID` 中的 makefile 文件构建自己 EDID。完整信息请阅读[这里](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt)和[这里](https://www.osadl.org/Single-View.111+M5315d29dd12.0.html)。
+### Forcing modes
+
+**Warning:** The method described below is somehow incomplete because e.g. [Xorg](/index.php/Xorg "Xorg") does not take into account the resolution specified, so users are encouraged to use the method described above. However, specifying resolution with `video=` command line may be useful in some scenarios.
+
+From [the nouveau wiki](http://nouveau.freedesktop.org/wiki/KernelModeSetting):
+
+	A mode can be forced on the kernel command line. Unfortunately, the command line option video is poorly documented in the DRM case. Bits and pieces on how to use it can be found in
+
+*   [http://cgit.freedesktop.org/nouveau/linux-2.6/tree/Documentation/fb/modedb.txt](http://cgit.freedesktop.org/nouveau/linux-2.6/tree/Documentation/fb/modedb.txt)
+*   [http://cgit.freedesktop.org/nouveau/linux-2.6/tree/drivers/gpu/drm/drm_fb_helper.c](http://cgit.freedesktop.org/nouveau/linux-2.6/tree/drivers/gpu/drm/drm_fb_helper.c)
+
+The format is:
+
+```
+video=<conn>:<xres>x<yres>[M][R][-<bpp>][@<refresh>][i][m][eDd]
+
+```
+
+*   `<conn>`: Connector, e.g. DVI-I-1, see `/sys/class/drm/` for available connectors
+*   `<xres> x <yres>`: resolution
+*   `M`: compute a CVT mode?
+*   `R`: reduced blanking?
+*   `-<bpp>`: color depth
+*   `@<refresh>`: refresh rate
+*   `i`: interlaced (non-CVT mode)
+*   `m`: margins?
+*   `e`: output forced to on
+*   `d`: output forced to off
+*   `D`: digital output forced to on (e.g. DVI-I connector)
+
+You can override the modes of several outputs using `video=` several times, for instance, to force `DVI` to *1024x768* at *85 Hz* and `TV-out` off:
+
+```
+video=DVI-I-1:1024x768@85 video=TV-1:d
+
+```
+
+To get the name and current status of connectors, you can use the following shell oneliner:
+
+ `$ for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n "${con#*/card?-}: "; cat $p; done` 
+```
+DVI-I-1: connected
+HDMI-A-1: disconnected
+VGA-1: disconnected
+
+```
+
+### Forcing modes
 
 **警告:** 下面描述的方法并不完整，e.g. Xorg does not take into account the resolution specified, so users are encouraged to use the method described above; however, specifying resolution with `video=` command line may be useful in some scenarios
 

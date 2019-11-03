@@ -15,6 +15,7 @@
     *   [2.2 Vim](#Vim)
 *   [3 Arch specific fzf uses](#Arch_specific_fzf_uses)
     *   [3.1 Pacman](#Pacman)
+    *   [3.2 Yay](#Yay)
 
 ## Installation
 
@@ -76,3 +77,21 @@ Try this to fuzzy-search through all available packages, with package info shown
 pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
 
 ```
+
+### Yay
+
+Same like above, but use yay to also fuzzy-search through the AUR, preview info and install selected packages:
+
+```
+yay -Slq | fzf -m --preview 'yay -Si {1}'| xargs -ro yay -S
+
+```
+
+Vice versa, you can also use fzf and yay to list all packages on your system, fuzzy-search them and then remove them:
+
+```
+yay -Qeq | fzf -m --preview 'yay -Qi {1}' | xargs -ro yay -Rs
+
+```
+
+Note that `yay -Rs` removes the package and all its dependencies as far as they are not required by any other package on your system. To simply remove the selected package only, use `yay -R` in the snippet above.

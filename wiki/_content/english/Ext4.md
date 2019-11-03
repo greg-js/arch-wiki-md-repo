@@ -113,7 +113,7 @@ To totally prevent reserving blocks upon filesystem creation, use:
 
 ```
 
-To reduce it to 1% afterwards, use:
+To change it to 1% afterwards, use:
 
 ```
 # tune2fs -m 1 /dev/*device*

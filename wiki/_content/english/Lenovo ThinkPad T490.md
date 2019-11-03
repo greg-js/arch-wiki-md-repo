@@ -5,7 +5,7 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
-| [Bluetooth](/index.php/Bluetooth "Bluetooth") | not tested |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | partially |
 | [Mobile internet](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | not tested |
 | Fingerprint Sensor | No² |
 | MicroSD Reader | No³ |
@@ -30,6 +30,7 @@
     *   [4.1 CPU throttling issue](#CPU_throttling_issue)
     *   [4.2 Speaker noise issue](#Speaker_noise_issue)
     *   [4.3 MicroSD card reader issue](#MicroSD_card_reader_issue)
+    *   [4.4 Bluetooth](#Bluetooth)
 *   [5 ACPI](#ACPI)
 *   [6 Also See](#Also_See)
 
@@ -165,6 +166,18 @@ The microSD card reader does not work with the default kernel. Upon inserting a 
 ```
 
 As of October 2019, the mainline kernel build includes a patchset that fixes this issue. Users can either wit for 5.4 to be released in late November or [install the mainline kernel package from AUR](https://aur.archlinux.org/packages/linux-mainline/) (bootloader will also have to be configured to use this kernel by default).
+
+### Bluetooth
+
+Pairing with a bluetooth speaker and the initial connect works. Connecting to an already paired device currently fails (e.g. after a reboot). Furthermore an error message is shown in the kernel log:
+
+```
+[ 3183.282938] debugfs: File 'le_min_key_size' in directory 'hci0' already present!
+[ 3183.282950] debugfs: File 'le_max_key_size' in directory 'hci0' already present!
+
+```
+
+An issue for this already exists on the kernel bugtracker [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=204765). It is not clear whether this relates to the connection problem.
 
 ## ACPI
 

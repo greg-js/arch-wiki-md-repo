@@ -69,8 +69,8 @@ Most Makefiles written for go applications do not respect the `LDFLAGS` provided
 For [reproducible builds](https://reproducible-builds.org/) it's important that the binaries are stripped of the build path using the `-trimpath` flags.
 
 ```
-# LDFLAGS into the GOFLAGS env variable.
-export GOFLAGS="-gcflags=all=-trimpath=${PWD} -asmflags=all=-trimpath=${PWD} -ldflags=-extldflags=-zrelro -ldflags=-extldflags=-znow"
+export CGO_LDFALGS="${LDFLAGS}"
+export GOFLAGS="-trimpath"
 
 # or alternatively use LDFLAGS defined in go build.
 go build \

@@ -1,6 +1,10 @@
 In addition, a discussion of general setup is available from the main article on the [Acer Aspire One](/index.php/Acer_Aspire_One "Acer Aspire One"), although the hardware is quite different. A discussion of various other issues and tweaks is available in the [Ubuntu forums](http://ubuntuforums.org/showthread.php?t=1811178).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Information](#Hardware_Information)
     *   [1.1 lspci](#lspci)
@@ -11,17 +15,14 @@ In addition, a discussion of general setup is available from the main article on
     *   [2.2 Networking](#Networking)
     *   [2.3 Audio](#Audio)
         *   [2.3.1 HDMI Audio issue](#HDMI_Audio_issue)
-    *   [2.4 Beep on Power Cord Plug-In/Out](#Beep_on_Power_Cord_Plug-In.2FOut)
+    *   [2.4 Beep on Power Cord Plug-In/Out](#Beep_on_Power_Cord_Plug-In/Out)
     *   [2.5 Dual Boot](#Dual_Boot)
 
 ## Hardware Information
 
 The Acer AO722-BZ454 is a 64-bit computer. For additional information see the [Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ").
 
-```
-Note: This page also applies to other AO722 models, not just the BZ454.
-
-```
+[Template:Note: This page also applies to other AO722 models, not just the BZ454.](/index.php?title=Template:Note:_This_page_also_applies_to_other_AO722_models,_not_just_the_BZ454.&action=edit&redlink=1 "Template:Note: This page also applies to other AO722 models, not just the BZ454\. (page does not exist)")
 
 ### lspci
 

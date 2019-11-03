@@ -322,7 +322,9 @@ For debugging purposes `xinput` can be used as it is able to change the button m
 
 ## Alternate methods
 
-The following methods use standard X.org mouse input driver (xf86-input-mouse) instead of using the evdev driver. It works on mice up to 7 buttons. Edit `/etc/X11/xorg.conf` InputDevice section for your mouse to reflect the changes shown below. Then restart X and you are done.
+**Warning:** xf86-input-mouse is [not intended for Linux systems](https://gitlab.freedesktop.org/xorg/driver/xf86-input-mouse)
+
+The following methods use standard X.org mouse input driver ([xf86-input-mouse](https://www.archlinux.org/packages/?name=xf86-input-mouse)) instead of using the evdev driver. It works on mice up to 7 buttons. Edit `/etc/X11/xorg.conf` InputDevice section for your mouse to reflect the changes shown below. Then restart X and you are done.
 
 ### IMPS/2
 

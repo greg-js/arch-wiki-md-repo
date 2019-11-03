@@ -126,7 +126,7 @@
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || CLI: [wicd](https://www.archlinux.org/packages/?name=wicd), GUI: [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk)
 
-*   **[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")** — *WiFi Radar* is a Python/PyGTK2 utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
+*   **[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")** — *WiFi Radar* is a PyGTK (Python 2) utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
 
 	[http://wifi-radar.tuxfamily.org/](http://wifi-radar.tuxfamily.org/) || [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar)
 
@@ -764,7 +764,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **drive** — Tiny program to pull or push Google Drive files.
 
-	[https://github.com/odeke-em/drive](https://github.com/odeke-em/drive) || [drive-bin](https://aur.archlinux.org/packages/drive-bin/)
+	[https://github.com/odeke-em/drive](https://github.com/odeke-em/drive) || [drive-bin](https://aur.archlinux.org/packages/drive-bin/), [drive-git](https://aur.archlinux.org/packages/drive-git/)
 
 *   **DriveSync** — Command line utility that synchronizes your Google Drive files with a local folder on your machine.
 
@@ -948,7 +948,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 ##### Graphical
 
-*   **[Deluge](/index.php/Deluge "Deluge")** — User-friendly BitTorrent client written in PyGTK that can run as a daemon.
+*   **[Deluge](/index.php/Deluge "Deluge")** — User-friendly BitTorrent client written in Python using GTK that can run as a daemon.
 
 	[https://deluge-torrent.org/](https://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
 
@@ -1491,7 +1491,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[https://dino.im/](https://dino.im/) || [dino-git](https://aur.archlinux.org/packages/dino-git/)
 
-*   **[Gajim](/index.php/Gajim "Gajim")** — XMPP client with audio support written in PyGTK.
+*   **[Gajim](/index.php/Gajim "Gajim")** — XMPP client with audio support written in Python using GTK.
 
 	[https://gajim.org/](https://gajim.org/) || [gajim](https://www.archlinux.org/packages/?name=gajim)
 
@@ -2015,7 +2015,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 ##### Graphical
 
-*   **LottaNZB** — A *SABnzbd* (Usenet binary downloader) GUI front-end written in PyGTK
+*   **LottaNZB** — A *SABnzbd* (Usenet binary downloader) GUI front-end written in PyGTK (Python 2)
 
 	[https://launchpad.net/lottanzb/](https://launchpad.net/lottanzb/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
 

@@ -44,23 +44,43 @@
 
 *mpv* предоставляет элегантный интерфейс OSC, появляющийся при движении курсора. Однако, существуют также графические интерфейсы, рассчитанные на более обширную аудиторию:
 
-*   **Baka MPlayer** — Мультимедийный плеер, основанный на libmpv. Qt 5.
+*   **Baka MPlayer** — мультимедийный плеер, основанный на libmpv. Qt 5.
 
 	[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)
 
-*   **bomi** — Мощный и легкий универсальный мультимедиа проигрыватель. (Qt 5).bomi был ранее известен как CMPlayer.
+*   **bomi** — мощный и лёгкий универсальный мультимедиа проигрыватель. (Qt 5).bomi был ранее известен как CMPlayer.
 
 	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
 
-*   **GNOME MPV** — Простой интерфейс для *mpv* (GTK+ 3).
+*   **Celluloid** — простой интерфейс для *mpv* (GTK+ 3), бывший GNOME MPV.
 
-	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/), [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv)
+	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [celluloid-git](https://aur.archlinux.org/packages/celluloid-git/) replaced by [celluloid](https://www.archlinux.org/packages/?name=celluloid)
 
-*   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Мультимедийный плеер с дополнительным функционалом (CSS темы, интеграция с YouTube и другое) (Qt 5).
+*   **Deepin Movie** — видеоплеер для рабочего окружения Deepin на основе *mpv*.
 
-	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
+	[https://www.deepin.org/en/original/deepin-movie/](https://www.deepin.org/en/original/deepin-movie/) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
 
-*   **xt7-player-mpv** — Qt/Gambas графическая оболочка для MPV с богатым набором настраиваемых опций, включая фильтры и драйвера, поддержка плагинов LADSPA, а также библиотека / плейлист менеджер, YouTube, интернет-радио, подкасты, DVB-T и многое другое.
+*   **Kawaii-Player** — аудио/видео и мультимедийный проигрыватель (на основе mpv) с возможностью трансляции с ПК на ПК (PC-to-PC), а также с функциями портативного медиасервера и сервера потокового вещания.
+
+	[https://github.com/kanishka-linux/kawaii-player](https://github.com/kanishka-linux/kawaii-player) || [kawaii-player](https://aur.archlinux.org/packages/kawaii-player/)
+
+*   **KittehPlayer** — YouTube-подобный видеоплеер на основе Qt, QML и mpv.
+
+	[https://github.com/NamedKitten/KittehPlayer](https://github.com/NamedKitten/KittehPlayer) || [kittehplayer](https://aur.archlinux.org/packages/kittehplayer/)
+
+*   **Media Player Classic Qute Theater** — клон Media Player Classic, переписан на Qt и основан на mpv.
+
+	[https://gitlab.com/mpc-qt/mpc-qt](https://gitlab.com/mpc-qt/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/), [mpc-qt-git](https://aur.archlinux.org/packages/mpc-qt-git/)
+
+*   **mpv** — очень простой графический интерфейс для MPV. Может быть запущен с помощью `mpv --player-operation-mode=pseudo-gui`.
+
+	[https://mpv.io/](https://mpv.io/) || [mpv](https://www.archlinux.org/packages/?name=mpv)
+
+*   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — мультимедийный плеер с дополнительным функционалом (CSS-темы, интеграция с YouTube и другое) (Qt 5). Может также использовать MPlayer в качестве альтернативы.
+
+	[https://www.smplayer.info/](https://www.smplayer.info/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
+
+*   **xt7-player-mpv** — графическая оболочка на Qt/Gambas для MPV, обладающая богатым набором настраиваемых опций, включая фильтры и драйверы, поддержкой плагинов LADSPA, а также управлением библиотекой или плейлистом, YouTube, интернет-радио, подкасты, DVB-T и многое другое.
 
 	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
 
@@ -199,7 +219,7 @@ F2 cycle_values video-aspect "16:9" "16:10" "4:3" "2.35:1" "-1"
 
 ### Использование mpv для проигрывания музыки
 
-Разработка скриптов Lua в *mpv* по состоянию на 30 ноября 2014 не имеет формальной документации, но есть примеры в [TOOLS/lua](https://github.com/mpv-player/mpv/tree/master/TOOLS/lua) из [репозитория mpv](https://github.com/mpv-player/mpv). А [в этой статье](https://bamos.github.io/2014/07/05/mpv-lua-scripting/) представлен скрипт [music.lua](https://github.com/bamos/dotfiles/blob/master/.mpv/lua/music.lua), в котором показано, как при помощи скриптов добавить функциональность в *mpv*, которая делает его удобнее в качестве проигрывателя музыки.
+Разработка скриптов Lua в *mpv* по состоянию на 30 ноября 2014 не имеет формальной документации, но есть примеры в [TOOLS/lua](https://github.com/mpv-player/mpv/tree/master/TOOLS/lua) из [репозитория mpv](https://github.com/mpv-player/mpv). А [в этой статье](https://bamos.github.io/2014/07/05/command-line-music/#improving-mpv-as-a-music-player-with-lua-scripts) (англ.) представлен скрипт [music.lua](https://github.com/bamos/dotfiles/blob/master/.mpv/scripts/music.lua), в котором показано, как при помощи скриптов добавить функциональность в *mpv*, которая делает его удобнее в качестве проигрывателя музыки.
 
 ### Просмотр стримов
 
