@@ -27,7 +27,7 @@
 
 [Install](/index.php/Install "Install") the [zoneminder](https://aur.archlinux.org/packages/zoneminder/) package. The development branch is also available with [zoneminder-git](https://aur.archlinux.org/packages/zoneminder-git/).
 
-For thumbnail generation (used rarely), install the [netpbm](https://www.archlinux.org/packages/?name=netpbm) package.
+**Warning:** The [zoneminder](https://aur.archlinux.org/packages/zoneminder/) package includes a comprehensive [install script](https://aur.archlinux.org/cgit/aur.git/tree/zoneminder.install?h=zoneminder) which will modify your web server and database configuration. It will also start ZoneMinder. Make sure you understand what this script does before installing the package.
 
 Once configuration below is completed and the system service started, the web interface will be accessible via [http://localhost/zoneminder/](http://localhost/zoneminder/).
 
@@ -156,7 +156,7 @@ In addition, you can run:
 
 ### Starting
 
-[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `httpd.service`, `zoneminder.service`, `fcgiwrap-multiwatch` and `php-fpm.service`.
+[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `httpd.service`, `zoneminder.service`, `fcgiwrap-multiwatch.service` and `php-fpm.service`.
 
 ## Troubleshooting
 
@@ -243,4 +243,4 @@ options uvcvideo nodrop=1 quirks=128
 
 ## See also
 
-*   [http://www.zoneminder.com/wiki/index.php/Arch_Linux](http://www.zoneminder.com/wiki/index.php/Arch_Linux) — Upstream project page.
+*   [https://wiki.zoneminder.com/index.php/Arch_Linux](https://wiki.zoneminder.com/index.php/Arch_Linux) — Upstream project page.

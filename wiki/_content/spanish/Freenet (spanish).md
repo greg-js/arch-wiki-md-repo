@@ -1,9 +1,13 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Freenet](/index.php/Freenet "Freenet"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Freenet&diff=0&oldid=544969) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Freenet](/index.php/Freenet "Freenet"), revisada por última vez el **2019-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Freenet&diff=0&oldid=588157) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Freenet](http://freenetproject.org/) es un programa libre y de código abierto que tiene como objetivo proporcionar el anonimato y la libertad de expresión a través de una red punto-a-punto descentralizada. Freenet permite a sus usuarios compartir archivos de forma anónima, publicar freesites sin miedo a la censura y más. Los datos se cifran y enrutan a través de múltiples nodos, lo que hace casi imposible identificar quién solicitó la información y cuál es su contenido.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -14,9 +18,9 @@ Este artículo es una traducción de [Freenet](/index.php/Freenet "Freenet"), re
 
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [freenet](https://aur.archlinux.org/packages/freenet/).
 
-[Inicie/active](/index.php/Start/enable_(Espa%C3%B1ol) "Start/enable (Español)") `freenet.service`.
-
 ## Configuración
+
+[Inicie/active](/index.php/Start/enable_(Espa%C3%B1ol) "Start/enable (Español)") el servicio `freenet.service`.
 
 Puede permitir que el asistente le guíe a través de la configuración o póngase manos a la obra configurando Freenet manualmente. Es posible que desee leer sobre [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") o [EncFS](/index.php/EncFS "EncFS") para proteger los datos que compartirá antes de continuar.
 

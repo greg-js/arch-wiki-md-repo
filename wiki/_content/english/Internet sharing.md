@@ -131,7 +131,7 @@ After that, you have to masquerade the `net0` adresses for `internet0`:
 You may want to add some more firewall restrictions on the forwarding (assuming the filter table already exists, like configured in [Nftables#Simple IPv4/IPv6 firewall](/index.php/Nftables#Simple_IPv4/IPv6_firewall "Nftables")):
 
 ```
-# nft add chain inet filter forward { type filter hook forward priority 0 \; policy drop}
+# nft add chain inet filter forward { type filter hook forward priority 0\; policy drop\; }
 # nft add rule filter forward ct state related,established accept
 # nft add rule filter forward iifname net0 oifname internet0 accept
 

@@ -103,7 +103,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **jfbview** — Framebuffer PDF and image viewer based on Imlib2\. Features include Vim-like controls, rotation and zoom, zoom-to-fit, and fast multi-threaded rendering.
 
-	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
+	[https://github.com/jichu4n/jfbview](https://github.com/jichu4n/jfbview) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
 ##### Graphical image viewers
 
@@ -121,7 +121,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **EyeSight** — Image viewer for the Hawaii desktop environment.
 
-	[http://hawaiios.org/projects/eyesight/](http://hawaiios.org/projects/eyesight/) || [eyesight](https://aur.archlinux.org/packages/eyesight/)
+	[https://github.com/hawaii-desktop/eyesight](https://github.com/hawaii-desktop/eyesight) || [eyesight](https://aur.archlinux.org/packages/eyesight/)
 
 *   **[feh](/index.php/Feh "Feh")** — Fast, lightweight image viewer that uses imlib2.
 
@@ -141,7 +141,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[Gwenview](https://en.wikipedia.org/wiki/Gwenview "wikipedia:Gwenview")** — Fast and easy to use image viewer for the KDE desktop.
 
-	[http://gwenview.sourceforge.net/](http://gwenview.sourceforge.net/) || [gwenview](https://www.archlinux.org/packages/?name=gwenview)
+	[https://userbase.kde.org/Gwenview](https://userbase.kde.org/Gwenview) || [gwenview](https://www.archlinux.org/packages/?name=gwenview)
 
 *   **ida** — X11 application (Motif based) for viewing images.
 
@@ -157,7 +157,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **meh** — meh is a small, simple, super fast image viewer using raw XLib.
 
-	[http://www.johnhawthorn.com/meh/](http://www.johnhawthorn.com/meh/) || [meh-git](https://aur.archlinux.org/packages/meh-git/)
+	[https://www.johnhawthorn.com/meh/](https://www.johnhawthorn.com/meh/) || [meh-git](https://aur.archlinux.org/packages/meh-git/)
 
 *   **Mirage** — PyGTK image viewer featuring support for crop and resize, custom actions and a thumbnail panel.
 
@@ -173,7 +173,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **PhotoQt** — Fast and highly configurable image viewer with a simple and nice interface.
 
-	[http://photoqt.org/](http://photoqt.org/) || [photoqt](https://aur.archlinux.org/packages/photoqt/)
+	[https://photoqt.org/](https://photoqt.org/) || [photoqt](https://aur.archlinux.org/packages/photoqt/)
 
 *   **pix** — Image viewer and browser based on gthumb. X-Apps Project.
 
@@ -197,7 +197,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Ristretto** — Fast and lightweight image viewer for the Xfce desktop environment.
 
-	[http://docs.xfce.org/apps/ristretto/start](http://docs.xfce.org/apps/ristretto/start) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
+	[https://docs.xfce.org/apps/ristretto/start](https://docs.xfce.org/apps/ristretto/start) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
 
 *   **shufti** — shufti non-destructively saves and restores the zoom level, rotation, window size, desktop location and viewing area on a per-image/file location basis
 
@@ -209,15 +209,15 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Viewnior** — Minimalistic GTK image viewer featuring support for flipping, rotating, animations and configurable mouse actions.
 
-	[http://siyanpanayotov.com/project/viewnior/](http://siyanpanayotov.com/project/viewnior/) || [viewnior](https://www.archlinux.org/packages/?name=viewnior)
+	[http://siyanpanayotov.com/project/viewnior](http://siyanpanayotov.com/project/viewnior) || [viewnior](https://www.archlinux.org/packages/?name=viewnior)
 
 *   **Vimiv** — An image viewer with vim-like keybindings. It is written in python3 using the Gtk3 toolkit.
 
-	[http://karlch.github.io/vimiv](http://karlch.github.io/vimiv) || [vimiv](https://www.archlinux.org/packages/?name=vimiv)
+	[http://karlch.github.io/vimiv/](http://karlch.github.io/vimiv/) || [vimiv](https://www.archlinux.org/packages/?name=vimiv)
 
 *   **Xloadimage** — Classic X image viewer.
 
-	[http://sioseis.ucsd.edu/xloadimage.html](http://sioseis.ucsd.edu/xloadimage.html) || [xloadimage](https://www.archlinux.org/packages/?name=xloadimage)
+	[https://sioseis.ucsd.edu/xloadimage.html](https://sioseis.ucsd.edu/xloadimage.html) || [xloadimage](https://www.archlinux.org/packages/?name=xloadimage)
 
 #### Image organizers
 
@@ -229,7 +229,7 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 *   **[digiKam](https://en.wikipedia.org/wiki/digiKam "wikipedia:digiKam")** — KDE-based image organizer with built-in editing features via a plugin architecture. digiKam asserts it is more full featured than similar applications with a larger set of image manipulation features including RAW image import and manipulation.
 
-	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
+	[https://www.digikam.org/](https://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
 *   **Frogr** — Small application for the GNOME desktop that allows users to manage their accounts in the Flickr image hosting website.
 
@@ -253,7 +253,7 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 *   **Rapid Photo Downloader** — Download photos and videos from cameras, memory cards and portable storage devices.
 
-	[http://www.damonlynch.net/rapid/](http://www.damonlynch.net/rapid/) || [rapid-photo-downloader](https://www.archlinux.org/packages/?name=rapid-photo-downloader)
+	[https://www.damonlynch.net/rapid/](https://www.damonlynch.net/rapid/) || [rapid-photo-downloader](https://www.archlinux.org/packages/?name=rapid-photo-downloader)
 
 *   **[Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")** — A digital photo organizer designed for the GNOME desktop environment
 
@@ -301,7 +301,7 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 *   **jpegoptim** — JPEG optimization utility providing lossless and lossy compression.
 
-	[http://www.kokkonen.net/tjko/projects.html#jpegoptim](http://www.kokkonen.net/tjko/projects.html#jpegoptim) || [jpegoptim](https://www.archlinux.org/packages/?name=jpegoptim)
+	[https://www.kokkonen.net/tjko/projects.html#jpegoptim](https://www.kokkonen.net/tjko/projects.html#jpegoptim) || [jpegoptim](https://www.archlinux.org/packages/?name=jpegoptim)
 
 *   **optipng** — Lossless PNG compressor.
 
@@ -329,7 +329,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[GIMP](/index.php/GIMP "GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
 
-	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
+	[https://www.gimp.org/](https://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
 *   **[Gpaint](https://en.wikipedia.org/wiki/GNU_Paint "wikipedia:GNU Paint")** — [Paintbrush](https://en.wikipedia.org/wiki/PC_Paintbrush "wikipedia:PC Paintbrush") clone for GNOME.
 
@@ -345,7 +345,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Digital painting and illustration software included based on the KDE platform.
 
-	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
+	[https://krita.org/](https://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
 
 *   **Milton** — Infinite-canvas paint program.
 
@@ -365,7 +365,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[Pinta](https://en.wikipedia.org/wiki/Pinta_(software) "wikipedia:Pinta (software)")** — Drawing and editing program modeled after [Paint.NET](https://en.wikipedia.org/wiki/Paint.net "wikipedia:Paint.net"). Its goal is to provide a simplified alternative to GIMP for casual users.
 
-	[http://pinta-project.com/](http://pinta-project.com/) || [pinta](https://www.archlinux.org/packages/?name=pinta)
+	[https://pinta-project.com/](https://pinta-project.com/) || [pinta](https://www.archlinux.org/packages/?name=pinta)
 
 *   **[XPaint](https://en.wikipedia.org/wiki/XPaint "wikipedia:XPaint")** — Color image editing tool which features most standard paint program options.
 
@@ -425,11 +425,11 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **[Inkscape](/index.php/Inkscape "Inkscape")** — Vector graphics editor, with capabilities similar to [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator "wikipedia:Adobe Illustrator"), [CorelDraw](https://en.wikipedia.org/wiki/CorelDRAW "wikipedia:CorelDRAW"), or [Xara X](https://en.wikipedia.org/wiki/Xara_X "wikipedia:Xara X"), using the SVG (Scalable Vector Graphics) file format. Inkscape supports many advanced SVG features (markers, clones, alpha blending, etc.) and great care is taken in designing a streamlined interface. It is very easy to edit nodes, perform complex path operations, trace bitmaps and much more. It's developers also aim to maintain a thriving user and developer community by using open, community-oriented development.
 
-	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
+	[https://inkscape.org/](https://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
 *   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite.
 
-	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
+	[https://www.calligra.org/karbon/](https://www.calligra.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[LibreOffice Draw](/index.php/LibreOffice "LibreOffice")** — Vector graphics editor and diagramming tool included in the LibreOffice suite similar to Microsoft Visio.
 
@@ -437,7 +437,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **Mockingbot** — Proprietary prototyping & collaboration design tool. Based on the [Electron](https://electronjs.org/) platform.
 
-	[http://mockingbot.com/](http://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
+	[https://mockingbot.com/](https://mockingbot.com/) || [mockingbot](https://aur.archlinux.org/packages/mockingbot/)
 
 *   **[OpenOffice Draw](/index.php/OpenOffice "OpenOffice")** — Vector graphics editor and diagramming tool included in the OpenOffice suite.
 
@@ -449,7 +449,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Replacement for Adobe Illustrator or CorelDraw, oriented for "prepress ready" PostScript & PDF output.
 
-	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
+	[https://sk1project.net/](https://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
 
 *   **[yEd](https://en.wikipedia.org/wiki/yEd "wikipedia:yEd")** — General-purpose proprietary diagramming program for flowcharts, network diagrams, UML diagrams, BPMN diagrams, mind maps, organization charts, and Entity Relationship diagrams.
 
@@ -515,7 +515,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **[Blender](/index.php/Blender "Blender")** — Fully integrated 3D graphics creation suite capable of 3D modeling, texturing, and animation, among other things.
 
-	[http://www.blender.org/](http://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
+	[https://www.blender.org/](https://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
 
 *   **Goxel** — Open Source 3D voxel editor.
 
@@ -677,7 +677,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **[Exaile](/index.php/Exaile "Exaile")** — GTK clone of Amarok.
 
-	[http://www.exaile.org/](http://www.exaile.org/) || [exaile](https://aur.archlinux.org/packages/exaile/)
+	[https://www.exaile.org/](https://www.exaile.org/) || [exaile](https://aur.archlinux.org/packages/exaile/)
 
 *   **GNOME Internet Radio Locator** — Easily find live radio programs based on geographical location of radio broadcasters on the Internet.
 
@@ -693,7 +693,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **Guayadeque** — Full featured media player that can easily manage large collections and uses the GStreamer media framework.
 
-	[http://guayadeque.org/](http://guayadeque.org/) || [guayadeque](https://aur.archlinux.org/packages/guayadeque/)
+	[https://www.guayadeque.org/](https://www.guayadeque.org/) || [guayadeque](https://aur.archlinux.org/packages/guayadeque/)
 
 *   **Lollypop** — A GNOME music player.
 
@@ -751,7 +751,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **Musique** — Just another music player, only better.
 
-	[http://flavio.tordini.org/musique](http://flavio.tordini.org/musique) || [musique](https://aur.archlinux.org/packages/musique/)
+	[https://flavio.tordini.org/musique](https://flavio.tordini.org/musique) || [musique](https://aur.archlinux.org/packages/musique/)
 
 *   **[Tomahawk](https://en.wikipedia.org/wiki/Tomahawk_(software) "wikipedia:Tomahawk (software)")** — Not actively developed anymore. Music player application written in C++/Qt. It decouples the name of the song from the source it was shared from - and fulfills the request using all of your available sources.
 
@@ -787,11 +787,11 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **[Audacious](/index.php/Audacious "Audacious")** — [Winamp](https://en.wikipedia.org/wiki/Winamp "wikipedia:Winamp") clone like Beep and old XMMS versions.
 
-	[http://audacious-media-player.org/](http://audacious-media-player.org/) || [audacious](https://www.archlinux.org/packages/?name=audacious)
+	[https://audacious-media-player.org/](https://audacious-media-player.org/) || [audacious](https://www.archlinux.org/packages/?name=audacious)
 
 *   **[DeaDBeeF](https://en.wikipedia.org/wiki/DeaDBeeF "wikipedia:DeaDBeeF")** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK GUI, comes with many plugins, and has a metadata editor.
 
-	[http://deadbeef.sourceforge.net/](http://deadbeef.sourceforge.net/) || [deadbeef](https://www.archlinux.org/packages/?name=deadbeef)
+	[https://deadbeef.sourceforge.io/](https://deadbeef.sourceforge.io/) || [deadbeef](https://www.archlinux.org/packages/?name=deadbeef)
 
 *   **gmusicbrowser** — Open-source jukebox for large collections of MP3/OGG/FLAC files.
 
@@ -893,7 +893,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **[EasyTag](https://en.wikipedia.org/wiki/EasyTag "wikipedia:EasyTag")** — Utility for viewing, editing and writing ID3 tags of music files, supports many audio formats.
 
-	[http://easytag.sourceforge.net/](http://easytag.sourceforge.net/) || [easytag](https://www.archlinux.org/packages/?name=easytag)
+	[https://wiki.gnome.org/Apps/EasyTAG](https://wiki.gnome.org/Apps/EasyTAG) || [easytag](https://www.archlinux.org/packages/?name=easytag)
 
 *   **[Ex Falso](https://en.wikipedia.org/wiki/Ex_Falso_(software) "wikipedia:Ex Falso (software)")** — Cross-platform free and open source audio tag editor and library organizer. Run with `exfalso`.
 
@@ -901,7 +901,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **Kid3** — MP3, Ogg/Vorbis, FLAC, MPC, MP4/AAC, MP2, Speex, TrueAudio, WavPack, WMA, WAV and AIFF files tag editor.
 
-	[http://kid3.sourceforge.net/](http://kid3.sourceforge.net/) || KDE: [kid3](https://www.archlinux.org/packages/?name=kid3), Qt: [kid3-qt](https://www.archlinux.org/packages/?name=kid3-qt)
+	[https://kid3.sourceforge.io/](https://kid3.sourceforge.io/) || KDE: [kid3](https://www.archlinux.org/packages/?name=kid3), Qt: [kid3-qt](https://www.archlinux.org/packages/?name=kid3-qt)
 
 *   **KTag Editor** — ID3v tag editor developed in Qt5 framework. Supported files are mp3, wav, ogg, wma, flac, asf.
 
@@ -917,7 +917,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **[Puddletag](https://en.wikipedia.org/wiki/Puddletag "wikipedia:Puddletag")** — Replacement for the famous MP3tag for Windows.
 
-	[http://puddletag.sourceforge.net/](http://puddletag.sourceforge.net/) || [puddletag](https://aur.archlinux.org/packages/puddletag/)
+	[http://docs.puddletag.net/](http://docs.puddletag.net/) || [puddletag](https://aur.archlinux.org/packages/puddletag/)
 
 *   **Qoobar** — Universal Qt-based audio tagger (specialized for classical music).
 
@@ -929,7 +929,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **Thunar Media Tags Plugin** — Adds special features for media files to the Thunar File Manager, including the ability to edit tags.
 
-	[http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
+	[https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
 
 #### Lyrics
 
@@ -961,7 +961,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **SoundConverter** — A graphical application to convert audio files into different formats.
 
-	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
+	[https://soundconverter.org/](https://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
 
 *   **soundKonverter** — Qt-based GUI front-end to various audio converters.
 
@@ -1033,7 +1033,7 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 *   **Bitwig Studio** — Proprietary professional digital audio workstation.
 
-	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio](https://aur.archlinux.org/packages/bitwig-studio/)
+	[https://www.bitwig.com/](https://www.bitwig.com/) || [bitwig-studio](https://aur.archlinux.org/packages/bitwig-studio/)
 
 *   **Frinika** — Digital audio workstation, features sequencer, soft-synths, realtime effects and audio recording.
 
@@ -1053,7 +1053,7 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 *   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Qt-based hard disk recorder and digital audio workstation application that aims to provide digital audio workstation software simple enough for the average home user, and yet powerful enough for the professional user.
 
-	[http://qtractor.sourceforge.net/qtractor-index.html](http://qtractor.sourceforge.net/qtractor-index.html) || [qtractor](https://www.archlinux.org/packages/?name=qtractor)
+	[https://qtractor.sourceforge.io/qtractor-index.html](https://qtractor.sourceforge.io/qtractor-index.html) || [qtractor](https://www.archlinux.org/packages/?name=qtractor)
 
 *   **[REAPER](https://en.wikipedia.org/wiki/REAPER "wikipedia:REAPER")** — Proprietary digital audio workstation, offering a full multitrack audio and MIDI recording, editing, processing, mixing and mastering toolset.
 
@@ -1061,7 +1061,7 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 *   **[Rosegarden](https://en.wikipedia.org/wiki/Rosegarden "wikipedia:Rosegarden")** — Digital audio workstation program developed with ALSA and Qt that acts as an audio and MIDI sequencer, scorewriter and musical composition and editing tool.
 
-	[http://www.rosegardenmusic.com/](http://www.rosegardenmusic.com/) || [rosegarden](https://www.archlinux.org/packages/?name=rosegarden)
+	[https://www.rosegardenmusic.com/](https://www.rosegardenmusic.com/) || [rosegarden](https://www.archlinux.org/packages/?name=rosegarden)
 
 *   **[Tracktion](https://en.wikipedia.org/wiki/Tracktion "wikipedia:Tracktion")** — Proprietary digital audio workstation, specifically designed for the needs of modern music producers.
 
@@ -1099,7 +1099,7 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 *   **sndpeek** — Real-time audio visualization tool.
 
-	[http://soundlab.cs.princeton.edu/software/sndpeek/](http://soundlab.cs.princeton.edu/software/sndpeek/) || ALSA: [sndpeek-alsa](https://aur.archlinux.org/packages/sndpeek-alsa/), JACK: [sndpeek-jack](https://aur.archlinux.org/packages/sndpeek-jack/)
+	[https://soundlab.cs.princeton.edu/software/sndpeek/](https://soundlab.cs.princeton.edu/software/sndpeek/) || ALSA: [sndpeek-alsa](https://aur.archlinux.org/packages/sndpeek-alsa/), JACK: [sndpeek-jack](https://aur.archlinux.org/packages/sndpeek-jack/)
 
 *   **[Sonic Visualiser](https://en.wikipedia.org/wiki/Sonic_Visualiser "wikipedia:Sonic Visualiser")** — Viewing and analyzing the contents of music audio files.
 
@@ -1151,15 +1151,15 @@ See also [Wikipedia:Comparison of audio synthesis environments](https://en.wikip
 
 *   **Blue** — Music composition environment for Csound, written in Java.
 
-	[http://blue.kunstmusik.com/](http://blue.kunstmusik.com/) || [csound-blue](https://aur.archlinux.org/packages/csound-blue/)
+	[https://blue.kunstmusik.com/](https://blue.kunstmusik.com/) || [csound-blue](https://aur.archlinux.org/packages/csound-blue/)
 
 *   **Cabbage** — Framework for audio software development using simple markup text and the Csound audio synthesis language.
 
-	[http://cabbageaudio.com/](http://cabbageaudio.com/) || [cabbage](https://aur.archlinux.org/packages/cabbage/)
+	[https://cabbageaudio.com/](https://cabbageaudio.com/) || [cabbage](https://aur.archlinux.org/packages/cabbage/)
 
 *   **[ChucK](https://en.wikipedia.org/wiki/ChucK "wikipedia:ChucK")** — Strongly-timed, concurrent, and on-the-fly music programming language.
 
-	[http://chuck.cs.princeton.edu/](http://chuck.cs.princeton.edu/) || [chuck](https://www.archlinux.org/packages/?name=chuck)
+	[https://chuck.cs.princeton.edu/](https://chuck.cs.princeton.edu/) || [chuck](https://www.archlinux.org/packages/?name=chuck)
 
 *   **[Csound](https://en.wikipedia.org/wiki/Csound "wikipedia:Csound")** — Sound and music computing system.
 
@@ -1191,7 +1191,7 @@ This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine
 
 *   **[DIN](https://en.wikipedia.org/wiki/Din_(din_is_noise) "wikipedia:Din (din is noise)")** — Sound synthesizer and musical instrument.
 
-	[http://dinisnoise.org/](http://dinisnoise.org/) || [din](https://www.archlinux.org/packages/?name=din)
+	[https://dinisnoise.org/](https://dinisnoise.org/) || [din](https://www.archlinux.org/packages/?name=din)
 
 *   **Drumstick** — Set of MIDI tools: drum grid, MIDI player, virtual piano.
 
@@ -1207,7 +1207,7 @@ This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine
 
 *   **Helm** — Software synthesizer to create electronic music on your computer.
 
-	[http://tytel.org/helm/](http://tytel.org/helm/) || [helm](https://www.archlinux.org/packages/?name=helm)
+	[https://tytel.org/helm/](https://tytel.org/helm/) || [helm](https://www.archlinux.org/packages/?name=helm)
 
 *   **[Hydrogen](https://en.wikipedia.org/wiki/Hydrogen_(software) "wikipedia:Hydrogen (software)")** — Advanced drum machine to create drum sequences.
 
@@ -1243,7 +1243,7 @@ This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine
 
 *   **Vee One Suite** — Old-school software instruments: synthv1, a polyphonic subtractive synthesizer; samplv1, a polyphonic sampler synthesizer; drumkv1, yet another drum-kit sampler; padthv1, a polyphonic additive synthesizer.
 
-	[http://www.rncbc.org/](http://www.rncbc.org/) || [vee-one](https://www.archlinux.org/groups/x86_64/vee-one/)
+	[https://www.rncbc.org/](https://www.rncbc.org/) || [vee-one](https://www.archlinux.org/groups/x86_64/vee-one/)
 
 *   **VMPK** — Virtual MIDI Piano Keyboard. MIDI events generator and receiver. It doesn't produce any sound by itself, but can be used to drive a MIDI synthesizer.
 
@@ -1261,7 +1261,7 @@ This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine
 
 *   **[Buzztrax](https://en.wikipedia.org/wiki/Buzztrax "wikipedia:Buzztrax")** — Music studio to compose songs using only a computer with a soundcard.
 
-	[http://buzztrax.org/](http://buzztrax.org/) || [buzztrax](https://aur.archlinux.org/packages/buzztrax/)
+	[https://news.buzztrax.org/](https://news.buzztrax.org/) || [buzztrax](https://aur.archlinux.org/packages/buzztrax/)
 
 *   **klystrack** — Tracker for making C64/NES/Amiga-style chiptunes on a modern platform.
 
@@ -1351,7 +1351,7 @@ This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine
 
 *   **[projectM](/index.php/ProjectM "ProjectM")** — Music visualizer which uses 3D accelerated iterative image-based rendering.
 
-	[http://projectm.sourceforge.net/](http://projectm.sourceforge.net/) || JACK: [projectm-jack](https://www.archlinux.org/packages/?name=projectm-jack), PulseAudio: [projectm-pulseaudio](https://www.archlinux.org/packages/?name=projectm-pulseaudio)
+	[https://github.com/projectM-visualizer/projectm](https://github.com/projectM-visualizer/projectm) || JACK: [projectm-jack](https://www.archlinux.org/packages/?name=projectm-jack), PulseAudio: [projectm-pulseaudio](https://www.archlinux.org/packages/?name=projectm-pulseaudio)
 
 *   **[VSXu](https://en.wikipedia.org/wiki/VSXu "wikipedia:VSXu")** — OpenGL-based (hardware-accelerated), modular programming environment with its main purpose to visualize music and create graphic effects in real-time.
 
@@ -1415,11 +1415,11 @@ See also [PulseAudio#Front-ends](/index.php/PulseAudio#Front-ends "PulseAudio").
 
 *   **Volume Icon** — Another volume control for your system tray with channel selection, themes and an external mixer.
 
-	[http://softwarebakery.com/maato/volumeicon.html](http://softwarebakery.com/maato/volumeicon.html) || [volumeicon](https://www.archlinux.org/packages/?name=volumeicon)
+	[http://nullwise.com/volumeicon.html](http://nullwise.com/volumeicon.html) || [volumeicon](https://www.archlinux.org/packages/?name=volumeicon)
 
 *   **VolWheel** — A little application which lets you control the sound volume easily through a tray icon you can scroll on.
 
-	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+	[https://oliwer.net/b/volwheel.html](https://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
 
 *   **Xfce ALSA Panel Plugin** — Simple ALSA volume control plugin for [Xfce](/index.php/Xfce "Xfce")4 panel.
 
@@ -1479,7 +1479,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **Parole** — Modern media player based on the [GStreamer](/index.php/GStreamer "GStreamer") framework.
 
-	[http://docs.xfce.org/apps/parole/start](http://docs.xfce.org/apps/parole/start) || [parole](https://www.archlinux.org/packages/?name=parole)
+	[https://docs.xfce.org/apps/parole/start](https://docs.xfce.org/apps/parole/start) || [parole](https://www.archlinux.org/packages/?name=parole)
 
 *   **Rage** — Video and audio player written with Enlightenment Foundation Libraries with some extra bells and whistles. Uses [GStreamer](/index.php/GStreamer "GStreamer")
 
@@ -1495,7 +1495,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **Xnoise** — GTK and [GStreamer](/index.php/GStreamer "GStreamer")-based media player for both audio and video with "a slick GUI, great speed and lots of features." (development ceased)
 
-	[http://www.xnoise-media-player.com/](http://www.xnoise-media-player.com/) || [xnoise](https://www.archlinux.org/packages/?name=xnoise)
+	[http://xnoise-media-player.com/](http://xnoise-media-player.com/) || [xnoise](https://www.archlinux.org/packages/?name=xnoise)
 
 ###### mpv-based
 
@@ -1529,7 +1529,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) based on [mpv](/index.php/Mpv "Mpv"). It can use [MPlayer](/index.php/MPlayer "MPlayer") as alternative backend.
 
-	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
+	[https://www.smplayer.info/](https://www.smplayer.info/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
 *   **xt7-player-mpv** — Qt/Gambas GUI to [mpv](/index.php/Mpv "Mpv") with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
 
@@ -1539,11 +1539,11 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **GNOME MPlayer** — Simple GTK-based GUI for [MPlayer](/index.php/MPlayer "MPlayer").
 
-	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
+	[https://sites.google.com/site/kdekorte2/gnomemplayer](https://sites.google.com/site/kdekorte2/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
 *   **[KMPlayer](https://en.wikipedia.org/wiki/KMPlayer "wikipedia:KMPlayer")** — Simple KDE frontend for [MPlayer](/index.php/MPlayer "MPlayer") and video player plugin for Konqueror. It can use [Phonon](/index.php/Phonon "Phonon") as alternative backend.
 
-	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
+	[https://kmplayer.kde.org/](https://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
 
 *   **KPlayer** — Multimedia player for KDE4 using [MPlayer](/index.php/MPlayer "MPlayer") as a backend.
 
@@ -1561,7 +1561,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **Kaku** — Highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more. Based on the [Electron](https://electronjs.org/) platform.
 
-	[http://kaku.rocks/](http://kaku.rocks/) || [kaku-bin](https://aur.archlinux.org/packages/kaku-bin/)
+	[https://kaku.rocks/](https://kaku.rocks/) || [kaku-bin](https://aur.archlinux.org/packages/kaku-bin/)
 
 *   **[Kodi](/index.php/Kodi "Kodi")** — Media player and entertainment hub for digital media.
 
@@ -1589,7 +1589,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **[xine](https://en.wikipedia.org/wiki/xine "wikipedia:xine")** — Free multimedia player.
 
-	[http://www.xine-project.org](http://www.xine-project.org) || [xine-ui](https://www.archlinux.org/packages/?name=xine-ui)
+	[http://www.xine-project.org/](http://www.xine-project.org/) || [xine-ui](https://www.archlinux.org/packages/?name=xine-ui)
 
 #### Video converters
 
@@ -1607,7 +1607,7 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 
 *   **[HandBrake CLI](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping.
 
-	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli)
+	[https://handbrake.fr/](https://handbrake.fr/) || [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli)
 
 *   **[MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEncoder")** — Free command line video decoding, encoding and filtering tool.
 
@@ -1637,7 +1637,7 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 
 *   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK version.
 
-	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
+	[https://handbrake.fr/](https://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
 
 *   **QWinFF** — Qt5 GUI for FFmpeg that can read audio and video files in various formats and convert them into other formats.
 
@@ -1665,11 +1665,11 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Blender](https://en.wikipedia.org/wiki/Blender_(software)#Video_editing "wikipedia:Blender (software)")** — Fully integrated 3D graphics creation suite with a built-in non-linear video editor.
 
-	[http://www.blender.org/](http://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
+	[https://www.blender.org/](https://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Professional video editing and compositing environment.
 
-	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
+	[https://www.cinelerra-gg.org/](https://www.cinelerra-gg.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[DaVinci Resolve](/index.php/DaVinci_Resolve "DaVinci Resolve")** — Proprietary A/V post-production software suite.
 
@@ -1681,7 +1681,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Kdenlive](https://en.wikipedia.org/wiki/Kdenlive "wikipedia:Kdenlive")** — Non-linear video editor designed for basic to semi-professional work.
 
-	[http://kdenlive.org/](http://kdenlive.org/) || [kdenlive](https://www.archlinux.org/packages/?name=kdenlive)
+	[https://kdenlive.org/](https://kdenlive.org/) || [kdenlive](https://www.archlinux.org/packages/?name=kdenlive)
 
 *   **[Lightworks](https://en.wikipedia.org/wiki/Lightworks "wikipedia:Lightworks")** — Professional proprietary non-linear editing system for editing and mastering digital video in various formats.
 
@@ -1697,7 +1697,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[OpenShot](https://en.wikipedia.org/wiki/OpenShot_Video_Editor "wikipedia:OpenShot Video Editor")** — Non-linear video editor based on MLT framework.
 
-	[http://www.openshotvideo.com/](http://www.openshotvideo.com/) || [openshot](https://www.archlinux.org/packages/?name=openshot)
+	[https://www.openshot.org/](https://www.openshot.org/) || [openshot](https://www.archlinux.org/packages/?name=openshot)
 
 *   **[Pitivi](https://en.wikipedia.org/wiki/Pitivi "wikipedia:Pitivi")** — Video editor designed to be intuitive and integrate well in the GNOME desktop.
 
@@ -1705,11 +1705,15 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Shotcut](https://en.wikipedia.org/wiki/Shotcut "wikipedia:Shotcut")** — Shotcut is a free, open source, cross-platform video editor.
 
-	[http://www.shotcut.org/](http://www.shotcut.org/) || [shotcut](https://www.archlinux.org/packages/?name=shotcut)
+	[https://www.shotcut.org/](https://www.shotcut.org/) || [shotcut](https://www.archlinux.org/packages/?name=shotcut)
 
 *   **VidCutter** — Fast lossless media cutter + joiner w/ frame-accurate SmartCut options powered by mpv, FFmpeg via a sleek Qt5 GUI.
 
 	[https://vidcutter.ozmartians.com/](https://vidcutter.ozmartians.com/) || [vidcutter](https://aur.archlinux.org/packages/vidcutter/)
+
+*   **Olive** — Olive is a free non-linear video editor aiming to provide a fully-featured alternative to high-end professional video editing software.
+
+	[https://www.olivevideoeditor.org/](https://www.olivevideoeditor.org/) || [olive](https://aur.archlinux.org/packages/olive/)
 
 #### Subtitles
 
@@ -1747,7 +1751,7 @@ See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wik
 
 *   **Jubler** — Open-source multiplatform subtitle editor written in Java.
 
-	[http://www.jubler.org](http://www.jubler.org) || [jubler](https://aur.archlinux.org/packages/jubler/)
+	[https://www.jubler.org/](https://www.jubler.org/) || [jubler](https://aur.archlinux.org/packages/jubler/)
 
 *   **Subtitle Composer** — Subtitle editor with Qt 5 based GUI supporting various formats, features different player backends, able to display wave form.
 
@@ -1917,7 +1921,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 *   **Serviio** — Proprietary media server, which allows you to stream your media files (music, video or images) to renderer devices (e.g. a TV set, Bluray player, games console or mobile phone) on your connected home network.
 
-	[http://serviio.org/](http://serviio.org/) || [serviio](https://aur.archlinux.org/packages/serviio/)
+	[https://serviio.org/](https://serviio.org/) || [serviio](https://aur.archlinux.org/packages/serviio/)
 
 *   **[Subsonic](/index.php/Subsonic "Subsonic")** — Proprietary media server to stream from your own computer.
 
@@ -1929,7 +1933,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 *   **[Universal Media Server](/index.php/Universal_Media_Server "Universal Media Server")** — UPnP media server, which is capable of sharing video, audio and images between most modern devices. (Fork of PS3 Media Server.)
 
-	[http://www.universalmediaserver.com/](http://www.universalmediaserver.com/) || [ums](https://aur.archlinux.org/packages/ums/)
+	[https://www.universalmediaserver.com/](https://www.universalmediaserver.com/) || [ums](https://aur.archlinux.org/packages/ums/)
 
 ### Metadata
 
@@ -1939,7 +1943,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 *   **Exiv2** — Command line utility to manage image metadata. It provides fast and easy read and write access to the Exif, IPTC and XMP metadata and the ICC Profile embedded within digital images in various formats.
 
-	[http://exiv2.org/](http://exiv2.org/) || [exiv2](https://www.archlinux.org/packages/?name=exiv2)
+	[https://exiv2.org/](https://exiv2.org/) || [exiv2](https://www.archlinux.org/packages/?name=exiv2)
 
 *   **[ffprobe](https://en.wikipedia.org/wiki/FFmpeg "wikipedia:FFmpeg")** — Gather information from multimedia streams and print it in human- and machine-readable fashion.
 
@@ -1973,7 +1977,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 *   **[gnokii](https://en.wikipedia.org/wiki/Gnokii "wikipedia:Gnokii")** — Tools and user space driver for use with mobile phones.
 
-	[http://www.gnokii.org/](http://www.gnokii.org/) || [gnokii](https://www.archlinux.org/packages/?name=gnokii)
+	[https://www.gnokii.org/](https://www.gnokii.org/) || [gnokii](https://www.archlinux.org/packages/?name=gnokii)
 
 *   **gMTP** — Simple MP3 and media player client for [Media Transfer Protocol](/index.php/Media_Transfer_Protocol "Media Transfer Protocol").
 
@@ -1993,7 +1997,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 *   **Modem Manager GUI** — Control EDGE/3G/4G broadband modem specific functions.
 
-	[http://linuxonly.ru/page/modem-manager-gui](http://linuxonly.ru/page/modem-manager-gui) || [modem-manager-gui](https://www.archlinux.org/packages/?name=modem-manager-gui)
+	[https://linuxonly.ru/page/modem-manager-gui](https://linuxonly.ru/page/modem-manager-gui) || [modem-manager-gui](https://www.archlinux.org/packages/?name=modem-manager-gui)
 
 *   **Wammu** — Manage data in your cell phone such as contacts, calendar or messages.
 

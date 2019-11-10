@@ -1,6 +1,10 @@
 The [Trivial File Transfer Protocol](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol "wikipedia:Trivial File Transfer Protocol") (TFTP) provides a minimalistic means for transferring files. It is generally used as a part of [PXE](/index.php/PXE "PXE") booting or for updating configuration and firmware on devices which have limited memory such as routers, IP phones and printers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Server](#Server)
     *   [1.1 tftp-hpa](#tftp-hpa)
@@ -21,6 +25,8 @@ There are several TFTP server implementations, some are listed below and [iputil
 [Install](/index.php/Install "Install") [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) and then [start](/index.php/Start "Start") `tftpd.service`.
 
 To modify service parameters edit `/etc/conf.d/tftpd`.
+
+[tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) requires absolute paths in your tftp gets. If absolute pathing is not possible for whatever reason, consider using [atftp](https://www.archlinux.org/packages/?name=atftp) instead.
 
 ### atftp
 

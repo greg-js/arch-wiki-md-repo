@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Festival](/index.php/Festival "Festival"). Data da última tradução: 2019-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Festival&diff=0&oldid=588366) na versão em inglês.
+
 [Festival](http://www.cstr.ed.ac.uk/projects/festival/) é um sistema geral de síntese de fala multilíngue desenvolvido no CSTR ([Centre for Speech Technology Research](http://www.cstr.ed.ac.uk/)).
 
 O Festival oferece uma estrutura geral para a construção de sistemas de síntese de voz, incluindo exemplos de vários módulos. Como um todo, ele oferece texto completo para fala por meio de um número de APIs: do nível de shell, embora um interpretador de comandos Scheme, como uma biblioteca C ++, de Java e uma interface Emacs. O festival é multilíngue (atualmente inglês britânico, inglês americano, italiano, tcheco e espanhol, com outros idiomas disponíveis em protótipo).
@@ -12,7 +14,7 @@ O Festival oferece uma estrutura geral para a construção de sistemas de sínte
     *   [1.1 Usando a extensão de IMS alemão para festival com mbrola](#Usando_a_extensão_de_IMS_alemão_para_festival_com_mbrola)
 *   [2 Configuração](#Configuração)
     *   [2.1 Uso com um servidor de som](#Uso_com_um_servidor_de_som)
-    *   [2.2 Voz](#Voz)
+    *   [2.2 Vozes](#Vozes)
         *   [2.2.1 Patches de compatibilidade com HTS](#Patches_de_compatibilidade_com_HTS)
         *   [2.2.2 Instalação manual de voz](#Instalação_manual_de_voz)
 *   [3 Uso](#Uso)
@@ -20,7 +22,7 @@ O Festival oferece uma estrutura geral para a construção de sistemas de sínte
     *   [3.2 Exemplo de script](#Exemplo_de_script)
 *   [4 Solução de problemas](#Solução_de_problemas)
     *   [4.1 Não é possível abrir /dev/dsp](#Não_é_possível_abrir_/dev/dsp)
-    *   [4.2 Alsa playing at wrong speed](#Alsa_playing_at_wrong_speed)
+    *   [4.2 Alsa reproduzindo na velocidade errada](#Alsa_reproduzindo_na_velocidade_errada)
     *   [4.3 O comando aplay não funciona](#O_comando_aplay_não_funciona)
 *   [5 Veja também](#Veja_também)
 
@@ -107,11 +109,11 @@ Para ALSA, use essas linhas ([fonte](http://ubuntuforums.org/showpost.php?p=4058
 
 ```
 
-### Voz
+### Vozes
 
-Arch splits the set of official voices into [festival-english](https://www.archlinux.org/packages/?name=festival-english) and [festival-us](https://www.archlinux.org/packages/?name=festival-us). [The AUR](https://aur.archlinux.org/packages/?K=festival) has some others, in various states of maintenance which may or may not be currently working.
+Arch divide o conjunto de vozes oficiais em [festival-english](https://www.archlinux.org/packages/?name=festival-english) e [festival-us](https://www.archlinux.org/packages/?name=festival-us). [O AUR](https://aur.archlinux.org/packages/?K=festival) possui alguns outros, em vários estados de manutenção que podem ou não estar funcionando no momento.
 
-To see what voices you currently have installed and what your default is, go into the Festival shell (which is a scheme REPL) and type the following (some space added for clarity):
+Para ver quais vozes você instalou e qual é o seu padrão, acesse o shell do Festival (que é um esquema REPL) e digite o seguinte (algum espaço adicionado para maior clareza):
 
 ```
    $ festival
@@ -130,10 +132,10 @@ To see what voices you currently have installed and what your default is, go int
    For details type `(festival_warranty)'
 
    festival> voice_default 
-   voice_cmu_us_slt_arctic_hts          ;;<-- THIS IS THE VOICE FESTIVAL SPEAKS WITH
+   voice_cmu_us_slt_arctic_hts          ;;<-- ESTA É A VOZ COM A QUAL FESTIVAL FALA
 
    festival> default-voice-priority-list 
-   (kal_diphone                         ;;<-- THIS IS THE HARD-CODED LIST OF VOICES FESTIVAL CAME PRE-AWARE OF
+   (kal_diphone                         ;;<-- ESTA É A LISTA CODIFICADA DE VOZES DE FESTIVAL VÊM COM SUPORTE
     cmu_us_bdl_arctic_hts
     cmu_us_jmk_arctic_hts
     cmu_us_slt_arctic_hts
@@ -148,7 +150,7 @@ To see what voices you currently have installed and what your default is, go int
     gsw_diphone
     el_diphone)
 
-   festival> (voice_                    ;;<-- PRESS TAB HERE TO SEE WHAT VOICES FESTIVAL HAS AVAILABLE
+   festival> (voice_                    ;;<-- PRESSIONE TAB AQUI PARA VER QUE VOZES FESTIVAL TEM DISPONÍVEL
    voice_cmu_us_slt_arctic_hts     voice_kal_diphone               voice_nitech_us_slt_arctic_hts  voice_reset
    voice_default                   voice_nitech_us_clb_arctic_hts  voice_rab_diphone
 
@@ -162,53 +164,53 @@ To see what voices you currently have installed and what your default is, go int
 
 ```
 
-To permanently change the default voice you can add a line like this to the end of `~/.festivalrc`:
+Para alterar permanentemente a voz padrão, você pode adicionar uma linha como esta ao final de `~/.festivalrc`:
 
 ```
-(set! voice_default voice_cmu_us_slt_arctic_hts)
+ (set! voice_default voice_cmu_us_slt_arctic_hts)
 
 ```
 
-You cannot set the voice with festival.scm; to set voices globally, set order of searched voices in `/usr/share/festival/voices.scm`.
+Você não pode definir a voz com festival.scm; para definir vozes globalmente, defina a ordem das vozes pesquisadas em `/usr/share/festival/voices.scm`.
 
 #### Patches de compatibilidade com HTS
 
-Some say that HTS voices for Festival are the best ones freely available. Sadly they are not compatible with Festival >2.1 without patching it (and the new voice versions are not made available for downloading).
+Alguns dizem que as vozes HTS para o Festival são as melhores disponíveis gratuitamente. Infelizmente, eles não são compatíveis com o Festival> 2.1 sem corrigi-lo (e as novas versões de voz não são disponibilizadas para download).
 
-You can install the patched version from [AUR](/index.php/AUR "AUR"): [festival-patched-hts](https://aur.archlinux.org/packages/festival-patched-hts/) and [festival-hts-voices-patched](https://aur.archlinux.org/packages/festival-hts-voices-patched/)
+Você pode instalar a versão corrigida em [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"): [festival-patched-hts](https://aur.archlinux.org/packages/festival-patched-hts/) e [festival-hts-voices-patched](https://aur.archlinux.org/packages/festival-hts-voices-patched/)
 
 #### Instalação manual de voz
 
-You can also get voices straight from [festvox.org](http://festvox.org/festival/downloads.html). In their downloads, the files named "festvox_*.tgz" each contain a different voice, as built by the festival team. They do work, but you will need to manually unzip and move the folder containing the voice to the appropriate place. On a recent Arch, the appropriate place is /usr/share/festival/voices/english/ and the way to tell what folder contains the voice is to look for a 'festvox/' subfolder inside of it.
+Você também pode obter vozes diretamente em [festvox.org](http://festvox.org/festival/downloads.html). Nos downloads, os arquivos denominados `festvox_*.tgz` contêm uma voz diferente, criada pela equipe do festival. Eles funcionam, mas você precisará descompactar manualmente e mover a pasta que contém a voz para o local apropriado. Em um arco recente, o local apropriado é `/usr/share/festival/voices/english/` e a maneira de saber qual pasta contém a voz é procurar uma subpasta `festvox/` dentro dela.
 
-You can then test that your new voices are found by loading up the festival prompt again.
+Você pode testar se suas novas vozes foram encontradas carregando o prompt do festival novamente.
 
 ## Uso
 
-Read a text file:
+Ler um arquivo texto:
 
 ```
-$ festival --tts /path/to/letter.txt
+$ festival --tts /caminho/para/carta.txt
 
 ```
 
-Be obnoxious while demonstrating piping
+Ser desagradável ao demonstrar a encadeamento
 
 ```
 $ (echo "Get ready for some pain"; sudo cat /var/log/messages.log) | festival --tts
 
 ```
 
-Convert a text file to mp3:
+Converter um arquivo de texto para mp3:
 
 ```
-$ cat letter.txt | text2wave | lame - file.mp3 && mplayer file.mp3
+$ cat carta.txt | text2wave | lame - arquivo.mp3 && mplayer arquivo.mp3
 
 ```
 
 ### Modo interativo (testar voz etc.)
 
-festival has an interactive prompt you can use for testing. Some examples (with sample output):
+O festival tem um prompt interativo que você pode usar para testar. Alguns exemplos (com saída de amostra):
 
 ```
 $ festival 
@@ -217,7 +219,7 @@ festival>
 
 ```
 
-List available voices:
+Lista vozes disponíveis:
 
 ```
 festival> (voice.list)
@@ -225,7 +227,7 @@ festival> (voice.list)
 
 ```
 
-Set voice:
+Define a voz:
 
 ```
 festival> (voice_cstr_us_awb_arctic_multisyn)
@@ -233,7 +235,7 @@ festival> (voice_cstr_us_awb_arctic_multisyn)
 
 ```
 
-Speak:
+Fala:
 
 ```
 festival> (SayText '"test this is a test oh no a test bla test")
@@ -246,7 +248,7 @@ id _65 ; name # ;
 
 ```
 
-More:
+Mais:
 
 ```
 festival> help 
@@ -254,7 +256,7 @@ festival> help
 
 ```
 
-Quit: ctrl+d or
+Sair: Ctrl+d ou
 
 ```
 festival> (quit)
@@ -263,7 +265,7 @@ festival> (quit)
 
 ### Exemplo de script
 
-One classic app that can make use of this is ping. Use this script to constantly ping a host, and return ping if success, fail if not:
+Um aplicativo clássico que pode fazer uso disso é o *ping*. Use este script para executar *ping* constantemente em um host e retorna "Ping" se for bem-sucedido; do contrário, "Falha":
 
 ```
 #!/bin/bash
@@ -273,24 +275,24 @@ done
 
 ```
 
-Note that this does not really work on multisynth voices, as they take a while to prepare before playing.
+Observe que isso realmente não funciona em vozes multissintéticas, pois elas demoram um pouco para serem preparadas antes da reprodução.
 
 ## Solução de problemas
 
 ### Não é possível abrir /dev/dsp
 
-If festival returns the following error message:
+Se o festival retornar a seguinte mensagem de erro:
 
 ```
 Linux: can't open /dev/dsp
 
 ```
 
-See [#Uso com um servidor de som](#Uso_com_um_servidor_de_som) above.
+Veja [#Uso com um servidor de som](#Uso_com_um_servidor_de_som) acima.
 
-### Alsa playing at wrong speed
+### Alsa reproduzindo na velocidade errada
 
-If the solution above gives you a squeaky voice, you might want to try changing your aplay options:
+Se a solução acima lhe der uma voz estridente, convém alterar suas opções de jogo:
 
 ```
 (Parameter.set 'Audio_Method 'Audio_Command)
@@ -300,8 +302,8 @@ If the solution above gives you a squeaky voice, you might want to try changing 
 
 ### O comando aplay não funciona
 
-Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
+[Instale](/index.php/Instale "Instale") [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
 
 ## Veja também
 
-*   [Festival manual](http://www.cstr.ed.ac.uk/projects/festival/manual/)
+*   [Manual do Festival](http://www.cstr.ed.ac.uk/projects/festival/manual/)

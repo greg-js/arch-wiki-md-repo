@@ -1,6 +1,6 @@
-**Status de tradução:** Esse artigo é uma tradução de [Meta package and package group](/index.php/Meta_package_and_package_group "Meta package and package group"). Data da última tradução: 2019-10-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Meta_package_and_package_group&diff=0&oldid=586624) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Meta package and package group](/index.php/Meta_package_and_package_group "Meta package and package group"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Meta_package_and_package_group&diff=0&oldid=587700) na versão em inglês.
 
-Um **metapacote** e **grupo de pacotes** podem ser definidos pelo [empacotador](/index.php/Empacotador "Empacotador") para denotar um conjunto de pacotes relacionados. Ambos podem permitir instalar ou desinstalar este conjunto de pacotes simultaneamente usando o metapacote ou o nome do grupo como um substituto para cada nome de pacote individual. Embora um grupo não seja um pacote, ele pode ser instalado de maneira semelhante a um pacote, consulte [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
+Um **metapacote** e **grupo de pacotes** podem ser definidos pelo [empacotador](/index.php/Empacotador "Empacotador") para denotar um conjunto de pacotes relacionados. Ambos podem permitir instalar ou desinstalar este conjunto de pacotes simultaneamente usando o metapacote ou o nome do grupo como um substituto para cada nome de pacote individual. Embora um grupo não seja um pacote, ele pode ser instalado de maneira semelhante a um pacote, consulte [pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -15,9 +15,25 @@ Um **metapacote** e **grupo de pacotes** podem ser definidos pelo [empacotador](
 
 ## Diferença entre um metapacote e um grupo de pacotes
 
-Um *metapacote*, muitas vezes (embora nem sempre) intitulado com o sufixo "-meta", fornece funcionalidade semelhante a um grupo de pacotes, pois permite que vários pacotes relacionados sejam instalados ou desinstalados simultaneamente. Metapacotes podem ser instalados como qualquer outro pacote (veja [Pacman (Português)#Instalando pacotes específicos](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes_específicos "Pacman (Português)")). A única diferença entre um metapacote e um pacote comum é que um metapacote é vazio e existe apenas para vincular pacotes relacionados por meio de dependências.
+A diferença entre um metapacote e um pacote comum é que um metapacote é vazio e existe apenas para vincular pacotes relacionados por meio de dependências. Um *metapacote*, muitas vezes (embora nem sempre) intitulado com o sufixo "-meta", fornece funcionalidade semelhante a um grupo de pacotes, pois permite que vários pacotes relacionados sejam instalados ou desinstalados simultaneamente.
 
-A vantagem de um metapacote, comparado com um grupo, é que quaisquer novos pacotes membro serão instalados quando o metapacote é atualizado com um novo conjunto de dependências. Isso está em contraste com um grupo no qual os novos membros do grupo não serão instalados automaticamente. A desvantagem de um metapacote é que ele não é tão flexível quanto um grupo; você pode escolher quais membros do grupo você deseja instalar, mas você não pode escolher quais dependências do metapacote você deseja instalar. Da mesma forma, você pode desinstalar membros do grupo sem precisar remover o grupo inteiro. No entanto, você não pode remover as dependências do metapacote sem ter que desinstalar o próprio metapacote.
+Cada solução possui vantagens e desvantagens:
+
+*metapacote*:
+
+*   Os metapacotes podem ser instalados como qualquer outro pacote (consulte [pacman (Português)#Instalando pacotes específicos](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes_específicos "Pacman (Português)")).
+*   Os metapacotes podem ser removidos como qualquer outro pacote (veja [pacman (Português)#Removendo pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Removendo_pacotes "Pacman (Português)")).
+*   Quaisquer novos pacotes-membro serão instalados quando o metapacote é atualizado com um novo conjunto de dependências.
+*   Os usuários não podem escolher quais dependências de metapacotes que desejam instalar.
+*   Os usuários não podem remover as dependências do metapacote sem precisar desinstalar o próprio pacote.
+
+*grupo*:
+
+*   Os grupos de pacotes solicitarão aos usuários que selecionem os pacotes do grupo que desejam instalar (consulte [pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)")).
+*   Os usuários não podem desinstalar um grupo, porque instalaram uma lista de pacotes.
+*   Novos membros do grupo não serão instalados automaticamente.
+*   Os usuários podem escolher quais membros do grupo eles desejam instalar.
+*   Os usuários podem desinstalar membros do grupo sem precisar remover o grupo inteiro.
 
 ## Metapacotes
 

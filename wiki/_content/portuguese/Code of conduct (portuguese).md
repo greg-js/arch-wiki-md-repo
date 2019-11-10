@@ -239,7 +239,7 @@ Diretrizes para o [Arch User Repository](https://aur.archlinux.org/) podem ser e
 
 Todos [canais IRC do Arch](/index.php/Canais_IRC_do_Arch "Canais IRC do Arch") estão na rede irc do freenode. Usuários do freenode devem seguir a [política da rede](https://freenode.net/policies) e [diretrizes do canal](https://freenode.net/changuide) do freenode.
 
-O idioma oficial do canal **#archlinux** é o inglês. Se você precisar de ajuda em outro idioma, pesquise pelos [canais internacionais do arch](/index.php/IRC_channel_(Portugu%C3%AAs)#Canais_IRC_internacionais "IRC channel (Português)").
+O idioma oficial do canal **#archlinux** é o inglês. Se você precisar de ajuda em outro idioma, pesquise pelos [canais internacionais do arch](/index.php/Canal_IRC#Canais_IRC_internacionais "Canal IRC").
 
 *   **O tópico principal do #archlinux é para suporte para e discussão sobre o Arch Linux.** Conversa geral sobre software e hardware é permitida desde que não interfira no tópico principal da discussão. Se lhe for solicitado levar alguma conversa para outro canal ou mensagem privada, você deveria fazê-lo.
 
@@ -282,5 +282,5 @@ Cada um dos fóruns tem um processo de apelação e alguém que acredite ser sid
 Se você sentir que foi cometido um equívoco flagrante ou se precisar alertar a equipe sobre qualquer comportamento abusivo, há várias maneiras de solicitar assistência ou reparação. Esses incluem:
 
 *   Para os Fóruns: use o botão "Report" localizado em baixo de toda caixa de texto ou envie um e-mail para [forum@archlinux.org](mailto:forum@archlinux.org) para contatar os administradores do fórum.
-*   Para o Wiki: contate a [ArchWiki:Maintenance Team (Português)](/index.php/ArchWiki:Maintenance_Team_(Portugu%C3%AAs) "ArchWiki:Maintenance Team (Português)")
-*   Para os canais IRC: contate [um dos operadores](/index.php/IRC_channel_(Portugu%C3%AAs)#Operadores_do_canal "IRC channel (Português)")
+*   Para o Wiki: contate a [ArchWiki:Equipe de Manutenção](/index.php/ArchWiki:Equipe_de_Manuten%C3%A7%C3%A3o "ArchWiki:Equipe de Manutenção")
+*   Para os canais IRC: contate [um dos operadores](/index.php/Canal_IRC#Operadores_do_canal "Canal IRC")

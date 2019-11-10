@@ -64,17 +64,13 @@ A version overview, both past and future, can be read on [MozillaWiki:Releases](
 
 	[https://www.enigmail.net](https://www.enigmail.net) || [thunderbird-extension-enigmail](https://www.archlinux.org/packages/?name=thunderbird-extension-enigmail), [thunderbird-extension-enigmail-git](https://aur.archlinux.org/packages/thunderbird-extension-enigmail-git/)
 
-*   **TorBirdy** — Extension that configures Thunderbird to make connections over the [Tor](/index.php/Tor "Tor") anonymity network
-
-	[TorBirdy AMO](https://addons.mozilla.org/thunderbird/addon/torbirdy/) ||
-
 *   **Birdtray** — Birdtray is a system tray new mail notification for Thunderbird 60+ which does not require extensions. Run Thunderbird with a system tray icon.
 
 	[https://github.com/gyunaev/birdtray](https://github.com/gyunaev/birdtray) || [birdtray](https://aur.archlinux.org/packages/birdtray/)
 
 *   **FireTray** — Adds a customizable system tray icon for Thunderbird. For Thunderbird 60+ you may use the github version by installing from file.
 
-	[FireTray AMO](https://addons.thunderbird.net/de/thunderbird/addon/firetray/) || [github version](https://github.com/Ximi1970/FireTray/releases)
+	[FireTray AMO](https://addons.thunderbird.net/thunderbird/addon/firetray/) || [github version](https://github.com/Ximi1970/FireTray/releases)
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — A calendar extension that brings [Sunbird](https://en.wikipedia.org/wiki/Mozilla_Sunbird "wikipedia:Mozilla Sunbird")'s functionality to Thunderbird, including CalDAV support. Lightning now ships with Thunderbird, but due to differing release schedules it may have issues in Thunderbird testing releases. See [Mozilla support forum post](https://support.mozilla.org/en-US/questions/1211583). Also see [Lightning Release Schedule](https://developer.mozilla.org/en-US/docs/Mozilla/Calendar/Calendar_Versions).
 
@@ -86,13 +82,13 @@ A version overview, both past and future, can be read on [MozillaWiki:Releases](
 
 *   **Cardbook** — A new addressbook for Thunderbird based on the CARDDav and VCARD standards.
 
-	[Cardbook AMO](https://addons.mozilla.org/thunderbird/addon/cardbook/) ||
+	[Cardbook AMO](https://addons.thunderbird.net/thunderbird/addon/cardbook/) ||
 
 ## Tips and tricks
 
 ### Config Editor
 
-Thunderbird can be extensively configured by clicking *Edit > Preferences > Advanced > General > Config Editor*.
+Thunderbird can be extensively configured by clicking *Menu > Preferences > Preferences > Advanced > General > Config Editor*.
 
 ### Set the default browser
 
@@ -138,7 +134,7 @@ Remember to run `fc-cache -fv` to update system font cache. See [Font configurat
 
 ### Migrate profile to another system
 
-**Tip:** The [ImportExportTools](https://addons.mozilla.org/thunderbird/addon/importexporttools) addon offers an option to export and import a profile folder.
+**Tip:** The [ImportExportTools NG](https://addons.thunderbird.net/thunderbird/addon/importexporttools-ng/) add-on offers an option to export and import a profile folder.
 
 Before you start with Importing or Exporting tasks, backup your complete `~/.thunderbird` profile:
 
@@ -178,7 +174,7 @@ $ cp -R ~/.thunderbird /to/backup/folder/
 
 ```
 
-If your accounts are broken or you want to join two different Thunderbird installations, you better install one Import and Export AddOn (eg. [ImportExportTools AddOn](https://addons.mozilla.org/thunderbird/addon/importexporttools)) to both Thunderbird installations and following this just export and import all your data to the new installation.
+If your accounts are broken or you want to join two different Thunderbird installations, you can install [ImportExportTools NG](https://addons.thunderbird.net/thunderbird/addon/importexporttools-ng/) add-on for both Thunderbird installations and following this just export and import all your data to the new installation.
 
 ### Change the default sorting order
 
@@ -220,13 +216,13 @@ You might also need to install [libnotify](https://www.archlinux.org/packages/?n
 Thunderbird should conform to [GTK#Themes](/index.php/GTK#Themes "GTK") as defined on your system. However, two tweaks are desirable for full consistency. These are most beneficial for dark themes.
 
 1.  To view the body of emails with colors following your theme:
-    1.  Go to *Preferences*
+    1.  Go to *Menu > Preferences > Preferences*
     2.  Select the *Display* tab
     3.  Click the *Colors* button
     4.  Check *Use system colors*
     5.  Set the option for *Override the colors specified by the content with my selection above* to *Always* or *Only with High Contrast themes*
 2.  To view Lightning calendar with colors following your theme:
-    1.  Go to *Preferences*
+    1.  Go to *Menu > Preferences > Preferences*
     2.  Select the *Calendar* tab
     3.  Check *Optimize colors for accessibility*
 
@@ -249,7 +245,7 @@ $ cp -R ~/.thunderbird /to/backup/folder/
 
 ```
 
-2\. Export all your Accounts, Calendar and Feeds via an AddOn like it's written in *Export section* of this Wiki.
+2\. Export all your Accounts, Calendar and Feeds via an add-on like it's written in *Export section* of this Wiki.
 
 3\. Uninstall your current Thunderbird installation:
 
@@ -269,7 +265,7 @@ $ pacman -S thunderbird
 
 6\. Create your mail accounts, feeds and calendars (empty).
 
-7\. Install the [ImportExportTools](https://addons.mozilla.org/thunderbird/addon/importexporttools/) AddOn
+7\. Install the [ImportExportTools NG](https://addons.thunderbird.net/thunderbird/addon/importexporttools-ng/) add-on
 
 8\. Import all your data.
 
@@ -279,4 +275,4 @@ If Thunderbird is configured to show an alert when a new message arrives, or at 
 
 ### LC_TIME environment variable not respected
 
-Thunderbird should use the `LC_TIME` environment variable for localization, but it might not do so in all contexts. Some problems can be mitigated by setting *Edit* > *Preferences* > *Advanced* > *Date and Time Formatting* to *Regional settings locale*, a setting which was introduced in Thunderbird 56\. However, there is a [bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1426907) for this issue.
+Thunderbird should use the `LC_TIME` environment variable for localization, but it might not do so in all contexts. Some problems can be mitigated by setting *Menu* > *Preferences* > *Preferences* > *Advanced* > *Date and Time Formatting* to *Regional settings locale*, a setting which was introduced in Thunderbird 56\. However, there is a [bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1426907) for this issue.

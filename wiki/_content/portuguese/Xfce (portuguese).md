@@ -340,7 +340,7 @@ XFCE themes are available at [xfce-look.org](http://www.xfce-look.org). *Xfwm* t
 
 To achieve a uniform look for all applications, see [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-See also [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/index.php/Icons "Icons"), and [Font configuration](/index.php/Font_configuration "Font configuration").
+See also [temas de cursor](/index.php/Temas_de_cursor "Temas de cursor"), [Icons](/index.php/Icons "Icons"), and [Font configuration](/index.php/Font_configuration "Font configuration").
 
 ### Som
 
@@ -723,7 +723,7 @@ Xfce loads `$HOME/.Xresources` file using `xrdb`, but with `-nocpp` option to sk
 
 ### Tema do cursor não muda ao iniciar a sessão
 
-Ensure the systemwide XDG cursor is set to your desired cursor theme - see [Cursor themes#XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes").
+Ensure the systemwide XDG cursor is set to your desired cursor theme - see [temas de cursor#Especificação XDG](/index.php/Temas_de_cursor#Especificação_XDG "Temas de cursor").
 
 ## Veja também
 

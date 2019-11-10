@@ -107,7 +107,7 @@ Więcej motywów może być zainstalowane z oficjalnych repozytoriów albo z [AU
 
 *   **Numix** — Płaski i jasny motyw o nowoczesnym wyglądzie (GNOME, Openbox, Unity, Xfce). Zawiera: *Numix*
 
-	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
+	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://aur.archlinux.org/packages/numix-gtk-theme/)
 
 *   **Blackbird** — Ciemny motyw dla Xfce.
 

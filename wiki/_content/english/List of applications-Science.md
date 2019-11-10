@@ -85,7 +85,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **[Genius](https://en.wikipedia.org/wiki/Genius_(mathematics_software) "wikipedia:Genius (mathematics software)")** — Advanced calculator including a mathematical programming language.
 
-	[http://jirka.org/genius.html](http://jirka.org/genius.html) || [genius](https://www.archlinux.org/packages/?name=genius)
+	[https://www.jirka.org/genius.html](https://www.jirka.org/genius.html) || [genius](https://www.archlinux.org/packages/?name=genius)
 
 *   **[GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")** — Scientific calculator included in the GNOME desktop.
 
@@ -157,7 +157,7 @@ See also [Wikipedia:Comparison of computer algebra systems](https://en.wikipedia
 
 *   **wxMaxima** — Graphical user interface for Maxima being a powerful computer algebra system.
 
-	[http://andrejv.github.io/wxmaxima/](http://andrejv.github.io/wxmaxima/) || [wxmaxima](https://www.archlinux.org/packages/?name=wxmaxima)
+	[https://andrejv.github.io/wxmaxima/](https://andrejv.github.io/wxmaxima/) || [wxmaxima](https://www.archlinux.org/packages/?name=wxmaxima)
 
 *   **[Xcas](https://en.wikipedia.org/wiki/Xcas "wikipedia:Xcas")** — User interface to Giac, a free, basic computer algebra system.
 
@@ -209,7 +209,7 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 *   **[Scilab](https://en.wikipedia.org/wiki/Scilab "wikipedia:Scilab")** — Matlab alternative used for numerical computations. Its syntax is not equivalent to that of Matlab, but it can be easily converted.
 
-	[http://www.scilab.org/](http://www.scilab.org/) || [scilab](https://aur.archlinux.org/packages/scilab/), [scilab-bin](https://aur.archlinux.org/packages/scilab-bin/), [scilab-git](https://aur.archlinux.org/packages/scilab-git/)
+	[https://www.scilab.org/](https://www.scilab.org/) || [scilab](https://aur.archlinux.org/packages/scilab/), [scilab-bin](https://aur.archlinux.org/packages/scilab-bin/), [scilab-git](https://aur.archlinux.org/packages/scilab-git/)
 
 #### Statistics
 
@@ -225,7 +225,7 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 *   **[Python Data Analysis Library (pandas)](https://en.wikipedia.org/wiki/Pandas_(software) "wikipedia:Pandas (software)")** — Providing high-performance, easy-to-use data structures and data analysis tools with Python programming language.
 
-	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
+	[https://pandas.pydata.org/](https://pandas.pydata.org/) || [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
 
 *   **[PSPP](https://en.wikipedia.org/wiki/PSPP "wikipedia:PSPP")** — Free SPSS implementation.
 
@@ -273,7 +273,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 *   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
-	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot-git](https://aur.archlinux.org/packages/qtiplot-git/)
+	[https://www.qtiplot.com/](https://www.qtiplot.com/) || [qtiplot-git](https://aur.archlinux.org/packages/qtiplot-git/)
 
 *   **Rocs** — Graph Theory IDE for everybody interested in designing and analyzing graph algorithms (e.g., lecturers, students, researchers). Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
@@ -353,7 +353,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **BALLView** — Standalone molecular modeling and visualization application, part of the [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") framework.
 
-	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
+	[https://ball-project.org/](https://ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
 
 *   **[Ghemical](https://en.wikipedia.org/wiki/Ghemical "wikipedia:Ghemical")** — Computational chemistry software package used to edit, view and simulate molecular structures.
 
@@ -439,7 +439,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **gElemental** — Periodic table of the elements with additional information.
 
-	[http://freecode.com/projects/gelemental](http://freecode.com/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
+	[http://freshmeat.sourceforge.net/projects/gelemental](http://freshmeat.sourceforge.net/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
 
 *   **Kalzium** — Periodic table of the elements with molecule editor and equation solver. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
@@ -511,7 +511,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **JOSM** — Main editor for OpenStreetMap written in Java.
 
-	[http://josm.openstreetmap.de/](http://josm.openstreetmap.de/) || [josm](https://www.archlinux.org/packages/?name=josm)
+	[https://josm.openstreetmap.de/](https://josm.openstreetmap.de/) || [josm](https://www.archlinux.org/packages/?name=josm)
 
 *   **Mapton** — Extensible desktop map and globe application written in Java.
 
@@ -527,7 +527,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **Navit** — Modular turn-by-turn car navigation system.
 
-	[http://www.navit-project.org/](http://www.navit-project.org/) || [navit](https://www.archlinux.org/packages/?name=navit)
+	[https://www.navit-project.org/](https://www.navit-project.org/) || [navit](https://www.archlinux.org/packages/?name=navit)
 
 *   **OffRoad** — Offline vector map display ported from OsmAnd.
 
@@ -607,7 +607,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[Stellarium](https://en.wikipedia.org/wiki/Stellarium_(computer_program) "wikipedia:Stellarium (computer program)")** — Beautiful 3D planetarium that uses OpenGL to render a realistic sky in real time.
 
-	[http://www.stellarium.org/](http://www.stellarium.org/) || [stellarium](https://www.archlinux.org/packages/?name=stellarium)
+	[http://stellarium.org/](http://stellarium.org/) || [stellarium](https://www.archlinux.org/packages/?name=stellarium)
 
 *   **Where Is M13** — Application to visualize the locations and physical properties of deep sky objects.
 
@@ -629,15 +629,15 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 
 *   **[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") (Biochemical Algorithms Library)** — Application framework in C++ that provides an extensive set of data structures as well as classes for molecular mechanics, advanced solvation methods, comparison and analysis of protein structures, file import/export, and visualization.
 
-	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
+	[https://ball-project.org/](https://ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
 
 *   **[BioJava](https://en.wikipedia.org/wiki/BioJava "wikipedia:BioJava")** — Set of Java tools for computational biology, as well as bioinformatics.
 
-	[http://biojava.org](http://biojava.org) || [biojava](https://aur.archlinux.org/packages/biojava/)
+	[https://biojava.org/](https://biojava.org/) || [biojava](https://aur.archlinux.org/packages/biojava/)
 
 *   **[Biopython](https://en.wikipedia.org/wiki/Biopython "wikipedia:Biopython")** — Python package with tools for computational biology, as well as bioinformatics.
 
-	[http://biopython.org/wiki/Biopython](http://biopython.org/wiki/Biopython) || [python-biopython](https://www.archlinux.org/packages/?name=python-biopython) [python2-biopython](https://www.archlinux.org/packages/?name=python2-biopython)
+	[https://biopython.org/wiki/Biopython](https://biopython.org/wiki/Biopython) || [python-biopython](https://www.archlinux.org/packages/?name=python-biopython) [python2-biopython](https://www.archlinux.org/packages/?name=python2-biopython)
 
 *   **[EMBOSS](https://en.wikipedia.org/wiki/EMBOSS "wikipedia:EMBOSS") (European Molecular Biology Open Software Suite)** — Open source software analysis package specially developed for the needs of the molecular biology and bioinformatics user community.
 
@@ -645,7 +645,7 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 
 *   **[MEGA](https://en.wikipedia.org/wiki/MEGA,_Molecular_Evolutionary_Genetics_Analysis "wikipedia:MEGA, Molecular Evolutionary Genetics Analysis") (Molecular Evolutionary Genetics Analysis)** — Integrated tool for conducting automatic and manual sequence alignment, inferring phylogenetic trees, mining web-based databases, estimating rates of molecular evolution, inferring ancestral sequences, and testing evolutionary hypotheses.
 
-	[http://www.megasoftware.net/](http://www.megasoftware.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://www.megasoftware.net/](https://www.megasoftware.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[MUMmer](https://en.wikipedia.org/wiki/MUMmer "wikipedia:MUMmer")** — Bioinformatics software system for sequence alignment based on suffix trees.
 
@@ -653,7 +653,7 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 
 *   **[Snapgene](https://en.wikipedia.org/wiki/Snapgene "wikipedia:Snapgene")** — Closed source molecular cloning application that offers a fast and easy way to plan, visualize, and document molecular biology procedures. Supports a wide range of cloning and PCR manipulations. The free version allows most common visualizations of a molecular biology workflow.
 
-	[http://www.snapgene.com/](http://www.snapgene.com/) || [snapgene-viewer](https://aur.archlinux.org/packages/snapgene-viewer/)
+	[https://www.snapgene.com/](https://www.snapgene.com/) || [snapgene-viewer](https://aur.archlinux.org/packages/snapgene-viewer/)
 
 *   **[UGENE](https://en.wikipedia.org/wiki/UGENE "wikipedia:UGENE")** — Application that integrates dozens of well-known biological tools and algorithms, providing both graphical user and command-line interfaces.
 
@@ -709,7 +709,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 *   **DraftSight** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them.
 
-	[http://www.3ds.com/products-services/draftsight/overview/](http://www.3ds.com/products-services/draftsight/overview/) || [draftsight](https://aur.archlinux.org/packages/draftsight/)
+	[https://www.3ds.com/products-services/draftsight-cad-software/](https://www.3ds.com/products-services/draftsight-cad-software/) || [draftsight](https://aur.archlinux.org/packages/draftsight/)
 
 *   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — CAD/CAE program, based on OpenCascade, Qt and Python with features such as macro recording, workbenches and the ability to run as server.
 
@@ -717,11 +717,11 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 *   **LeoCAD** — CAD program for creating virtual LEGO models. It has an easy to use interface and currently includes over 6000 different pieces created by the LDraw community.
 
-	[http://leocad.org](http://leocad.org) || [leocad](https://aur.archlinux.org/packages/leocad/)
+	[https://www.leocad.org/](https://www.leocad.org/) || [leocad](https://aur.archlinux.org/packages/leocad/)
 
 *   **[LibreCAD](https://en.wikipedia.org/wiki/LibreCAD "wikipedia:LibreCAD")** — Powerful 2D CAD application based on Qt. It has been forked from QCad Community Edition.
 
-	[http://www.librecad.org/](http://www.librecad.org/) || [librecad](https://www.archlinux.org/packages/?name=librecad)
+	[https://www.librecad.org/](https://www.librecad.org/) || [librecad](https://www.archlinux.org/packages/?name=librecad)
 
 *   **[OpenSCAD](https://en.wikipedia.org/wiki/OpenSCAD "wikipedia:OpenSCAD")** — Open source 2D/3D CAD using programmers approach.
 
@@ -729,7 +729,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 *   **[QCAD](https://en.wikipedia.org/wiki/QCad "wikipedia:QCad")** — Powerful 2D CAD application that began in 1999\. QCaD includes DFX standard file format and supports HPGL format.
 
-	[http://www.qcad.org/](http://www.qcad.org/) || [qcad](https://www.archlinux.org/packages/?name=qcad)
+	[https://www.qcad.org/](https://www.qcad.org/) || [qcad](https://www.archlinux.org/packages/?name=qcad)
 
 #### Electronics
 
@@ -773,7 +773,7 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 *   **[Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")** — FPGA programmable logic design suit.
 
-	[http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || see [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")
+	[https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || see [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")
 
 ##### MCU IDE and programmers
 
@@ -863,7 +863,7 @@ See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wi
 
 *   **[gephi](https://en.wikipedia.org/wiki/Gephi "wikipedia:Gephi")** — Gephi is an open-source network analysis and visualization software package written in Java.
 
-	[http://gephi.org/](http://gephi.org/) || [gephi](https://www.archlinux.org/packages/?name=gephi)
+	[https://gephi.org/](https://gephi.org/) || [gephi](https://www.archlinux.org/packages/?name=gephi)
 
 *   **golly** — Golly is an open source, cross-platform application for exploring Conway's Game of Life and many other types of cellular automata.
 

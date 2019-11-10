@@ -54,7 +54,8 @@ To do only local mail, the following is enough:
  `/etc/smtpd/smtpd.conf` 
 ```
 listen on localhost
-accept for local alias <aliases> deliver to mbox
+action "local" mbox alias <aliases>
+match for local action "local"
 
 ```
 
@@ -63,8 +64,10 @@ accept for local alias <aliases> deliver to mbox
 These two lines in `/etc/smtpd/smtpd.conf` :
 
 ```
-accept for local alias <aliases> deliver to mbox
-accept for any relay via "smtp://smtp.foo.bar" as "@foo.bar"
+action "local" mbox alias <aliases>
+action "relay" relay host "smtp://smtp.foo.bar" mail-from "@foo.bar"
+match for local action "local"
+match for any action "relay"
 
 ```
 
@@ -82,8 +85,10 @@ To send all local emails through a relay invoke [procmail](/index.php/Procmail "
 
  `/etc/smtpd/smtpd.conf` 
 ```
-accept from local for local virtual <aliases> deliver to mda "procmail -f -"
-accept from local for any relay via smtps+auth://label@smtp.foo.bar:465 auth <secrets> as "foo@bar"
+action "local" mda "procmail -f -" virtual <aliases>
+action "relay" relay host "smtps://label@smtp.foo.bar" auth <secrets> mail-from "@foo.bar"
+match for local action "local"
+match for any action "relay"
 
 ```
 
@@ -122,7 +127,7 @@ To obtain a certificate, see [OpenSSL#Usage](/index.php/OpenSSL#Usage "OpenSSL")
 
  `/etc/smtpd/smtpd.conf` 
 ```
-pki mx.domain.tld certificate  "/etc/smtpd/tls/smtpd.crt"
+pki mx.domain.tld cert         "/etc/smtpd/tls/smtpd.crt"
 pki mx.domain.tld key          "/etc/smtpd/tls/smtpd.key"
 
 table creds                    "/etc/smtpd/creds"
@@ -132,8 +137,11 @@ table vusers                   "/etc/smtpd/vusers"
 listen on eth0 tls pki mx.domain.tld
 listen on eth0 port 587 tls-require pki mx.domain.tld auth <creds>
 
-accept from any for domain <vdoms> virtual <vusers> deliver to mbox
-accept for any relay
+action receive	mbox virtual <vusers>
+action send relay
+
+match from any for domain <vdoms> action receive
+match for any action send
 
 ```
 
@@ -214,7 +222,7 @@ Alternately, use the `smtpctl trace *<subsystem>*` command if the daemon is alre
 *   Encode username and password in base64
 
 ```
-# printf 'username\0username\0password' | base64  
+# printf '\0username\0password' | base64  
 
 ```
 

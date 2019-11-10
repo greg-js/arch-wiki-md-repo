@@ -2,7 +2,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wi
 
 	Dynamic Kernel Module Support (DKMS) is a program/framework that enables generating Linux kernel modules whose sources generally reside outside the kernel source tree. The concept is to have DKMS modules automatically rebuilt when a new kernel is installed.
 
-This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module. Since the introduction of [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), the rebuild of the modules is handled automatically when a kernel is upgraded.
+This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module. Since the introduction of [pacman hooks](/index.php/Pacman_hooks "Pacman hooks"), the rebuild of the modules is handled automatically when a kernel is upgraded.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -36,7 +36,7 @@ A good number of modules that lie outside the kernel source tree have a DKMS var
 
 ## Upgrades
 
-Though the rebuild of the DKMS modules is usually seamless during a kernel upgrade, it may still happen that the rebuild fails. You should pay extra attention to the [Pacman](/index.php/Pacman "Pacman") output. This applies in particular if the system relies on the DKMS module to boot successfully and/or if you use DKMS with a custom kernel not in the [Official repositories](/index.php/Official_repositories "Official repositories").
+Though the rebuild of the DKMS modules is usually seamless during a kernel upgrade, it may still happen that the rebuild fails. You should pay extra attention to the [pacman](/index.php/Pacman "Pacman") output. This applies in particular if the system relies on the DKMS module to boot successfully and/or if you use DKMS with a custom kernel not in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 To deal with changes in the kernel, fix bugs, or add necessary features consider upgrading the DKMS package before rebooting.
 

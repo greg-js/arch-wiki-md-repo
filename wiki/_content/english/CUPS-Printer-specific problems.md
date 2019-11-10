@@ -19,9 +19,10 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
         *   [1.2.1 Manually installing from the RPM packages](#Manually_installing_from_the_RPM_packages)
     *   [1.3 Updating the firmware](#Updating_the_firmware)
 *   [2 Canon](#Canon)
-    *   [2.1 CARPS](#CARPS)
-    *   [2.2 USB over IP (BJNP)](#USB_over_IP_(BJNP))
-    *   [2.3 cnijfilter](#cnijfilter)
+    *   [2.1 UFRII](#UFRII)
+    *   [2.2 CARPS](#CARPS)
+    *   [2.3 USB over IP (BJNP)](#USB_over_IP_(BJNP))
+    *   [2.4 cnijfilter](#cnijfilter)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)
     *   [4.1 Utilities](#Utilities)
@@ -219,7 +220,7 @@ With that, the printer will restart, and the latest firmware will be installed a
 
 ## Canon
 
-There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [Gutenprint](/index.php/Gutenprint "Gutenprint"). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS), or [#cnijfilter](#cnijfilter) ([cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) / [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/)), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
+There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [Gutenprint](/index.php/Gutenprint "Gutenprint"). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, [#UFRII](#UFRII) . Others use the [#CARPS](#CARPS), or [#cnijfilter](#cnijfilter) ([cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) / [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/)), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
 
 | Printer | Driver/filter | Notes |
 | iP4300 | [Gutenprint](/index.php/Gutenprint "Gutenprint") | Or use the [TurboPrint](http://www.turboprint.info/) driver. |
@@ -270,6 +271,16 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 
 Some Canon printers will use a similar setup to the iP4500, so consider modifying the [cnijfilter-ip4500](https://aur.archlinux.org/packages/cnijfilter-ip4500/) package for other, similar printers.
 
+### UFRII
+
+Many LBP, iR, and MF printers use a protocol that has had several names over the years : UFR II, UFR II LT, LIPSLX . There are multiple packages for these printers in AUR, and atleast the imageCLASS MF4570dn is reported to only work with the older v3.70 version.
+
+[cnrdrvcups-lb](https://aur.archlinux.org/packages/cnrdrvcups-lb/) v 5.00 - latest version built from source
+
+[cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) 3.70 and [cndrvcups-common-lb](https://aur.archlinux.org/packages/cndrvcups-common-lb/) 4.10 : older version built from source
+
+[cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) v3.70 uses canon provided binaries with location/config adjustments to make them work on archlinux
+
 ### CARPS
 
 Some of Canon's printers use Canon's proprietary CARPS (*Canon Advanced Raster Printing System*) driver. [Rainbow Software](http://www.rainbow-software.org/2014/01/23/cups-driver-for-canon-carps-printers/) have managed to reverse engineer the CARPS data format and have successfully created a CARPS CUPS driver, which is available as [carps-cups](https://aur.archlinux.org/packages/carps-cups/). The project's [GitHub](https://github.com/ondrej-zary/carps-cups) page includes a list of working printers.
@@ -299,7 +310,7 @@ and use the `cnijnet:/` URI in the output.
 E515dw
 
  | Install [Dell's driver](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). | Both *e515dwcupswrapper-3.2.0-1.i386.deb* and *e515dwlpr-3.2.0-1.i386.deb* need to be installed. You could either write a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), use [debtap](https://aur.archlinux.org/packages/debtap/), or use [dpkg](https://aur.archlinux.org/packages/dpkg/) (using dpkg is not recommended as the files will not be managed by [pacman](/index.php/Pacman "Pacman")). The driver works on both the x86_64 and i386 platforms, but may require [multilib](/index.php/Multilib "Multilib"). |
-| S1130n | [dell-unified-printer-driver](https://aur.archlinux.org/packages/dell-unified-printer-driver/) | Driver conflicts with samsung-unified-driver-printer (both create rastertospl and libscmssc.so) |
+| S1130n | [dell-unified-driver](https://aur.archlinux.org/packages/dell-unified-driver/) | Driver conflicts with samsung-unified-driver-printer (as the dell-unified-driver appears to be based on the Samsung one, and they create several of the same files) |
 | 1130 |
 | 1133 |
 | 1135n |

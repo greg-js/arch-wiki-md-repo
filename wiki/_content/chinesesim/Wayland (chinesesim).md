@@ -7,31 +7,35 @@
 
 **Wayland** 是 Linux 的一个新的图形接口协议。使用 Wayland 需要更改或重新安装一部分系统中的软件。更多关于 Wayland 的信息参见 [主页](http://wayland.freedesktop.org/)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 系统需求](#.E7.B3.BB.E7.BB.9F.E9.9C.80.E6.B1.82)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 系统需求](#系统需求)
+*   [2 安装](#安装)
+*   [3 使用](#使用)
 *   [4 Weston](#Weston)
-    *   [4.1 安装](#.E5.AE.89.E8.A3.85_2)
-    *   [4.2 使用](#.E4.BD.BF.E7.94.A8_2)
-    *   [4.3 配置](#.E9.85.8D.E7.BD.AE)
+    *   [4.1 安装](#安装_2)
+    *   [4.2 使用](#使用_2)
+    *   [4.3 配置](#配置)
         *   [4.3.1 XWayland](#XWayland)
-        *   [4.3.2 视频录制](#.E8.A7.86.E9.A2.91.E5.BD.95.E5.88.B6)
-        *   [4.3.3 高DPI显示器](#.E9.AB.98DPI.E6.98.BE.E7.A4.BA.E5.99.A8)
+        *   [4.3.2 视频录制](#视频录制)
+        *   [4.3.3 高DPI显示器](#高DPI显示器)
         *   [4.3.4 Shell font](#Shell_font)
-*   [5 图形库](#.E5.9B.BE.E5.BD.A2.E5.BA.93)
-    *   [5.1 GTK+ 3](#GTK.2B_3)
+*   [5 图形库](#图形库)
+    *   [5.1 GTK+ 3](#GTK+_3)
     *   [5.2 Qt5](#Qt5)
     *   [5.3 Clutter](#Clutter)
     *   [5.4 SDL](#SDL)
     *   [5.5 GLFW](#GLFW)
     *   [5.6 EFL](#EFL)
-*   [6 窗口管理器和桌面 shell](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E5.92.8C.E6.A1.8C.E9.9D.A2_shell)
-*   [7 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+*   [6 窗口管理器和桌面 shell](#窗口管理器和桌面_shell)
+*   [7 疑难解答](#疑难解答)
     *   [7.1 LLVM assertion failure](#LLVM_assertion_failure)
     *   [7.2 Weston fails to launch after update to 1.7](#Weston_fails_to_launch_after_update_to_1.7)
-*   [8 参阅](#.E5.8F.82.E9.98.85)
+*   [8 参阅](#参阅)
 
 ## 系统需求
 
@@ -51,7 +55,7 @@ Wayland 仅仅是一个库，无法单独工作。若要代替X server,需要有
 
 ### 安装
 
-[安装](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85 "Help:Reading (简体中文)") [weston](https://www.archlinux.org/packages/?name=weston) 包
+[安装](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#安装软件包 "Help:Reading (简体中文)") [weston](https://www.archlinux.org/packages/?name=weston) 包
 
 ### 使用
 

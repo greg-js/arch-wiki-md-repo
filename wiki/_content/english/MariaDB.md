@@ -452,7 +452,7 @@ Stop `mariadb.service`. Issue the following command:
 Connect to the mysql server. Issue the following command:
 
 ```
-# mysql -u root
+# mysql
 
 ```
 
@@ -460,11 +460,20 @@ Change root password:
 
 ```
 mysql> use mysql;
-mysql> UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root';
 mysql> FLUSH PRIVILEGES;
+mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');
 mysql> exit
 
 ```
+
+Then kill currently running mysql server:
+
+```
+# killall -9 mysqld
+
+```
+
+And finally start `mariadb.service`:
 
 Start `mariadb.service`.
 

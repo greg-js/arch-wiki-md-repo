@@ -1,10 +1,11 @@
 Related articles
 
 *   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
+*   [Smartcards](/index.php/Smartcards "Smartcards")
 
 [Trusted Platform Module](https://en.wikipedia.org/wiki/Trusted_Platform_Module "wikipedia:Trusted Platform Module") (TPM) is an international standard for a secure cryptoprocessor, which is a dedicated microprocessor designed to secure hardware by integrating cryptographic keys into devices.
 
-In practice a TPM can be used for various different security applications such as secure boot and key storage.
+In practice a TPM can be used for various different security applications such as [secure boot](/index.php/Secure_Boot "Secure Boot") and key storage.
 
 TPM is naturally supported only on devices that have TPM hardware support. If your hardware has TPM support but it is not showing up, it might need to be enabled in the BIOS settings.
 

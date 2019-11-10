@@ -273,7 +273,7 @@ $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
 既然服务器现在只接受本机的连接，使用 -L 开关通过 SSH 连接到该机器来打开隧道。例如：
 
 ```
-$ ssh 目标机器IP -L 8900/localhost/5901
+$ ssh 目标机器IP -L 8900:localhost:5901
 
 ```
 

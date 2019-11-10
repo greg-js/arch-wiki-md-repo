@@ -24,17 +24,19 @@ Related articles
     *   [4.3 With CMake](#With_CMake)
 *   [5 Monitoring progress](#Monitoring_progress)
 *   [6 Cross Compiling with distcc](#Cross_Compiling_with_distcc)
-    *   [6.1 Arch Linux ARM](#Arch_Linux_ARM)
+    *   [6.1 Arch Linux ARM as Clients (x86_64 as volunteers)](#Arch_Linux_ARM_as_Clients_(x86_64_as_volunteers))
         *   [6.1.1 Volunteers](#Volunteers_2)
         *   [6.1.2 Client](#Client_2)
-    *   [6.2 Additional toolchains](#Additional_toolchains)
+    *   [6.2 Arch Linux (x86_64) as Clients (Arch ARM as volunteers)](#Arch_Linux_(x86_64)_as_Clients_(Arch_ARM_as_volunteers))
+        *   [6.2.1 Client](#Client_3)
+        *   [6.2.2 Volunteers](#Volunteers_3)
+    *   [6.3 Additional toolchains](#Additional_toolchains)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 Adjust log level](#Adjust_log_level)
     *   [7.3 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD/SSD_usage_by_relocating_$HOME/.distcc)
     *   [7.4 For distccd-alarm](#For_distccd-alarm)
         *   [7.4.1 No such file or directory](#No_such_file_or_directory)
-        *   [7.4.2 Monitoring does not work](#Monitoring_does_not_work)
 *   [8 See also](#See_also)
 
 ## Terms
@@ -49,20 +51,20 @@ Related articles
 
 ## Getting started
 
-[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all participating PCs in the distcc cluster. For other distros, or even operating systems including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html). Be sure to allow traffic on the port on which distcc runs (the default is 3632/tcp), see [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") and [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
+[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all participating PCs in the distcc cluster. For other distros, or even operating systems including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html) or the included man pages [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1) and [distccd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distccd.1). Be sure to allow traffic on the port on which distcc runs (the default is 3632/tcp), see [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls").
 
 ## Configuration
 
 ### Volunteers
 
-The configuration for the volunteer is stored in `/etc/conf.d/distccd`. At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
+The configuration for the volunteer is stored in `/etc/conf.d/distccd`. At a minimum, add the --allow-private switch which covers a number of ipv4 private network ranges. Logging to a file is also nice for troubleshooting if needed.
 
 ```
-DISTCC_ARGS="--allow 192.168.10.0/24"
+DISTCC_ARGS="--allow-private --log-file /tmp/distccd.log"
 
 ```
 
-A nice tool for converting address ranges to CIDR format can be found here: [CIDR Utility Tool](http://www.ipaddressguide.com/cidr). Other commandline options can be defined as well. Refer to [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
+If multiple interfaces are present on the machine, consider passing the --listen ADDRESS option as well. Other options can be defined. Refer to [distccd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distccd.1).
 
 [Start](/index.php/Start "Start") `distccd.service` on every participating volunteer. To have `distccd.service` start at boot-up, [enable](/index.php/Enable "Enable") it.
 
@@ -74,50 +76,30 @@ Edit `/etc/makepkg.conf` in the following sections:
 
 1.  The BUILDENV array will need to have *distcc* unbanged i.e. list it without exclamation point.
 2.  Uncomment the *DISTCC_HOSTS* line and add the host name or IP addresses of the volunteers. Optionally, follow this with a forward slash and the max number of threads they are to use. The subsequent nodes should be separated by a white space. This list should be ordered from most powerful to least powerful (processing power).
-3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11.
+3.  Adjust the MAKEFLAGS variable to correspond roughly twice the number max threads per server. In the example below, this is 2x(9+5+5+3)=44.
 
 Example using relevant lines:
 
 ```
 BUILDENV=(distcc fakeroot color !ccache check !sign)
-MAKEFLAGS="-j11"
-DISTCC_HOSTS="192.168.10.2/5 192.168.10.3/3 192.168.10.4/3"
+MAKEFLAGS="-j44"
+DISTCC_HOSTS="localhost/9 192.168.10.2/5 192.168.10.3/5 192.168.10.4/3"
 
 ```
+
+**Note:** Hostnames can be used rather than IP addresses but if the intention is to build using devtools build scripts, name resolution in the build root is not currently supported, so stick with IP addresses in this scenario.
 
 **Warning:** The `-march=native` flag cannot be used in the `CFLAGS` and `CXXFLAGS` variables, otherwise distccd will not distribute work to other machines.
 
 #### For use without makepkg
 
-The minimal configuration for distcc on the client includes the setting of the available volunteers. This can either be done by setting the addresses in the environment variable `DISTCC_HOSTS` or in either of the configuration files `$DISTCC_HOSTS`, `$DISTCC_DIR/hosts`, `~/.distcc/hosts` or `/etc/distcc/hosts`.
-
-Example for setting the volunteer address using `DISTCC_HOSTS`:
+The minimal configuration for distcc on the client includes the setting of the available volunteers and re-defining the PATH.
 
 ```
-$ export DISTCC_HOSTS="192.168.10.3,lzo,cpp 192.168.10.4,lzo,cpp"
+$ export DISTCC_HOSTS="localhost/9 192.168.10.2/5 192.168.10.3/5 192.168.10.4/3"
+$ export PATH="/usr/lib/distcc/bin:$PATH"
 
 ```
-
-**Note:** This is a white space separated list.
-
-Example for setting the volunteer addresses in the hosts configuration file:
-
- `~/.distcc/hosts` 
-```
-192.168.10.3,lzo,cpp 192.168.10.4,lzo,cpp
-
-```
-
-Instead of explicitly listing the server addresses one can also use the avahi zeroconf mode. To use this mode `+zeroconf` must be in place instead of the server addresses and the distcc daemons on the volunteers have to be started using the `--zeroconf` option. Note that this option does not support the pump mode!
-
-The examples add the following options to the address:
-
-*   `lzo`: Enables LZO compression for this TCP or SSH host (volunteer).
-*   `cpp`: Enables distcc-pump mode for this host (volunteer). Note: the build command must be wrapped in the pump script in order to start the include server.
-
-A description for the pump mode can be found here: [distcc's pump mode: A New Design for Distributed C/C++ Compilation](http://google-opensource.blogspot.de/2008/08/distccs-pump-mode-new-design-for.html)
-
-To use distcc-pump mode for a volunteer, users must start the compilation using the pump script otherwise the compilation will fail.
 
 ## Compile
 
@@ -127,27 +109,12 @@ Compile via makepkg as normal.
 
 ### Without makepkg
 
-To compile a source file using the distcc pump mode, use the following command:
+After exporting the two varabiles describe in [Distcc#For use without makepkg](/index.php/Distcc#For_use_without_makepkg "Distcc"), compile as usual but append CC= and CXX= lines to your build:
 
 ```
-$ pump distcc g++ -c hello_world.cpp
+$ make -j44 CC=distcc CXX=distcc
 
 ```
-
-In this case the pump script will execute distcc which in turn calls g++ with "-c hello_world.cpp" as parameter.
-
-To compile a Makefile project, first find out which variables are set by the compiler. For example in gzip-1.6, one can find the following line in the Makefile: `CC = gcc -std=gnu99`. Normally the variables are called `CC` for C projects and `CXX` for C++ projects. To compile the project using distcc it would look like this:
-
-```
-$ wget [ftp://ftp.gnu.org/pub/gnu/gzip/gzip-1.6.tar.xz](ftp://ftp.gnu.org/pub/gnu/gzip/gzip-1.6.tar.xz)
-$ tar xf gzip-1.6.tar.xz
-$ cd gzip-1.6
-$ ./configure
-$ pump make -j2 CC="distcc gcc -std=gnu99"
-
-```
-
-This example would compile gzip using distcc's pump mode with two compile threads. For the correct `-j` setting have a look at [What -j level to use?](https://cdn.rawgit.com/distcc/distcc/master/doc/web/faq.html)
 
 ### With CMake
 
@@ -155,13 +122,6 @@ Use the following CMake options to build a CMake-based project with distcc:
 
 ```
 $ cmake -DCMAKE_C_COMPILER_LAUNCHER=distcc -DCMAKE_CXX_COMPILER_LAUNCHER=distcc ...
-
-```
-
-To enable pump mode, use:
-
-```
-$ cmake -DCMAKE_C_COMPILER_LAUNCHER=pump\;distcc -DCMAKE_CXX_COMPILER_LAUNCHER=pump\;distcc ...
 
 ```
 
@@ -194,11 +154,13 @@ One can use distcc to help cross compile.
 *   A machine running the target architecture should be used as the client.
 *   Non-native architecture volunteers will help compile but they require the corresponding toolchain to be installed and their distcc to point to it.
 
-### Arch Linux ARM
+### Arch Linux ARM as Clients (x86_64 as volunteers)
+
+This section details how to use Arch Linux (x86_64) volunteers to help an Arch ARM device cross-compile. Significant speed gains can be realized with just a single x86_64 machine helping an ARM device compile.
 
 #### Volunteers
 
-The developers *highly* recommend using the official project [toolchains](https://archlinuxarm.org/wiki/Distcc_Cross-Compiling) which should be installed on the x86_64 volunteer(s). Rather than manually managing these, the [AUR](/index.php/AUR "AUR") provides all four toolchains as well as simple systemd service units:
+The Arch ARM developers *highly* recommend using the official project [toolchains](https://archlinuxarm.org/wiki/Distcc_Cross-Compiling) which should be installed on the x86_64 volunteer(s). Rather than manually managing these, the [AUR](/index.php/AUR "AUR") provides all four toolchains as well as simple systemd service units:
 
 *   [distccd-alarm-armv5](https://aur.archlinux.org/packages/distccd-alarm-armv5/)
 *   [distccd-alarm-armv6h](https://aur.archlinux.org/packages/distccd-alarm-armv6h/)
@@ -207,7 +169,7 @@ The developers *highly* recommend using the official project [toolchains](https:
 
 Setup on the volunteer containing the toolchain is identical to [#Volunteers](#Volunteers) except that the name of the configuration and systemd service file matches that of the respective package. For example, for armv7h the config file is `/etc/conf.d/distccd-armv7h` and the systemd service unit is `distccd-armv7h.service`.
 
-Note that each of the toolchains runs on a unique port thus allowing them to co-exist on the volunteer if needed. Be sure to allow traffic to the port on which distcc runs see [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") and [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
+Note that each of the toolchains runs on a unique port thus allowing all four of them to co-exist on the volunteer if needed. Be sure to allow traffic to the port on which distcc runs see [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") and [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
 
 | Target architecture | Distcc Port |
 | *armv5* | 3633 |
@@ -217,12 +179,24 @@ Note that each of the toolchains runs on a unique port thus allowing them to co-
 
 #### Client
 
-Setup of the client is identical to [#Client](#Client) except, one needs to modify the following two files to define the now non-standard port the volunteers are expected to use. Refer to the table above if using the AUR package.
+The easiest method to setup the Arch ARM client is to use the [distccd-arch-arm](https://aur.archlinux.org/packages/distccd-arch-arm/) package. It provides the matched set of distccd configuration and systemd service units. For example, if the client is an armv7h device, optionally edit `/etc/conf.d/distccd-armv7h` and change the defaults therein. When ready to build, [enable](/index.php/Enable "Enable") `distccd-armv7h.service` and compile.
+
+If one would rather setup the client without using the AUR package mentioned above, manual setup of the client is identical to [#Client](#Client) except, one needs to modify the following two files to define the now non-standard port the volunteers are expected to use. Refer to the table above if using the AUR package.
 
 1.  `/etc/conf.d/distcc`: example on an armv7h machine: `DISTCC_ARGS="--allow 127.0.0.1 --allow 192.168.10.0/24 --port 3635`
 2.  `/etc/makepkg.conf`: example on an armv7h machine: `DISTCC_HOSTS="192.168.10.2/5:3635 192.168.10.3/5:3635"`
 
-Alternatively, the [distccd-arch-arm](https://aur.archlinux.org/packages/distccd-arch-arm/) package will provide the needed systemd service files to enable distccd compilation.
+### Arch Linux (x86_64) as Clients (Arch ARM as volunteers)
+
+This section details how to use Arch ARM volunteers to help an x86_64 client cross-compile.
+
+#### Client
+
+Setup of the client is identical to [#Client](#Client) with distcc running on the standard port 3632.
+
+#### Volunteers
+
+[distccd-x86_64](https://aur.archlinux.org/packages/distccd-x86_64/) will provide a toolchain to install on the Arch ARM devices to enable cross compilation.
 
 ### Additional toolchains
 
@@ -276,12 +250,8 @@ distcc[25479] (dcc_execvp) ERROR: failed to exec armv7l-unknown-linux-gnueabihf-
 
 ```
 
-#### Monitoring does not work
-
-Since the distccd-alarm-arm* services use the `nobody` user, `/usr/bin/distccmon-text` does not work to monitor compilation. One can inspect the output of the actually distcc log to troubleshoot if needed, `tail -f /tmp/distccd-armv7h.log` for example.
-
 ## See also
 
 *   [https://github.com/distcc/distcc](https://github.com/distcc/distcc)
 
-*   [icecream](https://aur.archlinux.org/packages/icecream/) - An easier to configure fork of distcc that some find brings notably better results and improved utilisation of available cores.
+*   [icecream](https://aur.archlinux.org/packages/icecream/) - An easier to configure fork of distcc.

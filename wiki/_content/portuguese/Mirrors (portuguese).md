@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Mirrors](/index.php/Mirrors "Mirrors"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mirrors&diff=0&oldid=578401) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Mirrors](/index.php/Mirrors "Mirrors"). Data da última tradução: 2019-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mirrors&diff=0&oldid=587446) na versão em inglês.
 
 Artigos relacionados
 
@@ -124,7 +124,7 @@ Para preparar `mirrorlist.backup` para classificar com *rankmirrors*, as seguint
 
 Edite `mirrorlist.backup` e descomente os servidores a serem testados
 
-*   Se os servidores no arquivo estiverem agrupados por país, pode-se extrair os servidores de um país específico por uso: `$ awk '/^## *Nome do país*$/{f=1}f==0{next}/^$/{exit}{print substr($0, 2)}' /etc/pacman.d/mirrorlist.backup` 
+*   Se os servidores no arquivo estiverem agrupados por país, pode-se extrair os servidores de um país específico por uso: `$ awk '/^## *Nome do país*$/{f=1; next}f==0{next}/^$/{exit}{print substr($0, 1); f=0}' /etc/pacman.d/mirrorlist.backup` 
 
 *   Para descomentar todo o espelho, execute a seguinte linha `sed`: `# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup` 
 

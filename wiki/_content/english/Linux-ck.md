@@ -60,7 +60,7 @@ It is a common mistake to think that MuQSS does not support *cgroups*. It does b
 
 ## Using out-of-tree modules with linux-ck
 
-Many out-of-tree modules (broadcom-wl, nvidia, virtualbox, etc.) can be easily compiled and managed by using [dkms](/index.php/Dkms "Dkms"). A requisite for this is the corresponding headers package and base-devel package. See the dkms article for more.
+Many out-of-tree modules (broadcom-wl, nvidia, virtualbox, etc.) can be easily compiled and managed by using [DKMS](/index.php/DKMS "DKMS").
 
 ## See also
 

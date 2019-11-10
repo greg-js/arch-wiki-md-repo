@@ -291,7 +291,7 @@ Relocate files, such as your browser profile, to a [tmpfs](/index.php/Tmpfs "Tmp
 
 #### File systems
 
-Refer to corresponding [file system](/index.php/File_system "File system") page in case there were performance improvements instructions, e.g. [Ext4#Improving performance](/index.php/Ext4#Improving_performance "Ext4") and [XFS#Sync interval](/index.php/XFS#Sync_interval "XFS").
+Refer to corresponding [file system](/index.php/File_system "File system") page in case there were performance improvements instructions, e.g. [Ext4#Improving performance](/index.php/Ext4#Improving_performance "Ext4") and [XFS#Performance](/index.php/XFS#Performance "XFS").
 
 #### Swap space
 
@@ -372,7 +372,7 @@ mitigations=off
 
 ```
 
-The explanations of all the switches it toggles are given at [kernel.org](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html).
+The explanations of all the switches it toggles are given at [kernel.org](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html). You can use [spectre-meltdown-checker](https://aur.archlinux.org/packages/spectre-meltdown-checker/) for vulnerability check.
 
 ## Graphics
 

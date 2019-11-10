@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-10-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=584445) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=587336) na versão em inglês.
 
 Artigos relacionados
 
@@ -9,7 +9,7 @@ Do [artigo do Wikipédia](https://en.wikipedia.org/wiki/pt:Java_(linguagem_de_pr
 
 	Java é uma linguagem de programação interpretada orientada a objetos desenvolvida na década de 90 por uma equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Diferente das linguagens de programação convencionais, que são compiladas para código nativo, a linguagem Java é compilada para um bytecode que é interpretado por uma máquina virtual (Java Virtual Machine, mais conhecida pela sua abreviação [JVM](https://en.wikipedia.org/wiki/pt:M%C3%A1quina_virtual_Java "wikipedia:pt:Máquina virtual Java")). A linguagem de programação Java é a linguagem convencional da Plataforma Java, mas não é a sua única linguagem.
 
-Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](https://openjdk.java.net/) 7, 8, 9, 10, 11 e 12\. Todas essas JVM podem ser instaladas sem conflito e alternadas entre si usando o script auxiliar `archlinux-java`. Vários outros ambientes Java estão disponíveis no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), sem suporte oficial.
+Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](https://openjdk.java.net/) 7, 8, 10, 11, 12 e 13\. Todas essas JVM podem ser instaladas sem conflito e alternadas entre si usando o script auxiliar `archlinux-java`. Vários outros ambientes Java estão disponíveis no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), sem suporte oficial.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -36,7 +36,7 @@ Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](http
     *   [5.3 Personificar outro gerenciador de janela](#Personificar_outro_gerenciador_de_janela)
     *   [5.4 Fontes ilegíveis](#Fontes_ilegíveis)
     *   [5.5 Faltando texto em alguns aplicativos](#Faltando_texto_em_alguns_aplicativos)
-    *   [5.6 Janela cinza | Aplicações sem redimensionamento com o WM | menus fechando imediatamente](#Janela_cinza_|_Aplicações_sem_redimensionamento_com_o_WM_|_menus_fechando_imediatamente)
+    *   [5.6 Janela cinza, aplicações sem redimensionamento com o WM, menus fechando imediatamente](#Janela_cinza,_aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente)
     *   [5.7 Sistema congela ao depurar aplicativos JavaFX](#Sistema_congela_ao_depurar_aplicativos_JavaFX)
     *   [5.8 Construtor MediaPlayer do JavaFX lança uma exceção](#Construtor_MediaPlayer_do_JavaFX_lança_uma_exceção)
     *   [5.9 Aplicativos Java não podem abrir links externos](#Aplicativos_Java_não_podem_abrir_links_externos)
@@ -77,7 +77,7 @@ A maioria dos executáveis da instalação do Java são fornecidos por link dire
 	[Java Development Kit](https://en.wikipedia.org/wiki/Java_Development_Kit "wikipedia:Java Development Kit") - necessário para desenvolvimento em Java, depende do JRE completo.
 
 | Versão | JRE *headless* | JRE completo | JDK | Documentação | Fontes |
-| [OpenJDK 12](https://openjdk.java.net/projects/jdk/12/) | [jre-openjdk-headless](https://www.archlinux.org/packages/?name=jre-openjdk-headless) | [jre-openjdk](https://www.archlinux.org/packages/?name=jre-openjdk) | [jdk-openjdk](https://www.archlinux.org/packages/?name=jdk-openjdk) | [openjdk-doc](https://www.archlinux.org/packages/?name=openjdk-doc) | [openjdk-src](https://www.archlinux.org/packages/?name=openjdk-src) |
+| [OpenJDK 13](https://openjdk.java.net/projects/jdk/13/) | [jre-openjdk-headless](https://www.archlinux.org/packages/?name=jre-openjdk-headless) | [jre-openjdk](https://www.archlinux.org/packages/?name=jre-openjdk) | [jdk-openjdk](https://www.archlinux.org/packages/?name=jdk-openjdk) | [openjdk-doc](https://www.archlinux.org/packages/?name=openjdk-doc) | [openjdk-src](https://www.archlinux.org/packages/?name=openjdk-src) |
 | [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/) | [jre11-openjdk-headless](https://www.archlinux.org/packages/?name=jre11-openjdk-headless) | [jre11-openjdk](https://www.archlinux.org/packages/?name=jre11-openjdk) | [jdk11-openjdk](https://www.archlinux.org/packages/?name=jdk11-openjdk) | [openjdk11-doc](https://www.archlinux.org/packages/?name=openjdk11-doc) | [openjdk11-src](https://www.archlinux.org/packages/?name=openjdk11-src) |
 | [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
 | [OpenJDK 8](https://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
@@ -100,7 +100,7 @@ A maioria dos executáveis da instalação do Java são fornecidos por link dire
 [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main) é a implementação código aberto do [JavaFX](https://en.wikipedia.org/wiki/pt:JavaFX "wikipedia:pt:JavaFX"). Você [não precisa](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) instalar esse pacote se você está fazendo uso do Java SE (a implementação da Oracle do JRE e JDK, descritos abaixo). Esse pacote só interessa usuários da implementação código aberto de Java (projeto OpenJDK).
 
 | Versão | Runtime e Desenvolvimento | Documentação | Fontes |
-| [OpenJFX 12](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) |
+| [OpenJFX 13](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) |
 | [OpenJFX 11](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java11-openjfx](https://www.archlinux.org/packages/?name=java11-openjfx) | [java11-openjfx-doc](https://www.archlinux.org/packages/?name=java11-openjfx-doc) | [java11-openjfx-src](https://www.archlinux.org/packages/?name=java11-openjfx-src) |
 | [OpenJFX 8](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java8-openjfx](https://www.archlinux.org/packages/?name=java8-openjfx) | [java8-openjfx-doc](https://www.archlinux.org/packages/?name=java8-openjfx-doc) | [java8-openjfx-src](https://www.archlinux.org/packages/?name=java8-openjfx-src) |
 
@@ -120,7 +120,7 @@ A maioria dos executáveis da instalação do Java são fornecidos por link dire
 
 **OpenJ9** — Implementação do Eclipse de JRE, contribuído pela IBM.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk13-openj9-bin](https://aur.archlinux.org/packages/jdk13-openj9-bin/) [jdk12-openj9-bin](https://aur.archlinux.org/packages/jdk12-openj9-bin/) [jdk11-openj9-bin](https://aur.archlinux.org/packages/jdk11-openj9-bin/) [jdk10-openjdk-openj9-bin](https://aur.archlinux.org/packages/jdk10-openjdk-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk-openj9-bin](https://aur.archlinux.org/packages/jdk-openj9-bin/) [jdk13-openj9-bin](https://aur.archlinux.org/packages/jdk13-openj9-bin/) [jdk12-openj9-bin](https://aur.archlinux.org/packages/jdk12-openj9-bin/) [jdk11-openj9-bin](https://aur.archlinux.org/packages/jdk11-openj9-bin/) [jdk10-openjdk-openj9-bin](https://aur.archlinux.org/packages/jdk10-openjdk-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
 
 **IBM J9** — Implementação da IBM da oitava edição de JRE.
 
@@ -252,7 +252,7 @@ Se você quiser iniciar um aplicativo com outra versão do java do que o padrão
 ```
 #!/bin/sh 
 
-export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH
+export PATH="/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH"
 exec /path/to/application "$@"
 
 ```
@@ -307,7 +307,7 @@ Além das sugestões mencionadas abaixo em [#Melhor renderização de fonte](#Me
 
 Se alguns aplicativos estão faltando textos completos, pode ajudar a usar as opções em [#Dicas e truques](#Dicas_e_truques) como sugerido em [FS#40871](https://bugs.archlinux.org/task/40871).
 
-### Janela cinza | Aplicações sem redimensionamento com o WM | menus fechando imediatamente
+### Janela cinza, aplicações sem redimensionamento com o WM, menus fechando imediatamente
 
 O kit de ferramentas padrão de GUI do Java possui uma lista codificada de gerenciadores de janela "*não-reparenting*". Se estiver usando um que não esteja nessa lista, pode haver alguns problemas com a execução de alguns aplicativos Java. Um dos problemas mais comuns é "blobs cinzas", quando o aplicativo Java se renderiza como uma caixa cinzenta simples em vez de renderizar a interface gráfica esperada. Outro pode ser menus respondendo ao seu clique, mas fechando imediatamente.
 

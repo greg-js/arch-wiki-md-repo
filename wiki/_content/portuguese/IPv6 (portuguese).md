@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=584542) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=587192) na versão em inglês.
 
 Artigos relacionados
 
@@ -29,14 +29,15 @@ No Arch Linux, IPv6 está habilitado por padrão.
     *   [7.1 Com dibbler](#Com_dibbler)
     *   [7.2 Com dhcpcd](#Com_dhcpcd)
     *   [7.3 Com WIDE-DHCPv6](#Com_WIDE-DHCPv6)
-    *   [7.4 Outros clientes](#Outros_clientes)
+    *   [7.4 systemd-networkd](#systemd-networkd_2)
+    *   [7.5 Outros clientes](#Outros_clientes)
 *   [8 Desabilitar IPv6](#Desabilitar_IPv6)
     *   [8.1 Desabilitar funcionalidade](#Desabilitar_funcionalidade)
     *   [8.2 Outros programas](#Outros_programas)
         *   [8.2.1 dhcpcd](#dhcpcd_2)
         *   [8.2.2 NetworkManager](#NetworkManager_3)
         *   [8.2.3 ntpd](#ntpd)
-    *   [8.3 systemd-networkd](#systemd-networkd_2)
+    *   [8.3 systemd-networkd](#systemd-networkd_3)
 *   [9 Preferir IPv4 a IPv6](#Preferir_IPv4_a_IPv6)
 *   [10 Veja também](#Veja_também)
 
@@ -111,6 +112,14 @@ interface LAN {
 ```
 
 A configuração acima dirá aos clientes para se autoconfigurarem usando endereços do bloco /64 anunciado. Observe que a configuração acima anuncia "todos os prefixos disponíveis" atribuídos à interface de LAN. Se você quiser limitar os prefixos anunciados em vez de `::/64` use o prefixo desejado, por exemplo, `2001:DB8::/64`. O bloco `prefix` pode ser repetido várias vezes para mais prefixos.
+
+Para anunciar servidores DNS para seus clientes LAN, você pode usar o recurso RDNSS. Por exemplo, adicione as seguintes linhas a `/etc/radvd.conf` para anunciar os servidores DNS v6 do Google:
+
+```
+RDNSS 2001:4860:4860::8888 2001:4860:4860::8844 {
+};
+
+```
 
 O gateway também deve permitir o tráfego de pacotes `ipv6-icmp` em todas as cadeias básicas. Para um [Firewall stateful simples](/index.php/Simple_stateful_firewall "Simple stateful firewall") ou o [iptables](/index.php/Iptables "Iptables"), adicione:
 
@@ -341,9 +350,27 @@ O cliente wide-dhcpv6 pode ser [iniciado/habilitado](/index.php/Iniciado/habilit
 
 **Dica:** Leia dhcp6c(8) e dhcp6c.conf(5) para mais informações.
 
-### Outros clientes
+### systemd-networkd
 
-[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") afirma ser capaz de DHCPv6-PD, mas está faltando documentação sobre como fazê-lo.
+ `/etc/systemd/network/lan.network` 
+```
+[Network]
+Address=192.168.1.1
+IPv6PrefixDelegation=dhcpv6
+```
+ `/etc/systemd/network/wan.network` 
+```
+[Network]
+DHCP=yes
+IPForward=yes
+IPv6Token=::1
+IPv6AcceptRouterAdvertisements=2
+IPv6AcceptRA=yes
+IPv6DuplicateAddressDetection=1
+IPv6PrivacyExtensions=kernel
+```
+
+### Outros clientes
 
 [dhclient](/index.php/Dhclient_(Portugu%C3%AAs) "Dhclient (Português)") também pode solicitar um prefixo, mas atribuir esse prefixo ou partes desse prefixo a interfaces deve ser feito usando um script de saída do dhclient. Por exemplo: [https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6](https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6).
 

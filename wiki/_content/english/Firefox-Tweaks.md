@@ -34,19 +34,18 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.2 Hide button icons](#Hide_button_icons)
         *   [2.2.3 Hiding various tab buttons](#Hiding_various_tab_buttons)
         *   [2.2.4 Horizontal tabs](#Horizontal_tabs)
-        *   [2.2.5 Hide window border and title bar](#Hide_window_border_and_title_bar)
+        *   [2.2.5 Hide title bar and window border](#Hide_title_bar_and_window_border)
         *   [2.2.6 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
         *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
         *   [2.2.8 Unreadable input fields with dark GTK themes](#Unreadable_input_fields_with_dark_GTK_themes)
             *   [2.2.8.1 Override input field color with CSS](#Override_input_field_color_with_CSS)
             *   [2.2.8.2 Change the GTK theme](#Change_the_GTK_theme)
             *   [2.2.8.3 Change the GTK theme for content process only](#Change_the_GTK_theme_for_content_process_only)
-    *   [2.3 Tabs in title bar](#Tabs_in_title_bar)
-    *   [2.4 Web content CSS settings](#Web_content_CSS_settings)
-        *   [2.4.1 Import other CSS files](#Import_other_CSS_files)
-        *   [2.4.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
-        *   [2.4.3 Add [pdf] after links to PDF files](#Add_[pdf]_after_links_to_PDF_files)
-        *   [2.4.4 Block ads](#Block_ads)
+    *   [2.3 Web content CSS settings](#Web_content_CSS_settings)
+        *   [2.3.1 Import other CSS files](#Import_other_CSS_files)
+        *   [2.3.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
+        *   [2.3.3 Add [pdf] after links to PDF files](#Add_[pdf]_after_links_to_PDF_files)
+        *   [2.3.4 Block ads](#Block_ads)
 *   [3 Mouse and keyboard](#Mouse_and_keyboard)
     *   [3.1 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
     *   [3.2 Pixel-perfect trackpad scrolling](#Pixel-perfect_trackpad_scrolling)
@@ -327,9 +326,11 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 
 ```
 
-#### Hide window border and title bar
+#### Hide title bar and window border
 
-Go to "Menu", then "Customize" and then at the bottom-left corner find checkbox named "Title Bar". Uncheck it. If the checkbox is missing, make sure the `XDG_CURRENT_DESKTOP` environment variable is correctly set and/or the `MOZ_GTK_TITLEBAR_DECORATION` environment variable is set to "client".
+To replace the title bar with the tab bar, enable `browser.tabs.drawInTitlebar` in `about:config`.
+
+Or go to "Menu", then "Customize" and then at the bottom-left corner find checkbox named "Title Bar". Uncheck it. If the checkbox is missing, make sure the `XDG_CURRENT_DESKTOP` environment variable is correctly set and/or the `MOZ_GTK_TITLEBAR_DECORATION` environment variable is set to "client".
 
 #### Auto-hide Bookmarks Toolbar
 
@@ -401,10 +402,6 @@ To force Firefox to use a light theme (e.g. Adwaita) for web content only:
 2.  Create a new `widget.content.gtk-theme-override` string type entry (`right mouse button` *> New > String*).
 3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita:light`).
 4.  Restart Firefox.
-
-### Tabs in title bar
-
-To replace the title bar with the tab bar, enable `browser.tabs.drawInTitlebar` in `about:config`.
 
 ### Web content CSS settings
 

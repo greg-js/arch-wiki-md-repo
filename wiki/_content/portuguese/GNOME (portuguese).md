@@ -16,7 +16,7 @@ Artigos relacionados
 *   [GNOME/Software](/index.php/GNOME/Software "GNOME/Software")
 *   [Repositórios oficiais#gnome-unstable](/index.php/Reposit%C3%B3rios_oficiais#gnome-unstable "Repositórios oficiais")
 
-[GNOME](https://en.wikipedia.org/wiki/pt:GNOME "wikipedia:pt:GNOME") (/(ɡ)noʊm/) é um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
+[GNOME](https://en.wikipedia.org/wiki/pt:GNOME em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -127,7 +127,7 @@ fi
 
 **Nota:**
 
-*   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland "Wayland"). Aplicativos usando certas bibliotecas gráficas, tal como Qt, podem ser forçadas a usar o Wayland definindo variáveis de ambiente. Veja [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") para mais informações.
+*   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)"). Aplicativos usando certas bibliotecas gráficas, tal como Qt, podem ser forçadas a usar o Wayland definindo variáveis de ambiente. Veja [Wayland#Bibliotecas GUI](/index.php/Wayland_(Portugu%C3%AAs)#Bibliotecas_GUI "Wayland (Português)") para mais informações.
 *   Quando estiver usando o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA"), aplicativos não nativos de Wayland vão sofrer de um desempenho muito ruim por causa de XWayland sem aceleração de hardware. [Espera-se](https://blogs.gnome.org/uraeus/2019/09/23/fedora-workstation-31-whats-new/) resolver isso em outuno de 2020, mas ainda não há um cronograma comprometido pela [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 Iniciar manualmente uma sessão Wayland é possível com `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.

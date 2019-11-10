@@ -33,6 +33,7 @@ This tutorial shows how to download, install, and configure the following softwa
             *   [1.4.2.2 JTAG chain broken](#JTAG_chain_broken)
             *   [1.4.2.3 Error when scanning hardware - Server error](#Error_when_scanning_hardware_-_Server_error)
         *   [1.4.3 Installation hangs when installing Quartus Prime Help and/or ModelSim](#Installation_hangs_when_installing_Quartus_Prime_Help_and/or_ModelSim)
+            *   [1.4.3.1 Eclipse IDE for NIOSII is Slow or Unresponsive](#Eclipse_IDE_for_NIOSII_is_Slow_or_Unresponsive)
 *   [2 ModelSim-Altera Edition](#ModelSim-Altera_Edition)
     *   [2.1 Install](#Install)
     *   [2.2 Compatibility with Archlinux](#Compatibility_with_Archlinux)
@@ -341,6 +342,10 @@ If you still have problems, try restarting `jtagd`:
 #### Installation hangs when installing Quartus Prime Help and/or ModelSim
 
 For Quartus Prime Lite 17.1, or probably other versions, the installation process hangs when installing Quartus Prime Help and ModelSim. One workaround is to uncheck them in the "Select Components" step and install them later manually from the components folder.
+
+##### Eclipse IDE for NIOSII is Slow or Unresponsive
+
+Try disabling GTK3 in eclipse.ini in your altera folder [https://wiki.archlinux.org/index.php/Eclipse#Disable_GTK_3](https://wiki.archlinux.org/index.php/Eclipse#Disable_GTK_3)
 
 ## ModelSim-Altera Edition
 

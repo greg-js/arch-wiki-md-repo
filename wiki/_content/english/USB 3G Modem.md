@@ -18,7 +18,7 @@ A number of mobile telephone networks around the world offer mobile internet con
 *   [3 Mode switching](#Mode_switching)
 *   [4 Connection](#Connection)
     *   [4.1 Serial like interface](#Serial_like_interface)
-        *   [4.1.1 Network Manager](#Network_Manager)
+        *   [4.1.1 NetworkManager](#NetworkManager)
         *   [4.1.2 pppd](#pppd)
         *   [4.1.3 wvdial](#wvdial)
         *   [4.1.4 netctl](#netctl)
@@ -90,7 +90,7 @@ $ ip link
 
 ### Serial like interface
 
-#### Network Manager
+#### NetworkManager
 
 After installing [usbutils](https://www.archlinux.org/packages/?name=usbutils) and [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch), you just need to install [modemmanager](https://www.archlinux.org/packages/?name=modemmanager) to make the modem work with [NetworkManager](/index.php/NetworkManager "NetworkManager").
 

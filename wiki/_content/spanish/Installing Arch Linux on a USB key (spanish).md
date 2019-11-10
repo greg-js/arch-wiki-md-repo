@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"), revisada por última vez el **2018-11-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&diff=0&oldid=543740) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"), revisada por última vez el **2019-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&diff=0&oldid=586431) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -7,7 +7,7 @@ Artículos relacionados
 *   [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
 *   [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)")
 
-Esta página describe cómo realizar una instalación normal de Arch en una llave USB (o «unidad flash»). A diferencia de un [USB como soporte de instalación](/index.php/USB_Installation_Media_(Espa%C3%B1ol) "USB Installation Media (Español)"), el usb live daría como resultado la instalación de un sistema de forma permanente en unidad flash USB idéntica a como resultaría una instalación normal sobre un disco duro.
+Esta página describe cómo realizar una instalación normal de Arch en una llave USB (o «unidad flash»). A diferencia de un [USB como soporte de instalación](/index.php/USB_Installation_Media_(Espa%C3%B1ol) "USB Installation Media (Español)"), el usb live daría como resultado la instalación de un sistema de forma permanente en una unidad flash USB idéntica a como resultaría una instalación normal sobre un disco HDD.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -39,16 +39,16 @@ Esta página describe cómo realizar una instalación normal de Arch en una llav
 Hay varias maneras de instalar Arch en una memoria USB, dependiendo del sistema operativo disponible:
 
 *   Si tenemos otro equipo disponible con linux (que no tiene por que ser con Arch), podemos seguir las instrucciones para [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux").
-*   Podemos también utilizar un CD/USB de Arch Linux para instalar Arch en la llave USB, arrancando el CD/USB y siguiendo las instrucciones de la [installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Si arrancamos desde un Live USB, la instalación tendrá que hacerse en una memoria USB diferente
-*   Si ejecuta Windows o un sistema operativo X, descargue VirtualBox, instale VirtualBox Extensions, agregue la unidad USB a una máquina virtual que ejecuta Arch (por ejemplo, ejecutandola desde una iso), apunte la instalación a la unidad USB mientras usa las instrucciones de [installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
+*   Podemos también utilizar un CD/USB de Arch Linux para instalar Arch en la llave USB, arrancando el CD/USB y siguiendo las instrucciones de la [installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Si arrancamos desde un USB Live, la instalación tendrá que hacerse en una memoria USB diferente.
+*   Si ejecuta OS X o Windows, descargue VirtualBox, instale VirtualBox Extensions, agregue la unidad USB a una máquina virtual que ejecuta Arch (por ejemplo, ejecutandola desde una iso), apunte la instalación a la unidad USB mientras usa las instrucciones de [installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
 
 ### Ajustes de instalación
 
-*   Antes de crear el disco RAM inicial `# mkinitcpio -p linux`, en `/etc/mkinitcpio.conf` agregue el hook `block` a la matriz de HOOK justo después de udev. Esto es necesario para la carga apropiada del módulo en el espacio de usuario temprano.
-*   Se recomienda encarecidamente revisar el artículo wiki [reduce las lecturas/escrituras del disco](/index.php/Improving_performance#Reduce_disk_reads.2Fwrites "Improving performance") antes de seleccionar un sistema de archivos. Para resumir, [ext4 sin journal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) debe estar bien, que puede crearse con `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. El inconveniente obvio de usar un sistema de archivos con el journal inhabilitado es la pérdida de datos como resultado de un desmontaje forzoso. Hay que reconocer que una unidad flash tiene un número limitado de escrituras, y un sistema de archivos con journald tomará algunas de estas a medida que se actualice el diario. Por esta misma razón, es mejor olvidar la partición de intercambio. Tenga en cuenta que esto no afecta a la instalación en una unidad USB.
-*   Si desea poder seguir utilizando el dispositivo UFD como unidad extraíble multiplataforma, puede lograrse mediante la creación de una partición que contenga un sistema de archivos adecuado (probablemente NTFS o exFAT). Tenga en cuenta que la partición de datos puede necesitar ser la primera partición en el dispositivo, ya que Windows asume que solo puede haber una partición en un dispositivo extraíble, y de lo contrario montará automáticamente una partición del sistema EFI. Recuerde instalar [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) y [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Algunas herramientas están disponibles en línea que pueden permitirle cambiar sobre la marcha el bit de medios extraíbles en su dispositivo UFD. Esto engañaría a los sistemas operativos para tratar su dispositivo UFD como un disco duro externo y le permitiría usar cualquier esquema de partición que elija.
+*   Antes de [crear el disco RAM inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)") en `/etc/mkinitcpio.conf` mueva los hooks `block` y `keyboard` antes del hook `autodetect`. Esto es necesario para permitir el arranque en múltiples sistemas, cada uno de los cuales requiere diferentes módulos en el espacio de usuario temprano.
+*   Se recomienda encarecidamente revisar el artículo wiki sobre [reducir las lecturas/escrituras del disco](/index.php/Improving_performance#Reduce_disk_reads.2Fwrites "Improving performance") antes de seleccionar un sistema de archivos. Para resumir, [ext4 sin journal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) debe estar bien, que puede crearse con `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. El inconveniente obvio de usar un sistema de archivos con el journal inhabilitado es la pérdida de datos como resultado de un desmontaje forzoso. Hay que reconocer que una unidad flash tiene un número limitado de escrituras, y un sistema de archivos con journald tomará algunas de estas a medida que se actualice el diario. Por esta misma razón, es mejor olvidar la partición de intercambio. Tenga en cuenta que esto no afecta a la instalación en una unidad USB.
+*   Si desea poder seguir utilizando el dispositivo USB de almacenamiento masivo como unidad extraíble multiplataforma, puede lograrse mediante la creación de una partición que contenga un sistema de archivos adecuado (probablemente NTFS o exFAT). Tenga en cuenta que la partición de datos puede necesitar ser la primera partición en el dispositivo, ya que Windows asume que solo puede haber una partición en un dispositivo extraíble, y de lo contrario montará automáticamente una partición del sistema EFI. Recuerde instalar [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) y [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Algunas herramientas están disponibles en línea que pueden permitirle cambiar sobre la marcha el bit de medios extraíbles (RMB) en su dispositivo USB de almacenamiento masivo. Esto engañaría a los sistemas operativos para tratar su dispositivo USB de almacenamiento masivo como un disco duro externo y le permitiría usar cualquier esquema de partición que elija.
 
-**Advertencia:** si no es posible cambiar sobre la marcha el bit de medios extraíbles en todos los dispositivos UFD, tratar de usar software que sea incompatible con su dispositivo puede dañarlo. Intentar voltear el bit de medios extraíbles **no** se recomienda.
+**Advertencia:** si no es posible cambiar sobre la marcha el bit de medios extraíbles (RMB) en todos los dispositivos USB de almacenamiento masivo, tratar de usar software que sea incompatible con su dispositivo puede dañarlo. Intentar voltear el bit de medios extraíbles **no** se recomienda.
 
 ## Configuración
 
@@ -65,20 +65,11 @@ Hay varias maneras de instalar Arch en una memoria USB, dependiendo del sistema 
 
 `menu.lst`, el archivo de configuración de GRUB legacy, debe ser modificado para que coincida (más o menos) con el siguiente:
 
-Con la partición /dev/sdaX estática:
-
-```
-root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/sda1 ro
-initrd /boot/initramfs-linux.img
-
-```
-
 Cuando se utiliza la etiqueta (*«label»*), el archivo *menu.lst* debería mostrar este aspecto:
 
 ```
 root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/disk/by-label/**Arch** ro
+kernel /boot/vmlinuz-linux root=/dev/disk/by-label/**Arch** rw
 initrd /boot/initramfs-linux.img
 
 ```
@@ -87,7 +78,7 @@ Y, si se usa UUID, debería mostrar este otro:
 
 ```
 root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/3a9f8929-627b-4667-9db4-388c4eaaf9fa ro
+kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/3a9f8929-627b-4667-9db4-388c4eaaf9fa rw
 initrd /boot/initramfs-linux.img
 
 ```
@@ -97,22 +88,11 @@ initrd /boot/initramfs-linux.img
 En GPT con instalaciones UEFI, asegúrese de seguir las instrucciones de [GRUB (Español)#Sistemas UEFI](/index.php/GRUB_(Espa%C3%B1ol)#Sistemas_UEFI "GRUB (Español)") e incluya la opción `--removable` ya que, de lo contrario, puede romper las instalaciones existentes de GRUB, como en la siguiente órden:
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--removable** --recheck
+# grub-install --target=x86_64-efi --efi-directory=*esp*  **--removable** --recheck
 
 ```
 
 ### Syslinux
-
-Con la partición `/dev/sdaX` estática:
-
-```
-LABEL Arch
-        MENU LABEL Arch Linux
-        LINUX ../vmlinuz-linux
-        APPEND root=/dev/sdax ro
-        INITRD ../initramfs-linux.img
-
-```
 
 Usando la UUID:
 
@@ -120,7 +100,7 @@ Usando la UUID:
 LABEL Arch
         MENU LABEL Arch Linux
         LINUX ../vmlinuz-linux
-        APPEND root=UUID=3a9f8929-627b-4667-9db4-388c4eaaf9fa ro
+        APPEND root=UUID=3a9f8929-627b-4667-9db4-388c4eaaf9fa rw
         INITRD ../initramfs-linux.img
 
 ```
@@ -139,7 +119,7 @@ Para obtener instrucciones sobre puesta a punto o problemas del touchpad, consul
 
 **Nota:** el uso de controladores de vídeo propietarios **no** es recomendable para este tipo de instalación.
 
-Para admitir las GPU más comunes, instale[xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu), and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) (y su homólogo multilib: [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa)).
+Para admitir las GPU más comunes, instale [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) y [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau).
 
 #### Nombres permanentes para los dispositivos de bloques
 
@@ -151,7 +131,7 @@ Como alternativa, puede crear reglas udev para crear un enlace simbólico person
 
 Es posible que desee desactivar KMS, por diversas razones, tales como evitar una pantalla en blanco o un error de «no signal» en la pantalla, al usar algunas tarjetas de vídeo Intel, etc. Para desactivar KMS, añada `nomodeset` como parámetro del kernel. Consulte el artículo sobre los [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") para obtener más información.
 
-**Advertencia:** Algunos controladores de [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") no funcionan con KMS desactivado. Consulte la página wiki de su controlador específico para más detalles. Nouveau, en particular, necesita KMS para determinar la resolución de pantalla correcta. Si agrega `nomodeset` como un parámetro del kernel, a modo de medida preventiva, puede que tenga que ajustar la resolución de la pantalla manualmente cuando utiliza máquinas con tarjetas de vídeo Nvidia. Véase [Xrandr](/index.php/Xrandr "Xrandr") para más información.
+**Advertencia:** algunos controladores de [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") no funcionan con KMS desactivado. Consulte la página wiki de su controlador específico para más detalles. Nouveau, en particular, necesita KMS para determinar la resolución de pantalla correcta. Si agrega `nomodeset` como un parámetro del kernel, a modo de medida preventiva, puede que tenga que ajustar la resolución de la pantalla manualmente cuando utiliza máquinas con tarjetas de vídeo Nvidia. Véase [Xrandr](/index.php/Xrandr "Xrandr") para más información.
 
 #### Arranque desde medios USB 3
 
@@ -163,7 +143,7 @@ La imagen fallback se debe utilizar para obtener una máxima compatibilidad.
 
 ### Optimizar la vida útil de la memoria flash
 
-*   Es posible que desee configurar [journald](/index.php/Systemd_(Espa%C3%B1ol)#Journal "Systemd (Español)") para almacenar sus diarios en la RAM, por ejemplo, creando un archivo de configuración personalizado:
+*   Es posible que desee configurar [journald](/index.php/Systemd_journal_(Espa%C3%B1ol) "Systemd journal (Español)") para almacenar sus diarios en la RAM, por ejemplo, creando un archivo de configuración personalizado:
 
  `/etc/systemd/journald.conf.d/usbstick.conf` 
 ```

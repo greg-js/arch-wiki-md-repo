@@ -65,6 +65,28 @@ driver = *driver-name*
 device = /dev/*path-to-dev*
 ```
 
+[Serial port receiver](http://www.lirc.org/receivers.html) configuration:
+
+We need the *setserial* package. The important lines are in the *modinit* section:
+
+ `/etc/lirc/lirc_options.conf` 
+```
+[lircd]
+nodaemon        = False
+driver          = default
+device          = auto
+output          = /var/run/lirc/lircd
+pidfile         = /var/run/lirc/lircd.pid
+plugindir       = /usr/lib/lirc/plugins
+permission      = 666
+allow-simulate  = No
+repeat-max      = 600
+
+[modinit]
+code = /usr/bin/setserial /dev/ttyS0 uart none
+code1 = /usr/sbin/modprobe serial_ir
+```
+
 ### Scancode mapping
 
 `/etc/lirc/lircd.conf.d/foo.conf` is the system-wide configuration translating scancodes to keycodes. This directory may contain multiple conf files and each one is specific to each remote control/receiver on the system. These files are user-created config files and not directly supplied by [lirc](https://www.archlinux.org/packages/?name=lirc).

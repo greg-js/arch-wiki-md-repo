@@ -53,7 +53,7 @@
 | <small>3.9.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(15)</small> |
 | <small>3.9.17.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(3)</small> |
 | <small>3.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
-| <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(18)</small> |
+| <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(19)</small> |
 | <small>3.11.1.</small> [Android](/index.php/Category:Android "Category:Android") <small>(3)</small> |
 | <small>3.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(25)</small> |
@@ -136,7 +136,7 @@
 | <small>5.1.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(12)</small> |
 | <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
 | <small>5.1.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(7)</small> |
-| <small>5.1.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(15)</small> |
+| <small>5.1.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(16)</small> |
 | <small>5.1.5.1.</small> [Relational DBMSs](/index.php/Category:Relational_DBMSs "Category:Relational DBMSs") <small>(4)</small> |
 | <small>5.1.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(3)</small> |
 | <small>5.1.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(14)</small> |

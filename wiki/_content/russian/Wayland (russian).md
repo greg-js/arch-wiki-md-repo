@@ -7,7 +7,11 @@
 
 [Wayland](http://wayland.freedesktop.org/) - новый [протокол управления окнами](https://en.wikipedia.org/wiki/ru:%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80_%D0%BE%D0%BA%D0%BE%D0%BD и [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)"). Композитор по умолчанию - Weston. А XWayland реализует прослойку, которая позволяет запускать приложения [X11](/index.php/X11 "X11") в Wayland.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Требования](#Требования)
     *   [1.1 Поддержка Buffer API](#Поддержка_Buffer_API)

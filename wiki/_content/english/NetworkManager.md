@@ -113,7 +113,7 @@ Additional interfaces:
 
 ### Mobile broadband support
 
-[Install](/index.php/Install "Install") [modemmanager](https://www.archlinux.org/packages/?name=modemmanager), [mobile-broadband-provider-info](https://www.archlinux.org/packages/?name=mobile-broadband-provider-info) and [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) packages for mobile broadband connection support. See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem") for details.
+[Install](/index.php/Install "Install") [modemmanager](https://www.archlinux.org/packages/?name=modemmanager), [mobile-broadband-provider-info](https://www.archlinux.org/packages/?name=mobile-broadband-provider-info) and [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) packages for mobile broadband connection support. See [USB 3G Modem#NetworkManager](/index.php/USB_3G_Modem#NetworkManager "USB 3G Modem") for details.
 
 ### PPPoE / DSL support
 
@@ -366,7 +366,10 @@ To use a different DHCP client [install](/index.php/Install "Install") one of th
 *   [dhclient](https://www.archlinux.org/packages/?name=dhclient) - ISC’s DHCP client.
 *   [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) - [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
 
-**Note:** NetworkManger does not support using dhcpcd for IPv6\. See [NetworkManager issue #5](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5). If dhcpcd is set as the DHCP client, Networkmanager will use the internal DHCP client for DHCPv6.
+**Note:**
+
+*   NetworkManger does not support using dhcpcd for IPv6\. See [NetworkManager issue #5](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5). If dhcpcd is set as the DHCP client, Networkmanager will use the internal DHCP client for DHCPv6.
+*   Do not enable the systemd units shipped with the [dhclient](https://www.archlinux.org/packages/?name=dhclient) and [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) packages. They will conflict with NetworkManager, see the note in [#Installation](#Installation) for details.
 
 To change the DHCP client backend, set the option `main.dhcp=*dhcp_client_name*` with a configuration file in `/etc/NetworkManager/conf.d/`. E.g.:
 
@@ -1001,8 +1004,9 @@ wifi.scan-rand-mac-address=no
 
 MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See the [GNOME blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
 
-In terms of MAC randomization the most important modes are `stable` and `random`. `stable` generates a random MAC address when you connect to a new network and associates the two permanently. This means that you will use the same MAC address every time you connect to that network. In contrast, `random` will generate a new MAC address every time you connect to a network, new or previously known. You can configure the MAC randomization by adding the desired configuration under `/etc/NetworkManager/conf.d`.
+In terms of MAC randomization the most important modes are `stable` and `random`. `stable` generates a random MAC address when you connect to a new network and associates the two permanently. This means that you will use the same MAC address every time you connect to that network. In contrast, `random` will generate a new MAC address every time you connect to a network, new or previously known. You can configure the MAC randomization by adding the desired configuration under `/etc/NetworkManager/conf.d`:
 
+ `/etc/NetworkManager/conf.d/wifi_rand_mac.conf` 
 ```
 [device-mac-randomization]
 # "yes" is already the default for scanning
@@ -1013,7 +1017,6 @@ wifi.scan-rand-mac-address=yes
 ethernet.cloned-mac-address=random
 # Generate a random MAC for each WiFi and associate the two permanently.
 wifi.cloned-mac-address=stable
-
 ```
 
 See the following [GNOME blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details.

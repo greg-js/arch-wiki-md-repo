@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-10-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=586686) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=587906) na versão em inglês.
 
 Artigos relacionados
 
@@ -250,7 +250,7 @@ $ pacman -Qs *string1* *string2* ...
 Para procurar nomes de pacotes em pacotes remotos:
 
 ```
-$ pacman -Fs *string1* *string2* ...
+$ pacman -F *string1* *string2* ...
 
 ```
 
@@ -308,7 +308,7 @@ $ pacman -Qo */caminho/para/nome_de_arquivo*
 Para consultar o banco de dados para saber de qual pacote remoto um arquivo pertence:
 
 ```
-$ pacman -Fo */caminho/para/nome_de_arquivo*
+$ pacman -F */caminho/para/nome_de_arquivo*
 
 ```
 
@@ -486,12 +486,12 @@ Sincronize a base de dados de arquivos:
 
 Pesquise por um pacote contendo um arquivo, p.ex.:
 
- `$ pacman -Fs pacman` 
+ `$ pacman -F pacman` 
 ```
-core/pacman 5.0.1-4
+core/pacman 5.2.1-1 (base base-devel) [installed]
     usr/bin/pacman
     usr/share/bash-completion/completions/pacman
-extra/xscreensaver 5.36-1
+extra/xscreensaver 5.43-1
     usr/lib/xscreensaver/pacman
 
 ```
@@ -532,7 +532,7 @@ IgnorePkg=linux
 
 ```
 
-Para vários pacotes use uma lista separada por espaço, ou use adicionais linhas `IgnorePkg`. Além disso, padrões de *glob* podem ser usados. Se você deseja pular pacotes apenas uma vez, você também pode usar a opção `--ignore` na linha de comando - dessa vez com uma lista separada por vírgula.
+Para vários pacotes use uma lista separada por espaço, ou use adicionais linhas `IgnorePkg`. Além disso, padrões de [glob](https://en.wikipedia.org/wiki/glob_(programming) podem ser usados. Se você deseja pular pacotes apenas uma vez, você também pode usar a opção `--ignore` na linha de comando - dessa vez com uma lista separada por vírgula.
 
 Ainda será possível atualizar pacotes ignorados usando `pacman -S`: neste caso, *pacman* lhe lembrará de que os pacotes têm incluídos em uma declaração de `IgnorePkg`.
 
@@ -581,7 +581,7 @@ sendo que arquivo `*/caminho/para/configurações/comuns*` contém as mesmas op�
 
 #### Hooks
 
-*pacman* pode executar hooks de pré- e pós-transação do diretório `/usr/share/libalpm/hooks/`; mais diretórios podem ser especificados com a opção `HookDir` no `pacman.conf`, que tem como padrão `/etc/pacman.d/hooks`. Nomes de arquivo hook devem ser sufixados com *.hook*.
+*pacman* pode executar hooks de pré- e pós-transação do diretório `/usr/share/libalpm/hooks/`; mais diretórios podem ser especificados com a opção `HookDir` no `pacman.conf`, que tem como padrão `/etc/pacman.d/hooks`. Nomes de arquivo hook devem ser sufixados com *.hook*. Hooks do pacman não são interativos.
 
 Hooks do *pacman* são usados, por exemplo, em combinação com `systemd-sysusers` e `systemd-tmpfiles` para criar automaticamente arquivos e usuários de sistema durante a isntalação dos pacotes. Por exemplo, o pacote `tomcat8` especifica que ele deseja um usuário de sistema chamado `tomcat8` e certos diretórios pertencentes a este usuário. Os hooks do *pacman* `systemd-sysusers.hook` e `systemd-tmpfiles.hook` chamam `systemd-sysusers` e `systemd-tmpfiles` quando o *pacman* determina que o pacote `tomcat8` contém arquivos especificando usuários e arquivos tmp.
 

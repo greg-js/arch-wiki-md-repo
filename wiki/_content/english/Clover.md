@@ -4,7 +4,7 @@ Related articles
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [EFISTUB](/index.php/EFISTUB "EFISTUB")
 
-[Clover EFI](https://sourceforge.net/projects/cloverefiboot/) is a boot loader developed to boot OS X (Hackintoshes), Windows and Linux in legacy or UEFI mode.
+[Clover EFI](https://sourceforge.net/projects/cloverefiboot/) is a boot loader developed to boot OS X ([Hackintoshes](https://en.wikipedia.org/wiki/en:Hackintosh "wikipedia:en:Hackintosh")), Windows and Linux in legacy or UEFI mode.
 
 The main advantages of Clover are:
 
@@ -16,7 +16,7 @@ The main advantages of Clover are:
 
 ## Installation
 
-Download Clover Bootable ISO from [here](http://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/).
+Download Clover Bootable ISO from [here](https://sourceforge.net/projects/cloverefiboot/files/Bootable_ISO/).
 
 Extract archive and find the `Clover-*-X64.iso` file, mount it.
 
@@ -67,5 +67,5 @@ For details please reference [their wiki](https://sourceforge.net/p/cloverefiboo
 
 ## See also
 
-*   [Project homepage](http://sourceforge.net/projects/cloverefiboot/)
+*   [Project homepage](https://sourceforge.net/projects/cloverefiboot/)
 *   [Clover Wiki](https://sourceforge.net/p/cloverefiboot/wiki/Home/)

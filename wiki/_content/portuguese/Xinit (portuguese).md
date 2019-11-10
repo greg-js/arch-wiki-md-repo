@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Xinit](/index.php/Xinit "Xinit"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=581805) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Xinit](/index.php/Xinit "Xinit"). Data da última tradução: 2019-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=586221) na versão em inglês.
 
 Artigos relacionados
 
@@ -191,7 +191,7 @@ session=${1:-xfce}
 
 case $session in
     i3|i3wm           ) exec i3;;
-    kde               ) exec startkde;;
+    kde               ) exec startplasma-x11;;
     xfce|xfce4        ) exec startxfce4;;
     # Nenhuma sessão conhecida, tenta como comando
     *                 ) exec $1;;

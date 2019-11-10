@@ -15,6 +15,7 @@ This guide is primarily targeted for clients connecting to a Windows Server mach
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 OpenSwan](#OpenSwan)
+        *   [2.1.1 Running Openswan in a container](#Running_Openswan_in_a_container)
     *   [2.2 xl2tpd](#xl2tpd)
 *   [3 Routing](#Routing)
     *   [3.1 Routing traffic to a single IP address or Subnet through the tunnel](#Routing_traffic_to_a_single_IP_address_or_Subnet_through_the_tunnel)
@@ -85,6 +86,15 @@ Add the connection, so it's available to use:
 ```
 
 At this point the IPsec configuration is complete and we can move on to the L2TP configuration.
+
+#### Running Openswan in a container
+
+Don't forget to add CAP_SYS_MODULE capability and access to host module tree. Example for nspawn:
+
+```
+-bind=/lib/modules --capability=CAP_SYS_MODULE
+
+```
 
 ### xl2tpd
 

@@ -71,6 +71,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [RoseHosting](https://www.rosehosting.com/) | Latest | OpenVZ, KVM | St. Louis, Missouri, USA | SSD powered hosting plans with free fully-managed 24/7 support. No unmanaged VPS offerings. |
 | [SeedVPS](https://www.seedvps.com/) | Latest | OpenVZ, KVM | Amsterdam, Netherlands | Linux VPS and Windows VPS Hosting in The Netherlands (NL). Newer ISO can be requested by opening a support ticket. |
 | [Server Cheap](https://www.servercheap.net) | Latest | OpenVZ, KVM | Chicago, Illinois, USA | ArchLinux available on request. Windows, BSD, and many Linux distribution hosting options. |
+| [SkyHost](https://skyhost.ru/) | Latest | LXC | Moscow, Yaroslavl, Russia |
 | [Tilaa](https://www.tilaa.com/) | 2016.03.01 | [KVM](https://www.tilaa.com/pages/vps/technology) | Amsterdam, NL |
 | [TransIP](https://www.transip.eu/) | [2017.01.01](https://www.transip.eu/vps/vps-os/) | [KVM](https://www.transip.eu/vps/vps-technology/) | Amsterdam, NL | For latest image, submit ticket. Also registrar. |
 | [upCUBE](https://upcube.io) | Latest | Docker | Germany | Different prepared arch linux templates available |

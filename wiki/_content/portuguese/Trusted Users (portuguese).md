@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Trusted Users](/index.php/Trusted_Users "Trusted Users"). Data da última tradução: 2019-10-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Trusted_Users&diff=0&oldid=584027) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Trusted Users](/index.php/Trusted_Users "Trusted Users"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Trusted_Users&diff=0&oldid=586880) na versão em inglês.
 
 Os [Trusted Users](https://www.archlinux.org/people/trusted-users/) (também conhecidos como *Usuários Confiáveis*) servem para os seguintes propósitos:
 
@@ -23,8 +23,8 @@ Ainda que você possa se tornar um TU por meramente preencher aqueles requisitos
 *   *patches* para projetos do Arch
 *   envolvimento em alguns projetos de código-fonte (mesmo se eles são seus próprios)
 
-Se você ainda estiver interessado em se tornar um TU após ler essas linhas, o primeiro passo é encontrar um TU que concorde em patrocinar (*sponsor*) você. Uma vez definido o patrocinador, escreva um aplicação espirituosa assinada com sua chave GPG para a lista de discussão do aur-general.
+Se você ainda estiver interessado em se tornar um TU após ler essas linhas, o primeiro passo é encontrar dois TUs que concordem em patrocinar (*sponsor*) você. Uma vez definido os patrocinadores, escreva uma aplicação espirituosa assinada com sua chave GPG para a lista de discussão do aur-general.
 
-**Nota:** Caso o TU que você contatou negue ser o patrocinador de sua aplicação, você deve informar este fato se você busca patrocínio de um outro TU.
+**Nota:** Caso um TU que você contatou negue ser o patrocinador de sua aplicação, você deve informar este fato se você busca patrocínio de um outro TU.
 
 Para mais informações, veja as [Trusted User Bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) ("Estatuto de TUs") e [Diretrizes de Trusted User do AUR](/index.php/Diretrizes_de_Trusted_User_do_AUR "Diretrizes de Trusted User do AUR").

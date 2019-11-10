@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AbiWord](/index.php/AbiWord "AbiWord"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=579248) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AbiWord](/index.php/AbiWord "AbiWord"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=586932) na versão em inglês.
 
 [AbiWord](http://www.abisource.com/) é um processador de texto que oferece uma alternativa mais leve para o [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer e o [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, ao mesmo tempo em que fornece excelente funcionalidade. O AbiWord possui suporte a muitos tipos de documentos padrão, como documentos ODF, documentos do Microsoft Word, documentos do WordPerfect, documentos em formato Rich Text e páginas da Web em HTML.
 
@@ -13,6 +13,7 @@
 *   [3 Modelos](#Modelos)
     *   [3.1 Usando modelos](#Usando_modelos)
     *   [3.2 Criando ou alterando modelos](#Criando_ou_alterando_modelos)
+    *   [3.3 Mala direta](#Mala_direta)
 *   [4 Verificação gramatical](#Verificação_gramatical)
 *   [5 Alterar associações de teclas](#Alterar_associações_de_teclas)
 *   [6 Fontes LaTeX](#Fontes_LaTeX)
@@ -48,6 +49,10 @@ AbiWord possibilita que você faça seus próprios arquivos de modelos, com os e
 Para criar/alterar um arquivo de modelo, basta abrir um novo documento ou existente, e fazer as alterações desejadas a esse arquivo. Então, use a opção de menu "Salvar Como" para nomeá-lo como quiser, com *.awt* como extensão (por exemplo, *foobar.awt*) e salvá-lo na pasta `~/.config/abiword/templates`. Agora, seu novo modelo pode ser acessado em *Arquivo > Novo a partir de Modelo...* pelo seu nome de arquivo (*foobar.awt* no exemplo dado).
 
 **Nota:** Se não existir, a pasta `templates` será criada automaticamente na inicialização dentro de `~/.config/abiword-3.0/`.
+
+### Mala direta
+
+Você pode criar um arquivo CSV com os dados a serem usados e executar o Abiword na linha de comando em um modelo para renderizar diretamente seus arquivos finais. Consulte [este guia](https://www.abisource.com/help/en-US/howto/howtomailmerge.html) para obter mais detalhes.
 
 ## Verificação gramatical
 

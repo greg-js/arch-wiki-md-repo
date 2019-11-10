@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network tools](/index.php/Network_tools "Network tools"). Data da última tradução: 2019-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_tools&diff=0&oldid=559049) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network tools](/index.php/Network_tools "Network tools"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_tools&diff=0&oldid=585519) na versão em inglês.
 
 Artigos relacionados
 
@@ -26,7 +26,7 @@ Essa página lista várias ferramentas de rede. *ping* e *ip* são cobertos por 
 
 Há várias implementações disponíveis:
 
-*   [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8) do [iputils](https://www.archlinux.org/packages/?name=iputils) (parte do [base](https://www.archlinux.org/packages/?name=base))
+*   [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8) do [iputils](https://www.archlinux.org/packages/?name=iputils) (necessário para o [base](https://www.archlinux.org/packages/?name=base))
 *   [traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) do [traceroute](https://www.archlinux.org/packages/?name=traceroute)
 *   **MTR** — Combina a funcionalidade do traceroute e do ping em uma ferramenta.
 

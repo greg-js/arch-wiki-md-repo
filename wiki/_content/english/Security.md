@@ -5,6 +5,7 @@ Related articles
 *   [PAM](/index.php/PAM "PAM")
 *   [Capabilities](/index.php/Capabilities "Capabilities")
 *   [List of Applications/Security](/index.php/List_of_Applications/Security "List of Applications/Security")
+*   [Security package guidelines](/index.php/Security_package_guidelines "Security package guidelines")
 
 This article contains recommendations and best practices for [hardening](https://en.wikipedia.org/wiki/Hardening_(computing) an Arch Linux system.
 

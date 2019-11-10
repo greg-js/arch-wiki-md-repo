@@ -374,6 +374,15 @@ $ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config`
 `$ export CRAWL_DIR="$XDG_DATA_HOME"/crawl/`
 
  |
+| [clusterssh](https://www.archlinux.org/packages/?name=clusterssh) | `~/.clusterssh/` | `$ alias cssh="cssh --config-file '$XDG_CONFIG_HOME/clusterssh/config'"` `$XDG_CONFIG_HOME/clusterssh/config` 
+```
+extra_cluster_file=$HOME/.config/clusterssh/clusters
+extra_tag_file=$HOMe/.config/clusterssh/tags
+```
+
+Despite this, clusterssh will still create `~/.clusterssh/`.
+
+ |
 | [CUDA](/index.php/CUDA "CUDA") | `~/.nv` | `$ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv` |
 | [dict](/index.php/Dict "Dict") | `~/.dictrc` | `$ dict -c "$XDG_CONFIG_HOME"/dict/dictrc` |
 | [Docker](/index.php/Docker "Docker") | `~/.docker` | `$ export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker` |
@@ -791,6 +800,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [gtk-recordMyDesktop](http://recordmydesktop.sourceforge.net/about.php) | `~/.gtk-recordmydesktop` |
 | [hplip](https://www.archlinux.org/packages/?name=hplip) | `~/.hplip/` | [[147]](https://bugs.launchpad.net/hplip/+bug/307152) |
 | [idris](http://www.idris-lang.org/) | `~/.idris` | [[148]](https://github.com/idris-lang/Idris-dev/pull/3456) |
+| [iwd](https://iwd.wiki.kernel.org/) / iwctl | `~/.iwctl_history` |
 | [Java](/index.php/Java "Java") OpenJDK | `~/.java/fonts` | [[149]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) |
 | [Java](/index.php/Java "Java") OpenJFX | `~/.java/webview` |
 | [julia](http://julialang.org/) | 

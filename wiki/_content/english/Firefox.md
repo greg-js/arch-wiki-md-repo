@@ -264,7 +264,7 @@ If you have a high refresh rate monitor, Firefox might not be able to automatica
 
 ### Memory limit
 
-To prevent pages from abusing memory (and possible OOM), we can use [Firejail](/index.php/Firejail "Firejail") with the `rlimit-as` option.
+To prevent pages from abusing memory (and possible [OOM](https://en.wikipedia.org/wiki/Out_of_memory "wikipedia:Out of memory")), we can use [Firejail](/index.php/Firejail "Firejail") with the `rlimit-as` option.
 
 Decreasing [swappiness](/index.php/Swappiness "Swappiness") may also help.
 
@@ -276,37 +276,20 @@ To control where new tabs appears (relative or absolute), use `browser.tabs.inse
 
 You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right-clicking on the webpage. See [[3]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
 
-**Note:**
-
-*   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[4]](https://github.com/mozilla-services/screenshots/issues/3503)
-*   If [privacy.resistFingerprinting](/index.php/Firefox/Privacy#Anti-fingerprinting "Firefox/Privacy") is enabled, to take a screenshot of a website using the above method, you need to grant it *Extract Canvas Data* permission.
-
-As an alternative you can use the full-page screenshot button in the *Developer Tools*, which you can open with `F12` or `Ctrl+Shift+i` (you might need to enable the button first in the *Developer Tools Settings > Available Toolbox Buttons > Take a screenshot of the entire page*).
+As an alternative you can use the screenshot button in the [Developer Tools](https://developer.mozilla.org/en-US/docs/Tools/Taking_screenshots).
 
 ### Wayland
 
 More recent versions of Firefox support opting into Wayland via an environment variable.
-
-To opt in, first make sure you really are in a Wayland session:
-
- `$ printenv XDG_SESSION_TYPE` 
-```
-wayland
-
-```
-
-Next, start Firefox like this:
 
 ```
 $ MOZ_ENABLE_WAYLAND=1 firefox
 
 ```
 
-Next go to about:support in the URL bar and check the Window Protocol field. If this worked, then it should say `wayland`. Otherwise, it will say `x11`.
+You may enter `about:support` in the URL bar to check the *Window Protocol*. It should say *wayland* instead of *x11*.
 
-To make this permanent, edit Firefox's *.desktop* file (`firefox.desktop`) and add `env MOZ_ENABLE_WAYLAND=1` to all `Exec=` lines. See [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") for instructions.
-
-Finally, open Firefox via the launcher like you normally would and verify it worked by checking Window Protocol again.
+To make this permanent, see [Environment variables#Graphical environment](/index.php/Environment_variables#Graphical_environment "Environment variables") and start Firefox via the desktop launcher like you normally would. To verify it worked check the *Window Protocol* again.
 
 ### Window manager rules
 
@@ -425,7 +408,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### JavaScript context menu does not appear on some sites
 
@@ -441,13 +424,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab *Dictionaries* in *Add-ons*. You may have to change the order of *preferred language for displaying pages* in `about:preferences#general` to make the spell check default to the language of the addon dictionary.
 
-Related questions on the **StackExchange** platform: [[6]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[7]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[8]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[9]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Making fonts available to Fontconfig](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

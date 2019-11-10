@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=581129) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-11-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=587540) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -23,7 +23,9 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
     *   [2.3 pip](#pip)
     *   [2.4 Tradução 2to3 em tempo de compilação](#Tradução_2to3_em_tempo_de_compilação)
 *   [3 Verificação](#Verificação)
-*   [4 Notas](#Notas)
+*   [4 Dicas e truques](#Dicas_e_truques)
+    *   [4.1 Usando site-packages](#Usando_site-packages)
+    *   [4.2 Diretório de teste em site-package](#Diretório_de_teste_em_site-package)
 
 ## Nome do pacote
 
@@ -180,17 +182,17 @@ check(){
 
 ```
 
-Se houver uma extensão C compilada, os testes precisam ser executados usando um hack `$PYTHONPATH` para localizá-la e carregá-la.
+Se houver uma extensão C compilada, os testes precisam ser executados usando um `$PYTHONPATH`, que reflete a versão maior e menor do Python, para localizá-la e carregá-la.
 
 ```
 check(){
-    cd "$srcdir/foo-$pkgver"
+  cd "$pkgname-$pkgver"
+  local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+  # Para nosetests
+  PYTHONPATH="$PWD/build/lib.linux-$CARCH-${python_version}" nosetests
 
-    # Para nosetests
-    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" nosetests
-
-    # Para pytest
-    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" pytest
+  # Para pytest
+  PYTHONPATH="$PWD/build/lib.linux-$CARCH-${python_version}" pytest
 }
 ```
 
@@ -209,6 +211,20 @@ check(){
 
 ```
 
-## Notas
+## Dicas e truques
 
-Não instale um diretório chamado apenas `tests`, pois ele facilmente entra em conflito com outros pacotes Python (por exemplo, `/usr/lib/python2.7/site-packages/tests/`).
+### Usando site-packages
+
+Às vezes, durante a compilação, o teste ou a instalação, é necessário consultar o diretório `site-packages` do sistema. Para não codificar o diretório, use uma chamada para a versão Python do sistema para recuperar o caminho e armazená-lo em uma variável local:
+
+```
+check(){
+  cd "$pkgname-$pkgver"
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  ...
+}
+```
+
+### Diretório de teste em site-package
+
+Certifique-se de não instalar um diretório chamado apenas `tests` em `site-packages` (por exemplo, `/usr/lib/python2.7/site-packages/tests/`), pois ele facilmente entra em conflito com outros pacotes Python.

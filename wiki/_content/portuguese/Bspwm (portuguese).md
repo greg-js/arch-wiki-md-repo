@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [bspwm](/index.php/Bspwm "Bspwm"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bspwm&diff=0&oldid=581085) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [bspwm](/index.php/Bspwm "Bspwm"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bspwm&diff=0&oldid=587896) na versão em inglês.
 
 Related articles
 
@@ -20,18 +20,20 @@ Related articles
     *   [3.2 Regras](#Regras)
     *   [3.3 Painéis](#Painéis)
         *   [3.3.1 Usando lemonbar](#Usando_lemonbar)
-        *   [3.3.2 Usando polybar](#Usando_polybar)
+        *   [3.3.2 Usando yabar](#Usando_yabar)
+        *   [3.3.3 Usando polybar](#Usando_polybar)
     *   [3.4 Scratchpad](#Scratchpad)
     *   [3.5 Configurações diferentes de monitores para diferentes máquinas](#Configurações_diferentes_de_monitores_para_diferentes_máquinas)
     *   [3.6 Configurar um desktop onde todas as janelas estão flutuando](#Configurar_um_desktop_onde_todas_as_janelas_estão_flutuando)
     *   [3.7 Teclado](#Teclado)
 *   [4 Solução de problemas](#Solução_de_problemas)
     *   [4.1 Tela em branco e atalhos de teclado não funcionam](#Tela_em_branco_e_atalhos_de_teclado_não_funcionam)
-    *   [4.2 Caixa de janela maior que o aplicativo](#Caixa_de_janela_maior_que_o_aplicativo)
-    *   [4.3 Problemas com aplicativos java](#Problemas_com_aplicativos_java)
-    *   [4.4 Problemas com atalhos de teclado usando fish](#Problemas_com_atalhos_de_teclado_usando_fish)
-    *   [4.5 Mensagens de erro "Não foi possível pegar a chave 43 com modfield 68" no início](#Mensagens_de_erro_"Não_foi_possível_pegar_a_chave_43_com_modfield_68"_no_início)
-    *   [4.6 Menu de contexto do Firefox seleciona automaticamente a primeira opção no clique de botão direito](#Menu_de_contexto_do_Firefox_seleciona_automaticamente_a_primeira_opção_no_clique_de_botão_direito)
+    *   [4.2 Temas de cursor funcionam no desktop](#Temas_de_cursor_funcionam_no_desktop)
+    *   [4.3 Caixa de janela maior que o aplicativo](#Caixa_de_janela_maior_que_o_aplicativo)
+    *   [4.4 Problemas com aplicativos java](#Problemas_com_aplicativos_java)
+    *   [4.5 Problemas com atalhos de teclado usando fish](#Problemas_com_atalhos_de_teclado_usando_fish)
+    *   [4.6 Mensagens de erro "Não foi possível pegar a chave 43 com modfield 68" no início](#Mensagens_de_erro_"Não_foi_possível_pegar_a_chave_43_com_modfield_68"_no_início)
+    *   [4.7 Menu de contexto do Firefox seleciona automaticamente a primeira opção no clique de botão direito](#Menu_de_contexto_do_Firefox_seleciona_automaticamente_a_primeira_opção_no_clique_de_botão_direito)
 *   [5 Veja também](#Veja_também)
 
 ## Instalação
@@ -129,9 +131,13 @@ done &
 
 ```
 
+#### Usando yabar
+
+O uso do painel de exemplo usando lemonbar requer que você defina seu ambiente (.profile) e verifique se os scripts do painel estão no seu caminho. O painel mais fácil de configurar é o [yabar](https://aur.archlinux.org/packages/yabar/), que possui apenas um arquivo de configuração.
+
 #### Usando polybar
 
-[Polybar](/index.php/Polybar "Polybar") can be used by adding `polybar *example* &` to your bspwmrc configuration file, where `*example*` is the name of the bar.
+[Polybar](/index.php/Polybar "Polybar") pode ser usada adicionando `polybar *exemplo* &` ao seu arquivo de configuração bspwmrc, sendo `*example*` o nome da barra.
 
 ### Scratchpad
 
@@ -218,6 +224,10 @@ Para atalhos de teclado, você terá que configurar um serviço de hotkey como [
 *   Certifique-se de estar iniciando o sxhkd (em segundo plano, pois bloquear o console).
 *   Certifique-se de que `~/.config/bspwm/bspwmrc` está executável.
 
+### Temas de cursor funcionam no desktop
+
+Veja [Temas de cursor#Mude o cursor padrão com forma de X](/index.php/Temas_de_cursor#Mude_o_cursor_padrão_com_forma_de_X "Temas de cursor")
+
 ### Caixa de janela maior que o aplicativo
 
 Isso pode acontecer se você estiver usando aplicativos GTK3 e, geralmente, para janelas de diálogo. A correção é criar ou adicionar o seguinte a um arquivo de tema gtk3 (`~/.config/gtk-3.0/gtk.css`):
@@ -240,7 +250,7 @@ Isso pode acontecer se você estiver usando aplicativos GTK3 e, geralmente, para
 
 ### Problemas com aplicativos java
 
-Se você tiver problemas com o aplicações Java, tal como a janela não está redimensionando ou os menus fecham imediatamente após o clique, consulte [Java (Português)#Janela cinza | Aplicações sem redimensionamento com o WM | menus fechando imediatamente](/index.php/Java_(Portugu%C3%AAs)#Janela_cinza_|_Aplicações_sem_redimensionamento_com_o_WM_|_menus_fechando_imediatamente "Java (Português)").
+Se você tiver problemas com o aplicações Java, tal como a janela não está redimensionando ou os menus fecham imediatamente após o clique, consulte [Java (Português)#Janela cinza, aplicações sem redimensionamento com o WM, menus fechando imediatamente](/index.php/Java_(Portugu%C3%AAs)#Janela_cinza,_aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente "Java (Português)").
 
 ### Problemas com atalhos de teclado usando fish
 
@@ -259,12 +269,14 @@ Se já tentou usar a mesma chave por duas vezes ou também o sxhkd. Verifique o 
 
 ### Menu de contexto do Firefox seleciona automaticamente a primeira opção no clique de botão direito
 
-Adicione a seguinte linha ao arquivo `userChrome.css` do perfil do Firefox
+Adicione a seguinte linha ao arquivo `userChrome.css` do perfil do Firefox:
 
 ```
 #contentAreaContextMenu{ margin: 5px 0 0 5px }
 
 ```
+
+O arquivo deve estar localizado em `~/.mozilla/firefox/*alguma-coisa*.default/chrome/` (ele precisará ser criado se você ainda não tiver um). Além disso, no Firefox, você terá que acessar a página `about:config` e ativar a opção `toolkit.legacyUserProfileCustomizations.stylesheets`; caso contrário, o Firefox ignorará o arquivo userChrome.css.
 
 ## Veja também
 

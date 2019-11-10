@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=580146) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=587883) na versão em inglês.
 
 Artigos relacionados
 
@@ -26,6 +26,10 @@ Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "w
 *   [7 Servidores DNS](#Servidores_DNS)
     *   [7.1 Servidores apenas autoritativos](#Servidores_apenas_autoritativos)
     *   [7.2 Encaminhamento condicional](#Encaminhamento_condicional)
+        *   [7.2.1 Suporte a combinação de softwares](#Suporte_a_combinação_de_softwares)
+            *   [7.2.1.1 Suporte a usuário de openresolv](#Suporte_a_usuário_de_openresolv)
+            *   [7.2.1.2 Suporte a assinante de openresolv](#Suporte_a_assinante_de_openresolv)
+            *   [7.2.1.3 Outras soluções](#Outras_soluções)
 *   [8 Veja também](#Veja_também)
 
 ## Name Service Switch
@@ -143,7 +147,7 @@ O protocolo DNS não é criptografado e não leva em conta a confidencialidade, 
 
 Você precisa confiar em seu servidor DNS para tratar suas consultas de maneira confidencial. Os servidores DNS são fornecidos por ISPs e [terceiros](#Serviços_DNS_de_terceiros). Como alternativa, você pode executar seu próprio servidor de nome recursivo, o que, no entanto, exige mais esforço. Se você usa um cliente [DHCP](/index.php/DHCP_(Portugu%C3%AAs) "DHCP (Português)") em redes não confiáveis, defina os servidores de nomes estáticos para evitar o uso e a sujeição a servidores DNS arbitrários. Para proteger sua comunicação com um servidor DNS remoto, você pode usar um protocolo criptografado, como [DNS por TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") ou [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"), desde que o servidor upstream e seu [resolvedor](#Servidores_DNS) possuam suporte ao protocolo. Para verificar se as respostas são realmente de [servidores de nome autoritativos](https://en.wikipedia.org/wiki/Authoritative_name_server "wikipedia:Authoritative name server"), você pode validar [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)"), desde que ambos os servidores upstream e seu [resolvedor](#Servidores_DNS) tenha suporte a isso.
 
-Esteja ciente de que o software cliente, como os principais navegadores da Web, também pode (começar a) implementar alguns dos protocolos. Embora a criptografia de consultas possa ser vista como um bônus, isso também significa que o software avisa sobre a configuração do resolvedor do sistema. [[2]](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/#trr-and-doh)
+Esteja ciente de que o software cliente, como os principais navegadores da Web, também pode (começar a) implementar alguns dos protocolos do DNS criptografados. Embora a criptografia de consultas possa ser vista como um bônus, isso também significa que o software avisa sobre a configuração do resolvedor do sistema, [[2]](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/#trr-and-doh) [Mozilla propôs](https://support.mozilla.org/pt-BR/kb/configurando-redes-para-desativar-dns-sobre-https) desabilitar o DNS a nível de aplicativo se o resolvedor do sistema não puder resolver o domínio "[use-application-dns.net](http://use-application-dns.net/)". Atualmente, essa verificação está implementada apenas no [Firefox](/index.php/Firefox "Firefox").
 
 ## Serviços DNS de terceiros
 
@@ -177,11 +181,11 @@ por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTP
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | [knot-resolver](https://aur.archlinux.org/packages/knot-resolver/) | Sim | Sim | Sim | Sim | Não | Sim | Não | Sim | [Servidor](https://knot-resolver.readthedocs.io/en/stable/modules.html#dns-over-http-doh) |
 | [MaraDNS](https://en.wikipedia.org/wiki/MaraDNS "wikipedia:MaraDNS") | [maradns](https://aur.archlinux.org/packages/maradns/) | Sim | Sim | Sim | Não | Não | Sim | Não | Não | Não |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Sim | Sim | Permanente | Não | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | Não | Não |
-| [PowerDNS Recursor](https://www.powerdns.com/recursor.html) | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Sim | Sim | Sim | Sim | [Não](https://roy.marples.name/projects/openresolv/config#pdns_recursor) | Sim | Não | Não | Não |
+| [PowerDNS Recursor](https://www.powerdns.com/recursor.html) | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Sim | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | Não | Não |
 | [Unbound](/index.php/Unbound "Unbound") | [unbound](https://www.archlinux.org/packages/?name=unbound) | Sim | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Servidor | Sim | [Não](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
 
 1.  Só encaminha usando DNS por HTTPS quando Rescached em si é consultado usando DNS por HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
-2.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que como o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".*[[4]](https://github.com/systemd/systemd/issues/9397) Além disso, o único modo suportado é "opportunistic", o que *torna o DNS-over-TLS vulnerável a ataques de "downgrade"*.[[5]](https://github.com/systemd/systemd/issues/10755)
+2.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que como o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".*[[4]](https://github.com/systemd/systemd/issues/9397)
 3.  Do [Wikipédia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software#cite_note-masqauth-25 "wikipedia:Comparison of DNS server software"): dnsmasq tem um suporte autoritativo limitado, sendo destinado a rede interna em vez de uso público na Internet.
 
 ### Servidores apenas autoritativos
@@ -200,6 +204,40 @@ geográfico |
 Para implementá-lo, você precisa usar um [resolvedor local](#Servidores_DNS) porque o glibc não oferece suporte a isso.
 
 Em um ambiente dinâmico (laptops e algumas extensões de desktops), você precisa configurar seu resolvedor com base na(s) rede(s) à(s) qual(is) você está conectado. A melhor maneira de fazer isso é usar [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") porque ele possui suporte a [vários assinantes](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)"). Alguns [gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede") possuem suporte, seja através do openresolv, ou configurando o resolvedor diretamente.
+
+#### Suporte a combinação de softwares
+
+##### Suporte a usuário de openresolv
+
+<caption>Clientes DHCP</caption>
+| Software | Suporte ? |
+| [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | Desconhecido |
+| [iwd](/index.php/Iwd "Iwd") | Desconhecido |
+
+<caption>Gerenciadores de rede</caption>
+| Software | Suporte ? |
+| [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Parcial |
+| [netctl](/index.php/Netctl "Netctl") | Desconhecido |
+
+<caption>Clientes VPN</caption>
+| Software | Suporte ? |
+| [OpenConnect](/index.php/OpenConnect_(Portugu%C3%AAs) "OpenConnect (Português)") | Desconhecido |
+| [OpenVPN](/index.php/OpenVPN "OpenVPN") | Desconhecido |
+| [strongSwan](/index.php/StrongSwan "StrongSwan") | Desconhecido |
+| [WireGuard](/index.php/WireGuard "WireGuard") | Desconhecido |
+
+##### Suporte a assinante de openresolv
+
+| Software | Suporte ? |
+| [BIND](/index.php/BIND "BIND") | Desconhecido |
+| [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | Sim |
+| [pdnsd](/index.php/Pdnsd "Pdnsd") | Desconhecido |
+| [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Desconhecido |
+| [Unbound](/index.php/Unbound "Unbound") | Desconhecido |
+
+##### Outras soluções
+
+NetworkManager possui [suporte a encaminhamento condicional sem o openresolv](/index.php/NetworkManager_(Portugu%C3%AAs)#Cache_de_DNS_e_encaminhamento_condicional "NetworkManager (Português)").
 
 **Nota:** Embora você possa usar outras condições para encaminhamento (por exemplo, endereço de IP de origem), "encaminhamento condicional" parece ser o nome usado para a condição "domínio consultado".
 

@@ -42,13 +42,9 @@ $ asp checkout linux
 At this point, the directory tree looks like:
 
 ```
-~/build/linux/-+
-               +--60-linux.hook
-               +--90-linux.hook
-               +--config
-               +--linux.install
-               +--linux.preset
-               \__PKGBUILD
+~/build/linux/trunk-+
+                   +--config
+                   \__PKGBUILD
 ```
 
 Then, get any other file you need (e.g. custom configuration files, patches, etc.) from the respective sources.
@@ -61,8 +57,6 @@ Edit `PKGBUILD` and look for the `pkgbase` parameter. Change this to your custom
  pkgbase=linux-custom
 
 ```
-
-Depending on the PKGBUILD you may have to also rename `linux.install` to match the modified `pkgbase`.
 
 ### Changing prepare()
 
@@ -174,19 +168,19 @@ f676926c7f60 ZEN: Add CONFIG for unprivileged_userns_clone
 
 This shows few specific archlinux patches between Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. The important lines here are Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. Obviously, there might be other patches at other versions, and the commit identifiers, such as f676926c7f60, as well as the kernel version, will be different for other versions.
 
-The up to date PKGBUILD, as well as few other archlinux specific packaging helper files, can be pulled in by the `asp` command:
+The up to date PKGBUILD, as well archlinux kernel configuration file, can be pulled in by the `asp` command:
 
 ```
 $ cd ~/build
 $ asp update linux
 $ asp -f export linux
-$ cd ~/build/linux
+$ cd ~/build/linux/trunk
 
 ```
 
 Then run manually most, if not all, the shell commands of PKGBUILD::prepare().
 
-At this point, `makepkg --verifysource` should succseed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
+At this point, `makepkg --verifysource` should succeed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
 
 ## See Also
 

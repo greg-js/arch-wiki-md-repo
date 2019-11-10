@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch package guidelines](/index.php/Arch_package_guidelines "Arch package guidelines"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_package_guidelines&diff=0&oldid=575385) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch package guidelines](/index.php/Arch_package_guidelines "Arch package guidelines"). Data da última tradução: 2019-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_package_guidelines&diff=0&oldid=586670) na versão em inglês.
 
 Artigos relacionados
 
@@ -7,6 +7,7 @@ Artigos relacionados
 *   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
 *   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
 *   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [Diretrizes de segurança para pacotes](/index.php/Diretrizes_de_seguran%C3%A7a_para_pacotes "Diretrizes de segurança para pacotes")
 
 Ao compilar pacotes para o Arch Linux, **siga as diretrizes de empacotamento** abaixo, especialmente se a intenção é **contribuir** com um novo pacote para o Arch Linux. Você também deve ler as páginas de manual do [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) e do [makepkg](https://archlinux.org/pacman/makepkg.8.html).
 
@@ -19,11 +20,12 @@ Ao compilar pacotes para o Arch Linux, **siga as diretrizes de empacotamento** a
 *   [1 Protótipo de PKGBUILD](#Protótipo_de_PKGBUILD)
 *   [2 Etiqueta de pacotes](#Etiqueta_de_pacotes)
 *   [3 Nomenclatura de pacotes](#Nomenclatura_de_pacotes)
-*   [4 Diretórios](#Diretórios)
-*   [5 Tarefas do Makepkg](#Tarefas_do_Makepkg)
-*   [6 Arquiteturas](#Arquiteturas)
-*   [7 Licenças](#Licenças)
-*   [8 Diretrizes adicionais](#Diretrizes_adicionais)
+*   [4 Versionamento de pacotes](#Versionamento_de_pacotes)
+*   [5 Diretórios](#Diretórios)
+*   [6 Tarefas do Makepkg](#Tarefas_do_Makepkg)
+*   [7 Arquiteturas](#Arquiteturas)
+*   [8 Licenças](#Licenças)
+*   [9 Diretrizes adicionais](#Diretrizes_adicionais)
 
 ## Protótipo de PKGBUILD
 
@@ -102,8 +104,14 @@ optdepends=('cups: printing support'
 *   Nomes de pacotes pode conter apenas caracteres alfanuméricos e algum entre `@`, `.`, `_`, `+`, `-`. Nomes não podem iniciar com hífenes ou pontos. Todas as letras devem ser **minúsculas**.
 *   Nomes de pacotes NÃO devem ser sufixados com o número de versão principal de lançamento do upstream (ex.: não queremos libfoo2 se upstream chama-o de libfoo v2.3.4) no caso da biblioteca e suas dependências esperadas para serem capazes de manter o uso da maioria das versões recentes de biblioteca com cada lançamento do upstream. Porém, para alguns softwares ou dependências, isso não pode ser presumido. No passado, isso foi especialmente verdadeiro para kits de ferramentas de widget, tal como GTK ou Qt. Softwares que depende em tais kits de ferramentas geralmente podem não ser trivialmente portadas para uma nova versão maior. Como tal, em casos em que softwares podem, trivialmente, se manter funcionando junto com suas dependências, nomes de pacotes devem carregar o sufixo da versão maior (ex.: gtk2, gtk3, qt4, qt5). Para casos em que a maioria das dependências podem se manter funcionando junto com lançamentos mais novos, mas alguns não podem (por exemplo, código fechado que precisa de libpng12 ou similar), uma versão obsoleta daquele pacote pode ser chamado de libfoo1 enquanto a versão atual é apenas libfoo.
 
-*   Versões de pacotes **devem ser as mesmas que a versão lançada pelo autor**. Versões podem incluir letras, se for necessário (ex: a versão do nmap é 2.54BETA32). **Tags de versão não podem incluir hífens!** Letras, números e pontos, somente.
-*   Lançamentos de pacotes são **específicos de pacotes do Arch Linux**. Eles permitem a usuários diferenciar entre compilações de pacotes mais novas das mais antigas. Quando uma nova versão de software do pacote é lançada, o **contador de lançamento recomeça em 1**. Então, na medida em que correções e otimizações forem feitas, o pacote será **relançado** para o público do Arch Linux e o **número de lançamento será incrementado**. Quando uma nova versão for lançada, o contador de lançamento será reiniciado para 1\. As tags de lançamento do pacote seguem as **mesmas restrições de nomenclatura que tags de versão**.
+## Versionamento de pacotes
+
+*   Versões de pacotes (p.ex., [PKGBUILD (Português)#pkgver](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgver "PKGBUILD (Português)")) **devem ser as mesmas que a versão lançada pelo autor**. Versões podem incluir letras, se for necessário (ex: a versão do nmap é 2.54BETA32). **Tags de versão não podem incluir hífens!** Letras, números e pontos, somente.
+*   **Pacotes estáveis empacotam lançamentos estáveis**: Candidatos a lançamento (p.ex., `1.0.0-rc1`), alfa (p.ex., `1.0.0-alpha1`) e beta (p.ex., `1.0.0-beta1`) não são permitidos e são apenas para ser usado sob as seguintes circunstâncias:
+    *   O lançamentos não estável contém correções de segurança **urgentes** (e *backporting* não é trivial).
+    *   O lançamento não estável permite que o pacote seja compilado (p.ex., problemas introduzidos por causa de dependências atualizadas) e essas alterações não poderiam, do contrário, ser backportado facilmente.
+    *   O lançamento não estável permite a distribuição descartar um componente EOL (p.ex., qt4, python2).
+*   Lançamentos de pacotes (p.ex., [PKGBUILD (Português)#pkgrel](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgrel "PKGBUILD (Português)")) são **específicos de pacotes do Arch Linux**. Eles permitem a usuários diferenciar entre compilações de pacotes mais novas das mais antigas. Quando uma nova versão de software do pacote é lançada, o **contador de lançamento recomeça em 1**. Então, na medida em que correções e otimizações forem feitas, o pacote será **relançado** para o público do Arch Linux e o **número de lançamento será incrementado**. Quando uma nova versão for lançada, o contador de lançamento será reiniciado para 1\. As tags de lançamento do pacote seguem as **mesmas restrições de nomenclatura que tags de versão**.
 
 ## Diretórios
 

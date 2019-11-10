@@ -1,6 +1,10 @@
 This article describes how to split audio files using CUE metadata.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Splitting](#Splitting)
@@ -35,7 +39,7 @@ $ bchunk -v -w file.bin file.cue out
 Format for output file names can be specified with the `-t` option (`%n` for track number, `%t` for title):
 
 ```
-$ shnsplit -f file.cue -t "%n %t" file.ape
+$ shnsplit -f file.cue -t "%n %t" file.ape
 
 ```
 
@@ -49,14 +53,14 @@ $ shnsplit -f file.cue -o flac file.ape
 Encoding options, including the encoder itself, can be specified with the `-o` parameter (see `shntool(1)` for details):
 
 ```
-$ shnsplit -f file.cue -o "flac flac -s -8 -o %f -" file.ape
+$ shnsplit -f file.cue -o "flac flac -s -8 -o %f -" file.ape
 
 ```
 
 The formats supported by *shntool* and default encoder options can be view with the `shntool -a` command. If the desired format is not supported by *shntool*, it can be specified manually. For example, to encode split tracks directly into the Ogg Vorbis format:
 
 ```
-$ shnsplit -f file.cue -o "cust ext=ogg oggenc -b 192 -o %f -" file.ape
+$ shnsplit -f file.cue -o "cust ext=ogg oggenc -b 192 -o %f -" file.ape
 
 ```
 

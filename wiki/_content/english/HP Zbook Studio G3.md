@@ -1,6 +1,10 @@
 The HP Zbook Studio G3 is a workstation replacement laptop.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Using hybrid graphics](#Using_hybrid_graphics)
@@ -11,6 +15,7 @@ The HP Zbook Studio G3 is a workstation replacement laptop.
     *   [2.1 X config](#X_config)
     *   [2.2 HiDPI configuration](#HiDPI_configuration)
     *   [2.3 Touchpad configuration](#Touchpad_configuration)
+    *   [2.4 Mute button LED indicator](#Mute_button_LED_indicator)
 
 ## Installation
 
@@ -71,3 +76,9 @@ install i2c_hid /bin/false
 ```
 
 After a reboot (unloading `i2c_hid`, if possible, may be sufficient) the touchpad should be fully configurable [libinput device](/index.php/Libinput#Configuration "Libinput").
+
+### Mute button LED indicator
+
+To fix the mute button LED, create a file
+
+ `/etc/modprobe.d/alsa-base.conf`  `options snd-hda-intel model=mute-led-gpio`

@@ -216,7 +216,6 @@ Create the server config file:
 ```
 [Interface]
 Address = 10.200.200.1/24
-SaveConfig = true
 ListenPort = 51820
 PrivateKey = [SERVER PRIVATE KEY]
 
@@ -466,7 +465,7 @@ Address = 10.200.200.3/32
 [Route]
 Gateway = 10.200.200.1
 Destination = 10.200.200.0/24
-GatewayOnlink=true
+GatewayOnLink=true
 ```
 
 ### Store private keys in encrypted form

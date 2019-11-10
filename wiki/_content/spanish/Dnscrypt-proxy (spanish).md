@@ -1,9 +1,13 @@
 **Estado de la traducción**
-Este artículo es una traducción de [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy"), revisada por última vez el **2018-09-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dnscrypt-proxy&diff=0&oldid=537991) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy"), revisada por última vez el **2019-11-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dnscrypt-proxy&diff=0&oldid=570918) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-[dnscrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy) es un proxy DNS con soporte para los protocolos DNS cifrados, [DNS sobre HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") y [DNSCrypt](https://dnscrypt.info/), que se puede utilizar para evitar [ataques de intermediario](https://en.wikipedia.org/wiki/es:Ataque_de_intermediario "wikipedia:es:Ataque de intermediario") y escuchas ilegales. *dnscrypt-proxy* es compatible también con [DNSSEC](/index.php/DNSSEC "DNSSEC").
+[dnscrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy) es un proxy DNS con soporte para los protocolos DNS cifrados, [DNS sobre HTTPS](https://en.wikipedia.org/wiki/es:DNS_mediante_HTTPS "wikipedia:es:DNS mediante HTTPS") y [DNSCrypt](https://dnscrypt.info/), que se puede utilizar para evitar [ataques de intermediario](https://en.wikipedia.org/wiki/es:Ataque_de_intermediario "wikipedia:es:Ataque de intermediario") y escuchas ilegales. *dnscrypt-proxy* es compatible también con [DNSSEC](/index.php/DNSSEC "DNSSEC").
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -25,7 +29,7 @@ Este artículo es una traducción de [dnscrypt-proxy](/index.php/Dnscrypt-proxy 
 
 ## Instalación
 
-[Instale](/index.php/Install "Install") el paquete [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy).
 
 ## Configuración
 
@@ -35,11 +39,11 @@ El servicio se puede iniciar de dos maneras mutuamente excluyentes (es decir, so
 
 *   Con el archivo `.service`.
 
-**Nota:** La opción `listen_addresses` debe configurarse (por ejemplo, `listen_addresses = ['127.0.0.1:53', '[::1]:53']`) en el archivo de configuración cuando se utiliza el archivo `.service`.
+**Nota:** la opción `listen_addresses` debe configurarse (por ejemplo, `listen_addresses = ['127.0.0.1:53', '[::1]:53']`) en el archivo de configuración cuando se utiliza el archivo `.service`.
 
 *   Mediante la activación del `.socket`.
 
-**Nota:** Al utilizar la activación del socket, la opción `listen_addresses` se debe dejar vacía (es decir, `listen_addresses = [ ]`) en el archivo de configuración, ya que systemd se ocupa de la configuración del socket.
+**Nota:** al utilizar la activación del socket, la opción `listen_addresses` se debe dejar vacía (es decir, `listen_addresses = [ ]`) en el archivo de configuración, ya que systemd se ocupa de la configuración del socket.
 
 ### Seleccionar clientes DNS
 
@@ -52,20 +56,20 @@ server_names = ['cloudflare', 'cloudflare-ipv6']
 
 ```
 
-Una lista completa de clientes DNS («*resolver*») se encuentra en la [página upstream](https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md) o [Github](https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md). Si *dnscrypt-proxy* se ejecutó con éxito en el sistema anteriormente, `/var/cache/dnscrypt-proxy/public-resolvers.md` también contendrá una lista. Mire la descripción de los servidores que validan [DNSSEC](/index.php/DNSSEC "DNSSEC"), sin registro, y sin cesura. Estos requisitos se pueden configurar de forma global con las opciones `require_dnssec`, `require_nolog`, `require_nofilter`.
+Una lista completa de clientes DNS («*resolver*») se encuentra en la [página upstream](https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md) o [Github](https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md). Si *dnscrypt-proxy* se ejecutó con éxito en el sistema anteriormente, `/var/cache/dnscrypt-proxy/public-resolvers.md` también contendrá una lista. Mire la descripción de los servidores que validan [DNSSEC](/index.php/DNSSEC_(Espa%C3%B1ol) "DNSSEC (Español)"), sin registro y sin cesura. Estos requisitos se pueden configurar de forma global con las opciones `require_dnssec`, `require_nolog`, `require_nofilter`.
 
 ### Desactivar cualquier servicio ligado al puerto 53
 
-**Sugerencia:** Si utiliza [#Unbound](#Unbound) como su caché DNS local, esta sección se puede ignorar, ya que *unbound* se ejecuta en el puerto 53 de forma predeterminada.
+**Sugerencia:** si utiliza [#Unbound](#Unbound) como su caché DNS local, esta sección se puede ignorar, ya que *unbound* se ejecuta en el puerto 53 de forma predeterminada.
 
 Para ver si algún programa está usando el puerto 53, ejecute:
 
 ```
- $ ss -lp 'sport = :domain'
+ $ ss -lp 'sport = :domain'
 
 ```
 
-Si el resultado contiene más de una línea a parte de los nombres de las columnas, debe desactivar cualquier servicio que esté utilizando el puerto 53\. Un servicio común que lo utiliza es `systemd-resolved.service`, pero otros administradores de red pueden tener componentes análogos. Puede continuar una vez que la orden anterior imprima solo la siguiente línea:
+Si el resultado contiene más de una línea a parte de los nombres de las columnas, debe desactivar cualquier servicio que esté utilizando el puerto 53\. Un servicio común que lo utiliza es `systemd-resolved.service`, ([NetworkManager#Unit dbus-org.freedesktop.resolve1.service not found](/index.php/NetworkManager#Unit_dbus-org.freedesktop.resolve1.service_not_found "NetworkManager")), pero otros administradores de red pueden tener componentes análogos. Puede continuar una vez que la orden anterior imprima solo la siguiente línea:
 
 ```
  Netid               State                 Recv-Q                Send-Q                                 Local Address:Port                                   Peer Address:Port
@@ -74,9 +78,10 @@ Si el resultado contiene más de una línea a parte de los nombres de las column
 
 ### Modificar resolv.conf
 
-Modifique el archivo [resolv.conf](/index.php/Resolv.conf "Resolv.conf") y reemplace el conjunto vigente de direcciones de resolución con la dirección para *localhost* y las opciones [[3]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Installation-linux#step-4-change-the-system-dns-settings):
+Modifique el archivo [resolv.conf](/index.php/Domain_name_resolution_(Espa%C3%B1ol) "Domain name resolution (Español)") y reemplace el conjunto vigente de direcciones de resolución con la dirección para *localhost* y las opciones [[3]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Installation-linux#step-4-change-the-system-dns-settings):
 
 ```
+nameserver ::1
 nameserver 127.0.0.1
 options edns0 single-request-reopen
 
@@ -104,7 +109,7 @@ Hay dos métodos para cambiar el puerto predeterminado:
 
 **Método socket**
 
-[Modifique](/index.php/Edit "Edit") `dnscrypt-proxy.socket` con los siguientes contenidos:
+[Modifique](/index.php/Edit_(Espa%C3%B1ol) "Edit (Español)") `dnscrypt-proxy.socket` con los siguientes contenidos:
 
 ```
 [Socket]
@@ -145,13 +150,13 @@ forward-zone:
 
 ```
 
-**Sugerencia:** Si está configurando un servidor, añada `interface: 0.0.0.0@53` y `access-control: *red*/*máscara-de-subred* allow` en la sección `server:` para que los otros equipos puedan conectarse al servidor. Un cliente debe configurarse con `nameserver *dirección-de-su-servidor*` en `/etc/resolv.conf`.
+**Sugerencia:** si está configurando un servidor, añada `interface: 0.0.0.0@53` y `access-control: *red*/*máscara-de-subred* allow` en la sección `server:` para que los otros equipos puedan conectarse al servidor. Un cliente debe configurarse con `nameserver *dirección-de-su-servidor*` en `/etc/resolv.conf`.
 
-[Reinicie](/index.php/Restart "Restart") `unbound.service` para aplicar los cambios.
+[Reinicie](/index.php/Restart_(Espa%C3%B1ol) "Restart (Español)") `unbound.service` para aplicar los cambios.
 
 ##### dnsmasq
 
-Configure dnsmasq como un [caché DNS local](/index.php/Dnsmasq#DNS_server "Dnsmasq"). La configuración básica para trabajar con *dnscrypt-proxy* es:
+Configure dnsmasq como un [caché DNS local](/index.php/Dnsmasq_(Espa%C3%B1ol)#Servidor_DNS "Dnsmasq (Español)"). La configuración básica para trabajar con *dnscrypt-proxy* es:
 
  `/etc/dnsmasq.conf` 
 ```
@@ -161,7 +166,7 @@ server=127.0.0.1#53000
 listen-address=::1,127.0.0.1
 ```
 
-Si configuró *dnscrypt-proxy* para usarlo como un «resolver» con la validación [DNSSEC](/index.php/DNSSEC "DNSSEC"), asegúrese de activarla también en dnsmasq:
+Si configuró *dnscrypt-proxy* para usarlo como un «resolver» con la validación [DNSSEC](/index.php/DNSSEC_(Espa%C3%B1ol) "DNSSEC (Español)"), asegúrese de activarla también en dnsmasq:
 
  `/etc/dnsmasq.conf` 
 ```
@@ -210,9 +215,9 @@ Reinicie `pdnsd.service` para aplicar los cambios.
 
 ### Sandboxing
 
-**Nota:** (del traductor) El «*sandboxing*» o [aislamiento de procesos](https://en.wikipedia.org/wiki/es:Aislamiento_de_procesos "wikipedia:es:Aislamiento de procesos") es un mecanismo para ejecutar programas con seguridad y de manera separada, en este caso el servicio «dnscrypt-proxy.service».
+**Nota:** **(del traductor):** el «*sandboxing*» o [aislamiento de procesos](https://en.wikipedia.org/wiki/es:Aislamiento_de_procesos "wikipedia:es:Aislamiento de procesos") es un mecanismo para ejecutar programas con seguridad y de manera separada, en este caso el servicio «dnscrypt-proxy.service».
 
-[Edite](/index.php/Edit "Edit") `dnscrypt-proxy.service` para incluir las siguientes líneas:
+[Edite](/index.php/Edit_(Espa%C3%B1ol) "Edit (Español)") `dnscrypt-proxy.service` para incluir las siguientes líneas:
 
 ```
 [Service]
@@ -233,11 +238,11 @@ SystemCallFilter=~@clock @cpu-emulation @debug @keyring @ipc @module @mount @obs
 
 ```
 
-Consulte [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) y [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") para obtener más información. Además, consulte [upstream comments](https://github.com/jedisct1/dnscrypt-proxy/pull/601#issuecomment-284171727) .
+Consulte [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) y [Systemd (Español)#Entornos seguros para probar aplicaciones](/index.php/Systemd_(Espa%C3%B1ol)#Entornos_seguros_para_probar_aplicaciones "Systemd (Español)") para obtener más información.
 
 ### Activar EDNS0
 
-Los [mecanismos de extensión de DNS](https://en.wikipedia.org/wiki/Extension_mechanisms_for_DNS "wikipedia:Extension mechanisms for DNS") permiten, entre otras cosas, que un cliente especifique cuán grande puede ser una respuesta a través de UDP.
+Los [mecanismos de extensión de DNS](https://en.wikipedia.org/wiki/es:Mecanismos_de_extension_de_DNS "wikipedia:es:Mecanismos de extension de DNS") permiten, entre otras cosas, que un cliente especifique cuán grande puede ser una respuesta a través de UDP.
 
 Añada la siguiente línea a `/etc/resolv.conf`:
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=579918) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=579918) na versão em inglês.
 
 Artigos relacionados
 
@@ -28,7 +28,7 @@ O usuário é livre para configurar seu ambiente de GUI de várias maneiras. Amb
 
 Além disso, os aplicativos fornecidos por DE tendem a se integrar melhor com seus ambientes nativos. Superficialmente, a mistura de ambientes com kits de ferramentas *(toolkits)* de widgets diferentes resultará em discrepâncias visuais (ou seja, as interfaces usarão ícones e estilos de widgets diferentes). Em termos de usabilidade, os ambientes mistos podem não se comportar de maneira semelhante (por exemplo, clique único versus ícones de clique duplo; funcionalidade arrastar e soltar), potencialmente causando confusão ou comportamento inesperado.
 
-Antes de instalar um ambiente de desktop, é necessária uma instalação funcional do servidor X. Veja [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") para informações detalhadas. Alguns ambientes de desktop também podem oferecer suporte ao [Wayland](/index.php/Wayland "Wayland") como uma alternativa ao X, mas a maioria deles ainda é experimental.
+Antes de instalar um ambiente de desktop, é necessária uma instalação funcional do servidor X. Veja [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") para informações detalhadas. Alguns ambientes de desktop também podem oferecer suporte ao [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") como uma alternativa ao X, mas a maioria deles ainda é experimental.
 
 ## Lista de ambientes de desktop
 
@@ -94,7 +94,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina é um ambiente de desktop leve escrito em Qt 5 para o FreeBSD que usa o Fluxbox para gerenciamento de janelas.
 
-	[https://www.lumina-desktop.org/](https://www.lumina-desktop.org/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
+	[https://lumina-desktop.org/](https://lumina-desktop.org/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
 
 *   **[Moksha](/index.php/Moksha "Moksha")** — Fork do Enlightenment atualmente usado como ambiente de desktop padrão no Bodhi Linux baseado em Ubuntu.
 

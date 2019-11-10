@@ -100,7 +100,7 @@ export PATH="${PATH}:~/scripts"
 export GUIVAR=value
 ```
 
-Aplicativos que usam [Wayland](/index.php/Wayland "Wayland") pode usar [variáveis de ambiente de usuário systemd](/index.php/Systemd/User#Environment_variables "Systemd/User"), pois o Wayland não inicia qualquer arquivo relacionado ao Xorg:
+Aplicativos que usam [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") pode usar [variáveis de ambiente de usuário systemd](/index.php/Systemd/User#Environment_variables "Systemd/User"), pois o Wayland não inicia qualquer arquivo relacionado ao Xorg:
 
  `~/.config/environment.d/envvars.conf` 
 ```

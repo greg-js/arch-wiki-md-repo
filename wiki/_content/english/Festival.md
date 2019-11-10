@@ -179,7 +179,7 @@ You can install the patched version from [AUR](/index.php/AUR "AUR"): [festival-
 
 #### Manual Voice Installs
 
-You can also get voices straight from [festvox.org](http://festvox.org/festival/downloads.html). In their downloads, the files named "festvox_*.tgz" each contain a different voice, as built by the festival team. They do work, but you will need to manually unzip and move the folder containing the voice to the appropriate place. On a recent Arch, the appropriate place is `/usr/share/festival/voices/english/` and the way to tell what folder contains the voice is to look for a 'festvox/' subfolder inside of it.
+You can also get voices straight from [festvox.org](http://festvox.org/festival/downloads.html). In their downloads, the files named `festvox_*.tgz` each contain a different voice, as built by the festival team. They do work, but you will need to manually unzip and move the folder containing the voice to the appropriate place. On a recent Arch, the appropriate place is `/usr/share/festival/voices/english/` and the way to tell what folder contains the voice is to look for a `festvox/` subfolder inside of it.
 
 You can then test that your new voices are found by loading up the festival prompt again.
 
@@ -263,7 +263,7 @@ festival> (quit)
 
 ### Example script
 
-One classic app that can make use of this is ping. Use this script to constantly ping a host, and return ping if success, fail if not:
+One classic app that can make use of this is *ping*. Use this script to constantly *ping* a host, and return "Ping" if success, "Fail" if not:
 
 ```
 #!/bin/bash
@@ -290,7 +290,7 @@ See [#Usage with a Sound Server](#Usage_with_a_Sound_Server) above.
 
 ### Alsa playing at wrong speed
 
-If the solution above gives you a squeaky voice, you might want to try changing your aplay options:
+If the solution above gives you a squeaky voice, you might want to try changing your *aplay* options:
 
 ```
 (Parameter.set 'Audio_Method 'Audio_Command)
@@ -300,7 +300,7 @@ If the solution above gives you a squeaky voice, you might want to try changing 
 
 ### aplay Command not found
 
-Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
+[Install](/index.php/Install "Install") [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
 
 ## See also
 

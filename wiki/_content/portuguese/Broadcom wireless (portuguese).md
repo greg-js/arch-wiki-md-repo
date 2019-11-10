@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&diff=0&oldid=579270) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&diff=0&oldid=584650) na versão em inglês.
 
 Artigos relacionados
 
@@ -122,6 +122,8 @@ Para fazer com que o módulo seja carregado na inicialização, consulte [Módul
 ## Solução de problemas
 
 ### Configurando broadcom-wl no modo monitor
+
+O modo de monitor é usado para capturar quadros 802.11 pelo ar. Isso pode ser útil para diagnosticar problemas em uma rede ou testar a segurança da sua rede sem fio. Frequentemente, o modo de monitor é necessário para capturar certos quadros para teste de penetração sem fio, mas pode ser antiético ou até ilegal capturar quadros em qualquer rede que você não possua, gerencie ou tenha permissão para realizar testes de penetração.
 
 Para definir broadcom-wl no modo de monitor, você deve definir 1 para `/proc/brcm_monitor0)`:
 

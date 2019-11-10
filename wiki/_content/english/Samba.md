@@ -39,6 +39,7 @@ Related articles
     *   [2.4 Automatic mounting](#Automatic_mounting)
         *   [2.4.1 As mount entry](#As_mount_entry)
         *   [2.4.2 As systemd unit](#As_systemd_unit)
+            *   [2.4.2.1 automount](#automount)
         *   [2.4.3 smbnetfs](#smbnetfs)
             *   [2.4.3.1 Daemon](#Daemon)
         *   [2.4.4 autofs](#autofs)
@@ -575,7 +576,7 @@ Description=Mount Share at boot
 [Mount]
 What=//server/share
 Where=/mnt/myshare
-Options=x-systemd.automount,credentials=/etc/samba/credentials/myshare,iocharset=utf8,rw
+Options=credentials=/etc/samba/credentials/myshare,iocharset=utf8,rw
 Type=cifs
 TimeoutSec=30
 
@@ -586,6 +587,24 @@ WantedBy=multi-user.target
 **Tip:** In case of an unreachable system, [append](/index.php/Append "Append") `ForceUnmount=true` to `[Mount]`, allowing the share to be (force-)unmounted.
 
 To use `mnt-myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
+
+##### automount
+
+To automatically mount a share, one may use the following [automount](/index.php/Autofs "Autofs") unit:
+
+ `/etc/systemd/system/mnt-myshare.automount` 
+```
+[Unit]
+Description=Automount myshare
+
+[Automount]
+Where=/mnt/myshare
+
+[Install]
+WantedBy=multi-user.target
+```
+
+[Disable](/index.php/Disable "Disable")/[stop](/index.php/Stop "Stop") the `mnt-myshare.mount` unit, and [enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `mnt-myshare.automount` to automount the share when the mount path is being accessed.
 
 #### smbnetfs
 

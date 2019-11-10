@@ -5,19 +5,23 @@
 
 [Reflector](http://xyne.archlinux.ca/projects/reflector/) — скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы [Mirror Status](https://www.archlinux.org/mirrors/status/), фильтрацию из них наиболее обновленных, сортировку по скорости и сохранение в `/etc/pacman.d/mirrorlist`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [2.1 Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B)
-        *   [2.1.1 Пример 1](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_1)
-        *   [2.1.2 Пример 2](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_2)
-        *   [2.1.3 Пример 3](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_3)
-*   [3 Автоматизация](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Использование](#Использование)
+    *   [2.1 Примеры](#Примеры)
+        *   [2.1.1 Пример 1](#Пример_1)
+        *   [2.1.2 Пример 2](#Пример_2)
+        *   [2.1.3 Пример 3](#Пример_3)
+*   [3 Автоматизация](#Автоматизация)
     *   [3.1 Pacman hook](#Pacman_hook)
-    *   [3.2 Служба systemd](#.D0.A1.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd)
-    *   [3.3 Таймер systemd](#.D0.A2.D0.B0.D0.B9.D0.BC.D0.B5.D1.80_systemd)
-    *   [3.4 Пакет Reflector-timer](#.D0.9F.D0.B0.D0.BA.D0.B5.D1.82_Reflector-timer)
+    *   [3.2 Служба systemd](#Служба_systemd)
+    *   [3.3 Таймер systemd](#Таймер_systemd)
+    *   [3.4 Пакет Reflector-timer](#Пакет_Reflector-timer)
 
 ## Установка
 
@@ -47,19 +51,19 @@
 
 #### Пример 1
 
-Следующая команда отфильтрует пять зеркал, отсортирует их по скорости и обновит файл mirrorlist:
+Следующая команда отфильтрует пять зеркал с поддержкой https, отсортирует их по скорости и обновит файл mirrorlist:
 
 ```
-# reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose -l 5 -p https --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
 #### Пример 2
 
-Эта команда подробно выведет список 200 наиболее недавно обновленных HTTP-зеркал, отсортирует их по скорости загрузки и обновит mirrorlist:
+Эта команда подробно выведет список 200 наиболее недавно обновленных HTTPS-зеркал, отсортирует их по скорости загрузки и обновит mirrorlist:
 
 ```
-# reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
@@ -68,7 +72,7 @@
 То же, что и в предыдущем примере, но будут взяты только зеркала, расположенные в Соединенных Штатах:
 
 ```
-# reflector --verbose --country 'United States' -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose --country 'United States' -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
@@ -89,7 +93,7 @@ Target = pacman-mirrorlist
 Description = Обновление списка зеркал с помощью reflector и удаление pacnew файла...
 When = PostTransaction
 Depends = reflector
-Exec = /bin/sh -c "reflector --country 'Russia' --latest 10 --age 24 --sort rate --save /etc/pacman.d/mirrorlist;  rm -f /etc/pacman.d/mirrorlist.pacnew"
+Exec = /bin/sh -c "reflector --country 'United States' --protocol https --latest 10 --age 24 --sort rate --save /etc/pacman.d/mirrorlist;  rm -f /etc/pacman.d/mirrorlist.pacnew"
 
 ```
 
@@ -104,7 +108,7 @@ Description=Pacman mirrorlist update
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/reflector --protocol http --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
+ExecStart=/usr/bin/reflector --protocol https --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
@@ -121,7 +125,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/reflector --protocol http --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
+ExecStart=/usr/bin/reflector --protocol https --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 [Install]
 RequiredBy=network.target
@@ -167,7 +171,7 @@ WantedBy=timers.target
  `/usr/share/reflector-timer/reflector.conf` 
 ```
 AGE=6
-COUNTRY=Russia
+COUNTRY='United States'
 LATEST=30
 NUMBER=20
 SORT=rate

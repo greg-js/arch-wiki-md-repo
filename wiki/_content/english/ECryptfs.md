@@ -147,7 +147,7 @@ To actually use your encrypted folder, you will have to mount it - see [#Mountin
 
 The wrapper script `ecryptfs-migrate-home` will set up an encrypted home directory for a user and take care of migrating any existing files they have in their not yet encrypted home directory.
 
-To run it, the user in question must be logged out and own no processes. The best way to achieve this is to log the user out, log into a console as the root user, and check that `ps -U *username*` returns no output. You also need to ensure that you have [rsync](https://www.archlinux.org/packages/?name=rsync) and [lsof](https://www.archlinux.org/packages/?name=lsof) installed. Once the prerequisites have been met, run:
+To run it, the user in question must be logged out and own no processes. The best way to achieve this is to log the user out, log into a console as the root user, and check that `ps -U *username*` returns no output. You also need to ensure that you have [rsync](https://www.archlinux.org/packages/?name=rsync), [lsof](https://www.archlinux.org/packages/?name=lsof), and [which](https://www.archlinux.org/packages/?name=which) installed. Once the prerequisites have been met, run:
 
 ```
 # modprobe ecryptfs

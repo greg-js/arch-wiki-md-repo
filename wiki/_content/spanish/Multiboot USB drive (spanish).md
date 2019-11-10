@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive"), revisada por última vez el **2018-11-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Multiboot_USB_drive&diff=0&oldid=552215) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Multiboot_USB_drive&diff=0&oldid=581584) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -7,7 +7,7 @@ Artículos relacionados
 *   [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)")
 *   [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)")
 
-Una unidad [flash](https://en.wikipedia.org/wiki/es:Memoria_flash "wikipedia:es:Memoria flash") [USB](https://en.wikipedia.org/wiki/es:Universal_Serial_Bus "wikipedia:es:Universal Serial Bus") multiarranque permite arrancar múltiples [archivos ISO](https://en.wikipedia.org/wiki/es:Imagen_ISO "wikipedia:es:Imagen ISO") desde un solo dispositivo. Los archivos ISO se pueden copiar al dispositivo y arrancar directamente sin descomprimirlos primero. Hay varios métodos disponibles, pero es posible que no funcionen con todas las imágenes ISO.
+Una unidad [flash](https://en.wikipedia.org/wiki/es:Memoria_flash "wikipedia:es:Memoria flash") [USB](https://en.wikipedia.org/wiki/es:Universal_Serial_Bus "wikipedia:es:Universal Serial Bus") multiarranque permite arrancar múltiples [archivos ISO](https://en.wikipedia.org/wiki/es:Imagen_ISO "wikipedia:es:Imagen ISO") desde un único dispositivo. Los archivos ISO se pueden copiar al dispositivo y arrancar directamente sin descomprimirlos primero. Hay varios métodos disponibles, pero es posible que no funcionen con todas las imágenes ISO.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -50,7 +50,7 @@ Desventajas:
 
 ### Preparación
 
-Cree, al menos, una partición y un sistema de archivos compatible con [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") en la unidad USB. Consulte [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y [File systems (Español)#Crear un sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)"). Elija el tamaño en función del tamaño total de los archivos ISO que desea almacenar en la unidad y planifique el espacio adicional para el cargador de arranque.
+Cree, al menos, una partición y un sistema de archivos compatible con [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") en la unidad USB. Consulte [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y [File systems (Español)#Crear un sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)"). Elija el tamaño en función del tamaño total de los archivos ISO que desea almacenar en la unidad y planifique el espacio adicional para el cargador de arranque.
 
 ### Instalar GRUB
 
@@ -91,13 +91,13 @@ Para UEFI, la partición debe ser la primera en una tabla de particiones MBR y f
 Esta configuración es útil para crear una memoria USB universal, que arranque en todos los equipos. En primer lugar, debe crear una tabla de particionado [GPT](/index.php/Partitioning_(Espa%C3%B1ol)#GUID_Partition_Table "Partitioning (Español)") en su dispositivo. Necesita al menos 3 particiones:
 
 1.  Una partición «BIOS boot partition» (código tipo para gdisk `EF02`). Esta partición debe tener un tamaño de 1 MiB.
-2.  Una partición «EFI System partition» (código tipo para gdisk `EF00` con un sistema de archivos [FAT32](/index.php/EFI_system_partition_(Espa%C3%B1ol)#Formatear_la_partición "EFI system partition (Español)")). Esta partición puede ser tan pequeña como 50 MiB.
+2.  Una partición «EFI System partition» (código tipo para gdisk `EF00` con un [sistema de archivos FAT32](/index.php/EFI_system_partition_(Espa%C3%B1ol)#Formatear_la_partición "EFI system partition (Español)")). Esta partición puede ser tan pequeña como 50 MiB.
 
-1.  Una partición de datos (use un sistema de archivos compatible con [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)")). Esta partición puede ocupar el resto del espacio de su disco.
+1.  Una partición de datos (use un sistema de archivos compatible con [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)")). Esta partición puede ocupar el resto del espacio de su disco.
 
 A continuación, debe crear una tabla de particionado MBR híbrida, ya que la configuración del indicador de arranque («boot») en la partición «*MBR protective*» podría no ser suficiente.
 
-Ejemplo de creación de tabla de particionado híbrida MBR usando [gdisk](/index.php/Gdisk "Gdisk"):
+Ejemplo de creación de tabla de particionado híbrida MBR utilizando [gdisk](/index.php/Gdisk "Gdisk"):
 
 ```
 # gdisk /dev/sdX
@@ -180,7 +180,7 @@ GLIM (GRUB2 Live ISO Multiboot): [https://github.com/thias/glim](https://github.
 
 Para el propósito de la unidad USB multiarranque, es más fácil modificar el archivo `grub.cfg` manualmente en lugar de generarlo automáticamente. Alternativamente, realice los siguientes cambios en `/etc/grub.d/40_custom` o `/mnt/boot/grub/custom.cfg` y genere `/mnt/boot/grub/grub.cfg` utilizando la orden [grub-mkconfig](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuración_principal "GRUB (Español)").
 
-Como se recomienda usar un [nombre permanente](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") en lugar de `/dev/sd*xY*` para identificar la partición en la unidad USB donde se encuentran los archivos de imágenes, defina una variable de conveniencia para mantener el valor. Si las imágenes ISO están en la misma partición que GRUB, use lo siguiente para leer el UUID en el momento del arranque:
+Como se recomienda utilizar un [nombre permanente](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") en lugar de `/dev/sd*xY*` para identificar la partición en la unidad USB donde se encuentran los archivos de imágenes, defina una variable de conveniencia para mantener el valor. Si las imágenes ISO están en la misma partición que GRUB, use lo siguiente para leer el UUID en el momento del arranque:
 
  `/mnt/boot/grub/grub.cfg` 
 ```
@@ -205,15 +205,15 @@ Alternativamente, use la etiqueta del dispositivo en lugar de UUID:
 set imgdevpath="/dev/disk/by-label/*label_value*"
 ```
 
-El UUID o la etiqueta necesarios se pueden encontrar usando `lsblk -f`. No utilice la misma etiqueta que la ISO de Arch para el dispositivo USB, de lo contrario, el proceso de arranque fallará.
+El UUID o la etiqueta necesarios se pueden encontrar utilizando `lsblk -f`. No utilice la misma etiqueta que la ISO de Arch para el dispositivo USB, de lo contrario, el proceso de arranque fallará.
 
 Para completar la configuración, se debe agregar una entrada de arranque para cada imagen ISO debajo de este encabezado, consulte la siguiente sección para ver ejemplos.
 
 ### Entradas de arranque
 
-Se supone que las imágenes ISO se almacenan en el directorio `boot/iso/` en el mismo sistema de archivos donde está instalado GRUB. De lo contrario, sería necesario prefijar la ruta al archivo ISO con la identificación del dispositivo al usar la orden `loopback`, por ejemplo, `loopback loop **(hd1,2)**$isofile`. Como esta identificación de dispositivos no es [persistente](/index.php/Persistent_block_device_naming "Persistent block device naming"), no se utiliza en los ejemplos de esta sección.
+Se supone que las imágenes ISO se almacenan en el directorio `boot/iso/` en el mismo sistema de archivos donde está instalado GRUB. De lo contrario, sería necesario prefijar la ruta al archivo ISO con la identificación del dispositivo al utilizar la orden `loopback`, por ejemplo, `loopback loop **(hd1,2)**$isofile`. Como esta identificación de dispositivos no es [persistente](/index.php/Persistent_block_device_naming "Persistent block device naming"), no se utiliza en los ejemplos de esta sección.
 
-Se pueden usar nombres de dispositivo de bloque persistente como tal. Reemplace UUID de acuerdo con el UUID de su sistema de archivos.
+Se pueden utilizar nombres de dispositivo de bloque persistente como tal. Reemplace UUID de acuerdo con el UUID de su sistema de archivos.
 
 ```
 # definir globalmente (es decir, fuera de cualquier menuentry)

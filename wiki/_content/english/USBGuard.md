@@ -14,7 +14,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [usbguard](https://www.archlinux.org/packages/?name=usbguard) package, or [usbguard-git](https://aur.archlinux.org/packages/usbguard-git/) for the development version. For the applet [Install](/index.php/Install "Install") [usbguard-qt](https://www.archlinux.org/packages/?name=usbguard-qt).
+[Install](/index.php/Install "Install") the [usbguard](https://www.archlinux.org/packages/?name=usbguard) package, or [usbguard-git](https://aur.archlinux.org/packages/usbguard-git/) for the development version. Qt applet was removed in USBGuard 0.7.5 and it is going to be maintained in a simplified form as a separate project later. [[1]](https://github.com/USBGuard/usbguard/releases/tag/usbguard-0.7.5)
 
 ## Configuration
 
@@ -22,7 +22,7 @@ The main configuration file is found in `/etc/usbguard/usbguard-daemon.conf`. To
 
 If you want to control the daemon via IPC, be sure to add your username to `IPCAllowedUsers` or your group to `IPCAllowedGroups` to make rules persistent. In most cases, you want this.
 
-Per default, usbguard blocks all newly connected devices and devices connected before daemon startup are left as is. This can be changed with the `PresentDevicePolicy` option. Setting this key to `apply-policy` is the most secure setting, which ensures security even when the daemon hits a restart.
+By default, USBGuard blocks all newly connected devices, and devices connected before daemon startup are left as is. This can be changed with the `PresentDevicePolicy` option. Setting this key to `apply-policy` is the most secure setting, which ensures security even when the daemon hits a restart.
 
 With the key `ImplicitPolicyTarget` you can configure the default treatment of devices, if no rules match. The most secure option here is `block`.
 
@@ -30,7 +30,7 @@ For an in-depth documentation of configuration see the very well commented confi
 
 ## Usage
 
-USBGuard has a core daemon, a CLI, a Qt GUI, a DBUS interface and an API via libusbguard.
+USBGuard has a core daemon, a CLI, a DBUS interface and an API via libusbguard.
 
 **Warning:** Make sure to actually configure the daemon before starting/enabling it or all USB devices will immediately be blocked!
 
@@ -42,11 +42,9 @@ The CLI is available via `usbguard`.
 
 See the according man pages for more info.
 
-A Qt applet can be started with `usbguard-applet-qt` and provides an interactive graphical interface.
-
 ### Rules
 
-To configure usbguard to your needs, you can edit `/etc/usbguard/rules.conf`. However manual editing of the rules is normally not necessary. You can generate a ruleset based on your currently attached USB devices by executing `usbguard generate-policy > /etc/usbguard/rules.conf` as root.
+To configure USBGuard to your needs, you can edit `/etc/usbguard/rules.conf`. However manual editing of the rules is normally not necessary. You can generate a ruleset based on your currently attached USB devices by executing `usbguard generate-policy > /etc/usbguard/rules.conf` as root.
 
 The rules syntax is formally explained [here](https://github.com/USBGuard/usbguard/blob/master/doc/man/usbguard-rules.conf.5.adoc). An example for a hp printer connected via USB can look like this:
 

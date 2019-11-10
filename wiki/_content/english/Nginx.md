@@ -908,11 +908,7 @@ load_module "/usr/lib/nginx/modules/ngx_http_headers_more_filter_module.so";
 
 ### Configuration validation
 
-```
-# nginx -t
-
-```
-
+ `# nginx -t` 
 ```
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful

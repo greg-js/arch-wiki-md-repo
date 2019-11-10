@@ -113,6 +113,8 @@ Before upgrading fundamental software (such as the [kernel](/index.php/Kernel "K
 
 Users must equally be aware that upgrading packages can raise **unexpected** problems that could need immediate intervention; therefore, it is discouraged to upgrade a stable system shortly before it is required for carrying out an important task. It is wise to wait instead to have enough time in order to be able to deal with possible post-upgrade issues.
 
+**Tip:** You could use a pacman hook like [informant](https://aur.archlinux.org/packages/informant/) which prevents you from updating if there is fresh Arch News that you have not read since the last update ran.
+
 ### Avoid certain pacman commands
 
 Avoid doing [partial upgrades](#Partial_upgrades_are_unsupported). In other words, never run `pacman -Sy`; instead, always use `pacman -Syu`.

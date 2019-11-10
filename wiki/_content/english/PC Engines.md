@@ -15,6 +15,7 @@
         *   [1.5.1 Module Handling](#Module_Handling)
         *   [1.5.2 Example Configuration](#Example_Configuration)
         *   [1.5.3 Persist Configuration](#Persist_Configuration)
+*   [2 firmware](#firmware)
 
 ## apu2c4
 
@@ -42,7 +43,7 @@ Assemble the device with care and read the [guide for the cooling system](http:/
 To see the BIOS use this command
 
 ```
-LANG=C picocom --baud 115200 --omap crcrlf /dev/ttyUSB0
+LANG=C picocom --baud 115200 /dev/ttyUSB0
 
 ```
 
@@ -181,3 +182,19 @@ w /sys/class/leds/apu:green:3/device_name - - - - br0
 w /sys/class/leds/apu:green:3/tx - - - - 1
 w /sys/class/leds/apu:green:3/rx - - - - 1
 ```
+
+## firmware
+
+The APUx devices use coreboot firmware, not UEFI. To update the firmware on APU2/3/4/5 devices, use [flashrom](https://www.archlinux.org/packages/?name=flashrom):
+
+```
+# flashrom --programmer internal --read old.rom --output read-old.txt
+# flashrom --programmer internal --write new.rom --output write-new.txt
+# systemctl poweroff  # unplug and replug
+
+```
+
+If a full reboot is impossible, e.g. because firmware is being updated remotely, workarounds are available. For details, see:
+
+*   [APUx firmware flashing](https://github.com/pcengines/apu2-documentation/blob/master/docs/firmware_flashing.md)
+*   [APUx firmware downloads](https://pcengines.github.io/)

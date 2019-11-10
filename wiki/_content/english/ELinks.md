@@ -1,6 +1,10 @@
 [ELinks](http://elinks.or.cz/) is an advanced and well-established feature-rich text mode web (HTTP/FTP/...) browser. ELinks can render both frames and tables, is highly customizable and can be extended via Lua or Guile scripts. It features tabs and some support for CSS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -9,11 +13,11 @@
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Defining URL-handlers](#Defining_URL-handlers)
     *   [4.2 Tor usage](#Tor_usage)
-    *   [4.3 Passing URL's to external commands](#Passing_URL.27s_to_external_commands)
+    *   [4.3 Passing URL's to external commands](#Passing_URL's_to_external_commands)
         *   [4.3.1 Saving link to the X clipboard](#Saving_link_to_the_X_clipboard)
         *   [4.3.2 Passing YouTube-links through external player](#Passing_YouTube-links_through_external_player)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 ELinks froze and I can't start it without it freezing again](#ELinks_froze_and_I_can.27t_start_it_without_it_freezing_again)
+    *   [5.1 ELinks froze and I can't start it without it freezing again](#ELinks_froze_and_I_can't_start_it_without_it_freezing_again)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -108,7 +112,7 @@ Assuming the command "tab-external-command" is mapped to **KEY**, whenever you p
 #### Saving link to the X clipboard
 
 ```
-echo -n %c | xclip -i 
+echo -n %c | xclip -i 
 
 ```
 
@@ -117,14 +121,14 @@ echo -n %c | xclip -i
 For strictly YouTube-links, [mpv](https://www.archlinux.org/packages/?name=mpv) has built-in support. Just use the following,
 
 ```
-mpv %c 
+mpv %c 
 
 ```
 
 For a more general approach that can handle many 'tube' sites, you will need [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl). Then add the following command,
 
 ```
-youtube-dl -o - %c | mplayer -
+youtube-dl -o - %c | mplayer -
 
 ```
 

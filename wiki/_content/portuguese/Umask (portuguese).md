@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [umask](/index.php/Umask "Umask"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Umask&diff=0&oldid=576154) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [umask](/index.php/Umask "Umask"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Umask&diff=0&oldid=586533) na versão em inglês.
 
 Artigos relacionados
 

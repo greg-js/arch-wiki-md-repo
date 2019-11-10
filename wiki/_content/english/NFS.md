@@ -30,6 +30,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
         *   [2.2.2 Mount using /etc/fstab](#Mount_using_/etc/fstab)
         *   [2.2.3 Mount using /etc/fstab with systemd](#Mount_using_/etc/fstab_with_systemd)
         *   [2.2.4 As systemd unit](#As_systemd_unit)
+            *   [2.2.4.1 automount](#automount)
         *   [2.2.5 Mount using autofs](#Mount_using_autofs)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Performance tuning](#Performance_tuning)
@@ -200,6 +201,14 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 *   NFSv4 idmapping does not work with the default `sec=sys` mount option. [[1]](http://dfusion.com.au/wiki/tiki-index.php?page=Why+NFSv4+UID+mapping+breaks+with+AUTH_UNIX)
 *   NFSv4 idmapping needs to be enabled on **both** the client and server.
 *   Another option is to make sure the user and group IDs (UID and GID) match on both the client and server.
+*   [Enabling](/index.php/Enabling "Enabling")/[starting](/index.php/Starting "Starting") `nfs-idmapd.service` should not be needed as it has been replaced with a new id mapper:
+
+ `# dmesg | grep id_resolver` 
+```
+[ 3238.356001] NFS: Registering the id_resolver key type
+[ 3238.356009] Key type id_resolver registered
+
+```
 
 The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[2]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
 
@@ -350,7 +359,7 @@ Description=Mount Share at boot
 [Mount]
 What=172.16.24.192:/mnt/myshare
 Where=/mnt/myshare
-Options=x-systemd.automount,noatime
+Options=noatime
 Type=nfs
 TimeoutSec=30
 
@@ -361,6 +370,24 @@ WantedBy=multi-user.target
 **Tip:** In case of an unreachable system, [append](/index.php/Append "Append") `ForceUnmount=true` to `[Mount]`, allowing the share to be (force-)unmounted.
 
 To use `mnt-myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
+
+##### automount
+
+To automatically mount a share, one may use the following automount unit:
+
+ `/etc/systemd/system/mnt-myshare.automount` 
+```
+[Unit]
+Description=Automount myshare
+
+[Automount]
+Where=/mnt/myshare
+
+[Install]
+WantedBy=multi-user.target
+```
+
+[Disable](/index.php/Disable "Disable")/[stop](/index.php/Stop "Stop") the `mnt-myshare.mount` unit, and [enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `mnt-myshare.automount` to automount the share when the mount path is being accessed.
 
 #### Mount using autofs
 

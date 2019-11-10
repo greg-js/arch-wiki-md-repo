@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [KDE](/index.php/KDE "KDE"). Data da última tradução: 2019-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=580574) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [KDE](/index.php/KDE "KDE"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=587902) na versão em inglês.
 
 Artigos relacionados
 
@@ -82,6 +82,7 @@ O KDE é um projeto de software que atualmente compreende um [ambiente de deskto
         *   [6.2.1 O ambiente Plasma se comporta de forma estranha](#O_ambiente_Plasma_se_comporta_de_forma_estranha)
         *   [6.2.2 Limpar cache para resolver problemas de atualização](#Limpar_cache_para_resolver_problemas_de_atualização)
         *   [6.2.3 Teclas de controle do volume, notificações e multimídia não funcionam](#Teclas_de_controle_do_volume,_notificações_e_multimídia_não_funcionam)
+        *   [6.2.4 A tela de autenticação KCM não sincroniza as configurações do cursor para SDDM](#A_tela_de_autenticação_KCM_não_sincroniza_as_configurações_do_cursor_para_SDDM)
     *   [6.3 Problemas gráficos](#Problemas_gráficos)
         *   [6.3.1 Obtendo o estado atual de KWin para propósito de suporte e depuração](#Obtendo_o_estado_atual_de_KWin_para_propósito_de_suporte_e_depuração)
         *   [6.3.2 Desabilitar efeitos do ambiente manualmente ou automaticamente para aplicativos definidos](#Desabilitar_efeitos_do_ambiente_manualmente_ou_automaticamente_para_aplicativos_definidos)
@@ -121,7 +122,7 @@ Antes de instalar o Plasma, certifique-se de ter uma instalação [Xorg](/index.
 
 [Instale](/index.php/Instale "Instale") o meta-pacote [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) ou o grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/). Para diferenças entre [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) e [plasma](https://www.archlinux.org/groups/x86_64/plasma/), consulte [Grupo de pacotes](/index.php/Grupo_de_pacotes "Grupo de pacotes"). Como alternativa, para uma instalação mínima de Plasma, instale o pacote [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop).
 
-Para habilitar o suporte a [Wayland](/index.php/Wayland "Wayland") no Plasma, instale também o pacote [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session).
+Para habilitar o suporte a [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") no Plasma, instale também o pacote [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session).
 
 ### Aplicativos do KDE
 
@@ -133,19 +134,19 @@ Veja [Repositórios oficiais#kde-unstable](/index.php/Reposit%C3%B3rios_oficiais
 
 ## Iniciando o Plasma
 
-**Nota:** Apesar de ser possível iniciar o Plasma no [Wayland](/index.php/Wayland "Wayland"), há alguns recursos em falta e alguns problemas conhecidos. Veja [Wayland Showstoppers](https://community.kde.org/Plasma/Wayland_Showstoppers) para uma lista de problemas e o [quadro de trabalho para Plasma no Wayland](https://phabricator.kde.org/project/board/99/) para o estado atual do desenvolvimento. Use [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") para a experiência mais completa e estável.
+**Nota:** Apesar de ser possível iniciar o Plasma no [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)"), há alguns recursos em falta e alguns problemas conhecidos. Veja [Wayland Showstoppers](https://community.kde.org/Plasma/Wayland_Showstoppers) para uma lista de problemas e o [quadro de trabalho para Plasma no Wayland](https://phabricator.kde.org/project/board/99/) para o estado atual do desenvolvimento. Use [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") para a experiência mais completa e estável.
 
 Plasma pode ser iniciado usando um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") ou o console.
 
 ### Usando um gerenciador de exibição
 
 *   Selecione *Plasma* para iniciar uma nova sessão no [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
-*   [Instale](/index.php/Instale "Instale") [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) e selecione *Plasma (Wayland)* para iniciar uma nova sessão no [Wayland](/index.php/Wayland "Wayland").
+*   [Instale](/index.php/Instale "Instale") [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) e selecione *Plasma (Wayland)* para iniciar uma nova sessão no [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)").
 
 ### Do console
 
-*   Para iniciar o Plasma com [xinit/startx](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)"), anexe `exec startkde` ao seu arquivo `.xinitrc`. Se você quiser iniciar o Xorg no login, consulte [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login").
-*   Para iniciar uma sessão do Plasma no Wayland a partir de um console, execute `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
+*   Para iniciar o Plasma com [xinit/startx](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)"), anexe `exec startplasma-x11` ao seu arquivo `.xinitrc`. Se você quiser iniciar o Xorg no login, consulte [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login").
+*   Para iniciar uma sessão do Plasma no Wayland a partir de um console, execute `XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Configuração
 
@@ -173,7 +174,7 @@ O Breeze não está diretamente disponível para o Qt4, já que ele não pode se
 
 	GTK
 
-O tema recomendado para uma aparência agradável em aplicativos GTK é o [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) ou [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), um tema GTK projetado para imitar a aparência do tema Breeze do Plasma. Instale [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (parte do grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/)) e selecione o tema GTK instalado para o tema do GTK2/GTK3 em *Configurações do sistema > Estilo do aplicativo > Estilo dos aplicativos GNOME/GTK*.
+O tema recomendado para uma aparência agradável em aplicativos GTK é o [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), um tema GTK projetado para imitar a aparência do tema Breeze do Plasma. Instale [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (parte do grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/)) e selecione `Breeze` ou `Breeze-Dark` como o tema GTK2/GTK3 em *Configurações do sistema > Estilo do aplicativo > Estilo dos aplicativos GNOME/GTK*.
 
 Em alguns temas, as dicas de ferramentas nos aplicativos GTK têm texto branco em fundo branco, dificultando a leitura. Para alterar as cores nos aplicativos GTK2, encontre a seção para dicas de ferramentas no arquivo `.gtkrc-2.0` e altere-a. Para aplicativo GTK3, dois arquivos precisam ser alterados, `gtk.css` e `settings.ini`.
 
@@ -341,7 +342,7 @@ No passado, outros backends também foram desenvolvidos, mas não são mais mant
 
 **Nota:**
 
-*   Vários backends podem ser instalados de uma só vez e priorizado em *Configurações do sistema > Multimídia > Áudio e vídeo > Infraestrutura*.
+*   Vários backends podem ser instalados de uma só vez e priorizado por meio do aplicativo *phononsettings*.
 *   De acordo com os [fóruns do KDE](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), o backend VLC carece de suporte para [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
 *   Se usar o backend do VLC, você poderá encontrar travamentos toda vez que o Plasma quiser lhe enviar um aviso sonoro e em vários outros casos também [[5]](https://forum.kde.org/viewtopic.php?f=289&t=135956). Uma possível correção é reconstruir o cache de plugins do VLC:
 
@@ -684,6 +685,10 @@ $ rm -rf ~/.cache/*
 #### Teclas de controle do volume, notificações e multimídia não funcionam
 
 Ocultar determinados itens nas configurações da área de notificação (por exemplo, Volume do áudio, Reprodutor de mídia ou Notificações) também desativa os recursos relacionados. Ao ocultar o *Volume do áudio* desativa as teclas de controle de volume, *Reprodutor de mídia* desativa as teclas multimídia (rebobinar, parar, pausar) e ocultar *Notificações* desativa a exibição de notificações.
+
+#### A tela de autenticação KCM não sincroniza as configurações do cursor para SDDM
+
+A tela de autenticação do KCM lê as configurações do cursor em `~/.config/kcminputrc`, sem esse arquivo nenhuma configuração é sincronizada. A maneira mais fácil de gerar esse arquivo é alterar o tema do cursor em *Configurações do sistema > Tema do Espaço de Trabalho > Cursores* e alterá-lo novamente para o tema preferido de cursor.
 
 ### Problemas gráficos
 

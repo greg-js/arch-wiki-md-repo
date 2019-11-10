@@ -269,7 +269,7 @@ Restart=on-failure
 RestartSec=1
 
 [Install]
-WantedBy=default.target}}
+WantedBy=default.target
 
 ```
 

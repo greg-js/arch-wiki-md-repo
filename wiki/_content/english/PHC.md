@@ -7,7 +7,11 @@ Related articles
 
 PHC is an acpi-cpufreq patch built with the purpose of enabling undervolting on your processor. This can potentially divide the power consumption of your processor by two or more, and in turn increase battery life and reduce fan noise noticiably. PHC works only if your processor's architecture supports undervolting.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Supported CPUs](#Supported_CPUs)
     *   [1.1 Intel](#Intel)
@@ -35,7 +39,7 @@ PHC supports the following processor families:
 *   Mobile Centrino
 *   Atom (N2xx)
 *   Core / Core2 (T and P Series)
-*   Core i (2nd generation and older, tested on Core i3 550)
+*   Core i ([2nd generation](https://en.wikipedia.org/wiki/Intel_Core#Sandy_Bridge_microarchitecture_.282nd_generation.29 "wikipedia:Intel Core") and older, tested on Core i3 550)
 
 **Note:** Frequency locking does not seem to be working on Core i3 with the current stable 0.3.2 release of PHC, so finding the best vids for all but the highest frequency might be difficult or impossible.
 

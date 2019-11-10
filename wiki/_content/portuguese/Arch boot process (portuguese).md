@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-10-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=584335) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=584961) na versão em inglês.
 
 Artigos relacionados
 
@@ -80,7 +80,7 @@ A especificação UEFI tem suporte para inicializar BIOS legado com sua [Compati
 
 Se [Secure Boot](/index.php/Secure_Boot "Secure Boot") estiver habilitado, o processo de inicialização vai verificar a autenticidade do binário EFI pela assinatura.
 
-**Nota:** Alguns sistemas UEFI só podem inicializar de caminho de inicialização reserva.
+**Nota:** Alguns sistemas UEFI só podem inicializar a partir do caminho reserva de inicialização.
 
 ### Multiboot no UEFI
 
@@ -151,7 +151,7 @@ Para inicializar automaticamente um gerenciador de exibição após a inicializa
 
 O programa *login* começa uma sessão para o usuário definindo as variáveis de ambiente e iniciando o shell do usuário, com base no `/etc/passwd`.
 
-O programa *login* exibe o conteúdo de [/etc/motd](https://en.wikipedia.org/wiki/pt:motd_(Unix) (*m*essage *o*f *t*he *d*ay ou, em português, mensagem do dia) após um login bem sucedido, logo antes dele executar o sehll de login. É um bom lugar para exibir seus *Terms of Service* (Termos de Serviços) para lembrar seus usuários de suas políticas locais ou qualquer outra coisa que você deseje falar para eles.
+O programa *login* exibe o conteúdo de [/etc/motd](https://en.wikipedia.org/wiki/pt:motd_(Unix) (*m*essage *o*f *t*he *d*ay ou, em português, mensagem do dia) após um login bem sucedido, logo antes dele executar o shell de login. É um bom lugar para exibir seus *Terms of Service* (Termos de Serviços) para lembrar seus usuários de suas políticas locais ou qualquer outra coisa que você deseje falar para eles.
 
 ## Shell
 

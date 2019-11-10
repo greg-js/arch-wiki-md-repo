@@ -49,6 +49,7 @@
         *   [1.5.9 Desktop widgets](#Desktop_widgets)
         *   [1.5.10 Desktop notifications](#Desktop_notifications)
         *   [1.5.11 Clipboard managers](#Clipboard_managers)
+        *   [1.5.12 Logout UI](#Logout_UI)
 
 ## Others
 
@@ -64,7 +65,7 @@ These applications support time, task and contacts management.
 
 *   **[Kontact](https://en.wikipedia.org/wiki/Kontact "wikipedia:Kontact")** — Integrated solution to your personal information management.
 
-	[http://www.kontact.org/](http://www.kontact.org/) || [kontact](https://www.archlinux.org/packages/?name=kontact)
+	[https://kontact.kde.org/](https://kontact.kde.org/) || [kontact](https://www.archlinux.org/packages/?name=kontact)
 
 *   **Osmo** — GTK personal organizer, which includes calendar, tasks manager and address book modules.
 
@@ -76,7 +77,7 @@ These applications support time, task and contacts management.
 
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird") with [Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — Extension to Mozilla Thunderbird that provides calendar and task support.
 
-	[http://www.mozilla.org/projects/calendar/lightning/](http://www.mozilla.org/projects/calendar/lightning/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
+	[https://www.thunderbird.net/calendar/](https://www.thunderbird.net/calendar/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
 #### Time management
 
@@ -84,7 +85,7 @@ These applications support time, task and contacts management.
 
 *   **Calcurse** — Text-based ncurses calendar and scheduling system (supports CalDAV)
 
-	[http://calcurse.org/](http://calcurse.org/) || [calcurse](https://www.archlinux.org/packages/?name=calcurse)
+	[https://calcurse.org](https://calcurse.org) || [calcurse](https://www.archlinux.org/packages/?name=calcurse)
 
 *   **ccal** — A console program which writes a calendar together with Chinese calendar to standard output.
 
@@ -108,7 +109,7 @@ These applications support time, task and contacts management.
 
 *   **[Remind](/index.php/Remind "Remind")** — Highly sophisticated text-based calendaring and notification system.
 
-	[http://roaringpenguin.com/products/remind](http://roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
+	[https://www.roaringpenguin.com/products/remind](https://www.roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
 
 *   **When** — Simple personal calendar program.
 
@@ -130,7 +131,7 @@ These applications support time, task and contacts management.
 
 *   **etmtk (Event and Task Manager)** — Simple application with a "Getting Things Done!" approach to handling events, tasks, activities, reminders and projects.
 
-	[http://duke.edu/~dgraham/ETMtk/](http://duke.edu/~dgraham/ETMtk/) || [etmtk](https://aur.archlinux.org/packages/etmtk/)
+	[http://people.duke.edu/~dgraham/ETMtk/](http://people.duke.edu/~dgraham/ETMtk/) || [etmtk](https://aur.archlinux.org/packages/etmtk/)
 
 *   **GNOME Calendar** — Calendar application for GNOME.
 
@@ -150,7 +151,7 @@ These applications support time, task and contacts management.
 
 *   **Orage** — GTK calendar and task manager often seen integrated with Xfce.
 
-	[http://www.xfce.org/projects](http://www.xfce.org/projects) || [orage](https://www.archlinux.org/packages/?name=orage)
+	[https://www.xfce.org/projects](https://www.xfce.org/projects) || [orage](https://www.archlinux.org/packages/?name=orage)
 
 *   **Outspline** — Extensible outliner with advanced time management features, supporting events with complex recurrence schemes.
 
@@ -162,7 +163,7 @@ These applications support time, task and contacts management.
 
 *   **TkRemind** — Sophisticated calendar and alarm program.
 
-	[http://www.roaringpenguin.com/products/remind](http://www.roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
+	[https://www.roaringpenguin.com/products/remind](https://www.roaringpenguin.com/products/remind) || [remind](https://www.archlinux.org/packages/?name=remind)
 
 #### Time trackers
 
@@ -184,7 +185,7 @@ These applications support time, task and contacts management.
 
 *   **GNOME Pomodoro** — Time management utility for GNOME based on the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique "wikipedia:Pomodoro Technique").
 
-	[http://gnomepomodoro.org/](http://gnomepomodoro.org/) || [gnome-shell-pomodoro](https://aur.archlinux.org/packages/gnome-shell-pomodoro/)
+	[https://gnomepomodoro.org/](https://gnomepomodoro.org/) || [gnome-shell-pomodoro](https://aur.archlinux.org/packages/gnome-shell-pomodoro/)
 
 *   **Hamster** — Time tracking application that helps you to keep track on how much time you have spent during the day on activities you choose to track.
 
@@ -216,7 +217,7 @@ These applications support time, task and contacts management.
 
 *   **Tider** — Lightweight time tracking application (GTK)
 
-	[http://pusto.org/en/tider/](http://pusto.org/en/tider/) || [tider-git](https://aur.archlinux.org/packages/tider-git/)
+	[https://pusto.org/en/tider/](https://pusto.org/en/tider/) || [tider-git](https://aur.archlinux.org/packages/tider-git/)
 
 *   **Tomate** — Timer for the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique "wikipedia:Pomodoro Technique").
 
@@ -240,7 +241,7 @@ These applications support time, task and contacts management.
 
 *   **DevTodo** — Small command line application for maintaining lists of tasks.
 
-	[http://swapoff.org/devtodo1.html](http://swapoff.org/devtodo1.html) || [devtodo](https://aur.archlinux.org/packages/devtodo/)
+	[https://swapoff.org/devtodo1.html](https://swapoff.org/devtodo1.html) || [devtodo](https://aur.archlinux.org/packages/devtodo/)
 
 *   **Taskbook** — Tasks, boards & notes for the command-line habitat.
 
@@ -248,7 +249,7 @@ These applications support time, task and contacts management.
 
 *   **[Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior")** — Command-line To-do list application with support for lua customization and more.
 
-	[http://taskwarrior.org/](http://taskwarrior.org/) || [task](https://www.archlinux.org/packages/?name=task)
+	[https://taskwarrior.org/](https://taskwarrior.org/) || [task](https://www.archlinux.org/packages/?name=task)
 
 *   **todoman** — Command-line To-do list manager (supports CalDAV)
 
@@ -260,7 +261,7 @@ These applications support time, task and contacts management.
 
 *   **TuDu** — Ncurses-based hierarchical To-do list manager with vim-like keybindings.
 
-	[http://code.meskio.net/tudu/](http://code.meskio.net/tudu/) || [tudu](https://aur.archlinux.org/packages/tudu/)
+	[https://code.meskio.net/tudu/](https://code.meskio.net/tudu/) || [tudu](https://aur.archlinux.org/packages/tudu/)
 
 ##### Graphical
 
@@ -294,11 +295,11 @@ These applications support time, task and contacts management.
 
 *   **Task Coach** — Simple todo manager to manage personal tasks and todo lists.
 
-	[http://www.taskcoach.org/](http://www.taskcoach.org/) || [taskcoach](https://aur.archlinux.org/packages/taskcoach/)
+	[https://www.taskcoach.org](https://www.taskcoach.org) || [taskcoach](https://aur.archlinux.org/packages/taskcoach/)
 
 *   **TaskUnifier** — Task management application which enables you to create and organize your tasks.
 
-	[http://taskunifier.sourceforge.net/](http://taskunifier.sourceforge.net/) || [taskunifier](https://aur.archlinux.org/packages/taskunifier/)
+	[https://www.taskunifier.app](https://www.taskunifier.app) || [taskunifier](https://aur.archlinux.org/packages/taskunifier/)
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — Easy quick task management app written in C#.
 
@@ -384,19 +385,19 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **hledger** — An accounting program for tracking money, time, or any other commodity, using double-entry accounting and a simple, editable file format. hledger is inspired by and largely compatible with ledger.
 
-	[http://hledger.org/](http://hledger.org/) || [hledger-git](https://aur.archlinux.org/packages/hledger-git/)
+	[https://hledger.org/](https://hledger.org/) || [hledger-git](https://aur.archlinux.org/packages/hledger-git/)
 
 *   **Manager Accounting** — Manager is free accounting software for small business.
 
-	[http://www.manager.io/](http://www.manager.io/) || [manager-accounting](https://aur.archlinux.org/packages/manager-accounting/)
+	[https://www.manager.io/](https://www.manager.io/) || [manager-accounting](https://aur.archlinux.org/packages/manager-accounting/)
 
 *   **Money Manager EX** — An easy-to-use personal finance suite
 
-	[http://www.moneymanagerex.org/](http://www.moneymanagerex.org/) || [moneymanagerex](https://www.archlinux.org/packages/?name=moneymanagerex)
+	[https://www.moneymanagerex.org/](https://www.moneymanagerex.org/) || [moneymanagerex](https://www.archlinux.org/packages/?name=moneymanagerex)
 
 *   **Skrooge** — Personal finances manager for the KDE desktop.
 
-	[http://skrooge.org/](http://skrooge.org/) || [skrooge](https://www.archlinux.org/packages/?name=skrooge)
+	[https://skrooge.org/](https://skrooge.org/) || [skrooge](https://www.archlinux.org/packages/?name=skrooge)
 
 *   **[Odoo](/index.php/Odoo "Odoo")** — Open source ERP system purely in Python. Previously known as OpenERP.
 
@@ -550,7 +551,7 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 
 *   **Klavaro** — Teaching touch typing that intends to be keyboard and language independent.
 
-	[http://klavaro.sourceforge.net/](http://klavaro.sourceforge.net/) || [klavaro](https://www.archlinux.org/packages/?name=klavaro)
+	[https://klavaro.sourceforge.io/](https://klavaro.sourceforge.io/) || [klavaro](https://www.archlinux.org/packages/?name=klavaro)
 
 *   **[KTouch](https://en.wikipedia.org/wiki/KTouch "wikipedia:KTouch")** — Program to learn and practice touch typing. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
@@ -746,7 +747,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 *   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — Lightweight dock which sits at the bottom of the screen.
 
-	[http://launchpad.net/awn](http://launchpad.net/awn) || [avant-window-navigator](https://aur.archlinux.org/packages/avant-window-navigator/)
+	[https://launchpad.net/awn](https://launchpad.net/awn) || [avant-window-navigator](https://aur.archlinux.org/packages/avant-window-navigator/)
 
 *   **[Bmpanel](/index.php/Bmpanel "Bmpanel")** — Lightweight, NETWM compliant panel.
 
@@ -802,11 +803,11 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 *   **Xfce Panel** — Panel included in the [Xfce](/index.php/Xfce "Xfce") desktop.
 
-	[http://docs.xfce.org/xfce/xfce4-panel/start](http://docs.xfce.org/xfce/xfce4-panel/start) || [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)
+	[https://docs.xfce.org/xfce/xfce4-panel/start](https://docs.xfce.org/xfce/xfce4-panel/start) || [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)
 
 *   **[xmobar](/index.php/Xmobar "Xmobar")** — A lightweight, text-based, status bar written in Haskell.
 
-	[http://projects.haskell.org/xmobar/](http://projects.haskell.org/xmobar/) || [xmobar](https://www.archlinux.org/packages/?name=xmobar), [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)
+	[https://archives.haskell.org/projects.haskell.org/xmobar/](https://archives.haskell.org/projects.haskell.org/xmobar/) || [xmobar](https://www.archlinux.org/packages/?name=xmobar), [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)
 
 #### System tray
 
@@ -876,7 +877,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do with many plugins, originally developed for the GNOME desktop.
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
+	[https://do.cooperteam.net/](https://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **Gnome-Pie** — Circular application launcher (pie menu) for Linux. It is made of several pies, each consisting of multiple slices.
 
@@ -982,7 +983,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 *   **habak** — A background changing app.
 
-	[http://fvwm-crystal.sourceforge.net/](http://fvwm-crystal.sourceforge.net/) || [habak](https://www.archlinux.org/packages/?name=habak)
+	[https://fvwm-crystal.sourceforge.io/](https://fvwm-crystal.sourceforge.io/) || [habak](https://www.archlinux.org/packages/?name=habak)
 
 *   **hsetroot** — A tool to create compose wallpapers.
 
@@ -1010,7 +1011,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 *   **Variety** — Changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
 
-	[http://peterlevi.com/variety/](http://peterlevi.com/variety/) || [variety](https://www.archlinux.org/packages/?name=variety)
+	[https://peterlevi.com/variety/](https://peterlevi.com/variety/) || [variety](https://www.archlinux.org/packages/?name=variety)
 
 *   **xli** — An image display program for X.
 
@@ -1067,3 +1068,13 @@ See: [Notification servers](/index.php/Desktop_notifications#Notification_server
 #### Clipboard managers
 
 See [Clipboard#Managers](/index.php/Clipboard#Managers "Clipboard").
+
+#### Logout UI
+
+*   **clearine** — Beautiful Logout UI for X11 window manager
+
+	[https://github.com/okitavera/clearine](https://github.com/okitavera/clearine) || [clearine-git](https://aur.archlinux.org/packages/clearine-git/)
+
+*   **[oblogout](/index.php/Oblogout "Oblogout")** — Openbox logout script
+
+	[https://launchpad.net/oblogout](https://launchpad.net/oblogout) || [oblogout](https://www.archlinux.org/packages/?name=oblogout)

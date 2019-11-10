@@ -17,7 +17,7 @@
 
 ## Installation
 
-Common packages include: [thunderbird-extension-enigmail](https://www.archlinux.org/packages/?name=thunderbird-extension-enigmail) and [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/).
+[Install](/index.php/Install "Install") the [thunderbird-extension-enigmail](https://www.archlinux.org/packages/?name=thunderbird-extension-enigmail) package.
 
 ## Usage
 

@@ -350,10 +350,10 @@ In this example the container will reside in `/srv/container`:
 
 [Install](/index.php/Install "Install") the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
-Install [base](https://www.archlinux.org/packages/?name=base), [tor](https://www.archlinux.org/packages/?name=tor) and [nyx](https://www.archlinux.org/packages/?name=nyx) and deselect [linux](https://www.archlinux.org/packages/?name=linux) as per [Systemd-nspawn#Create and boot a minimal Arch Linux distribution in a container](/index.php/Systemd-nspawn#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container "Systemd-nspawn"):
+Install [base](https://www.archlinux.org/packages/?name=base), [tor](https://www.archlinux.org/packages/?name=tor) and [nyx](https://www.archlinux.org/packages/?name=nyx) as per [Systemd-nspawn#Create and boot a minimal Arch Linux distribution in a container](/index.php/Systemd-nspawn#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container "Systemd-nspawn"):
 
 ```
-# pacstrap -i -c -d /srv/container/tor-exit base tor nyx
+# pacstrap -ci /srv/container/tor-exit base tor nyx
 
 ```
 
@@ -363,8 +363,6 @@ Create directory if it does not exist:
 # mkdir /var/lib/container
 
 ```
-
-**Note:** Symlinks for `nspawn` are currently broken (as of 2016-02-04; see [https://github.com/systemd/systemd/issues/2001](https://github.com/systemd/systemd/issues/2001)), and will throw a "too many levels of symlinks" error. As a (possibly insecure) workaround, simply pacstrap the install to the container directory instead.
 
 Symlink to register the container on the host, as per [Systemd-nspawn#Enable container on boot](/index.php/Systemd-nspawn#Enable_container_on_boot "Systemd-nspawn"):
 

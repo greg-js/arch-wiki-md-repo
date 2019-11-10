@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=581506) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=585932) na versão em inglês.
 
 Artigos relacionados
 
@@ -46,17 +46,14 @@ Asterisco indica o ano do primeiro lançamento público baseado no Arch Linux.
 *   [ArchBang](https://sourceforge.net/projects/archbang/) 
 *   [ArchEX](https://sourceforge.net/projects/archex/) 
 *   [Arch Hurd](https://archhurd.org/) 
-*   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
 *   [Arch Linux 32](https://archlinux32.org/) 
 *   [Arch Linux ARM](https://archlinuxarm.org/) 
-*   [Archphile](https://sourceforge.net/projects/archphile/) 
 *   [ArchStrike](https://archstrike.org/) 
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/) 
 *   [ArcoLinux](https://sourceforge.net/projects/arcolinux/) 
 *   [Artix Linux](https://sourceforge.net/projects/artix-linux/) 
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/) 
 *   [BlackArch Linux](https://blackarch.org/) 
-*   [BlueLight](https://github.com/BlueLightOS/bluelight) 
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/) 
 *   [Chakra](https://sourceforge.net/projects/chakra/) 
 *   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/) 
@@ -66,7 +63,6 @@ Asterisco indica o ano do primeiro lançamento público baseado no Arch Linux.
 *   [LinHES](http://linhes.org/) 
 *   [MagpieOS](https://sourceforge.net/projects/magpieos/) 
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/) 
-*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/) 
 *   [Namib](https://sourceforge.net/projects/namib-gnu-linux/) 
 *   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/) 
@@ -74,7 +70,6 @@ Asterisco indica o ano do primeiro lançamento público baseado no Arch Linux.
 *   [Parabola](https://www.parabola.nu/) 
 *   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/) 
 *   [RaspArch](https://sourceforge.net/projects/rasparch/) 
-*   [SwagArch](https://swagarch.gitlab.io/) 
 *   [TalkingArch](https://talkingarch.tk/) 
 *   [UBOS](http://ubos.net/) 
 
@@ -85,10 +80,15 @@ Essas distribuições não são mais desenvolvidas, mas mostram um pouco do hist
 ### 2019
 
 *   [Antergos](https://sourceforge.net/projects/antergos/) 
+*   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
+*   [BlueLight](https://github.com/BlueLightOS/bluelight) 
+*   [SwagArch](http://web.archive.org/web/20190125193812/https://swagarch.gitlab.io/) 
 
 ### 2018
 
 *   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/) 
+*   [Archphile](https://sourceforge.net/projects/archphile/) 
+*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/) 
 
 ### 2017

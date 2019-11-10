@@ -212,7 +212,7 @@ In a dynamic environment (laptops and to some extents desktops), you need to con
 
 <caption>Network managers</caption>
 | Software | Support ? |
-| NetworkManager | Partial |
+| [NetworkManager](/index.php/NetworkManager "NetworkManager") | Partial |
 | [netctl](/index.php/Netctl "Netctl") | Unknown |
 
 <caption>VPN Clients</caption>

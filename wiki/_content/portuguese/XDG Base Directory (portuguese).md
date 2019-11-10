@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [XDG Base Directory](/index.php/XDG_Base_Directory "XDG Base Directory"). Data da última tradução: 2019-10-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory&diff=0&oldid=585140) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [XDG Base Directory](/index.php/XDG_Base_Directory "XDG Base Directory"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory&diff=0&oldid=587850) na versão em inglês.
 
 Artigos relacionados
 
@@ -545,9 +545,9 @@ $ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug`
 
  | [[105]](https://github.com/npm/npm/issues/6675) | `$ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc` `npmrc` 
 ```
-prefix=$XDG_DATA_HOME/npm
-cache=$XDG_CACHE_HOME/npm
-tmp=$XDG_RUNTIME_DIR/npm
+prefix=${XDG_DATA_HOME}/npm
+cache=${XDG_CACHE_HOME}/npm
+tmp=${XDG_RUNTIME_DIR}/npm
 init-module=$XDG_CONFIG_HOME/npm/config/npm-init.js
 
 ```
@@ -760,7 +760,7 @@ Note que essas variáveis são respeitadas pelo *xinit*, mas não pelo *startx*.
 
  | [não vai corrigir](http://savannah.gnu.org/support/?108134) | `$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
 
-Um `bashrc` especificado pode ser carregado a partir de `/etc/bashrc`.
+Um `bashrc` especificado pode ser carregado a partir de `/etc/bash.bashrc`.
 
 Especifique `--init-file <arquivo>` como uma alternativa a `~/.bashrc` para shells interativos.
 
@@ -794,6 +794,7 @@ Especifique `--init-file <arquivo>` como uma alternativa a `~/.bashrc` para shel
 | [gtk-recordMyDesktop](http://recordmydesktop.sourceforge.net/about.php) | `~/.gtk-recordmydesktop` |
 | [hplip](https://www.archlinux.org/packages/?name=hplip) | `~/.hplip/` | [[147]](https://bugs.launchpad.net/hplip/+bug/307152) |
 | [idris](http://www.idris-lang.org/) | `~/.idris` | [[148]](https://github.com/idris-lang/Idris-dev/pull/3456) |
+| [iwd](https://iwd.wiki.kernel.org/) / iwctl | `~/.iwctl_history` |
 | [Java](/index.php/Java_(Portugu%C3%AAs) "Java (Português)") OpenJDK | `~/.java/fonts` | [[149]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) |
 | [Java](/index.php/Java_(Portugu%C3%AAs) "Java (Português)") OpenJFX | `~/.java/webview` |
 | [julia](http://julialang.org/) | 

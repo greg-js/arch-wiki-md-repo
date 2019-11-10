@@ -28,7 +28,7 @@
 
 	Mantenedor do ArchWiki
 
-	A [Equipe de Manutenção do ArchWiki](/index.php/ArchWiki:Maintenance_Team_(Portugu%C3%AAs) "ArchWiki:Maintenance Team (Português)") supervisiona e corrige as edições feitas no [ArchWiki](/index.php/ArchWiki_(Portugu%C3%AAs) "ArchWiki (Português)").
+	A [Equipe de Manutenção do ArchWiki](/index.php/ArchWiki:Equipe_de_Manuten%C3%A7%C3%A3o "ArchWiki:Equipe de Manutenção") supervisiona e corrige as edições feitas no [ArchWiki](/index.php/ArchWiki_(Portugu%C3%AAs) "ArchWiki (Português)").
 
 	Tradutor do ArchWiki
 

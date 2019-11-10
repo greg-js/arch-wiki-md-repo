@@ -107,7 +107,13 @@ For the first two options, consider that you might need adapters to connect the 
 ### Update fstab
 
 **Warning:** Before doing this step please make sure that you do not wish to use this drive in the old system, as removing/altering the [fstab](/index.php/Fstab "Fstab") file will likely prevent the system from booting in the old configuration
-If you are using an Arch Linux Installation Image, mount the new root partition to `/mnt`, and any other partitions required like you would in a normal install (see [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide")). Next remove the old fstab file using the following command ` # rm /mnt/etc/fstab` and then generate a new one as indicated on [Installation guide#Fstab](/index.php/Installation_guide#Fstab "Installation guide").
+
+If you are using an Arch Linux Installation Image, mount the new root partition to `/mnt`, and any other partitions required like you would in a normal install (see [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide")). Next remove the old fstab file using the following command
+
+ ` # rm /mnt/etc/fstab` 
+
+and then generate a new one as indicated on [Installation guide#Fstab](/index.php/Installation_guide#Fstab "Installation guide").
+
 **Note:** Make sure to check that no unnecessary partitions are mounted. This can be checked by running `mount -l` and checking all the partitions that are mounted under `/mnt` (either directly or under a subfolder of `/mnt`). If there are any partitions mounted that are unnecessary you can unmount them using `umount devname` where `devname` is the name of the device you with to unmount (most likely in the from `/dev/sdxn` with `x` a letter indicating the device and `n` a number indicating the specific partition)
 
 Alternative methods to alter the fstab file are:
@@ -158,7 +164,7 @@ Alternatives are:
         *   `# grep -Ri 'hostname' /etc` should give some hints on the files to be updated
 *   if using [dhcpcd](/index.php/Dhcpcd "Dhcpcd") with named network interfaces:
     *   `$ dmesg | grep 'renamed from eth'` might help to find the new interface name
-    *   remove old `# systemctl remove dhcpcd@enp*X*s0.service`
+    *   remove old `# systemctl disable dhcpcd@enp*X*s0.service`
     *   activate new `# systemctl start dhcpcd@enp*X*s0.service`
 
 ## See also

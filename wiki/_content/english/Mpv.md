@@ -152,7 +152,7 @@ and it would ignore all options except the ones for `myprofile1`.
 
 #### Native Wayland output
 
-By default mpv uses X even on [Wayland](/index.php/Wayland "Wayland") clients, like [Sway](/index.php/Sway "Sway").
+By default mpv uses X even on [Wayland](/index.php/Wayland "Wayland") clients like [Sway](/index.php/Sway "Sway").
 
 In order to make it work on Wayland, either specify it from the command line:
 
@@ -306,12 +306,46 @@ Set `volume-max=*value*` in your configuration file to a reasonable amount, such
 
 ### Play a DVD
 
-To start the main stream of a video DVD, use the command:
+mpv does not support DVD menus. To start the main stream with the longest title of a video DVD, use the command:
 
 ```
 $ mpv dvd://
 
 ```
+
+An optional title specifier is a number (starting at 0) which selects between separate video streams on the DVD:
+
+```
+$ mpv dvd://[title] 
+
+```
+
+DVD's which have been copied on to a hard-disk or other mounted filesystem (by e.g. the dvdbackup tool) are accommodated by specifying the path to the local copy: --dvd-device=PATH.
+
+Sample Desktop file for playing DVD's from hard-disk:
+
+```
+[Desktop Entry]
+Type=Application
+Name=mpv Media Player DVD 
+GenericName=Multimedia player
+Comment=Play movies and songs
+Icon=mpv
+Exec=mpv dvd:// --player-operation-mode=pseudo-gui --force-window --idle --dvd-device=%f
+Terminal=false
+Categories=AudioVideo;Audio;Video;Player;TV;
+# (MimeType and X-KDE-Protocols omitted, see orginianl mpv.desktop file)
+
+```
+
+By replacing the exec line with
+
+```
+Exec=mpv dvd://0 dvd://1 dvd://2 dvd://3 dvd://4 dvd://5 dvd://6 dvd://7 dvd://8 dvd://9  --player-operation-mode=pseudo-gui --force-window --idle --dvd-device=%f
+
+```
+
+the mpv player will queue DVD title 0 to 9 in the playlist, which allows the user to play the titles consecutively or jump forward and backward in the dvd titles with the mpv gui.
 
 Install [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss), to fix the error:
 

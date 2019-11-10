@@ -112,7 +112,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **aterm** — Xterm replacement with transparency support. It has been deprecated in favour of urxvt since 2008.
 
-	[http://aterm.sourceforge.net/](http://aterm.sourceforge.net/) || [aterm](https://aur.archlinux.org/packages/aterm/)
+	[http://www.afterstep.org/aterm.php](http://www.afterstep.org/aterm.php) || [aterm](https://aur.archlinux.org/packages/aterm/)
 
 *   **Cool Retro Term** — A good looking terminal emulator which mimics the old cathode display.
 
@@ -176,7 +176,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **[xterm](/index.php/Xterm "Xterm")** — Simple terminal emulator for the X Window System. It provides DEC VT102 and Tektronix 4014 compatible terminals for programs that can't use the window system directly.
 
-	[http://invisible-island.net/xterm/](http://invisible-island.net/xterm/) || [xterm](https://www.archlinux.org/packages/?name=xterm)
+	[https://invisible-island.net/xterm/](https://invisible-island.net/xterm/) || [xterm](https://www.archlinux.org/packages/?name=xterm)
 
 *   **[Yakuake](/index.php/Yakuake "Yakuake")** — Drop-down terminal (Quake style) emulator based on Konsole.
 
@@ -216,7 +216,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **MATE terminal** — A fork of [Wikipedia:GNOME terminal](https://en.wikipedia.org/wiki/GNOME_terminal "wikipedia:GNOME terminal") for the [MATE](/index.php/MATE "MATE") desktop.
 
-	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal)
+	[https://www.mate-desktop.org/](https://www.mate-desktop.org/) || [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal)
 
 *   **Pantheon Terminal** — A super lightweight, beautiful, and simple terminal emulator. It's designed to be setup with sane defaults and little to no configuration.
 
@@ -338,7 +338,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **ded** — directory editor, file manager similar to Emacs dired
 
-	[http://invisible-island.net/ded/ded.html](http://invisible-island.net/ded/ded.html) || [ded](https://aur.archlinux.org/packages/ded/)
+	[https://invisible-island.net/ded/ded.html](https://invisible-island.net/ded/ded.html) || [ded](https://aur.archlinux.org/packages/ded/)
 
 *   **[Dired](https://en.wikipedia.org/wiki/Dired "wikipedia:Dired")** — Directory editor integrated with [Emacs](/index.php/Emacs "Emacs").
 
@@ -354,7 +354,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")** — Console-based, dual-paneled file manager.
 
-	[http://www.midnight-commander.org](http://www.midnight-commander.org) || [mc](https://www.archlinux.org/packages/?name=mc)
+	[http://midnight-commander.org](http://midnight-commander.org) || [mc](https://www.archlinux.org/packages/?name=mc)
 
 *   **nffm** — "Nothing Fancy File Manager", a mouseless ncurses file manager written in C.
 
@@ -378,7 +378,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Vifm](/index.php/Vifm "Vifm")** — Ncurses-based two-panel file manager with vi-like keybindings.
 
-	[http://vifm.info](http://vifm.info) || [vifm](https://www.archlinux.org/packages/?name=vifm)
+	[https://vifm.info](https://vifm.info) || [vifm](https://www.archlinux.org/packages/?name=vifm)
 
 ##### Graphical
 
@@ -412,7 +412,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Nemo](/index.php/Nemo "Nemo")** — Nemo is the file manager of the Cinnamon desktop. A fork of Nautilus.
 
-	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [nemo](https://www.archlinux.org/packages/?name=nemo)
+	[https://cinnamon.linuxmint.com/](https://cinnamon.linuxmint.com/) || [nemo](https://www.archlinux.org/packages/?name=nemo)
 
 *   **Pantheon Files** — File browser designed for elementary OS.
 
@@ -428,15 +428,15 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **qtFM** — Small, lightweight filemanager for Linux desktops based on pure Qt.
 
-	[http://www.qtfm.eu/](http://www.qtfm.eu/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
+	[https://qtfm.eu/](https://qtfm.eu/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **ROX** — Small and fast file manager which can optionally manage the desktop background and panels.
 
-	[http://rox.sourceforge.net](http://rox.sourceforge.net) || [rox](https://www.archlinux.org/packages/?name=rox)
+	[http://rox.sourceforge.net/](http://rox.sourceforge.net/) || [rox](https://www.archlinux.org/packages/?name=rox)
 
 *   **[Thunar](/index.php/Thunar "Thunar")** — File manager that can be run as a daemon with excellent start up and directory load times.
 
-	[http://docs.xfce.org/xfce/thunar/start](http://docs.xfce.org/xfce/thunar/start) || [thunar](https://www.archlinux.org/packages/?name=thunar)
+	[https://docs.xfce.org/xfce/thunar/start](https://docs.xfce.org/xfce/thunar/start) || [thunar](https://www.archlinux.org/packages/?name=thunar)
 
 ###### Twin-panel
 
@@ -444,7 +444,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 *   **Double Commander** — File manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
 
-	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || GTK: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
+	[https://doublecmd.sourceforge.net//](https://doublecmd.sourceforge.net//) || GTK: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
 
 *   **[emelFM2](https://en.wikipedia.org/wiki/emelFM2 "wikipedia:emelFM2")** — File manager that implements the popular two-panel design.
 
@@ -456,7 +456,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 *   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Advanced twin panel (Midnight Commander style) file manager for the KDE desktop.
 
-	[http://www.krusader.org/](http://www.krusader.org/) || [krusader](https://www.archlinux.org/packages/?name=krusader)
+	[https://krusader.org/](https://krusader.org/) || [krusader](https://www.archlinux.org/packages/?name=krusader)
 
 *   **muCommander** — A lightweight, cross-platform file manager with a dual-pane interface written in Java.
 
@@ -464,7 +464,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 *   **[SpaceFM](/index.php/SpaceFM "SpaceFM")** — GTK multi-panel tabbed file manager.
 
-	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
+	[http://ignorantguru.github.io/spacefm/](http://ignorantguru.github.io/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
 
 *   **Sunflower** — Small and highly customizable twin-panel file manager for Linux with support for plugins.
 
@@ -480,7 +480,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 *   **Worker** — Fast, lightweight and feature-rich file manager for the X Window System.
 
-	[http://www.boomerangsworld.de/worker/](http://www.boomerangsworld.de/worker/) || [worker](https://aur.archlinux.org/packages/worker/)
+	[http://www.boomerangsworld.de/cms/worker/](http://www.boomerangsworld.de/cms/worker/) || [worker](https://aur.archlinux.org/packages/worker/)
 
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer-like file manager for X (X File Explorer).
 
@@ -522,7 +522,7 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 *   **[SparkleShare](https://en.wikipedia.org/wiki/SparkleShare "wikipedia:SparkleShare")** — File sharing and collaboration application written in C#. It can sync with any Git server over SSH.
 
-	[http://sparkleshare.org/](http://sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
+	[http://www.sparkleshare.org/](http://www.sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
 
 *   **[Syncthing](/index.php/Syncthing "Syncthing")** — Continuous file synchronization program. It synchronizes files between two or more computers in a simple way without advanced configuration.
 
@@ -564,11 +564,11 @@ For archiving and compression command-line tools, see [Archiving and compression
 
 *   **[PeaZip](https://en.wikipedia.org/wiki/PeaZip "wikipedia:PeaZip")** — Open source file and archive manager.
 
-	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || GTK: [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/), Qt: [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
+	[https://www.peazip.org/peazip-linux.html](https://www.peazip.org/peazip-linux.html) || GTK: [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/), Qt: [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
 
 *   **Squeeze** — Featherweight front-end for commandline archiving tools.
 
-	[http://squeeze.xfce.org/](http://squeeze.xfce.org/) || [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/)
+	[http://squeeze.xfce.org](http://squeeze.xfce.org) || [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/)
 
 *   **[Xarchiver](https://en.wikipedia.org/wiki/Xarchiver "wikipedia:Xarchiver")** — Lightweight desktop independent archive manager built with GTK.
 
@@ -582,7 +582,7 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 *   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting.
 
-	[http://www.colordiff.org/](http://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
+	[https://www.colordiff.org/](https://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
 
 *   **Diffuse** — Small and simple text merge tool written in Python.
 
@@ -670,7 +670,7 @@ See [find](/index.php/Find "Find") and its alternatives.
 
 *   **Searchmonkey** — Powerful GUI search utility for matching regex patterns.
 
-	[http://searchmonkey.sourceforge.net/](http://searchmonkey.sourceforge.net/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
+	[http://searchmonkey.embeddediq.com/](http://searchmonkey.embeddediq.com/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
 
 ###### File indexers
 
@@ -790,7 +790,7 @@ See also [Wikipedia:List of build automation software](https://en.wikipedia.org/
 
 *   **[GNU make](https://en.wikipedia.org/wiki/Make_(software) "wikipedia:Make (software)")** — GNU make utility to maintain groups of programs.
 
-	[http://www.gnu.org/software/make](http://www.gnu.org/software/make) || [make](https://www.archlinux.org/packages/?name=make) (part of [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/))
+	[http://www.gnu.org/software/make/](http://www.gnu.org/software/make/) || [make](https://www.archlinux.org/packages/?name=make) (part of [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/))
 
 *   **[Gradle](https://en.wikipedia.org/wiki/Gradle "wikipedia:Gradle")** — Powerful build system for the JVM.
 
@@ -826,7 +826,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[CodeLite](https://en.wikipedia.org/wiki/CodeLite "wikipedia:CodeLite")** — Open source and cross-platform C/C++/PHP and Node.js IDE written in C++ .
 
-	[http://www.codelite.org/](http://www.codelite.org/) || [codelite](https://aur.archlinux.org/packages/codelite/)
+	[https://codelite.org/](https://codelite.org/) || [codelite](https://aur.archlinux.org/packages/codelite/)
 
 *   **[Cloud9](https://en.wikipedia.org/wiki/Cloud9_IDE "wikipedia:Cloud9 IDE")** — State-of-the-art IDE that runs in your browser and lives in the cloud, allowing you to run, debug and deploy applications from anywhere, anytime.
 
@@ -858,7 +858,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Komodo Edit](https://en.wikipedia.org/wiki/Komodo_Edit "wikipedia:Komodo Edit")** — A free, multi-language editor.
 
-	[http://www.activestate.com/komodo-edit](http://www.activestate.com/komodo-edit) || [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
+	[https://www.activestate.com/products/komodo-edit/](https://www.activestate.com/products/komodo-edit/) || [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
 
 *   **[Lazarus](https://en.wikipedia.org/wiki/Lazarus_(IDE) "wikipedia:Lazarus (IDE)")** — Delphi (Object Pascal) compatible IDE for Rapid Application Development. It has variety of components ready for use and a graphical form designer to easily create complex graphical user interfaces.
 
@@ -870,11 +870,11 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[MonoDevelop](https://en.wikipedia.org/wiki/MonoDevelop "wikipedia:MonoDevelop")** — Cross-platform IDE targeted for the Mono and .NET frameworks.
 
-	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/)
+	[https://www.monodevelop.com/](https://www.monodevelop.com/) || [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/)
 
 *   **[MPLAB](https://en.wikipedia.org/wiki/MPLAB "wikipedia:MPLAB")** — IDE for Microchip PIC and dsPIC development.
 
-	[http://www.microchip.com/mplabx](http://www.microchip.com/mplabx) || [microchip-mplabx-bin](https://aur.archlinux.org/packages/microchip-mplabx-bin/)
+	[https://www.microchip.com/mplabx](https://www.microchip.com/mplabx) || [microchip-mplabx-bin](https://aur.archlinux.org/packages/microchip-mplabx-bin/)
 
 *   **[Netbeans](/index.php/Netbeans "Netbeans")** — IDE for developing with Java, JavaScript, PHP, Python, Ruby, Groovy, C, C++, Scala, Clojure, and other languages.
 
@@ -914,7 +914,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Thonny](https://en.wikipedia.org/wiki/Thonny "wikipedia:Thonny")** — Python IDE for beginners.
 
-	[http://thonny.org/](http://thonny.org/) || [thonny](https://aur.archlinux.org/packages/thonny/)
+	[https://thonny.org/](https://thonny.org/) || [thonny](https://aur.archlinux.org/packages/thonny/)
 
 *   **[WingIDE](https://en.wikipedia.org/wiki/Wing_IDE "wikipedia:Wing IDE")** — Proprietary Python development environment. It is fully featured and meant for professional use.
 
@@ -982,7 +982,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **Qt QDbusViewer** — Tool to introspect D-Bus objects and messages.
 
-	[http://doc.qt.io/qt-5/qdbusviewer.html](http://doc.qt.io/qt-5/qdbusviewer.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
+	[https://doc.qt.io/qt-5/qdbusviewer.html](https://doc.qt.io/qt-5/qdbusviewer.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
 
 *   **scanmem** — Debugging utility designed to isolate the address of an arbitrary variable in an executing process.
 
@@ -1012,7 +1012,7 @@ And then there are also:
 
 *   **[ANTLR](https://en.wikipedia.org/wiki/ANTLR "wikipedia:ANTLR")** — Parser generator, written in Java, for parsing structured text or binary files.
 
-	[http://www.antlr.org/](http://www.antlr.org/) || [antlr4](https://www.archlinux.org/packages/?name=antlr4)
+	[https://www.antlr.org/](https://www.antlr.org/) || [antlr4](https://www.archlinux.org/packages/?name=antlr4)
 
 *   **LPeg** — Pattern-matching library, based on PEGs, for Lua.
 
@@ -1020,7 +1020,7 @@ And then there are also:
 
 *   **peg/leg** — Recursive-descent parser generators for C.
 
-	[http://piumarta.com/software/peg/](http://piumarta.com/software/peg/) || [peg](https://www.archlinux.org/packages/?name=peg)
+	[https://www.piumarta.com/software/peg/](https://www.piumarta.com/software/peg/) || [peg](https://www.archlinux.org/packages/?name=peg)
 
 *   **Ragel** — Compiles finite state machines from regular languages into executable C, C++, Objective-C, or D code.
 
@@ -1030,7 +1030,7 @@ And then there are also:
 
 *   **[FLUID](https://en.wikipedia.org/wiki/FLUID "wikipedia:FLUID")** — FLTK GUI designer.
 
-	[http://www.fltk.org/](http://www.fltk.org/) || [fltk](https://www.archlinux.org/packages/?name=fltk)
+	[https://www.fltk.org/](https://www.fltk.org/) || [fltk](https://www.archlinux.org/packages/?name=fltk)
 
 *   **[Glade](https://en.wikipedia.org/wiki/Glade_Interface_Designer "wikipedia:Glade Interface Designer")** — Create or open user interface designs for GTK applications.
 
@@ -1042,7 +1042,7 @@ And then there are also:
 
 *   **Qt Designer** — Tool for designing and building graphical user interfaces (GUIs) with Qt Widgets.
 
-	[http://doc.qt.io/qt-5/qtdesigner-manual.html](http://doc.qt.io/qt-5/qtdesigner-manual.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
+	[https://doc.qt.io/qt-5/qtdesigner-manual.html](https://doc.qt.io/qt-5/qtdesigner-manual.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
 
 #### Hex editors
 
@@ -1098,7 +1098,7 @@ See also [Wikipedia:Literate programming](https://en.wikipedia.org/wiki/Literate
 
 *   **Noweb** — A Simple, Extensible Tool for Literate Programming build against ICON libs and texlive
 
-	[http://www.cs.tufts.edu/~nr/noweb/](http://www.cs.tufts.edu/~nr/noweb/) || [noweb](https://aur.archlinux.org/packages/noweb/)
+	[https://www.cs.tufts.edu/~nr/noweb/](https://www.cs.tufts.edu/~nr/noweb/) || [noweb](https://aur.archlinux.org/packages/noweb/)
 
 *   **nuweb** — A Simple Literate Programming Tool
 
@@ -1164,7 +1164,7 @@ See also [Wikipedia:List of Unified Modeling Language tools](https://en.wikipedi
 
 *   **Qt Assistant** — Tool for viewing on-line documentation in Qt help file format.
 
-	[http://doc.qt.io/qt-5/qtassistant-index.html](http://doc.qt.io/qt-5/qtassistant-index.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
+	[https://doc.qt.io/qt-5/qtassistant-index.html](https://doc.qt.io/qt-5/qtassistant-index.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
 
 *   **quickDocs** — Fast developer docs reader for reading Valadoc and DevDocs.
 
@@ -1236,11 +1236,11 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 *   **Nexus 2** — Nexus 2 Repository Manager (OSS)
 
-	[http://nexus.sonatype.org](http://nexus.sonatype.org) || [nexus](https://aur.archlinux.org/packages/nexus/)
+	[https://www.sonatype.com/nexus-repository-oss](https://www.sonatype.com/nexus-repository-oss) || [nexus](https://aur.archlinux.org/packages/nexus/)
 
 *   **Nexus 3** — Nexus 3 Repository OSS
 
-	[http://nexus.sonatype.org](http://nexus.sonatype.org) || [nexus-oss](https://aur.archlinux.org/packages/nexus-oss/)
+	[https://www.sonatype.com/nexus-repository-oss](https://www.sonatype.com/nexus-repository-oss) || [nexus-oss](https://aur.archlinux.org/packages/nexus-oss/)
 
 *   **Artifactory** — Artifactory is an advanced Binary Repository Manager for use by build tools, dependency management tools and build servers
 
@@ -1312,7 +1312,7 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 *   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — A text analyser, it detects the language of the input and corrects the keyboard layout if needed.
 
-	[http://www.xneur.ru/](http://www.xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/) (GUI)
+	[https://xneur.ru/](https://xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/) (GUI)
 
 #### Keybinding managers
 
@@ -1380,7 +1380,7 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 *   **duc** — A library and suite of tools for inspecting disk usage.
 
-	[http://duc.zevv.nl/](http://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
+	[https://duc.zevv.nl/](https://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
 
 *   **[Filelight](https://en.wikipedia.org/wiki/Filelight "wikipedia:Filelight")** — Disk usage analyzer that creates an interactive map of concentric, segmented rings that help visualise disk usage on your computer.
 
@@ -1404,7 +1404,7 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 *   **ncdu** — Simple ncurses disk usage analyzer.
 
-	[http://dev.yorhel.nl/ncdu](http://dev.yorhel.nl/ncdu) || [ncdu](https://www.archlinux.org/packages/?name=ncdu)
+	[https://dev.yorhel.nl/ncdu](https://dev.yorhel.nl/ncdu) || [ncdu](https://www.archlinux.org/packages/?name=ncdu)
 
 *   **qdirstat** — Qt-based directory statistics (KDirStat/K4DirStat without any KDE - from the original KDirStat author).
 
@@ -1534,7 +1534,7 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 *   **Task Manager** — GTK2 process management application for [Xfce](/index.php/Xfce "Xfce").
 
-	[http://goodies.xfce.org/projects/applications/xfce4-taskmanager](http://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
+	[https://goodies.xfce.org/projects/applications/xfce4-taskmanager](https://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
 
 #### System monitors
 
@@ -1554,7 +1554,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **dstat** — Versatile resource statistics tool.
 
-	[http://dag.wieers.com/home-made/dstat/](http://dag.wieers.com/home-made/dstat/) || [dstat](https://www.archlinux.org/packages/?name=dstat)
+	[http://dag.wiee.rs/home-made/dstat/](http://dag.wiee.rs/home-made/dstat/) || [dstat](https://www.archlinux.org/packages/?name=dstat)
 
 *   **Fsniper** — Daemon to run scripts based on changes in files monitored by inotify.
 
@@ -1566,7 +1566,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **glances** — CLI curses-based monitoring tool in Python.
 
-	[http://nicolargo.github.io/glances](http://nicolargo.github.io/glances) || [glances](https://www.archlinux.org/packages/?name=glances)
+	[https://nicolargo.github.io/glances/](https://nicolargo.github.io/glances/) || [glances](https://www.archlinux.org/packages/?name=glances)
 
 *   **netdata** — Web-based real-time performance monitor.
 
@@ -1582,7 +1582,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **Sysstat** — Collection of resource monitoring tools: iostat, isag, mpstat, pidstat, sadf, sar.
 
-	[http://pagesperso-orange.fr/sebastien.godard/](http://pagesperso-orange.fr/sebastien.godard/) || [sysstat](https://www.archlinux.org/packages/?name=sysstat)
+	[http://sebastien.godard.pagesperso-orange.fr/](http://sebastien.godard.pagesperso-orange.fr/) || [sysstat](https://www.archlinux.org/packages/?name=sysstat)
 
 *   **xosview** — System monitor that resembles gr_osview from SGI IRIX.
 
@@ -1602,7 +1602,7 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 *   **alsi** — A system information tool for Arch Linux. It can be configured for every other system without even touching the source code of the script.
 
-	[http://trizenx.blogspot.ro/2012/08/alsi.html](http://trizenx.blogspot.ro/2012/08/alsi.html) || [alsi](https://aur.archlinux.org/packages/alsi/)
+	[https://trizenx.blogspot.com/2012/08/alsi.html](https://trizenx.blogspot.com/2012/08/alsi.html) || [alsi](https://aur.archlinux.org/packages/alsi/)
 
 *   **[archey3](/index.php/Archey3 "Archey3")** — Python script to display system infomation alongside the Arch Linux logo.
 
@@ -1640,7 +1640,7 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 *   **hardinfo** — A small application that displays information about your hardware and operating system, it looks like the Device Manager in Windows.
 
-	[http://hardinfo.berlios.de/HomePage](http://hardinfo.berlios.de/HomePage) || [hardinfo](https://www.archlinux.org/packages/?name=hardinfo)
+	[https://www.berlios.de/software/hardinfo/](https://www.berlios.de/software/hardinfo/) || [hardinfo](https://www.archlinux.org/packages/?name=hardinfo)
 
 *   **i-Nex** — An application that gathers information for hardware components available on your system and displays it using an user interface similar to the popular Windows tool CPU-Z.
 
@@ -1648,7 +1648,7 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 *   **lshw** — A small tool to provide detailed information on the hardware configuration of the machine with CLI and GTK interfaces.
 
-	[http://ezix.org/project/wiki/HardwareLiSter](http://ezix.org/project/wiki/HardwareLiSter) || [lshw](https://www.archlinux.org/packages/?name=lshw)
+	[https://ezix.org/project/wiki/HardwareLiSter](https://ezix.org/project/wiki/HardwareLiSter) || [lshw](https://www.archlinux.org/packages/?name=lshw)
 
 *   **KDE Info Center** — Centralized and convenient overview of system information for KDE.
 

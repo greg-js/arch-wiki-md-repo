@@ -373,7 +373,7 @@ The *paccache* script, provided within the [pacman-contrib](https://www.archlinu
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `paccache.timer` to discard unused packages weekly.
 
-**Tip:** You can create [#Hooks](#Hooks) to run this automatically after every pacman transaction, [see examples](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743).
+**Tip:** You can create a [hook](#Hooks) to run this automatically after every pacman transaction, see [examples](https://bbs.archlinux.org/viewtopic.php?pid=1694743#p1694743) and [pacman-cleanup-hook](https://aur.archlinux.org/packages/pacman-cleanup-hook/).
 
 You can also define how many recent versions you want to keep. To retain only one past version use:
 
@@ -489,10 +489,10 @@ Search for a package containing a file, e.g.:
 
  `$ pacman -F pacman` 
 ```
-core/pacman 5.0.1-4
+core/pacman 5.2.1-1 (base base-devel) [installed]
     usr/bin/pacman
     usr/share/bash-completion/completions/pacman
-extra/xscreensaver 5.36-1
+extra/xscreensaver 5.43-1
     usr/lib/xscreensaver/pacman
 
 ```

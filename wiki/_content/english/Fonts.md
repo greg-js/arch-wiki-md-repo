@@ -488,6 +488,8 @@ A section of the Unicode standard is designated for pictographic characters call
 
 [Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
 
+**Note:** [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) implements a subset of emojis in outline style, which leads to emoji being rendered in a mix of styles when installed at the same time as any of the above.
+
 ### Math
 
 *   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Mathematica fonts by Wolfram Research, Inc.

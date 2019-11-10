@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2019-10-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=583718) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2019-11-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=587622) na versão em inglês.
 
 Artigos relacionados
 
@@ -115,7 +115,7 @@ Para impedir totalmente de reservar blocos na criação do sistema de arquivos, 
 
 ```
 
-Para reduzi-lo para 1% posteriormente, use:
+Para alterá-lo para 1% posteriormente, use:
 
 ```
 # tune2fs -m 1 /dev/*dispositivo*

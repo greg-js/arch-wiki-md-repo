@@ -80,6 +80,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
         *   [6.2.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
         *   [6.2.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
         *   [6.2.3 Volume control, notifications or multimedia keys do not work](#Volume_control,_notifications_or_multimedia_keys_do_not_work)
+        *   [6.2.4 Login Screen KCM does not sync cursor settings to SDDM](#Login_Screen_KCM_does_not_sync_cursor_settings_to_SDDM)
     *   [6.3 Graphical problems](#Graphical_problems)
         *   [6.3.1 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
         *   [6.3.2 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
@@ -171,7 +172,7 @@ Breeze is not directly available for Qt4 since it cannot be built without KDE 4 
 
 	GTK
 
-The recommended theme for a pleasant appearance in GTK applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (part of the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME/GTK Application Style*.
+The recommended theme for a pleasant appearance in GTK applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), a GTK theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (part of the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) and select `Breeze` or `Breeze-Dark` as the GTK2/GTK3 theme in *System Settings > Application Style > GNOME/GTK Application Style*.
 
 In some themes, tooltips in GTK applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`.
 
@@ -682,6 +683,10 @@ $ rm -rf ~/.cache/*
 #### Volume control, notifications or multimedia keys do not work
 
 Hiding certain items in the System Tray settings (e.g. Audio Volume, Media Player or Notifications) also disables related features. Hiding the *Audio Volume* disables volume control keys, *Media Player* disables multimedia keys (rewind, stop, pause) and hiding *Notifications* disables showing notifications.
+
+#### Login Screen KCM does not sync cursor settings to SDDM
+
+The Login Screen KCM reads your cursor settings from `~/.config/kcminputrc`, without this file no settings are synced. The easiest way to generate this file is to change your cursor theme in *System Settings > Cursors*, then change it back to your preferred cursor theme.
 
 ### Graphical problems
 

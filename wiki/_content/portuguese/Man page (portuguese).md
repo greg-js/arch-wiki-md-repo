@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=568922) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2019-10-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=587126) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,39 +8,44 @@ Artigos relacionados
 
 Apesar de seu escopo, páginas man são projetadas para serem documentos autocontidos, consequentemente limitando-as a fazer referência a outras páginas man ao discutir assuntos relatados. Esse é um contraste nítido com os [documentos info](/index.php/Manual_info "Manual info") compatíveis com hiperlinks, a tentativa do GNU de substituir o formato tradicional de página man.
 
-[man-db](https://www.archlinux.org/packages/?name=man-db) implementa *man* no Arch Linux, e o [less](/index.php/Utilit%C3%A1rios_principais#Essenciais "Utilitários principais") é o paginador padrão usado com *man*.
-
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Acessando páginas man](#Acessando_páginas_man)
-*   [2 Formato](#Formato)
-*   [3 Pesquisando por manuais](#Pesquisando_por_manuais)
-    *   [3.1 Compilando o cache de manuais com mandb](#Compilando_o_cache_de_manuais_com_mandb)
-    *   [3.2 Pesquisando por expressões nos manuais](#Pesquisando_por_expressões_nos_manuais)
-*   [4 Obtendo descrições de uma linha com whatis](#Obtendo_descrições_de_uma_linha_com_whatis)
-*   [5 Largura de página](#Largura_de_página)
-*   [6 Lendo páginas man locais](#Lendo_páginas_man_locais)
-    *   [6.1 Aplicativos de visualização](#Aplicativos_de_visualização)
-    *   [6.2 Conversão para HTML](#Conversão_para_HTML)
-        *   [6.2.1 mandoc](#mandoc)
-        *   [6.2.2 man2html](#man2html)
-        *   [6.2.3 man -H](#man_-H)
-        *   [6.2.4 roffit](#roffit)
-    *   [6.3 Conversão para PDF](#Conversão_para_PDF)
-*   [7 Páginas man online](#Páginas_man_online)
-*   [8 Páginas man notáveis](#Páginas_man_notáveis)
-*   [9 Veja também](#Veja_também)
+*   [1 Instalação](#Instalação)
+*   [2 Acessando páginas man](#Acessando_páginas_man)
+*   [3 Formato](#Formato)
+*   [4 Pesquisando por manuais](#Pesquisando_por_manuais)
+    *   [4.1 Compilando o cache de manuais com mandb](#Compilando_o_cache_de_manuais_com_mandb)
+    *   [4.2 Pesquisando por expressões nos manuais](#Pesquisando_por_expressões_nos_manuais)
+*   [5 Obtendo descrições de uma linha com whatis](#Obtendo_descrições_de_uma_linha_com_whatis)
+*   [6 Largura de página](#Largura_de_página)
+*   [7 Lendo páginas man locais](#Lendo_páginas_man_locais)
+    *   [7.1 Aplicativos de visualização](#Aplicativos_de_visualização)
+    *   [7.2 Conversão para HTML](#Conversão_para_HTML)
+        *   [7.2.1 mandoc](#mandoc)
+        *   [7.2.2 man2html](#man2html)
+        *   [7.2.3 man -H](#man_-H)
+        *   [7.2.4 roffit](#roffit)
+    *   [7.3 Conversão para PDF](#Conversão_para_PDF)
+*   [8 Páginas man online](#Páginas_man_online)
+*   [9 Páginas man notáveis](#Páginas_man_notáveis)
+*   [10 Veja também](#Veja_também)
+
+## Instalação
+
+[man-db](https://www.archlinux.org/packages/?name=man-db) implementa *man* no Arch Linux, e o [less](/index.php/Utilit%C3%A1rios_principais#Essenciais "Utilitários principais") é o paginador padrão usado com *man*.
+
+[man-pages](https://www.archlinux.org/packages/?name=man-pages) fornece as páginas man do Linux.
 
 ## Acessando páginas man
 
 Para ler uma página man, basta digitar:
 
 ```
-$ man *page_name*
+$ man *nome_página*
 
 ```
 

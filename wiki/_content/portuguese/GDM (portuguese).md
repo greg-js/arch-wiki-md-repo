@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=573816) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2019-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=586447) na versão em inglês.
 
 Artigos relacionados
 
@@ -7,7 +7,7 @@ Artigos relacionados
 
 Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O Gerenciador de Exibição do GNOME (GDM) é um programa que gerencia servidores gráficos de exibição e lida com logins de usuários gráficos."
 
-[Gerenciadores de exibição](/index.php/Gerenciadores_de_exibi%C3%A7%C3%A3o "Gerenciadores de exibição") fornecem a usuários de [X Window System](/index.php/X_Window_System_(Portugu%C3%AAs) "X Window System (Português)") e [Wayland](/index.php/Wayland "Wayland") com um prompt de login gráfico.
+[Gerenciadores de exibição](/index.php/Gerenciadores_de_exibi%C3%A7%C3%A3o "Gerenciadores de exibição") fornecem a usuários de [X Window System](/index.php/X_Window_System_(Portugu%C3%AAs) "X Window System (Português)") e [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") com um prompt de login gráfico.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -44,9 +44,10 @@ Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O Gerenc
     *   [4.3 Xorg sem senha](#Xorg_sem_senha)
     *   [4.4 Usar backend do Xorg](#Usar_backend_do_Xorg)
     *   [4.5 GDM congela com o systemd](#GDM_congela_com_o_systemd)
-    *   [4.6 Remoção incompleta do gdm](#Remoção_incompleta_do_gdm)
-    *   [4.7 Suspensão automática do GDM (GNOME 3.28)](#Suspensão_automática_do_GDM_(GNOME_3.28))
-    *   [4.8 GDM ignora Wayland e usa X.Org por padrão](#GDM_ignora_Wayland_e_usa_X.Org_por_padrão)
+    *   [4.6 GDM não inicia até a entrada ser fornecida](#GDM_não_inicia_até_a_entrada_ser_fornecida)
+    *   [4.7 Remoção incompleta do gdm](#Remoção_incompleta_do_gdm)
+    *   [4.8 Suspensão automática do GDM (GNOME 3.28)](#Suspensão_automática_do_GDM_(GNOME_3.28))
+    *   [4.9 GDM ignora Wayland e usa X.Org por padrão](#GDM_ignora_Wayland_e_usa_X.Org_por_padrão)
 *   [5 Veja também](#Veja_também)
 
 ## Instalação
@@ -118,22 +119,28 @@ Em seguida, você precisa criar um arquivo no diretório com o seguinte conteúd
     <file>gnome-shell.css</file>
     <file>gnome-shell-high-contrast.css</file>
     <file>icons/message-indicator-symbolic.svg</file>
+    <file>icons/pointer-double-click-symbolic.svg</file>
+    <file>icons/pointer-drag-symbolic.svg</file>
+    <file>icons/pointer-primary-click-symbolic.svg</file>
+    <file>icons/pointer-secondary-click-symbolic.svg</file>
     <file>key-enter.svg</file>
     <file>key-hide.svg</file>
     <file>key-layout.svg</file>
     <file>key-shift-latched-uppercase.svg</file>
     <file>key-shift.svg</file>
     <file>key-shift-uppercase.svg</file>
+    <file>no-events.svg</file>
     <file>noise-texture.png</file>
     <file>**nome-do-arquivo**</file>
-    <file>no-events.svg</file>
     <file>no-notifications.svg</file>
     <file>pad-osd.css</file>
     <file>process-working.svg</file>
+    <file>toggle-off-dark.svg</file>
     <file>toggle-off-hc.svg</file>
-    <file>toggle-off-intl.svg</file>
+    <file>toggle-off.svg</file>
+    <file>toggle-on-dark.svg</file>
     <file>toggle-on-hc.svg</file>
-    <file>toggle-on-intl.svg</file>
+    <file>toggle-on.svg</file>
   </gresource>
 </gresources>
 ```
@@ -203,7 +210,7 @@ $ gsettings set org.gnome.login-screen logo '*/caminho/para/logo.png*'
 
 #### Alterando o tema do cursor
 
-O GDM desconsidera as configurações do tema do cursor [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") e também ignora o conjunto de temas do cursor de acordo com a [especificação XDG](/index.php/Cursor_themes#XDG_specification "Cursor themes"). Para alterar o tema do cursor usado no GDM, crie o seguinte arquivo-chave
+O GDM desconsidera as configurações do tema do cursor [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") e também ignora o conjunto de temas do cursor de acordo com a [especificação XDG](/index.php/Temas_de_cursor#Especificação_XDG "Temas de cursor"). Para alterar o tema do cursor usado no GDM, crie o seguinte arquivo-chave
 
  `/etc/dconf/db/gdm.d/10-cursor-settings` 
 ```
@@ -518,7 +525,12 @@ Veja [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
 
 ### Usar backend do Xorg
 
-O backend [Wayland](/index.php/Wayland "Wayland") é usado por padrão e o backend [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") é usado somente se o backend de Wayland não puder ser iniciado. Como o backend Wayland foi [relatado](https://bugzilla.redhat.com/show_bug.cgi?id=1199890) para causar problemas para alguns usuários, o uso do backend do Xorg pode ser necessário. Para usar o backend do Xorg por padrão, edite o arquivo `/etc/gdm/custom.conf` e remova o comentário da seguinte linha:
+O backend [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") é usado por padrão e o backend [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") é usado somente se o backend de Wayland não puder ser iniciado. Você pode querer usar o backend Xorg se, por exemplo:
+
+*   A tela [pisca](https://bugzilla.redhat.com/show_bug.cgi?id=1199890)
+*   GDM [trava](https://bbs.archlinux.org/viewtopic.php?id=249334)
+
+Para usar o backend do Xorg por padrão, descomente a seguinte linha no `/etc/gdm/custom.conf`:
 
 ```
 #WaylandEnable=false
@@ -534,6 +546,17 @@ Se o GDM travar com `systemctl enable gdm`, e `systemctl start gdm` funciona con
  Type=Idle
 
 ```
+
+### GDM não inicia até a entrada ser fornecida
+
+Se, após a inicialização, a tela permanecer preta e o GDM não iniciar até que o mouse seja movido ou algo digitado no teclado, isso pode ocorrer devido à falta de entropia necessária para a geração aleatória de números. Para confirmar, verifique se a seguinte linha aparece dentro do log de *systemd-random-seed* (que pode ser lido usando `journalctl --unit systemd-random-seed`):
+
+```
+Kernel entropy pool is not initialized yet, waiting until it is.
+
+```
+
+Para corrigir isso, você pode passar o [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") `random.trust_cpu=on` se sua CPU possuir suporte à instrução *RDRAND* ou usar [haveged](/index.php/Haveged "Haveged"), que também fornece entropia, embora seja de qualidade supostamente baixa. Veja [artigo do Debian sobre o tópico](https://wiki.debian.org/BoottimeEntropyStarvation "debian:BoottimeEntropyStarvation") para outras soluções.
 
 ### Remoção incompleta do gdm
 
@@ -575,7 +598,17 @@ $ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power 
 
 ### GDM ignora Wayland e usa X.Org por padrão
 
-Wayland requer Kernel Mode Setting (KMS) em execução para funcionar, e em algumas máquinas o processo GDM inicia mais cedo que KMS, resultando em GDM ser incapaz de ver Wayland e trabalhando apenas com X.Org, você pode resolver este problema [iniciando o KMS mais cedo](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
+Wayland requer Kernel Mode Setting (KMS) em execução para funcionar, e em algumas máquinas o processo GDM inicia mais cedo que KMS, resultando em GDM ser incapaz de ver Wayland e trabalhando apenas com X.Org. Isso pode resultar em mensagens como o seguinte, mostrando seu log:
+
+```
+ gnome-shell[569]: Failed to open gpu '/dev/dri/card0': GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Operation not permitted
+ gnome-shell[569]: Failed to create backend: No GPUs found
+ systemd[505]: gnome-shell-wayland.service: Failed with result 'protocol'.
+ systemd[505]: Failed to start GNOME Shell on Wayland.
+
+```
+
+Você pode resolver este problema [iniciando o KMS mais cedo](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
 
 ## Veja também
 

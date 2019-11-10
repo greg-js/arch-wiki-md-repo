@@ -153,15 +153,15 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 | Summary | Loop-AES | [dm-crypt](/index.php/Dm-crypt "Dm-crypt") +/- LUKS | [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") | VeraCrypt | [eCryptfs](/index.php/ECryptfs "ECryptfs") | [EncFS](/index.php/EncFS "EncFS") | [gocryptfs](/index.php/Gocryptfs "Gocryptfs") | [fscrypt](/index.php/Fscrypt "Fscrypt") |
 | Encryption type | block device | block device | block device | block device | stacked filesystem | stacked filesystem | stacked filesystem | native filesystem |
 | Note | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished but abandoned | maintained fork of TrueCrypt | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration | aspiring successor of EncFS | default for Chrome OS and Android encryption |
-| Availability in Arch Linux | requires manually compiled, custom kernel | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) | [encfs](https://www.archlinux.org/packages/?name=encfs) | [gocryptfs](https://www.archlinux.org/packages/?name=gocryptfs) | [fscrypt-git](https://aur.archlinux.org/packages/fscrypt-git/) |
-| License | GPL | GPL | TrueCrypt License 3.1 | Apache License 2.0, parts subject to TrueCrypt License v3.0 | GPL | GPL | MIT | Apache |
+| Availability in Arch Linux | requires manually compiled, custom kernel | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) | [encfs](https://www.archlinux.org/packages/?name=encfs) | [gocryptfs](https://www.archlinux.org/packages/?name=gocryptfs) | *kernel module:* already shipped with default kernel; *tool:* [fscrypt-git](https://aur.archlinux.org/packages/fscrypt-git/) |
+| License | GPL | GPL | TrueCrypt License 3.1 | Apache License 2.0, parts subject to TrueCrypt License v3.0 | GPL | GPL | MIT | GPL (kernel), Apache 2.0 (userspace tool) |
 | Encryption implemented in... | kernelspace | kernelspace | kernelspace | kernelspace | kernelspace | userspace ([FUSE](/index.php/FUSE "FUSE")) | userspace ([FUSE](/index.php/FUSE "FUSE")) | kernelspace |
-| Cryptographic metadata stored in... | ? | with LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | begin/end of (decrypted) device ([format spec](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | header of each encrypted file | control file at the top level of each EncFs container | ? | ? |
+| Cryptographic metadata stored in... | ? | with LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | begin/end of (decrypted) device ([format spec](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | header of each encrypted file | control file at the top level of each EncFs container | ? | `.fscrypt` directory at root of each filesystem |
 | Wrapped encryption key stored in... | ? | with LUKS: LUKS header | begin/end of (decrypted) device ([format spec](http://www.truecrypt.org/docs/volume-format-specification)) | begin/end of (decrypted) device ([format spec](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | key file that can be stored anywhere | key file that can be stored anywhere
 
 [[1]](https://github.com/rfjakob/encfs/blob/next/encfs/encfs.pod#environment-variables)[[2]](https://github.com/vgough/encfs/issues/48#issuecomment-69301831)
 
- | ? | ? |
+ | ? | `.fscrypt` directory at root of each filesystem |
 | Usability features | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs | fscrypt |
 | Non-root users can create/destroy containers for encrypted data | ✘ | ✘ | ✘ | ✘ | limited | ✔ | ✔ | ✔ |
 | Provides a GUI | ✘ | ✘ | ✔ | ✔ | ✘ | ✔
@@ -178,11 +178,11 @@ with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.
 with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.2Fcrypttab "TrueCrypt")
 
  | ✔ | ✔ | ✔ | ✔ |
-| Support for automatic unmounting in case of inactivity | ? | ? | ? | ? | ? | ✔ | ? | ? |
+| Support for automatic unmounting in case of inactivity | ? | ? | ? | ? | ? | ✔ | ? | ✘ |
 | Security features | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs | fscrypt |
 | Supported ciphers | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers) | AES, Twofish, Serpent | AES, Twofish, Serpernt, Camellia, Kuznyechik | AES, Blowfish, Twofish... | AES, Blowfish, Twofish, and any other ciphers available on the system | AES | AES, ChaCha12 |
 | Integrity | none | optional in LUKS2 | none | none | none | none (default mode)
-HMAC (paranoia mode) | GCM | partly |
+HMAC (paranoia mode) | GCM | none |
 | Support for salting | ? | ✔
 (with LUKS) | ✔ | ✔ | ✔ | ? | ✔ | ✔ |
 | Support for cascading multiple ciphers | ? | Not in one device, but blockdevices can be cascaded | ✔
@@ -195,9 +195,9 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
 
  | ? | ✘ | ✘ | ✘ |
 | Support for key-slot diffusion | ? | ✔
-(with LUKS) | ? | ? | ? | ? | ? | ? |
+(with LUKS) | ? | ? | ? | ? | ? | ✘ |
 | Protection against key scrubbing | ✔ | ✔
-(without LUKS) | ? | ? | ? | ? | ? | ? |
+(without LUKS) | ? | ? | ? | ? | ? | ✘ |
 | Support for multiple (independently revocable) keys for the same encrypted data | ? | ✔
 (with LUKS) | ? | ? | ? | ✘ | ? | ✔ |
 | Performance features | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs | fscrypt |
@@ -215,23 +215,22 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
  | any | ext4, F2FS, UBIFS |
 | Ability to encrypt filenames | ✔ | ✔ | ✔ | ✔ |
 | Ability to *not* encrypt filenames | ✔ | ✔ | ✘ | ✘ |
-| Optimized handling of sparse files | ✘ | ✔ | ✔ | ? |
+| Optimized handling of sparse files | ✘ | ✔ | ✔ | ✔ |
 | Compatibility & prevalence | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs | fscrypt |
 | Supported Linux kernel versions | 2.0 or newer | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 | ? | ? | ? | 2.4 or newer | ? | 4.1 or newer |
 | Encrypted data can also be accessed from Windows | ? | ? | ✔ | ✔ | ? | ✔
-[[6]](https://github.com/vgough/encfs/wiki/Windows) | ✔ (cppcryptfs port) | ? |
+[[6]](https://github.com/vgough/encfs/wiki/Windows) | ✔ (cppcryptfs port) | ✘ |
 | Encrypted data can also be accessed from Mac OS X | ? | ? | ✔ | ✔ | ? | ✔
-[[7]](https://sites.google.com/a/arg0.net/www/encfs-mac-build) | ✔ (beta quality) | ? |
+[[7]](https://sites.google.com/a/arg0.net/www/encfs-mac-build) | ✔ (beta quality) | ✘ |
 | Encrypted data can also be accessed from FreeBSD | ? | ? | ✔
 
 (with VeraCrypt)
 
  | ✔
  | ? | ✔
-[[8]](http://www.freshports.org/sysutils/fusefs-encfs/) | ? | ? |
+[[8]](http://www.freshports.org/sysutils/fusefs-encfs/) | ? | ✘ |
 | Used by | ? | Debian/Ubuntu installer (system encryption)
-Fedora installer | ? | ? | Ubuntu installer (home dir encryption)
-Chromium OS (encryption of cached user data [[9]](https://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)) | ? | ? | android, Chrome OS |
+Fedora installer | ? | ? | ? | ? | ? | Android, Chrome OS |
 
 1.  well, a single file in those filesystems could be used as a container (virtual loop-back device!) but then one would not actually be using the filesystem (and the features it provides) anymore
 
@@ -477,7 +476,7 @@ Disk encryption employs "block ciphers", which operate on fixed-length blocks of
 | [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "wikipedia:Advanced Encryption Standard") | 128 bits | 128, 192 or 256 bits | approved by the NSA for protecting "SECRET" and "TOP SECRET" classified US-government information (when used with a key size of 192 or 256 bits) |
 | [Blowfish](https://en.wikipedia.org/wiki/Blowfish_(cipher) | 64 bits | 32–448 bits | one of the first patent-free secure ciphers that became publicly available, hence very well established on Linux |
 | [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 or 256 bits | developed as successor of Blowfish, but has not attained as much widespread usage |
-| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) | 128 bits | 128, 192 or 256 bits | Considered the most secure of the five AES-competition finalists[[10]](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)[[11]](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)[[12]](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf). |
+| [Serpent](https://en.wikipedia.org/wiki/Serpent_(cipher) | 128 bits | 128, 192 or 256 bits | Considered the most secure of the five AES-competition finalists[[9]](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)[[10]](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)[[11]](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf). |
 
 Encrypting/decrypting a sector ([see above](#Basic_principle)) is achieved by dividing it into small blocks matching the cipher's block-size, and following a certain rule-set (a so-called "**mode of operation**") for how to consecutively apply the cipher to the individual blocks.
 

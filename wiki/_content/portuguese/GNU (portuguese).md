@@ -109,7 +109,7 @@ Muitas outras ferramentas opcionais do GNU está disponíveis nos [repositórios
 *   [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), um ambiente de desktop
 *   [GIMP](/index.php/GIMP "GIMP"), um editor de imagens
 *   [GTK](/index.php/GTK_(Portugu%C3%AAs) "GTK (Português)"), um kit de ferramentas de widget
-*   [Gnumeric](/index.php/Gnumeric "Gnumeric"), um software de planilhas
+*   [Gnumeric](/index.php/Gnumeric_(Portugu%C3%AAs) "Gnumeric (Português)"), um software de planilhas
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"), um gerenciador de partição
 *   [GNU Screen](/index.php/GNU_Screen "GNU Screen"), um multiplexador de terminal
 *   [GNU nano](/index.php/GNU_nano "GNU nano"), um editor de texto de linha de comando

@@ -277,6 +277,10 @@ The software clock is very accurate but like most clocks is not perfectly accura
 
 The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. The following are implementations of NTP available for Arch Linux:
 
+*   **[Chrony](/index.php/Chrony "Chrony")** — A client and server that is roaming friendly and designed specifically for systems that are not online all the time.
+
+	[https://chrony.tuxfamily.org/](https://chrony.tuxfamily.org/) || [chrony](https://www.archlinux.org/packages/?name=chrony)
+
 *   **[ConnMan](/index.php/ConnMan "ConnMan")** — A lightweight network manager with NTP support.
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
@@ -285,6 +289,18 @@ The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol 
 
 	[http://www.ntp.org/](http://www.ntp.org/) || [ntp](https://www.archlinux.org/packages/?name=ntp)
 
+*   **ntpclient** — A simple command-line NTP client.
+
+	[http://doolittle.icarus.com/ntpclient/](http://doolittle.icarus.com/ntpclient/) || [ntpclient](https://aur.archlinux.org/packages/ntpclient/)
+
+*   **[NTPSec](/index.php/NTPSec "NTPSec")** — A fork of NTPd, focused on security.
+
+	[https://ntpsec.org/](https://ntpsec.org/) || [ntpsec](https://aur.archlinux.org/packages/ntpsec/)
+
+*   **[OpenNTPD](/index.php/OpenNTPD "OpenNTPD")** — Part of the OpenBSD project and implements both a client and a server.
+
+	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
+
 *   **sntp** — An [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") client that comes with NTPd. It supersedes *ntpdate* and is recommended in non-server environments.
 
 	[http://www.ntp.org/](http://www.ntp.org/) || [ntp](https://www.archlinux.org/packages/?name=ntp)
@@ -292,18 +308,6 @@ The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol 
 *   **[systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")** — A simple [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") daemon that only implements a client side, focusing only on querying time from one remote server. It should be more than appropriate for most installations.
 
 	[https://www.freedesktop.org/wiki/Software/systemd/](https://www.freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
-
-*   **[OpenNTPD](/index.php/OpenNTPD "OpenNTPD")** — Part of the OpenBSD project and implements both a client and a server.
-
-	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
-
-*   **[Chrony](/index.php/Chrony "Chrony")** — A client and server that is roaming friendly and designed specifically for systems that are not online all the time.
-
-	[https://chrony.tuxfamily.org/](https://chrony.tuxfamily.org/) || [chrony](https://www.archlinux.org/packages/?name=chrony)
-
-*   **ntpclient** — A simple command-line NTP client.
-
-	[http://doolittle.icarus.com/ntpclient/](http://doolittle.icarus.com/ntpclient/) || [ntpclient](https://aur.archlinux.org/packages/ntpclient/)
 
 ## Per-user/session or temporary settings
 

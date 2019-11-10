@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-10-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=585643) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=586940) na versão em inglês.
 
 Artigos relacionados
 
@@ -356,7 +356,7 @@ O comando *pwck* pode ser usado para verificar a integridade da base de dados de
 
 ```
 
-**Atenção:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o *pacman* emita mensagens relacionadas para ação, esses arquivos *.pacnew* podem, e devem, ser desconsiderados/removidos. Novos usuários e grupos padrão obrigatórios são adicionados ou adicionados novamente conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
+**Atenção:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o *pacman* emita mensagens relacionadas para ação, esses arquivos *.pacnew* podem, e devem, ser desconsiderados/removidos. Novos usuários e grupos padrão obrigatórios são adicionados ou adicionados novamente conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8) ou o script de instalação de pacote.
 
 ## Gerenciamento de grupo
 
@@ -426,7 +426,7 @@ Se o usuário estiver atualmente autenticado, ele deve encerrar a sessão e entr
 
 O comando *grpck* pode ser usado para verificar a integridade dos arquivos de grupo do sistema.
 
-**Atenção:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o Pacman envie mensagens relacionadas à ação, esses arquivos *.pacnew* podem e devem ser desconsiderados/removidos. Novos usuários e grupos padrão necessários são adicionados ou adicionados novamente conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
+**Atenção:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o Pacman envie mensagens relacionadas à ação, esses arquivos *.pacnew* podem e devem ser desconsiderados/removidos. Novos usuários e grupos padrão necessários são adicionados ou adicionados novamente conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8) ou o script de instalação de pacote.
 
 Atualizações ao pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem) criam arquivos *.pacnew*. Ao contrário dos arquivos *.pacnew* para o [#Gerenciamento de usuário](#Gerenciamento_de_usuário), essas alterações podem ser ignoradas/removidas, porque o script de instalação adiciona quaisquer novos grupos exigidos.
 

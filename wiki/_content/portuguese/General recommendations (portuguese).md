@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=582606) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=585928) na versão em inglês.
 
 Artigos relacionados
 
@@ -158,7 +158,7 @@ Uma vez concluído, a tela será apagada e e o prompt de login aparecerá, deixa
 
 ### Ativação de Num Lock
 
-[Num Lock](https://en.wikipedia.org/wiki/pt:Num_Lock "wikipedia:pt:Num Lock") é uma tecla de ativar/desativar localizada na maioria dos teclados. Para ativar a atribuição de tecla numérica do Num Lock durante a inicialização, veja [Ativando Numlock na inicialização](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+[Num Lock](https://en.wikipedia.org/wiki/pt:Num_Lock "wikipedia:pt:Num Lock") é uma tecla de ativar/desativar localizada na maioria dos teclados. Para ativar a atribuição de tecla numérica do Num Lock durante a inicialização, veja [Ativando numlock na inicialização](/index.php/Ativando_numlock_na_inicializa%C3%A7%C3%A3o "Ativando numlock na inicialização").
 
 ## Interface gráfica de usuário
 
@@ -168,7 +168,7 @@ Essa seção fornece orientação para usuários interessados em usar aplicativo
 
 [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") é a implementação código aberto e pública do [X Window System](https://en.wikipedia.org/wiki/pt:X_Window_System "wikipedia:pt:X Window System") (mais conhecido como *X11* ou *X*). Ele é necessário para se usar aplicativos com interfaces gráficas de usuário (também conhecidas como *GUI*s) e a maioria dos usuários terão interesse em instalá-los.
 
-[Wayland](/index.php/Wayland "Wayland") é um protocolo alternativo mais novo de servidor de exibição e a implementação referência de Weston está disponível.
+[Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") é um protocolo alternativo mais novo de servidor de exibição e a implementação referência de Weston está disponível.
 
 ### Drivers de exibição
 

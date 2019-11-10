@@ -6,12 +6,18 @@ Related articles
 
 **Note:** As of February 2015, curlftpfs is reported to be extremely slow, see for example a [Ubuntu bug report](https://bugs.launchpad.net/ubuntu/+source/curlftpfs/+bug/1267749) and a [stackoverflow.com question](http://stackoverflow.com/questions/24360479/ftp-with-curlftpfs-is-extremely-slow-to-the-point-it-is-impossible-to-work-with).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Mount FTP folder as root](#Mount_FTP_folder_as_root)
 *   [3 Mount FTP folder as normal user](#Mount_FTP_folder_as_normal_user)
 *   [4 Connect to encrypted server](#Connect_to_encrypted_server)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Unable to access files with '#' in their filename](#Unable_to_access_files_with_'#'_in_their_filename)
 
 ## Installation
 
@@ -120,3 +126,9 @@ If your server uses a self-generated certificate not trusted by your computer, y
 ```
 
 For more details, see the [curlftpfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/curlftpfs.1) man page.
+
+## Troubleshooting
+
+### Unable to access files with '#' in their filename
+
+This is a bug which has been reported in [Launchpad bug 783033](https://bugs.launchpad.net/ubuntu/+source/curlftpfs/+bug/783033) in 2011, confirmed in 2013 with no further activity as of writing this. An [upstream bug report](https://sourceforge.net/p/curlftpfs/bugs/54/) links to a [potential patch](https://github.com/jomat/curlftpfs).

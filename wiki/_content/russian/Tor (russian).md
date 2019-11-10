@@ -16,8 +16,13 @@
 *   [2 Установка](#Установка)
 *   [3 Настройка](#Настройка)
     *   [3.1 Настройка Tor Relay](#Настройка_Tor_Relay)
+    *   [3.2 Tor ControlPort](#Tor_ControlPort)
+        *   [3.2.1 Cookie-файл Tor Control](#Cookie-файл_Tor_Control)
+        *   [3.2.2 Пароль Tor Control](#Пароль_Tor_Control)
+        *   [3.2.3 Tor ControlSocket](#Tor_ControlSocket)
+        *   [3.2.4 Проверка Tor Control](#Проверка_Tor_Control)
 *   [4 Запуск Tor в Chroot](#Запуск_Tor_в_Chroot)
-*   [5 Запуск Tor в systemd-nspawn контейнере с виртуальным сетевым интерфейсом](#Запуск_Tor_в_systemd-nspawn_контейнере_с_виртуальным_сетевым_интерфейсом)
+*   [5 Запуск Tor в контейнере systemd-nspawn](#Запуск_Tor_в_контейнере_systemd-nspawn)
     *   [5.1 Установка и настройка хоста](#Установка_и_настройка_хоста)
         *   [5.1.1 Виртуальный сетевой интерфейс](#Виртуальный_сетевой_интерфейс)
         *   [5.1.2 Запуск и включение systemd-nspawn](#Запуск_и_включение_systemd-nspawn)
@@ -28,19 +33,25 @@
 *   [7 Веб-сёрфинг](#Веб-сёрфинг)
     *   [7.1 Firefox](#Firefox)
     *   [7.2 Chromium](#Chromium)
+        *   [7.2.1 Отладка](#Отладка)
+        *   [7.2.2 Расширения](#Расширения)
+    *   [7.3 Luakit](#Luakit)
 *   [8 Tor и HTTP прокси](#Tor_и_HTTP_прокси)
-    *   [8.1 Polipo](#Polipo)
-    *   [8.2 Privoxy](#Privoxy)
-        *   [8.2.1 Tor и Privoxy в Firefox](#Tor_и_Privoxy_в_Firefox)
-        *   [8.2.2 Tor и Privoxy в других приложениях](#Tor_и_Privoxy_в_других_приложениях)
-*   [9 Java](#Java)
-*   [10 Запуск сервера Tor](#Запуск_сервера_Tor)
-    *   [10.1 Настройка](#Настройка_2)
-*   [11 TorDNS](#TorDNS)
-*   [12 "Торификация"](#"Торификация")
-*   [13 Решение проблем](#Решение_проблем)
-    *   [13.1 Проблема с пользовательским значением](#Проблема_с_пользовательским_значением)
-*   [14 Смотрите также](#Смотрите_также)
+    *   [8.1 Firefox](#Firefox_2)
+    *   [8.2 Polipo](#Polipo)
+    *   [8.3 Privoxy](#Privoxy)
+*   [9 Обмен мгновенными сообщениями](#Обмен_мгновенными_сообщениями)
+*   [10 Pacman](#Pacman)
+*   [11 Java](#Java)
+*   [12 Запуск сервера Tor](#Запуск_сервера_Tor)
+    *   [12.1 Настройка](#Настройка_2)
+*   [13 TorDNS](#TorDNS)
+*   [14 Torsocks](#Torsocks)
+*   [15 "Торификация"](#"Торификация")
+*   [16 Советы и рекомендации](#Советы_и_рекомендации)
+*   [17 Решение проблем](#Решение_проблем)
+    *   [17.1 Проблема с пользовательским значением](#Проблема_с_пользовательским_значением)
+*   [18 Смотрите также](#Смотрите_также)
 
 ## Введение
 
@@ -62,28 +73,182 @@
 
 ## Настройка
 
-По умолчанию, Tor читает конфигурацию из файла `/etc/tor/torrc`. Опции подробно расписаны в [tor(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) и на [сайте проекта](https://www.torproject.org/docs/tor-manual.html.en). Конфигурационный файл по умолчанию подойдет для большинства пользователей.
+По умолчанию Tor использует файл конфигурации `/etc/tor/torrc`. Перечень доступных опций можно найти на странице руководства [tor(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tor.1) или в [документации](https://www.torproject.org/docs/tor-manual.html.en) проекта Tor. Базовый конфигурационный файл без дополнительных настроек вполне подойдет для большинства пользователей.
 
-Имеется неколько потенциальных конфликтов конфигурации в `/etc/tor/torrc` и `tor.service`.
+Имеется неколько потенциальных конфликтов настроек в файлах `torrc` и `tor.service`.
 
-*   В `torrc`, `RunAsDaemon` должен быть, как и по умолчаниию, установлен в `0`, так как `Type=simple` установлен в разделе `[Service]` в `tor.service`.
-*   В `torrc`, `User` не должен быть указан, пока `User=` указан как `root` в разделе `[Service]` в `tor.service`.
-
-Установить значение дескриптора ulimits можно изменив переменную `TOR_MAX_FD` в конфигурационном файле `/etc/conf.d/tor`.
+*   Если в разделе `[Service]` файла `tor.service` задано значение `Type=simple`, то в файле `torrc` нужно указать `RunAsDaemon=0` (значение по умолчаниию).
+*   В файле `torrc` не должно быть задано значение `User`, кроме случая, когда в разделе `[Service]` файла `tor.service` задано значение `User=root`.
 
 ### Настройка Tor Relay
 
-Максимальное количество файловых дескрипторов, которое может быть открыто Tor устанавливается параметром `LimitNOFILE` в `tor.service`. Быстрые ретрансляторы могут увеличить это значение.
+Максимальное количество дескрипторов файлов, одновременно открытых Tor, задаётся параметром `LimitNOFILE` в файле `tor.service`. Для быстрых ретрансляторов имеет смысл увеличить это значение.
 
-Если на вашем компьютере не запущен веб-сервер, и вы не установили значение `AccountingMax`, рассмотрите возможность установки параметра `ORPort` в значение `443` и/или `DirPort` в значение `80`. Многие пользователи Tor находятся за файрволами, и это позволит им бороздить просторы интернета, так как такая настройка позволит им использовать ваш Tor relay. Если же вы уже используете порты 80 и 443, другие пригодные порты: 22, 110 и 143.[[1]](https://www.torproject.org/docs/tor-relay-debian) Однако данные порты системные, поэтому Tor должен быть запущен от пользователя root, с помощью параметров `User=root` в `tor.service` и `User tor` в `torrc`.
+Если на вашей системе не запущен веб-сервер и вы не задавали значение `AccountingMax` (определяет максимальный объём передаваемых данных), рассмотрите возможность установки параметра `ORPort` в значение `443` и/или `DirPort` в значение `80`. Многие пользователи Tor находятся за жёсткими межсетевыми экранами, которые разрешают им только веб-сёрфинг, и такая настройка позволит им использовать ваш ретранслятор. Если порты 80 и 443 уже заняты, то можно воспользоваться портами 22, 110 и 143\. Однако поскольку эти порты относятся к числу системных, то в этом случае Tor будет нужно запускать от пользователя root, задав параметры `User=root` и `User tor` в файлах `tor.service` и `torrc` соответственно.
 
-Будет полезно прочесть [Жизненый цикл новых Tor Relay](https://blog.torproject.org/blog/lifecycle-of-a-new-relay) документации Tor.
+Также будет полезно прочитать статью о [жизненном цикле](https://blog.torproject.org/blog/lifecycle-of-a-new-relay) ретрансляторов в документации Tor.
+
+### Tor ControlPort
+
+Как правило, особой необходимости открывать *ControlPort* не возникает, но некоторым программам это может потребоваться для получения низкоуровневого доступа к узлу.
+
+Через открытый ControlPort внешние приложения смогут отслеживать состояние вашего узла, корректировать настройки, а также получать информацию о состоянии сети Tor и виртуальных каналов.
+
+Добавьте следующую строку в файл `torrc`:
+
+```
+ControlPort 9051
+
+```
+
+Разумеется, доступ к ControlPort должен предоставляться только доверенным пользователям. Ограничение доступа осуществляется либо с помощью cookie-файла, либо паролем, либо обоими способами одновременно.
+
+#### Cookie-файл Tor Control
+
+Добавьте к файлу `torrc` следующие строки:
+
+```
+CookieAuthentication 1
+CookieAuthFile /var/lib/tor/control_auth_cookie
+CookieAuthFileGroupReadable 1
+DataDirectoryGroupReadable 1
+
+```
+
+Доступ к ControlPort будет ограничен набором файловых разрешений cookie-файла и каталога data. Доступ к cookie-файлу Tor Control получат все пользователи группы `tor`.
+
+Добавьте пользователя в группу `tor`:
+
+```
+# usermod -a -G tor *пользователь*
+
+```
+
+Перезагрузите настройки группы:
+
+```
+$ newgrp tor
+
+```
+
+[Перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") Tor:
+
+```
+# systemctl restart tor
+
+```
+
+Теперь *пользователь* имеет доступ к файлу сookie. Команда
+
+```
+$ stat -c%a /var/lib/tor /var/lib/tor/control_auth_cookie
+
+```
+
+должна вывести значения `750` и `640`.
+
+#### Пароль Tor Control
+
+Преобразуйте пароль из представления в виде открытого текста в хэш:
+
+```
+# set +o history                          # отключить историю команд bash
+# tor --hash-password *пароль*
+# set -o history                          # включить историю команд bash
+
+```
+
+Добавьте этот хэш к файлу `torrc`:
+
+```
+HashedControlPassword *хэш*
+
+```
+
+Команда `set +o history` отключает сохранение истории в файл `$HISTFILE`, чтобы при выполнении команды `tor --hash-password` в нём не сохранилось значение пароля открытым текстом.
+
+#### Tor ControlSocket
+
+Tor ControlSocket имеет примерно то же назначение, что и [#Tor ControlPort](#Tor_ControlPort), с той лишь разницей, что прослушивается не TCP-сокет, а [сокет домена](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BE%D0%BA%D0%B5%D1%82_%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD%D0%B0_Unix "wikipedia:ru:Сокет домена Unix") Unix.
+
+Если какой-то программе нужен доступ к Tor ControlSocket, добавьте следующие строки к файлу `torrc`:
+
+```
+ControlSocket /var/lib/tor/control_socket
+ControlSocketsGroupWritable 1
+DataDirectoryGroupReadable 1
+CacheDirectoryGroupReadable 1             # обходное решение для бага #26913
+
+```
+
+Добавьте запускающего программу пользователя в группу `tor`:
+
+```
+# usermod -a -G tor *пользователь*
+
+```
+
+Перезагрузите настройки группы:
+
+```
+$ newgrp tor
+
+```
+
+Затем [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") Tor
+
+```
+# systemctl restart tor
+
+```
+
+и перезапустите программу.
+
+Чтобы проверить состояние контрольного сокета, выполните
+
+```
+# stat -c%a /var/lib/tor /var/lib/tor/control_socket
+
+```
+
+Команда должна вывести значения `750` и `660`.
+
+#### Проверка Tor Control
+
+Чтобы проверить настройки ControlPort, используйте входящую в пакет [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) утилиту *nc*:
+
+```
+$ echo -e 'PROTOCOLINFO\r
+' | nc 127.0.0.1 9051
+
+```
+
+Также запустите [socat](https://www.archlinux.org/packages/?name=socat):
+
+```
+$ echo -e 'PROTOCOLINFO\r
+' | sudo -u *пользователь* socat - UNIX-CLIENT:/var/lib/tor/control_socket
+
+```
+
+Обе команды должны вывести
+
+```
+250-PROTOCOLINFO 1
+250-AUTH METHODS=COOKIE,SAFECOOKIE,HASHEDPASSWORD COOKIEFILE="/var/lib/tor/control_auth_cookie"
+250-VERSION Tor="0.3.4.8"
+250 OK
+514 Authentication required.
+
+```
+
+Дополнительную информацию можно найти в описании [протокола Tor Control](https://gitweb.torproject.org/torspec.git/tree/control-spec.txt).
 
 ## Запуск Tor в Chroot
 
-**Warning:** Подключение по telnet на локальный ControlPort окажется невозможным если Tor запущен в chroot
+**Важно:** Подключение по telnet на локальный ControlPort окажется невозможным, если Tor был запущен в chroot.
 
-По соображениям безопасности, желательно запускать Tor в [chroot](/index.php/Chroot "Chroot"). Следующие скрипты создадут подходящий chroot в /opt/torchroot:
+По соображениям безопасности желательно запускать Tor в [chroot](/index.php/Chroot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chroot (Русский)"). Следующий скрипт создаст подходящее окружение chroot в каталоге `/opt/torchroot`:
 
  `~/torchroot-setup.sh` 
 ```
@@ -128,14 +293,14 @@ fi
 
 ```
 
-После запуска скрипта от пользователя root, Tor может быть запущен [chroot](/index.php/Chroot "Chroot") командой:
+Выполнив скрипт от пользователя root, вы можете запустить Tor в окружении chroot командой:
 
 ```
 # chroot --userspec=tor:tor /opt/torchroot /usr/bin/tor
 
 ```
 
-или если вы используете systemd [отредактируйте](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `tor.service`:
+Или же, если вы используете systemd, то можете создать [drop-in файл](/index.php/Drop-in_%D1%84%D0%B0%D0%B9%D0%BB "Drop-in файл") для службы `tor.service`:
 
  `/etc/systemd/system/tor.service.d/chroot.conf` 
 ```
@@ -147,38 +312,38 @@ KillSignal=SIGINT
 
 ```
 
-## Запуск Tor в systemd-nspawn контейнере с виртуальным сетевым интерфейсом
+## Запуск Tor в контейнере systemd-nspawn
 
-В этом примере мы создадим [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") контейнер называющийся `tor-exit` с виртуальным macvlan сетевым интерфейсом.
+В этом примере мы создадим контейнер systemd-nspawn с виртуальным сетевым macvlan-интерфейсом. Контейнер будет называться `tor-exit`.
 
-Смотри [Systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") и [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") для полного ознакомления.
+В статьях [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") и [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") можно найти полную информацию о работе и настройке соответствующих программ.
 
 ### Установка и настройка хоста
 
-В этом примере контейнер находится в `/srv/container`:
+Контейнер будет размещаться в каталоге `/srv/container`:
 
 ```
-# mkdir /srv/container/tor-exit
-
-```
-
-[установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
-
-Установите [base](https://www.archlinux.org/packages/?name=base), [tor](https://www.archlinux.org/packages/?name=tor) и [arm](https://www.archlinux.org/packages/?name=arm) и отмените [linux](https://www.archlinux.org/packages/?name=linux), подробнее [Systemd-nspawn#Installation with pacstrap](/index.php/Systemd-nspawn#Installation_with_pacstrap "Systemd-nspawn"):
-
-```
-# pacstrap -i -c -d /srv/container/tor-exit base tor arm
+# mkdir -p /srv/container/tor-exit
 
 ```
 
-Создайте каталог, если он отсутствует:
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), чтобы получить доступ к утилите *pacstrap*.
+
+С помощью *pacstrap* установите в каталог контейнера пакеты [base](https://www.archlinux.org/packages/?name=base), [tor](https://www.archlinux.org/packages/?name=tor) и [nyx](https://www.archlinux.org/packages/?name=nyx) (подробнее см. статью об [установке в контейнер](/index.php/Systemd-nspawn#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container "Systemd-nspawn") минимального дистрибутива Arch Linux):
 
 ```
-# mkdir /var/lib/container
+# pacstrap -сi /srv/container/tor-exit base tor nyx
 
 ```
 
-Создайте символическую ссылку для регистрации контейнера на хосте, подробнее [Systemd-nspawn#Boot your container at your machine startup](/index.php/Systemd-nspawn#Boot_your_container_at_your_machine_startup "Systemd-nspawn"):
+Если зарегистрировать контейнер на хосте, то в дальнейшем с ним можно будет взаимодействовать извне с помощью команды `machinectl`. Для этого необходимо создать символическую ссылку на контейнер в каталоге `/var/lib/container/`. Создайте каталог, если он отсутствует:
+
+```
+# mkdir -p /var/lib/container
+
+```
+
+и поместите в него символическую ссылку на контейнер:
 
 ```
 # ln -s /srv/container/tor-exit /var/lib/container/tor-exit
@@ -187,152 +352,148 @@ KillSignal=SIGINT
 
 #### Виртуальный сетевой интерфейс
 
-Создайте каталог для редактирования файла `.service` контейнера:
+Создайте Dropin-каталог для службы контейнера:
 
 ```
 # mkdir /etc/systemd/system/systemd-nspawn@tor-exit.service.d
 
 ```
+
+и поместите в него [drop-in файл](/index.php/Drop-in_%D1%84%D0%B0%D0%B9%D0%BB "Drop-in файл") следующего содержания:
+
  `/etc/systemd/system/systemd-nspawn@tor-exit.service.d/tor-exit.conf` 
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=guest --network-macvlan=$INTERFACE --private-network --directory=/var/lib/container/%i
+ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=guest --network-macvlan=*интерфейс* --private-network --directory=/var/lib/container/%i
 LimitNOFILE=32768
 
 ```
 
-`--network-macvlan=$INTERFACE --private-network` автоматически создаст macvlan называющийся `mv-$INTERFACE` внутри контейнера, который невидим с хоста. `--private-network` подразумевает `--network-macvlan=` в соответсвии с [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1).
+Опция `--network-macvlan=*интерфейс* --private-network` создаст для контейнера macvlan-интерфейс с названием `mv-*интерфейс*`, который не будет видим с хоста. Подробную информацию об опциях можно найти на странице справочного руководства [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1).
 
-`LimitNOFILE=32768` для[#Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors).
+Строка `LimitNOFILE=32768` позволит открывать [больше файловых дескрипторов](#Увеличение_максимума_открытых_файловых_дескрипторов) одновременно.
 
-Настройте [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") в соответствии с вашими сетевыми настройками `/srv/container/tor-exit/etc/systemd/network/mv-$INTERFACE.network`.
+Также необходимо сохранить сетевые настройки [systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") в файле `/srv/container/tor-exit/etc/systemd/network/mv-*интерфейс*.network`.
 
 #### Запуск и включение systemd-nspawn
 
-[Запустите/Включите](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `systemd-nspawn@tor-exit.service`.
+[Запустите/включите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5/%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Запустите/включите") службу `systemd-nspawn@tor-exit.service`.
 
 ### Настройка контейнера
 
-`# machinectl login tor-exit` вход в контейнер, смотрите [Systemd-nspawn#machinectl command](/index.php/Systemd-nspawn#machinectl_command "Systemd-nspawn").
+Чтобы войти в контейнер, выполните (подробнее см. статью [Systemd-nspawn#machinectl](/index.php/Systemd-nspawn#machinectl "Systemd-nspawn")):
 
-`# mv /srv/container/tor-exit/etc/securetty /srv/container/tor-exit/etc/securetty.bak` если вы получаете ошибки описанные в [Systemd-nspawn#Troubleshooting](/index.php/Systemd-nspawn#Troubleshooting "Systemd-nspawn").
+```
+# machinectl login tor-exit
+
+```
+
+Если при попытке войти в контейнер как root появляется ошибка "[Login incorrect](/index.php/Systemd-nspawn#Root_login_fails "Systemd-nspawn")", выполните
+
+```
+# mv /srv/container/tor-exit/etc/securetty /srv/container/tor-exit/etc/securetty.bak
+
+```
 
 #### Запуск и включение systemd-networkd
 
-[Запустите/Включите](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `systemd-networkd.service`. `networkctl` отобразит интерфейсы, если `systemd-networkd` настроен корректно.
+[Запустите/включите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5/%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Запустите/включите") службу `systemd-networkd.service`. Команда `networkctl` отобразит список сетевых интерфейсов контейнера, если `systemd-networkd` настроен корректно.
 
 ### Настройка Tor
 
-Смотри [#Running a Tor server](#Running_a_Tor_server).
+Смотри раздел [#Запуск сервера Tor](#Запуск_сервера_Tor).
 
-**Tip:** Удобнее редактировать файлы в контейнере с хоста, вашим любимым редактором.
+**Совет:** Файлы контейнера удобнее редактировать с хоста, вашим любимым редактором.
 
 ## Использование
 
-[Запустите/Включите](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `tor.service` используя [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). Или запустите с помощью `vidalia`, или `sudo -u tor /usr/bin/tor`.
+[Запустите/включите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5/%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Запустите/включите") службу `tor.service`. В качестве альтернативы можно запустить Tor командой `sudo -u tor /usr/bin/tor`.
 
-Для использования программы через Tor, настройте её на использование 127.0.0.1 или localhost в качестве SOCKS5 прокси, порт 9050 (Tor со стандартными настройками) или порт 9051 (Настройка с помощью vidalia, стандартные настройки).
-
-Чтобы проверить, работает ли Tor, посетите страницу [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) или [Xenobite.eu](https://torcheck.xenobite.eu/).
+Для использования программы через Tor настройте её на использование `127.0.0.1` или localhost в качестве SOCKS5H-прокси на порте 9050 (для Tor со стандартными настройками). Чтобы проверить работу Tor, посетите страницу [Tor](https://check.torproject.org/) или [Xenobite.eu](https://torcheck.xenobite.eu/).
 
 ## Веб-сёрфинг
 
-**Примечание:** В связи со сложностями обеспечения анонимности (cookies, javascripts, etc), проект Torproject рекомендует использовать свою версию Firefox для анонимного серфинга. Мы вас предупреждали. [[2]](http://www.opennet.ru/opennews/art.shtml?num=30449)
+В настоящее время The Tor Project поддерживает веб-сёрфинг исключительно через Tor Browser, который представляет собой пропатченую версию браузера Firefox ESR (extended support release). В [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") можно найти [различные версии](https://aur.archlinux.org/packages/?K=tor-browser) пакетов с Tor Browser. Также можно просматривать веб-страницы через Tor с помощью обычного [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)"), [Chromium](/index.php/Chromium "Chromium") и других браузеров.
 
-[Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)") и [Chromium](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)") позволяют без проблем направлять трафик через Tor.
+**Важно:** The Tor Project настоятельно рекомендует использовать только Tor Browser, если вы хотите сохранить анонимность. [[1]](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser)
+
+**Совет:** Чтобы подтвердить подпись исходного пакета Tor Browser Bundle при сборке, нужно импортировать [ключи Tor Project](https://www.torproject.org/docs/signing-keys.html.en), как описано в статье [GnuPG#Use a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG").
 
 ### Firefox
 
-Вы можете просто добавить Tor в качестве SOCKS прокси ("localhost", порт "9050"), открыв браузер и перейдя в **Настройки** > **Дополнительные** > **Вкладка "Сеть"** > **Настроить**. Чтобы перенаправить все DNS-запросы Firefox через прокси (иначе они пойдут не через Tor и будут доступны, например, провайдеру), откройте новую вкладку и введите `about:config`. Измените переменную *network.proxy.socks_remote_dns* на *yes*.
+*Preferences > General > Network Settings > Settings...* , выберите пункт *Manual proxy configuration*, после чего укажите:
 
-Можно также использовать дополнения, позволяющие переключаться между множественными прокси (например, вы можете использовать Tor в связке с "ssh -D"). В качестве примера можно привести "[FoxyProxy](https://addons.mozilla.org/en-us/firefox/addon/foxyproxy-standard/)".
-
-Также можно установить дополнение [TorButton](https://www.torproject.org/torbutton/), выполняющий и другие функции, который, однако, более не подерживается.
+*   SOCKS Host — `localhost`;
+*   Port — `9050`;
+*   SOCKS v5 — для использования пятой версии протокола SOCKS;
+*   Proxy DNS when using SOCKS v5 — чтобы перенаправить все DNS-запросы в сеть Tor.
 
 ### Chromium
 
-Просто запустите:
+Запустите Chromium:
 
 ```
-$ chromium --proxy-server="socks://localhost:9050"
+$ chromium --proxy-server="socks5://*мой-прокси*:8080" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE *мой-прокси*"
+
+```
+
+Флаг `--proxy-server="socks5://*мой-прокси*:8080"` означает, что все `http://` и `https://` запросы будут посылаться через прокси-сервер `"*мой-прокси*:8080"` посредством протокола SOCKS пятой версии. Разрешение имён для этих запросов будет выполняться прокси-сервером, а не браузером локально.
+
+**Важно:** Проксирование `ftp://` через SOCKS-прокси на данный момент не реализовано. [[2]](https://www.chromium.org/developers/design-documents/network-stack/socks-proxy)
+
+Флаг `--proxy-server` влияет только на загрузку URL-страниц. Однако в Chromium есть и другие компоненты, которые могут попытаться выполнить DNS-разрешение напрямую. Наиболее важный их этих компонентов — *DNS-prefetcher*. Если DNS-prefetcher не отключён, то браузер будет посылать DNS-запросы напрямую, минуя SOCKS5-сервер. Prefetcher и другие компоненты можно отключить, но такой подход неудобен и ненадёжен, поскольку придётся отслеживать каждый элемент Chromium, который может захотеть посылать DNS-запросы самостоятельно.
+
+Для комплексного решения этой проблемы используется флаг `--host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE *мой-прокси*"`, который представляет собой ловушку для посылаемых через обычную сеть DNS-запросов. Каждое выполяемое локально разрешение DNS теперь будет привязано к (нерабочему) адресу `~NOTFOUND` (можно представить его как адрес `0.0.0.0`). Указание `"EXCLUDE"` создаёт исключение для прокси-сервера `"*мой-прокси*"`, потому что без этого Chromium не сможет выполнять разрешение адреса самого прокси-сервера SOCKS и все запросы будут завершаться неудачей с ответом `PROXY_CONNECTION_FAILED`.
+
+Также, чтобы предотвратить [утечки WebRTC](https://ipleak.net/#webrtcleak), можно установить расширение браузера [WebRTC Network Limiter](https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia).
+
+#### Отладка
+
+В случае возникновения каких-либо проблем в первую очередь нужно проверить настройки прокси, введя адрес `chrome://net-internals/#proxy`.
+
+Затем нужно изучить вкладку настроек DNS, чтобы убедиться, что Chromium не выполняет локальное разрешение DNS: `chrome://net-internals/#dns`.
+
+#### Расширения
+
+Как и для Firefox, вы можете установить удобный переключатель прокси вроде [Proxy SwitchySharp](https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm).
+
+После установки перейдите на его панель настроек. Под вкладкой *Proxy Profiles* добавьте новый профиль *Tor*, уберите отметку с опции *Use the same proxy server for all protocols*, затем добавьте *localhost* в качестве хоста SOCKS, порт *9050*, и выберите *SOCKS v5*.
+
+При желании можно включить опцию быстрого переключения на вкладке настроек *General*. Тогда переключаться между нормальной навигацией и сетью Tor можно будет одним кликом на иконке Proxy SwitchySharp.
+
+### Luakit
+
+**Важно:** Стороннему наблюдателю будет несложно вас опознать по редкой стороке `user-agent` в заголовке HTTP-запроса; также могут возникнуть проблемы с воспроизведением Flash, работой JavaScript и т.д.
+
+Выполните:
+
+```
+$ torsocks luakit
 
 ```
 
 ## Tor и HTTP прокси
 
-Если вам требуется какой-либо HTTP-прокси.
+Tor может использовать HTTP-прокси вроде [Polipo](/index.php/Polipo "Polipo") или [Privoxy](/index.php/Privoxy "Privoxy"), однако разработчики Tor рекомендуют воспользоваться библиотекой SOCKS5, если ваш браузер её поддерживает.
 
-**Примечание:** На данный момент командой разработчиков Tor рекомендуется прокси-сервер Polipo.
+### Firefox
+
+Расширение браузера [FoxyProxy](https://addons.mozilla.org/en-us/firefox/addon/foxyproxy-standard/) позволяет назначить прокси-сервер как для всех HTTP-запросов в целом, так и для обращения по отдельным веб-адресам. После установки расширения перезапустите браузер и вручную настройте использование прокси по адресу `localhost:8118`, где должен работать [Polipo](/index.php/Polipo "Polipo") или [Privoxy](/index.php/Privoxy "Privoxy"). Эти настройки находятся в меню *Add > Standard proxy type*. Выберите метку прокси-сервера (например, `Tor`) и введите хост и порт в поля *HTTP Proxy* и *SSL Proxy*. Для проверки правильности работы Tor посетите страницу [Tor Check](https://check.torproject.org/).
 
 ### Polipo
 
-Polipo это маленький и быстрый HTTP-прокси. Установите и настройте его в соответствии со статьёй [Polipo](/index.php/Polipo "Polipo"). Также вы можете воспользоваться [готовой конфигурацией](https://gitweb.torproject.org/torbrowser.git/blob_plain/HEAD:/build-scripts/config/polipo.conf) опубликованной на сайте Torproject.
+Командой The Tor Project был создан стандартный [файл настроек](https://gitweb.torproject.org/torbrowser.git/plain/build-scripts/config/polipo.conf?id=1ffcd9dafb9dd76c3a29dd686e05a71a95599fb5) Polipo, чтобы избежать возможных проблем и обеспечить анонимность пользователей.
 
-Обратите внимание, что polipo не требуется если вы хотите использовать прокси SOCKS 5, который доступен на порту 9050 после запуска Tor. Если вы хотите использовать Chromium через сеть Tor вам не требуется пакет polipo. Об использовании см. выше.
+Обратите внимание, что если вы можете использовать SOCKS5-прокси, который Tor запускает автоматически на порте `9050`, то нет необходимости использовать Polipo. Если вы хотите использовать Chromium в связке с Tor, то Polipo тоже не требуется (см. [#Chromium](#Chromium)).
 
 ### Privoxy
 
-Privoxy - это HTTP-прокси, который использует SOCKS4a и может фильтровать html/cookie. Установить и настроить его поможет статья [Privoxy](/index.php/Privoxy "Privoxy").
+Privoxy можно использовать для обмена сообщениями ([Jabber](/index.php/Jabber "Jabber"), [IRC](/index.php/IRC "IRC")) и других приложений. Приложения, которые поддерживают HTTP-прокси, можно подключить к Privoxy (например, на адрес `127.0.0.1:8118`). Чтобы использовать SOCKS-прокси, направьте ваше приложение в Tor (адрес `127.0.0.1:9050`). Следует иметь в виду, что приложение может самостоятельно выполнять DNS-разрешение, что приведет к утечке информации. В этом случае можно попробовать использовать SOCKS4A (например, с Privoxy).
 
-Добавьте
+## Обмен мгновенными сообщениями
 
-```
-forward-socks4a / localhost:9050 . # Не забудте точку в конце
-
-```
-
-в файл /etc/privoxy/config. Убедитесь,
-
-```
-chown privoxy:privoxy /etc/privoxy/config
-
-```
-
-что на него выставлены нужные права.
-
-Выполните следующие команды:
-
-```
-   mkdir /var/log/privoxy
-   touch /var/log/privoxy/errorfile
-   touch /var/log/privoxy/logfile
-   chown -R privoxy:adm /var/log/privoxy
-
-```
-
-Запустите демоны tor и privoxy
-
-```
-systemctl start tor
-systemctl start privoxy
-
-```
-
-Также, их можно добавить в автозапуск
-
-```
-systemctl enable tor
-systemctl enable privoxy
-
-```
-
-#### Tor и Privoxy в Firefox
-
-Настройте прокси в Firefox:
-
-```
-Hostname: 127.0.0.1 Port: 8118
-
-```
-
-Можно также добавить необходимые исключения.
-
-#### Tor и Privoxy в других приложениях
-
-Вы можете использовать Privoxy для интернет-пейджеров (Jabber, IRC) и прочих приложений. Просто укажите IP-адрес и номер порта (127.0.0.1 port 8118).
-
-Чтобы использовать SOCKS прокси напрямую вы можете указать приложению на Tor непосредственно (127.0.0.1 port 9050). Недостатоком методя является возможность самостоятельной посылки DNS-запросов приложением в обход Tor. Рассмотрите возможность использования SOCKS4A (например, через Privoxy) вместо нее.
+## Pacman
 
 ## Java
 
@@ -407,6 +568,8 @@ $ tor-resolve archlinux.org
 
 ```
 
+## Torsocks
+
 ## "Торификация"
 
 "Торификация" (torify) позволяет использовать приложение через сеть Tor без каких либо дополнительных настроек в самом приложении. Выдержка из man page:
@@ -434,6 +597,8 @@ $ tor-resolve checkip.dyndns.org
 $ torify elinks 208.78.69.70
 
 ```
+
+## Советы и рекомендации
 
 ## Решение проблем
 

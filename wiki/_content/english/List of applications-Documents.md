@@ -80,7 +80,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **e3** — Tiny editor without dependencies, written in assembly.
 
-	[http://sites.google.com/site/e3editor/](http://sites.google.com/site/e3editor/) || [e3](https://www.archlinux.org/packages/?name=e3)
+	[https://sites.google.com/site/e3editor/](https://sites.google.com/site/e3editor/) || [e3](https://www.archlinux.org/packages/?name=e3)
 
 *   **ee** — Classic curse-based text editor. Born in HP-UX, used in FreeBSD.
 
@@ -92,7 +92,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[JOE (Joe's Own Editor)](https://en.wikipedia.org/wiki/Joe%27s_Own_Editor "wikipedia:Joe's Own Editor")** — Terminal-based text editor designed to be easy to use.
 
-	[http://joe-editor.sourceforge.net/](http://joe-editor.sourceforge.net/) || [joe](https://www.archlinux.org/packages/?name=joe)
+	[https://joe-editor.sourceforge.io/](https://joe-editor.sourceforge.io/) || [joe](https://www.archlinux.org/packages/?name=joe)
 
 *   **[mcedit](https://en.wikipedia.org/wiki/Midnight_Commander "wikipedia:Midnight Commander")** — Useful text editor that comes with Midnight Commander file manager.
 
@@ -104,7 +104,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Minimum Profit** — Text editor for programmers.
 
-	[http://triptico.com/software/mp.html](http://triptico.com/software/mp.html) || [mp](https://aur.archlinux.org/packages/mp/)
+	[https://triptico.com/software/mp.html](https://triptico.com/software/mp.html) || [mp](https://aur.archlinux.org/packages/mp/)
 
 *   **[nano](/index.php/Nano "Nano")** — Console text editor based on pico with on-screen key bindings help.
 
@@ -120,7 +120,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Tilde** — Intuitive text editor with Windows-like key bindings.
 
-	[http://os.ghalkes.nl/tilde/](http://os.ghalkes.nl/tilde/) || [tilde](https://aur.archlinux.org/packages/tilde/)
+	[https://os.ghalkes.nl/tilde/](https://os.ghalkes.nl/tilde/) || [tilde](https://aur.archlinux.org/packages/tilde/)
 
 #### Graphical
 
@@ -166,7 +166,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **FLTK Editor** — Simple text editor application for FLTK.
 
-	[http://www.fltk.org/](http://www.fltk.org/) || [fltk-editor](https://aur.archlinux.org/packages/fltk-editor/)
+	[https://www.fltk.org/](https://www.fltk.org/) || [fltk-editor](https://aur.archlinux.org/packages/fltk-editor/)
 
 *   **[gedit](https://en.wikipedia.org/wiki/gedit "wikipedia:gedit")** — GTK editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
 
@@ -202,7 +202,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Leafpad](https://en.wikipedia.org/wiki/Leafpad "wikipedia:Leafpad")** — Notepad clone for GTK that emphasizes simplicity.
 
-	[http://tarot.freeshell.org/leafpad](http://tarot.freeshell.org/leafpad) || [leafpad](https://www.archlinux.org/packages/?name=leafpad)
+	[http://tarot.freeshell.org/leafpad/](http://tarot.freeshell.org/leafpad/) || [leafpad](https://www.archlinux.org/packages/?name=leafpad)
 
 *   **[Light Table](https://en.wikipedia.org/wiki/Light_Table_(software) "w:Light Table (software)")** — Next generation code editor that connects you to your creation with instant feedback.
 
@@ -230,7 +230,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Notepadqq** — Qt-based, Notepad++-like text editor with support for syntax highlighting for more than 100 languages.
 
-	[http://notepadqq.altervista.org/s/](http://notepadqq.altervista.org/s/) || [notepadqq](https://www.archlinux.org/packages/?name=notepadqq)
+	[https://notepadqq.com/s/](https://notepadqq.com/s/) || [notepadqq](https://www.archlinux.org/packages/?name=notepadqq)
 
 *   **Pantheon Code** — Code editor for elementaryOS. It auto-saves your files, meaning they're always up-to-date. Plus it remembers your tabs so you never lose your spot, even in between sessions.
 
@@ -238,7 +238,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Pluma](/index.php/MATE "MATE")** — Powerful text editor for MATE.
 
-	[http://mate-desktop.org](http://mate-desktop.org) || [pluma](https://www.archlinux.org/packages/?name=pluma)
+	[https://mate-desktop.org/](https://mate-desktop.org/) || [pluma](https://www.archlinux.org/packages/?name=pluma)
 
 *   **QSciTE** — Qt clone of the SciTE text and code editor.
 
@@ -250,7 +250,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[SciTE](https://en.wikipedia.org/wiki/SciTE "wikipedia:SciTE")** — Generally useful editor with facilities for building and running programs.
 
-	[http://scintilla.org/SciTE.html](http://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
+	[https://scintilla.org/SciTE.html](https://scintilla.org/SciTE.html) || [scite](https://aur.archlinux.org/packages/scite/)
 
 *   **Scribes** — Ultra minimalist text editor that combines simplicity with power.
 
@@ -262,11 +262,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[TEA](https://en.wikipedia.org/wiki/TEA_(text_editor) "wikipedia:TEA (text editor)")** — Qt-based feature rich text editor.
 
-	[http://semiletov.org/tea](http://semiletov.org/tea) || [tea](https://aur.archlinux.org/packages/tea/)
+	[http://semiletov.org/tea/](http://semiletov.org/tea/) || [tea](https://aur.archlinux.org/packages/tea/)
 
 *   **[Textadept](/index.php/Textadept "Textadept")** — Lua-extensible feature rich text editor based on Scintilla and written in C.
 
-	[http://foicica.com/textadept](http://foicica.com/textadept) || [textadept](https://aur.archlinux.org/packages/textadept/)
+	[https://foicica.com/textadept/](https://foicica.com/textadept/) || [textadept](https://aur.archlinux.org/packages/textadept/)
 
 *   **Textosaurus** — Simple cross-platform text editor based on Qt and QScintilla.
 
@@ -296,7 +296,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[mg](https://en.wikipedia.org/wiki/mg_(editor) "wikipedia:mg (editor)")** — Small, fast, and portable Emacs-like editor.
 
-	[http://homepage.boetes.org/software/mg](http://homepage.boetes.org/software/mg) || [mg](https://www.archlinux.org/packages/?name=mg)
+	[https://github.com/hboetes/mg](https://github.com/hboetes/mg) || [mg](https://www.archlinux.org/packages/?name=mg)
 
 *   **[MicroEmacs](https://en.wikipedia.org/wiki/MicroEMACS "wikipedia:MicroEMACS")** — Ncurses-based text editor.
 
@@ -304,7 +304,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — Lightweight Emacs clone with *vi*-like key bindings.
 
-	[http://invisible-island.net/vile/vile.html](http://invisible-island.net/vile/vile.html) || [vile](https://aur.archlinux.org/packages/vile/)
+	[https://invisible-island.net/vile/vile.html](https://invisible-island.net/vile/vile.html) || [vile](https://aur.archlinux.org/packages/vile/)
 
 *   **[Zile](https://en.wikipedia.org/wiki/GNU_Zile "wikipedia:GNU Zile")** — Lightweight Emacs clone.
 
@@ -360,11 +360,11 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[SoftMaker Office](https://en.wikipedia.org/wiki/SoftMaker_Office "wikipedia:SoftMaker Office")** — Complete, reliable, lightning-fast and Microsoft Office-compatible proprietary office suite with a word processor, spreadsheet, and presentation graphics software.
 
-	[http://www.freeoffice.com/](http://www.freeoffice.com/) || [freeoffice](https://aur.archlinux.org/packages/freeoffice/)
+	[https://www.freeoffice.com/](https://www.freeoffice.com/) || [freeoffice](https://aur.archlinux.org/packages/freeoffice/)
 
 *   **[WPS Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — Proprietary office productivity suite, previously known as Kingsoft Office.
 
-	[http://www.wps.com/](http://www.wps.com/) || [wps-office](https://aur.archlinux.org/packages/wps-office/)
+	[https://www.wps.com/](https://www.wps.com/) || [wps-office](https://aur.archlinux.org/packages/wps-office/)
 
 #### Word processors
 
@@ -372,7 +372,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[AbiWord](/index.php/AbiWord "AbiWord")** — Full-featured word processor.
 
-	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
+	[https://www.abisource.com/](https://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Powerful word processor included in the Calligra Suite.
 
@@ -388,7 +388,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK-based rich text processor (with footnote support).
 
-	[http://www.nllgg.nl/Ted/](http://www.nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)
+	[https://nllgg.nl/Ted/](https://nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)
 
 *   **[WordGrinder](https://en.wikipedia.org/wiki/WordGrinder "wikipedia:WordGrinder")** — Word processor for the console.
 
@@ -412,7 +412,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[Scribus](https://en.wikipedia.org/wiki/Scribus "wikipedia:Scribus")** — Desktop publishing program.
 
-	[http://www.scribus.net/canvas/Scribus](http://www.scribus.net/canvas/Scribus) || [scribus](https://www.archlinux.org/packages/?name=scribus)
+	[https://www.scribus.net/](https://www.scribus.net/) || [scribus](https://www.archlinux.org/packages/?name=scribus)
 
 #### Presentations
 
@@ -430,7 +430,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **Sozi** — Zooming presentation editor and player. Based on the [Electron](https://electronjs.org/) platform.
 
-	[http://sozi.baierouge.fr/](http://sozi.baierouge.fr/) || [sozi](https://aur.archlinux.org/packages/sozi/)
+	[https://sozi.baierouge.fr/](https://sozi.baierouge.fr/) || [sozi](https://aur.archlinux.org/packages/sozi/)
 
 *   **Spice-Up** — Create simple and beautiful presentations.
 
@@ -458,11 +458,11 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 *   **[OpenOffice Calc](/index.php/OpenOffice "OpenOffice")** — Full-featured spreadsheet application included in the OpenOffice suite.
 
-	[http://openoffice.org/product/calc.html](http://openoffice.org/product/calc.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
+	[http://www.openoffice.org/product/calc.html](http://www.openoffice.org/product/calc.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
 *   **[Pyspread](https://en.wikipedia.org/wiki/Pyspread "wikipedia:Pyspread")** — Pyspread is a non-traditional spreadsheet application that is based on and written in the programming language Python.
 
-	[http://manns.github.io/pyspread/index.html](http://manns.github.io/pyspread/index.html) || [pyspread](https://aur.archlinux.org/packages/pyspread/)
+	[https://manns.github.io/pyspread/index.html](https://manns.github.io/pyspread/index.html) || [pyspread](https://aur.archlinux.org/packages/pyspread/)
 
 *   **[sc](https://en.wikipedia.org/wiki/sc_(spreadsheet_calculator) "wikipedia:sc (spreadsheet calculator)")** — Curses-based lightweight spreadsheet.
 
@@ -492,7 +492,7 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 *   **GdaBrowser** — Graphical tool to get a quick access to a database's structure and contents.
 
-	[http://www.gnome-db.org/GdaBrowser](http://www.gnome-db.org/GdaBrowser) || [libgda](https://www.archlinux.org/packages/?name=libgda)
+	[https://www.gnome-db.org/GdaBrowser](https://www.gnome-db.org/GdaBrowser) || [libgda](https://www.archlinux.org/packages/?name=libgda)
 
 *   **GSQL** — Integrated database development tool for GNOME. Last release 2010.
 
@@ -512,7 +512,7 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 *   **[Orbada](https://en.wikipedia.org/wiki/Orbada "wikipedia:Orbada")** — Excellent tool for database developers, SQL developers, DBA administrators, as well as for users who wish to broaden their knowledge and skills in SQL.
 
-	[http://orbada.sourceforge.net/](http://orbada.sourceforge.net/) || [orbada](https://aur.archlinux.org/packages/orbada/)
+	[https://orbada.sourceforge.io/](https://orbada.sourceforge.io/) || [orbada](https://aur.archlinux.org/packages/orbada/)
 
 *   **Sequeler** — SQL client built in Vala and Gtk. It allows you to connect to your local and remote databases, write SQL in a handy text editor with language recognition, and visualize SELECT results in a Gtk.Grid Widget.
 
@@ -558,7 +558,7 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 
 *   **[txt2tags](https://en.wikipedia.org/wiki/Txt2tags "wikipedia:Txt2tags")** — Dead-simple, KISS-compliant lightweight, human-readable markup language to produce rich format content out of plain text files.
 
-	[http://txt2tags.sourceforge.net](http://txt2tags.sourceforge.net) || [txt2tags](https://www.archlinux.org/packages/?name=txt2tags)
+	[https://txt2tags.org/](https://txt2tags.org/) || [txt2tags](https://www.archlinux.org/packages/?name=txt2tags)
 
 #### AsciiDoc
 
@@ -662,7 +662,7 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 *   **[UberWriter](https://en.wikipedia.org/wiki/UberWriter "wikipedia:UberWriter")** — Elegant, free distraction GTK Markdown editor.
 
-	[http://uberwriter.wolfvollprecht.de/](http://uberwriter.wolfvollprecht.de/) || [uberwriter](https://aur.archlinux.org/packages/uberwriter/)
+	[http://uberwriter.github.io/uberwriter/](http://uberwriter.github.io/uberwriter/) || [uberwriter](https://aur.archlinux.org/packages/uberwriter/)
 
 #### Typesetting systems
 
@@ -676,7 +676,7 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 *   **SILE** — Modern typesetting system inspired by TeX.
 
-	[http://sile-typesetter.org/](http://sile-typesetter.org/) || [sile](https://aur.archlinux.org/packages/sile/)
+	[https://sile-typesetter.org/](https://sile-typesetter.org/) || [sile](https://aur.archlinux.org/packages/sile/)
 
 *   **[TeX](/index.php/TeX "TeX")** — A high-quality typesetting system popular in academia.
 
@@ -710,7 +710,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[Kile](https://en.wikipedia.org/wiki/Kile "wikipedia:Kile")** — User-friendly TeX/LaTeX editor for the KDE desktop with many features.
 
-	[http://kile.sourceforge.net/](http://kile.sourceforge.net/) || [kile](https://www.archlinux.org/packages/?name=kile)
+	[https://kile.sourceforge.io/](https://kile.sourceforge.io/) || [kile](https://www.archlinux.org/packages/?name=kile)
 
 *   **Ktikz** — Small application helping you to create [PGF/TikZ](https://en.wikipedia.org/wiki/PGF/TikZ "wikipedia:PGF/TikZ") diagrams for your publications.
 
@@ -718,7 +718,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[LyX](https://en.wikipedia.org/wiki/LyX "wikipedia:LyX")** — Document processor that encourages an approach to writing based on the structure of your documents (WYSIWYM) and not simply their appearance (WYSIWYG).
 
-	[http://www.lyx.org/](http://www.lyx.org/) || [lyx](https://www.archlinux.org/packages/?name=lyx)
+	[https://www.lyx.org/](https://www.lyx.org/) || [lyx](https://www.archlinux.org/packages/?name=lyx)
 
 *   **[TeXmacs](https://en.wikipedia.org/wiki/GNU_TeXmacs "wikipedia:GNU TeXmacs")** — WYSIWYW (what you see is what you want) editing platform with special features for scientists.
 
@@ -726,7 +726,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[Texmaker](https://en.wikipedia.org/wiki/Texmaker "wikipedia:Texmaker")** — Cross-platform, light and easy-to-use LaTeX IDE. It integrates many tools needed to develop documents with LaTeX, in just one application
 
-	[http://www.xm1math.net/texmaker/](http://www.xm1math.net/texmaker/) || [texmaker](https://www.archlinux.org/packages/?name=texmaker)
+	[https://www.xm1math.net/texmaker/](https://www.xm1math.net/texmaker/) || [texmaker](https://www.archlinux.org/packages/?name=texmaker)
 
 *   **[TeXstudio](https://en.wikipedia.org/wiki/TeXstudio "wikipedia:TeXstudio")** — Fork of TeXMaker including support for code completion of bibtex items, grammar check and automatic detection of the need for multiple LaTeX runs.
 
@@ -792,7 +792,7 @@ See also [#Markup languages](#Markup_languages) and [PDF, PS and DjVu](/index.ph
 
 *   **[Pandoc](https://en.wikipedia.org/wiki/Pandoc "wikipedia:Pandoc")** — Swiss-army knife for converting markup and document formats.
 
-	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [pandoc](https://www.archlinux.org/packages/?name=pandoc), [pandoc-bin](https://aur.archlinux.org/packages/pandoc-bin/)
+	[https://pandoc.org/](https://pandoc.org/) || [pandoc](https://www.archlinux.org/packages/?name=pandoc), [pandoc-bin](https://aur.archlinux.org/packages/pandoc-bin/)
 
 *   **unoconv** — Libreoffice-based document converter.
 
@@ -904,7 +904,7 @@ See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 
 *   **YACReader** — Comic book viewer written in C++ and Qt5\. Comes with YACReaderLibrary for managing comics.
 
-	[http://yacreader.com/](http://yacreader.com/) || [yacreader](https://aur.archlinux.org/packages/yacreader/)
+	[https://yacreader.com/](https://yacreader.com/) || [yacreader](https://aur.archlinux.org/packages/yacreader/)
 
 #### CHM
 
@@ -1156,7 +1156,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **[Zim](/index.php/Zim "Zim")** — WYSIWYG text editor that aims at bringing the concept of a wiki to the desktop.
 
-	[http://zim-wiki.org/](http://zim-wiki.org/) || [zim](https://www.archlinux.org/packages/?name=zim)
+	[https://zim-wiki.org/](https://zim-wiki.org/) || [zim](https://www.archlinux.org/packages/?name=zim)
 
 *   **zNotes** — Lightweight application for notes management with simple interface.
 
@@ -1208,7 +1208,7 @@ See also [Wikipedia:List of concept- and mind-mapping software](https://en.wikip
 
 *   **[Freeplane](https://en.wikipedia.org/wiki/Freeplane "wikipedia:Freeplane")** — Fork of FreeMind, supports thinking, sharing information and getting things done at work. The software can be used for mind mapping and analyzing the information contained in mind maps.
 
-	[http://freeplane.sourceforge.net](http://freeplane.sourceforge.net) || [freeplane](https://aur.archlinux.org/packages/freeplane/)
+	[https://www.freeplane.org/](https://www.freeplane.org/) || [freeplane](https://aur.archlinux.org/packages/freeplane/)
 
 *   **Labyrinth** — Lightweight mind-mapping tool, written in Python using GTK, with support for image import and drawing.
 
@@ -1232,7 +1232,7 @@ See also [Wikipedia:List of concept- and mind-mapping software](https://en.wikip
 
 *   **[XMind](https://en.wikipedia.org/wiki/XMind "wikipedia:XMind")** — Brainstorming and mind mapping application. It provides a rich set of different visualization styles, and allows sharing of created mind maps via their website.
 
-	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://aur.archlinux.org/packages/xmind/)
+	[https://www.xmind.net/](https://www.xmind.net/) || [xmind](https://aur.archlinux.org/packages/xmind/)
 
 *   **MindMaster** — commercial mindmap and brainstorm software with modern UI and beautiful template.It also provides online mindmap service and cross-platform sharing.
 
@@ -1368,7 +1368,7 @@ See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writi
 
 *   **Xfce4 Dictionary** — Search different kinds of dictionary services for words or phrases.
 
-	[http://goodies.xfce.org/projects/applications/xfce4-dict](http://goodies.xfce.org/projects/applications/xfce4-dict) || [xfce4-dict](https://www.archlinux.org/packages/?name=xfce4-dict)
+	[https://goodies.xfce.org/projects/applications/xfce4-dict](https://goodies.xfce.org/projects/applications/xfce4-dict) || [xfce4-dict](https://www.archlinux.org/packages/?name=xfce4-dict)
 
 #### Spell checkers
 
@@ -1380,7 +1380,7 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 
 *   **[Apertium](https://en.wikipedia.org/wiki/Apertium "wikipedia:Apertium")** — Free and open source rule-based machine translation platform with available language data. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, TMX, MediaWiki and others.
 
-	[http://apertium.org/](http://apertium.org/) || [apertium](https://aur.archlinux.org/packages/apertium/)
+	[https://www.apertium.org/](https://www.apertium.org/) || [apertium](https://aur.archlinux.org/packages/apertium/)
 
 *   **Crow Translate** — Simple and lightweight translator that allows to translate and speak text using Google, Yandex and Bing.
 
@@ -1396,11 +1396,11 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 
 *   **[Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)")** — Statistical machine translation tool (language data not included).
 
-	[http://statmt.org/moses](http://statmt.org/moses) || [mosesdecoder](https://aur.archlinux.org/packages/mosesdecoder/)
+	[http://statmt.org/moses/](http://statmt.org/moses/) || [mosesdecoder](https://aur.archlinux.org/packages/mosesdecoder/)
 
 *   **[OmegaT](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT")** — General translator's tool which contains a lot of translation memory features and can give suggestions from Google Translate. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, XLIFF/Okapi, MediaWiki, plain text, TMX and others.
 
-	[http://omegat.org](http://omegat.org) || [omegat](https://aur.archlinux.org/packages/omegat/)
+	[https://omegat.org/](https://omegat.org/) || [omegat](https://aur.archlinux.org/packages/omegat/)
 
 *   **[Poedit](https://en.wikipedia.org/wiki/Poedit "wikipedia:Poedit")** — Simple translation editor for gettext (PO, POT) and XLIFF.
 

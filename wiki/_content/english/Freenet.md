@@ -1,19 +1,23 @@
 [Freenet](http://freenetproject.org/) is a free and open source software that aims to provide anonymity and freedom of speech through a decentralized peer-to-peer network. Freenet enables its users to share files anonymously, publish freesites without fear of censorship and more. Data is encrypted and routed through multiple nodes making almost impossible to identify who requested the information and what its content is.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Installation and Setup](#Installation_and_Setup)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Wizard](#Wizard)
     *   [2.2 Manual Configuration](#Manual_Configuration)
 
-## Installation and Setup
+## Installation
 
 [Install](/index.php/Install "Install") the [freenet](https://aur.archlinux.org/packages/freenet/) package.
 
-[Start/enable](/index.php/Start/enable "Start/enable") `freenet.service`.
-
 ## Configuration
+
+[Start/enable](/index.php/Start/enable "Start/enable") the `freenet.service`.
 
 You can either let the wizard guide you through the configuration or get your hands dirty by configuring freenet manually. You might want to read about [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") or [EncFS](/index.php/EncFS "EncFS") to protect the data you will be sharing before continuing.
 

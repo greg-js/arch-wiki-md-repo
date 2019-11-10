@@ -24,7 +24,7 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
     *   [1.4 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
     *   [1.5 Tracking unowned files created by packages](#Tracking_unowned_files_created_by_packages)
     *   [1.6 Removing unused packages (orphans)](#Removing_unused_packages_(orphans))
-    *   [1.7 Removing everything but base group](#Removing_everything_but_base_group)
+    *   [1.7 Removing everything but essential packages](#Removing_everything_but_essential_packages)
     *   [1.8 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
     *   [1.9 Listing changed backup files](#Listing_changed_backup_files)
     *   [1.10 Backup the pacman database](#Backup_the_pacman_database)
@@ -70,7 +70,7 @@ See also [System maintenance](/index.php/System_maintenance "System maintenance"
 You may want to get the list of installed packages with their version, which is useful when reporting bugs or discussing installed packages.
 
 *   List all explicitly installed packages: `pacman -Qe`.
-*   List all packages in the group named `group`: `pacman -Sg group`
+*   List all packages in the [package group](/index.php/Package_group "Package group") named `*group*`: `pacman -Sg *group*`
 *   List all explicitly installed native packages (i.e. present in the sync database) that are not direct or optional dependencies: `pacman -Qent`.
 *   List all foreign packages (typically manually downloaded and installed or packages removed from the repositories): `pacman -Qm`.
 *   List all native packages (installed from the sync database(s)): `pacman -Qn`.
@@ -269,16 +269,30 @@ If no orphans were found *pacman* outputs `error: no targets specified`. This is
 
 **Note:** The arguments `-Qt` list only true orphans. To include packages which are *optionally* required by another package, pass the `-t` flag twice (*i.e.*, `-Qtt`).
 
-### Removing everything but base group
+### Removing everything but essential packages
 
-If it is ever necessary to remove all packages except the base group, try this one-liner (requires [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)):
+If it is ever necessary to remove all packages except the essentials packages, one method is to set the installation reason of the non-essential ones as dependency and then remove all unnecessary dependencies.
+
+First, for all the packages installed "as explicitly", change their installation reason to "as dependency":
 
 ```
-# pacman -R $(comm -23 <(pacman -Qq | sort) <((for i in $(pacman -Qqg base); do pactree -ul "$i"; done) | sort -u))
+# pacman -D --asdeps $(pacman -Qqe)
 
 ```
 
-The one-liner was originally devised in [this discussion](https://bbs.archlinux.org/viewtopic.php?id=130176), and later improved in this article.
+Then, change the installation reason to "as explicitly" of only the essential packages, those you **do not** want to remove, in order to avoid targeting them:
+
+```
+# pacman -D --asexplicit base linux linux-firmware
+
+```
+
+**Note:**
+
+*   Additional packages can be added to the above command in order to avoid being removed. See [Installation guide#Install essential packages](/index.php/Installation_guide#Install_essential_packages "Installation guide") for more info on other packages that may be necessary for a fully functional base system.
+*   This will also select the bootloader's package for removal. The system should still be bootable, but the boot parameters might not be changeable without it.
+
+Finally, follow the instructions in [#Removing unused packages (orphans)](#Removing_unused_packages_(orphans)) to remove all packages that have installation reason "as dependency".
 
 ### Getting the dependencies list of several packages
 

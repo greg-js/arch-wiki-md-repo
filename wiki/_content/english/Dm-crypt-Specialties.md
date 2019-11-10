@@ -405,6 +405,13 @@ With LUKS2 you can set `allow-discards` as a default flag for a device by openin
 
 ```
 
+When the device is already opened, the `open` action will raise an error. You can use the `refresh` option in these cases, e.g.:
+
+```
+# cryptsetup --allow-discards --persistent refresh /dev/sdaX
+
+```
+
 You can confirm the flag is persistently set in the LUKS2 header by looking at the `cryptsetup luksDump` output:
 
  `# cryptsetup luksDump /dev/sdaX | grep Flags` 

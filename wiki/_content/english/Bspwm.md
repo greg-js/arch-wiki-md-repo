@@ -274,7 +274,7 @@ Add the following line to the `userChrome.css` file of your Firefox profile:
 
 ```
 
-The file should be located in `~/.mozilla/firefox/something.default/chrome/` (it will need to be created if you don't already have one). Also, in Firefox, you will have to go to the `about:config` page and enable the option `toolkit.legacyUserProfileCustomizations.stylesheets`; otherwise Firefox will ignore the userChrome.css file.
+The file should be located in `~/.mozilla/firefox/*something*.default/chrome/` (it will need to be created if you don't already have one). Also, in Firefox, you will have to go to the `about:config` page and enable the option `toolkit.legacyUserProfileCustomizations.stylesheets`; otherwise Firefox will ignore the userChrome.css file.
 
 ## See also
 

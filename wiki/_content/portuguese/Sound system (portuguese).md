@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sound system](/index.php/Sound_system "Sound system"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sound_system&diff=0&oldid=580513) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sound system](/index.php/Sound_system "Sound system"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sound_system&diff=0&oldid=584791) na versão em inglês.
 
 Esse artigo é sobre gerenciamento básico de som. Para tópicos avançados, veja [áudio profissional](/index.php/Professional_audio "Professional audio").
 
@@ -28,7 +28,7 @@ Uma instalação padrão do Arch já inclui o sistema de som do kernel ([ALSA](/
 
 *   **[ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)")** — Um componente do kernel do Linux que fornece drivers de dispositivo e suporte de nível mais baixo para hardware de áudio.
 
-	[http://www.alsa-project.org/](http://www.alsa-project.org/) || presente no kernel padrão
+	[https://www.alsa-project.org/wiki/Main_Page](https://www.alsa-project.org/wiki/Main_Page) || presente no kernel padrão
 
 *   **[Open Sound System](/index.php/Open_Sound_System "Open Sound System") (OSS)** — Uma arquitetura de som alternativa para sistemas compatíveis com Unix e POSIX. O OSS versão 3 foi o sistema de som original para Linux e está no kernel, mas foi substituído pelo ALSA em 2002, quando o OSS versão 4 se tornou software proprietário. O OSSv4 tornou-se software livre novamente em 2007, quando a 4Front Technologies divulgou seu código-fonte e o forneceu sob a GPL. O OSS não possui suporte a uma variedade tão grande de hardware como o ALSA, mas é melhor para alguns.
 

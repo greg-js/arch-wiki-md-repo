@@ -27,7 +27,7 @@ Related articles
 
 ## Installation
 
-*systemd-resolved* is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package that is [installed](/index.php/Install "Install") by default.
+*systemd-resolved* is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package that is installed by default.
 
 ## Configuration
 

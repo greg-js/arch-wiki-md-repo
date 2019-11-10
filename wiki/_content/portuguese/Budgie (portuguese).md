@@ -1,11 +1,11 @@
+**Status de tradução:** Esse artigo é uma tradução de [Budgie](/index.php/Budgie "Budgie"). Data da última tradução: 2019-05-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=573640) na versão em inglês.
+
 Artigos relacionados
 
-*   [Desktop environment (Português)](/index.php/Desktop_environment_(Portugu%C3%AAs) "Desktop environment (Português)")
-*   [Display manager (Português)](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)")
-*   [Window manager (Português)](/index.php/Window_manager_(Portugu%C3%AAs) "Window manager (Português)")
-*   [GTK+ (Português)](/index.php/GTK%2B_(Portugu%C3%AAs) "GTK+ (Português)")
-
-**Status de tradução:** Esse artigo é uma tradução de [Budgie](/index.php/Budgie "Budgie"). Data da última tradução: 2019-05-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=573640) na versão em inglês.
+*   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
+*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
+*   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
+*   [GTK](/index.php/GTK_(Portugu%C3%AAs) "GTK (Português)")
 
 O Budgie é o desktop padrão do Solus Operating System, escrito do zero. Além de um design mais moderno, o Budgie pode emular a aparência da área de trabalho do GNOME 2.
 
@@ -25,11 +25,11 @@ O Budgie é o desktop padrão do Solus Operating System, escrito do zero. Além 
 
 ## Instalação
 
-[Instale](/index.php/Install "Install") o pacote [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) para a versão estável ou [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) para a versão de desenvolvimento. É recomendado instalar suas dependências opcionais também para obter um ambiente de desktop mais completo. É recomendado também instalar o grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/), que contém os aplicativos necessários para a experiência padrão do GNOME.
+[Instale](/index.php/Instale "Instale") o pacote [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) para a versão estável ou [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) para a versão de desenvolvimento. É recomendado instalar suas dependências opcionais também para obter um ambiente de desktop mais completo. É recomendado também instalar o grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/), que contém os aplicativos necessários para a experiência padrão do GNOME.
 
 ## Iniciando
 
-Escolha a sessão *Budgie Desktop* de um [gerenciador de exibição](/index.php/Display_manager_(Portugu%C3%AAs) "Display manager (Português)") de sua escolha, ou modifique [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") para incluir o Budgie Desktop:
+Escolha a sessão *Budgie Desktop* de um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") de sua escolha, ou modifique [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") para incluir o Budgie Desktop:
 
  `~/.xinitrc` 
 ```
@@ -60,7 +60,7 @@ gsettings set com.solus-project.budgie-helper.workarounds fix-button-layout 'clo
 
 ### Use um window manager diferente
 
-É possível usar um [window manager](/index.php/Window_manager_(Portugu%C3%AAs) "Window manager (Português)") alternativo com o Budgie. Defina um [Sessão GNOME personalizada](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que substitua *budgie-wm* por outro window manager ou [autostart](/index.php/GNOME_(Portugu%C3%AAs)#Inicialização_automática "GNOME (Português)") `*my -wm* --replace` onde *my-wm* é o nome do executável do gerenciador de janelas que você deseja usar.
+É possível usar um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") alternativo com o Budgie. Defina um [Sessão GNOME personalizada](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que substitua *budgie-wm* por outro gerenciador de janela ou [autostart](/index.php/GNOME_(Portugu%C3%AAs)#Inicialização_automática "GNOME (Português)") `*meu-wm* --replace` onde *meu-wm* é o nome do executável do gerenciador de janelas que você deseja usar.
 
 ## Veja Também
 

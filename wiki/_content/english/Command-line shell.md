@@ -145,7 +145,7 @@ EOF
 
 ## See also
 
-*   [Evolution of shells in Linux](http://www.ibm.com/developerworks/linux/library/l-linux-shells/index.html) on the IBM developerWorks
+*   [Evolution of shells in Linux](https://developer.ibm.com/tutorials/l-linux-shells/) on the IBM developerWorks
 *   [terminal.sexy](https://terminal.sexy/) — Terminal Color Scheme Designer
 *   [Hyperpolyglot](http://hyperpolyglot.org/unix-shells) — Side-by-side comparison of shell syntaxes
 *   [UNIX Power Tools](http://docstore.mik.ua/orelly/unix/upt/index.htm) — General command-line tool usage

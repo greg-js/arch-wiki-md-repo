@@ -120,7 +120,7 @@
 
 *   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev").
 
-	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+	[https://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](https://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
 *   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with ncurses and GTK interfaces.
 
@@ -194,7 +194,7 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 *   **Project V** — Project V is a set of tools to help you build your own privacy network over internet.
 
-	[https://www.v2ray.com/en/](https://www.v2ray.com/en/) || [v2ray](https://www.archlinux.org/packages/?name=v2ray)
+	[https://www.v2fly.org/en/](https://www.v2fly.org/en/) || [v2ray](https://www.archlinux.org/packages/?name=v2ray)
 
 *   **[Shadowsocks](/index.php/Shadowsocks "Shadowsocks")** — Secure socks5 proxy, designed to protect your Internet traffic.
 
@@ -262,7 +262,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Lynx](https://en.wikipedia.org/wiki/Lynx_(web_browser) "wikipedia:Lynx (web browser)")** — Text browser for the World Wide Web.
 
-	[http://lynx.invisible-island.net/](http://lynx.invisible-island.net/) || [lynx](https://www.archlinux.org/packages/?name=lynx)
+	[https://lynx.invisible-island.net/](https://lynx.invisible-island.net/) || [lynx](https://www.archlinux.org/packages/?name=lynx)
 
 *   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — Pager/text-based web browser. It has vim-like keybindings, and is able to display images.
 
@@ -338,7 +338,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — Fast, smart and powerful proprietary browser based on Chromium.
 
-	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
+	[https://www.slimjet.com/](https://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
 
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
 
@@ -368,7 +368,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and Qt WebEngine (or KHTML layout engine), part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
-	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
+	[https://kde.org/applications/internet/org.kde.konqueror](https://kde.org/applications/internet/org.kde.konqueror) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **Liri Browser** — A minimalistic material design web browser written for Liri.
 
@@ -380,7 +380,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **Qt WebBrowser** — Browser for embedded devices developed using the capabilities of Qt and Qt WebEngine.
 
-	[http://doc.qt.io/QtWebBrowser/](http://doc.qt.io/QtWebBrowser/) || [qtwebbrowser](https://aur.archlinux.org/packages/qtwebbrowser/)
+	[https://doc.qt.io/QtWebBrowser/](https://doc.qt.io/QtWebBrowser/) || [qtwebbrowser](https://aur.archlinux.org/packages/qtwebbrowser/)
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebEngine.
 
@@ -422,7 +422,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK and WebKit.
 
-	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
+	[https://www.midori-browser.org/](https://www.midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
 
 *   **Next** — Keyboard-oriented, infinitely extensible browser.
 
@@ -470,7 +470,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk"). Uses its own layout engine.
 
-	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
+	[https://www.dillo.org/](https://www.dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
 
 *   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Graphics and text mode web browser. Includes a graphical X-window/framebuffer version with CSS, image rendering, pull-down menus. It can be launched with the `xlinks -g` command.
 
@@ -478,7 +478,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — Featherweight browser written in C, notable for its slowly developing JavaScript support and fast rendering through its own layout engine.
 
-	[http://netsurf-browser.org](http://netsurf-browser.org) || [netsurf](https://www.archlinux.org/packages/?name=netsurf)
+	[http://www.netsurf-browser.org/](http://www.netsurf-browser.org/) || [netsurf](https://www.archlinux.org/packages/?name=netsurf)
 
 *   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) layout engine, a fork of Gecko. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Without support for newer Firefox features such as cache2, e10s, and OTMC.
 
@@ -492,7 +492,7 @@ See also [Category:Web server](/index.php/Category:Web_server "Category:Web serv
 
 *   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
 
-	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
+	[http://www.apache.org/dist/httpd/](http://www.apache.org/dist/httpd/) || [apache](https://www.archlinux.org/packages/?name=apache)
 
 *   **[Caddy](/index.php/Caddy "Caddy")** — HTTP/2 web server with automatic HTTPS.
 
@@ -632,7 +632,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **snarf** — Command-line URL retrieval tool. Supports HTTP and FTP.
 
-	[http://www.xach.com/snarf/](http://www.xach.com/snarf/) || [snarf](https://www.archlinux.org/packages/?name=snarf)
+	[https://www.xach.com/snarf/](https://www.xach.com/snarf/) || [snarf](https://www.archlinux.org/packages/?name=snarf)
 
 *   **[Streamlink](/index.php/Streamlink "Streamlink")** — Launch streams from various streaming services in a custom video player or save them to a file.
 
@@ -674,7 +674,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **[FrostWire](https://en.wikipedia.org/wiki/FrostWire "wikipedia:FrostWire")** — Easy to use cloud downloader, BitTorrent client and media player.
 
-	[http://www.frostwire.com/](http://www.frostwire.com/) || [frostwire](https://aur.archlinux.org/packages/frostwire/)
+	[https://www.frostwire.com/](https://www.frostwire.com/) || [frostwire](https://aur.archlinux.org/packages/frostwire/)
 
 *   **gtk-youtube-viewer** — GTK utility for viewing YouTube videos.
 
@@ -714,7 +714,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **uGet** — GTK download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent, Metalink, YouTube and Mega.
 
-	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
+	[https://ugetdm.com/](https://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
 
 *   **Xtreme Download Manager** — Powerful tool to increase download speed up-to 500%. Supports HTTP and FTP. Video grabber works in a general way and is not limited to certain websites.
 
@@ -840,7 +840,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **S3cmd** — Unofficial CLI for Amazon S3.
 
-	[http://s3tools.org/s3cmd](http://s3tools.org/s3cmd) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
+	[https://s3tools.org/s3cmd](https://s3tools.org/s3cmd) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
 
 *   **[Seafile](/index.php/Seafile "Seafile") Client** — GUI client for Seafile.
 
@@ -866,11 +866,11 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 *   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — Fast and reliable FTP, FTPS and SFTP client.
 
-	[http://filezilla-project.org/](http://filezilla-project.org/) || [filezilla](https://www.archlinux.org/packages/?name=filezilla)
+	[https://filezilla-project.org/](https://filezilla-project.org/) || [filezilla](https://www.archlinux.org/packages/?name=filezilla)
 
 *   **[gFTP](https://en.wikipedia.org/wiki/gFTP "wikipedia:gFTP")** — Multithreaded FTP client for Linux.
 
-	[http://gftp.seul.org/](http://gftp.seul.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
+	[https://www.gftp.org/](https://www.gftp.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
 
 *   **ftp** — Simple ftp client provided by GNU Inetutils
 
@@ -878,11 +878,11 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 *   **ncftp** — A set of free application programs implementing FTP.
 
-	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
+	[https://www.ncftp.com/](https://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
 
 *   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
 
-	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
+	[http://freshmeat.sourceforge.net/projects/tnftp](http://freshmeat.sourceforge.net/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
 
 Some file managers like [Dolphin](/index.php/Dolphin "Dolphin"), [GNOME Files](/index.php/GNOME_Files "GNOME Files") and [Thunar](/index.php/Thunar "Thunar") also provide FTP functionality.
 
@@ -908,7 +908,7 @@ See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/L
 
 *   **[Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")** — Free (BSD-licensed), secure, production-quality and standard-compliant FTP server.
 
-	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
+	[https://www.pureftpd.org/project/pure-ftpd/](https://www.pureftpd.org/project/pure-ftpd/) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
 
 *   **[SSH](/index.php/SSH "SSH")** — SFTP is a network protocol that provides file access, file transfer, and file management over any reliable data stream.
 
@@ -1014,7 +1014,7 @@ See also [Wikipedia:Comparison of file-sharing applications](https://en.wikipedi
 
 *   **KaMule** — KDE graphical front-end for aMule.
 
-	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
+	[https://www.linux-apps.com/content/show.php?content=150270](https://www.linux-apps.com/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
 
 *   **LBRY** — Browser and wallet for LBRY, the decentralized, user-controlled content marketplace. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -1058,9 +1058,9 @@ Pastebin services are often used to quote text or images while collaborating and
 
 	[https://github.com/defunkt/gist](https://github.com/defunkt/gist) || [gist](https://www.archlinux.org/packages/?name=gist)
 
-*   **imgur** — A CLI client which can upload image to [imgur.com](http://imgur.com) image sharing service.
+*   **imgur** — A CLI client which can upload image to [imgur.com](https://imgur.com) image sharing service.
 
-	[http://imgur.com/apps](http://imgur.com/apps) || [imgur](https://aur.archlinux.org/packages/imgur/)
+	[https://github.com/tremby/imgur.sh](https://github.com/tremby/imgur.sh) || [imgur.sh](https://aur.archlinux.org/packages/imgur.sh/)
 
 *   **Ix** — Client for the ix.io pastebin.
 
@@ -1068,7 +1068,7 @@ Pastebin services are often used to quote text or images while collaborating and
 
 *   **Pastebinit** — Really small Python script that acts as a Pastebin client. Servers: [pastie.org](http://pastie.org/), [paste.kde.org](https://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) and others (for a full list see `pastebinit -l`).
 
-	[http://launchpad.net/pastebinit](http://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
+	[https://launchpad.net/pastebinit](https://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
 
 *   **ruby-haste** — Client for [hastebin.com](http://hastebin.com/).
 
@@ -1094,13 +1094,13 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://git.sr.ht/~sircmpwn/aerc](https://git.sr.ht/~sircmpwn/aerc) || [aerc-git](https://aur.archlinux.org/packages/aerc-git/)
 
-*   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
+*   **alot** — An experimental terminal MUA based on [notmuch mail](https://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
 
 	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://www.archlinux.org/packages/?name=alot)
 
 *   **[Alpine](/index.php/Alpine "Alpine")** — Fast, easy-to-use and Apache-licensed email client based on [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)").
 
-	[http://www.washington.edu/alpine/](http://www.washington.edu/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)
+	[http://www.washington.edu/alpine/](http://www.washington.edu/alpine/) || [alpine-git](https://aur.archlinux.org/packages/alpine-git/)
 
 *   **[S-nail](/index.php/S-nail "S-nail")** — a mail processing system with a command syntax reminiscent of *ed* with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx").
 
@@ -1124,7 +1124,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **[notmuch](/index.php/Notmuch "Notmuch")** — A fast mail indexer built on top of *xapian*.
 
-	[http://notmuchmail.org/](http://notmuchmail.org/) || [notmuch](https://www.archlinux.org/packages/?name=notmuch)
+	[https://notmuchmail.org/](https://notmuchmail.org/) || [notmuch](https://www.archlinux.org/packages/?name=notmuch)
 
 *   **[Sup](/index.php/Sup "Sup")** — CLI mail client with very fast searching, tagging, threading and GMail like operation.
 
@@ -1202,11 +1202,11 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK email client.
 
-	[http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
+	[https://sylpheed.sraoss.jp/en/](https://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
 
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client from Mozilla written in GTK.
 
-	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
+	[https://www.thunderbird.net/](https://www.thunderbird.net/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
 *   **Trojitá** — Qt IMAP email client. Only supports [one IMAP account](https://bugs.kde.org/show_bug.cgi?id=321374).
 
@@ -1224,7 +1224,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **Roundcubemail** — Browser-based multilingual IMAP client webapp with a native application-like user interface.
 
-	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
+	[https://roundcube.net/](https://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
 
 *   **[SquirrelMail](/index.php/Squirrelmail "Squirrelmail")** — Webmail for Nuts!
 
@@ -1248,7 +1248,7 @@ See also [Wikipedia:Mail retrieval agent](https://en.wikipedia.org/wiki/Mail_ret
 
 *   **[Fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail")** — A remote-mail retrieval utility.
 
-	[http://www.fetchmail.info/](http://www.fetchmail.info/) || [fetchmail](https://aur.archlinux.org/packages/fetchmail/)
+	[https://www.fetchmail.info/](https://www.fetchmail.info/) || [fetchmail](https://aur.archlinux.org/packages/fetchmail/)
 
 *   **[getmail](/index.php/Getmail "Getmail")** — A POP3/IMAP4 mail retriever with reliable Maildir and command delivery.
 
@@ -1286,11 +1286,11 @@ The number of networks supported by these clients is very large but they (like a
 
 *   **BarnOwl** — Ncurses-based chat client with support for the Zephyr, XMPP, IRC and Twitter protocols.
 
-	[http://barnowl.mit.edu/](http://barnowl.mit.edu/) || [barnowl](https://aur.archlinux.org/packages/barnowl/)
+	[https://barnowl.mit.edu/](https://barnowl.mit.edu/) || [barnowl](https://aur.archlinux.org/packages/barnowl/)
 
 *   **[BitlBee](/index.php/Bitlbee "Bitlbee")** — IRC gateway to popular chat networks (XMPP, ICQ and Twitter).
 
-	[http://bitlbee.org/](http://bitlbee.org/) || [bitlbee](https://www.archlinux.org/packages/?name=bitlbee)
+	[https://bitlbee.org/](https://bitlbee.org/) || [bitlbee](https://www.archlinux.org/packages/?name=bitlbee)
 
 *   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Text mode menu- and window-driven IM interface. Supports most of widely used IM protocols, including ICQ, IRC, XMPP.
 
@@ -1302,7 +1302,7 @@ The number of networks supported by these clients is very large but they (like a
 
 *   **Finch** — Ncurses-based chat client that uses libpurple and supports all its protocols (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
 
-	[http://developer.pidgin.im/wiki/Using%20Finch](http://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
+	[https://developer.pidgin.im/wiki/Using%20Finch](https://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
 
 *   **Minbif** — IRC gateway to IM networks that uses libpurple.
 
@@ -1344,7 +1344,7 @@ The number of networks supported by these clients is very large but they (like a
 
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client supports instant messaging and chat using IRC, XMPP and Twitter.
 
-	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
+	[https://www.thunderbird.net/](https://www.thunderbird.net/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
 *   **Volt** — Proprietary native desktop client for Skype, Telegram, Slack, XMPP, Discord, IRC and more.
 
@@ -1378,7 +1378,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **ScrollZ** — Advanced IRC client based on [ircII](https://en.wikipedia.org/wiki/ircII "wikipedia:ircII").
 
-	[http://www.scrollz.info/](http://www.scrollz.info/) || [scrollz](https://aur.archlinux.org/packages/scrollz/)
+	[https://www.scrollz.info/](https://www.scrollz.info/) || [scrollz](https://aur.archlinux.org/packages/scrollz/)
 
 *   **sic** — Extremely simple IRC client, similar to [ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)").
 
@@ -1400,7 +1400,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 | [ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) | [ii](https://aur.archlinux.org/packages/ii/) | C | stdin/stdout | No |
 | [Irssi](/index.php/Irssi "Irssi") | [irssi](https://www.archlinux.org/packages/?name=irssi) | C | in Perl | Yes |
 | [pork](http://dev.ojnk.net/) | [pork](https://www.archlinux.org/packages/?name=pork) | C | in Perl | No |
-| [ScrollZ](http://www.scrollz.info/) | [scrollz](https://aur.archlinux.org/packages/scrollz/) | C | ? | No |
+| [ScrollZ](https://www.scrollz.info/) | [scrollz](https://aur.archlinux.org/packages/scrollz/) | C | ? | No |
 | [sic](https://tools.suckless.org/sic/) | [sic](https://aur.archlinux.org/packages/sic/) | C | stdin/stdout | No |
 | [WeeChat](/index.php/WeeChat "WeeChat") | [weechat](https://www.archlinux.org/packages/?name=weechat) | C | [multiple languages](https://weechat.org/files/doc/stable/weechat_scripting.en.html) | Yes |
 | [tiny](https://github.com/osa1/tiny) | [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/) | Rust | No | Yes |
@@ -1433,7 +1433,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[Quassel](/index.php/Quassel "Quassel")** — Modern, cross-platform, distributed IRC client.
 
-	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
+	[https://quassel-irc.org/](https://quassel-irc.org/) || [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
 *   **Srain** — Modern, beautiful IRC client written in GTK 3.
 
@@ -1541,7 +1541,7 @@ See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/
 
 *   **[Ekiga](https://en.wikipedia.org/wiki/Ekiga "wikipedia:Ekiga")** — VoIP and video conferencing application with full SIP and H.323 support (formerly known as GNOME Meeting).
 
-	[http://www.ekiga.org/](http://www.ekiga.org/) || [ekiga](https://www.archlinux.org/packages/?name=ekiga)
+	[https://www.ekiga.org/](https://www.ekiga.org/) || [ekiga](https://www.archlinux.org/packages/?name=ekiga)
 
 *   **[Jami](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Jami network. Formerly known as Ring and SFLphone.
 
@@ -1687,7 +1687,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 
 *   **[Mumble](/index.php/Mumble "Mumble")** — Voice chat application similar to TeamSpeak.
 
-	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [mumble](https://www.archlinux.org/packages/?name=mumble)
+	[https://www.mumble.info/](https://www.mumble.info/) || [mumble](https://www.archlinux.org/packages/?name=mumble)
 
 *   **QHangups** — Alternative client for Google Hangouts written in PyQt.
 
@@ -1711,7 +1711,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
 
-	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
+	[https://www.teamspeak.com/](https://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
 
 *   **[TeamTalk](/index.php/TeamTalk "TeamTalk")** — Proprietary VoIP application with video chat, file and desktop sharing. Desktop sharing doesn't appear to be working in Linux though. AUR package is server only, but client is built in the make process.
 
@@ -1783,7 +1783,7 @@ See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org
 
 *   **[Jabberd2](/index.php/Jabberd2 "Jabberd2")** — An XMPP server written in the C language and licensed under the GNU General Public License. It was inspired by jabberd14.
 
-	[http://jabberd2.org](http://jabberd2.org) || [jabberd2](https://aur.archlinux.org/packages/jabberd2/)
+	[https://jabberd2.org/](https://jabberd2.org/) || [jabberd2](https://aur.archlinux.org/packages/jabberd2/)
 
 *   **[Openfire](/index.php/Openfire "Openfire")** — An XMPP IM multiplatform server written in Java
 
@@ -1821,7 +1821,7 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 *   **[Murmur](/index.php/Murmur "Murmur")** — The voice chat application server for Mumble.
 
-	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [murmur](https://www.archlinux.org/packages/?name=murmur)
+	[https://www.mumble.info/](https://www.mumble.info/) || [murmur](https://www.archlinux.org/packages/?name=murmur)
 
 *   **Nextcloud Talk** — Video- and audio-conferencing app for Nextcloud.
 
@@ -1845,7 +1845,7 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 *   **uMurmur** — Minimalistic Mumble server.
 
-	[http://umurmur.net/](http://umurmur.net/) || [umurmur](https://www.archlinux.org/packages/?name=umurmur)
+	[https://umurmur.net/](https://umurmur.net/) || [umurmur](https://www.archlinux.org/packages/?name=umurmur)
 
 #### Collaborative software
 
@@ -1879,7 +1879,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Canto](https://en.wikipedia.org/wiki/Canto_(news_aggregator) "wikipedia:Canto (news aggregator)")** — Ncurses RSS aggregator.
 
-	[http://codezen.org/canto/](http://codezen.org/canto/) || [canto-curses](https://aur.archlinux.org/packages/canto-curses/)
+	[https://codezen.org/canto/](https://codezen.org/canto/) || [canto-curses](https://aur.archlinux.org/packages/canto-curses/)
 
 *   **[Gnus](https://en.wikipedia.org/wiki/Gnus "wikipedia:Gnus")** — Email, NNTP and RSS client for Emacs.
 
@@ -1887,11 +1887,11 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Newsboat](/index.php/Newsboat "Newsboat")** — Ncurses RSS aggregator with layout and keybinding similar to the [Mutt](/index.php/Mutt "Mutt") email client.
 
-	[http://newsboat.org](http://newsboat.org) || [newsboat](https://www.archlinux.org/packages/?name=newsboat)
+	[https://newsboat.org/](https://newsboat.org/) || [newsboat](https://www.archlinux.org/packages/?name=newsboat)
 
 *   **Rawdog** — "RSS Aggregator Without Delusions Of Grandeur" that parses RSS/CDF/Atom feeds into a static HTML page of articles in chronological order.
 
-	[http://offog.org/code/rawdog.html](http://offog.org/code/rawdog.html) || [rawdog](https://www.archlinux.org/packages/?name=rawdog)
+	[http://offog.org/code/rawdog/](http://offog.org/code/rawdog/) || [rawdog](https://www.archlinux.org/packages/?name=rawdog)
 
 *   **Snownews** — Text mode RSS news reader.
 
@@ -1913,7 +1913,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **FeedReader** — Modern desktop application designed to complement existing web-based RSS accounts.
 
-	[http://jangernert.github.io/FeedReader/](http://jangernert.github.io/FeedReader/) || [feedreader](https://www.archlinux.org/packages/?name=feedreader)
+	[https://jangernert.github.io/FeedReader/](https://jangernert.github.io/FeedReader/) || [feedreader](https://www.archlinux.org/packages/?name=feedreader)
 
 *   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK news aggregator for online news feeds and weblogs.
 
@@ -1953,11 +1953,11 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 *   **castget** — Simple, command-line RSS enclosure downloader, primarily intended for automatic, unattended downloading of podcasts.
 
-	[http://castget.johndal.com/](http://castget.johndal.com/) || [castget](https://www.archlinux.org/packages/?name=castget)
+	[https://castget.johndal.com/](https://castget.johndal.com/) || [castget](https://www.archlinux.org/packages/?name=castget)
 
 *   **gpo** — Text mode interface of gPodder.
 
-	[http://gpodder.org/](http://gpodder.org/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
+	[https://gpodder.github.io/](https://gpodder.github.io/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
 
 *   **Greg** — A command-line podcast aggregator.
 
@@ -1983,11 +1983,11 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 *   **gPodder** — Podcast client and media aggregator (GTK interface).
 
-	[http://gpodder.org/](http://gpodder.org/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
+	[https://gpodder.github.io/](https://gpodder.github.io/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
 
 *   **Vocal** — Simple podcast client for the Modern Desktop (GTK).
 
-	[http://vocalproject.net/](http://vocalproject.net/) || [vocal](https://www.archlinux.org/packages/?name=vocal)
+	[https://vocalproject.net/](https://vocalproject.net/) || [vocal](https://www.archlinux.org/packages/?name=vocal)
 
 #### Usenet newsreaders
 
@@ -2065,11 +2065,11 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Corebird** — Native GTK Twitter client for the Linux desktop.
 
-	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird](https://aur.archlinux.org/packages/corebird/)
+	[https://corebird.baedert.org//](https://corebird.baedert.org//) || [corebird](https://aur.archlinux.org/packages/corebird/)
 
 *   **Mikutter** — Simple, powerful Twitter client using [GTK](/index.php/GTK "GTK") and Ruby.
 
-	[http://mikutter.hachune.net/](http://mikutter.hachune.net/) || [mikutter](https://aur.archlinux.org/packages/mikutter/)
+	[https://mikutter.hachune.net/](https://mikutter.hachune.net/) || [mikutter](https://aur.archlinux.org/packages/mikutter/)
 
 *   **Polly** — Linux Twitter client designed for multiple columns of multiple accounts.
 
@@ -2099,7 +2099,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **[Drupal](/index.php/Drupal "Drupal")** — A PHP-based content management platform.
 
-	[http://www.drupal.org/](http://www.drupal.org/) || [drupal](https://www.archlinux.org/packages/?name=drupal)
+	[https://www.drupal.org/](https://www.drupal.org/) || [drupal](https://www.archlinux.org/packages/?name=drupal)
 
 *   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
 
@@ -2107,7 +2107,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **[Joomla](/index.php/Joomla "Joomla")** — A php Content Management System (CMS) which enables you to build websites and powerful online applications.
 
-	[http://www.joomla.org/](http://www.joomla.org/) || [joomla](https://aur.archlinux.org/packages/joomla/)
+	[https://www.joomla.org/](https://www.joomla.org/) || [joomla](https://aur.archlinux.org/packages/joomla/)
 
 *   **[Wordpress](/index.php/Wordpress "Wordpress")** — Blog tool and publishing platform.
 
@@ -2125,7 +2125,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **[Jekyll](/index.php/Jekyll "Jekyll")** — Static blog engine, written in Ruby, which supports Markdown, textile and other formats.
 
-	[http://jekyllrb.com/](http://jekyllrb.com/) || [jekyll](https://aur.archlinux.org/packages/jekyll/)
+	[https://jekyllrb.com/](https://jekyllrb.com/) || [jekyll](https://aur.archlinux.org/packages/jekyll/)
 
 *   **Nanoblogger** — A small weblog engine written in Bash for the command line. It uses common UNIX tools such as cat, grep, and sed to create static HTML content. It is not maintained anymore.
 
@@ -2163,7 +2163,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 *   **[Remmina](/index.php/Remmina "Remmina")** — Remote desktop client written in GTK. Supports RDP, VNC, NX, XDMCP and SSH.
 
-	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
+	[https://remmina.org/](https://remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
 
 *   **Remote Viewer** — Simple remote display client. Supports SPICE and VNC.
 
@@ -2171,11 +2171,11 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 *   **[TeamViewer](https://en.wikipedia.org/wiki/TeamViewer "wikipedia:TeamViewer")** — Proprietary remote desktop client. It uses its own proprietary protocol.
 
-	[http://www.teamviewer.com/](http://www.teamviewer.com/) || [teamviewer](https://aur.archlinux.org/packages/teamviewer/)
+	[https://www.teamviewer.com/](https://www.teamviewer.com/) || [teamviewer](https://aur.archlinux.org/packages/teamviewer/)
 
 *   **[vncviewer (TigerVNC)](/index.php/TigerVNC "TigerVNC")** — VNC viewer for X.
 
-	[http://tigervnc.org/](http://tigervnc.org/) || [tigervnc](https://www.archlinux.org/packages/?name=tigervnc)
+	[https://tigervnc.org/](https://tigervnc.org/) || [tigervnc](https://www.archlinux.org/packages/?name=tigervnc)
 
 *   **[Vinagre](https://en.wikipedia.org/wiki/Vinagre "wikipedia:Vinagre")** — Remote desktop viewer for GNOME. Supports RDP, VNC, SPICE and SSH. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
@@ -2187,7 +2187,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 *   **[X2Go](/index.php/X2Go "X2Go") Client** — A graphical client (Qt4) for the X2Go system that uses the [NX technology](https://en.wikipedia.org/wiki/NX_technology "w:NX technology") protocol.
 
-	[http://wiki.x2go.org/doku.php](http://wiki.x2go.org/doku.php) || [x2goclient](https://www.archlinux.org/packages/?name=x2goclient)
+	[https://wiki.x2go.org/doku.php](https://wiki.x2go.org/doku.php) || [x2goclient](https://www.archlinux.org/packages/?name=x2goclient)
 
 #### Remote desktop servers
 
@@ -2201,7 +2201,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 *   **[x0vncserver (TigerVNC)](/index.php/TigerVNC "TigerVNC")** — VNC Server for X displays.
 
-	[http://tigervnc.org/](http://tigervnc.org/) || [tigervnc](https://www.archlinux.org/packages/?name=tigervnc)
+	[https://tigervnc.org/](https://tigervnc.org/) || [tigervnc](https://www.archlinux.org/packages/?name=tigervnc)
 
 *   **[x11vnc](/index.php/X11vnc "X11vnc")** — VNC server for real X displays.
 
@@ -2209,8 +2209,8 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 *   **[X2Go](/index.php/X2Go "X2Go") Server** — An open source remote desktop software that uses the [NX technology](https://en.wikipedia.org/wiki/NX_technology "w:NX technology") protocol.
 
-	[http://wiki.x2go.org/doku.php](http://wiki.x2go.org/doku.php) || [x2goserver](https://www.archlinux.org/packages/?name=x2goserver)
+	[https://wiki.x2go.org/doku.php](https://wiki.x2go.org/doku.php) || [x2goserver](https://www.archlinux.org/packages/?name=x2goserver)
 
 *   **[Xrdp](/index.php/Xrdp "Xrdp")** — A daemon that supports RDP. It uses Xvnc, X11rdp or xorgxrdp as a backend.
 
-	[http://www.xrdp.org/](http://www.xrdp.org/) || [xrdp](https://aur.archlinux.org/packages/xrdp/)
+	[http://xrdp.org/](http://xrdp.org/) || [xrdp](https://aur.archlinux.org/packages/xrdp/)

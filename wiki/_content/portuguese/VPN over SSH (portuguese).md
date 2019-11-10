@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [VPN over SSH](/index.php/VPN_over_SSH "VPN over SSH"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VPN_over_SSH&diff=0&oldid=579878) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [VPN over SSH](/index.php/VPN_over_SSH "VPN over SSH"). Data da última tradução: 2019-1-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VPN_over_SSH&diff=0&oldid=586491) na versão em inglês.
 
 Existem várias maneiras de configurar uma rede privada virtual por meio do SSH. Note que, embora isso possa ser útil de tempos em tempos, pode não ser uma substituição completa para uma VPN regular. Veja por exemplo [[1]](http://sites.inka.de/bigred/devel/tcp-tcp.html).
 
@@ -41,7 +41,7 @@ Depois, podemos prosseguir com a configuração do TUN.
 ```
 # ip tuntap add dev tun0 mode tun user <seu_usuário_local>
 # ip addr replace 10.0.0.1/24 dev tun0
-# badvpn --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr localhost:4711
+# badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr localhost:4711
 
 ```
 

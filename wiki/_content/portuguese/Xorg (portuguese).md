@@ -1,729 +1,716 @@
+Related articles
+
+*   [Autostarting](/index.php/Autostarting "Autostarting")
+*   [Display manager](/index.php/Display_manager "Display manager")
+*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Wayland](/index.php/Wayland "Wayland")
+*   [xinit](/index.php/Xinit "Xinit")
+*   [xrandr](/index.php/Xrandr "Xrandr")
+
+Da [https://www.x.org/wiki/](https://www.x.org/wiki/):
+
+	O projeto X.Org oferece uma implementação de código aberto do [Sistema de janelas X](https://en.wikipedia.org/wiki/pt:X_Window_System "wikipedia:pt:X Window System"). O desenvolvimento é realizado em conjunto com a comunidade freedesktop.org. X.org é uma corporação educacional sem fins lucrativos, liderada pelo conselho e membros do projeto.
+
+**Xorg** (normalmente chamado de **X**) é o servidor de exibição mais popular entre os usuários do Linux. Sua onipresença lhe fez um pré-requisito para programas GUI, Isto resultou em uma massiva adoção na maioria das distribuições Linux. Veja a página do Wikipedia [Xorg](https://en.wikipedia.org/wiki/pt:X.Org_Server "wikipedia:pt:X.Org Server") ou visite o [site do Xorg](https://www.x.org/wiki/) para mais informações.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Introdução](#Introdução)
-*   [2 Instalação do Xorg](#Instalação_do_Xorg)
-*   [3 Configurar o xorg](#Configurar_o_xorg)
-    *   [3.1 hwd](#hwd)
-    *   [3.2 xorgconfig](#xorgconfig)
-    *   [3.3 Xorg -configure](#Xorg_-configure)
-    *   [3.4 nvidia-xconfig](#nvidia-xconfig)
-*   [4 Editar xorg.conf](#Editar_xorg.conf)
-    *   [4.1 Definições do Monitor](#Definições_do_Monitor)
-        *   [4.1.1 Horizontal Sync](#Horizontal_Sync)
-        *   [4.1.2 Refresh Rate](#Refresh_Rate)
-        *   [4.1.3 Colour Depth](#Colour_Depth)
-        *   [4.1.4 Resolution](#Resolution)
-    *   [4.2 Keyboard Settings](#Keyboard_Settings)
-        *   [4.2.1 Keyboard Layout](#Keyboard_Layout)
-        *   [4.2.2 Keyboard Model](#Keyboard_Model)
-    *   [4.3 Display Size/DPI](#Display_Size/DPI)
-    *   [4.4 Proprietary Drivers](#Proprietary_Drivers)
-    *   [4.5 Fonts](#Fonts)
-    *   [4.6 Sample Xorg.conf Files](#Sample_Xorg.conf_Files)
-*   [5 Running Xorg](#Running_Xorg)
-*   [6 X startup (/usr/bin/startx) tweaking](#X_startup_(/usr/bin/startx)_tweaking)
-*   [7 Changes with modular Xorg](#Changes_with_modular_Xorg)
-    *   [7.1 Most Common Packages](#Most_Common_Packages)
-    *   [7.2 OpenGL 3D Acceleration](#OpenGL_3D_Acceleration)
-    *   [7.3 Glxgears and Glxinfo](#Glxgears_and_Glxinfo)
-    *   [7.4 Changed paths (and configuration)](#Changed_paths_(and_configuration))
+*   [1 Instalação](#Instalação)
+    *   [1.1 Instalação de Driver](#Instalação_de_Driver)
+    *   [1.2 AMD](#AMD)
+*   [2 Iniciando](#Iniciando)
+*   [3 Configuração](#Configuração)
+    *   [3.1 Usando arquivos .conf](#Usando_arquivos_.conf)
+    *   [3.2 Usando xorg.conf](#Usando_xorg.conf)
+*   [4 Dispositivos de entrada](#Dispositivos_de_entrada)
+    *   [4.1 Identificação de entrada](#Identificação_de_entrada)
+    *   [4.2 Aceleração do mouse](#Aceleração_do_mouse)
+    *   [4.3 Botões adicionais do mouse](#Botões_adicionais_do_mouse)
+    *   [4.4 Touchpad](#Touchpad)
+    *   [4.5 Toque de tela](#Toque_de_tela)
+    *   [4.6 Configurações do teclado](#Configurações_do_teclado)
+*   [5 Configurações do monitor](#Configurações_do_monitor)
+    *   [5.1 Configuração manual](#Configuração_manual)
+    *   [5.2 Múltiplos monitores](#Múltiplos_monitores)
+        *   [5.2.1 Mais de uma placa de vídeo](#Mais_de_uma_placa_de_vídeo)
+    *   [5.3 Tamanho da tela e DPI](#Tamanho_da_tela_e_DPI)
+        *   [5.3.1 Setting DPI manually](#Setting_DPI_manually)
+            *   [5.3.1.1 Proprietary NVIDIA driver](#Proprietary_NVIDIA_driver)
+            *   [5.3.1.2 Manual DPI Setting Caveat](#Manual_DPI_Setting_Caveat)
+    *   [5.4 Display Power Management](#Display_Power_Management)
+*   [6 Composite](#Composite)
+    *   [6.1 List of composite managers](#List_of_composite_managers)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Automation](#Automation)
+    *   [7.2 Nested X session](#Nested_X_session)
+    *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
+    *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
+    *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
+    *   [7.6 Block TTY access](#Block_TTY_access)
+    *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
 *   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Keyboard Problems](#Keyboard_Problems)
-    *   [8.2 A Quick Fix for the Bitstream-Vera Conflict](#A_Quick_Fix_for_the_Bitstream-Vera_Conflict)
-    *   [8.3 A Quick Fix for file conflicts in /usr/include](#A_Quick_Fix_for_file_conflicts_in_/usr/include)
-    *   [8.4 Mouse wheel not working](#Mouse_wheel_not_working)
-    *   [8.5 Extra mouse buttons not working](#Extra_mouse_buttons_not_working)
-    *   [8.6 Keyboard problems](#Keyboard_problems_2)
-        *   [8.6.1 AltGR (Compose Key) not working properly](#AltGR_(Compose_Key)_not_working_properly)
-        *   [8.6.2 Can't set qwerty layouts using the setxkbmap command](#Can't_set_qwerty_layouts_using_the_setxkbmap_command)
-        *   [8.6.3 Setup French Canadian (old ca_enhanced) layout](#Setup_French_Canadian_(old_ca_enhanced)_layout)
-    *   [8.7 Missing libraries](#Missing_libraries)
-    *   [8.8 Some packages fail to build and complain about missing X11 includes](#Some_packages_fail_to_build_and_complain_about_missing_X11_includes)
-    *   [8.9 Unable to load font '(null)'](#Unable_to_load_font_'(null)')
-    *   [8.10 KDE Taskbar/Desktop Icons Broken](#KDE_Taskbar/Desktop_Icons_Broken)
-    *   [8.11 Updating from testing version to current (missing files)](#Updating_from_testing_version_to_current_(missing_files))
-    *   [8.12 Problem with MIME types in various desktop environments](#Problem_with_MIME_types_in_various_desktop_environments)
-    *   [8.13 DRI stops working with Matrox cards](#DRI_stops_working_with_Matrox_cards)
-    *   [8.14 Cannot start any clients under Xephyr](#Cannot_start_any_clients_under_Xephyr)
-*   [9 Links](#Links)
+    *   [8.1 General](#General)
+    *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen,_No_protocol_specified..,_Resource_temporarily_unavailable_for_all_or_some_users)
+    *   [8.3 DRI with Matrox cards stopped working](#DRI_with_Matrox_cards_stopped_working)
+    *   [8.4 Frame-buffer mode problems](#Frame-buffer_mode_problems)
+    *   [8.5 Program requests "font '(null)'"](#Program_requests_"font_'(null)'")
+    *   [8.6 Recovery: disabling Xorg before GUI login](#Recovery:_disabling_Xorg_before_GUI_login)
+    *   [8.7 X clients started with "su" fail](#X_clients_started_with_"su"_fail)
+    *   [8.8 X failed to start: Keyboard initialization failed](#X_failed_to_start:_Keyboard_initialization_failed)
+    *   [8.9 Rootless Xorg](#Rootless_Xorg)
+        *   [8.9.1 Broken redirection](#Broken_redirection)
+    *   [8.10 A green screen whenever trying to watch a video](#A_green_screen_whenever_trying_to_watch_a_video)
+    *   [8.11 SocketCreateListener error](#SocketCreateListener_error)
+    *   [8.12 Invalid MIT-MAGIC-COOKIE-1 key when trying to run a program as root](#Invalid_MIT-MAGIC-COOKIE-1_key_when_trying_to_run_a_program_as_root)
+*   [9 See also](#See_also)
 
-## Introdução
+## Instalação
 
-O **Xorg** é uma implementação pública e código-aberto do sistema *X11 X Window System*. (Ver [https://pt.wikipedia.org/wiki/X.Org](https://pt.wikipedia.org/wiki/X.Org) para mais detalhes.) Basicamente, se quer um GUI (Interface Gráfica de Utilizador) no Arch, vai precisar do Xorg.
+Xorg pode ser [instalado](/index.php/Instala "Instala") com o pacote [xorg-server](https://www.archlinux.org/packages/?name=xorg-server).
 
-## Instalação do Xorg
+Alguns pacotes do grupo [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) são necessários para certas tarefas de configuração, eles serão destacados nas seções relevantes.
 
-Antes de começar, tenha a certeza do seguinte:
+O grupo [xorg](https://www.archlinux.org/groups/x86_64/xorg/) também é uma opção, ele oferece pacotes do servidor Xorg, pacotes do grupo [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) e fontes.
 
-```
-# Ter o [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") atualizado e configurado.
-# Se está a correr outro servidor X pode fechá-lo agora. `ctrl+alt+backspace`
-# Fazer uma nota sobre *drivers* de terceiros (ex: driver nVidia ou ATI)
+**Dica:** Você irá normalmente instalar um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela") ou um [ambiente desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") para suplementar o X.
 
-```
+### Instalação de Driver
 
-Agora vamos instalar o servidor Xorg:
+O kernel Linux inclui drivers de vídeo de código aberto e suporta aceleração de hardware para framebuffers. No entanto, é necessário suporte para OpenGL e aceleração 2D no X11\. The Linux kernel includes open-source video drivers and support for hardware accelerated framebuffers. However, userland support is required for OpenGL and 2D acceleration in X11.
+
+Primeiro, identifique sua placa:
 
 ```
-pacman -S xorg-server
+$ lspci | grep -e VGA -e 3D
 
 ```
 
-Muita gente irá querer suporte para o rato e teclado.
+Então instale o driver apropriado. Você pode procurar por uma lista completa de drivers de vídeo com:
 
 ```
-pacman -S xf86-input-mouse xf86-input-keyboard
-
-```
-
-É preciso também um *driver* de vídeo. Pode escrever este comando e listar todos os *drivers* de vídeo disponíveis:
-
-```
-pacman -Ss xf86-video
+$ pacman -Ss xf86-video
 
 ```
 
-Procure pelo driver da sua placa. Se não tem a certeza de qual é, instale o *vesa*, mas lembre-se da sua escolha quando configurar o xorg.
+Xorg procura por drivers de vídeo instalados automaticamente:
+
+*   Se ele não achar o driver especifíco instalado (listados abaixo), ele primeiro procura por *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
+*   Se não for achado, ele procura por *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), o driver genérico, que manuseia um grande número de chipsets mas não inclui nenhuma aceleração 2D e 3D.
+*   Se *vesa* não é encontrado, Xorg irá fazer uso do [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), que inclui aceleração GLAMOR (veja [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
+
+Para aceleração de vídeo funcionar, e geralmente para usar todos os modos configuráveis da GPU, é necessário o driver apropriado:
+
+| Marca | Tipo | Driver | OpenGL | OpenGL ([multilib](/index.php/Multilib "Multilib")) | Documentação |
+| AMD / ATI | Código aberto | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU](/index.php/AMDGPU "AMDGPU") |
+| [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI](/index.php/ATI "ATI") |
+| Intel | Código aberto | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Gráficos Intel](/index.php/Intel_graphics_(Portugu%C3%AAs) "Intel graphics (Português)") |
+| NVIDIA | Código aberto | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau](/index.php/Nouveau "Nouveau") |
+| Proprietário | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
+| [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) | [nvidia-390xx-utils](https://www.archlinux.org/packages/?name=nvidia-390xx-utils) | [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) |
+
+**Nota:**
+
+*   Para habilitar NVIDIA Optimus que usa uma placa de vídeo integrada com uma placa GPU dedicada, Veja [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") ou [Bumblebee](/index.php/Bumblebee "Bumblebee").
+*   Para gráficos Intel da quarta generação e maior, veja [Gráficos Intel#Instalação](/index.php/Intel_graphics_(Portugu%C3%AAs)#Instalação "Intel graphics (Português)") para drivers disponíveis.
+
+Outros drivers de vídeo podem ser encontrados no grupo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
+
+Xorg deve rodar suavemente sem drivers de código fechado, que são tipicamente necessários somente para características avançadas como rápida renderização 3D para jogos. As exceções para esta regra são GPUs recentes (especialmente GPUs NVIDIA), que não são suportadas por drivers de código aberto.
+
+### AMD
+
+| Arquitetura da GPU | Placas Radeon | driver de código aberto | driver Proprietário |
+| GCN 4
+e recentes | [vários](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") |
+| GCN 3 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
+[AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") |
+| GCN 2 | [AMDGPU](/index.php/AMDGPU "AMDGPU")* / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 1 | [AMDGPU](/index.php/AMDGPU "AMDGPU")* / [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| TeraScale 1 | HD 2000 - HD 4000 | antigo [Catalyst](/index.php/Catalyst "Catalyst") |
+| Mais antigo | X1000 e antigo | *não disponível* |
+
+	*: Experimental
+
+## Iniciando
+
+O comando [Xorg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.1) não é normalmente iniciado diretamente, ao invês disso o servidor X é iniciado por um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") ou [xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)").
+
+## Configuração
+
+**Nota:** Arch supre os arquivos de configuração padrão em `/usr/share/X11/xorg.conf.d/`, nenhuma configuração extra é necessária para a maioria dos casos.
+
+Xorg usa o arquivo de configuração `xorg.conf` e arquivos terminando com o sufixo `.conf` para sua inicialização: a lista completa das pastas onde estes arquivos são procurados podem ser encontrados em [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), juntamente com explicações detalhadas de todas as opções disponíveis.
+
+### Usando arquivos .conf
+
+O diretório `/etc/X11/xorg.conf.d/` guarda configurações específicas do usuário. Você é livre para adiconar arquivos de configuração, mas eles deve ter o sufixo `.conf`: os arquivos são lidos na ordem ASCII, e por convenção seus nomes começam com `*XX*-` (dois digitos e um hípen, e por exemplo, 10 é lido antes de 20). Estes arquivos são parseados pelo servidor X e são tratados como parte do arquivo de configuração tradicional `xorg.conf`. Note que em caso de configuração conflitante, o arquivo lido por *último* será processado. Por esta razão os arquivos de configuração genéricos devem ser ordenados primeiro por nome. As configurações no arquivo `xorg.conf` são processadas no final.
+
+Para opções de configuração, veja também a página da [wiki do Fedora](https://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
+
+### Usando xorg.conf
+
+Xorg pode ser configurado modificando `/etc/X11/xorg.conf` ou `/etc/xorg.conf`. Você também pode gerar um esqueleto do para `xorg.conf` com:
 
 ```
-pacman -S xf86-video-vesa
-
-```
-
-Irá querer o *startx* e o *xinit*
-
-```
-pacman -S xorg-xinit
-
-```
-
-Os preguiçosos poderão copiar este comando:
-
-```
-pacman -S xorg-server xf86-input-mouse xf86-input-keyboard xf86-video-vesa xorg-xinit
-
-```
-
-Se o xorg foi bem instalado, é hora de fazer o `xorg.conf`
-
-## Configurar o xorg
-
-Antes que possa correr o xorg, necessita de o configurar para que saiba qual é a placa gráfica, monitor, rato e teclado. Existem vários métodos para automatizar este processo:
-
-### hwd
-
-Talvez a maneira mais facil para ter o Xorg a correr rapidamente é usar o <tt>hwd</tt>, uma ferramenta escrita por utilizadores da comunidade do Arch Linux. Basicamente é uma ferramenta de detecção do hardware que tem vários usos, um deles é configurar um servidor X. Felizmente, o hwd é muito mais directo do que correr o `xorgconf` e não necessita que se escreva muito.
-
-Primeiro, instale o pacote do <tt>hwd</tt>:
-
-```
-# pacman -S hwd
-
-```
-
-Agora simplesmente corra o seguinte comando como root para gerar um ficheiro `xorg.conf`:
-
-```
-# hwd -xa
-
-```
-
-Isto irá escrever o /etc/X11/xorg.conf existente com uma série de valores baseados na detecção de hardware feita pelo <tt>hwd</tt>.
-
-Pode também gerar uma configuração de exemplo do Xorg (/etc/X11/xorg.conf.hwd) sem reescrever a configuração existente. Para fazer isto, corra <tt>hwd</tt> com o argumento **-x**:
-
-```
-# hwd -x
-
-```
-
-Para utilizar esta configuração de exemplo, deve alterar o nome do ficheiro manualmente:
-
-```
-# mv /etc/X11/xorg.conf.hwd /etc/X11/xorg.conf
-
-```
-
-### xorgconfig
-
-Para iniciar o <tt>xorgconfig</tt>:
-
-```
-# xorgconfig
+# Xorg :0 -configure
 
 ```
 
-Isto irá gerar um <tt>xorg.conf</tt>.
+Isto deve criar um arquivo `xorg.conf.new` em `/root/` que você pode copiar para `/etc/X11/xorg.conf`.
 
-Responde às perguntas feitas e o programa irá criar o ficheiro automaticamente. Este programa, na realidade, não é muito bom, mas é um começo e pode depois acrescentar/modificar os valores do xorg.conf manualmente.
+**Dica:** Se você já está rodando um servidor X, use uma exibição(display) diferente, por exemplo `Xorg :2 -configure`.
 
-### Xorg -configure
+Alternativamente, seu driver proprietário pode vir com uma ferramenta para automaticamente configurar o Xorg: veja o artigo do seu driver de vídeo, [NVIDIA](/index.php/NVIDIA "NVIDIA") ou [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"), para mais detalhes.
 
-Pode utilizar
+**Nota:** palavras chave de arquivo de configuração não diferenciam maiúsculas/minúsculas, e caracteres "_" são ignorados. A maioria das palavras (incluindo nomes de opções) também não diferenciam maiúsculas/minúsculas, o mesmo acontece com os caracteres de espaço e "_".
 
-```
-# Xorg -configure
+## Dispositivos de entrada
 
-```
+Para dispositivos de entrada o servidor X usa o driver libinput ([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)), mas [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) e drivers relacionados estão disponíveis como alternativa.[[1]](https://www.archlinux.org/news/xorg-server-1191-is-now-in-extra/)
 
-ou
+[Udev](/index.php/Udev "Udev"), oferecido como dependência do systemd, irá detectar o hardware e ambos os drivers irão agir dinâmicamente como driver de entrada para quase todos dispositivos, como definido nos arquivos de configuração padrão `10-quirks.conf` e `40-libinput.conf` no dirétorio `/usr/share/X11/xorg.conf.d/`.
 
-```
-# X -configure
+Depois de iniciar o servidor X, o arquivo de log irá mostrar que driver foi selecionado para dado dispositivo (note que o nome do arquivo de log mais recente pode variar):
 
 ```
-
-### nvidia-xconfig
-
-Utilizadores com placas nVidia podem utilizar isto:
-
-```
-# nvidia-xconfig
+$ grep -e "Using input driver " Xorg.0.log
 
 ```
 
-assim que tiverem os drivers [instalados](/index.php/NVIDIA "NVIDIA").
+Se ambos não suportam um dispositivo particular, instale o driver necessário do grupo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/). O mesmo se aplica, se você quiser usar outro driver.
 
-## Editar xorg.conf
+Para influenciar a troca dinâmica entre os drivers, Veja [#Configuração](#Configuração).
 
-Poderá querer editar a configuração depois de ser gerada. Para abrir a configuração no seu editor de texto favorito, como por exemplo o Vim (em root):
+Para instruções específicas, veja também o artigo [libinput](/index.php/Libinput "Libinput"), as seguintes páginas abaixo, ou a [wiki do Fedora](https://fedoraproject.org/wiki/Input_device_configuration) para mais exemplos.
 
-```
-# vim /etc/X11/xorg.conf
+### Identificação de entrada
 
-```
+Veja [Keyboard input#Identifying keycodes in Xorg](/index.php/Keyboard_input#Identifying_keycodes_in_Xorg "Keyboard input").
 
-Se deseja definir suporte à roda do rato, veja [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
+### Aceleração do mouse
 
-### Definições do Monitor
+Veja [Mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration").
 
-Depending on your hardware, Xorg may fail to detect your monitor capabilities correctly, or you may simply wish to use a lower resolution than your monitor is capable of. You might want to look up the following values in your monitor's manual before setting them. The following settings are specified in the Monitor section:
+### Botões adicionais do mouse
 
-#### Horizontal Sync
+Veja [Mouse buttons](/index.php/Mouse_buttons "Mouse buttons").
 
-```
-HorizSync 28-64
+### Touchpad
 
-```
+Veja [libinput](/index.php/Libinput "Libinput") or [Synaptics](/index.php/Synaptics "Synaptics").
 
-#### Refresh Rate
+### Toque de tela
 
-```
-VertRefresh 60
+Veja [Touchscreen](/index.php/Touchscreen "Touchscreen").
 
-```
+### Configurações do teclado
 
-The following are specified in the Screen section:
+Veja [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
-#### Colour Depth
+## Configurações do monitor
 
-```
-Depth 24
+### Configuração manual
 
-```
+**Nota:**
 
-#### Resolution
+*   Novas versões do Xorg são auto configuráveis, então configurações manuais não devem ser necessárias.
+*   Se Xorg não é capaz de detectar qualquer monitor ou para evitar auto configuração, um arquivo de configuração pode ser usado. Um exemplo de uso, é em um servidor, que liga sem um monitor e inicia o Xorg automaticamente, com [console virtual](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") no [login](/index.php/Xinit_(Portugu%C3%AAs)#Inicializar_automaticamente_o_X_no_login "Xinit (Português)"), ou por um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 
-```
-Modes "1280x1024" "1024x768" "800x600"
+Para configuração headless o driver [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy) é necessário; [instale](/index.php/Instale "Instale") e crie um arquivo de configuração, como o seguinte:
 
-```
-
-### Keyboard Settings
-
-Xorg may fail to detect your keyboard correctly. This might give problems with your keyboard layout or keyboard model not being set correctly.
-
-To see a full list of keyboard models, layouts, variants and options, open.
-
-```
-/usr/share/X11/xkb/rules/xorg.lst
-
-```
-
-#### Keyboard Layout
-
-To change the keyboard layout, use the XkbLayout option in the keyboard InputDevice section. For example, if you have a keyboard with English layout:
-
-```
-Option "XkbLayout" "gb"
-
-```
-
-#### Keyboard Model
-
-To change the keyboard model, use the XkbModel option in the keyboard InputDevice section. For exsample, if you have a Microsoft Wireless Multimedia Keyboard:
-
-```
-Option "XkbModel" "microsoftmult"
-
-```
-
-### Display Size/DPI
-
-In order to get correct sizing for fonts the display size must be set for your desired DPI. In the section `"Monitor"` put in your display size in mm:
-
+ `/etc/X11/xorg.conf.d/10-headless.conf` 
 ```
 Section "Monitor"
-   ...
- DisplaySize 336 252 # 96 DPI @ 1280x960
-   ...
+        Identifier "dummy_monitor"
+        HorizSync 28.0-80.0
+        VertRefresh 48.0-75.0
+        Modeline "1920x1080" 172.80 1920 2040 2248 2576 1080 1081 1084 1118
+EndSection
+
+Section "Device"
+        Identifier "dummy_card"
+        VideoRam 256000
+        Driver "dummy"
+EndSection
+
+Section "Screen"
+        Identifier "dummy_screen"
+        Device "dummy_card"
+        Monitor "dummy_monitor"
+        SubSection "Display"
+        EndSubSection
 EndSection
 
 ```
 
-The formula for calculating the DisplaySize values is Width x 25.4 / DPI and Height x 25.4 / DPI. If you're running Xorg with a resolution of 1024x768 and want a DPI of 96, use 1024 x 25.4 / 96 and 768 x 25.4 / 96\. Round numbers down.
+### Múltiplos monitores
+
+Veja o artigo [Múltiplos monitores](/index.php/Multihead "Multihead") para informações gerais.
+
+Veja também as instruções específicas da GPU:
+
+*   [NVIDIA#Múltiplos monitores](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
+*   [Nouveau#Dois monitores](/index.php/Nouveau#Dual_head "Nouveau")
+*   [AMD Catalyst#Duas telas (Dois monitores / Duas telas / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_(Dual_Head_/_Dual_Screen_/_Xinerama) "AMD Catalyst")
+*   [ATI#Configuração múltiplos monitores](/index.php/ATI#Multihead_setup "ATI")
+
+#### Mais de uma placa de vídeo
+
+Você deve definir o driver correto a ser usado e botar o bus ID de sua placa de vídeo.
 
 ```
-# calc: (x|y)pixels * 25.4 / dpi
-# DisplaySize 168 126 # 96 DPI @ 640x480
-# DisplaySize 210 157 # 96 DPI @ 800x600
-# DisplaySize 269 201 # 96 DPI @ 1024x768
-# DisplaySize 302 227 # 96 DPI @ 1152x864
-# DisplaySize 336 252 # 96 DPI @ 1280x960
-# DisplaySize 336 269 # 96 DPI @ 1280x1024 (non 4:3 aspect)
-# DisplaySize 370 277 # 96 DPI @ 1400x1050
-# DisplaySize 420 315 # 96 DPI @ 1600x1200
-# DisplaySize 506 315 # 96 DPI @ 1920x1200
+Section "Device"
+    Identifier             "Screen0"
+    Driver                 "nouveau"
+    BusID                  "PCI:0:12:0"
+EndSection
 
-```
-
-For nVidia drivers you may have to disable automatic detection of DPI to set it manually. There is also an easier way to set DPI on these cards. Either or both of the following lines can be set in the device section for your nVidia card.
-
-```
-  Option   "UseEdidDpi" "false"
-  Option   "DPI" "96 x 96"
-
-```
-
-Results can be checked by issuing the following command, which should return 96x96 dots per inch if you set DPI @ 96.
-
-```
-$ xdpyinfo | grep -B1 dot
-
-```
-
-### Proprietary Drivers
-
-If you wish to use third-party graphics drivers, do check first that the X server runs OK first. Xorg should run smoothly without official drivers, which are typically needed only for advanced features such as 3D-accelerated rendering for games, dual-screen setups, and TV-out. Refer to the [NVIDIA](/index.php/NVIDIA "NVIDIA") and [ATI](/index.php/ATI "ATI") wikis for help with driver installation.
-
-### Fonts
-
-There some tips for setting up fonts in [Xorg Font Configuration](/index.php/Xorg_Font_Configuration "Xorg Font Configuration").
-
-### Sample Xorg.conf Files
-
-Anyone who has an Xorg.conf file written up that works, go ahead and post a link to it here for others to look at! Please don't inline the entire conf file; upload it somewhere else and link. Thanks!
-
-*   Shadowhand (nv and nvidia drivers): [http://people.os-zen.net/shadowhand/configs/xorg.conf](http://people.os-zen.net/shadowhand/configs/xorg.conf)
-*   Cerebral (fglrx and radeon drivers): [http://www.student.cs.uwaterloo.ca/~tjwillar/configs/xorg.conf](http://www.student.cs.uwaterloo.ca/~tjwillar/configs/xorg.conf)
-*   raskolnikov (via unichrome and synaptics drivers): [http://athanatos.free.fr/Arch/xorg.conf](http://athanatos.free.fr/Arch/xorg.conf)
-*   Leigh (Three independent screens - Three nvidia cards): [http://files.myopera.com/allisonleigh/linuxbackup/xorg.conf](http://files.myopera.com/allisonleigh/linuxbackup/xorg.conf)
-
-## Running Xorg
-
-This is done simply by typing:
-
-```
-$ startx
+Section "Device"
+    Identifier             "Screen1"
+    Driver                 "radeon"
+    BusID                  "PCI:1:0:0"
+EndSection
 
 ```
 
-The default X environment is rather bare, and you will typically seek to install window managers or desktop environments to supplement X.
+Para descobrir o bus ID você pode executar:
 
-To test the config file you have created:
-
+ `$ lspci | grep VGA` 
 ```
-$ X -config *<your config file>*
-
-```
-
-If a problem occurs, then view the log at <tt>/var/log/Xorg.0.log</tt>. Be on the lookout for any lines beginning with *(EE)* which represent errors, and also *(WW)* which are warnings that could indicate other issues.
-
-**Note:** Using startx requires a *~/.xinitrc* file, so that X knows what to run when it starts. See [Xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") for detail.
-
-If you are using GNOME it is best to start GNOME through gdm to avoid HAL permission problems.
-
-In addition, you can also install twm and xterm (via pacman), which will be used as a fallback if ~/.xinitrc does not exist (as stated in /etc/X11/xinit/xinitrc).
-
-## X startup (/usr/bin/startx) tweaking
-
-For X's option reference see
-
-```
-$ man Xserver
+01:00.0 VGA compatible controller: nVidia Corporation G96 [GeForce 9600M GT] (rev a1)
 
 ```
 
-The following options have to be appended to the variable "defaultserverargs" in the /usr/bin/startx file.
+O bus ID desse exemplo é 1:0:0.
 
-prevent X from listening on tcp:
+### Tamanho da tela e DPI
 
-```
--nolisten tcp
+O DPI do servidor X é determinado da seguinte maneira:
 
-```
+1.  A opção da linha de comando `-dpi` tem a maior prioridade.
+2.  se ela não é usada, a configuração `DisplaySize` no arquivo de configuração do X é usada para entregar o DPI, dado o tamanho de resolução da tela.
+3.  Se nenhum `DisplaySize` é dado, os valores de tamanho do monitor da [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel") são usados para definir o DPI, dado a resolução de tela.
+4.  Se DDC não especifica um tamanho, é usado por padrão 75 DPI.
 
-getting rid of the gray weave pattern while X is starting and let X set a black root window:
+Para conseguir os corretos pontos por polegada(DPI), o tamanho da tela deve ser reconhecido ou configurado. Ter o correto DPI é é um requesito quando detalhes finos são necessários (como renderização de fontes). Antigamente, fabricantes tentaram criar um padrão para 96 DPI (um monitor de 10.3" deveria ser 800X600, um monitor de 13.2" deveria ser 1024X768). Atualmente, DPIs variam e podem não ser iguais horizontalmente e verticalmente. Por exemplo, um eclã panorâmico LCD de 19" 1440X900 poderia ter um DPI de 89X87\. Para configurar o DPI, o servidor Xorg tenta a auto detecção do tamanho de tela físico através da placa gráfica com DDC. ~~Quando o servidor Xorg sabe o tamanho físico da tela, ele será capaz de configurar o DPI corretamente baseado no tamanho da resolução.~~
 
-```
--br
-
-```
-
-enable deferred glyph loading for 16 bit fonts:
+Para ver se o tamanho da sua tela e DPI são detectados/calculados corretamente:
 
 ```
--deferglyphs 16
+$ xdpyinfo | grep -B2 resolution
 
 ```
 
-Note: If you start X with kdm, the startx script seems not executed. These options must be appended to the variable "ServerCmd" in the /opt/kde/share/config/kdm/kdmrc file.
+Verifique se as dimensões correspondem ao tamanho da sua tela. Se o servidor Xorg não é capaz de corretamente calcular o tamanho de tela, o DPI será definido como 75X75 e você terá que calcular isto você mesmo.
 
-## Changes with modular Xorg
+Se você tem especificações do tamanho físico da tela, pode colocá-los no arquivo de configuração do Xorg para então o DPI apropriado ser calculado (ajuste o *Identifier* de acordo com a saída do `xrandr`):
 
-### Most Common Packages
+```
+Section "Monitor"
+    Identifier             "DVI-D-0"
+    DisplaySize             286 179    # Em milímetros
+EndSection
 
-Make sure you install drivers for mouse, keyboard and videocard. For mouse and keyboard, **xf86-input-keyboard** and **xf86-input-mouse** should get installed. Other **xf86-input-*** packages are available for different input devices.
+```
 
-For the videocard, find out which driver is required and install the right **xf86-video-*** package. ATI and Nvidia users may wish to install the non-free drivers for their hardware instead ([NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI")).
+Se você somente quer colocar sua especificação de monitor **sem** criar um novo arquivo xorg.conf. Por exemplo (`/etc/X11/xorg.conf.d/90-monitor.conf`):
 
-To install all drivers in one run, the **xorg-input-drivers** and **xorg-video-drivers** are available.
+```
+Section "Monitor"
+    Identifier             "<default monitor>"
+    DisplaySize            286 179    # Em milímetros
+EndSection
 
-### OpenGL 3D Acceleration
+```
 
-X.Org 7.0 on Arch Linux uses a modular design for mesa, the OpenGL rendering system. Several implementations are available:
+Se você não tem as especificações físicas de altura e largura da tela, (a maioria das especificações atualmente somente listam o tamanho diagonal) você pode usar a nativa resolução do monitor (ou aspecto de proporção) e comprimento diagonal para calcular a dimensão horizontal e vertical física. Usando o teorema de pitágoras em uma tela diagonal de 13.3" com uma resolução nativa de 1280X800 (ou aspecto de proporção 16:10):
 
-*   libgl-dri: Open-source DRI OpenGL implementation. Falls back to software rendering when no DRI driver is installed
-*   some other driver providing libGL (ati, nvidia)
+```
+$ echo 'scale=5;sqrt(1280^2+800^2)' | bc  # 1509.43698
 
-When pacman installs an application that needs mesa, it will install one of these packages. To be sure about the right library for your setup, install the library you want prior to installing Xorg. Installing the right package afterwards is also possible, though this gives some dependency errors sometimes, which can be ignored with the -d switch.
+```
 
-### Glxgears and Glxinfo
+Isto dará o comprimento do pixel diagonal e com este valor você pode descobrir o comprimento horizontal e vertical físico (e converter eles para milímetros):
 
-These apps are included in the mesa package.
+```
+$ echo 'scale=5;(13.3/1509)*1280*25.4' | bc  # 286.43072
+$ echo 'scale=5;(13.3/1509)*800*25.4'  | bc  # 179.01920
 
-### Changed paths (and configuration)
+```
 
-**See this entry for additional upgrade info:** [https://www.archlinux.org/blog/2006/01/02/how-to-upgrade-xorg/](https://www.archlinux.org/blog/2006/01/02/how-to-upgrade-xorg/)
+**Nota:** Este cálculo funciona para monitores com pixels quadrados; no entanto, raramente um monitor pode comprimir o aspecto de proporção (exemplo aspecto de resolução 16:10 para um 16:9). Se este for o caso, você deve mensurar o tamanho de sua tela manualmente.
 
-Modular X.Org 7 installs everything in `/usr`, where the older versions installed in `/usr/X11R6`. Several configuration files need updates:
+#### Setting DPI manually
 
-*   */etc/X11/xorg.conf*
-    *   Fontpaths live in /usr/share/fonts now
-    *   RGB database is in /usr/share/X11/rgb
-    *   module path is /usr/lib/xorg/modules
+**Note:** While you can set any dpi you like and applications using Qt and GTK will scale accordingly, it's recommended to set it to 96, 120 (25% higher), 144 (50% higher), 168 (75% higher), 192 (100% higher) etc., to reduce scaling artifacts to GUI that use bitmaps. Reducing it below 96 dpi may not reduce size of graphical elements of GUI as typically the lowest dpi the icons are made for is 96.
 
-Also note that some X configuration tools might stop working. The easiest way to configure X.org is by installing the correct driver packages and running *Xorg -configure*, which results in a `/root/xorg.conf.new` which only needs modification in the resolutions, mouse configuration and keyboard layouts.
+For RandR compliant drivers (for example the open source ATI driver), you can set it by:
 
-Some packages have hard-coded references to `/usr/X11R6`. These packages need fixing. In the meantime, look what packages install files in `/usr/X11R6`, uninstall those, make a symlink from `/usr` to `/usr/X11R6` and reinstall the affected packages. Another option is to move the contents of `/usr/X11R6` to `/usr` and make the symlink.
+```
+$ xrandr --dpi 144
 
-Or you can just add a second module path via `ModulePath "/usr/X11R6/lib/modules"` This works e.g. for Nvidia 76.76
+```
+
+**Note:** Applications that comply with the setting will not change immediately. You have to start them anew.
+
+See [Execute commands after X start](/index.php/Execute_commands_after_X_start "Execute commands after X start") to make it permanent.
+
+##### Proprietary NVIDIA driver
+
+DPI can be set manually if you only plan to use one resolution ([DPI calculator](https://www.pxcalc.com/)):
+
+```
+Section "Monitor"
+    Identifier             "Monitor0"
+    Option                 "DPI" "96 x 96"
+EndSection
+
+```
+
+You can manually set the DPI adding the options below on `/etc/X11/xorg.conf.d/20-nvidia.conf` (inside **Device** section):
+
+```
+Option              "UseEdidDpi" "False"
+Option              "DPI" "96 x 96"
+
+```
+
+##### Manual DPI Setting Caveat
+
+GTK very often overrides the server's DPI via the optional Xresource `Xft.dpi`. To find out whether this is happening to you, check with:
+
+```
+$ xrdb -query | grep dpi
+
+```
+
+With GTK library versions since 3.16, when this variable is not otherwise explicitly set, GTK sets it to 96\. To have GTK apps obey the server DPI you may need to explictly set Xft.dpi to the same value as the server. The Xft.dpi resource is the method by which some desktop environments optionally force DPI to a particular value in personal settings. Among these are [KDE](/index.php/KDE "KDE") and [TDE](/index.php/TDE "TDE").
+
+### Display Power Management
+
+[DPMS](/index.php/DPMS "DPMS") (Display Power Management Signaling) is a technology that allows power saving behaviour of monitors when the computer is not in use. This will allow you to have your monitors automatically go into standby after a predefined period of time.
+
+## Composite
+
+The Composite extension for X causes an entire sub-tree of the window hierarchy to be rendered to an off-screen buffer. Applications can then take the contents of that buffer and do whatever they like. The off-screen buffer can be automatically merged into the parent window or merged by external programs, called compositing managers. See the following article for more information: [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager")
+
+Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), KWin, Marco, Metacity, Muffin, Mutter, [Xfwm](/index.php/Xfwm "Xfwm")) do compositing on their own. For other window managers, a standalone composite manager can be used.
+
+### List of composite managers
+
+*   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
+
+	[https://github.com/yshui/compton](https://github.com/yshui/compton) || [compton](https://www.archlinux.org/packages/?name=compton)
+
+*   **[Xcompmgr](/index.php/Xcompmgr "Xcompmgr")** — Composite window-effects manager
+
+	[https://cgit.freedesktop.org/xorg/app/xcompmgr/](https://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
+
+*   **Unagi** — Modular compositing manager which aims written in C and based on XCB
+
+	[https://projects.mini-dweeb.org/projects/unagi](https://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
+
+## Tips and tricks
+
+### Automation
+
+This section lists utilities for automating keyboard / mouse input and window operations (like moving, resizing or raising).
+
+| Tool | Package | Manual | [Keysym](/index.php/Keysym "Keysym")
+input | Window
+operations | Note |
+| xautomation | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Yes | No | Also contains screen scraping tools. Cannot simulate F13+. |
+| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdo.1) | No | Yes | Small X utility to perform elementary actions on windows. |
+| xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Yes | Yes | [Very buggy](https://github.com/jordansissel/xdotool/issues) and not in active development, e.g: has broken CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
+| xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Yes | No | Virtual keyboard for Xorg, also has the `-text` option for sending characters. |
+
+See also [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") and [an overview of X automation tools](https://venam.nixers.net/blog/unix/2019/01/07/win-automation.html).
+
+### Nested X session
+
+To run a nested session of another desktop environment:
+
+```
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+
+```
+
+This will launch a Window Maker session in a 1024 by 768 window within your current X session.
+
+This needs the package [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest) to be installed.
+
+### Starting GUI programs remotely
+
+See main article: [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH").
+
+### On-demand disabling and enabling of input sources
+
+With the help of *xinput* you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
+
+[Install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package.
+
+Find the name or ID of the device you want to disable:
+
+```
+$ xinput
+
+```
+
+For example in a Lenovo ThinkPad T500, the output looks like this:
+
+ `$ xinput` 
+```
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ TPPS/2 IBM TrackPoint                     id=11   [slave  pointer  (2)]
+⎜   ↳ SynPS/2 Synaptics TouchPad                id=10   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+    ↳ Sleep Button                              id=8    [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=9    [slave  keyboard (3)]
+    ↳ ThinkPad Extra Buttons                    id=12   [slave  keyboard (3)]
+
+```
+
+Disable the device with `xinput --disable *device*`, where *device* is the device ID or name of the device you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
+
+```
+$ xinput --disable 10
+
+```
+
+To re-enable the device, just issue the opposite command:
+
+```
+$ xinput --enable 10
+
+```
+
+Alternatively using the device name, the command to disable the touchpad would be:
+
+```
+$ xinput --disable "SynPS/2 Synaptics TouchPad"
+
+```
+
+### Killing application with hotkey
+
+Run script on hotkey:
+
+```
+#!/bin/bash
+windowFocus=$(xdotool getwindowfocus);
+pid=$(xprop -id $windowFocus | grep PID);
+kill -9 $pid
+
+```
+
+Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
+
+### Block TTY access
+
+To block tty access when in an X add the following to [xorg.conf](#Configuration):
+
+```
+Section "ServerFlags"
+    Option "DontVTSwitch" "True"
+EndSection
+
+```
+
+### Prevent a user from killing X
+
+To prevent a user from killing when it is running add the following to [xorg.conf](#Configuration):
+
+```
+Section "ServerFlags"
+    Option "DontZap"      "True"
+EndSection
+
+```
 
 ## Troubleshooting
 
-### Keyboard Problems
+### General
 
-Auto-generated xorg.conf files may cause you problems. If you cannot get to tty1 by holding CTRL-ALT and pressing F1 or cannot get the £ sign for gb people, check to see if the following entries are in your /etc/X11/xorg.conf:
+If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd journal](/index.php/Systemd_journal "Systemd journal"). [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
+The logfiles are of the form `Xorg.n.log` with `n` being the display number. For a single user machine with default configuration the applicable log is frequently `Xorg.0.log`, but otherwise it may vary. To make sure to pick the right file it may help to look at the timestamp of the X server session start and from which console it was started. For example:
+
+ `$ grep -e Log -e tty Xorg.0.log` 
 ```
-Option "XkbLayout"  "uk"         #"uk" is not a real layout, look in /usr/share/X11/xkb/symbols/ for a list of real ones.
-Option "XkbRules"   "xfree86"    #this should be "xorg"
-Option "XkbVariant" "nodeadkeys" #This line is also known to cause the problems described, try commenting it out.
-
-```
-
-To switch between layouts with Alt+Shift:
-
-```
-Option "XkbOptions" "grp:alt_shift_toggle,grp_led:scroll"
-
+[    40.623] (==) Log file: "/home/archuser/.local/share/xorg/Xorg.0.log", Time: Thu Aug 28 12:36:44 2014
+[    40.704] (--) controlling tty is VT number 1, auto-enabling KeepTty
 ```
 
-### A Quick Fix for the Bitstream-Vera Conflict
+*   In the logfile then be on the lookout for any lines beginning with `(EE)`, which represent errors, and also `(WW)`, which are warnings that could indicate other issues.
+*   If there is an *empty* `.xinitrc` file in your `$HOME`, either delete or edit it in order for X to start properly. If you do not do this X will show a blank screen with what appears to be no errors in your `Xorg.0.log`. Simply deleting it will get it running with a default X environment.
+*   If the screen goes black, you may still attempt to switch to a different virtual console (e.g. `Ctrl+Alt+F6`), and blindly log in as root. You can do this by typing `root` (press `Enter` after typing it) and entering the root password (again, press `Enter` after typing it).
 
-If you see a message that ttf-bitstream-vera conflicts with xorg:
+	You may also attempt to kill the X server with:
 
-1.  Exit the pacman session by answering no.
-2.  Run `pacman -Rd xorg`
-3.  Run `pacman -Syu`
-4.  Run `pacman -S xorg`
-5.  Update your paths in /etc/X11/xorg.conf
+	 `# pkill -x X` 
 
-### A Quick Fix for file conflicts in /usr/include
+	If this does not work, reboot blindly with:
 
-If you see messages about file conflicts in /usr/include/X11 and /usr/include/GL:
+	 `# reboot` 
 
-1.  Run `rm /usr/include/{GL,X11}`
-2.  Run `pacman -Su`
+*   Check specific pages in [Category:Input devices](/index.php/Category:Input_devices "Category:Input devices") if you have issues with keyboard, mouse, touchpad etc.
+*   Search for common problems in [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") and [NVIDIA](/index.php/NVIDIA "NVIDIA") articles.
 
-The symlinked directories removed by this operation are replaced by real directories in the new xorg package, causing these file conflicts to appear.
+### Black screen, No protocol specified.., Resource temporarily unavailable for all or some users
 
-### Mouse wheel not working
+X creates configuration and temporary files in current user's home directory. Make sure there is free disk space available on the partition your home directory resides in. Unfortunately, X server does not provide any more obvious information about lack of disk space in this case.
 
-The "Auto" protocol doesn't seem to work properly in Xorg 7 any more. In the InputDevice section for your mouse, change:
+### DRI with Matrox cards stopped working
 
-```
-Option         "Protocol" "auto"
-
-```
-
-to
-
-```
-Option         "Protocol" "IMPS/2"
-
-```
-
-or
-
-```
-Option         "Protocol" "ExplorerPS/2"
-
-```
-
-### Extra mouse buttons not working
-
-USB Mice users should read [Get All Mouse Buttons Working](/index.php/Get_All_Mouse_Buttons_Working "Get All Mouse Buttons Working").
-
-Intellimouse (ExplorerPS/2) users might find their scroll and side buttons aren't behaving as they used to. Previously xorg.conf needed:
-
-```
-Option      "Buttons" "7"
-Option      "ZAxisMapping" "6 7"
-
-```
-
-and users also had to run xmodmap to get the side buttons working with a command like:
-
-```
-xmodmap -e "pointer = 1 2 3 6 7 4 5"
-
-```
-
-Now xmodmap is no longer required. Instead, make xorg.conf look like this:
-
-```
-Option      "Buttons" "5"
-Option      "ZAxisMapping" "4 5"
-Option      "ButtonMapping" "1 2 3 6 7"
-
-```
-
-and the side buttons on a 7-button Intellimouse will work like they used to, without needing to run xmodmap.
-
-### Keyboard problems
-
-Some keyboard layouts have changed. I wondered why:
-
-*   I wasn't able to Ctrl+Alt+Fx to switch to console
-*   I wasn't able to use layouts
-
-The problem was that the *sk_qwerty* layout doesn't exist anymore. I had to replace
-
-```
-Option         "XkbLayout" "us,sk_qwerty"
-
-```
-
-with
-
-```
-Option         "XkbLayout" "us,sk"
-Option         "XkbVariant" ",qwerty"
-
-```
-
-Another thing to look for if your keyboard isn't properly functioning is the XkbRules option:
-You'll need to change
-
-```
-Option         "XkbRules" "xfree86"
-
-```
-
-to
-
-```
-Option         "XkbRules" "xorg"
-
-```
-
-#### AltGR (Compose Key) not working properly
-
-If, after the update, you can't use the AltGr key as expected any more, try adding this to your keyboard section:
-
-```
-Option      "XkbOptions" "compose:ralt"
-
-```
-
-This is not the correct way to activate the AltGr Key on a German keyboard (for example, to use the '|' and '@' keys on German keyboards). Just choose a valid keyboard variant for it to work again, for example (the example is for a German keyboard):
-
-```
-Option      "XkbLayout" "de"
-Option      "XkbVariant" "nodeadkeys"
-
-```
-
-The solutions above don't work on an Italian keyboard. To activate the AltGr key on an Italian keyboard make sure you have the following lines set up properly:
-
-```
- Driver          "kbd"
- Option          "XkbRules"      "xorg"
- Option          "XkbVariant"    ""
-
-```
-
-#### Can't set qwerty layouts using the setxkbmap command
-
-After the update, there aren't qwerty layouts as for example sk_qwerty. If you want to switch your present keyboard layout to any qwerty keyboard layout use this command:
-
-```
-$ setxkbmap NAME_OF_THE_LAYOUT qwerty
-
-```
-
-e.g.: for sk_qwerty use:
-
-```
-$ setxkbmap sk qwerty
-
-```
-
-After the update, trying the above command I had this message "Error loading new keyboard description". I find out that the xserver doesn't have the rights to write, execute, read in the directory /var/tmp So give the permissions to that directory. Restart the xserver and you will have your deadkeys back! Don't believe? Try out the code e.g.: it layout
-
-```
-$ setxkbmap -layout it
-
-```
-
-#### Setup French Canadian (old ca_enhanced) layout
-
-With Xorg7, "ca_enhanced" is no more. You have to do a little trick to get the same layout that you are used to: Switch the old:
-
-```
-       Option          "XkbLayout"     "ca_enhanced"
-
-```
-
-To:
-
-```
-       Option          "XkbLayout"     "ca"
-       Option          "XkbVariant"    "fr"
-
-```
-
-It will be similar with other layout, I presume. You can refer to Gentoo HowTo there: [http://www.gentoo.org/proj/en/desktop/x/x11/modular-x-howto.xml](http://www.gentoo.org/proj/en/desktop/x/x11/modular-x-howto.xml)
-
-### Missing libraries
-
-*   **Help! I get an error message running my favourite app saying "libXsomething" doesn't exist!**
-
-In most cases, all you need to do is take the name of the library (eg libXau.so.1), convert it all to lowercase, remove the extension, and pacman for it:
-
-```
-# pacman -S libxau
-
-```
-
-This will install the library you're missing, and all will be well again!
-
-### Some packages fail to build and complain about missing X11 includes
-
-Just reinstall the packages xproto and libx11, even if they are already installed.
-
-### Unable to load font '(null)'
-
-*   **Some programs don't work and say unable to load font `(null)'.**
-
-These packages would like some extra fonts. Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, xorg-fonts-75dpi and xorg-fonts-100dpi. You don't need both; one should be enough. To find out which one would be better in your case, try this:
-
-```
-$ xdpyinfo | grep resolution
-
-```
-
-and grab what is closer to you (75 or 100 instead of XX)
-
-```
-# pacman -S xorg-fonts-XXdpi
-
-```
-
-### KDE Taskbar/Desktop Icons Broken
-
-*   **KDE taskbar doesn't work and the desktop icons disappear**
-
-Install the packages libxcomposite and libxss. It will be fine.
-
-```
-# pacman -S libxcomposite libxss
-
-```
-
-### Updating from testing version to current (missing files)
-
-If you've updated from Xorg 7 in testing to Xorg 7 in current and are finding that many files seem to be missing (including startx, /usr/share/X11/rgb.txt, and others), you may have lost many files due to the xorg-clients package splitting from a single package into many smaller sub packages.
-
-You need to reinstall all the packages that are dependencies of xorg-clients:
-
-```
-# pacman -S xorg-apps xorg-font-utils xorg-res-utils xorg-server-utils \
-          xorg-twm xorg-utils xorg-xauth xorg-xdm xorg-xfs xorg-xfwp \
-          xorg-xinit xorg-xkb-utils xorg-xsm
-
-```
-
-This should fix the problem.
-
-### Problem with MIME types in various desktop environments
-
-If you noticed icons missing and can't click-open files in desktop environments, add the following lines to /etc/profile or your preferred init script and reboot.
-
-```
-XDG_DATA_DIRS=$XDG_DATA_DIRS:/usr/share
-export XDG_DATA_DIRS
-
-```
-
-### DRI stops working with Matrox cards
-
-If you use a Matrox card and DRI stops working after upgrading to xorg7, try adding the line
+If you use a Matrox card and DRI stopped working after upgrading to Xorg, try adding the line:
 
 ```
 Option "OldDmaInit" "On"
 
 ```
 
-to the Device section that references the video card in xorg.conf.
+to the Device section that references the video card in `xorg.conf`.
 
-### Cannot start any clients under Xephyr
+### Frame-buffer mode problems
 
-The client connections are rejected by the X server's security mechanism, you can find a complete explanation and solution in [[1]](http://wiki.debian.org/XStrikeForce/FAQ#howtoxnest).
+If X fails to start with the following log messages,
 
-## Links
+```
+(WW) Falling back to old probe method for fbdev
+(II) Loading sub module "fbdevhw"
+(II) LoadModule: "fbdevhw"
+(II) Loading /usr/lib/xorg/modules/linux//libfbdevhw.so
+(II) Module fbdevhw: vendor="X.Org Foundation"
+       compiled for 1.6.1, module version=0.0.2
+       ABI class: X.Org Video Driver, version 5.0
+(II) FBDEV(1): using default device
 
-See also:
+Fatal server error:
+Cannot run in framebuffer mode. Please specify busIDs for all framebuffer devices
 
-*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
-*   [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login")
-*   [Xorg Font Configuration](/index.php/Xorg_Font_Configuration "Xorg Font Configuration")
-*   Proprietary Video Drivers
-    *   [ATI](/index.php/ATI "ATI")
-    *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
-*   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
-    *   [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)")
-    *   [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")
-    *   [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)")
-    *   [Enlightenment](/index.php/Enlightenment "Enlightenment")
-    *   [Fluxbox](/index.php/Fluxbox_(Portugu%C3%AAs) "Fluxbox (Português)")
+```
 
-External Links:
+[Uninstall](/index.php/Uninstall "Uninstall") the [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) package.
 
-*   [X.org Wikipedia Article](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server")
-*   [X.org](http://wiki.x.org/wiki/)
+### Program requests "font '(null)'"
+
+Error message: `unable to load font `(null)'`.
+
+Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). You do not need both; one should be enough. To find out which one would be better in your case, try `xdpyinfo` from [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo), like this:
+
+```
+$ xdpyinfo | grep resolution
+
+```
+
+and use what is closer to the shown value.
+
+### Recovery: disabling Xorg before GUI login
+
+If Xorg is set to boot up automatically and for some reason you need to prevent it from starting up before the login/display manager appears (if the system is wrongly configured and Xorg does not recognize your mouse or keyboard input, for instance), you can accomplish this task with two methods.
+
+*   Change default target to rescue.target. See [systemd#Change default target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd").
+*   If you have not only a faulty system that makes Xorg unusable, but you have also set the GRUB menu wait time to zero, or cannot otherwise use GRUB to prevent Xorg from booting, you can use the Arch Linux live CD. Follow the [installation guide](/index.php/Installation_guide#Format_the_partitions "Installation guide") about how to mount and chroot into the installed Arch Linux. Alternatively try to switch into another [tty](/index.php/Tty "Tty") with `Ctrl+Alt` + function key (usually from `F1` to `F7` depending on which is not used by X), login as root and follow steps below.
+
+Depending on setup, you will need to do one or more of these steps:
+
+*   [Disable](/index.php/Disable "Disable") the [display manager](/index.php/Display_manager "Display manager").
+*   Disable the [automatic start of the X](/index.php/Start_X_at_login "Start X at login").
+*   Rename the `~/.xinitrc` or comment out the `exec` line in it.
+
+### X clients started with "su" fail
+
+If you are getting "Client is not authorized to connect to server", try adding the line:
+
+```
+session        optional        pam_xauth.so
+
+```
+
+to `/etc/pam.d/su` and `/etc/pam.d/su-l`. `pam_xauth` will then properly set environment variables and handle `xauth` keys.
+
+### X failed to start: Keyboard initialization failed
+
+If the filesystem (specifically `/tmp`) is full, `startx` will fail. `/var/log/Xorg.0.log` will end with:
+
+```
+(EE) Error compiling keymap (server-0)
+(EE) XKB: Could not compile keymap
+(EE) XKB: Failed to load keymap. Loading default keymap instead.
+(EE) Error compiling keymap (server-0)
+(EE) XKB: Could not compile keymap
+XKB: Failed to compile keymap
+Keyboard initialization failed. This could be a missing or incorrect setup of xkeyboard-config.
+Fatal server error:
+Failed to activate core devices.
+Please consult the The X.Org Foundation support at http://wiki.x.org
+for help.
+Please also check the log file at "/var/log/Xorg.0.log" for additional information.
+(II) AIGLX: Suspending AIGLX clients for VT switch
+
+```
+
+Make some free space on the relevant filesystem and X will start.
+
+### Rootless Xorg
+
+Xorg may run with standard user privileges with the help of [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), see [[5]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) and [FS#41257](https://bugs.archlinux.org/task/41257). The requirements for this are:
+
+*   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
+*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](https://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
+
+If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrapper.config`:
+
+ `/etc/X11/Xwrapper.config`  `needs_root_rights = *yes*` 
+
+See also [Xorg.wrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
+
+[GDM](/index.php/GDM "GDM") also runs Xorg without root privileges by default when [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is used.
+
+#### Broken redirection
+
+While user Xorg logs are stored in `~/.local/share/xorg/Xorg.log`, they do not include the output from the X session. To re-enable redirection, start X with the `-keeptty` flag:
+
+```
+exec startx -- -keeptty > ~/.xorg.log 2>&1
+
+```
+
+Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+
+### A green screen whenever trying to watch a video
+
+Your color depth is set wrong. It may need to be 24 instead of 16, for example.
+
+### SocketCreateListener error
+
+If X terminates with error message "SocketCreateListener() failed", you may need to delete socket files in `/tmp/.X11-unix`. This may happen if you have previously run Xorg as root (e.g. to generate an `xorg.conf`).
+
+### Invalid MIT-MAGIC-COOKIE-1 key when trying to run a program as root
+
+That error means that only the current user has access to the X server. The solution is to give access to root:
+
+```
+$ xhost +si:localuser:root
+
+```
+
+That line can also be used to give access to X to a different user than root.
+
+## See also
+
+*   [Xplain](https://magcius.github.io/xplain/article/) - In-depth explanation of the X Window System
+*   [Xorg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.1) - Xorg's Manual Page
+*   [Gentoo/Xorg#Configuration](https://wiki.gentoo.org/wiki/Xorg/Guide/en#Configuration) - Gentoo Wiki's Xorg Configuration page

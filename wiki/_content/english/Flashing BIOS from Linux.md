@@ -139,7 +139,7 @@ For an alternative method, see [FreeDOS Flash Drive](https://wiki.gentoo.org/wik
 
 ### Pre-built images
 
-Yet another simple solution: [FreeDOS pre-built bootable USB flash drive image by Christian Taube](http://myhq.it/sites/myhq.it/files/FreeDOS-1.1-memstick-2-2048M.img.bz2). Instructions can be found [here](https://archive.is/6QPXD).
+Yet another simple solution: [FreeDOS pre-built bootable USB flash drive image by Christian Taube](http://myhq.it/sites/myhq.it/files/FreeDOS-1.1-memstick-2-2048M.img.bz2). Instructions can be found [here](https://web.archive.org/web/20160224081331/http://www.chtaube.eu/computers/freedos/bootable-usb/).
 
 ### Using a FreeDOS-provided Disk Image + USB stick on Linux
 

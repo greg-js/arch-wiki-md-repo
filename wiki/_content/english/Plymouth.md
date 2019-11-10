@@ -27,7 +27,7 @@ Related articles
 
 ## Preparation
 
-*Plymouth* primarily uses [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) to display graphics. In EFI/UEFI systems, *plymouth* can utilize the EFI framebuffer. If you can't use KMS in e.g. because you are using a proprietary driver, or if you don't want to use EFI framebuffer, consider using [Uvesafb](/index.php/Uvesafb "Uvesafb") as it works with widescreen resolutions.
+*Plymouth* primarily uses [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) to display graphics. In EFI/UEFI systems, *plymouth* can utilize the EFI framebuffer. If you can't use KMS, e.g. because you are using a proprietary driver, or if you don't want to use the EFI framebuffer, consider using [Uvesafb](/index.php/Uvesafb "Uvesafb") as it works with widescreen resolutions.
 
 If you have neither KMS nor a framebuffer, *Plymouth* will fall back to text-mode.
 
@@ -46,7 +46,7 @@ Add `plymouth` to the `HOOKS` array in [mkinitcpio.conf](/index.php/Mkinitcpio.c
 
 *   If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` and add it after the `plymouth` hook in order to get to the TTY password prompts.
 *   Using `PARTUUID` or `PARTLABEL` in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
-*   For a [ZFS encrypted root](/index.php/Installing_Arch_Linux_on_ZFS#Native_encryption "Installing Arch Linux on ZFS"), you **must** install [plymouth-zfs](https://aur.archlinux.org/packages/plymouth-zfs/) and replace `zfs` hook with `plymouth-zfs`
+*   For a [ZFS encrypted root](/index.php/Installing_Arch_Linux_on_ZFS#Native_encryption "Installing Arch Linux on ZFS"), you **must** install [plymouth-zfs](https://aur.archlinux.org/packages/plymouth-zfs/) and replace the `zfs` hook with `plymouth-zfs`
 
 After adding the `plymouth-encrypt` hook, if input goes to the background in plaintext instead of into the password prompt you need to add your (kernel) graphics driver to your initramfs. For example, if using intel:
 
@@ -163,11 +163,11 @@ Reboot to apply the changes.
 
 #### Show kernel messages
 
-During boot you can switch to kernel messages by pressing "Home" (or "Escape") key.
+During boot you can switch to kernel messages by pressing the "Home" (or "Escape") key.
 
 ### Adding Arch Logo to spinner and BGRT themes
 
-To add Arch Logo to *spinner* and *BGRT* themes copy Arch logo to spinner theme directory with name `watermark.png`:
+To add the Arch Logo to the *spinner* and *BGRT* themes copy the Arch logo to the spinner theme directory with the name `watermark.png`:
 
 ```
 # cp /usr/share/plymouth/arch-logo.png /usr/share/plymouth/themes/spinner/watermark.png

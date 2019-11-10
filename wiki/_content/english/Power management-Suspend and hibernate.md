@@ -80,9 +80,9 @@ Even if your swap partition is smaller than RAM, you still have a big chance of 
 
 	*`/sys/power/image_size` controls the size of the image created by the suspend-to-disk mechanism. It can be written a string representing a non-negative integer that will be used as an upper limit of the image size, in bytes. The suspend-to-disk mechanism will do its best to ensure the image size will not exceed that number. However, if this turns out to be impossible, it will try to suspend anyway using the smallest image possible. In particular, if "0" is written to this file, the suspend image will be as small as possible. Reading from this file will display the current image size limit, which is set to 2/5 of available RAM by default.*
 
-You may either decrease the value of `/sys/power/image_size` to make the suspend image as small as possible (for small swap partitions), or increase it to possibly speed up the hibernation process.
+You may either decrease the value of `/sys/power/image_size` to make the suspend image as small as possible (for small swap partitions), or increase it to possibly speed up the hibernation process. See [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") to make this change persistent.
 
-See [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") to make this change persistent.
+The suspend image cannot span multiple swap partitions and/or swap files. It must fully fit in one swap partition or one swap file.[[1]](https://www.kernel.org/doc/Documentation/power/swsusp.txt)
 
 ### Required kernel parameters
 
@@ -92,7 +92,7 @@ The [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `resume=*
 *   `resume="PARTLABEL=Swap partition"`
 *   `resume=/dev/archVolumeGroup/archLogicalVolume` -- if swap is on a [LVM](/index.php/LVM "LVM") logical volume
 
-Generally, the naming method used for the `resume` parameter should be the same as used for the `root` parameter.
+Generally, it is preferred to use the same naming method for both the `resume` and `root` parameters.
 
 #### Hibernation into swap file
 
@@ -137,7 +137,7 @@ See [https://www.kernel.org/doc/Documentation/power/swsusp.txt](https://www.kern
 
 On [Btrfs](/index.php/Btrfs "Btrfs"), the "physical" offset you get from filefrag is not the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
 
-An alternate method is to use [btrfs_map_physical](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.[[1]](https://bugzilla.kernel.org/show_bug.cgi?id=202803#c5)
+An alternate method is to use [btrfs_map_physical](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=202803#c5)
 
 Download or copy the text into a file named `btrfs_map_physical.c`, then compile it:
 
@@ -196,7 +196,7 @@ Sometimes the screen goes black due to device initialization from within the ini
 
 For Intel graphics drivers, enabling early KMS may help to solve the blank screen issue. Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for details.
 
-After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[2]](https://bbs.archlinux.org/viewtopic.php?id=234646)
+After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[3]](https://bbs.archlinux.org/viewtopic.php?id=234646)
 
 ### Wake-on-LAN
 
@@ -204,9 +204,9 @@ If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network in
 
 ### Instantaneous wakeups from suspend
 
-For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[3]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
+For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[4]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
 
-Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[4]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
+Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[5]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
 
 To view the current configuration:
 
@@ -252,7 +252,7 @@ case $1/$2 in
 esac
 ```
 
-The first echo line unbinds nouveaufb from the framebuffer console driver (fbcon). Usually it is `vtcon1` as in this example, but it may also be another `vtcon*`. See `/sys/class/vtconsole/vtcon*/name` which one of them is a "frame buffer device" [[5]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
+The first echo line unbinds nouveaufb from the framebuffer console driver (fbcon). Usually it is `vtcon1` as in this example, but it may also be another `vtcon*`. See `/sys/class/vtconsole/vtcon*/name` which one of them is a "frame buffer device" [[6]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
 
 ### System does not power off when hibernating
 

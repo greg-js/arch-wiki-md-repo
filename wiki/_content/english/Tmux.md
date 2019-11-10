@@ -747,6 +747,8 @@ bind-key -n M-n split-window \; select-layout
 
 ```
 
+**Tip:** You may be interested in [tmux-xpanes](https://aur.archlinux.org/packages/tmux-xpanes/) which makes managing window layouts and SSH connections easy.
+
 ### Vim colorscheme not loading
 
 See the following if your vim colorscheme isn't loading in tmux: [[3]](https://stackoverflow.com/a/47994805/1766555) [[4]](https://github.com/vim/vim/issues/993#issuecomment-255651605)

@@ -37,7 +37,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **[Arpwatch](https://en.wikipedia.org/wiki/Arpwatch "wikipedia:Arpwatch")** — Tool that monitors ethernet activity and keeps a database of Ethernet/IP address pairings.
 
-	[http://ee.lbl.gov/](http://ee.lbl.gov/) || [arpwatch](https://www.archlinux.org/packages/?name=arpwatch)
+	[https://ee.lbl.gov/](https://ee.lbl.gov/) || [arpwatch](https://www.archlinux.org/packages/?name=arpwatch)
 
 *   **bettercap** — Swiss army knife for network attacks and monitoring.
 
@@ -57,7 +57,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **[EtherApe](https://en.wikipedia.org/wiki/EtherApe "wikipedia:EtherApe")** — Graphical network monitor for Unix modeled after etherman. Featuring link layer, IP and TCP modes, it displays network activity graphically. Hosts and links change in size with traffic. Color coded protocols display.
 
-	[http://etherape.sourceforge.net/](http://etherape.sourceforge.net/) || [etherape](https://www.archlinux.org/packages/?name=etherape)
+	[https://etherape.sourceforge.io/](https://etherape.sourceforge.io/) || [etherape](https://www.archlinux.org/packages/?name=etherape)
 
 *   **[Ettercap](https://en.wikipedia.org/wiki/Ettercap_(software) "wikipedia:Ettercap (software)")** — Multipurpose Network sniffer/analyser/interceptor/logger.
 
@@ -117,7 +117,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **[Ntop](/index.php/Ntop "Ntop")** — Network probe that shows network usage in a way similar to what top does for processes.
 
-	[http://www.ntop.org/](http://www.ntop.org/) || [ntop](https://www.archlinux.org/packages/?name=ntop)
+	[https://www.ntop.org/](https://www.ntop.org/) || [ntop](https://www.archlinux.org/packages/?name=ntop)
 
 *   **pyNeighborhood** — GTK-based SMB/CIFS browsing utility.
 
@@ -125,7 +125,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **Smb4K** — Advanced network neighborhood browser and Samba share mounting utility for KDE.
 
-	[http://smb4k.sourceforge.net/](http://smb4k.sourceforge.net/) || [smb4k](https://www.archlinux.org/packages/?name=smb4k)
+	[https://smb4k.sourceforge.io/](https://smb4k.sourceforge.io/) || [smb4k](https://www.archlinux.org/packages/?name=smb4k)
 
 *   **[Snort](/index.php/Snort "Snort")** — Network intrusion prevention and detection system.
 
@@ -153,7 +153,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **[vnStat](/index.php/VnStat "VnStat")** — Console-based network traffic monitor that keeps a log of network traffic for the selected interfaces.
 
-	[http://humdi.net/vnstat/](http://humdi.net/vnstat/) || [vnstat](https://www.archlinux.org/packages/?name=vnstat)
+	[https://humdi.net/vnstat/](https://humdi.net/vnstat/) || [vnstat](https://www.archlinux.org/packages/?name=vnstat)
 
 *   **wifiphisher** — Fast automated phishing attacks against WPA networks.
 
@@ -187,7 +187,7 @@ See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
 
 *   **[Nessus](/index.php/Nessus "Nessus")** — Comprehensive vulnerability scanning program.
 
-	[http://www.nessus.org/products/nessus](http://www.nessus.org/products/nessus) || [nessus](https://aur.archlinux.org/packages/nessus/)
+	[https://www.tenable.com/products/nessus](https://www.tenable.com/products/nessus) || [nessus](https://aur.archlinux.org/packages/nessus/)
 
 *   **[OpenVAS](/index.php/OpenVAS "OpenVAS")** — Framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. FOSS Nessus fork.
 
@@ -199,7 +199,7 @@ See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
 
 *   **Samhain** — Host-based intrusion detection system (HIDS) provides file integrity checking and log file monitoring/analysis, as well as rootkit detection, port monitoring, detection of rogue SUID executables, and hidden processes.
 
-	[http://www.la-samhna.de/samhain/index.html](http://www.la-samhna.de/samhain/index.html) || [samhain](https://aur.archlinux.org/packages/samhain/)
+	[https://www.la-samhna.de/samhain/index.html](https://www.la-samhna.de/samhain/index.html) || [samhain](https://aur.archlinux.org/packages/samhain/)
 
 *   **[Tiger](https://en.wikipedia.org/wiki/Tiger_(security_software) "wikipedia:Tiger (security software)")** — Security tool that can be use both as a security audit and intrusion detection system.
 
@@ -213,7 +213,7 @@ See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
 
 *   **[AIDE](/index.php/AIDE "AIDE")** — File and directory integrity checker.
 
-	[http://aide.sourceforge.net/](http://aide.sourceforge.net/) || [aide](https://www.archlinux.org/packages/?name=aide)
+	[https://aide.github.io](https://aide.github.io) || [aide](https://www.archlinux.org/packages/?name=aide)
 
 *   **Logcheck** — Simple utility which is designed to allow a system administrator to view the logfiles which are produced upon hosts under their control.
 
@@ -259,7 +259,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **[Duplicati](https://en.wikipedia.org/wiki/Duplicati "wikipedia:Duplicati")** — Backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.
 
-	[http://www.duplicati.com/](http://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)
+	[https://www.duplicati.com/](https://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)
 
 *   **[duplicity](/index.php/Duplicity "Duplicity")** — Simple command-line utility which allows encrypted compressed incremental backup to nearly any storage.
 
@@ -341,7 +341,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 *   **vlock** — TTY locker. A mirror of the [original vlock](https://lists.archlinux.org/pipermail/aur-general/2013-July/024662.html) is available at [github](https://github.com/WorMzy/vlock).
 
-	[http://www.kbd-project.org](http://www.kbd-project.org) || [kbd](https://www.archlinux.org/packages/?name=kbd)
+	[http://kbd-project.org/](http://kbd-project.org/) || [kbd](https://www.archlinux.org/packages/?name=kbd)
 
 *   **xfce4-screensaver** — A screen saver and locker that aims to have simple, sane, secure defaults and be well integrated with the xfce desktop.
 
@@ -385,6 +385,10 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://outerhaven.de/keepassc/](https://outerhaven.de/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
 
+*   **LastPass** — Hosted password manager.
+
+	[https://www.lastpass.com/](https://www.lastpass.com/) || [lastpass-cli](https://www.archlinux.org/packages/?name=lastpass-cli)
+
 *   **[pass](/index.php/Pass "Pass")** — Simple console based password manager, using GnuPG encryption.
 
 	[https://www.passwordstore.org/](https://www.passwordstore.org/) || [pass](https://www.archlinux.org/packages/?name=pass)
@@ -397,17 +401,13 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://notabug.org/kl3/spm/](https://notabug.org/kl3/spm/) || [spm](https://aur.archlinux.org/packages/spm/)
 
-*   **Titan** — Command-line password manager, written in C, uses OpenSSL.
-
-	[https://www.titanpasswordmanager.org/](https://www.titanpasswordmanager.org/) || [titan](https://aur.archlinux.org/packages/titan/)
-
 *   **tpm** — tiny password manager, inspired by pass, written entirely in POSIX shell.
 
 	[https://github.com/nmeum/tpm](https://github.com/nmeum/tpm) || [tpm](https://aur.archlinux.org/packages/tpm/)
 
-*   **LastPass** — Hosted password manager.
+*   **Ylva** — Command-line password manager, written in C, uses OpenSSL.
 
-	[https://www.lastpass.com/](https://www.lastpass.com/) || [lastpass-cli](https://www.archlinux.org/packages/?name=lastpass-cli)
+	[https://www.ylvapasswordmanager.com/](https://www.ylvapasswordmanager.com/) || [ylva](https://aur.archlinux.org/packages/ylva/)
 
 ##### Graphical
 
@@ -497,7 +497,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 *   **GtkHash** — A GTK utility for computing message digests or checksums
 
-	[http://gtkhash.sourceforge.net/](http://gtkhash.sourceforge.net/) || [gtkhash](https://aur.archlinux.org/packages/gtkhash/)
+	[https://github.com/tristanheaven/gtkhash](https://github.com/tristanheaven/gtkhash) || [gtkhash](https://aur.archlinux.org/packages/gtkhash/)
 
 *   **hashdeep** — A cross-platform tools to computer hashes, or message digests, for any number of files
 
@@ -505,7 +505,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 *   **Parano** — A GNOME frontend for creating/editing/checking MD5 and SFV files
 
-	[http://parano.berlios.de/](http://parano.berlios.de/) || [parano](https://aur.archlinux.org/packages/parano/)
+	[https://sourceforge.net/projects/parano.berlios/](https://sourceforge.net/projects/parano.berlios/) || [parano](https://aur.archlinux.org/packages/parano/)
 
 *   **Quick Hash GUI** — A GUI to enable the rapid selection and subsequent hashing of files (individually or recursively throughout a folder structure) text and (on Linux) disks.
 

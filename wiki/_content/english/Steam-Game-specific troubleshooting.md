@@ -98,6 +98,7 @@
         *   [5.37.1 No audio](#No_audio)
         *   [5.37.2 Oddly sized starting window](#Oddly_sized_starting_window)
         *   [5.37.3 DLCs not detected](#DLCs_not_detected)
+        *   [5.37.4 Game takes ages to start](#Game_takes_ages_to_start)
     *   [5.38 Crypt of the NecroDancer](#Crypt_of_the_NecroDancer)
         *   [5.38.1 Crashes after splash screen](#Crashes_after_splash_screen)
     *   [5.39 The Curious Expedition](#The_Curious_Expedition)
@@ -1128,6 +1129,10 @@ You can make full screen mode the default by setting `fullscreen=yes` in `~/.par
 #### DLCs not detected
 
 If the DLC tab in the launcher is not selectable, rename the `DLC` directory in the game directory to `dlc`.
+
+#### Game takes ages to start
+
+If you are using a nvidia graphics card, make sure you have enabled the [DRM kernel mode setting](https://wiki.archlinux.org/index.php/NVIDIA#DRM_kernel_mode_setting).
 
 ### Crypt of the NecroDancer
 

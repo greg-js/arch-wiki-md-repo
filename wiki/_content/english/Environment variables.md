@@ -85,7 +85,7 @@ export PATH="${PATH}:/home/my_user/bin"
 
 ```
 
-To update the variable, re-login or *source* the file: `$ source ~/.bash_profile`.
+To update the variable, re-login or [source](/index.php/Source "Source") the file: `$ source ~/.bash_profile`.
 
 #### Graphical environment
 

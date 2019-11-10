@@ -25,9 +25,10 @@ The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file sys
         *   [4.2.2 Using systemd](#Using_systemd)
         *   [4.2.3 Using filesystem events](#Using_filesystem_events)
         *   [4.2.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
-        *   [4.2.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_(2))
-        *   [4.2.6 Using mkinitcpio preset](#Using_mkinitcpio_preset)
-        *   [4.2.7 Using pacman hook](#Using_pacman_hook)
+        *   [4.2.5 Using mkinitcpio preset](#Using_mkinitcpio_preset)
+            *   [4.2.5.1 Replacing the above mkinitcpio hook](#Replacing_the_above_mkinitcpio_hook)
+            *   [4.2.5.2 Another example](#Another_example)
+        *   [4.2.6 Using pacman hook](#Using_pacman_hook)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 ESP on software RAID1](#ESP_on_software_RAID1)
 *   [6 See also](#See_also)
@@ -264,21 +265,26 @@ echo "Synced /boot with ESP"
 
 ```
 
-#### Using mkinitcpio hook (2)
+#### Using mkinitcpio preset
 
-Another **alternative** to the above solutions, that is potentially cleaner because there are less copies and does not need a system level daemon to function. The logic is reversed, the initramfs is directly stored in the EFI partition, not copied in `/boot/`. Then the kernel and any other additional files are copied to the ESP partition, thanks to a mkinitcpio hook.
+As the presets in `/etc/mkinitcpio.d/` support shell scripting, the kernel and initramfs can be copied by just editing the presets.
 
-Edit the file `/etc/mkinitcpio.d/linux.preset` :
+##### Replacing the above mkinitcpio hook
+
+Edit the file `/etc/mkinitcpio.d/linux.preset`:
 
  `/etc/mkinitcpio.d/linux.preset` 
 ```
 # mkinitcpio preset file for the 'linux' package
 
 # Directory to copy the kernel, the initramfs...
-ESP_DIR="*esp*/EFI/arch"
+ESP_DIR="''esp''/EFI/arch"
 
 ALL_config="/etc/mkinitcpio.conf"
-ALL_kver="/boot/vmlinuz-linux"
+ALL_kver="${ESP_DIR}/vmlinuz-linux"
+cp -af /boot/vmlinuz-linux "${ESP_DIR}/"
+[[ -e /boot/intel-ucode.img ]] && cp -af /boot/intel-ucode.img "${ESP_DIR}/"
+[[ -e /boot/amd-ucode.img ]] && cp -af /boot/amd-ucode.img "${ESP_DIR}/"
 
 PRESETS=('default' 'fallback')
 
@@ -289,26 +295,6 @@ default_options="-A esp-update-linux"
 #fallback_config="/etc/mkinitcpio.conf"
 fallback_image="${ESP_DIR}/initramfs-linux-fallback.img"
 fallback_options="-S autodetect"
-```
-
-Then create the file `/etc/initcpio/install/esp-update-linux` which need to be executable :
-
- `/etc/initcpio/install/esp-update-linux` 
-```
-# Directory to copy the kernel, the initramfs...
-ESP_DIR="*esp*/EFI/arch"
-
-build() {
-	cp -af /boot/vmlinuz-linux "${ESP_DIR}/"
-	[[ -e /boot/intel-ucode.img ]] && cp -af /boot/intel-ucode.img "${ESP_DIR}/"
-	[[ -e /boot/amd-ucode.img ]] && cp -af /boot/amd-ucode.img "${ESP_DIR}/"
-}
-
-help() {
-	cat <<HELPEOF
-This hook copies the kernel to the ESP partition
-HELPEOF
-}
 
 ```
 
@@ -321,9 +307,7 @@ To test that, just run:
 
 ```
 
-#### Using mkinitcpio preset
-
-As the presets in `/etc/mkinitcpio.d/` support shell scripting, the kernel and initramfs can be copied by just editing the presets.
+##### Another example
 
  `/etc/mkinitcpio.d/0.preset` 
 ```

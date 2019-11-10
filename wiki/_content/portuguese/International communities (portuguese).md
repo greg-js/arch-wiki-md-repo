@@ -1,9 +1,9 @@
-**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-10-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=583327) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=585802) na versão em inglês.
 
 Artigos relacionados
 
 *   [Help:i18n](/index.php/Help:I18n_(Portugu%C3%AAs) "Help:I18n (Português)")
-*   [ArchWiki:Translation Team (Português)](/index.php/ArchWiki:Translation_Team_(Portugu%C3%AAs) "ArchWiki:Translation Team (Português)")
+*   [Equipe de Tradução do ArchWiki](/index.php/Equipe_de_Tradu%C3%A7%C3%A3o_do_ArchWiki "Equipe de Tradução do ArchWiki")
 *   [Canal IRC](/index.php/Canal_IRC "Canal IRC")
 
 [https://archlinux.org](https://archlinux.org) é ponto oficial do site, fóruns e wiki do Arch Linux. Porém, vários sites não oficiais mantidos pela comunidade estão disponíveis para usuários internacionais que prefeririam se comunicar em seu próprio idioma. Você pode encontrar uma lista dessas comunidades abaixo.
@@ -78,9 +78,9 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 ## Espanhol
 
 *   Site: [http://www.archlinux-es.org/](http://www.archlinux-es.org/)
-*   Fórum: [http://foros.archlinux-es.org/](http://foros.archlinux-es.org/)
 *   Wiki: [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)")
-*   Planet: [http://planeta.archlinux-es.org](http://planeta.archlinux-es.org)
+*   Fórum: [http://foros.archlinux-es.org/](http://foros.archlinux-es.org/) (Redireciona para [https://bbs.archlinux.org](https://bbs.archlinux.org) -> Other Languages)
+*   Planet: [http://planeta.archlinux-es.org](http://planeta.archlinux-es.org) 
 *   ArchlinuxLatinoamerica: [https://ArchlinuxLatinoamerica.wordpress.com/](https://ArchlinuxLatinoamerica.wordpress.com/)
 
 ## Francês

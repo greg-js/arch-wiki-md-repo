@@ -121,7 +121,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 	[http://karmen.sourceforge.net/](http://karmen.sourceforge.net/) || [karmen](https://aur.archlinux.org/packages/karmen/)
 
-*   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — O gerenciador de janela padrão do KDE, desde o KDE 4.0, vem com a primeira versão do suporte integrado para composição, tornando-o também um gerenciador de composição. Isso permite que a KWin forneça efeitos gráficos avançados, semelhantes ao Compiz, além de fornecer todos os recursos das versões anteriores do KDE (como uma integração muito boa com o KDE, capacidade de configuração avançada, prevenção contra furto de foco, gerenciador de janela bem testado e robusto). manuseio de aplicativos/kits de ferramentas que se comportam mal etc.). Também serve como compositor para [Wayland](/index.php/Wayland "Wayland").
+*   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — O gerenciador de janela padrão do KDE, desde o KDE 4.0, vem com a primeira versão do suporte integrado para composição, tornando-o também um gerenciador de composição. Isso permite que a KWin forneça efeitos gráficos avançados, semelhantes ao Compiz, além de fornecer todos os recursos das versões anteriores do KDE (como uma integração muito boa com o KDE, capacidade de configuração avançada, prevenção contra furto de foco, gerenciador de janela bem testado e robusto). manuseio de aplicativos/kits de ferramentas que se comportam mal etc.). Também serve como compositor para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)").
 
 	[https://techbase.kde.org/Projects/KWin](https://techbase.kde.org/Projects/KWin) || [kwin](https://www.archlinux.org/packages/?name=kwin)
 
@@ -240,7 +240,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 	[http://subforge.org/projects/subtle](http://subforge.org/projects/subtle) || [subtle-git](https://aur.archlinux.org/packages/subtle-git/)
 
-*   **[sway](/index.php/Sway "Sway")** — Sway is a drop-in replacement for the i3 window manager, but for Wayland instead of X11\. It works with your existing i3 configuration and supports most of i3's features, and a few extras.
+*   **[sway](/index.php/Sway_(Portugu%C3%AAs) "Sway (Português)")** — Sway is a drop-in replacement for the i3 window manager, but for Wayland instead of X11\. It works with your existing i3 configuration and supports most of i3's features, and a few extras.
 
 	[http://swaywm.org/](http://swaywm.org/) || [sway](https://www.archlinux.org/packages/?name=sway)
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux"). Data da última tradução: 2019-08-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&diff=0&oldid=577222) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux"). Data da última tradução: 2019-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&diff=0&oldid=586812) na versão em inglês.
 
 Artigos relacionados
 
@@ -53,7 +53,7 @@ Se o sistema hospedeiro funciona no Arch Linux, isso pode ser conseguido simples
 
 ## Backup e preparação
 
-Faça backup de todos os seus dados, incluindo correios, servidores web, etc. Tenha todas as informações ao seu alcance. Preserve todas as configurações do seu servidor, hsotnames, etc.
+Faça backup de todos os seus dados, incluindo correios, servidores web, etc. Tenha todas as informações ao seu alcance. Preserve todas as configurações do seu servidor, hostnames, etc.
 
 Aqui está uma lista de dados que você provavelmente precisará:
 
@@ -80,7 +80,7 @@ No procedimento, [Guia de instalação#Selecionar os espelhos](/index.php/Guia_d
 
 **Dica:** Para evitar baixar novamente todos os pacotes, considere seguir [Pacman/Dicas e truques#Cache do pacman compartilhado na rede](/index.php/Pacman/Dicas_e_truques#Cache_do_pacman_compartilhado_na_rede "Pacman/Dicas e truques") ou usara opção `-c` do *pacstrap*.
 
-**Dica:** Quando o gerenciador de boot Grub é usado, o comando `grub-mkconfig` pode detectar dispositivos incorretamente. Isso resultará em `Erro:nenhuma partição` ao tentar inicializar a partir do pendrive. Para resolver este problema, a partir do host executando o Arch Linux, monte as partições recém-instaladas, use `arch-chroot` na nova partição, depois instale e configure o grub. A última etapa pode requerer a desativação de `lvmetad` do `/etc/lvm/lvm.conf` configurando `use_lvmetad=0`.
+**Dica:** Quando o gerenciador de boot Grub é usado, o comando `grub-mkconfig` pode detectar dispositivos incorretamente. Isso resultará em `Erro:nenhuma partição` ao tentar inicializar a partir do pendrive. Para resolver este problema, a partir do host executando o Arch Linux, monte as partições recém-instaladas, use *arch-chroot* na nova partição, depois instale e configure o grub. A última etapa pode requerer a desativação de *lvmetad* do `/etc/lvm/lvm.conf` configurando `use_lvmetad=0`.
 
 ### Criar uma cópia exata de uma instalação do Arch existente
 
@@ -171,7 +171,10 @@ Entre no *chroot*
 
 *   Para fazer um "unsquash" na imagem raiz, execute
 
- `# unsquashfs airootfs.sfs` 
+```
+# unsquashfs airootfs.sfs
+
+```
 
 *   Antes de fazer [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") para ela, precisamos configurar alguns pontos de montagem e copiar o resolv.conf para conectividade.
 
@@ -187,11 +190,14 @@ Entre no *chroot*
 
 *   Agora, tudo está preparado para fazer chroot para dentro do ambiente Arch recém-instalado
 
- `# chroot squashfs-root bash` 
+```
+# chroot squashfs-root bash
+
+```
 
 ### Usando um ambiente chroot
 
-O ambiente *bootstrap* é realmente minimalista (sem `nano`, sem `ping`, sem `cryptsetup`, sem `lvm`). Portanto, precisamos configurar o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para baixar o resto da `base` e, se necessário, `base-devel`.
+O ambiente *bootstrap* é realmente minimalista (sem [nano](https://www.archlinux.org/packages/?name=nano) ou `lvm2`). Portanto, precisamos configurar o pacman para baixar outros pacotes necessários.
 
 #### Inicializando o chaveiro do pacman
 
@@ -207,12 +213,12 @@ Antes de iniciar a instalação, as chaves do pacman precisam ser configuradas. 
 
 #### Selecionando um espelho e baixando ferramentas básicas
 
-Após [selecionar um espelho](/index.php/Espelhos#Habilitando_um_espelho_específico "Espelhos"), [renove as listas de pacotes](/index.php/Espelhos#Forçar_o_pacman_a_renovar_as_listas_de_pacotes "Espelhos") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/packages/?name=base), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+Após [selecionar um espelho](/index.php/Espelhos#Habilitando_um_espelho_específico "Espelhos"), [renove as listas de pacotes](/index.php/Espelhos#Forçar_o_pacman_a_renovar_as_listas_de_pacotes "Espelhos") e [instale](/index.php/Instale "Instale") o que você precisa: {[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
 
 **Nota:**
 
 *   Como ainda não há nenhum editor de texto, você precisa sair do arch-chroot e editar a mirrorlist usando o editor de texto do host.
-*   Quando você tentar instalar pacotes com o pacman, você pode obter `*erro: não foi possível determinar o ponto de montagem do cachedir: /var/cache/pacman/pkg*`. Para contornar isso, você pode usar `mount --bind <diretório-para-livecd-ou-bootstrap> <diretório-para-livecd-ou-bootstrap>` antes de fazer chroot. Veja [FS#46169](https://bugs.archlinux.org/task/46169).
+*   Quando você tentar instalar pacotes com o pacman, você pode obter `*erro: não foi possível determinar o ponto de montagem do cachedir: /var/cache/pacman/pkg*`. Para contornar isso, você pode usar `mount --bind *diretório-para-livecd-ou-bootstrap* *diretório-para-livecd-ou-bootstrap*` antes de fazer chroot. Veja [FS#46169](https://bugs.archlinux.org/task/46169).
 
 ### Dicas de instalação
 
@@ -224,7 +230,7 @@ Alguns sistemas hospedeiros ou configurações podem exigir determinadas etapas 
 
 ###### /dev/shm
 
-Em alguns sistemas baseados no Debian, `pacstrap` pode produzir o seguinte erro:
+Em alguns sistemas baseados no Debian, *pacstrap* pode produzir o seguinte erro:
 
  `# pacstrap /mnt base` 
 ```
@@ -269,9 +275,15 @@ A solução para *pacstrap* é executar manualmente seus [várias tarefas](https
 # pacman -r "$newroot" --cachedir="$newroot/var/cache/pacman/pkg" -Sy base base-devel ... ## adicione os pacotes que quiser
 # cp -a /etc/pacman.d/gnupg "$newroot/etc/pacman.d/"       ## copiar chaveiro
 # cp -a /etc/pacman.d/mirrorlist "$newroot/etc/pacman.d/"  ## copiar lista de espelhos
+
 ```
 
-Em vez de usar `arch-chroot` para [Guia de instalação#Chroot](/index.php/Guia_de_instala%C3%A7%C3%A3o#Chroot "Guia de instalação"), basta usar `chroot "$newroot"`.
+Em vez de usar *arch-chroot* para [Guia de instalação#Chroot](/index.php/Guia_de_instala%C3%A7%C3%A3o#Chroot "Guia de instalação"), basta usar:
+
+```
+# chroot "$newroot"
+
+```
 
 ###### lvmetad
 
@@ -325,26 +337,17 @@ Isto irá desencadear mais tarde um erro na inicialização no estágio initrd. 
 
 ##### Host baseado no Fedora
 
-On Fedora based hosts and live USBs you may encounter problems when using `genfstab` to generate your [fstab](/index.php/Fstab "Fstab"). Remove duplicate entries and the "seclabel" option where it appears, as this is Fedora-specific and will keep your system from booting normally.
+On Fedora based hosts and live USBs you may encounter problems when using *genfstab* to generate your [fstab](/index.php/Fstab "Fstab"). Remove duplicate entries and the "seclabel" option where it appears, as this is Fedora-specific and will keep your system from booting normally.
 
 ## Coisas para verificar antes de reiniciar
 
-Antes de reiniciar, faça um *chroot* no sistema recém-instalado.
+Antes de reiniciar, verifique novamente alguns detalhes em sua instalação para obter uma instalação bem-sucedida. Para fazer isso, primeiro faça o *chroot* no sistema recém-instalado e, em seguida:
 
-Certifique-se de criar um usuário com senha, para que você possa fazer o login via ssh. O login de root está desabilitado por padrão desde o OpenSSH-7.1p2.
-
-Defina uma senha de root para que você possa alternar para root por meio do su mais tarde:
-
-```
-# passwd
-
-```
-
-Instale o [ssh](/index.php/Ssh_(Portugu%C3%AAs) "Ssh (Português)") e [habilite](/index.php/Habilite "Habilite")-o para iniciar automaticamente na inicialização.
-
-Configure a conexão de [rede](/index.php/Rede "Rede") para iniciar automaticamente na inicialização.
-
-Configure um [gerenciador de inicialização](/index.php/Gerenciador_de_inicializa%C3%A7%C3%A3o "Gerenciador de inicialização") e configure-o para usar a partição swap que você apropriou anteriormente como a partição raiz. Você pode querer configurar seu gerenciador de inicialização para poder inicializar em seu sistema antigo; é útil reutilizar a partição /boot existente do servidor no novo sistema para este propósito.
+*   [crie um usuário com senha](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usuário "Usuários e grupos"), de forma que você possa se autenticar via *ssh*. Isso é crítico já que autenticação como root é desabilitada por padrão desde OpenSSH-7.1p2.
+*   [defina uma senha de root](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usuário "Usuários e grupos"), de forma que você pode trocar para o root via *su* posteriormente
+*   [instale](/index.php/Instale "Instale") uma solução [ssh](/index.php/Ssh_(Portugu%C3%AAs) "Ssh (Português)") e [habilitar](/index.php/Habilita "Habilita") sua instância de servidor para iniciar automaticamente na inicialização.
+*   defina sua [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") par ter uma conexão iniciada automaticamente na inicialização.
+*   defina um [gerenciador de inicialização](/index.php/Gerenciador_de_inicializa%C3%A7%C3%A3o "Gerenciador de inicialização") e configure-o para usar a partição swap que você apropriou anteriormente como a partição raiz. Você pode querer configurar seu gerenciador de inicialização para poder inicializar em seu sistema antigo; é útil reutilizar a partição `/boot` existente do servidor no novo sistema para este propósito.
 
 ## Substituindo o sistema existente sem um LiveCD
 
@@ -352,14 +355,14 @@ Encontre ~700 MB de espaço livre em algum lugar do disco, p.ex. particionando u
 
 ### Defina a partição antiga de swap como nova partição raiz
 
-Verifique `cfdisk`, `/proc/swaps` ou `/etc/fstab` para localizar sua partição swap. Presumindo que seu disco rígido esteja localizado em sdaX (X será um número).
+Verifique `cfdisk`, `/proc/swaps` ou `/etc/fstab` para localizar sua partição swap. Presumindo que seu disco rígido esteja localizado em `sda*X*` (`*X*` será um número).
 
 Faça o seguinte:
 
 Desabilite o espaço swap:
 
 ```
-# swapoff /dev/sdaX
+# swapoff /dev/sda*X*
 
 ```
 
@@ -367,8 +370,8 @@ Crie um sistema de arquivos nele
 
 ```
 # fdisk /dev/sda
-(defina o campo de ID do /dev/sdaX para "Linux" - Hex 83)
-# mke2fs -j /dev/sdaX
+(defina o campo de ID do /dev/sda*X* para "Linux" - Hex 83)
+# mke2fs -j /dev/sda*X*
 
 ```
 
@@ -382,12 +385,12 @@ Crie um diretório para montá-lo nele
 Finalmente, monte o novo diretório para instalar um sistema intermediário.
 
 ```
-# mount -t ext4 /dev/sdaX /mnt/novosis
+# mount -t ext4 /dev/sda*X* /mnt/novosis
 
 ```
 
 ### Instalação
 
-Se estiver disponível menos de 700 MB, examine os pacotes na base do grupo e selecione apenas aqueles necessários para que um sistema com conexão à Internet seja executado e executado na partição temporária. Isso significará especificamente especificar pacotes individuais para pacstrap, bem como passá-lo a opção -c, para obter pacotes baixados para o sistema host para evitar o preenchimento de espaço valioso.
+[Instale os pacotes essenciais](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instalar_pacotes_essenciais "Guia de instalação") e qualquer outro pacote necessário para instalar um sistema com conexão à Internet na partição temporária, tendo o cuidado com o limite de ~700 MB de espaço. Ao especificar pacotes a serem instalados com *pacstrap*, considere adicionar a opção `-c` para evitar o preenchimento de um espaço valioso baixando pacotes para o sistema host.
 
-Uma vez que o novo sistema Arch Linux esteja instalado, reinicie no sistema recém-criado e faça um [rsync de todo o sistema](/index.php/Rsync#Full_system_backup "Rsync") para a partição primária. Corrija a configuração do gerenciador de inicialização antes de reiniciar.
+Uma vez que o novo sistema Arch Linux esteja instalado, corrija a configuração do gerenciador de boot e, então, reinicie no sistema recém-criado e faça um [rsync de todo o sistema](/index.php/Rsync#Full_system_backup "Rsync") para a partição primária.

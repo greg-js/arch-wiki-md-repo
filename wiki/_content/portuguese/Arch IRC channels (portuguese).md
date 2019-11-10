@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch IRC channels](/index.php/Arch_IRC_channels "Arch IRC channels"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_IRC_channels&diff=0&oldid=566394) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch IRC channels](/index.php/Arch_IRC_channels "Arch IRC channels"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_IRC_channels&diff=0&oldid=585028) na versão em inglês.
 
 Artigos relacionados
 
@@ -78,7 +78,6 @@ Se você, por algum motivo, precisar de ajuda de um operador, não seja tímido 
 O tamanho de nossa comunidade levou à criação de múltiplos canais IRC. Para obter uma lista de todos os canais em **[chat.freenode.net](ircs://chat.freenode.net)** que contêm `archlinux` em seu nome, use o comando `/query alis list *archlinux*`.
 
 | Canal | Descrição |
-| [#archlinux64](ircs://chat.freenode.net/archlinux64) | Canal de discussão específica para x86_64, principalmente em inglês |
 | [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) | Discussão geral do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") |
 | [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) | Discussão sobre o desenvolvimento do [aurweb](https://projects.archlinux.org/aurweb.git/) |
 | [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Discussão centrada em bugs |

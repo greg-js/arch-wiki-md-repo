@@ -1,6 +1,10 @@
 [ZeroNet](https://zeronet.io/) gives access to "open, free and uncensorable websites, using Bitcoin cryptography and the BitTorrent network".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -23,7 +27,7 @@ To start ZeroNet [start/enable](/index.php/Start/enable "Start/enable") `zeronet
 
 ### Tor
 
-By default, ZeroNet uses clearnet and Tor if available. To enable Tor support you first need to install [Tor](/index.php/Tor "Tor") via [tor](https://www.archlinux.org/packages/?name=tor). Then, give ZeroNet access to control Tor using the following instructions.
+By default, ZeroNet uses clearnet and Tor if available. To enable Tor support you first need to install [Tor](/index.php/Tor "Tor"). Then, give ZeroNet access to control Tor using the following instructions.
 
 ```
 # usermod -a -G tor zeronet

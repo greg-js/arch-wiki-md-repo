@@ -1,11 +1,11 @@
-**Status de tradução:** Esse artigo é uma tradução de [Grafana](/index.php/Grafana "Grafana"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Grafana&diff=0&oldid=578994) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Grafana](/index.php/Grafana "Grafana"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Grafana&diff=0&oldid=584412) na versão em inglês.
 
 Artigos relacionados
 
 *   [Zabbix](/index.php/Zabbix "Zabbix")
 *   [Munin](/index.php/Munin "Munin")
 
-[Grafana](https://grafana.com/) é um painel de composição de uso geral e de código aberto, que é executado como um aplicativo da web. Possui suporte a [graphite](https://www.archlinux.org/packages/?name=graphite), [InfluxDB](/index.php/InfluxDB "InfluxDB") ou opentsdb como backends.
+[Grafana](https://grafana.com/) é um painel de composição de uso geral e de código aberto, que é executado como um aplicativo da web. Possui suporte a [graphite](https://www.archlinux.org/packages/?name=graphite), [InfluxDB](/index.php/InfluxDB "InfluxDB"), [Prometheus](/index.php/Prometheus "Prometheus") ou opentsdb como backends.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

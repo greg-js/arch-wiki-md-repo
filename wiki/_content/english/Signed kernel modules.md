@@ -2,9 +2,9 @@ Related articles
 
 *   [Kernels](/index.php/Kernels "Kernels")
 *   [Kernel module](/index.php/Kernel_module "Kernel module")
-*   [Kernel/Arch_Build_System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System")
+*   [Kernel/Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System")
 
-Signed [[1]](https://www.kernel.org/doc/html/v5.4-rc2/admin-guide/module-signing.html) [Kernel modules](/index.php/Kernel_modules "Kernel modules") provide a mechanism for the kernel to verify the integrity of a module.
+[Signed](https://www.kernel.org/doc/html/v5.4-rc2/admin-guide/module-signing.html) [kernel modules](/index.php/Kernel_modules "Kernel modules") provide a mechanism for the kernel to verify the integrity of a module.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -15,8 +15,8 @@ Signed [[1]](https://www.kernel.org/doc/html/v5.4-rc2/admin-guide/module-signing
 *   [1 Overview](#Overview)
 *   [2 How to sign kernel modules using a custom kernel](#How_to_sign_kernel_modules_using_a_custom_kernel)
 *   [3 Summary of what needs to be done](#Summary_of_what_needs_to_be_done)
-*   [4 Kernel Config](#Kernel_Config)
-    *   [4.1 Boot Command Line](#Boot_Command_Line)
+*   [4 Kernel configuration](#Kernel_configuration)
+    *   [4.1 Kernel command line](#Kernel_command_line)
 *   [5 Tools needed](#Tools_needed)
     *   [5.1 kernel build package](#kernel_build_package)
     *   [5.2 dkms support](#dkms_support)
@@ -69,9 +69,9 @@ A kernel config parameter is now used to make kernel aware of additional signing
 
 Keys and signing tools will be stored in current module build directory. Nothing needs to be done to clean this as removal is handled by the standard module cleanup. Certs are thus installed in `/usr/lib/modules/<kernel-vers>-<build>/certs-local`
 
-## Kernel Config
+## Kernel configuration
 
-**Note:** `CONFIG_SYSTEM_TRUSTED_KEYS` will be added automatically as explained below. In addition the following config options should be set by either manually editing the 'config' file, or via `make menuconfig` in the linux 'src' area and subsequently copying the updated '.config' file back to the build file 'config'.
+`CONFIG_SYSTEM_TRUSTED_KEYS` will be added automatically as explained below. In addition the following config options should be set by either manually editing the 'config' file, or via `make menuconfig` in the linux 'src' area and subsequently copying the updated '.config' file back to the build file 'config'.
 
 ```
 Enable Loadable module suppot --->
@@ -82,7 +82,7 @@ Require modules to be validly signed -> leave off
         CONFIG_MODULE_SIG_FORCE=n
 
         This allows the decision to enforce verified modules only as boot command line.
-        If you're comfortable all is working then by all means change this to 'y'
+        If you are comfortable all is working then by all means change this to 'y'
         Command line version of this is : module.sig_enforce=1
 
 Automatically sign all modules  - activate
@@ -95,9 +95,9 @@ Allow loading of modules with missing namespace imports - set to no
 
 ```
 
-### Boot Command Line
+### Kernel command line
 
-After you are comfortable things are working well you can enable the boot command line option to require that the kernel only permit verified modules to be loaded:
+After you are comfortable things are working well you can enable the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to require that the kernel only permit verified modules to be loaded:
 
 ```
 module.sig_enforce=1
@@ -108,55 +108,62 @@ module.sig_enforce=1
 
 ### kernel build package
 
-```
-       In the directory where the kernel package is built:
-
-       `% mkdir certs-local`
-
-       This directory will provide the tools to create the keys, as well as signing kernel modules.
-       Put the 4 files into certs-local:
-
-               fix_config.sh
-               x509.oot.genkey
-               genkeys.sh
-               sign_manual.sh
-
-       The files genkeys.sh and its config x509.oot.genkey are used to create key pairs.
-       the file fix_config.sh is run after that to provide the kernel with the key info by updating
-       the config file used to build the kernel.
-       The script sign_manual will be used to sign out of tree kernel modules.
-
-       genkeys.sh will create the key pairs in a dir named by date-time.
-       It also creates file 'current_key_dir' with that dir name and a soft link 'current' to 
-       the same dir with the 'current' key pairs.
-
-       These files are all provided below.
+In the directory where the kernel package is built:
 
 ```
+$ mkdir certs-local
+
+```
+
+This directory will provide the tools to create the keys, as well as signing kernel modules.
+
+Put the 4 files into certs-local:
+
+*   `fix_config.sh`
+*   `x509.oot.genkey`
+*   `genkeys.sh`
+*   `sign_manual.sh`
+
+The files genkeys.sh and its config x509.oot.genkey are used to create key pairs.
+
+The file fix_config.sh is run after that to provide the kernel with the key info by updating the config file used to build the kernel.
+
+The script sign_manual will be used to sign out of tree kernel modules.
+
+genkeys.sh will create the key pairs in a dir named by date-time.
+
+It also creates file 'current_key_dir' with that dir name and a soft link 'current' to the same dir with the 'current' key pairs.
+
+These files are all provided below.
 
 ### dkms support
 
 ```
-       `% mkdir certs-local/dkms`
-
-       Add 2 files to the dkms dir:
-               kernel-sign.conf
-               kernel-sign.sh
-
-       These will be installed in /etc/dkms and provide a mechanism for dkms to automatically
-       sign modules (using the local key above) - this is the reccommended way to sign kernel 
-       modules. As explained, below - once this is installed - all that is needed to have dkms
-       automatically sign modules is to make a soft link:
-
-       % cd /etc/dkms
-       % ln -s kernel-sign.conf <package-name>
-
-       e.g.
-       % ln -s kernel-sign.conf virtualbox
-
-       The link creation can easily be added to an arch package to simplify further if desired.
+$ mkdir certs-local/dkms
 
 ```
+
+Add 2 files to the dkms dir:
+
+*   `kernel-sign.conf`
+*   `kernel-sign.sh`
+
+These will be installed in /etc/dkms and provide a mechanism for dkms to automatically sign modules (using the local key above) - this is the reccommended way to sign kernel modules. As explained, below - once this is installed - all that is needed to have dkms automatically sign modules is to make a soft link:
+
+```
+$ cd /etc/dkms
+# ln -s kernel-sign.conf <package-name>
+
+```
+
+For example:
+
+```
+# ln -s kernel-sign.conf virtualbox
+
+```
+
+The link creation can easily be added to an arch package to simplify further if desired.
 
 ## Modify PKGBUILD
 
@@ -164,69 +171,59 @@ We need to make changes to kernel build as follows:
 
 ### prepare()
 
-**Note:** Add the following to the top of the prepare() function:
+Add the following to the top of the prepare() function:
 
 ```
-       prepare() {
+prepare() {
 
-           msg2 "Rebuilding local signing key..."
-           cd ../certs-local
-           ./genkeys.sh 
+    msg2 "Rebuilding local signing key..."
+    cd ../certs-local
+    ./genkeys.sh 
 
-           msg2 "Updating kernel config with new key..."
-           ./fix_config.sh ../config
-           cd ../src
+    msg2 "Updating kernel config with new key..."
+    ./fix_config.sh ../config
+    cd ../src
 
-           ... 
-       }
+    ... 
+}
 
 ```
 
 ### _package-headers()
 
-**Note:** Add the following to the bottom of the _package-headers() function:
+Add the following to the bottom of the _package-headers() function:
 
 ```
-        _package-headers() {
+_package-headers() {
 
-       ...
+    ...
 
-         #
-         # Out of Tree Module signing
-         # This is run in the kernel source / build directory
-         #
-         msg2 "Local Signing certs for out of tree modules..."
+    #
+    # Out of Tree Module signing
+    # This is run in the kernel source / build directory
+    #
+    msg2 "Local Signing certs for out of tree modules..."
 
-         certs_local_src="../../certs-local" 
-         key_dir=$(<${certs_local_src}/current_key_dir)
+    certs_local_src="../../certs-local" 
+    key_dir=$(<${certs_local_src}/current_key_dir)
 
-         certs_local_dst="${builddir}/certs-local"
-         signer="sign_manual.sh"
-         mkdir -p ${certs_local_dst}
-         rsync -a $certs_local_src/{current,$key_dir,$signer} $certs_local_dst/
+    certs_local_dst="${builddir}/certs-local"
+    signer="sign_manual.sh"
+    mkdir -p ${certs_local_dst}
+    rsync -a $certs_local_src/{current,$key_dir,$signer} $certs_local_dst/
 
-         # dkms tools
-         dkms_src="$certs_local_src/dkms"
-         dkms_dst="${pkgdir}/etc/dkms"
-         mkdir -p $dkms_dst
+    # dkms tools
+    dkms_src="$certs_local_src/dkms"
+    dkms_dst="${pkgdir}/etc/dkms"
+    mkdir -p $dkms_dst
 
-         rsync -a $dkms_src/{kernel-sign.conf,kernel-sign.sh} $dkms_dst/
-   }
-
+    rsync -a $dkms_src/{kernel-sign.conf,kernel-sign.sh} $dkms_dst/
+}
 ```
 
 ## Files Required
 
-**Note:** These are the 6 supporting files referenced above
-
-**Tip:** Don't forget to make the scripts executable.
-
-i.e.
-
-```
-chmod +x certs-local/*.sh certs-local/dkms/*.sh
-
-```
+These are the 6 supporting files referenced above. Do not forget to make the scripts [executable](/index.php/Executable "Executable").
 
 ### certs-local/fix_config.sh
 

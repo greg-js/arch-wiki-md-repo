@@ -194,6 +194,15 @@ You might want to set `SSH_DOMAIN`, e.g.:
 
 #### Configure SSH
 
+By default Gitea will run as user `gitea`, as well this account will be used for ssh repository access. For ssh access to work, you have to enable PAM. Alternatively, you might have to unlock service account.
+
+ `/etc/ssh/sshd_config` 
+```
+...
+UsePAM yes
+...
+```
+
 If you use `AllowUsers` in your [SSH configuration](/index.php/OpenSSH#Configuration_2 "OpenSSH"), add `AllowUsers gitea` to it, e.g.:
 
  `/etc/ssh/sshd_config` 

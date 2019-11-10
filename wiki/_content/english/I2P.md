@@ -1,27 +1,12 @@
-From the [I2P](https://geti2p.net/en/) homepage:
-
-	I2P is an anonymizing network, offering a simple layer that identity-sensitive applications can use to securely communicate. All data is wrapped with several layers of encryption, and the network is both distributed and dynamic, with no trusted parties.
-
-	Many applications are available that interface with I2P, including mail, peer-peer, IRC chat, and others.
-
-<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
-
-## Contents
-
-<label class="toctogglelabel" for="toctogglecheckbox"></label>
-
-*   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-*   [3 Eepsite](#Eepsite)
-*   [4 See also](#See_also)
+[I2P](https://geti2p.net/en/about/intro) is an anonymizing network, offering a simple layer that identity-sensitive applications can use to securely communicate. All data is wrapped with several layers of encryption, and the network is both distributed and dynamic, with no trusted parties. Many applications are available that interface with I2P, including mail, peer-peer, IRC chat, and others.
 
 ## Installation
 
-I2P is available with the [i2p](https://aur.archlinux.org/packages/i2p/) package providing compilation from source, and the [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/) package providing a precompiled binary; both of which require a [Java](/index.php/Java "Java") Runtime Environment, OpenJDK is fine, for the ARM platform Oracle Java is recommended.
+Install the [i2pd](https://www.archlinux.org/packages/?name=i2pd) package for the daemon written in C++ which may suit hardware with limited resources or [i2pd-git](https://aur.archlinux.org/packages/i2pd-git/) for the development version.
 
-The I2P homepage also provides a precompiled binary package for command line (headless) install in the users home directory. In case of this installation type I2P will auto update itself through the i2p network.
+The standard I2P suite is available with the [i2p](https://aur.archlinux.org/packages/i2p/) and [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/) packages. Both require a [Java](/index.php/Java "Java") Runtime Environment (i.e. [OpenJDK](/index.php/OpenJDK "OpenJDK")). Oracle Java is recommended for the ARM platform.
 
-Should these Java implementations be undesirable; [i2pd](https://www.archlinux.org/packages/?name=i2pd) is a full C++ client, which may suit hardware with limited resources.
+The I2P homepage also provides a pre-compiled binary which includes command line (headless) option and can be installed in the user's home directory. In this case I2P will auto update itself through the i2p network.
 
 ## Usage
 
@@ -46,11 +31,12 @@ HTTPS 127.0.0.1 4445
 
 ## Eepsite
 
-If you make an eepsite, follow the I2P instructions, but keep in mind that the home directory will apply to the i2p user whose home directory is `/opt/i2p` as shown in the AUR [i2p.install](https://aur.archlinux.org/cgit/aur.git/tree/i2p.install?h=i2p) file.
+To make an eepsite, follow the I2P [instructions](http://127.0.0.1:7658), but keep in mind that the home directory will apply to the i2p user whose home directory is `/opt/i2p` as shown in the AUR [i2p.install](https://aur.archlinux.org/cgit/aur.git/tree/i2p.install?h=i2p) file.
 
 ## See also
 
 *   [I2P Homepage](http://www.i2p2.de)
 *   [I2P FAQ](http://www.i2p2.de/faq.html)
-*   [Homepage mirror](http://www.i2pproject.net)
-*   [I2P Wikipedia entry](https://en.wikipedia.org/wiki/I2p "wikipedia:I2p")
+*   [I2P Homepage mirror](http://www.i2pproject.net)
+*   [I2P on Wikipedia](https://en.wikipedia.org/wiki/I2p "wikipedia:I2p")
+*   [i2pd](https://i2pd.website/) - daemon homepage

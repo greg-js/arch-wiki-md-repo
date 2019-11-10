@@ -111,6 +111,10 @@ See also [git GUI Clients](https://git-scm.com/download/gui/linux).
 
 	[http://rabbitvcs.org/](http://rabbitvcs.org/) || [rabbitvcs](https://aur.archlinux.org/packages/rabbitvcs/)
 
+*   **Sublime Merge** — Git Client from the makers of Sublime Text.
+
+	[https://www.sublimemerge.com/](https://www.sublimemerge.com/) || [sublime-merge](https://aur.archlinux.org/packages/sublime-merge/)
+
 *   **Tig** — ncurses-based text-mode interface for git.
 
 	[https://jonas.github.io/tig/](https://jonas.github.io/tig/) || [tig](https://www.archlinux.org/packages/?name=tig)

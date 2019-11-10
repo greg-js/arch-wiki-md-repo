@@ -1,19 +1,27 @@
+Artículos relacionados
+
+*   [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)")
+
 **Estado de la traducción**
-Este artículo es una traducción de [Archboot](/index.php/Archboot "Archboot"), revisada por última vez el **2016-04-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Archboot&diff=0&oldid=410240) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Archboot](/index.php/Archboot "Archboot"), revisada por última vez el **2019-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Archboot&diff=0&oldid=565034) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-Archboot es un conjunto de scripts para generar medios de almacenamiento booteables en CD/USB/PXE.
+**Archboot** es un conjunto de scripts no oficiales para generar medios de almacenamiento booteables en CD/USB/PXE, diseñado para realizar una instalación u operación de rescate.
 
-Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especial del tipo squashfs, por lo que se limita al alcance de la memoria RAM que esté instalada en su sistema. [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [archboot](https://www.archlinux.org/packages/?name=archboot) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especial del tipo squashfs, por lo que se limita al alcance de la memoria RAM que esté instalada en su sistema.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Diferencias con el soporte de instalación de archiso](#Diferencias_con_el_soporte_de_instalación_de_archiso)
 *   [3 Lanzamientos de la ISO de Archboot](#Lanzamientos_de_la_ISO_de_Archboot)
-    *   [3.1 Grabar lanzamiento](#Grabar_lanzamiento)
+    *   [3.1 Grabar imagen liberada](#Grabar_imagen_liberada)
     *   [3.2 Arrancar PXE/sistema de rescate](#Arrancar_PXE/sistema_de_rescate)
     *   [3.3 Modos de arranque soportados por el soporte de Archboot](#Modos_de_arranque_soportados_por_el_soporte_de_Archboot)
-    *   [3.4 ¿Cómo hacer una instalación remota con ssh?](#¿Cómo_hacer_una_instalación_remota_con_ssh?)
+    *   [3.4 Cómo hacer una instalación remota con ssh](#Cómo_hacer_una_instalación_remota_con_ssh)
     *   [3.5 Características del configurador interactivo](#Características_del_configurador_interactivo)
     *   [3.6 FAQ, limitaciones y problemas conocidos](#FAQ,_limitaciones_y_problemas_conocidos)
     *   [3.7 Antecedentes](#Antecedentes)
@@ -28,7 +36,7 @@ Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especi
 
 ## Instalación
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [archboot](https://www.archlinux.org/packages/?name=archboot).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [archboot](https://www.archlinux.org/packages/?name=archboot).
 
 ## Diferencias con el soporte de instalación de archiso
 
@@ -46,17 +54,17 @@ Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especi
 	imágenes de network labeled no se incluyen en el repositorio [core].
 
 *   Por favor, revise md5sum antes de usarlo.
-*   [Download 2015.09 „2k15-R3“](https://downloads.archlinux.de/iso/archboot/2015.09) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2015.09-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
+*   [Descarga 2018.06 „2k18-R1“](https://downloads.archlinux.de/iso/archboot/2018.06) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2018.06-1.txt) / [hilo del foro](https://bbs.archlinux.org/viewtopic.php?id=182439)
 
-	kernel: 4.2.0-3
+	kernel: 4.17.2-1
 
-	pacman: 4.2.1-3
+	pacman: 5.1.0-2
 
-	systemd: 226-1
+	systemd: 238.133-1
 
-	RAM recomendada: 600 MB
+	RAM recomendada: 1500 MB
 
-### Grabar lanzamiento
+### Grabar imagen liberada
 
 El archivo de imagen híbrida es una imagen de CD grabable estándar y también una imagen de disco cruda.
 
@@ -67,17 +75,17 @@ El archivo de imagen híbrida es una imagen de CD grabable estándar y también 
 
 ### Arrancar PXE/sistema de rescate
 
-[Download 2015.09 „2k15-R3“](https://downloads.archlinux.de/iso/archboot/2015.09/boot) los archivos necesarios del directorio.
+[Descargue 2018.12 „2k18-R1“](https://downloads.archlinux.de/iso/archboot/2018.06/boot) los archivos necesarios del directorio.
 
-*   vmlinuz_i686 + initramfs_i686.img (i686)
 *   vmlinuz_x86_64 + initramfs_x86_64.img(x86_64)
+*   intel-ucode.img (x86_64)
 *   Para arranque PXE añadir el kernel e initrd a la configuración TFTP y obtendrá la ejecución de la instalación/sistema de rescate.
 *   Para el arranque de rescate agregar una entrada a su gestor de arranque que apunte al kernel e initrd.
 
 ### Modos de arranque soportados por el soporte de Archboot
 
 *   Soporta el arranque de BIOS con syslinux.
-*   Soporta el arranque de UEFI/UEFI_CD con [Gummiboot](/index.php/Gummiboot "Gummiboot") y [EFISTUB](/index.php/EFISTUB "EFISTUB").
+*   Soporta el arranque de UEFI/UEFI_CD con [systemd-boot](/index.php/Systemd-boot "Systemd-boot") y [EFISTUB](/index.php/EFISTUB "EFISTUB").
 *   Soporta el arranque de UEFI_MIX_MODE con grub.
 *   Soporta arranque Secure Boot con prebootloader.
 *   Soporta el apoyo de loopback de la iso para grub(2).
@@ -105,7 +113,7 @@ menuentry "Archboot Memdisk" {
 }
 ```
 
-### ¿Cómo hacer una instalación remota con ssh?
+### Cómo hacer una instalación remota con ssh
 
 *   Durante el inicio, todas las interfaces de red tratarán de obtener una dirección IP mediante DHCP.
 *   La contraseña de root no se establece por defecto. Establecer una contraseña, ya que se necesita para obtener privacidad durante la instalación.
@@ -122,14 +130,14 @@ menuentry "Archboot Memdisk" {
 *   Creación de dispositivos de raid software/particiones raid, dispositivos lvm2 y dispositivos encriptados con luks
 *   Soporte para linux estándar, raid/raid_partitions,dmraid/fakeraid,lvm2 y dispositivos cifrados
 *   Soporte para sistema de archivos: ext2/3/4, btrfs, f2fs, nilfs2, reiserfs,xfs,jfs,ntfs-3g,vfat
-*   Soporte para esquema de nombres: PARTUUID, PARTLABEL, FSUUID, FSLABEL and KERNEL
+*   Soporte para esquema de nombres: PARTUUID, PARTLABEL, FSUUID, FSLABEL y KERNEL
 *   Soporte para el montaje del soporte de instalación con grub(2), loopback y memdisk
 *   Soporte para selección de paquetes
 *   Script hwdetect usado para preconfiguración
 *   Auto/preconfiguración de fstab, modo kms, ssd, mkinitcpio.conf, systemd, crypttab y mdadm.conf
 *   Configuración de los archivos básicos del sistema
 *   Configuración de la contraseña root
-*   Soporte para los gestores de arranque grub(2) (BIOS y UEFI), refind-efi, gummiboot, syslinux (BIOS y UEFI)
+*   Soporte para los gestores de arranque grub(2) (BIOS y UEFI), refind-efi, systemd-boot, syslinux (BIOS y UEFI)
 
 ### FAQ, limitaciones y problemas conocidos
 
@@ -147,9 +155,7 @@ menuentry "Archboot Memdisk" {
 
 *   Grub(2) no detecta correctamente el orden de arranque de la BIOS:
 
-	Puede suceder que las entradas hd
-
-(x,x) no sean correctas, por lo tanto, el primer reinicio puede no funcionar.
+	Puede suceder que las entradas hd(x,x) no sean correctas, por lo tanto, el primer reinicio puede no funcionar.
 
 	Razón: grub no pueden detectar el orden de arranque de la BIOS.
 
@@ -198,17 +204,8 @@ El historial de versiones antiguas se puede encontrar [aquí](ftp://ftp.archlinu
 *   Instalar archboot:
 
 ```
-# pacman -S archboot
 # mkdir -p *x86_64_chroot*/var/lib/pacman
 # pacman --root "*x86_64_chroot*" -Sy base --noconfirm --noprogressbar
-
-```
-
-*   Para contenedores i686:
-
-```
-# mkdir -p *i686_chroot*/var/lib/pacman
-# linux32 pacman --root "*i686_chroot*" -Sy base --noconfirm --noprogressbar
 
 ```
 
@@ -219,28 +216,9 @@ El historial de versiones antiguas se puede encontrar [aquí](ftp://ftp.archlinu
 
 ```
 
-*   Entrar en contenedor i686 de archboot:
-
-```
-# linux32 systemd-nspawn --capability=CAP_MKNOD --register=no -M $(uname -m) -D *i686_chroot*
-
-```
-
 ### Instalar archboot y actualizar a los últimos paquetes
 
-Instalar para ambas arquitecturas en entornos enjaulados de archboot:
-
-```
-# pacman -S archboot
-
-```
-
-Actualizar para ambas arquitecturas en entornos enjaulados los paquetes más recientes disponibles:
-
-```
-# pacman -Syu
-
-```
+Instale [archboot](https://www.archlinux.org/packages/?name=archboot) en chroot y [actualice](/index.php/Pacman#Upgrading_packages "Pacman") los paquetes más recientes disponibles.
 
 ### Generar imágenes
 
@@ -253,7 +231,3 @@ archboot-allinone.sh -g
 ```
 
 *   Una vez finalizado obtendrá un conjunto de imágenes.
-
-¡Disfrútelo!
-tpowa
-(Desarrollador de Archboot)

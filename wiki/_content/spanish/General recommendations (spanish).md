@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [General recommendations](/index.php/General_recommendations "General recommendations"), revisada por última vez el **2019-03-15**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=566274) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [General recommendations](/index.php/General_recommendations "General recommendations"), revisada por última vez el **2019-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=585928) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -55,7 +55,7 @@ Este documento es un índice con anotaciones a otros artículos populares e info
 *   [8 Dispositivos de entrada](#Dispositivos_de_entrada)
     *   [8.1 Distribuciones de teclado](#Distribuciones_de_teclado)
     *   [8.2 Botones del ratón](#Botones_del_ratón)
-    *   [8.3 Pantalla táctil del portátil](#Pantalla_táctil_del_portátil)
+    *   [8.3 Panel táctil del portátil](#Panel_táctil_del_portátil)
     *   [8.4 TrackPoints](#TrackPoints)
 *   [9 Optimización](#Optimización)
     *   [9.1 Benchmarking](#Benchmarking)
@@ -67,7 +67,7 @@ Este documento es un índice con anotaciones a otros artículos populares e info
     *   [10.3 Impresión](#Impresión)
 *   [11 Apariencia](#Apariencia)
     *   [11.1 Tipos de letra](#Tipos_de_letra)
-    *   [11.2 Temas para GTK+ y Qt](#Temas_para_GTK+_y_Qt)
+    *   [11.2 Temas para GTK y Qt](#Temas_para_GTK_y_Qt)
 *   [12 Mejoras para la línea de comandos](#Mejoras_para_la_línea_de_comandos)
     *   [12.1 Mejoras de autocompletado con tabulador](#Mejoras_de_autocompletado_con_tabulador)
     *   [12.2 Alias](#Alias)
@@ -93,7 +93,7 @@ Los usuarios y grupos son un mecanismo para el *control de acceso*; los administ
 
 ### Elevación de privilegios
 
-Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. *su* por defecto inicia un intérprete de línea de órdenes interactivo como usuario root, y *sudo* le concede temporalmente privilegios de root para un solo comando. Véase sus respectivos artículos para las diferencias.
+Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. *su* por defecto inicia un intérprete de línea de órdenes interactivo como superusuario (root), y *sudo* le concede temporalmente privilegios de root para un solo comando. Véase sus respectivos artículos para las diferencias.
 
 ### Administración de servicios
 
@@ -107,7 +107,7 @@ Arch es un sistema de lanzamiento continuo y cuenta con una rápida rotación de
 
 Esta sección contiene información útil relacionada con la administración de los paquetes. Para más información, véase [Frequently asked questions (Español)#Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administración_de_paquetes "Frequently asked questions (Español)") y [Category:Package management (Español)](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)").
 
-**Nota:** Es imprescindible mantenerse al día de los cambios en Arch Linux para conocer aquellos que requieren una intervención manual, **antes** de actualizar su sistema. Suscríbase a la [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) y compruebe la página principal de [Arch news](https://www.archlinux.org/) antes de realizar cualquier actualización. Por otro lado, puede encontrar útil suscribirse a este [RSS feed](https://www.archlinux.org/feeds/news/).
+**Nota:** Es imprescindible mantenerse al día de los cambios en Arch Linux para conocer aquellos que requieren una intervención manual, **antes** de actualizar su sistema. Suscríbase a la [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) o a las [noticias recientes (RSS)](https://www.archlinux.org/feeds/news/). Alternativamente, compruebe la página principal de las [noticias de Arch](https://www.archlinux.org/) cada vez antes de actualizar.
 
 ### pacman
 
@@ -151,7 +151,7 @@ El hardware debe ser detectado automáticamente por [udev](/index.php/Udev_(Espa
 
 ### Microcódigo
 
-Los procesadores pueden tener un [comportamiento defectuoso](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el kernel puede corregir mediante la actualización del *microcódigo* al inicio. Véase [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
+Los procesadores pueden tener un [comportamiento defectuoso](https://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el kernel puede corregir mediante la actualización del *microcódigo* al inicio. Véase [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
 
 ### Conservar los mensajes del arranque
 
@@ -159,7 +159,7 @@ Una vez que concluye el arranque, la pantalla se borra y aparece el inicio de se
 
 ### Activar Bloq Num al inicio
 
-Bloq Num es una tecla de alternancia que se encuentra en la mayoría de los teclados. Para activar Bloq Num de modo que permanezca activo el teclado numérico durante el arranque, véase [activando Bloq Num al inicio](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)").
+[Bloq Num](https://en.wikipedia.org/wiki/Num_Lock "wikipedia:Num Lock") es una tecla de alternancia que se encuentra en la mayoría de los teclados. Para activar Bloq Num de modo que permanezca activo el teclado numérico durante el arranque, véase [activando Bloq Num al inicio](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)").
 
 ## Interfaz gráfica de usuario
 
@@ -211,7 +211,7 @@ Para los artículos relacionados con la informática portátil junto con las gu�
 
 ### Suspensión e hibernación
 
-Véase [suspensión e hibernación](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate").
+Véase el artículo principal: [Suspensión e hibernación](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate").
 
 ## Multimedia
 
@@ -271,7 +271,7 @@ Los teclados que no son en inglés o que no son estándar pueden no funcionar co
 
 Los propietarios de ratones avanzados o inusuales pueden descubrir que no todos los botones del ratón se reconocen por defecto, o pueden querer asignar diferentes acciones para los botones adicionales. Las instrucciones se pueden encontrar en el artículo [botones del ratón](/index.php/Mouse_buttons "Mouse buttons").
 
-### Pantalla táctil del portátil
+### Panel táctil del portátil
 
 Muchas computadoras portátiles usan dispositivos de señalamiento [Synaptics](https://www.synaptics.com/) o [ALPS](http://www.alps.com/). Para estos y otros modelos de panel táctil, puede usar el controlador de entrada Synaptics o libinput; véase [Synaptics](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") y [libinput](/index.php/Libinput_(Espa%C3%B1ol) "Libinput (Español)") para más detalles sobre la instalación y configuración.
 
@@ -307,7 +307,7 @@ Los [motores de búsqueda de escritorio](/index.php/List_of_applications/Utiliti
 
 ### Entrega de correo electrónico local
 
-Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, véase [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)"). Otras opciones son [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm_(Espa%C3%B1ol) "Fdm (Español)").
+Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, véase [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)"). Otras opciones son [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm_(Espa%C3%B1ol) "Fdm (Español)").
 
 ### Impresión
 
@@ -325,9 +325,9 @@ Se puede encontrar una gran cantidad de información sobre el tema en los artíc
 
 Si pasa una cantidad significativa de tiempo trabajando desde la consola virtual (es decir, fuera de un servidor X), puede que quiera cambiar el tipo de letra de la consola para mejorar la legibilidad; véase [Tipos de letra de consola](/index.php/Linux_console#Fonts "Linux console").
 
-### Temas para GTK+ y Qt
+### Temas para GTK y Qt
 
-Una gran parte de las aplicaciones con una interfaz gráfica para sistemas Linux se basan en los kits de herramientas [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") o [Qt](/index.php/Qt "Qt"). Véase dichos artículos y [Apariencia uniforme para aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)") para obtener ideas de como mejorar la apariencia de los programas instalados y adaptarlos a su gusto.
+Una gran parte de las aplicaciones con una interfaz gráfica para sistemas Linux se basan en los kits de herramientas [GTK](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") o [Qt](/index.php/Qt "Qt"). Véase dichos artículos y [Apariencia uniforme para aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)") para obtener ideas de como mejorar la apariencia de los programas instalados y adaptarlos a su gusto.
 
 ## Mejoras para la línea de comandos
 

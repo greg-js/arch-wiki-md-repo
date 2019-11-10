@@ -1,18 +1,22 @@
 RepRap is an open-source 3D printer project. A RepRap prints objects of plastic and is intended for rapid-prototyping, the printer itself is built with small plastic parts which can be printed out and replaced. This page explains how to install RepRap host software on Arch Linux and how to print 3D models. More information is available on the [RepRap homepage](http://www.reprap.org).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Host software alternatives](#Host_software_alternatives)
     *   [3.1 Cura](#Cura)
     *   [3.2 MatterControl](#MatterControl)
-    *   [3.3 Printrun / Pronterface](#Printrun_.2F_Pronterface)
+    *   [3.3 Printrun / Pronterface](#Printrun_/_Pronterface)
     *   [3.4 ReplicatorG](#ReplicatorG)
     *   [3.5 Repetier](#Repetier)
 *   [4 See Also](#See_Also)
     *   [4.1 Calibration](#Calibration)
-    *   [4.2 3D models & STL files](#3D_models_.26_STL_files)
+    *   [4.2 3D models & STL files](#3D_models_&_STL_files)
     *   [4.3 Manual](#Manual)
 
 ## Installation
@@ -64,41 +68,6 @@ MatterControl is a combined slicer/host similar to Cura. Install [mattercontrol]
 
 ```
 $ mattercontrol
-
-```
-
-The AUR package is built from source and does not include the closed source plugins. You can add these by extracting the appropriate DLLs from the Debian package at [mattercontrol.com](http://www.mattercontrol.com/) and copying them into `/usr/lib/mattercontrol`. These files include...
-
-```
- CloudServices.dll
- CloudServices.dll.config
- CloudServices.dll.mdb
- MatterControlAuth.dll
- MatterControlAuth.dll.config
- MatterControlAuth.dll.mdb
- Mono.Nat.dll
- Mono.Nat.dll.mdb
- PictureCreator.dll
- PictureCreator.dll.config
- PictureCreator.dll.mdb
- PrintNotifications.dll
- PrintNotifications.dll.config
- PrintNotifications.dll.mdb
-
-```
-
-MatterControl's built in slice engine is MatterSlice, which is a port of CuraEngine to C#. You can also choose other slicing engines. To use Slic3r in MatterControl, make a symlink in `/usr/lib/mattercontrol/Slic3r/bin` to the Slic3r executable.
-
-```
- $ mkdir /usr/lib/mattercontrol/Slic3r/bin
- $ ln -s /usr/bin/slic3r /usr/lib/mattercontrol/Slic3r/bin/slic3r
-
-```
-
-To use CuraEngine, do
-
-```
- $ ln -s /usr/share/cura/CuraEngine /usr/lib/mattercontrol/CuraEngine.exe
 
 ```
 

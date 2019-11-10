@@ -250,6 +250,13 @@ COMPRESSBZ2=(**pbzip2** -c -f)
 
 ```
 
+[zstd](https://www.archlinux.org/packages/?name=zstd) supports [symmetric multiprocessing (SMP)](https://en.wikipedia.org/wiki/Symmetric_multiprocessing "wikipedia:Symmetric multiprocessing") via the `--threads` flag to speed up compression. For example, to let makepkg use as many CPU cores as possible to compress packages, edit `COMPRESSZST` array in `/etc/makepkg.conf`:
+
+```
+COMPRESSZST=(zstd -c -z -q - **--threads=0**)
+
+```
+
 ### Show packages with specific packager
 
 This shows all packages installed on the system with the packager named *packagername*:

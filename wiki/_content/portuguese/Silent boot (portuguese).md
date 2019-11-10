@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Silent boot](/index.php/Silent_boot "Silent boot"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Silent_boot&diff=0&oldid=579359) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Silent boot](/index.php/Silent_boot "Silent boot"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Silent_boot&diff=0&oldid=585788) na versão em inglês.
 
 Artigos relacionados
 

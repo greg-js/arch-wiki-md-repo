@@ -117,8 +117,6 @@ The systemd user instance is started after the first login of a user and killed 
 
 ```
 
-**Note:** Currently, `v242` of systemd, has a bug which does not allow enabling of linger with `loginctl`. See [systemd issue on Github](https://github.com/systemd/systemd/issues/12401). As a workaround use the `touch` command. `# touch /var/lib/systemd/linger/*username*` 
-
 **Warning:** systemd services are **not** sessions, they run outside of *logind*. Do not use lingering to enable automatic login as it will [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
 ## Writing user units

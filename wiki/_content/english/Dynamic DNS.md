@@ -31,9 +31,13 @@ Note that some dynamic DNS providers do not require a dedicated client and can b
 
 ### Multi-service clients
 
-*   **ddclient** — Update dynamic DNS entries for accounts on many dynamic DNS services.
+*   **[ddclient](#ddclient)** — Update dynamic DNS entries for accounts on many dynamic DNS services.
 
 	[https://github.com/ddclient/ddclient](https://github.com/ddclient/ddclient) || [ddclient](https://www.archlinux.org/packages/?name=ddclient)
+
+*   **[ddnsc](/index.php/Ddnsc "Ddnsc")** — A simple & lightweight client written in python.
+
+	[https://github.com/shyaminayesh/ddnsc](https://github.com/shyaminayesh/ddnsc) || [ddnsc](https://aur.archlinux.org/packages/ddnsc/)
 
 *   **inadyn-fork** — Dynamic DNS client with SSL/TLS support.
 

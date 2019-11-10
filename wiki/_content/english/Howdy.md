@@ -95,6 +95,6 @@ You might have howdy working but get warning like this in shell:
 
 This is caused by upstream [opencv](https://www.archlinux.org/packages/?name=opencv) package built with default warning level `LOG_LEVEL_WARNING = 3`. The cv::utils::logging API in C++ can set log level higher in order to hide lower level warning, but this API is not exposed into python-cv2 yet.
 
-A temporary solution for this is addding an environment variable `OPENCV_LOG_LEVEL=ERROR` to your system per user or globally.
+A temporary solution for this is adding an environment variable `OPENCV_LOG_LEVEL=ERROR` to your system per user or globally.
 
 **Note:** This will make the warning disappear but might hide other potential problems

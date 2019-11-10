@@ -1,3 +1,10 @@
+Related articles
+
+*   [Lenovo ThinkPad T490s](/index.php?title=Lenovo_ThinkPad_T490s&action=edit&redlink=1 "Lenovo ThinkPad T490s (page does not exist)")
+*   [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480")
+*   [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s")
+*   [Lenovo ThinkPad T470](/index.php/Lenovo_ThinkPad_T470 "Lenovo ThinkPad T470")
+
 | **Device** | **Status** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless](/index.php/Wireless "Wireless") | Yes¹ |
@@ -24,15 +31,18 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
-*   [2 FN Keys](#FN_Keys)
-*   [3 Touchpad](#Touchpad)
-*   [4 Known Issues](#Known_Issues)
-    *   [4.1 CPU throttling issue](#CPU_throttling_issue)
-    *   [4.2 Speaker noise issue](#Speaker_noise_issue)
-    *   [4.3 MicroSD card reader issue](#MicroSD_card_reader_issue)
-    *   [4.4 Bluetooth](#Bluetooth)
-*   [5 ACPI](#ACPI)
-*   [6 Also See](#Also_See)
+*   [2 BIOS](#BIOS)
+    *   [2.1 BIOS configurations](#BIOS_configurations)
+*   [3 FN Keys](#FN_Keys)
+*   [4 Touchpad](#Touchpad)
+*   [5 Known Issues](#Known_Issues)
+    *   [5.1 CPU throttling issue](#CPU_throttling_issue)
+    *   [5.2 Speaker noise issue](#Speaker_noise_issue)
+    *   [5.3 MicroSD card reader issue](#MicroSD_card_reader_issue)
+    *   [5.4 Bluetooth](#Bluetooth)
+    *   [5.5 Slow wakeup after suspend](#Slow_wakeup_after_suspend)
+*   [6 ACPI](#ACPI)
+*   [7 Also See](#Also_See)
 
 ## Hardware
 
@@ -44,20 +54,12 @@ Product Name: 20N2000KGE
 
 ```
 
-`lspci` returns something like:
+additional hardware information from `lsusb` and `lspci` can be found bellow:
+
+`lsusb`
 
 ```
-00:00.0 Host bridge: Intel Corporation Coffee Lake HOST and DRAM Controller (rev 0c)
-00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620 (Whiskey Lake) (rev 02)
-00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 0c)
-00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th Gen Core Processor Gaussian Mixture Model
-00:12.0 Signal processing controller: Intel Corporation Cannon Point-LP Thermal Controller (rev 30)
-00:14.0 USB controller: Intel Corporation Cannon Point-LP USB 3.1 xHCI Controller (rev 30)
-00:14.2 RAM memory: Intel Corporation Cannon Point-LP Shared SRAM (rev 30)
-00:14.3 Network controller: Intel Corporation Cannon Point-LP CNVi [Wireless-AC] (rev 30)
-00:15.0 Serial bus controller [0c80]: Intel Corporation Cannon Point-LP Serial IO I2C Controller #0 (rev 30)
-00:16.0 Communication controller: Intel Corporation Cannon Point-LP MEI Controller #1 (rev 30)
-00:1c.0 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #1 (rev f0)
+00:00.0 Host bridge: Intel Corporation Coffee Lake HOST and DRAM Controller (rev 0c) 00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620 (Whiskey Lake) (rev 02) 00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 0c) 00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th Gen Core Processor Gaussian Mixture Model 00:12.0 Signal processing controller: Intel Corporation Cannon Point-LP Thermal Controller (rev 30) 00:14.0 USB controller: Intel Corporation Cannon Point-LP USB 3.1 xHCI Controller (rev 30) 00:14.2 RAM memory: Intel Corporation Cannon Point-LP Shared SRAM (rev 30) 00:14.3 Network controller: Intel Corporation Cannon Point-LP CNVi [Wireless-AC] (rev 30) 00:15.0 Serial bus controller [0c80]: Intel Corporation Cannon Point-LP Serial IO I2C Controller #0 (rev 30) 00:16.0 Communication controller: Intel Corporation Cannon Point-LP MEI Controller #1 (rev 30) 00:1c.0 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #1 (rev f0)
 00:1c.4 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #5 (rev f0)
 00:1d.0 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #9 (rev f0)
 00:1d.4 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #13 (rev f0)
@@ -104,7 +106,7 @@ Product Name: 20N2000KGE
 
 ```
 
-`lsusb` returns something like:
+`lspci`
 
 ```
 Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
@@ -119,6 +121,12 @@ Bus 001 Device 002: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+## BIOS
+
+### BIOS configurations
+
+*   `Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled"`. This setting is recommended for Linux.
 
 ## FN Keys
 
@@ -178,6 +186,10 @@ Pairing with a bluetooth speaker and the initial connect works. Connecting to an
 ```
 
 An issue for this already exists on the kernel bugtracker [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=204765). It is not clear whether this relates to the connection problem.
+
+### Slow wakeup after suspend
+
+After suspend the laptop takes a few second until it becomes responsive. Disallowing the access to the [WWAN](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") device in the BIOS solves this issue.
 
 ## ACPI
 

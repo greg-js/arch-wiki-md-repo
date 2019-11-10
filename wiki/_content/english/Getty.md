@@ -16,8 +16,9 @@ A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the ge
     *   [3.1 Virtual console](#Virtual_console)
     *   [3.2 Serial console](#Serial_console)
     *   [3.3 Nspawn console](#Nspawn_console)
-*   [4 Have boot messages stay on tty1](#Have_boot_messages_stay_on_tty1)
-*   [5 See also](#See_also)
+*   [4 Prompt only the password for a default user in virtual console login](#Prompt_only_the_password_for_a_default_user_in_virtual_console_login)
+*   [5 Have boot messages stay on tty1](#Have_boot_messages_stay_on_tty1)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -91,6 +92,24 @@ To configure auto-login for a [systemd-nspawn](/index.php/Systemd-nspawn "System
 [Service]
 ExecStart=
 ExecStart=-/sbin/agetty --noclear --autologin *username* --keep-baud console 115200,38400,9600 $TERM
+```
+
+## Prompt only the password for a default user in virtual console login
+
+Getty can be used to login from a virtual console with a default user, typing the password but without needing to insert the username. For instance, to prompt the password for `*username*` on `tty1`:
+
+ `/etc/systemd/system/getty@tty1.service.d/override.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty -n -o *username* %I
+```
+
+and then
+
+```
+# systemctl enable getty@tty1
+
 ```
 
 ## Have boot messages stay on tty1

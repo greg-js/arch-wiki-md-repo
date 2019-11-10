@@ -23,14 +23,15 @@ Related articles
     *   [4.6 GLEW](#GLEW)
     *   [4.7 EFL](#EFL)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Gamma](#Gamma)
-    *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
-    *   [5.4 Cannot open display: :0 with Electron-based applications](#Cannot_open_display:_:0_with_Electron-based_applications)
-    *   [5.5 Screen recording](#Screen_recording)
-    *   [5.6 Remote display](#Remote_display)
-    *   [5.7 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
-        *   [5.7.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
+    *   [5.1 GDM and NVIDIA proprietary drivers](#GDM_and_NVIDIA_proprietary_drivers)
+    *   [5.2 Gamma](#Gamma)
+    *   [5.3 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [5.4 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
+    *   [5.5 Cannot open display: :0 with Electron-based applications](#Cannot_open_display:_:0_with_Electron-based_applications)
+    *   [5.6 Screen recording](#Screen_recording)
+    *   [5.7 Remote display](#Remote_display)
+    *   [5.8 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
+        *   [5.8.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -117,6 +118,17 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 
 ## Troubleshooting
 
+### GDM and NVIDIA proprietary drivers
+
+If you are using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver, [GDM](/index.php/GDM "GDM") explicitly [disables](https://bbs.archlinux.org/viewtopic.php?pid=1837424#p1837424) Wayland support. The [rationale](https://gitlab.gnome.org/GNOME/gdm/commit/5cd78602d3d4c8355869151875fc317e8bcd5f08) for this decision is that GLX applications currently do not work well when the proprietary NVIDIA driver is used with a Wayland session.
+
+To force-enable Wayland, disable the [udev](/index.php/Udev "Udev") rule responsible for disabling Wayland in GDM:
+
+```
+# ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+
+```
+
 ### Gamma
 
 While [Redshift](/index.php/Redshift "Redshift") doesn't support Wayland (without a patch) it is possible to apply the desired temperature in [tty](/index.php/Tty "Tty") before starting a compositor. For example:
@@ -158,12 +170,12 @@ Make sure you haven't set GDK_BACKEND=wayland. Setting it globally will break El
 
 [wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) is a video recorder for wlroots-based compositors.
 
-[wlrobs-hg](https://aur.archlinux.org/packages/wlrobs-hg/) is obs-studio plugin that allows you to screen capture on wlroots-based compositors.
+[wlrobs-hg](https://aur.archlinux.org/packages/wlrobs-hg/) is a [obs-studio](https://www.archlinux.org/packages/?name=obs-studio) plugin that allows you to screen capture on wlroots-based compositors.
 
 ### Remote display
 
 *   (20190503) [wlroots](https://www.archlinux.org/packages/?name=wlroots) (used by [sway](/index.php/Sway "Sway")) offers an RDP backend since version 0.6 [[4]](https://github.com/swaywm/wlroots/blob/master/docs/env_vars.md).
-*   (20180401) mutter has now remote desktop enabled at compile time, see [[5]](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [gnome-remote-desktop](https://www.archlinux.org/packages/?name=gnome-remote-desktop) for details.
+*   (20180401) [mutter](https://www.archlinux.org/packages/?name=mutter) has now remote desktop enabled at compile time, see [[5]](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [gnome-remote-desktop](https://www.archlinux.org/packages/?name=gnome-remote-desktop) for details.
 *   There was a merge of FreeRDP into Weston in 2013, enabled via a compile flag. The [weston](https://www.archlinux.org/packages/?name=weston) package has it enabled since version 6.0.0.
 *   [waypipe-git](https://aur.archlinux.org/packages/waypipe-git/) is a transparent proxy for Wayland applications, with a wrapper command to run over [SSH](/index.php/SSH "SSH")
 

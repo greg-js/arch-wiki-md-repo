@@ -169,6 +169,7 @@ The following command will be used to flag the partition that contains the `/boo
 ```
 
 *   `*partition*` is the number of the partition to be flagged (see the output of the `print` command).
+*   `esp` is an alias for `boot` on GPT. [[1]](https://www.gnu.org/software/parted/manual/html_node/set.html)
 
 #### UEFI/GPT examples
 
@@ -243,7 +244,7 @@ In the final example below, separate `/boot` (100 MiB), `/` (20 GiB), swap (4 Gi
 **Note:**
 
 *   You can only move the end of the partition with `parted`.
-*   As of parted v4.2 *resizepart* may need the use of [#Interactive mode](#Interactive_mode).[[1]](https://bugs.launchpad.net/ubuntu/+source/parted/+bug/1270203)
+*   As of parted v4.2 *resizepart* may need the use of [#Interactive mode](#Interactive_mode).[[2]](https://bugs.launchpad.net/ubuntu/+source/parted/+bug/1270203)
 *   These instructions apply to partitions that have ext2, ext3, ext4, or btrfs filesystems.
 
 If you are growing a partition, you have to first resize the partition and then resize the filesystem on it, while for shrinking the filesystem must be resized before the partition to avoid data loss.

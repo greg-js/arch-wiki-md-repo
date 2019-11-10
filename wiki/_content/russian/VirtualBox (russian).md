@@ -527,6 +527,7 @@ $ VBoxManage clonehd *source.vdi* *destination.vhd* --format VHD
 #### QCOW2 в VDI и VDI в QCOW2
 
 [`VBoxManage clonehd`](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) не может конвертировать QEMU форматы и необходимо воспользоваться иными инструментами. Команда `qemu-img` из пакета [qemu](https://www.archlinux.org/packages/?name=qemu) может осуществлять преобразования QCOW2<=>VDI.
+
 **Примечание:** `qemu-img` также обрабатывает кучу других форматов. В соответствии выводу `qemu-img --help`, `qemu-img` поддерживает данные форматы : "*vvfat vpc vmdk vhdx vdi ssh sheepdog sheepdog sheepdog raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd iscsi dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug'".*
 
 QCOW2 в VDI:
@@ -975,6 +976,7 @@ $ VBoxManage internalcommands createrawvmdk -filename */path/to/file.vmdk* -rawd
 	На хосте с Windows
 
 Откройте окно командной строки (необходимо запускать от имени администратора).
+
 **Совет:** В Windows откройте меню Пуск / стартовый экран, введите `cmd`, и нажмите `Ctrl+Shift+Enter`, это ярлык для запуска выбранной программы с правами администратора.
 
 В Windows наименование дисков отлично от UNIX. Используйте эту команду, чтобы определить значения в вашей системе Windows, и их расположение:

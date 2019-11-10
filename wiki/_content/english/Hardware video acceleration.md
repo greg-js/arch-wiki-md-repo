@@ -194,7 +194,7 @@ Although the video driver should automatically enable hardware video acceleratio
 
 The default driver names, used if there is no other configuration present, are guess by the system. However, they are often hacked together and may not work. You can see the guessed values by running:
 
- `$ grep -iE 'vdpau | dri driver' ~/.local/share/xorg/Xorg.0.log` 
+ `$ grep -iE 'vdpau | dri driver' /var/log/Xorg.0.log` 
 ```
 (II) RADEON(0): [DRI2] DRI driver: radeonsi
 (II) RADEON(0): [DRI2] VDPAU driver: radeonsi
@@ -209,7 +209,7 @@ This does not represent the *configuration* however. The values above will not c
 
 ### Configuring VA-API
 
-You can override the [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API by using the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
+You can override the [driver](https://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API by using the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
 
 *   [Intel graphics](/index.php/Intel_graphics "Intel graphics"):
     *   For [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) use `i965`.
@@ -253,7 +253,7 @@ You need to set `VDPAU_DRIVER` variable to point to correct driver. See [#Config
 
 ### VAAPI init failed
 
-An error along the lines of `libva: /usr/lib/dri/i965_drv_video.so init failed` is encountered. This can happen because of improper detection of Wayland. One solution is to unset `$DISPLAY` so that mpv, mplayer, VLC, etc. do not assume it is X11\. Another mpv-specific solution is to add the parameter `--opengl-backend=wayland`.
+An error along the lines of `libva: /usr/lib/dri/i965_drv_video.so init failed` is encountered. This can happen because of improper detection of Wayland. One solution is to unset `$DISPLAY` so that mpv, MPlayer, VLC, etc. do not assume it is X11\. Another mpv-specific solution is to add the parameter `--opengl-backend=wayland`.
 
 ## Comparison tables
 

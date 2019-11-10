@@ -1,17 +1,17 @@
 **Estado de la traducción**
-Este artículo es una traducción de [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), revisada por última vez el **2018-09-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=540516) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), revisada por última vez el **2019-11-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=587307) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
-*   [BIND](/index.php/BIND "BIND")
-*   [DNSCrypt (Español)](/index.php/DNSCrypt_(Espa%C3%B1ol) "DNSCrypt (Español)")
-*   [DNSSEC (Español)](/index.php/DNSSEC_(Espa%C3%B1ol) "DNSSEC (Español)")
-*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
-*   [unbound](/index.php/Unbound "Unbound")
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
 
 [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) proporciona un [servidor DNS](https://en.wikipedia.org/wiki/Name_server "wikipedia:Name server"), un [servidor DHCP](https://en.wikipedia.org/wiki/es:Dynamic_Host_Configuration_Protocol "wikipedia:es:Dynamic Host Configuration Protocol") con soporte para [DHCPv6](https://en.wikipedia.org/wiki/es:DHCPv6 "wikipedia:es:DHCPv6") y [PXE](https://en.wikipedia.org/wiki/es:Preboot_Execution_Environment "wikipedia:es:Preboot Execution Environment"), y un [servidor TFTP](https://en.wikipedia.org/wiki/es:Trivial_File_Transfer_Protocol "wikipedia:es:Trivial File Transfer Protocol"). Está diseñado para ser liviano y consumir poco, adecuado para enrutadores y cortafuegos con recursos limitados. dnsmasq también se puede configurar para almacenar en caché las consultas a DNS con el fin mejorar las velocidades de búsqueda de DNS de los sitios visitados con anterioridad.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Iniciar el demonio](#Iniciar_el_demonio)
@@ -32,11 +32,12 @@ Artículos relacionados
     *   [4.3 Tener más de una instancia](#Tener_más_de_una_instancia)
         *   [4.3.1 Estático](#Estático)
         *   [4.3.2 Dinámico](#Dinámico)
+    *   [4.4 Lista negra de dominios](#Lista_negra_de_dominios)
 *   [5 Véase también](#Véase_también)
 
 ## Instalación
 
-[Instale](/index.php/Install "Install") el paquete [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq).
 
 ## Iniciar el demonio
 
@@ -57,7 +58,7 @@ Para configurar dnsmasq, necesita editar `/etc/dnsmasq.conf`. El archivo contien
 
 **Advertencia:** dnsmasq activa de forma predeterminada su servidor DNS. Si no lo necesita, debe desactivarlo explícitamente definiendo el puerto DNS en `0`: `port=0` 
 
-**Sugerencia:** Para verificar la sintaxis de los archivos de configuración, ejecute:
+**Sugerencia:** para verificar la sintaxis de los archivos de configuración, ejecute:
 ```
 $ dnsmasq --test
 
@@ -65,14 +66,14 @@ $ dnsmasq --test
 
 ### Servidor DNS
 
-Para configurar dnsmasq como un demonio para el almacenamiento de DNS en un solo equipo, especifique una directiva `listen-address`, añadiendo la dirección IP del equipo local:
+Para configurar dnsmasq como un demonio para el almacenamiento de DNS en un solo equipo, especifique una directiva `listen-address`, añadiendo la [dirección IP](https://en.wikipedia.org/wiki/es:Direcci%C3%B3n_IP "wikipedia:es:Dirección IP") del [equipo local](https://en.wikipedia.org/wiki/es:Localhost "wikipedia:es:Localhost"):
 
 ```
 listen-address=::1,127.0.0.1
 
 ```
 
-Para utilizar este equipo con el fin de que su dirección IP de LAN escuche otros equipos en la red. Se recomienda utilizar una IP LAN estática en este caso. Por ejemplo:
+Para utilizar este equipo con el fin de que su dirección IP de [LAN](https://en.wikipedia.org/wiki/es:Red_de_%C3%A1rea_local "wikipedia:es:Red de área local") escuche otros equipos en la red. Se recomienda utilizar una IP LAN estática en este caso. Por ejemplo:
 
 ```
 listen-address=::1,127.0.0.1,192.168.1.1
@@ -91,7 +92,6 @@ Para validar con [DNSSEC](/index.php/DNSSEC "DNSSEC") cargue [los anclajes de co
 ```
 conf-file=/usr/share/dnsmasq/trust-anchors.conf
 dnssec
-dnssec-check-unsigned
 
 ```
 
@@ -107,14 +107,14 @@ Como dnsmasq no es un servidor DNS recursivo, debe configurar el reenvío a un s
 
 Si su administrador de red admite *resolvconf*, en lugar de modificar directamente `/etc/resolv.conf`, puede utilizar [openresolv](/index.php/Openresolv "Openresolv") para generar archivos de configuración para dnsmasq. [[1]](https://roy.marples.name/projects/openresolv/config)
 
-Edite `/etc/resolvconf.conf` y añada las direcciones de loopback como servidores de nombres, y configure openresolv para escribir la configuración de dnsmasq:
+Edite `/etc/resolvconf.conf` y añada las direcciones de [loopback](https://en.wikipedia.org/wiki/es:Loopback "wikipedia:es:Loopback") como servidores de nombres, y configure openresolv para escribir la configuración de dnsmasq:
 
  `/etc/resolvconf.conf` 
 ```
-# Usa el servidor de nombre local
+# Utilizar el servidor de nombre local
 name_servers="::1 127.0.0.1"
 
-# Escribe los archivos de configuración extendida y de resolución de dnsmasq
+# Escribir los archivos de configuración extendida y de resolución de dnsmasq
 dnsmasq_conf=/etc/dnsmasq-openresolv.conf
 dnsmasq_resolv=/etc/dnsmasq-resolv.conf
 ```
@@ -124,7 +124,7 @@ Ejecute `resolvconf -u` para que se creen los archivos de configuración. Si los
 Edite el archivo de configuración de dnsmasq para usar la configuración generada de openresolv:
 
 ```
-# Lee la configuración generada por openresolv
+# Leer la configuración generada por openresolv
 conf-file=/etc/dnsmasq-openresolv.conf
 resolv-file=/etc/dnsmasq-resolv.conf
 
@@ -165,7 +165,7 @@ domain=lan
 
 ```
 
-En este ejemplo, es posible enviar un ping a un servidor/dispositivo (por ejemplo, definido en el archivo `/etc/hosts` como `*hostname* .Lan`.
+En este ejemplo, es posible enviar un ping a un servidor/dispositivo (por ejemplo, definido en el archivo `/etc/hosts` como `*hostname*.Lan`.
 
 Descomente `expand-hosts` para añadir el dominio personalizado a las entradas del equipo:
 
@@ -217,20 +217,29 @@ interface=<LAN-NIC>
 # y dejar al kernel manejarlas:
 bind-interfaces
 
-# Opcionalmente, establecer un nombre de dominio
+# Opcionalmente, establecer un nombre de dominio.
 domain=example.com
 
-# Establecer la puerta de enlace predeterminada
-dhcp-option=3,192.168.1.1
+# Establecer la puerta de enlace predeterminada.
+dhcp-option=3,0.0.0.0
 
 # Establecer servidores DNS para anunciar
-dhcp-option=6,192.168.1.1
+dhcp-option=6,0.0.0.0
+
+# Si su servidor dnsmasq también está haciendo el enrutamiento para su red,
+# puede usar la opción 121 para forzar una ruta estática.
+# x.x.x.x es la LAN de destino, yy es la notación CIDR (generalmente /24),
+# y z.z.z.z es el host que hará el enrutamiento.
+dhcp-option=121,x.x.x.x/yy,z.z.z.z
 
 # Rango dinámico de direcciones IP para poner a disposición
 # de la interfaz LAN del equipo y el tiempo de «lease».
 # Lo ideal es establecer el tiempo de «lease» en 5 m solo al principio
 # para probar que todo funciona bien antes de establecer registros más largos.
 dhcp-range=192.168.111.50,192.168.111.100,12h
+
+# Proporcionar contratos de «lease» de DHCP para IPv6 a través de Router Advertisements (RAs) para la máscara de subred aaaa:bbbb:cccc:dddd::/64
+dhcp-range=aaaa:bbbb:cccc:dddd::,ra-only,infinite
 
 # Si desea que dnsmasq asigne direcciones IP estáticas a algunos clientes,
 # vincule las interfaces LAN de los equipos.
@@ -254,7 +263,7 @@ dnsmasq tiene un servidor [TFTP](/index.php/TFTP_(Espa%C3%B1ol) "TFTP (Español)
 
 Para utilizarlo, cree un directorio para la raíz de TFTP (por ejemplo `/srv/tftp`) para colocar los archivos transferibles.
 
-Para mayor seguridad, se recomienda utilizar el modo seguro TFTP de dnsmasq. En modo seguro, solo los archivos propiedad del usuario `dnsmasq` pasarán a través de TFTP. Necesitará hacer [chown](/index.php/Chown "Chown") a TFTP root ya todos los archivos para que pertenezcan al usuario `dnsmasq` a fin de que pueda usar esta característica.
+Para mayor seguridad, se recomienda utilizar el modo seguro TFTP de dnsmasq. En modo seguro, solo los archivos propiedad del usuario `dnsmasq` pasarán a través de TFTP. Necesitará hacer [chown](/index.php/Chown "Chown") a la raís de TFTP y a todos los archivos para que pertenezcan al usuario `dnsmasq` a fin de que pueda usar esta característica.
 
 Active TFTP:
 
@@ -278,8 +287,8 @@ bind-dynamic
 dhcp-range=*192.168.0.1*,proxy
 ```
 
-1.  configurar [#Servidor TFTP](#Servidor_TFTP) y [#Servidor DHCP](#Servidor_DHCP)
-2.  copiar y configurar un gestor de arranque compatible con PXE (por ejemplo, [PXELINUX](/index.php/PXELINUX "PXELINUX")) sobre la raíz TFTP
+1.  configurar [#Servidor TFTP](#Servidor_TFTP) y [#Servidor DHCP](#Servidor_DHCP);
+2.  copiar y configurar un gestor de arranque compatible con PXE (por ejemplo, [PXELINUX](/index.php/PXELINUX "PXELINUX")) sobre la raíz TFTP;
 3.  active PXE en `/etc/dnsmasq.conf`:
 
 **Nota:**
@@ -302,7 +311,7 @@ pxe-service=X86-64_EFI, "PXELINUX (EFI)", "efi64/syslinux.efi"
 
 ```
 
-**Nota:** En caso de que `pxe-service` no funcione (especialmente para clientes basados ​​en UEFI), la combinación de `dhcp-match` y `dhcp-boot` puede hacer que funcione. Consulte [RFC4578](https://tools.ietf.org/html/rfc4578#section-2.1) para obtener más números `client-arch` para utilizarlos con el protocolo de arranque dhcp.
+**Nota:** en caso de que `pxe-service` no funcione (especialmente para clientes basados ​​en UEFI), la combinación de `dhcp-match` y `dhcp-boot` puede hacer que funcione. Consulte [RFC4578](https://tools.ietf.org/html/rfc4578#section-2.1) para obtener más números `client-arch` para utilizarlos con el protocolo de arranque dhcp.
 
 ```
 dhcp-match=set:efi-x86_64,option:client-arch,7
@@ -349,7 +358,7 @@ Si queremos que dos o más servidores dnsmasq funcionen por interfaz(ces).
 
 #### Estático
 
-Para hacer esto de forma estática, servidor por interfaz, utilice las opciones `interfaz` y `bind-interface`. Esto obliga a dnsmasq a iniciarse en segundo lugar.
+Para hacer esto de forma estática, servidor por interfaz, utilice las opciones `interface` y `bind-interface`. Esto obliga a dnsmasq a iniciarse en segundo lugar.
 
 #### Dinámico
 
@@ -361,7 +370,21 @@ bind-dynamic
 
 ```
 
-**Nota:** Esto está predeterminado en [libvirt](/index.php/Libvirt "Libvirt").
+**Nota:** esto está predeterminado en [libvirt](/index.php/Libvirt "Libvirt").
+
+### Lista negra de dominios
+
+Para poner en la lista negra dominios, es decir, responder consultas para ellos con NXDOMAIN, utilice la opción `address` sin especificar la dirección IP:
+
+```
+address=/blacklisted.example/
+address=/another.blacklisted.example/
+
+```
+
+Para facilitar su uso, coloque la lista negra en un archivo separado, por ejemplo `/etc/dnsmasq.d/blacklist.conf` y cárguelo desde `/etc/dnsmasq.conf` con `conf-file=/etc/dnsmasq.d/blacklist.conf` o `conf-dir=conf-dir=/etc/dnsmasq.d/,*.conf`.
+
+**Sugerencia:** se puede encontrar una lista de posibles fuentes para la lista negra en [OpenWrt's adblock package's README](https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md).
 
 ## Véase también
 
