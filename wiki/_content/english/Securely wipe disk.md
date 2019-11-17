@@ -354,7 +354,7 @@ Or the [/dev/urandom](https://en.wikipedia.org/wiki//dev/random "wikipedia:/dev/
 The process is finished when dd reports `No space left on device` and returns control back:
 
 ```
-dd: writing to ‘/dev/sdb’: No space left on device
+dd: writing to ‘/dev/sdX’: No space left on device
 7959553+0 records in
 7959552+0 records out
 4075290624 bytes (4.1 GB, 3.8 GiB) copied, 1247.7 s, 3.3 MB/s

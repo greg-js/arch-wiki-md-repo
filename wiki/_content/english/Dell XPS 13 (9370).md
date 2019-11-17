@@ -36,6 +36,8 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [3 Display](#Display)
 *   [4 Webcam](#Webcam)
 *   [5 Storage](#Storage)
+    *   [5.1 Firmware](#Firmware)
+    *   [5.2 Performance](#Performance)
 *   [6 Wifi](#Wifi)
 *   [7 Bluetooth](#Bluetooth)
 *   [8 Keyboard](#Keyboard)
@@ -86,6 +88,8 @@ Some users have reported problem of the webcam being stuck at 640x480.
 
 ## Storage
 
+### Firmware
+
 The nvme SSD is a Toshiba KXG50ZNV256G, KXG50ZNV512G or KXG50ZNV1T02\. The stock firmware version AADA4102 has severe problems when the ssd enters the lowest power state. This results in a unresponsive device (kernel complains about read-only filesystem) The problems can occur any time, but seem to have become way more common on Kernel 4.18 on battery power. [Firmware Version AADA4105](https://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverid=c0pf8) seems to fix the problem. The firmware is available for Windows only but [can be updated under Linux at your own risk](https://gist.github.com/klingtnet/22ab0b907e2d9d20f98c72c93ea5dd37#gistcomment-2830279).
 
 Note : On some devices, the nvme SSD can be a SK hynix EJ82N00301190264W (1TB) and not a Toshiba one
@@ -98,6 +102,10 @@ As the upgrade is only possible under windows and as even with upgraded driver t
 ```
 
 Note : NVMe SSD should not be issued discards :[Solid state drive/NVMe#Discards](/index.php/Solid_state_drive/NVMe#Discards "Solid state drive/NVMe")
+
+### Performance
+
+If the system becomes unresponsive when creating any kind of large file or when data is being swapped then you may need to disable Native Command Queuing by adding the the kernel param `libata.force=noncq`
 
 ## Wifi
 

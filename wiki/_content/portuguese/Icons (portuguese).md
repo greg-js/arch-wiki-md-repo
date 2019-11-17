@@ -5,7 +5,7 @@ Artigos relacionados
 *   [Temas de cursor](/index.php/Temas_de_cursor "Temas de cursor")
 *   [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)")
 
-O projeto freedesktop fornece a [Icon Theme Specification](http://standards.freedesktop.org/icon-theme-spec/latest/), que se aplica à maioria dos ambientes de desktop linux e tenta unificar a aparência de vários ícones em um *icon-theme* (tema de ícones). O Freedesktop também fornece a [Icon Naming Specification](http://standards.freedesktop.org/icon-naming-spec/latest/), que define um esquema de nomeação padrão para ícones que se acredita serem instalados em qualquer sistema. O tema padrão *hicolor* deve incluir todos eles.
+O projeto freedesktop fornece a [Icon Theme Specification](https://specifications.freedesktop.org/icon-theme-spec/latest/), que se aplica à maioria dos ambientes de desktop linux e tenta unificar a aparência de vários ícones em um *icon-theme* (tema de ícones). O Freedesktop também fornece a [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/latest/), que define um esquema de nomeação padrão para ícones que se acredita serem instalados em qualquer sistema. O tema padrão *hicolor* deve incluir todos eles.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

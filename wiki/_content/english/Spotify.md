@@ -13,7 +13,8 @@
     *   [2.2 Global media hotkeys](#Global_media_hotkeys)
         *   [2.2.1 MPRIS](#MPRIS)
             *   [2.2.1.1 Playerctl](#Playerctl)
-            *   [2.2.1.2 D-Bus](#D-Bus)
+            *   [2.2.1.2 Bluetooth](#Bluetooth)
+            *   [2.2.1.3 D-Bus](#D-Bus)
         *   [2.2.2 pactl (pulseaudio)](#pactl_(pulseaudio))
         *   [2.2.3 xdotool](#xdotool)
     *   [2.3 Disable track notifications](#Disable_track_notifications)
@@ -102,6 +103,10 @@ $ playerctl previous
 ```
 
 Playerctl will send the command to the first player it finds, so this method will also work with others players such as [vlc](/index.php/Vlc "Vlc"). To ignore other players, pass `--player=spotify` as an argument.
+
+##### Bluetooth
+
+[Media control from a bluetooth headset](/index.php/Bluetooth_headset#Media_Controls "Bluetooth headset") and similar devices may be forwarded to mpris2 so they work with spotify
 
 ##### D-Bus
 

@@ -20,7 +20,7 @@ To program in D you will need two things - a D compiler and a library. Easiest w
 
 ## Testing the installation
 
-To make sure that everything is installed and set up correctly, a simple Hello World program should suffice.
+To make sure that everything is installed and set up correctly, a simple "Hello World" program should suffice.
 
 ```
 import std.stdio;
@@ -32,7 +32,7 @@ void main() {
 
 ```
 
-Paste the code into a file, name it hello.d, and run
+Paste the code into a file, name it `hello.d`, and run:
 
 ```
 $ dmd hello.d

@@ -46,9 +46,9 @@ For Haskell it's not clear how to achieve Full RELRO at the moment.
 
 ## Stack canary
 
-A stack canary is added by the compiler between the buffer and control data on the stack. If this well known value is corrupted, a buffer overflow occurred and the running program segfaults to prevent possible arbitrary code execution.
+A [stack canary](https://en.wikipedia.org/wiki/Stack_canary "wikipedia:Stack canary") is added by the compiler between the buffer and control data on the stack. If this well known value is corrupted, a buffer overflow occurred and the running program segfaults to prevent possible arbitrary code execution.
 
-The GCC package has it enabled stack protection by default with the [--enable-default-ssp](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gcc#n120) compile option.
+The [gcc](https://www.archlinux.org/packages/?name=gcc) package has it enabled stack protection by default with the [--enable-default-ssp](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gcc#n120) compile option.
 
 ## NX
 

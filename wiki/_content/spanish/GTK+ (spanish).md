@@ -149,7 +149,7 @@ Si tiene aplicaciones GTK+ y Qt (KDE) en su escritorio, entonces sabe que sus ap
 
 ## Herramientas de configuración
 
-La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") proporcionan herramientas para configurar el tema GTK+, los iconos, la tipografía y el tamaño de la misma, y administrar estas configuraciones a través de [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
+La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") proporcionan herramientas para configurar el tema GTK+, los iconos, la tipografía y el tamaño de la misma, y administrar estas configuraciones a través de [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html):
 
 *   Si utiliza [Cinnamon](/index.php/Cinnamon "Cinnamon"), emplee la herramienta Temas (*cinnamon-settings themes*): diríjase a *Configuración del sistema > Temas*.
 *   Si utiliza [Enlightenment](/index.php/Enlightenment_(Espa%C3%B1ol) "Enlightenment (Español)"): diríjase a *Configuración > Todos > Aspecto > Tema de aplicación*.
@@ -520,7 +520,7 @@ Como los archivos de temas del usuario (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`,
 
 ```
 
-*   Utilizar un demonio de configuración (esto es lo que hacen la mayoría de los entornos de escritorio). Una variante agnóstica de escritorio que utiliza [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) está disponible en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") bajo [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
+*   Utilizar un demonio de configuración (esto es lo que hacen la mayoría de los entornos de escritorio). Una variante agnóstica de escritorio que utiliza [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html) está disponible en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") bajo [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
 
 ### Decoraciones del lado del cliente
 

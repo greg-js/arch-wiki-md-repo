@@ -1,6 +1,6 @@
-[Eclipse](https://eclipse.org) is an open source community project, which aims to provide a universal development platform. The Eclipse project is most widely known for its cross-platform integrated development environment (IDE). The Arch Linux packages (and this guide) relate specifically to the IDE.
+[Eclipse](https://eclipse.org) it is an open source community project aimed at providing a universal development platform. The Eclipse project is best known for its multiplatform integrated development environment (IDE). Arch Linux packages (and this guide) are specifically related to the IDE.
 
-The Eclipse IDE is largely written in Java but can be used to develop applications in a number of languages, including Java, C/C++, PHP, Perl and Python. The IDE can also provide subversion support and task management.
+Eclipse IDE is largely written in Java, but can be used to develop applications in many languages, including Java, C / C ++, PHP, Perl, and Python. The IDE can also provide subversion support and task management.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -40,15 +40,15 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
 *   [eclipse-javascript](https://www.archlinux.org/packages/?name=eclipse-javascript) for JavaScript and Web Developers
 *   [eclipse-rust](https://www.archlinux.org/packages/?name=eclipse-rust) for Rust Developers
 
-You cannot install multiple of these at the same time since they conflict, see [FS#45577](https://bugs.archlinux.org/task/45577): choose the package above which most immediately fulfills your needs, and then add support for any additionally required languages through [#Plugins](#Plugins).
+You cannot install several of them at the same time as they conflict, see [FS#45577](https://bugs.archlinux.org/task/45577): choose the package above which meets your needs immediately and add support for the additional languages you need through [#Plugins](#Plugins).
 
 ## Plugins
 
-Many plugins are easily installed using **pacman** (see [Eclipse plugin package guidelines](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") for further information). This will also keep them up-to-date. Alternatively, you can choose either the [Eclipse Marketplace](#Eclipse_Marketplace) or the internal [plugin manager](#Plugin_manager).
+Many plugins are easily installed using **pacman** (look [Eclipse plugin package guidelines](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") for more information). This will also keep them updated. Alternatively, you can choose the [Eclipse Marketplace](#Eclipse_Marketplace) or the internal [plugin manager](#Plugin_manager).
 
 ### Add the default update site
 
-Make sure that you check that the default update site for your version of Eclipse is configured so that plugin dependencies can automatically be installed. The most current version of Eclipse is Photon and the default update site for it is: [http://download.eclipse.org/releases/photon](http://download.eclipse.org/releases/photon). Go to Help > Install new Software > Add, fill the name to easily identify the update site later - for instance, Photon Software Repository - and fill the location with the url.
+Be sure to verify that the default update site for your version of Eclipse is configured so that plug-in dependencies can be installed automatically. The most current version of Eclipse is Photon and the default update site is: [http://download.eclipse.org/releases/photon](http://download.eclipse.org/releases/photon). Go to Help> Install New Software> Add, fill in the name to easily identify the update site later - for example, Photon Software Repository - and fill in the location with the URL.
 
 ### Eclipse Marketplace
 

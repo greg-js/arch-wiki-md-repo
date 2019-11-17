@@ -1,9 +1,9 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=582501) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-11-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=587502) na versão em inglês.
 
 Artigos relacionados
 
 *   [systemd/User](/index.php/Systemd/User "Systemd/User")
-*   [systemd/Journal](/index.php/Systemd_(Portugu%C3%AAs)/Timers_(Portugu%C3%AAs) "Systemd (Português)/Timers (Português)")
+*   [systemd/Timers](/index.php/Systemd_(Portugu%C3%AAs)/Timers_(Portugu%C3%AAs) "Systemd (Português)/Timers (Português)")
 *   [systemd/Journal](/index.php/Systemd_(Portugu%C3%AAs)/Journal_(Portugu%C3%AAs) "Systemd (Português)/Journal (Português)")
 *   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
 *   [init](/index.php/Init_(Portugu%C3%AAs) "Init (Português)")
@@ -522,9 +522,9 @@ Para atrasar um serviço depois que a rede está ativa, inclua as seguintes depe
 
 O serviço de espera de rede do aplicativo específico que gerencia a rede também deve ser ativado para que `network-online.target` reflita adequadamente o status da rede.
 
-*   Para os que estão usando [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)"), [habilite](/index.php/Habilite "Habilite") `NetworkManager-wait-online.service`.
-*   No caso de [netctl](/index.php/Netctl "Netctl"), habilite o `netctl-wait-online.service`.
-*   Se estiver usando [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), `systemd-networkd-wait-online.service` é, por padrão, habilitado automaticamente sempre que `systemd-networkd.service` foi habilitado; caso obtenha sucesso na verificação como `systemctl is-enabled systemd-networkd-wait-online.service`, nenhuma outra ação é necessária.
+*   Se estiver usando [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)"), `NetworkManager-wait-online.service` está habilitado com `NetworkManager.service`. Verifque se neste caso com `systemctl is-enabled NetworkManager-wait-online.service`. Se ele não estiver habilitado, então [habilite novamente](/index.php/Habilite "Habilite") `NetworkManager.service`.
+*   No caso de [netctl](/index.php/Netctl "Netctl"), [habilite](/index.php/Habilite "Habilite") o `netctl-wait-online.service`.
+*   Se estiver usando [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), `systemd-networkd-wait-online.service` é habilitado com `systemd-networkd.service`. Verifique se este é o caso com `systemctl is-enabled systemd-networkd-wait-online.service`.
 
 Para explicações mais detalhadas, veja [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) no wiki do systemd.
 

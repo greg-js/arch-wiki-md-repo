@@ -2,6 +2,8 @@ A list of reproducible build meetings and work in progress documentation.
 
 [Reproducible build results](https://tests.reproducible-builds.org/archlinux/archlinux.html)
 
+[Packages that reproduce](https://wiki.archlinux.org/index.php/DeveloperWiki:ReproduciblePackages)
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -106,6 +108,7 @@ Posted to the [*rb-general*](https://www.mail-archive.com/rb-general@lists.repro
 > [1]: [https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/bt747](https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/bt747)
 > 
 > [2]: [https://www.mail-archive.com/arch-dev-public@archlinux.org/msg25744.html](https://www.mail-archive.com/arch-dev-public@archlinux.org/msg25744.html)
+> 
 > — {{{2}}}
 
 ## Agenda meeting 10-01-2018

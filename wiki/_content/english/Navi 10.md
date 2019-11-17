@@ -17,8 +17,9 @@ Related articles
     *   [1.1 Kernel](#Kernel)
     *   [1.2 Firmware](#Firmware)
     *   [1.3 Mesa](#Mesa)
-    *   [1.4 LLVM](#LLVM)
-    *   [1.5 AMDGPU PRO](#AMDGPU_PRO)
+    *   [1.4 ACO](#ACO)
+    *   [1.5 LLVM](#LLVM)
+    *   [1.6 AMDGPU PRO](#AMDGPU_PRO)
 *   [2 Loading and Early KMS](#Loading_and_Early_KMS)
 *   [3 Xorg configuration, Tear Free Rendering, DRI Level and Variable refresh rate](#Xorg_configuration,_Tear_Free_Rendering,_DRI_Level_and_Variable_refresh_rate)
 *   [4 Video acceleration](#Video_acceleration)
@@ -62,6 +63,8 @@ mesa amdvlk clang llvm-libs vulkan-mesa-layer vulkan-radeon xf86-video-amdgpu li
 
 ```
 
+**Note:** As of 14-11-2019 the following repo requires you to symlink LibLLVM for X to start. eg. ln -s /usr/lib/libLLVM-10git.so /usr/lib/libLLVM-10svn.so
+
 The developmental packages for mesa may still be worthwhile on new hardware like Navi 10\. To get them, you can add the `mesa-git` repository to your system. To do that, add the following lines to `/etc/pacman.conf` just above the `[core]` section:
 
  `/etc/pacman.conf` 
@@ -81,6 +84,14 @@ Then update your system and install the following packages in the following orde
 ```
 
 These packages will provide support for the latest mesa stack, as well as support for [Vulkan](/index.php/Vulkan "Vulkan"), for both 64 bit and 32 bit applications.
+
+### ACO
+
+[ACO](https://steamcommunity.com/games/221410/announcements/detail/1602634609636894200) is an open-source shader compiler developed by [Valve](https://en.wikipedia.org/wiki/Valve_Corporation "wikipedia:Valve Corporation") to directly compete with [LLVM](http://llvm.org/) and [Windows 10](https://en.wikipedia.org/wiki/Windows_10 "wikipedia:Windows 10"). It offers lesser compilation time and also provides more FPS (sources from [It's FOSS](https://itsfoss.com/linux-games-performance-boost-amd-gpu/), [Forbes](https://www.forbes.com/sites/jasonevangelho/2019/07/17/these-windows-10-vs-pop-os-benchmarks-reveal-a-surprising-truth-about-linux-gaming-performance/#d5e808c5e747) and [Phoronix](https://www.phoronix.com/scan.php?page=article&item=radv-aco-llvm&num=1)).
+
+**Warning:** ACO is a very early development and still is marked as **testing**, you may experience issues.
+
+ACO support for NAVI is only currently present in [mesa-git](https://aur.archlinux.org/packages/mesa-git/) above, and can be enabled with. RADV_PERFTEST=aco
 
 ### LLVM
 

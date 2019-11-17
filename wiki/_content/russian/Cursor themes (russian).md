@@ -107,7 +107,7 @@ gtk-cursor-theme-name=*имя_темы*
 
 ### Среда рабочего стола
 
-[Среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") используют [протокол XSETTINGS](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html), обычно реализуемый через демон настроек. Несмотря на возможность изменения темы на лету, в некоторых приложениях это не работает. Чтобы изменить тему вручную, смотрите [#Спецификацию XDG](#Спецификация_XDG).
+[Среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") используют [протокол XSETTINGS](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html), обычно реализуемый через демон настроек. Несмотря на возможность изменения темы на лету, в некоторых приложениях это не работает. Чтобы изменить тему вручную, смотрите [#Спецификацию XDG](#Спецификация_XDG).
 
 #### GNOME
 

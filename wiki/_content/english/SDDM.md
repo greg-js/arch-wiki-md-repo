@@ -199,6 +199,8 @@ If you now press enter in the empty password field, the fingerprint reader shoul
 
 Check your disk space with `df -h`. If no available space, greeter will crash.
 
+If disk space is not the issue, it may be due to [a bug.](https://github.com/sddm/sddm/issues/1179) Switch [to another TTY](/index.php/Getty#Installation "Getty") to [restart](/index.php/Systemd#Using_units "Systemd") SDDM.
+
 ### Long load time before SDDM shows the greeter
 
 A low entropy pool can cause long SDDM load time ([Bug report](https://github.com/sddm/sddm/issues/1036)). See [Random number generation](/index.php/Random_number_generation "Random number generation") for suggestions to increase the entropy pool.

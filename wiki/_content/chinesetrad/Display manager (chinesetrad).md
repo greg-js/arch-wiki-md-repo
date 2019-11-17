@@ -8,18 +8,22 @@
 
 [顯示管理員](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)")，又稱登入管理員，在開機過程結束後顯示圖形登入介面，取代原本的 shell。目前顯示管理員的種類如同[視窗管理員](/index.php/Window_manager "Window manager")與[桌面環境](/index.php/Desktop_environment "Desktop environment")般多樣化。每套顯示管理員都有一定量的自訂化與佈景可供使用。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 顯示管理員清單](#.E9.A1.AF.E7.A4.BA.E7.AE.A1.E7.90.86.E5.93.A1.E6.B8.85.E5.96.AE)
-    *   [1.1 終端機](#.E7.B5.82.E7.AB.AF.E6.A9.9F)
-    *   [1.2 圖形介面](#.E5.9C.96.E5.BD.A2.E4.BB.8B.E9.9D.A2)
-*   [2 載入顯示管理員](#.E8.BC.89.E5.85.A5.E9.A1.AF.E7.A4.BA.E7.AE.A1.E7.90.86.E5.93.A1)
-    *   [2.1 使用 systemd-logind](#.E4.BD.BF.E7.94.A8_systemd-logind)
-*   [3 提示與技巧](#.E6.8F.90.E7.A4.BA.E8.88.87.E6.8A.80.E5.B7.A7)
-    *   [3.1 作業階段清單](#.E4.BD.9C.E6.A5.AD.E9.9A.8E.E6.AE.B5.E6.B8.85.E5.96.AE)
-    *   [3.2 自動啟動](#.E8.87.AA.E5.8B.95.E5.95.9F.E5.8B.95)
-*   [4 已知問題](#.E5.B7.B2.E7.9F.A5.E5.95.8F.E9.A1.8C)
-    *   [4.1 與 systemd 不相容](#.E8.88.87_systemd_.E4.B8.8D.E7.9B.B8.E5.AE.B9)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 顯示管理員清單](#顯示管理員清單)
+    *   [1.1 終端機](#終端機)
+    *   [1.2 圖形介面](#圖形介面)
+*   [2 載入顯示管理員](#載入顯示管理員)
+    *   [2.1 使用 systemd-logind](#使用_systemd-logind)
+*   [3 提示與技巧](#提示與技巧)
+    *   [3.1 作業階段清單](#作業階段清單)
+    *   [3.2 自動啟動](#自動啟動)
+*   [4 已知問題](#已知問題)
+    *   [4.1 與 systemd 不相容](#與_systemd_不相容)
 
 ## 顯示管理員清單
 
@@ -112,7 +116,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ### 作業階段清單
 
-許多顯示管理員會從 `/usr/share/xsessions/` 目錄讀取是否有可用的作業階段。該目錄包含了各桌面環境 (DM) 或視窗管理員 (WM) 的正規[桌面項目檔](http://standards.freedesktop.org/desktop-entry-spec/latest/)。
+許多顯示管理員會從 `/usr/share/xsessions/` 目錄讀取是否有可用的作業階段。該目錄包含了各桌面環境 (DM) 或視窗管理員 (WM) 的正規[桌面項目檔](https://specifications.freedesktop.org/desktop-entry-spec/latest/)。
 
 若要在顯示管理員的作業階段清單內新增或移除項目，直接在 `/usr/share/xsessions/` 目錄下建立或移除 *.desktop* 檔案。以下為一個典型 *.desktop* 檔案範例：
 

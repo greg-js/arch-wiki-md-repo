@@ -27,7 +27,7 @@ Artigos relacionados
         *   [3.2.3 Um papel de parede entre vários monitores](#Um_papel_de_parede_entre_vários_monitores)
         *   [3.2.4 Atalho para matar janelas](#Atalho_para_matar_janelas)
     *   [3.3 Sessão](#Sessão)
-        *   [3.3.1 Iniciar automaticamente](#Iniciar_automaticamente)
+        *   [3.3.1 Inicialização automática](#Inicialização_automática)
         *   [3.3.2 Bloquear a tela](#Bloquear_a_tela)
         *   [3.3.3 Suspensão](#Suspensão)
         *   [3.3.4 Desabilitar sessões salvas](#Desabilitar_sessões_salvas)
@@ -219,7 +219,7 @@ To add the shortcut, use *Settings > Keyboard* or an application like [xbindkeys
 
 ### Sessão
 
-#### Iniciar automaticamente
+#### Inicialização automática
 
 To launch custom applications when Xfce starts up, click the *Applications Menu > Settings > Settings Manager* and then choose the *Session and Startup* option and click the tab *Application Autostart*. You will see a list of programs that get launched on startup. To add an entry, click the *Add* button and fill out the form, specifying the path to an executable you want to run.
 

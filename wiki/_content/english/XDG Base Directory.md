@@ -925,8 +925,9 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 | [wpa_cli](https://w1.fi/) | `~/.wpa_cli_history` |
 | [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[171]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") among others. |
 | [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[172]](https://github.com/conformal/xombrero/issues/74) |
-| [YARD](https://yardoc.org) | `~/.yard` | [[173]](https://github.com/lsegal/yard/issues/1230) | Would accept Pull Request if anyone want to implement it. |
-| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[174]](http://seclists.org/nmap-dev/2012/q2/163) [[175]](https://github.com/nmap/nmap/issues/590) |
+| [xournalpp](https://www.archlinux.org/packages/?name=xournalpp) | `~/.xournalpp` | [[173]](https://github.com/xournalpp/xournalpp/issues/1101) |
+| [YARD](https://yardoc.org) | `~/.yard` | [[174]](https://github.com/lsegal/yard/issues/1230) | Would accept Pull Request if anyone want to implement it. |
+| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[175]](http://seclists.org/nmap-dev/2012/q2/163) [[176]](https://github.com/nmap/nmap/issues/590) |
 | [zsh](/index.php/Zsh "Zsh") | 
 
 `~/.zshrc
@@ -937,11 +938,11 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 ~/.histfile
 ~/.zcompdump`
 
- | [[176]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+ | [[177]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 
-`$ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION` [[177]](https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files) /!\ The folder needs to exist
+`$ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION` [[178]](https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files) /!\ The folder needs to exist
 
  |
 

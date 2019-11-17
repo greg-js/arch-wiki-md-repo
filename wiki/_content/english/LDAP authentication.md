@@ -13,9 +13,10 @@ Related articles
     *   [1.1 NSS and PAM](#NSS_and_PAM)
 *   [2 LDAP Server Setup](#LDAP_Server_Setup)
     *   [2.1 Installation](#Installation)
-    *   [2.2 Set up access controls](#Set_up_access_controls)
-    *   [2.3 Populate LDAP Tree with Base Data](#Populate_LDAP_Tree_with_Base_Data)
-    *   [2.4 Adding users](#Adding_users)
+    *   [2.2 Include required schemas](#Include_required_schemas)
+    *   [2.3 Set up access controls](#Set_up_access_controls)
+    *   [2.4 Populate LDAP Tree with Base Data](#Populate_LDAP_Tree_with_Base_Data)
+    *   [2.5 Adding users](#Adding_users)
 *   [3 Client Setup](#Client_Setup)
     *   [3.1 NSS Configuration](#NSS_Configuration)
     *   [3.2 PAM Configuration](#PAM_Configuration)
@@ -51,6 +52,17 @@ So to summarize, we need to configure NSS to use the OpenLDAP server as a source
 ### Installation
 
 You can read about installation and basic configuration in the [OpenLDAP](/index.php/OpenLDAP "OpenLDAP") article. After you have completed that, return here.
+
+### Include required schemas
+
+To be able to use the `posixAccount` object class used for storing users in LDAP, make sure to include the following schemas in `/etc/openldap/slapd.conf`.
+
+ `slapd.conf` 
+```
+include         /etc/openldap/schema/cosine.schema
+include         /etc/openldap/schema/inetorgperson.schema
+include         /etc/openldap/schema/nis.schema
+```
 
 ### Set up access controls
 

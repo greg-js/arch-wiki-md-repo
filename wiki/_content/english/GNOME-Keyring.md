@@ -34,7 +34,7 @@ When using GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome
 
 Extra utilities related to GNOME keyring include:
 
-*   **secret-tool** — Access the GNOME keyring (and any other service implementing the [DBus Secret Service API](http://standards.freedesktop.org/secret-service/)) from the command line.
+*   **secret-tool** — Access the GNOME keyring (and any other service implementing the [DBus Secret Service API](https://specifications.freedesktop.org/secret-service/)) from the command line.
 
 	[https://wiki.gnome.org/Projects/Libsecret](https://wiki.gnome.org/Projects/Libsecret) || [libsecret](https://www.archlinux.org/packages/?name=libsecret)
 
@@ -116,29 +116,6 @@ export SSH_AUTH_SOCK
 ```
 
 See [Xfce#SSH agents](/index.php/Xfce#SSH_agents "Xfce") for use in Xfce.
-
-If using [i3](/index.php/I3 "I3") and ssh is not showing the password prompt, giving the following error:
-
-```
-sign_and_send_pubkey: signing failed: agent refused operation
-Permission denied (publickey).
-
-```
-
-then you need to add the DISPLAY environment variable to dbus-daemon via the .xinitrc:
-
- `~/.xinitrc` 
-```
-dbus-update-activation-environment --systemd DISPLAY
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-
-...
-exec i3
-
-```
-
-**Note:** If you use a different location for `~/.Xauthority` (`XAUTHORITY`) then you will have to also include this environment variable in the aforementioned `dbus-update-activation-environment` command.
 
 ### With a display manager
 

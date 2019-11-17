@@ -113,7 +113,7 @@ The default zone can be changed using following command.
 
 ### Services
 
-Service is a pre-made rules corresponding to a specific daemon. For example, `ssh` service corresponds to [SSH](/index.php/SSH "SSH") and opens ports 22 when assigned to a zone.
+Services are pre-made rules corresponding to a specific daemon. For example, `ssh` service corresponds to [SSH](/index.php/SSH "SSH") and opens ports 22 when assigned to a zone.
 
 To get a list of available services enter following command:
 
@@ -186,4 +186,4 @@ The configuration files for the default supported services are located at `/usr/
 
 *   [firewall-cmd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/firewall-cmd.1)
 *   [Official documentation](https://firewalld.org/documentation)
-*   [Fedora Wiki](https://fedoraproject.org/wiki/Firewalld)
+*   [Fedora:Firewalld](https://fedoraproject.org/wiki/Firewalld "fedora:Firewalld")

@@ -53,8 +53,9 @@ Related articles
     *   [6.14 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
     *   [6.15 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
     *   [6.16 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [6.17 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
-    *   [6.18 Cannot login with my Chinese account](#Cannot_login_with_my_Chinese_account)
+    *   [6.17 Tearing when scrolling](#Tearing_when_scrolling)
+    *   [6.18 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
+    *   [6.19 Cannot login with my Chinese account](#Cannot_login_with_my_Chinese_account)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -437,6 +438,10 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 ### Tearing video in fullscreen mode
 
 If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, try [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_(OMTC) "Firefox tweaks").
+
+### Tearing when scrolling
+
+Try disabling smooth scrolling in *Preferences > Browsing*.
 
 ### Firefox WebRTC module cannot detect a microphone
 

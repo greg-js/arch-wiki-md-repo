@@ -1,4 +1,4 @@
-NordVPN is a personal virtual private network service provider. NordVPN is based in Panama. The country has no mandatory data retention laws and does not participate in the Five Eyes or Fourteen Eyes alliances. The Linux Version only use Command-line.
+NordVPN is a personal virtual private network service provider. NordVPN is based in Panama. The country has no mandatory data retention laws and does not participate in the Five Eyes or Fourteen Eyes alliances. On Linux, Nordvpn operates through a command-line tool.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

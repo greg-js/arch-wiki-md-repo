@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=576382) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=587307) na versão em inglês.
 
 Artigos relacionados
 
@@ -234,6 +234,10 @@ dhcp-option=121,x.x.x.x/yy,z.z.z.z
 # no começo para testar se tudo funciona bem antes de você definir
 # registros duradouros:
 dhcp-range=192.168.111.50,192.168.111.100,12h
+
+# Fornece concessões IPv6 de DHCP por meio de Router Advertisements (RAs)
+# para a sub-rede aaaa:bbbb:cccc:dddd::/64
+dhcp-range=aaaa:bbbb:cccc:dddd::,ra-only,infinite
 
 # Se você quiser ter o dnsmasq atribuindo IPs estáticos para alguns
 # clientes, vincule os endereços MAC da placa de rede dos computadores:

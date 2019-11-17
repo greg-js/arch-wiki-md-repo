@@ -90,7 +90,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ## 会话配置
 
-多数显示管理器会读取 `/usr/share/xsessions/` 目录已获取可用的会话列表，此目录中包含各个 DM/WM 的标准 [桌面文件](http://standards.freedesktop.org/desktop-entry-spec/latest/)。
+多数显示管理器会读取 `/usr/share/xsessions/` 目录已获取可用的会话列表，此目录中包含各个 DM/WM 的标准 [桌面文件](https://specifications.freedesktop.org/desktop-entry-spec/latest/)。
 
 要新建会话，可以在 `/usr/share/xsessions/` 中新建 *.desktop* 后缀的文件，文件示例：
 

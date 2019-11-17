@@ -826,7 +826,7 @@ Optionally, you can [install](/index.php/Install "Install") [gnome-defaults-list
 
 ### Tracker & Documents do not list any local files
 
-In order for Tracker (and, therefore, Documents) to detect your local files, they must be stored in an [XDG compliant directory](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) (such as 'Documents' or 'Music'). For more information, see [XDG user directories](/index.php/XDG_user_directories "XDG user directories").
+In order for Tracker (and, therefore, Documents) to detect your local files, they must be stored in an [XDG compliant directory](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) (such as 'Documents' or 'Music'). For more information, see [XDG user directories](/index.php/XDG_user_directories "XDG user directories").
 
 You can also configure Tracker to recursively search inside specific directories such as your home directory. These settings can be made using `tracker-preferences`.
 

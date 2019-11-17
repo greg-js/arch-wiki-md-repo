@@ -1,4 +1,4 @@
-[Freenet](http://freenetproject.org/) is a free and open source software that aims to provide anonymity and freedom of speech through a decentralized peer-to-peer network. Freenet enables its users to share files anonymously, publish freesites without fear of censorship and more. Data is encrypted and routed through multiple nodes making almost impossible to identify who requested the information and what its content is.
+[Freenet](http://freenetproject.org/) is a free and open source software that aims to provide anonymity and freedom of speech through a decentralized peer-to-peer network. Freenet enables its users to share files anonymously, publish freesites without fear of censorship and more. Data is encrypted and routed through multiple nodes making almost impossible to identify who requested the information and what its content is. Keep in mind any files you choose to upload may contain meta data.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -9,7 +9,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Wizard](#Wizard)
-    *   [2.2 Manual Configuration](#Manual_Configuration)
+    *   [2.2 Manual](#Manual)
 
 ## Installation
 
@@ -25,18 +25,6 @@ You can either let the wizard guide you through the configuration or get your ha
 
 You need to visit freenet's web interface at [http://127.0.0.1:8888/](http://127.0.0.1:8888/) and make sure you carefully follow the instructions. Using the private mode of your browser while accessing freenet is a good habit to take.
 
-### Manual Configuration
+### Manual
 
-The [Freenet wiki](http://wiki.freenetproject.org/Main_Page) will be useful if you decide to configure things by hand. Manual configuration is done by editing
-
-```
-/opt/freenet/freenet.ini
-
-```
-
-and
-
-```
-/opt/freenet/wrapper.conf
-
-```
+The [Freenet wiki](https://github.com/freenet/wiki/wiki) will be useful if you decide to configure things by hand. Manual configuration is done by editing `/opt/freenet/freenet.ini` and `/opt/freenet/wrapper.conf`.

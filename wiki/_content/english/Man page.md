@@ -29,7 +29,7 @@ In spite of their scope, man pages are designed to be self-contained documents, 
         *   [6.2.4 roffit](#roffit)
     *   [6.3 Conversion to PDF](#Conversion_to_PDF)
 *   [7 Online man pages](#Online_man_pages)
-*   [8 Noteworthy manpages](#Noteworthy_manpages)
+*   [8 Noteworthy man pages](#Noteworthy_man_pages)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -241,7 +241,7 @@ There are several online databases of man pages, including:
 
 **Warning:** Some distributions provide patched or outdated man pages that differ from those provided by Arch. Exercise caution when using online man pages.
 
-## Noteworthy manpages
+## Noteworthy man pages
 
 Here follows a non-exhaustive list of noteworthy pages that might help you understand a lot of things more in-depth. Some of them might serve as a good reference (like the ASCII table).
 

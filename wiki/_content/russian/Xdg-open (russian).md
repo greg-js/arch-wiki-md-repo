@@ -7,17 +7,21 @@
 
 В [средах рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (например, [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"), [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)"), или [Xfce](/index.php/Xfce_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xfce (Русский)")), *xdg-open* просто передает аргументы файл-открывалке окружения рабочего стола (*gvfs-open*, *kde-open*, или *exo-open* соответственно), а это значит, что ассоциации остаются за средой рабочего стола. Если среда рабочего стола не будет обнаружена (например, при использовании только [оконного менеджера](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)"), такого как [Openbox](/index.php/Openbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Openbox (Русский)")), *xdg-open* будет использовать собственные конфигурационные файлы.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [2.1 Установка браузера по умолчанию](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B1.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80.D0.B0_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Конфигурация](#Конфигурация)
+    *   [2.1 Установка браузера по умолчанию](#Установка_браузера_по_умолчанию)
     *   [2.2 perl-file-mimeinfo](#perl-file-mimeinfo)
-*   [3 Аналоги](#.D0.90.D0.BD.D0.B0.D0.BB.D0.BE.D0.B3.D0.B8)
-    *   [3.1 замена xdg-open](#.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_xdg-open)
+*   [3 Аналоги](#Аналоги)
+    *   [3.1 замена xdg-open](#замена_xdg-open)
     *   [3.2 mailcap](#mailcap)
     *   [3.3 mimetype](#mimetype)
-    *   [3.4 Переменные окружения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [3.4 Переменные окружения](#Переменные_окружения)
 
 ## Установка
 
@@ -142,7 +146,7 @@ $ mimetype -d file.extension
 
 выведет описание этого mime-типа.
 
-Если утилите *xdg-open* не удается обнаружить [среду рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)"), то она будет выполнять комманду `file -i`, использующую для определения mime-типа только содержимое файла, в результате чего некоторые типы файлов определяются неправильно. При наличии *mimetype* *xdg-open* будет использовать его для лучшего результата определения, т.к. *mimetype* использует информацию [общей базе данных](http://standards.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.18.html) mime info.
+Если утилите *xdg-open* не удается обнаружить [среду рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)"), то она будет выполнять комманду `file -i`, использующую для определения mime-типа только содержимое файла, в результате чего некоторые типы файлов определяются неправильно. При наличии *mimetype* *xdg-open* будет использовать его для лучшего результата определения, т.к. *mimetype* использует информацию [общей базе данных](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html) mime info.
 
 ### Переменные окружения
 

@@ -115,11 +115,11 @@ This can be solved by flashing the bios to a version >=1.13\. Look here for Leno
 
 A guide how to make a bootable BIOS key drive can be found here: [[3]](http://positon.org/lenovo-thinkpad-bios-update-with-linux-and-usb)
 
-And some fairly old help from lenovo here: [[4]](https://www.thinkwiki.org/wiki/BIOS_Upgrade#Using_grub4dos_.28also_for_Linux.29)
+And some fairly old help from Lenovo here: [[4]](https://www.thinkwiki.org/wiki/BIOS_Upgrade#Using_grub4dos_.28also_for_Linux.29)
 
 If the function keys fail to wake after suspend, ensure you have a kernel version >=3.15.
 
-If you build your own kernels, make sure to either enable TPM (Trusted Platform Module) drivers or disable the Security Chip in the BIOS.
+If you build your own kernels, make sure to either enable [TPM](/index.php/Trusted_Platform_Module "Trusted Platform Module") (Trusted Platform Module) drivers or disable the Security Chip in the BIOS.
 
 ### Keyboard
 

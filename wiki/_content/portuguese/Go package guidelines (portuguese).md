@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Go package guidelines](/index.php/Go_package_guidelines "Go package guidelines"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Go_package_guidelines&diff=0&oldid=581436) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Go package guidelines](/index.php/Go_package_guidelines "Go package guidelines"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Go_package_guidelines&diff=0&oldid=587707) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -72,8 +72,8 @@ A maioria dos Makefiles escritos para aplicativos go não respeitam o `LDFLAGS` 
 Para [reproducible builds](https://reproducible-builds.org/), é importante que os binários sejam removidos do caminho de compilação usando os sinalizadores `-trimpath`.
 
 ```
-# LDFLAGS na variável de ambiente GOFLAGS.
-export GOFLAGS="-gcflags=all=-trimpath=${PWD} -asmflags=all=-trimpath=${PWD} -ldflags=-extldflags=-zrelro -ldflags=-extldflags=-znow"
+export CGO_LDFLAGS="${LDFLAGS}"
+export GOFLAGS="-trimpath"
 
 # ou, alternativamente, use LDFLAGS definido no go build.
 go build \

@@ -361,7 +361,7 @@ $ xrandr --dpi 144
 
 **Note:** Applications that comply with the setting will not change immediately. You have to start them anew.
 
-See [Execute commands after X start](/index.php/Execute_commands_after_X_start "Execute commands after X start") to make it permanent.
+To make it permanent, see [Autostarting#On Xorg startup](/index.php/Autostarting#On_Xorg_startup "Autostarting").
 
 ##### Proprietary NVIDIA driver
 

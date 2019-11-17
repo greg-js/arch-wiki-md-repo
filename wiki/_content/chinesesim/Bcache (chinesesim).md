@@ -1,13 +1,15 @@
-[Bcache](https://bcache.evilpiepirate.org/) (block cache) allows one to use an SSD as a read/write cache (in writeback mode) or read cache (writethrough or writearound) for another blockdevice (generally a rotating HDD or array). This article will show how to install arch using Bcache as the root partition. For an intro to bcache itself, see [the bcache homepage](http://bcache.evilpiepirate.org/). Be sure to read and reference [the bcache manual](https://evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt). Bcache is in the mainline kernel since 3.10\. The kernel on the arch install disk includes the bcache module since 2013.08.01.
+**翻译状态：** 本文是英文页面 [Bcache](/index.php/Bcache "Bcache") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-05-05，点击[这里](https://wiki.archlinux.org/index.php?title=Bcache&diff=0&oldid=572594)可以查看翻译后英文页面的改动。
 
-An alternative to Bcache is Facebook's [Flashcache](/index.php/Flashcache "Flashcache") and its offspring [EnhanceIO](/index.php/EnhanceIO "EnhanceIO").
+[Bcache](https://bcache.evilpiepirate.org/) (block 缓存) 允许使用固态硬盘作为读写缓存（writeback模式）或者读缓存（writethrough 或者 writearound模式）来为另一个 block 设备（通常是机械硬盘或硬盘阵列）加速。这篇文章会展示如何把 Bcache 作为根分区安装 Archlinux。如果要看对于 bcache 本身的介绍，请浏览 [the bcache homepage](http://bcache.evilpiepirate.org/)。请一定要阅读并参考 [the bcache manual](https://evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt)。Bcache 从 Linux 内核 3.10 版本开始就已经并入 mainline，而 Archlinux 的安装盘自从 2013.08.01 版本开始就支持 bcache。
 
-Bcache needs the backing device to be formatted as a bcache block device. In most cases, [blocks to-bcache](https://github.com/g2p/blocks) can do an in-place conversion.
+类似 Bcache 的还有 Facebook 的 [Flashcache](/index.php/Flashcache "Flashcache") 和它衍生的 [EnhanceIO](/index.php/EnhanceIO "EnhanceIO")。
+
+Bcache 需要把后端设备格式化成 bcache block 设备。多数情况下，[blocks to-bcache](https://github.com/g2p/blocks) 可以用来做转换。
 
 **Warning:**
 
-*   Be sure you back up any important data first.
-*   The bcache-dev branch is under heavy development. The on-disk format has undergone changes in 3.18 which are not backwards compatible with previous formats[[1]](http://www.spinics.net/lists/linux-bcache/msg02721.html). Note: This only applies to users who compile-in bcache-dev. The version built-in to the upstream Linux kernel is unaffected[[2]](http://www.spinics.net/lists/linux-bcache/msg02724.html).
+*   一定要先备份数据！
+*   bcache-dev 分支正处于非常不成熟的开发阶段。The on-disk format has undergone changes in 3.18 which are not backwards compatible with previous formats[[1]](http://www.spinics.net/lists/linux-bcache/msg02721.html). Note: This only applies to users who compile-in bcache-dev. The version built-in to the upstream Linux kernel is unaffected[[2]](http://www.spinics.net/lists/linux-bcache/msg02724.html).
 *   Bcache and [btrfs](/index.php/Btrfs "Btrfs") could leave you with a corrupted filesystem. Please visit [this post](https://www.hdevalence.ca/blog/2013-09-21-notes-on-my-archlinux-install) for more information. Btrfs wiki reports that it was fixed in kernels 3.19+ [[3]](https://btrfs.wiki.kernel.org/index.php/Gotchas#Historical_references).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -155,15 +157,15 @@ HOOKS=(... block ... **bcache** ... filesystems ...)
 
 ## 将系统安装到一个 bcache 设备
 
-1\. Boot on the install disk (2013.08.01 minimum).
+1\. 从 Archlinux 的USB安装盘启动 (至少是 2013.08.01 版本的)。
 
-2\. Install the [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from [AUR](/index.php/AUR "AUR").
+2\. 从 [AUR](/index.php/AUR "AUR") 安装 [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/)。
 
-3\. Partition your hdd
+3\. 对硬盘进行分区
 
-**Note:** While it may be true that Grub2 does not offer support for bcache as noted below, it does, however, fully support UEFI. It follows then, that so long as the necessary modules for the linux kernel to properly handle your boot device are either compiled into the kernel or are included in an initramfs, and you can include these files on it, the separate boot partition described below may be omitted in favor of the FAT EFI system partition. See [GRUB](/index.php/GRUB "GRUB") and/or [UEFI](/index.php/UEFI "UEFI") for more.
+**Note:** 虽然 Grub2 理论上不提供对 bcache 的支持，但是因为它完整支持 UEFI ，所以是有办法启动系统的。只要用来处理 boot 设备的模块被正确编译进内核或者包含在 initramfs 里面，那么就没必要按照下面的例子单独分区一个 boot 分区（第二行，名字是 arch_boot 的）。详情参考 [GRUB](/index.php/GRUB "GRUB") 和 [UEFI](/index.php/UEFI "UEFI")。
 
-grub cannot handle bcache, so you will need at least 2 partitions (boot and one for the bcache backing device). If you are doing UEFI, you will need an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) as well. E.g.:
+grub 无法处理 bcache, 所以你需要至少两个分区 (一个 boot 和一个作为 bcache 后端设备的分区). 如果你用的是 UEFI, 则额外需要 [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP)。比如:
 
 ```
      1            2048           22527   10.0 MiB    EF00  EFI System
@@ -172,9 +174,9 @@ grub cannot handle bcache, so you will need at least 2 partitions (boot and one 
 
 ```
 
-**Note:** This example has no swapfile/partition. For a swap partition on the cache, use LVM in step 7\. For a swap partition outside the cache, be sure to make a swap partition now.
+**Note:** 例子里是没有 swap 文件或分区的，如果要让 swap 也受到 cache 设备缓存，使用步骤7里面的 LVM 来实现。如果不需要 swap 被缓存，请在这一步就创建 swap 分区。
 
-4\. Configure your HDD as a bcache backing device.
+4\. 配置你的机械硬盘作为 bcache 后端设备。
 
 ```
 # make-bcache -B /dev/sda3
@@ -183,30 +185,25 @@ grub cannot handle bcache, so you will need at least 2 partitions (boot and one 
 
 **Note:**
 
-*   When preparing any boot disk it is important to know the ramifications of any decision you may make. Please review and review again the documentation for your chosen boot-loader/-manager and consider seriously how it might relate to bcache.
-*   If all associated disks are partitioned at once as below bcache will automatically attach "-B backing stores" to the "-C ssd cache" and step 5 is unnecessary.
+*   在配置启动盘的时候，一定要明白自己在做什么——多看几次你选择的 boot-loader/boot-manager 的文档，想想它和 bcache 一起用会不会有兼容性问题。
+*   如果所有相关的设备都通过下面这样的命令连接起来的话，bcache 会自动把缓存设备连接到后端设备，步骤5就可以跳过。`# make-bcache -B /dev/sd? /dev/sd? -C /dev/sd?`
 
-```
-# make-bcache -B /dev/sd? /dev/sd? -C /dev/sd?
+现在你有了一个 `/dev/bcache0`。
 
-```
+5\. 配置固态硬盘。
 
-You now have a `/dev/bcache0` device.
-
-5\. Configure your SSD
-
-Format the SSD as a caching device and link it to the backing device
+下面这个例子是把整个固态硬盘（`/dev/sdb`）作为缓存设备格式化，并链接到后端设备：
 
 ```
 # make-bcache -C /dev/sdb
 # echo /dev/sdb > /sys/fs/bcache/register 
-# echo *UUID__from_previous_command* > /sys/block/bcache0/bcache/attach
+# echo *前面的命令输出的UUID* > /sys/block/bcache0/bcache/attach
 
 ```
 
-**Note:** If the UUID is forgotten, it can be found with `ls /sys/fs/bcache/` after the cache device has been registered.
+**Note:** 如果忘了 UUID 是什么，可以用 `ls /sys/fs/bcache/` 命令找到（如果缓存设备成功链接），最长的那一串东西就是 UUID。
 
-6\. Format the bcache device. Use LVM or btrfs subvolumes if you want to divide up the `/dev/bcache0` device how you like (ex for separate `/`, `/home`, `/var`, etc):
+6\. 格式化 bcache 设备。如果你要在 `/dev/bcache0` 里面分区的话，用 LVM 或者 btrfs 的 子卷来实现，比如下面的例子用 btrfs 的子卷功能分了 `/` 和 `/home` 两个区：
 
 ```
 # mkfs.btrfs /dev/bcache0
@@ -217,51 +214,51 @@ Format the SSD as a caching device and link it to the backing device
 
 ```
 
-You can even setup LUKS on it if you want using e.g. cryptsetup. Referencing the bcache device in the 'cryptdevice' kernel option will work fine, for instance.
+你甚至可以配置 LUKS 如果你想要用类似 cryptsetup 的东西。把内核 option 'cryptdevice' 指向 bcache 设备是没有问题的。
 
-7\. Prepare the installation mount point:
+7\. 配置安装挂载点（这里用的是步骤3的分区方案和步骤6的btrfs子卷分区方案）：
 
 ```
-# mkfs.ext4 /dev/sda2
-# mkfs.msdos /dev/sda1 (if your ESP is at least 500MB, use mkfs.vfat to make a FAT32 partition instead)
+# mkfs.ext4 /dev/sda2 （arch_boot 分区）
+# mkfs.msdos /dev/sda1 (如果你的 ESP 分区有至少 500MB，请用 mkfs.vfat 命令来创建一个 FAT32 分区)
 # pacman -S arch-install-scripts
-# mount /dev/bcache0 -o subvol=root,compress=lzo /mnt/
+# mount /dev/bcache0 -o subvol=root,compress=lzo /mnt/ （挂载btrfs的root子卷作为根目录）
 # mkdir /mnt/boot /mnt/home
-# mount /dev/bcache0 -o subvol=home,compress=lzo /mnt/home
+# mount /dev/bcache0 -o subvol=home,compress=lzo /mnt/home （挂载btrfs的home子卷作为home目录）
 # mount /dev/sda2 /mnt/boot
 # mkdir /boot/efi
 # mount /dev/sda1 /mnt/boot/efi/
 
 ```
 
-8\. Install the system as per the [Installation Guide](/index.php/Installation_guide#Connect_to_the_internet "Installation guide") as normal except this:
+8\. 按照 [Installation Guide](/index.php/Installation_guide#Connect_to_the_internet "Installation guide") 的步骤安装系统，除了下面这个：
 
-Before you edit `/etc/mkinitcpio.conf` and run `mkinitcpio -p linux`:
+在修改 `/etc/mkinitcpio.conf` 并运行 `mkinitcpio -p linux` 之前：
 
-*   install [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from the [AUR](/index.php/AUR "AUR") on the new system.
-*   Edit `/etc/mkinitcpio.conf`:
-    *   add the "bcache" module
-    *   add the "bcache" hook between block and filesystem hooks
+*   在新系统上，从 [AUR](/index.php/AUR "AUR") 安装 [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/)。
+*   修改 `/etc/mkinitcpio.conf`:
+    *   添加 bcache 到 MODULES=() 里面
+    *   添加 bcache 到 HOOKS=() 的 block 和 filesystems 之间
 
-**Note:** Should you want to open the backing device from the installation media for any reason after a reboot you must register it manually. Make sure the bcache module is loaded and then echo the relevant devices to /sys/bcache/register. You should see whether this worked or not by using dmesg.
+**Note:** 因为安装介质不会储存任何更改，所以如果你想在重启之后再在安装介质里打开bcache的后端设备，你需要手动注册它。首先确认 bcache 模块已经加载，然后把相关的设备都 echo 到 `/sys/bcache/register`。可以通过 `dmesg` 来检查是否已经成功注册。
 
 ## 从安装盘访问bcache分区
 
-This is how to access a bcache partition from the install disk that was present before the install disk was booted. Boot the install disk and install [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) from the AUR, just as in the previous section. Then, add the module to the kernel:
+要访问一个在安装盘启动之前就已经存在的 bcache 分区，首先从 AUR 安装 [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/)，然后加载 bcache 模块：
 
 ```
 # modprobe bcache
 
 ```
 
-Your device will not appear immediately at `/dev/bcache*`. To force the kernel to find it, tell it to reread the partition table:
+然后强制内核重新加载分区表：
 
 ```
 # partprobe
 
 ```
 
-Now, `/dev/bcache*` should be present, and you can carry on mounting, reformatting, etc. from here.
+现在 `/dev/bcache*` 应该会存在了，挂载、格式化之类的操作也可以进行了。
 
 ## 配置
 
@@ -314,9 +311,9 @@ For ext3/4, that is:
 
 #### 缩容举例
 
-In this example, I shrink the filesystem by 4GB.
+这里举例的是缩小4G容量。
 
-1\. Disable writeback cache (switch to writethrough cache) and wait for the disk to flush.
+1\. 切换缓存模式，从 writeback 改成 writethrough，并等待缓存写入后端设备。
 
 ```
 # echo writethrough > /sys/block/bcache0/bcache/cache_mode
@@ -324,34 +321,32 @@ $ watch cat /sys/block/bcache0/bcache/state
 
 ```
 
-wait until state reports "clean". This might take a while.
+请等到第二个命令输出 "clean"。
 
 ###### 强制把缓存写入后端设备
-
-I suggest to use
 
 ```
  # echo 0 > /sys/block/bcache0/bcache/writeback_percent
 
 ```
 
-This will flush the dirty data of the cache to the backing device in less a minute.
+这会把缓存比例改成0，从而强制把缓存的内容写入到后端设备。
 
-Revert back the value after with
+然后把缓存比例改回来：
 
 ```
  # echo 10 > /sys/block/bcache0/bcache/writeback_percent
 
 ```
 
-2\. Shrink the mounted filesystem by something more than the desired amount, to ensure we do not accidentally clip it later. For btrfs, that is:
+2\. 为了避免之后缩小分区的时候不会破坏文件系统，请把文件系统缩小比想要缩小的大小更多的量。比如例子里要把分区缩小4G，那就要把文件系统缩小5G以避免破坏了文件系统。如果用的是 btrfs，用下面的命令来缩小文件系统：
 
 ```
 # btrfs filesystem resize -5G /
 
 ```
 
-For ext3/4 you can use *resize2fs*, but only if the partition is unmounted
+对于 ext3/4，用的命令是 *resize2fs*，但是需要目标文件系统没有处于挂载：
 
 ```
 $ df -h /home
@@ -361,32 +356,32 @@ $ df -h /home
 
 ```
 
-3\. Reboot to a LiveCD/USB drive (does not need to support bcache) and use fdisk, gdisk, parted, or your other favorite tool to delete the backing partition and recreate it with the same start and a total size 4G smaller.
+3\. 重启到 LiveCD/USB盘 (并不需要支持 bcache) 并使用 fdisk、gdisk、parted或者其他你用得顺手的工具去把后端分区删掉并重新创建一个 start 位置一样的、但是总大小少4G的分区。
 
-**Warning:** Do not use a tool like GParted that might perform filesystem operations! It will not recognize the bcache partition and might overwrite part of it!!
+**Warning:** 不要使用类似 Gparted 的工具，因为它们会进行文件系统操作！它们可能识别不出来 bcache 分区并破坏它！
 
-4\. Reboot to your normal install. Your filesystem will be currently mounted. That is fine. Issue the command to resize the partition to its maximum (that is, the size we shrunk the actual partition to in step 3). For btrfs, that is:
+4\. 重启到原来的系统，现在你的文件系统会挂载好，并且分区已经缩小了4G。现在要做的是把文件系统扩展到分区的大小。对于 btrfs，命令是：
 
 ```
 # btrfs filesystem resize max /
 
 ```
 
-For ext3/4, that is:
+对于 ext3/4：
 
 ```
 # resize2fs /dev/bcache0
 
 ```
 
-5\. Re-enable writeback cache if you want that enabled:
+5\. 把缓存模式重新改成 writeback （如果你想用 writeback 的话）：
 
 ```
 # echo writeback > /sys/block/bcache0/bcache/cache_mode
 
 ```
 
-**Note:** If you are very careful you can shrink the filesystem to the exact size in step 2 and avoid step 4\. Be careful, though, many partition tools do not do exactly what you want, but instead adjust the requested partition start/end points to end on sector boundaries. This may be difficult to calculate ahead of time
+**Note:** 如果你够小心，第二步里面文件系统可以刚好缩小4G而不预留更多的空间，但是很多分区工具并不是按照字面意思来工作的，它们会把分区的起始和终止位置对齐到底层硬盘的 sector 边界，所以就会出现意料之外的文件系统破坏事故。小心为妙。
 
 ## 疑难解答
 

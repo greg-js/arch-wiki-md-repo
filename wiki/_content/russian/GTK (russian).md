@@ -180,7 +180,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 ## Средства настройки
 
-Большинство крупных [окружений рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") предоставляют инструменты для настройки тем GTK+, иконок, шрифта и размера шрифта, и управляют этими настройками с помощью [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
+Большинство крупных [окружений рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") предоставляют инструменты для настройки тем GTK+, иконок, шрифта и размера шрифта, и управляют этими настройками с помощью [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html):
 
 *   Если вы используете [Cinnamon](/index.php/Cinnamon "Cinnamon"), используйте Themes tool (*cinnamon-settings themes*): идите в *Параметры > Параметры системы > Оформление*.
 *   Если вы используете [Enlightenment](/index.php/Enlightenment "Enlightenment"): идите в *Settings > All > Look > Application Theme*.
@@ -449,7 +449,7 @@ find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.
 
 ```
 
-*   Используйте настройки демона (это в большинстве окружений рабочего стола). Вариант desktop-agnostic использует [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) доступный в [AUR](/index.php/AUR "AUR") [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
+*   Используйте настройки демона (это в большинстве окружений рабочего стола). Вариант desktop-agnostic использует [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html) доступный в [AUR](/index.php/AUR "AUR") [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
 
 ### Клиентские декорации
 

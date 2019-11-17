@@ -1,16 +1,26 @@
 [FreeIPA](https://www.freeipa.org/) is an open-source Identity, Policy and Audit (IPA) suite, sponsored by RedHat, which provides services similar to Microsoft's Active Directory
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Configure as IPA client](#Configure_as_IPA_client)
-    *   [1.1 SSH integration](#SSH_integration)
-        *   [1.1.1 authorized_keys](#authorized_keys)
-        *   [1.1.2 known_hosts](#known_hosts)
-    *   [1.2 See also](#See_also)
+    *   [1.1 Configure SSSD and Kerberos](#Configure_SSSD_and_Kerberos)
+    *   [1.2 Enroll the client](#Enroll_the_client)
+    *   [1.3 SSH integration](#SSH_integration)
+        *   [1.3.1 authorized_keys](#authorized_keys)
+        *   [1.3.2 known_hosts](#known_hosts)
+    *   [1.4 See also](#See_also)
 
 ## Configure as IPA client
 
 Make sure your clocks are synchronized. Kerberos will not work otherwise. [NTP](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") is recommended.
+
+Instead of using `ipa-client-install` script for automated client configuration and enrollment, the following sections describe a manual procedure.
+
+### Configure SSSD and Kerberos
 
 Follow the LDAP auth instructions to [setup SSSD](/index.php/LDAP_authentication#Online_and_Offline_Authentication_with_SSSD "LDAP authentication"). Use a SSSD configuration similar to the following, substituting the requisite fields:
 
@@ -67,7 +77,9 @@ Create an `/etc/krb5.conf` file for your domain:
         admin_server = FILE:/var/log/kadmin.log
 ```
 
-Add the client to the IPA server ([From Fedora documentation](https://docs.fedoraproject.org/en-US/Fedora/15/html/FreeIPA_Guide/linux-manual.html)):
+### Enroll the client
+
+On FreeIPA server, add the client to the IPA server ([From Fedora documentation](https://docs.fedoraproject.org/en-US/Fedora/15/html/FreeIPA_Guide/linux-manual.html)):
 
 1.  Login and request and admin session `kinit admin`
 2.  Create a host entry `ipa host-add --force --ip-address=192.168.166.31 client1.example.com`
@@ -114,7 +126,7 @@ You can configure SSH to fetch hosts public key information from their directory
 
 ```
  GlobalKnownHostsFile /var/lib/sss/pubconf/known_hosts
- ProxyCommand /usr/bin/sss_ssh_knownhostsproxy -p %p %h
+ ProxyCommand /usr/bin/sss_ssh_knownhostsproxy -p %p %h
 
 ```
 

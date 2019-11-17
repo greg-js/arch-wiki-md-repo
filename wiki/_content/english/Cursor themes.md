@@ -105,7 +105,7 @@ Re-login for the changes to take effect.
 
 ### Desktop environments
 
-[Desktop environments](/index.php/Desktop_environments "Desktop environments") use the [XSETTINGS protocol](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html), typically implemented through a settings daemon. While this allows to change the cursor on-the-fly, the applied theme may be inconsistent across applications. See [#XDG specification](#XDG_specification) to change the cursor theme manually.
+[Desktop environments](/index.php/Desktop_environments "Desktop environments") use the [XSETTINGS protocol](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html), typically implemented through a settings daemon. While this allows to change the cursor on-the-fly, the applied theme may be inconsistent across applications. See [#XDG specification](#XDG_specification) to change the cursor theme manually.
 
 #### GNOME
 

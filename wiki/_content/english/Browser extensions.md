@@ -28,7 +28,7 @@ Firefox extensions can be installed from [addons.mozilla.org](https://addons.moz
 
 Chrome extensions can be installed from the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) and managed at `chrome://extensions/`.
 
-Additionally a few Firefox extensions can be found in the [the official repositories](https://www.archlinux.org/packages/?q=firefox-extension) and some more in the [AUR](https://aur.archlinux.org/packages/?K=firefox-extension).
+Additionally a few Firefox extensions can be found in the [official repositories](https://www.archlinux.org/packages/?q=firefox%20extension) and some more in the [AUR](https://aur.archlinux.org/packages/?K=firefox-extension).
 
 To simplify maintenance this article does not link store pages or [AUR](/index.php/AUR "AUR") packages of extensions. Readers are advised to obtain extensions through the linked official websites if no package is available.
 

@@ -212,6 +212,17 @@ Webcam: not tested
 Card reader: not tested
 Fingerprint scanner: not tested
 Keyboard backlit: works | Secure boot works with GRUB. FN button light is constantly on. FN + F11 (wifi) can't be set (the other "special" buttons are fine). Microphone quality is average. The audio quality is decent. No wifi/eth cable connectivity issues. The touchpad may lag after hibernation. -- |
+| HP ProBook 440 G6 | 2019.03 | Intel Core i7-8265U, UHD Graphics 620 (Whiskey Lake): works out of the box | Intel sound card: *snd-hda-intel* | Realtek RTL8111HSH-CG 10/100/1000 GbE NIC
+Driver: *r8169* | Intel Wireless-AC 9560
+Driver: *iwlwifi* | Works. | ACPI: works
+Suspend to RAM: works
+Suspend to Disk: not tested
+Battery: works
+Display dimming: works
+CPU frequency scaling: not tested | Not present | Hot keys: everything except brightness controlls (actually mute/unmute mic.) works
+Webcam: works
+Fingerprint scanner: Validity VFS7552; not working
+Keyboard backlit: works | The audio quality is decent. No wifi/eth cable connectivity issues. The touchpad doesn't work after suspend ([reload i2c_hid kernel module to fix](https://superuser.com/questions/1446247/lazy-touchpad-on-ubuntu-after-suspend-synps-2-synaptics-touchpad-disappears-f/1449190)) |
 | HP EliteBook 830 G5 | 2018.11 | Intel Core i5-8250u, Intel UHD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | Realtek RTL8111HSH-CG 10/100/1000 GbE NIC | Intel 9560\. Driver: *iwlwifi* | Yes | ACPI: works
 Suspend to RAM: works
 Suspend to Disk: work
@@ -262,7 +273,7 @@ Keyboard backlight: Working | For WiFi you need to download an unofficial versio
 
 ### Fan noise
 
-Since Linux 4.1x laptop's fan may not spin down to a lower rev step (and noise) effectively appearing stuck at higher spinning speed with no apparent temperature reason. Possible workarounds are a quick suspend to ram or power off for more than 10 minutes. Related: [[3]](https://bbs.archlinux.org/viewtopic.php?id=192255) [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=153281)
+Since Linux 4.1x laptop's fan may not spin down to a lower rev step (and noise) effectively appearing stuck at higher spinning speed with no apparent temperature reason. Possible workarounds are loading a 3D application, a quick suspend to ram or power off for more than 10 minutes. If those tricks don't work, the max CPU frequency can be set to a lower one. See [CPU frequency scaling#Setting maximum and minimum frequencies](/index.php/CPU_frequency_scaling#Setting_maximum_and_minimum_frequencies "CPU frequency scaling"). Related: [[3]](https://bbs.archlinux.org/viewtopic.php?id=192255) [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=153281)
 
 ### HP Compaq 8510w
 

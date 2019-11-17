@@ -289,9 +289,8 @@ $ vncviewer -passwd <(echo MYPASSWORD | vncpasswd -f)
 
 *   [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc)
 *   [krdc](https://www.archlinux.org/packages/?name=krdc)
-*   [rdesktop](https://www.archlinux.org/packages/?name=rdesktop)
 *   [vinagre](https://www.archlinux.org/packages/?name=vinagre)
-*   [remmina](https://www.archlinux.org/packages/?name=remmina)
+*   [remmina](/index.php/Remmina "Remmina")
 *   [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer)
 *   [vncviewer-jar](https://aur.archlinux.org/packages/vncviewer-jar/)
 

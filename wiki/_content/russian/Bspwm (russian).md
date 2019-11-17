@@ -6,7 +6,7 @@ Related articles
 *   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер")
 *   [Сравнение тайловых оконных менеджеров](/index.php/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%82%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D0%BE%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%BE%D0%B2 "Сравнение тайловых оконных менеджеров")
 
-*bspwm* тайловый оконный менеджер представляющий окна как слои двоичного дерева. Также поддерживает [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) и несколько мониторов. Настраивается и управляется с помощью сообщений.
+*bspwm* тайловый оконный менеджер представляющий окна как слои двоичного дерева. Также поддерживает [EWMH](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html) и несколько мониторов. Настраивается и управляется с помощью сообщений.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

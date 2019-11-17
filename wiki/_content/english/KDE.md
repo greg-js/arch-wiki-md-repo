@@ -69,9 +69,10 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
         *   [5.1.1 KDE/Openbox session](#KDE/Openbox_session)
         *   [5.1.2 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_/_multiple_monitors)
-    *   [5.3 Configuring ICC profiles](#Configuring_ICC_profiles)
-    *   [5.4 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_(Windows_key))
-    *   [5.5 Disable bookmarks showing in application menu](#Disable_bookmarks_showing_in_application_menu)
+    *   [5.3 KWin-lowlatency](#KWin-lowlatency)
+    *   [5.4 Configuring ICC profiles](#Configuring_ICC_profiles)
+    *   [5.5 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_(Windows_key))
+    *   [5.6 Disable bookmarks showing in application menu](#Disable_bookmarks_showing_in_application_menu)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Fonts](#Fonts)
         *   [6.1.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
@@ -594,6 +595,10 @@ When replacing Kwin with a window manager which does not provide a Compositor (s
 ### Configuring monitor resolution / multiple monitors
 
 To enable display resolution management and multiple monitors in Plasma, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This provides additional options to *System Settings > Display and Monitor*.
+
+### KWin-lowlatency
+
+[KWin-lowlatency](https://github.com/tildearrow/kwin-lowlatency) is a attempt to reduce latency and stuttering in the popular KWin compositor and is available as [kwin-lowlatency](https://aur.archlinux.org/packages/kwin-lowlatency/).
 
 ### Configuring ICC profiles
 

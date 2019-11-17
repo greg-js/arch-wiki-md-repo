@@ -189,7 +189,7 @@ See [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_i
 
 *   You can display extra debugging information about your hardware by following [udev#Debug output](/index.php/Udev#Debug_output "Udev").
 *   Ensure that [Microcode](/index.php/Microcode "Microcode") updates are applied on your system.
-*   Test your device's RAM with [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B). Unstable RAM may lead to some extremely odd issues, ranging from random crashes to data corruption. [memtester](https://www.archlinux.org/packages/?name=memtester) performs similar tests, but it can't test the whole RAM.
+*   To test the RAM, see [Stress testing#Stressing Memory](/index.php/Stress_testing#Stressing_Memory "Stress testing").
 
 ## Kernel panics
 
@@ -213,13 +213,13 @@ It is possible to make a best guess as to what subsystem or module is causing th
 ```
 **kernel: BUG: unable to handle kernel NULL pointer dereference at (null)** [1]
 **kernel: IP: fw_core_init+0x18/0x1000 [firewire_core]** [2]
-kernel: PGD 718d00067 
-kernel: P4D 718d00067 
-kernel: PUD 7b3611067 
-kernel: PMD 0 
-kernel: 
+kernel: PGD 718d00067
+kernel: P4D 718d00067
+kernel: PUD 7b3611067
+kernel: PMD 0
+kernel:
 kernel: Oops: 0002 [#1] PREEMPT SMP
-**kernel: Modules linked in: firewire_core(+) crc_itu_t cfg80211 rfkill ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG nf_conntrack_ipv4 ...** [3] 
+**kernel: Modules linked in: firewire_core(+) crc_itu_t cfg80211 rfkill ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG nf_conntrack_ipv4 ...** [3]
 kernel: CPU: 6 PID: 1438 Comm: modprobe Tainted: P           O    4.13.3-1-ARCH #1
 kernel: Hardware name: Gigabyte Technology Co., Ltd. H97-D3H/H97-D3H-CF, BIOS F5 06/26/2014
 kernel: task: ffff9c667abd9e00 task.stack: ffffb53b8db34000
@@ -249,7 +249,7 @@ kernel: RDX: 000000000041aada RSI: 000000000001a738 RDI: 00007f301e7eb010
 kernel: RBP: 0000000000c8a520 R08: 0000000000000001 R09: 0000000000000085
 kernel: R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000c79208
 kernel: R13: 0000000000c8b4d8 R14: 00007f301e7fffff R15: 0000000000000030
-kernel: Code: <c7> 04 25 00 00 00 00 01 00 00 00 bb f4 ff ff ff e8 73 43 9c ec 48 
+kernel: Code: <c7> 04 25 00 00 00 00 01 00 00 00 bb f4 ff ff ff e8 73 43 9c ec 48
 kernel: RIP: fw_core_init+0x18/0x1000 [firewire_core] RSP: ffffb53b8db37c68
 kernel: CR2: 0000000000000000
 kernel: ---[ end trace 71f4306ea1238f17 ]---

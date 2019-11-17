@@ -107,6 +107,7 @@ install CD version
 | Lenovo ThinkPad L520 | 2018.09.01-x86_64 | Yes | Yes | Yes | Yes | Not tested | Not tested | Not tested | Not tested |
 | Lenovo ThinkPad L530 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
 | Lenovo ThinkPad L560 | Yes | Yes | Yes | Yes | Yes | Not tested | Not tested | NA | Trackpoint |
+| Lenovo ThinkPad L590 | No | Not tested | Not tested | Not tested | Not tested | Not tested | Not tested | NA | Kernels >= 5 won't boot at all and freezes at different stages of startup. |
 
 #### A series
 
@@ -252,6 +253,7 @@ install CD version
 | [Lenovo IdeaPad 720s](/index.php/Lenovo_IdeaPad_720s "Lenovo IdeaPad 720s") | 2018.03.01 | Yes | Yes | NA* | Yes | Yes | Yes | NA | Fingerprint reader not working | *requires USB or USB C dongle |
 | [Lenovo IdeaPad 720s (Ryzen)](/index.php/Lenovo_IdeaPad_720s_(Ryzen) "Lenovo IdeaPad 720s (Ryzen)") | 2018.02.01 | Not tested | Not tested | Yes* | No | Not tested | Not tested | NA | Fingerprint reader not tested but most likely not working | *requires USB or USB C dongle |
 | Lenovo Ideapad 320 | 2018.03.01 | Yes | Yes | Yes | Yes | Yes | Not tested | NA | To stop constant annoying messages by AMD-Vi, use 'iommu=soft' & 'amd_iommu=off' in kernel arguments |
+| Lenovo Ideapad 330S-14IKB | 2019.10.01 | Yes | Yes | Yes | Yes | Not tested | NA | NA | `Firmware Error (ACPI): Could not resolve [^^^GFX0.AFN2], AE_NOT_FOUND (20181213/psargs-503)` is raised every few seconds, and can only be turned off by disabling the ACPI (`acpi=off`) or by connecting the laptop to a charger. Tried with both the stock BIOS and the latest update (7SCN34WW) to no avail. |
 | Lenovo Ideapad N24 | 2018.04.01 | Yes | Yes | NA | Yes | Not tested | Not tested | NA | Touchscreen |
 
 ###### Battery Conservation Mode on IdeaPad laptops

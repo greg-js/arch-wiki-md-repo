@@ -2,7 +2,11 @@
 
 图形显示服务器有一个“光标主题”以辅助浏览和操作。显示管理器提供了光标主题，此外还有很多主题可以自行安装和使用。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 软件包](#软件包)
@@ -81,7 +85,7 @@ Inherits=*theme-name*
 
 ### 桌面环境
 
-[桌面环境](/index.php/Desktop_environments "Desktop environments") 使用 [XSETTINGS 协议](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html)，通常有一个守护进程。光标的修改可以立即生效，但是有些程序中可能显示的不一致。
+[桌面环境](/index.php/Desktop_environments "Desktop environments") 使用 [XSETTINGS 协议](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html)，通常有一个守护进程。光标的修改可以立即生效，但是有些程序中可能显示的不一致。
 
 #### GNOME
 
@@ -111,7 +115,7 @@ $ xrdb ~/.Xresources &
 此外可以在 `~/.Xresources` 中设置需要的大小:
 
 ```
-Xcursor.size:  16       !  32, 48 or 64 may also be good values
+Xcursor.size:  16       !  32, 48 or 64 may also be good values
 
 ```
 

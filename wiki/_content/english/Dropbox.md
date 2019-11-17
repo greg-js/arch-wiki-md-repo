@@ -65,7 +65,7 @@ Related articles
 | Caja integration | [caja-dropbox](https://aur.archlinux.org/packages/caja-dropbox/) |
 | [KDE](/index.php/KDE "KDE") client | [kfilebox](https://aur.archlinux.org/packages/kfilebox/) |
 
-Note that in order to access the GUI and the settings, the only way is via a tray icon. You need an X panel with systray or a standalone systray application for that.
+Note that in order to access the GUI and the settings, the only way is via a tray icon. You need an X panel with a system tray or a standalone [system tray application](/index.php/List_of_applications#System_tray "List of applications") for that.
 
 ### Prevent automatic updates
 

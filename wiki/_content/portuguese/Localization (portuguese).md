@@ -161,5 +161,5 @@ Para desabilitar o carregamento de módulo de método de entrada no QT, [exporte
 *   [Wiki do Gentoo](https://wiki.gentoo.org/wiki/Localization "gentoo:Localization")
 *   [Wiki do Fedora](https://fedoraproject.org/wiki/I18N/InputMethods "fedora:I18N/InputMethods")
 *   [Free Standards Group OpenI18N](http://www.openi18n.org/)
-*   [Especificação XSETTINGS 0.5](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html)
+*   [Especificação XSETTINGS](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html)
 *   [Executando e depurando aplicativos GTK+](https://developer.gnome.org/gtk3/unstable/gtk-running.html)

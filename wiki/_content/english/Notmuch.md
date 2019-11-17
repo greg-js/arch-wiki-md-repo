@@ -205,10 +205,12 @@ macro index \\\\ "<vfolder-from-query>" "Search mailbox"
 
 ## Permanently delete emails
 
-One choice is to maintain a tag of emails you wish to remove from your disk, for example, "killed". Then, you can run this to delete them permanently:
+One choice is to maintain a tag of emails you wish to remove from your disk, for example, "killed". Then, you can combine the search for the tags with `xargs` to delete them permanently:
 
 ```
- notmuch search --output=files --format=text0 tag:killed | xargs -0 rm
+ notmuch search --output=files --format=text0 tag:killed | xargs -r0 rm
  notmuch new
 
 ```
+
+By placing this into the `pre-new` hook for notmuch you can make sure you delete files before updating the database.

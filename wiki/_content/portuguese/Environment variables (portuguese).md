@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=582084) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=588198) na versão em inglês.
 
 Artigos relacionados
 
@@ -88,7 +88,7 @@ export PATH="${PATH}:/home/meu_usuário/bin"
 
 ```
 
-Para atualizar a variável, autentique-se novamente ou use *source* para recarregar o arquivo: `$ source ~/.bash_profile`.
+Para atualizar a variável, autentique-se novamente ou use *source* para [carregar](/index.php/Carrega "Carrega") novamente o arquivo: `$ source ~/.bash_profile`.
 
 #### Ambiente gráfico
 

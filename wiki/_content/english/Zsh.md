@@ -756,7 +756,7 @@ bindkey '^D' exit_zsh
 
 	[https://github.com/getantibody/antibody](https://github.com/getantibody/antibody) || [antibody](https://aur.archlinux.org/packages/antibody/)
 
-*   **zplug** — A next-generation plugin manager for Zsh
+*   **zplug** — A next-generation plugin manager for Zsh. [ABANDONED](https://github.com/zplug/zplug/issues/403#issuecomment-477520784)
 
 	[https://github.com/zplug/zplug](https://github.com/zplug/zplug) || [zplug](https://aur.archlinux.org/packages/zplug/)
 

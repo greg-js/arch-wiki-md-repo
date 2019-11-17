@@ -20,6 +20,8 @@
         *   [4.1.2 Using a vim plugin manager](#Using_a_vim_plugin_manager)
     *   [4.2 Alternative Fonts](#Alternative_Fonts)
     *   [4.3 Alternative Package](#Alternative_Package)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Fonts: glyphs missing](#Fonts:_glyphs_missing)
 
 ## Installation
 
@@ -58,7 +60,7 @@ Add the following to your **~/.zshrc**:
 
 ```
 powerline-daemon -q
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
 ```
 
@@ -67,9 +69,11 @@ powerline-daemon -q
 ### Tmux
 
 **Note:** Watch out for interfering styles in .tmux.conf (i.e. window-status-format)
+
 Add the following to your **~/.tmux.conf**:
+
 ```
-source /usr/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
+source /usr/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf
 
 ```
 
@@ -83,7 +87,7 @@ Install [powerline-vim](https://www.archlinux.org/packages/?name=powerline-vim)
 
 **Tip:** By default, the statusline (and therefore Powerline) only appears when there are multiple windows open. To show it all the time, use `:set laststatus=2`
 
-**Tip:** This package installs Powerline to `/usr/share/vim/vimfiles/plugin`, which vim is configured to check by default, meaning this will install Powerline in vim for all users and may require additional configuration. If this is not intended, consider either using a vim plugin manager, or installing the [powerline](https://www.archlinux.org/packages/?name=powerline) package and adding `set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim` to your `.vimrc`.
+**Tip:** This package installs Powerline to `/usr/share/vim/vimfiles/plugin`, which vim is configured to check by default, meaning this will install Powerline in vim for all users and may require additional configuration. If this is not intended, consider either using a vim plugin manager, or installing the [powerline](https://www.archlinux.org/packages/?name=powerline) package and adding `set rtp+=/usr/lib/python3.8/site-packages/powerline/bindings/vim` to your `.vimrc`.
 
 ### Detailed Usage
 
@@ -94,7 +98,7 @@ For detailed usage instructions, such as configuring your system to use Powerlin
 The official [Powerline docs](https://powerline.readthedocs.io/en/master/) refer to "powerline_root", which for Arch Linux is the following:
 
 ```
-/usr/lib/python3.7/site-packages/powerline
+/usr/lib/python3.8/site-packages/powerline
 
 ```
 
@@ -103,7 +107,7 @@ To customize powerline, copy a default config to $XDG_CONFIG_HOME/powerline/... 
 Example to customize powerline for tmux:
 
 ```
-cp /usr/lib/python3.7/site-packages/powerline/config_files/themes/tmux/default.json ~/.config/powerline/themes/tmux/default.json
+cp /usr/lib/python3.8/site-packages/powerline/config_files/themes/tmux/default.json ~/.config/powerline/themes/tmux/default.json
 
 ```
 
@@ -141,3 +145,9 @@ A reduced set of fonts for the text console are available in [powerline-console-
 There is currently one known alternative to Powerline - [Vim-airline](https://github.com/vim-airline). It is a part of [vim-plugins](https://www.archlinux.org/groups/x86_64/vim-plugins/) and can be installed separately as [vim-airline](https://www.archlinux.org/packages/?name=vim-airline). Optionally, install [vim-airline-themes](https://www.archlinux.org/packages/?name=vim-airline-themes).
 
 **Note:** In [vim-airline](https://www.archlinux.org/packages/?name=vim-airline), showing the current git branch relies on [vim-fugitive](https://www.archlinux.org/packages/?name=vim-fugitive). vim-fugitive v2.4 made a change that broke this feature. [Upstream will not tag a new release](https://github.com/vim-airline/vim-airline/issues/1815) with the single commit that fixes compatibility with vim-fugitive v2.4\. Until then, if you want to see the current git branch, you have to: use [vim-airline-git](https://aur.archlinux.org/packages/vim-airline-git/); downgrade vim-fugitive to v2.3; or make your own vim-airline v0.9.0, cherry-picking [upstream's fixing commit](https://github.com/vim-airline/vim-airline/commit/30a3c4f54948bc2692a6e218a600d1ebea42f94d). If you decide to cherry-pick, it doesn't apply cleanly, so you'll need to fix that too.
+
+## Troubleshooting
+
+### Fonts: glyphs missing
+
+If you installed [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts) but you notice missing glyphs, make sure your [locale](/index.php/Locale "Locale") is set. Restart your session to see the changes.

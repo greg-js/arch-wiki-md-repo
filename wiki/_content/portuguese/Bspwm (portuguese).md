@@ -5,7 +5,7 @@ Related articles
 *   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
 *   [Comparação de gerenciadores de janela tiling](/index.php/Compara%C3%A7%C3%A3o_de_gerenciadores_de_janela_tiling "Comparação de gerenciadores de janela tiling")
 
-[bspwm](https://github.com/baskerville/bspwm) é um gerenciador de janelas leve, lado a lado, e minimalista escrito em C que organiza janelas em árvore binária completa. O bspwm tem suporte a vérios monitores e é configurado e controlado por meio de mensagens. Há suporte parcial a [EWMH](https://standards.freedesktop.org/wm-spec/wm-spec-latest.html).
+[bspwm](https://github.com/baskerville/bspwm) é um gerenciador de janelas leve, lado a lado, e minimalista escrito em C que organiza janelas em árvore binária completa. O bspwm tem suporte a vérios monitores e é configurado e controlado por meio de mensagens. Há suporte parcial a [EWMH](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

@@ -67,7 +67,7 @@ The following two sections show how to create an EFI system partition (ESP).
 
 **Note:** It is recommended to use [GPT](/index.php/GPT "GPT") since some firmwares might not support UEFI/MBR booting due to it not being supported by [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"). See also [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") for the advantages of GPT in general.
 
-To provide adequate space for storing boot loaders and other files required for booting, and to prevent interoperability issues with other operating systems[[1]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules) the partition should be at least 260 MiB. For early and/or buggy UEFI implementations the size of at least 512 MiB might be needed.[[2]](https://www.rodsbooks.com/efi-bootloaders/principles.html)
+To provide adequate space for storing boot loaders and other files required for booting, and to prevent interoperability issues with other operating systems[[1]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules)[[2]](https://superuser.com/questions/1310927/what-is-the-absolute-minimum-size-a-uefi-partition-can-be/1310938) the partition should be at least 260 MiB. For early and/or buggy UEFI implementations the size of at least 512 MiB might be needed.[[3]](https://www.rodsbooks.com/efi-bootloaders/principles.html)
 
 ### GPT partitioned disks
 
@@ -94,7 +94,7 @@ Proceed to [#Format the partition](#Format_the_partition) section below.
 
 ## Format the partition
 
-The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems[[3]](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf#G17.1019485). To prevent potential issues with other operating systems and also since the UEFI specification only mandates supporting FAT16 and FAT12 on removable media[[4]](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf#G17.1345080), it is recommended to use FAT32.
+The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems[[4]](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf#G17.1019485). To prevent potential issues with other operating systems and also since the UEFI specification only mandates supporting FAT16 and FAT12 on removable media[[5]](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf#G17.1345080), it is recommended to use FAT32.
 
 After creating the partition, [format](/index.php/Format "Format") it as [FAT32](/index.php/FAT32 "FAT32"). To use the `mkfs.fat` utility, [install](/index.php/Install "Install") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
 
@@ -118,7 +118,7 @@ The simplest scenarios for mounting EFI system partition are:
 
 **Tip:**
 
-*   `/efi` is a replacement[[5]](https://github.com/systemd/systemd/pull/3757#issuecomment-234290236) for the previously popular (and possibly still used by other Linux distributions) ESP mountpoint `/boot/efi`.
+*   `/efi` is a replacement[[6]](https://github.com/systemd/systemd/pull/3757#issuecomment-234290236) for the previously popular (and possibly still used by other Linux distributions) ESP mountpoint `/boot/efi`.
 *   The `/efi` directory is not available by default, you will need to first create it with [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) before mounting the ESP to it.
 
 ### Alternative mount points
@@ -342,7 +342,7 @@ The first file is a hook that monitors the relevant files, and it is run if they
 Type = File
 Operation = Install
 Operation = Upgrade
-Target = boot/vmlinuz*
+Target = usr/lib/modules/*/vmlinuz
 Target = usr/lib/initcpio/*
 Target = boot/*-ucode.img
 
@@ -387,7 +387,7 @@ exit 0
 
 ### ESP on software RAID1
 
-It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
+It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
 
 See [UEFI booting and RAID1](https://outflux.net/blog/archives/2018/04/19/uefi-booting-and-raid1/) for a in-depth guide.
 

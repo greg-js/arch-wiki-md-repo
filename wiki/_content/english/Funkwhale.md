@@ -61,9 +61,9 @@ Follow instructions for the Docker installation at [[3]](https://docs.funkwhale.
 
 ## Configuration
 
-The following sections assume that Funkwhale was installed from AUR, for a manual installation, change the folders appropriately.
+The following sections assume that Funkwhale was installed from AUR, for a manual installation the folders should be changed appropriately.
 
-It also assume that you are using Funkwhale on a local network. See the official [documentation](https://docs.funkwhale.audio/index.html) for making it accessible outside, especially for the certificates using [Certbot](/index.php/Certbot "Certbot").
+It also assumes that you are using Funkwhale on a local network. See the official [documentation](https://docs.funkwhale.audio/index.html) for making it accessible outside, especially for the certificates using [Certbot](/index.php/Certbot "Certbot").
 
 ### Host config
 
@@ -123,9 +123,10 @@ postgres=# CREATE USER funkwhale;
 postgres=# GRANT ALL PRIVILEGES ON DATABASE funkwhale TO funkwhale;
 postgres=# \c funkwhale;
 postgres=# CREATE EXTENSION "unaccent";
+postgres=# CREATE EXTENSION "citext";
 ```
 
-The last two lines load the `unaccent` extension, which is needed for funkwhale to work.
+The last three lines load the `unaccent` and `citext` extensions, which are needed for funkwhale to work (`citext` for version >0.20).
 
 ### Configure Redis
 
@@ -215,9 +216,22 @@ Then apply database migrations,
 
 ```
 
+Starting from version 0.20.1, there is a new `MUSIC_USE_DENORMALIZATION` parameter in the `env` file set to `True` (you can set it to `False` so nothing changes). It's a performance enhancement and to make it work you need to run the following command,
+
+```
+[funkwhale]$ python /usr/share/webapps/funkwhale/api/manage.py rebuild_music_permissions
+
+```
+
 **Warning:** Check that the apache or nginx configuration file did not change before restarting the service. Consult the official documentation for incompatible changes.
 
-The `funkwhale.service` can be [started](/index.php/Started "Started") again.
+**Warning:** From version 0.20, [python-daphne](https://aur.archlinux.org/packages/python-daphne/) was replaced by [uvicorn](https://aur.archlinux.org/packages/uvicorn/)/[gunicorn](https://www.archlinux.org/packages/?name=gunicorn). The service file was updated not to use [python-daphne](https://aur.archlinux.org/packages/python-daphne/) anymore. This can be changed by editing the `funkwhale-server.service` file.
+
+Also, the `citext` extension for postgresql is now needed. It can be loaded with issueing the following command before calling the `migrate` command:
+
+ `$ sudo -u postgres psql funkwhale -c 'CREATE EXTENSION "citext";'` 
+
+When all the upgrade steps were run, the `funkwhale.service` can be [started](/index.php/Started "Started") again.
 
 **Note:** All the instructions for upgrading are given on the official documentation [[6]](https://docs.funkwhale.audio/upgrading/index.html).
 

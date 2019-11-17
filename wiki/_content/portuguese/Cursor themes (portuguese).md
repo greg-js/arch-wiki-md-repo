@@ -107,7 +107,7 @@ Faça login novamente para as mudanças serem aplicadas.
 
 ### Ambientes de desktop
 
-[Ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") usam o [protocolo XSETTINGS](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html), tipicamente implementado nas configurações de daemon. Isto permite rápida mudança de cursor, no entanto, o tema aplicado pode ser inconsistente em múltiplas aplicações. Veja [#Especificação XDG](#Especificação_XDG) para mudar o tema de cursor manualmente.
+[Ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") usam o [protocolo XSETTINGS](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html), tipicamente implementado nas configurações de daemon. Isto permite rápida mudança de cursor, no entanto, o tema aplicado pode ser inconsistente em múltiplas aplicações. Veja [#Especificação XDG](#Especificação_XDG) para mudar o tema de cursor manualmente.
 
 #### GNOME
 

@@ -87,4 +87,4 @@ Entre 2012 e 2013, o tradicional sistema de inicialização System V foi substit
 
 ### Fim do suporte a i686
 
-Em 2017-01-25, foi [anunciado](http://www.archlinux-br.org/noticias/254/) que o suporte à arquitetura i686 seria encerrado em razão da decrescente popularidade dentre os desenvolvedores e da comunidade. No [fim de novemobro de 2017](http://www.archlinux-br.org/noticias/254/), todos os pacotes i686 foram removidos dos espelhos.
+Em 2017-01-25, foi [anunciado](http://www.archlinux-br.org/noticias/254/) que o suporte à arquitetura i686 seria encerrado em razão da decrescente popularidade dentre os desenvolvedores e da comunidade. No [fim de novembro de 2017](http://www.archlinux-br.org/noticias/254/), todos os pacotes i686 foram removidos dos espelhos.

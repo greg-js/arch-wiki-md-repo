@@ -275,7 +275,7 @@ $ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 
 Пользователи могут переопределять общесистемные файлы `*.desktop` скопировав их в пользовательский каталог `~/.config/autostart/`.
 
-Для более конкретного описания используемых каталогов смотрите [спецификацию автозапуска ярлыков приложений](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html).
+Для более конкретного описания используемых каталогов смотрите [спецификацию автозапуска ярлыков приложений](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html).
 
 **Примечание:** Этот способ поддерживается только средами рабочего стола, совместимыми с XDG. Такие инструменты, как [dapper](https://aur.archlinux.org/packages/dapper/), [dex](https://www.archlinux.org/packages/?name=dex) или [fbautostart](https://aur.archlinux.org/packages/fbautostart/), могут использоваться для предоставления автозапуска XDG в неподдерживаемых средах рабочего стола, если существует какой-либо другой механизм автозапуска. Используйте существующий механизм, чтобы запустить инструмент автозапуска, совместимый с xdg.
 

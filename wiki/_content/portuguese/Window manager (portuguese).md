@@ -1,6 +1,6 @@
-**Status de tradução:** Esse artigo é uma tradução de [Window manager](/index.php/Window_manager "Window manager"). Data da última tradução: 2019-06-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Window_manager&diff=0&oldid=571905) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Window manager](/index.php/Window_manager "Window manager"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Window_manager&diff=0&oldid=578212) na versão em inglês.
 
-Related articles
+Artigos relacionados
 
 *   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
 *   [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)")
@@ -27,7 +27,7 @@ Um [gerenciador de janela](https://en.wikipedia.org/wiki/pt:Gerenciador_de_janel
 
 Os gerenciadores de janela são clientes X que controlam a aparência e o comportamento dos quadros ("janelas"), onde os vários aplicativos gráficos são desenhados. Eles determinam a borda, a barra do título, o tamanho e a capacidade de redimensionar as janelas, e muitas vezes fornecem outras funcionalidades, como áreas reservadas para aderir [dockapps](http://windowmaker.org/dockapps/) como o [Window Maker](/index.php/Window_Maker "Window Maker"), ou a capacidade para separar janelas como o [Fluxbox](/index.php/Fluxbox "Fluxbox"). Alguns gerenciadores de janela são empacotados com utilitários simples, como menus para iniciar programas ou para configurar o próprio WM.
 
-A especificação [Dicas estendidas de Gerenciador de janela](http://standards.freedesktop.org/wm-spec/wm-spec-latest.html) (inglês) é usada para permitir que os gerenciadores de janela interajam de maneira padrão com o servidor e os outros clientes.
+A especificação [Dicas estendidas de Gerenciador de janela](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html) (inglês) é usada para permitir que os gerenciadores de janela interajam de maneira padrão com o servidor e os outros clientes.
 
 Alguns gerenciadores de janela são desenvolvidos como parte de um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") mais completo, geralmente permitindo que os outros aplicativos fornecidos interajam melhor uns com os outros, dando uma experiência mais consistente ao usuário, com recursos como ícones de área de trabalho, fontes, barras de ferramentas, papéis de parede ou widgets.
 

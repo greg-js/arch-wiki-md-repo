@@ -40,5 +40,5 @@ More information you will find in the [official Django tutorial](https://docs.dj
 
 ## See also
 
-*   [awesome-django](https://github.com/rosarior/awesome-django) - A curated list of Django apps, projects and resources.
+*   [awesome-django](https://github.com/wsvincent/awesome-django) - A curated list of Django apps, projects and resources.
 *   [Django vs Flask](https://devel.tech/features/django-vs-flask/) - Comparison of Django and Flask frameworks.

@@ -35,7 +35,7 @@ Note that some dynamic DNS providers do not require a dedicated client and can b
 
 	[https://github.com/ddclient/ddclient](https://github.com/ddclient/ddclient) || [ddclient](https://www.archlinux.org/packages/?name=ddclient)
 
-*   **[ddnsc](/index.php/Ddnsc "Ddnsc")** — A simple & lightweight client written in python.
+*   **ddnsc** — A simple & lightweight client written in python.
 
 	[https://github.com/shyaminayesh/ddnsc](https://github.com/shyaminayesh/ddnsc) || [ddnsc](https://aur.archlinux.org/packages/ddnsc/)
 

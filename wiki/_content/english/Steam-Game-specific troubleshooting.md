@@ -99,6 +99,7 @@
         *   [5.37.2 Oddly sized starting window](#Oddly_sized_starting_window)
         *   [5.37.3 DLCs not detected](#DLCs_not_detected)
         *   [5.37.4 Game takes ages to start](#Game_takes_ages_to_start)
+        *   [5.37.5 Game doesn't start at all](#Game_doesn't_start_at_all)
     *   [5.38 Crypt of the NecroDancer](#Crypt_of_the_NecroDancer)
         *   [5.38.1 Crashes after splash screen](#Crashes_after_splash_screen)
     *   [5.39 The Curious Expedition](#The_Curious_Expedition)
@@ -1112,10 +1113,6 @@ Places to look for them: /usr/lib /usr/lib32 ~/.steam/steam/ubuntu12_32/steam-ru
 
 ### Crusader Kings II
 
-x86_64 dependencies:
-
-*   [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl)
-
 #### No audio
 
 SDL uses [PulseAudio](/index.php/PulseAudio "PulseAudio") by default, so to use it with [ALSA](/index.php/ALSA "ALSA") you need to set:
@@ -1133,6 +1130,10 @@ If the DLC tab in the launcher is not selectable, rename the `DLC` directory in 
 #### Game takes ages to start
 
 If you are using a nvidia graphics card, make sure you have enabled the [DRM kernel mode setting](https://wiki.archlinux.org/index.php/NVIDIA#DRM_kernel_mode_setting).
+
+#### Game doesn't start at all
+
+If the game stopped launching after Patch 3.3 (when the game became 64-bit only), install [intel-tbb](https://www.archlinux.org/packages/?name=intel-tbb).
 
 ### Crypt of the NecroDancer
 

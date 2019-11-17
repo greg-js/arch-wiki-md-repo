@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Xdg-menu](/index.php/Xdg-menu "Xdg-menu"). Дата последней синхронизации: 27 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xdg-menu&diff=0&oldid=428040).
 
-**Меню XDG** создаёт меню для оконных менеджеров используя [Стандарт Меню Free Desktop](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html). Вы можете [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu).
+**Меню XDG** создаёт меню для оконных менеджеров используя [Стандарт Меню Free Desktop](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html). Вы можете [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu).
 
 Поддерживаются следующие оконные менеджеры:
 
@@ -82,7 +82,7 @@ Xdg_menu опирается на сведения для генерации ме
 *   После изменения кода в xdg_menu, чтобы изменить схему, убедитесь, что вы удалили всё в `~/.xdg_menu_cache`, иначе вы потратите много времени, пытаясь выяснить, почему ваши изменения в скрипатх Perl не принимаются.
 *   Вы можете найти индивидуальные конфигурации приложений в `/usr/share/applications`
 
-Другие каталоги файлов конфигурации можно найти в каталоге /usr/share. В большинстве случаев вам не нужно трогать их. Если вы хотите, изменить то, как ваше меню располагается, вы можете изменить шаблон меню. Основные изменения требуют тонкой настройки скрипта perl xdg_menu. Если вы обнаружили, что приложения не отображаются или что они вызывают что-то не то, то вам нужно будет посмотреть в файл .desktop в `/usr/share/applications`. Проверьте этот [файл стандартов](http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html).
+Другие каталоги файлов конфигурации можно найти в каталоге /usr/share. В большинстве случаев вам не нужно трогать их. Если вы хотите, изменить то, как ваше меню располагается, вы можете изменить шаблон меню. Основные изменения требуют тонкой настройки скрипта perl xdg_menu. Если вы обнаружили, что приложения не отображаются или что они вызывают что-то не то, то вам нужно будет посмотреть в файл .desktop в `/usr/share/applications`. Проверьте этот [файл стандартов](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 
 ### Добавление записей рабочего стола из других каталогов
 

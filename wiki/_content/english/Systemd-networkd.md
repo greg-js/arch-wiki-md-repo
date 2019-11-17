@@ -194,7 +194,7 @@ They all follow the same rules:
 **Tip:**
 
 *   To override a system-supplied file in `/usr/lib/systemd/network` in a permanent manner (i.e even after upgrade), place a file with same name in `/etc/systemd/network` and symlink it to `/dev/null`
-*   The `*` wildcard can be used in `VALUE` (e.g `en*` will match any Ethernet device), a boolean can be simple written as `yes` or `no`.
+*   The `*` wildcard can be used in `VALUE` (e.g `en*` will match any Ethernet device).
 *   Following this [Arch-general thread](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), the best practice is to setup specific container network settings *inside the container* with **networkd** configuration files.
 *   Systemd accepts the values `1, true, yes, on` for a true boolean, and the values `0, false, no, off` for a false boolean
 

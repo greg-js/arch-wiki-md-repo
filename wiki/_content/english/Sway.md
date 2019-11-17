@@ -20,12 +20,13 @@
     *   [3.5 HiDPI](#HiDPI)
     *   [3.6 Custom keybindings](#Custom_keybindings)
     *   [3.7 Xresources](#Xresources)
-    *   [3.8 Run programs natively under Wayland (without Xwayland support)](#Run_programs_natively_under_Wayland_(without_Xwayland_support))
+    *   [3.8 Run programs natively under Wayland (without XWayland support)](#Run_programs_natively_under_Wayland_(without_XWayland_support))
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostart on login](#Autostart_on_login)
     *   [4.2 Backlight toggle](#Backlight_toggle)
     *   [4.3 Screen capture](#Screen_capture)
     *   [4.4 Control swaynag with the keyboard](#Control_swaynag_with_the_keyboard)
+    *   [4.5 Change cursor theme and size for XWayland apps](#Change_cursor_theme_and_size_for_XWayland_apps)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Application launchers](#Application_launchers)
     *   [5.2 VirtualBox](#VirtualBox)
@@ -186,9 +187,9 @@ To control brightness you can use [brightnessctl](https://www.archlinux.org/pack
 
 Copy `~/.Xresources` to `~/.Xdefaults` to use them in Sway.
 
-### Run programs natively under Wayland (without Xwayland support)
+### Run programs natively under Wayland (without XWayland support)
 
-First, be sure the toolkit or library of every program that is and will be installed [support Wayland](/index.php/Wayland#GUI_libraries "Wayland"). Then append the following line to your sway configuration file to disable Xwayland support:
+First, be sure the toolkit or library of every program that is and will be installed [support Wayland](/index.php/Wayland#GUI_libraries "Wayland"). Then append the following line to your sway configuration file to disable XWayland support:
 
  `~/.config/sway/config` 
 ```
@@ -198,7 +199,7 @@ xwayland disable
 
 **Note:** Some programs, like [Firefox](/index.php/Firefox#Wayland "Firefox"), [bemenu](#Application_launchers) or [Qt5](/index.php/Wayland#Qt_5 "Wayland") based programs, also need specific environment variables set for them to run natively under Wayland.
 
-**Note:** In a fresh Sway install, you need to change the default menu and terminal applications because they depend on Xwayland.
+**Note:** In a fresh Sway install, you need to change the default menu and terminal applications because they depend on XWayland.
 
 ## Tips and tricks
 
@@ -216,10 +217,10 @@ fi
 
 ### Backlight toggle
 
-To turn off (and on) your displays with a key (e.g. `Pause`) bind the following in your Sway `config`:
+To turn off (and on) your displays with a key (e.g. `Pause`) bind the following script in your Sway `config`:
 
 ```
-#!/usr/bin/dash
+#!/bin/sh
 read lcd < /tmp/lcd
     if [ "$lcd" -eq "0" ]; then
         swaymsg "output * dpms on"
@@ -308,6 +309,22 @@ mode "nag" {
 Note that, beginning in sway version 1.2, mode names are case-sensitive.
 
 You can configure sway to use swaynagmode with the configuration command `swaynag_command swaynagmode`.
+
+### Change cursor theme and size for XWayland apps
+
+To set the [cursor theme](/index.php/Cursor_theme "Cursor theme") and size:
+
+ `~/.config/sway/config` 
+```
+seat seat0 xcursor_theme *my_cursor_theme* *my_cursor_size*
+
+```
+
+Where `*my_cursor_theme*` can be set to or replaced by a specific value like `default`, `Adwaita` or `Simple-and-Soft`, and `*my_cursor_size*` a value like `48`.
+
+You can inspect their values with `echo $XCURSOR_SIZE` and `echo $XCURSOR_THEME`.
+
+Note that you need to restart the XWayland application to see the changes.
 
 ## Troubleshooting
 

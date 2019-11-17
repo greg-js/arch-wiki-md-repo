@@ -41,6 +41,8 @@ done
 
 ```
 
+Once the script is created, you will need to make it [executable](/index.php/Executable "Executable"). Otherwise the script cannot run.
+
 Then create and [enable](/index.php/Enable "Enable") a systemd service:
 
  `/etc/systemd/system/numlock.service` 

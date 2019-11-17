@@ -1,15 +1,23 @@
-[echinus](http://plhk.ru/) is a simple and lightweight tiling and floating window manager for X11\. Started as a [dwm](/index.php/Dwm "Dwm") fork with easier configuration, echinus became a full-featured reparenting window manager with [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) support.
+Related articles
+
+*   [dmenu](/index.php/Dmenu "Dmenu")
+
+[echinus](http://plhk.ru/) is a simple and lightweight tiling and floating window manager for X11\. Started as a [dwm](/index.php/Dwm "Dwm") fork with easier configuration, echinus became a full-featured reparenting window manager with [EWMH](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html) support.
 
 Unlike dwm, echinus does not need to be re-compiled after changes have been made to the config. It supports [Xft](http://www.freedesktop.org/wiki/Software/Xft) (freetype) out of the box and has the option of configurable titlebars.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Configuring](#Configuring)
     *   [2.1 Rules](#Rules)
 *   [3 Starting echinus](#Starting_echinus)
 *   [4 Using echinus](#Using_echinus)
-    *   [4.1 Panels & Pagers](#Panels_.26_Pagers)
+    *   [4.1 Panels & Pagers](#Panels_&_Pagers)
 *   [5 Resources](#Resources)
     *   [5.1 Screenshots](#Screenshots)
 

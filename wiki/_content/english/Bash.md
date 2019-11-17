@@ -314,7 +314,7 @@ cd /etc
 
 ### Autojump
 
-[autojump](https://www.archlinux.org/packages/?name=autojump) allows navigating the file system by searching for strings in a database with the user's most-visited paths.
+[autojump-git](https://aur.archlinux.org/packages/autojump-git/) allows navigating the file system by searching for strings in a database with the user's most-visited paths.
 
 After installation, `/etc/profile.d/autojump.bash` must be [sourced](/index.php/Source "Source") in order to start using the application.
 

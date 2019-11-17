@@ -1,11 +1,13 @@
 Related articles
 
+*   [TPM2-PK11](/index.php/TPM2-PK11 "TPM2-PK11")
+*   [Rng-tools](/index.php/Rng-tools "Rng-tools")
 *   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
 *   [Smartcards](/index.php/Smartcards "Smartcards")
 
 [Trusted Platform Module](https://en.wikipedia.org/wiki/Trusted_Platform_Module "wikipedia:Trusted Platform Module") (TPM) is an international standard for a secure cryptoprocessor, which is a dedicated microprocessor designed to secure hardware by integrating cryptographic keys into devices.
 
-In practice a TPM can be used for various different security applications such as [secure boot](/index.php/Secure_Boot "Secure Boot") and key storage.
+In practice a TPM can be used for various different security applications such as [secure boot](/index.php/Secure_Boot "Secure Boot"), key storage and [random number generation](/index.php/Rng-tools "Rng-tools").
 
 TPM is naturally supported only on devices that have TPM hardware support. If your hardware has TPM support but it is not showing up, it might need to be enabled in the BIOS settings.
 
@@ -29,11 +31,11 @@ TPM is naturally supported only on devices that have TPM hardware support. If yo
 
 There are two very different TPM specifications: 1.2 and 2.0, which also use different software stacks.
 
-*   TPM 1.2 uses the "TrouSerS" TSS (TCG software stack) by IBM, which is packaged as [trousers](https://aur.archlinux.org/packages/trousers/) (tcsd) and [tpm-tools](https://aur.archlinux.org/packages/tpm-tools/) (userspace). All software access the TPM through the *tcsd* daemon.
+*   TPM 1.2 uses the "TrouSerS" TSS (TCG software stack) by IBM, which is packaged as [trousers](https://aur.archlinux.org/packages/trousers/) (*tcsd*) and [tpm-tools](https://aur.archlinux.org/packages/tpm-tools/) (userspace). All software access the TPM through the *tcsd* daemon.
 
 *   TPM 2.0 allows direct access via `/dev/tpm0` (one client at a time), managed access through the [tpm2-abrmd](https://www.archlinux.org/packages/?name=tpm2-abrmd) resource manager daemon, or kernel-managed access via `/dev/tpmrm0`. There are two choices of userspace tools, [tpm2-tools](https://www.archlinux.org/packages/?name=tpm2-tools) by Intel and [ibm-tss](https://aur.archlinux.org/packages/ibm-tss/) by IBM.
 
-TPM 2.0 requires UEFI (native); BIOS or CSM systems can only use TPM 1.2.
+TPM 2.0 requires [UEFI](/index.php/UEFI "UEFI") (native); BIOS or CSM systems can only use TPM 1.2.
 
 Some TPM chips can be switched between 1.2 and 2.0 through a firmware upgrade (which can be done only a limited number of times).
 
@@ -76,6 +78,10 @@ Some other tools of interest:
 
 	[http://sourceforge.net/projects/tpmmanager](http://sourceforge.net/projects/tpmmanager) || [tpmmanager](https://aur.archlinux.org/packages/tpmmanager/)
 
+*   **opencryptoki** — A PKCS#11 implementation for Linux. It includes drivers and libraries to enable IBM cryptographic hardware as well as a software token for testing.
+
+	[http://sourceforge.net/projects/opencryptoki](http://sourceforge.net/projects/opencryptoki) || [opencryptoki](https://aur.archlinux.org/packages/opencryptoki/)
+
 *   **openssl_tpm_engine** — OpenSSL engine which interfaces with the TSS API
 
 	[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [openssl_tpm_engine](https://aur.archlinux.org/packages/openssl_tpm_engine/)
@@ -83,10 +89,6 @@ Some other tools of interest:
 *   **tpm_keyring2** — A key manager for TPM based eCryptfs keys
 
 	[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [tpm_keyring2](https://aur.archlinux.org/packages/tpm_keyring2/)
-
-*   **opencryptoki** — A PKCS#11 implementation for Linux. It includes drivers and libraries to enable IBM cryptographic hardware as well as a software token for testing.
-
-	[http://sourceforge.net/projects/opencryptoki](http://sourceforge.net/projects/opencryptoki) || [opencryptoki](https://aur.archlinux.org/packages/opencryptoki/)
 
 ### Basics
 
@@ -107,6 +109,8 @@ $ tpm_selftest -l info
 ```
 
 ### Securing SSH Keys
+
+	*Main article: [TPM2-PK11](/index.php/TPM2-PK11 "TPM2-PK11").*
 
 There are several methods to use TPM to secure keys, but here we show a simple method based on [simple-tpm-pk11-git](https://aur.archlinux.org/packages/simple-tpm-pk11-git/).
 
@@ -148,7 +152,7 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 
 ### tcsd.service failed to start
 
-The `tcsd.service` service may not start correctly due to permission issues.[[1]](https://bugs.launchpad.net/ubuntu/+source/trousers/+bug/963587/comments/3). It is possible to fix this using:
+The `tcsd.service` service may not start correctly due to permission issues.[[1]](https://bugs.launchpad.net/ubuntu/+source/trousers/+bug/963587/comments/3) It is possible to fix this using:
 
 ```
 # chown tss:tss /dev/tpm*

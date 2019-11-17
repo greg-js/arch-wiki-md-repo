@@ -165,7 +165,7 @@ EAP-Identity=*your_enterprise_email*
 EAP-Password=*your_password*
 
 [Settings]
-Autoconnect=True
+AutoConnect=True
 ```
 
 If you do not want autoconnect to the AP you can set the option to False and connect manually to the access point via `iwctl`. The same applies to the password, if you do not want to store it plaintext leave the option out of the file and just connect to the enterprise AP.
@@ -186,7 +186,7 @@ EAP-PEAP-Phase2-Identity=johndoe@realm.edu
 EAP-PEAP-Phase2-Password=hunter2
 
 [Settings]
-Autoconnect=true
+AutoConnect=true
 ```
 
 **Tip:** If you are planning on using *eduroam* and you are affiliated with a US-based institution, your CA is likely `Addtrust External CA Root`, as your institution probably issues certificates through Internet2's InCommon. However, you should always refer to your organization's help desk if in doubt.
@@ -258,7 +258,7 @@ Create / edit file `/var/lib/iwd/*network*.*type*`. Add the following section to
  `/var/lib/iwd/spaceship.psk (for example)` 
 ```
 [Settings]
-Autoconnect=false
+AutoConnect=false
 
 ```
 

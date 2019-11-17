@@ -101,4 +101,4 @@ If you see file/directory names extracted with wrong encoding, install [unzip-ic
 ## See also
 
 *   [7-Zip homepage](https://www.7-zip.org/)
-*   [How to use 7zip on Linux command Line](https://www.ibm.com/developerworks/community/blogs/6e6f6d1b-95c3-46df-8a26-b7efd8ee4b57/entry/how_to_use_7zip_on_linux_command_line144?lang=en)
+*   [How to use 7zip on Linux command Line](https://www.ibm.com/developerworks/community/blogs/6e6f6d1b-95c3-46df-8a26-b7efd8ee4b57/entry/how_to_use_7zip_on_linux_command_line144?lang=en) (please note this link will no longer be available after Dec 31, 2019)

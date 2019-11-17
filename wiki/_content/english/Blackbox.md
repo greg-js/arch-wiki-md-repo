@@ -1,4 +1,4 @@
-[Blackbox](http://blackboxwm.sourceforge.net/) is a lightweight [stacking window manager](/index.php/Window_managers#Types "Window managers"). It was last updated November 3, 2005 with no plans for future releases, however its design has inspired many forks and spiritual successors.
+[Blackbox](http://blackboxwm.sourceforge.net/) is a lightweight [stacking window manager](/index.php/Window_managers#Types "Window managers"). It was last updated November 3, 2005 with no plans for future releases, however its design has inspired many forks and spiritual successors. An updated version of the original CVS source plus collected packages is maintained at [BlackBox github](https://github.com/bbidulock/blackboxwm) with latest release version 0.75 on 2019-09-06 .
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

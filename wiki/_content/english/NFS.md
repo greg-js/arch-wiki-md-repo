@@ -8,7 +8,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 
 **Note:**
 
-*   NFS is not encrypted. Tunnel NFS through an encrypted protocol like [Kerberos](/index.php/Kerberos "Kerberos"), or [tinc](/index.php/Tinc "Tinc") when dealing with sensitive data.
+*   NFS is not encrypted. Tunnel NFS through an encrypted protocol like [Kerberos](/index.php/Kerberos "Kerberos") or (secure) [VPN](/index.php/VPN "VPN") when dealing with sensitive data.
 *   Unlike [Samba](/index.php/Samba "Samba"), NFS does not have any user authentication by default, client access is restricted by their IP-address/[hostname](/index.php/Hostname "Hostname").
 *   NFS expects the [user](/index.php/User "User") and/or [user group](/index.php/User_group "User group") ID's are the same on both the client and server. [Enable NFSv4 idmapping](#Enabling_NFSv4_idmapping) or overrule the UID/GID manually by using `anonuid`/`anongid` together with `all_squash` in `/etc/exports`.
 
@@ -388,6 +388,8 @@ WantedBy=multi-user.target
 ```
 
 [Disable](/index.php/Disable "Disable")/[stop](/index.php/Stop "Stop") the `mnt-myshare.mount` unit, and [enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `mnt-myshare.automount` to automount the share when the mount path is being accessed.
+
+**Tip:** [Append](/index.php/Append "Append") `TimeoutIdleSec` to enable auto unmount. See [systemd.automount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.automount.5) for details.
 
 #### Mount using autofs
 

@@ -153,7 +153,7 @@ Jeśli masz programy GTK+ i Qt (KDE), to wiesz, że ich wygląd nie miesza się 
 
 ## Narzędzia konfiguracyjne
 
-Większość głównych [Środowisk graficznych](/index.php/Desktop_environment "Desktop environment") udostępnia narzędzia do konfiguracji motywu, ikon, czcionki i rozmiaru czcionki GTK+ oraz zarządzania tymi ustawieniami za pomocą [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
+Większość głównych [Środowisk graficznych](/index.php/Desktop_environment "Desktop environment") udostępnia narzędzia do konfiguracji motywu, ikon, czcionki i rozmiaru czcionki GTK+ oraz zarządzania tymi ustawieniami za pomocą [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html):
 
 *   Jeżeli korzystasz z [Cinnamon](/index.php/Cinnamon "Cinnamon"), użyj programu Motywy (*cinnamon-settings themes*): idź do *Ustawienia systemowe > Motywy*.
 *   Jeżeli korzystasz z [Enlightenment (Polski)](/index.php/Enlightenment_(Polski) "Enlightenment (Polski)"): idź do *Ustawienia > Wszystkie > Wygląd > Motyw aplikacji*.
@@ -471,7 +471,7 @@ As user theme files (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) ar
 
 ```
 
-*   Use a settings daemon (this is what most desktop environments do). A desktop-agnostic variant using [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) is available in the [AUR](/index.php/AUR "AUR") under [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
+*   Use a settings daemon (this is what most desktop environments do). A desktop-agnostic variant using [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html) is available in the [AUR](/index.php/AUR "AUR") under [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
 
 ### Dekoracje client-side
 

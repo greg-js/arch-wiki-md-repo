@@ -448,7 +448,7 @@ EndSection
 
 Section "Screen"                            # Add this section
     Identifier "Screen0"
-    Device "DiscreteNVidia"
+    Device "DiscreteNvidia"
 EndSection
 
 ```
@@ -594,14 +594,14 @@ If the console output is:
 
 ```
 
-You can change this line in `/etc/bumblebee/xorg.conf.nvidia`:
+If the following line in `/etc/bumblebee/xorg.conf.nvidia` does not exist, you can add it to the "Device" section:
 
 ```
 Option "ConnectedMonitor" "DFP"
 
 ```
 
-to:
+If it does already exist, you can try changing it to:
 
 ```
 Option "ConnectedMonitor" "CRT"

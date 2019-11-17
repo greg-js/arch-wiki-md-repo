@@ -156,7 +156,7 @@ MPD 可以被配置为单用户（而不是全局配置 MPD 的典型方法）�
 *   一个可以包含所有 MPD 配置文件的单独目录 `~/.config/mpd/` （或者 `$HOME` 下的任一目录）。
 *   更容易避免不可预见的读/写权限错误。
 
-好的做法是为所有需要的文件和播放列表创建一个单独目录。该目录可以是任何一个你可以读写的目录。例如： `~/.config/mpd/` 或者 `~/.mpd/`。本章节假设该目录是 `~/.config/mpd/`，其对应 `$XDG_CONFIG_HOME` （ [XDG Base Directory Specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) 的部分）的缺省值 。
+好的做法是为所有需要的文件和播放列表创建一个单独目录。该目录可以是任何一个你可以读写的目录。例如： `~/.config/mpd/` 或者 `~/.mpd/`。本章节假设该目录是 `~/.config/mpd/`，其对应 `$XDG_CONFIG_HOME` （ [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) 的部分）的缺省值 。
 
 MPD 首先搜索配置文件 `$XDG_CONFIG_HOME/mpd/mpd.conf`，其次搜索 `~/.mpdconf`。还可以通过命令行参数指定其他路径。
 

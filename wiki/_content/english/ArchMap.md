@@ -4,7 +4,11 @@ Related articles
 
 The **ArchMap** project creates a map of Arch Linux users all over the world.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 History](#History)
     *   [1.1 Screenshots](#Screenshots)

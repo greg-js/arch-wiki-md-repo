@@ -1,4 +1,4 @@
-**xdg-menu** is a tool that generates [XDG Desktop Menus](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html) for the following [window managers](/index.php/Window_manager "Window manager"):
+**xdg-menu** is a tool that generates [XDG Desktop Menus](http://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) for the following [window managers](/index.php/Window_manager "Window manager"):
 
 *   [awesome](/index.php/Awesome "Awesome")
 *   [Blackbox](/index.php/Blackbox "Blackbox")
@@ -12,7 +12,11 @@
 
 KDE, Gnome, Xfce, Enlightenment are already XDG compatible.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Menu hierarchy](#Menu_hierarchy)
@@ -79,7 +83,7 @@ Xdg_menu relies on three sets of information to generate menus: a root menu or i
 *   If altering the code in xdg_menu to change layout, make sure you delete everything in `~/.xdg_menu_cache` or you will spend hours trying to figure out why your changes to the perl script don't take.
 *   You can find individual application configurations in `/usr/share/applications`
 
-Other configuration file directories can be found under `/usr/share`. In most cases you will not need to touch these. However if you want to change how your menu is layed out you can alter the menu template for minor changes. Major changes require tweaking the actual xdg_menu perl script. If you find that applications do not appear or that they are called strange things, then you will need to look at the .desktop file in `/usr/share/applications`. Check this [standards file](http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html) .
+Other configuration file directories can be found under `/usr/share`. In most cases you will not need to touch these. However if you want to change how your menu is layed out you can alter the menu template for minor changes. Major changes require tweaking the actual xdg_menu perl script. If you find that applications do not appear or that they are called strange things, then you will need to look at the .desktop file in `/usr/share/applications`. Check the [desktop entry specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 
 ### Adding desktop entries from other directories
 

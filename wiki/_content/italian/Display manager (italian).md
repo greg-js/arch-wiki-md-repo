@@ -110,7 +110,7 @@ Per controllare lo stato della propria sessione utente è possibile utilizzare `
 
 ### Elenco sessioni avviabili
 
-Molti display managers leggono l'elenco delle sessioni avviabili dalla directory `/usr/share/xsessions/`, che contiene dei file [desktop standard](http://standards.freedesktop.org/desktop-entry-spec/latest/) per ogni DE/WM.
+Molti display managers leggono l'elenco delle sessioni avviabili dalla directory `/usr/share/xsessions/`, che contiene dei file [desktop standard](https://specifications.freedesktop.org/desktop-entry-spec/latest/) per ogni DE/WM.
 
 Per aggiungere/rimuovere voci dall'elenco sessioni del vostro display manager, si creino/rimuovano i file `.desktop` in `/usr/share/xsessions/`.
 

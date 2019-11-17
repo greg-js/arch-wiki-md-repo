@@ -2,7 +2,11 @@
 
 Plik konfiguracyjny umożliwia zmianę kolorów i ustawienia kilkanaście opcji. Termite obsługuje przezroczystość wraz z 256 kolorami i prawdziwymi paletami kolorów (16 milionów kolorów). Termite ma podobny wygląd do terminala [urxvt](/index.php/Urxvt "Urxvt").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Używanie](#Używanie)
@@ -27,7 +31,7 @@ Termite domyślnie uruchamia się w trybie wstawiania. Tekst może byc zaznaczon
 
 ## Konfiguracja
 
-Termite szuka plików konfiguracyjnych w `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` i `/etc/xdg/termite.cfg`. Plik konfiguracyjny służy do zmiany opcji, takich jak czcionka, kolory, wskazówki dotyczące okien itp. Składnia pliku konfiguracyjnego została zainspirowana przez [specyfikację wpisów pulpitu XDG](https://standards.freedesktop.org/desktop-entry-spec/latest/) plików [.desktop](/index.php/.desktop ".desktop") (zainspirowane plikami z Microsoft Windows ".ini") z trzema sekcjami: *[options]*, *[colors]* i *[hints]*.
+Termite szuka plików konfiguracyjnych w `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` i `/etc/xdg/termite.cfg`. Plik konfiguracyjny służy do zmiany opcji, takich jak czcionka, kolory, wskazówki dotyczące okien itp. Składnia pliku konfiguracyjnego została zainspirowana przez [specyfikację wpisów pulpitu XDG](https://specifications.freedesktop.org/desktop-entry-spec/latest/) plików [.desktop](/index.php/.desktop ".desktop") (zainspirowane plikami z Microsoft Windows ".ini") z trzema sekcjami: *[options]*, *[colors]* i *[hints]*.
 
 Aby rozpocząć dostosowywanie termite'a, najpierw skopiuj podstawowy plik przykładowy do swojego katalogu domowego:
 

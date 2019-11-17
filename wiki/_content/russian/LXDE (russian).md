@@ -12,7 +12,11 @@
 
 [Lightweight X11 Desktop Environment](http://lxde.org/): *"Одно из главных достоинств LXDE - небольшие требования к железу. Философия LXDE - это лёгкость, полезность и практичность."*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Запуск окружения LXDE](#Запуск_окружения_LXDE)
@@ -387,7 +391,7 @@ window_manager=compiz ccp --indirect-rendering
 
 Меню приложений работает через передачу `.desktop` файлов, которые расположены в `/usr/share/applications`. Многие DE запускают программы, которые supersede эти настройки для кастомизации меню. Для LXDE еще только создают редактор меню приложений, но вы можете настроить его вручную, если нужно. Сторонние редакторы меню вы можете найти в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") - [lxmed](https://aur.archlinux.org/packages/lxmed/).
 
-Чтобы добавить или редактировать элемент меню, создайте или сделайте ссылку на `.desktop` файл в `/usr/share/applications`. Смотрите [the desktop entry specification](http://standards.freedesktop.org/desktop-entry-spec/latest/) на freedesktop.org для получения информации о структуре `.desktop` файлов.
+Чтобы добавить или редактировать элемент меню, создайте или сделайте ссылку на `.desktop` файл в `/usr/share/applications`. Смотрите [the desktop entry specification](https://specifications.freedesktop.org/desktop-entry-spec/latest/) на freedesktop.org для получения информации о структуре `.desktop` файлов.
 
 Для удаления элементов из меню вместо удаления `.desktop` файлов, вы можете редактировать файл элемента, добавляя следующую строку:
 

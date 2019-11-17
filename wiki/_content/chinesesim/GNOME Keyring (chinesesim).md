@@ -36,7 +36,7 @@
 
 与GNOME keyring相关的其他工具包括：
 
-*   **secret-tool** — 通过命令行访问GNOME keyring (以及其他任何实现了[DBus Secret Service API](http://standards.freedesktop.org/secret-service/)的服务) 。
+*   **secret-tool** — 通过命令行访问GNOME keyring (以及其他任何实现了[DBus Secret Service API](https://specifications.freedesktop.org/secret-service/)的服务) 。
 
 	[https://wiki.gnome.org/Projects/Libsecret](https://wiki.gnome.org/Projects/Libsecret) || [libsecret](https://www.archlinux.org/packages/?name=libsecret)
 

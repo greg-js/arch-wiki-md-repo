@@ -654,7 +654,82 @@ Once the disk is added to the Virtual Media Manager, it is possible to attach it
 
 ### Set up a separate ESP in VirtualBox
 
+Configure the settings of the virtual machine and add the previously created ESP disk (ie /path/to/vm/folder/esp.vmdk) to the virtual machine.
+
 ### Configure the virtual UEFI firmware to use the Windows bootloader
+
+This will require a Windows Installation disk (successfully tested Windows 10 Pro Build 1903).
+
+(Note: The following disk order may not matter) Configure the Virtual Machine with the previously created disks as following:
+
+*   Add the newly created ESP disk as a SATA device (SATA Port 0).
+*   Add the newly created rawdisk as a SATA device (SATA Port 1).
+*   Mount the Windows Installation disk into an optical drive.
+
+Start the Virtual Machine and boot from the Windows Installation disk.
+
+Prior to partitioning and installation, press SHIFT+F10 to launch command prompt from the install media.
+
+Enter the following commands to create a new GPt partitioned disk (the ESP vmdk), and install the Windows Boot Loader onto it using configuration from the existing Windows partition:
+
+**From the Command Prompt, open Diskpart.**
+
+```
+diskpart
+
+```
+
+**List all disks identified by the system**
+
+```
+list disk
+
+```
+
+The desired disk should be 500MB in size and unpartitioned. If the disk order was adhered to as above, it should be *disk 0*.
+
+**Select and use the desired disk**
+
+Here we will use *disk 0*
+
+```
+select disk 0
+
+```
+
+**Format as UEFI and assign a label and drive letter**
+
+```
+clean
+convert gpt
+create partition efi size=100
+format quick fs=fat32 label="System"
+assign letter="S"
+
+```
+
+**List all known volumes**
+
+```
+list volume
+exit
+
+```
+
+It is likely that the original Windows partition will be listed as *C* here. Our newly created UEFI boot partition will be labelled as *S* with *System*.
+
+**Installed the Windows Boot Loader onto UEFI disk**
+
+Again, assuming out original Windows install is detected as 'C' and our new UEFI disk is 'S'
+
+```
+C:
+cd C:\Windows\System32
+bcdboot C:\Windows /s S: /f UEFI
+
+```
+
+Now simply detach the Windows Installation disk from the VM and reboot. The VM should now boot from the newly installed boot partition on ESP vmdk, and load the original Windows installation. It may display 'detecting disks' for a short while prior to booting up.
 
 ## Run an entire physical disk in Virtualbox
 

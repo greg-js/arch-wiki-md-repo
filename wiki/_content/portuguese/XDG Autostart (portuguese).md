@@ -1,6 +1,6 @@
 **Status de tradução:** Esse artigo é uma tradução de [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_Autostart&diff=0&oldid=545496) na versão em inglês.
 
-A [especificação XDG Autostart](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html) define um método para [iniciar automaticamente](/index.php/Autostarting "Autostarting") [entradas desktop](/index.php/Desktop_entries "Desktop entries") comuns na inicialização de um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") e montagem de mídia removível, colocando-os em [#Diretórios](#Diretórios) específicos.
+A [especificação XDG Autostart](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html) define um método para [inicialização automática](/index.php/Inicializa%C3%A7%C3%A3o_autom%C3%A1tica "Inicialização automática") de [entradas desktop](/index.php/Desktop_entries "Desktop entries") comuns na inicialização de um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") e montagem de mídia removível, colocando-os em [#Diretórios](#Diretórios) específicos.
 
 ## Pré-requisitos
 

@@ -19,6 +19,7 @@ MuPDF supports all static functions required by PDF 1.7 and is a lightweight alt
 *   [2 Usage](#Usage)
     *   [2.1 MuPDF](#MuPDF)
     *   [2.2 MuPDF GL](#MuPDF_GL)
+    *   [2.3 Set as default PDF viewer](#Set_as_default_PDF_viewer)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -46,6 +47,15 @@ When zoomed in, the document can be moved by using the left mouse button. Pressi
 ### MuPDF GL
 
 Press `I` to invert colours. See [[1]](https://mupdf.com/docs/manual-mupdf-gl.html) for the manual or press `F1` for help.
+
+### Set as default PDF viewer
+
+```
+$ xdg-mime default mupdf.desktop application/pdf
+
+```
+
+For more information on setting default applications see [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications").
 
 ## See also
 

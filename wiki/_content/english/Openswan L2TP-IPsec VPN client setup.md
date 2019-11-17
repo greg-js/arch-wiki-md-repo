@@ -92,7 +92,7 @@ At this point the IPsec configuration is complete and we can move on to the L2TP
 Don't forget to add CAP_SYS_MODULE capability and access to host module tree. Example for nspawn:
 
 ```
--bind=/lib/modules --capability=CAP_SYS_MODULE
+--bind=/lib/modules --capability=CAP_SYS_MODULE
 
 ```
 

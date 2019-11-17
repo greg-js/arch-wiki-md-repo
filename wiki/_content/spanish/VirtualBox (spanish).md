@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [VirtualBox](/index.php/VirtualBox "VirtualBox"), revisada por última vez el **018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=550472) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [VirtualBox](/index.php/VirtualBox "VirtualBox"), revisada por última vez el **2019-11-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=586938) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -13,7 +13,11 @@ Artículos relacionados
 
 Con el fin de integrar las funciones del sistema anfitrión en los sistemas huéspedes, incluyendo carpetas compartidas y portapapeles, aceleración de vídeo y un modo de integración de ventanas fluido, se proporcionan complementos huéspedes (*guest additions*) para algunos sistemas operativos huéspedes.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pasos para preparar Arch Linux como sistema anfitrión](#Pasos_para_preparar_Arch_Linux_como_sistema_anfitrión)
     *   [1.1 Instalar los paquetes principales](#Instalar_los_paquetes_principales)
@@ -42,6 +46,7 @@ Con el fin de integrar las funciones del sistema anfitrión en los sistemas hué
         *   [3.2.1 QCOW](#QCOW)
     *   [3.3 Montar discos virtuales](#Montar_discos_virtuales)
         *   [3.3.1 VDI](#VDI)
+        *   [3.3.2 VHD](#VHD)
     *   [3.4 Discos virtuales compactos](#Discos_virtuales_compactos)
     *   [3.5 Aumentar discos virtuales](#Aumentar_discos_virtuales)
         *   [3.5.1 Procedimiento general](#Procedimiento_general)
@@ -57,28 +62,32 @@ Con el fin de integrar las funciones del sistema anfitrión en los sistemas hué
     *   [5.4 No se pueden usar las teclas CTRL+ALT+Fn en la máquina virtual](#No_se_pueden_usar_las_teclas_CTRL+ALT+Fn_en_la_máquina_virtual)
     *   [5.5 El subsistema USB no funciona](#El_subsistema_USB_no_funciona)
     *   [5.6 El módem USB no funciona en el sistema anfitrión](#El_módem_USB_no_funciona_en_el_sistema_anfitrión)
-    *   [5.7 Acceder al puerto serie desde el sistema huésped](#Acceder_al_puerto_serie_desde_el_sistema_huésped)
-    *   [5.8 El sistema huésped se congela después de iniciar Xorg](#El_sistema_huésped_se_congela_después_de_iniciar_Xorg)
-    *   [5.9 El modo de pantalla completa muestra la pantalla en blanco](#El_modo_de_pantalla_completa_muestra_la_pantalla_en_blanco)
-    *   [5.10 El sistema anfitrión se congela en el inicio de la máquina virtual](#El_sistema_anfitrión_se_congela_en_el_inicio_de_la_máquina_virtual)
-    *   [5.11 El sistema huésped Linux tiene audio lento/distorsionado](#El_sistema_huésped_Linux_tiene_audio_lento/distorsionado)
-    *   [5.12 El micrófono analógico no funciona](#El_micrófono_analógico_no_funciona)
-    *   [5.13 El micrófono no funciona después de la actualización](#El_micrófono_no_funciona_después_de_la_actualización)
-    *   [5.14 Problemas con imágenes convertidas a ISO](#Problemas_con_imágenes_convertidas_a_ISO)
-    *   [5.15 Error al crear la interfaz de red única del anfitrión](#Error_al_crear_la_interfaz_de_red_única_del_anfitrión)
-    *   [5.16 Error al insertar el módulo](#Error_al_insertar_el_módulo)
-    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_(0x80BB0007))
-    *   [5.18 «NS_ERROR_FAILURE» y ausencia de elementos del menú](#«NS_ERROR_FAILURE»_y_ausencia_de_elementos_del_menú)
-    *   [5.19 Arch: el script pacstrap falla](#Arch:_el_script_pacstrap_falla)
-    *   [5.20 OpenBSD queda inutilizable cuando las instrucciones de virtualización no están disponibles](#OpenBSD_queda_inutilizable_cuando_las_instrucciones_de_virtualización_no_están_disponibles)
-    *   [5.21 Anfitrión Windows: VERR_ACCESS_DENIED](#Anfitrión_Windows:_VERR_ACCESS_DENIED)
-    *   [5.22 Windows: «La ruta especificada no existe. Verifique la ruta y luego inténtelo nuevamente».](#Windows:_«La_ruta_especificada_no_existe._Verifique_la_ruta_y_luego_inténtelo_nuevamente».)
-    *   [5.23 Código de error 0x000000C4 de Windows 8.x](#Código_de_error_0x000000C4_de_Windows_8.x)
-    *   [5.24 Windows 8, 8.1 o 10 no se instala, no se inicia o da el error «ERR_DISK_FULL»](#Windows_8,_8.1_o_10_no_se_instala,_no_se_inicia_o_da_el_error_«ERR_DISK_FULL»)
-    *   [5.25 WinXP: la profundidad de bits no puede ser mayor que 16](#WinXP:_la_profundidad_de_bits_no_puede_ser_mayor_que_16)
-    *   [5.26 Windows: la pantalla parpadea si la aceleración 3D está activada](#Windows:_la_pantalla_parpadea_si_la_aceleración_3D_está_activada)
-    *   [5.27 Sin aceleración 3D de hardware en Arch Linux huésped](#Sin_aceleración_3D_de_hardware_en_Arch_Linux_huésped)
-*   [6 Véase también](#Véase_también)
+    *   [5.7 El dispositivo USB bloquea al sistema invitado](#El_dispositivo_USB_bloquea_al_sistema_invitado)
+    *   [5.8 Acceder al puerto de serie desde el sistema huésped](#Acceder_al_puerto_de_serie_desde_el_sistema_huésped)
+    *   [5.9 El sistema huésped se congela después de iniciar Xorg](#El_sistema_huésped_se_congela_después_de_iniciar_Xorg)
+    *   [5.10 El modo de pantalla completa muestra la pantalla en blanco](#El_modo_de_pantalla_completa_muestra_la_pantalla_en_blanco)
+    *   [5.11 El sistema anfitrión se congela en el inicio de la máquina virtual](#El_sistema_anfitrión_se_congela_en_el_inicio_de_la_máquina_virtual)
+    *   [5.12 El sistema huésped Linux tiene audio lento/distorsionado](#El_sistema_huésped_Linux_tiene_audio_lento/distorsionado)
+    *   [5.13 El micrófono analógico no funciona](#El_micrófono_analógico_no_funciona)
+    *   [5.14 El micrófono no funciona después de la actualización](#El_micrófono_no_funciona_después_de_la_actualización)
+    *   [5.15 Problemas con imágenes convertidas a ISO](#Problemas_con_imágenes_convertidas_a_ISO)
+    *   [5.16 Error al crear la interfaz de red única del anfitrión](#Error_al_crear_la_interfaz_de_red_única_del_anfitrión)
+    *   [5.17 Error al insertar el módulo](#Error_al_insertar_el_módulo)
+    *   [5.18 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_(0x80BB0007))
+    *   [5.19 «NS_ERROR_FAILURE» y ausencia de elementos del menú](#«NS_ERROR_FAILURE»_y_ausencia_de_elementos_del_menú)
+    *   [5.20 Arch: el script pacstrap falla](#Arch:_el_script_pacstrap_falla)
+    *   [5.21 OpenBSD queda inutilizable cuando las instrucciones de virtualización no están disponibles](#OpenBSD_queda_inutilizable_cuando_las_instrucciones_de_virtualización_no_están_disponibles)
+    *   [5.22 Anfitrión Windows: VERR_ACCESS_DENIED](#Anfitrión_Windows:_VERR_ACCESS_DENIED)
+    *   [5.23 Windows: «La ruta especificada no existe. Verifique la ruta y luego inténtelo nuevamente».](#Windows:_«La_ruta_especificada_no_existe._Verifique_la_ruta_y_luego_inténtelo_nuevamente».)
+    *   [5.24 Código de error 0x000000C4 de Windows 8.x](#Código_de_error_0x000000C4_de_Windows_8.x)
+    *   [5.25 Windows 8, 8.1 o 10 no se instala, no se inicia o da el error «ERR_DISK_FULL»](#Windows_8,_8.1_o_10_no_se_instala,_no_se_inicia_o_da_el_error_«ERR_DISK_FULL»)
+    *   [5.26 WinXP: la profundidad de bits no puede ser mayor que 16](#WinXP:_la_profundidad_de_bits_no_puede_ser_mayor_que_16)
+    *   [5.27 Windows: la pantalla parpadea si la aceleración 3D está activada](#Windows:_la_pantalla_parpadea_si_la_aceleración_3D_está_activada)
+    *   [5.28 Sin aceleración 3D de hardware en Arch Linux huésped](#Sin_aceleración_3D_de_hardware_en_Arch_Linux_huésped)
+    *   [5.29 No se puede iniciar VirtualBox en Wayland: «Segmentation fault»](#No_se_puede_iniciar_VirtualBox_en_Wayland:_«Segmentation_fault»)
+*   [6 Problemas conocidos](#Problemas_conocidos)
+    *   [6.1 El montaje automático no funciona](#El_montaje_automático_no_funciona)
+*   [7 Véase también](#Véase_también)
 
 ## Pasos para preparar Arch Linux como sistema anfitrión
 
@@ -90,7 +99,8 @@ Para poner en marcha máquinas virtuales de VirtualBox emarcadas en su sistema A
 
 *   para el kernel [linux](https://www.archlinux.org/packages/?name=linux) elija [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
 *   para otros [kernels](/index.php/Kernels "Kernels") elija [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
-    *   También es necesario instalar los paquetes de encabezados adecuados para su kernel(s) instalado(s): [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) o [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) Cuando se actualice VirtualBox o el kernel, los módulos del kernel se volverán a compilar automáticamente gracias al hook [DKMS](/index.php/DKMS "DKMS") de Pacman.
+
+Para compilar los módulos de VirtualBox proporcionados por [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms), también será necesario instalar el paquete de encabezado apropiado para su kernel [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) Cuando se actualice VirtualBox o el kernel, los módulos del kernel se volverán a compilar automáticamente gracias al hook [DKMS](/index.php/DKMS "DKMS") de Pacman.
 
 ### Firmar los módulos
 
@@ -120,10 +130,9 @@ Para cargar el módulo manualmente, ejecute:
 
 ```
 
-Los siguientes módulos son opcionales, pero se recomiendan si no quiere que le den problebms con algunas configuraciones avanzadas (que son los que siguen): `vboxnetadp`, `vboxnetflt` y `vboxpci`.
+Los siguientes módulos solo serán necesarios con algunas configuraciones avanzadas:
 
 *   `vboxnetadp` y `vboxnetflt` son necesarios cuando intenta usar la característica de [bridged](https://www.virtualbox.org/manual/ch06.html#network_bridged) o [conexión de red solo para el sistema anfitrión](https://www.virtualbox.org/manual/ch06.html#network_hostonly). Más precisamente, se necesita `vboxnetadp` para crear la interfaz del sistema anfitrión en las preferencias globales de VirtualBox, y `vboxnetflt` para iniciar una máquina virtual usando esa interfaz de red.
-
 *   `vboxpci` es necesario cuando su máquina virtual necesita pasar a través de un dispositivo PCI del sistema anfitrión.
 
 **Nota:** si los módulos del kernel de VirtualBox se cargaron en el kernel mientras actualizaba los módulos, debe volver a cargarlos manualmente para usar la nueva versión actualizada. Para hacerlo, ejecute `vboxreload` como root.
@@ -138,7 +147,7 @@ También se recomienda instalar el paquete [virtualbox-guest-iso](https://www.ar
 
 ### Paquete de extensiones
 
-El paquete *Oracle Extension* proporciona [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing) características adicionales] y se lanza bajo una licencia no gratuita **solo disponible para uso personal** . Para instalarlo, está disponible el paquete [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/), y se puede encontrar una versión precompilada en el repositorio [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories").
+El paquete *Oracle Extension* proporciona [additional features](https://www.virtualbox.org/manual/ch01.html#intro-installing) (características adicionales) y se lanza bajo una licencia no gratuita **solo disponible para uso personal**. Para instalarlo, está disponible el paquete [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/), y se puede encontrar una versión precompilada en el repositorio [seblu](/index.php/Unofficial_user_repositories#seblu "Unofficial user repositories").
 
 Si prefiere usar la forma tradicional y manual: descargue la extensión manualmente e instálela a través de la interfaz gráfica (*Archivo > Preferencias > Extensiones*) o a través de `VBoxManage extpack install <.vbox-extpack>`, asegúrese de tener un conjunto de herramientas como [Polkit](/index.php/Polkit "Polkit") para otorgar acceso privilegiado a VirtualBox. La instalación de esta extensión [requiere acceso de root](https://www.virtualbox.org/ticket/8473).
 
@@ -160,7 +169,7 @@ Remítase al [manual de VirtualBox](https://www.virtualbox.org/manual) para apre
 
 Inicie el soporte de instalación de Arch a través de una de las unidades virtuales de la máquina virtual. Luego, complete la instalación de un sistema Arch básico como se explica en la [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
 
-#### Instalación en modo EFI
+### Instalación en modo EFI
 
 Si desea instalar Arch Linux en modo EFI en VirtualBox, en la configuración de la máquina virtual, choose *System* item from the panel on the left and *Motherboard* tab from the right panel, y marque la casilla *Enable EFI (special OSes only)*. Después seleccione el kernel desde el menú del soporte de instalación de Arch Linux, el soporte demorará por un minuto o dos y continuará con el arranque del kernel normalmente después. Sea paciente.
 
@@ -177,9 +186,9 @@ Véase también [Problemas de arranque de la instalación de UEFI VirtualBox](ht
 
 ### Instalar los «Guest Additions»
 
-Los [Guest Additions](https://www.virtualbox.org/manual/ch04.html) de VirtualBox proporcionan controladores y aplicaciones que optimizan el sistema operativo huésped, incluida una resolución de imagen mejorada y un mejor control del ratón. Dentro del sistema huésped instalado, instale:
+Los [Guest Additions](https://www.virtualbox.org/manual/ch04.html) de VirtualBox proporcionan controladores y aplicaciones que optimizan el sistema operativo huésped, incluida una resolución de imagen mejorada y un mejor control del ratón. Dentro del sistema huésped instalado, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)"):
 
-*   [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) para las utilidades de VirtualBox Guest con soporte para X;
+*   [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) y [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) ([FS#61183](https://bugs.archlinux.org/task/61183)) para las utilidades de VirtualBox Guest con soporte para X;
 *   [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) para las utilidades de VirtualBox Guest sin soporte de X.
 
 Ambos paquetes le darán a elegir un paquete para proporcionar módulos al huésped:
@@ -229,7 +238,7 @@ video=1360x768
 
 ```
 
-Además, es posible que desee configurar su [Arch boot process (Español)#Gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)") para usar la misma resolución. Si usa GRUB, consul [GRUB/Tips and tricks (Español)#Setting the framebuffer resolution](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Setting_the_framebuffer_resolution "GRUB/Tips and tricks (Español)").
+Además, es posible que desee configurar su [Arch boot process (Español)#Gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)") para usar la misma resolución. Si usa GRUB, consul [GRUB (Español)/Tips and tricks (Español)#Ajustar la resolución del framebuffer](/index.php/GRUB_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol)#Ajustar_la_resolución_del_framebuffer "GRUB (Español)/Tips and tricks (Español)").
 
 **Nota:** ni el parámetro del kernel `vga` ni la configuración de resolución del cargador de arranque (por ejemplo, `GRUB_GFXPAYLOAD_LINUX`) de GRUB, pueden arreglar el framebuffer, ya que están superados por la configuración de modo del kernel. La resolución del framebuffer debe ser establecida por el parámetro del kernel `video` como se describió anteriormente.
 
@@ -260,21 +269,28 @@ Después de instalar los módulos del kernel, ahora se necesita iniciar los serv
 Todas estas características se pueden activar, separada y manualmente, con sus estiquetas dedicadas.
 
 ```
-$ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
+$ VBoxClient --clipboard
+$ VBoxClient --draganddrop	
+$ VBoxClient --seamless	
+$ VBoxClient --display	
+$ VBoxClient --checkhostversion	
+$ VBoxClient --vmsvga-x11
 
 ```
 
-Como método abreviado, el script de bash `VBoxClient-all` activa todas estas características.
+Tenga en cuenta que `VBoxClient` solo se puede llamar con un indicador a la vez, cada llamada genera un proceso de servicio dedicado. Como método abreviado, el script de bash `VBoxClient-all` activa todas estas características.
 
 [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) instala `/etc/xdg/autostart/vboxclient.desktop` que lanza `VBoxClient-all` al iniciar sesión. Si su [entorno de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") o [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") no es compatible con [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart"), deberá configurar el inicio automático usted mismo, consulte [Autostarting#On desktop environment startup](/index.php/Autostarting#On_desktop_environment_startup "Autostarting") y [Autostarting#On window manager startup](/index.php/Autostarting#On_window_manager_startup "Autostarting") para más detalles.
 
-VirtualBox también puede sincronizar el tiempo entre el sistema anfitrión y el sistema huésped, para hacer esto,[inicie/active](/index.php/Start/enable "Start/enable") el servicio `vboxservice.service`.
+VirtualBox también puede sincronizar el tiempo entre el sistema anfitrión y el sistema huésped, para hacer esto, [inicie/active](/index.php/Start/enable "Start/enable") el servicio `vboxservice.service`.
 
 Ahora, debería tener un sistema huésped de Arch Linux funcional. Tenga en cuenta que características como el uso compartido del portapapeles están desactivadas de manera predeterminada en VirtualBox, y tendrá que activarlas en la configuración para la máquina virtual si realmente quiere usarlas (por ejemplo, *Configuración > General > Avanzado > Portapapeles compartido*).
 
 ### Aceleracion de hardware
 
-La aceleración de hardware se puede activar en las opciones de VirtualBox. Se sabe que el gestor de pantallas [GDMrompe](/index.php/GDM "GDM") el soporte de aceleración de hardware. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=749390) Si es el caso, y tiene problemas con la aceleración de hardware, pruebe con otro gestor de pantallas (lightdm parece funcionar bien). [[4]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
+La aceleración de hardware se puede activar en las opciones de VirtualBox. Se sabe que el gestor de pantallas [GDM](/index.php/GDM "GDM") rompe el soporte de aceleración de hardware. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=749390) Si es el caso, y tiene problemas con la aceleración de hardware, pruebe con otro gestor de pantallas (lightdm parece funcionar bien). [[4]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
+
+Si la aceleración por hardware no funciona como esperaba, intente cambiar la opción *Graphics Controller* que encontrará en la pestaña *Screen* en las opciones *Display* del menú de configuración. Parece que, según el tipo de GPU del equipo anfitrión, no todos los controladores emulados funcionarán igual de bien.
 
 ### Activar carpetas compartidas
 
@@ -294,25 +310,18 @@ Se necesitan dos pasos adicionales para que el punto de montaje sea accesible a 
 Utilice la siguiente orden para montar su carpeta en el sistema huésped Arch Linux:
 
 ```
-# mount -t vboxsf *shared_folder_name* *mount_point_on_guest_system*
+# mount -t vboxsf -o gid=vboxsf *shared_folder_name* *mount_point_on_guest_system*
 
 ```
 
-El sistema de archivos vboxsf ofrece otras opciones que se pueden visualizar con esta orden:
+donde `*shared_folder_name*` es el *nombre de la carpeta* asignado por el hipervisor cuando se creó el recurso compartido.
 
-```
-# mount.vboxsf
-
-```
-
-Por ejemplo, si el usuario no estaba en el grupo *vboxsf*, podríamos utilizar esta orden para darle acceso a nuestro punto de montaje:
+Si el usuario no está en el grupo *vboxsf*, para darle acceso a nuestro punto de montaje, podemos especificar las opciones [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8), `uid=` y `gid=` con los valores correspondientes del usuario. Estos valores se pueden obtener de la orden `id` ejecutada frente a este usuario. Por ejemplo:
 
 ```
 # mount -t vboxsf -o uid=1000,gid=1000 home /mnt
 
 ```
-
-Donde *uid* y *gid* son los valores correspondientes a los usuarios que queremos dar acceso. Estos valores se obtienen de la orden `id` ejecutada respecto a dichos usuarios.
 
 #### Montaje automático
 
@@ -320,7 +329,7 @@ Donde *uid* y *gid* son los valores correspondientes a los usuarios que queremos
 
 Para que la función de montaje automático funcione debe haber marcado la casilla de montaje automático en la interfaz gráica o usado la opción `--automount` en la orden `VBoxManage sharedfolder`.
 
-La carpeta compartida debe aparecer ahora en `/media/sf_*shared_folder_name*`. If users in `media` cannot access the shared folders, check that `media` has permissions `755` or has group ownership `vboxsf` if using permission `750`. This is currently not the default if media is created by installing [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils).
+La carpeta compartida debe aparecer ahora como `/media/sf_*shared_folder_name*`. Si los usuarios en `media` no pueden acceder a las carpetas compartidas, verifique que `/media` tenga [permisos](/index.php/Permissions "Permissions") `755` o sea propiedad del grupo `vboxsf` si usa permisos `750`. Actualmente, este no es el valor predeterminado si el directorio `/media` es creado por `vboxservice.service`.
 
 Puede usar enlaces simbólicos si quiere tener un acceso más cómodo a dicha carpeta y ahorrarse tener que navegar hasta ese directorio, por ejemplo:
 
@@ -342,7 +351,7 @@ Puede montar su directorio con [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol
 *   `*/path/to/mntPtOnGuestMachine*`: si no existe, este directorio debe crearse manualmente (por ejemplo, utilizando [mkdir](/index.php/Core_utilities#Essentials "Core utilities")).
 *   `dmode`/`fmode` son permisos de directorio/archivo para directorios/archivos dentro de `*/path/to/mntPtOnGuestMachine*`.
 
-A partir de 2012-08-02, mount.vboxsf no admite la opción *nofail*:
+A partir de 2012-08-02, mount.vboxsf no admite la opción `nofail`:
 
 ```
 desktop   /media/desktop    vboxsf  uid=user,gid=group,rw,dmode=700,fmode=600,nofail 0 0
@@ -373,31 +382,25 @@ y luego transferir archivos entre ambos.
 
 ## Gestionar discos virtuales
 
-Véase también [VirtualBox/Tips and tricks (Español)#Importar/exportar máquinas virtuales de VirtualBox a/desde otros hipervisores](/index.php/VirtualBox/Tips_and_tricks_(Espa%C3%B1ol)#Importar/exportar_máquinas_virtuales_de_VirtualBox_a/desde_otros_hipervisores "VirtualBox/Tips and tricks (Español)").
+Véase también [VirtualBox (Español)/Tips and tricks (Español)#Importar/exportar máquinas virtuales de VirtualBox a/desde otros hipervisores](/index.php/VirtualBox_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol)#Importar/exportar_máquinas_virtuales_de_VirtualBox_a/desde_otros_hipervisores "VirtualBox (Español)/Tips and tricks (Español)").
 
 ### Formatos soportados por VirtualBox
 
 VirtualBox es compatible con los siguientes formatos de disco virtual:
 
 *   **VDI**: la «*Virtual Disk Image*» es el propio contenedor abierto de VirtualBox utilizado por defecto al crear una máquina virtual con VirtualBox.
-
 *   **VMDK**: el «*Virtual Machine Disk*» fue desarrollado inicialmente por VMware para sus productos. La especificación fue inicialmente de código cerrado, pero ahora se ha convertido en un formato abierto que está totalmente respaldado por VirtualBox. Este formato ofrece la posibilidad de dividirse en varios archivos de 2 GB. Esta característica es especialmente útil si desea almacenar la máquina virtual en máquinas que no soportan archivos muy grandes. Otros formatos, excluyendo el formato HDD de Parallels, no proporcionan una característica equivalente.
-
 *   **VHD**: el «*Virtual Hard Disk*» es el formato utilizado por Microsoft en Windows Virtual PC y Hyper-V. Si tiene intención de utilizar cualquiera de estos productos de Microsoft, tendrá que elegir este formato.
 
 **Sugerencia:** desde Windows 7, este formato se puede montar directamente sin ninguna aplicación adicional.
 
 *   **VHDX** (solo lectura): esta es la *versión extendida* del formato de «*Virtual Hard Disk*» desarrollada por Microsoft, que ha sido liberado el 2012-09-04 con Hyper-V 3.0 que viene con Windows Server 2012\. Esta nueva versión del formato de disco no ofrece un rendimiento mejorado (mejora, eso sí, la alineación de bloques), permite mayor tamaño de los bloques, y da soporte a journal que aporta resiliencia a los fallos de energía. VirtualBox [soporta este formato en solo lectura](https://www.virtualbox.org/manual/ch15.html#idp63002176).
-
 *   **HDD** (versión 2): el formato HDD es desarrollado por Parallels Inc y utilizado en sus soluciones de hipervisor como Parallels Desktop para Mac. Las nuevas versiones de este formato (es decir, 3 y 4) no son compatibles debido a la falta de documentación de este formato propietario.
     **Nota:** en la actualidad existe una controversia con respecto al soporte de la versión 2 del formato. Si bien el manual oficial de VirtualBox [informa que solo la segunda versión del formato de archivo HDD está soportado](https://www.virtualbox.org/manual/ch05.html#vdidetails), los colaboradores de Wikipedia [informan que la primera versión puede funcionar también](https://en.wikipedia.org/wiki/Comparison_of_platform_virtual_machines#Image_type_compatibility "wikipedia:Comparison of platform virtual machines"). Si es posible realizar algunas pruebas con la primera versión del formato HDD, la ayuda será bienvenida.
 
 *   **QED**: el formato «*QUEMU Enhanced Disk*» es un formato de archivo antiguo de QEMU, otro hipervisor de código libre y abierto. Este formato fue diseñado a partir de 2010 como una forma de ofrecer una alternativa superior a qcow2 y otros. Este formato cuenta con una trayectoria de E/S totalmente asíncrona, integridad de datos solida, respaldo de archivos y archivos dispersos. El formato QED solo se admite para la compatibilidad con máquinas virtuales creadas con versiones antiguas de QEMU.
-
 *   **QCOW**: el formato «*QEMU Copy On Write*» es el formato actual de QEMU. El formato qcow soporta compresión transparente basada en zlib y cifrado (este último tiene defectos y no es recomendable). Qcow está disponible en dos versiones: QCOW y QCOW2\. El último tiende a reemplazar al primero. QCOW es [en la actualidad plenamente soportado por VirtualBox](https://www.virtualbox.org/manual/ch15.html#idp63002176). QCOW2 viene en dos revisiones: QCOW2 0.10 y QCOW2 1.1 (que es el valor por defecto cuando se crea un disco virtual con QEMU). VirtualBox no soporta este formato qcow2 (ambas revisiones se han probado).
-
 *   **OVF**: El «*Open Virtualization Format*» es un formato abierto que ha sido diseñado para la interoperabilidad y la distribución de las máquinas virtuales entre diferentes hipervisores. VirtualBox es compatible con todas las revisiones de este formato a través de la [característica importar/exportar de VBoxManage](https://www.virtualbox.org/manual/ch08.html#idp55423424) pero con [limitaciones conocidas](https://www.virtualbox.org/manual/ch14.html#KnownProblems).
-
 *   **RAW**: este es el modo cuando el disco virtual se expone directamente al disco sin ser contenida en un contenedor específico de formato de archivo. VirtualBox soporta esta característica de varias maneras: la conversión de disco RAW [a un formato específico](https://www.virtualbox.org/manual/ch08.html#idp59139136), o por [clonación de un disco a RAW](https://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi), o utilizando directamente un archivo VMDK [que apunte a un disco físico o a un simple archivo](https://www.virtualbox.org/manual/ch09.html#idp57804112).
 
 ### Conversión de formatos de imagen de disco
@@ -449,12 +452,21 @@ $ VBoxManage internalcommands dumphdinfo <storage.vdi> | grep "offData"
 
 ```
 
-Ahora se puede montar con:
+Ahora se puede montar el almacenamiento con:
 
 ```
 # mount -t ext4 -o rw,noatime,noexec,loop,offset=101888 <storage.vdi> /mntpoint/
 
 ```
+
+Para discos VDI con más particiones, también puede utilizar `losetup`:
+
+```
+# losetup -o $offData -Pf
+
+```
+
+Después de esto, debería encontrar las particiones en `/dev/loop*` (por ejemplo `/dev/loop0p1`). Luego puede montarlos como de costumbre (por ejemplo, `mount mount /dev/loop0p1 /mnt/`).
 
 También puede utilizar el script [mount.vdi](https://github.com/pld-linux/VirtualBox/blob/master/mount.vdi) script that, which you can use as (install script itself to `/usr/bin/`):
 
@@ -477,6 +489,25 @@ Alternativamente, puede usar el módulo del kernel [qemu](https://www.archlinux.
 
 Si los nodos de partición no se desplazan, pruebe usando `partprobe /dev/nbd0`; en otro caso, una partición vdi se puede asignar directamente a un nodo con: `qemu-nbd -P 1 -c /dev/nbd0 <storage.vdi>`.
 
+#### VHD
+
+Al igual que VDI, las imágenes VHD se pueden montar con el módulo nbd de [QEMU](/index.php/QEMU "QEMU"):
+
+```
+# modprobe nbd	
+# qemu-nbd -c /dev/nbd0 *storage*.vhd	
+# mount /dev/nbd0p1 /mnt
+
+```
+
+Para desmontar:
+
+```
+# umount /mnt	
+# qemu-nbd -d /dev/nbd0
+
+```
+
 ### Discos virtuales compactos
 
 La compactación de discos virtuales solo funciona con archivos `.vdi` y, básicamente, consiste en los siguientes pasos.
@@ -495,9 +526,8 @@ Limpie el espacio libre con ceros que puede lograrse con varias herramientas:
 	Cuando el proceso antes mencionado se ha completado, puede eliminar el archivo `*fillfile*` creado.
 
 *   En Windows, hay dos herramientas disponibles:
-
-*   `sdelete` de la [suite Sysinternals](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), escriba `sdelete -s *c:*`, necesitará repetir la orden para cada unidad que tenga en su máquina virtual;
-*   o, si se prefiere los scripts, hay una [solución PowerShell](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html), pero que aún así necesita ser repetido para todas las unidades.
+    *   `sdelete` de la [suite Sysinternals](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), escriba `sdelete -s *c:*`, necesitará repetir la orden para cada unidad que tenga en su máquina virtual;
+    *   o, si se prefiere los scripts, hay una [solución PowerShell](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html), pero que aún así necesita ser repetido para todas las unidades.
 
 	 `PS> ./Write-ZeroesToFreeSpace.ps1 -Root *c:\* -PercentFree 0` 
 
@@ -508,13 +538,10 @@ Una vez que el espacio libre en el disco ha sido anulado, apague su máquina vir
 La próxima vez que arranque su máquina virtual, es recomendable hacer una verificación del sistema de archivos.
 
 *   En los sistemas basados en UNIX, puede usar `fsck` manualmente;
-
-*   En los sistemas GNU / Linux, y por lo tanto en Arch Linux, puede forzar una comprobación de disco en el arranque [gracias a un parámetro de arranque del kernel](/index.php/Fsck#Forcing_the_check "Fsck");
-
+    *   En los sistemas GNU / Linux, y por lo tanto en Arch Linux, puede forzar una comprobación de disco en el arranque [gracias a un parámetro de arranque del kernel](/index.php/Fsck#Forcing_the_check "Fsck");
 *   En los sistemas Windows, puede utilizar:
-
-*   o bien, `chkdsk *c:* /F` donde `*c:*` necesita ser reemplazado por cada disco que necesita ser analizado y corregir errores;
-*   o, `FsckDskAll` [desde aquí](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx), que es básicamente el mismo software que `chkdsk`, pero sin la necesidad de repetir la orden para todas las unidades;
+    *   o bien, `chkdsk *c:* /F` donde `*c:*` necesita ser reemplazado por cada disco que necesita ser analizado y corregir errores;
+    *   o, `FsckDskAll` [desde aquí](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx), que es básicamente el mismo software que `chkdsk`, pero sin la necesidad de repetir la orden para todas las unidades;
 
 Ahora, hay que quitar los ceros del archivo *.|vdi* con [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi):
 
@@ -664,7 +691,7 @@ $ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
 
 ## Consejos y trucos
 
-Para una configuración avanzada, vea [VirtualBox/Tips and tricks (Español)](/index.php/VirtualBox/Tips_and_tricks_(Espa%C3%B1ol) "VirtualBox/Tips and tricks (Español)").
+Para una configuración avanzada, vea [VirtualBox (Español)/Tips and tricks (Español)](/index.php/VirtualBox_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol) "VirtualBox (Español)/Tips and tricks (Español)").
 
 ## Solución de problemas
 
@@ -672,7 +699,7 @@ Para una configuración avanzada, vea [VirtualBox/Tips and tricks (Español)](/i
 
 Esto significa que su máquina virtual ha capturado la entrada de su teclado y del ratón. Basta con pulsar la tecla `Ctrl` derecho y su entrada debería volver al control de su sistema anfitrión de nuevo.
 
-Para controlar de forma transparente su máquina virtual con el ratón de modo que este pueda pasear entre esta y el equipo anfitrión sin tener que pulsar ninguna tecla y con una integración perfecta, instale las *guest additions* dentro del sistema huésped. Lea los pasos para [#Instalar complementos para el sistema huésped](#Instalar_complementos_para_el_sistema_huésped) si su sistema huésped es Arch Linux, en otro caso, lea la ayuda oficial de VirtualBox.
+Para controlar de forma transparente su máquina virtual con el ratón de modo que este pueda pasear entre esta y el equipo anfitrión sin tener que pulsar ninguna tecla y con una integración perfecta, instale las *guest additions* dentro del sistema huésped. Lea los pasos para [#Instalar los «Guest Additions»](#Instalar_los_«Guest_Additions») si su sistema huésped es Arch Linux, en otro caso, lea la ayuda oficial de VirtualBox.
 
 ### No hay opciones del sistema operativo de 64 bits para el cliente
 
@@ -692,7 +719,7 @@ Si su sistema operativo huésped es una distribución de GNU/Linux puede abrir u
 
 Su usuario debe estar en el grupo `vboxusers`, necesario para instalar el [paquete de extensiones](#Paquete_de_extensiones) si desea apoyo de USB 2\. Entonces será capaz de activar USB 2 en la configuración de la máquina virtual y añadir uno o varios filtros para los dispositivos a los que desee acceder desde el sistema operativo huésped.
 
-If `VBoxManage list usbhost` does not show any USB devices even if run as root, make sure that there is no old udev rules (from VirtualBox 4.x) in `/etc/udev/rules.d/`. VirtualBox 5.0 installs udev rules to `/usr/lib/udev/rules.d/`. You can use command like `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` to determine if the udev rule file is outdated.
+Si `VBoxManage list usbhost` no muestra ningún dispositivo USB, incluso si se ejecuta como root, asegúrese de que no haya reglas udev antiguas (de VirtualBox 4.x) en `/etc/udev/rules.d/`. VirtualBox 5.0 instala las reglas udev en `/usr/lib/udev/rules.d/`. Puede utilizar órdenes como`pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` para determinar si el archivo de reglas de udev está desactualizado.
 
 A veces, en equipos con Linux antiguo, el subsistema USB no se detecta automáticamente lo que da el error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` o la unidad USB no es visible en el equipo, [incluso cuando el usuario está en el grupo **vboxusers**](https://bbs.archlinux.org/viewtopic.php?id=121377). Este problema es debido al hecho de que VirtualBox cambió de *usbfs* a *sysfs* en la versión 3.0.8\. Si el sistema anfitrión no entiende este cambio, puede revertir el comportamiento definiendo la siguiente variable de entorno en cualquier archivo fuente de la shell (por ejemplo, su `~/.bashrc` si usa *bash*):
 
@@ -706,7 +733,11 @@ También asegúrese de que su usuario es miembro del grupo `storage`.
 
 Si tiene un módem USB que está siendo utilizado por el sistema operativo huésped, eliminar el sistema operativo huésped, puede hacer que el sistema anfitrión no pueda utilizar el módem. Matar y reiniciar `VBoxSVC` debería solucionar este problema.
 
-### Acceder al puerto serie desde el sistema huésped
+### El dispositivo USB bloquea al sistema invitado
+
+Si conectar un dispositivo USB al huésped causa un bloqueo o cualquier otro comportamiento erróneo, pruebe cambiando la controladora del USB de USB 2 (EHCI) a USB 3 (xHCI) o viceversa.
+
+### Acceder al puerto de serie desde el sistema huésped
 
 Verifique su permiso para el puerto serie:
 
@@ -723,11 +754,11 @@ Agregue el usuario `uucp` al [grupo de usuarios](/index.php/User_group_(Espa%C3%
 
 ### El sistema huésped se congela después de iniciar Xorg
 
-Los controladores defectuosos o ausentes pueden provocar que el sistema huésped se congele después de iniciar Xorg, consulte por ejemplo [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) y [[8]](https://bbs.archlinux.org/viewtopic.php?id=156079). Intente desactivar la aceleración 3D en *Configuración > Pantalla*, y compruebe que todos los controladores de [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") están instalados.
+Los controladores defectuosos o ausentes pueden provocar que el sistema huésped se congele después de iniciar Xorg, consulte por ejemplo [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) y [[8]](https://bbs.archlinux.org/viewtopic.php?id=156079). Intente desactivar la aceleración 3D en *Configuración > Pantalla*, y compruebe que todos los controladores de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") están instalados.
 
 ### El modo de pantalla completa muestra la pantalla en blanco
 
-En algunos gestores de ventanas ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), VirtualBox tiene problemas con el modo de pantalla completa debido a la barra de superposición. Para solucionar este problema, desactive la opción «Mostrar en pantalla completa/Sin márgenes» en «Configuración de invitado> Interfaz de usuario > Barra de herramientas mini». Consulte el [informe de errores de los desarrolladores](https://www.virtualbox.org/ticket/14323) para obtener más información.
+En algunos gestores de ventanas ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), VirtualBox tiene problemas con el modo de pantalla completa debido a la barra de superposición. Para solucionar este problema, desactive la opción «Mostrar en pantalla completa/Sin márgenes» en «Configuración de invitado > Interfaz de usuario > Barra de herramientas mini». Consulte el [informe de errores de los desarrolladores](https://www.virtualbox.org/ticket/14323) para obtener más información.
 
 ### El sistema anfitrión se congela en el inicio de la máquina virtual
 
@@ -748,7 +779,7 @@ En general, estos problemas se observan después de actualizar VirtualBox o el k
 
 ### El sistema huésped Linux tiene audio lento/distorsionado
 
-El controlador de audio AC97 dentro del kernel de Linux de vez en cuando define los ajustes del reloj de forma equivocada cuando se ejecuta dentro de Virtual Box, lo que lleva a que el audio sea demasiado lento o demasiado rápido. Para solucionar este problema, cree un archivo en `/etc/modprobe.d` con la siguiente línea:
+El controlador de audio AC97 dentro del kernel de Linux de vez en cuando define los ajustes del reloj de forma equivocada cuando se ejecuta dentro de VirtualBox, lo que lleva a que el audio sea demasiado lento o demasiado rápido. Para solucionar este problema, cree un archivo en `/etc/modprobe.d` con la siguiente línea:
 
 ```
 options snd-intel8x0 ac97_clock=48000
@@ -777,6 +808,8 @@ En este caso, tendrá que usar [CDemu](/index.php/CDemu "CDemu") para Linux dent
 
 Asegúrese de que todos los módulos del kernel necesarios están cargados. Véase [#Cargar los módulos del kernel de VirtualBox](#Cargar_los_módulos_del_kernel_de_VirtualBox).
 
+Si todos los módulos del kernel necesarios están cargados y aún no puede crear el adaptador solo para el anfitrión, vaya a *File > Host Network Manager* y haga clic en el botón *Create* para añadir la interfaz de red.
+
 ### Error al insertar el módulo
 
 Cuando obtiene el siguiente error al intentar cargar módulos:
@@ -786,7 +819,7 @@ Failed to insert 'vboxdrv': Required key not available
 
 ```
 
-[Firme](#Sign_modules) los módulos o desactive `CONFIG_MODULE_SIG_FORCE` en la configuración de tu kernel.
+[Firme](#Firmar_los_módulos) los módulos o desactive `CONFIG_MODULE_SIG_FORCE` en la configuración de tu kernel.
 
 ### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
 
@@ -867,7 +900,7 @@ Actualice la configuración de la máquina virtual navegando a *Settings > Stora
 
 ### WinXP: la profundidad de bits no puede ser mayor que 16
 
-Si está ejecutando a una profundidad de color de 16 bits, entonces los iconos pueden aparecer borrosos / entrecortados. Sin embargo, al intentar cambiar la profundidad del color a un nivel superior, el sistema puede restringirlo a una resolución más baja o simplemente no permitirle cambiar la profundidad en absoluto. Para solucionar este problema, ejecute `regedit` en Windows y agregue la siguiente clave al registro de la máquina virtual de Windows XP:
+Si está ejecutando a una profundidad de color de 16 bits, entonces los iconos pueden aparecer borrosos/entrecortados. Sin embargo, al intentar cambiar la profundidad del color a un nivel superior, el sistema puede restringirlo a una resolución más baja o simplemente no permitirle cambiar la profundidad en absoluto. Para solucionar este problema, ejecute `regedit` en Windows y agregue la siguiente clave al registro de la máquina virtual de Windows XP:
 
 ```
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
@@ -893,6 +926,37 @@ Asegúrese de que no hay servicios de VirtualBox en ejecución. Consulte [Virtua
 El paquete [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) a partir de la versión 5.2.16-2 no contiene el archivo `VBoxEGL.so`. Esto hace que el sistema huésped de Arch Linux no tenga la aceleración 3D adecuada. Vea [FS#49752](https://bugs.archlinux.org/task/49752).
 
 Para resolver este problema, aplique el parche establecido en [FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254). Se requiere alguna solución al conjunto de parches para que funcione en la versión 5.2.16-2.
+
+### No se puede iniciar VirtualBox en Wayland: «Segmentation fault»
+
+Este problema generalmente es causado por Qt en Wayland, consulte [FS#58761](https://bugs.archlinux.org/task/58761).
+
+Lo mejor, para no afectar al resto de las aplicaciones Qt (que, generalmente, funcionan bien en Wayland), es desactivar la [variable de entorno](/index.php/Environment_variable "Environment variable") `QT_QPA_PLATFORM` en la [entrada de escritorio](/index.php/Desktop_entry "Desktop entry") de VirtualBox. Siga las instrucciones de [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") y cambie las líneas que comienzan con:
+
+```
+Exec=VirtualBox ...
+
+```
+
+a
+
+```
+Exec=env -u QT_QPA_PLATFORM VirtualBox ...
+
+```
+
+Si eso no funciona, es posible que deba configurar `QT_QPA_PLATFORM` para `xcb` en su lugar:
+
+```
+Exec=env QT_QPA_PLATFORM=xcb VirtualBox ...
+
+```
+
+## Problemas conocidos
+
+### El montaje automático no funciona
+
+El montaje automático no funciona con los paquetes de compementos huéspedes («packaged guest additions») [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) y [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) a partir de la versión 6.0.0-1\. Vea [FS#61307](https://bugs.archlinux.org/task/61307).
 
 ## Véase también
 

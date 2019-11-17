@@ -10,9 +10,10 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
     *   [1.1 Touchpad](#Touchpad)
     *   [1.2 Graphics](#Graphics)
     *   [1.3 Power Management](#Power_Management)
+    *   [1.4 Suspending](#Suspending)
 *   [2 2018 version](#2018_version)
     *   [2.1 Touchpad](#Touchpad_2)
-    *   [2.2 Suspending](#Suspending)
+    *   [2.2 Suspending](#Suspending_2)
 *   [3 Late-2017 version Razer Blade Stealth](#Late-2017_version_Razer_Blade_Stealth)
     *   [3.1 Infinite suspend loop](#Infinite_suspend_loop)
     *   [3.2 Screen flickering / distorted / noise](#Screen_flickering_/_distorted_/_noise)
@@ -52,6 +53,15 @@ Nvidia's proprietary drivers work with their Max-Q RTX 2070 card.
 ### Power Management
 
 [Configuration option 1](https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options) is compatable if you use [optimus manager](/index.php/NVIDIA_Optimus#Using_optimus-manager "NVIDIA Optimus") to switch between intel and nvidia drivers.
+
+### Suspending
+
+If you have suspending stall issue, try to add a new file in /etc/modprobe.d/ with
+
+```
+   blacklist i2c_nvidia_gpu
+
+```
 
 ## 2018 version
 

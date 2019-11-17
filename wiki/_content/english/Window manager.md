@@ -25,7 +25,7 @@ A [window manager](https://en.wikipedia.org/wiki/Window_manager "wikipedia:Windo
 
 Window managers are X clients that control the appearance and behaviour of the frames ("windows") where the various graphical applications are drawn. They determine the border, title bar, size, and ability to resize windows, and often provide other functionality such as reserved areas for sticking [dockapps](http://windowmaker.org/dockapps/) like [Window Maker](/index.php/Window_Maker "Window Maker"), or the ability to tab windows like [Fluxbox](/index.php/Fluxbox "Fluxbox"). Some window managers are even bundled with simple utilities like menus to start programs or to configure the WM itself.
 
-The [Extended Window Manager Hints](http://standards.freedesktop.org/wm-spec/wm-spec-latest.html) specification is used to allow window managers to interact in standard ways with the server and the other clients.
+The [Extended Window Manager Hints](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html) specification is used to allow window managers to interact in standard ways with the server and the other clients.
 
 Some window managers are developed as part of a more comprehensive [desktop environment](/index.php/Desktop_environment "Desktop environment"), usually allowing the other provided applications to better interact with each other, giving a more consistent experience to the user, complete with features like desktop icons, fonts, toolbars, wallpapers, or desktop widgets.
 

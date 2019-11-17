@@ -114,7 +114,7 @@ $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
 
 #### Значки
 
-С помощью Qt Configuration нельзя установить тему значков, но, так как Qt следует [спецификации именования значков Freedesktop.org](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html), любая тема установленная для [X](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") будет использоваться и в Qt.
+С помощью Qt Configuration нельзя установить тему значков, но, так как Qt следует [спецификации именования значков Freedesktop.org](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html), любая тема установленная для [X](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") будет использоваться и в Qt.
 
 ### Ручная настройка
 

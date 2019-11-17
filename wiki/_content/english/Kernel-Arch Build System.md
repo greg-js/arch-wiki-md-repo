@@ -31,20 +31,20 @@ Since you'll be using [makepkg](/index.php/Makepkg "Makepkg"), follow the best p
 
 [Install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package and the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group.
 
-You need a clean kernel to start your customization from. Fetch the latest kernel package files from ABS into your build directory by running:
+You need a clean kernel to start your customization from. [ABS#Retrieve PKGBUILD source using Git](/index.php/ABS#Retrieve_PKGBUILD_source_using_Git "ABS") and few other files into your build directory by running:
 
 ```
 $ asp update linux
-$ asp checkout linux
+$ asp export linux
 
 ```
 
 At this point, the directory tree looks like:
 
 ```
-~/build/linux/trunk-+
-                   +--config
-                   \__PKGBUILD
+~/build/linux/-+
+               +--config
+               \__PKGBUILD
 ```
 
 Then, get any other file you need (e.g. custom configuration files, patches, etc.) from the respective sources.
@@ -115,9 +115,7 @@ The `-s` parameter will download any additional dependencies used by recent kern
 
 ## Installing
 
-After running *makepkg*, you can have a look at the `linux.install` file. You will see that some variables have changed.
-
-Now, you only have to install the packages as usual. Best practice is to install both packages together as they might be both needed (e.g. DKMS.)
+Best practice is to [install](/index.php/Install "Install") both packages together as they might be both needed (e.g. DKMS.)
 
 ```
 # pacman -U *kernel-headers_package* *kernel_package*
@@ -146,7 +144,7 @@ That was fetching v5.2.7-arch1, which was the newest archlinux tag.
 $ cd ~/build/linux/src/archlinux-linux/
 $ git checkout master
 $ git pull
-$ git fetch --tag --verbose
+$ git fetch --tags --verbose
 $ git branch --verbose 5.2.7-arch1 v5.2.7-arch1
 $ git checkout 5.2.7-arch1
 
@@ -171,14 +169,22 @@ This shows few specific archlinux patches between Linux 5.2.7 and Arch Linux ker
 The up to date PKGBUILD, as well archlinux kernel configuration file, can be pulled in by the `asp` command:
 
 ```
-$ cd ~/build
 $ asp update linux
+$ cd ~/build
 $ asp -f export linux
-$ cd ~/build/linux/trunk
+$ cd ~/build/linux/
 
 ```
 
-Then run manually most, if not all, the shell commands of PKGBUILD::prepare().
+Then run manually most, if not all, the shell commands of PKGBUILD::prepare(). If you were [#Modifying the PKGBUILD](#Modifying_the_PKGBUILD) you might prefer to
+
+```
+$ mkdir ~/build/tmplinux/
+$ cd ~/build/tmplinux/
+
+```
+
+before you `export` linux with `asp`, so that you can merge archlinux modifications into `~/build/linux`.
 
 At this point, `makepkg --verifysource` should succeed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
 

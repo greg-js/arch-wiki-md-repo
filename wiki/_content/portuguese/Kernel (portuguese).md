@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Kernel](/index.php/Kernel "Kernel"). Data da última tradução: 2019-11-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Kernel&diff=0&oldid=587067) na versão em inglês.
+
 Artigos relacionados
 
 *   [Módulos de kernel](/index.php/Kernel_modules "Kernel modules")
@@ -118,41 +120,41 @@ Se você realmente não corrigiu ou personalizou um kernel antes, não é tão d
 
 ### Outros patchsets
 
-Some of the listed packages may also be available as binary packages via [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
+Alguns dos pacotes listados também podem estar disponíveis como pacotes binários via [Repositórios não oficiais de usuários](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
-*   **[AppArmor](/index.php/AppArmor "AppArmor")** — The [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM). While [linux](https://www.archlinux.org/packages/?name=linux) supports apparmor this kernel has the required [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") enabled by default.
+*   **[AppArmor](/index.php/AppArmor "AppArmor")** — O sistema do [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC), implementado no [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM). Enquanto o [linux](https://www.archlinux.org/packages/?name=linux) suporta o apparmor, este kernel tem os [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") necessários habilitados por padrão.
 
 	[https://gitlab.com/apparmor/apparmor/wikis/About](https://gitlab.com/apparmor/apparmor/wikis/About) || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
 
-*   **Aufs** — The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
+*   **Aufs** — O kernel e os módulos do linux compatíveis com aufs, úteis ao usar o [docker](/index.php/Docker "Docker").
 
 	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) || [linux-aufs](https://aur.archlinux.org/packages/linux-aufs/)
 
-*   **Clear** — Patches from Intel's Clear Linux project. Provides performance and security optimizations; [WireGuard](/index.php/WireGuard "WireGuard") module.
+*   **Clear** — Patches do projeto Clear Linux da Intel. Fornece otimizações de desempenho e segurança; Módulo [WireGuard](/index.php/WireGuard "WireGuard").
 
 	[https://github.com/clearlinux-pkgs/linux](https://github.com/clearlinux-pkgs/linux) || [linux-clear](https://aur.archlinux.org/packages/linux-clear/)
 
-*   **Libre** — The Linux Kernels without "binary blobs".
+*   **Libre** — Os kernels do Linux sem "blobs binários".
 
 	[https://www.fsfla.org/ikiwiki/selibre/linux-libre/](https://www.fsfla.org/ikiwiki/selibre/linux-libre/) || [linux-libre](https://aur.archlinux.org/packages/linux-libre/)
 
-*   **Liquorix** — Kernel replacement built using Debian-targeted configuration and the Zen kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the Zen patchset as well.
+*   **Liquorix** — Substituição do kernel criada usando a configuração direcionada ao Debian e as fontes do kernel Zen. Projetado para cargas de trabalho de desktop, multimídia e jogos, é frequentemente usado como um kernel de substituição de desempenho Debian Linux. Damentz, o mantenedor do patchset Liquorix, também é desenvolvedor do patchset Zen.
 
 	[https://liquorix.net](https://liquorix.net) || [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
 
-*   **MultiPath TCP** — The Linux Kernel and modules with Multipath TCP support.
+*   **MultiPath TCP** — O kernel do Linux e os módulos com suporte a Multipath TCP.
 
 	[https://multipath-tcp.org/](https://multipath-tcp.org/) || [linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)
 
-*   **[Reiser4](/index.php/Reiser4 "Reiser4")** — Successor filesystem for ReiserFS, developed from scratch by Namesys and Hans Reiser.
+*   **[Reiser4](/index.php/Reiser4 "Reiser4")** — Sistema de arquivos sucessor do ReiserFS, desenvolvido do zero por Namesys e Hans Reiser.
 
 	[https://sourceforge.net/projects/reiser4/files/](https://sourceforge.net/projects/reiser4/files/) || [linux-ck-reiser4](https://aur.archlinux.org/packages/linux-ck-reiser4/)
 
-*   **VFIO** — The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
+*   **VFIO** — O kernel do Linux e alguns patches escritos por Alex Williamson (substituição de ACS e i915) para permitir a capacidade de passagem do PCI com o KVM em algumas máquinas.
 
 	[https://lwn.net/Articles/499240/](https://lwn.net/Articles/499240/) || [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/), [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
 
-*   **XanMod** — Aiming to take full advantage in high-performance workstations, gaming desktops, media centers and others and built to provide a more rock-solid, responsive and smooth desktop experience. This kernel uses the BFS scheduler, BFQ I/O scheduler, UKSM realtime memory data deduplication, YeAH TCP congestion control, x86_64 advanced instruction set support, and other default changes.
+*   **XanMod** — Com o objetivo de aproveitar ao máximo as estações de trabalho de alto desempenho, os desktops de jogos, os centros de mídia e outros, criados para oferecer uma experiência de desktop mais sólida, responsiva e suave. Este kernel usa o agendador BFS, o agendador de E/S BFQ, a deduplicação de dados da memória em tempo real do UKSM, o controle de congestionamento YeAH TCP, o suporte avançado ao conjunto de instruções x86_64 e outras alterações padrão.
 
 	[https://xanmod.org/](https://xanmod.org/) || [linux-xanmod](https://aur.archlinux.org/packages/linux-xanmod/)
 

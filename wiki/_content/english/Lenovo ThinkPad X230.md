@@ -21,14 +21,15 @@ Lenovo ThinkPad X230 [official page](https://pcsupport.lenovo.com/en/en/products
     *   [1.6 Suspend to ram](#Suspend_to_ram)
     *   [1.7 UMTS Modem](#UMTS_Modem)
     *   [1.8 Fan control](#Fan_control)
-*   [2 USB BIOS update](#USB_BIOS_update)
-*   [3 Power Saving](#Power_Saving)
-    *   [3.1 TLP](#TLP)
-*   [4 x230T (tablet version)](#x230T_(tablet_version))
-    *   [4.1 Multitouch screen for the x230t (tablet version)](#Multitouch_screen_for_the_x230t_(tablet_version))
-    *   [4.2 Wacom tablet input](#Wacom_tablet_input)
-*   [5 Not Working](#Not_Working)
-*   [6 See also](#See_also)
+*   [2 Trusted Platform Module](#Trusted_Platform_Module)
+*   [3 USB BIOS update](#USB_BIOS_update)
+*   [4 Power Saving](#Power_Saving)
+    *   [4.1 TLP](#TLP)
+*   [5 x230T (tablet version)](#x230T_(tablet_version))
+    *   [5.1 Multitouch screen for the x230t (tablet version)](#Multitouch_screen_for_the_x230t_(tablet_version))
+    *   [5.2 Wacom tablet input](#Wacom_tablet_input)
+*   [6 Not Working](#Not_Working)
+*   [7 See also](#See_also)
 
 ## Configuration
 
@@ -149,6 +150,8 @@ WantedBy=shutdown.target
 
 ### UMTS Modem
 
+**Warning:** Official UEFI comes with whitelist of PCI boards (e.g. Wi-Fi and UMTS miniPCI cards). After installing unapproved PCI device boot will be interrupted with error: `1802: Unauthorized network card is plugged in - Power off and remove the miniPCI network card (0AF0/7201). System is halted.`
+
 Some models come with an integrated USB UMTS modem.
 
  `$ lsusb -d 0bdb:1926`  `Bus 003 Device 004: ID 0bdb:1926 Ericsson Business Mobile Networks BV H5321 gw Mobile Broadband Driver` 
@@ -177,7 +180,19 @@ hwmon /sys/class/thermal/thermal_zone0/temp
 (7, 68, 32767)
 ```
 
+## Trusted Platform Module
+
+Laptop has dedicated [TPM](/index.php/Trusted_Platform_Module "Trusted Platform Module") 1.2 chip onboard[[2]](https://www.st.com/en/secure-mcus/st33tpm12lpc.html)[[3]](https://trustedcomputinggroup.org/membership/certification/tpm-certified-products/). It doesn't looks like it can be upgraded to TPM 2.0\. Chip itself disabled by default sometimes, also owner clearing won't appear without *Supervisor password* set:
+
+1.  Enter Thinkpad UEFI Setup by pressing F1
+2.  Set *Security > Password* > *Supervisor password*
+3.  Set *Security > Security Chip > Security Chip [Active]*
+4.  Save settings by pressing F10 and reboot
+5.  **Turn laptop off**, turn on and UEFI option *Security > Security Chip > Clear Security Chip* eventually will appear.
+
 ## USB BIOS update
+
+**Tip:** There are unofficial firmware available, such as [Coreboot](https://doc.coreboot.org/mainboard/lenovo/xx30_series.html) or Heads in order to remove hardware whitelists and provide trusted boot.
 
 You can use [geteltorito](https://aur.archlinux.org/packages/geteltorito/) to create bootable USB images from the BIOS update ISO. It is as easy as:
 
@@ -189,7 +204,7 @@ $ geteltorito.pl g2uj24us.iso > update.img
 
 ## Power Saving
 
-Follow the main article: [Power saving](/index.php/Power_saving "Power saving")
+	*Main article: [Power saving](/index.php/Power_saving "Power saving")*
 
 Power saving [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") in addition to graphics card power saving, are shown below. `acpi_backlight=vendor` loads the vendor specific [Backlight#ACPI](/index.php/Backlight#ACPI "Backlight") driver (i.e. thinkpad_acpi) so the brightness keys (Fn + F8 and Fn + F9) work correctly.
 
@@ -224,8 +239,9 @@ Works out of the box with [xf86-input-wacom](https://www.archlinux.org/packages/
 
 **Note:** It works out of the box with GNOME.
 
-*   There is a BIOS bug that gets in the way of the boot process with LUKS and full-disk encryption. The user is stuck at the "Loading initial ramdisk" step, and does not see a password prompt to unlock the encrypted device. You can actually enter your password at this step, and boot-up will continue. However, updating the BIOS will resolve this completely.
+*   There is a BIOS bug that gets in the way of the boot process with [LUKS](/index.php/LUKS "LUKS") and full-disk encryption. The user is stuck at the "Loading initial ramdisk" step, and does not see a password prompt to unlock the encrypted device. You can actually enter your password at this step, and boot-up will continue. However, updating the BIOS will resolve this completely.
 
 ## See also
 
 *   [A Hacker's Ongoing Review for Lenovo ThinkPad X230](https://gist.github.com/bassu/8478346)
+*   [Installing "Heads" and using TPM](http://osresearch.net/Installing-Heads.html)

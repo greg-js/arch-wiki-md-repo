@@ -32,43 +32,43 @@ $ checksec --file=/usr/bin/cat
 
 ## RELRO
 
-RELRO is a generic mitigation technique to harden the data sections of an ELF binary/process. When a program is loaded several ELF memory sections need to be written to by the linker. but can be turned read-only before turning control over to the program. This prevents attackers of overriding some ELF sections. There are two different RELRO modes:
+O RELRO é uma técnica genérica de mitigação para proteger as seções de dados de um processo/binário ELF. Quando um programa é carregado, várias seções da memória ELF precisam ser gravadas pelo vinculador. mas pode ser ativado como somente leitura antes de passar o controle para o programa. Isso evita que os invasores substituam algumas seções da ELF. Existem dois modos RELRO diferentes:
 
-*   Partial RELRO (-Wl,-z,relro) some sections are marked as read-only after program load except the GOT (.got.plt) is still writeable.
+*   Partial RELRO (`-Wl,-z,relro`): algumas seções são marcadas como somente leitura após o carregamento do programa, exceto que o GOT (.got.plt) ainda pode ser gravado.
 
-*   Full RELRO (-Wl,-z,now) during program load all dynamic symbols are resolved ,allowing for the complete GOT to be marked read-only.
+*   Full RELRO (`-Wl,-z,now`) durante o carregamento do programa, todos os símbolos dinâmicos são resolvidos, permitindo que o GOT completo seja marcado como somente leitura.
 
-If an application reports partial relro, investigate if the build toolchain passes our LDFLAGS or allows overriding LDFLAGS. For Go packages investigate if the build method uses "build.go" as pure golang Makefile replacement which does not allow passing of LDFLAGS.
+Se um aplicativo relatar relro parcial, investigue se a cadeia de ferramentas de compilação passa nossos LDFLAGS ou permite substituir LDFLAGS. Para os pacotes Go, investigue se o método de compilação usa "build.go" como uma substituição pura do Makefile golang, que não permite a passagem de LDFLAGS.
 
 ### Haskell
 
-For Haskell it's not clear how to achieve Full RELRO at the moment.
+Para Haskell, não está claro como alcançar o Full RELRO no momento.
 
 ## Stack Canary
 
-A stack canary is added by the compiler between the buffer and control data on the stack. If this well known value is corrupted, a buffer overflow occurred and the running program segfaults to prevent possible arbitrary code execution.
+Um [stack canary](https://en.wikipedia.org/wiki/pt:Stack_canary "wikipedia:pt:Stack canary") é adicionado pelo compilador entre o buffer e os dados de controle na pilha. Se esse valor conhecido estiver corrompido, ocorreu um estouro de buffer e o programa em execução é segmentado para impedir uma possível execução arbitrária do código.
 
-The GCC package has it enabled stack protection by default with the [--enable-default-ssp](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gcc#n120) compile option.
+O pacote [gcc](https://www.archlinux.org/packages/?name=gcc) ativou a proteção de pilha por padrão com o [--enable-default-ssp](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gcc#n120) opção de compilação.
 
 ## NX
 
 ### C/C++
 
-Executable-space protection marks memory regions as non-executable, such that an attempt to execute machine code in these regions will cause an exception. It makes use of hardware features such as the NX bit (no-execute bit), or in some cases software emulation of those features.
+A proteção do espaço executável marca as regiões da memória como não executáveis, de modo que uma tentativa de executar o código da máquina nessas regiões causará uma exceção. Ele utiliza recursos de hardware como o bit NX (bit sem execução) ou, em alguns casos, emulação de software desses recursos.
 
 ## PIE
 
 ### C/C++
 
-The [gcc](https://www.archlinux.org/packages/?name=gcc) package has it enabled by default for C/C++ with [--enable-default-pie](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gcc#n119).
+O pacote [gcc](https://www.archlinux.org/packages/?name=gcc) o tem habilitado por padrão para C/C++ com [--enable-default-pie](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gcc#n119).
 
 ### Golang
 
-For Go packages add a makedepend on [go-pie](https://www.archlinux.org/packages/?name=go-pie).
+Para pacotes Go, adicione um [makedepend](/index.php/PKGBUILD_(Portugu%C3%AAs)#makedepends "PKGBUILD (Português)") de [go-pie](https://www.archlinux.org/packages/?name=go-pie).
 
 ### Haskell
 
-Pass the following flag to runhaskell Setup configure
+Passe o seguinte sinalizador para a configuração de *runhaskell* Setup:
 
 ```
 --ghc-option='-pie'

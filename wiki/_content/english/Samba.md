@@ -590,7 +590,7 @@ To use `mnt-myshare.mount`, [start](/index.php/Start "Start") the unit and [enab
 
 ##### automount
 
-To automatically mount a share, one may use the following [automount](/index.php/Autofs "Autofs") unit:
+To automatically mount a share, one may use the following automount unit:
 
  `/etc/systemd/system/mnt-myshare.automount` 
 ```
@@ -605,6 +605,8 @@ WantedBy=multi-user.target
 ```
 
 [Disable](/index.php/Disable "Disable")/[stop](/index.php/Stop "Stop") the `mnt-myshare.mount` unit, and [enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `mnt-myshare.automount` to automount the share when the mount path is being accessed.
+
+**Tip:** [Append](/index.php/Append "Append") `TimeoutIdleSec` to enable auto unmount. See [systemd.automount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.automount.5) for details.
 
 #### smbnetfs
 

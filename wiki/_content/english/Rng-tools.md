@@ -21,7 +21,7 @@ The configuration file is located in `/etc/conf.d/rngd`. There is only one optio
 By default, *rngd* will try to automatically detect your TRNG and use it. This is reported to work for Raspberry Pi and Intel Ivy Bridge CPU using the lastest versions of *rng-tools*. If this does not work, you may manually pass the [device file](https://en.wikipedia.org/wiki/Device_file "wikipedia:Device file") used by your TRNG, as in the below example:
 
 ```
-RNGD_OPTS="-o /dev/random -r /dev/my_hw_random_device"
+RNGD_OPTS="-r /dev/my_hw_random_device"
 
 ```
 

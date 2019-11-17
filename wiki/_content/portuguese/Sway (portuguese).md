@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2019-11-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=587840) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2019-11-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=588993) na versão em inglês.
 
 *sway* é um compositor para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") feito para ser totalmente compatível com [i3](/index.php/I3 "I3"). De acordo com [o site oficial](https://swaywm.org):
 
@@ -22,12 +22,13 @@
     *   [3.5 HiDPI](#HiDPI)
     *   [3.6 Atalhos customizados](#Atalhos_customizados)
     *   [3.7 Xresources](#Xresources)
-    *   [3.8 Rode programas nativamente no Wayland (sem suporte do Xwayland)](#Rode_programas_nativamente_no_Wayland_(sem_suporte_do_Xwayland))
+    *   [3.8 Rode programas nativamente no Wayland (sem suporte do XWayland)](#Rode_programas_nativamente_no_Wayland_(sem_suporte_do_XWayland))
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Iniciar automaticamente após login](#Iniciar_automaticamente_após_login)
     *   [4.2 Alternar luz de fundo](#Alternar_luz_de_fundo)
     *   [4.3 Capturar tela](#Capturar_tela)
     *   [4.4 Controle swaynag com o teclado](#Controle_swaynag_com_o_teclado)
+    *   [4.5 Mudar o tamanho e tema de cursor para programas XWayland](#Mudar_o_tamanho_e_tema_de_cursor_para_programas_XWayland)
 *   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 Lançadores de aplicativos](#Lançadores_de_aplicativos)
     *   [5.2 VirtualBox](#VirtualBox)
@@ -45,7 +46,7 @@ Você pode instalar também [swaylock](https://www.archlinux.org/packages/?name=
 
 ## Iniciando
 
-**Dica:** Veja [Wayland (Português)#Bibliotecas GUI](/index.php/Wayland_(Portugu%C3%AAs)#Bibliotecas_GUI "Wayland (Português)") para configurar bibliotecas de decoração de janela com variáveis de ambiente adequadas.
+**Dica:** Veja [Wayland#Bibliotecas GUI](/index.php/Wayland_(Portugu%C3%AAs)#Bibliotecas_GUI "Wayland (Português)") para configurar bibliotecas de decoração de janela com variáveis de ambiente adequadas.
 
 ### Pelo TTY
 
@@ -188,9 +189,9 @@ Para controlar o brilho voce pode usar [brightnessctl](https://www.archlinux.org
 
 Copie `~/.Xresources` para `~/.Xdefaults` para usá-lo no Sway.
 
-### Rode programas nativamente no Wayland (sem suporte do Xwayland)
+### Rode programas nativamente no Wayland (sem suporte do XWayland)
 
-Primeiro, tenha certeza que o kit de ferramentas ou bibliotecas de todos os programas que estão e serão instalados [suportam Wayland](/index.php/Wayland_(Portugu%C3%AAs)#Bibliotecas_GUI "Wayland (Português)"). Então adicione a seguinte linha no seu arquivo de configuração do sway para desabilitar o suporte ao Xwayland:
+Primeiro, tenha certeza que o kit de ferramentas ou bibliotecas de todos os programas que estão e serão instalados [suportam Wayland](/index.php/Wayland_(Portugu%C3%AAs)#Bibliotecas_GUI "Wayland (Português)"). Então adicione a seguinte linha no seu arquivo de configuração do sway para desabilitar o suporte ao XWayland:
 
  `~/.config/sway/config` 
 ```
@@ -200,7 +201,7 @@ xwayland disable
 
 **Nota:** Alguns programas, como [Firefox](/index.php/Firefox#Wayland "Firefox"), [bemenu](#Lançadores_de_aplicativos) ou programas baseados no [Qt5](/index.php/Wayland_(Portugu%C3%AAs)#Qt_5 "Wayland (Português)"), também precisam de especificas variáveis de ambiente configuradas para rodarem nativamente sobre o wayland.
 
-**Nota:** Numa recente instalação do Sway, você precisa mudar o menu e terminal padrão porquê eles dependem do Xwayland.
+**Nota:** Numa recente instalação do Sway, você precisa mudar o menu e terminal padrão porquê eles dependem do XWayland.
 
 ## Dicas e truques
 
@@ -228,32 +229,20 @@ fi
 
 ### Alternar luz de fundo
 
-Para desligar (e ligar) suas telas com uma tecla (exemplo `Insert`) adicione na sua `config` do Sway:
-
- `~/.config/sway/config` 
-```
-bindsym --release Insert exec \
-     ~/.config/sway/toggle_backlight.sh
+Para desligar (e ligar) suas telas com uma tecla (exemplo `Pause`), crie um atalho na sua `config` do Sway para o seguinte script:
 
 ```
-
-Crie o seguinte script:
-
- `~/.config/sway/toggle_backlight.sh` 
-```
- #!/bin/sh
- read lcd < /tmp/lcd
-     if [ "$lcd" -eq "0" ]; then
-         swaymsg "output * dpms on"
-         echo 1 > /tmp/lcd
-     else
-         swaymsg "output * dpms off"
-         echo 0 > /tmp/lcd
-     fi
+#!/bin/sh
+read lcd < /tmp/lcd
+    if [ "$lcd" -eq "0" ]; then
+        swaymsg "output * dpms on"
+        echo 1 > /tmp/lcd
+    else
+        swaymsg "output * dpms off"
+        echo 0 > /tmp/lcd
+    fi
 
 ```
-
-E, assumindo que você não mudou o atalho padrão para recarregar a configuração, pressione `Super+Shift+c`.
 
 ### Capturar tela
 
@@ -333,11 +322,27 @@ Note que, a partir da versão do sway 1.2, diferencia-se maiúsculo/minúsculo e
 
 Você pode configurar o sway para usar swaynagmode com o comando de configuração `swaynag_command swaynagmode`.
 
+### Mudar o tamanho e tema de cursor para programas XWayland
+
+Para definir [temas de cursor](/index.php/Temas_de_cursor "Temas de cursor") e tamanho:
+
+ `~/.config/sway/config` 
+```
+seat seat0 xcursor_theme *tema_do_cursor* *tamanho_do_cursor*
+
+```
+
+Onde `*my_cursor_theme*` pode ser definido ou trocado por um valor específico como `default`, `Adwaita` ou `Simple-and-Soft`, e `*my_cursor_size*` um valor como `48`.
+
+Você pode inspecionar os seus valores com `echo $XCURSOR_SIZE` e `echo $XCURSOR_THEME`.
+
+Note que você precisa reiniciar o programa XWayland para ver as mudanças.
+
 ## Solução de problemas
 
 ### Lançadores de aplicativos
 
-i3-dmenu-desktop, [dmenu](https://www.archlinux.org/packages/?name=dmenu), e [rofi](https://www.archlinux.org/packages/?name=rofi) todos funcionam relativamente bem no Sway, no entanto, rodam sob Xwayland e sofrem do mesmo problema, onde eles podem não responder se o cursor é movido para uma janela nativa do Wayland. O motivo para isso acontecer é que clientes/janelas do Wayland não tem acesso a dispositivos de entrada a menos que eles possuam foco na tela. O servidor XWayland é um cliente para o compositor Wayland, então um de seus clientes deve ter foco para ter acesso a entrada do usuario. No entanto, uma vez que um de seus clientes tem foco, pode captar as entradas e fazê-la disponível para todos os clientes Xwayland através do protocolo X11\. Mover o cursor para uma janela Xwayland e pressionar a tecla Escape deve resolver, algumas vezes rodar `pkill` resolve também.
+i3-dmenu-desktop, [dmenu](https://www.archlinux.org/packages/?name=dmenu), e [rofi](https://www.archlinux.org/packages/?name=rofi) todos funcionam relativamente bem no Sway, no entanto, rodam sob XWayland e sofrem do mesmo problema, onde eles podem não responder se o cursor é movido para uma janela nativa do Wayland. O motivo para isso acontecer é que clientes/janelas do Wayland não tem acesso a dispositivos de entrada a menos que eles possuam foco na tela. O servidor XWayland é um cliente para o compositor Wayland, então um de seus clientes deve ter foco para ter acesso a entrada do usuario. No entanto, uma vez que um de seus clientes tem foco, pode captar as entradas e fazê-la disponível para todos os clientes XWayland através do protocolo X11\. Mover o cursor para uma janela XWayland e pressionar a tecla Escape deve resolver, algumas vezes rodar `pkill` resolve também.
 
 [bemenu](https://www.archlinux.org/packages/?name=bemenu) é o substituto nativo do dmenu para Wayland que pode opcionalmente ser combinado com [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/) para prover um lançador de arquivos desktop nativo do Wayland (como i3-dmenu-desktop faz):
 
@@ -346,7 +351,7 @@ j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:De
 
 ```
 
-Você pode precisar configurar a variavel de ambiente `BEMENU_BACKEND` para "wayland" se você escolhe desabilitar o Xwayland.
+Você pode precisar configurar a variavel de ambiente `BEMENU_BACKEND` para "wayland" se você escolhe desabilitar o XWayland.
 
 Você pode combinar seu terminal flutuante com fzf como discutido em uma [issue do GitHub](https://github.com/swaywm/sway/issues/1367).
 

@@ -1,4 +1,4 @@
-Thunderbolt 3 works out of the box with recent Linux kernel versions [[1]](https://www.kernel.org/doc/html/v4.20/admin-guide/thunderbolt.html). The Linux kernel, starting with version 4.13, supports Thunderbolt Security, too.
+Thunderbolt 3 works out of the box with recent Linux kernel versions [[1]](https://www.kernel.org/doc/html/latest/admin-guide/thunderbolt.html). The Linux kernel, starting with version 4.13, supports Thunderbolt Security, too.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -47,7 +47,7 @@ Users who just want to connect any device without any sort of manual work can cr
 
 ### Forcing power
 
-Many OEMs include a method that can be used to force the power of a Thunderbolt controller to an *On* state. If supported by the machine this will be exposed by the WMI bus with a sysfs attribute called *force_power* [[2]](https://www.kernel.org/doc/html/v5.1/admin-guide/thunderbolt.html#forcing-power).
+Many OEMs include a method that can be used to force the power of a Thunderbolt controller to an *On* state. If supported by the machine this will be exposed by the WMI bus with a sysfs attribute called *force_power* [[2]](https://www.kernel.org/doc/html/latest/admin-guide/thunderbolt.html#forcing-power).
 
 Forcing power may especially be useful when a connected device loses connection or the controller that switches itself off.
 
@@ -62,7 +62,7 @@ To force the power to be on/off, write 1 or 0 to this attribute, e.g. to force p
 
 ## See also
 
-*   [Linux kernel user's and administrator's guide on Thunderbolt](https://www.kernel.org/doc/html/v4.20/admin-guide/thunderbolt.html)
+*   [Linux kernel user's and administrator's guide on Thunderbolt](https://www.kernel.org/doc/html/latest/admin-guide/thunderbolt.html)
 *   [bolt GitHub page](https://github.com/gicmo/bolt)
 *   [Introducing bolt: Thunderbolt 3 security levels for GNU/Linux](https://christian.kellner.me/2017/12/14/introducing-bolt-thunderbolt-3-security-levels-for-gnulinux/)
 *   [Tunderbolt Support in GNOME](https://christian.kellner.me/2018/04/23/the-state-of-thunderbolt-3-in-fedora-28/)

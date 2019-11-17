@@ -45,7 +45,7 @@ O KDE é um projeto de software que atualmente compreende um [ambiente de deskto
     *   [3.3 Suporte a Windows/Samba](#Suporte_a_Windows/Samba)
     *   [3.4 Atividades do ambiente KDE](#Atividades_do_ambiente_KDE)
     *   [3.5 Gerenciamento de energia](#Gerenciamento_de_energia)
-    *   [3.6 Iniciar automaticamente](#Iniciar_automaticamente)
+    *   [3.6 Inicialização automática](#Inicialização_automática)
     *   [3.7 Phonon](#Phonon)
         *   [3.7.1 Qual backend eu devo escolher?](#Qual_backend_eu_devo_escolher?)
 *   [4 Aplicativos](#Aplicativos)
@@ -292,7 +292,7 @@ Um pacote alternativo sem dependências [NetworkManager](/index.php/NetworkManag
 
 **Nota:** O Powerdevil não pode [inibir](/index.php/Power_management#Power_managers "Power management") todas as configurações de logins (como a ação de fechamento da tampa para laptops). Nesses casos, a própria configuração do logind precisará ser alterada - consulte [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 
-### Iniciar automaticamente
+### Inicialização automática
 
 O Plasma pode iniciar automaticamente aplicativos e executar scripts na inicialização e no desligamento. Para iniciar automaticamente um aplicativo, navegue até *Configurações do sistema > Inicialização e desligamento > Iniciar automaticamente" e adicione o programa ou shell script de sua escolha. Para aplicativos, um arquivo* .desktop *será criado, para scripts de shell, um link simbólico será criado.*
 

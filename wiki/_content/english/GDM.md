@@ -508,6 +508,13 @@ For instance, to grant GDM the right to access the X server, use the following c
 
 GDM doesn't work well in Wayland mode with the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver. When using this driver, GDM will use Xorg instead.[[7]](https://gitlab.gnome.org/GNOME/gdm/merge_requests/46)
 
+To force-enable Wayland, disable the [udev](/index.php/Udev "Udev") rule responsible for disabling Wayland in GDM:
+
+```
+# ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+
+```
+
 ### Failure on logout
 
 If GDM starts up properly on boot, but fails after repeated attempts on logout, try adding this line to the daemon section of `/etc/gdm/custom.conf`:

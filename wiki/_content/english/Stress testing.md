@@ -15,8 +15,7 @@ Running an overclocked PC is fine as long as it is stable and that the temperatu
     *   [2.3 Linpack](#Linpack)
     *   [2.4 Systester (AKA SuperPi for Windows)](#Systester_(AKA_SuperPi_for_Windows))
     *   [2.5 Intel Processor Diagnostic Tool](#Intel_Processor_Diagnostic_Tool)
-*   [3 Stressing Memory](#Stressing_Memory)
-    *   [3.1 Running Memtest86+](#Running_Memtest86+)
+*   [3 Stressing memory](#Stressing_memory)
 *   [4 Discovering Errors](#Discovering_Errors)
 
 ## Stressing Programs
@@ -84,6 +83,9 @@ When the software loads, simply answer 'N' to the first question to begin the to
 ```
 Main Menu
 
+```
+
+```
 1\.  Test/Primenet
 2\.  Test/Worker threads
 3\.  Test/Status
@@ -163,15 +165,17 @@ $ install64
 
 Once it is installed, you can run the Diagnostic Tool by clicking on the IPDT Icon that is located on the desktop.
 
-## Stressing Memory
+## Stressing memory
 
-Originally a very good program for memory failure detection, [Memtest86+](http://www.memtest.org/) can also be used to stress test the memory. It is based on the well-known original memtest86 written by Chris Brady. Memtest86+ is, like the original, released under the terms of the GNU General Public License (GPL).
+Use [MemTest86](https://www.memtest86.com/) (proprietary) or [Memtest86+](http://www.memtest.org/) (GPL) to test your memory (RAM). There are "new" and "old" testers:
 
-### Running Memtest86+
+*   "New" versions do not support BIOS. For a new version, use a proprietary MemTest86 version greater or equal to 8\. Install it as [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) or boot the [Arch Linux install image](https://www.archlinux.org/download/).
+*   "Old" versions do not support UEFI nor DDR4\. Old versions are available as GPL [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) (development discontinued). It is roughly equal to proprietary MemTest86 version 4\. After installation, [update GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"): it will auto-detect the package and allow users to boot directly to it.
 
-Either download and burn the *Memtest86+* ISO and boot from it, or install the package [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) and [update GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") which will auto-detect the package and allow users to boot directly to it. The latter works only for BIOS, for UEFI use instead [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) (non-free) or boot grub with *Memtest86+* from [Arch Linux install image](https://www.archlinux.org/download/).
+**Tip:**
 
-**Tip:** Allowing *Memtest86+* to run for >10 cycles without errors is usually sufficient.
+*   A reliable source of the version history is the [history](https://www.memtest86.com/history.htm) page in memtest86.com, in particular the section "MemTest86 and MemTest86+" and the following paragraph. Notice the proprietary MemTest86 from version 5 through 7 claims to support both BIOS and UEFI, but they simply bundle old and new versions.
+*   Allowing tests to run for at least 10 cycles without errors is usually sufficient.
 
 ## Discovering Errors
 

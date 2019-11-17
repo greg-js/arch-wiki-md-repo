@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Init](/index.php/Init "Init"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Init&diff=0&oldid=562442) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Init](/index.php/Init "Init"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Init&diff=0&oldid=587727) na versão em inglês.
 
 Artigos relacionados
 

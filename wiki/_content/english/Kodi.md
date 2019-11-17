@@ -128,7 +128,7 @@ user-session=kodi
 
 Socket activation can be used to start Kodi when the user issues a Wakeup command from a remote control app like Kore, or makes a connection to Kodi's html control port. Start listening by [starting](/index.php/Starting "Starting") `kodi@*user*.socket` (replace *user* with the user running Kodi to be started as).
 
-There are no packaged `kodi@.socket` and `kodi@.socket` files, one must create them manually. Depending on the setup, one can optionally change the ports in `kodi@.socket`.
+There are no packaged `kodi@.service` and `kodi@.socket` files, one must create them manually. Depending on the setup, one can optionally change the ports in `kodi@.socket`.
 
  `/etc/systemd/system/kodi@.service` 
 ```

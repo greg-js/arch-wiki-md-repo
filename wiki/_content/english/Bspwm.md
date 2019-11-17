@@ -3,7 +3,7 @@ Related articles
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
 
-[bspwm](https://github.com/baskerville/bspwm) is a tiling window manager that represents windows as the leaves of a full binary tree. bspwm supports multiple monitors and is configured and controlled through messages. [EWMH](https://standards.freedesktop.org/wm-spec/wm-spec-latest.html) is partially supported.
+[bspwm](https://github.com/baskerville/bspwm) is a tiling window manager that represents windows as the leaves of a full binary tree. bspwm supports multiple monitors and is configured and controlled through messages. [EWMH](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html) is partially supported.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -30,8 +30,9 @@ Related articles
     *   [4.3 Window box larger than the actual application](#Window_box_larger_than_the_actual_application)
     *   [4.4 Problems with Java applications](#Problems_with_Java_applications)
     *   [4.5 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
-    *   [4.6 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_"Could_not_grab_key_43_with_modfield_68"_on_start)
-    *   [4.7 Firefox context menu automatically selects first option on right click](#Firefox_context_menu_automatically_selects_first_option_on_right_click)
+    *   [4.6 Performance issues using fish](#Performance_issues_using_fish)
+    *   [4.7 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_"Could_not_grab_key_43_with_modfield_68"_on_start)
+    *   [4.8 Firefox context menu automatically selects first option on right click](#Firefox_context_menu_automatically_selects_first_option_on_right_click)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -260,6 +261,15 @@ $ set -U SXHKD_SHELL /usr/bin/bash
 ```
 
 Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc file.
+
+### Performance issues using fish
+
+[sxhkd](/index.php/Sxhkd "Sxhkd") uses the shell set in the SHELL environment variable in order to execute commands. Due to [fish](/index.php/Fish "Fish")'s long initialisation time all sxhkd commands can take much longer to execute than with other shells. To fix this without changing your default SHELL you can make tell sxhkd explicitly to use bash, or another faster shell to execute commands (for example, sh):
+
+```
+$ set -U SXHKD_SHELL sh
+
+```
 
 ### Error messages "Could not grab key 43 with modfield 68" on start
 

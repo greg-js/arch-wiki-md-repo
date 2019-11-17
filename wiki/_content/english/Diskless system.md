@@ -148,10 +148,10 @@ Create a [sparse file](https://en.wikipedia.org/wiki/Sparse_file "wikipedia:Spar
 
 ### Bootstrapping installation
 
-Install [devtools](https://www.archlinux.org/packages/?name=devtools) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), and run `mkarchroot`.
+Install [devtools](https://www.archlinux.org/packages/?name=devtools) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), and run *pacstrap* to install the [essential packages](/index.php/Installation_guide#Install_essential_packages "Installation guide") for the client:
 
 ```
-# pacstrap -d "$root" base mkinitcpio-nfs-utils nfs-utils
+# pacstrap -d "$root" base linux linux-firmware mkinitcpio-nfs-utils nfs-utils
 
 ```
 

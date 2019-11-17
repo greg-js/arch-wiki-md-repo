@@ -7,43 +7,47 @@
 
 Compiz это [композитный оконный менеджер](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager"). Он представляет собой самостоятельный оконный менеджер и не может использоваться совместно с другими оконными менеджерами, такими как [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), [Enlightenment](/index.php/Enlightenment "Enlightenment"). Пользователи, которые не хотят расставаться со своим оконным менеджером, но желающие добавить к нему пару эффектов, могут использовать в этих целях [Xcompmgr](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Установка из [community]](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8.D0.B7_.5Bcommunity.5D)
-    *   [1.2 Перечень пакетов по группам](#.D0.9F.D0.B5.D1.80.D0.B5.D1.87.D0.B5.D0.BD.D1.8C_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_.D0.BF.D0.BE_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D0.B0.D0.BC)
-    *   [1.3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-*   [2 Запуск Compiz Fusion](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Compiz_Fusion)
-    *   [2.1 Вручную (с "fusion-icon")](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.28.D1.81_.22fusion-icon.22.29)
-    *   [2.2 Вручную (без "fusion-icon")](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.28.D0.B1.D0.B5.D0.B7_.22fusion-icon.22.29)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+    *   [1.1 Установка из [community]](#Установка_из_[community])
+    *   [1.2 Перечень пакетов по группам](#Перечень_пакетов_по_группам)
+    *   [1.3 Настройка](#Настройка)
+*   [2 Запуск Compiz Fusion](#Запуск_Compiz_Fusion)
+    *   [2.1 Вручную (с "fusion-icon")](#Вручную_(с_"fusion-icon"))
+    *   [2.2 Вручную (без "fusion-icon")](#Вручную_(без_"fusion-icon"))
     *   [2.3 KDE](#KDE)
-        *   [2.3.1 Автостарт (с "fusion-icon")](#.D0.90.D0.B2.D1.82.D0.BE.D1.81.D1.82.D0.B0.D1.80.D1.82_.28.D1.81_.22fusion-icon.22.29)
-        *   [2.3.2 Автостарт (без "fusion-icon")](#.D0.90.D0.B2.D1.82.D0.BE.D1.81.D1.82.D0.B0.D1.80.D1.82_.28.D0.B1.D0.B5.D0.B7_.22fusion-icon.22.29)
-            *   [2.3.2.1 Метод 1 - Автозапуск с помощью ссылки](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_1_-_.D0.90.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
-            *   [2.3.2.2 Метод 2 - Экспорт KDEWM (Предпочтительный Метод)](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_2_-_.D0.AD.D0.BA.D1.81.D0.BF.D0.BE.D1.80.D1.82_KDEWM_.28.D0.9F.D1.80.D0.B5.D0.B4.D0.BF.D0.BE.D1.87.D1.82.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.9C.D0.B5.D1.82.D0.BE.D0.B4.29)
-            *   [2.3.2.3 Метод 3 - Использование KDE 4 System Settings](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_3_-_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_KDE_4_System_Settings)
+        *   [2.3.1 Автостарт (с "fusion-icon")](#Автостарт_(с_"fusion-icon"))
+        *   [2.3.2 Автостарт (без "fusion-icon")](#Автостарт_(без_"fusion-icon"))
+            *   [2.3.2.1 Метод 1 - Автозапуск с помощью ссылки](#Метод_1_-_Автозапуск_с_помощью_ссылки)
+            *   [2.3.2.2 Метод 2 - Экспорт KDEWM (Предпочтительный Метод)](#Метод_2_-_Экспорт_KDEWM_(Предпочтительный_Метод))
+            *   [2.3.2.3 Метод 3 - Использование KDE 4 System Settings](#Метод_3_-_Использование_KDE_4_System_Settings)
     *   [2.4 GNOME](#GNOME)
-        *   [2.4.1 Альтернативная сессия для GNOME (предпочтительный метод для опытных пользователей Compiz/Dock)](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.B0.D1.8F_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_GNOME_.28.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D0.BE.D1.87.D1.82.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4_.D0.B4.D0.BB.D1.8F_.D0.BE.D0.BF.D1.8B.D1.82.D0.BD.D1.8B.D1.85_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_Compiz.2FDock.29)
-        *   [2.4.2 Автостарт (без "fusion-icon") (Предпочтительный метод)](#.D0.90.D0.B2.D1.82.D0.BE.D1.81.D1.82.D0.B0.D1.80.D1.82_.28.D0.B1.D0.B5.D0.B7_.22fusion-icon.22.29_.28.D0.9F.D1.80.D0.B5.D0.B4.D0.BF.D0.BE.D1.87.D1.82.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.29)
-        *   [2.4.3 Автостарт (без "fusion-icon") (в сессии gnome3 fallback mode)](#.D0.90.D0.B2.D1.82.D0.BE.D1.81.D1.82.D0.B0.D1.80.D1.82_.28.D0.B1.D0.B5.D0.B7_.22fusion-icon.22.29_.28.D0.B2_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D0.B8_gnome3_fallback_mode.29)
-        *   [2.4.4 Автостарт (без "fusion-icon", Gnome до 2.24)](#.D0.90.D0.B2.D1.82.D0.BE.D1.81.D1.82.D0.B0.D1.80.D1.82_.28.D0.B1.D0.B5.D0.B7_.22fusion-icon.22.2C_Gnome_.D0.B4.D0.BE_2.24.29)
-        *   [2.4.5 Автостарт (с "fusion-icon")](#.D0.90.D0.B2.D1.82.D0.BE.D1.81.D1.82.D0.B0.D1.80.D1.82_.28.D1.81_.22fusion-icon.22.29_2)
+        *   [2.4.1 Альтернативная сессия для GNOME (предпочтительный метод для опытных пользователей Compiz/Dock)](#Альтернативная_сессия_для_GNOME_(предпочтительный_метод_для_опытных_пользователей_Compiz/Dock))
+        *   [2.4.2 Автостарт (без "fusion-icon") (Предпочтительный метод)](#Автостарт_(без_"fusion-icon")_(Предпочтительный_метод))
+        *   [2.4.3 Автостарт (без "fusion-icon") (в сессии gnome3 fallback mode)](#Автостарт_(без_"fusion-icon")_(в_сессии_gnome3_fallback_mode))
+        *   [2.4.4 Автостарт (без "fusion-icon", Gnome до 2.24)](#Автостарт_(без_"fusion-icon",_Gnome_до_2.24))
+        *   [2.4.5 Автостарт (с "fusion-icon")](#Автостарт_(с_"fusion-icon")_2)
     *   [2.5 XFCE](#XFCE)
-        *   [2.5.1 Автостарт в Xfce (без "fusion-icon")](#.D0.90.D0.B2.D1.82.D0.BE.D1.81.D1.82.D0.B0.D1.80.D1.82_.D0.B2_Xfce_.28.D0.B1.D0.B5.D0.B7_.22fusion-icon.22.29)
-        *   [2.5.2 Автостарт в Xfce (с "fusion-icon")](#.D0.90.D0.B2.D1.82.D0.BE.D1.81.D1.82.D0.B0.D1.80.D1.82_.D0.B2_Xfce_.28.D1.81_.22fusion-icon.22.29)
-            *   [2.5.2.1 Метод 1:](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_1:)
-            *   [2.5.2.2 Метод 2:](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_2:)
-            *   [2.5.2.3 Метод 3:](#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4_3:)
-    *   [2.6 Как Самостоятельный (Standalone) Менеджер Окон](#.D0.9A.D0.B0.D0.BA_.D0.A1.D0.B0.D0.BC.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.28Standalone.29_.D0.9C.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_.D0.9E.D0.BA.D0.BE.D0.BD)
-        *   [2.6.1 Добавление root menu](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_root_menu)
-        *   [2.6.2 Разрешить пользователям выключение/перезагрузку](#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B8.D1.82.D1.8C_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F.D0.BC_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.2F.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D1.83)
-*   [3 Разное](#.D0.A0.D0.B0.D0.B7.D0.BD.D0.BE.D0.B5)
-    *   [3.1 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_2)
-    *   [3.2 Использование compiz-manager](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_compiz-manager)
-    *   [3.3 Использование gtk-window-decorator](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_gtk-window-decorator)
-    *   [3.4 gconf: Дополнительные Настройки Compiz](#gconf:_.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_Compiz)
+        *   [2.5.1 Автостарт в Xfce (без "fusion-icon")](#Автостарт_в_Xfce_(без_"fusion-icon"))
+        *   [2.5.2 Автостарт в Xfce (с "fusion-icon")](#Автостарт_в_Xfce_(с_"fusion-icon"))
+            *   [2.5.2.1 Метод 1:](#Метод_1:)
+            *   [2.5.2.2 Метод 2:](#Метод_2:)
+            *   [2.5.2.3 Метод 3:](#Метод_3:)
+    *   [2.6 Как Самостоятельный (Standalone) Менеджер Окон](#Как_Самостоятельный_(Standalone)_Менеджер_Окон)
+        *   [2.6.1 Добавление root menu](#Добавление_root_menu)
+        *   [2.6.2 Разрешить пользователям выключение/перезагрузку](#Разрешить_пользователям_выключение/перезагрузку)
+*   [3 Разное](#Разное)
+    *   [3.1 Настройка](#Настройка_2)
+    *   [3.2 Использование compiz-manager](#Использование_compiz-manager)
+    *   [3.3 Использование gtk-window-decorator](#Использование_gtk-window-decorator)
+    *   [3.4 gconf: Дополнительные Настройки Compiz](#gconf:_Дополнительные_Настройки_Compiz)
     *   [3.5 Keyboard Shortcuts](#Keyboard_Shortcuts)
-    *   [3.6 ATI R600/R700 Notes](#ATI_R600.2FR700_Notes)
+    *   [3.6 ATI R600/R700 Notes](#ATI_R600/R700_Notes)
 *   [4 Additional Resources](#Additional_Resources)
 
 ## Установка
@@ -311,7 +315,7 @@ $ chmod a+x /usr/bin/compiz-fusion
 
 #### Автостарт (без "fusion-icon") (Предпочтительный метод)
 
-Этот метод использует спецификации [freedesktop.org](http://standards.freedesktop.org/desktop-entry-spec/latest/) для запуска Compiz путем указания его в качестве оконного менеджера по умолчанию с помощью GConf. Благодаря Desktop Entry появилась возможность выбора Compiz в качестве оконного менеджера прямо из GDM.
+Этот метод использует спецификации [freedesktop.org](https://specifications.freedesktop.org/desktop-entry-spec/latest/) для запуска Compiz путем указания его в качестве оконного менеджера по умолчанию с помощью GConf. Благодаря Desktop Entry появилась возможность выбора Compiz в качестве оконного менеджера прямо из GDM.
 
 **1)** При отсутствии (хотя он должен быть), создайте файл `/usr/share/applications/compiz.desktop` со следующим содержимым:
 
@@ -702,7 +706,7 @@ fusion-icon
 #!/bin/sh
 cd /home/<yourusername>
 #
-/usr/bin/X :0.0 -br -audit 0 -nolisten tcp vt7 &
+/usr/bin/X :0.0 -br -audit 0 -nolisten tcp vt7 &
 #
 export DISPLAY=:0.0
 #

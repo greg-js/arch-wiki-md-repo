@@ -22,6 +22,7 @@ Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X
     *   [3.2 Keyboard](#Keyboard)
         *   [3.2.1 Hotkeys](#Hotkeys)
         *   [3.2.2 Set the keyboard layout with Fluxbox](#Set_the_keyboard_layout_with_Fluxbox)
+        *   [3.2.3 Clipboard Manager for Fluxbox](#Clipboard_Manager_for_Fluxbox)
     *   [3.3 Workspaces](#Workspaces)
     *   [3.4 Tabbing and grouping](#Tabbing_and_grouping)
     *   [3.5 Autostart](#Autostart)
@@ -162,6 +163,17 @@ To make a help function in your menu, just add in `~/.fluxbox/menu`:
       [exec] (normal) {setxkbmap us}
       [exec] (international) {setxkbmap us -variant intl}
 [end]
+
+```
+
+#### Clipboard Manager for Fluxbox
+
+You can use just about any clipboard manager you like with Fluxbox. Arch packages `parcellite` (in the community repository) that works very well with Fluxbox. Simply install parcellite and then add the commands to start parcellite when Fluxbox starts by adding the following in `~/.fluxbox/startup` before the call to `exec fluxbox`:
+
+```
+## clipboard manager
+clipmgr=$(type -p parcellite)
+[ -x "$clipmgr" ] && "$clipmgr" &
 
 ```
 

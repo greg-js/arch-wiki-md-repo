@@ -179,15 +179,15 @@ Alternatively to above scripts, a hash check can be set up with [AIDE](/index.ph
 
 ### STARK
 
-While one of these methods should serve the purpose for most users, they do not address all security problems associated with the unencrypted `/boot`. One approach which endeavours to provide a fully authenticated boot chain was published with POTTS as an academic thesis to implement the [STARK](http://www1.informatik.uni-erlangen.de/stark) authentication framework.
+While one of these methods should serve the purpose for most users, they do not address all security problems associated with the unencrypted `/boot`. One approach which endeavours to provide a fully authenticated boot chain was published with POTTS as an academic thesis to implement the [STARK](https://www1.informatik.uni-erlangen.de/stark) authentication framework.
 
-The POTTS proof-of-concept uses Arch Linux as a base distribution and implements a system boot chain with
+The POTTS proof-of-concept uses Arch Linux as a base distribution and implements a system boot chain with:
 
 *   POTTS - a boot menu for a one-time authentication message prompt
-*   TrustedGrub - a [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") implementation which authenticates the kernel and initramfs against TPM chip registers
+*   TrustedGrub - a [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") implementation which authenticates the kernel and initramfs against [TPM chip](/index.php/Trusted_Platform_Module "Trusted Platform Module") PCR registers
 *   TRESOR - a kernel patch which implements AES but keeps the master-key not in RAM but in CPU registers during runtime.
 
-As part of the thesis [installation](http://13.tc/p/potts/manual.html) instructions based on Arch Linux (ISO as of 2013-01) have been published. If you want to try it, be aware these tools are not in standard repositories and the solution will be time consuming to maintain.
+As part of the thesis [installation](https://13.tc/p/potts/manual.html) instructions based on Arch Linux (ISO as of 2013-01) have been published. If you want to try it, be aware these tools are not in standard repositories and the solution will be time consuming to maintain.
 
 ## Using GPG, LUKS, or OpenSSL Encrypted Keyfiles
 

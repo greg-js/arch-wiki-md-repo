@@ -92,7 +92,7 @@ fi'
 
 *   A package must not already exist in any of the Arch Linux repositories. You should take necessary precautions to ensure no other packager is in the process of promoting the same package. Double-check the AUR package comments, read the latest subject headings in [aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general), search [all projects in the bugtracker](https://bugs.archlinux.org/index.php?project=0&do=index&switch=1), [grep](https://en.wikipedia.org/wiki/Grep "wikipedia:Grep") the [Subversion log](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html), and send a quick message to the private TU [IRC channel](/index.php/IRC_channel "IRC channel").
 
-*   AUR helpers, as a special exception, will never be permitted.
+*   [Pacman wrappers](/index.php/AUR_helpers#Pacman_wrappers "AUR helpers"), as a special exception, will never be permitted. If wanting to otherwise add an [AUR helper](/index.php/AUR_helper "AUR helper"), write an email to `arch-dev-public` with the proposed addition, and respect any objections provided by team members.
 
 *   Only "popular" packages may enter the repo, as defined by 1% usage from [pkgstats](https://www.archlinux.de/?page=PackageStatistics) or 10 votes on the AUR.
 

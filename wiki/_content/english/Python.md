@@ -110,7 +110,7 @@ A similar approach in tricking the environment, which also relies on `#!/usr/bin
 
 Sections above refer to the reference implementation of Python, called CPython. However, there are also other implementations available - the most popular ones:
 
-*   [PyPy](/index.php/PyPy "PyPy") is a Python 2.7/3.5 implementation utilizing a JIT compiler. It is generally faster and uses less memory, but is not fully compatible with CPython (although the majority of packages and code will work without any changes).
+*   [PyPy](/index.php/PyPy "PyPy") is a Python 2.7/3.6 implementation utilizing a JIT compiler. It is generally faster and uses less memory, but is not fully compatible with CPython (although the majority of packages and code will work without any changes).
 *   [Jython](http://www.jython.org/) is a Python 2.7 implementation built in Java. It allows easy integration of Python and Java code, but is not fully compatible with CPython libraries. It is often used to provide Python as a scripting language in a bigger Java application.
 *   [IronPython](http://ironpython.net/) is a Python 2.7 implementation built in .NET - it achieves the same goals as Jython, but for .NET languages (like C#/VB).
 *   [MicroPython](https://micropython.org/) is a limited Python 3.4 implementation targeting microcontrollers and other embedded environments (like UEFI), but is incompatible with most standard packages due to [minor syntax changes and severely limited standard library](http://docs.micropython.org/en/latest/pyboard/genrst/index.html). It is often used for prototyping in with embedded environments (as it provides a Python REPL).
@@ -122,6 +122,7 @@ Sections above refer to the reference implementation of Python, called CPython. 
 
 Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may be useful for historical curiosity, old applications that do not run on current versions, or for testing Python programs intended to run on a distribution that comes with an older version:
 
+*   Python 3.7: [python37](https://aur.archlinux.org/packages/python37/)
 *   Python 3.6: [python36](https://aur.archlinux.org/packages/python36/)
 *   Python 3.5: [python35](https://aur.archlinux.org/packages/python35/)
 *   Python 3.4: [python34](https://aur.archlinux.org/packages/python34/)

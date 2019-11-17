@@ -54,8 +54,9 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
     *   [2.3 Enabling S3 (before BIOS version 1.33)](#Enabling_S3_(before_BIOS_version_1.33))
         *   [2.3.1 Manual method](#Manual_method)
     *   [2.4 Fix touchscreen after resume](#Fix_touchscreen_after_resume)
-        *   [2.4.1 Using s2idle](#Using_s2idle)
-        *   [2.4.2 Other methods](#Other_methods)
+        *   [2.4.1 Disabling Thunderbolt](#Disabling_Thunderbolt)
+        *   [2.4.2 Using s2idle](#Using_s2idle)
+        *   [2.4.3 Other methods](#Other_methods)
     *   [2.5 Enabling S2idle](#Enabling_S2idle)
 *   [3 Tablet Functions](#Tablet_Functions)
     *   [3.1 Stylus](#Stylus)
@@ -223,6 +224,10 @@ and replaced it with the following (removing the two "One" lines):
 ### Fix touchscreen after resume
 
 These fixes were pulled from: [Lenovo Linux Forums](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1Y3-Touchscreen-not-working-after-resume-on-Linux/td-p/4021200)
+
+#### Disabling Thunderbolt
+
+Some users have reported that disabling Thunderbolt in BIOS -> Security -> IO ports -> Thunderbolt permanently fixes the touchscreen issue. As a consequence, docking stations may have some features disabled.
 
 #### Using s2idle
 

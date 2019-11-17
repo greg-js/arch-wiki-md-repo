@@ -13,6 +13,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 *   [1 Headset via Bluez5/PulseAudio](#Headset_via_Bluez5/PulseAudio)
     *   [1.1 Configuration via CLI](#Configuration_via_CLI)
         *   [1.1.1 Setting up auto connection](#Setting_up_auto_connection)
+        *   [1.1.2 Media controls](#Media_controls)
     *   [1.2 Configuration via GNOME Bluetooth](#Configuration_via_GNOME_Bluetooth)
     *   [1.3 LDAC/aptX](#LDAC/aptX)
     *   [1.4 Troubleshooting](#Troubleshooting)
@@ -146,6 +147,45 @@ By default, your Bluetooth adapter will not power on after a reboot. The former 
 ```
 [Policy]
 AutoEnable=true
+```
+
+#### Media controls
+
+To use the media controls they may be forwarded to [MPRIS2](https://specifications.freedesktop.org/mpris-spec/latest/), where they can be picked up by media players that support mpris for external control. Install [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) and run
+
+```
+$ mpris-proxy
+
+```
+
+In order to start up mpris-proxy in the background and/or when your system starts, you may create a systemd user script
+
+ `~/.config/systemd/user/mpris-proxy.service` 
+```
+[Unit]
+Description=Forward bluetooth midi controls via mpris2 so they are picked up by supporting media players
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mpris-proxy
+
+[Install]
+WantedBy=default.target
+
+```
+
+Then start it
+
+```
+$ systemctl --user start mpris-proxy
+
+```
+
+and enable it to start at login
+
+```
+$ systemctl --user enable mpris-proxy
+
 ```
 
 ### Configuration via GNOME Bluetooth

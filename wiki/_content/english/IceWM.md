@@ -78,10 +78,25 @@ Below is an example of an IceWM startup script which starts [network-manager-app
 ```
 #!/bin/bash
 
-sleep 1 &&
-nm-applet &
+# start network manager
+    sleep 1 &&
+    nm-applet &
 
-xscreensaver -nosplash &
+# enable bluetooth applet
+    sleep 1 &&
+    blueman-applet &!
+
+# enable screensaver
+    xscreensaver -nosplash &
+
+# start redshift
+    redshift &
+
+# enable lockscreen
+    exec xautolock -detectsleep -time 15 -locker "i3lock -n -i /home/user/lockscreen.png" -killtime 20 -killer "systemctl suspend" #lock after inactivity and then sleep
+
+# allow notifications
+    /usr/lib/notification-daemon-1.0/notification-daemon &
 
 ```
 

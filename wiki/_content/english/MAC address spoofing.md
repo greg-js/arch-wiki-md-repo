@@ -19,6 +19,8 @@ This article gives several methods to spoof a Media Access Control (MAC) address
         *   [2.3.2 Enabling service](#Enabling_service)
     *   [2.4 netctl interfaces](#netctl_interfaces)
     *   [2.5 NetworkManager](#NetworkManager)
+    *   [2.6 wpa_supplicant](#wpa_supplicant)
+    *   [2.7 iwd](#iwd)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Connection to DHCPv4 network fails](#Connection_to_DHCPv4_network_fails)
 *   [4 See also](#See_also)
@@ -221,6 +223,29 @@ Source: [akendo.eu](https://blog.akendo.eu/archlinuxrandom-mac-address-for-new-w
 ### NetworkManager
 
 See [NetworkManager#Configuring MAC address randomization](/index.php/NetworkManager#Configuring_MAC_address_randomization "NetworkManager").
+
+### wpa_supplicant
+
+wpa_supplicant can use random MAC address for each ESS connection(AP) (see [[1]](https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf) for details).
+
+Add this to your configuration:
+
+ `/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` 
+```
+mac_addr=1
+preassoc_mac_addr=1
+gas_rand_mac_addr=1
+```
+
+### iwd
+
+To randomize the MAC address when iwd starts (see [iwd.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iwd.config.5) for details):
+
+ `/etc/iwd/main.conf` 
+```
+[General]
+AddressRandomization=once
+```
 
 ## Troubleshooting
 

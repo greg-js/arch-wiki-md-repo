@@ -30,7 +30,8 @@ This refers to a mount point called "mpd".
     *   [4.8 MPlayer](#MPlayer)
 *   [5 Streaming with oggfwd and ffmpeg2theora](#Streaming_with_oggfwd_and_ffmpeg2theora)
 *   [6 Playing the stream](#Playing_the_stream)
-*   [7 References](#References)
+*   [7 Running Icecast in a chroot environment](#Running_Icecast_in_a_chroot_environment)
+*   [8 References](#References)
 
 ## Setting up Icecast
 
@@ -251,6 +252,44 @@ ffmpeg2theora --no-skeleton --novideo -o - "$music" 2> /dev/null | \
 ## Playing the stream
 
 The above mentioned sonata and mplayer methods can be used.
+
+## Running Icecast in a chroot environment
+
+Change following settings in `/etc/icecast.xml`:
+
+```
+<chroot>1</chroot>
+
+```
+
+Add these line to the section `[Service]` in `/usr/lib/systemd/system/icecast.service`:
+
+```
+WorkingDirectory=/usr/share/icecast
+
+```
+
+Now change this entries in `/etc/icecast.xml`:
+
+```
+<logdir>./log</logdir>
+<webroot>./web</webroot>
+<adminroot>./admin</adminroot>
+<pidfile>./icecast.pid</pidfile>
+
+```
+
+Create a log directory under `/usr/share/icecast` and set the permissions:
+
+```
+# cd /usr/share/icecast
+# mkdir log
+# cd log
+# touch access.log playlist.log error.log
+# cd ..
+# chown -R icecast:icecast log/
+
+```
 
 ## References
 

@@ -1,122 +1,40 @@
-## Contents
+**Estado de la traducción**
+Este artículo es una traducción de [Install from SSH](/index.php/Install_from_SSH "Install from SSH"), revisada por última vez el **2019-11-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Install_from_SSH&diff=0&oldid=584702) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-*   [1 Introducción](#Introducción)
-*   [2 Arrancar desde el soporte de instalación](#Arrancar_desde_el_soporte_de_instalación)
-*   [3 Configurar el entorno live para usar SSH](#Configurar_el_entorno_live_para_usar_SSH)
-*   [4 Conectar al PC de destino a través de SSH](#Conectar_al_PC_de_destino_a_través_de_SSH)
-    *   [4.1 Notas](#Notas)
-*   [5 Siguientes pasos](#Siguientes_pasos)
+Este artículo está destinado a mostrar a los usuarios cómo instalar Arch de forma remota a través de una conexión [SSH](/index.php/SSH "SSH"). Considere este enfoque cuando el servidor se encuentra en un lugar remoto o si desea utilizar la capacidad de copiar/pegar de un cliente SSH para realizar la instalación de Arch.
 
-## Introducción
+## En la máquina remota (destino)
 
-Este artículo está destinado a mostrar a los usuarios cómo instalar Arch de forma remota a través de una conexión SSH. Considere este enfoque sobre las normas estándar en escenarios tales como los siguientes:
+**Nota:** estos pasos requieren acceso físico a la máquina. Si el equipo se encuentra físicamente en otro lugar, es posible que esto deba coordinarse con otra persona.
 
-Configuración de Arch sobre...
+Arranque la máquina de destino en un entorno live de Arch a través de una [imagen USB/CD Live](/index.php/Getting_and_installing_Arch_(Espa%C3%B1ol) "Getting and installing Arch (Español)"): esto registrará al usuario como root.
 
-*   HTPC sin un monitor adecuado (es decir, un SDTV).
-*   Un PC que se encuentra en otra ciudad, estado, país (casa de un amigo, casa de los padres, etc.).
-*   Un PC que lo configuraría mejor de forma remota, por ejemplo, desde la comodidad de la propia estación de trabajo con la facilidad de copiar/pegar las indicaciones de Arch Wiki.
+En este punto, configure la red en la máquina de destino como, por ejemplo, se sugiere en [Installation guide (Español)#Conectarse a Internet](/index.php/Installation_guide_(Espa%C3%B1ol)#Conectarse_a_Internet "Installation guide (Español)").
 
-**Nota:** Los dos primeros pasos requieren el acceso físico a la máquina. Obviamente, si se encuentra físicamente en otro lugar, esto tendrá que ser coordinado con otra persona.
-
-## Arrancar desde el soporte de instalación
-
-Arranque en un entorno live de Arch a través de un.
-
-## Configurar el entorno live para usar SSH
-
-**Nota:** Las siguientes órdenes deben ser ejecutadas como usuario root, de ahí el signo **#** antes de las órdenes.
-
-Se debe haber iniciado sesión como root en este punto. (Este es el usuario por defecto cuando se ejecuta el livecd)
-
-En primer lugar, configure la red en la máquina de destino.
-
-Suponiendo que tenga una conexión por cable, ejecutar `dhclient` o `dhcpcd` debería ser suficiente para conseguir conexión. Para obtener más información, visite [Configuring Network (Español)](/index.php/Configuring_Network_(Espa%C3%B1ol) "Configuring Network (Español)").
-
-Si dispone de una conexión inalámbrica, vea [Wireless network configuration (Español)](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)") y [WPA supplicant (Español)](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") para obtener más información sobre cómo establecer una conexión con su punto de acceso.
-
-En segundo lugar, establezca una contraseña de root necesaria para una conexión ssh; la contraseña por defecto de Arch para root está vacía.
+En segundo lugar, configure una contraseña de root necesaria para una conexión SSH, ya que la contraseña de Arch predeterminada para root está vacía:
 
 ```
-passwd
+# passwd
 
 ```
 
-Por último, inicie el demonio openssh:
+Ahora compruebe que `PermitRootLogin yes` está presente (y sin comentar) en `/etc/ssh/sshd_config`. Esta configuración permite el inicio de sesión como root con autenticación de contraseña en el servidor SSH.
+
+Finalmente, [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") el demonio openssh con `sshd.service`, que se incluye por defecto en el CD live.
+
+**Nota:** a menos que se requiera, se recomienda, después de la instalación, eliminar `PermitRootLogin yes` de `/etc/ssh/sshd_config`.
+
+**Sugerencia:** si la máquina de destino está detrás de un enrutador NAT, y necesita acceso externo, el puerto SSH (22 por defecto) deberá reenviarse a la dirección IP de la LAN de la máquina de destino.
+
+## En la máquina local
+
+En la máquina local, conéctese a la máquina de destino a través de SSH con la siguiente orden:
 
 ```
-# systemctl start sshd
-
-```
-
-## Conectar al PC de destino a través de SSH
-
-Conéctese a la máquina de destino a través de la siguiente orden:
-
-```
-$ ssh root@dirección.ip.de.destino
-
-```
-
-A partir de aquí, se presenta el mensaje de bienvenida del entorno live y será capaz de administrar el equipo de destino como si estuviera frente a su teclado físico.
-
-```
-ssh root@10.1.10.105
-root@10.1.10.105's password: 
-Last login: Thu Dec 23 08:33:02 2010 from 10.1.10.200
-[root@archiso ~]#
-```
-
-### Notas
-
-*   Si el equipo de destino está detrás de un firewall/router, dado que el puerto ssh por defecto es 22, obviamente, tendrá que redirigirse a la dirección IP de la LAN de la máquina de destino. La gestión del reenvío de puertos no se trata en esta guía.
-*   Se puede editar `/etc/ssh/sshd_config` en el entorno live antes de iniciar el demonio por ejemplo, para ejecutarlo en un puerto no estándar si se desea.
-
-## Siguientes pasos
-
-El cielo es el límite. Si la intención es simplemente instalar Arch desde el soporte live, siga la [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Si la intención es modificar la instalación de un Linux existente que se rompió, siga el artículo de la wiki [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)").
-
-¿Quiere [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o la capacidad de utilizar discos duros con [GPT](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")?
-
-*   Particione manualmente el HDD/SDD de destino mediante la utilidad **gdisk** instalándola con *pacman -S gdisk* antes de iniciar el programa de instalación de Arch y, cuando se le presente la opción de instalar un gestor de arranque en el marco de la instalación, simplemente no lo haga, y vuelva de nuevo al prompt de root del entorno live.
-*   La instalación de grub(2) es trivial en este punto. Simplemente efectúe chroot en el recién instalado sistema Arch (por defecto premontado si saliera del programa de instalación) y, después, instale y configure grub2:
-
-```
-cd /mnt
-rm console ; mknod -m 600 console c 5 1
-rm null ; mknod -m 666 null c 1 3
-rm zero ; mknod -m 666 zero c 1 5
-mount -t proc proc /mnt/proc
-mount -t sysfs sys /mnt/sys
-mount -o bind /dev /mnt/dev
-chroot /mnt /bin/bash
+$ ssh root@*ip.address.of.target*
 
 ```
 
-Ahora, dentro de chroot de Arch:
+A partir de aquí se le presentará el mensaje de bienvenida del entorno live y podrá administrar la máquina de destino como si estuviera sentado frente a su teclado físico. En este punto, si la intención es simplemente instalar Arch desde el soporte live, siga la [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Si la intención es editar una instalación de Linux existente con problemas, siga el artículo de la wiki [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)").
 
-```
-pacman -S grub2
-grep -v rootfs /proc/mounts > /etc/mtab
-
-```
-
-Editar `/etc/default/grub` a su gusto. Instalar grub y generar un archivo grub.cfg
-
-```
-grub-install /dev/sdX --no-floppy
-grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-**Nota:** Lo anterior supone que si el usuario tiene la intención de arrancar desde un disco GPT, debe haber leído y entendido los artículos de la wiki antes mencionados y habrá creado una partición BIOS boot partition tipo ef02 de 1M para grub(2).
-
-Cuando esté listo para reiniciar la nueva instalación de Arch, salga de chroot y desmonte las particiones antes de un reinicio del sistema.
-
-```
-exit
-umount /mnt/boot   # si está montada esta o cualquier otra partición separada
-umount /mnt/{proc,sys,dev}
-umount /mnt
-
-```
+**Sugerencia:** considere instalar un [multiplexor de terminal](/index.php/List_of_applications#Terminal_multiplexers "List of applications") en el sistema live de la máquina de destino (en la memoria), de modo que si se desconecta pueda reengancharse a la sesión de su multiplexor.

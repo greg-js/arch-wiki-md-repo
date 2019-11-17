@@ -34,9 +34,9 @@ There are multiple implementations of VRR:
 
 *   Gsync is NVIDIA's proprietary hardware and software implementation of VRR.
 
-*   Intel plans on implementing VESA's standard in their upcoming 10th Gen. [[1]](https://techreport.com/news/34053/intel-reiterates-plans-to-support-vesa-adaptive-sync-in-its-gpus/)
+*   Intel plans on implementing VESA's standard in their upcoming 10th or 11th Gen. [[1]](https://techreport.com/news/34053/intel-reiterates-plans-to-support-vesa-adaptive-sync-in-its-gpus/) [[2]](https://software.intel.com/en-us/articles/enabling-intel-adaptive-sync-with-11th-generation-intel-processor-graphics-and-microsoft)
 
-**VRR compatibility and implimentations**
+**VRR compatibility and implementations**
 
 | Driver | VESA | Gsync |
 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | FreeSync | No |
@@ -97,9 +97,9 @@ External Display Identification Data (EDID) stores driver information about your
 
 You can edit this file with [wxedid](https://aur.archlinux.org/packages/wxedid/)
 
-You may follow one of the guides of people changing the freesync range on Windows: [[2]](https://www.reddit.com/r/Amd/comments/5iux1q/updated_tutorial_on_increasing_and_decreasing/)[[3]](https://wccftech.com/amd-freesync-hack-expands-refresh-rate-range/)
+You may follow one of the guides of people changing the freesync range on Windows: [[3]](https://www.reddit.com/r/Amd/comments/5iux1q/updated_tutorial_on_increasing_and_decreasing/)[[4]](https://wccftech.com/amd-freesync-hack-expands-refresh-rate-range/)
 
-Process of overclocking on Linux: [[4]](https://forum.level1techs.com/t/overclock-your-monitor-with-nvidia-windows-and-linux/109323)
+Process of overclocking on Linux: [[5]](https://forum.level1techs.com/t/overclock-your-monitor-with-nvidia-windows-and-linux/109323)
 
 Make a Xorg [.conf](/index.php/Xorg#Using_.conf_files "Xorg") file for your monitor and add a path to the custom EDID file you have edited. See [xrandr](/index.php/Xrandr "Xrandr") to find find out the other information about your monitor.
 
@@ -128,8 +128,8 @@ Mesa has a list of blacklisted applications to avoid unexpected behavior, you ca
 
 ## Limitations
 
-*   [Wayland](/index.php/Wayland "Wayland") is not supported.
-*   On Linux, the monitor must be plugged in via display port. Some monitors with the HDMI 2.1 specification can use FreeSync on Windows and this will likely be supported by Linux in the future. [[5]](https://www.phoronix.com/scan.php?page=news_item&px=AMD-FreeSync-2019-Update)
+*   [Wayland](/index.php/Wayland "Wayland") is not supported yet [[6]](https://gitlab.freedesktop.org/wayland/wayland/issues/84).
+*   The monitor must be plugged in via DisplayPort. Some displays which implement (part of) the HDMI 2.1 specification also support VRR over HDMI. This is [supported](https://www.phoronix.com/scan.php?page=news_item&px=NVIDIA-440.31-Linux-Release) by the Nvidia driver and will [likely be supported](https://www.phoronix.com/scan.php?page=news_item&px=AMD-FreeSync-2019-Update) by the AMD driver in the future.
 *   Only one monitor may be used at a time with Gsync and possibly Freesync.
 *   Compositors will most likely need to be disabled before the OpenGl/Vulkan program is started.
 *   Mesa [blacklists](#Remove_applications_from_Blacklist) many applications including video players.

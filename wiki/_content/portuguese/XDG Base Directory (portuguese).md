@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [XDG Base Directory](/index.php/XDG_Base_Directory "XDG Base Directory"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory&diff=0&oldid=587850) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [XDG Base Directory](/index.php/XDG_Base_Directory "XDG Base Directory"). Data da última tradução: 2019-11-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_Base_Directory&diff=0&oldid=588340) na versão em inglês.
 
 Artigos relacionados
 
@@ -294,7 +294,7 @@ Há suporte apenas no branch master do Git, não havendo lançamentos estáveis 
 [3e4591d](https://gitlab.com/surfraw/Surfraw/commit/3e4591d) [bd8c427](https://gitlab.com/surfraw/Surfraw/commit/bd8c427) [f57fc71](https://gitlab.com/surfraw/Surfraw/commit/f57fc71)
 
  |
-| [sway](/index.php/Sway "Sway") | `~/.sway/config` | [614393c](https://github.com/SirCmpwn/sway/commit/614393c) | [[60]](https://github.com/SirCmpwn/sway/issues/5) |
+| [sway](/index.php/Sway_(Portugu%C3%AAs) "Sway (Português)") | `~/.sway/config` | [614393c](https://github.com/SirCmpwn/sway/commit/614393c) | [[60]](https://github.com/SirCmpwn/sway/issues/5) |
 | [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") |
 | [termite](/index.php/Termite "Termite") |
 | [tig](https://www.archlinux.org/packages/?name=tig) | `~/.tigrc`, `~/.tig_history` | [2.2](https://github.com/jonas/tig/blob/master/NEWS.adoc#tig-22) | [[61]](https://github.com/jonas/tig/issues/513) | O diretório `~/.local/share/tig` deve existir, do contrário escreve para `~/.tig_history`. |
@@ -374,6 +374,15 @@ $ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config`
 | [crawl](http://www.dungeoncrawl.org/) | `~/.crawl` | A barra ao final é necessária:
 
 `$ export CRAWL_DIR="$XDG_DATA_HOME"/crawl/`
+
+ |
+| [clusterssh](https://www.archlinux.org/packages/?name=clusterssh) | `~/.clusterssh/` | `$ alias cssh="cssh --config-file '$XDG_CONFIG_HOME/clusterssh/config'"` `$XDG_CONFIG_HOME/clusterssh/config` 
+```
+extra_cluster_file=$HOME/.config/clusterssh/clusters
+extra_tag_file=$HOMe/.config/clusterssh/tags
+```
+
+Apesar disso, clusterssh ainda vai criar `~/.clusterssh/`.
 
  |
 | [CUDA](/index.php/CUDA "CUDA") | `~/.nv` | `$ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv` |

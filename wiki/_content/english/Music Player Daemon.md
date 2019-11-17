@@ -65,7 +65,7 @@ MPD can be configured per-user. Running it as a normal user has the benefits of:
 
 #### Configure the location of files and directories
 
-In user mode, the configuration is read from `$XDG_CONFIG_HOME/mpd/mpd.conf`. We will assume here `$XDG_CONFIG_HOME` equals `~/.config` which is the recommended [XDG base directory specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+In user mode, the configuration is read from `$XDG_CONFIG_HOME/mpd/mpd.conf`. We will assume here `$XDG_CONFIG_HOME` equals `~/.config` which is the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
 To build the user configuration, the [MPD configuration example](https://raw.githubusercontent.com/MusicPlayerDaemon/MPD/master/doc/mpdconf.example) included in the package is a good starting point, copy it using the following lines:
 

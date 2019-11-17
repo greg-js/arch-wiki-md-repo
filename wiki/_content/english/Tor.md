@@ -570,7 +570,7 @@ Reliability with Tor:
 
 Note on gpg:
 
-On stock arch, pacman only trust keys which are either signed by you (That can be done with pacman-key --lsign-key) or signed by 3 of 5 Arch master keys. If a malicious exit node replaces packages with ones signed by its key, pacman will not let the user install the package.
+On stock arch, pacman only trust keys which are either signed by you (that can be done with `pacman-key --lsign-key`) or signed by 3 of 5 Arch master keys. If a malicious exit node replaces packages with ones signed by its key, pacman will not let the user install the package.
 
 **Warning:** This might not be true for other distributions derived from ARCH, for non-official repositories and for AUR
  `/etc/pacman.conf` 
@@ -752,11 +752,11 @@ Tor opens a socks proxy on port 9050 by default -- even if you do not configure 
 
 `ORPort 443` and `DirPort 80` lets Tor listen on port 443 and 80 and `DirPortFrontPage` displays the [tor-exit-notice.html](https://gitweb.torproject.org/tor.git/plain/contrib/operator-tools/tor-exit-notice.html) on port 80.
 
-`ExitPolicy reject XXX.XXX.XXX.XXX/XX:*` should reflect your public IP and netmask, which can be obtained with the command `# ip addr`, so exit connections cannot connect to the host or neighboring machines public IP and circumvent firewalls.
+`ExitPolicy reject XXX.XXX.XXX.XXX/XX:*` should reflect your public IP and netmask, which can be obtained with the command `ip addr`, so exit connections cannot connect to the host or neighboring machines public IP and circumvent firewalls.
 
 `AvoidDiskWrites 1` reduces disk writes and wear on SSD. `DisableAllSwap 1` "will attempt to lock all current and future memory pages, so that memory cannot be paged out".
 
-If `# cat /proc/cpuinfo` returns that your CPU supports AES instructions and `# lsmod` returns that the module is loaded, you can specify `HardwareAccel 1` which tries "to use built-in (static) crypto hardware acceleration when available", see [http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration](http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration).
+If `grep aes /proc/cpuinfo` returns that your CPU supports AES instructions and `lsmod | grep aes` returns that the module is loaded, you can specify `HardwareAccel 1` which tries "to use built-in (static) crypto hardware acceleration when available", see [http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration](http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration).
 
 `ORPort 443`, `DirPort 80` and `DisableAllSwap 1` require that you start the Tor service as `root` as described in [#Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports). Use the `User tor` option to properly reduce Tor’s privileges.
 

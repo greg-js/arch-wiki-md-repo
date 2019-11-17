@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Nonfree applications package guidelines](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&diff=0&oldid=564548) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Nonfree applications package guidelines](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&diff=0&oldid=587317) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -134,7 +134,7 @@ Alguns exemplos de várias estratégias para obter arquivos necessários para o 
 
 ### DLAGENTS personalizados
 
-Alguns autores de software protegem agressivamente seu software contra downloads automáticos: proíbem certas strings "User-Agent", criam links temporários para arquivos, etc. Você ainda pode convenientemente baixar estes arquivos usando a variável `DLAGENTS` no PKGBUILD (veja [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5)). Isto é usado por alguns pacotes em [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"), por exemplo, [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk).
+Alguns autores de software protegem agressivamente seu software contra downloads automáticos: proíbem certas strings "User-Agent", criam links temporários para arquivos, etc. Você ainda pode convenientemente baixar estes arquivos usando a variável `DLAGENTS` no PKGBUILD (veja [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5)). Isto é usado por alguns pacotes em [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"), por exemplo, em versões anteriores do [ttf-baekmuk](https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/ttf-baekmuk&id=bacc6309c858c2c78d1ed17151301d496c7d87ea).
 
 Por favor, preste atenção, se você quiser ter uma string user-agent personalizada, se esta contiver espaços, parênteses ou barras (ou, na verdade, qualquer coisa que possa interromper a análise), isso não funcionará. Não há solução alternativa, essa é a natureza de vetores no bash e a maneira como o DLAGENTS foi projetado para ser usado no makepkg. O exemplo a seguir, portanto, **não funciona**:
 

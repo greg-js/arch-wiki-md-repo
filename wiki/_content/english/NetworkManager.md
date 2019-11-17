@@ -368,7 +368,7 @@ To use a different DHCP client [install](/index.php/Install "Install") one of th
 
 **Note:**
 
-*   NetworkManger does not support using dhcpcd for IPv6\. See [NetworkManager issue #5](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5). If dhcpcd is set as the DHCP client, Networkmanager will use the internal DHCP client for DHCPv6.
+*   NetworkManger does not support using dhcpcd for IPv6\. See [NetworkManager issue #5](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5). If dhcpcd is set as the DHCP client, NetworkManager will use the internal DHCP client for DHCPv6.
 *   Do not enable the systemd units shipped with the [dhclient](https://www.archlinux.org/packages/?name=dhclient) and [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) packages. They will conflict with NetworkManager, see the note in [#Installation](#Installation) for details.
 
 To change the DHCP client backend, set the option `main.dhcp=*dhcp_client_name*` with a configuration file in `/etc/NetworkManager/conf.d/`. E.g.:
@@ -469,7 +469,7 @@ servers=::1,127.0.0.1
 
 **Note:**
 
-*   If you use [NetworkManager's dnsmasq or systemd-resolved plugin](/index.php/NetworkManager#DNS_caching_and_conditional_forwarding "NetworkManager") or [openresolv subscribers](/index.php/NetworkManager#DNS_resolver_with_an_openresolv_subscriber "NetworkManager"), then do not specify loopback addreses with the `servers=` option, it can break DNS resolution.
+*   If you use [NetworkManager's dnsmasq or systemd-resolved plugin](#DNS_caching_and_conditional_forwarding) or [openresolv subscribers](#DNS_resolver_with_an_openresolv_subscriber), then do not specify loopback addresses with the `servers=` option, it can break DNS resolution.
 *   The specified servers do not get sent to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), the connection's DNS servers are used instead.
 
 ##### Setting custom DNS servers in a connection
@@ -520,7 +520,7 @@ After that `/etc/resolv.conf` might be a broken symlink that you will need to re
 
 ##### Use openresolv
 
-**Note:** Do not set `rc-manager=resolvconf` when [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) is installed. *systemd-resolved* provides limited support for the *resolvconf* interface and NetworkManager supports communicating with systemd-resolved trough D-Bus without using *resolvconf*.
+**Note:** Do not set `rc-manager=resolvconf` when [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) is installed. *systemd-resolved* provides limited support for the *resolvconf* interface and NetworkManager supports communicating with systemd-resolved through D-Bus without using *resolvconf*.
 
 To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set `main.rc-manager=resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
 

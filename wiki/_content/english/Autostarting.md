@@ -49,7 +49,7 @@ Once at a date and time:
 Use an [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") event watcher:
 
 *   [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools), see [inotifywait(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotifywait.1)
-*   [Incron](/index.php/Incron "Incron")
+*   [incron](/index.php/Incron "Incron")
 *   [fswatch](https://aur.archlinux.org/packages/fswatch/)
 
 ## On shell login / logout

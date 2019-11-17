@@ -159,5 +159,5 @@ To disable input method module loading in QT, [export](/index.php/Export "Export
 *   [Gentoo wiki](https://wiki.gentoo.org/wiki/Localization "gentoo:Localization")
 *   [Fedora wiki](https://fedoraproject.org/wiki/I18N/InputMethods "fedora:I18N/InputMethods")
 *   [Free Standards Group OpenI18N](http://www.openi18n.org/)
-*   [XSETTINGS 0.5 Specification](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html)
+*   [XSETTINGS Specification](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html)
 *   [Running and Debugging GTK Applications](https://developer.gnome.org/gtk3/unstable/gtk-running.html)

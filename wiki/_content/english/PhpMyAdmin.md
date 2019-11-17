@@ -13,12 +13,14 @@
     *   [2.3 Lighttpd](#Lighttpd)
     *   [2.4 Nginx](#Nginx)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Using setup script](#Using_setup_script)
-    *   [3.2 Add blowfish_secret passphrase](#Add_blowfish_secret_passphrase)
-    *   [3.3 Enabling Configuration Storage](#Enabling_Configuration_Storage)
-        *   [3.3.1 Setup database](#Setup_database)
-        *   [3.3.2 Setup database user](#Setup_database_user)
-    *   [3.4 Enabling template caching](#Enabling_template_caching)
+    *   [3.1 Define a remote MySQL server](#Define_a_remote_MySQL_server)
+    *   [3.2 Using setup script](#Using_setup_script)
+    *   [3.3 Add blowfish_secret passphrase](#Add_blowfish_secret_passphrase)
+    *   [3.4 Enabling Configuration Storage](#Enabling_Configuration_Storage)
+        *   [3.4.1 Setup database](#Setup_database)
+        *   [3.4.2 Setup database user](#Setup_database_user)
+    *   [3.5 Enabling template caching](#Enabling_template_caching)
+    *   [3.6 Remove config directory](#Remove_config_directory)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -177,12 +179,14 @@ server {
 
 ## Configuration
 
-The main configuration file is located at `/etc/webapps/phpmyadmin/config.inc.php`.
+The main configuration file is located at `/usr/share/webapps/phpMyAdmin/config.inc.php`.
 
-If the [MySQL](/index.php/MySQL "MySQL") server is not on localhost, [append](/index.php/Append "Append") the following line:
+### Define a remote MySQL server
+
+If the [MySQL](/index.php/MySQL "MySQL") server is a remote host, append the following line to the config file:
 
 ```
-$cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['host'] = 'example.com';
 
 ```
 
@@ -201,7 +205,7 @@ To allow the usage of the phpMyAdmin setup script (e.g. [http://localhost/phpmya
 
 It is required to enter a unique 32 characters long string to fully use the blowfish algorithm used by phpMyAdmin, thus preventing the message *ERROR: The configuration file now needs a secret passphrase (blowfish_secret)*:
 
- `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['blowfish_secret'] = '...';` 
+ `/usr/share/webapps/phpMyAdmin/config.inc.php`  `$cfg['blowfish_secret'] = '...';` 
 
 ### Enabling Configuration Storage
 
@@ -209,9 +213,9 @@ Extra options such as table linking, change tracking, PDF creation, and bookmark
 
 **Note:** This example assumes you want to use the default username **pma** as the `controluser`, and **pmapass** as the `controlpass`.
 
-In `/etc/webapps/phpmyadmin/config.inc.php`, uncomment (remove the leading "//"s), and change them to your desired credentials if needed:
+In `/usr/share/webapps/phpMyAdmin/config.inc.php`, uncomment (remove the leading "//"s), and change them to your desired credentials if needed:
 
- `/etc/webapps/phpmyadmin/config.inc.php` 
+ `/usr/share/webapps/phpMyAdmin/config.inc.php` 
 ```
 /* User used to manipulate with storage */
 // $cfg['Servers'][$i]['controlhost'] = 'my-host';
@@ -282,10 +286,19 @@ Re-login to ensure the new features are activated.
 
 ### Enabling template caching
 
-Edit `/etc/webapps/phpmyadmin/config.inc.php` to add the line:
+Edit `/usr/share/webapps/phpMyAdmin/config.inc.php` to add the line:
 
 ```
- $cfg['TempDir'] = '/tmp/phpmyadmin';
+$cfg['TempDir'] = '/tmp/phpmyadmin';
+
+```
+
+### Remove config directory
+
+Remove temporary configuration directory once configuration is done. This will also suppress warning from web interface:
+
+```
+# rm -r /usr/share/webapps/phpMyAdmin/config
 
 ```
 

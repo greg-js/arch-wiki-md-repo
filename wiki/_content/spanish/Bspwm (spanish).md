@@ -4,7 +4,7 @@ Artículos relacionados
 *   [Window manager](/index.php/Window_manager "Window manager")
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
 
-*bspwm* es un [gestor de ventanas tipo mosaico](https://es.wikipedia.org/wiki/Gestor_de_ventanas#Gestores_de_ventanas_de_mosaico) que organiza las ventanas en un [árbol binario completo](https://es.wikipedia.org/wiki/%C3%81rbol_binario). Tiene soporte para [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) y múltiples monitores, y se configura y controla a través de mensajes.
+*bspwm* es un [gestor de ventanas tipo mosaico](https://es.wikipedia.org/wiki/Gestor_de_ventanas#Gestores_de_ventanas_de_mosaico) que organiza las ventanas en un [árbol binario completo](https://es.wikipedia.org/wiki/%C3%81rbol_binario). Tiene soporte para [EWMH](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html) y múltiples monitores, y se configura y controla a través de mensajes.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

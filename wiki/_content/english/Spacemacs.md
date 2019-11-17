@@ -205,9 +205,9 @@ $ emacsclient -nc -s instance1
 
 ## Usage
 
-Using Spacemacs may be tricky for the first time, espesially for the complete beginners. However, your efforts will be rewarded. Only a few key concepts required to perform basic tasks.
+Using Spacemacs may be tricky for the first time, especially for complete beginners. However, your efforts will be rewarded. Only a few key concepts are required to perform basic tasks.
 
-You can always exit spacemacs by typing **:q[Enter]**
+You can always exit Spacemacs by typing **:q[Enter]**
 
 ### Built-in Tutorial
 
@@ -217,28 +217,28 @@ You can always run Spacemacs built-in tutorial by pressing `SPC h T` when in Spa
 
 #### Prerequisites
 
-In order to explain the basic concepts we need some text to play with. Let's generate it first. Please, don't mind if the commands are unclear right now, you don't need to know them at moment.
+In order to explain the basic concepts we need some text to play with. Let's generate it first. Please, don't mind if the commands are unclear right now, you don't need to know them at the moment.
 
 1.  Run Spacemacs
 2.  Press `SPC b N` to create new empty buffer
 3.  Press `9 SPC i l l` to insert some text
 
-You should see a nine lines of generated text in result. Use them to experiment with the commands described in the next sections.
+You should see nine lines of generated text as the result. Use them to experiment with the commands described in the next sections.
 
-**Note:** When the **SPC** key sequence is used, you need to press keys one after another. So you press **SPACE** key, followed by **b**, followed by **N**. Uppercase letters should be entered with shift key, for example **N** is **Shift+n**. So the final sequence would be **SPACE**, **b**, **Shift+n**
+**Note:** When the **SPC** key sequence is used, you need to press the keys one after another. So you press **SPACE** key, followed by **b**, followed by **N**. Uppercase letters should be entered with shift key, for example **N** is **Shift+n**. So the final sequence would be **SPACE**, **b**, **Shift+n**
 
-**Tip:** When you press SPC key, help menu appears in the bottom. You can inspect possible commands there.
+**Tip:** When you press SPC key, the help menu appears at the bottom. You can inspect available commands there.
 
-Now we can move closer to concept named **states**.
+Now we can move closer to a concept named **states**.
 
 #### Editor states
 
-The major difference between Spacemacs and regular text editor is **states**. Each state changes the way how the editor works. For example, there is an **insert state**, where you able to enter text (like in a regular text editor), and there is a **normal state**, where all your keypresses are used as commands, and doesn't change the actual text. Only one state can be active at the time. Switching between the states is the key skill to use Spacemacs successfully.
+The major difference between Spacemacs and regular text editor is **states**. Each state changes the way how the editor works. For example, there is an **insert state**, where you are able to enter text (like in a regular text editor), and there is a **normal state**, where all your key presses are used as commands, without changing the actual text. Only one state can be active at a time. Switching between the states is the key skill to use Spacemacs successfully.
 
-Current editor state is displayed in a left bottom corner. It have a form of colored rectangle with text "1" (by default). The color describes the current state. There are a lot of states, but only a few of them are used regularly:
+The current editor state is displayed in the left bottom corner. It has the form of a colored rectangle with text "1" (by default). The color describes the current state. There are a lot of states, but only a few of them are used regularly:
 
 *   Orange. This is **normal state**. Used for entering commands and text navigation.
-*   Green. This is **insert state**. Used for a text input.
+*   Green. This is **insert state**. Used for text input.
 *   Grey. This is **visual state**. Used for selecting chunks of text and controlling them.
 
 You can also check the cursor color for the current state.
@@ -247,24 +247,24 @@ You can also check the cursor color for the current state.
 
 ##### Normal state
 
-Normal state is used for text navigation and running commands. You can't directly enter text in this mode. Instead, you able to quickly navigate and make any sort of corrections there. Normal state is default state, and it has **orange** color.
+Normal state is used for text navigation and running commands. You can't directly enter text in this mode. Instead, you're able to quickly navigate and make any sort of corrections there. Normal state is the default state and its color is **orange**.
 
 You can always return to normal state by pressing `ESC` key or `fd` key sequence if you accidentally leave it.
 
-**Note:** Commands listed below are not full. There are a lot more. You can check the additional documentation to find useful commands in your case.
+**Note:** Commands listed below are not complete, there are lots more. You can check the additional documentation to find commands that are useful to you.
 
-**Note:** Nobody can learn this commands for the first time. Just take a few of them and master. Only small subset of commands required to start make things.
+**Note:** Nobody can learn this commands in one go. Just take a few of them and master them. Only a small subset of commands is required to get you started.
 
 ###### Navigation
 
-For basic navigation, the following keys are used.
+For basic navigation, the following keys are used:
 
 *   `h` - move cursor by one symbol left
 *   `j` - move cursor by one line down
 *   `k` - move cursor by one line up
 *   `l` - move cursor by one symbol right
 
-It's also possible to navigate between the words or even sentences with single key:
+It's also possible to navigate between words or even sentences with a single key:
 
 *   `w` - move to next word (beginning)
 *   `b` - move to previous word (beginning)
@@ -287,13 +287,13 @@ You can also use numbers with commands, so they would repeat **n** times:
 *   `3 Ctrl+f` - move three pages down
 *   `20gg` - move cursor to line with number 20
 
-**Tip:** Numeric arguments are widely used in Spacemacs world.
+**Tip:** Numeric arguments are widely used in the Spacemacs world.
 
-There are a lot of commands uncovered. Basicaly, you can navigate between everything in Spacemacs, thanks to **Vim-like** flow. Check the additional resources to get the details.
+There are a lot of commands to be uncovered. Basically, you can navigate between everything in Spacemacs, thanks to **Vim-like** flow. Check the additional resources to get the details.
 
 ###### Text manipulation
 
-You can modify the text with the following commands:
+You can modify text with the following commands:
 
 *   `x` - cut the symbol under cursor
 *   `dw` - cut the word under cursor
@@ -314,13 +314,13 @@ You can undo and redo changes with the following commands:
 
 ##### Insert state
 
-Insert state is used for the text input. It's very closed to regular editor behavior. However, the ability to modify text is limited. You will need to switch back to the **normal state** in order to make corrections. The color of insert state is **green**.
+Insert state is used for the text input. It's very close to regular editor behavior. However, the ability to modify text is limited. You will need to switch back to the **normal state** in order to make corrections. The color of insert state is **green**.
 
 ###### Entering
 
-To enter the insert state, press `i` from the **normal state**. Your cursor will changed to thin and green one. Now you can type something. When you ready, just leave the insert state by pressing `ESC` key or `fd` key sequence.
+To enter the insert state, press `i` from the **normal state**. Your cursor will change to being a green thin line. Now you can type something. When you're done, just leave the insert state by pressing `ESC` key or `fd` key sequence.
 
-There are a lot of ways to enter insert mode. The difference, however, is only related to initial cursor position. It would be enough to know just `i` hotkey for the first time. But there are also the others, and they will be very useful when you master them:
+There are a lot of ways to enter insert mode. The difference, however, is only related to the initial cursor position. It's enough to know just the `i` hotkey for the first time. But there are also others and they will be very useful once you master them:
 
 *   `i` - enter insert mode before the cursor
 *   `a` - enter insert mode after the cursor
@@ -345,19 +345,19 @@ You can also press `V` to quickly select the whole line.
 
 Visual block state is more powerful version of visual state. It allows to select text in columns. It's similar to multi-cursor concept on regular editors and IDEs. This state can be entered by pressing `Ctrl+v` hotkey. Then you can navigate with `h j k l` keys to see the difference.
 
-There a lot of stuff that can be done in visual block state. Refer to the additional resources for this information. This feature is called **vim visual block mode** in origin.
+There's lots of stuff that can be done in visual block state. Refer to the additional resources for this information. This feature is called **vim visual block mode** in Vim parlance.
 
 #### Buffers (Tabs)
 
-The text in Spacemacs located in the areas called buffers. They are very similar to regular editor tabs. You can switch between the buffers and create new ones. Buffers are also used by editor itself by storing some information you can inspect later.
+Text in Spacemacs is located in areas called buffers. They are very similar to regular editor tabs. You can switch between buffers and create new ones. Buffers are also used by the editor itself to store some information you can inspect later.
 
 ##### Navigation
 
-To show the list of the current buffers press `SPC b b`. You will see a new window at the bottom. This is a place you can inspect, filter, and navigate buffers. Some buffers already exist there, like *Messages* and *scratch*. They created by the editor and contain some useful information.
+To show the list of current buffers press `SPC b b`. You will see a new window at the bottom. This is the place where you can inspect, filter, and navigate buffers. Some buffers already exist there, like *Messages* and *scratch*. They are created by the editor and contain some useful information.
 
-The first thing you can do with the bottom window is to type anything into `pattern` field. This will filter buffers. If there are no buffers left after the filtering, you can create new one instead, just pressing "Enter" after your input. New buffer will be created and opened.
+The first thing you can do with the bottom window is to type anything into the `pattern` field. This will filter buffers. If there are no buffers left after the filtering, you can create a new one by simply pressing "Enter" after your input. The new buffer will be created and opened.
 
-You can also open any buffer by hand. Press `Ctrl+**j**` or `Ctrl+**k**` to navigate between the lines. Then press `Ctrl+**l**` or `Enter` to confirm your choice. Selected buffer will be opened.
+You can also open any buffer by hand. Press `Ctrl+**j**` or `Ctrl+**k**` to navigate between the lines. Then press `Ctrl+**l**` or `Enter` to confirm your choice. The selected buffer will be opened.
 
 **Tip:** Remember `h j k l` keys? They are widely used for navigation. In some cases we need to use modifier keys like `Ctrl`. That allows to input and navigate at the same time.
 
@@ -374,7 +374,7 @@ You can also use some hotkeys from **normal state** to control buffers:
 
 #### Files
 
-Spacemacs provides a two options for file navigation: inline navigation and build-in file manager. Inline navigation is used in Spacemacs confirmation dialogs and it's very similar to the shell one. Build-in file manager is more user-friendly and allows to check the file details. Learning the basics of each is the essential key of mastering Spacemacs.
+Spacemacs provides two options for file navigation: inline navigation and built-in file manager. Inline navigation is used in Spacemacs confirmation dialogs and it's very similar to the shell one. Build-in file manager is more user-friendly and allows to check the file details. Learning the basics of each is the essential key of mastering Spacemacs.
 
 There also advanced options available, like more powerful file manager and file tree. They are covered in `Advanced` section.
 
@@ -397,7 +397,7 @@ There are some hotkeys available (refer to dired documentation for more):
 
 ##### Exiting
 
-Exiting the editor can be achieved with `SPC q` this will show the mutliple exiting methods.
+Exiting the editor can be achieved with `SPC q` this will show the multiple exiting methods.
 
 Some available are:
 
@@ -413,11 +413,11 @@ At this step you are able to open files, make changes and save them successfully
 
 #### Layers
 
-One of the strongest features of Spacemacs is layers. Layer is a set of packages and configuration options, that greatly extends editor functionality in some way. There are layers for different programming languages, for example, or layers, providing additional tools (like IRC messaging, or integrated web browser). The full list of layers can be found at [Layers](http://spacemacs.org/layers/LAYERS.html) documentation page.
+Layers are one of the strongest features in Spacemacs. Layer is a set of packages and configuration options that greatly extends editor functionality in some way. There are layers for different programming languages, for example, or layers, providing additional tools (like IRC messaging, or integrated web browser). The full list of layers can be found at [Layers](https://www.spacemacs.org/layers/LAYERS.html) documentation page.
 
 Some layers are already shipped with Spacemacs, the others can be added manually. To do this, open Spacemacs configuration file (`SPC f e d`), and find `dotspacemacs-configuration-layers` section there. Then simply add selected layer to the list and restart Spacemacs. It will download all the required files on the next start.
 
-Spacemacs will also offer you to install a new layer when you open a file with already-known extension. For example, if you open `.html` file, installation of `html` layer will be offered.
+Spacemacs will also offer you to install a new layer when you open a file with an already known extension. For example, if you open a `.html` file, the installation of the `html` layer is offered.
 
 You can customize layer behaviour by overriding some layer-specific variables in your Spacemacs configuration file. Check the appropriate layer documentation to get the details.
 

@@ -32,7 +32,7 @@ Termite starts in insert mode by default. Text may be selected using the mouse, 
 
 ## Configuration
 
-Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` and `/etc/xdg/termite.cfg`. The configuration file is used to change options such as font, colors, window hints, etc. The configuration file syntax is inspired by [XDG Desktop Entry Specification](https://standards.freedesktop.org/desktop-entry-spec/latest/) [.desktop](/index.php/.desktop ".desktop") files (inspired by Microsoft Windows *.ini* files), with three sections: *options*, *colors*, and *hints*.
+Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.config/termite/config`, `$XDG_CONFIG_DIRS/termite/config` and `/etc/xdg/termite.cfg`. The configuration file is used to change options such as font, colors, window hints, etc. The configuration file syntax is inspired by [XDG Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/latest/) [.desktop](/index.php/.desktop ".desktop") files (inspired by Microsoft Windows *.ini* files), with three sections: *options*, *colors*, and *hints*.
 
 To start customizing termite copy the base example file to your home dir first:
 

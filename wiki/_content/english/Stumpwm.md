@@ -47,7 +47,7 @@ To quit, with the default configuration press `C-t ;` then type quit and press 
 Install these packages in the following order:
 
 *   [sbcl](https://www.archlinux.org/packages/?name=sbcl)
-*   [cl-alexandria](https://aur.archlinux.org/packages/cl-alexandria/)
+*   [cl-alexandria-git](https://aur.archlinux.org/packages/cl-alexandria-git/)
 *   [clx-git](https://aur.archlinux.org/packages/clx-git/)
 *   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)
 *   [stumpwm](https://aur.archlinux.org/packages/stumpwm/) or [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)

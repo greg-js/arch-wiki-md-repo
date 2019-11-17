@@ -14,7 +14,7 @@ For VNC support install the [libvncserver](https://www.archlinux.org/packages/?n
 If you need RDP support, also install the optional [freerdp](https://www.archlinux.org/packages/?name=freerdp) or [remmina-plugin-rdesktop](https://aur.archlinux.org/packages/remmina-plugin-rdesktop/). For these note:
 
 *   If the RDP option is not available in the Remmina dropdown menu after installing [freerdp](https://www.archlinux.org/packages/?name=freerdp), make sure to completely quit Remmina first: run `killall remmina`. When you restart Remmina, RDP should be available.
-*   As of Remmina 1.2.0, some users report RDP connections using freerdp suffer from frequent unrequested disconnections, but rdesktop RDP connections being more reliable.
+*   As of Remmina 1.2.0, some users report RDP connections using freerdp suffer from frequent unrequested disconnections, but [rdesktop](/index.php/Rdesktop "Rdesktop") RDP connections being more reliable.
 *   Password saving depends on [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
 
 ## Usage

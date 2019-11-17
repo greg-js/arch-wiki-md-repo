@@ -21,7 +21,7 @@
 
 ## Introducción
 
-[WMFS](http://wmfs.info/) (Window Manager From Scratch) es un gestor de ventanas en mosaico, ligero y altamente configurable para las X's. Este puede ser configurado mediante un archivo de configuración de nombre `wmfsrc`, soporta fuentes Xft ([Freetype](http://www.freetype.org/)) y es compatible con las especificaciones ([EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html)). Todavía se encuentra en un proceso de desarrollo intenso
+[WMFS](http://wmfs.info/) (Window Manager From Scratch) es un gestor de ventanas en mosaico, ligero y altamente configurable para las X's. Este puede ser configurado mediante un archivo de configuración de nombre `wmfsrc`, soporta fuentes Xft ([Freetype](http://www.freetype.org/)) y es compatible con las especificaciones ([EWMH](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html)). Todavía se encuentra en un proceso de desarrollo intenso
 
 ## Instalación
 

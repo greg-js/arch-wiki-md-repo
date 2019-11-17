@@ -6,7 +6,7 @@ Related articles
 *   [Cursor themes (Español)](/index.php/Cursor_themes_(Espa%C3%B1ol) "Cursor themes (Español)")
 *   [Xfce (Español)](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)")
 
-El proyecto freedesktop proporciona la [Especificación de Tema de Iconos](http://standards.freedesktop.org/icon-theme-spec/latest/), que se aplica a la mayoría de los entornos de escritorio de linux e intenta unificar el aspecto de un montón de iconos en un *tema de iconos*. Freedesktop proporciona además la [Especificación de Nombre de Iconos](http://standards.freedesktop.org/icon-naming-spec/latest/), la cual define un esquema de denominación estándar para los iconos que se cree serán instalados en cualquier sistema. El tema por defecto *hicolor* debe incluirlos todos.
+El proyecto freedesktop proporciona la [Especificación de Tema de Iconos](https://specifications.freedesktop.org/icon-theme-spec/latest/), que se aplica a la mayoría de los entornos de escritorio de linux e intenta unificar el aspecto de un montón de iconos en un *tema de iconos*. Freedesktop proporciona además la [Especificación de Nombre de Iconos](https://specifications.freedesktop.org/icon-naming-spec/latest/), la cual define un esquema de denominación estándar para los iconos que se cree serán instalados en cualquier sistema. El tema por defecto *hicolor* debe incluirlos todos.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

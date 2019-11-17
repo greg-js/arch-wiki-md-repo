@@ -57,7 +57,7 @@ Since the profile(s), browser cache*, etc. are relocated into [tmpfs](/index.php
 
 ### Edit the config file
 
-Run psd the first time which will create `$XDG_CONFIG_HOME/psd/psd.conf` (referred to hereafter as as the config file) which contains all settings.
+Run psd the first time which will create `$XDG_CONFIG_HOME/psd/psd.conf` (referred to hereafter as the config file) which contains all settings.
 
 **Note:** Any edits made to this file while psd is active will be applied only after psd has been restarted from the systemd user service.
 

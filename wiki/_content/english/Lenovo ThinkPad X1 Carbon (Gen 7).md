@@ -159,7 +159,7 @@ Lenovo has confirmed the issue, [explained the cause](https://forums.lenovo.com/
 
 ### throttled
 
-**Note:** This fix has probably been superseded by the EC/BIOS updates
+**Note:** As of the BIOS/EC version 1.23 (N2HET40W/N2HHT27W) it has not been fixed
 
 [throttled](https://www.archlinux.org/packages/?name=throttled) replaces [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/) used previously. Install [throttled](https://www.archlinux.org/packages/?name=throttled), then run
 

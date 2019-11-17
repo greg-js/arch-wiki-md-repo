@@ -208,9 +208,8 @@ To enable the dark theme, normally used for incognito mode, [append](/index.php/
 
  `~/.config/chromium-flags.conf` 
 ```
-
- **Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-
+--force-dark-mode
+--enable-features=WebUIDarkMode
 ```
 
 ## Profile maintenance

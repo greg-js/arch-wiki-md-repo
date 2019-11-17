@@ -6,10 +6,10 @@ Artigos relacionados
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [init](/index.php/Init "Init")
+*   [init](/index.php/Init_(Portugu%C3%AAs) "Init (Português)")
 *   [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)")
 *   [fstab](/index.php/Fstab "Fstab")
-*   [Autostarting](/index.php/Autostarting "Autostarting")
+*   [Inicialização automática](/index.php/Inicializa%C3%A7%C3%A3o_autom%C3%A1tica "Inicialização automática")
 
 Para inicializar o Arch Linux, um carregador [gerenciador de boot](#Gerenciador_de_boot) compatível com Linux deve ser configurado. O gerenciador de boot é responsável por carregar o kernel e o [ramdisk inicial](/index.php/Initial_ramdisk "Initial ramdisk") antes de iniciar o processo de inicialização. O procedimento é bastante diferente para sistemas [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") e [UEFI](/index.php/UEFI "UEFI"), a descrição detalhada é fornecida nesta página ou em páginas vinculadas.
 

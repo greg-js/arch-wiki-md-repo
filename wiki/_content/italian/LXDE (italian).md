@@ -12,7 +12,11 @@ From [LXDE.org | Lightweight X11 Desktop Environment](http://lxde.org/):
 
 	*Il 'Lightweight X11 Desktop Environment' è un ambiente desktop estremamente veloce , performante e con un buon risparmio energetico. Gestito da una comunità internazionale di sviluppatori, si presenta con una bella interfaccia, supporto multi-lingua, tasti di scelta rapida standard e funzionalità aggiuntive come la navigazione a schede dei file. LXDE utilizza meno CPU e RAM di altri ambienti desktop. E 'progettato appositamente per i computer cloud con basse specifiche hardware, come i netbook, i dispositivi MID (Mobile ad esempio) o computer datati.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Avviare LXDE](#Avviare_LXDE)
@@ -23,11 +27,11 @@ From [LXDE.org | Lightweight X11 Desktop Environment](http://lxde.org/):
     *   [3.2 Auto Mount](#Auto_Mount)
     *   [3.3 Avvio automatico dei programmi](#Avvio_automatico_dei_programmi)
     *   [3.4 Cursori](#Cursori)
-        *   [3.4.1 Icone delle cartelle personalizzate nella $HOME](#Icone_delle_cartelle_personalizzate_nella_.24HOME)
+        *   [3.4.1 Icone delle cartelle personalizzate nella $HOME](#Icone_delle_cartelle_personalizzate_nella_$HOME)
     *   [3.5 Impostazioni applet orologio digitale](#Impostazioni_applet_orologio_digitale)
     *   [3.6 Impostazioni dei caratteri](#Impostazioni_dei_caratteri)
     *   [3.7 Layout della tastiera](#Layout_della_tastiera)
-        *   [3.7.1 Aggiungere il "modificatore del layout della tastiera" alla task-bar (barra dei processi)](#Aggiungere_il_.22modificatore_del_layout_della_tastiera.22_alla_task-bar_.28barra_dei_processi.29)
+        *   [3.7.1 Aggiungere il "modificatore del layout della tastiera" alla task-bar (barra dei processi)](#Aggiungere_il_"modificatore_del_layout_della_tastiera"_alla_task-bar_(barra_dei_processi))
     *   [3.8 Gnome-screensaver in LXDE](#Gnome-screensaver_in_LXDE)
     *   [3.9 Icone di lxpanel](#Icone_di_lxpanel)
     *   [3.10 LXDM](#LXDM)
@@ -38,7 +42,7 @@ From [LXDE.org | Lightweight X11 Desktop Environment](http://lxde.org/):
     *   [3.14 Spegnimento e Riavvio con LXDE](#Spegnimento_e_Riavvio_con_LXDE)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 NTFS e caratteri Cinesi](#NTFS_e_caratteri_Cinesi)
-    *   [4.2 Problemi GTK+ con l'aggiornamento alla versione 0.4.1 di lxsession](#Problemi_GTK.2B_con_l.27aggiornamento_alla_versione_0.4.1_di_lxsession)
+    *   [4.2 Problemi GTK+ con l'aggiornamento alla versione 0.4.1 di lxsession](#Problemi_GTK+_con_l'aggiornamento_alla_versione_0.4.1_di_lxsession)
     *   [4.3 LXsession completo](#LXsession_completo)
     *   [4.4 Usare applicazioni KDEmod3 sotto LXDE](#Usare_applicazioni_KDEmod3_sotto_LXDE)
 *   [5 Risorse esterne](#Risorse_esterne)
@@ -129,7 +133,7 @@ Per le altre attività si accerti che dbus sia in esecuzione come demone.
 
 Il menù delle applicazioni funziona tramite la risoluzione dei file `.desktop` situati in `/usr/share/applications`. Molti ambienti desktop eseguono programmi che ignorano queste configurazioni per consentire le personalizzazioni del menu. LXDE deve ancora sviluppare un'applicazione per la gestione del menu, ma si può comunque intervenire manualmente per la sua creazione, se lo si desidera.
 
-Per aggiungere un programma al menu (o modificarne una voce), creare un link al file `.desktop` in `~/.local/share/applications`, o crearne uno nuovo. Consultare [Specifiche per i desktop entry](http://standards.freedesktop.org/desktop-entry-spec/latest/) su freedesktop.org per informazioni sulla struttura di un file `.desktop` .
+Per aggiungere un programma al menu (o modificarne una voce), creare un link al file `.desktop` in `~/.local/share/applications`, o crearne uno nuovo. Consultare [Specifiche per i desktop entry](https://specifications.freedesktop.org/desktop-entry-spec/latest/) su freedesktop.org per informazioni sulla struttura di un file `.desktop` .
 
 Per rimuovere voci dal menu, invece di eliminare il file `.desktop`, è possibile modificarlo, aggiungendo la seguente linea :
 
@@ -217,7 +221,7 @@ Attualmente sembra che PCManFM non supporti questa funzione: [https://bbs.archli
 E per il formato YYYY/MM/DD HH:MM:SS :
 
 ```
-%Y/%m/%d %H:%M:%S
+%Y/%m/%d %H:%M:%S
 
 ```
 

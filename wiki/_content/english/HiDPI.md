@@ -388,9 +388,9 @@ To override those, open Firefox advanced preferences page (`about:config`) and s
 
 ```
 
-**Warning:** The following extension is not compatible with Firefox Quantum (version 57 and above).
+**Warning:** The AutoHiDPI extension is not compatible with Firefox Quantum (version 57 and above).
 
-If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
+If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens. For users of Firefox version 57 and above, the [ffreszoom](https://addons.mozilla.org/firefox/addon/ffreszoom/) add-on will adjust the page zoom if it detects you are using a large monitor (zoom level and threshold are configurable). Modifying the internal CSS DPI setting from an extension is currently unsupported [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1373607).
 
 If you use Wayland, see [Firefox#Wayland](/index.php/Firefox#Wayland "Firefox") for instructions to enable the optional Wayland backend on [firefox](https://www.archlinux.org/packages/?name=firefox). This is also appicable to [thunderbird](https://www.archlinux.org/packages/?name=thunderbird).
 
@@ -424,11 +424,11 @@ There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
 ### Inkscape
 
-To scale the icons to a "usable" size go to *Preferences > Interface* and set the icon size to Large or Larger[[2]](http://www.inkscapeforum.com/viewtopic.php?t=18684)[[3]](http://wiki.inkscape.org/wiki/index.php/HiDPI).
+To scale the icons to a "usable" size go to *Preferences > Interface* and set the icon size to Large or Larger[[3]](http://www.inkscapeforum.com/viewtopic.php?t=18684)[[4]](http://wiki.inkscape.org/wiki/index.php/HiDPI).
 
 ### IntelliJ IDEA
 
-IntelliJ IDEA 15 and above should include HiDPI support.[[4]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
+IntelliJ IDEA 15 and above should include HiDPI support.[[5]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
 
 	*File > Settings > Behaviour & Appearance > Appearance*
 
@@ -447,7 +447,7 @@ Since Java 9 the GDK_SCALE environment variable is used to scale Swing applicati
 
 ### MATLAB
 
-Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor[[5]](https://www.mathworks.com/matlabcentral/answers/406956-does-matlab-support-high-dpi-screens-on-linux):
+Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor[[6]](https://www.mathworks.com/matlabcentral/answers/406956-does-matlab-support-high-dpi-screens-on-linux):
 
 ```
 >> s = settings;s.matlab.desktop.DisplayScaleFactor
@@ -459,11 +459,11 @@ The settings take effect after MATLAB is restarted.
 
 ### Mono applications
 
-According to [[6]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK 3](#GDK_3_(GTK_3)) applications.
+According to [[7]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK 3](#GDK_3_(GTK_3)) applications.
 
 ### NetBeans
 
-NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[7]](http://wiki.netbeans.org/FaqFontSize)
+NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[8]](http://wiki.netbeans.org/FaqFontSize)
 
 The editor fontsize can be controlled from *Tools > Option > Fonts & Colors*.
 
@@ -520,7 +520,7 @@ See [#Firefox](#Firefox). To access `about:config`, go to *Edit > Preferences > 
 
 **Note:** This only applies to KDE with scaling enabled.
 
-VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[8]](https://www.virtualbox.org/ticket/16604)).
+VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[9]](https://www.virtualbox.org/ticket/16604)).
 
 This can be worked around by calculating the inverse of your scaling factor and manually setting this new scaling factor for the VirtualBox execution, e.g.
 
@@ -585,7 +585,7 @@ When extending above the internal display, you may see part of the internal disp
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[10]](https://askubuntu.com/a/979551/763549).
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[11]](https://askubuntu.com/a/979551/763549).
 
 **Note:** If you are using the `modesetting` driver you will get mouse flickering. This can be solved by scaling your non-scaled screen by 0.9999x0.9999.
 

@@ -106,7 +106,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ### Lista de sesión
 
-Muchos gestores de pantalla leen las sesiones disponibles en el directorio `/usr/share/xsessions/`. Este contiene [archivos de entrada de escritorio](http://standards.freedesktop.org/desktop-entry-spec/latest/) estándar para cada gestor de pantalla/gestor de ventanas.
+Muchos gestores de pantalla leen las sesiones disponibles en el directorio `/usr/share/xsessions/`. Este contiene [archivos de entrada de escritorio](https://specifications.freedesktop.org/desktop-entry-spec/latest/) estándar para cada gestor de pantalla/gestor de ventanas.
 
 Para añadir/eliminar entradas en la lista de sesión del gestor de pantalla, cree/quite los archivos .desktop de `/usr/share/xsessions/` según desee. Un archivo .desktop típico se vería así:
 

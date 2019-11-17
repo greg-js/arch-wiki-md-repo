@@ -751,6 +751,10 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 	[https://bitbucket.org/france/transcode-tcforge](https://bitbucket.org/france/transcode-tcforge) || [transcode](https://www.archlinux.org/packages/?name=transcode)
 
+*   **Vobcopy** — Copies DVD *.vob* files to hard disk, decrypting them on the way.
+
+	[https://github.com/barak/vobcopy](https://github.com/barak/vobcopy) || [vobcopy](https://aur.archlinux.org/packages/vobcopy/)
+
 #### Graphical
 
 *   **dvd::rip** — Front-end to [transcode](https://www.archlinux.org/packages/?name=transcode), used to extract DVD's to the hard disk and transcode or extract and transcode on-the-fly.

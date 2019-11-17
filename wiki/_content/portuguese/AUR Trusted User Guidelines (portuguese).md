@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=576654) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-11-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=587006) na versão em inglês.
 
 Artigos relacionados
 
@@ -36,24 +36,25 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 3.  Certificar-se de que os detalhes da sua conta no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") estejam atualizados.
 4.  Adicionar a si próprio à página de [Trusted Users](/index.php/Trusted_Users "Trusted Users").
 5.  Se inscrever na lista de discussão pública de desenvolvimento do Arch Linux, [arch-dev-public](https://lists.archlinux.org/listinfo/arch-dev-public).
-6.  Lembrar um [administrador do BBS](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) de alterar sua conta nos fóruns.
-7.  Perguntar a algum TU pela chave do #archlinux-tu@freenode e se fazer presente no canal. Você não tem que fazer isso, mas seria interessante já que é lá que a maioria dos segredos ocultos são apresentados e é onde muitas novas ideias são concebidas.
+6.  Solicitar inscrição à lista de discussão interna de trusted user.
+7.  Lembrar um [administrador do BBS](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) de alterar sua conta nos fóruns.
+8.  Perguntar a algum TU pela chave do #archlinux-tu@freenode e se fazer presente no canal. Você não tem que fazer isso, mas seria interessante já que é lá que a maioria dos segredos ocultos são apresentados e é onde muitas novas ideias são concebidas.
     *   Se você precisar de um bouncer, peça ao heftig por um convite de [Matrix](/index.php/Matrix "Matrix") ou execute `givemequassel` no servidor *soyuz.archlinux.org*, então autentique-se usando [Quassel](/index.php/Quassel "Quassel").
     *   Uma vez no canal, se você quiser uma manta de @archlinux/trusteduser/*, peça ao nosso [contato no grupo](https://freenode.net/groupreg#two-types-of-group-contacts-exist-for-freenode), ioni, para obter uma.
-8.  Criar uma chave PGP para [assinatura de pacotes](/index.php/Assinatura_de_pacote "Assinatura de pacote") ou usar sua chave PGP existente. Certifique-se de que a chave também contém uma subchave criptográfica de forma você possa receber tokens de verificação criptografados.
-9.  Enviar um e-mail assinado para Florian Pritz (bluewind@xinu.at) ou Bartłomiej Piotrowski (bpiotrowski@archlinux.org):
+9.  Criar uma chave PGP para [assinatura de pacotes](/index.php/Assinatura_de_pacote "Assinatura de pacote") ou usar sua chave PGP existente. Certifique-se de que a chave também contém uma subchave criptográfica de forma você possa receber tokens de verificação criptografados.
+10.  Enviar um e-mail assinado para Florian Pritz (bluewind@xinu.at) ou Bartłomiej Piotrowski (bpiotrowski@archlinux.org):
     *   Anexar uma chave pública SSH. Se você não possuir uma, use `ssh-keygen` para gerar uma. Verifique na página wiki [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") para mais informações sobre chaves SSH.
     *   Solicitar que ele lhe dê permissão à arch-dev-public.
     *   Falar para ele se você deseja um e-mail @archlinux.org.
     *   Nome de usuário e endereço de e-mail preferidos cuja senha inicial deve ser enviada para ter acesso na interface dev (archweb). Se você já tem uma conta, peça para ser adicionado ao grupo de Trusted Users.
-10.  Pedir a seu patrocinador (*sponsor*):
+11.  Pedir a seu patrocinador (*sponsor*):
     *   para lhe conceder o status de TU no AUR.
     *   para abrir uma nova tarefa no projeto "Keyring" do rastreador de erro seguindo as instruções [nesta mensagem](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) na ordem de ter sua chave PGP assinado pelos três detentores de chave mestre.
-11.  Instalar o pacote [devtools](https://www.archlinux.org/packages/?name=devtools).
-12.  [Configurar sua chave privada ssh](/index.php/Diretrizes_de_envio_ao_AUR#Autenticação "Diretrizes de envio ao AUR") para os servidores `orion.archlinux.org` e `repos.archlinux.org`.
-13.  Testar a conexão SSH para seunome@orion.archlinux.org (assim que você tiver permissões).
-14.  Se você não for promovido a um grupo de Trusted User no rastreador de erro em dois dias, relate isso como um bug para arch-dev-public.
-15.  Começar a contribuir!
+12.  Instalar o pacote [devtools](https://www.archlinux.org/packages/?name=devtools).
+13.  [Configurar sua chave privada ssh](/index.php/Diretrizes_de_envio_ao_AUR#Autenticação "Diretrizes de envio ao AUR") para os servidores `orion.archlinux.org` e `repos.archlinux.org`.
+14.  Testar a conexão SSH para seunome@orion.archlinux.org (assim que você tiver permissões).
+15.  Se você não for promovido a um grupo de Trusted User no rastreador de erro em dois dias, relate isso como um bug para arch-dev-public.
+16.  Começar a contribuir!
 
 ## O TU e o AUR
 

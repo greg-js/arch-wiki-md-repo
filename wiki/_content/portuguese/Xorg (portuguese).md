@@ -1,13 +1,13 @@
-Related articles
+Artigos relacionados
 
-*   [Autostarting](/index.php/Autostarting "Autostarting")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-*   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Wayland](/index.php/Wayland "Wayland")
-*   [xinit](/index.php/Xinit "Xinit")
+*   [Inicialização automática](/index.php/Inicializa%C3%A7%C3%A3o_autom%C3%A1tica "Inicialização automática")
+*   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
+*   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
+*   [Configuração de fontes](/index.php/Font_configuration "Font configuration")
+*   [Temas de cursor](/index.php/Temas_de_cursor "Temas de cursor")
+*   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
+*   [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)")
+*   [xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)")
 *   [xrandr](/index.php/Xrandr "Xrandr")
 
 Da [https://www.x.org/wiki/](https://www.x.org/wiki/):
@@ -41,35 +41,35 @@ Da [https://www.x.org/wiki/](https://www.x.org/wiki/):
     *   [5.2 Múltiplos monitores](#Múltiplos_monitores)
         *   [5.2.1 Mais de uma placa de vídeo](#Mais_de_uma_placa_de_vídeo)
     *   [5.3 Tamanho da tela e DPI](#Tamanho_da_tela_e_DPI)
-        *   [5.3.1 Setting DPI manually](#Setting_DPI_manually)
-            *   [5.3.1.1 Proprietary NVIDIA driver](#Proprietary_NVIDIA_driver)
-            *   [5.3.1.2 Manual DPI Setting Caveat](#Manual_DPI_Setting_Caveat)
-    *   [5.4 Display Power Management](#Display_Power_Management)
-*   [6 Composite](#Composite)
-    *   [6.1 List of composite managers](#List_of_composite_managers)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Automation](#Automation)
+        *   [5.3.1 Definindo o DPI manualmente](#Definindo_o_DPI_manualmente)
+            *   [5.3.1.1 Driver proprietário NVIDIA](#Driver_proprietário_NVIDIA)
+            *   [5.3.1.2 Correção manual do DPI](#Correção_manual_do_DPI)
+    *   [5.4 Gerenciamento de energia do monitor](#Gerenciamento_de_energia_do_monitor)
+*   [6 Composição](#Composição)
+    *   [6.1 Lista de gerenciadores de composição](#Lista_de_gerenciadores_de_composição)
+*   [7 Dicas e truques](#Dicas_e_truques)
+    *   [7.1 Automação](#Automação)
     *   [7.2 Nested X session](#Nested_X_session)
-    *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
-    *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
-    *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
-    *   [7.6 Block TTY access](#Block_TTY_access)
-    *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 General](#General)
-    *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen,_No_protocol_specified..,_Resource_temporarily_unavailable_for_all_or_some_users)
-    *   [8.3 DRI with Matrox cards stopped working](#DRI_with_Matrox_cards_stopped_working)
-    *   [8.4 Frame-buffer mode problems](#Frame-buffer_mode_problems)
-    *   [8.5 Program requests "font '(null)'"](#Program_requests_"font_'(null)'")
-    *   [8.6 Recovery: disabling Xorg before GUI login](#Recovery:_disabling_Xorg_before_GUI_login)
-    *   [8.7 X clients started with "su" fail](#X_clients_started_with_"su"_fail)
-    *   [8.8 X failed to start: Keyboard initialization failed](#X_failed_to_start:_Keyboard_initialization_failed)
-    *   [8.9 Rootless Xorg](#Rootless_Xorg)
-        *   [8.9.1 Broken redirection](#Broken_redirection)
-    *   [8.10 A green screen whenever trying to watch a video](#A_green_screen_whenever_trying_to_watch_a_video)
-    *   [8.11 SocketCreateListener error](#SocketCreateListener_error)
-    *   [8.12 Invalid MIT-MAGIC-COOKIE-1 key when trying to run a program as root](#Invalid_MIT-MAGIC-COOKIE-1_key_when_trying_to_run_a_program_as_root)
-*   [9 See also](#See_also)
+    *   [7.3 Iniciando programas GUI remotamente](#Iniciando_programas_GUI_remotamente)
+    *   [7.4 Habilitando e desabilitando em demanda dispositivos de entrada](#Habilitando_e_desabilitando_em_demanda_dispositivos_de_entrada)
+    *   [7.5 Atalho para matar um programa](#Atalho_para_matar_um_programa)
+    *   [7.6 Impeça acesso ao TTY](#Impeça_acesso_ao_TTY)
+    *   [7.7 Impeça um usuário de matar o X](#Impeça_um_usuário_de_matar_o_X)
+*   [8 Solução de problemas](#Solução_de_problemas)
+    *   [8.1 Geral](#Geral)
+    *   [8.2 Tela preta, nenhum protocolo especificado.., recurso temporariamente não disponível para todos ou alguns usuários](#Tela_preta,_nenhum_protocolo_especificado..,_recurso_temporariamente_não_disponível_para_todos_ou_alguns_usuários)
+    *   [8.3 DRI com cartões Matrox parou de funcionar](#DRI_com_cartões_Matrox_parou_de_funcionar)
+    *   [8.4 Problemas no modo renderizador de quadros (framebuffer mode)](#Problemas_no_modo_renderizador_de_quadros_(framebuffer_mode))
+    *   [8.5 Programa requer "font '(null)'"](#Programa_requer_"font_'(null)'")
+    *   [8.6 Recuperação: Desabilitar o Xorg antes do login GUI](#Recuperação:_Desabilitar_o_Xorg_antes_do_login_GUI)
+    *   [8.7 Cliente X começando com falha "su"](#Cliente_X_começando_com_falha_"su")
+    *   [8.8 X falhou para iniciar: Inicialização do teclado falhou](#X_falhou_para_iniciar:_Inicialização_do_teclado_falhou)
+    *   [8.9 Xorg sem superusuário](#Xorg_sem_superusuário)
+        *   [8.9.1 Redirecionamento quebrado](#Redirecionamento_quebrado)
+    *   [8.10 Tela verde toda vez que tenta ver um vídeo](#Tela_verde_toda_vez_que_tenta_ver_um_vídeo)
+    *   [8.11 Erro SocketCreateListener](#Erro_SocketCreateListener)
+    *   [8.12 Chave inválida MIT-MAGIC-COOKIE-1 enquanto tenta executar um programa como root](#Chave_inválida_MIT-MAGIC-COOKIE-1_enquanto_tenta_executar_um_programa_como_root)
+*   [9 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -83,7 +83,7 @@ O grupo [xorg](https://www.archlinux.org/groups/x86_64/xorg/) também é uma op�
 
 ### Instalação de Driver
 
-O kernel Linux inclui drivers de vídeo de código aberto e suporta aceleração de hardware para framebuffers. No entanto, é necessário suporte para OpenGL e aceleração 2D no X11\. The Linux kernel includes open-source video drivers and support for hardware accelerated framebuffers. However, userland support is required for OpenGL and 2D acceleration in X11.
+O kernel Linux inclui drivers de vídeo de código aberto e suporta aceleração de hardware para framebuffers. No entanto, é necessário suporte para OpenGL e aceleração 2D no X11.
 
 Primeiro, identifique sua placa:
 
@@ -101,16 +101,16 @@ $ pacman -Ss xf86-video
 
 Xorg procura por drivers de vídeo instalados automaticamente:
 
-*   Se ele não achar o driver especifíco instalado (listados abaixo), ele primeiro procura por *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
+*   Se ele não achar o driver específico instalado (listados abaixo), ele primeiro procura por *fbdev* ([xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev)).
 *   Se não for achado, ele procura por *vesa* ([xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa)), o driver genérico, que manuseia um grande número de chipsets mas não inclui nenhuma aceleração 2D e 3D.
 *   Se *vesa* não é encontrado, Xorg irá fazer uso do [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"), que inclui aceleração GLAMOR (veja [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4)).
 
 Para aceleração de vídeo funcionar, e geralmente para usar todos os modos configuráveis da GPU, é necessário o driver apropriado:
 
-| Marca | Tipo | Driver | OpenGL | OpenGL ([multilib](/index.php/Multilib "Multilib")) | Documentação |
+| Marca | Tipo | Driver | OpenGL | OpenGL ([multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)")) | Documentação |
 | AMD / ATI | Código aberto | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU](/index.php/AMDGPU "AMDGPU") |
 | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI](/index.php/ATI "ATI") |
-| Intel | Código aberto | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Gráficos Intel](/index.php/Intel_graphics_(Portugu%C3%AAs) "Intel graphics (Português)") |
+| Intel | Código aberto | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Gráficos Intel](/index.php/Gr%C3%A1ficos_Intel "Gráficos Intel") |
 | NVIDIA | Código aberto | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau](/index.php/Nouveau "Nouveau") |
 | Proprietário | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
 | [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) | [nvidia-390xx-utils](https://www.archlinux.org/packages/?name=nvidia-390xx-utils) | [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) |
@@ -118,7 +118,7 @@ Para aceleração de vídeo funcionar, e geralmente para usar todos os modos con
 **Nota:**
 
 *   Para habilitar NVIDIA Optimus que usa uma placa de vídeo integrada com uma placa GPU dedicada, Veja [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") ou [Bumblebee](/index.php/Bumblebee "Bumblebee").
-*   Para gráficos Intel da quarta generação e maior, veja [Gráficos Intel#Instalação](/index.php/Intel_graphics_(Portugu%C3%AAs)#Instalação "Intel graphics (Português)") para drivers disponíveis.
+*   Para gráficos Intel da quarta generação e maior, veja [Gráficos Intel#Instalação](/index.php/Gr%C3%A1ficos_Intel#Instalação "Gráficos Intel") para drivers disponíveis.
 
 Outros drivers de vídeo podem ser encontrados no grupo [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
 
@@ -126,7 +126,7 @@ Xorg deve rodar suavemente sem drivers de código fechado, que são tipicamente 
 
 ### AMD
 
-| Arquitetura da GPU | Placas Radeon | driver de código aberto | driver Proprietário |
+| Arquitetura da GPU | Placas Radeon | Driver de código aberto | Driver proprietário |
 | GCN 4
 e recentes | [vários](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") |
 | GCN 3 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
@@ -300,7 +300,7 @@ O DPI do servidor X é determinado da seguinte maneira:
 3.  Se nenhum `DisplaySize` é dado, os valores de tamanho do monitor da [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel") são usados para definir o DPI, dado a resolução de tela.
 4.  Se DDC não especifica um tamanho, é usado por padrão 75 DPI.
 
-Para conseguir os corretos pontos por polegada(DPI), o tamanho da tela deve ser reconhecido ou configurado. Ter o correto DPI é é um requesito quando detalhes finos são necessários (como renderização de fontes). Antigamente, fabricantes tentaram criar um padrão para 96 DPI (um monitor de 10.3" deveria ser 800X600, um monitor de 13.2" deveria ser 1024X768). Atualmente, DPIs variam e podem não ser iguais horizontalmente e verticalmente. Por exemplo, um eclã panorâmico LCD de 19" 1440X900 poderia ter um DPI de 89X87\. Para configurar o DPI, o servidor Xorg tenta a auto detecção do tamanho de tela físico através da placa gráfica com DDC. ~~Quando o servidor Xorg sabe o tamanho físico da tela, ele será capaz de configurar o DPI corretamente baseado no tamanho da resolução.~~
+Para conseguir os corretos pontos por polegada(DPI), o tamanho da tela deve ser reconhecido ou configurado. Ter o correto DPI é é um requisito quando detalhes finos são necessários (como renderização de fontes). Antigamente, fabricantes tentaram criar um padrão para 96 DPI (um monitor de 10.3" deveria ser 800X600, um monitor de 13.2" deveria ser 1024X768). Atualmente, DPIs variam e podem não ser iguais horizontalmente e verticalmente. Por exemplo, um eclã panorâmico LCD de 19" 1440X900 poderia ter um DPI de 89X87\. Para configurar o DPI, o servidor Xorg tenta a auto detecção do tamanho de tela físico através da placa gráfica com DDC. ~~Quando o servidor Xorg sabe o tamanho físico da tela, ele será capaz de configurar o DPI corretamente baseado no tamanho da resolução.~~
 
 Para ver se o tamanho da sua tela e DPI são detectados/calculados corretamente:
 
@@ -331,7 +331,7 @@ EndSection
 
 ```
 
-Se você não tem as especificações físicas de altura e largura da tela, (a maioria das especificações atualmente somente listam o tamanho diagonal) você pode usar a nativa resolução do monitor (ou aspecto de proporção) e comprimento diagonal para calcular a dimensão horizontal e vertical física. Usando o teorema de pitágoras em uma tela diagonal de 13.3" com uma resolução nativa de 1280X800 (ou aspecto de proporção 16:10):
+Se você não tem as especificações físicas de altura e largura da tela, (a maioria das especificações atualmente somente listam o tamanho diagonal) você pode usar a nativa resolução do monitor (ou aspecto de proporção) e comprimento diagonal para calcular a dimensão horizontal e vertical física. Usando o Teorema de Pitágoras em uma tela diagonal de 13.3" com uma resolução nativa de 1280X800 (ou aspecto de proporção 16:10):
 
 ```
 $ echo 'scale=5;sqrt(1280^2+800^2)' | bc  # 1509.43698
@@ -348,24 +348,24 @@ $ echo 'scale=5;(13.3/1509)*800*25.4'  | bc  # 179.01920
 
 **Nota:** Este cálculo funciona para monitores com pixels quadrados; no entanto, raramente um monitor pode comprimir o aspecto de proporção (exemplo aspecto de resolução 16:10 para um 16:9). Se este for o caso, você deve mensurar o tamanho de sua tela manualmente.
 
-#### Setting DPI manually
+#### Definindo o DPI manualmente
 
-**Note:** While you can set any dpi you like and applications using Qt and GTK will scale accordingly, it's recommended to set it to 96, 120 (25% higher), 144 (50% higher), 168 (75% higher), 192 (100% higher) etc., to reduce scaling artifacts to GUI that use bitmaps. Reducing it below 96 dpi may not reduce size of graphical elements of GUI as typically the lowest dpi the icons are made for is 96.
+**Nota:** Embora você possa definir qualquer dpi que desejar e os aplicativos que usam Qt e GTK serão redimensionados de acordo, é recomendável defini-lo como 96, 120 (25% a mais), 144 (50% a mais), 168 (75% a mais), 192 (100% a mais) etc., para reduzir artefatos de escala à GUI que usam bitmaps. Reduzi-lo abaixo de 96 dpi pode não reduzir o tamanho dos elementos gráficos da GUI, pois normalmente o dpi mais baixo para o qual os ícones são criados é 96.
 
-For RandR compliant drivers (for example the open source ATI driver), you can set it by:
+Para drivers compatíveis com RandR (por exemplo, o driver ATI de código aberto), você pode configurá-lo da seguinte maneira:
 
 ```
 $ xrandr --dpi 144
 
 ```
 
-**Note:** Applications that comply with the setting will not change immediately. You have to start them anew.
+**Nota:** Os aplicativos que estão em conformidade com a configuração não serão alterados imediatamente. Você precisa iniciá-los novamente.
 
-See [Execute commands after X start](/index.php/Execute_commands_after_X_start "Execute commands after X start") to make it permanent.
+Para torná-lo permanente, você pode defini-lo para [executar na inicialização](/index.php/Inicializa%C3%A7%C3%A3o_autom%C3%A1tica#Na_inicialização_de_Xorg "Inicialização automática").
 
-##### Proprietary NVIDIA driver
+##### Driver proprietário NVIDIA
 
-DPI can be set manually if you only plan to use one resolution ([DPI calculator](https://www.pxcalc.com/)):
+O DPI pode ser configurado manualmente se você deseja usar somente uma resolução ([calculadora de DPI](https://www.pxcalc.com/)):
 
 ```
 Section "Monitor"
@@ -375,7 +375,7 @@ EndSection
 
 ```
 
-You can manually set the DPI adding the options below on `/etc/X11/xorg.conf.d/20-nvidia.conf` (inside **Device** section):
+Você pode configurar manualmente o DPI adicionando as opções abaixo no arquivo `/etc/X11/xorg.conf.d/20-nvidia.conf` (dentro da seção **Device**):
 
 ```
 Option              "UseEdidDpi" "False"
@@ -383,30 +383,30 @@ Option              "DPI" "96 x 96"
 
 ```
 
-##### Manual DPI Setting Caveat
+##### Correção manual do DPI
 
-GTK very often overrides the server's DPI via the optional Xresource `Xft.dpi`. To find out whether this is happening to you, check with:
+GTK frequentemente sobrescreve o DPI do servidor com o Xresource opcional `Xft.dpi`. Para descobrir se isto está acontecendo com você, verifique:
 
 ```
 $ xrdb -query | grep dpi
 
 ```
 
-With GTK library versions since 3.16, when this variable is not otherwise explicitly set, GTK sets it to 96\. To have GTK apps obey the server DPI you may need to explictly set Xft.dpi to the same value as the server. The Xft.dpi resource is the method by which some desktop environments optionally force DPI to a particular value in personal settings. Among these are [KDE](/index.php/KDE "KDE") and [TDE](/index.php/TDE "TDE").
+A partir da versão 3.16 do GTK quando esta variável não é explicitamente definida, GTK define como 96\. Para os programas GTK obedecerem o DPI do servidor você deve explicitamente definir Xft.dpi. O recurso Xft.dpi é o metodo pelo qual alguns ambientes desktop opcionalmente forçam o DPI para um valor específico. Dentre estes [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") e [TDE](/index.php/TDE "TDE").
 
-### Display Power Management
+### Gerenciamento de energia do monitor
 
-[DPMS](/index.php/DPMS "DPMS") (Display Power Management Signaling) is a technology that allows power saving behaviour of monitors when the computer is not in use. This will allow you to have your monitors automatically go into standby after a predefined period of time.
+[DPMS](/index.php/DPMS "DPMS") (Gerenciamento de energia do monitor baseado em sinalização) é uma tecnologia que habilita o modo de economia de energia para monitores quando o computador não está em uso. Isto permite que os monitores vão para o modo standby automaticamente depois de determinado período de tempo.
 
-## Composite
+## Composição
 
-The Composite extension for X causes an entire sub-tree of the window hierarchy to be rendered to an off-screen buffer. Applications can then take the contents of that buffer and do whatever they like. The off-screen buffer can be automatically merged into the parent window or merged by external programs, called compositing managers. See the following article for more information: [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager")
+A extensão de Composição para X gera uma completa subárvore hierárquica de janelas a serem renderizadas para um buffer off-screen (renderização fora da tela). Programas então pegam o conteúdo desse buffer e fazem o que quiser com ele. O buffer off-screen pode ser automaticamente fundido com a janela pai ou com programas externos, chamados gerenciadores de composição. Veja o seguinte artigo para mais informações: [gerenciador de janelas compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager")
 
-Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), KWin, Marco, Metacity, Muffin, Mutter, [Xfwm](/index.php/Xfwm "Xfwm")) do compositing on their own. For other window managers, a standalone composite manager can be used.
+Alguns gerenciadores de janela (exemplo: [compiz](/index.php/Compiz "Compiz"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), KWin, Marco, Metacity, Muffin, Mutter, [Xfwm](/index.php/Xfwm "Xfwm")) fazem composição. Para outros gerenciadores de janela, um gerenciador de composição pode ser usado.
 
-### List of composite managers
+### Lista de gerenciadores de composição
 
-*   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
+*   **[Compton](/index.php/Compton "Compton")** — Compositor (um fork do xcompmgr-dana)
 
 	[https://github.com/yshui/compton](https://github.com/yshui/compton) || [compton](https://www.archlinux.org/packages/?name=compton)
 
@@ -414,25 +414,25 @@ Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment]
 
 	[https://cgit.freedesktop.org/xorg/app/xcompmgr/](https://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
 
-*   **Unagi** — Modular compositing manager which aims written in C and based on XCB
+*   **Unagi** — Um modular gerenciador de composição escrito em C baseado no XCB
 
 	[https://projects.mini-dweeb.org/projects/unagi](https://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
 
-## Tips and tricks
+## Dicas e truques
 
-### Automation
+### Automação
 
-This section lists utilities for automating keyboard / mouse input and window operations (like moving, resizing or raising).
+Esta seção lista utilitários para automatizar a entrada do teclado ou mouse e operações de janela (como mover, redimensionar e iniciar).
 
-| Tool | Package | Manual | [Keysym](/index.php/Keysym "Keysym")
-input | Window
-operations | Note |
-| xautomation | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Yes | No | Also contains screen scraping tools. Cannot simulate F13+. |
-| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdo.1) | No | Yes | Small X utility to perform elementary actions on windows. |
-| xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Yes | Yes | [Very buggy](https://github.com/jordansissel/xdotool/issues) and not in active development, e.g: has broken CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
-| xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Yes | No | Virtual keyboard for Xorg, also has the `-text` option for sending characters. |
+| Ferramenta | Pacote | Manual | entrada
+[Keysym](/index.php/Keysym "Keysym") | Operações de
+janela | Nota |
+| xautomation | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Sim | Não | Também contém ferramentas de [screen scraping](https://en.wikipedia.org/wiki/pt:Raspagem_de_dados#Screen_scraping "wikipedia:pt:Raspagem de dados"). Não pode simular F13+. |
+| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdo.1) | Não | Sim | Pequena ferramenta do X para ações elementárias em janelas. |
+| xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Sim | Sim | [Muitos bugs](https://github.com/jordansissel/xdotool/issues) e não está em desenvolvimento ativo, exemplo: tem parseamento da linha de comando quebrado.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
+| xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Sim | Não | Teclado virtual para Xorg, também tem a opção `-text` para envio de caracteres. |
 
-See also [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") and [an overview of X automation tools](https://venam.nixers.net/blog/unix/2019/01/07/win-automation.html).
+Veja também [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") e [an overview of X automation tools](https://venam.nixers.net/blog/unix/2019/01/07/win-automation.html) (estão em inglês).
 
 ### Nested X session
 
@@ -447,24 +447,24 @@ This will launch a Window Maker session in a 1024 by 768 window within your curr
 
 This needs the package [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest) to be installed.
 
-### Starting GUI programs remotely
+### Iniciando programas GUI remotamente
 
-See main article: [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH").
+Veja o artigo principal (inglês): [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH").
 
-### On-demand disabling and enabling of input sources
+### Habilitando e desabilitando em demanda dispositivos de entrada
 
-With the help of *xinput* you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
+Com a ajuda de *xinput* você pode temporariamente desabilitar ou habilitar dispositivos de entrada. Isto pode ser útil, por exemplo, em sistemas que tem mais de um mouse, como os ThinkPads, e você prefere usar somente um para evitar clicks indesejados.
 
-[Install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package.
+[Instale](/index.php/Instale "Instale") o pacote [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput).
 
-Find the name or ID of the device you want to disable:
+Encontre o nome ou ID do dispositivo que você quer desabilitar:
 
 ```
 $ xinput
 
 ```
 
-For example in a Lenovo ThinkPad T500, the output looks like this:
+Por exemplo em um Lenovo ThinkPad T500, a saída parece com isto:
 
  `$ xinput` 
 ```
@@ -482,30 +482,30 @@ For example in a Lenovo ThinkPad T500, the output looks like this:
 
 ```
 
-Disable the device with `xinput --disable *device*`, where *device* is the device ID or name of the device you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
+Desabilite o dispositivo com `xinput --disable *dispositivo*`, onde o *dispositivo* é o ID ou nome do dispositivo que você quer desabilitar. Neste exemplo nós iremos desabilitar o *Synaptics Touchpad*, com o ID 10:
 
 ```
 $ xinput --disable 10
 
 ```
 
-To re-enable the device, just issue the opposite command:
+Para habilitar o dispositivo, execute o comando:
 
 ```
 $ xinput --enable 10
 
 ```
 
-Alternatively using the device name, the command to disable the touchpad would be:
+Alternativamente é possível usar o nome do dispositivo:
 
 ```
 $ xinput --disable "SynPS/2 Synaptics TouchPad"
 
 ```
 
-### Killing application with hotkey
+### Atalho para matar um programa
 
-Run script on hotkey:
+Faça um atalho com o seguinte script:
 
 ```
 #!/bin/bash
@@ -515,11 +515,11 @@ kill -9 $pid
 
 ```
 
-Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
+Dependências: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool).
 
-### Block TTY access
+### Impeça acesso ao TTY
 
-To block tty access when in an X add the following to [xorg.conf](#Configuration):
+Para impedir o acesso ao TTY no X, adicione no [xorg.conf](#Configuração):
 
 ```
 Section "ServerFlags"
@@ -528,9 +528,9 @@ EndSection
 
 ```
 
-### Prevent a user from killing X
+### Impeça um usuário de matar o X
 
-To prevent a user from killing when it is running add the following to [xorg.conf](#Configuration):
+Para prevenir um usuário de matar uma sessão X quando ela está rodando, adicione o seguinte no [xorg.conf](#Configuração):
 
 ```
 Section "ServerFlags"
@@ -539,13 +539,13 @@ EndSection
 
 ```
 
-## Troubleshooting
+## Solução de problemas
 
-### General
+### Geral
 
-If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd journal](/index.php/Systemd_journal "Systemd journal"). [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
+Se um problema acontecer, veja o log armazenado em `/var/log/` ou, se executa o servidor X como usuário comum (possível desde v1.16), em `~/.local/share/xorg/`. Usuários do [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") devem checar os [registros do systemd](/index.php/Systemd_(Portugu%C3%AAs)/Journal_(Portugu%C3%AAs) "Systemd (Português)/Journal (Português)"). [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
-The logfiles are of the form `Xorg.n.log` with `n` being the display number. For a single user machine with default configuration the applicable log is frequently `Xorg.0.log`, but otherwise it may vary. To make sure to pick the right file it may help to look at the timestamp of the X server session start and from which console it was started. For example:
+Os arquivos de log estão na forma de `Xorg.n.log` com `n` sendo o número de exibição(`$DISPLAY`). Para uma maquina de único usuário com configuração padrão, o arquivo de log é frequentemente `Xorg.0.log`, mas isto pode variar. Para ter certeza de qual é o arquivo certo você pode olhar o log da inicialização da sessão X e de qual console ele foi iniciado. Por exemplo:
 
  `$ grep -e Log -e tty Xorg.0.log` 
 ```
@@ -553,39 +553,39 @@ The logfiles are of the form `Xorg.n.log` with `n` being the display number. For
 [    40.704] (--) controlling tty is VT number 1, auto-enabling KeepTty
 ```
 
-*   In the logfile then be on the lookout for any lines beginning with `(EE)`, which represent errors, and also `(WW)`, which are warnings that could indicate other issues.
-*   If there is an *empty* `.xinitrc` file in your `$HOME`, either delete or edit it in order for X to start properly. If you do not do this X will show a blank screen with what appears to be no errors in your `Xorg.0.log`. Simply deleting it will get it running with a default X environment.
-*   If the screen goes black, you may still attempt to switch to a different virtual console (e.g. `Ctrl+Alt+F6`), and blindly log in as root. You can do this by typing `root` (press `Enter` after typing it) and entering the root password (again, press `Enter` after typing it).
+*   No arquivo de log você pode procurar por qualquer linhas começando com `EE`, que representam erros, e também `WW`, que são avisos que podem indicar outros problemas.
+*   Se o arquivo `xinitrc` estiver *vazio* em seu `$HOME`, delete ou edite ele para o X iniciar apropriadamente. Se você não fizer isto X irá mostrar uma tela vazio sem erros aparentes no seu `Xorg.0.log`. Ao deletá-lo a próxima vez que for iniciado o X será executado com o ambiente padrão.
+*   Se a tela ficar preta, você pode ainda tentar trocar para um diferente console virtual (exemplo, `Ctrl+Alt+F6`), e entrar como root. Você pode fazer isto ao digitar `root` (pressionando `Enter` depois) e entrar com a senha do usuário root (denovo, pressione `Enter` depois).
 
-	You may also attempt to kill the X server with:
+	Você pode querer matar o servidor X com:
 
 	 `# pkill -x X` 
 
-	If this does not work, reboot blindly with:
+	Se isto não funcionar, pode rebootar cegamente com:
 
 	 `# reboot` 
 
-*   Check specific pages in [Category:Input devices](/index.php/Category:Input_devices "Category:Input devices") if you have issues with keyboard, mouse, touchpad etc.
-*   Search for common problems in [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") and [NVIDIA](/index.php/NVIDIA "NVIDIA") articles.
+*   Veja páginas específicas na [Categoria:Dispositivos de entrada](/index.php/Category:Input_devices_(Portugu%C3%AAs) "Category:Input devices (Português)") se você tiver problemas com o teclado, mouse, Touchpad e etc, considere verificar a pagina em [inglês](/index.php/Category:Input_devices "Category:Input devices") se não achar o que procura.
+*   Procure por problemas comuns nos artigos da [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") e [NVIDIA](/index.php/NVIDIA "NVIDIA"). (inglês)
 
-### Black screen, No protocol specified.., Resource temporarily unavailable for all or some users
+### Tela preta, nenhum protocolo especificado.., recurso temporariamente não disponível para todos ou alguns usuários
 
-X creates configuration and temporary files in current user's home directory. Make sure there is free disk space available on the partition your home directory resides in. Unfortunately, X server does not provide any more obvious information about lack of disk space in this case.
+X cria configuração e arquivos temporários no diretório do usuário($HOME). Tenha certeza que existe espaço de disco disponível na partição utilizada. Infelizmente, o servidor X não informa isso de maneira óbvia.
 
-### DRI with Matrox cards stopped working
+### DRI com cartões Matrox parou de funcionar
 
-If you use a Matrox card and DRI stopped working after upgrading to Xorg, try adding the line:
+Se você usa um cartão Matrox e DRI parou de funcionar depois de atualizar o Xorg, tente adicionar a seguinte linha:
 
 ```
 Option "OldDmaInit" "On"
 
 ```
 
-to the Device section that references the video card in `xorg.conf`.
+Na seção `Device` que referência a placa de vídeo em `xorg.conf`.
 
-### Frame-buffer mode problems
+### Problemas no modo renderizador de quadros (framebuffer mode)
 
-If X fails to start with the following log messages,
+Se X falha para iniciar com a seguinte messagem de log:
 
 ```
 (WW) Falling back to old probe method for fbdev
@@ -602,48 +602,48 @@ Cannot run in framebuffer mode. Please specify busIDs for all framebuffer device
 
 ```
 
-[Uninstall](/index.php/Uninstall "Uninstall") the [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) package.
+[Desinstale](/index.php/Pacman_(Portugu%C3%AAs)#Removendo_pacotes "Pacman (Português)") o pacote [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev).
 
-### Program requests "font '(null)'"
+### Programa requer "font '(null)'"
 
-Error message: `unable to load font `(null)'`.
+Messagem de erro: `unable to load font `(null)'`.
 
-Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). You do not need both; one should be enough. To find out which one would be better in your case, try `xdpyinfo` from [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo), like this:
+Alguns programas somente funcionam com fontes bitmap. Os dois maiores pacotes com fontes bipmap disponíveis são [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) e [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). Você não precisa de ambos, um deve ser o bastante. Para descobrir qual o mais apropriado para sua situação, tente `xdpyinfo`, do pacote [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo), desse jeito:
 
 ```
 $ xdpyinfo | grep resolution
 
 ```
 
-and use what is closer to the shown value.
+Use o que for mais próximo do valor mostrado.
 
-### Recovery: disabling Xorg before GUI login
+### Recuperação: Desabilitar o Xorg antes do login GUI
 
-If Xorg is set to boot up automatically and for some reason you need to prevent it from starting up before the login/display manager appears (if the system is wrongly configured and Xorg does not recognize your mouse or keyboard input, for instance), you can accomplish this task with two methods.
+Se o Xorg está configurado para iniciar automaticamente e por alguma razão você precisa evitar isto antes de iniciar o login/gerenciador de exibição Aparecerem (e o sistema está mal configurado e o Xorg não reconhece o mouse ou teclado, por exemplo), você pode fazer isto com dois métodos.
 
-*   Change default target to rescue.target. See [systemd#Change default target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd").
-*   If you have not only a faulty system that makes Xorg unusable, but you have also set the GRUB menu wait time to zero, or cannot otherwise use GRUB to prevent Xorg from booting, you can use the Arch Linux live CD. Follow the [installation guide](/index.php/Installation_guide#Format_the_partitions "Installation guide") about how to mount and chroot into the installed Arch Linux. Alternatively try to switch into another [tty](/index.php/Tty "Tty") with `Ctrl+Alt` + function key (usually from `F1` to `F7` depending on which is not used by X), login as root and follow steps below.
+*   Mude o alvo padrão para rescue.target. Veja [Systemd#Alterar target padrão para inicializar](/index.php/Systemd_(Portugu%C3%AAs)#Alterar_target_padrão_para_inicializar "Systemd (Português)").
+*   Se você além de ter um sistema com falhas que fazem o Xorg não usavel, tem o menu do GRUB sem tempo de espera, e não pode usar o GRUB para prevenir o Xorg de iniciar. Você pode usar um live CD do Arch Linux. Veja no [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") sobre como montar e chroot o sistema Arch Linux instalado.Você também pode tentar trocar para outro [tty](/index.php/Tty "Tty") com `Ctrl+Alt` + a tecla de função (normalmente do `F1` para `F7`, use um que não está sendo usado pelo X), logue como root e siga os passos abaixo.
 
-Depending on setup, you will need to do one or more of these steps:
+Dependendo da configuração, você vai precisar fazer um ou mais desses passos:
 
-*   [Disable](/index.php/Disable "Disable") the [display manager](/index.php/Display_manager "Display manager").
-*   Disable the [automatic start of the X](/index.php/Start_X_at_login "Start X at login").
-*   Rename the `~/.xinitrc` or comment out the `exec` line in it.
+*   [Desabilite](/index.php/Desabilite "Desabilite") o [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição").
+*   Desabilite o [Inicio automático do X no login](/index.php/Xinit_(Portugu%C3%AAs)#Inicializar_automaticamente_o_X_no_login "Xinit (Português)").
+*   Renomeie o `~/.xinitrc` ou comente a linha que contém `exec` dentro dele.
 
-### X clients started with "su" fail
+### Cliente X começando com falha "su"
 
-If you are getting "Client is not authorized to connect to server", try adding the line:
+Se você está ecebendo "Client is not authorized to connect to server", tente adicionar essa linha:
 
 ```
 session        optional        pam_xauth.so
 
 ```
 
-to `/etc/pam.d/su` and `/etc/pam.d/su-l`. `pam_xauth` will then properly set environment variables and handle `xauth` keys.
+Em `/etc/pam.d/su` e `/etc/pam.d/su-l`. `pam_xauth` irá então apropriadamente definir as variáveis de ambiente e cuidar das chaves `xauth`.
 
-### X failed to start: Keyboard initialization failed
+### X falhou para iniciar: Inicialização do teclado falhou
 
-If the filesystem (specifically `/tmp`) is full, `startx` will fail. `/var/log/Xorg.0.log` will end with:
+Se o sistema de arquivos, especificamente se `/tmp` está cheio, `startx` irá falhar. `/var/log/Xorg.0.log` irá terminar com:
 
 ```
 (EE) Error compiling keymap (server-0)
@@ -662,55 +662,55 @@ Please also check the log file at "/var/log/Xorg.0.log" for additional informati
 
 ```
 
-Make some free space on the relevant filesystem and X will start.
+Libere espaço no sistema de arquivos e X irá iniciar.
 
-### Rootless Xorg
+### Xorg sem superusuário
 
-Xorg may run with standard user privileges with the help of [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), see [[5]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) and [FS#41257](https://bugs.archlinux.org/task/41257). The requirements for this are:
+Xorg pode rodar sem a necessidade de privilégios especiais com a ajuda de [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), veja [[5]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) e [FS#41257](https://bugs.archlinux.org/task/41257). Para isso é necessário:
 
-*   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
-*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](https://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
+*   Iniciar o X via [xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)"); gerenciadores de exibição não são suportados.
+*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementações em drivers proprietários falham na [auto detecção](https://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222), e é necessário definir `needs_root_rights = no` em `/etc/X11/Xwrapper.config`.
 
-If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrapper.config`:
+Se não for possível, habilite novamente o uso de poderes de superusuário em `/etc/X11/Xwrapper.config`:
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = *yes*` 
 
-See also [Xorg.wrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) and [Systemd/User#Xorg as a systemd user service](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User").
+Veja também [Xorg.wrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.wrap.1) e [Xorg como um serviço de usuário do systemd](/index.php/Systemd/User#Xorg_as_a_systemd_user_service "Systemd/User") (inglês).
 
-[GDM](/index.php/GDM "GDM") also runs Xorg without root privileges by default when [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") is used.
+[GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") também roda o Xorg sem poderes de superusuário por padrão quando [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") é usado.
 
-#### Broken redirection
+#### Redirecionamento quebrado
 
-While user Xorg logs are stored in `~/.local/share/xorg/Xorg.log`, they do not include the output from the X session. To re-enable redirection, start X with the `-keeptty` flag:
+Enquanto os logs do xorg quando executado com o usuário são guardados em `~/.local/share/xorg/Xorg.log`, eles não incluem a saída da sessão X. Para habilitar o redirecionamento, inicie o X com a opção `-keeptty`:
 
 ```
 exec startx -- -keeptty > ~/.xorg.log 2>&1
 
 ```
 
-Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Ou copie `/etc/X11/xinit/xserverrc` para `~/.xserverrc`, e adicione `-keeptty`. Veja [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
-### A green screen whenever trying to watch a video
+### Tela verde toda vez que tenta ver um vídeo
 
-Your color depth is set wrong. It may need to be 24 instead of 16, for example.
+Sua profundidade de cor está errada. Pode ser 24 ao invés de 16, por exemplo.
 
-### SocketCreateListener error
+### Erro SocketCreateListener
 
-If X terminates with error message "SocketCreateListener() failed", you may need to delete socket files in `/tmp/.X11-unix`. This may happen if you have previously run Xorg as root (e.g. to generate an `xorg.conf`).
+Se X termina com a mensagem de erro "SocketCreateListener() failed", você pode precisar deletar os arquivos de socket em `/tmp/.X11-unix`. Isto pode acontecer se você antes tenha rodado o Xorg como superusuário (exemplo para gerar uma `xorg.conf`).
 
-### Invalid MIT-MAGIC-COOKIE-1 key when trying to run a program as root
+### Chave inválida MIT-MAGIC-COOKIE-1 enquanto tenta executar um programa como root
 
-That error means that only the current user has access to the X server. The solution is to give access to root:
+Este erro significa que somente o atual usuário tem acesso ao servidor X. Para resolver dê acesso ao superusuário:
 
 ```
 $ xhost +si:localuser:root
 
 ```
 
-That line can also be used to give access to X to a different user than root.
+Esta linha também pode dar acesso a outros usuários.
 
-## See also
+## Veja também
 
-*   [Xplain](https://magcius.github.io/xplain/article/) - In-depth explanation of the X Window System
-*   [Xorg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.1) - Xorg's Manual Page
-*   [Gentoo/Xorg#Configuration](https://wiki.gentoo.org/wiki/Xorg/Guide/en#Configuration) - Gentoo Wiki's Xorg Configuration page
+*   [Xplain](https://magcius.github.io/xplain/article/) - Explicação detalhada do sistema de janelas X.
+*   [Xorg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.1) - Página manual do Xorg.
+*   [Gentoo/Xorg#Configuration](https://wiki.gentoo.org/wiki/Xorg/Guide/en#Configuration) - Página de configuração do Xorg da Wiki do Gentoo.

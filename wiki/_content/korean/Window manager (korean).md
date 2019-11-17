@@ -11,21 +11,25 @@ Related articles
 
 *이 문서에서는 '창 관리자' 대신 '윈도우 매니저'라는 용어를 사용한다.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 개요](#.EA.B0.9C.EC.9A.94)
-    *   [1.1 종류](#.EC.A2.85.EB.A5.98)
-*   [2 윈도우 매니저 목록](#.EC.9C.88.EB.8F.84.EC.9A.B0_.EB.A7.A4.EB.8B.88.EC.A0.80_.EB.AA.A9.EB.A1.9D)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 개요](#개요)
+    *   [1.1 종류](#종류)
+*   [2 윈도우 매니저 목록](#윈도우_매니저_목록)
     *   [2.1 Stacking window managers](#Stacking_window_managers)
     *   [2.2 Tiling window managers](#Tiling_window_managers)
     *   [2.3 Dynamic window managers](#Dynamic_window_managers)
-*   [3 출처](#.EC.B6.9C.EC.B2.98)
+*   [3 출처](#출처)
 
 ## 개요
 
 창 관리자(Window Manager)는 그래픽 어플리케이션들이 나타나는 프레임(혹은 윈도우)의 모양이나 동작을 관리하는 X 클라이언트로서 프레임의 경계, 타이틀바, 크기 등을 결정한다. 또한 창 크기 조절 기능이나 [Fluxbox](/index.php/Fluxbox "Fluxbox")와 같은 윈도우 탭 기능 혹은 창 달라붙기 기능(Sticking, [Window Maker](/index.php/Window_Maker "Window Maker")의 Sticking 포함된 기능 [dockapps](http://windowmaker.org/dockapps/) 참고) 등을 제공한다. 몇몇 윈도우 매니저는 응용프로그램 실행을 위한 메뉴나 윈도우 매니저 자체 설정을 위한 간단한 유틸리티들을 제공하기도 한다.
 
-윈도우 매니저는 X 서버와 클라이언트와 상호작용을 위해 [Extended Window Manager Hints](http://standards.freedesktop.org/wm-spec/wm-spec-latest.html) 이라는 표준 정의를 사용한다.
+윈도우 매니저는 X 서버와 클라이언트와 상호작용을 위해 [Extended Window Manager Hints](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html) 이라는 표준 정의를 사용한다.
 
 몇몇 윈도우 매니저들은 [desktop environment](/index.php/Desktop_environment "Desktop environment")의 일부로서 개발되어 데스크탑 아이콘, 폰트, 도구모음, 배경화면, 데스크탑 위젯 등의 유저에게 일관된 사용환경을 제공한다.
 

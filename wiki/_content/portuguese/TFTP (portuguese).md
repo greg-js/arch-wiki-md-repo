@@ -1,8 +1,12 @@
-**Status de tradução:** Esse artigo é uma tradução de [TFTP](/index.php/TFTP "TFTP"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=TFTP&diff=0&oldid=549262) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [TFTP](/index.php/TFTP "TFTP"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=TFTP&diff=0&oldid=588141) na versão em inglês.
 
 O [Trivial File Transfer Protocol](https://en.wikipedia.org/wiki/pt:Trivial_File_Transfer_Protocol "wikipedia:pt:Trivial File Transfer Protocol") (TFTP) fornece uma forma minimalista para transferir arquivos. É geralmente usado como uma parte da inicialização do [PXE](/index.php/PXE "PXE") ou para atualizar configuração ou firmware em dispositivos que possuem memória limitada, tal como roteadores, telefones IP e impressoras.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Servidor](#Servidor)
     *   [1.1 tftp-hpa](#tftp-hpa)
@@ -23,6 +27,8 @@ Há várias implementações de servidor TFTP, algum deles estão listados abaix
 [Instale](/index.php/Instale "Instale") [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) e então [inicie](/index.php/Inicie "Inicie") `tftpd.service`.
 
 Para modificar parâmetros de serviço, edite `/etc/conf.d/tftpd`.
+
+[tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) exige caminhos absolutos nas suas comunicações de tftp. Se o uso de caminhos absolutos não forem possíveis seja qual for o motivo, considere usar [atftp](https://www.archlinux.org/packages/?name=atftp).
 
 ### atftp
 

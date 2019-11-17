@@ -7,7 +7,7 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 Activation and Autostart](#Activation_and_Autostart)
+*   [2 Activation and autostart](#Activation_and_autostart)
 *   [3 Configuration](#Configuration)
     *   [3.1 Using incrontab](#Using_incrontab)
     *   [3.2 Incrontab format](#Incrontab_format)
@@ -17,13 +17,13 @@
 
 [Install](/index.php/Install "Install") the [incron](https://www.archlinux.org/packages/?name=incron) package.
 
-## Activation and Autostart
+## Activation and autostart
 
 After installation, the daemon will not be enabled by default. It can be enabled using [systemctl](/index.php/Systemd#Using_units "Systemd").
 
 ## Configuration
 
-Incrontabs should never be edited directly; instead, users should use the `incrontab` program to work with their incrontabs.
+Incrontabs should never be edited directly; instead, users should use the *incrontab* program to work with their incrontabs.
 
 ### Using incrontab
 
@@ -55,7 +55,7 @@ $ incrontab -d
 
 ```
 
-To edit another users incrontab, isue the following command as root:
+To edit another user's incrontab, isue the following command as root:
 
 ```
 $ incrontab -u *user*
@@ -79,7 +79,7 @@ The basic format for an incrontab is:
 
 #### Mask types
 
-Incrontab uses mask types to specify which file system event to monitor for. For more options see [inotify(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7)
+*incrontab* uses mask types to specify which file system event to monitor for. For more options see [inotify(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7)
 
 To trigger an command if a file is accessed or read:
 

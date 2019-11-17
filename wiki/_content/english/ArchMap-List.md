@@ -1124,6 +1124,7 @@ You can use the following website to get your device's coordinates along with a 
 -22.85694,-43.25912 "blx32" # Rio de Janeiro, Rio de Janeiro, Brazil
 50.101669, 19.870413 "BartekS88" # Krakow, Poland
 31.023634, 121.446010 "h3fang" # Shanghai, China
-43.157473, -85.709312 "Ghancock" # Sparta, MI USA 
+43.157473, -85.709312 "Ghancock" # Sparta, MI USA
+-27.535709, -48.510644 "joaoantoniocardoso" # Florianópolis, Santa Catarina, Brazil 
 
 ```

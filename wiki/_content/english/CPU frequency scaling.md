@@ -94,7 +94,7 @@ $ cpupower frequency-info
 
 ### Setting maximum and minimum frequencies
 
-In rare cases, it may be necessary to manually set maximum and minimum frequencies.
+In some cases, it may be necessary to manually set maximum and minimum frequencies.
 
 To set the maximum clock frequency (`*clock_freq*` is a clock frequency with units: GHz, MHz):
 
@@ -122,6 +122,15 @@ To set the CPU to run at a specified frequency:
 *   To adjust for only a single CPU core, append `-c *core_number*`.
 *   The governor, maximum and minimum frequencies can be set in `/etc/default/cpupower`.
 
+Alternatively, you can set the frequency manually:
+
+```
+# echo *value* > /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq
+
+```
+
+The available values can be found in `/sys/devices/system/cpu/cpu*/cpufreq/scaling_available_frequencies` or similar. [[1]](https://software.intel.com/sites/default/files/comment/1716807/how-to-change-frequency-on-linux-pub.txt)
+
 ### Disabling Turbo Boost
 
 #### intel_pstate
@@ -148,7 +157,7 @@ Governors (see table below) are power schemes for the CPU. Only one may be activ
 | userspace | Run the CPU at user specified frequencies. |
 | ondemand | Scales the frequency dynamically according to current load. Jumps to the highest frequency and then possibly back off as the idle time increases. |
 | conservative | Scales the frequency dynamically according to current load. Scales the frequency more gradually than ondemand. |
-| schedutil | Scheduler-driven CPU frequency selection [[1]](https://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
+| schedutil | Scheduler-driven CPU frequency selection [[2]](https://lwn.net/Articles/682391/), [[3]](https://lkml.org/lkml/2016/3/17/420). |
 
 Depending on the scaling driver, one of these governors will be loaded by default:
 
@@ -278,7 +287,7 @@ ac_adapter)
 
 ## Privilege granting under GNOME
 
-**Note:** systemd introduced logind which handles consolekit and policykit actions. The following code below does not work. With logind, simply edit in the file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` the <defaults> elements according to your needs and the polkit manual [[3]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
+**Note:** systemd introduced logind which handles consolekit and policykit actions. The following code below does not work. With logind, simply edit in the file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` the <defaults> elements according to your needs and the polkit manual [[4]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
 
 [GNOME](/index.php/GNOME "GNOME") has a nice applet to change the governor on the fly. To use it without the need to enter the root password, simply create following file:
 

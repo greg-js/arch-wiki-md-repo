@@ -15,4 +15,4 @@ Documentation:
 
 Install [freeradius](https://www.archlinux.org/packages/?name=freeradius)
 
-Finally start the `freeradius` service.
+Finally [start](/index.php/Start "Start") the `freeradius` service.

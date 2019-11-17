@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=585736) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=587607) na versão em inglês.
 
 Artigos relacionados
 
@@ -222,16 +222,11 @@ O parâmetro de [sysctl](/index.php/Sysctl "Sysctl") para *swappiness* (isto é,
 Para verificar o valor atual de swappiness:
 
 ```
-$ cat /sys/fs/cgroup/memory/memory.swappiness
+$ sysctl vm.swappiness
 
 ```
 
-ou
-
-```
-$ cat /proc/sys/vm/swappiness
-
-```
+Alternativamente, os arquivos `/sys/fs/cgroup/memory/memory.swappiness` ou `/proc/sys/vm/swappiness` podem ser lido para obter o valor inteiro não tratado.
 
 **Nota:** Como `/proc` é muito menos organizado e é mantido apenas para propósitos de compatibilidade, você é encorajado a usar `/sys`.
 

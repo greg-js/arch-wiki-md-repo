@@ -10,7 +10,7 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Set default input source](#Set_default_input_source)
-*   [2 Set the default output source](#Set_the_default_output_source)
+*   [2 Set the default output sink](#Set_the_default_output_sink)
 *   [3 Independent analog and digital outputs on the same card](#Independent_analog_and_digital_outputs_on_the_same_card)
 *   [4 Simultaneous HDMI and analog output](#Simultaneous_HDMI_and_analog_output)
 *   [5 HDMI output configuration](#HDMI_output_configuration)
@@ -89,9 +89,9 @@ $ pacmd "set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor"
 
 **Tip:** The default source can be referred as `@DEFAULT_SOURCE@` in commands, for example: `$ pactl set-source-mute @DEFAULT_SOURCE@ toggle`.
 
-## Set the default output source
+## Set the default output sink
 
-To list the output sources available, type the following command:
+To list the output sinks available, type the following command:
 
  `$ pacmd list-sinks | grep -e 'name:' -e 'index:'` 
 ```

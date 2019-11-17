@@ -37,9 +37,7 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [2.2 Battery charge thresholds](#Battery_charge_thresholds)
     *   [2.3 CPU throttling workaround](#CPU_throttling_workaround)
     *   [2.4 CPU undervolting](#CPU_undervolting)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Some graphical applications not responsive](#Some_graphical_applications_not_responsive)
-*   [4 Specifications](#Specifications)
+*   [3 Specifications](#Specifications)
 
 ## Hardware compatibility
 
@@ -49,7 +47,7 @@ Despite not being strictly required for an Arch Linux install, a BIOS update is 
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The latest version, v1.24, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
+The latest version, v1.25, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
 
 ### Hybrid graphics
 
@@ -145,7 +143,7 @@ Battery charging thresholds can be configured via sysfs nodes `/sys/class/power_
 
 ### CPU throttling workaround
 
-**Warning:** As of BIOS v1.24, overriding thermal limits will result in your laptop running out of spec under certain conditions. A proper firmware level solution [is being worked on](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) by Lenovo, and should be available eventually.
+**Warning:** As of BIOS v1.25, overriding thermal limits will result in your laptop running out of spec under certain conditions. A proper firmware level solution [is being worked on](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) by Lenovo, and should be available eventually.
 
 A stress test using [s-tui](https://www.archlinux.org/packages/?name=s-tui) indicates that the CPU is limited to 38W/80C, resulting in maximum sustained frequency of around 2850 MHz on i7-8750H under heavy loads.
 
@@ -158,14 +156,6 @@ This can be worked around by using [throttled](https://www.archlinux.org/package
 Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU"). Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs, but your mileage may vary.
 
 The effects of undervolting on system stability will vary depending on individual hardware (a.k.a. "the silicon lottery").
-
-## Troubleshooting
-
-### Some graphical applications not responsive
-
-Some applications like Firefox or Telegram can experience periodic drawing lag for less than second every several seconds.
-
-It may be the Intel driver [SNA Issue](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
 ## Specifications
 

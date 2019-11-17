@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=576766) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=587612) na versão em inglês.
 
 Artigos relacionados
 
@@ -45,7 +45,7 @@ Veja também [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot
 *   Outro ambiente Linux, como um LiveCD ou mídia flash USB (ex.: pendrive), ou outra distribuição Linux.
 *   Ambientes com igual arquitetura; i.e. o chroot de e chroot para. A arquitetura do ambiente atual pode ser descoberta com: `uname -m` (ex.: i686 ou x86_64).
 *   Módulos de kernel carregados que são necessários no ambiente chroot.
-*   Swap habilitado se necessário: `# swapon /dev/sd*xY*` 
+*   [Swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") habilitado se necessário: `# swapon /dev/sd*xY*` 
 *   Conexão com a Internet estabelecida, se necessário.
 
 ## Uso

@@ -1,4 +1,6 @@
-**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-10-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=580779) na versão em inglês.
+au
+
+**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=588564) na versão em inglês.
 
 Artigos relacionados
 
@@ -27,9 +29,10 @@ A especificação UEFI determina o suporte para os sistemas de arquivos FAT12, F
         *   [4.2.2 Usando systemd](#Usando_systemd)
         *   [4.2.3 Usando eventos do sistema de arquivos](#Usando_eventos_do_sistema_de_arquivos)
         *   [4.2.4 Usando hook do mkinitcpio](#Usando_hook_do_mkinitcpio)
-        *   [4.2.5 Usando hook do mkinitcpio (2)](#Usando_hook_do_mkinitcpio_(2))
-        *   [4.2.6 Usando predefinição do mkinitcpio](#Usando_predefinição_do_mkinitcpio)
-        *   [4.2.7 Usando hook do pacman](#Usando_hook_do_pacman)
+        *   [4.2.5 Usando predefinição de mkinitcpio](#Usando_predefinição_de_mkinitcpio)
+            *   [4.2.5.1 Substituindo o hook do mkinitcpio acima](#Substituindo_o_hook_do_mkinitcpio_acima)
+            *   [4.2.5.2 Outro exemplo](#Outro_exemplo)
+        *   [4.2.6 Usando hook do pacman](#Usando_hook_do_pacman)
 *   [5 Problemas conhecidos](#Problemas_conhecidos)
     *   [5.1 ESP no RAID](#ESP_no_RAID)
 *   [6 Veja também](#Veja_também)
@@ -208,7 +211,7 @@ Então, [habilite](/index.php/Habilite "Habilite") e [inicie](/index.php/Inicie 
 
 #### Usando eventos do sistema de arquivos
 
-[Eventos do sistema de arquivos](/index.php/Autostarting#On_filesystem_events "Autostarting") podem ser usados para executar um script sincronizando o kernel EFISTUB após atualizações do kernel. Um exemplo com [incron](/index.php/Incron "Incron") a seguir:
+[Eventos de sistemas de arquivos](/index.php/Inicializa%C3%A7%C3%A3o_autom%C3%A1tica#Em_eventos_de_sistemas_de_arquivos "Inicialização automática") podem ser usados para executar um script sincronizando o kernel EFISTUB após atualizações do kernel. Um exemplo com [incron](/index.php/Incron_(Portugu%C3%AAs) "Incron (Português)") a seguir:
 
  `/usr/local/bin/efistub-update` 
 ```
@@ -266,21 +269,26 @@ echo "Synced /boot with ESP"
 
 ```
 
-#### Usando hook do mkinitcpio (2)
+#### Usando predefinição de mkinitcpio
 
-Outra **alternativa** para as soluções acima, que é potencialmente mais limpa porque há menos cópias e não precisa de um daemon de nível de sistema para funcionar. A lógica é invertida, o initramfs é armazenado diretamente na partição EFI, não copiado em `/boot/`. Então, o kernel e quaisquer outros arquivos adicionais são copiados para a partição ESP, graças a um hook do mkinitcpio.
+Como as predefinições em `/etc/mkinitcpio.d/` possuem suporte a script shell, o kernel e initramfs podem ser copiados apenas editando as predefinições.
 
-Edite o arquivo `/etc/mkinitcpio.d/linux.preset` :
+##### Substituindo o hook do mkinitcpio acima
+
+Edite o arquivo `/etc/mkinitcpio.d/linux.preset`:
 
  `/etc/mkinitcpio.d/linux.preset` 
 ```
 # mkinitcpio preset file for the 'linux' package
 
 # Directory to copy the kernel, the initramfs...
-ESP_DIR="*esp*/EFI/arch"
+ESP_DIR="''esp''/EFI/arch"
 
 ALL_config="/etc/mkinitcpio.conf"
-ALL_kver="/boot/vmlinuz-linux"
+ALL_kver="${ESP_DIR}/vmlinuz-linux"
+cp -af /boot/vmlinuz-linux "${ESP_DIR}/"
+[[ -e /boot/intel-ucode.img ]] && cp -af /boot/intel-ucode.img "${ESP_DIR}/"
+[[ -e /boot/amd-ucode.img ]] && cp -af /boot/amd-ucode.img "${ESP_DIR}/"
 
 PRESETS=('default' 'fallback')
 
@@ -291,26 +299,6 @@ default_options="-A esp-update-linux"
 #fallback_config="/etc/mkinitcpio.conf"
 fallback_image="${ESP_DIR}/initramfs-linux-fallback.img"
 fallback_options="-S autodetect"
-```
-
-Então, crie o arquivo `/etc/initcpio/install/esp-update-linux` que precisa ser executado:
-
- `/etc/initcpio/install/esp-update-linux` 
-```
-# Directory to copy the kernel, the initramfs...
-ESP_DIR="*esp*/EFI/arch"
-
-build() {
-	cp -af /boot/vmlinuz-linux "${ESP_DIR}/"
-	[[ -e /boot/intel-ucode.img ]] && cp -af /boot/intel-ucode.img "${ESP_DIR}/"
-	[[ -e /boot/amd-ucode.img ]] && cp -af /boot/amd-ucode.img "${ESP_DIR}/"
-}
-
-help() {
-	cat <<HELPEOF
-This hook copies the kernel to the ESP partition
-HELPEOF
-}
 
 ```
 
@@ -323,9 +311,7 @@ Para testar isso, basta executar:
 
 ```
 
-#### Usando predefinição do mkinitcpio
-
-Como as predefinições em `/etc/mkinitcpio.d/` possuem suporte a scripts de shell, o kernel e o initramfs podem ser copiados apenas editando as predefinições.
+##### Outro exemplo
 
  `/etc/mkinitcpio.d/0.preset` 
 ```

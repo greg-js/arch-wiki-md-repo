@@ -41,9 +41,9 @@ The configuration instructions below will enable boot loader menu selection, boo
 
 #### GRUB
 
-When using [GRUB](/index.php/GRUB "GRUB") with a generated `grub.cfg`, edit `/etc/defaults/grub` and enable serial input and output support:
+When using [GRUB](/index.php/GRUB "GRUB") with a generated `grub.cfg`, edit `/etc/default/grub` and enable serial input and output support:
 
- `/etc/defaults/grub` 
+ `/etc/default/grub` 
 ```
 ...
 GRUB_TERMINAL_INPUT="console serial"
@@ -54,7 +54,7 @@ GRUB_TERMINAL_OUTPUT="gfxterm serial"
 
 Next add the `GRUB_SERIAL_COMMAND` variable and set the options for the serial connection. For COM1 (`/dev/ttyS0`) with baud rate of 115200 bit/s:
 
- `/etc/defaults/grub` 
+ `/etc/default/grub` 
 ```
 ...
 GRUB_SERIAL_COMMAND="serial --unit=0 --speed=115200"

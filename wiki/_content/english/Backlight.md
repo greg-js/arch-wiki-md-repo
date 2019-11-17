@@ -251,7 +251,7 @@ gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gn
 
 ```
 
-Steps in brightness for keyboard contol can be implemented with this method as well.
+Steps in brightness for keyboard control can be implemented with this method as well.
 
 ```
 gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
