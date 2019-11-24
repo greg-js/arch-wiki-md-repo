@@ -1,6 +1,14 @@
+Articoli correlati
+
+*   [Bluetooth mouse configuration](/index.php/Bluetooth_mouse_configuration "Bluetooth mouse configuration")
+
 [Bluetooth](http://www.bluetooth.org/) è uno standard per l'interconnessione a corto raggio senza fili dei telefoni cellulari, dei computer e di altri dispositivi elettronici. In Linux, il protocollo Bluetooth è implementato da [BlueZ](http://www.bluez.org/)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Interfacce grafiche](#Interfacce_grafiche)
@@ -8,14 +16,14 @@
         *   [2.1.1 Script per Thunar](#Script_per_Thunar)
     *   [2.2 GNOME Bluetooth](#GNOME_Bluetooth)
     *   [2.3 BlueDevil](#BlueDevil)
-    *   [2.4 Fluxbox, Openbox, ed altri WM](#Fluxbox.2C_Openbox.2C_ed_altri_WM)
+    *   [2.4 Fluxbox, Openbox, ed altri WM](#Fluxbox,_Openbox,_ed_altri_WM)
 *   [3 Configurazione manuale](#Configurazione_manuale)
     *   [3.1 Streaming Audio](#Streaming_Audio)
 *   [4 Pairing](#Pairing)
-*   [5 Usare Obex per l'invio e la ricezione dei files](#Usare_Obex_per_l.27invio_e_la_ricezione_dei_files)
+*   [5 Usare Obex per l'invio e la ricezione dei files](#Usare_Obex_per_l'invio_e_la_ricezione_dei_files)
 *   [6 Esempi](#Esempi)
     *   [6.1 Siemens S55](#Siemens_S55)
-    *   [6.2 Logitech Mouse MX Laser / M555b](#Logitech_Mouse_MX_Laser_.2F_M555b)
+    *   [6.2 Logitech Mouse MX Laser / M555b](#Logitech_Mouse_MX_Laser_/_M555b)
     *   [6.3 Motorola V900](#Motorola_V900)
     *   [6.4 Motorola RAZ](#Motorola_RAZ)
     *   [6.5 Sincronizzare un iPhone utilizzando bluez-simple-agent](#Sincronizzare_un_iPhone_utilizzando_bluez-simple-agent)
@@ -28,11 +36,11 @@
     *   [7.5 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
     *   [7.6 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
     *   [7.7 hcitool scan: Dispositivo non rilevato](#hcitool_scan:_Dispositivo_non_rilevato)
-    *   [7.8 Il mio computer non è visibile](#Il_mio_computer_non_.C3.A8_visibile)
-    *   [7.9 GNOME Files non può sfogliare file](#GNOME_Files_non_pu.C3.B2_sfogliare_file)
-    *   [7.10 Bluetooth disabilitato all'avvio di gnome](#Bluetooth_disabilitato_all.27avvio_di_gnome)
+    *   [7.8 Il mio computer non è visibile](#Il_mio_computer_non_è_visibile)
+    *   [7.9 GNOME Files non può sfogliare file](#GNOME_Files_non_può_sfogliare_file)
+    *   [7.10 Bluetooth disabilitato all'avvio di gnome](#Bluetooth_disabilitato_all'avvio_di_gnome)
     *   [7.11 Problemi di connessione con Sennheiser MM400 Headset](#Problemi_di_connessione_con_Sennheiser_MM400_Headset)
-    *   [7.12 Il dispositivo è sincronizzato ma non emette alcun suono](#Il_dispositivo_.C3.A8_sincronizzato_ma_non_emette_alcun_suono)
+    *   [7.12 Il dispositivo è sincronizzato ma non emette alcun suono](#Il_dispositivo_è_sincronizzato_ma_non_emette_alcun_suono)
 *   [8 Ulteriori Risorse](#Ulteriori_Risorse)
 
 ## Installazione
@@ -91,7 +99,7 @@ Ora bisognerà posizionare lo script nella directory appropriata (ad esempio, `/
 
  `chmod +x /usr/bin/obex_thunar.sh` 
 
-L'ultimo passo è quello di cambiare la riga in *Local Services > Transfer > Advanced* in `obex_thunar.sh %d`.
+L'ultimo passo è quello di cambiare la riga in *Local Services > Transfer > Advanced* in `obex_thunar.sh %d`.
 
 ### GNOME Bluetooth
 
@@ -103,7 +111,7 @@ Per aggiungere una voce "Inviare a" nel menu del Bluetooth, nel file di configur
 
 ### BlueDevil
 
-Lo strumento di gestione Bluetooth per [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") è [BlueDevil](https://projects.kde.org/projects/extragear/base/bluedevil). Esso può essere installato con il pacchetto [bluedevil](https://www.archlinux.org/packages/?name=bluedevil), disponibile nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
+Lo strumento di gestione Bluetooth per [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)") è [BlueDevil](https://cgit.kde.org/bluedevil.git). Esso può essere installato con il pacchetto [bluedevil](https://www.archlinux.org/packages/?name=bluedevil), disponibile nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Assicurarsi che il demone `bluetooth` sia in esecuzione, come descritto sopra. Dovrebbe apparire un'icona Bluetooth sia in Dolphin sia nel vassoio di sistema, da cui è possibile configurare BlueDevil e rilevare i dispositivi Bluetooth. E' possibile configurare BlueDevil anche da Impostazioni di Sistema di KDE.
 

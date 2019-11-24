@@ -122,4 +122,4 @@ O principal arquivo de configurações do stoq-server se encontra em `/usr/share
 
 ## Documentação adicional
 
-Para mais informações, leia a [wiki](https://wiki.stoq.com.br) e o [manual](https://doc.stoq.com.br/manual/latest/) do Stoq.
+Para mais informações, leia a [wiki](https://wiki.stoq.com.br), [central de suporte](https://async.freshdesk.com/support/home) e o [manual](https://doc.stoq.com.br/manual/latest/) do Stoq.

@@ -46,7 +46,7 @@ Kernel padrão do arch (x86_64), não apresentou problemas no boot, não precisa
 
 ### Wireless
 
-Siga as instruções contidas em [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"), sendo necessário ter [instalados](/index.php/Instala "Instala") os pacotes [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) e [b43-fwcutter](https://www.archlinux.org/packages/?name=b43-fwcutter) ou o driver proprietário [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl).
+Siga as instruções contidas em [Broadcom wireless](/index.php/Broadcom_wireless_(Portugu%C3%AAs) "Broadcom wireless (Português)"), sendo necessário ter [instalados](/index.php/Instala "Instala") os pacotes [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) e [b43-fwcutter](https://www.archlinux.org/packages/?name=b43-fwcutter) ou o driver proprietário [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl).
 
 Com ele, seu atalho para rede wireless do teclado funcionará normalmente.
 

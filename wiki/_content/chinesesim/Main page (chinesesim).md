@@ -70,7 +70,4 @@
 
 *   [Arch Linux 中文论坛](http://bbs.archlinuxcn.org/)（非官方）
 *   [Arch Linux 官方论坛](https://bbs.archlinux.org/)（英文）
-*   [Ubuntu 中文论坛 Arch 发行版](http://forum.ubuntu.org.cn/viewforum.php?f=155)
-*   [arch-cn 中文 IRC 频道](irc://oftc/arch-cn)以及[archlinux-cn 中文 IRC 频道](irc://freenode/archlinux-cn)
-*   [Ubuntu 中文 IRC 频道](irc://freenode/ubuntu-cn)
-*   [百度 archlinux 吧](http://tieba.baidu.com/f?kw=archlinux)
+*   [archlinux-cn freenode 上的中文 IRC 频道 #archlinux-cn](irc://freenode/archlinux-cn) 和 [其它相关群组](https://fars.ee/~readme.html)

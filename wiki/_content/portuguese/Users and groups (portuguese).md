@@ -7,7 +7,7 @@ Artigos relacionados
 *   [Polkit](/index.php/Polkit "Polkit")
 *   [Permissões e atributos de arquivo](/index.php/Permiss%C3%B5es_e_atributos_de_arquivo "Permissões e atributos de arquivo")
 
-Usuários e grupos são usados no GNU/Linux para [controle de acesso](https://en.wikipedia.org/wiki/pt:Controle_de_acesso#Na_seguran.C3.A7a_da_informa.C3.A7.C3.A3o "wikipedia:pt:Controle de acesso") — isto é, para controlar o acesso aos arquivos, diretórios e periféricos do sistema. O Linux oferece mecanismos de controle de acesso relativamente simples/grosseiros por padrão. Para opções mais avançadas, veja [ACL](/index.php/ACL "ACL") e [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
+Usuários e grupos são usados no GNU/Linux para [controle de acesso](https://en.wikipedia.org/wiki/pt:Controle_de_acesso#Na_seguran.C3.A7a_da_informa.C3.A7.C3.A3o e [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -471,7 +471,7 @@ Os seguintes grupos são usados para propósitos de sistema, uma atriubuição p
 
 ### Grupos pré-systemd
 
-Antes do Arch migrar para o [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), os usuários tinham que ser adicionados manualmente a esses grupos para poder acessar os dispositivos correspondentes. Essa forma se tornou obsoleta em favor do [udev](/index.php/Udev "Udev") marcar os dispositivos com uma [etiqueta](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules.m4) `uaccess` e *logind* atribuindo as permissões aos usuários de forma dinâmica via [ACLs](/index.php/ACL "ACL") de acordo com qual sessão está atualmente ativa. Observe que a sessão não deve ser quebrada para que isso funcione (consulte [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")).
+Antes do Arch migrar para o [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), os usuários tinham que ser adicionados manualmente a esses grupos para poder acessar os dispositivos correspondentes. Essa forma se tornou obsoleta em favor do [udev](/index.php/Udev "Udev") marcar os dispositivos com uma [etiqueta](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules.m4) `uaccess` e *logind* atribuindo as permissões aos usuários de forma dinâmica via [ACLs](/index.php/ACL_(Portugu%C3%AAs) "ACL (Português)") de acordo com qual sessão está atualmente ativa. Observe que a sessão não deve ser quebrada para que isso funcione (consulte [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")).
 
 Existem algumas exceções notáveis que exigem a adição de um usuário a alguns desses grupos: por exemplo, se você quiser permitir que os usuários acessem o dispositivo mesmo quando não estiverem logados. No entanto, observe que adicionar usuários aos grupos pode até fazer alguma funcionalidade quebrar (por exemplo, o grupo `audio` irá quebrar a troca rápida de usuários e permite que os aplicativos bloqueiem o mixer de software).
 

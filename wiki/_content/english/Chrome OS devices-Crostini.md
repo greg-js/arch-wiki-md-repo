@@ -22,7 +22,7 @@ Highlights:
     *   [2.2 Audio playback](#Audio_playback)
     *   [2.3 Video playback](#Video_playback)
     *   [2.4 GPU acceleration](#GPU_acceleration)
-    *   [2.5 Fullscreen video, games and mouse capture don't work correctly](#Fullscreen_video,_games_and_mouse_capture_don't_work_correctly)
+    *   [2.5 Fullscreen video, games and mouse capture](#Fullscreen_video,_games_and_mouse_capture)
 *   [3 Useful links](#Useful_links)
 
 ## Introduction
@@ -229,9 +229,9 @@ OpenGL ES profile version string: OpenGL ES 3.2 Mesa 19.1.4
 OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
 ```
 
-### Fullscreen video, games and mouse capture don't work correctly
+### Fullscreen video, games and mouse capture
 
-Currently Crostini doesn't allow linux apps to be completely fullscreen and mouse capture doesn't work correctly. So playing most Steam games is infeasible. There is an open issue about this problem: [https://bugs.chromium.org/p/chromium/issues/detail?id=927521](https://bugs.chromium.org/p/chromium/issues/detail?id=927521)
+Currently Crostini has limited support for mouse capture starting with Chrome OS 79 (Currently in the Dev channel). You must enable the flag chrome://flags/#exo-pointer-lock to get mouse capture. The closed issue relating to mouse capture is [https://bugs.chromium.org/p/chromium/issues/detail?id=927521](https://bugs.chromium.org/p/chromium/issues/detail?id=927521)
 
 ## Useful links
 

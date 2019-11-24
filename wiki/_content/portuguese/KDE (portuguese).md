@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [KDE](/index.php/KDE "KDE"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=587902) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [KDE](/index.php/KDE "KDE"). Data da última tradução: 2019-11-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=589703) na versão em inglês.
 
 Artigos relacionados
 
@@ -71,9 +71,10 @@ O KDE é um projeto de software que atualmente compreende um [ambiente de deskto
         *   [5.1.1 Sessão KDE/Openbox](#Sessão_KDE/Openbox)
         *   [5.1.2 Reabilitar efeitos de composição](#Reabilitar_efeitos_de_composição)
     *   [5.2 Configurando resolução do monitor / vários monitores](#Configurando_resolução_do_monitor_/_vários_monitores)
-    *   [5.3 Configurando perfis ICC](#Configurando_perfis_ICC)
-    *   [5.4 Desabilitar a abertura do lançador de aplicativos com a tecla Super (tecla Windows)](#Desabilitar_a_abertura_do_lançador_de_aplicativos_com_a_tecla_Super_(tecla_Windows))
-    *   [5.5 Desabilitar exibição de Favoritos no menu de aplicativos](#Desabilitar_exibição_de_Favoritos_no_menu_de_aplicativos)
+    *   [5.3 KWin-lowlatency](#KWin-lowlatency)
+    *   [5.4 Configurando perfis ICC](#Configurando_perfis_ICC)
+    *   [5.5 Desabilitar a abertura do lançador de aplicativos com a tecla Super (tecla Windows)](#Desabilitar_a_abertura_do_lançador_de_aplicativos_com_a_tecla_Super_(tecla_Windows))
+    *   [5.6 Desabilitar exibição de Favoritos no menu de aplicativos](#Desabilitar_exibição_de_Favoritos_no_menu_de_aplicativos)
 *   [6 Solução de problemas](#Solução_de_problemas)
     *   [6.1 Fontes](#Fontes)
         *   [6.1.1 Fontes em uma sessão do Plasma têm visual ruim](#Fontes_em_uma_sessão_do_Plasma_têm_visual_ruim)
@@ -414,7 +415,7 @@ Os seguintes navegadores da web podem se integrar ao Plasma:
 
 ### PIM
 
-O KDE oferece sua própria pilha para [gerenciamento de informações pessoais](https://en.wikipedia.org/wiki/Personal_information_management "wikipedia:Personal information management"). Isso inclui e-mails, contatos, calendário, etc. Para instalar todos os pacotes PIM, você pode usar o meta-pacote [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
+O KDE oferece sua própria pilha para [gerenciamento de informações pessoais](https://en.wikipedia.org/wiki/Personal_information_management "wikipedia:Personal information management") (PIM). Isso inclui e-mails, contatos, calendário, etc. Para instalar todos os pacotes PIM, você pode usar o grupo de pacotes [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/) ou o metapacote [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
 
 #### Akonadi
 
@@ -540,7 +541,7 @@ Para instalar todos os protocolos Telepathy, instale o grupo [telepathy](https:/
 
 #### Usar Telegram com KDE Telepathy
 
-O protocolo do [Telegram](/index.php/Telegram "Telegram") está disponível usando [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), instalando [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) ou [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) e [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/). O nome de usuário é o número de telefone da conta Telegram (completo com o prefixo nacional `+*xx*`, por exemplo, `+49` para a Alemanha).
+O protocolo do [Telegram](/index.php/Telegram_(Portugu%C3%AAs) "Telegram (Português)") está disponível usando [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), instalando [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) ou [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) e [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/). O nome de usuário é o número de telefone da conta Telegram (completo com o prefixo nacional `+*xx*`, por exemplo, `+49` para a Alemanha).
 
 A configuração através da interface gráfica pode ser complicada: se o número de telefone não for aceito ao configurar uma nova conta no cliente do KDE Telepathy (com uma mensagem de erro reclamando de um parâmetro inválido que impede a criação da conta), insira entre aspas simples e depois remova as aspas manualmente do arquivo de configuração (`~/.local/share/telepathy/mission-control/accounts.cfg`) após a criação da conta (se as aspas não forem removidas depois, um erro de autenticação deve ser apresentado).
 
@@ -596,6 +597,10 @@ Ao substituir o Kwin por um gerenciador de janelas que não forneça um Composit
 ### Configurando resolução do monitor / vários monitores
 
 Para ativar o gerenciamento de resolução de tela e vários monitores no Plasma, instale o [kscreen](https://www.archlinux.org/packages/?name=kscreen). Isso fornece opções adicionais para *Configurações do sistema > Tela e monitor*.
+
+### KWin-lowlatency
+
+[KWin-lowlatency](https://github.com/tildearrow/kwin-lowlatency) é uma tentativa de reduzira a latência e falhas no popular compositor KWin e está disponível como [kwin-lowlatency](https://aur.archlinux.org/packages/kwin-lowlatency/).
 
 ### Configurando perfis ICC
 
@@ -688,7 +693,7 @@ Ocultar determinados itens nas configurações da área de notificação (por ex
 
 #### A tela de autenticação KCM não sincroniza as configurações do cursor para SDDM
 
-A tela de autenticação do KCM lê as configurações do cursor em `~/.config/kcminputrc`, sem esse arquivo nenhuma configuração é sincronizada. A maneira mais fácil de gerar esse arquivo é alterar o tema do cursor em *Configurações do sistema > Tema do Espaço de Trabalho > Cursores* e alterá-lo novamente para o tema preferido de cursor.
+A tela de autenticação do KCM lê as configurações do cursor em `~/.config/kcminputrc`, sem esse arquivo nenhuma configuração é sincronizada. A maneira mais fácil de gerar esse arquivo é alterar o tema do cursor em *Configurações do sistema > Cursores* e alterá-lo novamente para o tema preferido de cursor.
 
 ### Problemas gráficos
 
@@ -790,17 +795,15 @@ Se o seu sistema puder suspender ou hibernar usando [systemd](/index.php/Systemd
 
 #### Limpar a configuração do Akonadi para corrigir o KMail
 
-Primeiro, certifique-se de que o KMail não esteja em execução. Então, faça o backup da configuração:
+Consulte [esse](https://docs.kde.org/trunk5/en/pim/kmail2/clean-start-after-a-failed-migration.html) documento para detalhes.
+
+Se você quiser um backup, por favor copie o diretório de configuração em vez de excluí-lo.
 
 ```
 $ cp -a ~/.local/share/akonadi ~/.local/share/akonadi-old
 $ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
 ```
-
-Inicie o *Configurações do sistema > Contas Online* e remova todos os recursos. Volte para o Dolphin e remova o original `~/.local/share/akonadi/` e `~/.config/akonadi/` - as cópias que você fez garantem que você possa voltar atrás, se necessário.
-
-Agora volte às Configurações do sistema e adicione cuidadosamente os recursos necessários. Você deve ver a leitura do recurso em suas pastas de correio. Em seguida, inicie o Kontact/KMail para ver se funciona corretamente.
 
 #### Esvaziar a caixa de entrada IMAP no KMail
 

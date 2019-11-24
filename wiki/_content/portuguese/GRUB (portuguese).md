@@ -280,13 +280,13 @@ sendo que o vetor RAID 1 contendo `/boot` está contido em ambos `/dev/sda` e `/
 
 #### /boot criptografado
 
-O GRUB também tem suporte especial para inicializar com um `/boot` criptografado. Isto é feito desbloqueando um dispositivo de bloco [LUKS](/index.php/LUKS "LUKS") para ler sua configuração e carregar qualquer [initramfs](/index.php/Initramfs "Initramfs") e [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") dele. Esta opção tenta resolver o problema de ter uma [partição de inicialização não criptografada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+O GRUB também tem suporte especial para inicializar com um `/boot` criptografado. Isto é feito desbloqueando um dispositivo de bloco [LUKS](/index.php/LUKS_(Portugu%C3%AAs) "LUKS (Português)") para ler sua configuração e carregar qualquer [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") e [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") dele. Esta opção tenta resolver o problema de ter uma [partição de inicialização não criptografada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
 
 **Nota:** `/boot` **não** precisa obrigatoriamente ser mantido em uma partição separada; ele também pode ficar sob a árvore de diretórios `/` da raiz do sistema.
 
 **Atenção:** O GRUB não possui suporte a cabeçalhos LUKS2; veja [bug #55093 do GRUB](https://savannah.gnu.org/bugs/?55093). Certifique-se de especificar `--type luks1` ao criar a partição criptografada usando `cryptsetup luksFormat`.
 
-Para ativar este recurso, criptografe a partição com `/boot` que reside nela usando [LUKS](/index.php/LUKS "LUKS") normalmente. Em seguida, adicione a seguinte opção para `/etc/default/grub`:
+Para ativar este recurso, criptografe a partição com `/boot` que reside nela usando [LUKS](/index.php/LUKS_(Portugu%C3%AAs) "LUKS (Português)") normalmente. Em seguida, adicione a seguinte opção para `/etc/default/grub`:
 
  `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
 
@@ -324,7 +324,7 @@ Um arquivo de configuração básico do GRUB usa as seguintes opções:
 
 Para obter dicas sobre o gerenciamento de várias entradas do GRUB, por exemplo, ao usar os kernels [linux](https://www.archlinux.org/packages/?name=linux) e [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), consulte [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
 
-Para entradas de menu de inicialização de [Archiso](/index.php/Archiso "Archiso") e [Archboot](/index.php/Archboot "Archboot"), veja [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive").
+Para entradas de menu de inicialização de [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)") e [Archboot](/index.php/Archboot "Archboot"), veja [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive").
 
 ##### Comandos do GRUB
 
@@ -877,7 +877,7 @@ O GRUB pode levar muito tempo para carregar quando o espaço em disco está baix
 
 O GRUB pode emitir `erro: sistema de arquivos desconhecido` e se recusar a inicializar por alguns motivos. Se você tem certeza de que todos os [UUIDs](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") estão corretos e todos os sistemas de arquivos são válidos e compatíveis, pode ser que sua [partição de inicialização de BIOS](#Instruções_específicas_de_Tabela_de_Partição_GUID_(GPT)) esteja localizada fora dos primeiros 2 TiB da unidade [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use uma ferramenta de particionamento de sua escolha para garantir que essa partição esteja totalmente localizada nos primeiros 2 TiB, depois reinstale e reconfigure o GRUB.
 
-Esse erro também pode ser causado por um sistema de arquivos [ext4](/index.php/Ext4 "Ext4") com os recursos `large_dir` ou `metadata_csum_seed` definidos.
+Esse erro também pode ser causado por um sistema de arquivos [ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)") com os recursos `large_dir` ou `metadata_csum_seed` definidos.
 
 ### grub-reboot não está redefinido
 

@@ -231,6 +231,13 @@ Multiple snapshots can be deleted at one time. For example, to delete snapshots 
 
 ```
 
+To delete a range of snapshots, in this example between snapshots 65 and 70 of the root configuration do:
+
+```
+ # snapper -c root delete 65-70
+
+```
+
 **Note:** When deleting a pre snapshot, you should always delete its corresponding post snapshot and vice versa.
 
 ## Access for non-root users

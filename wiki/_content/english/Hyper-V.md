@@ -158,7 +158,18 @@ In general, you may now install Arch as you would on any other system. The Gener
 
 After Arch has been installed, you can continue to configure features.
 
-First, you should shut down the VM, open the Settings dialog again, and in the left sidebar, select "DVD Drive" under "IDE Controller 1". Under "Media", choose "None". This will stop the VM from trying to boot from the install media on every start.
+Hyper-V Integration Services
+
+[https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services](https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services)
+
+install [hyperv](https://www.archlinux.org/packages/?name=hyperv) and enable services
+
+```
+# systemctl enable hv_fcopy_daemon.service hv_kvp_daemon.service hv_vss_daemon.service --now
+
+```
+
+Shut down the VM, open the Settings dialog again, and in the left sidebar, select "DVD Drive" under "IDE Controller" or "SCSI". Under "Media", choose "None". This will stop the VM from trying to boot from the install media on every start.
 
 ### Shared directories
 

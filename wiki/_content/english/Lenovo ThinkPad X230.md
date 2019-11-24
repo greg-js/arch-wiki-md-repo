@@ -1,10 +1,10 @@
 Related articles
 
-*   [fprint](/index.php/Fprint "Fprint")
+*   [Laptop](/index.php/Laptop "Laptop")
 *   [TrackPoint](/index.php/TrackPoint "TrackPoint")
 *   [HiDPI](/index.php/HiDPI "HiDPI")
 
-Lenovo ThinkPad X230 [official page](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x230), [datasheet](http://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf), [hardware maintenance manual](https://us.download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles_pdf/x230_x230i_hmm_en_0b48666_01.pdf).
+Lenovo ThinkPad X230 [official page](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x230), [datasheet](http://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf), [hardware maintenance manual](https://us.download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles_pdf/x230_x230i_hmm_en_0b48666_01.pdf), [ThinkWiki](https://www.thinkwiki.org/wiki/Category:X230).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -16,20 +16,24 @@ Lenovo ThinkPad X230 [official page](https://pcsupport.lenovo.com/en/en/products
     *   [1.1 Kernel](#Kernel)
     *   [1.2 Screen](#Screen)
     *   [1.3 Brightness](#Brightness)
-    *   [1.4 Touchpad](#Touchpad)
-    *   [1.5 Backlight control keys](#Backlight_control_keys)
-    *   [1.6 Suspend to ram](#Suspend_to_ram)
-    *   [1.7 UMTS Modem](#UMTS_Modem)
-    *   [1.8 Fan control](#Fan_control)
+    *   [1.4 Backlight control keys](#Backlight_control_keys)
+    *   [1.5 Sound control buttons](#Sound_control_buttons)
+    *   [1.6 Touchpad](#Touchpad)
+    *   [1.7 Suspend to ram](#Suspend_to_ram)
+    *   [1.8 UMTS Modem](#UMTS_Modem)
+    *   [1.9 Fingerprint reader](#Fingerprint_reader)
+    *   [1.10 Fan control](#Fan_control)
 *   [2 Trusted Platform Module](#Trusted_Platform_Module)
 *   [3 USB BIOS update](#USB_BIOS_update)
-*   [4 Power Saving](#Power_Saving)
-    *   [4.1 TLP](#TLP)
-*   [5 x230T (tablet version)](#x230T_(tablet_version))
-    *   [5.1 Multitouch screen for the x230t (tablet version)](#Multitouch_screen_for_the_x230t_(tablet_version))
-    *   [5.2 Wacom tablet input](#Wacom_tablet_input)
-*   [6 Not Working](#Not_Working)
-*   [7 See also](#See_also)
+*   [4 OpenCL](#OpenCL)
+*   [5 Power Saving](#Power_Saving)
+    *   [5.1 TLP](#TLP)
+    *   [5.2 Charge thresholds](#Charge_thresholds)
+*   [6 x230T (tablet version)](#x230T_(tablet_version))
+    *   [6.1 Multitouch screen for the x230t (tablet version)](#Multitouch_screen_for_the_x230t_(tablet_version))
+    *   [6.2 Wacom tablet input](#Wacom_tablet_input)
+*   [7 Known issues](#Known_issues)
+*   [8 See also](#See_also)
 
 ## Configuration
 
@@ -41,13 +45,11 @@ MODULES="i915"
 
 ```
 
-After saving the above files, make sure to regenerate your init ram image by the command `mkinitcpio -p linux`, and follow the steps in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+After saving the above files, make sure to regenerate your initram image by the command `mkinitcpio -p linux`, and follow the steps in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 ### Screen
 
 X230 has IPS or TN screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") page for more information. It can be set with command `xrandr --dpi 125.37` using .xinitrc or other autostarts.
-
-See [Intel](/index.php/Intel "Intel") for driver choice.
 
 ### Brightness
 
@@ -64,9 +66,27 @@ EndSection
 
 ```
 
+### Backlight control keys
+
+**Note:** On most X230 models, backlight works by default without any issues. Use below only in case of any problems.
+
+Due to an issue with the firmware of several ThinkPads the backlight control keys (fn + F8/F9 on the X230) don't work correctly. Setting the brightness via e.g. the GNOME power control panel or altering the brightness value in sysfs is possible.
+
+The issue can be temporarily and partially fixed in adding the acpi_osi="!Windows 2012" [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). The fix is partial in that only 8 steps are accessible via the keys. See [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=51231) for details.
+
+### Sound control buttons
+
+Red LED mute indicators light up automatically, if corresponding channel *muted* in `[alsamixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")`. Easiest way to make buttons work is to install [pulseaudio](/index.php/Pulseaudio "Pulseaudio") and it's plugin for your [desktop environment](/index.php/Desktop_environment "Desktop environment").
+
+*   [GNOME](/index.php/GNOME "GNOME") - works out of the box
+*   [XFCE](/index.php/XFCE "XFCE") - install [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), add plugin to panel and reboot. Additionally [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) uses [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) as mixer and [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) for sound level popups.
+*   Handle ACPI events with [acpid](/index.php/Acpid "Acpid") the [hard way](https://makandracards.com/makandra/47162-how-to-enable-the-thinkpad-microphone-mute-key-on-ubuntu-16-04). Some functions like `thinkpad-mutemic` implemented in [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/).
+
 ### Touchpad
 
-The original configuration renders the touchpad quite useless, as it behaves very jumpily. [Ubuntu Bugtracker](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069/comments/5) offers a solution for this issue. Add the following
+**Note:** [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") superseded by [libinput](/index.php/Libinput "Libinput").
+
+The original configuration renders the touchpad quite useless, as it behaves very jumpily. [Ubuntu Bugtracker](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1042069/comments/5) offers a solution for this issue. Add the following:
 
  `/etc/X11/xorg.conf.d/50-synaptics.conf` 
 ```
@@ -100,15 +120,7 @@ EndSection
 
 ```
 
-Setting e.g. the motion-acceleration value in dconf to 2.8 works nicely.
-
-### Backlight control keys
-
-**Note:** On most X230 models, backlight works by default without any issues. Use below only in case of any problems.
-
-Due to an issue with the firmware of several ThinkPads the backlight control keys (fn + F8/F9 on the X230) don't work correctly. Setting the brightness via e.g. the GNOME power control panel or altering the brightness value in sysfs is possible.
-
-The issue can be temporarily and partially fixed in adding the acpi_osi="!Windows 2012" [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). The fix is partial in that only 8 steps are accessible via the keys. See [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=51231) for details.
+Setting e.g. the motion-acceleration value in *dconf* to 2.8 works nicely.
 
 ### Suspend to ram
 
@@ -162,6 +174,10 @@ For it to be recognized by ModemManager, you also need to set the kernel module 
 
  `/etc/modprobe.d/umts-modem.conf`  `options cdc_ncm prefer_mbim=N` 
 
+### Fingerprint reader
+
+Supported by [fprint](/index.php/Fprint "Fprint") out of the box. Used with [PAM](/index.php/PAM "PAM") for authentication, eliminating necessity of password input (logon, sudo). Though it's impossible to turn laptop on and boot Arch right into a [desktop environment](/index.php/Desktop_environment "Desktop environment") by just one finger swipe.
+
 ### Fan control
 
 To optimize fan control, install and setup [thinkfan](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control"). Then use the following configuration:
@@ -202,6 +218,17 @@ $ geteltorito.pl g2uj24us.iso > update.img
 
 ```
 
+## OpenCL
+
+Thinkpad X230 based on Intel [Ivy Bridge](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)) (3rd generation) platform which meets [OpenCL](/index.php/OpenCL "OpenCL") 1.2 specification. Unfortunately GPU support is broken, so [beignet](https://www.archlinux.org/packages/?name=beignet) and [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) won't work. Use CPU-only [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/) instead.
+
+OpenCL computation performance differ between CPU and GPU, depending on task. In many cases GPU is preferable. For *Core(TM) i5-3210M* CPU, which incorporates *HD Graphics 4000* GPU:
+
+*   GPU `[hashcat](/index.php/Hashcat "Hashcat") -m2500 -b -D 2 --force` reports 3095 H/s (checked in Windows)
+*   CPU `[hashcat](/index.php/Hashcat "Hashcat") -m2500 -b -D 1` reports only 2660 H/s, which is the same as no-OpenCL `aircrack-ng -S`
+
+In this example OpenCL don't give any advantage and better look for other options like [building native binary](/index.php/Makepkg#Building_optimized_binaries "Makepkg") for your system.
+
 ## Power Saving
 
 	*Main article: [Power saving](/index.php/Power_saving "Power saving")*
@@ -221,6 +248,16 @@ STOP_CHARGE_THRESH_BAT0=100
 
 ```
 
+### Charge thresholds
+
+In order to prolong battery lifespan, especially if laptop always connected to AC power supply, it's possible to keep battery charge between 40-80 %. You can use [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) (written in Perl) for [setting charge thresholds](/index.php/Tp_smapi#2nd_option,_tpacpi-bat "Tp smapi"). This tool was superseded by `[natacpi](https://linrunner.de/en/tlp/docs/tlp-faq.html)`, which included in kernel 4.17 and supported by [TLP](/index.php/TLP "TLP"). Though it's possible to change thresholds directly. Values will be stored in battery microcontroller and will survive reboot, but reset if you remove the battery.
+
+```
+# echo 40 > /sys/class/power_supply/BAT0/charge_start_threshold
+# echo 80 > /sys/class/power_supply/BAT0/charge_stop_threshold
+
+```
+
 ## x230T (tablet version)
 
 ### Multitouch screen for the x230t (tablet version)
@@ -231,13 +268,9 @@ Works out of the box with [xf86-input-libinput](https://www.archlinux.org/packag
 
 ### Wacom tablet input
 
-Works out of the box with [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom). See [Wacom tablet](/index.php/Wacom_tablet "Wacom tablet")
+Works out of the box with [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom). See [Wacom tablet](/index.php/Wacom_tablet "Wacom tablet").
 
-## Not Working
-
-*   Microphone on-off key does not work out of the box. [Solution](https://makandracards.com/makandra/47162-how-to-enable-the-thinkpad-microphone-mute-key-on-ubuntu-16-04)
-
-**Note:** It works out of the box with GNOME.
+## Known issues
 
 *   There is a BIOS bug that gets in the way of the boot process with [LUKS](/index.php/LUKS "LUKS") and full-disk encryption. The user is stuck at the "Loading initial ramdisk" step, and does not see a password prompt to unlock the encrypted device. You can actually enter your password at this step, and boot-up will continue. However, updating the BIOS will resolve this completely.
 

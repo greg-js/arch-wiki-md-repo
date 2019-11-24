@@ -92,7 +92,7 @@ O pacote [gtk3](https://www.archlinux.org/packages/?name=gtk3) tem o backend Way
 
 Para habilitar o suporte para Wayland no Qt 5, instale o pacote [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland).
 
-Para rodar um programa Qt 5 com o plugin Wayland [[3]](https://wiki.qt.io/QtWayland#How_do_I_use_QtWayland.3F), use [variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente") `-platform wayland` ou `QT_QPA_PLATFORM=wayland-egl`. Para forçar o uso do [X11](/index.php/X11 "X11") numa sessão Wayland, use `QT_QPA_PLATFORM=xcb`.
+Para rodar um programa Qt 5 com o plugin Wayland [[3]](https://wiki.qt.io/QtWayland#How_do_I_use_QtWayland.3F), use [variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente") `-platform wayland` ou `QT_QPA_PLATFORM=wayland-egl`. Para forçar o uso do [X11](/index.php/X11_(Portugu%C3%AAs) "X11 (Português)") numa sessão Wayland, use `QT_QPA_PLATFORM=xcb`.
 
 ### Clutter
 

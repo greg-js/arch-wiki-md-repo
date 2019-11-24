@@ -31,6 +31,7 @@ Related articles
     *   [5.2 Error: Incoming server already exists](#Error:_Incoming_server_already_exists)
     *   [5.3 Thunderbird UI freezes when receiving a new message](#Thunderbird_UI_freezes_when_receiving_a_new_message)
     *   [5.4 LC_TIME environment variable not respected](#LC_TIME_environment_variable_not_respected)
+    *   [5.5 *Authentication failure while connecting to server imap.gmail.com* error when using OAuth2 with G Suite account](#Authentication_failure_while_connecting_to_server_imap.gmail.com_error_when_using_OAuth2_with_G_Suite_account)
 
 ## Installation
 
@@ -276,3 +277,7 @@ If Thunderbird is configured to show an alert when a new message arrives, or at 
 ### LC_TIME environment variable not respected
 
 Thunderbird should use the `LC_TIME` environment variable for localization, but it might not do so in all contexts. Some problems can be mitigated by setting *Menu* > *Preferences* > *Preferences* > *Advanced* > *Date and Time Formatting* to *Regional settings locale*, a setting which was introduced in Thunderbird 56\. However, there is a [bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1426907) for this issue.
+
+### *Authentication failure while connecting to server imap.gmail.com* error when using OAuth2 with G Suite account
+
+Sometimes Thunderbird fails to log in to G Suite with *Authentication failure while connecting to server imap.gmail.com* error. It can be fixed with setting `general.useragent.compatMode.firefox` setting to `true` in [#Config Editor](#Config_Editor) and then passing authentication stage again.

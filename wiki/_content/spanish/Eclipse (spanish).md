@@ -5,7 +5,11 @@ Este artículo es una traducción de [Eclipse](/index.php/Eclipse "Eclipse"), re
 
 El IDE de Eclipse está escrito principalmente en Java, pero se puede usar para desarrollar aplicaciones en varios lenguajes, incluidos Java, C/C++, PHP, Perl y Python. El IDE también puede proporcionar soporte de subversión y administración de tareas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Complementos](#Complementos)

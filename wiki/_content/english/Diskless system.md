@@ -113,7 +113,7 @@ Next, start NFS services: `rpc-idmapd` `rpc-mountd`.
 
 Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it.
 
- `# vim /etc/nbd-server/config` 
+ `/etc/nbd-server/config` 
 ```
 [generic]
     user = nbd
@@ -140,7 +140,7 @@ Create a [sparse file](https://en.wikipedia.org/wiki/Sparse_file "wikipedia:Spar
 # mkfs.btrfs /srv/arch.img
 # export root=/srv/arch
 # mkdir -p "$root"
-# mount -o loop,discard,compress=lzo /srv/arch.img "$root"
+# mount -o loop,compress=lzo /srv/arch.img "$root"
 
 ```
 
@@ -239,7 +239,7 @@ PXELINUX is provided by [syslinux](https://www.archlinux.org/packages/?name=sysl
 
 In late boot, you will want to switch your root filesystem mount to both `rw`, and enable `compress=lzo`, for much improved disk performance in comparison to [NFS](/index.php/NFS "NFS").
 
- `# vim "$root/etc/fstab"`  `/dev/nbd0  /  btrfs  rw,noatime,discard,compress=lzo  0 0` 
+ `# vim "$root/etc/fstab"`  `/dev/nbd0  /  btrfs  rw,noatime,compress=lzo  0 0` 
 
 #### Program state directories
 

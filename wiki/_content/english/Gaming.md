@@ -62,7 +62,7 @@ For list of games packaged for Arch in [official repositories](/index.php/Offici
 
 *   **[GOG.com](https://en.wikipedia.org/wiki/GOG.com "wikipedia:GOG.com")** — DRM-free game store.
 
-	[https://www.gog.com](https://www.gog.com) || [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/)
+	[https://www.gog.com](https://www.gog.com) || [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/), [wyvern](https://aur.archlinux.org/packages/wyvern/)
 
 *   **[itch.io](https://en.wikipedia.org/wiki/itch.io "wikipedia:itch.io")** — Indie game store.
 
@@ -188,7 +188,7 @@ and restart pulseaudio.
 
 #### Using higher quality remixing for better sound
 
-PulseAudio on Arch uses speex-float-0 by default to remix channels, which is considered a 'medium-low' quality remixing. If your system can handle the extra load, you may benefit from setting it to one of the following instead:
+PulseAudio on Arch uses speex-float-1 by default to remix channels, which is considered a 'medium-low' quality remixing. If your system can handle the extra load, you may benefit from setting it to one of the following instead:
 
 ```
 resample-method = speex-float-10

@@ -98,7 +98,7 @@ Em seguida, siga o procedimento descrito em [Guia de instalação#Configurar o s
 Se a instalação espelhada do Arch puder ser usada em uma configuração diferente ou com outro hardware, considere as seguintes operações adicionais:
 
 *   Use a atualização do [microcódigo](/index.php/Microcode "Microcode") da CPU adaptada para o sistema alvo durante o passo [Guia de instalação#Gerenciador de boot](/index.php/Guia_de_instala%C3%A7%C3%A3o#Gerenciador_de_boot "Guia de instalação")
-*   Se algum [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg") específico foi apresentado no host e pode estar incompleto com o sistema alvo, siga [Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual#Desabilitar quaisquer arquivos relacionados a Xorg](/index.php/Movendo_uma_instala%C3%A7%C3%A3o_existente_para_dentro_(ou_fora)_de_uma_m%C3%A1quina_virtual#Desabilitar_quaisquer_arquivos_relacionados_a_Xorg "Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual")
+*   Se algum [Xorg (Português)#Configuração](/index.php/Xorg_(Portugu%C3%AAs)#Configuração "Xorg (Português)") específico foi apresentado no host e pode estar incompleto com o sistema alvo, siga [Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual#Desabilitar quaisquer arquivos relacionados a Xorg](/index.php/Movendo_uma_instala%C3%A7%C3%A3o_existente_para_dentro_(ou_fora)_de_uma_m%C3%A1quina_virtual#Desabilitar_quaisquer_arquivos_relacionados_a_Xorg "Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual")
 *   Faça qualquer outro ajuste apropriado para o sistema de destino, como reconfigurar a rede ou o áudio.
 
 ## De um host executando outra distribuição Linux
@@ -327,17 +327,17 @@ use_lvmetad = 0
 
 Isto irá desencadear mais tarde um erro na inicialização no estágio initrd. Portanto, você deve alterá-lo depois da geração grub. Em um software RAID + LVM, as etapas seriam as seguintes:
 
-*   Após instalar o sistema, verifique seu [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e as configurações do gerenciador de inicialização *(boot loader)*. Veja [Processo de inicialização do Arch#Gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") para uma lista de gerenciadores de inicialização.
+*   Após instalar o sistema, verifique seu [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e as configurações do gerenciador de boot *(boot loader)*. Veja [Processo de inicialização do Arch#Gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") para uma lista de gerenciadores de inicialização.
 *   Você pode precisar alterar seu `/etc/mdadm.conf` para refletir suas configurações de [RAID](/index.php/RAID "RAID") (se aplicável).
 *   Você pode precisar alterar seu`HOOKS` e `MODULES` de acordo com seus requisitos de [LVM](/index.php/LVM "LVM") e [RAID](/index.php/RAID "RAID"): `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
 *   Você provavelmente vai precisar gerar novas imagens initrd com mkinitcpio. Veja [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 *   Defina `use_lvmetad = 0` em `/etc/lvm/lvm.conf`.
-*   Atualize as configurações de seu gerenciador de inicialização. Veja a página wiki de seu gerenciador de inicialização para detalhes.
+*   Atualize as configurações de seu gerenciador de boot. Veja a página wiki de seu gerenciador de boot para detalhes.
 *   Defina `use_lvmetad = 1` em `/etc/lvm/lvm.conf`.
 
 ##### Host baseado no Fedora
 
-On Fedora based hosts and live USBs you may encounter problems when using *genfstab* to generate your [fstab](/index.php/Fstab "Fstab"). Remove duplicate entries and the "seclabel" option where it appears, as this is Fedora-specific and will keep your system from booting normally.
+Nos hosts baseados no Fedora e USBs ativos, você pode encontrar problemas ao usar *genfstab* para gerar seu [fstab](/index.php/Fstab "Fstab"). Remova as entradas duplicadas e a opção "seclabel" onde aparecer, pois isso é específico do Fedora e impedirá que o sistema seja inicializado normalmente.
 
 ## Coisas para verificar antes de reiniciar
 
@@ -345,9 +345,9 @@ Antes de reiniciar, verifique novamente alguns detalhes em sua instalação para
 
 *   [crie um usuário com senha](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usuário "Usuários e grupos"), de forma que você possa se autenticar via *ssh*. Isso é crítico já que autenticação como root é desabilitada por padrão desde OpenSSH-7.1p2.
 *   [defina uma senha de root](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usuário "Usuários e grupos"), de forma que você pode trocar para o root via *su* posteriormente
-*   [instale](/index.php/Instale "Instale") uma solução [ssh](/index.php/Ssh_(Portugu%C3%AAs) "Ssh (Português)") e [habilitar](/index.php/Habilita "Habilita") sua instância de servidor para iniciar automaticamente na inicialização.
+*   [instale](/index.php/Instale "Instale") uma solução [ssh](/index.php/Ssh_(Portugu%C3%AAs) "Ssh (Português)") e [habilite](/index.php/Habilite "Habilite") sua instância de servidor para iniciar automaticamente na inicialização.
 *   defina sua [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") par ter uma conexão iniciada automaticamente na inicialização.
-*   defina um [gerenciador de inicialização](/index.php/Gerenciador_de_inicializa%C3%A7%C3%A3o "Gerenciador de inicialização") e configure-o para usar a partição swap que você apropriou anteriormente como a partição raiz. Você pode querer configurar seu gerenciador de inicialização para poder inicializar em seu sistema antigo; é útil reutilizar a partição `/boot` existente do servidor no novo sistema para este propósito.
+*   defina um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") e configure-o para usar a partição swap que você apropriou anteriormente como a partição raiz. Você pode querer configurar seu gerenciador de boot para poder inicializar em seu sistema antigo; é útil reutilizar a partição `/boot` existente do servidor no novo sistema para este propósito.
 
 ## Substituindo o sistema existente sem um LiveCD
 

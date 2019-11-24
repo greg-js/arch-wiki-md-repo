@@ -27,6 +27,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 ## 2019
 
+*   [Arch Linux Held Their First Internal Conference Last Month In Berlin](https://www.phoronix.com/scan.php?page=news_item&px=Arch-Conf-Internal-2019) Michael Larabel - Phoronix.com 2019-11-17
 *   [BTW, I Installed Arch](https://chooselinux.show/10) (first 19 minutes of the podcast) Jason Evangelho and Joe Ressington - chooselinux.show 2019-05-30
 *   [How to Conquer Your Fear of Arch Linux](https://www.linuxinsider.com/story/85983.html/) Jonathan Terrasi - linuxinsider.com 2019-04-28
 

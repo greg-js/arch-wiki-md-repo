@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Linux console](/index.php/Linux_console "Linux console"). Data da última tradução: 2019-08-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Linux_console&diff=0&oldid=579208) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Linux console](/index.php/Linux_console "Linux console"). Data da última tradução: 2019-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Linux_console&diff=0&oldid=589837) na versão em inglês.
 
 Artigos relacionados
 

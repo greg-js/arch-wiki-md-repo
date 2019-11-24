@@ -566,7 +566,7 @@ SDL_VIDEO_FULLSCREEN_HEAD=0
 
 Users observing tearing when watching a movie try this: [https://bbs.archlinux.org/viewtopic.php?id=176651](https://bbs.archlinux.org/viewtopic.php?id=176651)
 
-Try a different X11 compositor like [compton](https://www.archlinux.org/packages/?name=compton) as an alternative with [Xfce](/index.php/Xfce "Xfce") which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found [here](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
+Try a different X11 compositor like [picom](https://www.archlinux.org/packages/?name=picom) as an alternative with [Xfce](/index.php/Xfce "Xfce") which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found [here](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
 
 ### Soft subtitles not displaying
 

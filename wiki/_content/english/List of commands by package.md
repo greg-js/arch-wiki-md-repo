@@ -7,8 +7,7 @@ This is a non-exhaustive list of command line tools that are commonly encountere
 | `bzip2` | [bzip2](https://www.archlinux.org/packages/?name=bzip2) | Yes | [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression") |
 | `cal` | [util-linux](https://www.archlinux.org/packages/?name=util-linux) | Yes |
 | `cat` | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | Yes |
-| `cd` | Yes ([bash](https://www.archlinux.org/packages/?name=bash)) | Built into any shell.
-[Command-line shell](/index.php/Command-line_shell "Command-line shell") |
+| `cd` | Built into any shell | Yes ([bash](https://www.archlinux.org/packages/?name=bash)) | [Command-line shell](/index.php/Command-line_shell "Command-line shell") |
 | `cfdisk` | [util-linux](https://www.archlinux.org/packages/?name=util-linux) | Yes | [Partitioning](/index.php/Partitioning "Partitioning"), [fdisk](/index.php/Fdisk "Fdisk") |
 | `chmod` | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | Yes | [File permissions](/index.php/File_permissions "File permissions") |
 | `chown` | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | Yes | [File permissions](/index.php/File_permissions "File permissions") |
@@ -67,7 +66,7 @@ This is a non-exhaustive list of command line tools that are commonly encountere
 | `more` | [util-linux](https://www.archlinux.org/packages/?name=util-linux) | Yes |
 | `mount` | [util-linux](https://www.archlinux.org/packages/?name=util-linux) | Yes |
 | `mv` | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | Yes |
-| `nano` | [nano](https://www.archlinux.org/packages/?name=nano) | No |
+| `nano` | [nano](https://www.archlinux.org/packages/?name=nano) | No | [Text editors](/index.php/Text_editors "Text editors") |
 | `networkctl` | [systemd](https://www.archlinux.org/packages/?name=systemd) | Yes | [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") |
 | `nmcli` | [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) | No | [Network configuration](/index.php/Network_configuration "Network configuration"), [NetworkManager](/index.php/NetworkManager "NetworkManager") |
 | `nmtui` | [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) | No | [Network configuration](/index.php/Network_configuration "Network configuration"), [NetworkManager](/index.php/NetworkManager "NetworkManager") |
@@ -105,8 +104,8 @@ This is a non-exhaustive list of command line tools that are commonly encountere
 | `uptime` | [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | Yes |
 | `useradd` | [shadow](https://www.archlinux.org/packages/?name=shadow) | Yes | [Users and groups](/index.php/Users_and_groups "Users and groups") |
 | `users` | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | Yes | [Users and groups](/index.php/Users_and_groups "Users and groups") |
-| `vi` | [vi](https://www.archlinux.org/packages/?name=vi) | No |
-| `vim` | [vim](https://www.archlinux.org/packages/?name=vim) | No |
+| `vi` | [vi](https://www.archlinux.org/packages/?name=vi) | No | [Text editors](/index.php/Text_editors "Text editors") |
+| `vim` | [vim](https://www.archlinux.org/packages/?name=vim) | No | [Text editors](/index.php/Text_editors "Text editors") |
 | `wc` | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | Yes |
 | `wifi-menu` | [netctl](https://www.archlinux.org/packages/?name=netctl) | No | [dialog](https://www.archlinux.org/packages/?name=dialog) is also needed.
 [Network configuration](/index.php/Network_configuration "Network configuration"), [netctl](/index.php/Netctl "Netctl") |

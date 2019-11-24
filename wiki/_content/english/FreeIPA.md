@@ -133,5 +133,5 @@ You can configure SSH to fetch hosts public key information from their directory
 ### See also
 
 *   [Wikipedia:FreeIPA](https://en.wikipedia.org/wiki/FreeIPA "wikipedia:FreeIPA")
-*   [Manually Configuring a Linux Client](https://docs.fedoraproject.org/en-US/Fedora/15/html/FreeIPA_Guide/linux-manual.html) from the FreeIPA user guide
+*   [Manually Configuring a Linux Client](https://docs.fedoraproject.org/en-US/Fedora/18/html/FreeIPA_Guide/linux-manual.html) from the FreeIPA user guide
 *   [Freeipa30_SSSD_OpenSSH_integration.pdf](https://www.freeipa.org/images/1/10/Freeipa30_SSSD_OpenSSH_integration.pdf)

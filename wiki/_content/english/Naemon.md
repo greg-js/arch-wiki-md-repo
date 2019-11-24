@@ -1,6 +1,10 @@
 [Naemon](http://www.naemon.org/) is the new monitoring suite that aims to be faster and more stable, while giving you a clearer view of the state of your network.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Web interface](#Web_interface)

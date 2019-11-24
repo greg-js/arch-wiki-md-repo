@@ -29,6 +29,7 @@
     *   [5.2 Client Wayland support](#Client_Wayland_support)
     *   [5.3 Client or server does not start](#Client_or_server_does_not_start)
     *   [5.4 Broken fonts with MinecraftForge](#Broken_fonts_with_MinecraftForge)
+    *   [5.5 MultiMC unable to build](#MultiMC_unable_to_build)
 *   [6 See also](#See_also)
 
 ## Client
@@ -180,6 +181,31 @@ Both Minecraft server and the actual game work perfectly fine with the latest ve
 Force Unicode fonts from the language menu.
 
 Since you can't read any of the menu options: in the main menu, choose the bottom-left most button is Options, second-from-the-bottom on the left side is the Language Button. From there, the Force Unicode Font button is on the bottom, on the left side.
+
+### MultiMC unable to build
+
+If you are trying to install [multimc5](https://aur.archlinux.org/packages/multimc5/) and get an error similar to:
+
+```
+No CMAKE_Java_COMPILER could be found.
+Tell CMake where to find the compiler by setting either the environment
+variable "JAVA_COMPILER" or the CMake cache entry CMAKE_Java_COMPILER to
+the full path to the compiler, or to the compiler name if it is in the
+PATH.
+
+```
+
+The error could be caused by Java missing, which can be fixed by installing [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk). If the error is not fixed by that or Java was properly installed in the first place, the wrong version could still be the default environment:
+
+ `$ archlinux-java status` 
+```
+Available Java environments:
+  java-13-openjdk (default)
+  java-8-openjdk
+
+```
+
+You can set the default java version using `archlinux-java set <version>`.
 
 ## See also
 

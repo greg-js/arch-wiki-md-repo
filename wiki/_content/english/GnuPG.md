@@ -924,7 +924,7 @@ To solve it, remember you do not often need to create keys and best just do what
 
 ### su
 
-When using `pinentry`, you must have the proper permissions of the terminal device (e.g. `/dev/tty1`) in use. However, with *su* (or *sudo*), the ownership stays with the original user, not the new one. This means that pinentry will fail, even as root. The fix is to change the permissions of the device at some point before the use of pinentry (i.e. using gpg with an agent). If doing gpg as root, simply change the ownership to root right before using gpg:
+When using `pinentry`, you must have the proper permissions of the terminal device (e.g. `/dev/tty1`) in use. However, with *su* (or *sudo*), the ownership stays with the original user, not the new one. This means that pinentry will fail with a `Permission denied` error, even as root. If this happens when attempting to use ssh, an error like `sign_and_send_pubkey: signing failed: agent refused operation` will be returned. The fix is to change the permissions of the device at some point before the use of pinentry (i.e. using gpg with an agent). If doing gpg as root, simply change the ownership to root right before using gpg:
 
 ```
 # chown root /dev/ttyN  # where N is the current tty

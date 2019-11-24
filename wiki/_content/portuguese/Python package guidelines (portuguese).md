@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-11-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=587540) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-11-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=589438) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -57,7 +57,7 @@ As URLs de download vinculadas do site do PyPI incluem um hash imprevisível que
 
 	Pacote wheel específico para arquitetura
 
-	neste exemplo para `source_x86_64=('...')`. Também `_py=py37` pode ser usado para não repetir a versão do python:
+	neste exemplo para `source_x86_64=('...')`. Também `_py=cp38` pode ser usado para não repetir a versão do python:
 
 	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/{_name/-/_}-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
 

@@ -42,8 +42,8 @@
 
 Неактивны (менее 5 правок за последние 30 дней):
 
-*   [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") ([обсуждение](/index.php/User_talk:ArchLinuxUser "User talk:ArchLinuxUser")|[вклад](/index.php/Special:Contributions/ArchLinuxUser "Special:Contributions/ArchLinuxUser"))
 *   [Vivanova](/index.php/User:Vivanova "User:Vivanova") ([обсуждение](/index.php/User_talk:Vivanova "User talk:Vivanova")|[вклад](/index.php/Special:Contributions/Vivanova "Special:Contributions/Vivanova"))
+*   [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") ([обсуждение](/index.php/User_talk:ArchLinuxUser "User talk:ArchLinuxUser")|[вклад](/index.php/Special:Contributions/ArchLinuxUser "Special:Contributions/ArchLinuxUser"))
 *   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
 *   [Elnee](/index.php/User:Elnee "User:Elnee") ([обсуждение](/index.php/User_talk:Elnee "User talk:Elnee")|[вклад](/index.php/Special:Contributions/Elnee "Special:Contributions/Elnee"))
 *   [VT-100](/index.php/User:VT-100 "User:VT-100") ([обсуждение](/index.php/User_talk:VT-100 "User talk:VT-100")|[вклад](/index.php/Special:Contributions/VT-100 "Special:Contributions/VT-100"))

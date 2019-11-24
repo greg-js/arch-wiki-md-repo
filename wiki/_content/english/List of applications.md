@@ -4017,7 +4017,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://www.kde.org/applications/multimedia/dragonplayer/](https://www.kde.org/applications/multimedia/dragonplayer/) || [dragon](https://www.archlinux.org/packages/?name=dragon)
 
-*   **[Kaffeine](https://en.wikipedia.org/wiki/Kaffeine "wikipedia:Kaffeine")** — Very versatile KDE media player that, by default, utilizes [VLC](/index.php/VLC "VLC") as its backend and has excellent support of digital TV (DVB).
+*   **[Kaffeine](https://en.wikipedia.org/wiki/Kaffeine "wikipedia:Kaffeine")** — Very versatile KDE media player that, by default, utilizes [VLC](/index.php/VLC "VLC") as its backend and has excellent support of digital TV ([DVB-T](/index.php/DVB-T "DVB-T"), DVB-C, [DVB-S](/index.php/DVB-S "DVB-S")).
 
 	[https://www.kde.org/applications/multimedia/kaffeine/](https://www.kde.org/applications/multimedia/kaffeine/) || [kaffeine](https://www.archlinux.org/packages/?name=kaffeine)
 

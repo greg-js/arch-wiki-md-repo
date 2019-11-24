@@ -89,7 +89,7 @@ The following packages allow for a graphical interface to customize Bluetooth.
 
 *   **Bluedevil** — [KDE](/index.php/KDE "KDE")'s Bluetooth tool. If there is no Bluetooth icon visible in Dolphin and in the system tray, enable it in the system tray options or add a widget. You can configure Bluedevil and detect Bluetooth devices by clicking the icon. An interface is also available from the KDE System Settings.
 
-	[https://projects.kde.org/projects/kde/workspace/bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) || [bluedevil](https://www.archlinux.org/packages/?name=bluedevil)
+	[https://cgit.kde.org/bluedevil.git](https://cgit.kde.org/bluedevil.git) || [bluedevil](https://www.archlinux.org/packages/?name=bluedevil)
 
 *   **Blueberry** — Linux Mint's spin-off of GNOME Bluetooth, which works in all desktop environments. *Blueberry* does not support receiving files through Obex Object Push.
 

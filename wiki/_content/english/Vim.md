@@ -286,7 +286,7 @@ Alternatively there is also the [vimpager](https://www.archlinux.org/packages/?n
 
 ## Plugins
 
-Adding plugins to Vim can increase your productivity. Plugins can alter Vim's UI, add new commands, code completion support, integrate other programs and utilities with Vim, add support for additional languages and more.
+Adding plugins to Vim can increase your productivity by extending Vim's features. Plugins can alter Vim's UI, add new commands, code completion support, integrate other programs and utilities with Vim, add support for additional languages and more.
 
 **Tip:** For a list of popular plugins, see [Vim Awesome](http://vimawesome.com/)
 

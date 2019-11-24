@@ -24,10 +24,10 @@ The idea is to use the built-in fingerprint reader in some notebooks for login u
 
 ## Prerequisites
 
-Make sure you have one of the supported finger scanners. You can check if your device is supported by checking [this](http://www.freedesktop.org/wiki/Software/fprint/libfprint/Supported_devices/) list of supported devices. To check which one you have, type
+Make sure you have one of the supported finger scanners. You can check if your device is supported by checking [list of supported devices](http://www.freedesktop.org/wiki/Software/fprint/libfprint/Supported_devices/). To check which one you have, type:
 
 ```
-# lsusb
+$ lsusb
 
 ```
 
@@ -58,18 +58,18 @@ auth      include   system-login
 
 This tries to use fingerprint login first, and if it fails or if it finds no fingerprint signatures in the given user's home directory, it proceeds to password login.
 
-You can also modify other files in `/etc/pam.d/` in the same way, for example `/etc/pam.d/polkit-1` for GNOME polkit authentication.
+You can also modify other files in `/etc/pam.d/{login,su,sudo,gdm,lightdm}` in the same way, for example `/etc/pam.d/polkit-1` for GNOME polkit authentication.
 
 ### Create fingerprint signature
 
-To add a signature for a finger, run
+To add a signature for a finger, run:
 
 ```
 $ fprintd-enroll
 
 ```
 
-or create a new signature for all fingers
+or create a new signature for all fingers:
 
 ```
 $ fprintd-delete "$USER"

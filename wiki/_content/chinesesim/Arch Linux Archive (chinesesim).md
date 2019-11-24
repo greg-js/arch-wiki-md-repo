@@ -12,17 +12,21 @@ Arch Linux 存档库（**A**rch **L**inux **Archive**，*简称 ala*），以前
 *   将所有包恢复到某个指定的历史时刻（所有包都不能用，我要恢复到两个月之前的状态）
 *   查找某个历史版本的 ISO 镜像
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 位置](#.E4.BD.8D.E7.BD.AE)
-*   [2 目录](#.E7.9B.AE.E5.BD.95)
-    *   [2.1 /repos](#.2Frepos)
-    *   [2.2 /packages](#.2Fpackages)
-    *   [2.3 /iso](#.2Fiso)
-*   [3 常见问题](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)
-    *   [3.1 如何降级某个包](#.E5.A6.82.E4.BD.95.E9.99.8D.E7.BA.A7.E6.9F.90.E4.B8.AA.E5.8C.85)
-    *   [3.2 如何恢复所有包到指定日期](#.E5.A6.82.E4.BD.95.E6.81.A2.E5.A4.8D.E6.89.80.E6.9C.89.E5.8C.85.E5.88.B0.E6.8C.87.E5.AE.9A.E6.97.A5.E6.9C.9F)
-*   [4 历史](#.E5.8E.86.E5.8F.B2)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 位置](#位置)
+*   [2 目录](#目录)
+    *   [2.1 /repos](#/repos)
+    *   [2.2 /packages](#/packages)
+    *   [2.3 /iso](#/iso)
+*   [3 常见问题](#常见问题)
+    *   [3.1 如何降级某个包](#如何降级某个包)
+    *   [3.2 如何恢复所有包到指定日期](#如何恢复所有包到指定日期)
+*   [4 历史](#历史)
 
 ## 位置
 
@@ -191,9 +195,9 @@ zziplib-0.13.62-2-x86_64
 
 ### 如何降级某个包
 
-在 [/packages](#.2Fpackages) 中找到需要的软件包，下载并通过 `pacman -U` 安装.
+在 [/packages](#/packages) 中找到需要的软件包，下载并通过 `pacman -U` 安装.
 
-[软件包降级#自动化](/index.php/%E8%BD%AF%E4%BB%B6%E5%8C%85%E9%99%8D%E7%BA%A7#.E8.87.AA.E5.8A.A8.E5.8C.96 "软件包降级") 包含了可以简化这个过程的工具。
+[软件包降级#自动化](/index.php/%E8%BD%AF%E4%BB%B6%E5%8C%85%E9%99%8D%E7%BA%A7#自动化 "软件包降级") 包含了可以简化这个过程的工具。
 
 ### 如何恢复所有包到指定日期
 

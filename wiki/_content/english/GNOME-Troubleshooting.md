@@ -349,7 +349,7 @@ $ gsettings set org.gnome.SessionManager auto-save-session false
 
 *   With proprietary NVIDIA driver
 
-[This](https://bugzilla.gnome.org/show_bug.cgi?id=781835) bug is much likely the cause of it. You should revert `383ba566bd7c2a76d0856015a66e47caedef06b6` commit in [mutter](https://www.archlinux.org/packages/?name=mutter). Use [ABS](/index.php/ABS "ABS") for this and add `git revert -n 383ba566bd7c2a76d0856015a66e47caedef06b6` to the `prepare()` function in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") or simply install [mutter-781835-workaround](https://aur.archlinux.org/packages/mutter-781835-workaround/) instead.
+[This](https://bugzilla.gnome.org/show_bug.cgi?id=781835) bug is much likely the cause of it. You should revert `383ba566bd7c2a76d0856015a66e47caedef06b6` commit in [mutter](https://www.archlinux.org/packages/?name=mutter). Use [ABS](/index.php/ABS "ABS") for this and add `git revert -n 383ba566bd7c2a76d0856015a66e47caedef06b6` to the `prepare()` function in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") or simply install [mutter-performance](https://aur.archlinux.org/packages/mutter-performance/) instead.
 
 *   With free drivers
 

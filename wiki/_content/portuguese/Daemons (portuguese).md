@@ -25,7 +25,7 @@ A coluna do *Pacote* contem um link para a Wiki relacionada daquele daemon(ou pa
 | [ClamAV](/index.php/ClamAV_(Portugu%C3%AAs) "ClamAV (Português)") | clamav | clamd.service
 freshclamd.service | Anti-virus para Unix. |
 | [ConnMan](/index.php/ConnMan "ConnMan") | connmand | connman.service | Gerenciador de redes sem fio. |
-| [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Configura governador de [frequência de cpu](/index.php/Cpufreq_(Portugu%C3%AAs) "Cpufreq (Português)") e outros parâmetros de inicialização. |
+| [Cpupower](/index.php/Cpupower_(Portugu%C3%AAs) "Cpupower (Português)") | cpupower | cpupower.service | Configura governador de [frequência de cpu](/index.php/Cpufreq_(Portugu%C3%AAs) "Cpufreq (Português)") e outros parâmetros de inicialização. |
  craftbukkit | craftbukkit.service | Servidor de Minecraft CraftBukkit . |
 | [Cron](/index.php/Cron "Cron") | crond | cronie.service (se usando [cronie](https://www.archlinux.org/packages/?name=cronie)) ou dcron.service (se usando [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon para agendamento de eventos baseados em horário. O nome *crond* é utilizado por pelo menos dois pacotes, [cronie](https://www.archlinux.org/packages/?name=cronie) e [dcron](https://aur.archlinux.org/packages/dcron/). |
 | [CUPS](/index.php/CUPS "CUPS") | cupsd | org.cups.cupsd.service | Daemon do serviço de impressão CUPS. |
@@ -46,7 +46,7 @@ freshclamd.service | Anti-virus para Unix. |
 | [Git](/index.php/Git "Git") | git-daemon | git-daemon.socket | Daemon Git. |
 | [gpm](/index.php/Suporte_a_mouse_de_console "Suporte a mouse de console") | gpm | gpm.service | Habilita o mouse na console. |
 | [hddtemp](/index.php/Hddtemp "Hddtemp") | hddtemp | hddtemp.service | Monitor de temperatura de HDs. |
- healthd | healthd.service | Um daemon para alertar eventos de saúde de hardware (parte do [lm_sensors](/index.php/Lm_sensors "Lm sensors")). |
+ healthd | healthd.service | Um daemon para alertar eventos de saúde de hardware (parte do [lm_sensors](/index.php/Lm_sensors_(Portugu%C3%AAs) "Lm sensors (Português)")). |
 | [apache](/index.php/Apache "Apache") | httpd | httpd.service | Apache HTTP Server (Web Server). |
  i8kmon | i8kmon.service | Monitore a temperatura de CPU e ventoinhas em laptops da Dell série Inspiron. |
  ifplugd | ifplugd@.service | Inicia/para a rede baseado em eventos de plugar o cabo. |
@@ -87,7 +87,7 @@ NetworkManager-wait-online.service | Daemon que provê a configuração e conex�
 | [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") | openntpd | openntpd.service | Daemon alternativo NTP(Network Time Protocol). Cliente e servidor. |
  osspd | osspd.service | Ponte de userspace do OSS(open sound system). |
 | [OpenVPN](/index.php/OpenVPN "OpenVPN") | openvpn | openvpn@.service | Serviço de VPN SSL padrão 'de facto' OpenVPN. |
-| [OSS](/index.php/OSS "OSS") | oss | oss.service | Open Sound System. Alternativa ao [ALSA](/index.php/ALSA "ALSA"). |
+| [OSS](/index.php/OSS "OSS") | oss | oss.service | Open Sound System. Alternativa ao [ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)"). |
 | [Pdnsd](/index.php/Pdnsd "Pdnsd") | pdnsd | pdnsd.service | Proxy DNS com cache permanente. |
 | [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) | php-fpm | php-fpm.service | Gerenciador de processos FastCGI para PHP. |
 | [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") | postgresql | postgresql.service | Banco de dados PostgreSQL. |
@@ -111,7 +111,7 @@ lvm2-monitor.service
 lvm2-pvscan.service | LVM é o sistema de gerenciamento de volumes lógicos do kernel Linux; Gerencia discos e dispositivos de armazenamento que usam esta tecnologia. |
 | [SANE](/index.php/SANE "SANE") | saned | saned@.service | Daemon de mapeamento de scaners. |
  saslauthd | saslauthd.service | Daemon de autenticação SASL. |
-| [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Daemon de coleta de informação de sensores. |
+| [lm_sensors](/index.php/Lm_sensors_(Portugu%C3%AAs) "Lm sensors (Português)") | sensord | sensord.service | Daemon de coleta de informação de sensores. |
 | sensors | lm_sensors.service | Inicializador de sensores (carregamento dos módulos de Kernel necessários). |
 | [shadow](https://www.archlinux.org/packages/?name=shadow) | ? | shadow.timer
 
@@ -147,5 +147,5 @@ vsftpd-ssl.socket (on-demand)
  | Servidor FTP. |
 | [wicd](/index.php/Wicd "Wicd") | wicd | wicd.service | Gerenciador de conexões. Leve alternativa ao NetworkManager. |
 | [x11vnc](/index.php/X11vnc "X11vnc") | x11vnc | x11vnc.service | Daemon de desktop remoto VNC. |
-| [XDM](/index.php/XDM "XDM") | xdm | xdm.service | X display manager. |
+| [XDM](/index.php/XDM_(Portugu%C3%AAs) "XDM (Português)") | xdm | xdm.service | X display manager. |
 | [xdm-archlinux](/index.php/XDM "XDM") | xdm-archlinux | xdm-archlinux.service | X display manager com temas do Arch Linux. |

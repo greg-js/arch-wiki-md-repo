@@ -3,7 +3,7 @@ Related articles
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
 *   [Trusted Platform Module](/index.php/Trusted_Platform_Module "Trusted Platform Module")
 
-[Hardware-based full-disk encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") (FDE) is now available from many hard disk (HDD) vendors, becoming increasingly common especially for [solid state drives](/index.php/Solid_State_Drives "Solid State Drives"). The term "Self-Encrypting Drive" (SED) is now common when referring to HDDs / SSDs with built-in full-disk encryption (FDE). [OPAL](https://en.wikipedia.org/wiki/Opal_Storage_Specification "wikipedia:Opal Storage Specification") is a set of specifications for self-encrypting drives developed by the Trusted Computing Group.
+[Hardware-based full-disk encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") (FDE) is now available from many hard disk (HDD) vendors, becoming increasingly common especially for [solid state drives](/index.php/Solid_state_drive "Solid state drive"). The term "self-encrypting drive" (SED) is now common when referring to HDDs or SSDs with built-in full-disk encryption. [OPAL](https://en.wikipedia.org/wiki/Opal_Storage_Specification "wikipedia:Opal Storage Specification") is a set of specifications for self-encrypting drives developed by the Trusted Computing Group.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -40,7 +40,7 @@ Unlocking of the drive can be done during operating system runtime using softwar
 
 **Tip:** "Encryption" in the context of this page refers to hardware-based encryption. See [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") and [Disk encryption#Stacked filesystem encryption](/index.php/Disk_encryption#Stacked_filesystem_encryption "Disk encryption") for software-based encryption.
 
-Refer to the [#Advantages](#Advantages) and [#Disadvantages](#Disadvantages) sections to better understand and decide if hardware-based FDE is what you want.
+Refer to the [#Advantages](#Advantages) and [#Disadvantages](#Disadvantages) sections to better understand and decide if hardware-based full-disk encryption is what you want.
 
 ### Key management technical implementation
 
@@ -48,7 +48,7 @@ Refer to the [#Advantages](#Advantages) and [#Disadvantages](#Disadvantages) sec
 
 Key management takes place within the disk controller and encryption keys are usually 128 or 256 bit Advanced Encryption Standard (AES).
 
-SEDs adhering to the TCG OPAL 2.0 standard specification (almost all modern SEDs) implement key management via an Authentication Key (AK), and a 2nd-level Data Encryption Key (DEK). The DEK is the key against which the data is actually encrypted/decrypeted. The AK is the user-facing 1st-level password/passphrase which decrypts the DEK (which in-turn decrypts the data). This approach has specific advantages:
+Self-encrypting drives adhering to the TCG OPAL 2.0 standard specification (almost all modern self-encrypting drives) implement key management via an authentication key, and a 2nd-level data encryption key. The data encryption key is the key against which the data is actually encrypted/decrypeted. The authentication key is the user-facing 1st-level password/passphrase which decrypts the data encryption key (which in turn decrypts the data). This approach has specific advantages:
 
 *   Allows the user to change the passphrase *without* losing the existing encrypted data on the disk
     *   This improves security, as it is fast and easy to respond to security threats and revoke a compromised passphrase
@@ -56,9 +56,9 @@ SEDs adhering to the TCG OPAL 2.0 standard specification (almost all modern SEDs
 
 For those who are familiar; this concept is similar to the LUKS key management layer often used in a [dm-crypt](/index.php/Dm-crypt "Dm-crypt") deployment. Using LUKS, the user can effectively have up to 8 different key-files / passphrases to decrypt the *encryption key*, which in turn decrypts the underlying data. This approach allows the user to revoke / change these key-files / passphrases as required *without* needing to re-encrypt the data, as the 2nd-level encryption key *is unchanged* (itself being re-encrypted by the new passphrase).
 
-In fact, in drives featuring FDE, data is *always* encrypted with the DEK when stored to disk, even if there is no password set (e.g. a new drive). Manufacturers do this to make it easier for users who are not able to, or do not wish to enable the SEDs' security features. This can be thought of as all drives by default having a zero-length password that transparently encrypts/decrypts the data *always* (similar to how passwordless ssh keys provide (somewhat) secure access without user intervention).
+In fact, in drives featuring full-disk encryption, data is *always* encrypted with the data encryption key when stored to disk, even if there is no password set (e.g. a new drive). Manufacturers do this to make it easier for users who are not able to, or do not wish to enable the security features of the self-encrypting drive. This can be thought of as all drives by default having a zero-length password that transparently encrypts/decrypts the data *always* (similar to how passwordless SSH keys provide (somewhat) secure access without user intervention).
 
-*The key point to note* is that if at a later stage a user wishes to *"enable"* encryption, they can configure the passphrase (AK), which will then be used to encrypt the *existing* DEK (thus prompting for passphrase beforing decrypting the DEK in future). However, as the existing DEK *will not* be changed / regenerated; this in effect locks the drive, while preserving the existing encrypted data on the disk.
+*The key point to note* is that if at a later stage the user wishes to *"enable"* encryption, they can configure the passphrase (authentication key), which will then be used to encrypt the *existing* data encryption key (thus prompting for passphrase before decrypting the data encryption key in future). However, as the existing data encryption key *will not* be changed (regenerated), this in effect locks the drive, while preserving the existing encrypted data on the disk.
 
 ### Advantages
 
@@ -78,7 +78,7 @@ In fact, in drives featuring FDE, data is *always* encrypted with the DEK when s
 
 *   Key-in-memory exploits
 
-	When the system is powered down into S3 ("sleep") mode, the drive is powered down, but the drive keeps access to the encryption key in its internal memory (NVRAM) to allow for a resume ("wake"). This is necessary because for system booted with an arbitrary operating system there is no standard mechanism to prompt the user to re-enter the pre-boot decryption passphrase again. An attacker (with physical access to the drive) can leverage this to access the drive. Taking together known exploits the researchers summarize "we were able to break hardware-based FDE on eleven [of twelve] of those systems provided they were running or in standby mode".[[2]](https://www1.cs.fau.de/sed) Note, however, S3 ("sleep") is **not** currently supported by sedutil (the current available toolset for managing a TCG OPAL 2.0 SED via Linux)
+	When the system is powered down into S3 ("sleep") mode, the drive is powered down, but the drive keeps access to the encryption key in its internal memory (NVRAM) to allow for a resume ("wake"). This is necessary because for system booted with an arbitrary operating system there is no standard mechanism to prompt the user to re-enter the pre-boot decryption passphrase again. An attacker (with physical access to the drive) can leverage this to access the drive. Taking together known exploits the researchers summarize "we were able to break hardware-based full-disk encryption on eleven [of twelve] of those systems provided they were running or in standby mode".[[2]](https://www1.cs.fau.de/sed) Note, however, S3 ("sleep") is **not** currently supported by sedutil (the current available toolset for managing a TCG OPAL 2.0 self-encrypting drives via Linux)
 
 *   Compromised firmware
 
@@ -86,7 +86,7 @@ In fact, in drives featuring FDE, data is *always* encrypted with the DEK when s
 
 ## Linux support
 
-*msed* and *OpalTool*, the two known Open Source code bases available for SED support on Linux, have both been retired, and their development efforts officially merged to form *[sedutil](https://github.com/Drive-Trust-Alliance/sedutil)*, under the umbrella of The [Drive Trust Alliance (DTA)](https://www.drivetrust.com). [sedutil](https://github.com/Drive-Trust-Alliance/sedutil) is "*an Open Source (GPLv3) effort to make Self Encrypting Drive technology freely available to everyone.*"
+*msed* and *OpalTool*, the two known Open Source code bases available for self-encrypting drives support on Linux, have both been retired, and their development efforts officially merged to form *[sedutil](https://github.com/Drive-Trust-Alliance/sedutil)*, under the umbrella of The [Drive Trust Alliance (DTA)](https://www.drivetrust.com). [sedutil](https://github.com/Drive-Trust-Alliance/sedutil) is "*an Open Source (GPLv3) effort to make Self Encrypting Drive technology freely available to everyone.*"
 
 [Install](/index.php/Install "Install") the [sedutil](https://aur.archlinux.org/packages/sedutil/) package, which contains the *sedutil-cli* tool, and helper scripts to create a custom pre-boot authorization (PBA) image based off the *current* OS in use (e.g. for setting a custom console keymap). Alternatively, you can install *sedutil* solely for acquiring the *sedutil-cli* toolset, but download and use the [precompiled PBA image (for BIOS or UEFI)](https://github.com/Drive-Trust-Alliance/sedutil/wiki/Executable-Distributions) provided by the Drive Trust Alliance.
 
@@ -247,13 +247,13 @@ Read the [#Key management technical implementation](#Key_management_technical_im
 
 ## Secure disk erasure
 
-Whole disk erasure is very fast, and remarkably simple for a SED. Simply passing a cryptographic disk erasure (or crypto erase) command (after providing the correct authentication credentials) will have the drive self-generate a new random encryption key (DEK) internally. This will permanently discard the old key, thus rendering the encrypted data irrevocably un-decryptable. The drive will now be in a 'new drive' state.
+Whole disk erasure is very fast, and remarkably simple for a self-encrypting drive. Simply passing a cryptographic disk erasure (or crypto erase) command (after providing the correct authentication credentials) will have the drive self-generate a new random data encryption key internally. This will permanently discard the old key, thus rendering the encrypted data irrevocably un-decryptable. The drive will now be in a 'new drive' state.
 
 Read the [#Key management technical implementation](#Key_management_technical_implementation) section above to learn more about how this is implemented securely within the drive.
 
 ## BIOS based ATA-password
 
-Previous to the industry's TCG OPAL 2.0 standard initiative, the relevant [ATA](https://en.wikipedia.org/wiki/Parallel_ATA#ATA_standards_versions.2C_transfer_rates.2C_and_features "w:Parallel ATA") standard defined an "ATA Security feature Set" for SED FDE. This relies on the PC (not SSD/HDD) BIOS to feature an unlocking mechanism utilizing the BIOS to setup the user's encryption password/passphrase. This legacy BIOS-based (ATA) method was considered more unreliable to setup and prone to error with regard to interoperability between PC vendors.[[5]](http://www.t13.org/documents/UploadedDocuments/docs2006/e05179r4-ACS-SecurityClarifications.pdf) Typical errors include, for example, inabilities to unlock a device once it is plugged into a system from a different hardware vendor. Hence, the availability of BIOS support for the legacy password mechanism decreases in availability, particularly for consumer hardware.
+Previous to the industry's TCG OPAL 2.0 standard initiative, the relevant [ATA](https://en.wikipedia.org/wiki/Parallel_ATA#ATA_standards_versions.2C_transfer_rates.2C_and_features "w:Parallel ATA") standard defined an "ATA security feature set" for full-disk encryption using self-encrypting drives. This relies on the PC (not SSD/HDD) BIOS to feature an unlocking mechanism utilizing the BIOS to setup the user's encryption password/passphrase. This legacy BIOS-based (ATA) method was considered more unreliable to setup and prone to error with regard to interoperability between PC vendors.[[5]](http://www.t13.org/documents/UploadedDocuments/docs2006/e05179r4-ACS-SecurityClarifications.pdf) Typical errors include, for example, inabilities to unlock a device once it is plugged into a system from a different hardware vendor. Hence, the availability of BIOS support for the legacy password mechanism decreases in availability, particularly for consumer hardware.
 
 See [Solid state drive#Security](/index.php/Solid_state_drive#Security "Solid state drive") for more information.
 
@@ -262,4 +262,3 @@ See [Solid state drive#Security](/index.php/Solid_state_drive#Security "Solid st
 *   [sedutil (github)](https://github.com/Drive-Trust-Alliance/sedutil)
 *   [sedutil official docs](https://github.com/Drive-Trust-Alliance/sedutil/wiki)
 *   [sedutil-cli commands usage](https://github.com/Drive-Trust-Alliance/sedutil/wiki/Command-Syntax)
-*   [Wikipedia article on hardware-based FDE](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption#Hard_disk_drive_FDE "wikipedia:Hardware-based full disk encryption")

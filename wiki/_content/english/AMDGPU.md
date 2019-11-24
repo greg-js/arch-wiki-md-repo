@@ -309,6 +309,10 @@ If you are not inclined to fully manually overclock your GPU, there are some ove
 
 	[https://github.com/Lurkki14/tuxclocker](https://github.com/Lurkki14/tuxclocker) || [tuxclocker](https://aur.archlinux.org/packages/tuxclocker/) [tuxclocker-git](https://aur.archlinux.org/packages/tuxclocker-git/)
 
+*   **CoreCtrl** — A GUI overclocking tool with a WattMan-like UI that supports per-application profiles.
+
+	[https://gitlab.com/corectrl/corectrl](https://gitlab.com/corectrl/corectrl) || [corectrl](https://aur.archlinux.org/packages/corectrl/) [corectrl-git](https://aur.archlinux.org/packages/corectrl-git/)
+
 #### Startup on boot
 
 If you want your settings to apply automatically upon boot, consider looking at this [Reddit thread](https://www.reddit.com/r/Amd/comments/agwroj/how_to_overclock_your_amd_gpu_on_linux/) to configure and apply your settings on boot.

@@ -41,7 +41,7 @@
     *   [9.1 Wrong ELF class](#Wrong_ELF_class)
     *   [9.2 Multiple monitors setup](#Multiple_monitors_setup)
     *   [9.3 Text is corrupt or missing](#Text_is_corrupt_or_missing)
-    *   [9.4 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale('en_US.UTF-8')_fails_at_game_startup)
+    *   [9.4 SetLocale('en_US.UTF-8') fails at game startup or typing non-ASCII characters does not work in the Steam client](#SetLocale('en_US.UTF-8')_fails_at_game_startup_or_typing_non-ASCII_characters_does_not_work_in_the_Steam_client)
     *   [9.5 Missing libc](#Missing_libc)
     *   [9.6 Games do not launch on older Intel hardware](#Games_do_not_launch_on_older_Intel_hardware)
     *   [9.7 Mesa: Game does not launch, complaining about OpenGL version supported by the card](#Mesa:_Game_does_not_launch,_complaining_about_OpenGL_version_supported_by_the_card)
@@ -461,7 +461,7 @@ You can install them via the [steam-fonts](https://aur.archlinux.org/packages/st
 
 **Note:** When steam cannot find the Arial fonts, font-config likes to fall back onto the Helveticia bitmap font. Steam does not render this and possibly other bitmap fonts correctly, so either removing problem fonts or [disabling bitmap fonts](/index.php/Font_configuration#Disable_bitmap_fonts "Font configuration") will most likely fix the issue without installing the Arial or ArialBold fonts. The font being used in place of Arial can be found with the command `$ fc-match -v Arial` 
 
-### SetLocale('en_US.UTF-8') fails at game startup
+### SetLocale('en_US.UTF-8') fails at game startup or typing non-ASCII characters does not work in the Steam client
 
 You need to generate the `en_US.UTF-8 UTF-8` locale. See [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale").
 

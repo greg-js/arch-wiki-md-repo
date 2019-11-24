@@ -2,12 +2,18 @@
 
 This page details installing Arch Linux on the Google Chromebook Pixel (2015). It is commonly referred to as the Chromebook Pixel 2, sometimes referred to by its codename Samus, and sometimes called the Chromebook Pixel LS (which stands for "Ludicrous Speed") when referring to the upgraded version with a Intel Core i7.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 GRUB](#GRUB)
 *   [2 Linux](#Linux)
-*   [3 Audio, Brightness, and Touch](#Audio.2C_Brightness.2C_and_Touch)
+    *   [2.1 Suspend](#Suspend)
+*   [3 Audio, Brightness, and Touch](#Audio,_Brightness,_and_Touch)
+    *   [3.1 Audio scripts fail](#Audio_scripts_fail)
 *   [4 Keyboard Bindings](#Keyboard_Bindings)
 *   [5 Unresolved Issues](#Unresolved_Issues)
 *   [6 See Also](#See_Also)
@@ -51,9 +57,32 @@ If you forget to do this you can boot off the installation media again mount you
 
 Touchpad, touchscreen, and audio have been working in the vanilla Linux kernel since v4.9, but [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) comes with a config that is somewhat optimized for the Chromebook Pixel (2015).
 
+### Suspend
+
+Since kernel 5.x suspend seems to not work out-of-the-box anymore and instead shuts down when lid is closed. Install [acpi](https://www.archlinux.org/packages/community/x86_64/acpi/) and [tpm2-tools](https://www.archlinux.org/packages/community/x86_64/tpm2-tools/), then create `/etc/modprobe.d/suspend.conf` with
+
+```
+options tpm_tis force=1 interrupts=0
+
+```
+
+This should make suspend work on lid close.
+
 ## Audio, Brightness, and Touch
 
 The source for [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) contains some helpful scripts[[1]](https://github.com/raphael/linux-samus/tree/master/scripts/setup) that aren't distributed in the package, but can instead be installed in a derivative package called [samus-scripts](https://aur.archlinux.org/packages/samus-scripts/). These are helpful for managing audio (e.g. switching between speaker and headphone output), setting screen backlight and keyboard LED brightness, and fixing the Atmel maXTouch bug (see [#Unresolved Issues](#Unresolved_Issues)).
+
+### Audio scripts fail
+
+If audio scripts from above don't work, create `/etc/modprobe.d/audio.conf` with
+
+```
+options snd_soc_sst_bdw_rt5677_mach index=0 
+options snd-hda-intel index=1
+
+```
+
+and make sure to install [pulseaudio-alsa](https://www.archlinux.org/packages/extra/any/pulseaudio-alsa/)
 
 ## Keyboard Bindings
 
@@ -77,4 +106,5 @@ Add this to your .xinitrc to load at login.
 
 *   [Laptop Issues » Google Chromebook Pixel 2](https://bbs.archlinux.org/viewtopic.php?id=194962)
 *   [Chromium OS Developer Information for Chromebook Pixel (2015)](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/chromebook-pixel-2015)
-*   [Install Arch Linux in addition to Chrome OS](/index.php/Chrome_OS_devices#Alternative_installation.2C_Install_Arch_Linux_in_addition_to_Chrome_OS "Chrome OS devices")
+*   [Install Arch Linux in addition to Chrome OS](/index.php/Chrome_OS_devices#Alternative_installation,_Install_Arch_Linux_in_addition_to_Chrome_OS "Chrome OS devices")
+*   [tpm bug: systemctl suspend turns off computer](https://bbs.archlinux.org/viewtopic.php?id=246716)

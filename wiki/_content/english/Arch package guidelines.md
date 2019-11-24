@@ -19,11 +19,12 @@ When building packages for Arch Linux, **adhere to the package guidelines** belo
 *   [2 Package etiquette](#Package_etiquette)
 *   [3 Package naming](#Package_naming)
 *   [4 Package versioning](#Package_versioning)
-*   [5 Directories](#Directories)
-*   [6 Makepkg duties](#Makepkg_duties)
-*   [7 Architectures](#Architectures)
-*   [8 Licenses](#Licenses)
-*   [9 Additional guidelines](#Additional_guidelines)
+*   [5 Package sources](#Package_sources)
+*   [6 Directories](#Directories)
+*   [7 Makepkg duties](#Makepkg_duties)
+*   [8 Architectures](#Architectures)
+*   [9 Licenses](#Licenses)
+*   [10 Additional guidelines](#Additional_guidelines)
 
 ## PKGBUILD prototype
 
@@ -111,6 +112,14 @@ optdepends=('cups: printing support'
     *   The non-stable release allows for the package to be built (e.g. problems introduced due to updated dependencies) and those changes can not otherwise be backported easily.
     *   The non-stable release allows the distribution to drop an EOL component (e.g. qt4, python2).
 *   Package releases (i.e. [PKGBUILD#pkgrel](/index.php/PKGBUILD#pkgrel "PKGBUILD")) are **specific to Arch Linux packages**. These allow users to differentiate between newer and older package builds. When a new package version is first released, the **release count starts at 1**. Then as fixes and optimizations are made, the package will be **re-released** to the Arch Linux public and the **release number will increment**. When a new version comes out, the release count resets to 1\. Package release tags follow the **same naming restrictions as version tags**.
+
+## Package sources
+
+*   HTTPS sources (`https://` for tarballs, `git+https://` for git sources) should be used wherever possible
+*   Sources should be verified using PGP signatures wherever possible (this might entail building from a git tag instead of a source tarball, if upstream signs commits and tags but not the tarballs)
+*   **Don't diminish the security or validity of a package** (e.g. by removing a checksum check or by removing PGP signature verification), because an upstream release is broken or suddenly lacks a certain feature (e.g. PGP signature missing for a new release)
+*   Sources have to be unique in `srcdir` (this might require renaming them when downloading, e.g. `"${pkgname}-${pkgver}.tar.gz::https://${pkgname}.tld/download/${pkgver}.tar.gz"`)
+*   Avoid using specific mirrors (e.g. on sourceforge) to download, as they might become unavailable
 
 ## Directories
 

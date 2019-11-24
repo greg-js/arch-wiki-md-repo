@@ -6,23 +6,27 @@ Sendmail 是来自 UNIX 世界的经典 SMTP 服务器。Arch Linux 还提供了
 
 本文仅描述了配置 Sendmail 的必需步骤；要添加 IMAP 与 POP3 服务，您可以考虑阅读 [Dovecot](/index.php/Dovecot "Dovecot") 的内容。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 DNS 记录](#DNS_.E8.AE.B0.E5.BD.95)
-*   [3 添加用户](#.E6.B7.BB.E5.8A.A0.E7.94.A8.E6.88.B7)
-*   [4 配置](#.E9.85.8D.E7.BD.AE)
-    *   [4.1 创建 SSL 证书](#.E5.88.9B.E5.BB.BA_SSL_.E8.AF.81.E4.B9.A6)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 DNS 记录](#DNS_记录)
+*   [3 添加用户](#添加用户)
+*   [4 配置](#配置)
+    *   [4.1 创建 SSL 证书](#创建_SSL_证书)
     *   [4.2 sendmail.cf](#sendmail.cf)
     *   [4.3 sendmail.conf](#sendmail.conf)
     *   [4.4 local-host-names](#local-host-names)
     *   [4.5 access.db](#access.db)
     *   [4.6 aliases.db](#aliases.db)
     *   [4.7 virtusertable.db](#virtusertable.db)
-    *   [4.8 开机自动启动](#.E5.BC.80.E6.9C.BA.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8)
-    *   [4.9 SASL 验证](#SASL_.E9.AA.8C.E8.AF.81)
-*   [5 小窍门](#.E5.B0.8F.E7.AA.8D.E9.97.A8)
-    *   [5.1 将某个域名的全部邮件转发至特定邮箱](#.E5.B0.86.E6.9F.90.E4.B8.AA.E5.9F.9F.E5.90.8D.E7.9A.84.E5.85.A8.E9.83.A8.E9.82.AE.E4.BB.B6.E8.BD.AC.E5.8F.91.E8.87.B3.E7.89.B9.E5.AE.9A.E9.82.AE.E7.AE.B1)
+    *   [4.8 开机自动启动](#开机自动启动)
+    *   [4.9 SASL 验证](#SASL_验证)
+*   [5 小窍门](#小窍门)
+    *   [5.1 将某个域名的全部邮件转发至特定邮箱](#将某个域名的全部邮件转发至特定邮箱)
 
 ## 安装
 

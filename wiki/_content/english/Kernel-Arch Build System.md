@@ -138,7 +138,7 @@ $ git fetch --verbose
 
 ```
 
-That was fetching v5.2.7-arch1, which was the newest archlinux tag.
+One can see it fetched v5.2.7-arch1, which was the newest archlinux tag, because it prints what new tags were obtained. If no new tags were obtained then there is no newer archlinux source available.
 
 ```
 $ cd ~/build/linux/src/archlinux-linux/
@@ -175,6 +175,8 @@ $ asp -f export linux
 $ cd ~/build/linux/
 
 ```
+
+**Note:** Sometimes the `asp` command does not update linux files even though there is a newer archlinux source tag. A possible reason is that archlinux linux files lag behind archlinux linux source.
 
 Then run manually most, if not all, the shell commands of PKGBUILD::prepare(). If you were [#Modifying the PKGBUILD](#Modifying_the_PKGBUILD) you might prefer to
 

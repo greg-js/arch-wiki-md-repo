@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [Inicialização silenciosa](/index.php/Silent_boot "Silent boot")
+*   [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa")
 
 [Plymouth](http://www.freedesktop.org/wiki/Software/Plymouth) é um projeto da Fedora e agora listado entre os [recursos oficiais do freedesktop.org](https://www.freedesktop.org/wiki/Software/#graphicsdriverswindowsystemsandsupportinglibraries) que fornece um processo de inicialização gráfico sem cintilação. Baseia-se no [modo de configuração do kernel](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) para definir uma resolução nativa da tela assim que possível, fornecendo então uma tela de boas vindas atrativa, até chegar no gerenciador de login.
 

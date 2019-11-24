@@ -62,11 +62,6 @@ Prosody has optional depedencies that although not strictly required for its ope
 	Allow Prosody to use the [Cyrus SASL](http://asg.web.cmu.edu/sasl/sasl-library.html) library to provide authentication.
 *Requires:* [lua-cyrussasl](https://aur.archlinux.org/packages/lua-cyrussasl/)
 
-	WebSocket Support
-
-	Allow Prosody to offer [WebSocket](https://prosody.im/doc/modules/mod_websocket) transport.
-*Requires:* [lua52-bitop](https://www.archlinux.org/packages/?name=lua52-bitop)
-
 ## Configuration
 
 **Note:** The `posix` module and `pidfile` setting contained in the default configuration file are required for Prosody's proper operation.

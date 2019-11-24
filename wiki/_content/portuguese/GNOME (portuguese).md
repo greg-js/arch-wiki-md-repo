@@ -535,7 +535,7 @@ CriticalPowerAction=HybridSleep
 
 ### Usar um gerenciador de janela diferente
 
-GNOME Shell não oferece suporte a usar um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") diferente, porém o [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") forence sessões para Metacity e [Compiz](/index.php/Compiz "Compiz"). Além disso, é possível definir suas próprias [sessões GNOME personalizadas](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que usam componentes alternativos.
+GNOME Shell não oferece suporte a usar um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") diferente, porém o [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") forence sessões para Metacity e [Compiz](/index.php/Compiz_(Portugu%C3%AAs) "Compiz (Português)"). Além disso, é possível definir suas próprias [sessões GNOME personalizadas](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que usam componentes alternativos.
 
 ## Veja também
 

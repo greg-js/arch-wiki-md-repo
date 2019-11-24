@@ -4,7 +4,7 @@ Artigos relacionados
 
 *   [Usuários e grupos](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos")
 *   [umask](/index.php/Umask_(Portugu%C3%AAs) "Umask (Português)")
-*   [Listas de Controle de Acesso](/index.php/Access_Control_Lists "Access Control Lists")
+*   [Listas de Controle de Acesso](/index.php/Listas_de_Controle_de_Acesso "Listas de Controle de Acesso")
 *   [Capacidades](/index.php/Capabilities "Capabilities")
 
 [Sistemas de arquivos](/index.php/File_systems "File systems") usam [permissões](https://en.wikipedia.org/wiki/pt:Permiss%C3%B5es_de_sistema_de_arquivos "w:pt:Permissões de sistema de arquivos") e [atributos](https://en.wikipedia.org/wiki/File_attribute "w:File attribute") para regular o nível de interação que processos de sistema podem ter com os arquivos e diretórios.
@@ -56,7 +56,7 @@ drwxr-xr-x 2 archie users  4096 Jul  5 13:45  Downloads
 A primeira coluna é o que devemos focar. Tomando um valor de exemplo de `drwxrwxrwx +`, o significado de cada caractere é explicado nas seguintes tabelas:
 
 | `d` | `rwx` | `rwx` | `rwx` | `+` |
-| O tipo de arquivo, tecnicamente não sendo parte de suas permissões. Veja `info ls -n "What information is listed"` para uma explicação dos valores possíveis. | As permissões que o proprietário tem sobre o arquivo, explicadas abaixo. | As permissões que o grupo tem sobre o arquivo, explicadas abaixo. | As permissões que outros usuários têm sobre o arquivo, explicadas abaixo. | Um único caractere que especifica se um método de acesso alternativo se aplica ao arquivo. Quando esse caractere é um espaço, não há método de acesso alternativo. Um caractere `.` indica um arquivo com um contexto de segurança, mas nenhum outro método de acesso alternativo. Um arquivo com qualquer outra combinação de métodos de acesso alternativo é marcado com um caractere `+`, por exemplo, no caso de [Listas de Controle de Acesso](/index.php/Access_Control_Lists "Access Control Lists"). |
+| O tipo de arquivo, tecnicamente não sendo parte de suas permissões. Veja `info ls -n "What information is listed"` para uma explicação dos valores possíveis. | As permissões que o proprietário tem sobre o arquivo, explicadas abaixo. | As permissões que o grupo tem sobre o arquivo, explicadas abaixo. | As permissões que outros usuários têm sobre o arquivo, explicadas abaixo. | Um único caractere que especifica se um método de acesso alternativo se aplica ao arquivo. Quando esse caractere é um espaço, não há método de acesso alternativo. Um caractere `.` indica um arquivo com um contexto de segurança, mas nenhum outro método de acesso alternativo. Um arquivo com qualquer outra combinação de métodos de acesso alternativo é marcado com um caractere `+`, por exemplo, no caso de [Listas de Controle de Acesso](/index.php/Listas_de_Controle_de_Acesso "Listas de Controle de Acesso"). |
 
 Cada uma das três tríades de permissão (`rwx` no exemplo acima) pode ser composta dos seguintes caracteres:
 
@@ -409,7 +409,7 @@ Agora a partição pode ter dados gravados pelo novo proprietário, archie, sem 
 
 ## Listas de Controle de Acesso
 
-[Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") fornece um mecanismo de permissão adicional e mais flexível para sistemas de arquivos, permitindo definir permissões para qualquer usuário ou grupo para qualquer arquivo.
+[Listas de Controle de Acesso](/index.php/Listas_de_Controle_de_Acesso "Listas de Controle de Acesso") fornece um mecanismo de permissão adicional e mais flexível para sistemas de arquivos, permitindo definir permissões para qualquer usuário ou grupo para qualquer arquivo.
 
 ## Umask
 

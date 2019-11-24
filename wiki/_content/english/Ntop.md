@@ -1,14 +1,20 @@
 [Ntop](http://www.ntop.org/products/ntop/) is a network traffic probe based on [libcap](http://www.tcpdump.org/), that offers RMON-like network traffic statistics accessible via a web browser.
 
+Ntop's final release was in 2012 and is currently unmaintained. It has been succeeded by ntopng ([ntopng](https://aur.archlinux.org/packages/ntopng/)).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation and configuration](#Installation_and_configuration)
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Web interface](#Web_interface)
     *   [2.2 Group and user](#Group_and_user)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 **ERROR** RRD: Disabled - unable to create base directory (err 13, /var/lib/ntop/rrd)](#.2A.2AERROR.2A.2A_RRD:_Disabled_-_unable_to_create_base_directory_.28err_13.2C_.2Fvar.2Flib.2Fntop.2Frrd.29)
-    *   [3.2 Please enable make sure that the ntop html/ directory is properly installed](#Please_enable_make_sure_that_the_ntop_html.2F_directory_is_properly_installed)
+    *   [3.1 **ERROR** RRD: Disabled - unable to create base directory (err 13, /var/lib/ntop/rrd)](#**ERROR**_RRD:_Disabled_-_unable_to_create_base_directory_(err_13,_/var/lib/ntop/rrd))
+    *   [3.2 Please enable make sure that the ntop html/ directory is properly installed](#Please_enable_make_sure_that_the_ntop_html/_directory_is_properly_installed)
 
 ## Installation and configuration
 

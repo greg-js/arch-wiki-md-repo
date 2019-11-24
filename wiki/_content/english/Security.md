@@ -51,7 +51,7 @@ This article contains recommendations and best practices for [hardening](https:/
             *   [8.1.1.2 32-bit processes (on an x86_64 kernel)](#32-bit_processes_(on_an_x86_64_kernel))
     *   [8.2 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
     *   [8.3 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
-    *   [8.4 Keep BPF JIT compiler disabled](#Keep_BPF_JIT_compiler_disabled)
+    *   [8.4 BPF Hardening](#BPF_Hardening)
     *   [8.5 ptrace scope](#ptrace_scope)
         *   [8.5.1 Examples of broken functionality](#Examples_of_broken_functionality)
     *   [8.6 hidepid](#hidepid)
@@ -74,7 +74,7 @@ This article contains recommendations and best practices for [hardening](https:/
 *   [12 Follow vulnerability alerts](#Follow_vulnerability_alerts)
 *   [13 Physical security](#Physical_security)
     *   [13.1 Locking down BIOS](#Locking_down_BIOS)
-    *   [13.2 Bootloaders](#Bootloaders)
+    *   [13.2 Boot loaders](#Boot_loaders)
         *   [13.2.1 Syslinux](#Syslinux)
         *   [13.2.2 GRUB](#GRUB)
     *   [13.3 Boot partition on removable flash drive](#Boot_partition_on_removable_flash_drive)
@@ -492,13 +492,15 @@ Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/
 
  `/etc/sysctl.d/51-kptr-restrict.conf`  `kernel.kptr_restrict = 1` 
 
-### Keep BPF JIT compiler disabled
+### BPF Hardening
 
-The Linux kernel includes the ability to compile BPF/Seccomp rule sets to native code as a performance optimization. The `net.core.bpf_jit_enable` flag should be set to `0` for a maximum level of security.
+Berkeley Packet Filter (BPF) and its evolution Extended BPF (eBPF) are systems used to load and execute bytecode within the kernel dynamically during runtime. It is used in a number of Linux kernel subsystems such as networking (e.g. XDP, tc), tracing (e.g. kprobes, uprobes, tracepoints) and security (e.g. seccomp). It is also useful in certain domains such as advanced network security for container orchestrators and for debugging the kernel.
 
-**Note:** Arch Linux kernels are built with [CONFIG_BPF_JIT_ALWAYS_ON](https://cateee.net/lkddb/web-lkddb/BPF_JIT_ALWAYS_ON.html) option which cannot be overridden by the above. You may set `net.core.bpf_jit_harden` flag to `2` instead.
+BPF code may be either interpreted or compiled using a Just-In-Time (JIT) compiler. The Arch kernel is built with `CONFIG_BPF_JIT_ALWAYS_ON` which disables the BPF interpreter and forces all BPF to use JIT compilation. This makes it harder for an attacker to use BPF to escalate attacks that exploit SPECTRE-style vulnerabilities. See [the kernel patch which introduced `CONFIG_BPF_JIT_ALWAYS_ON`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=290af86629b25ffd1ed6232c4e9107da031705cb) for more details.
 
-BPF/Seccomp compilation can be useful in specific domains, such as dynamic servers (e.g. orchestration platforms like Mesos and Kubernetes). It is not usually useful for desktop users or for static servers. A JIT compiler opens up the possibility for an attacker to perform a heap spraying attack, where they fill the kernel's heap with malicious code. This code can then potentially be executed via another exploit, like an incorrect function pointer dereference. The [Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability) attacks, published early 2018, are prominent respective exploits.
+The kernel includes a hardening feature for JIT-compiled BPF which can mitigate some types of JIT spraying attacks at the cost of performance and the ability to trace and debug many BPF programs. It may be enabled by setting `net.core.bpf_jit_harden` to `1` (to enable hardening of unprivileged code) or `2` (to enable hardening of all code).
+
+See the `net.core.bpf_*` settings in the [kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/net.txt) for more details.
 
 ### ptrace scope
 
@@ -653,9 +655,9 @@ An attacker can gain full control of your computer on the next boot by simply at
 
 Adding a password to the BIOS prevents someone from booting into removable media, which is basically the same as having root access to your computer. You should make sure your drive is first in the boot order and disable the other drives from being bootable if you can.
 
-### Bootloaders
+### Boot loaders
 
-It is highly important to protect your bootloader. There is a magic kernel parameter called `init=/bin/sh`. This makes any user/login restrictions totally useless.
+It is highly important to protect your [boot loader](/index.php/Boot_loader "Boot loader"). An unprotected boot loader can bypass any login restrictions, e.g. by setting the `init=/bin/sh` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to boot directly to a shell.
 
 #### Syslinux
 

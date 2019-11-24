@@ -1,30 +1,34 @@
 Flubox é um gerenciador de janelas para X11\. É baseado no código do(agora descontinuado) Blackbox 0.61.1, porém com significantes melhoras e desenvolvimento contínuo. Fluxbox é bastante leve a nível de recursos e rápido, e ainda provê ferramentas interesantes para gerenciamento de janelas como abas e agrupamentos. Seus arquivos de configuração são fáceis de entender e editar e existem centenas de "estilos" de fluxbox para tornar a aparencia do seu desktop legal. ArchLinux com FluxBox pode tornar um velho Pentium 800 com apenas 256MB de RAM em um computador bastante usável.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalação](#Instalação)
 *   [2 Iniciando o Fluxbox](#Iniciando_o_Fluxbox)
-    *   [2.1 Método 1: Gerenciadores de Login KDM/GDM/LightDM](#M.C3.A9todo_1:_Gerenciadores_de_Login_KDM.2FGDM.2FLightDM)
-    *   [2.2 Método 2: ~/.xinitrc](#M.C3.A9todo_2:_.7E.2F.xinitrc)
-    *   [2.3 Método 3: Gerenciador de login SLiM](#M.C3.A9todo_3:_Gerenciador_de_login_SLiM)
-*   [3 Configuração](#Configura.C3.A7.C3.A3o)
+    *   [2.1 Método 1: Gerenciadores de Login KDM/GDM/LightDM](#Método_1:_Gerenciadores_de_Login_KDM/GDM/LightDM)
+    *   [2.2 Método 2: ~/.xinitrc](#Método_2:_~/.xinitrc)
+    *   [2.3 Método 3: Gerenciador de login SLiM](#Método_3:_Gerenciador_de_login_SLiM)
+*   [3 Configuração](#Configuração)
     *   [3.1 Gerenciamento do menu](#Gerenciamento_do_menu)
         *   [3.1.1 fluxbox-generate_menu](#fluxbox-generate_menu)
         *   [3.1.2 MenuMaker](#MenuMaker)
         *   [3.1.3 Arch Linux Xdg menu](#Arch_Linux_Xdg_menu)
-        *   [3.1.4 Editar/Criar manualmente o menu](#Editar.2FCriar_manualmente_o_menu)
+        *   [3.1.4 Editar/Criar manualmente o menu](#Editar/Criar_manualmente_o_menu)
     *   [3.2 Init](#Init)
-    *   [3.3 Teclas de atalho(Hotkeys)](#Teclas_de_atalho.28Hotkeys.29)
+    *   [3.3 Teclas de atalho(Hotkeys)](#Teclas_de_atalho(Hotkeys))
     *   [3.4 Workspaces](#Workspaces)
     *   [3.5 Abas e Agrupamento](#Abas_e_Agrupamento)
-    *   [3.6 Fundo (Wallpaper)](#Fundo_.28Wallpaper.29)
+    *   [3.6 Fundo (Wallpaper)](#Fundo_(Wallpaper))
         *   [3.6.1 Alterando diversos fundos facilmente](#Alterando_diversos_fundos_facilmente)
         *   [3.6.2 Utilizando o Feh com FluxBox](#Utilizando_o_Feh_com_FluxBox)
     *   [3.7 Temas](#Temas)
     *   [3.8 Iniciando automaticamente aplicativos](#Iniciando_automaticamente_aplicativos)
     *   [3.9 Outros menus](#Outros_menus)
     *   [3.10 Terminais transparentes rxvt-unicode](#Terminais_transparentes_rxvt-unicode)
-    *   [3.11 Vida após "xorg.conf"](#Vida_ap.C3.B3s_.22xorg.conf.22)
+    *   [3.11 Vida após "xorg.conf"](#Vida_após_"xorg.conf")
         *   [3.11.1 Configurando o seu layout de teclado](#Configurando_o_seu_layout_de_teclado)
         *   [3.11.2 Desabilitando economia de energia](#Desabilitando_economia_de_energia)
 *   [4 Recursos Adicionais](#Recursos_Adicionais)
@@ -57,11 +61,11 @@ exec startfluxbox
 
 ```
 
-Veja [Xinitrc](/index.php?title=Xinitrc_(Portugu%C3%AAs)&action=edit&redlink=1 "Xinitrc (Português) (page does not exist)") para maiores detalhes. Utilize o comando "startx" de um terminal para lançar o X com o seu gerenciador de janelas.
+Veja [Xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") para maiores detalhes. Utilize o comando "startx" de um terminal para lançar o X com o seu gerenciador de janelas.
 
 ### Método 3: Gerenciador de login SLiM
 
-SLiM, the Simple Login Manager(o gerenciado de login simples) é o favorito para muitos usuários do Arch por conta de sua eficiência. O SLiM lê o arquivo ~/.xinitrc, portanto, se você tiver o .xinitrc configurado como o acima irá funcionar. Contudo, se você quer habilitar o SLiM para escolher entre diversos gerenciadores de janelas então edite a variavel de sessões no arquivo `/etc/slim.conf` para que os nomes sejam comparados com a declaração "case" no arquivo `~/.xinitrc` Veja [SLiM](/index.php/SLiM_(Portugu%C3%AAs) "SLiM (Português)") e [Xinitrc](/index.php?title=Xinitrc_(Portugu%C3%AAs)&action=edit&redlink=1 "Xinitrc (Português) (page does not exist)").
+SLiM, the Simple Login Manager(o gerenciado de login simples) é o favorito para muitos usuários do Arch por conta de sua eficiência. O SLiM lê o arquivo ~/.xinitrc, portanto, se você tiver o .xinitrc configurado como o acima irá funcionar. Contudo, se você quer habilitar o SLiM para escolher entre diversos gerenciadores de janelas então edite a variavel de sessões no arquivo `/etc/slim.conf` para que os nomes sejam comparados com a declaração "case" no arquivo `~/.xinitrc` Veja [SLiM](/index.php/SLiM_(Portugu%C3%AAs) "SLiM (Português)") e [Xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)").
 
 ## Configuração
 
@@ -119,7 +123,7 @@ $ mmaker --help
 
 #### Arch Linux Xdg menu
 
-Requisito - [XdgMenu](/index.php?title=XdgMenu_(Portugu%C3%AAs)&action=edit&redlink=1 "XdgMenu (Português) (page does not exist)") disponível via pacman:
+Requisito - [XdgMenu](/index.php/XdgMenu "XdgMenu") disponível via pacman:
 
 ```
 # pacman -S archlinux-xdg-menu
@@ -179,8 +183,8 @@ O Fluxbox oferece uma funcionalidade básica de teclas de atalho. O arquivo que 
 Exemplo: Forma rápida de controlar o volume principal(Master):
 
 ```
-Control Mod1 Up :Exec amixer set Master,0 5%+
-Control Mod1 Down :Exec amixer set Master,0 5%-
+Control Mod1 Up :Exec amixer set Master,0 5%+
+Control Mod1 Down :Exec amixer set Master,0 5%-
 
 ```
 
@@ -279,7 +283,7 @@ Para criar seus próprios estilos no fluxbox, leia o artigo [Fluxbox Style Guide
 
 ### Iniciando automaticamente aplicativos
 
-O modo ArchLinux de iniciar aplicativos automaticamente é colocar todo o código dentro do `~/.xinitrc`. Veja [Xinitrc](/index.php?title=Xinitrc_(Portugu%C3%AAs)&action=edit&redlink=1 "Xinitrc (Português) (page does not exist)") para maiores detalhes. Contudo, fluxbox provê funcionalidades de iniciar automaticamente aplicativos de sua própria forma. O arquivo `~/.fluxbox/startup` é um script de "autostart" de programas, e de início do fluxbox mesmo. O símbolo # denota um comentário
+O modo ArchLinux de iniciar aplicativos automaticamente é colocar todo o código dentro do `~/.xinitrc`. Veja [Xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") para maiores detalhes. Contudo, fluxbox provê funcionalidades de iniciar automaticamente aplicativos de sua própria forma. O arquivo `~/.fluxbox/startup` é um script de "autostart" de programas, e de início do fluxbox mesmo. O símbolo # denota um comentário
 
 Arquivo de exemplo:
 

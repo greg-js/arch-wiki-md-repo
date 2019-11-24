@@ -29,7 +29,7 @@ Related articles
     *   [6.1 K10Temp module](#K10Temp_module)
     *   [6.2 Asus B450 motherboards with Ryzen CPU](#Asus_B450_motherboards_with_Ryzen_CPU)
     *   [6.3 Asus Z97/Z170 motherboards](#Asus_Z97/Z170_motherboards)
-    *   [6.4 Gigabyte B250 motherboards](#Gigabyte_B250_motherboards)
+    *   [6.4 Gigabyte B250/Z370 motherboards](#Gigabyte_B250/Z370_motherboards)
     *   [6.5 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
     *   [6.6 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
 
@@ -508,7 +508,7 @@ Additionally, add to the kernel boot parameters:
 
 ```
 
-### Gigabyte B250 motherboards
+### Gigabyte B250/Z370 motherboards
 
 Some Gigabyte motherboards use the ITE IT8686E chip, which is not supported by the it87 kernel driver, as of May 2019 [[1]](https://www.kernel.org/doc/Documentation/hwmon/it87). However, it is supported by the upstream version of the kernel driver [[2]](https://github.com/bbqlinux/it87/blob/master/it87.c#L24). The dkms variant is contained in [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/).
 

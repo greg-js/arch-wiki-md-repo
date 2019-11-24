@@ -31,16 +31,20 @@
         *   [3.2.1 Создание образа вручную](#Создание_образа_вручную)
 *   [4 Удаление Docker и образов](#Удаление_Docker_и_образов)
 *   [5 Полезные советы](#Полезные_советы)
-*   [6 Устранение неполадок](#Устранение_неполадок)
-    *   [6.1 docker0 Bridge не получает IP адреса/нет доступа к Интернету в контейнерах](#docker0_Bridge_не_получает_IP_адреса/нет_доступа_к_Интернету_в_контейнерах)
-    *   [6.2 Слишком низкое значение количества процессов/потоков по умолчанию](#Слишком_низкое_значение_количества_процессов/потоков_по_умолчанию)
-    *   [6.3 Ошибка инициализации графического драйвера: devmapper](#Ошибка_инициализации_графического_драйвера:_devmapper)
-    *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
-    *   [6.5 Неверная ссылка между устройствами в ядре 4.19.1](#Неверная_ссылка_между_устройствами_в_ядре_4.19.1)
-    *   [6.6 Отсутствие CPUACCT в docker с Linux-ck](#Отсутствие_CPUACCT_в_docker_с_Linux-ck)
-    *   [6.7 Docker-machine не может создать виртуальные машины с драйвером virtualbox](#Docker-machine_не_может_создать_виртуальные_машины_с_драйвером_virtualbox)
-*   [7 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
-*   [8 Смотрите также](#Смотрите_также)
+*   [6 Запуск Docker-контейнеров с ускорением на графических процессорах NVIDIA](#Запуск_Docker-контейнеров_с_ускорением_на_графических_процессорах_NVIDIA)
+    *   [6.1 С помощью NVIDIA Container Toolkit (рекомендовано)](#С_помощью_NVIDIA_Container_Toolkit_(рекомендовано))
+    *   [6.2 С помощью NVIDIA Container Runtime](#С_помощью_NVIDIA_Container_Runtime)
+    *   [6.3 С помощью nvidia-docker (устарело)](#С_помощью_nvidia-docker_(устарело))
+*   [7 Устранение неполадок](#Устранение_неполадок)
+    *   [7.1 docker0 Bridge не получает IP адреса/нет доступа к Интернету в контейнерах](#docker0_Bridge_не_получает_IP_адреса/нет_доступа_к_Интернету_в_контейнерах)
+    *   [7.2 Слишком низкое значение количества процессов/потоков по умолчанию](#Слишком_низкое_значение_количества_процессов/потоков_по_умолчанию)
+    *   [7.3 Ошибка инициализации графического драйвера: devmapper](#Ошибка_инициализации_графического_драйвера:_devmapper)
+    *   [7.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
+    *   [7.5 Неверная ссылка между устройствами в ядре 4.19.1](#Неверная_ссылка_между_устройствами_в_ядре_4.19.1)
+    *   [7.6 Отсутствие CPUACCT в docker с Linux-ck](#Отсутствие_CPUACCT_в_docker_с_Linux-ck)
+    *   [7.7 Docker-machine не может создать виртуальные машины с драйвером virtualbox](#Docker-machine_не_может_создать_виртуальные_машины_с_драйвером_virtualbox)
+*   [8 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
+*   [9 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -325,6 +329,115 @@ for ID in $(docker ps -q | awk '{print $1}'); do
 " "$IP" "$NAME"
 done
 ```
+
+## Запуск Docker-контейнеров с ускорением на графических процессорах NVIDIA
+
+### С помощью NVIDIA Container Toolkit (рекомендовано)
+
+Начиная с версии 19.03, графические процессоры NVIDIA поддерживаются в качестве устройств Docker. [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker) является рекомендованным способом запуска контейнеров, использующих графические процессоры NVIDIA.
+
+Установите пакет [nvidia-container-toolkit](https://aur.archlinux.org/packages/nvidia-container-toolkit/). Далее, перезапустите [restart](/index.php/Restart "Restart") docker. Теперь вы можете запускать контейнеры Docker, использующие графические процессоры NVIDIA, с помощью параметра `--gpus`:
+
+```
+# docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+Укажите, сколько графических процессоров разрешено в контейнере:
+
+```
+# docker run --gpus 2 nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+Укажите, какие GPU следует использовать:
+
+```
+# docker run --gpus '"device=1,2"' nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+или
+
+```
+# docker run --gpus '"device=UUID-ABCDEF,1"' nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+Укажите capability (graphics, compute, ...) для контейнера (хотя это редко, если вообще когда либо используется таким образом):
+
+```
+# docker run --gpus all,capabilities=utility nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+Для получения дополнительной информации читайте тут [README.md](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md) и тут [Wiki](https://github.com/NVIDIA/nvidia-docker/wiki).
+
+### С помощью NVIDIA Container Runtime
+
+Установите пакет [nvidia-container-runtime](https://aur.archlinux.org/packages/nvidia-container-runtime/). Затем, внесите библиотеку среды выполнения NVIDIA, внеся следующее в конфигурационный файл `/etc/docker/daemon.json`
+
+ `/etc/docker/daemon.json` 
+```
+{
+  "runtimes": {
+    "nvidia": {
+      "path": "/usr/bin/nvidia-container-runtime",
+      "runtimeArgs": []
+    }
+  }
+}
+```
+
+и перезапустите [restart](/index.php/Restart "Restart") docker.
+
+Библиотека среды выполнения также может быть добавлена к *dockerd* как параметр командной строки:
+
+```
+# /usr/bin/dockerd --add-runtime=nvidia=/usr/bin/nvidia-container-runtime
+
+```
+
+После этого контейнеры с ускорением на графических процессорах могут быть запущены с помощью команды:
+
+```
+# docker run --runtime=nvidia nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+или (требуется Docker версии 19.03 или выше):
+
+```
+# docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+Читайте также [README.md](https://github.com/NVIDIA/nvidia-container-runtime/blob/master/README.md).
+
+### С помощью nvidia-docker (устарело)
+
+[nvidia-docker](https://nvidia.github.io/nvidia-docker/) is a wrapper around NVIDIA Container Runtime which registers the NVIDIA runtime by default and provides the *nvidia-docker* command.
+
+To use nvidia-docker, install the [nvidia-docker](https://aur.archlinux.org/packages/nvidia-docker/) package and then [restart](/index.php/Restart "Restart") docker. Containers with NVIDIA GPU support can then be run using any of the following methods:
+
+```
+# docker run --runtime=nvidia nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+```
+# nvidia-docker run nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+or (required Docker version 19.03 or higher)
+
+```
+# docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+**Note:** nvidia-docker is a legacy method for running NVIDIA GPU accelerated containers used prior to Docker 19.03 and has been deprecated. If you are using Docker version 19.03 or higher, it is recommended to use [NVIDIA Container Toolkit](#With_NVIDIA_Container_Toolkit_(recommended)) instead.
 
 ## Устранение неполадок
 

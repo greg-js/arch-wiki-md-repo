@@ -21,11 +21,11 @@ While primarily a gore mod, it goes further and alters the gameplay by changing 
 
 ### Brutal Doom Mod
 
-Acquire a registered IWAD (Internal WAD) file for [DOOM](https://zdoom.org/wiki/IWAD): `doom.wad`, `doom2.wad`, `doomu.wad`, `tnt.wad`, or `plutonia.wad`. `freedoom.WAD` from [freedoom2](https://aur.archlinux.org/packages/freedoom2/) is also compatible.
+Acquire a registered IWAD (Internal WAD) file for [DOOM](https://zdoom.org/wiki/IWAD): `doom.wad`, `doom2.wad`, `doomu.wad`, `tnt.wad`, or `plutonia.wad`. `freedoom1.wad` and `freedoom2.wad` from [freedoom](https://aur.archlinux.org/packages/freedoom/) are also compatible.
 
-Download the *.zip* file containing the *.pk3* for the latest [Brutal Doom](http://www.moddb.com/mods/brutal-doom/downloads). As of January 2018 that is "Brutal Doom v21 Public Beta Jan 02 2018". You may need to install [unzip](https://www.archlinux.org/packages/?name=unzip).
+Download the *.zip* file containing the *.pk3* for the latest [Brutal Doom](http://www.moddb.com/mods/brutal-doom/downloads). As of November 2019 that is "Brutal Doom v21 Gold". You may need to install [unzip](https://www.archlinux.org/packages/?name=unzip).
 
-Optionally you can acquire some [metal music](http://www.libregeek.org/Linux/game-files/brutal-doom/DoomMetalVol4.wad) for the gameplay.
+Optionally you can acquire some [metal music](https://www.moddb.com/mods/brutal-doom/downloads/doom-metal-soundtrack-mod-volume-5) for the gameplay.
 
 Place all the *.wad* and *.pk3* files in a created folder such as `/usr/share/games/brutal-doom`.
 

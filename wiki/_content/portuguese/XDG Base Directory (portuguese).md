@@ -257,7 +257,7 @@ Há suporte apenas no branch master do Git, não havendo lançamentos estáveis 
 | [orbment-git](https://aur.archlinux.org/packages/orbment-git/) |
 | [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") | `~/.makepkg.conf` | [80eca94](https://projects.archlinux.org/pacman.git/commit/?id=80eca94) | [[51]](https://mailman.archlinux.org/pipermail/pacman-dev/2014-July/019178.html) |
 | [panda3d](https://aur.archlinux.org/packages/panda3d/) | `~/.panda3d` | [2b537d2](https://github.com/panda3d/panda3d/commit/2b537d2) |
-| [PulseAudio](/index.php/PulseAudio "PulseAudio") | 
+| [PulseAudio](/index.php/PulseAudio_(Portugu%C3%AAs) "PulseAudio (Português)") | 
 
 `~/.pulse
 ~/.pulse-cookie`
@@ -310,7 +310,7 @@ Há suporte apenas no branch master do Git, não havendo lançamentos estáveis 
 
  | [[65]](https://github.com/martanne/vis/pull/303) |
 | [VLC](/index.php/VLC "VLC") | `~/.vlcrc` | [16f32e1](http://git.videolan.org/?p=vlc.git;a=commit;h=16f32e1) | [[66]](https://trac.videolan.org/vlc/ticket/1267) |
-| [Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") | Note que o diretório de extensões não vai ser movido; veja [[67]](https://github.com/Microsoft/vscode/issues/3884). |
+| [Visual Studio Code](/index.php/Visual_Studio_Code_(Portugu%C3%AAs) "Visual Studio Code (Português)") | Note que o diretório de extensões não vai ser movido; veja [[67]](https://github.com/Microsoft/vscode/issues/3884). |
 | [warsow](https://www.archlinux.org/packages/?name=warsow) | `~/.warsow-2.x` | [98ece3f](https://github.com/Qfusion/qfusion/commit/98ece3f) | [[68]](https://github.com/Qfusion/qfusion/issues/298) |
 | [Wireshark](/index.php/Wireshark_(Portugu%C3%AAs) "Wireshark (Português)") | `~/.wireshark` | [b0b53fa](https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=b0b53fa) |
 | [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) | `~/.xsettingsd` | [b4999f5](https://github.com/derat/xsettingsd/commit/b4999f5) |
@@ -739,7 +739,7 @@ Note que essas variáveis são respeitadas pelo *xinit*, mas não pelo *startx*.
 ### Codificado
 
 | Aplicativo | Caminho legal | Discussão | Observações |
-| [adb](/index.php/Adb "Adb") | `~/.android/` | [[128]](https://developer.android.com/studio/command-line/variables.html#android_sdk_root) | `$ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android` |
+| [adb](/index.php/Adb_(Portugu%C3%AAs) "Adb (Português)") | `~/.android/` | [[128]](https://developer.android.com/studio/command-line/variables.html#android_sdk_root) | `$ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android` |
 | [AMule](/index.php/AMule "AMule") | `~/.aMule` |
 | [Android Studio](https://developer.android.com/studio/index.html) | 
 
@@ -785,7 +785,7 @@ Especifique `--init-file <arquivo>` como uma alternativa a `~/.bashrc` para shel
 | [devede](https://www.archlinux.org/packages/?name=devede) | `~/.devedeng` | Codificado [aqui](https://gitlab.com/rastersoft/devedeng/blob/f0893b3ff7b14723bd148db35bdfe2d284156d19/src/devedeng/configuration_data.py#L111) |
 | [Dia](https://wiki.gnome.org/Apps/Dia) | `~/.dia/` |
 | [dotnet-sdk](https://www.archlinux.org/packages/?name=dotnet-sdk) | `~/.dotnet/` | [[136]](https://github.com/dotnet/cli/issues/7569) |
-| [Eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse/` | [[137]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | A opção `-Dosgi.configuration.area=@user.home/.config/..` sobrescreve, mas deve ser adicionado para `"$ECLIPSE_HOME"/eclipse.ini"` em vez de linha de comando que significa que você tem que ter acesso de escrita para `$ECLIPSE_HOME`. (Arch Linux codifica `$ECLIPSE_HOME` em `/usr/bin/eclipse`) |
+| [Eclipse](/index.php/Eclipse_(Portugu%C3%AAs) "Eclipse (Português)") | `~/.eclipse/` | [[137]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | A opção `-Dosgi.configuration.area=@user.home/.config/..` sobrescreve, mas deve ser adicionado para `"$ECLIPSE_HOME"/eclipse.ini"` em vez de linha de comando que significa que você tem que ter acesso de escrita para `$ECLIPSE_HOME`. (Arch Linux codifica `$ECLIPSE_HOME` em `/usr/bin/eclipse`) |
 | [Emacs](/index.php/Emacs "Emacs") | 
 
 `~/.emacs

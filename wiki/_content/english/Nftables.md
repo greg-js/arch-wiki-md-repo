@@ -43,6 +43,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
     *   [4.4 Jump](#Jump)
     *   [4.5 Different rules for different interfaces](#Different_rules_for_different_interfaces)
     *   [4.6 Masquerading](#Masquerading)
+    *   [4.7 NAT with port forwarding](#NAT_with_port_forwarding)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Simple stateful firewall](#Simple_stateful_firewall)
         *   [5.1.1 Single machine](#Single_machine)
@@ -85,7 +86,7 @@ All changes below are temporary. To make changes permanent, save your ruleset to
 
 **Note:** `nft list` does not output variable definitions, if you have any in `/etc/nftables.conf` they will be lost. Any variables used in rules will be replaced by their value.
 
-To read input from a file use the `-f` flag:
+To read input from a file use the `-f`/`--file` option:
 
 ```
 # nft -f *filename*
@@ -567,7 +568,7 @@ table inet filter {
 
 ### Different rules for different interfaces
 
-If your box has more than one network interface, and you would like to use different rules for different interfaces, you may want to use a "dispatching" filter chain, and then interface-specific filter chains. For example, let us assume your box acts as a home router, you want to run a web server accessible over the LAN (interface nsp3s0), but not from the public internet (interface enp2s0), you may want to consider a structure like this:
+If your box has more than one network interface, and you would like to use different rules for different interfaces, you may want to use a "dispatching" filter chain, and then interface-specific filter chains. For example, let us assume your box acts as a home router, you want to run a web server accessible over the LAN (interface `enp3s0`), but not from the public internet (interface `enp2s0`), you may want to consider a structure like this:
 
 ```
 table inet filter {
@@ -616,7 +617,7 @@ To use it:
 *   the `masquerade` keyword can only be used in chains of type `nat`.
 *   masquerading is a kind of source NAT, so only works in the output path.
 
-Example for a machine with two interfaces: LAN connected to `nsp3s0`, and public internet connected to `enp2s0`:
+Example for a machine with two interfaces: LAN connected to `enp3s0`, and public internet connected to `enp2s0`:
 
 ```
 table inet nat {
@@ -625,10 +626,31 @@ table inet nat {
   }
   chain postrouting {
     type nat hook postrouting priority 100;
-    oifname "enp0s2" masquerade
+    oifname "enp2s0" masquerade
   }
 }
 
+```
+
+### NAT with port forwarding
+
+This example will forward ports 22 and 80 to `*destination_ip*`. You will need to set `net.ipv4.ip_forward` and `net.ipv4.conf.*wan_interface*.forwarding` to `1` via [sysctl](/index.php/Sysctl "Sysctl").
+
+```
+table ip nat {
+  chain prerouting {
+    type nat hook prerouting priority 0;
+
+    tcp dport { ssh, http } dnat to *destination_ip*
+  }
+
+  chain postrouting {
+    type nat hook postrouting priority 100;
+
+    ip daddr *destination_ip* masquerade
+  }
+}
+</nowiki>
 ```
 
 ## Tips and tricks

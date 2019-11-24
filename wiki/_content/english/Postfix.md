@@ -51,6 +51,7 @@ This article builds upon [Mail server](/index.php/Mail_server "Mail server"). Th
     *   [6.5 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
 *   [7 Troubleshooting](#Troubleshooting_2)
     *   [7.1 Warning: "database /etc/postfix/*.db is older than source file .."](#Warning:_"database_/etc/postfix/*.db_is_older_than_source_file_..")
+    *   [7.2 fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype](#fatal:_0.0.0.0:smtps:_Servname_not_supported_for_ai_socktype)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -681,6 +682,32 @@ Then you can fix it by using these commands, depending on the messages you get:
 ```
 postmap /etc/postfix/transport
 postmap /etc/postfix/virtual
+
+```
+
+And [restart](/index.php/Restart "Restart") `postfix.service`.
+
+### fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype
+
+If you get a similar warning with `journalctl`:
+
+```
+ systemd[1]: Starting Postfix Mail Transport Agent...
+ postfix/postfix-script[1730061]: starting the Postfix mail system
+ postfix/master[1730063]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype
+ postfix/master[1730062]: fatal: daemon initialization failure
+ postfix/postfix-script[1730064]: fatal: mail system startup failed
+ systemd[1]: postfix.service: Control process exited, code=exited, status=1/FAILURE
+ systemd[1]: postfix.service: Failed with result 'exit-code'.
+ systemd[1]: Failed to start Postfix Mail Transport Agent.
+
+```
+
+The application ports need to be added to `/etc/services`, like below:
+
+```
+ smtps             465/tcp
+ smtps             465/udp
 
 ```
 

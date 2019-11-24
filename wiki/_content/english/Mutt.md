@@ -1117,7 +1117,7 @@ bind index "^" imap-fetch-mail
 
 Index highlighting by regex is nice, but can lead to slow folder viewing if your regex checks the body of the message.
 
-Use folder-hook for only highlighting in for example the inbox (if you manage to empty your mailbox effiently):
+Use folder-hook for only highlighting in, for example, the inbox (if you manage to empty your mailbox efficiently):
 
 ```
 folder-hook . 'uncolor index "~b \"Hi Joe\" ~R !~T !~F !~p !~P"'

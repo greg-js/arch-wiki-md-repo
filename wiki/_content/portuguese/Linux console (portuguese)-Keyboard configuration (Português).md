@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=582940) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Linux console/Keyboard configuration](/index.php/Linux_console/Keyboard_configuration "Linux console/Keyboard configuration"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Linux_console/Keyboard_configuration&diff=0&oldid=582940) na versão em inglês.
 
 Artigos relacionados
 

@@ -4,7 +4,11 @@
 
 Eclipse IDE 主要是用 Java 写成，但是可以用来用数种语言开发应用程序，包括 Java, C/C++, PHP 和 Perl. 此 IDE 也可以提供 subversion 支持(见下文) 以及任务管理。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 插件](#插件)

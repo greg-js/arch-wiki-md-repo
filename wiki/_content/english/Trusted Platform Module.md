@@ -23,6 +23,7 @@ TPM is naturally supported only on devices that have TPM hardware support. If yo
     *   [2.2 Usage](#Usage)
     *   [2.3 Basics](#Basics)
     *   [2.4 Securing SSH Keys](#Securing_SSH_Keys)
+    *   [2.5 Accessing PCR registers](#Accessing_PCR_registers)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 tcsd.service failed to start](#tcsd.service_failed_to_start)
 *   [4 See also](#See_also)
@@ -110,7 +111,7 @@ $ tpm_selftest -l info
 
 ### Securing SSH Keys
 
-	*Main article: [TPM2-PK11](/index.php/TPM2-PK11 "TPM2-PK11").*
+	*Main article: [TPM2-PK11](/index.php/TPM2-PK11 "TPM2-PK11")*
 
 There are several methods to use TPM to secure keys, but here we show a simple method based on [simple-tpm-pk11-git](https://aur.archlinux.org/packages/simple-tpm-pk11-git/).
 
@@ -147,6 +148,15 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 ```
 
 **Note:** This method currently does not allow for multiple keys to be generated and used.
+
+### Accessing PCR registers
+
+Platform Configuration Registers (PCR) contain hashes which intended to be used for platform hardware and software integrity checking between boots (protection against [Evil Maid attack](https://en.wikipedia.org/wiki/en:Evil_Maid_attack "wikipedia:en:Evil Maid attack"). [tpm2-totp-git](https://aur.archlinux.org/packages/tpm2-totp-git/) facilitates this check with an human observer and dedicated trusted devise.
+
+```
+$ sudo cat /sys/kernel/security/tpm0/ascii_bios_measurements
+
+```
 
 ## Troubleshooting
 

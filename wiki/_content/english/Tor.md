@@ -1011,7 +1011,7 @@ You may want to add `Requires=iptables.service` and `Requires=ip6tables.service`
 
 ## Tips and tricks
 
-#### Kernel capabilities
+### Kernel capabilities
 
 If you want to run tor as a non-root user, and use a port lower than 1024 you can use kernel capabilities to allow `/usr/bin/tor` to bind to ports lower than 1024:
 

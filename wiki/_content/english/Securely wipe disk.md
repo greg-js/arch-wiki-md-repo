@@ -127,7 +127,7 @@ Disk identifier: 0x00ff784a
 
 ```
 
-Or the Arch Install Medium written to a 4GB USB thumb drive:
+Or another example with the Arch Linux image written to a 4GB USB thumb drive:
 
  `# fdisk -l` 
 ```
@@ -142,7 +142,7 @@ Disk identifier: 0x526e236e
 
 ```
 
-If you are worried about unintentional damage of important data on the primary computer, consider using an isolated environment such as a virtual environment (VirtualBox, VMWare, QEMU, etc...) with direct connected disk drives to it or a single computer only with a storage disk(s) that need to be wiped booted from a [Live Media](/index.php/Archiso "Archiso")(USB, CD, PXE, etc...) or use a script to [prevent wiping mounted partitions by typo](/index.php/Securely_wipe_disk/Tips_and_tricks#Prevent_wiping_mounted_partitions "Securely wipe disk/Tips and tricks").
+If you are worried about unintentional damage of important data on the primary computer, consider using an isolated environment such as a virtual environment (VirtualBox, VMWare, QEMU, etc...) with direct connected disk drives to it or a single computer only with a storage disk(s) that need to be wiped booted from a [Live Media](/index.php/Archiso "Archiso") (USB, CD, PXE, etc...) or use a script to [prevent wiping mounted partitions by typo](/index.php/Securely_wipe_disk/Tips_and_tricks#Prevent_wiping_mounted_partitions "Securely wipe disk/Tips and tricks").
 
 ## Select a block size
 
@@ -164,11 +164,11 @@ If you have an [Advanced Format](/index.php/Advanced_Format "Advanced Format") h
 
 **Warning:** These methods show the block size the drive reports to the kernel. However, many Advanced Format drives incorrectly understate the physical block size as 512.
 
-**Tip:** This script helps to calculate parameters to wipe a device/partition with dd [genwipe.sh](https://aur.archlinux.org/packages/genwipe.sh/), e.g.`genwipe.sh /dev/sd"XY"`.
+**Tip:** The script [genwipe.sh](https://aur.archlinux.org/packages/genwipe.sh/) helps to calculate parameters to wipe a device/partition with *dd*, e.g.`genwipe.sh /dev/sd"XY"`.
 
 ### Calculate blocks to wipe manually
 
-In the following the determination of the data area to wipe is done in an example.
+In the following, the determination of the data area to wipe is done in an example.
 
 A block storage devices contains sectors and a size of a single sector that can be used to calculate the whole size of device in bytes. You can do it by multiplying sectors with size of the sector.
 
@@ -179,37 +179,24 @@ As an example we use the parameters with the *dd* command to wipe a partition:
 
 ```
 
-Here you will see only a part of output of `fdisk -l /dev/sdX` with root, showing the example partition information:
+Here, to illustrate with a practical example, we will show the output of the *fdisk* command on the partition `/dev/sd"X"`:
 
+ `# fdisk -l /dev/sdX` 
 ```
+Disk /dev/sd"X": 1.8 TiB, **2000398934016** bytes, **3907029168** sectors
+Units: sectors of 1 * **512** = 512 bytes
+Sector size (logical/physical): 512 bytes / **4096** bytes
+...
 Device     Boot      Start        End         Sectors     Size  Id Type
 /dev/sd"XA"            2048         3839711231  3839709184  1,8T  83 Linux
 /dev/sd"XB"            3839711232   3907029167  67317936    32,1G  5 Extended
-
 ```
 
-The first line of the *fdisk* output shows the disk size in bytes and logical sectors:
-
-```
-Disk /dev/sd"X": 1,8 TiB, 2000398934016 bytes, 3907029168 sectors
-
-```
-
-To calculate size of a single logical sector use `echo $((2000398934016 / 3907029168))` or use data from the second line of *fdisk* output:
-
-```
-Units: sectors of 1 * 512 = 512 bytes
-
-```
-
-To calculate physical sectors that will make it work faster we can use the third line:
-
-```
-Sector size (logical/physical): 512 bytes / 4096 bytes
-
-```
-
-To get disk size in the physical sectors you will need the known disk size in bytes divided with size of a single physical sector `echo $((2000398934016 / 4096))`, you can get size of the storage device or partition on it even with the `blockdev --getsize64 /dev/sd"XY"` command.
+*   The first line of the *fdisk* output shows the disk size in bytes and in logical sectors.
+*   The size in bytes of the storage device or of the partition can also be obtained with the command `blockdev --getsize64 /dev/sd"XY"`.
+*   The second line of the *fdisk* output shows the size of single logical sector; the logical sector size can also be derived from the number of bytes divided by the number of logical sectors, here use: `echo $((2000398934016 / 3907029168))`.
+*   To know the physical sector size in bytes (that will make it work faster), we can use the third line.
+*   To get the disk size in physical sectors, one can divide the disk size in bytes by the size of a single physical sector, here `echo $((2000398934016 / 4096))`,
 
 **Note:**
 
@@ -333,7 +320,7 @@ To show speed and time you can use [pv](https://www.archlinux.org/packages/?name
 
 ### dd
 
-See also [Core utilities#Essentials](/index.php/Core_utilities#Essentials "Core utilities").
+See also [dd](/index.php/Dd "Dd") and [Securely wipe disk/Tips and tricks#Wipe a single file](/index.php/Securely_wipe_disk/Tips_and_tricks#Wipe_a_single_file "Securely wipe disk/Tips and tricks").
 
 **Warning:** There is no confirmation regarding the sanity of this command so **repeatedly check** that the correct drive or partition has been targeted. Make certain that the `of=...` option points to the target drive and not to a system disk.
 

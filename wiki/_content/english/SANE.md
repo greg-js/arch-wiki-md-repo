@@ -51,7 +51,7 @@ If that fails, run the command again as root to check for permission problems. I
 Now you can see if it actually works
 
 ```
-$ scanimage --format=png > test.png
+$ scanimage --format=png --output-file test.png --progress
 
 ```
 
@@ -67,7 +67,7 @@ device `pixma:04A91749_247936' is a CANON Canon PIXMA MG5200 multi-function peri
 Then you would need to run
 
 ```
-$ scanimage --device "pixma:04A91749_247936" --format=tiff > test.tiff
+$ scanimage --device "pixma:04A91749_247936" --format=tiff --output-file test.tiff --progress
 
 ```
 
@@ -93,8 +93,8 @@ Firstly you need to put the firmware someplace safe, it is recommended to put it
 Then you need to tell sane where the firmware is:
 
 *   Find the name of the backend for your scanner from the [sane supported devices list](http://www.sane-project.org/sane-supported-devices.html).
-*   Open the file `/etc/sane.d/*<backend-name>*.conf`.
-*   Make sure the firmware entry is uncommented and let the file-path point to where you put the firmware file for your scanner. Be sure that members of the group `scanner` can access the `/etc/sane.d/*<backend-name>*.conf` file.
+*   Open the file `/etc/sane.d/*backend-name*.conf`.
+*   Make sure the firmware entry is uncommented and let the file-path point to where you put the firmware file for your scanner. Be sure that members of the group `scanner` can access the `/etc/sane.d/*backend-name*.conf` file.
 
 If the backend of your scanner is not part of the sane package (such as `hpaio.conf` which is part of [hplip](https://www.archlinux.org/packages/?name=hplip)), you need to uncomment the relevant entry in `/etc/sane.d/dll.d` or in `/etc/sane.d/dll.conf`.
 
@@ -246,7 +246,7 @@ Your [webcam](/index.php/Webcam "Webcam") might also be listed as scanning devic
 
 ### Device busy
 
-If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff > test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the `usblp` kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents `usblp` from loading to support scanning, not needed by xsane and related tools, might also [conflict with CUPS](/index.php/CUPS/Troubleshooting#Conflict_with_usblp "CUPS/Troubleshooting")). Reboot to finish. [[4]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
+If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff --output-file test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the `usblp` kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents `usblp` from loading to support scanning, not needed by xsane and related tools, might also [conflict with CUPS](/index.php/CUPS/Troubleshooting#Conflict_with_usblp "CUPS/Troubleshooting")). Reboot to finish. [[4]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
 
 ### Permission problem
 

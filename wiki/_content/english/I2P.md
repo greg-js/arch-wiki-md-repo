@@ -10,12 +10,12 @@ The I2P homepage also provides a pre-compiled binary which includes command line
 
 ## Usage
 
-First, [start](/index.php/Start "Start") and optionally also enable the `i2prouter.service`.
+First, [start](/index.php/Start "Start") and optionally also enable the `i2pd.service`.
 
 This will launch the daemon under the system user `i2p`. Next, open your browser of choice and visit the I2P welcome page at
 
 ```
-127.0.0.1:7657/home
+127.0.0.1:7070
 
 ```
 

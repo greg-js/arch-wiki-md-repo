@@ -774,7 +774,7 @@ LABEL linux
 
 Or if you are using NBD, use the following append line:
 
- `append ro initrd=initramfs-linux.img ip=:::::eth0:dhcp nbd_host=10.0.0.1 nbd_name=arch root=/dev/nbd0` 
+ `append ro initrd=initramfs-linux.img ip=:::::eth0:dhcp nbd_host=10.0.0.1 nbd_port=10809 nbd_name=arch root=/dev/nbd0` 
 **Note:** You will need to change `nbd_host` and/or `nfsroot`, respectively, to match your network configuration (the address of the NFS/NBD server)
 
 PXELINUX uses the same configuration syntax as SYSLINUX; refer to the upstream documentation for more information.

@@ -62,6 +62,7 @@ It is a common practice to define the variables in the `PKGBUILD` in same order 
     *   [8.2 sha1sums](#sha1sums)
     *   [8.3 sha256sums](#sha256sums)
     *   [8.4 sha224sums, sha384sums, sha512sums](#sha224sums,_sha384sums,_sha512sums)
+    *   [8.5 b2sums](#b2sums)
 *   [9 See also](#See_also)
 
 ## Package name
@@ -378,6 +379,10 @@ An array of [SHA-2](https://en.wikipedia.org/wiki/SHA-2 "wikipedia:SHA-2") check
 ### sha224sums, sha384sums, sha512sums
 
 An array of SHA-2 checksums with digest sizes 224, 384, and 512 bits, respectively. These are less common alternatives to `sha256sums`.
+
+### b2sums
+
+An array of [BLAKE2](https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE2 checksums with digest size of 512 bits.
 
 ## See also
 

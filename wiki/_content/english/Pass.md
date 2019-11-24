@@ -76,7 +76,7 @@ $ pass archlinux.org/wiki/username
 
 ```
 
-Users of Xorg with [xclip](https://www.archlinux.org/packages/?name=xclip) installed can retrieve the password directly onto the clipboard temporarily (e.g., to paste into web forms). To do so, do the following (again with the same example hierarchical name from above):
+Users of Xorg with [xclip](https://www.archlinux.org/packages/?name=xclip) installed can retrieve the password directly onto the clipboard temporarily (e.g., to paste into web forms). In a Wayland session, [pass-git](https://aur.archlinux.org/packages/pass-git/) will use [wl-clipboard](https://www.archlinux.org/packages/?name=wl-clipboard) instead. To do so, do the following (again with the same example hierarchical name from above):
 
 ```
 $ pass -c archlinux.org/wiki/username

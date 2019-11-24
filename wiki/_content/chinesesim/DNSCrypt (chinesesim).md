@@ -38,11 +38,11 @@
 
 *   启用 `.service`
 
-**Note:** 必须指定 `listen_addresses` (即在配置文件中写好 `listen_addresses = ['127.0.0.1:53', '[::1]:53']`)
+**注意:** 必须指定 `listen_addresses` (即在配置文件中写好 `listen_addresses = ['127.0.0.1:53', '[::1]:53']`)
 
 *   启用 `.socket`
 
-**Note:** 必须留空 `listen_addresses` (即 `listen_addresses = [ ]`)，systemd 会自己配置好 socket
+**注意:** 必须留空 `listen_addresses` (即 `listen_addresses = [ ]`)，systemd 会自己配置好 socket
 
 ### 选择解析服务器
 

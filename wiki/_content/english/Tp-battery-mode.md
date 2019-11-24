@@ -1,6 +1,10 @@
 tp-battery-mode is a module to easily switch your Thinkpad's battery charging mode to prolong battery lifetime using [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) from the [AUR](/index.php/AUR "AUR").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Features](#Features)

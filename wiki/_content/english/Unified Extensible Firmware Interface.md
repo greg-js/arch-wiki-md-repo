@@ -52,6 +52,7 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
     *   [9.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
     *   [9.4 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
     *   [9.5 System boots to EFI shell after hardware change or starting other operating system](#System_boots_to_EFI_shell_after_hardware_change_or_starting_other_operating_system)
+    *   [9.6 Boot entries created with efibootmgr fail to show up in UEFI](#Boot_entries_created_with_efibootmgr_fail_to_show_up_in_UEFI)
 *   [10 See also](#See_also)
 
 ## UEFI versions
@@ -591,6 +592,27 @@ To do this with GRUB's `grub-install`, use the `--removable` flag. For example (
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB --removable
+
+```
+
+### Boot entries created with efibootmgr fail to show up in UEFI
+
+*efibootmgr* can fail to detect EDD 3.0 and as a result create unusable boot entries in NVRAM. See [efibootmgr issue 86](https://github.com/rhboot/efibootmgr/issues/86) for the details.
+
+To work around this, when creating boot entries manually, add the `-e 3` option to the *efibootmgr* command. E.g.
+
+```
+# efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager" --verbose **-e 3**
+
+```
+
+To fix boot loader installers, like `grub-install` and `refind-install`, create a wrapper script `/usr/local/bin/efibootmgr` and make it [executable](/index.php/Executable "Executable"):
+
+ `/usr/local/bin/efibootmgr` 
+```
+#!/bin/sh
+
+exec /usr/bin/efibootmgr -e 3 "$@"
 
 ```
 

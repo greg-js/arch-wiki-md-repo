@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Pacman/Tips and tricks (Português)#Desempenho](/index.php/Pacman/Tips_and_tricks_(Portugu%C3%AAs)#Desempenho "Pacman/Tips and tricks (Português)")
+*   [Pacman (Português)/Tips and tricks (Português)#Desempenho](/index.php/Pacman_(Portugu%C3%AAs)/Tips_and_tricks_(Portugu%C3%AAs)#Desempenho "Pacman (Português)/Tips and tricks (Português)")

@@ -1,19 +1,23 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Mejorar la velocidad de acceso a la base de datos](#Mejorar_la_velocidad_de_acceso_a_la_base_de_datos)
 *   [2 Mejorar la velocidad de las descargas](#Mejorar_la_velocidad_de_las_descargas)
     *   [2.1 Usar Powerpill](#Usar_Powerpill)
-    *   [2.2 Usar powerpill-light (en desuso)](#Usar_powerpill-light_.28en_desuso.29)
+    *   [2.2 Usar powerpill-light (en desuso)](#Usar_powerpill-light_(en_desuso))
     *   [2.3 Usar wget](#Usar_wget)
     *   [2.4 Usar aria2](#Usar_aria2)
-        *   [2.4.1 Instalación](#Instalaci.C3.B3n)
-        *   [2.4.2 Configuración](#Configuraci.C3.B3n)
+        *   [2.4.1 Instalación](#Instalación)
+        *   [2.4.2 Configuración](#Configuración)
         *   [2.4.3 Detalles de las opciones](#Detalles_de_las_opciones)
         *   [2.4.4 Notas adicionales](#Notas_adicionales)
-    *   [2.5 Script para el mirror pacget (aria2)](#Script_para_el_mirror_pacget_.28aria2.29)
+    *   [2.5 Script para el mirror pacget (aria2)](#Script_para_el_mirror_pacget_(aria2))
     *   [2.6 Utilizar otras aplicaciones](#Utilizar_otras_aplicaciones)
-*   [3 Seleccionar el mirror más rápido](#Seleccionar_el_mirror_m.C3.A1s_r.C3.A1pido)
-*   [4 Compartir paquetes a través de una red LAN](#Compartir_paquetes_a_trav.C3.A9s_de_una_red_LAN)
+*   [3 Seleccionar el mirror más rápido](#Seleccionar_el_mirror_más_rápido)
+*   [4 Compartir paquetes a través de una red LAN](#Compartir_paquetes_a_través_de_una_red_LAN)
 
 ## Mejorar la velocidad de acceso a la base de datos
 
@@ -61,7 +65,7 @@ Esta opción es muy útil si necesita configuraciones más avanzadas para el pro
 Para usar `wget`, primero instálelo con `pacman -S wget` y, luego, modifique el archivo `/etc/pacman.conf`, para agregar la siguiente línea a la sección `[options]`:
 
 ```
-XferCommand = /usr/bin/wget -c --passive-ftp -c %u
+XferCommand = /usr/bin/wget -c --passive-ftp -c %u
 
 ```
 
@@ -86,7 +90,7 @@ Descargue e instale [aria2](https://www.archlinux.org/packages/?name=aria2) y su
 
 Modifique el archivo `/etc/pacman.conf` agregando la siguiente línea a la sección `[options]`:
 
- `XferCommand = /usr/bin/aria2c --allow-overwrite=true -c --file-allocation=none --log-level=error -m2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 -t5 -d / -o %o %u` 
+ `XferCommand = /usr/bin/aria2c --allow-overwrite=true -c --file-allocation=none --log-level=error -m2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 -t5 -d / -o %o %u` 
 
 #### Detalles de las opciones
 
@@ -272,7 +276,7 @@ La orden anterior hace que el script sea ejecutable.
 En la sección [options], del archivo /etc/pacman.conf, añada lo siguiente:
 
 ```
-XferCommand = exec /usr/bin/pacget %u %o
+XferCommand = exec /usr/bin/pacget %u %o
 
 ```
 
@@ -282,9 +286,9 @@ XferCommand = exec /usr/bin/pacget %u %o
 
 Existen otras aplicaciones para realizar las descargas, que se pueden utilizar con Pacman. Vienen presentadas a continuación, con sus correspondientes ajustes en XferCommand:
 
-*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
-*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
-*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
+*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
+*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
 ## Seleccionar el mirror más rápido
 

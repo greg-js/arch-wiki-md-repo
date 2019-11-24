@@ -11,7 +11,11 @@
 | Card Reader | Modify |
 | System info | Not tested |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 System Settings](#System_Settings)
 *   [2 System Setup](#System_Setup)
@@ -21,7 +25,7 @@
         *   [2.2.2 Video Performance](#Video_Performance)
         *   [2.2.3 Boot time errors](#Boot_time_errors)
     *   [2.3 Bluetooth](#Bluetooth)
-    *   [2.4 Touchpad and Keyboard](#Touchpad_and_Keyboard)
+    *   [2.4 Touchpad and keyboard](#Touchpad_and_keyboard)
         *   [2.4.1 Keyboard is not working](#Keyboard_is_not_working)
     *   [2.5 Card Reader](#Card_Reader)
 
@@ -56,38 +60,38 @@ lspci
 
 ## Hangs on boot
 
-Sometimes when boot the laptop with the default kernel it would hang at uevent detection, to prevent this from happening add kernel boot param nox2apic edit /etc/default/grub
+Sometimes when booting the laptop with the default kernel it would hang at uevent detection. To prevent this from happening, append the following to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="nox2apic"
+nox2apic
 
 ```
 
 ## Graphics
 
-Dell XPS 15z has two graphics card installed, Intel integrated graphics card and Nvidia 525m card. Nvidia card is using [Optimus](/index.php/Optimus "Optimus") technology.
+Dell XPS 15z has two graphics processors installed, Intel integrated graphics and NVIDIA GeForce GT 525M. The NVIDIA card is using [Optimus](/index.php/Optimus "Optimus") technology.
 
 See [Intel](/index.php/Intel "Intel") for details on using the Intel GPU.
 
 ### Using Bumblebee
 
-Another way, which allows to use Optimus technology is via [Bumblebee](/index.php/Bumblebee "Bumblebee").
+Another way, which allows to use Optimus technology is [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
 ### Video Performance
 
 Using the Intel card without any modifications can result in poor video performance. A quick fix is to edit boot options of your [boot loader](/index.php/Boot_loader "Boot loader") and append the following to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
-# i915.semaphores=1
+i915.semaphores=1
 
 ```
 
 ### Boot time errors
 
-If you encounter boottime errors with intel, add `i915` and `intel_agp` modules to the `MODULES` section in `/etc/mkinitcpio.conf`:
+If you encounter boot time errors with Intel graphics, add the `i915` and `intel_agp` modules to `MODULES` in `/etc/mkinitcpio.conf`:
 
 ```
-# MODULES="intel_agp i915"
+MODULES=(intel_agp i915)
 
 ```
 
@@ -102,16 +106,16 @@ Then regenerate the initramfs:
 
 See [Bluetooth](/index.php/Bluetooth "Bluetooth").
 
-## Touchpad and Keyboard
+## Touchpad and keyboard
 
-Touchpad is fully supported in kernel 3.9 or later. Make sure to install xf86-input-synaptics as well as a program such as synaptiks so that you can customize all of the features.
+The touchpad is fully supported in kernels 3.9 and later. Make sure to install `xf86-input-synaptics` as well as a program such as synaptiks so that you can customize all of the features.
 
 ### Keyboard is not working
 
-In case your keyboard is not working after installing Arch, or after upgrading older installation add this to your [kernel line](/index.php/Kernel_line "Kernel line"):
+In case your keyboard is not working after installing Arch, or after upgrading older installation append the following to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
-# acpi=noirq
+acpi=noirq
 
 ```
 
@@ -126,4 +130,4 @@ To make the card reader function enter the following command:
 
 ```
 
-This will allow it to auto mount cards until the next reboot
+This will allow it to auto mount cards until the next reboot.

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Booting from Arch Linux ISO](#Booting_from_Arch_Linux_ISO)
 *   [2 Configuration](#Configuration)
@@ -70,38 +74,38 @@ libva info: va_openDriver() returns 0
 vainfo: VA-API version: 1.1 (libva 2.1.0)
 vainfo: Driver version: Intel i965 driver for Intel(R) Kaby Lake - 2.1.0
 vainfo: Supported profile and entrypoints
-      VAProfileMPEG2Simple            : VAEntrypointVLD
-      VAProfileMPEG2Simple            : VAEntrypointEncSlice
-      VAProfileMPEG2Main              : VAEntrypointVLD
-      VAProfileMPEG2Main              : VAEntrypointEncSlice
+      VAProfileMPEG2Simple            : VAEntrypointVLD
+      VAProfileMPEG2Simple            : VAEntrypointEncSlice
+      VAProfileMPEG2Main              : VAEntrypointVLD
+      VAProfileMPEG2Main              : VAEntrypointEncSlice
       VAProfileH264ConstrainedBaseline: VAEntrypointVLD
       VAProfileH264ConstrainedBaseline: VAEntrypointEncSlice
       VAProfileH264ConstrainedBaseline: VAEntrypointEncSliceLP
-      VAProfileH264Main               : VAEntrypointVLD
-      VAProfileH264Main               : VAEntrypointEncSlice
-      VAProfileH264Main               : VAEntrypointEncSliceLP
-      VAProfileH264High               : VAEntrypointVLD
-      VAProfileH264High               : VAEntrypointEncSlice
-      VAProfileH264High               : VAEntrypointEncSliceLP
-      VAProfileH264MultiviewHigh      : VAEntrypointVLD
-      VAProfileH264MultiviewHigh      : VAEntrypointEncSlice
-      VAProfileH264StereoHigh         : VAEntrypointVLD
-      VAProfileH264StereoHigh         : VAEntrypointEncSlice
-      VAProfileVC1Simple              : VAEntrypointVLD
-      VAProfileVC1Main                : VAEntrypointVLD
-      VAProfileVC1Advanced            : VAEntrypointVLD
-      VAProfileNone                   : VAEntrypointVideoProc
-      VAProfileJPEGBaseline           : VAEntrypointVLD
-      VAProfileJPEGBaseline           : VAEntrypointEncPicture
-      VAProfileVP8Version0_3          : VAEntrypointVLD
-      VAProfileVP8Version0_3          : VAEntrypointEncSlice
-      VAProfileHEVCMain               : VAEntrypointVLD
-      VAProfileHEVCMain               : VAEntrypointEncSlice
-      VAProfileHEVCMain10             : VAEntrypointVLD
-      VAProfileHEVCMain10             : VAEntrypointEncSlice
-      VAProfileVP9Profile0            : VAEntrypointVLD
-      VAProfileVP9Profile0            : VAEntrypointEncSlice
-      VAProfileVP9Profile2            : VAEntrypointVLD
+      VAProfileH264Main               : VAEntrypointVLD
+      VAProfileH264Main               : VAEntrypointEncSlice
+      VAProfileH264Main               : VAEntrypointEncSliceLP
+      VAProfileH264High               : VAEntrypointVLD
+      VAProfileH264High               : VAEntrypointEncSlice
+      VAProfileH264High               : VAEntrypointEncSliceLP
+      VAProfileH264MultiviewHigh      : VAEntrypointVLD
+      VAProfileH264MultiviewHigh      : VAEntrypointEncSlice
+      VAProfileH264StereoHigh         : VAEntrypointVLD
+      VAProfileH264StereoHigh         : VAEntrypointEncSlice
+      VAProfileVC1Simple              : VAEntrypointVLD
+      VAProfileVC1Main                : VAEntrypointVLD
+      VAProfileVC1Advanced            : VAEntrypointVLD
+      VAProfileNone                   : VAEntrypointVideoProc
+      VAProfileJPEGBaseline           : VAEntrypointVLD
+      VAProfileJPEGBaseline           : VAEntrypointEncPicture
+      VAProfileVP8Version0_3          : VAEntrypointVLD
+      VAProfileVP8Version0_3          : VAEntrypointEncSlice
+      VAProfileHEVCMain               : VAEntrypointVLD
+      VAProfileHEVCMain               : VAEntrypointEncSlice
+      VAProfileHEVCMain10             : VAEntrypointVLD
+      VAProfileHEVCMain10             : VAEntrypointEncSlice
+      VAProfileVP9Profile0            : VAEntrypointVLD
+      VAProfileVP9Profile0            : VAEntrypointEncSlice
+      VAProfileVP9Profile2            : VAEntrypointVLD
 ```
 
 Additionally you should see that `i965` is used for the DRI driver and `va_gl` is used for the VDPAU driver:
@@ -184,7 +188,7 @@ Feb 17 09:58:29 kernel: acpi MSFT0101:00: platform device creation failed: -16
 
 ```
 
-These are related to the Trusted Platform Module (TPM), which can be safely disabled in the UEFI settings if you do not use TPM.
+These are related to the [Trusted Platform Module](/index.php/Trusted_Platform_Module "Trusted Platform Module") (TPM), which can be safely disabled in the UEFI settings if you do not use TPM.
 
 ### Not a Dell system error
 

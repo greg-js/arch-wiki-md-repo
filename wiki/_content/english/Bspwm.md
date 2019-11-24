@@ -264,7 +264,7 @@ Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc f
 
 ### Performance issues using fish
 
-[sxhkd](/index.php/Sxhkd "Sxhkd") uses the shell set in the SHELL environment variable in order to execute commands. Due to [fish](/index.php/Fish "Fish")'s long initialisation time all sxhkd commands can take much longer to execute than with other shells. To fix this without changing your default SHELL you can make tell sxhkd explicitly to use bash, or another faster shell to execute commands (for example, sh):
+[sxhkd](/index.php/Sxhkd "Sxhkd") uses the shell set in the SHELL environment variable in order to execute commands. [fish](/index.php/Fish "Fish") can have long intialisation time due to large or improperly configured config files, thus all sxhkd commands can take much longer to execute than with other shells. To fix this without changing your default SHELL you can make tell sxhkd explicitly to use bash, or another faster shell to execute commands (for example, sh):
 
 ```
 $ set -U SXHKD_SHELL sh

@@ -207,7 +207,7 @@ Check that php, apache and mysql uses UTF-8\. Otherwise you may face strange bug
 
 The VisualEditor MediaWiki extension provides a rich-text editor for MediaWiki. Follow [mw:Extension:VisualEditor](https://www.mediawiki.org/wiki/Extension:VisualEditor "mw:Extension:VisualEditor") to install it.
 
-You will also need the [Parsoid](https://www.mediawiki.org/wiki/Parsoid "mw:Parsoid") Node.js backend, which is available from the [AUR](/index.php/AUR "AUR") as [parsoid-git](https://aur.archlinux.org/packages/parsoid-git/).
+You will also need the [Parsoid](https://www.mediawiki.org/wiki/Parsoid "mw:Parsoid") Node.js backend, which is available in [parsoid-git](https://aur.archlinux.org/packages/parsoid-git/).
 
 Adjust the path to MediaWiki in `/usr/share/webapps/parsoid/api/localsettings.js`:
 

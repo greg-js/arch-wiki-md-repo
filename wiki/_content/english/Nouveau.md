@@ -51,6 +51,7 @@ The Nouveau kernel module should load automatically on system boot. If it does n
 *   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since Nouveau requires kernel mode-setting.
 *   Also, check that you do not have Nouveau disabled using any modprobe blacklisting technique within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
 *   If all above still fails to load nouveau check dmesg for an opcode error. Add `nouveau.config=NvBios=PRAMIN` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent module unloading.[[1]](https://nouveau.freedesktop.org/wiki/TroubleShooting/#index10h3)
+*   Check if `/etc/X11/xorg.conf` exists and is referencing `nvidia` driver. It's probably a good idea to rename the file.
 
 ### Enable early KMS
 

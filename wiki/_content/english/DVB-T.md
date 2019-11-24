@@ -16,11 +16,12 @@ Related articles
 *   [2 Utilities](#Utilities)
     *   [2.1 Scanning](#Scanning)
 *   [3 Clients](#Clients)
-    *   [3.1 VLC](#VLC)
-    *   [3.2 MPlayer / mpv](#MPlayer_/_mpv)
-        *   [3.2.1 Channel selector](#Channel_selector)
-    *   [3.3 ffmpeg](#ffmpeg)
-    *   [3.4 dvbjet](#dvbjet)
+    *   [3.1 Kaffeine](#Kaffeine)
+    *   [3.2 VLC](#VLC)
+    *   [3.3 MPlayer / mpv](#MPlayer_/_mpv)
+        *   [3.3.1 Channel selector](#Channel_selector)
+    *   [3.4 ffmpeg](#ffmpeg)
+    *   [3.5 dvbjet](#dvbjet)
 *   [4 Troubleshooting](#Troubleshooting)
 
 ## Driver
@@ -93,6 +94,10 @@ When `w_scan` fails to find all expected channels you could try `w_scan2`. It is
 ## Clients
 
 See also [how to disable screensaver when playing video/TV](/index.php/XScreenSaver "XScreenSaver") by using configuration files or use `xset` command before and after player starts to enable/disable it. If you have installed [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) then you will need to use `xscreensaver-command` instead of `xset` to activate/deactivate screensaver from command line.
+
+### Kaffeine
+
+DVB-T works out-of-the box in [Kaffeine](/index.php/Kaffeine "Kaffeine"), including management of multpile DVB-T devices, channel tuning, channel selection, EPG and recording. No external playlist generation is needed. Multiple DVB-T devices can be used at once (e.g. for recording from a multiplex while watching another one). Many single-tuner DVB-T devices can even provice two different TV channels, as long as they share the same multiplex; this feature is also readily available in Kaffeine.
 
 ### VLC
 

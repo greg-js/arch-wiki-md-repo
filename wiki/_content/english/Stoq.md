@@ -122,4 +122,4 @@ The stoqserver communicates with the computer via a serial connection or a seria
 
 ## Additional documentation
 
-Therefore, reading the [wiki](https://wiki.stoq.com.br/index.php/Getting_started) and the [manual](https://doc.stoq.com.br/manual/latest/) of Stoq (manual only in Portuguese).
+Therefore, reading the [wiki](https://wiki.stoq.com.br/index.php/Getting_started), [support center](https://async.freshdesk.com/support/home) and the [manual](https://doc.stoq.com.br/manual/latest/) of Stoq (support center and manual only in Portuguese).

@@ -6,6 +6,7 @@ Related articles
 *   [Xrandr](/index.php/Xrandr "Xrandr")
 *   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
 *   [Vulkan](/index.php/Vulkan "Vulkan")
+*   [GPGPU](/index.php/GPGPU "GPGPU")
 
 Since Intel provides and supports open source drivers, Intel graphics are essentially plug-and-play.
 

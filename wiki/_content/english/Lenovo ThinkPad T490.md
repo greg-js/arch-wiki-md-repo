@@ -15,12 +15,11 @@ Related articles
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | partially |
 | [Mobile internet](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | not tested |
 | Fingerprint Sensor | No² |
-| MicroSD Reader | No³ |
+| MicroSD Reader | Yes |
 | 
 
 1.  Working, but the iwlwifi driver shows errors in the kernel log. [This is already fixed.](https://bugzilla.kernel.org/show_bug.cgi?id=203593)
 2.  No working Linux driver so far for Synaptics 06cb:009a. See [here](https://github.com/nmikhailov/Validity90) and [here](https://forums.lenovo.com/t5/Other-Linux-Discussions/Linux-on-T495/m-p/4474320/highlight/true#M13440).
-3.  The MicroSD Reader will be supported in kernel 5.4 and works under the current AUR linux-mainline kernel
 
  |
 
@@ -164,16 +163,7 @@ Check the [Lenovo Support Website](https://support.lenovo.com/) for the newest B
 
 ### MicroSD card reader issue
 
-The microSD card reader does not work with the default kernel. Upon inserting a card, the Linux kernel version 5.3.4 continuously produces the following output and the card does not mount.
-
-```
-   mmc0: 1.8V regulator output did not became stable
-   mmc0: Skipping voltage switch
-   mmc0: Problem switching card into high-speed mode!
-
-```
-
-As of October 2019, the mainline kernel build includes a patchset that fixes this issue. Users can either wit for 5.4 to be released in late November or [install the mainline kernel package from AUR](https://aur.archlinux.org/packages/linux-mainline/) (bootloader will also have to be configured to use this kernel by default).
+The MicroSD card reader works with the arch kernel 5.3.11-arch1-1\. There have been issues [with previous kernel](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_T490&oldid=588258#MicroSD_card_reader_issue) versions.
 
 ### Bluetooth
 

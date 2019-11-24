@@ -484,7 +484,7 @@ $ broadwayd --port $port_number --address $address $display_number
 
 ### Backend do Wayland
 
-O backend GDK do [Wayland](/index.php/Wayland "Wayland") pode ser ativado definindo a variável de ambiente `GDK_BACKEND=wayland`.
+O backend GDK do [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") pode ser ativado definindo a variável de ambiente `GDK_BACKEND=wayland`.
 
 **Dica:** Para desabilitar as decorações de janela do GTK no Wayland, [instale](/index.php/Instale "Instale") o pacote [gtk3-optional-csd](https://aur.archlinux.org/packages/gtk3-optional-csd/) e defina a variável de ambiente `GTK_CSD=0`.
 

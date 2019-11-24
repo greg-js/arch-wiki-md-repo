@@ -7,7 +7,11 @@ Related articles
 
 **Warning:** This was only tested with the Pinnacle PCTV Sat, and may not work or will not help you with different cards.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Load required kernel modules](#Load_required_kernel_modules)
     *   [1.1 Pinnacle PCTV Sat](#Pinnacle_PCTV_Sat)
@@ -18,14 +22,14 @@ Related articles
 *   [4 Scanning channels](#Scanning_channels)
     *   [4.1 Using scan](#Using_scan)
     *   [4.2 Using w_scan](#Using_w_scan)
-        *   [4.2.1 DiSEqC switch scanning (AKA multiple satellite LNB)](#DiSEqC_switch_scanning_.28AKA_multiple_satellite_LNB.29)
+        *   [4.2.1 DiSEqC switch scanning (AKA multiple satellite LNB)](#DiSEqC_switch_scanning_(AKA_multiple_satellite_LNB))
 *   [5 Switching channels](#Switching_channels)
 *   [6 Software](#Software)
     *   [6.1 Kaffeine](#Kaffeine)
         *   [6.1.1 Importing channel list](#Importing_channel_list)
     *   [6.2 Me-tv](#Me-tv)
     *   [6.3 Xine](#Xine)
-*   [7 Additional Resources](#Additional_Resources)
+*   [7 See also](#See_also)
 
 ## Load required kernel modules
 
@@ -49,6 +53,7 @@ And make them load at boot by creating the following file:
 ```
 dvb-bt8xx
 cx24110
+
 ```
 
 ### Additional modules: S2-liplianin
@@ -64,9 +69,7 @@ $ hg clone [https://bitbucket.org/liplianin/szap-s2](https://bitbucket.org/lipli
 
 ```
 
-If you do not have installed mercurial, you will get an error message: `hg: command not found`
-
-You can either download the package [mercurial](https://www.archlinux.org/packages/?name=mercurial) and try the above command again or download the source code from [here](https://bitbucket.org/liplianin/szap-s2/downloads/) and extract it manually.
+To clone the repository will need to [install](/index.php/Install "Install") [mercurial](https://www.archlinux.org/packages/?name=mercurial) or alternatively you can download the source code from [https://bitbucket.org/liplianin/szap-s2/downloads/](https://bitbucket.org/liplianin/szap-s2/downloads/) and extract it manually.
 
 After obtaining the code, change the working directory to the extracted folder:
 
@@ -119,7 +122,7 @@ To use your DVB-S card as user add him to the `video` group:
 
 ## Scanning channels
 
-**Note:** You can skip this part if you use Kaffeine.
+**Note:** You can skip this part if you use [Kaffeine](/index.php/Kaffeine "Kaffeine").
 
 Most applications like szap or xine are needing a channel list created by **scan**, which is part of **dvb-utils**. You will find the dvb-utils package under the name [linuxtv-dvb-apps](https://aur.archlinux.org/packages/linuxtv-dvb-apps/).
 
@@ -134,9 +137,10 @@ $ scan -x0 -t1 -s1 /usr/share/dvb/dvb-s/[your satellite] | tee channels.conf
 
 ```
 
-**Note:** The channel file does not have to be called `channels.conf` but it is more convenient as you will see later.
+**Note:**
 
-**Note:** Depending on your satellite dish setup you may have to try other arguments.
+*   The channel file does not have to be called `channels.conf` but it is more convenient as you will see later.
+*   Depending on your satellite dish setup you may have to try other arguments.
 
 ### Using w_scan
 
@@ -224,13 +228,13 @@ $ mplayer "dvb://RTL Television"
 
 ```
 
-You can find all the channel names by running szap -q (assuming the channel list is also in ~/.szap/channels.conf).
+You can find all the channel names by running `szap -q` (assuming the channel list is also in `~/.szap/channels.conf`).
 
 ## Software
 
 ### Kaffeine
 
-Kaffeine is a really nice player; it supports EPG, time-shifting, and recording. Additionally Kaffeine has built-in channel-searching.
+[Kaffeine](/index.php/Kaffeine "Kaffeine") is a really nice player; it supports EPG, time-shifting, and recording. Additionally Kaffeine has built-in channel-searching.
 
 [Install](/index.php/Install "Install") it with the [kaffeine](https://www.archlinux.org/packages/?name=kaffeine) package.
 
@@ -261,7 +265,7 @@ $ xine dvb://[channel]
 
 or use the playlist editor in Xine
 
-## Additional Resources
+## See also
 
 *   TV Cards in general: [Ubuntuusers.de-Wiki](http://wiki.ubuntuusers.de/TV-Karten) (German)
 *   List of supported [DVB-S](https://www.linuxtv.org/wiki/index.php/DVB-S_Devices)/[DVB-S2](https://www.linuxtv.org/wiki/index.php/DVB-S2_Devices) devices

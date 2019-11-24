@@ -3,7 +3,7 @@
 *   [Mirrors (简体中文)](/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mirrors (简体中文)")
 *   [创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Pacman_tips](/index.php/Pacman_tips "Pacman tips") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-29，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman_tips&diff=0&oldid=487415)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-11-22，点击[这里](https://wiki.archlinux.org/index.php?title=Pacman%2FTips+and+tricks&diff=0&oldid=589555)可以查看翻译后英文页面的改动。
 
 Pacman 本身也是 bash 程序，所以有些通用优化请参考 [Core utilities](/index.php/Core_utilities "Core utilities") 和 [Bash](/index.php/Bash "Bash").
 
@@ -20,7 +20,7 @@ Pacman 本身也是 bash 程序，所以有些通用优化请参考 [Core utilit
         *   [1.2.2 按日期查询](#按日期查询)
         *   [1.2.3 查找不属于任何软件包的文件](#查找不属于任何软件包的文件)
     *   [1.3 删除孤立软件包](#删除孤立软件包)
-    *   [1.4 删除base软件包组以外的所有软件包](#删除base软件包组以外的所有软件包)
+    *   [1.4 删除必须的软件包以外的所有软件包](#删除必须的软件包以外的所有软件包)
     *   [1.5 仅显示正式安装的软件包](#仅显示正式安装的软件包)
 *   [2 安装和修复](#安装和修复)
     *   [2.1 从 CD/DVD/ISO 安装软件包](#从_CD/DVD/ISO_安装软件包)
@@ -55,6 +55,7 @@ Pacman 本身也是 bash 程序，所以有些通用优化请参考 [Core utilit
 要获取已经安装的软件包以及它们的版本：
 
 *   所有明确安装的软件包: `pacman -Qe`.
+*   列出 `*group*` [软件包组](/index.php/Package_group "Package group") 中的所有软件包: `pacman -Sg *group*`
 *   所有明确安装的，存在于数据库而且不是直接或可选依赖的软件包: `pacman -Qent`.
 *   所有外部软件包 (通常是手动下载安装，或者已经从数据库中删除): `pacman -Qm`.
 *   所有从数据库中安装的软件包: `pacman -Qn`.
@@ -70,7 +71,14 @@ Pacman 本身也是 bash 程序，所以有些通用优化请参考 [Core utilit
 
 #### 获取大小
 
-要按大小排序安装的软件包：
+用下面命令查看单个软件包的大小:
+
+```
+$ LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+
+```
+
+用下面命令按大小排序安装的软件包及其依赖的大小:
 
 *   安装 [expac](https://www.archlinux.org/packages/?name=expac) 并运行 `expac -H M '%m\t%n' | sort -h`.
 *   以 `-c` 参数执行 [pacgraph](https://www.archlinux.org/packages/?name=pacgraph).
@@ -153,34 +161,23 @@ $ pacman-disowned > non-db.txt
 
 **Note:** `-Qt` 仅显示真的孤立包，要包含可选依赖，请使用 `-Qtt` .
 
-### 删除base软件包组以外的所有软件包
+### 删除必须的软件包以外的所有软件包
 
-以下命令会保留base软件包组、删除其他所有软件包：
+先将明确安装的软件包改为依赖关系:
 
- `# pacman -Rs $(comm -23 <(pacman -Qeq|sort) <((for i in $(pacman -Qqg base); do pactree -ul $i; done)|sort -u|cut -d ' ' -f 1))` 
-
-来源：[这个帖子](https://bbs.archlinux.org/viewtopic.php?id=130176)
-
-注记：
-
-1.  `comm`命令需要已排序的输入，否则会得到诸如“comm: file 1 is not in sorted order”之类的错误信息。
-2.  `pactree`是生成软件包依赖树的工具，输出如下：
-
- `$ pactree -lu logrotate` 
 ```
-logrotate
-popt
-glibc
-linux-api-headers
-tzdata
-dcron cron
-bash
-readline
-ncurses
-gzip
+# pacman -D --asdeps $(pacman -Qqe)
+
 ```
 
-为了避免“dcron cron”（前者是软件包名，后者是该软件包提供的软件包名）这样的内容导致错误，用到了`cut -d ' ' -f 1`——只保留软件包名称。
+然后将需要保留的软件包设置为明确安装:
+
+```
+# pacman -D --asexplicit base linux linux-firmware
+
+```
+
+然后删除所有没有明确安装的软件包.
 
 ### 仅显示正式安装的软件包
 
@@ -548,7 +545,7 @@ Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下�
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
-*   **Pacmatic** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
+*   **Pacmatic** — *Pacman* wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 
 	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
 
@@ -564,6 +561,14 @@ Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下�
 
 	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
 
+*   **pkgtop** — Interactive package manager and resource monitor designed for the GNU/Linux.
+
+	[https://github.com/orhun/pkgtop](https://github.com/orhun/pkgtop) || [pkgtop-git](https://aur.archlinux.org/packages/pkgtop-git/)
+
+*   **[Powerpill](/index.php/Powerpill "Powerpill")** — Uses parallel and segmented downloading through [aria2](/index.php/Aria2 "Aria2") and [Reflector](/index.php/Reflector "Reflector") to try to speed up downloads for *pacman*.
+
+	[https://xyne.archlinux.ca/projects/powerpill/](https://xyne.archlinux.ca/projects/powerpill/) || [powerpill](https://aur.archlinux.org/packages/powerpill/)
+
 *   **repoctl** — Tool to help manage local repositories.
 
 	[https://github.com/cassava/repoctl](https://github.com/cassava/repoctl) || [repoctl](https://aur.archlinux.org/packages/repoctl/)
@@ -572,46 +577,38 @@ Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下�
 
 	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://www.archlinux.org/packages/?name=repose)
 
-*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
+*   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make *pacman* automatically use snapper to create pre/post snapshots like openSUSE's YaST.
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
+*   **vrms-arch** — A virtual Richard M. Stallman to tell you which non-free packages are installed.
+
+	[https://github.com/orospakr/vrms-arch](https://github.com/orospakr/vrms-arch) || [vrms-arch](https://aur.archlinux.org/packages/vrms-arch/)
+
 ### 图形前端
 
-**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
+**Warning:** PackageKit opens up system permissions by default, and is otherwise not recommended for general usage. See [FS#50459](https://bugs.archlinux.org/task/50459) and [FS#57943](https://bugs.archlinux.org/task/57943).
 
-*   **Arch-Update** — Update indicator for Gnome-Shell.
+*   **Apper** — Qt 5 application and package manager using PackageKit written in C++. Supports [AppStream metadata](https://www.freedesktop.org/wiki/Distributions/AppStream/).
 
-	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
+	[https://userbase.kde.org/Apper](https://userbase.kde.org/Apper) || [apper](https://www.archlinux.org/packages/?name=apper)
 
-*   **Arch-Update-Notifier** — Update indicator for KDE.
+*   **Discover** — Qt 5 application manager using PackageKit written in C++/QML. Supports [AppStream metadata](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") and [firmware updates](/index.php/Fwupd "Fwupd").
 
-	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
+	[https://userbase.kde.org/Discover](https://userbase.kde.org/Discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
-*   **Discover** — A collection of package management tools for KDE, using PackageKit.
+*   **GNOME PackageKit** — GTK 3 package manager using PackageKit written in C.
 
-	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
+	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **GNOME packagekit** — GTK based package management tool
-
-	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
-
-*   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
+*   **GNOME Software** — GTK 3 application manager using PackageKit written in C. Supports [AppStream metadata](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") and [firmware updates](/index.php/Fwupd "Fwupd").
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
-*   **kalu** — A small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
-
-	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
-
-*   **pamac** — A DBus daemon and Gtk3 frontend for libalpm written in Vala.
-
-	[https://github.com/manjaro/pamac/](https://github.com/manjaro/pamac/) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
-
-*   **pcurses** — Package management in a curses frontend
+*   **pcurses** — Curses TUI pacman wrapper written in C++.
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
 
-*   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
+*   **tkPacman** — Tk pacman wrapper written in Tcl.
 
-	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)
+	[https://sourceforge.net/projects/tkpacman](https://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)

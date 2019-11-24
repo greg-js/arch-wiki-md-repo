@@ -29,7 +29,8 @@ It is simple to configure but it can only start EFI executables such as the Linu
     *   [2.6 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Grml on ESP](#Grml_on_ESP)
+    *   [4.1 Choosing next boot](#Choosing_next_boot)
+    *   [4.2 Grml on ESP](#Grml_on_ESP)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Installing after booting in BIOS mode](#Installing_after_booting_in_BIOS_mode)
     *   [5.2 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
@@ -253,6 +254,24 @@ These hotkeys will, when pressed inside the menu or during bootup, directly boot
 *   `1-9` - number of entry
 
 ## Tips and tricks
+
+### Choosing next boot
+
+The boot manager is integrated with the systemctl command, allowing you to choose what option you want to boot after a reboot. For example, suppose you have built a custom kernel and created an entry file `*esp*/loader/entries/arch-custom.conf` to boot into it, you can just launch
+
+```
+$ systemctl reboot --boot-loader-entry=arch-custom
+
+```
+
+and your system will reboot into that entry maintaining the default option intact for subsequent boots. To see a list of possible entries pass the `--help` option.
+
+If you want to boot into the firmware of your motherboard directly, then you can use this command:
+
+```
+$ systemctl reboot --firmware-setup
+
+```
 
 ### Grml on ESP
 

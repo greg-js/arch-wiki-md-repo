@@ -35,6 +35,8 @@ This page is about the Dell XPS 15 9575, also known as the Dell XPS 15 2-in-1.
 *   [8 Fingerprint Reader](#Fingerprint_Reader)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Overheating](#Overheating)
+        *   [9.1.1 Disabling Turbo Boost](#Disabling_Turbo_Boost)
+        *   [9.1.2 Using smbios-thermal-ctl](#Using_smbios-thermal-ctl)
 
 ## Suspend
 
@@ -62,4 +64,26 @@ As of writing, the fingerprint reader isn't currently supported. There is a coll
 
 ### Overheating
 
-When using the GPU or CPU extensively, you may see overheating messages from dmesg. Disabling Intel Turbo Boost resolves this problem. This can be done in the BIOS, or by echoing `1` to `/sys/devices/system/cpu/intel_pstate/no_turbo`.
+When using the GPU and/or CPU extensively, you may see overheating messages from dmesg:
+
+```
+[ 4233.376972] mce: CPU3: Package temperature above threshold, cpu clock throttled (total events = 20006)
+[ 4233.376974] mce: CPU6: Package temperature above threshold, cpu clock throttled (total events = 20006)
+[ 4233.376975] mce: CPU2: Package temperature above threshold, cpu clock throttled (total events = 20006)
+[ 4233.376976] mce: CPU7: Package temperature above threshold, cpu clock throttled (total events = 20006)
+[ 4233.376977] mce: CPU5: Package temperature above threshold, cpu clock throttled (total events = 20006)
+[ 4233.376979] mce: CPU4: Package temperature above threshold, cpu clock throttled (total events = 20006)
+[ 4233.376980] mce: CPU0: Package temperature above threshold, cpu clock throttled (total events = 20006)
+[ 4233.376981] mce: CPU1: Package temperature above threshold, cpu clock throttled (total events = 20006)
+
+```
+
+It is important to mitigate overheating as it can damage your system and eventually lead to system failure. There are two solutions:
+
+#### Disabling Turbo Boost
+
+Disabling Intel Turbo Boost resolves this problem. This can be done in the BIOS, or temporarily by echoing `1` to `/sys/devices/system/cpu/intel_pstate/no_turbo`.
+
+#### Using `smbios-thermal-ctl`
+
+Alternatively, you can control thermal parameters using the SMBIOS interface. To do this, you must have `libsmbios` installed. You can then set the thermal mode to `cool-bottom` by running `sudo smbios-thermal-ctl --set-thermal-mode THERMAL_MODE`. If this doesn't lower temperatures enough, try `quiet`. You can also run `sudo smbios-thermal-ctl -i` to see all supported thermal modes. To see the current status, run `sudo smbios-thermal-ctl -g`.

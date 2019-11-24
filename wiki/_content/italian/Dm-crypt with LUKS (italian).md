@@ -11,16 +11,20 @@ Questo articolo si concentra su come configurare un sistema completamente critto
 
 Per maggiori dettagli sui paragoni tra dm-crypt+LUKS e gli altri metodi di crittografia, consultare [la tavola comparativa](/index.php/Disk_encryption#Comparison_table "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configurazione iniziale](#Configurazione_iniziale)
     *   [1.1 Panoramica e preparazione](#Panoramica_e_preparazione)
-    *   [1.2 Cancellazione sicura del/degli hard disk](#Cancellazione_sicura_del.2Fdegli_hard_disk)
-        *   [1.2.1 Usare un contenitore LUKS come generatore di numeri pseudo-casuali (alternativa)](#Usare_un_contenitore_LUKS_come_generatore_di_numeri_pseudo-casuali_.28alternativa.29)
-            *   [1.2.1.1 Cancellare lo spazio libero con un file criptato dopo l'installazione](#Cancellare_lo_spazio_libero_con_un_file_criptato_dopo_l.27installazione)
+    *   [1.2 Cancellazione sicura del/degli hard disk](#Cancellazione_sicura_del/degli_hard_disk)
+        *   [1.2.1 Usare un contenitore LUKS come generatore di numeri pseudo-casuali (alternativa)](#Usare_un_contenitore_LUKS_come_generatore_di_numeri_pseudo-casuali_(alternativa))
+            *   [1.2.1.1 Cancellare lo spazio libero con un file criptato dopo l'installazione](#Cancellare_lo_spazio_libero_con_un_file_criptato_dopo_l'installazione)
         *   [1.2.2 Cancellare i keyslot LUKS](#Cancellare_i_keyslot_LUKS)
         *   [1.2.3 Cancellare i LUKS header](#Cancellare_i_LUKS_header)
-        *   [1.2.4 Supporto per discard/TRIM per i dischi a stato solido (SSD)](#Supporto_per_discard.2FTRIM_per_i_dischi_a_stato_solido_.28SSD.29)
+        *   [1.2.4 Supporto per discard/TRIM per i dischi a stato solido (SSD)](#Supporto_per_discard/TRIM_per_i_dischi_a_stato_solido_(SSD))
     *   [1.3 Partizionamento](#Partizionamento)
         *   [1.3.1 Partizioni standard](#Partizioni_standard)
         *   [1.3.2 LVM: Logical Volume Manager](#LVM:_Logical_Volume_Manager)
@@ -31,7 +35,7 @@ Per maggiori dettagli sui paragoni tra dm-crypt+LUKS e gli altri metodi di critt
             *   [1.3.3.2 Sistemi con dischi multipli](#Sistemi_con_dischi_multipli)
 *   [2 Configurare LUKS](#Configurare_LUKS)
     *   [2.1 Mappare le partizioni fisiche con LUKS](#Mappare_le_partizioni_fisiche_con_LUKS)
-        *   [2.1.1 Usare LUKS per formattare partizioni con la parola d'ordine](#Usare_LUKS_per_formattare_partizioni_con_la_parola_d.27ordine)
+        *   [2.1.1 Usare LUKS per formattare partizioni con la parola d'ordine](#Usare_LUKS_per_formattare_partizioni_con_la_parola_d'ordine)
 
 ## Configurazione iniziale
 

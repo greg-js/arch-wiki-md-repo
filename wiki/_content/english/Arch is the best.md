@@ -135,7 +135,7 @@ pause
 
 	BIRL
 
-	Like ArnoldC, but for Bambam.
+	Like ArnoldC, but for Bambam[[1]](https://www.youtube.com/watch?v=3_qEE2i6h5Q).
 
 ```
 HORA DO SHOW

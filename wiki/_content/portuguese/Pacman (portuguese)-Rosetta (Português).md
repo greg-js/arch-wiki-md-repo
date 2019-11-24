@@ -25,21 +25,21 @@ Esta página usa uma tabela para exibir a correspondência dos comandos de [gere
 ## Operações básicas
 
 | Ação | Arch | Red Hat/Fedora | Debian/Ubuntu | SLES/openSUSE | Gentoo |
-| Install a package(s) by name | `pacman -S` | `dnf install` | `apt install` | `zypper install` or `zypper in` | `emerge [-a]` |
-| Remove a package(s) by name | `pacman -Rs` | `dnf remove` | `apt remove` | `zypper remove` or `zypper rm` | `emerge -vc` |
-| Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | `pacman -Ss` | `dnf search` | `apt search` | `zypper search` or `zypper se [-s]` | `emerge -S` |
-| Upgrade Packages - Install packages which have an older version already installed | `pacman -Syu` | `dnf upgrade` | `apt update` and then `apt upgrade` | `zypper update` or `zypper up` | `emerge -uDN @world` |
-| Upgrade Packages - Another form of the update command, which can perform more complex updates -- like distribution upgrades. When the usual update command will omit package updates, which include changes in dependencies, this command can perform those updates. | `pacman -Syu` | `dnf distro-sync` | `apt update` and then `apt dist-upgrade` | `zypper dup` | `emerge -uDN @world` |
-| Clean up all local caches. Options might limit what is actually cleaned. `autoclean` removes only unneeded, obsolete information. | `pacman -Sc` or `pacman -Scc` | `dnf clean all` | `apt autoclean` or `apt clean` | `zypper clean` | `eclean distfiles` |
-| Remove dependencies that are no longer needed, because e.g. the package which needed the dependencies was removed. | `pacman -Qdtq | pacman -Rs -` | `dnf autoremove` | `apt autoremove` | `zypper rm -u` | `emerge --depclean` |
-| Remove packages no longer included in any repositories. | `pacman -Qmq | pacman -Rs -` | `dnf repoquery --extras` | `aptitude purge '~o'` |
-| Mark a package previously installed as a dependency as explicitly required. | `pacman -D --asexplicit` | `dnf mark install` | `apt-mark manual` | `emerge --select` |
-| Install package(s) as dependency / without marking as explicitly required. | `pacman -S --asdeps` | `dnf install` and then `dnf mark remove` | `apt-mark auto` | `emerge -1` |
-| Only downloads the given package(s) without unpacking or installing them | `pacman -Sw` | `dnf download` | `apt install --download-only` (into the package cache) or `apt download` (bypass the package cache) | `zypper --download-only` | `emerge --fetchonly` |
-| Start a shell to enter multiple commands in one session | `apt-config shell` | `zypper shell` |
-| Show a log of actions taken by the software management. | read `/var/log/pacman.log` | `dnf history` | `read /var/log/dpkg.log` | read `/var/log/zypp/history` | see `/var/log/portage` |
-| Get a dump of the whole system information - Prints, Saves or similar the current state of the package management system. Preferred output is text or XML. (Note: Why either-or here? No tool offers the option to choose the output format.) | see `/var/lib/pacman/local` | see `/var/lib/rpm/Packages` | `apt-cache stats` | `emerge --info` |
-| e-mail delivery of package changes | `apt install apt-listchanges` |
+| Instalar um ou mais pacotes por nome | `pacman -S` | `dnf install` | `apt install` | `zypper install` ou `zypper in` | `emerge [-a]` |
+| Remover um ou mais pacotes por nome | `pacman -Rs` | `dnf remove` | `apt remove` | `zypper remove` ou `zypper rm` | `emerge -vc` |
+| Pesquisar por um ou mais pacotes pela expressão no nome, descrição ou descrição curta. Quais campos exatos estão sendo pesquisados por padrão variam em cada ferramenta. Principalmente as opções trazem ferramentas a par. | `pacman -Ss` | `dnf search` | `apt search` | `zypper search` ou `zypper se [-s]` | `emerge -S` |
+| Atualizar pacotes - instala pacotes que já tenham uma versão mais antiga instalada | `pacman -Syu` | `dnf upgrade` | `apt update` e então `apt upgrade` | `zypper update` ou `zypper up` | `emerge -uDN @world` |
+| Atualizar pacotes - outra forma do comando de atualização, que pode executar atualizações mais complexas, como atualizações de distribuição. Quando o comando de atualização usual omite as atualizações de pacotes, que incluem alterações nas dependências, esse comando pode realizar essas atualizações. | `pacman -Syu` | `dnf distro-sync` | `apt update` e então `apt dist-upgrade` | `zypper dup` | `emerge -uDN @world` |
+| Limpe todos os caches locais. As opções podem limitar o que é realmente limpo. `autoclean` remove apenas informações desnecessárias e obsoletas. | `pacman -Sc` ou `pacman -Scc` | `dnf clean all` | `apt autoclean` ou `apt clean` | `zypper clean` | `eclean distfiles` |
+| Remover dependências que não são mais necessárias porque, por exemplo, o pacote que precisava das dependências foi removido. | `pacman -Qdtq | pacman -Rs -` | `dnf autoremove` | `apt autoremove` | `zypper rm -u` | `emerge --depclean` |
+| Remover os pacotes que não estão mais incluídos em nenhum repositório. | `pacman -Qmq | pacman -Rs -` | `dnf repoquery --extras` | `aptitude purge '~o'` |
+| Marcar um pacote instalado anteriormente como uma dependência, conforme explicitamente necessário. | `pacman -D --asexplicit` | `dnf mark install` | `apt-mark manual` | `emerge --select` |
+| Instalar um ou mais pacotes como dependência / sem marcar como explicitamente necessário. | `pacman -S --asdeps` | `dnf install` e então `dnf mark remove` | `apt-mark auto` | `emerge -1` |
+| Baixar apenas os pacotes fornecidos sem descompactar ou instalá-los | `pacman -Sw` | `dnf download` | `apt install --download-only` (para o cache de pacotes) ou `apt download` (contorna o cache de pacotes) | `zypper --download-only` | `emerge --fetchonly` |
+| Iniciar um shell para inserir vários comandos em uma sessão | `apt-config shell` | `zypper shell` |
+| Mostrar um log de ações realizadas pelo gerenciamento de software. | leia `/var/log/pacman.log` | `dnf history` | leia `/var/log/dpkg.log` | leia `/var/log/zypp/history` | veja `/var/log/portage` |
+| Obter um despejo de todas as informações do sistema - impressões, salvamentos ou semelhantes do estado atual do sistema de gerenciamento de pacotes. A saída preferida é texto ou XML. (Nota: Por que um ou outro? Nenhuma ferramenta oferece a opção de escolher o formato de saída.) | veja `/var/lib/pacman/local` | veja `/var/lib/rpm/Packages` | `apt-cache stats` | `emerge --info` |
+| Entregar de e-mail sobte alterações de pacotes | `apt install apt-listchanges` |
 
 ## Consultando pacotes específicos
 

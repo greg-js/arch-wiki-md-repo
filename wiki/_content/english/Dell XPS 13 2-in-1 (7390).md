@@ -25,7 +25,7 @@ The New Dell XPS 13 2-in-1 (7390) is the model released in mid 2019 in most terr
 
 Installation is similar to most other Dell XPS machines although without modifications the machine will freeze a few seconds into boot. These modifications are outlined in the troubleshooting section.
 
-It's recommended to update the kernel to 5.3 or higher once the system is bootable. This can be easily performed by installing 'linux-mainline' from the AUR.
+It's recommended to update the kernel to 5.3 or higher once the system is bootable.
 
 ## Troubleshooting
 
@@ -37,7 +37,7 @@ To boot fully without the boot process hanging one must blacklist the 'intel_lps
 
 To fix the intel_lpss_module the patch from this paste must be applied to the kernel.
 
-[https://pastebin.com/sqPv8ShP](https://pastebin.com/sqPv8ShP)
+[https://pastebin.com/R7FpCefm](https://pastebin.com/R7FpCefm) (last tested on linux 5.3.12.1-1)
 
 Remember to be cautious about running code or installing patches from third party sources if you do not know what it does.
 

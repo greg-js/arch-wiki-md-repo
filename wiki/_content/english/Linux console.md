@@ -81,7 +81,7 @@ Keymaps, the connection between the key pressed and the character used by the co
 
 ### Preview and temporary changes
 
-**Tip:** An organized library of images for previewing is available: [Linux console fonts screenshots](http://alexandre.deverteuil.net/pages/consolefonts/).
+**Tip:** An organized library of images for previewing is available: [Linux console fonts screenshots](https://alexandre.deverteuil.net/pages/consolefonts/).
 
 ```
 $ showconsolefont

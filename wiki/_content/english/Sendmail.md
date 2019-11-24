@@ -2,7 +2,11 @@
 
 The goal of this article is to setup Sendmail for local user accounts, without using MySQL or other database, and allowing also the creation of *mail-only accounts*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Adding users](#Adding_users)

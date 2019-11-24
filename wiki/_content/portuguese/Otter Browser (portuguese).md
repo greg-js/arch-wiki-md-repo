@@ -1,10 +1,10 @@
 Related articles
 
-*   [Opera (Português)](/index.php/Opera_(Portugu%C3%AAs) "Opera (Português)")
-*   [Vivaldi (Português)](/index.php/Vivaldi_(Portugu%C3%AAs) "Vivaldi (Português)")
+*   [Opera](/index.php/Opera_(Portugu%C3%AAs) "Opera (Português)")
+*   [Vivaldi](/index.php/Vivaldi_(Portugu%C3%AAs) "Vivaldi (Português)")
 *   [Qt](/index.php/Qt "Qt")
 
-**Status de tradução:** Esse artigo é uma tradução de [Otter Browser](/index.php/Otter_Browser "Otter Browser"). Data da última tradução: 2019-04-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Otter_Browser&diff=0&oldid=572202) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Otter Browser](/index.php/Otter_Browser "Otter Browser"). Data da última tradução: 2019-11-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Otter_Browser&diff=0&oldid=589667) na versão em inglês.
 
 [Otter Browser](https://otter-browser.org/) é um navegador da Web que visa recriar a interface do usuário do [Opera](/index.php/Opera_(Portugu%C3%AAs) "Opera (Português)"). É baseado em [Qt5](/index.php/Qt "Qt") e QtWebKit, com suporte experimental do QtWebEngine.
 
@@ -17,11 +17,11 @@ Related articles
 *   [1 Instalação](#Instalação)
 *   [2 Dicas e Truques](#Dicas_e_Truques)
     *   [2.1 Suporte experimental a QtWebEngine](#Suporte_experimental_a_QtWebEngine)
-*   [3 Veja Também](#Veja_Também)
+*   [3 Veja também](#Veja_também)
 
 ## Instalação
 
-Otter Browser pode ser [instalado](/index.php/Install "Install") com um dos seguintes pacotes:
+Otter Browser pode ser [instalado](/index.php/Instala "Instala") com um dos seguintes pacotes:
 
 *   [otter-browser](https://www.archlinux.org/packages/?name=otter-browser) - a versão estável com suporte a QtWebKit e QtWebEngine
 *   [otter-browser-nowebengine](https://www.archlinux.org/packages/?name=otter-browser-nowebengine) - a versão estável sem suporte a QtWebEngine
@@ -33,7 +33,7 @@ Otter Browser pode ser [instalado](/index.php/Install "Install") com um dos segu
 
 Para usar o QtWebEngine com base no mecanismo da web do Blink, acesse `about:config` e selecione *qtwebengine* como *Backend*.
 
-## Veja Também
+## Veja também
 
 *   [Site oficial do projeto](https://otter-browser.org/)
 *   [Site do projeto no GitHub](https://github.com/OtterBrowser/otter-browser)

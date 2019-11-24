@@ -61,7 +61,7 @@ Para recibir archivos, abra el panel de configuración de Bluetooth; solo se pue
 
 ##### Bluedevil
 
-[Bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) la herramienta de Bluetooth de [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5).
+[Bluedevil](https://cgit.kde.org/bluedevil.git) la herramienta de Bluetooth de [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5).
 
 Si no hay un icono visible en Dolphin y en la bandeja de herramientas, se puede activar en las opciones de bandeja de herramientas o agregue un widget. Es posible configurar Bluedevil y detectar dispositivos Bluetooth haciendo clic en el icono. Una interfaz también esta disponible en el panel de configuración de KDE.
 

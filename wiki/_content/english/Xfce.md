@@ -41,7 +41,7 @@ Related articles
     *   [3.7 Polkit Authentication Agent](#Polkit_Authentication_Agent)
     *   [3.8 Display blanking](#Display_blanking)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Hide partitions from thunar and xfdesktop](#Hide_partitions_from_thunar_and_xfdesktop)
+    *   [4.1 Mounting support for Thunar and xfdesktop](#Mounting_support_for_Thunar_and_xfdesktop)
     *   [4.2 Screenshots](#Screenshots)
     *   [4.3 Disable Terminal F1 and F11 shortcuts](#Disable_Terminal_F1_and_F11_shortcuts)
     *   [4.4 Terminal color themes or palettes](#Terminal_color_themes_or_palettes)
@@ -407,9 +407,9 @@ If neither of the above applications are running, then blanking and DPMS setting
 
 ## Tips and tricks
 
-### Hide partitions from thunar and xfdesktop
+### Mounting support for Thunar and xfdesktop
 
-If your installation partitions are shown as mounted devices on the desktop and in Thunar, try to install [gvfs](https://www.archlinux.org/packages/?name=gvfs). See [Udisks#Hide selected partitions](/index.php/Udisks#Hide_selected_partitions "Udisks") for more advanced configuration options.
+If plugged external drives does not appear and installation partitions are shown as mounted devices, on the desktop and in Thunar, install [gvfs](https://www.archlinux.org/packages/?name=gvfs). See [Udisks#Hide selected partitions](/index.php/Udisks#Hide_selected_partitions "Udisks") and [Thunar#Automounting of large external drives](/index.php/Thunar#Automounting_of_large_external_drives "Thunar") for more advanced configuration options.
 
 ### Screenshots
 

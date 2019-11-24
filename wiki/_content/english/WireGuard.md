@@ -43,11 +43,13 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 ## Installation
 
-1.  [Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
+1.  [Install](/index.php/Install "Install") [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools).
 2.  Install the appropriate kernel module:
     *   [wireguard-arch](https://www.archlinux.org/packages/?name=wireguard-arch) for the default [linux](https://www.archlinux.org/packages/?name=linux) kernel.
     *   [wireguard-lts](https://www.archlinux.org/packages/?name=wireguard-lts) for the LTS [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
     *   [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) for the DKMS variant for other [kernels](/index.php/Kernel "Kernel").
+
+**Note:** As of November 2019, it is looking like Wireguard could be [[mainlined](https://www.phoronix.com/scan.php?page=news_item&px=WireGuard-RFC-Looking-Like-5.6)] as soon as kernel version 5.6.
 
 **Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for setting up Wireguard interfaces since version 237\. See [#Using systemd-networkd](#Using_systemd-networkd) for details.
 
@@ -182,13 +184,15 @@ See [#Using systemd-networkd](#Using_systemd-networkd).
 
 ## Specific use-case: VPN server
 
+**Note:** Usage of the terms "server" and "client" are used here specifically for newcomers to WireGuard and for current users of OpenVPN to help familiarize with the construction of configuration files. WireGuard documentation simply refers to both of these concepts as "peers."
+
 The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The server runs on Linux and the clients can run any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux, Windows and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
 
 **Tip:** Instead of using [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) for server/client configuration, one may want to use [systemd-networkd](#Using_systemd-networkd) native WireGuard support.
 
 ### Server
 
-On the machine acting as the server, first enable IPv4 forwarding using [sysctl](/index.php/Sysctl "Sysctl"):
+On the peer that will act as the "server", first enable IPv4 forwarding using [sysctl](/index.php/Sysctl "Sysctl"):
 
 ```
 # sysctl -w net.ipv4.ip_forward=1
@@ -210,7 +214,7 @@ Generate key pairs for the server and for each client as explained in [#Key gene
 
 ### Server config
 
-Create the server config file:
+Create the "server" config file:
 
  `/etc/wireguard/wg0.conf` 
 ```
@@ -235,7 +239,7 @@ PublicKey = [BAR'S PUBLIC KEY]
 AllowedIPs = 10.200.200.3/32
 ```
 
-Additional peers can be listed in the same format as needed. Each peer required the `PublicKey` to be set. However, specifying `PresharedKey` is optional.
+Additional peers ("clients") can be listed in the same format as needed. Each peer requires the `PublicKey` to be set. However, specifying `PresharedKey` is optional.
 
 The interface can be managed manually using [wg-quick(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg-quick.8) or using a [systemd](/index.php/Systemd "Systemd") service managed via [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1).
 
@@ -243,7 +247,7 @@ The interface may be brought up using `wg-quick up wg0` respectively by [startin
 
 ### Client config
 
-Create the corresponding client config file(s):
+Create the corresponding "client" config file(s):
 
  `foo.conf` 
 ```

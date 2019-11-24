@@ -1,12 +1,16 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Miglioramento dei tempi d'accesso al database](#Miglioramento_dei_tempi_d.27accesso_al_database)
-*   [2 Migliorare la velocità di download](#Migliorare_la_velocit.C3.A0_di_download)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Miglioramento dei tempi d'accesso al database](#Miglioramento_dei_tempi_d'accesso_al_database)
+*   [2 Migliorare la velocità di download](#Migliorare_la_velocità_di_download)
     *   [2.1 Usando Powerpill](#Usando_Powerpill)
     *   [2.2 Usando wget](#Usando_wget)
     *   [2.3 Usando aria2](#Usando_aria2)
     *   [2.4 Usando altre applicazioni](#Usando_altre_applicazioni)
-*   [3 Scelta del mirror più veloce](#Scelta_del_mirror_pi.C3.B9_veloce)
+*   [3 Scelta del mirror più veloce](#Scelta_del_mirror_più_veloce)
 *   [4 Condivisione dei pacchetti su rete LAN](#Condivisione_dei_pacchetti_su_rete_LAN)
 
 ## Miglioramento dei tempi d'accesso al database
@@ -53,7 +57,7 @@ Questa opzione è utile se si necessita di impostazioni per i proxy più avanzat
 Per utilizzare `wget`, si [installi](/index.php/Install "Install") il pacchetto [wget](https://www.archlinux.org/packages/?name=wget) e si modifichi `/etc/pacman.conf` aggiungendo le seguenti linee alla sezione `[options]`:
 
 ```
-XferCommand = /usr/bin/wget -c -q --show-progress --passive-ftp -O %o %u
+XferCommand = /usr/bin/wget -c -q --show-progress --passive-ftp -O %o %u
 
 ```
 
@@ -67,7 +71,7 @@ Invece di inserire i parametri di wget in `/etc/pacman.conf`, è possibile modif
 
 Si installi [aria2](https://www.archlinux.org/packages/?name=aria2), quindi si modifichi `/etc/pacman.conf` aggiungendo la seguente linea alla sezione `[options]`:
 
-XferCommand = /usr/bin/aria2c --allow-overwrite=true -c --file-allocation=none --log-level=error -m2 -x2 --max-file-not-found=5 -k5M --no-conf -Rtrue --summary-interval=60 -t5 -d / -o %o %u
+XferCommand = /usr/bin/aria2c --allow-overwrite=true -c --file-allocation=none --log-level=error -m2 -x2 --max-file-not-found=5 -k5M --no-conf -Rtrue --summary-interval=60 -t5 -d / -o %o %u
 
 **Suggerimento:** * L'utilizzo di questo XferCommand produce output meno utile ma più leggibile:
 
@@ -153,9 +157,9 @@ Spiegazione delle opzioni
 
 Esistono altre applicazioni per il download utilizzabili con pacman. Vengono presentate di seguito, con il relativo `XferCommand`:
 
-*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
-*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
-*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
+*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
+*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
 ## Scelta del mirror più veloce
 

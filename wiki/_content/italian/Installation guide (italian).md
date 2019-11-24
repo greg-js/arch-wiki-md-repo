@@ -1,6 +1,8 @@
-Questo documento vuole essere una guida per l'installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando un sistema *live* avviato con l'immagine ufficiale di installazione. Prima di installare, è consigliato dare una lettura alle [FAQ](/index.php/FAQ_(Italiano) "FAQ (Italiano)"). Per le convenzioni usate leggere [Help:Reading](/index.php/Help:Reading "Help:Reading").
+Questo documento vuole essere una guida per l'installazione di [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)") utilizzando un sistema *live* avviato con l'immagine ufficiale di installazione. Prima di installare, è consigliato dare una lettura alle [FAQ](/index.php/FAQ_(Italiano) "FAQ (Italiano)"). Per le convenzioni usate leggere [Help:Reading](/index.php/Help:Reading "Help:Reading"). In particolare, gli esempi di codice potrebbero contenere dei segnaposto (formattati in `*corsivo*`) che devono essere sostituiti manualmente.
 
-Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man page](/index.php/Man_page "Man page") e le rispettive pagine [ArchWiki](/index.php/ArchWiki:About_(Italiano) "ArchWiki:About (Italiano)") che normalmente verranno linkate di volta in volta nella guida. Per un aiuto piu` interattivo si possono sfruttare i [canali IRC](/index.php/IRC_channel "IRC channel"), il [forum internazionale](https://bbs.archlinux.org/) e il [forum italiano](https://www.archlinux.it/forum/).
+Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive pagine [ArchWiki](/index.php/ArchWiki:About_(Italiano) "ArchWiki:About (Italiano)") e le [man page](/index.php/Man_page "Man page") dei programmi, entrambe linkate in questa guida. Per un aiuto interattivo sono anche disponibili i [canali IRC](/index.php/IRC_channel "IRC channel"), il [forum internazionale](https://bbs.archlinux.org/) e il [forum italiano](https://www.archlinux.it/forum/).
+
+Arch Linux dovrebbe eseguirsi su qualsiasi computer compatibile [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") con un minimo di 512 MiB di RAM. Un'installazione basilare dovrebbe occupare meno di 800 MiB di spazio su disco. Poiché il processo di installazione necessita di recuperare pacchetti da un repository remoto, questa guida assume la presenza di una connessione internet funzionante.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -9,13 +11,15 @@ Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man pag
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prima dell'installazione](#Prima_dell'installazione)
-    *   [1.1 Impostare il corretto layout della tastiera](#Impostare_il_corretto_layout_della_tastiera)
-    *   [1.2 Verificare il boot mode](#Verificare_il_boot_mode)
-    *   [1.3 Connettersi ad Internet](#Connettersi_ad_Internet)
-    *   [1.4 Aggiornare l'orologio di sistema](#Aggiornare_l'orologio_di_sistema)
-    *   [1.5 Partizionare il disco](#Partizionare_il_disco)
-    *   [1.6 Formattare le partizioni](#Formattare_le_partizioni)
-    *   [1.7 Montare il file system](#Montare_il_file_system)
+    *   [1.1 Verifica della firma](#Verifica_della_firma)
+    *   [1.2 Avvio dell'ambiente live](#Avvio_dell'ambiente_live)
+    *   [1.3 Impostare il corretto layout della tastiera](#Impostare_il_corretto_layout_della_tastiera)
+    *   [1.4 Verificare il boot mode](#Verificare_il_boot_mode)
+    *   [1.5 Connettersi ad Internet](#Connettersi_ad_Internet)
+    *   [1.6 Aggiornare l'orologio di sistema](#Aggiornare_l'orologio_di_sistema)
+    *   [1.7 Partizionare il disco](#Partizionare_il_disco)
+    *   [1.8 Formattare le partizioni](#Formattare_le_partizioni)
+    *   [1.9 Montare il file system](#Montare_il_file_system)
 *   [2 Installazione](#Installazione)
     *   [2.1 Selezionare il mirror corretto](#Selezionare_il_mirror_corretto)
     *   [2.2 Installare i pacchetti base](#Installare_i_pacchetti_base)
@@ -34,11 +38,41 @@ Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man pag
 
 ## Prima dell'installazione
 
-Arch Linux dovrebbe essere installabile su ogni macchina compatibile con l'architettura [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") e con un minimo di 512 MB di RAM. L'installazione base con solo i pacchetti presenti nel gruppo [base](https://www.archlinux.org/packages/?name=base) richiede circa 800 MB di spazio su disco rigido. Siccome durante la fase di installazione vengono scaricati i pacchetti aggiornati direttamente dai repository remoti, una connessione ad internet e` fondamentale durante il processo.
+Il supporto di installazione e le sue firme [GnuPG](/index.php/GnuPG "GnuPG") possono essere ottenute dalla pagina [Download](https://archlinux.org/download/).
 
-Scaricare e avviare un disco di installazione come spiegato in [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). Ora ci si dovrebbe trovare di fronte ad una [console virtuale](https://en.wikipedia.org/wiki/Virtual_Console "w:Virtual Console"). L'utente *root* dovrebbe gia` essere loggato. La shell di default e` [Zsh](/index.php/Zsh "Zsh"). I comandi piu` comuni come [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) possono essere [autocompletati](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") dal tasto *tab*.
+### Verifica della firma
 
-Per switchare su un'altra console - per esempio per visualizzare questa guida tramite [ELinks](/index.php/ELinks "ELinks") durante il processo di installazione - usare la [combinazione di tasti](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*freccia*`. Per [editare](/index.php/Textedit "Textedit") testo e files sono disponibili gli editor: [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") e [vim](/index.php/Vim#Usage "Vim").
+E' raccomandata la verifica della firma dell'immagine prima dell'utilizzo, specialmente se è stata scaricata da un *mirror HTTP*, dove i download possono essere soggetti ad intercettazioni per [fornire immagini malevoli](https://www2.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html).
+
+Su un sistema con [GnuPG](/index.php/GnuPG "GnuPG") installato, eseguire il comando seguente per scaricare la *firma PGP* (sotto *Checksums*) nella directory col file ISO, e [verificarla](/index.php/GnuPG#Verify_a_signature "GnuPG") con:
+
+```
+$ gpg --keyserver-options auto-key-retrieve --verify archlinux-*version*-x86_64.iso.sig
+
+```
+
+In alternativa, da un'installazione esistente di Arch Linux eseguire:
+
+```
+$ pacman-key -v archlinux-*version*-x86_64.iso.sig
+
+```
+
+**Note:**
+
+*   La stessa firma potrebbe essere stata manipolata se è stata scaricata da un sito mirror, anziché dalla pagina [archlinux.org](https://archlinux.org/download/) come indicato sopra. In questo caso, assicurarsi che la chiave pubblica, che è utilizzata per decifrare la firma, sia firmata da un'altra chiave di fiducia. Il comando `gpg` riporterà l'impronta (fingerprint) della chiave pubblica.
+*   Un altro metodo per verificare l'autenticità della firma è assicurarsi che l'impronta della chiave pubblica sia identica all'impronta della chiave dello [Sviluppatore di Arch Linux](https://www.archlinux.org/people/developers/) che ha firmato il file ISO. Vedi [Wikipedia:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") per avere più informazioni sul processo chiave pubblica per autentica delle chiavi.
+
+### Avvio dell'ambiente live
+
+L'ambiente live può essere avviato da una [memoria USB](/index.php/USB_flash_installation_media "USB flash installation media"), un [disco ottico](/index.php/Optical_disc_drive#Burning "Optical disc drive") o da una rete con [PXE](/index.php/PXE "PXE"). Per una spiegazione sulle alternative del processo di installazione vedere [Category:Installation process](/index.php/Category:Installation_process "Category:Installation process").
+
+*   Impostare il dispositivo di avvio ad un'unità contenente il supporto di installazione di Arch Linux, tipicamente premendo un tasto specifico durante la fase [POST](https://en.wikipedia.org/wiki/Power-on_self_test "wikipedia:Power-on self test"), come indicato sulla schermata di avvio. Fare riferimento al manuale della propria scheda madre per i dettagli.
+*   Quando il menu di Arch Linux appare, scegliere l'opzione *Boot Arch Linux* e premere `Enter` per accedere all'ambiente di installazione.
+*   Vedere [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) per una lista dei [parametri di avvio](/index.php/Kernel_parameters#Configuration "Kernel parameters"), e [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) per una lista dei pacchetti inclusi.
+*   Sarai connesso alla prima [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") con l'utente root, e sarà presentata una shell [Zsh](/index.php/Zsh "Zsh").
+
+Per cambiare ad una console differente, per esempio, per vedere questa guida con [ELinks](/index.php/ELinks "ELinks") durante l'installazione, utilizzare la [scorciatoia](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*arrow*`. Per [modificare](/index.php/Textedit "Textedit") file di configurazione sono disponibili [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") e [vim](/index.php/Vim#Usage "Vim").
 
 ### Impostare il corretto layout della tastiera
 
@@ -143,10 +177,10 @@ Questo file, verra` poi copiato sul sistema installato da *pacstrap*.
 
 ### Installare i pacchetti base
 
-Usare [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) per installare il gruppo di pacchetti [base](https://www.archlinux.org/packages/?name=base):
+Usare [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) per installare il pacchetto [base](https://www.archlinux.org/packages/?name=base), il kernel [linux](https://www.archlinux.org/packages/?name=linux) e i firmware per gli hardware più comuni:
 
 ```
-# pacstrap /mnt base 
+# pacstrap /mnt base linux linux-firmware
 
 ```
 
@@ -155,7 +189,7 @@ Questo gruppo non include tutti i pacchetti disponibili sulla live come [btrfs-p
 Per [installare](/index.php/Install "Install") altri pacchetti o altri gruppi come ad esempio [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) aggiungere a i loro nomi a *pacstrap* separati da spazi, ad esempio:
 
 ```
-# pacstrap /mnt base base-devel
+# pacstrap /mnt base linux linux-firmware base-devel
 
 ```
 
@@ -168,7 +202,7 @@ o usare direttamente [pacman](/index.php/Pacman "Pacman") dopo lo step [#Chroot]
 Generare un file [fstab](/index.php/Fstab_(Italiano) "Fstab (Italiano)") (usare `-U` o `-L` per definire ci si vuole riferire alla partizioni con [UUID](/index.php/UUID "UUID") o labels rispettivamente):
 
 ```
-# genfstab -p /mnt >> /mnt/etc/fstab
+# genfstab -U /mnt >> /mnt/etc/fstab
 
 ```
 

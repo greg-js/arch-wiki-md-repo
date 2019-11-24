@@ -413,7 +413,7 @@ The following web browsers can integrate with Plasma:
 
 ### PIM
 
-KDE offers its own stack for [personal information management](https://en.wikipedia.org/wiki/Personal_information_management "wikipedia:Personal information management"). This includes emails, contacts, calendar, etc. To install all the PIM packages, you could use the meta-package [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
+KDE offers its own stack for [personal information management](https://en.wikipedia.org/wiki/Personal_information_management "wikipedia:Personal information management") (PIM). This includes emails, contacts, calendar, etc. To install all the PIM packages, you could use the [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/) package group or the [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta) meta package.
 
 #### Akonadi
 
@@ -793,17 +793,15 @@ If your system is able to suspend or hibernate using [systemd](/index.php/System
 
 #### Clean Akonadi configuration to fix KMail
 
-First, make sure that KMail is not running. Then backup configuration:
+See [this](https://docs.kde.org/trunk5/en/pim/kmail2/clean-start-after-a-failed-migration.html) document for detail.
+
+If you want a backup, please copy the configuration directory instead of deleting them.
 
 ```
 $ cp -a ~/.local/share/akonadi ~/.local/share/akonadi-old
 $ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
 ```
-
-Start *System Settings > Online Accounts* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi/` and `~/.config/akonadi/` - the copies you made ensure that you can back-track if necessary.
-
-Now go back to the System Settings and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it works properly.
 
 #### Empty IMAP inbox in KMail
 

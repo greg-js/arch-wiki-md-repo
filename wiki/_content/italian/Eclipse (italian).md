@@ -2,7 +2,11 @@
 
 L'IDE di Eclipse è scritto per la maggior parte in Java ma può essere usato per sviluppare applicazioni in molti altri linguaggi, tra cui Java, C/C++, PHP e Perl. L'IDE fornisce anche supporto per la sottoversione SVN (vedere sotto) e la gestione dei processi (per questo scopo usa la sua TOTO list integrata o il pacchetto aggiuntivo eclipse-mylyn).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Plugins](#Plugins)

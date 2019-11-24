@@ -80,6 +80,10 @@ These are the more popular scripts and tools designed to help power saving:
 
 	[https://github.com/rickysarraf/laptop-mode-tools](https://github.com/rickysarraf/laptop-mode-tools) || [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)
 
+*   **libsmbios** — Library and tools for interacting with Dell SMBIOS tables.
+
+	[https://github.com/dell/libsmbios](https://github.com/dell/libsmbios) || [libsmbios](https://www.archlinux.org/packages/?name=libsmbios)
+
 *   **[powertop](/index.php/Powertop "Powertop")** — A tool to diagnose issues with power consumption and power management to help set power saving settings.
 
 	[https://01.org/powertop/](https://01.org/powertop/) || [powertop](https://www.archlinux.org/packages/?name=powertop)

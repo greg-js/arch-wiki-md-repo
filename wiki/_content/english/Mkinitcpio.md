@@ -442,6 +442,8 @@ When initramfs are being rebuild after a kernel update, you might get these or s
 
 These appear to any Arch Linux users, especially those who have not installed these firmware modules. If you do not use hardware which uses these firmwares you can safely ignore this message.
 
+Most common firmware files can be acquired by [installing](/index.php/Install "Install") the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package. For other packages proving firmware, try searching for the module name in the [official repositories](/index.php/Official_repositories "Official repositories") or [AUR](/index.php/AUR "AUR").
+
 ### Standard rescue procedures
 
 With an improper initial ram-disk a system often is unbootable. So follow a system rescue procedure like below:

@@ -105,17 +105,15 @@ There are two methods for using a loop device as an encrypted container, one usi
 Using losetup directly can be avoided completely by doing the following [[1]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile):
 
 ```
-# dd if=/dev/urandom of=key.img bs=20M count=1
-# cryptsetup --align-payload=1 luksFormat key.img
+# dd if=/dev/urandom of=bigsecret.img bs=100M count=1 iflag=fullblock
+# cryptsetup luksFormat bigsecret.img
 ```
 
 Before running `cryptsetup`, look at the [Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") and [Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") first to select your additional desired settings.
 
 The instructions for opening the device and making the [file system](/index.php/File_system "File system") are the same as [#Partition](#Partition).
 
-Having too small of a file will get you a `Requested offset is beyond real size of device /dev/loop0` error, but as a rough reference creating a 4 MiB file will encrypt it successfully. [[2]](http://archive.is/VOh2p)
-
-If creating a larger file, `dd` from `/dev/urandom` will stop after 32 MiB, requiring the `iflag=fullblock` option to complete the full write. [[3]](https://unix.stackexchange.com/questions/178949/why-does-dd-from-dev-urandom-stops-early)
+Creating a file smaller than the LUKS2 header (16 MiB) will give a `Requested offset is beyond real size of device bigsecret.img` error when trying to open the device.
 
 Manual mounting and unmounting procedure is equivalent to [#Manual mounting and unmounting](#Manual_mounting_and_unmounting).
 
@@ -126,18 +124,18 @@ A loop device enables to map a blockdevice to a file with the standard util-linu
 First, start by creating an encrypted container, using an appropriate [random number generator](/index.php/Random_number_generator "Random number generator"):
 
 ```
-# dd if=/dev/urandom of=/bigsecret bs=1M count=10
+# dd if=/dev/urandom of=bigsecret.img bs=100M count=1 iflag=fullblock
 
 ```
 
-This will create the file `bigsecret` with a size of 10 megabytes.
+This will create the file `bigsecret.img` with a size of 100 mebibytes.
 
-**Note:** To avoid having to [resize](/index.php/Dm-crypt/Device_encryption#Loopback_filesystem "Dm-crypt/Device encryption") the container later on, make sure to make it larger than the total size of the files to be encrypted, in order to at least also host the associated metadata needed by the internal file system. If you are going to use LUKS mode, its metadata header requires one to two megabytes alone.
+**Note:** To avoid having to [resize](/index.php/Dm-crypt/Device_encryption#Loopback_filesystem "Dm-crypt/Device encryption") the container later on, make sure to make it larger than the total size of the files to be encrypted, in order to at least also host the associated metadata needed by the internal file system. If you are going to use LUKS mode, its metadata header alone requires up to 16 mebibytes.
 
 Next create the device node `/dev/loop0`, so that we can mount/use our container:
 
 ```
-# losetup /dev/loop0 /bigsecret
+# losetup /dev/loop0 bigsecret.img
 
 ```
 
@@ -161,7 +159,7 @@ To unmount the container:
 To mount the container again:
 
 ```
-# losetup /dev/loop0 /bigsecret
+# losetup /dev/loop0 bigsecret.img
 # cryptsetup open /dev/loop0 secret
 # mount -t ext4 /dev/mapper/secret /mnt/secret
 

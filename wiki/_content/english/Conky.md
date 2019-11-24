@@ -55,6 +55,13 @@ $ conky --print-config
 
 ```
 
+Furthermore, you can create a default configuration file with the following command:
+
+```
+$ mkdir -p ~/.config/conky && conky --print-config > ~/.config/conky/conky.conf
+
+```
+
 If you prefer to have a configuration [dotfile](/index.php/Dotfile "Dotfile") in home, you can create a file elsewhere and tell conky to use it using arguments.
 
 For example to tell conky to use a dotfile located in the user's home directory:
@@ -197,7 +204,7 @@ To enable real transparency, you must have a [composite manager](/index.php/Comp
     own_window = true,
     own_window_transparent = true,
     own_window_argb_visual = true,
-    own_window_type = desktop,
+    own_window_type = 'desktop',
  }
 
 ```
@@ -216,7 +223,7 @@ To achieve semi-transparency in real transparency mode, the following setup must
     own_window_transparent = false,
     own_window_argb_visual = true,
     own_window_argb_value = 90,
-    own_window_type = desktop,
+    own_window_type = 'desktop',
  }
 
 ```

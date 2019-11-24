@@ -288,7 +288,7 @@ Either way, hardware decoding is discouraged by *mpv* developers and is not like
 
 ### Hardware video acceleration
 
-See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+	*Main article: [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration")*
 
 Hardware accelerated video decoding is available via `--hwdec=*API*` option. For list of all supported APIs and other required options see [relevant manual section](https://mpv.io/manual/stable/#options-hwdec).
 

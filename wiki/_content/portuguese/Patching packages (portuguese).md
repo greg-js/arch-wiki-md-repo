@@ -4,7 +4,7 @@ Artigos relacionados
 
 *   [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)")
 
-Esse artigo cobre como criar e como aplicar *patches* (correções, remendos) em pacotes no [Arch Build System (Português)](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") (ABS).
+Esse artigo cobre como criar e como aplicar *patches* (correções, remendos) em pacotes no [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") (ABS).
 
 Um [patch](https://en.wikipedia.org/wiki/Patch_(computa%C3%A7%C3%A3o) descreve um conjunto de alterações a linha para um ou mais arquivos. Patches são geralmente usados para automatizar as alterações ao código-fonte.
 
@@ -21,7 +21,7 @@ Um [patch](https://en.wikipedia.org/wiki/Patch_(computa%C3%A7%C3%A3o) descreve u
 
 ## Criando patches
 
-**Nota:** Se você precisar alterar apenas uma ou duas linhas, convém usar o [sed](/index.php/Sed "Sed").
+**Nota:** Se você precisar alterar apenas uma ou duas linhas, convém usar o [sed (Português)](/index.php/Sed_(Portugu%C3%AAs) "Sed (Português)").
 
 A ferramenta *diff* compara arquivos linha por linha. Se você salvar sua saída, você terá um patch, por exemplo `diff --unified --recursive --text foo bar > patch`. Se você informar diretórios, *diff* vai comparar os arquivos que eles contêm.
 

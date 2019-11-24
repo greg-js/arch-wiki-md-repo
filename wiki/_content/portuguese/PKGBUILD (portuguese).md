@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-10-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=586372) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-11-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=589505) na versão em inglês.
 
 Artigos relacionados
 
@@ -64,6 +64,7 @@ Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` 
     *   [8.2 sha1sums](#sha1sums)
     *   [8.3 sha256sums](#sha256sums)
     *   [8.4 sha224sums, sha384sums, sha512sums](#sha224sums,_sha384sums,_sha512sums)
+    *   [8.5 b2sums](#b2sums)
 *   [9 Veja também](#Veja_também)
 
 ## Nome do pacote
@@ -380,6 +381,10 @@ Um vetor de *checksums* de [SHA-2](https://en.wikipedia.org/wiki/pt:SHA-2 "wikip
 ### sha224sums, sha384sums, sha512sums
 
 Um vetor de *checksums* de SHA-2 com tamanhos de *digest* 224, 384 e 512 bits, respectivamente. Essas são alternativas mais comuns a `sha256sums`.
+
+### b2sums
+
+Um vetor de *checksums* de [BLAKE2](https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE2 com tamanho de *digest* de 512 bits.
 
 ## Veja também
 

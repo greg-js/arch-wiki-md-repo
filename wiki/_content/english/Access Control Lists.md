@@ -120,14 +120,14 @@ To show permissions, use:
 
 ## Examples
 
-Set all permissions for user johny to file named "abc":
+Set all permissions for user `johnny` to file named `abc`:
 
 ```
-# setfacl -m "u:johny:rwx" abc
+# setfacl -m "u:johnny:rwx" abc
 
 ```
 
-Check permissions
+Check permissions:
 
  `# getfacl abc` 
 ```
@@ -135,21 +135,21 @@ Check permissions
 # owner: someone
 # group: someone
 user::rw-
-user:johny:rwx
+user:johnny:rwx
 group::r--
 mask::rwx
 other::r--
 
 ```
 
-Change permissions for user johny:
+Change permissions for user `johnny`:
 
 ```
-# setfacl -m "u:johny:r-x" abc
+# setfacl -m "u:johnny:r-x" abc
 
 ```
 
-Check permissions
+Check permissions:
 
  `# getfacl abc` 
 ```
@@ -157,7 +157,7 @@ Check permissions
 # owner: someone
 # group: someone
 user::rw-
-user:johny:r-x
+user:johnny:r-x
 group::r--
 mask::r-x
 other::r--
@@ -171,7 +171,7 @@ Remove all extended ACL entries:
 
 ```
 
-Check permissions
+Check permissions:
 
  `# getfacl abc` 
 ```

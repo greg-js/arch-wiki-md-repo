@@ -37,6 +37,7 @@ From the project [home page](https://docs.xfce.org/xfce/thunar/start):
     *   [5.1 Tumblerd hangs up, uses too much CPU](#Tumblerd_hangs_up,_uses_too_much_CPU)
     *   [5.2 Trash/network icons disappear randomly](#Trash/network_icons_disappear_randomly)
     *   [5.3 Not authenticated to mount filesystems](#Not_authenticated_to_mount_filesystems)
+    *   [5.4 Thunar new window or tab being too slow to open](#Thunar_new_window_or_tab_being_too_slow_to_open)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -258,6 +259,12 @@ fi
 ### Not authenticated to mount filesystems
 
 See [File manager functionality#Troubleshooting](/index.php/File_manager_functionality#Troubleshooting "File manager functionality").
+
+### Thunar new window or tab being too slow to open
+
+It might be the case that you have many files under the folder that you have set to be the `XDG_TEMPLATES_DIR`. See [XDG user directories](/index.php/XDG_user_directories "XDG user directories").
+
+The solution is to move files from whatever folder is the `XDG_TEMPLATES_DIR` to another one, or set the `XDG_TEMPLATES_DIR` to another folder.
 
 ## See also
 

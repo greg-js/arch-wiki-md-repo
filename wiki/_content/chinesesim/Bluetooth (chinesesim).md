@@ -72,7 +72,7 @@
 
 *   **Bluedevil** — [KDE](/index.php/KDE "KDE")的蓝牙工具。如果Dolphin和系统托盘里没有蓝牙图标，就在系统托盘选项里启用，或者添加一个挂件。点击图标或在KDE系统设置里都可以配置蓝牙。
 
-	[https://projects.kde.org/projects/kde/workspace/bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) || [bluedevil](https://www.archlinux.org/packages/?name=bluedevil)
+	[https://cgit.kde.org/bluedevil.git](https://cgit.kde.org/bluedevil.git) || [bluedevil](https://www.archlinux.org/packages/?name=bluedevil)
 
 *   **Blueberry** — Linux Mint的GNOME Bluetooth变种，可在所有桌面环境工作。*Blueberry* 不支持通过Obex Object推送来接收文件。
 

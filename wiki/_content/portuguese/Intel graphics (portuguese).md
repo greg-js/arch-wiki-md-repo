@@ -55,7 +55,7 @@ Para uma lista abrangente dos modelos de GPU Intel e processadores, veja [Wikipe
 
 Instale o pacote [mesa](https://www.archlinux.org/packages/?name=mesa), que fornece o driver DRI para aceleração 3D.
 
-*   Para suporte a aplicações 32-bit, pode-se instalar o pacote [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) do repositório [multilib](/index.php/Multilib "Multilib").
+*   Para suporte a aplicações 32-bit, pode-se instalar o pacote [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) do repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)").
 
 *   Para o driver DDX (que fornecem a aceleração 2D no [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)")), instale o pacote [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). (Alguns não recomendam a instalação do driver Intel, veja a nota abaixo)
 
@@ -94,7 +94,7 @@ Para esses processadores, é necessário adicionar `i915.enable_guc=2` aos [par�
 
 É possível habilitar o carregamento do firmware GuC / HuC e o envio de GuC usando o parâmetro do módulo `enable_guc=3`, embora isso geralmente seja desencorajado e possa afetar negativamente a estabilidade do sistema.
 
-Você pode verificar se ambos estão ativados usando [dmesg](/index.php/Dmesg "Dmesg"):
+Você pode verificar se ambos estão ativados usando [dmesg](/index.php/Dmesg_(Portugu%C3%AAs) "Dmesg (Português)"):
 
  `$ dmesg` 
 ```
@@ -126,7 +126,7 @@ Alternativamente, verifique usando:
 
 Pode não haver necessidade de qualquer configuração para executar o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
-No entanto, se o [Xorg](/index.php/Xorg "Xorg") não iniciar, para tirar proveito de algumas opções do driver, você poderá criar um arquivo de configuração do Xorg similar ao que se encontra abaixo:
+No entanto, se o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") não iniciar, para tirar proveito de algumas opções do driver, você poderá criar um arquivo de configuração do Xorg similar ao que se encontra abaixo:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
@@ -190,7 +190,7 @@ A solução é desabilitar a compactação do buffer de quadros, o que aumentar�
 
 ### Fastboot
 
-O objetivo do Intel Fastboot é preservar o buffer de quadros como configurado pelo BIOS ou [bootloader](/index.php/Bootloader "Bootloader") para evitar qualquer oscilação até que o [Xorg](/index.php/Xorg "Xorg") tenha iniciado [[3]](https://www.phoronix.com/scan.php?page=news_item&px=MTEwNzc).
+O objetivo do Intel Fastboot é preservar o buffer de quadros como configurado pelo BIOS ou [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") para evitar qualquer oscilação até que o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") tenha iniciado [[3]](https://www.phoronix.com/scan.php?page=news_item&px=MTEwNzc).
 
 Para habilitar o fastboot, defina `i915.fastboot=1` como um [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") ou defina em `/etc/modprobe.d/i915.conf`:
 

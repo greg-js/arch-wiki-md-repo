@@ -227,7 +227,7 @@ The [base](https://www.archlinux.org/packages/?name=base) package does not inclu
 *   a [text editor](/index.php/Text_editor "Text editor"),
 *   packages for accessing documentation in [man](/index.php/Man "Man") and [info](/index.php/Info "Info") pages: [man-db](https://www.archlinux.org/packages/?name=man-db), [man-pages](https://www.archlinux.org/packages/?name=man-pages) and [texinfo](https://www.archlinux.org/packages/?name=texinfo).
 
-To [install](/index.php/Install "Install") other packages or package groups, append the names to the *pacstrap* command above (space separated) or use [pacman](/index.php/Pacman "Pacman") after the [chroot](#Chroot) step. For comparison, packages available in the live system can be found in [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
+To [install](/index.php/Install "Install") other packages or package groups, append the names to the *pacstrap* command above (space separated) or use [pacman](/index.php/Pacman "Pacman") while [chrooted into the new system](#Chroot). For comparison, packages available in the live system can be found in [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
 
 ## Configure the system
 

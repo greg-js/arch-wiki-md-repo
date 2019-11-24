@@ -232,7 +232,7 @@ Apache and MySQL can be configured so that they only listen to requests from you
 
 Before you start XAMPP for the first time find and edit these files:
 
-For Apache edit the files xampp\apache\conf\httpd.conf and xampp\apache\conf\extra\httpd-ssl.conf. Look for lines starting with "Listen" such as
+For Apache edit the files `/opt/lampp/etc/httpd.conf` and `/opt/lampp/etc/extra/httpd-ssl.conf`. Look for lines starting with "Listen" such as
 
 ```
 Listen 80
@@ -246,7 +246,7 @@ Listen 127.0.0.1:80
 
 ```
 
-For MySQL open the file xampp\mysql\bin\my.cnf find the section "[mysqld]" and add this line
+For MySQL open the file `/opt/lampp/etc/my.cnf` find the section "[mysqld]" and add this line
 
 ```
 bind-address=localhost

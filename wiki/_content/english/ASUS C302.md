@@ -261,4 +261,9 @@ To prevent audio "clicks", comment out "load-module module-suspend-on-idle" in /
 
 ## Coil Whine
 
-There is occasional [coil whine](https://www.notebookcheck.net/FAQ-Coil-Whine.225152.0.html), with no apparent method to reduce/eliminate it.
+There is occasional [coil whine](https://www.notebookcheck.net/FAQ-Coil-Whine.225152.0.html), which can be greatly reduced by running:
+
+```
+printf "1" > /sys/devices/system/cpu/intel_pstate/no_turbo
+
+```

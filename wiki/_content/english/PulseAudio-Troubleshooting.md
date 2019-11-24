@@ -827,8 +827,8 @@ In the previous step, we calculated the fragment size parameter. The number of f
 
  `/etc/pulse/daemon.conf` 
 ```
-; default-fragments = **2**
-; default-fragment-size-msec = **125**
+default-fragments = **2**
+default-fragment-size-msec = **125**
 ```
 
 #### Restart the PulseAudio daemon (4/4)

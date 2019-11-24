@@ -1,6 +1,6 @@
 [Eclipse](https://eclipse.org) it is an open source community project aimed at providing a universal development platform. The Eclipse project is best known for its multiplatform integrated development environment (IDE). Arch Linux packages (and this guide) are specifically related to the IDE.
 
-Eclipse IDE is largely written in Java, but can be used to develop applications in many languages, including Java, C / C ++, PHP, Perl, and Python. The IDE can also provide subversion support and task management.
+Eclipse IDE is largely written in Java, but can be used to develop applications in many languages, including Java, C / C++, PHP, Perl, and Python. The IDE can also provide subversion support and task management.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -48,13 +48,13 @@ Many plugins are easily installed using **pacman** (look [Eclipse plugin package
 
 ### Add the default update site
 
-Be sure to verify that the default update site for your version of Eclipse is configured so that plug-in dependencies can be installed automatically. The most current version of Eclipse is Photon and the default update site is: [http://download.eclipse.org/releases/photon](http://download.eclipse.org/releases/photon). Go to Help> Install New Software> Add, fill in the name to easily identify the update site later - for example, Photon Software Repository - and fill in the location with the URL.
+Be sure to verify that the default update site for your version of Eclipse is configured so that plug-in dependencies can be installed automatically. The most current version of Eclipse is Photon and the default update site is: [http://download.eclipse.org/releases/photon](http://download.eclipse.org/releases/photon). Go to *Help > Install New Software > Add*, fill in the name to easily identify the update site later - for example, Photon Software Repository - and fill in the location with the URL.
 
 ### Eclipse Marketplace
 
 **Note:** make sure you have followed the [Add the default update site](#Add_the_default_update_site) section.
 
-To use the Eclipse Marketplace, install it first: go to Help > Install new software > Switch to the default update site > General Purpose Tools > Marketplace Client. Restart Eclipse and it will be available in Help > Eclipse Marketplace.
+To use the Eclipse Marketplace, install it first: go to *Help > Install new software > Switch to the default update site > General Purpose Tools > Marketplace Client*. Restart Eclipse and it will be available in *Help > Eclipse Marketplace*.
 
 ### Plugin manager
 
@@ -147,20 +147,17 @@ Part of [this](https://bugs.eclipse.org/bugs/show_bug.cgi?id=318177) bug. Just l
 
 ### Dark theme
 
-Eclipse supplies a Dark theme which can be enabled in Window > Preferences > General > Appearance and selecting the 'Dark' theme.
+Eclipse supplies a Dark theme which can be enabled in *Window > Preferences > General > Appearance* and selecting the *Dark* theme.
 
-The dark theme uses its own colours rather than the GTK theme colours, if you prefer it to fully respect GTK colour settings, then remove or move to backup sub folder all of the .css files from `/usr/lib/eclipse/plugins/org.eclipse.ui.themes_x.x.xxx.vxxxxxxxx-xxxx/css/`.
+The dark theme uses its own colours rather than the GTK theme colours, if you prefer it to fully respect GTK colour settings, then remove or move to backup sub folder all of the .css files from `/usr/lib/eclipse/plugins/org.eclipse.ui.themes_*version*/css/`, replacing the `*version*` with the appropriate version number.
 
 ### Change Default Window Title Font Size
 
-You cannot change the window title font size using the Eclipse preferences, you must edit the actual theme .css files. Note, that you will have to redo this when you upgrade eclipse. They are located under
+You cannot change the window title font size using the Eclipse preferences, you must edit the actual theme .css files. These are located under `/usr/lib/eclipse/plugins/org.eclipse.themes_*version*/css/` directory, where `*version*` is the actual theme version number.
 
-```
-/usr/share/eclipse/plugins/org.eclipse.platform_4.3.<your version number>/css
+Use an [text editor](/index.php/Text_editor "Text editor") to edit the appropriate file, e.g. `e4_default_gtk.css` if you are using the "GTK theme".
 
-```
-
-Open the appropriate file with your text editor, ie e4_default_gtk.css if you are using the "GTK theme". Search for .MPartStack, and change the font-size to your desired size
+In this file, search for `.MPartStack`, and change the font-size to your desired size:
 
 ```
 .MPartStack {
@@ -171,27 +168,23 @@ Open the appropriate file with your text editor, ie e4_default_gtk.css if you ar
 
 ```
 
+**Note:** This needs to be redone whenever eclipse is upgraded.
+
 ### Disable GTK 3
 
-When the SWT GTK 3 UI is buggy and sometimes unusable, You can try to disable the use of GTK 3 with the SWT_GTK3=0 [environment variable](/index.php/Environment_variable "Environment variable") when you start eclipse:
+If the SWT GTK 3 UI gets buggy or unusable, it can be disabled by prepending `SWT_GTK3=0` [environment variable](/index.php/Environment_variable "Environment variable") when starting Eclipse:
 
 ```
 SWT_GTK3=0 eclipse
 
 ```
 
-Another option to achieve the same effect is to add the following to `/usr/lib/eclipse/eclipse.ini`.
+Another option to achieve the same effect is to add the following to Eclipse's ini file, **before** `--launcher.appendVmargs`:
 
+ `/usr/lib/eclipse/eclipse.ini` 
 ```
 --launcher.GTK_version
 2
-
-```
-
-Those two lines must be added **before**:
-
-```
---launcher.appendVmargs
 
 ```
 
@@ -211,13 +204,13 @@ cd /usr/lib/eclipse/ && sudo rm plugins/org.apache.httpcomponents.httpclient_4.3
 
 ### Show in System Explorer does not work
 
-See [this](http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Freference%2Fref-9.htm&cp=0_4_1_52) guide. Go to **Window** > **Preferences** > **General** > **Workspace** and change the command launching system explorer. As Xfce user you may like to change it to `thunar ${selected_resource_uri}` to open the selected folder with thunar.
+See [this](http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Freference%2Fref-9.htm&cp=0_4_1_52) guide. Go to *Window > Preferences > General > Workspace* and change the command launching system explorer. As [Xfce](/index.php/Xfce "Xfce") user you may like to change it to `thunar ${selected_resource_uri}` to open the selected folder with thunar.
 
 ### Display issues under Wayland
 
 When running Eclipse on Wayland, you may encounter rendering issues such as slow response time to mouse events or chopped dialog windows (Bug report [[1]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=483545)). A possible workaround for this issue is to force Eclipse to run under XWayland.
 
-With the superuser, open the file `/usr/bin/eclipse` and append this line before the `exec` line :
+With the superuser, open the file `/usr/bin/eclipse` and append this line before the `exec` line:
 
 ```
    export GDK_BACKEND=x11

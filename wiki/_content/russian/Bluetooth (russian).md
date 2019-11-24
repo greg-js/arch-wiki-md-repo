@@ -9,33 +9,37 @@
 
 [Bluetooth](http://www.bluetooth.org/) является стандартом для беспроводных соединений малой дальности сотовых телефонов, компьютеров и других электронных устройств. В Linux канонической реализацией стека протоколов Bluetooth является [BlueZ](http://www.bluez.org/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка при помощи интерфейса командной строки](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D0.B0_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D0.BE.D0.B9_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Настройка при помощи интерфейса командной строки](#Настройка_при_помощи_интерфейса_командной_строки)
     *   [2.1 Bluetoothctl](#Bluetoothctl)
-*   [3 Настройка при помощи графических фронтендов](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D1.85_.D1.84.D1.80.D0.BE.D0.BD.D1.82.D0.B5.D0.BD.D0.B4.D0.BE.D0.B2)
+*   [3 Настройка при помощи графических фронтендов](#Настройка_при_помощи_графических_фронтендов)
     *   [3.1 GNOME Bluetooth](#GNOME_Bluetooth)
     *   [3.2 BlueDevil](#BlueDevil)
     *   [3.3 Blueberry](#Blueberry)
     *   [3.4 Blueman](#Blueman)
-*   [4 Использование Obex для отсылки и получения файлов](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Obex_.D0.B4.D0.BB.D1.8F_.D0.BE.D1.82.D1.81.D1.8B.D0.BB.D0.BA.D0.B8_.D0.B8_.D0.BF.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D1.8F_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2)
+*   [4 Использование Obex для отсылки и получения файлов](#Использование_Obex_для_отсылки_и_получения_файлов)
     *   [4.1 ObexFS](#ObexFS)
-    *   [4.2 Передача по ObexFTP](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B4.D0.B0.D1.87.D0.B0_.D0.BF.D0.BE_ObexFTP)
+    *   [4.2 Передача по ObexFTP](#Передача_по_ObexFTP)
     *   [4.3 Obex Object Push](#Obex_Object_Push)
-*   [5 Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B)
-*   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+*   [5 Примеры](#Примеры)
+*   [6 Решение проблем](#Решение_проблем)
     *   [6.1 bluetoothctl](#bluetoothctl_2)
     *   [6.2 gnome-bluetooth](#gnome-bluetooth)
-    *   [6.3 Bluetooth USB донгл](#Bluetooth_USB_.D0.B4.D0.BE.D0.BD.D0.B3.D0.BB)
-    *   [6.4 Logitech Bluetooth USB донгл](#Logitech_Bluetooth_USB_.D0.B4.D0.BE.D0.BD.D0.B3.D0.BB)
-    *   [6.5 hcitool scan: Устройство не найдено](#hcitool_scan:_.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE_.D0.BD.D0.B5_.D0.BD.D0.B0.D0.B9.D0.B4.D0.B5.D0.BD.D0.BE)
-    *   [6.6 rfkill unblock: не происходит разблокировка](#rfkill_unblock:_.D0.BD.D0.B5_.D0.BF.D1.80.D0.BE.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.B8.D1.82_.D1.80.D0.B0.D0.B7.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [6.7 Мой компьютер невидим](#.D0.9C.D0.BE.D0.B9_.D0.BA.D0.BE.D0.BC.D0.BF.D1.8C.D1.8E.D1.82.D0.B5.D1.80_.D0.BD.D0.B5.D0.B2.D0.B8.D0.B4.D0.B8.D0.BC)
-    *   [6.8 Не происходит сопряжение с клавиатурой Logitech](#.D0.9D.D0.B5_.D0.BF.D1.80.D0.BE.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.B8.D1.82_.D1.81.D0.BE.D0.BF.D1.80.D1.8F.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D0.BE.D0.B9_Logitech)
-    *   [6.9 Профили HSP/HFP](#.D0.9F.D1.80.D0.BE.D1.84.D0.B8.D0.BB.D0.B8_HSP.2FHFP)
-    *   [6.10 Проблемы с Thinkpad Bluetooth Laser Mouse](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_Thinkpad_Bluetooth_Laser_Mouse)
-    *   [6.11 Lite-On Broadcom устройства](#Lite-On_Broadcom_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0)
+    *   [6.3 Bluetooth USB донгл](#Bluetooth_USB_донгл)
+    *   [6.4 Logitech Bluetooth USB донгл](#Logitech_Bluetooth_USB_донгл)
+    *   [6.5 hcitool scan: Устройство не найдено](#hcitool_scan:_Устройство_не_найдено)
+    *   [6.6 rfkill unblock: не происходит разблокировка](#rfkill_unblock:_не_происходит_разблокировка)
+    *   [6.7 Мой компьютер невидим](#Мой_компьютер_невидим)
+    *   [6.8 Не происходит сопряжение с клавиатурой Logitech](#Не_происходит_сопряжение_с_клавиатурой_Logitech)
+    *   [6.9 Профили HSP/HFP](#Профили_HSP/HFP)
+    *   [6.10 Проблемы с Thinkpad Bluetooth Laser Mouse](#Проблемы_с_Thinkpad_Bluetooth_Laser_Mouse)
+    *   [6.11 Lite-On Broadcom устройства](#Lite-On_Broadcom_устройства)
 
 ## Установка
 
@@ -48,7 +52,7 @@
 
 ```
 
-Теперь [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") `bluetooth.service` systemd юнит. Вы можете [включить сервис](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") в автозагрузку.
+Теперь [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") `bluetooth.service` systemd юнит. Вы можете [включить сервис](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)") в автозагрузку.
 
 **Примечание:**
 
@@ -136,11 +140,11 @@ WantedBy=suspend.target
 
 Чтобы получать файлы, вы должны установить пакет [gnome-user-share](https://www.archlinux.org/packages/?name=gnome-user-share). Затем вы можете перейти в *Settings -> Sharing*, чтобы авторизовать принимаемые файлы со спаренных устройств по Bluetooth.
 
-**Совет:** Если вы используете Thunar и хотите добавить пункт Bluetooth в подменю *Отправить на* в меню свойств файлов, смотрите инструкции [здесь](http://docs.xfce.org/xfce/thunar/send-to) (команда, которую необходимо добавить — `bluetooth-sendto %F`).
+**Совет:** Если вы используете Thunar и хотите добавить пункт Bluetooth в подменю *Отправить на* в меню свойств файлов, смотрите инструкции [здесь](http://docs.xfce.org/xfce/thunar/send-to) (команда, которую необходимо добавить — `bluetooth-sendto %F`).
 
 ### BlueDevil
 
-[BlueDevil](https://projects.kde.org/projects/kde/workspace/bluedevil) — это Bluetooth утилита в [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)"). Он может быть [установлен](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD "Установлен") с пакетом [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5) или [bluedevil4](https://www.archlinux.org/packages/?name=bluedevil4) (KDE4).
+[BlueDevil](https://cgit.kde.org/bluedevil.git) — это Bluetooth утилита в [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)"). Он может быть [установлен](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD "Установлен") с пакетом [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5) или [bluedevil4](https://www.archlinux.org/packages/?name=bluedevil4) (KDE4).
 
 Если иконка Bluetooth не отображается в Dolphin и в системном трее, добавьте её вручную. Вы можете настроить Bluedevil, чтобы он искал устройства Bluetooth при нажатии на иконку. Также вы можете настроить BlueDevil через Параметры Системы KDE.
 

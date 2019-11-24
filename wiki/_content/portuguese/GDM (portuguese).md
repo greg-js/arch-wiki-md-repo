@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2019-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=586447) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2019-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=588597) na versão em inglês.
 
 Artigos relacionados
 
@@ -510,6 +510,13 @@ Por exemplo, para conceder ao GDM o direito de acessar o servidor X, use o segui
 
 O GDM não funciona bem no modo Wayland com o driver proprietário [NVIDIA](/index.php/NVIDIA "NVIDIA"). Ao usar esse driver, o GDM usará o Xorg em vez disso. [[7]](https://gitlab.gnome.org/GNOME/gdm/merge_requests/46)
 
+Para forçar ativação do Wayland, desative a regra [udev](/index.php/Udev "Udev") responsável para desativar o Wayland no GDM:
+
+```
+# ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+
+```
+
 ### Falha no encerramento da sessão
 
 Se o GDM iniciar corretamente na inicialização, mas falhar após tentativas repetidas de encerramento de sessão, tente adicionar essa linha à seção do daemon do `/etc/gdm/custom.conf`:
@@ -521,7 +528,7 @@ GdmXserverTimeout=60
 
 ### Xorg sem senha
 
-Veja [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
+Veja [Xorg (Português)#Xorg sem superusuário](/index.php/Xorg_(Portugu%C3%AAs)#Xorg_sem_superusuário "Xorg (Português)").
 
 ### Usar backend do Xorg
 

@@ -1,16 +1,20 @@
 Proporciona un mecanismo de permisos adicionales más flexibles para los sistemas de archivos. Está diseñado para ayudar con los permiso de archivos en UNIX. ACL permite dar permisos para cualquier usuario o grupo a cualquier recurso del disco.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Habilitando ACL](#Habilitando_ACL)
     *   [2.2 Establecer ACL](#Establecer_ACL)
     *   [2.3 Mostrar ACL](#Mostrar_ACL)
 *   [3 Ejemplos](#Ejemplos)
     *   [3.1 Salida del comando ls](#Salida_del_comando_ls)
-    *   [3.2 Conceder permisos de ejecución para archivos privados a un servidor Web](#Conceder_permisos_de_ejecuci.C3.B3n_para_archivos_privados_a_un_servidor_Web)
-*   [4 También puede ver](#Tambi.C3.A9n_puede_ver)
+    *   [3.2 Conceder permisos de ejecución para archivos privados a un servidor Web](#Conceder_permisos_de_ejecución_para_archivos_privados_a_un_servidor_Web)
+*   [4 También puede ver](#También_puede_ver)
 
 ## Instalación
 
@@ -225,7 +229,7 @@ Como se muestra en la salida anterior ya no tiene permisos pero `webserver` toda
 
 ## También puede ver
 
-*   [getfacl(1)](http://man7.org/linux/man-pages/man1/getfacl.1.html)
-*   [setfacl(1)](http://man7.org/linux/man-pages/man1/setfacl.1.html)
+*   [getfacl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getfacl.1)
+*   [setfacl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfacl.1)
 *   Un antiguo, exhaustivo y relevante recurso [guia](http://vanemery.net/Linux/ACL/linux-acl.html) de ACL
 *   [How to set default file permissions for all folders/files in a directory?](http://unix.stackexchange.com/questions/1314/how-to-set-default-file-permissions-for-all-folders-files-in-a-directory)

@@ -90,7 +90,7 @@ To create a new rule create a new section with a custom name in your config file
 
 ### Modifying
 
-When a notification is matched you can perform certain actions on it like modifying the format string, which is especially useful if you want tocompletely ignore certain notifications. In that case simply add the line `format=""` to your rule.
+When a notification is matched you can perform certain actions on it like modifying the format string, which is especially useful if you want to completely ignore certain notifications. In that case simply add the line `format=""` to your rule.
 
 Another useful feature is if you want to keep certain notifications out of your history for example if you use dunst as a [Volume indicator](#Using_dunstify_as_volume/brightness_level_indicator). To achieve this simply add `history_ignore=yes` to your rule.
 

@@ -52,7 +52,7 @@ Veja também [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot
 
 **Nota:**
 
-*   Algumas ferramentas do [systemd (Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), tal como *hostnamectl*, *localectl* e *timedatectl*, não podem ser usados dentro de um chroot, pois eles exigem uma conexão [dbus](/index.php/Dbus "Dbus") ativa. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
+*   Algumas ferramentas do [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), tal como *hostnamectl*, *localectl* e *timedatectl*, não podem ser usados dentro de um chroot, pois eles exigem uma conexão [dbus](/index.php/Dbus "Dbus") ativa. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
 *   O sistema de arquivos que vai servir como uma nova raiz (`/`) de seu chroot deve estar acessível (i.e., descriptografado, montado).
 
 Há duas opções principais para usar chroot, descritas abaixo.

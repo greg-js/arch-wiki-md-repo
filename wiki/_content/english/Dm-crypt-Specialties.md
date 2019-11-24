@@ -680,14 +680,14 @@ Before running `cryptsetup`, look at the [Encryption options for LUKS mode](/ind
 ```
 # mount /dev/mapper/cryptboot /mnt
 # dd if=/dev/urandom of=/mnt/key.img bs=*filesize* count=1
-# cryptsetup --align-payload=1 luksFormat /mnt/key.img
+# cryptsetup luksFormat /mnt/key.img
 # cryptsetup open /mnt/key.img lukskey
 
 ```
 
 *filesize* is in bytes but can be followed by a suffix such as `M`. Having too small of a file will get you a nasty `Requested offset is beyond real size of device /dev/loop0` error. As a rough reference, creating a 4M file will encrypt it successfully. You should make the file larger than the space needed since the encrypted loop device will be a little smaller than the file's size.
 
-With a big file, you can use `--keyfile-offset=*offset*` and `--keyfile-size=*size*` to navigate to the correct position. [[5]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile)
+With a big file, you can use `--keyfile-offset=*offset*` and `--keyfile-size=*size*` to navigate to the correct position. [[7]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile)
 
 Now you should have `lukskey` opened in a loop device (underneath `/dev/loop1`), mapped as `/dev/mapper/lukskey`.
 

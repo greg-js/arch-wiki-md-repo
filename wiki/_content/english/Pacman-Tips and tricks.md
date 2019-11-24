@@ -398,7 +398,7 @@ Server = file:///mnt/repo/Packages
 
 ### Custom local repository
 
-Use the *repo-add* script included with *pacman* to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. A package database is a tar file, optionally compressed. Valid extensions are *.db* or *.files* followed by an archive extension of *.tar*, *.tar.gz*, *.tar.bz2*, *.tar.xz*, or *.tar.Z*. The file does not need to exist, but all parent directories must exist.
+Use the *repo-add* script included with *pacman* to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. A package database is a tar file, optionally compressed. Valid extensions are *.db* or *.files* followed by an archive extension of *.tar*, *.tar.gz*, *.tar.bz2*, *.tar.xz*, *.tar.zst*, or *.tar.Z*. The file does not need to exist, but all parent directories must exist.
 
 To add a new package to the database, or to replace the old version of an existing package in the database, run:
 
@@ -698,13 +698,17 @@ It will print running program name and old library that was removed or replaced 
 
 ### Installing only content in required languages
 
-Many packages attempt to install documentation and translations in several languages. Some programs are designed to remove such unnecessary files, such as [localepurge](https://aur.archlinux.org/packages/localepurge/), which runs after a package is installed to delete the unneeded locale files. A more direct approach is provided through the `NoExtract` directive in `pacman.conf`, which prevent these files from ever being installed. The example below installs English (US) files, or none at all:
+Many packages attempt to install documentation and translations in several languages. Some programs are designed to remove such unnecessary files, such as [localepurge](https://aur.archlinux.org/packages/localepurge/), which runs after a package is installed to delete the unneeded locale files. A more direct approach is provided through the `NoExtract` directive in `pacman.conf`, which prevent these files from ever being installed.
+
+**Warning:** Some users noted that removing locales has resulted in [unintended consequences](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example), even under [Xorg](https://bbs.archlinux.org/viewtopic.php?id=250846).
+
+The example below installs English (US) files, or none at all:
 
  `/etc/pacman.conf` 
 ```
 NoExtract = usr/share/help/* !usr/share/help/en*
 NoExtract = usr/share/gtk-doc/html/*
-NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/* opt/google/chrome/locales/*
+NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/* opt/google/chrome/locales/* !/usr/share/X11/locale/C/*
 NoExtract = !*locale*/en*/* !usr/share/i18n/charmaps/UTF-8.gz !usr/share/*locale*/locale.*
 NoExtract = !usr/share/*locales/en_?? !usr/share/*locales/i18n !usr/share/*locales/iso*
 NoExtract = !usr/share/*locales/trans*
@@ -713,8 +717,6 @@ NoExtract = usr/share/man/* !usr/share/man/man*
 NoExtract = usr/share/vim/vim*/lang/*
 NoExtract = usr/lib/libreoffice/help/en-US/*
 ```
-
-Some users noted that removing locales has resulted in [unintended consequences](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
 
 ## Performance
 

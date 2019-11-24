@@ -79,7 +79,7 @@ Existem várias maneiras de definir o tema de cursor.
 
 ### Especificação XDG
 
-Este método se aplica tanto para temas de cursores para [X11](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") quanto para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)").
+Este método se aplica tanto para temas de cursores para [X11](/index.php/X11_(Portugu%C3%AAs) "X11 (Português)") quanto para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)").
 
 Para configuração *específica do usuário*, crie ou edite `~/.icons/default/index.theme`; para configuração a *nível de sistema*, você pode editar `/usr/share/icons/default/index.theme`.
 

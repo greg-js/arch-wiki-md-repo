@@ -139,7 +139,7 @@ Veja também [Usuários e grupos#Grupos pré-systemd](/index.php/Usu%C3%A1rios_e
 
 	X sem root (1.16)
 
-Como `Xorg.wrap` não verifica se logind está ativo [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=86975#c5), [permissões de root para Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") precisam se habilitadas manualmente:
+Como `Xorg.wrap` não verifica se logind está ativo [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=86975#c5), [permissões de root para Xorg](/index.php/Xorg_(Portugu%C3%AAs)#Xorg_sem_superusuário "Xorg (Português)") precisam se habilitadas manualmente:
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 

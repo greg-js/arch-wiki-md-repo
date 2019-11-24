@@ -304,7 +304,7 @@ Most distributions have a *locate* command available to be able to quickly searc
 
 ### Local mail delivery
 
-A default setup does not provide a way to sync mail. To configure *Postfix* for simple local mailbox delivery, see [Postfix](/index.php/Postfix "Postfix"). Other options are [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD"), [msmtp](/index.php/Msmtp "Msmtp") and [fdm](/index.php/Fdm "Fdm").
+A default setup does not provide a way to sync mail. A list of mail delivery agents is available in the [Mail server](/index.php/Mail_server "Mail server") article.
 
 ### Printing
 
@@ -356,7 +356,7 @@ Compressed files, or archives, are frequently encountered on a GNU/Linux system.
 
 ### Console prompt
 
-The console prompt (PS1) can be customized to a great extent. See [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") or [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") if using Bash or Zsh, respectively.
+The console prompt (`PS1`) can be customized to a great extent. See [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") or [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") if using Bash or Zsh, respectively.
 
 ### Emacs shell
 

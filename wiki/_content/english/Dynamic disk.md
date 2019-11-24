@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Dynamic Disks](/index.php/Dynamic_Disks "Dynamic Disks")
+*   [Dynamic disks](/index.php/Dynamic_disks "Dynamic disks")

@@ -57,7 +57,7 @@ Download URLs linked from the PyPI website include an unpredictable hash that ne
 
 	Arch specific wheel package
 
-	in this example for `source_x86_64=('...')`. Also `_py=py37` can be used to not repeat the python version:
+	in this example for `source_x86_64=('...')`. Also `_py=cp38` can be used to not repeat the python version:
 
 	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/${_name/-/_}-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
 

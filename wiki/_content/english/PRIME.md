@@ -10,6 +10,7 @@ PRIME is a technology used to manage hybrid graphics found on recent desktops an
     *   [1.1 Open-source drivers](#Open-source_drivers)
     *   [1.2 Closed-source drivers](#Closed-source_drivers)
 *   [2 PRIME GPU offloading](#PRIME_GPU_offloading)
+    *   [2.1 GPU offloading for NVIDIA proprietary drivers](#GPU_offloading_for_NVIDIA_proprietary_drivers)
 *   [3 Reverse PRIME](#Reverse_PRIME)
     *   [3.1 Discrete card as primary GPU](#Discrete_card_as_primary_GPU)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -74,6 +75,8 @@ GPU-intensive applications should be rendered on the more powerful discrete card
 
 **Note:** GPU offloading is not supported by the closed-source drivers. To get PRIME to work you have to use the discrete card as the primary GPU (for the NVidia driver this is no longer the case, for more info see [here](https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/primerenderoffload.html))
 
+**Note:** Since Xorg 1.20.6 and NVIDIA 440.31, GPU offloading for closed-source NVIDIA drivers is supported by official packages.
+
 Example:
 
 ```
@@ -97,6 +100,15 @@ OpenGL renderer string: Gallium 0.4 on AMD TURKS
 ```
 
 Other applications will still use the less power-hungry integrated card. These settings are lost once the X server restarts, you may want to make a script and auto-run it at the startup of your desktop environment (alternatively, put it in `/etc/X11/xinit/xinitrc.d/`). This may reduce your battery life and increase heat though.
+
+### GPU offloading for NVIDIA proprietary drivers
+
+The NVIDIA proprietary driver uses some specialized GLX extensions to implement its GPU offloading features, therefore the standard `DRI_PRIME` environment variable won't work for it. Try the following if you want to run a specific application on NVIDIA discrete cards:
+
+```
+$ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL renderer"
+
+```
 
 ## Reverse PRIME
 

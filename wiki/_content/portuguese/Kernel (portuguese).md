@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Kernel](/index.php/Kernel "Kernel"). Data da última tradução: 2019-11-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Kernel&diff=0&oldid=587067) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Kernel](/index.php/Kernel "Kernel"). Data da última tradução: 2019-11-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Kernel&diff=0&oldid=588690) na versão em inglês.
 
 Artigos relacionados
 
@@ -91,7 +91,7 @@ O Arch Linux fornece dois métodos para compilar seu próprio kernel.
 
 ## Patches e patchsets
 
-Existem muitas razões para corrigir o seu kernel, as principais são para desempenho ou suporte a recursos que não são da linha principal, como o suporte ao sistema de arquivos [reiser4](/index.php/Reiser4 "Reiser4"). Outras razões podem incluir diversão e ver como isso é feito e quais são as melhorias.
+Existem muitas razões para corrigir o seu kernel, as principais são para desempenho ou suporte a recursos que não são da linha principal. Outras razões podem incluir diversão e ver como isso é feito e quais são as melhorias.
 
 No entanto, é importante notar que a melhor maneira de aumentar a velocidade do seu sistema é primeiro adaptar o kernel ao seu sistema, especialmente a arquitetura e o tipo de processador. Por esse motivo, o uso de versões pré-empacotadas de kernels personalizados com configurações genéricas de arquitetura não é recomendado nem realmente vale a pena. Um benefício adicional é que você pode reduzir o tamanho do seu kernel (e, portanto, tempo de compilação), não incluindo suporte para itens que você não possui ou usa. Por exemplo, você pode começar com a configuração do kernel padrão quando uma nova versão do kernel for lançada e remover o suporte a itens como Bluetooth, video4linux, Ethernet de 1000 Mbit etc., funcionalidades que você sabe que não precisará para sua máquina específica. Embora esta página não seja para personalizar a configuração do seu kernel, ela é recomendada como um primeiro passo - antes de passar a usar um conjunto de patches depois de entender os fundamentos envolvidos.
 
@@ -122,10 +122,6 @@ Se você realmente não corrigiu ou personalizou um kernel antes, não é tão d
 
 Alguns dos pacotes listados também podem estar disponíveis como pacotes binários via [Repositórios não oficiais de usuários](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
-*   **[AppArmor](/index.php/AppArmor "AppArmor")** — O sistema do [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC), implementado no [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM). Enquanto o [linux](https://www.archlinux.org/packages/?name=linux) suporta o apparmor, este kernel tem os [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") necessários habilitados por padrão.
-
-	[https://gitlab.com/apparmor/apparmor/wikis/About](https://gitlab.com/apparmor/apparmor/wikis/About) || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
-
 *   **Aufs** — O kernel e os módulos do linux compatíveis com aufs, úteis ao usar o [docker](/index.php/Docker "Docker").
 
 	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) || [linux-aufs](https://aur.archlinux.org/packages/linux-aufs/)
@@ -145,10 +141,6 @@ Alguns dos pacotes listados também podem estar disponíveis como pacotes binár
 *   **MultiPath TCP** — O kernel do Linux e os módulos com suporte a Multipath TCP.
 
 	[https://multipath-tcp.org/](https://multipath-tcp.org/) || [linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)
-
-*   **[Reiser4](/index.php/Reiser4 "Reiser4")** — Sistema de arquivos sucessor do ReiserFS, desenvolvido do zero por Namesys e Hans Reiser.
-
-	[https://sourceforge.net/projects/reiser4/files/](https://sourceforge.net/projects/reiser4/files/) || [linux-ck-reiser4](https://aur.archlinux.org/packages/linux-ck-reiser4/)
 
 *   **VFIO** — O kernel do Linux e alguns patches escritos por Alex Williamson (substituição de ACS e i915) para permitir a capacidade de passagem do PCI com o KVM em algumas máquinas.
 

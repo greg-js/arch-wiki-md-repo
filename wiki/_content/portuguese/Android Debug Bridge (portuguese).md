@@ -1,6 +1,10 @@
 [Android Debug Bridge](https://developer.android.com/studio/command-line/adb) (ADB) é uma ferramenta de linha de comando para instalar, desinstalar e debugar apps, transferir arquivos e acessar a console de um dispositivo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Utilização](#Utilização)

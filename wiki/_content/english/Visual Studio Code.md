@@ -10,7 +10,7 @@
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
     *   [3.1 Integrated Terminal](#Integrated_Terminal)
-    *   [3.2 External Terminal](#External_Terminal)
+    *   [3.2 External terminal](#External_terminal)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Global menu not working in KDE/Plasma](#Global_menu_not_working_in_KDE/Plasma)
     *   [4.2 Unable to move items to trash](#Unable_to_move_items_to_trash)
@@ -56,9 +56,9 @@ Example:
 
 ```
 
-### External Terminal
+### External terminal
 
-If you are using **Terminator** as default terminal for Arch and you have an error on Visual Studio Code: `Unable to launch debugger worker process (vsdbg) through the terminal. spawn truecolor ENOENT`, you can change the terminal that will be used by Visual Studio to another terminal (eg gnome-terminal).
+If you are using [Terminator](/index.php/Terminator "Terminator") as default terminal for Arch and you have an error on Visual Studio Code: `Unable to launch debugger worker process (vsdbg) through the terminal. spawn truecolor ENOENT`, you can change the terminal that will be used by Visual Studio to another terminal (e.g. [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)).
 
 `"terminal.external.linuxExec": "Yours alternative terminal"` sets the default terminal to be used for exec debug.
 
@@ -123,7 +123,7 @@ Modify import to look like this:
 
 ### Error from OmniSharp that MSBuild cannot be located
 
-It's noted in the [OmniSharp introduction](https://github.com/OmniSharp/omnisharp-roslyn#introduction) that Arch Linux users should install the [msbuild-stable](https://aur.archlinux.org/packages/msbuild-stable/) package. Without it, you might get an error like:
+It is noted in the [OmniSharp introduction](https://github.com/OmniSharp/omnisharp-roslyn#introduction) that Arch Linux users should install the [msbuild-stable](https://aur.archlinux.org/packages/msbuild-stable/) package. Without it, you might get an error like:
 
  `OmniSharp Log` 
 ```

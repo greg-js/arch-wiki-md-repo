@@ -185,11 +185,10 @@ Enter login passphrase for testuser:
 $ mkdir *new_dir*
 $ fscrypt encrypt *new_dir*
 $ cp -a -T *old_dir* *new_dir*
-$ find *old_dir* -type f | xargs shred -u
+$ find *old_dir* -type f -print0 | xargs -0 shred -n1 --remove=unlink
 $ rm -rf *old_dir*
 
 ```
-
 Beware that the original unencrypted files may still be forensically recoverable from disk even after being shredded and deleted, especially if you are using an SSD. It is much better to keep your data encrypted from the start.
 
 ## Manually unlock a directory
@@ -258,7 +257,7 @@ Otherwise, replace the home directory:
 If everything is working as expected, you can delete the old home directory:
 
 ```
-# find /home/oldhome -type f -print0 | xargs -0 shred -u
+# find /home/oldhome -type f -print0 | xargs -0 shred -n1 --remove=unlink
 # rm -rf /home/oldhome
 
 ```

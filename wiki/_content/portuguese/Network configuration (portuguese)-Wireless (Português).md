@@ -169,7 +169,7 @@ Assim como outras interfaces de rede, as sem fio são controladas com *ip* do pa
 
 Gerenciar uma conexão sem fio requer um conjunto básico de ferramentas. Use um [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") ou use um dos seguintes diretamente:
 
-| Software | Pacote | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) |
+| Software | Pacote | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 | [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) |
 | [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Sim | Não | Sim | Não | Sim |
 | [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | Não | Sim | Sim | Não | Sim |
 | [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Sim | Sim | Sim | Sim | Sim |
@@ -816,7 +816,7 @@ Para ver todos os valores possíveis para esse LED:
 
 ### Broadcom
 
-Veja [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless").
+Veja [Broadcom wireless](/index.php/Broadcom_wireless_(Portugu%C3%AAs) "Broadcom wireless (Português)").
 
 ### Outros drivers/dispositivos
 

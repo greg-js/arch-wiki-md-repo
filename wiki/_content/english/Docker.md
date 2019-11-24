@@ -218,6 +218,8 @@ $ git clone [https://github.com/archlinux/archlinux-docker.git](https://github.c
 
 ```
 
+Make sure that the [devtools](https://www.archlinux.org/packages/?name=devtools) package is installed.
+
 Edit the `packages` file so it only contains 'base'. Then run:
 
 ```

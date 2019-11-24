@@ -48,7 +48,7 @@ Clientes [DHCP](/index.php/DHCP_(Portugu%C3%AAs) "DHCP (Português)"):
 *   [netctl](/index.php/Netctl "Netctl") (usado por padrão)
 *   [NetworkManager (Português)#Usar openresolv](/index.php/NetworkManager_(Portugu%C3%AAs)#Usar_openresolv "NetworkManager (Português)") (limitado a uma única interface)
 
-Clientes [VPN](/index.php/VPN "VPN"):
+Clientes [VPN](/index.php/VPN_(Portugu%C3%AAs) "VPN (Português)"):
 
 *   [OpenConnect](/index.php/OpenConnect_(Portugu%C3%AAs) "OpenConnect (Português)")
 *   [OpenVPN#DNS](/index.php/OpenVPN#DNS "OpenVPN")

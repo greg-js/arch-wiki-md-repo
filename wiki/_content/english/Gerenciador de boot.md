@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Category:Boot loaders (Português)](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)")
+*   [Arch boot process (Português)#Gerenciador de boot](/index.php/Arch_boot_process_(Portugu%C3%AAs)#Gerenciador_de_boot "Arch boot process (Português)")

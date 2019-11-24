@@ -223,6 +223,19 @@ CPU frequency scaling: not tested | Not present | Hot keys: everything except br
 Webcam: works
 Fingerprint scanner: Validity VFS7552; not working
 Keyboard backlit: works | The audio quality is decent. No wifi/eth cable connectivity issues. The touchpad doesn't work after suspend ([reload i2c_hid kernel module to fix](https://superuser.com/questions/1446247/lazy-touchpad-on-ubuntu-after-suspend-synps-2-synaptics-touchpad-disappears-f/1449190)) |
+| HP ProBook 430 G6 | 2019.11 | Intel Core i5-8265U, UHD Graphics 620 (Whiskey Lake): works out of the box | Intel sound card: *snd-hda-intel* | Realtek RTL8111HSH-CG 10/100/1000 GbE NIC
+Driver: *r8169* | Intel Wireless-AC 9560 (?)
+Driver: *iwlwifi* | Works. | ACPI: works
+Suspend to RAM: works
+Suspend to Disk: works
+Battery: works
+Display dimming: works
+CPU frequency scaling: not tested | Not present | Hot keys: works, brightness controlls works after bios update (2019.11) with kernel 5.3.11
+Webcam: works
+Fingerprint scanner: Validity VFS7552; not tested
+Keyboard backlit: works | The audio quality is decent.
+The touchpad doesn't work after suspend ([reload i2c_hid kernel module to fix](https://superuser.com/questions/1446247/lazy-touchpad-on-ubuntu-after-suspend-synps-2-synaptics-touchpad-disappears-f/1449190))
+Same workaround needed for ethernet in a bridge |
 | HP EliteBook 830 G5 | 2018.11 | Intel Core i5-8250u, Intel UHD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | Realtek RTL8111HSH-CG 10/100/1000 GbE NIC | Intel 9560\. Driver: *iwlwifi* | Yes | ACPI: works
 Suspend to RAM: works
 Suspend to Disk: work

@@ -626,7 +626,7 @@ Install [openprinting-ppds-pxlmono-ricoh](https://aur.archlinux.org/packages/ope
 *   [List of supported black and white models](https://www.openprinting.org/driver/pxlmono-Ricoh)
 *   [List of supported color models](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
-For cheap [GDI-only winprinters](https://en.wikipedia.org/wiki/en:Graphics_Device_Interface#GDI_printers "wikipedia:en:Graphics Device Interface"), which does not support PCL (Ricoh series SP100 and SP200) try out [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/).
+For cheap [GDI-only winprinters](https://en.wikipedia.org/wiki/en:Graphics_Device_Interface#GDI_printers "wikipedia:en:Graphics Device Interface"), which do not support PCL (Ricoh series SP100 and SP200) try out [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/).
 
 | Printer | Driver/filter | Notes |
 | SP 112 | [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/) |

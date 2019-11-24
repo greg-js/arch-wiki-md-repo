@@ -29,6 +29,7 @@ Related articles
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
     *   [8.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
+    *   [8.3 pgadmin4 issues after upgrade to Postgresql 12](#pgadmin4_issues_after_upgrade_to_Postgresql_12)
 
 ## Installation
 
@@ -522,4 +523,8 @@ If you are using PostgresSQL on a local machine for development and it seems slo
 
 PostgreSQL periodically updates its internal "statistics" file. By default, this file is stored on disk, which prevents disks from spinning down on laptops and causes hard drive seek noise. It is simple and safe to relocate this file to a memory-only file system with the following configuration option:
 
- `/var/lib/postgres/data/postgresql.conf`  `stats_temp_directory = '/run/postgresql'`
+ `/var/lib/postgres/data/postgresql.conf`  `stats_temp_directory = '/run/postgresql'` 
+
+### pgadmin4 issues after upgrade to Postgresql 12
+
+If you see errors about "string indices must be integers" when navigating the tree on the left, or about "column rel.relhasoids does not exist" when viewing the data, remove the server from the connection list in pgadmin4 and add a fresh server instance. pgadmin4 will otherwise continue to treat the server as a v11 postgres server resulting in these issues.

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [XDM](/index.php/XDM "XDM"). Data da última tradução: 2019-11-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDM&diff=0&oldid=493920) na versão em inglês.
+
 Artigos relacionados
 
 *   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
@@ -8,17 +10,21 @@ Da [página de manual do XDM](http://www.xfree86.org/current/xdm.1.html):
 
 XDM fornece um simples e direto solicitador de login gráfico.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [2.1 Definindo a sessão](#Definindo_a_sess.C3.A3o)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalação](#Instalação)
+*   [2 Configuração](#Configuração)
+    *   [2.1 Definindo a sessão](#Definindo_a_sessão)
     *   [2.2 Tema](#Tema)
         *   [2.2.1 Papel de parede de plano de fundo](#Papel_de_parede_de_plano_de_fundo)
         *   [2.2.2 Fonte](#Fonte)
-        *   [2.2.3 Posicionamento de diálogo de login](#Posicionamento_de_di.C3.A1logo_de_login)
+        *   [2.2.3 Posicionamento de diálogo de login](#Posicionamento_de_diálogo_de_login)
         *   [2.2.4 Removendo a logo](#Removendo_a_logo)
-    *   [2.3 Várias sessões X & Login na janela](#V.C3.A1rias_sess.C3.B5es_X_.26_Login_na_janela)
+    *   [2.3 Várias sessões X & Login na janela](#Várias_sessões_X_&_Login_na_janela)
     *   [2.4 Login sem senha](#Login_sem_senha)
 
 ## Instalação
@@ -107,14 +113,14 @@ Comente as definições da logo:
 Com o [XDMCP](/index.php/XDMCP "XDMCP") habilitado, você pode facilmente executar várias sessões X simultaneamente na mesma máquina.
 
 ```
-# X -query *ip_servidor_xdmcp* :2
+# X -query *ip_servidor_xdmcp* :2
 
 ```
 
 Isso vai iniciar a segunda sessão na janela (você precisará de [xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr))
 
 ```
-# Xephyr -query *ip_dessa_máquina* :2
+# Xephyr -query *ip_dessa_máquina* :2
 
 ```
 

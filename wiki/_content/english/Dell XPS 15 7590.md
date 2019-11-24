@@ -354,6 +354,33 @@ Kernel versions 5.2.0 and 5.2.1 [have issues with getting the WiFi module workin
 
 ## Thermal management
 
+Default thermal management is not very optimized (this is my experience with the i9 processor at least).
+
+The laptop gets hot quite often and the fans run at high speed most of the time.
+
+One solution I found is to use powertop to get a quieter system.
+
+See [[3]](https://wiki.archlinux.org/index.php/Powertop) for details.
+
+You may activate manual fans control with [i8kutils](https://launchpad.net/i8kutils). Install [i8kutils](https://aur.archlinux.org/packages/i8kutils/) and [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/). Edit `/etc/i8kutils/i8kmon.conf` and enable services:
+
+```
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable i8kmon.service
+$ sudo systemctl dell-bios-fan-control.service
+$ sudo modprobe dell-smm-hwmon
+$ sudo modprobe i8k
+$ sudo start enable i8kmon.service
+$ sudo start dell-bios-fan-control.service
+
+```
+
 ## Tips and Tricks
 
 ## Fingerprint reader
+
+It is a Goodix fingerprint reader.
+
+The producer does not provide any Linux driver nor documentation to implement one.
+
+Some effort is in slow progress to reverse engineer the windows drivers (see [[4]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/189)).
