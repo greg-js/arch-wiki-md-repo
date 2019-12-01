@@ -4,7 +4,11 @@ Related articles
 
 [Yakuake](https://www.kde.org/applications/system/yakuake/) is a top-down terminal for [KDE](/index.php/KDE "KDE") in the style of [Guake](/index.php/Guake "Guake") for [GNOME](/index.php/GNOME "GNOME"), [Tilda](/index.php/Tilda "Tilda") or the terminal used in Quake.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

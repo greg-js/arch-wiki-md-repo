@@ -377,6 +377,37 @@ gnokii # invoke gnokii
 
 Granted this does not work very well if your SMS contains the word "Text", but you may adapt the script to your liking.
 
+Another option is to use `mmcli`
+
+```
+#!/bin/bash
+#get modem number
+MODEMNO=$(mmcli -L | grep -o "Modem/[0-9]" | grep -o [0-9]$)
+#create sms in modem and get number
+SMSNO=$(mmcli -m ${MODEMNO} --messaging-create-sms="text='$1',number=+$2" |  grep -o [0-9]*$)
+#send message
+mmcli -s ${SMSNO} --send
+# delete all sent messages
+for i in $(mmcli -m ${MODEMNO} --messaging-list-sms | grep " (sent)" | cut -f5 -d' ') ; do
+    mmcli -m ${MODEMNO} --messaging-delete-sms=$i
+done
+
+```
+
+You may need give permission by creating file with content like
+
+ `/etc/polkit-1/rules.d/49-nopasswd_mmcli.rules` 
+```
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.ModemManager1.Messaging" &&
+        subject.isInGroup("uucp"))
+    {
+        return polkit.Result.YES;
+    }
+});
+
+```
+
 #### With email like web interface
 
 Some Devices, such as some Huawei HiLink, include an email like web interface for SMS. It is included in the device internal web server, which is used for other purposes too.

@@ -139,7 +139,7 @@ The following adapters were tested
 
 ## PrivacyGuard
 
-This optional feature is currently not yet supported by the vanilla kernel. There is a [kernel patch available](https://patchwork.kernel.org/patch/11109239/).
+This optional feature is currently not yet supported by the vanilla kernel but will be available in 5.4\. There is a [kernel patch available](https://patchwork.kernel.org/patch/11109239/) for more information and kernels prior to 5.4.
 
 ## Fix freezes/hangs on QT applications (with Intel driver)
 

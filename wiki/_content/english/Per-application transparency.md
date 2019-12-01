@@ -20,7 +20,11 @@ Usually, the case is that you can either make all windows transparent with xcomp
 
 Adding [devilspie](http://burtonini.com/blog/computers/devilspie) to the mix however, will allow you to achieve per application transparency automatically.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

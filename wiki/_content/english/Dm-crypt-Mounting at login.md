@@ -2,7 +2,7 @@ Related articles
 
 *   [pam_mount](/index.php/Pam_mount "Pam mount")
 
-It is possible to configure [PAM](/index.php/PAM "PAM") and [systemd](/index.php/Systemd "Systemd") to automatically mount a [dm-crypt](/index.php/Dm-crypt "Dm-crypt") encrypted home partition when its owner logs in, and to unmount it when he logs out.
+It is possible to configure [PAM](/index.php/PAM "PAM") and [systemd](/index.php/Systemd "Systemd") to automatically mount a [dm-crypt](/index.php/Dm-crypt "Dm-crypt") encrypted home partition when its owner logs in, and to unmount it when they log out.
 
 This tutorial assumes you have already created your encrypted partition, as described in [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system").
 
@@ -38,7 +38,7 @@ MAPPER="/dev/mapper/home-"$CRYPT_USER
 if [ "$PAM_USER" == "$CRYPT_USER" ] && [ ! -e $MAPPER ]
 then
   tr '\0' '
-' | /usr/bin/cryptsetup open /dev/*PARTITION* home-$CRYPT_USER && mount $MAPPER
+' | /usr/bin/cryptsetup open /dev/*PARTITION* home-$CRYPT_USER
 fi
 ```
 

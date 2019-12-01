@@ -89,6 +89,7 @@ Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
 *   [lightdm-mini-greeter](https://aur.archlinux.org/packages/lightdm-mini-greeter/): A minimal, configurable, single-user greeter.
+*   [lightdm-webkit-theme-aether](https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/): A sleek, straightforward Archlinux themed login screen written on lightdm and the lightdm-webkit2-greeter.
 
 You can set the default greeter by changing the `[Seat:*]` section of the LightDM configuration file, like so:
 

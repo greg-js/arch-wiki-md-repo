@@ -69,6 +69,7 @@ From [https://www.x.org/wiki/](https://www.x.org/wiki/):
     *   [8.10 A green screen whenever trying to watch a video](#A_green_screen_whenever_trying_to_watch_a_video)
     *   [8.11 SocketCreateListener error](#SocketCreateListener_error)
     *   [8.12 Invalid MIT-MAGIC-COOKIE-1 key when trying to run a program as root](#Invalid_MIT-MAGIC-COOKIE-1_key_when_trying_to_run_a_program_as_root)
+    *   [8.13 Xorg-server Fatal server error: (EE) AddScreen/ScreenInit](#Xorg-server_Fatal_server_error:_(EE)_AddScreen/ScreenInit)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -708,6 +709,19 @@ $ xhost +si:localuser:root
 ```
 
 That line can also be used to give access to X to a different user than root.
+
+### Xorg-server Fatal server error: (EE) AddScreen/ScreenInit
+
+If the Xorg server is not working randomly and in the Xorg log you see:
+
+```
+systemd-logind: failed to take device /dev/dri/card0: Operation not permitted
+...
+AddScreen/ScreenInit failed for driver 0
+
+```
+
+Then, this problem may be caused by [systemd issue 13943](https://github.com/systemd/systemd/issues/13943). Set up [early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
 
 ## See also
 

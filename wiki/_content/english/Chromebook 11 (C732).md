@@ -12,9 +12,9 @@
 *   disable hardware write-protection by booting without battery
 *   only SeaBIOS (no CoreBoot with UEFI) by [https://mrchromebox.tech/#devices](https://mrchromebox.tech/#devices)
 
-## Touchscreem
+## Other Distros
 
-Maybe it works with the lates `xf86-input-cmt` the AUR packages are outdated ;(
+[https://github.com/GalliumOS/galliumos-distro/issues/364](https://github.com/GalliumOS/galliumos-distro/issues/364)
 
 ## System Settings
 

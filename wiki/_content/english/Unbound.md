@@ -429,20 +429,27 @@ Please refer to [unbound-control(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/
 
 ### Domain blacklisting
 
-You can use the following file and simply include it in your unbound configuration: [adservers](https://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&startdate%5Bday%5D=&startdate%5Bmonth%5D=&startdate%5Byear%5D=&mimetype=plaintext)
+To blacklist a domain, by returning a NXDOMAIN to the queries for it, use the `local-zone: "*domainname*" always_nxdomain` option in unbound configuration. To ease the blacklist's management, save it as a separate file (e.g. `/etc/unbound/blacklist.conf`) and include it from `/etc/unbound/unbound.conf`. For example:
 
+ `/etc/unbound/blacklist.conf` 
+```
+local-zone: "blacklisted.example" always_nxdomain
+local-zone: "another.blacklisted.example" always_nxdomain
+
+```
  `/etc/unbound/unbound.conf` 
 ```
 server:
 ...
-  include: /etc/unbound/adservers
+  include: /etc/unbound/blacklist.conf
 
 ```
 
 **Tip:**
 
 *   In order to return some OK statuses on those hosts, you can change the 127.0.0.1 redirection to a server you control and have that server respond with empty 204 replies, see [this page](http://www.shadowandy.net/2014/04/adblocking-nginx-serving-1-pixel-gif-204-content.htm)
-*   To convert a hosts file from another source to the unbound format do: `$ grep '^0\.0\.0\.0' *hostsfile* | awk '{print "local-zone: \""$2"\" always_nxdomain"}' > /etc/unbound/adservers` 
+*   To convert a hosts file from another source to the unbound format do: `$ grep '^0\.0\.0\.0' *hostsfile* | awk '{print "local-zone: \""$2"\" always_nxdomain"}' > /etc/unbound/blacklist.conf` 
+*   A list of potential sources for the blacklist can be found in [OpenWrt's adblock package's README](https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md).
 
 ### Adding an authoritative DNS server
 

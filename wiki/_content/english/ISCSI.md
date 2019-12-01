@@ -2,7 +2,7 @@ With [iSCSI](https://en.wikipedia.org/wiki/iSCSI "wikipedia:iSCSI") you can acce
 
 The exported storage entity is the **target** and the importing entity is the **initiator**.
 
-Since Linux 2.6.38 [LIO](/index.php/ISCSI/LIO "ISCSI/LIO") is the in-kernel iSCSI target. Before that it was [tgt](/index.php/ISCSI/tgt "ISCSI/tgt"). [SCST](http://scst.sourceforge.net/) was another candidate for kernel inclusion.[[1]](https://lwn.net/Articles/424004/)
+Since Linux 2.6.38 [LIO](/index.php/ISCSI/LIO "ISCSI/LIO") is the in-kernel iSCSI target. Before that it was tgt. [SCST](http://scst.sourceforge.net/) was another candidate for kernel inclusion.[[1]](https://lwn.net/Articles/424004/)
 
 The current initiator is [Open-iSCSI](/index.php/Open-iSCSI "Open-iSCSI").
 

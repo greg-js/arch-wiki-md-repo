@@ -530,7 +530,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Applicazione proprietaria VoIP, che ha tra i videogiocatori come target di riferimento.
 
-	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak](https://www.archlinux.org/packages/?name=teamspeak)
+	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak](https://aur.archlinux.org/packages/teamspeak/)
 
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Applicazione softphone in Qt per VoIP e comunicazioni IM tramite SIP.
 

@@ -8,9 +8,12 @@ The current meeting organiser is [User:jelly](/index.php/User:Jelly "User:Jelly"
 
 ## Past meetings
 
-*   [DeveloperWiki:DevopsMeetings/2019-10-09](/index.php/DeveloperWiki:DevopsMeetings/2019-10-09 "DeveloperWiki:DevopsMeetings/2019-10-09")
-*   [DeveloperWiki:DevopsMeetings/2019-10-24](/index.php/DeveloperWiki:DevopsMeetings/2019-10-24 "DeveloperWiki:DevopsMeetings/2019-10-24")
-*   [DeveloperWiki:DevopsMeetings/2019-11-27](/index.php/DeveloperWiki:DevopsMeetings/2019-11-27 "DeveloperWiki:DevopsMeetings/2019-11-27")
+*   [2019-10-09](/index.php/DeveloperWiki:DevopsMeetings/2019-10-09 "DeveloperWiki:DevopsMeetings/2019-10-09")
+*   [2019-10-24](/index.php/DeveloperWiki:DevopsMeetings/2019-10-24 "DeveloperWiki:DevopsMeetings/2019-10-24")
+*   [2019-11-17](/index.php/DeveloperWiki:DevopsMeetings/2019-11-17 "DeveloperWiki:DevopsMeetings/2019-11-17")
+*   [2019-11-27](/index.php/DeveloperWiki:DevopsMeetings/2019-11-27 "DeveloperWiki:DevopsMeetings/2019-11-27")
+
+*   [2019-11-28](/index.php/DeveloperWiki:DevopsMeetings/2019-11-28 "DeveloperWiki:DevopsMeetings/2019-11-28")
 
 ## Meeting template
 

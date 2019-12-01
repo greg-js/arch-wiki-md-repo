@@ -74,3 +74,4 @@ When `upperdir` is not specified, the overlay is automatically mounted as read-o
 
 *   [Overlay Filesystem documentation](https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt)
 *   [Explaining overlayfs - What it does and how it works](https://www.datalight.com/blog/2016/01/27/explaining-overlayfs-%E2%80%93-what-it-does-and-how-it-works)
+*   [Wikipedia:OverlayFS](https://en.wikipedia.org/wiki/OverlayFS "wikipedia:OverlayFS")

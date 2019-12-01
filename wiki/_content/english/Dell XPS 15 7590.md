@@ -366,12 +366,10 @@ You may activate manual fans control with [i8kutils](https://launchpad.net/i8kut
 
 ```
 $ sudo systemctl daemon-reload
-$ sudo systemctl enable i8kmon.service
-$ sudo systemctl dell-bios-fan-control.service
 $ sudo modprobe dell-smm-hwmon
 $ sudo modprobe i8k
-$ sudo start enable i8kmon.service
-$ sudo start dell-bios-fan-control.service
+$ sudo systemctl enable --now i8kmon.service
+$ sudo systemctl enable --now dell-bios-fan-control.service
 
 ```
 

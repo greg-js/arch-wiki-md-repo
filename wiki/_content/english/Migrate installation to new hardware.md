@@ -102,7 +102,7 @@ At the same time there are many different methods for how to transport the data 
 *   Make use of temporary storage devices like external HDDs, or cloud backups. Data link: old HDD -> old computer -> storage -> new computer -> new HDD.
 *   Transfer data over network, for example with [rsync](/index.php/Rsync "Rsync"). Data link: old HDD -> old computer -> network -> new computer -> new HDD.
 
-For the first two options, consider that you might need adapters to connect the HDDs (PATA->SATA, USB-HDD-Cases, etc.), and choose a connection that is sufficiently fast. The last two options require you to use a live system on the new computer, as it is not possible to boot from the new harddrive at this point. It is also worth to clean up your system before cloning it. See [List of applications#Disk usage display](/index.php/List_of_applications#Disk_usage_display "List of applications") for useful tools.
+For the first two options, consider that you might need adapters to connect the HDDs (PATA->SATA, USB-HDD-Cases, etc.), and choose a connection that is sufficiently fast. The last two options require you to use a live system on the new computer, as it is not possible to boot from the new hard drive at this point. It is also worth to clean up your system before cloning it. See [List of applications#Disk usage display](/index.php/List_of_applications#Disk_usage_display "List of applications") for useful tools.
 
 ### Update fstab
 

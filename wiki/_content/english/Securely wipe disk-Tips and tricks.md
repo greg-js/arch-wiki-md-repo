@@ -4,7 +4,11 @@ This article describes alternative wiping methods to the specialized utilities t
 
 **Warning:** [Reserved blocks](/index.php/Ext4#Reserved_blocks "Ext4") will not be wiped by creation of the files but they can be disabled with utility `tune2fs`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Wipe a single file](#Wipe_a_single_file)
 *   [2 Overwrite the target](#Overwrite_the_target)
@@ -12,8 +16,9 @@ This article describes alternative wiping methods to the specialized utilities t
     *   [2.2 dd - advanced example](#dd_-_advanced_example)
     *   [2.3 Using a template file](#Using_a_template_file)
 *   [3 Wipe free space](#Wipe_free_space)
-    *   [3.1 7zip](#7zip)
-    *   [3.2 Create multiple files with help of the *timeout* command](#Create_multiple_files_with_help_of_the_timeout_command)
+    *   [3.1 Using dd](#Using_dd)
+    *   [3.2 Using 7-Zip](#Using_7-Zip)
+    *   [3.3 Create multiple files with help of the *timeout* command](#Create_multiple_files_with_help_of_the_timeout_command)
 
 ## Wipe a single file
 
@@ -120,7 +125,7 @@ Instead of zeros you can use a bunch of files you want to be found or partition 
 One way is to wipe until device ends, but this type of redirection is not recommended because you have to use [stop keys](https://en.wikipedia.org/wiki/Unix_signal "wikipedia:Unix signal") to break the `while` loop when errors about device end will show up:
 
 ```
-$ while [ 1 -lt 2 ];do cat file1-to-use.as-template file2-to-use.as-template /tmp/templatefiles/* ;done > /dev/sd"XY"
+$ while [ 1 -lt 2 ];do cat file1-to-use.as-template file2-to-use.as-template /tmp/templatefiles/* ;done > /dev/sd"XY"
 
 ```
 
@@ -145,9 +150,7 @@ See also:
 
 ## Wipe free space
 
-**Warning:**
-
-*   It is not appropriate to use before [preparations for block device encryption](/index.php/Securely_wipe_disk#Preparations_for_block_device_encryption "Securely wipe disk").
+**Warning:** It is not appropriate to use before [preparations for block device encryption](/index.php/Securely_wipe_disk#Preparations_for_block_device_encryption "Securely wipe disk").
 
 You can wipe free space by several ways:
 
@@ -155,13 +158,32 @@ You can wipe free space by several ways:
 
 *   Create multiple file copies by using e.g. `cp` command in loops with random file names or destination directories until no free space will be left.
 
-*   Use an utility that creates encrypted files with random password and file names.
+*   Use an utility that creates encrypted files with random password and file names. Some of the file compression utilities have options for compression methods, file types and can even split file into volumes of the preset size upon creation. By using some options randomly into a loop you will be able to fill the whole free space up with encrypted data and overwrite previous data.
 
-*   Use a specialized program for the free space wiping such as [wipefreespace](https://aur.archlinux.org/packages/wipefreespace/).
+*   Use a specialized program for the free space wiping such as:
 
-Some of the file compression utilities use to have many types of the compression methods, file types and can even split file into volumes of the preset size upon creation. By using all options at random and into the loop you will be able to fill the whole free space up with a useless encrypted data that will overwrite everything else that was deleted. Just do not forget to remove created files and run it many times to ensure that even forensic specialists will get harder to restore very sensitive data on it.
+**wipefreespace** — Wipe Free Space securely erases the free space on file systems to prevent recovery of deleted sensitive data.
 
-### 7zip
+	[https://sourceforge.net/projects/wipefreespace/](https://sourceforge.net/projects/wipefreespace/) || [wipefreespace](https://aur.archlinux.org/packages/wipefreespace/)
+
+**zerofree** — Scans for non-zero free blocks in a filesystem and fills them with zeroes
+
+	[https://frippery.org/uml/](https://frippery.org/uml/) || [zerofree](https://aur.archlinux.org/packages/zerofree/)
+
+### Using dd
+
+One can create a file that fills the empty space using [dd](/index.php/Dd "Dd"):
+
+```
+dd if=*source* of=junk
+sync
+rm junk
+
+```
+
+The `*source*` can be the `/dev/urandom` or `/dev/zero` stream. The file is removed after making sure data has synchronized on disk.
+
+### Using 7-Zip
 
 ```
 Password="$(dd if=/dev/urandom bs=128 count=1)"

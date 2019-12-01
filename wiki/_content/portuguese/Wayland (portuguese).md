@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wayland](/index.php/Wayland "Wayland"). Data da última tradução: 2019-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wayland&diff=0&oldid=588279) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wayland](/index.php/Wayland "Wayland"). Data da última tradução: 2019-11-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wayland&diff=0&oldid=590154) na versão em inglês.
 
 Artigos relacionados
 
@@ -168,7 +168,7 @@ Tenha certeza que você não definiu GDK_BACKEND=wayland. Definir isso globalmen
 
 ### Gravar tela
 
-[green-recorder](https://aur.archlinux.org/packages/green-recorder/) e [obs-gnome-screencast](https://aur.archlinux.org/packages/obs-gnome-screencast/) suportam gravar a tela no Wayland usando uma funcionalidade do GNOME.
+[green-recorder](https://aur.archlinux.org/packages/green-recorder/), [obs-gnome-screencast](https://aur.archlinux.org/packages/obs-gnome-screencast/) e [obs-xdg-portal-git](https://aur.archlinux.org/packages/obs-xdg-portal-git/) suportam gravar a tela no Wayland usando uma funcionalidade do GNOME.
 
 [wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) é um gravador de tela para compositores baseados no wlroots.
 

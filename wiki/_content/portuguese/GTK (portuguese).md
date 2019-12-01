@@ -86,7 +86,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 ```
 
-**Nota:** Para aplicar o acima aos atalhos da área de trabalho (ou lançadores), consulte [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
+**Nota:** Para aplicar o acima aos atalhos da área de trabalho (ou lançadores), consulte [Entradas de desktop#Modificar variáveis de ambiente](/index.php/Entradas_de_desktop#Modificar_variáveis_de_ambiente "Entradas de desktop").
 
 Mais temas podem ser instalados a partir dos repositórios oficiais ou do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Temas extraídos manualmente vão nos diretórios `~/.themes/` ou `~/.local/share/themes/`.
 

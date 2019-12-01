@@ -1,4 +1,6 @@
-The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless receiver that can connect up to six compatible wireless mice and keyboards to your computer. The input device that comes with the receiver is already paired with it and should work out of the box through plug and play. Logitech officially supports pairing of additional devices just through their Windows and macOS software. Pairing and unpairing on Linux is supported by a number of tools, listed below.
+The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless receiver using 2.4 GHz band radio communication that can connect up to six compatible wireless mice and keyboards to your computer. The input device that comes with the receiver is already paired with it and should work out of the box through plug and play. Logitech officially supports pairing of additional devices just through their Windows and macOS software.
+
+Pairing and unpairing on Linux is supported by a number of tools, listed thereafter:
 
 [ltunify](https://lekensteyn.nl/logitech-unifying.html) is a command-line C program that can perform pairing, unpairing and listing of devices. [Solaar](http://pwr.github.io/Solaar/) is a graphical Python program that integrates in your system tray and allows you to configure additional features of your input device such as swapping the functionality of Fn keys. [libratbag](https://github.com/libratbag/libratbag) is a configurable mice daemon that allows you to configure your devices, it has a GTK based graphical frontend app, [piper](https://github.com/libratbag/piper).
 
@@ -22,6 +24,7 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
     *   [3.5 Wireless Keyboard doesn't work while booting (can't enter luks passphrase)](#Wireless_Keyboard_doesn't_work_while_booting_(can't_enter_luks_passphrase))
     *   [3.6 MouseJack Vulnerability](#MouseJack_Vulnerability)
     *   [3.7 Keyboard or mouse does not wake pc from sleep](#Keyboard_or_mouse_does_not_wake_pc_from_sleep)
+    *   [3.8 Lag of the wireless device during heavy Wi-Fi load](#Lag_of_the_wireless_device_during_heavy_Wi-Fi_load)
 
 ## Installation
 
@@ -185,24 +188,18 @@ and recreate the initrd for the kernel:
 
 ### MouseJack Vulnerability
 
-It's probable that your firmware is affected by the [MouseJack Vulnerability](https://www.bastille.net/research/vulnerabilities/mousejack/affected-devices).
+Several security vulnerabilities of the system have been reported and you may be in particular affected by the [MouseJack Vulnerability](https://www.bastille.net/research/vulnerabilities/mousejack/affected-devices) if your firmware has not been updated recently.
+
+It is possible to display the current firmware's version by running:
 
 ```
 ltunify receiver-info
 
 ```
 
-for getting current firmware. Affected versions include:
+RQR12 firmware with version earlier than `012.008.00030` and RQR24 firmware versions earlier than `024.006.00030` are affected by this vulnerability and should be updated.
 
-```
-012.001.00019
-012.003.00025
-012.005.00028
-024.003.00027
-
-```
-
-You should therefore update the firmware via [fwupd](/index.php/Fwupd "Fwupd") like so:
+The firmware can be updated using [fwupd](/index.php/Fwupd "Fwupd") like so:
 
 ```
 fwupdmgr refresh && fwupdmgr get-updates
@@ -218,4 +215,10 @@ fwupdmgr update
 
 ### Keyboard or mouse does not wake pc from sleep
 
-Follow the instructions in the Installation section on the official site [[2]](https://github.com/3v1n0/Solaar/blob/master/docs/installation.md)).
+Follow the [Solaar USB installation](https://github.com/3v1n0/Solaar/blob/master/docs/installation.md) instructions.
+
+### Lag of the wireless device during heavy Wi-Fi load
+
+Because the receiver uses the 2.4 GHz frequency band also used by Bluetooth and Wi-Fi 802.11, it is possible in some circumstances of heavy Wi-Fi usage close to the receiver to experience lag or disturbances in communication with the devices. This is unlikely because the receiver confines its communication to channels unused by the majority of 802.11 solutions and it is able to quickly change channel within the band if it detects any interference from another device. However, some users have experienced interferences.
+
+Switching on/off the device will force the search for a "quiet" channel and may solve the issue.

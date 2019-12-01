@@ -128,6 +128,10 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 
 	[https://github.com/clearlinux-pkgs/linux](https://github.com/clearlinux-pkgs/linux) || [linux-clear](https://aur.archlinux.org/packages/linux-clear/)
 
+*   **GalliumOS** — The Linux kernel and modules with GalliumOS patches for chromebooks.
+
+	[https://github.com/GalliumOS/linux](https://github.com/GalliumOS/linux) || [linux-galliumos](https://aur.archlinux.org/packages/linux-galliumos/)
+
 *   **Libre** — The Linux Kernels without "binary blobs".
 
 	[https://www.fsfla.org/ikiwiki/selibre/linux-libre/](https://www.fsfla.org/ikiwiki/selibre/linux-libre/) || [linux-libre](https://aur.archlinux.org/packages/linux-libre/)

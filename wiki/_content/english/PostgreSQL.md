@@ -29,7 +29,7 @@ Related articles
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
     *   [8.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
-    *   [8.3 pgadmin4 issues after upgrade to Postgresql 12](#pgadmin4_issues_after_upgrade_to_Postgresql_12)
+    *   [8.3 pgAdmin 4 issues after upgrade to PostgreSQL 12](#pgAdmin_4_issues_after_upgrade_to_PostgreSQL_12)
 
 ## Installation
 
@@ -525,6 +525,6 @@ PostgreSQL periodically updates its internal "statistics" file. By default, this
 
  `/var/lib/postgres/data/postgresql.conf`  `stats_temp_directory = '/run/postgresql'` 
 
-### pgadmin4 issues after upgrade to Postgresql 12
+### pgAdmin 4 issues after upgrade to PostgreSQL 12
 
-If you see errors about "string indices must be integers" when navigating the tree on the left, or about "column rel.relhasoids does not exist" when viewing the data, remove the server from the connection list in pgadmin4 and add a fresh server instance. pgadmin4 will otherwise continue to treat the server as a v11 postgres server resulting in these issues.
+If you see errors about `string indices must be integers` when navigating the tree on the left, or about `column rel.relhasoids does not exist` when viewing the data, remove the server from the connection list in pgAdmin and add a fresh server instance. pgAdmin will otherwise continue to treat the server as a PostgreSQL 11 server resulting in these issues.

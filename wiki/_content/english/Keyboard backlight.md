@@ -1,14 +1,5 @@
 There a various methods to control the *keyboard backlight* brightness level.
 
-<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
-
-## Contents
-
-<label class="toctogglelabel" for="toctogglecheckbox"></label>
-
-*   [1 Any vendor](#Any_vendor)
-    *   [1.1 D-Bus](#D-Bus)
-
 ## Any vendor
 
 There are a variety ways to manage the brightness level and different helpers tools to accomplish this, such as [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) or [light](https://www.archlinux.org/packages/?name=light).
@@ -98,5 +89,52 @@ Alternatively the following bash one-liner will set the backlight to the value s
 setKeyboardLight () {
     dbus-send --system --type=method_call  --dest="org.freedesktop.UPower" "/org/freedesktop/UPower/KbdBacklight" "org.freedesktop.UPower.KbdBacklight.SetBrightness" int32:$1 
 }
+
+```
+
+### D-Bus control backlight in MATE environment
+
+In case you use [MATE](/index.php/MATE "MATE") environment you might get tired with repeated lighting keyboard backlight while logging in, unlocking screen or waking up dimmed display. Following setup prevent from automatic lighting up during any action. The only triggers remain plugging in the adapter and fresh boot. After that you can control keyboard backlight only via hotkeys (eg. ThinkPad Fn + spacebar).
+
+To prevent automatic lightning up just edit file `/usr/share/dbus-1/system.d/org.freedesktop.UPower.conf` as follows (two occurrences of "deny"):
+
+ `/usr/share/dbus-1/system.d/org.freedesktop.UPower.conf` 
+```
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
+
+<!DOCTYPE busconfig PUBLIC
+ "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+<busconfig>
+  <!-- Only root can own the service -->
+  <policy user="root">
+    <allow own="org.freedesktop.UPower"/>
+  </policy>
+  <policy context="default">
+
+    <allow send_destination="org.freedesktop.UPower"
+           send_interface="org.freedesktop.DBus.Introspectable"/>
+
+    <allow send_destination="org.freedesktop.UPower"
+           send_interface="org.freedesktop.DBus.Peer"/>
+    <allow send_destination="org.freedesktop.UPower"
+           send_interface="org.freedesktop.DBus.Properties"/>
+    <allow send_destination="org.freedesktop.UPower.Device"
+           send_interface="org.freedesktop.DBus.Properties"/>
+    <deny  send_destination="org.freedesktop.UPower.KbdBacklight"
+           send_interface="org.freedesktop.DBus.Properties"/>
+    <allow send_destination="org.freedesktop.UPower.Wakeups"
+           send_interface="org.freedesktop.DBus.Properties"/>
+
+    <allow send_destination="org.freedesktop.UPower"
+           send_interface="org.freedesktop.UPower"/>
+    <allow send_destination="org.freedesktop.UPower"
+           send_interface="org.freedesktop.UPower.Device"/>
+    <deny  send_destination="org.freedesktop.UPower"
+           send_interface="org.freedesktop.UPower.KbdBacklight"/>
+    <allow send_destination="org.freedesktop.UPower"
+	   send_interface="org.freedesktop.UPower.Wakeups"/>
+  </policy>
+</busconfig>
 
 ```

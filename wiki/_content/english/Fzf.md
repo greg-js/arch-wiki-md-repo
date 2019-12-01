@@ -78,6 +78,13 @@ pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S
 
 ```
 
+If you want to add package file list in preview - may be a bit slower updating preview window (make sure you run `pacman -Fy` at least once before invocation to sync the pacman file database):
+
+```
+pacman -Slq | fzf -m --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -r sudo pacman -S
+
+```
+
 ### Yay
 
 Same like above, but use yay to also fuzzy-search through the AUR, preview info and install selected packages:

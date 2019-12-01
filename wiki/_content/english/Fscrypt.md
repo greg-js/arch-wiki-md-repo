@@ -85,14 +85,14 @@ For [F2FS](/index.php/F2FS "F2FS"), use `fsck.f2fs -O encrypt` or `mkfs.f2fs -O 
 
 ### Userspace tool
 
-[Install](/index.php/Install "Install") [fscrypt-git](https://aur.archlinux.org/packages/fscrypt-git/). Then run:
+[Install](/index.php/Install "Install") [fscrypt-git](https://aur.archlinux.org/packages/fscrypt-git/), or if you previously installed it, upgrade to the latest version. Then run:
 
 ```
 # fscrypt setup
 
 ```
 
-This creates the file `/etc/fscrypt.conf`.
+This creates the file `/etc/fscrypt.conf` and the directory `/.fscrypt`.
 
 Then, if the file system on which you wish to use encryption is not the root file system, also run:
 

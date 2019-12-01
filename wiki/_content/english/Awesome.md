@@ -235,7 +235,7 @@ Alternatively, see [Keyboard configuration in Xorg](/index.php/Keyboard_configur
 
 ### Theming
 
-[Beautiful](https://awesomewm.org/apidoc/libraries/beautiful.html) is a Lua library that allows you to theme awesome using an external file, it becomes very easy to dynamically change your whole awesome colours and wallpaper without changing your `rc.lua`.
+[Beautiful](https://awesomewm.org/doc/api/libraries/beautiful.html) is a Lua library that allows you to theme awesome using an external file, it becomes very easy to dynamically change your whole awesome colours and wallpaper without changing your `rc.lua`.
 
 The default theme is at `/usr/share/awesome/themes/default`. Copy it to `~/.config/awesome/themes/default` and change `theme_path` in `rc.lua`.
 

@@ -1129,5 +1129,6 @@ You can use the following website to get your device's coordinates along with a 
 40.7352, -74.1723 "Anthr76" # Newark, NJ USA
 13.360501, 74.786369 "WaterWastage" # Manipal, KA, India
 55.33625, 21.48604 "DodoGTA" # Lithuania
+51.535496, 3.914310 "DvK" # Goes, Zeeland, The Netherlands
 
 ```

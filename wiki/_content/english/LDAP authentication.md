@@ -18,20 +18,19 @@ Related articles
     *   [2.4 Populate LDAP Tree with Base Data](#Populate_LDAP_Tree_with_Base_Data)
     *   [2.5 Adding users](#Adding_users)
 *   [3 Client Setup](#Client_Setup)
-    *   [3.1 NSS Configuration](#NSS_Configuration)
-    *   [3.2 PAM Configuration](#PAM_Configuration)
-        *   [3.2.1 Create home folders at login](#Create_home_folders_at_login)
-        *   [3.2.2 Enable sudo](#Enable_sudo)
-*   [4 Online and Offline Authentication with SSSD](#Online_and_Offline_Authentication_with_SSSD)
-    *   [4.1 General Package Details](#General_Package_Details)
-    *   [4.2 How to enable SSSD for basic Authentication](#How_to_enable_SSSD_for_basic_Authentication)
-        *   [4.2.1 1\. SSSD Configuration](#1._SSSD_Configuration)
-        *   [4.2.2 2\. NSCD Configuration](#2._NSCD_Configuration)
-        *   [4.2.3 3\. NSS Configuration](#3._NSS_Configuration)
-        *   [4.2.4 4\. PAM Configuration](#4._PAM_Configuration)
-            *   [4.2.4.1 1\. SUDO Configuration](#1._SUDO_Configuration)
-            *   [4.2.4.2 2\. Password Management](#2._Password_Management)
-*   [5 Resources](#Resources)
+    *   [3.1 Online Authentication](#Online_Authentication)
+        *   [3.1.1 NSS Configuration](#NSS_Configuration)
+        *   [3.1.2 PAM Configuration](#PAM_Configuration)
+            *   [3.1.2.1 Create home folders at login](#Create_home_folders_at_login)
+            *   [3.1.2.2 Enable sudo](#Enable_sudo)
+    *   [3.2 Online and Offline Authentication with SSSD](#Online_and_Offline_Authentication_with_SSSD)
+        *   [3.2.1 SSSD Configuration](#SSSD_Configuration)
+        *   [3.2.2 NSCD Configuration](#NSCD_Configuration)
+        *   [3.2.3 NSS Configuration](#NSS_Configuration_2)
+        *   [3.2.4 PAM Configuration](#PAM_Configuration_2)
+            *   [3.2.4.1 Enable sudo](#Enable_sudo_2)
+            *   [3.2.4.2 Password Management](#Password_Management)
+*   [4 Resources](#Resources)
 
 ## Introduction and Concepts
 
@@ -176,11 +175,15 @@ $ ldapadd -D "cn=Manager,dc=example,dc=org" -W -f user_joe.ldif
 
 Install the OpenLDAP client as described in [OpenLDAP](/index.php/OpenLDAP "OpenLDAP"). Make sure you can query the server with `ldapsearch`.
 
-Next, [install](/index.php/Install "Install") the [nss-pam-ldapd](https://www.archlinux.org/packages/?name=nss-pam-ldapd) package.
+Depending on your target, choose either [online-only](#Online_Authentication) or [online and offline](#Online_and_Offline_Authentication_with_SSSD) authentication.
 
-### NSS Configuration
+### Online Authentication
+
+#### NSS Configuration
 
 NSS is a system facility which manages different sources as configuration databases. For example, `/etc/passwd` is a `file` type source for the `passwd` database, which stores the user accounts.
+
+[Install](/index.php/Install "Install") the [nss-pam-ldapd](https://www.archlinux.org/packages/?name=nss-pam-ldapd) package.
 
 Edit `/etc/nsswitch.conf` which is the central configuration file for NSS. It tells NSS which sources to use for which system databases. We need to add the `ldap` directive to the `passwd`, `group` and `shadow` databases, so be sure your file looks like this:
 
@@ -193,11 +196,13 @@ shadow: files ldap
 
 Edit `/etc/nslcd.conf` and change the `base` and `uri` lines to fit your ldap server setup.
 
+Edit the `binddn` and the `bindpw` if you set a password for the for your server. Make sure you change the permission of your `/etc/nslcd.conf` to 0600 for `nslcd` to start properly.
+
 Start `nslcd.service` using systemd.
 
 You now should see your LDAP users when running `getent passwd` on the client.
 
-### PAM Configuration
+#### PAM Configuration
 
 The basic rule of thumb for PAM configuration is to include `pam_ldap.so` wherever `pam_unix.so` is included. Arch moving to [pambase](https://www.archlinux.org/packages/?name=pambase) has helped decrease the amount of edits required. For more details about configuring pam, the [RedHat Documentation](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/PAM_Configuration_Files.html) is quite good. You might also want the upstream documentation for [nss-pam-ldapd](http://arthurdejong.org/nss-pam-ldapd).
 
@@ -264,7 +269,7 @@ To enable users to edit their password, edit `/etc/pam.d/passwd`:
 password        required        pam_unix.so sha512 shadow nullok
 ```
 
-#### Create home folders at login
+##### Create home folders at login
 
 If you want home folders to be created at login (eg: if you are not using NFS to store home folders), edit `/etc/pam.d/system-login` and add `pam_mkhomedir.so` to the *session* section above any "sufficient" items. This will cause home folder creation when logging in at a tty, from ssh, xdm, kdm, gdm, etc. You might choose to edit additional files in the same way, such as `/etc/pam.d/su` and `/etc/pam.d/su-l` to enable it for `su` and `su --login`. If you do not want to do this for ssh logins, edit `system-local-login` instead of `system-login`, etc.
 
@@ -289,7 +294,7 @@ session         required        pam_unix.so
 
 ```
 
-#### Enable sudo
+##### Enable sudo
 
 To enable sudo from an LDAP user, edit `/etc/pam.d/sudo`. You will also need to modify sudoers accordingly.
 
@@ -306,17 +311,13 @@ You will also need to add in `/etc/openldap/ldap.conf` the following.
 
  `/etc/openldap/ldap.conf`  `sudoers_base ou=sudoers,dc=AFOLA` 
 
-## Online and Offline Authentication with SSSD
+### Online and Offline Authentication with SSSD
 
 SSSD is a system daemon. Its primary function is to provide access to identity and authentication remote resource through a common framework that can provide caching and offline support to the system. It provides PAM and NSS modules, and in the future will D-BUS based interfaces for extended user information. It provides also a better database to store local users as well as extended user data.
 
-### General Package Details
-
 [Install](/index.php/Install "Install") the [sssd](https://www.archlinux.org/packages/?name=sssd) package.
 
-### How to enable SSSD for basic Authentication
-
-#### 1\. SSSD Configuration
+#### SSSD Configuration
 
 If it does not exist create `/etc/sssd/sssd.conf`.
 
@@ -350,7 +351,7 @@ The above is an example only. See [sssd.conf(5)](https://jlk.fjfi.cvut.cz/arch/m
 
 Finally set the file permissions `chmod 600 /etc/sssd/sssd.conf` otherwise sssd will fail to start.
 
-#### 2\. NSCD Configuration
+#### NSCD Configuration
 
 Disable caching for passwd, group and netgroup entries in `/etc/nscd.conf` as it will interfere with sssd caching.
 
@@ -372,7 +373,7 @@ enable-cache		netgroup	**no**
 
 ```
 
-#### 3\. NSS Configuration
+#### NSS Configuration
 
 Edit `/etc/nsswitch.conf` as follows.
 
@@ -401,7 +402,7 @@ netgroup: files
 
 ```
 
-#### 4\. PAM Configuration
+#### PAM Configuration
 
 The first step is to edit `/etc/pam.d/system-auth` as follows.
 
@@ -447,7 +448,7 @@ session         required        pam_unix.so
 **session optional pam_sss.so**
 ```
 
-##### 1\. SUDO Configuration
+##### Enable sudo
 
 Edit `/etc/pam.d/sudo` as follows.
 
@@ -460,7 +461,7 @@ auth           required        pam_nologin.so
 
 ```
 
-##### 2\. Password Management
+##### Password Management
 
 In order to enable users to change their passwords using `passwd` edit `/etc/pam.d/passwd` as follows.
 

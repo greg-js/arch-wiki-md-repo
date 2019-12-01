@@ -96,7 +96,7 @@ For most purposes, the technical differences between TrueType and OpenType can b
 
 ### Other formats
 
-The typesetting application, *TeX,* and its companion font software, *Metafont,* render characters using their own methods. Some of the file extensions used for fonts by these two programs are `*pk`, `*gf`, `mf` and `vf`.
+The typesetting application [TeX](/index.php/TeX_Live "TeX Live") and its companion font software, *Metafont,* traditionally renders characters using its own methods. Some file extensions used for fonts from these two programs are `*pk`, `*gf`, `mf` and `vf`. Modern versions can also use TrueType and OpenType fonts.
 
 [FontForge](https://fontforge.github.io/en-US/) ([fontforge](https://www.archlinux.org/packages/?name=fontforge)), a font editing application, can store fonts in its native text-based format, `sfd`, *s*pline *f*ont *d*atabase.
 
@@ -246,9 +246,15 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 *   [ProFont](http://tobiasjung.name/profont/) ([ttf-profont-iix](https://aur.archlinux.org/packages/ttf-profont-iix/)) – 10px, 11px, 12px, 15px, 17px, 22px, 29px, normal
 *   [Proggy](https://en.wikipedia.org/wiki/Proggy_programming_fonts "wikipedia:Proggy programming fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/)) – has different variants
 *   [Tamsyn](http://www.fial.com/~scott/tamsyn-font/) ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
-*   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) ([terminus-font-otb](https://www.archlinux.org/packages/?name=terminus-font-otb)) - OpenType Bitmap (OTB) variant works with Pango 1.44
+*   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font))
 *   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/))
 *   [Unifont](http://unifoundry.com/unifont.html) ([most extensive](https://en.wikipedia.org/wiki/Unicode_font#Comparison_of_fonts "wikipedia:Unicode font") Unicode coverage of any font) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont))
+
+Works with pango 1.44:
+
+*   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font-otb](https://www.archlinux.org/packages/?name=terminus-font-otb)) - OpenType Bitmap (OTB) variant of Terminus
+*   [Misc Fixed](https://xorg.freedesktop.org/releases/individual/font/) [xorg-fonts-misc-otb](https://aur.archlinux.org/packages/xorg-fonts-misc-otb/)
+*   More [otb](https://aur.archlinux.org/packages/?O=0&SeB=n&K=-otb&outdated=&SB=n&SO=a&PP=50&do_Search=Go) fonts on AUR
 
 ### Latin script
 
@@ -304,7 +310,8 @@ Relevant websites:
 
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/))
 *   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
-*   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/)) – designed for user interfaces
+*   [Inter UI](https://github.com/rsms/inter) ([otf-inter](https://aur.archlinux.org/packages/otf-inter/)) – designed for user interfaces
+*   [Jost*](https://indestructibletype.com/Jost.html) ([otf-jost](https://aur.archlinux.org/packages/otf-jost/)) - An open-source typeface based on [Futura](https://en.wikipedia.org/wiki/Futura_(typeface) "wikipedia:Futura (typeface)")
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – free substitute for Times New Roman
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 major variations: normal, narrow, and caption - Unicode: Latin, Cyrillic
 *   [Source Sans Pro](https://en.wikipedia.org/wiki/Source_Sans_Pro "wikipedia:Source Sans Pro") ([adobe-source-sans-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-sans-pro-fonts))
@@ -312,7 +319,8 @@ Relevant websites:
 
 #### Serif
 
-*   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/))
+*   [Bodoni*](https://indestructibletype.com/Bodoni.html) ([otf-bodoni](https://aur.archlinux.org/packages/otf-bodoni/)) - An open-source [Bodoni](https://en.wikipedia.org/wiki/Bodoni "wikipedia:Bodoni") revival
+*   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/)) - An open-source [Garamond](https://en.wikipedia.org/wiki/Garamond "wikipedia:Garamond") revival
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([gentium-plus-font](https://www.archlinux.org/packages/?name=gentium-plus-font)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew

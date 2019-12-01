@@ -4,7 +4,11 @@ The device can be used with any USB compatible system that supports HID class de
 
 As a daily based user, one is able to interact directly with the device by using a clickable scroll-wheel or is free to use one of the available browser extensions/applications.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Password storing](#Password_storing)

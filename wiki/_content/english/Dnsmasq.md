@@ -374,7 +374,7 @@ address=/another.blacklisted.example/
 
 ```
 
-For ease of use place the blacklist in a separate file, e.g. `/etc/dnsmasq.d/blacklist.conf` and load it from `/etc/dnsmasq.conf` with `conf-file=/etc/dnsmasq.d/blacklist.conf` or `conf-dir=conf-dir=/etc/dnsmasq.d/,*.conf`.
+For ease of use place the blacklist in a separate file, e.g. `/etc/dnsmasq.d/blacklist.conf` and load it from `/etc/dnsmasq.conf` with `conf-file=/etc/dnsmasq.d/blacklist.conf` or `conf-dir=/etc/dnsmasq.d/,*.conf`.
 
 **Tip:** A list of potential sources for the blacklist can be found in [OpenWrt's adblock package's README](https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md).
 

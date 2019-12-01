@@ -31,7 +31,7 @@ To run a Vulkan application, you will need to [install](/index.php/Install "Inst
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"): [nvidia](https://www.archlinux.org/packages/?name=nvidia)
 *   [AMD](/index.php/AMDGPU "AMDGPU"): there are three implementations, which could be installed simultaneously:
     *   [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) - RADV (part of Mesa project)
-    *   [amdvlk](https://aur.archlinux.org/packages/amdvlk/) - AMDVLK Open (maintained by AMD)
+    *   [amdvlk](https://www.archlinux.org/packages/?name=amdvlk) - AMDVLK Open (maintained by AMD)
     *   [vulkan-amdgpu-pro](https://aur.archlinux.org/packages/vulkan-amdgpu-pro/) - AMDVLK Closed (maintained by AMD)
 
 Other drivers may be installed manually instead:

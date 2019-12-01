@@ -30,13 +30,7 @@
 
 ## Installation
 
-While Luakit has had releases, the official website tells users to [install](/index.php/Install "Install") the development version: [luakit-git](https://aur.archlinux.org/packages/luakit-git/).
-
-With the Unix philosophy in mind, Luakit is entirely customizable through its configuration files. Those files are written in the Lua scripting language, thus allowing virtually unlimited features.
-
-However, those configuration files are quite vital to Luakit and shouldn't be modified, unless you really know what you are doing. Actually, any module found in `~/.config/luakit` is ignored if it has the same name as a configuration file (e.g. `binds.lua`).
-
-You can copy `/etc/xdg/luakit/rc.lua` to `~/.config/luakit` if you really want to control which files are loaded. Do it as your own risk. Copying `rc.lua` isn't the preferred way to configure Luakit anymore. See [#Configuration](#Configuration) instead.
+Install the [luakit](https://www.archlinux.org/packages/?name=luakit) package or [luakit-git](https://aur.archlinux.org/packages/luakit-git/) for the development version as the official website recommends.
 
 ## Basic usage
 

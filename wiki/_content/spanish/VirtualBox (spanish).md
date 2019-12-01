@@ -143,7 +143,7 @@ Para usar los puertos USB del equipo anfitrión en sus máquinas virtuales, agre
 
 ### Disco de «Guest Additions»
 
-También se recomienda instalar el paquete [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) en el equipo que ejecuta VirtualBox. Este paquete actuará como una imagen de disco que se puede usar para instalar los complementos («*guest additions*») en sistemas huéspedes que no sean Arch Linux. El archivo *.iso* se ubicará en `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`, y puede que tenga que ser montado manualmente dentro de la máquina virtual. Una vez montadao puede ejecutar el instalador de complementos adicionales dentro del huésped.
+También se recomienda instalar el paquete [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) en el equipo que ejecuta VirtualBox. Este paquete actuará como una imagen de disco que se puede usar para instalar los complementos («*guest additions*») en sistemas huéspedes que no sean Arch Linux. El archivo *.iso* se ubicará en `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`, y puede que tenga que ser montado manualmente dentro de la máquina virtual. Una vez montado puede ejecutar el instalador de complementos adicionales dentro del huésped.
 
 ### Paquete de extensiones
 

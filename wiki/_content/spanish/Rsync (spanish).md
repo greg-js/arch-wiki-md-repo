@@ -388,7 +388,7 @@ Al utilizar el conjunto de opciones `-aAX`, los archivos se transfieren en modo 
 
 La opción `--exclude` hace que se excluyan los archivos que coinciden con los patrones dados. Se excluye el contenido de `/dev`, `/proc`, `/sys`, `/tmp` y `/run` en la orden anterior, porque se rellenan en el arranque, aunque las carpetas *no* se crean por sí mismas. `/lost+found` es específico del sistema de archivos. La orden anterior depende de la expansión de llaves disponible tanto en las shells [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) como [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion).Cuando se utiliza un [shell](/index.php/Shell "Shell") diferente, los patrones `--exclude` deben repetirse manualmente. Citar los patrones de exclusión evitará la expansión por la [shell](/index.php/Shell "Shell"), lo cual es necesario, por ejemplo, cuando se realiza una copia de seguridad mediante [SSH](/index.php/SSH "SSH"). Al terminar las rutas excluidas con `*` se garantiza que dichos directorios se creen si aún no existen.
 
-**Note:**
+**Nota:**
 
 *   Si planea hacer una copia de seguridad de su sistema en otro lugar que no sea `/mnt` o `/media`, no olvide agregarlo a la lista de patrones de exclusión para evitar un bucle infinito.
 *   Si hay montajes de enlace en el sistema, también deben excluirse para que el contenido asociado al enlace se copie solo una vez.

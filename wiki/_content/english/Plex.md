@@ -18,6 +18,7 @@ Plex for Linux is split into a closed-source server Plex Media Server, and an op
     *   [1.7 Network](#Network)
     *   [1.8 Library Updates](#Library_Updates)
     *   [1.9 Troubleshooting](#Troubleshooting)
+        *   [1.9.1 Plex's WebUI returns 404](#Plex's_WebUI_returns_404)
 *   [2 Plex Home Theater (PHT)](#Plex_Home_Theater_(PHT))
     *   [2.1 Installation](#Installation_2)
 *   [3 Plex Media Player (PMP)](#Plex_Media_Player_(PMP))
@@ -152,6 +153,10 @@ export LD_LIBRARY_PATH=/usr/lib/plexmediaserver
 /usr/lib/plexmediaserver/Plex\ Media\ Server
 
 ```
+
+#### Plex's WebUI returns 404
+
+There may be a situation when updating Plex's WebUI will return [404 Not Found](https://en.wikipedia.org/wiki/HTTP_404 "wikipedia:HTTP 404"). To fix this you just need to [restart](/index.php/Restart "Restart") `plexmediaservice.service`.
 
 ## Plex Home Theater (PHT)
 

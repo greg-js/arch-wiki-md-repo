@@ -892,7 +892,7 @@ See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 
 *   **MComix-GTK3** — GTK3 image viewer specifically designed to handle comic book archives (unmerged patch for MComix). Works well on hidpi screens. Also includes library manager.
 
-	[https://sourceforge.net/projects/mcomix/](https://sourceforge.net/projects/mcomix/) || [mcomix-gtk3-git](https://aur.archlinux.org/packages/mcomix-gtk3-git/)
+	[https://github.com/multiSnow/mcomix3](https://github.com/multiSnow/mcomix3) || [mcomix-gtk3-git](https://aur.archlinux.org/packages/mcomix-gtk3-git/)
 
 *   **Peruse** — Comic book reader by KDE.
 

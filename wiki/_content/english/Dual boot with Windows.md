@@ -1,7 +1,3 @@
-Related articles
-
-*   [Dual boot with Windows/SafeBoot](/index.php/Dual_boot_with_Windows/SafeBoot "Dual boot with Windows/SafeBoot")
-
 This is an article detailing different methods of Arch/Windows coexistence.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

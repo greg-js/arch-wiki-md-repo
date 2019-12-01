@@ -182,13 +182,13 @@ As this solution does not use an official certificate authority (CA), a security
 
 #### Install
 
-Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion using the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") v2 protocol and therefore supporting wildcard domains such as **.mydomain.org*.
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion using the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") v2 protocol and therefore supporting wildcard domains such as **.my-domain.org*.
 
 A configuration file example `letsencrypt.conf` is provided in the directory `/usr/lib/hiawatha/letsencrypt`. The user's configuration must be saved in `~/.letsencrypt/`.
 
 #### Obtain a certificate
 
-The detailed instructions are described in this [README.txt](https://gitlab.com/hsleisink/hiawatha/raw/v10.7/extra/letsencrypt/README.txt) and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
+The detailed instructions are described in [lefh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lefh.1) and the tool's configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
 
 1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ lefh register` 
 2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `*www.my-domain.org*.pem` will be created. `# lefh request *www.my-domain.org*` 

@@ -74,7 +74,6 @@ By default, sway starts with the US QWERTY keymap. To configure per-input:
  input * xkb_variant "colemak,,typewriter"
  input * xkb_options "grp:win_space_toggle"
  input "MANUFACTURER1 Keyboard" xkb_model "pc101"
- input "MANUFACTURER2 Keyboard" xkb_model "jp106"
 
 ```
 

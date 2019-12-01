@@ -4,11 +4,15 @@ Related articles
 
 [wmii](https://code.google.com/archive/p/wmii/) (window manager improved 2) is a dynamic window manager for X11\. It supports classic and dynamic window management with extended keyboard, mouse, and filesystem based remote control. It replaces the workspace paradigm with a new tagging approach.
 
-The following tips are intended to help the user get started with wmii. While wmii can be configured in almost any language, this article will focus on using the **wmiirc** configuration file, which is simply a shell script. Please see the [ruby-wmii](/index.php/Ruby-wmii "Ruby-wmii") article to see how to configure wmii in ruby.
+The following tips are intended to help the user get started with wmii. While wmii can be configured in almost any language, this article will focus on using the **wmiirc** configuration file, which is simply a shell script.
 
 Please note that wmii does not appear to be in active development, so any bugs encountered are likely to stay.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting wmii](#Starting_wmii)
@@ -344,7 +348,7 @@ into your wmiirc and it just works. [xkblayout-state](https://aur.archlinux.org/
 
 ```
 status() {
-    echo -n label $(xkblayout-state print "%s") '|' $(date +"%a %b %d %H:%M")
+    echo -n label $(xkblayout-state print "%s") '|' $(date +"%a %b %d %H:%M")
 }
 
 ```

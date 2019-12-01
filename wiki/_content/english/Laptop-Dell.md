@@ -98,6 +98,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Vostro 1710 | – | – | – | Yes, RTL8111/8168B | Works (Broadcom BCM4328) | – | – | – | – | AlpsPS/2 ALPS GlidePoint |
+| Vostro 5481 | 2019.11.01 | Works out of the box, [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) recommended just in case. | Yes | Yes | Yes. [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) may be needed. | Yes | Yes | – | – | Disable secure boot, fast boot, and TPM in the BIOS. Also, enable AHCI SATA Operation in the BIOS instead of RAID or the disk may not be detected. Do note that you'll get a BSOD on Windows after this, which can be fixed by following this [quick guide](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci). |
 
 ## XPS
 

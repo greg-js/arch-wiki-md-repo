@@ -131,11 +131,11 @@ install CD version
 *   Not working: TPM, Color calibrator, UEFI flash
 
  | HDMI audio requires nvhda module |
-| [Lenovo ThinkPad P52](/index.php/Lenovo_ThinkPad_P52 "Lenovo ThinkPad P52") | 2018.09 | Yes | Yes | Yes | Yes | Unknown | Suspend working, hibernate not tested | NA | Touchpad (No) |
+| [Lenovo ThinkPad P52](/index.php/Lenovo_ThinkPad_P52 "Lenovo ThinkPad P52") | 2018.09 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | Webcam (yes), IR camera (yes), Touchpad (yes), Card Reader (not tested) Smartcard Reader (yes), Fingerprint (no) |
 | [Lenovo ThinkPad P1](/index.php/Lenovo_ThinkPad_P1 "Lenovo ThinkPad P1") | 2018.12 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | Webcam (Yes), multi-monitor (yes) |
 | [Lenovo ThinkPad P1 (Gen 2)](/index.php/Lenovo_ThinkPad_P1_(Gen_2) "Lenovo ThinkPad P1 (Gen 2)") | 2019.09.01 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate working | NA | Webcam (not tested), multi-monitor (yes) |
 | [Lenovo ThinkPad P52s](/index.php/Lenovo_ThinkPad_P52s "Lenovo ThinkPad P52s") | 2019.02 | Yes* (See Remarks) | Yes | Yes | Yes | Yes | Suspend (Yes), Hibernate (Yes) | Not tested | Webcam (Yes), Multi-monitor (Yes), Card Reader (Yes), Smartcard Reader (Yes), NFC (No, [see this](https://github.com/nfc-tools/libnfc/issues/455)), Fingerprint (No, [see this](https://forums.lenovo.com/t5/Linux-Discussion/Thinkpad-T580-Synaptics-Metallica-MIS-Touch-Fingerprint-Reader/m-p/4057745)) | *Intel graphics needs to be specified in the Xorg config for Xorg to work, see [Lenovo ThinkPad P52s](/index.php/Lenovo_ThinkPad_P52s "Lenovo ThinkPad P52s") |
-| [Lenovo ThinkPad P53s](/index.php?title=Lenovo_ThinkPad_P53s&action=edit&redlink=1 "Lenovo ThinkPad P53s (page does not exist)") | 2019.10 | Yes | Yes | Yes | Yes | Not tested | Not tested | Not tested | Webcam (Yes), Multi-monitor (Not testes), Card Reader (Note tested), Smartcard Reader (Not tested), Fingerprint (Not tested) | Trackpad is really bad compared to the Thinkpad T480. |
+| [Lenovo ThinkPad P53s](/index.php?title=Lenovo_ThinkPad_P53s&action=edit&redlink=1 "Lenovo ThinkPad P53s (page does not exist)") | 2019.10 | Yes | Yes | Yes | Yes | Not tested | Not tested | Not tested | Webcam (Yes), Multi-monitor (Not testes), Card Reader (Not tested), Smartcard Reader (Not tested), Fingerprint (Not tested) | Trackpad is really bad compared to the Thinkpad T480. |
 
 #### T series
 

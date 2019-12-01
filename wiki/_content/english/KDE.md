@@ -181,9 +181,7 @@ Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan
 
 ##### Faces
 
-User's face can be set through *System Settings > Accounts Details > User Manager*.
-
-If *User Manager* is not found, install [user-manager](https://www.archlinux.org/packages/?name=user-manager) to get it.
+KDE 5 Plasma and SDDM will both use a PNG file found at `~/.face.icon` as a user's avatar. To configure with a graphical interface, you can use *System Settings > Accounts Details > User Manager*, which may first need to be installed (see the [user-manager](https://www.archlinux.org/packages/?name=user-manager) package). The default icon can be found in `/usr/share/sddm/faces/`.
 
 ##### Widgets
 

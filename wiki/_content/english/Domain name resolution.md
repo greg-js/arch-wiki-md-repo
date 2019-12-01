@@ -177,7 +177,7 @@ over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTT
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | [knot-resolver](https://aur.archlinux.org/packages/knot-resolver/) | Yes | Yes | Yes | Yes | No | Yes | No | Yes | [Server](https://knot-resolver.readthedocs.io/en/stable/modules.html#dns-over-http-doh) |
 | [MaraDNS](https://en.wikipedia.org/wiki/MaraDNS "wikipedia:MaraDNS") | [maradns](https://aur.archlinux.org/packages/maradns/) | Yes | Yes | Yes | No | No | Yes | No | No | No |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Yes | Yes | Permanent | No | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | No | No |
-| [PowerDNS Recursor](https://www.powerdns.com/recursor.html) | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Yes | Yes | Yes | Yes | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | No | No |
+| [PowerDNS Recursor](https://en.wikipedia.org/wiki/PowerDNS#Recursor "wikipedia:PowerDNS") | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Yes | Yes | Yes | Yes | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | No | No |
 | [Unbound](/index.php/Unbound "Unbound") | [unbound](https://www.archlinux.org/packages/?name=unbound) | Yes | Yes | Yes | Yes | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | Server | Yes | [No](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
 
 1.  Only forwards using DNS over HTTPS when Rescached itself is queried using DNS over HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)

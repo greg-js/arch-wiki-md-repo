@@ -30,7 +30,7 @@ Related articles
 ## General
 
 *   [Virtualization](/index.php/Virtualization "Virtualization") is an obvious way, but requires maintaining additional system(s).
-*   Use distribution-specific packaging tools. Examples: [dh-make](https://aur.archlinux.org/packages/dh-make/), [dpkg](https://aur.archlinux.org/packages/dpkg/) (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) (Fedora). Shortcuts such as [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) or [checkinstall](https://aur.archlinux.org/packages/checkinstall/) may be suited for less complex tasks.
+*   Use distribution-specific packaging tools. Examples: [dh-make](https://aur.archlinux.org/packages/dh-make/), [dpkg](https://www.archlinux.org/packages/?name=dpkg) (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) (Fedora). Shortcuts such as [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) or [checkinstall](https://aur.archlinux.org/packages/checkinstall/) may be suited for less complex tasks.
 *   [Chroot](/index.php/Chroot "Chroot") to create a base system inside (yet separate from) Arch. Examples: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap) (Debian), [dnf](https://aur.archlinux.org/packages/dnf/) (Fedora). This has the added benefit of building in a minimal, clean environment.
 *   Use chroot with packaging tools in an an automated fashion. Examples: [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/) (Debian), [mock-git](https://aur.archlinux.org/packages/mock-git/) (Fedora).
 *   A different way to handle (possibly incompatible) depends is [static linking](http://jurjenbokma.com/ApprenticesNotes/getting_statlinked_binaries_on_debian.xhtml). Please note that most distributions frown on this practice.
@@ -62,7 +62,7 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 *   **[dpkg](https://en.wikipedia.org/wiki/dpkg "wikipedia:dpkg")** — The Debian Package Manager
 
-	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://aur.archlinux.org/packages/dpkg/)
+	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://www.archlinux.org/packages/?name=dpkg)
 
 *   **dput** — Debian package upload tool
 

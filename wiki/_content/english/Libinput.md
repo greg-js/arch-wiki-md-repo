@@ -88,14 +88,14 @@ $ xinput set-prop *device* *option* *setting*
 to change a setting. `*option*` can be either the number or the name of the option. For example, to set both options of libinput Click Method Enabled (303), either of the following can be issued:
 
 ```
-$ xinput set-prop 14 303 {1 1}
+$ xinput set-prop 14 303 {1,1}
 
 ```
 
 or
 
 ```
-$ xinput set-prop 14 "libinput Click Method Enabled" {1 1}
+$ xinput set-prop 14 "libinput Click Method Enabled" {1,1}
 
 ```
 

@@ -688,10 +688,10 @@ fi
 
 **Note:** This script ignores mounts with the `noauto` option, remove this mount option or use `auto` to allow the dispatcher to manage these mounts.
 
-Create a symlink inside `/etc/NetworkManager/dispatcher.d/pre-down` to catch the `pre-down` events:
+Create a symlink inside `/etc/NetworkManager/dispatcher.d/pre-down/` to catch the `pre-down` events:
 
 ```
-# ln -s /etc/NetworkManager/dispatcher.d/30-smb.sh /etc/NetworkManager/dispatcher.d/pre-down.d/30-smb.sh
+# ln -s ../30-smb.sh /etc/NetworkManager/dispatcher.d/pre-down.d/30-smb.sh
 
 ```
 

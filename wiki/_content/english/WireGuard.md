@@ -201,12 +201,16 @@ On the peer that will act as the "server", first enable IPv4 forwarding using [s
 
 To make the change permanent, add `net.ipv4.ip_forward = 1` to `/etc/sysctl.d/99-sysctl.conf`.
 
-A properly configured [firewall](/index.php/Firewall "Firewall") is *HIGHLY recommended* for any Internet-facing device. Be sure to:
+A properly configured [firewall](/index.php/Firewall "Firewall") is *HIGHLY recommended* for any Internet-facing device.
+
+If the server have the public IP configured, be sure to:
 
 *   Allow UDP traffic on the specified port(s) on which WireGuard will be running (for example allowing traffic on 51820/udp).
-*   Setup the forwarding policy for the firewall if it is not included in the WireGuard config for the interface itself `/etc/wireguard/wg0.conf`. The example below should work as-is.
+*   Setup the forwarding policy for the firewall if it is not included in the WireGuard config for the interface itself `/etc/wireguard/wg0.conf`. The example below should have the iptables rules and work as-is.
 
-Finally, WireGuard port(s) need to be forwarded to the server's LAN IP from the router so they can be accessed from the WAN (ie router port forwarding).
+If the server is behind NAT, be sure to:
+
+*   NAT from the router the UDP traffic on the specified port(s) on which WireGuard will be running (for example allowing traffic on 51820/udp) to the WireGuard server.
 
 ### Key generation
 
@@ -224,6 +228,7 @@ ListenPort = 51820
 PrivateKey = [SERVER PRIVATE KEY]
 
 # note - substitute *eth0* in the following lines to match the Internet-facing interface
+# if the server is behind a router and receive traffic via NAT, this iptables rules aren't needed
 PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
@@ -240,6 +245,8 @@ AllowedIPs = 10.200.200.3/32
 ```
 
 Additional peers ("clients") can be listed in the same format as needed. Each peer requires the `PublicKey` to be set. However, specifying `PresharedKey` is optional.
+
+Notice that the `Address` have mask "/24" and the clients on `AllowedIPs` "/32". The client only use their IP and the server only send back their respective address.
 
 The interface can be managed manually using [wg-quick(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg-quick.8) or using a [systemd](/index.php/Systemd "Systemd") service managed via [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1).
 

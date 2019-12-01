@@ -5,7 +5,11 @@ Related articles
 
 Het [TGT SCSI framework](http://stgt.sourceforge.net) kan gebruikt worden voor meerdere storage protocollen. Dit document beschrijft het gebruik van TGT als iSCSI target.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Waarom TGT](#Waarom_TGT)
 *   [2 Installatie](#Installatie)

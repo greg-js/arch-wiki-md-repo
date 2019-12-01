@@ -32,7 +32,7 @@ Artigos relacionados
 ## Geral
 
 *   [Virtualização](/index.php/Virtualiza%C3%A7%C3%A3o "Virtualização") é uma forma óbvia, mas requer manutenção de sistema(s) adicional(is).
-*   Use ferramentas de empacotamento específica de distribuição. Exemplos: [dh-make](https://aur.archlinux.org/packages/dh-make/), [dpkg](https://aur.archlinux.org/packages/dpkg/) (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) (Fedora). Atalhos como [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) ou [checkinstall](https://aur.archlinux.org/packages/checkinstall/) pode ser adequado para tarefas menos complexas.
+*   Use ferramentas de empacotamento específica de distribuição. Exemplos: [dh-make](https://aur.archlinux.org/packages/dh-make/), [dpkg](https://www.archlinux.org/packages/?name=dpkg) (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) (Fedora). Atalhos como [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) ou [checkinstall](https://aur.archlinux.org/packages/checkinstall/) pode ser adequado para tarefas menos complexas.
 *   [Chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") para criar um sistema base dentro (apesar de separada do) Arch. Por exemplo: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap) (Debian), [dnf](https://aur.archlinux.org/packages/dnf/) (Fedora). Isso foi adicionado para beneficiar a construção em um ambiente mínimo e limpo.
 *   Use chroot com ferramentas de empacotamento de uma forma automatizada. Exemplos: [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/) (Debian), [mock-git](https://aur.archlinux.org/packages/mock-git/) (Fedora).
 *   Uma forma diferente de lidar (possivelmente incompatível) com dependências é com [vínculo estático](http://jurjenbokma.com/ApprenticesNotes/getting_statlinked_binaries_on_debian.xhtml). Por favor, note que a maioria das distribuições não gostam dessa prática.
@@ -64,7 +64,7 @@ Artigos relacionados
 
 *   **[dpkg](https://en.wikipedia.org/wiki/pt:dpkg "wikipedia:pt:dpkg")** — O gerenciador de pacotes do Debian
 
-	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://aur.archlinux.org/packages/dpkg/)
+	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://www.archlinux.org/packages/?name=dpkg)
 
 *   **dput** — Ferramenta de envio de pacotes do Debian
 

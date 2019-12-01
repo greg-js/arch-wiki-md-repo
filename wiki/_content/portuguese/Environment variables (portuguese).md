@@ -108,7 +108,7 @@ PATH=$PATH:~/scripts
 GUIVAR=value
 ```
 
-Para definir variáveis de ambiente apenas para um aplicativo específico em vez de toda a sessão, edite o arquivo *.desktop* do aplicativo. Veja [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") para instruções.
+Para definir variáveis de ambiente apenas para um aplicativo específico em vez de toda a sessão, edite o arquivo *.desktop* do aplicativo. Veja [Entradas de desktop#Modificar variáveis de ambiente](/index.php/Entradas_de_desktop#Modificar_variáveis_de_ambiente "Entradas de desktop") para instruções.
 
 **Dica:** [KDE Plasma](/index.php/KDE_Plasma_(Portugu%C3%AAs) "KDE Plasma (Português)") possui suporte a execução de shell scripts no login e mesmo após iniciar o Plasma, eles podem ser usados para definir variáveis de ambiente. Veja [KDE (Português)#Iniciar automaticamente](/index.php/KDE_(Portugu%C3%AAs)#Iniciar_automaticamente "KDE (Português)").
 

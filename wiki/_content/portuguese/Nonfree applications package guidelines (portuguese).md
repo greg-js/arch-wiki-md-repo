@@ -178,7 +178,7 @@ Para determinar o tipo exato de arquivo, execute `file *arquivo_de_tipo_desconhe
 
 ### Obtendo ícones para arquivos .desktop
 
-O software proprietário geralmente não possui arquivos de ícone separados, portanto, não há nada para usar na criação de arquivos [.desktop](/index.php/.desktop ".desktop"). Felizmente, `.ico` arquivos podem ser facilmente extraídos de executáveis com programas do pacote [icoutils](https://www.archlinux.org/packages/?name=icoutils). Você pode até fazer isso durante a fase `build`, por exemplo:
+O software proprietário geralmente não possui arquivos de ícone separados, portanto, não há nada para usar na criação de arquivos [.desktop](/index.php/.desktop_(Portugu%C3%AAs) ".desktop (Português)"). Felizmente, `.ico` arquivos podem ser facilmente extraídos de executáveis com programas do pacote [icoutils](https://www.archlinux.org/packages/?name=icoutils). Você pode até fazer isso durante a fase `build`, por exemplo:
 
 ```
 $ wrestool -x --output=*icon.ico* -t14 *executable.exe*

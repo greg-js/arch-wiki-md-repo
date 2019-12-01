@@ -139,10 +139,20 @@ Met gebruik van de beschikbare shell gereedschappen kan een ervaren gebruiker de
 
 #### Inloggen en een niet-US keymap laden
 
-Als je een niet-US keymap moet laden en/of een ander console lettertype wilt instellen, kun je het "km" commando gebruiken.
+Als je een niet-US keymap moet laden en, kun je het "loadkeys" commando gebruiken.
+
+Eerst zoeken we de juiste keymap, deze bevind zich in /usr/share/kbd/keymaps.
 
 ```
- km
+ls /usr/share/kbd/keymaps/**/nl*
+ls /usr/share/kbd/keymaps/**/be*
+
+```
+
+Voor België is de juiste keymap "be-latin1"
+
+```
+loadkeys be-latin1
 
 ```
 

@@ -4,7 +4,11 @@ Related articles
 
 [Guake](http://guake-project.org/) is a top-down terminal for [GNOME](/index.php/GNOME "GNOME") (in the style of [Yakuake](/index.php/Yakuake "Yakuake") for [KDE](/index.php/KDE "KDE"), [Tilda](/index.php/Tilda "Tilda") or the terminal used in Quake).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -12,7 +16,7 @@ Related articles
 *   [4 Guake scripting](#Guake_scripting)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 In Floating WM](#In_Floating_WM)
-    *   [5.2 Toggling Guake visibility does not work (Wayland)](#Toggling_Guake_visibility_does_not_work_.28Wayland.29)
+    *   [5.2 Toggling Guake visibility does not work (Wayland)](#Toggling_Guake_visibility_does_not_work_(Wayland))
 *   [6 See also](#See_also)
 
 ## Installation

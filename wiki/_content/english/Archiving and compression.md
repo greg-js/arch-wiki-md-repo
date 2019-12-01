@@ -139,7 +139,7 @@ Otherwise you can use the [file](https://www.archlinux.org/packages/?name=file) 
 | Name | Packages | Ext | Description |
 | [ARC](https://en.wikipedia.org/wiki/ARC_(file_format) | [arc](https://aur.archlinux.org/packages/arc/) | .arc, .ark | Was very popular during the early days of the dial-up BBS. Superseded by ZIP. |
 | [ARJ](https://en.wikipedia.org/wiki/ARJ "wikipedia:ARJ") | [arj](https://www.archlinux.org/packages/?name=arj) | .arj | An archiver used on DOS/Windows in mid-1990s. This is an open source clone. |
-| [compress](https://en.wikipedia.org/wiki/compress "wikipedia:compress") | [ncompress](https://aur.archlinux.org/packages/ncompress/) | .Z | The classic unix compression utility which can handle the ancient .Z archive. |
+| [compress](https://en.wikipedia.org/wiki/compress "wikipedia:compress") | [ncompress](https://www.archlinux.org/packages/?name=ncompress) | .Z | The classic unix compression utility which can handle the ancient .Z archive. |
 | [LHA](https://en.wikipedia.org/wiki/LHA_(file_format) | [lha](https://aur.archlinux.org/packages/lha/) | .lzh, .lha | Format popular in Japan, archiver to create LH-7 format archives. 32-bit only (requires [multilib](/index.php/Multilib "Multilib")). |
 | [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Parity archiver for increased data integrity. See also [Parchive](/index.php/Parchive "Parchive"). |
 | [shar](https://en.wikipedia.org/wiki/shar "wikipedia:shar") | [sharutils](https://www.archlinux.org/packages/?name=sharutils) | .shar | Creates self-extracting archives that are valid shell scripts. |

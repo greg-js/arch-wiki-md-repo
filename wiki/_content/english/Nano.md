@@ -51,7 +51,12 @@ include "/usr/share/nano/*.nanorc"
 
 ```
 
-For syntax highlighting enhancements which replace and expand the defaults, [install](/index.php/Install "Install") [nano-syntax-highlighting](https://www.archlinux.org/packages/?name=nano-syntax-highlighting) or [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/).
+For syntax highlighting enhancements which replace and expand the defaults, [install](/index.php/Install "Install") [nano-syntax-highlighting](https://www.archlinux.org/packages/?name=nano-syntax-highlighting) or [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/) and, additionally to the above setting, also add:
+
+```
+include "/usr/share/nano-syntax-highlighting/*.nanorc"
+
+```
 
 #### Forth
 

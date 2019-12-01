@@ -116,7 +116,7 @@ Unlike Arch, Debian and Ubuntu will not let you login without a password on firs
 
 ```
 
-If the above did not work. One can start the container and use these commands instead:
+If the above did not work, one can start the container and use these commands instead:
 
 ```
 # systemd-nspawn -b -D myContainer  #Starts the container
@@ -168,6 +168,17 @@ When using a container frequently, you may want to start it on boot.
 First [enable](/index.php/Enable "Enable") the `machines.target` target, then `systemd-nspawn@*myContainer*.service`, where `myContainer` is an nspawn container in `/var/lib/machines`.
 
 **Tip:** To customize the startup of a container, edit `/etc/systemd/nspawn/*myContainer*.nspawn`. See [systemd.nspawn(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) for all options.
+
+The container needs to be discoverable by `machinectl`. If it is not in `/var/lib/machines` or in one of the paths searched by `machinectl`, it can be symlinked into `/var/lib/machines` (see [machinectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machinectl.1#FILES_AND_DIRECTORIES)).
+
+A container started with the default template unit file `systemd-nspawn@.service` creates a virtual Ethernet connection (`--network-veth`) which implies a private network (`--private-network`). To retain the default options applied by the `systemd-nspawn` command when no networking options is specified ­– that is, full access to the host network –, disable the `VirtualEthernet` option:
+
+ `/etc/systemd/nspawn/*my-container*.nspawn` 
+```
+[Network]
+VirtualEthernet=no
+
+```
 
 ### Build and test packages
 

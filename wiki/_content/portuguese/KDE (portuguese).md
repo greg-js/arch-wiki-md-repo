@@ -302,7 +302,7 @@ O Plasma pode iniciar automaticamente aplicativos e executar scripts na iniciali
 *   Os programas podem ser iniciados automaticamente somente no login, enquanto os shell scripts também podem ser executados no desligamento ou até mesmo antes do início do Plasma.
 *   Os scripts do shell só serão executados se estiverem marcados com [executável](/index.php/Execut%C3%A1vel "Executável").
 
-*   Coloque [entradas de desktop](/index.php/Desktop_entries "Desktop entries") (p.ex., arquivos *.desktop*) no diretório de [inicialização automática XDG](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)") apropriado.
+*   Coloque [entradas de desktop](/index.php/Entradas_de_desktop "Entradas de desktop") (p.ex., arquivos *.desktop*) no diretório de [inicialização automática XDG](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)") apropriado.
 
 *   Coloque ou faça link simbólico para scripts shell em um dos seguintes diretórios:
 

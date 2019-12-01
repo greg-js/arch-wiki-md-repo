@@ -36,14 +36,10 @@ Combined with [acpid](/index.php/Acpid "Acpid") and [CPU frequency scaling](/ind
     *   [2.6 Audio](#Audio)
         *   [2.6.1 AC97](#AC97)
         *   [2.6.2 Intel HDA](#Intel_HDA)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Aliases](#Aliases)
-    *   [3.2 lm-profiler](#lm-profiler)
-    *   [3.3 Disabling](#Disabling)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Laptop-mode-tools is not picking up events](#Laptop-mode-tools_is_not_picking_up_events)
-    *   [4.2 USB Mouse sleeping after 5 seconds when on battery](#USB_Mouse_sleeping_after_5_seconds_when_on_battery)
-*   [5 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Laptop-mode-tools is not picking up events](#Laptop-mode-tools_is_not_picking_up_events)
+    *   [3.2 USB Mouse sleeping after 5 seconds when on battery](#USB_Mouse_sleeping_after_5_seconds_when_on_battery)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -300,14 +296,6 @@ INTEL_HDA_DEVICE_TIMEOUT=10
 INTEL_HDA_DEVICE_CONTROLLER=0
 
 ```
-
-## Tips and tricks
-
-### Aliases
-
-### lm-profiler
-
-### Disabling
 
 ## Troubleshooting
 

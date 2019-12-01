@@ -345,7 +345,7 @@ $ growisofs -dvd-compat -Z */dev/sr0*=*isoimage.iso*
 
 ### Verifying the burnt ISO image
 
-You can verify the integrity of the burnt medium to make sure it contains no errors. Always eject the medium and reinsert it before verifying. It will guarantee that not any kernel cache will be used to read the data.
+You can verify the integrity of the burnt medium to make sure it contains no errors. Always eject the medium and reinsert it before verifying. It will guarantee that any kernel cache will not be used to read the data.
 
 First calculate the MD5 checksum of the original ISO image:
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [KDE](/index.php/KDE "KDE")
+
 **翻译状态：** 本文是英文页面 [Yakuake](/index.php/Yakuake "Yakuake") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-8-6，点击[这里](https://wiki.archlinux.org/index.php?title=Yakuake&diff=0&oldid=328823)可以查看翻译后英文页面的改动。
 
 [Yakuake](http://yakuake.kde.org/) 是 [KDE](/index.php/KDE "KDE"),里的下拉式终端,与 [Guake](/index.php/Guake "Guake") 或者 [Tilda](/index.php/Tilda "Tilda") 类似.

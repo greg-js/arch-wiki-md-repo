@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch package guidelines](/index.php/Arch_package_guidelines "Arch package guidelines"). Data da última tradução: 2019-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_package_guidelines&diff=0&oldid=586670) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch package guidelines](/index.php/Arch_package_guidelines "Arch package guidelines"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_package_guidelines&diff=0&oldid=589951) na versão em inglês.
 
 Artigos relacionados
 
@@ -9,7 +9,7 @@ Artigos relacionados
 *   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
 *   [Diretrizes de segurança para pacotes](/index.php/Diretrizes_de_seguran%C3%A7a_para_pacotes "Diretrizes de segurança para pacotes")
 
-Ao compilar pacotes para o Arch Linux, **siga as diretrizes de empacotamento** abaixo, especialmente se a intenção é **contribuir** com um novo pacote para o Arch Linux. Você também deve ler as páginas de manual do [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) e do [makepkg](https://archlinux.org/pacman/makepkg.8.html).
+Ao compilar pacotes para o Arch Linux, **siga as diretrizes de empacotamento** abaixo, especialmente se a intenção é **contribuir** com um novo pacote para o Arch Linux. Você também deve ler as páginas de manual do [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) e do [makepkg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.8).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -21,11 +21,15 @@ Ao compilar pacotes para o Arch Linux, **siga as diretrizes de empacotamento** a
 *   [2 Etiqueta de pacotes](#Etiqueta_de_pacotes)
 *   [3 Nomenclatura de pacotes](#Nomenclatura_de_pacotes)
 *   [4 Versionamento de pacotes](#Versionamento_de_pacotes)
-*   [5 Diretórios](#Diretórios)
-*   [6 Tarefas do Makepkg](#Tarefas_do_Makepkg)
-*   [7 Arquiteturas](#Arquiteturas)
-*   [8 Licenças](#Licenças)
-*   [9 Diretrizes adicionais](#Diretrizes_adicionais)
+*   [5 Dependências de pacotes](#Dependências_de_pacotes)
+*   [6 Relações de pacotes](#Relações_de_pacotes)
+*   [7 Fontes de pacotes](#Fontes_de_pacotes)
+*   [8 Trabalhando com upstream](#Trabalhando_com_upstream)
+*   [9 Diretórios](#Diretórios)
+*   [10 Tarefas do Makepkg](#Tarefas_do_Makepkg)
+*   [11 Arquiteturas](#Arquiteturas)
+*   [12 Licenças](#Licenças)
+*   [13 Diretrizes adicionais](#Diretrizes_adicionais)
 
 ## Protótipo de PKGBUILD
 
@@ -67,11 +71,11 @@ package() {
 }
 ```
 
-Outros protótipos podem ser encontrados em `/usr/share/pacman` dos pacotes pacman e abs.
+Outros protótipos podem ser encontrados em `/usr/share/pacman/` dos pacotes pacman e abs.
 
 ## Etiqueta de pacotes
 
-*   Os pacotes **jamais** devem ser instalados em `/usr/local`
+*   Os pacotes **jamais** devem ser instalados em `/usr/local/`
 *   **Não introduza novas variáveis ou funções** em scripts de compilação `PKGBUILD`, a menos que o pacote não possa ser compilado sem elas, pois elas podem **conflitar** com variáveis ou funções usadas pelo próprio makepkg.
 *   Se uma nova variável ou uma nova função for absolutamente necessária, **prefixe seu nome com um caractere de sublinhado** (`_`), ex: `_variavelpersonalizada=` 
 *   O campo `packager` do meta-arquivo do pacote pode ser **personalizado** pelo compilador do pacote, modificando a opção apropriada no arquivo `/etc/makepkg.conf` ou, alternativamente, sobrescrevendo-o com a criação de um ~/.makepkg.conf
@@ -113,10 +117,35 @@ optdepends=('cups: printing support'
     *   O lançamento não estável permite a distribuição descartar um componente EOL (p.ex., qt4, python2).
 *   Lançamentos de pacotes (p.ex., [PKGBUILD (Português)#pkgrel](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgrel "PKGBUILD (Português)")) são **específicos de pacotes do Arch Linux**. Eles permitem a usuários diferenciar entre compilações de pacotes mais novas das mais antigas. Quando uma nova versão de software do pacote é lançada, o **contador de lançamento recomeça em 1**. Então, na medida em que correções e otimizações forem feitas, o pacote será **relançado** para o público do Arch Linux e o **número de lançamento será incrementado**. Quando uma nova versão for lançada, o contador de lançamento será reiniciado para 1\. As tags de lançamento do pacote seguem as **mesmas restrições de nomenclatura que tags de versão**.
 
+## Dependências de pacotes
+
+*   **Não confie em [dependências transitivas](https://en.wikipedia.org/wiki/Transitive_dependency "wikipedia:Transitive dependency")** em qualquer uma das [PKGBUILD (Português)#Dependencias](/index.php/PKGBUILD_(Portugu%C3%AAs)#Dependencias "PKGBUILD (Português)"), pois elas podem quebrar, se uma das dependências for atualizada.
+*   Liste todas as dependências diretas da biblioteca. Para identificá-las, [find-libdeps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find-libdeps.1) (parte de [devtools](https://www.archlinux.org/packages/?name=devtools)) pode ser usado.
+
+## Relações de pacotes
+
+*   Não adicione `$pkgname` a [PKGBUILD (Português)#provides](/index.php/PKGBUILD_(Portugu%C3%AAs)#provides "PKGBUILD (Português)"), pois ele é sempre fornecido implicitamente pelo pacote.
+*   Liste todas as bibliotecas compartilhadas externas de um pacote em [PKGBUILD (Português)#provides](/index.php/PKGBUILD_(Portugu%C3%AAs)#provides "PKGBUILD (Português)") (por exemplo, `'libalgumacoisa.so'`). Para identificá-los, [find-libprovides(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find-libprovides.1) (parte de [devtools](https://www.archlinux.org/packages/?name=devtools)) pode ser usado.
+
+## Fontes de pacotes
+
+*   Os fontes HTTPS (`https://` para tarballs, `git+https://` para fontes git) devem ser usados sempre que possível
+*   Os fontes devem ser verificados usando assinaturas PGP sempre que possível (isso pode envolver a criação de uma tag git em vez de um tarball de origem, se os sinais upstream confirmarem e marcarem, mas não os tarballs)
+*   **Não diminua a segurança ou a validade de um pacote** (por exemplo, removendo uma verificação de soma de verificação ou removendo a verificação de assinatura PGP) porque uma versão anterior foi interrompida ou de repente carece de um determinado recurso (por exemplo, falta de assinatura PGP para um novo lançamento)
+*   Os fontes precisam ser exclusivos em `srcdir` (isso pode exigir que você os renomeie durante o download, por exemplo, `"${pkgname}-${pkgver}.tar.gz::https://${pkgname}.tld/download/${pkgver}.tar.gz"`)
+*   Evite usar espelhos específicos (por exemplo, no sourceforge) para fazer o download, pois eles podem ficar indisponíveis
+
+## Trabalhando com upstream
+
+É uma boa prática trabalhar em estreita colaboração com a upstream, sempre que possível. Isso implica relatar problemas sobre a compilação e o teste de um pacote.
+
+*   Relate problemas imediatamente ao upstream.
+*   Patches do upstream sempre que possível.
+*   Adicione comentários com links para relatórios de erros relevantes (do upstream) no [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") (isso é particularmente importante, pois garante, que outros empacotadores possam entender as alterações e também trabalhar com um pacote).
+
 ## Diretórios
 
 *   **Arquivos de configuração** devem ser mantidos dentro do diretório `/etc`. Se há mais de um arquivo de configuração, é costumeiro **usar um subdiretório** para manter a área do `/etc` o mais limpo possível. Use `/etc/{pkgname}/`, sendo `{pkgname}` o nome do pacote (ou uma alternativa adequada, p.ex., o apache usa `/etc/httpd/`).
-
 *   Arquivos de pacotes devem seguir essas **diretrizes gerais de diretórios**:
 
 | `/etc` | Arquivos de configuração **essenciais para o sistema** |
@@ -175,7 +204,7 @@ Veja [PKGBUILD#license](/index.php/PKGBUILD_(Portugu%C3%AAs)#license "PKGBUILD (
 
 ## Diretrizes adicionais
 
-Ceritique-se de ler primeiro as diretrizes acima - pontos importantes são listados nesta página e que não serão repetidos nas páginas de diretrizes a seguir. As diretrizes específicas abaixo têm a intenção de ser um adicionar aos padrões listados nesta.
+Certifique-se de ler primeiro as diretrizes acima - pontos importantes são listados nesta página e que não serão repetidos nas páginas de diretrizes a seguir. As diretrizes específicas abaixo têm a intenção de ser um adicionar aos padrões listados nesta.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 

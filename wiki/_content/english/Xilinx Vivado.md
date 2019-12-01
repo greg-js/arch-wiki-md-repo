@@ -17,6 +17,7 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Create .desktop files](#Create_.desktop_files)
     *   [3.2 Enable display scaling](#Enable_display_scaling)
+    *   [3.3 Disable WebTalk](#Disable_WebTalk)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Synthesis segfaults](#Synthesis_segfaults)
     *   [4.2 xsct, xsdb, xmd, and tclsh segfault](#xsct,_xsdb,_xmd,_and_tclsh_segfault)
@@ -177,6 +178,19 @@ Start vivado, then set the scaling rate as follow:
 Tools -> Setting -> Display -> Scaling
 
 ```
+
+### Disable WebTalk
+
+The free WebPACK license does not let you disable this feature which uploads usage data to Xilinx's servers when generating a bitstream, but synthesis will complete just fine if the connection fails. A simple way to make it fail consistently for Vivado tools only is to set an invalid HTTPS proxy for it.
+
+ `/opt/Xilinx/Vivado/<version>/bin/setupEnv.sh` 
+```
+...
+
+export HTTPS_PROXY=localhost
+```
+
+This method will not pollute your environment, only the temporary environment that is configured upon startup of the tools, so it shouldn't break anything else.
 
 ## Troubleshooting
 

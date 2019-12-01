@@ -6,7 +6,11 @@
 
 [Yakuake](https://www.kde.org/applications/system/yakuake/) — выпадающий сверху эмулятор терминала для [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") в стиле [Guake (Русский)](/index.php/Guake_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Guake (Русский)") для [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"), [Tilda](/index.php/Tilda "Tilda") или консоли в игре Quake.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Использование](#Использование)

@@ -4,6 +4,15 @@ Related articles
 
 For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) article. This article focuses on how to set up Secure Boot in Arch Linux.
 
+*Secure Boot* is a security feature of modern motherboards, which can protect boot manager, kernel and initramfs from tampering: e.g. from installing an keylogger or bootkit able to steal your LUKS master key. Minimal configuration in which using *Secure boot* worth time spent:
+
+1.  UEFI considered trusted, despite it still can have backdoors or being vulnerable to Evil Maid able to flash your hardware
+2.  User *must not* use 3rd party keys, especially from Microsoft (there is at least one known boot manager, signed by Microsoft, able to load anything [[1]](https://habr.com/ru/post/446238/))
+3.  UEFI loads [EFISTUB](/index.php/EFISTUB "EFISTUB") with *both* kernel+initram signed by user *Image Signing Key*, so no one can tamper it
+4.  Kernel mounts encrypted root and home filesystems ([LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system")), so no one can tamper them, read mentioned private keys, password hashes or user sensitive data
+
+In future, Evil Maid attack can be potentially prevented by using a [TPM](/index.php/Trusted_Platform_Module "Trusted Platform Module").
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -30,14 +39,15 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
     *   [3.1 Custom keys](#Custom_keys)
         *   [3.1.1 Creating keys](#Creating_keys)
         *   [3.1.2 Updating keys](#Updating_keys)
-    *   [3.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
+    *   [3.2 Signing one efi application](#Signing_one_efi_application)
         *   [3.2.1 Signing kernel with pacman hook](#Signing_kernel_with_pacman_hook)
-    *   [3.3 Put firmware in "Setup Mode"](#Put_firmware_in_"Setup_Mode")
-    *   [3.4 Enroll keys in firmware](#Enroll_keys_in_firmware)
-        *   [3.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
-        *   [3.4.2 Using KeyTool](#Using_KeyTool)
-    *   [3.5 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
-        *   [3.5.1 Microsoft Windows](#Microsoft_Windows)
+    *   [3.3 Kernel and initram as one EFI application](#Kernel_and_initram_as_one_EFI_application)
+    *   [3.4 Put firmware in "Setup Mode"](#Put_firmware_in_"Setup_Mode")
+    *   [3.5 Enroll keys in firmware](#Enroll_keys_in_firmware)
+        *   [3.5.1 Using firmware setup utility](#Using_firmware_setup_utility)
+        *   [3.5.2 Using KeyTool](#Using_KeyTool)
+    *   [3.6 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
+        *   [3.6.1 Microsoft Windows](#Microsoft_Windows)
 *   [4 Disable Secure Boot](#Disable_Secure_Boot)
 *   [5 Booting an install media](#Booting_an_install_media)
 *   [6 See also](#See_also)
@@ -417,28 +427,18 @@ $ sign-efi-sig-list **-a** -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.
 
 When `*new_db*.auth` is created, [enroll it](#Enroll_keys_in_firmware).
 
-### Signing bootloader and kernel
+### Signing one efi application
 
-**Tip:** The [rEFInd](/index.php/REFInd "REFInd") boot manager's `refind-install` script can sign rEFInd EFI binaries and copy them together with the db certificates to the ESP. See [rEFInd#Using your own keys](/index.php/REFInd#Using_your_own_keys "REFInd") for instructions.
+**Warning:** Signing kernel only won't protect from initram tampering!
 
-When Secure Boot is active (i.e. in "User Mode") you will only be able to launch signed binaries, so you need to sign your kernel and [boot loader](/index.php/Boot_loader "Boot loader").
-
-Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
-
-**Note:** If running *sbsign* without `--output` the resulting file will be `*filename*.signed`. See [sbsign(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sbsign.1) for more information.
+When *Secure Boot* is active (i.e. in "User Mode"), only signed binaries can be launched. Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools) to sign your kernel or boot manager with [sbsign(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sbsign.1):
 
 ```
 # sbsign --key db.key --cert db.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
-# sbsign --key db.key --cert db.crt --output *esp*/EFI/BOOT/BOOTX64.EFI *esp*/EFI/BOOT/BOOTX64.EFI
 
 ```
 
-**Tip:**
-
-*   To check if a binary is signed and list its signatures use `sbverify --list */path/to/binary*`.
-*   You can use [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to automatically sign your kernels on update. This will also take care of embedding the otherwise unprotected initramfs and kernel command line into the signed UEFI image.
-    *   When using [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/), `CMDLINE_DEFAULT` must be set in `/etc/sbupdate.conf` in order for the *.efi* image to be bootable.
-    *   You may want to consider using [Direct UEFI boot](/index.php/EFISTUB#efibootmgr_with_.efi_file "EFISTUB") with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) after generating the signed *.efi* file.
+To check if a binary is signed and list its signatures use `sbverify --list */path/to/binary*`.
 
 #### Signing kernel with pacman hook
 
@@ -461,7 +461,7 @@ Depends = findutils
 Depends = grep
 ```
 
-Since your boot loader or boot manager will also need to be signed, you might want to trigger the hook when the former is updated. Here is an example with systemd-boot:
+If you need a boot manager, you might want to trigger the hook when the former is updated. Here is an example with systemd-boot:
 
  `/etc/pacman.d/hooks/99-secureboot.hook` 
 ```
@@ -479,6 +479,47 @@ Exec = /usr/bin/sh -c "/usr/bin/find /boot/ -type f \( -name 'vmlinuz-*' -o -nam
 ```
 
 The `Target` needs to be duplicated each time you want to add a new package. Wrt. the `find` statement, since we had a condition with the filenames and APLM hooks are being split on spaces, we had to surround the whole statement by quotes in order for the hook to be parsed properly. Since systemd-boot is located in sub-folders, the depth needed to be adjusted as well so that we removed the `-maxdepth` argument. In order to avoid hassle, if you are unsure, try to reinstall the package you want to test to see if the hook and signing part are processed successfully. See [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") or [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5) for more info.
+
+### Kernel and initram as one EFI application
+
+**Tip:** For other tools with similar functionality see [rEFInd#Using your own keys](/index.php/REFInd#Using_your_own_keys "REFInd") and [secure-boot](https://aur.archlinux.org/packages/secure-boot/).
+
+[sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) automatically creates efi executable, which incorporates kernel, cmdline, initram and CPU microcode in one signed file on *esp*. Image will be automatically regenerated and signed on update.
+
+All filesystems except *esp* considered encrypted, otherwise *Secure boot* useless - signed boot image won't protect from system files tampering. If your *esp* mounted to `/boot`, pacman will put there unsigned and unencrypted kernel, inirtam and microcode images. Edit [fstab](/index.php/Fstab "Fstab"), move *esp* mountpoint to `/efi` and remount partitions, so they can be stored safe. `sbupdate` will copy EFISTUB images to *esp*, see below. **Before rebooting, make sure that *esp* contains some kernel to boot!**
+
+Put *db.key*, *db.crt* (Image Signing Key) into default directory `/etc/efi-keys` and make sure only root can access it.
+
+```
+# mkdir /etc/efi-keys
+# chmod -R 600 /etc/efi-keys
+
+```
+
+Install [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) and edit config. Here an *cmdline* example for [LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system"):
+
+ `/etc/sbupdate.conf` 
+```
+ESP_DIR="/efi"
+CMDLINE_DEFAULT="cryptdevice=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:vgroup root=/dev/vgroup/root rw
+CONFIGS["linux"]="linux linux-fallback"  # Generate second image from 'initramfs-linux-fallback.img'
+```
+
+Now run `sbupdate` as root, it will create signed *esp/EFI/Arch/linux-signed.efi*. Note that kernel *cmdline* will be embedded into this efi application, so it's necessary to run `sbupdate` every time the *cmdline* changes. On the other hand, generated application can be executed from any directory on *esp* by efi shell or any boot manager.
+
+You may prefer using [EFISTUB](/index.php/EFISTUB "EFISTUB") booting now, so create boot entries in NVRAM with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) (specify your disk and partition):
+
+```
+# efibootmgr -c -d /dev/sda -p 1 -L "Arch Linux fallback" -l "EFI\Arch\linux-fallback-signed.efi"
+# efibootmgr -c -d /dev/sda -p 1 -L "Arch Linux" -l "EFI\Arch\linux-signed.efi"
+
+```
+
+You may reboot now and check if *Secure boot* works as expected. Further security tips:
+
+*   Set UEFI supervisor password or someone can disable *Secure boot* or even add own keys
+*   Make sure unencrypted *esp* doesn't contain non signed files like kernel, initram or other efi applications (*esp* must not be mounted as `/boot`)
+*   Prevent physical access to SPI flash chip, which stores UEFI, e.g. seal screws with tinsel nail polish or even chip itself with epoxy
 
 ### Put firmware in "Setup Mode"
 

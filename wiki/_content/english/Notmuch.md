@@ -20,7 +20,6 @@ Related articles
     *   [3.5 Neomutt](#Neomutt)
     *   [3.6 astroid](#astroid)
 *   [4 Integrating with mutt](#Integrating_with_mutt)
-    *   [4.1 notmuch-mutt problems](#notmuch-mutt_problems)
 *   [5 Integrating with NeoMutt](#Integrating_with_NeoMutt)
 *   [6 Permanently delete emails](#Permanently_delete_emails)
 
@@ -122,17 +121,6 @@ macro index <F6> \
 ```
 
 The above uses `F8` to search your inbox using notmuch, `F9` to create threads from search results, and `F6` to tag search results.
-
-### notmuch-mutt problems
-
-There can sometimes be disagreement between pacman-installed and managed perl modules and perl modules installed via cpan/cpanm. An error message of the format:
-
-```
-Gnu.c: loadable library and perl binaries are mismatched (got handshake key 0xdb00080, needed 0xdb80080)
-
-```
-
-can indicate that some of the notmuch-mutt dependencies are installed via cpan while some are installed and managed via pacman, and that you should install all dependencies via one or the other method.
 
 ## Integrating with NeoMutt
 

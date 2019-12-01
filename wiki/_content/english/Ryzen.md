@@ -34,7 +34,7 @@ Ryzen is a multithreaded, high performance processor released by AMD in Q1, 2017
 
 ### Kernels
 
-*   [Install](/index.php/Install "Install") the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel for more optimisation. Linux ZEN provides better stability for any processors and also provides more speed in general (including gaming). It is **only** recommended for **desktop** users because the ZEN kernel uses as much power as the default kernel.
+*   [Install](/index.php/Install "Install") the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel for more optimisation. Linux ZEN kernel provides better stability for any processors and also provides more speed in general (including gaming). It is **only** recommended for **desktop** users because the ZEN kernel uses as much power as the default kernel. This kernel package is not directly optimized for AMD Ryzen processors, the linux-zen project is years older than AMD's latest architecture.
 *   [Install](/index.php/Install "Install") the [linux-ck](https://aur.archlinux.org/packages/linux-ck/) kernel which contains patches that is designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The CK kernel is recommended for **laptop** users as it's intended to be very power efficient.
 
 **Warning:** [linux-ck](https://aur.archlinux.org/packages/linux-ck/) is not officially supported for Arch Linux and its derivatives. You may experience some issues.

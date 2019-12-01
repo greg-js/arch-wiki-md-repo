@@ -2,7 +2,7 @@
 
 There are currently no official drivers for any Razer peripherals in Linux. However, Michael Buesch has created a tool called [razercfg](http://bues.ch/cms/hacking/razercfg.html) to configure Razer mice under Linux. There also exist scripts to enable macro keys of Razer keyboards.
 
-Another package, [openrazer-meta](https://aur.archlinux.org/packages/openrazer-meta/) can be used to enable Razer support along with [polychromatic](https://aur.archlinux.org/packages/polychromatic/) or [razergenie](https://aur.archlinux.org/packages/razergenie/) for GUI configuration. Supported devices are [listed here](https://openrazer.github.io/#devices)
+Another package, [openrazer-meta](https://aur.archlinux.org/packages/openrazer-meta/) can be used to enable Razer support along with [polychromatic](https://aur.archlinux.org/packages/polychromatic/) or [razergenie](https://aur.archlinux.org/packages/razergenie/) for GUI configuration. Supported devices are listed at [https://openrazer.github.io/#devices](https://openrazer.github.io/#devices).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -16,11 +16,6 @@ Another package, [openrazer-meta](https://aur.archlinux.org/packages/openrazer-m
     *   [1.3 Using the Razer Configuration Tool](#Using_the_Razer_Configuration_Tool)
 *   [2 OpenRazer](#OpenRazer)
     *   [2.1 Compatibility](#Compatibility_2)
-        *   [2.1.1 Headsets](#Headsets)
-        *   [2.1.2 Keyboards](#Keyboards)
-        *   [2.1.3 Mice](#Mice)
-        *   [2.1.4 Mousemats](#Mousemats)
-        *   [2.1.5 Other devices](#Other_devices)
     *   [2.2 Installation](#Installation_2)
     *   [2.3 How to use](#How_to_use)
     *   [2.4 Troubleshooting](#Troubleshooting)
@@ -109,75 +104,7 @@ color=1:GlowingLogo:FFFFFF
 
 ### Compatibility
 
-#### Headsets
-
-*   Razer Kraken 7.1 Chroma
-*   Razer Kraken 7.1 Classic
-*   Razer Kraken 7.1 V2
-
-#### Keyboards
-
-*   Razer Anansi
-*   Razer BlackWidow Chroma
-*   Razer BlackWidow Chroma (Overwatch)
-*   Razer BlackWidow Chroma V2
-*   Razer BlackWidow Classic
-*   Razer BlackWidow Classic (Alternate)
-*   Razer BlackWidow Tournament Edition Chroma
-*   Razer BlackWidow Ultimate 2012
-*   Razer BlackWidow Ultimate 2013
-*   Razer BlackWidow Ultimate 2016
-*   Razer BlackWidow X Chroma
-*   Razer BlackWidow X Tournament Edition Chroma
-*   Razer BlackWidow X Ultimate
-*   Razer Blade (Late 2016)
-*   Razer Blade Pro (Late 2016)
-*   Razer Blade QHD
-*   Razer Blade Stealth
-*   Razer Blade Stealth (Late 2016)
-*   Razer Blade Stealth (Mid 2017)
-*   Razer DeathStalker Chroma
-*   Razer DeathStalker Expert
-*   Razer Orbweaver Chroma
-*   Razer Ornata
-*   Razer Ornata Chroma
-
-#### Mice
-
-*   Razer Abyssus 2014
-*   Razer Abyssus V2
-*   Razer DeathAdder Chroma
-*   Razer DeathAdder Elite
-*   Razer Diamondback Chroma
-*   Razer Imperator 2012
-*   Razer Mamba 2012 (Wired)
-*   Razer Mamba 2012 (Wireless)
-*   Razer Mamba Tournament Edition
-*   Razer Mamba (Wired)
-*   Razer Mamba (Wireless)
-*   Razer Naga 2014
-*   Razer Naga Chroma
-*   Razer Naga Hex
-*   Razer Naga Hex (Red)
-*   Razer Naga Hex V2
-*   Razer Orochi 2011
-*   Razer Orochi 2013
-*   Razer Orochi (Wired)
-*   Razer Ouroboros 2012
-*   Razer Taipan
-
-#### Mousemats
-
-*   Razer Firefly
-
-#### Other devices
-
-*   Razer Chroma Mug Holder
-*   Razer Core
-*   Razer Nostromo
-*   Razer Orbweaver
-*   Razer Tartarus
-*   Razer Tartarus Chroma
+A list of compatible devices can be found [here](https://openrazer.github.io/#devices).
 
 ### Installation
 

@@ -545,7 +545,7 @@ The credential file should explicitly readable/writeable to root:
 
 This is a simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
 
- `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*myuser*,password=*mypass* 0 0` 
+ `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs _netdev,username=*myuser*,password=*mypass* 0 0` 
 **Note:** Spaces in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
 
 **Tip:** Use `x-systemd.automount` if you want them to be mounted only upon access. See [Fstab#Remote filesystem](/index.php/Fstab#Remote_filesystem "Fstab") for details.
@@ -576,7 +576,7 @@ Description=Mount Share at boot
 [Mount]
 What=//server/share
 Where=/mnt/myshare
-Options=credentials=/etc/samba/credentials/myshare,iocharset=utf8,rw
+Options=_netdev,credentials=/etc/samba/credentials/myshare,iocharset=utf8,rw
 Type=cifs
 TimeoutSec=30
 
@@ -1168,7 +1168,7 @@ This error might be seen when mounting shares of Synology NAS servers. Use the m
 
 File managers that utilizes [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) can show the error `Software caused connection abort` when writing a file to a share/server. This may be due to the server running SMB/CIFS version 1, which many routers use for USB drive sharing (e.g. Belkin routers). To write to these shares specify the CIFS version with the option `vers=1.0`. E.g.:
 
- `/etc/fstab`  `//SERVER/sharename /mnt/mountpoint cifs guest,file_mode=0777,dir_mode=0777,vers=1.0 0 0` 
+ `/etc/fstab`  `//SERVER/sharename /mnt/mountpoint cifs _netdev,guest,file_mode=0777,dir_mode=0777,vers=1.0 0 0` 
 
 ## See also
 

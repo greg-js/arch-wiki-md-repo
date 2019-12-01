@@ -153,7 +153,7 @@ The `<Exclude>` tag excludes applications which we do not want to appear in the 
 
 The `<Layout>` tag defines the layout of the menu. The applications can be organized in folders or however we wish. For more details see the [Xfce wiki](http://wiki.xfce.org/howto/customize-menu).
 
-You can also make changes to the Xfce menu by editing the `.desktop` files themselves. To hide entries, see [Desktop entries#Hide desktop entries](/index.php/Desktop_entries#Hide_desktop_entries "Desktop entries"). You can edit the application's category by modifying the `Categories=` line of the desktop entry, see [Desktop entries#File example](/index.php/Desktop_entries#File_example "Desktop entries").
+You can also make changes to the Xfce menu by editing the `.desktop` files themselves. To hide entries, see [Entradas de desktop#Ocultar entradas de desktop](/index.php/Entradas_de_desktop#Ocultar_entradas_de_desktop "Entradas de desktop"). You can edit the application's category by modifying the `Categories=` line of the desktop entry, see [Entradas de desktop#Exemplo de arquivo](/index.php/Entradas_de_desktop#Exemplo_de_arquivo "Entradas de desktop").
 
 ### Área de trabalho
 

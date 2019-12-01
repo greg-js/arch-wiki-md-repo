@@ -62,7 +62,7 @@ If your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") includes
 
 ### The kernel command line
 
-You now need to set the `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0` [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [Silent boot](/index.php/Silent_boot "Silent boot") for other parameters to limit the output to the console.
+You now need to append the `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0` [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [Silent boot](/index.php/Silent_boot "Silent boot") for other parameters to limit the output to the console.
 
 Rebuild your initrd image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") article for details), for example:
 
@@ -106,7 +106,7 @@ Plymouth comes with a selection of themes:
 7.  *(**Text**: "Text mode theme with tricolor progress bar")*
 8.  *(**Details**: "Verbose fallback theme")*
 
-Development version of Plymouth ([plymouth-git](https://aur.archlinux.org/packages/plymouth-git/)) also comes with the **BGRT** theme, which is a variation of Spinner that keeps the OEM logo if available.
+Development version of Plymouth ([plymouth-git](https://aur.archlinux.org/packages/plymouth-git/)) also comes with the **BGRT** (Boot Graphics Resource Table) theme, which is a variation of Spinner that keeps the OEM logo if available.
 
 In addition you can install other themes from [AUR](/index.php/AUR "AUR"), just have a look at the "Required by"-Array on [plymouth](https://aur.archlinux.org/packages/plymouth/).
 
@@ -135,7 +135,7 @@ Theme=spinner
 ShowDelay=5
 ```
 
-Themes can be previewed without rebuilding, press `Ctrl+Alt+F2` to change to console, log in as root and type:
+Themes can be previewed without rebuilding, press `Ctrl+Alt+F6` to switch to a text terminal, log in as root and type:
 
 ```
 # plymouthd
@@ -143,7 +143,7 @@ Themes can be previewed without rebuilding, press `Ctrl+Alt+F2` to change to con
 
 ```
 
-To quit the preview, press `Ctrl+Alt+F2` again and type:
+To quit the preview, press `Ctrl+Alt+F6` again and type:
 
 ```
 # plymouth --quit
@@ -153,7 +153,7 @@ To quit the preview, press `Ctrl+Alt+F2` again and type:
 Every time a theme is changed, the kernel image must be rebuilt:
 
 ```
-# plymouth-set-default-theme -R <theme>
+# plymouth-set-default-theme -R *theme*
 
 ```
 
@@ -163,7 +163,7 @@ Reboot to apply the changes.
 
 #### Show kernel messages
 
-During boot you can switch to kernel messages by pressing the "Home" (or "Escape") key.
+During boot you can switch to kernel messages by pressing the `Home` or `Esc` keys.
 
 ### Adding Arch Logo to spinner and BGRT themes
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-10-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=585451) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=589334) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Leitura](/index.php/Help:Leitura "Help:Leitura"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -255,10 +255,10 @@ O pacote [base](https://www.archlinux.org/packages/?name=base) não inclui todas
 *   utilitários para acessar partições [RAID](/index.php/RAID "RAID") ou [LVM](/index.php/LVM "LVM"),
 *   firmwares específicos para outros dispositivos não incluídos em [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware),
 *   softwares necessários para [rede](/index.php/Rede "Rede"),
-*   um editor de [[text editor|editores de arquivos]
+*   um editor de [editores de arquivos](/index.php/Text_editor "Text editor")
 *   pacotes necessários para acessar documentação em páginas [man](/index.php/Man_(Portugu%C3%AAs) "Man (Português)") e [info](/index.php/Info_(Portugu%C3%AAs) "Info (Português)"): [man-db](https://www.archlinux.org/packages/?name=man-db), [man-pages](https://www.archlinux.org/packages/?name=man-pages) and [texinfo](https://www.archlinux.org/packages/?name=texinfo).
 
-Para [instalar](/index.php/Instala "Instala") outros pacotes ou grupos de pacotes, acrescente os nomes ao comando *pacstrap* acima (separados por espaço) ou use o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") após a etapa de [chroot](#Chroot). Para uma caomparação, pacotes disponíveis no sistema *live* podem ser encontrados em [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
+Para [instalar](/index.php/Instala "Instala") outros pacotes ou grupos de pacotes, acrescente os nomes ao comando *pacstrap* acima (separados por espaço) ou use o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") enquanto [estiver em chroot no novo sistema](#Chroot). Para uma comparação, pacotes disponíveis no sistema *live* podem ser encontrados em [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
 
 ## Configurar o sistema
 

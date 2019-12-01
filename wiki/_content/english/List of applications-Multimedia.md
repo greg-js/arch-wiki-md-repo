@@ -349,7 +349,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **Milton** — Infinite-canvas paint program.
 
-	[https://www.miltonpaint.com/](https://www.miltonpaint.com/) || [milton](https://aur.archlinux.org/packages/milton/)
+	[https://www.miltonpaint.com/](https://www.miltonpaint.com/) || [milton](https://aur.archlinux.org/packages/milton/), [milton-git](https://aur.archlinux.org/packages/milton-git/)
 
 *   **mtPaint** — Graphics editing program geared towards creating indexed palette images and pixel art.
 

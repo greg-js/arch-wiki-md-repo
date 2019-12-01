@@ -29,7 +29,6 @@ CK patchset is designed for desktop/laptop use but not for servers. It provides 
 Linux-ck roughly follows the release cycle of the official Arch kernel but not only. The following are requirements for a new package release:
 
 *   CK patchset compatible with the current kernel version
-*   corresponding Arch kernel must be in existence otherwise it will break other packages i.e. nvidia. See [git.archlinux.org](https://git.archlinux.org/svntogit/packages.git/log/trunk?h=packages/linux) for the official [linux](https://www.archlinux.org/packages/?name=linux) package
 
 ### Long-Term Support (LTS) CK releases
 

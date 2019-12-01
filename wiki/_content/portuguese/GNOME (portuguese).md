@@ -186,7 +186,7 @@ Você pode acessar diretamente o banco de dados dconf usando as ferramentas de l
 
 Até o GNOME 3.24, as configurações eram aplicadas por um daemon de configurações do GNOME (localizado em `/usr/lib/gnome-settings-daemon/gnome-settings-daemon`), o qual poderia ser executado fora de uma sessão do GNOME.
 
-GNOME 3.24, porém, substituiu o daemon de configurações do GNOME com diversos outros plug-ins `/usr/lib/gnome-settings-daemon/gsd-*` separados, os quais posteriormente foram movidos para `/usr/lib/gsd-*`. Esses plug-ins são agora controlados via arquivos desktop sob `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). Para executar esses plug-ins fora de uma sessão do GNOME, você agora precisará copiar/editar as [entradas desktop](/index.php/Desktop_entries "Desktop entries") apropriadas para `~/.config/autostart`.
+GNOME 3.24, porém, substituiu o daemon de configurações do GNOME com diversos outros plug-ins `/usr/lib/gnome-settings-daemon/gsd-*` separados, os quais posteriormente foram movidos para `/usr/lib/gsd-*`. Esses plug-ins são agora controlados via arquivos desktop sob `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). Para executar esses plug-ins fora de uma sessão do GNOME, você agora precisará copiar/editar as [entradas de desktop](/index.php/Entradas_de_desktop "Entradas de desktop") apropriadas para `~/.config/autostart`.
 
 A configuração geralmente é realizada para cada usuário, essa seção não cobre o como criar modelos de configuração para múltiplos usuários.
 

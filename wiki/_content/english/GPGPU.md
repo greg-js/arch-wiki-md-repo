@@ -114,14 +114,14 @@ To find out all possible (known) properties of the OpenCL platform and devices a
 #### Language bindings
 
 *   **JavaScript/HTML5**: [WebCL](http://www.khronos.org/webcl/)
-*   **[Python](/index.php/Python "Python")**: [python-pyopencl](https://www.archlinux.org/packages/?name=python-pyopencl)
-*   **[D](/index.php/D "D")**: [cl4d](https://bitbucket.org/trass3r/cl4d/wiki/Home)
-*   **[Java](/index.php/Java "Java")**: [JOCL](http://jogamp.org/jocl/www/) (a part of [JogAmp](http://jogamp.org/))
-*   **[Mono/.NET](/index.php/Mono "Mono")**: [Open Toolkit](http://sourceforge.net/projects/opentk/)
-*   **[Go](/index.php/Go "Go")**: [OpenCL bindings for Go](https://github.com/samuel/go-opencl)
+*   [Python](/index.php/Python "Python"): [python-pyopencl](https://www.archlinux.org/packages/?name=python-pyopencl)
+*   [D](/index.php/D "D"): [cl4d](https://bitbucket.org/trass3r/cl4d/wiki/Home)
+*   [Java](/index.php/Java "Java"): [JOCL](http://jogamp.org/jocl/www/) (a part of [JogAmp](http://jogamp.org/))
+*   [Mono/.NET](/index.php/Mono "Mono"): [Open Toolkit](http://sourceforge.net/projects/opentk/)
+*   [Go](/index.php/Go "Go"): [OpenCL bindings for Go](https://github.com/samuel/go-opencl)
 *   **Racket**: Racket has a native interface [on PLaneT](http://planet.racket-lang.org/display.ss?owner=jaymccarthy&package=opencl.plt) that can be installed via raco.
-*   **[Rust](/index.php/Rust "Rust")**: [ocl](https://github.com/cogciprocate/ocl)
-*   **[Julia](/index.php/Julia "Julia")**: [OpenCL.jl](https://github.com/JuliaGPU/OpenCL.jl)
+*   [Rust](/index.php/Rust "Rust"): [ocl](https://github.com/cogciprocate/ocl)
+*   [Julia](/index.php/Julia "Julia"): [OpenCL.jl](https://github.com/JuliaGPU/OpenCL.jl)
 
 ## SYCL
 
@@ -195,13 +195,14 @@ To find whether the installation was successful and if cuda is up and running, y
 ### Language bindings
 
 *   **Fortran**: [PGI CUDA Fortran Compiler](http://www.pgroup.com/resources/cudafortran.htm)
-*   **[Haskell](/index.php/Haskell "Haskell")**: The [accelerate package](http://hackage.haskell.org/package/accelerate) lists available CUDA backends
-*   **[Java](/index.php/Java "Java")**: [JCuda](http://www.jcuda.org/jcuda/JCuda.html)
-*   **[Mathematica](/index.php/Mathematica "Mathematica")**: [CUDAlink](http://reference.wolfram.com/mathematica/CUDALink/tutorial/Overview.html)
-*   **[Mono/.NET](/index.php/Mono "Mono")**: [CUDA.NET](http://www.hoopoe-cloud.com/Solutions/CUDA.NET/Default.aspx), [CUDAfy.NET](http://www.hybriddsp.com/)
+*   [Haskell](/index.php/Haskell "Haskell"): The [accelerate package](http://hackage.haskell.org/package/accelerate) lists available CUDA backends
+*   [Java](/index.php/Java "Java"): [JCuda](http://www.jcuda.org/jcuda/JCuda.html)
+*   [Mathematica](/index.php/Mathematica "Mathematica"): [CUDAlink](http://reference.wolfram.com/mathematica/CUDALink/tutorial/Overview.html)
+*   [Mono/.NET](/index.php/Mono "Mono"): [CUDA.NET](http://www.hoopoe-cloud.com/Solutions/CUDA.NET/Default.aspx), [CUDAfy.NET](http://www.hybriddsp.com/)
 *   **Perl**: [KappaCUDA](https://metacpan.org/pod/KappaCUDA), [CUDA-Minimal](https://github.com/run4flat/perl-CUDA-Minimal)
-*   **[Python](/index.php/Python "Python")**: [python-pycuda](https://www.archlinux.org/packages/?name=python-pycuda) or [Kappa](http://psilambda.com/download/kappa-for-python)
-*   **[Ruby](/index.php/Ruby "Ruby")**, **Lua**: [Kappa](http://psilambda.com/products/kappa/)
+*   [Python](/index.php/Python "Python"): [python-pycuda](https://www.archlinux.org/packages/?name=python-pycuda) or [Kappa](http://psilambda.com/download/kappa-for-python)
+*   [Ruby](/index.php/Ruby "Ruby"), **Lua**: [Kappa](http://psilambda.com/products/kappa/)
+*   [Rust](/index.php/Rust "Rust"): [cuda](https://crates.io/crates/cuda)
 
 ## List of GPGPU accelerated software
 

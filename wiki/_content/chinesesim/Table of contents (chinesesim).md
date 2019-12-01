@@ -13,7 +13,7 @@
 | <small>1.4.1.</small> [Lists](/index.php/Category:Lists_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lists (简体中文)") <small>(1)</small> |
 | <small>1.4.1.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lists of software (简体中文)") <small>(2)</small> |
 | <small>1.4.2.</small> [Software comparisons](/index.php/Category:Software_comparisons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software comparisons (简体中文)") <small>(1) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
-| <small>1.5.</small> [Installation process](/index.php/Category:Installation_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Installation process (简体中文)") <small>(18)</small> |
+| <small>1.5.</small> [Installation process](/index.php/Category:Installation_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Installation process (简体中文)") <small>(17)</small> |
 | <small>1.6.</small> [Live Arch系统](/index.php/Category:Live_Arch_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Live Arch systems (简体中文)") <small>(2)</small> |
 | <small>2.</small> [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)") <small>(6)</small> |
 | <small>2.1.</small> [程序启动器](/index.php/Category:Application_launchers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Application launchers (简体中文)") <small>(2)</small> |

@@ -23,7 +23,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security 
 
 ## Implementations
 
-There are four TLS implementations available in the [official repositories](/index.php/Official_repositories "Official repositories"). OpenSSL should already be installed on your system as it is an indirect dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package") ([base](https://www.archlinux.org/packages/?name=base) > [coreutils](https://www.archlinux.org/packages/?name=coreutils) > [openssl](https://www.archlinux.org/packages/?name=openssl)). GnuTLS might already be installed on your system as it is required by many packages.
+There are five TLS implementations available in the [official repositories](/index.php/Official_repositories "Official repositories"). OpenSSL should already be installed on your system as it is an indirect dependency of the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package") ([base](https://www.archlinux.org/packages/?name=base) > [coreutils](https://www.archlinux.org/packages/?name=coreutils) > [openssl](https://www.archlinux.org/packages/?name=openssl)). GnuTLS might already be installed on your system as it is required by many packages.
 
 *   **[OpenSSL](/index.php/OpenSSL "OpenSSL")** — A robust, commercial-grade, and full-featured toolkit for the TLS and SSL protocols; also a general-purpose cryptography library.
 
@@ -40,6 +40,10 @@ There are four TLS implementations available in the [official repositories](/ind
 *   **[mbed TLS](/index.php/Mbed_TLS "Mbed TLS")** — Portable SSL/TLS implementation, aka PolarSSL.
 
 	[https://tls.mbed.org/](https://tls.mbed.org/) || [mbedtls](https://www.archlinux.org/packages/?name=mbedtls)
+
+*   **[LibreSSL](https://en.wikipedia.org/wiki/LibreSSL "wikipedia:LibreSSL")** — A version of the TLS/crypto stack forked from OpenSSL in 2014 by the OpenBSD project, with goals of modernizing the codebase and improving security.
+
+	[https://www.libressl.org/](https://www.libressl.org/) || [libressl](https://www.archlinux.org/packages/?name=libressl)
 
 ## Certificate authorities
 

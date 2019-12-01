@@ -274,8 +274,8 @@ GeForce 8 and newer | Radeon HD 4000 and newer |
 | H.265/HEVC 10bit | Broxton and newer | Broxton/Apollo Lake and newer | Radeon 400 and newer |
 | VP8 | Broadwell and newer | Broadwell and newer | No | No |
 | VP9 8bit | Broxton and newer
-Hybrid: Broadwell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and newer | See [#VDPAU drivers](#VDPAU_drivers) |
-| VP9 10bit | Kaby Lake and newer | Kaby Lake and newer |
+Hybrid: Broadwell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and newer | No |
+| VP9 10bit | Kaby Lake and newer | Kaby Lake and newer | No |
 | Encoding |
 | MPEG-2 | Ivy Bridge and newer | Broadwell and newer
 except Broxton/Apollo Lake | No | No | No |
@@ -291,6 +291,7 @@ Hybrid: Haswell to Skylake | No |
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
 *   Hybrid VP8 encoder and VP9 decoder supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). [VP9 decoding on Haswell crashes](https://github.com/intel/intel-hybrid-driver/issues/21).
 *   MPEG-4 is disabled by default due to VAAPI limitations. Set the [environment variable](/index.php/Environment_variable "Environment variable") `VAAPI_MPEG4_ENABLED=true` to try to use it anyway.
+*   Not implemented in [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver), since it is not maintained by anyone upstream. See [#VDPAU drivers](#VDPAU_drivers).
 
 ### VDPAU drivers
 

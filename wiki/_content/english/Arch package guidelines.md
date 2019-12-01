@@ -7,7 +7,7 @@ Related articles
 *   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
 *   [Security package guidelines](/index.php/Security_package_guidelines "Security package guidelines")
 
-When building packages for Arch Linux, **adhere to the package guidelines** below, especially if the intention is to **contribute** a new package to Arch Linux. You should also see the [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) and [makepkg](https://archlinux.org/pacman/makepkg.8.html) manpages.
+When building packages for Arch Linux, **adhere to the package guidelines** below, especially if the intention is to **contribute** a new package to Arch Linux. You should also see the [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5) and [makepkg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.8) manpages.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -19,12 +19,15 @@ When building packages for Arch Linux, **adhere to the package guidelines** belo
 *   [2 Package etiquette](#Package_etiquette)
 *   [3 Package naming](#Package_naming)
 *   [4 Package versioning](#Package_versioning)
-*   [5 Package sources](#Package_sources)
-*   [6 Directories](#Directories)
-*   [7 Makepkg duties](#Makepkg_duties)
-*   [8 Architectures](#Architectures)
-*   [9 Licenses](#Licenses)
-*   [10 Additional guidelines](#Additional_guidelines)
+*   [5 Package dependencies](#Package_dependencies)
+*   [6 Package relations](#Package_relations)
+*   [7 Package sources](#Package_sources)
+*   [8 Working with upstream](#Working_with_upstream)
+*   [9 Directories](#Directories)
+*   [10 Makepkg duties](#Makepkg_duties)
+*   [11 Architectures](#Architectures)
+*   [12 Licenses](#Licenses)
+*   [13 Additional guidelines](#Additional_guidelines)
 
 ## PKGBUILD prototype
 
@@ -66,11 +69,11 @@ package() {
 }
 ```
 
-Other prototypes are found in `/usr/share/pacman` from the pacman and abs packages.
+Other prototypes are found in `/usr/share/pacman/` from the pacman and abs packages.
 
 ## Package etiquette
 
-*   Packages should **never** be installed to `/usr/local`
+*   Packages should **never** be installed to `/usr/local/`
 *   **Do not introduce new variables or functions** into `PKGBUILD` build scripts, unless the package cannot be built without doing so, as these could possibly **conflict** with variables and functions used in makepkg itself.
 *   If a new variable or a new function is absolutely required, **prefix its name with an underscore** (`_`), e.g. `_customvariable=` 
 *   **Avoid** using `/usr/libexec/` for anything. Use `/usr/lib/$pkgname/` instead.
@@ -102,7 +105,7 @@ optdepends=('cups: printing support'
 ## Package naming
 
 *   Package names can contain only alphanumeric characters and any of `@`, `.`, `_`, `+`, `-`. Names are not allowed to start with hyphens or dots. All letters should be lowercase.
-*   Package names should NOT be suffixed with the upstream major release version number (e.g. we don't want libfoo2 if upstream calls it libfoo v2.3.4) in case the library and its dependencies are expected to be able to keep using the most recent library version with each respective upstream release. However, for some software or dependencies, this can not be assumed. In the past this has been especially true for widget toolkits such as GTK and Qt. Software that depends on such toolkits can usually not be trivially ported to a new major version. As such, in cases where software can not trivially keep rolling alongside its dependencies, package names should carry the major version suffix (e.g. gtk2, gtk3, qt4, qt5). For cases where most dependencies can keep rolling along the newest release but some can't (for instance closed source that needs libpng12 or similar), a deprecated version of that package might be called libfoo1 while the current version is just libfoo.
+*   Package names should NOT be suffixed with the upstream major release version number (e.g. we do not want libfoo2 if upstream calls it libfoo v2.3.4) in case the library and its dependencies are expected to be able to keep using the most recent library version with each respective upstream release. However, for some software or dependencies, this can not be assumed. In the past this has been especially true for widget toolkits such as GTK and Qt. Software that depends on such toolkits can usually not be trivially ported to a new major version. As such, in cases where software can not trivially keep rolling alongside its dependencies, package names should carry the major version suffix (e.g. gtk2, gtk3, qt4, qt5). For cases where most dependencies can keep rolling along the newest release but some cannot (for instance closed source that needs libpng12 or similar), a deprecated version of that package might be called libfoo1 while the current version is just libfoo.
 
 ## Package versioning
 
@@ -113,18 +116,35 @@ optdepends=('cups: printing support'
     *   The non-stable release allows the distribution to drop an EOL component (e.g. qt4, python2).
 *   Package releases (i.e. [PKGBUILD#pkgrel](/index.php/PKGBUILD#pkgrel "PKGBUILD")) are **specific to Arch Linux packages**. These allow users to differentiate between newer and older package builds. When a new package version is first released, the **release count starts at 1**. Then as fixes and optimizations are made, the package will be **re-released** to the Arch Linux public and the **release number will increment**. When a new version comes out, the release count resets to 1\. Package release tags follow the **same naming restrictions as version tags**.
 
+## Package dependencies
+
+*   **Do not rely on [transitive dependencies](https://en.wikipedia.org/wiki/Transitive_dependency "wikipedia:Transitive dependency")** in any of the [PKGBUILD#Dependencies](/index.php/PKGBUILD#Dependencies "PKGBUILD"), as they might break, if one of the dependencies is updated.
+*   List all direct library dependencies. To identify them [find-libdeps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find-libdeps.1) (part of [devtools](https://www.archlinux.org/packages/?name=devtools)) can be used.
+
+## Package relations
+
+*   Do not add `$pkgname` to [PKGBUILD#provides](/index.php/PKGBUILD#provides "PKGBUILD"), as it is always implicitely provided by the package.
+*   List all external shared libraries of a package in [PKGBUILD#provides](/index.php/PKGBUILD#provides "PKGBUILD") (e.g. `'libsomething.so'`). To identify them [find-libprovides(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find-libprovides.1) (part of [devtools](https://www.archlinux.org/packages/?name=devtools)) can be used.
+
 ## Package sources
 
 *   HTTPS sources (`https://` for tarballs, `git+https://` for git sources) should be used wherever possible
 *   Sources should be verified using PGP signatures wherever possible (this might entail building from a git tag instead of a source tarball, if upstream signs commits and tags but not the tarballs)
-*   **Don't diminish the security or validity of a package** (e.g. by removing a checksum check or by removing PGP signature verification), because an upstream release is broken or suddenly lacks a certain feature (e.g. PGP signature missing for a new release)
+*   **Do not diminish the security or validity of a package** (e.g. by removing a checksum check or by removing PGP signature verification), because an upstream release is broken or suddenly lacks a certain feature (e.g. PGP signature missing for a new release)
 *   Sources have to be unique in `srcdir` (this might require renaming them when downloading, e.g. `"${pkgname}-${pkgver}.tar.gz::https://${pkgname}.tld/download/${pkgver}.tar.gz"`)
 *   Avoid using specific mirrors (e.g. on sourceforge) to download, as they might become unavailable
+
+## Working with upstream
+
+It is considered best-practice to work closely with upstream wherever possible. This entails reporting problems about building and testing a package.
+
+*   Report problems to upstream right away.
+*   Upstream patches wherever possible.
+*   Add comments with links to relevant (upstream) bug tracker tickets in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") (this is particularly important, as it ensures, that other packagers can understand changes and work with a package as well).
 
 ## Directories
 
 *   **Configuration files** should be placed in the `/etc` directory. If there is more than one configuration file, it is customary to **use a subdirectory** in order to keep the `/etc` area as clean as possible. Use `/etc/{pkgname}/` where `{pkgname}` is the name of the package (or a suitable alternative, eg, apache uses `/etc/httpd/`).
-
 *   Package files should follow these **general directory guidelines**:
 
 | `/etc` | **System-essential** configuration files |

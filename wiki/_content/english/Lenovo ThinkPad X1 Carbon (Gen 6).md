@@ -104,6 +104,8 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Updates
 
+**Note:** In the BIOS setup menu under `Security -> UEFI BIOS Update Option`, both `Flash BIOS Updating by End-Users` and `Windows UEFI Firmware Update` [must be enabled](https://github.com/fwupd/fwupd/issues/856#issuecomment-440967709) at the time of an update.
+
 #### Automatic (Linux Vendor Firmware Service)
 
 [In August of 2018 Lenovo has joined](https://blogs.gnome.org/hughsie/2018/08/06/please-welcome-lenovo-to-the-lvfs/) the [Linux Vendor Firmware Service(LVFS)](https://fwupd.org/) project, which enables firmware updates from within the OS. BIOS updates (and other firmware such as the Thunderbolt controller) can be queried for and installed through [fwupd](/index.php/Fwupd "Fwupd").
@@ -210,7 +212,7 @@ There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linu
 
 ### Throttling fix
 
-An easy package has been written to address the problem until (or if) Lenovo ever solves it.
+An easy package has been written to address the problem until Lenovo completes the [OS agnostic fix](https://www.notebookcheck.net/Lenovo-admits-ThinkPad-CPU-throttling-problem-when-running-Linux-fix-in-development.435549.0.html) for the X1C6.
 
 Install [throttled](https://www.archlinux.org/packages/?name=throttled), then run:
 

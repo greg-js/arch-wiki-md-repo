@@ -5,7 +5,11 @@ Related articles
 
 [Fingerprint GUI](http://www.ullrich-online.cc/fingerprint/) is a program that provides an interface and drivers for fingerprint readers. The package includes drivers from the open-source project [fprint](/index.php/Fprint "Fprint") as well as proprietary drivers not included in fprint.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Registering Fingerprints](#Registering_Fingerprints)
@@ -101,4 +105,4 @@ In some cases, using your fingerprint to log into the system may inhibit certain
 
 The manual indicates that to use this function, mount your USB drive and ensure that you have write access to it. Under the "Password" tab of Fingerprint GUI, indicate the appropriate path to your device where it says "Save to directory" (ie. if using gvfs it should be under `/run/media/*your_uid*/*device*`). Enter your password and re-enter it and select "save". This will create a hidden directory on your removable media `/.fingerprints` and create a file `*username*@*hostname*.xml`. On the local machine, this will also create the file `/var/lib/fingerprint-gui/*username*/config.xml`.
 
-**Note:** Security warning: Everyone who has access to both, your computer and the external media, can decrypt the password-file! Never leave the computer and the media unattended at the same place! Connect this media only while logon and don't use it if other persons have root-access to your computer.
+**Warning:** Everyone who has access to both, your computer and the external media, can decrypt the password-file! Never leave the computer and the media unattended at the same place! Connect this media only while logon and don't use it if other persons have root-access to your computer.

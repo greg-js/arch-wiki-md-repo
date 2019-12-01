@@ -73,11 +73,10 @@ If you want to create your own custom repository, follow [pacman/Tips and tricks
     *   [2.52 sublime-text](#sublime-text)
     *   [2.53 subtitlecomposer](#subtitlecomposer)
     *   [2.54 trinity](#trinity)
-    *   [2.55 ungoo](#ungoo)
-    *   [2.56 valveaur](#valveaur)
-    *   [2.57 xuanrui](#xuanrui)
-    *   [2.58 xyne-x86_64](#xyne-x86_64)
-    *   [2.59 home-thaodan](#home-thaodan)
+    *   [2.55 valveaur](#valveaur)
+    *   [2.56 xuanrui](#xuanrui)
+    *   [2.57 xyne-x86_64](#xyne-x86_64)
+    *   [2.58 home-thaodan](#home-thaodan)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -818,19 +817,6 @@ Server = https://smoothware.net/$repo/$arch
 ```
 [trinity]
 Server = https://repo.nasutek.com/arch/contrib/trinity/x86_64
-
-```
-
-### ungoo
-
-*   **Maintainer:** [Sefa Eyeoglu](/index.php/User:Scrumplex "User:Scrumplex") <contact@scrumplex.net> ([https://scrumplex.net](https://scrumplex.net))
-*   **Description:** Latest ungoogled-chromium build
-*   **Upstream page:** [https://arch.scrumplex.net/ungoo](https://arch.scrumplex.net/ungoo)
-*   **Key-ID:** AF1FB107E188CB979A94FD7FC10411294912A422
-
-```
-[ungoo]
-Server = https://arch.scrumplex.net/$repo/os/x86_64
 
 ```
 

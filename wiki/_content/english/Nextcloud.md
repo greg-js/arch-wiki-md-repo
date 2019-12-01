@@ -46,31 +46,31 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [6.2 Mounting files in GNOME Files (Nautilus)](#Mounting_files_in_GNOME_Files_(Nautilus))
     *   [6.3 Android](#Android)
     *   [6.4 iOS](#iOS)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Environment variables not available](#Environment_variables_not_available)
-    *   [7.2 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
-    *   [7.3 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
-    *   [7.4 Cannot write into config directory!](#Cannot_write_into_config_directory!)
-    *   [7.5 Cannot create data directory](#Cannot_create_data_directory)
-    *   [7.6 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
-    *   [7.7 Seeing white page after login](#Seeing_white_page_after_login)
-    *   [7.8 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [7.9 GUI tray icon disappears, but client still running in the background](#GUI_tray_icon_disappears,_but_client_still_running_in_the_background)
-    *   [7.10 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload,_but_give_an_error_'Integrity_constraint_violation...')
-    *   [7.11 "Cannot write into apps directory"](#"Cannot_write_into_apps_directory")
-    *   [7.12 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
-    *   [7.13 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [7.14 "Reading from keychain failed with error: 'No keychain service available'"](#"Reading_from_keychain_failed_with_error:_'No_keychain_service_available'")
-    *   [7.15 FolderSync: "Method Not Allowed"](#FolderSync:_"Method_Not_Allowed")
-*   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Running NextCloud in a subdirectory](#Running_NextCloud_in_a_subdirectory)
-    *   [8.2 Docker](#Docker)
-    *   [8.3 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
-    *   [8.4 Defining Background Jobs](#Defining_Background_Jobs)
-        *   [8.4.1 Manual install](#Manual_install)
-        *   [8.4.2 Activate timer](#Activate_timer)
-        *   [8.4.3 AUR package](#AUR_package)
-    *   [8.5 Collabora Online Office integration](#Collabora_Online_Office_integration)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Running NextCloud in a subdirectory](#Running_NextCloud_in_a_subdirectory)
+    *   [7.2 Docker](#Docker)
+    *   [7.3 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
+    *   [7.4 Defining Background Jobs](#Defining_Background_Jobs)
+        *   [7.4.1 Manual install](#Manual_install)
+        *   [7.4.2 Activate timer](#Activate_timer)
+        *   [7.4.3 AUR package](#AUR_package)
+    *   [7.5 Collabora Online Office integration](#Collabora_Online_Office_integration)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Environment variables not available](#Environment_variables_not_available)
+    *   [8.2 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
+    *   [8.3 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
+    *   [8.4 Cannot write into config directory!](#Cannot_write_into_config_directory!)
+    *   [8.5 Cannot create data directory](#Cannot_create_data_directory)
+    *   [8.6 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
+    *   [8.7 Seeing white page after login](#Seeing_white_page_after_login)
+    *   [8.8 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
+    *   [8.9 GUI tray icon disappears, but client still running in the background](#GUI_tray_icon_disappears,_but_client_still_running_in_the_background)
+    *   [8.10 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload,_but_give_an_error_'Integrity_constraint_violation...')
+    *   [8.11 "Cannot write into apps directory"](#"Cannot_write_into_apps_directory")
+    *   [8.12 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
+    *   [8.13 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [8.14 "Reading from keychain failed with error: 'No keychain service available'"](#"Reading_from_keychain_failed_with_error:_'No_keychain_service_available'")
+    *   [8.15 FolderSync: "Method Not Allowed"](#FolderSync:_"Method_Not_Allowed")
 *   [9 See also](#See_also)
 
 ## Prerequisites
@@ -546,252 +546,6 @@ To enable contacts and calendar sync (Android 4+):
 
 Download the official Nextcloud app from the [App Store](https://itunes.apple.com/us/app/nextcloud/id1125420102).
 
-## Troubleshooting
-
-### Environment variables not available
-
-Uncomment the line in `/etc/php/php-fpm.d/www.conf` as per [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-fpm-tips-label):
-
-```
- env[PATH] = /usr/local/bin:/usr/bin:/bin
-
-```
-
-### Self-signed certificate not accepted
-
-ownCloud uses [Wikipedia:cURL](https://en.wikipedia.org/wiki/cURL "wikipedia:cURL") and [Wikipedia:SabreDAV](https://en.wikipedia.org/wiki/SabreDAV "wikipedia:SabreDAV") to check if WebDAV is enabled. If you use SSL/TLS with a self-signed certificate, e.g. as shown in [LAMP](/index.php/LAMP "LAMP"), and access ownCloud's admin panel, you will see the following error message:
-
-```
-Your web server is not yet properly setup to allow files synchronization because the WebDAV interface seems to be broken.
-
-```
-
-Assuming that you followed the [LAMP](/index.php/LAMP "LAMP") tutorial, execute the following steps:
-
-Create a local directory for non-distribution certificates and copy [LAMPs](/index.php/LAMP "LAMP") certificate there. This will prevent `ca-certificates`-updates from overwriting it.
-
-```
-# cp /etc/httpd/conf/server.crt /usr/share/ca-certificates/*WWW.EXAMPLE.COM.crt*
-
-```
-
-Add *WWW.EXAMPLE.COM.crt* to `/etc/ca-certificates.conf`:
-
-```
-*WWW.EXAMPLE.COM.crt*
-
-```
-
-Now, regenerate your certificate store:
-
-```
-# update-ca-certificates
-
-```
-
-Restart the httpd service to activate your certificate.
-
-### Self-signed certificate for Android devices
-
-Once you have followed the setup for SSL, as on [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
-
-```
-# openssl x509 -req -days 365 -in /etc/httpd/conf/server.csr -signkey /etc/httpd/conf/server.key -extfile android.txt -out CA.crt
-# openssl x509 -inform PEM -outform DER -in CA.crt -out CA.der.crt 
-
-```
-
-The file `android.txt` should contain the following:
-
-```
-basicConstraints=CA:true
-
-```
-
-Then import `CA.der.crt` to your Android device:
-
-Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to *Settings > Security > Credential storage* and select *Install from device storage*. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in *Settings > Security > Credential storage > Trusted credentials > User*.
-
-Thanks to: [[4]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
-
-Another way is to import the certificate directly from your server via [CAdroid](https://play.google.com/store/apps/details?id=at.bitfire.cadroid) and follow the instructions there.
-
-### Cannot write into config directory!
-
-If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), make sure that it includes `/etc/webapps`.
-
-Restart the web server to apply the change.
-
-### Cannot create data directory
-
-If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), make sure that it includes the data directory.
-
-Restart the web server to apply the change.
-
-### CSync failed to find a specific file.
-
-This is most likely a certificate issue. Recreate it, and do not leave the common name empty or you will see the error again.
-
-```
-# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout server.key -out server.crt
-
-```
-
-### Seeing white page after login
-
-The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html). So with
-
-```
-sudo -u http php /usr/share/webapps/nextcloud/occ app:list
-
-```
-
-you can list all apps (if you installed nextcloud in the standard directory), and with
-
-```
-sudo -u http php /usr/share/webapps/nextcloud/occ app:disable <nameOfExtension>
-
-```
-
-you can disable the troubling app.
-
-Alternatively, you can either use [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to edit the `oc_appconfig` table (if you got lucky and the table has an edit option), or do it by hand with mysql:
-
-```
-mysql -u root -p owncloud
-MariaDB [owncloud]> **delete from** oc_appconfig **where** appid='<nameOfExtension>' **and** configkey='enabled' **and** configvalue='yes';
-MariaDB [owncloud]> **insert into** oc_appconfig (appid,configkey,configvalue) **values** ('<nameOfExtension>','enabled','no');
-
-```
-
-This should delete the relevant configuration from the table and add it again.
-
-### GUI sync client fails to connect
-
-If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[5]](https://github.com/owncloud/mirall/issues/734)
-
-### GUI tray icon disappears, but client still running in the background
-
-After waking up from a suspended state, the Nextcloud client tray icon may disappear from the system tray. A workaround is to delay the startup of the client, as noted [here](https://github.com/nextcloud/desktop/issues/203#issuecomment-463957811). This can be done with the .desktop file, for example:
-
- `.local/share/applications/nextcloud.desktop` 
-```
-...
-Exec=bash -c 'sleep 5 && nextcloud'
-...
-
-```
-
-### Some files upload, but give an error 'Integrity constraint violation...'
-
-You may see the following error in the ownCloud sync client:
-
-```
-   SQLSTATE[23000]: Integrity constraint violation: ... Duplicate entry '...' for key 'fs_storage_path_hash')...
-
-```
-
-This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://www.archlinux.org/packages/?name=php-redis), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
-
-```
-   'memcache.local' => '\OC\Memcache\Redis',
-   'filelocking.enabled' => 'true',
-   'memcache.locking' => '\OC\Memcache\Redis',
-   'redis' => array(
-        'host' => 'localhost',
-        'port' => 6379,
-        'timeout' => 0.0,
-         ),
-
-```
-
-and [start/enable](/index.php/Start/enable "Start/enable") `redis.service`.
-
-Finally, disable the File Locking App, as the Transational File Locking will take care of it (and would conflict).
-
-If everything is working, you should see 'Transactional File Locking Enabled' under Server Status on the Admin page, and syncs should no longer cause issues.
-
-### "Cannot write into apps directory"
-
-As mentioned in the [official admin manual](https://docs.nextcloud.com/server/latest/admin_manual/apps_management.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
-
-If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), it may be necessary to add your */path/to/data* directory to the string on the line starting with `php_admin_value open_basedir` :
-
- `/etc/httpd/conf/extra/nextcloud.conf`  `php_admin_value open_basedir "*/path/to/data/*:/srv/http/:/dev/urandom:/tmp/:/usr/share/pear/:/usr/share/webapps/nextcloud/:/etc/webapps/nextcloud"` 
-
-### Installed apps get blocked because of MIME type error
-
-If you are putting your apps folder outside of the nextcloud installation directory make sure your webserver serves it properly.
-
-In nginx this is accomplished by adding a location block to the nginx configuration as the folder will not be included in it by default.
-
-```
-location ~ /apps2/(.*)$ {
-    alias /var/www/nextcloud/apps/$1;
-}
-
-```
-
-### Security warnings even though the recommended settings have been included in nginx.conf
-
-At the top of the admin page there might be a warning to set the `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection` and `X-Robots-Tag` according to [https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/harden_server.html](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/harden_server.html) even though they are already set like that.
-
-A possible cause could be that because owncloud sets those settings, uwsgi passed them along and nginx added them again:
-
- `$ curl -I [https://domain.tld](https://domain.tld)` 
-```
-...
-X-XSS-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Frame-Options: Sameorigin
-X-Robots-Tag: none
-Strict-Transport-Security: max-age=15768000; includeSubDomains; preload;
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 1; mode=block
-X-Robots-Tag: none
-
-```
-
-While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param modHeadersAvailable true; #Avoid sending the security headers twice` ), when using uwsgi and nginx the following modification of the uwsgi part in nginx.conf could help:
-
- ` /etc/nginx/nginx.conf` 
-```
-...
-        # pass all .php or .php/path urls to uWSGI
-        location ~ ^(.+\.php)(.*)$ {
-            include uwsgi_params;
-            uwsgi_modifier1 14;
-            # hode following headers received from uwsgi, because otherwise we would send them twice since we already add them in nginx itself
-            uwsgi_hide_header X-Frame-Options;
-            uwsgi_hide_header X-XSS-Protection;
-            uwsgi_hide_header X-Content-Type-Options;
-            uwsgi_hide_header X-Robots-Tag;
-            uwsgi_hide_header X-Frame-Options;
-            #Uncomment line below if you get connection refused error. Remember to commet out line with "uwsgi_pass 127.0.0.1:3001;" below
-            uwsgi_pass unix:/run/uwsgi/owncloud.sock;
-            #uwsgi_pass 127.0.0.1:3001;
-        }
-...
-
-```
-
-### "Reading from keychain failed with error: 'No keychain service available'"
-
-Can be fixed for Gnome by installing the following 2 packages, [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). Or the following for KDE, [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) and [qtkeychain](https://www.archlinux.org/packages/?name=qtkeychain).
-
-### FolderSync: "Method Not Allowed"
-
-FolderSync needs access to `/owncloud/remote.php/webdav`, so you could create another alias for owncloud in your `/etc/httpd/conf/extra/nextcloud.conf`
-
-```
-  <IfModule mod_alias.c>
-    Alias /nextcloud /usr/share/webapps/nextcloud/
-    Alias /owncloud /usr/share/webapps/nextcloud/
-  </IfModule>
-
-```
-
 ## Tips and tricks
 
 ### Running NextCloud in a subdirectory
@@ -1149,6 +903,252 @@ Then:
 
 *   [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `loolwsd.service`;
 *   configure Nginx as showed in `/usr/share/doc/loolwsd/example.nginx.conf`, and restart it.
+
+## Troubleshooting
+
+### Environment variables not available
+
+Uncomment the line in `/etc/php/php-fpm.d/www.conf` as per [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-fpm-tips-label):
+
+```
+ env[PATH] = /usr/local/bin:/usr/bin:/bin
+
+```
+
+### Self-signed certificate not accepted
+
+ownCloud uses [Wikipedia:cURL](https://en.wikipedia.org/wiki/cURL "wikipedia:cURL") and [Wikipedia:SabreDAV](https://en.wikipedia.org/wiki/SabreDAV "wikipedia:SabreDAV") to check if WebDAV is enabled. If you use SSL/TLS with a self-signed certificate, e.g. as shown in [LAMP](/index.php/LAMP "LAMP"), and access ownCloud's admin panel, you will see the following error message:
+
+```
+Your web server is not yet properly setup to allow files synchronization because the WebDAV interface seems to be broken.
+
+```
+
+Assuming that you followed the [LAMP](/index.php/LAMP "LAMP") tutorial, execute the following steps:
+
+Create a local directory for non-distribution certificates and copy [LAMPs](/index.php/LAMP "LAMP") certificate there. This will prevent `ca-certificates`-updates from overwriting it.
+
+```
+# cp /etc/httpd/conf/server.crt /usr/share/ca-certificates/*WWW.EXAMPLE.COM.crt*
+
+```
+
+Add *WWW.EXAMPLE.COM.crt* to `/etc/ca-certificates.conf`:
+
+```
+*WWW.EXAMPLE.COM.crt*
+
+```
+
+Now, regenerate your certificate store:
+
+```
+# update-ca-certificates
+
+```
+
+Restart the httpd service to activate your certificate.
+
+### Self-signed certificate for Android devices
+
+Once you have followed the setup for SSL, as on [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
+
+```
+# openssl x509 -req -days 365 -in /etc/httpd/conf/server.csr -signkey /etc/httpd/conf/server.key -extfile android.txt -out CA.crt
+# openssl x509 -inform PEM -outform DER -in CA.crt -out CA.der.crt 
+
+```
+
+The file `android.txt` should contain the following:
+
+```
+basicConstraints=CA:true
+
+```
+
+Then import `CA.der.crt` to your Android device:
+
+Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to *Settings > Security > Credential storage* and select *Install from device storage*. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in *Settings > Security > Credential storage > Trusted credentials > User*.
+
+Thanks to: [[4]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
+
+Another way is to import the certificate directly from your server via [CAdroid](https://play.google.com/store/apps/details?id=at.bitfire.cadroid) and follow the instructions there.
+
+### Cannot write into config directory!
+
+If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), make sure that it includes `/etc/webapps`.
+
+Restart the web server to apply the change.
+
+### Cannot create data directory
+
+If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), make sure that it includes the data directory.
+
+Restart the web server to apply the change.
+
+### CSync failed to find a specific file.
+
+This is most likely a certificate issue. Recreate it, and do not leave the common name empty or you will see the error again.
+
+```
+# openssl req -new -x509 -nodes -newkey rsa:4096 -keyout server.key -out server.crt
+
+```
+
+### Seeing white page after login
+
+The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html). So with
+
+```
+sudo -u http php /usr/share/webapps/nextcloud/occ app:list
+
+```
+
+you can list all apps (if you installed nextcloud in the standard directory), and with
+
+```
+sudo -u http php /usr/share/webapps/nextcloud/occ app:disable <nameOfExtension>
+
+```
+
+you can disable the troubling app.
+
+Alternatively, you can either use [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to edit the `oc_appconfig` table (if you got lucky and the table has an edit option), or do it by hand with mysql:
+
+```
+mysql -u root -p owncloud
+MariaDB [owncloud]> **delete from** oc_appconfig **where** appid='<nameOfExtension>' **and** configkey='enabled' **and** configvalue='yes';
+MariaDB [owncloud]> **insert into** oc_appconfig (appid,configkey,configvalue) **values** ('<nameOfExtension>','enabled','no');
+
+```
+
+This should delete the relevant configuration from the table and add it again.
+
+### GUI sync client fails to connect
+
+If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[5]](https://github.com/owncloud/mirall/issues/734)
+
+### GUI tray icon disappears, but client still running in the background
+
+After waking up from a suspended state, the Nextcloud client tray icon may disappear from the system tray. A workaround is to delay the startup of the client, as noted [here](https://github.com/nextcloud/desktop/issues/203#issuecomment-463957811). This can be done with the .desktop file, for example:
+
+ `.local/share/applications/nextcloud.desktop` 
+```
+...
+Exec=bash -c 'sleep 5 && nextcloud'
+...
+
+```
+
+### Some files upload, but give an error 'Integrity constraint violation...'
+
+You may see the following error in the ownCloud sync client:
+
+```
+   SQLSTATE[23000]: Integrity constraint violation: ... Duplicate entry '...' for key 'fs_storage_path_hash')...
+
+```
+
+This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://www.archlinux.org/packages/?name=php-redis), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
+
+```
+   'memcache.local' => '\OC\Memcache\Redis',
+   'filelocking.enabled' => 'true',
+   'memcache.locking' => '\OC\Memcache\Redis',
+   'redis' => array(
+        'host' => 'localhost',
+        'port' => 6379,
+        'timeout' => 0.0,
+         ),
+
+```
+
+and [start/enable](/index.php/Start/enable "Start/enable") `redis.service`.
+
+Finally, disable the File Locking App, as the Transational File Locking will take care of it (and would conflict).
+
+If everything is working, you should see 'Transactional File Locking Enabled' under Server Status on the Admin page, and syncs should no longer cause issues.
+
+### "Cannot write into apps directory"
+
+As mentioned in the [official admin manual](https://docs.nextcloud.com/server/latest/admin_manual/apps_management.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
+
+If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), it may be necessary to add your */path/to/data* directory to the string on the line starting with `php_admin_value open_basedir` :
+
+ `/etc/httpd/conf/extra/nextcloud.conf`  `php_admin_value open_basedir "*/path/to/data/*:/srv/http/:/dev/urandom:/tmp/:/usr/share/pear/:/usr/share/webapps/nextcloud/:/etc/webapps/nextcloud"` 
+
+### Installed apps get blocked because of MIME type error
+
+If you are putting your apps folder outside of the nextcloud installation directory make sure your webserver serves it properly.
+
+In nginx this is accomplished by adding a location block to the nginx configuration as the folder will not be included in it by default.
+
+```
+location ~ /apps2/(.*)$ {
+    alias /var/www/nextcloud/apps/$1;
+}
+
+```
+
+### Security warnings even though the recommended settings have been included in nginx.conf
+
+At the top of the admin page there might be a warning to set the `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection` and `X-Robots-Tag` according to [https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/harden_server.html](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/harden_server.html) even though they are already set like that.
+
+A possible cause could be that because owncloud sets those settings, uwsgi passed them along and nginx added them again:
+
+ `$ curl -I [https://domain.tld](https://domain.tld)` 
+```
+...
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: Sameorigin
+X-Robots-Tag: none
+Strict-Transport-Security: max-age=15768000; includeSubDomains; preload;
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Robots-Tag: none
+
+```
+
+While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param modHeadersAvailable true; #Avoid sending the security headers twice` ), when using uwsgi and nginx the following modification of the uwsgi part in nginx.conf could help:
+
+ ` /etc/nginx/nginx.conf` 
+```
+...
+        # pass all .php or .php/path urls to uWSGI
+        location ~ ^(.+\.php)(.*)$ {
+            include uwsgi_params;
+            uwsgi_modifier1 14;
+            # hode following headers received from uwsgi, because otherwise we would send them twice since we already add them in nginx itself
+            uwsgi_hide_header X-Frame-Options;
+            uwsgi_hide_header X-XSS-Protection;
+            uwsgi_hide_header X-Content-Type-Options;
+            uwsgi_hide_header X-Robots-Tag;
+            uwsgi_hide_header X-Frame-Options;
+            #Uncomment line below if you get connection refused error. Remember to commet out line with "uwsgi_pass 127.0.0.1:3001;" below
+            uwsgi_pass unix:/run/uwsgi/owncloud.sock;
+            #uwsgi_pass 127.0.0.1:3001;
+        }
+...
+
+```
+
+### "Reading from keychain failed with error: 'No keychain service available'"
+
+Can be fixed for Gnome by installing the following 2 packages, [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). Or the following for KDE, [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) and [qtkeychain](https://www.archlinux.org/packages/?name=qtkeychain).
+
+### FolderSync: "Method Not Allowed"
+
+FolderSync needs access to `/owncloud/remote.php/webdav`, so you could create another alias for owncloud in your `/etc/httpd/conf/extra/nextcloud.conf`
+
+```
+  <IfModule mod_alias.c>
+    Alias /nextcloud /usr/share/webapps/nextcloud/
+    Alias /owncloud /usr/share/webapps/nextcloud/
+  </IfModule>
+
+```
 
 ## See also
 

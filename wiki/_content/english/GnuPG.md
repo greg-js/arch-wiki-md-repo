@@ -82,6 +82,7 @@ According to the [official website](https://www.gnupg.org/):
     *   [9.10 server 'gpg-agent' is older than us (x < y)](#server_'gpg-agent'_is_older_than_us_(x_<_y))
     *   [9.11 IPC connect call failed](#IPC_connect_call_failed)
     *   [9.12 Mitigating Poisoned PGP Certificates](#Mitigating_Poisoned_PGP_Certificates)
+    *   [9.13 Invalid IPC response and Inappropriate ioctl for device](#Invalid_IPC_response_and_Inappropriate_ioctl_for_device)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -943,7 +944,7 @@ and then change it back after using gpg the first time. The equivalent is true w
 
 ### Agent complains end of file
 
-The default pinentry program is `/usr/bin/pinentry-gnome3`, which needs a DBus session bus to run properly. See [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for details.
+If the pinentry program is `/usr/bin/pinentry-gnome3`, it needs a DBus session bus to run properly. See [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for details.
 
 Alternatively, you can use a variety of different options described in [#pinentry](#pinentry).
 
@@ -961,7 +962,7 @@ See [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#D
 
 Mutt might not use *gpg-agent* correctly, you need to set an [environment variable](/index.php/Environment_variable "Environment variable") `GPG_AGENT_INFO` (the content does not matter) when running mutt. Be also sure to enable password caching correctly, see [#Cache passwords](#Cache_passwords).
 
-See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p1490821)
+See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p1490821).
 
 ### "Lost" keys, upgrading to gnupg version 2.1
 
@@ -1038,6 +1039,23 @@ gpg: removing stale lockfile (created by 7055)
 ```
 
 Possible mitigation involves removing the poisoned certificate as per this [blog post](https://tech.michaelaltfield.net/2019/07/14/mitigating-poisoned-pgp-certificates/).
+
+### Invalid IPC response and Inappropriate ioctl for device
+
+The default pinentry program is `/usr/bin/pinentry-gtk-2`. If [gtk2](https://www.archlinux.org/packages/?name=gtk2) is unavailable, pinentry falls back to `/usr/bin/pinentry-curses` and causes signing to fail:
+
+```
+gpg: signing failed: Inappropriate ioctl for device
+gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device
+
+```
+
+You need to set the `GPG_TTY` environment variable for the pinentry programs `/usr/bin/pinentry-tty` and `/usr/bin/pinentry-curses`.
+
+```
+$ export GPG_TTY=$(tty)
+
+```
 
 ## See also
 

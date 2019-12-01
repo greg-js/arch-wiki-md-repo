@@ -1,7 +1,3 @@
-Related articles
-
-*   [Nxt](/index.php/Nxt "Nxt")
-
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin "wikipedia:Bitcoin") is a decentralized P2P electronic cash system without a central server or trusted parties. Users hold the cryptographic keys to their own money and make transactions directly with each other, with the help of the network to check for double-spending. Bitcoins, usually denoted by BTC (e.g. 0.1 BTC), can also be exchanged for traditional currencies like US dollars.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

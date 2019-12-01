@@ -930,7 +930,7 @@ Para lidar com esse problema, aplique o conjunto de correções em [FS#49752#com
 
 Este problema é geralmente causado pelo Qt on Wayland, veja [FS#58761](https://bugs.archlinux.org/task/58761).
 
-A melhor coisa, para não afetar o resto dos aplicativos Qt (que geralmente funcionam bem em Wayland), é desabilitar a [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `QT_QPA_PLATFORM` na [entrada de desktop](/index.php/Desktop_entry "Desktop entry") do VirtualBox. Siga as instruções em [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") e altere as linhas que começam com
+A melhor coisa, para não afetar o resto dos aplicativos Qt (que geralmente funcionam bem em Wayland), é desabilitar a [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `QT_QPA_PLATFORM` na [entrada de desktop](/index.php/Entrada_de_desktop "Entrada de desktop") do VirtualBox. Siga as instruções em [Entradas de desktop#Modificar variáveis de ambiente](/index.php/Entradas_de_desktop#Modificar_variáveis_de_ambiente "Entradas de desktop") e altere as linhas que começam com
 
 ```
 Exec=VirtualBox ...

@@ -128,7 +128,9 @@ Now, the folders and files for your custom kernel have been created, e.g. `/boot
 
 ## Updating
 
-Assuming one has an arch kernel source that he wants to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). Follows a concrete example. In what follows, the top kernel source directory is assumed at ~/build/linux/. In general, arch sets an arch kernel source with two local git repositories. The one at archlinux-linux/ is a local bare [git](/index.php/Git "Git") repository pointing to [git://git.archlinux.org/linux.git](git://git.archlinux.org/linux.git). The other one is at src/archlinux-linux/, pulling from the first repository. Possible local patches, and building, is expected at src/archlinux-linux/.
+Assuming one has an arch kernel source that he wants to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). Follows a concrete example. In what follows, the top kernel source directory is assumed at ~/build/linux/.
+
+In general, arch sets an arch kernel source with two local git repositories. The one at archlinux-linux/ is a local bare [git](/index.php/Git "Git") repository pointing to [git://git.archlinux.org/linux.git](git://git.archlinux.org/linux.git). The other one is at src/archlinux-linux/, pulling from the first repository. Possible local patches, and building, is expected at src/archlinux-linux/.
 
 For this example, the HEAD of the locally installed bare git repository source at archlinux-linux/ was initially pointing to `4010b622f1d2 Merge branch 'dax-fix-5.3-rc3' of [git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm](git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm)`, which is somewhere between v5.2.5-arch1 and v5.2.6-arch1.
 
@@ -139,6 +141,8 @@ $ git fetch --verbose
 ```
 
 One can see it fetched v5.2.7-arch1, which was the newest archlinux tag, because it prints what new tags were obtained. If no new tags were obtained then there is no newer archlinux source available.
+
+Now the source can be updated where the actual build will take place.
 
 ```
 $ cd ~/build/linux/src/archlinux-linux/
@@ -153,7 +157,7 @@ $ git checkout 5.2.7-arch1
 You can verify you are on track with something like
 
 ```
-$ git log --oneline 5.2.7-arch1 | head --lines 7
+$ git log --oneline 5.2.7-arch1 --max-count=7
 13193bfc03d4 Arch Linux kernel v5.2.7-arch1
 9475c6772d05 netfilter: nf_tabf676926c7f60les: fix module autoload for redir
 498d650048f6 iwlwifi: Add support for SAR South Korea limitation
@@ -161,7 +165,6 @@ bb7293abdbc7 iwlwifi: mvm: disable TX-AMSDU on older NICs
 f676926c7f60 ZEN: Add CONFIG for unprivileged_userns_clone
 5e4e503f4f28 add sysctl to disallow unprivileged CLONE_NEWUSER by default
 5697a9d3d55f Linux 5.2.7
-
 ```
 
 This shows few specific archlinux patches between Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. The important lines here are Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. Obviously, there might be other patches at other versions, and the commit identifiers, such as f676926c7f60, as well as the kernel version, will be different for other versions.

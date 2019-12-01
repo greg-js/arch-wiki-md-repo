@@ -314,7 +314,7 @@ Before following these steps, note that :
 
 #### Option 1 : using DPKG
 
-[dpkg](https://aur.archlinux.org/packages/dpkg/) is the standard package-manager for [Debian](/index.php/Debian "Debian")-based distributions. **It should not be used to replace `[pacman](/index.php/Pacman "Pacman")`** unless you precisely know what you’re doing. Simply run as root
+[dpkg](https://www.archlinux.org/packages/?name=dpkg) is the standard package-manager for [Debian](/index.php/Debian "Debian")-based distributions. **It should not be used to replace `[pacman](/index.php/Pacman "Pacman")`** unless you precisely know what you’re doing. Simply run as root
 
 ```
 # dpkg -i lexmark.deb

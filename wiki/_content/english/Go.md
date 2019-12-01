@@ -1,3 +1,7 @@
+Related articles
+
+*   [Go package guidelines](/index.php/Go_package_guidelines "Go package guidelines")
+
 [Go](http://golang.org/) is a statically-typed language with syntax loosely derived from that of [C](/index.php/C "C"), adding garbage collected memory management, type safety, some dynamic-typing capabilities, additional built-in types such as variable-length arrays and key-value maps, and a large standard library.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

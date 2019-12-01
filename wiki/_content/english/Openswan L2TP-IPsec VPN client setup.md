@@ -314,10 +314,10 @@ function getIP(){
 }
 
 function getGateWay(){
-	route -n | grep -m 1 "^0\.0\.0\.0" | awk '{print $2}'
+	ip route show default | awk '/default/ {print $3}'
 }
 function getVPNGateWay(){
-	route -n | grep -m 1 "$VPN_ADDR" | awk '{print $2}'
+	ip route | grep -m 1 "$VPN_ADDR" | awk '{print $3}'
 }
 
 GW_ADDR=$(getGateWay)  
@@ -343,9 +343,9 @@ function start(){
 	echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control     
 	sleep 2    #delay again to make that the PPP connection is up.
 
-	route add $VPN_ADDR gw $GW_ADDR $IFACE
-	route add default gw $(getIP ppp0)
-	route delete default gw $GW_ADDR
+        ip route add $VPN_ADDR via $GW_ADDR dev $IFACE
+        ip route add default via $(getIP ppp0)
+        ip route del default via $GW_ADDR
 }
 
 function stop(){
@@ -355,8 +355,8 @@ function stop(){
 	systemctl stop openswan
 
 	VPN_GW=$(getVPNGateWay)
-	route delete $VPN_ADDR gw $VPN_GW $IFACE
-	route add default gw $VPN_GW
+        ip route del $VPN_ADDR via $VPN_GW dev $IFACE
+        ip route add default via $VPN_GW
 }
 
 $1

@@ -14,8 +14,9 @@
 *   [3 Running standalone](#Running_standalone)
     *   [3.1 kodi-standalone service](#kodi-standalone_service)
     *   [3.2 Xsession with LightDM](#Xsession_with_LightDM)
-    *   [3.3 Socket activation](#Socket_activation)
-    *   [3.4 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_/_irexec)
+    *   [3.3 Xsession with NoDM](#Xsession_with_NoDM)
+    *   [3.4 Socket activation](#Socket_activation)
+    *   [3.5 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_/_irexec)
 *   [4 Using a remote control](#Using_a_remote_control)
     *   [4.1 Using the Android or iOS app](#Using_the_Android_or_iOS_app)
     *   [4.2 Using a physical remote control](#Using_a_physical_remote_control)
@@ -123,6 +124,22 @@ autologin-user=kodi
 autologin-user-timeout=0
 user-session=kodi
 ```
+
+### Xsession with NoDM
+
+[Nodm](/index.php/Nodm "Nodm") is an automatic display manager which automatically starts an X session at system boot.
+
+By creating a [user](/index.php/User "User") for kodi (e.g. `useradd -mU kodi`) and [installing](/index.php/Install "Install") [nodm](https://www.archlinux.org/packages/?name=nodm) we simply have to specify the kodi user inside:
+
+ `/etc/nodm.conf` 
+```
+NODM_USER=kodi
+NODM_XSESSION=/home/kodi/.xinitrc
+```
+
+Make sure to execute `kodi` inside the [xinitrc](/index.php/Xinitrc "Xinitrc") file.
+
+**Note:** The `.xinitrc` file must be executable, so the `kodi` user's home must not be mounted with the `noexec` option.
 
 ### Socket activation
 
@@ -566,7 +583,7 @@ SDL_VIDEO_FULLSCREEN_HEAD=0
 
 Users observing tearing when watching a movie try this: [https://bbs.archlinux.org/viewtopic.php?id=176651](https://bbs.archlinux.org/viewtopic.php?id=176651)
 
-Try a different X11 compositor like [picom](https://www.archlinux.org/packages/?name=picom) as an alternative with [Xfce](/index.php/Xfce "Xfce") which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found [here](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
+Try a different X11 compositor like [picom](/index.php/Picom "Picom") (a fork of compton) as an alternative with [Xfce](/index.php/Xfce "Xfce") which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found in [[1]](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
 
 ### Soft subtitles not displaying
 
@@ -582,7 +599,7 @@ To achieve this, go to *System Settings > Video*. Set the `settings level` to `A
 
 ### Kodi hangs on exit, fully occupying one CPU core, UI unresponsive
 
-This problem can arise with third-party plugins installed, there is some issue with their termination[[1]](https://www.linuxquestions.org/questions/linux-software-2/kodi-freezes-on-exit-kodi-bin-won't-die-4175588180/),[[2]](https://www.reddit.com/r/archlinux/comments/5029oo/kodi_freezes_on_exit_kodibin_wont_die/).
+This problem can arise with third-party plugins installed, there is some issue with their termination[[2]](https://www.linuxquestions.org/questions/linux-software-2/kodi-freezes-on-exit-kodi-bin-won't-die-4175588180/),[[3]](https://www.reddit.com/r/archlinux/comments/5029oo/kodi_freezes_on_exit_kodibin_wont_die/).
 
 Workaround: find proper UI description file (`DialogButtonMenu.xml`) and tweak exit button type from internal Kodi's `Quit()` function call to sending signal from outside system to Kodi. Here is one-liner that makes modifications to any skin from the default Kodi package:
 

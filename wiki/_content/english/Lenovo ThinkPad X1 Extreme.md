@@ -36,6 +36,8 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [2.1 Dolby Atmos Effect on Linux](#Dolby_Atmos_Effect_on_Linux)
     *   [2.2 Battery charge thresholds](#Battery_charge_thresholds)
     *   [2.3 CPU throttling workaround](#CPU_throttling_workaround)
+        *   [2.3.1 via sysfs](#via_sysfs)
+        *   [2.3.2 via third party tools](#via_third_party_tools)
     *   [2.4 CPU undervolting](#CPU_undervolting)
 *   [3 Specifications](#Specifications)
 
@@ -145,9 +147,15 @@ Battery charging thresholds can be configured via sysfs nodes `/sys/class/power_
 
 **Warning:** As of BIOS v1.25, overriding thermal limits will result in your laptop running out of spec under certain conditions. A proper firmware level solution [is being worked on](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) by Lenovo, and should be available eventually.
 
-A stress test using [s-tui](https://www.archlinux.org/packages/?name=s-tui) indicates that the CPU is limited to 38W/80C, resulting in maximum sustained frequency of around 2850 MHz on i7-8750H under heavy loads.
+A stress test using [s-tui](https://www.archlinux.org/packages/?name=s-tui) indicates that the CPU is limited to 38W/80C, resulting in maximum sustained frequency of around 2850 MHz on i7-8750H under heavy loads. The limits set by Windows in "performance" mode are considerably higher, at 44W/95C. It's possible to configure the power limits in one of the following ways:
 
-This can be worked around by using [throttled](https://www.archlinux.org/packages/?name=throttled) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the CPU to run at 3100 MHz with the temperature of 95C.
+#### via sysfs
+
+Starting with version 5.4, the Linux kernel exposes an interface to configure the thermal limits of the CPU. The value is accessible at `/sys/devices/pci0000:00/0000:00:04.0/tcc_offset_degree_celsius`, and represents the lowest allowed offset from "critical" temperature (100C). The default value as set at bootup is 20; it can be set to 5 to match Windows. Note that this does not adjust the package power limits.
+
+#### via third party tools
+
+[throttled](https://www.archlinux.org/packages/?name=throttled) and `intel-undervolt` (see below) can be used to override both thermal and power limits. However, the approach used by those tools is less reliable.
 
 ### CPU undervolting
 

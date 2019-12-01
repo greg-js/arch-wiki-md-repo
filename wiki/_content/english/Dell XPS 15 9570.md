@@ -32,8 +32,9 @@
 *   [3 Graphics](#Graphics)
     *   [3.1 kernel modules](#kernel_modules)
     *   [3.2 NVIDIA Optimus](#NVIDIA_Optimus)
-        *   [3.2.1 Manually loading/unloading NVIDIA module](#Manually_loading/unloading_NVIDIA_module)
-        *   [3.2.2 Letting bumblebee automatically unload the kernel module](#Letting_bumblebee_automatically_unload_the_kernel_module)
+        *   [3.2.1 Use Optimus Manager to switch](#Use_Optimus_Manager_to_switch)
+        *   [3.2.2 Manually loading/unloading NVIDIA module](#Manually_loading/unloading_NVIDIA_module)
+        *   [3.2.3 Letting bumblebee automatically unload the kernel module](#Letting_bumblebee_automatically_unload_the_kernel_module)
     *   [3.3 Troubleshooting](#Troubleshooting)
         *   [3.3.1 xbacklight](#xbacklight)
         *   [3.3.2 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
@@ -124,9 +125,33 @@ blacklist nv
 
 The optimus configuration is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop. As the discret NVIDIA GPU card eats lots of power, we want to use the intergrated Intel card most of the time and activate/desactivate the NVIDIA GPU card only when required by a defined application. Due to a bug [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1794626#p1794626), the XPS 15 9570's secondary NVIDIA GPU cannot be powered down by [bbswitch](/index.php/Bbswitch "Bbswitch"). However, standard Linux power management is able to properly turn off the card when the driver is unloaded.
 
+#### Use Optimus Manager to switch
+
+[optimus-manager](https://aur.archlinux.org/packages/optimus-manager/) allows for easier switching between running the X server on intel or nvidia graphics. While this method does require logging out and restarting the X server, it allows for usage of Vulkan and reduces overhead that Bumblebee creates. This works similarly to prime-select in Ubuntu, but built specifically for Arch-based distros.
+
+See the Github page[[4]](https://github.com/Askannz/optimus-manager) for detailed configuration of optimus-manager, such as specific configuration for different desktop environments.
+
+**Warning:** If you were previously using one of the below methods to manage the GPU be sure to remove them first, or they will interfere with optimus-manager power management.
+
+Ensure [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) is removed or disabled, then install [optimus-manager](https://aur.archlinux.org/packages/optimus-manager/).
+
+To enable power management of the GPU by optimus-manager on the Dell XPS 9570, use the following configuration:
+
+ `/etc/optimus-manager/optimus-manager.conf` 
+```
+[optimus]
+switching=none
+pci_power_control=yes
+pci_remove=yes
+pci_reset=no
+
+```
+
+It should now be possible to change between the intel and nvidia cards by typing `optimus-manager --switch nvidia` or `optimus-manager --switch intel`. Sometimes switching from `nvidia` to `intel` can cause the X server to not restart properly - this can be resolved by pressing `CTRL+ALT+F2` to switch to a different TTY, then pressing `CTRL+ALT+F1` to switch back.
+
 #### Manually loading/unloading NVIDIA module
 
-One solution [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641) to the problem described above is to manually unload the nvidia module when not in use, which can be done as follows:
+One solution [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641) to the problem described above is to manually unload the nvidia module when not in use, which can be done as follows:
 
 [Install](/index.php/Install "Install")
 
@@ -183,7 +208,7 @@ blacklist ipmi_msghandler
 blacklist ipmi_devintf
 ```
 
-Create 2 GPU management scripts for enabling and disabling discret NVIDIA graphical card [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641):
+Create 2 GPU management scripts for enabling and disabling discret NVIDIA graphical card [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641):
 
  `enablegpu.sh` 
 ```
@@ -276,7 +301,7 @@ Finally, check that everything is well configured:
 
 #### Letting bumblebee automatically unload the kernel module
 
-Another possible way of shutting off the secondary GPU is to use a patched version of [bumblebee](/index.php/Bumblebee "Bumblebee") that automatically unloads the nvidia kernel module when the card is not in use [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1803779#p1803779). This patch has already been merged into the `development` branch of bumblebee [[7]](https://github.com/Bumblebee-Project/Bumblebee/pull/983) which can be obtained via [bumblebee-git](https://aur.archlinux.org/packages/bumblebee-git/). It is also provided by [bumblebee-forceunload](https://aur.archlinux.org/packages/bumblebee-forceunload/), which is a modified version of [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) with this patch applied.
+Another possible way of shutting off the secondary GPU is to use a patched version of [bumblebee](/index.php/Bumblebee "Bumblebee") that automatically unloads the nvidia kernel module when the card is not in use [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1803779#p1803779). This patch has already been merged into the `development` branch of bumblebee [[8]](https://github.com/Bumblebee-Project/Bumblebee/pull/983) which can be obtained via [bumblebee-git](https://aur.archlinux.org/packages/bumblebee-git/). It is also provided by [bumblebee-forceunload](https://aur.archlinux.org/packages/bumblebee-forceunload/), which is a modified version of [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) with this patch applied.
 
 [Install](/index.php/Install "Install")
 
@@ -367,7 +392,7 @@ EndSection
 
 #### NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts
 
-Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[8]](http://us.download.nvidia.com/XFree86/Linux-x86/325.15/README/knownissues.html#msi_interrupts). You could disable MSI by adding the following in **/etc/modprobe.d/nvidia.conf**:
+Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[9]](http://us.download.nvidia.com/XFree86/Linux-x86/325.15/README/knownissues.html#msi_interrupts). You could disable MSI by adding the following in **/etc/modprobe.d/nvidia.conf**:
 
 ```
  options nvidia NVreg_EnableMSI=0
@@ -376,7 +401,7 @@ Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[8]
 
 #### Built-in screen flickers or does not come on with Linux kernel 5.0.0 - 5.0.7
 
-Some users reported that running Linux kernel 5.0.0 to 5.0.7 can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[9]](https://bugs.archlinux.org/task/61964))
+Some users reported that running Linux kernel 5.0.0 to 5.0.7 can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[10]](https://bugs.archlinux.org/task/61964))
 
 Currently, it seems that there are three possible workarounds :
 

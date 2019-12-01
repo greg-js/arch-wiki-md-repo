@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system"). Data da última tradução: 2019-11-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&diff=0&oldid=589600) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system"). Data da última tradução: 2019-11-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&diff=0&oldid=590083) na versão em inglês.
 
 Os seguintes exemplos são para criptografar um sistema de arquivos secundário, não raiz, com dm-crypt.
 
@@ -132,7 +132,7 @@ Primeiro, crie um container criptografado, usando um [gerador de números aleat�
 
 O arquivo `grande_segredo.img` vai ser criado com o tamanho de 100 mebibytes.
 
-**Nota:** Para evitar [redimensionar](/index.php/Dm-crypt/Device_encryption#Loopback_filesystem "Dm-crypt/Device encryption") o container depois, faça ele com um tamanho maior do que o tamanho total do arquivos a serem criptografados, para ao menos hospedar a metadata associada usada pelo sistema de arquivos interno. Se você vai usar o modo LUKS, o cabeçalho de metadata dele sozinho necessita de 16 mebibytes.
+**Nota:** Evite [redimensionar](/index.php/Dm-crypt/Device_encryption#Loopback_filesystem "Dm-crypt/Device encryption") o container, crie ele maior do que a soma do tamanho de todos os arquivos que serão criptografados, de modo que consiga hospedar a metadata associada utilizada pelo sistema de arquivos interno. Se pretende usar o modo LUKS, o cabeçalho de metadata dele sozinho vai ocupar mais de 16 mebibytes.
 
 Depois, crie um dispositivo de nó, agora podemos montar/usar nosso container:
 

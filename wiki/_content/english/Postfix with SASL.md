@@ -3,9 +3,7 @@ Related articles
 *   [Postfix](/index.php/Postfix "Postfix")
 *   [Dovecot](/index.php/Dovecot "Dovecot")
 
-From [Postfix's site](http://www.postfix.org/SASL_README.html):
-
-	People who go to the trouble of installing Postfix may have the expectation that Postfix is more secure than some other mailers. The Cyrus SASL library contains a lot of code. With this, Postfix becomes as secure as other mail systems that use the Cyrus SASL library. Dovecot provides an alternative that may be worth considering.
+SMTP protocol specifications include a possibility for user authentication, but do not provide the exact details of protocol message exchange, deferring instead to the SASL (Simple Authentication and Security Layer) standard (see [RFC4954](https://tools.ietf.org/html/rfc4954) and [RFC4422](https://tools.ietf.org/html/rfc4422)). SASL is a generic authentication framework for authentication mechanisms, of which there are many, and each of them has its own peculiar procedure that prescribes the necessary cryptographic steps to perform with the authentication data and messages to exchange over the connection. Therefore, in order to avoid imposing artificial limits on what authentication mechanisms can be used with it, Postfix, by itself, does not authenticate SMTP users with usernames and passwords, or via any other means. It offloads this task to a SASL implementation, which has to be installed separately. SASL authentication daemon is responsible both for the policy (i.e. where valid usernames and secrets such as passwords are kept) and mechanism (how exactly clients supply credentials). This is in contrast with e.g. [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD"), which supports only PLAIN and LOGIN SASL mechanisms, but does not rely on any external library or daemon.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -28,6 +26,10 @@ Since [postfix](https://www.archlinux.org/packages/?name=postfix) package in [ex
 
 *   Use [cyrus-sasl](https://www.archlinux.org/packages/?name=cyrus-sasl) package.
 *   Or enable your already configured [Dovecot](/index.php/Dovecot "Dovecot") to handle Postfix authentication (as well as its own).
+
+From [Postfix's site](http://www.postfix.org/SASL_README.html):
+
+	People who go to the trouble of installing Postfix may have the expectation that Postfix is more secure than some other mailers. The Cyrus SASL library contains a lot of code. With this, Postfix becomes as secure as other mail systems that use the Cyrus SASL library. Dovecot provides an alternative that may be worth considering.
 
 ## Configuration with cyrus-sasl package
 

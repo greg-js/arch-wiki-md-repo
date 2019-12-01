@@ -592,7 +592,7 @@ if [[ "$CONNECTION_UUID" == "$WANTED_CON_UUID" ]]; then
             ;;
         "pre-down");&
         "vpn-pre-down")
-            umount -l -a -t nfs4,nfs >/dev/null
+            umount -l -a -t -f nfs4,nfs >/dev/null
             ;;
     esac
 fi

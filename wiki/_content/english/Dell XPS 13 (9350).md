@@ -89,7 +89,7 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Updates
 
-[BIOS update 1.10.1](https://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverid=rdnw7) was released on 2019-03-18\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive (fat32), reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
+[BIOS update 1.11.1](https://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverid=rjt1k) was released on 2019-10-04\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive (fat32), reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
 
 ### Firmware Updates
 
@@ -457,6 +457,7 @@ As shipped the Trusted Platform Module (TPM) can be configured easily following 
 ### TPM 2.0
 
 Originally the Dell XPS 13 (9350) shipped with TPM 1.2 - the TPM chip was configured to support the TPM Standard version 1.2\. However, Dell released a [firmware update](http://www.dell.com/support/home/uk/en/ukdhs1/drivers/driversdetails?driverId=RF87D) (internal version 1.3.2.8, A02) for the TPM chip that converts it to support the feature set of TPM Standard version 2.0\. Unfortunately, as of this moment the update cannot be applied through Linux or the BIOS direct flashing capabilities. The only way to install it seems to be to apply it through a running Windows OS. The easiest method is to run a temporary Windows installation on a USB drive, boot into it and run the update from there.
+
 **Note:** It should be noted that this update is reversible once applied. To revert back to TPM 1.2 by using a [firmware update](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=F3J3P) It also requires that the TPM memory and configuration is completely cleared.
 
 **Note:** As for BIOS updates, please make sure the laptop is plugged in to a power source and that power source is stable.

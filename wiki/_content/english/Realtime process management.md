@@ -9,7 +9,11 @@ While many recent processors are powerful enough to play a dozen video or audio 
 
 The simple solution is to give the audio and video processes a **higher priority**. However, while normal users can set a higher *nice* value to a process, which means that its priority is lower, only root can set lower values and start processes at a lower *nice* value than 0\. This protects the normal user from underpowering processes which are essential to the system. This can be especially important on multi-user machines.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Configuring PAM](#Configuring_PAM)
@@ -37,7 +41,7 @@ The [realtime](https://www.archlinux.org/groups/x86_64/realtime/) package group 
 
 The `/etc/security/limits.conf` file provides configuration for the `pam_limits` PAM module, which sets limits on system resources (see [limits.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/limits.conf.5)).
 
-**Tip:** It is advised to externalize the configuration of `pam_limits` to separate files below `/etc/security/limits.conf.d` as those take precedence over the main configuration file.
+**Tip:** It is advised to externalize the configuration of `pam_limits` to separate files below `/etc/security/limits.d` as those take precedence over the main configuration file.
 
 There are two types of resource limits that `pam_limits` provides: **hard limits** and **soft limits**. Hard limits are set by `root` and enforced by the kernel, while soft limits may be configured by the user within the range allowed by the hard limits.
 

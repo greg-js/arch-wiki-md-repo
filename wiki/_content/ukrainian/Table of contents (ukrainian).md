@@ -7,7 +7,7 @@
  <small>1.2.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
  <small>1.2.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(6)</small> |
  <small>1.2.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(28) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
- <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(25)</small> |
+ <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(24)</small> |
  <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
  <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
  <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(36)</small> |
@@ -44,7 +44,7 @@
  <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(74)</small> |
  <small>3.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(1)</small> |
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
- <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(61)</small> |
+ <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(60)</small> |
  <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
  <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(104)</small> |
  <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
@@ -59,10 +59,10 @@
  <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(25)</small> |
  <small>3.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
  <small>3.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
- <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
+ <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small> |
  <small>3.16.1.</small> [Optical disc](/index.php/Category:Optical_disc "Category:Optical disc") <small>(6)</small> |
  <small>3.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
- <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(53)</small> |
+ <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(52)</small> |
  <small>4.1.</small> [Directory services](/index.php/Category:Directory_services "Category:Directory services") <small>(3)</small> |
  <small>4.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
@@ -136,7 +136,7 @@
  <small>5.1.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(12)</small> |
  <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
  <small>5.1.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(7)</small> |
- <small>5.1.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(16)</small> |
+ <small>5.1.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(15)</small> |
  <small>5.1.5.1.</small> [Relational DBMSs](/index.php/Category:Relational_DBMSs "Category:Relational DBMSs") <small>(4)</small> |
  <small>5.1.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(3)</small> |
  <small>5.1.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(14)</small> |
@@ -146,7 +146,7 @@
  <small>5.1.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(10)</small> |
  <small>5.1.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
  <small>5.1.10.2.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
- <small>5.1.10.3.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4) (also in [Cryptography](/index.php/Category:Cryptography "Category:Cryptography"))</small> |
+ <small>5.1.10.3.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(3) (also in [Cryptography](/index.php/Category:Cryptography "Category:Cryptography"))</small> |
  <small>5.1.10.4.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
  <small>5.1.10.5.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(11) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
  <small>5.1.10.5.1.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
@@ -229,13 +229,13 @@
  <small>5.8.3.</small> [Electronic Frontier Foundation](/index.php/Category:Electronic_Frontier_Foundation "Category:Electronic Frontier Foundation") <small>(3)</small> |
  <small>5.8.4.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(14) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
  <small>5.8.5.</small> [GNU](/index.php/Category:GNU "Category:GNU") <small>(14)</small> |
- <small>5.8.6.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
+ <small>5.8.6.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(11) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
  <small>5.8.7.</small> [Mozilla](/index.php/Category:Mozilla "Category:Mozilla") <small>(5)</small> |
  <small>5.8.8.</small> [OpenBSD](/index.php/Category:OpenBSD "Category:OpenBSD") <small>(4)</small> |
  <small>5.8.9.</small> [Suckless](/index.php/Category:Suckless "Category:Suckless") <small>(5)</small> |
 | <small>1.</small> [System administration](/index.php/Category:System_administration_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:System administration (Українська)") <small>(0)</small> | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(23)</small> |
  <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(12)</small> |
- <small>6.2.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(29)</small> |
+ <small>6.2.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(27)</small> |
  <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
  <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
  <small>6.2.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(8)</small> |
@@ -280,12 +280,12 @@
 | <small>1.1.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Graphical user interfaces (Українська)") <small>(0)</small> | <small>6.11.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") <small>(6)</small> |
  <small>6.11.1.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(17)</small> |
  <small>6.11.1.1.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(14) (also in [Software projects](/index.php/Category:Software_projects "Category:Software projects"))</small> |
- <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12) (also in [Software projects](/index.php/Category:Software_projects "Category:Software projects"))</small> |
+ <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(11) (also in [Software projects](/index.php/Category:Software_projects "Category:Software projects"))</small> |
  <small>6.11.1.3.</small> [Xfce](/index.php/Category:Xfce "Category:Xfce") <small>(3)</small> |
  <small>6.11.2.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(10)</small> |
  <small>6.11.3.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
  <small>6.11.4.</small> [Window managers](/index.php/Category:Window_managers "Category:Window managers") <small>(0)</small> |
- <small>6.11.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(13)</small> |
+ <small>6.11.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(12)</small> |
  <small>6.11.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small> |
  <small>6.11.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(16)</small> |
 | <small>1.1.1.</small> [X server](/index.php/Category:X_server_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:X server (Українська)") <small>(1)</small> | <small>6.11.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(54)</small> |
@@ -308,12 +308,12 @@
  <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(33)</small> |
  <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
  <small>6.21.</small> [Pseudo filesystems](/index.php/Category:Pseudo_filesystems "Category:Pseudo filesystems") <small>(1)</small> |
- <small>6.22.</small> [Security](/index.php/Category:Security "Category:Security") <small>(40)</small> |
+ <small>6.22.</small> [Security](/index.php/Category:Security "Category:Security") <small>(39)</small> |
  <small>6.22.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |
  <small>6.22.2.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>6.22.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(14)</small> |
  <small>6.22.4.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(6)</small> |
- <small>6.22.4.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
+ <small>6.22.4.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(3) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>6.22.4.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(8)</small> |
  <small>6.22.4.2.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(18) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
  <small>6.22.4.3.</small> [Transport Layer Security](/index.php/Category:Transport_Layer_Security "Category:Transport Layer Security") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |

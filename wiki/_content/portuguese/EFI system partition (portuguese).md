@@ -1,6 +1,6 @@
 au
 
-**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=588564) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=589005) na versão em inglês.
 
 Artigos relacionados
 
@@ -71,7 +71,7 @@ As duas seções a seguir mostram como criar uma partição do sistema EFI (ESP)
 
 **Nota:** Recomenda-se o uso de [GPT](/index.php/GPT "GPT"), pois alguns firmwares podem não suportar a inicialização via UEFI/MBR por não serem suportados pelo [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"). Veja também [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") para as vantagens da GPT em geral.
 
-Para fornecer espaço adequado para armazenar gerenciadores de boot e outros arquivos necessários para inicialização e para evitar problemas de interoperabilidade com outros sistemas operacionais[[1]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules) a partição deve ter pelo menos 260 MiB. Para implementações de UEFI precoces e/ou com bugs, o tamanho de pelo menos 512 MiB pode ser necessário.[[2]](https://www.rodsbooks.com/efi-bootloaders/principles.html)
+Para fornecer espaço adequado para armazenar gerenciadores de boot e outros arquivos necessários para inicialização e para evitar problemas de interoperabilidade com outros sistemas operacionais[[1]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules)[[2]](https://superuser.com/questions/1310927/what-is-the-absolute-minimum-size-a-uefi-partition-can-be/1310938) a partição deve ter pelo menos 260 MiB. Para implementações de UEFI precoces e/ou com bugs, o tamanho de pelo menos 512 MiB pode ser necessário.[[3]](https://www.rodsbooks.com/efi-bootloaders/principles.html)
 
 ### Discos particionados em GPT
 
@@ -98,7 +98,7 @@ Continue com a seção [#Formatar a partição](#Formatar_a_partição) abaixo.
 
 ## Formatar a partição
 
-A especificação UEFI determina o suporte para os sistemas de arquivos FAT12, FAT16 e FAT32[[3]](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485). Para evitar possíveis problemas com outros sistemas operacionais e também porque a especificação UEFI apenas exige suporte a FAT16 e FAT12 em mídia removível[[4]](https://uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1345080), recomenda-se usar o FAT32.
+A especificação UEFI determina o suporte para os sistemas de arquivos FAT12, FAT16 e FAT32[[4]](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485). Para evitar possíveis problemas com outros sistemas operacionais e também porque a especificação UEFI apenas exige suporte a FAT16 e FAT12 em mídia removível[[5]](https://uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1345080), recomenda-se usar o FAT32.
 
 Após criar a partição, [formate](/index.php/Format "Format")-a como [FAT32](/index.php/FAT32 "FAT32"). Para usar o utilitário `mkfs.fat`, [instale](/index.php/Instale "Instale") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
 
@@ -122,7 +122,7 @@ Os cenários mais simples para montar uma partição de sistema EFI são:
 
 **Dica:**
 
-*   `/efi` é um substituto[[5]](https://github.com/systemd/systemd/pull/3757#issuecomment-234290236) para o anterior e popular (e possivelmente ainda usado por outras distribuições) ponto de montagem ESP `/boot/efi`.
+*   `/efi` é um substituto[[6]](https://github.com/systemd/systemd/pull/3757#issuecomment-234290236) para o anterior e popular (e possivelmente ainda usado por outras distribuições) ponto de montagem ESP `/boot/efi`.
 *   O diretório `/efi` não está disponível por padrão, de forma que você precisará primeiro criá-lo com [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) antes de montar a ESP nele.
 
 ### Pontos de montagem alternativos
@@ -346,7 +346,7 @@ O primeiro arquivo é um hook que monitora os arquivos relevantes e é executado
 Type = File
 Operation = Install
 Operation = Upgrade
-Target = boot/vmlinuz*
+Target = usr/lib/modules/*/vmlinuz
 Target = usr/lib/initcpio/*
 Target = boot/*-ucode.img
 
@@ -391,7 +391,7 @@ exit 0
 
 ### ESP no RAID
 
-É possível tornar a ESP parte de uma matriz RAID1, mas isso traz o risco de corrupção de dados, e outras considerações precisam ser feitas ao criar a ESP. Veja [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) e [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) para detalhes.
+É possível tornar a ESP parte de uma matriz RAID1, mas isso traz o risco de corrupção de dados, e outras considerações precisam ser feitas ao criar a ESP. Veja [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) e [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) para detalhes.
 
 Veja [Inicialização com UEFI e RAID1](https://outflux.net/blog/archives/2018/04/19/uefi-booting-and-raid1/) (em inglês) para um guia mais aprofundado.
 

@@ -1,10 +1,11 @@
-**Status de tradução:** Esse artigo é uma tradução de [dd](/index.php/Dd "Dd"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dd&diff=0&oldid=583758) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [dd](/index.php/Dd "Dd"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dd&diff=0&oldid=589788) na versão em inglês.
 
 Artigos relacionados
 
 *   [Clonagem de disco](/index.php/Clonagem_de_disco "Clonagem de disco")
 *   [Mídia de instalação em flash USB#Usando dd](/index.php/M%C3%ADdia_de_instala%C3%A7%C3%A3o_em_flash_USB#Usando_dd "Mídia de instalação em flash USB")
 *   [Benchmarking#dd](/index.php/Benchmarking#dd "Benchmarking")
+*   [Securely wipe disk#dd](/index.php/Securely_wipe_disk#dd "Securely wipe disk")
 
 [dd](https://en.wikipedia.org/wiki/dd_(Unix) é um dos [utilitários principais](/index.php/Utilit%C3%A1rios_principais "Utilitários principais") cujo propósito primário é converter e copiar um arquivo.
 

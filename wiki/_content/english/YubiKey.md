@@ -67,7 +67,7 @@ This article describes how [Yubico](https://yubico.com)'s [YubiKey](https://en.w
             *   [6.3.2.3 SSHD configuration](#SSHD_configuration)
         *   [6.3.3 That is it!](#That_is_it!)
         *   [6.3.4 Explanation](#Explanation)
-    *   [6.4 Executing actions on insertion/removal of yubikey device](#Executing_actions_on_insertion/removal_of_yubikey_device)
+    *   [6.4 Executing actions on insertion/removal of YubiKey device](#Executing_actions_on_insertion/removal_of_YubiKey_device)
 *   [7 Maintenance / Upgrades](#Maintenance_/_Upgrades)
     *   [7.1 Installing the OATH Applet for a YubiKey NEO](#Installing_the_OATH_Applet_for_a_YubiKey_NEO)
         *   [7.1.1 Configure the NEO as a CCID Device](#Configure_the_NEO_as_a_CCID_Device)
@@ -105,7 +105,7 @@ There are several packages available:
 
 	[https://developers.yubico.com/yubikey-manager/](https://developers.yubico.com/yubikey-manager/) || [yubikey-manager](https://www.archlinux.org/packages/?name=yubikey-manager), [yubikey-manager-qt](https://www.archlinux.org/packages/?name=yubikey-manager-qt)
 
-Note: After you install the yubikey-manager ( which can be called by ykman in cli ), you need to enable pcscd.service to get it running
+**Note:** After you install the yubikey-manager (which can be called by ykman in CLI), you need to enable `pcscd.service` to get it running
 
 *   **Yubikey Personalization** — Library and tool to configure slot features over the OTP USB connection. Has optional GUI.
 
@@ -115,7 +115,7 @@ Note: After you install the yubikey-manager ( which can be called by ykman in cl
 
 The YubiKey is a small USB dongle with one button and an LED to communicate with you.
 
-One of its strengths is that it can emulate a USB keyboard to send a password (OTP or static password) as text, and thus requires only USB HID drivers found on practically all computers (desktop, mobile, tablet).
+One of its strengths is that it can emulate a USB keyboard to send a password (OTP or static password) as text, and thus requires only USB HID drivers found on practically all computers (desktop, mobile, tablet, etc.).
 
 This also makes it vulnerable to keyloggers if the `static password` functionality is used, which is why if possible one should avoid it and try to only use the one-time password (OTP), Challenge-Response and CCID Smartcard functionality.
 
@@ -329,21 +329,11 @@ There are two Challenge-Response modes:
 
 ### Setup the slot
 
-In order to setup slot `2` in challenge-response mode you may run:
+One way to setup slot `2` in challenge-response mode (`-ochal-resp`) is with `ykpersonalize`:
 
  `ykpersonalize -v -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible -ochal-btn-trig` 
 
-Above arguments mean:
-
-*   Verbose output (`-v`)
-*   Use slot 2 (`-2`)
-*   Set challenge-response mode (`-ochal-resp`)
-*   Generate HMAC-SHA1 challenge responses (`-ochal-hmac`)
-*   Calculate HMAC on less than 64 bytes input (`-ohmac-lt64`)
-*   Allow Yubikey serial number to be read using an API call (`-oserial-api-visible`)
-*   Require touching Yubikey before issue response (`-ochal-btn-trig`)
-
-You may also enable challenge-response mode using graphical interface through [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui)
+Check with [ykpersonalize(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ykpersonalize.1) to make sure that the options used above are right for you. You may also enable challenge-response mode using graphical interface through [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui).
 
 **Note:** Before you overwrite the initial configuration of slot 1, please be aware of the **Warning** under [#Initial configuration](#Initial_configuration).
 
@@ -428,14 +418,14 @@ The standard API used to communicate with cryptographic tokens is defined by [PK
 
 #### Public key conversion
 
-The `pubkey.pem` file contains the public key in PEM (Privacy Enhanced Mail) format. OpenSSH uses a different format defined in RFC 4253, section 6.6, so the PEM formatted key should be converted to the format OpenSSH understands. This can be done using *ssh-keygen*:
+The `pubkey.pem` file contains the public key in PEM (Privacy Enhanced Mail) format. OpenSSH uses a different format defined in RFC 4253, section 6.6, so the PEM formatted key should be converted to the format OpenSSH understands. This can be done using `ssh-keygen`:
 
 ```
 $ ssh-keygen -i -m PKCS8 -f pubkey.pem > pubkey.txt
 
 ```
 
-This command uses the import (`-i`) function of the *ssh-keygen* program, specifies PKCS8 as the input file format (`-m`), and reads the input from the (`-f`) file `pubkey.pem`. The converted key is written on standard output, which is the example is redirected to the file `pubkey.txt`.
+This command uses the import (`-i`) function of the `ssh-keygen`, specifies PKCS8 as the input file format (`-m`), and reads the input from the (`-f`) file `pubkey.pem`. The converted key is written on standard output, which is the example is redirected to the file `pubkey.txt`.
 
 The converted public key should now be copied to the remote server as described in [SSH keys#Copying the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys").
 
@@ -463,7 +453,7 @@ As long as the PIN is cached in by the agent, the cached value is used and the u
 
 #### Further reading
 
-The default PIN code of the PIV application on the YubiKey is `123456`; you may want to change it. The YubiKey also requires a 24-byte management key for administrative functions like key generation. If the management key has been changed from its default value, the new value needs to be specified using the -m option on the command line for certain commands. See [What is PIV?](https://developers.yubico.com/PIV/)
+The default PIN code of the PIV application on the YubiKey is `123456`; you may want to change it. The YubiKey also requires a 24-byte management key for administrative functions like key generation. If the management key has been changed from its default value, the new value needs to be specified using the `-m` option on the command line for certain commands. See [What is PIV?](https://developers.yubico.com/PIV/)
 
 ## Tips and tricks
 
@@ -498,13 +488,13 @@ YubiKey support in Keepass2Android (which is compatible with KeePassXC) is track
 
 **Note:** See also: [https://developers.yubico.com/yubico-pam/Yubikey_and_SSH_via_PAM.html](https://developers.yubico.com/yubico-pam/Yubikey_and_SSH_via_PAM.html)
 
-This details how to use a Yubikey to have [two-factor authentication](https://en.wikipedia.org/wiki/Two-factor_authentication "wikipedia:Two-factor authentication") with SSH, that is, to use both a password and a Yubikey-generated OTP.
+This details how to use a Yubikey to have [two-factor authentication](https://en.wikipedia.org/wiki/Two-factor_authentication "wikipedia:Two-factor authentication") with SSH, that is, to use both a password and a YubiKey OTP.
 
 #### Prerequisites
 
 Install [yubico-pam](https://www.archlinux.org/packages/?name=yubico-pam).
 
-**Note:** If you are configuring a distant server to use Yubikey, you should open at least one additional, rescue SSH session, so that you are not locked out of your server if the configuration does not work and you exit your main session inadvertently
+**Note:** If you are configuring a distant server to use YubiKey, you should open at least one additional, rescue SSH session, so that you are not locked out of your server if the configuration does not work and you exit your main session inadvertently
 
 **Note:** The following assumes you are using the default Yubico servers. See the [yubico-pam documentation](https://github.com/Yubico/yubico-pam) for options relevant to using your own server.
 
@@ -516,7 +506,7 @@ A mapping must be made between the YubiKey token ID and the user ID it is attach
 
 ###### Central authorization mapping
 
-Create a file `/etc/yubico/authorized_yubikeys`, the file must contain a user name and the Yubikey token ID separated by colons (same format as the passwd file) for each user you want to allow onto the system using a Yubikey.
+Create a file `/etc/yubico/authorized_yubikeys`, the file must contain a user name and the YubiKey token ID separated by colons (same format as the passwd file) for each user you want to allow onto the system using a YubiKey.
 
 The mappings should look like this, one per line:
 
@@ -537,7 +527,7 @@ Each user creates a `~/.yubico/authorized_yubikeys` file inside of their home di
 
 ```
 
-This is much the same concept as the SSH authorized_keys file.
+This is much the same concept as the SSH `authorized_keys` file.
 
 Note that this file must be readable by the `pam_yubico` module when the user is authenticated, otherwise login will fail. If this is not possible or desired, use the global mapping file instead.
 
@@ -574,7 +564,7 @@ auth            required      pam_yubico.so id=CLIENTID
 
 ```
 
-if you are using per-user authorization mapping, where `CLIENTID`} is your Client ID. This method utilizes your ID and the server's certificate to authenticate the connection.
+if you are using per-user authorization mapping, where `CLIENTID` is your Client ID. This method utilizes your ID and the server's certificate to authenticate the connection.
 
 **Note:** This will authenticate via Yubico's free YubiCloud servers. If you want to use a different server, add it via the `urllist` parameter.
 
@@ -618,24 +608,24 @@ UsePAM yes
 
 You should not need to restart anything if you did not change the SSHD config file.
 
-To log in, at the `Password:` prompt of SSH, you have to type your password **without pressing enter** and touch the Yubikey's button. The Yubikey should send a return at the end of the OTP so you do not need to touch the enter key at all.
+To log in, at the `Password:` prompt of SSH, you have to type your password **without pressing enter** and touch the YubiKey's button. The YubiKey should send a return at the end of the OTP so you do not need to touch the enter key at all.
 
-You can display information about the login data generated by `pam_yubico` by adding the `debug` option to the auth line in`/etc/pam.d/sshd`. However, if you are using a central authorization file, you should remove that option once finished testing, as it causes `pam_yubico` to display the entire content of the central file to every user who logs in using a Yubikey.
+You can display information about the login data generated by `pam_yubico` by adding the `debug` option to the auth line in`/etc/pam.d/sshd`. However, if you are using a central authorization file, you should remove that option once finished testing, as it causes `pam_yubico` to display the entire content of the central file to every user who logs in using a YubiKey.
 
 #### Explanation
 
 This works because the prompt is `pam_yubico.so`'s one, since this module is before `pam_unix.so`, which normally does basic password authentication. So, you are giving a string that is the concatenation of your password and the OTP to `pam_yubico.so`. Since the OTPs have a fixed length (let us call this size N), it just has to get the last N characters to retrieve the OTP, and it assumes that the other characters at the start are the password. It tries to validate the OTP, and in case of success, sends the password to the next PAM module. In Archlinux' default PAM stack, the authenticator `pam_unix.so` is instructed to try receiving a password from the previous module with `try_first_pass`, so it automatically uses the password sent by `pam_yubico.so`.
 
-### Executing actions on insertion/removal of yubikey device
+### Executing actions on insertion/removal of YubiKey device
 
-For example, you want to perform an action when you pull your yubikey out of the USB slot, create `/etc/udev/rules.d/80-yubikey-actions.rules` and add the following contents:
+For example, you want to perform an action when you pull your YubiKey out of the USB slot, create `/etc/udev/rules.d/80-yubikey-actions.rules` and add the following contents:
 
 ```
 ACTION=="remove", ENV{ID_MODEL}=="Yubikey_4_OTP+U2F+CCID", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0407", RUN+="/usr/local/bin/script args"
 
 ```
 
-Please note, that this example is for the yubikey 4, and you will have to look at the output of lsusb to get the vendor and model ID's, along with the description of the device. Of course, to execute a script on insertion, you would change the action to 'add' instead of remove.
+Please note, that this example is for the YubiKey 4, and you will have to look at the output of `lsusb` to get the vendor and model ID's, along with the description of the device. Of course, to execute a script on insertion, you would change the action to 'add' instead of remove.
 
 ## Maintenance / Upgrades
 
@@ -689,7 +679,7 @@ While `pcscd.service` is running, run `yubioath-gui` and insert your Yubikey whe
 
 ## Troubleshooting
 
-Restart, especially if you have completed updates since your Yubikey last worked. Do this even if some functions appear to be functioning.
+Restart, especially if you have completed updates since your YubiKey last worked. Do this even if some functions appear to be functioning.
 
 ### YubiKey not acting as HID device
 
@@ -707,14 +697,14 @@ If the manager fails to connect to the YubiKey, make sure you have started `pcsc
 
 ### YubiKey fails to bind within a guest VM
 
-Assuming the Yubikey is available to the guest, the issue results from a driver binding to the device on the host. To unbind the device, the bus and port information is needed from `dmesg` on the host:
+Assuming the YubiKey is available to the guest, the issue results from a driver binding to the device on the host. To unbind the device, the bus and port information is needed from `dmesg` on the host:
 
 ```
 $ dmesg | grep -B1 Yubico | tail -n 2 | head -n 1 | sed -E 's/^\[[^]]+\] usb ([^:]*):.*/\1/'
 
 ```
 
-The resulting USB id should be of the form `X-Y.Z` or `X-Y`. Then, on the host, use `find` to search `/sys/bus/usb/drivers` for which driver the Yubikey is binded to (e.g. `usbhid` or `usbfs`).
+The resulting USB id should be of the form `X-Y.Z` or `X-Y`. Then, on the host, use `find` to search `/sys/bus/usb/drivers` for which driver the YubiKey is binded to (e.g. `usbhid` or `usbfs`).
 
 ```
 $ find /sys/bus/usb/drivers -name "*X-Y.Z*"

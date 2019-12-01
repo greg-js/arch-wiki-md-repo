@@ -9,7 +9,7 @@ Related articles
 
 This page provides an introduction to [swap space and paging](https://en.wikipedia.org/wiki/Paging "wikipedia:Paging") on GNU/Linux. It covers creation and activation of swap partitions and swap files.
 
-From [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):
+From [All about Linux swap space](https://www.linux.com/news/all-about-linux-swap-space/):
 
 	Linux divides its physical RAM (random access memory) into chunks of memory called pages. Swapping is the process whereby a page of memory is copied to the preconfigured space on the hard disk, called swap space, to free up that page of memory. The combined sizes of the physical memory and the swap space is the amount of virtual memory available.
 

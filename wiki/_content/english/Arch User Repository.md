@@ -32,27 +32,29 @@ A good number of new packages that enter the official repositories start in the 
     *   [3.2 Acquire build files](#Acquire_build_files)
     *   [3.3 Build and install the package](#Build_and_install_the_package)
 *   [4 Feedback](#Feedback)
+    *   [4.1 Commenting on packages](#Commenting_on_packages)
+    *   [4.2 Voting for packages](#Voting_for_packages)
+    *   [4.3 Flagging packages out-of-date](#Flagging_packages_out-of-date)
 *   [5 Submitting packages](#Submitting_packages)
 *   [6 Web interface translation](#Web_interface_translation)
-*   [7 Comment syntax](#Comment_syntax)
-*   [8 FAQ](#FAQ)
-    *   [8.1 What is the AUR?](#What_is_the_AUR?)
-    *   [8.2 What kind of packages are permitted on the AUR?](#What_kind_of_packages_are_permitted_on_the_AUR?)
-    *   [8.3 How can I vote for packages in the AUR?](#How_can_I_vote_for_packages_in_the_AUR?)
-    *   [8.4 What is a Trusted User / TU?](#What_is_a_Trusted_User_/_TU?)
-    *   [8.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository?)
-    *   [8.6 Foo in the AUR is outdated; what should I do?](#Foo_in_the_AUR_is_outdated;_what_should_I_do?)
-    *   [8.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg;_what_should_I_do?)
-    *   [8.8 ERROR: One or more PGP signatures could not be verified!; what should I do?](#ERROR:_One_or_more_PGP_signatures_could_not_be_verified!;_what_should_I_do?)
-    *   [8.9 How do I create a PKGBUILD?](#How_do_I_create_a_PKGBUILD?)
-    *   [8.10 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit;_can_someone_check_it_to_see_if_there_are_any_errors?)
-    *   [8.11 How to get a PKGBUILD into the community repository?](#How_to_get_a_PKGBUILD_into_the_community_repository?)
-    *   [8.12 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes?)
-    *   [8.13 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages?)
-    *   [8.14 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR?)
-    *   [8.15 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR?)
-    *   [8.16 How can I obtain a list of all AUR packages?](#How_can_I_obtain_a_list_of_all_AUR_packages?)
-*   [9 See also](#See_also)
+*   [7 FAQ](#FAQ)
+    *   [7.1 What is the AUR?](#What_is_the_AUR?)
+    *   [7.2 What kind of packages are permitted on the AUR?](#What_kind_of_packages_are_permitted_on_the_AUR?)
+    *   [7.3 How can I vote for packages in the AUR?](#How_can_I_vote_for_packages_in_the_AUR?)
+    *   [7.4 What is a Trusted User / TU?](#What_is_a_Trusted_User_/_TU?)
+    *   [7.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository?)
+    *   [7.6 Foo in the AUR is outdated; what should I do?](#Foo_in_the_AUR_is_outdated;_what_should_I_do?)
+    *   [7.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg;_what_should_I_do?)
+    *   [7.8 ERROR: One or more PGP signatures could not be verified!; what should I do?](#ERROR:_One_or_more_PGP_signatures_could_not_be_verified!;_what_should_I_do?)
+    *   [7.9 How do I create a PKGBUILD?](#How_do_I_create_a_PKGBUILD?)
+    *   [7.10 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit;_can_someone_check_it_to_see_if_there_are_any_errors?)
+    *   [7.11 How to get a PKGBUILD into the community repository?](#How_to_get_a_PKGBUILD_into_the_community_repository?)
+    *   [7.12 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes?)
+    *   [7.13 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages?)
+    *   [7.14 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR?)
+    *   [7.15 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR?)
+    *   [7.16 How can I obtain a list of all AUR packages?](#How_can_I_obtain_a_list_of_all_AUR_packages?)
+*   [8 See also](#See_also)
 
 ## Getting started
 
@@ -167,9 +169,40 @@ Other useful flags are
 
 ## Feedback
 
-The [AUR Web Interface](https://aur.archlinux.org) has a comments facility that allows users to provide suggestions and feedback on improvements to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") contributor. Avoid pasting patches or `PKGBUILD`s into the comments section: they quickly become obsolete and just end up needlessly taking up lots of space. Instead email those files to the maintainer, or even use a [pastebin](/index.php/Pastebin "Pastebin").
+### Commenting on packages
+
+The [AUR Web Interface](https://aur.archlinux.org) has a comments facility that allows users to provide suggestions and feedback on improvements to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") contributor.
+
+**Tip:** Avoid pasting patches or `PKGBUILD`s into the comments section: they quickly become obsolete and just end up needlessly taking up lots of space. Instead email those files to the maintainer, or even use a [pastebin](/index.php/Pastebin "Pastebin").
+
+[Python-Markdown](https://python-markdown.github.io/) provides basic [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown") syntax to format comments.
+
+**Note:**
+
+*   This implementation has some occasional [differences](https://python-markdown.github.io/#differences) with the official [syntax rules](https://daringfireball.net/projects/markdown/syntax).
+
+*   Commit hashes to the [Git](/index.php/Git "Git") repository of the package and references to [Flyspray](/index.php/Flyspray "Flyspray") tickets are converted to links automatically.
+
+*   Long comments are collapsed and can be expanded on demand.
+
+### Voting for packages
 
 One of the easiest activities for **all** Arch users is to browse the AUR and **vote** for their favourite packages using the online interface. All packages are eligible for adoption by a TU for inclusion in the [community repository](/index.php/Community_repository "Community repository"), and the vote count is one of the considerations in that process; it is in everyone's interest to vote!
+
+Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this package" option while browsing packages. After signing up it is also possible to vote from the commandline with [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/) or [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/).
+
+Alternatively, if you have set up [ssh authentication](/index.php/AUR_submission_guidelines#Authentication "AUR submission guidelines"), you can directly vote from the command line using your ssh key. This means that you will not need to save or type in your AUR password.
+
+```
+$ ssh aur@aur.archlinux.org vote *package_name*
+
+```
+
+### Flagging packages out-of-date
+
+First, you should flag the package *out-of-date* indicating details on why the package is outdated, preferably including links to the release announcement or the new release [tarball](/index.php/Archiving_and_compression#Archiving_only "Archiving and compression"). You should also try to reach out to the maintainer directly by email. If there is no response from the maintainer after *two weeks*, you can file an *orphan* request. This means you ask a [Trusted User](/index.php/Trusted_User "Trusted User") to disown the package base. This is to be done only if the package requires maintainer action, that he/she is not responding and you already tried to contact him/her previously.
+
+**Note:** [VCS packages](/index.php/VCS_package_guidelines "VCS package guidelines") are not considered out of date when the pkgver changes, do not flag them as the maintainer will merely unflag the package and ignore you. AUR maintainers should not commit mere pkgver bumps.
 
 ## Submitting packages
 
@@ -178,10 +211,6 @@ Users can share [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") using the Arch User 
 ## Web interface translation
 
 See [i18n.txt](https://projects.archlinux.org/aurweb.git/tree/doc/i18n.txt) in the AUR source tree for information about creating and maintaining translation of the [AUR Web Interface](https://aur.archlinux.org).
-
-## Comment syntax
-
-The [Python-Markdown](https://python-markdown.github.io/) syntax is supported in comments. It provides basic [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown") syntax to format comments. Note this implementation has some occasional [differences](https://python-markdown.github.io/#differences) with the official [syntax rules](https://daringfireball.net/projects/markdown/syntax). Commit hashes to the [Git](/index.php/Git "Git") repository of the package and references to [Flyspray](/index.php/Flyspray "Flyspray") tickets are converted to links automatically. Long comments are collapsed and can be expanded on demand.
 
 ## FAQ
 
@@ -195,14 +224,7 @@ The packages on the AUR are merely "build scripts", i.e. recipes to build binari
 
 ### How can I vote for packages in the AUR?
 
-Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this package" option while browsing packages. After signing up it is also possible to vote from the commandline with [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/) or [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/).
-
-Alternatively, if you have set up [ssh authentication](/index.php/AUR_submission_guidelines#Authentication "AUR submission guidelines"), you can directly vote from the command line using your ssh key. This means that you will not need to save or type in your AUR password.
-
-```
-$ ssh aur@aur.archlinux.org vote *package_name*
-
-```
+See [#Voting for packages](#Voting_for_packages).
 
 ### What is a Trusted User / TU?
 
@@ -214,11 +236,9 @@ The Arch User Repository is where all [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"
 
 ### Foo in the AUR is outdated; what should I do?
 
-First, you should flag the package *out-of-date* indicating details on why the package is outdated, preferably including links to the release announcement or the new release [tarball](/index.php/Archiving_and_compression#Archiving_only "Archiving and compression"). You should also try to reach out to the maintainer directly by email. If there is no response from the maintainer after *two weeks*, you can file an *orphan* request. This means you ask a [Trusted User](/index.php/Trusted_User "Trusted User") to disown the package base. This is to be done only if the package requires maintainer action, that he/she is not responding and you already tried to contact him/her previously.
+See [#Flagging packages out-of-date](#Flagging_packages_out-of-date).
 
 In the meantime, you can try updating the package yourself by editing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") locally. Sometimes, updates do not require changes to the build or package process, in which case simply updating the `pkgver` or `source` array is sufficient.
-
-**Note:** [VCS packages](/index.php/VCS_package_guidelines "VCS package guidelines") are not considered out of date when the pkgver changes, do not flag them as the maintainer will merely unflag the package and ignore you. AUR maintainers should not commit mere pkgver bumps.
 
 ### Foo in the AUR does not compile when I run makepkg; what should I do?
 

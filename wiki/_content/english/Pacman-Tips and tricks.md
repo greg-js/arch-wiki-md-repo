@@ -708,7 +708,7 @@ The example below installs English (US) files, or none at all:
 ```
 NoExtract = usr/share/help/* !usr/share/help/en*
 NoExtract = usr/share/gtk-doc/html/*
-NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/* opt/google/chrome/locales/* !/usr/share/X11/locale/C/*
+NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/* opt/google/chrome/locales/* !usr/share/X11/locale/C/*
 NoExtract = !*locale*/en*/* !usr/share/i18n/charmaps/UTF-8.gz !usr/share/*locale*/locale.*
 NoExtract = !usr/share/*locales/en_?? !usr/share/*locales/i18n !usr/share/*locales/iso*
 NoExtract = !usr/share/*locales/trans*

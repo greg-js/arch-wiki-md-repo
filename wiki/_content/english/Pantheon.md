@@ -110,8 +110,8 @@ These are some of the original, patched, and selected packages that comprise the
 *   [pantheon-screenshot](https://www.archlinux.org/packages/?name=pantheon-screenshot) or [pantheon-screenshot-git](https://aur.archlinux.org/packages/pantheon-screenshot-git/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
 *   [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) or [pantheon-photos-git](https://aur.archlinux.org/packages/pantheon-photos-git/): Photo manager developed from [shotwell](https://www.archlinux.org/packages/?name=shotwell)
-*   [pantheon-camera-git](https://aur.archlinux.org/packages/pantheon-camera-git/): Webcam app developed from [snap-photobooth](https://aur.archlinux.org/packages/snap-photobooth/)
-*   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/): Simple scan utility (does not build)
+*   [pantheon-camera-git](https://aur.archlinux.org/packages/pantheon-camera-git/): Webcam app formerly known as "Snap"
+*   [simple-scan](https://www.archlinux.org/packages/?name=simple-scan): Simple scan utility
 *   [switchboard](https://www.archlinux.org/packages/?name=switchboard) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/): Pluggable settings manager similar to [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)
 
 ## Launching Pantheon

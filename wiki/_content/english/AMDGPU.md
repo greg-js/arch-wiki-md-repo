@@ -169,6 +169,13 @@ Option "TearFree" "true"
 
 ```
 
+You can also enable TearFree temporarily with [xrandr](/index.php/Xrandr "Xrandr"):
+
+```
+# xrandr --output *output* --set TearFree on
+
+```
+
 ### DRI level
 
 *DRI* sets the maximum level of DRI to enable. Valid values are *2* for DRI2 or *3* for DRI3\. The default is *3* for DRI3 if the [Xorg](/index.php/Xorg "Xorg") version is >= 1.18.3, otherwise DRI2 is used:
@@ -224,7 +231,7 @@ Since Linux 4.17, it is possible to adjust clocks and voltages of the graphics c
 
 #### Boot parameter
 
-It is required to unlock access to adjust clocks and voltages in sysfs by appending the [Kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `amdgpu.ppfeaturemask=0xffffffff`.
+It is required to unlock access to adjust clocks and voltages in sysfs by appending the [Kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `amdgpu.ppfeaturemask=0xfffd7fff`.
 
 #### Manual (default)
 
@@ -322,11 +329,11 @@ If you want your settings to apply automatically upon boot, consider looking at 
 To avoid the usage of the scaler which is built in the display, and use the GPU own scaler instead, when not using the native resolution of the monitor, execute:
 
 ```
-$ xrandr --output "<output>" --set "scaling mode" "<scaling mode>"
+$ xrandr --output *output* --set "scaling mode" *scaling_mode*
 
 ```
 
-Possible values for `"scaling mode"` are: `None, Full, Center, Full aspect`
+Possible values for `"scaling mode"` are: `None`, `Full`, `Center`, `Full aspect`.
 
 *   To show the available outputs and settings, execute:
 

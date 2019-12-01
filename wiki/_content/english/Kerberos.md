@@ -29,9 +29,11 @@ Related articles
 *   [8 NFS Security](#NFS_Security)
     *   [8.1 NFS Server](#NFS_Server)
     *   [8.2 NFS Client](#NFS_Client)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Cannot set GSSAPI authentication names](#Cannot_set_GSSAPI_authentication_names)
-*   [10 See also](#See_also)
+*   [9 Browsers](#Browsers)
+    *   [9.1 Chromium](#Chromium)
+*   [10 Troubleshooting](#Troubleshooting)
+    *   [10.1 Cannot set GSSAPI authentication names](#Cannot_set_GSSAPI_authentication_names)
+*   [11 See also](#See_also)
 
 ## Installation
 
@@ -460,6 +462,20 @@ Check that it worked with the `mount` command:
  `mount | grep krb5` 
 ```
 nfsserver:/srv/export on /mnt type nfs4 (rw,relatime,vers=4.1,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp,port=0,timeo=600,retrans=2,sec=krb5,clientaddr=192.168.100.139,local_lock=none,addr=192.168.100.136)
+
+```
+
+## Browsers
+
+Some browsers have support for Kerberos protocol but disable it by default. Here are the instructions how to enable it:
+
+### Chromium
+
+Chromium needs to be run with a command line parameter that specifies a list of sites where Kerberos authentication is allowed. The easiest way is to add persistent flag to the config file:
+
+ `~/.config/chromium-flags.conf` 
+```
+--auth-server-whitelist='*.foo.com'
 
 ```
 

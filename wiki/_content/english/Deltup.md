@@ -1,5 +1,3 @@
-**Note:** The `UseDelta` option has been removed from `pacman` due to a severe vulnerability (CVE-2019-18183.
-
 Delta updates can save time and size in downloading and updating the system. Packages that are downloaded will be a sort of "diff" of the new package, which will be used to patch the old package into the new package at the end of the download.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

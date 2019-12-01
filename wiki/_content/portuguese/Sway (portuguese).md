@@ -199,7 +199,7 @@ xwayland disable
 
 ```
 
-**Nota:** Alguns programas, como [Firefox](/index.php/Firefox#Wayland "Firefox"), [bemenu](#Lançadores_de_aplicativos) ou programas baseados no [Qt5](/index.php/Wayland_(Portugu%C3%AAs)#Qt_5 "Wayland (Português)"), também precisam de especificas variáveis de ambiente configuradas para rodarem nativamente sobre o wayland.
+**Nota:** Alguns programas, como [Firefox](/index.php/Firefox#Wayland "Firefox"), [bemenu](#Lançadores_de_aplicativos) ou programas baseados no [Qt5](/index.php/Wayland_(Portugu%C3%AAs)#Qt_5 "Wayland (Português)"), também precisam de especificas variáveis de ambiente configuradas para rodarem nativamente em wayland.
 
 **Nota:** Numa recente instalação do Sway, você precisa mudar o menu e terminal padrão porquê eles dependem do XWayland.
 
@@ -419,7 +419,7 @@ bindsym --to-code {
 
 Alguns programas baseados no Java irão mostrar uma tela branca quando abertos, por exemplo qualquer editor Intellij. Para solucionar isto, o programa pode ser iniciado com a variável de ambiente `_JAVA_AWT_WM_NONREPARENTING` configurada para 1.
 
-Se você rodar o programa por um lançador como [rofi](https://www.archlinux.org/packages/?name=rofi) ou [dmenu](https://www.archlinux.org/packages/?name=dmenu), você pode querer modificar a entrada desktop do aplicativo como descrito em [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
+Se você rodar o programa por um lançador como [rofi](https://www.archlinux.org/packages/?name=rofi) ou [dmenu](https://www.archlinux.org/packages/?name=dmenu), você pode querer modificar a entrada desktop do aplicativo como descrito em [Entradas de desktop#Modificar variáveis de ambiente](/index.php/Entradas_de_desktop#Modificar_variáveis_de_ambiente "Entradas de desktop").
 
 ## Veja também
 

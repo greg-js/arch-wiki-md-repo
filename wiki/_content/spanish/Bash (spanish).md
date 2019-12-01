@@ -319,7 +319,7 @@ cd /etc
 
 ### Autojump
 
-[autojump](https://www.archlinux.org/packages/?name=autojump) permite navegar por el sistema de archivos buscando cadenas en una base de datos con las rutas más visitadas del usuario.
+[autojump](https://aur.archlinux.org/packages/autojump/) permite navegar por el sistema de archivos buscando cadenas en una base de datos con las rutas más visitadas del usuario.
 
 Después de la instalación, `/etc/profile.d/autojump.bash` debe ser [cargado](/index.php/Source_(Espa%C3%B1ol) "Source (Español)") para comenzar a utilizar la aplicación.
 

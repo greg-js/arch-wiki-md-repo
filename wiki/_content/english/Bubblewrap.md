@@ -2,7 +2,11 @@
 
 **Warning:** Unlike when using a separate user and a separate log-in session, bubblewrap not only exposes security vulnerabilities in the kernel but also in the window compositor. Users should be aware that running untrustworthy code in Bubblewrap is still not safe.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -26,7 +30,10 @@
 
 [Install](/index.php/Install "Install") [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) or [bubblewrap-git](https://aur.archlinux.org/packages/bubblewrap-git/).
 
-**Note:** For information about [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) support in Archlinux kernels see [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security").
+**Note:**
+
+*   For information about [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) support in Archlinux kernels see [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security").
+*   `linux-hardened` users may need to install [bubblewrap-suid](https://www.archlinux.org/packages/?name=bubblewrap-suid) instead of the packages mentioned above. See [FS#63316](https://bugs.archlinux.org/task/63316) for more information.
 
 ## Configuration
 
@@ -127,7 +134,7 @@ Leverage Bubblewrap within [desktop entries](/index.php/Desktop_entries "Desktop
 ```
 [Desktop Entry]
 Name=nano Editor
-Exec=bwrap --bind / / --dev /dev --tmpfs /run --unshare-net  st -e nano -o . %f
+Exec=bwrap --bind / / --dev /dev --tmpfs /run --unshare-net  st -e nano -o . %f
 Type=Application
 MimeType=text/plain;
 
@@ -140,7 +147,7 @@ MimeType=text/plain;
 ```
 [Desktop Entry]
 Name=MuPDF
-Exec=mupdf.sh %f
+Exec=mupdf.sh %f
 Icon=application-pdf.svg
 Type=Application
 MimeType=application/pdf;application/x-pdf;
@@ -411,14 +418,14 @@ Then proceed with the installation as usual by calling pacman from `bw-install f
 Bind mounting the host X11 socket to an alternative X11 socket may not work:
 
 ```
---bind /tmp/.X11-unix/X0 /tmp/.X11-unix/X8 --setenv DISPLAY :8
+--bind /tmp/.X11-unix/X0 /tmp/.X11-unix/X8 --setenv DISPLAY :8
 
 ```
 
 A workaround is to bind mount the host X11 socket to the same socket within the sandbox:
 
 ```
---bind /tmp/.X11-unix/X0 /tmp/.X11-unix/X0 --setenv DISPLAY :0
+--bind /tmp/.X11-unix/X0 /tmp/.X11-unix/X0 --setenv DISPLAY :0
 
 ```
 

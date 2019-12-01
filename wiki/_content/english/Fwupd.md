@@ -17,7 +17,7 @@ Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more
     *   [1.1 Graphical front-ends](#Graphical_front-ends)
 *   [2 Usage](#Usage)
 *   [3 Setup for UEFI BIOS upgrade](#Setup_for_UEFI_BIOS_upgrade)
-    *   [3.1 Copy Fwupd to ESP](#Copy_Fwupd_to_ESP)
+    *   [3.1 Prepare ESP](#Prepare_ESP)
     *   [3.2 Secure Boot](#Secure_Boot)
         *   [3.2.1 Using your own keys](#Using_your_own_keys)
 
@@ -38,6 +38,10 @@ Certain [desktop environments](/index.php/Desktop_environments "Desktop environm
 *   **KDE Discover** — Software center used with [Plasma](/index.php/Plasma "Plasma"). With the release of KDE Plasma 5.14, a new fwupd backend has been implemented in KDE Discover for firmware updates. These firmware updates are shown with other system updates.
 
 	[https://userbase.kde.org/Discover](https://userbase.kde.org/Discover) || [discover](https://www.archlinux.org/packages/?name=discover)
+
+*   **GNOME Firmware** — Application to upgrade, downgrade and reinstall firmware on devices supported by fwupd. It can unlock locked fwupd devices, verify firmware on supported devices and display all releases for a fwupd device.
+
+	[https://gitlab.gnome.org/hughsie/gnome-firmware-updater](https://gitlab.gnome.org/hughsie/gnome-firmware-updater) || [gnome-firmware](https://aur.archlinux.org/packages/gnome-firmware/)
 
 ## Usage
 
@@ -87,26 +91,20 @@ The following requirements should be met:
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
 3.  Mount your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this section.
 
-### Copy Fwupd to ESP
+### Prepare ESP
 
-The fwupd files are not copied over to the ESP when fwupd is installed or upgraded so we need to do this manually.
+fwupd will copy all the necessary files over to the *esp* but for this to work, a basic folder layout must be present on your *esp*.
 
- `cp -a /usr/lib/fwupd/efi/fwupdx64.efi *esp*/efi/` 
+**Note:** Depending on the boot loader you have in use or the presence of other operating systems, this directory may already exist.
 
-It might be desirable to automate this using a pacman hook so that on future fwupd installs/updates it will do so automatically:
+This constitutes the creation of an 'EFI' directory on your *esp*.
 
- `/etc/pacman.d/hooks/fwupd-to-esp.hook` 
-```
-[Trigger]
-Operation = Install
-Operation = Upgrade
-Type = File
-Target = usr/lib/fwupd/efi/fwupdx64.efi
+ `mkdir *esp*/EFI/` 
+**Warning:** The 'EFI' directory **MUST** be in all upper-case. If you used lower-case, fwupd may detect the *esp* as *esp*/efi/ instead and would start looking for *esp*/efi/EFI/
 
-[Action]
-When = PostTransaction
-Exec = /usr/bin/cp -a /usr/lib/fwupd/efi/fwupdx64.efi *esp*/efi/
-```
+After creation, you'll have to restart the fwupd service.
+
+ `systemctl restart fwupd.service` 
 
 You can now `$ fwupd refresh` and `$ fwupd update`. It will ask to reboot and should now automatically reboot into the firmware updater.
 

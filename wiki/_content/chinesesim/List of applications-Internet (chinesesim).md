@@ -554,7 +554,7 @@
 
 *   **Gunicorn** — 一个Python的WSGI HTTP服务器，用在UNIX上.
 
-	[https://gunicorn.org/](https://gunicorn.org/) || [gunicorn](https://www.archlinux.org/packages/?name=gunicorn), [python2-gunicorn](https://www.archlinux.org/packages/?name=python2-gunicorn)
+	[https://gunicorn.org/](https://gunicorn.org/) || [gunicorn](https://www.archlinux.org/packages/?name=gunicorn), [python2-gunicorn](https://aur.archlinux.org/packages/python2-gunicorn/)
 
 *   **[uWSGI](/index.php/UWSGI "UWSGI")** — 一个快速、自治愈的、 开发者/系统管理员友好的 程序容器服务器，用C写成.
 

@@ -231,7 +231,10 @@ Monospace: Courier New Size (pixels): 13
 
 Firefox's user interface can be modified by editing the `userChrome.css` and `userContent.css` files in `~/.mozilla/firefox/<profile_dir>/chrome/` (*profile_dir* is of the form *hash.name*, where the *hash* is an 8 character, seemingly random string and the profile *name* is usually *default*).
 
-**Note:** The `chrome/` folder and `userChrome.css`/`userContent.css` files may not necessarily exist, so they may need to be created.
+**Note:**
+
+*   The `chrome/` folder and `userChrome.css`/`userContent.css` files may not necessarily exist, so they may need to be created.
+*   `toolkit.legacyUserProfileCustomizations.stylesheets` must be enabled in `about:config`.
 
 This section only deals with the `userChrome.css` file which modifies Firefox's user interface, and not web pages.
 

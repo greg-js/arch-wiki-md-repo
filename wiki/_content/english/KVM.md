@@ -49,7 +49,7 @@ $ grep -E --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo
 
 If nothing is displayed after running either command, then your processor does **not** support hardware virtualization, and you will **not** be able to use KVM.
 
-**Note:** You may need to enable virtualization support in your BIOS.
+**Note:** You may need to enable virtualization support in your BIOS. All x86_64 processors manufactured by AMD and Intel in the last 10 years support virtualization. If it looks like your processor does not support virtualization, it's almost certainly turned off in the BIOS.
 
 ### Kernel support
 

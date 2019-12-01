@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt](/index.php/Dm-crypt "Dm-crypt"). Data da última tradução: 2019-11-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt&diff=0&oldid=589414) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt](/index.php/Dm-crypt "Dm-crypt"). Data da última tradução: 2019-11-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt&diff=0&oldid=589414) na versão em inglês.
 
 Related articles
 
@@ -18,7 +18,7 @@ dm-crypt é o [mapeador de dispositivos](https://en.wikipedia.org/wiki/pt:device
 *   [1 Cenários comuns](#Cenários_comuns)
 *   [2 Preparando a unidade de armazenamento](#Preparando_a_unidade_de_armazenamento)
 *   [3 Encriptação de dispositivo](#Encriptação_de_dispositivo)
-*   [4 Configuração de sistema](#Configuração_de_sistema)
+*   [4 Configuração do sistema](#Configuração_do_sistema)
 *   [5 Swap criptografada](#Swap_criptografada)
 *   [6 Especificidades](#Especificidades)
 *   [7 Veja também](#Veja_também)
@@ -37,19 +37,19 @@ Veja [/Criptografando todo um sistema](/index.php/Dm-crypt_(Portugu%C3%AAs)/Crip
 
 ## Encriptação de dispositivo
 
-[/Encriptação de dispositivo](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption") cobre como utilizar o dm-crypt para criptografar todo um sistema por meio do comando [cryptsetup](/index.php/Cryptsetup "Cryptsetup"). Possui exemplos de [Opções de encriptação com dm-crypt](/index.php/Dm-crypt/Device_encryption#Encryption_options_with_dm-crypt "Dm-crypt/Device encryption"), lida com a criação de [keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption"), comandos específicos do LUKS para [gerenciamento de chaves](/index.php/Dm-crypt/Device_encryption#Key_management "Dm-crypt/Device encryption") como também para [Backup e restauração](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
+[/Encriptação de dispositivo](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption") mostra como utilizar o dm-crypt para criptografar todo um sistema por meio do comando [cryptsetup](/index.php/Cryptsetup "Cryptsetup"). Possui exemplos de [Opções de encriptação com dm-crypt](/index.php/Dm-crypt/Device_encryption#Encryption_options_with_dm-crypt "Dm-crypt/Device encryption"), lida com a criação de [keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption"), comandos específicos do LUKS para [gerenciamento de chaves](/index.php/Dm-crypt/Device_encryption#Key_management "Dm-crypt/Device encryption") como também para [Backup e restauração](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
 
-## Configuração de sistema
+## Configuração do sistema
 
-[/Configuração de sistema](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration") ilustra como configurar o [mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration"), o [gerenciador de boot](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") e o arquivo [crypttab](/index.php/Crypttab "Crypttab") quando você está criptografando um sistema.
+[/Configuração do sistema](/index.php/Dm-crypt_(Portugu%C3%AAs)/Configura%C3%A7%C3%A3o_do_sistema "Dm-crypt (Português)/Configuração do sistema") mostra como configurar o [mkinitcpio](/index.php/Dm-crypt_(Portugu%C3%AAs)/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt (Português)/Configuração do sistema"), o [gerenciador de boot](/index.php/Dm-crypt_(Portugu%C3%AAs)/Configura%C3%A7%C3%A3o_do_sistema#Boot_loader "Dm-crypt (Português)/Configuração do sistema") e o arquivo [crypttab](/index.php/Dm-crypt_(Portugu%C3%AAs)/Configura%C3%A7%C3%A3o_do_sistema#crypttab "Dm-crypt (Português)/Configuração do sistema") quando você está criptografando um sistema.
 
 ## Swap criptografada
 
-[/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") cobre como adicionar uma partição swap para um sistema criptografado, se necessário. A partição swap também deve ser criptografada para proteger qualquer informação colocada lá pelo sistema. Esta página detalha métodos [sem](/index.php/Dm-crypt/Swap_encryption#Without_suspend-to-disk_support "Dm-crypt/Swap encryption") e [com](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") suporte a suspensão para o disco.
+[/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") mostra como adicionar uma partição swap para um sistema criptografado, se necessário. A partição swap também deve ser criptografada para proteger qualquer informação colocada lá pelo sistema. Esta página detalha métodos [sem](/index.php/Dm-crypt/Swap_encryption#Without_suspend-to-disk_support "Dm-crypt/Swap encryption") e [com](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") suporte a suspensão para o disco.
 
 ## Especificidades
 
-[/Especificidades](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") lida com operações especiais como [protegendo partições de boot não criptografadas](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"), [usando keyfiles criptogradas GPG ou OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties"), um método para [ligar e desbloquear pela rede](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_(or_other)_partition "Dm-crypt/Specialties"), outro para [configurando discard/TRIM para um SSD](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties"), e seções que lidam com [múltiplos discos e hook de encriptação](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties").
+[/Especificidades](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") lida com operações especiais como [protegendo partições de boot não criptografadas](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"), [usando keyfiles criptogradas GPG, LUKS ou OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties"), um método para [ligar e desbloquear pela rede](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_(or_other)_partition "Dm-crypt/Specialties"), outro para [configurar discard/TRIM para um SSD](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties"), e seções que lidam com [o hook encrypt e múltiplos discos](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties").
 
 ## Veja também
 

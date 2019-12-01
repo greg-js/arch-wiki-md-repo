@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [MediaWiki](/index.php/MediaWiki "MediaWiki"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=MediaWiki&diff=0&oldid=590133) na versão em inglês.
+
 **Nota:** MediaWiki ainda não é completamente compatível com PHP 7.3.[[1]](https://www.mediawiki.org/wiki/Compatibility#PHP)[[2]](https://phabricator.wikimedia.org/project/view/3494/)
 
 [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) é um software wiki de código aberto e livre escrito em [PHP](/index.php/PHP "PHP"), originalmente desenvolvido para a Wikipédia. Ele também alimenta este wiki (consulte [Special:Version](/index.php/Special:Version "Special:Version") e o [repositório do GitHub](https://github.com/archlinux/archwiki)).

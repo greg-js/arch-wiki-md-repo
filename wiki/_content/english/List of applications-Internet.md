@@ -564,7 +564,7 @@ The [Python](/index.php/Python "Python") standard library module [http.server](h
 
 *   **Gunicorn** — A Python WSGI HTTP Server for UNIX.
 
-	[https://gunicorn.org/](https://gunicorn.org/) || [gunicorn](https://www.archlinux.org/packages/?name=gunicorn), [python2-gunicorn](https://www.archlinux.org/packages/?name=python2-gunicorn)
+	[https://gunicorn.org/](https://gunicorn.org/) || [gunicorn](https://www.archlinux.org/packages/?name=gunicorn), [python2-gunicorn](https://aur.archlinux.org/packages/python2-gunicorn/)
 
 *   **[uWSGI](/index.php/UWSGI "UWSGI")** — A fast, self-healing and developer/sysadmin-friendly application container server written in C.
 
@@ -1879,7 +1879,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Canto](https://en.wikipedia.org/wiki/Canto_(news_aggregator) "wikipedia:Canto (news aggregator)")** — Ncurses RSS aggregator.
 
-	[https://codezen.org/canto/](https://codezen.org/canto/) || [canto-curses](https://aur.archlinux.org/packages/canto-curses/)
+	[https://codezen.org/canto/](https://codezen.org/canto/) || [canto-curses](https://www.archlinux.org/packages/?name=canto-curses)
 
 *   **[Gnus](https://en.wikipedia.org/wiki/Gnus "wikipedia:Gnus")** — Email, NNTP and RSS client for Emacs.
 
@@ -2048,6 +2048,10 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 *   **Rainbowstream** — A powerful and fully-featured console Twitter client written in Python.
 
 	[https://github.com/orakaro/rainbowstream](https://github.com/orakaro/rainbowstream) || [rainbowstream](https://aur.archlinux.org/packages/rainbowstream/)
+
+*   **toot** — CLI and TUI tool for interacting with Mastodon instances
+
+	[https://github.com/ihabunek/toot](https://github.com/ihabunek/toot) || [toot](https://aur.archlinux.org/packages/toot/)
 
 *   **turses** — Twitter client for the console based off *tyrs* with major improvements.
 

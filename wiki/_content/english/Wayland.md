@@ -166,7 +166,7 @@ Make sure you haven't set GDK_BACKEND=wayland. Setting it globally will break El
 
 ### Screen recording
 
-[green-recorder](https://aur.archlinux.org/packages/green-recorder/) and [obs-gnome-screencast](https://aur.archlinux.org/packages/obs-gnome-screencast/) support screen recording on Wayland using GNOME screencast feature.
+[green-recorder](https://aur.archlinux.org/packages/green-recorder/), [obs-gnome-screencast](https://aur.archlinux.org/packages/obs-gnome-screencast/) and [obs-xdg-portal-git](https://aur.archlinux.org/packages/obs-xdg-portal-git/) support screen recording on Wayland using GNOME screencast feature.
 
 [wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) is a video recorder for wlroots-based compositors.
 

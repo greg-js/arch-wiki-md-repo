@@ -7,7 +7,7 @@
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 17 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=586376).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 01 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=590400).
 
 Основную статью по настройке сети можно найти на странице [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
@@ -738,7 +738,7 @@ command failed: Operation not supported (-95)
 
 #### iwlwifi
 
-[iwlwifi](http://wireless.kernel.org/en/users/Drivers/iwlwifi) — беспроводной драйвер для современных чипов Intel, таких как 5100AGN, 5300AGN и 5350AGN. Список поддерживаемых устройств: [[9]](http://wireless.kernel.org/en/users/Drivers/iwlwifi#Supported_Devices).
+[iwlwifi](https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi) — беспроводной драйвер для современных чипов Intel, таких как 5100AGN, 5300AGN и 5350AGN. Список поддерживаемых устройств: [[9]](https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi#supported_devices).
 
 Прошивки входят в пакет [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware). В пакете [linux-firmware-iwlwifi-git](https://aur.archlinux.org/packages/linux-firmware-iwlwifi-git/) могут содержаться последние обновления.
 

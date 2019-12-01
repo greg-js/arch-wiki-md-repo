@@ -3,6 +3,8 @@ Related articles
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
+*   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
+*   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
 
 This page explains how to perform a regular Arch installation onto a USB key (or "flash drive"). In contrast to having a LiveUSB as covered in [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"), the result will be a persistent installation identical to normal installation to HDD, but on a USB flash drive.
 
@@ -28,7 +30,6 @@ This page explains how to perform a regular Arch installation onto a USB key (or
     *   [3.2 Compatibility](#Compatibility)
     *   [3.3 Minimizing disk access](#Minimizing_disk_access)
 *   [4 See also](#See_also)
-*   [5 External links](#External_links)
 
 ## Installation
 
@@ -158,11 +159,6 @@ $ eatmydata firefox
 ```
 
 ## See also
-
-*   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
-*   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
-
-## External links
 
 *   [ALMA](https://github.com/r-darwish/alma) - A utility written in Rust to automatically create persistent Arch Linux Live USB installations.
 *   [ArchLinux USB](http://valleycat.org/linux/arch-usb.html) - c-magyar's excellent writeup on creating a persistent Live USB installation.

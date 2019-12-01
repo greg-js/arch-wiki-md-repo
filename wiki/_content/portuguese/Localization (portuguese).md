@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Localization](/index.php/Localization "Localization"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Localization&diff=0&oldid=570576) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Localization](/index.php/Localization "Localization"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Localization&diff=0&oldid=589050) na versão em inglês.
 
 Este é o artigo principal sobre [localização](https://en.wikipedia.org/wiki/pt:Internacionaliza%C3%A7%C3%A3o_(inform%C3%A1tica) (muitas vezes também conhecido como l10n). Destina-se a oferecer orientação, bem como reticulação de outros artigos relevantes, para personalizar as configurações de uma instalação do Arch Linux para trabalhar com qualquer idioma suportado.
 
@@ -120,14 +120,14 @@ Primeiro, algumas informações básicas sobre como o GTK carrega e seleciona os
 
 Se nenhum módulo de IM for especificado (via GTK_IM_MODULE ou em XSETTINGS), então o GTK escolherá automaticamente um immodule adequado de uma listagem interna (GTK_IM_MODULE_FILE... etc). Este módulo de IM escolhido dependerá do software instalado e será escolhido em uma ordem completamente arbitrária.
 
-Para uma listagem de immodules GTK+ instalados, veja
+Para uma listagem de immodules GTK instalados, veja
 
 *   `/usr/lib/gtk-2.0/modules/`
 *   `/usr/lib/gtk-2.0/2.10.0/immodules/`
 
 XSETTINGS fornece uma API comum para definir configurações comuns da área de trabalho. Sistemas de configuração de banco de dados semelhantes, como gnome-config, GConf, liproplist e o sistema de configuração kde, já existem, no entanto, o XSETTINGS unifica esses sistemas. Os daemons XSETTINGS, como gnome-settings-daemon do gnome, xfce-mcs-manager do xfce4 e outros do openbox, etc., enviam dados específicos do ambiente de desktop para o banco de dados XSETTINGS. Tecnicamente, XSETTINGS é um meio de armazenamento simples destinado a armazenar apenas strings, inteiros e cores. Quando um gerenciador XSETTINGS é encerrado, os clientes restauram todas as configurações para seus valores padrão.
 
-Se o GTK+ tem a depuração habilitada, os módulos carregados podem ser vistos com
+Se o GTK tem a depuração habilitada, os módulos carregados podem ser vistos com
 
 ```
 $ *aplicativo* --gtk-debug modules
@@ -136,7 +136,7 @@ $ *aplicativo* --gtk-debug modules
 
 Caso contrário, os módulos podem ser vistos pela verificação das bibliotecas vinculadas no gdb após a anexação ao processo.
 
-Para evitar que o GTK+ carregue qualquer módulo de IM
+Para evitar que o GTK carregue qualquer módulo de IM
 
 *   defina `GTK_IM_MODULE` para uma string vazia, ou
 *   defina `GTK_IM_MODULE` para "gtk-im-context-simple"
@@ -162,4 +162,4 @@ Para desabilitar o carregamento de módulo de método de entrada no QT, [exporte
 *   [Wiki do Fedora](https://fedoraproject.org/wiki/I18N/InputMethods "fedora:I18N/InputMethods")
 *   [Free Standards Group OpenI18N](http://www.openi18n.org/)
 *   [Especificação XSETTINGS](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html)
-*   [Executando e depurando aplicativos GTK+](https://developer.gnome.org/gtk3/unstable/gtk-running.html)
+*   [Executando e depurando aplicativos GTK](https://developer.gnome.org/gtk3/unstable/gtk-running.html)

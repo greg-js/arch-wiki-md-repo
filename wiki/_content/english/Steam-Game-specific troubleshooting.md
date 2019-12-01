@@ -619,7 +619,7 @@ Dependencies:
 
 If the game does not start, uncheck: *Properties > Enable Steam Community In-Game*.
 
-The game is known to segfault when opening the settings and possibly during or before playing. A workaround from the [Steam discussions](http://steamcommunity.com/app/221410/discussions/3/846939071081758230/#p2) is to replace the game's `RenderSystem_GL.so` with one from Debian's repositories. To do that download [this deb file](https://launchpad.net/ubuntu/+archive/primary/+files/libogre-1.7.4_1.7.4-3_i386.deb), and extract it with [dpkg](https://aur.archlinux.org/packages/dpkg/):
+The game is known to segfault when opening the settings and possibly during or before playing. A workaround from the [Steam discussions](http://steamcommunity.com/app/221410/discussions/3/846939071081758230/#p2) is to replace the game's `RenderSystem_GL.so` with one from Debian's repositories. To do that download [this deb file](https://launchpad.net/ubuntu/+archive/primary/+files/libogre-1.7.4_1.7.4-3_i386.deb), and extract it with [dpkg](https://www.archlinux.org/packages/?name=dpkg):
 
 ```
 $ dpkg -x libogre-*.deb outdir

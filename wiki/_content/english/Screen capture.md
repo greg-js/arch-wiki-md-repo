@@ -269,6 +269,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
 
 *   [obs-gnome-screencast](https://aur.archlinux.org/packages/obs-gnome-screencast/) – plugin for GNOME screencast feature, supports Wayland.
+*   [obs-xdg-portal-git](https://aur.archlinux.org/packages/obs-xdg-portal-git/) – plugin that uses Desktop portal for Wayland & X11 screencasting
 
 *   **[Peek](https://en.wikipedia.org/wiki/Peek_(software) "wikipedia:Peek (software)")** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
 

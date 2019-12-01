@@ -330,6 +330,8 @@ This error can also occur because of Steam runtime issues and may be fixed follo
 
 If your Steam apps (games, software…) download speed through the client is unusually slow, but browsing the Steam store and streaming videos is unaffected, installing a DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[1]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
 
+Something else that might help would be disabling [Ipv6](/index.php/Ipv6 "Ipv6")[[2]](https://github.com/ValveSoftware/steam-for-linux/issues/6126).
+
 ### "Needs to be online" error
 
 If the Steam launcher refuses to start and you get an error saying: "*Fatal Error: Steam needs to be online to update*" while you are online, then there might be issues with name resolving.
@@ -405,9 +407,11 @@ With that, Steam should no longer crash when trying to launch a game through Rem
 
 ### Hardware decoding not available
 
-Remote Play hardware decoding uses `vaapi`, but steam requires `libva1` where arch now defaults to `libva2`. This means the libva1 package set is required, including the `lib32` versions as well.
+Remote Play hardware decoding uses `vaapi`, but steam requires `libva2_32bit`, where as Arch defaults to 64bit.
 
-As a basic set, this is [libva1](https://www.archlinux.org/packages/?name=libva1) and [lib32-libva1](https://www.archlinux.org/packages/?name=lib32-libva1). Intel graphics users will also require both [libva1-intel-driver](https://www.archlinux.org/packages/?name=libva1-intel-driver) and [lib32-libva1-intel-driver](https://www.archlinux.org/packages/?name=lib32-libva1-intel-driver). For more information about vaapi see [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+As a basic set, this is [libva](https://www.archlinux.org/packages/?name=libva) and [lib32-libva](https://www.archlinux.org/packages/?name=lib32-libva). Intel graphics users will also require both [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) and [lib32-libva-intel-driver](https://www.archlinux.org/packages/?name=lib32-libva-intel-driver).
+
+For more information about vaapi see [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 It may also be necessary to remove the steam runtime version of libva, in order to force it to use system libraries. The current library in use can be found by using:
 
@@ -502,7 +506,7 @@ This can be fixed, by forcing the game to use a version of OpenGL it actually ne
 
 ### 2K games do not run on XFS partitions
 
-If you are running 2K games such as Civilization 5 on [XFS](/index.php/XFS "XFS") partitions, then the game may not start or run properly due to how the game loads files as it starts. [[3]](https://bbs.archlinux.org/viewtopic.php?id=185222)
+If you are running 2K games such as Civilization 5 on [XFS](/index.php/XFS "XFS") partitions, then the game may not start or run properly due to how the game loads files as it starts. [[4]](https://bbs.archlinux.org/viewtopic.php?id=185222)
 
 ### Steam controller not being detected correctly
 

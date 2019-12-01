@@ -6,7 +6,7 @@ Related articles
 *   [S-nail](/index.php/S-nail "S-nail")
 *   [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")
 
-[msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](/index.php/Sendmail "Sendmail") compatibility.
+[msmtp](https://marlam.de/msmtp/) is a very simple and easy to use SMTP client with fairly complete [sendmail](/index.php/Sendmail "Sendmail") compatibility.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -168,7 +168,7 @@ Then you must tell cronie or msmtp what your email address is, either by:
 
 ## Password management
 
-Passwords for msmtp [can be stored](http://msmtp.sourceforge.net/doc/msmtp.html#Authentication) in plaintext, encrypted files, or a keyring.
+Passwords for msmtp [can be stored](https://marlam.de/msmtp/msmtp.html#Authentication) in plaintext, encrypted files, or a keyring.
 
 ### GNOME Keyring
 
@@ -289,7 +289,7 @@ If you see the following message:
 
 it probably means your tls_trust_file is not right.
 
-Just follow the [fine manual](http://msmtp.sourceforge.net/doc/msmtp.html#Transport-Layer-Security). It explains you how to find out the server certificate issuer of a given smtp server. Then you can explore the `/usr/share/ca-certificates/` directory to find out if by any chance, the certificate you need is there. If not, you will have to get the certificate on your own. If you are using your own certificate, you can make msmtp trust it by adding the following to your **~/.msmtprc**:
+Just follow the [fine manual](https://marlam.de/msmtp/msmtp.html#Transport-Layer-Security). It explains you how to find out the server certificate issuer of a given smtp server. Then you can explore the `/usr/share/ca-certificates/` directory to find out if by any chance, the certificate you need is there. If not, you will have to get the certificate on your own. If you are using your own certificate, you can make msmtp trust it by adding the following to your **~/.msmtprc**:
 
 ```
  tls_fingerprint <SHA1 (recommended) or MD5 fingerprint of the certificate>
