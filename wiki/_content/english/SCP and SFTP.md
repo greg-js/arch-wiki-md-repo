@@ -17,6 +17,7 @@ The [Secure copy (SCP)](https://en.wikipedia.org/wiki/Secure_copy "wikipedia:Sec
     *   [2.1 Setup the filesystem](#Setup_the_filesystem)
     *   [2.2 Create an unprivileged user](#Create_an_unprivileged_user)
     *   [2.3 Setup OpenSSH](#Setup_OpenSSH)
+    *   [2.4 Uploads to Chroot jail root dir](#Uploads_to_Chroot_jail_root_dir)
 *   [3 Secure copy protocol (SCP)](#Secure_copy_protocol_(SCP))
     *   [3.1 General Usage](#General_Usage)
         *   [3.1.1 Linux to Linux](#Linux_to_Linux)
@@ -89,6 +90,33 @@ This service allows sftp connections only.
 Connection to someserver.com closed.
 
 ```
+
+### Uploads to Chroot jail root dir
+
+For security reasons the directory set as the chroot directory must be owned by root with only root having write access to it otherwise sftp/ssh connections will be denied. This of course means regular users cannot upload files to the root directory. In order to get around this while not compromising security you can create a folder inside the chroot directory which the regular user or group has write access to, e.g:
+
+```
+# cd /var/lib/jail
+# mkdir uploads
+# chown :sshusers uploads
+# chmod 730 uploads
+
+```
+
+**Note:** This will only allow users of group "sshusers" to upload to (but not list the contents of) the "uploads" directory. Use `chmod 770` to allow sshusers to view contents.
+
+Some applications utilizing SFTP do not allow input of sub-directories when performing operations (e.g. uploading files), and will attempt to upload files to the chroot base directory (which will be denied). In order to force these applications to use a specific sub-directory you can append the following to the "ForceCommand" option:
+
+ `/etc/ssh/sshd_config` 
+```
+...
+ Match group sshusers
+  ...
+  ForceCommand internal-sftp -d /uploads
+
+```
+
+Users on connect will then have their start directory change to the specified sub-directory (remember to restart the sshd server).
 
 ## Secure copy protocol (SCP)
 

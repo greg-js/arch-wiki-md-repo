@@ -163,6 +163,8 @@ run_hook ()
 
 ```
 
+**Warning:** Mounting the file system [is dangerous and destructive](https://www.kernel.org/doc/Documentation/power/swsusp.txt). The keyfile should not be read from a file system that was mounted when the system was suspended.
+
 for opening the swap device by typing your password or
 
  `/etc/initcpio/hooks/openswap` 

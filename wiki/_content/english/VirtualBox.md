@@ -920,7 +920,7 @@ Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](h
 
 ### No hardware 3D acceleration in Arch Linux guest
 
-[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package as of version 5.2.16-2 does not contain the file `VBoxEGL.so`. This causes the Arch Linux guest does not have proper 3D acceleration. See [FS#49752](https://bugs.archlinux.org/task/49752).
+[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package as of version 5.2.16-2 does not contain the file `VBoxEGL.so`. This causes the Arch Linux guest to not have proper 3D acceleration. See [FS#49752](https://bugs.archlinux.org/task/49752).
 
 To deal with this problem, apply the patch set at [FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254). Some fix to the patch set is required to make it work for version 5.2.16-2.
 

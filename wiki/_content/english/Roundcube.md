@@ -69,7 +69,9 @@ Roundcubemail has installation scripts for mssql, Oracle, and [PostgreSQL](/inde
 Copy the example configuration file and adjust it to your configuration:
 
 ```
-# cp /etc/webapps/roundcubemail/config/config.inc.php.sample /etc/webapps/roundcubemail/config/config.inc.php
+# cd /etc/webapps/roundcubemail/config
+# cp config.inc.php.sample config.inc.php
+# chown http:http config.inc.php
 
 ```
 

@@ -608,6 +608,8 @@ $ pulseaudio --start
 
 and check if the module is activated by starting `pavucontrol`. Under `Recording` the input device should show `Echo-Cancel Source Stream from"`.
 
+Turning on `beamforming=1` in the aec_args can also significantly reduce background noise if you have more than one microphone (which is common on many new laptops). However, beamforming requires specifying your `mic_geometry` (see below).
+
 If you want existing streams to be automatically moved to the new sink and source, you have to load the [module-switch-on-connect](#Automatically_switch_to_Bluetooth_or_USB_headset) with `ignore_virtual=no` before.
 
 **Note:** If you plug in a USB sound card or headset, or you have for example a 5.1 Speaker configuration and plug in a headset on your front audio connectors after you have loaded the `module-echo-cancel`, you have to manually unload and load the `module-echo-cancel` again, because unfortunately there is no way to tell the module that it should automatically switch to the new default 'source_master' and 'source_sink'. See [[3]](https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/196).
@@ -626,7 +628,7 @@ Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default
 *   `extended_filter=0` - The extended filter is more complex and less sensitive to incorrect delay reporting from the hardware than the regular filter. The extended filter mode is disabled by default, because it seemed produce worse results during double-talk [[7]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
 *   `intelligibility_enhancer=0` - Some bits for webrtc intelligibility enhancer.
 *   `drift_compensation=0` - Drift compensation to allow echo cancellation between different devices (such as speakers on your laptop and the microphone on your USB webcam). - only possible with "mobile=0".
-*   `beamforming=0` - See [[8]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[9]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
+*   `beamforming=0` - This can significantly reduce background noise. See [[8]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[9]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
     *   `mic_geometry=x1,y1,z1,x2,y2,z2` - Only with "beamforming=1".
     *   `target_direction=a,e,r` - Only with "beamforming=1". Note: If the module does not want to load with this argument, set azimuth (a) to the desired value, but set elevation (e) and radius (r) to 0.
 *   `mobile=0` - ?

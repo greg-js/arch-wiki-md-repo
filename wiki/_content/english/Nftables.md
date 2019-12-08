@@ -422,8 +422,6 @@ Now you can edit /tmp/nftables and apply your changes with:
 
  `/etc/nftables.conf` 
 ```
-#!/usr/bin/nft -f
-
 flush ruleset
 
 table inet filter {
@@ -466,8 +464,6 @@ table inet filter {
 
  `/etc/nftables.conf` 
 ```
-#!/usr/bin/nft -f
-
 flush ruleset
 
 table inet filter {
@@ -631,6 +627,8 @@ table inet nat {
 }
 
 ```
+
+Since the table type is `inet` both IPv4 and IPv6 packets will be masqueraded. If you want only ipv4 packets to be masqueraded (since extra adress space of IPv6 makes NAT not required) `meta nfproto ipv4` expression can be used infront of `oifname "enp2s0" masquerade` or the table type can be changed to `ip`.
 
 ### NAT with port forwarding
 

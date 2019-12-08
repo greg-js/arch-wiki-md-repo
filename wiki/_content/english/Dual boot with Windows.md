@@ -244,7 +244,7 @@ Then, write the new boot sector (boot record):
 
 ## Time standard
 
-*   Recommended: Set both Arch Linux and Windows to use UTC, following [System time#UTC in Windows](/index.php/System_time#UTC_in_Windows "System time"). Some versions of Windows revert the hardware clock back to *localtime* if they are set to synchronize the time online. This issue appear to be fixed in Windows 10.
+*   Recommended: Set both Arch Linux and Windows to use UTC, following [System time#UTC in Windows](/index.php/System_time#UTC_in_Windows "System time"). Some versions of Windows revert the hardware clock back to *localtime* if they are set to synchronize the time online. This issue appears to be fixed in Windows 10.
 *   Not recommended: Set Arch Linux to *localtime* and disable all [time synchronization daemons](/index.php/System_time#Time_synchronization "System time"). This will let Windows take care of hardware clock corrections and you will need to remember to boot into Windows at least two times a year (in Spring and Autumn) when [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") kicks in. So please do not ask on the forums why the clock is one hour behind or ahead if you usually go for days or weeks without booting into Windows.
 
 ## See also

@@ -58,7 +58,7 @@ From the virtual machine, open a terminal and [transfer](/index.php/Rsync "Rsync
 
 Boot a "live" GNU/Linux distribution, mount the root partition and [chroot](/index.php/Chroot "Chroot") into it.
 
-Reinstall your bootloader/boot manager: either [Syslinux](/index.php/Syslinux "Syslinux"), [GRUB](/index.php/GRUB "GRUB") or [Gummiboot](/index.php/Gummiboot "Gummiboot"). Do not forget to update the configuration file: `syslinux.cfg` for Syslinux, `grub.cfg` for Grub, or the Gummiboot boot entries located in `/boot/loader/entries/`.
+Reinstall your bootloader/boot manager: either [Syslinux](/index.php/Syslinux "Syslinux"), [GRUB](/index.php/GRUB "GRUB") or [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Do not forget to update the configuration file: `syslinux.cfg` for Syslinux, `grub.cfg` for Grub, or the systemd-boot boot entries located in `/boot/loader/entries/`.
 
 ### Adjust the fstab
 

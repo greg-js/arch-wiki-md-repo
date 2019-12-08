@@ -105,11 +105,12 @@ There are two methods for using a loop device as an encrypted container, one usi
 Using losetup directly can be avoided completely by doing the following [[1]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile):
 
 ```
-# dd if=/dev/urandom of=bigsecret.img bs=100M count=1 iflag=fullblock
-# cryptsetup luksFormat bigsecret.img
+$ dd if=/dev/urandom of=bigsecret.img bs=100M count=1 iflag=fullblock
+$ cryptsetup luksFormat bigsecret.img
+
 ```
 
-Before running `cryptsetup`, look at the [Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") and [Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") first to select your additional desired settings.
+Before running `cryptsetup`, look at the [encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") and [ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") first to select your additional desired settings.
 
 The instructions for opening the device and making the [file system](/index.php/File_system "File system") are the same as [#Partition](#Partition).
 
@@ -124,7 +125,7 @@ A loop device enables to map a blockdevice to a file with the standard util-linu
 First, start by creating an encrypted container, using an appropriate [random number generator](/index.php/Random_number_generator "Random number generator"):
 
 ```
-# dd if=/dev/urandom of=bigsecret.img bs=100M count=1 iflag=fullblock
+$ dd if=/dev/urandom of=bigsecret.img bs=100M count=1 iflag=fullblock
 
 ```
 
@@ -139,7 +140,7 @@ Next create the device node `/dev/loop0`, so that we can mount/use our container
 
 ```
 
-**Note:** If it gives you the error `/dev/loop0: No such file or directory`, you need to first load the kernel module with `modprobe loop`. These days (Kernel 3.2) loop devices are created on demand. Ask for a new loop device with `# losetup -f`.
+**Note:** If it gives you the error `/dev/loop0: No such file or directory`, you need to first load the kernel module with `modprobe loop` as root. These days (Kernel 3.2) loop devices are created on demand. Ask for a new loop device with `losetup -f` as root.
 
 From now on the procedure is the same as for [#Partition](#Partition), except for the fact that the container is already randomised and will not need another secure erasure.
 

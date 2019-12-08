@@ -37,7 +37,7 @@
 
 ## Project Status
 
-Although the [elementary OS](https://elementary.io/) release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions") LTS release cycle, [development](https://plus.google.com/communities/104613975513761463450) moves quickly and has recently moved to [github](https://github.com/elementary).
+Although the [elementary OS](https://elementary.io/) release schedule and toolchain are bound to [Ubuntu's](/index.php/Arch_compared_to_other_distributions#Ubuntu "Arch compared to other distributions") LTS release cycle, [development](https://elementarycommunity.slack.com/) moves quickly and has recently moved to [github](https://github.com/elementary).
 
 ## Installation
 
@@ -138,7 +138,7 @@ For applications which do not provide a [systemd unit](/index.php/Systemd#Using_
 
 *   Keep running in the background:
 
-	Add it to the [dconf key](#Configuration) `org.pantheon.desktop.cerbere.monitored-processes`.
+	Add it to the [dconf key](#Configuration) `io.elementary.desktop.cerbere.monitored-processes`.
 
 	Should the process stop, [cerbere](https://www.archlinux.org/packages/?name=cerbere) will respawn it.
 
@@ -162,21 +162,17 @@ At the minimum, you'll probably want to install:
 *   [wingpanel-indicator-datetime](https://aur.archlinux.org/packages/wingpanel-indicator-datetime/) or [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/): Clock and calendar widget
 *   [wingpanel-indicator-session](https://aur.archlinux.org/packages/wingpanel-indicator-session/) or [wingpanel-indicator-session-git](https://aur.archlinux.org/packages/wingpanel-indicator-session-git/): User and session menu (Switch user, Logout, Shutdown, etc.)
 
-**Note:** [wingpanel](https://aur.archlinux.org/packages/wingpanel/) supports [Ayatana indicators](/index.php/Unity "Unity"), while [wingpanel-git](https://aur.archlinux.org/packages/wingpanel-git/) has native indicators (*wingpanel-indicator-*-git*).
-
 #### Third-party indicators
 
 *   If launched by a [display manager](#Via_Display_manager), append `Pantheon;` to `OnlyShowIn=` in third-party indicators' [*.desktop files](/index.php/XDG_Autostart "XDG Autostart")
 
 *   If launched by [~/.xinitrc](#Via_xinit), add third-party indicators to one of the start-up methods described [above](#Launching_Pantheon).
 
-*   [Ayatana Indicators](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana/) or [wingpanel-indicator-ayatana-git](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana-git/) to appear in [wingpanel-git](https://aur.archlinux.org/packages/wingpanel-git/).
+*   [Ayatana Indicators](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana/) or [wingpanel-indicator-namarupa-git](https://aur.archlinux.org/packages/wingpanel-indicator-namarupa-git/) to appear in [wingpanel](https://aur.archlinux.org/packages/wingpanel/).
 
 #### Indicator-session menus unresponsive
 
-*   [indicator-session](https://aur.archlinux.org/packages/indicator-session/) relies on dbus methods provided by [Unity](/index.php/Unity "Unity") for most of its functions and fails to fallback to gnome or systemd methods in its absence.
-
-*   [wingpanel-indicator-session-git](https://aur.archlinux.org/packages/wingpanel-indicator-session-git/) needs [light-locker](/index.php/Light-locker "Light-locker") or [xscreensaver-dbus-screenlock](https://aur.archlinux.org/packages/xscreensaver-dbus-screenlock/) installed for the `Lock` menu item.
+*   [wingpanel-indicator-session](https://aur.archlinux.org/packages/wingpanel-indicator-session/) needs [light-locker](/index.php/Light-locker "Light-locker") or [xscreensaver-dbus-screenlock](https://aur.archlinux.org/packages/xscreensaver-dbus-screenlock/) installed for the `Lock` menu item.
 
 ### Plank
 
@@ -196,7 +192,7 @@ If you want to enable context menu entries such as for [file-roller](https://www
 
 #### Opacity
 
-To make [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) (semi-)transparent, [set the dconf key](#Configuration) `org.pantheon.terminal.settings.opacity` to your desired opacity; for [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/), the background color and transparency are set by `io.elementary.terminal.settings.background`.
+To make [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) (semi-)transparent, [set the dconf key](#Configuration) `io.elementary.terminal.settings.background` to your desired background color and opacity.
 
 ## Known Issues
 

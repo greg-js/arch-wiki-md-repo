@@ -28,11 +28,10 @@ You can use one of following methods in order to use ICQ in Arch:
 
 ### Graphical clients
 
-*   [icqdesktop-bin](https://aur.archlinux.org/packages/icqdesktop-bin/), the official ICQ client from owner Mail.ru, built by Arch Linux
+*   [icqdesktop-bin](https://aur.archlinux.org/packages/icqdesktop-bin/), the official ICQ client from owner Mail.ru
 *   [pidgin](https://www.archlinux.org/packages/?name=pidgin) (install [purple-icyque-git](https://aur.archlinux.org/packages/purple-icyque-git/) with it for the WIM protocol)
 *   [jitsi](https://aur.archlinux.org/packages/jitsi/)
 *   [kopete](https://www.archlinux.org/packages/?name=kopete)
-*   [licq](https://www.archlinux.org/packages/?name=licq)
 *   [qutim](https://aur.archlinux.org/packages/qutim/)
 
 ### Command-line clients

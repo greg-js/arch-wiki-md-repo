@@ -76,7 +76,7 @@ All scenarios illustrated in the following share these advantages, other pros an
 | Scenarios | Advantages | Disadvantages |
 | [#LUKS on a partition](#LUKS_on_a_partition)
 
-shows a basic and straight-forward set-up for a fully LUKS encrypted root.
+shows a basic and straightforward set-up for a fully LUKS encrypted root.
 
  | 
 
@@ -207,8 +207,8 @@ This example covers a full system encryption with *dm-crypt* + LUKS in a simple 
 +-----------------------+------------------------+-----------------------+
 | Boot partition        | LUKS2 encrypted system | Optional free space   |
 |                       | partition              | for additional        |
-|                       |                        | partitions or swap    |
-| /boot                 | /                      | to be setup later     |
+|                       |                        | partitions to be set  |
+| /boot                 | /                      | up later              |
 |                       |                        |                       |
 |                       | /dev/mapper/cryptroot  |                       |
 |                       |------------------------|                       |
@@ -319,7 +319,7 @@ The `*device-UUID*` refers to the UUID of `/dev/sda2`. See [Persistent block dev
 
 ## LVM on LUKS
 
-The straight-forward method is to set up [LVM](/index.php/LVM "LVM") on top of the encrypted partition instead of the other way round. Technically the LVM is setup inside one big encrypted blockdevice. Hence, the LVM is not transparent until the blockdevice is unlocked and the underlying volume structure is scanned and mounted during boot.
+The straightforward method is to set up [LVM](/index.php/LVM "LVM") on top of the encrypted partition instead of the other way round. Technically the LVM is setup inside one big encrypted blockdevice. Hence, the LVM is not transparent until the blockdevice is unlocked and the underlying volume structure is scanned and mounted during boot.
 
 The disk layout in this example is:
 

@@ -503,7 +503,7 @@ load-module module-suspend-on-idle
 
 ```
 
-*server-address* может быть простым именем домена или IPv4, больше информации можно найти в [the документации](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/ServerStrings/)
+*server-address* может быть простым именем домена или IPv4, больше информации можно найти в [документации](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/ServerStrings/)
 
 Также можно установить адрес сервера в переменной окружения `$PULSE_SERVER`.
 

@@ -7,7 +7,7 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visão geral](#Visão_geral)
-*   [2 LUKS dentro de uma partição](#LUKS_dentro_de_uma_partição)
+*   [2 LUKS em uma partição](#LUKS_em_uma_partição)
     *   [2.1 Preparando o disco](#Preparando_o_disco)
     *   [2.2 Preparando partições que não são de boot](#Preparando_partições_que_não_são_de_boot)
     *   [2.3 Preparando a partição de boot](#Preparando_a_partição_de_boot)
@@ -21,13 +21,13 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
     *   [3.4 Configurando o mkinitcpio](#Configurando_o_mkinitcpio_2)
     *   [3.5 Configurando o gerenciador de boot](#Configurando_o_gerenciador_de_boot_2)
 *   [4 LUKS dentro do LVM](#LUKS_dentro_do_LVM)
-    *   [4.1 Preparing the disk](#Preparing_the_disk)
-    *   [4.2 Preparing the logical volumes](#Preparing_the_logical_volumes)
-    *   [4.3 Preparing the boot partition](#Preparing_the_boot_partition)
-    *   [4.4 Configuring mkinitcpio](#Configuring_mkinitcpio)
-    *   [4.5 Configuring the boot loader](#Configuring_the_boot_loader)
-    *   [4.6 Configuring fstab and crypttab](#Configuring_fstab_and_crypttab)
-    *   [4.7 Encrypting logical volume /home](#Encrypting_logical_volume_/home)
+    *   [4.1 Preparando o disco](#Preparando_o_disco_3)
+    *   [4.2 Preparando os volumes lógicos](#Preparando_os_volumes_lógicos_2)
+    *   [4.3 Preparando a partição de boot](#Preparando_a_partição_de_boot_2)
+    *   [4.4 Configurando o mkinitcpio](#Configurando_o_mkinitcpio_3)
+    *   [4.5 Configurando o gerenciador de boot](#Configurando_o_gerenciador_de_boot_3)
+    *   [4.6 Configurando o fstab e crypttab](#Configurando_o_fstab_e_crypttab)
+    *   [4.7 Criptografando o volume lógico /home](#Criptografando_o_volume_lógico_/home)
 *   [5 LUKS on software RAID](#LUKS_on_software_RAID)
     *   [5.1 Preparing the disks](#Preparing_the_disks)
     *   [5.2 Building the RAID array](#Building_the_RAID_array)
@@ -36,20 +36,20 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
     *   [5.5 Creating the keyfiles](#Creating_the_keyfiles)
     *   [5.6 Configuring the system](#Configuring_the_system)
 *   [6 Plain dm-crypt](#Plain_dm-crypt)
-    *   [6.1 Preparing the disk](#Preparing_the_disk_2)
+    *   [6.1 Preparing the disk](#Preparing_the_disk)
     *   [6.2 Preparing the non-boot partitions](#Preparing_the_non-boot_partitions)
-    *   [6.3 Preparing the boot partition](#Preparing_the_boot_partition_2)
-    *   [6.4 Configuring mkinitcpio](#Configuring_mkinitcpio_2)
-    *   [6.5 Configuring the boot loader](#Configuring_the_boot_loader_2)
+    *   [6.3 Preparing the boot partition](#Preparing_the_boot_partition)
+    *   [6.4 Configuring mkinitcpio](#Configuring_mkinitcpio)
+    *   [6.5 Configuring the boot loader](#Configuring_the_boot_loader)
     *   [6.6 Post-installation](#Post-installation)
 *   [7 Encrypted boot partition (GRUB)](#Encrypted_boot_partition_(GRUB))
-    *   [7.1 Preparing the disk](#Preparing_the_disk_3)
-    *   [7.2 Preparing the logical volumes](#Preparing_the_logical_volumes_2)
-    *   [7.3 Configuring mkinitcpio](#Configuring_mkinitcpio_3)
+    *   [7.1 Preparing the disk](#Preparing_the_disk_2)
+    *   [7.2 Preparing the logical volumes](#Preparing_the_logical_volumes)
+    *   [7.3 Configuring mkinitcpio](#Configuring_mkinitcpio_2)
     *   [7.4 Configuring GRUB](#Configuring_GRUB_2)
     *   [7.5 Avoiding having to enter the passphrase twice](#Avoiding_having_to_enter_the_passphrase_twice)
 *   [8 Btrfs subvolumes with swap](#Btrfs_subvolumes_with_swap)
-    *   [8.1 Preparing the disk](#Preparing_the_disk_4)
+    *   [8.1 Preparing the disk](#Preparing_the_disk_3)
     *   [8.2 Preparing the system partition](#Preparing_the_system_partition)
         *   [8.2.1 Create LUKS container](#Create_LUKS_container)
         *   [8.2.2 Unlock LUKS container](#Unlock_LUKS_container)
@@ -61,10 +61,10 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
         *   [8.3.3 Mount top-level subvolumes](#Mount_top-level_subvolumes)
         *   [8.3.4 Create nested subvolumes](#Create_nested_subvolumes)
         *   [8.3.5 Mount ESP](#Mount_ESP)
-    *   [8.4 Configuring mkinitcpio](#Configuring_mkinitcpio_4)
+    *   [8.4 Configuring mkinitcpio](#Configuring_mkinitcpio_3)
         *   [8.4.1 Create keyfile](#Create_keyfile)
         *   [8.4.2 Edit mkinitcpio.conf](#Edit_mkinitcpio.conf)
-    *   [8.5 Configuring the boot loader](#Configuring_the_boot_loader_3)
+    *   [8.5 Configuring the boot loader](#Configuring_the_boot_loader_2)
     *   [8.6 Configuring swap](#Configuring_swap)
 
 ## Visão geral
@@ -74,7 +74,7 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
 Todos os cenários ilustrados a seguir compartilham as vantagens supracitadas, prós e contras que os diferenciam estão resumidos abaixo:
 
 | Cenários | Vantagens | Desvantagens |
-| [#LUKS dentro de uma partição](#LUKS_dentro_de_uma_partição)
+| [#LUKS em uma partição](#LUKS_em_uma_partição)
 
 Mostra uma configuração básica e direta para uma partição principal criptografada com LUKS.
 
@@ -203,9 +203,9 @@ o formato LUKS2 tem grande uso de RAM por escolha de design, o padrão é 1GB po
 
 ```
 
-## LUKS dentro de uma partição
+## LUKS em uma partição
 
-Este exemplo demonstra um sistema criptografado com *dm-crypt* + LUKS dentro de uma partição:
+Este exemplo demonstra um sistema criptografado com *dm-crypt* + LUKS em uma partição:
 
 ```
 +--------------------+-------------------------------+-----------------------+
@@ -456,7 +456,7 @@ Monte a partição para `/mnt/boot`:
 
 ### Configurando o mkinitcpio
 
-Adicione os hooks `keyboard`, `encrypt` e `lvm2` para o [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Adicione os hooks `keyboard`, `encrypt` e `lvm2` em [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
@@ -488,68 +488,68 @@ rd.luks.name=*UUID-do-dispositivo*=cryptlvm root=/dev/MeuGrupoVol/raiz
 
 ```
 
-o `*UUID-do-dispositivo*` é para ser substituído pelo UUID da partição raiz, nesse caso `/dev/sda1`. Veja [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") para mais detalhes.
+o `*UUID-do-dispositivo*` precisa ser substituído pelo UUID da partição raiz, nesse caso `/dev/sda1`. Veja [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") para mais detalhes.
 
-Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") para mais informação sobre.
+Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") para mais informação sobre.
 
 ## LUKS dentro do LVM
 
-To use encryption on top of [LVM](/index.php/LVM "LVM"), the LVM volumes are set up first and then used as the base for the encrypted partitions. This way, a mixture of encrypted and non-encrypted volumes/partitions is possible as well.
+Você deve configurar os volumes do [LVM](/index.php/LVM "LVM") primeiro antes de usá-los como base para as partições criptografadas. Desta maneira, é possível fazer uma mistura de volumes/partições que são criptografadas ou não.
 
-**Tip:** Unlike [#LVM on LUKS](#LVM_on_LUKS), this method allows normally spanning the logical volumes over multiple disks.
+**Dica:** Diferente do [#LVM dentro do LUKS](#LVM_dentro_do_LUKS), este método permite usar volumes lógicos espalhados em múltiplos discos.
 
-The following short example creates a LUKS on LVM setup and mixes in the use of a key-file for the /home partition and temporary crypt volumes for `/tmp` and `/swap`. The latter is considered desirable from a security perspective, because no potentially sensitive temporary data survives the reboot, when the encryption is re-initialised. If you are experienced with LVM, you will be able to ignore/replace LVM and other specifics according to your plan.
+O texto a seguir exemplifica uma configuração do LUKS dentro do LVM que também faz uso de uma keyfile para o volume lógico /home e volumes temporários criptografados para `/tmp` e `/swap`. O último é desejável caso se preocupe com segurança, devido a evitar que dados temporários sensíveis sobrevivam durante a inicialização do sistema. Se tem experiência com LVM, você vai ser capaz de ignorar/trocar alguns dos passos relacionados com ele e outras coisas específicas de acordo com sua vontade.
 
-If you want to span a logical volume over multiple disks that have already been set up, or expand the logical volume for `/home` (or any other volume), a procedure to do so is described in [dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties"). It is important to note that the LUKS encrypted container has to be resized as well.
+Se quer usar volumes lógicos espalhados por múltiplos discos que já foram configurados, ou expandir o `/home` (ou qualquer outro volume), um dos jeitos de como fazer isto é descrito em [dm-crypt/Especificidades#Expandindo LVM em vários discos](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties"). Vale notar que o container criptografado com LUKS precisa ser redimensionado também.
 
-### Preparing the disk
+### Preparando o disco
 
-Partitioning scheme:
-
-```
-+----------------+-------------------------------------------------------------------------------------------------+
-| Boot partition | dm-crypt plain encrypted volume | LUKS2 encrypted volume        | LUKS2 encrypted volume        |
-|                |                                 |                               |                               |
-| /boot          | [SWAP]                          | /                             | /home                         |
-|                |                                 |                               |                               |
-|                | /dev/mapper/swap                | /dev/mapper/root              | /dev/mapper/home              |
-|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
-|                | Logical volume 1                | Logical volume 2              | Logical volume 3              |
-|                | /dev/MyVolGroup/cryptswap       | /dev/MyVolGroup/cryptroot     | /dev/MyVolGroup/crypthome     |
-|                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
-|                |                                                                                                 |
-|   /dev/sda1    |                                   /dev/sda2                                                     |
-+----------------+-------------------------------------------------------------------------------------------------+
+Esquema de particionamento:
 
 ```
++------------------+------------------------------------------------------------------------------------------------+
+| Partição de boot | Volume criptografado com o   | Volume criptografado com LUKS2 | Volume criptografado com LUKS2 |
+|                  | modo plain do dm-crypt       |                                |                                |
+|                  |                              |                                |                                |
+| /boot            | [SWAP]                       | /                              | /home                          |
+|                  |                              |                                |                                |
+|                  | /dev/mapper/swap             | /dev/mapper/raiz               | /dev/mapper/home               |
+|                  |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
+|                  | Volume lógico 1              | Volume lógico 2                | Volume lógico 3                |
+|                  | /dev/MeuGrupoVol/cryptswap   | /dev/MeuGrupoVol/cryptraiz     | /dev/MeuGrupoVol/crypthome     |
+|                  |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
+|   /dev/sda1      |                                   /dev/sda2                                                    |
++------------------+------------------------------------------------------------------------------------------------+
 
-Randomise `/dev/sda2` according to [dm-crypt/Drive preparation#dm-crypt wipe on an empty disk or partition](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_on_an_empty_disk_or_partition "Dm-crypt/Drive preparation").
+```
 
-### Preparing the logical volumes
+sobrescreva `/dev/sda2` de acordo com [dm-crypt/Preparando a unidade de armazenamento#dm-crypt limpa o disco vazio ou partição](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_on_an_empty_disk_or_partition "Dm-crypt/Drive preparation").
+
+### Preparando os volumes lógicos
 
 ```
 # pvcreate /dev/sda2
-# vgcreate MyVolGroup /dev/sda2
-# lvcreate -L 32G -n cryptroot MyVolGroup
-# lvcreate -L 500M -n cryptswap MyVolGroup
-# lvcreate -L 500M -n crypttmp MyVolGroup
-# lvcreate -l 100%FREE -n crypthome MyVolGroup
+# vgcreate MeuGrupoVol /dev/sda2
+# lvcreate -L 32G -n raiz MeuGrupoVol
+# lvcreate -L 500M -n cryptswap MeuGrupoVol
+# lvcreate -L 500M -n crypttmp MeuGrupoVol
+# lvcreate -l 100%FREE -n crypthome MeuGrupoVol
 
 ```
 
 ```
-# cryptsetup luksFormat /dev/MyVolGroup/cryptroot
-# cryptsetup open /dev/MyVolGroup/cryptroot root
-# mkfs.ext4 /dev/mapper/root
-# mount /dev/mapper/root /mnt
+# cryptsetup luksFormat /dev/MeuGrupoVol/cryptraiz
+# cryptsetup open /dev/MeuGrupoVol/cryptraiz raiz
+# mkfs.ext4 /dev/mapper/raiz
+# mount /dev/mapper/raiz /mnt
 
 ```
 
-More information about the encryption options can be found in [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note that `/home` will be encrypted in [#Encrypting logical volume /home](#Encrypting_logical_volume_/home).
+Mais informações sobre opções de encriptação podem ser encontradas em [dm-crypt/Encriptação de dispositivo#opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note que `/home` será criptografada em [#Criptografando o volume lógico /home](#Criptografando_o_volume_lógico_/home).
 
-**Tip:** If you ever have to access the encrypted root from the Arch-ISO, the above `open` action will allow you to after the [LVM shows up](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
+**Dica:** Se você precisar acessar a raiz criptografada pelo archiso, a ação `open` vai possibilitar a execução de comandos para [mostrar volumes do LVM](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
 
-### Preparing the boot partition
+### Preparando a partição de boot
 
 ```
 # dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
@@ -559,65 +559,65 @@ More information about the encryption options can be found in [dm-crypt/Device e
 
 ```
 
-### Configuring mkinitcpio
+### Configurando o mkinitcpio
 
-Add the `keyboard`, `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Adicione os hooks `keyboard`, `lvm2` e `encrypt` em [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **lvm2** **encrypt** filesystems fsck)
 
 ```
 
-If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook with the systemd-based initramfs, the following needs to be set instead:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
 
 ```
 
-See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
+Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes e outros hooks que você pode precisar.
 
-### Configuring the boot loader
+### Configurando o gerenciador de boot
 
-In order to unlock the encrypted root partition at boot, the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") need to be set by the boot loader:
-
-```
-cryptdevice=UUID=*device-UUID*:root root=/dev/mapper/root
+Para abrir a partição raiz criptografada na inicialização, os seguintes [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") precisam ser adicionados ao gerenciador de boot:
 
 ```
-
-If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the following need to be set instead:
-
-```
-rd.luks.name=*device-UUID*=root root=/dev/mapper/root
+cryptdevice=UUID=*UUID-do-dispositivo*:raiz root=/dev/mapper/raiz
 
 ```
 
-The `*device-UUID*` refers to the UUID of `/dev/MyVolGroup/cryptroot`. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt"), o seguinte precisa ser definido ao invés:
 
-See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details.
+```
+rd.luks.name=*UUID-do-dispositivo*=raiz root=/dev/mapper/raiz
 
-### Configuring fstab and crypttab
+```
 
-Both [crypttab](/index.php/Crypttab "Crypttab") and [fstab](/index.php/Fstab "Fstab") entries are required to both unlock the device and mount the filesystems, respectively. The following lines will re-encrypt the temporary filesystems on each reboot:
+O `*UUID-do-dispositivo*` precisa ser substituído pelo UUID do `/dev/MeuGrupoVol/cryptraiz`. Veja [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") para detalhes.
+
+Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") para mais informação sobre.
+
+### Configurando o fstab e crypttab
+
+Ambas as entradas do [crypttab](/index.php/Crypttab "Crypttab") e [fstab](/index.php/Fstab "Fstab") são necessárias para abrir o dispositivo e montar os sistemas de arquivos, respectivamente. As seguintes linhas irão criptografar os sistemas de arquivos temporários a cada inicialização:
 
  `/etc/crypttab` 
 ```
-swap	/dev/MyVolGroup/cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
-tmp	/dev/MyVolGroup/crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
+swap	/dev/MeuGrupoVol/cryptswap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
+tmp	    /dev/MeuGrupoVol/crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
 ```
  `/etc/fstab` 
 ```
-/dev/mapper/root        /       ext4            defaults        0       1
+/dev/mapper/raiz        /       ext4            defaults        0       1
 /dev/sda1               /boot   ext4            defaults        0       2
 /dev/mapper/tmp         /tmp    tmpfs           defaults        0       0
 /dev/mapper/swap        none    swap            sw              0       0
 
 ```
 
-### Encrypting logical volume /home
+### Criptografando o volume lógico /home
 
-Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, each encrypted logical volume requires its own encryption. Yet, unlike the temporary filesystems configured with volatile encryption above, the logical volume for `/home` should of course be persistent. The following assumes you have rebooted into the installed system, otherwise you have to adjust paths. To save on entering a second passphrase at boot, a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") is created:
+Devido a este cenário usar LVM como mapeador primário e dm-crypt como secundário, cada volume lógico precisa ser criptografado separadamente. Apesar disso, diferente dos sistemas de arquivos temporários que foram configurados acima para serem voláteis, o volume lógico para `/home` vai ser persistente. O seguinte assume que você reiniciou o seu sistema criptografado, se você não fez isto, precisará adaptar os caminhos. Para não digitar uma segunda senha na inicialização, uma [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") é criada:
 
 ```
 # mkdir -m 700 /etc/luks-keys
@@ -625,21 +625,21 @@ Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, ea
 
 ```
 
-The logical volume is encrypted with it:
+O volume lógico é criptografado com:
 
 ```
-# cryptsetup luksFormat -v /dev/MyVolGroup/crypthome /etc/luks-keys/home
-# cryptsetup -d /etc/luks-keys/home open /dev/MyVolGroup/crypthome home
+# cryptsetup luksFormat -v /dev/MeuGrupoVol/crypthome /etc/luks-keys/home
+# cryptsetup -d /etc/luks-keys/home open /dev/MeuGrupoVol/crypthome home
 # mkfs.ext4 /dev/mapper/home
 # mount /dev/mapper/home /home
 
 ```
 
-The encrypted mount is configured in both [crypttab](/index.php/Crypttab "Crypttab") and [fstab](/index.php/Fstab "Fstab"):
+A montagem dos volumes criptografados é feita tanto no [crypttab](/index.php/Crypttab "Crypttab") como no [fstab](/index.php/Fstab "Fstab"):
 
  `/etc/crypttab` 
 ```
-home	/dev/MyVolGroup/crypthome   /etc/luks-keys/home
+home	/dev/MeuGrupoVol/crypthome   /etc/luks-keys/home
 
 ```
  `/etc/fstab` 

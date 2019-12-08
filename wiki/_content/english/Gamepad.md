@@ -415,11 +415,11 @@ Steam properly recognizes it as a PS3 pad and Big Picture can be launched with t
 
 ##### Connecting via Bluetooth
 
-Install the [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins), and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) packages, which includes the *sixaxis* plugin. Then [start](/index.php/Start "Start") `bluetooth.service`, plug the controller in via USB, and the plugin should program your PC's bluetooth address into the controller automatically.
+Install the [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugins), and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) packages, which includes the *sixaxis* plugin. Then [start](/index.php/Start "Start") the [bluetooth](/index.php/Bluetooth "Bluetooth") service and ensure bluetooth is powered on. If using *bluetoothctl* start it in a terminal and then plug the controller in via USB. You should be prompted to trust the controller in bluetoothctl. A graphical bluetooth front-end may program your PC's bluetooth address into the controller automatically. Hit the PlayStation button and check that the controller works while plugged in.
 
 You can now disconnect your controller. The next time you hit the PlayStation button it will connect without asking anything else.
 
-Alternatively, you can hold the share button and the PlayStation button simultaneously (for a few seconds) to put the gamepad in pairing mode, and pair as you would normally.
+Alternatively, on a PS4 controller you can hold the share button and the PlayStation button simultaneously (for a few seconds) to put the gamepad in pairing mode, and pair as you would normally.
 
 GNOME's Settings also provides a graphical interface to pair sixaxis controllers when connected by wire.
 

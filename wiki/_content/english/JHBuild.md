@@ -271,11 +271,11 @@ or
 
  `g++: error: /usr/lib/gcc/x86_64-pc-linux-gnu/*gcc_version*/../../../../lib/*name*.o: No such file or directory` 
 
-where *gcc_version* is a previous version which is not the current one, and *name* is the name of the library (.so) or object (.o) that failed to be found.
+where *gcc_version* is a GCC version older than the current one, and *name* is the name of the library (.so) or object (.o) that failed to be found.
 
 This may happen if [gcc](https://www.archlinux.org/packages/?name=gcc) was updated and the software was previously configured and built with the previous version of gcc.
 
-**Solution:** Run Configure phase again, in order to have this module configured with newer GCC version
+**Solution:** Run *Configure* phase again, in order to have this module configured with newer GCC version
 
 ### gst-plugin-bad fails on missing vulkan headers
 

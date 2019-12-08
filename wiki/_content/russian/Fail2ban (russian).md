@@ -139,7 +139,7 @@ ignoreip  = 127.0.0.1/8
 
 **Совет:**
 
-*   При использовании фронтендов [iptables (Русский)](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)"), например, [ufw](/index.php/Ufw "Ufw"), можно использовать `banaction = ufw` вместо iptables.
+*   При использовании фронтендов [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)"), например, [ufw](/index.php/Ufw "Ufw"), можно использовать `banaction = ufw` вместо iptables.
 *   При использовании [Shorewall](/index.php/Shorewall "Shorewall") можно прописать `banaction = shorewall` и также задать значение `ALL` параметру `BLACKLIST` в файле `/etc/shorewall/shorewall.conf`. В противном случае, правила, добавленные для блокировки IP-адреса, будут влиять только на новые соединения.
 
 ### Защита службы
@@ -163,7 +163,7 @@ ReadWritePaths=-/var/spool/postfix/maildrop
 CapabilityBoundingSet=CAP_AUDIT_READ CAP_DAC_READ_SEARCH CAP_NET_ADMIN CAP_NET_RAW
 ```
 
-Параметр `CAP_DAC_READ_SEARCH` (в строке `CapabilityBoundingSet`) позволяет Fail2ban читать любые файлы и каталоги, а `CAP_NET_ADMIN` и `CAP_NET_RAW` позволяют задавать правила межсетевого экрана посредством [iptables (Русский)](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") или [nftables](/index.php/Nftables "Nftables"). Подробнее см. [capabilities(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/capabilities.7).
+Параметр `CAP_DAC_READ_SEARCH` (в строке `CapabilityBoundingSet`) позволяет Fail2ban читать любые файлы и каталоги, а `CAP_NET_ADMIN` и `CAP_NET_RAW` позволяют задавать правила межсетевого экрана посредством [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") или [nftables](/index.php/Nftables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nftables (Русский)"). Подробнее см. [capabilities(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/capabilities.7).
 
 При использовании параметра `ProtectSystem=strict` иерархия [файловой системы](/index.php/File_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "File systems (Русский)") будет доступна только для чтения, а `ReadWritePaths` позволит Fail2ban также вести запись в заданные каталоги.
 

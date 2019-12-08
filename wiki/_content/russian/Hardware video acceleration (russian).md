@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Дата последней синхронизации: 9 ноября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Hardware_video_acceleration&diff=0&oldid=588267).
+**Состояние перевода:** На этой странице представлен перевод статьи [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Дата последней синхронизации: 2 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Hardware_video_acceleration&diff=0&oldid=590360).
 
 [Аппаратное ускорение видео](https://en.wikipedia.org/wiki/Graphics_processing_unit#GPU_accelerated_video_decoding "wikipedia:Graphics processing unit") (англ.) позволяет выполнять операции кодирования и декодирования видео на стороне видеокарты, разгружая CPU и экономя энергию.
 
@@ -274,8 +274,8 @@ GeForce 8 и новее | Radeon HD 4000 и новее |
 | H.265/HEVC 10bit | Broxton и новее | Broxton/Apollo Lake и новее | Radeon 400 и новее |
 | VP8 | Broadwell и новее | Broadwell и новее | Нет | Нет |
 | VP9 8bit | Broxton и новее
-Гибридное: Broadwell to Skylake | Broxton/Apollo Lake и новее | Raven Ridge и новее | См. [#Драйверы VDPAU](#Драйверы_VDPAU) |
-| VP9 10bit | Kaby Lake и новее | Kaby Lake и новее |
+Гибридное: Broadwell to Skylake | Broxton/Apollo Lake и новее | Raven Ridge и новее | Нет |
+| VP9 10bit | Kaby Lake и новее | Kaby Lake и новее | No |
 | Кодирование |
 | MPEG-2 | Ivy Bridge и новее | Broadwell и новее
 кроме Broxton/Apollo Lake | Нет | Нет | Нет |
@@ -291,6 +291,7 @@ GeForce 8 и новее | Radeon HD 4000 и новее |
 *   Поддерживается [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/).
 *   Гибридный кодировщик VP8 и декодировщик VP9 поддерживается [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). См. также "[Сбои декодирования VP9 на Haswell](https://github.com/intel/intel-hybrid-driver/issues/21)" (англ.).
 *   MPEG-4 отключён по умолчанию из-за ограничений VAAPI. Задайте [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `VAAPI_MPEG4_ENABLED=true`, если вы всё-таки хотите протестировать данную функцию.
+*   Не реализовано в [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver), так как никто не занимается поддержкой и разработкой проекта. См. [#Драйверы VDPAU](#Драйверы_VDPAU).
 
 ### Драйверы VDPAU
 

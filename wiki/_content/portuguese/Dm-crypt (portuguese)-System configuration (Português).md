@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration"). Data da última tradução: 2019-12-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/System_configuration&diff=0&oldid=590453) na versão em inglês.
+
 **Dica:**
 
 *   Se precisa desbloquear remotamente o sistema de arquivos da partição raiz ou de outras partições na inicialização (máquinas sem monitor, servidores distantes...), siga instruções específicas em [dm-crypt/Especificidades#Desbloqueio remoto da partição raiz (ou outra)](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_(or_other)_partition "Dm-crypt/Specialties").
@@ -19,19 +21,19 @@
         *   [2.2.1 cryptdevice](#cryptdevice)
         *   [2.2.2 cryptkey](#cryptkey)
         *   [2.2.3 crypto](#crypto)
-    *   [2.3 Using sd-encrypt hook](#Using_sd-encrypt_hook)
+    *   [2.3 Usando o hook sd-encrypt](#Usando_o_hook_sd-encrypt)
         *   [2.3.1 rd.luks.uuid](#rd.luks.uuid)
         *   [2.3.2 rd.luks.name](#rd.luks.name)
         *   [2.3.3 rd.luks.options](#rd.luks.options)
         *   [2.3.4 rd.luks.key](#rd.luks.key)
         *   [2.3.5 Timeout](#Timeout)
 *   [3 crypttab](#crypttab)
-    *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
-        *   [3.1.1 Unlocking with a keyfile](#Unlocking_with_a_keyfile)
-        *   [3.1.2 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
-    *   [3.2 Mounting on demand](#Mounting_on_demand)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 System stuck on boot/password prompt does not show](#System_stuck_on_boot/password_prompt_does_not_show)
+    *   [3.1 Montando na inicialização](#Montando_na_inicialização)
+        *   [3.1.1 Desbloqueando com uma keyfile](#Desbloqueando_com_uma_keyfile)
+        *   [3.1.2 Montando um dispositivo de bloco empilhado](#Montando_um_dispositivo_de_bloco_empilhado)
+    *   [3.2 Montando em demanda](#Montando_em_demanda)
+*   [4 Solução de problemas](#Solução_de_problemas)
+    *   [4.1 Sistema travado no prompt de inicialização/senha não aparece](#Sistema_travado_no_prompt_de_inicialização/senha_não_aparece)
 
 ## mkinitcpio
 
@@ -127,136 +129,136 @@ cryptdevice=*dispositivo*:*nomedm*
 
 #### cryptkey
 
-This parameter specifies the location of a keyfile and is required by the `*encrypt*` hook for reading such a keyfile to unlock the `*cryptdevice*` (unless a key is in the default location, see below). It can have three parameter sets, depending on whether the keyfile exists as a file in a particular device, a bitstream starting on a specific location, or a file in the initramfs.
+Este parâmetro especifica a localização de uma keyfile e é necessário o hook `*encrypt*` para ler e abrir o `*cryptdevice*` (a menos que a chave está em um caminho padrão, veja abaixo). Três parâmetros podem ser definidos, dependendo de como a keyfile existe, pode ser um arquivo no dispositivo, uma bitstream que começa em uma localização específica ou um arquivo incluido no initramfs.
 
-For a file in a device the format is:
-
-```
-cryptkey=*device*:*fstype*:*path*
+Para um arquivo no dispositivo o formato é:
 
 ```
-
-*   `*device*` is the raw block device where the key exists.
-*   `*fstype*` is the filesystem type of `*device*` (or auto).
-*   `*path*` is the absolute path of the keyfile within the device.
-
-Example: `cryptkey=/dev/usbstick:vfat:/secretkey`
-
-For a bitstream on a device the key's location is specified with the following:
-
-```
-cryptkey=*device*:*offset*:*size* 
+cryptkey=*dispositivo*:*tipo_do_sistema_de_arquivos*:*caminho*
 
 ```
 
-where the offset and size are in bytes. Example: `cryptkey=/dev/sdZ:0:512` reads a 512 byte keyfile starting at the beginning of the device.
+*   `*dispositivo*` é o dispositivo de bloco onde a keyfile se encontra.
+*   `*tipo_do_sistema_de_arquivos*` é o tipo do sistema de arquivos do `*dispositivo*` (ou auto).
+*   `*caminho*` é o caminho absoluto da keyfile dentro do dispositivo.
 
-**Tip:** If the device path you want to access contains the character `:`, you have to escape it with a backslash `\`. In that case the cryptkey parameter would be as follow: `cryptkey=/dev/disk/by-id/usb-123456-0\:0:0:512` for a usb key with the id `usb-123456-0:0`.
+Exemplo: `cryptkey=/dev/sdb1:vfat:/chave_secreta`
 
-For a file [included](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") in the initramfs the format is[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n14):
+Para uma bitstream no dispositivo, a localização é especificada com:
 
 ```
-cryptkey=rootfs:*path*
+cryptkey=*dispositivo*:*início*:*tamanho* 
 
 ```
 
-Example: `cryptkey=rootfs:/secretkey`
+Onde início e tamanho estão em bytes. Exemplo: `cryptkey=/dev/sdZ:0:512` lê uma keyfile de 512 byte no começo do dispositivo.
 
-Also note that if `cryptkey` is not specified, it defaults to `/crypto_keyfile.bin` (in the initramfs).[[2]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n8)
+**Dica:** Se o caminho do dispositivo que você quer acessar contém o caracter `:`, terá que escapar isto com `\`. Neste caso o parâmetro cryptkey deve ser semelhante a: `cryptkey=/dev/disk/by-id/usb-123456-0\:0:0:512`, este exemplo é de um pendrive com o id `usb-123456-0:0`.
 
-See also [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
+Para um arquivo [incluído](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") no initramfs o formato é[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n14):
+
+```
+cryptkey=rootfs:*caminho*
+
+```
+
+Exemplo: `cryptkey=rootfs:/chave_secreta`
+
+Também note que se `cryptkey` não é especificada, o padrão `/crypto_keyfile.bin` (arquivo incluído no initramfs) será utilizado.[[2]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n8)
+
+Veja também [dm-crypt/Encriptação de dispositivo#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
 
 #### crypto
 
-This parameter is specific to pass *dm-crypt* plain mode options to the *encrypt* hook.
+Este parâmetro é especifíco para passar opções do modo plain do *dm-crypt* para o hook *encrypt*.
 
-It takes the form
-
-```
-crypto=<hash>:<cipher>:<keysize>:<offset>:<skip>
+Sua forma é:
 
 ```
+crypto=<hash>:<cifra>:<tamanho_da_chave>:<início>:<pule>
 
-The arguments relate directly to the *cryptsetup* options. See [dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption").
+```
 
-For a disk encrypted with just *plain* default options, the `crypto` arguments must be specified, but each entry can be left blank:
+Os argumentos são relacionados diretamente a opções do *cryptsetup*. Veja [dm-crypt/Encriptação de dispositivo#Opções de encriptação para o modo plain](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption").
+
+Para um disco criptografado com somente as opções padrão do modo *plain*, o argumento `crypto` deve ser especificado, mas cada entrada pode ser vazia:
 
 ```
 crypto=::::
 
 ```
 
-A specific example of arguments is
+Um exemplo especifíco é:
 
 ```
 crypto=sha512:twofish-xts-plain64:512:0:
 
 ```
 
-### Using sd-encrypt hook
+### Usando o hook sd-encrypt
 
-In all of the following a `rd.luks` can be replaced with a `luks`. The `rd.luks` parameters are only honored by the initrd, while the `luks` parameters are honored by both the main system and initrd. Unless you want to control devices which get unlocked after boot from kernel command line, use `rd.luks`. See [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
+Todos os seguintes `rd.luks` podem ser trocados por `luks`. Os parâmetros `rd.luks` são somente reconhecidos pelo initrd, enquanto `luks` são reconhecidos tanto pelo sistema quanto pelo initrd. A menos que você queira controlar os dispositivos com argumentos dados ao kernel enquanto o sistema é inicializado, use `rd.luks`. Veja [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) para mais informações e detalhes.
 
-**Tip:**
+**Dica:**
 
-*   If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`, you can specify devices that need to be unlocked at boot there. Syntax is documented in [#crypttab](#crypttab) and [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5).
-*   `/etc/crypttab.initramfs` is not limited to using only UUID like `rd.luks`. You can use any of the [persistent block device naming methods](/index.php/Persistent_block_device_naming#Persistent_naming_methods "Persistent block device naming").
+*   Se o arquivo `/etc/crypttab.initramfs` existe, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") o adicionará ao initramfs como `/etc/crypttab`, você pode especificar nele dispositivos que precisam ser desbloqueados durante a inicialização. Sintaxe é documentada em [#crypttab](#crypttab) e [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5).
+*   `/etc/crypttab.initramfs` não é limitado somente ao uso do UUID como o `rd.luks`. Você pode usar qualquer um dos [métodos de nomeação persistente de dispositivo de bloco](/index.php/Persistent_block_device_naming#Persistent_naming_methods "Persistent block device naming").
 
-**Note:**
+**Nota:**
 
-*   If you get dropped to an emergency shell at boot with systemd release 239.300-2 or later, see [FS#60907](https://bugs.archlinux.org/task/60907).
-*   All of the `rd.luks` parameters can be specified multiple times to unlock multiple LUKS encrypted volumes.
-*   The `rd.luks` parameters only support unlocking detectable LUKS devices. To unlock a plain dm-crypt device or a LUKS device with a detached header, you must specify it in `/etc/crypttab.initramfs`. See [#crypttab](#crypttab) for the syntax.
+*   Se você entrou no shell de emergência durante a inicialização com a versão 239.300-2 ou superior do systemd, veja [FS#60907](https://bugs.archlinux.org/task/60907).
+*   Todos os parâmetros do `rd.luks` podem ser especificados múltiplas vezes para múltiplos volumes criptografados LUKS.
+*   Os parâmetros do `rd.luks` somente suportam dispositivos LUKS detectáveis. Para abrir um dispositivo dm-crypt plain ou com cabeçalho do LUKS desanexado, você deve especificá-lo em `/etc/crypttab.initramfs`. Veja [#crypttab](#crypttab) para a sintaxe.
 
-**Warning:** If you are using `/etc/crypttab` or `/etc/crypttab.initramfs` together with `luks.*` or `rd.luks.*` parameters, only those devices specified on the kernel command line will be activated and you will see `Not creating device 'devicename' because it was not specified on the kernel command line.`. To activate all devices in `/etc/crypttab` do not specify any `luks.*` parameters and use `rd.luks.*`. To activate all devices in `/etc/crypttab.initramfs` do not specify any `luks.*` or `rd.luks.*` parameters.
+**Atenção:** Se você está usando o `/etc/crypttab` ou `/etc/crypttab.initramfs` junto com os parâmetros `luks.*` ou `rd.luks.*`, somente os dispositivos especificados na linha de comando do kernel serão ativados e você verá `Not creating device 'devicename' because it was not specified on the kernel command line.`. Para ativar todos os dispositivos em `/etc/crypttab` não especifique nenhum parâmetro `luks.*` e use `rd.luks.*`. Para ativar todos os dispositivos em `/etc/crypttab.initramfs` não especifique nenhum parâmetro `luks.*` or `rd.luks.*`.
 
 #### rd.luks.uuid
 
-**Tip:** `rd.luks.uuid` can be omitted when using `rd.luks.name`.
+**Dica:** `rd.luks.uuid` pode ser omitido ao usar `rd.luks.name`.
 
 ```
 rd.luks.uuid=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*
 
 ```
 
-Specify the [UUID](/index.php/UUID "UUID") of the device to be decrypted on boot with this flag. If the UUID is in `/etc/crypttab.initramfs`, the options listed there will be used. For `luks.uuid` options from `/etc/crypttab.initramfs` or `/etc/crypttab` will be used.
+Especifique o [UUID](/index.php/Persistent_block_device_naming_(Portugu%C3%AAs)#by-uuid "Persistent block device naming (Português)") do dispositivo a ser aberto na inicialização com este parâmetro. Se o UUID está em `/etc/crypttab.initramfs`, as opções listadas lá serão utilizadas. Para opções do `luks.uuid`, o `/etc/crypttab.initramfs` ou `/etc/crypttab` será usado.
 
-By default the mapped device will be located at `/dev/mapper/luks-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*` where *XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* is the UUID of the LUKS partition.
+Por padrão o dispositivo mapeado estará localizado en `/dev/mapper/luks-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*` onde *XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* é o UUID da partição LUKS.
 
 #### rd.luks.name
 
-**Tip:** When using this parameter you can omit `rd.luks.uuid`.
+**Dica:** Ao usar este parâmetro, você pode omitir `rd.luks.uuid`.
 
 ```
-rd.luks.name=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*name*
+rd.luks.name=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*nome*
 
 ```
 
-Specify the name of the mapped device after the LUKS partition is open, where *XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* is the UUID of the LUKS partition. This is equivalent to the second parameter of `encrypt`'s `cryptdevice`.
+Especifique o nome do dispositivo mapeado depois que a partição LUKS é aberta, onde *XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* é o UUID dela. É equivalente ao segundo parâmetro do `encrypt`, `cryptdevice`.
 
-For example, specifying `rd.luks.name=12345678-9ABC-DEF0-1234-56789ABCDEF0=cryptroot` causes the unlocked LUKS device with UUID `12345678-9ABC-DEF0-1234-56789ABCDEF0` to be located at `/dev/mapper/cryptroot`.
+Exemplo, especificar `rd.luks.name=12345678-9ABC-DEF0-1234-56789ABCDEF0=cryptraiz` faz o dispositivo LUKS aberto do UUID `12345678-9ABC-DEF0-1234-56789ABCDEF0` estar localizado em `/dev/mapper/cryptroot`.
 
 #### rd.luks.options
 
 ```
-rd.luks.options=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*options*
+rd.luks.options=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*opções*
 
 ```
 
-or
+ou
 
 ```
-rd.luks.options=*options*
+rd.luks.options=*opções*
 
 ```
 
-Set options for the device specified by it UUID or, if not specified, for all UUIDs not specified elsewhere (e.g., crypttab).
+Defina as opções para um dispositivo especificado com o UUID ou, se não especificado, para todos os UUIDs especificados em outro lugar (e.g., crypttab).
 
-This is roughly equivalent to the third parameter of `encrypt`'s `cryptdevice`.
+É relativamente equivalente ao terceiro parâmetro do `encrypt`, `cryptdevice`.
 
-Follows a similar format to options in crypttab - options are separated by commas, options with values are specified using `*option*=*value*`.
+Segue um formato similar às opções usadas no crypttab - opções são separadas por vírgulas, opções com valores são especificados com `*opção*=*valor*`.
 
-For example:
+Exemplo:
 
 ```
 rd.luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
@@ -265,41 +267,41 @@ rd.luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
 
 #### rd.luks.key
 
-Specify the location of a password file used to decrypt the device specified by its UUID. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
+Especifique a localização da keyfile que será utilizada para abrir o dispositivo especificado com o UUID. Não há uma localização padrão para a keyfile, como existe com o parâmetro do hook `encrypt`, `cryptkey`.
 
-If the keyfile is [included](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") in the initramfs:
-
-```
-rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/path/to/keyfile*
+Se a keyfile está [incluída](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") no initramfs:
 
 ```
-
-or
-
-```
-rd.luks.key=*/path/to/keyfile*
+rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/caminho/para/keyfile*
 
 ```
 
-If the keyfile is on another device:
+ou
 
 ```
-rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/path/to/keyfile*:UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*
+rd.luks.key=*/caminho/para/keyfile*
 
 ```
 
-Replace `UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*` with the identifier of the device on which the keyfile is located. If the type of file system is different than your root file system, you must [include the kernel module for it in the initramfs](/index.php/Mkinitcpio#MODULES "Mkinitcpio").
+Se a keyfile está em outro dispositivo:
 
-**Warning:** `rd.luks.key` with a keyfile on another device by default does not fallback to asking for a password if the device is not available. To fallback to a password prompt, specify the `keyfile-timeout=` option in `rd.luks.options`. E.g. for a 10 second timeout: `rd.luks.options=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=keyfile-timeout=10s` 
+```
+rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/caminho/para/keyfile*:UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*
+
+```
+
+Substitua `UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*` com o identificador do dispositivo que a keyfile está localizada. Se o sistema de arquivos utilizado não é o mesmo do sistema raiz, você deve [incluir o módulo dele no initramfs](/index.php/Mkinitcpio#MODULES "Mkinitcpio").
+
+**Atenção:** `rd.luks.key` com uma keyfile em outro dispositivo por padrão não vai pedir a senha caso este não estiver disponível. Para solicitar a senha, especifique a opção `keyfile-timeout=` no `rd.luks.options`. Exemplo, para uma espera de 10 secondos: `rd.luks.options=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=keyfile-timeout=10s` 
 
 #### Timeout
 
-There are two options that affect the timeout for entering the password during boot:
+Existem duas opções que irão afetar o tempo de espera até a senha ser solicitada durante a inicialização:
 
-*   `rd.luks.options=timeout=*mytimeout*` specifies the timeout for querying for a password
-*   `rootflags=x-systemd.device-timeout=*mytimeout*` specifies how long systemd should wait for the rootfs device to show up before giving up (defaults to 90 seconds)
+*   `rd.luks.options=timeout=*tempo_limite*` especifica o tempo máximo para achar a senha
+*   `rootflags=x-systemd.device-timeout=*tempo_limite*` especifica o quanto systemd deve esperar pelo dispositivo até desistir (padrão 90 segundos)
 
-If you want to disable the timeout altogether, then set both timeouts to zero:
+Se deseja desabilitar os tempos de espera, então defina ambos para zero:
 
 ```
 rd.luks.options=timeout=0 rootflags=x-systemd.device-timeout=0
@@ -308,75 +310,75 @@ rd.luks.options=timeout=0 rootflags=x-systemd.device-timeout=0
 
 ## crypttab
 
-The `/etc/crypttab` (encrypted device table) file is similar to the [fstab](/index.php/Fstab "Fstab") file and contains a list of encrypted devices to be unlocked during system boot up. This file can be used for automatically mounting encrypted swap devices or secondary file systems.
+O arquivo `/etc/crypttab` (tabela de dispositivos criptografados) é similar ao arquivo [fstab](/index.php/Fstab "Fstab") e contém uma lista de dispositivos criptografados que serão abertos durante a inicialização. Este arquivo pode ser usado para montar automaticamente dispositivos swap ou sistemas de arquivos não raiz.
 
-`crypttab` is read *before* `fstab`, so that dm-crypt containers can be unlocked before the file system inside is mounted. Note that `crypttab` is read *after* the system has booted up, therefore it is not a replacement for unlocking encrypted partitions by using [mkinitcpio](#mkinitcpio) hooks and [boot loader options](#Boot_loader) as in the case of [encrypting the root partition](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). `crypttab` processing at boot time is made by the `systemd-cryptsetup-generator` automatically.
+`crypttab` é lido *antes* do `fstab`, então os containers do dm-crypt podem ser abertos antes que o sistema de arquivos seja montado. Note que `crypttab` é lido *depois* que o sistema inicia, logo não é um substituto para abrir partições criptografadas com os hooks do [mkinitcpio](#mkinitcpio) e [opções do gerenciador de boot](#Gerenciador_de_boot) como no caso de [criptografar a partição raiz](/index.php/Dm-crypt/Criptografando_todo_um_sistema "Dm-crypt/Criptografando todo um sistema"). A leitura do `crypttab` é feita na inicialização pelo `systemd-cryptsetup-generator` automaticamente.
 
-See [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) for details, read below for some examples, and the [#Mounting at boot time](#Mounting_at_boot_time) section for instructions on how to use UUIDs to mount an encrypted device.
+Veja [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) para detalhes, veja abaixo alguns exemplos, e a seção [#Montando na inicialização](#Montando_na_inicialização) para instruções de como usar UUIDs para montar um dispositivo criptografado.
 
-**Note:** When using [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and the `sd-encrypt` hook, if a non-root partition's passphrase is the same as root's, there is no need to put that non-root partition in crypttab due to passphrase caching. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=219859) for more information.
+**Nota:** Se usa o [systemd-boot](/index.php/Systemd-boot "Systemd-boot") e o hook `sd-encrypt`, se a senha de uma partição não raiz é igual a da raiz, não há necessidade de colocar a partição não raiz no crypttab devido ao cache da senha. Veja [esta conversa no fórum](https://bbs.archlinux.org/viewtopic.php?id=219859) para mais informações.
 
-**Warning:**
+**Atenção:**
 
-*   If the *nofail* option is specified, the password entry screen may disappear while typing the password. *nofail* should therefore only be used together with keyfiles.
-*   There are issues with [systemd](/index.php/Systemd "Systemd") when processing `crypttab` entries for *dm-crypt* [plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") (`--type plain`) devices:
-    *   For `--type plain` devices with a keyfile, it is necessary to add the `hash=plain` option to crypttab due to a [systemd incompatibility](https://bugs.freedesktop.org/show_bug.cgi?id=52630). **Do not** use `systemd-cryptsetup` manually for device creation to work around it.
-    *   It may be further required to add the `plain` option explicitly to force `systemd-cryptsetup` to recognize a `--type plain`) device at boot. See [systemd issue 442](https://github.com/systemd/systemd/issues/442).
+*   Se a opção *nofail* é especificada, a tela de entrada da senha pode desaparecer enquanto digita. *nofail* deve então somente ser usada junto com keyfiles.
+*   Existem problemas no [systemd](/index.php/Systemd "Systemd") quando ele processa entradas do `crypttab` para o [modo plain](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") (`--type plain`) do *dm-crypt*:
+    *   Para dispositivos `--type plain` com uma keyfile, é necessário adicionar a opção `hash=plain` para o crypttab devido a uma [incompatibilidade do systemd](https://bugs.freedesktop.org/show_bug.cgi?id=52630). **Não** use `systemd-cryptsetup` manualmente para a criação do dispositivo como medida provisória.
+    *   Pode ser necessário adicionar a opção `plain` explicitamente para forçar `systemd-cryptsetup` a reconhecer o dispositivo (`--type plain`) na inicialização. Veja [issue do systemd 442](https://github.com/systemd/systemd/issues/442).
 
  `/etc/crypttab` 
 ```
-# Example crypttab file. Fields are: name, underlying device, passphrase, cryptsetup options.
+# Exemplo de um arquivo crypttab. campos são: nome, dispositivo criptografado, senha, opções do cryptsetup.
 
-# Mount /dev/lvm/swap re-encrypting it with a fresh key each reboot
+# Monte /dev/lvm/swap criptografando-a com uma nova chave a cada inicialização.
  swap	/dev/lvm/swap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
 
-# Mount /dev/lvm/tmp as /dev/mapper/tmp using plain dm-crypt with a random passphrase, making its contents unrecoverable after it is dismounted.
+# Monte /dev/lvm/tmp como /dev/mapper/tmp usando o modo plain do dm-crypt com uma senha randômica, fazendo seu conteúdo não recuperável depois de desmontada.
 tmp	/dev/lvm/tmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256 
 
-# Mount /dev/lvm/home as /dev/mapper/home using LUKS, and prompt for the passphrase at boot time.
+# Monte /dev/lvm/home como /dev/mapper/home usando LUKS, solicite a senha durante a inicialização.
 home   /dev/lvm/home
 
-# Mount /dev/sdb1 as /dev/mapper/backup using LUKS, with a passphrase stored in a file.
+# Monte /dev/sdb1 como /dev/mapper/backup usando LUKS, com uma senha guardada em um arquivo.
 backup /dev/sdb1       /home/alice/backup.key
 ```
 
-### Mounting at boot time
+### Montando na inicialização
 
-If you want to mount an encrypted drive at boot time, enter the device's UUID in `/etc/crypttab`. You get the UUID (partition) by using the command `lsblk -f` and adding it to `crypttab` in the form:
+Se você quer montar uma unidade de armazenamento criptografada na inicialização, você pode colocar o UUID do dispositivo em `/etc/crypttab`. Para descobrir o UUID (da partição) pode usar o comando `lsblk -f` e adicioná-lo ao `crypttab` desse jeito:
 
- `/etc/crypttab`  `externaldrive         UUID=2f9a8428-ac69-478a-88a2-4aa458565431        none    luks,timeout=180` 
+ `/etc/crypttab`  `disco_externo         UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX        none    luks,timeout=180` 
 
-The first parameter is your preferred device mapper's name for the encrypted drive. The option `none` will trigger a prompt during boot to type the passphrase for unlocking the partition. The `timeout` option defines a timeout in seconds for entering the decryption password during boot.
+O primeiro parâmetro é o nome que o dispositivo criptografado vai receber quando aberto(que fica a sua preferência). A opção `none` fará a senha ser solicitada durante a inicialização. A opção `timeout` define um tempo de espera máximo em segundos para entrar com a senha.
 
-**Note:** Keep in mind that the `timeout` option in `crypttab` only determines the amount of time allowed for *entering the password* of the encrypted device. In addition, [systemd](/index.php/Systemd "Systemd") also has a default timeout which determines the amount of time allowed for *the device to be available* (defaulting to 90 seconds), which is independent of the password timer. In consequence, even when the `timeout` option in `crypttab` is set to a value larger than 90 seconds (or it is at its default value of 0, meaning unlimited time), *systemd* will still only wait a maximum of 90 seconds for the device to be unlocked. In order to change the time *systemd* will wait for a device to be available, the option `x-systemd.device-timeout` (see [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5)) can be set in [fstab](/index.php/Fstab "Fstab") for said device. It is probably desired, then, that the amount of time of the `timeout` option in `crypttab` is equal to the amount of time of the `x-systemd.device-timeout` option in `fstab` for each device mounted at boot time.
+**Nota:** Tenha em mente que a opção `timeout` em `crypttab` somente determina a quantidade de tempo permitida para *entrar com a senha*. Adicionalmente, [systemd](/index.php/Systemd "Systemd") também tem um tempo de espera máximo para o *dispositivo estar disponível* (90 segundos por padrão), que é independente do temporarizador da senha. Consequentemente, até quando a opção `timeout` em `crypttab` é definida para um valor maior que 90 segundos (ou está no seu valor padrão 0, sem limite de tempo), *systemd* esperará no máximo 90 segundos para o dispositivo ser aberto. Para mudar isso, a opção `x-systemd.device-timeout` (veja [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5)) pode ser definida no [fstab](/index.php/Fstab "Fstab") para tal dispositivo. Provavelmente é desejado que a quantidade de tempo da opção `timeout` no `crypttab` é igual a presente na opção `x-systemd.device-timeout` no `fstab` para cada dispositivo montado na inicialização.
 
-#### Unlocking with a keyfile
+#### Desbloqueando com uma keyfile
 
-If the [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off and can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Crypttab "Crypttab"). For example, unlock a crypt specified by [UUID](/index.php/UUID "UUID"):
+Se a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") para um sistema de arquivos não raiz está guardada dentro do sistema criptografado, ela está segura quando o sistema está desligado e pode ser automaticamente aberto durante a inicialização via [crypttab](/index.php/Crypttab "Crypttab"). Por exemplo, abrir um dispositivo especificado com [UUID](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco#by-uuid "Nomeação persistente de dispositivo de bloco"):
 
  `/etc/crypttab` 
 ```
-home-crypt    UUID=<UUID identifier>    /etc/mykeyfile
+home    UUID=<identificador UUID>    /etc/mykeyfile
 
 ```
 
-**Tip:** If you prefer to use a `--plain` mode blockdevice, the encryption options necessary to unlock it are specified in `/etc/crypttab`. Take care to apply the systemd workaround mentioned in [crypttab](/index.php/Crypttab "Crypttab") in this case.
+**Dica:** Se você prefere usar o modo `--plain`, as opções de encriptação necessárias para abrir o dispositivo deverão ser especificadas no `/etc/crypttab`. Tome cuidado ao fazer a medida provisória mencionada no [crypttab](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#crypttab "Dm-crypt/Configuração do sistema").
 
-Then use the device mapper's name (defined in `/etc/crypttab`) to make an entry in `/etc/fstab`:
+Use o nome do dispositivo mapeado (definido no `/etc/crypttab`) para fazer a entrada no `/etc/fstab`:
 
  `/etc/fstab` 
 ```
-/dev/mapper/home-crypt        /home   ext4        defaults        0       2
+/dev/mapper/home        /home   ext4        defaults        0       2
 
 ```
 
-Since `/dev/mapper/externaldrive` already is the result of a unique partition mapping, there is no need to specify an UUID for it. In any case, the mapper with the filesystem will have a different UUID than the partition it is encrypted in.
+Desde que `/dev/mapper/home` já é uma mapeação única, não existe a necessidade de especificar o UUID dele. Em qualquer caso, o sistema de arquivos mapeado vai ter um UUID diferente da partição criptografada.
 
-#### Mounting a stacked blockdevice
+#### Montando um dispositivo de bloco empilhado
 
-The systemd generators also automatically process stacked block devices at boot.
+Os geradores do systemd também processam automaticamente os dispositivos de bloco empilhados na inicialização.
 
-For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptsetup on it and create an [LVM](/index.php/LVM "LVM") logical volume with respective filesystem inside the encrypted block device. A resulting:
+Por exemplo, você pode usar o cryptsetup numa configuração do [RAID](/index.php/RAID "RAID") e criar um volume lógico [LVM](/index.php/LVM "LVM") com o sistema de arquivos dentro de um dispositivo de bloco criptografado. Resultando em:
 
  `$ lsblk -f` 
 ```
@@ -391,34 +393,34 @@ For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptset
 
 ```
 
-will ask for the passphrase and mount automatically at boot.
+A senha será solicitada e ele será montado na inicialização.
 
-Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_LUKS` device) and fstab (`/dev/vgraid/lvraid`) entries, there is no need to add additional mkinitcpio hooks/configuration, because `/etc/crypttab` processing applies to non-root mounts only. One exception is when the `mdadm_udev` hook is used *already* (e.g. for the root device). In this case `/etc/madadm.conf` and the initramfs need updating to achieve the correct root raid is picked first.
+Ao especificar corretamente as entradas do crypttab (exemplo, UUID para o dispositivo `crypto_LUKS`) e fstab (`/dev/vgraid/lvraid`), não há necessidade para configurações/hooks adicionais no mkinitcpio, devido ao processamento do `/etc/crypttab` aplicado às partições não raiz somente. Existe uma exceção, quando o hook `mdadm_udev` *já* é usado (exemplo, o dispositivo raiz). Neste caso é necessário atualizar o `/etc/madadm.conf` e o initramfs para que a raid raiz correta seja selecionada.
 
-### Mounting on demand
+### Montando em demanda
 
-You can [start](/index.php/Start "Start") `systemd-cryptsetup@externaldrive.service` instead of using
-
-```
-# cryptsetup luksOpen UUID=... externaldrive
+Você pode dar [start](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") no `systemd-cryptsetup@disco_externo.service`, ao invés de usar:
 
 ```
+# cryptsetup luksOpen UUID=... disco_externo
 
-when you have an entry as follows in your `/etc/crypttab`:
+```
 
- `/etc/crypttab`  `externaldrive UUID=... none noauto` 
+Quando você tem uma entrada como a seguir em seu `/etc/crypttab`:
 
-That way you do not need to remember the exact crypttab options. It will prompt you for the passphrase if needed.
+ `/etc/crypttab`  `disco_externo UUID=... none noauto` 
 
-The corresponding unit file is generated automatically by [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8). You can list all generated unit files using:
+Desta maneira você não precisa se lembrar exatamente das opções do crypttab. A senha será solicitada se necessário.
+
+O arquivo correspondente unit é gerada automaticamente pelo [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8). Você pode listar todos os arquivos unit gerados usando:
 
 ```
 $ systemctl list-unit-files | grep systemd-cryptsetup
 
 ```
 
-## Troubleshooting
+## Solução de problemas
 
-### System stuck on boot/password prompt does not show
+### Sistema travado no prompt de inicialização/senha não aparece
 
-If you are using [Plymouth](/index.php/Plymouth "Plymouth"), make sure to use the correct modules (see: [Plymouth#The plymouth hook](/index.php/Plymouth#The_plymouth_hook "Plymouth")) or disable it. Otherwise Plymouth will swallow the password prompt, making a system boot impossible.
+Se você está usando [Plymouth](/index.php/Plymouth_(Portugu%C3%AAs) "Plymouth (Português)"), tenha certeza de usar os módulos corretos (veja [Plymouth#O hook do plymouth](/index.php/Plymouth_(Portugu%C3%AAs)#O_hook_do_plymouth "Plymouth (Português)")) ou desabilite isso. De outra forma, Plymouth irá atrapalhar o prompt de senha, impedindo o sistema de inicializar.

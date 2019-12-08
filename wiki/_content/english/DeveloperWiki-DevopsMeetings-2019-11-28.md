@@ -166,4 +166,6 @@ Blockers:
 
 ### Actionable
 
-*   Migrate it to a VPS
+*   ~~Migrate it to a VPS~~
+*   ~~Change DNS TTL back~~
+*   ~~Remove leftovers from apollo~~

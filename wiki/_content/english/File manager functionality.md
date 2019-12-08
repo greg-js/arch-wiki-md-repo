@@ -133,6 +133,7 @@ These packages apply to most file managers, such as [PCManFM](/index.php/PCManFM
 *   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): `.raw` files
 *   [totem](https://www.archlinux.org/packages/?name=totem): Video files and tagged audio files ([GNOME Files](/index.php/GNOME_Files "GNOME Files"), and Caja only)
 *   [evince](https://www.archlinux.org/packages/?name=evince) or [atril](https://www.archlinux.org/packages/?name=atril): `.pdf` files
+*   [comicx](https://www.archlinux.org/packages/?name=comicx): `.cbr` comicbook archives
 
 #### Dolphin and Konqueror (KDE)
 

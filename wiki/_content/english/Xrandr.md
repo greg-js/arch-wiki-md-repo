@@ -273,6 +273,8 @@ $ xrandr --newmode "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 103
 
 ```
 
+**Tip:** Some programs have trouble recognizing modes labeled with "_60.00" see [[1]](https://forums.linuxmint.com/viewtopic.php?t=211173)
+
 After creating it we need an extra step to add this new mode to our current output (VGA1). We use just the name of the mode, since the parameters have been set previously.
 
 ```
@@ -300,7 +302,7 @@ Also, change `VGA1` to correct output name.
 
 #### EDID checksum is invalid
 
-If the previous method results in an `*ERROR* EDID checksum is invalid` error during boot, see [KMS#Forcing modes and EDID](/index.php/KMS#Forcing_modes_and_EDID "KMS") and [[1]](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
+If the previous method results in an `*ERROR* EDID checksum is invalid` error during boot, see [KMS#Forcing modes and EDID](/index.php/KMS#Forcing_modes_and_EDID "KMS") and [[2]](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
 
 Or `xrandr --addmode` might give you the error `X Error of failed request: BadMatch`. NVIDIA users should read [NVIDIA/Troubleshooting#xrandr BadMatch](/index.php/NVIDIA/Troubleshooting#xrandr_BadMatch "NVIDIA/Troubleshooting"). `BadMatch` could indicate an invalid EDID checksum. To verify that this is the case, run X in verbose mode (e.g. `startx -- -logverbose 6`) and check your Xorg log for messages about a bad EDID.
 
@@ -341,7 +343,7 @@ EndSection
 
 Replace `intel` with the right driver, e.g. `nvidia`. When the X server is restarted, you should be able to set the new resolution.
 
-If this doesn't work for you, try removing the Screen and Device sections and just leaving the Monitor section. [[2]](https://bbs.archlinux.org/viewtopic.php?id=225134)
+If this doesn't work for you, try removing the Screen and Device sections and just leaving the Monitor section. [[3]](https://bbs.archlinux.org/viewtopic.php?id=225134)
 
 ### Resolution lower than expected
 

@@ -60,7 +60,7 @@ Use *venv* or *virtualenv* to create the virtual environment within your project
 This tool is provided by [python](https://www.archlinux.org/packages/?name=python) (3.3+):
 
 ```
-$ python -m venv venv
+$ python -m venv envname
 
 ```
 
@@ -69,14 +69,14 @@ $ python -m venv venv
 Use *virtualenv* for Python 3, available in [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv).
 
 ```
-$ virtualenv venv
+$ virtualenv envname
 
 ```
 
 And *virtualenv2* for Python 2, available in [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
 
 ```
-$ virtualenv2 venv
+$ virtualenv2 envname
 
 ```
 
@@ -85,8 +85,8 @@ $ virtualenv2 venv
 Use one of the provided shell scripts to activate and deactivate the environment. This example assumes bash is used.
 
 ```
-$ source venv/bin/activate
-(venv) $
+$ source envname/bin/activate
+(envname) $
 
 ```
 
@@ -95,7 +95,7 @@ Once inside the virtual environment, modules can be installed with *pip* and scr
 To exit the virtual environment, run the function provided by `bin/activate`:
 
 ```
-(venv) $ deactivate
+(envname) $ deactivate
 
 ```
 

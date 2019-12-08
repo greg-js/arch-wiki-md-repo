@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2019-11-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=588993) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2019-12-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=590872) na versão em inglês.
 
 *sway* é um compositor para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") feito para ser totalmente compatível com [i3](/index.php/I3 "I3"). De acordo com [o site oficial](https://swaywm.org):
 
@@ -28,7 +28,7 @@
     *   [4.2 Alternar luz de fundo](#Alternar_luz_de_fundo)
     *   [4.3 Capturar tela](#Capturar_tela)
     *   [4.4 Controle swaynag com o teclado](#Controle_swaynag_com_o_teclado)
-    *   [4.5 Mudar o tamanho e tema de cursor para programas XWayland](#Mudar_o_tamanho_e_tema_de_cursor_para_programas_XWayland)
+    *   [4.5 Mudar o tema e tamanho do cursor](#Mudar_o_tema_e_tamanho_do_cursor)
 *   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 Lançadores de aplicativos](#Lançadores_de_aplicativos)
     *   [5.2 VirtualBox](#VirtualBox)
@@ -76,7 +76,6 @@ Por padrão, sway inicia com o teclado US QWERTY. Para configuração por `input
  input * xkb_variant "colemak,,typewriter"
  input * xkb_options "grp:win_space_toggle"
  input "MANUFACTURER1 Keyboard" xkb_model "pc101"
- input "MANUFACTURER2 Keyboard" xkb_model "jp106"
 
 ```
 
@@ -322,21 +321,23 @@ Note que, a partir da versão do sway 1.2, diferencia-se maiúsculo/minúsculo e
 
 Você pode configurar o sway para usar swaynagmode com o comando de configuração `swaynag_command swaynagmode`.
 
-### Mudar o tamanho e tema de cursor para programas XWayland
+### Mudar o tema e tamanho do cursor
+
+**Nota:** Wayland usa cursores do programa cliente. É possível que programas não usem os valores do $XCURSOR_SIZE e $XCURSOR_THEME.
 
 Para definir [temas de cursor](/index.php/Temas_de_cursor "Temas de cursor") e tamanho:
 
  `~/.config/sway/config` 
 ```
-seat seat0 xcursor_theme *tema_do_cursor* *tamanho_do_cursor*
+seat seat0 xcursor_theme "*tema_do_cursor*" "*tamanho_do_cursor*"
 
 ```
 
-Onde `*my_cursor_theme*` pode ser definido ou trocado por um valor específico como `default`, `Adwaita` ou `Simple-and-Soft`, e `*my_cursor_size*` um valor como `48`.
+Onde `"*tema_do_cursor*"` pode ser definido ou trocado por um valor específico como `default`, `Adwaita` ou `Simple-and-Soft`, e `"*tamanho_do_cursor*"` um valor como `48`.
 
 Você pode inspecionar os seus valores com `echo $XCURSOR_SIZE` e `echo $XCURSOR_THEME`.
 
-Note que você precisa reiniciar o programa XWayland para ver as mudanças.
+Você precisa reiniciar o programa para ver as mudanças.
 
 ## Solução de problemas
 

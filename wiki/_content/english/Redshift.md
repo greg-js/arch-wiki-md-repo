@@ -24,8 +24,9 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
     *   [4.2 Left/right clicking the tray icon does not work](#Left/right_clicking_the_tray_icon_does_not_work)
     *   [4.3 Redshift makes the screen quickly flicker between the set color value of the screen and the default color value](#Redshift_makes_the_screen_quickly_flicker_between_the_set_color_value_of_the_screen_and_the_default_color_value)
     *   [4.4 Redshift works fine when invoked as a command but fails when run as a systemd service](#Redshift_works_fine_when_invoked_as_a_command_but_fails_when_run_as_a_systemd_service)
-    *   [4.5 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
-    *   [4.6 Redshift GDBus.Error:org.freedesktop.DBus.Error.AccessDenied on start](#Redshift_GDBus.Error:org.freedesktop.DBus.Error.AccessDenied_on_start)
+    *   [4.5 Redshift does not appear in system tray](#Redshift_does_not_appear_in_system_tray)
+    *   [4.6 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
+    *   [4.7 Redshift GDBus.Error:org.freedesktop.DBus.Error.AccessDenied on start](#Redshift_GDBus.Error:org.freedesktop.DBus.Error.AccessDenied_on_start)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -36,7 +37,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 The *redshift-gtk* command comes with the [redshift](https://www.archlinux.org/packages/?name=redshift) package and provides a system tray icon for controlling Redshift. See optional dependencies.
 
-Alternatives are [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgui-bin/) (GTK) and [redshift-qt](https://aur.archlinux.org/packages/redshift-qt/), [redshiftconf](https://aur.archlinux.org/packages/redshiftconf/) or [plasma5-applets-redshift-control](https://www.archlinux.org/packages/?name=plasma5-applets-redshift-control) and [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/) (Qt).
+Alternatives are [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgui-bin/) and [redshift-qt](https://aur.archlinux.org/packages/redshift-qt/), [redshiftconf](https://aur.archlinux.org/packages/redshiftconf/) or [plasma5-applets-redshift-control](https://www.archlinux.org/packages/?name=plasma5-applets-redshift-control) and [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
 
 ## Usage
 
@@ -229,6 +230,23 @@ Make sure there are not multiple instances of redshift running.
 ### Redshift works fine when invoked as a command but fails when run as a systemd service
 
 The [systemd](/index.php/Systemd "Systemd") unit has a line in the `redshift.service` file that makes the service wait until the `display-manager.service` unit is started by a [display manager](/index.php/Display_manager "Display manager") before the unit will invoke `redshift`. If you do not use a display manager, [edit](/index.php/Edit "Edit") the `redshift.service` user service and delete the `After=display-manager.service` line. Run `systemctl --user daemon-reload` and the service should initialize properly.
+
+### Redshift does not appear in system tray
+
+If running the `$ redshift-gtk` command does not start in the system tray, but instead you get the following output
+
+ `$ redshift-gtk` 
+```
+Traceback (most recent call last):
+  File "/usr/bin/redshift-gtk", line 26, in <module>
+    from redshift_gtk.statusicon import run
+  File "/usr/lib/python3.8/site-packages/redshift_gtk/statusicon.py", line 31, in <module>
+    gi.require_version('Gtk', '3.0')
+AttributeError: module 'gi' has no attribute 'require_version'
+
+```
+
+you will need to install [python-gobject](https://www.archlinux.org/packages/?name=python-gobject).
 
 ### Redshift temporarily resets using some wine apps that reset gamma values
 

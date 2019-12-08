@@ -26,7 +26,7 @@
     *   [4.2 Backlight toggle](#Backlight_toggle)
     *   [4.3 Screen capture](#Screen_capture)
     *   [4.4 Control swaynag with the keyboard](#Control_swaynag_with_the_keyboard)
-    *   [4.5 Change cursor theme and size for XWayland apps](#Change_cursor_theme_and_size_for_XWayland_apps)
+    *   [4.5 Change cursor theme and size](#Change_cursor_theme_and_size)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Application launchers](#Application_launchers)
     *   [5.2 VirtualBox](#VirtualBox)
@@ -309,7 +309,7 @@ Note that, beginning in sway version 1.2, mode names are case-sensitive.
 
 You can configure sway to use swaynagmode with the configuration command `swaynag_command swaynagmode`.
 
-### Change cursor theme and size for XWayland apps
+### Change cursor theme and size
 
 To set the [cursor theme](/index.php/Cursor_theme "Cursor theme") and size:
 
@@ -323,7 +323,9 @@ Where `*my_cursor_theme*` can be set to or replaced by a specific value like `de
 
 You can inspect their values with `echo $XCURSOR_SIZE` and `echo $XCURSOR_THEME`.
 
-Note that you need to restart the XWayland application to see the changes.
+Note that you need to restart the application to see the changes.
+
+**Note:** Wayland uses client-side cursors. It's possible that applications do not evaluate the values of `$XCURSOR_SIZE` and `$XCURSOR_THEME`.
 
 ## Troubleshooting
 
@@ -341,6 +343,8 @@ j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:De
 You may need to set `BEMENU_BACKEND` environment variable to "wayland" if you choose not to disable XWayland.
 
 You can also build your own with a floating terminal and fzf as discussed in a [GitHub issue](https://github.com/swaywm/sway/issues/1367).
+
+Also `krunner` binary provided by [plasma-workspace](https://www.archlinux.org/packages/?name=plasma-workspace) package can serve as launcher, offering both XWayland and native Wayland support.
 
 ### VirtualBox
 

@@ -69,9 +69,9 @@ A version overview, both past and future, can be read on [MozillaWiki:Releases](
 
 	[https://github.com/gyunaev/birdtray](https://github.com/gyunaev/birdtray) || [birdtray](https://aur.archlinux.org/packages/birdtray/)
 
-*   **FireTray** — Adds a customizable system tray icon for Thunderbird. For Thunderbird 60+ you may use the github version by installing from file.
+*   **FireTray (Ximi1970 fork)** — Adds a customizable system tray icon for Thunderbird. Ximi1970 fork works with Thunderbird 60+.
 
-	[FireTray AMO](https://addons.thunderbird.net/thunderbird/addon/firetray/) || [github version](https://github.com/Ximi1970/FireTray/releases)
+	[https://github.com/Ximi1970/FireTray](https://github.com/Ximi1970/FireTray) ||
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — A calendar extension that brings [Sunbird](https://en.wikipedia.org/wiki/Mozilla_Sunbird "wikipedia:Mozilla Sunbird")'s functionality to Thunderbird, including CalDAV support. Lightning now ships with Thunderbird, but due to differing release schedules it may have issues in Thunderbird testing releases. See [Mozilla support forum post](https://support.mozilla.org/en-US/questions/1211583). Also see [Lightning Release Schedule](https://developer.mozilla.org/en-US/docs/Mozilla/Calendar/Calendar_Versions).
 
@@ -248,21 +248,11 @@ $ cp -R ~/.thunderbird /to/backup/folder/
 
 2\. Export all your Accounts, Calendar and Feeds via an add-on like it's written in *Export section* of this Wiki.
 
-3\. Uninstall your current Thunderbird installation:
-
-```
-$ pacman -R thunderbird
-
-```
+3\. Close Thunderbird
 
 4\. Remove all your data by deleting your current Thunderbird folder `rm -R ~/.thunderbird/`.
 
-5\. Install Thunderbird again:
-
-```
-$ pacman -S thunderbird
-
-```
+5\. Start Thunderbird
 
 6\. Create your mail accounts, feeds and calendars (empty).
 

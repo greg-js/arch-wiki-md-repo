@@ -1,7 +1,7 @@
 Related articles
 
 *   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
-*   [Network_configuration#Bonding_or_LAG](/index.php/Network_configuration#Bonding_or_LAG "Network configuration")
+*   [Network configuration#Bonding or LAG](/index.php/Network_configuration#Bonding_or_LAG "Network configuration")
 
 A bridge is a piece of software used to unite two or more network segments. A bridge behaves like a virtual network switch, working transparently (the other machines do not need to know or care about its existence). Any real devices (e.g. `eth0`) and virtual devices (e.g. `tap0`) can be connected to it.
 
@@ -105,7 +105,7 @@ Add a device to a bridge, for example `eth0`:
 
 ```
 
-**Note:** Adding an interface to a bridge will cause the interface to lose its existing IP address. If you're connected remotely via the interface you intend to add to the bridge, you will lose your connection. This problem can be worked around by scripting the bridge to be created at system startup.
+**Note:** Adding an interface to a bridge will cause the interface to lose its existing IP address. If you are connected remotely via the interface you intend to add to the bridge, you will lose your connection. This problem can be worked around by scripting the bridge to be created at system startup.
 
 Show current bridges and what interfaces they are connected to:
 
@@ -149,35 +149,35 @@ See [systemd-networkd#Bridge interface](/index.php/Systemd-networkd#Bridge_inter
 
 [GNOME](/index.php/GNOME "GNOME")'s Network settings can create bridges, but currently will not auto-connect to them or slave/attached interfaces. Open Network Settings, add a new interface of type Bridge, add a new bridged connection, and select the MAC address of the device to attach to the bridge.
 
-[KDE](/index.php/KDE "KDE")'s [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) can't create bridges, another tool must be used for the creation. It can, however, view and modify bridges. "Show and configure virtual connections" must be enabled in the applet configuration (as opposed to the KCM dialog accessed from the applet's configure button or KDE system settings) in order to view and modify bridge interfaces.
+[KDE](/index.php/KDE "KDE")'s [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) cannot create bridges, another tool must be used for the creation. It can, however, view and modify bridges. "Show and configure virtual connections" must be enabled in the applet configuration (as opposed to the KCM dialog accessed from the applet's configure button or KDE system settings) in order to view and modify bridge interfaces.
 
 [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor) can create bridges in the same manner as GNOME's Network settings.
 
-`nmcli` from [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) can create bridges. Creating a bridge with STP disabled (to avoid the bridge being advertised on the network):
+`nmcli` from [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) can create bridges. Creating a bridge with [STP](https://en.wikipedia.org/wiki/Spanning_Tree_Protocol "wikipedia:Spanning Tree Protocol") disabled (to avoid the bridge being advertised on the network):
 
 ```
-$ nmcli c add type bridge ifname br0 stp no
+$ nmcli connection add type bridge ifname br0 stp no
 
 ```
 
 Making interface `enp30s0` a slave to the bridge:
 
 ```
-$ nmcli c add type bridge-slave ifname enp30s0 master br0
+$ nmcli connection add type bridge-slave ifname enp30s0 master br0
 
 ```
 
 Setting the existing connection as down:
 
 ```
-$ nmcli c down *Connection*
+$ nmcli connection down *Connection*
 
 ```
 
 Setting the new bridge as up:
 
 ```
-$ nmcli c up bridge-br0
+$ nmcli connection up bridge-br0
 
 ```
 
@@ -198,7 +198,7 @@ When the bridge is fully set up, it can be assigned an IP address:
 
 To add a wireless interface to a bridge, you first have to assign the wireless interface to an access point or start an access point with [hostapd](/index.php/Software_access_point "Software access point"). Otherwise the wireless interface will not be added to the bridge.
 
-See also [Bridging with a wireless NIC](https://wiki.debian.org/BridgeNetworkConnections#Bridging_with_a_wireless_NIC) on Debian wiki.
+See also [Debian:BridgeNetworkConnections#Bridging with a wireless NIC](https://wiki.debian.org/BridgeNetworkConnections#Bridging_with_a_wireless_NIC "debian:BridgeNetworkConnections").
 
 ### Speeding up traffic destinated to the bridge itself
 

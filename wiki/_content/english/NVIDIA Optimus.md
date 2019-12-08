@@ -30,12 +30,13 @@ Related articles
     *   [4.5 Lockup issue (lspci hangs)](#Lockup_issue_(lspci_hangs))
     *   [4.6 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop/NVIDIA_Optimus)
 *   [5 Use switchable graphics](#Use_switchable_graphics)
-    *   [5.1 Using nouveau](#Using_nouveau)
-    *   [5.2 Using Bumblebee](#Using_Bumblebee)
-    *   [5.3 Using nvidia-xrun](#Using_nvidia-xrun)
-    *   [5.4 Using optimus-manager](#Using_optimus-manager)
-        *   [5.4.1 Installation](#Installation)
-        *   [5.4.2 Usage](#Usage)
+    *   [5.1 Using PRIME render offload](#Using_PRIME_render_offload)
+    *   [5.2 Using nouveau](#Using_nouveau)
+    *   [5.3 Using Bumblebee](#Using_Bumblebee)
+    *   [5.4 Using nvidia-xrun](#Using_nvidia-xrun)
+    *   [5.5 Using optimus-manager](#Using_optimus-manager)
+        *   [5.5.1 Installation](#Installation)
+        *   [5.5.2 Usage](#Usage)
 
 ## Available methods
 
@@ -44,6 +45,7 @@ There are several methods available:
 *   [#Use Intel graphics only](#Use_Intel_graphics_only) - saves power, because NVIDIA GPU will be completely powered off.
 *   [#Use NVIDIA graphics only](#Use_NVIDIA_graphics_only) - gives more performance than Intel graphics, but drains more battery (which is not welcome for mobile devices). This utilizes the same underlying process as the [optimus-manager](#Using_optimus-manager) and [nvidia-xrun](#Using_nvidia-xrun) options, it should be utilized for troubleshooting and verifying general functionality, before opting for one of the more automated approaches.
 *   Using both (use NVIDIA GPU when needed and keep it powered off to save power):
+    *   [#Using PRIME render offload](#Using_PRIME_render_offload) - Official method supported by NVIDIA
     *   [#Using optimus-manager](#Using_optimus-manager) - switches graphics with a single command (logout and login required to take effect). It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.
     *   [#Using nvidia-xrun](#Using_nvidia-xrun) - run separate X session on different TTY with NVIDIA graphics. It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.
     *   [#Using Bumblebee](#Using_Bumblebee) - provides Windows-like functionality by allowing to run selected applications with NVIDIA graphics while using Intel graphics for everything else. Has significant performance issues.
@@ -195,6 +197,8 @@ This requires [xorg-server](https://www.archlinux.org/packages/?name=xorg-server
 
 You can read the official [forum thread](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/) for details.
 
+It has been [reported](https://bbs.archlinux.org/viewtopic.php?id=251032) that [linux](https://www.archlinux.org/packages/?name=linux) kernel 5.4 breaks PRIME synchronization.
+
 ### Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)
 
 Add `rcutree.rcu_idle_gp_delay=1` to the kernel parameters. Original topic can be found in [[4]](https://github.com/Bumblebee-Project/Bumblebee/issues/455#issuecomment-22497464) and [[5]](https://bbs.archlinux.org/viewtopic.php?id=169742).
@@ -251,6 +255,12 @@ NVIDIA drivers now offer Optimus support since 319.12 Beta [[6]](http://www.nvid
 Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
 
 ## Use switchable graphics
+
+### Using PRIME render offload
+
+This is the official NVIDIA method to support switchable graphics.
+
+See [PRIME#PRIME render offload](/index.php/PRIME#PRIME_render_offload "PRIME") for details.
 
 ### Using nouveau
 

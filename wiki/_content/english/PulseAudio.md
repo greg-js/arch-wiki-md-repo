@@ -43,6 +43,7 @@ Related articles
     *   [5.3 Dynamic Range Compression](#Dynamic_Range_Compression)
         *   [5.3.1 Steve Harris plugin](#Steve_Harris_plugin)
         *   [5.3.2 Calf plugin](#Calf_plugin)
+    *   [5.4 Microphone Echo-Cancellation and Noise Reduction](#Microphone_Echo-Cancellation_and_Noise_Reduction)
 *   [6 Applications](#Applications)
     *   [6.1 QEMU](#QEMU)
     *   [6.2 AlsaMixer.app](#AlsaMixer.app)
@@ -549,6 +550,10 @@ The plugin has 11 control options. If you want to insert custom values, read the
 | Stereo Link | 0 | 0 | 1 | Bool | 0 = Average; 1 = Max |<caption></caption>
 | Mix | 1 | 0 | 1 | Float | Percentage |<caption></caption>
 | To understand the meaning of every single option, read the [Calf Compressor Documentation](https://calf-studio-gear.org/doc/Compressor.html). |
+
+### Microphone Echo-Cancellation and Noise Reduction
+
+See [PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting").
 
 ## Applications
 

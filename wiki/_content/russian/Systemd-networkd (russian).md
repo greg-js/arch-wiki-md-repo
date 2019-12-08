@@ -336,7 +336,7 @@ Before you start to configure your container network, it is useful to:
 *   disable the `systemd-nspawn@.service` and use the `systemd-nspawn -bnD /path_to/your_container/` command as root to boot the container. To log off and shutdown inside the container `systemctl poweroff` is used as root. Once the network setting meets your requirements, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-nspawn@.service`
 *   disable the `dhcpcd.service` if enabled on your system, since it activates *dhcpcd* on **all** interfaces
 *   make sure you have no [netctl](/index.php/Netctl "Netctl") profiles activated in the container, and ensure that `systemd-networkd.service` is neither enabled nor started
-*   make sure you do not have any [iptables](/index.php/Iptables "Iptables") rules which can block traffic
+*   make sure you do not have any [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") rules which can block traffic
 *   * make sure *packet forwarding* is [enabled](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") if you want to let containers access the internet. Make sure that your `.network` file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
 *   when the daemon is started the systemd `networkctl` command displays the status of network interfaces.
 

@@ -30,7 +30,7 @@
 
 Optional [install](/index.php/Install "Install") [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) for the wallet management tool. This tool can be used to create a KDE Wallet with `blowfish` encryption and more settings not provided by the *kcm-module*.
 
-**Tip:** An alternative is to use KWalletManager and set an empty Kwallet-password, thus preventing the need of entering a password to unlock a wallet. Simple don't enter a password on both fields in *Change Password..*. This may however lead to unwanted (read/write) access to the user's wallet. Enabling *Prompt when an application accesses a wallet* under *Access Control* is highly recommended to prevent unwanted access to the wallet.
+**Tip:** An alternative is to use KWalletManager and set an empty Kwallet-password, thus preventing the need of entering a password to unlock a wallet. Simply do not enter a password on both fields in *Change Password..*. This may however lead to unwanted (read/write) access to the user's wallet. Enabling *Prompt when an application accesses a wallet* under *Access Control* is highly recommended to prevent unwanted access to the wallet.
 
 ### Configure display manager
 
@@ -118,7 +118,7 @@ Configure Git by setting the `GIT_ASKPASS` [environment variable](/index.php/Env
 export GIT_ASKPASS='/usr/bin/ksshaskpass'
 ```
 
-**Tip:** If the `SSH_ASKPASS` environment variable [is set to ksshaskpass](#Using_the_KDE_Wallet_to_store_ssh_key_passphrases), then it is not needed to additionally set `GIT_ASKPASS`.
+**Tip:** If the `SSH_ASKPASS` environment variable [is set to ksshaskpass](#Using_the_KDE_Wallet_to_store_ssh_key_passphrases), then additionally setting `GIT_ASKPASS` is not required.
 
 See [gitcredentials(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitcredentials.7) for alternatives and more details.
 

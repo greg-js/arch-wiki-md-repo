@@ -114,7 +114,7 @@ As of 0.6.2 you can customize key bindings in Vifm. These can be set from the co
 
 ```
 
-However, these mappings will not be saved between sessions. To map a key permanently, place them in ~/vifm/vifmrc. More sample mappings can be seen at the end of that file.
+However, these mappings will not be saved between sessions. To map a key permanently, place them in `~/.vifm/vifmrc`. More sample mappings can be seen at the end of that file.
 
 ### Opening filetypes in vifm
 

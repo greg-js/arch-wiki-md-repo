@@ -10,28 +10,23 @@ The I2P homepage also provides a pre-compiled binary which includes command line
 
 ## Usage
 
-First, [start](/index.php/Start "Start") and optionally also enable the `i2pd.service`.
+[Start](/index.php/Start "Start") and optionally also enable the `i2pd.service`. Configuration for the daemon is made in `/etc/i2pd/i2pd.conf`.
 
-This will launch the daemon under the system user `i2p`. Next, open your browser of choice and visit the I2P welcome page at
+Open your browser of choice and visit the I2P welcome page at `127.0.0.1:7070` or `127.0.0.1:7657` for the suite (see the FAQ). From here you can navigate to I2Ps configuration and statistics pages, and links to [Eepsites](https://en.wikipedia.org/wiki/eepsite "w:eepsite"). Also, be aware that eepsites are unavailable until the daemon has bootstrapped to the network, which can take several minutes.
 
-```
-127.0.0.1:7070
-
-```
-
-From here you can navigate to I2Ps configuration and statistics pages, and links to "Eepsites of Interest" (an [w:eepsite](https://en.wikipedia.org/wiki/eepsite "w:eepsite") being a site available only through the I2P network, similar to how `.onion` sites are only available through the Tor network). Also, be aware that eepsites are unavailable until the daemon has bootstrapped to the network, which can take several minutes.
-
-In order to visit eepsite's configure your browser to use the local http proxy (not socks):
+In order to visit eepsites configure your browser to use the local proxy:
 
 ```
 HTTP  127.0.0.1 4444
-HTTPS 127.0.0.1 4445
+SOCKS 127.0.0.1 4447
 
 ```
 
 ## Eepsite
 
 To make an eepsite, follow the I2P [instructions](http://127.0.0.1:7658), but keep in mind that the home directory will apply to the i2p user whose home directory is `/opt/i2p` as shown in the AUR [i2p.install](https://aur.archlinux.org/cgit/aur.git/tree/i2p.install?h=i2p) file.
+
+For the daemon see [[1]](https://i2pd.readthedocs.io/en/latest/tutorials/http/#host-anonymous-website).
 
 ## See also
 

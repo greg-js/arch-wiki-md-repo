@@ -141,19 +141,10 @@ replacing $backupfile with the backup archive. Removing all files that had been 
 
 ## Backup with parallel compression
 
-To back up using parallel compression ([SMP](https://en.wikipedia.org/wiki/Symmetric_multiprocessing "wikipedia:Symmetric multiprocessing")), use [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) (Parallel bzip2).
-
-First back up the files to a plain tarball with no compression:
+To back up using parallel compression ([SMP](https://en.wikipedia.org/wiki/Symmetric_multiprocessing "wikipedia:Symmetric multiprocessing")), use [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) (Parallel bzip2):
 
 ```
-# tar -cvf /*destionation_path*/etc-backup.tar /etc
-
-```
-
-Then use pbzip2 to compress it in parallel:
-
-```
-$ pbzip2 /path/to/chosen/directory/etc-backup.tar.bz2
+# tar -cvf /path/to/chosen/directory/etc-backup.tar.bz2 -I pbzip2 /etc
 
 ```
 
@@ -162,6 +153,6 @@ Store `etc-backup.tar.bz2` on one or more offline media, such as a USB stick, ex
 Restore corrupted `/etc` files by extracting the `etc-backup.tar.bz2` file in a temporary working directory, and copying over individual files and directories as needed. To restore the entire `/etc` directory with all its contents execute the following command as root:
 
 ```
-tar -xvjf etc-backup.tar.bz2 -C /
+tar -xvf etc-backup.tar.bz2 -C /
 
 ```

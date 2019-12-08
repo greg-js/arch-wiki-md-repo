@@ -31,6 +31,7 @@ Related articles
     *   [8.2 NFS Client](#NFS_Client)
 *   [9 Browsers](#Browsers)
     *   [9.1 Chromium](#Chromium)
+    *   [9.2 Firefox](#Firefox)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 Cannot set GSSAPI authentication names](#Cannot_set_GSSAPI_authentication_names)
 *   [11 See also](#See_also)
@@ -478,6 +479,10 @@ Chromium needs to be run with a command line parameter that specifies a list of 
 --auth-server-whitelist='*.foo.com'
 
 ```
+
+### Firefox
+
+To configure Firefox with trusted sites visit `about:config` and set `network.negotiate-auth.trusted-uris` property to FOO.COM (Note: for Firefox there is no "*."; for Chrome, there is).
 
 ## Troubleshooting
 

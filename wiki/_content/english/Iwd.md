@@ -24,8 +24,9 @@ iwd can work in standalone mode or in combination with comprehensive network man
 *   [3 WPA Enterprise](#WPA_Enterprise)
     *   [3.1 EAP-PWD](#EAP-PWD)
     *   [3.2 EAP-PEAP](#EAP-PEAP)
-    *   [3.3 TLS Based EAP Methods on older kernels](#TLS_Based_EAP_Methods_on_older_kernels)
-    *   [3.4 Other cases](#Other_cases)
+    *   [3.3 TTLS-PAP](#TTLS-PAP)
+    *   [3.4 TLS Based EAP Methods on older kernels](#TLS_Based_EAP_Methods_on_older_kernels)
+    *   [3.5 Other cases](#Other_cases)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
     *   [4.2 Disable periodic scan for available networks](#Disable_periodic_scan_for_available_networks)
@@ -37,6 +38,7 @@ iwd can work in standalone mode or in combination with comprehensive network man
     *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
     *   [5.2 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
     *   [5.3 Wireless device is not renamed by udev](#Wireless_device_is_not_renamed_by_udev)
+    *   [5.4 WPA Enterprise connection with NetworkManager](#WPA_Enterprise_connection_with_NetworkManager)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -190,6 +192,25 @@ AutoConnect=true
 ```
 
 **Tip:** If you are planning on using *eduroam* and you are affiliated with a US-based institution, your CA is likely `Addtrust External CA Root`, as your institution probably issues certificates through Internet2's InCommon. However, you should always refer to your organization's help desk if in doubt.
+
+### TTLS-PAP
+
+Like EAP-PWD, you also need to create a `*essid*.8021x` in the folder. Before you proceed to write the configuration file, this is also a good time to find out which CA certificate your organization uses. This is an example configuration file that uses PAP password authentication:
+
+ `/var/lib/iwd/*essid*.8021x` 
+```
+[Security]
+EAP-Method=TTLS
+EAP-Identity=anonymous@uni-test.de
+EAP-TTLS-CACert=cert.pem
+EAP-TTLS-ServerDomainMask=*.uni-test.de
+EAP-TTLS-Phase2-Method=Tunneled-PAP
+EAP-TTLS-Phase2-Identity=user
+EAP-TTLS-Phase2-Password=password
+
+[Settings]
+AutoConnect=true
+```
 
 ### TLS Based EAP Methods on older kernels
 
@@ -434,6 +455,17 @@ If this results to issues disabling this file helps:
 # ln -s /dev/null /etc/systemd/network/80-iwd.link
 
 ```
+
+### WPA Enterprise connection with NetworkManager
+
+If you try to connect to an WPA Enterprise network like 'eduroam' with NetworkManager with the iwd backend then you will get the following error from NetworkManager:
+
+```
+ Connection 'eduroam' is not avialable on device wlan0 because profile is not compatible with device (802.1x connections must have IWD provisioning files)
+
+```
+
+This is because NetworkManager can not configure a WPA Enterprise network. Therefore you have to configure it using an iwd config file `/var/lib/iwd/*essid*.8021x` like described in [#WPA_Enterprise](#WPA_Enterprise).
 
 ## See also
 

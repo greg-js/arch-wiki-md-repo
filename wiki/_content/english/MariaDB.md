@@ -77,9 +77,11 @@ Once you have started the MySQL server and added a root account, you may want to
 To log in as `root` on the MySQL server, use the following command:
 
 ```
-$ mysql -u root -p
+# mysql -u root -p
 
 ```
+
+**Note:** The default password is empty. Press Enter to log in.
 
 ### Improve security
 
@@ -131,7 +133,7 @@ If you want to access your MySQL server from other LAN hosts, you have to edit t
 Grant any MySQL user remote access (example for root):
 
 ```
-$ mysql -u root -p
+# mysql -u root -p
 
 ```
 
@@ -307,7 +309,7 @@ $ mysql_tzinfo_to_sql <timezone_file> <timezone_name> | mysql -u root -p mysql
 Upon a major version release of [mariadb](https://www.archlinux.org/packages/?name=mariadb) (for example mariadb-10.1.10-1 to mariadb-10.1.18-1), it is wise to upgrade databases:
 
 ```
-$ mysql_upgrade -u root -p
+# mysql_upgrade -u root -p
 
 ```
 
@@ -356,7 +358,7 @@ $ mysqlcheck --all-databases -u root -p -o
 
 There are various [tools and strategies](https://mariadb.com/kb/en/mariadb/documentation/backing-up-and-restoring/) to back up your databases.
 
-If you are using the default InnoDB storage engine, a [suggested](https://mariadb.com/kb/en/mariadb/documentation/clients-and-utilities/backup-restore-and-import/mysqldump/#examples) way of backing up all your bases online while provisioning for [point-in-time recovery](https://dev.mysql.com/doc/refman/5.6/en/password-security-user.html) (also known as “roll-forward,” when you need to restore an old backup and replay the changes that happened since that backup) is to execute the following command:
+If you are using the default InnoDB storage engine, a [suggested](https://mariadb.com/kb/en/mariadb/documentation/clients-and-utilities/backup-restore-and-import/mysqldump/#examples) way of backing up all your bases online while provisioning for [point-in-time recovery](https://dev.mysql.com/doc/refman/5.6/en/point-in-time-recovery.html) (also known as “roll-forward,” when you need to restore an old backup and replay the changes that happened since that backup) is to execute the following command:
 
 ```
 $ mysqldump --single-transaction --flush-logs --master-data=2 --all-databases -u root -p > all_databases.sql

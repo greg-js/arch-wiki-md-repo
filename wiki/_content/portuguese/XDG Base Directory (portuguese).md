@@ -794,7 +794,7 @@ Especifique `--init-file <arquivo>` como uma alternativa a `~/.bashrc` para shel
  | [[139]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583) | É possível definir `HOME`, mas tem efeitos colaterais inesperados. Até agora, a abordagem mais promissora é modificar outra variável de ambiente do Emacs para alterar o caminho de carregamento e criar o seu próprio arquivo de site, que pode carregar manualmente o arquivo init, mas altera significativamente o processo de carregamento. |
 | [Fetchmail](http://www.fetchmail.info/) | `~/.fetchmailrc` |
 | [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[140]](https://bugzil.la/259356) |
-| [Flatpak (Português)](/index.php/Flatpak_(Portugu%C3%AAs) "Flatpak (Português)") | `~/.var/` | [[141]](https://github.com/flatpak/flatpak/issues/46) [[142]](https://github.com/flatpak/flatpak.github.io/issues/191) [não vai corrigir](https://github.com/flatpak/flatpak/issues/1651) |
+| [Flatpak](/index.php/Flatpak_(Portugu%C3%AAs) "Flatpak (Português)") | `~/.var/` | [[141]](https://github.com/flatpak/flatpak/issues/46) [[142]](https://github.com/flatpak/flatpak.github.io/issues/191) [não vai corrigir](https://github.com/flatpak/flatpak/issues/1651) |
 | [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[143]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
 | [ghidra](https://aur.archlinux.org/packages/ghidra/) | [[144]](https://github.com/NationalSecurityAgency/ghidra/issues/908) |
 | [Goldendict](/index.php/Goldendict "Goldendict") | `~/.goldendict/` | [[145]](https://github.com/goldendict/goldendict/issues/151) |

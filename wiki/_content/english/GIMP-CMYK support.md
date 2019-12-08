@@ -3,9 +3,13 @@ Related articles
 *   [GIMP](/index.php/GIMP "GIMP")
 *   [Using lprof to profile monitors](/index.php/Using_lprof_to_profile_monitors "Using lprof to profile monitors")
 
-This article will show how to enable rudimentary CMYK support in Gimp using the Separate and Separate+ plug-ins, and explain how to use color proof filter to soft-proof your images. It will also cover more general topics on CMYK colors and DTP.
+This article will show how to enable rudimentary CMYK support in Gimp using the Separate and Separate+ plug-ins, and explain how to use color proof filter to soft-proof your images. It will also cover more general topics on CMYK colors and desktop publishing (DTP).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Before you read](#Before_you_read)
 *   [2 Limitations](#Limitations)
@@ -26,9 +30,8 @@ This article will show how to enable rudimentary CMYK support in Gimp using the 
 *   [9 Soft-proofing with Display Filters](#Soft-proofing_with_Display_Filters)
     *   [9.1 Intent](#Intent)
     *   [9.2 Profile](#Profile)
-*   [10 Soft-proofing with Separate's proof function](#Soft-proofing_with_Separate's_proof_function)
-*   [11 Soft-proofing with Separate+'s proof function](#Soft-proofing_with_Separate+'s_proof_function)
-*   [12 See also](#See_also)
+*   [10 Soft-proofing with the plugin's proof function](#Soft-proofing_with_the_plugin's_proof_function)
+*   [11 See also](#See_also)
 
 ## Before you read
 
@@ -71,6 +74,8 @@ The lack of support for this kind of separation made Gimp unattractive to DTP pr
 Since reproduction of both RGB and CMYK colors are specific to the device (or inks) used to produce images, a concept of color-spaces was invented. Color-spaces formulate the relationship of physical color and the color model that we use to describe them. Those relationships (functions) can be packaged as a file in the form of ICC profiles.
 
 The ICC profiles are used to describe the way colors are reproduced in a system, be it a monitor, a scanner, or a printing press. When separating images for press, we use the source profile (the color-space of the image to be separated) and the target profile (the color-space of the printing press the image is intended for).
+
+When it comes to the printing press, standarization of ink and paper combination have allowed organizations to produce profiles that *should* match a print condition you are looking for. Organizations working on it include the European Color Initiative (ECI), the [GRACoL/SWOP](https://en.wikipedia.org/wiki/Specifications_for_Web_Offset_Publications "wikipedia:Specifications for Web Offset Publications") working group in the US, and the ISO with its ISO 12647-2\. If you are not sure about which profile to use, you should contact your printer.
 
 ## About CMYK color and Gimp
 
@@ -209,17 +214,15 @@ Absolute colorimetric leaves overlap of source and target space intact and maps 
 
 ### Profile
 
-For color proofing, we usually use the profile of the device that image is to be printed on. For testing purposes, you may use any of the Adobe profiles [mentioned above](#Install_ICC_profiles).
+For color proofing, we usually use the profile of the device that image is to be printed on (see [above](#About_ICC_color_profiles)). For testing purposes, you may use any of the Adobe profiles [mentioned above](#Install_ICC_profiles).
 
-## Soft-proofing with Separate's proof function
+## Soft-proofing with the plugin's proof function
 
 Separate itself offers a way of soft-proofing color. This method of soft-proofing is not dynamic: it does not update as you edit the image, but acts more like a one-time preview. However, it is far more accurate than The GIMP's soft-proofing using *Color Proof* display filter. Basically, the proof function converts the image to RGB space using *absolute colorimetric* intent. It is supposed to offer a side-by-side match to the printed copy.
 
 To soft-proof with Separate's proof function, you first [separate an image](#Separating_a_RGB_image) and then pick *Proof* from *Separate* sub-menu. Source profile is your minitor's RGB profile (you can use [lprof to profile your monitor](/index.php/Using_LPROF_to_profile_monitors "Using LPROF to profile monitors") and create an ICC profile). The destination profile is the ICC profile of a your image will be output to.
 
 Click *OK* and you will be presented with an RGB image of how the printed image would look like.
-
-## Soft-proofing with Separate+'s proof function
 
 Separate+ acts the same way as Separate.
 
@@ -240,5 +243,5 @@ Separate+ acts the same way as Separate.
 *   [Gimp (v2.0 and above)](http://www.gimp.org/)
 *   [lcms (v1.15)](http://www.littlecms.com/)
 *   [Separate plugin (v0.10 and above)](http://www.blackfiveservices.co.uk/separate.shtml)
-*   [Separate+ plugin (v0.5.5)](http://cue.yellowmagic.info/softwares/separate-plus/)
+*   [Separate+ plugin](https://osdn.net/projects/separate-plus/)
 *   [cmyktool](http://www.blackfiveimaging.co.uk/index.php?article=02Software%2F05CMYKTool) is a standalone program for soft-proofing in CMYK which may be useful if you need to send CMYK to a printer (especially where you want to tweak pure black to avoid halos)

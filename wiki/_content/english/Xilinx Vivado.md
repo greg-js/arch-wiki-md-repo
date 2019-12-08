@@ -23,6 +23,7 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
     *   [4.2 xsct, xsdb, xmd, and tclsh segfault](#xsct,_xsdb,_xmd,_and_tclsh_segfault)
     *   [4.3 Vivado HLS testbench error with GCC](#Vivado_HLS_testbench_error_with_GCC)
     *   [4.4 Vivado Crashes with Wayland](#Vivado_Crashes_with_Wayland)
+    *   [4.5 Opening a synthesis or implementation design fails in Vivado 2017.1](#Opening_a_synthesis_or_implementation_design_fails_in_Vivado_2017.1)
 
 ## Prerequisites
 
@@ -268,3 +269,7 @@ Stack:
 ```
 
 Switch to using Xorg instead of Wayland. The version of Java Vivado uses has compatibility problems with Wayland.
+
+### Opening a synthesis or implementation design fails in Vivado 2017.1
+
+This can be fixed according to the following Xilinx support answer: [https://www.xilinx.com/support/answers/69088.html](https://www.xilinx.com/support/answers/69088.html)

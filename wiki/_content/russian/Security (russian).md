@@ -254,9 +254,9 @@ Defaults editor=/usr/bin/nano
 
 ## Firewall
 
-*   См. [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") гид по настройке netfilter (iptables) firewall'a.
-*   См. [Firewalls](/index.php/Firewalls "Firewalls") для других способов настройки Firewall.
-*   См. [iptables](/index.php/Iptables "Iptables") для общей информации.
+*   См. [Simple stateful firewall](/index.php/Simple_stateful_firewall_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Simple stateful firewall (Русский)") гид по настройке netfilter (iptables) firewall'a.
+*   См. [Firewalls](/index.php/Category:Firewalls_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Firewalls (Русский)") для других способов настройки межсетевых экранов.
+*   См. [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") для общей информации.
 *   См. [Iptables](https://ru.wikipedia.org/wiki/Iptables) на Википедии.
 
 ## Упрочнение стека TCP/IP

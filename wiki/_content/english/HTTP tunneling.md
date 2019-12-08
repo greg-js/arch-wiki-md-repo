@@ -22,7 +22,7 @@ To open the connection to the server running the SSH daemon we will use the HTTP
 
 **Note:** If your proxy does not support the HTTP Connect method, see the other methods below.
 
-For this we will use [corkscrew](http://www.agroman.net/corkscrew/), a tool for tunneling SSH through HTTP proxies available in the [official repositories](/index.php/Official_repositories "Official repositories") as [corkscrew](https://www.archlinux.org/packages/?name=corkscrew).
+For this we will use [corkscrew](https://github.com/bryanpkc/corkscrew), a tool for tunneling SSH through HTTP proxies available in the [official repositories](/index.php/Official_repositories "Official repositories") as [corkscrew](https://www.archlinux.org/packages/?name=corkscrew).
 
 Opening an SSH connection is pretty simple:
 

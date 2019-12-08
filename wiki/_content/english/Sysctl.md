@@ -17,15 +17,15 @@
         *   [3.1.5 Tweak the pending connection handling](#Tweak_the_pending_connection_handling)
         *   [3.1.6 Change TCP keepalive parameters](#Change_TCP_keepalive_parameters)
         *   [3.1.7 Enable MTU probing](#Enable_MTU_probing)
-        *   [3.1.8 TCP Timestamps](#TCP_Timestamps)
+        *   [3.1.8 TCP timestamps](#TCP_timestamps)
         *   [3.1.9 Enable BBR](#Enable_BBR)
     *   [3.2 TCP/IP stack hardening](#TCP/IP_stack_hardening)
         *   [3.2.1 TCP SYN cookie protection](#TCP_SYN_cookie_protection)
         *   [3.2.2 TCP rfc1337](#TCP_rfc1337)
         *   [3.2.3 Reverse path filtering](#Reverse_path_filtering)
         *   [3.2.4 Log martian packets](#Log_martian_packets)
-        *   [3.2.5 Disable ICMP redirecting](#Disable_ICMP_redirecting)
-        *   [3.2.6 Enable Ignoring to ICMP Request](#Enable_Ignoring_to_ICMP_Request)
+        *   [3.2.5 Disable ICMP redirects](#Disable_ICMP_redirects)
+        *   [3.2.6 Ignore ICMP echo requests](#Ignore_ICMP_echo_requests)
     *   [3.3 Other](#Other)
         *   [3.3.1 Allow unprivileged users to create IPPROTO_ICMP sockets](#Allow_unprivileged_users_to_create_IPPROTO_ICMP_sockets)
 *   [4 Virtual memory](#Virtual_memory)
@@ -41,14 +41,14 @@
 
 The **sysctl** preload/configuration file can be created at `/etc/sysctl.d/99-sysctl.conf`. For [systemd](/index.php/Systemd "Systemd"), `/etc/sysctl.d/` and `/usr/lib/sysctl.d/` are drop-in directories for kernel sysctl parameters. The naming and source directory decide the order of processing, which is important since the last parameter processed may override earlier ones. For example, parameters in a `/usr/lib/sysctl.d/50-default.conf` will be overriden by equal parameters in `/etc/sysctl.d/50-default.conf` and any configuration file processed later from both directories.
 
-To load all configuration files manually, execute
+To load all configuration files manually, execute:
 
 ```
 # sysctl --system 
 
 ```
 
-which will also output the applied hierarchy. A single parameter file can also be loaded explicitly with
+which will also output the applied hierarchy. A single parameter file can also be loaded explicitly with:
 
 ```
 # sysctl --load=*filename.conf*
@@ -156,7 +156,7 @@ net.ipv4.tcp_fastopen = 3
 
 `tcp_max_syn_backlog` is the maximum queue length of pending connections 'Waiting Acknowledgment'.
 
-In the event of a synflood DOS attack, this queue can fill up pretty quickly, at which point tcp_syncookies will kick in allowing your system to continue to respond to legitimate traffic, and allowing you to gain access to block malicious IPs.
+In the event of a synflood DOS attack, this queue can fill up pretty quickly, at which point [TCP SYN cookies](https://en.wikipedia.org/wiki/SYN_cookies "wikipedia:SYN cookies") will kick in allowing your system to continue to respond to legitimate traffic, and allowing you to gain access to block malicious IPs.
 
 If the server suffers from overloads at peak times, you may want to increase this value a little bit:
 
@@ -165,7 +165,7 @@ net.ipv4.tcp_max_syn_backlog = 30000
 
 ```
 
-`tcp_max_tw_buckets` is the maximum number of sockets in 'TIME_WAIT' state.
+`tcp_max_tw_buckets` is the maximum number of sockets in TIME_WAIT state.
 
 After reaching this number the system will start destroying the socket that are in this state.
 
@@ -203,11 +203,9 @@ net.ipv4.tcp_slow_start_after_idle = 0
 
 #### Change TCP keepalive parameters
 
-*   TCP keepalive is a mechanism for TCP connections that help to determine whether the other end has stopped responding or not.
-*   TCP will send the keepalive probe contains null data to the network peer several times after a period of idle time. If the peer does not respond, the socket will be closed automatically.
-*   By default, TCP keepalive process waits for two hours (7200 secs) for socket activity before sending the first keepalive probe, and then resend it every 75 seconds. As long as there is TCP/IP socket communications going on and active, no keepalive packets are needed.
+[TCP keepalive](https://en.wikipedia.org/wiki/Keepalive#TCP_keepalive "wikipedia:Keepalive") is a mechanism for TCP connections that help to determine whether the other end has stopped responding or not. TCP will send the keepalive probe that contains null data to the network peer several times after a period of idle time. If the peer does not respond, the socket will be closed automatically. By default, TCP keepalive process waits for two hours (7200 secs) for socket activity before sending the first keepalive probe, and then resend it every 75 seconds. As long as there is TCP/IP socket communications going on and active, no keepalive packets are needed.
 
-**Note:** With the following settings, your application will detect dead TCP connections after 120 seconds (60s + 10s + 10s + 10s + 10s + 10s + 10s)
+**Note:** With the following settings, your application will detect dead TCP connections after 120 seconds (60s + 10s + 10s + 10s + 10s + 10s + 10s).
 
 ```
 net.ipv4.tcp_keepalive_time = 60
@@ -218,9 +216,9 @@ net.ipv4.tcp_keepalive_probes = 6
 
 #### Enable MTU probing
 
-The longer the MTU the better for performance, but the worse for reliability.
+The longer the [maximum transmission unit (MTU)](https://en.wikipedia.org/wiki/Maximum_transmission_unit "wikipedia:Maximum transmission unit") the better for performance, but the worse for reliability.
 
-This is because a lost packet means more data to be retransmitted and because many routers on the Internet can't deliver very long packets:
+This is because a lost packet means more data to be retransmitted and because many routers on the Internet cannot deliver very long packets:
 
 ```
 net.ipv4.tcp_mtu_probing = 1
@@ -229,7 +227,7 @@ net.ipv4.tcp_mtu_probing = 1
 
 See [https://blog.cloudflare.com/path-mtu-discovery-in-practice/](https://blog.cloudflare.com/path-mtu-discovery-in-practice/) for more information.
 
-#### TCP Timestamps
+#### TCP timestamps
 
 **Warning:** TCP timestamps protect against wrapping sequence numbers (at gigabit speeds) and round trip time calculation implemented in TCP. It is not recommended to turn off TCP timestamps as it may cause a security risk [[4]](https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf).
 
@@ -242,11 +240,11 @@ net.ipv4.tcp_timestamps = 0
 
 #### Enable BBR
 
-The BBR congestion control algorithm can help achieve higher bandwidths and lower latencies for internet traffic. First, enable the `tcp_bbr` module.
+The [BBR congestion control algorithm](https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_BBR "wikipedia:TCP congestion control") can help achieve higher bandwidths and lower latencies for internet traffic. First, load the `tcp_bbr` module.
 
 ```
- net.core.default_qdisc = fq
- net.ipv4.tcp_congestion_control = bbr
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
 
 ```
 
@@ -276,7 +274,11 @@ net.ipv4.tcp_rfc1337 = 1
 
 #### Reverse path filtering
 
-Sets the kernels reverse path filtering mechanism to value 1 (on). Will do source validation of the packet's received from all the interfaces on the machine. Protects from attackers that are using ip spoofing methods to do harm (default):
+By enabling reverse path filtering, the kernel will do source validation of the packets received from all the interfaces on the machine. This can protect from attackers that are using IP spoofing methods to do harm.
+
+The kernel's default value is `0` (no source validation), but systemd ships `/usr/lib/sysctl.d/50-default.conf` that sets `net.ipv4.conf.all.rp_filter` to `2` (loose mode)[[6]](https://github.com/systemd/systemd/pull/10971).
+
+The following will set the reverse path filtering mechanism to value `1` (strict mode):
 
 ```
 net.ipv4.conf.default.rp_filter = 1
@@ -284,11 +286,13 @@ net.ipv4.conf.all.rp_filter = 1
 
 ```
 
+The relationship and behavior of `net.ipv4.conf.default.*`, `net.ipv4.conf.*interface*.*` and `net.ipv4.conf.all.*` is explained in [ip-sysctl.txt](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt).
+
 #### Log martian packets
 
-A Martian packet is an IP packet which specifies a source or destination address that is reserved for special-use by Internet Assigned Numbers Authority (IANA). See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses "wikipedia:Reserved IP addresses") for more details.
+A [martian packet](https://en.wikipedia.org/wiki/Martian_packet "wikipedia:Martian packet") is an IP packet which specifies a source or destination address that is reserved for special-use by Internet Assigned Numbers Authority (IANA). See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses "wikipedia:Reserved IP addresses") for more details.
 
-Often martian and unroutable packet may be used for a dangerous purpose. Logging these packets for further inspection may be useful [[6]](https://www.cyberciti.biz/faq/linux-log-suspicious-martian-packets-un-routable-source-addresses/):
+Often martian and unroutable packet may be used for a dangerous purpose. Logging these packets for further inspection may be useful [[7]](https://www.cyberciti.biz/faq/linux-log-suspicious-martian-packets-un-routable-source-addresses/):
 
 ```
 net.ipv4.conf.default.log_martians = 1
@@ -298,7 +302,7 @@ net.ipv4.conf.all.log_martians = 1
 
 **Note:** This can fill up your logs with a lot of information, it is advisable to only enable this for testing.
 
-#### Disable ICMP redirecting
+#### Disable ICMP redirects
 
 To disable ICMP redirect acceptance:
 
@@ -320,12 +324,13 @@ net.ipv4.conf.default.send_redirects = 0
 
 ```
 
-#### Enable Ignoring to ICMP Request
+#### Ignore ICMP echo requests
 
-To disable ICMP echo 'ping' requests:
+To disable ICMP echo (aka ping) requests:
 
 ```
 net.ipv4.icmp_echo_ignore_all = 1
+net.ipv6.icmp.echo_ignore_all = 1
 
 ```
 
@@ -342,14 +347,14 @@ By default this range is `1 0` which means no one is allowed to create IPPROTO_I
 To take advantage of this setting programs which currently uses raw sockets need to ported to use IPPROTO_ICMP sockets instead.
 For example, QEMU uses IPPROTO_ICMP for SLIRP aka User-mode networking, so allowing the user running QEMU to create IPPROTO_ICMP sockets means it's possible to ping from the guest.
 
-To allow only users which are members of the group with GID 100 to create IPPROTO_ICMP sockets
+To allow only users which are members of the group with GID 100 to create IPPROTO_ICMP sockets:
 
 ```
 net.ipv4.ping_group_range = 100 100
 
 ```
 
-To allow all the users in the system to create IPPROTO_ICMP sockets
+To allow all the users in the system to create IPPROTO_ICMP sockets:
 
 ```
 net.ipv4.ping_group_range = 0 65535
@@ -390,13 +395,15 @@ Decreasing the VFS cache parameter value may improve system responsiveness:
 
 When the kernel performs a resync operation of a software raid device it tries not to create a high system load by restricting the speed of the operation. Using sysctl it is possible to change the lower and upper speed limit.
 
+Set maximum and minimum speed of raid resyncing operations:
+
 ```
-# Set maximum and minimum speed of raid resyncing operations
 dev.raid.speed_limit_max = 10000
 dev.raid.speed_limit_min = 1000
+
 ```
 
-If mdadm is compiled as a module `md_mod`, the above settings are available only after the module has been loaded. If the settings shall be loaded on boot via `/etc/sysctl.d`, the module `md_mod` may be loaded beforehand through `/etc/modules-load.d`.
+If mdadm is compiled as a module `md_mod`, the above settings are available only after the module has been loaded. If the settings shall be loaded on boot via `/etc/sysctl.d/`, the module `md_mod` may be loaded beforehand through `/etc/modules-load.d/`.
 
 ## Troubleshooting
 
@@ -421,7 +428,7 @@ Try to change `kernel.io_delay_type` (x86 only):
 
 ### Long system freezes while swapping to disk
 
-Increase `vm.min_free_kbytes` to improve desktop responsiveness and reduce long pauses due to swapping to disk. One should increase this to `installed_mem / num_of_cores * 0.05`. See [[7]](https://askubuntu.com/a/45009) and [[8]](https://www.linbit.com/en/kernel-min_free_kbytes/) for more details.
+Increase `vm.min_free_kbytes` to improve desktop responsiveness and reduce long pauses due to swapping to disk. One should increase this to `installed_mem / num_of_cores * 0.05`. See [[8]](https://askubuntu.com/a/45009) and [[9]](https://www.linbit.com/en/kernel-min_free_kbytes/) for more details.
 
 ## See also
 

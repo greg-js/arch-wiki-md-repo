@@ -309,7 +309,7 @@ auth      required      pam_nologin.so
 
 You will also need to add in `/etc/openldap/ldap.conf` the following.
 
- `/etc/openldap/ldap.conf`  `sudoers_base ou=sudoers,dc=AFOLA` 
+ `/etc/openldap/ldap.conf`  `sudoers_base ou=sudoers,dc=example,dc=org` 
 
 ### Online and Offline Authentication with SSSD
 
@@ -344,7 +344,15 @@ chpass_provider = ldap
 ldap_chpass_uri = ldap://server1.example.org
 entry_cache_timeout = 600
 ldap_network_timeout = 2
-ldap_group_member = uniquemember
+
+# OpenLDAP supports posixGroup, uncomment the following two lines
+# to get group membership support (and comment the other conflicting parameters)
+#ldap_schema = rfc2307
+#ldap_group_member = memberUid
+
+# Other LDAP servers may support this instead
+ldap_schema = rfc2307bis
+ldap_group_member = uniqueMember
 ```
 
 The above is an example only. See [sssd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sssd.conf.5) for the full details.
@@ -431,6 +439,8 @@ session required pam_unix.so
 session optional pam_permit.so
 ```
 
+**Note:** If you happen to use [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"): adding 'sufficient' in the beginning of the PAM stack results in Gnome Keyring not being unlocked. For a solution, look at [Advanced PAM Configuration](https://wiki.gnome.org/Projects/GnomeKeyring/Pam#Advanced_configuration).
+
 These PAM changes will apply to fresh login. To also allow the `su` command to authenticate through SSSD, edit `/etc/pam.d/su`:
 
  `/etc/pam.d/su` 
@@ -459,6 +469,21 @@ Edit `/etc/pam.d/sudo` as follows.
 auth           required        pam_unix.so try_first_pass
 auth           required        pam_nologin.so
 
+```
+
+Also add sudo service to the list of enabled services and the search base in `/etc/sssd/sssd.conf`:
+
+ `/etc/sssd/sssd.conf` 
+```
+[sssd]
+...
+services = nss, pam, **sudo**
+...
+
+[domain/LDAP]
+...
+ldap_sudo_search_base = ou=sudoers,dc=example,dc=org
+...
 ```
 
 ##### Password Management

@@ -33,7 +33,7 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
 2.  An official driver and a reverse engineered driver are in the works [[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) (*06cb:00bd*).
 3.  S3 suspend requires changes to BIOS settings, see section on [enabling S3](#Enabling_S3).
-4.  The internal microphone doesn't work on versions of the [linux](https://www.archlinux.org/packages/?name=linux) kernel before 5.3\. On version 5.3 and newer the SOF firmware can be enabled, see [Talk#Microphone](/index.php/Talk:Lenovo_ThinkPad_X1_Yoga_(Gen_4)#Microphone "Talk:Lenovo ThinkPad X1 Yoga (Gen 4)").
+4.  The internal microphone doesn't work on versions of the [linux](https://www.archlinux.org/packages/?name=linux) kernel before 5.3\. On version 5.3 and newer the SOF firmware can be enabled. The X1 Carbon (Gen 7) seems to have the same issue. see the [Talkpage for X1 Carbon (Gen 7)](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
 
  |
 

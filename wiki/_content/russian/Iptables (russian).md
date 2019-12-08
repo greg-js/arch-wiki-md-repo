@@ -1,7 +1,7 @@
 Ссылки по теме
 
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
-*   [Nftables](/index.php/Nftables "Nftables")
+*   [Nftables (Русский)](/index.php/Nftables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nftables (Русский)")
 *   [Sshguard](/index.php/Sshguard "Sshguard")
 *   [Simple stateful firewall (Русский)](/index.php/Simple_stateful_firewall_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Simple stateful firewall (Русский)")
 *   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")

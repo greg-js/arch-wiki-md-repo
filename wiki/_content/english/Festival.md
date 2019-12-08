@@ -1,6 +1,4 @@
-[Festival](http://www.cstr.ed.ac.uk/projects/festival/) is a general multi-lingual speech synthesis system developed at CSTR ([Centre for Speech Technology Research](http://www.cstr.ed.ac.uk/)).
-
-Festival offers a general framework for building speech synthesis systems as well as including examples of various modules. As a whole it offers full text to speech through a number APIs: from shell level, though a Scheme command interpreter, as a C++ library, from Java, and an Emacs interface. Festival is multi-lingual (currently British English, American English, Italian, Czech and Spanish, with other languages available in prototype.)
+[Festival](http://www.cstr.ed.ac.uk/projects/festival/) is a general multi-lingual speech synthesis system developed at CSTR ([Centre for Speech Technology Research](http://www.cstr.ed.ac.uk/)). It offers a general framework for building speech synthesis systems as well as including examples of various modules. As a whole it offers full text to speech through a number APIs: from shell level, though a Scheme command interpreter, as a C++ library, from Java, and an Emacs interface. Festival is multi-lingual (currently British English, American English, Italian, Czech and Spanish, with other languages available in prototype.)
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -109,7 +107,7 @@ For ALSA, use these lines instead ([source](http://ubuntuforums.org/showpost.php
 
 ### Voices
 
-Arch splits the set of official voices into [festival-english](https://www.archlinux.org/packages/?name=festival-english) and [festival-us](https://www.archlinux.org/packages/?name=festival-us). [The AUR](https://aur.archlinux.org/packages/?K=festival) has some others, in various states of maintenance which may or may not be currently working.
+Arch splits the set of official voices into [festival-english](https://www.archlinux.org/packages/?name=festival-english) and [festival-us](https://www.archlinux.org/packages/?name=festival-us). The [AUR](https://aur.archlinux.org/packages/?K=festival) has some others, in various states of maintenance which may or may not be currently working.
 
 To see what voices you currently have installed and what your default is, go into the Festival shell (which is a scheme REPL) and type the following (some space added for clarity):
 
@@ -300,7 +298,7 @@ If the solution above gives you a squeaky voice, you might want to try changing 
 
 ### aplay Command not found
 
-[Install](/index.php/Install "Install") [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
+Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
 
 ## See also
 

@@ -161,7 +161,7 @@ Alternatively it has been successful to prioritize the loading of the libudev.so
 
 ### 'GLBCXX_3.X.XX' not found when using Bumblebee
 
-This error is likely caused because Steam packages its own out of date `libstdc++.so.6`. See [#Steam runtime issues](#Steam_runtime_issues) about working around the bad library. See also [steam-for-linux issue 3773](https://github.com/ValveSoftware/steam-for-linux/issues/3773).
+This error is likely caused because Steam packages its own out of date `libstdc++.so.6`. See [#Finding missing runtime libraries](#Finding_missing_runtime_libraries) about working around the bad library. See also [steam-for-linux issue 3773](https://github.com/ValveSoftware/steam-for-linux/issues/3773).
 
 ### Game crashes immediately
 

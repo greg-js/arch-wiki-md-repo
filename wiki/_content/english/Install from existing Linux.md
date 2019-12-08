@@ -76,7 +76,7 @@ Follow [Installation guide#Installation](/index.php/Installation_guide#Installat
 
 In the procedure, [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide") can be skipped since the host should already have a correct mirrorlist.
 
-**Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks") or using *pacstrap*'s `-c` option.
+**Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks"), or use *pacstrap*'s `-c` option to use your host machine's package cache.
 
 **Tip:** When the grub boot-loader is used, the `grub-mkconfig` may detect devices incorrectly. This will result in `Error:no such device` when trying to boot from the stick. To solve this problem, from the host running Arch Linux, mount the newly installed partitions, *arch-chroot* to the new partition, then install and configure grub. The last step may require disabling *lvmetad* from `/etc/lvm/lvm.conf` by setting `use_lvmetad=0`.
 

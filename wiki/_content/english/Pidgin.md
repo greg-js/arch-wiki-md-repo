@@ -78,7 +78,7 @@ Then add a new account, select Facebook as the protocol, enter your [Facebook us
 
 ### ICQ
 
-Pidgin has out-of-the-box support for ICQ. Since December 2018, the old OSCAR protocol is no longer officially supported as it has been replaced by the newer WIM protocol. Currently, Pidgin only comes with the original OSCAR ICQ protocol. To make use of the new WIM protocol on ICQ, you should install the [purple-icyque-git](https://aur.archlinux.org/packages/purple-icyque-git/) plug-in.
+Pidgin only comes with the original OSCAR ICQ protocol. Since December 2018, the old OSCAR protocol is no longer officially supported as it has been replaced by the newer WIM protocol. To make use of the new WIM protocol on ICQ, you should install the [purple-icyque-git](https://aur.archlinux.org/packages/purple-icyque-git/) plug-in.
 
 ### IRC
 

@@ -1130,5 +1130,6 @@ You can use the following website to get your device's coordinates along with a 
 13.360501, 74.786369 "WaterWastage" # Manipal, KA, India
 55.33625, 21.48604 "DodoGTA" # Lithuania
 51.535496, 3.914310 "DvK" # Goes, Zeeland, The Netherlands
+40.7271164,-73.994756 "NedLudd" # New York, NY USA
 
 ```

@@ -253,6 +253,7 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 Works with pango 1.44:
 
 *   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font-otb](https://www.archlinux.org/packages/?name=terminus-font-otb)) - OpenType Bitmap (OTB) variant of Terminus
+*   [ProFont](http://tobiasjung.name/profont/) ([profont-otb](https://aur.archlinux.org/packages/profont-otb/)) - OpenType Bitmap (OTB) variant of ProFont
 *   [Misc Fixed](https://xorg.freedesktop.org/releases/individual/font/) [xorg-fonts-misc-otb](https://aur.archlinux.org/packages/xorg-fonts-misc-otb/)
 *   More [otb](https://aur.archlinux.org/packages/?O=0&SeB=n&K=-otb&outdated=&SB=n&SO=a&PP=50&do_Search=Go) fonts on AUR
 

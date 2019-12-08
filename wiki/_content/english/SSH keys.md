@@ -345,8 +345,7 @@ Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
 ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
 
 [Install]
-WantedBy=*default*.target
-
+WantedBy=default.target
 ```
 
 Add `SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"` to `~/.pam_environment`. Then [enable](/index.php/Enable "Enable") or [start](/index.php/Start "Start") the service.

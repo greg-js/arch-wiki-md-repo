@@ -35,6 +35,7 @@
     *   [6.4 Working with Uno/Mega2560](#Working_with_Uno/Mega2560)
     *   [6.5 Not recognizing USB port with Mega2560 cheap Chinese clones](#Not_recognizing_USB_port_with_Mega2560_cheap_Chinese_clones)
     *   [6.6 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM,_menus_immediately_closing)
+    *   [6.7 Fails to upload: programmer is not responding](#Fails_to_upload:_programmer_is_not_responding)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -310,6 +311,10 @@ Try installing its driver: [i2c-ch341-dkms](https://aur.archlinux.org/packages/i
 ### Application not resizing with WM, menus immediately closing
 
 see [Java#Gray window, applications not resizing with WM, menus immediately closing](/index.php/Java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing "Java")
+
+### Fails to upload: programmer is not responding
+
+Changing processor setting from `ATmega328P` to `ATmega328P (Old Bootloader)` (See Tools->Processor in Arduino IDE) may help with upload failures.
 
 ## See also
 

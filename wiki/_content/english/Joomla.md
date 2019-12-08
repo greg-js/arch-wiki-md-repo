@@ -92,7 +92,7 @@ And we're done!
 
 ### MySQL
 
-See [MySQL#Installation](/index.php/MySQL#Installation "MySQL")
+See [MySQL](/index.php/MySQL "MySQL") to install.
 
 After the base installation and configuration has been completed, it is time to perform some more detailed setup.
 

@@ -83,7 +83,7 @@ Section "InputClass"
         Identifier "libinput touchpad"
         Driver "libinput"
         MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
+        MatchDevicePath "/dev/input/event*"/
         Option "Tapping" "on"
         Option "ClickMethod" "clickfinger"
         Option "NaturalScrolling" "true"
@@ -93,6 +93,8 @@ EndSection
 ### Fn-Keys
 
 On this notebook the Fn-keys are enabled as default (e.g. pressing F1 mutes the sound). If pressing the keys does nothing you are most likely using a [Window manager](/index.php/Window_manager "Window manager") and not a [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Use the respective configuration files to bind the keys to their use. For example [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") or [i3](/index.php/I3 "I3")'s `bindsym`.
+
+To reverse to normal Fn keys just press: Fn+Esc
 
 Most Fn-keys return the correct keycodes. Here is a table containing that information:
 

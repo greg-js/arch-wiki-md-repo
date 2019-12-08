@@ -46,7 +46,7 @@ freshclamd.service | Антивирус для Unix. |
 | [apache](/index.php/Apache "Apache") | httpd | httpd.service | Apache HTTP Server (Web Server). |
  i8kmon | i8kmon.service | Monitor the CPU temperature and fan status on Dell Inspiron laptops. |
  ifplugd | ifplugd@.service | Start/stop network on network cable plugged in/out. |
-| [iptables](/index.php/Iptables "Iptables") | iptables | iptables.service | Load firewall rules for IPv4. |
+| [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") | iptables | iptables.service | Load firewall rules for IPv4. |
 | ip6tables | ip6tables.service | Load firewall rules for IPv6. |
  irqbalance | irqbalance.service | Irqbalance is the Linux utility tasked with making sure that interrupts from your hardware devices are handled in as efficient a manner as possible. |
 | [KDE](/index.php/KDE "KDE") | kdm | kdm.service | KDE Display Manager. |
@@ -113,7 +113,7 @@ winbindd.service | Служба Файлов и принтеров для кли
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | System logger next generation. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Software synthesizer for MIDI. |
 | [Tinc](/index.php/Tinc "Tinc") | ? | tincd@.service | One for each configuration directory like /etc/tinc/*<vpnname>*/ |
-| [Tor](/index.php/Tor "Tor") | tor | tor.service | Onion routing for anonymous communication. |
+| [Tor](/index.php/Tor_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Tor (Русский)") | tor | tor.service | Onion routing for anonymous communication. |
 | [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | Демон BitTorrent. |
 | [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |
 | [Urxvtd](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") | ? | urxvtd.service | Демон urxvt. |

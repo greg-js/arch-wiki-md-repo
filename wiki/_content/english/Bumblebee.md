@@ -65,6 +65,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.20 Erratic, unpredictable behaviour](#Erratic,_unpredictable_behaviour)
     *   [6.21 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
     *   [6.22 Discrete card is silently activated when egl is requested by some application](#Discrete_card_is_silently_activated_when_egl_is_requested_by_some_application)
+    *   [6.23 Framerate drops to 1 FPS after a fixed period of time](#Framerate_drops_to_1_FPS_after_a_fixed_period_of_time)
 *   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -877,6 +878,12 @@ __EGL_VENDOR_LIBRARY_FILENAMES="/usr/share/glvnd/egl_vendor.d/50_mesa.json"
 Package nvidia-utils (and its branches) is installing nvidia config file at `/usr/share/glvnd/egl_vendor.d/10_nvidia.json` which has priority and causes libglvnd to load nvidia drivers and enable the card.
 
 The other solution is to remove the config file provided by nvidia-utils.
+
+### Framerate drops to 1 FPS after a fixed period of time
+
+With the nvidia 440.36 driver, the [DPMS setting is enabled by default](https://devtalk.nvidia.com/default/topic/1067676/linux/440-36-with-bumblebee-drops-to-1-fps-after-running-for-10-minutes/post/5409047/#5409047) resulting in a timeout after a fixed period of time (e.g. 10 minutes) which causes the frame rate to throttle down to 1 FPS. To work around this, add the following line to the "Screen" section in `/etc/bumblebee/xorg.cong.nvidia`
+
+ `Option "HardDPMS" "false"` 
 
 ## See also
 

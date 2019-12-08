@@ -15,13 +15,14 @@ Related articles
 
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
-    *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_(SI)_and_Sea_Islands_(CIK)_support)
-        *   [2.1.1 Specify the correct module order](#Specify_the_correct_module_order)
-        *   [2.1.2 Set required module parameters](#Set_required_module_parameters)
-            *   [2.1.2.1 Set module parameters in kernel command line](#Set_module_parameters_in_kernel_command_line)
-            *   [2.1.2.2 Set module parameters in modprobe.d](#Set_module_parameters_in_modprobe.d)
-    *   [2.2 AMDGPU PRO](#AMDGPU_PRO)
-    *   [2.3 ACO compiler](#ACO_compiler)
+    *   [2.1 Experimental](#Experimental)
+    *   [2.2 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_(SI)_and_Sea_Islands_(CIK)_support)
+        *   [2.2.1 Specify the correct module order](#Specify_the_correct_module_order)
+        *   [2.2.2 Set required module parameters](#Set_required_module_parameters)
+            *   [2.2.2.1 Set module parameters in kernel command line](#Set_module_parameters_in_kernel_command_line)
+            *   [2.2.2.2 Set module parameters in modprobe.d](#Set_module_parameters_in_modprobe.d)
+    *   [2.3 AMDGPU PRO](#AMDGPU_PRO)
+    *   [2.4 ACO compiler](#ACO_compiler)
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Xorg configuration](#Xorg_configuration)
@@ -48,6 +49,7 @@ Related articles
     *   [6.4 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_"[drm]_IP_block:gmc_v8_0_is_hung!"_kernel_error)
     *   [6.5 Cursor corruption](#Cursor_corruption)
     *   [6.6 System freeze or crash when gaming on Vega cards](#System_freeze_or_crash_when_gaming_on_Vega_cards)
+    *   [6.7 Navi power consumption](#Navi_power_consumption)
 
 ## Selecting the right driver
 
@@ -68,6 +70,20 @@ Owners of unsupported GPUs may use the open source [radeon](/index.php/Radeon "R
 *   For [Vulkan](/index.php/Vulkan "Vulkan") support, install the [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) package. Optionally install the [lib32-vulkan-radeon](https://www.archlinux.org/packages/?name=lib32-vulkan-radeon) package for 32-bit application support.
 
 Support for [accelerated video decoding](#Video_acceleration) is provided by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) and [lib32-libva-mesa-driver](https://www.archlinux.org/packages/?name=lib32-libva-mesa-driver) for VA-API and [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages for VDPAU.
+
+### Experimental
+
+It may be worthwhile for some users to use the upstream experimental build of mesa, to enable features such as ACO or for AMD Navi improvements that haven't landed in the standard mesa packages.
+
+Install the [mesa-git](https://aur.archlinux.org/packages/mesa-git/) package, which provides the DRI driver for 3D acceleration.
+
+*   For 32-bit application support, also install the [lib32-mesa-git](https://aur.archlinux.org/packages/lib32-mesa-git/) package from the *mesa-git* repository or the [AUR](/index.php/AUR "AUR").
+*   For the DDX driver (which provides 2D acceleration in [Xorg](/index.php/Xorg "Xorg")), install the [xf86-video-amdgpu-git](https://aur.archlinux.org/packages/xf86-video-amdgpu-git/) package.
+*   For [Vulkan](/index.php/Vulkan "Vulkan") support using the *mesa-git* repository below, install the *vulkan-radeon-git* package. Optionally install the *lib32-vulkan-radeon-git* package for 32-bit application support. This shouldn't be required if building [mesa-git](https://aur.archlinux.org/packages/mesa-git/) from the AUR.
+
+**Note:** It may be necessary to symlink LibLLVM for X to start. eg. ln -s /usr/lib/libLLVM-10git.so /usr/lib/libLLVM-10svn.so
+
+**Tip:** Users who do not wish to go through the process of compiling the [mesa-git](https://aur.archlinux.org/packages/mesa-git/) package can use the [mesa-git](/index.php/Unofficial_user_repositories#mesa-git "Unofficial user repositories") unofficial repository.
 
 ### Enable Southern Islands (SI) and Sea Islands (CIK) support
 
@@ -127,7 +143,7 @@ Install the [amdgpu-pro-libgl](https://aur.archlinux.org/packages/amdgpu-pro-lib
 
 **Warning:** ACO is a very early development and still is marked as **testing**, you may experience issues.
 
-[Follow the instructions here](https://steamcommunity.com/app/221410/discussions/0/1640915206474070669/) to take advantage of the ACO compiler.
+Support for ACO is currently only available in [mesa-git](https://aur.archlinux.org/packages/mesa-git/) and can be enable by exporting `RADV_PERFTEST=aco` before starting an application.
 
 ## Loading
 
@@ -397,3 +413,7 @@ If you are using `xrandr` for scaling and the cursor is flickering or disappeari
 ### System freeze or crash when gaming on Vega cards
 
 [Dynamic power management](/index.php/ATI#Dynamic_power_management "ATI") may cause a complete system freeze whilst gaming due to issues in the way GPU clock speeds are managed. [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=109955) A workaround is to disable dynamic power management, see [ATI#Dynamic power management](/index.php/ATI#Dynamic_power_management "ATI") for details.
+
+### Navi power consumption
+
+Some users have reported higher than usual idle power consumption when using kernel 5.3\. There is a [patch set](https://cgit.freedesktop.org/~agd5f/linux/tag/?h=drm-next-5.4-2019-08-30) available for kernel 5.4 that appears to fix the issues.

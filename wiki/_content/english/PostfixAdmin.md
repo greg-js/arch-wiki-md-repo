@@ -125,6 +125,37 @@ pm.max_children = 4
 
 ```
 
+**Note:** If using php7.4, change the settings to the following: `/etc/php/php-fpm.d/postfixadmin.conf` 
+```
+[postfixadmin]
+user = postfixadmin
+group = postfixadmin
+listen = /run/postfixadmin/postfixadmin.sock
+listen.acl_users = http
+listen.acl_groups = http
+pm = ondemand
+pm.max_children = 4
+
+```
+
+Then override the default tmpfiles rule creating the `/run/postfixadmin` directory :
+
+```
+cp /usr/lib/tmpfiles.d/postfixadmin.conf /etc/tmpfiles.d/
+
+```
+
+And append the following rule to it :
+
+ `/etc/tmpfiles.d/postfixadmin.conf` 
+```
+...
+a+ %t/postfixadmin - - - - group:root:rwx
+
+```
+
+Then reboot.
+
 To only allow localhost access to postfixadmin (for heightened security), add this to the previous `<Directory>` directive:
 
 ```
@@ -158,6 +189,37 @@ pm = ondemand
 pm.max_children = 4
 
 ```
+
+**Note:** If using php7.4, change the settings to the following: `/etc/php/php-fpm.d/postfixadmin.conf` 
+```
+[postfixadmin]
+user = postfixadmin
+group = postfixadmin
+listen = /run/postfixadmin/postfixadmin.sock
+listen.acl_users = http
+listen.acl_groups = http
+pm = ondemand
+pm.max_children = 4
+
+```
+
+Then override the default tmpfiles rule creating the `/run/postfixadmin` directory :
+
+```
+cp /usr/lib/tmpfiles.d/postfixadmin.conf /etc/tmpfiles.d/
+
+```
+
+And append the following rule to it :
+
+ `/etc/tmpfiles.d/postfixadmin.conf` 
+```
+...
+a+ %t/postfixadmin - - - - group:root:rwx
+
+```
+
+Then reboot.
 
 You will need to at least activate the `imap` and `mysqli` extensions in `/etc/php/php.ini`. Make sure you also add `/var/cache/postfixadmin` to [open_basedir](/index.php?title=Ic&action=edit&redlink=1 "Ic (page does not exist)") in your php.ini. Restart [php-fpm](/index.php?title=Php-fpm&action=edit&redlink=1 "Php-fpm (page does not exist)") for all these to take effect.
 

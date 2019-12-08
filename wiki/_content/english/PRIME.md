@@ -10,7 +10,7 @@ PRIME is a technology used to manage hybrid graphics found on recent desktops an
     *   [1.1 Open-source drivers](#Open-source_drivers)
     *   [1.2 Closed-source drivers](#Closed-source_drivers)
 *   [2 PRIME GPU offloading](#PRIME_GPU_offloading)
-    *   [2.1 GPU offloading for NVIDIA proprietary drivers](#GPU_offloading_for_NVIDIA_proprietary_drivers)
+    *   [2.1 PRIME render offload](#PRIME_render_offload)
 *   [3 Reverse PRIME](#Reverse_PRIME)
     *   [3.1 Discrete card as primary GPU](#Discrete_card_as_primary_GPU)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -101,7 +101,53 @@ OpenGL renderer string: Gallium 0.4 on AMD TURKS
 
 Other applications will still use the less power-hungry integrated card. These settings are lost once the X server restarts, you may want to make a script and auto-run it at the startup of your desktop environment (alternatively, put it in `/etc/X11/xinit/xinitrc.d/`). This may reduce your battery life and increase heat though.
 
-### GPU offloading for NVIDIA proprietary drivers
+### PRIME render offload
+
+NVIDIA driver since [version 435.17](https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/primerenderoffload.html) supports this method.
+
+It needs a specific set of patches to the [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) that are present since version 1.20.6-1 on Arch.
+
+As per the [official documentation](https://download.nvidia.com/XFree86/Linux-x86_64/440.36/README/primerenderoffload.html), it only works with the modesetting version of the Intel driver. Refer to [Intel_graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") for more information.
+
+If the machine is configured to boot using the Intel iGPU card, the only configuration required should be a [Xorg#Using_.conf_files](/index.php/Xorg#Using_.conf_files "Xorg") snippet containing the following:
+
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "ServerLayout"
+  Identifier "layout"
+  Option "AllowNVIDIAGPUScreens"
+EndSection
+
+```
+
+If, for some reason automatic configuration does not work, it might be necessary to explicitly configure X with a [Xorg#Using_xorg.conf](/index.php/Xorg#Using_xorg.conf "Xorg") file:
+
+ `/etc/X11/xorg.conf` 
+```
+Section "ServerLayout"
+  Identifier "layout"
+  Screen 0 "iGPU"
+  Option "AllowNVIDIAGPUScreens"
+EndSection
+
+Section "Device"
+  Identifier "iGPU"
+  Driver "modesetting"
+EndSection
+
+Section "Screen"
+  Identifier "iGPU"
+  Device "iGPU"
+EndSection
+
+Section "Device"
+  Identifier "dGPU"
+  Driver "nvidia"
+EndSection
+
+```
+
+In some cases, it might be necessary to also include the appropriate BusID for the devices, as per [Xorg#More_than_one_graphics_card](/index.php/Xorg#More_than_one_graphics_card "Xorg").
 
 The NVIDIA proprietary driver uses some specialized GLX extensions to implement its GPU offloading features, therefore the standard `DRI_PRIME` environment variable won't work for it. Try the following if you want to run a specific application on NVIDIA discrete cards:
 
@@ -109,6 +155,8 @@ The NVIDIA proprietary driver uses some specialized GLX extensions to implement 
 $ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL renderer"
 
 ```
+
+Refer to the documentation for examples of more fine grained control.
 
 ## Reverse PRIME
 

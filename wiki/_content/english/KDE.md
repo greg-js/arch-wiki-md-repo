@@ -181,7 +181,7 @@ Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan
 
 ##### Faces
 
-KDE 5 Plasma and SDDM will both use a PNG file found at `~/.face.icon` as a user's avatar. To configure with a graphical interface, you can use *System Settings > Accounts Details > User Manager*, which may first need to be installed (see the [user-manager](https://www.archlinux.org/packages/?name=user-manager) package). The default icon can be found in `/usr/share/sddm/faces/`.
+Plasma and [SDDM](/index.php/SDDM "SDDM") will both use a PNG file found at `~/.face.icon` as a user's avatar. To configure with a graphical interface, you can use *System Settings > Accounts Details > User Manager*, which may first need to be [installed](/index.php/Install "Install") (see the [user-manager](https://www.archlinux.org/packages/?name=user-manager) package). The default icon can be found in `/usr/share/sddm/faces/`.
 
 ##### Widgets
 
@@ -793,7 +793,7 @@ If your system is able to suspend or hibernate using [systemd](/index.php/System
 
 See [this](https://docs.kde.org/trunk5/en/pim/kmail2/clean-start-after-a-failed-migration.html) document for detail.
 
-If you want a backup, please copy the configuration directory instead of deleting them.
+If you want a backup, copy the following configuration directories:
 
 ```
 $ cp -a ~/.local/share/akonadi ~/.local/share/akonadi-old

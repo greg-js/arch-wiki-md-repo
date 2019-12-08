@@ -29,7 +29,7 @@
  <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(12)</small> |
  <small>3.4.</small> [Digital imaging](/index.php/Category:Digital_imaging "Category:Digital imaging") <small>(6)</small> |
  <small>3.5.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
- <small>3.6.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(33)</small> |
+ <small>3.6.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(32)</small> |
  <small>3.7.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(9)</small> |
  <small>3.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15) (also in [Input](/index.php/Category:Input "Category:Input"))</small> |
  <small>3.8.1.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(7)</small> |
@@ -44,7 +44,7 @@
  <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(74)</small> |
  <small>3.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(1)</small> |
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
- <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(60)</small> |
+ <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(61)</small> |
  <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
  <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(104)</small> |
  <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
@@ -83,7 +83,7 @@
  <small>4.9.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(11)</small> |
  <small>4.10.</small> [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer") <small>(3)</small> |
  <small>4.10.1.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
- <small>4.11.</small> [Protocols](/index.php/Category:Protocols "Category:Protocols") <small>(7)</small> |
+ <small>4.11.</small> [Protocols](/index.php/Category:Protocols "Category:Protocols") <small>(8)</small> |
  <small>4.11.1.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"), [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer"))</small> |
  <small>4.11.2.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(4)</small> |
  <small>4.11.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
@@ -288,7 +288,7 @@
  <small>6.11.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(12)</small> |
  <small>6.11.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(17)</small> |
  <small>6.11.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(16)</small> |
-| <small>1.1.1.</small> [X server](/index.php/Category:X_server_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:X server (Українська)") <small>(1)</small> | <small>6.11.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(54)</small> |
+| <small>1.1.1.</small> [X server](/index.php/Category:X_server_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:X server (Українська)") <small>(1)</small> | <small>6.11.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(53)</small> |
  <small>6.11.5.1.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
  <small>6.12.</small> [Input](/index.php/Category:Input "Category:Input") <small>(2)</small> |
  <small>6.12.1.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |

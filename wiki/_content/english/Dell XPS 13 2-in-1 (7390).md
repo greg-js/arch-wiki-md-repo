@@ -43,6 +43,8 @@ Remember to be cautious about running code or installing patches from third part
 
 This patch should enable the system to boot without blacklisting the module, further enabling access to the touchscreen.
 
+NOTE: The patch is no longer required as of 5.4.2.1-1, so upgrading your kernel after installation will resolve the LPSS issue.
+
 ### Wifi & Bluetooth
 
 In order to get Wifi & Bluetooth working as of 12.09.2019 firmware drivers should be downloaded from [https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/) and the contents should be copied into /lib/firmware.

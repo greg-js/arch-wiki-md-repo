@@ -135,8 +135,8 @@ To allow other mail exchangers to validate mails apparently sent from your domai
 
 The following websites let you validate your SPF record:
 
-*   [SPF Record Checker](http://www.kitterman.com/spf/validate.html)
-*   [SPF Email test](http://www.appmaildev.com/en/spf)
+*   [SPF Record Checker](https://www.kitterman.com/spf/validate.html)
+*   [SPF Email test](https://www.appmaildev.com/en/spf)
 
 **Tip:** SPF can even be helpful for domains not used to send email. Publishing a policy like `v=spf1 -all` makes any mail server enforcing SPF reject emails from your domain name, thus preventing misuse.
 
@@ -165,7 +165,7 @@ There are several options to help you test DNS records, deliver ability, and enc
 There are several handy web sites that can help you testing.
 
 *   [https://mxtoolbox.com/](https://mxtoolbox.com/)
-*   [http://ismyemailworking.com/](http://ismyemailworking.com/)
+*   [https://ismyemailworking.com/](https://ismyemailworking.com/)
 *   [https://www.mail-tester.com/](https://www.mail-tester.com/) (3 free tries only!)
 *   [https://www.checktls.com/](https://www.checktls.com/)
 *   [https://pingability.com/zoneinfo.jsp](https://pingability.com/zoneinfo.jsp)

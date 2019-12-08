@@ -362,10 +362,11 @@ Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 *   If you [run nginx under a different user](#Running_under_different_user), make sure that the PHP-FPM socket file is accessible by this user, or use a TCP socket.
 *   If you run nginx in chrooted environment (chroot is `/srv/nginx-jail`, web pages are served at `/srv/nginx-jail/www`), you must modify the file `/etc/php/php-fpm.conf` to include the `chroot /srv/nginx-jail` and `listen = /srv/nginx-jail/run/php-fpm/php-fpm.sock` directives within the pool section (a default one is `[www]`). Create the directory for the socket file, if missing. Moreover, for modules that are dynamically linked to dependencies, you will need to copy those dependencies to the chroot (e.g. for php-imagick, you will need to copy the ImageMagick libraries to the chroot, but not imagick.so itself).
+*   Since `php-fpm` version 7.4.0 `php-fpm.service` defines `ProtectHome=true` which restricts access to files located within `/home`, `/root` and `/run/user`, yielding the error message `No input file specified.` [FS#64683#comment184136](https://bugs.archlinux.org/task/64683#comment184136)
 
 ##### nginx configuration
 
-When serving a PHP web-application, a `location` for PHP-FPM should to be included in each [server block](/index.php/Nginx#Server_blocks "Nginx") [[2]](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/), e.g.:
+When serving a PHP web-application, a `location` for PHP-FPM should to be included in each [server block](#Server_blocks) [[2]](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/), e.g.:
 
  `/etc/nginx/sites-available/example.conf` 
 ```
@@ -825,7 +826,7 @@ ExecReload=/usr/bin/nginx -s reload -g 'pid /run/nginx/nginx.pid;'
 
 	`/var/lib/nginx/*`
 
-	Some directories under `/var/lib/nginx` need to be bootstrapped by nginx running as `root`. It is not necessary to start the whole server to do that, nginx will do it on a simple [configuration test](#Configuration_validation). So just run one of those and you're good to go.
+	Some directories under `/var/lib/nginx` need to be bootstrapped by nginx running as `root`. It is not necessary to start the whole server to do that, nginx will do it on a simple [configuration test](#Configuration_validation). So just run one of those and you are good to go.
 
 	Log file & Directory Permissions
 

@@ -108,7 +108,7 @@ You can also use the [auto-generate](https://github.com/AndyCrowd/auto-generate-
 
 ## Monitors
 
-Hddtemp can be integrated with [system monitors](/index.php/List_of_applications#System_monitors "List of applications"). [Conky](/index.php/Conky "Conky") has built in support for hddtemp in daemon mode. You just need to add `$hddtemp °C` to your conky configuration file.
+Hddtemp can be integrated with [system monitors](/index.php/List_of_applications#System_monitors "List of applications"). [Conky](/index.php/Conky "Conky") has built in support for *hddtemp* in daemon mode. Just [enable](/index.php/Enable "Enable") `hddtemp.service` and add `$hddtemp °C` to your conky configuration file.
 
 ## Solid State Drives
 

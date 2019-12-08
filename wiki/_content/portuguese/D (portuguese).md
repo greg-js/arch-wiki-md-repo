@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [D](/index.php/D "D"). Data da última tradução: 2019-12-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=D&diff=0&oldid=588753) na versão em inglês.
+
 De [Wikipedia:D (programming language)](https://en.wikipedia.org/wiki/D_(programming_language) "wikipedia:D (programming language)"):
 
 	"A linguagem de programação D, também conhecida simplesmente como D, é uma linguagem de programação de sistema multiparadigmático, orientada a objetos, de Walter Bright, da Digital Mars. D se originou como uma reengenharia do C++, mas, embora seja predominantemente influenciado por essa linguagem, não é uma variante dela. D redesenhou alguns recursos do C++ e foi influenciado por conceitos usados em outras linguagens de programação, como Java, C# e Eiffel".

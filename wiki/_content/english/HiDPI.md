@@ -641,6 +641,8 @@ The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux
 
 After changing the font, it is often garbled and unreadable when changing to other virtual consoles (`tty2-6`). To fix this you can [force specific mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") for KMS, such as `video=2560x1600@60` (substitute in the native resolution of your HiDPI display), and reboot.
 
+Users booting though [UEFI](/index.php/UEFI "UEFI") may experience the console and [boot loader](/index.php/Boot_loader "Boot loader") being constrained to a low resolution despite correct [KMS](/index.php/Kernel_mode_setting "Kernel mode setting") settings being set. This can be caused by legacy/BIOS boot being enabled in UEFI settings. Disabling legacy boot to bypass the compatibility layer should allow the system to boot at the correct resolution.
+
 ## See also
 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)

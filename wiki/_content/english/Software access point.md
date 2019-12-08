@@ -89,7 +89,7 @@ Setting up an access point consists of two main parts:
 
 The actual Wi-Fi link is established via the [hostapd](https://www.archlinux.org/packages/?name=hostapd) package, which has WPA2 support.
 
-Adjust the options in *hostapd* configuration file if necessary. Especially, change the `ssid` and the `wpa_passphrase`. See [hostapd Linux documentation page](http://wireless.kernel.org/en/users/Documentation/hostapd) for more information.
+Adjust the options in *hostapd* configuration file if necessary. Especially, change the `ssid` and the `wpa_passphrase`. See [hostapd Linux documentation page](https://wireless.wiki.kernel.org/en/users/documentation/hostapd) for more information.
 
  `/etc/hostapd/hostapd.conf` 
 ```

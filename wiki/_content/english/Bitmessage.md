@@ -4,7 +4,11 @@ From the [Bitmessage wiki](https://bitmessage.org/wiki/Main_Page):
 
 Bitmessage may be used independently or with [Tor](/index.php/Tor "Tor"). Using it with Tor has additional security benefits.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Set up](#Set_up)
@@ -25,7 +29,7 @@ Install [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/) or [pyb
 
 ### Without Tor
 
-After launching bitmessage (the name of the bitmessage binary is *pybitmessage*) for the first time, disregard any popups and:
+After launching bitmessage (the name of the bitmessage main python2 script is *pybitmessage*) for the first time, disregard any popups and:
 
 *   Navigate to the *Your Identities* tab
 *   Hit the *New* button and create a few new addresses. Since bitmessage is built to be used with different (ideally disposable) addresses, feel free to create more than one address (for instance this user created four addresses)
@@ -48,7 +52,7 @@ Using bitmessage is the same as using an email client. The addresses you have ar
 
 ### Attachments
 
-Attachments are not possible for the moment in bitmessage. There are three ways around it. One is to convert your files using base64 and concatenating them to the end of your bitmessage itself.
+Attachments are not possible for the moment in mainline bitmessage, but the [wiki](https://github.com/Bitmessage/PyBitmessage/wiki/2-BM-tools) offers links to API tools which allow to send binaries (.zip , .jar (texts readable in GUI in lowest jar-compression setting)) and pictures (from local files or weblinks via clipboard). Alternatively, 3 more options are available: One is to convert your files using base64 and concatenating them to the end of your bitmessage itself.
 
 ```
 base64 < binary.file > text.file

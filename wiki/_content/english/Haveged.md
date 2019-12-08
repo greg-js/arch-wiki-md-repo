@@ -33,7 +33,7 @@ If you are not sure, whether you need haveged, run:
 
 ```
 
-This command shows you how much entropy your server has collected. If it is rather low (<1000), you should probably install haveged. Otherwise cryptographic applications will block until there is enough entropy available, which eg. could result in slow wlan speed, if your server is a [Software access point](/index.php/Software_access_point "Software access point").
+This command shows you how much entropy your server has collected. If it is rather low (<1000), you should probably install haveged. Otherwise cryptographic applications will [block](https://en.wikipedia.org/wiki/Blocking_(computing) until there is enough entropy available, which eg. could result in slow wlan speed, if your server is a [Software access point](/index.php/Software_access_point "Software access point").
 
 You should use this command again to verify how much haveged boosted your entropy pool after the installation.
 

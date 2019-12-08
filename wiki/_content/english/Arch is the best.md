@@ -730,7 +730,7 @@ println("Arch is the best!")
 	JetBrains' attempt to get world domination.
 
 ```
-fun main(args: Array<String>) {
+fun main() {
    println("Arch is the best!")
 }
 

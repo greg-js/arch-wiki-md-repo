@@ -4,7 +4,7 @@
 *   [Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 *   [Pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"). Дата последней синхронизации: 11 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=562771).
+**Состояние перевода:** На этой странице представлен перевод статьи [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"). Дата последней синхронизации: 2 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=590810).
 
 Эта страница написана с целью показать сходства и различия между Arch Linux и другими популярными дистрибутивами GNU/Linux, а также Unix-подобными операционными системами. Здесь приведены краткие описания, которые могут помочь определиться, подходит ли Arch Linux для определённых целей или нет. Тем не менее, лучший способ сравнить дистрибутивы между собой — установить и попробовать их самому.
 
@@ -115,7 +115,6 @@
 
 *   [Linux Mint](https://www.linuxmint.com/) был создан в качестве ответвления [Ubuntu](#Ubuntu), но позже был также добавлен LMDE (Linux Mint Debian Edition), основанный на [#Debian](#Debian). С другой стороны, Arch — независимый дистрибутив, использующий собственные [систему сборки](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") и [репозитории](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 *   Mint включает в себя *MintTools* — несколько графических утилит для лёгкого обслуживания системы. Arch предоставляет только простые утилиты командной строки вроде [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"), оставляя управление системой пользователю.
-*   Mint в основном поставляется с [Cinnamon](/index.php/Cinnamon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cinnamon (Русский)") или [MATE](/index.php/MATE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MATE (Русский)") в качестве графического интерфейса, а также с [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") или [Xfce](/index.php/Xfce_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xfce (Русский)") в качестве альтернативы.
 *   Новые версии Mint выпускаются каждые шесть месяцев, примерно на месяц позже Ubuntu. Каждый релиз основан на последнем выпуске Ubuntu LTS и поддерживается пять лет. Linux Mint Debian Edition (LMDE) основан на Debian Stable и получает только обновления безопасности и пакетов Mint. В Arch, напротив, используется модель разработки ПО роллинг-релиз.
 
 ### openSUSE

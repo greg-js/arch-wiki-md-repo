@@ -280,7 +280,7 @@ $ sudo passwd root
 
 #### kdesu
 
-kdesu may be used under KDE to launch GUI applications with root privileges. It is possible that by default kdesu will try to use su even if the root account is disabled. Fortunately one can tell kdesu to use sudo instead of su. Create/edit the file `~/.config/kdesurc`:
+kdesu may be used under [KDE](/index.php/KDE "KDE") to launch GUI applications with root privileges. It is possible that by default kdesu will try to use su even if the root account is disabled. Fortunately one can tell kdesu to use sudo instead of su. Create/edit the file `~/.config/kdesurc`:
 
 ```
 [super-user-command]

@@ -81,7 +81,7 @@ Then, install the appropriate package:
 
 Now, the scanner should be recognized by SANE.
 
-For network scanners, Brother provides a different configuration tool for each brscan version (eg. brsaneconfig2 for brscan2 compatible devices):
+For network scanners, Brother provides a different configuration tool for each brscan version (e.g., brsaneconfig2 for brscan2 compatible devices):
 
 ```
 # brsaneconfig2 -a name=<ScannerName> model=<ScannerModel> ip=<ScannerIP>
@@ -92,6 +92,20 @@ Example:
 
 ```
 # brsaneconfig2 -a name=SCANNER_DCP770CW model=DCP-770CW ip=192.168.0.110
+
+```
+
+To get the IP and node name of your scanner, you can use [Nmap](/index.php/Nmap "Nmap"):
+
+```
+$ nmap -sP 10.0.0.0/24
+
+```
+
+It's also possible to add a scanner via its node name instead of its IP, for example:
+
+```
+# brsaneconfig4 -a name=Brother_DCP-L3550CDW model=DCP-L3550CDW nodename=BRWC0B5D72A0B87
 
 ```
 
@@ -106,15 +120,15 @@ Now use `scanimage --list-devices` to check whether sane is able to find your sc
 If all the necessary packages are installed but you still get the "invalid argument" error this could mean that the configuration file has been corrupted. Run the following command (in case of brscan4):
 
 ```
- # brsaneconfig4 -d 
+ # brsaneconfig4 -d
 
 ```
 
-The output should narrow down the problem. Most likely the connection isn't setup correctly. In case of a network scanner check if the IP address is right by opening the `/etc/opt/brother/scanner/brscan4//brsanenetdevice4.cfg` with an editor. In case of a USB connection check if the path to the scanner in the configuration file is setup correctly. For that compare the values of the `lsusb` command with your configuration file and change them if necessary. You might also try to follow the `brother*X*` suggestion from [Network Scanning above](#Network_Scanning) even for non networked scanners.
+The output should narrow down the problem. Most likely the connection isn't set up correctly. In case of a network scanner, check if the IP address is right by opening `/etc/opt/brother/scanner/brscan4//brsanenetdevice4.cfg` with an editor. In case of a USB connection, check if the path to the scanner in the configuration file is set up correctly. For that, compare the values of the `lsusb` command with your configuration file and change them if necessary. You might also try to follow the `brother*X*` suggestion from [Network Scanning above](#Network_Scanning) even for non-network scanners.
 
 ### Scan-key-tool
 
-Brother has released a tool to enable scanning to be triggered by user interaction with the scanner itself (e.g. by selecting one of "Scan to email", "Scan to image", etc. on the scanner keypad) rather than by an attached computer. This can be set up by installing the [brscan-skey](https://aur.archlinux.org/packages/brscan-skey/) package and starting `brscan-skey.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Note that by default this service runs as the **brscan-skey** user which is created by the package, whose home directory is located at `/srv/brscan-skey`.
+Brother has released a tool to enable scanning to be triggered by user interaction with the scanner itself (e.g., by selecting one of "Scan to email", "Scan to image", etc. on the scanner's keypad) rather than by an attached computer. This can be set up by installing the [brscan-skey](https://aur.archlinux.org/packages/brscan-skey/) package and starting `brscan-skey.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Note that by default this service runs as the **brscan-skey** user which is created by the package, whose home directory is located at `/srv/brscan-skey`.
 
 Brother supplies some default scripts that are executed when a scan type is selected on the keypad. These may require the installation of some optional dependencies of the [brscan-skey](https://aur.archlinux.org/packages/brscan-skey/) package. For all options apart from "Scan to email" the resulting output can be found inside `$HOME/brscan`, with `$HOME` the home directory of the user running this tool (so `/srv/brscan-skey` if started via systemd as a systemwide process).
 
@@ -338,6 +352,7 @@ Alternatively, if you dont want to install dpkg or wish to control exactly what 
 This process has been successfully tested for the following devices:
 
 *   Lexmark MB2236 (USB only; network untested).
+*   Lexmark MX517de (network only; USB untested).
 
 It does not work fot the following:
 

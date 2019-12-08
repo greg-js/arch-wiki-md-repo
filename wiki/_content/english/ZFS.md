@@ -200,7 +200,7 @@ You need to add a file in `/etc/zfs/zfs-list.cache` for each ZFS pool in your sy
 
 ## Creating a storage pool
 
-Make sure the wanted disks contain an empty [GPT](/index.php/GPT "GPT")/[MBR](/index.php/MBR "MBR") [partition table](/index.php/Partition_table "Partition table"). It is not necessary nor recommended to partition the drives before creating the ZFS filesystem.
+It is not necessary to partition the drives before creating the ZFS filesystem. It is recommended to point ZFS at an entire disk (ie. `/dev/sdx` rather than `/dev/sdx1`), which will [automatically create a GPT partition table](https://www.reddit.com/r/zfs/comments/667na0/zfs_on_raw_or_gpt/dgh0l9t/) and add an 8 MB reserved partition at the end of the disk for legacy bootloaders. However, you can specify a partition or a file within an existing filesystem, if you wish to create multiple volumes with different redundancy properties.
 
 **Note:** If some or all device have been used in a software RAID set it is paramount to [erase any old RAID configuration information](/index.php/Mdadm#Prepare_the_devices "Mdadm").
 
@@ -698,7 +698,7 @@ It is possible to automatically unlock a pool dataset on boot time by using a [s
  `/etc/systemd/system/zfskey-tank@.service` 
 ```
 [Unit]
-Description=Load pool encryption keys
+Description=Load %I encryption keys
 Before=systemd-user-sessions.service
 Before=zfs-mount.service
 After=zfs-import.target
@@ -706,7 +706,7 @@ After=zfs-import.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/bash -c 'systemd-ask-password "Encrypted ZFS password for %j/%i" --no-tty  | zfs load-key %j/%i'
+ExecStart=/usr/bin/bash -c 'systemd-ask-password "Encrypted ZFS password for %I" --no-tty  | zfs load-key %I'
 
 [Install]
 WantedBy=zfs-mount.service
@@ -718,7 +718,7 @@ WantedBy=zfs-mount.service
 
 An alternative is to load all possible keys:
 
- `etc/systemd/system/zfs-load-key.service` 
+ `/etc/systemd/system/zfs-load-key.service` 
 ```
 [Unit]
 Description=Load encryption keys

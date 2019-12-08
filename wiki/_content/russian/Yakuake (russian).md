@@ -2,7 +2,7 @@
 
 *   [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Yakuake](/index.php/Yakuake "Yakuake"). Дата последней синхронизации: 5 октября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Yakuake&diff=0&oldid=546149).
+**Состояние перевода:** На этой странице представлен перевод статьи [Yakuake](/index.php/Yakuake "Yakuake"). Дата последней синхронизации: 2 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Yakuake&diff=0&oldid=590474).
 
 [Yakuake](https://www.kde.org/applications/system/yakuake/) — выпадающий сверху эмулятор терминала для [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") в стиле [Guake (Русский)](/index.php/Guake_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Guake (Русский)") для [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"), [Tilda](/index.php/Tilda "Tilda") или консоли в игре Quake.
 

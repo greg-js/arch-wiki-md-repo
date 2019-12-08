@@ -82,7 +82,7 @@ If you have a GeForce 300 series card or older (released in 2010 or earlier), Nv
 
 However, Nvidia's legacy drivers are still available and might provide better 3D performance/stability if you are willing to downgrade [Xorg](/index.php/Xorg "Xorg"):
 
-*   For GeForce 8/9, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx], [install](/index.php/Install "Install") the [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/) package. (supports the latest Xorg but has [issues](https://lists.archlinux.org/pipermail/arch-dev-public/2019-May/029568.html) with Linux 5.0+)
+*   For GeForce 8/9, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx], [install](/index.php/Install "Install") the [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/) package. Last supported Xorg version is 1.20, has [issues](https://lists.archlinux.org/pipermail/arch-dev-public/2019-May/029568.html) with Linux 5.0+
 *   For GeForce 6/7 series cards [NV4x and NV6x], [install](/index.php/Install "Install") the [nvidia-304xx-dkms](https://aur.archlinux.org/packages/nvidia-304xx-dkms/) package. Last supported Xorg version is 1.19.
 *   For GeForce 5 FX series cards [NV30-NV36], install the [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/) package. Last supported Xorg version is 1.15.
 *   For GeForce 2/3/4 MX/Ti series cards [NV11, NV17-NV28], install the [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/) package. Last supported Xorg version is 1.12.

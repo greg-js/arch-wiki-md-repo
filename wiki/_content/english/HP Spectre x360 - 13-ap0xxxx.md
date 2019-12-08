@@ -137,7 +137,7 @@ Follow the README instructions in the repository and reboot.
 
 The laptop has a Realtek ALC285 Codec with a 4 speaker system built in. External mic with headphones works and legacy driver plays only on two speakers.
 
-For the internal dual digital mic, it currently does not work with the legacy driver ( snd-hda-intel ) but works using snd-sof as described in the kernel bug [[2]](https://bugzilla.kernel.org/show_bug.cgi?id=201251#c73) . Hopefully will be merged fully by kernel 5.3-5.4 and will allow using the microphone. Fow now you can use [#Advanced / Kernel update](#Advanced_/_Kernel_update)
+As of kernel 5.4 the digital mic is detected using linux-sof driver. You may have to blacklist old modules to make sure the new sound module is used.
 
 There is still work needed to support the 4 speakers.
 
@@ -153,9 +153,9 @@ All the media keys works. The mute button does not light up though.
 
 Installing [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and [screenrotator-git](https://aur.archlinux.org/packages/screenrotator-git/) autorotation works out of the box.
 
-You can also use this script [[3]](https://gist.github.com/Migacz85/3f544933ce5add438555ba7cd33f0413) but you have to change the line TOUCHPAD="ELAN Touchscreen" by PEN="ELAN2514:00 04F3:280E Pen (0)" and change everywhere the word TOUCHPAD by the word PEN. Indeed, the touchpad do not need to be remaped, since it is deactivated when the screen is rotated, however the PEN is.
+You can also use this script [[2]](https://gist.github.com/Migacz85/3f544933ce5add438555ba7cd33f0413) but you have to change the line TOUCHPAD="ELAN Touchscreen" by PEN="ELAN2514:00 04F3:280E Pen (0)" and change everywhere the word TOUCHPAD by the word PEN. Indeed, the touchpad do not need to be remaped, since it is deactivated when the screen is rotated, however the PEN is.
 
-WARNING sensor support is broken in 5.0+ kernels because of a kernel bug floating around that cause issues and error messages to be spammed. A simple fix is [[4]](https://lkml.org/lkml/2019/3/8/2) ( that patch got reverted in the current 5.2+ kernels, but can be reapplied safely ). The kernel at [#Advanced / Kernel update](#Advanced_/_Kernel_update) is already patched and support autorotation.
+WARNING sensor support is broken in kernels 5.0 < version < 5.4.1 because of a kernel bug floating around that cause issues and error messages to be spammed. A simple fix is [[3]](https://lkml.org/lkml/2019/3/8/2) ( that patch got reverted in the current 5.2+ kernels, but can be reapplied safely ). The kernel at [#Advanced / Kernel update](#Advanced_/_Kernel_update) is already patched and support autorotation.
 
 ### Dual boot
 
@@ -187,7 +187,7 @@ Some configurations include the [Intel XMM 7560](https://www.intel.com/content/w
 
 ### Fingerprint Reader
 
-Not supported at the moment in libfprint, there seems to be a beginning of work to support those types of fingerprint readers here [[5]](https://gitlab.freedesktop.org/vincenth/libfprint.git) The branch synaptics-driver-20190617 contains code that seems to be able to open the fingerprint reader ( if you add the correct device id in drivers/synaptics/synaptics.c ) .
+Not supported at the moment in libfprint, there seems to be a beginning of work to support those types of fingerprint readers here [[4]](https://gitlab.freedesktop.org/vincenth/libfprint.git) The branch synaptics-driver-20190617 contains code that seems to be able to open the fingerprint reader ( if you add the correct device id in drivers/synaptics/synaptics.c ) .
 
 Generates an error after opening though so this is not complete yet.
 
@@ -207,9 +207,9 @@ Powertop display a constant mW consumption of 570 mW ( probably wrong ). There i
 
 ### Suspend issues
 
-This model only supports the S0ix, and so only S0 (s2idle) sleep mode is activated. Since this device use a Hynix SSD, it is affected by a bug [[6]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1801875), resulting in 4-5% battery drain per hour during suspend. A patch set is available, but will not be merged [[7]](https://lore.kernel.org/patchwork/patch/1007283/). In any case, you can install the patched kernel from AUR [linux-hynix](https://aur.archlinux.org/packages/linux-hynix/) or compile the one at [#Advanced / Kernel update](#Advanced_/_Kernel_update). The battery drain during suspend should drop to 1-2% per hour.
+This model only supports the S0ix, and so only S0 (s2idle) sleep mode is activated. Since this device use a Hynix SSD, it is affected by a bug [[5]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1801875), resulting in 4-5% battery drain per hour during suspend. A patch set is available, but will not be merged [[6]](https://lore.kernel.org/patchwork/patch/1007283/). In any case, you can install the patched kernel from AUR [linux-hynix](https://aur.archlinux.org/packages/linux-hynix/) or compile the one at [#Advanced / Kernel update](#Advanced_/_Kernel_update). The battery drain during suspend should drop to 1-2% per hour.
 
-As it is mentioned by Intel [[8]](https://01.org/blogs/qwang59/2018/how-achieve-s0ix-states-linux), TLP may not work, and so it should not be used with S0ix.
+As it is mentioned by Intel [[7]](https://01.org/blogs/qwang59/2018/how-achieve-s0ix-states-linux), TLP may not work, and so it should not be used with S0ix.
 
 ### Sensors
 

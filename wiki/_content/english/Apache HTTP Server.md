@@ -35,7 +35,8 @@ This article describes how to set up Apache and how to optionally integrate it w
     *   [4.4 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM,_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
     *   [4.5 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
     *   [4.6 AH00072: make_sock: could not bind to address](#AH00072:_make_sock:_could_not_bind_to_address)
-    *   [4.7 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
+    *   [4.7 AH01071: Got error 'Primary script unknown'](#AH01071:_Got_error_'Primary_script_unknown')
+    *   [4.8 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -544,6 +545,10 @@ Listen 0.0.0.0:80
 Listen [::]:80
 
 ```
+
+### AH01071: Got error 'Primary script unknown'
+
+This can be caused by `ProtectHome=true` in the php-fpm systemd unit file if you are serving files in `/home` such as in a virtual host environment. You can disable this feature by [editing the php-fpm unit file](/index.php/Systemd#Drop-in_files "Systemd") and restarting php-fpm. Alternatively, move your document root.
 
 ### Changing the max_execution_time in php.ini has no effect
 

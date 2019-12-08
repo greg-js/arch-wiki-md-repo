@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=585928) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-12-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=589275) na versão em inglês.
 
 Artigos relacionados
 
@@ -306,7 +306,7 @@ A maioria das distribuições possuem um comando `locate` disponível para possi
 
 ### Entrega local de correio
 
-Uma instalação padrão não fornece uma forma de sincronizar correios eletrônicos (e-mails). Para configurar *Postfix* para uma simples entrega para caixa de correio local, veja [Postfix](/index.php/Postfix "Postfix"). Outras opções são [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD"), [msmtp](/index.php/Msmtp "Msmtp") e [fdm](/index.php/Fdm "Fdm").
+Uma instalação padrão não fornece uma forma de sincronizar correios eletrônicos (e-mails). Uma lista de agentes de entrega de correio está disponível no artigo [Servidor de e-mail](/index.php/Servidor_de_e-mail "Servidor de e-mail").
 
 ### Impressão
 
@@ -358,7 +358,7 @@ Arquivos compactados, ou pacotes, são frequentemente encontrados em um sistema 
 
 ### Prompt de console
 
-O prompt de console (PS1) pode ser personalizado para uma de diversas formas. Veja [Prompt colorido do Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt") ou [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") se estiver usando Bash ou Zsh, respectivamente.
+O prompt de console (`PS1`) pode ser personalizado para uma de diversas formas. Veja [Prompt colorido do Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt") ou [Zsh#Prompts](/index.php/Zsh#Prompts "Zsh") se estiver usando Bash ou Zsh, respectivamente.
 
 ### Shell do emacs
 

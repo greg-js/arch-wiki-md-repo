@@ -48,19 +48,42 @@ On the **CA machine**, install [easy-rsa](https://www.archlinux.org/packages/?na
 
 ```
 
+Starting from OpenVPN 2.4, one can also use elliptic curves for TLS connections (e.g. tls-cipher TLS-ECDHE-ECDSA-WITH-AES-256-GCM-SHA384). Elliptic curve cryptography provides more security and eliminates the need for a DH parameters file. See [this forum post](https://forums.openvpn.net/viewtopic.php?f=4&t=23227) and [this blog post](https://www.maths.tcd.ie/~fionn/misc/ec_vpn.php).
+
+Append the following lines to `/etc/easy-rsa/vars` to make Easy-RSA use elliptic curves:
+
+ `/etc/easy-rsa/vars` 
+```
+set_var EASYRSA_ALGO     ec
+set_var EASYRSA_CURVE    secp521r1
+set_var EASYRSA_DIGEST   "sha512"
+
+```
+
+Now set up PKI and generate a CA certificate:
+
+```
+# cd /etc/easy-rsa
+# export EASYRSA=$(pwd)
+# export EASYRSA_VARS_FILE=/etc/easy-rsa/vars
+# easyrsa init-pki
+# easyrsa build-ca
+
+```
+
 ## OpenVPN server files
 
 A functional OpenVPN server requires the following:
 
 1.  The CA's public certificate
-2.  The Diffie-Hellman (DH) parameters file (needed for TLS mode which is recommended).
+2.  The Diffie-Hellman (DH) parameters file (required by TLS mode when not using TLS with elliptic curves).
 3.  The server key pair (a public certificate and a private key).
 4.  The Hash-based Message Authentication Code (HMAC) key.
 
 Upon completing the steps outlined in this article, users will have generated the following files on the server:
 
 1.  `/etc/openvpn/server/ca.crt`
-2.  `/etc/openvpn/server/dh.pem`
+2.  `/etc/openvpn/server/dh.pem` (not when using TLS with elliptic curves)
 3.  `/etc/openvpn/server/servername.crt` and `/etc/openvpn/server/servername.key`
 4.  `/etc/openvpn/server/ta.key`
 
@@ -100,6 +123,8 @@ This will create two files:
 `/etc/easy-rsa/pki/reqs/servername.req` `/etc/easy-rsa/pki/private/servername.key`
 
 ### Diffie-Hellman (DH) parameters file
+
+If you are using TLS with elliptic curves, skip this step.
 
 On the **OpenVPN server machine**, create the initial dh.pem file:
 

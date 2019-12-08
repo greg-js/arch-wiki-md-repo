@@ -8,7 +8,7 @@
 | Card reader | Working | xhci_hcd |
 | Intel AX200 Bluetooth | Working | btusb |
 | Intel Thunderbolt | Working | thunderbolt |
-| Synaptics fingerprint reader | Not working |
+| Synaptics fingerprint reader | Initial Support Complete |
 
 The [Thinkpad X1E Gen 2](https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-x/X1-Extreme-Gen-2/p/22TP2TXX1E2) is a thin-and-light 15.6" workstation/multimedia laptop from Lenovo's 2019 ThinkPad X lineup.
 
@@ -28,8 +28,9 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [1.3 Graphics](#Graphics)
         *   [1.3.1 Nouveau](#Nouveau)
         *   [1.3.2 NVIDIA](#NVIDIA)
-            *   [1.3.2.1 Beta driver features](#Beta_driver_features)
-            *   [1.3.2.2 Optimus manager](#Optimus_manager)
+            *   [1.3.2.1 Prime features](#Prime_features)
+            *   [1.3.2.2 Power Management](#Power_Management)
+            *   [1.3.2.3 Optimus manager](#Optimus_manager)
     *   [1.4 Audio](#Audio)
         *   [1.4.1 Audio pop on shutdown and startup](#Audio_pop_on_shutdown_and_startup)
     *   [1.5 Fingerprint](#Fingerprint)
@@ -74,6 +75,8 @@ Remember to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Rege
 
 ```
 
+**Note:** It may be much easier to just use optimus manager with the necessary power options described in [Lenovo_ThinkPad_X1_Extreme_(Gen_2)#Graphics](/index.php/Lenovo_ThinkPad_X1_Extreme_(Gen_2)#Graphics "Lenovo ThinkPad X1 Extreme (Gen 2)")
+
 ### Graphics
 
 #### Nouveau
@@ -82,25 +85,19 @@ Currently (5.2.9-arch1), the Nouveau driver can cause quite a lot of kernel pani
 
 #### NVIDIA
 
-##### Beta driver features
+##### Prime features
 
-The NVIDIA beta video driver supports PRIME Offloading. [Following this guide](https://bbs.archlinux.org/viewtopic.php?pid=1859226#p1859226) you can try out this new mode. However, this means [your external display ports will not work](https://forum.manjaro.org/t/nvidia-render-offloading-help-getting-external-monitor-working/99430/22).
+The NVIDIA driver now supports PRIME Offloading. [Following this guide](http://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/primerenderoffload.html) you can try out this new mode. However, [external display ports will not work with only this method](https://forum.manjaro.org/t/nvidia-render-offloading-help-getting-external-monitor-working/99430/22).
 
-**Note:** Unlike the posters in the above thread. The graphics card that is on this laptop **will** shutdown.
+##### Power Management
+
+To get the best power options the graphics card may be configured to use low power mode by [following the guide here](http://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/dynamicpowermanagement.html)
 
 ##### Optimus manager
 
-Currently, one of the easiest solutions for this laptop is to use [optimus-manager](https://github.com/Askannz/optimus-manager) with the bbswitch backend.
+Currently, one of the easiest solutions for this laptop is to use [optimus-manager](https://github.com/Askannz/optimus-manager) with the hybrid backend. This requires the most up to date nvidia and xorg-server packages.
 
-When using just the intel driver, disable the NVIDIA card manually:
-
-```
-# tee /sys/bus/pci/devices/0000\:01\:00.1/remove <<<1
-# tee /sys/bus/pci/devices/0000\:01\:00.0/remove <<<1
-
-```
-
-This has been confirmed to work with the HDMI port.
+This allows easy switching between the PRIME offloading feature above, and a mode where external display ports (HDMI and USB-C) work.
 
 ### Audio
 
@@ -110,7 +107,46 @@ To work around the loud audio artifacts on startup/shutdown follow the guide for
 
 ### Fingerprint
 
-The 2.0 version of fprint [will support this device](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) after a firmware update.
+The 2.0 version of fprint [supports this device](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) after a firmware update.
+
+To get fingerprint working right now:
+
+**Note:** The Firmware for this is still in the testing phase at LVFS. Proceed with caution.
+
+Install the following packages available on the [AUR](/index.php/AUR "AUR") :
+
+*   [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/)
+*   [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/)
+*   [fwupd-git](https://aur.archlinux.org/packages/fwupd-git/)
+
+The firmware updates currently require the newest version of fwupd and you must manually download the updates:
+
+*   [https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware)
+*   [https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config)
+
+using the latest version of the fwupd tool you should be able to run:
+
+```
+$ fwupdmgr get-devices
+
+```
+
+and see a "Prometheus" device in the list.
+
+Install the firmware by running
+
+```
+$ fwupdmgr install *.cab
+
+```
+
+on each downloaded .cab file
+
+**Note:** At this point, a reboot may be required
+
+You should then be able to enroll your fingerprints with [Fprint#Configuration](/index.php/Fprint#Configuration "Fprint")
+
+**Note:** For some reason, [the fprint.service can take some time to start. if fprint reports no devices, wait until fprint.service has completely stopped (it should become inactive in systemctl) To fix this, reset the fingerprint data in your bios settings](https://gitlab.freedesktop.org/libfprint/libfprint/issues/207)
 
 ### Webcam
 

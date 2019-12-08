@@ -120,7 +120,7 @@ ExecStop=/usr/bin/kexec -l /boot/vmlinuz-%i --initrd=/boot/initramfs-%i.img --re
 WantedBy=basic.target
 ```
 
-Note that Conflicts=shutdown.target is not really needed, as it's implicitly guaranteed by strict ordering on systinit.target which itself Conflicts= with shutdown.target.
+Note that Conflicts=shutdown.target is not really needed, as it's implicitly guaranteed by strict ordering on sysinit.target which itself Conflicts= with shutdown.target.
 
 ## Troubleshooting
 

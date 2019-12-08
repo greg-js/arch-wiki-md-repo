@@ -168,7 +168,7 @@ There are various [third-party DNS services](https://en.wikipedia.org/wiki/Publi
 [DNSSEC](/index.php/DNSSEC "DNSSEC") | [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") | [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") | [DNS
 over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") | [DNS
 over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") |
-| [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) | No | No | Yes | No | No | Server | Resolver | No | Resolver |
+| [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) | No | No | Yes | No | No | Server | Resolver | No | Yes |
 | [Rescached](/index.php/Rescached "Rescached") | [rescached-git](https://aur.archlinux.org/packages/rescached-git/) | No | No | Yes | No | [Yes](https://github.com/shuLhan/rescached-go#integration-with-openresolv) | Yes | No | No | Limited |
 | [Stubby](/index.php/Stubby "Stubby") | [stubby](https://www.archlinux.org/packages/?name=stubby) | No | No | No | Yes | No | Server | No | Resolver | No |
 | [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | [systemd](https://www.archlinux.org/packages/?name=systemd) | No | No | Yes | Yes | [Yes](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Resolver and [limited server](https://github.com/systemd/systemd/issues/4621#issuecomment-260050033) | No | Insecure resolver | [No](https://github.com/systemd/systemd/issues/8639) |
@@ -182,16 +182,16 @@ over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTT
 
 1.  Only forwards using DNS over HTTPS when Rescached itself is queried using DNS over HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
 2.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[4]](https://github.com/systemd/systemd/issues/9397)
-3.  From [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software#cite_note-masqauth-26 "wikipedia:Comparison of DNS server software"): dnsmasq has limited authoritative support, intended for internal network use rather than public Internet use.
+3.  From [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software#cite_note-masqauth-28 "wikipedia:Comparison of DNS server software"): dnsmasq has limited authoritative support, intended for internal network use rather than public Internet use.
 
 ### Authoritative-only servers
 
 | Name | Package | [DNSSEC](/index.php/DNSSEC "DNSSEC") | Geographic
 balancing |
-| [gdnsd](https://gdnsd.org/) | [gdnsd](https://www.archlinux.org/packages/?name=gdnsd) | No | Yes |
-| [Knot DNS](https://www.knot-dns.cz/) | [knot](https://www.archlinux.org/packages/?name=knot) | Yes | [Yes](https://www.knot-dns.cz/docs/2.7/singlehtml/#geoip-geography-based-responses) |
+| gdnsd | [gdnsd](https://www.archlinux.org/packages/?name=gdnsd) | No | Yes |
+| [Knot DNS](https://en.wikipedia.org/wiki/Knot_DNS "wikipedia:Knot DNS") | [knot](https://www.archlinux.org/packages/?name=knot) | Yes | [Yes](https://www.knot-dns.cz/docs/2.7/singlehtml/#geoip-geography-based-responses) |
 | [NSD](/index.php/NSD "NSD") | [nsd](https://www.archlinux.org/packages/?name=nsd) | No | No |
-| [PowerDNS](https://www.powerdns.com/auth.html) | [powerdns](https://www.archlinux.org/packages/?name=powerdns) | Yes | Yes |
+| [PowerDNS](/index.php/PowerDNS "PowerDNS") | [powerdns](https://www.archlinux.org/packages/?name=powerdns) | Yes | Yes |
 
 ### Conditional forwarding
 

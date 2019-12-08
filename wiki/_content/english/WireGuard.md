@@ -1,6 +1,6 @@
 From the [WireGuard](https://www.wireguard.com/) project homepage:
 
-	Wireguard is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it plans to be cross-platform and widely deployable.
+	WireGuard is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it plans to be cross-platform and widely deployable.
 
 **Warning:** WireGuard has not undergone proper degrees of security auditing and the protocol is still subject to change [[1]](https://www.wireguard.com/#work-in-progress).
 
@@ -27,9 +27,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 *   [4 Testing the tunnel](#Testing_the_tunnel)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Routes are periodically reset](#Routes_are_periodically_reset)
-    *   [5.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
-        *   [5.2.1 Using resolvconf](#Using_resolvconf)
-        *   [5.2.2 Using dnsmasq](#Using_dnsmasq)
+    *   [5.2 Broken DNS resolution](#Broken_DNS_resolution)
     *   [5.3 Low MTU](#Low_MTU)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Using systemd-networkd](#Using_systemd-networkd)
@@ -49,9 +47,9 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [wireguard-lts](https://www.archlinux.org/packages/?name=wireguard-lts) for the LTS [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
     *   [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) for the DKMS variant for other [kernels](/index.php/Kernel "Kernel").
 
-**Note:** As of November 2019, it is looking like Wireguard could be [[mainlined](https://www.phoronix.com/scan.php?page=news_item&px=WireGuard-RFC-Looking-Like-5.6)] as soon as kernel version 5.6.
+**Note:** As of November 2019, it is looking like WireGuard could be [mainlined](https://www.phoronix.com/scan.php?page=news_item&px=WireGuard-RFC-Looking-Like-5.6) as soon as kernel version 5.6.
 
-**Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for setting up Wireguard interfaces since version 237\. See [#Using systemd-networkd](#Using_systemd-networkd) for details.
+**Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for setting up WireGuard interfaces since version 237\. See [#Using systemd-networkd](#Using_systemd-networkd) for details.
 
 ## Usage
 
@@ -60,7 +58,7 @@ The below commands demonstrate how to setup a basic tunnel between two peers wit
  Peer A | Peer B |
 | External IP address | 198.51.100.101 | 203.0.113.102 |
 | Internal IP address | 10.0.0.1/24 | 10.0.0.2/24 |
-| Wireguard listening port | UDP/48574 | UDP/39814 |
+| WireGuard listening port | UDP/51871 | UDP/51902 |
 
 The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 203.0.113.102`, and vice versa. The internal addresses will be new addresses created by the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) commands below and will be shared internally within the new WireGuard network using [wg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg.8). The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
 
@@ -102,28 +100,28 @@ One can also generate a preshared key to add an additional layer of symmetric-ke
 
 ### Peer A setup
 
-This peer will listen on UDP port 48574 and will accept connection from peer B by linking its public key with both its inner and outer IPs addresses.
+This peer will listen on UDP port 51871 and will accept connection from peer B by linking its public key with both its inner and outer IPs addresses.
 
 ```
 # ip link add dev wg0 type wireguard
 # ip addr add 10.0.0.1/24 dev wg0
-# wg set wg0 listen-port 48574 private-key ./privatekey
-# wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 203.0.113.102:39814
+# wg set wg0 listen-port 51871 private-key ./privatekey
+# wg set wg0 peer *PEER_B_PUBLIC_KEY* persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 203.0.113.102:51902
 # ip link set wg0 up
 
 ```
 
-`[Peer B public key]` should have the same format as `EsnHH9m6RthHSs+sd9uM6eCHe/mMVFaRh93GYadDDnM=`. The keyword `allowed-ips` is a list of addresses that peer A will be able to send traffic to; `allowed-ips 0.0.0.0/0` would allow sending traffic to any IPv4 address, `::/0` allows sending traffic to any IPv6 address.
+`*PEER_B_PUBLIC_KEY*` should have the same format as `EsnHH9m6RthHSs+sd9uM6eCHe/mMVFaRh93GYadDDnM=`. The keyword `allowed-ips` is a list of addresses that peer A will be able to send traffic to; `allowed-ips 0.0.0.0/0` would allow sending traffic to any IPv4 address, `::/0` allows sending traffic to any IPv6 address.
 
 ### Peer B setup
 
-As with peer A, whereas the wireguard daemon is listening on the UDP port 39814 and accept connection from peer A only.
+As with peer A, whereas the wireguard daemon is listening on the UDP port 51902 and accept connection from peer A only.
 
 ```
 # ip link add dev wg0 type wireguard
 # ip addr add 10.0.0.2/24 dev wg0
-# wg set wg0 listen-port 39814 private-key ./privatekey
-# wg set wg0 peer [Peer A public key] persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 198.51.100.101:48574
+# wg set wg0 listen-port 51902 private-key ./privatekey
+# wg set wg0 peer *PEER_A_PUBLIC_KEY* persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 198.51.100.101:51871
 # ip link set wg0 up
 
 ```
@@ -139,10 +137,10 @@ As an example, when Peer A has been configured we are able to see its identity a
 interface: wg0
   public key: UguPyBThx/+xMXeTbRYkKlP0Wh/QZT3vTLPOVaaXTD8=
   private key: (hidden)
-  listening port: 48574
+  listening port: 51871
 
 peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
-  endpoint: 203.0.113.102:39814
+  endpoint: 203.0.113.102:51902
   allowed ips: 10.0.0.2/32
 ```
 
@@ -169,12 +167,12 @@ The configuration can be saved by utilizing `showconf`:
 ```
 [Interface]
 Address = 10.0.0.1/32
-PrivateKey = [CLIENT PRIVATE KEY]
+PrivateKey = *CLIENT_PRIVATE_KEY*
 
 [Peer]
-PublicKey = [SERVER PUBLICKEY]
+PublicKey = *SERVER_PUBLICKEY*
 AllowedIPs = 10.0.0.0/24, 10.123.45.0/24, 1234:4567:89ab::/48
-Endpoint = [SERVER ENDPOINT]:48574
+Endpoint = *SERVER_ENDPOINT*:51871
 PersistentKeepalive = 25
 ```
 
@@ -208,9 +206,7 @@ If the server have the public IP configured, be sure to:
 *   Allow UDP traffic on the specified port(s) on which WireGuard will be running (for example allowing traffic on 51820/udp).
 *   Setup the forwarding policy for the firewall if it is not included in the WireGuard config for the interface itself `/etc/wireguard/wg0.conf`. The example below should have the iptables rules and work as-is.
 
-If the server is behind NAT, be sure to:
-
-*   NAT from the router the UDP traffic on the specified port(s) on which WireGuard will be running (for example allowing traffic on 51820/udp) to the WireGuard server.
+If the server is behind NAT, be sure to forward the specified port(s) on which WireGuard will be running (for example, 51820/UDP) from the router to the WireGuard server.
 
 ### Key generation
 
@@ -225,22 +221,22 @@ Create the "server" config file:
 [Interface]
 Address = 10.200.200.1/24
 ListenPort = 51820
-PrivateKey = [SERVER PRIVATE KEY]
+PrivateKey = *SERVER_PRIVATE_KEY*
 
 # note - substitute *eth0* in the following lines to match the Internet-facing interface
-# if the server is behind a router and receive traffic via NAT, this iptables rules aren't needed
+# if the server is behind a router and receive traffic via NAT, this iptables rules are not needed
 PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
 [Peer]
 # foo
-PublicKey = [FOO'S PUBLIC KEY]
-PresharedKey = [PRE-SHARED KEY]
+PublicKey = *PEER_FOO_PUBLIC_KEY*
+PresharedKey = *PRE-SHARED_KEY*
 AllowedIPs = 10.200.200.2/32
 
 [Peer]
 # bar
-PublicKey = [BAR'S PUBLIC KEY]
+PublicKey = *PEER_BAR_PUBLIC_KEY*
 AllowedIPs = 10.200.200.3/32
 ```
 
@@ -260,27 +256,27 @@ Create the corresponding "client" config file(s):
 ```
 [Interface]
 Address = 10.200.200.2/24
-PrivateKey = [FOO'S PRIVATE KEY]
+PrivateKey = *PEER_FOO_PRIVATE_KEY*
 DNS = 10.200.200.1
 
 [Peer]
-PublicKey = [SERVER PUBLICKEY]
-PresharedKey = [PRE-SHARED KEY]
+PublicKey = *SERVER_PUBLICKEY*
+PresharedKey = *PRE-SHARED_KEY*
 AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = my.ddns.address.com:51820
+Endpoint = my.ddns.example.com:51820
 ```
  `bar.conf` 
 ```
 [Interface]
 Address = 10.200.200.3/24
-PrivateKey = [BAR'S PRIVATE KEY]
+PrivateKey = *PEER_BAR_PRIVATE_KEY*
 DNS = 10.200.200.1
 
 [Peer]
-PublicKey = [SERVER PUBLICKEY]
-PresharedKey = [PRE-SHARED KEY]
+PublicKey = *SERVER_PUBLICKEY*
+PresharedKey = *PRE-SHARED KEY*
 AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = my.ddns.address.com:51820
+Endpoint = my.ddns.example.com:51820
 ```
 
 Using the catch-all `AllowedIPs = 0.0.0.0/0, ::/0` will forward all IPv4 (`0.0.0.0/0`) and IPv6 (`::/0`) traffic over the VPN.
@@ -328,38 +324,36 @@ peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
 
 ### Routes are periodically reset
 
-If you are not configuring Wireguard from [NetworkManager](/index.php/NetworkManager "NetworkManager"), make sure that NetworkManager is not managing the Wireguard interface:
+If you are not configuring WireGuard from [NetworkManager](/index.php/NetworkManager "NetworkManager"), make sure that NetworkManager is not managing the WireGuard interface(s):
 
  `/etc/NetworkManager/conf.d/unmanaged.conf` 
 ```
 [keyfile]
-unmanaged-devices=interface-name:wg0
+unmanaged-devices=interface-name:wg*
 ```
 
-### Connection loss with NetworkManager
+### Broken DNS resolution
 
-On desktop, connection loss can be experienced when all the traffic is tunneled through a Wireguard interface: typically, the connection is seemingly lost after a while or upon new connection to an access point.
+When tunneling all traffic through a WireGuard interface, the connection can become seemingly lost after a while or upon new connection. This could be caused by a [network manager](/index.php/Network_manager "Network manager") or [DHCP](/index.php/DHCP "DHCP") client overwriting `/etc/resolv.conf`.
 
-By default *wg-quick* uses a resolvconf provider such as [openresolv](/index.php/Openresolv "Openresolv") to register new [DNS](/index.php/DNS "DNS") entries (i.e. `DNS` keyword in the configuration file). However [NetworkManager](/index.php/NetworkManager "NetworkManager") does not use resolvconf by default: every time a new [DHCP](/index.php/DHCP "DHCP") lease is acquired, [NetworkManager](/index.php/NetworkManager "NetworkManager") overwrites the global DNS addresses with the DHCP-provided ones which might not be available through the tunnel.
+By default *wg-quick* uses *resolvconf* to register new [DNS](/index.php/DNS "DNS") entries (from the `DNS` keyword in the configuration file). This will cause issues with [network managers](/index.php/Network_manager "Network manager") and [DHCP](/index.php/DHCP "DHCP") clients that do not use *resolvconf*, as they will overwrite `/etc/resolv.conf` thus removing the DNS servers added by wg-quick.
 
-#### Using resolvconf
+The solution is to use networking software that supports [resolvconf](/index.php/Resolvconf "Resolvconf").
 
-If resolvconf is already used by the system and connection losses persist, make sure NetworkManager is configured to use it: [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
+**Note:** If you are using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), make sure that [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) is [installed](/index.php/Install "Install").
 
-#### Using dnsmasq
-
-See [Dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq") for configuration.
+In case of [NetworkManager](/index.php/NetworkManager "NetworkManager"), it does not use resolvconf by default. This will not be an issue when using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), but if you do not use systemd-resolved, [install](/index.php/Install "Install") [openresolv](https://www.archlinux.org/packages/?name=openresolv) and configure NetworkManager to use it: [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
 
 ### Low MTU
 
-Due to too low MTU (lower than 1280), wg-quick may have failed to create the Wireguard interface. This can be solved by setting the MTU value in Wireguard configuration in Interface section on client.
+Due to too low MTU (lower than 1280), wg-quick may have failed to create the WireGuard interface. This can be solved by setting the MTU value in WireGuard configuration in Interface section on client.
 
  `/foo.config` 
 ```
 [Interface]
 Address = 10.200.200.2/24
 MTU = 1500
-PrivateKey = [FOO'S PRIVATE KEY]
+PrivateKey = *PEER_FOO_PRIVATE_KEY*
 DNS = 10.200.200.1
 ```
 
@@ -384,20 +378,20 @@ In order to prevent leak of private keys, it is recommended to set the permissio
 [NetDev]
 Name = wg0
 Kind = wireguard
-Description = Wireguard
+Description = WireGuard
 
 [WireGuard]
 ListenPort = 51820
-PrivateKey = [SERVER PRIVATE KEY]
+PrivateKey = *SERVER_PRIVATE_KEY*
 
 [WireGuardPeer]
-PublicKey = [FOO's PUBLIC KEY]
-PresharedKey = [PRE-SHARED KEY]
+PublicKey = PEER_FOO_PUBLIC_KEY
+PresharedKey = *PRE-SHARED_KEY*
 AllowedIPs = 10.200.200.2/32
 
 [WireGuardPeer]
-PublicKey = [BAR's PUBLIC KEY]
-PresharedKey = [PRE-SHARED KEY]
+PublicKey = *PEER_BAR_PUBLIC_KEY*
+PresharedKey = *PRE-SHARED_KEY*
 AllowedIPs = 10.200.200.3/32
 ```
  `/etc/systemd/network/99-server.network` 
@@ -420,16 +414,16 @@ Destination = 10.200.200.0/24
 [NetDev]
 Name = wg0
 Kind = wireguard
-Description = Wireguard
+Description = WireGuard
 
 [WireGuard]
-PrivateKey = [FOO's PRIVATE KEY]
+PrivateKey = *FOO_PRIVATE_KEY*
 
 [WireGuardPeer]
-PublicKey = [SERVER PUBLICKEY]
-PresharedKey = [PRE-SHARED KEY]
+PublicKey = *SERVER_PUBLICKEY*
+PresharedKey = *PRE-SHARED_KEY*
 AllowedIPs = 10.200.0.0/24
-Endpoint = my.ddns.address.com:51820
+Endpoint = my.ddns.example.com:51820
 PersistentKeepalive = 25
 ```
  `/etc/systemd/network/99-client.network` 
@@ -453,16 +447,16 @@ GatewayOnlink=true
 [NetDev]
 Name = wg0
 Kind = wireguard
-Description = Wireguard
+Description = WireGuard
 
 [WireGuard]
-PrivateKey = [BAR's PRIVATE KEY]
+PrivateKey = *PEER_BAR_PRIVATE_KEY*
 
 [WireGuardPeer]
-PublicKey = [SERVER PUBLICKEY]
-PresharedKey = [PRE-SHARED KEY]
+PublicKey = *SERVER_PUBLICKEY*
+PresharedKey = *PRE-SHARED_KEY*
 AllowedIPs = 10.200.0.0/24
-Endpoint = my.ddns.address.com:51820
+Endpoint = my.ddns.example.com:51820
 PersistentKeepalive = 25
 ```
  `/etc/systemd/network/99-client.network` 
@@ -540,5 +534,8 @@ $ qrencode -t ansiutf8 < client.conf
 
 ## See also
 
+*   [Wikipedia:WireGuard](https://en.wikipedia.org/wiki/WireGuard "wikipedia:WireGuard")
 *   [Presentations by Jason Donenfeld](https://www.wireguard.com/presentations/).
 *   [Mailing list](https://lists.zx2c4.com/mailman/listinfo/wireguard)
+*   [Unofficial WireGuard Documentation](https://docs.sweeting.me/s/wireguard)
+*   [Debian:Wireguard](https://wiki.debian.org/Wireguard "debian:Wireguard")

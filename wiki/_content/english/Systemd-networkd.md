@@ -48,7 +48,9 @@ Related articles
         *   [3.2.5 Result](#Result)
         *   [3.2.6 Notice](#Notice)
     *   [3.3 Static IP network](#Static_IP_network)
-*   [4 Interface and desktop integration](#Interface_and_desktop_integration)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Interface and desktop integration](#Interface_and_desktop_integration)
+    *   [4.2 Configuring static IP or DHCP based on SSID (location)](#Configuring_static_IP_or_DHCP_based_on_SSID_(location))
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Mount services at boot fail](#Mount_services_at_boot_fail)
     *   [5.2 systemd-resolve not searching the local domain](#systemd-resolve_not_searching_the_local_domain)
@@ -553,7 +555,9 @@ Gateway=192.168.1.254
 
 ```
 
-## Interface and desktop integration
+## Tips and tricks
+
+### Interface and desktop integration
 
 *systemd-networkd* does not have a proper interactive management interface neither via command-line nor graphical. Still, some tools are available to either display the current state of the network, receive notifications or interact with the wireless configuration:
 
@@ -566,6 +570,37 @@ Gateway=192.168.1.254
 *   The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) daemon allows executing scripts in response to network interface state changes, similar to *NetworkManager-dispatcher*.
 
 *   As for the DNS resolver *systemd-resolved*, information about current DNS servers can be visualized with `resolvectl status`.
+
+### Configuring static IP or DHCP based on SSID (location)
+
+Often there is a situation where your home wireless network uses DHCP and office wireless network uses static IP. This mixed setup can be configured as follows:
+
+**Note:** Number in the file name decides the order in which the files are processed. You can [Match] based on SSID or BSSID or both.
+ `/etc/systemd/network/24-wireless-office.network` 
+```
+# special configuration for office WiFi network
+[Match]
+Name=wlp2s0
+SSID=office_ap_name
+#BSSID=aa:bb:cc:dd:ee:ff
+
+[Network]
+Address=10.1.10.9/24
+Gateway=10.1.10.1
+DNS=10.1.10.1
+#DNS=8.8.8.8
+
+```
+ `/etc/systemd/network/25-wireless-dhcp.network` 
+```
+# use DHCP for any other WiFi network
+[Match]
+Name=wlp2s0
+
+[Network]
+DHCP=ipv4
+
+```
 
 ## Troubleshooting
 

@@ -280,9 +280,9 @@ set guiheadroom=0
 
 Using scripts Vim can be used as a [terminal pager](/index.php/Terminal_pager "Terminal pager"), so that you get various vim features such as color schemes.
 
-Vim comes with the `/usr/share/vim/vim81/macros/less.sh` script, for which you can create an [alias](/index.php/Alias "Alias").
+Vim comes with the `/usr/share/vim/vim81/macros/less.sh` script, for which you can create an [alias](/index.php/Alias "Alias"). Note that this script does not support any command-line flags mentioned in [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1#OPTIONS).
 
-Alternatively there is also the [vimpager](https://www.archlinux.org/packages/?name=vimpager) Vim script. To change the default pager, [export](/index.php/Export "Export") the `PAGER` environment variable.
+Alternatively there is also the [vimpager](https://www.archlinux.org/packages/?name=vimpager) Vim script. To change the default pager, [export](/index.php/Export "Export") the `PAGER` environment variable. Note that not all command-line flags are supported; the list of supported flags is [available on GitHub](https://github.com/rkitover/vimpager#command-line-options).
 
 ## Plugins
 

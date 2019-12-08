@@ -11,6 +11,7 @@ From the [official website](http://portswigger.net/burp/):
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Install HTTPS certificate in Firefox](#Install_HTTPS_certificate_in_Firefox)
+    *   [2.2 Fix "An unknown error has occurred"](#Fix_"An_unknown_error_has_occurred")
 *   [3 See also](#See_also)
 
 ## Installation
@@ -37,6 +38,19 @@ Open the *Proxy -> Options*. In the *Proxy Listeners* section add a new interfac
 Navigate to `[http://127.0.0.1:8080/](http://127.0.0.1:8080/)` in Firefox, click the *CA Certificate* link at top right and save the certificate file somewhere.
 
 In Firefox open the *Preferences* window and go to *Advanced -> Certificates -> View Certificates*. Click *Import* and select the file. Check the *Trust this CA to identify websites* checkbox and click *OK*.
+
+### Fix "An unknown error has occurred"
+
+The installed Java version might be the cause of an in-browser Burp error stating simply "An unknown error has occurred."
+
+The default Java version installed with the AUR package is 13, but Burp officially only supports 11\. On startup Burp will complain about it.
+
+[Install](/index.php/Install "Install") the [jre11-openjdk](https://www.archlinux.org/packages/?name=jre11-openjdk) package and set it as the system default.
+
+```
+ # archlinux-java set java-11-openjdk
+
+```
 
 ## See also
 

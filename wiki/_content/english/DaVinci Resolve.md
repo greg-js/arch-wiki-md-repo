@@ -13,6 +13,7 @@ Davinci Resolve is a proprietary video editor, color correction and compositing 
     *   [2.2 My .mp4 clips are shown as audio clips and even its sound is not working](#My_.mp4_clips_are_shown_as_audio_clips_and_even_its_sound_is_not_working)
     *   [2.3 HiDPI](#HiDPI)
     *   [2.4 Wine version](#Wine_version)
+    *   [2.5 Wrong OpenCL Version](#Wrong_OpenCL_Version)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -83,6 +84,17 @@ Some plugins are available for Windows, but not available for Linux, so you may 
 ```
  wine: Call from 0x7bc6c52c to unimplemented function OpenCL.dll.clReleaseDevice, aborting
 
+```
+
+### Wrong OpenCL Version
+
+If the Application simply is not starting, even after showing installer and "tour" successfully your OpenCl Version may not match your NVIDIA driver. If you have installed nvidia-440xx make sure to install opencl-nvidia-440xx as well. A possible error message:
+
+ `~/.local/share/DaVinciResolve/logs/LogArchive/ResolveDebug_C1.txt` 
+```
+...
+OpenCL error -1001: 'Unspecified Error', GPUPropertiesUtilUnix.cpp:338
+...
 ```
 
 ## See also

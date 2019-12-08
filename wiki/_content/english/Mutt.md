@@ -955,7 +955,13 @@ By default Mutt uses the `%L` format string in the `index_format` variable, whic
 *   "To <list-name>", if an address in the "To:" or "Cc:" header field matches an address defined by the user's `subscribe` command.
 *   Otherwise it displays the author name, or recipient name if the message is from you.
 
-If you use multiple email addresses in the same mailbox, make sure to configure the [alternates variable](https://dev.mutt.org/trac/wiki/UseCases/MultiAccounts#Settinguptheaddresses:alternates), so that Mutt knows which messages were from you.
+If you use multiple email addresses in the same mailbox, make sure to configure the [alternates variable](https://gitlab.com/muttmua/mutt/wikis/UseCases/MultiAccounts#setting-up-the-addresses-alternates:alternates), so that Mutt knows which messages were from you.
+
+ `muttrc` 
+```
+alternates    ^me@example.COM$ ^me@example.NET$ ^example@archlinux.ORG$
+
+```
 
 #### Variable column width
 

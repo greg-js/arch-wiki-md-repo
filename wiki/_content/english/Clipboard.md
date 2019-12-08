@@ -61,6 +61,10 @@ This section lists command-line tools to manipulate the clipboards.
 
 	[http://www.vergenet.net/~conrad/software/xsel/](http://www.vergenet.net/~conrad/software/xsel/) || [xsel](https://www.archlinux.org/packages/?name=xsel)
 
+*   **wl-clipboard** — A simple copy/paste tool for Wayland compositors.
+
+	[https://github.com/bugaevc/wl-clipboard](https://github.com/bugaevc/wl-clipboard) || [wl-clipboard](https://www.archlinux.org/packages/?name=wl-clipboard)
+
 ## Managers
 
 This section lists daemons that track your clipboard, to provide a clipboard history and/or synchronization.

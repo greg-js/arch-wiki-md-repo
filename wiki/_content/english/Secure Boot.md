@@ -39,15 +39,16 @@ In future, Evil Maid attack can be potentially prevented by using a [TPM](/index
     *   [3.1 Custom keys](#Custom_keys)
         *   [3.1.1 Creating keys](#Creating_keys)
         *   [3.1.2 Updating keys](#Updating_keys)
-    *   [3.2 Signing one efi application](#Signing_one_efi_application)
-        *   [3.2.1 Signing kernel with pacman hook](#Signing_kernel_with_pacman_hook)
-    *   [3.3 Kernel and initram as one EFI application](#Kernel_and_initram_as_one_EFI_application)
-    *   [3.4 Put firmware in "Setup Mode"](#Put_firmware_in_"Setup_Mode")
-    *   [3.5 Enroll keys in firmware](#Enroll_keys_in_firmware)
-        *   [3.5.1 Using firmware setup utility](#Using_firmware_setup_utility)
-        *   [3.5.2 Using KeyTool](#Using_KeyTool)
-    *   [3.6 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
-        *   [3.6.1 Microsoft Windows](#Microsoft_Windows)
+    *   [3.2 Signing EFI binaries](#Signing_EFI_binaries)
+        *   [3.2.1 Signing the kernel and boot manager](#Signing_the_kernel_and_boot_manager)
+            *   [3.2.1.1 Signing the kernel with a pacman hook](#Signing_the_kernel_with_a_pacman_hook)
+        *   [3.2.2 Signing a unified kernel image](#Signing_a_unified_kernel_image)
+    *   [3.3 Put firmware in "Setup Mode"](#Put_firmware_in_"Setup_Mode")
+    *   [3.4 Enroll keys in firmware](#Enroll_keys_in_firmware)
+        *   [3.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
+        *   [3.4.2 Using KeyTool](#Using_KeyTool)
+    *   [3.5 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
+        *   [3.5.1 Microsoft Windows](#Microsoft_Windows)
 *   [4 Disable Secure Boot](#Disable_Secure_Boot)
 *   [5 Booting an install media](#Booting_an_install_media)
 *   [6 See also](#See_also)
@@ -427,22 +428,32 @@ $ sign-efi-sig-list **-a** -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.
 
 When `*new_db*.auth` is created, [enroll it](#Enroll_keys_in_firmware).
 
-### Signing one efi application
+### Signing EFI binaries
 
-**Warning:** Signing kernel only won't protect from initram tampering!
+When *Secure Boot* is active (i.e. in "User Mode"), only signed EFI binaries (e.g. applications, drivers) can be launched. Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools) to sign EFI binaries with [sbsign(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sbsign.1).
 
-When *Secure Boot* is active (i.e. in "User Mode"), only signed binaries can be launched. Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools) to sign your kernel or boot manager with [sbsign(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sbsign.1):
+**Tip:**
+
+*   To check if a binary is signed and list its signatures use `sbverify --list */path/to/binary*`.
+*   The [rEFInd](/index.php/REFInd "REFInd") boot manager's `refind-install` script can sign rEFInd EFI binaries and copy them together with the db certificates to the ESP. See [rEFInd#Using your own keys](/index.php/REFInd#Using_your_own_keys "REFInd") for instructions.
+
+**Note:** If running *sbsign* without `--output` the resulting file will be `*filename*.signed`. See [sbsign(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sbsign.1) for more information.
+
+#### Signing the kernel and boot manager
+
+**Warning:** Signing kernel only will not protect the initramfs from tampering.
+
+To sign your kernel and boot manager use *sbsign*. E.g.:
 
 ```
 # sbsign --key db.key --cert db.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
+# sbsign --key db.key --cert db.crt --output *esp*/EFI/BOOT/BOOTX64.EFI *esp*/EFI/BOOT/BOOTX64.EFI
 
 ```
 
-To check if a binary is signed and list its signatures use `sbverify --list */path/to/binary*`.
+##### Signing the kernel with a pacman hook
 
-#### Signing kernel with pacman hook
-
-You can also create your own pacman hook to sign kernel on install and updates.
+You can also create your own [pacman hook](/index.php/Pacman_hook "Pacman hook") to sign kernel on install and updates.
 
  `/etc/pacman.d/hooks/99-secureboot.hook` 
 ```
@@ -480,11 +491,11 @@ Exec = /usr/bin/sh -c "/usr/bin/find /boot/ -type f \( -name 'vmlinuz-*' -o -nam
 
 The `Target` needs to be duplicated each time you want to add a new package. Wrt. the `find` statement, since we had a condition with the filenames and APLM hooks are being split on spaces, we had to surround the whole statement by quotes in order for the hook to be parsed properly. Since systemd-boot is located in sub-folders, the depth needed to be adjusted as well so that we removed the `-maxdepth` argument. In order to avoid hassle, if you are unsure, try to reinstall the package you want to test to see if the hook and signing part are processed successfully. See [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") or [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5) for more info.
 
-### Kernel and initram as one EFI application
+#### Signing a unified kernel image
 
-**Tip:** For other tools with similar functionality see [rEFInd#Using your own keys](/index.php/REFInd#Using_your_own_keys "REFInd") and [secure-boot](https://aur.archlinux.org/packages/secure-boot/).
+**Tip:** Signing of a unified kernel image can be automated with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) or [secure-boot](https://aur.archlinux.org/packages/secure-boot/).
 
-[sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) automatically creates efi executable, which incorporates kernel, cmdline, initram and CPU microcode in one signed file on *esp*. Image will be automatically regenerated and signed on update.
+[sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) automatically unified kernel image, which incorporates kernel, cmdline, initram and CPU microcode in one signed file on *esp*. Image will be automatically regenerated and signed on update.
 
 All filesystems except *esp* considered encrypted, otherwise *Secure boot* useless - signed boot image won't protect from system files tampering. If your *esp* mounted to `/boot`, pacman will put there unsigned and unencrypted kernel, inirtam and microcode images. Edit [fstab](/index.php/Fstab "Fstab"), move *esp* mountpoint to `/efi` and remount partitions, so they can be stored safe. `sbupdate` will copy EFISTUB images to *esp*, see below. **Before rebooting, make sure that *esp* contains some kernel to boot!**
 
@@ -501,7 +512,7 @@ Install [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) and edi
  `/etc/sbupdate.conf` 
 ```
 ESP_DIR="/efi"
-CMDLINE_DEFAULT="cryptdevice=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:vgroup root=/dev/vgroup/root rw
+CMDLINE_DEFAULT="cryptdevice=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:vgroup root=/dev/vgroup/root rw"
 CONFIGS["linux"]="linux linux-fallback"  # Generate second image from 'initramfs-linux-fallback.img'
 ```
 
@@ -518,7 +529,8 @@ You may prefer using [EFISTUB](/index.php/EFISTUB "EFISTUB") booting now, so cre
 You may reboot now and check if *Secure boot* works as expected. Further security tips:
 
 *   Set UEFI supervisor password or someone can disable *Secure boot* or even add own keys
-*   Make sure unencrypted *esp* doesn't contain non signed files like kernel, initram or other efi applications (*esp* must not be mounted as `/boot`)
+*   Never sign [UEFI shell](/index.php/UEFI_shell "UEFI shell"), KeyTool or any other app with NVRAM access
+*   Make sure *esp* doesn't contain any unsigned tools or [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")-generated files like kernel and initram itself (*esp* must not be mounted as `/boot`)
 *   Prevent physical access to SPI flash chip, which stores UEFI, e.g. seal screws with tinsel nail polish or even chip itself with epoxy
 
 ### Put firmware in "Setup Mode"

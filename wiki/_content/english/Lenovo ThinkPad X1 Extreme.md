@@ -34,11 +34,12 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [1.5 Other hardware](#Other_hardware)
 *   [2 Software tweaks](#Software_tweaks)
     *   [2.1 Dolby Atmos Effect on Linux](#Dolby_Atmos_Effect_on_Linux)
-    *   [2.2 Battery charge thresholds](#Battery_charge_thresholds)
-    *   [2.3 CPU throttling workaround](#CPU_throttling_workaround)
-        *   [2.3.1 via sysfs](#via_sysfs)
-        *   [2.3.2 via third party tools](#via_third_party_tools)
-    *   [2.4 CPU undervolting](#CPU_undervolting)
+    *   [2.2 Microphone noise reduction](#Microphone_noise_reduction)
+    *   [2.3 Battery charge thresholds](#Battery_charge_thresholds)
+    *   [2.4 CPU throttling workaround](#CPU_throttling_workaround)
+        *   [2.4.1 via sysfs](#via_sysfs)
+        *   [2.4.2 via third party tools](#via_third_party_tools)
+    *   [2.5 CPU undervolting](#CPU_undervolting)
 *   [3 Specifications](#Specifications)
 
 ## Hardware compatibility
@@ -138,6 +139,20 @@ Everything else works correctly out of the box.
 ### Dolby Atmos Effect on Linux
 
 In order to get the same speaker sound quality/effect as on Dolby Atmos with Windows install & configure [PulseAudio](/index.php/PulseAudio "PulseAudio") and [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects). You can then download the Dolby Atmos preset from [JackHack96's Github](https://github.com/JackHack96/PulseEffects-Presets/tree/master/irs) and enable it in the "Convolver" tab of the PulseEffects GUI.
+
+### Microphone noise reduction
+
+PulseAudio's [Echo/Noise-Cancellation](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting") can be used to reduce the amount of microphone noise by adding the following to `/etc/pulse/default.pa`:
+
+ `/etc/pulse/default.pa` 
+```
+### Enable Echo/Noise-Cancellation
+load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="analog_gain_control=0\ digital_gain_control=1 extended_filter=1 beamforming=1 mic_geometry=-0.0257,0,0,0.0257,0,0" source_name=echoCancel_source sink_name=echoCancel_sink
+set-default-source echoCancel_source
+set-default-sink echoCancel_sink
+```
+
+The above mic_geometry is specific to the X1 Extreme.
 
 ### Battery charge thresholds
 

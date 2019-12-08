@@ -634,7 +634,7 @@ If the bridge is given an IP address and traffic destined for it is allowed, but
 
 #### Internal networking
 
-If you do not give the bridge an IP address and add an [iptables](/index.php/Iptables "Iptables") rule to drop all traffic to the bridge in the INPUT chain, then the virtual machines will be able to talk to each other, but not to the physical host or to the outside network. This configuration is called *internal networking* by other virtualization software such as [VirtualBox](/index.php/VirtualBox "VirtualBox"). You will need to either assign static IP addresses to the virtual machines or run a DHCP server on one of them.
+If you do not give the bridge an IP address and add an [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") rule to drop all traffic to the bridge in the INPUT chain, then the virtual machines will be able to talk to each other, but not to the physical host or to the outside network. This configuration is called *internal networking* by other virtualization software such as [VirtualBox](/index.php/VirtualBox "VirtualBox"). You will need to either assign static IP addresses to the virtual machines or run a DHCP server on one of them.
 
 By default iptables would drop packets in the bridge network. You may need to use such iptables rule to allow packets in a bridged network:
 
@@ -779,7 +779,7 @@ Run `sysctl -p /etc/sysctl.d/10-disable-firewall-on-bridge.conf` to apply the ch
 
 See the [libvirt wiki](http://wiki.libvirt.org/page/Networking#Creating_network_initscripts) and [Fedora bug 512206](https://bugzilla.redhat.com/show_bug.cgi?id=512206). If you get errors by sysctl during boot about non-existing files, make the `bridge` module load at boot. See [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
-Alternatively, you can configure [iptables](/index.php/Iptables "Iptables") to allow all traffic to be forwarded across the bridge by adding a rule like this:
+Alternatively, you can configure [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") to allow all traffic to be forwarded across the bridge by adding a rule like this:
 
 ```
 -I FORWARD -m physdev --physdev-is-bridged -j ACCEPT

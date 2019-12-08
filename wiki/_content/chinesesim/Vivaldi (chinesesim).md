@@ -29,7 +29,7 @@ Vivaldi 兼容 Chrome 的绝大部分扩展。可以从[Chrome 网上商店](htt
 
 ## 媒体播放
 
-为支持额外的音视频播放功能，可以安装相应版本的 [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/) 或 [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/) 。
+为支持额外的音视频播放功能，可以安装相应版本的 [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/) 或 [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/)。（***译者注：前述 [herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories") 的非官方源里同样有预构建的包。***）
 
 要播放 flash 媒体文件应当安装 [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) 。
 
@@ -37,7 +37,7 @@ Vivaldi 兼容 Chrome 的绝大部分扩展。可以从[Chrome 网上商店](htt
 
 ### 无法将 Vivaldi 设为默认浏览器
 
-请手工编辑 [default applications (简体中文)](/index.php/Default_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Default applications (简体中文)") ，Vivaldi 不能自动配置。
+请手工编辑 [default applications](/index.php/Default_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Default applications (简体中文)") ，Vivaldi 不能自动配置。
 
 ## 参阅
 

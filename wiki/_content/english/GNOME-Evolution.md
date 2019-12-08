@@ -1,4 +1,4 @@
-[Evolution](https://wiki.gnome.org/Apps/Evolution/) is an application for managing email, calendars, contacts, tasks, and notes. It is the default mail client in [GNOME](/index.php/GNOME "GNOME"). It includes support for IMAP, Microsoft Exchange Server 2007 and 2010, Novell GroupWise, [Kolab](/index.php/Kolab "Kolab"), LDAP, WebDAV, CalDAV, and many other services and protocols.
+[Evolution](https://wiki.gnome.org/Apps/Evolution) is an application for managing email, calendars, contacts, tasks, and notes. It is the default mail client in [GNOME](/index.php/GNOME "GNOME"). It includes support for IMAP, Microsoft Exchange Server, Novell GroupWise, [Kolab](/index.php/Kolab "Kolab"), LDAP, WebDAV, CalDAV, and many other services and protocols.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -39,10 +39,6 @@ Additional plugins:
 *   **EWS Plugin** — MS Exchange integration through Exchange Web Services.
 
 	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution-ews](https://www.archlinux.org/packages/?name=evolution-ews)
-
-*   **MAPI Plugin** — MS Exchange integration through OpenChange. (deprecated)
-
-	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution-mapi](https://aur.archlinux.org/packages/evolution-mapi/)
 
 *   **RSS Plugin** — Enables reading of RSS/RDF/ATOM feeds.
 

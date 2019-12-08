@@ -2,7 +2,7 @@
 
 *   [Межсетевой экран](/index.php/%D0%9C%D0%B5%D0%B6%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD "Межсетевой экран")
 *   [Раздача интернета](/index.php/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B0%D1%87%D0%B0_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0 "Раздача интернета")
-*   [Nftables#Simple stateful firewall](/index.php/Nftables#Simple_stateful_firewall "Nftables")
+*   [Nftables (Русский)#Настройка простого сетевого экрана](/index.php/Nftables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Настройка_простого_сетевого_экрана "Nftables (Русский)")
 *   [Router](/index.php/Router "Router")
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 

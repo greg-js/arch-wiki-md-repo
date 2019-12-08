@@ -407,7 +407,7 @@ You can use [netctl](/index.php/Netctl "Netctl") for this purpose, see the self-
 
 ### Setting bridge IP
 
-Sometimes you might want to configure the bridge ip on which docker operates, for example when the default ip clashes with other ip addresses in the network. Docker as a [straight forward way](https://docs.docker.com/v17.09/engine/userguide/networking/default_network/custom-docker0/) of setting the `bip` (bridge IP) via the `/etc/docker/daemon.json`. When this file does not exist yet you can create it.
+Sometimes you might want to configure the bridge ip on which docker operates, for example when the default ip clashes with other ip addresses in the network. Docker has a [straight forward way](https://docs.docker.com/v17.09/engine/userguide/networking/default_network/custom-docker0/) of setting the `bip` (bridge IP) via the `/etc/docker/daemon.json`. When this file does not exist yet you can create it.
 
  `/etc/docker/docker.json` 
 ```

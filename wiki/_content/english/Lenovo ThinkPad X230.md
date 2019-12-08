@@ -300,6 +300,7 @@ Process described in "ThinkPad X230 and X230i User Guide", *Chapter 4\. Security
 ## Known issues
 
 *   There is a BIOS bug that gets in the way of the boot process with [LUKS](/index.php/LUKS "LUKS") and full-disk encryption. The user is stuck at the "Loading initial ramdisk" step, and does not see a password prompt to unlock the encrypted device. You can actually enter your password at this step, and boot-up will continue. However, updating the BIOS will resolve this completely.
+*   UEFI option to clear [TPM](/index.php/TPM "TPM") not working. STM chip datasheet describes physical presence pin, which, probably, can be used as workaround.
 
 ## See also
 

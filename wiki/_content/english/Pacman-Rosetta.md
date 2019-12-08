@@ -75,7 +75,7 @@ This page uses a table to display the correspondence of [package management](htt
 | Display packages which conflict with given expression (often package). Search can be used as well to mimic this function. | `dnf repoquery --conflicts` | `aptitude search '~C$pattern'` |
 | List all packages which are required for the given package, aka show dependencies. | `pacman -Si` or `pacman -Qi` | `dnf repoquery --requires` or `repoquery -R` | `apt-cache depends` or `apt-cache show` | `zypper info --requires` | `emerge -ep` |
 | List what the current package provides | `dnf provides` | `dpkg -s` or `aptitude show` | `zypper info --provides` | `equery files` or `qlist` |
-| List all packages that require a particular package | `dnf repoquery --alldeps --whatrequires` | `aptitude search ~D{depends,recommends,suggests}:$pattern` or `aptitude why` | `zypper search --requires` | `equery depends -a` |
+| List all packages that require a particular package | `dnf repoquery --installed --alldeps --whatrequires` | `aptitude search ~D{depends,recommends,suggests}:$pattern` or `aptitude why` | `zypper search --requires` | `equery depends -a` |
 | Display all packages that the specified packages obsoletes. | `dnf list obsoletes` | `apt-cache show` |
 | Generates an output suitable for processing with dotty for the given package(s). | `apt-cache dotty` |
 

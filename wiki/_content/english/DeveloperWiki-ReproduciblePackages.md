@@ -251,16 +251,16 @@ zstd-1.4.3-2-x86_64.pkg.tar.xz                      [A, ]
 
 ```
 amd-ucode-20191022.2b016af-2-any.pkg.tar.xz           [A, ] - reproducible, fixed with -3
-dbus-docs-1.12.16-3-x86_64.pkg.tar.xz                 [A, ] - [https://sourceforge.net/p/docbook/bugs/1385/](https://sourceforge.net/p/docbook/bugs/1385/)
+dbus-docs-1.12.16-3-x86_64.pkg.tar.xz                 [A, ] - [https://sourceforge.net/p/docbook/bugs/1385/](https://sourceforge.net/p/docbook/bugs/1385/) actual bug [https://bugzilla.gnome.org/show_bug.cgi?id=751621](https://bugzilla.gnome.org/show_bug.cgi?id=751621)
 grub-2:2.04-3-x86_64.pkg.tar.xz                       [A,M]
 man-db-2.9.0-1-x86_64.pkg.tar.xz                      [A,M] - [https://lists.gnu.org/archive/html/bug-groff/2019-11/msg00000.html](https://lists.gnu.org/archive/html/bug-groff/2019-11/msg00000.html)
 gcc-ada-9.2.0-4-x86_64.pkg.tar.xz                     [A, ]
 glib2-2.62.2-2-x86_64.pkg.tar.xz                      [A, ] - .pyc file
 gnutls-3.6.10-2-x86_64.pkg.tar.xz                     [A, ] - build date in man pages 
 keyutils-1.6.1-2-x86_64.pkg.tar.xz                    [A, ] - stores the date
-libtool-2.4.6+42+gb88cebd5-7-x86_64.pkg.tar.xz        [A, ] - stores build host name - [Debian patch](https://sources.debian.org/patches/libtool/2.4.6-11/no_hostname.patch/)
+libtool-2.4.6+42+gb88cebd5-7-x86_64.pkg.tar.xz        [A, ] - stores build host name - [Debian patch](https://sources.debian.org/patches/libtool/2.4.6-11/no_hostname.patch/) (fixed in -8)
 nss-3.47-2-x86_64.pkg.tar.xz                          [A, ]
-perl-5.30.1-1-x86_64.pkg.tar.xz                       [A, ] - differences of dates, running kernel, CFLAGS(???)
+perl-5.30.1-1-x86_64.pkg.tar.xz                       [A, ] - differences of dates, running kernel, CFLAGS(???) [https://github.com/bmwiedemann/openSUSE/blob/master/packages/p/perl/perl-reproducible.patch](https://github.com/bmwiedemann/openSUSE/blob/master/packages/p/perl/perl-reproducible.patch)
 s-nail-14.9.15-2-x86_64.pkg.tar.xz                    [A, ] - appears to store makeflags?
 linux-5.3.11.1-1-x86_64.pkg.tar.xz                    [A, ]
 linux-docs-5.3.11.1-1-x86_64.pkg.tar.xz               [A, ]

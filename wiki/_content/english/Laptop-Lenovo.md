@@ -90,6 +90,8 @@ Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [k
 
 MicroSD not tested, see above if it doesn’t work.
 
+Wake up from suspend broken on X.Org with kernel >= 5.2
+
  |
 
 #### L series
@@ -198,7 +200,7 @@ install CD version
 | [Lenovo ThinkPad X200S](/index.php/Lenovo_ThinkPad_X200S "Lenovo ThinkPad X200S") | Yes | Yes | Yes | Yes | Yes | Yes | NA | Yes | Everything worked out of the box. However, fingerprint, SD card and webcam were not tested. Modem needs reset after sleep (sometimes). |
 | [Lenovo ThinkPad X201](/index.php/Lenovo_ThinkPad_X201 "Lenovo ThinkPad X201") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested |
 | [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes) |
-| [Lenovo ThinkPad X230](/index.php/Lenovo_ThinkPad_X230 "Lenovo ThinkPad X230") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), UMTS Modem (Yes) |
+| [Lenovo ThinkPad X230](/index.php/Lenovo_ThinkPad_X230 "Lenovo ThinkPad X230") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), UMTS Modem (Yes), Accelerometer (No) |
 | [Lenovo ThinkPad X240](/index.php/Lenovo_ThinkPad_X240 "Lenovo ThinkPad X240") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | WWAN LTE (yes) | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | [Lenovo ThinkPad X260](/index.php/Lenovo_ThinkPad_X260 "Lenovo ThinkPad X260") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |

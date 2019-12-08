@@ -12,9 +12,26 @@ From [freedesktop.org](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/)
 
 Most [file managers](/index.php/File_manager "File manager") indicate XDG user directories with special icons.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Installation](#Installation)
+*   [2 Creating default directories](#Creating_default_directories)
+*   [3 Creating custom directories](#Creating_custom_directories)
+*   [4 Querying configured directories](#Querying_configured_directories)
+
+## Installation
+
+[Install](/index.php/Install "Install") [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs).
+
+**Tip:** Some [desktop environments](/index.php/Desktop_environments "Desktop environments") might have it installed already, e.g. [GNOME](/index.php/GNOME "GNOME").
+
 ## Creating default directories
 
-Creating a full suite of localized default user directories within the `$HOME` directory can be done automatically using [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) and running:
+Creating a full suite of localized default user directories within the `$HOME` directory can be done automatically by running:
 
 ```
 $ xdg-user-dirs-update

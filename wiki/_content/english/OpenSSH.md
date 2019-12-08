@@ -204,12 +204,17 @@ Several other good guides and tools are available on the topic, for example:
 
 #### Disable known weak algorithms and ciphers
 
-The package default configuration allows some known weak elliptic curves as well as algorithms. A best-practice particularly if the server is Internet facing is to disallow these. Do so by editing `/etc/ssh/sshd_config` inserting the following lines, then [restart](/index.php/Restart "Restart") sshd service to enable the restriction.
+The package's default configuration allows known weak algorithms and ciphers in order to maintain backward compatibility for legacy clients. If you do not need to support legacy clients, best practice is to disable weak options. The below snippet demonstrates how to configure these options in `/etc/ssh/sshd_config`.
 
+The first algorithm/cipher from each comma-separated list supported by a client will be chosen for the connection. The below are generally ordered most-to-least secure as recommended by the developers of the OpenSSH project as of the 8.1 release in October 2019\. Remove unnecessary entries from the end of each list.
+
+ `/etc/ssh/sshd_config` 
 ```
-KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group14-sha256,diffie-hellman-group18-sha512
-MACs umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com
-HostKeyAlgorithms ssh-rsa,rsa-sha2-256,rsa-sha2-512
+KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256,diffie-hellman-group14-sha1
+
+MACs umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-sha1
+
+HostKeyAlgorithms ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519,rsa-sha2-512,rsa-sha2-256,ssh-rsa
 
 ```
 
@@ -1042,7 +1047,7 @@ The `reliability` (`0x04`) type-of-service should resolve the issue, as well as 
 
 ### Slow daemon startup after reboot
 
-If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[3]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
+If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[4]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
 
 ## See also
 

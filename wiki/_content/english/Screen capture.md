@@ -246,7 +246,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **Byzanz** — Simple screencast tool that produces GIF animations.
 
-	[https://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/](https://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/) || [byzanz](https://www.archlinux.org/packages/?name=byzanz)
+	[https://gitlab.gnome.org/Archive/byzanz](https://gitlab.gnome.org/Archive/byzanz) || [byzanz](https://www.archlinux.org/packages/?name=byzanz)
 
 *   **Deepin Screen Recorder** — Screen recorder application for Deepin desktop.
 

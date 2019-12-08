@@ -15,13 +15,13 @@ This article covers [spell checking](https://en.wikipedia.org/wiki/Spell_checker
 
 ## Spell checkers
 
-*   **[GNU Aspell](https://en.wikipedia.org/wiki/GNU_Aspell "wikipedia:GNU Aspell")** — Spell checker designed to eventually replace Ispell, see also [aspell(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aspell.1) and the [info document](http://aspell.net/man-html/index.html).
+*   **[GNU Aspell](https://en.wikipedia.org/wiki/GNU_Aspell "wikipedia:GNU Aspell")** — Spell checker designed to eventually replace [ispell](https://www.archlinux.org/packages/?name=ispell), see also [aspell(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aspell.1) and the [info document](http://aspell.net/man-html/index.html).
 
-	[http://aspell.net/](http://aspell.net/) || [aspell](https://www.archlinux.org/packages/?name=aspell), [dictionaries](https://www.archlinux.org/packages/?q=aspell-)
+	[http://aspell.net/](http://aspell.net/) || [aspell](https://www.archlinux.org/packages/?name=aspell), [dictionaries](https://www.archlinux.org/packages/?q=aspell-), [dictionaries in AUR](https://aur.archlinux.org/packages/?SeB=n&K=aspell-)
 
 *   **[Hunspell](https://en.wikipedia.org/wiki/Hunspell "wikipedia:Hunspell")** — Spell checker and morphological analyzer library and program, see also [hunspell(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hunspell.1).
 
-	[https://hunspell.github.io/](https://hunspell.github.io/) || [hunspell](https://www.archlinux.org/packages/?name=hunspell), [dictionaries](https://www.archlinux.org/packages/?q=hunspell-)
+	[https://hunspell.github.io/](https://hunspell.github.io/) || [hunspell](https://www.archlinux.org/packages/?name=hunspell), [dictionaries in the official repositories](https://www.archlinux.org/packages/?q=hunspell-), [dictionaries in AUR](https://aur.archlinux.org/packages/?SeB=n&K=hunspell-)
 
 *   **[Ispell](https://en.wikipedia.org/wiki/Ispell "wikipedia:Ispell")** — Interactive spell-checking program for Unix, see also [ispell(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ispell.1).
 

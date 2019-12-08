@@ -622,9 +622,13 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 	[https://librewolf-community.gitlab.io/](https://librewolf-community.gitlab.io/) || [librewolf](https://aur.archlinux.org/packages/librewolf/) or [librewolf-bin](https://aur.archlinux.org/packages/librewolf-bin/)
 
-*   **Waterfox** — Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and NPAPI plugins.
+*   **Waterfox Classic** — Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and NPAPI plugins.
 
-	[https://www.waterfoxproject.org/](https://www.waterfoxproject.org/) || [waterfox-bin](https://aur.archlinux.org/packages/waterfox-bin/)
+	[https://www.waterfox.net/](https://www.waterfox.net/) || [waterfox-classic-bin](https://aur.archlinux.org/packages/waterfox-classic-bin/)
+
+*   **Waterfox Current** — Optimized fork of Mozilla Firefox, updated feature-rich branch of Waterfox.
+
+	[https://www.waterfox.net/](https://www.waterfox.net/) || [waterfox-current-bin](https://aur.archlinux.org/packages/waterfox-current-bin/)
 
 ##### Blink-based
 
@@ -1152,13 +1156,13 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
 
-*   **[rclone](/index.php?title=Rclone&action=edit&redlink=1 "Rclone (page does not exist)")** — multi-provider sync, copy, and mount client. Supports GSuite Team Drives.
+*   **Rclone** — Multi-provider sync, copy, and mount client.
 
 	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
 
-*   **[rclone-browser](/index.php?title=Rclone-browser&action=edit&redlink=1 "Rclone-browser (page does not exist)")** — Gui for Rclone
+*   **Rclone Browser** — GUI client for Rclone.
 
-	[https://github.com/kapitainsky/RcloneBrowser](https://github.com/kapitainsky/RcloneBrowser) || [rclone-browser-git](https://aur.archlinux.org/packages/rclone-browser-git/)
+	[https://github.com/kapitainsky/RcloneBrowser](https://github.com/kapitainsky/RcloneBrowser) || [rclone-browser](https://aur.archlinux.org/packages/rclone-browser/)
 
 *   **S3cmd** — Unofficial CLI for Amazon S3.
 
@@ -6967,7 +6971,7 @@ See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 
 *   **GNOME Books** — E-book manager application for GNOME with EPUB, Mobipocket, FictionBook, DjVu and Comicbook support.
 
-	[https://wiki.gnome.org/Apps/Documents](https://wiki.gnome.org/Apps/Documents) || [gnome-documents](https://www.archlinux.org/packages/?name=gnome-documents)
+	[https://wiki.gnome.org/Apps/Books](https://wiki.gnome.org/Apps/Books) || [gnome-books](https://www.archlinux.org/packages/?name=gnome-books)
 
 *   **Lector** — Qt based e-book reader with PDF, EPUB, Kindle, Mobipocket and Comicbook support.
 
@@ -7997,7 +8001,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://keepassxc.org/](https://keepassxc.org/) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
 
-*   **KWalletManager** — Tool to manage the passwords on your system. By using the KDE wallet subsystem it not only allows you to keep your own secrets but also to access and manage the passwords of every application that integrates with the wallet.
+*   **[KDE Wallet Manager](/index.php/KDE_Wallet "KDE Wallet")** — Tool to manage the passwords on your system. By using the KDE wallet subsystem it not only allows you to keep your own secrets but also to access and manage the passwords of every application that integrates with the wallet.
 
 	[https://www.kde.org/applications/system/kwalletmanager/](https://www.kde.org/applications/system/kwalletmanager/) || [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager)
 

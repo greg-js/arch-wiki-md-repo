@@ -346,13 +346,9 @@ Embedded Display Port (eDP) v1.2 introduced a new display panel control protocol
 
 By default the i915 driver tries to use PWM to control backlight brightness, which might not work.
 
-To set the backlight through writes to DPCD registers using the AUX channel set `i915.enable_dpcd_backlight` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe.d/i915.conf`:
+To set the backlight through writes to DPCD registers using the AUX channel set `i915.enable_dpcd_backlight=1` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
- `/etc/modprobe.d/i915.conf` 
-```
-options i915 enable_dpcd_backlight
-
-```
+**Note:** The parameter changed from bool to int in [linux](https://www.archlinux.org/packages/?name=linux) 5.4.
 
 ### sysfs modified but no brightness change
 

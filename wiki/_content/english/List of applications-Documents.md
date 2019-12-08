@@ -870,7 +870,7 @@ See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 
 *   **GNOME Books** — E-book manager application for GNOME with EPUB, Mobipocket, FictionBook, DjVu and Comicbook support.
 
-	[https://wiki.gnome.org/Apps/Documents](https://wiki.gnome.org/Apps/Documents) || [gnome-documents](https://www.archlinux.org/packages/?name=gnome-documents)
+	[https://wiki.gnome.org/Apps/Books](https://wiki.gnome.org/Apps/Books) || [gnome-books](https://www.archlinux.org/packages/?name=gnome-books)
 
 *   **Lector** — Qt based e-book reader with PDF, EPUB, Kindle, Mobipocket and Comicbook support.
 

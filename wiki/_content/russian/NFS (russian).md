@@ -11,7 +11,11 @@ Related articles
 *   NFS не зашифрован. При работе с конфиденциальными данными чтобы шифровать протокол NFS нужно использовать туннель, например [Kerberos](/index.php/Kerberos "Kerberos") или [tinc](/index.php/Tinc "Tinc").
 *   В отличие от [Samba](/index.php/Samba "Samba"), NFS по умолчанию не имеет аутентификации пользователя, доступ к клиенту ограничен по их IP-адресам / [hostname](/index.php/Hostname "Hostname").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Конфигурация](#Конфигурация)
@@ -186,7 +190,7 @@ options nfsd nfs4_disable_idmapping=0
 
 ##### Конфигурация брандмауэра
 
-Чтобы разрешить доступ через брандмауэр, необходимо использовать tcp и udp-порты 111, 2049 и 20048 при использовании конфигурации по умолчанию; используйте `rpcinfo -p`, чтобы проверить точные порты, используемые на сервере. Чтобы настроить это для [iptables](/index.php/Iptables "Iptables"), выполните следующие команды:
+Чтобы разрешить доступ через брандмауэр, необходимо использовать tcp и udp-порты 111, 2049 и 20048 при использовании конфигурации по умолчанию; используйте `rpcinfo -p`, чтобы проверить точные порты, используемые на сервере. Чтобы настроить это для [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)"), выполните следующие команды:
 
 ```
 # iptables -A INPUT -p tcp -m tcp --dport 111 -j ACCEPT
@@ -568,14 +572,14 @@ fi
 ```
 #!/bin/bash
       if [ `nm-tool|grep State|cut -f2 -d' '` == "connected" ]; then
-              mount -t nfs %server%:%server_dir% %local_dir%
+              mount -t nfs %server%:%server_dir% %local_dir%
       else
-              umount %local_dir%
+              umount %local_dir%
       fi
 
 ```
 
-Где %server% - ip адрес сервера nfs, %server_dir% - директория на сервере, которую требуется подмонтировать и %local_dir% - директория куда оно будет монтироваться.
+Где %server% - ip адрес сервера nfs, %server_dir% - директория на сервере, которую требуется подмонтировать и %local_dir% - директория куда оно будет монтироваться.
 
 ## Устранение неполадок
 

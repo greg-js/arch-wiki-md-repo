@@ -24,9 +24,9 @@ From [Wikipedia:Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Si
     *   [2.3 Theme settings](#Theme_settings)
         *   [2.3.1 Current theme](#Current_theme)
         *   [2.3.2 Editing themes](#Editing_themes)
-        *   [2.3.3 Testing (Previewing) a Theme](#Testing_(Previewing)_a_Theme)
+        *   [2.3.3 Testing (previewing) a theme](#Testing_(previewing)_a_theme)
         *   [2.3.4 Mouse cursor](#Mouse_cursor)
-        *   [2.3.5 User Icon (Avatar)](#User_Icon_(Avatar))
+        *   [2.3.5 User icon (avatar)](#User_icon_(avatar))
     *   [2.4 Numlock](#Numlock)
     *   [2.5 Rotate display](#Rotate_display)
     *   [2.6 DPI settings](#DPI_settings)
@@ -99,7 +99,7 @@ Set the current theme through the `Current` value, e.g. `Current=archlinux-simpl
 
 The default SDDM theme directory is `/usr/share/sddm/themes/`. You can add your custom made themes to that directory under a separate subdirectory. Note that SDDM requires these subdirectory names to be the same as the theme names. Study the files installed to modify or create your own theme.
 
-#### Testing (Previewing) a Theme
+#### Testing (previewing) a theme
 
 You can preview an SDDM theme if needed. This is especially helpful if you are not sure how the theme would look if selected or just edited a theme and want to see how it would look without logging out. You can run something like this:
 
@@ -118,7 +118,7 @@ To set the mouse cursor theme, set `CursorTheme` to your preferred cursor theme.
 
 Valid [Plasma](/index.php/Plasma "Plasma") mouse cursor theme names are `breeze_cursors`, `Breeze_Snow` and `breeze-dark`.
 
-#### User Icon (Avatar)
+#### User icon (avatar)
 
 SDDM reads the user icon (a.k.a. "avatar") as a PNG image from either `~/.face.icon` for each user, or the common location for all users specified by `FacesDir` in an SDDM configuration file. The configuration setting can be placed in either `/etc/sddm.conf` directly, or, better, a file under `/etc/sddm.conf.d/` such as `/etc/sddm.conf.d/avatar.conf`.
 

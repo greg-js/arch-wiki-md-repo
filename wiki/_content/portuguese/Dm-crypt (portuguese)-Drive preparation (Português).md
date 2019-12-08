@@ -44,7 +44,7 @@ Para instruções detalhadas de como apagar e preparar o disco consulte [Limpar 
 
 ### Métodos específicos do dm-crypt
 
-Os dois métodos a seguir são específicos do dm-crypt e são mencionados porque eles são muito rápidos e também podem ser executados depois que uma partição for configurada.
+Os três métodos a seguir são específicos do dm-crypt e são mencionados porque eles são muito rápidos e também podem ser executados depois que uma partição for configurada.
 
 O [FAQ do cryptsetup](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup) (item 2.19 "*How can I wipe a device with crypto-grade randomness?*") menciona um procedimento muito simples para usar um dm-crypt-volume existente para apagar todo o espaço não usado no dispositivo de bloco com dados aleatórios, com este agindo como um simples gerador de números. Também clama proteger contra a divulgação de padrões de uso. Por causa disso os dados criptografados são praticamente não disceníveis dos aleatórios.
 
@@ -61,9 +61,9 @@ Você pode verificar se ela existe:
 
  `# lsblk` 
 ```
-NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
-sda             8:0    0  1.8T  0 disk
-└─a_ser_apagado 252:0    0  1.8T  0 crypt
+NAME             MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+sda                8:0    0  1.8T  0 disk
+└─a_ser_apagado  252:0    0  1.8T  0 crypt
 
 ```
 

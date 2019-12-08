@@ -57,6 +57,7 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [8.6 hidepid](#hidepid)
     *   [8.7 Restricting module loading](#Restricting_module_loading)
     *   [8.8 Disable kexec](#Disable_kexec)
+    *   [8.9 Disable hyper-threading](#Disable_hyper-threading)
 *   [9 Sandboxing applications](#Sandboxing_applications)
     *   [9.1 Firejail](#Firejail)
     *   [9.2 bubblewrap](#bubblewrap)
@@ -551,6 +552,26 @@ The default Arch kernel has `CONFIG_MODULE_SIG_ALL` enabled which signs all kern
 Kexec allows replacing the current running kernel.
 
  `/etc/sysctl.d/51-kexec-restrict.conf`  `kernel.kexec_loaded_disabled = 1` 
+
+### Disable hyper-threading
+
+If your computer contains an [Intel](/index.php/Intel "Intel") CPU, disabling [hyper-threading](https://en.wikipedia.org/wiki/Hyper-threading "wikipedia:Hyper-threading") is a security consideration due to [Microarchitectural Data Sampling](https://en.wikipedia.org/wiki/Microarchitectural_Data_Sampling "wikipedia:Microarchitectural Data Sampling"), see [https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/mds.html](https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/mds.html).
+
+To check if you are affected, run the following:
+
+```
+$ grep . -r /sys/devices/system/cpu/vulnerabilities/
+
+```
+
+If the output contains `SMT vulnerable`, you should disable hyper-threading. Do note that there will be a performance impact. If this is an acceptable trade-off, add the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+
+```
+l1tf=full,force mds=full,nosmt mitigations=auto,nosmt nosmt=force
+
+```
+
+Reboot afterward and verify the output of grep. It should now say `SMT disabled`.
 
 ## Sandboxing applications
 

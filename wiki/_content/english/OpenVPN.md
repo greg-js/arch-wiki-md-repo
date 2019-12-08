@@ -162,6 +162,8 @@ group nobody
 
 ```
 
+If TLS with elliptic curves is used, specify `dh none` and `ecdh-curve secp521r1`. DH parameters file is not used when using elliptic curves. Starting from OpenVPN 2.4.8, it is required to specify the type of elliptic curves in server configuration. Otherwise the server would fail to recognize the curve type and possibly use an incompatible one, resulting in authentication errors.
+
 #### Hardening the server
 
 If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and (optionally) limiting the set of enabled TLS ciphers to the newer ciphers. Starting from OpenVPN 2.4, the server and the client will automatically negotiate AES-256-GCM in TLS mode.
