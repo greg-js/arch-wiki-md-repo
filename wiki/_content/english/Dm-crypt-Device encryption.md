@@ -160,7 +160,7 @@ Defaults are compared with a cryptographically higher specification example in t
 
 -y
 
- | Yes | - | Default only for luksFormat and luksAddKey. No need to type for Arch Linux with LUKS mode at the moment. |
+ | Yes | - | Enabled by default in Arch Linux for luksFormat and luksAddKey. |
 
 The properties of LUKS features and options are described in the [LUKS1](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (pdf) and [LUKS2](https://gitlab.com/cryptsetup/cryptsetup/blob/master/docs/on-disk-format-luks2.pdf) (pdf) specifications.
 
@@ -613,7 +613,7 @@ Sector size (logical/physical): 512 bytes / 512 bytes
 
 ```
 
-Now that you know the values, you can backup the header with a simple dd command:
+Now that you know the values, you can backup the header with a simple [dd](/index.php/Dd "Dd") command:
 
 ```
 # dd if=/dev/<device> of=/path/to/<file>.img bs=512 count=4040
@@ -643,7 +643,7 @@ The following shows an example to encrypt an unencrypted filesystem partition an
 
 A LUKS encryption header is always stored at the beginning of the device. Since an existing filesystem will usually be allocated all partition sectors, the first step is to shrink it to make space for the LUKS header.
 
-The [default](#Encryption_options_for_LUKS_mode) LUKS header encryption cipher requires `4096` 512-byte sectors. We already checked space and keep it simple by shrinking the existing `ext4` filesystem on `/dev/sdaX` to its current possible minimum:
+The [default](#Encryption_options_for_LUKS_mode) LUKS2 header requires 16 MiB. We already checked space and keep it simple by shrinking the existing `ext4` filesystem on `/dev/sdaX` to its current possible minimum:
 
 ```
 # umount /mnt
@@ -667,7 +667,7 @@ The filesystem on /dev/sdaX is now 26347 (4k) blocks long.
 
 Now we encrypt it, using the default cipher we do not have to specify it explicitly:
 
- `# cryptsetup-reencrypt /dev/sdaX --new  --reduce-device-size 4096S` 
+ `# cryptsetup-reencrypt /dev/sdaX --new  --reduce-device-size 16M` 
 ```
 Enter new passphrase: 
 Verify passphrase: 
@@ -840,7 +840,7 @@ Example: images, text, video, ...
 
 A keyfile can be of arbitrary content and size.
 
-Here `dd` is used to generate a keyfile of 2048 random bytes, storing it in the file `/etc/mykeyfile`:
+Here [dd](/index.php/Dd "Dd") is used to generate a keyfile of 2048 random bytes, storing it in the file `/etc/mykeyfile`:
 
 ```
 # dd bs=512 count=4 if=/dev/random of=/etc/mykeyfile iflag=fullblock

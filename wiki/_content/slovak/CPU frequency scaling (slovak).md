@@ -7,25 +7,29 @@ Related articles
 
 Tento článok pokrýva inštaláciu a základnú konfiguráciu balíčka `cpufrequtils`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Inštalácia](#In.C5.A1tal.C3.A1cia)
-*   [2 Konfigurácia](#Konfigur.C3.A1cia)
-    *   [2.1 Ovládač frekvencie CPU](#Ovl.C3.A1da.C4.8D_frekvencie_CPU)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Inštalácia](#Inštalácia)
+*   [2 Konfigurácia](#Konfigurácia)
+    *   [2.1 Ovládač frekvencie CPU](#Ovládač_frekvencie_CPU)
         *   [2.1.1 Intel](#Intel)
         *   [2.1.2 AMD](#AMD)
-    *   [2.2 Načítanie pri boot-e](#Na.C4.8D.C3.ADtanie_pri_boot-e)
-    *   [2.3 Pridelenie práv v Gnome](#Pridelenie_pr.C3.A1v_v_Gnome)
+    *   [2.2 Načítanie pri boot-e](#Načítanie_pri_boot-e)
+    *   [2.3 Pridelenie práv v Gnome](#Pridelenie_práv_v_Gnome)
     *   [2.4 Cpufrequtils a Laptop Mode Tools](#Cpufrequtils_a_Laptop_Mode_Tools)
     *   [2.5 Governors](#Governors)
-        *   [2.5.1 Zmena prahu ondemand režimu](#Zmena_prahu_ondemand_re.C5.BEimu)
+        *   [2.5.1 Zmena prahu ondemand režimu](#Zmena_prahu_ondemand_režimu)
         *   [2.5.2 Interakcia s ACPI](#Interakcia_s_ACPI)
     *   [2.6 Daemon](#Daemon)
-*   [3 Možné problémy](#Mo.C5.BEn.C3.A9_probl.C3.A9my)
+*   [3 Možné problémy](#Možné_problémy)
 
 ## Inštalácia
 
-Balíček [cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) je dostupný v repozitáry [extra]:
+Balíček [cpufrequtils](https://aur.archlinux.org/packages/cpufrequtils/) je dostupný v repozitáry [extra]:
 
 ```
 # pacman -S cpufrequtils

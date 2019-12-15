@@ -109,7 +109,7 @@ Compile via makepkg as normal.
 
 ### Without makepkg
 
-After exporting the two varabiles describe in [Distcc#For use without makepkg](/index.php/Distcc#For_use_without_makepkg "Distcc"), compile as usual but append CC= and CXX= lines to your build:
+After exporting the two varabiles describe in [#For use without makepkg](#For_use_without_makepkg), compile as usual but append CC= and CXX= lines to your build:
 
 ```
 $ make -j44 CC=distcc CXX=distcc

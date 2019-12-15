@@ -155,7 +155,7 @@ Once it concludes, the screen is cleared and the login prompt appears, leaving u
 
 ### Num Lock activation
 
-Num Lock is a toggle key found in most keyboards. For activating Num Lock's number key-assignment during startup, see [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+Num Lock is a toggle key found in most keyboards. For activating Num Lock's number key-assignment during startup, see [Activating numlock on bootup](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup").
 
 ## واجهة المستخدم الرسومية
 

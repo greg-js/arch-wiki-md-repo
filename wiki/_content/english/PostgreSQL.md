@@ -431,7 +431,7 @@ There are two main ways to upgrade your PostgreSQL database. Read the official d
 
 ### pg_upgrade
 
-For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL. To upgrade from older versions of PostgreSQL there are AUR packages available: [postgresql-96-upgrade](https://aur.archlinux.org/packages/postgresql-96-upgrade/), [postgresql-95-upgrade](https://aur.archlinux.org/packages/postgresql-95-upgrade/), [postgresql-94-upgrade](https://aur.archlinux.org/packages/postgresql-94-upgrade/), [postgresql-93-upgrade](https://aur.archlinux.org/packages/postgresql-93-upgrade/), [postgresql-92-upgrade](https://aur.archlinux.org/packages/postgresql-92-upgrade/).
+For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL. To upgrade from older versions of PostgreSQL there are AUR packages available: [postgresql-96-upgrade](https://aur.archlinux.org/packages/postgresql-96-upgrade/), [postgresql-95-upgrade](https://aur.archlinux.org/packages/postgresql-95-upgrade/), [postgresql-94-upgrade](https://aur.archlinux.org/packages/postgresql-94-upgrade/), [postgresql-93-upgrade](https://aur.archlinux.org/packages/postgresql-93-upgrade/), [postgresql-92-upgrade](https://aur.archlinux.org/packages/postgresql-92-upgrade/). Read the [pg_upgrade(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pg_upgrade.1) man page to understand what actions it performs.
 
 Note that the databases cluster directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new databases cluster must be initialized, as described in the [#Installation](#Installation) section.
 
@@ -463,14 +463,7 @@ Rename the databases cluster directory, and create an empty one:
 
 ```
 
-Check if it is possible to upgrade, replacing `*PG_VERSION*` with the old PostgreSQL version number (e.g. `10`):
-
-```
-[postgres]$ pg_upgrade -b /opt/pgsql-*PG_VERSION*/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data -c
-
-```
-
-If the output returns `Clusters are compatible`, upgrade the cluster:
+Upgrade the cluster, replacing `*PG_VERSION*` below, with the old PostgreSQL version number (e.g. `11`):
 
 ```
 [postgres]$ pg_upgrade -b /opt/pgsql-*PG_VERSION*/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data
@@ -494,7 +487,7 @@ You could also do something like this (after the upgrade and install of [postgre
 
 **Note:**
 
-*   Below are the commands for PostgreSQL 10\. You can find similar commands in `/opt/` for your version of PostgreSQL.
+*   Below are the commands for upgrading from PostgreSQL 11\. You can find similar commands in `/opt/` for your version of PostgreSQL cluster, provided you have matching version of [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package installed.
 *   If you had customized your `pg_hba.conf` file, you may have to temporarily modify it to allow full access to old database cluster from local system. After upgrade is complete set your customization to new database cluster as well and [restart](/index.php/Restart "Restart") `postgresql.service`.
 
 ```
@@ -503,9 +496,9 @@ You could also do something like this (after the upgrade and install of [postgre
 # mkdir /var/lib/postgres/data
 # chown postgres:postgres /var/lib/postgres/data
 [postgres]$ initdb -D /var/lib/postgres/data
-[postgres]$ /opt/pgsql-10/bin/pg_ctl -D /var/lib/postgres/olddata/ start
+[postgres]$ /opt/pgsql-11/bin/pg_ctl -D /var/lib/postgres/olddata/ start
 [postgres]$ pg_dumpall -h /tmp -f /tmp/old_backup.sql
-[postgres]$ /opt/pgsql-10/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
+[postgres]$ /opt/pgsql-11/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
 # systemctl start postgresql.service
 [postgres]$ psql -f /tmp/old_backup.sql postgres
 

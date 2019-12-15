@@ -167,6 +167,7 @@ Here is an example where an application starts only once:
 ```
 import os
 import subprocess
+from libqtile import hook
 
 @hook.subscribe.startup_once
 def autostart():

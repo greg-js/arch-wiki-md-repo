@@ -29,18 +29,14 @@ This article describes alternative wiping methods to the specialized utilities t
 Wiping of a single file consists of two basic and one advanced anti-forensic time consumed method that can be done only with specialized tools, the last one method will not be covered in this article.
 
 *   Overwrite with random data before deletion or replace content with another one without changing file size.
-
 *   Wipe file and meta-data stored by the filesystem with specialized tools
     *   Search the whole disk for the deleted left-over parts of the file and wipe them too without making any changes to other files and their traces.
 
 Overwriting of the file without changing its size can be done with common Linux utilities:
 
 *   Invoking `shred -x *file*` will replace content of *file* with pseudo-random data without changing the filesize (`-x`). Using the `-u` option will remove *file* after overwriting it.
-
 *   With `mkfs` you can convert file into the filesystem that will alter everything in it, mount and fill in with any other content for a better overwriting.
-
-*   The `dd` will create a file with preset size and content of your chose, if destination file name exist then it will become overwritten. With `dd` command you can replace the whole file or only a part in it with another content by combining `skip` and `seek` options. You need to know size of the file to avoid expand of the file, to do it can use `du -b *file_name* | cut -f1` or `stat -c "%s" *file_name*`. It is mandatory to use `iflag=fullblock` option to make it work correct with the file.
-
+*   The `dd` will create a file with preset size and content of your chose, if destination file name exist then it will become overwritten. With `dd` command you can replace the whole file or only a part in it with another content by combining `skip` and `seek` options. You need to know size of the file to avoid expand of the file, to do it can use `du -b *file_name* | cut -f1` or `stat -c "%s" *file_name*`. It is mandatory to use `iflag=fullblock` option, see [dd#Partial read](/index.php/Dd#Partial_read "Dd").
 *   Replace content in a file with a single symbol to avoid size changing you can do with [perl](https://www.archlinux.org/packages/?name=perl) utility.
 
 To wipe meta-data you can fill in partition with files that makes file system replace old entries about files with new or use specialized utilities for that, see [wipe free space](#Wipe_free_space) section below.
@@ -54,14 +50,14 @@ It is up to you how to combine all of Linux file creation and conversion tools t
 
 Examples:
 
-Perl command that will replace everything in the file with `.`:
+[Perl](/index.php/Perl "Perl") command that will replace everything in the file with `.`:
 
 ```
 $ perl -p -i -e 's\[^*]\.\g' *file_name*
 
 ```
 
-dd:
+[dd](/index.php/Dd "Dd"):
 
 ```
 $ *source_content* | dd bs=*size_in_bytes* count=1 iflag=fullblock of=*destination_file* seek=0

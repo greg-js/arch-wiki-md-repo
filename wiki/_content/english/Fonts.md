@@ -96,7 +96,7 @@ For most purposes, the technical differences between TrueType and OpenType can b
 
 ### Other formats
 
-The typesetting application [TeX](/index.php/TeX_Live "TeX Live") and its companion font software, *Metafont,* traditionally renders characters using its own methods. Some file extensions used for fonts from these two programs are `*pk`, `*gf`, `mf` and `vf`. Modern versions can also use TrueType and OpenType fonts.
+The typesetting application [TeX](/index.php/TeX "TeX") and its companion font software, *Metafont,* traditionally renders characters using its own methods. Some file extensions used for fonts from these two programs are `*pk`, `*gf`, `mf` and `vf`. Modern versions can also use TrueType and OpenType fonts.
 
 [FontForge](https://fontforge.github.io/en-US/) ([fontforge](https://www.archlinux.org/packages/?name=fontforge)), a font editing application, can store fonts in its native text-based format, `sfd`, *s*pline *f*ont *d*atabase.
 

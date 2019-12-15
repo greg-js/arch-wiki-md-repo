@@ -13,7 +13,7 @@ Google Chrome has following notable built-in features over Chromium:
 *   Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") for e.g. Netflix, also available via [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/).
 *   [Native client](https://en.wikipedia.org/wiki/Native_client "wikipedia:Native client") (NaCl). Support for native client (NaCl) has been dropped from Chromium packages since version 54, see [FS#51511](https://bugs.archlinux.org/task/51511).
 
-See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](https://www.howtogeek.com/202825/what%E2%80%99s-the-difference-between-chromium-and-chrome/) for an explanation of the differences between Chromium and Chrome.
+See these two articles [[1]](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [[2]](https://www.howtogeek.com/202825/what%E2%80%99s-the-difference-between-chromium-and-chrome/) for an explanation of the differences between Chromium and Chrome.
 
 See [List of applications/Internet#Blink-based](/index.php/List_of_applications/Internet#Blink-based "List of applications/Internet") for other browsers based on Chromium.
 
@@ -98,7 +98,7 @@ Additionally the flag `--disable-gpu-driver-bug-workarounds` may need to be pass
 
 ### Hardware video acceleration
 
-Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") can be used with community made patches [[1]](https://bugs.chromium.org/p/chromium/issues/detail?id=463440#c65), packages are available in [AUR](/index.php/AUR "AUR") as [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) or [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/).
+Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") can be used with community made patches [[3]](https://bugs.chromium.org/p/chromium/issues/detail?id=463440#c65), packages are available in [AUR](/index.php/AUR "AUR") as [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) or [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/).
 
 **Warning:** Wayland support is not enabled in above packages yet. XWayland is [broken](https://github.com/intel/libva/issues/79) on [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
 

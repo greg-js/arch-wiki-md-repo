@@ -54,6 +54,7 @@ Related articles
         *   [7.1.2 Manual boot stanza](#Manual_boot_stanza)
     *   [7.2 Apple Macs](#Apple_Macs)
     *   [7.3 VirtualBox](#VirtualBox)
+    *   [7.4 refind-install adds invalid boot entries to NVRAM](#refind-install_adds_invalid_boot_entries_to_NVRAM)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -540,7 +541,18 @@ A failure to do so will otherwise result in the following error message: `ERROR:
 
 ### VirtualBox
 
-Currently, VirtualBox will only boot the default `*esp*/EFI/BOOT/bootx64.efi` path, so `refind-install` needs to be used with at least the `--usedefault` option. See [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox") for more information.
+VirtualBox before version 6.1 will only boot the default `*esp*/EFI/BOOT/bootx64.efi` path, so `refind-install` needs to be used with at least the `--usedefault` option. See [VirtualBox#Installation in EFI mode on VirtualBox < 6.1](/index.php/VirtualBox#Installation_in_EFI_mode_on_VirtualBox_<_6.1 "VirtualBox") for more information.
+
+### refind-install adds invalid boot entries to NVRAM
+
+Before version 0.11.4, refind-install does no support filtering out `autofs` (as used by [fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab")) when searching for the EFI system partition's mount point. This results in it invoking an erroneous *efibootmgr* command that create boot entries such as:
+
+```
+Boot0000* rEFInd Boot Manager   HD(11,GPT,00000000-0000-0000-0000-000000000000,0x0,0x1)/File(\EFI\refind\refind_x64.efi)
+
+```
+
+The solution is to manually remove the boot entry and create a new one using [efibootmgr](/index.php/Efibootmgr "Efibootmgr") or [bcfg](/index.php/Bcfg "Bcfg").
 
 ## See also
 

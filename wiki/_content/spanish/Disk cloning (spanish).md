@@ -5,6 +5,7 @@ Artículos relacionados
 
 *   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
 *   [System maintenance (Español)#Copias de respaldo](/index.php/System_maintenance_(Espa%C3%B1ol)#Copias_de_respaldo "System maintenance (Español)")
+
 *   [System backup (Español)](/index.php/System_backup_(Espa%C3%B1ol) "System backup (Español)")
 
 La clonación de disco es el proceso por el cual se obtiene una imagen de una partición o de un disco duro completo. Esto puede ser útil para copiar la unidad a otros equipos y para propósitos de [copias de respaldo](/index.php/System_maintenance_(Espa%C3%B1ol)#Copias_de_respaldo "System maintenance (Español)") y de [recuperación](/index.php/File_recovery "File recovery").

@@ -75,7 +75,7 @@ Remember to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Rege
 
 ```
 
-**Note:** It may be much easier to just use optimus manager with the necessary power options described in [Lenovo_ThinkPad_X1_Extreme_(Gen_2)#Graphics](/index.php/Lenovo_ThinkPad_X1_Extreme_(Gen_2)#Graphics "Lenovo ThinkPad X1 Extreme (Gen 2)")
+**Note:** It may be much easier to just use optimus manager with the necessary power options described in [#Graphics](#Graphics)
 
 ### Graphics
 

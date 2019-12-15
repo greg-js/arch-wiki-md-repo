@@ -6,9 +6,9 @@
 | [Integrated Graphics](#Graphics) | Working |
 | [Discrete Nvidia Graphics](#Graphics) | Modify |
 | [Backlight](#Graphics) | Modify |
-| [Wifi](#Wifi_and_Bluetooth) | Working |
-| [Bluetooth](#Wifi_and_Bluetooth) | Working |
-| [rfkill](#Wifi_and_Bluetooth) | Working |
+| [WiFi](#Networking) | Working |
+| [Bluetooth](#Networking) | Working |
+| [rfkill](#Networking) | Working |
 | Audio | Working |
 | [Touchpad](#Touchpad_and_Touchscreen) | Working |
 | [Touchscreen](#Touchpad_and_Touchscreen) | Working |
@@ -16,8 +16,16 @@
 | Card Reader | Working |
 | Function/Multimedia Keys | Working |
 | [Power Management](#Power_Management) | Working |
-| [EFI firmware updates](#EFI_firmware_updates) | Working |
+| [EFI firmware updates](#Firmware_Update) | Working |
 | [Fingerprint reader](#Fingerprint_reader) | Not working |
+
+Related articles
+
+*   [Dell XPS 15](/index.php/Dell_XPS_15 "Dell XPS 15")
+*   [Dell XPS 15 2-in-1 (9575)](/index.php/Dell_XPS_15_2-in-1_(9575) "Dell XPS 15 2-in-1 (9575)")
+*   [Dell XPS 15 9550](/index.php/Dell_XPS_15_9550 "Dell XPS 15 9550")
+*   [Dell XPS 15 9560](/index.php/Dell_XPS_15_9560 "Dell XPS 15 9560")
+*   [Dell XPS 15 9570](/index.php/Dell_XPS_15_9570 "Dell XPS 15 9570")
 
 This page contains recommendations for running Arch Linux on the Dell XPS 15 7590 (2019).
 
@@ -27,50 +35,41 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 759
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 UEFI](#UEFI)
-    *   [1.1 Firmware Update](#Firmware_Update)
+*   [1 Pre-Installation UEFI Settings](#Pre-Installation_UEFI_Settings)
 *   [2 Power Management](#Power_Management)
     *   [2.1 Suspend](#Suspend)
     *   [2.2 Hibernate](#Hibernate)
     *   [2.3 Powertop](#Powertop)
-*   [3 Graphics](#Graphics)
-    *   [3.1 kernel modules](#kernel_modules)
-    *   [3.2 NVIDIA Optimus](#NVIDIA_Optimus)
-        *   [3.2.1 Manually loading/unloading NVIDIA module](#Manually_loading/unloading_NVIDIA_module)
-        *   [3.2.2 Using nvidia-xrun](#Using_nvidia-xrun)
-    *   [3.3 Backlight](#Backlight)
-    *   [3.4 Backlight function keys](#Backlight_function_keys)
-    *   [3.5 Backlight in Wayland](#Backlight_in_Wayland)
-    *   [3.6 Backlight in Sway](#Backlight_in_Sway)
-*   [4 Wifi and Bluetooth](#Wifi_and_Bluetooth)
-    *   [4.1 WIFI](#WIFI)
-*   [5 Touchpad and Touchscreen](#Touchpad_and_Touchscreen)
-*   [6 Docks](#Docks)
-*   [7 EFI firmware updates](#EFI_firmware_updates)
-*   [8 Thermal management](#Thermal_management)
+*   [3 Thermal Management](#Thermal_Management)
+*   [4 Graphics](#Graphics)
+    *   [4.1 kernel modules](#kernel_modules)
+    *   [4.2 NVIDIA Optimus](#NVIDIA_Optimus)
+        *   [4.2.1 Manually loading/unloading NVIDIA module](#Manually_loading/unloading_NVIDIA_module)
+        *   [4.2.2 Using nvidia-xrun](#Using_nvidia-xrun)
+    *   [4.3 Backlight](#Backlight)
+    *   [4.4 Backlight function keys](#Backlight_function_keys)
+    *   [4.5 Backlight in Wayland](#Backlight_in_Wayland)
+    *   [4.6 Backlight in Sway](#Backlight_in_Sway)
+*   [5 Networking](#Networking)
+    *   [5.1 WiFi](#WiFi)
+*   [6 Touchpad and Touchscreen](#Touchpad_and_Touchscreen)
+*   [7 Docks](#Docks)
+*   [8 Firmware Update](#Firmware_Update)
+    *   [8.1 UEFI](#UEFI)
 *   [9 Tips and Tricks](#Tips_and_Tricks)
 *   [10 Fingerprint reader](#Fingerprint_reader)
 
-## UEFI
+## Pre-Installation UEFI Settings
 
 Before installing it is necessary to modify some UEFI Settings. They can be accessed by pressing the F2 key repeatedly when booting.
 
-*   If you will be dual booting alongside an existing Windows installation, Windows will not boot if you just go ahead and make the switch to AHCI as described in the steps below. You must log into you Windows install both before and after that BIOS change [to set and then remove a safeboot flag](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/), respectively.
+**Warning:** If you will be dual booting alongside an existing Windows installation, Windows will not boot if you just go ahead and make the switch to AHCI as described in the steps below. You must log into you Windows install both before and after that BIOS change [to set and then remove a safeboot flag](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/), respectively.
+
 *   Under 'System Configuration', change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD.
 *   Under 'Secure Boot', disable secure boot to allow Linux to boot.
 *   Under 'POST Behaviour', change "Fastboot" to "Thorough". This prevents intermittent boot failures.
 
-### Firmware Update
-
-Firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-7590-laptop/drivers). Keeping an existing Windows system will make updates of BIOS much simpler. If a clean Arch Linux install is the case in order to install:
-
-*   Download the desired firmware from section "Dell XPS 15 7590 System BIOS"
-*   Save it in `/boot/EFI/Dell/Bios/` (this path may vary, depending on your installation)
-*   Reboot the system, and enter the boot menu by pressing repeatedly `F12` on Dell logo
-*   Choose "Bios Flash Update"
-*   Select the file previously saved, and start the process
-
-The process will take about five minutes, during which the system will have some reboots and push fans at maximum speed. Finally the system will reboot normally.
+If you are using multiboot with an existing Windows installation, make sure that "fast startup" is disabled in Windows 8/10.
 
 ## Power Management
 
@@ -103,6 +102,27 @@ Read more regarding the sleep variants on the kernel documentation [[1]](https:/
 ### Hibernate
 
 ### Powertop
+
+## Thermal Management
+
+Default thermal management is not very optimized (this is my experience with the i9 processor at least).
+
+The laptop gets hot quite often and the fans run at high speed most of the time.
+
+One solution I found is to use powertop to get a quieter system.
+
+See [Powertop](/index.php/Powertop "Powertop") for details.
+
+You may activate manual fans control with [i8kutils](https://launchpad.net/i8kutils). Install [i8kutils](https://aur.archlinux.org/packages/i8kutils/) and [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/). Edit `/etc/i8kutils/i8kmon.conf` and enable services:
+
+```
+$ sudo systemctl daemon-reload
+$ sudo modprobe dell-smm-hwmon
+$ sudo modprobe i8k
+$ sudo systemctl enable --now i8kmon.service
+$ sudo systemctl enable --now dell-bios-fan-control.service
+
+```
 
 ## Graphics
 
@@ -315,13 +335,13 @@ redshift -o -b 0.75 -O 6500k -m wayland -l manual
 
 This may also work for other window managers based on [wlroots](https://www.archlinux.org/packages/?name=wlroots).
 
-## Wifi and Bluetooth
+## Networking
 
-### WIFI
+### WiFi
 
-With kernel version 5.2.2 and linux-firmware 20190717.bf13a71-1, WIFI would be working out of the box.
+With kernel version 5.2.2 and linux-firmware 20190717.bf13a71-1, WiFi would be working out of the box.
 
-With kernel versions lower than 5.2.0, WIFI will not be working out of the box, a manual installation of drivers in is required in order that the hardware can be recognized correctly. Connect to the internet via a cable or via USB tethering, then consult [this page](https://support.killernetworking.com/knowledge-base/killer-ax1650-in-debian-ubuntu-16-04/)
+With kernel versions lower than 5.2.0, WiFi will not be working out of the box, a manual installation of drivers in is required in order that the hardware can be recognized correctly. Connect to the internet via a cable or via USB tethering, then consult [this page](https://support.killernetworking.com/knowledge-base/killer-ax1650-in-debian-ubuntu-16-04/)
 
 ```
 $ pacman -S git
@@ -350,28 +370,19 @@ Kernel versions 5.2.0 and 5.2.1 [have issues with getting the WiFi module workin
 
 ## Docks
 
-## EFI firmware updates
+## Firmware Update
 
-## Thermal management
+### UEFI
 
-Default thermal management is not very optimized (this is my experience with the i9 processor at least).
+Firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-7590-laptop/drivers). Keeping an existing Windows system will make updates of BIOS much simpler. If a clean Arch Linux install is the case in order to install:
 
-The laptop gets hot quite often and the fans run at high speed most of the time.
+*   Download the desired firmware from section "Dell XPS 15 7590 System BIOS"
+*   Save it in `/efi/EFI/Dell/Bios/` or `/boot/EFI/Dell/Bios/` (this path may vary, depending on your installation)
+*   Reboot the system, and enter the boot menu by pressing repeatedly `F12` on Dell logo
+*   Choose "Bios Flash Update"
+*   Select the file previously saved, and start the process
 
-One solution I found is to use powertop to get a quieter system.
-
-See [[3]](https://wiki.archlinux.org/index.php/Powertop) for details.
-
-You may activate manual fans control with [i8kutils](https://launchpad.net/i8kutils). Install [i8kutils](https://aur.archlinux.org/packages/i8kutils/) and [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/). Edit `/etc/i8kutils/i8kmon.conf` and enable services:
-
-```
-$ sudo systemctl daemon-reload
-$ sudo modprobe dell-smm-hwmon
-$ sudo modprobe i8k
-$ sudo systemctl enable --now i8kmon.service
-$ sudo systemctl enable --now dell-bios-fan-control.service
-
-```
+The process will take about five minutes, during which the system will have some reboots and push fans at maximum speed. Finally the system will reboot normally.
 
 ## Tips and Tricks
 
@@ -381,4 +392,4 @@ It is a Goodix fingerprint reader.
 
 The producer does not provide any Linux driver nor documentation to implement one.
 
-Some effort is in slow progress to reverse engineer the windows drivers (see [[4]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/189)).
+Some effort is in slow progress to reverse engineer the windows drivers (see [[3]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/189)).

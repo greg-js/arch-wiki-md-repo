@@ -119,14 +119,14 @@ For zero offset use:
 
 For 512 bit key length (e.g. for aes-xts-plain with 512 bit key) the header is 2 MiB. LUKS2 header is 4 MiB if created with [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) < 2.1 or 16 MiB if created with [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) ≥ 2.1.
 
-If in doubt, just be generous and overwrite the first 20 MiB or so:
+If in doubt, just be generous and overwrite the first 20 MiB. For example, using [dd](/index.php/Dd "Dd"):
 
 ```
 # dd if=/dev/urandom of=*/dev/sdX1* bs=512 count=40960
 
 ```
 
-Or use `shred`. For example, to overwrite the first 20 MiB for 20 times:
+Or use [shred](/index.php/Shred "Shred"). For example, to overwrite the first 20 MiB for 20 times:
 
 ```
 # shred -v -z -s 20MiB -n 20 */dev/sdX1*

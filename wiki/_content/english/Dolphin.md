@@ -24,7 +24,8 @@ Related articles
     *   [3.2 Transparent fonts](#Transparent_fonts)
     *   [3.3 Crashes on mounted SMB share](#Crashes_on_mounted_SMB_share)
     *   [3.4 Icons not showing](#Icons_not_showing)
-    *   [3.5 Mismatched folder view background colors](#Mismatched_folder_view_background_colors)
+    *   [3.5 Icons are too big](#Icons_are_too_big)
+    *   [3.6 Mismatched folder view background colors](#Mismatched_folder_view_background_colors)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -90,6 +91,15 @@ If icons are not displaying on Dolphin, and an error similar to "Pixmap is a nul
 
 ```
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
+
+```
+
+### Icons are too big
+
+If icons are too big on Dolphin in not KDE environment, start it with:
+
+```
+XDG_CURRENT_DESKTOP=KDE KDE_SESSION_VERSION=5 **QT_AUTO_SCREEN_SCALE_FACTOR=0** dolphin
 
 ```
 

@@ -1,6 +1,10 @@
 The following is regarding the Lenovo Thinkpad Edge E430 with 3rd Generation Ivy Bridge Intel processor, released in mid 2012\. The E430 is intended to be an affordable, yet still entirely capable business machine. Unlike some of its siblings, it is not to military specs, but is still a well built and quite durable machine. If you are reading this with the intention of ordering yourself this machine, do yourself a favor and opt for the Intel WiFi card for the extra ~$20\. The default Realtek works, albiet with a bit of coaxing. Ergo, this article is meant to suppliment the current [Installation guide](/index.php/Installation_guide "Installation guide").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Hardware](#Hardware)

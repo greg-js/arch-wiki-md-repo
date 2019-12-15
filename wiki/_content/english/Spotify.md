@@ -106,7 +106,7 @@ Playerctl will send the command to the first player it finds, so this method wil
 
 ##### Bluetooth
 
-[Media control from a bluetooth headset](/index.php/Bluetooth_headset#Media_Controls "Bluetooth headset") and similar devices may be forwarded to mpris2 so they work with spotify
+[Media control from a bluetooth headset](/index.php/Bluetooth_headset#Media_controls "Bluetooth headset") and similar devices may be forwarded to mpris2 so they work with spotify
 
 ##### D-Bus
 

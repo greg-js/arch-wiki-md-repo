@@ -176,7 +176,7 @@ $ systemd-analyze syscall-filter
 
 ```
 
-Restricting swap syscall can be done as following
+Restricting swap syscall can be done as following:
 
 ```
 SystemCallFilter=@swap
@@ -189,6 +189,13 @@ If the running process does not require any network access it can be fully disab
 
 ```
 PrivateNetwork=true
+
+```
+
+If network is required, the type of address families used can be restricted for the [socket(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/socket.2) system call by for example only allowing UNIX sockets.
+
+```
+RestrictAddressFamilies=AF_UNIX
 
 ```
 

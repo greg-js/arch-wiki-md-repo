@@ -682,7 +682,7 @@ Kolejne kroki nie pozwalają na dwukrotne wpisanie hasła podczas startu systemu
 
 *   Utwórz plik [klucza](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") i dodaj klucz do `/dev/md0`.
 
-*   Utwórz kolejny plik kluczy dla dysku twardego ((`/dev/sdc1`), aby można go było odblokować podczas rozruchu. Dla wygody pozostaw powyższe hasło w miejscu, ponieważ może to ułatwić odzyskiwanie, jeśli kiedykolwiek będziesz tego potrzebować. Edytuj `/etc/crypttab`, aby odszyfrować dysk twardy podczas startu. Zobacz [dm-crypt/Device encryption#Unlocking a secondary partition at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
+*   Utwórz kolejny plik kluczy dla dysku twardego ((`/dev/sdc1`), aby można go było odblokować podczas rozruchu. Dla wygody pozostaw powyższe hasło w miejscu, ponieważ może to ułatwić odzyskiwanie, jeśli kiedykolwiek będziesz tego potrzebować. Edytuj `/etc/crypttab`, aby odszyfrować dysk twardy podczas startu. Zobacz [dm-crypt/Device encryption#Unlocking the root partition at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_the_root_partition_at_boot "Dm-crypt/Device encryption").
 
 ### Konfigurowanie systemu
 
@@ -1039,7 +1039,7 @@ sprawi, że system ponownie poprosi o podanie hasła (to znaczy, że musisz wpro
 
 1.  Stwórz [randomtext keyfile](/index.php/Dm-crypt/Device_encryption#Storing_the_keyfile_on_a_filesystem "Dm-crypt/Device encryption"),
 2.  Dodaj plik klucza do pliku (`/dev/sdaY`) [boot partition's LUKS header](/index.php/Dm-crypt/Device_encryption#Configuring_LUKS_to_make_use_of_the_keyfile "Dm-crypt/Device encryption") and
-3.  Sprawdź wpis `/etc/fstab` i dodaj linię `/etc/crypttab` do [unlock it automatically at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
+3.  Sprawdź wpis `/etc/fstab` i dodaj linię `/etc/crypttab` do [unlock it automatically at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_the_root_partition_at_boot "Dm-crypt/Device encryption").
 
 Jeśli z jakiegoś powodu plik klucza nie odblokuje partycji rozruchowej, systemd zrestartuje się, aby poprosić o hasło do odblokowania, a jeśli jest to poprawne, kontynuuj uruchamianie.
 

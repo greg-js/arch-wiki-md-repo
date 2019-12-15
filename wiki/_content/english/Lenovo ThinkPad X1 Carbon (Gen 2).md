@@ -119,7 +119,7 @@ And some fairly old help from Lenovo here: [[4]](https://www.thinkwiki.org/wiki/
 
 If the function keys fail to wake after suspend, ensure you have a kernel version >=3.15.
 
-If you build your own kernels, make sure to either enable [TPM](/index.php/Trusted_Platform_Module "Trusted Platform Module") (Trusted Platform Module) drivers or disable the Security Chip in the BIOS.
+If you build your own kernels, make sure to either enable [TPM](/index.php/TPM "TPM") (Trusted Platform Module) drivers or disable the Security Chip in the BIOS.
 
 ### Keyboard
 

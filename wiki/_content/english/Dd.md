@@ -31,6 +31,8 @@ For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1
 *   [3 Binary file patching](#Binary_file_patching)
 *   [4 Backup and restore MBR](#Backup_and_restore_MBR)
     *   [4.1 Remove bootloader](#Remove_bootloader)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Partial read](#Partial_read)
 
 ## Installation
 
@@ -198,5 +200,42 @@ To erase the MBR bootstrap code (may be useful if you have to do a full reinstal
 
 ```
 # dd if=/dev/zero of=/dev/sd*X* bs=440 count=1
+
+```
+
+## Troubleshooting
+
+### Partial read
+
+Files created with *dd* can end up with a smaller size than requested if a full input block is not available and the [read(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/read.2) system call returns early. This can happen when reading from a [pipe(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pipe.7) or when reading from `/dev/random` and there is not enough entropy[[3]](https://unix.stackexchange.com/a/121888), or from `/dev/urandom` when reading more than 32 MiB[[4]](https://unix.stackexchange.com/a/178957).
+
+It is possible, but not guaranteed, that *dd* will warn you about the issue:
+
+```
+dd: warning: partial read (*X* bytes); suggest iflag=fullblock
+
+```
+
+The solution is to do as the warning says and add `iflag=fullblock` to the *dd* command. For example:
+
+```
+$ dd if=/dev/random of=bigsecret.img bs=1K count=1 iflag=fullblock
+$ dd if=/dev/urandom of=bigsecret.img bs=40M count=1 iflag=fullblock
+
+```
+
+**Note:** It is strongly recommended to always add the `iflag=fullblock` option to the *dd* command when the input file is `/dev/random` or `/dev/urandom`.
+
+An alternative for `/dev/urandom` is to specify a block size smaller than 32 MiB, but a larger copy count. For example:
+
+```
+$ dd if=/dev/urandom of=bigsecret.img bs=1M count=40
+
+```
+
+When reading from a pipe, an alternative to `iflag=fullblock` is to limit `bs` to the `PIPE_BUF` constant value, defined in `/usr/include/linux/limits.h` [[5]](https://unix.stackexchange.com/questions/556016/cat-dd-pipe-causes-partial-reads-without-iflag-fullblock-why-truncated-to-128). For example:
+
+```
+$ cat input.img | dd of=output.img bs=4k count=100
 
 ```

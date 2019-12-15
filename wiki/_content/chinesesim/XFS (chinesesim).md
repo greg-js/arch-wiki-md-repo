@@ -6,7 +6,11 @@
 
 XFS 是由硅谷图形公司 (Silicon Graphics, Inc.) 开发的高性能日志式文件系统。XFS 因其基于分配组 (allocation group) 的设计而特别擅长并行 IO。当该文件系统跨越多个存储设备时，这种设计使得 IO 线程数、文件系统带宽、文件和文件系统大小都具有极大的可伸缩性。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 数据损坏](#数据损坏)

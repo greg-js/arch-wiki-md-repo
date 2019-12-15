@@ -32,8 +32,6 @@ Once created, a partition must be formatted with an appropriate [file system](/i
     *   [1.3 Choosing between GPT and MBR](#Choosing_between_GPT_and_MBR)
     *   [1.4 Partitionless disk](#Partitionless_disk)
         *   [1.4.1 Btrfs partitioning](#Btrfs_partitioning)
-    *   [1.5 Backup](#Backup)
-    *   [1.6 Recover](#Recover)
 *   [2 Partition scheme](#Partition_scheme)
     *   [2.1 Single root partition](#Single_root_partition)
     *   [2.2 Discrete partitions](#Discrete_partitions)
@@ -47,10 +45,13 @@ Once created, a partition must be formatted with an appropriate [file system](/i
         *   [2.3.1 UEFI/GPT example layout](#UEFI/GPT_example_layout)
         *   [2.3.2 BIOS/MBR example layout](#BIOS/MBR_example_layout)
         *   [2.3.3 BIOS/GPT example layout](#BIOS/GPT_example_layout)
-*   [3 Partitioning tools](#Partitioning_tools)
-    *   [3.1 fdisk](#fdisk)
-    *   [3.2 GPT fdisk](#GPT_fdisk)
-    *   [3.3 GNU Parted](#GNU_Parted)
+*   [3 Tools](#Tools)
+    *   [3.1 Partitioning tools](#Partitioning_tools)
+        *   [3.1.1 fdisk](#fdisk)
+        *   [3.1.2 GPT fdisk](#GPT_fdisk)
+        *   [3.1.3 GNU Parted](#GNU_Parted)
+    *   [3.2 Backup](#Backup)
+    *   [3.3 Recovery](#Recovery)
 *   [4 Partition alignment](#Partition_alignment)
 *   [5 GPT kernel support](#GPT_kernel_support)
 *   [6 Tricking old BIOS into booting from GPT](#Tricking_old_BIOS_into_booting_from_GPT)
@@ -132,18 +133,6 @@ Partitionless disk a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows
 #### Btrfs partitioning
 
 [Btrfs](/index.php/Btrfs "Btrfs") can occupy an entire data storage device and replace the [MBR](#Master_Boot_Record) or [GPT](#GUID_Partition_Table) partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
-
-### Backup
-
-See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk") or [gdisk#Backup and restore partition table](/index.php/Gdisk#Backup_and_restore_partition_table "Gdisk").
-
-### Recover
-
-It may be possible to recover a destroyed MBR partition table with [gpart](https://www.archlinux.org/packages/?name=gpart). See [gpart(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpart.8) for instructions.
-
-For GPT it is possible to restore the primary GPT header (located at the start of the disk) from the secondary GPT header (located at the end of the disk) or vice versa. See [gdisk#Recover GPT header](/index.php/Gdisk#Recover_GPT_header "Gdisk").
-
-Another option is [TestDisk](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery"), which supports recovering lost partitions on both MBR and GPT.
 
 ## Partition scheme
 
@@ -248,7 +237,9 @@ The following examples use `/dev/sda` as the example disk with `/dev/sda1` as th
 
 1.  A BIOS boot partition is only required when using [GRUB](/index.php/GRUB "GRUB") for BIOS booting from a GPT disk. The partition has nothing to do with `/boot`, and it must not be formatted with a file system or mounted.
 
-## Partitioning tools
+## Tools
+
+### Partitioning tools
 
 The following programs are used to create and/or manipulate device partition tables and partitions. See the linked articles for the exact commands to be used.
 
@@ -273,7 +264,7 @@ partitionmanager |
 
 **Warning:** To partition devices, use a partitioning tool compatible to the chosen type of partition table. Incompatible tools may result in the destruction of that table, along with existing partitions or data.
 
-### fdisk
+#### fdisk
 
 *fdisk* and its related utilities are described in the [fdisk](/index.php/Fdisk "Fdisk") article.
 
@@ -282,7 +273,7 @@ partitionmanager |
     *   [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) – [Curses](https://en.wikipedia.org/wiki/curses_(programming_library) "wikipedia:curses (programming library)")-based variant of fdisk.
     *   [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) – Scriptable variant of fdisk.
 
-### GPT fdisk
+#### GPT fdisk
 
 *gdisk* and its related utilities are described in the [gdisk](/index.php/Gdisk "Gdisk") article.
 
@@ -291,7 +282,7 @@ partitionmanager |
     *   [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) – Curses-based variant of gdisk.
     *   [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) – Scriptable variant of gdisk.
 
-### GNU Parted
+#### GNU Parted
 
 These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GNU Parted") article.
 
@@ -310,6 +301,25 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 *   **KDE Partition Manager** — Utility program for KDE to manage the disk devices, partitions and file systems.
 
 	[https://www.kde.org/applications/system/kdepartitionmanager/](https://www.kde.org/applications/system/kdepartitionmanager/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
+
+### Backup
+
+*   [fdisk](/index.php/Fdisk "Fdisk") can create a backup of the partitions table. See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk").
+*   [GPT fdisk](/index.php/GPT_fdisk "GPT fdisk") can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table. See [GPT fdisk#Backup and restore partition table](/index.php/GPT_fdisk#Backup_and_restore_partition_table "GPT fdisk").
+
+### Recovery
+
+*   **[gpart](https://en.wikipedia.org/wiki/gpart "wikipedia:gpart")** — A utility that guesses the contents of a destroyed MBR partition table. Its usage is explained in the [gpart(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpart.8) man page.
+
+	[https://github.com/baruch/gpart](https://github.com/baruch/gpart) || [gpart](https://www.archlinux.org/packages/?name=gpart)
+
+*   **[GPT fdisk](/index.php/GPT_fdisk#Recover_GPT_header "GPT fdisk")** — A partitioning tool that can restore the primary GPT header (located at the start of the disk) from the secondary GPT header (located at the end of the disk) or vice versa.
+
+	[https://www.rodsbooks.com/gdisk/](https://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
+
+*   **[TestDisk](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery")** — A utility that supports recovering lost partitions on both MBR and GPT.
+
+	[https://www.cgsecurity.org/index.html?testdisk.html](https://www.cgsecurity.org/index.html?testdisk.html) || [testdisk](https://www.archlinux.org/packages/?name=testdisk)
 
 ## Partition alignment
 

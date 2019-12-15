@@ -8,9 +8,9 @@
 
 Many of the settings you'll want to set are very dependent on how you will use your IRC server. There is a default configuration but it doesn't work out of the box.
 
-From there you'll want to follow the [UnrealIRCd Configuration Docs](https://www.unrealircd.org/files/docs/unreal32docs.html#configuringyourunrealircdconf) making sure to configure all of the required fields such as `me`, `admin`, `class`, etc.
+From there you'll want to follow the [UnrealIRCd Configuration docs](https://www.unrealircd.org/docs/Configuration) making sure to configure all of the required fields such as `me`, `admin`, `class`, etc.
 
-Place your SSL key/cert at `/etc/unrealircd/ssl/server.key.pem` and `/etc/unrealircd/ssl/server.cert.pem`. If you do not have a proper certificate, you can generate a self-signed one, as explained at [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server"). (note that the files have to be named slightly different for UnrealIRCd)
+Place your TLS key/cert at `/etc/unrealircd/tls/server.key.pem` and `/etc/unrealircd/tls/server.cert.pem`. You can use [Certbot](/index.php/Certbot "Certbot") to obtain a key and certificate, or generate a self-signed one as explained at [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server").
 
 ## Starting/Stopping the daemon
 
@@ -19,7 +19,7 @@ You can [start](/index.php/Start "Start") and [stop](/index.php/Stop "Stop") the
 If you run into problems where the daemon will not start, try running:
 
 ```
-# unrealircd
+$ sudo -u ircd unrealircd
 
 ```
 

@@ -119,7 +119,7 @@ optdepends=('cups: printing support'
 
 ## Dependências de pacotes
 
-*   **Não confie em [dependências transitivas](https://en.wikipedia.org/wiki/Transitive_dependency "wikipedia:Transitive dependency")** em qualquer uma das [PKGBUILD (Português)#Dependencias](/index.php/PKGBUILD_(Portugu%C3%AAs)#Dependencias "PKGBUILD (Português)"), pois elas podem quebrar, se uma das dependências for atualizada.
+*   **Não confie em [dependências transitivas](https://en.wikipedia.org/wiki/Transitive_dependency "wikipedia:Transitive dependency")** em qualquer uma das [PKGBUILD (Português)#Dependências](/index.php/PKGBUILD_(Portugu%C3%AAs)#Dependências "PKGBUILD (Português)"), pois elas podem quebrar, se uma das dependências for atualizada.
 *   Liste todas as dependências diretas da biblioteca. Para identificá-las, [find-libdeps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find-libdeps.1) (parte de [devtools](https://www.archlinux.org/packages/?name=devtools)) pode ser usado.
 
 ## Relações de pacotes

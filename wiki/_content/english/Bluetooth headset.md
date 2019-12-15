@@ -284,6 +284,13 @@ module-bluez5-discover
 
 ```
 
+It's also possible there are no write permissions for the owner of /var/lib/bluetooth. If this is the case, you may get the device to work by removing and re-pairing it, but the issue will return after rebooting. Restoring write permissions fixes this issue:
+
+```
+chmod -R u+w /var/lib/bluetooth
+
+```
+
 #### Connecting works, but there are sound glitches all the time
 
 This is very likely to occur when the Bluetooth and the WiFi share the same chip as they share the same physical antenna and possibly band range (2.4GHz). Although this works seamlessly on Windows, this is not the case on Linux.

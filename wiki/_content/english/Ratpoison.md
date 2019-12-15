@@ -46,7 +46,7 @@ exec /usr/bin/ratpoison
 
 ## Using ratpoison
 
-After X11 starts up you will see a black screen and a little textbox on the upper right of it that says "Welcome to Ratpoison". Now type `Ctrl+t` and then `?` to get a list of keybindings. If you are used to GNU screen, you will feel at home very soon.
+After [X11](/index.php/X11 "X11") starts up you will see a black screen and a little textbox on the upper right of it that says "Welcome to Ratpoison". Now type `Ctrl+t` and then `?` to get a list of keybindings. If you are used to GNU screen, you will feel at home very soon.
 
 You are able to define custom keystrokes and even override existing ones in `~/.ratpoisonrc`
 

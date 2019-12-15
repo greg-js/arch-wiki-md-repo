@@ -559,7 +559,7 @@ If that works, enable WPA/WPA2 again but choose fixed and/or limited router sett
 
 ### Wi-Fi networks invisible because of incorrect regulatory domain
 
-If the computer's Wi-Fi channels do not match those of the user's country, that may result in some in-range Wi-Fi networks becoming invisible, because they use wireless channels that aren't allowed by default. The solution is to configure the regulatory domain correctly, see [#Respecting the regulatory domain](#Respecting_the_regulatory_domain).
+If the computer's Wi-Fi channels do not match those of the user's country, some in-range Wi-Fi networks might be invisible, because they use wireless channels that are not allowed by default. The solution is to configure the regulatory domain correctly, see [#Respecting the regulatory domain](#Respecting_the_regulatory_domain).
 
 ## Troubleshooting drivers and firmware
 

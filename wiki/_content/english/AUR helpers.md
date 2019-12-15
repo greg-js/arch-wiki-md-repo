@@ -2,7 +2,13 @@
 
 **Note:** Please use the discussion page to suggest edits to this article: [Talk:AUR helpers](/index.php/Talk:AUR_helpers "Talk:AUR helpers").
 
-AUR helpers automate certain usage of the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Most AUR helpers can search for packages in the AUR and retrieve their [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") – others additionally assist with the build and install process.
+AUR helpers automate usage of the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). In particular, they may automate the following tasks:
+
+*   searching for packages published on the AUR;
+*   resolving of dependencies between AUR packages;
+*   retrieve and build AUR packages;
+*   retrieve web content, such as user comments;
+*   submission of AUR packages.
 
 [Pacman](/index.php/Pacman "Pacman") only handles updates for pre-built packages in its repositories. AUR packages are redistributed in form of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") and need an AUR helper to automate the re-build process. However, keep in mind that a rebuild of package may be required when its shared library dependencies are updated, not only when the package itself is updated.
 

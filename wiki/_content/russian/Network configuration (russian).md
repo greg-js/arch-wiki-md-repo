@@ -6,7 +6,7 @@
 *   [Раздача интернета](/index.php/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B0%D1%87%D0%B0_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0 "Раздача интернета")
 *   [Router](/index.php/Router "Router")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration](/index.php/Network_configuration "Network configuration"). Дата последней синхронизации: 15 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=585917).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration](/index.php/Network_configuration "Network configuration"). Дата последней синхронизации: 9 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=591338).
 
 В этой статье описана настройка подключения к сети на [3-м уровне сетевой модели OSI](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%8B_%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F и [/Wireless (Русский)](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Wireless_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Network configuration (Русский)/Wireless (Русский)").
 
@@ -122,7 +122,7 @@ PING www.example.com (93.184.216.34): 56(84) data bytes
 
 Имена беспроводных устройств также можно получить посредством `iw dev`. См. также [/Wireless (Русский)#Определение имени интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Wireless_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Определение_имени_интерфейса "Network configuration (Русский)/Wireless (Русский)").
 
-Если сетевой интерфейс не обнаружен, убедитесь, что [драйвер устройства](#Драйвер_устройства) был успешно загружен во время запуска системы.
+Если сетевой интерфейс не обнаружен, убедитесь, что драйвер устройства ([проводного](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Ethernet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Драйвер_устройства "Network configuration (Русский)/Ethernet (Русский)") или [беспроводного](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Wireless_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Драйвер_устройства "Network configuration (Русский)/Wireless (Русский)")) был успешно загружен во время запуска системы.
 
 #### Включение и отключение сетевых интерфейсов
 

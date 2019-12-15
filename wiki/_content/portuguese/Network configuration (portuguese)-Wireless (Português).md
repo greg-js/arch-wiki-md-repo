@@ -464,7 +464,7 @@ Veja também [[2]](http://askubuntu.com/questions/62166/siocsifflags-operation-n
 
 ## Economia de energia
 
-Veja [Power saving#Network interface](/index.php/Power_saving#Network_interface "Power saving").
+Veja [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces "Power saving").
 
 ## Solução de problemas
 

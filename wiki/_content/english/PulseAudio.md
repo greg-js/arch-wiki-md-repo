@@ -553,7 +553,7 @@ The plugin has 11 control options. If you want to insert custom values, read the
 
 ### Microphone Echo-Cancellation and Noise Reduction
 
-See [PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting").
+See [PulseAudio/Troubleshooting#Enable Echo/Noise-Cancellation](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting").
 
 ## Applications
 

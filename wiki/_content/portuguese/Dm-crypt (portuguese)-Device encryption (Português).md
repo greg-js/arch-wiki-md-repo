@@ -7,11 +7,11 @@ Esta página mostra como utilizar *dm-crypt* pela linha de comando para criptogr
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparação](#Preparação)
-*   [2 Cryptsetup usage](#Cryptsetup_usage)
-    *   [2.1 Cryptsetup passphrases and keys](#Cryptsetup_passphrases_and_keys)
-*   [3 Encryption options with dm-crypt](#Encryption_options_with_dm-crypt)
-    *   [3.1 Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode)
-    *   [3.2 Encryption options for plain mode](#Encryption_options_for_plain_mode)
+*   [2 Uso do cryptsetup](#Uso_do_cryptsetup)
+    *   [2.1 Senhas e chaves do cryptsetup](#Senhas_e_chaves_do_cryptsetup)
+*   [3 Opções de encriptação com dm-crypt](#Opções_de_encriptação_com_dm-crypt)
+    *   [3.1 Opções do modo de Encriptação LUKS](#Opções_do_modo_de_Encriptação_LUKS)
+    *   [3.2 Opções de encriptação para o modo plain](#Opções_de_encriptação_para_o_modo_plain)
 *   [4 Encrypting devices with cryptsetup](#Encrypting_devices_with_cryptsetup)
     *   [4.1 Encrypting devices with LUKS mode](#Encrypting_devices_with_LUKS_mode)
         *   [4.1.1 Formatting LUKS partitions](#Formatting_LUKS_partitions)
@@ -52,191 +52,191 @@ Esta página mostra como utilizar *dm-crypt* pela linha de comando para criptogr
 
 Antes de usar [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup), tenha certeza que o [módulo do kernel](/index.php/Kernel_module "Kernel module") `dm_crypt` está carregado.
 
-## Cryptsetup usage
+## Uso do cryptsetup
 
-*Cryptsetup* is the command line tool to interface with *dm-crypt* for creating, accessing and managing encrypted devices. The tool was later expanded to support different encryption types that rely on the Linux kernel **d**evice-**m**apper and the **crypt**ographic modules. The most notable expansion was for the Linux Unified Key Setup (LUKS) extension, which stores all of the needed setup information for dm-crypt on the disk itself and abstracts partition and key management in an attempt to improve ease of use. Devices accessed via the device-mapper are called blockdevices. For further information see [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption").
+*cryptsetup* é uma ferramenta da linha de comando para o *dm-crypt* criar, acessar e gerenciar dispositivos criptografados. Ela foi expandida para suportar diferentes tipos de encriptação que dependem do mapeador de dispositivos e módulos criptografados (**d**evice-**m**apper and the **crypt**ographic modules). A expansão mais notável foi o LUKS (Linux Unified Key Setup), que guarda todas as informações necessárias para o dm-crypt no próprio disco e abstrai a partição e gerenciamento de chaves com o objetivo de facilitar o uso. Dispositivos acessados via o mapeador de dispositivos são chamados de dispositivos de bloco (blockdevices). Para mais informações veja [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption").
 
-The tool is used as follows:
-
-```
-# cryptsetup <OPTIONS> <action> <action-specific-options> <device> <dmname>
+A ferramenta é usada da seguinte forma:
 
 ```
+# cryptsetup <OPÇÕES> <ação> <opções-específicas-da-ação> <dispositivo> <dmnome>
 
-It has compiled-in defaults for the options and the encryption mode, which will be used if no others are specified on the command line. Have a look at
+```
+
+Existem opções e modo de encriptação padrão, que serão usados se nenhuma outra opção for especificada. Veja
 
 ```
 $ cryptsetup --help 
 
 ```
 
-which lists options, actions and the default parameters for the encryption modes in that order. A full list of options can be found on the man page. Since different parameters are required or optional, depending on encryption mode and action, the following sections point out differences further. Blockdevice encryption is fast, but speed matters a lot too. Since changing an encryption cipher of a blockdevice after setup is difficult, it is important to check *dm-crypt* performance for the individual parameters in advance:
+Todos os parâmetros, opções e ações padrão serão listados. A lista completa das opções pode ser encontrada na página man. Parâmetros podem ser opcionais ou não, dependendo do modo de encriptação e ação escolhidas, as seções a seguir possuem mais informação sobre elas. A velocidade é muito importante, portanto deve-se escolher com cuidado o algoritmo que vai utilizar. Mudar a cifra criptográfica de um dispositivo de bloco já criptografado é dificíl, por isso é importante verificar a performance do *dm-crypt* com diferentes parâmetros antes de instalar o sistema:
 
 ```
 $ cryptsetup benchmark 
 
 ```
 
-can give guidance on deciding for an algorithm and key-size prior to installation. If certain AES ciphers excel with a considerable higher throughput, these are probably the ones with hardware support in the CPU.
+Lhe ajudará a decidir qual algoritmo e tamanho de chave você quer usar. Se algumas cifras AES se destacarem com uma grande diferença, estas provavelmente devem ter suporte de hardware na CPU.
 
-**Tip:** You may want to practise encrypting a virtual hard drive in a [virtual machine](/index.php/Virtual_machine "Virtual machine") when learning.
+**Dica:** Pode ser desejado praticar a encriptação em uma [máquina virtual](/index.php/Virtualiza%C3%A7%C3%A3o "Virtualização").
 
-### Cryptsetup passphrases and keys
+### Senhas e chaves do cryptsetup
 
-An encrypted blockdevice is protected by a key. A key is either:
+Um dispositivo de bloco criptografado é protegido por uma chave. Pode ser:
 
-*   a passphrase: see [Security#Passwords](/index.php/Security#Passwords "Security").
-*   a keyfile, see [#Keyfiles](#Keyfiles).
+*   uma senha: veja [Security#Passwords](/index.php/Security#Passwords "Security").
+*   uma keyfile, veja [#Keyfiles](#Keyfiles).
 
-Both key types have default maximum sizes: passphrases can be up to 512 characters and keyfiles up to 8192kiB.
+Ambos os tipos de chave possuem tamanhos padrões máximos: senhas podem ser até 512 caracteres e keyfiles até 8192KiB.
 
-An important distinction of *LUKS* to note at this point is that the key is used to unlock the master-key of a LUKS-encrypted device and can be changed with root access. Other encryption modes do not support changing the key after setup, because they do not employ a master-key for the encryption. See [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") for details.
+Uma importante distinção do *LUKS* a se notar é que a chave é usada para desbloquear a chave mestre do dispositivo criptografado com LUKS, e esta pode ser mudada. Outros modos de encriptação não suportam mudança na chave depois de definida, devido a eles não utilizarem uma chave mestre na encriptação. Veja [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") para detalhes.
 
-## Encryption options with dm-crypt
+## Opções de encriptação com dm-crypt
 
-*Cryptsetup* supports different encryption operating modes to use with *dm-crypt*:
+*Cryptsetup* suporta o uso de diferentes modos de encriptação com *dm-crypt*:
 
-*   `--type luks` for using the default LUKS format version (LUKS1 with [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) < 2.1.0, LUKS2 with [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) ≥ 2.1.0),
-*   `--type luks1` for using LUKS1, the most common version of LUKS,
-*   `--type luks2` for using LUKS2, the latest available version of LUKS that allows additional extensions,
-*   `--type plain` for using dm-crypt plain mode,
-*   `--type loopaes` for a loopaes legacy mode,
-*   `--type tcrypt` for a [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") compatibility mode.
+*   `--type luks` para usar a versão padrão do LUKS (LUKS1 com [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) < 2.1.0, LUKS2 com [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) ≥ 2.1.0),
+*   `--type luks1` para usar LUKS1, a versão mais comum do LUKS,
+*   `--type luks2` para usar LUKS2, a última versão do LUKS que permite extensões adicionais,
+*   `--type plain` para usar o modo plain do dm-crypt,
+*   `--type loopaes` para o modo loopaes legacy,
+*   `--type tcrypt` para o modo de compatibilidade com [TrueCrypt](/index.php/TrueCrypt "TrueCrypt").
 
-The basic cryptographic options for encryption cipher and hashes available can be used for all modes and rely on the kernel cryptographic backend features. All that are loaded and available to use as options at runtime can be viewed with:
+As opções criptográficas básicas para as cifras e hashes disponíveis podem ser usadas para todos os modos e dependem das funcionalidades relacionadas a criptografia presentes no kernel. Todas as que são carregadas e disponíveis para uso como opções podem ser vistas com:
 
 ```
 $ less /proc/crypto 
 
 ```
 
-**Tip:** If the list is short, execute `$ cryptsetup benchmark` which will trigger loading available modules.
+**Dica:** Se a lista é pequena, execute `$ cryptsetup benchmark` que irá ativar a busca de módulos disponíveis.
 
-The following introduces encryption options for the `luks`, `luks1`, `luks2` and `plain` modes. Note that the tables list options used in the respective examples in this article and not all available ones.
+As opções de encriptação para os modos `luks`, `luks1`, `luks2` e `plain` serão introduzidas. Note que a tabela lista opções utilizadas em seus respectivos artigos e não todas as disponíveis.
 
-### Encryption options for LUKS mode
+### Opções do modo de Encriptação LUKS
 
-The *cryptsetup* action to set up a new dm-crypt device in LUKS encryption mode is *luksFormat*. Unlike the name implies, it does not format the device, but sets up the LUKS device header and encrypts the master-key with the desired cryptographic options.
+A ação do *cryptsetup* para configurar um novo dispositivo do dm-crypt no modo de encriptação LUKS é *luksFormat*. Diferente do que o nome implica, não formata o dispositivo, mas configura o cabeçalho do dispositivo LUKS e criptografa a chave mestre com as opções criptografadas desejadas.
 
-As LUKS is the default encryption mode, all that is needed to create a new LUKS device with default parameters (`-v` is optional):
-
-```
-# cryptsetup -v luksFormat *device*
+como LUKS é o modo de encriptação padrão, você pode criar um novo dispositivo LUKS com os parâmetros padrão (`-v` é opcional):
 
 ```
-
-For comparison, one can specify the default options manually too:
-
-```
-# cryptsetup -v --type luks --cipher aes-xts-plain64 --key-size 256 --hash sha256 --iter-time 2000 --use-urandom --verify-passphrase luksFormat *device*
+# cryptsetup -v luksFormat *dispositivo*
 
 ```
 
-Defaults are compared with a cryptographically higher specification example in the table below, with accompanying comments:
+Em comparação, você pode querer especificar as opções padrão manualmente também:
 
-| Options | Cryptsetup 2.1.0 defaults | Example | Comment |
+```
+# cryptsetup -v --type luks --cipher aes-xts-plain64 --key-size 256 --hash sha256 --iter-time 2000 --use-urandom --verify-passphrase luksFormat *dispositivo*
+
+```
+
+As opções padrão são comparadas com um exemplo de especificação criptograficamente maior na tabela abaixo, com comentários:
+
+| Opções | Padrão do cryptsetup 2.1.0 | Exemplo | Comentários |
 | --cipher
 
 -c
 
- | `aes-xts-plain64` | `aes-xts-plain64` | [Release 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) changed the defaults to an AES [cipher](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") in [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") mode (see item 5.16 [of the FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). It is advised against using the previous default `--cipher aes-cbc-essiv` because of its known [issues](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29 "wikipedia:Disk encryption theory") and practical [attacks](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) against them. |
+ | `aes-xts-plain64` | `aes-xts-plain64` | [A versão 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) mudou o padrão para uma [cifra](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") do AES no modo [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") (veja o item 5.16 [do FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). Não é recomendado o uso da cifra padrão anterior `--cipher aes-cbc-essiv` devido a seus conhecidos [problemas](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29 "wikipedia:Disk encryption theory") e [ataques](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) práticos contra eles. |
 | --key-size
 
 -s
 
- | `256` (`512` for XTS) | `512` | By default a 512 bit key-size is used for XTS ciphers. Note however that [XTS splits the supplied key in half](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"), so this results in AES-256 being used. |
+ | `256` (`512` for XTS) | `512` | Por padrão uma chave com tamanho de 512 bit é usada para cifras XTS. Note no entanto que [XTS divide a chave no meio](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"), resultando no uso do AES-256. |
 | --hash
 
 -h
 
- | `sha256` | `sha512` | Hash algorithm used for [key derivation](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Release 1.7.0 changed defaults from `sha1` to `sha256` "*not for security reasons [but] mainly to prevent compatibility problems on hardened systems where SHA1 is already [being] phased out*"[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). The former default of `sha1` can still be used for compatibility with older versions of *cryptsetup* since it is [considered secure](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (see item 5.20). |
+ | `sha256` | `sha512` | O algoritmo de Hash usado para [derivação de chave](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). A versão 1.7.0 mudou o padrão de `sha1` para `sha256` "*não por segurança [mas] principalmente para previnir problemas de compabilidade em sistemas onde SHA1 já estava [em] desuso* "[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). O antigo padrão do `sha1` pode ainda ser usado por compatibilidade com versões mais velhas do *cryptsetup* desde que é [considerada segura](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (veja o item 5.20). |
 | --iter-time
 
 -i
 
- | `2000` | `5000` | Number of milliseconds to spend with PBKDF2 passphrase processing. Release 1.7.0 changed defaults from `1000` to `2000` to "*try to keep PBKDF2 iteration count still high enough and also still acceptable for users.*"[[2]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). This option is only relevant for LUKS operations that set or change passphrases, such as *luksFormat* or *luksAddKey*. Specifying 0 as parameter selects the compiled-in default.. |
-| --use-{u,}random | `--use-urandom` | `--use-random` | Selects which [random number generator](/index.php/Random_number_generator "Random number generator") to use. Quoting the cryptsetup manual page: "In a low-entropy situation (e.g. in an embedded system), both selections are problematic. Using /dev/urandom can lead to weak keys. Using /dev/random can block a long time, potentially forever, if not enough entropy can be harvested by the kernel." |
+ | `2000` | `5000` | Número de milisegundos a serem esperados com o processamento da senha PBKDF2\. A versão 1.7.0 mudou o padrão de `1000` para `2000` com o objetivo de "*tentar manter a contagem da interação do PBKDF2 alta o bastante e também ainda aceitável pelos usuários.*"[[2]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). Esta opção é somente relevante para operações do LUKS que definem ou mudam senhas, tais como *luksFormat* ou *luksAddKey*. Especificando 0 como parâmetro seleciona o padrão compilado. |
+| --use-{u,}random | `--use-urandom` | `--use-random` | Seleciona que [gerador de números randômicos](/index.php/Random_number_generator "Random number generator") vai ser utilizado. Traduzindo a página manual do cryptsetup: "Em situações de baixa entropia (exemplo, em um sistema embarcado), ambas as escolhas são problemáticas. Usar /dev/urandom pode resultar em chaves fracas. Usar /dev/random pode demorar muito tempo, potencialmente para sempre, se a entropia coletada pelo kernel não for o bastante." |
 | --verify-passphrase
 
 -y
 
- | Yes | - | Default only for luksFormat and luksAddKey. No need to type for Arch Linux with LUKS mode at the moment. |
+ | Yes | - | Padrão somente para luksFormat e luksAddKey. Não é necessário digitar essa opção no momento. |
 
-The properties of LUKS features and options are described in the [LUKS1](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (pdf) and [LUKS2](https://gitlab.com/cryptsetup/cryptsetup/blob/master/docs/on-disk-format-luks2.pdf) (pdf) specifications.
+As propriedades das funcionalidades e opções do LUKS são descritas nas especificações do [LUKS1](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (pdf) e [LUKS2](https://gitlab.com/cryptsetup/cryptsetup/blob/master/docs/on-disk-format-luks2.pdf) (pdf).
 
-**Tip:** The project developers' [devconfcz2016](https://mbroz.fedorapeople.org/talks/DevConf2016/devconf2016-luks2.pdf) (pdf) presentation summarizes the motivation for the major specification update to LUKS2.
+**Dica:** A apresentação dos desenvolvedores do projeto [devconfcz2016](https://mbroz.fedorapeople.org/talks/DevConf2016/devconf2016-luks2.pdf) (pdf) sumariza a motivação para as grandes mudanças do LUKS2.
 
-### Encryption options for plain mode
+### Opções de encriptação para o modo plain
 
-In dm-crypt *plain* mode, there is no master-key on the device, hence, there is no need to set it up. Instead the encryption options to be employed are used directly to create the mapping between an encrypted disk and a named device. The mapping can be created against a partition or a full device. In the latter case not even a partition table is needed.
+No modo *plain* do dm-crypt, não existe chave mestre no dispositivo, consequentemente não é necessário defini-lá. As opções de encriptação são empregadas diretamente para criar a mapeação entre o disco criptografado e um dispositivo nomeado. O mapeamento pode ser criado na partição ou no dispositivo todo. Nesse último caso não é necessário uma tabela de partição.
 
-To create a *plain* mode mapping with cryptsetup's default parameters:
-
-```
-# cryptsetup <options> open --type plain <device> <dmname>
+O mapeamento do modo *plain* com os parâmetros padrão do cryptsetup pode ser feito com:
 
 ```
+# cryptsetup <opções> open --type plain <dispositivo> <dmnome>
 
-Executing it will prompt for a password, which should have very high entropy. Below a comparison of default parameters with the example in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system")
+```
 
-| Option | Cryptsetup 2.1.0 defaults | Example | Comment |
+Ao executar o comando, será solicitada a senha, que deve possuir uma entropia muito alta. Abaixo uma comparação dos parâmetros padrão com o exemplo em [dm-crypt/Criptografando todo um sistema#Plain dm-crypt](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Plain_dm-crypt "Dm-crypt/Criptografando todo um sistema"):
+
+| Opção | Padrão do cryptsetup 2.1.0 | Exemplo | Comentários |
 | --hash
 
 -h
 
- | `ripemd160` | - | The hash is used to create the key from the passphrase; it is not used on a keyfile. |
+ | `ripemd160` | - | O hash é usado para criar a chave com a senha; não é usado em uma keyfile. |
 | --cipher
 
 -c
 
- | `aes-cbc-essiv:sha256` | `aes-xts-plain64` | The cipher consists of three parts: cipher-chainmode-IV generator. Please see [Disk encryption#Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") for an explanation of these settings, and the [DMCrypt documentation](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) for some of the options available. |
+ | `aes-cbc-essiv:sha256` | `aes-xts-plain64` | As cifras consistem de três pares: geradores cifra-modo_de_opeação-IV. Veja [Encriptação de disco#Cifras e modos de operação](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") para uma explicação dessas configurações, e a [documentação do DMCrypt](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) para os modos disponíveis. |
 | --key-size
 
 -s
 
- | `256` | `512` | The key size (in bits). The size will depend on the cipher being used and also the chainmode in use. Xts mode requires twice the key size of cbc. |
+ | `256` | `512` | O tamanho da chave (em bits). O tamanho dependerá da cifra e chainmode utilizado. O modo Xts precisa de duas vezes o tamanho da chave do cbc. |
 | --size
 
 -b
 
- | real size of target disk | `2048` (mapped device will be 512B×2048=1MiB) | Limit the maximum size of the device (in 512-byte sectors). |
+ | Tamanho real do disco alvo | `2048` (dispositivo mapeado será 512B×2048=1MiB) | Limite o tamanho máximo do dispositivo (em setores de 512-byte). |
 | --offset
 
 -o
 
- | `0` | `0` | The offset from the beginning of the target disk (in 512-byte sectors) from which to start the mapping. |
+ | `0` | `0` | O quanto pular do inicio do disco alvo (setores de 512-byte) antes de começar o mapeamento |
 | --skip
 
 -p
 
- | `0` | `2048` (512B×2048=1MiB will be skipped) | The number of 512-byte sectors of encrypted data to skip at the beginning. |
+ | `0` | `2048` (512B×2048=1MiB serão pulados) | O número de setores de 512-byte de dados criptografados a pular no começo. |
 | --key-file
 
 -d
 
- | default uses a passphrase | `/dev/sd*Z*` (or e.g. `/boot/keyfile.enc`) | The device or file to be used as a key. See [#Keyfiles](#Keyfiles) for further details. |
-| --keyfile-offset | `0` | `0` | Offset from the beginning of the file where the key starts (in bytes). This option is supported from *cryptsetup* 1.6.7 onwards. |
+ | A senha será usada por padrão | `/dev/sd*Z*` (ou, por exemplo, `/boot/keyfile.enc`) | O dispositivo ou arquivo a ser usado como chave. Veja [#Keyfiles](#Keyfiles) para mais detalhes. |
+| --keyfile-offset | `0` | `0` | Distância do início do arquivo onde a chave começa (em bytes). Esta opção é suportada a partir da versão 1.6.7 do *cryptsetup*. |
 | --keyfile-size
 
 -l
 
- | `8192kB` | - (default applies) | Limits the bytes read from the key file. This option is supported from *cryptsetup* 1.6.7 onwards. |
+ | `8192kB` | - (será utilizado o padrão) | Limita os bytes lidos da keyfile. Esta opção é suportada a partir da versão 1.6.7 do *cryptsetup*. |
 
-Using the device `/dev/sd*X*`, the above right column example results in:
+Se usar o dispositivo `/dev/sd*X*`, o exemplo da columa acima da direita resulta em:
 
 ```
 # cryptsetup --cipher=aes-xts-plain64 --offset=0 --key-file=/dev/sd*Z* --key-size=512 open --type=plain /dev/sdX enc
 
 ```
 
-Unlike encrypting with LUKS, the above command must be executed *in full* whenever the mapping needs to be re-established, so it is important to remember the cipher, hash and key file details. We can now check that the mapping has been made:
+Diferente de criptografar com LUKS, o comando acima deve ser executado *totalmente*, independente se o mapeamento precisa ser re-estabelecido ou não, é importante lembrar da cifra, hash e keyfile. Agora podemos checar se o mapeamento foi feito:
 
 ```
 # fdisk -l
 
 ```
 
-An entry should now exist for `/dev/mapper/enc`.
+O dispositivo mapeado deve aparecer como `/dev/mapper/enc`.
 
 ## Encrypting devices with cryptsetup
 

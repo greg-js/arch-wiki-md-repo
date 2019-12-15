@@ -37,8 +37,8 @@
 
 Список наших переводчиков:
 
-*   [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") ([обсуждение](/index.php/User_talk:SlavMetal "User talk:SlavMetal")|[вклад](/index.php/Special:Contributions/SlavMetal "Special:Contributions/SlavMetal"))
 *   [Duodai](/index.php/User:Duodai "User:Duodai") ([обсуждение](/index.php/User_talk:Duodai "User talk:Duodai")|[вклад](/index.php/Special:Contributions/Duodai "Special:Contributions/Duodai"))
+*   [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") ([обсуждение](/index.php/User_talk:SlavMetal "User talk:SlavMetal")|[вклад](/index.php/Special:Contributions/SlavMetal "Special:Contributions/SlavMetal"))
 
 Неактивны (менее 5 правок за последние 30 дней):
 

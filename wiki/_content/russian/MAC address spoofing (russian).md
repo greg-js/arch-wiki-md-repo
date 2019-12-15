@@ -2,24 +2,28 @@
 
 В этой статье описываются несколько способов подмены адреса Media Access Control (MAC).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Вручную](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
-    *   [1.1 Способ 1: iproute2](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_1:_iproute2)
-    *   [1.2 Способ 2: macchanger](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_2:_macchanger)
-*   [2 Автоматически](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8)
-    *   [2.1 Способ 1: systemd-networkd](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_1:_systemd-networkd)
-    *   [2.2 Способ 2: systemd-udevd](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_2:_systemd-udevd)
-    *   [2.3 Способ 3: юнит systemd](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_3:_.D1.8E.D0.BD.D0.B8.D1.82_systemd)
-        *   [2.3.1 Создание юнита](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.B0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Вручную](#Вручную)
+    *   [1.1 Способ 1: iproute2](#Способ_1:_iproute2)
+    *   [1.2 Способ 2: macchanger](#Способ_2:_macchanger)
+*   [2 Автоматически](#Автоматически)
+    *   [2.1 Способ 1: systemd-networkd](#Способ_1:_systemd-networkd)
+    *   [2.2 Способ 2: systemd-udevd](#Способ_2:_systemd-udevd)
+    *   [2.3 Способ 3: юнит systemd](#Способ_3:_юнит_systemd)
+        *   [2.3.1 Создание юнита](#Создание_юнита)
             *   [2.3.1.1 iproute2](#iproute2)
             *   [2.3.1.2 macchanger](#macchanger)
-        *   [2.3.2 Включение службы](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D1.8B)
-    *   [2.4 Способ 4: использование netctl](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_4:_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_netctl)
-    *   [2.5 Способ 5: NetworkManager](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_5:_NetworkManager)
-*   [3 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [3.1 Не удается подключиться к сети DHCPv4](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C.D1.81.D1.8F_.D0.BA_.D1.81.D0.B5.D1.82.D0.B8_DHCPv4)
-*   [4 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+        *   [2.3.2 Включение службы](#Включение_службы)
+    *   [2.4 Способ 4: использование netctl](#Способ_4:_использование_netctl)
+    *   [2.5 Способ 5: NetworkManager](#Способ_5:_NetworkManager)
+*   [3 Решение проблем](#Решение_проблем)
+    *   [3.1 Не удается подключиться к сети DHCPv4](#Не_удается_подключиться_к_сети_DHCPv4)
+*   [4 Смотрите также](#Смотрите_также)
 
 ## Вручную
 
@@ -34,7 +38,7 @@
 
 ```
 
-где `*интерфейс*` — имя вашего [сетевого интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B "Network configuration (Русский)").
+где `*интерфейс*` — имя вашего [сетевого интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Сетевые_интерфейсы "Network configuration (Русский)").
 
 Необходимая нам в данный момент информация расположена в строке, начинающейся со слов "link/ether", за которыми следует 6-битный номер. Скорее всего, у вас это будет выглядеть примерно так:
 
@@ -76,7 +80,7 @@ link/ether 00:1d:98:5a:d1:3a
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [macchanger](https://www.archlinux.org/packages/?name=macchanger) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
-Подмена осуществляется для конкретного интерфейса: в каждой из следующих команд заменяйте `*интерфейс*` на имя вашего [сетевого интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B "Network configuration (Русский)").
+Подмена осуществляется для конкретного интерфейса: в каждой из следующих команд заменяйте `*интерфейс*` на имя вашего [сетевого интерфейса](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Сетевые_интерфейсы "Network configuration (Русский)").
 
 Вы можете сгенерировать полностью случайный адрес:
 
@@ -114,7 +118,7 @@ link/ether 00:1d:98:5a:d1:3a
 
 ### Способ 1: systemd-networkd
 
-[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") поддерживает подмену MAC-адреса при помощи [файлов link](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A4.D0.B0.D0.B9.D0.BB.D1.8B_link "Systemd-networkd (Русский)") (смотрите [systemd.link(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) для получения дополнительной информации).
+[systemd-networkd](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") поддерживает подмену MAC-адреса при помощи [файлов link](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Файлы_link "Systemd-networkd (Русский)") (смотрите [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) для получения дополнительной информации).
 
 Для подмены статическим адресом:
 
@@ -132,9 +136,9 @@ NamePolicy=kernel database onboard slot path
 
 ### Способ 2: systemd-udevd
 
-[Udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") позволяет подменять MAC-адреса в [файлах правил](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D0.B2.D0.BE.D0.B8.D1.85_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB "Udev (Русский)"). Атрибут `address` дает возможность udev находить правильное устройство по MAС-адресу производителя, а затем выполняется команда *ip* для смены адреса:
+[Udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") позволяет подменять MAC-адреса в [файлах правил](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Написание_своих_правил "Udev (Русский)"). Атрибут `address` дает возможность udev находить правильное устройство по MAС-адресу производителя, а затем выполняется команда *ip* для смены адреса:
 
- `/etc/udev/rules.d/75-mac-spoof.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="XX:XX:XX:XX:XX:XX", RUN+="/usr/bin/ip link set dev %k address YY:YY:YY:YY:YY:YY"` 
+ `/etc/udev/rules.d/75-mac-spoof.rules`  `ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="XX:XX:XX:XX:XX:XX", RUN+="/usr/bin/ip link set dev %k address YY:YY:YY:YY:YY:YY"` 
 
 где `XX:XX:XX:XX:XX:XX` — оригинальный MAC-адрес, `YY:YY:YY:YY:YY:YY` — новый.
 
@@ -169,7 +173,7 @@ WantedBy=multi-user.target
 
 ##### macchanger
 
-Юнит [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), устанавливающий случайный адрес (префикс производителя остается тем же). Удостоверьтесь, что у вас [установлен](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [macchanger](https://www.archlinux.org/packages/?name=macchanger)):
+Юнит [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), устанавливающий случайный адрес (префикс производителя остается тем же). Удостоверьтесь, что у вас [установлен](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [macchanger](https://www.archlinux.org/packages/?name=macchanger)):
 
  `/etc/systemd/system/macspoof@.service` 
 ```
@@ -189,11 +193,11 @@ WantedBy=multi-user.target
 
 ```
 
-Если вы хотите, чтобы адрес измнялся целиком, включая префикс производителя (первые три байта), используйте опцию `-r` вместо `-e` (смотрите также [#Способ 2: macchanger](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_2:_macchanger)).
+Если вы хотите, чтобы адрес измнялся целиком, включая префикс производителя (первые три байта), используйте опцию `-r` вместо `-e` (смотрите также [#Способ 2: macchanger](#Способ_2:_macchanger)).
 
 #### Включение службы
 
-[Включите](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") службу, добавив требуемое имя интерфейса (например, `eth0`) к:
+[Включите](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)") службу, добавив требуемое имя интерфейса (например, `eth0`) к:
 
 ```
 # systemctl enable macspoof@eth0.service
@@ -204,7 +208,7 @@ WantedBy=multi-user.target
 
 ### Способ 4: использование netctl
 
-Вы можете использовать [netctl хуки](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.85.D1.83.D0.BA.D0.BE.D0.B2 "Netctl (Русский)") для запуска команд, каждый раз когда профиль netctl (пере)запускается для нужного вам интерфейса. Замените `*interface*` на необходимый:
+Вы можете использовать [netctl хуки](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_хуков "Netctl (Русский)") для запуска команд, каждый раз когда профиль netctl (пере)запускается для нужного вам интерфейса. Замените `*interface*` на необходимый:
 
  `/etc/netctl/interfaces/*interface*` 
 ```
@@ -223,13 +227,13 @@ chmod +x /etc/netctl/interfaces/*interface*
 
 ### Способ 5: NetworkManager
 
-Смотрите [NetworkManager (Русский)#Настройка подмены MAC-адреса на случайный](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BC.D0.B5.D0.BD.D1.8B_MAC-.D0.B0.D0.B4.D1.80.D0.B5.D1.81.D0.B0_.D0.BD.D0.B0_.D1.81.D0.BB.D1.83.D1.87.D0.B0.D0.B9.D0.BD.D1.8B.D0.B9 "NetworkManager (Русский)").
+Смотрите [NetworkManager (Русский)#Настройка подмены MAC-адреса на случайный](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Настройка_подмены_MAC-адреса_на_случайный "NetworkManager (Русский)").
 
 ## Решение проблем
 
 ### Не удается подключиться к сети DHCPv4
 
-Если вы не можете подключиться к сети DHCPv4 и используете dhcpcd, который по умолчанию используется NetworkManager, необходимо [изменить настройки dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D0.B4.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D0.BE.D1.80_.D0.BA.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D0.B0 "Dhcpcd (Русский)"), чтобы арендовать адрес.
+Если вы не можете подключиться к сети DHCPv4 и используете dhcpcd, который по умолчанию используется NetworkManager, необходимо [изменить настройки dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Идентификатор_клиента "Dhcpcd (Русский)"), чтобы арендовать адрес.
 
 ## Смотрите также
 

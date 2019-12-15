@@ -6,11 +6,11 @@
  <small>1.2.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(27)</small> |
  <small>1.2.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
  <small>1.2.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(6)</small> |
- <small>1.2.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(28) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
+ <small>1.2.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(27) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
  <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(24)</small> |
  <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
  <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
- <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(36)</small> |
+ <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
  <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
  <small>2.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
  <small>2.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
@@ -172,7 +172,7 @@
  <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(18)</small> |
  <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
  <small>5.1.13.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
- <small>5.1.14.</small> [Science](/index.php/Category:Science "Category:Science") <small>(11)</small> |
+ <small>5.1.14.</small> [Science](/index.php/Category:Science "Category:Science") <small>(12)</small> |
  <small>5.1.14.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
  <small>5.1.14.2.</small> [Numerical analysis](/index.php/Category:Numerical_analysis "Category:Numerical analysis") <small>(5)</small> |
  <small>5.1.14.3.</small> [Volunteer computing](/index.php/Category:Volunteer_computing "Category:Volunteer computing") <small>(2) (also in [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing"))</small> |
@@ -216,7 +216,7 @@
  <small>5.3.1.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>5.3.1.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>5.4.</small> [File formats](/index.php/Category:File_formats "Category:File formats") <small>(8)</small> |
- <small>5.5.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(28) (also in [Lists](/index.php/Category:Lists "Category:Lists"))</small> |
+ <small>5.5.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(27) (also in [Lists](/index.php/Category:Lists "Category:Lists"))</small> |
  <small>5.6.</small> [Software companies](/index.php/Category:Software_companies "Category:Software companies") <small>(0)</small> |
  <small>5.6.1.</small> [Canonical](/index.php/Category:Canonical "Category:Canonical") <small>(3)</small> |
  <small>5.6.2.</small> [Google](/index.php/Category:Google "Category:Google") <small>(5)</small> |

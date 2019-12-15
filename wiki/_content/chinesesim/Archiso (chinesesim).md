@@ -8,14 +8,18 @@
 
 **Archiso** 是一组 bash 脚本，它能够建立功能全面的 Arch Linux 的 Live CD/DVD/USB 映像。它同样是用来生成官方映像的工具，但由于它是一个非常通用的工具，所以它可以被用来生成从救援系统、安装盘，到特殊爱好的 Live CD/DVD/USB 系统——无人知晓还有其他什么。简单地说，如果要将 Arch 放在一条闪光的船上，它可以帮你做到这一点。Archiso 的核心以及灵魂是 *mkarchiso*。它的所有选项都写在它的用法输出上，所以它的直接使用方法将不在这里讨论。相反，这篇 wiki 文章将导引你迅速建立你的 Live 介质。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装和配置](#安装和配置)
 *   [2 配置 Live 介质](#配置_Live_介质)
     *   [2.1 安装包](#安装包)
         *   [2.1.1 自定义本地库](#自定义本地库)
         *   [2.1.2 避免安装属于base组的包](#避免安装属于base组的包)
-        *   [2.1.3 Installing packages from multilib](#Installing_packages_from_multilib)
+        *   [2.1.3 安装 multilib 中的软件包](#安装_multilib_中的软件包)
     *   [2.2 向映像里添加文件](#向映像里添加文件)
     *   [2.3 引导器](#引导器)
     *   [2.4 登录管理器](#登录管理器)
@@ -125,69 +129,16 @@ Server = file:///home/**user**/customrepo/$arch
 
 *   **高级**方案（Advanced）: 在 `~/archlive/build.sh` 中创建一个函数，该函数将在基础安装结束后显式移除那些包。若这样做，可以免去在安装过程中多次按回车键的麻烦。
 
-#### Installing packages from multilib
+#### 安装 multilib 中的软件包
 
-要从 [Multilib](/index.php/Multilib_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Multilib (简体中文)") 资源库安装软件包，您必须创建两个 pacman 配置文件：一个用于 x86_64，一个用于 i686。 将 `pacman.conf` 复制到 `pacmanx86_64.conf` 和 `pacmani686.conf`。 取消注释以下行以`pacmanx86_64.conf` 中启用 *multilib*）：
+要从 [Multilib](/index.php/Multilib_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Multilib (简体中文)") 资源库中安装软件包，仅需在`~/archlive/pacman.conf`中取消注释以下行以启用 *multilib*：
 
- `pacmanx86_64.conf` 
+ `pacman.conf` 
 ```
 [multilib]
 SigLevel = PackageRequired
 Include = /etc/pacman.d/mirrorlist
 ```
-
-然后用编辑器编辑 `build.sh`。 把：
-
- `build.sh` 
-```
-run_once make_pacman_conf
-
-# Do all stuff for each airootfs
-for arch in i686 x86_64; do
-    run_once make_basefs
-    run_once make_packages
-done
-
-run_once make_packages_efi
-
-for arch in i686 x86_64; do
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-```
-
-改为：
-
- `build.sh` 
-```
-cp -v releng/pacmanx86_64.conf releng/pacman.conf
-run_once make_pacman_conf
-
-# Do all stuff for each airootfs
-for arch in x86_64; do
-    run_once make_basefs
-    run_once make_packages
-    run_once make_packages_efi
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-echo make_pacman_conf i686
-cp -v releng/pacmani686.conf releng/pacman.conf
-cp -v releng/pacmani686.conf ${work_dir}/pacman.conf
-
-for arch in i686; do
-    run_once make_basefs
-    run_once make_packages
-    run_once make_packages_efi
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-```
-
-这样，x86_64 和 i686 的软件包将安装有自己的pacman配置文件。
 
 ### 向映像里添加文件
 
@@ -271,7 +222,7 @@ Getty 的自动登录配置位于 `airootfs/etc/systemd/system/getty@tty1.servic
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
 
 ```
 
@@ -343,7 +294,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 若你想在没有互联网连接或者你不想重复下载你想要的包的情况下安装 archiso（例如[官方的每月发布版](https://www.archlinux.org/download/)）：
 
-首先，按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")，并跳过一些步骤（如[连接到因特网](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#连接到因特网 "Installation guide (简体中文)")），直到[安装基本系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#安装基本系统 "Installation guide (简体中文)")之前。
+首先，按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")，并跳过一些步骤（如[连接到因特网](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#连接到因特网 "Installation guide (简体中文)")），直到[安装必须的软件包](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#安装必须的软件包 "Installation guide (简体中文)")之前。
 
 #### 安装 archiso 到新的 root
 

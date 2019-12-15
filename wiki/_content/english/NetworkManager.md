@@ -121,7 +121,7 @@ Additional interfaces:
 
 ### VPN support
 
-NetworkManager since version 1.16 has native support for [WireGuard](/index.php/WireGuard "WireGuard"), see the [WireGuard in NetworkManager blog post](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
+NetworkManager since version 1.16 has native support for [WireGuard](/index.php/WireGuard "WireGuard"), all it needs is the `wireguard` kernel module. Read the [WireGuard in NetworkManager blog post](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/) for details.
 
 Support for other VPN types is based on a plug-in system. They are provided in the following packages:
 
@@ -359,7 +359,7 @@ For those behind a captive portal, the desktop manager can automatically open a 
 
 ### DHCP client
 
-By default NetworkManager will use its internal DHCP client, based on systemd-networkd. A new [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) based DHCP client is currently being worked on, it will eventually become the `internal` DHCP client replacing the one based on systemd-networkd.[[4]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/302)
+By default NetworkManager uses its internal DHCP client from code based on systemd-networkd. Starting with NetworkManager 1.22, the internal DHCPv4 plugin will be based on [nettools' n-dhcp4](https://nettools.github.io/n-dhcp4/) library.[[4]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/302)
 
 To use a different DHCP client [install](/index.php/Install "Install") one of the alternatives:
 
@@ -385,7 +385,7 @@ NetworkManager's DNS management is described in the GNOME project's wiki page—
 
 #### DNS caching and conditional forwarding
 
-NetworkManager has a plugin to enable DNS caching and conditional forwarding ([previously](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/143) called "split DNS" in NetworkManager's documentation) using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), or Unbound via dnssec-trigger. The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
+NetworkManager has a plugin to enable DNS caching and conditional forwarding ([previously](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/143) called "split DNS" in NetworkManager's documentation) using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"). The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
 
 ##### dnsmasq
 
@@ -703,7 +703,7 @@ See [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManage
 
 The idea is to only turn Wi-Fi on when the LAN cable is unplugged (for example when detaching from a laptop dock), and for Wi-Fi to be automatically disabled, once a LAN cable is plugged in again.
 
-Create the following dispatcher script ([Source](https://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available)), replacing `LAN_interface` with yours.
+Create the following dispatcher script[[7]](https://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available), replacing `LAN_interface` with yours.
 
  `/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh` 
 ```
@@ -988,7 +988,7 @@ After you have put this in, [restart](/index.php/Restart "Restart") `NetworkMana
 
 ### Configuring MAC address randomization
 
-**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[8]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[9]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
 
 MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 
@@ -1083,7 +1083,7 @@ Where `*aa:bb:cc:dd:ee:ff*` is the MAC address of this NIC. The MAC address can 
 
 ### 3G modem not detected
 
-See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
+See [USB 3G Modem#NetworkManager](/index.php/USB_3G_Modem#NetworkManager "USB 3G Modem").
 
 ### Switching off WLAN on laptops
 
@@ -1229,7 +1229,7 @@ dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop
 
 ```
 
-This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[9]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
+This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[10]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
 
 This can be disabled with a configuration file in `/etc/NetworkManager/conf.d/`:
 

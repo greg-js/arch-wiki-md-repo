@@ -391,6 +391,6 @@ Finalmente, monte o novo diretório para instalar um sistema intermediário.
 
 ### Instalação
 
-[Instale os pacotes essenciais](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instalar_pacotes_essenciais "Guia de instalação") e qualquer outro pacote necessário para instalar um sistema com conexão à Internet na partição temporária, tendo o cuidado com o limite de ~700 MB de espaço. Ao especificar pacotes a serem instalados com *pacstrap*, considere adicionar a opção `-c` para evitar o preenchimento de um espaço valioso baixando pacotes para o sistema host.
+[Instale os pacotes essenciais](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instalar_os_pacotes_essenciais "Guia de instalação") e qualquer outro pacote necessário para instalar um sistema com conexão à Internet na partição temporária, tendo o cuidado com o limite de ~700 MB de espaço. Ao especificar pacotes a serem instalados com *pacstrap*, considere adicionar a opção `-c` para evitar o preenchimento de um espaço valioso baixando pacotes para o sistema host.
 
 Uma vez que o novo sistema Arch Linux esteja instalado, corrija a configuração do gerenciador de boot e, então, reinicie no sistema recém-criado e faça um [rsync de todo o sistema](/index.php/Rsync#Full_system_backup "Rsync") para a partição primária.

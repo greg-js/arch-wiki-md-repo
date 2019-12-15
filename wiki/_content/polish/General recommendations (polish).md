@@ -154,7 +154,7 @@ Po zakończeniu rozruchu, ekran zostanie wyczyszczony i pojawi się monit z pro�
 
 ### Aktywacja Num Lock
 
-Num Lock to klawisz przełączania występujący w większości klawiatur. Aby aktywować przypisanie klawiszy numerycznych podczas uruchamiania, zapoznaj się z [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+Num Lock to klawisz przełączania występujący w większości klawiatur. Aby aktywować przypisanie klawiszy numerycznych podczas uruchamiania, zapoznaj się z [Activating numlock on bootup](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup").
 
 ## Graficzny interfejs użytkownika
 
@@ -164,7 +164,7 @@ Ta sekcja zawiera wskazówki dla użytkowników, którzy chcą uruchamiać aplik
 
 [Xorg](/index.php/Xorg "Xorg") to publiczna, otwarta implementacja [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") (zwykle X11 lub X). Jest niezbędny do uruchamiania aplikacji z graficznym interfejsem użytkownika (GUI), a większość użytkowników zapewne będzie chciała go zainstalować.
 
-[Wayland](/index.php/Wayland "Wayland") to nowy, alternatywny protokół wyświetlania i dostępna jest jego implementacja referencyjna Weston. Domyślnie z Wayland korzysta między innymi [Gnome](/index.php/Gnome "Gnome"), choć serwer ten nie posiada jeszcze tak dobrego wsparcia jak [Xorg](/index.php/Xorg "Xorg") i może powodować problemy na niektórych sprzętach.
+[Wayland](/index.php/Wayland "Wayland") to nowy, alternatywny protokół wyświetlania i dostępna jest jego implementacja referencyjna Weston. Domyślnie z Wayland korzysta między innymi [GNOME](/index.php/GNOME "GNOME"), choć serwer ten nie posiada jeszcze tak dobrego wsparcia jak [Xorg](/index.php/Xorg "Xorg") i może powodować problemy na niektórych sprzętach.
 
 ### Sterowniki graficzne
 
@@ -212,11 +212,11 @@ Zobacz główny artykuł: [Suspend and hibernate](/index.php/Suspend_and_hiberna
 
 [Dźwięk](/index.php/Sound "Sound") jest dostarczany przez sterowniki dźwięku dostarczane z jądrem:
 
-*   [ALSA](/index.php/ALSA "ALSA") jest dołączony do jądra i jest zalecany, ponieważ zwykle działa on od razu (musi tylko zostać wyłączone [wyciszenie](/index.php/Advanced_Linux_Sound_Architecture#_Unmuting_the_channel "Advanced Linux Sound Architecture")).
+*   [ALSA](/index.php/ALSA "ALSA") jest dołączony do jądra i jest zalecany, ponieważ zwykle działa on od razu (musi tylko zostać wyłączone [wyciszenie](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture")).
 
 *   [OSS](/index.php/OSS "OSS") jest realną alternatywą w sytuacji, gdy ALSA nie zadziała.
 
-Użytkownicy mogą dodatkowo chcieć zainstalować i skonfigurować [serwer dźwięku](/index.php/Sound#Sound_server "Sound"), taki jak [PulseAudio](/index.php/PulseAudio "PulseAudio"). Aby zapoznać się z kwestiami dotyczącymi zaawansowanej konfiguracji dźwięku zapoznaj się ze stroną [professional audio](/index.php/Professional_audio "Professional audio").
+Użytkownicy mogą dodatkowo chcieć zainstalować i skonfigurować [serwer dźwięku](/index.php/Sound#Sound_servers "Sound"), taki jak [PulseAudio](/index.php/PulseAudio "PulseAudio"). Aby zapoznać się z kwestiami dotyczącymi zaawansowanej konfiguracji dźwięku zapoznaj się ze stroną [professional audio](/index.php/Professional_audio "Professional audio").
 
 ### Wtyczki przeglądarek
 
@@ -332,7 +332,7 @@ Aliasowanie polecenia lub jego grupy to sposób na zaoszczędzenie czasu podczas
 
 ### Dodatki Bash
 
-Lista różnych ustawień Bash, w tym ustawień autouzupełniania, wyszukiwania historii i makr [Readline](/index.php/Readline "Readline"), jest dostępna w [Bash # Tips and tricks](/index.php/Bash#_Tips_and_tricks "Bash").
+Lista różnych ustawień Bash, w tym ustawień autouzupełniania, wyszukiwania historii i makr [Readline](/index.php/Readline "Readline"), jest dostępna w [Bash#Tips and tricks](/index.php/Bash#Tips_and_tricks "Bash").
 
 ### Kolorowy tekst w konsoli
 
@@ -340,7 +340,7 @@ Zapoznaj się z działem [Color output in console](/index.php/Color_output_in_co
 
 ### Pliki skompresowane i archiwa
 
-Pliki skompresowane lub archiwa są często spotykane w systemie GNU/Linux. [Tar](/index.php/Tar "Tar") jest jednym z najczęściej używanych narzędzi do archiwizacji, a użytkownicy powinni zapoznać się z jego składnią (na przykład pakiety Arch Linuxa to po prostu archiwum xzip). Zobacz [Bash # Functions](/index.php/Bash#_Functions "Bash") any uzyskać dodatkowe informacje.
+Pliki skompresowane lub archiwa są często spotykane w systemie GNU/Linux. [Tar](/index.php/Tar "Tar") jest jednym z najczęściej używanych narzędzi do archiwizacji, a użytkownicy powinni zapoznać się z jego składnią (na przykład pakiety Arch Linuxa to po prostu archiwum xzip). Zobacz [Bash# Functions](/index.php/Bash#_Functions "Bash") any uzyskać dodatkowe informacje.
 
 ### Monit konsoli
 

@@ -122,6 +122,8 @@ This line, which can be appended at the end of your sway configuration, sets a b
 
 Of course you have to replace the file name and path according to your wallpaper.
 
+You may use [azote](https://aur.archlinux.org/packages/azote/) as the GTK+3 frontend to swaybg.
+
 ### Input devices
 
 Its possible to tweak specific input device configurations. For example to enable tap-to-click and natural scolling for a touchpad, add an input block:

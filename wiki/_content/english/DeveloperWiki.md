@@ -32,6 +32,7 @@
 
 ### Organization
 
+*   [DeveloperWiki:Governance And Decision Making](/index.php/DeveloperWiki:Governance_And_Decision_Making "DeveloperWiki:Governance And Decision Making")
 *   [DeveloperWiki:Projects](/index.php/DeveloperWiki:Projects "DeveloperWiki:Projects")
 *   [DeveloperWiki:Internal Projects](/index.php/DeveloperWiki:Internal_Projects "DeveloperWiki:Internal Projects")
 *   [DeveloperWiki:Roll Call](/index.php/DeveloperWiki:Roll_Call "DeveloperWiki:Roll Call")

@@ -49,15 +49,16 @@ Related articles
     *   [6.8 Middle-click behavior](#Middle-click_behavior)
     *   [6.9 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_'Back'_button)
     *   [6.10 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
-    *   [6.11 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
-    *   [6.12 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
-    *   [6.13 JavaScript context menu does not appear on some sites](#JavaScript_context_menu_does_not_appear_on_some_sites)
-    *   [6.14 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
-    *   [6.15 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
-    *   [6.16 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [6.17 Tearing when scrolling](#Tearing_when_scrolling)
-    *   [6.18 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
-    *   [6.19 Cannot login with my Chinese account](#Cannot_login_with_my_Chinese_account)
+    *   [6.11 Cannot enter/leave fullscreen](#Cannot_enter/leave_fullscreen)
+    *   [6.12 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
+    *   [6.13 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
+    *   [6.14 JavaScript context menu does not appear on some sites](#JavaScript_context_menu_does_not_appear_on_some_sites)
+    *   [6.15 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
+    *   [6.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
+    *   [6.17 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
+    *   [6.18 Tearing when scrolling](#Tearing_when_scrolling)
+    *   [6.19 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
+    *   [6.20 Cannot login with my Chinese account](#Cannot_login_with_my_Chinese_account)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -167,7 +168,7 @@ Please note that the first line must contain exactly `//`. The syntax of the fil
 
 ### Multimedia playback
 
-Firefox uses [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. Go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](https://www.quirksmode.org/html5/tests/video.html) or [audio-test page](https://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
+Firefox uses [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. Go to [video-test page](https://www.quirksmode.org/html5/tests/video.html) or [audio-test page](https://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
 
 HTML5 DRM playback is supported by the Google Widevine CDM, it is however not enabled by default. See *Preferences > General > Digital Rights Management (DRM) Content* if you want to learn more.
 
@@ -271,13 +272,11 @@ Alternatively, starting with Firefox 68 you can make the all Firefox interfaces 
 
 ### Frame rate
 
-If you have a high refresh rate monitor, Firefox might not be able to automatically detect the right value, in which case it will default to rendering at 60 Hz. To manually set this, set `layout.frame_rate` to the refresh rate of your monitor, e.g. 144 for 144 Hz.
+If Firefox is unable to automatically detect the right value, it will default to 60 fps. To manually correct this, set `layout.frame_rate` to the refresh rate of your monitor (e.g. 144 for 144 Hz).
 
 ### Memory limit
 
 To prevent pages from abusing memory (and possible [OOM](https://en.wikipedia.org/wiki/Out_of_memory "wikipedia:Out of memory")), we can use [Firejail](/index.php/Firejail "Firejail") with the `rlimit-as` option.
-
-Decreasing [swappiness](/index.php/Swappiness "Swappiness") may also help.
 
 ### New tabs position
 
@@ -404,6 +403,12 @@ $ rm -f ~/.mozilla/firefox/<profile id>.default/cookies.sqlite
 The profile id is a random 8 character string.
 
 Restart Firefox and see if it solved the problem.
+
+### Cannot enter/leave fullscreen
+
+If Firefox detects an [EWMH/ICCCM](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html) compliant window manager, it will try to send a WM_STATE message to the root window to request Firefox be made to enter (or leave) full-screen mode (as defined by the window manager). Window managers are allowed to ignore it, but if they do, Firefox will assume the request got denied and propagate it to the end user which results in nothing happening. This may result in not being able to full screen a video. A general workaround is to set the `full-screen-api.ignore-widgets` to `true` in `about:config`.
+
+Related bug reports: [Bugzilla 1189622](https://bugzilla.mozilla.org/show_bug.cgi?id=1189622).
 
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 

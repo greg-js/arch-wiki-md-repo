@@ -317,7 +317,7 @@ GPM_ARGS="-m /dev/input/mice -t ps2"
 
 ### Ενεργοποιώντας το Numlock στο Bootup
 
-*   [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup")
+*   [Activating numlock on bootup](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup")
 
 ### ABS για να χτίζετε τα δικά σας πακέτα
 

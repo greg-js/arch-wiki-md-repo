@@ -50,7 +50,7 @@ You may test if *rngd* is working before enabling its service by running:
 
 ```
 
-A simple test to see if everything is working as it should is to run (in another terminal) the following command:
+A simple test to see if everything is working as it should is to run (in another terminal) the following [dd](/index.php/Dd "Dd") command:
 
 ```
 $ dd if=/dev/random of=/dev/null bs=1024 count=1 iflag=fullblock

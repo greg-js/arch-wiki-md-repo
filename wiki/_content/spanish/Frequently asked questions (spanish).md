@@ -79,7 +79,7 @@ Arch Linux sigue la *jerarquía del sistema de archivos* para sistemas operativo
 
 ### Soy un completo principiante en GNU/Linux. ¿Debo usar Arch?
 
-Si es un principiante y quiere usar Arch, tenga en cuanta únicamente que debe estar dispuesto a invertir un tiempo considerable en el aprendizaje de un nuevo sistema, así como aceptar el hecho de que Arch está diseñado fundamentalmente como una distribución 'hazlo tú mismo'. Es el usuario quien monta el sistema y controla en lo que se convertirá.
+Si es un principiante y quiere usar Arch, tenga en cuenta únicamente que debe estar dispuesto a invertir un tiempo considerable en el aprendizaje de un nuevo sistema, así como aceptar el hecho de que Arch está diseñado fundamentalmente como una distribución 'hazlo tú mismo'. Es el usuario quien monta el sistema y controla en lo que se convertirá.
 
 Antes de pedir ayuda, haga su propia investigación independiente buscando en Google, indagando en el foro (y leyendo el resto de estas preguntas frecuentes) y buscando en la excelente documentación proporcionada por la wiki de Arch. *Hay una razón por la que estos recursos se ponen a disposición del usuario en primer lugar.* Son muchos los *voluntarios* que dedican miles de horas compilando esta excelente información.
 

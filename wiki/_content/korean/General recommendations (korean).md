@@ -226,7 +226,7 @@ DNS 캐싱을 통해 웹페이지들을 더 빨리 로드되게 할 수 있습�
 
 ### 부팅시에 Num Lock 켜기
 
-Num Lock은 대부분 키보드에서 볼 수 있는 토글 키입니다. 부팅시에 Num Lock을 활성화시켜 Numpad의 숫자를 활성화시키는 방법은 [부팅시에 Numlock 활성화하기](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup")를 보십시오.
+Num Lock은 대부분 키보드에서 볼 수 있는 토글 키입니다. 부팅시에 Num Lock을 활성화시켜 Numpad의 숫자를 활성화시키는 방법은 [부팅시에 Numlock 활성화하기](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup")를 보십시오.
 
 ### 부팅 메시지 유지하기
 

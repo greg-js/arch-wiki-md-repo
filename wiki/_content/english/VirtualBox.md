@@ -26,6 +26,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [1.7 Front-ends](#Front-ends)
 *   [2 Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests)
     *   [2.1 Installation in EFI mode](#Installation_in_EFI_mode)
+        *   [2.1.1 Installation in EFI mode on VirtualBox < 6.1](#Installation_in_EFI_mode_on_VirtualBox_<_6.1)
     *   [2.2 Install the Guest Additions](#Install_the_Guest_Additions)
     *   [2.3 Set optimal framebuffer resolution](#Set_optimal_framebuffer_resolution)
     *   [2.4 Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules_2)
@@ -168,7 +169,24 @@ Boot the Arch installation media through one of the virtual machine's virtual dr
 
 ### Installation in EFI mode
 
-If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, choose *System* item from the panel on the left and *Motherboard* tab from the right panel, and check the checkbox *Enable EFI (special OSes only)*. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
+If you want to install Arch Linux in EFI mode inside VirtualBox, you must change the firmware mode for the virtual machine.
+
+To enable EFI for a virtual machine using the graphical interface, open the the settings of the virtual machine, choose *System* item from the panel on the left and *Motherboard* tab from the right panel, and check the checkbox *Enable EFI (special OSes only)*.
+
+Alternatively the same can be accomplished from the command line using `VBoxManage`:
+
+```
+$ VBoxManage modifyvm "*Virtual machine name*" --firmware efi
+
+```
+
+`efi` will set the firmware for the virtual machine to EFI with the [bitness](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface") matching the virtual machine's CPU. To get a specific EFI bitness, set the firmware to `efi64` for x86_64 EFI or `efi32` for IA32 EFI.
+
+After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
+
+Starting with VirtualBox 6.1 the issue of forgetting NVRAM contents on shutdown is fixed. Proceed with the installation just as on a regular UEFI system.
+
+#### Installation in EFI mode on VirtualBox < 6.1
 
 Once the system and the boot loader are installed, VirtualBox will first attempt to run `/EFI/BOOT/BOOTX64.EFI` from the [ESP](/index.php/ESP "ESP"). If that first option fails, VirtualBox will then try the EFI shell script `startup.nsh` from the root of the ESP. This means that in order to boot the system you have the following options:
 
@@ -759,20 +777,9 @@ On some window managers ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome 
 
 ### Host freezes on virtual machine start
 
-Possible causes/solutions:
-
-*   SMAP
-
-This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Intel Broadwell chipsets. A solution to this problem is disabling SMAP support in your kernel by appending the `nosmap` option to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
-
-*   Hardware Virtualisation
+Generally, such issues are observed after upgrading VirtualBox or Linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
 
 Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
-
-*   Various Kernel bugs
-    *   Fuse mounted partitions (like ntfs) [[9]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
-
-Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
 
 ### Linux guests have slow/distorted audio
 
@@ -791,7 +798,7 @@ If after installing [PulseAudio](/index.php/PulseAudio "PulseAudio") the microph
 
 ### Microphone not working after upgrade
 
-There have been issues reported around sound input in 5.1.x versions. [[11]](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
+There have been issues reported around sound input in 5.1.x versions. [Ticket #16191](https://www.virtualbox.org/ticket/16191)
 
 [Downgrading](/index.php/Downgrading "Downgrading") may solve the problem. You can use [virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) to ease downgrading.
 
@@ -878,9 +885,9 @@ To access the raw VMDK image on a Windows host, run the VirtualBox GUI as admini
 
 ### Windows: "The specified path does not exist. Check the path and then try again."
 
-This error message may appear when running an `.exe` file which requires administrator privileges from a shared folder in windows guests. [[12]](https://www.virtualbox.org/ticket/5732#comment:39)
+This error message may appear when running an `.exe` file which requires administrator privileges from a shared folder in windows guests. [[9]](https://www.virtualbox.org/ticket/5732#comment:39)
 
-As a workaround, copy the file to the virtual drive or use [UNC paths](https://en.wikipedia.org/wiki/Uniform_Naming_Convention "wikipedia:Uniform Naming Convention") (`\\vboxsvr`). See [[13]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro) for more information.
+As a workaround, copy the file to the virtual drive or use [UNC paths](https://en.wikipedia.org/wiki/Uniform_Naming_Convention "wikipedia:Uniform Naming Convention") (`\\vboxsvr`). See [[10]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro) for more information.
 
 ### Windows 8.x error code 0x000000C4
 

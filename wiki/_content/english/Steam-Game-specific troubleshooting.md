@@ -232,6 +232,7 @@
         *   [5.99.3 Missing non Latin font](#Missing_non_Latin_font)
     *   [5.100 Prison Architect](#Prison_Architect)
         *   [5.100.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+        *   [5.100.2 Game only starting in safe mode](#Game_only_starting_in_safe_mode)
     *   [5.101 Project Zomboid](#Project_Zomboid)
         *   [5.101.1 No sound](#No_sound_7)
     *   [5.102 Pyre](#Pyre)
@@ -1131,7 +1132,7 @@ If the DLC tab in the launcher is not selectable, rename the `DLC` directory in 
 
 #### Game takes ages to start
 
-If you are using a nvidia graphics card, make sure you have enabled the [DRM kernel mode setting](https://wiki.archlinux.org/index.php/NVIDIA#DRM_kernel_mode_setting).
+If you are using a nvidia graphics card, make sure you have enabled the [DRM kernel mode setting](/index.php/NVIDIA#DRM_kernel_mode_setting "NVIDIA").
 
 #### Game doesn't start at all
 
@@ -1951,6 +1952,19 @@ was resolved by installing:
 *   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse)
 
 per [PulseAudio#ALSA](/index.php/PulseAudio#ALSA "PulseAudio").
+
+#### Game only starting in safe mode
+
+If the game does not start, but steam thinks it is running, probably the Paradox launcher has problems running properly.
+If this is the case, you'll find some processes running in background:
+
+`ps -ef|grep paradoxlauncher`
+
+Kill them all, then modify the game startup options to skip it as follows:
+
+`./PrisonArchitect %command%`
+
+Note: even if we're using another executable to start the game, %command% has to be added at the end of the command to trick Steam.
 
 ### Project Zomboid
 

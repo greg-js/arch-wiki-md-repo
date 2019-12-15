@@ -135,6 +135,8 @@ See [https://www.kernel.org/doc/Documentation/power/swsusp.txt](https://www.kern
 
 #### Hibernation into swap file on Btrfs
 
+**Note:** Since systemd 244, `systemctl hibernate` does not work with a swap file on Btrfs. See [systemd issue 14249](https://github.com/systemd/systemd/issues/14249).
+
 On [Btrfs](/index.php/Btrfs "Btrfs"), the "physical" offset you get from filefrag is not the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
 
 An alternate method is to use [btrfs_map_physical](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=202803#c5)

@@ -18,7 +18,7 @@ This article describes how to set up nginx and how to optionally integrate it wi
         *   [3.2.3 Server blocks](#Server_blocks)
             *   [3.2.3.1 Managing server entries](#Managing_server_entries)
         *   [3.2.4 TLS](#TLS)
-        *   [3.2.5 Per-User Directories](#Per-User_Directories)
+        *   [3.2.5 Per-user directories](#Per-user_directories)
     *   [3.3 FastCGI](#FastCGI)
         *   [3.3.1 PHP implementation](#PHP_implementation)
             *   [3.3.1.1 nginx configuration](#nginx_configuration)
@@ -35,7 +35,7 @@ This article describes how to set up nginx and how to optionally integrate it wi
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Running unprivileged using systemd](#Running_unprivileged_using_systemd)
     *   [5.2 Alternative script for systemd](#Alternative_script_for_systemd)
-    *   [5.3 Nginx Beautifier](#Nginx_Beautifier)
+    *   [5.3 Nginx beautifier](#Nginx_beautifier)
     *   [5.4 Better headers management](#Better_headers_management)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Configuration validation](#Configuration_validation)
@@ -70,7 +70,7 @@ More details and examples can be found in [http://wiki.nginx.org/Configuration](
 
 The examples below cover the most common use cases. It is assumed that you use the default location for documents (`/usr/share/nginx/html`). If that is not the case, substitute your path instead.
 
-**Tip:** A [Nginx Configuration](https://nginxconfig.io/) tool has been provided by DigitalOcean.
+**Tip:** A [Nginx configuration tool](https://nginxconfig.io/) has been provided by DigitalOcean.
 
 ### Configuration example
 
@@ -102,24 +102,6 @@ http {
     # logging
     access_log /var/log/nginx/access.log;
     error_log /var/log/nginx/error.log warn;
-
-    # SSL
-    ssl_session_timeout 1d;
-    ssl_session_cache shared:SSL:10m;
-    ssl_session_tickets off;
-
-    # Diffie-Hellman parameter for DHE ciphersuites
-    ssl_dhparam /etc/nginx/dhparam.pem;
-
-    # Mozilla Intermediate configuration
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
-
-    # OCSP Stapling
-    ssl_stapling on;
-    ssl_stapling_verify on;
-    resolver 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4 208.67.222.222 208.67.220.220 valid=60s;
-    resolver_timeout 2s;
 
     # load configs
     include /etc/nginx/conf.d/*.conf;
@@ -273,7 +255,7 @@ If you need to create a CSR, follow these instructions instead of the above:
 
 ```
 
-**Note:** For more *openssl* options, read its [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse its [extensive documentation](https://www.openssl.org/docs/).
+**Note:** For more *openssl* options, read its man page [openssl(1ssl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/openssl.1ssl) or peruse its [extensive documentation](https://www.openssl.org/docs/).
 
 Basic example of `/etc/nginx/nginx.conf` using TLS:
 
@@ -311,7 +293,7 @@ http {
 
 [Restart](/index.php/Restart "Restart") `nginx.service` to apply any changes.
 
-#### Per-User Directories
+#### Per-user directories
 
 To replicate Apache-style `~user` URLs to users' `~/public_html` directories, try the following. (Note: if both rules are used, below, the more-specific PHP rule must come first.)
 
@@ -871,7 +853,7 @@ WantedBy=multi-user.target
 
 It is not necesary to set the default location, nginx loads at default `-c /etc/nginx/nginx.conf`, but it is a good idea though.
 
-Alternatively you can run **only** `ExecStart` as chroot with parameter `RootDirectoryStartOnly` set as `yes` [man systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html) or start it before mount point as effective or a [systemd path](http://www.freedesktop.org/software/systemd/man/systemd.path.html) is available.
+Alternatively you can run **only** `ExecStart` as chroot with parameter `RootDirectoryStartOnly` set as `yes` (see [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)) or start it before mount point as effective or a systemd path (see [systemd.path(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.path.5)) is available.
 
  `/etc/systemd/system/nginx.path` 
 ```
@@ -887,7 +869,7 @@ WantedBy=default.target
 
 The `PIDFile` in unit file allows systemd to monitor process (absolute path required). If it is undesired, you can change to default one-shot type, and delete the reference from the unit file.
 
-### Nginx Beautifier
+### Nginx beautifier
 
 [nginxbeautifier](https://aur.archlinux.org/packages/nginxbeautifier/) is a commandline tool used to beautify and format nginx configuration files.
 

@@ -7,22 +7,36 @@ Since version 0.19, Kerbal Space Program includes a native Linux version. Howeve
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 Known issues](#Known_issues)
-    *   [2.1 Game never progresses past initial loading](#Game_never_progresses_past_initial_loading)
-    *   [2.2 Game SegFaults before launching, v1.1+](#Game_SegFaults_before_launching,_v1.1+)
-    *   [2.3 No text display](#No_text_display)
-    *   [2.4 In-game menus are blank, v1.1+](#In-game_menus_are_blank,_v1.1+)
-    *   [2.5 Graphics flickering when using primusrun](#Graphics_flickering_when_using_primusrun)
-    *   [2.6 Game crashes when accessing settings or saves on 64 bit systems on Steam](#Game_crashes_when_accessing_settings_or_saves_on_64_bit_systems_on_Steam)
-    *   [2.7 Game has garbled graphics when running on x86_64 with all lib32 drivers installed](#Game_has_garbled_graphics_when_running_on_x86_64_with_all_lib32_drivers_installed)
-    *   [2.8 No audio on 64-bit systems](#No_audio_on_64-bit_systems)
-    *   [2.9 Black ingame textures](#Black_ingame_textures)
-    *   [2.10 Joystick inputs are not recognized, v1.4+](#Joystick_inputs_are_not_recognized,_v1.4+)
-*   [3 See also](#See_also)
+*   [2 Mod Support](#Mod_Support)
+*   [3 Known issues](#Known_issues)
+    *   [3.1 Game never progresses past initial loading](#Game_never_progresses_past_initial_loading)
+    *   [3.2 Game SegFaults before launching, v1.1+](#Game_SegFaults_before_launching,_v1.1+)
+    *   [3.3 No text display](#No_text_display)
+    *   [3.4 In-game menus are blank, v1.1+](#In-game_menus_are_blank,_v1.1+)
+    *   [3.5 Graphics flickering when using primusrun](#Graphics_flickering_when_using_primusrun)
+    *   [3.6 Game crashes when accessing settings or saves on 64 bit systems on Steam](#Game_crashes_when_accessing_settings_or_saves_on_64_bit_systems_on_Steam)
+    *   [3.7 Game has garbled graphics when running on x86_64 with all lib32 drivers installed](#Game_has_garbled_graphics_when_running_on_x86_64_with_all_lib32_drivers_installed)
+    *   [3.8 No audio on 64-bit systems](#No_audio_on_64-bit_systems)
+    *   [3.9 Black ingame textures](#Black_ingame_textures)
+    *   [3.10 Joystick inputs are not recognized, v1.4+](#Joystick_inputs_are_not_recognized,_v1.4+)
+*   [4 See also](#See_also)
 
 ## Installation
 
 Install [kerbalspaceprogram](https://aur.archlinux.org/packages/kerbalspaceprogram/) from the [AUR](/index.php/AUR "AUR") or install it in [Steam](/index.php/Steam "Steam") client if you bought steam version of the game.
+
+For non Steam users the Kerbal Space Program website currently offers a pre-built Linux version as a .zip file. Simply download and extract the file to your chosen install location, execute the game using:
+
+```
+./KSP.x86_64
+
+```
+
+## Mod Support
+
+For ease of install and mod management, currently most modifications are available using [ckan](https://aur.archlinux.org/packages/ckan/) which will automatically resolve dependencies and install / remove mods.
+
+It is worth noting that not all mods are available for all release versions, if you have your heart set on using a particular mod it may be worth researching and installing an older KSP version first.
 
 ## Known issues
 

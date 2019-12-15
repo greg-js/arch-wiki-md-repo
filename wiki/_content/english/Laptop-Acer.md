@@ -161,6 +161,21 @@ Synaptic Touchpad: OK (supports libinput-gestures)
 HDMI: OK
 Microphone: OK | Everything works fine, but you have to stick to a modern kernel. Also, it's important to add ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2 as a kernel parameter on grub (or whatever boot loader of your choice), because it otherwise works erratically and gets stuck either on boot or at shutdown. To properly install Arch Linux, it's a good idea to use noapic as boot parameter, it will run smoothly. Don't use it later, though, as it will disable the I2C touchpad and some other relevant stuff. |
 | Acer Aspire 3 A315-51-524S | 2019.11.11 | Intel HD Graphics 620; OK | Intel HDA; OK. | OK | QCA9377, OK. | OK | *   Suspend to RAM: OK*   Suspend to disk: OK*   CPU Frequency Scaling: OK*   Battery: OK | N/A | *   Webcam: OK*   Hotkeys: OK*   Touchpad: OK (supports libinput-gestures)*   HDMI: OK*   Microphone: OK | Everything works fine. "Advanced" touchpad mode in UEFI works with a modern kernel. |
+| Acer Aspire 3 A315-53G-52A4 | 2019.11.01 | Intel UHD Graphics 620, Nvidia MX130: Works out of the box with [Nouveau](/index.php/Nouveau "Nouveau"), not tested with proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers. | Intel HDA, OK | Realtek RTL8111/8168/8411, OK | Qualcomm Atheros QCA9377, OK | ΟΚ | 
+
+*   Suspend to RAM: OK
+*   Suspend to Disk: Untested
+*   CPU Frequency Scaling: OK
+
+ | Not present | 
+
+*   Webcam: OK
+*   Microphone: OK
+*   Hotkeys: OK
+*   Touchpad: OK, supports gestures
+*   HDMI: OK
+
+ |
 | Acer Aspire E5-476G | 2019.06.01 | 
 
 *   Intel UHD: Works

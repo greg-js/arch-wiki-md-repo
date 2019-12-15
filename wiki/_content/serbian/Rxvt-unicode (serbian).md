@@ -1,32 +1,36 @@
 [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) visoko prilagodljivi [terminal emulator](/index.php?title=Terminal_Emulator&action=edit&redlink=1 "Terminal Emulator (page does not exist)") nastao od [rxvt](https://en.wikipedia.org/wiki/Rxvt kako bi smanjio korišćenje sistemskih resursa. Razvijen od strane Marc Lehmann-a, neke od značajnijih odlika rxvt-unicode uključuju internacionalnu podršku jezika kroz [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), mogućnost da prikaže različite tipove fonta i podrška za [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") ekstenzije.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacija](#Instalacija)
 *   [2 Konfiguracija](#Konfiguracija)
-    *   [2.1 Kreiranje ~/.Xresources](#Kreiranje_.7E.2F.Xresources)
+    *   [2.1 Kreiranje ~/.Xresources](#Kreiranje_~/.Xresources)
     *   [2.2 Prava providnost](#Prava_providnost)
     *   [2.3 Traka za pomeranje](#Traka_za_pomeranje)
     *   [2.4 Metode Deklaracije Fontova](#Metode_Deklaracije_Fontova)
 *   [3 Perl ekstenzije](#Perl_ekstenzije)
     *   [3.1 Klikabilni URLovi](#Klikabilni_URLovi)
-    *   [3.2 Duplikatni URLovi (Bez Miša)](#Duplikatni_URLovi_.28Bez_Mi.C5.A1a.29)
+    *   [3.2 Duplikatni URLovi (Bez Miša)](#Duplikatni_URLovi_(Bez_Miša))
     *   [3.3 Tabovi](#Tabovi)
-*   [4 Poboljšanje performansi](#Pobolj.C5.A1anje_performansi)
+*   [4 Poboljšanje performansi](#Poboljšanje_performansi)
 *   [5 Cut i Paste](#Cut_i_Paste)
-    *   [5.1 Klipbord Menadžment](#Klipbord_Menad.C5.BEment)
-    *   [5.2 Menadžment Automatskih Skripti](#Menad.C5.BEment_Automatskih_Skripti)
-*   [6 Poboljšano Kuake-oliko Ponašanje u Openboxu](#Pobolj.C5.A1ano_Kuake-oliko_Pona.C5.A1anje_u_Openboxu)
+    *   [5.1 Klipbord Menadžment](#Klipbord_Menadžment)
+    *   [5.2 Menadžment Automatskih Skripti](#Menadžment_Automatskih_Skripti)
+*   [6 Poboljšano Kuake-oliko Ponašanje u Openboxu](#Poboljšano_Kuake-oliko_Ponašanje_u_Openboxu)
     *   [6.1 Scriptleti](#Scriptleti)
     *   [6.2 urxvtq sa tabovima](#urxvtq_sa_tabovima)
         *   [6.2.1 Kontrola tabova](#Kontrola_tabova)
     *   [6.3 Openbox konfiguracija](#Openbox_konfiguracija)
     *   [6.4 Dalja konfiguracija](#Dalja_konfiguracija)
     *   [6.5 Povezane skripte](#Povezane_skripte)
-*   [7 Rešavanje problema](#Re.C5.A1avanje_problema)
+*   [7 Rešavanje problema](#Rešavanje_problema)
     *   [7.1 Providnost ne radi posle nadogradnje na V9.09](#Providnost_ne_radi_posle_nadogradnje_na_V9.09)
     *   [7.2 Daljinski Hostovi](#Daljinski_Hostovi)
-    *   [7.3 Korišćenje rxvt-unicode kao gmrun terminal](#Kori.C5.A1.C4.87enje_rxvt-unicode_kao_gmrun_terminal)
+    *   [7.3 Korišćenje rxvt-unicode kao gmrun terminal](#Korišćenje_rxvt-unicode_kao_gmrun_terminal)
 *   [8 Eksterni resursi](#Eksterni_resursi)
 
 ## Instalacija
@@ -510,4 +514,4 @@ TermExec = ${Terminal} -e
 *   [rxvt-unicode FAQ](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod) - Zvanični FAQ
 *   [rxvt-unicode Reference](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod) - Zvanična strana uputstva
 *   [urxvtperl](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/src/urxvt.pm) - Zvanično uputstvo za perl ekstenzije
-*   [urxvt(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.1)
+*   [urxvt(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/urxvt.1)

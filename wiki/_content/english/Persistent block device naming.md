@@ -30,7 +30,7 @@ This article describes how to use persistent names for your [block devices](/ind
 
 ## Persistent naming methods
 
-There are four different schemes for persistent naming: [by-label](#by-label), [by-uuid](#by-uuid), [by-id and by-path](#by-id_and_by-path). For those using disks with [GUID Partition Table (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table"), two additional schemes can be used [by-partlabel](#by-partlabel) and [by-partuuid](#by-partuuid). You can also use [static device names by using Udev](#Static_device_names_with_Udev).
+There are four different schemes for persistent naming: [by-label](#by-label), [by-uuid](#by-uuid), [by-id and by-path](#by-id_and_by-path). For those using disks with [GUID Partition Table (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table"), two additional schemes can be used [by-partlabel](#by-partlabel) and [by-partuuid](#by-partuuid). You can also use [static device names by using Udev](#Static_device_names_with_udev).
 
 The directories in `/dev/disk/` are created and destroyed dynamically, depending on whether there are devices in them.
 

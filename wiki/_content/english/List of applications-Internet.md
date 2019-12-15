@@ -236,7 +236,7 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 *   **[I2P](/index.php/I2P "I2P")** — Distributed anonymous network.
 
-	[https://geti2p.net/](https://geti2p.net/) || [i2p](https://aur.archlinux.org/packages/i2p/)
+	[https://geti2p.net/](https://geti2p.net/) || [i2p](https://aur.archlinux.org/packages/i2p/), [i2p-bin](https://aur.archlinux.org/packages/i2p-bin/)
 
 *   **[Lantern](/index.php/Lantern "Lantern")** — Peer-to-peer internet censorship circumvention software.
 

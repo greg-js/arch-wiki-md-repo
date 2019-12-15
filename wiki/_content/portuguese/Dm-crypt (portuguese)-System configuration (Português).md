@@ -362,7 +362,7 @@ home    UUID=<identificador UUID>    /etc/mykeyfile
 
 ```
 
-**Dica:** Se você prefere usar o modo `--plain`, as opções de encriptação necessárias para abrir o dispositivo deverão ser especificadas no `/etc/crypttab`. Tome cuidado ao fazer a medida provisória mencionada no [crypttab](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#crypttab "Dm-crypt/Configuração do sistema").
+**Dica:** Se você prefere usar o modo `--plain`, as opções de encriptação necessárias para abrir o dispositivo deverão ser especificadas no `/etc/crypttab`. Tome cuidado ao fazer a medida provisória mencionada no [crypttab](#crypttab).
 
 Use o nome do dispositivo mapeado (definido no `/etc/crypttab`) para fazer a entrada no `/etc/fstab`:
 

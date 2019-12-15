@@ -6,14 +6,14 @@ Twitch.tv is one of the more popular [RTMP](https://en.wikipedia.org/wiki/Real_T
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Twitch streaming Guidelines](#Twitch_streaming_Guidelines)
+*   [1 Twitch Broadcast Requirements](#Twitch_Broadcast_Requirements)
 *   [2 GUI solutions](#GUI_solutions)
 *   [3 Ffmpeg solutions](#Ffmpeg_solutions)
     *   [3.1 .bashrc script method](#.bashrc_script_method)
 
-## Twitch streaming Guidelines
+## Twitch Broadcast Requirements
 
-*From* [Twitch.tv support](http://help.twitch.tv/customer/portal/articles/1253460-broadcast-requirements):
+*From* [Twitch.tv support](https://help.twitch.tv/s/article/broadcast-requirements):
 
 **Video Requirements**
 
@@ -23,9 +23,11 @@ Twitch.tv is one of the more popular [RTMP](https://en.wikipedia.org/wiki/Real_T
 
 **Audio Requirements**
 
-*   Codec: AAC-LC or MP3, Stereo or Mono
-*   Maximum bit rate: 160 kbps (AAC), 128 kbps (MP3)
-*   Sampling frequency: any (AAC), 44.1 KHz (MP3)
+*   Codec: AAC-LC, Stereo or Mono
+*   Maximum bit rate: 160 kbps
+*   Sampling frequency: any
+
+**Note:** Support for the MP3 codec has been deprecated
 
 **Other Requirements**
 
@@ -70,9 +72,9 @@ into a terminal. While it is running, use **pavucontrol** to edit sound sources.
  streaming() {
      INRES="1920x1080" # input resolution
      OUTRES="1920x1080" # output resolution
-     FPS="15" # target FPS
-     GOP="30" # i-frame interval, should be double of FPS, 
-     GOPMIN="15" # min i-frame interval, should be equal to fps, 
+     FPS="30" # target FPS
+     GOP="60" # i-frame interval, should be double of FPS, 
+     GOPMIN="30" # min i-frame interval, should be equal to fps, 
      THREADS="2" # max 6
      CBR="1000k" # constant bitrate (should be between 1000k - 3000k)
      QUALITY="ultrafast"  # one of the many FFMPEG preset
@@ -82,7 +84,7 @@ into a terminal. While it is running, use **pavucontrol** to edit sound sources.
 
      ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0 -f pulse -i 0 -f flv -ac 2 -ar $AUDIO_RATE \
        -vcodec libx264 -g $GOP -keyint_min $GOPMIN -b:v $CBR -minrate $CBR -maxrate $CBR -pix_fmt yuv420p\
-       -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
+       -s $OUTRES -preset $QUALITY -tune film -acodec aac -threads $THREADS -strict normal \
        -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
  }
 
@@ -104,7 +106,7 @@ into a terminal. While it is running, use **pavucontrol** to edit sound sources.
 | -crf 23 | sets the ffmpeg constant rate factor to 23 |
 | -preset "$QUAL" | sets the preset compression quality and speed |
 | -s "1280x720" | specifies size of image to be 720p |
-| -acodec libmp3lame | sets audio codec to use libmp3lame |
+| -acodec aac | sets audio codec to use aac |
 | -ar 44100 | sets audio rate to 44100 hz |
 | -threads 0 | sets cpu threads to start, 0 autostarts threads based on cpu cores |
 | -pix_fmt yuv420p | sets pixel format to Y'UV420p. Otherwise by default Y'UV444 is used and is incompatible with twitch |

@@ -43,6 +43,8 @@ Condense the developer profiles pages, reducing photo sizes and dropping relativ
 
 Look at the feasibility of creating a unified navbar that would sit at the top of all Arch community sites (bbs.archlinux, wiki.archlinux, etc.), providing an exact copy of the main website hierarchy via drop-down menus (using CSS of course).
 
+	The current navbar *is* unified. What hierarchy would you propose for the drop-down menus? -- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 19:37, 13 December 2019 (UTC)
+
 ### URI Linking
 
 Implement a pacman:// URI as an option to quickly let users quickly install packages from webpages and same the functionality for AUR packages. [9mmtylenol](/index.php/User:9mmtylenol "User:9mmtylenol")
@@ -77,6 +79,8 @@ On the ArchWiki we can only link to packages using the package search, for examp
 
 	--[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 09:01, 11 November 2018 (UTC)
 
+	The use of [Template:Pkg](/index.php/Template:Pkg "Template:Pkg") is not limited to stable repositories, see e.g. [[2]](https://wiki.archlinux.org/index.php?title=Thunderbolt&diff=583488&oldid=576452). My query is simpler and it would not limit the template. -- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 19:28, 13 December 2019 (UTC)
+
 ### Adopting archweb_manpages
 
 [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") developed and hosts [https://jlk.fjfi.cvut.cz/arch/manpages/](https://jlk.fjfi.cvut.cz/arch/manpages/), which is used on the ArchWiki for links to man pages, e.g. [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8). See [Template talk:Man#Sources](/index.php/Template_talk:Man#Sources "Template talk:Man") and the [GitHub repository](https://github.com/lahwaacz/archweb_manpages). I think this should be adopted as an official Arch Linux project if only for a nicer domain name (man.archlinux.org).
@@ -84,3 +88,5 @@ On the ArchWiki we can only link to packages using the package search, for examp
 --[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 14:27, 4 November 2018 (UTC)
 
 	👍 You or Lahwaacz may want to email that proposal to the [arch-projects ML](https://lists.archlinux.org/listinfo/arch-projects). -- [Polyzen](/index.php?title=User:Polyzen&action=edit&redlink=1 "User:Polyzen (page does not exist)") ([talk](/index.php/User_talk:Polyzen "User talk:Polyzen")) 20:42, 11 January 2019 (UTC)
+
+	I doubt that arch-projects is the right mailing list - it is used for development discussions of existing projects with their maintainers and not for a wider user discussion which is needed to propose and adopt a new project. -- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 19:35, 13 December 2019 (UTC)

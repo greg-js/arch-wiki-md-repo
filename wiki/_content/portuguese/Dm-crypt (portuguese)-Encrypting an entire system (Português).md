@@ -28,28 +28,28 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
     *   [4.5 Configurando o gerenciador de boot](#Configurando_o_gerenciador_de_boot_3)
     *   [4.6 Configurando o fstab e crypttab](#Configurando_o_fstab_e_crypttab)
     *   [4.7 Criptografando o volume lógico /home](#Criptografando_o_volume_lógico_/home)
-*   [5 LUKS on software RAID](#LUKS_on_software_RAID)
-    *   [5.1 Preparing the disks](#Preparing_the_disks)
-    *   [5.2 Building the RAID array](#Building_the_RAID_array)
-    *   [5.3 Preparing the block devices](#Preparing_the_block_devices)
-    *   [5.4 Configuring GRUB](#Configuring_GRUB)
-    *   [5.5 Creating the keyfiles](#Creating_the_keyfiles)
-    *   [5.6 Configuring the system](#Configuring_the_system)
+*   [5 LUKS dentro do RAID de software](#LUKS_dentro_do_RAID_de_software)
+    *   [5.1 Preparando os discos](#Preparando_os_discos)
+    *   [5.2 Fazendo o arranjo RAID](#Fazendo_o_arranjo_RAID)
+    *   [5.3 Preparando os dispositivos de bloco](#Preparando_os_dispositivos_de_bloco)
+    *   [5.4 Configurando o GRUB](#Configurando_o_GRUB)
+    *   [5.5 Criando as keyfiles](#Criando_as_keyfiles)
+    *   [5.6 Configurando o sistema](#Configurando_o_sistema)
 *   [6 Plain dm-crypt](#Plain_dm-crypt)
-    *   [6.1 Preparing the disk](#Preparing_the_disk)
-    *   [6.2 Preparing the non-boot partitions](#Preparing_the_non-boot_partitions)
-    *   [6.3 Preparing the boot partition](#Preparing_the_boot_partition)
-    *   [6.4 Configuring mkinitcpio](#Configuring_mkinitcpio)
-    *   [6.5 Configuring the boot loader](#Configuring_the_boot_loader)
-    *   [6.6 Post-installation](#Post-installation)
-*   [7 Encrypted boot partition (GRUB)](#Encrypted_boot_partition_(GRUB))
-    *   [7.1 Preparing the disk](#Preparing_the_disk_2)
+    *   [6.1 Preparando o disco](#Preparando_o_disco_4)
+    *   [6.2 Preparando a partição que não é de boot](#Preparando_a_partição_que_não_é_de_boot)
+    *   [6.3 Preparando a partição de boot](#Preparando_a_partição_de_boot_3)
+    *   [6.4 Configurando mkinitcpio](#Configurando_mkinitcpio)
+    *   [6.5 Configurando o gerenciador de boot](#Configurando_o_gerenciador_de_boot_4)
+    *   [6.6 Pós-instalação](#Pós-instalação)
+*   [7 Partição de boot criptografada (GRUB)](#Partição_de_boot_criptografada_(GRUB))
+    *   [7.1 Preparing the disk](#Preparing_the_disk)
     *   [7.2 Preparing the logical volumes](#Preparing_the_logical_volumes)
-    *   [7.3 Configuring mkinitcpio](#Configuring_mkinitcpio_2)
-    *   [7.4 Configuring GRUB](#Configuring_GRUB_2)
+    *   [7.3 Configuring mkinitcpio](#Configuring_mkinitcpio)
+    *   [7.4 Configuring GRUB](#Configuring_GRUB)
     *   [7.5 Avoiding having to enter the passphrase twice](#Avoiding_having_to_enter_the_passphrase_twice)
 *   [8 Btrfs subvolumes with swap](#Btrfs_subvolumes_with_swap)
-    *   [8.1 Preparing the disk](#Preparing_the_disk_3)
+    *   [8.1 Preparing the disk](#Preparing_the_disk_2)
     *   [8.2 Preparing the system partition](#Preparing_the_system_partition)
         *   [8.2.1 Create LUKS container](#Create_LUKS_container)
         *   [8.2.2 Unlock LUKS container](#Unlock_LUKS_container)
@@ -61,10 +61,10 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
         *   [8.3.3 Mount top-level subvolumes](#Mount_top-level_subvolumes)
         *   [8.3.4 Create nested subvolumes](#Create_nested_subvolumes)
         *   [8.3.5 Mount ESP](#Mount_ESP)
-    *   [8.4 Configuring mkinitcpio](#Configuring_mkinitcpio_3)
+    *   [8.4 Configuring mkinitcpio](#Configuring_mkinitcpio_2)
         *   [8.4.1 Create keyfile](#Create_keyfile)
         *   [8.4.2 Edit mkinitcpio.conf](#Edit_mkinitcpio.conf)
-    *   [8.5 Configuring the boot loader](#Configuring_the_boot_loader_2)
+    *   [8.5 Configuring the boot loader](#Configuring_the_boot_loader)
     *   [8.6 Configuring swap](#Configuring_swap)
 
 ## Visão geral
@@ -648,55 +648,58 @@ home	/dev/MeuGrupoVol/crypthome   /etc/luks-keys/home
 
 ```
 
-## LUKS on software RAID
+## LUKS dentro do RAID de software
 
-This example is based on a real-world setup for a workstation class laptop equipped with two SSDs of equal size, and an additional HDD for bulk storage. The end result is LUKS1 based full disk encryption (including `/boot`) for all drives, with the SSDs in a [RAID0](/index.php/RAID "RAID") array, and keyfiles used to unlock all encryption after [GRUB](/index.php/GRUB "GRUB") is given a correct passphrase at boot.
+Este exemplo é baseado em uma configuração real para um notebook empresarial equipado com dois SSDs de tamanho igual, e um HDD adicional para guardar dados. O resultado é uma encriptação total de disco com LUKS1 (incluindo `/boot`) para todos as unidades de armazenamento, Os SSDs em um arranjo [RAID0](/index.php/RAID "RAID"), e são usadas keyfiles para abrir todos os dispositivos criptografados, depois que o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") recebe a senha correta na inicialização.
 
-This setup utilizes a very simplistic partitioning scheme, with all the available RAID storage being mounted at `/` (no separate `/boot` partition), and the decrypted HDD being mounted at `/data`.
+Esta configuração usa um esquema de partições muito simples, com as unidades de armazenamento RAID sendo montadas em `/` (sem partição `/boot` separada), e o HDD montado em `/data`.
 
-Please note that regular [backups](/index.php/System_backup "System backup") are very important in this setup. If either of the SSDs fail, the data contained in the RAID array will be practically impossible to recover. You may wish to select a different [RAID level](/index.php/RAID#Standard_RAID_levels "RAID") if fault tolerance is important to you.
+Por favor note que [backups](/index.php/Backup_do_sistema "Backup do sistema") regulares são muito importantes. Se qualquer um dos SSDs falharem, os dados contidos no arranjo RAID serão praticamente impossíveis de recuperar. Você pode querer um diferente [nível de RAID](/index.php/RAID#Standard_RAID_levels "RAID") se a tolerância a falhas é considerada importante.
 
-The encryption is not deniable in this setup.
+A encriptação não é negável nesta configuração.
 
-For the sake of the instructions below, the following block devices are used:
+Os seguintes dispositivos de bloco são usados:
 
 ```
-/dev/sda = first SSD
-/dev/sdb = second SSD
+/dev/sda = primeiro SSD
+/dev/sdb = segundo SSD
 /dev/sdc = HDD
 
 ```
 
 ```
-+---------------------+---------------------------+---------------------------+ +---------------------+---------------------------+---------------------------+ +---------------------------+
-| BIOS boot partition | EFI system partition      | LUKS1 encrypted volume    | | BIOS boot partition | EFI system partition      | LUKS1 encrypted volume    | | LUKS2 encrypted volume    |
-|                     |                           |                           | |                     |                           |                           | |                           |
-|                     | /efi                      | /                         | |                     | /efi                      | /                         | | /data                     |
-|                     |                           |                           | |                     |                           |                           | |                           |
-|                     |                           | /dev/mapper/cryptroot     | |                     |                           | /dev/mapper/cryptroot     | |                           |
-|                     +---------------------------+---------------------------+ |                     +---------------------------+---------------------------+ |                           |
-|                     | RAID1 array (part 1 of 2) | RAID0 array (part 1 of 2) | |                     | RAID1 array (part 2 of 2) | RAID0 array (part 2 of 2) | |                           |
-|                     |                           |                           | |                     |                           |                           | |                           |
-|                     | /dev/md/ESP               | /dev/md/root              | |                     | /dev/md/ESP               | /dev/md/root              | | /dev/mapper/cryptdata     |
-|                     +---------------------------+---------------------------+ |                     +---------------------------+---------------------------+ +---------------------------+
-| /dev/sda1           | /dev/sda2                 | /dev/sda3                 | | /dev/sdb1           | /dev/sdb2                 | /dev/sdb3                 | | /dev/sdc1                 |
-+---------------------+---------------------------+---------------------------+ +---------------------+---------------------------+---------------------------+ +---------------------------+
++---------------+----------------+-----------------------+ +---------------+----------------+-----------------------+ +---------------------+
+| Partição de   | Partição de    | Volume LUKS1          | | Partição de   | Partição de    | Volume LUKS1          | | volume LUKS2        |
+| inicialização | sistema EFI    | criptografado         | | inicialização | sistema EFI    | criptografado         | | criptografado       |
+| de BIOS       |                |                       | | de BIOS       |                |                       | |                     |
+|               |                |                       | |               |                |                       | |                     |
+|               | /efi           | /                     | |               | /efi           | /                     | | /data               |
+|               |                |                       | |               |                |                       | |                     |
+|               |                | /dev/mapper/cryptraiz | |               |                | /dev/mapper/cryptraiz | |                     |
+|               +----------------+-----------------------+ |               +----------------+-----------------------+ |                     |
+|               | arranjo RAID1  | arranjo RAID0         | |               | arranjo RAID1  | arranjo RAID0         | |                     |
+|               | (parte 1 de 2) | (parte 1 de 2)        | |               | (parte 2 de 2) | (parte 2 de 2)        | |                     |
+|               |                |                       | |               |                |                       | |                     |
+|               | /dev/md/ESP    | /dev/md/raiz          | |               | /dev/md/ESP    | /dev/md/raiz          | |/dev/mapper/cryptdata|
+|               +----------------+-----------------------+ |               |+---------------+-----------------------+ +---------------------+
+| /dev/sda1     | /dev/sda2      | /dev/sda3             | | /dev/sdb1     | /dev/sdb2      | /dev/sdb3             | | /dev/sdc1           |
++---------------+----------------+-----------------------+ +---------------+----------------+-----------------------+ +---------------------+
 
 ```
 
-Be sure to substitute them with the appropriate device designations for your setup, as they may be different.
+Tenha certeza de substituir eles com os dispositivos apropriados para sua situação, eles podem ser diferentes.
 
-### Preparing the disks
+### Preparando os discos
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
+Antes de criar qualquer partição, você deve se informar sobre a importância e também métodos de como apagar o disco com segurança, descritos em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento").
 
-For [BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") with GPT, create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with size of 1 MiB for GRUB to store the second stage of BIOS bootloader. Do not mount the partition.
+Para [sistemas BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_BIOS "GRUB (Português)") com GPT, crie uma [Partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS") com o tamanho de 1 MiB para o GRUB poder utilizá-lo no segundo estágio da inicialização da BIOS. Não monte a partição.
 
-For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size, it will later be mounted at `/efi`.
+Para [sistemas UEFI](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_UEFI "GRUB (Português)") crie uma [Partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") com um tamanho apropriado, ela mais tarde será montada em `/efi`.
 
-In the remaining space on the drive create a partition (`/dev/sda3` in this example) for "Linux RAID". Choose partition type ID `fd` for MBR or partition type GUID `A19D880F-05FC-4D3B-A006-743F0F84911E` for GPT.
+No restante do espaço disponível no dispositivo, crie uma partição (`/dev/sda3` neste exemplo) "Linux RAID". Coloque o ID do tipo da partição: `fd` para MBR ou GUID `A19D880F-05FC-4D3B-A006-743F0F84911E` para GPT.
 
-Once partitions have been created on `/dev/sda`, the following commands can be used to clone them to `/dev/sdb`.
+Uma vez que as partições forem criadas em `/dev/sda`, os seguintes comandos podem ser usados para clonar elas para `/dev/sdb`.
 
 ```
 # sfdisk -d /dev/sda > sda.dump
@@ -704,55 +707,55 @@ Once partitions have been created on `/dev/sda`, the following commands can be u
 
 ```
 
-The HDD is prepared with a single Linux partition covering the whole drive at `/dev/sdc1`.
+O HDD é preparado com um única partição Linux (`/dev/sdc1`) para todo o disco.
 
-### Building the RAID array
+### Fazendo o arranjo RAID
 
-Create the RAID array for the SSDs.
+Crie o arranjo RAID para os SSDs.
 
-**Note:**
+**Nota:**
 
-*   All parts of an EFI system partition RAID array must be individually usable, that means that ESP can only placed in a RAID1 array.
-*   The RAID superblock must be placed at the end of the EFI system partition using `--metadata=1.0`, otherwise the firmware will not be able to access the partition.
+*   Todas as partes de uma partição de sistema EFI de arranjo RAID devem ser individualmente usáveis, isto significa que ela pode ser somente colocada em um arranjo RAID1.
+*   O superbloco RAID deve ser colocado no fim da partição de sistema EFI usando `--metadata=1.0`, de outro modo, o firmware não conseguirá acessar a partição.
 
 ```
 # mdadm --create --verbose --level=1 --metadata=1.0 --raid-devices=2 /dev/md/ESP /dev/sda2 /dev/sdb2
 
 ```
 
-This example utilizes RAID0 for root, you may wish to substitute a different level based on your preferences or requirements.
+Este exemplo utiliza RAID0 para a raiz, você pode desejar substituir para um nível diferente baseado em suas preferências ou necessidades.
 
 ```
-# mdadm --create --verbose --level=0 --metadata=1.2 --raid-devices=2 /dev/md/root /dev/sda3 /dev/sdb3
+# mdadm --create --verbose --level=0 --metadata=1.2 --raid-devices=2 /dev/md/raiz /dev/sda3 /dev/sdb3
 
 ```
 
-### Preparing the block devices
+### Preparando os dispositivos de bloco
 
-As explained in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"), the devices are wiped with random data utilizing `/dev/zero` and a crypt device with a random key. Alternatively, you could use `dd` with `/dev/random` or `/dev/urandom`, though it will be much slower.
+Como explicado em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento"), os dispositivos são apagados com dados randômicos utilizando `/dev/zero` e um dispositivo criptografado com uma chave randômica. Alternativamente, você pode usar `dd` com `/dev/random` ou `/dev/urandom`, apesar que será muito mais lento.
 
 ```
-# cryptsetup open --type plain /dev/md/root container --key-file /dev/random
+# cryptsetup open --type plain /dev/md/raiz container --key-file /dev/random
 # dd if=/dev/zero of=/dev/mapper/container bs=1M status=progress
 # cryptsetup close container
 
 ```
 
-And repeat above for the HDD (`/dev/sdc1` in this example).
+e faça o mesmo para o HDD (`/dev/sdc1` neste exemplo).
 
-Set up encryption for `/dev/md/root`:
+Encripte `/dev/md/raiz`:
 
-**Warning:** GRUB does not support LUKS2\. Use LUKS1 (`--type luks1`) on partitions that GRUB needs to access.
-
-```
-# cryptsetup -y -v luksFormat --type luks1 /dev/md/root
-# cryptsetup open /dev/md/root cryptroot
-# mkfs.ext4 /dev/mapper/cryptroot
-# mount /dev/mapper/cryptroot /mnt
+**Atenção:** GRUB não suporta LUKS2\. Use LUKS1 (`--type luks1`) nas partições que o GRUB precisa acessar.
 
 ```
+# cryptsetup -y -v luksFormat --type luks1 /dev/md/raiz
+# cryptsetup open /dev/md/raiz cryptraiz
+# mkfs.ext4 /dev/mapper/cryptraiz
+# mount /dev/mapper/cryptraiz /mnt
 
-And repeat for the HDD:
+```
+
+e faça o mesmo para o HDD:
 
 ```
 # cryptsetup -y -v luksFormat /dev/sdc1
@@ -763,7 +766,7 @@ And repeat for the HDD:
 
 ```
 
-For UEFI systems, set up the EFI system partition:
+Para sistemas UEFI, defina a ESP (partição de sistema EFI):
 
 ```
 # mkfs.fat -F32 /dev/md/ESP
@@ -771,19 +774,19 @@ For UEFI systems, set up the EFI system partition:
 
 ```
 
-### Configuring GRUB
+### Configurando o GRUB
 
-Configure [GRUB](/index.php/GRUB "GRUB") for the LUKS1 encrypted system by editing `/etc/default/grub` with the following:
+Configure [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") para o sistema criptogrado com LUKS1, editando `/etc/default/grub` com o seguinte:
 
 ```
-GRUB_CMDLINE_LINUX="cryptdevice=/dev/md/root:cryptroot"
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/md/raiz:cryptraiz"
 GRUB_ENABLE_CRYPTODISK=y
 
 ```
 
-See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") for details.
+Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") e [GRUB#/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_Criptografada "GRUB (Português)") para detalhes.
 
-Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda` will work).
+Complete a instalação do GRUB para ambos os SSDs (em realidade, instalando somente em `/dev/sda` irá funcionar).
 
 ```
 # grub-install --target=i386-pc /dev/sda
@@ -793,32 +796,32 @@ Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda
 
 ```
 
-### Creating the keyfiles
+### Criando as keyfiles
 
-The next steps save you from entering your passphrase twice when you boot the system (once so GRUB can unlock the LUKS1 device, and second time once the initramfs assumes control of the system). This is done by creating a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for the encryption and adding it to the initramfs image to allow the encrypt hook to unlock the root device. See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for details.
+Os próximos passos evitarão que você digite a senha duas vezes quando você inicializar o sistema (uma vez quando o grub pede ela para abrir o dispositivo LUKS1, outra quando o mkiniticpio assume o controle do sistema). Isto é feito ao criar uma [keyfile](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") e adicionando ela na imagem intramfs, fazendo com que o hook encrypt abra o dispositivo raiz. Veja [dm-crypt/Encriptação de dispositivo#Com uma keyfile no initramfs](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Encriptação de dispositivo") para detalhes.
 
-*   Create the [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") and add the key to `/dev/md/root`.
-*   Create another keyfile for the HDD (`/dev/sdc1`) so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it. Edit `/etc/crypttab` to decrypt the HDD at boot. See [Dm-crypt/System configuration#Unlocking with a keyfile](/index.php/Dm-crypt/System_configuration#Unlocking_with_a_keyfile "Dm-crypt/System configuration").
+*   Crie a [keyfile](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") e adicione a chave para `/dev/md/raiz`.
+*   Crie outra keyfile para o HDD (`/dev/sdc1`) para que ele seja decriptografado na inicialização. Para conveniência, deixe a senha criada acima em um lugar onde você consiga recuperar facilmente se precisar. Edite o `/etc/crypttab` para decriptografar o HDD na inicialização. Veja [Dm-crypt/Configuração do sistema#Desbloqueando com uma keyfile](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Desbloqueando_com_uma_keyfile "Dm-crypt/Configuração do sistema").
 
-### Configuring the system
+### Configurando o sistema
 
-Edit [fstab](/index.php/Fstab "Fstab") to mount the cryptroot and cryptdata block devices and the ESP:
+Edite o [fstab](/index.php/Fstab "Fstab") para montar os dispositivos de bloco *cryptraiz* e *cryptdata* e o ESP:
 
 ```
-/dev/mapper/cryptroot  /           ext4    rw,noatime  0   1
+/dev/mapper/cryptraiz  /           ext4    rw,noatime  0   1
 /dev/mapper/cryptdata  /data       ext4    defaults            0   2
 /dev/md/ESP            /efi        vfat    rw,relatime,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,tz=UTC,errors=remount-ro  0   2
 
 ```
 
-Save the RAID configuration:
+Save a configuração do RAID:
 
 ```
 # mdadm --detail --scan >> /etc/mdadm.conf
 
 ```
 
-Edit [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") to include your keyfile and add the proper hooks:
+Edite o [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") e inclua sua keyfile, também coloque os hooks apropriados:
 
 ```
 FILES=(/crypto_keyfile.bin)
@@ -826,105 +829,107 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 ```
 
-See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details.
+Veja [dm-crypt/Configuração do sistema#Mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes.
 
 ## Plain dm-crypt
 
-Contrary to LUKS, dm-crypt *plain* mode does not require a header on the encrypted device: this scenario exploits this feature to set up a system on an unpartitioned, encrypted disk that will be indistinguishable from a disk filled with random data, which could allow [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption"). See also [wikipedia:Disk encryption#Full disk encryption](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption").
+Diferente do LUKS, o modo *plain* do dm-crypt não precisa de um cabeçalho no dispositivo criptografado: Este cenário explora isso para configurar um sistema em uma partição não criptografada, o disco criptografado não será diferenciável de um disco cheio de dados randômicos, isto possibilita a [criptografia negável](https://en.wikipedia.org/wiki/pt:criptografia_neg%C3%A1vel "wikipedia:pt:criptografia negável"). Veja também [wikipedia:Disk encryption#Full disk encryption](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption").
 
-Note that if full-disk encryption is not required, the methods using LUKS described in the sections above are better options for both system encryption and encrypted partitions. LUKS features like key management with multiple passphrases/key-files or re-encrypting a device in-place are unavailable with *plain* mode.
+Se a encriptação total de disco não é necessária, os métodos usando LUKS descritos nas seções acima são mais recomendados, tanto para a encriptação de sistema quanto partições. Funcionalidades do LUKS como gerenciamento de chaves com múltiplas senhas/keyfiles ou re-criptografar um dispositivo prontamente não estão disponiveis com o modo *plain*.
 
-*Plain* dm-crypt encryption can be more resilient to damage than LUKS, because it does not rely on an encryption master-key which can be a single-point of failure if damaged. However, using *plain* mode also requires more manual configuration of encryption options to achieve the same cryptographic strength. See also [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Using *plain* mode could also be considered if concerned with the problems explained in [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties").
+O modo *Plain* pode ser mais resiliente a danos que o LUKS, devido a não depender de um chave mestre de encriptação, que se danificada resulta em falhas. No entanto, usar esse modo requer mais configuração manual de opções de encriptação para se chegar a mesma força criptográfica. Veja também [Criptografia de disco#Metadata criptográfica](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). O uso desse modo também pode ser considerado se está preocupado com os problemas explicados em [dm-crypt/Especificidades#Discard/TRIM para discos de estado sólido (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties").
 
-**Tip:** If headerless encryption is your goal but you are unsure about the lack of key-derivation with *plain* mode, then two alternatives are:
+**Dica:** Se deseja encriptação sem cabeçalho mas não está com certeza sobre a falta de derivação de chaves com o modo *plain*, então duas alternativas:
 
-*   [dm-crypt LUKS mode with a detached header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") by using the *cryptsetup* `--header` option. It cannot be used with the standard *encrypt* hook, but the hook may be modified.
-*   [tcplay](/index.php/Tcplay "Tcplay") which offers headerless encryption but with the PBKDF2 function.
+*   [dm-crypt modo LUKS com um cabeçalho desanexado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties"), usando a opção `--header`. Este método não pode ser usado com o hook *encrypt* padrão, mas sim com um modificado.
+*   [tcplay](/index.php/Tcplay "Tcplay") que oferece a encriptação sem cabeçalho mas com a função PBKDF2.
 
-The scenario uses two USB sticks:
+O cenário usa dois pendrives USB:
 
-*   one for the boot device, which also allows storing the options required to open/unlock the plain encrypted device in the boot loader configuration, since typing them on each boot would be error prone;
-*   another for the encryption key file, assuming it stored as raw bits so that to the eyes of an unaware attacker who might get the usbkey the encryption key will appear as random data instead of being visible as a normal file. See also [Wikipedia:Security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"), follow [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to prepare the keyfile.
+*   um para o dispositivo de boot, que permite guardar as opções necessárias para abrir/desbloquear o dispositivo criptografado com o modo plain nas configurações do gerenciador de boot, desde que digitar eles a cada inicialização deve possivelemente resultar em erros;
+*   outro para o arquivo chave (keyfile) da encriptação, assumindo que este está guardado em bits normais, o atacante desatento pode conseguir o pendrive com o arquivo chave e pensar que ele é um dado randômico ao invês de ser visível como um arquivo normal. Veja também [Segurança por obscurantismo](https://en.wikipedia.org/wiki/pt:Seguran%C3%A7a_por_obscurantismo "wikipedia:pt:Segurança por obscurantismo"), siga [dm-crypt/Encriptação de dispositivo#Keyfiles](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") para prepará-la.
 
-The disk layout is:
-
-```
-+----------------------+----------------------+----------------------+ +----------------+ +----------------+
-| Logical volume 1     | Logical volume 2     | Logical volume 3     | | Boot device    | | Encryption key |
-|                      |                      |                      | |                | | file storage   |
-| /                    | [SWAP]               | /home                | | /boot          | | (unpartitioned |
-|                      |                      |                      | |                | | in example)    |
-| /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home | | /dev/sdb1      | | /dev/sdc       |
-|----------------------+----------------------+----------------------| |----------------| |----------------|
-| disk drive /dev/sda encrypted using plain mode and LVM             | | USB stick 1    | | USB stick 2    |
-+--------------------------------------------------------------------+ +----------------+ +----------------+
+O exemplo de particionamento é:
 
 ```
++-----------------------+-----------------------+-----------------------+ +----------------+ +---------------+
+| Volume lógico 1       | Volume lógico 2       | Volume lógico 3       | | Dispositivo de | | Lugar onde a  |
+|                       |                       |                       | | boot           | | keyfile será  |
+|                       |                       |                       | |                | | guardada (não |
+| /                     | [SWAP]                | /home                 | | /boot          | | particionada  |
+|                       |                       |                       | |                | | no exemplo)   |
+|                       |                       |                       | |                | |               |
+| /dev/MeuVolGrupo/raiz | /dev/MeuVolGrupo/swap | /dev/MeuVolGrupo/home | | /dev/sdb1      | | /dev/sdc      |
+|-------------------------+----------------------+----------------------| |----------------| |---------------|
+| O disco /dev/sda é criptografado com o modo plain e usa LVM           | | Pendrive 1     | | Pendrive 2    |
++-----------------------------------------------------------------------+ +----------------+ +---------------+
 
-**Tip:**
+```
 
-*   It is also possible to use a single USB key physical device:
-    *   By putting the key on another partition (/dev/sdb2) of the USB storage device (/dev/sdb).
-    *   By copying the keyfile to the initramfs directly. An example keyfile `/etc/keyfile` gets copied to the initramfs image by setting `FILES=(/etc/keyfile)` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initramfs image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
-*   Another option is using a passphrase with good [entropy](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
+**Dica:**
 
-### Preparing the disk
+*   É possível usar somente um pendrive:
+    *   Ao colocar a chave em outra partição (por exemplo, /dev/sdb2).
+    *   Ao copiar a keyfile para o initramfs diretamente. Por exemplo, uma keyfile é copiada para a imagem initramfs ao colocar `FILES=(/etc/keyfile)` em `/etc/mkinitcpio.conf`. Para fazer o hook `encrypt` ler a keyfile na imagem initramfs, use o prefixo `rootfs:` antes do nome do arquivo, exemplo `cryptkey=rootfs:/etc/keyfile`.
+*   Outra opção é usar uma senha com uma boa [entropia](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
 
-It is vital that the mapped device is filled with random data. In particular this applies to the scenario use case we apply here.
+### Preparando o disco
 
-See [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") and [dm-crypt/Drive preparation#dm-crypt specific methods](/index.php/Dm-crypt/Drive_preparation#dm-crypt_specific_methods "Dm-crypt/Drive preparation")
+É vital que o dispositivo mapeado tenha dados randômicos. Em particular nesse cenário.
 
-### Preparing the non-boot partitions
+Veja [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento") e [dm-crypt/Preparando a unidade de armazenamento#Métodos específicos do dm-crypt](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento#Métodos_específicos_do_dm-crypt "Dm-crypt/Preparando a unidade de armazenamento")
 
-See [dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") for details.
+### Preparando a partição que não é de boot
 
-Using the device `/dev/sda`, with the aes-xts cipher with a 512 bit key size and using a keyfile we have the following options for this scenario:
+Veja [dm-crypt/Encriptação de dispositivo#Opções de encriptação para o modo plain](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_plain "Dm-crypt/Encriptação de dispositivo") para detalhes.
+
+Usando o dispositivo `/dev/sda`, com a cifra aes-xts, tamanho de chave de 512 bit e uma keyfile, temos as seguintes opções para esse cenário:
 
 ```
 # cryptsetup --cipher=aes-xts-plain64 --offset=0 --key-file=/dev/sdc --key-size=512 open --type plain /dev/sda cryptlvm
 
 ```
 
-Unlike encrypting with LUKS, the above command must be executed *in full* whenever the mapping needs to be re-established, so it is important to remember the cipher, and key file details.
+Diferente da encriptação com LUKS, o comando acima deve ser executado *completamente* toda vez que o mapeamento precisa ser restabelecido, então é importante lembrar da cifra e detalhes da keyfile.
 
-We can now check a mapping entry has been made for `/dev/mapper/cryptlvm`:
+Podemos agora checar se a entrada de mapeamento foi feita para `/dev/mapper/cryptlvm`:
 
 ```
 # fdisk -l
 
 ```
 
-**Tip:** A simpler alternative to using LVM, advocated in the cryptsetup FAQ for cases where LVM is not necessary, is to just create a filesystem on the entirety of the mapped dm-crypt device.
+**Dica:** Uma alternativa simples para o LVM, em casos do FAQ do cryptsetup onde ele não é necessário, é somente criar um sistema de arquivos com todo o dispositivo mapeado.
 
-Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device. See [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") for further details:
+Agora, configurare os volumes lógicos do [LVM](/index.php/LVM "LVM") no dispositivo mapeado. Veja [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") para maiores detalhes:
 
 ```
 # pvcreate /dev/mapper/cryptlvm
-# vgcreate MyVolGroup /dev/mapper/cryptlvm
-# lvcreate -L 32G MyVolGroup -n root
-# lvcreate -L 10G MyVolGroup -n swap
-# lvcreate -l 100%FREE MyVolGroup -n home
+# vgcreate MeuVolGrupo /dev/mapper/cryptlvm
+# lvcreate -L 32G MeuVolGrupo -n raiz
+# lvcreate -L 10G MeuVolGrupo -n swap
+# lvcreate -l 100%FREE MeuVolGrupo -n home
 
 ```
 
-We format and mount them and activate swap. See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for further details:
+Formate e monte eles além de ativar a swap. Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") para mais detalhes:
 
 ```
-# mkfs.ext4 /dev/MyVolGroup/root
-# mkfs.ext4 /dev/MyVolGroup/home
-# mount /dev/MyVolGroup/root /mnt
+# mkfs.ext4 /dev/MeuVolGrupo/raiz
+# mkfs.ext4 /dev/MeuVolGrupo/home
+# mount /dev/MeuVolGrupo/raiz /mnt
 # mkdir /mnt/home
-# mount /dev/MyVolGroup/home /mnt/home
-# mkswap /dev/MyVolGroup/swap
-# swapon /dev/MyVolGroup/swap
+# mount /dev/MeuVolGrupo/home /mnt/home
+# mkswap /dev/MeuVolGrupo/swap
+# swapon /dev/MeuVolGrupo/swap
 
 ```
 
-### Preparing the boot partition
+### Preparando a partição de boot
 
-The `/boot` partition can be installed on the standard vfat partition of a USB stick, if required. But if manual partitioning is needed, then a small 200 MiB partition is all that is required. Create the partition using a [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning") of your choice.
+A partição `/boot` pode ser instalada na partição vfat de um pendrive, se necessário. Mas se o particionamento manual é desejado, criar uma partição de 200 MiB é necessário. Crie a partição usando uma [ferramenta de particionamento](/index.php/Partitioning#Partitioning_tools "Partitioning") de sua escolha.
 
-Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition intended for `/boot`, if it is not already formatted as vfat:
+Coloque um [sistema de arquivos](/index.php/Filesystem "Filesystem") na partição `/boot`:
 
 ```
 # mkfs.ext4 /dev/sdb1
@@ -933,39 +938,39 @@ Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition inten
 
 ```
 
-### Configuring mkinitcpio
+### Configurando mkinitcpio
 
-Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Adicione os hooks `keyboard`, `encrypt` e `lvm2` no [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
 
 ```
 
-See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
+Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes e outros hooks que você pode precisar.
 
-### Configuring the boot loader
+### Configurando o gerenciador de boot
 
-In order to boot the encrypted root partition, the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") need to be set by the boot loader (note that 64 is the number of bytes in 512 bits):
-
-```
-cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:64 crypto=:aes-xts-plain64:512:0:
+Para inicializar a partição raiz criptografada, os seguintes [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") precisma ser definidos no gerenciador de boot (note que 64 é o número de bytes em 512 bits):
 
 ```
+cryptdevice=/dev/disk/by-id/*ID-do-sda*:cryptlvm cryptkey=/dev/disk/by-id/*ID-do-sdc*:0:64 crypto=:aes-xts-plain64:512:0:
 
-The `*disk-ID-of-**disk***` refers to the id of the referenced disk. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for details.
+```
 
-See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details and other parameters that you may need.
+`*ID-do-**disco***` significa o id do disco referenciado. Veja [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") para detalhes.
 
-**Tip:** If using GRUB, you can install it on the same USB as the `/boot` partition with:
+Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") para mais detalhes e outros parâmetros que você pode precisar.
+
+**Dica:** Se está usando o GRUB, você pode instalar no mesmo pendrive da partição /boot com:
 ```
 # grub-install --recheck /dev/sdb
 
 ```
 
-### Post-installation
+### Pós-instalação
 
-You may wish to remove the USB sticks after booting. Since the `/boot` partition is not usually needed, the `noauto` option can be added to the relevant line in `/etc/fstab`:
+Você pode remover os pendrives depois da inicialização. Já que a partição `/boot` não é normalmente necessária, a opção `noauto` pode ser adicionada na linha relevante em `/etc/fstab`:
 
  `/etc/fstab` 
 ```
@@ -974,18 +979,18 @@ You may wish to remove the USB sticks after booting. Since the `/boot` partition
 
 ```
 
-However, when an update to anything used in the initramfs, or a kernel, or the bootloader is required; the `/boot` partition must be present and mounted. As the entry in `fstab` already exists, it can be mounted simply with:
+No entanto, quando uma atualização é feita para o initramfs, kernel ou gerenciador de boot é necessário que ela esteja montada. Como uma entrada no `fstab` já existe, ela pode ser montada simplesmente com:
 
 ```
 # mount /boot
 
 ```
 
-## Encrypted boot partition (GRUB)
+## Partição de boot criptografada (GRUB)
 
-This setup utilizes the same partition layout and configuration as the previous [#LVM on LUKS](#LVM_on_LUKS) section, with the difference that the [GRUB](/index.php/GRUB "GRUB") boot loader is used since it is capable of booting from an LVM logical volume and a LUKS1-encrypted `/boot`. See also [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB").
+Esta configuração utiliza o mesmo particionamento que a seção [#LVM dentro do LUKS](#LVM_dentro_do_LUKS), com diferença que o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") é usado por ser capaz de inicializar de um volume lógico LVM e um `/boot` criptografado com LUKS1\. Veja também [GRUB#/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)").
 
-The disk layout in this example is:
+O Particionamento deste exemplo é:
 
 ```
 +---------------------+----------------------+----------------------+----------------------+----------------------+

@@ -4,7 +4,7 @@
 
 [Install](/index.php/Install "Install") [rofi-greenclip](https://aur.archlinux.org/packages/rofi-greenclip/) from [AUR](/index.php/AUR "AUR").
 
-To integrate the daemon start-up on boot is it possibile to create a service:
+Create a service to run the `greenclip` daemon on start-up:
 
  `/usr/lib/systemd/user/greenclip.service` 
 ```

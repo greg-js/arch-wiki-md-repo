@@ -13,6 +13,8 @@ Netboot images are small (< 1 MiB) images that can be used to download the lates
     *   [1.2 Using ipxe.pxe](#Using_ipxe.pxe)
 *   [2 UEFI](#UEFI)
     *   [2.1 Installation with efibootmgr](#Installation_with_efibootmgr)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Error 410de13c](#Error_410de13c)
 
 ## BIOS
 
@@ -107,3 +109,25 @@ Then you can create a boot entry as follows:
 # efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
 
 ```
+
+## Troubleshooting
+
+### Error 410de13c
+
+When loading ipxe.08268867b45a.lkrn or ipxe.d63edd60ae06.efi you get such error:
+
+```
+[https://www.archlinux.org/releng/netboot/archlinux.ipxe](https://www.archlinux.org/releng/netboot/archlinux.ipxe)... Operation not permitted ([http://ipxe.org/410de13c](http://ipxe.org/410de13c))
+
+```
+
+This is a bug related to https (see [FS#58470](https://bugs.archlinux.org/task/58470)).
+
+As a workaround, download this file ([https://www.archlinux.org/releng/netboot/archlinux.ipxe](https://www.archlinux.org/releng/netboot/archlinux.ipxe)) and place it to your own http server. Then run in iPXE shell:
+
+```
+iPXE> chain http://*yourdomain.com*/path/to/file/archlinux.ipxe
+
+```
+
+replacing *yourdomain.com* and path.

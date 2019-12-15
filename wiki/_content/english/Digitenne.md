@@ -1,6 +1,10 @@
 This page describes the procedure to watch encrypted DVB-T broadcasts in the Netherlands
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Used Hardware](#Used_Hardware)
 *   [2 testing the DVB-T receiver](#testing_the_DVB-T_receiver)
@@ -15,17 +19,17 @@ This page describes the procedure to watch encrypted DVB-T broadcasts in the Net
     *   [3.1 Plugin cardreader](#Plugin_cardreader)
     *   [3.2 Install oscam from aur](#Install_oscam_from_aur)
     *   [3.3 Oscam configuration](#Oscam_configuration)
-        *   [3.3.1 /etc/oscam/oscam.conf](#.2Fetc.2Foscam.2Foscam.conf)
-        *   [3.3.2 /etc/oscam/oscam.server](#.2Fetc.2Foscam.2Foscam.server)
-        *   [3.3.3 /etc/oscam/oscam.services](#.2Fetc.2Foscam.2Foscam.services)
-        *   [3.3.4 /etc/oscam/oscam.user](#.2Fetc.2Foscam.2Foscam.user)
+        *   [3.3.1 /etc/oscam/oscam.conf](#/etc/oscam/oscam.conf)
+        *   [3.3.2 /etc/oscam/oscam.server](#/etc/oscam/oscam.server)
+        *   [3.3.3 /etc/oscam/oscam.services](#/etc/oscam/oscam.services)
+        *   [3.3.4 /etc/oscam/oscam.user](#/etc/oscam/oscam.user)
     *   [3.4 Starting Oscam](#Starting_Oscam)
-*   [4 Softcam (sasc-ng)](#Softcam_.28sasc-ng.29)
+*   [4 Softcam (sasc-ng)](#Softcam_(sasc-ng))
     *   [4.1 Install sasc-ng from aur](#Install_sasc-ng_from_aur)
     *   [4.2 Configure Sasc-ng](#Configure_Sasc-ng)
-        *   [4.2.1 /etc/conf.d/sasc-ng](#.2Fetc.2Fconf.d.2Fsasc-ng)
-        *   [4.2.2 /etc/camdir/cardclient.conf](#.2Fetc.2Fcamdir.2Fcardclient.conf)
-        *   [4.2.3 /etc/rc.d/sasc-ng](#.2Fetc.2Frc.d.2Fsasc-ng)
+        *   [4.2.1 /etc/conf.d/sasc-ng](#/etc/conf.d/sasc-ng)
+        *   [4.2.2 /etc/camdir/cardclient.conf](#/etc/camdir/cardclient.conf)
+        *   [4.2.3 /etc/rc.d/sasc-ng](#/etc/rc.d/sasc-ng)
     *   [4.3 Starting Sasc-ng](#Starting_Sasc-ng)
     *   [4.4 Testing Softcam with tzap and mplayer](#Testing_Softcam_with_tzap_and_mplayer)
     *   [4.5 Expanding for 2 or more DVB-T tuners](#Expanding_for_2_or_more_DVB-T_tuners)
@@ -33,7 +37,7 @@ This page describes the procedure to watch encrypted DVB-T broadcasts in the Net
     *   [5.1 VDR installation](#VDR_installation)
     *   [5.2 install vdr-plugin-sc-hg from aur](#install_vdr-plugin-sc-hg_from_aur)
     *   [5.3 VDR - oscam connection](#VDR_-_oscam_connection)
-        *   [5.3.1 /var/lib/vdr/plugins/sc/cardclient.conf](#.2Fvar.2Flib.2Fvdr.2Fplugins.2Fsc.2Fcardclient.conf)
+        *   [5.3.1 /var/lib/vdr/plugins/sc/cardclient.conf](#/var/lib/vdr/plugins/sc/cardclient.conf)
     *   [5.4 Scanning channels](#Scanning_channels)
     *   [5.5 Watch TV](#Watch_TV)
 *   [6 Mythtv Integration](#Mythtv_Integration)

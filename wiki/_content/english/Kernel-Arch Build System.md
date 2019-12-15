@@ -8,17 +8,17 @@ The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Getting the Ingredients](#Getting_the_Ingredients)
+*   [1 Getting the ingredients](#Getting_the_ingredients)
 *   [2 Modifying the PKGBUILD](#Modifying_the_PKGBUILD)
     *   [2.1 Changing prepare()](#Changing_prepare())
     *   [2.2 Generate new checksums](#Generate_new_checksums)
 *   [3 Compiling](#Compiling)
 *   [4 Installing](#Installing)
-*   [5 Boot Loader](#Boot_Loader)
+*   [5 Boot loader](#Boot_loader)
 *   [6 Updating](#Updating)
-*   [7 See Also](#See_Also)
+*   [7 See also](#See_also)
 
-## Getting the Ingredients
+## Getting the ingredients
 
 Since you'll be using [makepkg](/index.php/Makepkg "Makepkg"), follow the best practices outlined there first. For example, you cannot run makepkg as root/sudo. Therefore, create a `build` directory in your user home first.
 
@@ -122,9 +122,9 @@ Best practice is to [install](/index.php/Install "Install") both packages togeth
 
 ```
 
-## Boot Loader
+## Boot loader
 
-Now, the folders and files for your custom kernel have been created, e.g. `/boot/vmlinuz-linux-test`. To test your kernel, update your [bootloader](/index.php/Bootloader "Bootloader") configuration file and add new entries ('default' and 'fallback') for your custom kernel. If you renamed your kernel in the *PKGBUILD pkgbase* you may have to rename the initramfs.img in your *$build/pkg/kernel/etc* before installing with pacman. That way, you can have both the stock kernel and the custom one to choose from.
+If you have modified `pkgbase` in order to have your new kernel installed alongside the default kernel you will need to update your bootloader configuration file and add new entries ('default' and 'fallback') for your custom kernel and the associated initramfs images.
 
 ## Updating
 
@@ -193,6 +193,6 @@ before you `export` linux with `asp`, so that you can merge archlinux modificati
 
 At this point, `makepkg --verifysource` should succeed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
 
-## See Also
+## See also
 
 *   [https://kernel.org/doc/Documentation/kbuild/kconfig.txt](https://kernel.org/doc/Documentation/kbuild/kconfig.txt) and the parent directory

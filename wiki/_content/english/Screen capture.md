@@ -297,7 +297,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 ## Wayland
 
-See [Wayland#Screencast recording](/index.php/Wayland#Screencast_recording "Wayland").
+See [Wayland#Screen recording](/index.php/Wayland#Screen_recording "Wayland").
 
 ## Terminal
 

@@ -43,7 +43,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 
 ### Turn on NumLock on login
 
-See [Activating Numlock on Bootup#GNOME](/index.php/Activating_Numlock_on_Bootup#GNOME "Activating Numlock on Bootup")
+See [Activating numlock on bootup#GNOME](/index.php/Activating_numlock_on_bootup#GNOME "Activating numlock on bootup")
 
 ### Hotkey alternatives
 
@@ -313,7 +313,7 @@ Exec=gnome-session --session=gnome-openbox
 
 ```
 
-**Note:** GNOME Session calls upon the `.desktop` files of each of the components to be started. If a component you wish to start does not provide a `.desktop` file, you must create a suitable desktop entry in a directory such as `/usr/local/share/applications`.
+**Note:** GNOME Session calls upon the `.desktop` files of each of the components to be started. If a component you wish to start does not provide a `.desktop` file, you must create a suitable [desktop entry](/index.php/Desktop_entry "Desktop entry") entry in a directory such as `/usr/local/share/applications`.
 
 ## Redirect certain URLs to specific web browsers
 

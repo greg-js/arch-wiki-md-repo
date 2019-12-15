@@ -7,7 +7,7 @@
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 01 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=590400).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 09 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=591345).
 
 Основную статью по настройке сети можно найти на странице [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
@@ -332,14 +332,14 @@ WPA2 Personal, или WPA2-PSK — одна из реализаций техно
 *   Перед применением любых настроек, предложенных в этом разделе, рекомендуется сначала проверить их со специалистами вашего учреждения. Предложенные здесь профили настроек предлагаются безо всяких гарантий на предмет работоспособности или соответствия каким-либо требованиям безопасности.
 *   При хранении профилей соединения в незашифрованном виде рекомендуется оставить только доступ на чтение для root, выполнив команду `# chmod 600 *профиль*`.
 
-**Совет:** Настройки для утилит [NetworkManager](/index.php/NetworkManager "NetworkManager") и [#wpa_supplicant](#wpa_supplicant) можно сгенерировать с помощью [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
+**Совет:** Настройки для утилит [NetworkManager](/index.php/NetworkManager "NetworkManager") и [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)") можно сгенерировать с помощью [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
 
 #### Ручная/автоматическая настройка
 
 *   [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Расширенное_использование "WPA supplicant (Русский)") настраивается напрямую в его файле настроек или посредством интерфейса; используется вместе с клиентом DHCP. Примеры настроек приведены в файле `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf`.
 *   [NetworkManager](/index.php/NetworkManager "NetworkManager") может генерировать профили WPA2 Enterprise с помощью [графических интерфейсов](/index.php/NetworkManager#Front-ends "NetworkManager"). Утилиты *nmcli* и *mntui* эту возможность не поддерживают, но работают с готовыми профилями.
 *   [ConnMan](/index.php/ConnMan "ConnMan") требует создания отдельного файла настроек перед [соединением](/index.php/ConnMan#Wi-Fi "ConnMan") с беспроводной сетью. Подробности можно найти в руководстве [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) и в статье [Connman#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam_.28802.1X.29 "ConnMan").
-*   [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)") может использовать настройки [#wpa_supplicant](#wpa_supplicant) посредством блоков `WPAConfigSection=`. Детали вы найдёте в руководстве [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
+*   [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)") может использовать настройки [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)") посредством блоков `WPAConfigSection=`. Детали вы найдёте в руководстве [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
 
 **Важно:** В настройках netctl особые правила использования кавычек: обратите внимание на раздел `SPECIAL QUOTING RULES` в [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
 

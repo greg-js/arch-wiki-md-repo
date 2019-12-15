@@ -73,6 +73,7 @@ Related articles
         *   [4.17.3 Verify folder access by guest](#Verify_folder_access_by_guest)
     *   [4.18 Mount error: Host is down](#Mount_error:_Host_is_down)
     *   [4.19 Software caused connection abort](#Software_caused_connection_abort)
+    *   [4.20 Connection problem (due to authentification error)](#Connection_problem_(due_to_authentification_error))
 *   [5 See also](#See_also)
 
 ## Server
@@ -1169,6 +1170,24 @@ This error might be seen when mounting shares of Synology NAS servers. Use the m
 File managers that utilizes [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) can show the error `Software caused connection abort` when writing a file to a share/server. This may be due to the server running SMB/CIFS version 1, which many routers use for USB drive sharing (e.g. Belkin routers). To write to these shares specify the CIFS version with the option `vers=1.0`. E.g.:
 
  `/etc/fstab`  `//SERVER/sharename /mnt/mountpoint cifs _netdev,guest,file_mode=0777,dir_mode=0777,vers=1.0 0 0` 
+
+### Connection problem (due to authentification error)
+
+Be sure that you do not leave any space characters before your username in Samba client configuration file as follows:
+
+ `~/.samba` 
+```
+username= user
+password=pass
+```
+
+The correct format is:
+
+ `~/.samba` 
+```
+username=user
+password=pass
+```
 
 ## See also
 

@@ -899,9 +899,9 @@ A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can p
 
 ### VirtualBox EFI mode
 
-Install GRUB to the [default/fallback boot path](#Default/fallback_boot_path).
+For VirtualBox < 6.1, install GRUB to the [default/fallback boot path](#Default/fallback_boot_path).
 
-See also [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
+See also [VirtualBox#Installation in EFI mode on VirtualBox < 6.1](/index.php/VirtualBox#Installation_in_EFI_mode_on_VirtualBox_<_6.1 "VirtualBox").
 
 ### Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds
 

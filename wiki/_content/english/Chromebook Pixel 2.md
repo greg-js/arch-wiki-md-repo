@@ -59,7 +59,7 @@ Touchpad, touchscreen, and audio have been working in the vanilla Linux kernel s
 
 ### Suspend
 
-Since kernel 5.x suspend seems to not work out-of-the-box anymore and instead shuts down when lid is closed. Install [acpi](https://www.archlinux.org/packages/community/x86_64/acpi/) and [tpm2-tools](https://www.archlinux.org/packages/community/x86_64/tpm2-tools/), then create `/etc/modprobe.d/suspend.conf` with
+Since kernel 5.x suspend seems to not work out-of-the-box anymore and instead shuts down when lid is closed. Install [acpi](https://www.archlinux.org/packages/?name=acpi) and [tpm2-tools](https://www.archlinux.org/packages/?name=tpm2-tools), then create `/etc/modprobe.d/suspend.conf` with
 
 ```
 options tpm_tis force=1 interrupts=0
@@ -82,7 +82,7 @@ options snd-hda-intel index=1
 
 ```
 
-and make sure to install [pulseaudio-alsa](https://www.archlinux.org/packages/extra/any/pulseaudio-alsa/)
+and make sure to install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa)
 
 ## Keyboard Bindings
 

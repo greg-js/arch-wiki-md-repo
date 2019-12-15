@@ -4,9 +4,9 @@ Minimálně jsou potřeba patřičné moduly jádra a musí být použit regulá
 
 ## cpufrequtils
 
-[cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) je sada nástrojů pro pomoc při škálování frekvence CPU. Balíček není přímo potřebný pro škálování procesoru ale je doporučený, protože poskytuje hodně command-line nástrojů a skript pro nastavení frekvence/regulátoru při startu počítače
+[cpufrequtils](https://aur.archlinux.org/packages/cpufrequtils/) je sada nástrojů pro pomoc při škálování frekvence CPU. Balíček není přímo potřebný pro škálování procesoru ale je doporučený, protože poskytuje hodně command-line nástrojů a skript pro nastavení frekvence/regulátoru při startu počítače
 
-balíček [cpufrequtils](https://www.archlinux.org/packages/?name=cpufrequtils) je dostupný v repozitáři [extra]:
+balíček [cpufrequtils](https://aur.archlinux.org/packages/cpufrequtils/) je dostupný v repozitáři [extra]:
 
 ```
 # pacman -S cpufrequtils
@@ -21,7 +21,7 @@ Konfigurace škálování procesoru je rozložená na tři části:
 2.  Načtení požadovaných regulátorů
 3.  Volba metody pro změnu regulátoru:
     *   Ručně přes /sys nebo přes cpufreq-set
-    *   Pomocí [démona cpufrequtils](#D.C3.A9mon)
+    *   Pomocí [démona cpufrequtils](#Démon)
     *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
     *   Události [acpid](/index.php/Acpid "Acpid")
     *   Aplikace/applety grafického prostředí

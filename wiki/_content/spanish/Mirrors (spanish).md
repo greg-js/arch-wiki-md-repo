@@ -51,7 +51,7 @@ Ejemplo:
 
 ```
 
-Consulte [#Ordenar servidores de réplicas](#Ordenar_servidores_de_réplicas) para conocer herramientas que ayudan a elegir servidores de réplicas.
+Consulte [#Ordenar los servidores de réplicas](#Ordenar_los_servidores_de_réplicas) para conocer herramientas que ayudan a elegir servidores de réplicas.
 
 **Sugerencia:**
 

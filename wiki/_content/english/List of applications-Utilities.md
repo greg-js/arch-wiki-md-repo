@@ -1126,7 +1126,7 @@ See also [Wikipedia:List of Unified Modeling Language tools](https://en.wikipedi
 
 *   **[PlantUML](https://en.wikipedia.org/wiki/PlantUML "wikipedia:PlantUML")** — Tool to create UML diagrams from a plain text language.
 
-	[http://plantuml.com/](http://plantuml.com/) || [plantuml](https://aur.archlinux.org/packages/plantuml/)
+	[http://plantuml.com/](http://plantuml.com/) || [plantuml](https://www.archlinux.org/packages/?name=plantuml)
 
 *   **PlantUML QEditor** — PlantUML editor written in Qt.
 

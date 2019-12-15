@@ -261,7 +261,7 @@ As an ultimate solution, you can try to install MPlayer binary codecs.
 
 If you are not able to play some files go to [http://www.mplayerhq.hu/design7/dload.html](http://www.mplayerhq.hu/design7/dload.html), read the instructions and install the codec you need to play your files.
 
-They can also be found in the [codecs](https://aur.archlinux.org/packages/codecs/) and [codecs64](https://aur.archlinux.org/packages/codecs64/) packages.
+They can also be found in the [codecs64](https://aur.archlinux.org/packages/codecs64/) package.
 
 ### No H264, mpg4 or Musepack (.mpc) in Totem Player
 

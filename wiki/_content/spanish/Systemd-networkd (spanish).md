@@ -75,7 +75,7 @@ Es opcional también [iniciar/activar](/index.php/Start/enable "Start/enable") `
 
 ### Ejemplos de configuración
 
-Todas las configuraciones estan almacenadas como `foo.network` en `/etc/systemd/network`. Para una lista completa de opciones y orden de procesamiento, consulte los [#Archivos de Configuración](#Archivos_de_Configuración) y [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
+Todas las configuraciones estan almacenadas como `foo.network` en `/etc/systemd/network`. Para una lista completa de opciones y orden de procesamiento, consulte los [#Archivos de configuración](#Archivos_de_configuración) y [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
 
 Systemd/udev asigna automaticamente nombres previsibles, nombres de intefaces de red estables para todo las interfaces de Ethernet local, WLAN y WWAN. Utilice `networkctl list` para listar los dispositivos presentes en el sistema.
 

@@ -140,7 +140,7 @@ Man 頁 (或手冊頁) 是對 GNU/Linux 使用者手上最有幫助的資源之�
 
 ### 開機啟用 Num Lock
 
-Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num Lock 的數字鍵，參閱[開機時啟用 Numlock](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup")。
+Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num Lock 的數字鍵，參閱[開機時啟用 Numlock](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup")。
 
 ### 保留開機訊息
 

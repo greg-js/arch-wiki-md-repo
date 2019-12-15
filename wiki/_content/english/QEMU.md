@@ -161,10 +161,6 @@ Other GUI front-ends for QEMU:
 
 	[https://github.com/tobimensch/aqemu](https://github.com/tobimensch/aqemu) || [aqemu](https://aur.archlinux.org/packages/aqemu/)
 
-*   **QtEmu** — Graphical user interface for QEMU written in Qt4.
-
-	[https://qtemu.org/](https://qtemu.org/) || [qtemu](https://aur.archlinux.org/packages/qtemu/)
-
 ## Creating new virtualized system
 
 ### Creating a hard disk image

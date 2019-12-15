@@ -7,88 +7,37 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-    *   [1.1 Using German IMS festival extension with mbrola](#Using_German_IMS_festival_extension_with_mbrola)
+    *   [1.1 German IMS](#German_IMS)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Usage with a Sound Server](#Usage_with_a_Sound_Server)
+    *   [2.1 Sound server](#Sound_server)
     *   [2.2 Voices](#Voices)
-        *   [2.2.1 HTS compatibility patches](#HTS_compatibility_patches)
-        *   [2.2.2 Manual Voice Installs](#Manual_Voice_Installs)
+        *   [2.2.1 Manually](#Manually)
 *   [3 Usage](#Usage)
-    *   [3.1 Interactive mode (testing voices etc.)](#Interactive_mode_(testing_voices_etc.))
-    *   [3.2 Example script](#Example_script)
+    *   [3.1 Interactive](#Interactive)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Can't open /dev/dsp](#Can't_open_/dev/dsp)
     *   [4.2 Alsa playing at wrong speed](#Alsa_playing_at_wrong_speed)
-    *   [4.3 aplay Command not found](#aplay_Command_not_found)
+    *   [4.3 Command aplay not found](#Command_aplay_not_found)
+    *   [4.4 Server](#Server)
 *   [5 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [festival](https://www.archlinux.org/packages/?name=festival) package. You need a voice package like [festival-english](https://www.archlinux.org/packages/?name=festival-english) or [festival-us](https://www.archlinux.org/packages/?name=festival-us).
+[Install](/index.php/Install "Install") the [festival](https://www.archlinux.org/packages/?name=festival) package. Voices are available with [festival-us](https://www.archlinux.org/packages/?name=festival-us) and [festival-english](https://www.archlinux.org/packages/?name=festival-english) packages.
 
-Test festival:
+### German IMS
 
-```
-$ echo "This is an example. Arch is the best." | festival --tts
-
-```
-
-If your hear all the example text, you successfully installed a TTS system.
-
-If you do not hear anything, see the [Troubleshooting](#Troubleshooting) section. If you have a desktop system you will almost certainly get a message about `/dev/dsp` and need to follow those instructions.
-
-### Using German IMS festival extension with mbrola
-
-You can use the [festival-ims](https://aur.archlinux.org/packages/festival-ims/) package with IMS Stuttgart patches.
-
-The [IMS of the University Stuttgart](http://www.ims.uni-stuttgart.de) developed an extension to festival especially for German language. It uses German voices with [mbrola](https://aur.archlinux.org/packages/mbrola/). To install it, the extension needs to be downloaded from the university's servers (follow the Instructions [here](http://www.ims.uni-stuttgart.de/institut/arbeitsgruppen/phonetik/synthesis/festival_opensource.html)) and the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") needs to be modified.
-
-Add these two files downloaded from the IMS (do NOT use the third file, `ims_german_1.3-os.fix.tgz`)
-
-```
- ims_german_1.3-os.tgz
- bomp_full.corr.tgz
-
-```
-
-with their md5sums to the *source* variable and place them in the same folder as the PKGBUILD. In the `prepare()` section, include the following lines (at the end of the section):
-
-```
-   # add ims config
-   sed -i 's/ALSO_INCLUDE +=$/# IMS module for German
-ALSO_INCLUDE += ims_german_text/' "$srcdir/festival/config/config.in"
-   cat<<EOF >> "$srcdir/festival/lib/sitevars.scm"
- (set! mbrola-path "/usr/share/mbrola/")
- (set! mbrola_progname "/usr/bin/mbrola -e")
- EOF
-   echo "(require 'ims_german_opensource)" >> "$srcdir/festival/lib/siteinit.scm"
-
-```
-
-This should install support for the german voices `de1` through `de4`. Install at least one of these voices, e.g. [mbrola-voices-de2](https://aur.archlinux.org/packages/mbrola-voices-de2/), and then use it in festival by selecting the voice via
-
-```
- (voice_german_de2_os)
- (SayText "Hallo Welt.")
-
-```
-
-from the prompt or use it in *text2wave* via
-
-```
- text2wave -o spoken.wav -eval '(voice_german_de2_os)' *inputfile*.txt
-
-```
-
-where `*inputfile*.txt` the input file containing the text to be processed.
+The [IMS of the University Stuttgart](http://www.ims.uni-stuttgart.de) developed an extension to Festival especially for German language (see [here](http://www.ims.uni-stuttgart.de/institut/arbeitsgruppen/phonetik/synthesis/festival_opensource.html)). It uses German voices with [mbrola](https://aur.archlinux.org/packages/mbrola/). To use it, install [festival-ims](https://aur.archlinux.org/packages/festival-ims/) with IMS Stuttgart patches. This should add support for the german voices *de1* through *de4*. Install at least one of the voices (listed as optional dependencies), e.g. [mbrola-voices-de2](https://aur.archlinux.org/packages/mbrola-voices-de2/).
 
 ## Configuration
 
-There is no global `/etc` configuration file, but you can configure festival with your `~/.festivalrc` file, or by directly editing `/usr/share/festival/festival.scm`. Both of these are scheme files, using scheme syntax and rerun everytime festival is run.
+There is no global `/etc/` configuration file, but you can configure festival with your `~/.festivalrc` file, or by directly editing `/usr/share/festival/festival.scm`. Both of these are scheme files, using scheme syntax and rerun everytime festival is run.
 
-### Usage with a Sound Server
+### Sound server
 
-For PulseAudio, add these lines to the end of your `~/.festivalrc` file, or to `/usr/share/festival/festival.scm`:
+The following allows Festival to work if audio from other sources is already playing. Add to your config:
+
+For PulseAudio:
 
 ```
 (Parameter.set 'Audio_Required_Format 'aiff)
@@ -97,7 +46,7 @@ For PulseAudio, add these lines to the end of your `~/.festivalrc` file, or to `
 
 ```
 
-For ALSA, use these lines instead ([source](http://ubuntuforums.org/showpost.php?p=4058268&postcount=16)):
+For ALSA: [[1]](http://web.archive.org/web/20110522202347/http://ubuntuforums.org/showthread.php?t=171182&page=3)
 
 ```
 (Parameter.set 'Audio_Method 'Audio_Command)
@@ -107,171 +56,94 @@ For ALSA, use these lines instead ([source](http://ubuntuforums.org/showpost.php
 
 ### Voices
 
-Arch splits the set of official voices into [festival-english](https://www.archlinux.org/packages/?name=festival-english) and [festival-us](https://www.archlinux.org/packages/?name=festival-us). The [AUR](https://aur.archlinux.org/packages/?K=festival) has some others, in various states of maintenance which may or may not be currently working.
+Arch splits the set of official voices into [festival-us](https://www.archlinux.org/packages/?name=festival-us) (recommended) and [festival-english](https://www.archlinux.org/packages/?name=festival-english). The [AUR](https://aur.archlinux.org/packages/?K=festival) has some others, in various states of maintenance which may or may not be currently working.
 
-To see what voices you currently have installed and what your default is, go into the Festival shell (which is a scheme REPL) and type the following (some space added for clarity):
+To see what voices are currently installed and what the default is, first enter Festival's [#Interactive](#Interactive) shell (a REPL scheme). To permanently change the default voice add it to your config, for example:
 
 ```
-   $ festival
-
-   Festival Speech Synthesis System 2.1:release November 2010
-   Copyright (C) University of Edinburgh, 1996-2010\. All rights reserved.
-
-   clunits: Copyright (C) University of Edinburgh and CMU 1997-2010
-   clustergen_engine: Copyright (C) CMU 2005-2010
-   hts_engine: 
-   The HMM-based speech synthesis system (HTS)
-   hts_engine API version 1.04 ([http://hts-engine.sourceforge.net/](http://hts-engine.sourceforge.net/))
-   Copyright (C) 2001-2010  Nagoya Institute of Technology
-                 2001-2008  Tokyo Institute of Technology
-   All rights reserved.
-   For details type `(festival_warranty)'
-
-   festival> voice_default 
-   voice_cmu_us_slt_arctic_hts          ;;<-- THIS IS THE VOICE FESTIVAL SPEAKS WITH
-
-   festival> default-voice-priority-list 
-   (kal_diphone                         ;;<-- THIS IS THE HARD-CODED LIST OF VOICES FESTIVAL CAME PRE-AWARE OF
-    cmu_us_bdl_arctic_hts
-    cmu_us_jmk_arctic_hts
-    cmu_us_slt_arctic_hts
-    cmu_us_awb_arctic_hts
-    ked_diphone
-    don_diphone
-    rab_diphone
-    en1_mbrola
-    us1_mbrola
-    us2_mbrola
-    us3_mbrola
-    gsw_diphone
-    el_diphone)
-
-   festival> (voice_                    ;;<-- PRESS TAB HERE TO SEE WHAT VOICES FESTIVAL HAS AVAILABLE
-   voice_cmu_us_slt_arctic_hts     voice_kal_diphone               voice_nitech_us_slt_arctic_hts  voice_reset
-   voice_default                   voice_nitech_us_clb_arctic_hts  voice_rab_diphone
-
-   festival> (voice_cmu_us_slt_arctic_hts) 
-   cmu_us_slt_arctic_hts
-
-   festival> (SayText "Arch makes me happy")
-   #<Utterance 0x7fb5b8c423b0>
-
-   festival> 
+(set! voice_default voice_cmu_us_rms_cg)
 
 ```
 
-To permanently change the default voice you can add a line like this to the end of `~/.festivalrc`:
+#### Manually
 
-```
-(set! voice_default voice_cmu_us_slt_arctic_hts)
-
-```
-
-You cannot set the voice with festival.scm; to set voices globally, set order of searched voices in `/usr/share/festival/voices.scm`.
-
-#### HTS compatibility patches
-
-Some say that HTS voices for Festival are the best ones freely available. Sadly they are not compatible with Festival >2.1 without patching it (and the new voice versions are not made available for downloading).
-
-You can install the patched version from [AUR](/index.php/AUR "AUR"): [festival-patched-hts](https://aur.archlinux.org/packages/festival-patched-hts/) and [festival-hts-voices-patched](https://aur.archlinux.org/packages/festival-hts-voices-patched/)
-
-#### Manual Voice Installs
-
-You can also get voices straight from [festvox.org](http://festvox.org/festival/downloads.html). In their downloads, the files named `festvox_*.tgz` each contain a different voice, as built by the festival team. They do work, but you will need to manually unzip and move the folder containing the voice to the appropriate place. On a recent Arch, the appropriate place is `/usr/share/festival/voices/english/` and the way to tell what folder contains the voice is to look for a `festvox/` subfolder inside of it.
-
-You can then test that your new voices are found by loading up the festival prompt again.
+You can also get voices straight from Festvox [[2]](http://festvox.org/festival/downloads.html) [[3]](http://festvox.org/packed/festival/2.5/voices/). You will need to unzip and move the folder containing the voice to `/usr/share/festival/voices/` and the way to tell what folder contains the voice is to look for a `festvox/` subfolder inside of it. You can then test that your new voices are found by loading up the festival prompt.
 
 ## Usage
 
-Read a text file:
+To read a text file:
 
 ```
-$ festival --tts /path/to/letter.txt
-
-```
-
-Be obnoxious while demonstrating piping
-
-```
-$ (echo "Get ready for some pain"; sudo cat /var/log/messages.log) | festival --tts
+$ festival --tts *text_file*
 
 ```
 
-Convert a text file to mp3:
+To read a selection you highlighted with the cursor:
 
 ```
-$ cat letter.txt | text2wave | lame - file.mp3 && mplayer file.mp3
-
-```
-
-### Interactive mode (testing voices etc.)
-
-festival has an interactive prompt you can use for testing. Some examples (with sample output):
-
-```
-$ festival 
-[...]
-festival> 
+$ xsel | festival --tts
 
 ```
 
-List available voices:
+Convert a text file to an mp3 audio:
 
 ```
-festival> (voice.list)
-(cstr_us_awb_arctic_multisyn kal_diphone don_diphone)
-
-```
-
-Set voice:
-
-```
-festival> (voice_cstr_us_awb_arctic_multisyn)
-#<voice 0x1545b90>
+$ text2wave *text_file* | lame - *text*.mp3
 
 ```
 
-Speak:
+Record audio with a select voice:
 
 ```
-festival> (SayText '"test this is a test oh no a test bla test")
-inserting pause after: t.
-Inserting pause
-[...]
-id _63 ; name t ; 
-id _65 ; name # ; 
-#<Utterance 0x7f7c0c144810>
+$ text2wave -o *output*.wav -eval '(voice_german_de2_os)' *text_file*
 
 ```
 
-More:
+### Interactive
+
+Festival has an interactive prompt you can use for testing. Type `festival` to enter it. The following are some examples:
+
+To show the voice festival speaks with:
 
 ```
-festival> help 
-"The Festival Speech Synthesizer System: Help
-
-```
-
-Quit: ctrl+d or
-
-```
-festival> (quit)
+voice_default 
 
 ```
 
-### Example script
-
-One classic app that can make use of this is *ping*. Use this script to constantly *ping* a host, and return "Ping" if success, "Fail" if not:
+To list available voices:
 
 ```
-#!/bin/bash
-while :; do
-    ping -c 1 $1 && (echo "Ping" | festival --tts) || (echo "Fail" | festival --tts)
-done
+(voice.list)
 
 ```
 
-Note that this does not really work on multisynth voices, as they take a while to prepare before playing.
+To select another voice, enter `(*voice_name*)`. For example:
+
+```
+(voice_cmu_us_rms_cg)
+
+```
+
+To hear it speak:
+
+```
+(SayText "Arch makes me happy") 
+
+```
+
+To list available commands:
+
+```
+help
+
+```
+
+To exit the shell:
+
+```
+(quit)
+
+```
 
 ## Troubleshooting
 
@@ -284,7 +156,7 @@ Linux: can't open /dev/dsp
 
 ```
 
-See [#Usage with a Sound Server](#Usage_with_a_Sound_Server) above.
+See [#Sound server](#Sound_server) above.
 
 ### Alsa playing at wrong speed
 
@@ -296,10 +168,14 @@ If the solution above gives you a squeaky voice, you might want to try changing 
 
 ```
 
-### aplay Command not found
+### Command aplay not found
 
-Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
+Install the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package.
+
+### Server
+
+Install [festival-freebsoft-utils](https://aur.archlinux.org/packages/festival-freebsoft-utils/) to use Festival with Speech Dispatcher (i.e. in Firefox's Reader).
 
 ## See also
 
-*   [Festival manual](http://www.cstr.ed.ac.uk/projects/festival/manual/)
+*   [Festival manual](http://festvox.org/docs/manual-2.4.0/)

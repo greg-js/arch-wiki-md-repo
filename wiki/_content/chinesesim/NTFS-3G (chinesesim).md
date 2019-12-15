@@ -23,7 +23,7 @@ Linux内核目前只支持对微软NTFS文件系统的读取。 [NTFS-3G](http:/
     *   [4.5 允许用户挂载](#允许用户挂载)
 *   [5 缩放NTFS分区](#缩放NTFS分区)
 *   [6 疑难解答](#疑难解答)
-    *   [6.1 Compressed files](#Compressed_files)
+    *   [6.1 已压缩的文件](#已压缩的文件)
     *   [6.2 损坏的NTFS文件系统](#损坏的NTFS文件系统)
     *   [6.3 元数据保存在Windows中，拒绝挂载](#元数据保存在Windows中，拒绝挂载)
     *   [6.4 删除Windows休眠元数据](#删除Windows休眠元数据)
@@ -177,14 +177,16 @@ Linux系统通常将目录的权限设为755，将文件的权限设为644。如
 
 ## 疑难解答
 
-### Compressed files
+### 已压缩的文件
 
-If you have a Windows 10 partition and when accessing files/directories,
+若您在读取Windows 10分区中的文件和文件夹时出现以下情形：
 
-1.  you see broken symbolic links to 'unsupported reparse point', *or*
-2.  you see the error message "cannot access <*filename*>: Input/output error" (in this case you see in /var/log/messages "Could not load plugin /usr/lib64/ntfs-3g/ntfs-plugin-80000017.so: Success")
+1.  出现链接到“不支持的重解析点”（unsupported reparse point）的损坏的符号链接，或
+2.  出现错误信息：“cannot access <*filename*>: Input/output error” （此时/var/log/messages中会出现“Could not load plugin /usr/lib64/ntfs-3g/ntfs-plugin-80000017.so: Success”)
 
-then install [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/). This plugin handles compressed files.
+请安装[ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/)插件，之后便可读取已压缩的文件了。
+
+NTFS-3G默认不支持某些类型的[重解析点](https://en.wikipedia.org/wiki/NTFS_reparse_points "wikipedia:NTFS reparse points")。[点击此处](https://jp-andre.pagesperso-orange.fr/junctions.html#other)查看可用的插件列表。
 
 ### 损坏的NTFS文件系统
 

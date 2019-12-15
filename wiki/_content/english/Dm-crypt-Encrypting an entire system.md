@@ -920,7 +920,7 @@ We format and mount them and activate swap. See [File systems#Create a file syst
 
 The `/boot` partition can be installed on the standard vfat partition of a USB stick, if required. But if manual partitioning is needed, then a small 200 MiB partition is all that is required. Create the partition using a [partitioning tool](/index.php/Partitioning#Partitioning_tools "Partitioning") of your choice.
 
-Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition intended for `/boot`, if it is not already formatted as vfat:
+Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition intended for `/boot`:
 
 ```
 # mkfs.ext4 /dev/sdb1

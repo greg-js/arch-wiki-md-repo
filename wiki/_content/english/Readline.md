@@ -174,6 +174,7 @@ You can enable coloring of completion of filenames with the `colored-stats` opti
  `~/.inputrc` 
 ```
 # Color files by types
+# Note that this may cause completion text blink in some terminals (e.g. xterm).
 set colored-stats On
 # Append char to indicate type
 set visible-stats On

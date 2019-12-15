@@ -135,7 +135,7 @@ Para crear una nueva tabla de partición [Master Boot Record](/index.php/Master_
 
 ### Esquemas de particiones
 
-Puede decidir el número y el tamaño de las particiones en las que se deben dividir los dispositivos, y qué directorios se usarán para montar las particiones en el sistema instalado (también conocido como *puntos de montaje*). Vea [Partitioning (Español)#Esquemas de particiones](/index.php/Partitioning_(Espa%C3%B1ol)#Esquemas_de_particiones "Partitioning (Español)") para las particiones necesarias.
+Puede decidir el número y el tamaño de las particiones en las que se deben dividir los dispositivos, y qué directorios se usarán para montar las particiones en el sistema instalado (también conocido como *puntos de montaje*). Vea [Partitioning (Español)#Esquemas de particionado](/index.php/Partitioning_(Espa%C3%B1ol)#Esquemas_de_particionado "Partitioning (Español)") para las particiones necesarias.
 
 La siguiente orden se utilizará para crear las particiones:
 

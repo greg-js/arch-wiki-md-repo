@@ -51,7 +51,7 @@ The post-install script also creates a new user `nx`.
 
 If you have X2Go or FreeNX installed as well, do not get confused that some files use similar names (i.e. `/usr/bin/nx`).
 
-The `nxserver.service` does not need to be enabled and started on computers, which will be used only as the client, but it must run on the server.
+The `nxserver.service` does not need to be enabled and started on computers which will be used only as the client, but it must run on the server.
 
 ## Usage
 

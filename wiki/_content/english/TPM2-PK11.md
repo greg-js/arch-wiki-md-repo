@@ -1,4 +1,4 @@
-[tpm2-pk11-git](https://aur.archlinux.org/packages/tpm2-pk11-git/) provides a [PKCS#11](https://github.com/irtimmer/tpm2-pk11) backend for a [TPM](/index.php/Trusted_Platform_Module "Trusted Platform Module") 2.0 chip. This can be used to secure your [SSH keys](/index.php/SSH_keys "SSH keys").
+[tpm2-pk11-git](https://aur.archlinux.org/packages/tpm2-pk11-git/) provides a [PKCS#11](https://github.com/irtimmer/tpm2-pk11) backend for a [TPM](/index.php/TPM "TPM") 2.0 chip. This can be used to secure your [SSH keys](/index.php/SSH_keys "SSH keys").
 
 **Note:** Only the OpenSSH client is supported as of November 2017.
 

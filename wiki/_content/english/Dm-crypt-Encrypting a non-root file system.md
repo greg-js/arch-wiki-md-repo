@@ -110,6 +110,8 @@ $ cryptsetup luksFormat bigsecret.img
 
 ```
 
+Make sure to not omit the `iflag=fullblock` option, otherwise *dd* might return a partial read. See [dd#Partial read](/index.php/Dd#Partial_read "Dd") for details.
+
 Before running `cryptsetup`, look at the [encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") and [ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") first to select your additional desired settings.
 
 The instructions for opening the device and making the [file system](/index.php/File_system "File system") are the same as [#Partition](#Partition).
@@ -122,7 +124,7 @@ Manual mounting and unmounting procedure is equivalent to [#Manual mounting and 
 
 A loop device enables to map a blockdevice to a file with the standard util-linux tool `losetup`. The file can then contain a filesystem, which can be used quite like any other filesystem. A lot of users know [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") as a tool to create encrypted containers. Just about the same functionality can be achieved with a loopback filesystem encrypted with LUKS and is shown in the following example.
 
-First, start by creating an encrypted container, using an appropriate [random number generator](/index.php/Random_number_generator "Random number generator"):
+First, start by creating an encrypted container with [dd](/index.php/Dd "Dd"), using an appropriate [random number generator](/index.php/Random_number_generator "Random number generator"):
 
 ```
 $ dd if=/dev/urandom of=bigsecret.img bs=100M count=1 iflag=fullblock

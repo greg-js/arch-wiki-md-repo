@@ -20,7 +20,7 @@ Related articles
 
 ## General package details
 
-[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available both in [AUR](/index.php/AUR "AUR") and in the [Use pre-compiled packages](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck") that allows users to run a kernel and headers setup patched with Con Kolivas' ck patchset[[1]](http://ck.kolivas.org/patches/), including a CPU scheduler named MuQSS (*Multiple Queue Skiplist Scheduler*, pronounced *mux*) which replaces Brain Fuck Scheduler (BFS), his previous work. Many Arch Linux users choose this kernel for its excellent desktop interactivity and responsiveness under any load situation.
+[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available both in [AUR](/index.php/AUR "AUR") and in the [User pre-compiled packages](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck") that allows users to run a kernel and headers setup patched with Con Kolivas' ck patchset[[1]](http://ck.kolivas.org/patches/), including a CPU scheduler named MuQSS (*Multiple Queue Skiplist Scheduler*, pronounced *mux*) which replaces Brain Fuck Scheduler (BFS), his previous work. Many Arch Linux users choose this kernel for its excellent desktop interactivity and responsiveness under any load situation.
 
 CK patchset is designed for desktop/laptop use but not for servers. It provides low latency environment and works well for 16 CPUs or fewer.
 

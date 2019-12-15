@@ -303,8 +303,8 @@ Check the detected network interfaces and transport protocols from a client node
 ### InfiniBand Support
 
 *   Explicitly [Install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") [beegfs-common](https://aur.archlinux.org/packages/beegfs-common/), which will provide `libbeegfs-ib.so` shared object libraries.
-*   Enable support for [[RDMA-capable network hardware](https://www.beegfs.io/wiki/ManualInstallWalkThrough#hn_59ca4f8bbb_4)].
-*   Rebuild the [client](/index.php/BeeGFS#Client "BeeGFS") kernel module.
+*   Enable support for [RDMA-capable network hardware](https://www.beegfs.io/wiki/ManualInstallWalkThrough#hn_59ca4f8bbb_4).
+*   Rebuild the [client](#Client) kernel module.
 
 ### [ACLs](/index.php/ACL "ACL")
 

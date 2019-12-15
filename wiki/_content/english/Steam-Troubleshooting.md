@@ -16,9 +16,10 @@
     *   [5.1 Segmentation fault when disabling runtime](#Segmentation_fault_when_disabling_runtime)
     *   [5.2 'GLBCXX_3.X.XX' not found when using Bumblebee](#'GLBCXX_3.X.XX'_not_found_when_using_Bumblebee)
     *   [5.3 Game crashes immediately](#Game_crashes_immediately)
-    *   [5.4 Version `CURL_OPENSSL_3` not found](#Version_`CURL_OPENSSL_3`_not_found)
-    *   [5.5 Steam webview/game browser not working in native runtime (Black screen)](#Steam_webview/game_browser_not_working_in_native_runtime_(Black_screen))
-    *   [5.6 Steam: An X Error occurred](#Steam:_An_X_Error_occurred)
+    *   [5.4 Game and Steam crashes after game start](#Game_and_Steam_crashes_after_game_start)
+    *   [5.5 Version `CURL_OPENSSL_3` not found](#Version_`CURL_OPENSSL_3`_not_found)
+    *   [5.6 Steam webview/game browser not working in native runtime (Black screen)](#Steam_webview/game_browser_not_working_in_native_runtime_(Black_screen))
+    *   [5.7 Steam: An X Error occurred](#Steam:_An_X_Error_occurred)
 *   [6 Audio issues](#Audio_issues)
     *   [6.1 Configure PulseAudio](#Configure_PulseAudio)
     *   [6.2 No audio or 756 Segmentation fault](#No_audio_or_756_Segmentation_fault)
@@ -176,6 +177,22 @@ And finally, if those don't work, you should check Steam's output for any error 
 
 In these cases, try replacing the `libsteam_api.so` file from the problematic game with one of a game that works. This error usually happens for games that were not updated recently when Steam runtime is disabled. This error has been encountered with AYIM, Bastion and Monaco.
 
+### Game and Steam crashes after game start
+
+If the following error is output:
+
+```
+failed to dlopen engine.so error=/home/*GAMEPATH*/bin/libgcc_s.so.1: version `GCC_7.0.0' not found (required by /usr/lib32/libopenal.so.1)
+
+```
+
+moving the the incompatable lib can be a workaround.
+
+```
+mv .local/share/Steam/steamapps/common/*GAME*/bin/libgcc_s.so.1 .local/share/Steam/steamapps/common/*GAME*/bin/libgcc_s.so.1.b
+
+```
+
 ### Version `CURL_OPENSSL_3` not found
 
 This is because [curl](https://www.archlinux.org/packages/?name=curl) alone is not compatible with previous versions. You need to install the compatibility libraries:
@@ -330,7 +347,7 @@ This error can also occur because of Steam runtime issues and may be fixed follo
 
 If your Steam apps (games, software…) download speed through the client is unusually slow, but browsing the Steam store and streaming videos is unaffected, installing a DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[1]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
 
-Something else that might help would be disabling [Ipv6](/index.php/Ipv6 "Ipv6")[[2]](https://github.com/ValveSoftware/steam-for-linux/issues/6126).
+Something else that might help would be disabling [IPv6](/index.php/IPv6 "IPv6")[[2]](https://github.com/ValveSoftware/steam-for-linux/issues/6126).
 
 ### "Needs to be online" error
 

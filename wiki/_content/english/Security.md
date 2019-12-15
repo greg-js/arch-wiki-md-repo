@@ -495,7 +495,9 @@ Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/
 
 ### BPF Hardening
 
-Berkeley Packet Filter (BPF) and its evolution Extended BPF (eBPF) are systems used to load and execute bytecode within the kernel dynamically during runtime. It is used in a number of Linux kernel subsystems such as networking (e.g. XDP, tc), tracing (e.g. kprobes, uprobes, tracepoints) and security (e.g. seccomp). It is also useful in certain domains such as advanced network security for container orchestrators and for debugging the kernel.
+BPF is a system used to load and execute bytecode within the kernel dynamically during runtime. It is used in a number of Linux kernel subsystems such as networking (e.g. XDP, tc), tracing (e.g. kprobes, uprobes, tracepoints) and security (e.g. seccomp). It is also useful for advanced network security, performance profiling and dynamic tracing.
+
+BPF was originally an acronym of "Berkeley Packet Filter" since the original classic BPF was used for packet capture tools for BSD. This eventually evolved into Extended BPF (eBPF), which was shortly afterwards renamed to just BPF (not an acronym). BPF should not be confused with packet filtering tools like iptables or netfilter, although BPF can be used to implement packet filtering tools.
 
 BPF code may be either interpreted or compiled using a Just-In-Time (JIT) compiler. The Arch kernel is built with `CONFIG_BPF_JIT_ALWAYS_ON` which disables the BPF interpreter and forces all BPF to use JIT compilation. This makes it harder for an attacker to use BPF to escalate attacks that exploit SPECTRE-style vulnerabilities. See [the kernel patch which introduced `CONFIG_BPF_JIT_ALWAYS_ON`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=290af86629b25ffd1ed6232c4e9107da031705cb) for more details.
 

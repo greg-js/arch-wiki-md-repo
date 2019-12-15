@@ -134,7 +134,7 @@ Durante il processo di boot, l'hardware dovrebbe essere riconosciuto automaticam
 
 ### Attivare *Num Lock* all'avvio
 
-Per attivare la funzione *Num Lock* all'avvio del sistema, si segua [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+Per attivare la funzione *Num Lock* all'avvio del sistema, si segua [Activating numlock on bootup](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup").
 
 ### Mantenere i messaggi di boot
 

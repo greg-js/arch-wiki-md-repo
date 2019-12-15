@@ -446,6 +446,8 @@ Install [vsftpd-ext](https://aur.archlinux.org/packages/vsftpd-ext/) and set in 
 
 vsftpd tries to display plain-text error messages in the SSL session. In order to debug this, temporarily disable encryption and you will see the correct error message.[[1]](http://ramblings.linkerror.com/?p=45) [[2]](https://serverfault.com/questions/772494/vsftpd-list-causes-gnutls-error-15)
 
+Often these errors can be solved by adding[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=845980): `seccomp_sandbox"="NO`
+
 ### vsftpd.service fails to run on boot
 
 If you have enabled `vsftpd.service` and it fails to run on boot, make sure it is set to load after `network.target` in the service file:

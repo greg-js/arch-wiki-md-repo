@@ -120,7 +120,7 @@ Both wired and wireless interface names can be found via `ls /sys/class/net` or 
 
 Wireless device names can also be retrieved using `iw dev`. See also [/Wireless#Get the name of the interface](/index.php/Network_configuration/Wireless#Get_the_name_of_the_interface "Network configuration/Wireless").
 
-If your network interface is not listed, make sure your [device driver](#Device_driver) was loaded successfully.
+If your network interface is not listed, make sure your device driver was loaded successfully. See [/Ethernet#Device driver](/index.php/Network_configuration/Ethernet#Device_driver "Network configuration/Ethernet") or [/Wireless#Device driver](/index.php/Network_configuration/Wireless#Device_driver "Network configuration/Wireless").
 
 #### Enabling and disabling network interfaces
 

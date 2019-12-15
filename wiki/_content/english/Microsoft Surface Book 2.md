@@ -33,7 +33,7 @@ This page contains instructions, tips, pointers, and links for installing and co
 
 ## Compatibility
 
-The laptop works surprisingly well with Arch Linux, but requires a kernel with modules and updated drivers, [available on Github](https://github.com/jakeday/linux-surface) or in an AUR package, [linux-surface4](https://aur.archlinux.org/packages/linux-surface4/) or via a separately maintained [PKGBULD on Github](https://github.com/dmhacker/arch-linux-surface) (whichever you choose, make sure to check that you'll get the latest version of the jakeday kernel [linux-surface4](https://aur.archlinux.org/packages/linux-surface4/) seems to be a bit behind).
+The laptop works surprisingly well with Arch Linux, but requires a kernel with modules and updated drivers, [available on Github](https://github.com/qzed/linux-surface) or in an AUR package, [linux-surface4](https://aur.archlinux.org/packages/linux-surface4/) or via a separately maintained [PKGBULD on Github](https://github.com/dmhacker/arch-linux-surface) (whichever you choose, make sure to check that you'll get the latest version of the jakeday kernel [linux-surface4](https://aur.archlinux.org/packages/linux-surface4/) seems to be a bit behind).
 
 ### What works?
 

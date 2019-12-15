@@ -155,7 +155,7 @@ Paleidimui pasibaigus ekranas yra išvalomas ir atsiranda prisijungimo laukelis,
 
 ### Num Lock aktyvacija
 
-Num Lock daugumoje klaviatūrų yra perjungimo klavišas. Num Lock aktyvavimui paleisties metu skaitykite [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+Num Lock daugumoje klaviatūrų yra perjungimo klavišas. Num Lock aktyvavimui paleisties metu skaitykite [Activating numlock on bootup](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup").
 
 ## Grafinė naudotojo sąsaja
 

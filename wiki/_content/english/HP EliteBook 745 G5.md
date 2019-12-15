@@ -32,7 +32,7 @@
 
 ### UEFI Setup
 
-The last firmware is mandatory to modify the BIOS parameters. At the moment of writing this entry: 01.09.01 Rev.A. In upgraded BIOS, disable the secure boot to be able to load any [boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process").
+The last firmware is mandatory to modify the BIOS parameters. At the moment of writing this entry: 01.09.01 Rev.A. In upgraded BIOS, disable the secure boot to be able to load any [boot loader](/index.php/Boot_loader "Boot loader").
 
 From Windows, it's easy to force the UEFI priority: [http://www.rodsbooks.com/refind/installing.html#windows](http://www.rodsbooks.com/refind/installing.html#windows)
 

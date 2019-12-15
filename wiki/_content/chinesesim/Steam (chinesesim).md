@@ -1,252 +1,281 @@
 相关文章
 
-*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
+*   [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting")
 *   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
+*   [Gaming](/index.php/Gaming "Gaming")
+*   [Gamepad](/index.php/Gamepad "Gamepad")
+*   [List of games (简体中文)](/index.php/List_of_games_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of games (简体中文)")
 
-引自 [维基百科](/index.php?title=Zh-cn:Wikipedia:Steam&action=edit&redlink=1 "Zh-cn:Wikipedia:Steam (page does not exist)"):
+[Steam](http://store.steampowered.com/about/) 是维尔福公司推出的著名游戏分发平台。
 
-	*Steam是美国维尔福于2003年9月12日推出的电子软件分发、数字版权管理及社交系统，它用于数字软件及游戏的发布销售与后续更新，支持Windows、Mac OS和Linux等操作系统，目前是全球最大的数字游戏平台。*
+**注意:** 对于 Linux 平台，Steam 只支持 Ubuntu 的长期支持版本[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366)。 因此，请不要向维尔福公司提交 issue 以获得 Steam 对 Arch Linux 的支持。
 
-[Steam](http://store.steampowered.com/about/) is best known as the platform needed to play Source Engine games (e.g. Half-Life 2, Counter-Strike). Today it offers many games from many other developers.
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 安装](#安装)
-*   [2 疑难问题](#疑难问题)
-    *   [2.1 鼠标主题不一致](#鼠标主题不一致)
-    *   [2.2 点击关闭按钮时将 Steam 最小化](#点击关闭按钮时将_Steam_最小化)
-    *   [2.3 64位系统上 Flash 无法使用](#64位系统上_Flash_无法使用)
-    *   [2.4 Text is corrupt or missing](#Text_is_corrupt_or_missing)
-    *   [2.5 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale('en_US.UTF-8')_fails_at_game_startup)
-    *   [2.6 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
-    *   [2.7 OpenGL not using direct rendering](#OpenGL_not_using_direct_rendering)
-    *   [2.8 libGL error when running certain games](#libGL_error_when_running_certain_games)
-    *   [2.9 OpenGL GLX context is not using direct rendering, which may cause performance problems.](#OpenGL_GLX_context_is_not_using_direct_rendering,_which_may_cause_performance_problems.)
-    *   [2.10 No audio in certain games](#No_audio_in_certain_games)
-    *   [2.11 You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1](#You_are_missing_the_following_32-bit_libraries,_and_Steam_may_not_run:_libGL.so.1)
-    *   [2.12 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
-    *   [2.13 X crashes when Steam starts (Radeon open source driver)](#X_crashes_when_Steam_starts_(Radeon_open_source_driver))
-*   [3 Launching games with custom commands, such as Bumblebee/Primus](#Launching_games_with_custom_commands,_such_as_Bumblebee/Primus)
-    *   [3.1 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-*   [4 Using native runtime](#Using_native_runtime)
-*   [5 Steam 皮肤](#Steam_皮肤)
-    *   [5.1 Steam 皮肤管理器](#Steam_皮肤管理器)
-*   [6 See also](#See_also)
+    *   [1.1 SteamCMD](#SteamCMD)
+    *   [1.2 可选 Flatpak 安装](#可选_Flatpak_安装)
+        *   [1.2.1 Flatpak 的亚洲字体问题](#Flatpak_的亚洲字体问题)
+*   [2 目录结构](#目录结构)
+    *   [2.1 库文件夹](#库文件夹)
+*   [3 用法](#用法)
+*   [4 启动选项](#启动选项)
+    *   [4.1 实例](#实例)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Fsync patch](#Fsync_patch)
+    *   [5.2 Proton Steam-Play](#Proton_Steam-Play)
+    *   [5.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
+    *   [5.4 Steam skins](#Steam_skins)
+        *   [5.4.1 Creating skins](#Creating_skins)
+    *   [5.5 Changing the Steam notification position](#Changing_the_Steam_notification_position)
+        *   [5.5.1 Use a skin](#Use_a_skin)
+        *   [5.5.2 Live patching](#Live_patching)
+    *   [5.6 Steam Remote Play](#Steam_Remote_Play)
+        *   [5.6.1 Different subnets](#Different_subnets)
+    *   [5.7 Steam Controller](#Steam_Controller)
+*   [6 Troubleshooting](#Troubleshooting)
+*   [7 See also](#See_also)
 
 ## 安装
 
-**注意:**
+启用 [multilib](/index.php/Multilib "Multilib") 仓库并[安装](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#安装软件包 "Help:Reading (简体中文)") [steam](https://www.archlinux.org/packages/?name=steam) 软件包。
 
-*   Arch Linux并不在[官方支持](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) 中。
-*   由于Steam客户端是个32位程序，用户需要在pacman中开启 [Multilib](/index.php/Multilib "Multilib") 软件源。 **如果你的系统是纯64位的话**。 有可能还需要安装一些multilib-devel软件包来提供重要的multilib库。此外，还需要安装显卡的32位版本才能运行Steam。
+你需要满足下列要求从而在 Arch Linux 上运行 Steam：
 
-现在，可直接从 [官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库") 中安装 [steam](https://www.archlinux.org/packages/?name=steam) 。如果你使用64位系统，请先启用 [multilib](/index.php/Multilib "Multilib") 仓库。
+*   安装 32 位版本的 [OpenGL 图形驱动](/index.php/Xorg#Driver_installation "Xorg")。
+*   生成 [en_US.UTF-8](/index.php/Locale#Generating_locales "Locale") 语言环境，以避免非法指针错误。
+*   其图形界面大量使用 Arial 字体。详见 [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") 。你可以通过安装 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 或使用 [Steam 支持的字体问题](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting") 中的方法来解决。
+*   安装 [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) 以支持亚洲地区语言。
 
-Steam 目前在 Arch Linux 上并不被官方支持，因此需要用户做一些调整以使程序顺利运行：
+### SteamCMD
 
-*   Steam中大量使用 Arial 字体。你可以通过安装 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 或 [ttf-microsoft-arial](https://aur.archlinux.org/packages/ttf-microsoft-arial/) 或 [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) 或 [Steam提供的字体](#Text_is_corrupt_or_missing) 来让它看起来漂亮点儿。亚洲语言建议使用[wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei)。
+安装 [steamcmd](https://aur.archlinux.org/packages/steamcmd/) 以使用命令行版本的 [Steam](https://developer.valvesoftware.com/wiki/SteamCMD)。
 
-*   如果你使用64位系统，你还需要安装 [32位版本的显卡驱动](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#安装 "Xorg (简体中文)") (位于表格中“Multilib 软件包 ”这一列) 以运行32位游戏。
+### 可选 Flatpak 安装
 
-*   如果你使用64位系统，你还需要安装 [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) 为32位游戏提供声音支持。
+Steam 也可以作为 `com.valvesoftware.Steam` 使用 [Flatpak](/index.php/Flatpak "Flatpak") 从 [Flathub](https://flathub.org/) 中安装。使用 Flathub 仓库和 flatpak 命令行安装是目前最简单的安装方式：
 
-*   有些游戏可能需要附加依赖。如果游戏不能正常启动 （一般没有任何错误提示），请确保安装了 [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") 中列出的依赖。
-
-## 疑难问题
-
-**Note:** 除了记录到这里， 所有还未被记录的bug、错误或修改方案都应该报告到 Valve 的 [GitHub page](https://github.com/ValveSoftware/steam-for-linux).
-
-### 鼠标主题不一致
-
-Steam启动时会覆盖掉 [鼠标主题](/index.php/Cursor_themes_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Cursor themes (简体中文)")。这个问题出现在没有设置鼠标主题的Gnome 和其他 WMs/DMs。 对于Gnome，可以通过设置鼠标主题来修正。
-
-为了解决问题，首先获得root权限，然后按照下面提示创建文件 `/usr/share/icons/default/index.theme` (如果没有目录 `/usr/share/icons/default` 请自行创建):
-
- `/usr/share/icons/default/index.theme` 
 ```
-[Icon Theme]
-Inherits=Adwaita
+ flatpak --user remote-add --if-not-exists flathub [https://dl.flathub.org/repo/flathub.flatpakrepo](https://dl.flathub.org/repo/flathub.flatpakrepo)
+ flatpak --user install flathub com.valvesoftware.Steam
+ flatpak run com.valvesoftware.Steam
 
 ```
 
-注意: 请用你自己的鼠标主题替代 "Adwaita"。 或者，你可以从 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中安装 [gnome-cursors-fix](https://aur.archlinux.org/packages/gnome-cursors-fix/)。
+目前 Flatpak 应用还不支持主题。并且你不能通过 `optirun`/`primusrun` 来运行游戏，更多细节详见 [Issue#869](https://github.com/flatpak/flatpak/issues/869)。
 
-或者还可以创建指向鼠标主题的软链接 `~/.icons/default` , 比如：
-
-```
-   mkdir -p ~/.icons
-   ln -sT /usr/share/icons/Neutral_Plus ~/.icons/default
+默认情况下 Steam 不会有访问你的家目录的权限，你可以运行下列命令来授予权限，以获得更类似于在 Ubuntu 或 SteamOS 下的运行效果：
 
 ```
-
-If the cursor gets stuck pointing in the wrong direction after exiting Steam, a workaround is to run `xsetroot -cursor_name left_ptr` (From [the awesomewm wiki](http://awesome.naquadah.org/wiki/FAQ#How_to_change_the_cursor_theme.3F)).
-
-### 点击关闭按钮时将 Steam 最小化
-
-	Valve GitHub [issue 1025](https://github.com/ValveSoftware/steam-for-linux/issues/1025)
-
-如果想在点击**x**时关闭 Steam 窗口（并将它从任务栏移除），同时让 Steam 最小化到托盘，你需要设置环境变量`STEAM_FRAME_FORCE_CLOSE` 为`1`。可以通过以下命令行启动 Steam：
-
-```
-$ STEAM_FRAME_FORCE_CLOSE=1 steam
+flatpak override com.valvesoftware.Steam --filesystem=$HOME
 
 ```
 
-如果你通过 .desktop 文件来启动 Steam，你需要将`Exec`替换为以下内容：
+#### Flatpak 的亚洲字体问题
+
+如果你遇到了游戏中无法显示亚洲字体的问题，这是因为 org.freedesktop.Platform 并没有包含合适的字体文件进去。首先尝试挂载你的本地字体：
 
 ```
- Exec=sh -c 'STEAM_FRAME_FORCE_CLOSE=1 steam' %U
-
-```
-
-### 64位系统上 Flash 无法使用
-
-	Steam Support [article](https://support.steampowered.com/kb_article.php?ref=1493-GHZB-7612)
-
-首先确认已经安装了[lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)。如果安装后还无法使用，创建一个本地 Steam Flash 插件目录：
-
-```
-$ mkdir ~/.steam/bin32/plugins/
+flatpak run --filesystems=~/.local/share/fonts --filesystem=~/.config/fontconfig  com.valvesoftware.Steam
 
 ```
 
-并且将全局的 lib32 flash 插件目录软链接到上面创建的路径：
+如果上述命令不起作用，考虑动手 hack 一下：直接将字体文件复制进 org.freedesktop.Platform 的目录下以启用字体，例如
 
 ```
-$ ln -s /usr/lib32/mozilla/plugins/libflashplayer.so ~/.steam/bin32/plugins/
-
-```
-
-### Text is corrupt or missing
-
-The Steam Support [instructions](https://support.steampowered.com/kb_article.php?ref=1974-YFKL-4947) for Windows seem to work on Linux also: Simply download [SteamFonts.zip](https://support.steampowered.com/downloads/1974-YFKL-4947/SteamFonts.zip) and [install](/index.php/Fonts#Manual_installation "Fonts") them (copying to `/usr/share/fonts/` or `~/.fonts/` works at least).
-
-### SetLocale('en_US.UTF-8') fails at game startup
-
-Uncomment `en_US.UTF-8 UTF-8` in `/etc/locale.gen` and then run `locale-gen` as root.
-
-### The game crashes immediately after start
-
-If your game crashes immediately, try disabling: *"Enable the Steam Overlay while in-game"* in game *Properties*.
-
-### OpenGL not using direct rendering
-
-	Steam Support [article](https://support.steampowered.com/kb_article.php?ref=9938-EYZB-7457)
-
-You have probably not installed your 32-bit graphics driver correctly. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for which packages to install.
-
-You can check/test if it is installed correctly by installing [lib32-mesa-demos](https://www.archlinux.org/packages/?name=lib32-mesa-demos) and running the following command:
-
-```
-$ glxinfo32 | grep OpenGL.
+# replace ? with your version and hash
+/var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/?/?/files/etc/fonts/conf.avail
+/var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/?/?/files/etc/fonts/conf.d 
+/var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/?/?/files/share/fonts
 
 ```
 
-### libGL error when running certain games
+## 目录结构
 
-If you receive an error like the following `Failed to load libGL: undefined symbol: xcb_send_fd`, it could be due to an outdated steam runtime library. Deleting `~/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libxcb.so.1` will force Steam to load the library version installed by pacman.
+Steam 的默认安装位置是 `~/.local/share/Steam`。如果 Steam 无法找到该目录，它会引导你重新安装或选择一个新的安装位置。这篇文章使用 `~/.steam/root` 符号链接来表示 Steam 的安装位置。
 
-### OpenGL GLX context is not using direct rendering, which may cause performance problems.
+### 库文件夹
 
-Steam ships its own versions of some libraries, and they sometimes are too old to work with archlinux system libraries. Removing the library supplied by Steam means Steam has to use the newer arch-specific version. [Forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1416098#p1416098).
+每一个 Steam 应用都有一个独一无二的应用 ID，你可以通过 [Steam Store](http://store.steampowered.com/) 页面路径来找到它。
 
-```
-rm ~/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.6
-rm ~/.local/share/Steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s.so.1
-```
+Steam 将游戏安装到 `*LIBRARY*/steamapps/common/` 目录下。库文件夹 `*LIBRARY*` 一般会是 `~/.steam/root`，但是你依然可以选择拥有多个库文件夹如 (*Steam > Settings > Downloads > Steam Library Folders*)。
 
-### No audio in certain games
+为了 Steam 能够正确识别游戏，它需要在 `*LIBRARY*/steamapps/` 目录下找到 `appmanifest_*AppId*.acf` 文件。此文件使用了 [KeyValues](https://developer.valvesoftware.com/wiki/KeyValues) 格式，并且它的 `installdir` 的内容决定了游戏的目录名称。
 
-If there is no audio in certain games, and the suggestions provided in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") do not fix the problem, [#Using native runtime](#Using_native_runtime) may provide a successful workaround.
-
-### You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1
-
-You may encounter this error when you launch Steam at first time. Make sure you have installed lib32-version of all your video driver. For example, if you have installed [catalyst-utils-pxp](https://www.archlinux.org/packages/?name=catalyst-utils-pxp), [xf86-video-dri](https://www.archlinux.org/packages/?name=xf86-video-dri), [intel-dri](https://www.archlinux.org/packages/?name=intel-dri), [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) for AMD and Intel double card, then you should install [lib32-catalyst-utils-pxp](https://www.archlinux.org/packages/?name=lib32-catalyst-utils-pxp), [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri), [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl).
-
-### Games do not launch on older intel hardware
-
-On older Intel hardware, if the game immediately crashes when run, it may be because your hardware doesn't directly support the latest OpenGL. It appears as a gameoverlayrenderer.so error in /var/dumps/mobile_stdout.txt, but looking in /tmp/gameoverlayrenderer.log it shows a GLXBadFBConfig error.
-
-This can be fixed, however, by forcing the game to use a later version of OpenGL than it wants. Right click on the game, select Properties. Then, click "Set Launch Options" in the "General" tab and paste the following:
+## 用法
 
 ```
-MESA_GL_VERSION_OVERRIDE=3.1 MESA_GLSL_VERSION_OVERRIDE=140 %command%
+steam [ -options ] [ steam:// URL ]
 
 ```
 
-This will force the game to use the latest version of OpenGL.
+对于可用的命令行选择，详见 [Command Line Options article on the Valve Developer Wiki](https://developer.valvesoftware.com/wiki/Command_Line_Options#Steam_.28Windows.29)。
 
-### X crashes when Steam starts (Radeon open source driver)
+Steam 也可以接受可选的 Steam URL，详见 [Steam browser procotol](https://developer.valvesoftware.com/wiki/Steam_browser_protocol)。
 
-There is [a bug](https://bugs.freedesktop.org/show_bug.cgi?id=79325) in glamor-egl 0.6.0 (used by the open source Radeon driver) which causes X to crash when trying to start Steam. Installing the unofficial [glamor-egl-git](https://aur.archlinux.org/packages/glamor-egl-git/) from AUR is a workaround until a new glamour version is released.
+## 启动选项
 
-## Launching games with custom commands, such as Bumblebee/Primus
+当你运行一个 Steam 游戏时，Steam 会使用 [Bash](/index.php/Bash "Bash") shell 执行它的 **启动命令**。 为了让你随意修改启动命令，Steam 提供了 **启动选项**。 **启动选项**可以通过右键点击你的游戏库中的游戏，选择属性后点击**设置启动选项**进行修改。
 
-Steam has fortunately added support for launching games using your own custom command. To do so, navigate to the Library page, right click on the selected game, click Properties, and Set Launch Options. Steam replaces the tag `%command%` with the command it actually wishes to run. For example, to launch Team Fortress 2 with primusrun and at resolution 1920x1080, you would enter:
+默认情况下 Steam 只是简单的把你设置的参数字符串添加到游戏的启动命令后。想要设置环境变量或者将一个启动命令作为参数传递给另一个命令，你可以使用 `%command%` 以表示原启动命令。
 
+### 实例
+
+*   仅设置参数： `-foo`
+*   设置环境变量： `FOO=bar BAZ=bar %command% -baz`
+*   设置与默认完全不同的命令： `othercommand # %command%`
+
+## Tips and tricks
+
+### Fsync patch
+
+Valve has [released](https://steamcommunity.com/app/221410/discussions/0/3158631000006906163/) a special kernel patch that should help increase FPS in massively-threaded applications. There are few methods to get and use this patch:
+
+*   Use binary kernel provided directly from Valve. See [Unofficial user repositories#valveaur](/index.php/Unofficial_user_repositories#valveaur "Unofficial user repositories") and once you add this repository, kernel packages [linux-fsync](https://aur.archlinux.org/packages/linux-fsync/) and [linux-fsync-headers](https://aur.archlinux.org/packages/linux-fsync-headers/) become available. You will likely need to replace some regular packages (e.g. [nvidia](https://www.archlinux.org/packages/?name=nvidia)) with [DKMS](/index.php/DKMS "DKMS") packages (e.g. [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)) as well.
+*   Install [linux-fsync](https://aur.archlinux.org/packages/linux-fsync/) kernel.
+*   Install [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel that includes the fsync patches since the 5.2 release[[2]](https://github.com/zen-kernel/zen-kernel/commit/f39367fdbc68e8b1e623239d13db6efaa5a67ae1)
+
+### Proton Steam-Play
+
+Valve developed a compatibility tool for Steam Play based on Wine and additional components. It allows you to launch many Windows games (see [compatibility list](https://www.protondb.com/)).
+
+It's open-source and available on [Github](https://github.com/ValveSoftware/Proton/). Steam will install its own versions of Proton when Steam Play is enabled.
+
+Proton needs to be enabled on Steam client : `Steam > Settings > Steam Play`. You can enable Steam Play for games that have and have not been whitelisted by Valve in that dialog.
+
+If needed, to force enable Proton or a specific version of Proton for a game, right click on the game, click `Properties > General > Force the use of a specific Steam Play compatibility tool`, and select the desired version. Doing so can also be used to force games that have a Linux port to use the Windows version.
+
+You can also install Proton from AUR with [proton](https://aur.archlinux.org/packages/proton/) or [proton-git](https://aur.archlinux.org/packages/proton-git/), but extra setup is required for them to work with Steam. See the Proton Github for details on how Steam recognizes Proton installs.
+
+### Big Picture Mode without a window manager
+
+To start Steam in Big Picture Mode from a [Display manager](/index.php/Display_manager "Display manager"), you can either:
+
+*   Install [steamos-compositor](https://aur.archlinux.org/packages/steamos-compositor/)
+*   Alternatively, install [steamos-compositor-plus](https://aur.archlinux.org/packages/steamos-compositor-plus/), which hides the annoying color flashing on startup of Proton games and adds a fix for games that start in the background
+*   Manually add a Steam entry (*but you lose the steam compositor advantages: mainly you **can't** control Big Picture mode with keyboard or gamepad*):
+
+create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following contents:
+
+ `/usr/share/xsessions/steam-big-picture.desktop` 
 ```
-primusrun %command% -w 1920 -h 1080
-
-```
-
-If you are running the [Linux-ck](/index.php/Linux-ck "Linux-ck") kernel, you may have some success in reducing overall latencies and improving performance by launching the game in SCHED_ISO (low latency, avoid choking CPU) via [schedtool](https://www.archlinux.org/packages/?name=schedtool)
-
-```
-# schedtool -I -e %command% *other arguments*
-
-```
-
-### Killing standalone compositors when launching games
-
-Further to this, utilising the `%command%` switch, you can kill standalone compositors (such as Xcompmgr or [Compton](/index.php/Compton "Compton")) - which can cause lag and tearing in some games on some systems - and relaunch them after the game ends by adding the following to your game's launch options.
-
-```
- killall compton && %command%; nohup compton &
-
-```
-
-Replace `compton` in the above command with whatever your compositor is. You can also add -options to `%command%` or `compton`, of course.
-
-Steam will latch on to any processes launched after `%command%` and your Steam status will show as in game. So in this example, we run the compositor through `nohup` so it is not attached to Steam (it will keep running if you close Steam) and follow it with an ampersand so that the line of commands ends, clearing your Steam status.
-
-## Using native runtime
-
-Steam, by default, ships with a copy of every library it uses, packaged within itself, so that games can launch without issue. This can be a resource hog, and the slightly out-of-date libraries they package may be missing important features (Notably, the OpenAL version they ship lacks HRTF and surround71 support). To use your own system libraries, you can run Steam with:
-
-```
-$ STEAM_RUNTIME=0 steam
-
-```
-
-However, if you're missing any libraries Steam makes use of, this will fail to launch properly. An easy way to find the missing libraries is to run the following commands:
-
-```
-$ cd ~/.local/share/Steam/ubuntu12_32
-$ LD_LIBRARY_PATH=".:${LD_LIBRARY_PATH}" ldd $(file *|sed '/ELF/!d;s/:.*//g')|grep 'not found'|sort|uniq
-
-```
-
-**Note:** The libraries will have to be 32-bit, which means you may have to download some from the AUR if on x86_64, such as NetworkManager.
-
-Once you've done this, run steam again with `STEAM_RUNTIME=0 steam` and verify it's not loading anything outside of the handful of steam support libraries:
-
-```
-$ cat /proc/$(pidof steam)/maps|sed '/\.local/!d;s/.*  //g'|sort|uniq
-
+[Desktop Entry]
+Name=Steam Big Picture Mode
+Comment=Start Steam in Big Picture Mode
+Exec=/usr/bin/steam -bigpicture
+TryExec=/usr/bin/steam
+Icon=
+Type=Application
 ```
 
-## Steam 皮肤
+### Steam skins
 
-通过拷贝和修改皮肤目录下的文件， Steam 界面可以被完全的定制化。
+The Steam interface can be customized using skins. Skins can overwrite interface-specific files in `~/.steam/root`.
 
-### Steam 皮肤管理器
+To install a skin:
 
-AUR上的[steam-skin-manager](https://aur.archlinux.org/packages/steam-skin-manager/) 让 Steam 皮肤的使用过程被大大简化。这个软件包还带有一个 hacked 过的 Steam 启动器，窗口管理器可以在这个 Steam 窗口上绘制边框。
+1.  Place its directory in `~/.steam/root/skins`.
+2.  Open *Steam > Settings > Interface* and select it.
+3.  Restart Steam.
 
-因此就有两种风格的 Steam 皮肤，一类有窗口按钮一类没有。皮肤管理器会提示你要使用哪种，还会根据你的 GTK+ 主题自动使用对应的皮肤，当然你也可以自己选择。
+An extensive list of skins can be found in [this Steam forums post](http://forums.steampowered.com/forums/showthread.php?t=1161035).
 
-皮肤管理器自动两种皮肤，对应 Ubuntu 默认主题的 Ambiance 和 Radiance.
+**Note:** Using an outdated skin may cause visual errors.
+
+#### Creating skins
+
+Nearly all Steam styles are defined in `~/.steam/root/resource/styles/steam.styles` (the file is over 3,500 lines long). For a skin to be recognized it needs its own `resource/styles/steam.styles`. When a Steam update changes the official `steam.styles` your skin may become outdated, potentially resulting in visual errors.
+
+See `~/.steam/root/skins/skins_readme.txt` for a primer on how to create skins.
+
+### Changing the Steam notification position
+
+The default Steam notification position is bottom right.
+
+You can change the Steam notification position by altering `Notifications.PanelPosition` in
+
+*   `resource/styles/steam.styles` for desktop notifications, and
+*   `resource/styles/gameoverlay.styles` for in-game notifications
+
+Both files are overwritten by Steam on startup and `steam.styles` is only read on startup.
+
+**Note:** Some games do not respect the setting in `gameoverlay.styles` e.g. XCOM: Enemy Unknown.
+
+#### Use a skin
+
+You can create a skin to change the notification position to your liking. For example to change the position to top right:
+
+```
+$ cd ~/.steam/root/skins
+$ mkdir -p Top-Right/resource
+$ cp -r ~/.steam/root/resource/styles Top-Right/resource
+$ sed -i '/Notifications.PanelPosition/ s/"[A-Za-z]*"/"TopRight"/' Top-Right/resource/styles/*
+
+```
+
+#### Live patching
+
+`gameoverlay.styles` can be overwritten while Steam is running, allowing you to have game-specific notification positions.
+
+ `~/.steam/notifpos.sh` 
+```
+sed -i "/Notifications.PanelPosition/ s/\"[A-Za-z]*\"/\"$1\"/" ~/.steam/root/resource/styles/gameoverlay.styles
+
+```
+
+And the [#Launch options](#Launch_options) should be something like:
+
+```
+~/.steam/notifpos.sh TopLeft && %command%
+
+```
+
+### Steam Remote Play
+
+**Note:** Steam In-Home Streaming [has become Steam Remote Play](https://store.steampowered.com/news/51761/).
+
+Steam has built-in support for [remote play](http://store.steampowered.com/streaming/).
+
+See [this Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371) on how to setup a headless streaming server on Linux.
+
+#### Different subnets
+
+Steam client will not be able to detect host if both are on different subnets, which is common case when using VPN to your home network. Even if both client and server can ping each other - steam client would still not be able to detect host, so you need to force it. To do it, start Steam with below command:
+
+```
+$ steam -console
+
+```
+
+Wait until Steam starts. Once it loaded, you will find extra tab named "Console". Open it and then paste below command with correct host IP address:
+
+```
+connect_remote <host_ip>:27036
+
+```
+
+You will see notification that you can now stream games from host machine.
+
+**Note:** If above doesn't work - Windows is likely blocking all incoming traffic from different subnets, which means any connections coming from VPN tunnel will be dropped. This also can be confirmed by simply performing ping requests without any response to Windows machine from your VPN client. To workaround this, configure (or disable) all Windows firewalls (including existing antiviruses).
+
+**Tip:** See [Gaming#Remote gaming](/index.php/Gaming#Remote_gaming "Gaming") for alternatives if above solution does not work.
+
+### Steam Controller
+
+Normally a Steam controller requires the use of the Steam-overlay. In non-Steam native Linux games however the overlay may not be practical. For that, while the Steam client is running it will maintain a "desktop configuration". With your Steam controller, configure the desktop configuration for it as a generic XBOX controller. As long as the Steam client is running you can then use your Steam controller in other games, such as GOG games, as an XBOX controller. Make sure to select your type of controller to map to in "general controller settings".
+
+## Troubleshooting
+
+See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshooting").
 
 ## See also
 
-*   [https://wiki.gentoo.org/wiki/Steam](https://wiki.gentoo.org/wiki/Steam)
+*   [Gentoo Wiki article](https://wiki.gentoo.org/wiki/Steam)
+*   [The Big List of DRM-Free Games on Steam](https://pcgamingwiki.com/wiki/The_Big_List_of_DRM-Free_Games_on_Steam) at PCGamingWiki
+*   [List of DRM-free games](http://steam.wikia.com/wiki/List_of_DRM-free_games) at Wikia
+*   [Steam Linux store](http://store.steampowered.com/browse/linux)
+*   [Proton](https://github.com/ValveSoftware/Proton/) Compatibility tool for Steam Play based on Wine and additional components.

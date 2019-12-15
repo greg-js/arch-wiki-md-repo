@@ -119,7 +119,7 @@ Finalmente, para devolver la dirección MAC a su valor de hardware original y pe
 
 ### systemd-networkd
 
-[systemd-networkd](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") soporta la falsificación de direcciones MAC a través de [archivos link](/index.php/Systemd-networkd_(Espa%C3%B1ol)#Archivos_Link "Systemd-networkd (Español)") (véase [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) para los detalles).
+[systemd-networkd](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") soporta la falsificación de direcciones MAC a través de [archivos link](/index.php/Systemd-networkd_(Espa%C3%B1ol)#Archivos_link "Systemd-networkd (Español)") (véase [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) para los detalles).
 
 Para establecer una dirección MAC estática falsificada:
 

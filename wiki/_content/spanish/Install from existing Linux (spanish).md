@@ -213,7 +213,7 @@ Las claves de pacman deben configurarse antes de comenzar la instalación. Antes
 
 #### Seleccionar un servidor de réplica y descargar herramientas básicas
 
-Después de [seleccionar un servidor de réplica](/index.php/Mirrors_(Espa%C3%B1ol)#Activar_un_servidor_de_réplica_especifico "Mirrors (Español)"), [actualice la lista de paquetes](/index.php/Mirrors_(Espa%C3%B1ol)#Forzar_a_pacman_a_actualizar_las_listas_de_paquetes "Mirrors (Español)") e [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") lo que necesite: [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted), etc.
+Después de [seleccionar un servidor de réplica](/index.php/Mirrors_(Espa%C3%B1ol)#Activar_un_servidor_de_réplica_específico "Mirrors (Español)"), [actualice la lista de paquetes](/index.php/Mirrors_(Espa%C3%B1ol)#Forzar_a_pacman_a_actualizar_las_listas_de_paquetes "Mirrors (Español)") e [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") lo que necesite: [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted), etc.
 
 **Nota:**
 

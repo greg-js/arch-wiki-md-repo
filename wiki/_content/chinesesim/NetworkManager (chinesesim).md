@@ -91,7 +91,7 @@ NetworkManager可以通过[networkmanager](https://www.archlinux.org/packages/?n
 
 ### 移动网络支持
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")[modemmanager](https://www.archlinux.org/packages/?name=modemmanager)、[mobile-broadband-provider-info](https://www.archlinux.org/packages/?name=mobile-broadband-provider-info)和[usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch)来支持连接移动网络。详情参见[USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem")。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")[modemmanager](https://www.archlinux.org/packages/?name=modemmanager)、[mobile-broadband-provider-info](https://www.archlinux.org/packages/?name=mobile-broadband-provider-info)和[usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch)来支持连接移动网络。详情参见[USB 3G Modem#NetworkManager](/index.php/USB_3G_Modem#NetworkManager "USB 3G Modem")。
 
 ### VPN 支持
 
@@ -580,7 +580,7 @@ IPv6推送主机名：
 
 如果NetworkManager(从v0.7.999)没有探测到你的3G模块,但是你仍然可以使用[wvdial](/index.php/Wvdial "Wvdial")连接, 可以尝试安装[modemmanager](https://www.archlinux.org/packages/?name=modemmanager),并使用`rc.d restart networkmanager`重启服务,你可能需要重插或重启你的3G模块, 这可以让NetworkManager支持默认数据库中缺失的硬件模块
 
-参考[USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
+参考[USB 3G Modem#NetworkManager](/index.php/USB_3G_Modem#NetworkManager "USB 3G Modem").
 
 ### 在笔记本上关闭WLAN
 

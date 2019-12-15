@@ -185,7 +185,7 @@ file-db:/usr/share/gdm/greeter-dconf-defaults
 For the latter approach, you can log into the GDM user with the command below:
 
 ```
-# machinectl shell gdm@
+# machinectl shell gdm@ /bin/bash
 
 ```
 
@@ -295,33 +295,39 @@ Tap-to-click is disabled in GDM (and GNOME) by default, but you can easily enabl
 
 **Note:** If you want to do this under X, you have to first set up correct X server access permissions - see [#Configure X server access permission](#Configure_X_server_access_permission).
 
-To directly enable tap-to-click, use:
+To enable tap-to-click, either create the following keyfile:
 
- `# sudo -u gdm gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
+ `/etc/dconf/db/gdm.d/06-tap-to-click` 
+```
+[org/gnome/desktop/peripherals/touchpad]
+tap-to-click='true'
+```
 
-If you prefer to do this with a GUI, use:
+and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
 
- `# sudo -u gdm dconf-editor` 
+```
+$ gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click 'true'
 
-To check the if it was set correctly, use:
-
- `$ sudo -u gdm gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click` 
-
-If you get the error `dconf-WARNING **: failed to commit changes to dconf: Error spawning command line`, make sure dbus is running:
-
- `$ sudo -u gdm dbus-launch gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
+```
 
 #### Disable/Enable Accessibility Menu
 
-To disable or enable the Accessibility Menu, set the following key in dconf editor:
+To disable or enable the Accessibility Menu, either create the following keyfile:
+
+ `/etc/dconf/db/gdm.d/07-accessibility` 
+```
+[org/gnome/desktop/interface]
+toolkit-accessibility='*boolean*'
+```
+
+and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
 
 ```
-# machinectl shell gdm@
-# gsettings set org.gnome.desktop.interface toolkit-accessibility false
-# exit
+$ gsettings set org.gnome.desktop.interface toolkit-accessibility '*boolean*'
+
 ```
 
-The menu is disabled when the key is false, enabled when it is true.
+The menu is disabled when the key is `false`, enabled when it is `true`.
 
 ### Keyboard layout
 

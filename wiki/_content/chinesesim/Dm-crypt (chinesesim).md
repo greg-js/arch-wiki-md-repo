@@ -15,7 +15,7 @@ dm-crypt is the Linux kernel's [device mapper](https://en.wikipedia.org/wiki/dev
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Common scenarios](#Common_scenarios)
+*   [1 常见场景](#常见场景)
 *   [2 Drive preparation](#Drive_preparation)
 *   [3 Device encryption](#Device_encryption)
 *   [4 System configuration](#System_configuration)
@@ -23,13 +23,13 @@ dm-crypt is the Linux kernel's [device mapper](https://en.wikipedia.org/wiki/dev
 *   [6 Specialties](#Specialties)
 *   [7 See also](#See_also)
 
-## Common scenarios
+## 常见场景
 
-This part introduces common scenarios to employ *dm-crypt* to encrypt a system or individual filesystem mount points. It is meant as a starting point to get familiarized with different practical encryption procedures. The scenarios cross-link to the other subpages where needed.
+这一部分介绍应用 *dm-crypt* 来加密整个系统或是某个文件系统挂载点的经典场景。这一部分是作为了解不同实际的加密程序的起点。
 
-See [/Encrypting a non-root file system](/index.php?title=Dm-crypt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Encrypting_a_non-root_file_system&action=edit&redlink=1 "Dm-crypt (简体中文)/Encrypting a non-root file system (page does not exist)") if you need to encrypt a device that is not used for booting a system, like a [partition](/index.php?title=Dm-crypt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Encrypting_a_non-root_file_system&action=edit&redlink=1 "Dm-crypt (简体中文)/Encrypting a non-root file system (page does not exist)") or a [loop device](/index.php?title=Dm-crypt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Encrypting_a_non-root_file_system&action=edit&redlink=1 "Dm-crypt (简体中文)/Encrypting a non-root file system (page does not exist)").
+查看 [dm-crypt/Encrypting a non-root file system (简体中文)](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dm-crypt/Encrypting a non-root file system (简体中文)")，这个页面教你怎么加密一个不是用来启动系统的设备，比如一个 [分区](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#分区 "Dm-crypt/Encrypting a non-root file system (简体中文)") 或者一个 [loop 设备](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Loop设备 "Dm-crypt/Encrypting a non-root file system (简体中文)").
 
-See [/Encrypting an entire system](/index.php?title=Dm-crypt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Encrypting_an_entire_system&action=edit&redlink=1 "Dm-crypt (简体中文)/Encrypting an entire system (page does not exist)") if you want to encrypt an entire system, in particular a root partition. Several scenarios are covered, including the use of *dm-crypt* with the *LUKS* extension, *plain* mode encryption and encryption and *LVM*.
+查看 [/Encrypting an entire system](/index.php?title=Dm-crypt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Encrypting_an_entire_system&action=edit&redlink=1 "Dm-crypt (简体中文)/Encrypting an entire system (page does not exist)")，这个页面教你怎么加密整个系统，特别是加密根分区（root分区）。这里面又有其他细分场景，包括用 *LUKS* 插件、*plain*加密模式以及配合*LVM*使用。
 
 ## Drive preparation
 

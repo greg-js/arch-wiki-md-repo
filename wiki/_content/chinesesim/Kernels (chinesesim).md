@@ -24,7 +24,7 @@
 *   [2 编译](#编译)
     *   [2.1 使用 Arch 构建系统(ABS)(推荐)](#使用_Arch_构建系统(ABS)(推荐))
     *   [2.2 传统方式](#传统方式)
-*   [3 Patches and patchsets](#Patches_and_patchsets)
+*   [3 补丁和补丁集](#补丁和补丁集)
     *   [3.1 Major patchsets](#Major_patchsets)
     *   [3.2 Other patchsets](#Other_patchsets)
 *   [4 参见](#参见)
@@ -65,7 +65,7 @@ Arch Linux 提供了多种内核构建方式。
 
 参见 [传统方式](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional") **.**
 
-## Patches and patchsets
+## 补丁和补丁集
 
 There are lots of reasons to patch your kernel, the major ones are for performance or support for non-mainline features such as [reiser4](/index.php/Reiser4 "Reiser4") file system support. Other reasons might include fun and to see how it is done and what the improvements are.
 

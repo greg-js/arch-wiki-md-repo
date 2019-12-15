@@ -75,7 +75,7 @@ It is advisable to keep OS X installed, because MacBook firmware updates can onl
 
 ## Partitioning
 
-MacBooks are partitioned using the [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") scheme by default. For MacBooks running OS X versions up to and including 10.12, the partition layout will typically look like this:
+MacBooks are partitioned using the [GPT](/index.php/GPT "GPT") scheme by default. For MacBooks running OS X versions up to and including 10.12, the partition layout will typically look like this:
 
 *   **EFI**: the ~200 MB [EFI system partition](/index.php/EFI_system_partition "EFI system partition")
 *   **Macintosh HD**: the main partition containing your OS X installation, formatted using [HFS+](/index.php/File_systems "File systems")

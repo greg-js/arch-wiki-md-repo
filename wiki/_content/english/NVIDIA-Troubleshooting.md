@@ -110,7 +110,7 @@ A possible solution could be to regress to the previously installed driver versi
 
 ## Avoid screen tearing
 
-**Note:** This has been reported to reduce the performance of some OpenGL applications and may produce issues in WebGL.
+**Note:** This has been reported to reduce the performance of some OpenGL applications and may produce issues in WebGL. It also drastically increases the time the driver needs to clock down after load ([Nvidia-Support-Thread](https://devtalk.nvidia.com/default/topic/1048768/linux/if-you-have-gpu-clock-boost-problems-please-try-__gl_experimentalperfstrategy-1/)).
 
 Tearing can be avoided by forcing a full composition pipeline, regardless of the compositor you are using. To test whether this option will work, run:
 
@@ -475,7 +475,7 @@ EndSection
 
 **Note:** BusID formatting is important!
 
-In the example above `01:00.0` is stripped to be written as `1:0:0`, however come conversions can be more complicated. `lspci` output is in hex format, but in config files the BusID's are in decimal format! This means that in cases where the BusID is greater than 10 you will need to convert it to decimal!
+In the example above `01:00.0` is stripped to be written as `1:0:0`, however come conversions can be more complicated. `lspci` output is in hex format, but in config files the BusID's are in decimal format! This means that in cases where the BusID is greater than 9 you will need to convert it to decimal!
 
 ie: `5e:00.0` from lspci becomes `PCI:94:0:0`.
 

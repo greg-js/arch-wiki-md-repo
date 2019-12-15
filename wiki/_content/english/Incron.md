@@ -19,7 +19,12 @@
 
 ## Activation and autostart
 
-After installation, the daemon will not be enabled by default. It can be enabled using [systemctl](/index.php/Systemd#Using_units "Systemd").
+After installation, the daemon will not be enabled by default. It can be enabled using [systemctl](/index.php/Systemd#Using_units "Systemd"):
+
+```
+# systemctl enable incrond.service
+
+```
 
 ## Configuration
 

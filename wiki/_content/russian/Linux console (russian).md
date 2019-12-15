@@ -4,6 +4,7 @@ Related articles
 
 *   [Консоль Linux/Настройка клавиатуры](/index.php/%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C_Linux/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B "Консоль Linux/Настройка клавиатуры")
 *   [Taking a screenshot (Русский)#Виртуальная консоль](/index.php/Taking_a_screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Виртуальная_консоль "Taking a screenshot (Русский)")
+
 *   [Color output in console](/index.php/Color_output_in_console "Color output in console")
 *   [getty](/index.php/Getty "Getty")
 

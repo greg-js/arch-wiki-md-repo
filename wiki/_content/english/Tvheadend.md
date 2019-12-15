@@ -43,7 +43,7 @@ Once Tvheadend is installed [start](/index.php/Start "Start")/[enable](/index.ph
 
 Once the service is running, configuration of Tvheadend is done through a web interface on [localhost:9981](http://localhost:9981).
 
-The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password.
+The service should automatically generate Tvheadend username and passwords that are the same as your system. You can log in as root with your system's root password. If Tvheadend is unable to generate an username/password, one should simple login **without** providing credentials.
 
 ## XMLTV
 

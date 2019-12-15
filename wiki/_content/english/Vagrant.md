@@ -75,7 +75,7 @@ $ vagrant plugin install vagrant-lxc
 
 ```
 
-Next, configure lxc and some systemd unit files per [this comment](https://github.com/fgrehm/vagrant-lxc/issues/109#issuecomment-21274392). The plugin can now be used with a `Vagrantfile` like so:
+Next, configure lxc as directed in the [official repository](https://github.com/fgrehm/vagrant-lxc/wiki/Usage-on-Arch-Linux-hosts). The plugin can now be used with a `Vagrantfile` like so:
 
 ```
 VAGRANTFILE_API_VERSION = "2"

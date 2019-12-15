@@ -95,7 +95,7 @@ The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nou
 
 #### Multihead
 
-The HDMI and DP ports are wired to the Nvidia GPU, so some additional actions required to make the multihead to work with monitors connected to this ports. Thunderbolt port is wired to Intel GPU thus allowing for external monitor to be used with Nvidia GPU off. See [Bumblebee#Output_wired_to_the_NVIDIA_chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee"), though configuration from there possibly wouldn't work as is.
+The HDMI and DP ports are wired to the Nvidia GPU, so some additional actions required to make the multihead to work with monitors connected to this ports. Thunderbolt port is wired to Intel GPU thus allowing for external monitor to be used with Nvidia GPU off. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee"), though configuration from there possibly wouldn't work as is.
 
 Instructions to get the external monitor working on the HDMI and DP ports on MSI GS65:
 

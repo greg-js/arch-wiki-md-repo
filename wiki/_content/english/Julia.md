@@ -10,13 +10,11 @@
 
 *   [1 Installation](#Installation)
 *   [2 IJulia](#IJulia)
-*   [3 Package build errors](#Package_build_errors)
-    *   [3.1 Arpack](#Arpack)
-*   [4 Integration with editors](#Integration_with_editors)
-    *   [4.1 Vim](#Vim)
-        *   [4.1.1 Syntax highlighting and more](#Syntax_highlighting_and_more)
-        *   [4.1.2 Linting](#Linting)
-*   [5 Performance](#Performance)
+*   [3 Integration with editors](#Integration_with_editors)
+    *   [3.1 Vim](#Vim)
+        *   [3.1.1 Syntax highlighting and more](#Syntax_highlighting_and_more)
+        *   [3.1.2 Linting](#Linting)
+*   [4 Performance](#Performance)
 
 ## Installation
 
@@ -25,28 +23,6 @@
 ## IJulia
 
 If attempting to install [ijulia](https://github.com/JuliaLang/IJulia.jl) by running `Pkg.add("IJulia")` gives the warning `MbedTLS had build errors.` you might need to install the [mbedtls](https://www.archlinux.org/packages/?name=mbedtls) package.
-
-## Package build errors
-
-### Arpack
-
-Building the Arpack package can result in an error like shown below (stacktrace omitted):
-
- `julia> Pkg.build("Arpack")` 
-```
-  Building Arpack → `~/.julia/packages/Arpack/UiiMc/deps/build.log`
-┌ Error: Error building `Arpack`:
-│ ERROR: LoadError: LibraryProduct(nothing, ["libarpack"], :libarpack, "Prefix(~/.julia/packages/Arpack/UiiMc/deps/usr)") is not satisfied, cannot generate deps.jl!
-```
-
-Use the instructions [here](https://github.com/JuliaLinearAlgebra/Arpack.jl/pull/69) to resolve the issue.
-
-Another option is to install julia from [julia-bin](https://aur.archlinux.org/packages/julia-bin/). Then Arpack can be installed from
-
-```
-julia> import Pkg; Pkg.add("Arpack")
-
-```
 
 ## Integration with editors
 

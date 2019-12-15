@@ -73,7 +73,7 @@ Support for [accelerated video decoding](#Video_acceleration) is provided by [li
 
 ### Experimental
 
-It may be worthwhile for some users to use the upstream experimental build of mesa, to enable features such as ACO or for AMD Navi improvements that haven't landed in the standard mesa packages.
+It may be worthwhile for some users to use the upstream experimental build of mesa, to enable features such as AMD Navi improvements that haven't landed in the standard mesa packages.
 
 Install the [mesa-git](https://aur.archlinux.org/packages/mesa-git/) package, which provides the DRI driver for 3D acceleration.
 
@@ -143,7 +143,7 @@ Install the [amdgpu-pro-libgl](https://aur.archlinux.org/packages/amdgpu-pro-lib
 
 **Warning:** ACO is a very early development and still is marked as **testing**, you may experience issues.
 
-Support for ACO is currently only available in [mesa-git](https://aur.archlinux.org/packages/mesa-git/) and can be enable by exporting `RADV_PERFTEST=aco` before starting an application.
+Since [mesa](https://www.archlinux.org/packages/?name=mesa) version 19.3, the ACO compiler is available in the official package, but disabled by default. It can be enabled by exporting `RADV_PERFTEST=aco` before starting an application.
 
 ## Loading
 

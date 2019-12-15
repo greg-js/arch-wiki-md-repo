@@ -55,7 +55,7 @@ After saving the above files, make sure to regenerate your initram image by the 
 
 ### Screen
 
-X230 has IPS or TN screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") page for more information. It can be set with command `xrandr --dpi 125.37` using `[.xinitrc](/index.php/Xinit#xinitrc "Xinit")`, `[.xsession](/index.php/Xsession "Xsession")` or other autostarts.
+X230 has IPS or TN screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") page for more information. It can be set with command `xrandr --dpi 125.37` using `[.xinitrc](/index.php/.xinitrc ".xinitrc")`, `[.xsession](/index.php/Xsession "Xsession")` or other autostarts.
 
 ### Brightness
 
@@ -186,10 +186,10 @@ Note that the `acpi_backlight=vendor` kernel option also works with the standard
 
 ### Sound control buttons
 
-Red LED mute indicators light up automatically, if corresponding channel *muted* in `[alsamixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")`. Easiest way to make buttons work is to install [pulseaudio](/index.php/Pulseaudio "Pulseaudio") and it's plugin for your [desktop environment](/index.php/Desktop_environment "Desktop environment").
+Red LED mute indicators light up automatically, if corresponding channel *muted* in `[alsamixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")`. Easiest way to make buttons work is to install [PulseAudio](/index.php/PulseAudio "PulseAudio") and it's plugin for your [desktop environment](/index.php/Desktop_environment "Desktop environment").
 
 *   [GNOME](/index.php/GNOME "GNOME") - works out of the box
-*   [XFCE](/index.php/XFCE "XFCE") - install [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), add plugin to panel and reboot. Additionally [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) uses [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) as mixer and [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) for sound level popups
+*   [Xfce](/index.php/Xfce "Xfce") - install [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin), add plugin to panel and reboot. Additionally [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) uses [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) as mixer and [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) for sound level popups
 *   Handle ACPI events with [acpid](/index.php/Acpid "Acpid") the [hard way](https://makandracards.com/makandra/47162-how-to-enable-the-thinkpad-microphone-mute-key-on-ubuntu-16-04). Some functions like `thinkpad-mutemic` implemented in [thinkpad-scripts](https://aur.archlinux.org/packages/thinkpad-scripts/)
 *   See also [ThinkPad: Mute button](/index.php/ThinkPad:_Mute_button "ThinkPad: Mute button")
 
@@ -209,7 +209,7 @@ Some X230t models have a multitouch screen in addition to the Wacom tablet. Work
 
 ## OpenCL
 
-Thinkpad X230 based on Intel [Ivy Bridge](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)) (3rd generation) platform which meets [OpenCL](/index.php/OpenCL "OpenCL") 1.2 specification. Unfortunately GPU support in Linux is broken, so [beignet](https://www.archlinux.org/packages/?name=beignet) and [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) won't work. Use CPU-only [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/) instead.
+Thinkpad X230 based on Intel [Ivy Bridge](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture) (3rd generation) platform which meets [OpenCL](/index.php/OpenCL "OpenCL") 1.2 specification. Unfortunately GPU support in Linux is broken, so [beignet](https://www.archlinux.org/packages/?name=beignet) and [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) won't work. Use CPU-only [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/) instead.
 
 OpenCL computation performance differ between CPU and GPU, depending on task. In many cases GPU is preferable. For *Core(TM) i5-3210M* CPU, which incorporates *HD Graphics 4000* GPU:
 
@@ -263,13 +263,13 @@ hwmon /sys/class/thermal/thermal_zone0/temp
 
 ## UEFI
 
-Laptop incorporates InsydeH2O® UEFI BIOS with classic text interface. It supports [UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") with [Secure Boot](/index.php/Secure_Boot "Secure Boot"), UEFI-CSM and Legacy BIOS modes.
+Laptop incorporates InsydeH2O® UEFI BIOS with classic text interface. It supports [UEFI](/index.php/UEFI "UEFI") with [Secure Boot](/index.php/Secure_Boot "Secure Boot"), UEFI-CSM and Legacy BIOS modes.
 
 ### Boot configuration
 
 UEFI boot options can be safely (no bricking) set with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") v2 (checked with *BIOS 2.77 (G2ETB7WW) EC 1.15*). Though you can delete *any* boot variable, so be careful!
 
-X230 in UEFI-non-CSM mode installed with [EFISTUB](/index.php/EFISTUB "EFISTUB") on [SSD disk](/index.php/Solid_state_drive "Solid state drive") boots into [display manager](/index.php/Display_manager "Display manager") in less than 25 seconds. Small [ESP](/index.php/EFI_system_partition "EFI system partition") (100 MiB fat32) also supported.
+X230 in UEFI-non-CSM mode installed with [EFISTUB](/index.php/EFISTUB "EFISTUB") on [SSD disk](/index.php/Solid_state_drive "Solid state drive") boots into [display manager](/index.php/Display_manager "Display manager") in less than 25 seconds. Small [ESP](/index.php/ESP "ESP") (100 MiB fat32) also supported.
 
 ### USB UEFI update
 
@@ -287,7 +287,7 @@ Insert USB stick, reboot and press `F12`, choose your USB. Follow the instructio
 
 ### Trusted Platform Module
 
-Laptop has dedicated [TPM](/index.php/Trusted_Platform_Module "Trusted Platform Module") 1.2 chip onboard[[3]](https://www.st.com/en/secure-mcus/st33tpm12lpc.html)[[4]](https://trustedcomputinggroup.org/membership/certification/tpm-certified-products/). It doesn't looks like it can be upgraded to TPM 2.0\. Chip itself disabled by default sometimes, also owner clearing won't appear without *Supervisor password* set:
+Laptop has dedicated [TPM](/index.php/TPM "TPM") 1.2 chip onboard[[3]](https://www.st.com/en/secure-mcus/st33tpm12lpc.html)[[4]](https://trustedcomputinggroup.org/membership/certification/tpm-certified-products/). It doesn't looks like it can be upgraded to TPM 2.0\. Chip itself disabled by default sometimes, also owner clearing won't appear without *Supervisor password* set:
 
 1.  Enter Thinkpad UEFI Setup by pressing `F1`
 2.  Set *Security > Password* > *Supervisor password*

@@ -17,7 +17,7 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Background](#Background)
-    *   [1.1 LVM Building Blocks](#LVM_Building_Blocks)
+    *   [1.1 LVM building blocks](#LVM_building_blocks)
     *   [1.2 Advantages](#Advantages)
     *   [1.3 Disadvantages](#Disadvantages)
     *   [1.4 Getting started](#Getting_started)
@@ -73,9 +73,9 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
 
 ## Background
 
-### LVM Building Blocks
+### LVM building blocks
 
-Logical Volume Management utilizes the kernel's [device-mapper](http://sources.redhat.com/dm/) feature to provide a system of partitions independent of underlying disk layout. With LVM you abstract your storage and have "virtual partitions", making [extending/shrinking](#Resizing_volumes) easier (subject to potential filesystem limitations).
+Logical Volume Management utilizes the kernel's [device-mapper](http://sources.redhat.com/dm/) feature to provide a system of partitions independent of underlying disk layout. With LVM you abstract your storage and have "virtual partitions", making [extending/shrinking](#Resizing_the_logical_volume_and_file_system_separately) easier (subject to potential filesystem limitations).
 
 Virtual partitions allow addition and removal without worry of whether you have enough contiguous space on a particular disk, getting caught up fdisking a disk in use (and wondering whether the kernel is using the old or new partition table), or, having to move other partitions out of the way.
 
@@ -569,7 +569,7 @@ This of course will increase the total number of physical extents on your volume
 
 #### Remove partition from a volume group
 
-If you created a logical volume on the partition, [remove](#Remove_logical_volume) it first.
+If you created a logical volume on the partition, [remove](#Removing_a_logical_volume) it first.
 
 All of the data on that partition needs to be moved to another partition. Fortunately, LVM makes this easy:
 

@@ -11,7 +11,7 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 3.  UEFI loads [EFISTUB](/index.php/EFISTUB "EFISTUB") with *both* kernel+initram signed by user *Image Signing Key*, so no one can tamper it
 4.  Kernel mounts encrypted root and home filesystems ([LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system")), so no one can tamper them, read mentioned private keys, password hashes or user sensitive data
 
-In future, Evil Maid attack can be potentially prevented by using a [TPM](/index.php/Trusted_Platform_Module "Trusted Platform Module").
+In future, Evil Maid attack can be potentially prevented by using a [TPM](/index.php/TPM "TPM").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

@@ -188,13 +188,16 @@ Description=Lock the screen
 Before=sleep.target
 
 [Service]
-#User=user
+User=%I
+Type=forking
 Environment=DISPLAY=:0
-ExecStart=i3lock
+ExecStart=/usr/bin/i3lock -c 000000
 
 [Install]
 WantedBy=sleep.target
 ```
+
+To enable it for a certain user, use `systemctl enable sleep@USERNAME`.
 
 ##### Lid closing
 

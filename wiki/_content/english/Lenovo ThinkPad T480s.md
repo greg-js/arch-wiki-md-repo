@@ -5,13 +5,13 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
-| Fingerprint Sensor | No |
+| [Fingerprint Reader](/index.php/Fingerprint_Reader "Fingerprint Reader") | No |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | Smartcard Reader | Yes |
-| PrivacyGuard | No |
+| PrivacyGuard | Yes |
 
-This article covers the installation and configuration of Arch Linux on a Lenovo T480s laptop. Everything seems to work pretty much out the box.
+This article covers the installation and configuration of Arch Linux on a Lenovo T480s laptop. For the most part things work out-of-the-box, but there are some features that are unavailable.
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
@@ -22,14 +22,16 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
-    *   [1.1 Fingerprint reader](#Fingerprint_reader)
+    *   [1.1 USB-C DisplayPort](#USB-C_DisplayPort)
 *   [2 Powersaving](#Powersaving)
     *   [2.1 SD Card Reader](#SD_Card_Reader)
-*   [3 Thermal Throttling Fix](#Thermal_Throttling_Fix)
-*   [4 USB-C DisplayPort](#USB-C_DisplayPort)
-*   [5 PrivacyGuard](#PrivacyGuard)
-*   [6 Fix freezes/hangs on QT applications (with Intel driver)](#Fix_freezes/hangs_on_QT_applications_(with_Intel_driver))
-*   [7 See also](#See_also)
+*   [3 Known Issues](#Known_Issues)
+    *   [3.1 Fingerprint Reader](#Fingerprint_Reader)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Thermal Throttling](#Thermal_Throttling)
+    *   [4.2 PrivacyGuard](#PrivacyGuard)
+    *   [4.3 Fix freezes/hangs on QT applications (with Intel driver)](#Fix_freezes/hangs_on_QT_applications_(with_Intel_driver))
+*   [5 See also](#See_also)
 
 ## Hardware
 
@@ -88,9 +90,17 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
-### Fingerprint reader
+### USB-C DisplayPort
 
-Fingerprint sensor 06cb:009a is not supported by libfprint right now. There is a project to reverse enginer windows driver - [https://github.com/nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) .
+The following adapters were tested:
+
+	[Dell DA300](https://www.dell.com/en-au/shop/dell-usb-c-mobile-adapter-da300/apd/492-bcjf/pc-accessories)
+
+	Ethernet/HDMI/USB-A/DisplayPort all work. Display output maxes out at 2560x1440@60Hz / 3840x2160@30Hz. 4k@60Hz wasn't possible even with a modeline generated with [cvt](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
+
+	[Moshi USB-C to HDMI Adapter](https://www.moshi.com/en/product/usb-c-to-hdmi-adapter/silver)
+
+	Up to 4k@60Hz Works out of the box with [xrandr](/index.php/Xrandr "Xrandr").
 
 ## Powersaving
 
@@ -119,29 +129,41 @@ echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/bind
 
 ```
 
-## Thermal Throttling Fix
+## Known Issues
 
-Workaround for Linux throttling issues on Lenovo T480 / T480s / X1C6 notebooks as described [here](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/).
+### Fingerprint Reader
+
+The fingerprint sensor `06cb:009a` is not supported by [libfprint](/index.php/Fprint "Fprint"). There is a project to reverse enginer the Windows driver.[[4]](https://github.com/nmikhailov/Validity90)
+
+## Troubleshooting
+
+### Thermal Throttling
+
+There are reported throttling issues for Lenovo T480/T480s/X1C6 notebooks.[[5]](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)
 
 This script forces the CPU package power limit (PL1/2) to 44 W (29 W on battery) and the temperature trip point to 95 'C (85 'C on battery) by overriding default values in MSR and MCHBAR every 5 seconds (30 on battery) to block the Embedded Controller from resetting these values to default.
 
-Install it using the [throttled](https://www.archlinux.org/packages/?name=throttled) package.
+[Install](/index.php/Install "Install") the [throttled](https://www.archlinux.org/packages/?name=throttled) package and [enable](/index.php/Enable "Enable") the `lenovo_fix.service`.[[6]](https://github.com/erpalma/throttled)
 
-[https://github.com/erpalma/throttled](https://github.com/erpalma/throttled)
+### PrivacyGuard
 
-## USB-C DisplayPort
+The PrivacyGuard feature is referred to as *LCD Shadow* [[7]](https://github.com/torvalds/linux/blob/master/Documentation/admin-guide/laptops/thinkpad-acpi.rst#lcd-shadow-control) and was introduced in Linux 5.4.[[8]](https://patchwork.kernel.org/patch/11109239/)
 
-The following adapters were tested
+To enable or turn on the LCD shadow:
 
-[Dell DA300](https://www.dell.com/en-au/shop/dell-usb-c-mobile-adapter-da300/apd/492-bcjf/pc-accessories) - Ethernet/HDMI/USB-A/DisplayPort all work. Display output maxes out at 2560x1440@60Hz / 3840x2160@30Hz. 4k@60Hz wasn't possible even with a modeline generated with cvt.
+```
+echo 1 | sudo tee /proc/acpi/ibm/lcdshadow
 
-[Moshi USB-C to HDMI Adapter](https://www.moshi.com/en/product/usb-c-to-hdmi-adapter/silver) - Up to 4k@60Hz Works out of the box with xrandr
+```
 
-## PrivacyGuard
+Conversely, use `0` to disable it:
 
-This optional feature is currently not yet supported by the vanilla kernel but will be available in 5.4\. There is a [kernel patch available](https://patchwork.kernel.org/patch/11109239/) for more information and kernels prior to 5.4.
+```
+echo 0 | sudo tee /proc/acpi/ibm/lcdshadow
 
-## Fix freezes/hangs on QT applications (with Intel driver)
+```
+
+### Fix freezes/hangs on QT applications (with Intel driver)
 
 See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 

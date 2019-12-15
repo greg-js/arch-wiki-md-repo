@@ -14,8 +14,9 @@ The official clients are open-source but the code for recent versions is not alw
     *   [1.3 Command-line clients](#Command-line_clients)
     *   [1.4 Web-based clients](#Web-based_clients)
 *   [2 Tips and tricks](#Tips_and_tricks)
-    *   [2.1 Telegram resources about Arch Linux](#Telegram_resources_about_Arch_Linux)
-    *   [2.2 Unread messages counter for Telegram Desktop](#Unread_messages_counter_for_Telegram_Desktop)
+    *   [2.1 Wayland support](#Wayland_support)
+    *   [2.2 Telegram resources about Arch Linux](#Telegram_resources_about_Arch_Linux)
+    *   [2.3 Unread messages counter for Telegram Desktop](#Unread_messages_counter_for_Telegram_Desktop)
 
 ## Installation
 
@@ -60,6 +61,10 @@ Third-party clients:
 *   Use [Telegram Chrome app](https://telegram.org/dl/webogram/chromeapp) for [Chromium](/index.php/Chromium "Chromium"), to connect to Telegram in your browser via web interface.
 
 ## Tips and tricks
+
+### Wayland support
+
+Official [Telegram binary](https://github.com/telegramdesktop/tdesktop/releases) does not support Wayland, but [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) from Arch Linux does. See [Wayland#Qt 5](/index.php/Wayland#Qt_5 "Wayland") for instructions.
 
 ### Telegram resources about Arch Linux
 

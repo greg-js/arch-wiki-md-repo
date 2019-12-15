@@ -2,9 +2,9 @@ Related articles
 
 *   [iptables](/index.php/Iptables "Iptables")
 
-[nftables](http://netfilter.org/projects/nftables/) is a netfilter project that aims to replace the existing {ip,ip6,arp,eb}tables framework. It provides a new packet filtering framework, a new user-space utility (nft), and a compatibility layer for {ip,ip6}tables. It uses the existing hooks, connection tracking system, user-space queueing component, and logging subsystem of netfilter.
+[nftables](https://netfilter.org/projects/nftables/) is a netfilter project that aims to replace the existing {ip,ip6,arp,eb}tables framework. It provides a new packet filtering framework, a new user-space utility (nft), and a compatibility layer for {ip,ip6}tables. It uses the existing hooks, connection tracking system, user-space queueing component, and logging subsystem of netfilter.
 
-It consists of three main components: a kernel implementation, the libnl netlink communication and the nftables user-space front-end. The kernel provides a netlink configuration interface, as well as run-time rule-set evaluation, libnl contains the low-level functions for communicating with the kernel, and the nftables front-end is what the user interacts with via nft.
+It consists of three main components: a kernel implementation, the libnl [netlink](https://en.wikipedia.org/wiki/Netlink "wikipedia:Netlink") communication and the nftables user-space front-end. The kernel provides a netlink configuration interface, as well as run-time rule-set evaluation, libnl contains the low-level functions for communicating with the kernel, and the nftables front-end is what the user interacts with via nft.
 
 You can also visit the [official nftables wiki page](https://wiki.nftables.org/wiki-nftables/index.php/Main_Page) for more information.
 
@@ -60,7 +60,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 
 ## Usage
 
-*nftables* makes a distinction between temporary rules made in the commandline and permanent ones loaded from or saved to a file. The default file is `/etc/nftables.conf` which already contains a simple ipv4/ipv6 firewall table named "inet filter".
+*nftables* makes a distinction between temporary rules made in the command line and permanent ones loaded from or saved to a file. The default file is `/etc/nftables.conf` which already contains a simple IPv4/IPv6 firewall table named "inet filter".
 
 To use it [start/enable](/index.php/Start/enable "Start/enable") the `nftables.service`.
 
@@ -112,7 +112,7 @@ Tables hold [#Chains](#Chains). Unlike tables in iptables, there are no built-in
 
 To create one rule that applies to both IPv4 and IPv6, use `inet`. `inet` allows for the unification of the `ip` and `ip6` families to make defining rules for both easier.
 
-See the section `ADDRESS FAMILIES` in [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete description of address families.
+See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8#ADDRESS_FAMILIES) for a complete description of address families.
 
 In all of the following, `*family*` is optional, and if not specified is set to `ip`.
 
@@ -207,9 +207,9 @@ To add a base chain specify hook and priority values:
 
 `*type*` can be `filter`, `route`, or `nat`.
 
-For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a list of hooks for other families.
+For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8#ADDRESS_FAMILIES) for a list of hooks for other families.
 
-`*priority*` takes an integer value. Chains with lower numbers are processed first and can be negative. [[4]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
+`*priority*` takes either a priority name or an its integer value. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8#CHAINS) for a list of standard priority names and values. Chains with lower numbers are processed first and can be negative. [[4]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
 
 For example, to add a base chain that filters input packets:
 
@@ -605,7 +605,7 @@ Alternatively you could choose only one `iifname` statement, such as for the sin
 
 ### Masquerading
 
-nftables has a special keyword `masquerade` "where the source address is automagically set to the address of the output interface" ([source](http://wiki.nftables.org/wiki-nftables/index.php/Performing_Network_Address_Translation_%28NAT%29#Masquerading)). This is particularly useful for situations in which the IP address of the interface is unpredictable or unstable, such as the upstream interface of routers connecting to many ISPs. Without it, the Network Address Translation rules would have to be updated every time the IP address of the interface changed.
+nftables has a special keyword `masquerade` "where the source address is automagically set to the address of the output interface" ([source](https://wiki.nftables.org/wiki-nftables/index.php/Performing_Network_Address_Translation_%28NAT%29#Masquerading)). This is particularly useful for situations in which the IP address of the interface is unpredictable or unstable, such as the upstream interface of routers connecting to many ISPs. Without it, the Network Address Translation rules would have to be updated every time the IP address of the interface changed.
 
 To use it:
 
@@ -618,7 +618,7 @@ Example for a machine with two interfaces: LAN connected to `enp3s0`, and public
 ```
 table inet nat {
   chain prerouting {
-    type nat hook prerouting priority 0;
+    type nat hook prerouting priority -100;
   }
   chain postrouting {
     type nat hook postrouting priority 100;
@@ -637,7 +637,7 @@ This example will forward ports 22 and 80 to `*destination_ip*`. You will need t
 ```
 table ip nat {
   chain prerouting {
-    type nat hook prerouting priority 0;
+    type nat hook prerouting priority -100;
 
     tcp dport { ssh, http } dnat to *destination_ip*
   }
@@ -815,4 +815,4 @@ This works by marking packets if docker is active, and accepting the packets in 
 *   [First release of nftables](https://lwn.net/Articles/324251/)
 *   [nftables quick howto](https://home.regit.org/netfilter-en/nftables-quick-howto/)
 *   [The return of nftables](https://lwn.net/Articles/564095/)
-*   [What comes after ‘iptables’? Its successor, of course: `nftables`](http://developers.redhat.com/blog/2016/10/28/what-comes-after-iptables-its-successor-of-course-nftables/)
+*   [What comes after ‘iptables’? Its successor, of course: `nftables`](https://developers.redhat.com/blog/2016/10/28/what-comes-after-iptables-its-successor-of-course-nftables/)

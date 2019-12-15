@@ -15,7 +15,7 @@ If you ever tried to set up a touchscreen device in linux, you might have notice
 *   [3 evdev drivers](#evdev_drivers)
     *   [3.1 Calibration](#Calibration)
 *   [4 Using a touchscreen in a multi-head setup](#Using_a_touchscreen_in_a_multi-head_setup)
-    *   [4.1 Use xrandr-watch-git to automate map-to-output](#Use_xrandr-watch-gitAUR_to_automate_map-to-output)
+    *   [4.1 Using xrandr-watch-git to automate map-to-output](#Using_xrandr-watch-git_to_automate_map-to-output)
 *   [5 Touchegg](#Touchegg)
 *   [6 Firefox](#Firefox)
 
@@ -113,24 +113,17 @@ xinput --map-to-output 'Serial Wacom Tablet WACf004 eraser' LVDS1
 
 You can automate this by putting these commands in your `~/.xinitrc` or similar. The mapping will be lost if the touchscreen is disconnected and re-connected, for example, when switching monitors via a KVM. In that case it is better to use a udev rule. The [Calibrating Touchscreen](/index.php/Calibrating_Touchscreen "Calibrating Touchscreen") page has an example udev rule for the case when a transformation matrix has been calculated manually and needs to be applied automatically.
 
-### Use [xrandr-watch-git](https://aur.archlinux.org/packages/xrandr-watch-git/) to automate `map-to-output`
+### Using xrandr-watch-git to automate map-to-output
 
-There are [xrandr](/index.php/Xrandr "Xrandr") events we can capture using this little [nodejs](/index.php/Nodejs "Nodejs") script, after installing [xrandr-watch-git](https://aur.archlinux.org/packages/xrandr-watch-git/), create a script `~/.xrandr-changed` with execution permission to perform `map-to-output`, for example:
+There are [xrandr](/index.php/Xrandr "Xrandr") events we can capture from a script. Install [xrandr-watch-git](https://aur.archlinux.org/packages/xrandr-watch-git/), create a script `~/.xrandr-changed` with execution permission to perform `map-to-output`, for example:
 
 ```
 #!/bin/sh
-xinput map-to-output "Wacom HID 4861 Finger touch" "eDP1"
+xinput --map-to-output "Wacom HID 4861 Finger touch" "eDP1"
 
 ```
 
-and start, test and enable the service:
-
-```
-systemctl --user start xrandr-watcher.service
-journalctl --user-unit=xrandr-watcher.service -f # change screen setting to see if it is working
-systemctl --user enable xrandr-watcher.service
-
-```
+and start, test and enable the [systemd/User](/index.php/Systemd/User "Systemd/User") service `xrandr-watcher.service`.
 
 ## Touchegg
 

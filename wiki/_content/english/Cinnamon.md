@@ -11,6 +11,7 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
+    *   [1.1 Cinnamon applications](#Cinnamon_applications)
 *   [2 Starting](#Starting)
     *   [2.1 Graphical log-in](#Graphical_log-in)
     *   [2.2 Starting Cinnamon manually](#Starting_Cinnamon_manually)
@@ -45,6 +46,17 @@ Related articles
 Cinnamon can be [installed](/index.php/Install "Install") with the package [cinnamon](https://www.archlinux.org/packages/?name=cinnamon).
 
 **Note:** If you have an Intel GPU, make sure you are [not using xf86-video-intel](/index.php/Intel_graphics#Installation "Intel graphics") with Cinnamon as it may freeze at random times otherwise, but you can still move the mouse. Use the [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4) driver instead by removing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (KDE also [recommends this](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)).
+
+### Cinnamon applications
+
+Cinnamon introduces X-Apps which are based on GNOME Core Applications but are changed to work across Cinnamon, MATE and XFCE; they have the traditional user interface (UI).
+
+| Application | GNOME | Cinnamon |
+| text editor | Gedit/Pluma | [xed](https://www.archlinux.org/packages/?name=xed) |
+| image viewer | Eye of GNOME | [xviewer](https://aur.archlinux.org/packages/xviewer/) |
+| document viewer | Evince/Atril | [xreader](https://www.archlinux.org/packages/?name=xreader) |
+| media player | Totem | [xplayer](https://aur.archlinux.org/packages/xplayer/) |
+| image organizer | gThumb | [pix](https://aur.archlinux.org/packages/pix/) |
 
 ## Starting
 

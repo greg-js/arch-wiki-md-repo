@@ -474,9 +474,12 @@ Some browsers have support for Kerberos protocol but disable it by default. Here
 
 Chromium needs to be run with a command line parameter that specifies a list of sites where Kerberos authentication is allowed. The easiest way is to add persistent flag to the config file:
 
- `~/.config/chromium-flags.conf` 
+ `/etc/chromium/policies/managed/test_policy.json` 
 ```
---auth-server-whitelist='*.foo.com'
+{
+  "AuthServerWhitelist": "*.mycompany.com",
+  "DisableAuthNegotiateCnameLookup": true
+}
 
 ```
 

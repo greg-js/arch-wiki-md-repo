@@ -1085,7 +1085,7 @@ sendo `*aa:bb:cc:dd:ee:ff*` o endereço MAC desta NIC. O endereço MAC pode ser 
 
 ### Modem 3G não detectado
 
-Veja [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
+Veja [USB 3G Modem#NetworkManager](/index.php/USB_3G_Modem#NetworkManager "USB 3G Modem").
 
 ### Desligando WLAN em laptops
 

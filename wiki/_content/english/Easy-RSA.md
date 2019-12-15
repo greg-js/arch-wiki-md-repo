@@ -48,7 +48,7 @@ On the **CA machine**, install [easy-rsa](https://www.archlinux.org/packages/?na
 
 ```
 
-Starting from OpenVPN 2.4, one can also use elliptic curves for TLS connections (e.g. tls-cipher TLS-ECDHE-ECDSA-WITH-AES-256-GCM-SHA384). Elliptic curve cryptography provides more security and eliminates the need for a DH parameters file. See [this forum post](https://forums.openvpn.net/viewtopic.php?f=4&t=23227) and [this blog post](https://www.maths.tcd.ie/~fionn/misc/ec_vpn.php).
+Starting from OpenVPN 2.4, one can also use elliptic curves for TLS connections (e.g. tls-cipher TLS-ECDHE-ECDSA-WITH-AES-256-GCM-SHA384). Elliptic curve cryptography provides more security and eliminates the need for a Diffie-Hellman parameters file. See [[2]](https://forums.openvpn.net/viewtopic.php?f=4&t=23227) and [[3]](https://www.maths.tcd.ie/~fionn/misc/ec_vpn.php).
 
 Append the following lines to `/etc/easy-rsa/vars` to make Easy-RSA use elliptic curves:
 
@@ -124,7 +124,7 @@ This will create two files:
 
 ### Diffie-Hellman (DH) parameters file
 
-If you are using TLS with elliptic curves, skip this step.
+**Note:** If you are using TLS with elliptic curves, skip this step.
 
 On the **OpenVPN server machine**, create the initial dh.pem file:
 
@@ -133,7 +133,7 @@ On the **OpenVPN server machine**, create the initial dh.pem file:
 
 ```
 
-**Note:** Although values higher than 2048 (4096 for example) may be used, they take considerably more time to generate and offer little benefit in security but advisable to have the DH prime number length to match the length of the RSA key. See [[2]](https://community.openvpn.net/openvpn/wiki/GettingStartedwithOVPN#Configuringencryption)
+**Note:** Although values higher than 2048 (4096 for example) may be used, they take considerably more time to generate and offer little benefit in security but advisable to have the DH prime number length to match the length of the RSA key. See [[4]](https://community.openvpn.net/openvpn/wiki/GettingStartedwithOVPN#Configuringencryption)
 
 ### Hash-based Message Authentication Code (HMAC) key
 

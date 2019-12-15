@@ -41,6 +41,7 @@
         *   [6.9.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
     *   [6.10 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
     *   [6.11 USB DAC not working](#USB_DAC_not_working)
+    *   [6.12 Virtual file system support](#Virtual_file_system_support)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Accessing Kodi logs](#Accessing_Kodi_logs)
     *   [7.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
@@ -104,8 +105,9 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 
 **Note:**
 
-*   If `kodi.service` fails to start, see [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
-*   The home directory for the created `kodi` user is `/var/lib/kodi/`.
+*   Make sure to use `graphical.target` as [default boot target](/index.php/Systemd#Change_default_target_to_boot_into "Systemd") to start Kodi at boot time.
+*   If `kodi.service` fails to start, see [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for possible workarounds.
+*   The home/userdata directory for the created `kodi` user is `/var/lib/kodi/`.
 
 ### Xsession with LightDM
 
@@ -561,6 +563,10 @@ to
 <processquality default="**false**">**100**</processquality>
 
 ```
+
+### Virtual file system support
+
+Kodi provides addons for accessing various virtual file systems from within Kodi. RAR archives can be accessed using [kodi-addon-vfs-rar](https://aur.archlinux.org/packages/kodi-addon-vfs-rar/). SFTP shares can be accessed using [kodi-addon-vfs-sftp](https://aur.archlinux.org/packages/kodi-addon-vfs-sftp/). Super Audio CD ISO files can be access using [kodi-addon-vfs-sacd](https://aur.archlinux.org/packages/kodi-addon-vfs-sacd/). Each of these addons must be enabled within Kodi's addon manager in order to be utilized.
 
 ## Troubleshooting
 

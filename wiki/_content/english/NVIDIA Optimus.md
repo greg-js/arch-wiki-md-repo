@@ -45,7 +45,7 @@ There are several methods available:
 *   [#Use Intel graphics only](#Use_Intel_graphics_only) - saves power, because NVIDIA GPU will be completely powered off.
 *   [#Use NVIDIA graphics only](#Use_NVIDIA_graphics_only) - gives more performance than Intel graphics, but drains more battery (which is not welcome for mobile devices). This utilizes the same underlying process as the [optimus-manager](#Using_optimus-manager) and [nvidia-xrun](#Using_nvidia-xrun) options, it should be utilized for troubleshooting and verifying general functionality, before opting for one of the more automated approaches.
 *   Using both (use NVIDIA GPU when needed and keep it powered off to save power):
-    *   [#Using PRIME render offload](#Using_PRIME_render_offload) - Official method supported by NVIDIA
+    *   [#Using PRIME render offload](#Using_PRIME_render_offload) - official method supported by NVIDIA.
     *   [#Using optimus-manager](#Using_optimus-manager) - switches graphics with a single command (logout and login required to take effect). It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.
     *   [#Using nvidia-xrun](#Using_nvidia-xrun) - run separate X session on different TTY with NVIDIA graphics. It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.
     *   [#Using Bumblebee](#Using_Bumblebee) - provides Windows-like functionality by allowing to run selected applications with NVIDIA graphics while using Intel graphics for everything else. Has significant performance issues.
@@ -57,7 +57,7 @@ There are several methods available:
 
 If you only care to use a certain GPU without switching, check the options in your system's BIOS. There should be an option to disable one of the cards. Some laptops only allow disabling of the discrete card, or vice-versa, but it is worth checking if you only plan to use just one of the cards.
 
-If your BIOS does not allow to disable Nvidia graphics, you can disable it from the Linux itself. See [Hybrid graphics#Fully Power Down Discrete GPU](/index.php/Hybrid_graphics#Fully_Power_Down_Discrete_GPU "Hybrid graphics").
+If your BIOS does not allow to disable Nvidia graphics, you can disable it from the Linux kernel itself. See [Hybrid graphics#Fully Power Down Discrete GPU](/index.php/Hybrid_graphics#Fully_Power_Down_Discrete_GPU "Hybrid graphics").
 
 ## Use NVIDIA graphics only
 

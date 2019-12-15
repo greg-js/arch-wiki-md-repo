@@ -29,6 +29,7 @@ Undervolting is a process where voltage to CPU is reduced in order to reduce its
 *   [PHC](/index.php/PHC "PHC") - a tool to undervolt some old generation Intel and AMD processors. **Not** compatible with `intel_pstate` [CPU frequency driver](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling").
 *   [#intel-undervolt](#intel-undervolt) - a tool for undervolting Haswell and newer Intel CPU using MSR. Compatible with `intel_pstate`.
 *   [#amdctl](#amdctl) - a tool for undervolting K10 and newer AMD CPUs.
+*   [K10ctl](/index.php/K10ctl "K10ctl") - overclock and undervolt an AMD K10 processor (e.g. Phenom, Phenom II) by changing its P-States.
 
 ## Tools
 

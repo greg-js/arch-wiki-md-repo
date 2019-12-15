@@ -146,6 +146,8 @@ ZFS is considered a "zero administration" filesystem by its creators; therefore,
 
 ### Automatic Start
 
+Currently, by default, the kernel module is not loaded at boot (see more details in [https://github.com/zfsonlinux/zfs/issues/6083](https://github.com/zfsonlinux/zfs/issues/6083)). To automatically load `zfs` module on boot, see [Kernel_module#Automatic_module_loading_with_systemd](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module").
+
 For ZFS to live by its "zero administration" namesake, `zfs-import-cache.service` must be enabled to import the pools and `zfs-mount.service` must be enabled to mount the filesystems available in the pools. A benefit to this is that it is not necessary to mount ZFS filesystems in `/etc/fstab`. `zfs-import-cache.service` imports the zfs pools reading the file `/etc/zfs/zpool.cache`.
 
 For each [imported pool](#Importing_a_pool_created_by_id) you want automatically imported by `zfs-import-cache.service` execute:

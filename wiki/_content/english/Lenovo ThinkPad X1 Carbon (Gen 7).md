@@ -25,22 +25,22 @@ ThinkPad X1 Carbon 7th
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
 | [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
 | Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
-| Mobile broadband Fibocom | No¹ | ? |
+| Mobile broadband Fibocom | Yes¹ | ? |
 | Audio | Yes | snd_hda_intel |
 | Microphone | No⁴ | snd_sof, snd_sof_intel_hda |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |
-| [Fingerprint reader](/index.php/Fprint "Fprint") | No² | ? |
+| [Fingerprint reader](/index.php/Fprint "Fprint") | Yes² | ? |
 | [Power management](/index.php/Power_management "Power management") | Yes³ | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | Keyboard backlight | Yes | thinkpad_acpi |
 | Function/Multimedia keys | Yes | ? |
 | 
 
-1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
-2.  An official driver and a reverse engineered driver are in the works [[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) (*06cb:00bd*).
-3.  S3 suspend requires changes to BIOS settings, see section on [enabling S3](#Enabling_S3).
+1.  The Fibocom LTE module has Linux support once switched to USB mode; see [[1]](https://forums.lenovo.com/t5/Other-Linux-Discussions/How-To-Configure-X1-Carbon-Gen-7-on-Debian-FingerPrint-4G-Modem/td-p/4550327) and [[2]](https://github.com/abrasive/xmm7360)
+2.  An official driver and a reverse engineered driver are in the works [[3]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) (*06cb:00bd*).
+3.  S3 suspend requires changes to BIOS settings, see section on [#Sleep/Suspend](#Sleep/Suspend).
 4.  The internal microphone doesn't work on versions of the [linux](https://www.archlinux.org/packages/?name=linux) kernel before 5.3\. On version 5.3 and newer the SOF firmware can be enabled, see [Talk#Microphone](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
 
  |

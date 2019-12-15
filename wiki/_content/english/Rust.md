@@ -155,7 +155,7 @@ You can easily cross-compile using rustup. rustup supports many crosscompile tar
 For instance, if you want to install rust using the stable channel for windows, using the gnu compiler, you will need to do :
 
 ```
-$ rustup install stable-x86_64-pc-windows-gnu
+$ rustup toolchain install stable-x86_64-pc-windows-gnu
 
 ```
 
@@ -167,7 +167,7 @@ In this section, `$ARCH` is the target architecture (either `x86_64` or `i686`).
 
 1.  [Install](/index.php/Install "Install") [mingw-w64-gcc-base](https://aur.archlinux.org/packages/mingw-w64-gcc-base/)
 2.  [Install](/index.php/Install "Install") [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) (select "y" to replace when conflict appears) and [wine](https://www.archlinux.org/packages/?name=wine)
-3.  If you are using rustup, you can run `rustup install stable-$ARCH-pc-windows-gnu` and `rustup target add $ARCH-pc-windows-gnu` to install rust and rust standard library for your architecture. If you are not using rustup, install a copy of rust's standard library for windows in your rustlib directory (`/usr/local/lib/rustlib` if you're using [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) and `/usr/lib/rustlib` if you're using the official [rust](https://www.archlinux.org/packages/?name=rust) package). The easiest way to do this is to download the rust installer for windows for your target architecture, install it under wine (`wine start my-rust-installer.msi`) and copy `$INSTALL_DIR/lib/rustlib/$ARCH-pc-windows-gnu` into your rustlib directory.
+3.  If you are using rustup, you can run `rustup toolchain install stable-$ARCH-pc-windows-gnu` and `rustup target add $ARCH-pc-windows-gnu` to install rust and rust standard library for your architecture. If you are not using rustup, install a copy of rust's standard library for windows in your rustlib directory (`/usr/local/lib/rustlib` if you're using [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) and `/usr/lib/rustlib` if you're using the official [rust](https://www.archlinux.org/packages/?name=rust) package). The easiest way to do this is to download the rust installer for windows for your target architecture, install it under wine (`wine start my-rust-installer.msi`) and copy `$INSTALL_DIR/lib/rustlib/$ARCH-pc-windows-gnu` into your rustlib directory.
 4.  Finally, tell cargo where to find the MinGW-w64 gcc/ar by adding the following to your `~/.cargo/config`:
 
  `~/.cargo/config` 

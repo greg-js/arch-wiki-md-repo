@@ -73,9 +73,7 @@ GPU-intensive applications should be rendered on the more powerful discrete card
 
 **Note:** This setting is no longer necessary when using the default intel/modesetting driver from the official repos, as they have DRI3 enabled by default and will therefore automatically make these assignments. Explicitly setting them again does no harm, though.
 
-**Note:** GPU offloading is not supported by the closed-source drivers. To get PRIME to work you have to use the discrete card as the primary GPU (for the NVidia driver this is no longer the case, for more info see [here](https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/primerenderoffload.html))
-
-**Note:** Since Xorg 1.20.6 and NVIDIA 440.31, GPU offloading for closed-source NVIDIA drivers is supported by official packages.
+**Note:** GPU offloading is not supported by the closed-source drivers. To get PRIME to work you have to use the discrete card as the primary GPU (for the NVidia driver this is no longer the case, for more info see [#PRIME render offload](#PRIME_render_offload) bellow.)
 
 Example:
 
@@ -107,29 +105,16 @@ NVIDIA driver since [version 435.17](https://download.nvidia.com/XFree86/Linux-x
 
 It needs a specific set of patches to the [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) that are present since version 1.20.6-1 on Arch.
 
-As per the [official documentation](https://download.nvidia.com/XFree86/Linux-x86_64/440.36/README/primerenderoffload.html), it only works with the modesetting version of the Intel driver. Refer to [Intel_graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") for more information.
+As per the [official documentation](https://download.nvidia.com/XFree86/Linux-x86_64/440.36/README/primerenderoffload.html), it only works with the modesetting driver over Intel graphics card. Refer to [Intel graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") for more information.
 
-If the machine is configured to boot using the Intel iGPU card, the only configuration required should be a [Xorg#Using_.conf_files](/index.php/Xorg#Using_.conf_files "Xorg") snippet containing the following:
+The [nvidia-prime](https://www.archlinux.org/packages/?name=nvidia-prime) package provides the [Xorg](/index.php/Xorg "Xorg") configuration necessary and also a script that can be used to run programs on the NVIDIA card.
 
- `/etc/X11/xorg.conf.d/20-nvidia.conf` 
-```
-Section "ServerLayout"
-  Identifier "layout"
-  Option "AllowNVIDIAGPUScreens"
-EndSection
+**Note:** Until [FS#64805](https://bugs.archlinux.org/task/64805) is resolved, it is quite possible that automatic configuration will not work, even with [nvidia-prime](https://www.archlinux.org/packages/?name=nvidia-prime) installed. In the meantime, you can remove the `Option "PrimaryGPU" "yes"` line from `/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf` manually. It **will** be overwritten on each [nvidia](https://www.archlinux.org/packages/?name=nvidia) package update.
 
-```
-
-If, for some reason automatic configuration does not work, it might be necessary to explicitly configure X with a [Xorg#Using_xorg.conf](/index.php/Xorg#Using_xorg.conf "Xorg") file:
+If, for some reason automatic configuration **still** does not work, it might be necessary to explicitly configure X with a [Xorg#Using xorg.conf](/index.php/Xorg#Using_xorg.conf "Xorg") file:
 
  `/etc/X11/xorg.conf` 
 ```
-Section "ServerLayout"
-  Identifier "layout"
-  Screen 0 "iGPU"
-  Option "AllowNVIDIAGPUScreens"
-EndSection
-
 Section "Device"
   Identifier "iGPU"
   Driver "modesetting"
@@ -147,16 +132,15 @@ EndSection
 
 ```
 
-In some cases, it might be necessary to also include the appropriate BusID for the devices, as per [Xorg#More_than_one_graphics_card](/index.php/Xorg#More_than_one_graphics_card "Xorg").
+In some cases, it might even be necessary to also include the appropriate `BusID` for the iGPU and dGPU devices in the configuration above, as per [Xorg#More than one graphics card](/index.php/Xorg#More_than_one_graphics_card "Xorg").
 
-The NVIDIA proprietary driver uses some specialized GLX extensions to implement its GPU offloading features, therefore the standard `DRI_PRIME` environment variable won't work for it. Try the following if you want to run a specific application on NVIDIA discrete cards:
-
-```
-$ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL renderer"
+To run a program on the NVIDIA card you can use the prime-run command:
 
 ```
+$ prime-run glxinfo | grep "OpenGL renderer"
+$ prime-run vulkaninfo
 
-Refer to the documentation for examples of more fine grained control.
+```
 
 ## Reverse PRIME
 

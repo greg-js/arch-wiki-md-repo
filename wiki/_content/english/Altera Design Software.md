@@ -345,7 +345,7 @@ For Quartus Prime Lite 17.1, or probably other versions, the installation proces
 
 ##### Eclipse IDE for NIOSII is Slow or Unresponsive
 
-Try disabling GTK3 in eclipse.ini in your altera folder [https://wiki.archlinux.org/index.php/Eclipse#Disable_GTK_3](https://wiki.archlinux.org/index.php/Eclipse#Disable_GTK_3)
+Try disabling GTK3 in eclipse.ini in your altera folder [Eclipse#Disable GTK 3](/index.php/Eclipse#Disable_GTK_3 "Eclipse")
 
 ## ModelSim-Altera Edition
 

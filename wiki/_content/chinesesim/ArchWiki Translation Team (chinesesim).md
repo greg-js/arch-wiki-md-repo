@@ -181,6 +181,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [GNOME (简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") | 完成 | skywet |
 | [GRUB (简体中文)](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") | 完成 | Armodeniz |
 | [GRUB/Tips and tricks (简体中文)](/index.php/GRUB/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB/Tips and tricks (简体中文)") | 完成 | Armodeniz |
+| [Java (简体中文)](/index.php/Java_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Java (简体中文)") | 翻译中 | CaCaCarrot | 无 |
 | [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") | 过期 |
 | [LAMP (简体中文)](/index.php/LAMP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LAMP (简体中文)") | 完成 | Liuzhengyi | 勘误中 |
 | [LibreOffice (简体中文)](/index.php/LibreOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LibreOffice (简体中文)") | 完成 | qqbzg | 勘误中 |
@@ -194,11 +195,13 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Opera (简体中文)](/index.php/Opera_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Opera (简体中文)") | 未翻译 | Bobby | 请优先翻译此文 |
 | [Pacman GUI Frontends (简体中文)](/index.php/Pacman_GUI_Frontends_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman GUI Frontends (简体中文)") | 过期 | 无 | 无 |
 | [Pidgin (简体中文)](/index.php/Pidgin_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pidgin (简体中文)") | 进行中 | Cael | 无 |
+| [Python打包指引 (简体中文)](/index.php/Python%E6%89%93%E5%8C%85%E6%8C%87%E5%BC%95_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python打包指引 (简体中文)") | 翻译中 | SherlockHolo | 无 |
 | [ranger (简体中文)](/index.php/Ranger_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ranger (简体中文)") | 完成 | Jason Zhang | 完善中 |
 | [Raspberry Pi (简体中文)](/index.php/Raspberry_Pi_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Raspberry Pi (简体中文)") | 翻译中 | Mithrandir |
 | [Reporting bug guidelines (简体中文)](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)") | 完成 | 无 | 无 |
 | [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") | 完成 | Arisaka | 无 |
 | [Smart Common Input Method platform (简体中文)](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") | 过期 | 无 | 无 |
+| [Steam (简体中文)](/index.php/Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Steam (简体中文)") | 过期 | C0n5t4ntK | 翻译中 |
 | [Systemd-timesyncd (简体中文)](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | 无 | 无 |
 | [TLP (简体中文)](/index.php/TLP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "TLP (简体中文)") | 完成 | Skywet | 持续更新中 |
 | [Tomcat (简体中文)](/index.php/Tomcat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Tomcat (简体中文)") | 完成 | Starwing117 | 持续更新中 |
@@ -208,5 +211,3 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Xfce (简体中文)](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)") | 完成 | 无 | 无 |
 | [Xmonad (简体中文)](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xmonad (简体中文)") | 过期 | 无 | 无 |
 | [Xrandr (简体中文)](/index.php/Xrandr_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xrandr (简体中文)") | 过期 | 无 | 无 |
-| [Python打包指引 (简体中文)](/index.php/Python%E6%89%93%E5%8C%85%E6%8C%87%E5%BC%95_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python打包指引 (简体中文)") | 翻译中 | SherlockHolo | 无 |
-| [Java (简体中文)](/index.php/Java_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Java (简体中文)") | 翻译中 | CaCaCarrot | 无 |

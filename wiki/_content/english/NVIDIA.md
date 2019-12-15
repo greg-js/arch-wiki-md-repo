@@ -305,8 +305,8 @@ Section "Device"
     VendorName     "NVIDIA Corporation"
 
     #refer to the link below for more information on each of the following options.
-    Option         "HorizSync"          "DFP-0: 28-33; DFP-1 28-33"
-    Option         "VertRefresh"        "DFP-0: 43-73; DFP-1 43-73"
+    Option         "HorizSync"          "DFP-0: 28-33; DFP-1: 28-33"
+    Option         "VertRefresh"        "DFP-0: 43-73; DFP-1: 43-73"
     Option         "MetaModes"          "1920x1080, 1920x1080"
     Option         "ConnectedMonitor"   "DFP-0, DFP-1"
     Option         "MetaModeOrientation" "DFP-1 LeftOf DFP-0"

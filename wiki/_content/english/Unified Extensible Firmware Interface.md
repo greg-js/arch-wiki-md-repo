@@ -308,7 +308,7 @@ Shell> bcfg boot dump -v
 To add a boot menu entry for rEFInd (for example) as 4th (numbering starts from zero) option in the boot menu:
 
 ```
-Shell> bcfg boot add 3 FS0:\EFI\refind\refind_x64.efi "rEFInd"
+Shell> bcfg boot add 3 FS0:\EFI\refind\refind_x64.efi "rEFInd Boot Manager"
 
 ```
 

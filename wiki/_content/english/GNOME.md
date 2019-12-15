@@ -192,12 +192,7 @@ The configuration is usually performed user-specific, this section does not cove
 
 #### Color
 
-The daemon `colord` reads the display's EDID and extracts the appropriate color profile. Most color profiles are accurate and no setup is required; however for those that are not accurate, or for older displays, color profiles can be put in `~/.local/share/icc/` and directed to. To change e.g. the background color to use
-
-```
-$ gsettings set org.gnome.desktop.background primary-color '#000000'
-
-```
+The daemon `colord` reads the display's EDID and extracts the appropriate color profile. Most color profiles are accurate and no setup is required; however for those that are not accurate, or for older displays, color profiles can be put in `~/.local/share/icc/` and directed to.
 
 #### Night Light
 

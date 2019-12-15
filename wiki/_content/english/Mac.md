@@ -1317,6 +1317,15 @@ The startup chime volume is controlled by the EFI variable *SystemAudioVolume-7c
 
 ```
 
+Bear in mind that the file may have the immutable bit set by default, which will prevent even root from overwriting the file. See [File permissions and attributes#chattr_and_lsattr](/index.php/File_permissions_and_attributes#chattr_and_lsattr "File permissions and attributes"). To remove it, issue the following:
+
+```
+# chattr -i /sys/firmware/efi/efivars/SystemAudioVolume-7c436110-ab2a-4bbb-a880-fe41995c9f82
+
+```
+
+After that, run the `printf` command and it should overwrite the file properly. Verify the file's contents and then set the immutable bit again with `chattr +i` once satisfied.
+
 Alternatively, you can use a OS X install disk to mute the chime. Boot from it, select language, then click *Utilities > Terminal*, and enter
 
 ```

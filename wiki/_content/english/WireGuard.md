@@ -47,9 +47,12 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [wireguard-lts](https://www.archlinux.org/packages/?name=wireguard-lts) for the LTS [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
     *   [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) for the DKMS variant for other [kernels](/index.php/Kernel "Kernel").
 
-**Note:** As of November 2019, it is looking like WireGuard could be [mainlined](https://www.phoronix.com/scan.php?page=news_item&px=WireGuard-RFC-Looking-Like-5.6) as soon as kernel version 5.6.
+**Note:** WireGuard has been merged into net-next and is scheduled to be mainlined in kernel version 5.6\. [[2]](https://lists.zx2c4.com/pipermail/wireguard/2019-December/004704.html)
 
-**Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for setting up WireGuard interfaces since version 237\. See [#Using systemd-networkd](#Using_systemd-networkd) for details.
+**Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager "NetworkManager") both have native support for setting up WireGuard interfaces, they only require the kernel module.
+
+*   For for details on systemd-networkd, see [#Using systemd-networkd](#Using_systemd-networkd).
+*   For NetworkManager, read the [WireGuard in NetworkManager blog post](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
 
 ## Usage
 
@@ -496,7 +499,7 @@ Luckily, [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-to
 
 One needs to run the `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh /etc/wireguard/wg.conf` periodically to recover from an endpoint that has changed its IP.
 
-One way of doing so is by updating all WireGuard endpoints once every thirty seconds[[2]](https://git.zx2c4.com/WireGuard/tree/contrib/examples/reresolve-dns/README) via a systemd timer:
+One way of doing so is by updating all WireGuard endpoints once every thirty seconds[[3]](https://git.zx2c4.com/WireGuard/tree/contrib/examples/reresolve-dns/README) via a systemd timer:
 
  `/etc/systemd/system/wireguard_reresolve-dns.timer` 
 ```

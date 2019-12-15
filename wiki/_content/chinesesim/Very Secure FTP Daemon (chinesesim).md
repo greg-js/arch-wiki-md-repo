@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-19，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=536323)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-12-14，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=591491)可以查看翻译后英文页面的改动。
 
 [vsftpd](https://security.appspot.com/vsftpd.html) (“Very Secure FTP Daemon“) 是一个为 UNIX 类系统开发的轻量，稳定和安全的 FTP 服务器端。
 
@@ -462,6 +462,8 @@ allow_writable_chroot=YES
 ### FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL
 
 vsftpd 尝试在 SSL 会话中显示纯文本错误消息。为了进行调试，暂时禁用加密，您将看到正确的错误消息。[[1]](http://ramblings.linkerror.com/?p=45) [[2]](https://serverfault.com/questions/772494/vsftpd-list-causes-gnutls-error-15)
+
+Often these errors can be solved by adding[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=845980): `seccomp_sandbox"="NO`
 
 ### vsftpd.service fails to run on boot
 

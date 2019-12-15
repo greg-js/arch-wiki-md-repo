@@ -26,7 +26,7 @@ The `/dev/frandom` device should now exist on the filesystem.
 *   Do not use frandom for cryptographic purposes!
 *   Usage for "randomising" large hard drives prior to [disk encryption](/index.php/Disk_encryption "Disk encryption") is not recommended as `RC4` may be distinguished from random noise. See [Securely wipe disk#Overwrite the target](/index.php/Securely_wipe_disk#Overwrite_the_target "Securely wipe disk") for other methods.
 
-To use frandom to wipe a disk without encrypting it afterwards (for example for the simple destruction of data (even though overwriting the disk with /dev/zero would be sufficient and faster in this case)), use the `dd` command:
+To use frandom to wipe a disk without encrypting it afterwards (for example for the simple destruction of data (even though overwriting the disk with /dev/zero would be sufficient and faster in this case)), use the [dd](/index.php/Dd "Dd") command:
 
 ```
 # dd if=/dev/frandom of=/dev/sdX

@@ -465,7 +465,7 @@ If you try to connect to an WPA Enterprise network like 'eduroam' with NetworkMa
 
 ```
 
-This is because NetworkManager can not configure a WPA Enterprise network. Therefore you have to configure it using an iwd config file `/var/lib/iwd/*essid*.8021x` like described in [#WPA_Enterprise](#WPA_Enterprise).
+This is because NetworkManager can not configure a WPA Enterprise network. Therefore you have to configure it using an iwd config file `/var/lib/iwd/*essid*.8021x` like described in [#WPA Enterprise](#WPA_Enterprise).
 
 ## See also
 
