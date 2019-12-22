@@ -19,7 +19,7 @@ Related articles
 *   [2 使用](#使用)
 *   [3 更新 UEFI/BIOS 固件](#更新_UEFI/BIOS_固件)
     *   [3.1 安全启动](#安全启动)
-        *   [3.1.1 Using your own keys](#Using_your_own_keys)
+        *   [3.1.1 用自己的密钥](#用自己的密钥)
 
 ## 安装
 
@@ -73,18 +73,20 @@ $ fwupdmgr update
 
 在 [Secure Boot](/index.php/Secure_Boot "Secure Boot") 开启的系统下，fwupd 使用 [shim](/index.php/Secure_Boot#shim "Secure Boot") 来引导 fwupd EFI 文件。 使用前请确保正确安装 shim
 
-#### Using your own keys
+#### 用自己的密钥
 
-**Note:** The following description is based on a future version of fwupd that is not yet released. See [[1]](https://github.com/hughsie/fwupd/issues/669).
+**Note:** 下面的描述是基于fwupd未来版本的操作方式，参见 [[1]](https://github.com/hughsie/fwupd/issues/669).
 
-Alternatively, you have to manually sign the UEFI executable used to perform upgrades, which is located in `/usr/lib/fwupd/efi/fwupdx64.efi`. The signed UEFI executable is expected in `/usr/lib/fwupd/efi/fwupdx64.efi.signed`. Using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools), this can be achieved by running:
+或者,你需要手动签名uefi执行文件进行升级 ,此文件位于 `/usr/lib/fwupd/efi/fwupdx64.efi`. 签过名的uefi执行文件在 `/usr/lib/fwupd/efi/fwupdx64.efi.signed`. 使用 [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools), 运行:
 
 ```
 # sbsign --key <keyfile> --cert <certfile> /usr/lib/fwupd/efi/fwupdx64.efi
 
 ```
 
-To automatically sign this file when installed or upgraded, a [Pacman hook](/index.php/Pacman_hook "Pacman hook") can be used:
+可完成签名
+
+为了使安装或者升级时自动签名，使用 [Pacman hook](/index.php/Pacman_hook "Pacman hook")：
 
  `/etc/pacman.d/hooks/sign-fwupd-secureboot.hook` 
 ```
@@ -100,6 +102,6 @@ Exec = /usr/bin/sbsign --key <keyfile> --cert <certfile> /usr/lib/fwupd/efi/fwup
 Depends = sbsigntools
 ```
 
-Make sure to replace `<keyfile>` and `<certfile>` with the corresponding paths of your keys.
+注意需要确保 `<keyfile>` 和 `<certfile>` 符合密钥的路径.
 
-Finally, you have to change the line containing `RequireShimForSecureBoot` in `/etc/fwupd/uefi.conf` to `RequireShimForSecureBoot=false`.
+最后,你需要更改`/etc/fwupd/uefi.conf` 文件，将 `RequireShimForSecureBoot` 更改为 `RequireShimForSecureBoot=false`.

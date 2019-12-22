@@ -14,10 +14,11 @@ The *LI*nux *LO*ader, or **LILO** for short, is a legacy multi-boot loader for L
 *   [2 Configuration](#Configuration)
     *   [2.1 Sample setup](#Sample_setup)
     *   [2.2 Using an image as background](#Using_an_image_as_background)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Read write error message whilst booting](#Read_write_error_message_whilst_booting)
-    *   [3.2 Devmapper not found error message after kernel upgrade](#Devmapper_not_found_error_message_after_kernel_upgrade)
-*   [4 See also](#See_also)
+*   [3 Pacman hook](#Pacman_hook)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Read write error message whilst booting](#Read_write_error_message_whilst_booting)
+    *   [4.2 Devmapper not found error message after kernel upgrade](#Devmapper_not_found_error_message_after_kernel_upgrade)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -106,6 +107,29 @@ bmp-timer=250p,350p,3,8,1
 ```
 
 Save `lilo.conf`, run `lilo` as root, and reboot and see how it looks!
+
+## Pacman hook
+
+lilo needs to be run after every kernel update. You can use a pacman hook to automate it. See [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") or [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
+
+make the directory `/etc/pacman.d/hooks` if it doesn't already exist.
+
+ `/etc/pacman.d/hooks/lilo.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = linux
+Target = linux-lts
+
+[Action]
+Description= Run lilo after kernel update
+When = PostTransaction
+Depends = lilo
+Exec = /usr/bin/lilo
+```
 
 ## Troubleshooting
 

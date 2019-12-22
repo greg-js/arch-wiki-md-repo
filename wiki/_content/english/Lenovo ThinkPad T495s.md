@@ -5,12 +5,12 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
-| [Fingerprint Reader](/index.php/Fprint "Fprint") | ? |
+| [Fingerprint Reader](/index.php/Fprint "Fprint") | Yes |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | [Smartcard Reader](/index.php/Smartcards "Smartcards") | Yes |
 
-This article covers the installation and configuration of Arch Linux on a Lenovo T495s laptop. Almost everything seems to work pretty much out the box. Yet untested: wwan, smartcardreader
+This article covers the installation and configuration of Arch Linux on a Lenovo T495s laptop. Almost everything seems to work pretty much out the box. Yet untested: wwan
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
@@ -101,7 +101,13 @@ The opensource [AMDGPU](/index.php/AMDGPU "AMDGPU") drivers work correctly with 
 
 ## Fingerprint Reader
 
-Fingerprint sensor *06cb:00bd* is not supported by [fprint](/index.php/Fprint "Fprint") right now. There is some talk of an upcoming driver.[[1]](https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617)[[2]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181)
+Fingerprint sensor seems to work with some recent firmware and software updates (2019-12-15). Driver development info: [[1]](https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617)[[2]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
+
+1\. Use [fwupd](/index.php/Fwupd "Fwupd") to install the latest firmware for "Synaptics Prometheus Fingerprint Reader". The update might have to be done manually (the released firmware is in testing). [[3]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware)[[4]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config)
+
+2\. Latest fprintd and libfprint are required[[5]](https://fprint.freedesktop.org/). [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.
+
+3\. [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [pam](/index.php/Pam "Pam") authentication for example.
 
 ## Backlight
 
@@ -115,7 +121,7 @@ Seems to work and read cards. Following instructions from [smartcards](/index.ph
 
 ## Updating Firmware
 
-Although the [fwupd](/index.php/Fwupd "Fwupd") utility works to update some of the components, Lenovo does not support BIOS updates for the T495s yet. A BIOS update Bootable CD iso that is OS agnostic may be downloaded from Lenovo support[[3]](https://pcsupport.lenovo.com/).
+Although the [fwupd](/index.php/Fwupd "Fwupd") utility works to update some of the components, Lenovo does not support BIOS updates for the T495s yet. A BIOS update Bootable CD iso that is OS agnostic may be downloaded from Lenovo support[[6]](https://pcsupport.lenovo.com/).
 
 **Warning:** This may brick your device! Be careful!
 

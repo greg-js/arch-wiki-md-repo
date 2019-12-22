@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine"). Data da última tradução: 2019-08-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine&diff=0&oldid=578815) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine"). Data da última tradução: 2019-12-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine&diff=0&oldid=590842) na versão em inglês.
 
 Artigos relacionados
 
@@ -60,7 +60,7 @@ Na máquina virtual, abra um terminal e [transfira](/index.php/Rsync "Rsync") o 
 
 Inicialize uma distribuição GNU/Linux "live", monte a partição root e faça [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") nela.
 
-Reinstale seu gerenciador de boot: [Syslinux](/index.php/Syslinux "Syslinux"), [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") ou [Gummiboot](/index.php/Gummiboot "Gummiboot"). Não se esqueça de atualizar o arquivo de configuração: `syslinux.cfg` para o Syslinux, `grub.cfg` para o Grub ou as entradas de inicialização do Gummiboot localizadas em `/boot/loader/entries/`.
+Reinstale seu gerenciador de boot: [Syslinux](/index.php/Syslinux "Syslinux"), [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") ou [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Não se esqueça de atualizar o arquivo de configuração: `syslinux.cfg` para o Syslinux, `grub.cfg` para o Grub ou as entradas de inicialização do systemd-boot localizadas em `/boot/loader/entries/`.
 
 ### Ajustar o fstab
 

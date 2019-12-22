@@ -106,7 +106,7 @@ After creation, you'll have to restart the fwupd service.
 
  `systemctl restart fwupd.service` 
 
-You can now `$ fwupd refresh` and `$ fwupd update`. It will ask to reboot and should now automatically reboot into the firmware updater.
+You can now `$ fwupdmgr refresh` and `$ fwupdmgr update`. It will ask to reboot and should now automatically reboot into the firmware updater.
 
 ### Secure Boot
 

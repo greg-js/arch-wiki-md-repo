@@ -1,5 +1,3 @@
-**Note:** MediaWiki is not fully compatible with PHP 7.3 yet.[[1]](https://www.mediawiki.org/wiki/Compatibility#PHP)[[2]](https://phabricator.wikimedia.org/project/view/3494/)
-
 [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) is a free and open source wiki software written in [PHP](/index.php/PHP "PHP"), originally developed for Wikipedia. It also powers this wiki (see [Special:Version](/index.php/Special:Version "Special:Version") and the [GitHub repository](https://github.com/archlinux/archwiki)).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -176,9 +174,16 @@ MediaWiki can automatically create the database, if you supply the database root
 
 ### LocalSettings.php
 
-Open the wiki url (usually `http://*your_server*/mediawiki/`) in a browser and do the initial configuration. Follow [upstream instructions](https://www.mediawiki.org/wiki/Manual:Config_script "mw:Manual:Config script").
+Open the wiki URL (usually `http://*your_server*/mediawiki/`) in a browser and do the initial configuration. Follow [upstream instructions](https://www.mediawiki.org/wiki/Manual:Config_script "mw:Manual:Config script").
 
-The generated `LocalSettings.php` file is offered for download, save it to `/usr/share/webapps/mediawiki/LocalSettings.php`. This file defines the specific settings of your wiki. Whenever you upgrade the [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) package, it is not replaced.
+The generated `LocalSettings.php` file is offered for download, save it to `/etc/webapps/mediawiki/LocalSettings.php` and create symbolic link to it from `/usr/share/webapps/mediawiki/LocalSettings.php`:
+
+```
+# ln -s /etc/webapps/mediawiki/LocalSettings.php /usr/share/webapps/mediawiki/LocalSettings.php
+
+```
+
+This file defines the specific settings of your wiki. Whenever you upgrade the [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) package, it will not be replaced.
 
 ## Tips and tricks
 

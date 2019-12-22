@@ -623,6 +623,8 @@ for domainID in domains:
 
 ## UEFI Support
 
+**Warning:** UEFI support is currently broken: [FS#64175](https://bugs.archlinux.org/task/64175).
+
 Libvirt can support UEFI virtual machines through QEMU and [OVMF](https://github.com/tianocore/edk2).
 
 Install the [ovmf](https://www.archlinux.org/packages/?name=ovmf) package.

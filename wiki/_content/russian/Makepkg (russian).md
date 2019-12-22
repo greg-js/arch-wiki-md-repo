@@ -8,7 +8,7 @@
 *   [Официальные репозитории](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории")
 *   [Система сборки Arch](/index.php/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8_Arch "Система сборки Arch")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Makepkg](/index.php/Makepkg "Makepkg"). Дата последней синхронизации: 8 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=582696).
+**Состояние перевода:** На этой странице представлен перевод статьи [Makepkg](/index.php/Makepkg "Makepkg"). Дата последней синхронизации: 21 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=588050).
 
 [makepkg](https://projects.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in) — скрипт автоматизации сборки пакетов. Системные требования скрипта включают в себя наличие файла [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") и UNIX-платформы с поддержкой сборки.
 
@@ -249,6 +249,13 @@ COMPRESSGZ=(pigz -c -f -n)
 
 ```
 COMPRESSBZ2=(pbzip2 -c -f)
+
+```
+
+[zstd](https://www.archlinux.org/packages/?name=zstd) поддерживает [симметричную многопроцессорность (SMP)](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C "wikipedia:ru:Симметричная многопроцессорность") посредством флага `--threads` для ускорения сжатия. Например, чтобы разрешить *makepkg* использовать все имеющиеся в наличии ядра CPU, отредактируйте массив `COMPRESSXZ` в `/etc/makepkg.conf`:
+
+```
+COMPRESSXZ=(zstd -c -z -q - --threads=0)
 
 ```
 

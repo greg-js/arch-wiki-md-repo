@@ -131,9 +131,14 @@ Some options do not have command line switch equivalents, but you can specify co
 
 ## Server usage
 
-### Configuration
+`sshd` is the OpenSSH server daemon, configured with `/etc/ssh/sshd_config` and managed by `sshd.service`. Whenever changing the configuration, use `sshd` in test mode before restarting the service to ensure it will be able to start cleanly. Valid configurations produce no output.
 
-The SSH daemon configuration file can be found and edited in `/etc/ssh/ssh**d**_config`.
+```
+ # sshd -t
+
+```
+
+### Configuration
 
 To allow access only for some users add this line:
 
@@ -394,7 +399,7 @@ To keep the user from simply changing the permissions back, [set the immutable b
 
 ### Encrypted SOCKS tunnel
 
-This is highly useful for laptop users connected to various unsafe wireless connections. The only thing you need is an SSH server running at a somewhat secure location, like your home or at work. It might be useful to use a dynamic DNS service like [DynDNS](http://www.dyndns.org/) so you do not have to remember your IP-address.
+This is highly useful for laptop users connected to various unsafe wireless connections. The only thing you need is an SSH server running at a somewhat secure location, like your home or at work. It might be useful to use a dynamic DNS service like [DynDNS](https://dyn.com/dns/) so you do not have to remember your IP-address.
 
 #### Step 1: start the connection
 

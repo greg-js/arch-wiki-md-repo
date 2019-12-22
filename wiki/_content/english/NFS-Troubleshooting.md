@@ -410,6 +410,7 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 - bytes-written: bytes written to disk
 
 * th (threads): <threads> <fullcnt> <10%-20%> <20%-30%> ... <90%-100%> <100%>
+  DEPRECATED:  All fields after <threads> are hard-coded to `0`
 - threads: number of nfsd threads
 - fullcnt: number of times that the last 10% of threads are busy
 - 10%-20%, 20%-30% ... 90%-100%: 10 numbers representing 10-20%, 20-30% to 100%

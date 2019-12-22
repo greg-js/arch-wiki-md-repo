@@ -1,6 +1,10 @@
 Questa pagina spiega come effettuare una normale installazione di Arch su una chiave USB (o flash drive). Il risultato sarà un sistema che verrà aggiornato durante il normale utilizzo. Considerare anche l'alternativa di [Installare da supporto USB](/index.php/Installare_da_supporto_USB "Installare da supporto USB").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Procurarsi una chiave USB sufficientemente grande](#Procurarsi_una_chiave_USB_sufficientemente_grande)
 *   [2 Ottenere il CD](#Ottenere_il_CD)
@@ -114,5 +118,5 @@ KERNEL=="sd**", SYSFS{product}=="DataTraveler 2.0", SYMLINK+="WHATEVERYOUWANTOTC
 ## Da consultare
 
 *   [Guida ufficiale di installazione Arch](/index.php/Official_Arch_Linux_Install_Guide_(Italiano) "Official Arch Linux Install Guide (Italiano)")
-*   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
+*   [Install Arch Linux from VirtualBox](/index.php/Install_Arch_Linux_from_VirtualBox "Install Arch Linux from VirtualBox")
 *   [SSD](/index.php/Solid_State_Drives_(Italiano) "Solid State Drives (Italiano)")

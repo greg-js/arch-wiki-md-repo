@@ -1,3 +1,8 @@
+Related articles
+
+*   [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo")
+*   [Lenovo ThinkPad X1 Extreme](/index.php/Lenovo_ThinkPad_X1_Extreme "Lenovo ThinkPad X1 Extreme")
+
 | **Device** | **Status** | **Modules** |
 | Intel UHD 630 Graphics | Working | i915 |
 | NVIDIA GeForce GTX 1650 | Working | nvidia |

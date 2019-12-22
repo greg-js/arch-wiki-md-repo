@@ -78,10 +78,10 @@ display_errors = On
 
 ```
 
-*   The [open_basedir](http://php.net/open-basedir) directive limits the paths that can be accessed by PHP, thus increasing security at the expense of potentially interfering with normal program execution. Starting with PHP 7.0, it is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to more closely match upstream so users who wish to use it must configure it manually. All symbolic links are resolved, so it's not possible to avoid this restriction with a symlink. The default Arch packages for certain webapps like `nextcloud` & `phpmyadmin` installs the webapps under `/usr/share/webapps` and creates a symlink pointing to the actual config files for those webapps under `/etc/webapps`. So, if you are setting up `open_basedir`, make sure both those folders listed are in the `open_basedir`. This will obviously be different based on your distribution or if you have installed the webapp in some other location. Example:
+*   The [open_basedir](http://php.net/open-basedir) directive limits the paths that can be accessed by PHP, thus increasing security at the expense of potentially interfering with normal program execution. Starting with PHP 7.0, it is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to more closely match upstream so users who wish to use it must configure it manually. All symbolic links are resolved, so it is not possible to avoid this restriction with a symlink. The default Arch packages for certain webapps like `nextcloud` & `phpmyadmin` installs the webapps under `/usr/share/webapps` and creates a symlink pointing to the actual config files for those webapps under `/etc/webapps`. So, if you are setting up `open_basedir`, make sure both those folders listed are in the `open_basedir`. This will obviously be different based on your distribution or if you have installed the webapp in some other location. Example:
 
 ```
-open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps/
+open_basedir = /srv/http/:/var/www/:/home/:/tmp/:/var/tmp/:/var/cache/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps/
 
 ```
 
@@ -118,7 +118,7 @@ Install [php-imagick](https://www.archlinux.org/packages/?name=php-imagick), it 
 Make sure the [php-pear](https://aur.archlinux.org/packages/php-pear/) package has been installed:
 
 ```
- # pecl install imagick
+# pecl install imagick
 
 ```
 

@@ -10,9 +10,13 @@
 *   [2 Instalación](#Instalación)
 *   [3 Configuración](#Configuración)
     *   [3.1 Incluir plymouth en initcpio](#Incluir_plymouth_en_initcpio)
-    *   [3.2 En la línea de órdenes del kernel](#En_la_línea_de_órdenes_del_kernel)
-    *   [3.3 Cambiar el tema](#Cambiar_el_tema)
-*   [4 Véase también](#Véase_también)
+    *   [3.2 Habilitar transición de plymouth con el Gestor de pantalla](#Habilitar_transición_de_plymouth_con_el_Gestor_de_pantalla)
+    *   [3.3 En la línea de órdenes del kernel](#En_la_línea_de_órdenes_del_kernel)
+    *   [3.4 Cambiar el tema](#Cambiar_el_tema)
+*   [4 Consejos y Trucos](#Consejos_y_Trucos)
+    *   [4.1 Mostrar mensajes del kernel](#Mostrar_mensajes_del_kernel)
+    *   [4.2 Agregar el logo de Arch en los temas spinner y BGRT](#Agregar_el_logo_de_Arch_en_los_temas_spinner_y_BGRT)
+*   [5 Véase también](#Véase_también)
 
 ## Preparación
 
@@ -49,6 +53,20 @@ MODULES="nouveau"
 Reconstruimos la imagen del kernel (remítase al artículo [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para más información).
 
  `# mkinitcpio -p [nombre de su kernel]` 
+
+### Habilitar transición de plymouth con el [Gestor de pantalla](/index.php/Display_manager "Display manager")
+
+Para obtener una transición más suave al terminar la animación y pasar al gestor de pantallas es necesario reemplazar el servicio de systemd que inicia su gestor de pantalla con el que ofrece plymouth. Ejemplo:
+
+ `# systemctl disable [display_manager].service && systemctl enable [display_manager]-plymouth.service` 
+
+Plymouth ofrece soporte para los siguientes gestores de pantalla:
+
+1.  gdm-plymouth.service [GDM](/index.php/GDM "GDM")
+2.  sddm-plymouth.service [SDDM](/index.php/SDDM "SDDM")
+3.  lightdm-plymouth.service [LightDM](/index.php/LightDM "LightDM")
+4.  lxdm-plymouth.service [LXDM](/index.php/LXDM "LXDM")
+5.  slim-plymouth.service [SLiM](/index.php/SLiM "SLiM")
 
 ### En la línea de órdenes del kernel
 
@@ -117,6 +135,21 @@ Cada vez que se cambia un tema, la imagen del kernel debe ser reconstruida con:
  `# mkinitcpio -p <el nombre de su kernel; por ejemplo, linux>` 
 
 Reinicie para aplicar los cambios.
+
+## Consejos y Trucos
+
+### Mostrar mensajes del kernel
+
+Durante el arranque puedes ver los mensajes de arranque presionando la tecla `Home` o también `Esc`.
+
+### Agregar el logo de Arch en los temas spinner y BGRT
+
+Para agregar el logo de Arch en los temas *spinner* y *BGRT* simplemente copie el logo y ṕeguelo en el directorio del tema *spinner* y *BGRT* con el siguiente nombre: `watermark.png`.
+
+```
+# cp -r /usr/share/plymouth/arch-logo.png /usr/share/plymouth/themes/spinner/watermark.png
+
+```
 
 ## Véase también
 

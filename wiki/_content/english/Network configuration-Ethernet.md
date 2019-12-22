@@ -169,7 +169,7 @@ These steps should help if your computer has this chipset:
 *   Plug your network cable back in and check whether the module succeeded with:
 
 ```
-$ dmesg | greg tg3
+$ dmesg | grep tg3
 
 ```
 

@@ -91,7 +91,7 @@ Install the keytab on the client:
 
 ```
 $ scp user@controller.example.com:/tmp/client1.keytab krb5.keytab
-# mv krb5.ketab /etc/krb5.keytab
+# mv krb5.keytab /etc/krb5.keytab
 
 ```
 

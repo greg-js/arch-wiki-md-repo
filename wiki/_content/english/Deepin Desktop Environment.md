@@ -4,7 +4,7 @@ Related articles
 *   [GNOME](/index.php/GNOME "GNOME")
 *   [LightDM](/index.php/LightDM "LightDM")
 
-The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) is the [desktop environment](/index.php/Desktop_environment "Desktop environment") of the Chinese [Deepin](https://en.wikipedia.org/wiki/Deepin "wikipedia:Deepin") Linux distribution.
+The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) is the [desktop environment](/index.php/Desktop_environment "Desktop environment") of the Chinese [Deepin](https://en.wikipedia.org/wiki/Deepin "wikipedia:Deepin") Linux distribution. There are known security vulnerabilites in DDE, reported by developers of the OpenSuse distribution to the DDE developers. The DDE developers did not respond to the reports [[1]](https://bugzilla.opensuse.org/show_bug.cgi?id=1136026#c1).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -97,7 +97,7 @@ Note: If you simply want to disable the sound effects entirely, it can be done f
 
 ### No background after resuming from standby
 
-Because of the way the NVIDIA driver stores its FBOs [[1]](https://devtalk.nvidia.com/default/topic/787748/linux/-nvidia340xx-archlinux64-gnome3-14-the-background-of-desktop-and-lockscreen-mess-after-resume-from-/post/4367179/#4367179), it happens that after resuming from standby the background suddenly disappears, leaving only a white screen with possibly some color noise on it. The bug appears to be fixed in GNOME upstream, but the Deepin desktop environment still has it.
+Because of the way the NVIDIA driver stores its FBOs [[2]](https://devtalk.nvidia.com/default/topic/787748/linux/-nvidia340xx-archlinux64-gnome3-14-the-background-of-desktop-and-lockscreen-mess-after-resume-from-/post/4367179/#4367179), it happens that after resuming from standby the background suddenly disappears, leaving only a white screen with possibly some color noise on it. The bug appears to be fixed in GNOME upstream, but the Deepin desktop environment still has it.
 
 A possible workaround would be restarting the window manager every time the computer resumes from suspension. A way to do that would be creating the following systemd service
 

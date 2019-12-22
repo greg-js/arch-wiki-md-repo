@@ -30,13 +30,14 @@ From the project [home page](https://aria2.github.io/):
     *   [4.2 pacman XferCommand](#pacman_XferCommand)
     *   [4.3 Changing the User Agent](#Changing_the_User_Agent)
     *   [4.4 Using Aria2 with makepkg](#Using_Aria2_with_makepkg)
+    *   [4.5 Using Aria2 as a Daemon](#Using_Aria2_as_a_Daemon)
 *   [5 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [aria2](https://www.archlinux.org/packages/?name=aria2) package.
 
-You may also want to install [aria2-systemd](https://aur.archlinux.org/packages/aria2-systemd/) to use aria2 as a [daemon](/index.php/Daemon "Daemon").
+To use aria2 as a [daemon](/index.php/Daemon "Daemon"), you can write a [systemd user unit](/index.php/Systemd/User#Writing_user_units "Systemd/User").
 
 **Note:** The executable is called `aria2c`.
 
@@ -378,6 +379,32 @@ DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
 ```
 
 **Note:** Use the `-UWget` option to change the user agent to Wget. It may prevent problems when downloading from sites that filters the requests based on the user agent to provide different responses on what the users uses to access the URL. Since Aria2 is a lesser known downloader it may be recognized by the site as a browser instead of a downloader, so changing the user agent to Wget may fix it in most cases
+
+### Using Aria2 as a Daemon
+
+To use Aria2 as a daemon, you should write a systemd user unit. For example:
+
+ `~/.config/systemd/user/aria2cd.service` 
+```
+[Unit]
+Description=Aria2 Daemon
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/aria2c --conf-path=*/path/to/conf*
+
+[Install]
+WantedBy=default.target
+```
+
+[#Example aria2.daemon](#Example_aria2.daemon) shows an example conf file.
+
+Now [Start](/index.php/Start "Start")/[Enable](/index.php/Enable "Enable") the `aria2cd.service`:
+
+```
+systemctl enable **--user** aria2cd.service
+
+```
 
 ## See also
 

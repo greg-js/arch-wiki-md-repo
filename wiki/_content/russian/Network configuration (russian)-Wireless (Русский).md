@@ -7,7 +7,7 @@
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 09 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=591345).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 21 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=592245).
 
 Основную статью по настройке сети можно найти на странице [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
@@ -40,6 +40,7 @@
         *   [4.2.2 Ручная/автоматическая настройка](#Ручная/автоматическая_настройка)
         *   [4.2.3 Проблемы](#Проблемы)
             *   [4.2.3.1 MS-CHAPv2](#MS-CHAPv2)
+    *   [4.3 WPA3 Personal](#WPA3_Personal)
 *   [5 Советы и рекомендации](#Советы_и_рекомендации)
     *   [5.1 Соответствие регламентам](#Соответствие_регламентам)
     *   [5.2 Предостережения Rfkill](#Предостережения_Rfkill)
@@ -350,6 +351,10 @@ WPA2 Personal, или WPA2-PSK — одна из реализаций техно
 ##### MS-CHAPv2
 
 Беспроводные сети WPA2-Enterprise, полагающиеся на аутентификацию MSCHAPv2 type-2 с использованием PEAP иногда требуют установки [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) помимо стандартного [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"), однако, работает "из коробки" без ppp-mppe. В любом случае, использование MSCHAPv2 не рекомендуется из-за ненадежности этого протокола, но другого варианта часто просто нет.
+
+### WPA3 Personal
+
+Чтобы WPA3 Personal работал с [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)"), необходимо [пересобрать](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") пакет [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) с параметром `CONFIG_SAE=y`. ([FS#57413](https://bugs.archlinux.org/task/57413))
 
 ## Советы и рекомендации
 
@@ -664,8 +669,8 @@ ieee80211 phy0: wlan0: No probe response from AP xx:xx:xx:xx:xx:xx after 500ms, 
 
 Полезные ссылки:
 
-*   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
-*   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
+*   [https://wireless.wiki.kernel.org/en/users/drivers/ath5k](https://wireless.wiki.kernel.org/en/users/drivers/ath5k)
+*   [https://wiki.debian.org/ath5k](https://wiki.debian.org/ath5k)
 
 Если веб-страницы временами грузятся очень медленно, или если беспроводному устройству не удаётся получить динамический IP-адрес, попытайтесь переключиться с аппаратного шифрования на программное, загрузив модуль `ath5k` с опцией `nohwcrypt=1`. Подробнее см. [Модули ядра#Настройка параметров модуля](/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0#Настройка_параметров_модуля "Модули ядра").
 
@@ -683,8 +688,8 @@ ieee80211 phy0: wlan0: No probe response from AP xx:xx:xx:xx:xx:xx after 500ms, 
 
 Полезные ссылки:
 
-*   [http://wireless.kernel.org/en/users/Drivers/ath9k](http://wireless.kernel.org/en/users/Drivers/ath9k)
-*   [http://wiki.debian.org/ath9k](http://wiki.debian.org/ath9k)
+*   [https://wireless.wiki.kernel.org/en/users/drivers/ath9k](https://wireless.wiki.kernel.org/en/users/drivers/ath9k)
+*   [https://wiki.debian.org/ath9k](https://wiki.debian.org/ath9k)
 
 Начиная с версии ядра 3.15.1 некоторые пользователи ощутили уменьшение полосы пропускания. В некоторых случаях проблема может быть решена добавлением одной строки в файл `/etc/modprobe.d/ath9k.conf`:
 
@@ -699,7 +704,7 @@ options ath9k nohwcrypt=1
 
 ##### Power saving
 
-[Linux Wireless](http://wireless.kernel.org/en/users/Documentation/dynamic-power-save) утверждает, что динамическое энергосбережение включено для одноплатных Atheros ath9k новее версии AR9280, однако для некоторых устройств (например, AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) всё же сообщает, что энергосбережение отключено. В этом случае включите его вручную.
+[Linux Wireless](https://wireless.wiki.kernel.org/en/users/Documentation/dynamic-power-save) утверждает, что динамическое энергосбережение включено для одноплатных Atheros ath9k новее версии AR9280, однако для некоторых устройств (например, AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) всё же сообщает, что энергосбережение отключено. В этом случае включите его вручную.
 
 На некоторых устройствах (например, AR9285) включение энергосбережения может привести к следующей ошибке:
 

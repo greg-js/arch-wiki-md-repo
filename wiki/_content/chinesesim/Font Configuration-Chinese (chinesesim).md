@@ -1,14 +1,18 @@
 全局修改字体配置，修改`/etc/fonts/local.conf`, 配置用户字体，修改`$XDG_CONFIG_HOME/fontconfig/fonts.conf`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Android显示效果的字体参考配置](#Android.C2.AE.E6.98.BE.E7.A4.BA.E6.95.88.E6.9E.9C.E7.9A.84.E5.AD.97.E4.BD.93.E5.8F.82.E8.80.83.E9.85.8D.E7.BD.AE)
-    *   [1.1 安装字体](#.E5.AE.89.E8.A3.85.E5.AD.97.E4.BD.93)
-    *   [1.2 添加配置文件](#.E6.B7.BB.E5.8A.A0.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-*   [2 Windows显示效果的字体参考配置](#Windows.C2.AE.E6.98.BE.E7.A4.BA.E6.95.88.E6.9E.9C.E7.9A.84.E5.AD.97.E4.BD.93.E5.8F.82.E8.80.83.E9.85.8D.E7.BD.AE)
-    *   [2.1 安装 MS core fonts](#.E5.AE.89.E8.A3.85_MS_core_fonts)
-    *   [2.2 加入配置](#.E5.8A.A0.E5.85.A5.E9.85.8D.E7.BD.AE)
-*   [3 Anti-aliasing效果的字体参考配置](#Anti-aliasing.E6.95.88.E6.9E.9C.E7.9A.84.E5.AD.97.E4.BD.93.E5.8F.82.E8.80.83.E9.85.8D.E7.BD.AE)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Android显示效果的字体参考配置](#Android®显示效果的字体参考配置)
+    *   [1.1 安装字体](#安装字体)
+    *   [1.2 添加配置文件](#添加配置文件)
+*   [2 Windows显示效果的字体参考配置](#Windows®显示效果的字体参考配置)
+    *   [2.1 安装 MS core fonts](#安装_MS_core_fonts)
+    *   [2.2 加入配置](#加入配置)
+*   [3 Anti-aliasing效果的字体参考配置](#Anti-aliasing效果的字体参考配置)
 
 ## Android显示效果的字体参考配置
 
@@ -32,170 +36,167 @@ or
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
+  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+    <its:translateRule
+      translate="no"
+      selector="/fontconfig/*[not(self::description)]"
+    />
+  </its:rules>
 
-	<its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
-		<its:translateRule translate="no" selector="/fontconfig/*[not(self::description)]"/>
-	</its:rules>
+  <description>Android Font Config</description>
 
-	<description>Android Font Config</description>
+  <!-- Font directory list -->
 
-<!-- Font directory list -->
+  <dir>/usr/share/fonts</dir>
+  <dir>/usr/local/share/fonts</dir>
+  <dir prefix="xdg">fonts</dir>
+  <!-- the following element will be removed in the future -->
+  <dir>~/.fonts</dir>
 
-	<dir>/usr/share/fonts</dir>
-	<dir>/usr/local/share/fonts</dir>
-	<dir prefix="xdg">fonts</dir>
-	<!-- the following element will be removed in the future -->
-	<dir>~/.fonts</dir>
+  <!-- 关闭内嵌点阵字体 -->
+  <match target="font">
+    <edit name="embeddedbitmap" mode="assign">
+      <bool>false</bool>
+    </edit>
+  </match>
 
-<!-- 关闭内嵌点阵字体 -->
-	<match target="font">
-		<edit name="embeddedbitmap" mode="assign">
-			<bool>false</bool>
-		</edit>
-	</match>
+  <!-- 英文默认字体使用 Roboto 和 Noto Serif ,终端使用 DejaVu Sans Mono. -->
+  <match>
+    <test qual="any" name="family">
+      <string>serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>Noto Serif</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>sans-serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>Roboto</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>monospace</string>
+    </test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>DejaVu Sans Mono</string>
+    </edit>
+  </match>
 
-<!-- 英文默认字体使用 Roboto 和 Noto Serif ,终端使用 DejaVu Sans Mono. -->
-	<match>
-		<test qual="any" name="family">
-			<string>serif</string>
-		</test>
-		<edit name="family" mode="prepend" binding="strong">
-			<string>Noto Serif</string>
-		</edit>
-	</match>
-	<match target="pattern">
-		<test qual="any" name="family">
-			<string>sans-serif</string>
-		</test>
-		<edit name="family" mode="prepend" binding="strong">
-			<string>Roboto</string>
-		</edit>
-	</match>
-	<match target="pattern">
-		<test qual="any" name="family">
-			<string>monospace</string>
-		</test>
-		<edit name="family" mode="prepend" binding="strong">
-			<string>DejaVu Sans Mono</string>
-		</edit>
-	</match>
+  <!-- 中文默认字体使用思源黑体和思源宋体,不使用　Noto Sans CJK SC 是因为这个字体会在特定情况下显示片假字. -->
+  <match>
+    <test name="lang" compare="contains">
+      <string>zh</string>
+    </test>
+    <test name="family">
+      <string>serif</string>
+    </test>
+    <edit name="family" mode="prepend">
+      <string>Source Han Serif CN</string>
+    </edit>
+  </match>
+  <match>
+    <test name="lang" compare="contains">
+      <string>zh</string>
+    </test>
+    <test name="family">
+      <string>sans-serif</string>
+    </test>
+    <edit name="family" mode="prepend">
+      <string>Source Han Sans CN</string>
+    </edit>
+  </match>
+  <match>
+    <test name="lang" compare="contains">
+      <string>zh</string>
+    </test>
+    <test name="family">
+      <string>monospace</string>
+    </test>
+    <edit name="family" mode="prepend">
+      <string>Noto Sans Mono CJK SC</string>
+    </edit>
+  </match>
 
-<!-- 中文默认字体使用思源黑体和思源宋体,不使用　Noto Sans CJK SC 是因为这个字体会在特定情况下显示片假字. -->
-	<match>
-		<test name="lang" compare="contains">
-			<string>zh</string>
-		</test>
-		<test name="family">
-			<string>serif</string>
-		</test>
-		<edit name="family" mode="prepend">
-			<string>Source Han Serif CN</string>
-		</edit>
-	</match>
-	<match>
-		<test name="lang" compare="contains">
-			<string>zh</string>
-		</test>
-		<test name="family">
-			<string>sans-serif</string>
-		</test>
-		<edit name="family" mode="prepend">
-			<string>Source Han Sans CN</string>
-		</edit>
-	</match>
-	<match>
-		<test name="lang" compare="contains">
-			<string>zh</string>
-		</test>
-		<test name="family">
-			<string>monospace</string>
-		</test>
-		<edit name="family" mode="prepend">
-			<string>Noto Sans Mono CJK SC</string>
-		</edit>
-	</match>
-
-<!--Windows & Linux Chinese fonts. -->
-<!--把所有常见的中文字体映射到思源黑体和思源宋体，这样当这些字体未安装时会使用思源黑体和思源宋体.
+  <!-- Windows & Linux Chinese fonts. -->
+  <!-- 把所有常见的中文字体映射到思源黑体和思源宋体，这样当这些字体未安装时会使用思源黑体和思源宋体.
 解决特定程序指定使用某字体，并且在字体不存在情况下不会使用fallback字体导致中文显示不正常的情况. -->
-	<match target="pattern">
-		<test qual="any" name="family">
-			<string>WenQuanYi Zen Hei</string>
-		</test>
-		<edit name="family" mode="assign" binding="same">
-			<string>Source Han Sans CN</string>
-		</edit>
-	</match>
-	<match target="pattern">
-                <test qual="any" name="family">
-                        <string>WenQuanYi Micro Hei</string>
-                </test>
-                <edit name="family" mode="assign" binding="same">
-                        <string>Source Han Sans CN</string>
-                </edit>
-	</match>
-        <match target="pattern">
-                <test qual="any" name="family">
-                        <string>WenQuanYi Micro Hei Light</string>
-                </test>
-                <edit name="family" mode="assign" binding="same">
-                        <string>Source Han Sans CN</string>
-                </edit>
-        </match>
-	<match target="pattern">
-                <test qual="any" name="family">
-                        <string>Microsoft YaHei</string>
-                </test>
-                <edit name="family" mode="assign" binding="same">
-                        <string>Source Han Sans CN</string>
-                </edit>
-        </match>
-        <match target="pattern">
-                <test qual="any" name="family">
-                        <string>SimHei</string>
-                </test>
-                <edit name="family" mode="assign" binding="same">
-                        <string>Source Han Sans CN</string>
-                </edit>
-        </match>
-        <match target="pattern">
-                <test qual="any" name="family">
-                        <string>SimSun</string>
-                </test>
-                <edit name="family" mode="assign" binding="same">
-                        <string>Source Han Serif CN</string>
-                </edit>
-        </match>
-        <match target="pattern">
-                <test qual="any" name="family">
-                        <string>SimSun-18030</string>
-                </test>
-                <edit name="family" mode="assign" binding="same">
-                        <string>Source Han Serif CN</string>
-                </edit>
-        </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>WenQuanYi Zen Hei</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Source Han Sans CN</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>WenQuanYi Micro Hei</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Source Han Sans CN</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>WenQuanYi Micro Hei Light</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Source Han Sans CN</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>Microsoft YaHei</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Source Han Sans CN</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>SimHei</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Source Han Sans CN</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>SimSun</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Source Han Serif CN</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>SimSun-18030</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Source Han Serif CN</string>
+    </edit>
+  </match>
 
-<!--
-  Load local system customization file
--->
-	<include ignore_missing="yes">conf.d</include>
+  <!-- Load local system customization file -->
+  <include ignore_missing="yes">conf.d</include>
 
-<!-- Font cache directory list -->
+  <!-- Font cache directory list -->
 
-	<cachedir>/var/cache/fontconfig</cachedir>
-	<cachedir prefix="xdg">fontconfig</cachedir>
-	<!-- the following element will be removed in the future -->
-	<cachedir>~/.fontconfig</cachedir>
+  <cachedir>/var/cache/fontconfig</cachedir>
+  <cachedir prefix="xdg">fontconfig</cachedir>
+  <!-- the following element will be removed in the future -->
+  <cachedir>~/.fontconfig</cachedir>
 
-	<config>
-<!--
-  Rescan configuration every 30 seconds when FcFontSetList is called
- -->
-		<rescan>
-			<int>30</int>
-		</rescan>
-	</config>
-
+  <config>
+    <!-- Rescan configuration every 30 seconds when FcFontSetList is called -->
+    <rescan>
+      <int>30</int>
+    </rescan>
+  </config>
 </fontconfig>
 
 ```

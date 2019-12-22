@@ -57,7 +57,8 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [8.6 hidepid](#hidepid)
     *   [8.7 Restricting module loading](#Restricting_module_loading)
     *   [8.8 Disable kexec](#Disable_kexec)
-    *   [8.9 Disable hyper-threading](#Disable_hyper-threading)
+    *   [8.9 Kernel lockdown mode](#Kernel_lockdown_mode)
+    *   [8.10 Disable hyper-threading](#Disable_hyper-threading)
 *   [9 Sandboxing applications](#Sandboxing_applications)
     *   [9.1 Firejail](#Firejail)
     *   [9.2 bubblewrap](#bubblewrap)
@@ -554,6 +555,24 @@ The default Arch kernel has `CONFIG_MODULE_SIG_ALL` enabled which signs all kern
 Kexec allows replacing the current running kernel.
 
  `/etc/sysctl.d/51-kexec-restrict.conf`  `kernel.kexec_loaded_disabled = 1` 
+
+### Kernel lockdown mode
+
+Since Linux 5.4 the kernel has gained an optional [lockdown feature](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=aefcf2f4b58155d27340ba5f9ddbe9513da8286d), intended to strengthen the boundary between UID 0 (root) and the kernel. When enabled some applications may cease to work who rely on low-level access to either hardware or the kernel. Lockdown has two modes of operation:
+
+1.  When set to `integrity`, kernel features that allow userland to modify the running kernel are disabled (kexec, bpf).
+2.  When set to `confidentiality`, kernel features that allow userland to extract confidential information from the kernel are also disabled.
+
+To enable kernel lockdown at runtime, run:
+
+```
+# echo *lockdown_mode* > /sys/kernel/security/lockdown
+
+```
+
+To enable kernel lockdown on boot, use the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `lockdown=*lockdown_mode*`.
+
+**Note:** Kernel lockdown cannot be disabled at runtime.
 
 ### Disable hyper-threading
 

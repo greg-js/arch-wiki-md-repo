@@ -416,6 +416,13 @@ Upgrading major PostgreSQL versions requires some extra maintenance.
 
 **Warning:** The following instructions could cause data loss. Do not run the commands below blindly, without understanding what they do. [Backup database](https://www.postgresql.org/docs/current/static/backup.html) first.
 
+Get the currently used database version via
+
+```
+# cat /var/lib/postgres/data/PG_VERSION
+
+```
+
 To ensure you do not accidentally upgrade the database to an incompatible version, it is recommended to [skip updates](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman") to the PostgreSQL packages:
 
  `/etc/pacman.conf` 

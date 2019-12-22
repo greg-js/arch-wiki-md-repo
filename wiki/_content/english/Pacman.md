@@ -19,7 +19,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 *Pacman* is written in the [C](/index.php/C "C") programming language and uses the [bsdtar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdtar.1) [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
 
-**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and *vercmp*. Other useful tools such as [pactree](#Pactree) and [checkupdates](/index.php/Checkupdates "Checkupdates") are found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman). Run `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
+**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and [vercmp(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vercmp.8). Other useful tools such as [pactree](#Pactree) and [checkupdates](/index.php/Checkupdates "Checkupdates") are found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman). Run `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -364,10 +364,10 @@ The `depends` file lists the packages this package depends on, while `desc` has 
 
 However, it is necessary to deliberately clean up the cache periodically to prevent the folder to grow indefinitely in size.
 
-The *paccache* script, provided within the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package, deletes all cached versions of installed and uninstalled packages, except for the most recent 3, by default:
+The [paccahe(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/paccahe.8) script, provided within the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package, deletes all cached versions of installed and uninstalled packages, except for the most recent 3, by default:
 
 ```
-# paccache -r
+# paccache --remove
 
 ```
 
@@ -378,18 +378,18 @@ The *paccache* script, provided within the [pacman-contrib](https://www.archlinu
 You can also define how many recent versions you want to keep. To retain only one past version use:
 
 ```
-# paccache -rk1
+# paccache --remove --keep 1
 
 ```
 
-Add the `u` switch to limit the action of *paccache* to uninstalled packages. For example to remove all cached versions of uninstalled packages, use the following:
+Add the `-u`/`--uninstalled` switch to limit the action of *paccache* to uninstalled packages. For example to remove all cached versions of uninstalled packages, use the following:
 
 ```
-# paccache -ruk0
+# paccache --remove --uninstalled --keep 0
 
 ```
 
-See `paccache -h` for more options.
+See `paccache --help` for more options.
 
 *Pacman* also has some built-in options to clean the cache and the leftover database files from repositories which are no longer listed in the configuration file `/etc/pacman.conf`. However *pacman* does not offer the possibility to keep a number of past versions and is therefore more aggressive than *paccache* default options.
 
@@ -698,7 +698,7 @@ In the case that *pacman* crashes with a "database write" error while removing p
 
 ### "Unable to find root device" error after rebooting
 
-Most likely the [initramfs](/index.php/Initramfs "Initramfs") became corrupted during a [kernel](/index.php/Kernel "Kernel") update (improper use of *pacman'*s `--force` option can be a cause). There are two options; first, try the *Fallback* entry.
+Most likely the [initramfs](/index.php/Initramfs "Initramfs") became corrupted during a [kernel](/index.php/Kernel "Kernel") update (improper use of *pacman'*s `--overwrite` option can be a cause). There are two options; first, try the *Fallback* entry.
 
 **Tip:** In case you removed the *Fallback* entry, you can always press the `Tab` key when the boot loader menu shows up (for Syslinux) or `e` (for GRUB or systemd-boot), rename it `initramfs-linux-fallback.img` and press `Enter` or `b` (depending on your [boot loader](/index.php/Boot_loader "Boot loader")) to boot with the new parameters.
 

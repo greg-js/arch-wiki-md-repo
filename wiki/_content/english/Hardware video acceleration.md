@@ -147,6 +147,8 @@ vaInitialize failed with error code -1 (unknown libva error),exit
 
 You need to configure the correct driver, see [#Configuring VA-API](#Configuring_VA-API).
 
+**Note:** The [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") GM108 cards does not support video decoding as it is expected to be offloaded to the integrated [Intel graphics](/index.php/Intel_graphics "Intel graphics") GPU.
+
 ### Verifying VDPAU
 
 Install [vdpauinfo](https://www.archlinux.org/packages/?name=vdpauinfo) to verify if the VDPAU driver is loaded correctly and retrieve a full report of the configuration:
@@ -252,7 +254,7 @@ You need to set `VDPAU_DRIVER` variable to point to correct driver. See [#Config
 
 ### VAAPI init failed
 
-An error along the lines of `libva: /usr/lib/dri/i965_drv_video.so init failed` is encountered. This can happen because of improper detection of Wayland. One solution is to unset `$DISPLAY` so that mpv, MPlayer, VLC, etc. do not assume it is X11\. Another mpv-specific solution is to add the parameter `--opengl-backend=wayland`.
+An error along the lines of `libva: /usr/lib/dri/i965_drv_video.so init failed` is encountered. This can happen because of improper detection of Wayland. One solution is to unset `$DISPLAY` so that mpv, MPlayer, VLC, etc. do not assume it is X11\. Another mpv-specific solution is to add the parameter `--gpu-context=wayland`.
 
 ## Comparison tables
 
@@ -332,6 +334,8 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_driver
 
 ### Application support
 
+**Tip:** Every new [codec](/index.php/Codec "Codec") tends to utilize more and more CPU time ([x264](https://en.wikipedia.org/wiki/en:x264 "wikipedia:en:x264") < [VP9](https://en.wikipedia.org/wiki/en:VP9 "wikipedia:en:VP9") < [AV1](https://en.wikipedia.org/wiki/en:AV1 "wikipedia:en:AV1")), which results in heating and energy consuming, if no hardware acceleration available. So it may be beneficial to use an older codec (like x264) to reduce CPU load by cost of network bandwidth. E.g. for YouTube one can use *h264ify* extension ([Firefox](https://addons.mozilla.org/firefox/addon/h264ify/), [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)) or the *enhanced-h264ify* extension ([Firefox](https://addons.mozilla.org/firefox/addon/enhanced-h264ify/), [Chromium](https://chrome.google.com/webstore/detail/enhanced-h264ify/omkfmpieigblcllmkgbflkikinpkodlk)).
+
 | Application | Decoding | Encoding | Documentation |
 | VA-API | VDPAU | NVDECODE | VA-API | NVENCODE |
 | [FFmpeg](/index.php/FFmpeg "FFmpeg") | Yes | Yes | Yes | Yes | Yes | [FFmpeg#Hardware video acceleration](/index.php/FFmpeg#Hardware_video_acceleration "FFmpeg") |
@@ -348,5 +352,3 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_driver
 *   NVDECODE/NVENCODE is [disabled in the Arch package](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gst-plugins-bad#n45).
 *   Not supported officially by developers, alternative packages available.
 *   VDPAU is supported only by NPAPI plugin. PPAPI plugin to NPAPI browser experimental adapter is available that provides partial VA-API and VDPAU acceleration.
-
-**Tip:** To reduce CPU usage while watching YouTube where VP8/VP9 hardware decoding is not available use the h264ify extension (available for [Firefox](https://addons.mozilla.org/firefox/addon/h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)) or the enhanced-h264ify extension (available for [Firefox](https://addons.mozilla.org/firefox/addon/enhanced-h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/enhanced-h264ify/omkfmpieigblcllmkgbflkikinpkodlk)).

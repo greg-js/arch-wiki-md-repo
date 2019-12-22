@@ -161,5 +161,5 @@ $ eatmydata firefox
 
 ## Véase también
 
-*   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
+*   [Install Arch Linux from VirtualBox](/index.php/Install_Arch_Linux_from_VirtualBox "Install Arch Linux from VirtualBox")
 *   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")

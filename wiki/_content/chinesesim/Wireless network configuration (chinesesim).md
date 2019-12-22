@@ -883,8 +883,8 @@ There are some other drivers for some Atheros devices. See [Linux Wireless docum
 
 参考:
 
-*   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
-*   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
+*   [https://wireless.wiki.kernel.org/en/users/Drivers/ath5k](https://wireless.wiki.kernel.org/en/users/Drivers/ath5k)
+*   [https://wiki.debian.org/ath5k](https://wiki.debian.org/ath5k)
 
 If you find web pages randomly loading very slow, or if the device is unable to lease an IP address, try to switch from hardware to software encryption by loading the `ath5k` module with `nohwcrypt=1` option. See [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") for details.
 
@@ -898,23 +898,23 @@ echo none > "/sys/class/leds/ath5k-phy0::rx/trigger"
 
 #### ath9k
 
-`ath9k` 是 Atheros 官方支持的驱动，支持所有带 802.11n 功能的芯片组，最大传输速度 180 Mbps. [这个页面](http://wireless.kernel.org/en/users/Drivers/ath9k) 列出了所有支持的硬件。
+`ath9k` 是 Atheros 官方支持的驱动，支持所有带 802.11n 功能的芯片组，最大传输速度 180 Mbps. [这个页面](https://wireless.wiki.kernel.org/en/users/Drivers/ath9k) 列出了所有支持的硬件。
 
 工作模式：Station, AP and Adhoc.
 
-`ath9k` 是官方内核的一部分。如果在极个别情况下遇到稳定性问题，可以使用 [compat-wireless](http://wireless.kernel.org/en/users/Download) 软件包。[ath9k 邮件列表](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) 提供了支持和开发的相关信息。
+`ath9k` 是官方内核的一部分。如果在极个别情况下遇到稳定性问题，可以使用 [compat-wireless](https://wireless.wiki.kernel.org/en/users/Download) 软件包。[ath9k 邮件列表](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) 提供了支持和开发的相关信息。
 
 参考:
 
-*   [http://wireless.kernel.org/en/users/Drivers/ath9k](http://wireless.kernel.org/en/users/Drivers/ath9k)
-*   [http://wiki.debian.org/ath9k](http://wiki.debian.org/ath9k)
+*   [https://wireless.wiki.kernel.org/en/users/Drivers/ath9k](https://wireless.wiki.kernel.org/en/users/Drivers/ath9k)
+*   [https://wiki.debian.org/ath9k](https://wiki.debian.org/ath9k)
 
 #### ath9k
 
 External resources:
 
-*   [http://wireless.kernel.org/en/users/Drivers/ath9k](http://wireless.kernel.org/en/users/Drivers/ath9k)
-*   [http://wiki.debian.org/ath9k](http://wiki.debian.org/ath9k)
+*   [https://wireless.wiki.kernel.org/en/users/drivers/ath9k](https://wireless.wiki.kernel.org/en/users/drivers/ath9k)
+*   [https://wiki.debian.org/ath9k](https://wiki.debian.org/ath9k)
 
 As of Linux 3.15.1, some users have been experiencing a decrease in bandwidth. In some cases this can fixed by editing `/etc/modprobe.d/ath9k.conf` and adding the line:
 
@@ -929,7 +929,7 @@ In the unlikely event that you have stability issues that trouble you, you could
 
 ##### Power saving
 
-Although [Linux Wireless](http://wireless.kernel.org/en/users/Documentation/dynamic-power-save) says that dynamic power saving is enabled for Atheros ath9k single-chips newer than AR9280, for some devices (e.g. AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) might still report that power saving is disabled. In this case enable it manually.
+Although [Linux Wireless](https://wireless.wiki.kernel.org/en/users/Documentation/dynamic-power-save) says that dynamic power saving is enabled for Atheros ath9k single-chips newer than AR9280, for some devices (e.g. AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) might still report that power saving is disabled. In this case enable it manually.
 
 On some devices (e.g. AR9285), enabling the power saving might result in the following error:
 

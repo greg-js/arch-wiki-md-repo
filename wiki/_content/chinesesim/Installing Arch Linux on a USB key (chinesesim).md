@@ -186,5 +186,5 @@ $ eatmydata firefox
 
 ## 参阅
 
-*   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
+*   [Install Arch Linux from VirtualBox](/index.php/Install_Arch_Linux_from_VirtualBox "Install Arch Linux from VirtualBox")
 *   [固态硬盘](/index.php/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98 "固态硬盘")

@@ -148,8 +148,9 @@ To setup a Gmail account, go to `Edit > Preferences > Mail Accounts` and enter y
 
 *   Server Type: POP
 *   Server: pop.gmail.com
+*   Port: 995
 *   Username: <username>@gmail.com
-*   Use Secure Connecetion: SSL encryption
+*   Encryption method: TLS on a dedicated port
 *   Authenthication Type: Password
 
 Optionally fill in automatically check for new mail every ** minutes. The rest is user specific.
@@ -158,11 +159,11 @@ Optionally fill in automatically check for new mail every ** minutes. The rest i
 
 *   Server type: SMTP
 *   Server: smtp.gmail.com
-*   Port: 587
+*   Port: 465
 *   Server requires authentication: Checked
-*   Use Secure Connection: TLS
-*   Fill in Username: <username>@gmail.com
-*   Authentication: PLAIN or Login
+*   Encryption method: TLS on a dedicated port
+*   Authentication Type: PLAIN or Login
+*   Username: <username>@gmail.com
 
 You are now finished with configuring Evolution for Gmail. Just hit Send/Receive in the main screen and wait for new mail. If it still didn't work, go [here](http://tuxicity.wordpress.com/2007/03/08/howto-set-up-gmail-in-evolution-gnomes-mail-client-and-organizer/).
 

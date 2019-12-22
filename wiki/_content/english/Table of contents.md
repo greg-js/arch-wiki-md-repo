@@ -10,7 +10,7 @@
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(24)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
-| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
+| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(36)</small> |
 | <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
 | <small>2.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
 | <small>2.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
@@ -38,15 +38,15 @@
 | <small>3.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(35)</small> |
 | <small>3.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>3.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
-| <small>3.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(63)</small> |
+| <small>3.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(64)</small> |
 | <small>3.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>3.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(74)</small> |
+| <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(75)</small> |
 | <small>3.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(1)</small> |
 | <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(61)</small> |
 | <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
-| <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(104)</small> |
+| <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(105)</small> |
 | <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
 | <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
 | <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -172,7 +172,7 @@
 | <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(18)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>5.1.13.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.1.14.</small> [Science](/index.php/Category:Science "Category:Science") <small>(12)</small> |
+| <small>5.1.14.</small> [Science](/index.php/Category:Science "Category:Science") <small>(11)</small> |
 | <small>5.1.14.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>5.1.14.2.</small> [Numerical analysis](/index.php/Category:Numerical_analysis "Category:Numerical analysis") <small>(5)</small> |
 | <small>5.1.14.3.</small> [Volunteer computing](/index.php/Category:Volunteer_computing "Category:Volunteer computing") <small>(2) (also in [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing"))</small> |
@@ -308,7 +308,7 @@
 | <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(33)</small> |
 | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>6.21.</small> [Pseudo filesystems](/index.php/Category:Pseudo_filesystems "Category:Pseudo filesystems") <small>(1)</small> |
-| <small>6.22.</small> [Security](/index.php/Category:Security "Category:Security") <small>(39)</small> |
+| <small>6.22.</small> [Security](/index.php/Category:Security "Category:Security") <small>(40)</small> |
 | <small>6.22.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |
 | <small>6.22.2.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.22.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(14)</small> |

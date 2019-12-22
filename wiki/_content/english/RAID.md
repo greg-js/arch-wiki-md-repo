@@ -55,6 +55,7 @@ This article explains how to create/manage a software RAID array using mdadm.
     *   [6.3 Adding a new device to an array](#Adding_a_new_device_to_an_array)
     *   [6.4 Increasing size of a RAID volume](#Increasing_size_of_a_RAID_volume)
     *   [6.5 Change sync speed limits](#Change_sync_speed_limits)
+    *   [6.6 RAID5 performance](#RAID5_performance)
 *   [7 Monitoring](#Monitoring)
     *   [7.1 Watch mdstat](#Watch_mdstat)
     *   [7.2 Track IO with iotop](#Track_IO_with_iotop)
@@ -743,6 +744,17 @@ Then check out the syncing speed and estimated finish time.
 ```
 
 See also [sysctl#MDADM](/index.php/Sysctl#MDADM "Sysctl").
+
+### RAID5 performance
+
+To improve RAID5 performance for fast storage (e.g. [NVMe](/index.php/NVMe "NVMe")), increase `/sys/block/mdx/md/group_thread_cnt` to more threads. For example, to use 8 threads to operate on a RAID5 device:
+
+```
+# echo 8 > /sys/block/md0/md/group_thread_cnt
+
+```
+
+See [git kernel commit 851c30c9badf](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=851c30c9badfc6b294c98e887624bff53644ad21).
 
 ## Monitoring
 

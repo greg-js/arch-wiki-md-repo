@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Data da última tradução: 2019-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=591754) na versão em inglês.
+
 Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-crypt*. Eles explicam todas as adaptações que serão realizadas do [processo de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação"). Todas as ferramentas necessárias estão disponíveis na [imagem de instalação](https://www.archlinux.org/download/).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -43,29 +45,29 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
     *   [6.5 Configurando o gerenciador de boot](#Configurando_o_gerenciador_de_boot_4)
     *   [6.6 Pós-instalação](#Pós-instalação)
 *   [7 Partição de boot criptografada (GRUB)](#Partição_de_boot_criptografada_(GRUB))
-    *   [7.1 Preparing the disk](#Preparing_the_disk)
-    *   [7.2 Preparing the logical volumes](#Preparing_the_logical_volumes)
-    *   [7.3 Configuring mkinitcpio](#Configuring_mkinitcpio)
-    *   [7.4 Configuring GRUB](#Configuring_GRUB)
-    *   [7.5 Avoiding having to enter the passphrase twice](#Avoiding_having_to_enter_the_passphrase_twice)
-*   [8 Btrfs subvolumes with swap](#Btrfs_subvolumes_with_swap)
-    *   [8.1 Preparing the disk](#Preparing_the_disk_2)
-    *   [8.2 Preparing the system partition](#Preparing_the_system_partition)
-        *   [8.2.1 Create LUKS container](#Create_LUKS_container)
-        *   [8.2.2 Unlock LUKS container](#Unlock_LUKS_container)
-        *   [8.2.3 Format mapped device](#Format_mapped_device)
-        *   [8.2.4 Mount mapped device](#Mount_mapped_device)
-    *   [8.3 Creating btrfs subvolumes](#Creating_btrfs_subvolumes)
-        *   [8.3.1 Layout](#Layout)
-        *   [8.3.2 Create top-level subvolumes](#Create_top-level_subvolumes)
-        *   [8.3.3 Mount top-level subvolumes](#Mount_top-level_subvolumes)
-        *   [8.3.4 Create nested subvolumes](#Create_nested_subvolumes)
-        *   [8.3.5 Mount ESP](#Mount_ESP)
-    *   [8.4 Configuring mkinitcpio](#Configuring_mkinitcpio_2)
-        *   [8.4.1 Create keyfile](#Create_keyfile)
-        *   [8.4.2 Edit mkinitcpio.conf](#Edit_mkinitcpio.conf)
-    *   [8.5 Configuring the boot loader](#Configuring_the_boot_loader)
-    *   [8.6 Configuring swap](#Configuring_swap)
+    *   [7.1 Preparando o disco](#Preparando_o_disco_5)
+    *   [7.2 Preparando os volumes lógicos](#Preparando_os_volumes_lógicos_3)
+    *   [7.3 Configurando o mkinitcpio](#Configurando_o_mkinitcpio_4)
+    *   [7.4 Configurando o GRUB](#Configurando_o_GRUB_2)
+    *   [7.5 Evite digitar a senha duas vezes](#Evite_digitar_a_senha_duas_vezes)
+*   [8 Subvolumes do Btrfs com swap](#Subvolumes_do_Btrfs_com_swap)
+    *   [8.1 Preparando o disco](#Preparando_o_disco_6)
+    *   [8.2 Preparando a partição do sistema](#Preparando_a_partição_do_sistema)
+        *   [8.2.1 Crie o container LUKS](#Crie_o_container_LUKS)
+        *   [8.2.2 Abra o container LUKS](#Abra_o_container_LUKS)
+        *   [8.2.3 Formate o dispositivo mapeado](#Formate_o_dispositivo_mapeado)
+        *   [8.2.4 Monte o dispositivo mapeado](#Monte_o_dispositivo_mapeado)
+    *   [8.3 Criando subvolumes do btrfs](#Criando_subvolumes_do_btrfs)
+        *   [8.3.1 Esboço](#Esboço)
+        *   [8.3.2 Crie os subvolumes de nível superior](#Crie_os_subvolumes_de_nível_superior)
+        *   [8.3.3 Monte os subvolumes de nível superior](#Monte_os_subvolumes_de_nível_superior)
+        *   [8.3.4 Crie os subvolumes aninhados](#Crie_os_subvolumes_aninhados)
+        *   [8.3.5 Monte a ESP](#Monte_a_ESP)
+    *   [8.4 Configurando o mkinitcpio](#Configurando_o_mkinitcpio_5)
+        *   [8.4.1 Crie a keyfile](#Crie_a_keyfile)
+        *   [8.4.2 Edite o mkinitcpio.conf](#Edite_o_mkinitcpio.conf)
+    *   [8.5 Configurando o gerenciador de boot](#Configurando_o_gerenciador_de_boot_5)
+    *   [8.6 Configurando a swap](#Configurando_a_swap)
 
 ## Visão geral
 
@@ -211,7 +213,7 @@ Este exemplo demonstra um sistema criptografado com *dm-crypt* + LUKS em uma par
 +--------------------+-------------------------------+-----------------------+
 | Partição de boot   | Sistema criptogrado com LUKS2 | Espaço livre opcional |
 |                    | partição                      | para outras partições |
-|                    |                               | ou swap               |
+|                    |                               |                       |
 | /boot              | /                             |                       |
 |                    |                               |                       |
 |                    | /dev/mapper/cryptroot         |                       |
@@ -993,45 +995,46 @@ Esta configuração utiliza o mesmo particionamento que a seção [#LVM dentro d
 O Particionamento deste exemplo é:
 
 ```
-+---------------------+----------------------+----------------------+----------------------+----------------------+
-| BIOS boot partition | EFI system partition | Logical volume 1     | Logical volume 2     | Logical volume 3     |
-|                     |                      |                      |                      |                      |
-|                     | /efi                 | /                    | [SWAP]               | /home                |
-|                     |                      |                      |                      |                      |
-|                     |                      | /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home |
-| /dev/sda1           | /dev/sda2            |----------------------+----------------------+----------------------+
-| unencrypted         | unencrypted          | /dev/sda3 encrypted using LVM on LUKS1                             |
-+---------------------+----------------------+--------------------------------------------------------------------+
++--------------------+---------------------+-----------------------+-----------------------+-----------------------+
+| Partição de        | Partição de sistema | Volume Lógico 1       | volume lógico 2       | volume lógico 3       |
+| inicialização BIOS | EFI                 |                       |                       |                       |
+|                    |                     |                       |                       |                       |
+|                    | /efi                | /                     | [SWAP]                | /home                 |
+|                    |                     |                       |                       |                       |
+|                    |                     | /dev/MeuVolGrupo/raiz | /dev/MeuVolGrupo/swap | /dev/MeuVolGrupo/home |
+| /dev/sda1          | /dev/sda2           |-----------------------+-----------------------+-----------------------+
+| não criptografado  | não criptografado   | /dev/sda3 criptografado usando LVM dentro do LUKS1                    |
++--------------------+---------------------+-----------------------------------------------------------------------+
 
 ```
 
-**Tip:**
+**Dica:**
 
-*   All scenarios are intended as examples. It is, of course, possible to apply both of the two above distinct installation steps with the other scenarios as well. See also the variants linked in [#LVM on LUKS](#LVM_on_LUKS).
-*   You can use `cryptboot` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified encrypted boot management (mounting, unmounting, upgrading packages) and as a defense against [Evil Maid](https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html) attacks with [UEFI Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"). For more information and limitations see [cryptboot project](https://github.com/xmikos/cryptboot) page.
+*   Todos os cenários são exemplos. É possível utilizar os conceitos de distintos cenários na sua instalação, claro adaptando o que for necessário. Veja também uma variação desse cenário em [#LVM dentro do LUKS](#LVM_dentro_do_LUKS).
+*   Você pode usar o script `cryptboot` do pacote [cryptboot](https://aur.archlinux.org/packages/cryptboot/) para um gerenciamento simplificado da inicialização com partição de boot criptografada (montar, desmontar, atualizar pacotes) e como uma defesa contra o ataque [Evil Maid](https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html) com [UEFI Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"). Para mais detalhes e limitações veja a página do [projeto cryptboot](https://github.com/xmikos/cryptboot).
 
-### Preparing the disk
+### Preparando o disco
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
+Antes de criar qualquer partição, você deve saber a importância e métodos de como apagar o disco com segurança, descrito em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento").
 
-For [BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with size of 1 MiB for GRUB to store the second stage of BIOS bootloader. Do not mount the partition.
+Para [sistemas BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_BIOS "GRUB (Português)") crie uma [partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS") com o tamanho de 1 MiB para que o GRUB guarde o segundo estágio da inicialização BIOS. não monte a partição.
 
-For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size, it will later be mounted at `/efi`.
+Para [sistemas UEFI](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_UEFI "GRUB (Português)") crie uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") com tamanho apropriado, será montada em `/efi`.
 
-Create a partition of type `8309`, which will later contain the encrypted container for the LVM.
+Crie uma partição do tipo `8309`, que mais tarde conterá o container criptografado para a LVM.
 
-Create the LUKS encrypted container:
+Crie o container criptografado com LUKS:
 
-**Warning:** GRUB does not support LUKS2\. Use LUKS1 (`--type luks1`) on partitions that GRUB needs to access.
+**Atenção:** GRUB não suporta LUKS2\. Use LUKS1 (`--type luks1`) em partições que o GRUB precisa acessar.
 
 ```
 # cryptsetup luksFormat --type luks1 /dev/sda3
 
 ```
 
-For more information about the available cryptsetup options see the [LUKS encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") prior to above command.
+Para mais informações sobre as opções do cryptsetup disponíveis, veja [dm-crypt/Encriptação de dispositivo#Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") antes do comando acima.
 
-Your partition layout should look similar to this:
+Seu particionamento deve ser similar a:
 
  `# gdisk -l /dev/sda` 
 ```
@@ -1043,20 +1046,20 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 
 ```
 
-Open the container:
+Abra o container:
 
 ```
 # cryptsetup open /dev/sda3 cryptlvm
 
 ```
 
-The decrypted container is now available at `/dev/mapper/cryptlvm`.
+o container aberto agora está disponível em `/dev/mapper/cryptlvm`.
 
-### Preparing the logical volumes
+### Preparando os volumes lógicos
 
-The LVM logical volumes of this example follow the exact layout as the [#LVM on LUKS](#LVM_on_LUKS) scenario. Therefore, please follow [#Preparing the logical volumes](#Preparing_the_logical_volumes) above and adjust as required.
+Os volumes lógicos do LVM neste exemplo seguem o particionamento acima como o cenário [#LVM dentro do LUKS](#LVM_dentro_do_LUKS). Siga [#Preparando os volumes lógicos](#Preparando_os_volumes_lógicos) acima, ajuste o que desejar e precisar.
 
-If you plan to boot in UEFI mode, create a mountpoint for the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") at `/efi` for compatibility with `grub-install` and mount it:
+Se você planeja inicializar no modo UEFI, crie um ponto de montagem para [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") em `/efi` para compatibilidade com `grub-install` e monte:
 
 ```
 # mkdir /mnt/efi
@@ -1064,86 +1067,86 @@ If you plan to boot in UEFI mode, create a mountpoint for the [EFI system partit
 
 ```
 
-At this point, you should have the following partitions and logical volumes inside of `/mnt`:
+Neste ponto, você deve ter as seguintes partições e volumes lógicos dentro de `/mnt`:
 
  `$ lsblk` 
 ```
-NAME                  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
-sda                   8:0      0   200G  0 disk
-├─sda1                8:1      0     1M  0 part
-├─sda2                8:2      0   550M  0 part  /mnt/efi
-└─sda3                8:3      0   100G  0 part
-  └─cryptlvm          254:0    0   100G  0 crypt
-    ├─MyVolGroup-swap 254:1    0     8G  0 lvm   [SWAP]
-    ├─MyVolGroup-root 254:2    0    32G  0 lvm   /mnt
-    └─MyVolGroup-home 254:3    0    60G  0 lvm   /mnt/home
+NAME                   MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda                      8:0    0   200G  0 disk
+├─sda1                   8:1    0     1M  0 part
+├─sda2                   8:2    0   550M  0 part  /mnt/efi
+└─sda3                   8:3    0   100G  0 part
+  └─cryptlvm           254:0    0   100G  0 crypt
+    ├─MeuVolGrupo-swap 254:1    0     8G  0 lvm   [SWAP]
+    ├─MeuVolGrupo-root 254:2    0    32G  0 lvm   /mnt
+    └─MeuVolGrupo-home 254:3    0    60G  0 lvm   /mnt/home
 
 ```
 
-### Configuring mkinitcpio
+### Configurando o mkinitcpio
 
-Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Adicione os hooks `keyboard`, `encrypt` e `lvm2` no [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
 
 ```
 
-If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook with the systemd-based initramfs, the following needs to be set instead:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
 
 ```
 
-See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
+Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes e outros hooks que você pode precisar.
 
-### Configuring GRUB
+### Configurando o GRUB
 
-Configure GRUB to allow booting from `/boot` on a LUKS1 encrypted partition:
+Para permitir a inicialização, configure o GRUB para que ele consiga acessar o `/boot` que está dentro de uma partição criptografada com LUKS1:
 
  `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
 
-Set the kernel parameters, so that the initramfs can unlock the encrypted root partition. Using the `encrypt` hook:
+Defina os parâmetros do kernel, para que o initramfs possa abrir a partição raiz criptografada. Se for usar o hook `encrypt`:
 
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*device-UUID*:cryptlvm ..."` 
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*UUID-do-dispositivo*:cryptlvm ..."` 
 
-If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the following need to be set instead:
+Se for usar o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)"), o seguinte precisa ser definido:
 
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm ..."` 
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... rd.luks.name=*UUID-do-dipositivo*=cryptlvm ..."` 
 
-See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda3` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") e [GRUB#/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)") for details. `*UUID-do-dispositivo*` faz referência ao UUID do `/dev/sda3` (a partição que tem o sistema de arquivos raiz contido no LVM). Veja [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco").
 
-[install GRUB](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP for UEFI booting:
+[instale o GRUB](/index.php/GRUB_(Portugu%C3%AAs)#Instalação_2 "GRUB (Português)") na ESP montada para inicialização UEFI:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
 
 ```
 
-[install GRUB](/index.php/GRUB#Installation "GRUB") to the disk for BIOS booting:
+[instale o GRUB](/index.php/GRUB_(Portugu%C3%AAs)#Instalação "GRUB (Português)") no disco para inicialização BIOS:
 
 ```
 # grub-install --target=i386-pc --recheck /dev/sda
 
 ```
 
-Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file:
+Gere o arquivo de [configuração](/index.php/GRUB_(Portugu%C3%AAs)#Gerar_o_arquivo_de_configuração_principal "GRUB (Português)") do GRUB:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
-If all commands finished without errors, GRUB should prompt for the passphrase to unlock the `/dev/sda3` partition after the next reboot.
+Se todos os comandos foram executados sem erros, GRUB deve solicitar a senha para abrir a partição `/dev/sda3` na próxima inicialização.
 
-### Avoiding having to enter the passphrase twice
+### Evite digitar a senha duas vezes
 
-While GRUB asks for a passphrase to unlock the LUKS1 encrypted partition after above instructions, the partition unlock is not passed on to the initramfs. Hence, you have to enter the passphrase twice at boot: once for GRUB and once for the initramfs.
+apesar do GRUB solicitar a senha para abrir a partição criptografada com LUKS1, isso não é passado para o initramfs. Consequentemente, você vai precisa digitar a senha duas vezes: uma vez para o GRUB e outra para o initramfs.
 
-This section deals with extra configuration to let the system boot by only entering the passphrase once, in GRUB. This is accomplished by [with a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
+Esta seção lida com uma configuração extra para digitar a senha somente uma vez, no GRUB. Para isso é utilizado [uma keyfile dentro do initramfs](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Encriptação de dispositivo").
 
-First create a keyfile and add it as LUKS key:
+Primeiro crie uma keyfile e a adicione como uma chave do LUKS:
 
 ```
 # dd bs=512 count=4 if=/dev/random of=/root/cryptlvm.keyfile iflag=fullblock
@@ -1153,169 +1156,169 @@ First create a keyfile and add it as LUKS key:
 
 ```
 
-Add the keyfile to the initramfs image:
+Adicione a keyfile para a imagem do initramfs:
 
  `/etc/mkinitcpio.conf`  `FILES=(/root/cryptlvm.keyfile)` 
 
-Set the following kernel parameters to unlock the LUKS partition with the keyfile. Using the `encrypt` hook:
+Defina o seguinte parâmetro do kernel para abrir a partição criptografada com a keyfile. Se está usando o hook `encrypt`:
 
 ```
 GRUB_CMDLINE_LINUX="... cryptkey=rootfs:/root/cryptlvm.keyfile"
 
 ```
 
-Or, using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+Ou, usando o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)"):
 
 ```
 GRUB_CMDLINE_LINUX="... rd.luks.key=*device-UUID*=/root/cryptlvm.keyfile"
 
 ```
 
-If for some reason the keyfile fails to unlock the boot partition, systemd will fallback to ask for a passphrase to unlock and, in case that is correct, continue booting.
+Se por algum motivo a keyfile falhar, systemd solicitará a senha para abrir e, em caso dela estar correta, continuar a inicialização.
 
-**Tip:** If you want to encrypt the `/boot` partition to protect against offline tampering threats, the [mkinitcpio-chkcryptoboot](/index.php/Dm-crypt/Specialties#mkinitcpio-chkcryptoboot "Dm-crypt/Specialties") hook has been contributed to help.
+**Dica:** Se quer criptografar a partição `/boot` para proteger contra ameaças de adulteração offline (offline tampering threats), o hook [mkinitcpio-chkcryptoboot](/index.php/Dm-crypt/Specialties#mkinitcpio-chkcryptoboot "Dm-crypt/Specialties") têm sido desenvolvido para isso.
 
-## Btrfs subvolumes with swap
+## Subvolumes do Btrfs com swap
 
-The following example creates a full system encryption with LUKS1 using [Btrfs](/index.php/Btrfs "Btrfs") subvolumes to [simulate partitions](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
+O seguinte exemplo cria todo um sistema criptografado com LUKS1, [simulando partições](/index.php/Btrfs#Mounting_subvolumes "Btrfs") com subvolumes do [Btrfs](/index.php/Btrfs "Btrfs").
 
-If using UEFI, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda1` and is mounted at `/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
+Ao usar UEFI, uma [Partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") (ESP) é necessária. `/boot` pode estar em `/` e ser criptografada; no entanto, a ESP não pode ser criptografada. Neste exemplo, a ESP é `/dev/sda1` e está montada em `/efi`. `/boot` está localizada na partição do sistema, `/dev/sda2`.
 
-Since `/boot` resides on the LUKS1 encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod).
+Desde que `/boot` reside na `/` criptografada com LUKS1, [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") deve ser usado como o gerenciador de boot porque somente ele pode carregar os módulos para decriptografar `/boot` (exemplo, crypto.mod, cryptodisk.mod e luks.mod).
 
-Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partition is shown.
+Também é mostrada uma partição [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") criptografada.
 
-**Warning:** Do not use a [swap file](/index.php/Swap_file "Swap file") instead of a separate partition on Linux kernels before v5.0, because this may result in data loss. See [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs").
-
-```
-+----------------------+----------------------+----------------------+
-| EFI system partition | System partition     | Swap partition       |
-| unencrypted          | LUKS1-encrypted      | plain-encrypted      |
-|                      |                      |                      |
-| /efi                 | /                    | [SWAP]               |
-| /dev/sda1            | /dev/sda2            | /dev/sda3            |
-|----------------------+----------------------+----------------------+
+**Atenção:** Não use [arquivo swap](/index.php/Arquivo_swap "Arquivo swap") no Btrfs nas versões do kernel Linux anteriores à 5.0, pode resultar em perca de dados. Veja [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs").
 
 ```
++-----------------------+-------------------------+------------------+
+| Partição de sistema   | Partição do sistema     | Partição swap    |
+| EFI não criptografada | criptografada com LUKS1 | criptografada    |
+|                       |                         |                  |
+| /efi                  | /                       | [SWAP]           |
+| /dev/sda1             | /dev/sda2               | /dev/sda3        |
+|-----------------------+-------------------------+------------------+
 
-### Preparing the disk
+```
 
-**Note:** It is not possible to use btrfs partitioning as described in [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") when using LUKS. Traditional partitioning must be used, even if it is just to create one partition.
+### Preparando o disco
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size. It will later be mounted at `/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
+**Nota:** Não é possível utilizar o btrfs como descrito em [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") ao usar o LUKS. Particionamento tradicional deve ser usado, mesmo se é somente para criar uma partição.
 
-Create the needed partitions, at least one for `/` (e.g. `/dev/sda2`). See the [Partitioning](/index.php/Partitioning "Partitioning") article.
+Antes de criar qualquer partição, você deveria saber a importância e também métodos de como apagar o disco com segurança, descritos em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento"). Se você está usando [UEFI](/index.php/UEFI "UEFI") crie uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") com o tamanho apropriado. Ela será montada em `/efi`. Se você vai criar uma partição swap criptografada, crie ela, mas *não* marque isso como swap, desde que ela será usada no modo plain do *dm-crypt*.
 
-### Preparing the system partition
+Crie as partições, ao menos uma para `/` (exemplo, `/dev/sda2`). Veja o artigo [Partitioning](/index.php/Partitioning "Partitioning").
 
-#### Create LUKS container
+### Preparando a partição do sistema
 
-**Warning:** GRUB does not support LUKS2\. Use LUKS1 (`--type luks1`) on partitions that GRUB needs to access.
+#### Crie o container LUKS
 
-Follow [dm-crypt/Device encryption#Encrypting devices with LUKS mode](/index.php/Dm-crypt/Device_encryption#Encrypting_devices_with_LUKS_mode "Dm-crypt/Device encryption") to setup `/dev/sda2` for LUKS. See the [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before doing so for a list of encryption options.
+**Atenção:** GRUB não suporta LUKS2\. Use LUKS1 (`--type luks1`) em partições que ele precisa acessar.
 
-#### Unlock LUKS container
+Siga [dm-crypt/Encriptação de dispositivo#Criptografando dispositivos com o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Criptografando_dispositivos_com_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") para configurar o `/dev/sda2` para LUKS. Veja o [dm-crypt/Encriptação de dispositivo#Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") para uma lista de opções de encriptação.
 
-Now follow [dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking/Mapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") to unlock the LUKS container and map it.
+#### Abra o container LUKS
 
-#### Format mapped device
+Siga [dm-crypt/Encriptação de dispositivo#Abrindo/mapeando partições LUKS com o mapeador de dispositivos](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Unlocking/Mapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Encriptação de dispositivo") para abrir e mapear o container LUKS.
 
-Proceed to format the mapped device as described in [Btrfs#File system on a single device](/index.php/Btrfs#File_system_on_a_single_device "Btrfs"), where `*/dev/partition*` is the name of the mapped device (i.e., `cryptroot`) and **not** `/dev/sda2`.
+#### Formate o dispositivo mapeado
 
-#### Mount mapped device
+Formate o dispositivo mapeado como descrito em [Btrfs#File system on a single device](/index.php/Btrfs#File_system_on_a_single_device "Btrfs"), onde `*/dev/partition*` é o nome do dispositivo mapeado (i.e., `cryptraiz`) e **não** `/dev/sda2`.
 
-Finally, [mount](/index.php/Mount "Mount") the now-formatted mapped device (i.e., `/dev/mapper/cryptroot`) to `/mnt`.
+#### Monte o dispositivo mapeado
 
-**Tip:** You may want to use the `compress=lzo` mount option. See [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs") for more information.
+Finalmente, [monte](/index.php/Mount "Mount") o agora formatado dispositivo mapeado (i.e., `/dev/mapper/cryptraiz`) para `/mnt`.
 
-### Creating btrfs subvolumes
+**Dica:** You pode querer usar a opção de montagem `compress=lzo`. Veja [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs") para mais informações.
 
-#### Layout
+### Criando subvolumes do btrfs
 
-[Subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") will be used to simulate partitions, but other (nested) subvolumes will also be created. Here is a partial representation of what the following example will generate:
+#### Esboço
+
+[Subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") serão usados como partições simuladas, mas outros subvolumes (aninhados) serão criados. A seguir uma representação parcial do que este seguinte exemplo vai gerar:
 
 ```
 subvolid=5 (/dev/sda2)
    |
-   ├── @ (mounted as /)
+   ├── @ (montado como /)
    |       |
-   |       ├── /bin (directory)
+   |       ├── /bin (diretório)
    |       |
-   |       ├── /home (mounted @home subvolume)
+   |       ├── /home (subvolume @home montado)
    |       |
-   |       ├── /usr (directory)
+   |       ├── /usr (diretório)
    |       |
-   |       ├── /.snapshots (mounted @snapshots subvolume)
+   |       ├── /.snapshots (subvolume @snapshots montado)
    |       |
-   |       ├── /var/cache/pacman/pkg (nested subvolume)
+   |       ├── /var/cache/pacman/pkg (subvolume aninhado)
    |       |
-   |       ├── ... (other directories and nested subvolumes)
+   |       ├── ... (outros diretórios e subvolumes aninhados)
    |
-   ├── @snapshots (mounted as /.snapshots)
+   ├── @snapshots (mondado como /.snapshots)
    |
-   ├── @home (mounted as /home)
+   ├── @home (montado como /home)
    |
-   └── @... (additional subvolumes you wish to use as mount points)
+   └── @... (subvolumes adicionais que você deseja usar como ponto de montagem)
 
 ```
 
 This section follows the [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), which is most useful when used with [Snapper](/index.php/Snapper "Snapper"). You should also consult [Btrfs Wiki SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout).
 
-#### Create top-level subvolumes
+#### Crie os subvolumes de nível superior
 
-Here we are using the convention of prefixing `@` to subvolume names that will be used as mount points, and `@` will be the subvolume that is mounted as `/`.
+Será utilizada a convenção do prefixo `@` para os nomes do subvolume que serão usados como ponto de montagem, e`@` será o subvolume montado como `/`.
 
-Following the [Btrfs#Creating a subvolume](/index.php/Btrfs#Creating_a_subvolume "Btrfs") article, create subvolumes at `/mnt/@`, `/mnt/@snapshots`, and `/mnt/@home`.
+Seguindo o artigo [Btrfs#Creating a subvolume](/index.php/Btrfs#Creating_a_subvolume "Btrfs"), crie os subvolumes em `/mnt/@`, `/mnt/@snapshots`, e `/mnt/@home`.
 
 Create any additional subvolumes you wish to use as mount points now.
 
-#### Mount top-level subvolumes
+#### Monte os subvolumes de nível superior
 
-Unmount the system partition at `/mnt`.
+Desmonte a partição do sistema em `/mnt`.
 
-Now mount the newly created `@` subvolume which will serve as `/` to `/mnt` using the `subvol=` mount option. Assuming the mapped device is named `cryptroot`, the command would look like:
-
-```
-# mount -o compress=lzo,subvol=@ /dev/mapper/cryptroot /mnt
+Agora monte os subvolumes `@` que irão servir como `/` para `/mnt` usando a opção de montagem `subvol=`. Assumindo que o nome do dispositivo mapeado é `cryptraiz`, o comando deve se parecer com:
 
 ```
+# mount -o compress=lzo,subvol=@ /dev/mapper/cryptraiz /mnt
 
-See [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") for more details.
+```
 
-Also mount the other subvolumes to their respective mount points: `@home` to `/mnt/home` and `@snapshots` to `/mnt/.snapshots`.
+Veja [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") para mais detalhes.
 
-#### Create nested subvolumes
+Também monte outros subvolumes para seus respectivos pontos de montagem: `@home` para `/mnt/home` e `@snapshots` para `/mnt/.snapshots`.
 
-Create any subvolumes you do **not** want to have snapshots of when taking a snapshot of `/`. For example, you probably do not want to take snapshots of `/var/cache/pacman/pkg`. These subvolumes will be nested under the `@` subvolume, but just as easily could have been created earlier at the same level as `@` according to your preference.
+#### Crie os subvolumes aninhados
 
-Since the `@` subvolume is mounted at `/mnt` you will need to [create a subvolume](/index.php/Create_a_subvolume "Create a subvolume") at `/mnt/var/cache/pacman/pkg` for this example. You may have to create any parent directories first.
+Crie quaisquer subvolumes que você *não* deseja ter snapshots quando tirar uma snapshot do `/`. Por exemplo, você provavelmente não quer tirar snapshots do `/var/cache/pacman/pkg`. estes subvolumes serão aninhados dentro do subvolume `@`, mas facilmente você conseguiria criar no mesmo nível do `@` se for de acordo com sua preferência.
 
-Other directories you may wish to do this with are `/var/abs`, `/var/tmp`, and `/srv`.
+Desde que o subvolume `@` está montado em `/mnt` será necessário [criar um subvolume](/index.php/Create_a_subvolume "Create a subvolume") em `/mnt/var/cache/pacman/pkg` para este exemplo. você pode ser necessário criar diretórios anteriores ao *pkg*.
 
-#### Mount ESP
+Outros diretórios que você pode desejar fazer isso são `/var/abs`, `/var/tmp`, e `/srv`.
 
-If you prepared an EFI system partition earlier, create its mount point and mount it now.
+#### Monte a ESP
 
-**Note:** Btrfs snapshots will exclude `/efi`, since it is not a btrfs file system.
+Se preparou uma partição de sistema EFI anteriormente, crie seu ponto de montagem e monte-a.
+
+**Nota:** Btrfs snapshots irão excluir o `/efi`, desde que não é de um sistema de arquivos btrfs.
 
 At the [pacstrap](/index.php/Installation_guide#Install_essential_packages "Installation guide") installation step, the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) must be installed in addition to the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package").
 
-### Configuring mkinitcpio
+### Configurando o mkinitcpio
 
-#### Create keyfile
+#### Crie a keyfile
 
-In order for GRUB to open the LUKS partition without having the user enter his passphrase twice, we will use a keyfile embedded in the initramfs. Follow [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") making sure to add the key to `/dev/sda2` at the *luksAddKey* step.
+Para o GRUB abrir a partição LUKS sem que o usuário digite a senha duas vezes, coloque uma keyfile no initramfs. Siga [dm-crypt/Encriptação do dispositivo#com uma keyfile dentro do initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption"), tenha certeza de adicionar a chave para `/dev/sda2` do passo *luksAddKey*.
 
-#### Edit mkinitcpio.conf
+#### Edite o mkinitcpio.conf
 
-After creating, adding, and embedding the key as described above, add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") as well as any other hooks you require. See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for detailed information.
+Depois de criar, adicionar e colocar a chave como descrito acima, adicione o hook `encrypt` no [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") e também outros hooks que precise. Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt/Configuração do sistema") para informações detalhadas.
 
-**Tip:** You may want to add `BINARIES=(/usr/bin/btrfs)` to your `mkinitcpio.conf`. See the [Btrfs#Corruption recovery](/index.php/Btrfs#Corruption_recovery "Btrfs") article.
+**Dica:** Você pode querer adicionar `BINARIES=(/usr/bin/btrfs)` para sua `mkinitcpio.conf`. Veja o artigo [Btrfs#Corruption recovery](/index.php/Btrfs#Corruption_recovery "Btrfs").
 
-### Configuring the boot loader
+### Configurando o gerenciador de boot
 
-Install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda`. Then, edit `/etc/default/grub` as instructed in the [GRUB#Additional arguments](/index.php/GRUB#Additional_arguments "GRUB") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB"), following both the instructions for an encrypted root and boot partition. Finally, generate the GRUB configuration file.
+Instale o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") em `/dev/sda`. Então, edite `/etc/default/grub` como sugerido em [GRUB#Argumentos adicionais](/index.php/GRUB_(Portugu%C3%AAs)#Argumentos_adicionais "GRUB (Português)") e [GRUB#/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)"), siga ambas as instruções para o sistema criptografado e a partição de boot. Depois, gere o arquivo de configuração do GRUB.
 
-### Configuring swap
+### Configurando a swap
 
-If you created a partition to be used for encrypted swap, now is the time to configure it. Follow the instructions at [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+Se você criou uma partição para ser usada como swap criptografada, siga as instruções em [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") para configurá-la.

@@ -204,9 +204,7 @@ This allows to apply newer microcode updates without rebooting the system. For [
  `/etc/pacman.d/hooks/microcode_reload.hook` 
 ```
 [Trigger]
-Operation = Install
 Operation = Upgrade
-Operation = Remove
 Type = File
 Target = usr/lib/firmware/amd-ucode/*
 

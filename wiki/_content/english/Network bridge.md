@@ -149,7 +149,7 @@ See [systemd-networkd#Bridge interface](/index.php/Systemd-networkd#Bridge_inter
 
 [GNOME](/index.php/GNOME "GNOME")'s Network settings can create bridges, but currently will not auto-connect to them or slave/attached interfaces. Open Network Settings, add a new interface of type Bridge, add a new bridged connection, and select the MAC address of the device to attach to the bridge.
 
-[KDE](/index.php/KDE "KDE")'s [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) cannot create bridges, another tool must be used for the creation. It can, however, view and modify bridges. "Show and configure virtual connections" must be enabled in the applet configuration (as opposed to the KCM dialog accessed from the applet's configure button or KDE system settings) in order to view and modify bridge interfaces.
+[KDE](/index.php/KDE "KDE")'s [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) can create bridges. In order to view, create and modify bridge interfaces right click the Networks applet in the system tray and select *Configure Networks...*, in the Networks Settings window's *General* section enable "Show virtual connections". A session restart will be necessary to use the enabled functionality.
 
 [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor) can create bridges in the same manner as GNOME's Network settings.
 

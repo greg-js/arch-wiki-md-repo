@@ -7,7 +7,7 @@ Related articles
 
 [WordPress](http://wordpress.org) is a free and open source content management system ([CMS](https://en.wikipedia.org/wiki/Content_management_system "wikipedia:Content management system")) created by [Matt Mullenweg](https://en.wikipedia.org/wiki/Matt_Mullenweg "wikipedia:Matt Mullenweg") and first released in 2003\. WordPress has a vast and vibrant community that provides tens of thousands of free plugins and themes to allow the user to easily customize the appearance and function of their WordPress CMS. WordPress is licensed under the GPLv2.
 
-The biggest feature of WordPress is its ease in configuration and administration. [Setting up a WordPress site takes five minutes](http://codex.wordpress.org/Installing_WordPress). The WordPress administration panel allows users to easily configure almost every aspect of their website including fetching and installing plugins and themes. WordPress provides effortless automatic updates.
+The biggest feature of WordPress is its ease in configuration and administration. [Setting up a WordPress site takes five minutes](https://wordpress.org/support/article/how-to-install-wordpress/). The WordPress administration panel allows users to easily configure almost every aspect of their website including fetching and installing plugins and themes. WordPress provides effortless automatic updates.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

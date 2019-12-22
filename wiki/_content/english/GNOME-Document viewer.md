@@ -16,6 +16,7 @@ Document viewer uses the poppler library as a backend.
     *   [2.2 Zoom-in is limited](#Zoom-in_is_limited)
     *   [2.3 PDF texts is not show correctly](#PDF_texts_is_not_show_correctly)
     *   [2.4 Inverse search with SyncTeX doesn't work](#Inverse_search_with_SyncTeX_doesn't_work)
+    *   [2.5 WebP comic book support](#WebP_comic_book_support)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Annotation handling](#Annotation_handling)
     *   [3.2 Use as default PDF viewer](#Use_as_default_PDF_viewer)
@@ -56,6 +57,10 @@ $ gsettings set org.gnome.Evince override-restrictions false
 ### Inverse search with SyncTeX doesn't work
 
 Check that [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) is [installed](/index.php/Install "Install"). After that `Ctrl+click` should work.
+
+### WebP comic book support
+
+Some comic books files (cbr, cbz etc.) use WebP images. Install [webp-pixbuf-loader](https://aur.archlinux.org/packages/webp-pixbuf-loader/) for WebP comic book support.
 
 ## Tips and Tricks
 

@@ -201,7 +201,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Reporting bug guidelines (简体中文)](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)") | 完成 | 无 | 无 |
 | [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") | 完成 | Arisaka | 无 |
 | [Smart Common Input Method platform (简体中文)](/index.php/Smart_Common_Input_Method_platform_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Smart Common Input Method platform (简体中文)") | 过期 | 无 | 无 |
-| [Steam (简体中文)](/index.php/Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Steam (简体中文)") | 过期 | C0n5t4ntK | 翻译中 |
+| [Steam (简体中文)](/index.php/Steam_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Steam (简体中文)") | 完成 | C0n5t4ntK | 长期维护中 |
 | [Systemd-timesyncd (简体中文)](/index.php/Systemd-timesyncd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-timesyncd (简体中文)") | 完成 | 无 | 无 |
 | [TLP (简体中文)](/index.php/TLP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "TLP (简体中文)") | 完成 | Skywet | 持续更新中 |
 | [Tomcat (简体中文)](/index.php/Tomcat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Tomcat (简体中文)") | 完成 | Starwing117 | 持续更新中 |

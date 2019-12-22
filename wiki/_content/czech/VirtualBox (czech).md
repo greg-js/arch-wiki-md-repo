@@ -1,4 +1,4 @@
-Tento článek pojednává o provozování VirtualBoxu v Archu, možná vás bude zajímat [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
+Tento článek pojednává o provozování VirtualBoxu v Archu, možná vás bude zajímat [Install Arch Linux from VirtualBox](/index.php/Install_Arch_Linux_from_VirtualBox "Install Arch Linux from VirtualBox")
 
 [VirtualBox](http://www.virtualbox.org) je emulátor virtuálního PC jako [VMware](/index.php/VMware "VMware"). Obsahuje plno vlastností integrovaných ve vmware, stejně jako své vlastní. Je v neustálém vývoji a nové vlastnosti postupně přibývají. Verze 2.2 například přinesla podporu 3D OpenGL akcelerace pro hostované Linux a Solaris systémy. Má přehledné grafické uživatelské rozhraní (Qt a/nebo SDL) a je možné jej obsluhovat přes příkazovou řádku. VirtualBox umožňuje běh iTunes jako v sučasnosti v podstatě jedinou možnost, jak synchronizovat iPod Touch nebo iPhone s verzí 3.0 nebo vyšší.
 

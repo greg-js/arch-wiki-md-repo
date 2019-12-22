@@ -38,6 +38,7 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
         *   [4.2.2 Manual/automatic setup](#Manual/automatic_setup)
         *   [4.2.3 Troubleshooting](#Troubleshooting)
             *   [4.2.3.1 MS-CHAPv2](#MS-CHAPv2)
+    *   [4.3 WPA3 Personal](#WPA3_Personal)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
     *   [5.2 Rfkill caveat](#Rfkill_caveat)
@@ -356,6 +357,10 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option.
 
+### WPA3 Personal
+
+To use WPA3 Personal with [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") it is necessary to [rebuild](/index.php/Arch_Build_System "Arch Build System") [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) with `CONFIG_SAE=y`. ([FS#57413](https://bugs.archlinux.org/task/57413))
+
 ## Tips and tricks
 
 ### Respecting the regulatory domain
@@ -665,8 +670,8 @@ There are some other drivers for some Atheros devices. See [Linux Wireless docum
 
 External resources:
 
-*   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
-*   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
+*   [https://wireless.wiki.kernel.org/en/users/drivers/ath5k](https://wireless.wiki.kernel.org/en/users/drivers/ath5k)
+*   [https://wiki.debian.org/ath5k](https://wiki.debian.org/ath5k)
 
 If you find web pages randomly loading very slow, or if the device is unable to lease an IP address, try to switch from hardware to software encryption by loading the `ath5k` module with `nohwcrypt=1` option. See [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") for details.
 
@@ -684,8 +689,8 @@ For alternatives, see [this bug report](https://bugzilla.redhat.com/show_bug.cgi
 
 External resources:
 
-*   [http://wireless.kernel.org/en/users/Drivers/ath9k](http://wireless.kernel.org/en/users/Drivers/ath9k)
-*   [http://wiki.debian.org/ath9k](http://wiki.debian.org/ath9k)
+*   [https://wireless.wiki.kernel.org/en/users/drivers/ath9k](https://wireless.wiki.kernel.org/en/users/drivers/ath9k)
+*   [https://wiki.debian.org/ath9k](https://wiki.debian.org/ath9k)
 
 As of Linux 3.15.1, some users have been experiencing a decrease in bandwidth. In some cases this can fixed by editing `/etc/modprobe.d/ath9k.conf` and adding the line:
 
@@ -696,11 +701,11 @@ options ath9k nohwcrypt=1
 
 **Note:** Check with the command lsmod what module(-name) is in use and change it if named otherwise (e.g. ath9k_htc).
 
-In the unlikely event that you have stability issues that trouble you, you could try using the [backports-patched](https://aur.archlinux.org/packages/backports-patched/) package. An [ath9k mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) exists for support and development related discussions.
+In the unlikely event that you have stability issues that trouble you, you could try using the [backports-patched](https://aur.archlinux.org/packages/backports-patched/) package. An [ath9k mailing list](http://lists.ath9k.org/mailman/listinfo/ath9k-devel) exists for support and development related discussions.
 
 ##### Power saving
 
-Although [Linux Wireless](http://wireless.kernel.org/en/users/Documentation/dynamic-power-save) says that dynamic power saving is enabled for Atheros ath9k single-chips newer than AR9280, for some devices (e.g. AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) might still report that power saving is disabled. In this case enable it manually.
+Although [Linux Wireless](https://wireless.wiki.kernel.org/en/users/Documentation/dynamic-power-save) says that dynamic power saving is enabled for Atheros ath9k single-chips newer than AR9280, for some devices (e.g. AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) might still report that power saving is disabled. In this case enable it manually.
 
 On some devices (e.g. AR9285), enabling the power saving might result in the following error:
 

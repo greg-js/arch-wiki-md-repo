@@ -110,10 +110,6 @@ Algunas de dichas herramientas son las siguientes:
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
-*   **pacmarge** — Una herramienta para combinar automáticamente archivos *.pacnew*
-
-	[https://github.com/foutrelis/pacmarge](https://github.com/foutrelis/pacmarge) || [pacmarge](https://aur.archlinux.org/packages/pacmarge/)
-
 *   **pacnew-auto** — Fusionar automáticamente `pacnew` utilizando rebase de [git](https://www.archlinux.org/packages/?name=git).
 
 	[https://github.com/joanrieu/pacnew-auto](https://github.com/joanrieu/pacnew-auto) || [pacnew-auto-git](https://aur.archlinux.org/packages/pacnew-auto-git/)

@@ -140,7 +140,7 @@ Plasma puede iniciarse usando o bien un [gestor de pantallas](/index.php/Display
 
 ### Desde la consola
 
-Para iniciar Plasma con [xinit/startx](/index.php/Xinit_(Espa%C3%B1ol) "Xinit (Español)"), agregue `exec startkde` a su archivo `.xinitrc`. Si desea iniciar Xorg al iniciar sesión, véase [iniciar X al iniciar sesión](/index.php/Xinit_(Espa%C3%B1ol)#Inicio_automático_de_X_al_inicio_de_sesión "Xinit (Español)"). Para iniciar una sesión de Plasma en Wayland desde una consola, ejecute `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
+Para iniciar Plasma con [xinit/startx](/index.php/Xinit_(Espa%C3%B1ol) "Xinit (Español)"), agregue `exec startplasma-x11` a su archivo `.xinitrc`. Si desea iniciar Xorg al iniciar sesión, véase [iniciar X al iniciar sesión](/index.php/Xinit_(Espa%C3%B1ol)#Inicio_automático_de_X_al_inicio_de_sesión "Xinit (Español)"). Para iniciar una sesión de Plasma en Wayland desde una consola, ejecute `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Configuración
 

@@ -29,7 +29,7 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 
 ### Package naming
 
-For [Go](/index.php/Go "Go") library modules, use `go-*modulename*`. Also use the prefix if the package provides a program that is strongly coupled to the Go ecosystem. For other applications, use only the program name.
+For [Go](/index.php/Go "Go") library modules, use `golang-*modulename*`. Also use the prefix if the package provides a program that is strongly coupled to the Go ecosystem. For other applications, use only the program name.
 
 **Note:** The package name should be entirely lowercase.
 

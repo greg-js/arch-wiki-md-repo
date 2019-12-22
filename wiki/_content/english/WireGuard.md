@@ -169,7 +169,6 @@ The configuration can be saved by utilizing `showconf`:
  `/etc/wireguard/wg0.conf` 
 ```
 [Interface]
-Address = 10.0.0.1/32
 PrivateKey = *CLIENT_PRIVATE_KEY*
 
 [Peer]

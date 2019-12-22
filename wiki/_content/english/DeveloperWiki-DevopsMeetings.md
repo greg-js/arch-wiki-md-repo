@@ -14,10 +14,12 @@ The current meeting organiser is [User:jelly](/index.php/User:Jelly "User:Jelly"
 *   [2019-11-27](/index.php/DeveloperWiki:DevopsMeetings/2019-11-27 "DeveloperWiki:DevopsMeetings/2019-11-27")
 
 *   [2019-11-28](/index.php/DeveloperWiki:DevopsMeetings/2019-11-28 "DeveloperWiki:DevopsMeetings/2019-11-28")
+*   [2019-12-19](/index.php/DeveloperWiki:DevopsMeetings/2019-12-19 "DeveloperWiki:DevopsMeetings/2019-12-19")
 
 ## Meeting template
 
 ```
+[[Category:DeveloperWiki]]
 == Topic ==
 
 === State ===

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo")
+*   [Lenovo ThinkPad X1 Extreme (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Extreme_(Gen_2) "Lenovo ThinkPad X1 Extreme (Gen 2)")
+
 | **Device** | **Status** | **Modules** |
 | Intel UHD 630 Graphics | Working | i965 |
 | Nvidia GTX 1050 Ti (Max-Q) | Working | nvidia |

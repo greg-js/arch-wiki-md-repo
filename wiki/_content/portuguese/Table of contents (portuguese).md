@@ -1,5 +1,5 @@
 | [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(2)</small> |
-| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(16)</small> |
+| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(17)</small> |
 | <small>1.1.</small> [Comunidade do Arch](/index.php/Category:Arch_community_(Portugu%C3%AAs) "Category:Arch community (Português)") <small>(4)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(9)</small> |
 | <small>1.2.1.</small> [Ajuda](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
@@ -144,7 +144,7 @@
 | <small>6.11.1.1.</small> [Teclados](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(2)</small> |
 | <small>6.11.1.2.</small> [Mouses](/index.php/Category:Mice_(Portugu%C3%AAs) "Category:Mice (Português)") <small>(1)</small> |
 | <small>6.11.2.</small> [Configuração de teclado](/index.php/Category:Keyboard_configuration_(Portugu%C3%AAs) "Category:Keyboard configuration (Português)") <small>(1)</small> |
-| <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(3)</small> |
+| <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(4)</small> |
 | <small>6.13.</small> [Console Linux](/index.php/Category:Linux_console_(Portugu%C3%AAs) "Category:Linux console (Português)") <small>(3)</small> |
 | <small>6.14.</small> [Localização](/index.php/Category:Localization_(Portugu%C3%AAs) "Category:Localization (Português)") <small>(2)</small> |
 | <small>6.15.</small> [Registro log](/index.php/Category:Logging_(Portugu%C3%AAs) "Category:Logging (Português)") <small>(1)</small> |

@@ -11,7 +11,7 @@ Related articles
 
 **Tip:** A great resource for thinkpads is [https://www.thinkwiki.org/wiki/ThinkWiki](https://www.thinkwiki.org/wiki/ThinkWiki)
 
-The Lenovo ThinkPad X1 Carbon, 7th generation is an ultrabook introduced in early 2019\. It features a 14" screen, 8th-gen Intel Core processors and integrated [Intel UHD 620 graphics](/index.php/Intel_graphics "Intel graphics").
+The Lenovo ThinkPad X1 Carbon, 7th generation is an ultrabook introduced in early 2019\. It features a 14" screen, 8th-gen or 10th-gen Intel Core processors and integrated [Intel UHD 620 graphics](/index.php/Intel_graphics "Intel graphics").
 
 To ensure you have this version, [install](/index.php/Install "Install") the package [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) and run:
 
@@ -195,7 +195,7 @@ volume = ignore
 
 ```
 
-A PulseAudio restart is required for this change to take affect. Make sure to increase the "*Master*" channel volume to 100% for the top-firing speakers to work (using amixer or alsamixer, found in [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)).
+A PulseAudio restart is required for this change to take effect. Make sure to increase the "*Master*" channel volume to 100% for the top-firing speakers to work (using amixer or alsamixer, found in [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)).
 
 #### Persistent fix
 

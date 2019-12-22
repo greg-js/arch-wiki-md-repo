@@ -18,11 +18,12 @@ Highlights:
     *   [1.1 Enabling Linux support](#Enabling_Linux_support)
     *   [1.2 Replacing the default Debian Linux container with Arch Linux](#Replacing_the_default_Debian_Linux_container_with_Arch_Linux)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 App not opening in chrome OS (infinite spinner)](#App_not_opening_in_chrome_OS_(infinite_spinner))
-    *   [2.2 Audio playback](#Audio_playback)
-    *   [2.3 Video playback](#Video_playback)
-    *   [2.4 GPU acceleration](#GPU_acceleration)
-    *   [2.5 Fullscreen video, games and mouse capture](#Fullscreen_video,_games_and_mouse_capture)
+    *   [2.1 No network in container](#No_network_in_container)
+    *   [2.2 App not opening in chrome OS (infinite spinner)](#App_not_opening_in_chrome_OS_(infinite_spinner))
+    *   [2.3 Audio playback](#Audio_playback)
+    *   [2.4 Video playback](#Video_playback)
+    *   [2.5 GPU acceleration](#GPU_acceleration)
+    *   [2.6 Fullscreen video, games and mouse capture](#Fullscreen_video,_games_and_mouse_capture)
 *   [3 Useful links](#Useful_links)
 
 ## Introduction
@@ -62,27 +63,14 @@ lxc list
 
 ```
 
-3\. Replace the default Debian container with Arch Linux.
-
-The default Debian container is named penguin. Renaming the "arch" container created above to it will cause chrome to launch Linux apps from the arch container.
-
-```
-lxc stop --force arch
-lxc stop --force penguin
-lxc rename penguin debian
-lxc rename arch penguin
-lxc start penguin
-
-```
-
-4\. launch a bash shell on the arch container:
+3\. launch a bash shell on the arch container:
 
 ```
 lxc exec penguin -- bash
 
 ```
 
-5\. Set password for the default user based on your gmail username on the container. By default the gmail user has no password set so we need to set it:
+4\. Set password for the default user based on your gmail username on the container. By default the gmail user has no password set so we need to set it:
 
 ```
 passwd $(grep 1000:1000 /etc/passwd|cut -d':' -f1)
@@ -118,16 +106,36 @@ exit
 
 ```
 
-6\. Install Crostini container tools, Wayland for GUI apps, XWayland for X11 apps.
-
-First open a console session the the Arch Linux container.
+5\. Login to the container using regular user account you just configured:
 
 ```
 lxc console penguin
 
 ```
 
-[Install](/index.php/Install "Install") the [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) package. Additionally install [wayland](https://www.archlinux.org/packages/?name=wayland) and [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) to be able to use GUI tools. Then enable and start the services (for Wayland GUI, X11 GUI, Wayland GUI low density and X11 GUI low density accordingly):
+6\. Verify networking in the container. Command
+
+```
+ip -4 a show dev eth0
+
+```
+
+should return non-empty output with assigned ip address.
+
+If it is not empty, please proceed to step 7, otherwise you are facing the issue described in [#No network in container](#No_network_in_container) troubleshooting section. To temporarily configure network and enable internet access for current session run following command:
+
+```
+sudo dhcpcd eth0
+
+```
+
+Now follow the instructions from the [#No network in container](#No_network_in_container) troubleshooting section.
+
+7\. Install Crostini container tools, Wayland for GUI apps, XWayland for X11 apps.
+
+[Install](/index.php/Install "Install") the [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) package. Additionally install [wayland](https://www.archlinux.org/packages/?name=wayland) and [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) to be able to use GUI tools.
+
+8\. Enable and start the services (for Wayland GUI, X11 GUI, Wayland GUI low density and X11 GUI low density accordingly):
 
 ```
 $ systemctl --user enable sommelier@0
@@ -149,7 +157,20 @@ systemctl --user status sommelier-x@1
 
 Now, when apps are installed in Arch Linux, they will automatically show up and can be launched from ChromeOS.
 
-7\. Restart the Linux subsystem to apply the changes. After restart
+9\. Replace the default Debian container with Arch Linux.
+
+Exit from the container shell back to the termina shell pressing **<ctrl>+a q** (or just close existing and open new termina shell as shown in step 2). The default Debian container is named penguin. Renaming the "arch" container created above to it will cause chrome to launch Linux apps from the arch container.
+
+```
+lxc stop --force arch
+lxc stop --force penguin
+lxc rename penguin debian
+lxc rename arch penguin
+lxc start penguin
+
+```
+
+10\. Restart the Linux subsystem to apply the changes. After restart inside container shell
 
 ```
 systemctl --failed
@@ -160,13 +181,30 @@ systemctl --user --failed
 should both report **0 loaded units listed** and
 
 ```
-journalctl -p 3 -xb
+ip -4 a show dev eth0
 
 ```
 
-should report **-- No entries --**
+should report ip address assigned for container
 
 ## Troubleshooting
+
+### No network in container
+
+As was reported by multiple sources, systemd-networkd and systemd-resolved services in systemd-244.1 are not working properly for unprivileged LXC containers, which ends up in missing network connectivity inside the Crostini container. Proposed solution is completely disable systemd-networkd/systemd-resolved and perform network configuration by [dhclient](/index.php/Dhclient "Dhclient") service instead:
+
+```
+sudo systemctl disable systemd-networkd
+sudo systemctl disable systemd-resolved
+sudo unlink /etc/resolv.conf
+sudo touch /etc/resolv.conf
+sudo pacman -S dhclient
+sudo systemctl enable dhclient@eth0
+sudo systemctl start dhclient@eth0
+
+```
+
+[NetworkManager](/index.php/NetworkManager "NetworkManager") and [dhcpcd](/index.php/Dhcpcd "Dhcpcd") also can be used to address the issue if you prefer them over the proposed solution.
 
 ### App not opening in chrome OS (infinite spinner)
 

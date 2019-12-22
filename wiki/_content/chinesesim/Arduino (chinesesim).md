@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Arduino](/index.php/Arduino "Arduino") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-12-17，点击[这里](https://wiki.archlinux.org/index.php?title=Arduino&diff=0&oldid=592053)可以查看翻译后英文页面的改动。
+
 [Arduino](https://en.wikipedia.org/wiki/Arduino "wikipedia:Arduino") 是一款便捷灵活、方便上手的开源电子原型平台。它适用于艺术家，设计师，业余爱好者以及任何对创建交互式对象或环境感兴趣的人。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

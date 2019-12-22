@@ -348,6 +348,8 @@ You can also build your own with a floating terminal and fzf as discussed in a [
 
 Also `krunner` binary provided by [plasma-workspace](https://www.archlinux.org/packages/?name=plasma-workspace) package can serve as launcher, offering both XWayland and native Wayland support.
 
+[wofi-hg](https://aur.archlinux.org/packages/wofi-hg/) is a command launcher, that provides the same features as rofi but running under wayland. It is based on [wlroots](https://www.archlinux.org/packages/?name=wlroots) library and use GTK3 for rendering. It works pretty well with sway.
+
 ### VirtualBox
 
 Sway doesn't work well (or at all) under [VirtualBox](/index.php/VirtualBox "VirtualBox").

@@ -53,6 +53,8 @@ chroot . /bin/bash
 
 ```
 
+**Warning:** Do not use <tt>arch-chroot</tt> to chroot into the target system - the backup process will fail as it'll try to back up temporary file systems, all system memory and other interesting things. Use plain <tt>chroot</tt> instead.
+
 This example obviously uses bash but you can use other shells if available. Now you will be in your scripted environment (this is provided that you have your `~/.bashrc` sourced on entry):
 
 ```

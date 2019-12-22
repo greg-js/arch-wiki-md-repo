@@ -51,9 +51,18 @@ $ tftp
 
 ### curl
 
-Standard [curl](https://www.archlinux.org/packages/?name=curl) has an ability to connect to a TFTP server and put on a file via:
+Standard [curl](https://www.archlinux.org/packages/?name=curl) has an ability to connect to a TFTP server and upload a file via:
 
 ```
 $ curl -T FILE tftp://HOST
 
 ```
+
+Download a file:
+
+```
+$ curl -o DESTINATION tftp://HOST/file
+
+```
+
+Where `file` is relative to the TFTP root directory.

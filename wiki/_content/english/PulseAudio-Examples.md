@@ -633,14 +633,14 @@ Begin by installing [cadence](https://www.archlinux.org/packages/?name=cadence),
 
 This configuration provides a method of allowing JACK and PulseAudio to run at the same time and output to each other. It uses manual configuration of the systems that bridge between JACK and PulseAudio. This configuration has no reliance on scripts or commands and is entirely based in configuration.
 
-This configuration only works with jackdbus (JACK2 compiled with D-Bus support). It also requires the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package. Make sure that `/etc/pulse/default.pa` contains a line:
+This configuration only works with jack2\. To use this configuration, just install the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package. `/etc/pulse/default.pa` is already configured to load the modules in [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) if they are present. If you want to be sure, open the file and look for the line:
 
 ```
 load-module module-jackdbus-detect *options*
 
 ```
 
-Where `*options*` can be any options supported by this module, usually `channels=2`. The default config file already has this line, so you shouldn't need to do anything here.
+Where `*options*` can be any options supported by this module, usually `channels=2`.
 
 As described on the [Jack-DBUS Packaging](https://github.com/jackaudio/jackaudio.github.com/wiki/JackDbusPackaging) page:
 

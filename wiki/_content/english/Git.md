@@ -765,7 +765,7 @@ As usual, do `git pull` to update your snapshot.
 
 #### Possible Future alternative
 
-Git Virtual Filesystem (GVFS), developed by Microsoft, allows you to access git repositories without a local one. (See [this Microsoft blog](https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/) or the [Wikipedia artcile](https://en.wikipedia.org/wiki/Git_Virtual_File_System "wikipedia:Git Virtual File System").) It's not available in Linux yet.
+Git Virtual Filesystem (GVFS), developed by Microsoft, allows you to access git repositories without a local one. (See [this Microsoft blog](https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/) or the [Wikipedia article](https://en.wikipedia.org/wiki/Git_Virtual_File_System "wikipedia:Git Virtual File System").) It's not available in Linux yet.
 
 Anyway it is not for the above examples of the Linux kernel, though.
 

@@ -135,6 +135,7 @@ table vdoms                    "/etc/smtpd/vdoms"
 table vusers                   "/etc/smtpd/vusers"
 
 listen on eth0 tls pki mx.domain.tld
+listen on eth0 port 465 smtps pki mx.domain.tld auth <creds>
 listen on eth0 port 587 tls-require pki mx.domain.tld auth <creds>
 
 action receive	mbox virtual <vusers>

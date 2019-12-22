@@ -77,7 +77,7 @@ Install GRUB on the USB drive:
 In case you want to boot ISOs in UEFI mode, you have to install grub for the UEFI target:
 
 ```
-# grub-install --target x86_64-efi --removable --boot-directory=/mnt/boot --efi-directory=/mnt
+# grub-install --target=x86_64-efi --removable --boot-directory=/mnt/boot --efi-directory=/mnt
 
 ```
 

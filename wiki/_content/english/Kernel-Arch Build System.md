@@ -172,24 +172,15 @@ This shows few specific archlinux patches between Linux 5.2.7 and Arch Linux ker
 The up to date PKGBUILD, as well archlinux kernel configuration file, can be pulled in by the `asp` command:
 
 ```
-$ asp update linux
-$ cd ~/build
-$ asp -f export linux
 $ cd ~/build/linux/
+$ asp update linux
+$ asp -f export linux
 
 ```
 
 **Note:** Sometimes the `asp` command does not update linux files even though there is a newer archlinux source tag. A possible reason is that archlinux linux files lag behind archlinux linux source.
 
-Then run manually most, if not all, the shell commands of PKGBUILD::prepare(). If you were [#Modifying the PKGBUILD](#Modifying_the_PKGBUILD) you might prefer to
-
-```
-$ mkdir ~/build/tmplinux/
-$ cd ~/build/tmplinux/
-
-```
-
-before you `export` linux with `asp`, so that you can merge archlinux modifications into `~/build/linux`.
+Now you should [Vim#Merging files](/index.php/Vim#Merging_files "Vim") located in `~/build/linux/linux/*` into `~/build/linux/`. Merging can also done manually, or with [list of applications#Comparison, diff, merge](/index.php/List_of_applications#Comparison,_diff,_merge "List of applications"). Then run manually most, if not all, the shell commands of PKGBUILD::prepare().
 
 At this point, `makepkg --verifysource` should succeed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
 

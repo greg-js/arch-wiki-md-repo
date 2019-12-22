@@ -16,7 +16,7 @@ Arch Linux borde fungera på vilken som helst [x86_64](https://en.wikipedia.org/
     *   [1.3 Välj tangenbords arrangemang](#Välj_tangenbords_arrangemang)
     *   [1.4 Bekräfta uppstartsläge](#Bekräfta_uppstartsläge)
     *   [1.5 Anslut till internet](#Anslut_till_internet)
-    *   [1.6 Updatere system clocka](#Updatere_system_clocka)
+    *   [1.6 Uppdatera systemklockan](#Uppdatera_systemklockan)
     *   [1.7 Förbered installations media](#Förbered_installations_media)
         *   [1.7.1 Example på installations media arrangemanget](#Example_på_installations_media_arrangemanget)
 
@@ -68,7 +68,7 @@ För att ändra arrangemanget,
 
 ### Anslut till internet
 
-### Updatere system clocka
+### Uppdatera systemklockan
 
 Använd [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) för att Verifiera att klockan stämmer:
 

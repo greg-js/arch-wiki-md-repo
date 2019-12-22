@@ -137,7 +137,7 @@ Support for other VPN types is based on a plug-in system. They are provided in t
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
 *   [network-manager-sstp](https://www.archlinux.org/packages/?name=network-manager-sstp)
 
-**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.
 
 **Note:** To have fully functioning DNS resolution when using VPN, you should set up [conditional forwarding](#DNS_caching_and_conditional_forwarding).
 
@@ -276,7 +276,7 @@ killall nm-applet
 
 When you close the *stalonetray* window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
 
-The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr, and the app might hang. See [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
+The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr, and the app might hang. See [[1]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
 
 In order to run `nm-applet` with such notifications disabled, start the applet with the following command:
 
@@ -359,7 +359,7 @@ For those behind a captive portal, the desktop manager can automatically open a 
 
 ### DHCP client
 
-By default NetworkManager uses its internal DHCP client from code based on systemd-networkd. Starting with NetworkManager 1.22, the internal DHCPv4 plugin will be based on [nettools' n-dhcp4](https://nettools.github.io/n-dhcp4/) library.[[4]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/302)
+By default NetworkManager uses its internal DHCP client. The internal DHCPv4 plugin is based on the [nettools' n-dhcp4](https://nettools.github.io/n-dhcp4/) library, while the internal DHCPv6 plugin is made from code based on systemd-networkd.
 
 To use a different DHCP client [install](/index.php/Install "Install") one of the alternatives:
 
@@ -453,7 +453,7 @@ If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for your lo
 
 Because NetworkManager advertises a single "interface" to *resolvconf*, it is not possible to implement conditional forwarding between to NetworkManager connections. See [NetworkManager issue 153](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
 
-This can be partially mitigated if you set `private="*"` in `/etc/resolvconf.conf`[[6]](https://roy.marples.name/projects/openresolv/config). Any queries for domains that are not in search domain list will not get forwarded. They will be handled according to the local resolver's configuration, for example, forwarded to another DNS server or resolved recursively from the DNS root.
+This can be partially mitigated if you set `private="*"` in `/etc/resolvconf.conf`[[4]](https://roy.marples.name/projects/openresolv/config). Any queries for domains that are not in search domain list will not get forwarded. They will be handled according to the local resolver's configuration, for example, forwarded to another DNS server or resolved recursively from the DNS root.
 
 #### Custom DNS servers
 
@@ -703,7 +703,7 @@ See [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManage
 
 The idea is to only turn Wi-Fi on when the LAN cable is unplugged (for example when detaching from a laptop dock), and for Wi-Fi to be automatically disabled, once a LAN cable is plugged in again.
 
-Create the following dispatcher script[[7]](https://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available), replacing `LAN_interface` with yours.
+Create the following dispatcher script[[5]](https://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available), replacing `LAN_interface` with yours.
 
  `/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh` 
 ```
@@ -988,7 +988,7 @@ After you have put this in, [restart](/index.php/Restart "Restart") `NetworkMana
 
 ### Configuring MAC address randomization
 
-**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[9]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[7]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
 
 MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 
@@ -1229,7 +1229,7 @@ dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop
 
 ```
 
-This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[10]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
+This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[8]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
 
 This can be disabled with a configuration file in `/etc/NetworkManager/conf.d/`:
 

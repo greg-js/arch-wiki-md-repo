@@ -1066,7 +1066,7 @@ $ zdb -C
 
 ```
 
-To check you zpool.cache for pools you do not want imported at boot. If this command is showing (a) additional, currently unavailable pool(s), run:
+To check your zpool.cache for pools you do not want imported at boot. If this command is showing (a) additional, currently unavailable pool(s), run:
 
 ```
 # zpool set cachefile=/etc/zfs/zpool.cache zroot
@@ -1113,7 +1113,7 @@ The [zfs-auto-snapshot-git](https://aur.archlinux.org/packages/zfs-auto-snapshot
 
 To prevent a dataset from being snapshotted at all, set `com.sun:auto-snapshot=false` on it. Likewise, set more fine-grained control as well by label, if, for example, no monthlies are to be kept on a snapshot, for example, set `com.sun:auto-snapshot:monthly=false`.
 
-**Note:** zfs-auto-snapshot-git will not create snapshots during scrubbing ([scrub](#Scrub)). It is possible to override this by editing provided systemd unit ([Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd")) and removing `--skip-scrub` from `ExecStart` line. Consequences not known, someone please edit.
+**Note:** zfs-auto-snapshot-git will not create snapshots during [scrubbing](#Scrubbing). It is possible to override this by editing provided systemd unit ([Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd")) and removing `--skip-scrub` from `ExecStart` line. Consequences not known, someone please edit.
 
 #### ZFS Snapshot Manager
 
@@ -1189,7 +1189,7 @@ Create and set permissions on the user directory as root
 
 ### Encryption in ZFS using dm-crypt
 
-The stable release version of ZFS on Linux used not to support encryption directly (now it's available, see [#Native encryption](#Native_encryption)), but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction, it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
+The stable release version of ZFS on Linux used to not support encryption directly (now it's available, see [#Native encryption](#Native_encryption)), but zpools can be created on dm-crypt block devices. Since the zpool is created on the plain-text abstraction, it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
 
 dm-crypt, possibly via LUKS, creates devices in `/dev/mapper` and their name is fixed. So you just need to change `zpool create` commands to point to that names. The idea is configuring the system to create the `/dev/mapper` block devices and import the zpools from there. Since zpools can be created in multiple devices (raid, mirroring, striping, ...), it is important all the devices are encrypted otherwise the protection might be partially lost.
 

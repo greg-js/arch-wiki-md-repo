@@ -34,7 +34,7 @@ A software access point, also called virtual router or virtual Wi-Fi, enables a 
 
 ### Wi-Fi device must support AP mode
 
-You need a [nl80211](http://wireless.kernel.org/en/developers/Documentation/nl80211) compatible wireless device, which supports the AP [operating mode](http://wireless.kernel.org/en/users/Documentation/modes). This can be verified by running `iw list` command, under the `Supported interface modes` block there should be `AP` listed:
+You need a [nl80211](http://wireless.kernel.org/en/developers/Documentation/nl80211) compatible wireless device, which supports the AP [operating mode](http://wireless.kernel.org/en/users/Documentation/modes). This can be verified by running the `iw list` command, under the `Supported interface modes` block there should be `AP` listed:
 
  `$ iw list` 
 ```

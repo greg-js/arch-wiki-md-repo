@@ -108,7 +108,7 @@ If the command returns `EFI32` then it is IA32 (32-bit) EFI firmware. If it retu
 
 To check the bitness run `msinfo32.exe`. In the *System Summary* section look at the values of "System Type" and "BIOS mode".
 
-For a 64-bit Windows on a 64-bit UEFI it will be `System Type: x64-based PC` and `BIOS mode: UEFI`, for a 32-bit Windows on a 32-bit UEFI - `System Type: x86-based PC` and `BIOS mode: UEFI`. If the "BIOS mode" is not `UEFI`, then Windows is not installed in UEFI mode.
+For a 64-bit Windows on a 64-bit UEFI it will be `System Type: x64-based PC` and `BIOS mode: UEFI`, for a 32-bit Windows on a 32-bit UEFI - `System Type: x86-based PC` and `BIOS mode: UEFI`. If the "BIOS mode" is not `UEFI`, then Windows is not booted in UEFI mode.
 
 ## Linux kernel config options for UEFI
 

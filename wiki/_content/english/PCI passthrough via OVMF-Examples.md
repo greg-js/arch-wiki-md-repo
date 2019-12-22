@@ -377,28 +377,27 @@ Configuration:
 
 Hardware:
 
-*   **CPU**: i7-8700k @ 4.9 GHz
+*   **CPU**: i7-8700k @ 4.8 GHz
 *   **Motherboard**: MSI Gaming Pro Carbon (BIOS/UEFI Version: A.40/5.12)
-*   **GPU**: Gigabyte AORUS GTX 1080 Ti
-*   **RAM**: 2x8GB G.Skill DDR4 @ 3066 MHz
+*   **GPU**: Palit RTX 2080 Ti
+*   **RAM**: 4x8GB G.Skill DDR4 @ 3000 MHz
 
 Configuration:
 
-*   **Kernel**: 4.17.6-2-ck
-    *   Pretty much stock linux-ck, but with 1000 Hz tickrate enabled
-*   Using **QEMU/libvirt**: libvirt 4.4.0/QEMU with MSI patch ([qemu-patched-vfiomsitest)](https://aur.archlinux.org/packages/qemu-patched-vfiomsitest%29/)
-    *   Scripts/additional info: [https://github.com/PiMaker/Win10-VFIO](https://github.com/PiMaker/Win10-VFIO)
+*   Kernel: latest mainline (rc if available)
+    *   custom built with ZFS, WireGuard
+    *   *CONFIG_PREEMPT_VOLUNTARY=y* to work around QEMU bug with long guest boot times
+*   Startup scripts/additional info: [https://github.com/PiMaker/Win10-VFIO](https://github.com/PiMaker/Win10-VFIO)
 *   Issues encountered:
     *   PUBG would not launch at all
         *   Solution: Enable the HyperV clock with <timer name='hypervclock' present='yes'/> and disable hpet with <timer name='hpet' present='no'/>
-    *   VR would start to stutter badly after about 20-30 minutes of playtime (this one took me about 2 weeks to finally figure out)
+    *   VR would start to stutter badly after about 20-30 minutes of playtime (this one took me about 2 weeks to finally figure out :-)
         *   Solution:
             *   Enable invariant tsc passthrough with <feature policy='require' name='invtsc'/> (required even if using host-passthrough!)
-            *   Enable tsc in Windows VM with "bcdedit /set useplatformclock true" (in cmd.exe, does not work in PowerShell)
-            *   **Disable** MSI for the GPU itself (you can leave it on for the Audio controller if you need it, did not make a difference for me anyway)
-            *   **Disable** vAPIC and synic in the HyperV configuration
-            *   Install and start *irqbalance* (Not sure if needed, but cannot hurt to try)
-*   Overview: SteamVR-capable gaming and workstation rig, passing through GPU and onboard USB-controller (leaving an additional ASMedia USB port to the host). 12 GB hugepages memory, 10 of 12 cores (with SMT) passed through. Audio working via Scream ([https://github.com/duncanthrax/scream](https://github.com/duncanthrax/scream)) - with surprisingly low latency and no stutters.
+            *   Enable MSI for the GPU (using tool from [here](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts-msi-tool.378044/))
+            *   Enable vAPIC and synic in the HyperV configuration
+            *   Manually move all IRQs to host cores using qemu_fifo.sh script from my GitHub repo above
+*   Overview: SteamVR-capable gaming and workstation rig, passing through NVIDIA GPU and onboard USB-controller (leaving an additional ASMedia USB port to the host). 22 GB hugepages memory, 10 of 12 cores (with SMT) passed through. Audio working via Scream ([https://github.com/duncanthrax/scream](https://github.com/duncanthrax/scream)) - with IVSHMEM, surprisingly low latency and no stutters.
 
 ### coghex's gaming box
 

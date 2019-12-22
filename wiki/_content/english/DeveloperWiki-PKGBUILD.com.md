@@ -1,11 +1,20 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Directories that must be used](#Directories_that_must_be_used)
-*   [2 Creating chroots and building packages](#Creating_chroots_and_building_packages)
-*   [3 x86_64](#x86_64)
-*   [4 Packager && Makeflags](#Packager_.26.26_Makeflags)
-*   [5 Connecting to sigurd or gerolde from brynhild](#Connecting_to_sigurd_or_gerolde_from_brynhild)
-*   [6 Generating rebuilding list when soname is bumped](#Generating_rebuilding_list_when_soname_is_bumped)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Warning](#Warning)
+*   [2 Directories that must be used](#Directories_that_must_be_used)
+*   [3 Creating chroots and building packages](#Creating_chroots_and_building_packages)
+*   [4 x86_64](#x86_64)
+*   [5 Packager && Makeflags](#Packager_&&_Makeflags)
+*   [6 Connecting to sigurd or gerolde from brynhild](#Connecting_to_sigurd_or_gerolde_from_brynhild)
+*   [7 Generating rebuilding list when soname is bumped](#Generating_rebuilding_list_when_soname_is_bumped)
+
+## Warning
+
+This article now describes the build server at **soyuz.archlinux.org** instead.
 
 ## Directories that must be used
 

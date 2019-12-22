@@ -64,6 +64,17 @@ Packages that apply this: [rocketchat-desktop](https://aur.archlinux.org/package
 
 [electron-builder configuration](https://www.electron.build/configuration/configuration)
 
+Alternatively you can use the CLI to change/add these settings like this:
+
+```
+./node_modules/.bin/electron-builder --linux --x64 --dir $dist -c.electronDist=$electronDist -c.electronVersion=$electronVer
+
+```
+
+Note that you have to specify all these options or it wont work.
+
+Packages that apply this: [deezloader-remix-git](https://aur.archlinux.org/packages/deezloader-remix-git/)
+
 ## Architecture
 
 See [PKGBUILD#arch](/index.php/PKGBUILD#arch "PKGBUILD").

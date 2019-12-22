@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Ethernet](/index.php/Network_configuration/Ethernet "Network configuration/Ethernet"). Дата последней синхронизации: 15 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Ethernet&diff=0&oldid=585873).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Ethernet](/index.php/Network_configuration/Ethernet "Network configuration/Ethernet"). Дата последней синхронизации: 17 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Ethernet&diff=0&oldid=592050).
 
 В данной статье описывается настройка [Ethernet](https://en.wikipedia.org/wiki/ru:Ethernet "wikipedia:ru:Ethernet"), общие вопросы о настройке сети описываются в статье [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
@@ -168,19 +168,19 @@ $ ip a
 
 ### Broadcom BCM57780
 
-Этот чипсет Broadcom иногда работает плохо, пока вы не укажете порядок загрузки модулей. Необходимые модули - `broadcom` и `tg3`, и они должны быть загружены в соответствующем порядке.
+Этот чипсет Broadcom иногда работает плохо, если не указать порядок загрузки модулей. Необходимые модули — `broadcom` и `tg3`, и загружаться они должны именно в таком порядке.
 
-Эти шаги должны помочь, если в вашем компьютере используется этот чипсет:
+Если в вашем компьютере используется этот чипсет, сделайте следующее:
 
 *   Найдите вашу сетевую плату в выводе *lspci*:
 
+ `$ lspci | grep Ethernet` 
 ```
-$ lspci | grep Ethernet
 02:00.0 Ethernet controller: Broadcom Corporation NetLink BCM57780 Gigabit Ethernet PCIe (rev 01)
 
 ```
 
-*   Если беспроводная сеть не функционирует, попробуйте отключить кабель и выполнить следующее:
+*   Если Ethernet-соединение не функционирует, отключите кабель и выполните команды:
 
 ```
 # modprobe -r tg3
@@ -189,10 +189,18 @@ $ lspci | grep Ethernet
 
 ```
 
-*   Подключите обратно кабель сети. Если это решает ваши проблемы, можете сделать это изменение постоянным, добавив модули `broadcom` и `tg3` (в этом порядке) в секцию `MODULES` файла `/etc/mkinitcpio.conf`:
+*   Подключите обратно сетевой кабель и проверьте работу модуля:
 
 ```
-MODULES=".. broadcom tg3 .."
+$ dmesg | grep tg3
+
+```
+
+*   Если это решило проблему, сделайте изменения постоянными, добавив модули `broadcom` и `tg3` (в этом порядке) в массив `MODULES`:
+
+ `/etc/mkinitcpio.conf` 
+```
+MODULES=(.. broadcom tg3 ..)
 
 ```
 
@@ -203,14 +211,14 @@ MODULES=".. broadcom tg3 .."
 
 ```
 
-*   В качестве альтернативы вы можете создать файл `/etc/modprobe.d/broadcom.conf` с таким содержимым:
+*   В качестве альтернативы можно создать файл `/etc/modprobe.d/broadcom.conf` со следующим содержимым:
 
 ```
 softdep tg3 pre: broadcom
 
 ```
 
-**Примечание:** Этот способ может помочь и для других чипсетов, таких как BCM57760
+**Примечание:** Этот способ может помочь и для других чипсетов, например, BCM57760
 
 ### Realtek RTL8111/8168B
 

@@ -68,15 +68,16 @@ If you want to create your own custom repository, follow [pacman/Tips and tricks
     *   [2.47 repo-ck](#repo-ck)
     *   [2.48 seblu](#seblu)
     *   [2.49 seiichiro](#seiichiro)
-    *   [2.50 sergej-repo](#sergej-repo)
-    *   [2.51 siosm-aur](#siosm-aur)
-    *   [2.52 sublime-text](#sublime-text)
-    *   [2.53 subtitlecomposer](#subtitlecomposer)
-    *   [2.54 trinity](#trinity)
-    *   [2.55 valveaur](#valveaur)
-    *   [2.56 xuanrui](#xuanrui)
-    *   [2.57 xyne-x86_64](#xyne-x86_64)
-    *   [2.58 home-thaodan](#home-thaodan)
+    *   [2.50 selinux](#selinux)
+    *   [2.51 sergej-repo](#sergej-repo)
+    *   [2.52 siosm-aur](#siosm-aur)
+    *   [2.53 sublime-text](#sublime-text)
+    *   [2.54 subtitlecomposer](#subtitlecomposer)
+    *   [2.55 trinity](#trinity)
+    *   [2.56 valveaur](#valveaur)
+    *   [2.57 xuanrui](#xuanrui)
+    *   [2.58 xyne-x86_64](#xyne-x86_64)
+    *   [2.59 home-thaodan](#home-thaodan)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -757,6 +758,20 @@ Server = https://www.seiichiro0185.org/repo/$arch
 
 ```
 
+### selinux
+
+*   **Maintainer:** [swordfeng](https://github.com/swordfeng)
+*   **Description:** Unofficial (personal) builds for [SELinux](/index.php/SELinux "SELinux") packages. PKGBUILDs are taken from AUR instead of the upstream GitHub repo.
+*   **Upstream page:** [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux)
+*   **Key-ID:** 7691FA63FE91CAFDD42A4AF08323B00E97DF0E6D (subkey B988167F59A3AF8368D55D65A7862FD48B72D83B is specifically used for signing packages)
+*   **Keyfile:** [https://repo.taiho.moe/key.asc](https://repo.taiho.moe/key.asc)
+
+```
+[selinux]
+Server = https://repo.taiho.moe/$repo
+
+```
+
 ### sergej-repo
 
 *   **Maintainer:** [Sergej Pupykin](https://www.archlinux.org/people/trusted-users/#spupykin)
@@ -1058,7 +1073,7 @@ Server = http://linux.shikadi.net/arch/$repo/$arch/
 ### ownstuff
 
 *   **Maintainer:** [Martchus](https://aur.archlinux.org/account/Martchus)
-*   **Description:** A lot of packages from the AUR, e.g. a great number of mingw-w64 packages, fonts, Perl modules, tools like [tageditor](https://aur.archlinux.org/packages/tageditor/), [syncthingtray](https://aur.archlinux.org/packages/syncthingtray/), [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/) and [qmplay2](https://aur.archlinux.org/packages/qmplay2/)
+*   **Description:** A lot of packages from the AUR, e.g. a great number packages for mingw-w64 and Android cross compilation, fonts, Perl modules, tools like [tageditor](https://aur.archlinux.org/packages/tageditor/), [syncthingtray](https://aur.archlinux.org/packages/syncthingtray/), [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/) and [qmplay2](https://aur.archlinux.org/packages/qmplay2/)
 *   **Upstream page**: [https://github.com/Martchus/PKGBUILDs](https://github.com/Martchus/PKGBUILDs) (sources beside the AUR) and [https://martchus.no-ip.biz/repoindex](https://martchus.no-ip.biz/repoindex) (package browser/search)
 
 ```

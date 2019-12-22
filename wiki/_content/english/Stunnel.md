@@ -13,7 +13,7 @@ Authentication can also be used by the server to allow access only to approved c
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 setup](#setup)
+*   [2 Setup](#Setup)
     *   [2.1 Byte order mark (BOM)](#Byte_order_mark_(BOM))
     *   [2.2 Authentication](#Authentication)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
@@ -27,7 +27,7 @@ Authentication can also be used by the server to allow access only to approved c
 
 Depending on your usage, you might also [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") to better [Systemd#Handling dependencies](/index.php/Systemd#Handling_dependencies "Systemd"). In order for the stunnel to start up automatically at system boot you must [enable](/index.php/Enable "Enable") it.
 
-## setup
+## Setup
 
 The main configuration file is read from `/etc/stunnel/stunnel.conf`. It is an ini-style file. It is composed from a global section, followed by one, or more, service sections.
 

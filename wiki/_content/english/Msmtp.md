@@ -316,9 +316,9 @@ You may be affected by this [bug](https://bugs.archlinux.org/task/44994). Recomp
 
 ### Server sent empty reply
 
-If you get a "server sent empty reply" error, this probably means the mail server doesn't allow STARTTLS over port 587, but requires the nonstandard SSL/TLS over port 465.[[1]](https://www.fastmail.com/help/technical/ssltlsstarttls.html)
+If you get a "server sent empty reply" error, this probably means the mail server doesn't support STARTTLS over port 587, but requires TLS over port 465.
 
-To let msmtp use SSL/TLS over port 465, add the following line to `~/.msmtprc`:
+To let msmtp use TLS over port 465, add the following line to `~/.msmtprc`:
 
 ```
 tls_starttls off
@@ -334,7 +334,7 @@ GNU SASL: GSSAPI error in client while negotiating security context in gss_init_
 
 ```
 
-Try changing your auth setting to plain, instead of gssapi in your .msmtprc file [[2]](https://bbs.archlinux.org/viewtopic.php?id=138727):
+Try changing your auth setting to plain, instead of gssapi in your .msmtprc file [[1]](https://bbs.archlinux.org/viewtopic.php?id=138727):
 
 ```
 auth plain

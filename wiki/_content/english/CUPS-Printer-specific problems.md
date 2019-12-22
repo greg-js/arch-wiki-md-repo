@@ -258,7 +258,8 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 | LBP7200C series |
 | LBP7210Cdn |
 | LBP9100C |
-| MF635Cx | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
+| MF216n (network over ldp) | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
+| MF635Cx |
 | MF4720w |
 | MF4770n |
 | MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Avoid the [web interface](/index.php/CUPS#Web_interface "CUPS") when adding the printer as it will not find the PPD file. |
@@ -342,6 +343,7 @@ E515dw
 | ET-2750 |
 | ET-3700 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | ET-3750 |
+| ET-3760 |
 | ET-4750 |
 | EW-M571T | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | EW-M670FT | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
