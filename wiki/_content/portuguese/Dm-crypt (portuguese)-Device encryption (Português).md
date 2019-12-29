@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Device encryption](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). Data da última tradução: 2019-12-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&diff=0&oldid=591797) na versão em inglês.
+
 Esta página mostra como utilizar *dm-crypt* pela linha de comando para criptografar um sistema.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -10,43 +12,42 @@ Esta página mostra como utilizar *dm-crypt* pela linha de comando para criptogr
 *   [2 Uso do cryptsetup](#Uso_do_cryptsetup)
     *   [2.1 Senhas e chaves do cryptsetup](#Senhas_e_chaves_do_cryptsetup)
 *   [3 Opções de encriptação com dm-crypt](#Opções_de_encriptação_com_dm-crypt)
-    *   [3.1 Opções de Encriptação para o modo LUKS](#Opções_de_Encriptação_para_o_modo_LUKS)
+    *   [3.1 Opções de encriptação para o modo LUKS](#Opções_de_encriptação_para_o_modo_LUKS)
     *   [3.2 Opções de encriptação para o modo plain](#Opções_de_encriptação_para_o_modo_plain)
 *   [4 Criptografando dispositivos com cryptsetup](#Criptografando_dispositivos_com_cryptsetup)
     *   [4.1 Criptografando dispositivos com o modo LUKS](#Criptografando_dispositivos_com_o_modo_LUKS)
         *   [4.1.1 Formatando partições LUKS](#Formatando_partições_LUKS)
             *   [4.1.1.1 Formatando uma partição com LUKS e uma keyfile](#Formatando_uma_partição_com_LUKS_e_uma_keyfile)
         *   [4.1.2 Abrindo/Mapeando containers LUKS com o mapeador de dispositivos](#Abrindo/Mapeando_containers_LUKS_com_o_mapeador_de_dispositivos)
-    *   [4.2 Encrypting devices with plain mode](#Encrypting_devices_with_plain_mode)
-*   [5 Cryptsetup actions specific for LUKS](#Cryptsetup_actions_specific_for_LUKS)
-    *   [5.1 Key management](#Key_management)
-        *   [5.1.1 Adding LUKS keys](#Adding_LUKS_keys)
-        *   [5.1.2 Removing LUKS keys](#Removing_LUKS_keys)
-    *   [5.2 Backup and restore](#Backup_and_restore)
-        *   [5.2.1 Backup using cryptsetup](#Backup_using_cryptsetup)
-        *   [5.2.2 Restore using cryptsetup](#Restore_using_cryptsetup)
-        *   [5.2.3 Manual backup and restore](#Manual_backup_and_restore)
-    *   [5.3 Re-encrypting devices](#Re-encrypting_devices)
-        *   [5.3.1 Encrypt an unencrypted filesystem](#Encrypt_an_unencrypted_filesystem)
-        *   [5.3.2 Re-encrypting an existing LUKS partition](#Re-encrypting_an_existing_LUKS_partition)
-*   [6 Resizing encrypted devices](#Resizing_encrypted_devices)
-    *   [6.1 Loopback filesystem](#Loopback_filesystem)
+    *   [4.2 Criptografando dispositivos com o modo plain](#Criptografando_dispositivos_com_o_modo_plain)
+*   [5 Ações específicas do cryptsetup para o LUKS](#Ações_específicas_do_cryptsetup_para_o_LUKS)
+    *   [5.1 Gerenciamento de chaves](#Gerenciamento_de_chaves)
+        *   [5.1.1 Adicionando chaves do LUKS](#Adicionando_chaves_do_LUKS)
+        *   [5.1.2 Removendo chaves do LUKS](#Removendo_chaves_do_LUKS)
+    *   [5.2 Backup e restauração](#Backup_e_restauração)
+        *   [5.2.1 Backup usando o cryptsetup](#Backup_usando_o_cryptsetup)
+        *   [5.2.2 Restauração usando o cryptsetup](#Restauração_usando_o_cryptsetup)
+        *   [5.2.3 Backup e restauração manual](#Backup_e_restauração_manual)
+    *   [5.3 Criptografando dispositivos novamente](#Criptografando_dispositivos_novamente)
+        *   [5.3.1 Criptografar um sistema de arquivos](#Criptografar_um_sistema_de_arquivos)
+        *   [5.3.2 Criptografando novamente um container LUKS](#Criptografando_novamente_um_container_LUKS)
+*   [6 Redimensionando os dispositivos criptografados](#Redimensionando_os_dispositivos_criptografados)
+    *   [6.1 Sistema de arquivos de loopback](#Sistema_de_arquivos_de_loopback)
 *   [7 Keyfiles](#Keyfiles)
-    *   [7.1 Types of keyfiles](#Types_of_keyfiles)
-        *   [7.1.1 passphrase](#passphrase)
-        *   [7.1.2 randomtext](#randomtext)
-        *   [7.1.3 binary](#binary)
-    *   [7.2 Creating a keyfile with random characters](#Creating_a_keyfile_with_random_characters)
-        *   [7.2.1 Storing the keyfile on a filesystem](#Storing_the_keyfile_on_a_filesystem)
-            *   [7.2.1.1 Securely overwriting stored keyfiles](#Securely_overwriting_stored_keyfiles)
-        *   [7.2.2 Storing the keyfile in ramfs](#Storing_the_keyfile_in_ramfs)
-    *   [7.3 Configuring LUKS to make use of the keyfile](#Configuring_LUKS_to_make_use_of_the_keyfile)
-    *   [7.4 Manually unlocking a partition using a keyfile](#Manually_unlocking_a_partition_using_a_keyfile)
-    *   [7.5 Unlocking the root partition at boot](#Unlocking_the_root_partition_at_boot)
-        *   [7.5.1 With a keyfile stored on an external media](#With_a_keyfile_stored_on_an_external_media)
-            *   [7.5.1.1 Configuring mkinitcpio](#Configuring_mkinitcpio)
-            *   [7.5.1.2 Configuring the kernel parameters](#Configuring_the_kernel_parameters)
-        *   [7.5.2 With a keyfile embedded in the initramfs](#With_a_keyfile_embedded_in_the_initramfs)
+    *   [7.1 Tipos de keyfiles](#Tipos_de_keyfiles)
+        *   [7.1.1 Senha](#Senha)
+        *   [7.1.2 Texto randômico](#Texto_randômico)
+        *   [7.1.3 Binário](#Binário)
+    *   [7.2 Criando uma keyfile com caracteres randômicos](#Criando_uma_keyfile_com_caracteres_randômicos)
+        *   [7.2.1 Guardando a keyfile em um sistema de arquivos filesystem](#Guardando_a_keyfile_em_um_sistema_de_arquivos_filesystem)
+            *   [7.2.1.1 Sobrescrevendo com segurança as keyfiles guardadas](#Sobrescrevendo_com_segurança_as_keyfiles_guardadas)
+        *   [7.2.2 Guardando a keyfile no ramfs](#Guardando_a_keyfile_no_ramfs)
+    *   [7.3 Configurando o LUKS para utilizar uma/outra keyfile](#Configurando_o_LUKS_para_utilizar_uma/outra_keyfile)
+    *   [7.4 Manualmente abrindo uma partição com uma keyfile](#Manualmente_abrindo_uma_partição_com_uma_keyfile)
+        *   [7.4.1 Com uma keyfile em um dispositivo externo](#Com_uma_keyfile_em_um_dispositivo_externo)
+            *   [7.4.1.1 Configurando o mkinitcpio](#Configurando_o_mkinitcpio)
+            *   [7.4.1.2 Configurando os parâmetros do kernel](#Configurando_os_parâmetros_do_kernel)
+        *   [7.4.2 Com uma keyfile no initramfs](#Com_uma_keyfile_no_initramfs)
 
 ## Preparação
 
@@ -114,7 +115,7 @@ $ less /proc/crypto
 
 As opções de encriptação para os modos `luks`, `luks1`, `luks2` e `plain` serão introduzidas. Note que a tabela lista opções utilizadas em seus respectivos artigos e não todas as disponíveis.
 
-### Opções de Encriptação para o modo LUKS
+### Opções de encriptação para o modo LUKS
 
 A ação do *cryptsetup* para configurar um novo dispositivo do dm-crypt no modo de encriptação LUKS é *luksFormat*. Diferente do que o nome implica, não formata o dispositivo, mas configura o cabeçalho do dispositivo LUKS e criptografa a chave mestre com as opções criptografadas desejadas.
 
@@ -326,28 +327,28 @@ Para fechar o container LUKS, desmonte a partição e execute:
 
 ```
 
-### Encrypting devices with plain mode
+### Criptografando dispositivos com o modo plain
 
-The creation and subsequent access of a *dm-crypt* plain mode encryption both require not more than using the *cryptsetup* `open` action with correct [parameters](#Encryption_options_for_plain_mode). The following shows that with two examples of non-root devices, but adds a quirk by stacking both (i.e. the second is created inside the first). Obviously, stacking the encryption doubles overhead. The usecase here is simply to illustrate another example of the cipher option usage.
+A criação e acesso subsequente do container no modo plain do *dm-crypt* precisam somente dos [parâmetros](#Opções_de_encriptação_para_o_modo_plain) corretos com a ação `open`. A seguir é mostrado dois dispositivos não raiz, com o segundo criado em cima do primeiro. Obviamente, empilhar a criptografia dobra uso de recursos. Este exemplo é utilizado para mostrar o uso de cifras criptográficas.
 
-A first mapper is created with *cryptsetup's* plain-mode defaults, as described in the table's left column above
+O primeiro mapeamento é criado com as opções padrão do modo plain do*cryptsetup*, como descrito em uma das tabelas acima
 
  `# cryptsetup --type plain -v open /dev/sdaX plain1` 
 ```
-Enter passphrase: 
+Enter passphrase:
 Command successful.
 
 ```
 
-Now we add the second blockdevice inside it, using different encryption parameters and with an (optional) offset, create a filesystem and mount it
+No segundo dispositivo de bloco, vão ser utilizados parâmetros diferentes e um (opcional) início (offset), colocar um sistema de arquivos e montá-lo.
 
  `# cryptsetup --type plain --cipher=serpent-xts-plain64 --hash=sha256 --key-size=256 --offset=10  open /dev/mapper/plain1 plain2`  `Enter passphrase:`  `# lsblk -p` 
 ```
- NAME                                                     
- /dev/sda                                     
- ├─/dev/sdaX          
- │ └─/dev/mapper/plain1     
- │   └─/dev/mapper/plain2              
+ NAME
+ /dev/sda
+ ├─/dev/sdaX
+ │ └─/dev/mapper/plain1
+ │   └─/dev/mapper/plain2
  ...
 
 ```
@@ -355,11 +356,11 @@ Now we add the second blockdevice inside it, using different encryption paramete
 ```
 # mkfs -t ext2 /dev/mapper/plain2
 # mount -t ext2 /dev/mapper/plain2 /mnt
-# echo "This is stacked. one passphrase per foot to shoot." > /mnt/stacked.txt
+# echo "Este é o empilhado. Uma senha por pé para atirar" > /mnt/stacked.txt
 
 ```
 
-We close the stack to check access works
+Feche o dispositivo para checar se o acesso funciona
 
 ```
 # cryptsetup close plain2
@@ -367,7 +368,7 @@ We close the stack to check access works
 
 ```
 
-First, let us try to open the filesystem directly:
+Primerio, tente abrir o sistema de arquivos diretamente:
 
 ```
 # cryptsetup --type plain --cipher=serpent-xts-plain64 --hash=sha256 --key-size=256 --offset=10 open /dev/sdaX plain2
@@ -380,12 +381,12 @@ mount: wrong fs type, bad option, bad superblock on /dev/mapper/plain2,
 
 ```
 
-Why that did not work? Because the "plain2" starting block (`10`) is still encrypted with the cipher from "plain1". It can only be accessed via the stacked mapper. The error is arbitrary though, trying a wrong passphrase or wrong options will yield the same. For *dm-crypt* plain mode, the `open` action will not error out itself.
+Por que não deu certo? como o "plain2" que começa no bloco (`10`) está criptografado com a cifra do "plain1". Ele só pode ser acessado através do dispositivo mapeado empilhado. O erro é arbitário, tentar a senha ou opções erradas vai resultar no mesmo. Para o modo plain do *dm-crypt*, a ação `open` não apresentará erros.
 
-Trying again in correct order:
+Tentando novamente mas agora na ordem correta:
 
 ```
-# cryptsetup close plain2    # dysfunctional mapper from previous try
+# cryptsetup close plain2    # dispositivo mapeado disfuncional da tentativa anterior
 
 ```
  `# cryptsetup --type plain open /dev/sdaX plain1` 
@@ -395,36 +396,36 @@ Enter passphrase:
 ```
  `# cryptsetup --type plain --cipher=serpent-xts-plain64 --hash=sha256 --key-size=256 --offset=10 open /dev/mapper/plain1 plain2`  `Enter passphrase:`  `# mount /dev/mapper/plain2 /mnt && cat /mnt/stacked.txt` 
 ```
-This is stacked. one passphrase per foot to shoot.
+Este é o empilhado. Uma senha por pé para atirar
 
 ```
 
-*dm-crypt* will handle stacked encryption with some mixed modes too. For example LUKS mode could be stacked on the "plain1" mapper. Its header would then be encrypted inside "plain1" when that is closed.
+*dm-crypt* irá cuidar da criptografia empilhada com alguns modos misturados também. Por exemplo o modo LUKS poderia ser empilhado no dispositivo mapeado "plain1". Seu cabeçalho deve estar criptografado dentro do "plain1".
 
-Available for plain mode only is the option `--shared`. With it a single device can be segmented into different non-overlapping mappers. We do that in the next example, using a *loopaes* compatible cipher mode for "plain2" this time:
+A opção `--shared` está somente disponível para o modo plain. Com esta um dispositivo pode ser segmentado em diferentes dispositivos mapeados sem sobreposição. Isto será exemplificado a seguir, usando um modo de cifra compatível com *loopaes* para o "plain2":
 
  `# cryptsetup --type plain --offset 0 --size 1000 open /dev/sdaX plain1`  `Enter passphrase:`  `# cryptsetup --type plain --offset 1000 --size 1000 --shared --cipher=aes-cbc-lmk --hash=sha256 open /dev/sdaX plain2`  `Enter passphrase:`  `# lsblk -p` 
 ```
-NAME                    
-dev/sdaX                    
-├─/dev/sdaX               
-│ ├─/dev/mapper/plain1     
-│ └─/dev/mapper/plain2     
+NAME
+dev/sdaX
+├─/dev/sdaX
+│ ├─/dev/mapper/plain1
+│ └─/dev/mapper/plain2
 ...
 
 ```
 
-As the devicetree shows both reside on the same level, i.e. are not stacked and "plain2" can be opened individually.
+Como a árvore de dispositivos mostra, ambos residem no mesmo nível, elas não estão empilhadas e "plain2" pode ser aberto individualmente.
 
-## Cryptsetup actions specific for LUKS
+## Ações específicas do cryptsetup para o LUKS
 
-### Key management
+### Gerenciamento de chaves
 
-It is possible to define up to 8 different keys per LUKS partition. This enables the user to create access keys for save backup storage: In a so-called key escrow, one key is used for daily usage, another kept in escrow to gain access to the partition in case the daily passphrase is forgotten or a keyfile is lost/damaged. Also a different key-slot could be used to grant access to a partition to a user by issuing a second key and later revoking it again.
+É possível definir até 8 chaves diferentes por container LUKS. Permitindo a criação do acesso a chaves para salvar dados de backup: Na prática conhecida como key escrow, uma chave é usada para utilização diária, outra guardada para ganhar acesso ao container caso a senha seja esquecida ou a keyfile foi perdida/danificada. Também, um diferente espaço de chave pode ser usado para garantir acesso de um container para um usuário ao adicionar uma segunda chave e mais tarde removê-la.
 
-Once an encrypted partition has been created, the initial keyslot 0 is created (if no other was specified manually). Additional keyslots are numbered from 1 to 7\. Which keyslots are used can be seen by issuing
+Uma vez que o container criptografado foi criado, o espaço de chave (key slot) 0 é criado (se nenhum outro foi definido manualmente). Espaços de chave adicionais são numerados de 1 a 7\. Os espaços de chave utilizados podem ser vistos com:
 
- `# cryptsetup luksDump /dev/<device> | grep BLED` 
+ `# cryptsetup luksDump /dev/<dispositivo> | grep BLED` 
 ```
 Key Slot 0: ENABLED
 Key Slot 1: ENABLED
@@ -437,13 +438,13 @@ Key Slot 7: DISABLED
 
 ```
 
-Where <device> is the volume containing the LUKS header. This and all the following commands in this section work on header backup files as well.
+Onde <dispositivo> é o volume que contém o cabeçalho do LUKS. Este e todos os seguintes comandos nesta seção funcionam em backups de cabeçalho também.
 
-#### Adding LUKS keys
+#### Adicionando chaves do LUKS
 
-Adding new keyslots is accomplished using cryptsetup with the `luksAddKey` action. For safety it will always, i.e. also for already unlocked devices, ask for a valid existing key ("any passphrase") before a new one may be entered:
+Para adicionar uma nova chave, use a ação do cryptsetup `luksAddKey`. Por segurança, sempre será solicitada uma chave existente válida ("any passphrase"), também para dispositivos já abertos, antes que a nova senha seja solicitada:
 
- `# cryptsetup luksAddKey /dev/<device> (/path/to/<additionalkeyfile>)` 
+ `# cryptsetup luksAddKey /dev/<dispositivo> (/caminho/para/<keyfile_adicional>)` 
 ```
 Enter any passphrase:
 Enter new passphrase for key slot:
@@ -451,16 +452,16 @@ Verify passphrase:
 
 ```
 
-If `/path/to/<additionalkeyfile>` is given, cryptsetup will add a new keyslot for <additionalkeyfile>. Otherwise a new passphrase will be prompted for twice. For using an existing *keyfile* to authorize the action, the `--key-file` or `-d` option followed by the "old" <keyfile> will try to unlock all available keyfile keyslots:
+Se `/caminho/para/<keyfile_adicional>` for dado, cryptsetup adicionará a <keyfile_adicional>. Se não, uma nova senha será solicitada duas vezes. É possível usar uma existente *keyfile* para autorizar a ação, use a opção `--key-file` ou `-d` seguida pela "antiga" <keyfile>:
 
 ```
-# cryptsetup luksAddKey /dev/<device> (/path/to/<additionalkeyfile>) -d /path/to/<keyfile>
+# cryptsetup luksAddKey /dev/<dispositivo> (/caminho/para/<keyfile_adicional>) -d /caminho/para/<keyfile>
 
 ```
 
-If it is intended to use multiple keys and change or revoke them, the `--key-slot` or `-S` option may be used to specify the slot:
+Se é desejado usar múltiplas chaves e mudar ou remover elas, a opção `--key-slot` ou `-S` pode ser usada para especificar o slot:
 
- `# cryptsetup luksAddKey /dev/<device> -S 6` 
+ `# cryptsetup luksAddKey /dev/<dispositivo> -S 6` 
 ```
 Enter any passphrase: 
 Enter new passphrase for key slot: 
@@ -473,59 +474,59 @@ Key Slot 6: ENABLED
 
 ```
 
-To show an associated action in this example, we decide to change the key right away:
+Para mostrar uma ação associada neste exemplo, foi decidido mudar a chave acima mostrada:
 
- `# cryptsetup luksChangeKey /dev/<device> -S 6` 
+ `# cryptsetup luksChangeKey /dev/<dispositivo> -S 6` 
 ```
 Enter LUKS passphrase to be changed: 
 Enter new LUKS passphrase:
 
 ```
 
-before continuing to remove it.
+Antes de removê-la.
 
-#### Removing LUKS keys
+#### Removendo chaves do LUKS
 
-There are three different actions to remove keys from the header:
+Existem três diferentes ações para remover chaves do cabeçalho:
 
-*   `luksRemoveKey` is used to remove a key by specifying its passphrase/key-file.
-*   `luksKillSlot` may be used to remove a key from a specific key slot (using another key). Obviously, this is extremely useful if you have forgotten a passphrase, lost a key-file, or have no access to it.
-*   `luksErase` is used to quickly remove **all** active keys.
+*   `luksRemoveKey` é usado para remover uma chave por especificar sua senha/kefile.
+*   `luksKillSlot` pode ser usado para remover uma chave específica (usando outra chave). Isto é extremamente útil se você esqueceu uma senha, perdeu uma keyfile ou não tem acesso a ela.
+*   `luksErase` é usado para rapidamente remover **todas** as chaves ativas.
 
-**Warning:**
+**Atenção:**
 
-*   All above actions can be used to irrevocably delete the last active key for an encrypted device!
-*   The `luksErase` command was added in version 1.6.4 to quickly nuke access to the device. This action **will not** prompt for a valid passphrase! It will not [wipe the LUKS header](/index.php/Dm-crypt/Drive_preparation#Wipe_LUKS_header "Dm-crypt/Drive preparation"), but all keyslots at once and you will, therefore, not be able to regain access unless you have a valid backup of the LUKS header.
+*   Todas as ações acima podem ser usadas apagar a última chave ativa de um dispositivo criptografado!
+*   O comando `luksErase` foi adicionado na versão 1.6.4 para rapidamente retirar o acesso ao dispositivo. Esta ação **não irá** solicitar senha! Isto não irá [apagar o cabeçalho do LUKS](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento#Apagar_o_cabeçalho_do_LUKS "Dm-crypt/Preparando a unidade de armazenamento"), mas todos os espaços de chave de uma vez só, então você não ganhará acesso a menos que você tenha um backup válido do cabeçalho do LUKS.
 
-For above warning it is good to know the key we want to **keep** is valid. An easy check is to unlock the device with the `-v` option, which will specify which slot it occupies:
+É útil saber se a chave que desejamos **manter** é válida. Uma forma fácil de checar é abrir o dispositivo com a opção `-v`, o espaço que ela ocupa será mostrado:
 
- `# cryptsetup -v open /dev/<device> testcrypt` 
+ `# cryptsetup -v open /dev/<dispositivo> testcrypt` 
 ```
-Enter passphrase for /dev/<device>: 
+Enter passphrase for /dev/<dispositivo>: 
 Key slot 1 unlocked.
 Command successful.
 
 ```
 
-Now we can remove the key added in the previous subsection using its passphrase:
+Agora será removida a chave adicionada na subseção anterior, usando sua senha:
 
- `# cryptsetup luksRemoveKey /dev/<device>` 
+ `# cryptsetup luksRemoveKey /dev/<dispositivo>` 
 ```
 Enter LUKS passphrase to be deleted:
 
 ```
 
-If we had used the same passphrase for two keyslots, the first slot would be wiped now. Only executing it again would remove the second one.
+Se for usada a mesma senha para dois espaços, a primeira ocorrência de espaço que tiver a senha vai ser apagado. Somente executando novamente a segunda vai ser apagada.
 
-Alternatively, we can specify the key slot:
+Alternativamente, é possível especificar o espaço de chave:
 
- `# cryptsetup luksKillSlot /dev/<device> 6` 
+ `# cryptsetup luksKillSlot /dev/<dispositivo> 6` 
 ```
 Enter any remaining LUKS passphrase:
 
 ```
 
-Note that in both cases, no confirmation was required.
+Note que em ambos os casos, nenhuma confirmação é necessária.
 
  `# cryptsetup luksDump /dev/sda8 | grep 'Slot 6'` 
 ```
@@ -533,46 +534,46 @@ Key Slot 6: DISABLED
 
 ```
 
-To re-iterate the warning above: If the same passphrase had been used for key slots 1 and 6, both would be gone now.
+Reiterando o que foi falado acima: Se a mesma senha foi usada para o espaço 1 e 6, ambos devem ter sidos apagados agora.
 
-### Backup and restore
+### Backup e restauração
 
-If the header of a LUKS encrypted partition gets destroyed, you will not be able to decrypt your data. It is just as much of a dilemma as forgetting the passphrase or damaging a key-file used to unlock the partition. Damage may occur by your own fault while re-partitioning the disk later or by third-party programs misinterpreting the partition table. Therefore, having a backup of the header and storing it on another disk might be a good idea.
+Se o cabeçalho de um container criptografado com LUKS é destruído, você não vai conseguir decriptografar seus dados. Tão problemático quanto esquecer a senha ou modificar/perder a keyfile. Danos podem acontecer por sua própria responsabilidade ao particionar novamente o disco depois ou por programas de terceiros que interpretam errado a tabela de partições. Então, ter um backup do cabeçalho e guardá-lo em outro lugar pode ser uma boa ideia.
 
-**Note:** If one of the LUKS-encrypted partitions' passphrases becomes compromised, you must revoke it on *every* copy of the cryptheader, even those you have backed up. Otherwise, a copy of the backed-up cryptheader that uses the compromised passphrase can be used to determine the master key which in turn can be used to decrypt the associated partition (even your actual partition, not only the backed-up version). On the other hand, if the master key gets compromised, you have to reencrypt your whole partition. See [LUKS FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#6-backup-and-data-recovery) for further details.
+**Nota:** Se uma das senhas das partições criptografadas com LUKS for revelada, você deve retirá-la em *todas* as cópias do cabeçalho, até mesmo estes que você fez o backup. De outro modo, uma cópia do cabeçalho criptografado que a usa pode ser utilizado para determinar a chave mestre que pode ser usada para abrir o container relacionado (até mesmo o seu atual, não somente o do backup). Se a chave mestre for descoberta, você vai ter que re-criptografar todo seu container. Veja o [PAQ do LUKS](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#6-backup-and-data-recovery) para mais detalhes.
 
-#### Backup using cryptsetup
+#### Backup usando o cryptsetup
 
-Cryptsetup's `luksHeaderBackup` action stores a binary backup of the LUKS header and keyslot area:
-
-```
-# cryptsetup luksHeaderBackup /dev/<device> --header-backup-file /mnt/<backup>/<file>.img
+A ação `luksHeaderBackup` do cryptsetup faz o backup do cabeçalho LUKS e os espaços de chave:
 
 ```
+# cryptsetup luksHeaderBackup /dev/<dispositivo> --header-backup-file /mnt/<backup>/<arquivo>.img
 
-where <device> is the partition containing the LUKS volume.
+```
 
-**Tip:** You can also back up the plaintext header into ramfs and encrypt it in example with gpg before writing to persistent backup storage by executing the following commands.
+Onde <dispositivo> é a partição que contém o volume LUKS.
+
+**Dica:** Você pode também fazer o backup do cabeçalho no ramfs e criptografá-lo com o gpg antes de escrevê-lo em um local persistente ao executar os seguintes comandos.
 
 ```
 # mkdir /root/<tmp>/
 # mount ramfs /root/<tmp>/ -t ramfs
-# cryptsetup luksHeaderBackup /dev/<device> --header-backup-file /root/<tmp>/<file>.img
-# gpg2 --recipient <User ID> --encrypt /root/<tmp>/<file>.img 
-# cp /root/<tmp>/<file>.img.gpg /mnt/<backup>/
+# cryptsetup luksHeaderBackup /dev/<dispositivo> --header-backup-file /root/<tmp>/<arquivo>.img
+# gpg2 --recipient <User ID> --encrypt /root/<tmp>/<arquivo>.img 
+# cp /root/<tmp>/<arquivo>.img.gpg /mnt/<backup>/
 # umount /root/<tmp>
 
 ```
 
-**Warning:** Tmpfs can swap to harddisk if low on memory so it is not recommended here.
+**Atenção:** Tmpfs pode trocar para o disco se tem pouca memória disponível, então isto não é recomendado aqui.
 
-#### Restore using cryptsetup
+#### Restauração usando o cryptsetup
 
-**Warning:** Restoring the wrong header or restoring to an unencrypted partition will cause data loss! The action can not perform a check whether the header is actually the *correct* one for that particular device.
+**Atenção:** Restaurar o cabeçalho errado ou restaurar para uma partição não criptografada pode resultar em perda de dados! A ação não pode fazer uma verificação se o cabeçalho é o *correto* para dado dispositivo.
 
-In order to evade restoring a wrong header, you can ensure it does work by using it as a remote `--header` first:
+Para evitar a restauração de um cabeçalho errado, você pode fazer a verificação ao usá-lo como um cabeçalho remoto com a opção `--header`:
 
- `# cryptsetup -v --header /mnt/<backup>/<file>.img open /dev/<device> test` 
+ `# cryptsetup -v --header /mnt/<backup>/<arquivo>.img open /dev/<dispositivo> test` 
 ```
 Key slot 0 unlocked.
 Command successful.
@@ -586,64 +587,64 @@ Command successful.
 
 ```
 
-Now that the check succeeded, the restore may be performed:
+Se não ocorreram erros, a restauração pode ser feita:
 
 ```
-# cryptsetup luksHeaderRestore /dev/<device> --header-backup-file ./mnt/<backup>/<file>.img
+# cryptsetup luksHeaderRestore /dev/<dispositivo> --header-backup-file ./mnt/<backup>/<arquivo>.img
 
 ```
 
-Now that all the keyslot areas are overwritten; only active keyslots from the backup file are available after issuing the command.
+Agora todos os espaços de chave foram sobrescrevidos; somente os espaços de chave ativos do backup devem estar disponíveis.
 
-#### Manual backup and restore
+#### Backup e restauração manual
 
-The header always resides at the beginning of the device and a backup can be performed without access to *cryptsetup* as well. First you have to find out the payload offset of the crypted partition:
+O cabeçalho sempre vai residir no início do dispositivo e um backup pode ser feito sem acesso ao *cryptsetup* também. Primeiro você têm que descobrir o payload offset da partição criptografada:
 
- `# cryptsetup luksDump /dev/<device> | grep "Payload offset"` 
+ `# cryptsetup luksDump /dev/<dispositivo> | grep "Payload offset"` 
 ```
 Payload offset:	4040
 
 ```
 
-Second check the sector size of the drive
+Depois, cheque o tamanho dos setores na unidade de armazenamento
 
- `# fdisk -l /dev/<device> | grep "Sector size"` 
+ `# fdisk -l /dev/<dispositivo> | grep "Sector size"` 
 ```
 Sector size (logical/physical): 512 bytes / 512 bytes
 
 ```
 
-Now that you know the values, you can backup the header with a simple dd command:
+Agora que você sabe os valores, você pode fazer o backup do cabeçalho com o [dd](/index.php/Dd "Dd"):
 
 ```
-# dd if=/dev/<device> of=/path/to/<file>.img bs=512 count=4040
-
-```
-
-and store it safely.
-
-A restore can then be performed using the same values as when backing up:
-
-```
-# dd if=./<file>.img of=/dev/<device> bs=512 count=4040
+# dd if=/dev/<dispositivo> of=/caminho/para/<arquivo>.img bs=512 count=4040
 
 ```
 
-### Re-encrypting devices
+Guarde-o com segurança.
 
-The [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) package features the *cryptsetup-reencrypt* tool. It can be used to convert an existing unencrypted filesystem to a LUKS encrypted one (option `--new`) and permanently remove LUKS encryption (`--decrypt`) from a device. As its name suggests it can also be used to re-encrypt an existing LUKS encrypted device, though, re-encryption is not possible for a detached LUKS header or other encryption modes (e.g. plain-mode). For re-encryption it is possible to change the [#Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode). *cryptsetup-reencrypt* actions can be performed to unmounted devices only. See [cryptsetup-reencrypt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup-reencrypt.8) for more information.
+Uma restauração pode ser feita usando os mesmos valores, com exceção do `if` e `of` que serão invertidos:
 
-One application of re-encryption may be to secure the data again after a passphrase or [keyfile](#Keyfiles) has been compromised *and* one cannot be certain that no copy of the LUKS header has been obtained. For example, if only a passphrase has been shoulder-surfed but no physical/logical access to the device happened, it would be enough to change the respective passphrase/key only ([#Key management](#Key_management)).
+```
+# dd if=/caminho/para/<arquivo>.img of=/dev/<dispositivo> bs=512 count=4040
 
-**Warning:** Always make sure a **reliable backup** is available and double-check options you specify before using the tool!
+```
 
-The following shows an example to encrypt an unencrypted filesystem partition and a re-encryption of an existing LUKS device.
+### Criptografando dispositivos novamente
 
-#### Encrypt an unencrypted filesystem
+O pacote [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) possui a ferramenta *cryptsetup-reencrypt*. Esta pode ser usada para converter um sistema de arquivos existente para um criptografado com LUKS (opção `--new`) e permanentemente removê-lo (opção `--decrypt`) de um dispositivo. Como o nome sugere também pode ser usado para criptografar novamente um container LUKS, apesar que isto não é possível com o cabeçalho desanexado ou outros modos de encriptação (exemplo, modo plain). É possível mudar as [#Opções de encriptação para o modo LUKS](#Opções_de_encriptação_para_o_modo_LUKS). Ações do *cryptsetup-reencrypt* podem somente ser executadas em dispositivos desmontados. Veja [cryptsetup-reencrypt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup-reencrypt.8) para mais informações.
 
-A LUKS encryption header is always stored at the beginning of the device. Since an existing filesystem will usually be allocated all partition sectors, the first step is to shrink it to make space for the LUKS header.
+Criptografar novamente um container pode ser útil para assegurar os dados depois que uma senha ou [keyfile](#Keyfiles) foi compromisada *e* não tem certeza que alguma cópia do cabeçalho foi obtida. Por exemplo, se somente uma senha foi vista mas nenhum acesso físico/lógico ocorreu, deve ser o bastante mudar a respectiva senha/chave ([#Gerenciamento de chaves](#Gerenciamento_de_chaves)).
 
-The [default](#Encryption_options_for_LUKS_mode) LUKS header encryption cipher requires `4096` 512-byte sectors. We already checked space and keep it simple by shrinking the existing `ext4` filesystem on `/dev/sdaX` to its current possible minimum:
+**Atenção:** Sempre tenha um **backup confiável** disponível e verifique duas vezes as opções especificadas antes de usar a ferramenta!
+
+Exemplo, uma partição é criptografada com LUKS e então criptografada novamente.
+
+#### Criptografar um sistema de arquivos
+
+O cabeçalho do LUKS sempre é armazenado no início do dispositivo. Já que usualmente um sistema de arquivos existente usa todos os setores da partição, o primeiro passo é diminuir o espaço alocado para o cabeçalho do LUKS.
+
+O cabeçalho [padrão](#Opções_de_encriptação_para_o_modo_LUKS) do LUKS2 precisa de 16MiB. O sistema de arquivos `ext4` existente no `/dev/sdaX` será verificado e depois redimensionado para seu mínimo espaço possível:
 
 ```
 # umount /mnt
@@ -654,7 +655,7 @@ The [default](#Encryption_options_for_LUKS_mode) LUKS header encryption cipher r
 e2fsck 1.43-WIP (18-May-2015)
 Pass 1: Checking inodes, blocks, and sizes
 ...
-/dev/sda6: 12/166320 files (0.0% non-contiguous), 28783/665062 blocks
+/dev/sdaX: 12/166320 files (0.0% non-contiguous), 28783/665062 blocks
 
 ```
  `# resize2fs -M /dev/sdaX` 
@@ -665,21 +666,21 @@ The filesystem on /dev/sdaX is now 26347 (4k) blocks long.
 
 ```
 
-Now we encrypt it, using the default cipher we do not have to specify it explicitly:
+A cifra padrão de encriptação vai ser utilizada, então não há necessidade de especificá-la:
 
- `# cryptsetup-reencrypt /dev/sdaX --new  --reduce-device-size 4096S` 
+ `# cryptsetup-reencrypt /dev/sdaX --new  --reduce-device-size 16M` 
 ```
-Enter new passphrase: 
-Verify passphrase: 
+Enter new passphrase:
+Verify passphrase:
 Finished, time 00:05.126,  952 MiB written, speed 185,7 MiB/s
 
 ```
 
-After it finished, the encryption was performed to the full partition, i.e. not only the space the filesystem was shrunk to (`sdaX` has `2.6GiB` and the CPU used in the example has no hardware AES instructions). As a final step we extend the filesystem of the now encrypted device again to occupy available space:
+Depois que acabar, a encriptação vai ter sido feita para toda a partição, não somente o espaço que o sistema de arquivos foi diminuído (`sdaX` tem `2.6GiB` e a CPU usada no exemplo não tem instruções AES presentes no hardware). Por fim, extenda o sistema de arquivos para ocupar o espaço disponível novamente:
 
  `# cryptsetup open /dev/sdaX recrypt` 
 ```
-Enter passphrase for /dev/sdaX: 
+Enter passphrase for /dev/sdaX:
 ...
 
 ```
@@ -696,26 +697,24 @@ The filesystem on /dev/mapper/recrypt is now 664807 (4k) blocks long.
 
 ```
 
-and are done.
+E pronto.
 
-#### Re-encrypting an existing LUKS partition
+#### Criptografando novamente um container LUKS
 
-In this example an existing LUKS device is re-encrypted.
+Neste exemplo um container LUKS é criptografado novamente.
 
-**Warning:** Double-check you specify encryption options for *cryptsetup-reencrypt* correctly and *never* re-encrypt without a **reliable backup**!
+**Atenção:** Tenha certeza de especificar as opções de encriptação corretas para *cryptsetup-reencrypt* e *nunca* faça isso sem um **backup confiável**!
 
-In order to re-encrypt a device with its existing encryption options, they do not need to be specified. A simple:
+Para criptografar novamente o dispositivo com suas opções de encriptação atuais, você não precisa especificá-las:
 
  `# cryptsetup-reencrypt /dev/sdaX` 
 ```
-Enter passphrase for key slot 0: 
+Enter passphrase for key slot 0:
 Progress: 100,0%, ETA 00:00, 2596 MiB written, speed  36,5 MiB/s
 
 ```
 
-performs it.
-
-A possible usecase is to re-encrypt LUKS devices which have non-current encryption options. Apart from above warning on specifying options correctly, the ability to change the LUKS header may also be limited by its size. For example, if the device was initially encrypted using a CBC mode cipher and 128 bit key-size, the LUKS header will be half the size of above mentioned `4096` sectors:
+Um possível uso é criptografar dispositivos LUKS que não tem opções de encriptação modernas. A habilidade de modificar o cabeçalho pode ser limitada pelo seu tamanho. Exemplo, se um dispositivo inicialmente foi criptografado com a cifra CBC e tamanho de chave de 128 bit, o cabeçalho deste vai ter metade do tamanho mencionado acima (`4096` setores):
 
  `# cryptsetup luksDump /dev/sdaX |grep -e "mode" -e "Payload" -e "MK bits"` 
 ```
@@ -725,13 +724,13 @@ MK bits:       	128
 
 ```
 
-While it is possible to upgrade the encryption of such a device, it is currently only feasible in two steps. First, re-encrypting with the same encryption options, but using the `--reduce-device-size` option to make further space for the larger LUKS header. Second, re-encypt the whole device again with the desired cipher. For this reason and the fact that a backup should be created in any case, creating a new, fresh encrypted device to restore into is always the faster option.
+Apesar de ser possível atualizar a criptografia de tal dispositivo, isto é praticável somente se feito em dois passos. Primeiro, use as mesmas opções de encriptação, mas use a opção `--reduce-device-size` para disponibilizar espaço para um cabeçalho maior. Segundo, agora utilize as opções de encriptação que desejar. Por esta razão e o fato que um backup deve ser feito, criar um novo dispositivo criptografado para o restaurar é uma opção mais rápida.
 
-## Resizing encrypted devices
+## Redimensionando os dispositivos criptografados
 
-If a storage device encrypted with dm-crypt is being cloned (with a tool like dd) to another larger device, the underlying dm-crypt device must be resized to use the whole space.
+Se um dispositivo de armazenamento criptografado com dm-crypt está sendo clonado (com uma ferramenta como o [dd](/index.php/Dd "Dd")) para outro dispositivo maior, este último deve ser redimensionado para utilizar todo o seu espaço.
 
-The destination device is /dev/sdX2 in this example, the whole available space adjacent to the partition will be used:
+Neste exemplo, o dispositivo destino é /dev/sdX2, todo o espaço adicional da partição vai ser utilizado:
 
 ```
 # cryptsetup luksOpen /dev/sdX2 sdX2
@@ -739,162 +738,162 @@ The destination device is /dev/sdX2 in this example, the whole available space a
 
 ```
 
-Then the underlying filesystem must be resized.
+O sistema de arquivos deste deve ser redimensionado também.
 
-### Loopback filesystem
+### Sistema de arquivos de loopback
 
-Assume that an encrypted loopback filesystem is stored in a file `/bigsecret`, looped to `/dev/loop0`, mapped to `secret` and mounted on `/mnt/secret`, as in the example at [dm-crypt/Encrypting a non-root file system#Loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system").
+Assuma que um sistema de arquivos de loopback criptografado está no arquivo `grande_segredo`, ligado ao `/dev/loop0`, mapeado como `segredo` e montado em `/mnt/segredo`, como no exemplo presente em [dm-crypt/Criptografando todo um sistema#Dispositivo de loop](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Dispositivo_de_loop "Dm-crypt/Criptografando todo um sistema").
 
-If the container file is currently mapped and/or mounted, unmount and/or close it:
+Se o container está mapeado e/ou montado, o desmonte e/ou feche:
 
 ```
-# umount /mnt/secret
-# cryptsetup close secret
+# umount /mnt/segredo
+# cryptsetup close segredo
 # losetup -d /dev/loop0
 
 ```
 
-Next, expand the container file with the size of the data you want to add. In this example, the file will be expanded with 1M * 1024, which is 1G.
+Depois, expanda o container com o tamanho do arquivo que você quer adicionar. Neste exemplo, o arquivo será expandido com 1M * 1024, que é 1G.
 
-**Warning:** Make absolutely sure to use **two** `>`, instead of just one, or else you will overwrite the file instead of appending to it. Making a backup before this step is strongly recommended.
-
-```
-# dd if=/dev/urandom bs=1M count=1024 | cat - >> /bigsecret
+**Atenção:** Tenha certeza de usar **dois** `>`, ao invês de um, ou você irá sobrescrever o arquivo e não adicionar no final dele. Fazer um backup antes desse passo é fortemente recomendado.
 
 ```
-
-Now map the container to the loop device:
-
-```
-# losetup /dev/loop0 /bigsecret
-# cryptsetup open /dev/loop0 secret
+# dd if=/dev/urandom bs=1M count=1024 | cat - >> grande_segredo
 
 ```
 
-After this, resize the encrypted part of the container to the new maximum size of the container file:
+Agora mapeie o container para o dispositivo de loop:
 
 ```
-# cryptsetup resize secret
-
-```
-
-Finally, perform a filesystem check and, if it is ok, resize it (example for ext2/3/4):
-
-```
-# e2fsck -f /dev/mapper/secret
-# resize2fs /dev/mapper/secret
+# losetup /dev/loop0 grande_segredo
+# cryptsetup open /dev/loop0 segredo
 
 ```
 
-You can now mount the container again:
+Depois disso, redimensione a parte criptografada do container para o novo tamanho máximo do arquivo container:
 
 ```
-# mount /dev/mapper/secret /mnt/secret
+# cryptsetup resize segredo
+
+```
+
+Finalmente, cheque o sistema de arquivos e, se está ok, o redimensione (exemplo para ext2/3/4):
+
+```
+# e2fsck -f /dev/mapper/segredo
+# resize2fs /dev/mapper/segredo
+
+```
+
+Você pode montar o container novamente:
+
+```
+# mount /dev/mapper/segredo /mnt/segredo
 
 ```
 
 ## Keyfiles
 
-**Note:** This section describes using a plaintext keyfile. If you want to encrypt your keyfile giving you two factor authentication see [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") for details, but please still read this section.
+**Nota:** Esta seção descreve o uso de keyfile em texto puro. Se desejar criptografar a keyfile para conseguir autentificação de dois fatores veja [Usando keyfiles criptografadas com GPG ou OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") para detalhes, mas ainda leia esta seção.
 
-**What is a keyfile?**
+**O que é uma keyfile?**
 
-A keyfile is a file whose data is used as the passphrase to unlock an encrypted volume. That means if such a file is lost or changed, decrypting the volume may no longer be possible.
+Uma keyfile é um arquivo cujo dados são usados como senha para abrir um volume criptografado. Isto significa que se tal arquivo é perdido ou modificado, abrir o volume pode não ser mais possível.
 
-**Tip:** Define a passphrase in addition to the keyfile for backup access to encrypted volumes in the event the defined keyfile is lost or changed.
+**Dica:** Adicione uma senha além da keyfile para evitar a situação citada acima.
 
-**Why use a keyfile?**
+**Porque usar uma keyfile?**
 
-There are many kinds of keyfiles. Each type of keyfile used has benefits and disadvantages summarized below:
+Existem muitos tipos de keyfiles. Cada tipo possui suas vantagens e desvantagens, resumidos abaixo:
 
-### Types of keyfiles
+### Tipos de keyfiles
 
-#### passphrase
+#### Senha
 
-This is a keyfile containing a simple passphrase. The benefit of this type of keyfile is that if the file is lost the data it contained is known and hopefully easily remembered by the owner of the encrypted volume. However the disadvantage is that this does not add any security over entering a passphrase during the initial system start.
+Contém a senha. A vantagem deste tipo é que se o arquivo perde os dados, o proprietário do volume criptografado pode se lembrar do conteudo. No entanto a desvantagem é que isto não trás nenhuma segurança extra comparado com digitar a senha na inicialização.
 
-Example: `1234`
+Exemplo: `1234`
 
-**Note:** The keyfile containing the passphrase must not have a newline in it. One option is to create it using
+**Nota:** A keyfile que contém a senha não deve ter quebra de linha (newline) dentro dela. Uma opção é criá-la usando:
 ```
-# echo -n 'your_passphrase' > /path/to/<keyfile>
-# chown root:root /path/to/<keyfile>; chmod 400 /path/to/<keyfile>
-
-```
-
-#### randomtext
-
-This is a keyfile containing a block of random characters. The benefit of this type of keyfile is that it is much more resistant to dictionary attacks than a simple passphrase. An additional strength of keyfiles can be utilized in this situation which is the length of data used. Since this is not a string meant to be memorized by a person for entry, it is trivial to create files containing thousands of random characters as the key. The disadvantage is that if this file is lost or changed, it will most likely not be possible to access the encrypted volume without a backup passphrase.
-
-Example: `fjqweifj830149-57 819y4my1-38t1934yt8-91m 34co3;t8y;9p3y-`
-
-#### binary
-
-This is a binary file that has been defined as a keyfile. When identifying files as candidates for a keyfile, it is recommended to choose files that are relatively static such as photos, music, video clips. The benefit of these files is that they serve a dual function which can make them harder to identify as keyfiles. Instead of having a text file with a large amount of random text, the keyfile would look like a regular image file or music clip to the casual observer. The disadvantage is that if this file is lost or changed, it will most likely not be possible to access the encrypted volume without a backup passphrase. Additionally, there is a theoretical loss of randomness when compared to a randomly generated text file. This is due to the fact that images, videos and music have some intrinsic relationship between neighboring bits of data that does not exist for a random text file. However this is controversial and has never been exploited publicly.
-
-Example: images, text, video, ...
-
-### Creating a keyfile with random characters
-
-#### Storing the keyfile on a filesystem
-
-A keyfile can be of arbitrary content and size.
-
-Here `dd` is used to generate a keyfile of 2048 random bytes, storing it in the file `/etc/mykeyfile`:
-
-```
-# dd bs=512 count=4 if=/dev/random of=/etc/mykeyfile iflag=fullblock
+# echo -n 'sua_senha' > /caminho/para/<keyfile>
+# chown root:root /caminho/para/<keyfile>; chmod 400 /caminho/para/<keyfile>
 
 ```
 
-If you are planning to store the keyfile on an external device, you can also simply change the outputfile to the corresponding directory:
+#### Texto randômico
+
+Este tipo de keyfile contém um bloco de caracteres randômicos. É muito mais resistente ao ataques de dicionários que uma simples senha. Possui também como vantagem o tamanho dos dados utilizados. Desde que este tipo não é para ser memorizado por uma pessoa, é possível criar um arquivo com milhares de caracteres e colocá-lo como uma chave. A desvantagem é que se o arquivo é perdido ou modificado, não deve ser possível recuperar o acesso ao volume criptografado sem outra chave.
+
+Exemplo: `fjqweifj830149-57 819y4my1-38t1934yt8-91m 34co3;t8y;9p3y-`
+
+#### Binário
+
+É um arquivo binário que foi definido como keyfile. Quando identificar candidatos para uma keyfile, é recomendado que escolha fotos relativamente estáticas como fotos, músicas, vídeos. A vantagem, esses arquivos tem outras funções que dificultam a sua identificação como keyfile. Ao invês de ter um arquivo de texto com uma grande quantidade de texto randômico, a keyfile vai ser considerada como um arquivo de mídia normal. A desvantagem, se o arquivo for perdido ou mudado, provavelmente não será mais possível acessar o volume criptografado sem outra chave. Adicionalmente, existe teoricamente uma perda de aleatoriedade se comparado com um arquivo de texto randômico. Isto é devido ao fato que imagens, vídeos e músicas tem uma relação intríseca entre bits de dados vizinhos que não existe num texto randômico. No entanto isto é controverso e nunca foi publicamente explorado.
+
+Exemplo: imagens, texto, video ...
+
+### Criando uma keyfile com caracteres randômicos
+
+#### Guardando a keyfile em um sistema de arquivos filesystem
+
+Uma keyfile pode ser de conteudo e tamanho arbitrários.
+
+É utilizado o `dd` para gerar uma keyfile de 2048 bytes randômicos, os colocando no arquivo `/etc/minha_keyfile`:
 
 ```
-# dd bs=512 count=4 if=/dev/random of=/media/usbstick/mykeyfile iflag=fullblock
-
-```
-
-To deny any access for other users than `root`:
-
-```
-# chmod 600 /etc/mykeyfile
-
-```
-
-##### Securely overwriting stored keyfiles
-
-If you stored your temporary keyfile on a physical storage device, and want to delete it, remember to not just remove the keyfile later on, but use something like
-
-```
-# shred --remove --zero mykeyfile
-
-```
-
-to securely overwrite it. For overaged filesystems like FAT or ext2 this will suffice while in the case of journaling filesystems, flash memory hardware and other cases it is highly recommended to [wipe the entire device](/index.php/Securely_wipe_disk "Securely wipe disk").
-
-#### Storing the keyfile in ramfs
-
-Alternatively, you can mount a ramfs for storing the keyfile temporarily:
-
-```
-# mkdir /root/myramfs
-# mount ramfs /root/myramfs/ -t ramfs
-# cd /root/myramfs
+# dd bs=512 count=4 if=/dev/random of=/etc/minha_keyfile iflag=fullblock
 
 ```
 
-The advantage is that it resides in RAM and not on a physical disk, therefore it can not be recovered after unmounting the ramfs. After copying the keyfile to another secure and persistent filesystem, unmount the ramfs again with
+Se você planeja guardar a keyile em um dispositivo externo, você pode simplesmente mudar a saída para o diretório correspondente:
 
 ```
-# umount /root/myramfs
+# dd bs=512 count=4 if=/dev/random of=/media/pendrive/minha_keyfile iflag=fullblock
 
 ```
 
-### Configuring LUKS to make use of the keyfile
+Para negar o acesso de qualquer usuário exceto o `root`:
 
-Add a keyslot for the keyfile to the LUKS header:
+```
+# chmod 600 /etc/minha_keyfile
 
- `# cryptsetup luksAddKey /dev/sda2 /etc/mykeyfile` 
+```
+
+##### Sobrescrevendo com segurança as keyfiles guardadas
+
+Se você guardar sua keyfile temporária em uma unidade de armazenamento, e quer deletá-la, use algo parecido com isso
+
+```
+# shred --remove --zero minha_keyfile
+
+```
+
+para sobrescrever com segurança. Para sistemas de arquivos antigos como FAT ou ext2 isto deve bastar, enquanto que no caso de sistemas de arquivos com journaling, hardware de memória flash e outros casos é recomendado a [apagar todo o disco](/index.php/Securely_wipe_disk "Securely wipe disk").
+
+#### Guardando a keyfile no ramfs
+
+Alternativamente você pode montar uma ramfs para guardar a keyfile temporariamente:
+
+```
+# mkdir /root/minha_ramfs
+# mount ramfs /root/minha_ramfs/ -t ramfs
+# cd /root/minha_ramfs
+
+```
+
+A vantagem é que ela reside na RAM e não em um disco fisíco, então não pode ser recuperada depois de desmontar o ramfs. Depois de copiar a keyfile para outro seguro e persistente sistema de arquivos, desmonte o ramfs com
+
+```
+# umount /root/minha_ramfs
+
+```
+
+### Configurando o LUKS para utilizar uma/outra keyfile
+
+Adicione um espaço de chave para a keyfile no cabeçalho do LUKS:
+
+ `# cryptsetup luksAddKey /dev/sda2 /etc/minha_keyfile` 
 ```
 Enter any LUKS passphrase:
 key slot 0 unlocked.
@@ -902,82 +901,73 @@ Command successful.
 
 ```
 
-### Manually unlocking a partition using a keyfile
+### Manualmente abrindo uma partição com uma keyfile
 
-Use the `--key-file` option when opening the LUKS device:
-
-```
-# cryptsetup open /dev/sda2 *dm_name* --key-file /etc/mykeyfile
+Use a opção `--key-file` quando for abrir um dispositivo LUKS:
 
 ```
+# cryptsetup open /dev/sda2 *dm_nome* --key-file /etc/minha_keyfile
 
-### Unlocking the root partition at boot
+```
 
-This is simply a matter of configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") to include the necessary modules or files and configuring the [cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to know where to find the keyfile.
+#### Com uma keyfile em um dispositivo externo
 
-Two cases are covered below:
+##### Configurando o mkinitcpio
 
-1.  Using a keyfile stored on an external media (here a USB stick)
-2.  Using a keyfile embedded in the initramfs
-
-#### With a keyfile stored on an external media
-
-##### Configuring mkinitcpio
-
-You have to add a module in your `/etc/mkinitcpio.conf` for the drive's file system (`vfat` module in the example below):
+Você pode adicionar um módulo em sua `/etc/mkinitcpio.conf` para o sistema de arquivos da sua unidade de armazenamento, no exemplo abaixo o módulo (`vfat`):
 
 ```
 MODULES=(vfat)
 
 ```
 
-In this example it is assumed that you use a FAT formatted USB drive (`vfat` module). Replace those module names if you use another file system on your USB stick (e.g. `ext2`) or another codepage. If it complains of bad superblock and bad codepage at boot, then you need an extra codepage module to be loaded. For instance, you may need `nls_iso8859-1` module for `iso8859-1` codepage.
+Neste exemplo é assumido que você vai usar um pendrive formatado em FAT (módulo `vfat`). Mude este módulo para outro caso forusar outro sistema de arquivos (exemplo, `ext2`). Se receber uma mensagem reclamando de "bad superblock" e "bad codepage" na inicialização, é necessário carregar uma codepage extra. Você pode precisar do módulo `nls_iso8859-1` para a codepage `iso8859-1`.
 
-If you have a non-US keyboard, it might prove useful to load your keyboard layout before you are prompted to enter the password to unlock the root partition at boot. For this, you will need the `keymap` hook before `encrypt`.
+Se você usa um teclado não-US, pode ser útil carregá-lo antes que seja solicitada a senha para abrir a partição raiz na inicialização. Para isto, você precisa do hook `keyboard` antes do `encrypt`.
 
-[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+[Gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
-##### Configuring the kernel parameters
+##### Configurando os parâmetros do kernel
 
-Add the following options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") if using the `encrypt` hook. If using `sd-encrypt` see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
-
-```
-cryptdevice=/dev/*<partition1>*:root cryptkey=/dev/*<partition2>*:<fstype>:<path>
+Adicione as seguintes opções nos [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") se está usando o hook `encrypt`. Se está usando o `sd-encrypt` veja [dm-crypt/Configuração do sistema#Usando o hook sd-encrypt](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Usando_o_hook_sd-encrypt "Dm-crypt/Configuração do sistema").
 
 ```
-
-For example:
-
-```
-cryptdevice=/dev/sda3:root cryptkey=/dev/sdb1:vfat:/keys/secretkey
+cryptdevice=/dev/*<partição1>*:raiz cryptkey=/dev/*<partição2>*:<tipo_do_sistema_de_arquivos>:<caminho>
 
 ```
 
-Choosing a plain filename for your key provides a bit of 'security through obscurity', but be aware the kernel command line is recorded in the kernel's log (*dmesg*). The keyfile can not be a hidden file, that means the filename must not start with a dot, or the `encrypt` hook will fail to find the keyfile during the boot process. Alternatively, one could hide the keyfile between the partitions and use:
+Por exemplo:
 
 ```
-cryptkey=/dev/sdb1:offset:size
+cryptdevice=/dev/sda3:raiz cryptkey=/dev/sdb1:vfat:/chaves/chavesecreta
 
 ```
 
-As an advantage, it is harder to accidentally delete the key.
+Escolher um arquivo com nome normal dá um pouco de 'segurança por obscurantismo', mas esteja ciente que a linha de comando do kernel é gravada no log do kernel (*dmesg*). A keyfile não pode ser um arquivo escondido, isto significa que o nome do arquivo não deve começar com um ponto, ou o hook `encrypt` não vai conseguir encontrar o arquivo durante o processo de inicialização. Alternativamente, você pode essconder a keyfile entre partições e usar:
 
-The naming of device nodes like `/dev/sdb1` is not guaranteed to stay the same across reboots. It is more reliable to access the device with udev's [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") instead. To assure that the `encrypt` hook finds your keyfile when reading it from an external storage device, persistent block device names must be used. See the article [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+```
+cryptkey=/dev/sdb1:início:tamanho
 
-#### With a keyfile embedded in the initramfs
+```
 
-**Warning:** Use an embedded keyfile **only** if you protect the keyfile sufficiently by:
+Como vantagem, é mais difícil acidentalmente deletar a chave.
 
-*   Using some form of authentication earlier in the boot process. Otherwise auto-decryption will occur, defeating completely the purpose of block device encryption.
-*   `/boot` is encrypted. Otherwise root on a different installation (including the [live environment](/index.php/Installation_guide#Boot_the_live_environment "Installation guide")) can extract your key from the initramfs, and unlock the device without any other authentication.
+Não existe garantia que nomes de dispositivos como `/dev/sdb1` irão permanecer os mesmos entre inicializações. É mais confiável acessar o dispositivo com a [nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") do udev. Use isto para ter certeza que o hook `encrypt` vai encontrar sua keyfile quando lê-la de um dispositivo externo.
 
-This method allows to use a specially named keyfile that will be embedded in the [initramfs](/index.php/Initramfs "Initramfs") and picked up by the `encrypt` [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to unlock the root filesystem (`cryptdevice`) automatically. It may be useful to apply when using the [GRUB early cryptodisk](/index.php/GRUB#Encrypted_/boot "GRUB") feature, in order to avoid entering two passphrases during boot.
+#### Com uma keyfile no initramfs
 
-The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:*path*`. See [dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, this kernel parameter defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
+**Atenção:** Use uma keyfile dentro do initramfs **somente** se você proteger a keyfile suficientemente por:
 
-If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile with the `rd.luks.key` kernel parameter. See [dm-crypt/System configuration#rd.luks.key](/index.php/Dm-crypt/System_configuration#rd.luks.key "Dm-crypt/System configuration").
+*   Usar alguma forma de autentificação prévia no processo de inicialização. De outro modo, o dispositivo vai ser aberto automaticamente, acabando com a proposta de criptografar o dispositivo de bloco.
+*   `/boot` é criptografado. De outro modo, a raiz de outra instalação (incluindo o [ambiente live](/index.php/Guia_de_instala%C3%A7%C3%A3o#Inicializar_o_ambiente_live "Guia de instalação")) pode extrair sua chave do initramfs, e decriptografar o dispositivo sem qualquer meio de autentificação.
 
-[Generate the keyfile](#Creating_a_keyfile_with_random_characters), give it suitable permissions and [add it as a LUKS key](#Adding_LUKS_keys):
+Este método permite o uso de um nome especial para a keyfile que vai ser colocada no [initramfs](/index.php/Initramfs "Initramfs") e lida pelo [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") `encrypt` para abrir o sistema de arquivos raiz (`cryptdevice`) automaticamente. Pode ser útil quando deseja que o [/boot criptografado](/index.php/GRUB#Encrypted_/boot "GRUB"), evitando entrar duas senhas durante a inicialização.
+
+O hook `encrypt` permite que o usuário especificar uma keyfile com o parâmetro do kernel `cryptkey`: no caso do initramfs, a sintaxe é `rootfs:*caminho*`. Veja [dm-crypt/Configuração do sistema#cryptkey](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#cryptkey "Dm-crypt/Configuração do sistema"). Apesar que, este parâmetro do kernel se não definido vai usar por padrão `/crypto_keyfile.bin`, e se o initramfs contém uma chave válida com este nome, o container será aberto sem a necessidade de definir o parâmetro `cryptkey`.
+
+Se está usando o `sd-encrypt`, especifique a localização da keyfile com o parâmetro do kernel `rd.luks.key`. Veja [dm-crypt/Configuração do sistema#rd.luks.key](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#rd.luks.key "Dm-crypt/Configuração do sistema").
+
+[Gere uma keyfile](#Criando_uma_keyfile_com_caracteres_randômicos), defina permissões apropriadas e [a adicione como uma chave do LUKS](#Adicionando_chaves_do_LUKS):
 
 ```
 # dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin iflag=fullblock
@@ -987,14 +977,14 @@ If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile 
 
 ```
 
-**Warning:** When initramfs' permissions are set to 644 (by default), then all users will be able to dump the keyfile. Make sure the permissions are still 600 if you install a new kernel.
+**Atenção:** Quando as permissões do initramfs estão definidas para 644 (por padrão), então todos os usuários poderão despejar a keyfile. Tenha certeza de que as permissões ainda são 600 depois de atualizar ou instalar um kernel.
 
-Include the key in [mkinitcpio's FILES array](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio"):
+Inclua a chave no [arranjo de arquivos do mkinitcpio](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio"):
 
  `/etc/mkinitcpio.conf`  `FILES=(/crypto_keyfile.bin)` 
 
-Finally [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+Finalmente [gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
-On the next reboot you should only have to enter your container decryption passphrase once.
+Na próxima inicialização você deve precisar somente entrar com a senha do container criptografado uma vez.
 
-([source](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/#bonus-login-once))
+([fonte](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/#bonus-login-once))

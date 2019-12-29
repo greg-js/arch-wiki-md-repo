@@ -140,7 +140,7 @@ Context-aware completions for Arch Linux-specific commands like *pacman*, *pacma
 
 ### Command substitution
 
-*fish* does not implement Bash style history substitution (e.g. `sudo !!`), and the developers recommend in the [fish faq](http://fishshell.com/docs/current/faq.html#faq-history) to use the interactive history recall interface instead: the `Up` arrow recalls whole past lines and `Alt+Up` recalls individual arguments.
+*fish* does not implement Bash style history substitution (e.g. `sudo !!`), and the developers recommend in the [fish faq](http://fishshell.com/docs/current/faq.html#faq-history) to use the interactive history recall interface instead: the `Up` arrow recalls whole past lines and `Alt+Up` (or `Alt+.`) recalls individual arguments.
 
 However some workarounds are described in the [fish wiki](https://github.com/fish-shell/fish-shell/wiki/Bash-Style-Command-Substitution-and-Chaining-(!!-!$-&&-%7C%7C)): while not providing complete history substitution, some functions replace `!!` with the previous command or `!$` with the previous last argument.
 

@@ -26,6 +26,7 @@ This article describes how to configure network connections on [OSI layer 3](htt
     *   [2.5 IP addresses](#IP_addresses)
     *   [2.6 Routing table](#Routing_table)
     *   [2.7 DHCP](#DHCP)
+        *   [2.7.1 Servers](#Servers)
     *   [2.8 Network managers](#Network_managers)
 *   [3 Set the hostname](#Set_the_hostname)
     *   [3.1 Local hostname resolution](#Local_hostname_resolution)
@@ -226,17 +227,25 @@ Delete a route:
 
 A [Dynamic Host Configuration Protocol](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") (DHCP) server provides clients with a dynamic IP address, the subnet mask, the default gateway IP address and optionally also with DNS name servers.
 
-**Note:** You should not run two DHCP clients simultaneously.
-
 To use DHCP you need a DHCP server in your network and a DHCP client:
 
 | Client | Package | [Archiso](/index.php/Archiso "Archiso") | Note | Systemd units |
 | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) | Yes | DHCP, DHCPv6, ZeroConf, static IP | `dhcpcd.service`, `dhcpcd@*interface*.service` |
 | [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Yes | DHCP, DHCPv6, BOOTP, static IP | `dhclient@*interface*.service` |
 
-Note that instead of directly using a DHCP client you can also use a [network manager](#Network_managers).
+**Note:**
+
+*   You should not run two DHCP clients simultaneously.
+*   Instead of directly using a DHCP client you can also use a [network manager](#Network_managers).
 
 **Tip:** You can check if a DHCP server is running with [dhcping](https://www.archlinux.org/packages/?name=dhcping).
+
+#### Servers
+
+| Server | Package | IPv4 | IPv6 | GUI | Interfaces | Storage backend(s) | Note |
+| [dhcpd](/index.php/Dhcpd "Dhcpd") | [dhcp](https://www.archlinux.org/packages/?name=dhcp) | Yes | Yes | [Glass-ISC-DHCP](https://github.com/Akkadius/glass-isc-dhcp) | ? | File |
+| [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) | Yes | Yes | No | ? | File | Also DNS, PXE and TFTP |
+| [Kea](/index.php/Kea "Kea") | [kea](https://www.archlinux.org/packages/?name=kea) | Yes | Yes | [Kea-Anterius (Experimental)](https://github.com/isc-projects/kea-anterius) | REST, RADIUS and NETCONF | File, MySQL, PostgreSQL and Cassandra | Also DNS |
 
 ### Network managers
 

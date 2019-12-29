@@ -80,15 +80,21 @@ There are also some Docker images provided on the [official Mattermost Docker Hu
 [Install](/index.php/Install "Install") the [mattermost](https://aur.archlinux.org/packages/mattermost/) package, or [mattermost-git](https://aur.archlinux.org/packages/mattermost-git/) for the development version.
 
 *   The installation will create the `mattermost` user and group.
-*   The mattermost directory is located at `/var/lib/mattermost` and is owned by `mattermost:root`.
+*   The configuration happens in `/etc/webapps/mattermost/config.json` where `/etc/webapps/mattermost/` and `/etc/webapps/mattermost/config.json` are both owned by `mattermost:mattermost`.
+*   In `/var/lib/mattermost/` owned recursively by `mattermost:mattermost`, we can find:
+    *   `files`, a folder where all user files posted via messages, profile pictures and team pictures are stored;
+    *   `client`, a folder related to the webapp client which contains files rewritten by the webapp during runtime and in the `plugins` subfolder the web plugins installed via the webui;
+    *   `plugins`, a folder related to the plugins (server part)
+*   In `/var/log/mattermost`, a folder created on the fly during the install process (cf. [TmpFile](/index.php/Systemd#Temporary_files "Systemd")) which stores the server logs as json. `/var/log/mattermost` and `/var/log/mattermost/mattermost.log` are both owned by `mattermost:mattermost`.
+*   The rest of the immutable Mattermost directory is located at `/var/lib/mattermost` and is owned by `mattermost:mattermost`.
 
 Continue with [#Database setup](#Database_setup).
 
 ## Database setup
 
-Mattermost requires a database back-end. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database. Follow one of the following sections and then proceed with [#Configuring Mattermost](#Configuring_Mattermost).
+Mattermost requires a database back-end. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database.
 
-While MySQL is officially supported, please note the official guide goes through the PostgreSQL steps only.
+Follow one of the following sections and then proceed with [#Configuring Mattermost](#Configuring_Mattermost).
 
 ### MySQL/MariaDB
 
@@ -167,20 +173,20 @@ The `DataSource`:
 
 1.  Navigate to your Mattermost install and create a team and user.
 2.  The first user in the system is automatically granted the `system_admin` role, which gives you access to the System Console.
-3.  From the `town-square` channel click the dropdown and choose the `System Console` option.
-4.  Update `Notification > Email` settings to setup an SMTP email service. The example below assumes AmazonSES.
-    *   Set `Send Email Notifications` to `true`
-    *   Set `Require Email Verification` to `true`
-    *   Set `Feedback Name` to `No-Reply`
-    *   Set `Feedback Email` to `mattermost@example.com`
-    *   Set `SMTP Username` to `[YOUR_SMTP_USERNAME]`
-    *   Set `SMTP Password` to `[YOUR_SMTP_PASSWORD]`
-    *   Set `SMTP Server` to `email-smtp.us-east-1.amazonaws.com`
-    *   Set `SMTP Port` to `465`
-    *   Set `Connection Security` to `TLS`
+3.  From the *town-square* channel click the dropdown and choose the *System Console* option.
+4.  Update *Notification > Email* settings to setup an SMTP email service. The example below assumes AmazonSES.
+    *   Set *Send Email Notifications* to *true*
+    *   Set *Require Email Verification* to *true*
+    *   Set *Feedback Name* to `No-Reply`
+    *   Set *Feedback Email* to `mattermost@example.com`
+    *   Set *SMTP Username* to `*your_smtp_username*`
+    *   Set *SMTP Password* to `*your_smtp_password*`
+    *   Set *SMTP Server* to `email-smtp.us-east-1.amazonaws.com`
+    *   Set *SMTP Port* to `465`
+    *   Set *Connection Security* to *TLS*
     *   Save the Settings
-5.  Update `File > Storage` settings by changing `Local Directory Location` from `./data/` to `/mattermost/data`.
-6.  Update `General > Logging` settings by setting `Log to The Console` to `false`.
+5.  Update *File > Storage* settings by changing *Local Directory Location* from `./data/` to `/mattermost/data`.
+6.  Update *General > Logging* settings by setting *Log to The Console* to *false*.
 7.  Feel free to modify other settings.
 8.  [Restart](/index.php/Restart "Restart") `mattermost.service`.
 

@@ -4,7 +4,7 @@ This is an install and configuration guide for the Dell Inspiron 13 5391 laptop.
 | Video | Working | i915 |
 | Wireless | Not working | iwlwifi |
 | Bluetooth | ? | ? |
-| Audio | Not working | snd_hda_intel |
+| Audio | Working | snd_hda_intel |
 | Touchpad | Working | i2c_hid |
 | Webcam | ? | uvcvideo |
 | Keyboard backlight switch | Working | ? |
@@ -26,8 +26,9 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
     *   [3.3 Keyboard](#Keyboard)
     *   [3.4 Touchpad](#Touchpad)
     *   [3.5 Wireless](#Wireless)
-    *   [3.6 HDMI/Monitor](#HDMI/Monitor)
-    *   [3.7 USB, SD card slot, HDMI, webcam](#USB,_SD_card_slot,_HDMI,_webcam)
+    *   [3.6 Backlight and Volume control with the function keys](#Backlight_and_Volume_control_with_the_function_keys)
+    *   [3.7 HDMI/Monitor](#HDMI/Monitor)
+    *   [3.8 USB, SD card slot, HDMI, webcam](#USB,_SD_card_slot,_HDMI,_webcam)
 
 ## Hardware Details
 
@@ -75,6 +76,8 @@ See [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### Audio
 
+Get it working with the help of: [https://forum.manjaro.org/t/hardware-acceleration-cannot-init/107199/2](https://forum.manjaro.org/t/hardware-acceleration-cannot-init/107199/2)
+
 ### Video
 
 The notebook comes with the [Intel UHD Graphics](https://en.wikipedia.org/wiki/Intel_HD_and_Iris_Graphics "wikipedia:Intel HD and Iris Graphics") GPU, which uses the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver. See: [Intel](/index.php/Intel "Intel") for details.
@@ -103,6 +106,10 @@ Server = [https://archive.archlinux.org/repos/2019/12/02/$repo/os/$arch](https:/
 ```
 
 See also: [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+
+### Backlight and Volume control with the function keys
+
+See [Xbindkeys#Configuration](/index.php/Xbindkeys#Configuration "Xbindkeys")
 
 ### HDMI/Monitor
 

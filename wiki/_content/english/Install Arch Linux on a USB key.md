@@ -26,7 +26,7 @@ This page explains how to perform a regular Arch installation onto removable med
         *   [3.1.2 Video drivers](#Video_drivers)
         *   [3.1.3 Persistent block device naming](#Persistent_block_device_naming)
         *   [3.1.4 Kernel parameters](#Kernel_parameters)
-        *   [3.1.5 Booting from USB 3 media](#Booting_from_USB_3_media)
+        *   [3.1.5 Booting from USB 3 medium](#Booting_from_USB_3_medium)
     *   [3.2 Compatibility](#Compatibility)
     *   [3.3 Minimizing disk access](#Minimizing_disk_access)
 *   [4 See also](#See_also)
@@ -38,16 +38,16 @@ This page explains how to perform a regular Arch installation onto removable med
 There are various ways of installing Arch on removable media, depending on the operating system you have available:
 
 *   If you have another Linux computer available (it need not be Arch), you can follow the instructions at [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux").
-*   An Arch Linux CD/USB can be used to install Arch onto the removable media, via booting the CD/USB and following the [installation guide](/index.php/Installation_guide "Installation guide"). If booting from a Live USB, the installation cannot be made to the same USB stick you are booting from.
-*   If you run Windows or OS X, download VirtualBox, install VirtualBox Extensions, attach your removable media to a virtual machine running Arch (for example running from an iso), point the installation into the now attached drive while using the instructions at the [Installation guide](/index.php/Installation_guide "Installation guide").
+*   An Arch Linux CD/USB can be used to install Arch onto the removable medium, via booting the CD/USB and following the [installation guide](/index.php/Installation_guide "Installation guide"). If booting from a Live USB, the installation cannot be made to the same USB stick you are booting from.
+*   If you run Windows or OS X, download VirtualBox, install VirtualBox Extensions, attach your removable medium to a virtual machine running Arch (for example running from an iso), point the installation into the now attached drive while using the instructions at the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### Installation tweaks
 
 *   Before [creating the initial RAM disk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio"), in `/etc/mkinitcpio.conf` move the `block` and `keyboard` hooks before the `autodetect` hook. This is necessary to allow booting on multiple systems each requiring different modules in early userspace.
-*   It is highly recommended to review the [Improving performance#Reduce disk reads/writes](/index.php/Improving_performance#Reduce_disk_reads/writes "Improving performance") article prior to selecting a file system. To sum up, for flash based media such as USB flash drives or SD cards, [ext4 without a journal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) should be fine, which can be created with `mkfs.ext4 -O "^has_journal" /dev/sdXX`. The obvious drawback of using a file system with journaling disabled is data loss as a result of an ungraceful dismount. Recognize that flash has a limited number of writes, and a journaling file system will take some of these as the journal is updated. For this same reason, it is best to forget the swap partition. Note that this does not affect installing onto a portable hard drive.
-*   If you have chosen to install Arch onto a USB mass storage device and want to be able to continue to use it as a cross-platform removable drive, this can be accomplished by creating a partition housing an appropriate file system (most likely NTFS or exFAT). Note that the data partition may need to be the first partition on the device, as Windows assumes that there can only be one partition on a removable device, and will happily automount an EFI system partition otherwise. Remember to install [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) and [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Some tools are available online that may allow you to flip the removable media bit (RMB) on your USB mass storage device. This would trick operating systems into treating your USB mass storage device as an external hard disk and allow you to use whichever partitioning scheme you choose.
+*   It is highly recommended to review the [Improving performance#Reduce disk reads/writes](/index.php/Improving_performance#Reduce_disk_reads/writes "Improving performance") article prior to selecting a file system. To sum up, for flash-based media such as USB flash drives or SD cards, [ext4 without a journal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) should be fine, which can be created with `mkfs.ext4 -O "^has_journal" /dev/sdXX`. The obvious drawback of using a file system with journaling disabled is data loss as a result of an ungraceful dismount. Recognize that flash has a limited number of writes, and a journaling file system will take some of these as the journal is updated. For this same reason, it is best to forget the swap partition. Note that this does not affect installing onto a portable hard drive.
+*   If you have chosen to install Arch onto a USB mass storage device and want to be able to continue to use it as a cross-platform removable drive, this can be accomplished by creating a partition housing an appropriate file system (most likely NTFS or exFAT). Note that the data partition may need to be the first partition on the device, as Windows assumes that there can only be one partition on a removable device, and will happily automount an EFI system partition otherwise. Remember to install [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) and [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Some tools are available online that may allow you to flip the Removable Medium Bit (RMB) on your USB mass storage device. This would trick operating systems into treating your USB mass storage device as an external hard disk and allow you to use whichever partitioning scheme you choose.
 
-**Warning:** It is not possible to flip the removable media bit (RMB) on every USB mass storage device and attempting to use software that is incompatible with your device may damage it. Attempting to flip the removable media bit is **not** recommended.
+**Warning:** It is not possible to flip the Removable Medium Bit (RMB) on every USB mass storage device and attempting to use software that is incompatible with your device may damage it. Attempting to flip the RMB is **not** recommended.
 
 ## Configuration
 
@@ -132,7 +132,7 @@ You may want to disable KMS for various reasons, such as getting a blank screen 
 
 **Warning:** Some [Xorg](/index.php/Xorg "Xorg") drivers will not work with KMS disabled. See the wiki page on your specific driver for details. Nouveau in particular needs KMS to determine the correct display resolution. If you add `nomodeset` as a kernel parameter as a preemptive measure you may have to adjust the display resolution manually when using machines with Nvidia video cards. See [Xrandr](/index.php/Xrandr "Xrandr") for more info.
 
-#### Booting from USB 3 media
+#### Booting from USB 3 medium
 
 See [[1]](http://www.wyae.de/docs/boot-usb3/).
 

@@ -1,6 +1,10 @@
 Questo articolo descrive come configurare ed eseguire NTPd (Network Time Protocol daemon), il metodo più diffuso per sincronizzare l'[orologio software](/index.php/System_time "System time") di un sistema GNU/Linux con dei time server utilizzando il [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol"); se appositamente configurato, NTPd può far funzionare il computer stesso come un time server.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
@@ -193,7 +197,7 @@ Avviare il demone ntpd:
 
 Aggiungere *ntpd* alla lista DAEMONS per avviarlo automaticamente al boot e assicurarsi di disabilitare hwclock:
 
- `/etc/rc.conf`  `DAEMONS=(... !hwclock **ntpd** ...)` 
+ `/etc/rc.conf`  `DAEMONS=(... !hwclock **ntpd** ...)` 
 
 ### Abilitare demone ntpd sul sistema Native systemd
 

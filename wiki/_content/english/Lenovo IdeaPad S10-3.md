@@ -1,10 +1,14 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 System Specification](#System_Specification)
 *   [2 Wireless](#Wireless)
     *   [2.1 Free kernel driver for the Broadcom BCM4113 chipset](#Free_kernel_driver_for_the_Broadcom_BCM4113_chipset)
     *   [2.2 Non-free alternative driver for the Broadcom BCM4113 chipset](#Non-free_alternative_driver_for_the_Broadcom_BCM4113_chipset)
-    *   [2.3 Free kernel driver for the Atheros AR9285 802.11b/g chipset](#Free_kernel_driver_for_the_Atheros_AR9285_802.11b.2Fg_chipset)
+    *   [2.3 Free kernel driver for the Atheros AR9285 802.11b/g chipset](#Free_kernel_driver_for_the_Atheros_AR9285_802.11b/g_chipset)
 *   [3 Graphics](#Graphics)
 *   [4 Input](#Input)
     *   [4.1 Function keys](#Function_keys)
@@ -71,52 +75,52 @@ Current=`sudo setpci -s 00:02.0 F4.B`
 case $Current in
   42)
     sudo setpci -s 00:02.0 F4.B=56
-  ;;
+  ;;
   56)
     sudo setpci -s 00:02.0 F4.B=70
-  ;;
+  ;;
   70)
     sudo setpci -s 00:02.0 F4.B=92
-  ;;
+  ;;
   92)
     sudo setpci -s 00:02.0 F4.B=af
-  ;;
+  ;;
   af)
     sudo setpci -s 00:02.0 F4.B=cc
-  ;;
+  ;;
   cc)
     sudo setpci -s 00:02.0 F4.B=e5
-  ;;
+  ;;
   e5)
     sudo setpci -s 00:02.0 F4.B=ff
-  ;;
+  ;;
 esac
 Current=`sudo setpci -s 00:02.0 F4.B`
 case $Current in
   42)
     notify-send "Brightness is at 30%"
-  ;;
+  ;;
   56)
     notify-send "Brightness is at 40%"
-  ;;
+  ;;
   70)
     notify-send "Brightness is at 50%"
-  ;;
+  ;;
   92)
     notify-send "Brightness is at 60%"
-  ;;
+  ;;
   af)
     notify-send "Brightness is at 70%"
-  ;;
+  ;;
   cc)
     notify-send "Brightness is at 80%"
-  ;;
+  ;;
   e5)
     notify-send "Brightness is at 90%"
-  ;;
+  ;;
   ff)
     notify-send "Brightness is at 100%"
-  ;;
+  ;;
 esac
 
 ```
@@ -141,52 +145,52 @@ Current=`sudo setpci -s 00:02.0 F4.B`
 case $Current in
   ff)
     sudo setpci -s 00:02.0 F4.B=e5
-  ;;
+  ;;
   e5)
     sudo setpci -s 00:02.0 F4.B=cc
-  ;;
+  ;;
   cc)
     sudo setpci -s 00:02.0 F4.B=af
-  ;;
+  ;;
   af)
     sudo setpci -s 00:02.0 F4.B=92
-  ;;
+  ;;
   92)
     sudo setpci -s 00:02.0 F4.B=70
-  ;;
+  ;;
   70)
     sudo setpci -s 00:02.0 F4.B=56
-  ;;
+  ;;
   56)
     sudo setpci -s 00:02.0 F4.B=42
-  ;;
+  ;;
 esac
 Current=`sudo setpci -s 00:02.0 F4.B`
 case $Current in
   42)
     notify-send "Brightness is at 30%"
-  ;;
+  ;;
   56)
     notify-send "Brightness is at 40%"
-  ;;
+  ;;
   70)
     notify-send "Brightness is at 50%"
-  ;;
+  ;;
   92)
     notify-send "Brightness is at 60%"
-  ;;
+  ;;
   af)
     notify-send "Brightness is at 70%"
-  ;;
+  ;;
   cc)
     notify-send "Brightness is at 80%"
-  ;;
+  ;;
   e5)
     notify-send "Brightness is at 90%"
-  ;;
+  ;;
   ff)
     notify-send "Brightness is at 100%"
-  ;;
+  ;;
 esac
 
 ```

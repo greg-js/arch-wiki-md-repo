@@ -7,22 +7,26 @@
 
 **MATE 桌面环境** 是 GNOME 2 的一个分支,旨在使用传统的方式，为Linux用户提供一个有吸引力的和直观的桌面. 更多信息, 请看 [this forum thread.](https://bbs.archlinux.org/viewtopic.php?id=121162)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 获得](#.E8.8E.B7.E5.BE.97)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-    *   [2.1 GTK+ 3 版本](#GTK.2B_3_.E7.89.88.E6.9C.AC)
-    *   [2.2 MATE 不稳定版本](#MATE_.E4.B8.8D.E7.A8.B3.E5.AE.9A.E7.89.88.E6.9C.AC)
-*   [3 启动](#.E5.90.AF.E5.8A.A8)
-    *   [3.1 图形方式](#.E5.9B.BE.E5.BD.A2.E6.96.B9.E5.BC.8F)
-    *   [3.2 手动](#.E6.89.8B.E5.8A.A8)
-*   [4 应用程序](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [4.1 核心应用程序](#.E6.A0.B8.E5.BF.83.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [4.2 扩展应用程序](#.E6.89.A9.E5.B1.95.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 获得](#获得)
+*   [2 安装](#安装)
+    *   [2.1 GTK+ 3 版本](#GTK+_3_版本)
+    *   [2.2 MATE 不稳定版本](#MATE_不稳定版本)
+*   [3 启动](#启动)
+    *   [3.1 图形方式](#图形方式)
+    *   [3.2 手动](#手动)
+*   [4 应用程序](#应用程序)
+    *   [4.1 核心应用程序](#核心应用程序)
+    *   [4.2 扩展应用程序](#扩展应用程序)
 *   [5 Using Compiz Fusion sans Emerald](#Using_Compiz_Fusion_sans_Emerald)
-*   [6 已知问题](#.E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98)
-    *   [6.1 Qt 应用程序不风格化](#Qt_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E4.B8.8D.E9.A3.8E.E6.A0.BC.E5.8C.96)
-    *   [6.2 Evolution Email 不工作](#Evolution_Email_.E4.B8.8D.E5.B7.A5.E4.BD.9C)
+*   [6 已知问题](#已知问题)
+    *   [6.1 Qt 应用程序不风格化](#Qt_应用程序不风格化)
+    *   [6.2 Evolution Email 不工作](#Evolution_Email_不工作)
 
 ## 获得
 

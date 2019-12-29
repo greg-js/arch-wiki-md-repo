@@ -56,8 +56,8 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [3.2 "Failed to commit transaction (invalid or corrupted package)" error](#"Failed_to_commit_transaction_(invalid_or_corrupted_package)"_error)
     *   [3.3 "Failed to init transaction (unable to lock database)" error](#"Failed_to_init_transaction_(unable_to_lock_database)"_error)
     *   [3.4 Packages cannot be retrieved on installation](#Packages_cannot_be_retrieved_on_installation)
-    *   [3.5 Manually reinstalling pacman](#Manually_reinstalling_pacman)
-    *   [3.6 Pacman crashes during an upgrade](#Pacman_crashes_during_an_upgrade)
+    *   [3.5 Pacman crashes during an upgrade](#Pacman_crashes_during_an_upgrade)
+    *   [3.6 Manually reinstalling pacman](#Manually_reinstalling_pacman)
     *   [3.7 "Unable to find root device" error after rebooting](#"Unable_to_find_root_device"_error_after_rebooting)
     *   [3.8 Signature from "User <email@example.org>" is unknown trust, installation failed](#Signature_from_"User_<email@example.org>"_is_unknown_trust,_installation_failed)
     *   [3.9 Request on importing PGP keys](#Request_on_importing_PGP_keys)
@@ -364,7 +364,7 @@ The `depends` file lists the packages this package depends on, while `desc` has 
 
 However, it is necessary to deliberately clean up the cache periodically to prevent the folder to grow indefinitely in size.
 
-The [paccahe(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/paccahe.8) script, provided within the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package, deletes all cached versions of installed and uninstalled packages, except for the most recent 3, by default:
+The [paccache(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/paccache.8) script, provided within the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package, deletes all cached versions of installed and uninstalled packages, except for the most recent 3, by default:
 
 ```
 # paccache --remove
@@ -657,6 +657,17 @@ It could also be that the repository containing the package is not enabled on yo
 
 See also [FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories? "FAQ").
 
+### Pacman crashes during an upgrade
+
+In the case that *pacman* crashes with a "database write" error while removing packages, and reinstalling or upgrading packages fails thereafter, do the following:
+
+1.  Boot using the Arch installation media. Preferably use a recent media so that the *pacman* version matches/is newer than the system.
+2.  Mount the system's root filesystem, e.g. `mount /dev/sdaX /mnt` as root, and check the mount has sufficient space with `df -h`
+3.  Mount the proc, sys and dev filesystems as well: `mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev`
+4.  If the system uses default database and directory locations, you can now update the system's *pacman* database and upgrade it via `pacman --sysroot /mnt -Syu` as root.
+5.  After the upgrade, one way to double-check for not upgraded but still broken packages: `find /mnt/usr/lib -size 0`
+6.  Followed by a re-install of any still broken package via `pacman --sysroot /mnt -S *package*`.
+
 ### Manually reinstalling pacman
 
 **Warning:** It is extremely easy to break your system even worse using this approach. Use this only as a last resort if the method from [#Pacman crashes during an upgrade](#Pacman_crashes_during_an_upgrade) is not an option.
@@ -684,17 +695,6 @@ But you may only need to update a few of them depending on your issue. An exampl
 ```
 
 Note the use of the `w` flag for interactive mode. Running non-interactively is very risky since you might end up overwriting an important file. Also take care to extract packages in the correct order (i.e. dependencies first). [This forum post](https://bbs.archlinux.org/viewtopic.php?id=95007) contains an example of this process where only a couple *pacman* dependencies are broken.
-
-### Pacman crashes during an upgrade
-
-In the case that *pacman* crashes with a "database write" error while removing packages, and reinstalling or upgrading packages fails thereafter, do the following:
-
-1.  Boot using the Arch installation media. Preferably use a recent media so that the *pacman* version matches/is newer than the system.
-2.  Mount the system's root filesystem, e.g. `mount /dev/sdaX /mnt` as root, and check the mount has sufficient space with `df -h`
-3.  Mount the proc, sys and dev filesystems as well: `mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev`
-4.  If the system uses default database and directory locations, you can now update the system's *pacman* database and upgrade it via `pacman --sysroot /mnt -Syu` as root.
-5.  After the upgrade, one way to double-check for not upgraded but still broken packages: `find /mnt/usr/lib -size 0`
-6.  Followed by a re-install of any still broken package via `pacman --sysroot /mnt -S *package*`.
 
 ### "Unable to find root device" error after rebooting
 

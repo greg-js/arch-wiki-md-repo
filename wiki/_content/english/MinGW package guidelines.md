@@ -43,7 +43,7 @@ Packaging for cross platform packages can be fairly tricky as there are many dif
 *   consider using [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/) for building with CMake
 *   consider using [mingw-w64-meson](https://aur.archlinux.org/packages/mingw-w64-meson/) for building with Meson
 *   consider using [mingw-w64-make](https://aur.archlinux.org/packages/mingw-w64-make/) for building with raw Makefiles
-*   consider using [mingw-w64-qt5-base](https://aur.archlinux.org/packages/mingw-w64-qt5-base/) or [mingw-w64-qt4](https://aur.archlinux.org/packages/mingw-w64-qt4/) for building with QMake
+*   consider using [mingw-w64-qt5-base](https://aur.archlinux.org/packages/mingw-w64-qt5-base/) for building with QMake
 *   consider explicitly stripping symbols with `${_arch}-strip` in `package()`'s for-loop as demonstrated in the below PKGBUILD examples.
     *   consider using the [find](/index.php/Find "Find") command to iterate over `$pkgdir` since not all DLLs, static libraries, or executables may reside in their appropriate locations.
         *   if the binary is a DLL, use `${_arch}-strip --strip-unneeded *.dll`

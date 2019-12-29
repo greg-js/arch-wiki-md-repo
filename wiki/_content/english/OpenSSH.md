@@ -112,7 +112,7 @@ User *user*
 
 # host-specific options
 Host *myserver*
-    HostName *server-address*
+    Hostname *server-address*
     Port     *port*
 
 ```

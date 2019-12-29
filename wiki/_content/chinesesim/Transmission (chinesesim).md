@@ -2,7 +2,11 @@
 
 [Transmission](http://www.transmissionbt.com/) 是一个轻量级、跨平台的 BitTorrent 客户端。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 图形界面的配置](#图形界面的配置)

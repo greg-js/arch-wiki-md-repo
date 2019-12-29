@@ -2,7 +2,11 @@
 
 (Wine Is Not an Emulator) è un software scritto con lo scopo di permettere il funzionamento dei programmi sviluppati per il sistema operativo Microsoft Windows Sui sistemi GNU/Linux e altri sistemi compatibili. Wine consente infatti di utilizzare applicazioni per Windows come se fossero applicazioni scritte appositamente per sistemi GNU/Linux senza dover emulare la struttura, ma implementando di un layer di compatibilità fornendo così il collegamento alle API necessarie per il funzionamento delle applicazioni. (ecco perché Wine non è da intendersi un emulatore)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)

@@ -14,12 +14,11 @@ Related articles
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | partially |
 | [Mobile internet](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | not tested |
-| Fingerprint Sensor | No² |
+| Fingerprint Sensor | Yes |
 | MicroSD Reader | Yes |
 | 
 
 1.  Working, but the iwlwifi driver shows errors in the kernel log. [This is already fixed.](https://bugzilla.kernel.org/show_bug.cgi?id=203593)
-2.  No working Linux driver so far for Synaptics 06cb:009a. See [here](https://github.com/nmikhailov/Validity90) and [here](https://forums.lenovo.com/t5/Other-Linux-Discussions/Linux-on-T495/m-p/4474320/highlight/true#M13440).
 
  |
 
@@ -34,14 +33,15 @@ Related articles
     *   [2.1 BIOS configurations](#BIOS_configurations)
 *   [3 FN Keys](#FN_Keys)
 *   [4 Touchpad](#Touchpad)
-*   [5 Known Issues](#Known_Issues)
-    *   [5.1 CPU throttling issue](#CPU_throttling_issue)
-    *   [5.2 Speaker noise issue](#Speaker_noise_issue)
-    *   [5.3 MicroSD card reader issue](#MicroSD_card_reader_issue)
-    *   [5.4 Bluetooth](#Bluetooth)
-    *   [5.5 Slow wakeup after suspend](#Slow_wakeup_after_suspend)
-*   [6 ACPI](#ACPI)
-*   [7 Also See](#Also_See)
+*   [5 Fingerprint Sensor](#Fingerprint_Sensor)
+*   [6 Known Issues](#Known_Issues)
+    *   [6.1 CPU throttling issue](#CPU_throttling_issue)
+    *   [6.2 Speaker noise issue](#Speaker_noise_issue)
+    *   [6.3 MicroSD card reader issue](#MicroSD_card_reader_issue)
+    *   [6.4 Bluetooth](#Bluetooth)
+    *   [6.5 Slow wakeup after suspend](#Slow_wakeup_after_suspend)
+*   [7 ACPI](#ACPI)
+*   [8 Also See](#Also_See)
 
 ## Hardware
 
@@ -147,6 +147,16 @@ xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Click Method Enabled' 1 0
 
 Even after doing this, the mouse pointer still jumps around when clicking the button sometimes.
 
+## Fingerprint Sensor
+
+Fingerprint sensor seems to work with some recent firmware and software updates (2019-12-15). Driver development info: [[1]](https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617)[[2]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
+
+1\. Use [fwupd](/index.php/Fwupd "Fwupd") to install the latest firmware for "Synaptics Prometheus Fingerprint Reader". The update might have to be done manually (the released firmware is in testing). [[3]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware)[[4]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config)
+
+2\. Latest fprintd and libfprint are required[[5]](https://fprint.freedesktop.org/). [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.
+
+3\. [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [PAM](/index.php/PAM "PAM") authentication for example.
+
 ## Known Issues
 
 ### CPU throttling issue
@@ -175,7 +185,7 @@ Pairing with a bluetooth speaker and the initial connect works. Connecting to an
 
 ```
 
-An issue for this already exists on the kernel bugtracker [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=204765). It is not clear whether this relates to the connection problem.
+An issue for this already exists on the kernel bugtracker [[6]](https://bugzilla.kernel.org/show_bug.cgi?id=204765). It is not clear whether this relates to the connection problem.
 
 ### Slow wakeup after suspend
 

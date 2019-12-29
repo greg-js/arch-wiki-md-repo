@@ -16,6 +16,7 @@ The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be
 *   [4 Installing](#Installing)
 *   [5 Boot loader](#Boot_loader)
 *   [6 Updating](#Updating)
+    *   [6.1 Cleanup](#Cleanup)
 *   [7 See also](#See_also)
 
 ## Getting the ingredients
@@ -167,7 +168,7 @@ f676926c7f60 ZEN: Add CONFIG for unprivileged_userns_clone
 5697a9d3d55f Linux 5.2.7
 ```
 
-This shows few specific archlinux patches between Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. The important lines here are Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. Obviously, there might be other patches at other versions, and the commit identifiers, such as f676926c7f60, as well as the kernel version, will be different for other versions.
+This shows few specific archlinux patches between Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. The important lines here are Linux 5.2.7 and Arch Linux kernel v5.2.7-arch1\. Obviously, there might be other patches at other versions, which is why 7 for `--max-count` might require adjustment. In a similar manner, the commit identifiers, such as f676926c7f60, as well as the kernel version, will be different for other versions.
 
 The up to date PKGBUILD, as well archlinux kernel configuration file, can be pulled in by the `asp` command:
 
@@ -183,6 +184,16 @@ $ asp -f export linux
 Now you should [Vim#Merging files](/index.php/Vim#Merging_files "Vim") located in `~/build/linux/linux/*` into `~/build/linux/`. Merging can also done manually, or with [list of applications#Comparison, diff, merge](/index.php/List_of_applications#Comparison,_diff,_merge "List of applications"). Then run manually most, if not all, the shell commands of PKGBUILD::prepare().
 
 At this point, `makepkg --verifysource` should succeed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
+
+### Cleanup
+
+One will probably want to remove `~/build/linux/linux/` after merging. In addition, `~/build/linux/src/archlinux` will accumulate branches in the form of `5.2.7-arch1` if more recent updates are done in this fashion. These can be deleted with
+
+```
+$ cd ~/build/linux/src/archlinux
+$ git branch --delete --force --verbose 5.2.7-arch1
+
+```
 
 ## See also
 

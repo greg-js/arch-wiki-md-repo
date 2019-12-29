@@ -222,9 +222,10 @@ IOMMU Group 13:
 
 ```
 
-**Note:** You cannot specify which device to isolate using vendor-device ID pairs if the host GPU and the guest GPU share the same pair (i.e : if both are the same model). If this is your case, read [#Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs) instead.
+**Note:**
 
-**Note:** If, as noted in [#Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `vfio-pci`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `vfio-pci` to bind with.
+*   You cannot specify which device to isolate using vendor-device ID pairs if the host GPU and the guest GPU share the same pair (i.e : if both are the same model). If this is your case, read [#Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs) instead.
+*   If, as noted in [#Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `vfio-pci`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `vfio-pci` to bind with.
 
 ### With vfio-pci loaded as a module
 
@@ -421,7 +422,7 @@ The default behavior for KVM guests is to run operations coming from the guest a
 
 #### CPU topology
 
-Most modern CPU's support hardware multitasking, also known as hyper-threading on Intel CPU's or SMT on AMD CPU's. Hyper-threading/SMT is simply a very efficient way of running two threads on one CPU core at any given time. You will want to take into consideration that the CPU pinning you choose will greatly depend on what you do with your host while your VM is running.
+Most modern CPUs support hardware multitasking, also known as hyper-threading on Intel CPUs or SMT on AMD CPUs. Hyper-threading/SMT is simply a very efficient way of running two threads on one CPU core at any given time. You will want to take into consideration that the CPU pinning you choose will greatly depend on what you do with your host while your VM is running.
 
 To find the topology for your CPU run `lscpu -e`:
 
@@ -555,16 +556,16 @@ QEMU will use 2MiB sized transparent huge pages automatically without any explic
 
 To check how much memory THP is using globally:
 
+ `$ grep AnonHugePages /proc/meminfo` 
 ```
-$ grep AnonHugePages /proc/meminfo
 AnonHugePages:   8091648 kB
 
 ```
 
 To check a specific QEMU instance. QEMU's PID must be substituted in the grep command:
 
+ `$ grep -P 'AnonHugePages:\s+(?!0)\d+' /proc/[PID]/smaps` 
 ```
-$ grep -P 'AnonHugePages:\s+(?!0)\d+' /proc/[PID]/smaps
 AnonHugePages:   8087552 kB
 
 ```
@@ -659,7 +660,7 @@ There is a [kernel patch](https://patchwork.kernel.org/patch/10027525/) that res
 
 **Note:** Several Ryzen users (see [this Reddit thread](https://www.reddit.com/r/VFIO/comments/78i3jx/possible_fix_for_the_npt_issue_discussed_on_iommu/)) have tested the patch, and can confirm that it works, bringing GPU passthrough performance up to near native quality.
 
-Starting with QEMU 3.1 the TOPOEXT cpuid flag is disabled by default. In order to use hyperthreading(SMT) on AMD CPU's you need to manually enable it:
+Starting with QEMU 3.1 the TOPOEXT cpuid flag is disabled by default. In order to use hyperthreading(SMT) on AMD CPUs you need to manually enable it:
 
 ```
  <cpu mode='host-passthrough' check='none'>
@@ -691,7 +692,7 @@ Due to how vfio-pci uses your vendor and device id pair to identify which device
 
 ##### Passthrough all GPUs but the boot GPU
 
-Here, we will make a script to bind vfio-pci to all GPUs but the boot gpu. Create the script `/usr/bin/vfio-pci-override.sh`:
+Here, we will make a script to bind vfio-pci to all GPUs but the boot gpu. Create the script `/usr/local/bin/vfio-pci-override.sh`:
 
 ```
 #!/bin/sh
@@ -730,36 +731,14 @@ fi
 
 #### Script installation
 
-Create the following files:
-
- `/etc/initcpio/install/vfio` 
-```
-#!/bin/bash
-build() {
-    add_file /usr/bin/vfio-pci-override.sh
-    add_runscript
-}
-
-```
- `/etc/initcpio/hooks/vfio` 
-```
-#!/usr/bin/ash
-
-run_hook() {
-    msg ":: Triggering vfio-pci override"
-    /bin/sh /usr/bin/vfio-pci-override.sh
-}
-
-```
-
 Edit `/etc/mkinitcpio.conf`:
 
-1.  Remove any video drivers from `MODULES`.
-2.  Add `/usr/bin/vfio-pci-override.sh` to FILES: `FILES=(/usr/bin/vfio-pci-override.sh)` 
-3.  Add `vfio` to `HOOKS`: `HOOKS=(... vfio)` 
-4.  [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") and reboot.
+1.  Add `modconf` to the [HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") array and `/usr/local/bin/vfio-pci-override.sh` to the [FILES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") array.
 
-**Warning:** If there is a syntax error in the hook, the boot will fail with a kernel panic. Be careful when generating the hook, and have install media handy in case you have to recover.
+Edit `/etc/modprobe.d/vfio.conf`:
+
+1.  Add the following line: `install vfio-pci /usr/local/bin/vfio-pci-override.sh`
+2.  [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") and reboot.
 
 ### Passing the boot GPU to the guest
 
@@ -859,7 +838,7 @@ Looking Glass includes a Spice client in order to control mouse movement on the 
 
 First create a .xml file for the device(s) you wish to pass-through, which libvirt will use to identify the device.
 
- `/home/$USER/.VFIOinput/input_1.xml` 
+ `~/.VFIOinput/input_1.xml` 
 ```
 <hostdev mode='subsystem' type='usb' managed='no'>
 <source>
@@ -879,7 +858,7 @@ Repeat this process for any additional USB devices you want to pass-through. If 
 
 Next a bash script file is needed to tell libvirt what to attach/detach the USB devices to the guest.
 
- `/home/$USER/.VFIOinput/input_attach.sh` 
+ `~/.VFIOinput/input_attach.sh` 
 ```
 #!/bin/bash
 
@@ -888,7 +867,7 @@ virsh attach-device [VM-Name] [USBdevice]
 
 Replace [VM-Name] with the name of your virtual machine, which can be seen under virt-manager. Additionally replace [USBdevice] with the **full** path to the .xml file for the device you wish to pass-through. Add additional lines for more than 1 device. For example here is my script:
 
- `/home/$USER/.VFIOinput/input_attach.sh` 
+ `~/.VFIOinput/input_attach.sh` 
 ```
 #!/bin/bash
 
@@ -1074,7 +1053,7 @@ You will need to change the chipset accordingly to how your VM is set up, i.e. `
 
 ### Passing VM audio to host via Scream and IVSHMEM
 
-It's possible to pass VM audio through a IVSHMEM device to the host using [scream](https://github.com/duncanthrax/scream). This guide will only cover using PulseAudio as a receiver on the host. See the project page for more details.
+It is possible to pass VM audio through a IVSHMEM device to the host using [scream](https://github.com/duncanthrax/scream). This guide will only cover using PulseAudio as a receiver on the host. See the project page for more details.
 
 #### Adding the IVSHMEM
 
@@ -1188,8 +1167,8 @@ To find out which disk/partition is associated with the one you would like to pa
 
  `$ ls -l /dev/disk/by-id` 
 ```
- ata-ST1000LM002-9VQ14L_Z0501SZ9 -> ../../sdd
- ata-ST1000LM002-9VQ14L_Z0501SZ9-part1 -> ../../sdd1
+ata-ST1000LM002-9VQ14L_Z0501SZ9 -> ../../sdd
+ata-ST1000LM002-9VQ14L_Z0501SZ9-part1 -> ../../sdd1
 
 ```
 
@@ -1564,10 +1543,10 @@ ExecStart=/usr/bin/systemd-inhibit --what=sleep --why="Libvirt domain \"%i\" is 
 
 ### Cannot boot after upgrading ovmf
 
-If you cannot boot after upgrading from ovmf-1:r23112.018432f0ce-1 then you need to remove the old *VARS.fd file in `/var/lib/libvirt/qemu/nvram`:
+If you cannot boot after upgrading from [ovmf](https://www.archlinux.org/packages/?name=ovmf) version 1:r23112.018432f0ce-1 then you need to remove the old `*VARS.fd` file in `/var/lib/libvirt/qemu/nvram/`:
 
 ```
-mv /var/lib/libvirt/qemu/nvram/vmname_VARS.fd /var/lib/libvirt/qemu/nvram/vmname_VARS.fd.old
+# mv /var/lib/libvirt/qemu/nvram/vmname_VARS.fd /var/lib/libvirt/qemu/nvram/vmname_VARS.fd.old
 
 ```
 
@@ -1592,10 +1571,10 @@ Setting `QEMU_AUDIO_TIMER_PERIOD` to values higher than 100 might also help (did
 
 ### Bluescreen at boot since Windows 10 1803
 
-Since Windows 10 1803 there is a problem when you are using "host-passthrough" as cpu model. The machine can't boot and is either boot looping or you get a bluescreen. You can workaround this by:
+Since Windows 10 1803 there is a problem when you are using "host-passthrough" as cpu model. The machine cannot boot and is either boot looping or you get a bluescreen. You can workaround this by:
 
 ```
-echo 1 > /sys/module/kvm/parameters/ignore_msrs
+# echo 1 > /sys/module/kvm/parameters/ignore_msrs
 
 ```
 

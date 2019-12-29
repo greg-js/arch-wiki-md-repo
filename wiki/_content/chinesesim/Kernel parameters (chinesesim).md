@@ -14,9 +14,10 @@
 
 *   [1 配置](#配置)
     *   [1.1 Syslinux](#Syslinux)
-    *   [1.2 GRUB](#GRUB)
-    *   [1.3 GRUB Legacy](#GRUB_Legacy)
-    *   [1.4 LILO](#LILO)
+    *   [1.2 systemd-boot](#systemd-boot)
+    *   [1.3 GRUB](#GRUB)
+    *   [1.4 GRUB Legacy](#GRUB_Legacy)
+    *   [1.5 LILO](#LILO)
 *   [2 常见参数列表](#常见参数列表)
 *   [3 更多信息](#更多信息)
 
@@ -39,6 +40,25 @@
 	 `APPEND root=/dev/sda3 ro *quiet splash*` 
 
 更多详情请见[Syslinux](/index.php/Syslinux "Syslinux") 。
+
+#### systemd-boot
+
+*   当启动菜单出现时 按 `e`进入编辑界面:
+
+	 `initrd=\initramfs-linux.img root=/dev/sda2 *quiet splash*` 
+
+	按 `Enter` 即可按照输入的参数启动。
+
+**注意:**
+
+*   如果没有设置显示启动菜单, 你需要按住`Space`启动电脑来进入启动菜单 。
+*   如果不能够从启动菜单上进行编辑，修改 `/boot/loader/loader.conf` 加入 `editor 1` 来开启编辑功能。
+
+*   如果想永久加入参数，编辑 `/boot/loader/entries/arch.conf` (假设你已经设置好了 [EFI system partition (简体中文)](/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "EFI system partition (简体中文)")) 的`options` 行:
+
+	 `options root=/dev/sda2 *quiet splash*` 
+
+更多信息请参见 [systemd-boot](/index.php/Systemd-boot "Systemd-boot") .
 
 #### GRUB
 

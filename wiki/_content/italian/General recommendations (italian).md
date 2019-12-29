@@ -286,7 +286,7 @@ Per abilitare la comunicazione tra macchine Windows e Linux attraverso una rete,
 
 ## Servizi di sistema
 
-*Questa sezione è collegata a [daemons](/index.php/Daemons "Daemons"). Per approfondire si veda [Category:Daemons and system services (Italiano)](/index.php/Category:Daemons_and_system_services_(Italiano) "Category:Daemons and system services (Italiano)").*
+*Questa sezione è collegata a [daemons](/index.php/Daemons "Daemons"). Per approfondire si veda [Category:Daemons (Italiano)](/index.php/Category:Daemons_(Italiano) "Category:Daemons (Italiano)").*
 
 ### Distribuzione di posta elettronica in locale
 

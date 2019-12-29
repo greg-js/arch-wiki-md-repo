@@ -5,7 +5,7 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
-| [Fingerprint Reader](/index.php/Fprint "Fprint") | Yes |
+| [Fingerprint Reader](/index.php/Fingerprint_Reader "Fingerprint Reader") | Yes |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | [Smartcard Reader](/index.php/Smartcards "Smartcards") | Yes |
@@ -107,7 +107,7 @@ Fingerprint sensor seems to work with some recent firmware and software updates 
 
 2\. Latest fprintd and libfprint are required[[5]](https://fprint.freedesktop.org/). [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.
 
-3\. [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [pam](/index.php/Pam "Pam") authentication for example.
+3\. [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [PAM](/index.php/PAM "PAM") authentication for example.
 
 ## Backlight
 

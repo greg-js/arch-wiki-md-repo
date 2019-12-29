@@ -18,7 +18,7 @@
     *   [2.1 访问串口](#访问串口)
 *   [3 stty](#stty)
 *   [4 Arduino-Builder](#Arduino-Builder)
-*   [5 Alternatives for IDE](#Alternatives_for_IDE)
+*   [5 IDE 替代](#IDE_替代)
     *   [5.1 ArduIDE](#ArduIDE)
     *   [5.2 gnoduino](#gnoduino)
     *   [5.3 Arduino-CMake](#Arduino-CMake)
@@ -27,17 +27,17 @@
     *   [5.6 Arduino-mk](#Arduino-mk)
     *   [5.7 Scons](#Scons)
     *   [5.8 PlatformIO](#PlatformIO)
-        *   [5.8.1 Installation](#Installation)
-        *   [5.8.2 Usage](#Usage)
+        *   [5.8.1 安装](#安装_2)
+        *   [5.8.2 使用](#使用)
     *   [5.9 Emacs](#Emacs)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Version 1.6](#Version_1.6)
     *   [6.2 Arduino设备命名](#Arduino设备命名)
     *   [6.3 串口错误](#串口错误)
-    *   [6.4 Working with Uno/Mega2560](#Working_with_Uno/Mega2560)
-    *   [6.5 Not recognizing USB port with Mega2560 cheap Chinese clones](#Not_recognizing_USB_port_with_Mega2560_cheap_Chinese_clones)
+    *   [6.4 使用Uno/Mega2560](#使用Uno/Mega2560)
+    *   [6.5 Mega2560无法识别USB端口](#Mega2560无法识别USB端口)
     *   [6.6 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM,_menus_immediately_closing)
-    *   [6.7 Fails to upload: programmer is not responding](#Fails_to_upload:_programmer_is_not_responding)
+    *   [6.7 上传失败](#上传失败)
 *   [7 See also](#See_also)
 
 ## 安装
@@ -48,7 +48,7 @@
 
 ### AVR Boards
 
-要使用Arduino Uno等AVR板，您可以选择安装[arduino-avr-core](https://www.archlinux.org/packages/?name=arduino-avr-core)，以使用archlinux上游avr-gcc代替捆绑的旧版avr-core。如果您仍然想使用较旧的arduino-core，则需要将它安装在arduino的开发板管理器中[[1]](https://www.arduino.cc/en/Guide/Cores)。您始终可以在“工具>面板”菜单中的不同内核之间切换。
+要使用Arduino Uno等AVR板，您可以选择安装 [arduino-avr-core](https://www.archlinux.org/packages/?name=arduino-avr-core)，以使用archlinux上游avr-gcc代替捆绑的旧版avr-core。如果您仍然想使用较旧的arduino-core，则需要将它安装在arduino的开发板管理器中[[1]](https://www.arduino.cc/en/Guide/Cores)。您始终可以在“工具>面板”菜单中的不同内核之间切换。
 
 ### Pinoccio Scout
 
@@ -76,23 +76,23 @@ arduino开发板通过串口或USB连接到计算机，因此用户需要对串�
 
 ## stty
 
-Preparing:
+设置:
 
 ```
 # stty -F /dev/ttyACM0 cs8 9600 ignbrk -brkint -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts
 
 ```
 
-Sending commands through Terminal without new line after command
+通过终端发送命令，无换行
 
 ```
 # echo -n "Hello World" > /dev/ttyACM0
 
 ```
 
-**Note:** As autoreset on serial connection is activated by default on most boards, you need to disable this feature if you want to communicate directly with your board with the last command instead of a terminal emulator (arduino IDE, screen, picocom...). If you have a Leonardo board, you are not concerned by this, because it does not autoreset. If you have an Uno board, connect a 10 µF capacitor between the RESET and GND pins. If you have another board, connect a 120 ohms resistor between the RESET and 5V pins. See [http://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection](http://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection) for more details.
+**Note:** 由于大多数板上默认情况下会激活串行连接上的自动重置功能，因此，如果要使用最后一条命令而不是终端仿真器（arduino IDE，屏幕，picocom ...）直接与您的板通信，则需要禁用此功能。如果您有Leonardo面板，则不必担心，因为它不会自动重置。如果您有Uno板，请在RESET和GND引脚之间连接一个10 µF电容器。如果有另一块板，则在RESET和5V引脚之间连接一个120欧姆的电阻。 有关更多详细信息，请参见 [http://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection](http://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection)
 
-Reading what your Arduino has to tell you
+读取Arduino发送的信息
 
 ```
 $ cat /dev/ttyACM0
@@ -101,7 +101,7 @@ $ cat /dev/ttyACM0
 
 ## Arduino-Builder
 
-You can also build Arduino sketches with the [arduino-builder](https://www.archlinux.org/packages/?name=arduino-builder) command line tool. In order to use the provided [arduino-avr-core](https://www.archlinux.org/packages/?name=arduino-avr-core) with upstream [avr-gcc](https://www.archlinux.org/packages/?name=avr-gcc) and [avrdude](https://www.archlinux.org/packages/?name=avrdude) you need to create a small settings file:
+您也可以使用[arduino-builder](https://www.archlinux.org/packages/?name=arduino-builder)命令行工具来构建Arduino的内置例程。 为了使用所提供的[arduino-avr-core](https://www.archlinux.org/packages/?name=arduino-avr-core)与上游[avr-gcc](https://www.archlinux.org/packages/?name=avr-gcc)和[avrdude](https://www.archlinux.org/packages/?name=avrdude)你需要创建一个小的设置文件：
 
  `build.options.json` 
 ```
@@ -112,51 +112,49 @@ You can also build Arduino sketches with the [arduino-builder](https://www.archl
 }
 ```
 
-Compile a sketch with:
+通过下面的命令来编译一个内置例程:
 
 ```
 $ arduino-builder -build-options-file build.options.json blink.ino
 
 ```
 
-Or pass all options via command line:
+或通过命令行传递所有选项:
 
 ```
 $ arduino-builder -fqbn archlinux-arduino:avr:uno -hardware /usr/share/arduino/hardware -tools /usr/bin blink.ino
 
 ```
 
-## Alternatives for IDE
+## IDE 替代
 
 ### ArduIDE
 
-ArduIDE is a Qt-based IDE for Arduino. [arduide-git](https://aur.archlinux.org/packages/arduide-git/) is available in the [AUR](/index.php/AUR "AUR").
+ArduIDE是基于QT的Arduino IDE。已在[AUR](/index.php/AUR "AUR")中可用[arduide-git](https://aur.archlinux.org/packages/arduide-git/)。
 
 ### gnoduino
 
-[gnoduino](https://aur.archlinux.org/packages/gnoduino/) is an implementation of original Arduino IDE for GNOME available in the [AUR](/index.php/AUR "AUR"). The original Arduino IDE software is written in Java. This is a Python implementation and it is targeted at GNOME but will work on xfce4 and other WM. Its purpose is to be light, while maintaining compatibility with the original Arduino IDE. The source editor is based on gtksourceview.
+[gnoduino](https://aur.archlinux.org/packages/gnoduino/)是[AUR](/index.php/AUR "AUR")中可用的GNOME原始Arduino IDE实现。原始的Arduino IDE软件是用Java编写的。这是一个Python的实现，针对GNOME，但可以在xfce4和其他WM上使用。其目的是减轻重量，同时保持与原始Arduino IDE的兼容性。源代码编辑器基于gtksourceview。
 
-If you prefer working from terminal, below there are some other options to choose from.
+如果您更喜欢在终端上工作，则下面还有一些其他选项可供选择。
 
 ### Arduino-CMake
 
-Using [Arduino-CMake-NG](https://github.com/arduino-cmake/Arduino-CMake-NG) and [CMake](http://www.cmake.org/cmake/resources/software.html) you can build Arduino firmware from the command line using multiple build systems. CMake lets you generate the build system that fits your needs, using the tools you like. It can generate any type of build system, from simple Makefiles, to complete projects for Eclipse, Visual Studio, XCode, etc.
+阅读[Arduino-CMake-NG](https://github.com/arduino-cmake/Arduino-CMake-NG)和[CMake](http://www.cmake.org/cmake/resources/software.html)，您可以在命令行下使用多个构建系统来构建Arduino固件。CMake可以让您使用自己喜欢的工具生成适合您需求的构建系统。它可以生成任何类型的构建系统，从简单的Makefile到Eclipse，Visual Studio，XCode等的完整项目。
 
-Requirements: [cmake](https://www.archlinux.org/packages/?name=cmake), [arduino](https://www.archlinux.org/packages/?name=arduino), [avr-gcc](https://www.archlinux.org/packages/?name=avr-gcc), [avr-binutils](https://www.archlinux.org/packages/?name=avr-binutils), [avr-libc](https://www.archlinux.org/packages/?name=avr-libc), [avrdude](https://www.archlinux.org/packages/?name=avrdude).
+要求: [cmake](https://www.archlinux.org/packages/?name=cmake), [arduino](https://www.archlinux.org/packages/?name=arduino), [avr-gcc](https://www.archlinux.org/packages/?name=avr-gcc), [avr-binutils](https://www.archlinux.org/packages/?name=avr-binutils), [avr-libc](https://www.archlinux.org/packages/?name=avr-libc), [avrdude](https://www.archlinux.org/packages/?name=avrdude).
 
 ### Ino
 
-[Ino](https://github.com/amperka/ino) is a command line toolkit for working with arduino hardware. [ino](https://aur.archlinux.org/packages/ino/) is available in the [AUR](/index.php/AUR "AUR").
+[Ino](https://github.com/amperka/ino)是用于arduino硬件的命令行工具包。 [ino](https://aur.archlinux.org/packages/ino/)在[AUR](/index.php/AUR "AUR")中可用。
 
 ### Makefile
 
-**Note:** Update 2015-03-23\. Due to recent changes in Arduino ≥v1.5, many old Makefiles do not work without some modification. A simple Makefile for Arduino version 1.5+ can be found [on GitHub](https://github.com/tomswartz07/arduino-makefile).
+**注意:** 更新2015-03-23。由于Arduino≥v1.5中的最新更改，许多旧的Makefile在不进行某些修改的情况下无法正常工作。可以在GitHub上找到一个简单的Arduino 1.5+版本的Makefile [[2]](https://github.com/tomswartz07/arduino-makefile)。
 
-Instead of using the Arduino IDE it is possible to use another editor and a Makefile.
+除了使用Arduino IDE，还可以使用其他编辑器和Makefile。设置目录以对Arduino进行编程，然后将Makefile复制到该目录中。 可以从`/usr/share/arduino/hardware/cores/arduino/Makefile`获取Makefile的副本。
 
-Set up a directory to program your Arduino and copy the Makefile into this directory. A copy of the Makefile can be obtained from `/usr/share/arduino/hardware/cores/arduino/Makefile`
-
-You will have to modify this a little bit to reflect your settings. The makefile should be pretty self explanatory. Here are some lines you may have to edit.
+您必须在此稍作修改以反映您的设置。Makefile应该很容易说明。这是您可能需要编辑的几行:
 
 ```
 PORT = usually /dev/ttyUSBx, where x is the usb serial port your arduino is plugged into
@@ -165,15 +163,15 @@ ARDUINO = /usr/share/arduino/lib/targets/arduino
 
 ```
 
-Depending on which library functions you call in your sketch, you may need to compile parts of the library. To do that you need to edit your SRC and CXXSRC to include the required libraries.
+根据您在例程代码中调用的库函数，您可能需要编译库的某些部分。为此，您需要编辑SRC和CXXSRC以包括所需的库。
 
-Now you should be able to `make && make upload` to your board to execute your sketch.
+现在，您应该可以`make && make upload`编译并上传您的程序到板子了。
 
 ### Arduino-mk
 
-[arduino-mk](https://aur.archlinux.org/packages/arduino-mk/) is another alternative Makefile approach. It allows users to have a local Makefile that includes Arduino.mk. See [project page](https://github.com/sudar/Arduino-Makefile) for usage.
+[arduino-mk](https://aur.archlinux.org/packages/arduino-mk/)是另一种Makefile方法。它允许用户使用包含Arduino.mk的本地Makefile。参见[project page](https://github.com/sudar/Arduino-Makefile)。
 
-For Arduino 1.5, try the following local Makefile (because Arduino 1.5's library directory structure is slightly different):
+对于Arduino 1.5，请尝试以下本地Makefile（因为Arduino 1.5的库目录结构略有不同）:
 
 ```
 ARDUINO_DIR = /usr/share/arduino
@@ -192,13 +190,13 @@ include /usr/share/arduino/Arduino.mk
 
 ```
 
-In some cases you could need to install [avr-libc](https://www.archlinux.org/packages/?name=avr-libc) and [avrdude](https://www.archlinux.org/packages/?name=avrdude).
+在某些情况下，您可能需要安装[avr-libc](https://www.archlinux.org/packages/?name=avr-libc)和[avrdude](https://www.archlinux.org/packages/?name=avrdude)。
 
 ### Scons
 
-Using [scons](http://www.scons.org/) together with [arscons](https://github.com/suapapa/arscons) it is very easy to use to compile and upload Arduino projects from the command line. Scons is based on python and you will need python-pyserial to use the serial interface. Install [python-pyserial](https://www.archlinux.org/packages/?name=python-pyserial) and [scons](https://www.archlinux.org/packages/?name=scons).
+结合使用[scons](http://www.scons.org/)和[arscons](https://github.com/suapapa/arscons)，可以很容易地从命令行编译和上传Arduino项目。 Scons基于python，您将需要python-pyserial才能使用串行接口。安装[python-pyserial](https://www.archlinux.org/packages/?name=python-pyserial)和[scons](https://www.archlinux.org/packages/?name=scons)。
 
-That will get the dependencies you need too. You will also need Arduino itself so install it as described above. Create project directory (eg. test), then create a arduino project file in your new directory. Use the same name as the directory and add .ino (eg. test.ino). Get the [SConstruct](https://github.com/suapapa/arscons/blob/master/SConstruct) script from arscons and put it in your directory. Have a peek in it and, if necessary, edit it. It is a python script. Edit your project as you please, then run
+那也将获得您需要的依赖项。您还将需要Arduino本身，因此如上所述安装它。创建项目目录(例如test)，然后在新目录中创建arduino项目文件。使用与目录相同的名称并添加.ino(例如test.ino)。从arscons获取[SConstruct](https://github.com/suapapa/arscons/blob/master/SConstruct)脚本并将其放在目录中。稍微窥视一下，如有必要，对其进行编辑。这是一个python脚本。根据需要编辑项目，然后运行
 
 ```
 $ scons                # This will build the project
@@ -208,13 +206,13 @@ $ scons upload         # This will upload the project to your Arduino
 
 ### PlatformIO
 
-[PlatformIO](http://docs.platformio.ikravets.com/en/latest/quickstart.html) is a python tool to build and upload sketches for multiple Hardware Platforms, at the moment of writing these are Arduino/AVR based boards, TI MSP430 and TI TM4C12x Boards. In the near future the author plans to add a library function that allows to search and include libraries directly from GitHub.
+[PlatformIO](http://docs.platformio.ikravets.com/en/latest/quickstart.html)是一个python工具，用于为多个硬件平台构建和上传示例程序，在编写本文时，它们是基于Arduino/AVR的板卡TI MSP430和TI TM4C12x板。作者计划在不久的将来添加一个库功能，该功能允许直接从GitHub搜索和包含库。
 
-#### Installation
+#### 安装
 
-Install the [platformio](https://aur.archlinux.org/packages/platformio/) or [platformio-git](https://aur.archlinux.org/packages/platformio-git/) package.
+安装[platformio](https://aur.archlinux.org/packages/platformio/) 或 [platformio-git](https://aur.archlinux.org/packages/platformio-git/).
 
-#### Usage
+#### 使用
 
 ```
 $ platformio platforms install atmelavr
@@ -243,11 +241,11 @@ $ platformio run
 
 ### Emacs
 
-It is possible to configure [Emacs](/index.php/Emacs "Emacs") as IDE.
+当然可以将[Emacs](/index.php/Emacs "Emacs")配置为IDE。
 
-Install the package [emacs-arduino-mode-git](https://aur.archlinux.org/packages/emacs-arduino-mode-git/) from the [AUR](/index.php/AUR "AUR") in order to enable the `arduino-mode` in emacs.
+从[AUR](/index.php/AUR "AUR")安装软件包[emacs-arduino-mode-git](https://aur.archlinux.org/packages/emacs-arduino-mode-git/)，以便在emacs中启用`arduino-mode`。
 
-Add to the init script:
+添加到初始化脚本：
 
  `~/.emacs` 
 ```
@@ -257,15 +255,15 @@ Add to the init script:
 (add-to-list 'auto-mode-alist '("\.ino$" . arduino-mode))
 ```
 
-You can compile and upload the sketches using `Arduino-mk` (see above) with `M-x compile` `make upload`.
+您可以使用`M-x compile` `make upload`和`Arduino-mk`（见上文）来编译和上传程序。
 
-Main resource: [here](http://www.emacswiki.org/emacs/ArduinoSupport).
+参见: [[3]](http://www.emacswiki.org/emacs/ArduinoSupport).
 
 ## Troubleshooting
 
 ### Version 1.6
 
-Some older 3rd party tools may only work with Arduino 1.0 ([arduino10](https://aur.archlinux.org/packages/arduino10/)). Some of the tools may partially work for Arduino version 1.6 ([arduino](https://www.archlinux.org/packages/?name=arduino)) and after. Check the version if the tools do not work. Note that some newer boards do not work with the old Arduino IDE.
+一些老的第三方工具可能仅适用于Arduino 1.0 ([arduino10](https://aur.archlinux.org/packages/arduino10/))。部分工具可能只会工作在Arduino version 1.6 ([arduino](https://www.archlinux.org/packages/?name=arduino))及更高版本。 如果工具不起作用，请检查版本。请注意，某些较新的开发板不适用于旧的Arduino IDE。
 
 ### Arduino设备命名
 
@@ -300,25 +298,23 @@ udevadm trigger
 
 在IDE启动时，您可能最初会看到串行端口，但是在上传固件时，TX/RX指示灯不起作用。您以前可能已经将串口中的波特率更改为了它不喜欢的内容。编辑～/.arduino/preferences.txt，使serial.debug_rate和Arduino设备相匹配。
 
-### Working with Uno/Mega2560
+### 使用Uno/Mega2560
 
-The Arduino Uno and Mega2560 have an onboard USB interface (an Atmel 8U2) that accepts serial data, so they are accessed through /dev/ttyACM0 created by the cdc-acm kernel module when it is plugged in.
+Arduino Uno和Mega2560具有一个板载USB接口（Atmel 8U2），用来接收串口数据，因此，在USB插入后，可以通过cdc-acm内核模块创建的/dev/ttyACM0来访问它们。
 
-The 8U2 firmware may need an update to ease serial communications. See [[2]](http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1286350399) for more details and reply #11 for a fix. The original arduino bbs, where you can find an image explaining how to get your Uno into DFU, is now in a read-only state. If you do not have an account to view the image, see [[3]](http://www.scribd.com/doc/45913857/Arduino-UNO).
+您可以通过将Uno置于环回模式并在115200波特的arduino串行监视器中键入字符来对Uno进行常规功能测试。它应将字符回显给您。要将其置于回送状态，请在数字端短接引脚0->1，并在键入时按住复位按钮或将GND->RESET引脚短路。
 
-You can perform a general function test of the Uno by putting it in loopback mode and typing characters into the arduino serial monitor at 115200 baud. It should echo the characters back to you. To put it in loopback, short pins 0 -> 1 on the digital side and either hold the reset button or short the GND -> RESET pins while you type.
+### Mega2560无法识别USB端口
 
-### Not recognizing USB port with Mega2560 cheap Chinese clones
-
-Try installing its driver: [i2c-ch341-dkms](https://aur.archlinux.org/packages/i2c-ch341-dkms/).
+安装驱动: [i2c-ch341-dkms](https://aur.archlinux.org/packages/i2c-ch341-dkms/).
 
 ### Application not resizing with WM, menus immediately closing
 
 see [Java#Gray window, applications not resizing with WM, menus immediately closing](/index.php/Java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing "Java")
 
-### Fails to upload: programmer is not responding
+### 上传失败
 
-Changing processor setting from `ATmega328P` to `ATmega328P (Old Bootloader)` (See Tools->Processor in Arduino IDE) may help with upload failures.
+将处理器设置从`ATmega328P`更改为`ATmega328P (Old Bootloader)` （请参阅Arduino IDE中的“工具”->“处理器”）可能有助于解决上传失败的问题。
 
 ## See also
 

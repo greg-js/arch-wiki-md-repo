@@ -20,8 +20,6 @@ If you use IBus, see [IBus](/index.php/IBus "IBus").
         *   [1.1.1 Sans-serif](#Sans-serif)
         *   [1.1.2 Serif and Sans-serif](#Serif_and_Sans-serif)
     *   [1.2 uim](#uim)
-        *   [1.2.1 Using pacman](#Using_pacman)
-        *   [1.2.2 Compiling uim from source using PKGBUILD](#Compiling_uim_from_source_using_PKGBUILD)
     *   [1.3 Input method](#Input_method)
         *   [1.3.1 Anthy](#Anthy)
             *   [1.3.1.1 Extra dictionary](#Extra_dictionary)
@@ -91,23 +89,7 @@ If you want to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2chan
 
 ### uim
 
-#### Using pacman
-
-[Install](/index.php/Install "Install") [uim](https://www.archlinux.org/packages/?name=uim) from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-**Note:** uim versions before 1.8.0 do not support Qt5\. To use uim in Qt5 applications, install the development version ([uim-git](https://aur.archlinux.org/packages/uim-git/)), or the Debian fork ([uim-debian](https://aur.archlinux.org/packages/uim-debian/)).
-
-#### Compiling uim from source using PKGBUILD
-
-If you want to build uim with your configuration, you can compile from source, using [ABS](/index.php/ABS "ABS") for instance. See [official wiki](http://code.google.com/p/uim/wiki/InstallUim) for all configure options.
-
-In Arch official repositories, uim is built with the following custom configuration (as of 1.8.6):
-
-*   `--with-anthy-utf8` - Enable Anthy(UTF-8) support
-*   `--with-qt4-immodule` - Build Qt4 immodule
-*   `--with-qt4` - Build uim-tools for Qt4
-
-If you want KDE4 plasma widget, install [automoc4](https://aur.archlinux.org/packages/automoc4/) for making dependency, and add `--enable-kde4-applet` option to PKGBUILD file.
+[Install](/index.php/Install "Install") the [uim](https://www.archlinux.org/packages/?name=uim) package.
 
 ### Input method
 

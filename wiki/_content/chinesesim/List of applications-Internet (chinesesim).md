@@ -486,7 +486,7 @@
 
 *   **[Caddy](/index.php/Caddy "Caddy")** — 带有自动HTTPS的HTTP/2 web服务器.
 
-	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://aur.archlinux.org/packages/caddy/)
+	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://www.archlinux.org/packages/?name=caddy)
 
 *   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — 安全且先进的web服务器.
 

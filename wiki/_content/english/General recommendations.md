@@ -90,7 +90,7 @@ Users and groups are a mechanism for *access control*; administrators may fine-t
 
 ### Privilege elevation
 
-Both the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") commands allow you to run commands as another user. *su* by default starts an interactive shell as the root user, and *sudo* by default temporarily grants you root privileges for a single command. See their respective articles for differences.
+Both the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") commands allow you to run commands as another user. *su* by default starts an interactive shell as the root user, and *sudo* by default temporarily grants you root privileges for a single command. See their respective articles for differences. [opendoas](https://www.archlinux.org/packages/?name=opendoas) is a lighter alternative to *sudo*.
 
 ### Service management
 

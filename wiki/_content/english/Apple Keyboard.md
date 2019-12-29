@@ -22,7 +22,8 @@ Some Apple keyboard models may have swapped keys or missing functionality. This 
     *   [8.2 Use un-apple-keyboard](#Use_un-apple-keyboard)
     *   [8.3 Change the Behavior Without Reboot](#Change_the_Behavior_Without_Reboot)
 *   [9 Magic Keyboard does not connect](#Magic_Keyboard_does_not_connect)
-*   [10 See also](#See_also)
+*   [10 Enable dvorak/dvp](#Enable_dvorak/dvp)
+*   [11 See also](#See_also)
 
 ## Numlock is on
 
@@ -160,6 +161,24 @@ To reload the kernel module without reboot, run `rmmod hid_apple && modprobe hid
 ## Magic Keyboard does not connect
 
 If you have a magic keyboard that will not connect to the system through the built in tools, such as the Gnome 3 bluetooth menu in settings, install [blueman](https://www.archlinux.org/packages/?name=blueman) and its dependencies and attempt to connect with it. If it still fails to connect, make sure you have bluetoothctl and hcitool installed.
+
+## Enable dvorak/dvp
+
+By default xkb loads translation table (actually called `xkb_symbols`) `mackintosh_vndr/us` for macintosh keyboard:
+
+```
+setxkbmap -print -verbose 10 | grep symbols
+
+```
+
+This translation table located in `/usr/share/X11/xkb/symbols/macintosh_vndr/us` and don't contains dvorak/dvp layout. You can use default translation table from `/usr/share/X11/xkb/symbols/us` and add command `setxkbmap` in your `.profile` for forced loading layout:
+
+```
+sudo mv /usr/share/X11/xkb/symbols/macintosh_vndr/us /usr/share/X11/xkb/symbols/macintosh_vndr/us.back
+sudo cp /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/macintosh_vndr/us
+echo "setxkbmap -v 10 -layout us -variant dvp" >> .xprofile
+
+```
 
 ## See also
 

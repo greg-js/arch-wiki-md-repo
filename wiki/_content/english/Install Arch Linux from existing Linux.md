@@ -1,0 +1,394 @@
+Related articles
+
+*   [Install from SSH](/index.php/Install_from_SSH "Install from SSH")
+
+This document describes the bootstrapping process required to install Arch Linux from a running Linux host system. After bootstrapping, the installation proceeds as described in the [Installation guide](/index.php/Installation_guide "Installation guide").
+
+Installing Arch Linux from a running Linux is useful for:
+
+*   remotely installing Arch Linux, e.g. a (virtual) root server
+*   replacing an existing Linux without a LiveCD (see [#Replacing the existing system without a LiveCD](#Replacing_the_existing_system_without_a_LiveCD))
+*   creating a new Linux distribution or [LiveMedia based on Arch Linux](/index.php/Arch-based_distributions "Arch-based distributions")
+*   creating an Arch Linux chroot environment, e.g. for a Docker base container
+*   [rootfs-over-NFS for diskless machines](/index.php/Diskless_network_boot_NFS_root "Diskless network boot NFS root")
+
+The goal of the bootstrapping procedure is to setup an environment from which the scripts from [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) (such as `pacstrap` and `arch-chroot`) can be run.
+
+If the host system runs Arch Linux, this can be achieved by simply installing [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts). If the host system runs another Linux distribution, you will first need to set up an Arch Linux-based chroot.
+
+**Note:** This guide requires that the existing host system be able to execute the new target Arch Linux architecture programs. This means it has to be an x86_64 host.
+
+**Warning:** Please make sure you understand each step before proceeding. It is easy to destroy your system or to lose critical data, and your service provider will likely charge a lot to help you recover.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Backup and preparation](#Backup_and_preparation)
+*   [2 From a host running Arch Linux](#From_a_host_running_Arch_Linux)
+    *   [2.1 Create a new Arch installation](#Create_a_new_Arch_installation)
+    *   [2.2 Create a copy of an existing Arch installation](#Create_a_copy_of_an_existing_Arch_installation)
+*   [3 From a host running another Linux distribution](#From_a_host_running_another_Linux_distribution)
+    *   [3.1 Using pacman from the host system](#Using_pacman_from_the_host_system)
+    *   [3.2 Creating a chroot](#Creating_a_chroot)
+        *   [3.2.1 Method A: Using the bootstrap image (recommended)](#Method_A:_Using_the_bootstrap_image_(recommended))
+        *   [3.2.2 Method B: Using the LiveCD image](#Method_B:_Using_the_LiveCD_image)
+    *   [3.3 Using a chroot environment](#Using_a_chroot_environment)
+        *   [3.3.1 Initializing pacman keyring](#Initializing_pacman_keyring)
+        *   [3.3.2 Selecting a mirror and downloading basic tools](#Selecting_a_mirror_and_downloading_basic_tools)
+    *   [3.4 Installation tips](#Installation_tips)
+        *   [3.4.1 Debian-based host](#Debian-based_host)
+            *   [3.4.1.1 /dev/shm](#/dev/shm)
+            *   [3.4.1.2 /dev/pts](#/dev/pts)
+            *   [3.4.1.3 lvmetad](#lvmetad)
+        *   [3.4.2 Fedora-based host](#Fedora-based_host)
+*   [4 Things to check before you reboot](#Things_to_check_before_you_reboot)
+*   [5 Replacing the existing system without a LiveCD](#Replacing_the_existing_system_without_a_LiveCD)
+    *   [5.1 Set old swap partition as new root partition](#Set_old_swap_partition_as_new_root_partition)
+    *   [5.2 Installation](#Installation)
+
+## Backup and preparation
+
+Backup all your data including mails, webservers, etc. Have all information at your fingertips. Preserve all your server configurations, hostnames, etc.
+
+Here is a list of data you will likely need:
+
+*   IP address
+*   hostname(s), (note: rootserver are mostly also part of the providers domain, check or save your `/etc/hosts` before you delete)
+*   DNS server (check `/etc/resolv.conf`)
+*   SSH keys (if other people work on your server, they will have to accept new keys otherwise. This includes keys from your Apache, your mail servers, your SSH server and others.)
+*   Hardware info (network card, etc. Refer to your pre-installed `/etc/modules.conf` )
+*   Grub configuration files.
+
+In general, it is a good idea to have a local copy of your original `/etc` directory on your local hard drive.
+
+## From a host running Arch Linux
+
+Install the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) package.
+
+Follow [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") to mount the filesystem and all the needed mount points. If you already use the `/mnt` directory for something else, just create another directory such as `/mnt/install`, and use that instead as the mount point base.
+
+### Create a new Arch installation
+
+Follow [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide").
+
+In the procedure, [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide") can be skipped since the host should already have a correct mirrorlist.
+
+**Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks"), or use *pacstrap*'s `-c` option to use your host machine's package cache.
+
+**Tip:** When the grub boot-loader is used, the `grub-mkconfig` may detect devices incorrectly. This will result in `Error:no such device` when trying to boot from the stick. To solve this problem, from the host running Arch Linux, mount the newly installed partitions, *arch-chroot* to the new partition, then install and configure grub. The last step may require disabling *lvmetad* from `/etc/lvm/lvm.conf` by setting `use_lvmetad=0`.
+
+### Create a copy of an existing Arch installation
+
+It is possible to replicate an existing Arch Linux installation by copying the host filesystem to the new partition and make some adjustments to it to make it bootable and unique.
+
+The first step is to copy the host files into the mounted new partition, for this, consider using the approach exhibited in [rsync#Full system backup](/index.php/Rsync#Full_system_backup "Rsync").
+
+Then, follow the procedure described in [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") with some caveats and additional steps:
+
+*   [Installation guide#Time zone](/index.php/Installation_guide#Time_zone "Installation guide"), [Installation guide#Localization](/index.php/Installation_guide#Localization "Installation guide") and [Installation guide#Root password](/index.php/Installation_guide#Root_password "Installation guide") can be skipped
+*   [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide") may be required in particular if changing filesystem, for example from [ext4](/index.php/Ext4 "Ext4") to [Btrfs](/index.php/Btrfs "Btrfs")
+*   Regarding [Installation guide#Boot loader](/index.php/Installation_guide#Boot_loader "Installation guide"), it is necessary to reinstall the bootloader
+*   Delete `/etc/machine-id` so that a new, unique one, is generated at the next boot
+
+If the mirrored Arch installation may be used within a different configuration or with another hardware, consider the following additional operations:
+
+*   Use the CPU [microcode](/index.php/Microcode "Microcode") update adapted to the target system during the step [Installation guide#Boot loader](/index.php/Installation_guide#Boot_loader "Installation guide")
+*   If any specific [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg") was present on the host and may be incompatible with the target system, follow [Moving an existing install into (or out of) a virtual machine#Disable any Xorg-related files](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine#Disable_any_Xorg-related_files "Moving an existing install into (or out of) a virtual machine")
+*   Make any other adjustment appropriate to the target system, like reconfiguring the network or the audio.
+
+## From a host running another Linux distribution
+
+There are multiple tools which automate a large part of the steps described in the following subsections. See their respective homepages for detailed instructions.
+
+*   [arch-bootstrap](https://github.com/tokland/arch-bootstrap) (Bash)
+*   [archcx](https://github.com/m4rienf/ArchCX) (Bash, from Hetzner CX Rescue System)
+*   [digitalocean-debian-to-arch](https://github.com/gh2o/digitalocean-debian-to-arch) (repartition disk, DigitalOCean specific)
+*   [image-bootstrap](https://github.com/hartwork/image-bootstrap) (Python)
+*   [vps2arch](https://gitlab.com/drizzt/vps2arch) (Bash)
+
+The manual way is presented in the following subsections. The idea is to either get [pacman](/index.php/Pacman "Pacman") working directly on the host system, or to run an Arch system inside the host system, with the actual installation being executed from the Arch system. The nested system is contained inside a chroot.
+
+### Using pacman from the host system
+
+[Pacman](https://git.archlinux.org/pacman.git/) can be compiled on most Linux distributions, and used directly on the host system to bootstrap Arch Linux. The [arch-install-scripts](https://git.archlinux.org/arch-install-scripts.git/about/) should run without issues directly from the downloaded sources on any recent distribution.
+
+Some distributions provide a package for *pacman* and/or *arch-install-scripts* in their official repositories which can be used for this purpose. As of February 2019, Gentoo is known to provide the *pacman* package, and Alpine Linux and Fedora are known to provide both *pacman* and *arch-install-scripts*.
+
+### Creating a chroot
+
+Two methods to setup and enter the chroot are presented below, from the easiest to the most complicated. Select only one of the two methods. Then, continue at [#Using a chroot environment](#Using_a_chroot_environment).
+
+#### Method A: Using the bootstrap image (recommended)
+
+Download the bootstrap image from a [mirror](https://www.archlinux.org/download) into `/tmp`.
+
+You can also download the signature (same URL with `.sig` added) and [verify it with GnuPG](/index.php/GnuPG#Verify_a_signature "GnuPG").
+
+Extract the tarball:
+
+```
+# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-*-x86_64.tar.gz
+
+```
+
+Select a repository server by editing `/tmp/root.x86_64/etc/pacman.d/mirrorlist`.
+
+Enter the chroot
+
+*   If bash 4 or later is installed, and unshare supports the --fork and --pid options:
+
+```
+# /tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
+
+```
+
+*   Otherwise, run the following commands:
+
+```
+# mount --bind /tmp/root.x86_64 /tmp/root.x86_64
+# cd /tmp/root.x86_64
+# cp /etc/resolv.conf etc
+# mount -t proc /proc proc
+# mount --make-rslave --rbind /sys sys
+# mount --make-rslave --rbind /dev dev
+# mount --make-rslave --rbind /run run    # (assuming /run exists on the system)
+# chroot /tmp/root.x86_64 /bin/bash
+
+```
+
+#### Method B: Using the LiveCD image
+
+It is possible to mount the root image of the latest Arch Linux installation media and then chroot into it. This method has the advantage of providing a working Arch Linux installation right within the host system without the need to prepare it by installing specific packages.
+
+**Note:** Before proceeding, make sure the latest version of [squashfs](http://squashfs.sourceforge.net/) is installed on the host system. Otherwise, errors like the following are to be expected: `FATAL ERROR aborting: uncompress_inode_table: failed to read block`.
+
+*   The root image can be found on one of the [mirrors](https://www.archlinux.org/download) under `arch/x86_64/`. The squashfs format is not editable, so we unsquash the root image and mount it.
+
+*   To unsquash the root image, run
+
+```
+# unsquashfs airootfs.sfs
+
+```
+
+*   Before [chrooting](/index.php/Change_root "Change root") to it, we need to set up some mount points and copy the resolv.conf for networking.
+
+```
+# mount --bind squashfs-root squashfs-root
+# mount -t proc none squashfs-root/proc
+# mount -t sysfs none squashfs-root/sys
+# mount -o bind /dev squashfs-root/dev
+# mount -o bind /dev/pts squashfs-root/dev/pts  ## important for pacman (for signature check)
+# cp -L /etc/resolv.conf squashfs-root/etc  ## this is needed to use networking within the chroot
+
+```
+
+*   Now, everything is prepared to chroot into the newly installed Arch environment
+
+```
+# chroot squashfs-root bash
+
+```
+
+### Using a chroot environment
+
+The bootstrap environment is really barebones (no [nano](https://www.archlinux.org/packages/?name=nano) or [lvm2](https://www.archlinux.org/packages/?name=lvm2)). Therefore, we need to set up pacman in order to download other necessary packages.
+
+#### Initializing pacman keyring
+
+Before starting the installation, pacman keys need to be setup. Before running the following two commands, read [pacman-key#Initializing the keyring](/index.php/Pacman-key#Initializing_the_keyring "Pacman-key") to understand the entropy requirements:
+
+```
+# pacman-key --init
+# pacman-key --populate archlinux
+
+```
+
+**Tip:** Installing and running [haveged](https://www.archlinux.org/packages/?name=haveged) must be done on the host system, since it is not possible to install packages before initializing pacman keyring and because *systemd* will detect it is running in a chroot and [ignore activation request](https://superuser.com/questions/688733/start-a-systemd-service-inside-chroot). If you go with doing `ls -Ra /` in another console (TTY, terminal, SSH session...), do not be afraid of running it in a loop a few times: five or six runs from the host proved sufficient to generate enough entropy on a remote headless server.
+
+#### Selecting a mirror and downloading basic tools
+
+After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors"), [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") and [install](/index.php/Install "Install") what you need: [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+
+**Note:**
+
+*   As there is no any text editor yet, you need to exit arch-chroot and edit mirrorlist using host's text editor.
+*   When you try to install packages with pacman, you could get `*error: could not determine cachedir mount point /var/cache/pacman/pkg*`. To workaround it, you could run `mount --bind *directory-to-livecd-or-bootstrap* *directory-to-livecd-or-bootstrap*` before chrooting. See [FS#46169](https://bugs.archlinux.org/task/46169).
+
+### Installation tips
+
+You can now proceed to [Installation guide#Partition the disks](/index.php/Installation_guide#Partition_the_disks "Installation guide") and follow the rest of the [Installation guide](/index.php/Installation_guide "Installation guide").
+
+Some host systems or configurations may require certain extra steps. See the sections below for tips.
+
+##### Debian-based host
+
+###### /dev/shm
+
+On some Debian-based host systems, *pacstrap* may produce the following error:
+
+ `# pacstrap /mnt base` 
+```
+==> Creating install root at /mnt
+mount: mount point /mnt/dev/shm is a symbolic link to nowhere
+==> ERROR: failed to setup API filesystems in new root
+
+```
+
+This is because in some versions of Debian, `/dev/shm` points to `/run/shm` while in the Arch-based chroot, `/run/shm` does not exist and the link is broken. To correct this error, create a directory `/run/shm`:
+
+```
+# mkdir /run/shm
+
+```
+
+###### /dev/pts
+
+While installing `archlinux-2015.07.01-x86_64` from a Debian 7 host, the following error prevented both [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) and [arch-chroot](/index.php/Change_root#Using_arch-chroot "Change root") from working:
+
+ `# pacstrap -i /mnt` 
+```
+mount: mount point /mnt/dev/pts does not exist
+==> ERROR: failed to setup chroot /mnt
+
+```
+
+Apparently, this is because these two scripts use a common function. `chroot_setup()`[[1]](https://projects.archlinux.org/arch-install-scripts.git/tree/common#n76) relies on newer features of [util-linux](https://www.archlinux.org/packages/?name=util-linux), which are incompatible with Debian 7 userland (see [FS#45737](https://bugs.archlinux.org/task/45737)).
+
+The solution for *pacstrap* is to manually execute its [various tasks](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in#n77), but use the [regular procedure](/index.php/Change_root#Using_chroot "Change root") to mount the kernel filesystems on the target directory (`"$newroot"`):
+
+```
+# newroot=/mnt
+# mkdir -m 0755 -p "$newroot"/var/{cache/pacman/pkg,lib/pacman,log} "$newroot"/{dev,run,etc}
+# mkdir -m 1777 -p "$newroot"/tmp
+# mkdir -m 0555 -p "$newroot"/{sys,proc}
+# mount --bind "$newroot" "$newroot"
+# mount -t proc /proc "$newroot/proc"
+# mount --rbind /sys "$newroot/sys"
+# mount --rbind /run "$newroot/run"
+# mount --rbind /dev "$newroot/dev"
+# pacman -r "$newroot" --cachedir="$newroot/var/cache/pacman/pkg" -Sy base base-devel ... ## add the packages you want
+# cp -a /etc/pacman.d/gnupg "$newroot/etc/pacman.d/"       ## copy keyring
+# cp -a /etc/pacman.d/mirrorlist "$newroot/etc/pacman.d/"  ## copy mirrorlist
+
+```
+
+Instead of using *arch-chroot* for [Installation guide#Chroot](/index.php/Installation_guide#Chroot "Installation guide"), simply use:
+
+```
+# chroot "$newroot"
+
+```
+
+###### lvmetad
+
+Trying to create [LVM](/index.php/LVM "LVM") [logical volumes](/index.php/LVM#Logical_volumes "LVM") from an `archlinux-bootstrap-2015.07.01-x86_64` environment on a Debian 7 host resulted in the following error:
+
+ `# lvcreate -L 20G lvm -n root` 
+```
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /dev/lvm/root: not found: device not cleared
+  Aborting. Failed to wipe start of new LV.
+```
+
+(Physical volume and volume group creation worked despite `/run/lvm/lvmetad.socket: connect failed: No such file or directory` being displayed.)
+
+This could be easily worked around by creating the logical volumes outside the chroot (from the Debian host). They are then available once chrooted again.
+
+Also, if the system you are using has lvm, you might have the following output:
+
+ `# grub-install --target=i386-pc --recheck /dev/main/archroot` 
+```
+Installing for i386-pc platform.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+  /run/lvm/lvmetad.socket: connect failed: No such file or directory
+  WARNING: Failed to connect to lvmetad. Falling back to internal scanning.
+```
+
+This is because debian does not use lvmetad by default. You need to edit `/etc/lvm/lvm.conf` and set `use_lvmetad` to `0`:
+
+```
+use_lvmetad = 0
+
+```
+
+This will trigger later an error on boot in the initrd stage. Therefore, you have to change it back after the grub generation. In a software RAID + LVM, steps would be the following:
+
+*   After installing the system, double check your [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") and your bootloader settings. See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for a list of bootloaders.
+*   You may need to change your `/etc/mdadm.conf` to reflect your [RAID](/index.php/RAID "RAID") settings (if applicable).
+*   You may need to change your `HOOKS` and `MODULES` according to your [LVM](/index.php/LVM "LVM") and [RAID](/index.php/RAID "RAID") requirements: `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
+*   You will most likely need to generate new initrd images with mkinitcpio. See [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+*   Set `use_lvmetad = 0` in `/etc/lvm/lvm.conf`.
+*   Update your bootloader settings. See your bootloader's wiki page for details.
+*   Set `use_lvmetad = 1` in `/etc/lvm/lvm.conf`.
+
+##### Fedora-based host
+
+On Fedora based hosts and live USBs you may encounter problems when using *genfstab* to generate your [fstab](/index.php/Fstab "Fstab"). Remove duplicate entries and the "seclabel" option where it appears, as this is Fedora-specific and will keep your system from booting normally.
+
+## Things to check before you reboot
+
+Before rebooting, doublecheck a few details in your installation to achieve a successful installation. To do so, first chroot into the newly-installed system, and then:
+
+*   [create a user with password](/index.php/Users_and_groups#User_management "Users and groups"), so you can login via *ssh*. This is critical since root login is disabled by default since OpenSSH-7.1p2.
+*   [set a root password](/index.php/Users_and_groups#User_management "Users and groups") so that you can switch to root via *su* later
+*   [install](/index.php/Install "Install") a [ssh](/index.php/Ssh "Ssh") solution and [enable](/index.php/Enable "Enable") its server instance to start automatically at boot.
+*   set up your [network configuration](/index.php/Network_configuration "Network configuration") in order to have a connection started automatically at boot.
+*   set up a [boot loader](/index.php/Boot_loader "Boot loader") and configure it to use the swap partition you appropriated earlier as the root partition. You might want to configure your bootloader to be able to boot into your old system; it is helpful to re-use the server's existing `/boot` partition in the new system for this purpose.
+
+## Replacing the existing system without a LiveCD
+
+Find ~700 MB of free space somewhere on the disk, e.g. by partitioning a swap partition. You can disable the swap partition and set up your system there.
+
+### Set old swap partition as new root partition
+
+Check `cfdisk`, `/proc/swaps` or `/etc/fstab` to find your swap partition. Assuming your hard drive is located on `sda*X*` (`*X*` will be a number).
+
+Do the following:
+
+Disable the swap space:
+
+```
+# swapoff /dev/sda*X*
+
+```
+
+Create a filesystem on it
+
+```
+# fdisk /dev/sda
+(set /dev/sda*X* ID field to "Linux" - Hex 83)
+# mke2fs -j /dev/sda*X*
+
+```
+
+Create a directory to mount it in
+
+```
+# mkdir /mnt/newsys
+
+```
+
+Finally, mount the new directory for installing the intermediate system.
+
+```
+# mount -t ext4 /dev/sda*X* /mnt/newsys
+
+```
+
+### Installation
+
+[Install essentials packages](/index.php/Installation_guide#Install_essential_packages "Installation guide") and any other package required to get a system with internet connection up and running in the temporary partition, being careful with the limit of ~700 MB space. When specifying packages to be installed with *pacstrap*, consider adding the `-c` flag to avoid filling up valuable space by downloading packages to the host system.
+
+Once the new Arch Linux system is installed, fix the bootloader configuration, then reboot into the newly created system, and [rsync the entire system](/index.php/Rsync#Full_system_backup "Rsync") to the primary partition.

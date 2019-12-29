@@ -5,11 +5,15 @@ Related articles
 
 Sane fornisce una libreria e uno strumento da riga di comando per utilizzare gli scanner sotto GNU/Linux. [Qua](http://www.sane-project.org/sane-supported-devices.html) è possibili verificare se il vostro scanner è supportato.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
-    *   [2.1 Per dispositivi Acer/BenQ](#Per_dispositivi_Acer.2FBenQ)
+    *   [2.1 Per dispositivi Acer/BenQ](#Per_dispositivi_Acer/BenQ)
     *   [2.2 Per dispositivi HP](#Per_dispositivi_HP)
     *   [2.3 Per dispositivi Brother](#Per_dispositivi_Brother)
     *   [2.4 Per dispostivi Epson](#Per_dispostivi_Epson)
@@ -22,7 +26,7 @@ Sane fornisce una libreria e uno strumento da riga di comando per utilizzare gli
     *   [5.1 Condivisione dello scanner su una rete](#Condivisione_dello_scanner_su_una_rete)
     *   [5.2 Configurare xinetd per sane](#Configurare_xinetd_per_sane)
     *   [5.3 Accesso allo scanner da una workstation remota](#Accesso_allo_scanner_da_una_workstation_remota)
-    *   [5.4 Scansione in rete con Canon Pixma all-in-one printer/scanners](#Scansione_in_rete_con_Canon_Pixma_all-in-one_printer.2Fscanners)
+    *   [5.4 Scansione in rete con Canon Pixma all-in-one printer/scanners](#Scansione_in_rete_con_Canon_Pixma_all-in-one_printer/scanners)
 *   [6 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [6.1 Invalid argument](#Invalid_argument)
         *   [6.1.1 Firmware mancante](#Firmware_mancante)
@@ -31,7 +35,7 @@ Sane fornisce una libreria e uno strumento da riga di comando per utilizzare gli
     *   [6.2 Avvio lento](#Avvio_lento)
     *   [6.3 Problemi di permessi](#Problemi_di_permessi)
     *   [6.4 Epson Perfection 1270](#Epson_Perfection_1270)
-    *   [6.5 Blocco durante la scansione a causa di XHCI in modalità di pre-boot](#Blocco_durante_la_scansione_a_causa_di_XHCI_in_modalit.C3.A0_di_pre-boot)
+    *   [6.5 Blocco durante la scansione a causa di XHCI in modalità di pre-boot](#Blocco_durante_la_scansione_a_causa_di_XHCI_in_modalità_di_pre-boot)
 
 ## Installazione
 

@@ -13,7 +13,7 @@
     *   [4.1 gd](#gd)
     *   [4.2 Imagemagick](#Imagemagick)
         *   [4.2.1 PECL](#PECL)
-    *   [4.3 pthreads](#pthreads)
+    *   [4.3 Multithreading](#Multithreading)
     *   [4.4 PCNTL](#PCNTL)
     *   [4.5 MySQL/MariaDB](#MySQL/MariaDB)
     *   [4.6 Redis](#Redis)
@@ -126,11 +126,9 @@ Create a `/etc/php/conf.d/imagick.ini` and enable the extension:
 
  `/etc/php/conf.d/imagick.ini`  `extension=imagick` 
 
-### pthreads
+### Multithreading
 
-If you wish to have POSIX multi-threading you will need the pthreads extension. To install the pthreads ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) extension using `pecl` you are required to use a compiled version of PHP with the the thread safety support flag `--enable-maintainer-zts`. Currently the most clean way to do this would be to rebuild the original package with the flag.
-
-Instruction can be found on the [PHP pthreads extension](/index.php/PHP_pthreads_extension "PHP pthreads extension") page.
+If you wish to have POSIX multi-threading you will need the [parallel](https://pecl.php.net/package/parallel) extension. To install the extension using `pecl` you are required to use a compiled version of PHP with the the thread safety support flag `--enable-maintainer-zts`. Currently the most clean way to do this would be to rebuild the original package with the flag. Instruction can be found on the [PHP pthreads extension](/index.php/PHP_pthreads_extension "PHP pthreads extension") page.
 
 ### PCNTL
 

@@ -155,7 +155,7 @@ Onde início e tamanho estão em bytes. Exemplo: `cryptkey=/dev/sdZ:0:512` lê u
 
 **Dica:** Se o caminho do dispositivo que você quer acessar contém o caracter `:`, terá que escapar isto com `\`. Neste caso o parâmetro cryptkey deve ser semelhante a: `cryptkey=/dev/disk/by-id/usb-123456-0\:0:0:512`, este exemplo é de um pendrive com o id `usb-123456-0:0`.
 
-Para um arquivo [incluído](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") no initramfs o formato é[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n14):
+Para um arquivo [incluído](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") no initramfs o formato é:[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n14)
 
 ```
 cryptkey=rootfs:*caminho*
@@ -166,7 +166,7 @@ Exemplo: `cryptkey=rootfs:/chave_secreta`
 
 Também note que se `cryptkey` não é especificada, o padrão `/crypto_keyfile.bin` (arquivo incluído no initramfs) será utilizado.[[2]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n8)
 
-Veja também [dm-crypt/Encriptação de dispositivo#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
+Veja também [dm-crypt/Encriptação de dispositivo#Keyfiles](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo").
 
 #### crypto
 

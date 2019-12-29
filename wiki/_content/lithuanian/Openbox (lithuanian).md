@@ -1,10 +1,14 @@
 **Openbox** yra lengva ir giliai konfigūruojama langų tvarkyklė, kuri palaiko daug standartu. Jos savybės yra gerai aprašytos [tinklapyje](http://openbox.org/oficialiame). Šis straipsnis susies Openbox naudojimą Arch Linux sistemoje.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Įdiegimas](#.C4.AEdiegimas)
-*   [2 Autonominė langų tvarkyklė](#Autonomin.C4.97_lang.C5.B3_tvarkykl.C4.97)
-*   [3 Langų tvarkyklė darbastalio aplinkoms](#Lang.C5.B3_tvarkykl.C4.97_darbastalio_aplinkoms)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Įdiegimas](#Įdiegimas)
+*   [2 Autonominė langų tvarkyklė](#Autonominė_langų_tvarkyklė)
+*   [3 Langų tvarkyklė darbastalio aplinkoms](#Langų_tvarkyklė_darbastalio_aplinkoms)
     *   [3.1 GNOME](#GNOME)
         *   [3.1.1 GNOME 2.26](#GNOME_2.26)
         *   [3.1.2 GNOME 2.24](#GNOME_2.24)
@@ -16,61 +20,61 @@
     *   [4.2 ObConf](#ObConf)
     *   [4.3 Programiniai nustatymai](#Programiniai_nustatymai)
 *   [5 Menu](#Menu)
-    *   [5.1 Rankinis konfigūravimas](#Rankinis_konfig.C5.ABravimas)
+    *   [5.1 Rankinis konfigūravimas](#Rankinis_konfigūravimas)
     *   [5.2 MenuMaker](#MenuMaker)
     *   [5.3 Obmenu](#Obmenu)
         *   [5.3.1 Obm-xdg](#Obm-xdg)
     *   [5.4 Python paremti xdg menu skriptai](#Python_paremti_xdg_menu_skriptai)
     *   [5.5 Pipe menu](#Pipe_menu)
 *   [6 Paleisties programos](#Paleisties_programos)
-*   [7 Temos ir išvaizda](#Temos_ir_i.C5.A1vaizda)
+*   [7 Temos ir išvaizda](#Temos_ir_išvaizda)
     *   [7.1 Openbox temos](#Openbox_temos)
-    *   [7.2 X11 išvaizda](#X11_i.C5.A1vaizda)
-    *   [7.3 X11 pelės kursoriai](#X11_pel.C4.97s_kursoriai)
+    *   [7.2 X11 išvaizda](#X11_išvaizda)
+    *   [7.3 X11 pelės kursoriai](#X11_pelės_kursoriai)
     *   [7.4 GTK temos](#GTK_temos)
-        *   [7.4.1 GTK2/GTK+](#GTK2.2FGTK.2B)
+        *   [7.4.1 GTK2/GTK+](#GTK2/GTK+)
         *   [7.4.2 GTK1](#GTK1)
-        *   [7.4.3 GTK šriftai](#GTK_.C5.A1riftai)
+        *   [7.4.3 GTK šriftai](#GTK_šriftai)
         *   [7.4.4 GTK ikonos](#GTK_ikonos)
     *   [7.5 Darbalaukio ikonos](#Darbalaukio_ikonos)
-    *   [7.6 Darbalaukio užsklanda](#Darbalaukio_u.C5.BEsklanda)
+    *   [7.6 Darbalaukio užsklanda](#Darbalaukio_užsklanda)
 *   [8 Rekomenduojamos programos](#Rekomenduojamos_programos)
     *   [8.1 Prisijungimo programos](#Prisijungimo_programos)
     *   [8.2 Kompozitiniai darbastaliai](#Kompozitiniai_darbastaliai)
-    *   [8.3 Panelės, dėklai ir puslapiatoriai](#Panel.C4.97s.2C_d.C4.97klai_ir_puslapiatoriai)
-        *   [8.3.1 Panelės](#Panel.C4.97s)
-        *   [8.3.2 Dėklai](#D.C4.97klai)
+    *   [8.3 Panelės, dėklai ir puslapiatoriai](#Panelės,_dėklai_ir_puslapiatoriai)
+        *   [8.3.1 Panelės](#Panelės)
+        *   [8.3.2 Dėklai](#Dėklai)
         *   [8.3.3 Puslapiatoriai](#Puslapiatoriai)
-    *   [8.4 Failų tvarkyklės](#Fail.C5.B3_tvarkykl.C4.97s)
-    *   [8.5 Programų leistuvai](#Program.C5.B3_leistuvai)
+    *   [8.4 Failų tvarkyklės](#Failų_tvarkyklės)
+    *   [8.5 Programų leistuvai](#Programų_leistuvai)
         *   [8.5.1 dmenu](#dmenu)
         *   [8.5.2 Gmrun](#Gmrun)
         *   [8.5.3 Bashrun](#Bashrun)
         *   [8.5.4 Launchy](#Launchy)
         *   [8.5.5 LXPanel](#LXPanel)
         *   [8.5.6 gnome-panel](#gnome-panel)
-    *   [8.6 Mainų tvarkyklės](#Main.C5.B3_tvarkykl.C4.97s)
-    *   [8.7 Garso tvarkyklės](#Garso_tvarkykl.C4.97s)
+    *   [8.6 Mainų tvarkyklės](#Mainų_tvarkyklės)
+    *   [8.7 Garso tvarkyklės](#Garso_tvarkyklės)
         *   [8.7.1 gvolwheel](#gvolwheel)
         *   [8.7.2 gvtray](#gvtray)
         *   [8.7.3 obmixer](#obmixer)
         *   [8.7.4 volti](#volti)
         *   [8.7.5 volumeicon](#volumeicon)
         *   [8.7.6 volwheel](#volwheel)
-    *   [8.8 Klaviatūros išdėstymo tvarkyklės](#Klaviat.C5.ABros_i.C5.A1d.C4.97stymo_tvarkykl.C4.97s)
+    *   [8.8 Klaviatūros išdėstymo tvarkyklės](#Klaviatūros_išdėstymo_tvarkyklės)
         *   [8.8.1 fbxkb](#fbxkb)
         *   [8.8.2 xxkb](#xxkb)
         *   [8.8.3 axkb](#axkb)
         *   [8.8.4 xneur](#xneur)
 *   [9 Patarimai ir triukai](#Patarimai_ir_triukai)
-    *   [9.1 Failų asociacijos](#Fail.C5.B3_asociacijos)
-    *   [9.2 Kopijavimas ir įklijavimas](#Kopijavimas_ir_.C4.AFklijavimas)
+    *   [9.1 Failų asociacijos](#Failų_asociacijos)
+    *   [9.2 Kopijavimas ir įklijavimas](#Kopijavimas_ir_įklijavimas)
     *   [9.3 Skaidrumas](#Skaidrumas)
-    *   [9.4 Xprop programų reikšmės](#Xprop_program.C5.B3_reik.C5.A1m.C4.97s)
+    *   [9.4 Xprop programų reikšmės](#Xprop_programų_reikšmės)
         *   [9.4.1 Xprop ir Firefox](#Xprop_ir_Firefox)
-    *   [9.5 Sujungiant menu ir komandą](#Sujungiant_menu_ir_komand.C4.85)
+    *   [9.5 Sujungiant menu ir komandą](#Sujungiant_menu_ir_komandą)
     *   [9.6 Urxvt darbastalio fone](#Urxvt_darbastalio_fone)
-    *   [9.7 Garso reguliavimas su klaviatūra](#Garso_reguliavimas_su_klaviat.C5.ABra)
+    *   [9.7 Garso reguliavimas su klaviatūra](#Garso_reguliavimas_su_klaviatūra)
 *   [10 Resursai](#Resursai)
 
 ## Įdiegimas
@@ -776,7 +780,7 @@ Pagerintam kopijavimui/įklijavimui, yra galimybė įdiegti iškarpų tvarkyklę
 
 #### volwheel
 
-[volwheel](https://www.archlinux.org/packages/?name=volwheel) yra dėklo ikona, kurios srityje galima keisti garso lygi pelės ratuko pagalba.
+[volwheel](https://aur.archlinux.org/packages/volwheel/) yra dėklo ikona, kurios srityje galima keisti garso lygi pelės ratuko pagalba.
 
 ### Klaviatūros išdėstymo tvarkyklės
 

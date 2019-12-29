@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system"). Data da última tradução: 2019-11-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&diff=0&oldid=590083) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system"). Data da última tradução: 2019-12-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&diff=0&oldid=592783) na versão em inglês.
 
 Os seguintes exemplos são para criptografar um sistema de arquivos secundário, não raiz, com dm-crypt.
 
@@ -23,7 +23,7 @@ Os seguintes exemplos são para criptografar um sistema de arquivos secundário,
 
 Criptografar um sistema de arquivos secundário normalmente protege somente dados sensíveis, enquanto deixa o sistema operacional e programas sem encriptação. Isto é somente útil para dispositivos removíveis, como um USB, para então este ser usado em outros computadores com segurança. Também, é possível criptografar conjuntos separados de dados de acordo com quem possui acesso.
 
-Devido ao dm-crypt ser uma camada de encriptação a [nível de blocos](/index.php/Disk_encryption#Block_device_encryption "Disk encryption"), ele somente criptografa os dispositivos, [partições](#Partition) e [dispositivos de loop](#Loop_device). Para criptografar arquivos indíviduais é necessário uma camada de encriptação a nível de sistema de arquivos, como [eCryptfs](/index.php/ECryptfs "ECryptfs") or [EncFS](/index.php/EncFS "EncFS"). Veja [Encriptação de disco](/index.php/Disk_encryption "Disk encryption") para informações gerais sobre como proteger dados privados.
+Devido ao dm-crypt ser uma camada de encriptação a [nível de blocos](/index.php/Disk_encryption#Block_device_encryption "Disk encryption"), ele somente criptografa os dispositivos, [partições](#Partição) e [dispositivos de loop](#Dispositivo_de_loop). Para criptografar arquivos indíviduais é necessário uma camada de encriptação a nível de sistema de arquivos, como [eCryptfs](/index.php/ECryptfs "ECryptfs") or [EncFS](/index.php/EncFS "EncFS"). Veja [Encriptação de disco](/index.php/Disk_encryption "Disk encryption") para informações gerais sobre como proteger dados privados.
 
 ## Partição
 
@@ -31,7 +31,7 @@ Este exemplo detalha a encriptação da partição `/home`, mas pode ser aplicad
 
 **Dica:** Você pode ter o diretório `/home`, em uma partição, único para um usuário, ou criar uma partição `/home` compartilhada para todos os diretórios dos usuários.
 
-Primeiro tenha certeza que a partição está vazia (sem sistema de arquivos). Delete a partição e crie uma nova se ela possui um sistema de arquivos. Então apague com segurança, veja [apagando o disco com segurança](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation").
+Primeiro tenha certeza que a partição está vazia (sem sistema de arquivos). Delete a partição e crie uma nova se ela possui um sistema de arquivos. Então apague com segurança, veja [apagando o disco com segurança](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento#Apagando_o_disco_com_segurança "Dm-crypt/Preparando a unidade de armazenamento").
 
 Crie a partição que vai conter o container criptografado.
 
@@ -42,7 +42,7 @@ Então configure o cabeçalho LUKS com:
 
 ```
 
-Mude `*dispositivo*` para a nova partição. Veja [Opções de encriptação do modo LUKS](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") para detalhes tais como as `*opções*` disponíveis.
+Mude `*dispositivo*` para a nova partição. Veja [Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") para detalhes tais como as `*opções*` disponíveis.
 
 Para acessar a partição criptografada, desbloqueie ela com o mapeador de dispositivos, usando:
 
@@ -90,7 +90,7 @@ Existem três diferentes soluções para automaticamente desbloquear a partiçã
 
 Usando o arquivo de configuração `/etc/crypttab`, o desbloqueio ocorre no momento de inicialização fazendo uso do parsing automático do systemd. Esta é a solução recomendada se você deseja usar uma partição home comum para os diretórios de todos os usuários ou automaticamente montar outro dispositivo de bloco encriptado.
 
-Veja [Dm-crypt/Configuração do sistema#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") para referências e [Montando na inicialização do sistema](/index.php/Dm-crypt/System_configuration#Mounting_at_boot_time "Dm-crypt/System configuration") para um exemplo prático.
+Veja [Dm-crypt/Configuração do sistema#crypttab](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#crypttab "Dm-crypt/Configuração do sistema") para referências e [Montando na inicialização do sistema](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Montando_na_inicialização "Dm-crypt/Configuração do sistema") para um exemplo prático.
 
 #### No login do usuário
 
@@ -107,15 +107,18 @@ Existem dois métodos para usar um dispositivo de loop como um container criptog
 Usar diretamente o losetup pode ser evitado completamente ao fazer o seguinte[[1]](https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile):
 
 ```
-# dd if=/dev/urandom of=grande_segredo.img bs=100M count=1 iflag=fullblock
-# cryptsetup luksFormat grande_segredo.img
+$ dd if=/dev/urandom of=grande_segredo.img bs=100M count=1 iflag=fullblock
+$ cryptsetup luksFormat grande_segredo.img
+
 ```
 
-Antes de executar `cryptsetup`, veja [Opções de encriptação do modo LUKS](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") e [Cifras criptográficas e modos de operação](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") primeiro para selecionar configurações adicionais do seu interesse.
+Tenha certeza de não omitir a opção `iflag=fullblock`, de outro modo *dd* pode retornar uma leitura parcial. Veja [dd#Partial read](/index.php/Dd#Partial_read "Dd") para detalhes.
+
+Antes de executar `cryptsetup`, veja [Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") e [cifras criptográficas e modos de operação](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") primeiro para selecionar configurações adicionais do seu interesse.
 
 As instruções para abrir o dispositivo e criar o [sistema de arquivos](/index.php/File_system "File system") são do mesmo jeito que em [#Partição](#Partição).
 
-Se criar um arquivo menor que o cabeçalho do LUKS (16 MiB) vai receber um erro `Requested offset is beyond real size of device grande_segredo.img` quando tentar abrir o dispositivo.
+**Nota:** Se criar um arquivo menor que o cabeçalho do LUKS (16 MiB) vai receber um erro `Requested offset is beyond real size of device grande_segredo.img` quando tentar abrir o dispositivo.
 
 O procedimento de montagem e desmontagem manual é igual a [#Montando e desmontando manualmente](#Montando_e_desmontando_manualmente).
 
@@ -123,7 +126,7 @@ O procedimento de montagem e desmontagem manual é igual a [#Montando e desmonta
 
 Um dispositivo de loop permite mapear um dispositivo de bloco para um arquivo com a ferramenta padrão do util-linux `losetup`. O arquivo pode então conter um sistema de arquivos, que pode ser usado como qualquer outro. Vários usuários conhecem [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") como uma ferramenta para criar containers criptografados. É possível conseguir essa mesma funcionalidade com um sistema de arquivos de looback criptografado com LUKS, como é mostrado no exemplo a seguir.
 
-Primeiro, crie um container criptografado, usando um [gerador de números aleatórios](/index.php/Random_number_generator "Random number generator") apropriado:
+Primeiro, crie um container criptografado com [dd](/index.php/Dd "Dd"), usando um [gerador de números aleatórios](/index.php/Random_number_generator "Random number generator") apropriado:
 
 ```
 # dd if=/dev/urandom of=grande_segredo.img bs=100M count=1 iflag=fullblock
@@ -132,7 +135,7 @@ Primeiro, crie um container criptografado, usando um [gerador de números aleat�
 
 O arquivo `grande_segredo.img` vai ser criado com o tamanho de 100 mebibytes.
 
-**Nota:** Evite [redimensionar](/index.php/Dm-crypt/Device_encryption#Loopback_filesystem "Dm-crypt/Device encryption") o container, crie ele maior do que a soma do tamanho de todos os arquivos que serão criptografados, de modo que consiga hospedar a metadata associada utilizada pelo sistema de arquivos interno. Se pretende usar o modo LUKS, o cabeçalho de metadata dele sozinho vai ocupar mais de 16 mebibytes.
+**Nota:** Evite [redimensionar](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Sistema_de_arquivos_de_loopback "Dm-crypt/Encriptação de dispositivo") o container, crie ele maior do que a soma do tamanho de todos os arquivos que serão criptografados, de modo que consiga hospedar a metadata associada utilizada pelo sistema de arquivos interno. Se pretende usar o modo LUKS, o cabeçalho de metadata dele sozinho vai ocupar mais de 16 mebibytes.
 
 Depois, crie um dispositivo de nó, agora podemos montar/usar nosso container:
 
@@ -141,7 +144,7 @@ Depois, crie um dispositivo de nó, agora podemos montar/usar nosso container:
 
 ```
 
-**Nota:** Se você receber um erro `/dev/loop0: No such file or directory`, você precisa carregar o módulo do kernel `modprobe loop`. Nestes dias (kernel 3.2) dispositivos de loop são criados em demanda. Solicite um novo com `# losetup -f`.
+**Nota:** Se você receber um erro `/dev/loop0: No such file or directory`, você precisa carregar o módulo do kernel `modprobe loop` comoo superusuário. Nestes dias (kernel 3.2) dispositivos de loop são criados em demanda. Solicite um novo com `losetup -f` como superusuário.
 
 A partir de agora, o procedimento é o mesmo que o especificado em [#Partição](#Partição), exceto pelo fato que o container já está com dados aleatórios e não será necessário apagar com segurança.
 

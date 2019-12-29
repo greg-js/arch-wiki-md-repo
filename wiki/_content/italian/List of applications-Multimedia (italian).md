@@ -319,7 +319,7 @@ I programmi Screencast consentono di creare un video del vostro desktop o di sin
 
 *   **[RecordMyDesktop](https://en.wikipedia.org/wiki/RecordMyDesktop "wikipedia:RecordMyDesktop")** — Utility di facile utilizzo che registra il desktop in formato ogg/Theora. Sono disponibili front-end in GTK e Qt.
 
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://aur.archlinux.org/packages/gtk-recordmydesktop/) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
 
 *   **simplescreenrecorder** — Programma per la registrazione dello schermo ricco di funzionalità, che supporta X11 e OpenGL.
 

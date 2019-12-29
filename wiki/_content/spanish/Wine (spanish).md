@@ -2,21 +2,25 @@
 
 **Advertencia:** SI su usuario puede acceder algun archivo o recurso, programas que sean ejecutados con Wine también tienen acceso. Consulte [Wine#Running Wine under a separate user account](/index.php/Wine#Running_Wine_under_a_separate_user_account "Wine") y [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security") para precauciones posibles.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
 *   [3 Fuentes](#Fuentes)
-*   [4 Submenú](#Submen.C3.BA)
-    *   [4.1 Crear entrada en el menú](#Crear_entrada_en_el_men.C3.BA)
-    *   [4.2 Arreglar el menú en KDE 4](#Arreglar_el_men.C3.BA_en_KDE_4)
-*   [5 Usando wine para ejecutar binarios de Win16 / Win32](#Usando_wine_para_ejecutar_binarios_de_Win16_.2F_Win32)
+*   [4 Submenú](#Submenú)
+    *   [4.1 Crear entrada en el menú](#Crear_entrada_en_el_menú)
+    *   [4.2 Arreglar el menú en KDE 4](#Arreglar_el_menú_en_KDE_4)
+*   [5 Usando wine para ejecutar binarios de Win16 / Win32](#Usando_wine_para_ejecutar_binarios_de_Win16_/_Win32)
 *   [6 Utilidades para configurar Wine](#Utilidades_para_configurar_Wine)
     *   [6.1 WineTricks](#WineTricks)
     *   [6.2 Asistente WineTools](#Asistente_WineTools)
-    *   [6.3 Utilidad de Configuración de Wine Sidenet Wine](#Utilidad_de_Configuraci.C3.B3n_de_Wine_Sidenet_Wine)
+    *   [6.3 Utilidad de Configuración de Wine Sidenet Wine](#Utilidad_de_Configuración_de_Wine_Sidenet_Wine)
     *   [6.4 Wine-doors](#Wine-doors)
-*   [7 Alternativos a binarios Win16 / Win32](#Alternativos_a_binarios_Win16_.2F_Win32)
+*   [7 Alternativos a binarios Win16 / Win32](#Alternativos_a_binarios_Win16_/_Win32)
 *   [8 See also](#See_also)
 
 ## Instalación

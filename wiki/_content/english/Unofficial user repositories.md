@@ -86,20 +86,22 @@ If you want to create your own custom repository, follow [pacman/Tips and tricks
     *   [3.5 archlinuxfr](#archlinuxfr)
     *   [3.6 archlinuxgr](#archlinuxgr)
     *   [3.7 archlinuxgr-kde4](#archlinuxgr-kde4)
-    *   [3.8 craftdestiny](#craftdestiny)
-    *   [3.9 dx37essentials](#dx37essentials)
-    *   [3.10 heftig](#heftig)
-    *   [3.11 jkanetwork](#jkanetwork)
-    *   [3.12 kodi-devel-prebuilt](#kodi-devel-prebuilt)
-    *   [3.13 mesa-git](#mesa-git)
-    *   [3.14 Mountain](#Mountain)
-    *   [3.15 oracle](#oracle)
-    *   [3.16 ownstuff](#ownstuff)
-    *   [3.17 pantheon](#pantheon)
-    *   [3.18 pietma](#pietma)
-    *   [3.19 pnsft-pur](#pnsft-pur)
-    *   [3.20 titanium](#titanium)
-    *   [3.21 userrepository](#userrepository)
+    *   [3.8 aur-av-bin](#aur-av-bin)
+    *   [3.9 craftdestiny](#craftdestiny)
+    *   [3.10 dx37essentials](#dx37essentials)
+    *   [3.11 heftig](#heftig)
+    *   [3.12 jkanetwork](#jkanetwork)
+    *   [3.13 kodi-devel-prebuilt](#kodi-devel-prebuilt)
+    *   [3.14 mesa-git](#mesa-git)
+    *   [3.15 Mountain](#Mountain)
+    *   [3.16 oracle](#oracle)
+    *   [3.17 ownstuff](#ownstuff)
+    *   [3.18 pantheon](#pantheon)
+    *   [3.19 pietma](#pietma)
+    *   [3.20 pnsft-pur](#pnsft-pur)
+    *   [3.21 stx4](#stx4)
+    *   [3.22 titanium](#titanium)
+    *   [3.23 userrepository](#userrepository)
 
 ## Adding your repository to this page
 
@@ -973,6 +975,19 @@ Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
 
 ```
 
+### aur-av-bin
+
+*   **Maintainer:** [milkii](https://aur.archlinux.org/account/milk/) (ping me on Freenode)
+*   **Description:** Precompiled Arch Linux binary packages of mostly A/V related software from the AUR.
+*   **Upstream page:** [https://github.com/mxmilkb/aur-av-bin](https://github.com/mxmilkb/aur-av-bin)
+
+```
+[aur-av-bin]
+SigLevel = PackageOptional
+Server = https://github.com/mxmilkb/aur-av-bin/releases/download/repository
+
+```
+
 ### craftdestiny
 
 *   **Maintainer:** [LinuxVieLoisir](https://craftdestiny.ovh)
@@ -1120,6 +1135,23 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 ```
 [pnsft-pur]
 Server = https://osdn.net/projects/ponsfoot-aur/storage/pur/x86_64/
+
+```
+
+### stx4
+
+*   **Maintainer:** StarterX4 <starterx4[at]gmail.com>
+*   **Description:** Any – some fonts and fakepkgs; x86_64 – archived yet might useful packages (like PacmanXG4) and some AUR soft (like OpenBoard).
+*   **Upstream Page:** [https://keybase.pub/starterx4/repos/arch/](https://keybase.pub/starterx4/repos/arch/)
+
+```
+[stx4-any]
+SigLevel = Never
+Server = https://starterx4.keybase.pub/repos/arch/any/stx4
+
+[stx4-x86_64]
+SigLevel = Never
+Server = https://starterx4.keybase.pub/repos/arch/x86_64/stx4
 
 ```
 

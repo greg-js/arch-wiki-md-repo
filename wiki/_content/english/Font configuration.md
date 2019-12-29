@@ -590,7 +590,7 @@ In this example, hinting is set to "grayscale".
 
 ### Incorrect hinting in GTK applications
 
-In some desktop environments, especially outside [GNOME](/index.php/GNOME "GNOME") and [Plasma](/index.php/Plasma "Plasma"), some GTK applications could not read font configuration properly. In order to solve this issue, install [xsettingsd](https://www.archlinux.org/packages/?name=xsettingsd) or [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) and execute it at every system startup. See also [xsettingsd wiki](https://github.com/derat/xsettingsd/wiki/Settings) for more information. It can be configured with the following common configuration:
+In some desktop environments, especially outside [GNOME](/index.php/GNOME "GNOME") and [Plasma](/index.php/Plasma "Plasma"), some GTK applications could not read font configuration properly. In order to solve this issue, install [xsettingsd](https://www.archlinux.org/packages/?name=xsettingsd) or [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) and execute it at every system startup. See also [Xsettingsd](/index.php/Xsettingsd "Xsettingsd") and [xsettingsd wiki](https://github.com/derat/xsettingsd/wiki/Settings) for more information. It can be configured with the following common configuration:
 
  `~/.xsettingsd` 
 ```

@@ -38,7 +38,7 @@ Related articles
 
 ## Configuration
 
-MPD is able to run in [#Per-user configuration](#Per-user_configuration) or [#System-wide configuration](#System-wide_configuration) mode (settings apply to all users). Also it is possible to run multiple instances of MPD in a [#Multi-MPD setup](#Multi-MPD_setup). The way of setting up MPD depends on the way it is intended to be used: a local per-user configuration is easier to setup and may prove more adapted on a desktop system.
+MPD is able to run in [#Per-user configuration](#Per-user_configuration) or [#System-wide configuration](#System-wide_configuration) mode (settings apply to all users). Also it is possible to run multiple instances of MPD in a [#Multi-MPD setup](#Multi-MPD_setup). The way of setting up MPD depends on the way it is intended to be used: a local per-user configuration is easier to setup and may prove more adapted on a desktop system. The system-wide setup might be better suited for a always-on audio server with multiple users but a shared MPD instance.
 
 In order for MPD to be able to playback audio, [ALSA](/index.php/ALSA "ALSA"), optionally with [PulseAudio](/index.php/PulseAudio "PulseAudio"), must be setup and working. The [#Audio configuration](#Audio_configuration) section thereafter describes the parameters needed for *ALSA* or *PulseAudio*.
 
@@ -65,7 +65,7 @@ MPD can be configured per-user. Running it as a normal user has the benefits of:
 
 #### Configure the location of files and directories
 
-In user mode, the configuration is read from `$XDG_CONFIG_HOME/mpd/mpd.conf`. We will assume here `$XDG_CONFIG_HOME` equals `~/.config` which is the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+In user mode, the configuration is read from `$XDG_CONFIG_HOME/mpd/mpd.conf`. We will assume here `$XDG_CONFIG_HOME` equals the [default](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) of `~/.config`.
 
 To build the user configuration, the [MPD configuration example](https://raw.githubusercontent.com/MusicPlayerDaemon/MPD/master/doc/mpdconf.example) included in the package is a good starting point, copy it using the following lines:
 
@@ -296,7 +296,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 	[http://ario-player.sourceforge.net/](http://ario-player.sourceforge.net/) || [ario](https://www.archlinux.org/packages/?name=ario)
 
-*   **Cantata** — High-feature, Qt4, Qt5 or KDE client for MPD with very configurable interface.
+*   **Cantata** — High-feature, Qt5 client for MPD with very configurable interface.
 
 	[https://github.com/CDrummond/cantata](https://github.com/CDrummond/cantata) || [cantata](https://www.archlinux.org/packages/?name=cantata)
 
@@ -314,7 +314,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 *   **QMPDClient** — Qt4 GUI client.
 
-	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://aur.archlinux.org/packages/qmpdclient/)
+	[http://bitcheese.net/QMPDClient/](http://bitcheese.net/QMPDClient/) || [qmpdclient](https://aur.archlinux.org/packages/qmpdclient/)
 
 *   **Quimup** — Simple Qt5 frontend for MPD written in C++.
 
@@ -330,7 +330,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 *   **Sonata** — Elegant Python GTK client.
 
-	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
+	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://aur.archlinux.org/packages/sonata/)
 
 *   **Xfce MPD Panel Plugin** — MPD plugin for [Xfce](/index.php/Xfce "Xfce")4 panel.
 

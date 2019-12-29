@@ -368,6 +368,6 @@ Partition table entries are not in disk order.
 *   [Understanding Disk Drive Terminology](https://thestarman.pcministry.com/asm/mbr/DiskTerms.htm)
 *   [What is a Master Boot Record (MBR)?](https://kb.iu.edu/d/aijw)
 *   Rod Smith's page on [What's a GPT?](https://www.rodsbooks.com/gdisk/whatsgpt.html) and [Booting OSes from GPT](https://rodsbooks.com/gdisk/booting.html)
-*   [Make the most of large drives with GPT and Linux - IBM Developer Works](https://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
+*   [Make the most of large drives with GPT and Linux - IBM Developer](https://developer.ibm.com/tutorials/l-gpt/)
 *   [Microsoft's Windows and GPT FAQ](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq)
 *   [Partition Alignment](https://www.thomas-krenn.com/en/wiki/Partition_Alignment) (with examples)

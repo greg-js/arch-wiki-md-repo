@@ -11,6 +11,7 @@
     *   [4.1 OpenSSL 1.0 setup](#OpenSSL_1.0_setup)
     *   [4.2 Adobe Air setup](#Adobe_Air_setup)
     *   [4.3 Steam Link](#Steam_Link)
+    *   [4.4 Squares or invisible symbols, special characters and cyrillic letters in Source-based games](#Squares_or_invisible_symbols,_special_characters_and_cyrillic_letters_in_Source-based_games)
 *   [5 Games](#Games)
     *   [5.1 7 Days To Die](#7_Days_To_Die)
     *   [5.2 Alien Isolation](#Alien_Isolation)
@@ -278,6 +279,7 @@
         *   [5.124.2 Loading screen freeze](#Loading_screen_freeze)
         *   [5.124.3 No audio](#No_audio_4)
         *   [5.124.4 Slow loading textures](#Slow_loading_textures)
+        *   [5.124.5 "Invalid color format" Error at loading screen on integrated Intel Atom/BayTrail HD Graphics](#"Invalid_color_format"_Error_at_loading_screen_on_integrated_Intel_Atom/BayTrail_HD_Graphics)
     *   [5.125 Terraria](#Terraria)
         *   [5.125.1 Input Issues](#Input_Issues)
     *   [5.126 This War of Mine](#This_War_of_Mine)
@@ -382,6 +384,43 @@ WaylandEnable=false
 ```
 
 And reboot before trying again.
+
+### Squares or invisible symbols, special characters and cyrillic letters in Source-based games
+
+Any special character may produce a square or an empty space mark in the game, main menu and game console. In practice, any characters other than latin ones are not working. The problem is that `Bitstream Vera Sans` is configured as the system primary default font for latin sans-serif fonts.
+
+First, make sure that per-user font customization files are enabled, i.e. the following file exist:
+
+```
+/etc/fonts/conf.d/50-user.conf
+
+```
+
+Next, create `fonts.conf` file in your fontconfig directory with the following content or if the file already exist, append only the alias section to the file:
+
+ `~/.config/fontconfig/fonts.conf` 
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+ <alias>
+  <family>sans-serif</family>
+   <prefer>
+    <family>DejaVu Sans</family>
+    <family>Verdana</family>
+    <family>Arial</family>
+    <family>Albany AMT</family>
+    <family>Luxi Sans</family>
+    <family>Nimbus Sans L</family>
+    <family>Nimbus Sans</family>
+    <family>Helvetica</family>
+    <family>Lucida Sans Unicode</family>
+    <family>BPG Glaho International</family> 
+    <family>Tahoma</family> 
+   </prefer>
+ </alias>
+</fontconfig>
+```
 
 ## Games
 
@@ -964,40 +1003,7 @@ Set `PRIMUS_SYNC=2`in the launch options.
 
 #### Invisible symbols, special characters and cyrillic letters
 
-Any special character will produce an empty space mark in the game, main menu and game console. In practice, any characters other than latin ones are not working. The problem is that `Bitstream Vera Sans` is configured as the system primary default font for latin sans-serif fonts.
-
-First, make sure that per-user font customization files are enabled, i.e. the following file exist:
-
-```
-/etc/fonts/conf.d/50-user.conf
-
-```
-
-Next, create `fonts.conf` file in your fontconfig directory with the following content or if the file already exist, append only the alias section to the file:
-
- `~/.config/fontconfig/fonts.conf` 
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
- <alias>
-  <family>sans-serif</family>
-   <prefer>
-    <family>DejaVu Sans</family>
-    <family>Verdana</family>
-    <family>Arial</family>
-    <family>Albany AMT</family>
-    <family>Luxi Sans</family>
-    <family>Nimbus Sans L</family>
-    <family>Nimbus Sans</family>
-    <family>Helvetica</family>
-    <family>Lucida Sans Unicode</family>
-    <family>BPG Glaho International</family> 
-    <family>Tahoma</family> 
-   </prefer>
- </alias>
-</fontconfig>
-```
+Check [#Squares or invisible symbols, special characters and cyrillic letters in Source-based games](#Squares_or_invisible_symbols,_special_characters_and_cyrillic_letters_in_Source-based_games)
 
 ### Counter-Strike: Global Offensive (CS:GO)
 
@@ -1960,7 +1966,11 @@ If this is the case, you'll find some processes running in background:
 
 `ps -ef|grep paradoxlauncher`
 
-Kill them all, then modify the game startup options to skip it as follows:
+Kill them all, then modify the game startup options as follows:
+
+`LD_PRELOAD=/usr/lib64/libc.so %command%`
+
+Eventually, if the above option hasn't worked, an option to skip it:
 
 `./PrisonArchitect %command%`
 
@@ -2333,6 +2343,12 @@ If it still does not work, you may also need to set the environment variable AUD
 #### Slow loading textures
 
 If you are using Chris' FPS Configs or any other FPS config, you may have set `mat_picmip` to `2`. This spawns multiple threads for texture loading, which may cause more jittering and lag on Linux, especially on alternative kernels. Try setting it to `-1`, the default.
+
+#### "Invalid color format" Error at loading screen on integrated Intel Atom/BayTrail HD Graphics
+
+Add the following to the game startup options: `-force_vendor_id 0x10DE -force_device_id 0x1180`
+
+These options deceive the game engine that we're having a Nvidia GPU, not Intel/AMD.
 
 ### Terraria
 

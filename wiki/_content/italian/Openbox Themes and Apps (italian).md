@@ -424,7 +424,7 @@ Controllo del volume per il vassoio di sistema [[5]](https://aur.archlinux.org/p
 
 #### volwheel
 
-Icona del vassoio per modificare il volume con il mouse [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+Icona del vassoio per modificare il volume con il mouse [volwheel](https://aur.archlinux.org/packages/volwheel/)
 
 ### Switcher per il layout della tastiera
 

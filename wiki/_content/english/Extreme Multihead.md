@@ -10,7 +10,11 @@ It is also possible to have these multiple monitors work together as an extended
 
 This document describes how to configure such a system.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Experimenting with multiple monitors](#Experimenting_with_multiple_monitors)
     *   [1.1 Loading configuration at X start](#Loading_configuration_at_X_start)
@@ -183,7 +187,7 @@ At this point, this display may be further configured either through DE tools or
 To share the display using X11vnc, run:
 
 ```
-$ x11vnc -display :0 -clip <resolution>+<offset> -multiptr -forever  
+$ x11vnc -display :0 -clip <resolution>+<offset> -multiptr -forever  
 
 ```
 

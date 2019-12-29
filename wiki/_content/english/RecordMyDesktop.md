@@ -2,20 +2,24 @@
 
 recordMyDesktop is a CLI tool but there are two GUI interfaces available, **gtk-recordmydesktop** and **qt-recordmydesktop**.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Audio record is lagging](#Audio_record_is_lagging)
     *   [3.2 Audio record lags and is out of sync](#Audio_record_lags_and_is_out_of_sync)
-    *   [3.3 Audio record is distorted (slower/graver)](#Audio_record_is_distorted_.28slower.2Fgraver.29)
+    *   [3.3 Audio record is distorted (slower/graver)](#Audio_record_is_distorted_(slower/graver))
     *   [3.4 No sound with PulseAudio](#No_sound_with_PulseAudio)
 *   [4 External Links](#External_Links)
 
 ## Installation
 
-The packages [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) and [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/) can be found in [community].
+The packages [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), [gtk-recordmydesktop](https://aur.archlinux.org/packages/gtk-recordmydesktop/) and [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/) can be found in [community].
 
 ## Usage
 

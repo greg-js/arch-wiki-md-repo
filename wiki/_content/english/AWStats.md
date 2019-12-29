@@ -233,7 +233,7 @@ With this you can access your awstats page simply by typing **"http://your_domai
 
 ## Caddy
 
-If your web server software is [caddy](https://aur.archlinux.org/packages/caddy/), install [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap) to get FastCGI working, then change your Caddyfile using the template below as appropriate for your configuration.
+If your web server software is [caddy](https://www.archlinux.org/packages/?name=caddy), install [fcgiwrap](https://www.archlinux.org/packages/?name=fcgiwrap) to get FastCGI working, then change your Caddyfile using the template below as appropriate for your configuration.
 
 1\. Install awstats as described above. It is necessary to get the folders and files owned by user "http" and group "http" with the following command:
 

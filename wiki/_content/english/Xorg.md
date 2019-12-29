@@ -118,7 +118,7 @@ In order for video acceleration to work, and often to expose all the modes that 
 
 **Note:**
 
-*   For NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") or [Bumblebee](/index.php/Bumblebee "Bumblebee").
+*   For NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
 *   For Intel graphics on 4th generation and above, see [Intel graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") for available drivers.
 
 Other video drivers can be found in the [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) group.

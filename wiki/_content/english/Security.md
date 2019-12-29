@@ -22,7 +22,7 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [2.3 Password hashes](#Password_hashes)
     *   [2.4 Enforcing strong passwords using pam_cracklib](#Enforcing_strong_passwords_using_pam_cracklib)
 *   [3 Memory](#Memory)
-    *   [3.1 Hardened Malloc](#Hardened_Malloc)
+    *   [3.1 Hardened malloc](#Hardened_malloc)
 *   [4 Storage](#Storage)
     *   [4.1 Disk encryption](#Disk_encryption)
     *   [4.2 File systems](#File_systems)
@@ -51,7 +51,7 @@ This article contains recommendations and best practices for [hardening](https:/
             *   [8.1.1.2 32-bit processes (on an x86_64 kernel)](#32-bit_processes_(on_an_x86_64_kernel))
     *   [8.2 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
     *   [8.3 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
-    *   [8.4 BPF Hardening](#BPF_Hardening)
+    *   [8.4 BPF hardening](#BPF_hardening)
     *   [8.5 ptrace scope](#ptrace_scope)
         *   [8.5.1 Examples of broken functionality](#Examples_of_broken_functionality)
     *   [8.6 hidepid](#hidepid)
@@ -165,7 +165,7 @@ You can refer to the [pam_cracklib(8)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 
 ## Memory
 
-### Hardened Malloc
+### Hardened malloc
 
 [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) ([hardened_malloc](https://aur.archlinux.org/packages/hardened_malloc/)) is a hardened replacement for glibc's malloc(). The project was originally developed for integration into Android's Bionic and musl by Daniel Micay, of GrapheneOS, but he has also built in support for standard Linux distributions on the x86_64 architecture.
 
@@ -494,13 +494,13 @@ Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/
 
  `/etc/sysctl.d/51-kptr-restrict.conf`  `kernel.kptr_restrict = 1` 
 
-### BPF Hardening
+### BPF hardening
 
 BPF is a system used to load and execute bytecode within the kernel dynamically during runtime. It is used in a number of Linux kernel subsystems such as networking (e.g. XDP, tc), tracing (e.g. kprobes, uprobes, tracepoints) and security (e.g. seccomp). It is also useful for advanced network security, performance profiling and dynamic tracing.
 
 BPF was originally an acronym of "Berkeley Packet Filter" since the original classic BPF was used for packet capture tools for BSD. This eventually evolved into Extended BPF (eBPF), which was shortly afterwards renamed to just BPF (not an acronym). BPF should not be confused with packet filtering tools like iptables or netfilter, although BPF can be used to implement packet filtering tools.
 
-BPF code may be either interpreted or compiled using a Just-In-Time (JIT) compiler. The Arch kernel is built with `CONFIG_BPF_JIT_ALWAYS_ON` which disables the BPF interpreter and forces all BPF to use JIT compilation. This makes it harder for an attacker to use BPF to escalate attacks that exploit SPECTRE-style vulnerabilities. See [the kernel patch which introduced `CONFIG_BPF_JIT_ALWAYS_ON`](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=290af86629b25ffd1ed6232c4e9107da031705cb) for more details.
+BPF code may be either interpreted or compiled using a Just-In-Time (JIT) compiler. The Arch kernel is built with `CONFIG_BPF_JIT_ALWAYS_ON` which disables the BPF interpreter and forces all BPF to use JIT compilation. This makes it harder for an attacker to use BPF to escalate attacks that exploit SPECTRE-style vulnerabilities. See [the kernel patch which introduced CONFIG_BPF_JIT_ALWAYS_ON](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=290af86629b25ffd1ed6232c4e9107da031705cb) for more details.
 
 The kernel includes a hardening feature for JIT-compiled BPF which can mitigate some types of JIT spraying attacks at the cost of performance and the ability to trace and debug many BPF programs. It may be enabled by setting `net.core.bpf_jit_harden` to `1` (to enable hardening of unprivileged code) or `2` (to enable hardening of all code).
 
@@ -566,11 +566,11 @@ Since Linux 5.4 the kernel has gained an optional [lockdown feature](https://git
 To enable kernel lockdown at runtime, run:
 
 ```
-# echo *lockdown_mode* > /sys/kernel/security/lockdown
+# echo *mode* > /sys/kernel/security/lockdown
 
 ```
 
-To enable kernel lockdown on boot, use the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `lockdown=*lockdown_mode*`.
+To enable kernel lockdown on boot, use the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `lockdown=*mode*`.
 
 **Note:** Kernel lockdown cannot be disabled at runtime.
 

@@ -120,16 +120,7 @@ ip -4 a show dev eth0
 
 ```
 
-should return non-empty output with assigned ip address.
-
-If it is not empty, please proceed to step 7, otherwise you are facing the issue described in [#No network in container](#No_network_in_container) troubleshooting section. To temporarily configure network and enable internet access for current session run following command:
-
-```
-sudo dhcpcd eth0
-
-```
-
-Now follow the instructions from the [#No network in container](#No_network_in_container) troubleshooting section.
+should return non-empty output with assigned ip address. If it is not empty, please proceed to step 7, otherwise you are facing the issue described in [#No network in container](#No_network_in_container) troubleshooting section - follow the instructions listed there to address the issue.
 
 7\. Install Crostini container tools, Wayland for GUI apps, XWayland for X11 apps.
 
@@ -194,11 +185,12 @@ should report ip address assigned for container
 As was reported by multiple sources, systemd-networkd and systemd-resolved services in systemd-244.1 are not working properly for unprivileged LXC containers, which ends up in missing network connectivity inside the Crostini container. Proposed solution is completely disable systemd-networkd/systemd-resolved and perform network configuration by [dhclient](/index.php/Dhclient "Dhclient") service instead:
 
 ```
+sudo dhcpcd eth0
+sudo pacman -S dhclient
 sudo systemctl disable systemd-networkd
 sudo systemctl disable systemd-resolved
 sudo unlink /etc/resolv.conf
 sudo touch /etc/resolv.conf
-sudo pacman -S dhclient
 sudo systemctl enable dhclient@eth0
 sudo systemctl start dhclient@eth0
 
@@ -233,7 +225,7 @@ ao=alsa
 
 ### GPU acceleration
 
-Make sure GPU acceleration is enabled for Crostini using chrome://flags/#crostini-gpu-support flag. On Google Pixelbook GPU acceleration works with Arch out-of-the-box starting Chrome OS 77:
+On Google Pixelbook GPU acceleration works with Arch out-of-the-box starting Chrome OS 77\. Also no flags need to be enabled on recent released of ChromeOS:
 
  `$ glxinfo -B` 
 ```

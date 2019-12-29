@@ -51,7 +51,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 **Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager "NetworkManager") both have native support for setting up WireGuard interfaces, they only require the kernel module.
 
-*   For for details on systemd-networkd, see [#Using systemd-networkd](#Using_systemd-networkd).
+*   For details on systemd-networkd, see [#Using systemd-networkd](#Using_systemd-networkd).
 *   For NetworkManager, read the [WireGuard in NetworkManager blog post](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
 
 ## Usage

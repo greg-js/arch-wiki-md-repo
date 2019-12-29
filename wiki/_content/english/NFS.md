@@ -331,7 +331,7 @@ To make systemd aware of the changes to fstab, [reload](/index.php/Reload "Reloa
 *   The `users` mount option would allow user mounts, but be aware it implies further options as `noexec` for example.
 *   The `x-systemd.idle-timeout=1min` option will unmount the NFS share automatically after 1 minute of non-use. Good for laptops which might suddenly disconnect from the network.
 *   If shutdown/reboot holds too long because of NFS, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service` to ensure that NetworkManager is not exited before the NFS volumes are unmounted. Also try to add the `x-systemd.requires=network-online.target` mount option if shutdown takes too long.
-*   Using mount options as `noatime`, `nodiratime`, `noac`, `nocto` may be used to increase NFS performance.
+*   Mount options as `nocto`, `local_lock=all` may be used to increase NFS performance.
 
 #### As systemd unit
 

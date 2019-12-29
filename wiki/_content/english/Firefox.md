@@ -40,25 +40,27 @@ Related articles
     *   [5.8 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 All Firefox extensions disabled (May 2019)](#All_Firefox_extensions_disabled_(May_2019))
-    *   [6.2 Firefox startup takes very long](#Firefox_startup_takes_very_long)
-    *   [6.3 Font troubleshooting](#Font_troubleshooting)
-    *   [6.4 Setting an email client](#Setting_an_email_client)
-    *   [6.5 File association](#File_association)
-    *   [6.6 Firefox keeps creating ~/Desktop even when this is not desired](#Firefox_keeps_creating_~/Desktop_even_when_this_is_not_desired)
-    *   [6.7 Make plugins respect blocked pop-ups](#Make_plugins_respect_blocked_pop-ups)
-    *   [6.8 Middle-click behavior](#Middle-click_behavior)
-    *   [6.9 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_'Back'_button)
-    *   [6.10 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
-    *   [6.11 Cannot enter/leave fullscreen](#Cannot_enter/leave_fullscreen)
-    *   [6.12 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
-    *   [6.13 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
-    *   [6.14 JavaScript context menu does not appear on some sites](#JavaScript_context_menu_does_not_appear_on_some_sites)
-    *   [6.15 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
-    *   [6.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
-    *   [6.17 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [6.18 Tearing when scrolling](#Tearing_when_scrolling)
-    *   [6.19 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
-    *   [6.20 Cannot login with my Chinese account](#Cannot_login_with_my_Chinese_account)
+    *   [6.2 Extension X does not work on some Mozilla owned domains](#Extension_X_does_not_work_on_some_Mozilla_owned_domains)
+    *   [6.3 Firefox startup takes very long](#Firefox_startup_takes_very_long)
+    *   [6.4 Font troubleshooting](#Font_troubleshooting)
+    *   [6.5 Setting an email client](#Setting_an_email_client)
+    *   [6.6 File association](#File_association)
+    *   [6.7 Firefox keeps creating ~/Desktop even when this is not desired](#Firefox_keeps_creating_~/Desktop_even_when_this_is_not_desired)
+    *   [6.8 Make plugins respect blocked pop-ups](#Make_plugins_respect_blocked_pop-ups)
+    *   [6.9 Changes to userChrome.css and userContent.css are ignored](#Changes_to_userChrome.css_and_userContent.css_are_ignored)
+    *   [6.10 Middle-click behavior](#Middle-click_behavior)
+    *   [6.11 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_'Back'_button)
+    *   [6.12 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
+    *   [6.13 Cannot enter/leave fullscreen](#Cannot_enter/leave_fullscreen)
+    *   [6.14 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
+    *   [6.15 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
+    *   [6.16 JavaScript context menu does not appear on some sites](#JavaScript_context_menu_does_not_appear_on_some_sites)
+    *   [6.17 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
+    *   [6.18 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
+    *   [6.19 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
+    *   [6.20 Tearing when scrolling](#Tearing_when_scrolling)
+    *   [6.21 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
+    *   [6.22 Cannot login with my Chinese account](#Cannot_login_with_my_Chinese_account)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -335,6 +337,10 @@ Between 3–5 May 2019, all Firefox addons (web extensions, themes, search engin
 
 For most users, the issue has been fixed in Firefox 66.0.4 and Firefox ESR 60.6.2\. The addons should be automatically re-enabled as soon as the patched version of Firefox is installed. Certain users, such as those who have set a Master Password, might require extra steps. Please see Firefox's [official support page](https://support.mozilla.org/en-US/kb/add-ons-disabled-or-fail-to-install-firefox) for more information.
 
+### Extension X does not work on some Mozilla owned domains
+
+By default extensions will not affect pages designated by `extensions.webextensions.restrictedDomains`. If this is not desired, this field can be cleared (special pages, like about:* and will not be affected).
+
 ### Firefox startup takes very long
 
 If Firefox takes much longer to start up than other browsers, it may be due to lacking configuration of the localhost in `/etc/hosts`. See [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") on how to set it up.
@@ -374,6 +380,10 @@ The possible values are:
 *   `**1**`: Allow popups, but limit them to `dom.popup_maximum`.
 *   `**2**`: Block popups from plugins.
 *   `**3**`: Block popups from plugins, even on whitelisted sites.
+
+### Changes to userChrome.css and userContent.css are ignored
+
+Set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true` in `about:config`
 
 ### Middle-click behavior
 
@@ -481,7 +491,8 @@ Firefox provides a local service for Chinese users, with a local account totally
 *   [Official website](https://www.mozilla.org/firefox/)
 *   [Mozilla Foundation](https://www.mozilla.org/)
 *   [MozillaWiki:Firefox](https://wiki.mozilla.org/Firefox "mozillawiki:Firefox")
+*   [Wikipedia:Mozilla Firefox](https://en.wikipedia.org/wiki/Mozilla_Firefox "wikipedia:Mozilla Firefox")
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/firefox/themes/)
-*   [Wikipedia:Mozilla Firefox](https://en.wikipedia.org/wiki/Mozilla_Firefox "wikipedia:Mozilla Firefox")
+*   [Mozilla's FTP](http://ftp.mozilla.org/pub/firefox/releases/)
 *   [mozillaZine](http://forums.mozillazine.org/) unofficial forums

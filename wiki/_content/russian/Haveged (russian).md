@@ -2,11 +2,11 @@
 
 *   [Rng-tools](/index.php/Rng-tools "Rng-tools")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Haveged](/index.php/Haveged "Haveged"). Дата последней синхронизации: 6 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Haveged&diff=0&oldid=558163).
+**Состояние перевода:** На этой странице представлен перевод статьи [Haveged](/index.php/Haveged "Haveged"). Дата последней синхронизации: 27 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Haveged&diff=0&oldid=591013).
 
-[haveged](http://www.issihosts.com/haveged/) — проект, разрабатывающий простой в использовании и непредсказуемый [генератор случайных чисел](/index.php/Random_number_generator "Random number generator"), основанный на алгоритме HAVEGE. Haveged был создан для предотвращения низкого уровня энтропии в устройстве Linux для генерации случайных чисел, что может случиться при некоторых рабочих нагрузках, особенно на headless-серверах.
+[haveged](http://www.issihosts.com/haveged/) — проект, разрабатывающий простой в использовании и непредсказуемый [генератор случайных чисел](/index.php/Random_number_generator "Random number generator") (англ.), основанный на алгоритме HAVEGE. Haveged был создан для предотвращения низкого уровня энтропии в устройстве Linux для генерации случайных чисел, что может произойти при некоторых рабочих нагрузках, особенно на headless-серверах.
 
-**Важно:** Качество сгенерированной энтропии не гарантируется и иногда оспаривается (см. [LCE: Do not play dice with random numbers](https://lwn.net/Articles/525459/) и [Is it appropriate to use haveged as a source of entropy on virtual machines?](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines)). Используйте haveged на свой риск или используйте его в паре с аппаратным генератором случайных чисел с помощью [rng-tools](https://www.archlinux.org/packages/?name=rng-tools) (см. секцию [#Альтернативы](#Альтернативы)).
+**Важно:** Качество сгенерированной энтропии не гарантируется и иногда оспаривается (см. статьи [LCE: Do not play dice with random numbers](https://lwn.net/Articles/525459/) (англ.) и [Is it appropriate to use haveged as a source of entropy on virtual machines?](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines) (англ.)). Используйте haveged на свой риск или используйте его в паре с аппаратным генератором случайных чисел с помощью [rng-tools](https://www.archlinux.org/packages/?name=rng-tools) (см. секцию [#Альтернативы](#Альтернативы)).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -35,7 +35,7 @@
 
 ```
 
-Эта команда покажет количество собранной на сервере энтропии. Если её довольно мало (<1000), то, вероятно, стоит установить haveged. Иначе криптографические приложения не будут работать до тех пор, пока не появится достаточно энтропии. К примеру, может снизится скорость беспроводного соединения в случае, если сервер используется в качестве [программной точки доступа](/index.php/Software_access_point_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Software access point (Русский)").
+Эта команда покажет количество собранной на сервере энтропии. Если её довольно мало (<1000), то, вероятно, стоит установить haveged. Иначе криптографические приложения будут [блокироваться](https://en.wikipedia.org/wiki/Blocking_(computing) (англ.) до тех пор, пока не появится достаточно энтропии. К примеру, может снизится скорость беспроводного соединения в случае, если сервер используется в качестве [программной точки доступа](/index.php/Software_access_point_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Software access point (Русский)").
 
 Воспользуйтесь этой командой снова, чтобы проверить, насколько haveged увеличил пул энтропии после установки.
 
@@ -45,11 +45,11 @@
 
 ## Виртуальные машины
 
-Как обсуждалось в [Is it appropriate to use haveged as a source of entropy on virtual machines?](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines), качество энтропии, генерируемой haveged, может быть спорным в виртуальной среде. Haveged полагается на инструкцию rdtsc, которая может быть виртуализирована, из-за чего понизится уровень энтропии. В некоторых гипервизорах есть возможность отключить виртуализацию rdtsc, что, в теории, позволит haveged более качественно генерировать энтропию.
+Как обсуждалось в [Is it appropriate to use haveged as a source of entropy on virtual machines?](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines)(англ.), качество энтропии, генерируемой haveged, может быть спорным в виртуальной среде. Haveged полагается на инструкцию rdtsc, которая может быть виртуализирована, из-за чего понизится уровень энтропии. В некоторых гипервизорах есть возможность отключить виртуализацию rdtsc, что, в теории, позволит haveged более качественно генерировать энтропию.
 
 Чтобы отключить виртуализацию инструкции rdtsc в VMware ESXi, добавьте параметр `monitor_control.virtual_rdtsc = "FALSE"` в конфигурационный файл .vmx виртуальной машины. VMware рекомендует использовать данный параметр в случаях измерений, для которых требуется надёжный источник реального времени в виртуальной машине. [[1]](http://www.vmware.com/files/pdf/Timekeeping-In-VirtualMachines.pdf)
 
 ## Смотрите также
 
-*   [Официальный веб-сайт](http://www.issihosts.com/haveged)
-*   [Статья DigitalOcean по настройке haveged](https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged)
+*   [Официальный веб-сайт](http://www.issihosts.com/haveged) (англ.)
+*   [Статья DigitalOcean по настройке haveged](https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged) (англ.)

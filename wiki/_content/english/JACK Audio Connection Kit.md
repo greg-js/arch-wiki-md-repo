@@ -22,11 +22,12 @@ From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Au
     *   [2.2 A shell-based example setup](#A_shell-based_example_setup)
         *   [2.2.1 Details of the shell-based example setup](#Details_of_the_shell-based_example_setup)
     *   [2.3 A GUI-based example setup](#A_GUI-based_example_setup)
-    *   [2.4 Playing nice with ALSA](#Playing_nice_with_ALSA)
-    *   [2.5 GStreamer](#GStreamer)
-    *   [2.6 PulseAudio](#PulseAudio)
-    *   [2.7 Firewire](#Firewire)
-    *   [2.8 Network / remote audio](#Network_/_remote_audio)
+    *   [2.4 An alternative GUI-based setup](#An_alternative_GUI-based_setup)
+    *   [2.5 Playing nice with ALSA](#Playing_nice_with_ALSA)
+    *   [2.6 GStreamer](#GStreamer)
+    *   [2.7 PulseAudio](#PulseAudio)
+    *   [2.8 Firewire](#Firewire)
+    *   [2.9 Network / remote audio](#Network_/_remote_audio)
 *   [3 MIDI](#MIDI)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#"Cannot_lock_down_memory_area_(Cannot_allocate_memory)"_message_on_startup)
@@ -192,6 +193,17 @@ This example setup utilizes a more GUI focused configuration and management of J
 *   Reboot.
 *   After logging in, you will see QjackCtl in your system tray. Left-click on it.
 *   Tweak settings in the QjackCtl GUI to lower latency. The Frame Size, Frame Buffer, and Bitrate settings all affect latency. Larger frame sizes lower latency, lower frame buffers lower latency, and higher bitrate settings lower latency, but all increase load on the sound card and your CPU. A Latency of about ~5ms is desirable for direct monitoring of instruments or microphones, as the latency begins to become perceptible at higher latencies.
+
+### An alternative GUI-based setup
+
+If you use JACK for demanding tasks , but every now and then, it's possible to suspend a running pulseaudio session with QjackCtl just when you're using it. On a virgin config, modify the "Server prefix" option in the "Settings" > "Advanced" submenu, so that it states :
+
+```
+   pasuspender -- jackd
+
+```
+
+The pulseaudio session should resume fine after you close QjackCtl. Tip courtesy of [this post](https://bbs.archlinux.org/viewtopic.php?pid=1163340#p1163340).
 
 ### Playing nice with ALSA
 

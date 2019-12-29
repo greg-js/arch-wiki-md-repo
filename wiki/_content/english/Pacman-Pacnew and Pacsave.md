@@ -110,6 +110,10 @@ You can use one of the following tools:
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
+*   **p3wm** — Three-way merge *.pacnew* files. It can automatically merge trivial changes. If conflicts happen, it will launch vimdiff, meld or kdiff3 to resolve them.
+
+	[https://github.com/5long/p3wm](https://github.com/5long/p3wm) || [p3wm](https://aur.archlinux.org/packages/p3wm/)
+
 *   **pacnew-auto** — Automatic `pacnew` merging using [git](https://www.archlinux.org/packages/?name=git) rebase.
 
 	[https://github.com/joanrieu/pacnew-auto](https://github.com/joanrieu/pacnew-auto) || [pacnew-auto-git](https://aur.archlinux.org/packages/pacnew-auto-git/)

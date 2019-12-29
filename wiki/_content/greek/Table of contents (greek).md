@@ -9,7 +9,7 @@
 | <small>3.</small> [Arch development](/index.php/Category:Arch_development_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Arch development (Ελληνικά)") <small>(1)</small> |
 | <small>4.</small> [Boot process](/index.php/Category:Boot_process_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Boot process (Ελληνικά)") <small>(2)</small> |
 | <small>4.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Boot loaders (Ελληνικά)") <small>(1)</small> |
-| <small>5.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Daemons and system services (Ελληνικά)") <small>(2)</small> |
+| <small>5.</small> [Daemons](/index.php/Category:Daemons_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Daemons (Ελληνικά)") <small>(2)</small> |
 | <small>6.</small> [Development](/index.php/Category:Development_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Development (Ελληνικά)") <small>(1)</small> |
 | <small>7.</small> [General](/index.php/Category:General_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:General (Ελληνικά)") <small>(1)</small> |
 | <small>8.</small> [Hardware](/index.php/Category:Hardware_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Hardware (Ελληνικά)") <small>(0)</small> |

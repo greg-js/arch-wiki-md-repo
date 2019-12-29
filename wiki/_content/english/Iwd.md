@@ -35,10 +35,11 @@ iwd can work in standalone mode or in combination with comprehensive network man
         *   [4.3.2 Select DNS manager](#Select_DNS_manager)
     *   [4.4 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
-    *   [5.2 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
-    *   [5.3 Wireless device is not renamed by udev](#Wireless_device_is_not_renamed_by_udev)
-    *   [5.4 WPA Enterprise connection with NetworkManager](#WPA_Enterprise_connection_with_NetworkManager)
+    *   [5.1 Verbose TLS debugging](#Verbose_TLS_debugging)
+    *   [5.2 Connect issues after reboot](#Connect_issues_after_reboot)
+    *   [5.3 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
+    *   [5.4 Wireless device is not renamed by udev](#Wireless_device_is_not_renamed_by_udev)
+    *   [5.5 WPA Enterprise connection with NetworkManager](#WPA_Enterprise_connection_with_NetworkManager)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -382,6 +383,18 @@ If you do not want to allow console user to modify the settings but allow readin
 **Tip:** Remove *<allow>* lines above to deny reading the status information as well.
 
 ## Troubleshooting
+
+### Verbose TLS debugging
+
+This can be useful, if you have trouble setting up MSCHAPv2 or TTLS. You can set the following environment variable via `systemctl edit iwd.service`:
+
+ `/etc/systemd/system/iwd.conf.d/override.conf` 
+```
+[Service]
+Environment=IWD_TLS_DEBUG=TRUE
+```
+
+Check the iwd logs afterwards via `journalctl -u iwd`
 
 ### Connect issues after reboot
 

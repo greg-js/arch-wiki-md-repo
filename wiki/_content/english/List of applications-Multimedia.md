@@ -1419,7 +1419,7 @@ See also [PulseAudio#Front-ends](/index.php/PulseAudio#Front-ends "PulseAudio").
 
 *   **VolWheel** — A little application which lets you control the sound volume easily through a tray icon you can scroll on.
 
-	[https://oliwer.net/b/volwheel.html](https://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+	[https://oliwer.net/b/volwheel.html](https://oliwer.net/b/volwheel.html) || [volwheel](https://aur.archlinux.org/packages/volwheel/)
 
 *   **Xfce ALSA Panel Plugin** — Simple ALSA volume control plugin for [Xfce](/index.php/Xfce "Xfce")4 panel.
 
@@ -1690,6 +1690,10 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 *   **[LiVES](https://en.wikipedia.org/wiki/LiVES "wikipedia:LiVES")** — Video editor and VJ (live performance) platform.
 
 	[http://lives-video.com/](http://lives-video.com/) || [lives](https://aur.archlinux.org/packages/lives/)
+
+*   **[MKVToolNix](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — A set of CLI tools with a GUI to create, alter and inspect Matroska (MKV, MKA) files.
+
+	[https://mkvtoolnix.download](https://mkvtoolnix.download) || [mkvtoolnix-cli](https://www.archlinux.org/packages/?name=mkvtoolnix-cli), [mkvtoolnix-gui](https://www.archlinux.org/packages/?name=mkvtoolnix-gui)
 
 *   **[Natron](https://en.wikipedia.org/wiki/Natron_(software) "wikipedia:Natron (software)")** — Open-source compositing software. Node-graph based. Similar in functionalities to Adobe After Effects and Nuke by The Foundry.
 

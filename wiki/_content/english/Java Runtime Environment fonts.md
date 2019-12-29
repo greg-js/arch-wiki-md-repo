@@ -30,7 +30,7 @@ TrueType fonts appear to be the best supported format for use with Java.
 
 ### Running an xsettings daemon
 
-Java tries to get the system defaults through xsettings. On [GNOME](/index.php/GNOME "GNOME") you don't have to do anything, `gnome-settings-daemon` is already running. Otherwise [xsettingsd](https://www.archlinux.org/packages/?name=xsettingsd) is a lightweight alternative.
+Java tries to get the system defaults through xsettings. On [GNOME](/index.php/GNOME "GNOME") you don't have to do anything, `gnome-settings-daemon` is already running. Otherwise [Xsettingsd](/index.php/Xsettingsd "Xsettingsd") is a lightweight alternative.
 
 ### Overriding the automatically picked up settings
 

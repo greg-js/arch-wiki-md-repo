@@ -167,6 +167,17 @@ Install packages:
 *   [libmicrodns](https://www.archlinux.org/packages/?name=libmicrodns) - VLC can find the chromecast device and it shows up in *Playback > Renderer* menu
 *   [protobuf](https://www.archlinux.org/packages/?name=protobuf) - enables streaming to the selected device in *Playback > Renderer* menu
 
+Then, edit the file `/etc/nsswitch.conf` and change the `hosts` line to include `mdns_minimal [NOTFOUND=return]` before `resolve` and `dns`:
+
+```
+hosts: ... **mdns_minimal [NOTFOUND=return]** resolve [!UNAVAIL=return] dns ...
+
+```
+
+**Note:** If you experience slowdowns in resolving `.local` hosts try to use `mdns4_minimal` instead of `mdns_minimal`.
+
+**Note:** Look towards [avahi](/index.php/Avahi "Avahi") for more information.
+
 ## Troubleshooting
 
 ### Video broken or other issue after upgrade

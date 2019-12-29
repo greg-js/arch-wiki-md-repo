@@ -7,7 +7,11 @@ Il sistema di monitoring del filesystem è usato per:
 *   Aggiornare automaticamente i menù di sistema quando nuove applicazioni vengono installate
 *   Aggiornare le finestre dei diversi filemanager quando il contenuto visualizzato varia
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione di FAM](#Installazione_di_FAM)
 *   [2 Configurazione](#Configurazione)

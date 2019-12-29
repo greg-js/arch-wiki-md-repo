@@ -306,7 +306,7 @@ Rasi 创建了一个脚本，该脚本可以创建合适的目录结构、配置
 
 *   **Sonata** — 一个用 Python 写的客户端，非常优雅。
 
-	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
+	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://aur.archlinux.org/packages/sonata/)
 
 *   **gmpc** — GTK2 写的 MPD 前端。被设计为轻量且易用，同时也对所有的 MPD 的特性提供完全访问。为用户提供几种不同的方法来浏览音乐。可以通过很多可获得的插件来扩展。
 

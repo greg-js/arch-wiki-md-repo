@@ -103,7 +103,7 @@ Enlightenment ha un sistema di configurazione sofisticato che si può accedere d
 
 **ConnMan**
 
-Il gestore di rete predefinito di Enlightenment è [ConnMan](/index.php/Connman_(Italiano) "Connman (Italiano)"), che è reperibile nel [deposito ufficiale](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") con il pacchetto [connman](https://www.archlinux.org/packages/?name=connman). Seguire le istruzioni presenti nella pagina [ConnMan](/index.php/Connman_(Italiano) "Connman (Italiano)"), per la sua configurazione.
+Il gestore di rete predefinito di Enlightenment è [ConnMan](/index.php/ConnMan_(Italiano) "ConnMan (Italiano)"), che è reperibile nel [deposito ufficiale](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") con il pacchetto [connman](https://www.archlinux.org/packages/?name=connman). Seguire le istruzioni presenti nella pagina [ConnMan](/index.php/ConnMan_(Italiano) "ConnMan (Italiano)"), per la sua configurazione.
 
 Per la configurazione estesa con il modulo predefinito Enlightenment di Rete, si può anche installare EConnman ( disponibile in AUR come [econnman](https://aur.archlinux.org/packages/econnman/) o [econnman-git](https://aur.archlinux.org/packages/econnman-git/)), ed è associato come dipendenza.
 

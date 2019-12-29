@@ -43,6 +43,8 @@ See [gocryptfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gocryptfs.1) and i
 
 A major application for file-based encryption methods are encrypted backups. FUSE-based filesystems are flexible for this, since they allow a wide array of backup destinations using standard tools. For example, a gocryptfs-encrypted FUSE mount point can be easily created directly on a [Samba](/index.php/Samba "Samba")/[NFS](/index.php/NFS "NFS") share or [Dropbox](/index.php/Dropbox "Dropbox") location, synchronized to a remote host with [rsync](/index.php/Rsync "Rsync"), or just be manually copied to a remote backup storage.
 
+**Warning:** gocryptfs in reverse mode copy gocryptfs.diriv and gocryptfs.conf files inside the crypted directory. So if you sync it online on a cloud storage, better is to exclude gocryptfs.conf file as long as it is a security problem to expose this file. You would stay protected only if the password is not found... Feel free to edit again if there is a way to setup gocryptfs to no more copy these files inside the crypted directory, but instead, inside a specific directory user want to use (like ~/.config/gocryptfs/).
+
 The [reverse mode](https://nuetzlich.net/gocryptfs/reverse_mode/) of gocryptfs is particularly useful for creating encrypted backups, since it requires virtually no extra storage capacity on the machine to back up.
 
 The following shows an example of user *archie* creating a backup of `/home/archie`:

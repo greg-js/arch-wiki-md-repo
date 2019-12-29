@@ -169,7 +169,7 @@ Este cenário também usa uma partição de sistema EFI, que pode ser aplicado p
 *   Não é suportado por outros gerenciadores de boot
 
  |
-| [#Subvolumes do btrfs com swap](#Subvolumes_do_btrfs_com_swap)
+| [#Subvolumes do Btrfs com swap](#Subvolumes_do_Btrfs_com_swap)
 
 Mostra como criptografar um sistema [Btrfs](/index.php/Btrfs "Btrfs"), incluindo o diretório `/boot`, também é possível adicionar uma partição para swap, em um hardware com suporte a UEFI.
 
@@ -233,7 +233,7 @@ Crie as partições necessárias, ao menos uma para `/` (exemplo `/dev/sda2`) e 
 
 ### Preparando partições que não são de boot
 
-Os comandos a seguir criam e montam a partição raiz criptografada. Eles correspondem ao detalhado procedimento descrito em [dm-crypt/Criptografando um sistema de arquivos não raiz#Particionamento](/index.php/Dm-crypt/Criptografando_um_sistema_de_arquivos_n%C3%A3o_raiz#Particionamento "Dm-crypt/Criptografando um sistema de arquivos não raiz") (que, apesar do título, *pode* ser aplicado a partições raiz, contanto que [mkinitcpio](#Configurando_o_mkinitcpio) e o [gerenciador de boot](#Configurando_o_gerenciador_de_boot) sejam corretamente configurados). Se você deseja usar opções de encriptação que não são padrão (exemplo, cifras criptográficas, tamanho da chave), veja as [opções de encriptação](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") antes de executar o primeiro comando:
+Os comandos a seguir criam e montam a partição raiz criptografada. Eles correspondem ao detalhado procedimento descrito em [dm-crypt/Criptografando um sistema de arquivos não raiz#Partição](/index.php/Dm-crypt/Criptografando_um_sistema_de_arquivos_n%C3%A3o_raiz#Partição "Dm-crypt/Criptografando um sistema de arquivos não raiz") (que, apesar do título, *pode* ser aplicado a partições raiz, contanto que [mkinitcpio](#Configurando_o_mkinitcpio) e o [gerenciador de boot](#Configurando_o_gerenciador_de_boot) sejam corretamente configurados). Se você deseja usar opções de encriptação que não são padrão (exemplo, cifras criptográficas, tamanho da chave), veja as [opções de encriptação](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") antes de executar o primeiro comando:
 
 ```
 # cryptsetup -y -v luksFormat /dev/sda2
@@ -255,7 +255,7 @@ Verifique se o mapeamento funcionou como esperado:
 
 Se você criou partições separadas (exemplo, `/home`), estes passos têm que ser adaptados e repetidos para todos eles, *exceto* para `/boot`. Veja [dm-crypt/Criptografando um sistema de arquivos não raiz#Desbloqueio e montagem automatizados](/index.php/Dm-crypt/Criptografando_um_sistema_de_arquivos_n%C3%A3o_raiz#Desbloqueio_e_montagem_automatizados "Dm-crypt/Criptografando um sistema de arquivos não raiz") para como manusear partições adicionais na inicialização.
 
-Note que cada dispositivo de bloco precisa de sua própria senha. Isto pode ser inconveniente, por ser necessário inserir senhas separadas durante a inicialização. Uma alternativa é usar uma keyfile guardada na partição do sistema para desbloquear a partição separada por meio do `crypttab`. Veja [dm-crypt/Encriptação de dispositivo#Usando LUKS para formatar partições com uma keyfile](/index.php/Dm-crypt/Device_encryption#Using_LUKS_to_format_partitions_with_a_keyfile "Dm-crypt/Device encryption") para instruções.
+Note que cada dispositivo de bloco precisa de sua própria senha. Isto pode ser inconveniente, por ser necessário inserir senhas separadas durante a inicialização. Uma alternativa é usar uma keyfile guardada na partição do sistema para desbloquear a partição separada por meio do `crypttab`. Veja [dm-crypt/Encriptação de dispositivo#Formatando uma partição com LUKS e uma keyfile](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Formatando_uma_partição_com_LUKS_e_uma_keyfile "Dm-crypt/Encriptação de dispositivo") para instruções.
 
 ### Preparando a partição de boot
 
@@ -301,7 +301,7 @@ HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **
 
 ```
 
-Dependendo de quais hooks estão sendo usados, a ordem pode ser relevante. Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") para detalhes e outros hooks que você pode precisar.
+Dependendo de quais hooks estão sendo usados, a ordem pode ser relevante. Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes e outros hooks que você pode precisar.
 
 ### Configurando o gerenciador de boot
 
@@ -319,7 +319,7 @@ rd.luks.name=*UUID-da-partição-raiz*=cryptroot root=/dev/mapper/cryptroot
 
 ```
 
-Veja [dm-crypt/Configurações do sistema#Gerenciador de boot](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") para detalhes.
+Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") para detalhes.
 
 o `*UUID-da-partição-raiz*` é para ser substituído pelo UUID da partição raiz, nesse caso `/dev/sda2`. Veja [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") para detalhes.
 
@@ -370,7 +370,7 @@ Crie o container criptografado com LUKS na partição do *sistema*. Enter com a 
 
 ```
 
-Para mais informações sobre as opções disponíveis do cryptsetup veja as [opções de encriptação LUKS](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") antes de executar o comando acima.
+Para mais informações sobre as opções disponíveis do cryptsetup veja as [opções de encriptação](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") antes de executar o comando acima.
 
 abra o container:
 
@@ -472,7 +472,7 @@ HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **
 
 ```
 
-Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") para detalhes e outros hooks que você pode precisar.
+Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes e outros hooks que você pode precisar.
 
 ### Configurando o gerenciador de boot
 
@@ -525,7 +525,7 @@ Esquema de particionamento:
 
 ```
 
-sobrescreva `/dev/sda2` de acordo com [dm-crypt/Preparando a unidade de armazenamento#dm-crypt limpa o disco vazio ou partição](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_on_an_empty_disk_or_partition "Dm-crypt/Drive preparation").
+sobrescreva `/dev/sda2` de acordo com [dm-crypt/Preparando a unidade de armazenamento#dm-crypt limpa o disco vazio ou partição](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento#dm-crypt_limpa_o_disco_vazio_ou_partição "Dm-crypt/Preparando a unidade de armazenamento").
 
 ### Preparando os volumes lógicos
 
@@ -547,7 +547,7 @@ sobrescreva `/dev/sda2` de acordo com [dm-crypt/Preparando a unidade de armazena
 
 ```
 
-Mais informações sobre opções de encriptação podem ser encontradas em [dm-crypt/Encriptação de dispositivo#opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note que `/home` será criptografada em [#Criptografando o volume lógico /home](#Criptografando_o_volume_lógico_/home).
+Mais informações sobre opções de encriptação podem ser encontradas em [dm-crypt/Encriptação de dispositivo#Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo"). Note que `/home` será criptografada em [#Criptografando o volume lógico /home](#Criptografando_o_volume_lógico_/home).
 
 **Dica:** Se você precisar acessar a raiz criptografada pelo archiso, a ação `open` vai possibilitar a execução de comandos para [mostrar volumes do LVM](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
 
@@ -619,7 +619,7 @@ tmp	    /dev/MeuGrupoVol/crypttmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=2
 
 ### Criptografando o volume lógico /home
 
-Devido a este cenário usar LVM como mapeador primário e dm-crypt como secundário, cada volume lógico precisa ser criptografado separadamente. Apesar disso, diferente dos sistemas de arquivos temporários que foram configurados acima para serem voláteis, o volume lógico para `/home` vai ser persistente. O seguinte assume que você reiniciou o seu sistema criptografado, se você não fez isto, precisará adaptar os caminhos. Para não digitar uma segunda senha na inicialização, uma [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") é criada:
+Devido a este cenário usar LVM como mapeador primário e dm-crypt como secundário, cada volume lógico precisa ser criptografado separadamente. Apesar disso, diferente dos sistemas de arquivos temporários que foram configurados acima para serem voláteis, o volume lógico para `/home` vai ser persistente. O seguinte assume que você reiniciou o seu sistema criptografado, se você não fez isto, precisará adaptar os caminhos. Para não digitar uma segunda senha na inicialização, uma [keyfile](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") é criada:
 
 ```
 # mkdir -m 700 /etc/luks-keys
@@ -786,7 +786,7 @@ GRUB_ENABLE_CRYPTODISK=y
 
 ```
 
-Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") e [GRUB#/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_Criptografada "GRUB (Português)") para detalhes.
+Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") e [GRUB#/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)") para detalhes.
 
 Complete a instalação do GRUB para ambos os SSDs (em realidade, instalando somente em `/dev/sda` irá funcionar).
 
@@ -800,7 +800,7 @@ Complete a instalação do GRUB para ambos os SSDs (em realidade, instalando som
 
 ### Criando as keyfiles
 
-Os próximos passos evitarão que você digite a senha duas vezes quando você inicializar o sistema (uma vez quando o grub pede ela para abrir o dispositivo LUKS1, outra quando o mkiniticpio assume o controle do sistema). Isto é feito ao criar uma [keyfile](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") e adicionando ela na imagem intramfs, fazendo com que o hook encrypt abra o dispositivo raiz. Veja [dm-crypt/Encriptação de dispositivo#Com uma keyfile no initramfs](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Encriptação de dispositivo") para detalhes.
+Os próximos passos evitarão que você digite a senha duas vezes quando você inicializar o sistema (uma vez quando o grub pede ela para abrir o dispositivo LUKS1, outra quando o mkinitcpio assume o controle do sistema). Isto é feito ao criar uma [keyfile](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") e adicionando ela na imagem intramfs, fazendo com que o hook encrypt abra o dispositivo raiz. Veja [dm-crypt/Encriptação de dispositivo#Com uma keyfile no initramfs](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Com_uma_keyfile_no_initramfs "Dm-crypt/Encriptação de dispositivo") para detalhes.
 
 *   Crie a [keyfile](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") e adicione a chave para `/dev/md/raiz`.
 *   Crie outra keyfile para o HDD (`/dev/sdc1`) para que ele seja decriptografado na inicialização. Para conveniência, deixe a senha criada acima em um lugar onde você consiga recuperar facilmente se precisar. Edite o `/etc/crypttab` para decriptografar o HDD na inicialização. Veja [Dm-crypt/Configuração do sistema#Desbloqueando com uma keyfile](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Desbloqueando_com_uma_keyfile "Dm-crypt/Configuração do sistema").
@@ -831,7 +831,7 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 ```
 
-Veja [dm-crypt/Configuração do sistema#Mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes.
+Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes.
 
 ## Plain dm-crypt
 
@@ -903,7 +903,7 @@ Podemos agora checar se a entrada de mapeamento foi feita para `/dev/mapper/cryp
 
 **Dica:** Uma alternativa simples para o LVM, em casos do FAQ do cryptsetup onde ele não é necessário, é somente criar um sistema de arquivos com todo o dispositivo mapeado.
 
-Agora, configurare os volumes lógicos do [LVM](/index.php/LVM "LVM") no dispositivo mapeado. Veja [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") para maiores detalhes:
+Agora, configure os volumes lógicos do [LVM](/index.php/LVM "LVM") no dispositivo mapeado. Veja [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") para maiores detalhes:
 
 ```
 # pvcreate /dev/mapper/cryptlvm
@@ -1144,7 +1144,7 @@ Se todos os comandos foram executados sem erros, GRUB deve solicitar a senha par
 
 apesar do GRUB solicitar a senha para abrir a partição criptografada com LUKS1, isso não é passado para o initramfs. Consequentemente, você vai precisa digitar a senha duas vezes: uma vez para o GRUB e outra para o initramfs.
 
-Esta seção lida com uma configuração extra para digitar a senha somente uma vez, no GRUB. Para isso é utilizado [uma keyfile dentro do initramfs](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Encriptação de dispositivo").
+Esta seção lida com uma configuração extra para digitar a senha somente uma vez, no GRUB. Para isso é utilizado [uma keyfile dentro do initramfs](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Com_uma_keyfile_no_initramfs "Dm-crypt/Encriptação de dispositivo").
 
 Primeiro crie uma keyfile e a adicione como uma chave do LUKS:
 
@@ -1219,7 +1219,7 @@ Siga [dm-crypt/Encriptação de dispositivo#Criptografando dispositivos com o mo
 
 #### Abra o container LUKS
 
-Siga [dm-crypt/Encriptação de dispositivo#Abrindo/mapeando partições LUKS com o mapeador de dispositivos](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Unlocking/Mapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Encriptação de dispositivo") para abrir e mapear o container LUKS.
+Siga [dm-crypt/Encriptação de dispositivo#Abrindo/Mapeando containers LUKS com o mapeador de dispositivos](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Abrindo/Mapeando_containers_LUKS_com_o_mapeador_de_dispositivos "Dm-crypt/Encriptação de dispositivo") para abrir e mapear o container LUKS.
 
 #### Formate o dispositivo mapeado
 
@@ -1254,7 +1254,7 @@ subvolid=5 (/dev/sda2)
    |       |
    |       ├── ... (outros diretórios e subvolumes aninhados)
    |
-   ├── @snapshots (mondado como /.snapshots)
+   ├── @snapshots (montado como /.snapshots)
    |
    ├── @home (montado como /home)
    |
@@ -1262,7 +1262,7 @@ subvolid=5 (/dev/sda2)
 
 ```
 
-This section follows the [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), which is most useful when used with [Snapper](/index.php/Snapper "Snapper"). You should also consult [Btrfs Wiki SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout).
+Este seção segue [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper") que é mais útil quando usado com o [snapper](/index.php/Snapper "Snapper"). Você também deveria consultar [Btrfs Wiki SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout).
 
 #### Crie os subvolumes de nível superior
 
@@ -1270,7 +1270,7 @@ Será utilizada a convenção do prefixo `@` para os nomes do subvolume que ser�
 
 Seguindo o artigo [Btrfs#Creating a subvolume](/index.php/Btrfs#Creating_a_subvolume "Btrfs"), crie os subvolumes em `/mnt/@`, `/mnt/@snapshots`, e `/mnt/@home`.
 
-Create any additional subvolumes you wish to use as mount points now.
+Crie qualquer subvolume adicional que desejar como ponto de montagem.
 
 #### Monte os subvolumes de nível superior
 
@@ -1299,15 +1299,15 @@ Outros diretórios que você pode desejar fazer isso são `/var/abs`, `/var/tmp`
 
 Se preparou uma partição de sistema EFI anteriormente, crie seu ponto de montagem e monte-a.
 
-**Nota:** Btrfs snapshots irão excluir o `/efi`, desde que não é de um sistema de arquivos btrfs.
+**Nota:** As snapshots do btrfs não irão incluir o `/efi`, desde que este não faz parte de um sistema de arquivos btrfs.
 
-At the [pacstrap](/index.php/Installation_guide#Install_essential_packages "Installation guide") installation step, the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) must be installed in addition to the [base](https://www.archlinux.org/packages/?name=base) [meta package](/index.php/Meta_package "Meta package").
+No passo da instalação com o [pacstrap](/index.php/Installation_guide#Install_essential_packages "Installation guide"), [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) deve ser instalado em adição com o [metapacote](/index.php/Metapacote "Metapacote") [base](https://www.archlinux.org/packages/?name=base).
 
 ### Configurando o mkinitcpio
 
 #### Crie a keyfile
 
-Para o GRUB abrir a partição LUKS sem que o usuário digite a senha duas vezes, coloque uma keyfile no initramfs. Siga [dm-crypt/Encriptação do dispositivo#com uma keyfile dentro do initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption"), tenha certeza de adicionar a chave para `/dev/sda2` do passo *luksAddKey*.
+Para o GRUB abrir a partição LUKS sem que o usuário digite a senha duas vezes, coloque uma keyfile no initramfs. Siga [dm-crypt/Encriptação de dispositivo#Com uma keyfile no initramfs](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Com_uma_keyfile_no_initramfs "Dm-crypt/Encriptação de dispositivo"), tenha certeza de adicionar a chave para `/dev/sda2` do passo *luksAddKey*.
 
 #### Edite o mkinitcpio.conf
 

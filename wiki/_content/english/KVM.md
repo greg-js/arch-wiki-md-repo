@@ -150,7 +150,7 @@ You may also want to enable hugepages to improve the performance of your virtual
 Add to your `/etc/fstab`:
 
 ```
-hugetlbfs       /dev/hugepages  hugetlbfs       mode=1770,gid=78        0 0
+hugetlbfs       /dev/hugepages  hugetlbfs       mode=01770,gid=78        0 0
 
 ```
 

@@ -1,6 +1,7 @@
 Related articles
 
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [DNS over HTTPS](/index.php/DNS_over_HTTPS "DNS over HTTPS")
 
 In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia:Domain name") represents an IP address and is associated to it in the [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") (DNS). This article explains how to configure domain name resolution and resolve domain names.
 
@@ -179,6 +180,8 @@ over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTT
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Yes | Yes | Permanent | No | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | No | No |
 | [PowerDNS Recursor](https://en.wikipedia.org/wiki/PowerDNS#Recursor "wikipedia:PowerDNS") | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Yes | Yes | Yes | Yes | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | No | No |
 | [Unbound](/index.php/Unbound "Unbound") | [unbound](https://www.archlinux.org/packages/?name=unbound) | Yes | Yes | Yes | Yes | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | Server | Yes | [No](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
+| [Deadwood](https://maradns.samiam.org/deadwood/) | [deadwood](https://aur.archlinux.org/packages/deadwood/) | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| [CoreDNS](https://coredns.io/) | [coredns](https://aur.archlinux.org/packages/coredns/) or [coredns-bin](https://aur.archlinux.org/packages/coredns-bin/) | ? | ? | ? | ? | ? | ? | ? | ? | ? |
 
 1.  Only forwards using DNS over HTTPS when Rescached itself is queried using DNS over HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
 2.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[4]](https://github.com/systemd/systemd/issues/9397)

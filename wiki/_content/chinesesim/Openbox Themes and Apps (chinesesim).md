@@ -322,7 +322,7 @@ Volti 是在系统托盘/通知区域控制音量的 GTK+ 程序 . [volti](https
 
 Volumeicon 系统托盘上的音量控制. [volumeicon](https://www.archlinux.org/packages/?name=volumeicon) AUR 有.
 
-Volwheel 是通过鼠标滚轮控制音量的托盘图标. [volwheel](https://www.archlinux.org/packages/?name=volwheel) AUR 有.
+Volwheel 是通过鼠标滚轮控制音量的托盘图标. [volwheel](https://aur.archlinux.org/packages/volwheel/) AUR 有.
 
 ### 电池 & CPU
 

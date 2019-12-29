@@ -107,6 +107,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | MFC-J885DW | [brother-mfc-j885dw](https://aur.archlinux.org/packages/brother-mfc-j885dw/) |
 | MFC-J985DW | [brother-mfc-j985dw](https://aur.archlinux.org/packages/brother-mfc-j985dw/) |
 | MFC-L2700DW | [brother-mfc-l2700dw](https://aur.archlinux.org/packages/brother-mfc-l2700dw/) | Please look also at the comments section of the AUR package page. |
+| MFC-L2730DW | [brother-mfc-l2730dw](https://aur.archlinux.org/packages/brother-mfc-l2730dw/) | Please look also at the comments section of the AUR package page. |
 | MFC-L8600CDW | [brother-mfc-l8600cdw](https://aur.archlinux.org/packages/brother-mfc-l8600cdw/) | Please follow the instructions on the AUR page. |
 | QL-500 | [brother-ql500](https://aur.archlinux.org/packages/brother-ql500/) |
 | QL-570 | [brother-ql570](https://aur.archlinux.org/packages/brother-ql570/) |
@@ -274,7 +275,7 @@ Some Canon printers will use a similar setup to the iP4500, so consider modifyin
 
 ### UFRII
 
-Many LBP, iR, and MF printers use a protocol that has had several names over the years : UFR II, UFR II LT, LIPSLX . There are multiple packages for these printers in AUR, and atleast the imageCLASS MF4570dn is reported to only work with the older v3.70 version.
+Many LBP, iR, and MF printers use a protocol that has had several names over the years : UFR II, UFR II LT, LIPSLX . There are multiple packages for these printers in AUR, and atleast the imageCLASS MF4570dn and i-sensys MF633C are reported to only work with the older v3.70 version.
 
 [cnrdrvcups-lb](https://aur.archlinux.org/packages/cnrdrvcups-lb/) v 5.00 - latest version built from source
 

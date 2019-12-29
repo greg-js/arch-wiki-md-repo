@@ -4,7 +4,11 @@
 
 GPM(General Purpose Mouse)은 리눅스 가상 콘솔에서 마우스를 지원하는 데몬이다.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 설치하기](#설치하기)
     *   [1.1 데스코톱](#데스코톱)

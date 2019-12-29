@@ -56,7 +56,7 @@ Related articles
 
 Wine can be installed by enabling the [multilib](/index.php/Multilib "Multilib") repository and [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing) package. [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features that have not been integrated into the stable branch yet. See also [#Graphics drivers](#Graphics_drivers) and [#Sound](#Sound).
 
-Consider installing [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that depend on Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
+Consider installing [wine-gecko](https://www.archlinux.org/packages/?name=wine-gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that depend on Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 
 ### Third-party applications
 
@@ -166,15 +166,10 @@ If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)
 ### Other libraries
 
 *   Some applications (e.g. Office 2003/2007) require the MSXML library to parse HTML or XML, in such cases you need to install [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2).
-
 *   Some applications that play music may require [lib32-mpg123](https://www.archlinux.org/packages/?name=lib32-mpg123).
-
 *   Some applications that use a color management engine (e.g. pdf viewers, image viewers, etc) may require [lib32-lcms2](https://www.archlinux.org/packages/?name=lib32-lcms2).
-
 *   Some applications that use native image manipulation libraries may require [lib32-giflib](https://www.archlinux.org/packages/?name=lib32-giflib) and [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng).
-
 *   Some applications that require encryption support may require [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls).
-
 *   Some applications require 32-bit video codecs or the program crashes. Install [lib32-gst-plugins-base](https://www.archlinux.org/packages/?name=lib32-gst-plugins-base), [lib32-gst-plugins-good](https://www.archlinux.org/packages/?name=lib32-gst-plugins-good), [lib32-gst-plugins-bad](https://aur.archlinux.org/packages/lib32-gst-plugins-bad/) and [lib32-gst-plugins-ugly](https://aur.archlinux.org/packages/lib32-gst-plugins-ugly/).
 
 ### Fonts
@@ -182,14 +177,14 @@ If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)
 If Wine applications are not showing easily readable fonts, you may not have any fonts installed. To easily link all of the system fonts so they are accessible from wine:
 
 ```
- cd ${WINEPREFIX:-~/.wine}/drive_c/windows/Fonts && for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -s "$i" ; done
+$ cd ${WINEPREFIX:-~/.wine}/drive_c/windows/Fonts && for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -s "$i" ; done
 
 ```
 
 Wine uses freetype to render fonts, and freetype's defaults changed a few releases ago. Try using this environment setting for wine programs:
 
 ```
- FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 
 ```
 
@@ -226,6 +221,7 @@ REGEDIT4
 EOF
 
 WINE=${WINE:-wine} WINEPREFIX=${WINEPREFIX:-$HOME/.wine} $WINE regedit /tmp/fontsmoothing 2> /dev/null
+
 ```
 
 For more information, check [the original answer](https://askubuntu.com/a/219795/514682)
@@ -398,7 +394,7 @@ $ WINEPREFIX=*your-prefix* setup_dxvk install
 
 With the open-source gallium-based drivers (mostly AMD cards) there is a [Gallium Direct3D state tracker](https://wiki.ixit.cz/d3d9) that aims to provide nearly-native performance for DirectX 9\. In most cases it has less visual glitches than the upstream wine and doubles the performances. It consumes much less CPU time than CSMT.
 
-Install [wine-nine](https://www.archlinux.org/packages/?name=wine-nine) to use it. This is a standalone package that can be installed with any wine version. Use `wine ninewinecfg` to check if it's enabled.
+Install [wine-nine](https://www.archlinux.org/packages/?name=wine-nine) to use it. This is a standalone package that can be installed with any wine version. Use `wine ninewinecfg` to check if it is enabled.
 
 ### Unregister existing Wine file associations
 
@@ -597,7 +593,7 @@ Vulkan support is included, since Wine 3.3\. The default Wine Vulkan ICD loader 
 
 ### Remove Wine file bindings
 
-For security reasons it may be useful to remove the preinstalled Wine bindings so Windows applications can't be launched directly from a file manager or from the browser (Firefox offers to open EXE files directly with Wine!). If you want to do this, you may add the following to the `[options]` section in `/etc/pacman.conf`
+For security reasons it may be useful to remove the preinstalled Wine bindings so Windows applications cannot be launched directly from a file manager or from the browser (Firefox offers to open EXE files directly with Wine!). If you want to do this, you may add the following to the `[options]` section in `/etc/pacman.conf`
 
 ```
 NoExtract = usr/lib/binfmt.d/wine.conf

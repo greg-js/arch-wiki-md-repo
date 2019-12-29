@@ -361,7 +361,7 @@ Los temas descargados deberían ser desempaquetados en **~/.themes** y puede ser
 
 Los temas para Xcursor pueden ser instalados con el paquete [xcursor-themes](https://www.archlinux.org/packages/?name=xcursor-themes), otros paquetes como [xcursor-bluecurve](https://www.archlinux.org/packages/?name=xcursor-bluecurve), [xcursor-vanilla-dmz](https://www.archlinux.org/packages/?name=xcursor-vanilla-dmz) ó [xcursor-pinux](https://www.archlinux.org/packages/?name=xcursor-pinux) y muchos otros estan disponibles en los repositorios o vía [AUR](/index.php/AUR "AUR")
 
-Los temas para iconos estan disponibles vía repositorio, por ejemplo [lxde-icon-theme](https://www.archlinux.org/packages/?name=lxde-icon-theme), [tangerine-icon-theme](https://www.archlinux.org/packages/?name=tangerine-icon-theme) ó [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) muchos mas pueden ser encontrados en los repositorios oficiales o en [AUR](/index.php/AUR "AUR")
+Los temas para iconos estan disponibles vía repositorio, por ejemplo [lxde-icon-theme](https://www.archlinux.org/packages/?name=lxde-icon-theme), [tangerine-icon-theme](https://aur.archlinux.org/packages/tangerine-icon-theme/) ó [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) muchos mas pueden ser encontrados en los repositorios oficiales o en [AUR](/index.php/AUR "AUR")
 
 Los fondos de escritorio pueden ser fácilmente establecidos con herramientas como [Nitrogen](/index.php/Nitrogen_(Espa%C3%B1ol) "Nitrogen (Español)"), [Feh](/index.php/Feh_(Espa%C3%B1ol) "Feh (Español)") or `hsetroot`.
 

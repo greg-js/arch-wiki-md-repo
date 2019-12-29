@@ -1,6 +1,10 @@
 Démon je program, který běží v pozadí, čeká na události, které nastanou, reaguje na ně a poskytuje služby. Ukázkovým příkladem může být třeba webový server, který čeká na požadavek na sestavení stránky, nebo SSH server, který čeká, až se někdo vzdáleně přihlásí. To jsou příklady programů s mnoha vlastnostmi, ne všechny démony se ale viditelně projevují - démon, který zaznamenává činnost systému (např. syslog, metalog), démon, který sníží frekvenci procesoru, pokud systém nemá nic na práci.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Spouštění po startu](#Spouštění_po_startu)
 *   [2 Ruční spouštění a zastavování](#Ruční_spouštění_a_zastavování)

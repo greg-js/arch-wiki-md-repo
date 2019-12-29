@@ -32,7 +32,7 @@ Install the [asterisk](https://aur.archlinux.org/packages/asterisk/) package. If
 
 [Start](/index.php/Start "Start") the server with `asterisk.service`.
 
-You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [Linphone](http://www.linphone.org/) ([linphone](https://aur.archlinux.org/packages/linphone/) package) or [X-Lite](http://www.counterpath.com/x-lite/) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/) package).
+You will also need a SIP [softphone](/index.php/Softphone "Softphone") and at least two machines. Recommendations for SIP phones are [Blink](http://icanblink.com/) ([blink](https://aur.archlinux.org/packages/blink/)), [Linphone](http://www.linphone.org/) ([linphone-git](https://aur.archlinux.org/packages/linphone-git/)) or [X-Lite](http://www.counterpath.com/x-lite/) ([xlite_bin](https://aur.archlinux.org/packages/xlite_bin/) package).
 
 To enable ilbc codec support add the following to the very beginning of the `build` section of the PKGBUILD:
 
@@ -43,6 +43,15 @@ echo | ./get_ilbc_source.sh
 ```
 
 ## Configuration
+
+Note that the following instructions assume that you want to use already obsoleted `sip` module. In order to do so you must allow it and at the same time assure that newer `pjsip` module is unloaded. In `/etc/asterisk/modules.conf` adjust the following:
+
+```
+noload => chan_pjsip.so
+noload => res_pjsip.so
+# remove noload => chan_sip
+
+```
 
 ### SIP
 

@@ -6,7 +6,11 @@
 
 [桌面环境](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment")通过汇集使用相同组件库的程序，为用户提供了*完全的*图形用户界面。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 概况](#概况)
 *   [2 桌面环境列表](#桌面环境列表)

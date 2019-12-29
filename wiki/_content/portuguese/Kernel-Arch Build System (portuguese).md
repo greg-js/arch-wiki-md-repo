@@ -1,6 +1,6 @@
 **Status de tradução:** Esse artigo é uma tradução de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Data da última tradução: 2019-12-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=582518) na versão em inglês.
 
-Veja [Kernel_(Português)](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") para ir ao artigo principal.
+Veja [Kernel (Português)](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") para ir ao artigo principal.
 
 O [Arch Build System](/index.php/Arch_Build_System "Arch Build System") pode ser usado para compilar um kernel personalizado baseado no pacote oficial [linux](https://www.archlinux.org/packages/?name=linux). Este método de compilação pode automatizar todo o processo, além de ser baseado em um pacote bem testado. Você pode editar o PKGBUILD para usar uma configuração personalizada além de poder adicionar patches.
 

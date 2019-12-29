@@ -6,12 +6,16 @@ Articoli correlati
 
 Mathematica è un programma commerciale usato in campo scientifico, matematico e ingegneristico. Qui viene spiegato come installarlo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Mathematica 6](#Mathematica_6)
-        *   [1.1.1 Montare l'iso](#Montare_l.27iso)
-        *   [1.1.2 Eseguire l'installer](#Eseguire_l.27installer)
+        *   [1.1.1 Montare l'iso](#Montare_l'iso)
+        *   [1.1.2 Eseguire l'installer](#Eseguire_l'installer)
         *   [1.1.3 Font](#Font)
         *   [1.1.4 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [1.2 Mathematica 7](#Mathematica_7)

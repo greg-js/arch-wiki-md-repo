@@ -18,7 +18,7 @@ In Arch Linux, IPv6 is enabled by default.
     *   [3.1 dhcpcd](#dhcpcd)
     *   [3.2 NetworkManager](#NetworkManager)
     *   [3.3 systemd-networkd](#systemd-networkd)
-    *   [3.4 connman](#connman)
+    *   [3.4 ConnMan](#ConnMan)
 *   [4 Stable private addresses](#Stable_private_addresses)
     *   [4.1 NetworkManager](#NetworkManager_2)
 *   [5 Static address](#Static_address)
@@ -152,7 +152,7 @@ After a reboot, at the latest, Privacy Extensions should be enabled.
 
 ### dhcpcd
 
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd") includes in its default configuration file since version 6.4.0 the option `slaac private`, which enables "Stable Private IPv6 Addresses instead of hardware based ones", implementing [RFC 7217](https://tools.ietf.org/html/rfc7217) ([commit](http://roy.marples.name/projects/dhcpcd/info/8aa9dab00dc72c453aeccbde885ecce27a3d81ff)). Therefore, it is not necessary to change anything, except if it is desired to change of IPv6 address more often than each time the system is connected to a new network. Set it to `slaac hwaddr` for a stable address.
+[dhcpcd](/index.php/Dhcpcd "Dhcpcd")'s default configuration includes the option `slaac private`, which enables "Stable Private IPv6 Addresses instead of hardware based ones", implementing [RFC 7217](https://tools.ietf.org/html/rfc7217). Therefore, it is not necessary to change anything, except if it is desired to change of IPv6 address more often than each time the system is connected to a new network. Set it to `slaac hwaddr` for a stable address.
 
 ### NetworkManager
 
@@ -197,12 +197,11 @@ are honored, however.
 
 See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for details.
 
-### connman
+### ConnMan
 
-Add to `/var/lib/connman/settings` under the global section:
+Set in a service file, i.e. `/var/lib/connman/*service*/settings`:
 
 ```
-[global]
 IPv6.privacy=preferred
 
 ```

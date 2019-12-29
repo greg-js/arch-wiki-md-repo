@@ -111,7 +111,7 @@ It is unclear if this model is affected or if current firmware has addressed the
 See
 
 *   X1 Carbon Gen 6 [Power management/Throttling issues](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Power_management.2FThrottling_issues "Lenovo ThinkPad X1 Carbon (Gen 6)")
-*   ThinkPad T480s [Thermal Throttling Fix](/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling_Fix "Lenovo ThinkPad T480s")
+*   ThinkPad T480s [Thermal Throttling Fix](/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling "Lenovo ThinkPad T480s")
 *   [https://github.com/erpalma/throttled](https://github.com/erpalma/throttled)
 
 ## UEFI/Firmware Updates

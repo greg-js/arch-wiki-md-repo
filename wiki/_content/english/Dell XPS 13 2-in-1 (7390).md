@@ -47,4 +47,17 @@ NOTE: The patch is no longer required as of 5.4.2.1-1, so upgrading your kernel 
 
 ### Wifi & Bluetooth
 
-In order to get Wifi & Bluetooth working as of 12.09.2019 firmware drivers should be downloaded from [https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/) and the contents should be copied into /lib/firmware.
+WiFi and Bluetooth should require at least linux 5.3 to work, alongside the latest linux-firmware package. However, there is a bug in the *iwlwifi* driver which affects all kernel versions from 5.4 up to and, as of writing, including 5.5rc2\. This bug loads the incorrect firmware onto the Killer AX1650i, causing a *Failed to run INIT ucode* error and breaks Wifi (see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1878902) for discussion).
+
+Currently two options are available:
+
+*   Select an alternate *linux-** package which still runs using the 5.3.x branch; or
+*   Symlink the *c0-50* firmware to *b0-50*, which the driver will load in preference to *b0-48* (which is the current latest release of *b0* type firmware):
+
+```
+ $ cd /lib/firmware
+ $ ln -s iwlwifi-Qu-{c,b}0-hr-b0-50.ucode
+
+```
+
+Reboot your laptop and the correct firmware should now be loaded in preference. Your WiFi should connect now as expected.

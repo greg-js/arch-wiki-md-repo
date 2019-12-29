@@ -6,7 +6,11 @@
 
 依照你所使用的 boot loader 程式，請直接跳到相關的段落 ("GRUB" 或是 "LiLo"。然後再跳到 "重新開機與安裝" 這個段落繼續系統的安裝。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Lilo](#Lilo)
 *   [2 Grub](#Grub)

@@ -11,20 +11,25 @@ This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi").
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-    *   [1.1 Using original ArchLinuxARM tarball](#Using_original_ArchLinuxARM_tarball)
-        *   [1.1.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
-        *   [1.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
-        *   [1.1.3 Using U-Boot precompiled binaries](#Using_U-Boot_precompiled_binaries)
-        *   [1.1.4 Login / SSH](#Login_/_SSH)
-    *   [1.2 Additional step, Wi-Fi Drivers](#Additional_step,_Wi-Fi_Drivers)
-        *   [1.2.1 RTL8189ES/ETV](#RTL8189ES/ETV)
-        *   [1.2.2 Xradio XR819](#Xradio_XR819)
+    *   [1.1 Prerequisites](#Prerequisites)
+    *   [1.2 Using original ArchLinuxARM tarball](#Using_original_ArchLinuxARM_tarball)
+        *   [1.2.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
+        *   [1.2.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
+        *   [1.2.3 Using U-Boot precompiled binaries](#Using_U-Boot_precompiled_binaries)
+        *   [1.2.4 Login / SSH](#Login_/_SSH)
+    *   [1.3 Additional step, Wi-Fi Drivers](#Additional_step,_Wi-Fi_Drivers)
+        *   [1.3.1 RTL8189ES/ETV](#RTL8189ES/ETV)
+        *   [1.3.2 Xradio XR819](#Xradio_XR819)
 *   [2 Orange Pi PC2](#Orange_Pi_PC2)
     *   [2.1 UBoot](#UBoot)
     *   [2.2 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card_2)
 *   [3 See also](#See_also)
 
 ## Installation
+
+### Prerequisites
+
+build-essentials and other common compiling packages (see [aur](/index.php/Aur "Aur")). For compiling boot script with mkimage [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) and for bootloader compilation [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc)
 
 ### Using original ArchLinuxARM tarball
 

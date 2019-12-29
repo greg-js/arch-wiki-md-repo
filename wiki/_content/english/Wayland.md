@@ -23,15 +23,15 @@ Related articles
     *   [4.6 GLEW](#GLEW)
     *   [4.7 EFL](#EFL)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 GDM and NVIDIA proprietary drivers](#GDM_and_NVIDIA_proprietary_drivers)
-    *   [5.2 Gamma](#Gamma)
-    *   [5.3 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [5.4 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
-    *   [5.5 Cannot open display: :0 with Electron-based applications](#Cannot_open_display:_:0_with_Electron-based_applications)
-    *   [5.6 Screen recording](#Screen_recording)
-    *   [5.7 Remote display](#Remote_display)
-    *   [5.8 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
-        *   [5.8.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
+    *   [5.1 Gamma](#Gamma)
+    *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
+    *   [5.4 Cannot open display: :0 with Electron-based applications](#Cannot_open_display:_:0_with_Electron-based_applications)
+    *   [5.5 Screen recording](#Screen_recording)
+    *   [5.6 Remote display](#Remote_display)
+    *   [5.7 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
+        *   [5.7.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
+    *   [5.8 Run X and wayland at the same time, different tty](#Run_X_and_wayland_at_the_same_time,_different_tty)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -118,17 +118,6 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 
 ## Troubleshooting
 
-### GDM and NVIDIA proprietary drivers
-
-If you are using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver, [GDM](/index.php/GDM "GDM") explicitly [disables](https://bbs.archlinux.org/viewtopic.php?pid=1837424#p1837424) Wayland support. The [rationale](https://gitlab.gnome.org/GNOME/gdm/commit/5cd78602d3d4c8355869151875fc317e8bcd5f08) for this decision is that GLX applications currently do not work well when the proprietary NVIDIA driver is used with a Wayland session.
-
-To force-enable Wayland, disable the [udev](/index.php/Udev "Udev") rule responsible for disabling Wayland in GDM:
-
-```
-# ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
-
-```
-
 ### Gamma
 
 While [Redshift](/index.php/Redshift "Redshift") doesn't support Wayland (without a patch) it is possible to apply the desired temperature in [tty](/index.php/Tty "Tty") before starting a compositor. For example:
@@ -188,7 +177,7 @@ This change in input grabbing breaks current applications' behavior, meaning:
 *   Hotkey combinations and modifiers will be caught by the compositor and won't be sent to remote desktop and virtual machine windows.
 *   The mouse pointer will not be restricted to the application's window which might cause a parallax effect where the location of the mouse pointer inside the window of the virtual machine or remote desktop is displaced from the host's mouse pointer.
 
-Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to the Wayland compositors. In the case of native Wayland clients, the used widget toolkits (e.g GTK, QT) needs to support these extensions or the applications themselves if no widget toolkit is being used. In the case of Xorg applications, no changes in the applications or widget toolkits are needed as the XWayland support is enough.
+Wayland solves this by adding protocol extensions for Wayland and XWayland. Support for these extensions is needed to be added to the Wayland compositors. In the case of native Wayland clients, the used widget toolkits (e.g GTK, Qt) needs to support these extensions or the applications themselves if no widget toolkit is being used. In the case of Xorg applications, no changes in the applications or widget toolkits are needed as the XWayland support is enough.
 
 These extensions are already included in [wayland-protocols](https://www.archlinux.org/packages/?name=wayland-protocols), and supported by [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 1.20.
 
@@ -212,6 +201,22 @@ Supporting widget toolkits:
 [Input inhibitor](https://github.com/swaywm/wlr-protocols/blob/master/unstable/wlr-input-inhibitor-unstable-v1.xml) is a Wayland protocol which was defined the by developers of Sway and wlroots and is overlapping Wayland's `Compositor shortcuts inhibit` protocol.
 Sway and wlroots do not support the `Compositor shortcuts inhibit` and `XWayland keyboard grabbing` protocols, and it seems they are against adding support for the latter [[6]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[7]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
 No widget toolkit or application is known to support this protocol.
+
+### Run X and wayland at the same time, different tty
+
+various tools use different environment variables to switch on wayland, as an example here sway, but could be gnome, etc:
+
+```
+MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland QT_WAYLAND_DISABLE_WINDOWDECORATION=1 _JAVA_AWT_WM_NONREPARENTING=1 XDG_SESSION_TYPE=wayland exec sway
+
+```
+
+various tools use different environment variables to force x11:
+
+```
+GDK_BACKEND=x11 exec startx
+
+```
 
 ## See also
 

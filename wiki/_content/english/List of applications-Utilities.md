@@ -1538,7 +1538,7 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 #### System monitors
 
-See also [Category:Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
+See also [Category:Monitoring](/index.php/Category:Monitoring "Category:Monitoring").
 
 *   **[Conky](/index.php/Conky "Conky")** — Lightweight, scriptable system monitor.
 

@@ -40,7 +40,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
         *   [2.1.4 Using UNetbootin](#Using_UNetbootin)
     *   [2.2 In Windows](#In_Windows_3)
         *   [2.2.1 The Flashnul way](#The_Flashnul_way)
-        *   [2.2.2 Loading the installation media from RAM](#Loading_the_installation_media_from_RAM)
+        *   [2.2.2 Loading the installation medium from RAM](#Loading_the_installation_medium_from_RAM)
             *   [2.2.2.1 Preparing the USB flash drive](#Preparing_the_USB_flash_drive)
             *   [2.2.2.2 Copy the needed files to the USB flash drive](#Copy_the_needed_files_to_the_USB_flash_drive)
             *   [2.2.2.3 Create the configuration file](#Create_the_configuration_file)
@@ -71,7 +71,7 @@ Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/
 
 See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more information about [dd](/index.php/Dd "Dd"). See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
 
-**Tip:** If the UEFI version of the USB's Arch ISO hangs or is unable to load, try repeating the [dd](/index.php/Dd "Dd") media creation process on the same USB drive one or more times.
+**Tip:** If the UEFI version of the USB's Arch ISO hangs or is unable to load, try repeating the [dd](/index.php/Dd "Dd") medium creation process on the same USB drive one or more times.
 
 ##### Using etcher
 
@@ -356,7 +356,7 @@ If under Vista or Win7, you should open the console as administrator, or else fl
 
 **Note:** Confirmed that you need to use drive letter as opposed to number. flashnul 1rc1, Windows 7 x64.
 
-#### Loading the installation media from RAM
+#### Loading the installation medium from RAM
 
 This method uses [Syslinux](/index.php/Syslinux "Syslinux") and a [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](https://wiki.syslinux.org/wiki/index.php/MEMDISK)) to load the entire Arch Linux ISO image into RAM. Since this will be running entirely from system memory, you will need to make sure the system you will be installing this on has an adequate amount. A minimum amount of RAM between 500 MB and 1 GB should suffice for a MEMDISK based, Arch Linux install.
 
@@ -410,7 +410,7 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 ## Troubleshooting
 
-*   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_*YYYYMM*` not mounting, try renaming your USB media to `ARCH_*YYYYMM*` (e.g. `ARCH_201501`).
+*   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_*YYYYMM*` not mounting, try renaming your USB medium to `ARCH_*YYYYMM*` (e.g. `ARCH_201501`).
 *   If you get errors, try using another USB device. There are case scenarios in which it solved all issues.
 
 ## See also

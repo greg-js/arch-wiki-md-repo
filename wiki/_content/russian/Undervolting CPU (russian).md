@@ -6,7 +6,7 @@
 *   [Benchmarking](/index.php/Benchmarking "Benchmarking")
 *   [Fan speed control](/index.php/Fan_speed_control "Fan speed control")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU"). Дата последней синхронизации: 5 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Undervolting_CPU&diff=0&oldid=574612).
+**Состояние перевода:** На этой странице представлен перевод статьи [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU"). Дата последней синхронизации: 27 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Undervolting_CPU&diff=0&oldid=591255).
 
 Понижение напряжения ("даунвольтинг" или "андервольтинг") — процесс, который позволяет уменьшить энергопотребление и тепловыделение, не влияя на производительность системы. Обратите внимание, что в большинстве материнских плат ПК настроить напряжение процессора можно также и в BIOS.
 
@@ -31,6 +31,7 @@
 *   [PHC (Русский)](/index.php/PHC_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PHC (Русский)") — утилита для уменьшения напряжения некоторых старых поколений процессоров Intel и AMD. **Не** совместимо с [драйвером управления частотой процессора](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Драйвер_управления_частотой_процессора "CPU frequency scaling (Русский)") `intel_pstate`.
 *   [#intel-undervolt](#intel-undervolt) — утилита для уменьшения напряжения процессоров Intel Haswell и выше с помощью MSR. Совместима с `intel_pstate`.
 *   [#amdctl](#amdctl) — утилита для уменьшения напряжения процессоров AMD K10 и выше.
+*   [K10ctl](/index.php/K10ctl "K10ctl") — утилита для разгона и уменьшения напряжения процессора AMD K10 (например, Phenom и Phenom II) с помощью изменения cостояний производительности (P-States).
 
 ## Утилиты
 

@@ -147,8 +147,6 @@ vaInitialize failed with error code -1 (unknown libva error),exit
 
 You need to configure the correct driver, see [#Configuring VA-API](#Configuring_VA-API).
 
-**Note:** The [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") GM108 cards does not support video decoding as it is expected to be offloaded to the integrated [Intel graphics](/index.php/Intel_graphics "Intel graphics") GPU.
-
 ### Verifying VDPAU
 
 Install [vdpauinfo](https://www.archlinux.org/packages/?name=vdpauinfo) to verify if the VDPAU driver is loaded correctly and retrieve a full report of the configuration:
@@ -295,7 +293,7 @@ Hybrid: Haswell to Skylake | No |
 
 ### VDPAU drivers
 
-| Codec | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[6]](https://www.x.org/wiki/RadeonFeature/) [[7]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [wikipedia:Nvidia_PureVideo](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
+| Codec | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[6]](https://www.x.org/wiki/RadeonFeature/) [[7]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (VA-API adapter) |
 | Decoding |
 | MPEG-2 | Radeon R300 and newer

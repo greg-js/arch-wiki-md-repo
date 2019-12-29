@@ -67,6 +67,10 @@
 
 	[https://github.com/librespot-org/librespot](https://github.com/librespot-org/librespot) || [librespot-git](https://aur.archlinux.org/packages/librespot-git/)
 
+*   **Tizonia** — Command-line cloud music player for Linux with support for Spotify, Google Play Music, YouTube, SoundCloud, Plex servers and Chromecast devices..
+
+	[http://tizonia.org/docs/spotify/](http://tizonia.org/docs/spotify/) || [tizonia-all](https://aur.archlinux.org/packages/tizonia-all/)
+
 *   **Tomahawk** — A Music Player App written in C++/Qt. **No longer actively developed**.
 
 	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/) [tomahawk-git](https://aur.archlinux.org/packages/tomahawk-git/) [tomahawk-qt5](https://aur.archlinux.org/packages/tomahawk-qt5/)

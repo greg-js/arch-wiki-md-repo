@@ -65,9 +65,10 @@ ThinkPad X1 Carbon 6th
 *   [2 Suspend issues](#Suspend_issues)
     *   [2.1 Enabling S3](#Enabling_S3)
     *   [2.2 Verifying S3](#Verifying_S3)
-    *   [2.3 Disabling the memory card reader](#Disabling_the_memory_card_reader)
-    *   [2.4 BIOS configurations](#BIOS_configurations)
-    *   [2.5 Failed to start Suspend](#Failed_to_start_Suspend)
+    *   [2.3 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
+    *   [2.4 Disabling the memory card reader](#Disabling_the_memory_card_reader)
+    *   [2.5 BIOS configurations](#BIOS_configurations)
+    *   [2.6 Failed to start Suspend](#Failed_to_start_Suspend)
 *   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
     *   [3.1 Throttling fix](#Throttling_fix)
 *   [4 Audio crackling](#Audio_crackling)
@@ -147,6 +148,10 @@ dmesg | grep -i "acpi: (supports"
 ```
 
 and check for `S3` in the list.
+
+### S3 Suspend Bug with Bluetooth Devices
+
+Occasionally your Thinkpad will wake up immediately or a few seconds after suspending with certain [bluetooth](/index.php/Bluetooth "Bluetooth") devices added. To prevent this, remove the devices or disable [bluetooth](/index.php/Bluetooth "Bluetooth") before suspending.
 
 ### Disabling the memory card reader
 

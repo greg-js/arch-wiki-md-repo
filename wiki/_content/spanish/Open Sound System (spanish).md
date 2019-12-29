@@ -237,7 +237,7 @@ Otras mixer soportados por OSS:
 
 *   **VolWheel** — para [LXDE](/index.php/LXDE "LXDE").
 
-	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://aur.archlinux.org/packages/volwheel/)
 
 	Después de instalar VolWheel, tendrá que hacer lo que sigue para habilitar la compatibilidad con OSS:
 

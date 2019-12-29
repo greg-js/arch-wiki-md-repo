@@ -1,13 +1,6 @@
-[Icecast](http://www.icecast.org/) is a program for streaming media such as audio and video across a network. Different types of clients connect to the IceCast server, either to provide a "mount point", control the server, or listen to the audio being cast.
+[Icecast](https://www.icecast.org/) is a program for streaming media such as audio and video across a network. Different types of clients connect to the IceCast server, either to provide a "mount point", control the server, or listen to the audio being cast.
 
-Icecast has support for streaming many audio streams simultaneously - each stream has a "mount point" which a client can access, usually through a network uri, such as:
-
-```
-http://server:8000/mpd.ogg.m3u
-
-```
-
-This refers to a mount point called "mpd".
+Icecast has support for streaming many audio streams simultaneously - each stream has a "mount point" which a client can access, with a network URI such as `[http://server:8000/mpd.ogg.m3u](http://server:8000/mpd.ogg.m3u)` (this refers to a mount point called "mpd").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -40,7 +33,7 @@ This refers to a mount point called "mpd".
 
 Open up `/etc/icecast.xml` in your text editor. The main section you want to pay attention to is <authentication>. Inside the <authentication> block there are all the passwords that icecast use. **It is strongly recommended** that you change them. Icecast defaults to listening on port 8000, and you may also change that if you wish.
 
-Since icecast 2.3.2-4 the daemon is started as nobody user. Icecast-kh starts as icecast user by default. To change this behavior, pay attention to the <changeowner> section.
+The daemon from the [icecast](https://www.archlinux.org/packages/?name=icecast) package is started as the *nobody* user. The daemon from the [icecast-kh](https://aur.archlinux.org/packages/icecast-kh/) package is started as the *icecast* user. To change this behavior, pay attention to the <changeowner> section.
 
 ## Icecast paths
 
@@ -70,7 +63,7 @@ If you want icecast to remain in the foreground of your terminal, remove the -b 
 
 To run icecast as a system daemon, [start](/index.php/Start "Start") the `icecast.service` systemd unit.
 
-To run icecast at system boot, [enable](/index.php/Enable "Enable") the systemd unit.
+To run icecast at system boot, [enable](/index.php/Enable "Enable") the `icecast.service` systemd unit.
 
 *   Test it.
 
@@ -140,12 +133,7 @@ audio_output {
 
 ### Step 4: Running MPD with Icecast
 
-Now you can start mpd :
-
-```
-# systemctl start mpd
-
-```
+Now you can [start](/index.php/Start "Start") `mpd.service`.
 
 Note that icecast must be started first for the stream to work.
 
@@ -173,7 +161,7 @@ You can then play the stream as if it was a song belonging to your local mpd ins
 
 ### Sonata
 
-*   [Install](/index.php/Install "Install") the [sonata](https://www.archlinux.org/packages/?name=sonata) package.
+*   [Install](/index.php/Install "Install") the [sonata](https://aur.archlinux.org/packages/sonata/) package.
 *   Start it up and you should be greeted by Sonata's preferences.
 *   Set 'Name' to the name of your server.
 *   Set 'Host' to the IP address of your server.
@@ -217,7 +205,7 @@ $ icecast -c path/to/config.xml
 
 ```
 
-or [start](/index.php/Start "Start") the systemd unit `icecast` instead.
+or [start](/index.php/Start "Start") the `icecast.service` systemd unit instead.
 
 *   Start ffmpeg2theora, sending its output to oggfwd, which forwards to the icecast server for you.
 
@@ -293,5 +281,5 @@ Create a log directory under `/usr/share/icecast` and set the permissions:
 
 ## References
 
-*   [MPD Wiki: Configuration](http://mpd.wikia.com/wiki/Configuration)
-*   [[1]](http://en.flossmanuals.net/TheoraCookbook/FfmpegStreaming) - oggfwd and ffmpeg2theora howto.
+*   [MPD Wiki: Configuration](https://mpd.fandom.com/wiki/Configuration)
+*   [[1]](http://booki.flossmanuals.net/ogg-theora/live-streaming/ffmpeg2theora) - oggfwd and ffmpeg2theora howto.

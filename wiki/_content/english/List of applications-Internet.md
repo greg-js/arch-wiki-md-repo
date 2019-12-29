@@ -500,7 +500,7 @@ See also [Category:Web server](/index.php/Category:Web_server "Category:Web serv
 
 *   **[Caddy](/index.php/Caddy "Caddy")** — HTTP/2 web server with automatic HTTPS.
 
-	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://aur.archlinux.org/packages/caddy/)
+	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://www.archlinux.org/packages/?name=caddy)
 
 *   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced web server.
 
@@ -1046,7 +1046,7 @@ See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:
 
 Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
 
-**Tip:** You can access the [ix.io](http://ix.io/) pastebin using curl. For example pipe the output of a command to ix.io: `*command* | curl -F 'f:1=<-' ix.io ` or upload a file: `curl -F 'f:1=<-' ix.io < *file*` 
+**Tip:** You can access the [ix.io](http://ix.io/) pastebin using curl. For example pipe the output of a command to ix.io: `*command* |& curl -F 'f:1=<-' ix.io ` or upload a file: `curl -F 'f:1=<-' ix.io < *file*` 
 
 **Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc). Do *not* use it.
 

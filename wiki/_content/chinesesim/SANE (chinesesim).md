@@ -1,6 +1,14 @@
+相关文章
+
+*   [Scan print and save Script](/index.php?title=Scan_print_and_save_Script&action=edit&redlink=1 "Scan print and save Script (page does not exist)")
+
 Sane provides a library and a command-line tool to use scanners under GNU/Linux. [Here](http://www.sane-project.org/sane-supported-devices.html) you can check if sane supports your scanner.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

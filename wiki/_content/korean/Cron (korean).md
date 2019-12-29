@@ -2,11 +2,15 @@
 
 ***cron**은 유닉스 계열 운영 체제의 시간 기반 작업 스케줄러이다. cron을 사용하면 사용자는 명령어나 쉘 스크립트와 같은 작업을 특정 시간이나 날짜에 주기적으로 실행할 수 있도록 일정을 짤 수 있다. 시스템 관리나 작업을 자동화하기 위해 보통 사용된다.[...]*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 설치](#.EC.84.A4.EC.B9.98)
-*   [2 설정](#.EC.84.A4.EC.A0.95)
-    *   [2.1 사용자와 자동 시작](#.EC.82.AC.EC.9A.A9.EC.9E.90.EC.99.80_.EC.9E.90.EB.8F.99_.EC.8B.9C.EC.9E.91)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 설치](#설치)
+*   [2 설정](#설정)
+    *   [2.1 사용자와 자동 시작](#사용자와_자동_시작)
     *   [2.2 Handling errors of jobs](#Handling_errors_of_jobs)
         *   [2.2.1 Example with msmtp](#Example_with_msmtp)
         *   [2.2.2 Example with esmtp](#Example_with_esmtp)
@@ -82,7 +86,7 @@ identity *myself*@myisp.com
        password *"secret"*
        starttls enabled
        default
-mda "/usr/bin/procmail -d %T"
+mda "/usr/bin/procmail -d %T"
 
 ```
 
@@ -365,7 +369,7 @@ See the crontab [man page](/index.php/Man_page "Man page") for further informati
 
 ## run-parts issue
 
-cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: [run-parts(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)).
+cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: [run-parts(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)).
 
 ## Running Xorg server based applications
 

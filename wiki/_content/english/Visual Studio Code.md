@@ -60,7 +60,7 @@ Example:
 
 If you are using [Terminator](/index.php/Terminator "Terminator") as default terminal for Arch and you have an error on Visual Studio Code: `Unable to launch debugger worker process (vsdbg) through the terminal. spawn truecolor ENOENT`, you can change the terminal that will be used by Visual Studio to another terminal (e.g. [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)).
 
-`"terminal.external.linuxExec": "Yours alternative terminal"` sets the default terminal to be used for exec debug.
+`"terminal.external.linuxExec": "Your alternative terminal"` sets the default terminal to be used for exec debug.
 
 Example:
 

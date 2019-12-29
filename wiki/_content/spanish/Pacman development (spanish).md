@@ -5,7 +5,11 @@ Este artículo es una traducción de [Pacman development](/index.php/Pacman_deve
 
 Recuerde que si **usted** piensa que algo pertenece a esta página, ¡añádalo! Es probable que los desarrolladores actuales de pacman no sepan lo que las personas necesitan saber y que deberían estar en esta página.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Referencias y enlaces](#Referencias_y_enlaces)
 *   [2 Repositorios del desarrollador](#Repositorios_del_desarrollador)

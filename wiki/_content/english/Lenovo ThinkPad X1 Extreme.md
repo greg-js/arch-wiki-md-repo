@@ -102,18 +102,25 @@ While optimus-manager requires logging out to switch graphics, it provides bette
 
  `/etc/optimus-manager/optimus-manager.conf` 
 ```
-
 [intel]
-driver=intel
+DRI=3
+driver=modesetting
 modeset=yes
 
 [nvidia]
+PAT=yes
+ignore_abi=no
 modeset=yes
 
 [optimus]
+pci_power_control=no
+pci_remove=no
+pci_reset=function_level
 switching=bbswitch
 
 ```
+
+The above configuration needs [Bbswitch](/index.php/Bbswitch "Bbswitch") installed.
 
 #### Using external graphics exclusively
 

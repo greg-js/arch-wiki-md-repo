@@ -168,7 +168,7 @@ Arch 编译系统提供了编译官方库软件的脚本，而 [AUR](/index.php/
 
 ### 开机时打开 Num Lock
 
-大多数键盘都有一个Num Lock键，通过它控制小键盘的开关。用户可能希望在系统启动时打开Num Lock，参见：[启动时激活 Numlock](/index.php/Activating_Numlock_on_Bootup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Activating Numlock on Bootup (简体中文)")。
+大多数键盘都有一个Num Lock键，通过它控制小键盘的开关。用户可能希望在系统启动时打开Num Lock，参见：[启动时激活 Numlock](/index.php/Activating_numlock_on_bootup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Activating numlock on bootup (简体中文)")。
 
 ## 图形界面
 

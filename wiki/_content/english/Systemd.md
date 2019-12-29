@@ -45,21 +45,22 @@ From the [project web page](https://freedesktop.org/wiki/Software/systemd/):
 *   [5 Timers](#Timers)
 *   [6 Mounting](#Mounting)
     *   [6.1 GPT partition automounting](#GPT_partition_automounting)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Running services after the network is up](#Running_services_after_the_network_is_up)
-    *   [7.2 Enable installed units by default](#Enable_installed_units_by_default)
-    *   [7.3 Sandboxing application environments](#Sandboxing_application_environments)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Investigating systemd errors](#Investigating_systemd_errors)
-    *   [8.2 Diagnosing boot problems](#Diagnosing_boot_problems)
-    *   [8.3 Diagnosing a service](#Diagnosing_a_service)
-    *   [8.4 Shutdown/reboot takes terribly long](#Shutdown/reboot_takes_terribly_long)
-    *   [8.5 Short lived processes do not seem to log any output](#Short_lived_processes_do_not_seem_to_log_any_output)
-    *   [8.6 Boot time increasing over time](#Boot_time_increasing_over_time)
-    *   [8.7 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
-    *   [8.8 systemd version printed on boot is not the same as installed package version](#systemd_version_printed_on_boot_is_not_the_same_as_installed_package_version)
-    *   [8.9 Disable emergency mode on remote machine](#Disable_emergency_mode_on_remote_machine)
-*   [9 See also](#See_also)
+*   [7 systemd-sysvcompat](#systemd-sysvcompat)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Running services after the network is up](#Running_services_after_the_network_is_up)
+    *   [8.2 Enable installed units by default](#Enable_installed_units_by_default)
+    *   [8.3 Sandboxing application environments](#Sandboxing_application_environments)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Investigating systemd errors](#Investigating_systemd_errors)
+    *   [9.2 Diagnosing boot problems](#Diagnosing_boot_problems)
+    *   [9.3 Diagnosing a service](#Diagnosing_a_service)
+    *   [9.4 Shutdown/reboot takes terribly long](#Shutdown/reboot_takes_terribly_long)
+    *   [9.5 Short lived processes do not seem to log any output](#Short_lived_processes_do_not_seem_to_log_any_output)
+    *   [9.6 Boot time increasing over time](#Boot_time_increasing_over_time)
+    *   [9.7 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
+    *   [9.8 systemd version printed on boot is not the same as installed package version](#systemd_version_printed_on_boot_is_not_the_same_as_installed_package_version)
+    *   [9.9 Disable emergency mode on remote machine](#Disable_emergency_mode_on_remote_machine)
+*   [10 See also](#See_also)
 
 ## Basic systemctl usage
 
@@ -126,9 +127,7 @@ When using *systemctl*, you generally have to specify the complete name of the u
 
 See [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) for details.
 
-**Note:** Some unit names contain an `@` sign (e.g. `name@*string*.service`): this means that they are [instances](http://0pointer.de/blog/projects/instances.html) of a *template* unit, whose actual file name does not contain the `*string*` part (e.g. `name@.service`). `*string*` is called the *instance identifier*, and is similar to an argument that is passed to the template unit when called with the *systemctl* command: in the unit file it will substitute the `%i` specifier.
-
-To be more accurate, *before* trying to instantiate the `name@.suffix` template unit, *systemd* will actually look for a unit with the exact `name@string.suffix` file name, although by convention such a "clash" happens rarely, i.e. most unit files containing an `@` sign are meant to be templates. Also, if a template unit is called without an instance identifier, it will just fail, since the `%i` specifier cannot be substituted.
+**Note:** Some unit names contain an `@` sign (e.g. `name@*string*.service`): this means that they are [instances](http://0pointer.de/blog/projects/instances.html) of a *template* unit, whose actual file name does not contain the `*string*` part (e.g. `name@.service`). `*string*` is called the *instance identifier*, and is similar to an argument that is passed to the template unit when called with the *systemctl* command: in the unit file it will substitute the `%i` specifier. To be more accurate, *before* trying to instantiate the `name@.suffix` template unit, *systemd* will actually look for a unit with the exact `name@string.suffix` file name, although by convention such a "clash" happens rarely, i.e. most unit files containing an `@` sign are meant to be templates. Also, if a template unit is called without an instance identifier, it will just fail, since the `%i` specifier cannot be substituted.
 
 **Tip:**
 
@@ -236,14 +235,14 @@ $ systemctl help *unit*
 Shut down and reboot the system:
 
 ```
-$ reboot
+$ systemctl reboot
 
 ```
 
 Shut down and power-off the system:
 
 ```
-$ poweroff
+$ systemctl poweroff
 
 ```
 
@@ -469,7 +468,11 @@ Systemd chooses the `default.target` according to the following order:
 
 Configuration files are usually provided together with service files, and they are named in the style of `/usr/lib/tmpfiles.d/*program*.conf`. For example, the [Samba](/index.php/Samba "Samba") daemon expects the directory `/run/samba` to exist and to have the correct permissions. Therefore, the [samba](https://www.archlinux.org/packages/?name=samba) package ships with this configuration:
 
- `/usr/lib/tmpfiles.d/samba.conf`  `D /run/samba 0755 root root` 
+ `/usr/lib/tmpfiles.d/samba.conf` 
+```
+D /run/samba 0755 root root
+
+```
 
 Configuration files may also be used to write values into certain files on boot. For example, if you used `/etc/rc.local` to disable wakeup from USB devices with `echo USBE > /proc/acpi/wakeup`, you may use the following tmpfile instead:
 
@@ -477,6 +480,7 @@ Configuration files may also be used to write values into certain files on boot.
 ```
 #    Path                  Mode UID  GID  Age Argument
 w    /proc/acpi/wakeup     -    -    -    -   USBE
+
 ```
 
 See the [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
@@ -502,6 +506,14 @@ An example of these mount options in the context of *automounting*, which means 
 On a [GPT](/index.php/GPT "GPT") partitioned disk [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) will mount partitions following the [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/), thus they can be omitted from `fstab`.
 
 The automounting for a partition can be disabled by changing the partition's [type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") or setting the partition attribute bit 63 "do not automount", see [gdisk#Prevent GPT partition automounting](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk").
+
+## systemd-sysvcompat
+
+[systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (required by [base](https://www.archlinux.org/packages/?name=base)) primary role is to provide the traditional linux [init](/index.php/Init "Init") binary. For systemd controlled systems, `init` is just a symbolic link to its `systemd` executable.
+
+In addition, it also provides 6 convenience short cuts that [SysVinit](/index.php/SysVinit "SysVinit") users might be used to. The convenience short cuts are [halt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/halt.8), [poweroff(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/poweroff.8), [reboot(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/reboot.8), [runlevel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/runlevel.8), [shutdown(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/shutdown.8), and [telinit(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/telinit.8). Each one of those 6 commands is a symbolic link to `systemctl`, and governed by systemd behavior. Therefore, the discussion at [#Power management](#Power_management) applies to `halt`, `poweroff`, `reboot` and `shutdown`. The discussion at [#Mapping between SysV runlevels and systemd targets](#Mapping_between_SysV_runlevels_and_systemd_targets) applies to `runlevel` and `telinit`.
+
+Systemd based systems can give up those System V compatibility methods by using the `init=` [boot parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") (see, for example, [[solved] /bin/init is in systemd-sysvcompat ?](https://bbs.archlinux.org/viewtopic.php?id=233387)) and systemd native `systemctl` command arguments.
 
 ## Tips and tricks
 
@@ -693,18 +705,18 @@ You may want to disable emergency mode on a remote machine, for example, a virtu
 
 ## See also
 
-*   [Wikipedia article](https://en.wikipedia.org/wiki/systemd "wikipedia:systemd")
+*   [Wikipedia:systemd](https://en.wikipedia.org/wiki/systemd "wikipedia:systemd")
 *   [systemd Official web site](https://www.freedesktop.org/wiki/Software/systemd)
     *   [systemd optimizations](https://www.freedesktop.org/wiki/Software/systemd/Optimizations)
     *   [systemd FAQ](https://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
     *   [systemd Tips and tricks](https://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
 *   [Manual pages](https://www.freedesktop.org/software/systemd/man/)
 *   Other distributions
-    *   [Gentoo Wiki systemd page](https://wiki.gentoo.org/wiki/Systemd)
-    *   [Fedora Project - About systemd](https://fedoraproject.org/wiki/Systemd)
-    *   [Fedora Project - How to debug systemd problems](https://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-    *   [Fedora Project - SysVinit to systemd cheatsheet](https://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)
-    *   [Debian Wiki systemd page](https://wiki.debian.org/systemd "debian:systemd")
+    *   [Gentoo:Systemd](https://wiki.gentoo.org/wiki/Systemd "gentoo:Systemd")
+    *   [Fedora:Systemd](https://fedoraproject.org/wiki/Systemd "fedora:Systemd")
+    *   [Fedora:How to debug Systemd problems](https://fedoraproject.org/wiki/How_to_debug_Systemd_problems "fedora:How to debug Systemd problems")
+    *   [Fedora:SysVinit to Systemd Cheatsheet](https://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet "fedora:SysVinit to Systemd Cheatsheet")
+    *   [Debian:systemd](https://wiki.debian.org/systemd "debian:systemd")
 *   [Lennart's blog story](http://0pointer.de/blog/projects/systemd.html), [update 1](http://0pointer.de/blog/projects/systemd-update.html), [update 2](http://0pointer.de/blog/projects/systemd-update-2.html), [update 3](http://0pointer.de/blog/projects/systemd-update-3.html), [summary](http://0pointer.de/blog/projects/why.html)
 *   [systemd for Administrators (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
 *   [How To Use Systemctl to Manage Systemd Services and Units](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)

@@ -51,14 +51,15 @@ As a result:
         *   [5.2.2 Start with a service or timer](#Start_with_a_service_or_timer)
     *   [5.3 Destroy a storage pool](#Destroy_a_storage_pool)
     *   [5.4 Exporting a storage pool](#Exporting_a_storage_pool)
-    *   [5.5 Renaming a zpool](#Renaming_a_zpool)
-    *   [5.6 Setting a different mount point](#Setting_a_different_mount_point)
-    *   [5.7 SSD Caching](#SSD_Caching)
-        *   [5.7.1 SLOG](#SLOG)
-        *   [5.7.2 L2ARC](#L2ARC)
-    *   [5.8 ZVOLs](#ZVOLs)
-        *   [5.8.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
-    *   [5.9 I/O Scheduler](#I/O_Scheduler)
+    *   [5.5 Extending an existing zpool](#Extending_an_existing_zpool)
+    *   [5.6 Renaming a zpool](#Renaming_a_zpool)
+    *   [5.7 Setting a different mount point](#Setting_a_different_mount_point)
+    *   [5.8 SSD Caching](#SSD_Caching)
+        *   [5.8.1 SLOG](#SLOG)
+        *   [5.8.2 L2ARC](#L2ARC)
+    *   [5.9 ZVOLs](#ZVOLs)
+        *   [5.9.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
+    *   [5.10 I/O Scheduler](#I/O_Scheduler)
 *   [6 Creating datasets](#Creating_datasets)
     *   [6.1 Native encryption](#Native_encryption)
         *   [6.1.1 Unlock at boot time](#Unlock_at_boot_time)
@@ -146,7 +147,7 @@ ZFS is considered a "zero administration" filesystem by its creators; therefore,
 
 ### Automatic Start
 
-Currently, by default, the kernel module is not loaded at boot (see more details in [https://github.com/zfsonlinux/zfs/issues/6083](https://github.com/zfsonlinux/zfs/issues/6083)). To automatically load `zfs` module on boot, see [Kernel_module#Automatic_module_loading_with_systemd](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module").
+Currently, by default, the kernel module is not loaded at boot (see more details in [https://github.com/zfsonlinux/zfs/issues/6083](https://github.com/zfsonlinux/zfs/issues/6083)). To automatically load `zfs` module on boot, see [Kernel module#Automatic module loading with systemd](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module").
 
 For ZFS to live by its "zero administration" namesake, `zfs-import-cache.service` must be enabled to import the pools and `zfs-mount.service` must be enabled to mount the filesystems available in the pools. A benefit to this is that it is not necessary to mount ZFS filesystems in `/etc/fstab`. `zfs-import-cache.service` imports the zfs pools reading the file `/etc/zfs/zpool.cache`.
 
@@ -544,6 +545,29 @@ To export a pool:
 
 ```
 # zpool export <pool>
+
+```
+
+### Extending an existing zpool
+
+A device (a partition or a disk) can be added to an existing zpool:
+
+```
+# zpool add <pool> <device-id>
+
+```
+
+To import a pool which consists of multiple devices:
+
+```
+# zpool import -d <device-id-1> -d <device-id-2> <pool>
+
+```
+
+or simply:
+
+```
+# zpool import -d /dev/disk-by-id/ <pool>
 
 ```
 

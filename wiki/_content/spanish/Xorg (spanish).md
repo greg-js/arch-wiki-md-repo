@@ -401,7 +401,9 @@ Con la ayuda de `xinput` podemos activar o desactivar temporalmente las fuentes 
 
 [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
-Busque el ID del dispositivo que deseamos desactivar: `xinput` 
+Busque el ID del dispositivo que deseamos desactivar:
+
+ `xinput` 
 
 Por ejemplo, en un Lenovo ThinkPad T500, la salida se vería así:
 

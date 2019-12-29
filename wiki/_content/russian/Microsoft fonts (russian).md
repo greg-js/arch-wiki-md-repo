@@ -158,7 +158,7 @@
 
 На установленной системе Windows 8.1 шрифты, как правило, находится в `[%WINDIR%](http://technet.microsoft.com/en-us/library/hh825266.aspx)\Fonts`, и файл лицензии `[%SYSTEM32%](http://technet.microsoft.com/en-us/library/hh825266.aspx)\license.rtf`.
 
-Вам нужны файлы, перечисленные в массиве `source=()`. Поместите их в той же директории, что и этот файл [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), а затем запустите [makepkg](/index.php/Makepkg "Makepkg").
+Вам нужны файлы, перечисленные в массиве `source=()`. Поместите их в той же директории, что и этот файл [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), а затем запустите [makepkg](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)").
 
 `makepkg --pkg ttf-ms-win8` сделает пакет основных шрифтов Windows 8.1 который охватывает даже больше, чем [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).
 

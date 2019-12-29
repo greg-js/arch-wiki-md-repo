@@ -1,10 +1,14 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Cos'è BOINC](#Cos.27.C3.A8_BOINC)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Cos'è BOINC](#Cos'è_BOINC)
     *   [1.1 Installare BOINC](#Installare_BOINC)
         *   [1.1.1 Istruzioni](#Istruzioni)
     *   [1.2 Come usare BOINC](#Come_usare_BOINC)
-        *   [1.2.1 BOINC attraverso l'interfaccia grafica](#BOINC_attraverso_l.27interfaccia_grafica)
+        *   [1.2.1 BOINC attraverso l'interfaccia grafica](#BOINC_attraverso_l'interfaccia_grafica)
             *   [1.2.1.1 Suggerimenti](#Suggerimenti)
         *   [1.2.2 BOINC attraverso riga di comando](#BOINC_attraverso_riga_di_comando)
     *   [1.3 File di log](#File_di_log)

@@ -13,6 +13,7 @@
     *   [3.1 Kanji stroke support](#Kanji_stroke_support)
     *   [3.2 Asian language support](#Asian_language_support)
     *   [3.3 Self-hosted sync server](#Self-hosted_sync_server)
+    *   [3.4 Dark theme](#Dark_theme)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -52,6 +53,10 @@ After creating a new deck, you need to select "Japanese" as the deck model in "d
 ### Self-hosted sync server
 
 AnkiWeb is a proprietary service. If you prefer a self-hosted free (as in freedom) alternative, you can use [anki-sync-server](https://github.com/tsudoko/anki-sync-server). One tutorial how to set it up is available [here](http://genedan.com/no-127-ankisyncd-a-custom-sync-server-for-anki-2-1/).
+
+### Dark theme
+
+Anki UI may me unreadable with dark GTK theme. You may want to install an addon to fix that (e.g. [1496166067](https://ankiweb.net/shared/info/1496166067) and *View > Nigh mode > Enable night mode*).
 
 ## See also
 

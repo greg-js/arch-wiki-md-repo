@@ -526,7 +526,7 @@ $ export XCOMPOSECACHE="$XDG_CACHE_HOME"/X11/xcompose`
 $ mocp -O MOCDir="$XDG_CONFIG_HOME"/moc`
 
  |
-| [monero](https://aur.archlinux.org/packages/monero/) | `~/.bitmonero` | `$ monerod --data-dir "$XDG_DATA_HOME"/bitmonero` |
+| [monero](https://www.archlinux.org/packages/?name=monero) | `~/.bitmonero` | `$ monerod --data-dir "$XDG_DATA_HOME"/bitmonero` |
 | [most](https://www.archlinux.org/packages/?name=most) | `~/.mostrc` | `$ export MOST_INITFILE="$XDG_CONFIG_HOME"/mostrc` |
 | [MPlayer](/index.php/MPlayer "MPlayer") | `~/.mplayer` | `$ export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer` |
 | [MySQL](/index.php/MySQL "MySQL") | `~/.mysql_history` | `$ export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history` |

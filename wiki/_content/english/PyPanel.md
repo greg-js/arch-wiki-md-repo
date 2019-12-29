@@ -1,6 +1,6 @@
 From [PyPanel sourceforge page](http://pypanel.sourceforge.net/):
 
-	PyPanel is a lightweight panel/taskbar written in Python and C for X11 window managers. It can be easily customized to match any desktop theme or taste. PyPanel works with EWMH compliant WMs (Openbox, PekWM, FVWM, etc.) and is distributed under the GNU General Public License v2\.
+	PyPanel is a lightweight panel/taskbar written in Python and C for X11 window managers. It can be easily customized to match any desktop theme or taste. PyPanel works with EWMH compliant WMs (Openbox, PekWM, FVWM, etc.) and is distributed under the GNU General Public License v2.
 
 	Some of the customizable features include:
 
@@ -14,7 +14,11 @@ From [PyPanel sourceforge page](http://pypanel.sourceforge.net/):
 *   Application Launcher
 *   Custom Application Icons
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

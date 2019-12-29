@@ -121,7 +121,7 @@ in order to get temperatures
 System will be unstable with kernel bellow 4.20, while you have older kernel add this parameters to grub
 
 ```
-quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2 idle=nomwait
+quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2 idle=nomwait iommu=soft
 
 ```
 

@@ -392,7 +392,7 @@ Encoding performance may be improved by using [hardware acceleration API's](http
 
 #### VA-API
 
-[VA-API](/index.php/VA-API "VA-API") can be used for encoding and decoding on Intel CPUs (requires [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)) and on certain AMD GPUs when using the open-source [AMDGPU](/index.php/AMDGPU "AMDGPU") driver (requires [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver)). See the following [GitHub gist](https://gist.github.com/Brainiarc7/95c9338a737aa36d9bb2931bed379219) and [Libav documentation](https://wiki.libav.org/Hardware/vaapi) for information about available parameters and supported platforms.
+[VA-API](/index.php/VA-API "VA-API") can be used for encoding and decoding on Intel CPUs (requires [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver)) and on certain AMD GPUs when using the open-source [AMDGPU](/index.php/AMDGPU "AMDGPU") driver (requires [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver)). See the following [GitHub gist](https://gist.github.com/Brainiarc7/26f15a7f6f316e4ecae2c008b99880e1) and [Libav documentation](https://wiki.libav.org/Hardware/vaapi) for information about available parameters and supported platforms.
 
 An example of encoding using the supported H.264 codec:
 

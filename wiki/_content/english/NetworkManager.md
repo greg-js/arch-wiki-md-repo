@@ -49,6 +49,7 @@ Related articles
         *   [4.7.3 /etc/resolv.conf](#/etc/resolv.conf)
             *   [4.7.3.1 Unmanaged /etc/resolv.conf](#Unmanaged_/etc/resolv.conf)
             *   [4.7.3.2 Use openresolv](#Use_openresolv)
+    *   [4.8 Firewall](#Firewall)
 *   [5 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
     *   [5.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
     *   [5.2 Dispatcher examples](#Dispatcher_examples)
@@ -137,7 +138,7 @@ Support for other VPN types is based on a plug-in system. They are provided in t
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
 *   [network-manager-sstp](https://www.archlinux.org/packages/?name=network-manager-sstp)
 
-**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.
+**Warning:** There are a lot of [bugs](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues?search=VPN&state=opened) (and [old bugs](https://bugzilla.gnome.org/buglist.cgi?bug_status=__open__&content=VPN&product=NetworkManager)) related to VPN support. Check the daemon processes options set via the GUI correctly and double-check with each package release.
 
 **Note:** To have fully functioning DNS resolution when using VPN, you should set up [conditional forwarding](#DNS_caching_and_conditional_forwarding).
 
@@ -287,6 +288,8 @@ $ nm-applet --no-agent
 
 **Tip:** `nm-applet` might be started automatically with a [autostart desktop file](/index.php/XDG_Autostart "XDG Autostart"), to add the --no-agent option modify the Exec line there, i.e. `Exec=nm-applet --no-agent` 
 
+**Warning:** On [i3](/index.php/I3 "I3"), if nm-applet is started with the `--no-agent` option, it is not possible to connect to a new encrypted WiFi network by clicking on the item list because no password input dialogue window will pop out. [journal](/index.php/Journal "Journal") will show `no secrets: No agents were available for this request`.
+
 #### Appindicator
 
 Appindicator support is available in *nm-applet* however it is not compiled into the official package, see [FS#51740](https://bugs.archlinux.org/task/51740). To use nm-applet in an Appindicator environment, replace [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) with [network-manager-applet-indicator](https://aur.archlinux.org/packages/network-manager-applet-indicator/) and then start the applet with the following command:
@@ -417,7 +420,7 @@ See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for all a
 
 Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `drill -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
 
- `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
+ `/etc/NetworkManager/dnsmasq.d/ipv6-listen.conf`  `listen-address=::1` 
 
 In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately NetworkManager does not do this ([Ubuntu Bug](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). A workaround would be to disable IPv4 DNS in the NetworkManager config, assuming one exists
 
@@ -529,6 +532,12 @@ To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresol
 [main]
 rc-manager=resolvconf
 ```
+
+### Firewall
+
+You can assign a [firewalld](/index.php/Firewalld "Firewalld") zone based on your current connection. For exemple a restrictive firewall when at work, and a less restrictive one when at home.
+
+This can also be done with [NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
 
 ## Network services with NetworkManager dispatcher
 
@@ -852,7 +861,7 @@ For static IP addresses, you will have to configure NetworkManager to understand
 By default, NetworkManager stores passwords in clear text in the connection files at `/etc/NetworkManager/system-connections/`. To print the stored passwords, use the following command:
 
 ```
-# grep -H '^psk=' /etc/NetworkManager/system-connections/*
+# grep -r '^psk=' /etc/NetworkManager/system-connections/
 
 ```
 

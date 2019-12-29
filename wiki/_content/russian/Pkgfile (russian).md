@@ -2,7 +2,7 @@
 
 *   [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Pkgfile](/index.php/Pkgfile "Pkgfile"). Дата последней синхронизации: 27 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Pkgfile&diff=0&oldid=581214).
+**Состояние перевода:** На этой странице представлен перевод статьи [pkgfile](/index.php/Pkgfile "Pkgfile"). Дата последней синхронизации: 26 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Pkgfile&diff=0&oldid=581214).
 
 **pkgfile** — инструмент для поиска файлов в пакетах из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
@@ -49,11 +49,11 @@ core/archlinux-keyring usr/share/pacman/keyrings/archlinux-trusted
 core/archlinux-keyring usr/share/pacman/keyrings/archlinux.gpg
 ```
 
-Последняя команда похожа на команду `pacman -Ql` (подробности можно найти в статье [pacman (Русский)#Запросы к базам данных пакетов](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Запросы_к_базам_данных_пакетов "Pacman (Русский)")), но позволяет искать файлы пакетов, которые ещё не установлены в систему и находятся в удалённых (remote) репозиториях.
+Последняя команда похожа на команду `pacman -Ql` (подробности можно найти в статье [pacman#Запросы к базам данных пакетов](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Запросы_к_базам_данных_пакетов "Pacman (Русский)")), но позволяет искать файлы пакетов, которые ещё не установлены в систему и находятся в удалённых (remote) репозиториях.
 
 ## Команда не найдена
 
-Изучите статьи [Bash (Русский)#Команда не найдена](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Команда_не_найдена "Bash (Русский)"), [Zsh (Русский)#Обработчик неизвестных команд](/index.php/Zsh_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Обработчик_неизвестных_команд "Zsh (Русский)") и [Fish (Русский)#Хук "command not found"](/index.php/Fish_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Хук_"command_not_found" "Fish (Русский)").
+Изучите статьи [Bash#Команда не найдена](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Команда_не_найдена "Bash (Русский)"), [Zsh#Обработчик неизвестных команд](/index.php/Zsh_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Обработчик_неизвестных_команд "Zsh (Русский)") и [Fish#Хук "command not found"](/index.php/Fish_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Хук_"command_not_found" "Fish (Русский)").
 
 ## Автоматические обновления
 

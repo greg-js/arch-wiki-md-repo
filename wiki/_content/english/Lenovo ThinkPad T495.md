@@ -142,7 +142,7 @@ Fingerprint sensor seems to work with some recent firmware and software updates 
 
 2\. Latest fprintd and libfprint are required[[7]](https://fprint.freedesktop.org/). [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.
 
-3\. [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [pam](/index.php/Pam "Pam") authentication for example.
+3\. [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [PAM](/index.php/PAM "PAM") authentication for example.
 
 ## Known Issues
 

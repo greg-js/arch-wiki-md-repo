@@ -1317,7 +1317,7 @@ The startup chime volume is controlled by the EFI variable *SystemAudioVolume-7c
 
 ```
 
-Bear in mind that the file may have the immutable bit set by default, which will prevent even root from overwriting the file. See [File permissions and attributes#chattr_and_lsattr](/index.php/File_permissions_and_attributes#chattr_and_lsattr "File permissions and attributes"). To remove it, issue the following:
+Bear in mind that the file may have the immutable bit set by default, which will prevent even root from overwriting the file. See [File permissions and attributes#chattr and lsattr](/index.php/File_permissions_and_attributes#chattr_and_lsattr "File permissions and attributes"). To remove it, issue the following:
 
 ```
 # chattr -i /sys/firmware/efi/efivars/SystemAudioVolume-7c436110-ab2a-4bbb-a880-fe41995c9f82

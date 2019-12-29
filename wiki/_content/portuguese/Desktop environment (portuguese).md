@@ -102,7 +102,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **[Pantheon](/index.php/Pantheon "Pantheon")** — O Pantheon é o ambiente de área de trabalho padrão originalmente criado para a distribuição do ElementaryOS. Ele é escrito do zero usando Vala e o kit de ferramentas GTK3\. Com relação à usabilidade e aparência, a área de trabalho tem algumas semelhanças com o GNOME Shell e o macOS.
 
-	[https://elementary.io/](https://elementary.io/) || [pantheon](https://aur.archlinux.org/packages/pantheon/)
+	[https://elementary.io/](https://elementary.io/) || [pantheon](https://www.archlinux.org/groups/x86_64/pantheon/)
 
 *   **theShell** — theShell é um ambiente de desktop que tenta ser o mais transparente possível. Ele usa o Qt 5 como seu kit de ferramentas de widgets e o KWin como seu gerenciador de janelas. Também incorpora um assistente pessoal. Ele também incorpora um assistente pessoal.
 

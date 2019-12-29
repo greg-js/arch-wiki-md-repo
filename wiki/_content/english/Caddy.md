@@ -13,7 +13,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [caddy](https://aur.archlinux.org/packages/caddy/) package or the binary [caddy-bin](https://aur.archlinux.org/packages/caddy-bin/) package.
+[Install](/index.php/Install "Install") the [caddy](https://www.archlinux.org/packages/?name=caddy) package or the binary [caddy-bin](https://aur.archlinux.org/packages/caddy-bin/) package.
 
 ## Configuration
 

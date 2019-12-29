@@ -238,7 +238,7 @@ Other mixers that have support for OSS:
 *   *Default Mixer*: `ossxmix`.
 *   In the *MiniMixer* tab (optional), add `vmix0-outvol` and optionally others.
 
-	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://aur.archlinux.org/packages/volwheel/)
 
 ## Configuring Applications for OSS
 

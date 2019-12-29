@@ -1,19 +1,23 @@
 Эта статья прояснит некоторые термины, которые используют в сообществе Arch Linux. Не стесняйтесь вносить правки, но желательно "Править" конкретный раздел, в не всю страницу. Пожалуйста, сохраняйте алфавитный порядок при добавлении нового раздела.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Arch Linux](#Arch_Linux)
 *   [2 ABS](#ABS)
 *   [3 ARM](#ARM)
 *   [4 AUR](#AUR)
 *   [5 PKGBUILD](#PKGBUILD)
-*   [6 TU, Trusted User](#TU.2C_Trusted_User)
+*   [6 TU, Trusted User](#TU,_Trusted_User)
 *   [7 bbs](#bbs)
-*   [8 community/[community]](#community.2F.5Bcommunity.5D)
-*   [9 core/[core]](#core.2F.5Bcore.5D)
-*   [10 custom/user repository](#custom.2Fuser_repository)
+*   [8 community/[community]](#community/[community])
+*   [9 core/[core]](#core/[core])
+*   [10 custom/user repository](#custom/user_repository)
 *   [11 Developer](#Developer)
-*   [12 extra/[extra]](#extra.2F.5Bextra.5D)
+*   [12 extra/[extra]](#extra/[extra])
 *   [13 hwd](#hwd)
 *   [14 hwdetect](#hwdetect)
 *   [15 initramfs](#initramfs)
@@ -21,13 +25,13 @@
 *   [17 makepkg](#makepkg)
 *   [18 namcap](#namcap)
 *   [19 package](#package)
-*   [20 Мейнтейнер пакетов](#.D0.9C.D0.B5.D0.B9.D0.BD.D1.82.D0.B5.D0.B9.D0.BD.D0.B5.D1.80_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+*   [20 Мейнтейнер пакетов](#Мейнтейнер_пакетов)
 *   [21 pacman](#pacman)
 *   [22 pacman.conf](#pacman.conf)
-*   [23 repository/repo](#repository.2Frepo)
+*   [23 repository/repo](#repository/repo)
 *   [24 RTFM](#RTFM)
 *   [25 tarball](#tarball)
-*   [26 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [26 testing/[testing]](#testing/[testing])
 *   [27 udev](#udev)
 *   [28 wiki](#wiki)
 
@@ -120,7 +124,7 @@ AUR находится здесь [здесь](https://aur.archlinux.org).
 
 ## makepkg
 
-[makepkg](/index.php/Makepkg "Makepkg") will build packages for you. makepkg will read the metadata required from a [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") file. All it needs is a build-capable Linux platform, [wget](https://www.archlinux.org/packages/?name=wget), and some build scripts. The advantage to a script-based build is that you only really do the work once. Once you have the build script for a package, you just need to run makepkg and it will do the rest: download and validate source files, check dependencies, configure the build time settings, build the package, install the package into a temporary root, make customizations, generate meta-info, and package the whole thing up for [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") to use.
+[makepkg](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)") will build packages for you. makepkg will read the metadata required from a [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") file. All it needs is a build-capable Linux platform, [wget](https://www.archlinux.org/packages/?name=wget), and some build scripts. The advantage to a script-based build is that you only really do the work once. Once you have the build script for a package, you just need to run makepkg and it will do the rest: download and validate source files, check dependencies, configure the build time settings, build the package, install the package into a temporary root, make customizations, generate meta-info, and package the whole thing up for [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") to use.
 
 ## namcap
 

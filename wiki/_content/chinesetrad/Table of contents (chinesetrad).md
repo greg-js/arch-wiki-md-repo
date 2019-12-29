@@ -15,9 +15,9 @@
 | <small>2.3.</small> [Emulation](/index.php/Category:Emulation_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Emulation (正體中文)") <small>(1)</small> |
 | <small>2.4.</small> [網路應用程式](/index.php/Category:Internet_applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internet applications (正體中文)") <small>(2) (還在 [網路](/index.php/Category:Networking_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Networking (正體中文)"))</small> |
 | <small>2.4.1.</small> [Email clients](/index.php/Category:Email_clients_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Email clients (正體中文)") <small>(2)</small> |
-| <small>2.5.</small> [數學和科學](/index.php/Category:Mathematics_and_science_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mathematics and science (正體中文)") <small>(1)</small> |
-| <small>2.6.</small> [播放器](/index.php/Category:Multimedia_players_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Multimedia players (正體中文)") <small>(1)</small> |
-| <small>2.7.</small> [辦公](/index.php/Category:Office_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Office (正體中文)") <small>(1)</small> |
+| <small>2.5.</small> [播放器](/index.php/Category:Multimedia_players_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Multimedia players (正體中文)") <small>(1)</small> |
+| <small>2.6.</small> [辦公](/index.php/Category:Office_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Office (正體中文)") <small>(1)</small> |
+| <small>2.7.</small> [Science](/index.php/Category:Science_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Science (正體中文)") <small>(1)</small> |
 | <small>2.8.</small> [文字編輯器](/index.php/Category:Text_editors_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Text editors (正體中文)") <small>(1)</small> |
 | <small>2.9.</small> [Wine](/index.php/Category:Wine_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Wine (正體中文)") <small>(1)</small> |
 | <small>3.</small> [開發](/index.php/Category:Development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Development (正體中文)") <small>(1)</small> |
@@ -37,7 +37,7 @@
 | <small>6.</small> [系統管理](/index.php/Category:System_administration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:System administration (正體中文)") <small>(1)</small> |
 | <small>6.1.</small> [開機過程](/index.php/Category:Boot_process_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Boot process (正體中文)") <small>(2)</small> |
 | <small>6.1.1.</small> [開機載入程式](/index.php/Category:Boot_loaders_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Boot loaders (正體中文)") <small>(1)</small> |
-| <small>6.2.</small> [守護程序 (daemon) 和系統服務](/index.php/Category:Daemons_and_system_services_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Daemons and system services (正體中文)") <small>(1)</small> |
+| <small>6.2.</small> [Daemons](/index.php/Category:Daemons_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Daemons (正體中文)") <small>(1)</small> |
 | <small>6.3.</small> [桌面環境](/index.php/Category:Desktop_environments_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Desktop environments (正體中文)") <small>(4)</small> |
 | <small>6.3.1.</small> [顯示管理員](/index.php/Category:Display_managers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Display managers (正體中文)") <small>(2)</small> |
 | <small>6.3.2.</small> [視窗管理員](/index.php/Category:Window_managers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Window managers (正體中文)") <small>(0)</small> |

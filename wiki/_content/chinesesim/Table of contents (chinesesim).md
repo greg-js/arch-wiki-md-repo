@@ -30,7 +30,7 @@
 | <small>2.9.</small> [游戏娱乐](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)") <small>(5)</small> |
 | <small>2.10.</small> [图形和排版](/index.php/Category:Graphics_and_desktop_publishing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics and desktop publishing (简体中文)") <small>(4)</small> |
 | <small>2.11.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(16) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>2.11.1.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:BitTorrent clients (简体中文)") <small>(1)</small> |
+| <small>2.11.1.</small> [BitTorrent](/index.php/Category:BitTorrent_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:BitTorrent (简体中文)") <small>(1)</small> |
 | <small>2.11.2.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small> |
 | <small>2.11.3.</small> [File sharing](/index.php/Category:File_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File sharing (简体中文)") <small>(0) (同时还属于 [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)"))</small> |
 | <small>2.11.3.1.</small> [Synchronization](/index.php/Category:Synchronization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Synchronization (简体中文)") <small>(1)</small> |
@@ -51,7 +51,7 @@
 | <small>2.20.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web admin interfaces (简体中文)") <small>(1)</small> |
 | <small>2.20.2.</small> [Wiki software](/index.php/Category:Wiki_software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wiki software (简体中文)") <small>(1)</small> |
 | <small>2.21.</small> [Wine](/index.php/Category:Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wine (简体中文)") <small>(1)</small> |
-| <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(15)</small> |
+| <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(16)</small> |
 | <small>3.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(1) (同时还属于 [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)"))</small> |
 | <small>3.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(19)</small> |
 | <small>3.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
@@ -64,9 +64,9 @@
 | <small>4.1.</small> [ARM 架构](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)") <small>(1)</small> |
 | <small>4.2.</small> [蓝牙](/index.php/Category:Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bluetooth (简体中文)") <small>(2)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:CPU (简体中文)") <small>(4)</small> |
-| <small>4.4.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(17)</small> |
-| <small>4.5.</small> [硬件检测和疑难排解](/index.php/Category:Hardware_detection_and_troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware detection and troubleshooting (简体中文)") <small>(4)</small> |
-| <small>4.6.</small> [影像设备](/index.php/Category:Imaging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Imaging (简体中文)") <small>(2)</small> |
+| <small>4.4.</small> [Digital imaging](/index.php/Category:Digital_imaging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Digital imaging (简体中文)") <small>(2)</small> |
+| <small>4.5.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(17)</small> |
+| <small>4.6.</small> [硬件检测和疑难排解](/index.php/Category:Hardware_detection_and_troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware detection and troubleshooting (简体中文)") <small>(4)</small> |
 | <small>4.7.</small> [输入设备](/index.php/Category:Input_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input devices (简体中文)") <small>(4)</small> |
 | <small>4.7.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics tablet (简体中文)") <small>(1)</small> |
 | <small>4.7.2.</small> [键盘](/index.php/Category:Keyboards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Keyboards (简体中文)") <small>(5)</small> |
@@ -93,7 +93,7 @@
 | <small>6.3.1.</small> [FTP servers](/index.php/Category:FTP_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:FTP servers (简体中文)") <small>(1) (同时还属于 [Servers](/index.php/Category:Servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Servers (简体中文)"))</small> |
 | <small>6.4.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(5) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.5.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(16) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
-| <small>6.5.1.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:BitTorrent clients (简体中文)") <small>(1)</small> |
+| <small>6.5.1.</small> [BitTorrent](/index.php/Category:BitTorrent_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:BitTorrent (简体中文)") <small>(1)</small> |
 | <small>6.5.2.</small> [邮件客户端](/index.php/Category:Email_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Email clients (简体中文)") <small>(1)</small> |
 | <small>6.5.3.</small> [File sharing](/index.php/Category:File_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File sharing (简体中文)") <small>(0) (同时还属于 [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)"))</small> |
 | <small>6.5.3.1.</small> [Synchronization](/index.php/Category:Synchronization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Synchronization (简体中文)") <small>(1)</small> |

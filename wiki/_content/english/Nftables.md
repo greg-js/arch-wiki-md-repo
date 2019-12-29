@@ -648,7 +648,7 @@ table ip nat {
     ip daddr *destination_ip* masquerade
   }
 }
-</nowiki>
+
 ```
 
 ## Tips and tricks

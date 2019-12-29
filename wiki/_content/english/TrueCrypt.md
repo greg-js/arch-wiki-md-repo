@@ -113,7 +113,7 @@ truecrypt-volume    /dev/sda2    /etc/volume.password    tcrypt-system,noauto
 
 ```
 
-For a standard truecrypt volume, use *tcrypt* instead of *tcrypt-system*. And for a hidden one, use *tcrypt-hidden*.
+For a standard truecrypt volume, use *tcrypt* instead of *tcrypt-system*. And for a hidden one, use *tcrypt-hidden*. For a veracrypt volume, use *tcrypt-veracrypt* alongside *tcrypt*.
 
  `/etc/fstab` 
 ```

@@ -116,7 +116,7 @@ Before running `cryptsetup`, look at the [encryption options for LUKS mode](/ind
 
 The instructions for opening the device and making the [file system](/index.php/File_system "File system") are the same as [#Partition](#Partition).
 
-Creating a file smaller than the LUKS2 header (16 MiB) will give a `Requested offset is beyond real size of device bigsecret.img` error when trying to open the device.
+**Note:** Creating a file smaller than the LUKS2 header (16 MiB) will give a `Requested offset is beyond real size of device bigsecret.img` error when trying to open the device.
 
 Manual mounting and unmounting procedure is equivalent to [#Manual mounting and unmounting](#Manual_mounting_and_unmounting).
 

@@ -1,4 +1,4 @@
-[Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter "wikipedia:Project Jupyter") is a project which produces browser-based interactive environments for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, Scala and Julia.
+[Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter "wikipedia:Project Jupyter") is a project which produces browser-based interactive environments for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as [Python](/index.php/Python "Python"), [Ruby](/index.php/Ruby "Ruby"), [Haskell](/index.php/Haskell "Haskell"), [R](/index.php/R "R"), [Scala](/index.php/Scala "Scala") and [Julia](/index.php/Julia "Julia").
 
 JupyterLab is "Jupyter’s Next-Generation Notebook Interface", while Jupyter Notebook is the original. See the [Jupyter website](https://jupyter.org/) for a comparison.
 
@@ -79,11 +79,11 @@ See the [Julia manual](https://docs.julialang.org/en/v1.0/stdlib/Pkg/#Getting-St
 
 ### Python
 
-Install the [python2-ipykernel](https://www.archlinux.org/packages/?name=python2-ipykernel) package for Python 2 support. Python 3 support (via [python-ipykernel](https://www.archlinux.org/packages/?name=python-ipykernel)) is included when installing [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook).
+Python 3 kernel is used by default via [python-ipykernel](https://www.archlinux.org/packages/?name=python-ipykernel). For legacy Python 2 support install [python2-ipykernel](https://www.archlinux.org/packages/?name=python2-ipykernel).
 
 ### R
 
-Follow the installation instructions in [IR Kernel](https://github.com/IRkernel/IRkernel).
+Follow the [installation instructions](/index.php/R#Jupyter_notebook "R") in [IR Kernel](https://github.com/IRkernel/IRkernel).
 
 ### Sage math
 

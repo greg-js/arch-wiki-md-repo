@@ -1,6 +1,10 @@
 **Notify OSD** (Notify **O**n **S**creen **D**isplay) è un sistema di notifiche creato per Ubuntu dalla Canonical e più precisamente dai Team Design e Desktop Experience. Prevede la notifica degli eventi di maggior interesse per l'utente sotto forma di avvisi a schermo migliorati rispetto alle vecchie notifiche standard fornite con GNOME sotto un profilo di usabilità e di bellezza grafica.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 GNOME](#GNOME)

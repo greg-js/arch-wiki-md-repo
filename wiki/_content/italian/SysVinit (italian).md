@@ -6,7 +6,11 @@ Nei sistemi basati su Sysvinit *init* è il primo processo che viene eseguito un
 
 Quando Arch usava `init`, la maggior parte del lavoro veniva delegato ai [principali script di boot](#Principali_Script_di_Boot). Questo articolo tratterà principalmente init ed inittab.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Migrare a Systemd](#Migrare_a_Systemd)
     *   [1.1 Considerazioni prima di passare a systemd](#Considerazioni_prima_di_passare_a_systemd)

@@ -382,7 +382,7 @@ DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
 
 ### Using Aria2 as a Daemon
 
-To use Aria2 as a daemon, you should write a systemd user unit. For example:
+To use Aria2 as a daemon, you should write a [systemd user unit](/index.php/Systemd/User "Systemd/User"). For example:
 
  `~/.config/systemd/user/aria2cd.service` 
 ```
@@ -397,14 +397,7 @@ ExecStart=/usr/bin/aria2c --conf-path=*/path/to/conf*
 WantedBy=default.target
 ```
 
-[#Example aria2.daemon](#Example_aria2.daemon) shows an example conf file.
-
-Now [Start](/index.php/Start "Start")/[Enable](/index.php/Enable "Enable") the `aria2cd.service`:
-
-```
-systemctl enable **--user** aria2cd.service
-
-```
+[#Example aria2.daemon](#Example_aria2.daemon) shows an example configuration file.
 
 ## See also
 

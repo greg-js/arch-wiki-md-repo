@@ -2,10 +2,14 @@
 
 [Dkfilter](http://jason.long.name/dkfilter/) is a [DomainKeys](https://en.wikipedia.org/wiki/DomainKeys "wikipedia:DomainKeys") filter for [Postfix](/index.php/Postfix "Postfix").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 What is it?](#What_is_it.3F)
-    *   [1.1 How it works?](#How_it_works.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 What is it?](#What_is_it?)
+    *   [1.1 How it works?](#How_it_works?)
 *   [2 Installation](#Installation)
 *   [3 Generic configuration](#Generic_configuration)
 *   [4 Postfix integration](#Postfix_integration)

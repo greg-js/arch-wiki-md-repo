@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Дата последней синхронизации: 2 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Hardware_video_acceleration&diff=0&oldid=590360).
+**Состояние перевода:** На этой странице представлен перевод статьи [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Дата последней синхронизации: 27 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Hardware_video_acceleration&diff=0&oldid=592369).
 
 [Аппаратное ускорение видео](https://en.wikipedia.org/wiki/Graphics_processing_unit#GPU_accelerated_video_decoding "wikipedia:Graphics processing unit") (англ.) позволяет выполнять операции кодирования и декодирования видео на стороне видеокарты, разгружая CPU и экономя энергию.
 
@@ -75,7 +75,6 @@
 
 *   [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) – бекенд VDPAU для VA-API.
 *   [libva-vdpau-driver-chromium](https://aur.archlinux.org/packages/libva-vdpau-driver-chromium/) – бекенд VDPAU для VA-API с патчем, позволяющим взаимодействовать с [Chromium](/index.php/Chromium "Chromium").
-*   [XvBA](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Аппаратное_ускорение "AMD Catalyst (Русский)")-бекенд для VA-API предоставляется проприетарным драйвером [AMD Catalyst](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMD Catalyst (Русский)").
 
 Активация поддержки VDPAU при её отсутствии в драйвере:
 
@@ -253,24 +252,23 @@ VC1_ADVANCED                    4  9216  2048  1152
 
 ### Ошибка "init failed" с VAAPI
 
-Данная ошибка (например, `libva: /usr/lib/dri/i965_drv_video.so init failed`) может происходить из-за неправильного определения Wayland. Одно из решений — сбросить переменную `$DISPLAY`, таким образом, mpv, MPlayer, VLC и т.д. не будут исходить из того, что используется X11\. Также можно добавить аргумент `--opengl-backend=wayland`, если используется mpv.
+Данная ошибка (например, `libva: /usr/lib/dri/i965_drv_video.so init failed`) может происходить из-за неправильного определения Wayland. Одно из решений — сбросить переменную `$DISPLAY`, таким образом, mpv, MPlayer, VLC и т.д. не будут исходить из того, что используется X11\. Также можно добавить аргумент `--gpu-context=wayland`, если используется mpv.
 
 ## Сравнительные таблицы
 
 ### Драйверы VA-API
 
-| Кодек | [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[2]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) [[3]](https://github.com/intel/media-driver/blob/master/README.md) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) [[4]](https://www.x.org/wiki/RadeonFeature/) [[5]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [AMD Catalyst](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Аппаратное_ускорение "AMD Catalyst (Русский)")
-(адаптер XvBA) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
+| Кодек | [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[2]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) [[3]](https://github.com/intel/media-driver/blob/master/README.md) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) [[4]](https://www.x.org/wiki/RadeonFeature/) [[5]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
 (адаптер VDPAU) |
 | Декодирование |
 | MPEG-2 | GMA 4500 и новее | Broadwell и новее | Radeon HD 6000 и новее
-GeForce 8 и новее | Radeon HD 4000 и новее | См. [#Драйверы VDPAU](#Драйверы_VDPAU) |
-| MPEG-4 | Нет | Нет | Radeon HD 6000 и новее | Radeon HD 6000 и новее |
+GeForce 8 и новее | См. [#Драйверы VDPAU](#Драйверы_VDPAU) |
+| MPEG-4 | Нет | Нет | Radeon HD 6000 и новее |
 | VC-1 | Sandy Bridge и новее | Broadwell и новее | Radeon HD 2000 и новее
-GeForce 9300 и новее | Radeon HD 4000 и новее |
+GeForce 9300 и новее |
 | H.264/MPEG-4 AVC | GMA 4500, Ironlake и новее | Radeon HD 2000 и новее
-GeForce 8 и новее | Radeon HD 4000 и новее |
-| H.265/HEVC 8bit | Cherryview/Braswell и новее | Skylake и новее | Radeon R9 Fury и новее | Нет |
+GeForce 8 и новее |
+| H.265/HEVC 8bit | Cherryview/Braswell и новее | Skylake и новее | Radeon R9 Fury и новее |
 | H.265/HEVC 10bit | Broxton и новее | Broxton/Apollo Lake и новее | Radeon 400 и новее |
 | VP8 | Broadwell и новее | Broadwell и новее | Нет | Нет |
 | VP9 8bit | Broxton и новее
@@ -278,7 +276,7 @@ GeForce 8 и новее | Radeon HD 4000 и новее |
 | VP9 10bit | Kaby Lake и новее | Kaby Lake и новее | No |
 | Кодирование |
 | MPEG-2 | Ivy Bridge и новее | Broadwell и новее
-кроме Broxton/Apollo Lake | Нет | Нет | Нет |
+кроме Broxton/Apollo Lake | Нет | Нет |
 | H.264/MPEG-4 AVC | Sandy Bridge и новее | Broadwell и новее | Radeon HD 7000 и новее |
 | H.265/HEVC 8bit | Skylake и новее | Skylake и новее | Radeon 400 и новее |
 | H.265/HEVC 10bit | Kaby Lake и новее | Kaby Lake и новее | Raven Ridge и новее |
@@ -295,7 +293,7 @@ GeForce 8 и новее | Radeon HD 4000 и новее |
 
 ### Драйверы VDPAU
 
-| Кодек | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[6]](https://www.x.org/wiki/RadeonFeature/) [[7]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[8]](https://www.nvidia.com/page/purevideo_support.html) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
+| Кодек | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[6]](https://www.x.org/wiki/RadeonFeature/) [[7]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (адаптер VA-API) |
 | Декодирование |
 | MPEG-2 | Radeon R300 и новее
@@ -314,11 +312,11 @@ GeForce 8 и новее | GeForce 8 и новее | См. [#Драйверы VA-
 *   До GeForce GTX 750.
 *   [Кроме](https://en.wikipedia.org/wiki/ru:PureVideo "wikipedia:ru:PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 *   Кроме GeForce GTX 970 и GTX 980.
-*   Реализация NVIDIA ограничена 8-битными потоками [[9]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[10]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
+*   Реализация NVIDIA ограничена 8-битными потоками [[8]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[9]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
 
 ### Драйвер NVIDIA
 
-| Кодек | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[11]](https://developer.nvidia.com/nvidia-video-codec-sdk) |
+| Кодек | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[10]](https://developer.nvidia.com/nvidia-video-codec-sdk) |
 | NVDECODE | NVENCODE |
 | MPEG-2 | Fermi и новее | Нет |
 | VC-1 |
@@ -333,6 +331,8 @@ GeForce 8 и новее | GeForce 8 и новее | См. [#Драйверы VA-
 *   Кроме GM108 и GP108 (не поддерживаются)
 
 ### Поддержка приложениями
+
+**Совет:** Каждый новый [кодек](/index.php/Codecs_and_containers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Codecs and containers (Русский)") имеет тенденцию к использованию всё большего количества времени CPU ([x264](https://en.wikipedia.org/wiki/ru:x264 "wikipedia:ru:x264") < [VP9](https://en.wikipedia.org/wiki/ru:VP9 "wikipedia:ru:VP9") < [AV1](https://en.wikipedia.org/wiki/ru:AV1 "wikipedia:ru:AV1")), что приводит к большему тепловыделению и энергопотреблению, если аппаратное ускорение недоступно. В связи с этим иногда выгоднее использовать более старый кодек (например, x264), чтобы уменьшить нагрузку на CPU ценой пропускной способности сети. Например, можно использовать расширение *h264ify* для YouTube ([Firefox](https://addons.mozilla.org/ru/firefox/addon/h264ify/), [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)) или *enhanced-h264ify* ([Firefox](https://addons.mozilla.org/ru/firefox/addon/enhanced-h264ify/), [Chromium](https://chrome.google.com/webstore/detail/enhanced-h264ify/omkfmpieigblcllmkgbflkikinpkodlk)).
 
 | Приложение | Декодирование | Кодирование | Документация |
 | VA-API | VDPAU | NVDECODE | VA-API | NVENCODE |
@@ -350,5 +350,3 @@ GeForce 8 и новее | GeForce 8 и новее | См. [#Драйверы VA-
 *   NVDECODE/NVENCODE [отключён в пакете Arch](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gst-plugins-bad#n45).
 *   Не поддерживается официально, но доступны альтернативные пакеты.
 *   VDPAU поддерживается только NPAPI-плагином. Доступен экспериментальный адаптер в виде PPAPI-плагина для NPAPI-браузеров, который частично поддерживает ускорение VA-API и VDPAU.
-
-**Совет:** Чтобы уменьшить нагрузку на процессор при просмотре видео на YouTube, когда аппаратное декодирование VP8/VP9 недоступно, используйте расширение "h264ify" (доступно для [Firefox](https://addons.mozilla.org/firefox/addon/h264ify/) и [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)) или "enhanced-h264ify" (доступно для [Firefox](https://addons.mozilla.org/firefox/addon/enhanced-h264ify/) и [Chromium](https://chrome.google.com/webstore/detail/enhanced-h264ify/omkfmpieigblcllmkgbflkikinpkodlk)).

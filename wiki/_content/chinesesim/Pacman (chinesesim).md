@@ -411,7 +411,11 @@ which-2.20-6
 
 更多功能参见`paccache -h`。
 
-*paccache*，还可以使用 [Arch User Repository](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中的 [pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/)： `# pkgcacheclean` ，以及[pacleaner](https://aur.archlinux.org/packages/pacleaner/)，这两个是未来的替代工具.
+*paccache*，还可以使用 [Arch User Repository](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中的 [pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/)：
+
+ `# pkgcacheclean` 
+
+，以及[pacleaner](https://aur.archlinux.org/packages/pacleaner/)，这两个是未来的替代工具.
 
 ### 其它命令
 
@@ -591,7 +595,7 @@ Include = /path/to/common/settings
 
 ### 一般注意事项
 
-**警告:** 小心使用 `--force` 开关。使用不当会造成大问题。 请*只*在 Arch 新闻里要求这么做的时候才用。
+**警告:** 小心使用 `--overwrite` 选项。使用不当会造成大问题。 请*只*在 Arch 新闻里要求这么做的时候才用。
 
 *pacman* 附带了许多实用工具能让系统使用更加便捷。所有工具功能都能通过 `--help` 开关查看。运行：
 
@@ -622,9 +626,9 @@ Errors occurred, no packages were upgraded.
 
 如果是通过 `make install` 等非 pacman 方式安装的软件，安装的文件不属于任何软件包！需要先手动删除这些文件，这样就可以正常安装软件了。[不属于任何软件包的文件列表](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips")一文中提供了查找这些文件的脚本。
 
-每一个安装的软件包都会提供一个 `/var/lib/pacman/local/*$package-$version*/files` 文件，包含此软件包的元数据。如果文件损坏或者丢失，将会导致升级时出现`file exists in filesystem` 错误。此错误通常只会影响一个软件包，除了手动删除或移动所有的问题文件，可以作为特例使用`pacman -S --force $package`让 *pacman* 强制覆盖这些文件。
+每一个安装的软件包都会提供一个 `/var/lib/pacman/local/*$package-$version*/files` 文件，包含此软件包的元数据。如果文件损坏或者丢失，将会导致升级时出现`file exists in filesystem` 错误。此错误通常只会影响一个软件包，除了手动删除或移动所有的问题文件，可以作为特例使用`pacman -S $package --overwrite /path/to/file` 让 *pacman* 强制覆盖这些文件。
 
-**警告:** `--force` 选项非常危险，建议在 Arch 新闻中明确通知的时候才使用它，否则可能导致系统无法启动。
+**警告:** `--overwrite` 选项非常危险，建议在 Arch 新闻中明确通知的时候才使用它，否则可能导致系统无法启动。一些老旧博客论坛可能提到 --force 选项，现在 pacman 已经不再支持，以 --overwrite 取代。
 
 ### "failed to commit transaction (invalid or corrupted package" 错误
 
@@ -686,7 +690,7 @@ If you *require* an install media with persistent dataspace, the [Archiso](/inde
 
 ### 升级系统重启后，出现"unable to find root device"错误，无法登陆
 
-很有可能 initramfs 在内核升级时损坏，例如错误的使用 *pacman* 的 `--force` 选项。有两个选择：
+很有可能 initramfs 在内核升级时损坏，例如错误的使用 *pacman* 的 `--overwrite` 选项。有两个选择：
 
 #### Fallback 启动项
 
@@ -758,13 +762,11 @@ Make sure to correct the [system time](/index.php/System_time "System time"), fo
 
 ### "Cannot open shared object file" 错误
 
-It looks like previous *pacman* transaction removed or corrupted shared libraries needed for pacman itself.
+有可能是前一次 *pacman* 事务中删除或者损坏了 pacman 自身需要的一些共享库。
 
-To recover from this situation you need to unpack required libraries to your filesystem manually. First find what package contains the missed library and then locate it in the *pacman* cache (`/var/cache/pacman/pkg/`). Unpack required shared library to the filesystem. This will allow to run *pacman*.
+要修复这种情况，你需要手动解压那些共享库文件到文件系统中合适的地方。首先请查明哪个包中包含有所需的库文件，然后在 *pacman* 缓存中 (`/var/cache/pacman/pkg/`) 找到对应的包。解压出需要的库文件到文件系统的对应位置，如此可以继续使用 *pacman* 。
 
-需要重新安装损坏的软件包. Note that you need to use `--force` flag as you just unpacked system files and *pacman* does not know about it. *pacman* will correctly replace our shared library file with one from package.
-
-That's it. Update the rest of the system.
+之后需要重新安装损坏的软件包。注意你可能需要使用 `--overwrite` 选项覆盖掉你刚刚解压出的系统文件，因为 *pacman* 可能没有跟踪到对应的文件信息。 *pacman* 随后会使用包中的文件正确替换掉共享库文件。如此能修好您的 pacman ，然后请继续更新系统中剩下的软件包。
 
 ### 软件包下载停滞
 

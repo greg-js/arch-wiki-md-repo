@@ -217,4 +217,4 @@ Connection to 192.168.1.1 closed.
 
 ## See also
 
-*   [Port knocking homepage](http://www.portknocking.org/)
+*   [Port knocking homepage (archived)](https://web.archive.org/web/20180726181817/http://www.portknocking.org/)

@@ -22,6 +22,7 @@
         *   [1.10.1 Hash checkers](#Hash_checkers)
         *   [1.10.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
         *   [1.10.3 Disk encryption](#Disk_encryption)
+    *   [1.11 Privilege elevation](#Privilege_elevation)
 
 ## Security
 
@@ -576,3 +577,17 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 ##### Disk encryption
 
 See [Disk encryption](/index.php/Disk_encryption "Disk encryption").
+
+#### Privilege elevation
+
+*   **[doas](https://man.openbsd.org/doas.1)** — A portable version of OpenBSD's doas command, known for being substantially smaller in size compared to sudo.
+
+	[https://github.com/Duncaen/OpenDoas](https://github.com/Duncaen/OpenDoas) || [opendoas](https://www.archlinux.org/packages/?name=opendoas)
+
+*   **[su](/index.php/Su "Su")** — Command used to assume the identity of another user on the system.
+
+	[https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[sudo](/index.php/Sudo "Sudo")** — Command to delegate the ability to run commands as root or another user while providing an audit trail.
+
+	[https://www.sudo.ws/sudo/](https://www.sudo.ws/sudo/) || [sudo](https://www.archlinux.org/packages/?name=sudo)

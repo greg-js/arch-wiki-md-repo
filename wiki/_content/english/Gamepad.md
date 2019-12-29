@@ -53,6 +53,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
         *   [7.9.2 Connect Xbox Wireless Controller with Bluetooth](#Connect_Xbox_Wireless_Controller_with_Bluetooth)
             *   [7.9.2.1 xpadneo](#xpadneo)
         *   [7.9.3 Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter](#Connect_Xbox_Wireless_Controller_with_Microsoft_Xbox_Wireless_Adapter)
+            *   [7.9.3.1 xow](#xow)
     *   [7.10 Logitech Dual Action](#Logitech_Dual_Action)
     *   [7.11 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
     *   [7.12 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
@@ -778,7 +779,9 @@ Installation is done using DKMS: [xpadneo-dkms-git](https://aur.archlinux.org/pa
 
 #### Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter
 
-It does not work on Linux.
+##### xow
+
+[xow](https://github.com/medusalix/xow) is a project that allows connection with a wireless dongle. It is currently in very early stages of development. It can be installed via [xow-git](https://aur.archlinux.org/packages/xow-git/)
 
 ### Logitech Dual Action
 

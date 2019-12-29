@@ -6,6 +6,8 @@ Related articles
 
 This article details the installation and usage of [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/). For the general information on the service and additional packages, see [Private Internet Access](/index.php/Private_Internet_Access "Private Internet Access").
 
+**Warning:** This company as been bought by a competitor that sells client information to 3rd parties. See [this discussion](https://old.reddit.com/r/PrivateInternetAccess/comments/dz2w53/our_merger_with_kape_technologies_addressing_your/), and [this discussion](https://www.reddit.com/r/DataHoarder/comments/e05hn3/psa_pia_privateinternetaccess_has_been_bought_by/) for more information.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents

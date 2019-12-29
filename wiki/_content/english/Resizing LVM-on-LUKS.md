@@ -10,13 +10,10 @@ This article follows the process of resizing and shrinking an LVM-on-LUKS-on-GPT
 *   [2 Process](#Process)
 *   [3 Shrink LVM-on-LUKS](#Shrink_LVM-on-LUKS)
     *   [3.1 Boot and setup](#Boot_and_setup)
-    *   [3.2 Resize filesystem](#Resize_filesystem)
-    *   [3.3 Resize LVM logical volume](#Resize_LVM_logical_volume)
-    *   [3.4 Resize LVM physical Volume](#Resize_LVM_physical_Volume)
-    *   [3.5 Resize LUKS volume](#Resize_LUKS_volume)
-    *   [3.6 Resize the partition](#Resize_the_partition)
-    *   [3.7 Create a new partition](#Create_a_new_partition)
-    *   [3.8 Recover the logical volume buffer](#Recover_the_logical_volume_buffer)
+    *   [3.2 Resize filesystem and LVM logical volume](#Resize_filesystem_and_LVM_logical_volume)
+    *   [3.3 Resize LVM physical Volume](#Resize_LVM_physical_Volume)
+    *   [3.4 Resize LUKS volume](#Resize_LUKS_volume)
+    *   [3.5 Resize the partition](#Resize_the_partition)
 *   [4 Enlarge LVM on LUKS](#Enlarge_LVM_on_LUKS)
     *   [4.1 Preparation](#Preparation)
     *   [4.2 Extending the physical segments of the cryptdevice](#Extending_the_physical_segments_of_the_cryptdevice)
@@ -64,16 +61,9 @@ Decrypt the LUKS volume:
 
 ```
 
-### Resize filesystem
+### Resize filesystem and LVM logical volume
 
-First we need to resize the innermost filesystem itself. In this case, we only resize the last and largest filesystem and shave off 11GB:
-
-```
-# resize2fs -p /dev/vgroup/lvhome 70g
-
-```
-
-**Note:** `resize2fs` works only on ext{2,3,4} filesystems.
+Follow [these instructions](/index.php/LVM#Resizing_the_logical_volume_and_file_system_in_one_go "LVM").
 
 You can run a `fsck` just to make sure nothing broke:
 
@@ -82,83 +72,111 @@ You can run a `fsck` just to make sure nothing broke:
 
 ```
 
-### Resize LVM logical volume
-
-We now resize the logical volume, keeping a safety buffer from the filesystem (reduce only by 10GB, not 11GB):
-
-```
-# lvreduce -L -10G /dev/vgroup/lvhome
-
-```
-
 ### Resize LVM physical Volume
 
-Again we keep a large safety buffer:
+To calculate the new LUKS volume size, use a simple formula: `NEW_VOLUME_BYTES = PE_SIZE * PE_COUNT + UNUSABLE_SIZE`:
+
+ `pvdisplay /dev/mapper/cryptdisk` 
+```
+...
+PV Size               950.05 GiB / not usable 4.00 MiB
+...
+PE Size               4.00 MiB
+...
+Allocated PE          116303     
+...                       
 
 ```
-# pvresize --setphysicalvolumesize 102G /dev/mapper/cryptdisk
+
+Using the formula above: `(116303 * 4 MiB + 4 MiB) in Bytes = 487814332416`.
+
+Resize the volume. This command is safe since it will exit early if the new size wouldn't fit all the existing extents:
+
+```
+# pvresize --setphysicalvolumesize 487814332416B /dev/mapper/cryptdisk
 
 ```
 
 ### Resize LUKS volume
 
-First, we need to calculate how many sectors we'll be shaving off by comparing to the existing number of sectors:
+To calculate the new LUKS volume size, use a simple formula: `NEW_LUKS_SECTOR_COUNT = PV_EXTENT_COUNT * PV_EXTENT_SIZE / LUKS_SECTOR_SIZE`
+
+ `# pvdisplay /dev/mapper/cryptdisk` 
+```
+...
+PV Size               454.31 GiB / not usable 3.00 MiB
+...
+PE Size               4.00 MiB
+Total PE              116303
+...
 
 ```
-# cryptsetup status cryptdisk
+ `# cryptsetup status cryptdisk` 
+```
+...
+sector size:  512
+...
 
 ```
 
-**Note:** To calculate how many sectors we want to shrink to, use a simple formula: `NEW_SECTORS = EXISTING_SECTORS * NEW_SIZE_IN_GB / EXISTING_SIZE_IN_GB`. Remember to take a safety buffer here as well.
+`(116303 extents + 1 unusable extent) * 4 MiB/extent / 512 B/sector = 952762368 sectors`
 
 Resize the LUKS volume:
 
 ```
-# cryptsetup -b $NEW_SECTOR_COUNT resize cryptdisk
+# cryptsetup -b $NEW_LUKS_SECTOR_COUNT resize cryptdisk
 
 ```
 
 ### Resize the partition
 
-Use parted to actually resize the partition:
+To calculate the new LUKS volume size, use a simple formula: `NEW_PARTITION_SECTOR_END = PARTITION_SECTOR_START + (LUKS_SIZE_SECTORS + LUKS_OFFSET_SECTORS) - 1`. The `- 1` is because parted takes an inclusive sector end parameter.
+
+ `# cryptsetup status cryptdisk` 
+```
+...
+offset:  4096 sectors
+size:    952762368 sectors
+
+```
+
+Close the LUKS volume to resize offline. You'll probably need to deactive LVM volums on the cryptdisk or it won't close.
+
+```
+# vgchange -a n vgroup
+# cryptsetup close cryptdisk
+
+```
+
+Use `parted` to resize the partition:
 
 ```
 # parted /dev/sda
+ (parted) unit
+ Unit?  [compact]? s    
+ (parted) p       
+ ...
+  2      8003584s  2000408575s  1992404992s
 
 ```
 
-Select `resizepart 2` and give the partition a new size based on your calculations.
-
-### Create a new partition
-
-This is a GPT disk so run:
+Using the formula above returns: `8003584 + (952762368 + 4096) - 1 = 960770047`
 
 ```
-# gdisk /dev/sda
-
-```
-
-and add the new partition on the remaining free space. If all went well there should be no data loss.
-
-### Recover the logical volume buffer
-
-At the end of this process, the filesystem of your `lvhome` volume will be 1GB smaller than the underlying logical volume.
-
-In order to regain this 1GB, first verify that the filesystem is clean:
-
-```
-# e2fsck -f /dev/vgroup/lvhome
+(parted) resizepart 4 960770047
+ Warning: Shrinking a partition can cause data loss, are you sure you want to continue?
+ Yes/No? y                                                                 
+ (parted) q
 
 ```
 
-Then resize the filesystem to occupy the whole logical volume:
+At this point you can reopen the LUKS volume and remount partitions. You'll need to manually reactive the LVM partitions since if you manually deactivated them above.
 
 ```
-# resize2fs /dev/vgroup/lvhome
+# cryptsetup luksOpen /dev/sda2 cryptdisk
+# vgchange -a n vgroup
 
 ```
-
-If all went fine, your `lvhome` filesystem is now as large as your logical volume itself.
 
 ## Enlarge LVM on LUKS
 

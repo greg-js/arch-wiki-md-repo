@@ -62,17 +62,18 @@ Related articles
     *   [5.1 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
     *   [5.2 GTK themes not working with multiple monitors](#GTK_themes_not_working_with_multiple_monitors)
     *   [5.3 Icons do not appear in right-click menus](#Icons_do_not_appear_in_right-click_menus)
-    *   [5.4 NVIDIA and xfce4-sensors-plugin](#NVIDIA_and_xfce4-sensors-plugin)
-    *   [5.5 Black screens at boot with NVIDIA and multiple monitors](#Black_screens_at_boot_with_NVIDIA_and_multiple_monitors)
-    *   [5.6 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
-    *   [5.7 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
-    *   [5.8 Restore default settings](#Restore_default_settings)
-    *   [5.9 Session failure](#Session_failure)
-    *   [5.10 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
-    *   [5.11 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
-    *   [5.12 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
-    *   [5.13 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
-    *   [5.14 Cursor theme doesn't change on login](#Cursor_theme_doesn't_change_on_login)
+    *   [5.4 Modifying setting does not take effect](#Modifying_setting_does_not_take_effect)
+    *   [5.5 NVIDIA and xfce4-sensors-plugin](#NVIDIA_and_xfce4-sensors-plugin)
+    *   [5.6 Black screens at boot with NVIDIA and multiple monitors](#Black_screens_at_boot_with_NVIDIA_and_multiple_monitors)
+    *   [5.7 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
+    *   [5.8 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
+    *   [5.9 Restore default settings](#Restore_default_settings)
+    *   [5.10 Session failure](#Session_failure)
+    *   [5.11 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
+    *   [5.12 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
+    *   [5.13 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
+    *   [5.14 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
+    *   [5.15 Cursor theme doesn't change on login](#Cursor_theme_doesn't_change_on_login)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -234,11 +235,11 @@ Alternatively, add the commands you wish to run (including setting environment v
 
 *xflock4* is the reference Bash script which is used to lock an Xfce session.
 
-It tries to lock the screen with either [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore). It consecutively looks for the corresponding binary or exits with return code 1 if it fails to find any of these four.
+It tries to lock the screen with either [xfce4-screensaver](https://www.archlinux.org/packages/?name=xfce4-screensaver) (also part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)), [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore). It consecutively looks for the corresponding binary or exits with return code 1 if it fails to find any of these.
 
-The [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") contains a short description of these four screen lockers together with other popular applications. There is in this list an alternative locker, [light-locker](https://www.archlinux.org/packages/?name=light-locker), which integrates particularly well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). Once it is installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. In this new GUI it is possible to set whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
+The [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") contains a short description of these screen lockers together with other popular applications. There is in this list an alternative locker, [light-locker](https://www.archlinux.org/packages/?name=light-locker), which integrates particularly well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). Once it is installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. In this new GUI it is possible to set whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
 
-To have *xflock4* run *light-locker* or any custom session locker, not among the four cited above, one must set `LockCommand` in the session's xfconf channel to the command line to be used (the command inside the quotes in the following example can be adapted accordingly for other screen lockers):
+To have *xflock4* run *light-locker* or any custom session locker, not among the five cited above, one must set `LockCommand` in the session's xfconf channel to the command line to be used (the command inside the quotes in the following example can be adapted accordingly for other screen lockers):
 
  `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "*light-locker-command --lock*" --create -t string` 
 
@@ -364,6 +365,8 @@ To enable a sound theme:
 [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) provides a panel applet which has support for keyboard volume control and volume notifications. As an alternative, you can install [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/), which also provides keybinding and notification control, but without an icon sitting in the panel. This is handy, for example, when using [pasystray](https://www.archlinux.org/packages/?name=pasystray) at the same time for a finer control.
 
 Alternatively, [xfce4-mixer](https://aur.archlinux.org/packages/xfce4-mixer/) also provides a panel applet and keyboard shortcuts which supports Alsa as well. Note however, that it is based on a feature of GStreamer 0.10 which has been abandoned in 1.0.
+
+After installing the panels, you have to add it to the taskbar or the keyboard shortcuts will not work.
 
 For non desktop environment specific alternatives, see [List of applications/Multimedia#Volume control](/index.php/List_of_applications/Multimedia#Volume_control "List of applications/Multimedia").
 
@@ -619,6 +622,10 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/buttons_have_icons t
 $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
 
 ```
+
+### Modifying setting does not take effect
+
+If you are running a separate [Xsettings daemon](/index.php/Xsettingsd "Xsettingsd"), it may make some configuration not taking effect. Disable it by removing or commenting the corresponding line and restart [Xorg](/index.php/Xorg "Xorg").
 
 ### NVIDIA and xfce4-sensors-plugin
 

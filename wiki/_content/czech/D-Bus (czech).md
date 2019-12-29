@@ -4,7 +4,7 @@
 
 [dbus](https://www.archlinux.org/packages/?name=dbus) může být nainstalován z [core]. Vzhledem k tomu, že je D-Bus vyžádován poměrně velkým počtem aplikací, je lepší ho mít nainstalovaný.
 
-Pro ruční spuštění vizte [instrukce v článku o démonech](/index.php/Daemon_(%C4%8Cesky)#Ru.C4.8Dn.C3.AD_spou.C5.A1t.C4.9Bn.C3.AD_a_zastavov.C3.A1n.C3.AD "Daemon (Česky)"). Můžete si ho také přidat do [seznamu démonů](/index.php/Daemon_(%C4%8Cesky)#Spou.C5.A1t.C4.9Bn.C3.AD_po_startu "Daemon (Česky)") v `/etc/rc.conf`, aby se spouštěl automaticky při bootování.
+Pro ruční spuštění vizte [instrukce v článku o démonech](/index.php/Daemon_(%C4%8Cesky)#Ruční_spouštění_a_zastavování "Daemon (Česky)"). Můžete si ho také přidat do [seznamu démonů](/index.php/Daemon_(%C4%8Cesky)#Spouštění_po_startu "Daemon (Česky)") v `/etc/rc.conf`, aby se spouštěl automaticky při bootování.
 
 ## Spuštění uživatelského sezení
 

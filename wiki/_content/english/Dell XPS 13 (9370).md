@@ -42,7 +42,7 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [7 Bluetooth](#Bluetooth)
 *   [8 Keyboard](#Keyboard)
 *   [9 Power Management](#Power_Management)
-*   [10 Firmware Updates](#Firmware_Updates)
+*   [10 Firmware/BIOS Updates](#Firmware/BIOS_Updates)
 *   [11 Thermal Throttling](#Thermal_Throttling)
 *   [12 Thermal Modes / Fan profiles](#Thermal_Modes_/_Fan_profiles)
 *   [13 Power Saving](#Power_Saving)
@@ -68,7 +68,7 @@ Booting and installing from a microSD card is also possible, as long as SD Card 
 
 ## Content Adaptive Brightness Control
 
-In the XPS 13 the display panels (both FHD and 4K UHD) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions. To test if DBS is enabled, go to this [test page](https://tylerwatt12.com/dc/).
+In the XPS 13 the display panels (both FHD and 4K UHD) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC, sometimes also as "EcoPower") enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions in the "Video" section. To test if DBS is enabled, go to this [test page](https://tylerwatt12.com/dc/).
 
 ## Display
 
@@ -82,9 +82,7 @@ Note that the `enable_psr=1` kernel parameter appears not to work properly, at l
 
 [Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which was not supported [prior to kernel 4.17.4](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/diff/drivers/media/usb/uvc/uvc_video.c?id=v4.17.4&id2=v4.17.3).
 
-[If the webcam doesn't work after going into deep sleep, you need to update your bios](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049#.XIWx-3vI--8.link) to version [1.5.1](https://www.dell.com/support/home/ca/en/cadhs1/product-support/product/xps-13-9370-laptop/drivers) or newer. This can be done by copying the exe file to any fat32 drive (even the boot partition seems to work) and booting into the "BIOS Flash Update" utility by hitting F12 at boot time.
-
-Some users have reported problem of the webcam being stuck at 640x480.
+[If the webcam doesn't work after going into deep sleep](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049#.XIWx-3vI--8.link), you need to [update your bios](#Firmware/BIOS_Updates) to version [1.5.1](https://www.dell.com/support/home/ca/en/cadhs1/product-support/product/xps-13-9370-laptop/drivers) or newer. Some users have reported problem of the webcam being stuck at 640x480.
 
 ## Storage
 
@@ -150,9 +148,11 @@ According to the manufacturer (see [this upstream kernel bug](https://bugzilla.k
 
 Note: on older BIOS and/or kernel versions [the power button cannot be used to wake the laptop from sleep](https://www.spinics.net/lists/platform-driver-x86/msg15644.html). In this case the Sleep button (Fn + End, or just End if you have Fn lock enabled) can still wake up the machine. This has been fixed by a BIOS update.
 
-## Firmware Updates
+## Firmware/BIOS Updates
 
 Dell provides firmware updates via Linux Vendor Firmware Service (LVFS). Refer to [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux") for additional information. A package is readily available at [fwupd](https://www.archlinux.org/packages/?name=fwupd). Updates are provided for the Thunderbolt controller as well. [There is an issue](https://github.com/dell/thunderbolt-nvm-linux/issues/10) where the Thunderbolt version number is detected as `00.00` after reflashing (currently being investigated).
+
+Alternatively, for the BIOS update, you can simply copy the .exe file from the Dell Support page to any fat32 drive (even the boot partition seems to work). Then boot into the "BIOS Flash Update" utility by hitting F12 at boot time.
 
 Dell has also released updates to the SSD firmware, but these can only be updated from Windows, not from Linux.
 

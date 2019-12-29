@@ -159,7 +159,7 @@ Una vez que concluye el arranque, la pantalla se borra y aparece el inicio de se
 
 ### Activar Bloq Num al inicio
 
-[Bloq Num](https://en.wikipedia.org/wiki/Num_Lock "wikipedia:Num Lock") es una tecla de alternancia que se encuentra en la mayoría de los teclados. Para activar Bloq Num de modo que permanezca activo el teclado numérico durante el arranque, véase [activando Bloq Num al inicio](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)").
+[Bloq Num](https://en.wikipedia.org/wiki/Num_Lock "wikipedia:Num Lock") es una tecla de alternancia que se encuentra en la mayoría de los teclados. Para activar Bloq Num de modo que permanezca activo el teclado numérico durante el arranque, véase [activando Bloq Num al inicio](/index.php/Activating_numlock_on_bootup_(Espa%C3%B1ol) "Activating numlock on bootup (Español)").
 
 ## Interfaz gráfica de usuario
 

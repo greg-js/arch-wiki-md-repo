@@ -1,4 +1,4 @@
-Gitweb is the default web interface that comes with [Git](/index.php/Git "Git") and is the basis for other Git scripts like [cgit](/index.php/Cgit "Cgit") and [gitosis](/index.php/Gitosis "Gitosis").
+Gitweb is the default web interface that comes with [Git](/index.php/Git "Git").
 
 Gitweb actually supports FCGI natively, so you do not need to wrap it as a CGI script. [[1]](http://repo.or.cz/w/alt-git.git?a=blob_plain;f=gitweb/INSTALL)[[2]](https://sixohthree.com/1402/running-gitweb-in-fastcgi-mode)
 

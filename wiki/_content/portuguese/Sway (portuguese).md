@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2019-12-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=590872) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2019-12-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=592018) na versão em inglês.
 
 *sway* é um compositor para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") feito para ser totalmente compatível com [i3](/index.php/I3 "I3"). De acordo com [o site oficial](https://swaywm.org):
 
@@ -123,6 +123,8 @@ Esta linha, que pode ser adicionada ao final da sua configuração do sway, defi
 ```
 
 Você tem que mudar o nome do arquivo e caminho de acordo com seu papel de parede.
+
+Você pode usar o [azote](https://aur.archlinux.org/packages/azote/) como um frontend GTK+3 para swaybg.
 
 ### Dispositivos de entrada
 
@@ -323,8 +325,6 @@ Você pode configurar o sway para usar swaynagmode com o comando de configuraç�
 
 ### Mudar o tema e tamanho do cursor
 
-**Nota:** Wayland usa cursores do programa cliente. É possível que programas não usem os valores do $XCURSOR_SIZE e $XCURSOR_THEME.
-
 Para definir [temas de cursor](/index.php/Temas_de_cursor "Temas de cursor") e tamanho:
 
  `~/.config/sway/config` 
@@ -338,6 +338,8 @@ Onde `"*tema_do_cursor*"` pode ser definido ou trocado por um valor específico 
 Você pode inspecionar os seus valores com `echo $XCURSOR_SIZE` e `echo $XCURSOR_THEME`.
 
 Você precisa reiniciar o programa para ver as mudanças.
+
+**Nota:** Wayland usa cursores do programa cliente. É possível que programas não usem os valores do $XCURSOR_SIZE e $XCURSOR_THEME.
 
 ## Solução de problemas
 
@@ -355,6 +357,10 @@ j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:De
 Você pode precisar configurar a variavel de ambiente `BEMENU_BACKEND` para "wayland" se você escolhe desabilitar o XWayland.
 
 Você pode combinar seu terminal flutuante com fzf como discutido em uma [issue do GitHub](https://github.com/swaywm/sway/issues/1367).
+
+O binário `krunner` provido pelo pacote [plasma-workspace](https://www.archlinux.org/packages/?name=plasma-workspace) também serve como um lançador, oferece suporte a XWayland e Wayland nativo.
+
+[wofi-hg](https://aur.archlinux.org/packages/wofi-hg/) é um lançador de aplicativos, que provê as mesmas funcionalidades do rofi e roda sob o Wayland. É baseado na biblioteca [wlroots](https://www.archlinux.org/packages/?name=wlroots) e usa GTK3 para renderização. Funciona bem com o sway.
 
 ### VirtualBox
 

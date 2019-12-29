@@ -502,7 +502,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **VolWheel** — A little application which lets you control the sound volume easily through a tray icon you can scroll on.
 
-	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://aur.archlinux.org/packages/volwheel/)
 
 #### CD 抓軌
 
@@ -788,7 +788,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **[RecordMyDesktop](https://en.wikipedia.org/wiki/RecordMyDesktop "wikipedia:RecordMyDesktop")** — An easy to use utility that records your desktop into the ogg format with a CLI, Qt or GTK+ interface.
 
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://aur.archlinux.org/packages/gtk-recordmydesktop/) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
 
 *   **simplescreenrecorder** — A feature-rich screen recorder that supports X11 and OpenGL.
 

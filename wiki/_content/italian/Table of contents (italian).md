@@ -15,10 +15,10 @@
 | <small>2.6.</small> [Applicazioni Internet](/index.php/Category:Internet_applications_(Italiano) "Category:Internet applications (Italiano)") <small>(5) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |
 | <small>2.6.1.</small> [Client Email](/index.php/Category:Email_clients_(Italiano) "Category:Email clients (Italiano)") <small>(2)</small> |
 | <small>2.6.2.</small> [Browser Web](/index.php/Category:Web_browser_(Italiano) "Category:Web browser (Italiano)") <small>(3)</small> |
-| <small>2.7.</small> [Matematica e scienza](/index.php/Category:Mathematics_and_science_(Italiano) "Category:Mathematics and science (Italiano)") <small>(3)</small> |
-| <small>2.8.</small> [Multimedia players](/index.php/Category:Multimedia_players_(Italiano) "Category:Multimedia players (Italiano)") <small>(1)</small> |
-| <small>2.9.</small> [Ufficio](/index.php/Category:Office_(Italiano) "Category:Office (Italiano)") <small>(2)</small> |
-| <small>2.9.1.</small> [TeX](/index.php/Category:TeX_(Italiano) "Category:TeX (Italiano)") <small>(1)</small> |
+| <small>2.7.</small> [Multimedia players](/index.php/Category:Multimedia_players_(Italiano) "Category:Multimedia players (Italiano)") <small>(1)</small> |
+| <small>2.8.</small> [Ufficio](/index.php/Category:Office_(Italiano) "Category:Office (Italiano)") <small>(2)</small> |
+| <small>2.8.1.</small> [TeX](/index.php/Category:TeX_(Italiano) "Category:TeX (Italiano)") <small>(1)</small> |
+| <small>2.9.</small> [Science](/index.php/Category:Science_(Italiano) "Category:Science (Italiano)") <small>(3)</small> |
 | <small>2.10.</small> [Monitoraggio e notifica dello stato](/index.php/Category:Status_monitoring_and_notification_(Italiano) "Category:Status monitoring and notification (Italiano)") <small>(2)</small> |
 | <small>2.11.</small> [Editor Testuali](/index.php/Category:Text_editors_(Italiano) "Category:Text editors (Italiano)") <small>(2)</small> |
 | <small>2.12.</small> [Wine](/index.php/Category:Wine_(Italiano) "Category:Wine (Italiano)") <small>(1)</small> |
@@ -27,9 +27,9 @@
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Italiano) "Category:Hardware (Italiano)") <small>(1)</small> |
 | <small>4.1.</small> [Bluetooth](/index.php/Category:Bluetooth_(Italiano) "Category:Bluetooth (Italiano)") <small>(1)</small> |
 | <small>4.2.</small> [CPU](/index.php/Category:CPU_(Italiano) "Category:CPU (Italiano)") <small>(3)</small> |
-| <small>4.3.</small> [Grafica](/index.php/Category:Graphics_(Italiano) "Category:Graphics (Italiano)") <small>(6)</small> |
-| <small>4.4.</small> [Rilevamento Hardware e risoluzione dei problemi](/index.php/Category:Hardware_detection_and_troubleshooting_(Italiano) "Category:Hardware detection and troubleshooting (Italiano)") <small>(4)</small> |
-| <small>4.5.</small> [Fotografia](/index.php/Category:Imaging_(Italiano) "Category:Imaging (Italiano)") <small>(2)</small> |
+| <small>4.3.</small> [Digital imaging](/index.php/Category:Digital_imaging_(Italiano) "Category:Digital imaging (Italiano)") <small>(2)</small> |
+| <small>4.4.</small> [Grafica](/index.php/Category:Graphics_(Italiano) "Category:Graphics (Italiano)") <small>(6)</small> |
+| <small>4.5.</small> [Rilevamento Hardware e risoluzione dei problemi](/index.php/Category:Hardware_detection_and_troubleshooting_(Italiano) "Category:Hardware detection and troubleshooting (Italiano)") <small>(4)</small> |
 | <small>4.6.</small> [Dispositivi di input](/index.php/Category:Input_devices_(Italiano) "Category:Input devices (Italiano)") <small>(2)</small> |
 | <small>4.6.1.</small> [Tastiere](/index.php/Category:Keyboards_(Italiano) "Category:Keyboards (Italiano)") <small>(1)</small> |
 | <small>4.6.2.</small> [Mouse](/index.php/Category:Mice_(Italiano) "Category:Mice (Italiano)") <small>(1)</small> |
@@ -57,7 +57,7 @@
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Italiano) "Category:Boot loaders (Italiano)") <small>(3)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)"))</small> |
 | <small>6.2.</small> [Shell dei comandi](/index.php/Category:Command_shells_(Italiano) "Category:Command shells (Italiano)") <small>(4)</small> |
-| <small>6.3.</small> [Demoni e servizi di sistema](/index.php/Category:Daemons_and_system_services_(Italiano) "Category:Daemons and system services (Italiano)") <small>(12)</small> |
+| <small>6.3.</small> [Daemons](/index.php/Category:Daemons_(Italiano) "Category:Daemons (Italiano)") <small>(12)</small> |
 | <small>6.4.</small> [Ambienti Desktop](/index.php/Category:Desktop_environments_(Italiano) "Category:Desktop environments (Italiano)") <small>(15)</small> |
 | <small>6.4.1.</small> [Gestori delle Sessioni](/index.php/Category:Display_managers_(Italiano) "Category:Display managers (Italiano)") <small>(3)</small> |
 | <small>6.4.2.</small> [Gestori delle finestre Dinamici](/index.php/Category:Dynamic_WMs_(Italiano) "Category:Dynamic WMs (Italiano)") <small>(1)</small> |

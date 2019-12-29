@@ -85,7 +85,7 @@ The official repositories contain the following greeters:
 
 Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):
 
-*   [lightdm-slick-greeter](https://aur.archlinux.org/packages/lightdm-slick-greeter/): A GTK based greeter focused more on appereance than [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter), forked from [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/), and default in Linux Mint.
+*   [lightdm-slick-greeter](https://aur.archlinux.org/packages/lightdm-slick-greeter/): A GTK based greeter focused more on appearance than [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter), forked from [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/), and default in Linux Mint.
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
 *   [lightdm-mini-greeter](https://aur.archlinux.org/packages/lightdm-mini-greeter/): A minimal, configurable, single-user greeter.

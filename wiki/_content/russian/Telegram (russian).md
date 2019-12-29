@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 18 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=582842).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 27 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=591534).
 
 [Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram") — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
 
@@ -16,8 +16,9 @@
     *   [1.3 Приложения для терминала](#Приложения_для_терминала)
     *   [1.4 Web-приложения](#Web-приложения)
 *   [2 Советы и рекомендации](#Советы_и_рекомендации)
-    *   [2.1 Ресурсы в Telegram про Arch Linux](#Ресурсы_в_Telegram_про_Arch_Linux)
-    *   [2.2 Счётчик непрочитанных сообщений для Telegram Desktop](#Счётчик_непрочитанных_сообщений_для_Telegram_Desktop)
+    *   [2.1 Поддержка Wayland](#Поддержка_Wayland)
+    *   [2.2 Ресурсы в Telegram про Arch Linux](#Ресурсы_в_Telegram_про_Arch_Linux)
+    *   [2.3 Счётчик непрочитанных сообщений для Telegram Desktop](#Счётчик_непрочитанных_сообщений_для_Telegram_Desktop)
 
 ## Установка
 
@@ -62,6 +63,10 @@
 *   Приложение [Telegram Chrome app](https://telegram.org/dl/webogram/chromeapp) для [Chromium](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)") — позволяет общаться в Telegram из браузера.
 
 ## Советы и рекомендации
+
+### Поддержка Wayland
+
+В отличие от пакета [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) от Arch Linux, официальный [бинарный файл Telegram](https://github.com/telegramdesktop/tdesktop/releases) не поддерживает Wayland. См. [Wayland#Qt 5](/index.php/Wayland#Qt_5 "Wayland") для получения более подробной информации.
 
 ### Ресурсы в Telegram про Arch Linux
 

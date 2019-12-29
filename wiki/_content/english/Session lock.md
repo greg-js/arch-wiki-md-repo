@@ -130,7 +130,7 @@ To configure DPMS signaling timeout:
 
 DPMS signaling can also be configured in `/etc/X11/xorg.conf.d/` in the `Monitor` section.
 
-Using DPMS signaling, you can set a second timer, for example to notify the user or to dim the screen. For exemple (from [xss-lock(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xss-lock.1)):
+Using DPMS signaling, you can set a second timer, for example to notify the user or to dim the screen. For example (from [xss-lock(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xss-lock.1)):
 
 ```
 # Dim the screen after three minutes of inactivity, lock the screen two minutes later using i3lock:

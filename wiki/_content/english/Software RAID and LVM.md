@@ -239,7 +239,7 @@ Due to the fact that RAID1 and RAID10 writes in the kernel are unbuffered, an ar
 
 ### LVM installation
 
-This section will convert the two RAIDs into physical volumes (PVs). Then combine those PVs into a volume group (VG). The VG will then be divided into logical volumes (LVs) that will act like physical partitions (e.g. `/`, `/var`, `/home`). If you did not understand that make sure you read the [LVM Introduction](/index.php/LVM#LVM_Building_Blocks "LVM") section.
+This section will convert the two RAIDs into physical volumes (PVs). Then combine those PVs into a volume group (VG). The VG will then be divided into logical volumes (LVs) that will act like physical partitions (e.g. `/`, `/var`, `/home`). If you did not understand that make sure you read the [LVM Introduction](/index.php/LVM#LVM_building_blocks "LVM") section.
 
 #### Create physical volumes
 

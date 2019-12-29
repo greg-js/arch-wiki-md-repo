@@ -5,7 +5,11 @@ Articoli correlati
 
 Ci potrebbero essere delle situazioni in cui vorresti avere un completo anonimato mentre usi Internet. Un modo per averlo è usare Tor e Privoxy.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduzione](#Introduzione)
 *   [2 Installazione e setup](#Installazione_e_setup)

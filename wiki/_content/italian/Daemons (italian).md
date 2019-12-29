@@ -4,7 +4,11 @@ Un [demone](https://it.wikipedia.org/wiki/Demone_(informatica)) è un programma 
 
 Dalla prospettiva di un utente la distinzione solitamente è insignificante fino a quando l'utente stesso non tenta di cercare il "demone" in una lista dei processi.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Systemd](#Systemd)
     *   [1.1 Avvio al boot](#Avvio_al_boot)

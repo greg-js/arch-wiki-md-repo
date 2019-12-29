@@ -21,6 +21,9 @@ Related articles
         *   [3.3.2 Using yabar](#Using_yabar)
         *   [3.3.3 Using polybar](#Using_polybar)
     *   [3.4 Scratchpad](#Scratchpad)
+        *   [3.4.1 Using pid](#Using_pid)
+        *   [3.4.2 Using class name](#Using_class_name)
+        *   [3.4.3 Other](#Other)
     *   [3.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
     *   [3.6 Set up a desktop where all windows are floating](#Set_up_a_desktop_where_all_windows_are_floating)
     *   [3.7 Keyboard](#Keyboard)
@@ -140,6 +143,8 @@ Using the example panel using lemonbar requires you to set your environment (.pr
 
 ### Scratchpad
 
+#### Using pid
+
 You can emulate a dropdown terminal (like i3's scratchpad feature if you put a terminal in it) using bspwm's window flags. Append the following to the end of the bspwm config file (adapt to your own terminal emulator):
 
 ```
@@ -164,6 +169,48 @@ id=$(cat /tmp/scratchid);\
 bspc node $id --flag hidden;bspc node -f $id
 
 ```
+
+#### Using class name
+
+In this example we are going to use termite with a custom class name as our dropdown terminal. It does not have to be termite.
+
+First create a file in your path with the following content and make it executable. In this example let's call it scratchpad.sh
+
+```
+#!/usr/bin/bash
+
+if [ -z $1 ]; then
+	echo "Usage: $0 <name of hidden scratchpad window>"
+	exit 1
+fi
+
+pids=$(xdotool search --class ${1})
+for pid in $pids; do
+	echo "Toogle $pid"
+	bspc node $pid --flag hidden -f
+done
+
+```
+
+Then add this to your bspwm config.
+
+```
+...
+bspc rule -a dropdown sticky=on state=floating hidden=on
+termite --class dropdown -e "zsh -i" &
+...
+
+```
+
+To toogle the window a custom rule in sxhdk is necessary. Give as parameter the custom class name.
+
+```
+super + u
+        scratchpad.sh dropdown
+
+```
+
+#### Other
 
 For a scratch-pad which can use any window type without pre-defined rules, see: [[1]](https://www.reddit.com/r/bspwm/comments/3xnwdf/i3_like_scratch_for_any_window_possible/cy6i585)
 

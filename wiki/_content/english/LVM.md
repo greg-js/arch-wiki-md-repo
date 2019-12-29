@@ -197,7 +197,7 @@ Create a physical volume on them:
 
 ```
 
-This command creates a header on each device so it can be used for LVM. As defined in [#LVM Building Blocks](#LVM_Building_Blocks), *DEVICE* can be any [block device](/index.php/Block_device "Block device"), e.g. a disk `/dev/sda`, a partition `/dev/sda2` or a loop back device. For example:
+This command creates a header on each device so it can be used for LVM. As defined in [#LVM building blocks](#LVM_building_blocks), *DEVICE* can be any [block device](/index.php/Block_device "Block device"), e.g. a disk `/dev/sda`, a partition `/dev/sda2` or a loop back device. For example:
 
 ```
 # pvcreate /dev/sda2
@@ -691,6 +691,32 @@ When the file system is shrunk, reduce the size of logical volume:
 
 ```
 # lvresize -L -500M MyVolGroup/mediavol
+
+```
+
+**Note:** To calculate the exact logical volume size for *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4") filesystems, use a simple formula: `LVM_EXTENTS = FS_BLOCKS * FS_BLOCKSIZE / LVM_EXTENTSIZE`. `# tune2fs -l /dev/MyVolGroup/mediavol | grep Block` 
+```
+Block count:              102400000
+Block size:               4096
+Blocks per group:         32768
+
+```
+ `# vgdisplay MyVolGroup | grep "PE Size"` 
+```
+PE Size               4.00 MiB
+
+```
+
+`102400000 blocks * 4096 bytes/block / 4 MiB/extent = 100000 extents`
+
+Passing `--resizefs` will confirm that the correctness.
+
+ `# lvreduce -l 100000 --resizefs /dev/MyVolGroup/mediavol` 
+```
+...
+The filesystem is already 102400000 (4k) blocks long.  Nothing to do!
+...
+Logical volume sysvg/root successfully resized.
 
 ```
 

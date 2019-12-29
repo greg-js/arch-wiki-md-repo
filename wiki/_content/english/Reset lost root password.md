@@ -2,7 +2,11 @@ This guide will show you how to reset a forgotten [root](/index.php/Root_user "R
 
 **Warning:** An attacker could use the methods mentioned below to break into your system. No matter how secure the operating system is or how good passwords are, having physical access amounts to loading an alternate OS and exposing your data, unless you use [disk encryption](/index.php/Disk_encryption "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Using a LiveCD](#Using_a_LiveCD)
     *   [1.1 Change root](#Change_root)

@@ -367,7 +367,7 @@ Do obsługi MPD potrzebny jest oddzielny klient. Zobacz listę klientów na [mpd
 
 *   **Sonata** — Elegancki program napisany w Python i GTK+
 
-	[http://sonata.berlios.de/](http://sonata.berlios.de/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
+	[http://sonata.berlios.de/](http://sonata.berlios.de/) || [sonata](https://aur.archlinux.org/packages/sonata/)
 
 *   **gmpc** — Klient w GTK2\. Projektowany by być lekkim, łatwym, a przy okazji dostarczać wszystkie opcje MPD. Użytkownicy mogą wybierać kilka różnych metod przeglądania bazy muzycznej, rozszerzać opcje wtyczkami.
 

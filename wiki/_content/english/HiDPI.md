@@ -46,6 +46,9 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.4 Inkscape](#Inkscape)
     *   [6.5 IntelliJ IDEA](#IntelliJ_IDEA)
     *   [6.6 Java applications](#Java_applications)
+        *   [6.6.1 AWT/Swing](#AWT/Swing)
+        *   [6.6.2 JavaFX](#JavaFX)
+        *   [6.6.3 Mixed AWT/Swing and JavaFX](#Mixed_AWT/Swing_and_JavaFX)
     *   [6.7 MATLAB](#MATLAB)
     *   [6.8 Mono applications](#Mono_applications)
     *   [6.9 NetBeans](#NetBeans)
@@ -436,14 +439,36 @@ The addition of `-Dhidpi=true` to the vmoptions file in either `$HOME/.IdeaC14/`
 
 ### Java applications
 
-Java applications using the AWT/Swing framework can be scaled by defining the sun.java2d.uiScale variable when invoking java. For example,
+#### AWT/Swing
+
+Java applications using the *AWT/Swing* framework can be scaled by defining the `sun.java2d.uiScale` VM property when invoking `java`. The value can be an integer percentage value, or a float value. For example,
 
 ```
-java -Dsun.java2d.uiScale=2 -jar some_application.jar
+java -Dsun.java2d.uiScale=2 -jar some_swing_application.jar
+java -Dsun.java2d.uiScale=300% -jar some_swing_application.jar
 
 ```
 
-Since Java 9 the GDK_SCALE environment variable is used to scale Swing applications accordingly.
+Since Java 9 the `GDK_SCALE` environment variable is used to scale Swing applications accordingly.
+
+Note that at this point, Java *AWT/Swing* (up to including OpenJDK 13) only effectively supports integer values. A setting of `-Dsun.java2d.uiScale=250%` or `GDK_SCALE=2.5` will be treated as if it were set to `-Dsun.java2d.uiScale=2` resp. `GDK_SCALE=2`.
+
+#### JavaFX
+
+Java applications using *JavaFX* can be scaled by defining the `glass.gtk.uiScale` VM property when invoking `java`. The value can be an integer percentage value, an integer DPI value (where `96dpi` represents a scale factor of `100%`, and for example `192dpi` represents a scale factor of `200%`), or a float value. For example,
+
+```
+java -Dglass.gtk.uiScale=200% -jar some_jfx_application.jar
+java -Dglass.gtk.uiScale=192dpi -jar some_jfx_application.jar
+java -Dglass.gtk.uiScale=2.0 -jar some_jfx_application.jar
+
+```
+
+*JavaFX* perfectly well supports fractions. Using values like `-Dglass.gtk.uiScale=250%` or `-Dglass.gtk.uiScale=2.5` will deliver the expected result.
+
+#### Mixed AWT/Swing and JavaFX
+
+Some Java applications mix *JavaFX* and *AWT/Swing* (via `javafx.embed.swing.JFXPanel`). In that case, the settings for *AWT/Swing* will also affect *JavaFX*, and setting `-Dglass.gtk.uiScale` will have no effect.
 
 ### MATLAB
 

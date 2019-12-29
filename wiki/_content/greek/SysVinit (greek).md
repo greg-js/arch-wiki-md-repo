@@ -6,7 +6,11 @@
 
 **Tip:** Παρόλο που το Arch χρησιμοποιεί το init, Ο περισσότερος φόρτος εργασίας επιτελείται απο τα [#Main Boot Scripts](#Main_Boot_Scripts). Το παρόν άρθρο επικεντρώνεται στα init και inittab; αν ενδιαφέρεστε για μια επισκόπηση της διαδικασίας εκκίνησης του Arch's, δείτε το [Arch boot process](/index.php/Arch_boot_process "Arch boot process").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Επισκόπηση των init και inittab](#Επισκόπηση_των_init_και_inittab)
 *   [2 Αλλάζοντας runlevel](#Αλλάζοντας_runlevel)

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 System specification](#System_specification)
 *   [2 What does **not** work out of the box](#What_does_not_work_out_of_the_box)
@@ -53,7 +57,9 @@
 
 ## Input/touchpad
 
-The keyboard and touchpad work more or less without problems using the [xf86-input-keyboard](https://www.archlinux.org/packages/?name=xf86-input-keyboard) and [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) modules, respectively. Right- and left-clicking works, as well as Two-Finger scroll. Tapping is enabled out of the box and can be disabled in ` /etc/X/xorg.conf.d/10-synaptics.` 
+The keyboard and touchpad work more or less without problems using the [xf86-input-keyboard](https://www.archlinux.org/packages/?name=xf86-input-keyboard) and [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) modules, respectively. Right- and left-clicking works, as well as Two-Finger scroll. Tapping is enabled out of the box and can be disabled in
+
+ ` /etc/X/xorg.conf.d/10-synaptics.` 
 
 ## Bluetooth
 
@@ -114,13 +120,13 @@ As with most Asus laptops/netbooks, this laptop sends its Multimedia events via 
 ```
     button/volumeup)
       amixer set Master 5+
-      ;;
+      ;;
     button/volumedown)
       amixer set Master 5-
-      ;;
+      ;;
     button/mute)
       amixer set Master toggle
-      ;;
+      ;;
 
 ```
 

@@ -130,11 +130,11 @@ fi
 
 Manually starting a Wayland session is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
 
-To start on login to tty1, add the following to your `.bash_profile`:
+To start on login to tty1, add the following to your `.bash_profile`. as not all applications respect XDG_SESSION_TYPE, add a variable for firefox, QT applications:
 
 ```
 if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
-  XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+  MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```

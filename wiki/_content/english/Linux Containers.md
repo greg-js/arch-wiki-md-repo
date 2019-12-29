@@ -10,7 +10,7 @@ Related articles
 *   [PeerGuardian Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 
-[Linux Containers](https://linuxcontainers.org/) (LXC) is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a single control host (LXC host). It does not provide a virtual machine, but rather provides a virtual environment that has its own CPU, memory, block I/O, network, etc. space and the resource control mechanism. This is provided by [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [cgroups](/index.php/Cgroups "Cgroups") features in Linux kernel on LXC host. It is similar to a chroot, but offers much more isolation.
+[Linux Containers](https://linuxcontainers.org/) (LXC) is an operating-system-level virtualization method for running multiple isolated Linux systems (containers) on a single control host (LXC host). It does not provide a virtual machine, but rather provides a virtual environment that has its own CPU, memory, block I/O, network, etc. space and the resource control mechanism. This is provided by the [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [cgroups](/index.php/Cgroups "Cgroups") features in the Linux kernel on the LXC host. It is similar to a chroot, but offers much more isolation.
 
 Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn"), [docker](/index.php/Docker "Docker") or [rkt](https://aur.archlinux.org/packages/rkt/).
 
@@ -50,9 +50,9 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
 
 LXCs can be setup to run in either *privileged* or *unprivileged* configurations.
 
-In general, running an *unprivileged* container is [considered safer](https://www.stgraber.org/2014/01/17/lxc-1-0-unprivileged-containers) than running a *privileged* container since *unprivileged* containers have an increased degree of isolation by virtue of their design. Key to this is the mapping of the root UID in the container to a non-root UID on the host which makes it more difficult for a hack within the container to lead to consequences on host system. In other words, if an attacker manages to escape the container, he or she should find themselves with no rights on the host.
+In general, running an *unprivileged* container is [considered safer](https://www.stgraber.org/2014/01/17/lxc-1-0-unprivileged-containers) than running a *privileged* container, since *unprivileged* containers have an increased degree of isolation by virtue of their design. Key to this is the mapping of the root UID within the container to a non-root UID on the host, which makes it more difficult for a hack inside the container to lead to consequences on the host system. In other words, if an attacker manages to escape the container, he or she should find themselves with limited or no rights on the host.
 
-The Arch [linux](https://www.archlinux.org/packages/?name=linux), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) and [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) packages currently provide out-of-the-box support for *unprivileged* containers. In [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) *unprivileged* containers are only available for the system administrator with additional kernel configuration as user namespaces are disabled by default for normal users there. This article contains information for users to run either type of container, but additional setup may required to use *unprivileged* containers.
+The Arch [linux](https://www.archlinux.org/packages/?name=linux), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) and [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel packages currently provide out-of-the-box support for *unprivileged* containers. Similarly, with the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package, *unprivileged* containers are only available for the system administrator; with additional kernel configuration changes required, as user namespaces are disabled by default for normal users there. This article contains information for users to run either type of container, but additional steps may be required in order to use *unprivileged* containers.
 
 ### An example to illustrate unprivileged containers
 
@@ -68,7 +68,7 @@ systemd+    26     1  0 17:49 ?        00:00:00 /usr/lib/systemd/systemd-networ
 
 ```
 
-On the host however, those containerized root processes are running as the mapped user (ID>100000) on the host, not as the root user on the host:
+On the host, however, those containerized root processes are actually shown to be running as the mapped user (ID>100000), rather than the host's actual root user:
 
 ```
 [root@host /]# lxc-info -Ssip --name sandbox

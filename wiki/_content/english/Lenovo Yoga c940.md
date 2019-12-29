@@ -31,7 +31,7 @@ Most functionality works out of the box, a kernel of version 5.4 is recommended 
 | Touchscreen | **Working** | wacom |
 | Stylus | **Working** ¹ | wacom,usbhid |
 | Accelerometer | **Working** | hid_sensor_accel_3d |
-| Touchpad | **Working** | psmouse |
+| Touchpad | **Working** | libinput |
 | Camera | **Working** | uvcvideo |
 | Bluetooth | **Working** | btintel |
 | Fingerprint Reader | **Not Working** |
@@ -48,7 +48,7 @@ To access the boot menu and BIOS, use "F1". Disable secure boot from the BIOS. U
 
 ### TrackPad
 
-TrackPad works fine with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
+TrackPad works fine with [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput).
 
 ### TouchScreen and Stylus
 
@@ -103,7 +103,7 @@ The Bluetooth adapter works out of the box.
 
 ### Screen Rotation
 
-I personally use [bspwm](https://www.archlinux.org/packages/?name=bspwm) and for that I use [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and [screenrotator-git](https://aur.archlinux.org/packages/screenrotator-git/). But theres a whole article on this in [Tablet_PC](/index.php/Tablet_PC "Tablet PC").
+I personally use [bspwm](https://www.archlinux.org/packages/?name=bspwm) and for that I use [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and [screenrotator-git](https://aur.archlinux.org/packages/screenrotator-git/). But theres a whole article on this in [Tablet PC](/index.php/Tablet_PC "Tablet PC").
 
 ## ACPI
 

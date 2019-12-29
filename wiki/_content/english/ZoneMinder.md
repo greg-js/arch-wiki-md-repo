@@ -46,7 +46,7 @@ Set up sql mode, otherwise strange sql-related errors will occur when saving var
 sql_mode=NO_ENGINE_SUBSTITUTION
 ```
 
-[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `httpd.service`, `zoneminder.service`, `fcgiwrap-multiwatch.service` and `php-fpm.service`.
+[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `nginx.service`, `zoneminder.service`, `fcgiwrap-multiwatch.service` and `php-fpm.service`.
 
 Once configuration below is completed and the system service started, the web interface will be accessible via [http://localhost:8095](http://localhost:8095)
 

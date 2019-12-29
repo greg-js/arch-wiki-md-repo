@@ -12,19 +12,23 @@
 
 Документ [ABS - The Arch Build System](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") дает хороший обзор инструментов и файлов, необходимых для создания и изменения пакетов для Arch Linux. Скорее всего, здесь вы найдете все, что нужно знать для настройки или пересборки существующих пакетов. В то же время, если вам нужно создать новый пакет, существует несколько дополнительных статей, которые помогут вам в этом. Этот документ изначально предполагает, что вы прочитали и поняли описание ABS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Подготовка файлов](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2)
-*   [2 Редактирование переменных](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D1.85)
-*   [3 Использование исходного кода](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0)
-    *   [3.1 Функция build()](#.D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D1.8F_build.28.29)
-    *   [3.2 Функция package()](#.D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D1.8F_package.28.29)
-*   [4 Тестирование PKGBUILD'а](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_PKGBUILD.27.D0.B0)
-*   [5 Тестирование пакета](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0)
-*   [6 Резюмируя вышесказанное](#.D0.A0.D0.B5.D0.B7.D1.8E.D0.BC.D0.B8.D1.80.D1.83.D1.8F_.D0.B2.D1.8B.D1.88.D0.B5.D1.81.D0.BA.D0.B0.D0.B7.D0.B0.D0.BD.D0.BD.D0.BE.D0.B5)
-*   [7 Полезные ссылки](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
-*   [8 Внимание](#.D0.92.D0.BD.D0.B8.D0.BC.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [9 Более подробные указания](#.D0.91.D0.BE.D0.BB.D0.B5.D0.B5_.D0.BF.D0.BE.D0.B4.D1.80.D0.BE.D0.B1.D0.BD.D1.8B.D0.B5_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D0.BD.D0.B8.D1.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Подготовка файлов](#Подготовка_файлов)
+*   [2 Редактирование переменных](#Редактирование_переменных)
+*   [3 Использование исходного кода](#Использование_исходного_кода)
+    *   [3.1 Функция build()](#Функция_build())
+    *   [3.2 Функция package()](#Функция_package())
+*   [4 Тестирование PKGBUILD'а](#Тестирование_PKGBUILD'а)
+*   [5 Тестирование пакета](#Тестирование_пакета)
+*   [6 Резюмируя вышесказанное](#Резюмируя_вышесказанное)
+*   [7 Полезные ссылки](#Полезные_ссылки)
+*   [8 Внимание](#Внимание)
+*   [9 Более подробные указания](#Более_подробные_указания)
 
 ## Подготовка файлов
 
@@ -138,8 +142,8 @@
 ## Полезные ссылки
 
 *   [ABS - The Arch Build System](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)")
-*   [makepkg man page](https://www.archlinux.org/pacman/makepkg.8.html)
-*   [makepkg tutorial](/index.php/Makepkg "Makepkg")
+*   [Справочное руководство по makepkg](https://www.archlinux.org/pacman/makepkg.8.html)
+*   [Статья о makepkg](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)")
 *   [Arch CVS & SVN PKGBUILD guidelines](/index.php/Arch_CVS_%26_SVN_PKGBUILD_guidelines "Arch CVS & SVN PKGBUILD guidelines")
 
 ## Внимание
