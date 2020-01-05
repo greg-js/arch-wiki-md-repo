@@ -2,7 +2,11 @@ Related articles
 
 *   [LAMP](/index.php/LAMP "LAMP")
 
-[Flyspray](http://www.flyspray.org/) is a bug tracking system written in [PHP](/index.php/PHP "PHP").
+[Flyspray](http://www.flyspray.org/) is a bug tracking system written in [PHP](/index.php/PHP "PHP"). FlySpray is notably used by Arch Linux itself (bugs.archlinux.org).
+
+## Status in Arch Linux
+
+Issue [FS#24999](https://bugs.archlinux.org/task/24999) was in progress to migrate away from FlySpray to Bugzilla. Unfortunately the main developer abandoned the project due to lack of time/interest.
 
 ## Installation
 

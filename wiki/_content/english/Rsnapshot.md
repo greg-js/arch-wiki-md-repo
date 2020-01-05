@@ -1,6 +1,10 @@
 [Rsnapshot](http://www.rsnapshot.org/) is an open source utility that provides incremental back ups.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -12,6 +16,7 @@
     *   [2.6 Extra Scripts](#Extra_Scripts)
     *   [2.7 Testing the configuration](#Testing_the_configuration)
 *   [3 Automation](#Automation)
+    *   [3.1 External Drives](#External_Drives)
 *   [4 How it works](#How_it_works)
 
 ## Installation
@@ -240,7 +245,7 @@ Description=rsnapshot (%I) backup
 Type=oneshot
 Nice=19
 IOSchedulingClass=idle
-ExecStart=/usr/bin/rsnapshot %I
+ExecStart=/usr/bin/rsnapshot %I
 ```
 
 Then create a timer unit for hourly:
@@ -329,6 +334,62 @@ Alternatively, to manually run the service, you can simply execute:
 ```
 
 **Note:** It is usually a good idea to schedule the larger intervals to run a bit before the lower ones. This helps prevent race conditions where the daily would try to run before the hourly job had finished. This same strategy should be extended so that a weekly entry would run before the daily and so on.
+
+### External Drives
+
+**Note:** This section assumes that you have already completed the configuration described in the [#Automation](#Automation) section above.
+
+If the destination drive is in an external enclosure connected via USB or [eSATA](https://en.wikipedia.org/wiki/ESATAp), it may not have mounted during boot or may otherwise be unmounted at the time *rsnapshot* is scheduled to begin. If *rsnapshot* is configured to write to a path that always exists, e.g. `/.snapshots`, the data will be backed up on whichever hard drive is mounted as the root directory rather than the desired external drive.
+
+To remedy this situation one must configure *rsnapshot* to depend upon the disk being mounted to the expected mount point. There are two actions required: alter `/etc/fstab` and `/etc/systemd/system/rsnapshot@.service`.
+
+*Systemd* will read the `/etc/fstab` file and create unit files for all of the mount points therein. For this setup we need to add one, optionally two, configuration options to the mount point. At the end of the options column for the desired mount point add `x-systemd.automount` and, if you want the mount point to unmount after inactivity, `x-systemd.idle-timeout=10m`. The value *10m* can be changed to any value you wish. See [systemd.automount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.automount.5) and [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for additional details about the options available.
+
+**Tip:** The UUID of a partition can be found by running `blkid` with `sudo`.
+
+An example mount point:
+
+ `/etc/fstab` 
+```
+# /dev/sdd1
+UUID=2848e78d-b05a-4477-a5f0-38f35411c269 /mnt/backups ext4 noauto,nofail,noexec,nouser,nosuid,rw,async,x-systemd.device-timeout=200ms,x-systemd.automount,x-systemd.idle-timeout=10m 0 2
+```
+
+**Tip:** See [fstab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5) and [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS) for details about the available options.
+
+After changing `/etc/fstab`, run `systemctl daemon-reload` so *systemd* picks up the changes made. Check that the mount and automount units look correct:
+
+```
+# systemctl show mnt-backups.mount
+Where=/.snapshots
+What=/dev/sdd1
+Options=rw,nosuid,noexec,relatime,x-systemd.automount
+Type=ext4
+TimeoutUSec=1h
+…
+
+# systemctl show mnt-backups.automount
+Where=/mnt/backups
+DirectoryMode=0755
+…
+```
+
+Finally, edit `/etc/systemd/system/rsnapshot@.service` and add the following line in the "[Unit]" section:
+
+ `/etc/systemd/system/rsnapshot@.service` 
+```
+[Unit]
+Requires=mnt-backups.mount
+```
+
+To ensure everything is configured properly check that the rsnapshot service units now require the mount point:
+
+```
+# systemctl show rsnapshot@daily.service | grep 'Requires='
+Requires=sysinit.target system-rsnapshot.slice mnt-backups.mount
+```
+
+**Tip:** Run `journalctl -u mnt-backups.mount` to verify that the automatic mounting and unmounting is taking place as expected.
 
 ## How it works
 

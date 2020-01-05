@@ -40,6 +40,7 @@ Related articles
     *   [5.5 libGL error: failed to load driver: swrast OR AVD doesn't load and no error message displayed](#libGL_error:_failed_to_load_driver:_swrast_OR_AVD_doesn't_load_and_no_error_message_displayed)
     *   [5.6 sh: glxinfo: command not found](#sh:_glxinfo:_command_not_found)
     *   [5.7 Android Emulator: no keyboard input in xfwm4](#Android_Emulator:_no_keyboard_input_in_xfwm4)
+    *   [5.8 adb: sideload connection failed: insufficient permissions for device](#adb:_sideload_connection_failed:_insufficient_permissions_for_device)
 
 ## Transferring files
 
@@ -478,3 +479,24 @@ You can use the workaround described in [this Stack Overflow answer](https://sta
 2.  Switch to the Focus tab.
 3.  Change the Focus Model to "Focus follow mouse".
 4.  Disable *Automatically raise windows when they receive focus* option below.
+
+### adb: sideload connection failed: insufficient permissions for device
+
+If you get the error
+
+```
+adb: sideload connection failed: insufficient permissions for device
+See [[4]](http://developer.android.com/tools/device.html) for more information
+adb: trying pre-KitKat sideload method...
+adb: pre-KitKat sideload connection failed: insufficient permissions for device
+See [[5]](http://developer.android.com/tools/device.html) for more information
+
+```
+
+you might solve it by restarting the adb server with sudo:
+
+```
+ $ adb kill-server
+ $ sudo adb start-server
+
+```

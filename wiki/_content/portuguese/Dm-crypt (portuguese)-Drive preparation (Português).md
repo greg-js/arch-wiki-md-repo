@@ -1,11 +1,11 @@
-Related articles
+Artigos relacionados
 
-*   [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption")
+*   [Criptografia de disco#Preparando o disco](/index.php/Criptografia_de_disco#Preparando_o_disco "Criptografia de disco")
 *   [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk")
 
 **Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). Data da última tradução: 2019-12-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&diff=0&oldid=591581) na versão em inglês.
 
-Antes de criptografar uma unidade de armazenamento, é recomendado apaga-la com segurança, a sobrescrevendo com dados aleatórios. Isto é realizado para prevenir ataques criptográficos ou indesejada [recuperação de arquivos](/index.php/File_recovery "File recovery"), estes dados não são disceníveis dos dados depois de escritos pelo dm-crypt. Para uma compreensiva discursão veja [Encriptação de disco#Preparando o disco](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption").
+Antes de criptografar uma unidade de armazenamento, é recomendado apaga-la com segurança, a sobrescrevendo com dados aleatórios. Isto é realizado para prevenir ataques criptográficos ou indesejada [recuperação de arquivos](/index.php/File_recovery "File recovery"), estes dados não são disceníveis dos dados depois de escritos pelo dm-crypt. Para uma compreensiva discursão veja [Criptografia de disco#Preparando o disco](/index.php/Criptografia_de_disco#Preparando_o_disco "Criptografia de disco").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

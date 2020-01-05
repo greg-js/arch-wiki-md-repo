@@ -85,6 +85,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.29 Cannot launch VirtualBox on Wayland: Segmentation fault](#Cannot_launch_VirtualBox_on_Wayland:_Segmentation_fault)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Automounting does not work](#Automounting_does_not_work)
+    *   [6.2 Missing vboximg-mount](#Missing_vboximg-mount)
 *   [7 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -342,7 +343,7 @@ If the user is not in the *vboxsf* group, to give them access to our mountpoint 
 
 **Note:** Automounting requires the `vboxservice.service` to be [enabled](/index.php/Enabled "Enabled")/[started](/index.php/Started "Started").
 
-**Warning:** Automounting fails with recent versions of Virtualbox Guest Utils, see [FS#61307](https://bugs.archlinux.org/task/61307) for a workaround or use manual mounting.
+**Warning:** Automounting does not work with the VirtualBox Guest Additions provided in Arch Linux packages, see [#Automounting does not work](#Automounting_does_not_work).
 
 In order for the automounting feature to work you must have checked the auto-mount checkbox in the GUI or used the optional `--automount` argument with the command `VBoxManage sharedfolder`.
 
@@ -963,6 +964,10 @@ Exec=env QT_QPA_PLATFORM=xcb VirtualBox ...
 ### Automounting does not work
 
 Automounting does not work with the packaged guest additions [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) and [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) starting with version 6.0.0-1\. See [FS#61307](https://bugs.archlinux.org/task/61307).
+
+### Missing vboximg-mount
+
+The `vboximg-mount` binary is not packaged in the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) package. See [FS#64961](https://bugs.archlinux.org/task/64961).
 
 ## See also
 

@@ -94,6 +94,8 @@ If icons are not displaying on Dolphin, and an error similar to "Pixmap is a nul
 
 ```
 
+If icons are still not able display, and same error "Pixmap is a null Pixmap", run `qt5ct`, looking at "icon theme" tab. Choose one icon theme and apply.
+
 ### Icons are too big
 
 If icons are too big on Dolphin in not KDE environment, start it with:

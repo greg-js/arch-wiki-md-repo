@@ -308,6 +308,10 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://aur.archlinux.org/packages/gmpc/)
 
+*   **mympd** — A maintained and much improved fork of ympd web GUI. Can be run in a docker container.
+
+	[https://github.com/jcorporation/myMPD](https://github.com/jcorporation/myMPD) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **pymp'd** — A GTK front end client for the music playing daemon MPD.
 
 	[http://pympd.sourceforge.net](http://pympd.sourceforge.net) || [pympd](https://aur.archlinux.org/packages/pympd/)

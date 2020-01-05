@@ -292,12 +292,12 @@ Para ativar este recurso, criptografe a partição com `/boot` que reside nela u
 
 Esta opção é usada pelo grub-install para gerar o grub `core.img`, então certifique-se de [instalar o grub](#Instalação) depois de modificar esta opção.
 
-Sem mais alterações, você será solicitado duas vezes a informar um código de acesso: o primeiro para o GRUB desbloquear o ponto de montagem `/boot` na incialização, o segundo para desbloquear o sistema de arquivos raiz como implementado pelo initramfs. Você pode usar um [initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") para evitar isso.
+Sem mais alterações, você será solicitado duas vezes a informar um código de acesso: o primeiro para o GRUB desbloquear o ponto de montagem `/boot` na incialização, o segundo para desbloquear o sistema de arquivos raiz como implementado pelo initramfs. Você pode usar um [initramfs](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Com_uma_keyfile_no_initramfs "Dm-crypt/Encriptação de dispositivo") para evitar isso.
 
 **Atenção:**
 
 *   Se você quiser [gerar o arquivo de configuração principal](#Gerar_o_arquivo_de_configuração_principal), certifique-se de que `/boot` esteja montado.
-*   Para realizar atualizações do sistema envolvendo o ponto de montagem `/boot`, certifique-se de que o `/boot` criptografado esteja desbloqueado e montado antes de executar uma atualização. Com uma partição `/boot` separada, isso pode ser feito automaticamente na inicialização usando [crypttab](/index.php/Crypttab "Crypttab") com um [arquivo chave](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
+*   Para realizar atualizações do sistema envolvendo o ponto de montagem `/boot`, certifique-se de que o `/boot` criptografado esteja desbloqueado e montado antes de executar uma atualização. Com uma partição `/boot` separada, isso pode ser feito automaticamente na inicialização usando o [crypttab](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#crypttab "Dm-crypt/Configuração do sistema") com uma [keyfile](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Com_uma_keyfile_no_initramfs "Dm-crypt/Encriptação de dispositivo").
 
 **Nota:**
 

@@ -71,7 +71,7 @@ SageMath opens the plot in an external application.
 
 **Note:** The SageMath Flask notebook is deprecated in favour of the Jupyter notebook. The Jupyter notebook is recommended for all new worksheets. You can use the [sage-notebook-exporter](https://www.archlinux.org/packages/?name=sage-notebook-exporter) application to convert your Flask notebooks to Jupyter
 
-A better suited interface for advanced usage in SageMath is the Notebook ([sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook)). To start the Notebook server from the command-line, execute:
+A better suited interface for advanced usage in SageMath is the Notebook ([sage-notebook](https://aur.archlinux.org/packages/sage-notebook/)). To start the Notebook server from the command-line, execute:
 
 ```
 $ sage -n

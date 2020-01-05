@@ -46,6 +46,8 @@ The entire process should run from a live USB Arch system to avoid any filesyste
 
 **Warning:** **Do not** run any of this code by copy-pasting, you need to adapt all these commands to your specific setup.
 
+**Note:** It is highly recommended to check your work after each step by checking the filesystem, LVM, and/or LUKS volume integrity.
+
 **Note:** It is highly recommended to write out the exact transition plan so that at each step you know exactly which partition size you're going to need.
 
 ## Shrink LVM-on-LUKS

@@ -126,7 +126,7 @@ Be sure to read [#Setup](#Setup) and replace `minecraftd` with `papermc` whereve
 *   [forge-server-1.6.4](https://aur.archlinux.org/packages/forge-server-1.6.4/) for Minecraft 1.6.4
 *   [forge-server-1.5.2](https://aur.archlinux.org/packages/forge-server-1.5.2/) for Minecraft 1.5.2
 
-Be sure to read [#Setup](#Setup) and replace `minecraftd` with `forged` (`forge-x.x.xd` for legacy versions) wherever you encounter it.
+Be sure to read [#Setup](#Setup) and replace `minecraftd` with `forged` wherever you encounter it.
 
 ### Additional notes
 

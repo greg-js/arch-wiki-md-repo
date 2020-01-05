@@ -1,3 +1,8 @@
+Related articles
+
+*   [Bcache](/index.php/Bcache "Bcache")
+*   [EnhanceIO](/index.php/EnhanceIO "EnhanceIO")
+
 [Flashcache](https://github.com/facebookarchive/flashcache) is a module originally written and released by Facebook(Mohan Srinivasan, Paul Saab and Vadim Tkachenko) in April of 2010\. It is a kernel module that allows Writethrough caching of a drive on another drive. This is most often used for caching a rotational drive on a smaller solid-state drive for performance reasons. This gives you the speed of an SSD and the size of a standard rotational drive for recently cached files. Facebook originally wrote the module to speed up database I/O, but it is easily extended to any I/O.
 
 An alternative to Flashcache is [Bcache](/index.php/Bcache "Bcache")
@@ -8,7 +13,11 @@ It is important to note that this driver is intended to speed up a slower drive 
 
 **Warning:** I have read that this module does not compile properly on a 32-bit machine, but I have not tested this.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Getting the kernel module](#Getting_the_kernel_module)

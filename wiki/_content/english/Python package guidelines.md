@@ -74,6 +74,8 @@ Python packages are generally installed using language-specific tools, such as [
 
 However, for managing Python packages from within PKGBUILDs, the standard-provided [distutils](http://docs.python.org/library/distutils.html) proves to be the most convenient solution since it uses the downloaded source package's `setup.py` and easily installs files under `*$pkgdir*/usr/lib/python*<python version>*/site-packages/*$pkgname*` directory.
 
+**Note:** Dependencies from `setup.py` must be defined in the `depends` array otherwise they will not be installed.
+
 ### distutils
 
 A *distutils* PKGBUILD is usually quite simple:

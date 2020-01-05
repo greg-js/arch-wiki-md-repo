@@ -14,7 +14,7 @@
 
 ## Warning
 
-This article now describes the build server at **soyuz.archlinux.org** instead.
+This article now describes the build server at **dragon.archlinux.org** instead.
 
 ## Directories that must be used
 

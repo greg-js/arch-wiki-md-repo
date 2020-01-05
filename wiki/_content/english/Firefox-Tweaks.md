@@ -65,10 +65,11 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [4.7 Prevent accidental closing](#Prevent_accidental_closing)
     *   [4.8 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
     *   [4.9 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
-    *   [4.10 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [4.11 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
-    *   [4.12 Fido U2F authentication](#Fido_U2F_authentication)
-    *   [4.13 Get ALSA working back](#Get_ALSA_working_back)
+    *   [4.10 Slow or freezing scrolling](#Slow_or_freezing_scrolling)
+    *   [4.11 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
+    *   [4.12 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
+    *   [4.13 Fido U2F authentication](#Fido_U2F_authentication)
+    *   [4.14 Get ALSA working back](#Get_ALSA_working_back)
 *   [5 See also](#See_also)
 
 ## Performance
@@ -603,6 +604,17 @@ Scrolling in Firefox can feel "jerky" or "choppy". A post on [MozillaZine](http:
 4.  Set `image.mem.max_decoded_image_kb` to at least 512K
 
 Now scrolling should flow smoothly.
+
+### Slow or freezing scrolling
+
+Sometimes, usually when 4K screens are involved, Firefox can freeze until the user stops scrolling and then do a redraw (rather than producing a nice scroll "animation"). An [answer on Firefox's support page](https://support.mozilla.org/en-US/questions/1157360#answer-962827) suggests force-enabling GPU acceleration. Those setting seem to fix the issue.
+
+1.  Set `layers.acceleration.force-enabled` to `true`.
+2.  Set `webgl.force-enabled` to `true`.
+3.  Set `media.hardware-video-decoding.force-enabled` to `true`.
+4.  Set `browser.tabs.remote.autostart` to `true`. This one enables multiprocessor support. It already defaults to `true` in recent Firefox releases.
+
+Remember to restart Firefox when you change the settings.
 
 ### Run Firefox inside an nspawn container
 

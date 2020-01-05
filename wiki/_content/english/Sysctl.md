@@ -29,6 +29,7 @@
     *   [3.3 Other](#Other)
         *   [3.3.1 Allow unprivileged users to create IPPROTO_ICMP sockets](#Allow_unprivileged_users_to_create_IPPROTO_ICMP_sockets)
 *   [4 Virtual memory](#Virtual_memory)
+    *   [4.1 VFS cache](#VFS_cache)
 *   [5 MDADM](#MDADM)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Small periodic system freezes](#Small_periodic_system_freezes)
@@ -385,7 +386,9 @@ See [https://lonesysadmin.net/2013/12/22/better-linux-disk-caching-performance-v
 *   Consensus is that setting `vm.dirty_ratio` to 10% of RAM is a sane value if RAM is say 1 GB (so 10% is 100 MB). But if the machine has much more RAM, say 16 GB (10% is 1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case may be `3` (3% of 16 GB is approximately 491 MB).
 *   Similarly, setting `vm.dirty_background_ratio` to `5` may be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
 
-Decreasing the VFS cache parameter value may improve system responsiveness:
+### VFS cache
+
+Decreasing the [virtual file system](https://www.kernel.org/doc/Documentation/filesystems/vfs.txt) (VFS) cache parameter value may improve system responsiveness:
 
 *   `vm.vfs_cache_pressure = 50`
 
@@ -418,13 +421,6 @@ vm.dirty_bytes = 4194304
 ```
 
 **Note:** The `dirty_background_bytes` and `dirty_bytes` parameters are counterparts of `dirty_background_ratio` and `dirty_ratio` (as seen in [#Virtual memory](#Virtual_memory)). Only one of the parameters may be specified at a time.
-
-Try to change `kernel.io_delay_type` (x86 only):
-
-*   0 - IO_DELAY_TYPE_0X80
-*   1 - IO_DELAY_TYPE_0XED
-*   2 - IO_DELAY_TYPE_UDELAY
-*   3 - IO_DELAY_TYPE_NONE
 
 ### Long system freezes while swapping to disk
 

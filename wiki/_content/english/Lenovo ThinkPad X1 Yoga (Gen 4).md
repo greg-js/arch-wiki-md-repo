@@ -15,25 +15,23 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 | **Device** | **Working** | **Modules** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
 | [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
-| Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
-| Mobile broadband Fibocom | No¹ | ? |
+| Native Ethernet with [dongle](https://www.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-Ethernet-Extension-Adapter-2/p/4X90Q84427) (not included) | ? | ? |
 | Audio | Yes | snd_hda_intel |
-| Microphone | No⁴ | snd_sof, snd_sof_intel_hda |
+| Microphone | No³ | snd_sof, snd_sof_intel_hda |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |
-| [Fingerprint reader](/index.php/Fprint "Fprint") | No² | ? |
-| [Power management](/index.php/Power_management "Power management") | Yes³ | ? |
+| [Fingerprint reader](/index.php/Fprint "Fprint") | No¹ | ? |
+| [Power management](/index.php/Power_management "Power management") | Yes² | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | NFC | No | ? |
 | Keyboard backlight | Yes | thinkpad_acpi |
 | Function/Multimedia keys | Yes | ? |
 | 
 
-1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
-2.  An official driver and a reverse engineered driver are in the works [[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) (*06cb:00bd*). See [#Fingerprint sensor](#Fingerprint_sensor)
-3.  S3 suspend requires changes to BIOS settings, see section on [enabling S3](#Enabling_S3).
-4.  The internal microphone doesn't work on versions of the [linux](https://www.archlinux.org/packages/?name=linux) kernel before 5.3\. On version 5.3 and newer the SOF firmware can be enabled by installing [sof-firmware](https://www.archlinux.org/packages/?name=sof-firmware). However, the latest version of sof-fimrware requires Kernel 5.5 and additional udev rules. The X1 Carbon (Gen 7) seems to have the same issue. See the [Talkpage for X1 Carbon (Gen 7)](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
+1.  An official driver and a reverse engineered driver are in the works [[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) (*06cb:00bd*). See [#Fingerprint sensor](#Fingerprint_sensor)
+2.  S3 suspend requires changes to BIOS settings, see section on [enabling S3](#Enabling_S3).
+3.  The internal microphone doesn't work on versions of the [linux](https://www.archlinux.org/packages/?name=linux) kernel before 5.3\. On version 5.3 and newer the SOF firmware can be enabled by installing [sof-firmware](https://www.archlinux.org/packages/?name=sof-firmware). However, the latest version of sof-fimrware requires Kernel 5.5 and additional udev rules. The X1 Carbon (Gen 7) seems to have the same issue. See the [Talkpage for X1 Carbon (Gen 7)](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
 
  |
 

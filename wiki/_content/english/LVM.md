@@ -694,7 +694,9 @@ When the file system is shrunk, reduce the size of logical volume:
 
 ```
 
-**Note:** To calculate the exact logical volume size for *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4") filesystems, use a simple formula: `LVM_EXTENTS = FS_BLOCKS * FS_BLOCKSIZE / LVM_EXTENTSIZE`. `# tune2fs -l /dev/MyVolGroup/mediavol | grep Block` 
+To calculate the exact logical volume size for *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4") file systems, use a simple formula: `LVM_EXTENTS = FS_BLOCKS × FS_BLOCKSIZE ÷ LVM_EXTENTSIZE`.
+
+ `# tune2fs -l /dev/MyVolGroup/mediavol | grep Block` 
 ```
 Block count:              102400000
 Block size:               4096
@@ -707,7 +709,12 @@ PE Size               4.00 MiB
 
 ```
 
-`102400000 blocks * 4096 bytes/block / 4 MiB/extent = 100000 extents`
+**Note:** The file system block size is in bytes. Make sure to use the same units for both block and extent size.
+
+```
+102400000 blocks × 4096 bytes/block ÷ 4 MiB/extent = 100000 extents
+
+```
 
 Passing `--resizefs` will confirm that the correctness.
 

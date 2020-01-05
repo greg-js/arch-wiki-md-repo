@@ -377,13 +377,11 @@ IPv6PrivacyExtensions=kernel
 
 ### Disable functionality
 
-**Warning:** Disabling the IPv6 stack can break certain programs which expect it to be enabled. [FS#46297](https://bugs.archlinux.org/task/46297)
-
 Adding `ipv6.disable=1` to the kernel line disables the whole IPv6 stack, which is likely what you want if you are experiencing issues. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more information.
 
 Alternatively, adding `ipv6.disable_ipv6=1` instead will keep the IPv6 stack functional but will not assign IPv6 addresses to any of your network devices.
 
-One can also avoid assigning IPv6 addresses to specific network interfaces by adding the following sysctl config to `/etc/sysctl.d/40-ipv6.conf`:
+One can also avoid assigning IPv6 addresses to specific network interfaces by adding the following [sysctl](/index.php/Sysctl "Sysctl") configuration to `/etc/sysctl.d/40-ipv6.conf`:
 
 ```
 # Disable IPv6
@@ -394,18 +392,11 @@ net.ipv6.conf.*nicN*.disable_ipv6 = 1
 
 ```
 
+[Restart](/index.php/Restart "Restart") the `systemd-sysctl.service` unit to apply the configuration changes.
+
 Note that you must list all of the targeted interfaces explicitly, as disabling `all.disable_ipv6` does not apply to interfaces that are already "up" when sysctl settings are applied.
 
-Note 2, if disabling IPv6 by sysctl, you should comment out the IPv6 hosts in your `/etc/hosts`:
-
-```
-#<ip-address> <hostname.domain.org> <hostname>
-127.0.0.1 localhost.localdomain localhost
-#::1 localhost.localdomain localhost
-
-```
-
-otherwise there could be some connection errors because hosts are resolved to their IPv6 address which is not reachable.
+**Note:** If disabling IPv6 by sysctl, you should comment out the IPv6 hosts in your `/etc/hosts`. Otherwise there could be some connection errors because hosts are resolved to their IPv6 address which is not reachable.
 
 ### Other programs
 

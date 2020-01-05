@@ -7,7 +7,7 @@ Related articles
 *   [Subversion](/index.php/Subversion "Subversion")
 *   [Concurrent Versions System](/index.php/Concurrent_Versions_System "Concurrent Versions System")
 
-> I've met people who thought that git is a front-end to GitHub. They were wrong, git is a front-end to the AUR.
+> I've met people who thought git is a front-end to GitHub. They were wrong, git is a front-end to the AUR.
 > 
 > — [Linus T.](https://public-inbox.org/git/#didyoureallythinklinuswouldsaythat)
 

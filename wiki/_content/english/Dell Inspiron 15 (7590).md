@@ -83,6 +83,8 @@ If your model comes with an nVidia card which you don't use then you can try to 
 
 #### Optimus Configuration (Hybrid Intel and Nvidia)
 
+**Note:** [arch-prime-git](https://aur.archlinux.org/packages/arch-prime-git/) has been obsoleted upstream in favour of [PRIME#PRIME_render_offload](/index.php/PRIME#PRIME_render_offload "PRIME").
+
 You can use [arch-prime-git](https://aur.archlinux.org/packages/arch-prime-git/) to switch the graphics card. Make sure you have installed [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), `nvidia` driver, and [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms), then run `sudo prime-select service restore` before first time using it. Here is an example of using `prime-select` below:
 
 ```

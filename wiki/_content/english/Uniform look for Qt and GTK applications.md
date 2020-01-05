@@ -28,6 +28,7 @@ Related articles
     *   [5.1 Qt applications do not use QGtkStyle](#Qt_applications_do_not_use_QGtkStyle)
     *   [5.2 Themes not working in GTK apps](#Themes_not_working_in_GTK_apps)
     *   [5.3 GTK apps don't use svg (breeze) icons after system upgrade](#GTK_apps_don't_use_svg_(breeze)_icons_after_system_upgrade)
+    *   [5.4 Flatpak Qt apps don't use Gnome Adwaita dark theme](#Flatpak_Qt_apps_don't_use_Gnome_Adwaita_dark_theme)
 
 ## Overview
 
@@ -239,7 +240,7 @@ which apparently is not recognized by all versions of QGtkStyle. You can hotfix 
 
 **Note:** Style-changing applications will most probably rewrite the `~/.gtkrc-2.0` file the next time you change themes.
 
-If these steps do not work, install [gconf](https://www.archlinux.org/packages/?name=gconf) and run this command:
+If these steps do not work, install [gconf](https://aur.archlinux.org/packages/gconf/) and run this command:
 
 ```
 gconftool-2 --set --type string /desktop/gnome/interface/gtk_theme [name of theme]
@@ -285,5 +286,14 @@ Try to run this to fix this issue:
 
 ```
 # gdk-pixbuf-query-loaders --update-cache
+
+```
+
+### Flatpak Qt apps don't use Gnome Adwaita dark theme
+
+If you switched your theme to Adwaita-dark and Flatpak Qt applications still use the light version, install the required KStyle:
+
+```
+# flatpak install flathub org.kde.KStyle.Adwaita
 
 ```

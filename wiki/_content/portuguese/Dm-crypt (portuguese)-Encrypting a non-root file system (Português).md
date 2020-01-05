@@ -23,7 +23,7 @@ Os seguintes exemplos são para criptografar um sistema de arquivos secundário,
 
 Criptografar um sistema de arquivos secundário normalmente protege somente dados sensíveis, enquanto deixa o sistema operacional e programas sem encriptação. Isto é somente útil para dispositivos removíveis, como um USB, para então este ser usado em outros computadores com segurança. Também, é possível criptografar conjuntos separados de dados de acordo com quem possui acesso.
 
-Devido ao dm-crypt ser uma camada de encriptação a [nível de blocos](/index.php/Disk_encryption#Block_device_encryption "Disk encryption"), ele somente criptografa os dispositivos, [partições](#Partição) e [dispositivos de loop](#Dispositivo_de_loop). Para criptografar arquivos indíviduais é necessário uma camada de encriptação a nível de sistema de arquivos, como [eCryptfs](/index.php/ECryptfs "ECryptfs") or [EncFS](/index.php/EncFS "EncFS"). Veja [Encriptação de disco](/index.php/Disk_encryption "Disk encryption") para informações gerais sobre como proteger dados privados.
+Devido ao dm-crypt ser uma camada de encriptação a [nível de blocos](/index.php/Criptografia_de_disco#Encriptação_de_dispositivo_de_bloco "Criptografia de disco"), ele somente criptografa os dispositivos, [partições](#Partição) e [dispositivos de loop](#Dispositivo_de_loop). Para criptografar arquivos indíviduais é necessário uma camada de encriptação a nível de sistema de arquivos, como [eCryptfs](/index.php/ECryptfs "ECryptfs") or [EncFS](/index.php/EncFS "EncFS"). Veja [Criptografia de disco](/index.php/Criptografia_de_disco "Criptografia de disco") para informações gerais sobre como proteger dados privados.
 
 ## Partição
 
@@ -114,7 +114,7 @@ $ cryptsetup luksFormat grande_segredo.img
 
 Tenha certeza de não omitir a opção `iflag=fullblock`, de outro modo *dd* pode retornar uma leitura parcial. Veja [dd#Partial read](/index.php/Dd#Partial_read "Dd") para detalhes.
 
-Antes de executar `cryptsetup`, veja [Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") e [cifras criptográficas e modos de operação](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") primeiro para selecionar configurações adicionais do seu interesse.
+Antes de executar `cryptsetup`, veja [Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") e [cifras criptográficas e modos de operação](/index.php/Criptografia_de_disco#Cifras_e_modos_de_operação "Criptografia de disco") primeiro para selecionar configurações adicionais do seu interesse.
 
 As instruções para abrir o dispositivo e criar o [sistema de arquivos](/index.php/File_system "File system") são do mesmo jeito que em [#Partição](#Partição).
 

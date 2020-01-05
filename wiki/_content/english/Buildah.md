@@ -38,7 +38,7 @@ If you want to run as [non-root user](#Enable_support_to_build_unprivileged_cont
 
 #### Enable support to build unprivileged containers
 
-Users wishing to use Buildah to build *unprivileged* containers need to complete additional setup steps.
+Users wishing to use Buildah to build *unprivileged* containers need to complete additional setup steps *before running podman for the first time*.
 
 Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user.
 
@@ -56,6 +56,8 @@ buildah:100000:65536
 buildah:100000:65536
 
 ```
+
+If you did run podman before applying the changes above, you will get errors when trying to pull images as an unprivileged user. Run `podman system migrate` to fix it.
 
 ## See also
 

@@ -44,7 +44,7 @@ If you would like to build the latest RC/betas from source, visit [Python Downlo
 
 ### Python 2
 
-**Warning:** Python 2 will reach its end of life at January 1st of 2020\. Many packages still depend on Python 2 but that version of Python will not be maintained further. See: [Sunsetting Python 2](https://www.python.org/doc/sunset-python-2/)
+**Warning:** Python 2 reached its end of life on January 1st of 2020\. Many packages still depend on Python 2 but that version of Python will not be maintained further. See: [Sunsetting Python 2](https://www.python.org/doc/sunset-python-2/)
 
 To get the latest version of Python 2, [install](/index.php/Install "Install") the [python2](https://www.archlinux.org/packages/?name=python2) package.
 

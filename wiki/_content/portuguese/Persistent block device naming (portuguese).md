@@ -149,7 +149,7 @@ Arch Linux
 *   Os rótulos devem ser inequívocos para evitar possíveis conflitos.
 *   As rótulos podem ter até 16 caracteres.
 *   Como o rótulo é uma propriedade do sistema de arquivos, não é adequado para endereçar persistentemente um único dispositivo RAID.
-*   Ao usar contêineres criptografados com [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), os rótulos dos sistemas de arquivos dentro dos contêineres não estarão disponíveis enquanto o contêiner estiver bloqueado/criptografado.
+*   Ao usar contêineres criptografados com [dm-crypt](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)"), os rótulos dos sistemas de arquivos dentro dos contêineres não estarão disponíveis enquanto o contêiner estiver bloqueado/criptografado.
 
 ### by-uuid
 

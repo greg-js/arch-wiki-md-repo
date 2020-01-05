@@ -8,7 +8,7 @@ Running an overclocked PC is fine as long as it is stable and that the temperatu
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Stressing Programs](#Stressing_Programs)
+*   [1 Stress testing software](#Stress_testing_software)
 *   [2 Stressing CPU and Memory](#Stressing_CPU_and_Memory)
     *   [2.1 stress](#stress)
     *   [2.2 MPrime](#MPrime)
@@ -18,15 +18,16 @@ Running an overclocked PC is fine as long as it is stable and that the temperatu
 *   [3 Stressing memory](#Stressing_memory)
 *   [4 Discovering Errors](#Discovering_Errors)
 
-## Stressing Programs
+## Stress testing software
 
-These common stressing programs are listed in two categories: *higher demand voltage* and *medium demand voltage*:
+This section lists stress testing software and classifies it by electrical power as *high power* or *medium power*.
 
-| Voltage Demand | Program | Description |
+| Power | Program | Description |
 | **Medium** |
 | *Cc/Gcc* | Both cc/gcc compilation is a great method of stress testing. Both are available in the *base-devel* group. |
 | *HandBrake-cli* | [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) can be used to encode using high quality settings. |
 | *Systester* | [systester](https://aur.archlinux.org/packages/systester/) Systester is a multithreaded piece of software capable of deriving values of pi out to 128,000,000 decimal places. It has built in check for system stability. |
+| *Stressful Application Test* | [stressapptest](https://aur.archlinux.org/packages/stressapptest/) is a memory interface test. |
 | **High** | *stress* | [stress](https://www.archlinux.org/packages/?name=stress) is a simple CPU, memory, I/O, and disk workload generator implemented in C. |
 | *mprime* | [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/) factors large numbers and is an excellent way to stress CPU and memory. |
 | *linpack* | [linpack](https://aur.archlinux.org/packages/linpack/) - Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. |

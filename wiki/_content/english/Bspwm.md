@@ -186,7 +186,7 @@ fi
 
 pids=$(xdotool search --class ${1})
 for pid in $pids; do
-	echo "Toogle $pid"
+	echo "Toggle $pid"
 	bspc node $pid --flag hidden -f
 done
 
@@ -202,7 +202,7 @@ termite --class dropdown -e "zsh -i" &
 
 ```
 
-To toogle the window a custom rule in sxhdk is necessary. Give as parameter the custom class name.
+To toggle the window a custom rule in sxhdk is necessary. Give as parameter the custom class name.
 
 ```
 super + u

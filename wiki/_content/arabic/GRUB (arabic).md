@@ -2,7 +2,11 @@
 
 يجب عدم الخلط بين [GRUB](https://www.gnu.org/software/grub/) و [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") وهو الجيل القادم من محمل الإقلاع الموحد . مستمد GRUB من [PUPA](http://www.nongnu.org/pupa/) وهو مشروع بحثي لتطوير الجيل القادم من محمل الإقلاع القديم المسمى الآن GRUB Legacy. تمت كتابة GRUB من الصفر لتنظيف كل شيء وتوفير نمط الوحدات والمحمولية [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). باختصار ، **محمل الإقلاع** هو البرنامج الأول الذي ينفذ عندم يقلع الحاسوب. وهو المسؤول عن تحميل ونقل التحكم إلى نواة لينكس. النواة، بدورها، تقوم بتهيئة بقية نظام التشغيل.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 مقدمة](#مقدمة)
     *   [1.1 ملاحظات لمستخدمي إصدار GRUB القديم](#ملاحظات_لمستخدمي_إصدار_GRUB_القديم)
@@ -129,7 +133,7 @@
 
 ### أنظمة BIOS
 
-يمكن [تثبيت](/index.php/Pacman "Pacman") GRUB مع الحزمة [grub-bios](https://www.archlinux.org/packages/?name=grub-bios) من [المستودعات الرسمية[https://aur.archlinux.org/packages/grub-legacy/ grub-legacy]](/index.php/Official_repositories "Official repositories"). وذلك سيستبدل حزمة أو [grub](https://www.archlinux.org/packages/?name=grub) إذا تم تثبيتها.
+يمكن [تثبيت](/index.php/Pacman "Pacman") GRUB مع الحزمة [grub-bios](https://www.archlinux.org/packages/?name=grub-bios) من المستودعات الرسمية [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/). وذلك سيستبدل حزمة أو [grub](https://www.archlinux.org/packages/?name=grub) إذا تم تثبيتها.
 
 **ملاحظة:** ببساطة، لن يسبب تثبيت الحزمة تحديثا للملف `boot/grub/i386-pc/core.img/`
 
@@ -576,7 +580,7 @@ Afterwards remake `/boot/grub/grub.cfg`
 
 **ملاحظة:** بخصوص أنظمة EFI إذا تم تثبيت GRUB بوضع الخيار `--boot-directory` يجب أن يوضع الملف the `grub.cfg` في نفس الدليل ك `grubx64.efi`. خلافا لذلك سيذهب ملف `grub.cfg` إلى الدليل `/boot/grub/` كما يحدث في GRUB BIOS.
 
-**ملاحظة:** هنا ، شرح كامل لكيفية تهيئة [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) GRUB  :
+**ملاحظة:** هنا ، شرح كامل لكيفية تهيئة [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) GRUB :
 
 ### توليد ملفات الإقلاع آليا باستخدام grub-mkconfig
 

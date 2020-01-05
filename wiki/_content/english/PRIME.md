@@ -105,13 +105,11 @@ NVIDIA driver since [version 435.17](https://download.nvidia.com/XFree86/Linux-x
 
 It needs a specific set of patches to the [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) that are present since version 1.20.6-1 on Arch.
 
-As per the [official documentation](https://download.nvidia.com/XFree86/Linux-x86_64/440.36/README/primerenderoffload.html), it only works with the modesetting driver over Intel graphics card. Refer to [Intel graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") for more information.
+As per the [official documentation](https://download.nvidia.com/XFree86/Linux-x86_64/440.44/README/primerenderoffload.html), it only works with the modesetting driver over Intel graphics card. Refer to [Intel graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") for more information.
 
 The [nvidia-prime](https://www.archlinux.org/packages/?name=nvidia-prime) package provides the [Xorg](/index.php/Xorg "Xorg") configuration necessary and also a script that can be used to run programs on the NVIDIA card.
 
-**Note:** Until [FS#64805](https://bugs.archlinux.org/task/64805) is resolved, it is quite possible that automatic configuration will not work, even with [nvidia-prime](https://www.archlinux.org/packages/?name=nvidia-prime) installed. In the meantime, you can remove the `Option "PrimaryGPU" "yes"` line from `/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf` manually. It **will** be overwritten on each [nvidia](https://www.archlinux.org/packages/?name=nvidia) package update.
-
-If, for some reason automatic configuration **still** does not work, it might be necessary to explicitly configure X with a [Xorg#Using xorg.conf](/index.php/Xorg#Using_xorg.conf "Xorg") file:
+If, for some reason automatic configuration does not work, it might be necessary to explicitly configure X with a [Xorg#Using xorg.conf](/index.php/Xorg#Using_xorg.conf "Xorg") file:
 
  `/etc/X11/xorg.conf` 
 ```
@@ -141,6 +139,8 @@ $ prime-run glxinfo | grep "OpenGL renderer"
 $ prime-run vulkaninfo
 
 ```
+
+**Note:** Full power management of the dGPU in this configuration is still experimental, and available only for Turing-generation cards. Configuration to try this is available at [https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/powermanagement.html](https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/powermanagement.html).
 
 ## Reverse PRIME
 

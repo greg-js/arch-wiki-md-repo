@@ -46,7 +46,7 @@ Adicione `plymouth` ao vetor `HOOKS` em [mkinitcpio.conf](/index.php/Mkinitcpio.
  `/etc/mkinitcpio.conf`  `HOOKS=(base udev plymouth [...])` 
 **Atenção:**
 
-*   Se usa [criptografia no disco rígido](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") com o hook `encrypt`, você **deve** substituir o hook `encrypt` com `plymouth-encrypt` e adicioná-lo após o hook `plymouth` para conseguir inserir senhas quando solicitado pelo TTY.
+*   Se usa [criptografia no disco rígido](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") com o hook `encrypt`, você **deve** substituir o hook `encrypt` com `plymouth-encrypt` e adicioná-lo após o hook `plymouth` para conseguir inserir senhas quando solicitado pelo TTY.
 *   O uso dos parâmetros `PARTUUID` ou `PARTLABEL` em `cryptdevice=` **não** funciona com o hook `plymouth-encrypt`.
 *   Para uma [raiz ZFS criptografada](/index.php/Installing_Arch_Linux_on_ZFS#Native_encryption "Installing Arch Linux on ZFS"), você **deve** instalar [plymouth-zfs](https://aur.archlinux.org/packages/plymouth-zfs/) e substituir o hook `zfs` com `plymouth-zfs`
 

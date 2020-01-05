@@ -91,7 +91,7 @@ Veja [pacman/Dicas e truques#Fazer backup da base de dados do pacman](/index.php
 
 ### Cabeçalhos LUKS
 
-Pode fazer sentido verificar e sincronizar periodicamente os backups de cabeçalhos de partições criptografadas com LUKS, especialmente se palavras-chaves tiverem sido revogadas. Veja [Dm-crypt/Device encryption#Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
+Pode fazer sentido verificar e sincronizar periodicamente os backups de cabeçalhos de partições criptografadas com LUKS, especialmente se palavras-chaves tiverem sido revogadas. Veja [Dm-crypt/Encriptação de dispositivo#Backup e restauração](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Backup_e_restauração "Dm-crypt/Encriptação de dispositivo").
 
 ### Dados de sistema e de usuário
 

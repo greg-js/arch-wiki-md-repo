@@ -8,8 +8,9 @@ This page contains the list of users that is used by the [ArchMap](/index.php/Ar
 
 *   [1 Adding yourself to the list](#Adding_yourself_to_the_list)
 *   [2 How to get your coordinates](#How_to_get_your_coordinates)
-    *   [2.1 Google Maps](#Google_Maps)
-    *   [2.2 HTML5 Geolocation](#HTML5_Geolocation)
+    *   [2.1 Yandex Maps](#Yandex_Maps)
+    *   [2.2 Google Maps](#Google_Maps)
+    *   [2.3 HTML5 Geolocation](#HTML5_Geolocation)
 *   [3 List](#List)
 
 ## Adding yourself to the list
@@ -31,6 +32,14 @@ Please add yourself to the end of the list using the following format:
 Anything that satisfies [this regular expression](https://github.com/guyfawcus/ArchMap/blob/55b91daa1010fa190ac5af5d0cf26bcb1d07ca95/archmap.py#L95-L113) will work. You can test it out using [this website](http://regexr.com/3h3u2) to be sure but please try to keep to the format defined above.
 
 ## How to get your coordinates
+
+### Yandex Maps
+
+Open [Yandex Maps](https://yandex.com.tr/maps) in your browser:
+
+1.  Find your place and click the right mouse button.
+2.  Select "What's here?".
+3.  Coordinates will appear in the left top under the address with a copy button.
 
 ### Google Maps
 
@@ -1131,5 +1140,6 @@ You can use the following website to get your device's coordinates along with a 
 55.33625, 21.48604 "DodoGTA" # Lithuania
 51.535496, 3.914310 "DvK" # Goes, Zeeland, The Netherlands
 40.7271164,-73.994756 "NedLudd" # New York, NY USA
+37.004127, 27.271187 "mergen" # Bodrum/Muğla, Turkey
 
 ```

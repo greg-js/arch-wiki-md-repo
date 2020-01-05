@@ -7,24 +7,28 @@ Articoli correlati
 
 [Wicd](http://www.wicd.net/) è un gestore delle connessioni capace di gestire sia le interfacce wireless che quelle cablate, simile ed alternativo a [Network Manager](/index.php/NetworkManager_(Italiano) "NetworkManager (Italiano)"). Wicd è scritto in [Python](/index.php/Python "Python") e [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)"), e necessita dell'installazione di un minor numero di dipendenze rispetto agli altri network manager. Alternativamente, una versione di Wicd per [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), scritta con le Qt, è disponibile su [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)"). Wicd può anche essere eseguito da terminale, utilizzando una interfaccia disegnata con le librerie curses, non necessita di un server grafico avviato oppure un di un vassoio di sistema o di un area di notifica (si veda il paragrafo [Eseguire Wicd](#Eseguire_Wicd)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Alternative](#Alternative)
 *   [2 Per Iniziare](#Per_Iniziare)
     *   [2.1 Configurazione Iniziale](#Configurazione_Iniziale)
-    *   [2.2 Eseguire Wicd in modalità grafica](#Eseguire_Wicd_in_modalit.C3.A0_grafica)
-    *   [2.3 Eseguire Wicd in modalità testuale](#Eseguire_Wicd_in_modalit.C3.A0_testuale)
+    *   [2.2 Eseguire Wicd in modalità grafica](#Eseguire_Wicd_in_modalità_grafica)
+    *   [2.3 Eseguire Wicd in modalità testuale](#Eseguire_Wicd_in_modalità_testuale)
 *   [3 Risoluzione di problemi](#Risoluzione_di_problemi)
-    *   [3.1 Errore nell'acquisizione dell'indirizzo IP](#Errore_nell.27acquisizione_dell.27indirizzo_IP)
-    *   [3.2 Importing pynotify failed, notifications disabled](#Importing_pynotify_failed.2C_notifications_disabled)
+    *   [3.1 Errore nell'acquisizione dell'indirizzo IP](#Errore_nell'acquisizione_dell'indirizzo_IP)
+    *   [3.2 Importing pynotify failed, notifications disabled](#Importing_pynotify_failed,_notifications_disabled)
     *   [3.3 Messaggio di errore di connessione con Dbus](#Messaggio_di_errore_di_connessione_con_Dbus)
-    *   [3.4 Problemi dopo l'aggiornamento del pacchetto](#Problemi_dopo_l.27aggiornamento_del_pacchetto)
+    *   [3.4 Problemi dopo l'aggiornamento del pacchetto](#Problemi_dopo_l'aggiornamento_del_pacchetto)
     *   [3.5 Alcune note sui front-end grafici per sudo](#Alcune_note_sui_front-end_grafici_per_sudo)
     *   [3.6 Configurare wicd per eduroam](#Configurare_wicd_per_eduroam)
     *   [3.7 Problemi al passaggio da wicd ad un altro network manager](#Problemi_al_passaggio_da_wicd_ad_un_altro_network_manager)
-    *   [3.8 Due processi wicd-client (ed eventualmente due icone nell'aria di notifica)](#Due_processi_wicd-client_.28ed_eventualmente_due_icone_nell.27aria_di_notifica.29)
-    *   [3.9 Password errata usando PEAP con TKIP/MSCHAPV2](#Password_errata_usando_PEAP_con_TKIP.2FMSCHAPV2)
+    *   [3.8 Due processi wicd-client (ed eventualmente due icone nell'aria di notifica)](#Due_processi_wicd-client_(ed_eventualmente_due_icone_nell'aria_di_notifica))
+    *   [3.9 Password errata usando PEAP con TKIP/MSCHAPV2](#Password_errata_usando_PEAP_con_TKIP/MSCHAPV2)
 *   [4 Altre risorse](#Altre_risorse)
 
 ## Installazione

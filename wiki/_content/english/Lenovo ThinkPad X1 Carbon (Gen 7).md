@@ -59,15 +59,15 @@ ThinkPad X1 Carbon 7th
     *   [2.2 Sleep/Suspend](#Sleep/Suspend)
     *   [2.3 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
     *   [2.4 BIOS configurations](#BIOS_configurations)
-*   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
-    *   [3.1 throttled](#throttled)
-    *   [3.2 Touchpad TLP fix](#Touchpad_TLP_fix)
-*   [4 Audio](#Audio)
-    *   [4.1 Volume controls](#Volume_controls)
-        *   [4.1.1 Persistent fix](#Persistent_fix)
-    *   [4.2 Microphone](#Microphone)
-*   [5 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
-*   [6 Additional resources](#Additional_resources)
+*   [3 Touchpad issues](#Touchpad_issues)
+*   [4 Power management/Throttling issues](#Power_management/Throttling_issues)
+    *   [4.1 throttled](#throttled)
+*   [5 Audio](#Audio)
+    *   [5.1 Volume controls](#Volume_controls)
+        *   [5.1.1 Persistent fix](#Persistent_fix)
+    *   [5.2 Microphone](#Microphone)
+*   [6 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
+*   [7 Additional resources](#Additional_resources)
 
 ## Hardware
 
@@ -152,6 +152,20 @@ Occasionally your Thinkpad will wake up immediately after suspending with certai
 
 *   `Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled"`. When disabled, on Linux, power usage appears to be significantly higher because of a substantial number of CPU wakeups during s2idle.
 
+## Touchpad issues
+
+Due to a bug in a touchpad firmware, the touchpad might not work with following logs in dmesg:
+
+```
+[    4.499490] i2c_designware i2c_designware.1: i2c_dw_handle_tx_abort: lost arbitration
+[...]
+[   12.668795] i2c_hid i2c-SYNA8005:00: failed to set a report to device.
+[   13.678765] i2c_designware i2c_designware.1: controller timed out
+
+```
+
+The solution is to update touchpad firmware (version `1.3.3013412` works correctly).
+
 ## Power management/Throttling issues
 
 Due to wrong configured power management registers the CPU may consume a lot less power than under windows and the thermal throttling occurs at 80°C (97°C when using Windows, see [T480s throttling bug](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)).
@@ -166,17 +180,6 @@ Lenovo has confirmed the issue, [explained the cause](https://forums.lenovo.com/
 
 ```
 sudo systemctl enable --now lenovo_fix.service
-
-```
-
-### Touchpad TLP fix
-
-The touchpad works fine out of the box, except that [TLP](/index.php/TLP "TLP") does not detect that the Synaptics Touchpad is indeed an input device, so it does not exclude it from the USB_AUTOSUSPEND feature. You can tell that this is the issue if the touchpad works for just a moment after waking up from suspend, and then stops working again.
-
-The fix is to add the touchpad to the USB_BLACKLIST in TLP's config:
-
-```
-USB_BLACKLIST="06cb:00bd" <=========== use lsusb to get the correct UUID
 
 ```
 

@@ -189,7 +189,7 @@ Additionally, the [brillo](https://aur.archlinux.org/packages/brillo/) and [ligh
 The utilities in the following table can be used to control screen brightness. All of them are compatible with Wayland and do not require X. Some (like `brightnessctl` or `light`) add udev rules to allow members of the `video` (or `input`) group to modify brightness.
 
 | Package name | Controls keyboard backlights | Reacts to ambient brightness | Language | License | Notes |
-| [acpilight](https://www.archlinux.org/packages/?name=acpilight) | Yes | No | Python3 | GPL-3.0-or-later | "xbacklight" compatible |
+| [acpilight](https://www.archlinux.org/packages/?name=acpilight) | Yes | No | Python3 | GPL-3.0-or-later | "xbacklight" executable provided |
 | [brightd](https://aur.archlinux.org/packages/brightd/) | No | No | C | GPL-2.0 | Dims the screen when there is no user input for some time. |
 | [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) | Yes | No | C | MIT | - |
 | [brillo](https://aur.archlinux.org/packages/brillo/) | Yes | No | C | GPL-3.0-only | Supports smooth and relative adjustments. |

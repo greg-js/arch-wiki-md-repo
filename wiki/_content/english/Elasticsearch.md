@@ -2,7 +2,11 @@ From [Wikipedia:Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch "wiki
 
 	*[Elasticsearch](https://www.elastic.co/products/elasticsearch) is a search engine based on [Lucene](http://lucene.apache.org/). It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)
@@ -11,7 +15,7 @@ From [Wikipedia:Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch "wiki
 
 ## Installation
 
-Elasticsearch requires at least OpenJDK 7, see [Java](/index.php/Java "Java").
+Elasticsearch requires at least OpenJDK 10, see [Java](/index.php/Java "Java").
 
 [Install](/index.php/Install "Install") the [elasticsearch](https://www.archlinux.org/packages/?name=elasticsearch) package.
 

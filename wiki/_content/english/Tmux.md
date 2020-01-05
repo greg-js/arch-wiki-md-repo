@@ -36,7 +36,7 @@ tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU S
     *   [5.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
     *   [5.7 Correct the TERM variable according to terminal type](#Correct_the_TERM_variable_according_to_terminal_type)
     *   [5.8 Reload an updated configuration without restarting tmux](#Reload_an_updated_configuration_without_restarting_tmux)
-    *   [5.9 Template script to run program in new session resp. attach to existing one](#Template_script_to_run_program_in_new_session_resp._attach_to_existing_one)
+    *   [5.9 Template script to run program in new session or attach to existing one](#Template_script_to_run_program_in_new_session_or_attach_to_existing_one)
     *   [5.10 Terminal emulator window titles](#Terminal_emulator_window_titles)
     *   [5.11 Automatic layouting](#Automatic_layouting)
     *   [5.12 Vim colorscheme not loading](#Vim_colorscheme_not_loading)
@@ -704,7 +704,7 @@ source .tmux.conf
 
 ```
 
-### Template script to run program in new session resp. attach to existing one
+### Template script to run program in new session or attach to existing one
 
 This script checks for a program presumed to have been started by a previous run of itself. Unless found it creates a new tmux session and attaches to a window named after and running the program. If however the program was found it merely attaches to the session and selects the window.
 

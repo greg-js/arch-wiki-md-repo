@@ -88,8 +88,9 @@ Also see [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.li
 
 **Note:**
 
+*   Only the first matching file is is applied. The content of the default link file `/usr/lib/systemd/network/99-default.link` shipped with systemd has to be included, otherwise the interface might be misconfigured.
+*   To be considered, the file name should alphabetically come before the default `99-default.link`. For example `50-wired.link` works.
 *   This configuration applies only to the link-level, and is independent of network-level daemons such as [NetworkManager](/index.php/NetworkManager "NetworkManager") or [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd").
-*   To be considered, the file name should alphabetically come before the default `99-default.link` link file shipped with systemd. For example `50-wired.link` works.
 *   In the `Match` section, `OriginalName=` can also be used to identify the interface.
 
 #### systemd service

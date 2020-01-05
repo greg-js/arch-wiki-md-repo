@@ -275,7 +275,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **[Blender](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Blender (software)")** — Suite che integra in modo completo la creazione di grafica 3D, in grado, tra le altre cose, di effettuare modellazione 3D, texturing e animazioni.
 
-	[|| [https://www.archlinux.org/packages/?name=blender blender](http://www.blender.org/)
+	[http://www.blender.org/](http://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
 
 *   **[MakeHuman™](https://en.wikipedia.org/wiki/MakeHuman "wikipedia:MakeHuman")** — Programma di modellazione parametrica per la creazione di corpi umani.
 

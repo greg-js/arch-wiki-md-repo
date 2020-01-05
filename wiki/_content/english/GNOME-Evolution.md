@@ -16,15 +16,16 @@
     *   [4.2 Sending Mail](#Sending_Mail)
 *   [5 Gmail Calendar](#Gmail_Calendar)
 *   [6 Google Contacts](#Google_Contacts)
-*   [7 Tudelft webmail (Exchange)](#Tudelft_webmail_(Exchange))
-*   [8 Using Evolution Outside Of GNOME](#Using_Evolution_Outside_Of_GNOME)
-*   [9 Spell Check](#Spell_Check)
-*   [10 Tips and tricks](#Tips_and_tricks)
-    *   [10.1 Changing cipher settings](#Changing_cipher_settings)
-*   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Failing to Synchronize with Server](#Failing_to_Synchronize_with_Server)
-    *   [11.2 Stuck at 'saving user interface' on startup](#Stuck_at_'saving_user_interface'_on_startup)
-*   [12 References](#References)
+*   [7 Microsoft Exchange and Office 365](#Microsoft_Exchange_and_Office_365)
+*   [8 Tudelft webmail (Exchange)](#Tudelft_webmail_(Exchange))
+*   [9 Using Evolution Outside Of GNOME](#Using_Evolution_Outside_Of_GNOME)
+*   [10 Spell Check](#Spell_Check)
+*   [11 Tips and tricks](#Tips_and_tricks)
+    *   [11.1 Changing cipher settings](#Changing_cipher_settings)
+*   [12 Troubleshooting](#Troubleshooting)
+    *   [12.1 Failing to Synchronize with Server](#Failing_to_Synchronize_with_Server)
+    *   [12.2 Stuck at 'saving user interface' on startup](#Stuck_at_'saving_user_interface'_on_startup)
+*   [13 References](#References)
 
 ## Installation
 
@@ -188,6 +189,23 @@ Simarly with the calendar, you can sync your Google contacts in Evolution.
 On Evolution, click on File > New > Address Book . Choose Google as type and add your Google account email as the User.
 
 **Note:** The above does not work since Google has turned off the old developer APIs which Evolution uses. You will need to create a GNOME online account (GOA) for your Google account. Install [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) to be able to create a GOA and select what you would like to sync. You can delete/disable any Google addressbooks created in Evolution directly, else you will see two addressbooks
+
+## Microsoft Exchange and Office 365
+
+If your email is locally hosted on a Microsoft Exchange Server or cloud hosted on Office 365 you can access POP, IMAP and SMTP to access your email. However, some additional features such as access to Outlook Calendar and contact management are only available if you connect to the Microsoft Exchange Server or Office 365 server using Microsoft’s proprietary [Exchange ActiveSync protocol](https://en.wikipedia.org/wiki/Exchange_ActiveSync/).
+
+To use Exchange ActiveSync protol you need to install [gnome-online-accounts](https://www.archlinux.org/packages/?name=gnome-online-accounts) and [evolution-ews](https://www.archlinux.org/packages/?name=evolution-ews).
+
+To add your Exchange account, open the Gnome Settings app and click on Online Accounts and add a new Microsoft Exchange account with the following values:
+
+*   E-mail: your e-mail address (e.g. your.name@example.com)
+*   Password: your e-mail account password
+*   Username: your e-mail address once more
+*   Server: outlook.office365.com
+
+After clicking "Connect" your Exchange account should now listed besides your other online accounts, choose what you want to sync (by default, all features are enabled).
+
+**Note:** If the e-mail address you're trying to configure uses a custom domain you still need to use outlook.office365.com for the server when configuring the account.
 
 ## Tudelft webmail (Exchange)
 

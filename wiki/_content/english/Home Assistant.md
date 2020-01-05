@@ -21,7 +21,7 @@ Configuration files are stored at `/var/lib/hass/`. If no configuration exists, 
 
 ## Usage
 
-To start Home Assistant, [start/enable](/index.php/Start/enable "Start/enable") `home-assistant.service`.
+To start Home Assistant, [start/enable](/index.php/Start/enable "Start/enable") `home-assistant.service`. The first time you start up Home Assistant, it will perform some setup tasks, and it may take a while to start. You can see the progress in the logs.
 
 By default, the web interface is available at `[http://localhost:8123](http://localhost:8123)`
 

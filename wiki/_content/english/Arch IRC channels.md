@@ -73,53 +73,51 @@ If you for some reason need the help of an op, do not be shy to `/query` or `/ms
 
 The size of our community led to the creation of multiple IRC channels. To get a list of all channels on **[chat.freenode.net](ircs://chat.freenode.net)** that contain `archlinux` in their name, use the command `/query alis list *archlinux*`.
 
-| Channel | Description |
-| [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) | [AUR](/index.php/AUR "AUR") general discussion |
-| [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) | [aurweb](https://projects.archlinux.org/aurweb.git/) development discussion |
-| [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Bug-centric discussion |
-| [#archlinux-classroom](ircs://chat.freenode.net/archlinux-classroom) | A project that develops and hosts classes for the Arch Linux community. |
-| [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) | Arch Linux internal infrastructure and devops discussions. |
-| [#archlinux-multilib](ircs://chat.freenode.net/archlinux-multilib) | Arch Linux Multilib Project discussion and packaging |
-| [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) | A space to learn, try new things, and ask for help without fear of ridicule. |
-| [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) | [Pacman](/index.php/Pacman "Pacman") development and discussion |
-| [#archlinux-projects](ircs://chat.freenode.net/archlinux-projects) | Projects development and discussion (mkinitcpio, abs, dbscripts, devtools, ...) |
-| [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) | Discussion channel for achieving reproducible builds. |
-| [#archlinux-security](ircs://chat.freenode.net/archlinux-security) | Discussion of security issues within Arch packages. |
-| [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) | Discussion channel regarding the testing repositories. |
-| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Discussion about [ArchWiki](/index.php/ArchWiki "ArchWiki"), its articles and the [Arch Linux Forums](https://bbs.archlinux.org/). |
-| [#archlinux-women](ircs://chat.freenode.net/archlinux-women) | Discussing gender and equality, mostly in English. |
-| [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) | Discussion of [Arch Linux Pro Audio](/index.php/Professional_audio "Professional audio"). Users also in the unofficial #archaudio |
+*   [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) — [AUR](/index.php/AUR "AUR") general discussion;
+*   [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) — [aurweb](https://projects.archlinux.org/aurweb.git/) development discussion;
+*   [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) — Bug-centric discussion;
+*   [#archlinux-classroom](ircs://chat.freenode.net/archlinux-classroom) — A project that develops and hosts classes for the Arch Linux community;
+*   [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) — Arch Linux internal infrastructure and devops discussions;
+*   [#archlinux-multilib](ircs://chat.freenode.net/archlinux-multilib) — Arch Linux Multilib Project discussion and packaging;
+*   [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) — A space to learn, try new things, and ask for help without fear of ridicule;
+*   [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) — [Pacman](/index.php/Pacman "Pacman") development and discussion;
+*   [#archlinux-projects](ircs://chat.freenode.net/archlinux-projects) — Projects development and discussion (mkinitcpio, abs, dbscripts, devtools…);
+*   [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) — Discussion channel for achieving reproducible builds;
+*   [#archlinux-security](ircs://chat.freenode.net/archlinux-security) — Discussion of security issues within Arch packages;
+*   [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) — Discussion channel regarding the testing repositories;
+*   [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) — Discussion about [ArchWiki](/index.php/ArchWiki "ArchWiki"), its articles and the [Arch Linux Forums](https://bbs.archlinux.org/);
+*   [#archlinux-women](ircs://chat.freenode.net/archlinux-women) — Discussing gender and equality, mostly in English;
+*   [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) — Discussion of [Arch Linux Pro Audio](/index.php/Professional_audio "Professional audio"). Users also in the unofficial #archaudio.
 
 ### International IRC channels
 
 International discussions are available at the following channels, also located at the **[chat.freenode.net](ircs://chat.freenode.net)** IRC network, unless stated otherwise.
 
-| Channel | Description |
-| [#archlinux-za](ircs://chat.freenode.net/archlinux-za) | Discussion (Afrikaans, English) |
-| [#archlinux-br](ircs://chat.freenode.net/archlinux-br) | Discussion (Brazilian) |
-| [#archlinux-cn](ircs://chat.freenode.net/archlinux-cn) | Discussion (Chinese); also on **[irc.oftc.net#arch-cn](ircs://irc.oftc.net/arch-cn)** |
-| [#archlinux-cr](ircs://chat.freenode.net/archlinux-cr) | Discussion (Costa Rica) |
-| [#archlinux.cz](ircs://chat.freenode.net/archlinux.cz) | Discussion (Czech) |
-| [#archlinux.dk](ircs://chat.freenode.net/archlinux.dk) | Discussion (Danish) |
-| [#archlinux.fi](ircs://chat.freenode.net/archlinux.fi) | Discussion (Finnish) |
-| [#archlinux-fr](ircs://chat.freenode.net/archlinux-fr) | Discussion (French) |
-| [#archlinux-gaelic](ircs://chat.freenode.net/archlinux-gaelic) | Discussion (Gaelic) |
-| [#archlinux.de](ircs://chat.freenode.net/archlinux.de) | Discussion (German) |
-| [#archlinux-greece](ircs://chat.freenode.net/archlinux-greece) | Discussion (Greek) |
-| [#archlinux-il](ircs://chat.freenode.net/archlinux-il) | Discussion (Hebrew) |
-| [#archlinux.hu](ircs://chat.freenode.net/archlinux.hu) | Discussion (Hungarian) |
-| [#archlinux-it](ircs://chat.freenode.net/archlinux-it) | Discussion (Italian); also on **[irc.azzurra.org#archlinux](irc://irc.azzurra.org/archlinux)** |
-| [#archlinux-nordics](ircs://chat.freenode.net/archlinux-nordics) | Discussion (the nordics: Danish, Finnish, Norwegian and Swedish) |
-| [#archlinux-kr](ircs://chat.freenode.net/archlinux-kr) | Discussion (Korean) |
-| [#archlinux-ir](ircs://chat.freenode.net/archlinux-ir) | Discussion (Persian) |
-| [#archlinux.org.pl](ircs://chat.freenode.net/archlinux.org.pl) | Discussion (Polish) |
-| [#archlinux-pt](ircs://chat.freenode.net/archlinux-pt) | Discussion (Portuguese) |
-| [#archlinux.ro](ircs://chat.freenode.net/archlinux.ro) | Discussion (Romanian) |
-| [#archlinux-tg](ircs://chat.freenode.net/archlinux-tg) | Discussion (Russian); bridge between IRC and Telegram group [Arch Linux RU](https://t.me/ArchLinuxChatRU) |
-| [#archlinux-ru](ircs://chat.freenode.net/archlinux-ru) | Discussion (Russian); also on **[irc.mibbit.net#archlinux-ru](irc://irc.mibbit.net/archlinux-ru)** |
-| [#archlinux-rs](ircs://chat.freenode.net/archlinux-rs) | Discussion (Serbian) |
-| [#archlinux-es](ircs://chat.freenode.net/archlinux-es) | Discussion (Spanish) |
-| [#archlinux.se](ircs://chat.freenode.net/archlinux.se) | Discussion (Swedish) |
-| [#archlinux-tr](ircs://chat.freenode.net/archlinux-tr) | Discussion (Turkish) |
-| [#archlinux-ve](ircs://chat.freenode.net/archlinux-ve) | Discussion (Venezuela) |
-| [#archlinuxvn](ircs://chat.freenode.net/archlinuxvn) | Discussion (Vietnamese, Tiếng Việt) |
+*   [#archlinux-za](ircs://chat.freenode.net/archlinux-za) — Afrikaans, English;
+*   [#archlinux-br](ircs://chat.freenode.net/archlinux-br) — Brazilian;
+*   [#archlinux-cn](ircs://chat.freenode.net/archlinux-cn) — Chinese; also on [irc.oftc.net#arch-cn](ircs://irc.oftc.net/arch-cn);
+*   [#archlinux-cr](ircs://chat.freenode.net/archlinux-cr) — Costa Rica;
+*   [#archlinux.cz](ircs://chat.freenode.net/archlinux.cz) — Czech;
+*   [#archlinux.dk](ircs://chat.freenode.net/archlinux.dk) — Danish;
+*   [#archlinux.fi](ircs://chat.freenode.net/archlinux.fi) — Finnish;
+*   [#archlinux-fr](ircs://chat.freenode.net/archlinux-fr) — French;
+*   [#archlinux-gaelic](ircs://chat.freenode.net/archlinux-gaelic) — Gaelic;
+*   [#archlinux.de](ircs://chat.freenode.net/archlinux.de) — German;
+*   [#archlinux-greece](ircs://chat.freenode.net/archlinux-greece) — Greek;
+*   [#archlinux-il](ircs://chat.freenode.net/archlinux-il) — Hebrew;
+*   [#archlinux.hu](ircs://chat.freenode.net/archlinux.hu) — Hungarian;
+*   [#archlinux-it](ircs://chat.freenode.net/archlinux-it) — Italian; also on [irc.azzurra.org#archlinux](irc://irc.azzurra.org/archlinux);
+*   [#archlinux-nordics](ircs://chat.freenode.net/archlinux-nordics) — the nordics: Danish, Finnish, Norwegian and Swedish;
+*   [#archlinux-kr](ircs://chat.freenode.net/archlinux-kr) — Korean;
+*   [#archlinux-ir](ircs://chat.freenode.net/archlinux-ir) — Persian;
+*   [#archlinux.org.pl](ircs://chat.freenode.net/archlinux.org.pl) — Polish;
+*   [#archlinux-pt](ircs://chat.freenode.net/archlinux-pt) — Portuguese;
+*   [#archlinux.ro](ircs://chat.freenode.net/archlinux.ro) — Romanian;
+*   [#archlinux-tg](ircs://chat.freenode.net/archlinux-tg) — Russian; bridge between IRC and Telegram group [Arch Linux RU](https://t.me/ArchLinuxChatRU);
+*   [#archlinux-ru](ircs://chat.freenode.net/archlinux-ru) — Russian; also on [irc.mibbit.net#archlinux-ru](irc://irc.mibbit.net/archlinux-ru);
+*   [#archlinux-rs](ircs://chat.freenode.net/archlinux-rs) — Serbian;
+*   [#archlinux-es](ircs://chat.freenode.net/archlinux-es) — Spanish;
+*   [#archlinux.se](ircs://chat.freenode.net/archlinux.se) — Swedish;
+*   [#archlinux-tr](ircs://chat.freenode.net/archlinux-tr) — Turkish;
+*   [#archlinux-ve](ircs://chat.freenode.net/archlinux-ve) — Venezuela;
+*   [#archlinuxvn](ircs://chat.freenode.net/archlinuxvn) — Vietnamese, Tiếng Việt.

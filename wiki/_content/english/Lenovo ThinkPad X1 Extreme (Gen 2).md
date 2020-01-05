@@ -122,7 +122,8 @@ Install the following packages available on the [AUR](/index.php/AUR "AUR") :
 
 *   [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/)
 *   [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/)
-*   [fwupd-git](https://aur.archlinux.org/packages/fwupd-git/)
+
+And setup [fwupd](/index.php/Fwupd "Fwupd")
 
 The firmware updates currently require the newest version of fwupd and you must manually download the updates:
 

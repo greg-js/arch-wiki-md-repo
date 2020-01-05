@@ -2,7 +2,7 @@
 
 Este guia irá mostrar-lhe como redefinir uma senha de [root](/index.php/Usu%C3%A1rio_root "Usuário root") esquecida. Vários métodos estão listados para ajudá-lo a realizar isso.
 
-**Atenção:** Um invasor pode usar os métodos mencionados abaixo para entrar em seu sistema. Não importa o quão seguro o sistema operacional seja ou como as senhas são boas, ter acesso físico equivale a carregar um sistema operacional alternativo e expor seus dados, a menos que você use [criptografia de disco](/index.php/Disk_encryption "Disk encryption").
+**Atenção:** Um invasor pode usar os métodos mencionados abaixo para entrar em seu sistema. Não importa o quão seguro o sistema operacional seja ou como as senhas são boas, ter acesso físico equivale a carregar um sistema operacional alternativo e expor seus dados, a menos que você use [criptografia de disco](/index.php/Criptografia_de_disco "Criptografia de disco").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

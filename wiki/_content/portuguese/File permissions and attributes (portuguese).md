@@ -9,7 +9,7 @@ Artigos relacionados
 
 [Sistemas de arquivos](/index.php/File_systems "File systems") usam [permissões](https://en.wikipedia.org/wiki/pt:Permiss%C3%B5es_de_sistema_de_arquivos "w:pt:Permissões de sistema de arquivos") e [atributos](https://en.wikipedia.org/wiki/File_attribute "w:File attribute") para regular o nível de interação que processos de sistema podem ter com os arquivos e diretórios.
 
-**Atenção:** Quando usados para fins de segurança, as permissões e atributos só defendem contra ataques iniciados a partir do sistema inicializado. Para proteger os dados armazenados dos invasores com acesso físico à máquina, é preciso também implementar [criptografia de disco](/index.php/Disk_encryption "Disk encryption").
+**Atenção:** Quando usados para fins de segurança, as permissões e atributos só defendem contra ataques iniciados a partir do sistema inicializado. Para proteger os dados armazenados dos invasores com acesso físico à máquina, é preciso também implementar [criptografia de disco](/index.php/Criptografia_de_disco "Criptografia de disco").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

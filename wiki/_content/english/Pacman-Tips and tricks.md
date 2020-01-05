@@ -540,7 +540,7 @@ Install [nginx](/index.php/Nginx "Nginx") on the computer that is going to host 
 
 ```
 
-Use the [nginx pacman cache config](https://github.com/nastasie-octavian/nginx_pacman_cache_config/blob/87d4897b8fa37e70da4238d7074c639c041daf39/nginx.conf) as a starting point for `/etc/nginx/nginx.conf`. Check that the `resolver` directive works for your needs. In the upstream server blocks, configure the `proxy_pass` directives with addresses of official mirrors, see examples in the config file about the expected format. Once you are satisfied with the configuration file [start and enable nginx](/index.php/Nginx#Running "Nginx").
+Use the [nginx pacman cache config](https://github.com/nastasie-octavian/nginx_pacman_cache_config/blob/c54eca4776ff162ab492117b80be4df95880d0e2/nginx.conf) as a starting point for `/etc/nginx/nginx.conf`. Check that the `resolver` directive works for your needs. In the upstream server blocks, configure the `proxy_pass` directives with addresses of official mirrors, see examples in the config file about the expected format. Once you are satisfied with the configuration file [start and enable nginx](/index.php/Nginx#Running "Nginx").
 
 In order to use the cache each Arch Linux computer (including the one hosting the cache) must have the following line at the top of the `mirrorlist` file:
 

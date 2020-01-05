@@ -67,6 +67,7 @@ The official Arch Linux kernel provides a *generic* package which is built for t
 | *ck-bulldozer* | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
 | *ck-piledriver* | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
 | *ck-zen* | CPUs based on AMD Family 17h cores with x86-64 instruction set support. |
+| *ck-zen2* | CPUs based on AMD 3rd Gen Ryzen cores with x86-64 instruction set support. |
 
 ## Selecting the correct CPU optimized package
 
@@ -101,6 +102,7 @@ The resulting `-march` is what GCC would use natively. Refer to the table below 
 | *ck-bulldozer* | bdver1 |
 | *ck-piledriver* | bdver2 |
 | *ck-zen* | znver1 |
+| *ck-zen2* | znver2 |
 
 **Note:** Add additional entries to this table based on experience.
 

@@ -26,13 +26,17 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [2.1 Required software](#Required_software)
         *   [2.1.1 Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_(optional))
     *   [2.2 Host network configuration](#Host_network_configuration)
-    *   [2.3 Alternate Network - Bridge on same network as host](#Alternate_Network_-_Bridge_on_same_network_as_host)
-    *   [2.4 Container creation](#Container_creation)
-    *   [2.5 Container configuration](#Container_configuration)
-        *   [2.5.1 Basic config with networking](#Basic_config_with_networking)
-        *   [2.5.2 Mounts within the container](#Mounts_within_the_container)
-        *   [2.5.3 Xorg program considerations (optional)](#Xorg_program_considerations_(optional))
-        *   [2.5.4 OpenVPN considerations](#OpenVPN_considerations)
+        *   [2.2.1 Using a host bridge](#Using_a_host_bridge)
+        *   [2.2.2 Using a NAT bridge](#Using_a_NAT_bridge)
+            *   [2.2.2.1 Firewall considerations](#Firewall_considerations)
+                *   [2.2.2.1.1 Example iptables rule](#Example_iptables_rule)
+                *   [2.2.2.1.2 Example ufw rule](#Example_ufw_rule)
+    *   [2.3 Container creation](#Container_creation)
+    *   [2.4 Container configuration](#Container_configuration)
+        *   [2.4.1 Basic config with networking](#Basic_config_with_networking)
+        *   [2.4.2 Mounts within the container](#Mounts_within_the_container)
+        *   [2.4.3 Xorg program considerations (optional)](#Xorg_program_considerations_(optional))
+        *   [2.4.4 OpenVPN considerations](#OpenVPN_considerations)
 *   [3 Managing containers](#Managing_containers)
     *   [3.1 Basic usage](#Basic_usage)
     *   [3.2 Advanced usage](#Advanced_usage)
@@ -101,12 +105,12 @@ Installing [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install
 
 Users wishing to run *unprivileged* containers on [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) or their custom kernel need to complete several additional setup steps.
 
-Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel does ship with User Namespaces enabled only for the *root* user. You have two options to create *unprivileged* containers there:
+Firstly, a kernel is required that has support for User Namespaces (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel does ship with User Namespaces enabled only for the *root* user. You have two options to create *unprivileged* containers there:
 
 *   Start your unprivileged containers only as *root*.
 *   Enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5).
 
-Enable the [control groups](/index.php/Control_groups "Control groups") [PAM](/index.php/PAM "PAM") module by modifying `/etc/pam.d/system-login` to **additionally** contain the following line:
+Enable the [control groups](/index.php/Control_groups "Control groups") [PAM](/index.php/PAM "PAM") module by modifying `/etc/pam.d/system-login` to additionally contain the following line:
 
 ```
 session optional pam_cgfs.so -c freezer,memory,name=systemd,unified
@@ -136,15 +140,24 @@ root:100000:65536
 
 ### Host network configuration
 
-LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lxc.container.conf.5)). A bridge device on the host is required for most types of virtual networking.
+LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lxc.container.conf.5)). A bridge device on the host is required for most types of virtual networking which is illustrated in this section.
 
-LXC comes with its own NAT bridge (lxcbr0).
+There are several main setups to consider:
 
-**Note:** A NAT bridge is a standalone bridge with a private network that is not bridged to the host eth0 or a physical network. It exists as a private subnet in the host.
+1.  A host bridge
+2.  A NAT bridge
 
-**Tip:** This is quite useful when Wi-Fi is the only option. There have been various attempts of creating bridges on Wi-Fi, but without much success.
+The host bridge requires the host's network manager to manage a shared bridge interface. The host and any lxc will be assigned an IP address in the same network (for example 192.168.1.x). This might be more simplistic in cases where the goal is to containerize some network-exposed service like a webserver, or VPN server. The user can think of the lxc as just another PC on the physical LAN, and forward the needed ports in the router accordingly. The added simplicity can also be thought of as an added threat vector, again, if WAN traffic is being forwarded to the lxc, having it running on a separate range presents a smaller threat surface.
 
-To use LXC's NAT bridge you need to create its configuration file:
+The NAT bridge does not require the host's network manager to manage the bridge. [lxc](https://www.archlinux.org/packages/?name=lxc) ships with `lxc-net` which creates a NAT bridge called `lxcbr0`. The NAT bridge is a standalone bridge with a private network that is not bridged to the host's ethernet device or to a physical network. It exists as a private subnet in the host.
+
+#### Using a host bridge
+
+See [Network bridge](/index.php/Network_bridge "Network bridge").
+
+#### Using a NAT bridge
+
+[Install](/index.php/Install "Install") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) which is a dependency for `lxc-net` and before starting the bridge, first create a configuration file for it:
 
  `/etc/default/lxc-net` 
 ```
@@ -192,65 +205,49 @@ lxc.net.0.flags = up
 lxc.net.0.hwaddr = 00:16:3e:xx:xx:xx
 ```
 
-You also need to [install](/index.php/Install "Install") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) which is a dependency for lxcbr0.
+Optionally create a configuration file to manually define the IP address of any containers:
 
-[Enable](/index.php/Enable "Enable") and/or [start](/index.php/Start "Start") `lxc-net.service` to use the bridge:
+ `/etc/lxc/dnsmasq.conf`  `dhcp-host=playtime,10.0.3.100` 
 
-See [Network bridge](/index.php/Network_bridge "Network bridge") for more information.
+Now [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `lxc-net.service` to create the bridge interface.
 
-### Alternate Network - Bridge on same network as host
+##### Firewall considerations
 
-If you would like the containers to be on the same network as your host machine and not utilize NAT and firewall forwarding rules you can do the following.
+Since the lxc is running on the 10.0.3.x subnet, access to services such as ssh, httpd, etc. will need to be actively forwarded to the lxc. In principal, the firewall on the host needs to forward traffic incoming traffic on the expected port on the container.
 
-You will setup a manual bridge using netctl that includes the hosts ethernet adapter. You set your ethernet to not have an ip address and instead assign an ip address to the bridge that it is binded to.
+###### Example iptables rule
 
-In this scenario you will not be using the lxc-net service stop it if you enabled it.
-
-```
-# systemctl stop lxc-net
-# systemctl disable lxc-net
+The goal of this rule is to allow ssh traffic to the lxc:
 
 ```
- `/etc/netctl/ethernet` 
-```
-Description="Manual Ethernet setup for bridge"
-Interface=eno1     # your interface
-Connection=ethernet
-IP=no
-```
- `/etc/netctl/bridge` 
-```
-Description="Bridge Interface"
-Interface=br0
-Connection=bridge
-BindsToInterfaces=(eno1)
-IP=dhcp
-```
-
-Make sure to first shutdown your current ethernet connections prior to bringing these up.
-
-```
-# netctl stop-all
-# netctl start ethernet
-# netctl start bridge
-# netctl enable ethernet
-# netctl enable bridge
+# iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 2221 -j DNAT --to-destination 10.0.3.100:22
 
 ```
 
-Now change the default config for your containers.
+This rule forwards tcp traffic originating on port 2221 to the IP address of the lxc on port 22.
 
- `/etc/lxc/default.conf` 
+**Note:** Make sure to allow traffic on 2221/tcp on the host and to allow 22/tcp traffic on the lxc.
+
+To ssh into the container from another PC on the LAN, one needs to ssh on port 2221 to the host. The host will then forward that traffic to the container.
+
 ```
-lxc.idmap = u 0 100000 65536
-lxc.idmap = g 0 100000 65536
+$ ssh -p 2221 host.lan
 
-lxc.net.0.type = veth
-lxc.net.0.link = br0
-lxc.net.0.flags = up
 ```
 
-Now when you create a new container and start it, it should get an DHCP ip from the same network as the host.
+###### Example ufw rule
+
+If using [ufw](https://www.archlinux.org/packages/?name=ufw), append the following at the bottom of `/etc/ufw/before.rules` to make this persistent:
+
+ `/etc/ufw/before.rules` 
+```
+
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -i eth0 -p tcp --dport 2221 -j DNAT --to-destination 10.0.3.101:22
+COMMIT
+
+```
 
 ### Container creation
 
@@ -284,7 +281,7 @@ The examples below can be used with *privileged* and *unprivileged* containers a
 
 **Note:** With the release of lxc-1:2.1.0-1, many of the configuration options have changed. Existing containers need to be updated; users are directed to the table of these changes in the [v2.1 release notes](https://discuss.linuxcontainers.org/t/lxc-2-1-has-been-released/487).
 
-System resources to be virtualized/isolated when a process is using the container are defined in `/var/lib/lxc/CONTAINER_NAME/config`. By default, the creation process will make a minimum setup without networking support. Below is an example config with networking:
+System resources to be virtualized/isolated when a process is using the container are defined in `/var/lib/lxc/CONTAINER_NAME/config`. By default, the creation process will make a minimum setup without networking support. Below is an example config with networking supplied by `lxc-net.service`:
 
  `/var/lib/lxc/playtime/config` 
 ```
@@ -292,27 +289,21 @@ System resources to be virtualized/isolated when a process is using the containe
 # Parameters passed to the template:
 # For additional config options, please look at lxc.container.conf(5)
 
-## default values
-lxc.rootfs.path = /var/lib/lxc/playtime/rootfs
-lxc.uts.name = playtime
-lxc.arch = x86_64
+# Distribution configuration
 lxc.include = /usr/share/lxc/config/common.conf
+lxc.arch = x86_64
 
-## network
+# Container specific configuration
+lxc.rootfs.path = dir:/var/lib/lxc/playtime/rootfs
+lxc.uts.name = playtime
+
+# Network configuration
 lxc.net.0.type = veth
-lxc.net.0.link = br0
+lxc.net.0.link = lxcbr0
 lxc.net.0.flags = up
-lxc.net.0.name = eth0
 lxc.net.0.hwaddr = ee:ec:fa:e9:56:7d
-# uncomment the next two lines if static IP addresses are needed
-# leaving these commented will imply DHCP networking
-#
-#lxc.net.0.ipv4.address = 192.168.0.3/24
-#lxc.net.0.ipv4.gateway = 192.168.0.1
 
 ```
-
-**Note:** The lxc.network.hwaddr entry is optional and if skipped, a random MAC address will be created automatically. It can be advantageous to define a MAC address for the container to allow the DHCP server to always assign the same IP to the container's NIC (beyond the scope of this article but worth mentioning).
 
 #### Mounts within the container
 

@@ -2,7 +2,11 @@ From [duply.net](http://www.duply.net/):
 
 	Duply is a frontend for the mighty duplicity magic. [Duplicity](/index.php/Duplicity "Duplicity") is a python based shell application that makes encrypted incremental backups to remote storages.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -108,4 +112,4 @@ tar -zcvf $backup_file -C $HOME/.duply $profile_name
 chmod 600 $backup_file
 ```
 
-Copy the **.tar.gz* file to a secure storage location such as LastPass, KeePass, Peerio or an offline USB harddrive. The configuration file should accessable even if access is lost to the computer being backed up because the whole point of the backup is that it can be recovered even if the computer is lost or destroyed.
+Copy the **.tar.gz* file to a secure storage location such as LastPass, KeePass, Bitwarden or an offline USB harddrive. Another option is to archive the profile on a piece of paper as QR code ([duply_qr-git](https://aur.archlinux.org/packages/duply_qr-git/)). The configuration file should accessible even if access is lost to the computer being backed up because the whole point of the backup is that it can be recovered even if the computer is lost or destroyed.

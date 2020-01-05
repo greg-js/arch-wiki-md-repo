@@ -494,9 +494,54 @@ The command `grub-reboot` is very helpful to boot another entry than the default
 
 ## Play a tune
 
-You can play a tune through the PC-speaker while booting by modifying the variable `GRUB_INIT_TUNE`. For example, to play Berlioz's extract from Sabbath Night of Symphonie Fantastique (bassoon part) you can add the following:
+You can play a tune through the PC-speaker while booting (right before the menu appears) by modifying the variable `GRUB_INIT_TUNE`. For example, to play Berlioz's extract from Sabbath Night of Symphonie Fantastique (bassoon part) you can add the following:
 
 `GRUB_INIT_TUNE="312 262 3 247 3 262 3 220 3 247 3 196 3 220 3 220 3 262 3 262 3 294 3 262 3 247 3 220 3 196 3 247 3 262 3 247 5 220 1 220 5"`
+
+You can add a menu entry to play each of these common `GRUB_INIT_TUNE` samples by creating the following file and then re-running `grub-mkconfig`.
+
+ `/etc/grub.d/91_tune_demo` 
+```
+#!/bin/sh
+exec tail -n +3 $0
+menuentry "INIT_TUNE Demos" {
+   echo "Close Encounters/5 Tone"
+   play 480 900 2 1000 2 800 2 400 2 600 3
+   echo "Fur Elise (note long)"
+   play 480 420 1 400 1 420 1 400 1 420 1 315 1 370 1 335 1 282 3 180 1 215 1 282 1 315 3 213 1 262 1 315 1 335 3 213 1 420 1 400 1 420 1 400 1 420 1 315 1 370 1 335 1 282 3 180 1 215 1 282 1 315 3 213 1 330 1 315 1 282 3
+   echo "Berlioz's extract from Sabbath Night of Symphonie Fantastique"
+   play 312 262 3 247 3 262 3 220 3 247 3 196 3 220 3 220 3 262 3 262 3 294 3 262 3 247 3 220 3 196 3 247 3 262 3 247 5 220 1 220 5
+   echo "Oldskool Batman tune"
+   play 380 120 1 140 1 160 1 200 8 190 4
+   echo "Legend of Zelda tune"
+   play 12000 440 100 0 1 329 150 440 50 0 1 440 25 493 25 523 25 587 25 659 200
+   echo "Super Mario"
+   play 1000 334 1 334 1 0 1 334 1 0 1 261 1 334 1 0 1 392 2 0 4 196 2
+   echo "Super Mario Alternate"
+   play 480 165 2 165 2 165 3 554 1 587 1 554 2 370 1 554 1 523 2 349 1 523 1 494 3 165 2 165 2 165 2
+   echo "Mario Mushroom"
+   play 1750 523 1 392 1 523 1 659 1 784 1 1047 1 784 1 415 1 523 1 622 1 831 1 622 1 831 1 1046 1 1244 1 1661 1 1244 1 466 1 587 1 698 1 932 1 1175 1 1397 1 1865 1 1397 1
+   echo "Star Wars Imperial Death March"
+   play 480 440 4 440 4 440 4 349 3 523 1 440 4 349 3 523 1 440 8 659 4 659 4 659 4 698 3 523 1 415 4 349 3 523 1 440 8
+   echo "My Little Pony"
+   play 2400 587 18 554 4 587 8 659 12 587 16 0 10 587 4 659 4 740 8 587 4 784 12 740 8 659 8 587 4 740 20 587 40
+   echo "Wolfenstein 3D"
+   play 300 131 1 196 1 196 1 196 1 294 1 196 1 294 1 196 1 131 1
+   echo "Mall (Nothing Special)"
+   play 180 440 1 554 1 659 1
+   echo "Final Countdown"
+   play 480 554 1 494 1 554 4 370 6 10 3 587 1 554 1 587 2 554 2 494 6
+   echo "Xie-Jelei's Tune"
+   play 2000 400 4 0 1 500 4 0 1 600 4 0 1 800 6
+   echo "Random tune"
+   play 480 220 1 277 1 330 1 440 1 185 1 220 1 277 1 370 1 294 1 370 1 440 1 587 1 330 1 415 1 494 1 659 1
+   echo "Fleetwood Mac: The Chain Bass Riff (about 5 seconds)"
+   play 304 55 5 0 1 55 1 62 1 65 2 62 1 55 1 49 1 55 1 62 2 41 8
+   echo "Fleetwood Mac: The Chain Bass Riff Extended Version (WARNING, 25 SECONDS)"
+   play 9120 55 150 0 30 55 30 62 30 65 60 62 30 55 30 49 30 55 30 62 60 41 360 0 120 55 150 0 30 55 30 62 30 65 60 62 30 55 30 49 30 55 30 62 60 41 360 0 60 41 12 42 3 43 3 44 3 45 3 46 6 47 3 48 3 49 6 50 3 51 3 52 6 53 3 54 3 55 150 0 30 55 30 62 30 65 60 62 30 55 30 49 30 55 30 62 60 41 240 82 20 0 10 82 26 0 4 82 26 0 4 82 26 0 4 82 56 0 4 82 60 55 150 0 30 55 30 62 30 65 60 62 30 55 30 49 30 55 30 62 60 41 360 0 120
+}
+
+```
 
 For information on this, you can look at `info grub -n play`.
 

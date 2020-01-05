@@ -93,9 +93,9 @@ To open the Remote API to port `4243` manually, run:
 
 ```
 
-`-H tcp://0.0.0.0:4243` part is for opening the Remote API.
+The `-H tcp://0.0.0.0:4243` part is for opening the Remote API.
 
-`-H unix:///var/run/docker.sock` part for host machine access via terminal.
+The `-H unix:///var/run/docker.sock` part is for host machine access via terminal.
 
 #### Remote API with systemd
 

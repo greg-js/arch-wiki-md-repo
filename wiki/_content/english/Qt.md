@@ -192,7 +192,13 @@ Qt supports most platforms that are available today, even some of the more obscu
 
 #### Android
 
-First of all, you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk-10e](https://aur.archlinux.org/packages/android-ndk-10e/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android_Studio "Android Studio"). It is highly recommended to install NDK version [10e](https://developer.android.com/ndk/downloads/older_releases.html#ndk-10c-downloads) because of some [known issues](https://wiki.qt.io/Qt_for_Android_known_issues). Next you are going to need Qt 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described below or build it yourself, you can find build instructions on Qt [wiki](https://wiki.qt.io/Android) page.
+First of all, you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk](https://aur.archlinux.org/packages/android-ndk/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android_Studio "Android Studio").
+
+SDK requires [OpenJDK](/index.php/OpenJDK "OpenJDK") in version <= 8\. At this moment there is [OpenJDK](/index.php/OpenJDK "OpenJDK") in version 7 and 8 available, but to avoid build problems stick to the latter.
+
+Next you are going to need Qt 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described below or build it yourself, you can find build instructions on Qt [wiki](https://wiki.qt.io/Android) page.
+
+In case of problems you may want to visit [known issues](https://wiki.qt.io/Qt_for_Android_known_issues).
 
 *   [android-armv7a-eabi-qt5](https://aur.archlinux.org/packages/android-armv7a-eabi-qt5/) - armeabi-v7a
 *   [android-x86-qt5](https://aur.archlinux.org/packages/android-x86-qt5/) - x86

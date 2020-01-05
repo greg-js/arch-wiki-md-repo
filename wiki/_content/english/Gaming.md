@@ -36,7 +36,8 @@ This page contains information about running games and related system configurat
         *   [5.4.3 Core affinity](#Core_affinity)
         *   [5.4.4 General case](#General_case)
         *   [5.4.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
-*   [6 Gaming mouse](#Gaming_mouse)
+*   [6 Peripherals](#Peripherals)
+    *   [6.1 Mouse](#Mouse)
 
 ## Game environments
 
@@ -320,6 +321,12 @@ steam.exe -I -n -5
 
 ```
 
-## Gaming mouse
+## Peripherals
+
+### Mouse
+
+You might want to set your [mouse acceleration](/index.php/Mouse_acceleration "Mouse acceleration") to control your mouse more accurately.
+
+If your mouse have more than 3 buttons, you might want to see [Mouse buttons](/index.php/Mouse_buttons "Mouse buttons").
 
 If you are using a gaming mouse (especially Logitech and Steelseries), you may want configure your mouse such as DPI, LED... using [piper](https://www.archlinux.org/packages/?name=piper). See [this page](https://github.com/libratbag/libratbag/tree/master/data/devices) for a full list of supported devices.

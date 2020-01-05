@@ -45,7 +45,9 @@ NVIDIA Optimus - технология, которая дает интегрир�
 
 Проприетарный драйвер [Nvidia](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") не поддерживает динамического переключения в отличие от [nouveau](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"). В наличии проблемы с тирингом, о которых Nvidia знает, но не спешит исправлять. Однако, эти драйвера предоставляют более высокую производительность в сравнении с драйверами [nouveau](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)").
 
-Первым делом, установите пакеты [nvidia](https://www.archlinux.org/packages/?name=nvidia), [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) и [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) из официальных репозиториев. После настройте xorg.conf. Узнайте PCI адрес карты Nvidia, для этого введите: $ lspci | grep -E "VGA|3D"
+Первым делом, установите пакеты [nvidia](https://www.archlinux.org/packages/?name=nvidia), [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) и [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) из официальных репозиториев. После настройте xorg.conf. Узнайте PCI адрес карты Nvidia, для этого введите:
+
+ `$ lspci | grep -E "VGA|3D"` 
 
 PCI адрес выглядит примерно так 01:00.0\. В xorg.conf, отредактируйте 01:00.0 на 1:0:0.
 
@@ -83,7 +85,7 @@ EndSection
 Section "Device"
     Identifier "nvidia"
     Driver "nvidia"
-    **# Change BusID if necessary.**
+    **# При необходимости измените BusID.**
     **BusID "PCI:1:0:0"**
 EndSection
 
@@ -96,7 +98,7 @@ EndSection
 Section "Device"
     Identifier "intel"
     Driver "modesetting"
-    **# Change BusID if necessary.**
+    **# При необходимости измените BusID.**
     **BusID "PCI:0:2:0"**
     Option "AccelMethod" "none"
 EndSection
@@ -117,7 +119,7 @@ xrandr --auto
 
 Теперь перезагрузитесь для запуска драйверов и X. Если dpi дисплея не верный добавьте строку:
 
- `xrandr --dpi96` 
+ `xrandr --dpi 96` 
 
 Если при загрузке X появился черный экран, удостоверьтесь, что в файле ~/.xinitrc нет & перед xrandr. Если & есть, то видимо оконный менеджер запускается раньше, чем команда xrandr завершает выполнение, что и приводит к черному экрану.
 
@@ -265,44 +267,49 @@ EndSection
 
 Отредактируйте файл [xorg.conf](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Настройка "Xorg (Русский)"):
 
- `/etc/X11/nvidia.conf` 
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
 ```
 Section "ServerLayout"
-  Identifier     "Layout0"
+    Identifier     "Layout0"
     Option         "AllowNVIDIAGPUScreens"
     Screen      0  "iGPU" 0 0
 EndSection
+
 Section "Device"
     Identifier     "iGPU"
     Driver         "modesetting"
     BusID          "PCI:0:2:0" #Проверьте BusID
 EndSection
+
 Section "Device"
     Identifier     "dGPU"
     Driver         "nvidia"
     BusID          "PCI:1:0:0" #Проверьте BusID
 EndSection
+
 Section "Screen"
     Identifier     "iGPU"
     Device         "iGPU"
     DefaultDepth    24
     SubSection     "Display"
-    Viewport    0 0
+    Viewport        0 0
     EndSubSection
 EndSection
+
 Section "OutputClass"
-    Identifier "iGPU"
-    MatchDriver "i915"
-    Driver "modesetting"
+    Identifier     "iGPU"
+    MatchDriver    "i915"
+    Driver         "modesetting"
 EndSection
+
 Section "OutputClass"
-    Identifier "dGPU"
-    MatchDriver "nvidia-drm"
-    Driver "nvidia"
-    Option "AllowEmptyInitialConfiguration"
-    Option "PrimaryGPU" "yes"
-    ModulePath "/usr/lib/nvidia/xorg"
-    ModulePath "/usr/lib/xorg/modules"
+    Identifier     "dGPU"
+    MatchDriver    "nvidia-drm"
+    Driver         "nvidia"
+    Option         "AllowEmptyInitialConfiguration"
+    Option         "PrimaryGPU" "yes"
+    ModulePath     "/usr/lib/nvidia/xorg"
+    ModulePath     "/usr/lib/xorg/modules"
 EndSection
 ```
 

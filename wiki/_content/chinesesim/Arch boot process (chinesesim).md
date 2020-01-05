@@ -35,9 +35,8 @@
 *   [7 Getty](#Getty)
 *   [8 显示管理器](#显示管理器)
 *   [9 Login](#Login)
-    *   [9.1 每日信息](#每日信息)
 *   [10 Shell](#Shell)
-*   [11 xinit](#xinit)
+*   [11 GUI、 xinit 或者 wayland](#GUI、_xinit_或者_wayland)
 *   [12 参见](#参见)
 
 ## 固件种类
@@ -84,7 +83,7 @@ UEFI 主流都支持 MBR 和 GPT 分区表。Apple-Intel Macs 上的 EFI 还支�
 
 ## 启动加载器
 
-启动加载器是 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 或 [UEFI](/index.php/UEFI "UEFI") 启动的第一个程序。它负责使用正确的[内核参数](/index.php/Kernel_parameters "Kernel parameters")加载内核, 并根据配置文件加载[初始化 RAM disk](/index.php/Mkinitcpio "Mkinitcpio")。
+启动加载器是 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 或 [UEFI](/index.php/UEFI "UEFI") 启动的第一个程序。它负责使用正确的 [内核参数](/index.php/Kernel_parameters "Kernel parameters") 加载内核, 并根据配置文件加载 [初始化 RAM disk](/index.php/Mkinitcpio "Mkinitcpio")。对于 UEFI，内核本身可以由 UEFI 使用 EFI boot stub 直接启动，也可以使用单独的引导加载程序或引导管理器来在引导之前编辑内核参数。
 
 **Note:** 加载 [Microcode](/index.php/Microcode "Microcode") 补丁要求对启动加载器的配置进行调整。[[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
@@ -98,18 +97,20 @@ UEFI 主流都支持 MBR 和 GPT 分区表。Apple-Intel Macs 上的 EFI 还支�
 
 | Name | Firmware | [Partition table](/index.php/Partition_table "Partition table") | Multi-boot | [File systems](/index.php/File_systems "File systems") | Notes |
 | BIOS | [UEFI](/index.php/UEFI "UEFI") | [MBR](/index.php/MBR "MBR") | [GPT](/index.php/GPT "GPT") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4 "Ext4") | ReiserFS | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
-| [EFISTUB](/index.php/EFISTUB "EFISTUB") | – | Yes | Yes | Yes | – | – | – | – | ESP only | – | 内核会变成一个 EFI executable 来被 [UEFI](/index.php/UEFI "UEFI") 固件或者其他启动加载器加载。 |
+| [EFISTUB](/index.php/EFISTUB "EFISTUB") | – | Yes | Yes | Yes | – | – | – | – | 仅 ESP | – | 内核会变成一个 EFI executable 来被 [UEFI](/index.php/UEFI "UEFI") 固件或者其他启动加载器加载。 |
 | [Clover](/index.php/Clover "Clover") | 模拟 UEFI | Yes | Yes | Yes | Yes | No | 不支持加密 | No | Yes | No | 修改版的 rEFIt，用来运行[黑苹果](https://en.wikipedia.org/wiki/Hackintosh "wikipedia:Hackintosh")。 |
 | [GRUB](/index.php/GRUB "GRUB") | Yes | Yes | Yes | Yes | Yes | 不支持 zstd 压缩 | Yes | Yes | Yes | Yes | 在 BIOS/GPT 配置下需要一个 [BIOS启动分区](/index.php/BIOS_boot_partition "BIOS boot partition")。
 支持RAID, LUKS1 和 LVM (但是不支持thin provisioned volumes)。 |
 | [rEFInd](/index.php/REFInd "REFInd") | No | Yes | Yes | Yes | Yes | 不支持加密和 zstd 压缩 | 不支持加密 | 不支持 tail-packing 功能 | Yes | No | 支持自动寻找内核和确定内核参数而不需要手动配置。 |
 | [Syslinux](/index.php/Syslinux "Syslinux") | Yes | [有限支持](/index.php/Syslinux#Limitations_of_UEFI_Syslinux "Syslinux") | Yes | Yes | [有限支持](/index.php/Syslinux#Chainloading "Syslinux") | 不支持: 跨设备卷、压缩、加密 | 不支持加密 | No | Yes | 仅限MBR；不支持 sparse inodes | 不支持某些 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)") 功能 [[2]](https://wiki.syslinux.org/wiki/index.php?title=Filesystem)
 启动加载器只能够访问它所处的文件系统。[[3]](https://bugzilla.syslinux.org/show_bug.cgi?id=33) |
-| [systemd-boot](/index.php/Systemd-boot "Systemd-boot") | No | Yes | [仅限手动安装](https://github.com/systemd/systemd/issues/1125) | Yes | Yes | No | No | No | ESP only | No | [ESP](/index.php/ESP "ESP")以外的分区上的binaries它都启动不了. |
-| [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Yes | No | Yes | No | Yes | No | No | Yes | Yes | v4 only | [停止开发](https://www.gnu.org/software/grub/grub-legacy.html) in favor of [GRUB](/index.php/GRUB "GRUB"). |
+| [systemd-boot](/index.php/Systemd-boot "Systemd-boot") | No | Yes | [仅限手动安装](https://github.com/systemd/systemd/issues/1125) | Yes | Yes | No | No | No | 仅 ESP | No | [ESP](/index.php/ESP "ESP")以外的分区上的binaries它都启动不了. |
+| [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Yes | No | Yes | No | Yes | No | No | Yes | Yes | 仅 v4 | [停止开发](https://www.gnu.org/software/grub/grub-legacy.html) in favor of [GRUB](/index.php/GRUB "GRUB"). |
 | [LILO](/index.php/LILO "LILO") | Yes | No | Yes | No | Yes | No | 不支持加密 | Yes | Yes | [Yes](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [停止开发](http://web.archive.org/web/20180323163248/http://lilo.alioth.debian.org/) 因为某些局限性 (e.g. with Btrfs, GPT, RAID). |
 
-See also [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders").
+1.  一种 [启动管理器](https://www.rodsbooks.com/efi-bootloaders/principles.html)。它只能启动其他 EFI 应用程序，例如，使用 `CONFIG_EFI_STUB=y` 和 Windows `bootmgfw.efi` 构建 Linux kernel images。
+
+更多信息，参见 [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders")。
 
 ## 内核
 
@@ -117,9 +118,11 @@ See also [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Co
 
 ## initramfs
 
-内核被加载后，它就会解压 [mkinitcpio (简体中文)](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")， 又名 initial RAM filesystem, 后者会伪装成一个已初始化的根文件系统。内核接着会执行 `/init` 作为第一条进程。传说中的「用户空间」就这么被启动了。
+在 [boot loader](#Boot_loader) 加载 kernel 和可用的 initramfs 文件，并执行 kernel 之后，kernel 将 initramfs（初始RAM文件系统）压缩包解压缩到（然后清空）rootfs（初始根文件系统，特别是ramfs或tmpfs）。首先提取的 initramfs 是在 kernel 构建过程中嵌入 kernel 二进制Update translation.的 initramfs，然后提取可用的外部 initramfs 文件。因此，外部 initramfs 中的文件会覆盖嵌入式 initramfs 中具有相同名称的文件。然后， kernel 执行 `/init` （在rootfs中）作为第一个进程。*early userspace*开始。
 
-initramfs 之所以存在，是为了帮系统访问真正的根文件系统（参见 [Arch filesystem hierarchy (简体中文)](/index.php/Arch_filesystem_hierarchy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch filesystem hierarchy (简体中文)")）。也就是说，那些硬件 IDE, SCSI, SATA, USB/FW 所要求的内核模块，如果并没有内置在内核里，就会被 initramfs 负责加载。一旦通过 [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)") 之类的程序或脚本加载好模块，启动流程才会继续下去。所以，initramfs 只要有能够让系统访问真实根文件系统的模块就可以了，不用尽可能地包含一切模块。当然，其它真正有用的模块之后会在 init 流程中被 udev 加载好。
+Arch Linux 对内置的 initramfs 使用一个空的存档（在构建Linux时是默认的）。有关外部 initramfs 的更多信息和 Arch 特定的信息，请参见 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")。
+
+initramfs 之所以存在，是为了帮系统访问真正的根文件系统（参见 [Arch filesystem hierarchy (简体中文)](/index.php/Arch_filesystem_hierarchy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch filesystem hierarchy (简体中文)")）。也就是说，那些硬件 IDE, SCSI, SATA, USB/FW 所要求的 kernel 模块，如果并没有内置在 kernel 里，就会被 initramfs 负责加载。一旦通过 [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)") 之类的程序或脚本加载好模块，启动流程才会继续下去。所以，initramfs 只要有能够让系统访问真实根文件系统的模块就可以了，不用尽可能地包含一切模块。当然，其它真正有用的模块之后会在 init 流程中被 udev 加载好。
 
 ## Init 流程
 
@@ -133,21 +136,21 @@ initramfs 之所以存在，是为了帮系统访问真正的根文件系统（�
 
 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)"), 可以配置为代替原来的 getty 登录命令行提示符。
 
+为了在引导后自动初始化显示管理器，必须通过[systemd](/index.php/Systemd "Systemd")手动启用服务单元。 有关启用和启动服务单元的更多信息，请参见[systemd＃使用单元](/index.php?title=Systemd%EF%BC%83%E4%BD%BF%E7%94%A8%E5%8D%95%E5%85%83&action=edit&redlink=1 "Systemd＃使用单元 (page does not exist)")。
+
 ## Login
 
-所谓的 *login* 程序会为用户启动一个设置了环境变量的「会话」，接着根据 `/etc/passwd` 配置以启动用户专用 shell.
+所谓的 *login* 程序会为用户启动一个设置了环境变量的「会话」，接着根据 `/etc/passwd` 的配置启动用户专用 shell。
 
-### 每日信息
-
-*login* 程序会在成功登录后显示 [/etc/motd](https://en.wikipedia.org/wiki/motd_(Unix) (*m*essage *o*f *t*he *d*ay) 的内容，可以显示服务协议或希望告诉用户的信息。
+在成功登录后，刚刚启动登录 shell 之前，*login* 程序显示 [/etc/motd](https://en.wikipedia.org/wiki/motd_(Unix) (*m*essage *o*f *t*he *d*ay) 。在这里，您可以显示服务条款，以提醒用户您的本地政策或您想告诉他们的任何内容。
 
 ## Shell
 
 一旦用户专用的 [shell](/index.php/Shell "Shell") 启动了，它会在显示命令行提示符前，执行一个「有可执行性的配置文件」，比如 [.bashrc](/index.php/.bashrc ".bashrc"). 如果用户有设定了 [Start X at login](/index.php/Start_X_at_login "Start X at login"), 原来那个「有可执行性的配置文件」会调用 [startx](/index.php/Startx "Startx") or [xinit](/index.php/Xinit "Xinit").
 
-## xinit
+## GUI、 xinit 或者 wayland
 
-[xinit](/index.php/Xinit "Xinit") 也会调用用户的 [.xinitrc](/index.php/.xinitrc ".xinitrc")这个「有可执行性的配置文件」，后者一般用来启动一个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")。如果用户退出了窗口管理器，xinit, startx, shell login 就会先后中断，返回到 getty.
+[xinit](/index.php/Xinit "Xinit") 也会调用用户的 [.xinitrc](/index.php/.xinitrc ".xinitrc") 这个「有可执行性的配置文件」，后者一般用来启动一个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")。如果用户退出了窗口管理器、xinit、 startx 和 shell login 就会先后中断，返回到 [getty](#getty).
 
 ## 参见
 

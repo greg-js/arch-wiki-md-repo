@@ -74,6 +74,7 @@ Related articles
     *   [5.13 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
     *   [5.14 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
     *   [5.15 Cursor theme doesn't change on login](#Cursor_theme_doesn't_change_on_login)
+    *   [5.16 Mousepad editor menu bar is not visible](#Mousepad_editor_menu_bar_is_not_visible)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -736,6 +737,10 @@ Xfce loads `$HOME/.Xresources` file using `xrdb`, but with `-nocpp` option to sk
 ### Cursor theme doesn't change on login
 
 Ensure the systemwide XDG cursor is set to your desired cursor theme - see [Cursor themes#XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes").
+
+### Mousepad editor menu bar is not visible
+
+Run `gsettings set org.xfce.mousepad.preferences.window menubar-visible true` to make it visible.
 
 ## See also
 

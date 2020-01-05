@@ -61,7 +61,7 @@ Options:
 | [Touchscreen](/index.php/Touchscreen "Touchscreen") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | Camera | Yes |
-| [Fingerprint Reader](/index.php?title=Fingerprint_Reader&action=edit&redlink=1 "Fingerprint Reader (page does not exist)") | Yes |
+| [Fingerprint Reader](/index.php/Fingerprint_Reader "Fingerprint Reader") | Yes |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 
@@ -131,9 +131,11 @@ There are three options for displays:
 *   14" WQHD+ (2560 x 1440): Works, see [HiDPI](/index.php/HiDPI "HiDPI") for configuration.
 *   14" WQHD+ (2560 x 1440) Touch Screen: Works, see [HiDPI](/index.php/HiDPI "HiDPI") for configuration.
 
-Install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) to drive the display.
+Using [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver is not recommended, instead use [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4).
 
-[xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) works fine to adjust brightness levels.
+[xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) will need [acpilight](https://www.archlinux.org/packages/?name=acpilight) to adjust brightness levels.
+
+Also see [Intel graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics").
 
 #### HDMI
 

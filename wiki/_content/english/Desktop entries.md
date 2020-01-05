@@ -302,7 +302,6 @@ where *desktop-name* can be option such as *GNOME*, *Xfce*, *KDE* etc. A desktop
 To set [environment variables](/index.php/Environment_variables "Environment variables"), copy the *.desktop* file from `/usr/share/applications/` to `$XDG_DATA_HOME/` (`~/.local/share/applications/`) and edit the `Exec=` command line by prepending *env*. For example:
 
  `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
-**Tip:** Instead of manually copying and editing the file, both actions can be done with *sed*. For example: `$ sed 's|^Exec=|Exec=env LANG=he_IL.UTF-8 |g' /usr/share/applications/abiword.desktop > ~/.local/share/applications/abiword.desktop` 
 
 ## See also
 

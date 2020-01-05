@@ -84,7 +84,7 @@ For more information on configuring systemd-boot, see the [systemd-boot](/index.
 
 *   To make the change persistent after reboot, you *could* manually edit `/boot/grub/grub.cfg` with the exact line from above, but the best practice is to:
 
-	Edit `/etc/default/grub` and append your kernel options to the `GRUB_CMDLINE_LINUX_DEFAULT` line:
+	Edit `/etc/default/grub` and append your kernel options between the quotes in the `GRUB_CMDLINE_LINUX_DEFAULT` line:
 
 	 `GRUB_CMDLINE_LINUX_DEFAULT="*quiet splash*"` 
 
@@ -126,7 +126,7 @@ For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO")
 
 	Press `Enter` to boot with these parameters.
 
-*   To make the change persistent after reboot, edit `/boot/refind_linux.conf` and append them to all/required lines, for example
+*   To make the change persistent after reboot, edit `/boot/refind_linux.conf` and append them between the quotes in all required lines, for example
 
 	 `"Boot using default options"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw *quiet splash*"` 
 

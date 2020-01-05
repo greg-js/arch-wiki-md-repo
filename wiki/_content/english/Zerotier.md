@@ -6,9 +6,11 @@ ZeroTier can be [installed](/index.php/Install "Install") with the [zerotier-one
 
 ## Configuration
 
-You will need to create an account over at [My Zerotier](https://my.zerotier.com/) and create a network and select your desired options, It can have either IPv4 or IPv6 or both. Keep note of the network id that you will like to use, you will be needing it later on. Leave the network page open that you will use since you will need to authorize each computer or device, also verify that it has an ip
+You will need to create an account over at [My Zerotier](https://my.zerotier.com/) and create a network and select your desired options, such as support for IPv4 or IPv6 or both. Keep note of the network ID of the newly-created network as you will be needing it later on.
 
-To begin [start](/index.php/Start "Start") `zerotier-one.service`, if one would like it to start at boot [enable](/index.php/Enable "Enable") `zerotier-one.service`. to find out what your computer id,it will be a 10 alphanumeric similar to 89e92ceee5, is run:
+Leave the page for the network that you will use open, as you will need to authorize each computer or device that you connect, and also verify that they get an IP.
+
+To begin [start](/index.php/Start "Start") `zerotier-one.service`, if one would like it to start at boot [enable](/index.php/Enable "Enable") `zerotier-one.service`. To find out your computer id, which will be a 10-digit hexadecimal number similar to 89e92ceee5, run:
 
  `# zerotier-cli info` 
 ```
@@ -16,20 +18,20 @@ To begin [start](/index.php/Start "Start") `zerotier-one.service`, if one would 
 
 ```
 
-where 89e92ceee5 is address and 1.2.4 is the version, followed by its status
+where 89e92ceee5 is address and 1.2.4 is the version, followed by its status.
 
-Next you will need to run to join a network:
+Next you will need to join a network:
 
 ```
 # zerotier-cli join *network_id*
 
 ```
 
-The network will be 16 alphanumeric similiar to 8056c2e21c000001 which can be found at the top of the network page under settings.
+The network ID is a 16-digit hexadecimal number like 8056c2e21c000001 which you can get on the Networks page.
 
-Back on the network page at my.zerotier, you should see all address that have joined under members. Be sure to check the authorize for the desired addresses, and verify that it has IP address. You may need to run [dhcpcd](/index.php/Dhcpcd "Dhcpcd") to acquire the new IP address locally.
+Back on the network page at my.zerotier, scroll down to the Members section where you should see all addresses that have joined. To authorize each computer or device, check the left-most checkbox and verify that it is given an IP address (this may take 10 or 20 seconds). You may need to run [dhcpcd](/index.php/Dhcpcd "Dhcpcd") to acquire the new IP address locally.
 
-To verify that all devices can see each other you can [ping](/index.php/Ping "Ping") each address with its associated IP, like so
+To verify that all devices can see each other you can [ping](/index.php/Ping "Ping") each address using its associated IP, like so:
 
  `$ ping 192.168.192.91` 
 ```

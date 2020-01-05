@@ -31,7 +31,6 @@ Related articles
     *   [5.6 Remote display](#Remote_display)
     *   [5.7 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
         *   [5.7.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
-    *   [5.8 Run X and wayland at the same time, different tty](#Run_X_and_wayland_at_the_same_time,_different_tty)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -201,22 +200,6 @@ Supporting widget toolkits:
 [Input inhibitor](https://github.com/swaywm/wlr-protocols/blob/master/unstable/wlr-input-inhibitor-unstable-v1.xml) is a Wayland protocol which was defined the by developers of Sway and wlroots and is overlapping Wayland's `Compositor shortcuts inhibit` protocol.
 Sway and wlroots do not support the `Compositor shortcuts inhibit` and `XWayland keyboard grabbing` protocols, and it seems they are against adding support for the latter [[6]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[7]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
 No widget toolkit or application is known to support this protocol.
-
-### Run X and wayland at the same time, different tty
-
-various tools use different environment variables to switch on wayland, as an example here sway, but could be gnome, etc:
-
-```
-MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland QT_WAYLAND_DISABLE_WINDOWDECORATION=1 _JAVA_AWT_WM_NONREPARENTING=1 XDG_SESSION_TYPE=wayland exec sway
-
-```
-
-various tools use different environment variables to force x11:
-
-```
-GDK_BACKEND=x11 exec startx
-
-```
 
 ## See also
 

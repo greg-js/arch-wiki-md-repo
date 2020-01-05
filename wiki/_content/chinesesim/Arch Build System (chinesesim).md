@@ -9,17 +9,22 @@
 *   [官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")
 *   [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-31，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=491300)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_Build_System](/index.php/Arch_Build_System "Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2020-1-3，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=588948)可以查看翻译后英文页面的改动。
 
-本文简要介绍 Arch 编译系统，同时提供一个使用教程。这不是一个完整的参考指南！
+ABS(Arch Build System)指的是Arch的构建系统。这是一种从源代码编译软件的类 ports 系统。在Arch中，[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 专门管理二进制软件包(包括那些由ABS创建的)，而ABS则是一系列工具，负责把源代码编译成可安装的`.pkg.tar.xz` 软件包。
+
+'Ports'是 *BSD 使用的一种系统，可以自动下载源代码、解压缩、打补丁、编译和安装。一个“port”仅仅是指用户电脑上的一个目录，该目录根据即将安装的软件来命名，这个目录包含一些能指导源码的下载和编译安装的文件。Ports系统让你只需在port目录下运行`make`或 `make install clean`就能安装你想要的软件。
+
+ABS 的概念与Ports相似.ABS由一个目录树构成，可以用SVN checkout。这个目录树表示(但不包含)所有官方 Arch 软件。ABS子目录并不包含软件包或源代码，而是包含一个PKGBUILD 文件(有时也会有其它文件)。在有PKGBUILD文件的目录里运行makepkg命令，将在目录中编译软件，并打包。然后就可以通过pacman进行安装或升级了。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 什么是 ABS](#什么是_ABS)
-    *   [1.1 类 ports 系统又是什么？](#类_ports_系统又是什么？)
-    *   [1.2 ABS 的概念与之相似](#ABS_的概念与之相似)
-    *   [1.3 ABS概览](#ABS概览)
-        *   [1.3.1 SVN目录树](#SVN目录树)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 ABS概览](#ABS概览)
+    *   [1.1 SVN目录树](#SVN目录树)
 *   [2 我为什么要用ABS](#我为什么要用ABS)
 *   [3 如何使用 ABS](#如何使用_ABS)
     *   [3.1 使用 SVN 获取 PKGBUILD](#使用_SVN_获取_PKGBUILD)
@@ -33,19 +38,7 @@
     *   [4.2 Checkout旧版本软件包](#Checkout旧版本软件包)
 *   [5 其它工具](#其它工具)
 
-## 什么是 ABS
-
-ABS(Arch Build System)指的是Arch的构建系统。这是一种从源代码编译软件的类 ports 系统。在Arch中，[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 专门管理二进制软件包(包括那些由ABS创建的)，而ABS则是一系列工具，负责把源代码编译成可安装的`.pkg.tar.xz` 软件包。
-
-### 类 ports 系统又是什么？
-
-'Ports'是 *BSD 使用的一种系统，可以自动下载源代码、解压缩、打补丁、编译和安装。一个“port”仅仅是指用户电脑上的一个目录，根据即将安装的相应软件来命名，包含一些文件来指导源码的下载和编译安装，典型的方式是找到那个目录(或者说port)，进行`make`或 `make install clean`，然后系统就会下载、编译和安装你想要的软件了。
-
-### ABS 的概念与之相似
-
-**ABS**由一个目录树构成，可以用SVN checkout。这个目录树表示(但不包含)所有**官方 Arch 软件**。ABS子目录**并不包含软件包或源代码**，而是包含一个[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)") 文件(有时也会有其它文件)。在有PKGBUILD文件的目录里运行[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")命令，将在目录中编译软件，并打包。然后就可以通过[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")进行安装或升级了。
-
-### ABS概览
+## ABS概览
 
 'ABS'可以作为一个总括性术语来使用，因为它包含并依赖于若干其他部件。因此，尽管从严格意义上来讲并不精确，ABS可指代包含以下工具的完整工具集：
 
@@ -63,21 +56,21 @@ ABS(Arch Build System)指的是Arch的构建系统。这是一种从源代码编
 
 	[Pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")
 
-	pacman是完全独立的，但是在安装或移除软件包、解决依赖性时都是必需的。它或者被 makepkg 调用或者被手动执行。
+	pacman是完全独立的，但是在安装或移除软件包、解决依赖性时都是必需的。它被 makepkg 调用或者被手动执行。
 
 	[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")
 
-	ArchLinux社区的用户维护的软件仓库独立于ABS，包含[unsupported]的PKGBUILDs。它们同样可以可以通过ABS的makepkg工具来编译并打包成可安装软件。ABS 树位于本地机器，而 AUR 则是网站界面。包含成千上万用户共享的 PKGBUILD。如果需要编译官方 Arch 树之外的软件包，AUR 中已经存在的可能性非常大。
+	ArchLinux社区的用户维护的软件仓库独立于ABS，包含不受支持的PKGBUILD文件。它们同样可以可以通过ABS的makepkg工具来编译并打包成可安装软件。ABS 树位于本地机器，而 AUR 则是网站界面。包含成千上万用户共享的 PKGBUILD。如果需要编译官方 Arch 树之外的软件包，AUR 中已经存在的可能性非常大。
 
 **Warning:** 官方PKGBUILD假定包是在干净的chroot环境中构建的([built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot")). 在*脏*的环境中构建可能会失败或者在运行时有意外行为。 因为如果编译系统动态检查依赖的话，编译结果会受到当前可用包的影响。
 
-#### SVN目录树
+### SVN目录树
 
 *core*, *extra*和*testing* [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 可从官方SVN的*packages* 仓库[checkout](#非递归checkout). 而*community*和*multilib*在*community* SVN仓库。
 
-每个包有各自的子目录，其中又有`repos`和`trunk`目录。`repos`又进一步按仓库名(如*core*)和架构细分。`repos`里的PKGBUILD和其它文件用来构建官方包。`trunk`里的文件是正在开发的，并最终复制到`repos`。
+每个包有各自的子目录，其中又有`repos`和`trunk`目录。`repos`又进一步按仓库名(如*core*)和架构细分。`repos`里的PKGBUILD和其它文件用来构建官方包。`trunk`里的文件是正在开发的，并最终复制到`repos`中。
 
-例如，[acl](https://www.archlinux.org/packages/?name=acl)的目录结构像这样：
+例如，[acl](https://www.archlinux.org/packages/?name=acl)的目录结构是这样的：
 
 ```
 acl
@@ -100,7 +93,7 @@ ABS 可以用来:
 *   编译或重新编译软件包
 *   从源代码编译Arch官方源里没有的软件(详情请参照[创建软件包](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Creating packages (简体中文)"))
 *   定制现有的软件包以满足你的特定需求(通过开启或禁用相关选项)
-*   用你的编译器的flags重新构建整个系统，“就像FreeBSD那样” 。(使用[pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/)不支持 git 仓库)
+*   用你的编译器的flags重新构建整个系统，“就像FreeBSD那样” 。(使用 [pacman-src-git](https://aur.archlinux.org/packages/pacman-src-git/))
 *   干净地编译安装你自己定制的内核。(参照[内核编译(简体中文)](/index.php/Kernel_Compilation_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel Compilation (简体中文)"))
 *   使内核模块(比如某些显卡驱动)在你定制的内核下正常工作
 *   修改 PKGBUILD 中的版本就能方便的编译和安装新的、老的、beta 或者开发版本的 Arch 软件包
@@ -109,7 +102,7 @@ ABS 可以用来:
 
 ## 如何使用 ABS
 
-要获取需要的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")，从源代码编译软件包，需要使用 [Svn](/index.php/Svn "Svn") 或支持 [Git](/index.php/Git "Git") 的 [asp](https://www.archlinux.org/packages/?name=asp)。
+要想获取从源代码构建特定软件包所需的[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")文件，需要使用 [Svn](/index.php/Svn "Svn") 或支持 [Git](/index.php/Git "Git") 的 [asp](https://www.archlinux.org/packages/?name=asp)。[asp](https://www.archlinux.org/packages/?name=asp)是一个对svntogit的简单封装。在下文中介绍了基于svn的方法以及[基于git的方法](#使用_Git_获取_PKGBUILD)。
 
 ### 使用 SVN 获取 PKGBUILD
 
@@ -121,7 +114,7 @@ ABS 可以用来:
 
 **Warning:** 不要下载整个仓库，请按下面的说明操作。整个SVN非常大，不只会占用大量的空间，archlinux.org服务器也会因为下载产生费用。非正常使用可能会导致你的地址被封禁。不要对公共SVN进行任何脚本操作。
 
-要checkout *core*, *extra*，和*testing*仓库:
+要checkout *core*, *extra*，和*testing* [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库"):
 
 ```
 $ svn checkout --depth=empty svn://svn.archlinux.org/packages
@@ -230,7 +223,7 @@ $ svn update -r1729 *package-name*
 也可以指定一个日期，如果当天没有对应版本，svn会找出之前的最近版本。下面的例子checks out了2009-03-03的版本:
 
 ```
-$ svn update -r{20090303} *package-name*
+$ svn update -r'{20090303}' *package-name*
 
 ```
 

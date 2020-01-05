@@ -55,7 +55,7 @@ Antes de usar [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup),
 
 ## Uso do cryptsetup
 
-*cryptsetup* é uma ferramenta da linha de comando para o *dm-crypt* criar, acessar e gerenciar dispositivos criptografados. Ela foi expandida para suportar diferentes tipos de encriptação que dependem do mapeador de dispositivos e módulos criptografados (**d**evice-**m**apper and the **crypt**ographic modules). A expansão mais notável foi o LUKS (Linux Unified Key Setup), que guarda todas as informações necessárias para o dm-crypt no próprio disco e abstrai a partição e gerenciamento de chaves com o objetivo de facilitar o uso. Dispositivos acessados via o mapeador de dispositivos são chamados de dispositivos de bloco (blockdevices). Para mais informações veja [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption").
+*cryptsetup* é uma ferramenta da linha de comando para o *dm-crypt* criar, acessar e gerenciar dispositivos criptografados. Ela foi expandida para suportar diferentes tipos de encriptação que dependem do mapeador de dispositivos e módulos criptografados (**d**evice-**m**apper and the **crypt**ographic modules). A expansão mais notável foi o LUKS (Linux Unified Key Setup), que guarda todas as informações necessárias para o dm-crypt no próprio disco e abstrai a partição e gerenciamento de chaves com o objetivo de facilitar o uso. Dispositivos acessados via o mapeador de dispositivos são chamados de dispositivos de bloco (blockdevices). Para mais informações veja [Criptografia de disco#Encriptação de dispositivo de bloco](/index.php/Criptografia_de_disco#Encriptação_de_dispositivo_de_bloco "Criptografia de disco").
 
 A ferramenta é usada da seguinte forma:
 
@@ -91,7 +91,7 @@ Um dispositivo de bloco criptografado é protegido por uma chave. Pode ser:
 
 Ambos os tipos de chave possuem tamanhos padrões máximos: senhas podem ser até 512 caracteres e keyfiles até 8192KiB.
 
-Uma importante distinção do *LUKS* a se notar é que a chave é usada para desbloquear a chave mestre do dispositivo criptografado com LUKS, e esta pode ser mudada. Outros modos de encriptação não suportam mudança na chave depois de definida, devido a eles não utilizarem uma chave mestre na encriptação. Veja [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") para detalhes.
+Uma importante distinção do *LUKS* a se notar é que a chave é usada para desbloquear a chave mestre do dispositivo criptografado com LUKS, e esta pode ser mudada. Outros modos de encriptação não suportam mudança na chave depois de definida, devido a eles não utilizarem uma chave mestre na encriptação. Veja [Criptografia de disco#Encriptação de dispositivo de bloco](/index.php/Criptografia_de_disco#Encriptação_de_dispositivo_de_bloco "Criptografia de disco") para detalhes.
 
 ## Opções de encriptação com dm-crypt
 
@@ -140,7 +140,7 @@ As opções padrão são comparadas com um exemplo de especificação criptograf
 
 -c
 
- | `aes-xts-plain64` | `aes-xts-plain64` | [A versão 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) mudou o padrão para uma [cifra](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") do AES no modo [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") (veja o item 5.16 [do FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). Não é recomendado o uso da cifra padrão anterior `--cipher aes-cbc-essiv` devido a seus conhecidos [problemas](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29 "wikipedia:Disk encryption theory") e [ataques](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) práticos contra eles. |
+ | `aes-xts-plain64` | `aes-xts-plain64` | [A versão 1.6.0](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.6/v1.6.0-ReleaseNotes) mudou o padrão para uma [cifra](/index.php/Criptografia_de_disco#Cifras_e_modos_de_operação "Criptografia de disco") do AES no modo [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory") (veja o item 5.16 [do FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects)). Não é recomendado o uso da cifra padrão anterior `--cipher aes-cbc-essiv` devido a seus conhecidos [problemas](https://en.wikipedia.org/wiki/Disk_encryption_theory#Cipher-block_chaining_.28CBC.29 "wikipedia:Disk encryption theory") e [ataques](http://www.jakoblell.com/blog/2013/12/22/practical-malleability-attack-against-cbc-encrypted-luks-partitions/) práticos contra eles. |
 | --key-size
 
 -s
@@ -150,7 +150,7 @@ As opções padrão são comparadas com um exemplo de especificação criptograf
 
 -h
 
- | `sha256` | `sha512` | O algoritmo de Hash usado para [derivação de chave](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). A versão 1.7.0 mudou o padrão de `sha1` para `sha256` "*não por segurança [mas] principalmente para previnir problemas de compabilidade em sistemas onde SHA1 já estava [em] desuso* "[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). O antigo padrão do `sha1` pode ainda ser usado por compatibilidade com versões mais velhas do *cryptsetup* desde que é [considerada segura](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (veja o item 5.20). |
+ | `sha256` | `sha512` | O algoritmo de Hash usado para [derivação de chave](/index.php/Criptografia_de_disco#Metadados_criptográficos "Criptografia de disco"). A versão 1.7.0 mudou o padrão de `sha1` para `sha256` "*não por segurança [mas] principalmente para previnir problemas de compabilidade em sistemas onde SHA1 já estava [em] desuso* "[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). O antigo padrão do `sha1` pode ainda ser usado por compatibilidade com versões mais velhas do *cryptsetup* desde que é [considerada segura](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (veja o item 5.20). |
 | --iter-time
 
 -i
@@ -190,7 +190,7 @@ Ao executar o comando, será solicitada a senha, que deve possuir uma entropia m
 
 -c
 
- | `aes-cbc-essiv:sha256` | `aes-xts-plain64` | As cifras consistem de três pares: geradores cifra-modo_de_opeação-IV. Veja [Encriptação de disco#Cifras e modos de operação](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") para uma explicação dessas configurações, e a [documentação do DMCrypt](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) para os modos disponíveis. |
+ | `aes-cbc-essiv:sha256` | `aes-xts-plain64` | As cifras consistem de três pares: geradores cifra-modo_de_opeação-IV. Veja [Criptografia de disco#Cifras e modos de operação](/index.php/Criptografia_de_disco#Cifras_e_modos_de_operação "Criptografia de disco") para uma explicação dessas configurações, e a [documentação do DMCrypt](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) para os modos disponíveis. |
 | --key-size
 
 -s
@@ -243,7 +243,7 @@ O dispositivo mapeado deve aparecer como `/dev/mapper/enc`.
 
 Esta seção mostra como empregar as opções para criar novos dispositivos de bloco criptografados e acessá-los manualmente.
 
-**Atenção:** GRUB não suporta cabeçalhos do LUKS2; veja [GRUB bug #55093](https://savannah.gnu.org/bugs/?55093). Então, se você planeja [abrir uma partição de boot criptografada com o GRUB](/index.php/GRUB#/boot_criptografado "GRUB"), especifique `--type luks1` nos dispositivos criptografados que o GRUB precisa acessar.
+**Atenção:** GRUB não suporta cabeçalhos do LUKS2; veja [GRUB bug #55093](https://savannah.gnu.org/bugs/?55093). Então, se você planeja [abrir uma partição de boot criptografada com o GRUB](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)"), especifique `--type luks1` nos dispositivos criptografados que o GRUB precisa acessar.
 
 ### Criptografando dispositivos com o modo LUKS
 
@@ -258,7 +258,7 @@ Para configurar uma partição criptografada LUKS, execute:
 
 Lhe será solicitado uma senha e também a verificação desta.
 
-Veja [#opções de encriptação para o modo LUKS](#opções_de_encriptação_para_o_modo_LUKS) para opções da linha de comando.
+Veja [#Opções de encriptação para o modo LUKS](#Opções_de_encriptação_para_o_modo_LUKS) para opções da linha de comando.
 
 Você pode checar os resultados com:
 
@@ -291,7 +291,7 @@ Veja [#Keyfiles](#Keyfiles) para instruções em como gerar e gerenciar keyfiles
 
 Uma vez que os containers LUKS foram criados, eles podem ser abertos.
 
-Para abrir um container LUKS voce precisa definir o nome do novo dispositivo mapeado. Isto alerta o kernel que `*dispositivo*` está criptografado e deve ser acessado através do LUKS usando o `/dev/mapper/*dm_nome*` para nao sobrescrever os dados criptografados. Para se proteger deste tipo de acidente, leia sobre como fazer [backup do cabeçalho criptografado](#Backup_and_restore) depois de terminar a configuração.
+Para abrir um container LUKS voce precisa definir o nome do novo dispositivo mapeado. Isto alerta o kernel que `*dispositivo*` está criptografado e deve ser acessado através do LUKS usando o `/dev/mapper/*dm_nome*` para nao sobrescrever os dados criptografados. Para se proteger deste tipo de acidente, leia sobre como fazer [backup do cabeçalho criptografado](#Backup_e_restauração) depois de terminar a configuração.
 
 Para abrir um container LUKS criptografado execute:
 
@@ -742,7 +742,7 @@ O sistema de arquivos deste deve ser redimensionado também.
 
 ### Sistema de arquivos de loopback
 
-Assuma que um sistema de arquivos de loopback criptografado está no arquivo `grande_segredo`, ligado ao `/dev/loop0`, mapeado como `segredo` e montado em `/mnt/segredo`, como no exemplo presente em [dm-crypt/Criptografando todo um sistema#Dispositivo de loop](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Dispositivo_de_loop "Dm-crypt/Criptografando todo um sistema").
+Assuma que um sistema de arquivos de loopback criptografado está no arquivo `grande_segredo`, ligado ao `/dev/loop0`, mapeado como `segredo` e montado em `/mnt/segredo`, como no exemplo presente em [dm-crypt/Criptografando um sistema de arquivos não raiz#Dispositivo de loop](/index.php/Dm-crypt/Criptografando_um_sistema_de_arquivos_n%C3%A3o_raiz#Dispositivo_de_loop "Dm-crypt/Criptografando um sistema de arquivos não raiz").
 
 Se o container está mapeado e/ou montado, o desmonte e/ou feche:
 
@@ -798,7 +798,7 @@ Você pode montar o container novamente:
 
 **O que é uma keyfile?**
 
-Uma keyfile é um arquivo cujo dados são usados como senha para abrir um volume criptografado. Isto significa que se tal arquivo é perdido ou modificado, abrir o volume pode não ser mais possível.
+Também conhecida como arquivo chave ou arquivo-chave, uma keyfile é um arquivo cujo dados são usados como senha para abrir um volume criptografado. Isto significa que se tal arquivo é perdido ou modificado, abrir o volume pode não ser mais possível.
 
 **Dica:** Adicione uma senha além da keyfile para evitar a situação citada acima.
 
@@ -961,7 +961,7 @@ Não existe garantia que nomes de dispositivos como `/dev/sdb1` irão permanecer
 *   Usar alguma forma de autentificação prévia no processo de inicialização. De outro modo, o dispositivo vai ser aberto automaticamente, acabando com a proposta de criptografar o dispositivo de bloco.
 *   `/boot` é criptografado. De outro modo, a raiz de outra instalação (incluindo o [ambiente live](/index.php/Guia_de_instala%C3%A7%C3%A3o#Inicializar_o_ambiente_live "Guia de instalação")) pode extrair sua chave do initramfs, e decriptografar o dispositivo sem qualquer meio de autentificação.
 
-Este método permite o uso de um nome especial para a keyfile que vai ser colocada no [initramfs](/index.php/Initramfs "Initramfs") e lida pelo [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") `encrypt` para abrir o sistema de arquivos raiz (`cryptdevice`) automaticamente. Pode ser útil quando deseja que o [/boot criptografado](/index.php/GRUB#Encrypted_/boot "GRUB"), evitando entrar duas senhas durante a inicialização.
+Este método permite o uso de um nome especial para a keyfile que vai ser colocada no [initramfs](/index.php/Initramfs "Initramfs") e lida pelo [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") `encrypt` para abrir o sistema de arquivos raiz (`cryptdevice`) automaticamente. Pode ser útil quando deseja que o [/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)"), evitando entrar duas senhas durante a inicialização.
 
 O hook `encrypt` permite que o usuário especificar uma keyfile com o parâmetro do kernel `cryptkey`: no caso do initramfs, a sintaxe é `rootfs:*caminho*`. Veja [dm-crypt/Configuração do sistema#cryptkey](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#cryptkey "Dm-crypt/Configuração do sistema"). Apesar que, este parâmetro do kernel se não definido vai usar por padrão `/crypto_keyfile.bin`, e se o initramfs contém uma chave válida com este nome, o container será aberto sem a necessidade de definir o parâmetro `cryptkey`.
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [DNS over HTTPS servers](/index.php/DNS_over_HTTPS_servers "DNS over HTTPS servers")
+
 **DNS over HTTPS** (DNS Queries over HTTPS; **DoH**) wraps [DNS](/index.php/DNS "DNS") queries in [HTTPS](/index.php/TLS "TLS"). Therefore, privacy and integrity of the DNS response is guaranteed, and the system is protected agains man-in-the-middle attacks.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

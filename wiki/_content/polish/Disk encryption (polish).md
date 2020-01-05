@@ -13,33 +13,37 @@ W tym artykule omówiono wspólne techniki szyfowania dostępne w Arch Linux do 
 
 Dyski do przechowywania "w tym kontekście mogą być dyskami twardymi komputera, urządzeniami zewnętrznymi, takimi jak dyski flash USB lub dyski DVD, a także dyskami wirtualnymi, takimi jak urządzenia loop-back devices lub Chmura publiczna. (o ile Arch Linux może go adresować jako urządzenie blokowe lub system plików).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Po co używać szyfrowania?](#Po_co_u.C5.BCywa.C4.87_szyfrowania.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Po co używać szyfrowania?](#Po_co_używać_szyfrowania?)
 *   [2 Szyfrowanie danych vs szyfrowanie systemu](#Szyfrowanie_danych_vs_szyfrowanie_systemu)
-*   [3 Dostępne metody](#Dost.C4.99pne_metody)
-    *   [3.1 Ułożone szyfrowania systemu plików](#U.C5.82o.C5.BCone_szyfrowania_systemu_plik.C3.B3w)
-    *   [3.2 blokowe szyfrowanie dysków](#blokowe_szyfrowanie_dysk.C3.B3w)
-    *   [3.3 Tabela porównawcza](#Tabela_por.C3.B3wnawcza)
+*   [3 Dostępne metody](#Dostępne_metody)
+    *   [3.1 Ułożone szyfrowania systemu plików](#Ułożone_szyfrowania_systemu_plików)
+    *   [3.2 blokowe szyfrowanie dysków](#blokowe_szyfrowanie_dysków)
+    *   [3.3 Tabela porównawcza](#Tabela_porównawcza)
         *   [3.3.1 Podsumowanie](#Podsumowanie)
         *   [3.3.2 Podstawowa klasyfikacja](#Podstawowa_klasyfikacja)
         *   [3.3.3 praktyczne implikacje](#praktyczne_implikacje)
         *   [3.3.4 Usability features](#Usability_features)
-        *   [3.3.5 Funkcje zabezpieczeń](#Funkcje_zabezpiecze.C5.84)
-        *   [3.3.6 Funkcje wydajności](#Funkcje_wydajno.C5.9Bci)
+        *   [3.3.5 Funkcje zabezpieczeń](#Funkcje_zabezpieczeń)
+        *   [3.3.6 Funkcje wydajności](#Funkcje_wydajności)
         *   [3.3.7 Block device encryption specific](#Block_device_encryption_specific)
-        *   [3.3.8 Skumulowane szyfrowanie systemu plików](#Skumulowane_szyfrowanie_systemu_plik.C3.B3w)
-        *   [3.3.9 Zgodność i rozpowszechnienie](#Zgodno.C5.9B.C4.87_i_rozpowszechnienie)
+        *   [3.3.8 Skumulowane szyfrowanie systemu plików](#Skumulowane_szyfrowanie_systemu_plików)
+        *   [3.3.9 Zgodność i rozpowszechnienie](#Zgodność_i_rozpowszechnienie)
 *   [4 Przygotowanie](#Przygotowanie)
-    *   [4.1 Wybór konfiguracji](#Wyb.C3.B3r_konfiguracji)
-    *   [4.2 Przykłady](#Przyk.C5.82ady)
-    *   [4.3 Wybieranie silnego hasła](#Wybieranie_silnego_has.C5.82a)
+    *   [4.1 Wybór konfiguracji](#Wybór_konfiguracji)
+    *   [4.2 Przykłady](#Przykłady)
+    *   [4.3 Wybieranie silnego hasła](#Wybieranie_silnego_hasła)
     *   [4.4 Przygotowanie dysku](#Przygotowanie_dysku)
-*   [5 Jak działa szyfrowanie](#Jak_dzia.C5.82a_szyfrowanie)
+*   [5 Jak działa szyfrowanie](#Jak_działa_szyfrowanie)
     *   [5.1 Podstawowa zasada](#Podstawowa_zasada)
-    *   [5.2 Klucze, pliki kluczy i hasła](#Klucze.2C_pliki_kluczy_i_has.C5.82a)
+    *   [5.2 Klucze, pliki kluczy i hasła](#Klucze,_pliki_kluczy_i_hasła)
     *   [5.3 Kryptograficzne metadane](#Kryptograficzne_metadane)
-    *   [5.4 Szyfry i tryby działania](#Szyfry_i_tryby_dzia.C5.82ania)
+    *   [5.4 Szyfry i tryby działania](#Szyfry_i_tryby_działania)
 
 ## Po co używać szyfrowania?
 
@@ -268,7 +272,7 @@ Chromium OS (encryption of cached user data [[7](#See_also)]) | ? |
 
 ### Wybór konfiguracji
 
-Która konfiguracja szyfrowania dysków jest odpowiednia, ponieważ zależy to od swoich celów (przeczytaj [#Po co używać szyfrowania?](#Po_co_u.C5.BCywa.C4.87_szyfrowania.3F) Powyżej i parametrów systemu.
+Która konfiguracja szyfrowania dysków jest odpowiednia, ponieważ zależy to od swoich celów (przeczytaj [#Po co używać szyfrowania?](#Po_co_używać_szyfrowania?) Powyżej i parametrów systemu.
 
 Między innymi będziesz musiał odpowiedzieć na następujące pytania:
 
@@ -391,11 +395,11 @@ Gdy system operacyjny lub aplikacja zażąda pewnego fragmentu danych z pliku bl
           ╠═══════╣         ╭┈┈┈┈┈╮
  sector 2 ║"???.."║         ┊ key ┊
           ╠═══════╣         ╰┈┈┬┈┈╯
-          :       :            │
+          :       :            │
           ╠═══════╣            ▼             ┣┉┉┉┉┉┉┉┫
  sector n ║"???.."║━━━━━━━(decryption)━━━━━━▶┋"abc.."┋ sector n
           ╠═══════╣                          ┣┉┉┉┉┉┉┉┫
-          :       :
+          :       :
           ╚═══════╝
 
           encrypted                          unencrypted
@@ -520,7 +524,7 @@ Najbardziej podstawowym (i wspólnym) trybem działania w praktyce jest "szyfrow
           │  ║          ║──────────────────╮      ┋          ┋
           │  ╟──────────╢                  │      ┠┈┈┈┈┈┈┈┈┈┈┨
           │  ║          ║                  ▼      ┋          ┋
-          :  :   ...    :        ...      ...     :   ...    : ...
+          :  :   ...    :        ...      ...     :   ...    : ...
 
                ciphertext                         plaintext
                   on disk                         in RAM

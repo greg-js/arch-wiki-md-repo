@@ -437,6 +437,8 @@ Alternatively, you can install the [bluez-hid2hci](https://www.archlinux.org/pac
 
 ```
 
+*   It might happen with some intel cards (such as the 8260) to not be picked up correctly by the bluetooth service, resulting in the previous command erroring with `no default controller available`. In some cases, using the deprecated [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/) in lieu of [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) have reportedly fixed the issue.
+
 ### rfkill unblock: Do not unblock
 
 If your device still soft blocked and you run connman, try this:

@@ -13,7 +13,11 @@ General info about the **Acer Aspire V5-573G** laptop. Everything pretty much wo
 
 **Note:** Most of this should also apply to the **Acer Aspire V7-582PG** and **Acer Aspire V7-582G** - those are higher tier models of the same, confirmed to be the same motherboard. Touchscreen wasn't tested on those.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Disabling UEFI Secure Boot](#Disabling_UEFI_Secure_Boot)
 *   [2 mSATA Slot](#mSATA_Slot)
@@ -27,7 +31,7 @@ General info about the **Acer Aspire V5-573G** laptop. Everything pretty much wo
 
 ## Disabling UEFI Secure Boot
 
-To disable Secure Boot, set the [supervisor password](https://acer.custhelp.com/app/answers/detail/a_id/29349/) in the BIOS settings. Then you should be able to disable Secure Boot and boot Arch.
+To disable Secure Boot, set the [supervisor password](https://us.answers.acer.com/app/answers/detail/a_id/29349/) in the BIOS settings. Then you should be able to disable Secure Boot and boot Arch.
 
 ## mSATA Slot
 

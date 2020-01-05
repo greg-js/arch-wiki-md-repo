@@ -73,6 +73,8 @@ CONFIG_MICROCODE_AMD=y
 
 ```
 
+**Note:** *grub-mkconfig* does not add the microcode images to the fallback initramfs boot entry. See [FS#60999](https://bugs.archlinux.org/task/60999).
+
 Alternatively, users that manage their GRUB config file manually can add `/boot/*cpu_manufacturer*-ucode.img` (or `/*cpu_manufacturer*-ucode.img` if `/boot` is a separate partition) as follows:
 
  `/boot/grub/grub.cfg` 

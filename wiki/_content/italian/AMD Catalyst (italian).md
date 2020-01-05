@@ -13,7 +13,11 @@ Un tempo, catalyst era un pacchetto precompilato scaricabile dal repostory [extr
 
 Comparando i Catalyst con i driver open source, si nota che i driver open source hanno performance 2D migliori. Le parti si invertono se si passa a considerare l'accelerazione 3D, dove i Catalyst hanno la meglio.Nella versione [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon"), ATI ha rielaborato lo schema identificativo per collegare ogni prodotto ad un determinato segmento di mercato. Dalla versione **9.4**, i drivers proprietari ATI **supportano solo schede R600 o più recenti** (il che significa, **HD2xxx** o **più nuove**). Per schede video più datate è disponibile solo il driver open source[xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). In questa guida, i lettori avranno modo di vedere sia i nomi del *product* (es. HD 4850, X1900) sia i nomi *code* o *core* (es. RV770, R580). Per ulteriori informazioni sui prodotti ATI consultare [Wikipedia:Comparison of AMD graphics processing units](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units"). Vedere anche la [wiki di Xorg](http://www.x.org/wiki/RadeonFeature#Decoder_ring_for_engineering_vs_marketing_names).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Installare i driver](#Installare_i_driver)
@@ -459,7 +463,7 @@ Per disabilitarla utilizzare `amdcccle` oppure da utente root eseguire:
 
 Nel mese di Novembre 2009, le VA-API hanno ottenuto un nuovo backend proprietario, **xvba-video**, che permette alle applicazioni abilitate all'uso delle VA-API di sfruttare i chipset AMD Radeon UVD2 attraverso la libreria [X-Video Bitstream Acceleration API di AMD](https://en.wikipedia.org/wiki/XvBA_XvBA "wikipedia:XvBA XvBA").
 
-Il supporto a XvBA e a xvba-video è ancora in fase di sviluppo, nonostante ciò **mplayer** (e relativi frontend) garantiscono un funzionamento decisamente soddisfacente. Per avvalersi delle funzionalità VA-API rese disponibili da mplayer è necessario compilare il pacchetto [http://[xvba-video](https://aur.archlinux.org/packages.php?ID=31723) ed installare mplayer-vaapi (disponibile nel repo community) & libva (disponibile nel repository extra).
+Il supporto a XvBA e a xvba-video è ancora in fase di sviluppo, nonostante ciò **mplayer** (e relativi frontend) garantiscono un funzionamento decisamente soddisfacente. Per avvalersi delle funzionalità VA-API rese disponibili da mplayer è necessario compilare il pacchetto [xvba-video](https://aur.archlinux.org/packages.php?ID=31723) ed installare mplayer-vaapi (disponibile nel repo community) & libva (disponibile nel repository extra).
 
 Installati questi pacchetti è sufficiente impostare come output video il parametro **vaapi:gl**.
 
@@ -875,7 +879,7 @@ Per ovviare a ciò è possibile modificare il file `/usr/share/applications/chro
  `/usr/share/applications/chromium.desktop` 
 ```
 ....
-Exec=chromium %U --ignore-gpu-blacklist
+Exec=chromium %U --ignore-gpu-blacklist
 ....
 ```
 

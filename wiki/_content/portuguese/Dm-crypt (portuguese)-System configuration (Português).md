@@ -83,14 +83,14 @@ Os parâmetros do kernel irão variar de acordo com qual hook (`encrypt` ou `sd-
 
 #### root
 
-O parâmetro `root=` especifica o `*dispositivo*` do sistema de arquivos raiz (decriptografado):
+O parâmetro `root=` especifica o `*dispositivo*` do sistema de arquivos raiz (descriptografado):
 
 ```
 root=*dispositivo*
 
 ```
 
-*   Se o sistema de arquivos foi colocado diretamente no dispositivo decriptografado, o caminho será `/dev/mapper/*dmnome*`.
+*   Se o sistema de arquivos foi colocado diretamente no dispositivo descriptografado, o caminho será `/dev/mapper/*dmnome*`.
 *   Se LVM vai ser ativado primeiro e contém um [volume lógico raiz criptografado](/index.php/Volume_l%C3%B3gico_raiz_criptografado "Volume lógico raiz criptografado"), a forma acima também é aplicável.
 *   Se o sistema de arquivos raiz está no volume lógico de uma [LVM criptografada](/index.php/LVM_criptografada "LVM criptografada"), o mapeador de dispositivos vai estar em sua forma genérica `root=/dev/*grupoDoVolume*/*volumeLógico*`.
 
@@ -122,7 +122,7 @@ cryptdevice=*dispositivo*:*nomedm*
 ```
 
 *   `*dispositivo*` é o caminho para o container criptografado que contém o sistema. É recomendado o uso da [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco").
-*   `*nomedm*` é o nome do **d**ispositivo **m**apeado que será dado ao container decriptografado, que estará disponível como `/dev/mapper/nomedm`.
+*   `*nomedm*` é o nome do **d**ispositivo **m**apeado que será dado ao container descriptografado, que estará disponível como `/dev/mapper/nomedm`.
 *   Se possui um [volume lógico raiz criptografado](/index.php/Volume_l%C3%B3gico_raiz_criptografado "Volume lógico raiz criptografado"), LVM vai ser ativado primeiro, o grupo de volumes e o volume lógico raiz serão o *dispositivo*. Coloque da seguinte forma `cryptdevice=*/dev/grupo_de_volumes/volume_lógico_raiz*:*nomedm*`.
 
 **Dica:** Você pode querer [habilitar suporte ao Discard/TRIM](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") para unidades de estado sólido (SSD).

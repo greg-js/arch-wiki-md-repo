@@ -112,7 +112,7 @@
     *   [5.43 Dirt Rally](#Dirt_Rally)
     *   [5.44 Divinity: Original Sin - Enhanced Edition](#Divinity:_Original_Sin_-_Enhanced_Edition)
         *   [5.44.1 Game does not start when using Bumblebee optirun or primusrun](#Game_does_not_start_when_using_Bumblebee_optirun_or_primusrun)
-        *   [5.44.2 Game does not work with amdgpu](#Game_does_not_work_with_amdgpu)
+        *   [5.44.2 Game does not work with mesa](#Game_does_not_work_with_mesa)
     *   [5.45 Don't Starve](#Don't_Starve)
         *   [5.45.1 No sound](#No_sound_3)
     *   [5.46 Doki Doki Literature Club](#Doki_Doki_Literature_Club)
@@ -221,122 +221,125 @@
     *   [5.94 Natural Selection 2](#Natural_Selection_2)
     *   [5.95 Nuclear Throne](#Nuclear_Throne)
         *   [5.95.1 Missing libcurl.so.4 or version CURL_OPENSSL_3 not found](#Missing_libcurl.so.4_or_version_CURL_OPENSSL_3_not_found_2)
-    *   [5.96 Oxygen Not Included](#Oxygen_Not_Included)
-        *   [5.96.1 World generation hangs](#World_generation_hangs)
-    *   [5.97 Penumbra: Overture](#Penumbra:_Overture)
-        *   [5.97.1 Windowed mode](#Windowed_mode_2)
-    *   [5.98 The Polynomial](#The_Polynomial)
-        *   [5.98.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
-    *   [5.99 Portal 2](#Portal_2)
-        *   [5.99.1 Game does not start](#Game_does_not_start_10)
-        *   [5.99.2 Resolution too low](#Resolution_too_low)
-        *   [5.99.3 Missing non Latin font](#Missing_non_Latin_font)
-    *   [5.100 Prison Architect](#Prison_Architect)
-        *   [5.100.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
-        *   [5.100.2 Game only starting in safe mode](#Game_only_starting_in_safe_mode)
-    *   [5.101 Project Zomboid](#Project_Zomboid)
-        *   [5.101.1 No sound](#No_sound_7)
-    *   [5.102 Pyre](#Pyre)
-        *   [5.102.1 Game does not start](#Game_does_not_start_11)
-    *   [5.103 Redshirt](#Redshirt)
-    *   [5.104 Revenge of the Titans](#Revenge_of_the_Titans)
-    *   [5.105 Rise of the Tomb Raider](#Rise_of_the_Tomb_Raider)
-    *   [5.106 Risk of Rain](#Risk_of_Rain)
-    *   [5.107 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-    *   [5.108 Saints Row IV](#Saints_Row_IV)
-        *   [5.108.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
-        *   [5.108.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
-    *   [5.109 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-        *   [5.109.1 No audio](#No_audio_2)
-    *   [5.110 Slay the Spire](#Slay_the_Spire)
-    *   [5.111 Songbringer](#Songbringer)
-        *   [5.111.1 Launch error with Wayland](#Launch_error_with_Wayland)
-    *   [5.112 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-        *   [5.112.1 No audio](#No_audio_3)
-    *   [5.113 Spacechem](#Spacechem)
-        *   [5.113.1 Game crash](#Game_crash)
-    *   [5.114 Splice](#Splice)
-    *   [5.115 The Stanley Parable](#The_Stanley_Parable)
-        *   [5.115.1 Game won't start](#Game_won't_start)
-    *   [5.116 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-    *   [5.117 Stardew Valley](#Stardew_Valley)
-        *   [5.117.1 Unable to move](#Unable_to_move)
-    *   [5.118 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-        *   [5.118.1 Start with black screen](#Start_with_black_screen)
-    *   [5.119 Stellaris](#Stellaris)
-        *   [5.119.1 No window opening, only sound](#No_window_opening,_only_sound)
-        *   [5.119.2 Immediate crash to desktop](#Immediate_crash_to_desktop)
-    *   [5.120 Stephen's Sausage Roll](#Stephen's_Sausage_Roll)
-        *   [5.120.1 No sound](#No_sound_8)
-    *   [5.121 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_&_Sworcery_EP)
-    *   [5.122 System Shock 2](#System_Shock_2)
-        *   [5.122.1 Game won't launch](#Game_won't_launch)
-        *   [5.122.2 Resolution fix](#Resolution_fix)
-    *   [5.123 Tabletop Simulator](#Tabletop_Simulator)
-        *   [5.123.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-    *   [5.124 Team Fortress 2](#Team_Fortress_2)
-        *   [5.124.1 HRTF setup](#HRTF_setup)
-        *   [5.124.2 Loading screen freeze](#Loading_screen_freeze)
-        *   [5.124.3 No audio](#No_audio_4)
-        *   [5.124.4 Slow loading textures](#Slow_loading_textures)
-        *   [5.124.5 "Invalid color format" Error at loading screen on integrated Intel Atom/BayTrail HD Graphics](#"Invalid_color_format"_Error_at_loading_screen_on_integrated_Intel_Atom/BayTrail_HD_Graphics)
-    *   [5.125 Terraria](#Terraria)
-        *   [5.125.1 Input Issues](#Input_Issues)
-    *   [5.126 This War of Mine](#This_War_of_Mine)
-        *   [5.126.1 Game does not start](#Game_does_not_start_12)
-        *   [5.126.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
-    *   [5.127 Ticket to Ride](#Ticket_to_Ride)
-    *   [5.128 The Tiny Bang Story](#The_Tiny_Bang_Story)
-        *   [5.128.1 Missing libGLEW.so.1.6](#Missing_libGLEW.so.1.6)
-    *   [5.129 Tomb Raider](#Tomb_Raider)
-        *   [5.129.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-        *   [5.129.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
-    *   [5.130 Torchlight 2](#Torchlight_2)
-        *   [5.130.1 Libfreetype/libfontconfig Incompatibility](#Libfreetype/libfontconfig_Incompatibility)
-        *   [5.130.2 Locale incompatibility](#Locale_incompatibility)
-    *   [5.131 Tower Unite](#Tower_Unite)
-        *   [5.131.1 Graphical Glitches](#Graphical_Glitches)
-    *   [5.132 Towns / Towns Demo](#Towns_/_Towns_Demo)
-    *   [5.133 Transistor](#Transistor)
-        *   [5.133.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_/_FMOD_binding_crash_/_audio_issues)
-    *   [5.134 Transmissions: Element 120](#Transmissions:_Element_120)
-        *   [5.134.1 Troubleshooting](#Troubleshooting)
-    *   [5.135 Trine 2](#Trine_2)
-        *   [5.135.1 Fullscreen](#Fullscreen)
-        *   [5.135.2 Colors](#Colors)
-        *   [5.135.3 Sound](#Sound)
-        *   [5.135.4 Resolution](#Resolution)
-        *   [5.135.5 Crash on start in libX11.so.6.3.0](#Crash_on_start_in_libX11.so.6.3.0)
-    *   [5.136 Tropico 5](#Tropico_5)
-        *   [5.136.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-    *   [5.137 Unity of Command](#Unity_of_Command)
-        *   [5.137.1 Squares](#Squares)
-        *   [5.137.2 No audio](#No_audio_5)
-    *   [5.138 Unity3D](#Unity3D)
-        *   [5.138.1 Locale settings](#Locale_settings)
-        *   [5.138.2 Unity 5 sound problems](#Unity_5_sound_problems)
-        *   [5.138.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode_2)
-        *   [5.138.4 Chinese/Japanese/Korean display bug](#Chinese/Japanese/Korean_display_bug)
-        *   [5.138.5 Game does not respond](#Game_does_not_respond)
-    *   [5.139 Unrest](#Unrest)
-    *   [5.140 Volgarr the Viking](#Volgarr_the_Viking)
-    *   [5.141 War Thunder](#War_Thunder)
-        *   [5.141.1 No audio](#No_audio_6)
-        *   [5.141.2 Blank screen](#Blank_screen)
-    *   [5.142 Warhammer 40,000: Dawn of War II](#Warhammer_40,000:_Dawn_of_War_II)
-    *   [5.143 We Were Here](#We_Were_Here)
-        *   [5.143.1 Stuck on black screen or logo on launch](#Stuck_on_black_screen_or_logo_on_launch)
-    *   [5.144 Worms W.M.D](#Worms_W.M.D)
-    *   [5.145 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-        *   [5.145.1 Game does not start](#Game_does_not_start_13)
-    *   [5.146 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [5.147 World of Goo](#World_of_Goo)
-        *   [5.147.1 Changing resolution](#Changing_resolution)
-    *   [5.148 X3: Terran Conflict](#X3:_Terran_Conflict)
-        *   [5.148.1 Game crashes on startup](#Game_crashes_on_startup)
-    *   [5.149 XCOM](#XCOM)
-        *   [5.149.1 Hangs on startup](#Hangs_on_startup)
-        *   [5.149.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+    *   [5.96 OneShot](#OneShot)
+        *   [5.96.1 Game fails to start](#Game_fails_to_start)
+    *   [5.97 Oxygen Not Included](#Oxygen_Not_Included)
+        *   [5.97.1 World generation hangs](#World_generation_hangs)
+    *   [5.98 Penumbra: Overture](#Penumbra:_Overture)
+        *   [5.98.1 Windowed mode](#Windowed_mode_2)
+    *   [5.99 The Polynomial](#The_Polynomial)
+        *   [5.99.1 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
+    *   [5.100 Portal 2](#Portal_2)
+        *   [5.100.1 Game does not start](#Game_does_not_start_10)
+        *   [5.100.2 Resolution too low](#Resolution_too_low)
+        *   [5.100.3 Missing non Latin font](#Missing_non_Latin_font)
+    *   [5.101 Prison Architect](#Prison_Architect)
+        *   [5.101.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
+        *   [5.101.2 Game only starting in safe mode](#Game_only_starting_in_safe_mode)
+    *   [5.102 Project Zomboid](#Project_Zomboid)
+        *   [5.102.1 No sound](#No_sound_7)
+    *   [5.103 Pyre](#Pyre)
+        *   [5.103.1 Game does not start](#Game_does_not_start_11)
+    *   [5.104 Redshirt](#Redshirt)
+    *   [5.105 Revenge of the Titans](#Revenge_of_the_Titans)
+    *   [5.106 Rise of the Tomb Raider](#Rise_of_the_Tomb_Raider)
+    *   [5.107 Risk of Rain](#Risk_of_Rain)
+    *   [5.108 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
+    *   [5.109 Saints Row IV](#Saints_Row_IV)
+        *   [5.109.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
+        *   [5.109.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
+    *   [5.110 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
+        *   [5.110.1 No audio](#No_audio_2)
+    *   [5.111 Slay the Spire](#Slay_the_Spire)
+    *   [5.112 Songbringer](#Songbringer)
+        *   [5.112.1 Launch error with Wayland](#Launch_error_with_Wayland)
+    *   [5.113 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+        *   [5.113.1 No audio](#No_audio_3)
+    *   [5.114 Spacechem](#Spacechem)
+        *   [5.114.1 Game crash](#Game_crash)
+    *   [5.115 Splice](#Splice)
+    *   [5.116 The Stanley Parable](#The_Stanley_Parable)
+        *   [5.116.1 Game won't start](#Game_won't_start)
+    *   [5.117 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+    *   [5.118 Stardew Valley](#Stardew_Valley)
+        *   [5.118.1 Unable to move](#Unable_to_move)
+    *   [5.119 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+        *   [5.119.1 Start with black screen](#Start_with_black_screen)
+    *   [5.120 Stellaris](#Stellaris)
+        *   [5.120.1 No window opening, only sound](#No_window_opening,_only_sound)
+        *   [5.120.2 Immediate crash to desktop](#Immediate_crash_to_desktop)
+    *   [5.121 Stephen's Sausage Roll](#Stephen's_Sausage_Roll)
+        *   [5.121.1 No sound](#No_sound_8)
+    *   [5.122 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_&_Sworcery_EP)
+    *   [5.123 System Shock 2](#System_Shock_2)
+        *   [5.123.1 Game won't launch](#Game_won't_launch)
+        *   [5.123.2 Resolution fix](#Resolution_fix)
+    *   [5.124 Tabletop Simulator](#Tabletop_Simulator)
+        *   [5.124.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+    *   [5.125 Team Fortress 2](#Team_Fortress_2)
+        *   [5.125.1 HRTF setup](#HRTF_setup)
+        *   [5.125.2 Loading screen freeze](#Loading_screen_freeze)
+        *   [5.125.3 No audio](#No_audio_4)
+        *   [5.125.4 Slow loading textures](#Slow_loading_textures)
+        *   [5.125.5 "Invalid color format" Error at loading screen on integrated Intel Atom/BayTrail HD Graphics](#"Invalid_color_format"_Error_at_loading_screen_on_integrated_Intel_Atom/BayTrail_HD_Graphics)
+    *   [5.126 Terraria](#Terraria)
+        *   [5.126.1 Input Issues](#Input_Issues)
+    *   [5.127 This War of Mine](#This_War_of_Mine)
+        *   [5.127.1 Game does not start](#Game_does_not_start_12)
+        *   [5.127.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
+    *   [5.128 Ticket to Ride](#Ticket_to_Ride)
+    *   [5.129 The Tiny Bang Story](#The_Tiny_Bang_Story)
+        *   [5.129.1 Missing libGLEW.so.1.6](#Missing_libGLEW.so.1.6)
+    *   [5.130 Tomb Raider](#Tomb_Raider)
+        *   [5.130.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+        *   [5.130.2 Steam Controller not working in-game](#Steam_Controller_not_working_in-game)
+    *   [5.131 Torchlight 2](#Torchlight_2)
+        *   [5.131.1 Libfreetype/libfontconfig Incompatibility](#Libfreetype/libfontconfig_Incompatibility)
+        *   [5.131.2 Locale incompatibility](#Locale_incompatibility)
+    *   [5.132 Tower Unite](#Tower_Unite)
+        *   [5.132.1 Graphical Glitches](#Graphical_Glitches)
+    *   [5.133 Towns / Towns Demo](#Towns_/_Towns_Demo)
+    *   [5.134 Transistor](#Transistor)
+        *   [5.134.1 Crash on launch / FMOD binding crash / audio issues](#Crash_on_launch_/_FMOD_binding_crash_/_audio_issues)
+    *   [5.135 Transmissions: Element 120](#Transmissions:_Element_120)
+        *   [5.135.1 Troubleshooting](#Troubleshooting)
+    *   [5.136 Trine 2](#Trine_2)
+        *   [5.136.1 Fullscreen](#Fullscreen)
+        *   [5.136.2 Colors](#Colors)
+        *   [5.136.3 Sound](#Sound)
+        *   [5.136.4 Resolution](#Resolution)
+        *   [5.136.5 Crash on start in libX11.so.6.3.0](#Crash_on_start_in_libX11.so.6.3.0)
+    *   [5.137 Tropico 5](#Tropico_5)
+        *   [5.137.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+    *   [5.138 Unity of Command](#Unity_of_Command)
+        *   [5.138.1 Squares](#Squares)
+        *   [5.138.2 No audio](#No_audio_5)
+    *   [5.139 Unity3D](#Unity3D)
+        *   [5.139.1 Locale settings](#Locale_settings)
+        *   [5.139.2 Unity 5 sound problems](#Unity_5_sound_problems)
+        *   [5.139.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode_2)
+        *   [5.139.4 Chinese/Japanese/Korean display bug](#Chinese/Japanese/Korean_display_bug)
+        *   [5.139.5 Game does not respond](#Game_does_not_respond)
+    *   [5.140 Unrest](#Unrest)
+    *   [5.141 Volgarr the Viking](#Volgarr_the_Viking)
+    *   [5.142 War Thunder](#War_Thunder)
+        *   [5.142.1 No audio](#No_audio_6)
+        *   [5.142.2 Blank screen](#Blank_screen)
+    *   [5.143 Warhammer 40,000: Dawn of War II](#Warhammer_40,000:_Dawn_of_War_II)
+    *   [5.144 Wasteland 2](#Wasteland_2)
+    *   [5.145 We Were Here](#We_Were_Here)
+        *   [5.145.1 Stuck on black screen or logo on launch](#Stuck_on_black_screen_or_logo_on_launch)
+    *   [5.146 Worms W.M.D](#Worms_W.M.D)
+    *   [5.147 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+        *   [5.147.1 Game does not start](#Game_does_not_start_13)
+    *   [5.148 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [5.149 World of Goo](#World_of_Goo)
+        *   [5.149.1 Changing resolution](#Changing_resolution)
+    *   [5.150 X3: Terran Conflict](#X3:_Terran_Conflict)
+        *   [5.150.1 Game crashes on startup](#Game_crashes_on_startup)
+    *   [5.151 XCOM](#XCOM)
+        *   [5.151.1 Hangs on startup](#Hangs_on_startup)
+        *   [5.151.2 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Introduction
 
@@ -1200,41 +1203,45 @@ LD_LIBRARY_PATH="." primusrun ./EoCApp
 
 ```
 
-#### Game does not work with amdgpu
+#### Game does not work with mesa
 
 It is a known bug and they have no intention of fixing it, see [the bug](https://bugs.freedesktop.org/show_bug.cgi?id=93551).
 
-Workaround:
+Workaround[[8]](https://www.gamingonlinux.com/articles/divinity-original-sin-may-soon-work-with-mesa-drivers.8867/comment_id=81524) (see [step by step guide](https://bugs.freedesktop.org/show_bug.cgi?id=93551#c46))
 
-Get the following file: [https://bugs.freedesktop.org/attachment.cgi?id=125302](https://bugs.freedesktop.org/attachment.cgi?id=125302) and rename it to `shim.c`
+Get the following file: [https://bugs.freedesktop.org/attachment.cgi?id=125302](https://bugs.freedesktop.org/attachment.cgi?id=125302) and rename it to `divos-hack.c`
 
 Then execute
 
 ```
-$ gcc -shared -fpic shim.c -o divhack.so
+$ gcc -s -O2 -shared -fPIC -o divos-hack.{so,c} -ldl
 
 ```
 
-Next, start *steam* and open a console, change to the diviniti directory with
+Copy the `divos-hack.so` to the *game* folder.
+
+For GOG version, go to the said game folder and run Divinity with the following command
+
+```
+$ allow_glsl_extension_directive_midshader=true LD_PRELOAD="divos-hack.so" ./runner.sh
+
+```
+
+For *steam*, open a console, change to the divinity directory with
 
 ```
 $ cd ~/.steam/steam/steamapps/common/Divinity Original Sin Enhanced Edition
 
 ```
 
-Edit the contained `runner.sh` as follows:
+Launch steam and got o the preferences of the game, and open the "Set Launch Options" dialogue. There, put the following
 
 ```
-export MESA_GL_VERSION_OVERRIDE=4.2
-export MESA_GLSL_VERSION_OVERRIDE=420
-export LD_PRELOAD=/path/to/divhack.so
-export LD_LIBRARY_PATH="."
-./EoCApp
+allow_glsl_extension_directive_midshader=true LD_PRELOAD="divos-hack.so:$LD_PRELOAD" %command%
+
 ```
 
-Then just start the game. In case it still crashes on loading you may also need to add
-
- `export allow_glsl_extension_directive_midshader=true` 
+Then just start the game.
 
 ### Don't Starve
 
@@ -1293,7 +1300,7 @@ SDL_GL_LoadLibrary(NULL) failed: Failed loading libGL.so.1: /usr/lib32/libxcb-dr
 
 #### Steam overlay
 
-Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [[8]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[9]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
+Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [[9]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[10]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
 
 #### Chinese tips and player names not shown
 
@@ -1701,7 +1708,7 @@ Requires [lib32-glew1.10](https://www.archlinux.org/packages/?name=lib32-glew1.1
 
 ### Life is Strange
 
-Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0), [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image), [gconf](https://www.archlinux.org/packages/?name=gconf).
+Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0), [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image), [gconf](https://aur.archlinux.org/packages/gconf/).
 
 ### Little Racers STREET
 
@@ -1853,7 +1860,7 @@ If Multiwinia crashes on startup on X64 systems, force launching the 32-bit exec
 
 ```
 
-See [[10]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
+See [[11]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
 
 ### Natural Selection 2
 
@@ -1876,13 +1883,19 @@ The environment variable `SDL_VIDEODRIVER` must not be set to `wayland`. Try set
 
 [Install](/index.php/Install "Install") [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) and run the game with `LD_PRELOAD=libcurl.so.3`.
 
+### OneShot
+
+#### Game fails to start
+
+This problem occurs because the game use outdated libraries. Go to the game directory and remove libdrm.so.2, libGLdispatch.so.0, and libstdc++.so.6\. Those files usually have an equivalent already installed on the system.
+
 ### Oxygen Not Included
 
 #### World generation hangs
 
 This problem occurs with locales that use comas instead of dots to separate decimals.
 
-Set launch options in steam to `LANG=C %command%`.[[11]](http://steamcommunity.com/app/457140/discussions/3/1488866180617243731/#c1488866813753688864)
+Set launch options in steam to `LANG=C %command%`.[[12]](http://steamcommunity.com/app/457140/discussions/3/1488866180617243731/#c1488866813753688864)
 
 ### Penumbra: Overture
 
@@ -2192,7 +2205,7 @@ and seeing if you get output like
 
 ```
 
-If this is indeed your problem, download the libnss-sss package from Ubuntu's repository [[12]](https://packages.ubuntu.com/bionic/i386/libnss-sss/download), extract the libnss_sss.so.2 from the downloaded package, and place it at ~/.local/share/Steam/steamapps/common/Stellaris. The game should now load properly.
+If this is indeed your problem, download the libnss-sss package from Ubuntu's repository [[13]](https://packages.ubuntu.com/bionic/i386/libnss-sss/download), extract the libnss_sss.so.2 from the downloaded package, and place it at ~/.local/share/Steam/steamapps/common/Stellaris. The game should now load properly.
 
 ### Stephen's Sausage Roll
 
@@ -2248,7 +2261,7 @@ Dependencies:
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
 *   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) if you use PulseAudio
 
-The game bundles an outdated version of libstdc++ which prevents the game from starting. [[13]](http://steamcommunity.com/app/204060/discussions/0/364039785161291413) The following can be observed when you run Steam and S&S from the terminal:
+The game bundles an outdated version of libstdc++ which prevents the game from starting. [[14]](http://steamcommunity.com/app/204060/discussions/0/364039785161291413) The following can be observed when you run Steam and S&S from the terminal:
 
 ```
 libGL error: unable to load driver: i965_dri.so
@@ -2459,9 +2472,9 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 ```
 
-Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[14]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
+Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[15]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[15]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
+Also, check out this thread [[16]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
 
 ### Transmissions: Element 120
 
@@ -2636,7 +2649,7 @@ If there is no audio after launching the game, install [pulseaudio-alsa](https:/
 
 #### Blank screen
 
-If having a green or blank screen on startup, run the game with `MESA_GL_VERSION_OVERRIDE=4.1COMPAT`. [[16]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[17]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen on startup, run the game with `MESA_GL_VERSION_OVERRIDE=4.1COMPAT`. [[17]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[18]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 steam startup WarThunder need set startup options `XMODIFIERS="" %command%`
 
@@ -2662,11 +2675,22 @@ with:
 
  `LD_PRELOAD_ADDITIONS="/usr/lib64/libasound.so.2:${LD_PRELOAD_ADDITIONS}"` 
 
+### Wasteland 2
+
+If Wasteland 2 immediately exits when you try to launch it there may not be enough system file descriptors available. To increase the descriptor limit edit **/etc/security/limits.conf** and add the line:
+
+```
+* hard nofile 524288
+
+```
+
+Then reboot for the new limit to take effect, Wasteland 2 should now launch and this setting might also fix other games.
+
 ### We Were Here
 
 #### Stuck on black screen or logo on launch
 
-Add `-screen-fullscreen 0` to launch options. [[18]](https://steamcommunity.com/app/582500/discussions/1/1470840994974091613/)
+Add `-screen-fullscreen 0` to launch options. [[19]](https://steamcommunity.com/app/582500/discussions/1/1470840994974091613/)
 
 ### Worms W.M.D
 
@@ -2679,7 +2703,7 @@ $ ln -s ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/*dbu
 
 ```
 
-Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[19]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[20]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
+Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[20]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[21]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
 
 On some systems there are terrain bugs where holes in terrain are not rendered properly and worms can fall through terrain unexpectedly. These bugs can make the game unplayable in many situations and there is no known fix for them.
 

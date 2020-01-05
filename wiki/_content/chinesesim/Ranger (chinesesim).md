@@ -29,7 +29,7 @@ Related articles
         *   [4.1.2 压缩](#压缩)
     *   [4.2 外部驱动](#外部驱动)
     *   [4.3 镜像挂载](#镜像挂载)
-    *   [4.4 PDF file preview](#PDF_file_preview)
+    *   [4.4 PDF文件预览](#PDF文件预览)
     *   [4.5 在当前目录打开新标签](#在当前目录打开新标签)
     *   [4.6 Shell tips](#Shell_tips)
         *   [4.6.1 目录同步](#目录同步)
@@ -224,7 +224,7 @@ PS: 如果需要解压 ZIP 压缩包还需要安装 [unzip-iconv](https://aur.ar
 
 #### 压缩
 
-The following command allows the user to compress several files on the current directory by marking them and then calling ":compress <package name>". It supports name suggestions by getting the basename of the current directory and appending several possibilities for the extension.
+以下命令允许用户将当前目录下选中的文件通过":compress <package name>"命令压缩。它还支持通过当前目录名和为扩展名追加几种可能性来建议名称。
 
 ```
 import os
@@ -323,11 +323,11 @@ class mount(Command):
         self.fm.loader.add(obj)
 ```
 
-### PDF file preview
+### PDF文件预览
 
-By default, ranger will preview PDF files as text. However, you can preview PDF files as an image in ranger by first converting the PDF file to an image. Ranger stores the image previews in `~/.cache/ranger/`. You either need to create this directory manually or set `preview_images` to `true` in `~/.config/ranger/rc.conf` to tell `ranger` to create it automatically at the next start. However, note that `preview_images` does not need to be set to `true` the whole time to preview PDF file as images, only `~/.cache/ranger` directory is needed.
+在默认情况下，`ranger`将会以文本的形式预览PDF文件。然后，你可以通过先将PDF文件转换为图片，再以图片的方式预览PDF文件。`ranger`将图片预览保存在 `~/.cache/ranger/`目录下。你需要手动创建这个目录，或者在`~/.config/ranger/rc.conf`将`preview_images`设置为`true`来让`ranger`在下一次启动时自动创建这个目录。然而，请注意你并不需要将`preview_images`一直设置为`true`来以图片的方式预览PDF文件，只要有 `~/.cache/ranger`就可以了。
 
-To enable this feature, uncomment the appropriate lines in `/usr/share/doc/ranger/config/scope.sh`, or add/uncomment these lines in your local file `~/.config/ranger/scope.sh`.
+为了启用这个功能，你可以在`/usr/share/doc/ranger/config/scope.sh`去掉相应行的注释，或者在你本地文件`~/.config/ranger/scope.sh`中增加/取消注释这些行。
 
 ### 在当前目录打开新标签
 

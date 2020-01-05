@@ -7,7 +7,11 @@
 
 [Wicd](http://www.wicd.net/)是一个既能管理有线网络又能管理无线网络的网络接入管理器，是 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的一个功能相似的替代。Wicd是用[Python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)")和[GTK+](/index.php/GTK%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GTK+ (简体中文)")写成的。另外，一个用[Qt](/index.php/Qt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Qt (简体中文)")写成的在[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")中工作的版本，可以从 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")得到。Wicd 也可以从终端中用 curses 界面运行，不需要 X server 会话或者任务面板 (参见 [#运行 Wicd](#运行_Wicd))。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 基础软件包](#基础软件包)

@@ -535,9 +535,9 @@ rc-manager=resolvconf
 
 ### Firewall
 
-You can assign a [firewalld](/index.php/Firewalld "Firewalld") zone based on your current connection. For exemple a restrictive firewall when at work, and a less restrictive one when at home.
+You can assign a [firewalld](/index.php/Firewalld "Firewalld") zone based on your current connection. For example a restrictive firewall when at work, and a less restrictive one when at home.
 
-This can also be done with [NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
+This can also be done with [NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher).
 
 ## Network services with NetworkManager dispatcher
 

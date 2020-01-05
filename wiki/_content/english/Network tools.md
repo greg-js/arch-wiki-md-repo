@@ -34,17 +34,21 @@ There are several implementations available:
 
 See also [Wikipedia:Netcat](https://en.wikipedia.org/wiki/Netcat "wikipedia:Netcat").
 
-*   **GNU Netcat** — GNU rewrite of netcat, the network piping application.
+*   **GNU Netcat** — GNU rewrite of netcat, the network piping application. Does not support IPv6.
 
 	[http://netcat.sourceforge.net/](http://netcat.sourceforge.net/) || [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat)
 
-*   **openbsd-netcat** — TCP/IP swiss army knife. OpenBSD variant.
-
-	[https://packages.debian.org/sid/netcat-openbsd](https://packages.debian.org/sid/netcat-openbsd) || [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat)
-
-*   **libressl-netcat** — Low level UDP/TCP connection tool with support for TLS protocol.
+*   **LibreSSL netcat** — Low level UDP/TCP connection tool with support for TLS protocol.
 
 	[https://www.libressl.org](https://www.libressl.org) || [libressl-netcat](https://aur.archlinux.org/packages/libressl-netcat/)
+
+*   **Ncat** — Netcat implementation from Nmap project.
+
+	[https://nmap.org/ncat/](https://nmap.org/ncat/) || [nmap](https://www.archlinux.org/packages/?name=nmap)
+
+*   **OpenBSD netcat** — TCP/IP swiss army knife. OpenBSD variant.
+
+	[https://packages.debian.org/sid/netcat-openbsd](https://packages.debian.org/sid/netcat-openbsd) || [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat)
 
 A more complex alternative is [socat](https://www.archlinux.org/packages/?name=socat).
 

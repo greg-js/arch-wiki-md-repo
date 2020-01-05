@@ -328,6 +328,26 @@ $ lpq -a # on all queues
 
 ```
 
+	View ink levels
+
+Install [ink](https://aur.archlinux.org/packages/ink/).
+
+Add your user to the `lp` [user group](/index.php/User_group "User group"):
+
+```
+# usermod -aG lp <user>
+
+```
+
+Log out and log in again.
+
+For usage information, use:
+
+```
+$ ink
+
+```
+
 ### Web interface
 
 The CUPS server can be fully administered through the web interface, available on [http://localhost:631/](http://localhost:631/).

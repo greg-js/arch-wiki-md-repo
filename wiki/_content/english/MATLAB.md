@@ -505,7 +505,7 @@ Matlab will then regenerate the contents on the next Live Editor start.
 A better option is to replace libgcrypt symlink in this extraction directory with a less precise one. For example, after extraction, this link to /lib64/libgcrypt.so.20.2.4 is created. Replace it with e.g. /lib64/libgcrypt.so.20.
 
 *   Also the steps in [#Addon manager not working](#Addon_manager_not_working) may resolve the issue.
-*   It can also happen due to missing gconf package. Make sure [gconf](https://www.archlinux.org/packages/?name=gconf) is installed.
+*   It can also happen due to missing gconf package. Make sure [gconf](https://aur.archlinux.org/packages/gconf/) is installed.
 *   If the above does not help, execute in the command window
 
 ```

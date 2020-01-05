@@ -130,7 +130,7 @@
 | <small>6.7.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(2)</small> |
 | <small>6.7.1.</small> [Tela de inicialização](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
 | <small>6.8.</small> [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(5)</small> |
-| <small>6.8.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(6) (também em [Encriptação](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)"))</small> |
+| <small>6.8.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(8) (também em [Encriptação](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)"))</small> |
 | <small>6.8.2.</small> [Virtualização de armazenamento](/index.php/Category:Storage_virtualization_(Portugu%C3%AAs) "Category:Storage virtualization (Português)") <small>(1)</small> |
 | <small>6.9.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(4)</small> |
 | <small>6.10.</small> [Interfaces gráficas de usuário](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(6)</small> |
@@ -158,7 +158,7 @@
 | <small>6.20.1.</small> [Controle de acesso](/index.php/Category:Access_control_(Portugu%C3%AAs) "Category:Access control (Português)") <small>(1)</small> |
 | <small>6.20.2.</small> [Criptografia](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |
 | <small>6.20.2.1.</small> [Encriptação](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)") <small>(2)</small> |
-| <small>6.20.2.1.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(6) (também em [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)"))</small> |
+| <small>6.20.2.1.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(8) (também em [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)"))</small> |
 | <small>6.20.3.</small> [Sandboxing](/index.php/Category:Sandboxing_(Portugu%C3%AAs) "Category:Sandboxing (Português)") <small>(1)</small> |
 | <small>6.20.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(5) (também em [Protocolos](/index.php/Category:Protocols_(Portugu%C3%AAs) "Category:Protocols (Português)"))</small> |
 | <small>6.20.5.</small> [Rede Privada Virtual (VPN)](/index.php/Category:Virtual_Private_Network_(Portugu%C3%AAs) "Category:Virtual Private Network (Português)") <small>(2) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"), [Servidores](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |

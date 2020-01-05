@@ -21,30 +21,20 @@ Want to see it in action? A StumpWM user created a [video](http://www.archive.or
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-    *   [1.1 With SBCL](#With_SBCL)
-    *   [1.2 With Clisp](#With_Clisp)
 *   [2 Documentation and Support](#Documentation_and_Support)
-*   [3 Tweaking](#Tweaking)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Change cursor from default X shape](#Change_cursor_from_default_X_shape)
-    *   [4.2 Change window focus on mouse click](#Change_window_focus_on_mouse_click)
-    *   [4.3 Enable modeline](#Enable_modeline)
-    *   [4.4 Set font for messages and modeline](#Set_font_for_messages_and_modeline)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Change cursor from default X shape](#Change_cursor_from_default_X_shape)
+    *   [3.2 Change window focus on mouse click](#Change_window_focus_on_mouse_click)
+    *   [3.3 Enable modeline](#Enable_modeline)
+    *   [3.4 Set font for messages and modeline](#Set_font_for_messages_and_modeline)
+*   [4 Tweaking](#Tweaking)
 *   [5 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [stumpwm](https://aur.archlinux.org/packages/stumpwm/) or [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/). The stable version supports multiple common-lisp implementations. The git version only supports sbcl.
+[Install](/index.php/Install "Install") [stumpwm](https://aur.archlinux.org/packages/stumpwm/) or [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/).
 
-SBCL is recommended for maximum performance.
-
-After installing put `exec stumpwm` in your `~/.xinitrc` and run `startx`.
-
-To quit, with the default configuration press `C-t ;` then type quit and press enter.
-
-### With SBCL
-
-Install these packages in the following order:
+If you are installing without an AUR helper, you should install these packages in the following order:
 
 *   [sbcl](https://www.archlinux.org/packages/?name=sbcl)
 *   [cl-alexandria-git](https://aur.archlinux.org/packages/cl-alexandria-git/)
@@ -52,30 +42,17 @@ Install these packages in the following order:
 *   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)
 *   [stumpwm](https://aur.archlinux.org/packages/stumpwm/) or [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)
 
-### With Clisp
+After installing put `exec stumpwm` in your `~/.xinitrc` and run `startx`. To quit, with the default configuration press `C-t ;` then type quit and press enter.
 
-Install these packages from AUR in the following order:
+Both packages will install an xsession entry in `/usr/share/xsessions` so if you use a display manager that checks that directory, you should be good to go.
 
-*   [clisp-new-clx](https://aur.archlinux.org/packages/clisp-new-clx/)
-*   [asdf](https://aur.archlinux.org/packages/asdf/)
-*   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)
-*   [stumpwm](https://aur.archlinux.org/packages/stumpwm/)
-
-Also, look at [this post](https://bbs.archlinux.org/viewtopic.php?pid=543537#p543537) if you run into troubles.
+For a list of commonly used key-bindings, press `C-t ?`.
 
 ## Documentation and Support
 
-There is a TeXInfo manual included in the AUR package, the source, and [online](https://stumpwm.github.io/git/stumpwm-git.html).
+There is a TeXInfo manual included in the AUR packages, the source, and [online](https://stumpwm.github.io/git/stumpwm-git.html).
 
-There is also a [wiki](http://github.com/sabetts/stumpwm/wiki), an IRC channel (#stumpwm) on Freenode, and a mailing list. For more information, of course, see [the project's website](https://stumpwm.github.io/).
-
-## Tweaking
-
-See the wiki for a variety of useful tweaks for your .stumpwmrc.
-
-If you are an emacs user, you will find an emacs minor mode for editing StumpWM files (and interfacing with the program `stumpish`, but more on that below) in the contrib/ directory of the StumpWM source. If you are using clisp, this file can also be found in `/usr/share/stumpwm/`.
-
-`stumpish` is the STUMP window manager Interactive SHell. It is a program that allows the user to interact with StumpWM while it is running, from the comfort of a terminal (or using the emacs mode). It can be found in the contrib/ directory of the StumpWM source. If you use clisp, this file can also be found in `/usr/bin/`.
+There is also a [wiki](http://github.com/sabetts/stumpwm/wiki), an IRC channel (#stumpwm) on Freenode, and a [mailing list](https://lists.nongnu.org/mailman/listinfo/stumpwm-devel). For more information, see [the project's website](https://stumpwm.github.io/).
 
 ## Configuration
 
@@ -149,6 +126,14 @@ StumpWM uses the default XOrg font which is probably small and pixellated. You c
 (set-font (make-instance 'xft:font :family "DejaVu Sans Mono" :subfamily "Book" :size 11))
 
 ```
+
+## Tweaking
+
+See the wiki for a variety of useful tweaks for your .stumpwmrc.
+
+If you are an emacs user, you will find an emacs minor mode for editing StumpWM files (and interfacing with the program `stumpish`, but more on that below) in the contrib/ directory of the StumpWM source.
+
+`stumpish` is the STUMP window manager Interactive SHell. It is a program that allows the user to interact with StumpWM while it is running, from the comfort of a terminal (or using the emacs mode). It is installed with StumpWM in `/usr/bin/`.
 
 ## Troubleshooting
 

@@ -141,7 +141,10 @@ Arch Linux官方支持开源的 [OpenJDK](https://openjdk.java.net/) 版本7、8
 
 	[https://varaneckas.com/jad](https://varaneckas.com/jad) || [jad](https://www.archlinux.org/packages/?name=jad)
 
-*   {{App|JD-Core-java|[[Wikipedia:Java Decompiler|Java反编译器]的薄包装].|[https://github.com/nviennot/jd-core-java%7C](https://github.com/nviennot/jd-core-java%7C)[jd-core-java](https://aur.archlinux.org/packages/jd-core-java/)}}
+*   **JD-Core-java** — [Java反编译器]的薄包装](https://en.wikipedia.org/wiki/Java_Decompiler "wikipedia:Java Decompiler").
+
+	[https://github.com/nviennot/jd-core-java](https://github.com/nviennot/jd-core-java) || [jd-core-java](https://aur.archlinux.org/packages/jd-core-java/)
+
 *   **Krakatau** — Java的反编译器，汇编器和反汇编器.
 
 	[https://github.com/Storyyeller/Krakatau](https://github.com/Storyyeller/Krakatau) || [krakatau-git](https://aur.archlinux.org/packages/krakatau-git/)

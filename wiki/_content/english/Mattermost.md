@@ -81,12 +81,12 @@ There are also some Docker images provided on the [official Mattermost Docker Hu
 
 *   The installation will create the `mattermost` user and group.
 *   The configuration happens in `/etc/webapps/mattermost/config.json` where `/etc/webapps/mattermost/` and `/etc/webapps/mattermost/config.json` are both owned by `mattermost:mattermost`.
-*   In `/var/lib/mattermost/` owned recursively by `mattermost:mattermost`, we can find:
+*   In `/var/lib/mattermost/` recursively owned by `mattermost:mattermost`, we can find:
     *   `files`, a folder where all user files posted via messages, profile pictures and team pictures are stored;
-    *   `client`, a folder related to the webapp client which contains files rewritten by the webapp during runtime and in the `plugins` subfolder the web plugins installed via the webui;
-    *   `plugins`, a folder related to the plugins (server part)
-*   In `/var/log/mattermost`, a folder created on the fly during the install process (cf. [TmpFile](/index.php/Systemd#Temporary_files "Systemd")) which stores the server logs as json. `/var/log/mattermost` and `/var/log/mattermost/mattermost.log` are both owned by `mattermost:mattermost`.
-*   The rest of the immutable Mattermost directory is located at `/var/lib/mattermost` and is owned by `mattermost:mattermost`.
+    *   `client`, a folder related to the webapp client which contains files rewritten by the webapp during runtime and, in the `plugins` subfolder, the web plugins installed via the webui;
+    *   `plugins`, a folder related to the plugins (server part).
+*   In `/var/log/mattermost`, a folder created on the fly during the install process (cf. [tmpfiles.d](/index.php/Systemd#Temporary_files "Systemd")) which stores the server logs as json. `/var/log/mattermost` and `/var/log/mattermost/mattermost.log` are both owned by `mattermost:mattermost`.
+*   The rest of the immutable Mattermost directory is located at `/usr/share/webapps/mattermost/` and is recursively owned by `root:root`.
 
 Continue with [#Database setup](#Database_setup).
 

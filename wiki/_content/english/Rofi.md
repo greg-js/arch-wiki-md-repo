@@ -23,11 +23,14 @@ Related articles
 
 ## Configuration
 
-There are currently three methods of setting configuration options:
+There are currently four methods of setting configuration options:
 
 *   Local configuration. Normally, depending on XDG, in `~/.config/rofi/config`. This uses the Xresources format.
+*   New theme format, which can have a configuration block. `~/.config/rofi/config.rasi`
 *   Xresources: A method of storing key values in the Xserver.
 *   Command line options
+
+**Note:** Xresources format will be obsolete in future rofi versions
 
 So
 
@@ -36,19 +39,19 @@ rofi -combi-modi window,drun,ssh -theme solarized -font "hack 10" -show combi
 
 ```
 
-can be expressed in a config file like this:
+can be expressed in a config file like this (New theme format):
 
 ```
 configuration {
  modi: "window,drun,ssh,combi";
- theme: solarized;
+ theme: "solarized";
  font: "hack 10";
  combi-modi: "window,drun,ssh";
  }
 
 ```
 
-To get a full list of options you can put in Xresources or in your config file run `rofi -dump-config`. You can write the output of the command directly to your `config` file while running `rofi -dump-config > ~/.config/rofi/config`
+To get a full list of options for `config.rasi` file run `rofi -dump-config`. You can write the output of the command directly to your `config` file while running `rofi -dump-config > ~/.config/rofi/config.rasi`
 
 **Note:** i3 users be aware that putting commas in i3 config can cause issues. To bind a key to launch rofi, either use a config file or replace the commas with `#` eg `rofi -combi-modi window#drun#ssh`
 

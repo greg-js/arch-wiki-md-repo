@@ -248,7 +248,7 @@ Você pode formatar um dispositivo dedicado para o journal com `mke2fs -O journa
 
 ### Usando criptografia baseada em arquivos
 
-Desde o Linux 4.1, o ext4 possui suporte nativo a criptografia de arquivos. A criptografia é aplicada no nível do diretório, e diretórios diferentes podem usar chaves de criptografia diferentes. Isso é diferente de [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), que é a criptografia em nível de dispositivo de bloco, e de [eCryptfs](/index.php/ECryptfs "ECryptfs"), que é um sistema de arquivos criptográficos empilhados. Para usar o suporte de criptografia nativa do ext4, consulte o artigo [fscrypt](/index.php/Fscrypt "Fscrypt").
+Desde o Linux 4.1, o ext4 possui suporte nativo a criptografia de arquivos. A criptografia é aplicada no nível do diretório, e diretórios diferentes podem usar chaves de criptografia diferentes. Isso é diferente de [dm-crypt](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)"), que é a criptografia em nível de dispositivo de bloco, e de [eCryptfs](/index.php/ECryptfs "ECryptfs"), que é um sistema de arquivos criptográficos empilhados. Para usar o suporte de criptografia nativa do ext4, consulte o artigo [fscrypt](/index.php/Fscrypt "Fscrypt").
 
 ### Habilitando somas de verificação de metadados
 

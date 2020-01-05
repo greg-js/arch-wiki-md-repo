@@ -181,9 +181,9 @@ $ asp -f export linux
 
 **Note:** Sometimes the `asp` command does not update linux files even though there is a newer archlinux source tag. A possible reason is that archlinux linux files lag behind archlinux linux source.
 
-Now you should [Vim#Merging files](/index.php/Vim#Merging_files "Vim") located in `~/build/linux/linux/*` into `~/build/linux/`. Merging can also done manually, or with [list of applications#Comparison, diff, merge](/index.php/List_of_applications#Comparison,_diff,_merge "List of applications"). Then run manually most, if not all, the shell commands of PKGBUILD::prepare().
+Now you should [Vim#Merging files](/index.php/Vim#Merging_files "Vim") located in `~/build/linux/linux/*` into `~/build/linux/`. Merging can also done manually, or with [list of applications#Comparison, diff, merge](/index.php/List_of_applications#Comparison,_diff,_merge "List of applications"). Review [#Changing prepare()](#Changing_prepare()), and run manually most, if not all, the shell commands of PKGBUILD::prepare().
 
-At this point, `makepkg --verifysource` should succeed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
+At this point, `makepkg --verifysource` should succeed. While [#Compiling](#Compiling), make sure to also add `--noextract` option to the `makepkg` command, since it should be able to build the packages as if the source was extracted by `makepkg --nobuild`. And you are back to [#Installing](#Installing).
 
 ### Cleanup
 

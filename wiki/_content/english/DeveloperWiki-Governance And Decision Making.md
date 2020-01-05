@@ -48,12 +48,12 @@ Official contributors to the Arch Linux distribution are split in four mutually 
 
 ### The Project Leader
 
-The leader's role is to:
+The leader's main roles are to:
 
 *   Represent Arch Linux in a legal capacity. For instance, they act as contact for SPI, approve expenses, enforce our trademark, etc.
 *   Make the final decision when (and only when) the community is unable to resolve an issue using the process described above.
 
-The leader is free to resign at any time; a new leader is then chosen according to the general process above. The current leader can also be replaced at any time if consensus is reached that it should be so.
+See [DeveloperWiki:Project Leader](/index.php/DeveloperWiki:Project_Leader "DeveloperWiki:Project Leader") for further information on these roles and on the project leader election process.
 
 ### Developers
 

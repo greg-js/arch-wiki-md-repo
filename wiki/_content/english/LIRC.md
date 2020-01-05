@@ -26,12 +26,17 @@ LIRC is a daemon that can translate key presses on a supported remote into progr
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Scancode mapping](#Scancode_mapping)
-        *   [2.1.1 Remotes database](#Remotes_database)
-        *   [2.1.2 Creating remote configurations](#Creating_remote_configurations)
-    *   [2.2 Application-specific actions](#Application-specific_actions)
-*   [3 Usage](#Usage)
-    *   [3.1 Running as a regular user rather than as root](#Running_as_a_regular_user_rather_than_as_root)
+    *   [2.1 Receiver and transmitter configuration](#Receiver_and_transmitter_configuration)
+        *   [2.1.1 Serial port](#Serial_port)
+        *   [2.1.2 Sound card](#Sound_card)
+    *   [2.2 Remote configuration](#Remote_configuration)
+        *   [2.2.1 Searching for remote configuration](#Searching_for_remote_configuration)
+        *   [2.2.2 Creating remote configuration](#Creating_remote_configuration)
+    *   [2.3 Application-specific actions](#Application-specific_actions)
+    *   [2.4 Running as a regular user rather than as root](#Running_as_a_regular_user_rather_than_as_root)
+*   [3 Testing](#Testing)
+    *   [3.1 Receiving commands](#Receiving_commands)
+    *   [3.2 Transmitting commands](#Transmitting_commands)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Remote functions as a keyboard](#Remote_functions_as_a_keyboard)
         *   [4.1.1 When using Xorg](#When_using_Xorg)
@@ -42,13 +47,15 @@ LIRC is a daemon that can translate key presses on a supported remote into progr
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [lirc](https://www.archlinux.org/packages/?name=lirc) package.
+[Install](/index.php/Install "Install") the [lirc](https://www.archlinux.org/packages/?name=lirc) package. If you need *audio* driver, install [lirc-git](https://aur.archlinux.org/packages/lirc-git/).
 
 ## Configuration
 
+### Receiver and transmitter configuration
+
 **Note:** This section is a quick summary. Complete documentation is available [upstream](http://lirc.sourceforge.net/lirc.org/html/index.html).
 
-The driver and/or the device for the LIRC service may need to be specified in order to run properly. Look for messages like these in the [journalctl](/index.php/Journalctl "Journalctl") output if the service abruptly stops while running LIRC-dependent programs such as *irrecord*:
+The *driver* and/or the *device* for the LIRC service may need to be specified in order to run properly. Look for messages like these in the [journalctl](/index.php/Journalctl "Journalctl") output if the service abruptly stops while running LIRC-dependent programs such as *irrecord*:
 
 ```
 Driver `devinput' not found or not loadable (wrong or missing -U/--plugindir?).
@@ -65,41 +72,60 @@ driver = *driver-name*
 device = /dev/*path-to-dev*
 ```
 
-[Serial port receiver](http://www.lirc.org/receivers.html) configuration:
+#### Serial port
 
-We need the *setserial* package. The important lines are in the *modinit* section:
+**Tip:** For DIY schematic refer to serial port [receivers](http://www.lirc.org/receivers.html) and [transmitters](http://www.lirc.org/transmitters.html) documentation. Note that serial port device much more reliable than *audio_alsa* or *audio*.
+
+Modern kernel has *serial_ir* module, which supersedes older *lirc_serial* driver. It supports even DIY receivers and transmitters, connected to the motherboard's serial port. Install [setserial](https://aur.archlinux.org/packages/setserial/) and run:
+
+```
+# setserial /dev/ttyS0 uart none
+# modprobe serial_ir
+
+```
+
+After loading *serial_ir* module, device `/dev/lirc0` will be [created](https://github.com/torvalds/linux/blob/master/drivers/media/rc/serial_ir.c) by kernel. If not, check `dmesg | grep serial` for errors. An LIRC config example for serial device:
 
  `/etc/lirc/lirc_options.conf` 
 ```
 [lircd]
-nodaemon        = False
 driver          = default
 device          = auto
-output          = /var/run/lirc/lircd
-pidfile         = /var/run/lirc/lircd.pid
-plugindir       = /usr/lib/lirc/plugins
-permission      = 666
-allow-simulate  = No
-repeat-max      = 600
 
 [modinit]
 code = /usr/bin/setserial /dev/ttyS0 uart none
 code1 = /usr/sbin/modprobe serial_ir
 ```
 
-### Scancode mapping
+#### Sound card
 
-`/etc/lirc/lircd.conf.d/foo.conf` is the system-wide configuration translating scancodes to keycodes. This directory may contain multiple conf files and each one is specific to each remote control/receiver on the system. These files are user-created config files and not directly supplied by [lirc](https://www.archlinux.org/packages/?name=lirc).
+**Warning:** Reception from both *alsa_audio* and *audio* can be pretty unstable (*irw* drops keypresses and works from time to time). If sound card is your only option and you only need to create an remote config with *irrecord*, give a chance to [WinLIRC](http://winlirc.sourceforge.net/), as it uses different sound subsystem.
 
-The definition of scancodes to keycodes is required to allow LIRC to manage a remote.
+*audio_alsa* [driver](http://www.lirc.org/html/audio-alsa.html) included in [lirc](https://www.archlinux.org/packages/?name=lirc), but supports only reception. Make sure microphone input is unmuted and has enough gain.
 
-#### Remotes database
+ `/etc/lirc/lirc_options.conf` 
+```
+driver          = audio_alsa
+device          = default
+```
 
-LIRC provides configuration files for many remote controls in the [remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html). Use [irdb-get(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irdb-get.1) to search the database or simply browse to the URL and do the same.
+*audio* driver ([archived](https://web.archive.org/web/20150511192459/http://www.lirc.org:80/html/audio.html), some pictures are missing) included in [lirc-git](https://aur.archlinux.org/packages/lirc-git/) and supports both reception and transmission. Note, that default latency around 0.02 can cause "Warning: Output underflow" and corrupted transmission - receiver won't respond to it. Try a higher value like 0.05.
 
-Refer to [creating remote configurations](#Creating_remote_configurations) if configs for your specific hardware are not in either location.
+ `/etc/lirc/lirc_options.conf` 
+```
+driver          = audio
+device          = ALSA:default@48000:0.05
+```
 
-An example using `irdb-get` to find a config file for a Streamzap remote:
+### Remote configuration
+
+Directory `/etc/lirc/lircd.conf.d/` contains system-wide configuration files for remotes. Each **.conf* file corresponds to one device and describes it's protocol, scancodes and keycodes. It allows LIRC receive and send signals for specific hardware. These files aren't included in [lirc](https://www.archlinux.org/packages/?name=lirc) package and should be found somewhere or created by user.
+
+#### Searching for remote configuration
+
+Plenty of configuration files can be found in the [LIRC remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html). Follow the url or use [irdb-get(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irdb-get.1) to search the database.
+
+An example using `irdb-get` to find a config file for a "Streamzap" remote:
 
 ```
 $ irdb-get find stream
@@ -122,20 +148,20 @@ Once identified, copy the needed conf to `/etc/lirc/lircd.conf.d/` to allow the 
 
 ```
 
-#### Creating remote configurations
+#### Creating remote configuration
 
-Remote control configurations can easily be created using [irrecord(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irrecord.1), which guides users along the needed process. If using a detected remote, invoke it like so:
+Remote control configurations can be created using [irrecord(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irrecord.1), which guides users trough the process. If using a detected remote, invoke it like so:
 
 ```
 # irrecord --device=/dev/lirc0 MyRemote
 
 ```
 
-The program will instruct users to begin hitting keys on the remote in an attempt to learn it, ultimately mapping out every button and its corresponding scancode. When finished, save the resulting file to `/etc/lirc/lircd.conf.d/foo.conf` and proceed.
-
-**Tip:** Consider sending the finished config file to the email address mentioned in the program so it can be made available to others.
+The program will instruct user to begin hitting keys on the remote in an attempt to learn it, ultimately mapping out every button and it's corresponding scancode. When finished, save the resulting file to `/etc/lirc/lircd.conf.d/foo.conf` and proceed. Consider sharing configuration file with others.
 
 ### Application-specific actions
+
+**Tip:** Many application-specific lircrc files are available on the internet.
 
 Bind keycodes to application-specific actions by placing their respective configuration files in `~/.config/lircrc/` which should be created manually if desired, see [lircrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lircrc.5). This only works for LIRC-aware applications, like [MPlayer](/index.php/MPlayer "MPlayer"), [VLC](/index.php/VLC "VLC"), [MythTV](/index.php/MythTV "MythTV") and [totem](https://www.archlinux.org/packages/?name=totem) ([Kodi](/index.php/Kodi "Kodi") also supports LIRC but does so in a non-standard way, see [Kodi#Using a remote control](/index.php/Kodi#Using_a_remote_control "Kodi")).
 
@@ -147,28 +173,6 @@ include "~/.config/lircrc/mythtv"
 include "~/.config/lircrc/vlc"
 
 ```
-
-**Tip:** Many application-specific lircrc files are available on the internet.
-
-## Usage
-
-[Start/enable](/index.php/Start/enable "Start/enable") `lircd.service`.
-
-Test the remote using [irw(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irw.1), which simply echos anything received by LIRC when users push buttons on the remote to stdout.
-
-Example:
-
-```
-$ irw
-000000037ff07bfe 00 One mceusb
-000000037ff07bfd 00 Two mceusb
-000000037ff07bfd 01 Two mceusb
-000000037ff07bf2 00 Home mceusb
-000000037ff07bf2 01 Home mceusb
-
-```
-
-If `irw` gives no output, double check the config files in `/etc/lirc/lircd.conf.d/` for errors.
 
 ### Running as a regular user rather than as root
 
@@ -216,6 +220,57 @@ d /run/lirc 0755 lirc lirc -
 ```
 
 Reboot the system to verify expected function.
+
+## Testing
+
+[Start/enable](/index.php/Start/enable "Start/enable") `lircd.service`.
+
+### Receiving commands
+
+Run [irw(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irw.1), point remote to the receiver and press some buttons. Received codes will be printed to stdout.
+
+```
+$ irw
+000000037ff07bfe 00 One mceusb
+000000037ff07bfd 00 Two mceusb
+000000037ff07bfd 01 Two mceusb
+000000037ff07bf2 00 Home mceusb
+000000037ff07bf2 01 Home mceusb
+
+```
+
+If `irw` gives no output:
+
+*   Run *mode2* or *xmode2* to see if LIRC actually read something from IR sensor, if no - check the hardware
+*   Check the config files in `/etc/lirc/lircd.conf.d/` for errors
+
+### Transmitting commands
+
+List registered remotes (config files):
+
+```
+$ irsend LIST "" ""
+LG_6710CMAP01A
+
+```
+
+List available codes for the specific device:
+
+```
+$ irsend LIST LG_6710CMAP01A ""
+0000000000007887 KEY_POWER
+000000000000f807 KEY_MUTE
+000000000000e817 KEY_VOLUMEUP
+...
+
+```
+
+Choose discovered device `LG_6710CMAP01A` and send command `KEY_POWER`:
+
+```
+$ irsend SEND_ONCE LG_6710CMAP01A KEY_POWER
+
+```
 
 ## Troubleshooting
 
@@ -320,10 +375,9 @@ nodaemon        = False
 
 ## See also
 
-*   [Upstream documentation](http://lirc.sourceforge.net/lirc.org/html/index.html)
-*   [Remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html)
 *   [Project site](http://sf.net/p/lirc)
+*   [Upstream documentation](http://lirc.sourceforge.net/lirc.org/html/index.html)
 *   [Upstream Configuration Guide](http://lirc.org/html/configuration-guide.html)
+*   [Remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html)
 *   [MythTV Wiki:Remotes article](http://www.mythtv.org/wiki/Category:Remote_Controls)
-*   [Official list of supported hardware](http://lirc-remotes.sourceforge.net/remotes-table.html)
 *   [Linux Streamzap config files](https://github.com/graysky2/streamzap)

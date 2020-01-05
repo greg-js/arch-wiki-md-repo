@@ -138,7 +138,7 @@ Há suporte apenas no branch master do Git, não havendo lançamentos estáveis 
  |
 | [freerdp](https://www.archlinux.org/packages/?name=freerdp) | `~/.freerdp` | [edf6e72](https://github.com/FreeRDP/FreeRDP/commit/edf6e72) |
 | [Gajim](/index.php/Gajim "Gajim") | `~/.gajim` | [3e777ea](https://dev.gajim.org/gajim/gajim/commit/3e777ea) | [[16]](https://dev.gajim.org/gajim/gajim/issues/2149) |
-| [gconf](https://www.archlinux.org/packages/?name=gconf) | `~/.gconf` | [fc28caa](https://gitlab.gnome.org/Archive/gconf/commit/fc28caa) | [[17]](https://bugzilla.gnome.org/show_bug.cgi?id=674803) |
+| [gconf](https://aur.archlinux.org/packages/gconf/) | `~/.gconf` | [fc28caa](https://gitlab.gnome.org/Archive/gconf/commit/fc28caa) | [[17]](https://bugzilla.gnome.org/show_bug.cgi?id=674803) |
 | [GIMP](/index.php/GIMP "GIMP") | 
 
 `~/.gimp-x.y

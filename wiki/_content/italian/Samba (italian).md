@@ -5,7 +5,11 @@ Articoli correlati
 
 **Samba** è una re implementazione del protocollo di rete SMB/CIFS, serve per facilitare la condivisione di file e stampanti tra sistemi Linux e Windows, come alternativa ad [NFS](/index.php/NFS_(Italiano) "NFS (Italiano)"). Samba è facilmente configurabile e le opzioni sono molto chiare. In ogni caso, gli utenti meno esperti potrebbero incontrare problemi per la sua complessità e per i meccanismi non intuitivi. Si consiglia quindi di attenersi alle seguenti indicazioni.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
@@ -15,7 +19,7 @@ Articoli correlati
     *   [2.3 Opzioni web](#Opzioni_web)
         *   [2.3.1 SWAT: Samba web administration tool](#SWAT:_Samba_web_administration_tool)
 *   [3 Accedere alle condivisioni](#Accedere_alle_condivisioni)
-    *   [3.1 Accedere alle condivisioni Samba da GNOME/Xfce4](#Accedere_alle_condivisioni_Samba_da_GNOME.2FXfce4)
+    *   [3.1 Accedere alle condivisioni Samba da GNOME/Xfce4](#Accedere_alle_condivisioni_Samba_da_GNOME/Xfce4)
     *   [3.2 Accedere alle condivisioni da altri ambienti grafici](#Accedere_alle_condivisioni_da_altri_ambienti_grafici)
     *   [3.3 Accedere ad una condivisione Samba tramite shell](#Accedere_ad_una_condivisione_Samba_tramite_shell)
         *   [3.3.1 Mount automatico](#Mount_automatico)
@@ -36,10 +40,10 @@ Articoli correlati
     *   [4.4 Controllare da remoto i computer Windows](#Controllare_da_remoto_i_computer_Windows)
     *   [4.5 Bloccare determinate estenzioni di file extensions sulle condivisioni samba](#Bloccare_determinate_estenzioni_di_file_extensions_sulle_condivisioni_samba)
 *   [5 Risoluzione di problemi](#Risoluzione_di_problemi)
-    *   [5.1 "Sfogliando" la rete si ottiene una finestra vuota](#.22Sfogliando.22_la_rete_si_ottiene_una_finestra_vuota)
-    *   [5.2 Windows 7 problemi di connettività - mount error(12): cannot allocate memory](#Windows_7_problemi_di_connettivit.C3.A0_-_mount_error.2812.29:_cannot_allocate_memory)
+    *   [5.1 "Sfogliando" la rete si ottiene una finestra vuota](#"Sfogliando"_la_rete_si_ottiene_una_finestra_vuota)
+    *   [5.2 Windows 7 problemi di connettività - mount error(12): cannot allocate memory](#Windows_7_problemi_di_connettività_-_mount_error(12):_cannot_allocate_memory)
     *   [5.3 Problemi con gli accessi da Windows a condivisioni protette da password](#Problemi_con_gli_accessi_da_Windows_a_condivisioni_protette_da_password)
-    *   [5.4 Lentezza nell'apparizione della finestra per l'accesso](#Lentezza_nell.27apparizione_della_finestra_per_l.27accesso)
+    *   [5.4 Lentezza nell'apparizione della finestra per l'accesso](#Lentezza_nell'apparizione_della_finestra_per_l'accesso)
     *   [5.5 Cambiamenti in Samba versione 3.4.0](#Cambiamenti_in_Samba_versione_3.4.0)
     *   [5.6 Error: Value too large for defined data type](#Error:_Value_too_large_for_defined_data_type)
     *   [5.7 Devo riavviare Samba per rendere le condivisioni visibili agli altri pc](#Devo_riavviare_Samba_per_rendere_le_condivisioni_visibili_agli_altri_pc)

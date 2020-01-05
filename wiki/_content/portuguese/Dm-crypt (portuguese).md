@@ -1,8 +1,8 @@
 **Status de tradução:** Esse artigo é uma tradução de [Dm-crypt](/index.php/Dm-crypt "Dm-crypt"). Data da última tradução: 2019-11-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt&diff=0&oldid=589414) na versão em inglês.
 
-Related articles
+Artigos relacionados
 
-*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [Criptografia de disco](/index.php/Criptografia_de_disco "Criptografia de disco")
 *   [Removing system encryption](/index.php/Removing_system_encryption "Removing system encryption")
 
 dm-crypt é o [mapeador de dispositivos](https://en.wikipedia.org/wiki/pt:device_mapper "wikipedia:pt:device mapper") alvo de encriptação do kernel Linux. De acordo com o [Wikipédia](https://en.wikipedia.org/wiki/pt:dm-crypt "wikipedia:pt:dm-crypt"), ele é:
@@ -49,7 +49,7 @@ Veja [/Criptografando todo um sistema](/index.php/Dm-crypt_(Portugu%C3%AAs)/Crip
 
 ## Especificidades
 
-[/Especificidades](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") lida com operações especiais como [protegendo partições de boot não criptografadas](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"), [usando keyfiles criptogradas GPG, LUKS ou OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties"), um método para [ligar e desbloquear pela rede](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_(or_other)_partition "Dm-crypt/Specialties"), outro para [configurar discard/TRIM para um SSD](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties"), e seções que lidam com [o hook encrypt e múltiplos discos](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties").
+[/Especificidades](/index.php/Dm-crypt_(Portugu%C3%AAs)/Especificidades "Dm-crypt (Português)/Especificidades") lida com operações especiais como [protegendo partições de boot não criptografadas](/index.php/Dm-crypt_(Portugu%C3%AAs)/Especificidades#Securing_the_unencrypted_boot_partition "Dm-crypt (Português)/Especificidades"), [usando keyfiles criptogradas GPG, LUKS ou OpenSSL](/index.php/Dm-crypt_(Portugu%C3%AAs)/Especificidades#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt (Português)/Especificidades"), um método para [ligar e desbloquear pela rede](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_(or_other)_partition "Dm-crypt/Specialties"), outro para [configurar discard/TRIM para um SSD](/index.php/Dm-crypt_(Portugu%C3%AAs)/Especificidades#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD) "Dm-crypt (Português)/Especificidades"), e seções que lidam com [o hook encrypt e múltiplos discos](/index.php/Dm-crypt_(Portugu%C3%AAs)/Especificidades#The_encrypt_hook_and_multiple_disks "Dm-crypt (Português)/Especificidades").
 
 ## Veja também
 

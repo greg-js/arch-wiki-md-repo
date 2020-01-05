@@ -1126,7 +1126,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 	[https://openxcom.org](https://openxcom.org) || [openxcom](https://aur.archlinux.org/packages/openxcom/), [openxcom-git](https://aur.archlinux.org/packages/openxcom-git/)
 
 *   An extended and more customisable version of Open X-COM (OXCE) [[2]](https://openxcom.org/forum/index.php/board,22.0.html) – [openxcom-extended](https://aur.archlinux.org/packages/openxcom-extended/), [openxcom-extended-git](https://aur.archlinux.org/packages/openxcom-extended-git/)
-*   Mods for Open X-COM and OXCE [[https://aur.archlinux.org/packages/openxcom-mod-40k/ openxcom-mod-40k](https://openx–), [openxcom-mod-area51](https://aur.archlinux.org/packages/openxcom-mod-area51/), [openxcom-mod-twots](https://aur.archlinux.org/packages/openxcom-mod-twots/), [openxcom-mod-xfiles](https://aur.archlinux.org/packages/openxcom-mod-xfiles/), [openxcom-mod-xpiratez](https://aur.archlinux.org/packages/openxcom-mod-xpiratez/)
+*   Mods for Open X-COM and OXCE [openxcom-mod-40k](https://aur.archlinux.org/packages/openxcom-mod-40k/), [openxcom-mod-area51](https://aur.archlinux.org/packages/openxcom-mod-area51/), [openxcom-mod-twots](https://aur.archlinux.org/packages/openxcom-mod-twots/), [openxcom-mod-xfiles](https://aur.archlinux.org/packages/openxcom-mod-xfiles/), [openxcom-mod-xpiratez](https://aur.archlinux.org/packages/openxcom-mod-xpiratez/)
 
 *   **[The Battle for Wesnoth](https://en.wikipedia.org/wiki/The_Battle_for_Wesnoth "wikipedia:The Battle for Wesnoth")** — Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat.
 

@@ -65,7 +65,7 @@ The following two sections show how to create an EFI system partition (ESP).
 
 **Warning:** The EFI system partition must be a physical partition in the main partition table of the disk, not under LVM or software RAID etc.
 
-**Note:** It is recommended to use [GPT](/index.php/GPT "GPT") since some firmwares might not support UEFI/MBR booting due to it not being supported by [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"). See also [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") for the advantages of GPT in general.
+**Note:** It is recommended to use [GPT](/index.php/GPT "GPT") since some firmwares might not support UEFI/MBR booting due to it not being supported by [Windows Setup](/index.php/Dual_boot_with_Windows "Dual boot with Windows"). See also [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") for the advantages of GPT in general.
 
 To provide adequate space for storing boot loaders and other files required for booting, and to prevent interoperability issues with other operating systems[[1]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules)[[2]](https://superuser.com/questions/1310927/what-is-the-absolute-minimum-size-a-uefi-partition-can-be/1310938) the partition should be at least 260 MiB. For early and/or buggy UEFI implementations the size of at least 512 MiB might be needed.[[3]](https://www.rodsbooks.com/efi-bootloaders/principles.html)
 

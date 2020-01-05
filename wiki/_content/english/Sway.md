@@ -244,6 +244,13 @@ $ grim screenshot.png
 
 ```
 
+Take a screenshot of current window:
+
+```
+$ grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" screenshot.png
+
+```
+
 Take a screenshot of a part of the screen:
 
 ```

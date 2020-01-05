@@ -258,8 +258,8 @@ Server = https://repo.herecura.be/$repo/$arch
 
 ### chaotic-aur
 
-*   **Maintainer:** [PedroHLC](https://github.com/pedrohlc)
-*   **Description:** Auto builds AUR packages the maintainer uses, update them hourly (a few are daily). Hosted in São Carlos, SP, Brazil. Has a mirror in Germany. x86_64 only. Has over 1400 packages.
+*   **Maintainer:** [PedroHLC](https://github.com/pedrohlc), and [Librewish](https://github.com/librewish)
+*   **Description:** Auto builds AUR packages the maintainer uses, update them hourly (a few are daily). Hosted in São Carlos, SP, Brazil. Has two mirrors (Germany and USA). x86_64 only. Has over 1600 packages.
 *   **Key-ID:** [[1]](http://pool.sks-keyservers.net/pks/lookup?search=0x3056513887B78AEB&fingerprint=on&op=index), fingerprint `EF92 5EA6 0F33 D0CB 85C4 4AD1 3056 5138 87B7 8AEB`
 *   **Note:** See [maintainer's notes](https://lonewolf.pedrohlc.com/chaotic-aur).
 
@@ -267,6 +267,7 @@ Server = https://repo.herecura.be/$repo/$arch
 [chaotic-aur]
 Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
 Server = http://chaotic.bangl.de/$repo/x86_64
+Server = https://repo.kitsuna.net/x86_64
 
 ```
 

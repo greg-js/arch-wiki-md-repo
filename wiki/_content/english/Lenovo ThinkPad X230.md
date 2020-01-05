@@ -4,7 +4,7 @@ Related articles
 *   [ThinkPad docks](/index.php/ThinkPad_docks "ThinkPad docks")
 *   [HiDPI](/index.php/HiDPI "HiDPI")
 
-Lenovo ThinkPad X230 [official page](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x230), [datasheet](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf), [hardware maintenance manual](https://us.download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles_pdf/x230_x230i_hmm_en_0b48666_01.pdf), [ThinkWiki](https://www.thinkwiki.org/wiki/Category:X230).
+Lenovo ThinkPad X230 [official page](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x230), [datasheet](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf), [hardware maintenance manual](https://us.download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles_pdf/x230_x230i_hmm_en_0b48666_01.pdf), [ThinkWiki](https://www.thinkwiki.org/wiki/Category:X230). [PCB schematic](https://forum.thinkpads.com/viewtopic.php?t=121522) has been leaked too.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -185,6 +185,8 @@ Power saving [kernel parameters](/index.php/Kernel_parameters "Kernel parameters
 Note that the `acpi_backlight=vendor` kernel option also works with the standard Arch kernel (currently 3.7.10-1) and has the additional bonus that (`Fn+Space`) controls the keyboard lighting.
 
 ### Sound control buttons
+
+**Note:** Laptop has single TRRS CTIA/Apple 3.5 mm audio jack (sleeve for a mic).
 
 Red LED mute indicators light up automatically, if corresponding channel *muted* in `[alsamixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")`. Easiest way to make buttons work is to install [PulseAudio](/index.php/PulseAudio "PulseAudio") and it's plugin for your [desktop environment](/index.php/Desktop_environment "Desktop environment").
 

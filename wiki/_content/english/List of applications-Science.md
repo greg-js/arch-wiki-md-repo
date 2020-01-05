@@ -539,7 +539,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **QMapShack** — Plan your next outdoor trip.
 
-	[https://bitbucket.org/maproom/qmapshack](https://bitbucket.org/maproom/qmapshack) || [qmapshack](https://www.archlinux.org/packages/?name=qmapshack)
+	[https://github.com/Maproom/qmapshack/](https://github.com/Maproom/qmapshack/) || [qmapshack](https://www.archlinux.org/packages/?name=qmapshack)
 
 *   **QGIS** — Geographic Information System (GIS) that supports vector, raster & database formats.
 

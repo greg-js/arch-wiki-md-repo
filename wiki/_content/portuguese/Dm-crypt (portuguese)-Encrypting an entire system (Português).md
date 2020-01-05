@@ -144,7 +144,7 @@ Este cenário também permite que dispositivos USB possam ser usados no `/boot` 
 
 *   Melhor em relação aos dados para casos onde um cabeçalho do LUKS é danificado
 *   Permite [encriptação total de disco](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption")
-*   Ajuda a solucionar [problemas](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") com SSDs
+*   Ajuda a solucionar [problemas](/index.php/Dm-crypt/Especificidades#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD) "Dm-crypt/Especificidades") com SSDs
 
  | 
 
@@ -184,15 +184,15 @@ Mostra como criptografar um sistema [Btrfs](/index.php/Btrfs "Btrfs"), incluindo
 
  |
 
-Enquanto todos os cenários acima oferecem maior proteção contra ameaças externas do que somente criptografar sistemas de arquivos não raiz, eles também possuem uma desvantagem comum: qualquer usuário que possui a chave pode abrir todo o disco, e assim, acessar os dados de outro usuário. Se isto é uma preocupação, é possível fazer uma combinação de dispositivo de blocos e sistema de arquivos criptografados empilhados e adquirir as vantagens de ambos. Veja [Encriptação de disco](/index.php/Disk_encryption "Disk encryption") para lhe ajudar no planejamento.
+Enquanto todos os cenários acima oferecem maior proteção contra ameaças externas do que somente criptografar sistemas de arquivos não raiz, eles também possuem uma desvantagem comum: qualquer usuário que possui a chave pode abrir todo o disco, e assim, acessar os dados de outro usuário. Se isto é uma preocupação, é possível fazer uma combinação de dispositivo de blocos e sistema de arquivos criptografados empilhados e adquirir as vantagens de ambos. Veja [Criptografia de disco](/index.php/Criptografia_de_disco "Criptografia de disco") para lhe ajudar no planejamento.
 
 Veja [Dm-crypt/Preparando a unidade de armazenamento#Particionamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento#Particionamento "Dm-crypt/Preparando a unidade de armazenamento") para uma visão geral das estratégias de particionamento usadas nos cenários.
 
 Outra coisa a considerar é se deve usar uma partição swap criptografada e de qual forma. Veja [Dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") para alternativas.
 
-Se você antecipa a proteção de dados do sistema não somente contra roubo físico, como também contra adulteração lógica, veja [Dm-crypt/Especificidades#Protegendo a partição de boot não criptografada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties") para possibilidades futuras após seguir um dos cenários.
+Se você antecipa a proteção de dados do sistema não somente contra roubo físico, como também contra adulteração lógica, veja [Dm-crypt/Especificidades#Protegendo a partição de boot não criptografada](/index.php/Dm-crypt/Especificidades#Securing_the_unencrypted_boot_partition "Dm-crypt/Especificidades") para possibilidades futuras após seguir um dos cenários.
 
-Para [SSDs](/index.php/Solid_state_drive "Solid state drive"), você pode considerar habilitar suporte ao TRIM, mas esteja ciente que, isto tem potenciais problemas de segurança. Veja [Dm-crypt/Especificidades#Discard/Suporte ao TRIM para unidades de estado sólido (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") para mais informações.
+Para [SSDs](/index.php/Solid_state_drive "Solid state drive"), você pode considerar habilitar suporte ao TRIM, mas esteja ciente que, isto tem potenciais problemas de segurança. Veja [Dm-crypt/Especificidades#Suporte a discard/TRIM para unidades de estado sólido (SSD)](/index.php/Dm-crypt/Especificidades#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD) "Dm-crypt/Especificidades") para mais informações.
 
 **Atenção:**
 
@@ -344,12 +344,12 @@ O design do disco neste exemplo é::
 
 ```
 
-**Nota:** Ao usar o hook `encrypt`, você não poderá utilizar volumes lógicos espalhados em múltiplos discos; use o [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") ou veja [dm-crypt/Especificidades#Modificando o hook encrypt para múltiplas partições](/index.php/Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Specialties").
+**Nota:** Ao usar o hook `encrypt`, você não poderá utilizar volumes lógicos espalhados em múltiplos discos; use o [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") ou veja [dm-crypt/Especificidades#Modificando o hook encrypt para múltiplas partições](/index.php/Dm-crypt/Especificidades#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Especificidades").
 
 **Dica:** Duas variações dessa configuração:
 
-*   Instruções em [dm-crypt/Especificidades#Sistema criptografado com cabeçalho do LUKS desanexado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") para usar um cabeçalho do LUKS em um dispositivo USB, e assim conseguindo autentificação de dois fatores com este método.
-*   Instruções em [dm-crypt/Especificidades#/boot criptografado e um cabeçalho do LUKS desanexado dentro de um USB](/index.php/Dm-crypt/Specialties#Encrypted_/boot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties")]] para usar um cabeçalho do LUKS, partição `/boot` criptografada, e keyfile criptografada tudo em um dispositivo USB.
+*   Instruções em [dm-crypt/Especificidades#Sistema criptografado com cabeçalho do LUKS desanexado](/index.php/Dm-crypt/Especificidades#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Especificidades") para usar um cabeçalho do LUKS em um dispositivo USB, e assim conseguindo autentificação de dois fatores com este método.
+*   Instruções em [dm-crypt/Especificidades#/boot criptografado e um cabeçalho do LUKS desanexado dentro de um USB](/index.php/Dm-crypt/Especificidades#Encrypted_/boot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Especificidades")]] para usar um cabeçalho do LUKS, partição `/boot` criptografada, e keyfile criptografada tudo em um dispositivo USB.
 
 ### Preparando o disco
 
@@ -502,7 +502,7 @@ Você deve configurar os volumes do [LVM](/index.php/LVM "LVM") primeiro antes d
 
 O texto a seguir exemplifica uma configuração do LUKS dentro do LVM que também faz uso de uma keyfile para o volume lógico /home e volumes temporários criptografados para `/tmp` e `/swap`. O último é desejável caso se preocupe com segurança, devido a evitar que dados temporários sensíveis sobrevivam durante a inicialização do sistema. Se tem experiência com LVM, você vai ser capaz de ignorar/trocar alguns dos passos relacionados com ele e outras coisas específicas de acordo com sua vontade.
 
-Se quer usar volumes lógicos espalhados por múltiplos discos que já foram configurados, ou expandir o `/home` (ou qualquer outro volume), um dos jeitos de como fazer isto é descrito em [dm-crypt/Especificidades#Expandindo LVM em vários discos](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties"). Vale notar que o container criptografado com LUKS precisa ser redimensionado também.
+Se quer usar volumes lógicos espalhados por múltiplos discos que já foram configurados, ou expandir o `/home` (ou qualquer outro volume), um dos jeitos de como fazer isto é descrito em [dm-crypt/Especificidades#Expandindo LVM em vários discos](/index.php/Dm-crypt/Especificidades#Expanding_LVM_on_multiple_disks "Dm-crypt/Especificidades"). Vale notar que o container criptografado com LUKS precisa ser redimensionado também.
 
 ### Preparando o disco
 
@@ -839,17 +839,17 @@ Diferente do LUKS, o modo *plain* do dm-crypt não precisa de um cabeçalho no d
 
 Se a encriptação total de disco não é necessária, os métodos usando LUKS descritos nas seções acima são mais recomendados, tanto para a encriptação de sistema quanto partições. Funcionalidades do LUKS como gerenciamento de chaves com múltiplas senhas/keyfiles ou re-criptografar um dispositivo prontamente não estão disponiveis com o modo *plain*.
 
-O modo *Plain* pode ser mais resiliente a danos que o LUKS, devido a não depender de um chave mestre de encriptação, que se danificada resulta em falhas. No entanto, usar esse modo requer mais configuração manual de opções de encriptação para se chegar a mesma força criptográfica. Veja também [Criptografia de disco#Metadata criptográfica](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). O uso desse modo também pode ser considerado se está preocupado com os problemas explicados em [dm-crypt/Especificidades#Discard/TRIM para discos de estado sólido (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties").
+O modo *plain* pode ser mais resiliente a danos que o LUKS, devido a não depender de um chave mestre de encriptação, que se danificada resulta em falhas. No entanto, usar esse modo requer mais configuração manual de opções de encriptação para se chegar a mesma força criptográfica. Veja também [Criptografia de disco#Metadados criptográficos](/index.php/Criptografia_de_disco#Metadados_criptográficos "Criptografia de disco"). O uso desse modo também pode ser considerado se está preocupado com os problemas explicados em [dm-crypt/Especificidades#Suporte a discard/TRIM para unidades de estado sólido (SSD)](/index.php/Dm-crypt/Especificidades#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD) "Dm-crypt/Especificidades").
 
 **Dica:** Se deseja encriptação sem cabeçalho mas não está com certeza sobre a falta de derivação de chaves com o modo *plain*, então duas alternativas:
 
-*   [dm-crypt modo LUKS com um cabeçalho desanexado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties"), usando a opção `--header`. Este método não pode ser usado com o hook *encrypt* padrão, mas sim com um modificado.
+*   [dm-crypt modo LUKS com um cabeçalho desanexado](/index.php/Dm-crypt/Especificidades#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Especificidades"), usando a opção `--header`. Este método não pode ser usado com o hook *encrypt* padrão, mas sim com um modificado.
 *   [tcplay](/index.php/Tcplay "Tcplay") que oferece a encriptação sem cabeçalho mas com a função PBKDF2.
 
 O cenário usa dois pendrives USB:
 
 *   um para o dispositivo de boot, que permite guardar as opções necessárias para abrir/desbloquear o dispositivo criptografado com o modo plain nas configurações do gerenciador de boot, desde que digitar eles a cada inicialização deve possivelemente resultar em erros;
-*   outro para o arquivo chave (keyfile) da encriptação, assumindo que este está guardado em bits normais, o atacante desatento pode conseguir o pendrive com o arquivo chave e pensar que ele é um dado randômico ao invês de ser visível como um arquivo normal. Veja também [Segurança por obscurantismo](https://en.wikipedia.org/wiki/pt:Seguran%C3%A7a_por_obscurantismo "wikipedia:pt:Segurança por obscurantismo"), siga [dm-crypt/Encriptação de dispositivo#Keyfiles](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") para prepará-la.
+*   outro para a keyfile (arquivo chave), assumindo que esta está guardada em bits normais, o atacante desatento pode conseguir o pendrive com ela e pensar que a keyfile é um dado randômico ao invês de ser visível como um arquivo normal. Veja também [Segurança por obscurantismo](https://en.wikipedia.org/wiki/pt:Seguran%C3%A7a_por_obscurantismo "wikipedia:pt:Segurança por obscurantismo"), siga [dm-crypt/Encriptação de dispositivo#Keyfiles](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Keyfiles "Dm-crypt/Encriptação de dispositivo") para prepará-la.
 
 O exemplo de particionamento é:
 
@@ -873,7 +873,7 @@ O exemplo de particionamento é:
 *   É possível usar somente um pendrive:
     *   Ao colocar a chave em outra partição (por exemplo, /dev/sdb2).
     *   Ao copiar a keyfile para o initramfs diretamente. Por exemplo, uma keyfile é copiada para a imagem initramfs ao colocar `FILES=(/etc/keyfile)` em `/etc/mkinitcpio.conf`. Para fazer o hook `encrypt` ler a keyfile na imagem initramfs, use o prefixo `rootfs:` antes do nome do arquivo, exemplo `cryptkey=rootfs:/etc/keyfile`.
-*   Outra opção é usar uma senha com uma boa [entropia](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
+*   Outra opção é usar uma senha com uma boa [entropia](/index.php/Criptografia_de_disco#Escolhendo_uma_senha_forte "Criptografia de disco").
 
 ### Preparando o disco
 
@@ -1176,7 +1176,7 @@ GRUB_CMDLINE_LINUX="... rd.luks.key=*device-UUID*=/root/cryptlvm.keyfile"
 
 Se por algum motivo a keyfile falhar, systemd solicitará a senha para abrir e, em caso dela estar correta, continuar a inicialização.
 
-**Dica:** Se quer criptografar a partição `/boot` para proteger contra ameaças de adulteração offline (offline tampering threats), o hook [mkinitcpio-chkcryptoboot](/index.php/Dm-crypt/Specialties#mkinitcpio-chkcryptoboot "Dm-crypt/Specialties") têm sido desenvolvido para isso.
+**Dica:** Se quer criptografar a partição `/boot` para proteger contra ameaças de adulteração offline (offline tampering threats), o hook [mkinitcpio-chkcryptoboot](/index.php/Dm-crypt/Especificidades#mkinitcpio-chkcryptoboot "Dm-crypt/Especificidades") têm sido desenvolvido para isso.
 
 ## Subvolumes do Btrfs com swap
 

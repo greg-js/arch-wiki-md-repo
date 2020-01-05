@@ -134,7 +134,7 @@
 
 *   **Seamonkey** — "Продолжение" Mozilla Internet Suite
 
-	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+	[https://www.seamonkey-project.org/](https://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
 ###### Форки Firefox
 
@@ -480,6 +480,10 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://claws-mail.org/](http://claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
 
+*   **ElectronMail** — Неофициальное приложение для нескольких поставщиков зашифрованной электронной почты (например, ProtonMail, Tutanota). Основано на платформе [Electron](https://electronjs.org/).
+
+	[https://github.com/vladimiry/ElectronMail](https://github.com/vladimiry/ElectronMail) || [electronmail-bin](https://aur.archlinux.org/packages/electronmail-bin/)
+
 *   **[Evolution](/index.php/Evolution "Evolution")** — Зрелый клиент электронной почты с богатым функционалом, используемый по умолчанию в GNOME. Является частью группы пакетов [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/)
 
 	[http://projects.gnome.org/evolution/](http://projects.gnome.org/evolution/) || [evolution](https://www.archlinux.org/packages/?name=evolution)
@@ -488,13 +492,45 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://wiki.gnome.org/Apps/Geary](https://wiki.gnome.org/Apps/Geary) || [geary](https://www.archlinux.org/packages/?name=geary)
 
+*   **Gnubiff** — Программа почтовых уведомлений, которая проверяет почту и отображает заголовки при получении новых писем.
+
+	[http://gnubiff.sourceforge.net/](http://gnubiff.sourceforge.net/) || [gnubiff](https://www.archlinux.org/packages/?name=gnubiff)
+
+*   **Inboxer** — Неофициальное, бесплатное и свободное приложение Google Inbox для ПК. Основано на платформе [Electron](https://electronjs.org/).
+
+	[https://denysdovhan.com/inboxer/](https://denysdovhan.com/inboxer/) || [inboxer](https://aur.archlinux.org/packages/inboxer/)
+
 *   **[Kmail](https://en.wikipedia.org/wiki/ru:Kmail "wikipedia:ru:Kmail")** — Зрелый клиент электронной почты с богатым функционалом. Является частью группы пакетов [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 
 	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
+*   **Kube** — Современный клиент для общения и совместной работы, созданный с помощью QtQuick.
+
+	[https://kube.kde.org/](https://kube.kde.org/) || [kube](https://www.archlinux.org/packages/?name=kube)
+
+*   **Mailnag** — Расширяемый демон почтовых уведомлений.
+
+	[https://github.com/pulb/mailnag](https://github.com/pulb/mailnag) || [mailnag](https://www.archlinux.org/packages/?name=mailnag)
+
+*   **Mailspring** — [Собственный](https://github.com/Foundry376/Mailspring/issues/24) форк Nylas Mail одного из авторов оригинального приложения.
+
+	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
+
 *   **Manitou Mail** — Система обработки электронной почты на базах данных (database-driven)
 
 	[http://www.manitou-mail.org/](http://www.manitou-mail.org/) || [manitou-mdx](https://aur.archlinux.org/packages/manitou-mdx/) [manitou-ui](https://aur.archlinux.org/packages/manitou-ui/)
+
+*   **Nylas Mail** — Расширяемое почтовое приложение. Основано на платформе [Electron](https://electronjs.org/).
+
+	[https://www.nylas.com/nylas-mail/](https://www.nylas.com/nylas-mail/) || [nylas-mail-lives-bin](https://aur.archlinux.org/packages/nylas-mail-lives-bin/)
+
+*   **Protonmail Desktop** — Неофициальное приложение, которое имитирует собственный клиент для службы электронной почты [ProtonMail](https://en.wikipedia.org/wiki/ru:ProtonMail "wikipedia:ru:ProtonMail"). Основано на платформе [Electron](https://electronjs.org/).
+
+	[http://protondesktop.com/](http://protondesktop.com/) || [protonmail-desktop](https://aur.archlinux.org/packages/protonmail-desktop/)
+
+*   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — Клиент электронной почты входит в комплект SeaMonkey.
+
+	[https://www.seamonkey-project.org/](https://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
 *   **Roundcubemail** — Браузерный мультиязычный IMAP-клиент с пользовательским интерфейсом, выглядящим как отдельное приложение
 

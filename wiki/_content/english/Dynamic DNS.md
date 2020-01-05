@@ -55,7 +55,7 @@ Note that some dynamic DNS providers do not require a dedicated client and can b
 
 *   **duckdns** — Update your DuckDNS.org entries from your computer with systemd.
 
-	[https://www.duckdns.org/](https://www.duckdns.org/) || [duckdns](https://aur.archlinux.org/packages/duckdns/)
+	[https://www.duckdns.org/](https://www.duckdns.org/) || [duckdns](https://aur.archlinux.org/packages/duckdns/), [duckdns-ipv6](https://aur.archlinux.org/packages/duckdns-ipv6/)
 
 *   **noip** — Dynamic DNS Client Updater for no-ip.com services.
 

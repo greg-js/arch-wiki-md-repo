@@ -39,7 +39,7 @@ Kmscon can function as a drop-in replacement for the in-kernel linux-console. Fe
 
 Despite its name, KMS is not a hard requirement for kmscon. Kmscon supports the following video backends: fbdev (Linux fbdev video backend), drm2d (Linux DRM software-rendering backend), drm3d (Linux DRM hardware-rendering backend). Make sure one of them is available on your system.
 
-Install the [kmscon](https://www.archlinux.org/packages/?name=kmscon) package or the [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/) package for a development version from the [AUR](/index.php/AUR "AUR").
+Install the [kmscon](https://www.archlinux.org/packages/?name=kmscon) package or the [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/) package for a development version from the [AUR](/index.php/AUR "AUR"). Alternatively, install [kmscon-patched-git](https://aur.archlinux.org/packages/kmscon-patched-git/). The patched version, along with its patched dependency ([libtsm-patched-git](https://aur.archlinux.org/packages/libtsm-patched-git/)), includes fixes and improvements (like 24-bit color support) that the canonical version (which has not been updated since 2014) does not.
 
 Normally, there is a special systemd configuration for tty1\. To be conservative, you can continue to run the traditional agetty on tty1 and only run kmscon on all the other virtual terminals. Or you can run kmscon on both tty1 and the other VTs.
 

@@ -58,6 +58,10 @@ Team members eligible for voting are:
 
 The complete list of individuals in these roles is defined on the Arch Linux website, fixed at the beginning of the voting period. People who have roles in multiple of these categories are only eligible to vote once.
 
+After the winner has been determined, the Arch Linux Developers, can enact their right to veto. This veto decision must be made within 14 days of the election. In case of a veto, the current winner is removed from the list of candidates and a new winner is determined based on the remaining votes. Then the veto process is restarted with this new winner. If there are no more candidates on the list, the whole nomination and voting process is restarted.
+
+A veto can be proposed by any developer on the arch-dev mailing list and needs initial support by at least one other developer. A decision on the veto is then reach by the usual developer decision making process. If two weeks pass without a veto from the developer team, the previous leader (or a representative) publicly announce the new leader. If no veto discussion has been initiated within one week of the election, the developer team can decide to announce the leader ahead of time, thereby refraining from their right to veto.
+
 ### Triggering of Elections
 
 The election of the Arch Linux Leader can triggered by any of the following conditions:

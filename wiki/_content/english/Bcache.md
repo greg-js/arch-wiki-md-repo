@@ -1,6 +1,12 @@
+Related articles
+
+*   [Flashcache](/index.php/Flashcache "Flashcache")
+*   [EnhanceIO](/index.php/EnhanceIO "EnhanceIO")
+*   [LVM2](/index.php/LVM2 "LVM2")
+
 [Bcache](https://bcache.evilpiepirate.org/) (block cache) allows one to use an SSD as a read/write cache (in writeback mode) or read cache (writethrough or writearound) for another blockdevice (generally a rotating HDD or array). This article will show how to install arch using Bcache as the root partition. For an intro to bcache itself, see [the bcache homepage](http://bcache.evilpiepirate.org/). Be sure to read and reference [the bcache manual](https://evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt). Bcache is in the mainline kernel since 3.10\. The kernel on the arch install disk includes the bcache module since 2013.08.01.
 
-An alternative to Bcache is Facebook's [Flashcache](/index.php/Flashcache "Flashcache") and its offspring [EnhanceIO](/index.php/EnhanceIO "EnhanceIO").
+An alternative to Bcache is Facebook's [Flashcache](/index.php/Flashcache "Flashcache") and its offspring [EnhanceIO](/index.php/EnhanceIO "EnhanceIO"). Alternatively, one uses the [LVM2#LVM cache](/index.php/LVM2#LVM_cache "LVM2") caching logical volume.
 
 Bcache needs the backing device to be formatted as a bcache block device. In most cases, [blocks to-bcache](https://github.com/g2p/blocks) can do an in-place conversion.
 

@@ -40,6 +40,16 @@ Crostini is still rolling out to Chromebooks. If you don't see an option to enab
 
 The below instructions based on [https://www.reddit.com/r/Crostini/wiki/howto/run-arch-linux](https://www.reddit.com/r/Crostini/wiki/howto/run-arch-linux)
 
+0\. Delete the Debian container (optional)
+
+If you have no use for Debian anymore, you can save some storage space by destroying and recreating the termina vm (this is the easiest way to do it, simply destroying the container with `lxc destroy penguin` will leave the space unusable). Beware this will also delete any other containers you may have under termina.
+
+```
+vmc destroy termina
+vmc start termina
+
+```
+
 1\. Install an Arch linux container
 
 Open a new terminal in Chrome (Ctrl + Alt + T). Then connect to terminal and create an arch linux container:
@@ -55,7 +65,7 @@ Following error will be shown after completion:
 
 This is expected behavior, proceed with following steps.
 
-2\. Connect to termina vm and check if arch container is present:
+2\. Connect to termina vm and check if arch container is present (it may a few minutes to show on the list):
 
 ```
 vsh termina
@@ -66,7 +76,7 @@ lxc list
 3\. launch a bash shell on the arch container:
 
 ```
-lxc exec penguin -- bash
+lxc exec arch -- bash
 
 ```
 
@@ -150,7 +160,7 @@ Now, when apps are installed in Arch Linux, they will automatically show up and 
 
 9\. Replace the default Debian container with Arch Linux.
 
-Exit from the container shell back to the termina shell pressing **<ctrl>+a q** (or just close existing and open new termina shell as shown in step 2). The default Debian container is named penguin. Renaming the "arch" container created above to it will cause chrome to launch Linux apps from the arch container.
+Exit from the container shell back to the termina shell pressing **<ctrl>+a q** (or just close existing and open new termina shell as shown in step 2). The default Debian container is named penguin. Renaming the "arch" container created above to it will cause chrome to launch Linux apps from the arch container. Skip the third line if you have already removed the Debian container.
 
 ```
 lxc stop --force arch

@@ -42,8 +42,8 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
 
 [Install](/index.php/Install "Install") one of the following packages:
 
-*   [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) is the stable maintenance branch, for conservative user.
-*   [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) is the feature branch, with new program enhancements for early adopter or power user.
+*   [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) is the stable maintenance branch, for conservative users.
+*   [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) is the feature branch, with new program enhancements for early adopters or power users.
 
 **Note:**
 

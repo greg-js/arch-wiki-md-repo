@@ -478,7 +478,7 @@ ExecStart=/usr/bin/nvidia-smi -pl 160.30
 
 Some options can be set as kernel module parameters, a full list can be obtained by running `modinfo nvidia` or looking at `nv-reg.h`. See [the Gentoo wiki](https://wiki.gentoo.org/wiki/NVidia/nvidia-drivers#Kernel_module_parameters) as well.
 
-For example, enabling the following will turn on kernel mode setting (see above) and enable the PAT feature supported by most newer CPUs, which affects how memory is allocated. If your system can support this feature it should improve performance.
+For example, enabling the following will turn on kernel mode setting (see above) and enable the PAT feature [[5]](https://www.kernel.org/doc/html/v5.4-rc8/x86/pat.html), which affects how memory is allocated. PAT was first introduced in Pentium III [[6]](https://www.kernel.org/doc/ols/2008/ols2008v2-pages-135-144.pdf) and is supported by most newer CPUs (see [wikipedia:Page attribute table#Processors](https://en.wikipedia.org/wiki/Page_attribute_table#Processors "wikipedia:Page attribute table")). If your system can support this feature, it should improve performance.
 
  `/etc/modprobe.d/nvidia.conf` 
 ```

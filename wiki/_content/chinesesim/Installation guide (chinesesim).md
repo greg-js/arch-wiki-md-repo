@@ -337,7 +337,7 @@ zh_TW.UTF-8 UTF-8
 
 如果系统有一个永久的 IP 地址，请使用这个永久的 IP 地址而不是 `127.0.1.1`。
 
-对新安装的系统，需要再次设置网络，[安装](/index.php/Install "Install") [iputils](https://www.archlinux.org/packages/?name=iputils) 或希望使用的 [网络管理](/index.php/Network_management "Network management") 软件。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
+对新安装的系统，需要再次设置网络，请注意，目前的 [base](https://www.archlinux.org/packages/?name=base) 不含有任何网络管理工具，[安装](/index.php/Install "Install") [iputils](https://www.archlinux.org/packages/?name=iputils) 或希望使用的 [网络管理](/index.php/Network_management "Network management") 软件。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
 
 ### Initramfs
 

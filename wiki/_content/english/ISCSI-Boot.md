@@ -152,6 +152,27 @@ run_hook ()
 
 ```
 
+If systemd-networkd will manage the network after the boot it is necessary to configure it so that it doesn't takes down the interface too early during shutdown, create a `/mnt/etc/systemd/network/ibft.network` file with this content:
+
+```
+[Match]
+Name=ibft*
+
+[Network]
+Unmanaged=yes
+```
+
+If using ibft+dhcp it possible let systemd-networkd manage the dhcp lease but leave the interface up after shutting down.
+
+```
+[Match]
+Name=ibft*
+
+[Network]
+DHCP=yes
+KeepConfiguration=yes
+```
+
 #### Manually Setting the iSCSI Target
 
 If you are not using an iBFT compatible boot rom you must explicitly setup the network and the iscsi target manually.
@@ -184,6 +205,32 @@ run_hook ()
     iscsistart -i iSCSI.Initiator.Name -t iSCSI.Target.Name -g 1 -a 192.168.1.100
 }
 ```
+
+It is not recommended to run daemons started from the initramfs since they will still refer to the old root and not using cgroups will not be managed (and restarted in case of failure) by systemd, it is also necessary to make sure that the interface is not brought offline before unmounting the root filesystem during shutdown. One possible solution with dhcp is to pass the option --oneshot to dhcpcd making it exit after obtaining an address and use systemd-networkd to manage the dhcp lease making sure it will not bring down the interface with the KeepConfiguration=yes option.
+
+```
+run_hook ()
+{
+    modprobe iscsi_tcp
+    mkdir -p /var/lib/dhcpcd
+    dhcpcd --oneshot eth0
+    sleep 2
+    iscsistart -i iSCSI.Initiator.Name -t iSCSI.Target.Name -g 1 -a 192.168.1.100
+}
+```
+
+If systemd-networkd will manage the network after the boot create a `/mnt/etc/systemd/network/eth.network` file with this content:
+
+```
+[Match]
+Name=eth0
+
+[Network]
+DHCP=yes
+KeepConfiguration=yes
+```
+
+The iscsi kernel driver cannot handle any network error without the iscsid daemon running, so it is important to make sure that when the network restarts the same ip address will be used, for example with a static lease.
 
 Add "iscsi" to the HOOKS line in [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio").
 

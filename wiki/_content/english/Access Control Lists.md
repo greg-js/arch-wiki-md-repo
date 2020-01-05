@@ -7,22 +7,20 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Enabling ACL](#Enabling_ACL)
-    *   [2.2 Set ACL](#Set_ACL)
-    *   [2.3 Show ACL](#Show_ACL)
-*   [3 Examples](#Examples)
-    *   [3.1 Output of ls command](#Output_of_ls_command)
-*   [4 Granting execution permissions for private files to a web server](#Granting_execution_permissions_for_private_files_to_a_web_server)
+*   [2 Enable ACL](#Enable_ACL)
+*   [3 Usage](#Usage)
+    *   [3.1 Set ACL](#Set_ACL)
+    *   [3.2 Show ACL](#Show_ACL)
+*   [4 Examples](#Examples)
+    *   [4.1 Output of ls command](#Output_of_ls_command)
+    *   [4.2 Granting execution permissions for private files to a web server](#Granting_execution_permissions_for_private_files_to_a_web_server)
 *   [5 See also](#See_also)
 
 ## Installation
 
 The [acl](https://www.archlinux.org/packages/?name=acl) package is a dependency of [systemd](/index.php/Systemd "Systemd"), it should already be installed.
 
-## Configuration
-
-### Enabling ACL
+## Enable ACL
 
 To enable ACL, the filesystem must be mounted with the `acl` option. You can use [fstab](/index.php/Fstab "Fstab") to make it permanent on your system.
 
@@ -49,6 +47,8 @@ Using the default mount options instead of an entry in `/etc/fstab` is very usef
 
 *   `acl` is specified as default mount option when creating an ext2/3/4 filesystem. This is configured in `/etc/mke2fs.conf`.
 *   The default mount options are not listed in `/proc/mounts`.
+
+## Usage
 
 ### Set ACL
 
@@ -207,7 +207,7 @@ other::---
 
 ```
 
-## Granting execution permissions for private files to a web server
+### Granting execution permissions for private files to a web server
 
 The following technique describes how a process like a [web server](/index.php/Web_server "Web server") can be granted access to files that reside in a user's home directory, without compromising security by giving the whole world access.
 

@@ -12,15 +12,19 @@ Related articles
 
 本文讨论[磁盘加密](https://en.wikipedia.org/wiki/Disk_encryption "wikipedia:Disk encryption")软件，它即时加密、解密从[块设备](https://en.wikipedia.org/wiki/Block_device "wikipedia:Block device")（如硬盘驱动器，闪存驱动器和DVD等），[磁盘分区](/index.php/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA "磁盘分区")，目录中写入、读取的数据。 磁盘加密只应被当作操作系统现有安全机制的附属物。磁盘加密从物理访问层面保护，依赖系统的*其他部分*提供网络安全和基于用户的访问控制等功能。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 为什么加密?](#.E4.B8.BA.E4.BB.80.E4.B9.88.E5.8A.A0.E5.AF.86.3F)
-*   [2 系统数据加密](#.E7.B3.BB.E7.BB.9F.E6.95.B0.E6.8D.AE.E5.8A.A0.E5.AF.86)
-*   [3 可用方法](#.E5.8F.AF.E7.94.A8.E6.96.B9.E6.B3.95)
-    *   [3.1 文件系统上加一层保护](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E4.B8.8A.E5.8A.A0.E4.B8.80.E5.B1.82.E4.BF.9D.E6.8A.A4)
-        *   [3.1.1 云储存优化](#.E4.BA.91.E5.82.A8.E5.AD.98.E4.BC.98.E5.8C.96)
-    *   [3.2 块设备加密](#.E5.9D.97.E8.AE.BE.E5.A4.87.E5.8A.A0.E5.AF.86)
-    *   [3.3 各种加密方法的比较](#.E5.90.84.E7.A7.8D.E5.8A.A0.E5.AF.86.E6.96.B9.E6.B3.95.E7.9A.84.E6.AF.94.E8.BE.83)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 为什么加密?](#为什么加密?)
+*   [2 系统数据加密](#系统数据加密)
+*   [3 可用方法](#可用方法)
+    *   [3.1 文件系统上加一层保护](#文件系统上加一层保护)
+        *   [3.1.1 云储存优化](#云储存优化)
+    *   [3.2 块设备加密](#块设备加密)
+    *   [3.3 各种加密方法的比较](#各种加密方法的比较)
         *   [3.3.1 Summary](#Summary)
         *   [3.3.2 Basic classification](#Basic_classification)
         *   [3.3.3 Practical implications](#Practical_implications)
@@ -29,17 +33,17 @@ Related articles
         *   [3.3.6 Performance features](#Performance_features)
         *   [3.3.7 Block device encryption specific](#Block_device_encryption_specific)
         *   [3.3.8 Stacked filesystem encryption specific](#Stacked_filesystem_encryption_specific)
-        *   [3.3.9 Compatibility & prevalence](#Compatibility_.26_prevalence)
-*   [4 准备](#.E5.87.86.E5.A4.87)
-    *   [4.1 选择一种加密配置](#.E9.80.89.E6.8B.A9.E4.B8.80.E7.A7.8D.E5.8A.A0.E5.AF.86.E9.85.8D.E7.BD.AE)
-    *   [4.2 例子](#.E4.BE.8B.E5.AD.90)
-    *   [4.3 选择强密码](#.E9.80.89.E6.8B.A9.E5.BC.BA.E5.AF.86.E7.A0.81)
-    *   [4.4 磁盘准备](#.E7.A3.81.E7.9B.98.E5.87.86.E5.A4.87)
-*   [5 加密如何工作](#.E5.8A.A0.E5.AF.86.E5.A6.82.E4.BD.95.E5.B7.A5.E4.BD.9C)
-    *   [5.1 基本原则](#.E5.9F.BA.E6.9C.AC.E5.8E.9F.E5.88.99)
-*   [6 =密钥、密钥文件、密码](#.3D.E5.AF.86.E9.92.A5.E3.80.81.E5.AF.86.E9.92.A5.E6.96.87.E4.BB.B6.E3.80.81.E5.AF.86.E7.A0.81)
-    *   [6.1 加密元数据](#.E5.8A.A0.E5.AF.86.E5.85.83.E6.95.B0.E6.8D.AE)
-    *   [6.2 密码和加密方式](#.E5.AF.86.E7.A0.81.E5.92.8C.E5.8A.A0.E5.AF.86.E6.96.B9.E5.BC.8F)
+        *   [3.3.9 Compatibility & prevalence](#Compatibility_&_prevalence)
+*   [4 准备](#准备)
+    *   [4.1 选择一种加密配置](#选择一种加密配置)
+    *   [4.2 例子](#例子)
+    *   [4.3 选择强密码](#选择强密码)
+    *   [4.4 磁盘准备](#磁盘准备)
+*   [5 加密如何工作](#加密如何工作)
+    *   [5.1 基本原则](#基本原则)
+*   [6 =密钥、密钥文件、密码](#=密钥、密钥文件、密码)
+    *   [6.1 加密元数据](#加密元数据)
+    *   [6.2 密码和加密方式](#密码和加密方式)
     *   [6.3 Plausible deniability](#Plausible_deniability)
 
 ## 为什么加密?
@@ -273,7 +277,7 @@ Chromium OS (encryption of cached user data [[11]](https://www.chromium.org/chro
 
 ### 选择一种加密配置
 
-Which disk encryption setup is appropriate for you will depend on your goals (please read [#Why use encryption?](#Why_use_encryption.3F) above) and system parameters.
+Which disk encryption setup is appropriate for you will depend on your goals (please read [#Why use encryption?](#Why_use_encryption?) above) and system parameters.
 
 Among other things, you will need to answer the following questions:
 
@@ -400,11 +404,11 @@ Whenever the operating system or an application requests a certain fragment of d
           ╠═══════╣         ╭┈┈┈┈┈╮
  sector 2 ║"???.."║         ┊ key ┊
           ╠═══════╣         ╰┈┈┬┈┈╯
-          :       :            │
+          :       :            │
           ╠═══════╣            ▼             ┣┉┉┉┉┉┉┉┫
  sector n ║"???.."║━━━━━━━(decryption)━━━━━━▶┋"abc.."┋ sector n
           ╠═══════╣                          ┣┉┉┉┉┉┉┉┫
-          :       :
+          :       :
           ╚═══════╝
 
           encrypted                          unencrypted
@@ -536,7 +540,7 @@ The most basic (and common) mode of operation used in practice is "*cipher-block
           │  ║          ║──────────────────╮      ┋          ┋
           │  ╟──────────╢                  │      ┠┈┈┈┈┈┈┈┈┈┈┨
           │  ║          ║                  ▼      ┋          ┋
-          :  :   ...    :        ...      ...     :   ...    : ...
+          :  :   ...    :        ...      ...     :   ...    : ...
 
                ciphertext                         plaintext
                   on disk                         in RAM

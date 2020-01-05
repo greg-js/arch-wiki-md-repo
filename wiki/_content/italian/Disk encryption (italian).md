@@ -9,9 +9,13 @@ Questo articolo discute le comuni tecniche disponibili in Arch Linux per protegg
 
 "Dischi dati" in questo contesto possono essere hard disk di computer, dispositivi esterni come pen drive USB oppure DVD, così come dischi dati *virtuali* come dispositivi loop-back o cloud *(finché Arch Linux può riconoscerli come dispositivi a blocchi o filesystem)*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Perché usare la crittografia?](#Perch.C3.A9_usare_la_crittografia.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Perché usare la crittografia?](#Perché_usare_la_crittografia?)
     *   [1.1 Crittografia dei dati vs crittografia di sistema](#Crittografia_dei_dati_vs_crittografia_di_sistema)
 *   [2 Metodi disponibili](#Metodi_disponibili)
     *   [2.1 Cifratura stacked filesystem](#Cifratura_stacked_filesystem)
@@ -20,24 +24,24 @@ Questo articolo discute le comuni tecniche disponibili in Arch Linux per protegg
         *   [2.3.1 *sommario*](#sommario)
         *   [2.3.2 *classificazione di base*](#classificazione_di_base)
         *   [2.3.3 *applicazioni pratiche*](#applicazioni_pratiche)
-        *   [2.3.4 *caratteristiche di fruibilità*](#caratteristiche_di_fruibilit.C3.A0)
+        *   [2.3.4 *caratteristiche di fruibilità*](#caratteristiche_di_fruibilità)
         *   [2.3.5 *caratteristiche di sicurezza*](#caratteristiche_di_sicurezza)
         *   [2.3.6 *caratteristiche di performance*](#caratteristiche_di_performance)
         *   [2.3.7 *specifiche della cifratura dei dispositivi a blocchi*](#specifiche_della_cifratura_dei_dispositivi_a_blocchi)
         *   [2.3.8 *specifiche della cifratura del filesystem stacked*](#specifiche_della_cifratura_del_filesystem_stacked)
-        *   [2.3.9 *compatibilità & popolarità*](#compatibilit.C3.A0_.26_popolarit.C3.A0)
+        *   [2.3.9 *compatibilità & popolarità*](#compatibilità_&_popolarità)
 *   [3 Preparazione](#Preparazione)
     *   [3.1 Scegliere un setup](#Scegliere_un_setup)
     *   [3.2 Scegliere una buona password](#Scegliere_una_buona_password)
     *   [3.3 Preparare il disco](#Preparare_il_disco)
 *   [4 Come funziona la crittografia](#Come_funziona_la_crittografia)
-    *   [4.1 Princìpio di base](#Princ.C3.ACpio_di_base)
+    *   [4.1 Princìpio di base](#Princìpio_di_base)
     *   [4.2 Keyfile e password](#Keyfile_e_password)
     *   [4.3 Ciphers and modes of operation](#Ciphers_and_modes_of_operation)
     *   [4.4 Cryptographic metadata](#Cryptographic_metadata)
-    *   [4.5 Data integrity/authenticity](#Data_integrity.2Fauthenticity)
+    *   [4.5 Data integrity/authenticity](#Data_integrity/authenticity)
     *   [4.6 Plausible deniability](#Plausible_deniability)
-*   [5 Notes & References](#Notes_.26_References)
+*   [5 Notes & References](#Notes_&_References)
 
 ## Perché usare la crittografia?
 
@@ -360,7 +364,7 @@ usato da
 
 ### Scegliere un setup
 
-Il setup di cifratura dei dischi appropriato per te dipende dai tuoi scopi (per favore leggi [#Perché usare la crittografia?](#Perch.C3.A9_usare_la_crittografia.3F) sopra) e le specifiche del tuo sistema..
+Il setup di cifratura dei dischi appropriato per te dipende dai tuoi scopi (per favore leggi [#Perché usare la crittografia?](#Perché_usare_la_crittografia?) sopra) e le specifiche del tuo sistema..
 Tra le altre cose, dovrai rispondere alle seguenti domande:
 
 *   Da che tipo di hacker (attacker) ti vuoi proteggere?
@@ -604,7 +608,7 @@ When decrypting, the procedure is reversed analogously.
 
 One thing worth noting is the generation of the unique initialization vector for each sector. The simplest choice is to calculate it in a predictable fashion from a readily available value such as the sector number. However, this might allow an attacker with repeated access to the system to perform a so-called [watermarking attack](https://en.wikipedia.org/wiki/Watermarking_attack "wikipedia:Watermarking attack"). To prevent that, a method called "Encrypted salt-sector initialization vector (**ESSIV**)" can be used to generate the initialization vectors in a way that makes them look completely random to a potential attacker.
 
-There are also a number of other, more complicated modes of operation available for disk encryption, which already provide built-in security agains such attacks. Some can also additionally guarantee authenticity ([see below](#Data_integrity.2Fauthenticity)) of the encrypted data.
+There are also a number of other, more complicated modes of operation available for disk encryption, which already provide built-in security agains such attacks. Some can also additionally guarantee authenticity ([see below](#Data_integrity/authenticity)) of the encrypted data.
 
 *Further reading:*
 
@@ -636,6 +640,6 @@ There are also a number of other, more complicated modes of operation available 
 6.  [^](#compatibility_.26_prevalence) see [http://www.freshports.org/sysutils/fusefs-encfs/](http://www.freshports.org/sysutils/fusefs-encfs/)
 7.  [^](#compatibility_.26_prevalence) see [http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data](http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)
 
-</small>
+</small><small></small>
 
 <small></small>

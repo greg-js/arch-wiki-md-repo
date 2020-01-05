@@ -334,9 +334,9 @@ done
 
 ### С помощью NVIDIA Container Toolkit (рекомендовано)
 
-Начиная с версии 19.03, графические процессоры NVIDIA поддерживаются в качестве устройств Docker. [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker) является рекомендованным способом запуска контейнеров, использующих графические процессоры NVIDIA.
+Начиная с версии 19.03, графические процессоры NVIDIA поддерживаются в качестве устройств Docker. [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker) ― рекомендованный способ запуска контейнеров, использующих графические процессоры NVIDIA.
 
-Установите пакет [nvidia-container-toolkit](https://aur.archlinux.org/packages/nvidia-container-toolkit/). Далее, перезапустите [restart](/index.php/Restart "Restart") docker. Теперь вы можете запускать контейнеры Docker, использующие графические процессоры NVIDIA, с помощью параметра `--gpus`:
+Установите пакет [nvidia-container-toolkit](https://aur.archlinux.org/packages/nvidia-container-toolkit/) и [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") Docker. Теперь вы можете запускать контейнеры Docker, использующие графические процессоры NVIDIA, с помощью параметра `--gpus`:
 
 ```
 # docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
@@ -364,18 +364,18 @@ done
 
 ```
 
-Укажите capability (graphics, compute, ...) для контейнера (хотя это редко, если вообще когда либо используется таким образом):
+Укажите возможности ("graphics", "compute", ...) контейнера (хотя это редко, если вообще когда либо используется таким образом):
 
 ```
 # docker run --gpus all,capabilities=utility nvidia/cuda:9.0-base nvidia-smi
 
 ```
 
-Для получения дополнительной информации читайте тут [README.md](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md) и тут [Wiki](https://github.com/NVIDIA/nvidia-docker/wiki).
+Для получения дополнительной информации см. [README.md](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md) и [Wiki](https://github.com/NVIDIA/nvidia-docker/wiki).
 
 ### С помощью NVIDIA Container Runtime
 
-Установите пакет [nvidia-container-runtime](https://aur.archlinux.org/packages/nvidia-container-runtime/). Затем, внесите библиотеку среды выполнения NVIDIA, внеся следующее в конфигурационный файл `/etc/docker/daemon.json`
+Установите пакет [nvidia-container-runtime](https://aur.archlinux.org/packages/nvidia-container-runtime/). Затем, зарегистрируйте среду выполнения NVIDIA, отредактировав конфигурационный файл `/etc/docker/daemon.json`:
 
  `/etc/docker/daemon.json` 
 ```
@@ -389,16 +389,16 @@ done
 }
 ```
 
-и перезапустите [restart](/index.php/Restart "Restart") docker.
+и [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") docker.
 
-Библиотека среды выполнения также может быть добавлена к *dockerd* как параметр командной строки:
+Среда выполнения также может быть зарегистрирована с помощью параметра командной строки *dockerd*:
 
 ```
 # /usr/bin/dockerd --add-runtime=nvidia=/usr/bin/nvidia-container-runtime
 
 ```
 
-После этого контейнеры с ускорением на графических процессорах могут быть запущены с помощью команды:
+После этого контейнеры с ускорением на графических процессорах могут быть запущены с помощью следующей команды:
 
 ```
 # docker run --runtime=nvidia nvidia/cuda:9.0-base nvidia-smi
@@ -412,13 +412,13 @@ done
 
 ```
 
-Читайте также [README.md](https://github.com/NVIDIA/nvidia-container-runtime/blob/master/README.md).
+См. также [README.md](https://github.com/NVIDIA/nvidia-container-runtime/blob/master/README.md).
 
 ### С помощью nvidia-docker (устарело)
 
-[nvidia-docker](https://nvidia.github.io/nvidia-docker/) is a wrapper around NVIDIA Container Runtime which registers the NVIDIA runtime by default and provides the *nvidia-docker* command.
+[nvidia-docker](https://nvidia.github.io/nvidia-docker/) — обёртка над библиотекой среды исполнения NVIDIA Container Runtime, которая регистрирует среду выполнения NVIDIA по умолчанию и предоставляет команду *nvidia-docker*.
 
-To use nvidia-docker, install the [nvidia-docker](https://aur.archlinux.org/packages/nvidia-docker/) package and then [restart](/index.php/Restart "Restart") docker. Containers with NVIDIA GPU support can then be run using any of the following methods:
+Чтобы использовать nvidia-docker, установите пакет [nvidia-docker](https://aur.archlinux.org/packages/nvidia-docker/) и [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") Docker. Контейнеры с поддержкой NVIDIA GPU могут быть запущены, используя один из следующих методов:
 
 ```
 # docker run --runtime=nvidia nvidia/cuda:9.0-base nvidia-smi
@@ -430,14 +430,14 @@ To use nvidia-docker, install the [nvidia-docker](https://aur.archlinux.org/pack
 
 ```
 
-or (required Docker version 19.03 or higher)
+или (требуется Docker версии 19.03 или выше)
 
 ```
 # docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
 
 ```
 
-**Note:** nvidia-docker is a legacy method for running NVIDIA GPU accelerated containers used prior to Docker 19.03 and has been deprecated. If you are using Docker version 19.03 or higher, it is recommended to use [NVIDIA Container Toolkit](#With_NVIDIA_Container_Toolkit_(recommended)) instead.
+**Примечание:** nvidia-docker — устаревший метод запуска Docker-контейнеров с ускорением на графических процессорах NVIDIA, использующийся в версиях Docker, предшествующих версии 19.03\. Если вы используете Docker версии 19.03 или выше, рекомендуется использовать [NVIDIA Container Toolkit](#С_помощью_NVIDIA_Container_Toolkit_(рекомендовано)).
 
 ## Устранение неполадок
 

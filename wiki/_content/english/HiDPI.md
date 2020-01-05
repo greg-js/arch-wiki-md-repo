@@ -24,8 +24,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [1.3 Xfce](#Xfce)
     *   [1.4 Cinnamon](#Cinnamon)
     *   [1.5 Enlightenment](#Enlightenment)
-*   [2 X Server](#X_Server)
-*   [3 X Resources](#X_Resources)
+*   [2 X Resources](#X_Resources)
+*   [3 X Server](#X_Server)
 *   [4 GUI toolkits](#GUI_toolkits)
     *   [4.1 Qt 5](#Qt_5)
     *   [4.2 GDK 3 (GTK 3)](#GDK_3_(GTK_3))
@@ -222,9 +222,32 @@ Has good support out of the box.
 
 For E18, go to the E Setting panel. In *Look > Scaling*, you can control the UI scaling ratios. A ratio of 1.2 seems to work well for the native resolution of the MBPr 15" screen.
 
+## X Resources
+
+If you are not using a desktop environment such as KDE, Xfce, or other that manipulates the X settings for you, you can set the desired DPI setting manually via the `Xft.dpi` variable in [Xresources](/index.php/Xresources "Xresources"):
+
+ `~/.Xresources` 
+```
+Xft.dpi: 192
+
+! These might also be useful depending on your monitor and personal preference:
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+```
+
+For `Xft.dpi`, using integer multiples of 96 usually works best, e.g. 192 for 200% scaling.
+
+Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
+
+This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size! Setting `Xft.dpi` at the same time as toolkit scale (e.g. `GDK_SCALE`) may cause interface elements to be much larger than intended in some programs like firefox.
+
 ## X Server
 
-Some programs use the DPI given by the X server. Examples are i3 ([source](https://github.com/i3/i3/blob/next/libi3/dpi.c)) and Chromium ([source](https://code.google.com/p/chromium/codesearch#chromium/src/ui/views/widget/desktop_aura/desktop_screen_x11.cc)).
+Some programs may still interpret the DPI given by the X server (most interpret X Resources, though, directly or indirectly). Older versions of i3 (before 2017) and Chromium (before 2017) used to do this.
 
 To verify that the X Server has properly detected the physical dimensions of your monitor, use the *xdpyinfo* utility from the [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) package:
 
@@ -239,25 +262,6 @@ screen #0:
 This example uses inaccurate dimensions (423mm x 328mm, even though the Dell XPS 9530 has 346mm x 194mm) to have a clean multiple of 96 dpi, in this case 192 dpi. This tends to work better than using the correct DPI — Pango renders fonts crisper in i3 for example.
 
 If the DPI displayed by xdpyinfo is not correct, see [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg") for how to fix it.
-
-## X Resources
-
-If you are not using a desktop environment such as KDE, Xfce, or other that manipulates the X settings for you, you can set the desired DPI setting manually via the `Xft.dpi` variable in [Xresources](/index.php/Xresources "Xresources"):
-
- `~/.Xresources` 
-```
-Xft.dpi: 180
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
-```
-
-Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
-
-This will make the font render properly in most toolkits and applications, it will however not affect things such as icon size! Setting `Xft.dpi` at the same time as toolkit scale (e.g. `GDK_SCALE`) may cause interface elements to be much larger than intended in some programs like firefox.
 
 ## GUI toolkits
 
@@ -662,11 +666,13 @@ There are several tools which automate the commands described above.
 
 ## Linux console
 
-The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on HiDPI displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `latarcyrheb-sun32` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives, such as `ter-132n`(normal) and `ter-132b`(bold). See [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console") for configuration details. Also see [Linux console#Persistent configuration](/index.php/Linux_console#Persistent_configuration "Linux console") in particular for applying the font setting during the early userspace boot sequence.
+The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on HiDPI displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `latarcyrheb-sun32` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives, such as `ter-132n` (normal) and `ter-132b` (bold). See [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console") for configuration details. Also see [Linux console#Persistent configuration](/index.php/Linux_console#Persistent_configuration "Linux console") in particular for applying the font setting during the early userspace boot sequence.
 
 After changing the font, it is often garbled and unreadable when changing to other virtual consoles (`tty2-6`). To fix this you can [force specific mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") for KMS, such as `video=2560x1600@60` (substitute in the native resolution of your HiDPI display), and reboot.
 
 Users booting though [UEFI](/index.php/UEFI "UEFI") may experience the console and [boot loader](/index.php/Boot_loader "Boot loader") being constrained to a low resolution despite correct [KMS](/index.php/KMS "KMS") settings being set. This can be caused by legacy/BIOS boot being enabled in UEFI settings. Disabling legacy boot to bypass the compatibility layer should allow the system to boot at the correct resolution.
+
+To make early Linux boot stages use a large font, one can set `CONFIG_FONT_TER16x32=y` in the kernel build configuration, and make Linux use it by default by passing `fbcon=font:TER16x32` on the kernel command line.
 
 ## See also
 

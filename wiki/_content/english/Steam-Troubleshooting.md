@@ -34,6 +34,7 @@
     *   [7.6 Steam license problem with playing videos](#Steam_license_problem_with_playing_videos)
     *   [7.7 No context menu for joining/inviting friends](#No_context_menu_for_joining/inviting_friends)
     *   [7.8 Slow and unresponsive user interface](#Slow_and_unresponsive_user_interface)
+    *   [7.9 Steam fails to start correctly](#Steam_fails_to_start_correctly)
 *   [8 Steam Remote Play issues](#Steam_Remote_Play_issues)
     *   [8.1 Remote Play does not work from Arch Linux host to Arch Linux guest](#Remote_Play_does_not_work_from_Arch_Linux_host_to_Arch_Linux_guest)
     *   [8.2 Hardware decoding not available](#Hardware_decoding_not_available)
@@ -186,7 +187,7 @@ failed to dlopen engine.so error=/home/*GAMEPATH*/bin/libgcc_s.so.1: version `GC
 
 ```
 
-moving the the incompatable lib can be a workaround.
+moving the incompatible lib can be a workaround.
 
 ```
 mv .local/share/Steam/steamapps/common/*GAME*/bin/libgcc_s.so.1 .local/share/Steam/steamapps/common/*GAME*/bin/libgcc_s.so.1.b
@@ -411,6 +412,17 @@ In order to fix this, it maybe be necessary to install [lsof](https://www.archli
 ### Slow and unresponsive user interface
 
 If you experience extremely slow and sluggish performance when using the Steam client it might help to disable the option "Enable GPU accelerated rendering in web views" under the "Interface" tab in the Steam client settings.
+
+### Steam fails to start correctly
+
+One troubleshooting step is to run
+
+```
+# steam-runtime --reset
+
+```
+
+This can fix various issues that come with a broken install.
 
 ## Steam Remote Play issues
 

@@ -726,13 +726,12 @@ It is possible to automatically unlock a pool dataset on boot time by using a [s
 [Unit]
 Description=Load %I encryption keys
 Before=systemd-user-sessions.service
-Before=zfs-mount.service
 After=zfs-import.target
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/bash -c 'systemd-ask-password "Encrypted ZFS password for %I" --no-tty  | zfs load-key %I'
+ExecStart=/usr/bin/bash -c 'until (systemd-ask-password "Encrypted ZFS password for %I" --no-tty | zfs load-key %I); do echo "Try again!"; done'
 
 [Install]
 WantedBy=zfs-mount.service
@@ -749,7 +748,6 @@ An alternative is to load all possible keys:
 [Unit]
 Description=Load encryption keys
 DefaultDependencies=no
-Before=zfs-mount.service
 After=zfs-import.target
 
 [Service]

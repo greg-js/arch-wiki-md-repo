@@ -104,7 +104,7 @@ Defaults      editor=/usr/bin/nano, !env_editor
 
 ### Example entries
 
-To allow a user to gain full root privileges when he/she precedes a command with `sudo`, add the following line:
+To allow a user to gain full root privileges when they precede a command with `sudo`, add the following line:
 
 ```
 USER_NAME   ALL=(ALL) ALL

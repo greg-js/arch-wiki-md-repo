@@ -132,7 +132,7 @@ Thunderbolt works out of the box (tested with ThinkPad Thunderbolt 3 Dock); see 
 
 ### Fan control
 
-The fan on the right side of the laptop can be controlled by [thinkpad_acpi](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control"). It seems that the fan on the left side can't be controlled yet; see [this Nvidia forum post](https://devtalk.nvidia.com/default/topic/1052110/linux/can-t-control-gtx-1050-ti-max-q-fan-on-thinkpad-x1-extreme-laptop/post/5340658/#5340658). If noise is an issue, the fan can be turned off manually by unplugging it from the motherboard, or [the dust mesh can be removed](https://www.reddit.com/r/thinkpad/comments/acesmt/x1_extremes_jet_engine_noise_reduced_after_mesh/).
+The fan on the right side of the laptop can be controlled by [thinkpad_acpi](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control"). 2nd fan can be controlled after patching thinkpad_acpi module; see [[1]](https://github.com/civic9/thinkpad_acpi.2ndfan.patch). If noise is an issue, the fan can be turned off manually by unplugging it from the motherboard, or [the dust mesh can be removed](https://www.reddit.com/r/thinkpad/comments/acesmt/x1_extremes_jet_engine_noise_reduced_after_mesh/).
 
 ### Other hardware
 

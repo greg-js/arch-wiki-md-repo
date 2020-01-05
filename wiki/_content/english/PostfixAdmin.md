@@ -35,6 +35,7 @@ Edit the PostfixAdmin configuration file:
 
  `/etc/webapps/postfixadmin/config.local.php` 
 ```
+<?php
 $CONF['configured'] = true;
 // correspond to dovecot maildir path /home/vmail/%d/%u 
 $CONF['domain_path'] = 'YES';

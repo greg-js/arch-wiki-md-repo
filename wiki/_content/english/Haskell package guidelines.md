@@ -7,3 +7,92 @@
 This document aims to cover standards and guidelines for producing good [Haskell](/index.php/Haskell "Haskell") [packages](/index.php/Creating_packages "Creating packages") on Arch.
 
 Until this document is written, contact [User:Felixonmars](/index.php/User:Felixonmars "User:Felixonmars")
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Package naming](#Package_naming)
+*   [2 Architecture](#Architecture)
+*   [3 Source](#Source)
+*   [4 Rebuild order](#Rebuild_order)
+*   [5 PKGBUILD library example](#PKGBUILD_library_example)
+
+## Package naming
+
+For Haskell libraries, use `haskell-*libraryname*` usually the same name as on [hackage](https://hackage.haskell.org/).
+
+**Note:** The package name should be entirely lowercase.
+
+## Architecture
+
+See [PKGBUILD#arch](/index.php/PKGBUILD#arch "PKGBUILD").
+
+Every Haskell library or program is architecture-dependent.
+
+## Source
+
+The preferred source of a Haskell program or library is from [hackage](https://hackage.haskell.org). [PKGBUILD#source](/index.php/PKGBUILD#source "PKGBUILD") `source=()` array should use the following URL template:
+
+	`https://hackage.haskell.org/packages/archive/$_hkgname/$pkgver/$_hkgname-$pkgver.tar.gz`
+
+Note that a custom _hkgname variable is used instead of pkgname since Haskell packages are generally prefixed with haskell-. This variable can generically be defined as follows:
+
+```
+_hkgname=stm-delay
+
+```
+
+## Rebuild order
+
+When a Haskell library changes it's build flags or is updated all dependent packages need to be rebuild.
+
+## PKGBUILD library example
+
+Packaging a Haskell library is different from packaging a Haskell program, the libraries packaged in Arch Linux are meant to be used by packaged Haskell programs.
+
+ `PKGBUILD` 
+```
+# Contributor: Your Name <youremail@domain.com>
+_hkgname=stm-delay
+pkgname=haskell-stm-delay
+arch=('x86_64')
+url="https://hackage.haskell.org/package/$hkgname"
+depends=(ghc-libs)
+makedepends=(ghc)
+source=("https://hackage.haskell.org/packages/archive/$_hkgname/$pkgver/$_hkgname-$pkgver.tar.gz")
+
+build() {
+  cd $_hkgname-$pkgver    
+
+  runhaskell Setup configure -O --enable-shared --enable-executable-dynamic --disable-library-vanilla \
+    --prefix=/usr --docdir=/usr/share/doc/$pkgname --enable-tests \
+    --dynlibdir=/usr/lib --libsubdir=\$compiler/site-local/\$pkgid \
+    --ghc-option=-optl-Wl\,-z\,relro\,-z\,now \
+    --ghc-option='-pie'
+
+  runhaskell Setup build
+  runhaskell Setup register --gen-script
+  runhaskell Setup unregister --gen-script
+  sed -i -r -e "s|ghc-pkg.*update[^ ]* |&'--force' |" register.sh
+  sed -i -r -e "s|ghc-pkg.*unregister[^ ]* |&'--force' |" unregister.sh
+}
+
+check() {
+  cd $_hkgname-$pkgver
+  runhaskell Setup test
+}
+
+package() {
+  cd $_hkgname-$pkgver
+
+  install -D -m744 register.sh "$pkgdir"/usr/share/haskell/register/$pkgname.sh
+  install -D -m744 unregister.sh "$pkgdir"/usr/share/haskell/unregister/$pkgname.sh
+  runhaskell Setup copy --destdir="$pkgdir"
+  install -D -m644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  rm -f "${pkgdir}/usr/share/doc/${pkgname}/LICENSE"
+}
+
+```

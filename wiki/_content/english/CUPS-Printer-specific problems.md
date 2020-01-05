@@ -267,6 +267,7 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 | MX490 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/)
 [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/) |
 | MX492 |
+| TS202 |
 | TS8050 | Without [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) printing will fail with a filter error or you might get "Rendering Completed" and nothing will print |
 | TS9020 | [canon-ts9020](https://aur.archlinux.org/packages/canon-ts9020/) |
 | Printer | Driver/filter | Notes |

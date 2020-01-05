@@ -131,7 +131,7 @@ The upgrade to kernel 4.20 since raven support if there is problem try [linux-am
 
 If you want bleeding edge features and power saving try [linux-amd-staging-drm-next-git](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git/) with [linux-amd-staging-drm-next-git-headers](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git-headers/), but keep idle=nomwait since still causes hangups.
 
-You can also use kernel 5.1 without kernel parameters without hangups or bugs, you will just have to ignore the startup warning messages.
+You can also use kernel 5.4 and newer without kernel parameter idle=nomwait, resulting on a cooler laptop without hangups or bugs.
 
 ### Power Saving Modes
 

@@ -102,38 +102,34 @@ The following can also be set on a per directory or per file basis with `bcachef
 
 ```
 
+If this is the first drive in a group, you'll need to change the target settings to make use of it. This example is for adding a cache drive.
+
+```
+# echo *new_group* > /sys/fs/bcachefs/*filesystem_uuid*/options/promote_target
+# echo *new_group* > /sys/fs/bcachefs/*filesystem_uuid*/options/foreground_target
+# echo *old_group* > /sys/fs/bcachefs/*filesystem_uuid*/options/background_target
+
+```
+
 **Note:** Only new writes will be striped across added devices. Existing ones will be unchanged until disk usage reaches a certain threshold, when the disk rebalance is triggered. It is not currently possible to manually trigger a rebalance/restripe.
 
 ### Removing a device
 
-If you already have at least 2 data and metadata replicas
-
-```
-# bcachefs device remove *device*
-# bcachefs data rereplicate /mnt
-
-```
-
-Otherwise, first make sure there are at least 2 metadata replicas.
+First make sure there are at least 2 metadata replicas (Evacuate does not appear to work for metadata). If your data and metadata are already replicated, you may skip this step.
 
 ```
 # echo 2 > /sys/fs/bcachefs/*UUID*/options/metadata_replicas
 # bcachefs data rereplicate /mnt
-
-```
-
-Move the data off the device. This can take a very long time.
-
-```
 # bcachefs device set-state *device* readonly
 # bcachefs device evacuate *device*
 
 ```
 
-Finally remove it.
+To remove the device.
 
 ```
 # bcachefs device remove *device*
+# bcachefs data rereplicate /mnt
 
 ```
 
