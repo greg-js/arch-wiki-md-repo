@@ -31,6 +31,7 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
             *   [2.2.2.1 Firewall considerations](#Firewall_considerations)
                 *   [2.2.2.1.1 Example iptables rule](#Example_iptables_rule)
                 *   [2.2.2.1.2 Example ufw rule](#Example_ufw_rule)
+            *   [2.2.2.2 Running containers as non-root user](#Running_containers_as_non-root_user)
     *   [2.3 Container creation](#Container_creation)
     *   [2.4 Container configuration](#Container_configuration)
         *   [2.4.1 Basic config with networking](#Basic_config_with_networking)
@@ -248,6 +249,23 @@ If using [ufw](https://www.archlinux.org/packages/?name=ufw), append the followi
 COMMIT
 
 ```
+
+##### Running containers as non-root user
+
+To create and start containers as a non-root user, extra configuration must be applied.
+
+Create the usernet file under `/etc/lxc/lxc-usernet`. According to the `lxc-usernet` man page, the entry per line is:
+
+```
+user type bridge number
+
+```
+
+Configure the file with the user you want to use to create containers. The bridge will be the same you defined in `/etc/default/lxc-net`.
+
+A copy of the `/etc/lxc/default.conf` is needed in the non-root user's home directory, e.g. `~/.config/lxc/default.conf` (create the directory if needed).
+
+Running containers as a non-root user requires `+x` permissions on `~/.local/share/`. Make that change with [chmod](/index.php/Chmod "Chmod") before starting a container.
 
 ### Container creation
 

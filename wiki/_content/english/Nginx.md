@@ -772,7 +772,9 @@ server {
 
 **Tip:** If you want nginx accessible on port 80 or 443, configure your [firewall](/index.php/Firewall "Firewall") to redirect requests from 80 or 443 to the ports nginx listens to.
 
-	Or you may grant the nginx process the CAP_NET_BIND_SERVICE capability which will allow it to bind to ports below 1024: `/etc/systemd/system/nginx.service.d/user.conf` 
+Or you may grant the nginx process the CAP_NET_BIND_SERVICE capability which will allow it to bind to ports below 1024:
+
+ `/etc/systemd/system/nginx.service.d/user.conf` 
 ```
 [Service]
 ...
@@ -813,8 +815,7 @@ ExecReload=/usr/bin/nginx -s reload -g 'pid /run/nginx/nginx.pid;'
 	Log file & Directory Permissions
 
 	The step of running a configuration test will create a dangling `root`-owned log. Remove logs in `/var/log/nginx` to start fresh.
-
-	The nginx service user needs write permission to `/var/log/nginx`. This may require [changing permission](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes") and/or ownership of this directory on your system.
+The nginx service user needs write permission to `/var/log/nginx`. This may require [changing permission](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes") and/or ownership of this directory on your system.
 
 Now we should be good to go. Go ahead and [start](/index.php/Start "Start") nginx, and enjoy your completely rootless nginx.
 

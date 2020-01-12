@@ -28,7 +28,7 @@
 
 [Install](/index.php/Install "Install") [retroarch](https://www.archlinux.org/packages/?name=retroarch) or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
 
-**Tip:** [Install](/index.php/Install "Install") [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) to get the fonts and icons for the RetroArch GUI. You need to edit RetroArch's [#Configuration](#Configuration) to load them.
+**Tip:** [Install](/index.php/Install "Install") [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) to get the fonts and icons for the RetroArch GUI.
 
 **Tip:** [Install](/index.php/Install "Install") [retroarch-standalone-service](https://aur.archlinux.org/packages/retroarch-standalone-service/) to get system user, systemd.service and retroarch configuration for standalone game-box. Just enable retroarch-standalone.service after all.
 

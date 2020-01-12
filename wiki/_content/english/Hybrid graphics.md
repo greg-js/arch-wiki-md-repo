@@ -37,9 +37,7 @@ This switch is somewhat rough and adds some blinks and black screens in laptops 
 
 Most of the new Hybrid-graphics technologies involve two graphic cards as the [basic switching](#First_Generation_Hybrid_Model_(Basic_Switching)) but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use *only* the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
 
-**Note:**
-Read [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") and [Bumblebee](/index.php/Bumblebee "Bumblebee") for details about NVidia using hybrid graphics with NVidia’s proprietary driver.
-Read [PRIME](/index.php/PRIME "PRIME") basically everything else (like AMD Radeon and NVidia GPUs with Nouveau driver).
+**Note:** Read [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") and [Bumblebee](/index.php/Bumblebee "Bumblebee") for details about NVidia using hybrid graphics with NVidia’s proprietary driver. Read [PRIME](/index.php/PRIME "PRIME") for basically everything else (like AMD Radeon and NVidia GPUs with Nouveau driver).
 
 ### Fully Power Down Discrete GPU
 

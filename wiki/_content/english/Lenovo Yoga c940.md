@@ -91,6 +91,8 @@ Bug reports for Microphone
 *   [https://bugzilla.kernel.org/show_bug.cgi?id=201251](https://bugzilla.kernel.org/show_bug.cgi?id=201251)
 *   [https://github.com/thesofproject/sof/issues/2134](https://github.com/thesofproject/sof/issues/2134)
 
+The microphone is working with a pre-release kernel. (The changes have been backported to Fedora 31, so copying what happened there might help for Arch.) There may also be signing issues so turning secure boot off might be necessary.
+
 #### Speakers
 
 Audio is OK, there are 5.1 speakers, 2.1 in the soundbar, and 2 under the palmrest on either side of the laptop. Only the 2 speakers in the soundbar works, and not the subwoofer. This isn't optimal, but Alsa/Pulseaudio report that its a 2 channel audio device. I have read in other articles from other Lenovo devices, like the X1 Yoga that they solve this by making the alsa/pulseaudio use 4 channels instead of 2.. I haven't tried this so I cannot report on it.
@@ -110,6 +112,8 @@ I personally use [bspwm](https://www.archlinux.org/packages/?name=bspwm) and for
 Suspend on lid works.
 
 Manual fan control does not work at all.
+
+Tablet/Laptop usage mode detection works with [yoga-usage-mode-dkms-git](https://aur.archlinux.org/packages/yoga-usage-mode-dkms-git/).
 
 ## Hardware information
 

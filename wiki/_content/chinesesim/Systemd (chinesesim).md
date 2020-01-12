@@ -699,7 +699,7 @@ $ ulimit -c unlimited
 
 从 systemd 219 开始, `/usr/lib/tmpfiles.d/systemd.conf` 指定 `/var/log/journal` 的 ACL 属性和目录, 因此日志所在的文件系统上要启用ACL.
 
-参阅 [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") 获得如何包含 `/var/log/journal` 启动 ACL 的详细信息.
+参阅 [Access Control Lists#Enable ACL](/index.php/Access_Control_Lists#Enable_ACL "Access Control Lists") 获得如何包含 `/var/log/journal` 启动 ACL 的详细信息.
 
 ### 启动时显示的 systemd 版本和安装版本不一致
 

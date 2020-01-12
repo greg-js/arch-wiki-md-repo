@@ -75,8 +75,8 @@ Using the default settings will mount the NTFS partition(s) at boot. With this m
 
  `/etc/fstab` 
 ```
-# <file system>   <dir> <type>    <options>             <dump>  <pass>
-/dev/*NTFS-part*  /mnt/windows  ntfs-3g   defaults          0       0
+# <file system>		<dir>		<type>	<options>	<dump>	<pass>
+/dev/*NTFS-part*		/mnt/windows	ntfs-3g	defaults	0	0
 
 ```
 
@@ -188,14 +188,29 @@ If you already have Arch Linux installed on your system and simply want to resiz
 
 ### Compressed files
 
-If you have a Windows 10 partition and when accessing files/directories,
+When mounting an NTFS filesystem for Windows 10, and reading files or directories, you may
 
-1.  you see broken symbolic links to 'unsupported reparse point', *or*
-2.  you see the error message "cannot access <*filename*>: Input/output error" (in this case you see in /var/log/messages "Could not load plugin /usr/lib64/ntfs-3g/ntfs-plugin-80000017.so: Success")
+1.  see broken symbolic links to 'unsupported reparse point', *or*
+2.  see the error message "cannot access <*filename*>: Input/output error" (in this case you see in /var/log/messages "Could not load plugin /usr/lib64/ntfs-3g/ntfs-plugin-80000017.so: Success").
 
-then install [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/). This plugin handles system-compressed files.
+The reason for this are [NTFS reparse points](https://en.wikipedia.org/wiki/NTFS_reparse_points "wikipedia:NTFS reparse points"), and that NTFS-3G does not support some types of reparse points by default. NTFS-3G plugins may be used to provide compatibility with a part of the features defined by the following reparse points
 
-There exists some other types of [reparse points](https://en.wikipedia.org/wiki/NTFS_reparse_points "wikipedia:NTFS reparse points") that ntfs-3g does not support by default. See [this page](https://jp-andre.pagesperso-orange.fr/junctions.html#other) for a list of available plugins.
+*   System compression
+*   Deduplicated files
+*   OneDrive files
+
+See [this page](https://jp-andre.pagesperso-orange.fr/junctions.html#other) for further details.
+
+System compression a.k.a. "Compact OS" compresses certain files. There are two possible workarounds for System compression.
+
+You may install the NTFS-3G plugin [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/). Currently only reading is supported by this plugin, but not writing, i.e. creating or updating files is not supported.
+
+Alternatively, disable the System compression feature in Windows 10
+
+```
+C:\WINDOWS\system32> compact.exe /CompactOS:never
+
+```
 
 ### Damaged NTFS filesystems
 

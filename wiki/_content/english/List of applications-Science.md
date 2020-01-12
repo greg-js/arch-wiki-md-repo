@@ -577,6 +577,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 ### Astronomy
 
+*   **[Astropy](https://en.wikipedia.org/wiki/Astropy "wikipedia:Astropy")** — The Astropy Project is a community effort to develop a common core package for Astronomy in Python and foster an ecosystem of interoperable astronomy packages.
+
+	[https://www.astropy.org/](https://www.astropy.org/) || [python-astropy](https://aur.archlinux.org/packages/python-astropy/)
+
 *   **[Celestia](https://en.wikipedia.org/wiki/Celestia "wikipedia:Celestia")** — 3D astronomy simulation program that allows users to travel through an extensive universe, modeled after reality, at any speed, in any direction and at any time in history.
 
 	[https://celestiaproject.net/](https://celestiaproject.net/) || [celestia](https://www.archlinux.org/packages/?name=celestia)

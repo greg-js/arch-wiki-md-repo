@@ -277,7 +277,7 @@ A funcionalidade de compartilhamento do Dolphin requer o pacote [kdenetwork-file
 
 Ao contrário dos navegadores de arquivos GTK que utilizam o GVfs também para o programa iniciado, abrir arquivos de compartilhamentos Samba no Dolphin via KIO faz com que o Plasma copie o arquivo inteiro para o sistema local primeiro com a maioria dos programas (VLC é uma exceção). Para resolver isso, você pode usar um navegador de arquivos baseado em GTK como [thunar](https://www.archlinux.org/packages/?name=thunar) com [gvfs](https://www.archlinux.org/packages/?name=gvfs) e [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) (e [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) para salvar credenciais de login) para acessar compartilhamentos SMB de uma maneira mais eficiente.
 
-Outra possibilidade é [montar](/index.php/Mount "Mount") um compartilhamento Samba via [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) para fazer com que pareça o Plasma como se o compartilhamento SMB fosse apenas uma pasta local normal e, portanto, pudesse ser acessado normalmente. Veja [Samba#Manual mounting](/index.php/Samba#Manual_mounting "Samba") e [Samba#Automatic mounting](/index.php/Samba#Automatic_mounting "Samba").
+Outra possibilidade é [montar](/index.php/Monta "Monta") um compartilhamento Samba via [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) para fazer com que pareça o Plasma como se o compartilhamento SMB fosse apenas uma pasta local normal e, portanto, pudesse ser acessado normalmente. Veja [Samba#Manual mounting](/index.php/Samba#Manual_mounting "Samba") e [Samba#Automatic mounting](/index.php/Samba#Automatic_mounting "Samba").
 
 Uma solução de GUI está disponível com [samba-mounter-git](https://aur.archlinux.org/packages/samba-mounter-git/), que oferece basicamente a mesma funcionalidade através de uma opção fácil de usar localizada em *Configurações do sistema* > *Drivers de Rede*. No entanto, pode quebrar com novas versões do KDE Plasma.
 
@@ -647,7 +647,7 @@ Não há como evitar isso, mas, se você definir os valores para corresponder ao
 
 Tente forçar o DPI da fonte para `**96**` em *Configurações do sistema > Fontes*.
 
-Se isso não funcionar, tente configurar o DPI diretamente na sua configuração do Xorg como documentado em [Xorg#Setting DPI manually](/index.php/Xorg#Setting_DPI_manually "Xorg").
+Se isso não funcionar, tente configurar o DPI diretamente na sua configuração do Xorg como documentado em [Xorg#Definindo o DPI manualmente](/index.php/Xorg_(Portugu%C3%AAs)#Definindo_o_DPI_manualmente "Xorg (Português)").
 
 ### Configuração relatada
 
@@ -697,7 +697,7 @@ A tela de autenticação do KCM lê as configurações do cursor em `~/.config/k
 
 ### Problemas gráficos
 
-Certifique-se de ter o driver adequado para a sua GPU instalada. Veja [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") para mais informações. Se você tiver uma placa mais antiga, poderá ajudar a [#Desabilitar efeitos do ambiente manualmente ou automaticamente para aplicativos definidos](#Desabilitar_efeitos_do_ambiente_manualmente_ou_automaticamente_para_aplicativos_definidos) ou [#Desabilitar composição](#Desabilitar_composição).
+Certifique-se de ter o driver adequado para a sua GPU instalada. Veja [Xorg#Instalação de driver](/index.php/Xorg_(Portugu%C3%AAs)#Instalação_de_driver "Xorg (Português)") para mais informações. Se você tiver uma placa mais antiga, poderá ajudar a [#Desabilitar efeitos do ambiente manualmente ou automaticamente para aplicativos definidos](#Desabilitar_efeitos_do_ambiente_manualmente_ou_automaticamente_para_aplicativos_definidos) ou [#Desabilitar composição](#Desabilitar_composição).
 
 #### Obtendo o estado atual de KWin para propósito de suporte e depuração
 

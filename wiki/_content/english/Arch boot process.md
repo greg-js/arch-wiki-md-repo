@@ -88,7 +88,9 @@ See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot w
 
 ## Boot loader
 
-A boot loader is a piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on configuration files. In the case of UEFI, the kernel itself can be directly launched by the UEFI using the EFI boot stub. A separate boot loader or boot manager can still be used for the purpose of editing kernel parameters before booting.
+A boot loader is a piece of software started by the firmware ([BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI")). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on configuration files. In the case of UEFI, the kernel itself can be directly launched by the UEFI using the EFI boot stub. A separate boot loader or boot manager can still be used for the purpose of editing kernel parameters before booting.
+
+**Warning:** A boot loader must be to be able to access the kernel and initramfs image(s), thus, in a typical setup, it must support accessing `/boot`. That means it must have support for everything starting from the block devices, stacked block devices (LVM, RAID, dm-crypt, LUKS, etc) and ending with the file system on which the kernel(s) and initramfs image(s) reside. If the boot loader cannot access the kernel and initramfs, then the system will not boot.
 
 **Note:** Loading [Microcode](/index.php/Microcode "Microcode") updates requires adjustments in boot loader configuration. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
@@ -96,7 +98,6 @@ A boot loader is a piece of software started by the [BIOS](https://en.wikipedia.
 
 **Note:**
 
-*   Boot loaders only need to support the file system on which kernel and initramfs reside (the file system on which `/boot` is located).
 *   As GPT is part of the UEFI specification, all UEFI boot loaders support GPT disks. GPT on BIOS systems is possible, using either "hybrid booting" with [Hybrid MBR](https://www.rodsbooks.com/gdisk/hybrid.html), or the new [GPT-only](http://repo.or.cz/syslinux.git/blob/HEAD:/doc/gpt.txt) protocol. This protocol may however cause issues with certain BIOS implementations; see [rodsbooks](http://www.rodsbooks.com/gdisk/bios.html#bios) for details.
 *   Encryption mentioned in file system support is [filesystem-level encryption](https://en.wikipedia.org/wiki/Filesystem-level_encryption "wikipedia:Filesystem-level encryption"), it has no bearing on [block-level encryption](/index.php/Dm-crypt "Dm-crypt").
 

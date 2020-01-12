@@ -1,4 +1,4 @@
-This article aims on providing information on flashing your system BIOS under Linux. Most manufacturers provide a Windows executable or a BIOS executable that can only be run under Windows. However, there are a few utilities, that allow you to upgrade your system BIOS under Linux.
+This article aims on providing information on flashing your system BIOS under Linux. Most manufacturers provide a Windows executable or a BIOS executable that can only be run under Windows. However, there are a few utilities that allow you to upgrade your system BIOS under Linux.
 
 **Warning:** Flashing motherboard BIOS is a dangerous activity that can render your motherboard inoperable! While the author of this article has successfully run this procedure many times, your mileage may vary. Be careful! You may want to consider updating [microcode](/index.php/Microcode "Microcode") instead if it is supported by your system.
 

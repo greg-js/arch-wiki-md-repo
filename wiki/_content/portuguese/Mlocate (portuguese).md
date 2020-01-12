@@ -8,7 +8,7 @@ Artigos relacionados
 
 [mlocate](https://pagure.io/mlocate) *(Merging Locate)* é uma versão mais segura do utilitário [locate](https://en.wikipedia.org/wiki/pt:locate_(Unix) "wikipedia:pt:locate (Unix)"), que mostra apenas arquivos acessíveis ao usuário.
 
-`locate` é uma ferramenta Unix comum para encontrar rapidamente arquivos pelo nome. Ele oferece melhorias de velocidade em relação à ferramenta [find](/index.php/Find_(Portugu%C3%AAs) "Find (Português)"), pesquisando um arquivo de banco de dados pré-compilado, em vez do [sistema de arquivos](/index.php/File_system "File system") diretamente. A desvantagem dessa abordagem é que as alterações feitas desde a construção do arquivo de banco de dados não podem ser detectadas pelo `locate`. Esse problema pode ser minimizado por atualizações de banco de dados agendadas.
+`locate` é uma ferramenta Unix comum para encontrar rapidamente arquivos pelo nome. Ele oferece melhorias de velocidade em relação à ferramenta [find](/index.php/Find_(Portugu%C3%AAs) "Find (Português)"), pesquisando um arquivo de banco de dados pré-compilado, em vez do [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") diretamente. A desvantagem dessa abordagem é que as alterações feitas desde a construção do arquivo de banco de dados não podem ser detectadas pelo `locate`. Esse problema pode ser minimizado por atualizações de banco de dados agendadas.
 
 ## Instalação
 

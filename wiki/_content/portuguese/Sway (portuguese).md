@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2020-01-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=593848) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2020-01-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=594468) na versão em inglês.
 
 *sway* é um compositor para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") feito para ser totalmente compatível com [i3](/index.php/I3 "I3"). De acordo com [o site oficial](https://swaywm.org):
 
@@ -21,17 +21,19 @@
     *   [3.4 Dispositivos de entrada](#Dispositivos_de_entrada)
     *   [3.5 HiDPI](#HiDPI)
     *   [3.6 Atalhos customizados](#Atalhos_customizados)
-    *   [3.7 Xresources](#Xresources)
-    *   [3.8 Rode programas nativamente no Wayland (sem suporte do XWayland)](#Rode_programas_nativamente_no_Wayland_(sem_suporte_do_XWayland))
+    *   [3.7 Janelas flutuantes](#Janelas_flutuantes)
+    *   [3.8 Xresources](#Xresources)
+    *   [3.9 Rode programas nativamente no Wayland (sem suporte do XWayland)](#Rode_programas_nativamente_no_Wayland_(sem_suporte_do_XWayland))
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Iniciar automaticamente após login](#Iniciar_automaticamente_após_login)
-    *   [4.2 Alternar luz de fundo](#Alternar_luz_de_fundo)
-    *   [4.3 Capturar tela](#Capturar_tela)
-    *   [4.4 Controle swaynag com o teclado](#Controle_swaynag_com_o_teclado)
-    *   [4.5 Mudar o tema e tamanho do cursor](#Mudar_o_tema_e_tamanho_do_cursor)
+    *   [4.2 Habilitar CapsLock/NumLock](#Habilitar_CapsLock/NumLock)
+    *   [4.3 Alternar luz de fundo](#Alternar_luz_de_fundo)
+    *   [4.4 Capturar tela](#Capturar_tela)
+    *   [4.5 Controle swaynag com o teclado](#Controle_swaynag_com_o_teclado)
+    *   [4.6 Mudar o tema e tamanho do cursor](#Mudar_o_tema_e_tamanho_do_cursor)
 *   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 Lançadores de aplicativos](#Lançadores_de_aplicativos)
-    *   [5.2 VirtualBox](#VirtualBox)
+    *   [5.2 Virtualização](#Virtualização)
     *   [5.3 Sway socket não detectado](#Sway_socket_não_detectado)
     *   [5.4 Não foi possível pegar o caminho do socket](#Não_foi_possível_pegar_o_caminho_do_socket)
     *   [5.5 Atalhos e formato do teclado](#Atalhos_e_formato_do_teclado)
@@ -186,6 +188,33 @@ bindsym XF86AudioPrev exec playerctl previous
 
 Para controlar o brilho voce pode usar [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) ou [light](https://www.archlinux.org/packages/?name=light). Para uma lista de utilitários que controlam o brilho e correção de cor veja [Luz de fundo](/index.php/Backlight "Backlight").
 
+### Janelas flutuantes
+
+Para janelas flutuantes ou atribuição de caracteristicas, os seguintes atributos podem estar disponíveis: `app_id`, `class`, `instance` e `title`. O seguinte comando irá listar as propriedades de todas as janelas abertas.
+
+```
+$ swaymsg -t get_tree
+
+```
+
+Para conseguir somente o `app_id` de todas as janelas abertas, use:
+
+```
+$ swaymsg -t get_tree | grep "app_id"
+
+```
+
+Se o `app_id` for nulo para algumas janelas, você pode usar os atributos `class` e/ou o `instance`. Com isso você pode criar regras para seus programas gráficos.
+
+ `~/.config/sway/config` 
+```
+for_window [app_id="galculator"] floating enable
+assign [class="firefox"] -> 3
+assign [class="^Urxvt$" instance="^htop$"] -> 9
+```
+
+É similar ao uso do [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) para descobrir o `class` ou `wm_name` no [X11](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
+
 ### Xresources
 
 Copie `~/.Xresources` para `~/.Xdefaults` para usá-lo no Sway.
@@ -225,6 +254,17 @@ Para rodar sway no tty1 ao logar com teclado padrão BR, edite:
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   XKB_DEFAULT_LAYOUT=br exec sway
 fi
+
+```
+
+### Habilitar CapsLock/NumLock
+
+Para habilitar o capslock e/ou numlock adicione as seguintes linhas no seu arquivo de configuração do sway:
+
+ `~/.config/sway/config` 
+```
+input * xkb_capslock enable
+input * xkb_numlock enable
 
 ```
 
@@ -369,9 +409,9 @@ O binário `krunner` provido pelo pacote [plasma-workspace](https://www.archlinu
 
 [wofi-hg](https://aur.archlinux.org/packages/wofi-hg/) é um lançador de aplicativos, que provê as mesmas funcionalidades do rofi e roda sob o Wayland. É baseado na biblioteca [wlroots](https://www.archlinux.org/packages/?name=wlroots) e usa GTK3 para renderização. Funciona bem com o sway.
 
-### VirtualBox
+### Virtualização
 
-Sway não funciona bem(ou de qualquer modo) sobre [VirtualBox](/index.php/VirtualBox_(Portugu%C3%AAs) "VirtualBox (Português)").
+Sway não funciona bem (ou de qualquer modo) no [VirtualBox](/index.php/VirtualBox_(Portugu%C3%AAs) "VirtualBox (Português)") ou [VMware](/index.php/VMware "VMware") ESXi.
 
 ### Sway socket não detectado
 

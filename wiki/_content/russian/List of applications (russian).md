@@ -16,7 +16,7 @@
 **Совет:**
 
 *   Эта страница создана, в первую очередь, для того, чтобы облегчить поиск пакетов в конкретных категориях. Используйте ссылки в шаблоне наверху, чтобы просматривать эти категории на отдельных страницах
-*   Пожалуйста, [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [pkgstats](/index.php/Pkgstats_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pkgstats (Русский)"), содержащий задание для cron. Благодаря этому список пакетов, установленных в вашей системе, а также информация об архитектуре компьютера и используемых зеркалах, будет отсылаться разработчикам Arch Linux, помогая им правильно распределять усилия и делать дистрибутив еще лучше. Информация отсылается анонимно, поэтому она не может быть использована для идентификации вас. Вы можете просмотреть собранные данные на [странице статистики](https://www.archlinux.de/?page=Statistics), дополнительная информация доступна в [этой теме форума](https://bbs.archlinux.org/viewtopic.php?id=105431)
+*   Пожалуйста, [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") пакет [pkgstats](/index.php/Pkgstats_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pkgstats (Русский)"), содержащий задание для cron. Благодаря этому список пакетов, установленных в вашей системе, а также информация об архитектуре компьютера и используемых зеркалах, будет отсылаться разработчикам Arch Linux, помогая им правильно распределять усилия и делать дистрибутив еще лучше. Информация отсылается анонимно, поэтому она не может быть использована для идентификации вас. Вы можете просмотреть собранные данные на [странице статистики](https://www.archlinux.de/?page=Statistics), дополнительная информация доступна в [этой теме форума](https://bbs.archlinux.org/viewtopic.php?id=105431)
 
 **Примечание:** Приложения, перечисленные в разделах "Консольные", могут иметь графические фронтенды. Официально в настоящий момент они отсутствуют
 
@@ -301,7 +301,7 @@
 
 *   **Seamonkey** — "Продолжение" Mozilla Internet Suite
 
-	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+	[https://www.seamonkey-project.org/](https://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
 ###### Форки Firefox
 
@@ -647,6 +647,10 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://claws-mail.org/](http://claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
 
+*   **ElectronMail** — Неофициальное приложение для нескольких поставщиков зашифрованной электронной почты (например, ProtonMail, Tutanota). Основано на платформе [Electron](https://electronjs.org/).
+
+	[https://github.com/vladimiry/ElectronMail](https://github.com/vladimiry/ElectronMail) || [electronmail-bin](https://aur.archlinux.org/packages/electronmail-bin/)
+
 *   **[Evolution](/index.php/Evolution "Evolution")** — Зрелый клиент электронной почты с богатым функционалом, используемый по умолчанию в GNOME. Является частью группы пакетов [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/)
 
 	[http://projects.gnome.org/evolution/](http://projects.gnome.org/evolution/) || [evolution](https://www.archlinux.org/packages/?name=evolution)
@@ -655,13 +659,45 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://wiki.gnome.org/Apps/Geary](https://wiki.gnome.org/Apps/Geary) || [geary](https://www.archlinux.org/packages/?name=geary)
 
+*   **Gnubiff** — Программа почтовых уведомлений, которая проверяет почту и отображает заголовки при получении новых писем.
+
+	[http://gnubiff.sourceforge.net/](http://gnubiff.sourceforge.net/) || [gnubiff](https://www.archlinux.org/packages/?name=gnubiff)
+
+*   **Inboxer** — Неофициальное, бесплатное и свободное приложение Google Inbox для ПК. Основано на платформе [Electron](https://electronjs.org/).
+
+	[https://denysdovhan.com/inboxer/](https://denysdovhan.com/inboxer/) || [inboxer](https://aur.archlinux.org/packages/inboxer/)
+
 *   **[Kmail](https://en.wikipedia.org/wiki/ru:Kmail "wikipedia:ru:Kmail")** — Зрелый клиент электронной почты с богатым функционалом. Является частью группы пакетов [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 
 	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
+*   **Kube** — Современный клиент для общения и совместной работы, созданный с помощью QtQuick.
+
+	[https://kube.kde.org/](https://kube.kde.org/) || [kube](https://www.archlinux.org/packages/?name=kube)
+
+*   **Mailnag** — Расширяемый демон почтовых уведомлений.
+
+	[https://github.com/pulb/mailnag](https://github.com/pulb/mailnag) || [mailnag](https://www.archlinux.org/packages/?name=mailnag)
+
+*   **Mailspring** — [Собственный](https://github.com/Foundry376/Mailspring/issues/24) форк Nylas Mail одного из авторов оригинального приложения.
+
+	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
+
 *   **Manitou Mail** — Система обработки электронной почты на базах данных (database-driven)
 
 	[http://www.manitou-mail.org/](http://www.manitou-mail.org/) || [manitou-mdx](https://aur.archlinux.org/packages/manitou-mdx/) [manitou-ui](https://aur.archlinux.org/packages/manitou-ui/)
+
+*   **Nylas Mail** — Расширяемое почтовое приложение. Основано на платформе [Electron](https://electronjs.org/).
+
+	[https://www.nylas.com/nylas-mail/](https://www.nylas.com/nylas-mail/) || [nylas-mail-lives-bin](https://aur.archlinux.org/packages/nylas-mail-lives-bin/)
+
+*   **Protonmail Desktop** — Неофициальное приложение, которое имитирует собственный клиент для службы электронной почты [ProtonMail](https://en.wikipedia.org/wiki/ru:ProtonMail "wikipedia:ru:ProtonMail"). Основано на платформе [Electron](https://electronjs.org/).
+
+	[http://protondesktop.com/](http://protondesktop.com/) || [protonmail-desktop](https://aur.archlinux.org/packages/protonmail-desktop/)
+
+*   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — Клиент электронной почты входит в комплект SeaMonkey.
+
+	[https://www.seamonkey-project.org/](https://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
 *   **Roundcubemail** — Браузерный мультиязычный IMAP-клиент с пользовательским интерфейсом, выглядящим как отдельное приложение
 
@@ -1809,7 +1845,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **VolWheel** — Маленькое приложение, которое позволяет вам легко контролировать уровень громкости через иконку в трее, с поддеркой прокрутки колеса мыши над ней
 
-	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://aur.archlinux.org/packages/volwheel/)
 
 #### Запись CD
 
@@ -2075,7 +2111,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[RecordMyDesktop](https://en.wikipedia.org/wiki/ru:RecordMyDesktop "wikipedia:ru:RecordMyDesktop")** — Простая в использовании утилита, производящая запись вашего рабочего стола в файлы формата *.ogg*, с интерфейсами CLI, Qt или GTK+
 
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://aur.archlinux.org/packages/gtk-recordmydesktop/) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
 
 *   **simplescreenrecorder** — Программа записи экрана с богатым функционалом, написанная на C++/Qt4 и поддерживающая X11 и OpenGL
 

@@ -38,9 +38,10 @@ From [Wikipedia:Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Si
     *   [3.3 Hangs after login](#Hangs_after_login)
     *   [3.4 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
     *   [3.5 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
-    *   [3.6 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
-    *   [3.7 Screen resolution is too low](#Screen_resolution_is_too_low)
-    *   [3.8 Long load time on autofs home directory](#Long_load_time_on_autofs_home_directory)
+    *   [3.6 User avatars do not show up on the greeter](#User_avatars_do_not_show_up_on_the_greeter)
+    *   [3.7 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
+    *   [3.8 Screen resolution is too low](#Screen_resolution_is_too_low)
+    *   [3.9 Long load time on autofs home directory](#Long_load_time_on_autofs_home_directory)
 
 ## Installation
 
@@ -237,6 +238,17 @@ MaximumUid=65000
 
 # Minimum user id for displayed users
 MinimumUid=500 #My UID is 501
+```
+
+### User avatars do not show up on the greeter
+
+User avatars are not shown on the greeter if the number of users exceeds DisableAvatarsThreshold parameter or if avatars are not enabled at all as controlled by EnableAvatars parameter. To circumvent this add the following lines to your sddm configuration:
+
+ `/etc/sddm.conf.d/avatars.conf` 
+```
+[Theme]
+EnableAvatars=true # enable avatars
+DisableAvatarsThreshold=7 # set the threshold for the number of users. Avatars are not shown if this threshold is exceeded.
 ```
 
 ### SDDM loads only US keyboard layout

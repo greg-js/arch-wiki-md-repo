@@ -223,7 +223,7 @@ end
 
 ```
 
-Adopt `button` to whatever button on the remote is to start Kodi. One can use *irw* (see [LIRC#Usage](/index.php/LIRC#Usage "LIRC")) to find out the correct values for `remote` and `button`.
+Adopt `button` to whatever button on the remote is to start Kodi. One can use *irw* (see [LIRC#Testing](/index.php/LIRC#Testing "LIRC")) to find out the correct values for `remote` and `button`.
 
 Create a [drop-in](/index.php/Systemd#Drop-in_files "Systemd") for `kodi.service`:
 

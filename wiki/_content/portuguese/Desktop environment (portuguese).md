@@ -121,7 +121,7 @@ Outros componentes geralmente fornecidos por ambientes de área de trabalho são
 *   Iniciador de aplicativo: [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications")
 *   Controle de volume de áudio: [List of applications#Volume control](/index.php/List_of_applications#Volume_control "List of applications")
 *   [Gerenciador de área de transferência](/index.php/Clipboard_manager "Clipboard manager")
-*   Compositor de desktop: [Xorg#Composite](/index.php/Xorg#Composite "Xorg")
+*   Compositor de desktop: [Xorg#Composição](/index.php/Xorg_(Portugu%C3%AAs)#Composição "Xorg (Português)")
 *   Definidor de papel de parede e ícone da área de trabalho: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") e [Openbox#Desktop icons and wallpapers](/index.php/Openbox#Desktop_icons_and_wallpapers "Openbox")
 *   Gerenciador de exibição: [Gerenciadores de exibição#Lista de gerenciadores de exibição](/index.php/Gerenciadores_de_exibi%C3%A7%C3%A3o#Lista_de_gerenciadores_de_exibição "Gerenciadores de exibição")
 *   Configurações de tela de economia de energia: [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")

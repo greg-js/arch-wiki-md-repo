@@ -117,9 +117,9 @@ An internal hardware path is how the storage device is connected to your motherb
 
 More Examples
 
-1.  Directly to the motherboard using pci/PCIe/ata
+1.  Directly to the motherboard using PCI/PCIe/ATA
 2.  Using an external enclosure to house the disk over USB/Firewire
-3.  Turn the device into a network storage device by connecting over tcp/ip
+3.  Turn the device into a network storage device by connecting over TCP/IP
 
 Note also that if you have a 2 USB ports on the front of your machine, and 4 USB ports on the back, and you have 4 disks, it would probably be fastest to put 2 on front/2 on back than 3 on back/1 on front. This is because internally the front ports are likely a separate Root Hub than the back, meaning you can send twice as much data by using both than just 1\. Use the following commands to determine the various paths on your machine.
 

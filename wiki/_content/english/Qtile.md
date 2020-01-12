@@ -44,7 +44,7 @@ The [default configuration](http://docs.qtile.org/en/latest/manual/config/#defau
 
 **Note:** This chapter only explains the basics of the configuration of Qtile. For more complete information, look at the [official documentation](http://docs.qtile.org/en/latest/).
 
-As described in [Configuration Lookup](http://docs.qtile.org/en/latest/manual/config/default.html#configuration-lookup), Qtile provides a default configuration file that will be used in absence of user-defined ones. In order to start customizing Qtile, copy it to `~/.config/qtile/config.py`:
+As described in [Configuration Lookup](http://docs.qtile.org/en/latest/manual/config/#configuration-lookup), Qtile provides a default configuration file that will be used in absence of user-defined ones. In order to start customizing Qtile, copy it to `~/.config/qtile/config.py`:
 
 ```
 $ mkdir -p ~/.config/qtile/

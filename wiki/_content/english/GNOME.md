@@ -58,10 +58,11 @@ Related articles
             *   [6.2.4.3 Disable top left hot corner](#Disable_top_left_hot_corner)
         *   [6.2.5 Extensions](#Extensions)
         *   [6.2.6 Fonts](#Fonts)
-        *   [6.2.7 Input methods](#Input_methods)
-        *   [6.2.8 Power](#Power)
-            *   [6.2.8.1 Don't suspend, when laptop lid is closed](#Don't_suspend,_when_laptop_lid_is_closed)
-            *   [6.2.8.2 Change critical battery level action](#Change_critical_battery_level_action)
+        *   [6.2.7 WEBP, thumbnails](#WEBP,_thumbnails)
+        *   [6.2.8 Input methods](#Input_methods)
+        *   [6.2.9 Power](#Power)
+            *   [6.2.9.1 Don't suspend, when laptop lid is closed](#Don't_suspend,_when_laptop_lid_is_closed)
+            *   [6.2.9.2 Change critical battery level action](#Change_critical_battery_level_action)
     *   [6.3 Use a different window manager](#Use_a_different_window_manager)
 *   [7 See also](#See_also)
 
@@ -476,6 +477,10 @@ For more information about GNOME shell extensions, see [[6]](https://extensions.
 Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweaks for the relevant options.
 
 For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
+
+#### WEBP, thumbnails
+
+[Install](/index.php/Install "Install") [pixbuf-webp-thumbnailer](https://aur.archlinux.org/packages/pixbuf-webp-thumbnailer/) to make gnome image viewer work with webp images, and add a thumbnailer which creates thumbnails for webp images to view them in gnome files.
 
 #### Input methods
 

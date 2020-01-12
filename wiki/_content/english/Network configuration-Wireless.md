@@ -67,8 +67,9 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
         *   [7.2.1 rtl8192cu](#rtl8192cu)
         *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae/rtl8723be)
         *   [7.2.3 rtl88xxau](#rtl88xxau)
-        *   [7.2.4 rtl8822bu](#rtl8822bu)
-        *   [7.2.5 rtl8xxxu](#rtl8xxxu)
+        *   [7.2.4 rtl8811cu/rtl8821cu](#rtl8811cu/rtl8821cu)
+        *   [7.2.5 rtl8822bu](#rtl8822bu)
+        *   [7.2.6 rtl8xxxu](#rtl8xxxu)
     *   [7.3 Atheros](#Atheros)
         *   [7.3.1 ath5k](#ath5k)
         *   [7.3.2 ath9k](#ath9k)
@@ -203,7 +204,7 @@ Examples in this section assume that your wireless device interface is `*interfa
 
 ### Get the name of the interface
 
-**Tip:** See [official documentation](http://wireless.kernel.org/en/users/Documentation/iw) of the *iw* tool for more examples.
+**Tip:** See [official documentation](https://wireless.wiki.kernel.org/en/users/documentation/iw) of the *iw* tool for more examples.
 
 To get the name of your wireless interface do:
 
@@ -643,6 +644,12 @@ Several packages provide various kernel drivers:
 | rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possibly works for rtl8813au too. Reportedly has better performance than [rtl88xxau-aircrack-dkms-git](https://aur.archlinux.org/packages/rtl88xxau-aircrack-dkms-git/) |
 
 These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
+
+#### rtl8811cu/rtl8821cu
+
+[rtl8821cu-dkms-git](https://aur.archlinux.org/packages/rtl8821cu-dkms-git/) provides a kernel module for the Realtek 8811cu ans 8821cu chipset.
+
+This requires [DKMS](/index.php/DKMS "DKMS"), so make sure you have your proper kernel headers installed.
 
 #### rtl8822bu
 

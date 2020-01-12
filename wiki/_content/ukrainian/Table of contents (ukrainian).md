@@ -311,7 +311,7 @@
  <small>6.22.</small> [Security](/index.php/Category:Security "Category:Security") <small>(40)</small> |
  <small>6.22.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |
  <small>6.22.2.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
- <small>6.22.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(14)</small> |
+ <small>6.22.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(16)</small> |
  <small>6.22.4.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(6)</small> |
  <small>6.22.4.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(3) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>6.22.4.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(8)</small> |

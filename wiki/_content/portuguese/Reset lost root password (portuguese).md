@@ -21,7 +21,7 @@ Com um LiveCD, alguns métodos estão disponíveis: alterar a raiz e usar o coma
 
 ### Alterando a raiz
 
-1.  Inicie o LiveCD e [monte](/index.php/Mount "Mount") a partição raiz de seu sistema principal.
+1.  Inicie o LiveCD e [monte](/index.php/Monte "Monte") a partição raiz de seu sistema principal.
 2.  Use o comando `passwd --root PONTO_DE_MONTAGEM NOME_USUÁRIO` para definir a nova senha (você não será perguntado sobre a anterior).
 3.  Desmonte a partição raiz.
 4.  Reinicie e insira sua nova senha. Se você não conseguir lembrar dela, vá para o passo 1.

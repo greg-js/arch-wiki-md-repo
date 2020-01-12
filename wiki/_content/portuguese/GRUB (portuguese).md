@@ -3,7 +3,7 @@
 Artigos relacionados
 
 *   [Processo de inicialização do Arch](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch "Processo de inicialização do Arch")
-*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
+*   [Master Boot Record (Português)](/index.php/Master_Boot_Record_(Portugu%C3%AAs) "Master Boot Record (Português)")
 *   [Tabela de Partição GUID](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")
@@ -88,11 +88,11 @@ Artigos relacionados
 
 ### Instruções específicas de Tabela de Partição GUID (GPT)
 
-Em uma configuração de BIOS/[GPT](/index.php/GPT "GPT"), é necessária uma [partição de inicialização de BIOS](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation). O GRUB incorpora seu `core.img` nessa partição.
+Em uma configuração de BIOS/[GPT](/index.php/Particionamento#GUID_Partition_Table "Particionamento"), é necessária uma [partição de inicialização de BIOS](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation). O GRUB incorpora seu `core.img` nessa partição.
 
 **Nota:**
 
-*   Antes de tentar este método, lembre-se de que nem todos os sistemas poderão ter suporte a este esquema de particionamento. Leia mais sobre [Partitioning#GUID Partition Table](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
+*   Antes de tentar este método, lembre-se de que nem todos os sistemas poderão ter suporte a este esquema de particionamento. Leia mais sobre [Particionamento#GUID Partition Table](/index.php/Particionamento#GUID_Partition_Table "Particionamento").
 *   A partição de inicialização de BIOS é necessária apenas pelo GRUB em uma configuração de BIOS/GPT. Em uma configuração de BIOS/MBR, o GRUB usa a lacuna pós-MBR para a incorporação do `core.img`. No GPT, no entanto, não há espaço não utilizado garantido antes da primeira partição.
 *   Para sistemas [UEFI](/index.php/UEFI "UEFI"), essa partição extra não é necessária, pois não há incorporação de setores de inicialização nesse caso. No entanto, os sistemas UEFI ainda requerem uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI").
 
@@ -108,7 +108,7 @@ O espaço antes da primeira partição também pode ser usado como partição de
 
 ### Instruções específicas de Master Boot Record (MBR)
 
-Normalmente, o intervalo pós-MBR (após a região de 512 bytes [MBR](/index.php/MBR "MBR") e antes do início da primeira partição) em muitos sistemas particionados MBR é de 31 KiB quando os problemas de alinhamento do cilindro de compatibilidade do DOS são atendidos na tabela de partições. No entanto, uma lacuna pós-MBR de cerca de 1 a 2 MiB é recomendada para fornecer espaço suficiente para incorporar o `core.img` do GRUB ([FS#24103](https://bugs.archlinux.org/task/24103)). É aconselhável usar uma ferramenta de particionamento que suporte [alinhamento de partições](/index.php/Partitioning#Partition_alignment "Partitioning") de 1 MiB para obter este espaço, bem como para satisfazer outros problemas de setor não-512-byte (que não estão relacionados à incorporação de `core.img`).
+Normalmente, o intervalo pós-MBR (após a região de 512 bytes [MBR](/index.php/Particionamento#Master_Boot_Record "Particionamento") e antes do início da primeira partição) em muitos sistemas particionados MBR é de 31 KiB quando os problemas de alinhamento do cilindro de compatibilidade do DOS são atendidos na tabela de partições. No entanto, uma lacuna pós-MBR de cerca de 1 a 2 MiB é recomendada para fornecer espaço suficiente para incorporar o `core.img` do GRUB ([FS#24103](https://bugs.archlinux.org/task/24103)). É aconselhável usar uma ferramenta de particionamento que suporte [alinhamento de partições](/index.php/Particionamento#Alinhamento_de_partição "Particionamento") de 1 MiB para obter este espaço, bem como para satisfazer outros problemas de setor não-512-byte (que não estão relacionados à incorporação de `core.img`).
 
 ### Instalação
 
@@ -133,7 +133,7 @@ Veja [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8
 
 **Nota:**
 
-*   É recomendável ler e entender as páginas [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [Partitioning#GUID Partition Table](/index.php/Partitioning#GUID_Partition_Table "Partitioning") e [Processo de inicialização do Arch#No UEFI](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#No_UEFI "Processo de inicialização do Arch").
+*   É recomendável ler e entender as páginas [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [Particionamento#GUID Partition Table](/index.php/Particionamento#GUID_Partition_Table "Particionamento") e [Processo de inicialização do Arch#No UEFI](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#No_UEFI "Processo de inicialização do Arch").
 *   Ao instalar o UEFI, é importante inicializar a mídia de instalação no modo UEFI, caso contrário o *efibootmgr* não poderá adicionar a entrada de inicialização GRUB UEFI. A instalação no [caminho de inicialização reserva](#Caminho_de_inicialização_padrão/reserva) continuará funcionando mesmo no modo BIOS, já que ele não toca na NVRAM.
 *   Para inicializar a partir de um disco usando UEFI, é necessária uma partição de sistema EFI. Siga [Partição de sistema EFI#Verificar uma partição existente](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI#Verificar_uma_partição_existente "Partição de sistema EFI") para descobrir se você já tem uma, caso contrário você precisa criá-la.
 
@@ -218,7 +218,7 @@ Veja [#Exemplos de entrada de menu de boot](#Exemplos_de_entrada_de_menu_de_boot
 
 #### Detectando outros sistemas operacionais
 
-Para fazer com que o *grub-mkconfig* procure por outros sistemas instalados e adicioná-los automaticamente ao menu, [instale](/index.php/Instale "Instale") o pacote [os-prober](https://www.archlinux.org/packages/?name=os-prober) e [monte](/index.php/Mount "Mount") as partições que contêm as outras sistemas. Então, execute novamente o *grub-mkconfig*.
+Para fazer com que o *grub-mkconfig* procure por outros sistemas instalados e adicioná-los automaticamente ao menu, [instale](/index.php/Instale "Instale") o pacote [os-prober](https://www.archlinux.org/packages/?name=os-prober) e [monte](/index.php/Monte "Monte") as partições que contêm as outras sistemas. Então, execute novamente o *grub-mkconfig*.
 
 ##### MS Windows
 
@@ -677,7 +677,7 @@ Para reinstalar o GRUB e corrigir o problema completamente, altere `/dev/sda`, s
 
 ## Remoção do GRUB
 
-Após migrar para o GPT/UEFI, pode-se querer remover o [código de inicialização de MBR](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning") [usando dd](/index.php/Dd_(Portugu%C3%AAs)#Remover_o_gerenciador_de_boot "Dd (Português)"):
+Após migrar para o GPT/UEFI, pode-se querer remover o [código de inicialização do MBR](/index.php/Particionamento#Master_Boot_Record_(código_de_inicialização) "Particionamento") [usando dd](/index.php/Dd_(Portugu%C3%AAs)#Remover_o_gerenciador_de_boot "Dd (Português)"):
 
 ```
 # dd if=/dev/zero of=/dev/sd*X* bs=440 count=1

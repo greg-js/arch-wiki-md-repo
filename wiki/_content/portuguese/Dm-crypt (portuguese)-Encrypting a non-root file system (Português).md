@@ -51,7 +51,7 @@ Para acessar a partição criptografada, desbloqueie ela com o mapeador de dispo
 
 ```
 
-Depois de desbloquear a partição, ela estará disponível em `/dev/mapper/*nome*`. Agora crie um [sistema de arquivos](/index.php/File_system "File system") de sua escolha com:
+Depois de desbloquear a partição, ela estará disponível em `/dev/mapper/*nome*`. Agora crie um [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") de sua escolha com:
 
 ```
 # mkfs.*tipo_do_sistema_de_arquivos* /dev/mapper/*nome*
@@ -112,11 +112,11 @@ $ cryptsetup luksFormat grande_segredo.img
 
 ```
 
-Tenha certeza de não omitir a opção `iflag=fullblock`, de outro modo *dd* pode retornar uma leitura parcial. Veja [dd#Partial read](/index.php/Dd#Partial_read "Dd") para detalhes.
+Tenha certeza de não omitir a opção `iflag=fullblock`, de outro modo *dd* pode retornar uma leitura parcial. Veja [dd#Leitura parcial](/index.php/Dd_(Portugu%C3%AAs)#Leitura_parcial "Dd (Português)") para detalhes.
 
 Antes de executar `cryptsetup`, veja [Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") e [cifras criptográficas e modos de operação](/index.php/Criptografia_de_disco#Cifras_e_modos_de_operação "Criptografia de disco") primeiro para selecionar configurações adicionais do seu interesse.
 
-As instruções para abrir o dispositivo e criar o [sistema de arquivos](/index.php/File_system "File system") são do mesmo jeito que em [#Partição](#Partição).
+As instruções para abrir o dispositivo e criar o [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") são do mesmo jeito que em [#Partição](#Partição).
 
 **Nota:** Se criar um arquivo menor que o cabeçalho do LUKS (16 MiB) vai receber um erro `Requested offset is beyond real size of device grande_segredo.img` quando tentar abrir o dispositivo.
 
@@ -126,7 +126,7 @@ O procedimento de montagem e desmontagem manual é igual a [#Montando e desmonta
 
 Um dispositivo de loop permite mapear um dispositivo de bloco para um arquivo com a ferramenta padrão do util-linux `losetup`. O arquivo pode então conter um sistema de arquivos, que pode ser usado como qualquer outro. Vários usuários conhecem [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") como uma ferramenta para criar containers criptografados. É possível conseguir essa mesma funcionalidade com um sistema de arquivos de looback criptografado com LUKS, como é mostrado no exemplo a seguir.
 
-Primeiro, crie um container criptografado com [dd](/index.php/Dd "Dd"), usando um [gerador de números aleatórios](/index.php/Random_number_generator "Random number generator") apropriado:
+Primeiro, crie um container criptografado com [dd](/index.php/Dd_(Portugu%C3%AAs) "Dd (Português)"), usando um [gerador de números aleatórios](/index.php/Random_number_generator "Random number generator") apropriado:
 
 ```
 # dd if=/dev/urandom of=grande_segredo.img bs=100M count=1 iflag=fullblock

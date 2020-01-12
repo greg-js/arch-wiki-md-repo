@@ -339,7 +339,7 @@ Alternatively, to manually run the service, you can simply execute:
 
 **Note:** This section assumes that you have already completed the configuration described in the [#Automation](#Automation) section above.
 
-If the destination drive is in an external enclosure connected via USB or [eSATA](https://en.wikipedia.org/wiki/ESATAp), it may not have mounted during boot or may otherwise be unmounted at the time *rsnapshot* is scheduled to begin. If *rsnapshot* is configured to write to a path that always exists, e.g. `/.snapshots`, the data will be backed up on whichever hard drive is mounted as the root directory rather than the desired external drive.
+If the destination drive is in an external enclosure connected via USB or [eSATA](https://en.wikipedia.org/wiki/ESATAp "wikipedia:ESATAp"), it may not have mounted during boot or may otherwise be unmounted at the time *rsnapshot* is scheduled to begin. If *rsnapshot* is configured to write to a path that always exists, e.g. `/.snapshots`, the data will be backed up on whichever hard drive is mounted as the root directory rather than the desired external drive.
 
 To remedy this situation one must configure *rsnapshot* to depend upon the disk being mounted to the expected mount point. There are two actions required: alter `/etc/fstab` and `/etc/systemd/system/rsnapshot@.service`.
 

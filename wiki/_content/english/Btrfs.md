@@ -31,7 +31,8 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
         *   [3.3.2 Listing subvolumes](#Listing_subvolumes)
         *   [3.3.3 Deleting a subvolume](#Deleting_a_subvolume)
         *   [3.3.4 Mounting subvolumes](#Mounting_subvolumes)
-        *   [3.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
+        *   [3.3.5 Mounting subvolume as root](#Mounting_subvolume_as_root)
+        *   [3.3.6 Changing the default sub-volume](#Changing_the_default_sub-volume)
     *   [3.4 Quota](#Quota)
     *   [3.5 Commit interval](#Commit_interval)
     *   [3.6 SSD TRIM](#SSD_TRIM)
@@ -50,6 +51,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 *   [5 Known issues](#Known_issues)
     *   [5.1 Encryption](#Encryption)
     *   [5.2 TLP](#TLP)
+    *   [5.3 btrfs check issues](#btrfs_check_issues)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Partitionless Btrfs disk](#Partitionless_Btrfs_disk)
     *   [6.2 Ext3/4 to Btrfs conversion](#Ext3/4_to_Btrfs_conversion)
@@ -216,7 +218,7 @@ To create a subvolume:
 
 #### Listing subvolumes
 
-To see a list of current subvolumes under `*path*`:
+To see a list of current subvolumes and their ids under `*path*`:
 
 ```
 # btrfs subvolume list -p *path*
@@ -245,6 +247,10 @@ Subvolumes can be mounted like file system partitions using the `subvol=*/path/t
 See [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
 
 See [btrfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5) for a full list of btrfs-specific mount options.
+
+#### Mounting subvolume as root
+
+To use a subvolume as the root mountpoint specify the subvolume via a [kernel parameter](/index.php/Kernel_parameters#Configuration "Kernel parameters") using `rootflags=subvol=*/path/to/subvolume*`. Edit the root mountpoint in `/etc/fstab` and specify the mount option `subvol=`. Alternatively the subvolume can be specified with its id, `rootflags=subvolid=*objectid*` as kernel parameter and `subvolid=*objectid*` as mount option in `/etc/fstab`.
 
 #### Changing the default sub-volume
 
@@ -314,13 +320,12 @@ More information about enabling and using TRIM can be found in [Solid State Driv
 
 ### Swap file
 
-[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux kernel 5.0.[[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7) The proper way to initialize a swap file is described in [Swap file#Swap file creation](/index.php/Swap_file#Swap_file_creation "Swap file").
+[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux kernel 5.0.[[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7) The proper way to initialize a swap file is described in [Swap file#Swap file creation](/index.php/Swap_file#Swap_file_creation "Swap file"). Configuring hibernation to a swap file is described in [Power management/Suspend and hibernate#Hibernation into swap file on Btrfs](/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file_on_Btrfs "Power management/Suspend and hibernate").
 
 **Note:** For kernels version 5.0+, Btfrs has native swap file support with some limitations:
 
 *   The swap file cannot be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swap file in.
 *   It does not support swap files on file systems that span multiple devices. See [Btrfs wiki: Does btrfs support swap files?](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) and [Arch forums discussion](https://bbs.archlinux.org/viewtopic.php?pid=1849371#p1849371).
-*   Hibernation onto a swap file is currently not supported by [systemd](https://www.archlinux.org/packages/?name=systemd) [[5]](https://github.com/systemd/systemd/issues/11939).
 
 **Warning:** Linux kernels before version 5.0, including [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), do not support swap files. Using a swap file with Btrfs and a kernel prior to 5.0 can lead to file system corruption.
 
@@ -335,7 +340,7 @@ General linux userspace tools such as `df` will inaccurately report free space o
 
 **Note:** The `btrfs filesystem usage` command does not currently work correctly with `RAID5/RAID6` RAID levels.
 
-See [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
+See [[5]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
 
 ### Defragmentation
 
@@ -386,7 +391,7 @@ You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-
 
 ### Balance
 
-"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[7]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[6]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 On a single-device filesystem a balance may be also useful for (temporarily) reducing the amount of allocated but unused (meta)data chunks. Sometimes this is needed for fixing ["filesystem full" issues](https://btrfs.wiki.kernel.org/index.php/FAQ#Help.21_Btrfs_claims_I.27m_out_of_space.2C_but_it_looks_like_I_should_have_lots_left.21).
 
@@ -455,6 +460,10 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 
 Using TLP requires special precautions in order to avoid filesystem corruption. Refer to the [according TLP section](/index.php/TLP#Btrfs "TLP") for more information.
 
+### btrfs check issues
+
+The tool `btrfs check` has known issues and should not be run without further reading, see section [#btrfs check](#btrfs_check).
+
 ## Tips and tricks
 
 ### Partitionless Btrfs disk
@@ -463,7 +472,7 @@ Using TLP requires special precautions in order to avoid filesystem corruption. 
 
 Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes, using [subvolumes](#Subvolumes) to simulate partitions. However, using a partitionless setup is not required to simply [create a Btrfs filesystem](#File_system_creation) on an existing [partition](/index.php/Partition "Partition") that was created using another method. There are some limitations to partitionless single disk setups:
 
-*   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
+*   Cannot place other [file systems](/index.php/File_systems "File systems") on another partition on the same disk.
 *   If using a Linux kernel version before 5.0, you cannot use [swap area](/index.php/Swap "Swap") as Btrfs did not support [swap files](/index.php/Swap#Swap_file "Swap") pre-5.0 and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image. This includes the current LTS version of Linux which is on 4.xx.
 *   Cannot use [UEFI](/index.php/UEFI "UEFI") to boot.
 
@@ -512,6 +521,8 @@ If you see `crc32c=crc32c-generic`, it is probably because your root partition i
 
 ### Corruption recovery
 
+**Warning:** The tool `btrfs check` has known issues, see section [#btrfs check](#btrfs_check)
+
 *btrfs-check* cannot be used on a mounted file system. To be able to use *btrfs-check* without booting from a live USB, add it to the initial ramdisk:
 
  `/etc/mkinitcpio.conf`  `BINARIES=("/usr/bin/btrfs")` 
@@ -526,9 +537,7 @@ See the [Btrfs Wiki page](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for m
 
 ### Booting into snapshots
 
-In order to boot into a snapshot you must specify the subvolume via a [kernel parameter](/index.php/Kernel_parameters#Configuration "Kernel parameters") using `rootflags=subvol=*/path/to/subvolume*` and alter your `/etc/fstab` to point to the same subvolume using `subvol=`. Alternatively the subvolume can be specified with its id - retrievable with e.g. `btrfs subvolume list */root/path*` - and `rootflags=subvolid=*objectid*` as kernel parameter respectively `subvolid=*objectid*` as mount option in `/etc/fstab`.
-
-If using GRUB you can automatically populate your boot menu with btrfs snapshots when regenerating the configuration file with the help of [grub-btrfs](https://www.archlinux.org/packages/?name=grub-btrfs) or [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
+In order to boot into a snapshot, the same procedure applies as for mounting a subvolume as your root parition, as given in section [mounting a subvolume as your root partition](#Mounting_subvolume_as_root), because snapshots can be mounted like subvolumes. If using GRUB you can automatically populate your boot menu with btrfs snapshots when regenerating the configuration file with the help of [grub-btrfs](https://www.archlinux.org/packages/?name=grub-btrfs) or [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
 
 ### Use Btrfs subvolumes with systemd-nspawn
 
@@ -576,11 +585,9 @@ See the [original forums thread](https://bbs.archlinux.org/viewtopic.php?id=1898
 
 ### btrfs check
 
-**Warning:** Since Btrfs is under heavy development, especially the `btrfs check` command, it is highly recommended to create a **backup** and consult the following Btfrs documentation before executing `btrfs check` with the `--repair` switch.
+**Warning:** Since Btrfs is under heavy development, especially the `btrfs check` command, it is highly recommended to create a **backup** and consult the [Btrfsck documentation](https://btrfs.wiki.kernel.org/index.php/Btrfsck) before executing `btrfs check` with the `--repair` switch.
 
 The *[btrfs check](https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-check)* command can be used to check or repair an unmounted Btrfs filesystem. However, this repair tool is still immature and not able to repair certain filesystem errors even those that do not render the filesystem unmountable.
-
-See [Btrfsck](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for more information.
 
 ## See also
 

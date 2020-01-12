@@ -44,18 +44,21 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 *   Split packages which depend on a package from the same package base, such as [libc++](https://aur.archlinux.org/packages/libc%2B%2B/) and [libc++abi](https://aur.archlinux.org/packages/libc%2B%2Babi/).
 *   Split packages independently, such as [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/) and [python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/).
 
-	Batch interaction
-
-	Ability to prompt before the build process and package transactions, in particular:
-
-1.  Combined summary of repository and AUR package upgrades;
-2.  Resolution of package conflicts and choice of providers.
-
 	Shell completion
 
 	[Tab completion](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") is available for the listed [shells](/index.php/Shell "Shell").
 
-**Note:** *Optional* means that a feature is available, but only through a command-line argument or configuration option. *Partial* means that a feature is not fully implemented, or that it partially deviates from the given criteria.
+	Specificity
+
+*   *Batch interaction* indicates the ability to prompt *before* the build process and package transactions. In particular:
+
+1.  Combined summary of repository and AUR package upgrades;
+2.  Resolution of package conflicts and choice of providers.
+
+**Note:**
+
+*   *Optional* means that a feature is available, but only through a command-line argument or configuration option.
+*   *Partial* means that a feature is not fully implemented, or that it partially deviates from the given criteria.
 
 ## Comparison tables
 
@@ -72,11 +75,11 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 ### Search and build
 
 | Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Shell completion | Specificity |
-| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | [modular](https://en.wikipedia.org/wiki/Modular_programming "w:Modular programming"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") |
+| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | [modular](https://en.wikipedia.org/wiki/Modular_programming "w:Modular programming"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | No | Yes | Yes | Yes | Yes | bash, zsh | `bb-wrapper` for *pacman* wrapping, trust management |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | No | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | – | `pb` for *pacman* wrapping |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | No | Yes | Yes | No | No | No | – | [local repository](/index.php/Local_repository "Local repository") |
-| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [Yes](https://github.com/vn971/rua/commit/0459a8b) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | [Yes](https://github.com/vn971/rua/commit/7889045) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), `.pkg.tar` inspection |
+| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [Yes](https://github.com/vn971/rua/commit/0459a8b) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | [Yes](https://github.com/vn971/rua/commit/7889045) | bash, zsh, fish | local patch application, [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), `.pkg.tar` inspection |
 | [aurget](https://aur.archlinux.org/packages/aurget/)
 <small>([discontinued](https://github.com/pbrisbin/aurget/issues/66#issue-485245712))</small> | Bash | No | [No](https://github.com/pbrisbin/aurget/issues/41) | No | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | bash, zsh | – |
 | [spinach](https://aur.archlinux.org/packages/spinach/)
@@ -88,7 +91,7 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 
 | Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Unsafe flags | Shell completion | Specificity |
 | [aura](https://aur.archlinux.org/packages/aura/) | Haskell | No | [Partial](https://github.com/aurapm/aura/blob/89bf702/aura/src/Aura/Pkgbuild/Records.hs) | [No](https://github.com/aurapm/aura/pull/346) | [Yes](https://github.com/aurapm/aura/commit/7848e983) | No | [No](https://github.com/aurapm/aura/issues/353) | – | bash, zsh | – |
-| [pacaur](https://aur.archlinux.org/packages/pacaur/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | [--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | bash, zsh | batch interaction 2 |
+| [pacaur](https://aur.archlinux.org/packages/pacaur/) | Bash | Yes | Yes | Yes | Yes | Yes | Yes | [--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | bash, zsh | batch interaction 2 |
 | [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Yes | [Yes](https://github.com/kitsunyan/pakku/commit/396e9f4) | Yes | Yes | Yes | Yes | [-Sy](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | bash, zsh | fetch PGP keys |
 | [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | [-Sy](https://github.com/actionless/pikaur#pikaur) | bash, fish, zsh | batch interaction 1/2, [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html) |
 | [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Yes | Yes | [Yes](https://github.com/trizen/trizen/commit/6fb0cc9) | [Yes](https://github.com/trizen/trizen/commit/7ab7ee5f) | Yes | [Partial](https://github.com/trizen/trizen/issues/46) | – | bash, fish, zsh | – |
@@ -125,6 +128,10 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 *   **Octopi** — Qt 5 pacman wrapper written in C++.
 
 	[https://octopiproject.wordpress.com/](https://octopiproject.wordpress.com/) || [octopi](https://aur.archlinux.org/packages/octopi/)
+
+*   **Yup** — Curses TUI pacman wrapper written in Go.
+
+	[https://github.com/ericm/yup](https://github.com/ericm/yup) || [yup](https://aur.archlinux.org/packages/yup/)
 
 ## Maintenance
 

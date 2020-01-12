@@ -50,7 +50,7 @@ Esse repositório pode ser localizado em `.../core/os/` de seu [espelho](/index.
 *   inicialização do Arch Linux
 *   [conectar à Internet](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
 *   [compilação de pacotes](/index.php/Criando_pacotes "Criando pacotes")
-*   gerenciamento e correção de [sistemas de arquivos](/index.php/File_systems "File systems") suportados
+*   gerenciamento e correção de [sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos") suportados
 *   o processo de configuração do sistema (ex.: [openssh](https://www.archlinux.org/packages/?name=openssh))
 
 assim como as dependências deles (não necessariamente [makedepends](/index.php/Makedepends_(Portugu%C3%AAs) "Makedepends (Português)")) e o [metapacote](/index.php/Metapacote "Metapacote") [base](https://www.archlinux.org/packages/?name=base).

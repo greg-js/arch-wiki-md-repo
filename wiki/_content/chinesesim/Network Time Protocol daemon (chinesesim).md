@@ -11,26 +11,30 @@
 
 [NTP 项目](http://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 连接到 NTP 服务器](#.E8.BF.9E.E6.8E.A5.E5.88.B0_NTP_.E6.9C.8D.E5.8A.A1.E5.99.A8)
-    *   [2.2 NTP 服务器模式](#NTP_.E6.9C.8D.E5.8A.A1.E5.99.A8.E6.A8.A1.E5.BC.8F)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-    *   [3.1 启动时启用 ntpd](#.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E7.94.A8_ntpd)
-    *   [3.2 每次启动同步一次](#.E6.AF.8F.E6.AC.A1.E5.90.AF.E5.8A.A8.E5.90.8C.E6.AD.A5.E4.B8.80.E6.AC.A1)
-*   [4 技巧](#.E6.8A.80.E5.B7.A7)
-    *   [4.1 有网络连接的时候启动ntpd](#.E6.9C.89.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5.E7.9A.84.E6.97.B6.E5.80.99.E5.90.AF.E5.8A.A8ntpd)
-    *   [4.2 在GPS中使用NTP](#.E5.9C.A8GPS.E4.B8.AD.E4.BD.BF.E7.94.A8NTP)
-    *   [4.3 在 chroot 底下运行](#.E5.9C.A8_chroot_.E5.BA.95.E4.B8.8B.E8.BF.90.E8.A1.8C)
-*   [5 排错](#.E6.8E.92.E9.94.99)
-    *   [5.1 无法分配请求地址](#.E6.97.A0.E6.B3.95.E5.88.86.E9.85.8D.E8.AF.B7.E6.B1.82.E5.9C.B0.E5.9D.80)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 连接到 NTP 服务器](#连接到_NTP_服务器)
+    *   [2.2 NTP 服务器模式](#NTP_服务器模式)
+*   [3 使用](#使用)
+    *   [3.1 启动时启用 ntpd](#启动时启用_ntpd)
+    *   [3.2 每次启动同步一次](#每次启动同步一次)
+*   [4 技巧](#技巧)
+    *   [4.1 有网络连接的时候启动ntpd](#有网络连接的时候启动ntpd)
+    *   [4.2 在GPS中使用NTP](#在GPS中使用NTP)
+    *   [4.3 在 chroot 底下运行](#在_chroot_底下运行)
+*   [5 排错](#排错)
+    *   [5.1 无法分配请求地址](#无法分配请求地址)
+*   [6 参见](#参见)
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [ntp](https://www.archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， *ntpd* 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#.E4.BD.BF.E7.94.A8)。作为服务器的配置，请参阅 [#NTP 服务器模式](#NTP_.E6.9C.8D.E5.8A.A1.E5.99.A8.E6.A8.A1.E5.BC.8F)。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [ntp](https://www.archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， *ntpd* 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#NTP_服务器模式)。
 
 ## 配置
 
@@ -83,7 +87,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **注意:** 这会允许其他人查询你的时间服务器。你需要添加 `noserve` 来停止提供时间。
 
-"restrict"选项的完整文档可以从 [ntp_acc()](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.) 中查找到。详见 [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) 。
+"restrict"选项的完整文档可以从 [ntp.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) 中查找到。详见 [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) 。
 
 你需要在这一行之后告诉 *ntpd* 什么可以访问你的服务器；如果你不是在配置一台 NTP 服务器的话，下面一行就足够了。
 
@@ -332,7 +336,7 @@ ntpd[2130]: unable to create socket on eth0 (5) for fe80::6ef0:49ff:fe51:4946%2#
 ntpd[2130]: failed to init interface for address fe80::6ef0:49ff:fe51:4946%2
 ```
 
-可以禁用 IPv6 解决。做法是：[编辑](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)") `ntpd.service` 添加 `-4` 参数：
+可以禁用 IPv6 解决。做法是：[编辑](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#修改现存单元文件 "Systemd (简体中文)") `ntpd.service` 添加 `-4` 参数：
 
 ```
 [Service]

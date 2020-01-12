@@ -103,7 +103,7 @@ Users with Realtek 8168 8169 8101 8111(C) based NICs (cards / and on-board) may 
 
 #### Enable the NIC directly in Linux
 
-Follow [#Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces) to enable the interface.
+Follow [Network configuration#Enabling and disabling network interfaces](/index.php/Network_configuration#Enabling_and_disabling_network_interfaces "Network configuration") to enable the interface.
 
 #### Rollback/change Windows driver
 

@@ -673,7 +673,7 @@ $ ulimit -c unlimited
 
 從 systemd 219 開始, `/usr/lib/tmpfiles.d/systemd.conf` 指定 `/var/log/journal` 的 ACL 屬性和目錄, 因此日誌所在的檔案系統上要啟用ACL.
 
-參考 [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") 获得如何包含 `/var/log/journal` 啟動 ACL 的詳細資訊.
+參考 [Access Control Lists#Enable ACL](/index.php/Access_Control_Lists#Enable_ACL "Access Control Lists") 获得如何包含 `/var/log/journal` 啟動 ACL 的詳細資訊.
 
 ### 不能設定在開機時启动軟連結到 /etc/systemd/system 的服務
 

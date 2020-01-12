@@ -517,6 +517,8 @@ $ truecrypt -u /home/user/*EncryptedFile*.tc /home/user/*EncryptedFileFolder*
 
 ```
 
+**Note:** If you are using VeraCrypt, from `veracrypt-1.2.4-hotfix1`, the `NOPASSWD: /usr/bin/veracrypt` piece must be replaced with `NOPASSWD: /usr/bin/veracrypt, /usr/bin/uptime`. More info available at [1](https://bugs.archlinux.org/task/64431) and [2](https://sourceforge.net/p/veracrypt/discussion/general/thread/604d12bba8/)
+
 ### Automatic mount on login
 
 Simply add:

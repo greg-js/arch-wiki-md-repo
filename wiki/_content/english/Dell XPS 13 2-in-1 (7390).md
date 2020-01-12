@@ -7,7 +7,7 @@ Related articles
 *   [Dell XPS 13 (9370)](/index.php/Dell_XPS_13_(9370) "Dell XPS 13 (9370)")
 *   [Dell XPS 13 2-in-1 (9365)](/index.php/Dell_XPS_13_2-in-1_(9365) "Dell XPS 13 2-in-1 (9365)")
 
-The New Dell XPS 13 2-in-1 (7390) is the model released in mid 2019 in most territories and is the second iteration of the Dell XPS 13 2-in-1 series, including an updated 10th generation Intel Ice Lake processor with Iris Plus integrated graphics. It can be used like a tablet when folding the display 180 degrees backwards and includes a enlarged 16:10 FHD+ or UHD touchscreen which should work out of the box.
+The New Dell XPS 13 2-in-1 (7390) is the model released in mid 2019 in most territories and is the second iteration of the Dell XPS 13 2-in-1 series, including an updated 10th generation Intel Ice Lake processor with Iris Plus integrated graphics. It can be used like a tablet when folding the display 180 degrees backwards and includes a enlarged 16:10 FHD+ or UHD touchscreen which should work out of the box. This includes support for Wacom pen technology (tested with the "Wacom Bamboo Ink Plus").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -20,6 +20,7 @@ The New Dell XPS 13 2-in-1 (7390) is the model released in mid 2019 in most terr
     *   [2.1 First Boot](#First_Boot)
     *   [2.2 Intel LPSS](#Intel_LPSS)
     *   [2.3 Wifi & Bluetooth](#Wifi_&_Bluetooth)
+    *   [2.4 Camera and Fingerprint Reader](#Camera_and_Fingerprint_Reader)
 
 ## Installation
 
@@ -62,3 +63,7 @@ Currently, three options are available:
 ```
 
 Reboot your laptop and the correct firmware should now be loaded in preference. Your WiFi should connect now as expected.
+
+### Camera and Fingerprint Reader
+
+There are currently no drivers available for the camera and fingerprint reader. See [[2]](https://wiki.ubuntu.com/Dell/XPS/XPS-13-7390-2-in-1) for more information.

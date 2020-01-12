@@ -768,7 +768,7 @@ Possible solutions:
 
 The instructions below were tested on Gnome 3.24.2 and PulseAudio 10.0 however they may still be applicable and useful for other versions.
 
-If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM, you need to prevent GDM from starting its own instance of PulseAudio :
+If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM, you need to prevent GDM from starting its own instance of PulseAudio:
 
 *   Prevent Pulseaudio clients from automatically starting a server if one is not running by adding the following:
 
@@ -779,7 +779,7 @@ daemon-binary = /bin/true
 
 ```
 
-*   Prevent systemd from starting Pulseaudio anyway with socket activation :
+*   Prevent systemd from starting Pulseaudio anyway with socket activation:
 
 ```
 $ sudo -ugdm mkdir -p /var/lib/gdm/.config/systemd/user
@@ -787,7 +787,12 @@ $ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 
 ```
 
-*   Restart, and check that there is no Pulseaudio process for the `gdm` user.
+*   Restart, and check that there is no PulseAudio process for the `gdm` user using:
+
+```
+ $ pgrep -u gdm pulseaudio
+
+```
 
 Further discussion about this problem and alternative fixes can be found [here](https://bbs.archlinux.org/viewtopic.php?id=194006) and [here](https://bbs.archlinux.org/viewtopic.php?id=196689).
 

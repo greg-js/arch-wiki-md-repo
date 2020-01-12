@@ -61,32 +61,27 @@ If your BIOS does not allow to disable Nvidia graphics, you can disable it from 
 
 ## Use NVIDIA graphics only
 
-The proprietary NVIDIA driver does not support dynamic switching like the nouveau driver (meaning it can only use the NVIDIA device). It also has notable screen-tearing issues that NVIDIA recognizes but has not fixed, unless you are using x.org > 1.19 and enable prime sync, see [[1]](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/). However, it does allow use of the discrete GPU and has (as of [January 2017](https://www.phoronix.com/scan.php?page=article&item=nouveau-410-blob&num=1)) a marked edge in performance over the nouveau driver.
+The proprietary NVIDIA driver can be configured to be the primary rendering provider. It also has notable screen-tearing issues unless you enable prime sync by enabling [NVIDIA#DRM kernel mode setting](/index.php/NVIDIA#DRM_kernel_mode_setting "NVIDIA"), see [[1]](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/) for further information. It does allow use of the discrete GPU and has (as of [January 2017](https://www.phoronix.com/scan.php?page=article&item=nouveau-410-blob&num=1)) a marked edge in performance over the nouveau driver.
 
-First, [install](/index.php/Install "Install") the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). Then, configure `xorg.conf`. You will need to know the PCI address of the NVIDIA card, which you can find by issuing
-
-```
-$ lspci | egrep 'VGA|3D'
-
-```
-
-The PCI address is the first 7 characters of the line that mentions NVIDIA. It will look something like `01:00.0`. In the `xorg.conf`, you will need to format it as `#:#:#` while converting hexadecimal numbers to decimal numbers; e.g. `01:00.0` would be formatted as `1:0:0`.
+First, [install](/index.php/Install "Install") the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). Then, configure `/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf` the options of which will be combined with the package provided `/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf` to provide compatibility with this setup.
 
 **Note:** On some setups this setup breaks automatic detection of the values of the display by the nvidia driver through the EDID file. As a work-around see [#Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log).
-
-If X.Org X server version 1.17.2 or higher is installed ([[2]](http://us.download.nvidia.com/XFree86/Linux-x86/358.16/README/randr14.html))
-
- `/etc/X11/xorg.conf` 
+ `/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf` 
 ```
-Section "Module"
-    Load "modesetting"
+Section "OutputClass"
+    Identifier "intel"
+    MatchDriver "i915"
+    Driver "modesetting"
 EndSection
 
-Section "Device"
+Section "OutputClass"
     Identifier "nvidia"
+    MatchDriver "nvidia-drm"
     Driver "nvidia"
-    BusID "PCI:**<BusID for NVIDIA device here>**"
     Option "AllowEmptyInitialConfiguration"
+    Option "PrimaryGPU" "yes"
+    ModulePath "/usr/lib/nvidia/xorg"
+    ModulePath "/usr/lib/xorg/modules"
 EndSection
 
 ```
@@ -187,7 +182,7 @@ $ glxinfo | grep NVIDIA
 
 ### Further Information
 
-For more information, look at NVIDIA's official page on the topic [[3]](http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/randr14.html).
+For more information, look at NVIDIA's official page on the topic [[2]](http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/randr14.html).
 
 ## Troubleshooting
 
@@ -201,7 +196,7 @@ It has been [reported](https://bbs.archlinux.org/viewtopic.php?id=251032) that [
 
 ### Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)
 
-Add `rcutree.rcu_idle_gp_delay=1` to the kernel parameters. Original topic can be found in [[4]](https://github.com/Bumblebee-Project/Bumblebee/issues/455#issuecomment-22497464) and [[5]](https://bbs.archlinux.org/viewtopic.php?id=169742).
+Add `rcutree.rcu_idle_gp_delay=1` to the kernel parameters. Original topic can be found in [[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/455#issuecomment-22497464) and [[4]](https://bbs.archlinux.org/viewtopic.php?id=169742).
 
 ### Resolution, screen scan wrong. EDID errors in Xorg.log
 
@@ -250,7 +245,7 @@ Check if `$ lspci | grep VGA` outputs something similar to:
 
 ```
 
-NVIDIA drivers now offer Optimus support since 319.12 Beta [[6]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
+NVIDIA drivers now offer Optimus support since 319.12 Beta [[5]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
 
 Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
 
@@ -284,7 +279,7 @@ Install the required [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [optimus-ma
 
 Also [start and enable](/index.php/Systemd#Using_units "Systemd") `optimus-manager.service`.
 
-**Note:** By default, optimus-manager only changes which graphics driver is active; it does not automatically turn off the NVIDIA GPU when not in use. To enable power management, see the [upstream guide](https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options). Configurations that include a Turing architecture (or newer) GPU and an Intel Coffee Lake (or newer) CPU can use power management features built into the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver; see [[7]](http://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/dynamicpowermanagement.html) for setup instructions.
+**Note:** By default, optimus-manager only changes which graphics driver is active; it does not automatically turn off the NVIDIA GPU when not in use. To enable power management, see the [upstream guide](https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options). Configurations that include a Turing architecture (or newer) GPU and an Intel Coffee Lake (or newer) CPU can use power management features built into the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver; see [[6]](http://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/dynamicpowermanagement.html) for setup instructions.
 
 #### Usage
 

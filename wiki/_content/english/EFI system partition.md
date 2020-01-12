@@ -113,7 +113,7 @@ The kernels, initramfs files, and, in most cases, the processor's [microcode](/i
 
 The simplest scenarios for mounting EFI system partition are:
 
-*   [mount](/index.php/Mount "Mount") ESP to `/efi` and use a [boot loader](/index.php/Boot_loader "Boot loader") which has a driver for your root file system (eg. [GRUB](/index.php/GRUB "GRUB"), [rEFInd](/index.php/REFInd "REFInd")).
+*   [mount](/index.php/Mount "Mount") ESP to `/efi` and use a [boot loader](/index.php/Boot_loader "Boot loader") which is capable of accessing the kernel(s) and initramfs image(s) that are stored elsewhere (typically [/boot](/index.php/Partitioning#/boot "Partitioning")). See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for more information on boot loader requirements and capabilities.
 *   [mount](/index.php/Mount "Mount") ESP to `/boot`. This is the preferred method when directly booting a [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from UEFI.
 
 **Tip:**

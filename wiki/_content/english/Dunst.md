@@ -144,44 +144,61 @@ dunstify --action="replyAction,reply" "Message received"
 
 ```
 
-The user can then access the specified actions via dunsts context menu. The call to dunstify will block until either the notification disappears or an action is selected. In the former case dunstify will return 1 if the notification timed out and 2 if it was closed manually. In the latter case it returns the action which was selected.
+The user can then access the specified actions via dunsts context menu. The call to dunstify will block until either the notification disappears or an action is selected. In the former case dunstify will return 1 if the notification timed out and 2 if it was dismissed manually [[2]](https://developer.gnome.org/notification-spec/#signals). In the latter case it returns the action which was selected by the Dunst context menu.
+
+You may also define how mouse events invoke actions [[3]](https://github.com/dunst-project/dunst/blob/3f3082efb3724dcd369de78dc94d41190d089acf/dunstrc#L237).
+
+Dismissing notifications can be done through shortcuts defined in `~/.config/dunst/dunstrc` or by left-clicking on the notification (by default or when `dunstrc` defines `mouse_left_click = close_current`). This allows Dunst to be used interactively, as was suggested in [[4]](https://github.com/dunst-project/dunst/issues/163#issuecomment-573191650).
+
+```
+reply_action () {}
+
+ACTION=$(dunstify --action="replyAction,Reply" "Message Received")
+
+case "$ACTION" in
+"handleAction" | "2")
+    reply_action
+    ;;
+esac
+
+```
 
 ## Tips and tricks
 
 ### Using dunstify as volume/brightness level indicator
 
-You can use the replace id feature to implement a simple volume or brightness indicator notification like in this picture [[2]](https://i.postimg.cc/j2CDkS1H/screen1712.png).
+You can use the replace id feature to implement a simple volume or brightness indicator notification like in this picture [[5]](https://i.postimg.cc/j2CDkS1H/screen1712.png).
 
 To realize that volume indicator place the following script somewhere on your `PATH`.
 
 ```
- #!/bin/bash
- # changeVolume
+#!/bin/bash
+# changeVolume
 
- # Arbitrary but unique message id
- msgId="991049"
+# Arbitrary but unique message id
+msgId="991049"
 
- # Change the volume using alsa(might differ if you use pulseaudio)
- amixer -c 0 set Master "$@" > /dev/null
+# Change the volume using alsa(might differ if you use pulseaudio)
+amixer -c 0 set Master "$@" > /dev/null
 
- # Query amixer for the current volume and whether or not the speaker is muted
- volume="$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
- mute="$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
- if [[ $volume == 0 || "$mute" == "off" ]]; then
-     # Show the sound muted notification
-     dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "Volume muted" 
- else
-     # Show the volume notification
-     dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \
-     "Volume: ${volume}%" "$(getProgressString 10 "<b> </b>" " " $volume)"
- fi
+# Query amixer for the current volume and whether or not the speaker is muted
+volume="$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
+mute="$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
+if [[ $volume == 0 || "$mute" == "off" ]]; then
+    # Show the sound muted notification
+    dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "Volume muted" 
+else
+    # Show the volume notification
+    dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \
+    "Volume: ${volume}%" "$(getProgressString 10 "<b> </b>" " " $volume)"
+fi
 
- # Play the volume changed sound
- canberra-gtk-play -i audio-volume-change -d "changeVolume"
+# Play the volume changed sound
+canberra-gtk-play -i audio-volume-change -d "changeVolume"
 
 ```
 
-`getProgressString` needs to be some function assembling the progressbar like string. This script uses [[3]](https://github.com/Fabian-G/dotfiles/blob/master/scripts/bin/getProgressString).
+`getProgressString` needs to be some function assembling the progressbar like string. This script uses [[6]](https://github.com/Fabian-G/dotfiles/blob/master/scripts/bin/getProgressString).
 
 Now simply bind `changeVolume 2dB+ unmute` etc. to some hotkey and you are done. You might also want to make dunst ignore these type of notifications in its history. See [#Modifying](#Modifying).
 
@@ -193,7 +210,7 @@ For some notifications (for example sound or brightness), you might want to over
 
 ### Dunst fails to start via systemd
 
-When using dunst without a Display Manager, the `DISPLAY` environment variable might not be correctly set.[[4]](https://github.com/dunst-project/dunst/issues/347)
+When using dunst without a Display Manager, the `DISPLAY` environment variable might not be correctly set.[[7]](https://github.com/dunst-project/dunst/issues/347)
 
 To fix this, add the following to your `.xinitrc`:
 

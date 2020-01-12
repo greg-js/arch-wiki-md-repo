@@ -36,7 +36,7 @@
 
 ## Установка
 
-Проект с открытым исходным кодом, **Chromium**, можно [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") с пакетом [chromium](https://www.archlinux.org/packages/?name=chromium). Помимо этого в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") можно найти:
+Проект с открытым исходным кодом, **Chromium**, можно [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") с пакетом [chromium](https://www.archlinux.org/packages/?name=chromium). Помимо этого в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") можно найти:
 
 *   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/) — версия для разработчиков (уже собранный двоичный пакет: [chromium-browser-bin](https://aur.archlinux.org/packages/chromium-browser-bin/))
 *   [google-chrome](https://aur.archlinux.org/packages/google-chrome/) — модифицированный вариант, **Google Chrome**, включающий в себя Flash Player

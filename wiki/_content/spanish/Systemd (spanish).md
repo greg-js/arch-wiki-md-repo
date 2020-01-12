@@ -663,7 +663,7 @@ El problema para algunos usuarios se debe a que `/var/log/journal` es demasiado 
 
 A partir de systemd 219, `/usr/lib/tmpfiles.d/systemd.conf` especifica los atributos de [ACL](https://en.wikipedia.org/wiki/es:Lista_de_control_de_acceso "wikipedia:es:Lista de control de acceso") para los directorios en `/var/log/journal` y, por lo tanto, requiere que el soporte de ACL sea activado para el sistema de archivos en el que reside journal.
 
-Véase [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") para obtener instrucciones sobre cómo activar la ACL en el sistema de archivos que aloja `/var/log/journal`.
+Véase [Access Control Lists#Enable ACL](/index.php/Access_Control_Lists#Enable_ACL "Access Control Lists") para obtener instrucciones sobre cómo activar la ACL en el sistema de archivos que aloja `/var/log/journal`.
 
 ### La versión de systemd impresa en el arranque no es la misma que la versión del paquete instalado
 

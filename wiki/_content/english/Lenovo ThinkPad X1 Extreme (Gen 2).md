@@ -36,10 +36,13 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
             *   [1.3.2.1 Prime features](#Prime_features)
             *   [1.3.2.2 Power Management](#Power_Management)
             *   [1.3.2.3 Optimus manager](#Optimus_manager)
-    *   [1.4 Audio](#Audio)
-        *   [1.4.1 Audio pop on shutdown and startup](#Audio_pop_on_shutdown_and_startup)
-    *   [1.5 Fingerprint](#Fingerprint)
-    *   [1.6 Webcam](#Webcam)
+    *   [1.4 OLED Display](#OLED_Display)
+        *   [1.4.1 Brightness control](#Brightness_control)
+    *   [1.5 Audio](#Audio)
+        *   [1.5.1 Audio pop on shutdown and startup](#Audio_pop_on_shutdown_and_startup)
+    *   [1.6 Fingerprint](#Fingerprint)
+    *   [1.7 Webcam](#Webcam)
+    *   [1.8 TouchPad](#TouchPad)
 *   [2 Firmware](#Firmware)
 *   [3 Software](#Software)
     *   [3.1 Throttling fix](#Throttling_fix)
@@ -104,6 +107,28 @@ Currently, one of the easiest solutions for this laptop is to use [optimus-manag
 
 This allows easy switching between the PRIME offloading feature above, and a mode where external display ports (HDMI and USB-C) work.
 
+### OLED Display
+
+#### Brightness control
+
+OLED screens have no backlight, brightness cannot be controlled by changing backlight power in the traditional way. Instead, it can be controlled using PWM by enabling following option:
+
+```
+# echo "options i915 enable_dpcd_backlight=1" >> /etc/modprobe.d/i915.conf
+
+```
+
+Alternatively, you can add a kernel parameter. For example, if you are using GRUB, edit /etc/default/grub with
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="i915.enable_dpcd_backlight=1"
+
+```
+
+Don't forget to [update the grub configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") to apply the changes.
+
+**Note:** As of January 2020, setting the brightness is not flawless due to [this bug](https://gitlab.freedesktop.org/drm/intel/issues/510). Nevertheless, you still have some control.
+
 ### Audio
 
 #### Audio pop on shutdown and startup
@@ -157,6 +182,22 @@ You should then be able to enroll your fingerprints with [Fprint#Configuration](
 ### Webcam
 
 The webcam in this laptop is capable of "Windows Hello" which has a Linux version called [Howdy](/index.php/Howdy "Howdy"). The device you should use to configure howdy on this laptop is `/dev/video0`.
+
+### TouchPad
+
+Touchpad works out-of-the-box with libinput, however speed will be very slow. You can adjust acceleration with:
+
+```
+# xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.5
+
+```
+
+Additionally if you wish to disable right click on TouchPad and only use two finger click as your right click use:
+
+```
+# xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Click Method Enabled' 0 1    
+
+```
 
 ## Firmware
 

@@ -135,7 +135,7 @@ $ gem install bundler
 By default, Bundler installs gems system-wide, which is contrary to the behaviour of *gem* itself on Arch. To correct this, you can run the following command:
 
 ```
-$ bundle config path "$(ruby -e 'puts Gem.user_dir')"
+$ bundle config path ~/.gem
 
 ```
 

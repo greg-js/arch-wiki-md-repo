@@ -82,11 +82,11 @@ Antes de editar cualquier archivo de configuración, cree una copia de seguridad
 
 Mantenga una lista de todos los paquetes instalados, de modo que si una re-instalación completa es inevitable, sea más fácil volver a crear el entorno original.
 
-Consulte los consejos de [pacman (Español)/Tips and tricks (Español)#Lista de paquetes instalados](/index.php/Pacman_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol)#Lista_de_paquetes_instalados "Pacman (Español)/Tips and tricks (Español)") para obtener más detalles.
+Consulte los consejos de [pacman (Español)/Tips and tricks (Español)#Listar paquetes instalados](/index.php/Pacman_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol)#Listar_paquetes_instalados "Pacman (Español)/Tips and tricks (Español)") para obtener más detalles.
 
 ### Base de datos de pacman
 
-Consulte las sugerencias de [pacman (Español)/Tips and tricks (Español)#Copia de seguridad de la base de datos de pacman](/index.php/Pacman_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol)#Copia_de_seguridad_de_la_base_de_datos_de_pacman "Pacman (Español)/Tips and tricks (Español)").
+Consulte las sugerencias de [pacman (Español)/Tips and tricks (Español)#Realizar copia de seguridad de la base de datos de pacman](/index.php/Pacman_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol)#Realizar_copia_de_seguridad_de_la_base_de_datos_de_pacman "Pacman (Español)/Tips and tricks (Español)").
 
 ### Encabezados LUKS
 
@@ -203,7 +203,7 @@ Consulte [Pacman (Español)#Limpiar la memoria caché de los paquetes](/index.p
 
 Retire los paquetes no utilizados del sistema para liberar espacio en disco y simplificar el mantenimiento.
 
-Consulte [Pacman (Español)/Tips and tricks (Español)#Eliminación de paquetes no utilizados (huérfanos)](/index.php/Pacman_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol)#Eliminación_de_paquetes_no_utilizados_(huérfanos) "Pacman (Español)/Tips and tricks (Español)") para más detalles.
+Consulte [Pacman (Español)/Tips and tricks (Español)#Eliminar paquetes no utilizados (huérfanos)](/index.php/Pacman_(Espa%C3%B1ol)/Tips_and_tricks_(Espa%C3%B1ol)#Eliminar_paquetes_no_utilizados_(huérfanos) "Pacman (Español)/Tips and tricks (Español)") para más detalles.
 
 ### Archivos de configuración antiguos
 

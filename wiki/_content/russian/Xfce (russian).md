@@ -372,9 +372,9 @@ XFCE4 поддерживает [спецификацию звуковых тем
 
 ```
 
-Какие именно плагины вам нужны, зависит от аппаратной части вашего компьютера. Большинству пользователей подойдет пакет [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/), который может быть [установлен](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+Какие именно плагины вам нужны, зависит от аппаратной части вашего компьютера. Большинству пользователей подойдет пакет [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/), который может быть [установлен](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
-Если xfce4-mixer уже был запущен перед установкой одного из дополнительных пакетов, перезайдите в систему чтобы увидеть изменения, или просто удалите значок микшера с панели и добавьте его снова. Если установка плагина для gstreamer не помогла, возможно, вам нужны еще какие-нибудь плагины. Попробуйте [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакеты [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) или [gstreamer0.10-bad-plugins](https://aur.archlinux.org/packages/gstreamer0.10-bad-plugins/).
+Если xfce4-mixer уже был запущен перед установкой одного из дополнительных пакетов, перезайдите в систему чтобы увидеть изменения, или просто удалите значок микшера с панели и добавьте его снова. Если установка плагина для gstreamer не помогла, возможно, вам нужны еще какие-нибудь плагины. Попробуйте [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") пакеты [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) или [gstreamer0.10-bad-plugins](https://aur.archlinux.org/packages/gstreamer0.10-bad-plugins/).
 
 Если вам нужно поменять звуковую карту в микшере, перезайдите в систему, чтобы звук вновь появился.
 
@@ -526,7 +526,7 @@ aplay /boot/startupsound.wav
 
 Большинство графических приложений полагаются на [xdg-open](/index.php/Xdg-open "Xdg-open"), который используется для открытия файлов и URL предпочтительным приложением.
 
-Для правильной интеграции xdg-open и xdg-settings со средой рабочего стола Xfce, вам нужно [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop).
+Для правильной интеграции xdg-open и xdg-settings со средой рабочего стола Xfce, вам нужно [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") пакет [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop).
 
 Если вы не хотите этого делать, ваши предпочтения приложений не будут соблюдаться. Установка пакета и настройка *xdg-open* на работу в среде Xfce позволяет перенаправлять все вызовы на *exo-open*, который корректно обрабатывает ваши предпочтения.
 

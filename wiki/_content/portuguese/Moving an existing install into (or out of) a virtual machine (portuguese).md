@@ -43,7 +43,7 @@ Mover para fora de um ambiente virtual é relativamente fácil.
 
 A configuração de uma pasta compartilhada entre a máquina virtual convidada e o host depende do hipervisor usado. Por favor, refira-se à sua página wiki ou manual específico.
 
-Se você ainda não possui uma partição ext4, veja [Sistemas de arquivos](/index.php/File_systems "File systems").
+Se você ainda não possui uma partição ext4, veja [Sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos").
 
 Se você estiver no Windows, instale [Ext2Fsd](http://www.ext2fsd.com/) para poder montar volumes ext.
 
@@ -110,7 +110,7 @@ Agora carregue o módulo necessário e monte-o como um dispositivo de loopback, 
 
 ```
 
-Em seguida, particione o dispositivo `/dev/loop5` executando sua ferramenta de [particionamento favorita](/index.php/Partitioning#Partitioning_tools "Partitioning"). Crie uma tabela de partição nela (por exemplo, `msdos`), escolha o [esquema de partição](/index.php/Partition_scheme "Partition scheme") e crie as partições. Em seguida, crie um [sistema de arquivos](/index.php/File_system "File system") nas partições, que aparecerão como `/dev/loop5p1`, `/dev/loop5p2`, etc.
+Em seguida, particione o dispositivo `/dev/loop5` executando sua ferramenta de [particionamento favorita](/index.php/Partitioning#Partitioning_tools "Partitioning"). Crie uma tabela de partição nela (por exemplo, `msdos`), escolha o [esquema de partição](/index.php/Partition_scheme "Partition scheme") e crie as partições. Em seguida, crie um [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") nas partições, que aparecerão como `/dev/loop5p1`, `/dev/loop5p2`, etc.
 
 ### Transferir o sistema
 

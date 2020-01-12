@@ -58,8 +58,8 @@ A tabela a seguir lista alguns utilitários importantes com os quais os usuário
 | GNU [gawk](https://www.archlinux.org/packages/?name=gawk) | awk | linguagem de varredura e processamento de padrão | [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1), [info](https://www.gnu.org/software/gawk/manual/html_node/index.html) | [nawk](https://www.archlinux.org/packages/?name=nawk), [mawk](https://aur.archlinux.org/packages/mawk/) |
 | [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [dmesg](https://en.wikipedia.org/wiki/pt:dmesg "wikipedia:pt:dmesg") | exibe ou controla o *ring buffer* do kernel | [dmesg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dmesg.1) | [journal do systemd](/index.php/Journal_do_systemd "Journal do systemd") |
 | [lsblk](/index.php/Lsblk_(Portugu%C3%AAs) "Lsblk (Português)") | lista dispositivos de bloco | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
-| [mount](/index.php/Mount "Mount") | monta um sistema de arquivos | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) |
-| [umount](/index.php/Umount "Umount") | desmonta um sistema de arquivos | [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8) |
+| [mount](/index.php/Mount_(Portugu%C3%AAs) "Mount (Português)") | monta um sistema de arquivos | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) |
+| [umount](/index.php/Umount_(Portugu%C3%AAs) "Umount (Português)") | desmonta um sistema de arquivos | [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8) |
 | [su](/index.php/Su "Su") | substitui o usuário | [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) | [sudo](/index.php/Sudo "Sudo") |
 | kill | encerra um processo | [kill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/kill.1) | [pkill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pkill.1), [killall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
 | [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | pgrep | procura por processos por nome ou atributos | [pgrep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pgrep.1) | [pidof(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pidof.1) |

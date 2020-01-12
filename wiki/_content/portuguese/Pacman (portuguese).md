@@ -705,7 +705,7 @@ Quando o sistema iniciar, execute este comando (para o Kernel [linux](https://ww
 
 ```
 
-Se isso não funcionar, de uma versão atual do Arch (CD/DVD ou pendrive USB), [monte](/index.php/Mount "Mount") as partições *root* e *boot*. Então, faça um [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") usando o *arch-chroot*:
+Se isso não funcionar, de uma versão atual do Arch (CD/DVD ou pendrive USB), [monte](/index.php/Monte "Monte") as partições *root* e *boot*. Então, faça um [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") usando o *arch-chroot*:
 
 ```
 # arch-chroot /mnt

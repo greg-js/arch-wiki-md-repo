@@ -103,15 +103,15 @@ sda
 
 ```
 
-No exemplo acima, apenas um dispositivo está disponível (`sda`), e esse dispositivo tem três partições (`sda1` para `sda3`), cada uma com um diferente [sistema de arquivos](/index.php/File_system "File system").
+No exemplo acima, apenas um dispositivo está disponível (`sda`), e esse dispositivo tem três partições (`sda1` para `sda3`), cada uma com um diferente [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos").
 
 #### wipefs
 
-*wipefs* pode listar ou apagar [sistema de arquivo](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") ou [tabela de partição](/index.php/Partition "Partition") assinaturas (strings mágicas) do dispositivo especificado para tornar as assinaturas invisíveis para [libblkid(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libblkid.3). Ele não apaga os sistemas de arquivos nem quaisquer outros dados do dispositivo.
+*wipefs* pode listar ou apagar assinaturas (strings mágicas) de [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos"), [RAID](/index.php/RAID "RAID") ou [tabela de partição](/index.php/Parti%C3%A7%C3%A3o "Partição") do dispositivo especificado para tornar as assinaturas invisíveis para [libblkid(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libblkid.3). Ele não apaga os sistemas de arquivos nem quaisquer outros dados do dispositivo.
 
 Veja [wipefs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) para mais informação.
 
-Por exemplo, para apagar todas as assinaturas do dispositivo `/dev/sdb` e criar um arquivo de backup de assinatura `~/wipefs-sdb-*offset*.bak` para cada assinatura:
+Por exemplo, para apagar todas as assinaturas do dispositivo `/dev/sdb` e criar um arquivo de assinatura backup `~/wipefs-sdb-*posição*.bak` para cada assinatura:
 
 ```
 # wipefs --all --backup /dev/sdb

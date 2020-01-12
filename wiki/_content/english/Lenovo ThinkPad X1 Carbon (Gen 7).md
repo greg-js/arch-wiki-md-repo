@@ -24,7 +24,7 @@ ThinkPad X1 Carbon 7th
 | **Device** | **Working** | **Modules** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
 | [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
-| Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
+| Native Ethernet with [dongle](https://www.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-Ethernet-Extension-Adapter-2/p/4X90Q84427) | Yes | ? |
 | Mobile broadband Fibocom | Yes¹ | ? |
 | Audio | Yes | snd_hda_intel |
 | Microphone | No⁴ | snd_sof, snd_sof_intel_hda |
@@ -168,15 +168,13 @@ The solution is to update touchpad firmware (version `1.3.3013412` works correct
 
 ## Power management/Throttling issues
 
-Due to wrong configured power management registers the CPU may consume a lot less power than under windows and the thermal throttling occurs at 80°C (97°C when using Windows, see [T480s throttling bug](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)).
+A [bug](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489/highlight/true) causes the CPU to consume less power than under Windows and throttle at 80°C instead of 97°.
 
-Lenovo has confirmed the issue, [explained the cause](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4534535/highlight/true#M13642) and has published [updates for the embedded controller and the BIOS](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4535310/highlight/true#M13653) to LVFS (*how to install see [#BIOS Updates](#Updates)*).
+Lenovo has confirmed the issue, [explained the cause](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4534535/highlight/true#M13642) and published [updates for the embedded controller and the BIOS](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4535310/highlight/true#M13653) to LVFS (*see [#BIOS Updates](#Updates)*).
 
 ### throttled
 
-**Note:** As of the BIOS/EC version 1.23 (N2HET40W/N2HHT27W) it has not been fixed
-
-[throttled](https://www.archlinux.org/packages/?name=throttled) replaces [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/) used previously. Install [throttled](https://www.archlinux.org/packages/?name=throttled), then run
+If you are stuck on an earlier version of the firmware and BIOS (or do not want to upgrade), you can install [throttled](https://www.archlinux.org/packages/?name=throttled), then run
 
 ```
 sudo systemctl enable --now lenovo_fix.service
@@ -217,47 +215,18 @@ You might be able to get the microphones working by following the instructions i
 
 ## Disabling red LED in ThinkPad logo
 
-To disable the red LED in the ThinkPad logo on the cover:
+You can temporarily disable the red LED in the ThinkPad logo on the cover:
 
 1\. Enable writing to the embedded controller registers by adding the kernel parameter `ec_sys.write_support=1`. If you use UEFI boot, you can add this parameter in `/boot/efi/loader/entries/arch.conf` under "options".
 
-2\. Then, you can disable directly the LED with this command:
+2\. Disable the LED with this command:
 
 ```
 # echo -n -e "\x0a" | sudo dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 conv=notrunc 2> /dev/null
 
 ```
 
-**To disable the LED at startup, you can create a systemd service:**
-
-1\. Create a sh script (/root/disable_led.sh for instance) and put this :
-
-```
-#!/bin/bash
-echo -n -e "\x0a" | dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 conv=notrunc 2> /dev/null
-
-```
-
-2\. Create a new service unit file in {{ic|/etc/systemd/system} called "led.service", and insert the following:
-
-```
-Description=Disable ThinkPad logo LED
-
-[Service]
-ExecStart=/root/disable_led.sh
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-3\. Start and enable this service:
-
-```
-# systemctl start led.service
-# systemctl enable led.service
-
-```
+This would need to be run after each suspend/reboot to be permanent.
 
 ## Additional resources
 

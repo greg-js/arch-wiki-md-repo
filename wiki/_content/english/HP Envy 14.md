@@ -13,7 +13,11 @@
 | Function Keys | **Working** |
 | Suspend to RAM | **Working** |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
 *   [2 Configuration](#Configuration)

@@ -469,7 +469,7 @@ body::before {
 
 ```
 DESCRIPTION="Arch is the best!"
-SRC_URI="[https://wiki.archlinux.org/index.php/Arch_is_the_best](https://wiki.archlinux.org/index.php/Arch_is_the_best)"
+SRC_URI="https://wiki.archlinux.org/index.php/Arch_is_the_best"
 
 LICENSE="GFDL_1.3"
 SLOT="0"

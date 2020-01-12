@@ -102,8 +102,9 @@ and for packages that are delivered from the cache:
 Before running /arch/setup, add variables for your proxy. To do so, run on the console:
 
 ```
-# export http_proxy='[http://your_squid_machine_ip:3128'](http://your_squid_machine_ip:3128')
-# export ftp_proxy='[ftp://your_squid_machine_ip:3128'](ftp://your_squid_machine_ip:3128')
+# export http_proxy='http://*your_squid_machine_ip*:3128'
+# export ftp_proxy='ftp://*your_squid_machine_ip*:3128'
+
 ```
 
 Now just use /arch/setup to normally install the system, and it should use your proxy. Watch the squid logs to verify this.

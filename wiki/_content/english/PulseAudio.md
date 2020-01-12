@@ -73,12 +73,12 @@ Related articles
 
 Some PulseAudio modules are not included in the main package and must be installed separately if needed:
 
-*   [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), for PulseAudio to manage [ALSA](/index.php/ALSA "ALSA") as well, see [#ALSA](#ALSA).
-*   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), for [bluetooth](/index.php/Bluetooth "Bluetooth") support (Bluez), see [bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page.
-*   [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer), for equalizer sink (qpaeq).
-*   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack), for [JACK](/index.php/JACK "JACK") sink, source and jackdbus detection.
-*   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc), for infrared (LIRC) volume control.
-*   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf), for Zeroconf ([Avahi](/index.php/Avahi "Avahi")/DNS-SD) support.
+*   [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) for PulseAudio to manage [ALSA](/index.php/ALSA "ALSA") as well, see [#ALSA](#ALSA)
+*   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) for [bluetooth](/index.php/Bluetooth "Bluetooth") support (Bluez), see [bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page
+*   [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer) for equalizer sink (qpaeq)
+*   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) for [JACK](/index.php/JACK "JACK") sink, source and jackdbus detection
+*   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc) for infrared volume control with [LIRC](/index.php/LIRC "LIRC")
+*   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf) for Zeroconf ([Avahi](/index.php/Avahi "Avahi")/DNS-SD) support
 
 ### Front-ends
 

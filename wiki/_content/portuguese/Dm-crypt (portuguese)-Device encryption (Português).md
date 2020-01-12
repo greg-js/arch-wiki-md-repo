@@ -311,14 +311,14 @@ Uma vez aberto, o container criptografado deve ser acessado pelo caminho `/dev/m
 
 Para configurar um grupo de volumes do LVM em cima da camada criptografada, o nome do dispositivo mapeado deve ser (nesse caso) algo parecido com `/dev/mapper/cryptraiz`, e não `/dev/sda1`. LVM vai dar nomes adicionais para todos os volumes lógicos criados, exemplo, `/dev/lvmpool/raiz` e `/dev/lvmpool/swap`.
 
-Para escrever dados criptografados no container você deve acessá-lo pelo nome do dispositivo mapeado. O primeiro passo tipicamente será [colocar um sistema de arquivos](/index.php/File_systems#Create_a_file_system "File systems") . Por exemplo:
+Para escrever dados criptografados no container você deve acessá-lo pelo nome do dispositivo mapeado. O primeiro passo tipicamente será [colocar um sistema de arquivos](/index.php/Sistemas_de_arquivos#Criar_um_sistema_de_arquivos "Sistemas de arquivos") . Por exemplo:
 
 ```
 # mkfs -t ext4 /dev/mapper/cryptraiz
 
 ```
 
-O dispositivo `/dev/mapper/cryptraiz` pode ser então [montado](/index.php/Mount "Mount") como qualquer partição.
+O dispositivo `/dev/mapper/cryptraiz` pode ser então [montado](/index.php/Monta "Monta") como qualquer partição.
 
 Para fechar o container LUKS, desmonte a partição e execute:
 
@@ -614,7 +614,7 @@ Sector size (logical/physical): 512 bytes / 512 bytes
 
 ```
 
-Agora que você sabe os valores, você pode fazer o backup do cabeçalho com o [dd](/index.php/Dd "Dd"):
+Agora que você sabe os valores, você pode fazer o backup do cabeçalho com o [dd](/index.php/Dd_(Portugu%C3%AAs) "Dd (Português)"):
 
 ```
 # dd if=/dev/<dispositivo> of=/caminho/para/<arquivo>.img bs=512 count=4040
@@ -728,7 +728,7 @@ Apesar de ser possível atualizar a criptografia de tal dispositivo, isto é pra
 
 ## Redimensionando os dispositivos criptografados
 
-Se um dispositivo de armazenamento criptografado com dm-crypt está sendo clonado (com uma ferramenta como o [dd](/index.php/Dd "Dd")) para outro dispositivo maior, este último deve ser redimensionado para utilizar todo o seu espaço.
+Se um dispositivo de armazenamento criptografado com dm-crypt está sendo clonado (com uma ferramenta como o [dd](/index.php/Dd_(Portugu%C3%AAs) "Dd (Português)")) para outro dispositivo maior, este último deve ser redimensionado para utilizar todo o seu espaço.
 
 Neste exemplo, o dispositivo destino é /dev/sdX2, todo o espaço adicional da partição vai ser utilizado:
 

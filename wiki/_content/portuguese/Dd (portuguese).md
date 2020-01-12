@@ -33,6 +33,8 @@ Para mais informações, consulte [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages
 *   [3 Aplicação de patch em arquivo binário](#Aplicação_de_patch_em_arquivo_binário)
 *   [4 Fazer backup e restaurar MBR](#Fazer_backup_e_restaurar_MBR)
     *   [4.1 Remover o gerenciador de boot](#Remover_o_gerenciador_de_boot)
+*   [5 Resolução de problemas](#Resolução_de_problemas)
+    *   [5.1 Leitura parcial](#Leitura_parcial)
 
 ## Instalação
 
@@ -200,5 +202,42 @@ Para apagar o código de bootstrap do MBR (pode ser útil se você tiver que faz
 
 ```
 # dd if=/dev/zero of=/dev/sd*X* bs=440 count=1
+
+```
+
+## Resolução de problemas
+
+### Leitura parcial
+
+Arquivos criados com *dd* podem terminar com um tamanho menor do que o solicitado se o bloco completo de entrada não está disponível e a chamada de sistema [read(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/read.2) retorna antes do esperado. Isto pode acontecer quando ler de um [pipe(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pipe.7) ou do `/dev/random` e não tem entropia o bastante[[3]](https://unix.stackexchange.com/a/121888), ou do `/dev/urandom` quando ler mais do que 32 MiB[[4]](https://unix.stackexchange.com/a/178957).
+
+É possível, mas não garantido, que *dd* vai avisá-lo sobre o problema:
+
+```
+dd: warning: partial read (*X* bytes); suggest iflag=fullblock
+
+```
+
+A solução é fazer como o aviso recomenda e adicionar `iflag=fullblock` para o comando, Por exemplo:
+
+```
+$ dd if=/dev/random of=grande_segredo.img bs=1K count=1 iflag=fullblock
+$ dd if=/dev/urandom of=grande_segredo.img bs=40M count=1 iflag=fullblock
+
+```
+
+**Nota:** É fortemente recomendado sempre adicionar a opção `iflag=fullblock` quando o arquivo de entrada é o `/dev/random` ou `/dev/urandom`.
+
+Uma alternativa para `/dev/urandom` é especificar o tamanho do bloco menor que 32 MiB, com um maior número de copías. Por exemplo:
+
+```
+$ dd if=/dev/urandom of=grande_segredo.img bs=1M count=40
+
+```
+
+Quando ler de uma pipe, uma alternativa para `iflag=fullblock` é limitar `bs` para o valor constante `PIPE_BUF`, definido em `/usr/include/linux/limits.h` [[5]](https://unix.stackexchange.com/questions/556016/cat-dd-pipe-causes-partial-reads-without-iflag-fullblock-why-truncated-to-128). Por exemplo:
+
+```
+$ cat entrada.img | dd of=saida.img bs=4k count=100
 
 ```

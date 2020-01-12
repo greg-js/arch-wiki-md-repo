@@ -34,11 +34,14 @@ The installation process for Arch on the Inspiron 15 does not differ from any ot
     *   [2.2 Graphics Configuration](#Graphics_Configuration)
         *   [2.2.1 Intel Only](#Intel_Only)
         *   [2.2.2 Optimus Configuration (Hybrid Intel and Nvidia)](#Optimus_Configuration_(Hybrid_Intel_and_Nvidia))
+            *   [2.2.2.1 PRIME Offload](#PRIME_Offload)
+            *   [2.2.2.2 arch-prime-git](#arch-prime-git)
 *   [3 Wifi](#Wifi)
 *   [4 Keyboard](#Keyboard)
 *   [5 Power Saving](#Power_Saving)
-    *   [5.1 Enable TLP](#Enable_TLP)
-    *   [5.2 CPU Undervolting](#CPU_Undervolting)
+    *   [5.1 Enable thermald](#Enable_thermald)
+    *   [5.2 Enable TLP](#Enable_TLP)
+    *   [5.3 CPU Undervolting](#CPU_Undervolting)
 *   [6 Firmware Updates](#Firmware_Updates)
 *   [7 Thermal Modes / Fan profiles](#Thermal_Modes_/_Fan_profiles)
 *   [8 Touchpad](#Touchpad)
@@ -47,6 +50,7 @@ The installation process for Arch on the Inspiron 15 does not differ from any ot
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 I/O Operating is very slow](#I/O_Operating_is_very_slow)
     *   [10.2 Freezing while resume from suspend](#Freezing_while_resume_from_suspend)
+    *   [10.3 No audio from 3.5mm headphone jack port](#No_audio_from_3.5mm_headphone_jack_port)
 
 ## UEFI
 
@@ -83,7 +87,20 @@ If your model comes with an nVidia card which you don't use then you can try to 
 
 #### Optimus Configuration (Hybrid Intel and Nvidia)
 
-**Note:** [arch-prime-git](https://aur.archlinux.org/packages/arch-prime-git/) has been obsoleted upstream in favour of [PRIME#PRIME_render_offload](/index.php/PRIME#PRIME_render_offload "PRIME").
+##### PRIME Offload
+
+Follow the instructions for [PRIME](/index.php/PRIME "PRIME"). In the case of this laptop, there are only two required steps:
+
+*   Once the [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers are installed, install the [nvidia-prime](https://www.archlinux.org/packages/?name=nvidia-prime) package, and use the `prime-run` command to run applications that should run on the dGPU.
+*   Follow the steps outlined in the "Automatic Setup" section on this page: [https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/dynamicpowermanagement.html](https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/dynamicpowermanagement.html)
+
+**Warning:** Without the second step above, the dGPU will remain powered, and will drain your battery quicker.
+
+**Note:** The power-saving features described in the second step are available only for the GTX 1650\. If your laptop comes with the older GTX 1050, you may do better to use the older switching method (described below).
+
+##### arch-prime-git
+
+**Note:** [arch-prime-git](https://aur.archlinux.org/packages/arch-prime-git/) has been obsoleted upstream in favour of [PRIME#PRIME render offload](/index.php/PRIME#PRIME_render_offload "PRIME").
 
 You can use [arch-prime-git](https://aur.archlinux.org/packages/arch-prime-git/) to switch the graphics card. Make sure you have installed [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), `nvidia` driver, and [bbswitch-dkms](https://www.archlinux.org/packages/?name=bbswitch-dkms), then run `sudo prime-select service restore` before first time using it. Here is an example of using `prime-select` below:
 
@@ -113,6 +130,10 @@ echo "5m" > /sys/class/leds/dell\:\:kbd_backlight/stop_timeout
 This would set the timeout to 5 minutes.
 
 ## Power Saving
+
+### Enable thermald
+
+[Thermald](/index.php/CPU_frequency_scaling#thermald "CPU frequency scaling") is a daemon created by Intel to control CPU heat more intelligently than the laptop's firmware is capable of. It [plays nicely](https://linrunner.de/en/tlp/docs/tlp-faq.html#install-config) with TLP.
 
 ### Enable TLP
 
@@ -227,3 +248,7 @@ If you're running over Linux Kernel 5.2, while staying in bootloader, add kernel
 Add these kernel parameters: `acpi_rev_override=1 acpi_osi=Linux mem_sleep_default=deep`
 
 *   S0ix(or S2idle) suspend mode may cause freezing, only S3 can work properly.
+
+### No audio from 3.5mm headphone jack port
+
+In `pavucontrol`, try changing the Pulseaudio output profile from "Analog Stereo Output" to "Analog Stereo Duplex".

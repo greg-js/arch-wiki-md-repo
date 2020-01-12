@@ -268,7 +268,7 @@ If Thunderbird is configured to show an alert when a new message arrives, or at 
 
 Thunderbird should use the `LC_TIME` environment variable for localization, but it might not do so in all contexts. Some problems can be mitigated by setting *Menu* > *Preferences* > *Preferences* > *Advanced* > *Date and Time Formatting* to *Regional settings locale*, a setting which was introduced in Thunderbird 56.
 
-With version 60, Gecko started using the [CLDR project](http://cldr.unicode.org/) for localization, including datetime formatting, which uses different settings than most other software based purely on `LC_TIME`. There is a [bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1426907) for this issue that includes workarounds with varying effects. To achieve ISO-8601-formatted dates in Thunderbird and a week beginning on Monday, use `LC_TIME=lt_LT` instead of the often recommended `LC_TIME=en_DK`.
+With version 60, Gecko started using the [CLDR project](http://cldr.unicode.org/) for localization, including datetime formatting, which uses different settings than most other software based purely on `LC_TIME`. There is a [bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1426907) for this issue that includes workarounds with varying effects. To achieve ISO-8601-formatted dates in Thunderbird and a week beginning on Monday, use `LC_TIME=lt_LT thunderbird`.
 
 ### *Authentication failure while connecting to server imap.gmail.com* error when using OAuth2 with G Suite account
 

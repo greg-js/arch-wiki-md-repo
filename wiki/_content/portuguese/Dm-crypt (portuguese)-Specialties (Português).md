@@ -12,24 +12,24 @@
         *   [1.3.2 Technical Overview](#Technical_Overview)
     *   [1.4 AIDE](#AIDE)
     *   [1.5 STARK](#STARK)
-*   [2 Using GPG, LUKS, or OpenSSL Encrypted Keyfiles](#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles)
-*   [3 Remote unlocking of the root (or other) partition](#Remote_unlocking_of_the_root_(or_other)_partition)
-    *   [3.1 Remote unlocking (hooks: systemd, systemd-tool)](#Remote_unlocking_(hooks:_systemd,_systemd-tool))
-    *   [3.2 Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)](#Remote_unlocking_(hooks:_netconf,_dropbear,_tinyssh,_ppp))
-    *   [3.3 Remote unlock via wifi](#Remote_unlock_via_wifi)
-        *   [3.3.1 Predefined hook](#Predefined_hook)
-        *   [3.3.2 Build your own](#Build_your_own)
+*   [2 Usando keyfiles criptografadas com GPG, LUKS ou OpenSSL](#Usando_keyfiles_criptografadas_com_GPG,_LUKS_ou_OpenSSL)
+*   [3 Abrir remotamente a partição raiz (ou outra)](#Abrir_remotamente_a_partição_raiz_(ou_outra))
+    *   [3.1 Abrir remotamente (hooks: systemd, systemd-tool)](#Abrir_remotamente_(hooks:_systemd,_systemd-tool))
+    *   [3.2 Abrir remotamente (hooks: netconf, dropbear, tinyssh, ppp)](#Abrir_remotamente_(hooks:_netconf,_dropbear,_tinyssh,_ppp))
+    *   [3.3 Abrir remotamente pelo wifi](#Abrir_remotamente_pelo_wifi)
+        *   [3.3.1 Hook predefinido](#Hook_predefinido)
+        *   [3.3.2 Faça o seu próprio](#Faça_o_seu_próprio)
 *   [4 Suporte a discard/TRIM para unidades de estado sólido (SSD)](#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD))
-*   [5 The encrypt hook and multiple disks](#The_encrypt_hook_and_multiple_disks)
-    *   [5.1 Expanding LVM on multiple disks](#Expanding_LVM_on_multiple_disks)
-        *   [5.1.1 Adding a new drive](#Adding_a_new_drive)
-        *   [5.1.2 Extending the logical volume](#Extending_the_logical_volume)
-    *   [5.2 Modifying the encrypt hook for multiple partitions](#Modifying_the_encrypt_hook_for_multiple_partitions)
-        *   [5.2.1 Root filesystem spanning multiple partitions](#Root_filesystem_spanning_multiple_partitions)
+*   [5 O hook encrypt e múltiplos discos](#O_hook_encrypt_e_múltiplos_discos)
+    *   [5.1 Expandindo LVM em múltiplos discos](#Expandindo_LVM_em_múltiplos_discos)
+        *   [5.1.1 Adicionando uma nova unidade de armazenamento](#Adicionando_uma_nova_unidade_de_armazenamento)
+        *   [5.1.2 Extendendo o volume lógico](#Extendendo_o_volume_lógico)
+    *   [5.2 Modificando o hook encrypt para múltiplas partições](#Modificando_o_hook_encrypt_para_múltiplas_partições)
+        *   [5.2.1 sistema de arquivos principal expandido para múltiplas partições](#sistema_de_arquivos_principal_expandido_para_múltiplas_partições)
         *   [5.2.2 Multiple non-root partitions](#Multiple_non-root_partitions)
-*   [6 Encrypted system using a detached LUKS header](#Encrypted_system_using_a_detached_LUKS_header)
-    *   [6.1 Using systemd hook](#Using_systemd_hook)
-    *   [6.2 Modifying encrypt hook](#Modifying_encrypt_hook)
+*   [6 Sistema criptografado usando um cabeçalho LUKS desanexado](#Sistema_criptografado_usando_um_cabeçalho_LUKS_desanexado)
+    *   [6.1 Usando o hook do systemd](#Usando_o_hook_do_systemd)
+    *   [6.2 Modificando o hook encrypt](#Modificando_o_hook_encrypt)
 *   [7 Encrypted /boot and a detached LUKS header on USB](#Encrypted_/boot_and_a_detached_LUKS_header_on_USB)
     *   [7.1 Preparing the disk devices](#Preparing_the_disk_devices)
         *   [7.1.1 Preparing the USB key](#Preparing_the_USB_key)
@@ -189,149 +189,149 @@ The POTTS proof-of-concept uses Arch Linux as a base distribution and implements
 
 As part of the thesis [installation](https://13.tc/p/potts/manual.html) instructions based on Arch Linux (ISO as of 2013-01) have been published. If you want to try it, be aware these tools are not in standard repositories and the solution will be time consuming to maintain.
 
-## Using GPG, LUKS, or OpenSSL Encrypted Keyfiles
+## Usando keyfiles criptografadas com GPG, LUKS ou OpenSSL
 
-The following forum posts give instructions to use two factor authentication, gpg or openssl encrypted keyfiles, instead of a plaintext keyfile described earlier in this wiki article [System Encryption using LUKS with GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=120243):
+Os seguintes posts (em inglês) do fórum dão instruções para usar autentificação de dois fatores, keyfiles criptografadas com gpg ou openssl, ao invês de uma keyfile de texto puro descrita antes em [Criptografia de sistema usando LUKS com chaves criptografadas com GPG](https://bbs.archlinux.org/viewtopic.php?id=120243):
 
-*   GnuPG: [Post regarding GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=943338#p943338) This post has the generic instructions.
-*   OpenSSL: [Post regarding OpenSSL encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=947805#p947805) This post only has the `ssldec` hooks.
-*   OpenSSL: [Post regarding OpenSSL salted bf-cbc encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=155393) This post has the `bfkf` initcpio hooks, install, and encrypted keyfile generator scripts.
-*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) with a `lukskey` initcpio hook. Or [#Encrypted /boot and a detached LUKS header on USB](#Encrypted_/boot_and_a_detached_LUKS_header_on_USB) below with a custom encrypt hook for initcpio.
+*   GnuPG: [Post sobre chaves criptografadas com GPG](https://bbs.archlinux.org/viewtopic.php?pid=943338#p943338). Possui instruções genéricas.
+*   OpenSSL: [Post sobre chaves criptografadas com OpenSSL](https://bbs.archlinux.org/viewtopic.php?pid=947805#p947805). Tem somente os hooks `ssldec`.
+*   OpenSSL: [Post sobre chaves criptografadas com OpenSSL (embaralhadas com bf-cbc)](https://bbs.archlinux.org/viewtopic.php?id=155393). Este post tem o hooks do initcpio install, `bfkf`, e script gerador de keyfile criptografada.
+*   LUKS: [Post sobre chaves criptografadas com LUKS](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) com um hook do initcpio `lukskey`. Ou [#/boot criptografado e um cabeçalho LUKS desanexado em um pendrive](#Encrypted_/boot_and_a_detached_LUKS_header_on_USB) abaixo com um hook encrypt customizado para o initcpio.
 
-Note that:
+Note que:
 
-*   You can follow the above instructions with only two primary partitions, one boot partition (required because of encryption) and one primary LVM partition. Within the LVM partition you can have as many partitions as you need, but most importantly it should contain at least root, swap, and home logical volume partitions. This has the added benefit of having only one keyfile for all your partitions, and having the ability to hibernate your computer (suspend to disk) where the swap partition is encrypted. If you decide to do so your hooks in `/etc/mkinitcpio.conf` should look like this: `HOOKS=( ... usb usbinput (etwo or ssldec) encrypt (if using openssl) lvm2 resume ... )` and you should add `resume=/dev/<VolumeGroupName>/<LVNameOfSwap>` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
-*   If you need to temporarily store the unencrypted keyfile somewhere, do not store them on an unencrypted disk. Even better make sure to store them to RAM such as `/dev/shm`.
-*   If you want to use a GPG encrypted keyfile, you need to use a statically compiled GnuPG version 1.4 or you could edit the hooks and use this AUR package [gnupg1](https://aur.archlinux.org/packages/gnupg1/)
-*   It is possible that an update to OpenSSL could break the custom `ssldec` mentioned in the second forum post.
+*   Você pode seguir as instruções acima com somente duas partições, uma de boot (necessário devido a criptografia) e uma LVM. Dentro da partição com LVM, você pode ter quantos volumes lógicos quiser/precisar, exemplo, volumes lógicos para a raiz, swap e home. Com isto basta ter somente uma keyfile para abrir os volumes lógicos da LVM criptografada. Se você decidir fazer isso, dentre os hooks presentes no `/etc/mkinitcpio.conf` deve ter: `HOOKS=( ... usb usbinput (etwo ou ssldec) encrypt (se está usando openssl) lvm2 resume ... )` e você deve adicionar `resume=/dev/<GrupoDeVolumes>/<VolumeLogicoDaSwap>` para os do [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel").
+*   Se você precisa temporariamente guardar a keyfile não criptografada em algum lugar, não a guarde em um disco não criptografado. É mais recomendado guardá-la na RAM, em `/dev/shm`.
+*   Se você quer usar uma keyfile criptografada com GPG, vai precisar usar uma versão 1.4 do GnuPG compilada estaticamente ou editar os hooks e usar este pacote do AUR [gnupg1](https://aur.archlinux.org/packages/gnupg1/)
+*   É possível que uma atualização do OpenSSL quebre o `ssldec` customizado mencionado no segundo post do forum.
 
-## Remote unlocking of the root (or other) partition
+## Abrir remotamente a partição raiz (ou outra)
 
-If you want to be able to reboot a fully LUKS-encrypted system remotely, or start it with a [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") service, you will need a way to enter a passphrase for the root partition/volume at startup. This can be achieved by running a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that configures a network interface. Some packages listed below contribute various [mkinitcpio build hooks](/index.php/Mkinitcpio#Build_hooks "Mkinitcpio") to ease with the configuration.
+Se você deseja ser capaz de reiniciar um sistema criptografado com LUKS remotamente, ou iniciá-lo com um serviço [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN"), você vai precisar de uma maneira de entrar a senha para a partição/container raiz na inicialização. Isto é alcançavél ao executar um hook do [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") que configura uma interface de rede. Alguns pacotes listados abaixo contribuem com vários ["mkinitcpio build hooks"](/index.php/Mkinitcpio#Build_hooks "Mkinitcpio") para facilitar a configuração.
 
-**Note:**
+**Nota:**
 
-*   Keep in mind to use kernel device names for the network interface (e.g. `eth0`) and not [udev's](/index.php/Udev "Udev") ones (e.g. `enp1s0`), as those will not work.
-*   By default, Predictable Network Interface Names are activated and **change** the kernel device name during late boot. Use dmesg and look what your Network kernel module does to find the original name (e.g. `eth0`)
-*   It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
+*   Usar nomes de dispositivos do kernel para interface de rede (exemplo, `eth0`) ao invês dos do [udev](/index.php/Udev "Udev") (exemplo, `enp1s0`), não vai funcionar.
+*   Por padrão, nomes de interfaces de rede previsíveis são ativados e *mudam* nomes de dispositivos do kernel mais tarde durante a inicialização. Use dmesg e olhe o que seu módulo de rede do kernel faz para achar o nome original (exemplo, `eth0`)
+*   Pode ser necessário adicionar o módulo para sua placa de rede [a cabo](/index.php/Network_configuration_(Portugu%C3%AAs)/Ethernet_(Portugu%C3%AAs)#Driver_de_dispositivo "Network configuration (Português)/Ethernet (Português)") ou [sem fio](/index.php/Network_configuration_(Portugu%C3%AAs)/Wireless_(Portugu%C3%AAs)#Driver_de_dispositivo "Network configuration (Português)/Wireless (Português)") para o arranjo [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio").
 
-### Remote unlocking (hooks: systemd, systemd-tool)
+### Abrir remotamente (hooks: systemd, systemd-tool)
 
-AUR package [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) provides a [systemd](https://www.archlinux.org/packages/?name=systemd)-centric mkinitcpio hook named *systemd-tool* with the following set of features for systemd in initramfs:
+O pacote do AUR [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) oferece um hook do mkinitcpio voltado no [systemd](https://www.archlinux.org/packages/?name=systemd) com o nome de *systemd-tool* que possui as seguintes funcionalidades para o initramfs do systemd:
 
 | 
 
-Core features provided by the hook:
+Funcionalidades principais incluídas no hook:
 
-*   unified systemd + mkinitcpio configuration
-*   automatic provisioning of binary and config resources
-*   on-demand invocation of mkinitcpio scripts and in-line functions
+*   configuração unificada do systemd + mkinitcpio
+*   automática provisão de binário e recursos de configuração
+*   invocação em demanda de scripts e funções do mkinitcpio
 
  | 
 
-Features provided by the included service units:
+Funcionalidades oferecidas pela unidades de serviço incluídas:
 
-*   initrd debugging
-*   early network setup
-*   interactive user shell
-*   remote ssh access in initrd
-*   cryptsetup + custom password agent
+*   debug do initrd
+*   configuração inicial de rede antecipada
+*   shell interativo
+*   acesso remoto ssh no initrd
+*   cryptsetup + agente de senha personalizado
 
  |
 
-The [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) package requires the [systemd hook](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio"). For more information be sure to read the project's [README](https://github.com/random-archer/mkinitcpio-systemd-tool/blob/master/README.md) as well as the provided default [systemd service unit files](https://github.com/random-archer/mkinitcpio-systemd-tool) to get you started.
+O pacote [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) precisa do [hook do systemd](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio"). Para mais informações leia o [README](https://github.com/random-archer/mkinitcpio-systemd-tool/blob/master/README.md) do projeto e também [arquivos unit de serviços do systemd](https://github.com/random-archer/mkinitcpio-systemd-tool) como uma introdução.
 
-The recommended hooks are: `base autodetect modconf block filesystems keyboard fsck systemd systemd-tool`.
+Os hooks recomendados são: `base autodetect modconf block filesystems keyboard fsck systemd systemd-tool`.
 
-### Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)
+### Abrir remotamente (hooks: netconf, dropbear, tinyssh, ppp)
 
-Another package combination providing remote logins to the initcpio is [mkinitcpio-netconf](https://www.archlinux.org/packages/?name=mkinitcpio-netconf) and/or [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/) (for remote unlocking using a [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") connection over the internet) along with an [SSH](/index.php/SSH "SSH") server. You have the option of using either [mkinitcpio-dropbear](https://www.archlinux.org/packages/?name=mkinitcpio-dropbear) or [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh). Those hooks do not install any shell, so you also need to [install](/index.php/Install "Install") the [mkinitcpio-utils](https://www.archlinux.org/packages/?name=mkinitcpio-utils) package. The instructions below can be used in any combination of the packages above. When there are different paths, it will be noted.
+Outra combinação de pacotes que oferece login remoto para o initcpio é [mkinitcpio-netconf](https://www.archlinux.org/packages/?name=mkinitcpio-netconf) e/ou [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/) (para abrir remotamente usando uma coneção [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol")) junto com um servidor [SSH](/index.php/Secure_Shell_(Portugu%C3%AAs) "Secure Shell (Português)"). Você tem a opção de usar o [mkinitcpio-dropbear](https://www.archlinux.org/packages/?name=mkinitcpio-dropbear) ou [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh). Estes hooks não instalam qualquer shell, então você pode precisar [instalar](/index.php/Instala "Instala") o pacote [mkinitcpio-utils](https://www.archlinux.org/packages/?name=mkinitcpio-utils). As instruções abaixo podem ser usadas em qualquer combinação dos pacotes acima. Será perceptível quando ações forem específicas para dada combinação de pacotes.
 
-1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine).
-    **Note:** `tinyssh` only supports [Ed25519](/index.php/SSH_keys#Ed25519 "SSH keys") and [ECDSA](/index.php/SSH_keys#ECDSA "SSH keys") key types. If you chose to use [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh), you need to create/use one of these.
+1.  Se você não tem um par de chaves do SSH ainda, [o gere](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") no sistema cliente (o que vai ser usado para abrir remotamente a máquina).
+    **Nota:** `tinyssh` somente suporta [Ed25519](/index.php/SSH_keys#Ed25519 "SSH keys") e tipos de chave [ECDSA](/index.php/SSH_keys#ECDSA "SSH keys"). Se você prefere usar [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh), você precisa criar/usar um destes.
 
-    **Note:** `mkinitcpio-dropbear` in version 0.0.3-5 is not compatible with the current dropbear implementation that removed dss. See [Github](https://github.com/grazzolini/mkinitcpio-dropbear/issues/8) for details and a fix.
+    **Nota:** `mkinitcpio-dropbear` na versão 0.0.3-5 não é compativel com a atual implementação do dropbear que removeu dss. Veja a [issue 8](https://github.com/grazzolini/mkinitcpio-dropbear/issues/8) para detalhes e como corrigir.
 
-2.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key` or `/etc/tinyssh/root_key` file.
-    **Tip:** This method can later be used to add other SSH public keys as needed; In the case of simply copying the content of the remote's `~/.ssh/authorized_keys`, be sure to verify that it only contains keys you intend to be using to unlock the remote machine. When adding additional keys, regenerate your initrd as well using `mkinitcpio`. See also [OpenSSH#Protection](/index.php/OpenSSH#Protection "OpenSSH").
+2.  Insira sua chave pública do SSH (exemplo, a que você normalmente coloca nas máquinas acessadas sem uma senha, ou a que você criou e termina com *.pub*) no `/etc/dropbear/root_key` ou `/etc/tinyssh/root_key` da máquina remota.
+    **Dica:** Este método pode ser usado mais tarde para adicionar outras chaves públicas se necessário; Caso copie o conteúdo do arquivo `~/.ssh/authorized_keys` da máquina remota, verifique se somente tem chaves que você planeja usar para abrir a máquina remotamente. Quando adicionar chaves, gere seu initrd também usando o `mkinitcpio`. Veja também [OpenSSH#Protection](/index.php/OpenSSH#Protection "OpenSSH").
 
-3.  Add all three `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` replaces the `encrypt` hook). Then [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
-    **Note:** The `net` hook provided by [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is **not** needed.
+3.  Adicione todos os três [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") `<netconf e/ou ppp> <dropbear ou tinyssh> encryptssh` antes de `filesystems` dentro do arranjo "HOOKS" no `/etc/mkinitcpio.conf` (o hook `encryptssh` substitue `encrypt`). Então [gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+    **Nota:** O hook `net` provido pelo [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) **não** é necessário.
 
-    **Note:** If you experience the error `libgcc_s.so.1 must be installed for pthread_cancel to work` when trying to decrypt, you need to add `/usr/lib/libgcc_s.so.1` to the "[BINARIES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio")" array.
+    **Nota:** Se você receber o erro `libgcc_s.so.1 must be installed for pthread_cancel to work` quando tentar descriptografar, você precisa adicionar `/usr/lib/libgcc_s.so.1` para o arranjo "[BINARIES](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio")".
 
-4.  Configure the required `cryptdevice=` [parameter](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and add the `ip=` [kernel command parameter](/index.php/Kernel_parameters "Kernel parameters") to your bootloader configuration with the appropriate arguments. For example, if the DHCP server does not attribute a static IP to your remote system, making it difficult to access via SSH across reboots, you can explicitly state the IP you want to be using: `ip=192.168.1.1:::::eth0:none` Alternatively, you can also specify the subnet mask and gateway required by the network: `ip=192.168.1.1::192.168.1.254:255.255.255.0::eth0:none` 
-    **Note:** As of version 0.0.4 of [mkinitcpio-netconf](https://www.archlinux.org/packages/?name=mkinitcpio-netconf), you can nest multiple `ip=` parameters in order to configure multiple interfaces. You cannot mix it with `ip=dhcp` (`ip=:::::eth0:dhcp`) alone. An interface needs to be specified.
-     `ip=ip=192.168.1.1:::::eth0:none:ip=172.16.1.1:::::eth1:none` For a detailed description have a look at the [according mkinitcpio section](/index.php/Mkinitcpio#Using_net "Mkinitcpio"). When finished, update the configuration of your [bootloader](/index.php/Bootloader "Bootloader").
-5.  Finally, restart the remote system and try to [ssh to it](/index.php/OpenSSH#Client_usage "OpenSSH"), **explicitly stating the "root" username** (even if the root account is disabled on the machine, this root user is used only in the initrd for the purpose of unlocking the remote system). If you are using the [mkinitcpio-dropbear](https://www.archlinux.org/packages/?name=mkinitcpio-dropbear) package and you also have the [openssh](https://www.archlinux.org/packages/?name=openssh) package installed, then you most probably will not get any warnings before logging in, because it convert and use the same host keys openssh uses (except Ed25519 keys, as dropbear does not support them). In case you are using [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh), you have the option of installing [tinyssh-convert](https://www.archlinux.org/packages/?name=tinyssh-convert) or [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/) so you can use the same keys as your [openssh](https://www.archlinux.org/packages/?name=openssh) installation (currently only Ed25519 keys). In either case, you should have run [the ssh daemon](/index.php/OpenSSH#Daemon_management "OpenSSH") at least once, using the provided systemd units, so the keys can be generated first. After rebooting the machine, you should be prompted for the passphrase to unlock the root device. The system will complete its boot process and you can then ssh to it [as you normally would](/index.php/OpenSSH#Client_usage "OpenSSH") (with the remote user of your choice).
+4.  Configure o [parâmetro](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema") `cryptdevice=` e adicione o [o parâmetro do kernel](/index.php/Kernel_parameters "Kernel parameters") `ip=` para a configuração do seu gerenciador de boot com os argumentos apropriados. Por exemplo, se o servidor DHCP não atribuir um IP estático para seu sistema remoto, dificultando o acesso com SSH entre inicializações, você pode explicitamente declarar o endereço IP que você quer, usando: `ip=192.168.1.1:::::eth0:none` Alternativamente, você pode especificar também a máscara de subrede e gateway necessário para a rede: `ip=192.168.1.1::192.168.1.254:255.255.255.0::eth0:none` 
+    **Nota:** Na versão 0.0.4 do [mkinitcpio-netconf](https://www.archlinux.org/packages/?name=mkinitcpio-netconf), você pode usar múltiplos `ip=` para configurar várias interfaces. você não pode misturar isto com `ip=dhcp` (`ip=:::::eth0:dhcp`) sozinho. Uma interface precisa ser especificada.
+     `ip=ip=192.168.1.1:::::eth0:none:ip=172.16.1.1:::::eth1:none` Para uma descrição detalhada veja [essa seção do mkinitcpio](/index.php/Mkinitcpio#Using_net "Mkinitcpio"). Quando terminar, atualize a configuração do seu [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot").
+5.  Finalmente, reinicie o sistema remoto e tente [usar o ssh](/index.php/OpenSSH#Client_usage "OpenSSH"), **explicitamente usando o nome de usuário "root"** (até mesmo se o superusuário root está desabilitado na máquina, este usuário root é usado somente no initrd para abrir o sistema remotamente). Se você está usando o pacote [mkinitcpio-dropbear](https://www.archlinux.org/packages/?name=mkinitcpio-dropbear) e também tem o pacote [openssh](https://www.archlinux.org/packages/?name=openssh) instalado, então provavelmente não vai receber nenhum aviso antes de logar, porquê o anterior converte e usa as mesmas chaves do ssh (exceto chaves Ed25519, já que o dropbear não suporta elas). Caso você está usando [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh), existe a opção de instalar [tinyssh-convert](https://www.archlinux.org/packages/?name=tinyssh-convert) ou [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/) para que você possa usar as mesmas chaves da sua instalação do [openssh](https://www.archlinux.org/packages/?name=openssh) (atualmente, somente chaves Ed25519). De qualquer forma, você precisa rodar o [daemon do ssh](/index.php/OpenSSH#Daemon_management "OpenSSH") ao menos uma vez, usando as units providas do systemd, então as chaves podem ser geradas primeiro. Depois de reiniciar a máquina, deve ser solicitado a senha para abrir o dispositivo raiz. O sistema vai completar o processo de inicialização e você pode executar o ssh [normalmente](/index.php/OpenSSH#Client_usage "OpenSSH") (com o usuário remoto de sua escolha).
 
-**Tip:** If you would simply like a nice solution to mount other encrypted partitions (such as `/home`) remotely, you may want to look at [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=880484).
+**Dica:** Se você deseja uma boa solução para montar outras partições criptografadas (tais como `/home`) remotamente, você pode quer ler [esta thread do forum](https://bbs.archlinux.org/viewtopic.php?pid=880484).
 
-### Remote unlock via wifi
+### Abrir remotamente pelo wifi
 
-The net hook is normally used with an ethernet connection. In case you want to setup a computer with wireless only, and unlock it via wifi, you can use a predefined hook or create a custom hook to connect to a wifi network before the net hook is run.
+O hook net é normalmente usado com uma conexão com fio. Caso você queira configurar um computador sem fio, e abrí-lo por wifi, você pode usar um hook predefinido ou criar um hook customizado para se conectar a rede wifi antes que o hook net seja executado.
 
-#### Predefined hook
+#### Hook predefinido
 
-You can install a predefined hook based on the one in this wiki:
+Você pode instalar um hook predefinido baseado no presente nesta wiki:
 
-1.  Install [mkinitcpio-wifi](https://aur.archlinux.org/packages/mkinitcpio-wifi/).
-2.  Configure your wifi connection by creating a wpa_supplicant configuration with your network properties: `wpa_passphrase "ESSID" "passphrase" > /etc/wpa_supplicant/initcpio.conf` 
-3.  Add the `wifi` hook before `netconf` in your `/etc/mkinitcpio.conf`. Your wifi-related modules should be autodetected, if not: add them to the `MODULES` section.
-4.  Add `ip=:::::wlan0:dhcp` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
-5.  [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
-6.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader").
+1.  Instale [mkinitcpio-wifi](https://aur.archlinux.org/packages/mkinitcpio-wifi/).
+2.  Configure sua coneção wifi ao criar uma configuração do wpa_supplicant com as propriedades da sua rede: `wpa_passphrase "ESSID" "senha" > /etc/wpa_supplicant/initcpio.conf` 
+3.  Adicione o hook `wifi` antes de `netconf` no seu `/etc/mkinitcpio.conf`. Seus módulos relacionados com wifi devem ser detectados automaticamente, se não: adicione eles em `MODULES`.
+4.  Adicione `ip=:::::wlan0:dhcp` nos [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel").
+5.  [Gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+6.  Atualize a configuração do seu [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot").
 
-#### Build your own
+#### Faça o seu próprio
 
-Below example shows a setup using a usb wifi adapter, connecting to a wifi network protected with WPA2-PSK. In case you use for example WEP or another boot loader, you might need to change some things.
+Abaixo um exemplo mostrando uma configuração usando um adaptador usb, se conectando a uma rede wifi com WPA2-PSK. Caso você use, por exemplo, WEP ou outro gerenciador de boot, você pode precisar mudar algumas coisas.
 
-1.  Modify `/etc/mkinitcpio.conf`:
-    *   Add the needed kernel module for your specific wifi adatper.
-    *   Include the `wpa_passphrase` and `wpa_supplicant` binaries.
-    *   Add a hook `wifi` (or a name of your choice, this is the custom hook that will be created) before the `net` hook.
+1.  Modifique o `/etc/mkinitcpio.conf`:
+    *   Adicione os módulos do kernel necessários para seu adaptador wifi.
+    *   Inclua os binários do `wpa_passphrase` e `wpa_supplicant`.
+    *   Adicione o hook `wifi` (ou um nome de sua escolha, este será o hook customizado que será criado) antes do hook `net`.
         ```
         MODULES=(*module*)
         BINARIES=(wpa_passphrase wpa_supplicant)
         HOOKS=(base udev autodetect ... **wifi** net ... dropbear encryptssh ...)
         ```
 
-2.  Create the `wifi` hook in `/etc/initcpio/hooks/wifi`:
+2.  Crie o hook `wifi` no `/etc/initcpio/hooks/wifi`:
     ```
     run_hook ()
     {
-    	# sleep a couple of seconds so wlan0 is setup by kernel
+    	# espere alguns segundos para que wlan0 seja configurada pelo kernel
     	sleep 5
 
     	# set wlan0 to up
     	ip link set wlan0 up
 
-    	# assocciate with wifi network
-    	# 1\. save temp config file
-    	wpa_passphrase "*network ESSID*" "*pass phrase*" > /tmp/wifi
+    	# associe com a rede wifi
+    	# 1\. salve o arquivo de configuração temporário
+    	wpa_passphrase "*ESSID da rede*" "*senha*" > /tmp/wifi
 
-    	# 2\. assocciate
+    	# 2\. associe
     	wpa_supplicant -B -D nl80211,wext -i wlan0 -c /tmp/wifi
 
-    	# sleep a couple of seconds so that wpa_supplicant finishes connecting
+    	# espere alguns segundos para que wpa_supplicant termine de se conectar
     	sleep 5
 
-    	# wlan0 should now be connected and ready to be assigned an ip by the net hook
+    	# wlan0 deve agora estar conectada e pronta para receber um ip pelo hook net
     }
 
     run_cleanuphook ()
     {
-    	# kill wpa_supplicant running in the background
+    	# mate wpa_supplicant rodando em segundo plano
     	killall wpa_supplicant
 
-    	# set wlan0 link down
+    	# coloque a interface wlan0 como down
     	ip link set wlan0 down
 
-    	# wlan0 should now be fully disconnected from the wifi network
+    	# wlan0 deve agora esta totalmente desconectada da rede wifi
     }
     ```
 
-3.  Create the hook installation file in `/etc/initcpio/install/wifi`:
+3.  Crie o arquivo do hook de instalação no `/etc/initcpio/install/wifi`:
     ```
     build ()
     {
@@ -340,17 +340,17 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
     help ()
     {
     cat<<HELPEOF
-    	Enables wifi on boot, for dropbear ssh unlocking of disk.
+    	Habilita o wifi na inicialização, para abrir o disco com dropbear (ssh).
     HELPEOF
     }
     ```
 
-4.  Add `ip=:::::wlan0:dhcp` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Remove `ip=:::::eth0:dhcp` so it does not conflict.
-5.  Optionally create an additional boot entry with kernel parameter `ip=:::::eth0:dhcp`.
-6.  [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
-7.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader").
+4.  Adicione `ip=:::::wlan0:dhcp` para os [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel"). Remova `ip=:::::eth0:dhcp` para evitar conflitos.
+5.  Opcionalmente crie uma entrada de boot adicional com o parâmetro do kernel `ip=:::::eth0:dhcp`.
+6.  [Gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+7.  Atualize a configuração do seu [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot").
 
-Remember to setup [wifi](/index.php/Wifi "Wifi"), so you are able to login once the system is fully booted. In case you are unable to connect to the wifi network, try increasing the sleep times a bit.
+Uma vez que o sistema estiver totalmente inicializado, se lembre de configurar o [wifi](/index.php/Network_configuration_(Portugu%C3%AAs)/Wireless_(Portugu%C3%AAs) "Network configuration (Português)/Wireless (Português)"), para então você fazer login. Caso você não consiga se conectar a rede wifi, tente aumentar um pouco o tempo de espera.
 
 ## Suporte a discard/TRIM para unidades de estado sólido (SSD)
 
@@ -428,54 +428,54 @@ luks-123abcdef-etc: 0 1234567 crypt aes-xts-plain64 000etc000 0 8:2 4096 1 allow
 
 ```
 
-## The encrypt hook and multiple disks
+## O hook encrypt e múltiplos discos
 
-**Tip:** `sd-encrypt` hook supports unlocking multiple devices. They can be specified on the kernel command line or in `/etc/crypttab.initramfs`. See [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
+**Dica:** o hook `sd-encrypt` suporta abrir múltiplos dispositivos. Eles podem ser especificados nos parâmetros do kernel ou no `/etc/crypttab.initramfs`. Veja [dm-crypt/Configuração do sistema#Usando o hook sd-encrypt](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Usando_o_hook_sd-encrypt "Dm-crypt/Configuração do sistema").
 
-The `encrypt` hook only allows for a **single** `cryptdevice=` entry ([FS#23182](https://bugs.archlinux.org/task/23182)). In system setups with multiple drives this may be limiting, because *dm-crypt* has no feature to exceed the physical device. For example, take "LVM on LUKS": The entire LVM exists inside a LUKS mapper. This is perfectly fine for a single-drive system, since there is only one device to decrypt. But what happens when you want to increase the size of the LVM? You cannot, at least not without modifying the `encrypt` hook.
+O hook `encrypt` somente permite uma **única** entrada `cryptdevice=` ([FS#23182](https://bugs.archlinux.org/task/23182)). Em um sistema com múltiplas unidades de armazenamentos isto pode ser limitante, devido ao *dm-crypt* não ter funcionalidade para usar algo além de dispositivos físicos. Por exemplo, use "LVM dentro do LUKS": Toda a LVM existe dentro de um dispositivo LUKS. Não há problema para sistema com uma unidade de armazenamento, desde que tem somente uma para criptografar. Mas o que acontece se você quer aumentar o tamanho da LVM? Você não pode, não sem modificar o hook `encrypt`.
 
-The following sections briefly show alternatives to overcome the limitation. The first deals with how to expand a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup to a new disk. The second with modifying the `encrypt` hook to unlock multiple disks in LUKS setups without LVM.
+As seções seguintes brevemente mostram alternativas para superar esta limitação. A primeira, demostra como expandir uma configuração [LUKS dentro do LVM](/index.php/Dm-crypt/Criptografando_todo_um_sistema#LUKS_dentro_do_LVM "Dm-crypt/Criptografando todo um sistema") para um novo disco. A segunda, em como modificar o hook `encrypt` para abrir múltiplos disco criptografados com LUKS sem LVM.
 
-### Expanding LVM on multiple disks
+### Expandindo LVM em múltiplos discos
 
-The management of multiple disks is a basic [LVM](/index.php/LVM "LVM") feature and a major reason for its partitioning flexibility. It can also be used with *dm-crypt*, but only if LVM is employed as the first mapper. In such a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup the encrypted devices are created inside the logical volumes (with a separate passphrase/key per volume). The following covers the steps to expand that setup to another disk.
+O gerenciamento de múltiplos discos é uma funcionalidade básica do [LVM](/index.php/LVM "LVM") e uma da razões por seu particionamento flexível. Pode ser usado com *dm-crypt*, mas somente se LVM é empregado como primeiro mapeador. Em uma configuração [LUKS dentro do LVM](/index.php/Dm-crypt/Criptografando_todo_um_sistema#LUKS_dentro_do_LVM "Dm-crypt/Criptografando todo um sistema"), os dispositivos criptografados são criados dentro de volumes lógicos (com uma senha/chave separada por volume). A seguir é mostrado como expandir para outro disco.
 
-**Warning:** Back up! While resizing filesystems may be standard, keep in mind that operations **may** go wrong and the following might not apply to a particular setup. Generally, extending a filesystem to free disk space is less problematic than shrinking one. This in particular applies when stacked mappers are used, as it is the case in the following example.
+**Atenção:** Faça backup! Enquanto redimensionar sistema de arquivos pode ser o padrão, tenha em mente que operções **podem** dar errado e não serem aplicáveis para uma configuração específica. Geralmente, extender um sistema de arquivos para usar o espaço livre é menos problemático que reduzí-lo. Isto é particularmente verdade quando mapeadores são empilhados, o caso do seguinte exemplo.
 
-#### Adding a new drive
+#### Adicionando uma nova unidade de armazenamento
 
-First, it may be desired to prepare a new disk according to [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). Second, it is partitioned as a LVM, e.g. all space is allocated to `/dev/sdY1` with partition type `8E00` (Linux LVM). Third, the new disk/partition is attached to the existing LVM volume group, e.g.:
+Primeiro, pode ser desejado preparar um novo disco de acordo com [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento"). Segundo, é particionado como um LVM, exemplo, todo o espaço é alocado para `/dev/sdY1` com o tipo de partição `8E00` (Linux LVM). Terceiro, o novo disco/partição é ligado a um grupo de volumes do LVM existente, exemplo:
 
 ```
 # pvcreate /dev/sdY1
-# vgextend MyStorage /dev/sdY1
+# vgextend MeuArmazenamento /dev/sdY1
 
 ```
 
-#### Extending the logical volume
+#### Extendendo o volume lógico
 
-For the next step, the final allocation of the new diskspace, the logical volume to be extended has to be unmounted. It can be performed for the `cryptdevice` root partition, but in this case the procedure has to be performed from an Arch Install ISO.
+Para o próximo passo, a alocação final do novo espaço do disco, o volume lógico que será extendido tem que estar desmontado. Isto pode ser feito pela partição raiz do `cryptdevice`, mas neste caso o procedimento vai ser feito com a ISO de instalação do Arch.
 
-In this example, it is assumed that the logical volume for `/home` (lv-name `homevol`) is going to be expanded with the fresh disk space:
+Neste exemplo, é assumido que o volume lógico para `/home` (`homevol` é nome do volume lógico) vai ser expandido para o novo espaço em disco:
 
 ```
 # umount /home
 # fsck /dev/mapper/home
 # cryptsetup luksClose /dev/mapper/home
-# lvextend -l +100%FREE MyStorage/homevol
+# lvextend -l +100%FREE MeuArmazenamento/homevol
 
 ```
 
-Now the logical volume is extended and the LUKS container comes next:
+Agora o volume lógico é extendido e o container LUKS vem depois:
 
 ```
-# cryptsetup open /dev/MyStorage/homevol home
-# umount /home      # as a safety, in case it was automatically remounted
+# cryptsetup open /dev/MeuArmazenamento/homevol home
+# umount /home      # como uma garantia, caso foi automaticamente montado
 # cryptsetup --verbose resize home
 
 ```
 
-Finally, the filesystem itself is resized:
+Finalmente, o sistema de arquivos vai ser redimensionado:
 
 ```
 # e2fsck -f /dev/mapper/home
@@ -483,20 +483,20 @@ Finally, the filesystem itself is resized:
 
 ```
 
-Done! If it went to plan, `/home` can be remounted and now includes the span to the new disk:
+Pronto! Se foi de acordo com o plano, `/home` pode ser remontado e agora inclui a extensão para o novo disco:
 
 ```
 # mount /dev/mapper/home /home
 
 ```
 
-Note that the `cryptsetup resize` action does not affect encryption keys, and these have not changed.
+Note que a ação `cryptsetup resize` não afeta as chaves de encriptação, e estas não mudaram.
 
-### Modifying the encrypt hook for multiple partitions
+### Modificando o hook encrypt para múltiplas partições
 
-#### Root filesystem spanning multiple partitions
+#### sistema de arquivos principal expandido para múltiplas partições
 
-It is possible to modify the encrypt hook to allow multiple hard drive decrypt root (`/`) at boot. One way:
+É possível modificar o hook encrypt para permitir que múltiplas unidades de armazenamento abram a raiz `/` na inicialização. Uma maneira é:
 
 ```
 # cp /usr/lib/initcpio/install/encrypt /etc/initcpio/install/encrypt2
@@ -506,7 +506,7 @@ It is possible to modify the encrypt hook to allow multiple hard drive decrypt r
 
 ```
 
-Add `cryptdevice2=` to your boot options (and `cryptkey2=` if needed), and add the `encrypt2` hook to your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") before rebuilding it. See [dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration").
+Adicione `cryptdevice2=` para suas opções de boot (e `cryptkey2=` se necessário), e adicione o hook `encrypt2` para seu [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") antes de gerar o initramfs. Veja [dm-crypt/Configuração do sistema](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema "Dm-crypt/Configuração do sistema").
 
 #### Multiple non-root partitions
 
@@ -530,66 +530,66 @@ kernel /boot/vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda1,/dev/sdb1 md=1,/dev/s
 
 ```
 
-## Encrypted system using a detached LUKS header
+## Sistema criptografado usando um cabeçalho LUKS desanexado
 
-This example follows the same setup as in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), which should be read first before following this guide.
+Este exemplo segue a mesma configuração do [dm-crypt/Criptografando todo um sistema#dm-crypt plain](/index.php/Dm-crypt/Criptografando_todo_um_sistema#dm-crypt_plain "Dm-crypt/Criptografando todo um sistema"), que deve ser lida antes de seguir este guia.
 
-By using a detached header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a detached header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
+Ao usar um cabeçalho desanezado, o dispositivo de bloco criptografado somente possui os dados criptografados, o que leva à [criptografia negável](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") enquanto a existência do cabeçalho é desconhecida pelos atacantes. É similar ao [dm-crypt plain](/index.php/Dm-crypt/Criptografando_todo_um_sistema#dm-crypt_plain "Dm-crypt/Criptografando todo um sistema"), mas com as vantagens do LUKS como múltiplas senhas para a chave mestre e derivação de chave. Além de oferecer uma forma de autentificação de dois fatores com uma configuração mais simples que [#Using GPG, LUKS, or OpenSSL Encrypted Keyfiles](#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles), enquanto nativamente tem solicitação de senha para múltiplas tentativas. Veja [Criptografia de disco#Metadados criptográficos](/index.php/Criptografia_de_disco#Metadados_criptográficos "Criptografia de disco") para mais informações.
 
-See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for encryption options before performing the first step to setup the encrypted system partition and creating a header file to use with `cryptsetup`:
-
-```
-# dd if=/dev/zero of=header.img bs=16M count=1
-# cryptsetup luksFormat /dev/sdX --offset 32768 --header header.img
+Veja [dm-crypt/Encriptação de dispositivo#Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo") para opções de encriptação antes de executar o primeiro passo e criar o arquivo de cabeçalho para usar com `cryptsetup`:
 
 ```
-
-**Tip:** The `--offset` option allows specifying the start of encrypted data on a device. By reserving a space at the beginning of device you have the option of later [reattaching the LUKS header](/index.php/Dm-crypt/Device_encryption#Restore_using_cryptsetup "Dm-crypt/Device encryption"). The value is specified in 512-byte sectors, see [cryptsetup(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup.8) for more details.
-
-Open the container:
-
-```
-# cryptsetup open --header header.img /dev/sdX enc
+# dd if=/dev/zero of=cabecalho.img bs=16M count=1
+# cryptsetup luksFormat /dev/sdX --offset 32768 --header cabecalho.img
 
 ```
 
-Now follow the [LVM on LUKS setup](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_non-boot_partitions "Dm-crypt/Encrypting an entire system") to your requirements. The same applies for [preparing the boot partition](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_boot_partition_4 "Dm-crypt/Encrypting an entire system") on the removable device (because if not, there is no point in having a separate header file for unlocking the encrypted disk). Next move the `header.img` onto it:
+**Dica:** A opção `--offset` permite especificar o início dos dados criptografados no dispositivo. Ao reservar um espaço no começo do dispositivo você pode [recolocar o cabeçalho do LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Restauração_usando_o_cryptsetup "Dm-crypt/Encriptação de dispositivo"). O valor é especificado em setores de 512-bytes, veja [cryptsetup(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup.8) para mais detalhes.
+
+Abra o container:
 
 ```
-# mv header.img /mnt/boot
+# cryptsetup open --header cabecalho.img /dev/sdX enc
 
 ```
 
-Follow the installation procedure up to the mkinitcpio step (you should now be `arch-chroot`ed inside the encrypted system).
+Agora siga a [configuração LVM dentro do LUKS](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Preparando_partições_que_não_são_de_boot "Dm-crypt/Criptografando todo um sistema") para suas necessidades. O mesmo se aplica para [preparando a partição de boot](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Preparando_a_partição_de_boot_4 "Dm-crypt/Criptografando todo um sistema") no dispositivo removível (se não, não há lógica em ter um cabeçalho separado para abrir o disco criptografado). Mova o `cabecalho.img` para ele:
 
-**Tip:** You will notice that since the system partition only has "random" data, it does not have a partition table and by that an `UUID` or a `LABEL`. But you can still have a consistent mapping using the [Persistent block device naming#by-id and by-path](/index.php/Persistent_block_device_naming#by-id_and_by-path "Persistent block device naming"). E.g. using disk id from `/dev/disk/by-id/`.
+```
+# mv cabecalho.img /mnt/boot
 
-There are two options for initramfs to support a detached LUKS header.
+```
 
-### Using systemd hook
+Siga o procedimento de instalação até o passo do mkinitcpio (você deve ter executado `arch-chroot` no sistema criptografado).
 
-First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5)
+**Dica:** Você vai notar que a partição do sistema tem somente dados "randômicos", não tem tabela de partição e também não tem um `UUID` ou `LABEL`. Mas você pode ainda ter um mapeamento persistente usando o [Nomeação persistente de dispositivo de bloco#by-id e by-path](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco#by-id_e_by-path "Nomeação persistente de dispositivo de bloco"). Exemplo, usando o id do disco pelo `/dev/disk/by-id/`.
 
- `/etc/crypttab.initramfs`  `enc	/dev/disk/by-id/*your-disk_id*	none	header=/boot/header.img` 
+No initramfs, existem duas opções que suportam o cabeçalho do LUKS desanexado.
 
-Modify `/etc/mkinitcpio.conf` [to use systemd](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") and add the header to `FILES`.
+### Usando o hook do systemd
+
+Primeiro crie `/etc/crypttab.initramfs` e adicione o dipositivo cripotgrafado nele. A sintaxe está definida em [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5)
+
+ `/etc/crypttab.initramfs`  `enc	/dev/disk/by-id/*id_do_seu_disco*	none	header=/boot/cabecalho.img` 
+
+Modifique `/etc/mkinitcpio.conf` [para usar o systemd](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") e adicione o cabeçalho em `FILES`.
 
  `/etc/mkinitcpio.conf` 
 ```
 ...
-FILES=(**/boot/header.img**)
+FILES=(**/boot/cabecalho.img**)
 ...
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
 ...
 ```
 
-[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") and you are done.
+[Gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") e pronto.
 
-**Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration") for the supported options.
+**Nota:** Nenhum parâmetro do cryptsetup precisa ser passado para a linha de comando do kernel, desde que `/etc/crypttab.initramfs` será adicionado como `/etc/crypttab` no initramfs. Se você deseja especificá-los na linha de comando do kernel veja [dm-crypt/Configuração do sistema#Usando o hook sd-encrypt](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Usando_o_hook_sd-encrypt "Dm-crypt/Configuração do sistema") para opções suportadas.
 
-### Modifying encrypt hook
+### Modificando o hook encrypt
 
-This method shows how to modify the `encrypt` hook in order to use a detached LUKS header. Now the `encrypt` hook has to be modified to let `cryptsetup` use the separate header ([FS#42851](https://bugs.archlinux.org/task/42851); base source and idea for these changes [published on the BBS](https://bbs.archlinux.org/viewtopic.php?pid=1076346#p1076346)). Make a copy so it is not overwritten on a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") update:
+Este método mostra como modificar o hook `encrypt` para usá-lo com um cabeçalho do LUKS desanexado. Agora o hook `encrypt` precisa ser modificado para deixar o `cryptsetup` usar o cabeçalho separado ([FS#42851](https://bugs.archlinux.org/task/42851)); A fonte base e ideia para estas mudanças foi [publicada no BBS](https://bbs.archlinux.org/viewtopic.php?pid=1076346#p1076346)). Faça uma cópia para que esta configuração não seja sobrescrevida em uma atualização do [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"):
 
 ```
 # cp /usr/lib/initcpio/hooks/encrypt /etc/initcpio/hooks/encrypt2
@@ -610,7 +610,7 @@ for cryptopt in ${cryptoptions//,/ }; do
             cryptargs="${cryptargs} --allow-discards"
             ;;  
         **header)
-            cryptargs="${cryptargs} --header /boot/header.img"
+            cryptargs="${cryptargs} --header /boot/cabecalho.img"
             headerFlag=true
             ;;**
         *)  
@@ -625,29 +625,29 @@ if resolved=$(resolve_device "${cryptdev}" ${rootdelay}); then
         dopassphrase=1
 ```
 
-Now edit the [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") to add the `encrypt2` and `lvm2` hooks, the `header.img` to `FILES` and the `loop` to `MODULES`, apart from other configuration the system requires:
+Agora edite o [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") para adicionar os hooks `encrypt2` e `lvm2`, o `cabecalho.img` para `FILES` e o `loop` para `MODULES`, fora outras configurações que o sistema precisa:
 
  `/etc/mkinitcpio.conf` 
 ```
 ...
 MODULES=(**loop**)
 ...
-FILES=(**/boot/header.img**)
+FILES=(**/boot/cabecalho.img**)
 ...
 HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt2** **lvm2** filesystems fsck)
 ...
 ```
 
-This is required so the LUKS header is available on boot allowing the decryption of the system, exempting us from a more complicated setup to mount another separate USB device in order to access the header. After this set up [the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") is created.
+Isto é necessário para que o cabeçalho do LUKS esteja disponível na inicialização, nos excluindo uma configuração mais complicada para montar um pendrive separado para acessar o cabeçalho. Depois disso, gere a imagem [initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 
-Next the [boot loader is configured](/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_4 "Dm-crypt/Encrypting an entire system") to specify the `cryptdevice=` also passing the new `header` option for this setup:
-
-```
-cryptdevice=/dev/disk/by-id/*your-disk_id*:enc:header
+Depois, configure o [gerenciador de boot](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Configurando_o_gerenciador_de_boot_4 "Dm-crypt/Criptografando todo um sistema") para especificar o `cryptdevice=` também passando a nova opção `header` para esta configuração:
 
 ```
+cryptdevice=/dev/disk/by-id/*id_do_seu_disco*:enc:header
 
-To finish, following [dm-crypt/Encrypting an entire system#Post-installation](/index.php/Dm-crypt/Encrypting_an_entire_system#Post-installation "Dm-crypt/Encrypting an entire system") is particularly useful with a `/boot` partition on an USB storage medium.
+```
+
+Para finalizar, é útil seguir [dm-crypt/Criptografando todo um sistema#Pós-instalação](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Pós-instalação "Dm-crypt/Criptografando todo um sistema") com uma partição `/boot` no dispositivo USB.
 
 ## Encrypted /boot and a detached LUKS header on USB
 

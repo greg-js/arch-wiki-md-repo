@@ -57,6 +57,7 @@ This page contains advanced Firefox configuration options and performance tweaks
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Enable additional media codecs](#Enable_additional_media_codecs)
         *   [4.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix/Amazon_Video)
+        *   [4.1.2 Force-enable hardware video decoding](#Force-enable_hardware_video_decoding)
     *   [4.2 Remove full screen warning](#Remove_full_screen_warning)
     *   [4.3 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
     *   [4.4 "I'm Feeling Lucky" mode](#"I'm_Feeling_Lucky"_mode)
@@ -65,11 +66,11 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [4.7 Prevent accidental closing](#Prevent_accidental_closing)
     *   [4.8 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
     *   [4.9 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
-    *   [4.10 Slow or freezing scrolling](#Slow_or_freezing_scrolling)
-    *   [4.11 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [4.12 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
-    *   [4.13 Fido U2F authentication](#Fido_U2F_authentication)
-    *   [4.14 Get ALSA working back](#Get_ALSA_working_back)
+    *   [4.10 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
+    *   [4.11 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
+    *   [4.12 Fido U2F authentication](#Fido_U2F_authentication)
+    *   [4.13 Get ALSA working back](#Get_ALSA_working_back)
+    *   [4.14 Force-enable WebGL](#Force-enable_WebGL)
 *   [5 See also](#See_also)
 
 ## Performance
@@ -528,6 +529,10 @@ The first time you visit a Widevine-enabled page Firefox will display a prompt b
 
 It is also required that the private mode browsing is disabled, for the window and in the preferences.
 
+#### Force-enable hardware video decoding
+
+Although `media.hardware-video-decoding.enabled` is enabled by default, one may need to force-enable hardware video decoding by setting `media.hardware-video-decoding.force-enabled` to `true`.
+
 ### Remove full screen warning
 
 Warning about video displayed in full screen mode ("… is now fullscreen") can be disabled by setting `full-screen-api.warning.timeout` to `0` in `about:config`.
@@ -605,17 +610,6 @@ Scrolling in Firefox can feel "jerky" or "choppy". A post on [MozillaZine](http:
 
 Now scrolling should flow smoothly.
 
-### Slow or freezing scrolling
-
-Sometimes, usually when 4K screens are involved, Firefox can freeze until the user stops scrolling and then do a redraw (rather than producing a nice scroll "animation"). An [answer on Firefox's support page](https://support.mozilla.org/en-US/questions/1157360#answer-962827) suggests force-enabling GPU acceleration. Those setting seem to fix the issue.
-
-1.  Set `layers.acceleration.force-enabled` to `true`.
-2.  Set `webgl.force-enabled` to `true`.
-3.  Set `media.hardware-video-decoding.force-enabled` to `true`.
-4.  Set `browser.tabs.remote.autostart` to `true`. This one enables multiprocessor support. It already defaults to `true` in recent Firefox releases.
-
-Remember to restart Firefox when you change the settings.
-
 ### Run Firefox inside an nspawn container
 
 If you have problems accessing the X server from within the container, you might want to consider [Systemd-nspawn#Use an X environment](/index.php/Systemd-nspawn#Use_an_X_environment "Systemd-nspawn").
@@ -663,7 +657,7 @@ To disable audio post processing, change the value of the following preferences 
 
 ### Fido U2F authentication
 
-Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for the required udev rules to allow Firefox to communicate with the U2F key.
+Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for the required udev rules to allow Firefox to communicate with the [U2F](/index.php/U2F "U2F") key.
 
 Firefox supports the Fido U2F authentication protocol.
 
@@ -676,6 +670,10 @@ As long as Arch keeps building Firefox with *ac_add_options --enable-alsa*, then
 [[6]](https://www.linuxquestions.org/questions/slackware-14/firefox-in-current-alsa-sound-4175622116) [[7]](https://codelab.wordpress.com/2017/12/11/firefox-drops-alsa-apulse-to-the-rescue) [[8]](https://www.bleepingcomputer.com/news/security/firefox-57-brings-better-sandboxing-on-linux)
 
 No need for apulse if built as done so far.
+
+### Force-enable WebGL
+
+On some platforms WebGL may be disabled [[9]](https://wiki.mozilla.org/Blocklisting/Blocked_Graphics_Drivers) even when the user desires to use it. To force-enable WebGL set `webgl.force-enabled` to `true`, to also force-enable WebGL anti-aliasing, set `webgl.msaa-force` to `true`.
 
 ## See also
 

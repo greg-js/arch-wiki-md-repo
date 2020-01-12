@@ -37,7 +37,7 @@ Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-c
     *   [5.4 Configurando o GRUB](#Configurando_o_GRUB)
     *   [5.5 Criando as keyfiles](#Criando_as_keyfiles)
     *   [5.6 Configurando o sistema](#Configurando_o_sistema)
-*   [6 Plain dm-crypt](#Plain_dm-crypt)
+*   [6 dm-crypt plain](#dm-crypt_plain)
     *   [6.1 Preparando o disco](#Preparando_o_disco_4)
     *   [6.2 Preparando a partição que não é de boot](#Preparando_a_partição_que_não_é_de_boot)
     *   [6.3 Preparando a partição de boot](#Preparando_a_partição_de_boot_3)
@@ -216,7 +216,7 @@ Este exemplo demonstra um sistema criptografado com *dm-crypt* + LUKS em uma par
 |                    |                               |                       |
 | /boot              | /                             |                       |
 |                    |                               |                       |
-|                    | /dev/mapper/cryptroot         |                       |
+|                    | /dev/mapper/cryptraiz         |                       |
 |                    |-------------------------------|                       |
 | /dev/sda1          | /dev/sda2                     |                       |
 +--------------------+-------------------------------+-----------------------+
@@ -229,7 +229,7 @@ Os primeiros passos podem ser executados imediatamente após iniciar a imagem de
 
 Antes de criar qualquer partição, você deveria saber a importância e também métodos de como apagar o disco com segurança, descritos em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento").
 
-Crie as partições necessárias, ao menos uma para `/` (exemplo `/dev/sda2`) e `/boot` (`/dev/sda1`). Veja [Particionamento](/index.php/Partitioning "Partitioning").
+Crie as partições necessárias, ao menos uma para `/` (exemplo `/dev/sda2`) e `/boot` (`/dev/sda1`). Veja [Particionamento](/index.php/Particionamento "Particionamento").
 
 ### Preparando partições que não são de boot
 
@@ -237,9 +237,9 @@ Os comandos a seguir criam e montam a partição raiz criptografada. Eles corres
 
 ```
 # cryptsetup -y -v luksFormat /dev/sda2
-# cryptsetup open /dev/sda2 cryptroot
-# mkfs.ext4 /dev/mapper/cryptroot
-# mount /dev/mapper/cryptroot /mnt
+# cryptsetup open /dev/sda2 cryptraiz
+# mkfs.ext4 /dev/mapper/cryptraiz
+# mount /dev/mapper/cryptraiz /mnt
 
 ```
 
@@ -247,9 +247,9 @@ Verifique se o mapeamento funcionou como esperado:
 
 ```
 # umount /mnt
-# cryptsetup close cryptroot
-# cryptsetup open /dev/sda2 cryptroot
-# mount /dev/mapper/cryptroot /mnt
+# cryptsetup close cryptraiz
+# cryptsetup open /dev/sda2 cryptraiz
+# mount /dev/mapper/cryptraiz /mnt
 
 ```
 
@@ -308,14 +308,14 @@ Dependendo de quais hooks estão sendo usados, a ordem pode ser relevante. Veja 
 Para desbloquear a partição raiz criptografada na inicialização, os seguintes [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") devem ser adicionados ao gerenciador de boot:
 
 ```
-cryptdevice=UUID=*UUID-da-partição-raiz*:cryptroot root=/dev/mapper/cryptroot
+cryptdevice=UUID=*UUID-da-partição-raiz*:cryptraiz root=/dev/mapper/cryptraiz
 
 ```
 
 Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt"), o seguinte precisa ser definido ao invês:
 
 ```
-rd.luks.name=*UUID-da-partição-raiz*=cryptroot root=/dev/mapper/cryptroot
+rd.luks.name=*UUID-da-partição-raiz*=cryptraiz root=/dev/mapper/cryptraiz
 
 ```
 
@@ -344,18 +344,18 @@ O design do disco neste exemplo é::
 
 ```
 
-**Nota:** Ao usar o hook `encrypt`, você não poderá utilizar volumes lógicos espalhados em múltiplos discos; use o [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") ou veja [dm-crypt/Especificidades#Modificando o hook encrypt para múltiplas partições](/index.php/Dm-crypt/Especificidades#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Especificidades").
+**Nota:** Ao usar o hook `encrypt`, você não poderá utilizar volumes lógicos espalhados em múltiplos discos; use o [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") ou veja [dm-crypt/Especificidades#Modificando o hook encrypt para múltiplas partições](/index.php/Dm-crypt/Especificidades#Modificando_o_hook_encrypt_para_múltiplas_partições "Dm-crypt/Especificidades").
 
 **Dica:** Duas variações dessa configuração:
 
-*   Instruções em [dm-crypt/Especificidades#Sistema criptografado com cabeçalho do LUKS desanexado](/index.php/Dm-crypt/Especificidades#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Especificidades") para usar um cabeçalho do LUKS em um dispositivo USB, e assim conseguindo autentificação de dois fatores com este método.
+*   Instruções em [dm-crypt/Especificidades#Sistema criptografado usando um cabeçalho LUKS desanexado](/index.php/Dm-crypt/Especificidades#Sistema_criptografado_usando_um_cabeçalho_LUKS_desanexado "Dm-crypt/Especificidades") para usar um cabeçalho do LUKS em um dispositivo USB, e assim conseguindo autentificação de dois fatores com este método.
 *   Instruções em [dm-crypt/Especificidades#/boot criptografado e um cabeçalho do LUKS desanexado dentro de um USB](/index.php/Dm-crypt/Especificidades#Encrypted_/boot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Especificidades")]] para usar um cabeçalho do LUKS, partição `/boot` criptografada, e keyfile criptografada tudo em um dispositivo USB.
 
 ### Preparando o disco
 
 Antes de criar qualquer partição, você deveria saber a importância e também métodos de como apagar o disco com segurança, descritos em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento").
 
-**Dica:** Se usa o gerenciador de boot [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") para inicialização com BIOS de um disco [GPT](/index.php/GPT "GPT"), crie uma [Partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS").
+**Dica:** Se usa o gerenciador de boot [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") para inicialização com BIOS de um disco [GPT](/index.php/Particionamento#GUID_Partition_Table "Particionamento"), crie uma [Partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS").
 
 Crie uma partição que será montada em `/boot` com o tamanho de 200 MiB ou mais.
 
@@ -429,7 +429,7 @@ Monte eles:
 
 O gerenciador de boot carrega o kernel, [initramfs](/index.php/Initramfs "Initramfs"), e seus arquivos de configuração do diretório `/boot`. Qualquer sistema de arquivos em um disco que pode ser lido pelo gerenciador de boot é elegível para uso.
 
-Coloque um [sistema de arquivos](/index.php/Filesystem "Filesystem") na partição escolhida como `/boot`:
+Coloque um [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") na partição escolhida como `/boot`:
 
 ```
 # mkfs.ext4 /dev/sdb1
@@ -502,7 +502,7 @@ Você deve configurar os volumes do [LVM](/index.php/LVM "LVM") primeiro antes d
 
 O texto a seguir exemplifica uma configuração do LUKS dentro do LVM que também faz uso de uma keyfile para o volume lógico /home e volumes temporários criptografados para `/tmp` e `/swap`. O último é desejável caso se preocupe com segurança, devido a evitar que dados temporários sensíveis sobrevivam durante a inicialização do sistema. Se tem experiência com LVM, você vai ser capaz de ignorar/trocar alguns dos passos relacionados com ele e outras coisas específicas de acordo com sua vontade.
 
-Se quer usar volumes lógicos espalhados por múltiplos discos que já foram configurados, ou expandir o `/home` (ou qualquer outro volume), um dos jeitos de como fazer isto é descrito em [dm-crypt/Especificidades#Expandindo LVM em vários discos](/index.php/Dm-crypt/Especificidades#Expanding_LVM_on_multiple_disks "Dm-crypt/Especificidades"). Vale notar que o container criptografado com LUKS precisa ser redimensionado também.
+Se quer usar volumes lógicos espalhados por múltiplos discos que já foram configurados, ou expandir o `/home` (ou qualquer outro volume), um dos jeitos de como fazer isto é descrito em [dm-crypt/Especificidades#Expandindo LVM em múltiplos discos](/index.php/Dm-crypt/Especificidades#Expandindo_LVM_em_múltiplos_discos "Dm-crypt/Especificidades"). Vale notar que o container criptografado com LUKS precisa ser redimensionado também.
 
 ### Preparando o disco
 
@@ -601,7 +601,7 @@ Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-cryp
 
 ### Configurando o fstab e crypttab
 
-Ambas as entradas do [crypttab](/index.php/Crypttab "Crypttab") e [fstab](/index.php/Fstab "Fstab") são necessárias para abrir o dispositivo e montar os sistemas de arquivos, respectivamente. As seguintes linhas irão criptografar os sistemas de arquivos temporários a cada inicialização:
+Ambas as entradas do [crypttab](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#crypttab "Dm-crypt/Configuração do sistema") e [fstab](/index.php/Fstab "Fstab") são necessárias para abrir o dispositivo e montar os sistemas de arquivos, respectivamente. As seguintes linhas irão criptografar os sistemas de arquivos temporários a cada inicialização:
 
  `/etc/crypttab` 
 ```
@@ -637,7 +637,7 @@ O volume lógico é criptografado com:
 
 ```
 
-A montagem dos volumes criptografados é feita tanto no [crypttab](/index.php/Crypttab "Crypttab") como no [fstab](/index.php/Fstab "Fstab"):
+A montagem dos volumes criptografados é feita tanto no [crypttab](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#crypttab "Dm-crypt/Configuração do sistema") como no [fstab](/index.php/Fstab "Fstab"):
 
  `/etc/crypttab` 
 ```
@@ -833,7 +833,7 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 Veja [dm-crypt/Configuração do sistema#mkinitcpio](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#mkinitcpio "Dm-crypt/Configuração do sistema") para detalhes.
 
-## Plain dm-crypt
+## dm-crypt plain
 
 Diferente do LUKS, o modo *plain* do dm-crypt não precisa de um cabeçalho no dispositivo criptografado: Este cenário explora isso para configurar um sistema em uma partição não criptografada, o disco criptografado não será diferenciável de um disco cheio de dados randômicos, isto possibilita a [criptografia negável](https://en.wikipedia.org/wiki/pt:criptografia_neg%C3%A1vel "wikipedia:pt:criptografia negável"). Veja também [wikipedia:Disk encryption#Full disk encryption](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption").
 
@@ -914,7 +914,7 @@ Agora, configure os volumes lógicos do [LVM](/index.php/LVM "LVM") no dispositi
 
 ```
 
-Formate e monte eles além de ativar a swap. Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") para mais detalhes:
+Formate e monte eles além de ativar a swap. Veja [Sistemas de arquivos#Criar um sistema de arquivos](/index.php/Sistemas_de_arquivos#Criar_um_sistema_de_arquivos "Sistemas de arquivos") para mais detalhes:
 
 ```
 # mkfs.ext4 /dev/MeuVolGrupo/raiz
@@ -929,9 +929,9 @@ Formate e monte eles além de ativar a swap. Veja [File systems#Create a file sy
 
 ### Preparando a partição de boot
 
-A partição `/boot` pode ser instalada na partição vfat de um pendrive, se necessário. Mas se o particionamento manual é desejado, criar uma partição de 200 MiB é necessário. Crie a partição usando uma [ferramenta de particionamento](/index.php/Partitioning#Partitioning_tools "Partitioning") de sua escolha.
+A partição `/boot` pode ser instalada na partição vfat de um pendrive, se necessário. Mas se o particionamento manual é desejado, criar uma partição de 200 MiB é necessário. Crie a partição usando uma [ferramenta de particionamento](/index.php/Particionamento#Ferramentas_de_particionamento "Particionamento") de sua escolha.
 
-Coloque um [sistema de arquivos](/index.php/Filesystem "Filesystem") na partição `/boot`:
+Coloque um [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") na partição `/boot`:
 
 ```
 # mkfs.ext4 /dev/sdb1
@@ -1207,7 +1207,7 @@ Também é mostrada uma partição [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap
 
 Antes de criar qualquer partição, você deveria saber a importância e também métodos de como apagar o disco com segurança, descritos em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento"). Se você está usando [UEFI](/index.php/UEFI "UEFI") crie uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") com o tamanho apropriado. Ela será montada em `/efi`. Se você vai criar uma partição swap criptografada, crie ela, mas *não* marque isso como swap, desde que ela será usada no modo plain do *dm-crypt*.
 
-Crie as partições, ao menos uma para `/` (exemplo, `/dev/sda2`). Veja o artigo [Partitioning](/index.php/Partitioning "Partitioning").
+Crie as partições, ao menos uma para `/` (exemplo, `/dev/sda2`). Veja o artigo [Particionamento](/index.php/Particionamento "Particionamento").
 
 ### Preparando a partição do sistema
 
@@ -1227,7 +1227,7 @@ Formate o dispositivo mapeado como descrito em [Btrfs#File system on a single de
 
 #### Monte o dispositivo mapeado
 
-Finalmente, [monte](/index.php/Mount "Mount") o agora formatado dispositivo mapeado (i.e., `/dev/mapper/cryptraiz`) para `/mnt`.
+Finalmente, [monte](/index.php/Monte "Monte") o agora formatado dispositivo mapeado (i.e., `/dev/mapper/cryptraiz`) para `/mnt`.
 
 **Dica:** You pode querer usar a opção de montagem `compress=lzo`. Veja [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs") para mais informações.
 

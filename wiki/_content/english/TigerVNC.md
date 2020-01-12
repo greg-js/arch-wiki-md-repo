@@ -19,29 +19,30 @@ Related articles
         *   [2.2.1 User mode](#User_mode)
         *   [2.2.2 System mode](#System_mode)
         *   [2.2.3 On demand multi-user mode](#On_demand_multi-user_mode)
-*   [3 Running x0vncserver to directly control the local display](#Running_x0vncserver_to_directly_control_the_local_display)
-    *   [3.1 Starting x0vncserver via xprofile](#Starting_x0vncserver_via_xprofile)
-    *   [3.2 Starting and stopping x0vncserver via systemd](#Starting_and_stopping_x0vncserver_via_systemd)
-*   [4 Connecting to vncserver](#Connecting_to_vncserver)
-    *   [4.1 Passwordless authentication](#Passwordless_authentication)
-    *   [4.2 Example GUI-based clients](#Example_GUI-based_clients)
-*   [5 Accessing vncserver via SSH tunnels](#Accessing_vncserver_via_SSH_tunnels)
-    *   [5.1 On the server](#On_the_server)
-    *   [5.2 On the client](#On_the_client)
-    *   [5.3 Connecting to a vncserver from Android devices over SSH](#Connecting_to_a_vncserver_from_Android_devices_over_SSH)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Connecting to an OSX system](#Connecting_to_an_OSX_system)
-    *   [6.2 Connecting to non-X environments on a Raspberry Pi (Arch ARM)](#Connecting_to_non-X_environments_on_a_Raspberry_Pi_(Arch_ARM))
-    *   [6.3 Recommended security settings](#Recommended_security_settings)
-    *   [6.4 Starting X (startx) with vncserver](#Starting_X_(startx)_with_vncserver)
-    *   [6.5 Toggling Fullscreen](#Toggling_Fullscreen)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Unable to type '<' character](#Unable_to_type_'<'_character)
-    *   [7.2 Black rectangle instead of window](#Black_rectangle_instead_of_window)
-    *   [7.3 No mouse cursor](#No_mouse_cursor)
-    *   [7.4 Copying clipboard content from the remote machine](#Copying_clipboard_content_from_the_remote_machine)
-    *   [7.5 "Authentication is required to create a color managed device" dialog when launching GNOME 3](#"Authentication_is_required_to_create_a_color_managed_device"_dialog_when_launching_GNOME_3)
-*   [8 See also](#See_also)
+*   [3 Expose the local display directly](#Expose_the_local_display_directly)
+*   [4 Running x0vncserver to directly control the local display](#Running_x0vncserver_to_directly_control_the_local_display)
+    *   [4.1 Starting x0vncserver via xprofile](#Starting_x0vncserver_via_xprofile)
+    *   [4.2 Starting and stopping x0vncserver via systemd](#Starting_and_stopping_x0vncserver_via_systemd)
+*   [5 Connecting to vncserver](#Connecting_to_vncserver)
+    *   [5.1 Passwordless authentication](#Passwordless_authentication)
+    *   [5.2 Example GUI-based clients](#Example_GUI-based_clients)
+*   [6 Accessing vncserver via SSH tunnels](#Accessing_vncserver_via_SSH_tunnels)
+    *   [6.1 On the server](#On_the_server)
+    *   [6.2 On the client](#On_the_client)
+    *   [6.3 Connecting to a vncserver from Android devices over SSH](#Connecting_to_a_vncserver_from_Android_devices_over_SSH)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Connecting to an OSX system](#Connecting_to_an_OSX_system)
+    *   [7.2 Connecting to non-X environments on a Raspberry Pi (Arch ARM)](#Connecting_to_non-X_environments_on_a_Raspberry_Pi_(Arch_ARM))
+    *   [7.3 Recommended security settings](#Recommended_security_settings)
+    *   [7.4 Starting X (startx) with vncserver](#Starting_X_(startx)_with_vncserver)
+    *   [7.5 Toggling Fullscreen](#Toggling_Fullscreen)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Unable to type '<' character](#Unable_to_type_'<'_character)
+    *   [8.2 Black rectangle instead of window](#Black_rectangle_instead_of_window)
+    *   [8.3 No mouse cursor](#No_mouse_cursor)
+    *   [8.4 Copying clipboard content from the remote machine](#Copying_clipboard_content_from_the_remote_machine)
+    *   [8.5 "Authentication is required to create a color managed device" dialog when launching GNOME 3](#"Authentication_is_required_to_create_a_color_managed_device"_dialog_when_launching_GNOME_3)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -206,6 +207,23 @@ If the VNC server is exposed to the internet, add the `-localhost` option to `Xv
 ```
 #!/bin/sh
 vncconfig -nowin &
+```
+
+## Expose the local display directly
+
+Tigervnc comes with libvnc.so which can be directly load during X initialization which provides better performance. Create a following file and restart X:
+
+ `/etc/X11/xorg.conf.d/10-vnc.conf` 
+```
+Section "Module"
+Load "vnc"
+EndSection
+
+Section "Screen"
+Identifier "Screen0"
+Option "UserPasswdVerifier" "VncAuth"
+Option "PasswordFile" "/root/.vnc/passwd"
+EndSection
 ```
 
 ## Running x0vncserver to directly control the local display

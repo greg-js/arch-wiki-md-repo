@@ -255,7 +255,7 @@ set guiheadroom=0
 
 #### Из репозиториев Arch
 
-Группа [vim-plugins](https://www.archlinux.org/groups/x86_64/vim-plugins/) объединяет множество разнообразных плагинов. Используйте команду `pacman -Sg vim-plugins` для отображения списка пакетов, которые вы можете затем [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)"), используя pacman.
+Группа [vim-plugins](https://www.archlinux.org/groups/x86_64/vim-plugins/) объединяет множество разнообразных плагинов. Используйте команду `pacman -Sg vim-plugins` для отображения списка пакетов, которые вы можете затем [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)"), используя pacman.
 
 ### cscope
 

@@ -27,7 +27,7 @@ Many [desktop environments](/index.php/Desktop_environment "Desktop environment"
 
 Programs sometimes need to open a file or a [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier") in the user's preferred application. To open a file in the user's preferred application the filetype needs to be detected (usually using filename extensions or [magic numbers](https://en.wikipedia.org/wiki/List_of_file_signatures "wikipedia:List of file signatures") mapped to [MIME types](https://en.wikipedia.org/wiki/Media_type "wikipedia:Media type")) and there needs to be an application associated with the filetype.
 
-Heirloom UNIX programs used [mime.types](https://en.wikipedia.org/wiki/Media_type#mime.types "wikipedia:Media type") for MIME type detection and [mailcap](https://en.wikipedia.org/wiki/Media_type#Mailcap "wikipedia:Media type") for application association.
+[Heirloom](/index.php/Heirloom "Heirloom") UNIX programs used [mime.types](https://en.wikipedia.org/wiki/Media_type#mime.types "wikipedia:Media type") for MIME type detection and [mailcap](https://en.wikipedia.org/wiki/Media_type#Mailcap "wikipedia:Media type") for application association.
 
 ## Resource openers
 
@@ -78,7 +78,7 @@ $ mimeopen -n photo.jpeg
 
 Most importantly, [xdg-utils](/index.php/Xdg-utils "Xdg-utils") programs will actually call `file` instead of `mimetype` for MIME type detection if it does not detect your [desktop environment](/index.php/Desktop_environment "Desktop environment"). This is important because `file` does not follow the XDG standard.
 
-**Note:** [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) before 0.28-1 does not *entirely* follow the XDG standard. For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
+**Note:** [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) before 0.28-1 did not *entirely* follow the XDG standard. For example it did not not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saved its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
 
 ### mimeo
 

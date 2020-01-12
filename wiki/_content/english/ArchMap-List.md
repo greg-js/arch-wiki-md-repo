@@ -1141,5 +1141,6 @@ You can use the following website to get your device's coordinates along with a 
 51.535496, 3.914310 "DvK" # Goes, Zeeland, The Netherlands
 40.7271164,-73.994756 "NedLudd" # New York, NY USA
 37.004127, 27.271187 "mergen" # Bodrum/Muğla, Turkey
+11.108233, 77.175904 "ilango100" # Coimbatore, TN, India
 
 ```

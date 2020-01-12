@@ -7,7 +7,7 @@ Artigos relacionados
 *   [Listas de Controle de Acesso](/index.php/Listas_de_Controle_de_Acesso "Listas de Controle de Acesso")
 *   [Capacidades](/index.php/Capabilities "Capabilities")
 
-[Sistemas de arquivos](/index.php/File_systems "File systems") usam [permissões](https://en.wikipedia.org/wiki/pt:Permiss%C3%B5es_de_sistema_de_arquivos "w:pt:Permissões de sistema de arquivos") e [atributos](https://en.wikipedia.org/wiki/File_attribute "w:File attribute") para regular o nível de interação que processos de sistema podem ter com os arquivos e diretórios.
+[Sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos") usam [permissões](https://en.wikipedia.org/wiki/pt:Permiss%C3%B5es_de_sistema_de_arquivos "w:pt:Permissões de sistema de arquivos") e [atributos](https://en.wikipedia.org/wiki/File_attribute "w:File attribute") para regular o nível de interação que processos de sistema podem ter com os arquivos e diretórios.
 
 **Atenção:** Quando usados para fins de segurança, as permissões e atributos só defendem contra ataques iniciados a partir do sistema inicializado. Para proteger os dados armazenados dos invasores com acesso físico à máquina, é preciso também implementar [criptografia de disco](/index.php/Criptografia_de_disco "Criptografia de disco").
 
@@ -417,7 +417,7 @@ O utilitário [umask](/index.php/Umask_(Portugu%C3%AAs) "Umask (Português)") é
 
 ## Atributos de arquivos
 
-Além dos bits do modo de arquivo que controlam [usuário e grupo](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos") permissões de leitura, gravação e execução, vários [sistemas de arquivos](/index.php/File_systems "File systems") suportam atributos de arquivo que permitem uma personalização adicional das operações de arquivo permitidas. Esta seção descreve alguns desses atributos e como trabalhar com eles.
+Além dos bits do modo de arquivo que controlam [usuário e grupo](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos") permissões de leitura, gravação e execução, vários [sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos") suportam atributos de arquivo que permitem uma personalização adicional das operações de arquivo permitidas. Esta seção descreve alguns desses atributos e como trabalhar com eles.
 
 **Atenção:** Por padrão, atributos de arquivo não são preservados por [cp](/index.php/Cp_(Portugu%C3%AAs) "Cp (Português)"), [rsync](/index.php/Rsync "Rsync") e outros programas similares.
 

@@ -2,6 +2,12 @@
 
 ## Vaio
 
+### Power management/Suspend and hibernate problems
+
+You might have to add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_sleep=nonvs` to your bootloader.
+
+### Overview of Vaio models and state of support
+
 | Model version | Arch Linux
 install CD version
  | Hardware support | Remarks |

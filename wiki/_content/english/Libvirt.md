@@ -73,7 +73,7 @@ For network connectivity, install:
 *   [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) for bridged networking.
 *   [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat) for remote management over [SSH](/index.php/SSH "SSH").
 
-**Note:** If you are using [firewalld](/index.php/Firewalld "Firewalld"), as of libvirt 4.8.0 you need to change the firewall backend in `/etc/firewalld/firewalld.conf` from nftables to iptables.
+**Note:** If you are using [firewalld](/index.php/Firewalld "Firewalld"), as of `libvirt` 5.1.0 and [firewalld](/index.php/Firewalld "Firewalld") 0.7.0 you no longer need to change the firewall backend to [iptables](/index.php/Iptables "Iptables"). `libvirt` now installs a zone called 'libvirt' in [firewalld](/index.php/Firewalld "Firewalld") and manages its required network rules there. [Firewall and network filtering in libvirt](https://libvirt.org/firewall.html)
 
 ### Client
 
@@ -623,23 +623,9 @@ for domainID in domains:
 
 ## UEFI Support
 
-**Warning:** UEFI support is currently broken: [FS#64175](https://bugs.archlinux.org/task/64175).
-
 Libvirt can support UEFI virtual machines through QEMU and [OVMF](https://github.com/tianocore/edk2).
 
 Install the [ovmf](https://www.archlinux.org/packages/?name=ovmf) package.
-
-Add the following to `/etc/libvirt/qemu.conf`.
-
- `/etc/libvirt/qemu.conf` 
-```
-nvram = [
-    "/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd"
-]
-
-```
-
-**Note:** If you created a UEFI virtual machine before January 12th 2018, you must first update `/etc/libvirt/qemu.conf` like shown above and then run edit the machines' config (`virsh edit <domain>` and update the value of the `<loader>` element)
 
 [Restart](/index.php/Restart "Restart") `libvirtd`.
 
@@ -651,8 +637,6 @@ Now you are ready to create a UEFI virtual machine. Create a new virtual machine
 *   The boot screen you'll see should use linuxefi commands to boot the installer, and you should be able to run efibootmgr inside that system, to verify that you're running an UEFI OS.
 
 For more information about this, refer to [this fedora wiki page](https://fedoraproject.org/wiki/Using_UEFI_with_QEMU).
-
-**Note:** The nvram entry can be added to `~/.config/libvirt/qemu.conf` to enable UEFI in user sessions.
 
 ## PulseAudio
 

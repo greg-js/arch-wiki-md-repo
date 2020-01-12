@@ -109,7 +109,7 @@
 
 	[linux-libre](https://aur.archlinux.org/packages/linux-libre/), [linux-libre-lts](https://aur.archlinux.org/packages/linux-libre-lts/), [linux-libre-grsec](https://aur.archlinux.org/packages/linux-libre-grsec/), [linux-libre-rt](https://aur.archlinux.org/packages/linux-libre-rt/), [linux-libre-xen](https://aur.archlinux.org/packages/linux-libre-xen/)
 
-	Ядро Linux с "binary blobs".
+	Ядро Linux без "binary blobs".
 
 	[linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
 

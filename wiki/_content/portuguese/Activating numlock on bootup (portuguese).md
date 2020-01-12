@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Activating numlock on bootup](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup"). Data da última tradução: 2019-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Activating_numlock_on_bootup&diff=0&oldid=588385) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Activating numlock on bootup](/index.php/Activating_numlock_on_bootup "Activating numlock on bootup"). Data da última tradução: 2020-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Activating_numlock_on_bootup&diff=0&oldid=593041) na versão em inglês.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -43,7 +43,9 @@ done
 
 ```
 
-Então, crie e habilite um serviço systemd:
+Uma vez que o script é criado, você precisará torná-lo [executável](/index.php/Execut%C3%A1vel "Executável"). Do contrário, o script não ser executado.
+
+Então, crie e [habilite](/index.php/Habilite "Habilite") um serviço systemd:
 
  `/etc/systemd/system/numlock.service` 
 ```

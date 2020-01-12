@@ -1,15 +1,19 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 进入 /etc/west-chamber 导入默认的 ipset](#.E8.BF.9B.E5.85.A5_.2Fetc.2Fwest-chamber_.E5.AF.BC.E5.85.A5.E9.BB.98.E8.AE.A4.E7.9A.84_ipset)
-*   [3 使用 iptables 设定过滤规则](#.E4.BD.BF.E7.94.A8_iptables_.E8.AE.BE.E5.AE.9A.E8.BF.87.E6.BB.A4.E8.A7.84.E5.88.99)
-*   [4 修改 dns](#.E4.BF.AE.E6.94.B9_dns)
-*   [5 重启网络](#.E9.87.8D.E5.90.AF.E7.BD.91.E7.BB.9C)
-*   [6 自动化](#.E8.87.AA.E5.8A.A8.E5.8C.96)
-    *   [6.1 导出规则](#.E5.AF.BC.E5.87.BA.E8.A7.84.E5.88.99)
-    *   [6.2 编写 bash 脚本](#.E7.BC.96.E5.86.99_bash_.E8.84.9A.E6.9C.AC)
-*   [7 测试](#.E6.B5.8B.E8.AF.95)
-*   [8 参考文档](#.E5.8F.82.E8.80.83.E6.96.87.E6.A1.A3)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 进入 /etc/west-chamber 导入默认的 ipset](#进入_/etc/west-chamber_导入默认的_ipset)
+*   [3 使用 iptables 设定过滤规则](#使用_iptables_设定过滤规则)
+*   [4 修改 dns](#修改_dns)
+*   [5 重启网络](#重启网络)
+*   [6 自动化](#自动化)
+    *   [6.1 导出规则](#导出规则)
+    *   [6.2 编写 bash 脚本](#编写_bash_脚本)
+*   [7 测试](#测试)
+*   [8 参考文档](#参考文档)
 
 ## 安装
 
@@ -95,7 +99,7 @@ ifconfig eth0 up
 ```
 1.[http://blog.xiaogaozi.org/2010/03/ubuntu.htm](http://blog.xiaogaozi.org/2010/03/ubuntu.htm)
 2.[http://code.google.com/p/scholarzhang/wiki/USAGE](http://code.google.com/p/scholarzhang/wiki/USAGE)
-3.[https://wiki.archlinux.org/index.php/Resolv.conf](https://wiki.archlinux.org/index.php/Resolv.conf)
+3.[Resolv.conf](/index.php/Resolv.conf "Resolv.conf")
 4.[http://blog.linjunpop.com/archives/2010/install-west-chamber-on-archlinux-step-by-step/](http://blog.linjunpop.com/archives/2010/install-west-chamber-on-archlinux-step-by-step/)
 
 ```

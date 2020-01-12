@@ -33,11 +33,10 @@ There are multiple low level interfaces (backends) providing basic functionality
     *   [3.3 Configure the initramfs](#Configure_the_initramfs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 ACPI_OS_NAME](#ACPI_OS_NAME)
-    *   [4.2 VAIO users](#VAIO_users)
-    *   [4.3 Suspend/hibernate does not work, or does not work consistently](#Suspend/hibernate_does_not_work,_or_does_not_work_consistently)
-    *   [4.4 Wake-on-LAN](#Wake-on-LAN)
-    *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
-    *   [4.6 System does not power off when hibernating](#System_does_not_power_off_when_hibernating)
+    *   [4.2 Suspend/hibernate does not work, or does not work consistently](#Suspend/hibernate_does_not_work,_or_does_not_work_consistently)
+    *   [4.3 Wake-on-LAN](#Wake-on-LAN)
+    *   [4.4 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
+    *   [4.5 System does not power off when hibernating](#System_does_not_power_off_when_hibernating)
 
 ## Low level interfaces
 
@@ -135,25 +134,25 @@ See [https://www.kernel.org/doc/Documentation/power/swsusp.txt](https://www.kern
 
 #### Hibernation into swap file on Btrfs
 
-**Note:** Since systemd 244, `systemctl hibernate` does not work with a swap file on Btrfs. See [systemd issue 14249](https://github.com/systemd/systemd/issues/14249).
+**Note:** Since systemd 244, `systemctl hibernate` does not work with a swap file on Btrfs. The [systemd issue 14249](https://github.com/systemd/systemd/issues/14249) was fixed on 2020-01-08, but there is not any release since then.
 
-On [Btrfs](/index.php/Btrfs "Btrfs"), the "physical" offset you get from filefrag is not the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
+Hibernation onto a swapfile is supported by recent versions of systemd [[2]](https://github.com/systemd/systemd/issues/9559).
 
-An alternate method is to use [btrfs_map_physical](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=202803#c5)
+The resume_offset number can be computed using the [tool btrfs_map_physical.c](https://github.com/osandov/osandov-linux/blob/master/scripts/btrfs_map_physical.c). Do not try to use the filefrag tool, on [Btrfs](/index.php/Btrfs "Btrfs") the "physical" offset you get from filefrag is not the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. [[3]](https://bugzilla.kernel.org/show_bug.cgi?id=202803)
 
-Download or copy the text into a file named `btrfs_map_physical.c`, then compile it:
+Download or copy the [tool btrfs_map_physical.c](https://github.com/osandov/osandov-linux/blob/master/scripts/btrfs_map_physical.c) into a file named `btrfs_map_physical.c`, then compile it,
 
 ```
 $ gcc -O2 -o btrfs_map_physical btrfs_map_physical.c
 
 ```
 
-Run it. For example:
+and run it. An example output is shown below.
 
  `# ./btrfs_map_physical */path/to/swapfile*` 
 ```
 FILE OFFSET  EXTENT TYPE  LOGICAL SIZE  LOGICAL OFFSET  PHYSICAL SIZE  DEVID  PHYSICAL OFFSET
-0            regular      4096          2927632384      268435456      1      4009762816
+0            regular      4096          2927632384      268435456      1      **4009762816**
 4096         prealloc     268431360     2927636480      268431360      1      4009766912
 268435456    prealloc     268435456     3251634176      268435456      1      4333764608
 536870912    prealloc     268435456     3520069632      268435456      1      4602200064
@@ -164,7 +163,9 @@ FILE OFFSET  EXTENT TYPE  LOGICAL SIZE  LOGICAL OFFSET  PHYSICAL SIZE  DEVID  PH
 
 ```
 
-The first physical offset should be the one. In this example, we will use `4009762816`. Divide that by 4096 and you have your `resume_offset` value. In this example, it is `978946`.
+Note the the first physical offset returned by this tool. In this example, we use `4009762816`. Also note the pagesize that can be found with `getconf PAGESIZE`.
+
+To compute the `resume_offset` value, divide the physical offset by the pagesize. In this example, it is `4009762816 / 4096 = 978946`.
 
 ### Configure the initramfs
 
@@ -184,10 +185,6 @@ The first physical offset should be the one. In this example, we will use `40097
 
 You might want to tweak your **DSDT table** to make it work. See [DSDT](/index.php/DSDT "DSDT") article
 
-### VAIO users
-
-Add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_sleep=nonvs` to your bootloader.
-
 ### Suspend/hibernate does not work, or does not work consistently
 
 There have been many reports about the screen going black without easily viewable errors or the ability to do anything when going into and coming back from suspend and/or hibernate. These problems have been seen on both laptops and desktops. This is not an official solution, but switching to an older kernel, especially the LTS-kernel, will probably fix this.
@@ -200,7 +197,7 @@ Moving from the [radeon](/index.php/Radeon "Radeon") video driver to the newer [
 
 For Intel graphics drivers, enabling early KMS may help to solve the blank screen issue. Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for details.
 
-After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[3]](https://bbs.archlinux.org/viewtopic.php?id=234646)
+After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[4]](https://bbs.archlinux.org/viewtopic.php?id=234646)
 
 ### Wake-on-LAN
 
@@ -208,9 +205,9 @@ If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network in
 
 ### Instantaneous wakeups from suspend
 
-For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[4]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
+For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[5]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
 
-Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[5]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
+Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[6]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
 
 To view the current configuration:
 
@@ -256,7 +253,7 @@ case $1/$2 in
 esac
 ```
 
-The first echo line unbinds nouveaufb from the framebuffer console driver (fbcon). Usually it is `vtcon1` as in this example, but it may also be another `vtcon*`. See `/sys/class/vtconsole/vtcon*/name` which one of them is a "frame buffer device" [[6]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
+The first echo line unbinds nouveaufb from the framebuffer console driver (fbcon). Usually it is `vtcon1` as in this example, but it may also be another `vtcon*`. See `/sys/class/vtconsole/vtcon*/name` which one of them is a "frame buffer device" [[7]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
 
 ### System does not power off when hibernating
 

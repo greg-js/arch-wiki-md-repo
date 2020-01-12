@@ -666,8 +666,6 @@ The config for this kernel is derived from the original Linpus Kernel config. Th
 *   Tweaks for better performance on Atom processors;
 *   Some tweaks/workarounds to get hardware work flawlessly (MMC/SD cards for example)
 
-On [T.Mondary's site](http://thibm.free.fr) you can also find a precompiled kernel for AAO, in distribution-independent format, but suitable for ArchLinux. This minimal kernel comes with wifi led patches, a coretemp patch, acerhdf and a proper framebuffer with KMS. It can now use ext2 or ext4 (mounting ext4 without a journal is supported since 2.6.29) for the root filesystem, and does not require an initrd.
-
 ## Tuning tips
 
 ### SD Storage Expansion

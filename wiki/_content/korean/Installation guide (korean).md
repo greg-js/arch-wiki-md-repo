@@ -147,10 +147,10 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 ### base 패키지 설치하기
 
-[pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 스크립트를 사용해 [base](https://www.archlinux.org/packages/?name=base) 패키지 그룹을 설치합니다.
+[pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 스크립트를 사용해 [base](https://www.archlinux.org/packages/?name=base) 패키지 그룹과 [linux](https://www.archlinux.org/packages/?name=linux) 커널 패키지 그룹, [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) 패키지 그룹을 설치합니다.
 
 ```
-# pacstrap /mnt base 
+# pacstrap /mnt base linux linux-firmware
 
 ```
 

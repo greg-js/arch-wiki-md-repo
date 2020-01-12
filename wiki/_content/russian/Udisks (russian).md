@@ -33,7 +33,7 @@
 
 Существует две версии *udisks* по имени [udisks](https://aur.archlinux.org/packages/udisks/) и [udisks2](https://www.archlinux.org/packages/?name=udisks2). Разработка *udisks* прекратилась в пользу *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) и *udisks-демон* ([udisks](https://aur.archlinux.org/packages/udisks/)) запускаются по требованию [D-Bus](/index.php/D-Bus "D-Bus") и не должны быть включены явно (см. [udisksd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) и [udisks-daemon()](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks-daemon.)). Ими можно управлять через командную строку с помощью *udisksctl* и *udisks*, соответственно. Для получения дополнительной информации смотрите [udisksctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) и [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8).
+[udisksd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) и *udisks-демон* ([udisks](https://aur.archlinux.org/packages/udisks/)) запускаются по требованию [D-Bus](/index.php/D-Bus "D-Bus") и не должны быть включены явно. Ими можно управлять через командную строку с помощью *udisksctl* и *udisks*, соответственно. Для получения дополнительной информации смотрите [udisksctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) и [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8).
 
 ## Настройка
 

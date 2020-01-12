@@ -140,7 +140,7 @@ $ prime-run vulkaninfo
 
 ```
 
-**Note:** Full power management of the dGPU in this configuration is still experimental, and available only for Turing-generation cards. Configuration to try this is available at [https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/powermanagement.html](https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/powermanagement.html).
+**Note:** Full power management of the dGPU in this configuration is still experimental, and available only for Turing-generation cards. Configuration to try this is available at [https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/dynamicpowermanagement.html](https://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/dynamicpowermanagement.html).
 
 ## Reverse PRIME
 

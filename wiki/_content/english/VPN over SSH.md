@@ -95,7 +95,7 @@ Also, you may manage tun interfaces with `ip tunnel` command.
 
 #### Creating interfaces in SSH command
 
-SSH can create both interfaces automatically, but you should configure IP and routing after the connection is established.
+SSH creates both interfaces automatically, but IP and routing should be configured after the connection is established.
 
 ```
 ssh \

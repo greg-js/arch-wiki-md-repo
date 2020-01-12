@@ -654,6 +654,7 @@ Occasionally touchpads will fail to work when the computer resumes from sleep or
 *   entering sleep mode again, and resuming again, or
 *   locating the correct kernel module, then removing it and inserting it again.
 *   blacklisting kernel module psmouse may be a permanent option (when the touchpad is handled by another module, eg i2c_designware_platform)
+*   adding the `psmouse.synaptics_intertouch=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") solves the issue permanently (Tested on T440s)
 
 **Note:** You can use Ctrl-Alt-F1 through F8 to switch to a console without using the mouse.
 

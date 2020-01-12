@@ -125,6 +125,8 @@ To allow members of group `wheel` sudo access:
 
 ```
 
+**Note:** When creating new administrators, it is often desirable to enable sudo access for the `wheel` group and [add the user to it](/index.php/Users_and_Groups#Other_examples_of_user_management "Users and Groups"), since by default [Polkit](/index.php/Polkit#Administrator_identities "Polkit") treats the members of the `wheel` group as administrators. If the user is not a member of `wheel`, Polkit (i.e. GUI dialogs) may ask for the root password for admin authentication instead of the user password.
+
 To disable asking for a password for user `USER_NAME`:
 
 **Warning:** This will let any process running with your user name to use sudo without asking for permission.

@@ -91,7 +91,7 @@ The [opensc-git](https://aur.archlinux.org/packages/opensc-git/) package provide
 Currently the default pkcs11 provider for Chrome is unsuitable (it asks PIN2 on authentication) (see [[3]](https://github.com/OpenSC/OpenSC/issues/1818)). Fix it by
 
 1.  deleting `~/.pki/nssdb/pkcs11.txt`
-2.  running `/usr/bin/pksc11-register -m /usr/lib/onepin-opensc-pkcs11.so`
+2.  running `/usr/bin/pkcs11-register -m /usr/lib/onepin-opensc-pkcs11.so`
 3.  and appending `-m /usr/lib/onepin-opensc-pkcs11.so` to the `Exec` line of `/etc/xdg/autostart/pkcs11-register.desktop`.
 
 ### Germany

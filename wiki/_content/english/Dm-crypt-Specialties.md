@@ -213,7 +213,7 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
 
 *   Keep in mind to use kernel device names for the network interface (e.g. `eth0`) and not [udev's](/index.php/Udev "Udev") ones (e.g. `enp1s0`), as those will not work.
 *   By default, Predictable Network Interface Names are activated and **change** the kernel device name during late boot. Use dmesg and look what your Network kernel module does to find the original name (e.g. `eth0`)
-*   It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
+*   It could be necessary to add the module for your [ethernet](/index.php/Network_configuration/Ethernet#Device_driver "Network configuration/Ethernet") or [wireless](/index.php/Network_configuration/Wireless#Device_driver "Network configuration/Wireless") network card to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
 
 ### Remote unlocking (hooks: systemd, systemd-tool)
 

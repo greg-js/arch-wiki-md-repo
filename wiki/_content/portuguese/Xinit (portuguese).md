@@ -85,7 +85,7 @@ Veja [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) para uma
 
 Alternativamente, se você deseja que o X seja exibido em um console separado daquele onde o servidor é invocado, você pode fazê-lo usando o wrapper do servidor X fornecido por `/usr/lib/systemd/systemd-multi-seat-x`. Por conveniência, *xinit* e *startx* podem ser configurados para usar este wrapper modificando seu `~/.xserverrc`.
 
-**Nota:** Para habilitar novamente o redirecionamento da saída da sessão X para o arquivo de log do Xorg, adicione a opção `-keeptty`. Veja [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg") para detalhes.
+**Nota:** Para habilitar novamente o redirecionamento da saída da sessão X para o arquivo de log do Xorg, adicione a opção `-keeptty`. Veja [Xorg#Redirecionamento quebrado](/index.php/Xorg_(Portugu%C3%AAs)#Redirecionamento_quebrado "Xorg (Português)") para detalhes.
 
 ## Uso
 
@@ -235,4 +235,4 @@ Veja também also [Gerenciador de exibição#Iniciando aplicativos sem um gerenc
 
 ### Faça redirecionamento usando startx
 
-Veja [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg") para detalhes.
+Veja [Xorg#Redirecionamento quebrado](/index.php/Xorg_(Portugu%C3%AAs)#Redirecionamento_quebrado "Xorg (Português)") para detalhes.

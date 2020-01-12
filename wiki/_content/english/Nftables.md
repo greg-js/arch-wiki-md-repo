@@ -364,7 +364,7 @@ ct:
 
 Individual rules can only be deleted by their handles. The `nft --handle list` command must be used to determine rule handles. Note the `--handle` switch, which tells `nft` to list handles in its output.
 
-The following determines the handle for a rule and then deletes it. The `--number` argument is useful for viewing some numeric output, like unresolved IP addresses.
+The following determines the handle for a rule and then deletes it. The `--numeric` argument is useful for viewing some numeric output, like unresolved IP addresses.
 
  `# nft --handle --numeric list chain inet filter input` 
 ```

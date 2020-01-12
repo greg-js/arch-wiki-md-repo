@@ -173,7 +173,7 @@ WantedBy=multi-user.target
 
 ##### macchanger
 
-Юнит [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), устанавливающий случайный адрес (префикс производителя остается тем же). Удостоверьтесь, что у вас [установлен](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [macchanger](https://www.archlinux.org/packages/?name=macchanger)):
+Юнит [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), устанавливающий случайный адрес (префикс производителя остается тем же). Удостоверьтесь, что у вас [установлен](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") пакет [macchanger](https://www.archlinux.org/packages/?name=macchanger)):
 
  `/etc/systemd/system/macspoof@.service` 
 ```

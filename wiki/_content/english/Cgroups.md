@@ -5,13 +5,19 @@ Related articles
 *   [Docker](/index.php/Docker "Docker")
 *   [limits.conf](/index.php/Limits.conf "Limits.conf")
 
-**cgroups** (abbreviated from **control groups**) is a Linux kernel feature to limit, police and account the resource usage for a set of processes. Compared to other approaches like the 'nice' command or `/etc/security/limits.conf`, cgroups are more flexible as they can operate on (sub)sets of processes (possibly with different system users) and support advanced features such as limiting processes to certain CPUs. When a cgroup gets closed all of its children will get closed as well.
+**Control groups** (or **cgroups** as they are commonly known) are a feature provided by the Linux kernel to manage, restrict, and audit groups of processes. Compared to other approaches like the [nice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nice.1) command or `/etc/security/limits.conf`, cgroups are more flexible as they can operate on (sub)sets of processes (possibly with different system users).
 
-[systemd](/index.php/Systemd "Systemd") uses groups in multiple ways:
+Control groups can be accessed with various tools:
 
-*   Every `.service` spawns its own cgroup
-*   Services are grouped under `.slice` and `.scope`
-*   cgroups are hierarchical, child groups can not acquire more resources than parent
+*   using directives in [systemd](/index.php/Systemd "Systemd") unit files to specify limits for services and slices;
+*   by accessing the `cgroup` filesystem directly;
+*   via tools like `cgcreate`, `cgexec` and `cgclassify` (part of the [libcgroup](https://aur.archlinux.org/packages/libcgroup/) package);
+*   using the "rules engine daemon" to automatically move certain users/groups/commands to groups (`/etc/cgrules.conf` and `/usr/lib/systemd/system/cgconfig.service`) (part of the [libcgroup](https://aur.archlinux.org/packages/libcgroup/) package); and
+*   through other software such as [Linux Containers](/index.php/Linux_Containers "Linux Containers") (LXC) virtualization.
+
+[cgmanager](https://www.archlinux.org/packages/?name=cgmanager) is [deprecated](https://github.com/lxc/cgmanager/issues/32) and unsupported as it does not work with systemd versions 232 and above.
+
+For Arch Linux systemd is the perferred and easiest method of invoking and configuring cgroups as it is a part of default installation.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -20,35 +26,42 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Information](#Information)
-        *   [2.1.1 Hierarchy](#Hierarchy)
-        *   [2.1.2 Find cgroup of a process](#Find_cgroup_of_a_process)
-        *   [2.1.3 cgroup resource usage](#cgroup_resource_usage)
-    *   [2.2 Custom cgroups](#Custom_cgroups)
-    *   [2.3 As service](#As_service)
-        *   [2.3.1 Service unit file](#Service_unit_file)
-        *   [2.3.2 Grouping unit under a slice](#Grouping_unit_under_a_slice)
-    *   [2.4 As root](#As_root)
-    *   [2.5 As unprivileged user](#As_unprivileged_user)
-        *   [2.5.1 Disabling cgroups v1](#Disabling_cgroups_v1)
-        *   [2.5.2 Controller types](#Controller_types)
-        *   [2.5.3 User Delegation](#User_Delegation)
-        *   [2.5.4 User defined slices](#User_defined_slices)
-    *   [2.6 Run-time adjustment](#Run-time_adjustment)
-*   [3 Examples](#Examples)
-    *   [3.1 Matlab](#Matlab)
-*   [4 See also](#See_also)
+*   [2 With systemd](#With_systemd)
+    *   [2.1 Hierarchy](#Hierarchy)
+    *   [2.2 Find cgroup of a process](#Find_cgroup_of_a_process)
+    *   [2.3 cgroup resource usage](#cgroup_resource_usage)
+    *   [2.4 Custom cgroups](#Custom_cgroups)
+    *   [2.5 As service](#As_service)
+        *   [2.5.1 Service unit file](#Service_unit_file)
+        *   [2.5.2 Grouping unit under a slice](#Grouping_unit_under_a_slice)
+    *   [2.6 As root](#As_root)
+    *   [2.7 As unprivileged user](#As_unprivileged_user)
+        *   [2.7.1 Disabling v1 cgroups](#Disabling_v1_cgroups)
+        *   [2.7.2 Controller types](#Controller_types)
+        *   [2.7.3 User Delegation](#User_Delegation)
+        *   [2.7.4 User-defined slices](#User-defined_slices)
+    *   [2.8 Run-time adjustment](#Run-time_adjustment)
+*   [3 With libcgroup](#With_libcgroup)
+    *   [3.1 Ad-hoc groups](#Ad-hoc_groups)
+    *   [3.2 Persistent group configuration](#Persistent_group_configuration)
+*   [4 With the cgroup virtual filesystem](#With_the_cgroup_virtual_filesystem)
+*   [5 Examples](#Examples)
+    *   [5.1 Matlab](#Matlab)
+        *   [5.1.1 With systemd](#With_systemd_2)
+        *   [5.1.2 With libcgroup](#With_libcgroup_2)
+*   [6 Documentation](#Documentation)
+*   [7 See also](#See_also)
 
 ## Installing
 
-cgroups are part of [Linux](/index.php/Linux "Linux") kernel and are controlled with [systemd](/index.php/Systemd "Systemd").
+Make sure you have one of these packages [installed](/index.php/Install "Install") for automated cgroup handling:
 
-## Configuration
+*   [systemd](https://www.archlinux.org/packages/?name=systemd) - for controlling resources of a systemd service.
+*   [libcgroup](https://aur.archlinux.org/packages/libcgroup/) - set of standalone tools (`cgcreate`, `cgclassify`, persistence via `cgconfig.conf`).
 
-### Information
+## With systemd
 
-#### Hierarchy
+### Hierarchy
 
 Current cgroup hierarchy can be seen with `systemctl status` or `systemd-cgls` command.
 
@@ -94,7 +107,7 @@ Current cgroup hierarchy can be seen with `systemctl status` or `systemd-cgls` c
 
 ```
 
-#### Find cgroup of a process
+### Find cgroup of a process
 
 The cgroup name of a process can be found in `/proc/*PID*/cgroup`.
 
@@ -106,7 +119,7 @@ For example, the cgroup of the shell:
 
 ```
 
-#### cgroup resource usage
+### cgroup resource usage
 
 The `systemd-cgtop` command can be used to see the resource usage:
 
@@ -177,7 +190,7 @@ Unprivileged users can divide the resources provided to them into new cgroups, i
 
 Version 1 cgroups must be disabled for a non-root user to be allowed to manage resources cgroups.
 
-#### Disabling cgroups v1
+#### Disabling v1 cgroups
 
 Arch Linux enables both v1 and v2 cgroups by default.
 
@@ -239,7 +252,7 @@ Reboot and verify that the slice your user session is under has cpu and io contr
 
 ```
 
-#### User defined slices
+#### User-defined slices
 
 The user slice files can be placed in `~/.config/systemd/user/`.
 
@@ -272,11 +285,170 @@ $ systemctl set-property user.slice IPAddressDeny=any
 
 ```
 
+## With libcgroup
+
+You can [enable](/index.php/Enable "Enable") the `cgconfig` service with systemd. This allows you to track any errors in `cgconfig.conf` more easily.
+
+### Ad-hoc groups
+
+One of the powers of cgroups is that you can create "ad-hoc" groups on the fly. You can even grant the privileges to create custom groups to regular users. `groupname` is the cgroup name:
+
+```
+# cgcreate -a *user* -t *user* -g memory,cpu:*groupname*
+
+```
+
+Now all the tunables in the group `groupname` are writable by your user:
+
+```
+$ ls -l /sys/fs/cgroup/memory/*groupname*
+total 0
+-rwxrwxr-x 1 user root 0 Sep 25 00:39 cgroup.event_control
+-rwxrwxr-x 1 user root 0 Sep 25 00:39 cgroup.procs
+-rwxrwxr-x 1 user root 0 Sep 25 00:39 cpu.rt_period_us
+-rwxrwxr-x 1 user root 0 Sep 25 00:39 cpu.rt_runtime_us
+-rwxrwxr-x 1 user root 0 Sep 25 00:39 cpu.shares
+-rwxrwxr-x 1 user root 0 Sep 25 00:39 notify_on_release
+-rwxrwxr-x 1 user root 0 Sep 25 00:39 tasks
+
+```
+
+Cgroups are hierarchical, so you can create as many subgroups as you like. If a normal user wants to run a `bash` shell under a new subgroup called `foo`:
+
+```
+$ cgcreate -g memory,cpu:**groupname/foo**
+$ **cgexec**    -g memory,cpu:groupname/foo **bash**
+
+```
+
+To make sure (only meaningful for legacy (v1) cgroups):
+
+```
+$ cat /proc/self/cgroup
+11:memory:/groupname/foo
+6:cpu:/groupname/foo
+
+```
+
+A new subdirectory was created for this group. To limit the memory usage of all processes in this group to 10 MB, run the following:
+
+```
+$ echo 10000000 > /sys/fs/cgroup/memory/groupname/foo/memory.limit_in_bytes
+
+```
+
+Note that the memory limit applies to RAM use only -- once tasks hit this limit, they will begin to swap. But it won't affect the performance of other processes significantly.
+
+Similarly you can change the CPU priority ("shares") of this group. By default all groups have 1024 shares. A group with 100 shares will get a ~10% portion of the CPU time:
+
+```
+$ echo 100 > /sys/fs/cgroup/cpu/groupname/foo/cpu.shares
+
+```
+
+You can find more tunables or statistics by listing the cgroup directory.
+
+You can also change the cgroup of already running processes. To move all 'bash' commands to this group:
+
+```
+$ pidof bash
+13244 13266
+$ **cgclassify** -g memory,cpu:groupname/foo `pidof bash`
+$ cat /proc/13244/cgroup
+11:memory:/groupname/foo
+6:cpu:/groupname/foo
+
+```
+
+### Persistent group configuration
+
+**Note:** when using [Systemd](/index.php/Systemd "Systemd") > = 205 to manage cgroups, you can ignore this file entirely.
+
+If you want your cgroups to be created at boot, you can define them in `/etc/cgconfig.conf` instead. For example, the "groupname" has a permission for `$USER` and *users* of group `$GROUP` to manage limits and add tasks. A *subgroup* "groupname/foo" group definitions would look like this:
+
+ `/etc/cgconfig.conf ` 
+```
+group **groupname** {
+  perm {
+# who can manage limits
+    admin {
+      uid = **$USER**;
+      gid = **$GROUP**;
+    }
+# who can add tasks to this group
+    task {
+      uid = **$USER**;
+      gid = **$GROUP**;
+    }
+  }
+# create this group in cpu and memory controllers
+  cpu { }
+  memory { }
+}
+
+group **groupname/foo** {
+  cpu {
+    **cpu.shares** = 100;
+  }
+  memory {
+    **memory.limit_in_bytes** = 10000000;
+  }
+}
+```
+
+**Note:**
+
+*   Comments should begin at the start of a line! The **#** character for comments must appear as the first character of a line. Else, *cgconfigparser* will have problem parsing it but will only report `cgroup change of group failed` as the error, unless you started *cgconfig* with [Systemd](/index.php/Systemd "Systemd")
+*   The permissions section is optional.
+*   The `/sys/fs/cgroup/` hierarchy directory containing all *controllers* sub-directories is already created and mounted at boot as a virtual file system. This gives the ability to create a new group entry with the `*$CONTROLLER-NAME { }*` command. If for any reason you want to create and mount hierachies in another place, you will then need to write a second entry in `/etc/cgconfig.conf` following this way :
+
+```
+ mount {    
+   cpuset = /your/path/*groupname*;
+ }
+
+```
+
+This is equivalent to these shell commands:
+
+```
+ # mkdir /your/path/*groupname*
+ # mount -t /your/path -o cpuset *groupname* /your/path/*groupname*
+
+```
+
+## With the cgroup virtual filesystem
+
+Starting with systemd 232, the *cgm* method described in the next section, this section will instead describe a manual method to limit memory usage.
+
+Create a new cgroup named *groupname*:
+
+```
+# mkdir /sys/fs/cgroup/memory/*groupname*
+
+```
+
+Example: set the maximum memory limit to 100MB:
+
+```
+# echo 100000000 > /sys/fs/cgroup/memory/*groupname*/memory.limit_in_bytes
+
+```
+
+Move a process to the cgroup (note: only one PID can be written at a time, repeat this for each process that must be moved):
+
+```
+# echo *pid* > /sys/fs/cgroup/memory/*groupname*/cgroup.procs
+
+```
+
 ## Examples
 
 ### Matlab
 
-Doing large calculations in [MATLAB](/index.php/MATLAB "MATLAB") can crash your system, because Matlab does not have any protection against taking all your machine's memory or CPU. The following example shows a *cgroup* that constrains Matlab to first 6 CPU cores and 5 GB of memory.
+Doing large calculations in [MATLAB](/index.php/MATLAB "MATLAB") can crash your system, because Matlab does not have any protection against taking all your machine's memory or CPU. The following examples show a *cgroup* that constrains Matlab to first 6 CPU cores and 5 GB of memory.
+
+#### With systemd
 
  `~/.config/systemd/user/matlab.slice` 
 ```
@@ -291,6 +463,48 @@ Launch Matlab like this (be sure to use the right path):
 $ systemd-run --user --slice=matlab.slice /opt/MATLAB/2012b/bin/matlab -desktop
 
 ```
+
+#### With libcgroup
+
+ `/etc/cgconfig.conf` 
+```
+group matlab {
+    perm {
+        admin {
+            uid = *username*;
+        }
+        task {
+            uid = *username*;
+        }
+    }
+
+    cpuset {
+        cpuset.mems="0";
+        cpuset.cpus="0-5";
+    }
+    memory {
+        memory.limit_in_bytes = 5000000000;
+    }
+}
+```
+
+Change `*username*` to the user Matlab is run as.
+
+You can also restrict the CPU share with the `cpu` constraint.
+
+Launch Matlab like this (be sure to use the right path):
+
+```
+$ cgexec -g memory,cpuset:matlab /opt/MATLAB/2012b/bin/matlab -desktop
+
+```
+
+## Documentation
+
+*   For information on controllers and what certain switches and tunables mean, refer to kernel's documentation [v1](https://www.kernel.org/doc/Documentation/cgroup-v1/) or [v2](https://www.kernel.org/doc/Documentation/cgroup-v2.txt) (or install linux-docs and see `/usr/src/linux/Documentation/cgroup`)
+*   A detailed and complete Resource Management Guide can be found in the [fedora project documentation](http://docs.fedoraproject.org/en-US/Fedora/17/html-single/Resource_Management_Guide/index.html#sec-How_Control_Groups_Are_Organized).
+
+For commands and configuration files, see relevant man pages, e.g. `man cgcreate` or `man cgrules.conf`
 
 ## See also
 

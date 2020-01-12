@@ -22,6 +22,7 @@ Related articles
     *   [4.5 GLFW](#GLFW)
     *   [4.6 GLEW](#GLEW)
     *   [4.7 EFL](#EFL)
+    *   [4.8 winit](#winit)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Gamma](#Gamma)
     *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
@@ -114,6 +115,10 @@ To use GLEW with the Wayland backend, install the [glew-wayland](https://www.arc
 ### EFL
 
 EFL has complete Wayland support. To run a EFL application on Wayland, see Wayland [project page](https://wayland.freedesktop.org/efl.html).
+
+### winit
+
+Winit is window handling library in Rust. It will default to the Wayland backend, but it is possible to override it to Xwayland by modifying an environment variable: `WINIT_UNIX_BACKEND=x11`.
 
 ## Troubleshooting
 

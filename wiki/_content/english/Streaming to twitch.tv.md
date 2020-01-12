@@ -80,7 +80,7 @@ into a terminal. While it is running, use **pavucontrol** to edit sound sources.
      QUALITY="ultrafast"  # one of the many FFMPEG preset
      AUDIO_RATE="44100"
      STREAM_KEY="$1" # use the terminal command Streaming streamkeyhere to stream your video to twitch or justin
-     SERVER="live-fra" # twitch server in frankfurt, see [http://bashtech.net/twitch/ingest.php](http://bashtech.net/twitch/ingest.php) for list
+     SERVER="live-fra" # twitch server in frankfurt, see [https://stream.twitch.tv/ingests/](https://stream.twitch.tv/ingests/) for list
 
      ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0 -f pulse -i 0 -f flv -ac 2 -ar $AUDIO_RATE \
        -vcodec libx264 -g $GOP -keyint_min $GOPMIN -b:v $CBR -minrate $CBR -maxrate $CBR -pix_fmt yuv420p\

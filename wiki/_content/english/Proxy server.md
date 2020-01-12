@@ -247,7 +247,7 @@ You may set the `all_proxy` environment variable to let curl and pacman (which u
 
 ## Proxy settings on GNOME3
 
-Some programs like [Chromium](/index.php/Chromium "Chromium") prefer to use the settings stored by gnome. These settings can be modified through the gnome-control-center front end and also through gsettings.
+Some programs like [Chromium](/index.php/Chromium "Chromium") and [Firefox](/index.php/Firefox "Firefox") can use the settings stored by GNOME. These settings can be modified through the gnome-control-center front end and also through *gsettings*.
 
 ```
 gsettings set org.gnome.system.proxy mode 'manual' 
@@ -257,11 +257,13 @@ gsettings set org.gnome.system.proxy.ftp host 'proxy.localdomain.com'
 gsettings set org.gnome.system.proxy.ftp port 8080
 gsettings set org.gnome.system.proxy.https host 'proxy.localdomain.com'
 gsettings set org.gnome.system.proxy.https port 8080
+gsettings set org.gnome.system.proxy.socks host 'proxy.localdomain.com'
+gsettings set org.gnome.system.proxy.socks port 8080
 gsettings set org.gnome.system.proxy ignore-hosts "['localhost', '127.0.0.0/8', '10.0.0.0/8', '192.168.0.0/16', '172.16.0.0/12' , '*.localdomain.com' ]"
 
 ```
 
-This configuration can also be set to automatically execute when [Network Manager](/index.php/NetworkManager#Proxy_settings "NetworkManager") connects to specific networks , by using the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/) from the [AUR](/index.php/AUR "AUR")
+This configuration can also be set to automatically execute when [NetworkManager](/index.php/NetworkManager#Proxy_settings "NetworkManager") connects to specific networks, by using the [proxydriver](https://aur.archlinux.org/packages/proxydriver/) package.
 
 ## Microsoft NTLM proxy
 

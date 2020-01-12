@@ -76,7 +76,7 @@ Geralmente, cada tarefa administrativa que você faria normalmente após uma nov
 
 Edite as listas de pacotes em `packages.x86_64` para indicar quais pacotes estão instalados na mídia live.
 
-**Nota:** Se você quiser usar um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") no Live CD, deverá adicionar os [drivers de vídeo](/index.php/Video_drivers "Video drivers") necessários e corretos, ou o gerenciador de janela poderá congelar durante o carregamento.
+**Nota:** Se você quiser usar um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") no Live CD, deverá adicionar os [drivers de vídeo](/index.php/Drivers_de_v%C3%ADdeo "Drivers de vídeo") necessários e corretos, ou o gerenciador de janela poderá congelar durante o carregamento.
 
 #### Repositório local personalizado
 

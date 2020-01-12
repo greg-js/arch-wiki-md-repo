@@ -204,6 +204,8 @@ To save more battery use [TLP](/index.php/TLP "TLP") package AND/OR [Powertop](/
 
 You can monitor the used power and also the temperature of your machine with the [s-tui](https://www.archlinux.org/packages/?name=s-tui) tool.
 
+To minimize the GPU's power consumption, make sure `i915` is correctly loading the firmware as described in [Intel graphics#Enable GuC / HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics").
+
 ## Touchpad
 
 ### Cursor Jump

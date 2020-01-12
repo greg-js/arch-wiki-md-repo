@@ -81,7 +81,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **Nota:** Questo permetterà ad altre persone di interrogare il proprio time server. E' necessario aggiungere `noserve` per fermare il serving time.
 
-La documentazione completa per l'opzione "restrict" è reperibile in [ntp_acc()](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.). Per istruzioni dettagliate vedere [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions).
+La documentazione completa per l'opzione "restrict" è reperibile in [ntp.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5). Per istruzioni dettagliate vedere [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions).
 
 La linea seguente serve ad indicare a *ntpd* cosa può attraversare il proprio server; la seguente riga è sufficiente se non si sta configurando un server NTP:
 

@@ -171,7 +171,7 @@ The `/boot` directory contains the kernel and ramdisk images as well as the boot
 
 **Note:**
 
-*   A separate `/boot` partition is only needed if your [boot loader](/index.php/Boot_loader "Boot loader") cannot access your root filesystem. For example, if the boot loader does not have a filesystem driver for it, or if `/` is on software [RAID](/index.php/RAID "RAID"), a [encrypted volume](/index.php/Dm-crypt "Dm-crypt") or a [LVM](/index.php/LVM "LVM") volume.
+*   A separate `/boot` partition is only required if your boot loader is not capable of accessing the `/boot` directory that resides in `/`. For example, if the boot loader does not support that file system or if your `/` is on a stacked block device (e.g. software [RAID](/index.php/RAID "RAID"), a [encrypted volume](/index.php/Dm-crypt "Dm-crypt") or a [LVM](/index.php/LVM "LVM") volume) and the boot loader does not have drivers for it. See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for more information on boot loader requirements and capabilities.
 *   If booting using an UEFI [boot loader](/index.php/Boot_loader "Boot loader") that does not have drivers for other file systems it is recommended to mount the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") to `/boot`. See [EFI system partition#Mount the partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") for more information.
 
 A suggested size for `/boot` is 200 MiB unless you are using [EFI system partition](/index.php/EFI_system_partition "EFI system partition") as `/boot`, in which case at least 260 MiB is recommended.

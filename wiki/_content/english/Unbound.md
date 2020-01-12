@@ -328,7 +328,7 @@ access-control: 192.168.1.0/24 allow
 
 ### Forwarding using DNS over TLS
 
-To use this feature you will need to specify `tls-cert-bundle` option that points to the local system's root certificate authority bundle, allow unbound to forward TLS requests and also specify any number of servers that allow DNS of TLS.
+To use [DNS over TLS](/index.php/DNS_over_TLS "DNS over TLS"), you will need to specify `tls-cert-bundle` option that points to the local system's root certificate authority bundle, allow unbound to forward TLS requests and also specify any number of servers that allow DNS of TLS.
 
 For each server you will need to specify that the connection port using @, and you will also need to indicate which is its domain name with #. Even though it looks like an comment the hashtag name allows for the TLS authentication name to be set for stub-zones and with `unbound-control forward control` command. There should not be any spaces between the @ and # markups.
 

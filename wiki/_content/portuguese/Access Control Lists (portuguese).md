@@ -1,6 +1,6 @@
 **Status de tradução:** Esse artigo é uma tradução de [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists"). Data da última tradução: 2019-11-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Access_Control_Lists&diff=0&oldid=589489) na versão em inglês.
 
-[Lista de controle de acesso](https://en.wikipedia.org/wiki/pt:Lista_de_controle_de_acesso "wikipedia:pt:Lista de controle de acesso") (ACL, do inglês "Access Control List") fornece um mecanismo de permissão adicional e mais flexível para [sistemas de arquivos](/index.php/File_systems "File systems"). Ele foi projetado para ajudar com as permissões de arquivo UNIX. A ACL permite conceder permissões para qualquer usuário ou grupo a qualquer recurso de disco.
+[Lista de controle de acesso](https://en.wikipedia.org/wiki/pt:Lista_de_controle_de_acesso "wikipedia:pt:Lista de controle de acesso") (ACL, do inglês "Access Control List") fornece um mecanismo de permissão adicional e mais flexível para [sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos"). Ele foi projetado para ajudar com as permissões de arquivo UNIX. A ACL permite conceder permissões para qualquer usuário ou grupo a qualquer recurso de disco.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

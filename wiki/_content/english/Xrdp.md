@@ -44,10 +44,10 @@ You may need to install [xorg-xrdb](https://www.archlinux.org/packages/?name=xor
 
 ### Running with Vino (Gnome VNC-Server for root session)
 
-Enable the server to be seen via vino-preferences. Since vino defaults to port : 5900 for connections, we will edit the xrdp configuration file to understand this. Append the vino session to xrdp's configuration file (/etc/xrdp/xrdp.ini) with the following code :
+Enable the server to be seen via vino-preferences. Since vino defaults to port 5900 for connections, we will edit the xrdp configuration file to understand this. Append the vino session to xrdp's configuration file:
 
+ `/etc/xrdp/xrdp.ini` 
 ```
-# echo "
 [xrdp8]
 name=Vino-Session
 lib=libvnc.so
@@ -55,7 +55,19 @@ username=ask
 password=ask
 ip=127.0.0.1
 port=5900
-" >> "/etc/xrdp/xrdp.ini"
+```
+
+If you encounter VNC connection errors, it may be because `vino-server` defaults to accepting only TLS connections. This must be changed to standard VNC authentication so that `xrdp` may connect:
+
+```
+gsettings set org.gnome.Vino require-encryption false
+
+```
+
+You can also restrict `vino-server` to only listen on the loopback interface:
+
+```
+gsettings set org.gnome.Vino network-interface lo
 
 ```
 

@@ -455,7 +455,7 @@ Al instalar un paquete, es posible forzar su motivo de instalación a *dependenc
 
 ```
 
-**Sugerencia:** la instalación de dependencias opcionales con `--asdeps` lo hará de tal manera que si [eliminan paquetes huérfanos](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol)#Eliminación_de_paquetes_no_utilizados_(huérfanos) "Pacman/Tips and tricks (Español)"), *pacman* también eliminará las dependencias opcionales de ellos.
+**Sugerencia:** la instalación de dependencias opcionales con `--asdeps` lo hará de tal manera que si [eliminan paquetes huérfanos](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol)#Eliminar_paquetes_no_utilizados_(huérfanos) "Pacman/Tips and tricks (Español)"), *pacman* también eliminará las dependencias opcionales de ellos.
 
 Cuando se **re**instala un paquete, no obstante, el motivo de instalación establecido se conserva de forma predeterminada.
 

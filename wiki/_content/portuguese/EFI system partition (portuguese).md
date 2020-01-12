@@ -1,5 +1,3 @@
-au
-
 **Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=589005) na versão em inglês.
 
 Artigos relacionados
@@ -51,7 +49,7 @@ Para descobrir o esquema de partição de disco e a partição do sistema, use [
 O comando retorna:
 
 *   A tabela de partições do disco: indica `Tipo de rótulo do disco: gpt` se a tabela de partições for [GPT](/index.php/GPT "GPT") ou `Tipo de rótulo do disco: dos` se for [MBR](/index.php/MBR "MBR").
-*   A lista de partições no disco: Procure a partição do sistema EFI na lista, é uma partição pequena (normalmente cerca de 100–550 MiB) com um tipo `Sistema EFI` ou `EFI (FAT-12/16/32)`. Para confirmar isso é a ESP, [monte](/index.php/Mount "Mount") e verifique se ela contém um diretório chamado `EFI`, se contiver é definitivamente a ESP.
+*   A lista de partições no disco: Procure a partição do sistema EFI na lista, é uma partição pequena (normalmente cerca de 100–550 MiB) com um tipo `Sistema EFI` ou `EFI (FAT-12/16/32)`. Para confirmar isso é a ESP, [monte](/index.php/Monte "Monte") e verifique se ela contém um diretório chamado `EFI`, se contiver é definitivamente a ESP.
 
 **Dica:** Para descobrir se é um sistema de arquivos FAT12, FAT16 ou FAT32, use `minfo` a partir de [mtools](https://www.archlinux.org/packages/?name=mtools).
 ```
@@ -100,7 +98,7 @@ Continue com a seção [#Formatar a partição](#Formatar_a_partição) abaixo.
 
 A especificação UEFI determina o suporte para os sistemas de arquivos FAT12, FAT16 e FAT32[[4]](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485). Para evitar possíveis problemas com outros sistemas operacionais e também porque a especificação UEFI apenas exige suporte a FAT16 e FAT12 em mídia removível[[5]](https://uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1345080), recomenda-se usar o FAT32.
 
-Após criar a partição, [formate](/index.php/Format "Format")-a como [FAT32](/index.php/FAT32 "FAT32"). Para usar o utilitário `mkfs.fat`, [instale](/index.php/Instale "Instale") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
+Após criar a partição, [formate](/index.php/Formate "Formate")-a como [FAT32](/index.php/FAT32 "FAT32"). Para usar o utilitário `mkfs.fat`, [instale](/index.php/Instale "Instale") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
 
 ```
 # mkfs.fat -F32 /dev/sd*xY*
@@ -117,8 +115,8 @@ Os kernels, os arquivos initramfs e, na maioria dos casos, o [microcódigo](/ind
 
 Os cenários mais simples para montar uma partição de sistema EFI são:
 
-*   [montar](/index.php/Mount "Mount") a ESP em `/efi` e usar um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") que tem um driver para seu sistema de arquivos raiz (p.ex., [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)"), [rEFInd](/index.php/REFInd "REFInd")).
-*   [montar](/index.php/Mount "Mount") a ESP em `/boot`. Esse é o método preferível ao inicializar diretamente um kernel de [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)") do UEFI.
+*   [montar](/index.php/Monta "Monta") a ESP em `/efi` e usar um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") que tem um driver para seu sistema de arquivos raiz (p.ex., [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)"), [rEFInd](/index.php/REFInd "REFInd")).
+*   [montar](/index.php/Monta "Monta") a ESP em `/boot`. Esse é o método preferível ao inicializar diretamente um kernel de [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)") do UEFI.
 
 **Dica:**
 
@@ -155,7 +153,7 @@ nls_iso8859-1
 
 #### Usando montagem com bind
 
-Em vez de montar o próprio ESP para `/boot`, você pode montar um diretório do ESP para `/boot` usando uma [montagem](/index.php/Mount "Mount") "bind" (consulte [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). Isto permite que [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") atualize o kernel diretamente enquanto mantém a ESP organizada ao seu gosto.
+Em vez de montar o próprio ESP para `/boot`, você pode montar um diretório do ESP para `/boot` usando uma [montagem](/index.php/Monta "Monta") "bind" (consulte [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). Isto permite que [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") atualize o kernel diretamente enquanto mantém a ESP organizada ao seu gosto.
 
 **Nota:**
 

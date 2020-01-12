@@ -127,7 +127,7 @@ bsdtar xC matlab -f matlab_R2019a_glnxa64.zip
 Make sure you check all the boxes of the toolboxes you would need, and wait until the download is finished. Make sure not to close the installer. You can locate the downloaded files:
 
 ```
-sudo find /tmp -name "twm*"
+sudo find /tmp -name "tmw*"
 
 ```
 
@@ -135,7 +135,7 @@ or
 
 ```
 cd /tmp
-ls | grep twm
+ls | grep tmw
 
 ```
 

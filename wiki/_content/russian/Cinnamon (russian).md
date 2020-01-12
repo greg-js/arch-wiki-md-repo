@@ -14,7 +14,11 @@
 
 Размещение элементов рабочего стола схоже с той, которое предоставляла панель GNOME (GNOME 2), однако, лежащая в основе технология была взята из GNOME Shell (GNOME 3). Начиная с версии 2.0, Cinnamon стал самостоятельной средой рабочего стола, а не просто оболочкой для GNOME, как GNOME Shell и Unity.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Запуск Cinnamon](#Запуск_Cinnamon)
@@ -45,7 +49,7 @@
 
 ## Установка
 
-Cinnamon можно [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") с пакетом [cinnamon](https://www.archlinux.org/packages/?name=cinnamon), доступном в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Чтобы установить дополнительные темы, апплеты и расширения, вы можете добавить [неофициальный репозиторий Cinnamon](/index.php/Unofficial_user_repositories#cinnamon "Unofficial user repositories") в ваш `pacman.conf`.
+Cinnamon можно [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") с пакетом [cinnamon](https://www.archlinux.org/packages/?name=cinnamon), доступном в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Чтобы установить дополнительные темы, апплеты и расширения, вы можете добавить [неофициальный репозиторий Cinnamon](/index.php/Unofficial_user_repositories#cinnamon "Unofficial user repositories") в ваш `pacman.conf`.
 
 ## Запуск Cinnamon
 

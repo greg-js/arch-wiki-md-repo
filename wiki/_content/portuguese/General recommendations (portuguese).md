@@ -172,7 +172,7 @@ Essa seção fornece orientação para usuários interessados em usar aplicativo
 
 ### Drivers de exibição
 
-O driver de vídeo *vesa* padrão vai funcionar com a maioria das placas de vídeo, porém o desempenho pode ser drasticamente melhorado e recursos adicionais aproveitados instalando o driver apropriado para produtos [AMD](/index.php/Xorg#AMD "Xorg"), [Intel](/index.php/Intel_(Portugu%C3%AAs) "Intel (Português)") ou [NVIDIA](/index.php/NVIDIA "NVIDIA").
+O driver de vídeo *vesa* padrão vai funcionar com a maioria das placas de vídeo, porém o desempenho pode ser drasticamente melhorado e recursos adicionais aproveitados instalando o driver apropriado para produtos [AMD](/index.php/Xorg_(Portugu%C3%AAs)#AMD "Xorg (Português)"), [Intel](/index.php/Intel_(Portugu%C3%AAs) "Intel (Português)") ou [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 ### Ambientes gráficos
 

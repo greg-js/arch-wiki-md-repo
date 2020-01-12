@@ -11,6 +11,9 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setup](#Setup)
+    *   [1.1 Add Repo](#Add_Repo)
+    *   [1.2 Install Kernel](#Install_Kernel)
+    *   [1.3 Update Boot Loader Config](#Update_Boot_Loader_Config)
 *   [2 Kernels and related packages](#Kernels_and_related_packages)
 *   [3 Selecting the correct CPU optimized package](#Selecting_the_correct_CPU_optimized_package)
     *   [3.1 Speed benefits of CPU optimized packages](#Speed_benefits_of_CPU_optimized_packages)
@@ -20,6 +23,8 @@ Related articles
     *   [4.3 Error: signature from graysky is unknown trust](#Error:_signature_from_graysky_is_unknown_trust)
 
 ## Setup
+
+### Add Repo
 
 Add the repo to `/etc/pacman.conf` under the Arch [official repositories](/index.php/Official_repositories "Official repositories"):
 
@@ -37,10 +42,23 @@ Server = http://repo-ck.com/$arch
 
 ```
 
-Update your sync database and install the chosen kernel variant:
+### Install Kernel
+
+Update your sync database and install the chosen kernel variant (see [below](#Kernels_and_related_packages) for available variants):
 
 ```
 # pacman -Syu linux-ck
+
+```
+
+### Update Boot Loader Config
+
+**Warning:** This can mess up your system! Make sure that you understand what you are doing!
+
+If you are using grub with a common setup, then you can update its config by running this command:
+
+```
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 

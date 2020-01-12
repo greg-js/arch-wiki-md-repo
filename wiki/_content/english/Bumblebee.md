@@ -881,7 +881,7 @@ The other solution is to remove the config file provided by nvidia-utils.
 
 ### Framerate drops to 1 FPS after a fixed period of time
 
-With the nvidia 440.36 driver, the [DPMS setting is enabled by default](https://devtalk.nvidia.com/default/topic/1067676/linux/440-36-with-bumblebee-drops-to-1-fps-after-running-for-10-minutes/post/5409047/#5409047) resulting in a timeout after a fixed period of time (e.g. 10 minutes) which causes the frame rate to throttle down to 1 FPS. To work around this, add the following line to the "Screen" section in `/etc/bumblebee/xorg.cong.nvidia`
+With the nvidia 440.36 driver, the [DPMS setting is enabled by default](https://devtalk.nvidia.com/default/topic/1067676/linux/440-36-with-bumblebee-drops-to-1-fps-after-running-for-10-minutes/post/5409047/#5409047) resulting in a timeout after a fixed period of time (e.g. 10 minutes) which causes the frame rate to throttle down to 1 FPS. To work around this, add the following line to the "Device" section in `/etc/bumblebee/xorg.conf.nvidia`
 
  `Option "HardDPMS" "false"` 
 

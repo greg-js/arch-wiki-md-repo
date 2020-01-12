@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [Sistemas de arquivos](/index.php/File_systems "File systems")
+*   [{{{2}}}](/index.php/Sistemas_de_arquivos "Sistemas de arquivos")
 *   [Ext3](/index.php/Ext3 "Ext3")
 
 De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
@@ -183,7 +183,7 @@ Nas etapas a seguir, `/dev/sdxX` denota o caminho para a partição a ser conver
 2.  Edite `/etc/fstab` e altere o 'type' de ext3 para ext4 para quaisquer partições que serão convertidos para ext4.
 3.  Inicialize uma mídia *Live* (se necessário). O processo de conversão com [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) deve ser feito quando a unidade não está montada. Se estiver convertendo uma partição raiz, a forma mais simples de alcançar isso é inicializar de alguma outra mídia *Live*.
 4.  Certifique-se que a partição *não* está montada.
-5.  Se você quiser converter uma partição ext2, a primeira etapa de conversão é adicionar um [journal](/index.php/File_systems#Journaling "File systems") executando `tune2fs -j /dev/sdxX` como root; fazendo dela uma partição ext3.
+5.  Se você quiser converter uma partição ext2, a primeira etapa de conversão é adicionar um [journal](/index.php/Sistemas_de_arquivos#Journaling "Sistemas de arquivos") executando `tune2fs -j /dev/sdxX` como root; fazendo dela uma partição ext3.
 6.  Execute `tune2fs -O extent,uninit_bg,dir_index /dev/sdxX` como root. Esse comando converte o sistema de arquivos ext3 para ext4 (irreversivelmente).
 7.  Execute `fsck -f /dev/sdxX` como root.
     *   Esta etapa é necessário, do contrário o sistema de arquivos **ficará ilegível**. A execução de *fsck* é necessária para retornar o sistema de arquivos para um estado consistente. Ele vai encontrar erros de soma de verificação nos descritores de grupo - isso é esperado. A opção `-f` pede que o *fsck* verifique mesmo se o sistema de arquivos parecer limpo. A opção `-p` pode ser usada sobre a "reparação automática" (do contrário, o usuário será solicitado inserir para cada erro).

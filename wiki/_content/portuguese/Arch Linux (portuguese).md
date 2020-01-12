@@ -35,7 +35,7 @@ De uma forma similar, Arch provê os arquivos de configurações fornecidos pelo
 
 O Arch Linux se empenha em oferecer as últimas versões estáveis de seus pacotes desde que quebra sistemática de pacote possa ser razoavelmente evitado. Ele é baseado em um sistema de [rolling-release](https://en.wikipedia.org/wiki/pt:Rolling_release "wikipedia:pt:Rolling release"), que permite uma única instalação e upgrades contínuos.
 
-O Arch incorpora muitas das mais novas funcionalidades disponíveis para os usuários do GNU/Linux, incluindo o sistema de inicialização [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), [sistemas de arquivos](/index.php/File_systems "File systems") modernos, LVM2, RAID via software, suporte ao udev e initcpio (com [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")), bem como os últimos kernels.
+O Arch incorpora muitas das mais novas funcionalidades disponíveis para os usuários do GNU/Linux, incluindo o sistema de inicialização [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), [sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos") modernos, LVM2, RAID via software, suporte ao udev e initcpio (com [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")), bem como os últimos kernels.
 
 ### Pragmatismo
 

@@ -3,7 +3,7 @@
 *   [pacman-key (简体中文)](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman-key (简体中文)")
 *   [Official Repositories (简体中文)](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Unofficial_user_repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2020-1-2，点击[这里](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&diff=0&oldid=593380)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Unofficial_user_repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2020-1-10，点击[这里](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&diff=0&oldid=594158)可以查看翻译后英文页面的改动。
 
 这篇文章列出了由社区创建的自由共享二进制软件包的软件仓库，其中很多的包都是由[AUR](/index.php/AUR "AUR")中可以找到的PKGBUILD文件预编译打包而成。
 
@@ -261,8 +261,8 @@ Server = https://repo.herecura.be/$repo/$arch
 
 ### chaotic-aur
 
-*   **维护者:** [PedroHLC](https://github.com/pedrohlc)
-*   **描述:** 自动构建维护者使用的AUR软件包，每小时更新一次（有一些每天更新一次）。托管在巴西圣卡洛斯。在德国有镜像。 Only x86_64。拥有1400多个包。
+*   **维护者:** [PedroHLC](https://github.com/pedrohlc), and [Librewish](https://github.com/librewish)
+*   **描述:** 自动构建维护者使用的AUR软件包，每小时更新一次（有一些每天更新一次）。托管在巴西圣卡洛斯。在德国和美国有镜像。 Only x86_64。拥有1600多个包。
 *   **Key-ID:** [[1]](http://pool.sks-keyservers.net/pks/lookup?search=0x3056513887B78AEB&fingerprint=on&op=index), fingerprint `EF92 5EA6 0F33 D0CB 85C4 4AD1 3056 5138 87B7 8AEB`
 *   **Note:** See [maintainer's notes](https://lonewolf.pedrohlc.com/chaotic-aur).
 
@@ -270,6 +270,7 @@ Server = https://repo.herecura.be/$repo/$arch
 [chaotic-aur]
 Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
 Server = http://chaotic.bangl.de/$repo/x86_64
+Server = https://repo.kitsuna.net/x86_64
 
 ```
 
@@ -981,7 +982,7 @@ Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
 ### aur-av-bin
 
 *   **维护者:** [milkii](https://aur.archlinux.org/account/milk/) (ping me on Freenode)
-*   **描述:** 预编译的 Arch Linux 二进制软件包，主要包含来自 AUR 的与 A/V 相关的软件。
+*   **描述:** 预编译的 Arch Linux 二进制软件包，主要包含来自 AUR 的与音频及音乐相关的软件。
 *   **Upstream page:** [https://github.com/mxmilkb/aur-av-bin](https://github.com/mxmilkb/aur-av-bin)
 
 ```

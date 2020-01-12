@@ -61,12 +61,12 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 3\. Install the appropriate driver for your card:
 
-*   For GeForce 600-900 and Quadro/Tesla/Tegra K-series cards and newer [NVE0, NV110 and NV130 family cards from around 2010-2019], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
+*   For GeForce 630-900 and Quadro/Tesla/Tegra K-series cards and newer [NVE0, NV110 and NV130 family cards from around 2010-2019], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
 
 *   If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support.
 *   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](https://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
 
-*   For GeForce 400/500 series cards [NVCx and NVDx] from around 2010-2011, [install](/index.php/Install "Install") the [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) or [nvidia-390xx-lts](https://www.archlinux.org/packages/?name=nvidia-390xx-lts) package.
+*   For GeForce 400/500/600 series cards [NVCx and NVDx] from around 2010-2011, [install](/index.php/Install "Install") the [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) or [nvidia-390xx-lts](https://www.archlinux.org/packages/?name=nvidia-390xx-lts) package.
 
 *   For even older cards (released in 2010 or earlier), have a look at [#Unsupported drivers](#Unsupported_drivers).
 

@@ -192,7 +192,7 @@ On Evolution, click on File > New > Address Book . Choose Google as type and add
 
 ## Microsoft Exchange and Office 365
 
-If your email is locally hosted on a Microsoft Exchange Server or cloud hosted on Office 365 you can access POP, IMAP and SMTP to access your email. However, some additional features such as access to Outlook Calendar and contact management are only available if you connect to the Microsoft Exchange Server or Office 365 server using Microsoft’s proprietary [Exchange ActiveSync protocol](https://en.wikipedia.org/wiki/Exchange_ActiveSync/).
+If your email is locally hosted on a Microsoft Exchange Server or cloud hosted on Office 365 you can access POP, IMAP and SMTP to access your email. However, some additional features such as access to Outlook Calendar and contact management are only available if you connect to the Microsoft Exchange Server or Office 365 server using Microsoft’s proprietary [Exchange ActiveSync protocol](https://en.wikipedia.org/wiki/Exchange_ActiveSync/ "wikipedia:Exchange ActiveSync/").
 
 To use Exchange ActiveSync protol you need to install [gnome-online-accounts](https://www.archlinux.org/packages/?name=gnome-online-accounts) and [evolution-ews](https://www.archlinux.org/packages/?name=evolution-ews).
 

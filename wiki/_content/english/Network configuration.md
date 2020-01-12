@@ -291,7 +291,7 @@ To temporarily set the hostname (until reboot), use [hostname(1)](https://jlk.fj
 
 ```
 
-To set the "pretty" hostname and other machine metadata, see [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%26%2358%3B%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
+To set the "pretty" hostname and other machine metadata, see [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5).
 
 ### Local hostname resolution
 

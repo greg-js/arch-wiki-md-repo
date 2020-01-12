@@ -282,7 +282,7 @@ GRUB also has special support for booting with an encrypted `/boot`. This is don
 
 **Note:** `/boot` is **not** required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
 
-**Warning:** GRUB does not support LUKS2 headers; see [GRUB bug #55093](https://savannah.gnu.org/bugs/?55093). Make sure to specify `--type luks1` when creating the encrypted partition using `cryptsetup luksFormat`.
+**Warning:** GRUB only supports LUKS2 headers (but not with Argon2i or Argon2id PBKDFs) in git master; see [GRUB bug #55093](https://savannah.gnu.org/bugs/?55093). Make sure to specify `--type luks1` when creating the encrypted partition using `cryptsetup luksFormat`.
 
 To enable this feature encrypt the partition with `/boot` residing on it using [LUKS](/index.php/LUKS "LUKS") as normal. Then add the following option to `/etc/default/grub`:
 

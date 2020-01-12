@@ -36,7 +36,7 @@ Fan control can bring various benefits to your system, such as quieter working s
     *   [6.1 Kernel modules](#Kernel_modules)
         *   [6.1.1 asus-nb-wmi](#asus-nb-wmi)
         *   [6.1.2 asus_fan](#asus_fan)
-    *   [6.2 Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig)
+    *   [6.2 Generate config file with pwmconfig](#Generate_config_file_with_pwmconfig)
 *   [7 AMDGPU sysfs fan control](#AMDGPU_sysfs_fan_control)
     *   [7.1 Configuration of manual control](#Configuration_of_manual_control)
     *   [7.2 amdgpu-fan](#amdgpu-fan)
@@ -352,7 +352,7 @@ Below are the commands to control it. Check if you have any controls over your f
 
 ```
 
-If you were able to modify fan speed with above commands, then continue with [#Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig).
+If you were able to modify fan speed with above commands, then continue with [#Generate config file with pwmconfig](#Generate_config_file_with_pwmconfig).
 
 #### asus_fan
 
@@ -388,9 +388,9 @@ asus_fan
 
 ```
 
-Continue with [#Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig).
+Continue with [#Generate config file with pwmconfig](#Generate_config_file_with_pwmconfig).
 
-### Generate config file with pmwconfig
+### Generate config file with pwmconfig
 
 If you get an error `There are no working fan sensors, all readings are 0` while generating config file with `pwmconfig`, open first console and execute:
 

@@ -49,7 +49,7 @@ An example prepare-function:
 
 ```
 prepare() {
-    cd $pkgname-$pkgver
+    cd "$pkgname-$pkgver"
     patch --forward --strip=1 --input="${srcdir}/eject.patch"
 }
 ```

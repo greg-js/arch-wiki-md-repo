@@ -182,7 +182,7 @@ set -xU LESS_TERMCAP_us (printf "\e[01;32m")      # begin underline
 
 Утилита most выполняет ту же задачу, что less и *more*, но имеет меньший набор возможностей. Настройка цветов для most проще, однако требуется дополнительная настройка для того, чтобы most работал наподобие less.
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [most](https://www.archlinux.org/packages/?name=most), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") пакет [most](https://www.archlinux.org/packages/?name=most), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 В файле `/etc/man_db.conf` раскомментируйте параметр `pager` и установите ему значение `most -s`:
 
@@ -300,7 +300,7 @@ man:<name>
 
 ```
 
-Кроме того, вы можете [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") следующие пакеты из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"):
+Кроме того, вы можете [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") следующие пакеты из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"):
 
 1\. [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) для просмотра страниц в [X](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 

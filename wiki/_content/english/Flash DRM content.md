@@ -1,10 +1,14 @@
-DRM content on Flash still requires HAL to play. This is apparent for example with WatchESPN, HBO GO, or Demand 5 (Channel 5 UK). If you attempt to play a DRM-protected content without HAL, you may see the following error: `an error occurred and your player could not be updated`.
+DRM content on Flash still requires HAL to play. If you attempt to play a DRM-protected content without HAL, you may see the following error: `an error occurred and your player could not be updated`.
 
 To deliver DRM-protected content, Flash calls several functions provided by the HAL daemon and its libraries. While Flash-based players remain popular, HAL has been deprecated and is not commonly installed on newer systems. To provide the necessary HAL functionality on such systems, you can either install the full HAL package and run the HAL daemon or install a modified HAL library "stub" that uses the modern UDisks daemon instead.
 
 **Warning:** The NPAPI plugin [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) supported DRM until version 11.2.202.644\. The PPAPI [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) has never supported DRM at all. As of May 2017, there is no known way to use Flash DRM content with the current versions both plugins.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Using the HAL package](#Using_the_HAL_package)
     *   [1.1 Running the HAL daemon](#Running_the_HAL_daemon)

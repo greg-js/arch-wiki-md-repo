@@ -28,7 +28,7 @@ Arch Linux би трябвало да работи на всяка [x86_64](http
 *   [3 Настройване на системата](#Настройване_на_системата)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
-    *   [3.3 Времева зона](#Времева_зона)
+    *   [3.3 Часова зона](#Часова_зона)
     *   [3.4 Локализиране](#Локализиране)
     *   [3.5 Настройване на мрежи](#Настройване_на_мрежи)
     *   [3.6 Initramfs](#Initramfs)
@@ -206,14 +206,14 @@ $ pacman-key -v archlinux-*version*-x86_64.iso.sig
 
 ### Инсталиране на основни пакети
 
-Използвайте скрипта [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) за да инсталирате групата [base](https://www.archlinux.org/packages/?name=base) пакети:
+Използвайте скрипта [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) за да инсталирате групата [base](https://www.archlinux.org/packages/?name=base) пакети и Линукс [ядрото](/index.php/Kernel "Kernel"):
 
 ```
-# pacstrap /mnt base
+# pacstrap /mnt base linux linux-firmware
 
 ```
 
-Тази група не включва всичко налично на “живата“ инсталация, като [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) или определени безжични фърмуеари; вижте [включените пакети](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) за сравнение.
+Тази група не включва всичко налично на “живата“ инсталация, като [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) или определени безжични фърмуери; вижте [включените пакети](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) за сравнение.
 
 За да [инсталирате](/index.php/Install "Install") пакети и други групи като [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), добавете имената им след *pacstrap* (разделени с интервал) или с индивидуални [pacman](/index.php/Pacman "Pacman") команди след стъпката [#Chroot](#Chroot).
 
@@ -239,9 +239,9 @@ $ pacman-key -v archlinux-*version*-x86_64.iso.sig
 
 ```
 
-### Времева зона
+### Часова зона
 
-Настройте [времевата зона](/index.php/Time_zone "Time zone") с:
+Настройте [часовата зона](/index.php/Time_zone "Time zone") с:
 
 ```
 # ln -sf /usr/share/zoneinfo/*Region*/*City* /etc/localtime

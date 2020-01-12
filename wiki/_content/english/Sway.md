@@ -19,17 +19,19 @@
     *   [3.4 Input devices](#Input_devices)
     *   [3.5 HiDPI](#HiDPI)
     *   [3.6 Custom keybindings](#Custom_keybindings)
-    *   [3.7 Xresources](#Xresources)
-    *   [3.8 Run programs natively under Wayland (without XWayland support)](#Run_programs_natively_under_Wayland_(without_XWayland_support))
+    *   [3.7 Floating windows](#Floating_windows)
+    *   [3.8 Xresources](#Xresources)
+    *   [3.9 Run programs natively under Wayland (without XWayland support)](#Run_programs_natively_under_Wayland_(without_XWayland_support))
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostart on login](#Autostart_on_login)
-    *   [4.2 Backlight toggle](#Backlight_toggle)
-    *   [4.3 Screen capture](#Screen_capture)
-    *   [4.4 Control swaynag with the keyboard](#Control_swaynag_with_the_keyboard)
-    *   [4.5 Change cursor theme and size](#Change_cursor_theme_and_size)
+    *   [4.2 Enable CapsLock/NumLock](#Enable_CapsLock/NumLock)
+    *   [4.3 Backlight toggle](#Backlight_toggle)
+    *   [4.4 Screen capture](#Screen_capture)
+    *   [4.5 Control swaynag with the keyboard](#Control_swaynag_with_the_keyboard)
+    *   [4.6 Change cursor theme and size](#Change_cursor_theme_and_size)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Application launchers](#Application_launchers)
-    *   [5.2 VirtualBox](#VirtualBox)
+    *   [5.2 Virtualization](#Virtualization)
     *   [5.3 Sway socket not detected](#Sway_socket_not_detected)
     *   [5.4 Unable to retrieve socket path](#Unable_to_retrieve_socket_path)
     *   [5.5 Keybindings and keyboard layouts](#Keybindings_and_keyboard_layouts)
@@ -184,6 +186,33 @@ bindsym XF86AudioPrev exec playerctl previous
 
 To control brightness you can use [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) or [light](https://www.archlinux.org/packages/?name=light). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight").
 
+### Floating windows
+
+To enable floating windows or window assignments, open the application and then use the `app_id`, the `class`, the `instance` and the `title` attributes to enable floating windows/window assignments. The following command will list the properties of all the open windows.
+
+```
+$ swaymsg -t get_tree
+
+```
+
+To get only the `app_id`'s of all open windows use:
+
+```
+$ swaymsg -t get_tree | grep "app_id"
+
+```
+
+If the `app_id` happens to be null for some windows, you might have to use the `class` and/or the `instance` attributes to enable floating mode/window assignments. You can search the output and create fine grained rules for your windows.
+
+ `~/.config/sway/config` 
+```
+for_window [app_id="galculator"] floating enable
+assign [class="firefox"] -> 3
+assign [class="^Urxvt$" instance="^htop$"] -> 9
+```
+
+This is similar to using [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) to find the `class` or `wm_name` attributes in [X11](/index.php/X11 "X11").
+
 ### Xresources
 
 Copy `~/.Xresources` to `~/.Xdefaults` to use them in Sway.
@@ -213,6 +242,17 @@ To start sway from tty1 on login with default US keyboard, edit:
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   XKB_DEFAULT_LAYOUT=us exec sway
 fi
+
+```
+
+### Enable CapsLock/NumLock
+
+Enable the capslock and/or numlock by adding the following lines to your sway config
+
+ `~/.config/sway/config` 
+```
+input * xkb_capslock enable
+input * xkb_numlock enable
 
 ```
 
@@ -357,9 +397,9 @@ Also `krunner` binary provided by [plasma-workspace](https://www.archlinux.org/p
 
 [wofi-hg](https://aur.archlinux.org/packages/wofi-hg/) is a command launcher, that provides the same features as rofi but running under wayland. It is based on [wlroots](https://www.archlinux.org/packages/?name=wlroots) library and use GTK3 for rendering. It works pretty well with sway.
 
-### VirtualBox
+### Virtualization
 
-Sway doesn't work well (or at all) under [VirtualBox](/index.php/VirtualBox "VirtualBox").
+Sway doesn't work well (or at all) under [VirtualBox](/index.php/VirtualBox "VirtualBox") or [VMware](/index.php/VMware "VMware") ESXi.
 
 ### Sway socket not detected
 

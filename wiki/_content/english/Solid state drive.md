@@ -111,7 +111,7 @@ Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM i
 
 **Note:** Specifying the discard mount option in `/etc/fstab` does not work with an XFS `/` partition. According to [this thread](https://bbs.archlinux.org/viewtopic.php?id=143254), it has to be set using the `rootflags=discard` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
-On the ext4 filesystem, the `discard` flag can also be set as a [default mount option](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") using *tune2fs*:
+On the ext4 filesystem, the `discard` flag can also be set as a [default mount option](/index.php/Access_Control_Lists#Enable_ACL "Access Control Lists") using *tune2fs*:
 
 ```
 # tune2fs -o discard /dev/sd**XY**

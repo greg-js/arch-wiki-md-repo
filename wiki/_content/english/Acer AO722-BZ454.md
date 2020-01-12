@@ -22,7 +22,7 @@ In addition, a discussion of general setup is available from the main article on
 
 The Acer AO722-BZ454 is a 64-bit computer. For additional information see the [Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ").
 
-[Template:Note: This page also applies to other AO722 models, not just the BZ454.](/index.php?title=Template:Note:_This_page_also_applies_to_other_AO722_models,_not_just_the_BZ454.&action=edit&redlink=1 "Template:Note: This page also applies to other AO722 models, not just the BZ454\. (page does not exist)")
+**Note:** This page also applies to other AO722 models, not just the BZ454.
 
 ### lspci
 

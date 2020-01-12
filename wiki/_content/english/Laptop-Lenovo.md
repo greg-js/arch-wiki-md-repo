@@ -168,6 +168,7 @@ install CD version
 | [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | ? | Yes | no beep | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader |
 | [Lenovo ThinkPad T490](/index.php/Lenovo_ThinkPad_T490 "Lenovo ThinkPad T490") | Yes | Yes | Yes | ? | Yes | Yes | Yes | NA | Thunderbolt 3 (USB-C); SD Card reader | Some problems with touchpad |
 | [Lenovo ThinkPad T495](/index.php/Lenovo_ThinkPad_T495 "Lenovo ThinkPad T495") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader |
+| [Lenovo ThinkPad T495s](/index.php/Lenovo_ThinkPad_T495s "Lenovo ThinkPad T495s") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |

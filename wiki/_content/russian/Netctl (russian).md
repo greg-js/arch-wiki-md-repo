@@ -114,7 +114,7 @@
 *   Для проводных соединений: `netctl-ifplugd@*interface*.service`. Сервис автоматически изменяет профиль при подключении и отключении кабеля.
 *   Для беспроводных соединений: `netctl-auto@*interface*.service`. Сервис автоматически изменяет профиль при переходе из диапазона одной сети в диапазон другой.
 
-Сначала [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") необходимые пакеты:
+Сначала [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") необходимые пакеты:
 
 *   Пакет [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/) требуется для использования `netctl-auto@*interface*.service`
 *   Пакет [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) требуется для использования `netctl-ifplugd@*interface*.service`
@@ -154,7 +154,7 @@ netctl хранит профили в `/etc/netctl/`, а не в `/etc/network.d
 Чтобы перейти с netcfg, необходимо выполнить, как минимум, следующие шаги:
 
 *   Отключите службы netcfg: `systemctl disable netcfg.service`.
-*   Удалите netcfg и [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") netctl.
+*   Удалите netcfg и [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") netctl.
 *   Переместите файлы сетевых профилей в новую директорию.
 *   Переименуйте переменные в соответствии с `netctl.profile(5)` (в основном, необходимо привести переменные к регистру [UpperCamelCase](https://en.wikipedia.org/wiki/ru:CamelCase "wikipedia:ru:CamelCase"). Например `CONNECTION` нужно переименовать в `Connection`).
 *   Убедитесь, что в переменной `Address` профиля со статическим IP прописана маска подсети после IP адреса (например: `Address=('192.168.1.23**/24'** '192.168.1.87**/24'**)`)

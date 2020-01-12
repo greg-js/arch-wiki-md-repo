@@ -306,8 +306,7 @@ X stores some required files in the `/tmp` directory. In order for your containe
 ```
 $ XAUTH=/tmp/container_xauth
 $ xauth nextract - "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f "$XAUTH" nmerge -
-$ sudo systemd-nspawn -D myContainer --bind=/tmp/.X11-unix --bind="$XAUTH" \
-                      -E DISPLAY="$DISPLAY" -E XAUTHORITY="$XAUTH" --as-pid2 /usr/bin/xeyes
+# systemd-nspawn -D myContainer --bind=/tmp/.X11-unix --bind="$XAUTH" -E DISPLAY="$DISPLAY" -E XAUTHORITY="$XAUTH" --as-pid2 /usr/bin/xeyes
 
 ```
 
@@ -338,6 +337,13 @@ Bind=/var/cache/pacman/pkg
 ```
 
 See [#Specify per-container settings](#Specify_per-container_settings).
+
+To bind the directory to a different path within the container, add the path be separated by a colon. For example:
+
+```
+# systemd-nspawn --bind=*/path/to/host_dir:/path/to/container_dir*
+
+```
 
 ### Configure networking
 

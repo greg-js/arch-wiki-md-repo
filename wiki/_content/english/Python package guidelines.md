@@ -22,8 +22,9 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
     *   [4.4 Build-time 2to3 translation](#Build-time_2to3_translation)
 *   [5 Check](#Check)
 *   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Using site-packages](#Using_site-packages)
-    *   [6.2 Test directory in site-package](#Test_directory_in_site-package)
+    *   [6.1 Discovering detached PGP signatures on PyPi](#Discovering_detached_PGP_signatures_on_PyPi)
+    *   [6.2 Using site-packages](#Using_site-packages)
+    *   [6.3 Test directory in site-package](#Test_directory_in_site-package)
 
 ## Package naming
 
@@ -214,6 +215,12 @@ check(){
 ```
 
 ## Tips and tricks
+
+### Discovering detached PGP signatures on PyPi
+
+If detached PGP signatures for a given Python sdist tarball exist, they should be used to verify the tarball. However, the signature files don't show up directly in the files download section of any given project on pypi.org. To discover the sdist tarballs and their potential signature files, it's possible to use this service to get an overview per project: [https://pypi.debian.net/](https://pypi.debian.net/)
+
+For [python-requests](https://www.archlinux.org/packages/?name=python-requests) this would be: [https://pypi.debian.net/requests](https://pypi.debian.net/requests)
 
 ### Using site-packages
 

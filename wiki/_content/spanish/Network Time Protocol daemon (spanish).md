@@ -88,7 +88,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **Nota:** Aún con las opciones anteriores, estas todavía permiten a otras personas consultar el time server. Para evitarlo, es necesario añadir `noserve` a fin de detener la función de servir el tiempo horario. También impide la sincronización horaria, ya que bloquea todos los paquetes, excepto las consultas de ntpd y ntpdc.
 
-La documentación completa para la opción "restrict" se encuentra en [ntp_acc()](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.). Consulte [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) para obtener instrucciones detalladas.
+La documentación completa para la opción "restrict" se encuentra en [ntp.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5). Consulte [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions) para obtener instrucciones detalladas.
 
 Siguiendo con la configuración, debe decirle a *ntpd* qué debe permitir a través del propio servidor; la siguiente línea es suficiente si no va a configurar un servidor NTP:
 

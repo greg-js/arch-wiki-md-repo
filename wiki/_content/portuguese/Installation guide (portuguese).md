@@ -75,7 +75,7 @@ O ambiente *live* pode ser inicializado a partir de uma [unidade flash USB](/ind
 *   Consulte [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) para uma lista de [parâmetros de inicialização](/index.php/Par%C3%A2metros_do_kernel#Configuração "Parâmetros do kernel") e [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para uma lista de pacotes incluídos.
 *   Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") como o usuário *root* sob um prompt de shell [Zsh](/index.php/Zsh "Zsh").
 
-Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
+Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Atalhos_de_teclado "Atalhos de teclado") `Alt+*seta*`. Para [editar](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
 
 ### Definir o layout do teclado
 
@@ -143,7 +143,7 @@ Para configurar uma conexão de rede, siga as etapas abaixo:
 *   Conecte-se à rede. Conecte o cabo Ethernet ou [conecte a uma rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
 *   Configure sua conexão de rede:
     *   [Endereço IP estático](/index.php/Configura%C3%A7%C3%A3o_de_rede#Endereço_IP_estático "Configuração de rede")
-    *   Endereço IP dinâmico: use [DHCP](/index.php/DHCP "DHCP").
+    *   Endereço IP dinâmico: use [DHCP](/index.php/DHCP_(Portugu%C3%AAs) "DHCP (Português)").
 
     **Nota:** A imagem de instalação habilita [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) para [dispositivos de rede com fio](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização.
 
@@ -176,7 +176,7 @@ As seguintes [partições](/index.php/Partition "Partition") são **exigidas** p
 *   Uma partição para o diretório raiz `/`.
 *   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI").
 
-Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php/LVM "LVM"), [criptografia de sistema](/index.php/Dm-crypt "Dm-crypt") ou [RAID](/index.php/RAID "RAID"), faça isso agora.
+Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php/LVM "LVM"), [criptografia de sistema](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") ou [RAID](/index.php/RAID "RAID"), faça isso agora.
 
 #### Exemplos de layouts
 
@@ -195,11 +195,11 @@ Veja também [Partitioning#Example layouts](/index.php/Partitioning#Example_layo
 **Nota:**
 
 *   Use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted") para modificar as tabelas de partição, por exemplo `fdisk /dev/sd*X*`.
-*   Um espaço [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") pode ser definido em um [Arquivo swap](/index.php/Arquivo_swap "Arquivo swap") para sistemas de arquivos que possuem suporte a file systems supporting it.
+*   Um espaço [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") pode ser definido em um [Arquivo swap](/index.php/Arquivo_swap "Arquivo swap") para sistemas de arquivos que possuem suporte.
 
 ### Formatar as partições
 
-Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/File_system "File system") adequado. Por exemplo, se a partição raiz está em `/dev/sd*X*1` e receberá o sistema de arquivos `*ext4*`, execute:
+Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") adequado. Por exemplo, se a partição raiz está em `/dev/sd*X*1` e receberá o sistema de arquivos `*ext4*`, execute:
 
 ```
 # mkfs.*ext4* /dev/sd*X1*
@@ -214,11 +214,11 @@ Se você criou uma partição para swap (por exemplo, `/dev/*sda3*`), inicialize
 
 ```
 
-Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") para detalhes.
+Veja [Sistemas de arquivos#Criar um sistema de arquivos](/index.php/Sistemas_de_arquivos#Criar_um_sistema_de_arquivos "Sistemas de arquivos") para detalhes.
 
 ### Montar os sistemas de arquivos
 
-[Monte](/index.php/Mount "Mount") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
+[Monte](/index.php/Monte "Monte") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
 
 ```
 # mount /dev/sd*X1* /mnt
@@ -352,7 +352,7 @@ Conclua a [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Co
 
 Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote de [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") com *pacstrap*.
 
-Para [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [criptografia de sistema](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique o [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
+Para [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [criptografia de sistema](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique o [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
 
 ```
 # mkinitcpio -P

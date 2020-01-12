@@ -52,15 +52,15 @@ sleep 2
 TERMINAL_ID_0=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId 0)
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle 0 "user"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 0 "htop"
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight ${TERMINAL_ID_0}
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight "$TERMINAL_ID_0"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 1 "iotop
 
 # Start split root sessions (password prompt) top and bottom                                                                                
 SESSION_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
-TERMINAL_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${SESSION_ID_1})
+TERMINAL_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId "$SESSION_ID_1")
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle 1 "root"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 2 "su"
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalTopBottom ${TERMINAL_ID_1}
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalTopBottom "$TERMINAL_ID_1"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 3 "su" 
 
 # Start irssi in its own tab.                                                                                          
@@ -70,10 +70,10 @@ qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 4 "ssh home -t 'tmu
 
 # Start split ssh shells in own tab.                                                                                   
 SESSION_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
-TERMINAL_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${SESSION_ID_2})
+TERMINAL_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId "$SESSION_ID_2")
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle 3 "work server"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 5 "ssh work"
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight ${TERMINAL_ID_2}
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight "$TERMINAL_ID_2"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 6 "ssh work" 
 
 ```

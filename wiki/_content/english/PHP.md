@@ -50,7 +50,7 @@
 
 [Install](/index.php/Install "Install") the [php](https://www.archlinux.org/packages/?name=php) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-You can find older versions of PHP in the AUR including [php53](https://aur.archlinux.org/packages/php53/), [php55](https://aur.archlinux.org/packages/php55/), [php56](https://aur.archlinux.org/packages/php56/), [php70](https://aur.archlinux.org/packages/php70/), [php71](https://aur.archlinux.org/packages/php71/), and [php72](https://aur.archlinux.org/packages/php72/).
+You can find older versions of PHP in the AUR including [php53](https://aur.archlinux.org/packages/php53/), [php55](https://aur.archlinux.org/packages/php55/), [php56](https://aur.archlinux.org/packages/php56/), [php70](https://aur.archlinux.org/packages/php70/), [php71](https://aur.archlinux.org/packages/php71/), [php72](https://aur.archlinux.org/packages/php72/) and [php73](https://aur.archlinux.org/packages/php73/).
 
 Note that to run PHP scripts as plain CGI, you need the [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) package.
 

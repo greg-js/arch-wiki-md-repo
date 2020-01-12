@@ -29,6 +29,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
     *   [3.3 Unofficial packages](#Unofficial_packages)
 *   [4 Cargo](#Cargo)
     *   [4.1 Usage](#Usage_2)
+    *   [4.2 Optimizing for native CPU platform](#Optimizing_for_native_CPU_platform)
 *   [5 IDE support](#IDE_support)
     *   [5.1 Tools](#Tools)
         *   [5.1.1 RLS](#RLS)
@@ -227,6 +228,29 @@ authors = ["Your Name <you@example.com>"]
 edition = "2018"
 
 [dependencies]
+```
+
+### Optimizing for native CPU platform
+
+In order to instruct Cargo to always compile optimal code for your CPU platform, you can achieve this by adding a flag to `~/.cargo/config`. Please be aware that the resulting binaries can not be distributed for use on other computers, and might even fail on your own system if you decide to change your CPU in the future.
+
+Find out which target platform is used by default on your installation:
+
+ `$ rustup toolchain list` 
+```
+stable-x86_64-unknown-linux-gnu (default)
+
+```
+
+In this example we are using `stable` rust on the `x86_64-unknown-linux-gnu` platform.
+
+Instruct Cargo to always compile code optimized for the native CPU platform:
+
+ `~/.cargo/config` 
+```
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-Ctarget-cpu=native"]
+
 ```
 
 ## IDE support

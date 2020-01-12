@@ -99,9 +99,13 @@ code1 = /usr/sbin/modprobe serial_ir
 
 #### Sound card
 
-**Warning:** Reception from both *alsa_audio* and *audio* can be pretty unstable (*irw* drops keypresses and works from time to time). If sound card is your only option and you only need to create an remote config with *irrecord*, give a chance to [WinLIRC](http://winlirc.sourceforge.net/), as it uses different sound subsystem.
+**Note:** Using sound card as infrared device has plenty pitfalls and doesn't gives advantage over other hardware setup.
 
-*audio_alsa* [driver](http://www.lirc.org/html/audio-alsa.html) included in [lirc](https://www.archlinux.org/packages/?name=lirc), but supports only reception. Make sure microphone input is unmuted and has enough gain.
+Sound card with connected external DIY circuits can be used to [receive](http://www.lirc.org/ir-audio.html) and [transmit](https://web.archive.org/web/20150511192459/http://www.lirc.org:80/html/audio.html) IR codes.
+
+*audio_alsa* [driver](http://www.lirc.org/html/audio-alsa.html) included in [lirc](https://www.archlinux.org/packages/?name=lirc), but supports only reception.
+
+Unmute microphone input with `alsamixer` and set enough gain. You can check waveform and gain with [audacity](https://www.archlinux.org/packages/?name=audacity). There should be distinguishable square pulses: not flatlined, nor overloaded. Also good demodulated pulses easily perceptible by ear. Note that LIRC and `irrecord` reads *positive pulses in right audio channel*. Negative pulses won't work.
 
  `/etc/lirc/lirc_options.conf` 
 ```
@@ -109,7 +113,9 @@ driver          = audio_alsa
 device          = default
 ```
 
-*audio* driver ([archived](https://web.archive.org/web/20150511192459/http://www.lirc.org:80/html/audio.html), some pictures are missing) included in [lirc-git](https://aur.archlinux.org/packages/lirc-git/) and supports both reception and transmission. Note, that default latency around 0.02 can cause "Warning: Output underflow" and corrupted transmission - receiver won't respond to it. Try a higher value like 0.05.
+*audio* [driver](https://web.archive.org/web/20150511192459/http://www.lirc.org:80/html/audio.html) included in [lirc-git](https://aur.archlinux.org/packages/lirc-git/) and supports both reception and transmission. Note, that default latency around 0.02 can cause "Warning: Output underflow" and corrupted transmission - receiver won't respond to it. Try a higher value like 0.05.
+
+Increase sound card output loudness, otherwise LED signal will be weak and range is low. LED flash can be detected with smartphone camera, as it sensitive to infrared wavelengths.
 
  `/etc/lirc/lirc_options.conf` 
 ```
@@ -242,7 +248,7 @@ $ irw
 If `irw` gives no output:
 
 *   Run *mode2* or *xmode2* to see if LIRC actually read something from IR sensor, if no - check the hardware
-*   Check the config files in `/etc/lirc/lircd.conf.d/` for errors
+*   If *mode2* receives pulse data, check the config files in `/etc/lirc/lircd.conf.d/` for errors
 
 ### Transmitting commands
 

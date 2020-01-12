@@ -235,6 +235,8 @@ Then update the database and force downgrade:
 
 ```
 
+If you get errors complaining about corrupted/invalid packages due to PGP signature, try to first update separately [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) and [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates). Alternatively, you can decide to temporairly [disable signature checking](/index.php/Pacman/Package_signing#Disabling_signature_checking "Pacman/Package signing") altogether.
+
 **Note:** It's [not safe](/index.php/Partial_upgrades "Partial upgrades") to mix Archive and up-to-date mirrors. In case of a download failure, you will fall-back on an upstream package and you will have packages not from the same epoch in the rest of the system.
 
 ## Historical Archive

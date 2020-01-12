@@ -388,7 +388,8 @@ The `--exclude` option causes files that match the given patterns to be excluded
 *   If you plan on backing up your system somewhere other than `/mnt` or `/media`, do not forget to add it to the list of exclude patterns to avoid an infinite loop.
 *   If there are any bind mounts in the system, they should be excluded as well so that the bind mounted contents is copied only once.
 *   If you use a [swap file](/index.php/Swap_file "Swap file"), make sure to exclude it as well.
-*   Consider if you want to backup the `/home/` folder. If it contains your data it might be considerably larger than the system. Otherwise consider excluding unimportant subdirectories such as `/home/*/.thumbnails/*`, `/home/*/.cache/mozilla/*`, `/home/*/.cache/chromium/*`, and `/home/*/.local/share/Trash/*`, depending on software installed on the system. If [GVFS](/index.php/GVFS "GVFS") is installed, `/home/*/.gvfs` must be excluded to prevent rsync errors.
+*   Consider if you want to backup the `/home/` folder. If it contains your data it might be considerably larger than the system. Otherwise consider excluding unimportant subdirectories such as `/home/*/.thumbnails/*`, `/home/*/.cache/mozilla/*`, `/home/*/.cache/chromium/*`, and `/home/*/.local/share/Trash/*`, depending on software installed on the system.
+*   If [GVFS](/index.php/GVFS "GVFS") is installed, `/home/*/.gvfs` must be excluded to prevent rsync errors.
 
 You may want to include additional <a class="mw-selflink selflink">rsync</a> options, such as the following. See [rsync(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) for the full list.
 

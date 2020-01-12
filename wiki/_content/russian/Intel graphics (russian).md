@@ -50,7 +50,7 @@
 
 Необходимое условие: [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Пакет предоставляет драйвер DDX для 2D ускорения и устанавливает пакет [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) как зависимость, который предоставляет драйвер DRI для 3D ускорения.
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") пакет [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Пакет предоставляет драйвер DDX для 2D ускорения и устанавливает пакет [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) как зависимость, который предоставляет драйвер DRI для 3D ускорения.
 
 Для поддержи 32-битного 3D ускорения на x86_64, установите [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) из репозитория [multilib](/index.php/Multilib "Multilib").
 

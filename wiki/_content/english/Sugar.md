@@ -20,7 +20,7 @@ With the upcoming python2 deprecation, python3-based packages have been released
 Python 3:
 
 *   For the minimal requirements to run sugar3, consider installing all the four packages, viz., [sugar3](https://aur.archlinux.org/packages/sugar3/), [sugar3-toolkit-gtk3](https://aur.archlinux.org/packages/sugar3-toolkit-gtk3/), [sugar3-datastore](https://aur.archlinux.org/packages/sugar3-datastore/), [sugar3-artwork](https://aur.archlinux.org/packages/sugar3-artwork/)
-*   The Sugar Python3 Activities have not been added to the sugar3 repository. You can request it at [[sugar-arch-repository](https://github.com/srevinsaju/sugar-arch)]
+*   The Sugar Python3 Activities have not been added to the sugar3 repository. You can request it at [sugar-arch-repository](https://github.com/srevinsaju/sugar-arch)
 *   For using sugar-runner on arch, install [sugar-runner](https://www.archlinux.org/packages/?name=sugar-runner)
 
 Python 2:

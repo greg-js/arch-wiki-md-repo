@@ -165,9 +165,7 @@ If *winecfg* **still** fails to detect the audio driver (Selected driver: (none)
 
 ### Other libraries
 
-*   Some applications (e.g. Office 2003/2007) require the MSXML library to parse HTML or XML, in such cases you need to install [lib32-libxml2](https://www.archlinux.org/packages/?name=lib32-libxml2).
 *   Some applications that play music may require [lib32-mpg123](https://www.archlinux.org/packages/?name=lib32-mpg123).
-*   Some applications that use a color management engine (e.g. pdf viewers, image viewers, etc) may require [lib32-lcms2](https://www.archlinux.org/packages/?name=lib32-lcms2).
 *   Some applications that use native image manipulation libraries may require [lib32-giflib](https://www.archlinux.org/packages/?name=lib32-giflib) and [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng).
 *   Some applications that require encryption support may require [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls).
 *   Some applications require 32-bit video codecs or the program crashes. Install [lib32-gst-plugins-base](https://www.archlinux.org/packages/?name=lib32-gst-plugins-base), [lib32-gst-plugins-good](https://www.archlinux.org/packages/?name=lib32-gst-plugins-good), [lib32-gst-plugins-bad](https://aur.archlinux.org/packages/lib32-gst-plugins-bad/) and [lib32-gst-plugins-ugly](https://aur.archlinux.org/packages/lib32-gst-plugins-ugly/).

@@ -95,6 +95,8 @@ It is manufactured by [Yubico](http://www.yubico.com/).
 
 One of its strengths is that it emulates a USB keyboard to send the OTP as text, and thus requires only USB HID drivers found on practically all desktop computers.
 
+While offering a lot of features, newer versions of the YubiKey are [not released as open source](https://www.yubico.com/2016/05/secure-hardware-vs-open-source/). An alternative is the [Solo](/index.php/Solo "Solo").
+
 ### Installation
 
 There are several packages available:
@@ -112,6 +114,10 @@ There are several packages available:
 *   **Yubikey Personalization** — Library and tool to configure slot features over the OTP USB connection. Has optional GUI.
 
 	[https://developers.yubico.com/yubikey-personalization/](https://developers.yubico.com/yubikey-personalization/) || [yubikey-personalization](https://www.archlinux.org/packages/?name=yubikey-personalization), [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui)
+
+*   **Yubico Authenticator for Desktop** — Lets you read OATH codes from your YubiKey over USB. Support the newer OATH implementation (YubiKey NEO and 4) as well as the older slot-based implementation (YubiKey Standard and Edge).
+
+	[https://developers.yubico.com/OATH/YubiKey_OATH_software.html](https://developers.yubico.com/OATH/YubiKey_OATH_software.html) || [yubioath-desktop](https://www.archlinux.org/packages/?name=yubioath-desktop)
 
 ### Understanding the YubiKey
 
@@ -706,7 +712,7 @@ release_context
 
 #### (Optional) Install the Yubico Authenticator Desktop client
 
-You can get the desktop version of the Yubico Authenticator by installing [yubico-yubioath-desktop](https://aur.archlinux.org/packages/yubico-yubioath-desktop/) or [yubico-yubioath-desktop-git](https://aur.archlinux.org/packages/yubico-yubioath-desktop-git/).
+You can get the desktop version of the Yubico Authenticator by installing [yubico-yubioath-desktop](https://www.archlinux.org/packages/?name=yubico-yubioath-desktop).
 
 While `pcscd.service` is running, run `yubioath-gui` and insert your Yubikey when prompted.
 

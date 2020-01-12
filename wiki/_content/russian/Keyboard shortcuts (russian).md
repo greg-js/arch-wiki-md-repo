@@ -2,7 +2,11 @@
 
 В этой статье приведен список (не общеизвестных) стандартных сочетаний клавиш и предоставляется информация о пользовательской настройке.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Стандартные сочетания клавиш](#Стандартные_сочетания_клавиш)
     *   [1.1 Ядро](#Ядро)

@@ -343,17 +343,16 @@ To view the dependant tree of a package, pass the reverse flag `-r` to *pactree*
 
 #### Database structure
 
-The *pacman* databases are normally located at `/var/lib/pacman/sync`. For each repository specified in `/etc/pacman.conf` there will be a corresponding database file located there. Database files are tar-gzipped archives containing one directory for each package, for example for the [which](https://www.archlinux.org/packages/?name=which) package:
+The *pacman* databases are normally located at `/var/lib/pacman/sync`. For each repository specified in `/etc/pacman.conf` there will be a corresponding database file located there. Database files are gzipped tar archives containing one directory for each package, for example for the [which](https://www.archlinux.org/packages/?name=which) package:
+
+ `$ tree which-2.21-5` 
+```
+which-2.21-5
+|-- desc
 
 ```
-% tree which-2.20-6 
-which-2.20-6
-|-- depends
-`-- desc
 
-```
-
-The `depends` file lists the packages this package depends on, while `desc` has a description of the package such as the file size and the MD5 hash.
+The `desc` file contains meta data such as the package description, dependencies, file size and MD5 hash.
 
 ### Cleaning the package cache
 

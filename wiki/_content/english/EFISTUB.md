@@ -51,6 +51,8 @@ UEFI is designed to remove the need for an intermediate bootloader such as [GRUB
 
 **Note:** Outdated UEFI implementations may have compatibility issues with the Linux kernel. If there is a newer version of your UEFI with bug fixes, consider flashing it with the manufacturer's recommended tool.
 
+**Tip:** Some firmware(like Dell) do not support EFI parameters [See forum](https://bbs.archlinux.org/viewtopic.php?id=178154).In that case,the parameters can be copied to the kernel binary as in [arch-efiboot](https://github.com/xdever/arch-efiboot/blob/master/README.md).
+
 #### efibootmgr
 
 To create a boot entry with *efibootmgr* that will load the kernel:

@@ -6,7 +6,11 @@
 
 Αυτή η σελίδα εξηγεί πως θα δημιουργήσετε μια **ενσύρματη** σύνδεση σε ένα δίκτυο. Αν θέλετε να δημιουργήσετε **ασύρματη** σύνδεση δείτε το [Wireless Setup](/index.php/Wireless_Setup_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Wireless Setup (Ελληνικά)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Έλεγχος σύνδεσης](#Έλεγχος_σύνδεσης)
 *   [2 Ορίστε το όνομα του υπολογιστή σας (hostname)](#Ορίστε_το_όνομα_του_υπολογιστή_σας_(hostname))
@@ -200,7 +204,7 @@ SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
 
 ```
 
-**Σημείωση:** Όταν επιλέγετε στατικά ονόματα συσκευών **πρέπει να αποφεύγετε να χρησιμοποιείτε ονόματα μορφής "eth*Χ*" και "wlan*Χ*"**, διότι μπορεί να εξελιχθεί σε αγώνα ([https://en.wikipedia.org/wiki/Race_condition](https://en.wikipedia.org/wiki/Race_condition)) μεταξύ kernel και udev κατά την διάρκεια της εκκίνησης. Αντ' αυτού είναι καλύτερο να χρησιμοποιείτε ονόματα για τις συσκευές σας που δεν χρησιμοποιούνται από τον πυρήνα από προεπιλογή π.χ. `net0`, `net1`, `wifi0`, `wifi1`. Για περισσότερες πληροφορίες δείτε την τεκμηρίωση του [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
+**Σημείωση:** Όταν επιλέγετε στατικά ονόματα συσκευών **πρέπει να αποφεύγετε να χρησιμοποιείτε ονόματα μορφής "eth*Χ*" και "wlan*Χ*"**, διότι μπορεί να εξελιχθεί σε αγώνα ([wikipedia:Race_condition](https://en.wikipedia.org/wiki/Race_condition "wikipedia:Race condition")) μεταξύ kernel και udev κατά την διάρκεια της εκκίνησης. Αντ' αυτού είναι καλύτερο να χρησιμοποιείτε ονόματα για τις συσκευές σας που δεν χρησιμοποιούνται από τον πυρήνα από προεπιλογή π.χ. `net0`, `net1`, `wifi0`, `wifi1`. Για περισσότερες πληροφορίες δείτε την τεκμηρίωση του [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames).
 
 ### Ορισμός της μονάδας μέγιστης μετάδοσης (MTU) και μεγέθους ουράς (queue Length)
 
@@ -628,6 +632,7 @@ net.ipv4.tcp_window_scaling = 0
 ```
 
 **Σημείωση:** Νεώτεροι οδηγοί για Windows (δοκιμασμένοι με *Realtek 8111/8169 LAN Driver v5.708.1030.2008*, ημερομηνίας 22/01/2009, διαθέσιμοι από την GIGABYTE) ίσως να αναφέρονται σε αυτή την επιλογή ελαφρά διαφορετικά, όπως *Shutdown Wake-On-LAN --> Enable*. Φαίνεται πως αλλάζοντάς το σε `Disable` δεν έχει καμία διαφορά (θα παρατηρήσετε πως η λυχνία σύνδεσης θα σβήσει με το κλείσιμο των Windows). Μία κακή λύση είναι να εκκινήσετε στο λειτουργικό Windows και αμέσως να κάνετε reset το σύστημα (πραγματοποιώντας μια απότομη επανεκκίνηση / εκκίνηση) μη δίνοντας την ευκαιρία στον οδηγό των Windows να κάνει ανενεργή την σύνδεση LAN. Η λυχνία της σύνδεσης θα παραμείνει ενεργή και η LAN διεπαφή σας θα παραμείνει προσβάσιμη μετά το POST - μέχρι την επόμενη εκκίνηση των Windows και τον σωστό τερματισμό τους
+
 .
 
 #### Μέθοδος 3 - Νεώτερος οδηγός Realtek Linux
@@ -653,7 +658,7 @@ net.ipv4.tcp_window_scaling = 0
 Πρώτα, ενεργοποιήστε το wget για τον pacman (μιας και μας δείνει πληροφορίες για τον pacman κατά το downloading πακέτων). Ανοίχτε το αρχείο `/etc/pacman.conf` με τον επεξεργαστή κειμένου που χρησιμοποιείται και αφαιρέστε το σημείο σχολίου από την επόμενη γραμμή (αφαιρέστε το σύμβολο # αν υπάρχει)
 
 ```
-XferCommand=/usr/bin/wget --passive-ftp -c -O %o %u
+XferCommand=/usr/bin/wget --passive-ftp -c -O %o %u
 
 ```
 

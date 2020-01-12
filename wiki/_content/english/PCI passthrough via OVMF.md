@@ -291,14 +291,7 @@ OVMF is an open-source UEFI firmware for QEMU virtual machines. While it is poss
 
 [Libvirt](/index.php/Libvirt "Libvirt") is a wrapper for a number of virtualization utilities that greatly simplifies the configuration and deployment process of virtual machines. In the case of KVM and QEMU, the frontend it provides allows us to avoid dealing with the permissions for QEMU and make it easier to add and remove various devices on a live VM. Its status as a wrapper, however, means that it might not always support all of the latest qemu features, which could end up requiring the use of a wrapper script to provide some extra arguments to QEMU.
 
-After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt](https://www.archlinux.org/packages/?name=libvirt), [ovmf](https://www.archlinux.org/packages/?name=ovmf), and [virt-manager](https://www.archlinux.org/packages/?name=virt-manager), add the path to your OVMF firmware image and runtime variables template to your libvirt config so `virt-install` or `virt-manager` can find those later on.
-
- `/etc/libvirt/qemu.conf` 
-```
-nvram = [
-	"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd"
-]
-```
+Install [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt](https://www.archlinux.org/packages/?name=libvirt), [ovmf](https://www.archlinux.org/packages/?name=ovmf), and [virt-manager](https://www.archlinux.org/packages/?name=virt-manager).
 
 You can now [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `libvirtd.service` and its logging component `virtlogd.socket`.
 
@@ -310,11 +303,10 @@ The process of setting up a VM using `virt-manager` is mostly self-explanatory, 
 
 If using `virt-manager`, you have to add your user to the `libvirt` [user group](/index.php/User_group "User group") to ensure authentication.
 
-However, you should pay special attention to the following steps :
+However, you should pay special attention to the following steps:
 
 *   When the VM creation wizard asks you to name your VM (final step before clicking "Finish"), check the "Customize before install" checkbox.
 *   In the "Overview" section, [set your firmware to "UEFI"](https://i.imgur.com/73r2ctM.png). If the option is grayed out, make sure that:
-    *   You have correctly specified the location of your firmware in `/etc/libvirt/qemu.conf` and restart `libvirtd.service`.
     *   Your hypervisor is running as a system session and not a user session. This can be verified [by clicking, then hovering](https://i.ibb.co/N1XZCdp/Deepin-Screenshot-select-area-20190125113216.png) over the session in virt-manager. If you are accidentally running it as a user session, you must open a new connection by clicking "File" > "Add Connection..", then select the option from the drop-down menu station "QEMU/KVM" and not "QEMU/KVM user session".
     *   It could be a libvirt bug, check out this forum thread for more information: [https://bbs.archlinux.org/viewtopic.php?pid=1869349](https://bbs.archlinux.org/viewtopic.php?pid=1869349)
 *   In the "CPUs" section, change your CPU model to "host-passthrough". If it is not in the list, you will have to type it by hand. This will ensure that your CPU is detected properly, since it causes libvirt to expose your CPU capabilities exactly as they are instead of only those it recognizes (which is the preferred default behavior to make CPU behavior easier to reproduce). Without it, some applications may complain about your CPU being of an unknown model.

@@ -157,6 +157,8 @@ The official tutorial on creating a Cinnamon *applet* can be found [here](http:/
 
 When you add a wallpaper from a custom path in Cinnamon Settings, Cinnamon copies it to `~/.cinnamon/backgrounds`. Thus, with every change of your wallpaper you would have to add your updated wallpaper again from the settings menu or copy / symlink it manually to `~/.cinnamon/backgrounds`.
 
+Additionally the official mint wallpapers are available for every release. Checkout the [AUR](https://aur.archlinux.org/packages/?O=0&K=mint-backgrounds).
+
 ### Show home, filesystem desktop icons
 
 By default Cinnamon starts with desktop icons enabled but with no desktop icons on screen. To show desktop icons for the home folder, the filesystem, the trash, mounted volumes and network servers open Cinnamon settings and click on desktop. Enable the checkboxes of the icons you want to see on screen.

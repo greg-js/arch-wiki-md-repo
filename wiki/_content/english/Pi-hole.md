@@ -42,7 +42,7 @@ Related articles
         *   [4.2.3 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
 *   [5 Tips & Tricks](#Tips_&_Tricks)
     *   [5.1 Password-protected web interface](#Password-protected_web_interface)
-    *   [5.2 Cloudflared DOH](#Cloudflared_DOH)
+    *   [5.2 DNS over HTTPS](#DNS_over_HTTPS)
     *   [5.3 Optimise for solid state drives](#Optimise_for_solid_state_drives)
     *   [5.4 Use with VPN server](#Use_with_VPN_server)
         *   [5.4.1 OpenVPN](#OpenVPN)
@@ -248,24 +248,9 @@ pihole -a -p
 
 To disable the password protection, set a blank password.
 
-### Cloudflared DOH
+### DNS over HTTPS
 
-Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS ([DOH](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS")). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create the following file:
-
- `/etc/cloudflared/cloudflared.yml` 
-```
-proxy-dns: true
-proxy-dns-upstream:
- - https://1.0.0.1/dns-query
- - https://1.1.1.1/dns-query
- - https://2606:4700:4700::1111/dns-query
- - https://2606:4700:4700::1001/dns-query
-proxy-dns-port: 5053
-proxy-dns-address: 0.0.0.0
-
-```
-
-Then [start and enable](/index.php/Start/enable "Start/enable") `cloudflared@cloudflared.service`. Now you can use `127.0.0.1#5053` as a DNS server in Pi-Hole.
+Pi-Hole can be configured to use [DNS over HTTPS](/index.php/DNS_over_HTTPS "DNS over HTTPS"). Run a local DNS-server such as [cloudflared](/index.php/DNS_over_HTTPS#cloudflared "DNS over HTTPS") using the privacy-first DNS [1.1.1.1](https://1.1.1.1/) by Cloudflare, and use `127.0.0.1#5053` as a DNS server in Pi-Hole.
 
 ### Optimise for solid state drives
 

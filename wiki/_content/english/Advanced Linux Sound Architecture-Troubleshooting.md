@@ -655,6 +655,24 @@ defaults.ctl.card 1
 
 ```
 
+Or if you alternatively succeed with
+
+```
+$ speaker-test -Dplug:hdmi
+
+```
+
+for your HDMI or DisplayPort port the following configuration will work (successfully tested on Lenovo ThinkPad T430s):
+
+ `~/.asoundrc` 
+```
+pcm.!default {
+    type plug
+    slave.pcm "hdmi"
+}
+
+```
+
 #### PCM through HDMI does not work (Intel Gfx)
 
 As of Linux 3.1 multi-channel PCM output through HDMI with a Intel card (Intel Eaglelake, IbexPeak/Ironlake,SandyBridge/CougarPoint and IvyBridge/PantherPoint) is not yet supported. Support for it has been recently added and expected to be available in Linux 3.2\. To make it work in Linux 3.1 you need to apply the following patches:

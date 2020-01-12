@@ -32,6 +32,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
         *   [3.3.3 lighttpd](#lighttpd)
     *   [3.4 Create data storage directory](#Create_data_storage_directory)
     *   [3.5 Fix apps directory permissions](#Fix_apps_directory_permissions)
+    *   [3.6 Explicitly permit Nextcloud directories for php-fpm](#Explicitly_permit_Nextcloud_directories_for_php-fpm)
 *   [4 Initialize](#Initialize)
     *   [4.1 Configure caching](#Configure_caching)
 *   [5 Security Hardening](#Security_Hardening)
@@ -273,6 +274,31 @@ To give the web server read/write access to the *apps* directory (e.g. on "Canno
 # chmod 750 /usr/share/webapps/nextcloud/apps
 
 ```
+
+### Explicitly permit Nextcloud directories for php-fpm
+
+Since version 7.4 php-fpm is hardened per default and revokes read/write access on `/usr` (and sub-directories). Therefore it is also necessary to explicitly give permissions on `/usr/share/webapps/nextcloud` directories and the Nextcloud data directory (`/var/nextcloud` in the example above).
+
+Create an `override.conf` for `php-fpm`:
+
+```
+# systemctl edit php-fpm.service
+
+```
+
+Add and save following content.
+
+ `/etc/systemd/system/php-fpm.service.d/override.conf` 
+```
+[Service]
+ReadWritePaths = /usr/share/webapps/nextcloud/apps
+ReadWritePaths = /etc/webapps/nextcloud/config
+
+# Replace the following path with the Nextcloud data directory
+ReadWritePaths = /var/nextcloud
+```
+
+Afterwards [restart](/index.php/Restart "Restart") the `php-fpm` service.
 
 ## Initialize
 

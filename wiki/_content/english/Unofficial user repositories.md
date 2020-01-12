@@ -979,7 +979,7 @@ Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
 ### aur-av-bin
 
 *   **Maintainer:** [milkii](https://aur.archlinux.org/account/milk/) (ping me on Freenode)
-*   **Description:** Precompiled Arch Linux binary packages of mostly A/V related software from the AUR.
+*   **Description:** Precompiled Arch Linux binary packages of mostly audio and music related software from the AUR.
 *   **Upstream page:** [https://github.com/mxmilkb/aur-av-bin](https://github.com/mxmilkb/aur-av-bin)
 
 ```

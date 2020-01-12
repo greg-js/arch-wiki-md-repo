@@ -6,7 +6,11 @@ There are several ways to make a program continue after logoff:
 *   use the `disown` [Bash](/index.php/Bash "Bash")/[Zsh](/index.php/Zsh "Zsh") shell builtin
 *   use a [terminal multiplexer](/index.php/Terminal_multiplexer "Terminal multiplexer"), also allowing you to reattach to your detached session.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 X applications](#X_applications)
     *   [1.1 Secondary X server](#Secondary_X_server)

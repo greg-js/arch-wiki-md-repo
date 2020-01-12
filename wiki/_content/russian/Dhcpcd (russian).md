@@ -35,7 +35,7 @@
 
 ## Установка
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), доступный в [официальных репозиториях](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F%D1%85 "Официальных репозиториях"). Он является частью группы [base](https://www.archlinux.org/packages/?name=base), поэтому, скорее всего он уже установлен в вашей системе.
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") пакет [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), доступный в [официальных репозиториях](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F%D1%85 "Официальных репозиториях"). Он является частью группы [base](https://www.archlinux.org/packages/?name=base), поэтому, скорее всего он уже установлен в вашей системе.
 
 Также с пакетом [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) (доступен в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)")) вы можете установить графическую оболочку [GTK+](/index.php/GTK%2B "GTK+") для демона *dhcpcd* (и, опционально, для [wpa_supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)")). Он предоставляет диалоговую панель для настройки и позволяет вводить данные для подключения к беспроводным сетям.
 

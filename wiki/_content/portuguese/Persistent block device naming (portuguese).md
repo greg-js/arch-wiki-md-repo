@@ -69,7 +69,7 @@ Para aqueles que usam [GPT](/index.php/GPT "GPT"), use o comando `blkid`. Este c
 
 ### by-label
 
-Quase todo [tipo de sistema de arquivos](/index.php/File_systems#Types_of_file_systems "File systems") pode ter um rótulo ("label", em inglês). Todos os seus volumes que têm um são listados no diretório `/dev/disk/by-label`.
+Quase todo [tipo de sistema de arquivos](/index.php/Sistemas_de_arquivos#Tipos_de_sistemas_de_arquivos "Sistemas de arquivos") pode ter um rótulo ("label", em inglês). Todos os seus volumes que têm um são listados no diretório `/dev/disk/by-label`.
 
  `$ ls -l /dev/disk/by-label` 
 ```
@@ -153,7 +153,7 @@ Arch Linux
 
 ### by-uuid
 
-[UUID](https://en.wikipedia.org/wiki/pt:UUID "wikipedia:pt:UUID") é um mecanismo para fornecer a cada [sistema de arquivos](/index.php/Filesystem "Filesystem") um identificador exclusivo. Esses identificadores são gerados pelos utilitários do sistema de arquivos (por exemplo, `mkfs.*`) quando o dispositivo é formatado e projetado para que as colisões sejam improváveis. Todos os sistemas de arquivos GNU/Linux (incluindo cabeçalhos swap e LUKS de dispositivos criptografados não processados) possuem suporte a UUID. Os sistemas de arquivos FAT, exFAT e NTFS não suportam UUID, mas ainda estão listados em `/dev/disk/by-uuid/` com um UID mais curto (identificador exclusivo):
+[UUID](https://en.wikipedia.org/wiki/pt:UUID "wikipedia:pt:UUID") é um mecanismo para fornecer a cada [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") um identificador exclusivo. Esses identificadores são gerados pelos utilitários do sistema de arquivos (por exemplo, `mkfs.*`) quando o dispositivo é formatado e projetado para que as colisões sejam improváveis. Todos os sistemas de arquivos GNU/Linux (incluindo cabeçalhos swap e LUKS de dispositivos criptografados não processados) possuem suporte a UUID. Os sistemas de arquivos FAT, exFAT e NTFS não suportam UUID, mas ainda estão listados em `/dev/disk/by-uuid/` com um UID mais curto (identificador exclusivo):
 
  `$ ls -l /dev/disk/by-uuid/` 
 ```

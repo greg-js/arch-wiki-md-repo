@@ -136,7 +136,7 @@ $ rustup install stable-x86_64-pc-windows-gnu
 
 В этом разделе `$ARCH` будет целевой архитектурой (`x86_64` или `i686`).
 
-1.  [Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) и [wine](https://www.archlinux.org/packages/?name=wine)
+1.  [Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) и [wine](https://www.archlinux.org/packages/?name=wine)
 2.  Добавьте определение binfmt для исполняемых файлов Windows вручную или из [binfmt-wine](https://aur.archlinux.org/packages/binfmt-wine/).
 3.  Если вы используете rustup, достаточно просто выполнить команды `rustup install stable-$ARCH-pc-windows-gnu` и `rustup target add $ARCH-pc-windows-gnu` для установки Rust и стандартной библиотеки для вашей архитектуры. Если вы не используете rustup, поставьте стандартную библиотеку Rust для Windows в вашем каталоге rustlib (`/usr/local/lib/rustlib` если у вас [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) или `/usr/lib/rustlib` если вы используете пакет [rust](https://www.archlinux.org/packages/?name=rust)). Простейший путь для этого — скачать установщик Rust под Windows для нужной вам архитектуры, установить с помощью Wine (`wine start my-rust-installer.msi`) и скопировать `$INSTALL_DIR/lib/rustlib/$ARCH-pc-windows-gnu` в ваш каталог rustlib.
 4.  Подскажите cargo, где искать MinGW-w64 gcc/ar добавлением следующих параметров в `~/.cargo/config` (создайте файл, если он отсутствует):

@@ -1,3 +1,1 @@
-Redirect to:
-
-*   [YubiKey](/index.php/YubiKey "YubiKey")
+[Universal 2nd Factor (U2F)](https://en.wikipedia.org/wiki/Universal_2nd_Factor "w:Universal 2nd Factor") is an open standard that uses special USB devices like the [YubiKey](/index.php/YubiKey "YubiKey") or [Solo](/index.php/Solo "Solo") for strengthening and simplifying two-factor authentication (2FA).

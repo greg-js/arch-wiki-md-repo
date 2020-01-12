@@ -642,7 +642,7 @@ Si sospecha que hay corrupción de archivos (por ejemplo, por fallos de software
 
 ```
 
-Para la recuperación de la base de datos, véase [#Restaurar la base de datos local de pacman](#Restaurar_la_base_de_datos_local_de_pacman). Los archivos `mtree` también pueden ser [extraído como `.MTREE` de los respectivos archivos del paquete](#Visualizar_un_único_archivo_dentro_de_un_.pkg).
+Para la recuperación de la base de datos, véase [#Restaurar la base de datos local de pacman](#Restaurar_la_base_de_datos_local_de_pacman). Los archivos `mtree` también pueden ser [extraído como `.MTREE` de los respectivos archivos del paquete](#Visualizar_un_único_archivo_dentro_de_un_archivo_.pkg).
 
 **Nota:** esto **no** debe usarse cuando se sospeche de cambios maliciosos. En este caso, se recomiendan precauciones de seguridad, como usar un medio live o una fuente independiente para comprobar las sumas de hash.
 

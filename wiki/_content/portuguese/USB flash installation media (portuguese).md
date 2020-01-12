@@ -60,7 +60,7 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
 
 **Nota:** Este método é recomendado devido à sua simplicidade. Se não funcionar, mude para o método alternativo [#Usando formatação manual](#Usando_formatação_manual) abaixo.
 
-**Atenção:** Isso destruirá irrevogavelmente todos os dados em `/dev/**sdx**`. Para restaurar a unidade USB como um dispositivo de armazenamento utilizável vazio após usar a imagem ISO do Arch, a assinatura do sistema de arquivos ISO 9660 precisa ser removida executando `wipefs --all /dev/**sdx**` como root, antes de [reparticionar](/index.php/Repartition "Repartition") e [reformatar](/index.php/Reformat "Reformat") a unidade USB.
+**Atenção:** Isso destruirá irrevogavelmente todos os dados em `/dev/**sdx**`. Para restaurar a unidade USB como um dispositivo de armazenamento utilizável vazio após usar a imagem ISO do Arch, a assinatura do sistema de arquivos ISO 9660 precisa ser removida executando `wipefs --all /dev/**sdx**` como root, antes de [reparticionar](/index.php/Repartition "Repartition") e [reformatar](/index.php/Reformatar "Reformatar") a unidade USB.
 
 **Dica:** Descubra o nome do sua unidade USB com `lsblk`. Certifique-se de que ela **não** esteja montada.
 

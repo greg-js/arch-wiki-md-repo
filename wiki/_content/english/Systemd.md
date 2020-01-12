@@ -685,7 +685,7 @@ The problem for some users has been due to `/var/log/journal` becoming too large
 
 Starting with systemd 219, `/usr/lib/tmpfiles.d/systemd.conf` specifies ACL attributes for directories under `/var/log/journal` and, therefore, requires ACL support to be enabled for the filesystem the journal resides on.
 
-See [Access Control Lists#Enabling ACL](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") for instructions on how to enable ACL on the filesystem that houses `/var/log/journal`.
+See [Access Control Lists#Enable ACL](/index.php/Access_Control_Lists#Enable_ACL "Access Control Lists") for instructions on how to enable ACL on the filesystem that houses `/var/log/journal`.
 
 ### systemd version printed on boot is not the same as installed package version
 

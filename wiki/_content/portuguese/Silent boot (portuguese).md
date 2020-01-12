@@ -85,7 +85,7 @@ ExecStart=-/usr/bin/agetty **--skip-login** --nonewline --noissue --autologin *n
 
 Para ocultar mensagens do `startx`, você pode redirecionar sua saída para `/dev/null`, em seu [.bash_profile](https://github.com/kaihendry/Kai-s--HOME/blob/master/.bash_profile), como:
 
-**Nota:** Redirecionamento está quebrado com login sem root. Veja [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg").
+**Nota:** Redirecionamento está quebrado com login sem root. Veja [Xorg#Redirecionamento quebrado](/index.php/Xorg_(Portugu%C3%AAs)#Redirecionamento_quebrado "Xorg (Português)").
 
 ```
 $ [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null

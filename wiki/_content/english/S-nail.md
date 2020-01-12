@@ -101,7 +101,7 @@ x
 
 ## Configuration
 
-Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is subject to the usual ArchLinux update mechanism, thus volatile and not the right place for modifications. All the remaining examples in this article are based upon this configuration template, which simply sets some security and send mode basics:
+Configuration files are the user-specific `$HOME/.mailrc` and the systemwide `/etc/mail.rc`, the latter of which is in the PKGBUILD's [backup array](/index.php/Pacman/Pacnew_and_Pacsave#Package_backup_files "Pacman/Pacnew and Pacsave"), and hence will survive upgrades to s-nail. All the remaining examples in this article are based upon this configuration template, which simply sets some security and send mode basics:
 
 ```
 # All the examples require v15-compat!

@@ -3,7 +3,7 @@ Related articles
 *   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
 *   [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator")
 
-You can install Arch on an [iSCSI](/index.php/ISCSI "ISCSI") target. This allows you to boot from an iSCSI target using a diskless machine. No physical disk is required unless you need an iPXE boot USB (because your NIC isn't iBFT capable or you don't want to setup a TFTP server).
+You can install Arch on an [iSCSI](/index.php/ISCSI "ISCSI") target. This allows you to boot from an iSCSI target using a diskless machine. No physical disk is required unless you need an iPXE boot USB, because your NIC isn't iBFT capable or you don't want to setup a TFTP server or iPXE doesn't support your architecture (ARM).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -11,16 +11,23 @@ You can install Arch on an [iSCSI](/index.php/ISCSI "ISCSI") target. This allows
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Target setup](#Target_setup)
-*   [2 Initiator setup](#Initiator_setup)
-    *   [2.1 Overview](#Overview)
-    *   [2.2 Install over iSCSI](#Install_over_iSCSI)
-        *   [2.2.1 Using an iBFT Compatible Rom](#Using_an_iBFT_Compatible_Rom)
-        *   [2.2.2 Manually Setting the iSCSI Target](#Manually_Setting_the_iSCSI_Target)
-        *   [2.2.3 Using DHCP](#Using_DHCP)
-*   [3 Configuring Open iSCSI initiator on the diskless system](#Configuring_Open_iSCSI_initiator_on_the_diskless_system)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Device not found](#Device_not_found)
+*   [1 Boot Process](#Boot_Process)
+*   [2 Target setup](#Target_setup)
+*   [3 Initiator setup](#Initiator_setup)
+    *   [3.1 Overview](#Overview)
+    *   [3.2 Install over iSCSI](#Install_over_iSCSI)
+        *   [3.2.1 Using an iBFT Compatible Rom](#Using_an_iBFT_Compatible_Rom)
+        *   [3.2.2 Manually Setting the iSCSI Target](#Manually_Setting_the_iSCSI_Target)
+        *   [3.2.3 Using DHCP](#Using_DHCP)
+*   [4 Configuring Open iSCSI initiator on the diskless system](#Configuring_Open_iSCSI_initiator_on_the_diskless_system)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Device not found](#Device_not_found)
+
+### Boot Process
+
+There are various options to boot from the iscsi disk once it is installed the easiest is probably using sanboot to boot directly from the iscsi disk, this can be achieved using some UEFI bioses, some EFI programs, some NIC iBFT capable or running iPXE either from a local disk or from a tftp server via network boot. In this case you will to setup the infrastructure required to sanboot and also need to install grub or another boot loader on the iscsi disk.
+
+Alternatively it is possible to boot directly the kernel and the custom initcpio that we are going to create from a local disk or via tftpboot, this is the only option on architectures that do not support iPXE or sanboot like on a ARM board. In this case you will need to create a bootable medium and mount it to the /boot directory or setup the infrastructure required to boot from the network and copy the kernel and the initrd to the tftp server at every kernel/initcpio update.
 
 ## Target setup
 
@@ -35,8 +42,6 @@ You can set up an iSCSI target with any hosting server OS. Follow the procedure 
 3.  Install Arch Linux system in usual way.
 4.  Install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package in installed system.
 5.  Create initial RAM disk image containing open-iscsi modules.
-
-**Note:** In addition to the above, you have to prepare sanboot-able infrastructure which is necessary to load boot loader (GRUB, etc.) from remote disc. Some network interface cards support sanboot. If you don't have such cards, you can use [iPXE](http://ipxe.org/), [gPXE](http://etherboot.org/wiki/start), and so on.
 
 ### Install over iSCSI
 
@@ -162,7 +167,7 @@ Name=ibft*
 Unmanaged=yes
 ```
 
-If using ibft+dhcp it possible let systemd-networkd manage the dhcp lease but leave the interface up after shutting down.
+If using ibft+dhcp it possible let systemd-networkd manage the dhcp lease but leave the interface up after exiting.
 
 ```
 [Match]
@@ -230,7 +235,13 @@ DHCP=yes
 KeepConfiguration=yes
 ```
 
-The iscsi kernel driver cannot handle any network error without the iscsid daemon running, so it is important to make sure that when the network restarts the same ip address will be used, for example with a static lease.
+The iscsi kernel driver cannot handle any network error without the iscsid daemon running, so it is important to make sure that when the network restarts the same ip address will be used, for example with a static lease. To make sure that systemd doesn't kill iscsid too soon an fstab line like this can be used:
+
+ `UUID=12345678-1234-1234-1234-123456789012 /     ext4   relatime,lazytime,_netdev,x-systemd.requires=iscsid.service   0      1` 
+
+Since there is no iscsid.conf file in the initramfs the default value will be used for all parameters, it is possible to set the parameter with the '-P NAME=VALUE' option of iscsistart name where NAME is one of the settings in the node record or iscsid.conf without blanks. Multiple params can be passed in. For example to set the MaxXmitDataSegmentLength to 256k instead of the default of 8k use:
+
+ `iscsistart -i iSCSI.Initiator.Name -t iSCSI.Target.Name -g 1 -a 192.168.1.100 -P 'node.conn[0].iscsi.MaxXmitDataSegmentLength=262144'` 
 
 Add "iscsi" to the HOOKS line in [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio").
 

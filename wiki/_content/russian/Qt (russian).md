@@ -47,7 +47,7 @@
 
 ## Установка
 
-В настоящее время две версии Qt доступны в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Они могут быть [установлены](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") со следующими пакетами:
+В настоящее время две версии Qt доступны в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Они могут быть [установлены](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_отдельных_пакетов "Pacman (Русский)") со следующими пакетами:
 
 *   **Qt 5.x** входит в пакет [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), документация — [qt5-doc](https://www.archlinux.org/packages/?name=qt5-doc).
 *   **Qt 4.x** предоставляется пакетом [qt4](https://aur.archlinux.org/packages/qt4/), документация — [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/).

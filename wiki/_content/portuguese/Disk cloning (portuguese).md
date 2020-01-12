@@ -8,7 +8,7 @@ Artigos relacionados
 
 A clonagem de disco é o processo de criar uma imagem de uma partição ou de um disco rígido inteiro. Isso pode ser útil para copiar a unidade para outros computadores e para fins de [backup](/index.php/Backup_(Portugu%C3%AAs) "Backup (Português)") e [recuperação](/index.php/File_recovery "File recovery").
 
-**Dica:** Ao longo do tempo, [sistemas de arquivos](/index.php/File_systems "File systems") obtém novos recursos e utilitários de [mkfs](/index.php/Mkfs "Mkfs") alteram seus padrões, mas nem todos os novos recursos podem ser habilitados sem reformatação. Então, ao mover dados para uma nova unidade, em vez de clonar os dispositivos de bloco ou sistemas de arquivos, considere criar um novo sistema de arquivos ou apenas copiar os arquivos (e seus atributos, ACLs, atributos estendidos, etc.) com, por exemplo, [rsync](/index.php/Rsync#Full_system_backup "Rsync").
+**Dica:** Ao longo do tempo, [sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos") obtém novos recursos e utilitários de [mkfs](/index.php/Mkfs_(Portugu%C3%AAs) "Mkfs (Português)") alteram seus padrões, mas nem todos os novos recursos podem ser habilitados sem reformatação. Então, ao mover dados para uma nova unidade, em vez de clonar os dispositivos de bloco ou sistemas de arquivos, considere criar um novo sistema de arquivos ou apenas copiar os arquivos (e seus atributos, ACLs, atributos estendidos, etc.) com, por exemplo, [rsync](/index.php/Rsync#Full_system_backup "Rsync").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

@@ -150,7 +150,7 @@ initramfs 之所以存在，是为了帮系统访问真正的根文件系统（�
 
 ## GUI、 xinit 或者 wayland
 
-[xinit](/index.php/Xinit "Xinit") 也会调用用户的 [.xinitrc](/index.php/.xinitrc ".xinitrc") 这个「有可执行性的配置文件」，后者一般用来启动一个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")。如果用户退出了窗口管理器、xinit、 startx 和 shell login 就会先后中断，返回到 [getty](#getty).
+[xinit](/index.php/Xinit "Xinit") 也会调用用户的 [.xinitrc](/index.php/.xinitrc ".xinitrc") 这个「有可执行性的配置文件」，后者一般用来启动一个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")。如果用户退出了窗口管理器、xinit、 startx 和 shell login 就会先后中断，返回到 [getty](#Getty).
 
 ## 参见
 

@@ -240,7 +240,7 @@ Instalador do Fedora | ? | ? | ? | ? | ? | Android, Chrome OS |
 
 ### Escolhendo uma configuração
 
-Que configuração de encriptação de disco é apropriada para você vai depender de seus objetivos (leia [#Porque criptografar](#Porque_criptografar)) e parâmetros do sistema.
+Que configuração de encriptação de disco é apropriada para você vai depender de seus objetivos (leia [#Porque criptografar?](#Porque_criptografar?)) e parâmetros do sistema.
 
 Entre outras coisas, você vai precisar responder as seguintes perguntas:
 
