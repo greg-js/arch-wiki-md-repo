@@ -3,7 +3,7 @@ Related articles
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
-**fwupd** is a simple daemon allowing to update some devices firmware, including UEFI BIOS for several machines.
+**fwupd** is a simple daemon allowing to update some devices firmware, including UEFI for several machines.
 
 Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more are to come](https://fwupd.org/vendorlist).
 
@@ -16,7 +16,7 @@ Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more
 *   [1 Installation](#Installation)
     *   [1.1 Graphical front-ends](#Graphical_front-ends)
 *   [2 Usage](#Usage)
-*   [3 Setup for UEFI BIOS upgrade](#Setup_for_UEFI_BIOS_upgrade)
+*   [3 Setup for UEFI upgrade](#Setup_for_UEFI_upgrade)
     *   [3.1 Prepare ESP](#Prepare_ESP)
     *   [3.2 Secure Boot](#Secure_Boot)
         *   [3.2.1 Using your own keys](#Using_your_own_keys)
@@ -25,7 +25,7 @@ Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more
 
 [Install](/index.php/Install "Install") [fwupd](https://www.archlinux.org/packages/?name=fwupd).
 
-See [#Setup for UEFI BIOS upgrade](#Setup_for_UEFI_BIOS_upgrade) if you intend such an use.
+See [#Setup for UEFI upgrade](#Setup_for_UEFI_upgrade) if you intend such an use.
 
 ### Graphical front-ends
 
@@ -81,7 +81,7 @@ $ fwupdmgr update
 *   Updates that run at bootup will be staged for the next reboot.
 *   The [root user](/index.php/Root_user "Root user") may be required to perform certain device updates.
 
-## Setup for UEFI BIOS upgrade
+## Setup for UEFI upgrade
 
 **Warning:** An update to your UEFI firmware may discard the current [bootloader](/index.php/Bootloader "Bootloader") installation. It may be necessary to recreate the NVRAM entry (for example using [efibootmgr](/index.php/Efibootmgr "Efibootmgr")) after the firmware update has been installed successfully.
 

@@ -332,7 +332,7 @@ There also exist a number of front-ends to `ssh-agent` and alternative agents de
 
 #### Start ssh-agent with systemd user
 
-It is possible to use the [systemd/User](/index.php/Systemd/User "Systemd/User") facilities to start the agent.
+It is possible to use the [systemd/User](/index.php/Systemd/User "Systemd/User") facilities to start the agent. Use this if you would like your ssh agent to run when you are logged in, regardless of whether x is running.
 
  `~/.config/systemd/user/ssh-agent.service` 
 ```
@@ -351,6 +351,8 @@ WantedBy=default.target
 Add `SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"` to `~/.pam_environment`. Then [enable](/index.php/Enable "Enable") or [start](/index.php/Start "Start") the service.
 
 **Note:** If you use GNOME, this environment variable is overridden by default. See [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring").
+
+**Tip:** When starting the agent via systemd as described above, it is possible to automatically enter the passphrase of your default key and add it to the agent. See [systemd-user-pam-ssh](https://github.com/capocasa/systemd-user-pam-ssh) for details.
 
 #### ssh-agent as a wrapper program
 

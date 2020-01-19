@@ -1103,9 +1103,9 @@ When composing an email message within mutt, `Tab` will now search your Google c
 
 #### Khard
 
-[khard](https://www.archlinux.org/packages/?name=khard) is a command-line addressbook that uses carddav address book entries at your local machine, you can use [vdirsyncer](https://www.archlinux.org/packages/?name=vdirsyncer) to sync it with CardDAV-servers.
+[khard](https://www.archlinux.org/packages/?name=khard) is a command-line addressbook that uses locally-stored carddav address book entries. You can use [vdirsyncer](https://www.archlinux.org/packages/?name=vdirsyncer) to sync those with CardDAV servers.
 
-The integration in mutt is similar to abook, see the [project homepage](https://github.com/scheibler/khard#mutt).
+The integration in mutt is similar to abook, see [khard documentation](https://khard.readthedocs.io/en/latest/scripting.html#mutt).
 
 ### Manage multiple sender accounts
 

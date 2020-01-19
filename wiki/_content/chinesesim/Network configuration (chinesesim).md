@@ -1,14 +1,14 @@
 相关文章
 
 *   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Wireless network configuration (简体中文)](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")
-*   [List of applications#Network Managers](/index.php/List_of_applications#Network_Managers "List of applications")
+*   [Firewalls (简体中文)](/index.php/Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firewalls (简体中文)")
+*   [Router (简体中文)](/index.php/Router_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Router (简体中文)")
+*   [Internet sharing (简体中文)](/index.php/Internet_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Internet sharing (简体中文)")
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 
 **翻译状态：** 本文是英文页面 [Network_configuration](/index.php/Network_configuration "Network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-28，点击[这里](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=445647)可以查看翻译后英文页面的改动。
 
-本页解释了如何配置 **有线** 网络连接。如果你需要设置 **无线** 网络，参见[无线配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")页面。
+本页解释了如何在 [OSI 第三层](https://en.wikipedia.org/wiki/OSI_layer_3 两个页面中。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -18,72 +18,82 @@
 
 *   [1 检查连接](#检查连接)
     *   [1.1 Ping](#Ping)
-*   [2 设置计算机名](#设置计算机名)
-*   [3 设备驱动程序](#设备驱动程序)
-    *   [3.1 检测驱动状态](#检测驱动状态)
-    *   [3.2 加载设备模块](#加载设备模块)
-*   [4 网络接口](#网络接口)
-    *   [4.1 设备命名](#设备命名)
-    *   [4.2 获取当前网络名](#获取当前网络名)
-        *   [4.2.1 更改设备名称](#更改设备名称)
-        *   [4.2.2 使用传统网络命名规则](#使用传统网络命名规则)
-    *   [4.3 设定设备的 MTU 和队列长度](#设定设备的_MTU_和队列长度)
-    *   [4.4 启用和禁用网络接口](#启用和禁用网络接口)
-*   [5 配置 IP 地址](#配置_IP_地址)
-    *   [5.1 动态 IP 地址](#动态_IP_地址)
-        *   [5.1.1 systemd-networkd](#systemd-networkd)
-        *   [5.1.2 dhcpcd](#dhcpcd)
-        *   [5.1.3 netctl](#netctl)
-    *   [5.2 静态 IP 地址](#静态_IP_地址)
-        *   [5.2.1 netctl](#netctl_2)
-        *   [5.2.2 systemd-networkd](#systemd-networkd_2)
-        *   [5.2.3 dhcpcd](#dhcpcd_2)
-        *   [5.2.4 手动指定](#手动指定)
-        *   [5.2.5 计算地址](#计算地址)
-    *   [5.3 IP 地址](#IP_地址)
-    *   [5.4 路由表](#路由表)
-*   [6 更多设置](#更多设置)
-    *   [6.1 笔记本电脑使用 Ifplugd](#笔记本电脑使用_Ifplugd)
-    *   [6.2 绑定和链路聚合](#绑定和链路聚合)
-    *   [6.3 IP 别名](#IP_别名)
-    *   [6.4 更改 MAC/硬件地址](#更改_MAC/硬件地址)
-    *   [6.5 共享网络连接](#共享网络连接)
-    *   [6.6 路由配置](#路由配置)
-    *   [6.7 局域网主机的名称解析](#局域网主机的名称解析)
-    *   [6.8 全接收模式](#全接收模式)
-*   [7 疑难排解](#疑难排解)
-    *   [7.1 更换了连接cable modem的计算机](#更换了连接cable_modem的计算机)
-    *   [7.2 TCP窗口扩缩（window scaling）故障](#TCP窗口扩缩（window_scaling）故障)
-        *   [7.2.1 如何诊断故障](#如何诊断故障)
-        *   [7.2.2 如何修复（糟糕的方法）](#如何修复（糟糕的方法）)
-        *   [7.2.3 如何修复（好点的方法）](#如何修复（好点的方法）)
-        *   [7.2.4 如何修复（最佳的方法）](#如何修复（最佳的方法）)
-        *   [7.2.5 更多](#更多)
-    *   [7.3 Realtek 没有连接/网络唤醒故障](#Realtek_没有连接/网络唤醒故障)
-        *   [7.3.1 在 Linux 中启用网卡](#在_Linux_中启用网卡)
-        *   [7.3.2 方法一 还原/变更Win驱动](#方法一_还原/变更Win驱动)
-        *   [7.3.3 方法二 启动Windows驱动里的网络唤醒功能](#方法二_启动Windows驱动里的网络唤醒功能)
-        *   [7.3.4 方法三 更新Realtek Linux驱动](#方法三_更新Realtek_Linux驱动)
-        *   [7.3.5 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#方法四_在_BIOS/CMOS_中启用_LAN_Boot_ROM)
-    *   [7.4 检查 DHCP 问题先释放 IP 地址](#检查_DHCP_问题先释放_IP_地址)
-    *   [7.5 Atheros 芯片组找不到网卡](#Atheros_芯片组找不到网卡)
-    *   [7.6 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [7.7 Realtek RTL8111/8168B](#Realtek_RTL8111/8168B)
-    *   [7.8 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111/8168/8411)
+*   [2 网络管理](#网络管理)
+    *   [2.1 网络工具](#网络工具)
+    *   [2.2 iproute2](#iproute2)
+    *   [2.3 网络接口](#网络接口)
+        *   [2.3.1 列出网络接口](#列出网络接口)
+        *   [2.3.2 启用和禁用网络接口](#启用和禁用网络接口)
+    *   [2.4 静态 IP 地址](#静态_IP_地址)
+    *   [2.5 IP 地址](#IP_地址)
+    *   [2.6 路由表](#路由表)
+    *   [2.7 DHCP](#DHCP)
+        *   [2.7.1 服务器](#服务器)
+    *   [2.8 网络管理器](#网络管理器)
+*   [3 设置计算机名](#设置计算机名)
+*   [4 设备驱动程序](#设备驱动程序)
+    *   [4.1 检测驱动状态](#检测驱动状态)
+    *   [4.2 加载设备模块](#加载设备模块)
+*   [5 网络接口](#网络接口_2)
+    *   [5.1 设备命名](#设备命名)
+    *   [5.2 获取当前网络名](#获取当前网络名)
+        *   [5.2.1 更改设备名称](#更改设备名称)
+        *   [5.2.2 使用传统网络命名规则](#使用传统网络命名规则)
+    *   [5.3 设定设备的 MTU 和队列长度](#设定设备的_MTU_和队列长度)
+    *   [5.4 启用和禁用网络接口](#启用和禁用网络接口_2)
+*   [6 配置 IP 地址](#配置_IP_地址)
+    *   [6.1 动态 IP 地址](#动态_IP_地址)
+        *   [6.1.1 systemd-networkd](#systemd-networkd)
+        *   [6.1.2 dhcpcd](#dhcpcd)
+        *   [6.1.3 netctl](#netctl)
+    *   [6.2 静态 IP 地址](#静态_IP_地址_2)
+        *   [6.2.1 netctl](#netctl_2)
+        *   [6.2.2 systemd-networkd](#systemd-networkd_2)
+        *   [6.2.3 dhcpcd](#dhcpcd_2)
+        *   [6.2.4 手动指定](#手动指定)
+        *   [6.2.5 计算地址](#计算地址)
+    *   [6.3 IP 地址](#IP_地址_2)
+    *   [6.4 路由表](#路由表_2)
+*   [7 更多设置](#更多设置)
+    *   [7.1 笔记本电脑使用 Ifplugd](#笔记本电脑使用_Ifplugd)
+    *   [7.2 绑定和链路聚合](#绑定和链路聚合)
+    *   [7.3 IP 别名](#IP_别名)
+    *   [7.4 更改 MAC/硬件地址](#更改_MAC/硬件地址)
+    *   [7.5 共享网络连接](#共享网络连接)
+    *   [7.6 路由配置](#路由配置)
+    *   [7.7 局域网主机的名称解析](#局域网主机的名称解析)
+    *   [7.8 全接收模式](#全接收模式)
+*   [8 疑难排解](#疑难排解)
+    *   [8.1 更换了连接cable modem的计算机](#更换了连接cable_modem的计算机)
+    *   [8.2 TCP窗口扩缩（window scaling）故障](#TCP窗口扩缩（window_scaling）故障)
+        *   [8.2.1 如何诊断故障](#如何诊断故障)
+        *   [8.2.2 如何修复（糟糕的方法）](#如何修复（糟糕的方法）)
+        *   [8.2.3 如何修复（好点的方法）](#如何修复（好点的方法）)
+        *   [8.2.4 如何修复（最佳的方法）](#如何修复（最佳的方法）)
+        *   [8.2.5 更多](#更多)
+    *   [8.3 Realtek 没有连接/网络唤醒故障](#Realtek_没有连接/网络唤醒故障)
+        *   [8.3.1 在 Linux 中启用网卡](#在_Linux_中启用网卡)
+        *   [8.3.2 方法一 还原/变更Win驱动](#方法一_还原/变更Win驱动)
+        *   [8.3.3 方法二 启动Windows驱动里的网络唤醒功能](#方法二_启动Windows驱动里的网络唤醒功能)
+        *   [8.3.4 方法三 更新Realtek Linux驱动](#方法三_更新Realtek_Linux驱动)
+        *   [8.3.5 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#方法四_在_BIOS/CMOS_中启用_LAN_Boot_ROM)
+    *   [8.4 检查 DHCP 问题先释放 IP 地址](#检查_DHCP_问题先释放_IP_地址)
+    *   [8.5 Atheros 芯片组找不到网卡](#Atheros_芯片组找不到网卡)
+    *   [8.6 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [8.7 Realtek RTL8111/8168B](#Realtek_RTL8111/8168B)
+    *   [8.8 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111/8168/8411)
 
 ## 检查连接
 
 若要排查网络连接问题，请先确保你满足了以下要求。
 
-1.  你的[网络接口](#网络接口)可见并已启用。
-2.  你已连接到网络。网线已接好或者已经[连接到无线局域网](/index.php/Wireless_network_configuration "Wireless network configuration")。
-3.  你的网络接口获得了一个[IP 地址](#IP_地址)。
+1.  你的[网络接口](#网络接口)可见并已启用。否则请检查设备驱动－请查阅 [Network configuration/Ethernet#Device driver](/index.php/Network_configuration/Ethernet#Device_driver "Network configuration/Ethernet") 或 [Wireless network configuration (简体中文)#设备驱动](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#设备驱动 "Wireless network configuration (简体中文)") 页面。
+2.  你已连接到网络。网线已接好或者已经[连接到无线局域网](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")。
+3.  你的网络接口拥有一个[IP 地址](#IP_地址)。
 4.  你的[路由表](#路由表)设置正确。
 5.  你可以 [ping](#Ping) 通一个本地 IP 地址（例如你的默认网关）。
-6.  你可以 [ping](#Ping) 通一个公网 IP 地址（例如 `8.8.8.8`）。
+6.  你可以 [ping](#Ping) 通一个公网 IP 地址（例如 `8.8.8.8` ，即谷歌的 DNS 服务器）。
 7.  [检查是否能解析域名](/index.php/Check_if_you_can_resolve_domain_names "Check if you can resolve domain names")（例如 `archlinux.org`）。
-
-**提示：** `8.8.8.8` 是谷歌的 DNS 服务器。
 
 ### Ping
 
@@ -102,7 +112,191 @@ PING www.example.com (93.184.216.34): 56(84) data bytes
 
 如果没有收到回应，原因可能与你的默认网关配置或者你的网络接入服务商（ISP）有关。你可以运行 [traceroute](/index.php/Traceroute "Traceroute") 以进一步诊断到对端主机的路由。
 
-**注意:** 如果你运行 ping 命令时收到一条类似 `ping: icmp open socket: Operation not permitted` 之类的报错信息，请尝试重新安装 [iputils](https://www.archlinux.org/packages/?name=iputils) 软件包。
+**注意:** 如果你运行 ping 命令时收到一条类似 `ping: icmp open socket: Operation not permitted` 的报错信息，请尝试重新安装 [iputils](https://www.archlinux.org/packages/?name=iputils) 软件包。
+
+## 网络管理
+
+通过以下步骤来设置网络链接：
+
+1.  确保网络接口已连接并已开启。
+2.  连接到网络。网线已接好或者已经[连接到无线局域网](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")。
+3.  配置网络连接：
+    *   [静态 IP 地址](#静态_IP_地址)
+    *   动态 IP 地址：使用 [DHCP](#DHCP)
+
+**注意:** 安装镜像会在开机时为 [有线网络设备](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) 启用 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`)
+
+### 网络工具
+
+Arch Linux 已经弃用了 [net-tools](https://www.archlinux.org/packages/?name=net-tools) 转而使用 [iproute2](https://www.archlinux.org/packages/?name=iproute2)。 [[2]](https://www.archlinux.org/news/deprecation-of-net-tools/)
+
+| 已弃用的命令 | 替换命令 |
+| arp | ip neighbor |
+| [ifconfig](https://zh.wikipedia.org/wiki/Ifconfig) | ip address, ip link |
+| netstat | [ss](#Investigate_sockets) |
+| route | ip route |
+
+想要更多更完整的总结，请参阅[这篇文章](https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements/)。
+
+### iproute2
+
+[iproute2](https://en.wikipedia.org/wiki/iproute2 使 ip 命令自动化。同时需要注意的是 ip 命令通常能够缩写，为了清楚起见，本文对其进行了详细说明。
+
+### 网络接口
+
+默认情况下， [udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)") 使用 [可预测的网络接口名称](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) 分配给你的网络接口，该名称以 `en` (有线/[以太网](https://zh.wikipedia.org/wiki/以太网)) ，`wl` (无线/WLAN) 或 `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "wikipedia:Wireless WAN")) 。
+
+**Tip:** 要改变接口名称，请参阅 [#Change interface name](#Change_interface_name) 和 [#Revert to traditional interface names](#Revert_to_traditional_interface_names) 。
+
+#### 列出网络接口
+
+有线和无线接口名称都可以通过 `ls /sys/class/net` 或 `ip link` 找到。要注意的是 `lo` 是 [Loop 设备](https://zh.wikipedia.org/wiki/Loop设备) ，不被用于建立网络连接。
+
+同样，也可以用 `iw dev` 来检索无线设备的名称。可以参阅 [Wireless network configuration (简体中文)#获取有用信息](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#获取有用信息 "Wireless network configuration (简体中文)")
+
+如果未列出您的网络接口，请确保已成功加载设备驱动。参阅 [Network configuration/Ethernet#Device driver](/index.php/Network_configuration/Ethernet#Device_driver "Network configuration/Ethernet") 或 [Wireless network configuration (简体中文)#设备驱动](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#设备驱动 "Wireless network configuration (简体中文)") 。
+
+#### 启用和禁用网络接口
+
+可以使用 `ip link set *interface* up|down` 来启用 / 禁用网络接口，参阅 [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8) 。
+
+要想检查接口 `eth0` 的状态：
+
+ `$ ip link show dev eth0` 
+```
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state DOWN mode DEFAULT qlen 1000
+...
+
+```
+
+`<BROADCAST,MULTICAST,UP,LOWER_UP>` 中的 `UP` 表示接口已经启动，而非表示稍后的 `state DOWN` 。
+
+**注意:** 如果您的默认路由是通过接口 `eth0` 进行的，则将其删除也会删除该路由，而恢复备份将不会自动重新建立默认路由。参阅 [#路由表](#路由表) 以重新建立它。
+
+### 静态 IP 地址
+
+可以通过绝大多数的 [网络管理器](#网络管理器) 或 [dhcpcd (简体中文)](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") 来配置静态 IP 地址。
+
+要手动配置静态 IP 地址，请按照 [IP 地址](#IP_地址) 中的说明添加 IP 地址，设置 [路由表](#路由表) 并[配置 DNS 服务器](/index.php/Domain_name_resolution_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Domain name resolution (简体中文)")。
+
+### IP 地址
+
+通过 [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8) 来管理 [IP 地址](https://zh.wikipedia.org/wiki/IP地址)。
+
+列出 IP 地址：
+
+```
+$ ip address show
+
+```
+
+将 IP 地址添加到接口：
+
+```
+# ip address add *address/prefix_len* broadcast + dev *interface*
+
+```
+
+	注意：
+
+*   这个地址将以 [CIDR 表示法](https://zh.wikipedia.org/wiki/无类别域间路由) 给出，还会提供 [子网掩码](https://zh.wikipedia.org/wiki/子网) 。
+*   `+` 是使 `ip` 从 IP 地址和子网掩码派生 [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address") 的特殊符号
+
+**注意:** 要确保手动分配的 IP 地址与 DHCP 分配的 IP 地址不冲突。
+
+将 IP 地址从接口中删除：
+
+```
+$ ip address del *address/prefix_len* dev *interface*
+
+```
+
+删除所有符合条件的地址，例如某个特定接口的地址：
+
+```
+$ ip address flush dev *interface*
+
+```
+
+**Tip:** 可通过 [ipcalc](http://jodies.de/ipcalc) ([ipcalc](https://www.archlinux.org/packages/?name=ipcalc)) 计算 IP 地址。
+
+### 路由表
+
+[路由表](https://zh.wikipedia.org/wiki/路由表) 被用于确定是否可以直接访问某个 IP 地址或该使用哪个网关（路由器）。如果别的路由与这个 IP 地址匹配，将使用[默认网关](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway") 。
+
+通过 [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8) 来管理路由表。
+
+**PREFIX** 是 CIDR 表示法或默认网关的 `默认值` 。
+
+列出 IPv4 路由：
+
+```
+$ ip route show
+
+```
+
+列出 IPv6 路由：
+
+```
+$ ip -6 route
+
+```
+
+添加路由：
+
+```
+# ip route add *PREFIX* via *address* dev *interface*
+
+```
+
+删除路由：
+
+```
+# ip route del *PREFIX* via *address* dev *interface*
+
+```
+
+### DHCP
+
+[动态主机配置协议（DHCP）](https://zh.wikipedia.org/wiki/动态主机配置协议) 服务器为客户端提供动态 IP 地址，子网掩码，默认网关 IP 地址，有时还可以提供域名服务器。
+
+要使用 DHCP ，需要网络中有的 DHCP 服务器和 DHCP 客户端：
+
+| 客户端 | 软件包 | [Archiso](/index.php/Archiso_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Archiso (简体中文)") | 注意 | Systemd units |
+| [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) | Yes | DHCP, DHCPv6, ZeroConf, static IP | `dhcpcd.service`, `dhcpcd@*interface*.service` |
+| [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Yes | DHCP, DHCPv6, BOOTP, static IP | `dhclient@*interface*.service` |
+
+**注意:**
+
+*   不能同时运行两个 DHCP 客户端
+*   使用 DHCP 客户端的同时还需要同时使用 [网络管理器](#网络管理器)
+
+**Tip:** 你可以通过 [dhcping](https://www.archlinux.org/packages/?name=dhcping) 检查一个 DHCP 服务器是否在运行。
+
+#### 服务器
+
+| 服务器 | 软件包 | IPv4 | IPv6 | GUI | 接口 | 后端存储 | 注意 |
+| [dhcpd](/index.php/Dhcpd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpd (简体中文)") | [dhcp](https://www.archlinux.org/packages/?name=dhcp) | Yes | Yes | [Glass-ISC-DHCP](https://github.com/Akkadius/glass-isc-dhcp) | ? | File |
+| [dnsmasq](/index.php/Dnsmasq_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dnsmasq (简体中文)") | [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) | Yes | Yes | No | ? | File | Also DNS, PXE and TFTP |
+| [Kea](/index.php/Kea "Kea") | [kea](https://www.archlinux.org/packages/?name=kea) | Yes | Yes | [Kea-Anterius (Experimental)](https://github.com/isc-projects/kea-anterius) | REST, RADIUS and NETCONF | File, MySQL, PostgreSQL and Cassandra | Also DNS |
+
+### 网络管理器
+
+网络管理器可以在网络配置文件中管理网络连接设置，以便切换网络。
+
+**注意:** 有许多可选的方案，但他们都相互排斥，因此不要同时运行两个守护程序
+
+| 网络管理器 | GUI | [Archiso (简体中文)](/index.php/Archiso_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Archiso (简体中文)") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | CLI 工具 | [点对点协议](https://zh.wikipedia.org/wiki/点对点协议) 支持
+(e.g. 3G modem) | [DHCP 客户端](#DHCP) | Systemd units |
+| [ConnMan](/index.php/ConnMan "ConnMan") | 8 unofficial | No | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Yes (with [ofono](https://aur.archlinux.org/packages/ofono/)) | 内置 | `connman.service` |
+| [netctl](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)") | 2 unofficial | Yes | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Yes | [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") 或 [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
+| [NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)") | Yes | No | [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1), [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1) | Yes | internal, [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") 或 [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `NetworkManager.service` |
+| [systemd-networkd](/index.php/Systemd-networkd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-networkd (简体中文)") | No | Yes ([base](https://www.archlinux.org/packages/?name=base)) | [networkctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1) | [No](https://github.com/systemd/systemd/issues/481) | 内置 | `systemd-networkd.service`, `systemd-resolved.service` |
+| [Wicd](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)") | Yes | No | [wicd-cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-cli.8), [wicd-curses(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-curses.8) | No | [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") | `wicd.service` |
+
+还有 使用[wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) 管理 WiFi 网络的 GUI 应用 [Wifi Radar](/index.php/Wifi_Radar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wifi Radar (简体中文)") ，但它不处理有线连接。
+
+参阅 [List of applications (简体中文)#网络管理](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#网络管理 "List of applications (简体中文)") 。
 
 ## 设置计算机名
 
@@ -513,7 +707,7 @@ PING myhostname (192.168.1.2) 56(84) bytes of data.
 64 bytes from myhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
 ```
 
-如果希望其他机器通过主机名访问到这台机器，可以手动修改 `/etc/hosts` 文件或通过一个服务解析此主机名。使用 systemd 时，主机名解析可以通过 `myhostname` nss 模块提供。但是并不是所有的网络服务都被支持 (例如: [[2]](https://bbs.archlinux.org/viewtopic.php?id=176761), [[3]](https://bbs.archlinux.org/viewtopic.php?id=186967))，或者其它客户端使用不同的操作系统解析主机名，这个也无法被 systemd 支持。
+如果希望其他机器通过主机名访问到这台机器，可以手动修改 `/etc/hosts` 文件或通过一个服务解析此主机名。使用 systemd 时，主机名解析可以通过 `myhostname` nss 模块提供。但是并不是所有的网络服务都被支持 (例如: [[4]](https://bbs.archlinux.org/viewtopic.php?id=176761), [[5]](https://bbs.archlinux.org/viewtopic.php?id=186967))，或者其它客户端使用不同的操作系统解析主机名，这个也无法被 systemd 支持。
 
 第一个解决方法是修改 `/etc/hosts`:
 

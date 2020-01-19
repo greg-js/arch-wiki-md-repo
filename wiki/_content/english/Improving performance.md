@@ -44,7 +44,7 @@ This article provides information on basic system diagnostics relating to perfor
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
     *   [3.2 Frequency scaling](#Frequency_scaling)
-    *   [3.3 Alternative CPU scheduler](#Alternative_CPU_scheduler)
+    *   [3.3 Alternative CPU schedulers](#Alternative_CPU_schedulers)
     *   [3.4 Real-time kernel](#Real-time_kernel)
     *   [3.5 Adjusting priorities of processes](#Adjusting_priorities_of_processes)
         *   [3.5.1 Ananicy](#Ananicy)
@@ -326,11 +326,11 @@ Many Intel chips will not correctly report their clock frequency to acpi_cpufreq
 
 See [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
 
-### Alternative CPU scheduler
+### Alternative CPU schedulers
 
-The default CPU scheduler in the mainline Linux kernel is [CFS](https://en.wikipedia.org/wiki/Completely_Fair_Scheduler "w:Completely Fair Scheduler").
+The default CPU scheduler in the mainline Linux kernel is [CFS](https://en.wikipedia.org/wiki/Completely_Fair_Scheduler "w:Completely Fair Scheduler"). Alternative schedulers are available.
 
-An alternative scheduler designed to be used on desktop computers is MuQSS, developed by [Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/), which is focused on desktop interactivity and responsiveness. MuQSS is available either as a stand-alone patch or as part of a wider patchset, the **-ck** patchset. See [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") for more information on the patchset.
+One alternative scheduler focused on desktop interactivity and responsiveness is [MuQSS](http://ck.kolivas.org/patches/muqss/sched-MuQSS.txt), developed by [Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/). MuQSS is included in the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel package. It is also available as a stand-alone patch or as part of the wider **-ck** patchset. See [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") for more information on the patchset.
 
 ### Real-time kernel
 

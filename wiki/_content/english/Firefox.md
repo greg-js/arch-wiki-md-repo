@@ -61,6 +61,7 @@ Related articles
     *   [6.20 Tearing when scrolling](#Tearing_when_scrolling)
     *   [6.21 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
     *   [6.22 Cannot login with my Chinese account](#Cannot_login_with_my_Chinese_account)
+    *   [6.23 No Audio on certain videos when using JACK and PulseAudio](#No_Audio_on_certain_videos_when_using_JACK_and_PulseAudio)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -339,7 +340,7 @@ For most users, the issue has been fixed in Firefox 66.0.4 and Firefox ESR 60.6.
 
 ### Extension X does not work on some Mozilla owned domains
 
-By default extensions will not affect pages designated by `extensions.webextensions.restrictedDomains`. If this is not desired, this field can be cleared (special pages, like about:* and will not be affected).
+By default extensions will not affect pages designated by `extensions.webextensions.restrictedDomains`. If this is not desired, this field can be cleared (special pages such as `about:*` will not be affected).
 
 ### Firefox startup takes very long
 
@@ -486,6 +487,25 @@ This can also help if you are using the PulseAudio [module-echo-cancel](/index.p
 
 Firefox provides a local service for Chinese users, with a local account totally different from the international one. Firefox installed with the [firefox](https://www.archlinux.org/packages/?name=firefox) package uses the international account system by default, to change into the Chinese local service, you should install the add-on manager on [this page](http://mozilla.com.cn/thread-343905-1-1.html), then you can login with your Chinese account now.
 
+### No Audio on certain videos when using JACK and PulseAudio
+
+If you are using JACK in combination with PulseAudio and cannot hear any sound on some videos it could be because those videos have mono audio. This happens if your JACK setup uses more than just stereo, but you use normal headphones. To fix this you simply have to connect the `front-center` port from the PulseAudio JACK Sink to both `playback_1` and `playback_2` ports of the system output.
+
+You can also do this automatically using a script:
+
+```
+jack-mono.sh
+
+```
+
+```
+#!/bin/sh
+jack_connect "PulseAudio JACK Sink:front-center" "system:playback_1"
+jack_connect "PulseAudio JACK Sink:front-center" "system:playback_2"
+```
+
+Keep in mind that the names for the sink and the ports might be different for you. You can check what your JACK setup looks like with a Patchbay like Catia from [cadence](https://www.archlinux.org/packages/?name=cadence).
+
 ## See also
 
 *   [Official website](https://www.mozilla.org/firefox/)
@@ -494,5 +514,5 @@ Firefox provides a local service for Chinese users, with a local account totally
 *   [Wikipedia:Mozilla Firefox](https://en.wikipedia.org/wiki/Mozilla_Firefox "wikipedia:Mozilla Firefox")
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/firefox/themes/)
-*   [Mozilla's FTP](http://ftp.mozilla.org/pub/firefox/releases/)
+*   [Mozilla's FTP](https://ftp.mozilla.org/pub/firefox/releases/)
 *   [mozillaZine](http://forums.mozillazine.org/) unofficial forums

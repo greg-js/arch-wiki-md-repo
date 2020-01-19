@@ -54,7 +54,7 @@ The database files are saved in:
 
 ## Starting the daemon
 
-**Note:** You will need to run `freshclam` before starting the service for the first time or you will run into troubles/errors which will prevent ClamAV to start correctly.
+**Note:** You will need to run `freshclam` before starting the service for the first time or you will run into trouble/errors which will prevent ClamAV from starting correctly.
 
 The service is called `clamav-daemon.service`. [Start](/index.php/Start "Start") it and [enable](/index.php/Enable "Enable") it to start at boot.
 
@@ -269,15 +269,15 @@ WARNING: Clamd was NOT notified: Cannot connect to clamd through
 Add a sock file for ClamAV:
 
 ```
-# touch /var/lib/clamav/clamd.sock
-# chown clamav:clamav /var/lib/clamav/clamd.sock
+# touch /run/clamav/clamd.ctl
+# chown clamav:clamav /run/clamav/clamd.ctl
 
 ```
 
 Then, edit `/etc/clamav/clamd.conf` - uncomment this line:
 
 ```
-LocalSocket /var/lib/clamav/clamd.sock
+LocalSocket /run/clamav/clamd.ctl
 
 ```
 

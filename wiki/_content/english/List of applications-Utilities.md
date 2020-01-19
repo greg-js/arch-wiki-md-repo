@@ -1532,7 +1532,7 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 	[https://github.com/mate-desktop/mate-system-monitor](https://github.com/mate-desktop/mate-system-monitor) || [mate-system-monitor](https://www.archlinux.org/packages/?name=mate-system-monitor)
 
-*   **Task Manager** — GTK2 process management application for [Xfce](/index.php/Xfce "Xfce").
+*   **Task Manager** — GTK2/GTK3 based process manager with basic system resource monitor for [Xfce](/index.php/Xfce "Xfce").
 
 	[https://goodies.xfce.org/projects/applications/xfce4-taskmanager](https://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
 

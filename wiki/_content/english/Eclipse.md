@@ -1,6 +1,6 @@
 [Eclipse](https://eclipse.org) it is an open source community project aimed at providing a universal development platform. The Eclipse project is best known for its multiplatform integrated development environment (IDE). Arch Linux packages (and this guide) are specifically related to the IDE.
 
-Eclipse IDE is largely written in Java, but can be used to develop applications in many languages, including Java, C / C++, PHP, Perl, and Python. The IDE can also provide subversion support and task management.
+Eclipse IDE is largely written in Java, but can be used to develop applications in many languages, including Java, C / C++, PHP, Perl, Rust and Python. The IDE can also provide subversion support and task management.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

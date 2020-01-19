@@ -16,6 +16,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
+    *   [2.1 Simple firewall](#Simple_firewall)
 *   [3 Configuration](#Configuration)
     *   [3.1 Tables](#Tables)
         *   [3.1.1 Create table](#Create_table)
@@ -45,9 +46,10 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
     *   [4.6 Masquerading](#Masquerading)
     *   [4.7 NAT with port forwarding](#NAT_with_port_forwarding)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Simple stateful firewall](#Simple_stateful_firewall)
-        *   [5.1.1 Single machine](#Single_machine)
-    *   [5.2 Prevent brute-force attacks](#Prevent_brute-force_attacks)
+    *   [5.1 Saving current rule set](#Saving_current_rule_set)
+    *   [5.2 Simple stateful firewall](#Simple_stateful_firewall)
+        *   [5.2.1 Single machine](#Single_machine)
+    *   [5.3 Prevent brute-force attacks](#Prevent_brute-force_attacks)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Working with Docker](#Working_with_Docker)
 *   [7 See also](#See_also)
@@ -60,40 +62,37 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 
 ## Usage
 
-*nftables* makes a distinction between temporary rules made in the command line and permanent ones loaded from or saved to a file. The default file is `/etc/nftables.conf` which already contains a simple IPv4/IPv6 firewall table named "inet filter".
+**nftables** makes **no** distinction between temporary rules made in the command line and permanent ones loaded from or saved to a file.
 
-To use it [start/enable](/index.php/Start/enable "Start/enable") the `nftables.service`.
+All rules have to be created or loaded using `nft` command line utility.
 
-You can check the ruleset with
+Refer to [#Configuration](#Configuration) section on how to use.
+
+Current ruleset can be printed with:
 
 ```
 # nft list ruleset
 
 ```
 
-**Note:** You may have to create `/etc/modules-load.d/nftables.conf` with all of the nftables related modules you require as entries for the systemd service to work correctly. You can get a list of modules using this command: `$ grep -Eo '^nf\w+' /proc/modules` Otherwise, you could end up with the dreaded `Error: Could not process rule: No such file or directory` error.
+### Simple firewall
+
+[nftables](https://www.archlinux.org/packages/?name=nftables) comes with simple and secure firewall configuration stored in `/etc/nftables.conf` file.
+
+The `nftables.service` will load rules from that file when [started or enabled](/index.php/Start/enable "Start/enable").
 
 ## Configuration
 
-nftables' user-space utility *nft* performs most of the rule-set evaluation before handing rule-sets to the kernel. Rules are stored in chains, which in turn are stored in tables. The following sections indicate how to create and modify these constructs.
-
-All changes below are temporary. To make changes permanent, save your ruleset to `/etc/nftables.conf` which is loaded by `nftables.service`:
-
-```
-# nft -s list ruleset > /etc/nftables.conf
-
-```
-
-**Note:** `nft list` does not output variable definitions, if you have any in `/etc/nftables.conf` they will be lost. Any variables used in rules will be replaced by their value.
+nftables user-space utility `nft` performs most of the rule-set evaluation before handing rule-sets to the kernel. Rules are stored in chains, which in turn are stored in tables. The following sections indicate how to create and modify these constructs.
 
 To read input from a file use the `-f`/`--file` option:
 
 ```
-# nft -f *filename*
+# nft --file *filename*
 
 ```
 
-Note that any rules already loaded are not automatically flushed.
+Note that any rules already loaded are **not** automatically flushed.
 
 See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete list of all commands.
 
@@ -114,14 +113,14 @@ To create one rule that applies to both IPv4 and IPv6, use `inet`. `inet` allows
 
 See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8#ADDRESS_FAMILIES) for a complete description of address families.
 
-In all of the following, `*family*` is optional, and if not specified is set to `ip`.
+In all of the following, `*family_type*` is optional, and if not specified is set to `ip`.
 
 #### Create table
 
 The following adds a new table:
 
 ```
-# nft add table *family* *table*
+# nft add table *family_type* *table_name*
 
 ```
 
@@ -139,14 +138,14 @@ To list all tables:
 To list all chains and rules of a specified table do:
 
 ```
-# nft list table *family* *table*
+# nft list table *family_type* *table_name*
 
 ```
 
-For example, to list all the rules of the `filter` table of the `inet` family:
+For example, to list all the rules of the `my_table` table of the `inet` family:
 
 ```
-# nft list table inet filter
+# nft list table inet my_table
 
 ```
 
@@ -155,7 +154,7 @@ For example, to list all the rules of the `filter` table of the `inet` family:
 To delete a table do:
 
 ```
-# nft delete table *family* *table*
+# nft delete table *family_type* *table_name*
 
 ```
 
@@ -166,7 +165,7 @@ Tables can only be deleted if there are no chains in them.
 To flush all rules from a table do:
 
 ```
-# nft flush table *family* *table*
+# nft flush table *family_type* *table_name*
 
 ```
 
@@ -176,23 +175,23 @@ The purpose of chains is to hold [#Rules](#Rules). Unlike chains in iptables, th
 
 Chains have two types. A *base* chain is an entry point for packets from the networking stack, where a hook value is specified. A *regular* chain may be used as a jump target for better organization.
 
-In all of the following `*family*` is optional, and if not specified is set to `ip`.
+In all of the following `*family_type*` is optional, and if not specified is set to `ip`.
 
 #### Create chain
 
 ##### Regular chain
 
-The following adds a regular chain named `*chain*` to the table named `*table*`:
+The following adds a regular chain named `*chain_name*` to the table named `*table_name*`:
 
 ```
-# nft add chain *family* *table* *chain*
+# nft add chain *family_type* *table_name* *chain_name*
 
 ```
 
-For example, to add a regular chain named `tcpchain` to the `filter` table of the `inet` address family do:
+For example, to add a regular chain named `my_tcp_chain` to the `my_table` table of the `inet` address family do:
 
 ```
-# nft add chain inet filter tcpchain
+# nft add chain inet my_table my_tcp_chain
 
 ```
 
@@ -201,20 +200,20 @@ For example, to add a regular chain named `tcpchain` to the `filter` table of th
 To add a base chain specify hook and priority values:
 
 ```
-# nft add chain *family* *table* *chain* '{ type *type* hook *hook* priority *priority* ; }'
+# nft add chain *family_type* *table_name* *chain_name* '{ type *chain_type* hook *hook_type* priority *priority_value* ; }'
 
 ```
 
-`*type*` can be `filter`, `route`, or `nat`.
+`*chain_type*` can be `filter`, `route`, or `nat`.
 
-For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8#ADDRESS_FAMILIES) for a list of hooks for other families.
+For IPv4/IPv6/Inet address families `*hook_type*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8#ADDRESS_FAMILIES) for a list of hooks for other families.
 
-`*priority*` takes either a priority name or an its integer value. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8#CHAINS) for a list of standard priority names and values. Chains with lower numbers are processed first and can be negative. [[4]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
+`*priority_value*` takes either a priority name or an its integer value. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8#CHAINS) for a list of standard priority names and values. Chains with lower numbers are processed first and can be negative. [[4]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
 
 For example, to add a base chain that filters input packets:
 
 ```
-# nft add chain inet filter input '{ type filter hook input priority 0; }'
+# nft add chain inet mt_table my_chain '{ type filter hook input priority 0; }'
 
 ```
 
@@ -225,14 +224,14 @@ Replace `add` with `create` in any of the above to add a new chain but return an
 The following lists all rules of a chain:
 
 ```
-# nft list chain *family* *table* *chain*
+# nft list chain *family_type* *table_name* *chain_name*
 
 ```
 
-For example, the following lists the rules of the chain named `output` in the `inet` table named `filter`:
+For example, the following lists the rules of the chain named `my_output` in the `inet` table named `my_table`:
 
 ```
-# nft list chain inet filter output
+# nft list chain inet my_table my_output
 
 ```
 
@@ -241,14 +240,14 @@ For example, the following lists the rules of the chain named `output` in the `i
 To edit a chain, simply call it by its name and define the rules you want to change.
 
 ```
-# nft chain *family table chain* '{ [ type *type* hook *hook* device *device* priority *priority* ; policy *policy* ; ] }'
+# nft chain *family_type table_name chain_name* '{ [ type *chain_type* hook *hook_type* device *device_name* priority *priority_value* ; policy *policy_type* ; ] }'
 
 ```
 
-For example, to change the input chain policy of the default table from `accept` to `drop`
+For example, to change the `my_input` chain policy of the default table from `accept` to `drop`
 
 ```
-# nft chain inet filter input '{ policy drop ; }'
+# nft chain inet my_table my_input '{ policy drop ; }'
 
 ```
 
@@ -257,7 +256,7 @@ For example, to change the input chain policy of the default table from `accept`
 To delete a chain do:
 
 ```
-# nft delete chain *family* *table* *chain*
+# nft delete chain *family_type* *table_name* *chain_name*
 
 ```
 
@@ -268,7 +267,7 @@ The chain must not contain any rules or be a jump target.
 To flush rules from a chain do:
 
 ```
-# nft flush chain *family* *table* *chain*
+# nft flush chain *family_type* *table_name* *chain_name*
 
 ```
 
@@ -283,24 +282,24 @@ Rules are either constructed from expressions or statements and are contained wi
 To add a rule to a chain do:
 
 ```
-# nft add rule *family* *table* *chain* handle *handle* *statement*
+# nft add rule *family_type* *table_name* *chain_name* handle *handle_value* *statement*
 
 ```
 
-The rule is appended at `*handle*`, which is optional. If not specified, the rule is appended to the end of the chain.
+The rule is appended at `*my_handle*`, which is optional. If not specified, the rule is appended to the end of the chain.
 
 To prepend the rule to the position do:
 
 ```
-# nft insert rule *family* *table* *chain* handle *handle* *statement*
+# nft insert rule *family_type* *table_name* *chain_name* handle *handle_value* *statement*
 
 ```
 
-If `*handle*` is not specified, the rule is prepended to the chain.
+If `*handle_value*` is not specified, the rule is prepended to the chain.
 
 ##### Expressions
 
-Typically a `*statement*` includes some expression to be matched and then a verdict statement. Verdict statements include `accept`, `drop`, `queue`, `continue`, `return`, `jump *chain*`, and `goto *chain*`. Other statements than verdict statements are possible. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for more information.
+Typically a `*statement*` includes some expression to be matched and then a verdict statement. Verdict statements include `accept`, `drop`, `queue`, `continue`, `return`, `jump *chain_name*`, and `goto *chain_name*`. Other statements than verdict statements are possible. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for more information.
 
 There are various expressions available in nftables and, for the most part, coincide with their iptables counterparts. The most noticeable difference is that there are no generic or implicit matches. A generic match was one that was always available, such as `--protocol` or `--source`. Implicit matches were protocol-specific, such as `--sport` when a packet was determined to be TCP.
 
@@ -366,9 +365,9 @@ Individual rules can only be deleted by their handles. The `nft --handle list` c
 
 The following determines the handle for a rule and then deletes it. The `--numeric` argument is useful for viewing some numeric output, like unresolved IP addresses.
 
- `# nft --handle --numeric list chain inet filter input` 
+ `# nft --handle --numeric list chain inet my_table my_input` 
 ```
-table inet fltrTable {
+table inet my_table {
      chain input {
           type filter hook input priority 0;
           ip saddr 127.0.0.1 accept # handle 10
@@ -378,20 +377,20 @@ table inet fltrTable {
 ```
 
 ```
-# nft delete rule inet fltrTable input handle 10
+# nft delete rule inet my_table my_input handle 10
 
 ```
 
 All the chains in a table can be flushed with the `nft flush table` command. Individual chains can be flushed using either the `nft flush chain` or `nft delete rule` commands.
 
 ```
-# nft flush table foo
-# nft flush chain foo bar
-# nft delete rule ip6 foo bar
+# nft flush table *table_name*
+# nft flush chain *family_type* *table_name* *chain_name*
+# nft delete rule *family_type* *table_name* *chain_name*
 
 ```
 
-The first command flushes all of the chains in the ip `foo` table. The second flushes the `bar` chain in the ip `foo` table. The third deletes all of the rules in `bar` chain in the ip6 `foo` table.
+The first command flushes all of the chains in the ip `*table_name*` table. The second flushes the `*chain_name*` chain in the ip `foo` table. The third deletes all of the rules in `*chain_name*` chain in the `*family_type*` `*table_name*` table.
 
 ### Atomic reloading
 
@@ -424,9 +423,11 @@ Now you can edit /tmp/nftables and apply your changes with:
 ```
 flush ruleset
 
-table inet filter {
-	chain input {
-		type filter hook input priority 0; policy drop;
+table inet my_table {
+	chain my_input {
+		type filter hook input priority 0
+
+		policy drop
 
 		iif lo accept comment "Accept any localhost traffic"
 		ct state invalid drop comment "Drop invalid connections"
@@ -448,12 +449,16 @@ table inet filter {
 		counter comment "Count any other traffic"
 	}
 
-	chain forward {
-		type filter hook forward priority 0; policy drop;
+	chain my_forward {
+		type filter hook forward priority 0
+		# Drop everything forwarded to us. We do not forward. That is routers job.
+		policy drop
 	}
 
-	chain output {
-		type filter hook output priority 0; policy accept;
+	chain my_output {
+		type filter hook output priority 0
+		# Accept every outbound connection
+		policy accept
 	}
 
 }
@@ -466,9 +471,11 @@ table inet filter {
 ```
 flush ruleset
 
-table inet filter {
-	chain input {
-		type filter hook input priority 0; policy drop;
+table inet my_table {
+	chain my_input {
+		type filter hook input priority 0
+
+		policy drop
 
 		iif lo accept comment "Accept any localhost traffic"
 		ct state invalid drop comment "Drop invalid connections"
@@ -504,12 +511,16 @@ table inet filter {
 
 	}
 
-	chain forward {
-		type filter hook forward priority 0; policy drop;
+	chain my_forward {
+		type filter hook forward priority 0
+		# Drop everything forwarded to us. We do not forward. That is routers job.
+		policy drop
 	}
 
-	chain output {
-		type filter hook output priority 0; policy accept;
+	chain my_output {
+		type filter hook output priority 0
+		# Accept every outbound connection
+		policy accept
 	}
 
 }
@@ -519,9 +530,11 @@ table inet filter {
 ### Limit rate
 
 ```
-table inet filter {
-	chain input {
-		type filter hook input priority 0; policy drop;
+table inet my_table {
+	chain my_input {
+		type filter hook input priority 0
+
+		policy drop
 
 		iif lo accept comment "Accept any localhost traffic"
 		ct state invalid drop comment "Drop invalid connections"
@@ -548,13 +561,13 @@ table inet filter {
 When using jumps in config file, it is necessary to define the target chain first. Otherwise one could end up with `Error: Could not process rule: No such file or directory`.
 
 ```
-table inet filter {
+table inet my_table {
     chain web {
         tcp dport http accept
         tcp dport 8080 accept
     }
-    chain input {
-        type filter hook input priority 0;
+    chain my_input {
+        type filter hook input priority 0
         ip saddr 10.0.2.0/24 jump web
         drop
     }
@@ -567,24 +580,24 @@ table inet filter {
 If your box has more than one network interface, and you would like to use different rules for different interfaces, you may want to use a "dispatching" filter chain, and then interface-specific filter chains. For example, let us assume your box acts as a home router, you want to run a web server accessible over the LAN (interface `enp3s0`), but not from the public internet (interface `enp2s0`), you may want to consider a structure like this:
 
 ```
-table inet filter {
-  chain input { # this chain serves as a dispatcher
-    type filter hook input priority 0;
+table inet my_table {
+  chain my_input { # this chain serves as a dispatcher
+    type filter hook input priority 0
 
     iif lo accept # always accept loopback
-    iifname enp2s0 jump input_enp2s0
-    iifname enp3s0 jump input_enp3s0
+    iifname enp2s0 jump my_input_public
+    iifname enp3s0 jump my_input_private
 
     reject with icmp type port-unreachable # refuse traffic from all other interfaces
   }
-  chain input_enp2s0 { # rules applicable to public interface interface
+  chain my_input_public { # rules applicable to public interface interface
     ct state {established,related} accept
     ct state invalid drop
     udp dport bootpc accept
     tcp dport bootpc accept
     reject with icmp type port-unreachable # all other traffic
   }
-  chain input_enp3s0 {
+  chain my_input_private {
     ct state {established,related} accept
     ct state invalid drop
     udp dport bootpc accept
@@ -593,8 +606,8 @@ table inet filter {
     tcp port https accept
     reject with icmp type port-unreachable # all other traffic
   }
-  chain ouput { # we let everything out
-    type filter hook output priority 0;
+  chain my_output { # we let everything out
+    type filter hook output priority 0
     accept
   }
 }
@@ -616,12 +629,9 @@ To use it:
 Example for a machine with two interfaces: LAN connected to `enp3s0`, and public internet connected to `enp2s0`:
 
 ```
-table inet nat {
-  chain prerouting {
-    type nat hook prerouting priority -100;
-  }
-  chain postrouting {
-    type nat hook postrouting priority 100;
+table inet my_nat {
+  chain my_masquerade {
+    type nat hook postrouting priority 100
     oifname "enp2s0" masquerade
   }
 }
@@ -635,15 +645,15 @@ Since the table type is `inet` both IPv4 and IPv6 packets will be masqueraded. I
 This example will forward ports 22 and 80 to `*destination_ip*`. You will need to set `net.ipv4.ip_forward` and `net.ipv4.conf.*wan_interface*.forwarding` to `1` via [sysctl](/index.php/Sysctl "Sysctl").
 
 ```
-table ip nat {
-  chain prerouting {
-    type nat hook prerouting priority -100;
+table ip my_nat {
+  chain my_prerouting {
+    type nat hook prerouting priority -100
 
     tcp dport { ssh, http } dnat to *destination_ip*
   }
 
-  chain postrouting {
-    type nat hook postrouting priority 100;
+  chain my_postrouting {
+    type nat hook postrouting priority 100
 
     ip daddr *destination_ip* masquerade
   }
@@ -652,6 +662,17 @@ table ip nat {
 ```
 
 ## Tips and tricks
+
+### Saving current rule set
+
+The output of `nft list ruleset` command is a valid input file for it as well. Current rule set can be saved to file and later loaded back in.
+
+```
+$ nft list ruleset | tee *filename*
+
+```
+
+**Note:** `nft list` does not output variable definitions, if you had any in your original file they will be lost. Any variables used in rules will be replaced by their value.
 
 ### Simple stateful firewall
 
@@ -669,106 +690,106 @@ Flush the current ruleset:
 Add a table:
 
 ```
-# nft add table inet filter
+# nft add table inet my_table
 
 ```
 
 Add the input, forward, and output base chains. The policy for input and forward will be to drop. The policy for output will be to accept.
 
 ```
-# nft add chain inet filter input '{ type filter hook input priority 0 ; policy drop ; }'
-# nft add chain inet filter forward '{ type filter hook forward priority 0 ; policy drop ; }'
-# nft add chain inet filter output '{ type filter hook output priority 0 ; policy accept ; }'
+# nft add chain inet my_table my_input '{ type filter hook input priority 0 ; policy drop ; }'
+# nft add chain inet my_table my_forward '{ type filter hook forward priority 0 ; policy drop ; }'
+# nft add chain inet my_table my_output '{ type filter hook output priority 0 ; policy accept ; }'
 
 ```
 
 Add two regular chains that will be associated with tcp and udp:
 
 ```
-# nft add chain inet filter TCP
-# nft add chain inet filter UDP
+# nft add chain inet my_table my_tcp_chain
+# nft add chain inet my_table my_udp_chain
 
 ```
 
 Related and established traffic will be accepted:
 
 ```
-# nft add rule inet filter input ct state related,established accept
+# nft add rule inet my_table my_input ct state related,established accept
 
 ```
 
 All loopback interface traffic will be accepted:
 
 ```
-# nft add rule inet filter input iif lo accept
+# nft add rule inet my_table my_input iif lo accept
 
 ```
 
 Drop any invalid traffic:
 
 ```
-# nft add rule inet filter input ct state invalid drop
+# nft add rule inet my_table my_input ct state invalid drop
 
 ```
 
 Accept ICMP and IGMP:
 
 ```
-# nft add rule inet filter input ip6 nexthdr icmpv6 icmpv6 type '{ destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report }' accept
-# nft add rule inet filter input ip protocol icmp icmp type '{ destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem }' accept
-# nft add rule inet filter input ip protocol igmp accept
+# nft add rule inet my_table my_input ip6 nexthdr icmpv6 icmpv6 type '{ destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report }' accept
+# nft add rule inet my_table my_input ip protocol icmp icmp type '{ destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem }' accept
+# nft add rule inet my_table my_input ip protocol igmp accept
 
 ```
 
 New udp traffic will jump to the UDP chain:
 
 ```
-# nft add rule inet filter input ip protocol udp ct state new jump UDP
+# nft add rule inet my_table my_input ip protocol udp ct state new jump my_udp_chain
 
 ```
 
 New tcp traffic will jump to the TCP chain:
 
 ```
-# nft add rule inet filter input 'ip protocol tcp tcp flags & (fin|syn|rst|ack) == syn ct state new jump TCP'
+# nft add rule inet my_table my_input 'ip protocol tcp tcp flags & (fin|syn|rst|ack) == syn ct state new jump my_tcp_chain'
 
 ```
 
 Reject all traffic that was not processed by other rules:
 
 ```
-# nft add rule inet filter input ip protocol udp reject
-# nft add rule inet filter input ip protocol tcp reject with tcp reset
-# nft add rule inet filter input counter reject with icmp type prot-unreachable
+# nft add rule inet my_table my_input ip protocol udp reject
+# nft add rule inet my_table my_input ip protocol tcp reject with tcp reset
+# nft add rule inet my_table my_input counter reject with icmp type prot-unreachable
 
 ```
 
 At this point you should decide what ports you want to open to incoming connections, which are handled by the TCP and UDP chains. For example to open connections for a web server add:
 
 ```
-# nft add rule inet filter TCP tcp dport 80 accept
+# nft add rule inet my_table my_tcp_chain tcp dport 80 accept
 
 ```
 
 To accept HTTPS connections for a webserver on port 443:
 
 ```
-# nft add rule inet filter TCP tcp dport 443 accept
+# nft add rule inet my_table my_tcp_chain tcp dport 443 accept
 
 ```
 
 To accept SSH traffic on port 22:
 
 ```
-# nft add rule inet filter TCP tcp dport 22 accept
+# nft add rule inet my_table my_tcp_chain tcp dport 22 accept
 
 ```
 
 To accept incoming DNS requests:
 
 ```
-# nft add rule inet filter TCP tcp dport 53 accept
-# nft add rule inet filter UDP udp dport 53 accept
+# nft add rule inet my_table my_tcp_chain tcp dport 53 accept
+# nft add rule inet my_table my_udp_chain udp dport 53 accept
 
 ```
 

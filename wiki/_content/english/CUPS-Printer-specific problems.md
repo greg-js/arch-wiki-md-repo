@@ -73,7 +73,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-2250DN | [brother-brgenml1](https://aur.archlinux.org/packages/brother-brgenml1/) | [brother-hl2250dn](https://aur.archlinux.org/packages/brother-hl2250dn/) is broken? |
 | HL-2270DW | [brother-hl2270dw](https://aur.archlinux.org/packages/brother-hl2270dw/) |
 | HL-2280DW | [brother-hl2280dw](https://aur.archlinux.org/packages/brother-hl2280dw/) |
-| HL-3045CN | Install Brother's driver. |
+| HL-3045CN | Install Brother's driver or [brother-hl3040cn](https://aur.archlinux.org/packages/brother-hl3040cn/). |
 | HL-3140CW | [brother-hl3140cw](https://aur.archlinux.org/packages/brother-hl3140cw/) | Use IPP and Brother's driver to avoid page-shrinking and endless blank printouts |
 | HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
 | HL-3170CDW | [brother-hl3170cdw](https://aur.archlinux.org/packages/brother-hl3170cdw/) |
@@ -106,6 +106,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | MFC-J650DW | Install Brother's driver. |
 | MFC-J885DW | [brother-mfc-j885dw](https://aur.archlinux.org/packages/brother-mfc-j885dw/) |
 | MFC-J985DW | [brother-mfc-j985dw](https://aur.archlinux.org/packages/brother-mfc-j985dw/) |
+| MFC-L2700DN | [brother-mfc-l2700dn](https://aur.archlinux.org/packages/brother-mfc-l2700dn/) | Please look also at the comments section of the AUR package page. |
 | MFC-L2700DW | [brother-mfc-l2700dw](https://aur.archlinux.org/packages/brother-mfc-l2700dw/) | Please look also at the comments section of the AUR package page. |
 | MFC-L2730DW | [brother-mfc-l2730dw](https://aur.archlinux.org/packages/brother-mfc-l2730dw/) | Please look also at the comments section of the AUR package page. |
 | MFC-L8600CDW | [brother-mfc-l8600cdw](https://aur.archlinux.org/packages/brother-mfc-l8600cdw/) | Please follow the instructions on the AUR page. |

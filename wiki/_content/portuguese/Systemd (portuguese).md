@@ -501,7 +501,7 @@ Um exemplo dessas opções de montagem no contexto de *automontagem*, que signif
 
 ### Automontagem de partição GPT
 
-Em um disco particionado em [GPT](/index.php/GPT "GPT"), [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) vai montar partições seguindo a [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/), de forma que elas podem ser omitidas do `fstab`.
+Em um disco particionado em [GPT](/index.php/GPT_(Portugu%C3%AAs) "GPT (Português)"), [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) vai montar partições seguindo a [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/), de forma que elas podem ser omitidas do `fstab`.
 
 A automontagem para uma partição pode ser desabilitada alterando o [GUID do tipo](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") da partição ou definindo o bit de atributo 63 "do not automount", veja [gdisk#Prevent GPT partition automounting](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk").
 

@@ -4,14 +4,14 @@ Artigos relacionados
 
 *   [fstab](/index.php/Fstab "Fstab")
 *   [udev](/index.php/Udev "Udev")
-*   [LVM](/index.php/LVM "LVM")
+*   [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)")
 
 Este artigo descreve como usar nomes persistentes para seus [dispositivos de bloco](/index.php/Dispositivos_de_bloco "Dispositivos de bloco"). Isso foi possível com a introdução do [udev](/index.php/Udev "Udev") e tem algumas vantagens sobre a nomeação baseada em barramento. Se sua máquina tiver mais de um controlador de disco SATA, SCSI ou IDE, a ordem na qual os nós de dispositivos correspondentes são adicionados é arbitrária. Isso pode resultar em nomes de dispositivos como `/dev/**sda**` e `/dev/**sdb**` alternando em cada inicialização, culminando em uma inicialização não-inicializável sistema, pânico do kernel ou um dispositivo de bloco desaparecendo. A nomeação persistente resolve esses problemas.
 
 **Nota:**
 
 *   A nomeação persistente possui limites que estão fora do escopo neste artigo. Por exemplo, enquanto [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") pode ter suporte a um método, o systemd pode impor seus próprios limites (por exemplo, [FS#42884](https://bugs.archlinux.org/task/42884)) na nomeação de nomes que ele pode processar durante a inicialização.
-*   Esse artigo não é relevante para volumes lógicos de [LVM](/index.php/LVM "LVM"), pois os caminhos de dispositivo `/dev/*NomeGrupoVolume*/*NomeVolumeLógico*` são persistentes.
+*   Esse artigo não é relevante para volumes lógicos de [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)"), pois os caminhos de dispositivo `/dev/*NomeGrupoVolume*/*NomeVolumeLógico*` são persistentes.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -32,7 +32,7 @@ Este artigo descreve como usar nomes persistentes para seus [dispositivos de blo
 
 ## Métodos de nomeação persistente
 
-Há quatro esquemas diferentes para nomeação persistente: [by-label](#by-label), [by-uuid](#by-uuid), [by-id e by-path](#by-id_e_by-path). Para os que usam discos com [Tabela de Partição GUID (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table"), dois esquemas adicionais podem ser usados: [by-partlabel](#by-partlabel) e [by-partuuid](#by-partuuid). Você também pode usar [nomes estáticos de dispositivos com udev](#Nomes_estáticos_de_dispositivos_com_udev).
+Há quatro esquemas diferentes para nomeação persistente: [by-label](#by-label), [by-uuid](#by-uuid), [by-id e by-path](#by-id_e_by-path). Para os que usam discos com [Tabela de Partição GUID](/index.php/Tabela_de_Parti%C3%A7%C3%A3o_GUID "Tabela de Partição GUID") (GPT), dois esquemas adicionais podem ser usados: [by-partlabel](#by-partlabel) e [by-partuuid](#by-partuuid). Você também pode usar [nomes estáticos de dispositivos com udev](#Nomes_estáticos_de_dispositivos_com_udev).
 
 Os diretórios em `/dev/disk/` são criados e destruídos dinamicamente, dependendo se há dispositivos neles ou não.
 
@@ -55,7 +55,7 @@ mmcblk0
 
 ```
 
-Para aqueles que usam [GPT](/index.php/GPT "GPT"), use o comando `blkid`. Este comando é mais conveniente para scripts, mas mais difícil de ler.
+Para aqueles que usam [GPT](/index.php/GPT_(Portugu%C3%AAs) "GPT (Português)"), use o comando `blkid`. Este comando é mais conveniente para scripts, mas mais difícil de ler.
 
  `# blkid` 
 ```
@@ -228,7 +228,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:07:00.0-platform-rtsx_pci_sdmmc.
 
 ### by-partlabel
 
-**Nota:** Este método refere-se apenas a discos com [Tabela de Partição GUID (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table").
+**Nota:** Este método refere-se apenas a discos com [Tabela de Partição GUID](/index.php/Tabela_de_Parti%C3%A7%C3%A3o_GUID "Tabela de Partição GUID") (GPT).
 
 Os rótulos de partição GPT podem ser definidos no cabeçalho da [entrada de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Entradas_de_parti.C3.A7.C3.A3o_.28LBA_2.E2.80.9333.29 "wikipedia:pt:Tabela de Partição GUID") nos discos GPT.
 
@@ -264,7 +264,7 @@ EFI system partition
 
 **Nota:**
 
-*   Os rótulos das partições GPT também precisam ser diferentes para evitar conflitos. Para alterar o rótulo da sua partição, você pode usar [gdisk](/index.php/Gdisk "Gdisk") ou a versão baseada em ncurses [cgdisk](/index.php/Cgdisk "Cgdisk"). Ambos estão disponíveis no pacote [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk). Veja [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools "Partitioning").
+*   Os rótulos das partições GPT também precisam ser diferentes para evitar conflitos. Para alterar o rótulo da sua partição, você pode usar [gdisk](/index.php/Gdisk "Gdisk") ou a versão baseada em ncurses [cgdisk](/index.php/Cgdisk "Cgdisk"). Ambos estão disponíveis no pacote [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk). Veja [Particionamento#Ferramentas de particionamento](/index.php/Particionamento#Ferramentas_de_particionamento "Particionamento").
 *   De acordo com a especificação, os rótulos das partições GPT podem ter até 72 caracteres.
 
 ### by-partuuid

@@ -35,7 +35,7 @@ Related articles
         *   [4.6.1 目录同步](#目录同步)
         *   [4.6.2 Start a shell from ranger](#Start_a_shell_from_ranger)
         *   [4.6.3 避免在 ranger 启动的 shell 内创建新的 ranger](#避免在_ranger_启动的_shell_内创建新的_ranger)
-*   [5 Troubleshooting](#Troubleshooting)
+*   [5 疑难解答](#疑难解答)
     *   [5.1 Artifacts in image preview](#Artifacts_in_image_preview)
 *   [6 参见](#参见)
 
@@ -56,7 +56,7 @@ Related articles
 
 ## 定制
 
-启动之后 ranger 会创建一个目录 `~/.config/ranger/`。可以使用以下命令复制默认配置文件到这个目录:
+第一次启动　ranger 会创建一个目录 `~/.config/ranger/`。可以使用以下命令复制默认配置文件到这个目录:
 
 ```
 $ ranger --copy-config=all
@@ -76,7 +76,7 @@ from ranger.api.commands import *
 
 ```
 
-相信配置选项请参考 [ranger(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ranger.1)。
+更多配置选项请参考 [ranger(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ranger.1)。
 
 ### 移动到回收站
 
@@ -427,16 +427,18 @@ rg() {
 
 Execute `rg` to start or restore ranger.
 
-## Troubleshooting
+## 疑难解答
 
 ### Artifacts in image preview
 
-Borderless columns may cause stripes in image previews. [[1]](https://bbs.linuxdistrocommunity.com/showthread.php?tid=1051) In `~/.config/ranger/rc.conf` set:
+无边框边栏可能在图片预览中产生条纹。[[1]](https://bbs.linuxdistrocommunity.com/showthread.php?tid=1051) 在 `~/.config/ranger/rc.conf` 设置:
 
 ```
 set draw_borders true
 
 ```
+
+可以解决这个问题
 
 ## 参见
 

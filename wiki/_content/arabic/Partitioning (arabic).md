@@ -12,31 +12,35 @@ Related articles
 
 يجب عمل تهيئة Format للقسم بأحد أنظمة الملفات [file system type](/index.php/File_systems "File systems") قبل استخدامه.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 أنواع الأقسام](#.D8.A3.D9.86.D9.88.D8.A7.D8.B9_.D8.A7.D9.84.D8.A3.D9.82.D8.B3.D8.A7.D9.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 أنواع الأقسام](#أنواع_الأقسام)
     *   [1.1 MBR](#MBR)
     *   [1.2 GPT](#GPT)
-*   [2 مخططات التقسيم](#.D9.85.D8.AE.D8.B7.D8.B7.D8.A7.D8.AA_.D8.A7.D9.84.D8.AA.D9.82.D8.B3.D9.8A.D9.85)
-    *   [2.1 قسم واحد للجذر](#.D9.82.D8.B3.D9.85_.D9.88.D8.A7.D8.AD.D8.AF_.D9.84.D9.84.D8.AC.D8.B0.D8.B1)
-    *   [2.2 الأقسام المنفصلة](#.D8.A7.D9.84.D8.A3.D9.82.D8.B3.D8.A7.D9.85_.D8.A7.D9.84.D9.85.D9.86.D9.81.D8.B5.D9.84.D8.A9)
-    *   [2.3 نقاط الربط](#.D9.86.D9.82.D8.A7.D8.B7_.D8.A7.D9.84.D8.B1.D8.A8.D8.B7)
-        *   [2.3.1 قسم الجذر](#.D9.82.D8.B3.D9.85_.D8.A7.D9.84.D8.AC.D8.B0.D8.B1)
-        *   [2.3.2 مجلد /boot](#.D9.85.D8.AC.D9.84.D8.AF_.2Fboot)
-        *   [2.3.3 مجلد /home](#.D9.85.D8.AC.D9.84.D8.AF_.2Fhome)
-        *   [2.3.4 مجلد /var](#.D9.85.D8.AC.D9.84.D8.AF_.2Fvar)
-        *   [2.3.5 مجلد /tmp](#.D9.85.D8.AC.D9.84.D8.AF_.2Ftmp)
-        *   [2.3.6 سواب](#.D8.B3.D9.88.D8.A7.D8.A8)
-        *   [2.3.7 ما هي المساحة المناسبة لكل قسم؟](#.D9.85.D8.A7_.D9.87.D9.8A_.D8.A7.D9.84.D9.85.D8.B3.D8.A7.D8.AD.D8.A9_.D8.A7.D9.84.D9.85.D9.86.D8.A7.D8.B3.D8.A8.D8.A9_.D9.84.D9.83.D9.84_.D9.82.D8.B3.D9.85.D8.9F)
-*   [3 أدوات التقسيم](#.D8.A3.D8.AF.D9.88.D8.A7.D8.AA_.D8.A7.D9.84.D8.AA.D9.82.D8.B3.D9.8A.D9.85)
-*   [4 محاذاة القسم](#.D9.85.D8.AD.D8.A7.D8.B0.D8.A7.D8.A9_.D8.A7.D9.84.D9.82.D8.B3.D9.85)
-    *   [4.1 نظرة عامة](#.D9.86.D8.B8.D8.B1.D8.A9_.D8.B9.D8.A7.D9.85.D8.A9)
-    *   [4.2 الاختيار بين GPT و MBR](#.D8.A7.D9.84.D8.A7.D8.AE.D8.AA.D9.8A.D8.A7.D8.B1_.D8.A8.D9.8A.D9.86_GPT_.D9.88_MBR)
-    *   [4.3 استخدام GPT - الطريقة الحديثة](#.D8.A7.D8.B3.D8.AA.D8.AE.D8.AF.D8.A7.D9.85_GPT_-_.D8.A7.D9.84.D8.B7.D8.B1.D9.8A.D9.82.D8.A9_.D8.A7.D9.84.D8.AD.D8.AF.D9.8A.D8.AB.D8.A9)
-        *   [4.3.1 ملخص استعمال أداة Gdisk](#.D9.85.D9.84.D8.AE.D8.B5_.D8.A7.D8.B3.D8.AA.D8.B9.D9.85.D8.A7.D9.84_.D8.A3.D8.AF.D8.A7.D8.A9_Gdisk)
-    *   [4.4 استعمال MBR - طريقة legacy](#.D8.A7.D8.B3.D8.AA.D8.B9.D9.85.D8.A7.D9.84_MBR_-_.D8.B7.D8.B1.D9.8A.D9.82.D8.A9_legacy)
-        *   [4.4.1 ملخص استعمال Fdisk](#.D9.85.D9.84.D8.AE.D8.B5_.D8.A7.D8.B3.D8.AA.D8.B9.D9.85.D8.A7.D9.84_Fdisk)
-*   [5 انظر أيضاً](#.D8.A7.D9.86.D8.B8.D8.B1_.D8.A3.D9.8A.D8.B6.D8.A7.D9.8B)
+*   [2 مخططات التقسيم](#مخططات_التقسيم)
+    *   [2.1 قسم واحد للجذر](#قسم_واحد_للجذر)
+    *   [2.2 الأقسام المنفصلة](#الأقسام_المنفصلة)
+    *   [2.3 نقاط الربط](#نقاط_الربط)
+        *   [2.3.1 قسم الجذر](#قسم_الجذر)
+        *   [2.3.2 مجلد /boot](#مجلد_/boot)
+        *   [2.3.3 مجلد /home](#مجلد_/home)
+        *   [2.3.4 مجلد /var](#مجلد_/var)
+        *   [2.3.5 مجلد /tmp](#مجلد_/tmp)
+        *   [2.3.6 سواب](#سواب)
+        *   [2.3.7 ما هي المساحة المناسبة لكل قسم؟](#ما_هي_المساحة_المناسبة_لكل_قسم؟)
+*   [3 أدوات التقسيم](#أدوات_التقسيم)
+*   [4 محاذاة القسم](#محاذاة_القسم)
+    *   [4.1 نظرة عامة](#نظرة_عامة)
+    *   [4.2 الاختيار بين GPT و MBR](#الاختيار_بين_GPT_و_MBR)
+    *   [4.3 استخدام GPT - الطريقة الحديثة](#استخدام_GPT_-_الطريقة_الحديثة)
+        *   [4.3.1 ملخص استعمال أداة Gdisk](#ملخص_استعمال_أداة_Gdisk)
+    *   [4.4 استعمال MBR - طريقة legacy](#استعمال_MBR_-_طريقة_legacy)
+        *   [4.4.1 ملخص استعمال Fdisk](#ملخص_استعمال_Fdisk)
+*   [5 انظر أيضاً](#انظر_أيضاً)
 
 ## أنواع الأقسام
 
@@ -223,7 +227,7 @@ Related articles
 *   قم بكتابة الجدول إلى القرص ثم اخرج بواسطة الأمر `w`.
 *   قم بتهيئة الأقسام الجديدة بواسطة [file system](/index.php/File_systems "File systems").
 
-**ملاحظة:** * للإقلاع من قرص مقسم وفق GPT على نظام BIOS يجب عليك إنشاء -يفضل أن يكون في بداية القرص- [BIOS boot partition](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2") من دون نظام ملفات ومع نوع تقسيم مثل `BIOS boot` أو `bios_grub`، هذا في حال الإقلاع بواسطة [GRUB](/index.php/GRUB "GRUB")، أنا في حال [Syslinux](/index.php/Syslinux "Syslinux") فلا يجب عليك إنشاء قسم bios_grub السابق بل تحتاج إلى قسم خاص لـ `/boot` والقيام بتفعيل سمة [BIOS boot partition](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2") الخاصة بهذا القسم (بواسطة gdisk).
+**ملاحظة:** * للإقلاع من قرص مقسم وفق GPT على نظام BIOS يجب عليك إنشاء -يفضل أن يكون في بداية القرص- [BIOS boot partition](/index.php/GRUB2#GUID_Partition_Table_(GPT)_specific_instructions "GRUB2") من دون نظام ملفات ومع نوع تقسيم مثل `BIOS boot` أو `bios_grub`، هذا في حال الإقلاع بواسطة [GRUB](/index.php/GRUB "GRUB")، أنا في حال [Syslinux](/index.php/Syslinux "Syslinux") فلا يجب عليك إنشاء قسم bios_grub السابق بل تحتاج إلى قسم خاص لـ `/boot` والقيام بتفعيل سمة [BIOS boot partition](/index.php/GRUB2#GUID_Partition_Table_(GPT)_specific_instructions "GRUB2") الخاصة بهذا القسم (بواسطة gdisk).
 
 *   مُحمِّل الإقلاع [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") لا يدعم GPT، يجب على المستخدمين أن يستعملوا [BURG](/index.php/BURG "BURG") أو [GRUB](/index.php/GRUB "GRUB") أو [Syslinux](/index.php/Syslinux "Syslinux").
 

@@ -60,7 +60,7 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
 
 **Nota:** Este método é recomendado devido à sua simplicidade. Se não funcionar, mude para o método alternativo [#Usando formatação manual](#Usando_formatação_manual) abaixo.
 
-**Atenção:** Isso destruirá irrevogavelmente todos os dados em `/dev/**sdx**`. Para restaurar a unidade USB como um dispositivo de armazenamento utilizável vazio após usar a imagem ISO do Arch, a assinatura do sistema de arquivos ISO 9660 precisa ser removida executando `wipefs --all /dev/**sdx**` como root, antes de [reparticionar](/index.php/Repartition "Repartition") e [reformatar](/index.php/Reformatar "Reformatar") a unidade USB.
+**Atenção:** Isso destruirá irrevogavelmente todos os dados em `/dev/**sdx**`. Para restaurar a unidade USB como um dispositivo de armazenamento utilizável vazio após usar a imagem ISO do Arch, a assinatura do sistema de arquivos ISO 9660 precisa ser removida executando `wipefs --all /dev/**sdx**` como root, antes de [reparticionar](/index.php/Reparti%C3%A7%C3%A3o "Repartição") e [reformatar](/index.php/Reformatar "Reformatar") a unidade USB.
 
 **Dica:** Descubra o nome do sua unidade USB com `lsblk`. Certifique-se de que ela **não** esteja montada.
 
@@ -217,11 +217,11 @@ Mantenha seu telefone em uma mesa enquanto está gravando a imagem: muitos adapt
 
 #### No GNU/Linux
 
-Esse método é mais complicado do que gravar a imagem diretamente com `dd`, mas mantém a unidade flash utilizável para armazenamento de dados (ou seja, o ISO é instalado em uma partição específica dentro de um [dispositivo já particionado](/index.php/Partitioning "Partitioning") sem alterar outras partições).
+Esse método é mais complicado do que gravar a imagem diretamente com `dd`, mas mantém a unidade flash utilizável para armazenamento de dados (ou seja, o ISO é instalado em uma partição específica dentro de um [dispositivo já particionado](/index.php/Particionamento "Particionamento") sem alterar outras partições).
 
 **Nota:** Aqui, denotaremos a partição de destino como `/dev/sd**Xn**`. Em qualquer um dos seguintes comandos, ajuste **X** e **n** de acordo com o seu sistema.
 
-*   Se ainda não tiver feito, crie uma [tabela de partição](/index.php/Partition_table "Partition table") em `/dev/sd**X**`.
+*   Se ainda não tiver feito, crie uma [tabela de partição](/index.php/Tabela_de_parti%C3%A7%C3%A3o "Tabela de partição") em `/dev/sd**X**`.
 *   Se ainda não tiver feito, crie uma partição no dispositivo. A partição `/dev/sd**Xn**` deve ser formatada para [FAT32](/index.php/FAT32 "FAT32").
 *   Monte a imagem ISO, monte o sistema de arquivos FAT32 localizado no dispositivo flash USB e copie o conteúdo da imagem ISO para ele. Em seguida, desmonte a imagem ISO, mas mantenha a partição FAT32 montada (isso pode usado em etapas subsequentes). Por exemplo:
 

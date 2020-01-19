@@ -7,11 +7,14 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usage](#Usage)
-*   [2 List of events sent by mouse](#List_of_events_sent_by_mouse)
-*   [3 Mappings for extra buttons](#Mappings_for_extra_buttons)
-*   [4 Power](#Power)
-*   [5 Smart shift](#Smart_shift)
-*   [6 Laggy mouse movements in Bluetooth mode](#Laggy_mouse_movements_in_Bluetooth_mode)
+*   [2 Mappings for extra buttons](#Mappings_for_extra_buttons)
+    *   [2.1 Logiops](#Logiops)
+    *   [2.2 Xbindkeys](#Xbindkeys)
+*   [3 Power](#Power)
+*   [4 Smart shift](#Smart_shift)
+    *   [4.1 Logiops](#Logiops_2)
+    *   [4.2 Solaar](#Solaar)
+*   [5 Laggy mouse movements in Bluetooth mode](#Laggy_mouse_movements_in_Bluetooth_mode)
 
 ## Usage
 
@@ -19,7 +22,180 @@ The mouse should work with no special configuration if using the unified receive
 
 To use [Bluetooth](/index.php/Bluetooth "Bluetooth"), change the channel on the bottom of the mouse, and click the `connect` button. Now, search for the mouse with a bluetooth manager of your choice and pair. In future it should connect as soon as you switch to that channel when your bluetooth is active. If you have problems with the mouse not showing when scanning, see [Bluetooth LE device does not show up in scan](/index.php/Bluetooth#Device_does_not_show_up_in_scan "Bluetooth")
 
-## List of events sent by mouse
+The mouse exists in 3 versions:
+
+*   Mx Master.
+*   Mx Master 2s.
+*   Mx Master 3.
+
+The functionalities are the same.
+
+## Mappings for extra buttons
+
+Installing [#Logiops](#Logiops) [logiops-git](https://aur.archlinux.org/packages/logiops-git/) it is possible to acquire everything this mouse has to offer:
+
+*   Easy programmable buttons.
+*   DPI selection.
+*   Smartshift (hyperfast and click-to-clic wheel mode).
+*   HiresScroll.
+*   Gestures.
+
+It is possible to use just [#Xbindkeys](#Xbindkeys) and tweak the desktop shortcuts to obtain some customization, but with some caveats (look notes below).
+
+### Logiops
+
+It can be executed as application via command line by running
+
+```
+# logid
+
+```
+
+Or as a service by systemd.
+
+```
+# systemctl start logid
+
+```
+
+The configuration lives in /etc/logid.cfg. But the package comes with no configuration. One needs to create this specifying the name of the device to be used. To obtain that name launching from cli
+
+```
+# logid -v
+
+```
+
+The name of the detected device is printed.
+
+Then you can create the configuration file. As example look at [https://github.com/PixlOne/logiops/blob/master/logid.example.cfg](https://github.com/PixlOne/logiops/blob/master/logid.example.cfg) or this one:
+
+ `/etc/logid.cfg` 
+```
+devices: (
+{
+    name: "MX Master 3";
+    smartshift:
+    {
+        on: true;
+        threshold: 30;
+    };
+    hiresscroll:
+    {
+        hires: false;
+        invert: false;
+        target: false;
+    };
+    dpi: 1000;
+
+    buttons: (
+        {
+            cid: 0xc3;
+            action =
+            {
+                type: "Gestures";
+                gestures: (
+                    {
+                        direction: "Up";
+                        mode: "OnRelease";
+                        action =
+                        {
+                            type: "Keypress";
+                            keys: ["KEY_LEFTCTRL", "KEY_F10"];
+                        };
+                    },
+                    {
+                        direction: "Down";
+                        mode: "OnRelease";
+                        action =
+                        {
+                            type: "Keypress";
+                            keys: ["KEY_LEFTCTRL", "KEY_F7"];
+                        };
+                    },
+#                    {
+#                        direction: "Left";
+#                        mode: "OnRelease";
+#                        action =
+#                        {
+#                            type: "CycleDPI";
+#                            dpis: [50, 500, 1000, 1500, 2000, 3000, 4000];
+#                        };
+#                    },
+                    {
+                        direction: "Left";
+                        mode: "OnRelease";
+                        action =
+                        {
+                            type: "Keypress";
+                            keys: ["KEY_LEFTMETA", "KEY_LEFT"];
+                        };
+                    },
+
+#                    {
+#                        direction: "Right";
+#                        mode: "OnRelease";
+#                        action =
+#                        {
+#                            type = "ToggleHiresScroll";
+#                        }
+#                    },
+                    {
+                        direction: "Right";
+                        mode: "OnRelease";
+                        action =
+                        {
+                            type: "Keypress";
+                            keys: ["KEY_LEFTMETA", "KEY_RIGHT"];
+                        }
+                    },
+
+                    {
+                        direction: "None"
+                        mode: "NoPress"
+                    }
+                );
+            };
+        },
+        {
+            cid: 0xc4;
+            action =
+            {
+                type = "ToggleSmartshift";
+            };
+        },
+        {
+            # Next tab instead of fwd in history, Comment to default behavior
+            cid: 0x53;
+            action =
+            {
+                type :  "Keypress";
+                keys: ["KEY_LEFTCTRL", "KEY_PAGEUP"];
+            };
+        },
+        {
+            # Previous tab instead of back in history, Comment to default behavior
+            cid: 0x56;
+            action =
+            {
+                type :  "Keypress";
+                keys: ["KEY_LEFTCTRL", "KEY_PAGEDOWN"];
+            };
+        }
+    );
+},
+{
+# Another device to configure
+name: "Other Logitech USB Receiver";
+
+}
+);
+```
+
+It's documented in [https://github.com/PixlOne/logiops/wiki/Configuration](https://github.com/PixlOne/logiops/wiki/Configuration) .
+
+### Xbindkeys
+
+List of events sent by mouse
 
 | Physical action | detected as |
 | Left button | button 1 |
@@ -27,7 +203,7 @@ To use [Bluetooth](/index.php/Bluetooth "Bluetooth"), change the channel on the 
 | Right button | button 3 |
 | Scroll wheel up | button 4 |
 | Scroll wheel down | button 5 |
-| Press "i" button under wheel | undetectable in linux |
+| Press "i" button under wheel | Not detected by xbindkeys |
 | Scroll hor_wheel right (up) | button 6 |
 | Scroll hor_wheel left (down) | button 7 |
 | Side-bottom button | button 8 |
@@ -40,8 +216,6 @@ Notes:
 *   If you wish, you can get experience of thumb button like in Windows or Mac. In kde go to System settings → Shortcuts → Global Shortcuts → KWin → Show all windows from all desktops. It is set to ctrl+f10 by default. Set ctrl+alt+tab for this action and apply settings.
 *   "I" button under wheel is undetectable in linux, but works as switching wheel between free and rattle mode
 *   Logitech gestures (moving mouse up/down/left/right while thumb pressed) are not detected in linux.
-
-## Mappings for extra buttons
 
 The vertical wheel and the two buttons near it should work right away, however the thumb button requires some special treatment, and you might want to remap the rest.
 
@@ -127,6 +301,25 @@ $ pkill xbindkeys && xbindkeys
 Battery status can be read as described on [Logitech Unifying Receiver](/index.php/Logitech_Unifying_Receiver "Logitech Unifying Receiver"). e.g. Solaar ([solaar](https://www.archlinux.org/packages/?name=solaar)) has a system tray utility.
 
 ## Smart shift
+
+### Logiops
+
+The button below the wheel can be used to toggle it, set the control id 0xc4 in buttons definitions in /etc/logid.cfg as this:
+
+ `/etc/logid.cfg` 
+```
+...
+        {
+            cid: 0xc4;
+            action =
+            {
+                type = "ToggleSmartshift";
+            };
+        },
+...
+```
+
+### Solaar
 
 In order to change the sensitivity of changing the mouse wheel mode (between hyperfast and click-to-click), install [solaar](https://www.archlinux.org/packages/?name=solaar). A slider appears that can be set somewhere between 0 and 50 (inclusive). 0 means always in hyperfast mode, 50 means always in click-to-click mode.
 

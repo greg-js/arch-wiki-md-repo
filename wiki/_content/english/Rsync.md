@@ -223,7 +223,7 @@ fi
 
 	limit I/O bandwidth; KBytes per second
 
-Also, the script must have write permission for owner (root, of course) only (see [NetworkManager#Network services with NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") for details).
+The script must be owned by root (see [NetworkManager#Network services with NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") for details).
 
 ### Automated backup with systemd and inotify
 

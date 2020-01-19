@@ -143,9 +143,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## What works
 
-Almost everything works:
-
-*   Basic hardware (display, touchpad, trackpoint, keyboard, WiFi, Ethernet, Bluetooth, audio, suspend & resume from RAM and disk, etc.)
+*   Basic hardware (display, touchpad, trackpoint, keyboard, WiFi, Ethernet, Bluetooth, audio, hibernation, etc.)
 *   Keyboard backlight control
 *   Screen backlight control
 *   Fn/Hotkeys, including Fn-lock
@@ -153,6 +151,7 @@ Almost everything works:
 *   Qualcomm Snapdragon X7 LTE Modem
 *   USB-C (connected to Android phone, was able to charge phone and read files)
 *   USB-C power delivery
+*   DisplayPort Alternate Mode for USB-C
 *   USB-C Display port with D6000 docking station (triple screen with dual 4k works) + power delivery
 *   Thunderbolt 3.0 (shows up in gnome-settings, works with Dell TB16 dock (Ethernet, DisplayPort @120hz, USB, power delivery, etc))
 
@@ -160,9 +159,9 @@ Almost everything works:
 
 *   Fingerprint reader (tracked at [https://gitlab.freedesktop.org/libfprint/libfprint/issues/88](https://gitlab.freedesktop.org/libfprint/libfprint/issues/88))
 *   Presumably NFC
+*   Suspend makes the laptop reboot (tested with Linux 4.14, 4.19 and 5.3). You can mask suspend target to forbid the system from suspending (i.e. dying): `# systemctl mask suspend.target`. [Hibernation](/index.php/Hibernation "Hibernation") works fine.
 
 ## What was not tested
 
 *   Contactless SmartCard (probably works since it was detected by `pcsc_scan`
-*   DisplayPort Alternate Mode for USB-C
 *   TPM 2.0 (There is an error in dmesg, `tpm tpm0: A TPM error (2314) occurred attempting the self test`)

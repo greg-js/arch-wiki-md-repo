@@ -20,7 +20,7 @@
 
 ## Usage and configuration
 
-In order to search using Baloo on the Plasma desktop, start [KRunner](/index.php/KRunner "KRunner") (default keyboard shortcut `ALT+F2`) and type in your query. Within Dolphin press `CTRL+F`.
+In order to search using Baloo on the Plasma desktop, start [KRunner](/index.php/KRunner "KRunner") (default keyboard shortcut `ALT+F2`) and type in your query. Within Dolphin press `Ctrl+f`.
 
 By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and a way to disable it with one click. Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://community.kde.org/Baloo/Configuration)).
 
@@ -31,7 +31,7 @@ Once you added additional folders to the blacklist or disabled Baloo entirely, a
 ## Command-line usage
 
 ```
-$ baloosearch query
+$ baloosearch *query*
 
 ```
 
@@ -54,7 +54,7 @@ For a list of all supported filter properties available, see ([info](https://api
 Note that text search index breaks down all metadata (including filenames) into "words", and does all its searches over it from the beginning of the word only. What this means is that while `baloosearch "tutorial"` would match `my_great_tutorial.txt`, `baloosearch "utorial"` would not match it. To see what "words" baloo stored in the index for a particular file do:
 
 ```
-$ balooshow -x filename
+$ balooshow -x *filename*
 
 ```
 
@@ -94,6 +94,6 @@ Then you will need to increase the inotify folder watch limit:
 
 ```
 
-To make changes permanent, create a `40-max-user-watches.conf` file:
+To make changes permanent, create a [sysctl](/index.php/Sysctl "Sysctl") configuration file:
 
  `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288`

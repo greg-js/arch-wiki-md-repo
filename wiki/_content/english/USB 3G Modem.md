@@ -36,7 +36,8 @@ A number of mobile telephone networks around the world offer mobile internet con
     *   [5.5 Reading SMS](#Reading_SMS)
         *   [5.5.1 With dedicated software](#With_dedicated_software)
         *   [5.5.2 With email like web interface](#With_email_like_web_interface)
-    *   [5.6 Fix image quality](#Fix_image_quality)
+    *   [5.6 Writing SMS](#Writing_SMS)
+    *   [5.7 Fix image quality](#Fix_image_quality)
 
 ## Remove the PIN
 
@@ -383,6 +384,23 @@ Another option is to use `mmcli`
 #!/bin/bash
 #get modem number
 MODEMNO=$(mmcli -L | grep -o "Modem/[0-9]" | grep -o [0-9]$)
+#list newest SMS
+SMSNO=$(mmcli -m ${MODEMNO} --messaging-list-sms | awk '/received/{split($1, ar, /\//); print ar[6]; exit}')
+#read message
+mmcli -m ${MODEMNO} -s /org/freedesktop/ModemManager1/SMS/${SMSNO}
+
+```
+
+#### With email like web interface
+
+Some Devices, such as some Huawei HiLink, include an email like web interface for SMS. It is included in the device internal web server, which is used for other purposes too.
+
+### Writing SMS
+
+```
+#!/bin/bash
+#get modem number
+MODEMNO=$(mmcli -L | grep -o "Modem/[0-9]" | grep -o [0-9]$)
 #create sms in modem and get number
 SMSNO=$(mmcli -m ${MODEMNO} --messaging-create-sms="text='$1',number=+$2" |  grep -o [0-9]*$)
 #send message
@@ -407,10 +425,6 @@ polkit.addRule(function(action, subject) {
 });
 
 ```
-
-#### With email like web interface
-
-Some Devices, such as some Huawei HiLink, include an email like web interface for SMS. It is included in the device internal web server, which is used for other purposes too.
 
 ### Fix image quality
 

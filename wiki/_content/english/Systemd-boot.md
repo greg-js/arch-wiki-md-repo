@@ -24,13 +24,13 @@ It is simple to configure but it can only start EFI executables such as the Linu
     *   [2.2 Adding loaders](#Adding_loaders)
         *   [2.2.1 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
     *   [2.3 Booting into EFI Firmware Setup](#Booting_into_EFI_Firmware_Setup)
-    *   [2.4 Preparing kernels for /EFI/Linux](#Preparing_kernels_for_/EFI/Linux)
-    *   [2.5 Support hibernation](#Support_hibernation)
-    *   [2.6 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
+    *   [2.4 Support hibernation](#Support_hibernation)
+    *   [2.5 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Choosing next boot](#Choosing_next_boot)
-    *   [4.2 Grml on ESP](#Grml_on_ESP)
+    *   [4.2 Preparing a unified kernel image](#Preparing_a_unified_kernel_image)
+    *   [4.3 Grml on ESP](#Grml_on_ESP)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Installing after booting in BIOS mode](#Installing_after_booting_in_BIOS_mode)
     *   [5.2 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
@@ -196,26 +196,6 @@ efi     /EFI/shellx64_v2.efi
 
 Most system firmware configured for EFI booting will add its own [efibootmgr](/index.php/Efibootmgr "Efibootmgr") entries to boot into UEFI Firmware Setup.
 
-### Preparing kernels for /EFI/Linux
-
-*/EFI/Linux* is searched for specially prepared kernel files, which bundle the kernel, the init RAM disk (initrd), the kernel command line and `/etc/os-release` into one single file. This file can be easily signed for secure boot.
-
-Put the kernel command line you want to use in a file, and create the bundle file like this:
-
- `Kernel packaging command:` 
-```
-objcopy \
-    --add-section .osrel="/usr/lib/os-release" --change-section-vma .osrel=0x20000 \
-    --add-section .cmdline="kernel-command-line.txt" --change-section-vma .cmdline=0x30000 \
-    --add-section .linux="vmlinuz-file" --change-section-vma .linux=0x40000 \
-    --add-section .initrd="initrd-file" --change-section-vma .initrd=0x3000000 \
-    "/usr/lib/systemd/boot/efi/linuxx64.efi.stub" "*linux*.efi"
-```
-
-Optionally sign the `*linux*.efi` file produced above.
-
-Copy `*linux*.efi` into `*esp*/EFI/Linux`.
-
 ### Support hibernation
 
 See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
@@ -272,6 +252,25 @@ If you want to boot into the firmware of your motherboard directly, then you can
 $ systemctl reboot --firmware-setup
 
 ```
+
+### Preparing a unified kernel image
+
+systemd-boot searches in `*esp*/EFI/Linux/` for [unified kernel images](https://systemd.io/BOOT_LOADER_SPECIFICATION#type-2-efi-unified-kernel-images), which bundle the kernel, the init RAM disk (initrd), the kernel command line and `/etc/os-release` into one single file. This file can be easily signed for [Secure Boot](/index.php/Secure_Boot "Secure Boot").
+
+Put the kernel command line you want to use in a file, and create the bundle file like this:
+
+```
+$ objcopy \
+    --add-section .osrel="/usr/lib/os-release" --change-section-vma .osrel=0x20000 \
+    --add-section .cmdline="kernel-command-line.txt" --change-section-vma .cmdline=0x30000 \
+    --add-section .linux="vmlinuz-file" --change-section-vma .linux=0x40000 \
+    --add-section .initrd="initrd-file" --change-section-vma .initrd=0x3000000 \
+    "/usr/lib/systemd/boot/efi/linuxx64.efi.stub" "*linux*.efi"
+```
+
+Optionally [sign](/index.php/Secure_Boot#Signing_EFI_binaries "Secure Boot") the `*linux*.efi` file produced above.
+
+Copy `*linux*.efi` into `*esp*/EFI/Linux/`.
 
 ### Grml on ESP
 

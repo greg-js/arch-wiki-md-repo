@@ -8,7 +8,11 @@ Artículos relacionados
 
 Un [gestor de ventanas](https://en.wikipedia.org/wiki/es:Gestor_de_ventanas (siglas en inglés DE), que proporciona una interfaz gráfica de usuario completa, incluyendo iconos, ventanas, barras de herramientas, fondos de pantalla y widgets de escritorio.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 X Window System](#X_Window_System)
 *   [2 Window managers (gestores de ventanas)](#Window_managers_(gestores_de_ventanas))

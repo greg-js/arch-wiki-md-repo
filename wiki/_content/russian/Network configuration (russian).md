@@ -6,7 +6,7 @@
 *   [Раздача интернета](/index.php/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B0%D1%87%D0%B0_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0 "Раздача интернета")
 *   [Router](/index.php/Router "Router")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration](/index.php/Network_configuration "Network configuration"). Дата последней синхронизации: 21 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=591458).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration](/index.php/Network_configuration "Network configuration"). Дата последней синхронизации: 16 января 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=594044).
 
 В этой статье описана настройка подключения к сети на [3-м уровне сетевой модели OSI](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%8B_%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B3%D0%BE_%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F и [/Wireless (Русский)](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Wireless_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Network configuration (Русский)/Wireless (Русский)").
 
@@ -28,6 +28,7 @@
     *   [2.5 IP-адреса](#IP-адреса)
     *   [2.6 Таблицы маршрутизации](#Таблицы_маршрутизации)
     *   [2.7 DHCP](#DHCP)
+        *   [2.7.1 Servers](#Servers)
     *   [2.8 Сетевые менеджеры](#Сетевые_менеджеры)
 *   [3 Установка имени хоста](#Установка_имени_хоста)
     *   [3.1 Разрешение имени хоста](#Разрешение_имени_хоста)
@@ -228,17 +229,25 @@ $ ip -6 route show
 
 Сервер [DHCP](https://en.wikipedia.org/wiki/ru:DHCP "wikipedia:ru:DHCP") предоставляет клиенту динамический IP-адрес, маску подсети, IP-адрес шлюза по умолчанию и опционально — сервер имён DNS.
 
-**Примечание:** Запускать несколько DHCP-клиентов одновременно запрещено.
-
 Для использования DHCP нужен DHCP-сервер в вашей сети и DHCP-клиент на локальной машине:
 
 | Клиент | Пакет | [Archiso](/index.php/Archiso_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Archiso (Русский)") | Примечания | [Юниты systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)") |
 | [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)") | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) | Да | DHCP, DHCPv6, ZeroConf, статический IP | `dhcpcd.service`, `dhcpcd@*интерфейс*.service` |
 | [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Да | DHCP, DHCPv6, BOOTP, статический IP | `dhclient@*интерфейс*.service` |
 
-Обратите внимание, что вместо непосредственно DHCP-клиента вы также можете воспользоваться [сетевым менеджером](#Сетевые_менеджеры).
+**Примечание:**
+
+*   Запускать несколько DHCP-клиентов одновременно не рекомендуется.
+*   Вместо непосредственно DHCP-клиента вы также можете воспользоваться [сетевым менеджером](#Сетевые_менеджеры).
 
 **Совет:** Проверить, запущен ли DHCP-сервер, можно с помощью [dhcping](https://www.archlinux.org/packages/?name=dhcping).
+
+#### Servers
+
+| Сервер | Пакет | IPv4 | IPv6 | GUI | Интерфейсы | Хранение данных | Примечания |
+| [dhcpd](/index.php/Dhcpd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpd (Русский)") | [dhcp](https://www.archlinux.org/packages/?name=dhcp) | Да | Да | [Glass-ISC-DHCP](https://github.com/Akkadius/glass-isc-dhcp) | ? | Файл |
+| [dnsmasq](/index.php/Dnsmasq_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dnsmasq (Русский)") | [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) | Да | Да | Нет | ? | Файл | Также DNS, PXE и TFTP |
+| [Kea](/index.php/Kea "Kea") | [kea](https://www.archlinux.org/packages/?name=kea) | Да | Да | [Kea-Anterius (Experimental)](https://github.com/isc-projects/kea-anterius) | REST, RADIUS и NETCONF | Файл, MySQL, PostgreSQL и Cassandra | Также DNS |
 
 ### Сетевые менеджеры
 

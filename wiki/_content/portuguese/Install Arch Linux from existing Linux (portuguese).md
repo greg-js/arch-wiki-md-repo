@@ -287,7 +287,7 @@ Em vez de usar *arch-chroot* para [Guia de instalação#Chroot](/index.php/Guia_
 
 ###### lvmetad
 
-A tentativa de criar [volumes lógicos](/index.php/LVM#Logical_volumes "LVM") [LVM](/index.php/LVM "LVM") de um ambiente `archlinux-bootstrap-2015.07.01-x86_64` em um host Debian 7 resultaram no seguinte erro:
+A tentativa de criar [volumes lógicos](/index.php/LVM_(Portugu%C3%AAs)#Volumes_lógicos "LVM (Português)") [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") de um ambiente `archlinux-bootstrap-2015.07.01-x86_64` em um host Debian 7 resultaram no seguinte erro:
 
  `# lvcreate -L 20G lvm -n root` 
 ```
@@ -329,7 +329,7 @@ Isto irá desencadear mais tarde um erro na inicialização no estágio initrd. 
 
 *   Após instalar o sistema, verifique seu [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e as configurações do gerenciador de boot *(boot loader)*. Veja [Processo de inicialização do Arch#Gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") para uma lista de gerenciadores de inicialização.
 *   Você pode precisar alterar seu `/etc/mdadm.conf` para refletir suas configurações de [RAID](/index.php/RAID "RAID") (se aplicável).
-*   Você pode precisar alterar seu`HOOKS` e `MODULES` de acordo com seus requisitos de [LVM](/index.php/LVM "LVM") e [RAID](/index.php/RAID "RAID"): `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
+*   Você pode precisar alterar seu`HOOKS` e `MODULES` de acordo com seus requisitos de [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") e [RAID](/index.php/RAID "RAID"): `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
 *   Você provavelmente vai precisar gerar novas imagens initrd com mkinitcpio. Veja [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 *   Defina `use_lvmetad = 0` em `/etc/lvm/lvm.conf`.
 *   Atualize as configurações de seu gerenciador de boot. Veja a página wiki de seu gerenciador de boot para detalhes.

@@ -6,7 +6,11 @@ Artículos relacionados
 
 Este artículo describe la instalación y configuración del controlador de código abierto [Nouveau](http://nouveau.freedesktop.org/) para las tarjetas gráficas NVIDIA. Para obtener información sobre el controlador propietario, véase [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Con el controlador propietario NVIDIA instalado](#Con_el_controlador_propietario_NVIDIA_instalado)
 *   [2 Instalación](#Instalación)

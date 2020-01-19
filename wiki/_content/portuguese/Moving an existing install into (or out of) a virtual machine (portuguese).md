@@ -110,7 +110,7 @@ Agora carregue o módulo necessário e monte-o como um dispositivo de loopback, 
 
 ```
 
-Em seguida, particione o dispositivo `/dev/loop5` executando sua ferramenta de [particionamento favorita](/index.php/Partitioning#Partitioning_tools "Partitioning"). Crie uma tabela de partição nela (por exemplo, `msdos`), escolha o [esquema de partição](/index.php/Partition_scheme "Partition scheme") e crie as partições. Em seguida, crie um [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") nas partições, que aparecerão como `/dev/loop5p1`, `/dev/loop5p2`, etc.
+Em seguida, particione o dispositivo `/dev/loop5` executando sua ferramenta de [particionamento favorita](/index.php/Particionamento#Ferramentas_de_particionamento "Particionamento"). Crie uma tabela de partição nela (por exemplo, `msdos`), escolha o [esquema de partição](/index.php/Esquema_de_parti%C3%A7%C3%A3o "Esquema de partição") e crie as partições. Em seguida, crie um [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arquivos") nas partições, que aparecerão como `/dev/loop5p1`, `/dev/loop5p2`, etc.
 
 ### Transferir o sistema
 

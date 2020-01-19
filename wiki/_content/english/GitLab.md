@@ -314,15 +314,15 @@ Start the [Redis](/index.php/Redis "Redis") server and the `gitlab-gitaly.servic
 Initialize the database and activate advanced features:
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake gitlab:setup RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:setup RAILS_ENV=production"
 
 ```
 
 Finally run the following commands to check your installation:
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake gitlab:env:info RAILS_ENV=production"
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake gitlab:check RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:env:info RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:check RAILS_ENV=production"
 
 ```
 
@@ -363,7 +363,7 @@ See [#Troubleshooting](#Troubleshooting) and log files inside the `/usr/share/we
 After updating the [gitlab](https://www.archlinux.org/packages/?name=gitlab) package, it is required to upgrade the database:
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake db:migrate RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake db:migrate RAILS_ENV=production"
 
 ```
 
@@ -583,14 +583,14 @@ rake setup                                    # GITLAB | Setup gitlab db
 Create a backup of the gitlab system:
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake RAILS_ENV=production gitlab:backup:create"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake RAILS_ENV=production gitlab:backup:create"
 
 ```
 
 Restore the previously created backup file `/var/lib/gitlab/backups/1556571328_2019_04_29_11.10.2_gitlab_backup.tar`:
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake RAILS_ENV=production gitlab:backup:restore BACKUP=1556571328_2019_04_29_11.10.2"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake RAILS_ENV=production gitlab:backup:restore BACKUP=1556571328_2019_04_29_11.10.2"
 
 ```
 
@@ -646,7 +646,7 @@ Redis caches gravatar images, so if you have visited your GitLab with http, then
 
 ```
 cd /usr/share/webapps/gitlab
-RAILS_ENV=production bundle-2.5 exec rake cache:clear
+RAILS_ENV=production bundle exec rake cache:clear
 
 ```
 
@@ -666,14 +666,14 @@ First, move to the gitlab installation directory.
 If every gitlab page gives a 500 error, then the database migrations and the assets are probably stale. If not, skip this step.
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake db:migrate RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake db:migrate RAILS_ENV=production"
 
 ```
 
 If gitlab is constantly waiting for the deployment to finish, then the assets have probably not been recompiled.
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake gitlab:assets:clean gitlab:assets:compile cache:clear RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:assets:clean gitlab:assets:compile cache:clear RAILS_ENV=production"
 
 ```
 

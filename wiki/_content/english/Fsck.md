@@ -8,7 +8,11 @@ Related articles
 
 The [Arch Linux boot process](/index.php/Arch_boot_process "Arch boot process") conveniently takes care of the fsck procedure for you and will check all relevant partitions on your drive(s) automatically on every boot. Hence, there is usually no need to resort to the command-line unless necessary.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Boot time checking](#Boot_time_checking)
     *   [1.1 Mechanism](#Mechanism)

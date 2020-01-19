@@ -46,7 +46,8 @@ Though Fontconfig is used often in modern Unix and Unix-like operating systems, 
     *   [4.5 Incorrect hinting in GTK applications](#Incorrect_hinting_in_GTK_applications)
     *   [4.6 Helvetica font problem in generated PDFs](#Helvetica_font_problem_in_generated_PDFs)
     *   [4.7 FreeType breaking bitmap fonts](#FreeType_breaking_bitmap_fonts)
-    *   [4.8 Debugging FreeType fonts](#Debugging_FreeType_fonts)
+    *   [4.8 Underscores not rendered with Dejavu Monospace](#Underscores_not_rendered_with_Dejavu_Monospace)
+    *   [4.9 Debugging FreeType fonts](#Debugging_FreeType_fonts)
 *   [5 See also](#See_also)
 
 ## Font paths
@@ -659,6 +660,37 @@ Assume we want to create an alias for [terminus-font](https://www.archlinux.org/
 *   Create a symbolic link towards it in the `/etc/fonts/conf.d` directory. In our example we would link as follows: `ln -s /etc/fonts/conf.avail/33-TerminusPCFFont.conf /etc/fonts/conf.d` to make the change permanent.
 
 Everything should now work as it did before the update, the *font alias* should not be in effect, but make sure to either reload `.Xresources` or restart the display server first so the affected programs can use the alias.
+
+### Underscores not rendered with Dejavu Monospace
+
+[Since Pango 1.44](https://gitlab.gnome.org/GNOME/pango/issues/392), the underscore characters disappear with certain font sizes when using the DejaVu Sans Mono font. A workaround is to use Liberation Mono as the monospace font.
+
+Check the current monospace font:
+
+ `$ fc-match Monospace` 
+```
+DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"
+
+```
+
+Create a font override rule to use the Liberation Mono font:
+
+ `~/.config/fontconfig/conf.d/10-dejavu-replace.conf` 
+```
+<match target="pattern">
+    <test qual="any" name="family"><string>monospace</string></test>
+    <edit name="family" mode="assign" binding="same"><string>Liberation Mono</string></edit>
+</match>
+
+```
+
+Check that the font has been changed:
+
+ `$ fc-match Monospace` 
+```
+LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
+
+```
 
 ### Debugging FreeType fonts
 

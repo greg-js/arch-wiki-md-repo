@@ -91,7 +91,7 @@
 
 #### Автоматически
 
-[AUR (Русский)](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") пакет [systemd-boot-pacman-hook](https://aur.archlinux.org/packages/systemd-boot-pacman-hook/) предоставляет [Pacman hook](/index.php/Pacman#Hooks "Pacman") для автоматизации процесса обновления. [Установка](/index.php/Install "Install") этого пакета добавит hook, который будет выполняться при каждом обновлении пакета [systemd](https://www.archlinux.org/packages/?name=systemd).
+[AUR (Русский)](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") пакет [systemd-boot-pacman-hook](https://aur.archlinux.org/packages/systemd-boot-pacman-hook/) предоставляет [хук Pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Хуки "Pacman (Русский)") для автоматизации процесса обновления. [Установка](/index.php/Install "Install") этого пакета добавит hook, который будет выполняться при каждом обновлении пакета [systemd](https://www.archlinux.org/packages/?name=systemd).
 
 В качестве альтернативы, вы можете разместить следующий pacman hook в каталоге /etc/pacman.d/hooks/:
 

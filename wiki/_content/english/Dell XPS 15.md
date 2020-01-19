@@ -598,7 +598,7 @@ can resolve the issue.
 
 **XPS 9550 with InfinityEdge 4K**
 
-The XPS 9550 4K, with its current state, is unstable due to it's young age. A majority of the bugs stem from Dell's BIOS.
+The XPS 9550 4K, with its current state, is unstable due to its young age. A majority of the bugs stem from Dell's BIOS.
 
 Listed below are you may encounter with the XPS 9550 4K:
 

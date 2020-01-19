@@ -1500,7 +1500,14 @@ $ qemu-system-x86_64 -boot order=c -drive file=*disk_image*,if=virtio
 *   Almost the same goes for the network:
 
 ```
-$ qemu-system-x86_64 -net nic,model=virtio
+$ qemu-system-x86_64 -nic user,model=virtio-net-pci
+
+```
+
+*   To get a list of available network models:
+
+```
+$ qemu-system-x86_64 -nic model=help
 
 ```
 

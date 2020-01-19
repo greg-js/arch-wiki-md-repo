@@ -1,1 +1,3 @@
-The Lenovo ThinkPad Yoga 14 (20FY) is a convertible 14-inch Ultrabook developed by Lenovo in 2015\. It is one of many iterations in the ThinkPad line. It's also known as P40 Yoga (type 20GR, 20GQ), S3 (20G0, 20G1) and Yoga 460 (20EM, 20EL). A [hardware maintenance manual is provided online](https://download.lenovo.com/pccbbs/mobiles_pdf/p40_yoga14_mt20fy_yoga460_hmm_en_sp40j47499_01.pdf).
+Redirect to:
+
+*   [Laptop/Lenovo#Yoga Series](/index.php/Laptop/Lenovo#Yoga_Series "Laptop/Lenovo")

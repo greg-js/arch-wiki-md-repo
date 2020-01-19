@@ -105,7 +105,7 @@ NetworkManager-wait-online.service | Daemon que provê a configuração e conex�
 | [samba](/index.php/Samba "Samba") | samba | smb.service
 nmb.service
 winbind.service | Serviço de arquivos e impressão para redes Microsoft Windows. |
-| [LVM](/index.php/LVM "LVM") | ? | blk-availability.service
+| [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") | ? | blk-availability.service
 lvm2-lvmetad.service
 lvm2-monitor.service
 lvm2-pvscan.service | LVM é o sistema de gerenciamento de volumes lógicos do kernel Linux; Gerencia discos e dispositivos de armazenamento que usam esta tecnologia. |

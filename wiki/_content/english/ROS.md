@@ -36,17 +36,17 @@ Packages are being added on an as-needed basis. Please post any issues with the 
 
 ## catkin_make
 
-Note that catkin uses python2, and therefore catkin_make may fail unless it explicitly uses python2\. To do so, add the following alias to ~/.bashrc:
+As specified by the [ROS wiki](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment), the first catkin_make command in a clean workspace should be:
 
 ```
-alias catkin_make="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.7m -DPYTHON_LIBRARY=/usr/lib/libpython3.7m.so
 
 ```
 
-Another way is to use [python-catkin_tools](https://aur.archlinux.org/packages/python-catkin_tools/) and to configure it by running the following command in your Catkin workspace.
+Subsequent builds should be done with just
 
 ```
-catkin config --cmake-args -DPYTHON_EXECUTABLE=/usr/bin/python2
+catkin_make
 
 ```
 

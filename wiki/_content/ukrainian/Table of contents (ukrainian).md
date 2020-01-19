@@ -7,10 +7,10 @@
  <small>1.2.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
  <small>1.2.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(6)</small> |
  <small>1.2.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(27) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
- <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(24)</small> |
+ <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(25)</small> |
  <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
  <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
- <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(36)</small> |
+ <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
  <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
  <small>2.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
  <small>2.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
@@ -41,12 +41,12 @@
  <small>3.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(64)</small> |
  <small>3.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
  <small>3.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
- <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(75)</small> |
+ <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(76)</small> |
  <small>3.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(1)</small> |
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
  <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(61)</small> |
  <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
- <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(105)</small> |
+ <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(106)</small> |
  <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
  <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
  <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -224,7 +224,7 @@
  <small>5.6.4.</small> [Red Hat](/index.php/Category:Red_Hat "Category:Red Hat") <small>(4)</small> |
  <small>5.7.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(5)</small> |
  <small>5.8.</small> [Software projects](/index.php/Category:Software_projects "Category:Software projects") <small>(0)</small> |
- <small>5.8.1.</small> [Apache](/index.php/Category:Apache "Category:Apache") <small>(6)</small> |
+ <small>5.8.1.</small> [Apache](/index.php/Category:Apache "Category:Apache") <small>(7)</small> |
  <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(10) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |
  <small>5.8.3.</small> [Electronic Frontier Foundation](/index.php/Category:Electronic_Frontier_Foundation "Category:Electronic Frontier Foundation") <small>(3)</small> |
  <small>5.8.4.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(14) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |

@@ -10,25 +10,29 @@ Ponieważ Intel udostępnia i wspiera otwarte sterowniki, karty graficzne Intela
 
 **Note:** Informacje dotyczące używawania sterowników w konsoli bez [X](/index.php/Xorg_(Polski) "Xorg (Polski)") znajdziesz w [Uvesafb](/index.php?title=Uvesafb_(Polski)&action=edit&redlink=1 "Uvesafb (Polski) (page does not exist)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Modele](#Modele)
 *   [2 Instalacja](#Instalacja)
 *   [3 Konfiguracja](#Konfiguracja)
-*   [4 KMS (Kernel Mode Setting)](#KMS_.28Kernel_Mode_Setting.29)
+*   [4 KMS (Kernel Mode Setting)](#KMS_(Kernel_Mode_Setting))
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Ustawienie trybu skalowania](#Ustawienie_trybu_skalowania)
-    *   [5.2 Problem z KMS: konsola jest ograniczona do małego obszaru](#Problem_z_KMS:_konsola_jest_ograniczona_do_ma.C5.82ego_obszaru)
-    *   [5.3 Sprzętowa akceleracja wideo](#Sprz.C4.99towa_akceleracja_wideo)
-    *   [5.4 Ustawienie jasności i gammy](#Ustawienie_jasno.C5.9Bci_i_gammy)
-*   [6 Rozwiązania problemów](#Rozwi.C4.85zania_problem.C3.B3w)
-    *   [6.1 Glxgears pokazuje niską wydajność](#Glxgears_pokazuje_nisk.C4.85_wydajno.C5.9B.C4.87)
-        *   [6.1.1 Wyłączenie synchronizacji pionowej (vsync)](#Wy.C5.82.C4.85czenie_synchronizacji_pionowej_.28vsync.29)
-    *   [6.2 Pusty ekran podczas startu systemu, w czasie "Loading modules"](#Pusty_ekran_podczas_startu_systemu.2C_w_czasie_.22Loading_modules.22)
+    *   [5.2 Problem z KMS: konsola jest ograniczona do małego obszaru](#Problem_z_KMS:_konsola_jest_ograniczona_do_małego_obszaru)
+    *   [5.3 Sprzętowa akceleracja wideo](#Sprzętowa_akceleracja_wideo)
+    *   [5.4 Ustawienie jasności i gammy](#Ustawienie_jasności_i_gammy)
+*   [6 Rozwiązania problemów](#Rozwiązania_problemów)
+    *   [6.1 Glxgears pokazuje niską wydajność](#Glxgears_pokazuje_niską_wydajność)
+        *   [6.1.1 Wyłączenie synchronizacji pionowej (vsync)](#Wyłączenie_synchronizacji_pionowej_(vsync))
+    *   [6.2 Pusty ekran podczas startu systemu, w czasie "Loading modules"](#Pusty_ekran_podczas_startu_systemu,_w_czasie_"Loading_modules")
     *   [6.3 Poszarpane wideo](#Poszarpane_wideo)
-    *   [6.4 X zawiesza/wyłącza się](#X_zawiesza.2Fwy.C5.82.C4.85cza_si.C4.99)
-    *   [6.5 Dodanie niewykrytych rozdzielczości](#Dodanie_niewykrytych_rozdzielczo.C5.9Bci)
-*   [7 Zobacz także](#Zobacz_tak.C5.BCe)
+    *   [6.4 X zawiesza/wyłącza się](#X_zawiesza/wyłącza_się)
+    *   [6.5 Dodanie niewykrytych rozdzielczości](#Dodanie_niewykrytych_rozdzielczości)
+*   [7 Zobacz także](#Zobacz_także)
 
 ## Modele
 
@@ -206,7 +210,7 @@ Innym sposobem jest ustawienie `vblank_mode` na `0` w pliku `~/.drirc` i upewnie
 
 ### Pusty ekran podczas startu systemu, w czasie "Loading modules"
 
-Jeśli używasz "późnego startu" KMS i ekran staje się pusty w czasie "Loading modules", dodanie `i915` i `intel_agp` do initramfs może pomóc. Zobacz paragraf [KMS](#KMS_.28Kernel_Mode_Setting.29) powyżej.
+Jeśli używasz "późnego startu" KMS i ekran staje się pusty w czasie "Loading modules", dodanie `i915` i `intel_agp` do initramfs może pomóc. Zobacz paragraf [KMS](#KMS_(Kernel_Mode_Setting)) powyżej.
 
 Dodanie poniższego parametru do linii parametrów jądra też może pomóc:
 
@@ -217,7 +221,7 @@ video=SVIDEO-1:d
 
 ### Poszarpane wideo
 
-Szarpanie obrazu powinno ustąpić po włączeniu [sprzętowej akceleracji wideo](#Sprz.C4.99towa_akceleracja_wideo). Możesz też dodać
+Szarpanie obrazu powinno ustąpić po włączeniu [sprzętowej akceleracji wideo](#Sprzętowa_akceleracja_wideo). Możesz też dodać
 
 ```
 Option "TearFree" "true" 

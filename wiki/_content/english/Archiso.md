@@ -5,9 +5,7 @@ Related articles
 *   [Archboot](/index.php/Archboot "Archboot")
 *   [Offline installation](/index.php/Offline_installation "Offline installation")
 
-**Archiso** is a small set of bash scripts capable of building fully functional Arch Linux live CD/DVD/USB images. It is the same tool used to generate the official images, but since it is a very generic tool, it can be used to generate anything from rescue systems, install disks, to special interest live CD/DVD/USB systems, and who knows what else. Simply put, if it involves Arch on a shiny coaster, it can do it. The heart and soul of Archiso is *mkarchiso*. All of its options are documented in its usage output, so its direct usage will not be covered here. Instead, this wiki article will act as a guide for rolling your own live media in no time!
-
-If you require a technical run-down of requirements and build steps only, have a look at the [official project documentation](https://git.archlinux.org/archiso.git/tree/docs) too.
+**Archiso** is a tool for building Arch Linux live CD .iso images. The official images [[1]](https://www.archlinux.org/download/) are built with Archiso. Archiso is configurable and can be used as the basis for different systems, for example rescue systems, or linux installers. This wiki article explains how to install Archiso, and how to configure it to control aspects of the resulting .iso image such as included packages and files. Technical requirements and build steps can be found in the [official project documentation](https://git.archlinux.org/archiso.git/tree/docs). Archiso is implemented with a number of bash scripts. The core component of Archiso is the *mkarchiso* command. Its options are documented in its usage output and not covered here. Users do not need to interface with *mkarchiso* directly.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -40,37 +38,41 @@ If you require a technical run-down of requirements and build steps only, have a
 
 **Note:** It is recommended to act as root in all the following steps. If not, it is very likely to have problems with false permissions later.
 
-Before you begin, [install](/index.php/Install "Install") the [archiso](https://www.archlinux.org/packages/?name=archiso) or [archiso-git](https://aur.archlinux.org/packages/archiso-git/) package.
+[Install](/index.php/Install "Install") the [archiso](https://www.archlinux.org/packages/?name=archiso) or [archiso-git](https://aur.archlinux.org/packages/archiso-git/) package.
 
-Archiso comes with two "profiles": *releng* and *baseline*.
+Archiso comes with two "profiles", *releng* and *baseline*.
 
-*   If you wish to create a fully customized live version of Arch Linux, pre-installed with all your favorite programs and configurations, use *releng*. This profile is also used for building an official Arch Linux ISO.
-*   If you just want to create the most basic live medium, with no pre-installed packages and a minimalistic configuration, use *baseline*.
+*   Use *releng* if you wish to create a fully customized live version of Arch Linux, pre-installed with all your favorite programs and configurations. This profile is also used for building an official Arch Linux ISO.
+*   Use *baseline* if you just want to create the most basic live medium, with no pre-installed packages and a minimalistic configuration.
 
-Now, copy the profile of your choice to a directory (*archlive* in the example below) where you can make adjustments and build it. Execute the following, replacing `**profile**` with either `releng` or `baseline`.
+Use the following command to copy the profile of your choice to a directory. Replace `**profile**` with either `releng` or `baseline`, and replace `*archlive*` with a directory name of your choice.
 
 ```
 # cp -r /usr/share/archiso/configs/**profile**/ *archlive*
 
 ```
 
-*   If you are using the `releng` profile to make a fully customized image, then you can proceed onto [#Configure the live medium](#Configure_the_live_medium).
-*   If you are using the `baseline` profile to create a bare image or using `releng` to replicate an official ISO, then you will not be needing to do any customization and can proceed onto [#Build the ISO](#Build_the_ISO).
+Now proceed to different sections depending on the chosen profile and your goal.
+
+*   *releng*: If you chose the *releng* profile, and
+    *   if you want to customise the image then proceed to section [#Configure the live medium](#Configure_the_live_medium).
+    *   if you want to replicate an official image, then then proceed onto [#Build the ISO](#Build_the_ISO).
+*   *baseline*: If you chose the *baseline* profile then proceed onto [#Build the ISO](#Build_the_ISO).
 
 ## Configure the live medium
 
-This section details configuring the image you will be creating, allowing you to define the packages and configurations you want your live image to contain.
+This section details how to configure the image, and define the packages and configurations that will be copied to the image later.
 
-Inside the `*archlive*` directory created in [#Setup](#Setup) there are a number of files and directories; we are only concerned with a few of these, mainly:
+Inside the `*archlive*` directory created in [#Setup](#Setup) there are a number of files and directories; we are only concerned with the following ones:
 
-*   `packages.x86_64` - this is where you list, line by line, the packages you want to have installed, and
-*   the `airootfs` directory - this directory acts as an overlay and it is where you make all the customizations.
+*   `packages.x86_64` - this file lists the packages that are installed on the live system image.
+*   `airootfs` - this directory acts as an overlay and allows you to make customizations.
 
-Generally, every administrative task that you would normally do after a fresh install except for package installation can be scripted into `*archlive*/airootfs/root/customize_airootfs.sh`. It has to be written from the perspective of the new environment, so `/` in the script means the root of the live-iso which is to be created.
+Any administrative task that you would do while following the installation guide (or after installation) can be scripted by editing `*archlive*/airootfs/root/customize_airootfs.sh`, except for package installation. The script is written from the perspective of the running live system, i.e. in the script the path `/` refers to the root of the running live system.
 
 ### Installing packages
 
-Edit the lists of packages in `packages.x86_64` to indicate which packages are to be installed on the live medium.
+Edit the lists of packages in `packages.x86_64` to configure which packages are installed on the live system image, listing packages line by line.
 
 **Note:** If you want to use a [window manager](/index.php/Window_manager "Window manager") in the Live CD then you must add the necessary and correct [video drivers](/index.php/Video_drivers "Video drivers"), or the WM may freeze on loading.
 
@@ -148,7 +150,7 @@ Similarly, some care is required for special configuration files that reside som
 
 The default file should work fine, so you should not need to touch it.
 
-Due to the modular nature of isolinux, you are able to use lots of addons since all *.c32 files are copied and available to you. Take a look at the [official syslinux site](http://syslinux.zytor.com/wiki/index.php/SYSLINUX) and the [archiso git repo](https://projects.archlinux.org/archiso.git/tree/configs/syslinux-iso/boot-files). Using said addons, it is possible to make visually attractive and complex menus. See [here](http://syslinux.zytor.com/wiki/index.php/Comboot/menu.c32).
+Due to the modular nature of isolinux, you are able to use lots of addons since all *.c32 files are copied and available to you. Take a look at the [official syslinux site](http://syslinux.zytor.com/wiki/index.php/SYSLINUX) and the [archiso git repo](https://git.archlinux.org/archiso.git/tree/configs/releng/syslinux). Using said addons, it is possible to make visually attractive and complex menus. See [here](http://syslinux.zytor.com/wiki/index.php/Comboot/menu.c32).
 
 #### UEFI Secure Boot
 
@@ -258,7 +260,7 @@ The temporary files are copied into work directory. If it happens that the build
 
 ## Using the ISO
 
-See the [Installation guide](/index.php/Installation_guide "Installation guide") article for various options.
+See the [Installation guide](/index.php/Installation_guide#Boot_the_live_environment "Installation guide") article for various options.
 
 ## See also
 

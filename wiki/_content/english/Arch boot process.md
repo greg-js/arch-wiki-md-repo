@@ -57,7 +57,7 @@ The UEFI specification has support for legacy BIOS booting with its [Compatibili
 ### Under BIOS
 
 1.  System switched on, the [power-on self-test (POST)](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") is executed.
-2.  After POST, BIOS initializes the necessary system hardware for booting (disk, keyboard controllers etc.).
+2.  After POST, BIOS initializes the hardware required for booting (disk, keyboard controllers etc.).
 3.  BIOS launches the first 440 bytes ([the Master Boot Record bootstrap code area](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning")) of the first disk in the BIOS disk order.
 4.  The boot loader's first stage in the MBR boot code then launches its second stage code (if any) from either:
     *   next disk sectors after the MBR, i.e. the so called post-MBR gap (only on a MBR partition table).
@@ -69,7 +69,7 @@ The UEFI specification has support for legacy BIOS booting with its [Compatibili
 ### Under UEFI
 
 1.  System switched on, the [power-on self-test (POST)](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") is executed.
-2.  UEFI initializes the hardware required for booting.
+2.  After POST, UEFI initializes the hardware required for booting (disk, keyboard controllers etc.).
 3.  Firmware reads the boot entries in the NVRAM to determine which EFI application to launch and from where (e.g. from which disk and partition).
     *   A boot entry could simply be a disk. In this case the firmware looks for an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") on that disk and tries to find an EFI application in the fallback boot path `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on [systems with a IA32 (32-bit) UEFI](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). This is how UEFI bootable removable media work.
 4.  Firmware launches the EFI application.
@@ -90,7 +90,7 @@ See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot w
 
 A boot loader is a piece of software started by the firmware ([BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI")). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on configuration files. In the case of UEFI, the kernel itself can be directly launched by the UEFI using the EFI boot stub. A separate boot loader or boot manager can still be used for the purpose of editing kernel parameters before booting.
 
-**Warning:** A boot loader must be to be able to access the kernel and initramfs image(s), thus, in a typical setup, it must support accessing `/boot`. That means it must have support for everything starting from the block devices, stacked block devices (LVM, RAID, dm-crypt, LUKS, etc) and ending with the file system on which the kernel(s) and initramfs image(s) reside. If the boot loader cannot access the kernel and initramfs, then the system will not boot.
+**Warning:** A boot loader must be to be able to access the kernel and initramfs image(s), otherwise the system will not boot. Thus, in a typical setup, it must support accessing `/boot`. That means it must have support for everything starting from the block devices, stacked block devices (LVM, RAID, dm-crypt, LUKS, etc) and ending with the file system on which the kernel(s) and initramfs image(s) reside.
 
 **Note:** Loading [Microcode](/index.php/Microcode "Microcode") updates requires adjustments in boot loader configuration. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
@@ -120,7 +120,7 @@ See also [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Co
 
 ## Kernel
 
-The [kernel](/index.php/Kernel "Kernel") is the core of an operating system. It functions on a low level (*kernelspace*) interacting between the hardware of the machine and the programs which use the hardware to run. To make efficient use of the CPU, the kernel uses a scheduler to arbitrate which tasks take priority at any given moment, creating the illusion of many tasks being executed simultaneously.
+The [kernel](/index.php/Kernel "Kernel") is the core of an operating system. It functions on a low level (*kernelspace*) interacting between the hardware of the machine and the programs which use the hardware to run. The kernel temporarily stops programs to run other programs in the meantime, which is known as [preemption](https://en.wikipedia.org/wiki/Preemption_(computing) "wikipedia:Preemption (computing)"). This creates the illusion of many tasks being executed simultaneously, even on single-core CPUs. The kernel uses the CPU scheduler to decide which program takes priority at any given moment.
 
 ## initramfs
 

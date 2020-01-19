@@ -76,6 +76,13 @@ Keep the default shell as Bash and simply add the line `exec fish` to the approp
 
 *   In this setup, use `bash --norc` to manually enter Bash without executing the commands from `~/.bashrc` which would run `exec fish` and drop back into fish.
 *   To have commands such as `bash -c 'echo test'` run the command in Bash instead of starting fish, you can write `if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi` instead.
+*   Drop in to fish only if the parent process is not fish. This allows to quickly enter in to bash by invoking `bash` command without losing `~/.bashrc` configuration:
+    ```
+    if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]
+    then
+    	exec fish
+    fi
+    ```
 
 #### Use terminal emulator options
 

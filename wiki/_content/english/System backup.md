@@ -2,6 +2,7 @@ Related articles
 
 *   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
 *   [System maintenance#Backup](/index.php/System_maintenance#Backup "System maintenance")
+*   [Disk encryption#Backup for disk encryption scenarios](/index.php/Disk_encryption#Backup_for_disk_encryption_scenarios "Disk encryption")
 *   [Disk cloning](/index.php/Disk_cloning "Disk cloning")
 *   [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware")
 *   [File recovery](/index.php/File_recovery "File recovery")

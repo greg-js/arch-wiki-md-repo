@@ -144,20 +144,26 @@ dunstify --action="replyAction,reply" "Message received"
 
 ```
 
-The user can then access the specified actions via dunsts context menu. The call to dunstify will block until either the notification disappears or an action is selected. In the former case dunstify will return 1 if the notification timed out and 2 if it was dismissed manually [[2]](https://developer.gnome.org/notification-spec/#signals). In the latter case it returns the action which was selected by the Dunst context menu.
+The user can then access the specified actions via Dunst's context menu. The call to dunstify will block until either the notification disappears or an action is selected. In the former case dunstify will return 1 if the notification timed out and 2 if it was dismissed manually [[2]](https://developer.gnome.org/notification-spec/#signals). In the latter case it returns the action which was selected by the Dunst context menu.
 
-You may also define how mouse events invoke actions [[3]](https://github.com/dunst-project/dunst/blob/3f3082efb3724dcd369de78dc94d41190d089acf/dunstrc#L237).
-
-Dismissing notifications can be done through shortcuts defined in `~/.config/dunst/dunstrc` or by left-clicking on the notification (by default or when `dunstrc` defines `mouse_left_click = close_current`). This allows Dunst to be used interactively, as was suggested in [[4]](https://github.com/dunst-project/dunst/issues/163#issuecomment-573191650).
+In addition to invoking actions with the context menu, you may also define how mouse events invoke actions [[3]](https://github.com/dunst-project/dunst/blob/3f3082efb3724dcd369de78dc94d41190d089acf/dunstrc#L237). This allows Dunst to be used interactively, as was suggested in [[4]](https://github.com/dunst-project/dunst/issues/163#issuecomment-573191650). When a notification has only one action, or when an action is named "default", that action may be invoked by middle-clicking the notification (by default or when `dunstrc` defines `mouse_middle_click = do_action`).
 
 ```
 reply_action () {}
+forward_action () {}
+handle_dismiss () {}
 
-ACTION=$(dunstify --action="replyAction,Reply" "Message Received")
+ACTION=$(dunstify --action="default,Reply" --action="forwardAction,Forward" "Message Received")
 
 case "$ACTION" in
-"handleAction" | "2")
+"default")
     reply_action
+    ;;
+"forwardAction")
+    forward_action
+    ;;
+"2")
+    handle_dismiss
     ;;
 esac
 

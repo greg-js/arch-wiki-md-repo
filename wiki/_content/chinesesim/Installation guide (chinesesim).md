@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Installation guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-26，点击[这里](https://wiki.archlinux.org/index.php?title=Installation+guide&diff=0&oldid=585451)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-10-26，点击[这里](https://wiki.archlinux.org/index.php?title=Installation+guide&diff=0&oldid=595221)可以查看翻译后英文页面的改动。
 
 本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)")。请注意，代码段可能会有占位符（格式是 `*italics*`），你可能需要手动去掉它们。
 
@@ -233,7 +233,7 @@ live 环境可以从 [USB 安装 U 盘](/index.php/USB_flash_installation_media 
 *   [文本编辑器](/index.php/Text_editor "Text editor"),
 *   访问 [man](/index.php/Man "Man") 和 [info](/index.php/Info "Info") 页面的工具： [man-db](https://www.archlinux.org/packages/?name=man-db), [man-pages](https://www.archlinux.org/packages/?name=man-pages) 和 [texinfo](https://www.archlinux.org/packages/?name=texinfo).
 
-如果你还想安装其他软件包组比如 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)，请将他们的名字添加到 *pacstrap* 后，并用空格隔开。你也可以在 [#Chroot](#Chroot) 之后使用 [pacman](/index.php/Pacman "Pacman") 手动安装软件包或组。
+如果你还想安装其他软件包组比如 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)，请将他们的名字添加到 *pacstrap* 后，并用空格隔开。你也可以在 [#Chroot｜Chroot进新系统](#Chroot｜Chroot进新系统) 后使用 [pacman](/index.php/Pacman "Pacman") 手动安装软件包或组。
 
 ## 配置系统
 
@@ -337,7 +337,7 @@ zh_TW.UTF-8 UTF-8
 
 如果系统有一个永久的 IP 地址，请使用这个永久的 IP 地址而不是 `127.0.1.1`。
 
-对新安装的系统，需要再次设置网络，请注意，目前的 [base](https://www.archlinux.org/packages/?name=base) 不含有任何网络管理工具，[安装](/index.php/Install "Install") [iputils](https://www.archlinux.org/packages/?name=iputils) 或希望使用的 [网络管理](/index.php/Network_management "Network management") 软件。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
+对新安装的系统，需要再次[设置网络](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")，请注意，目前的 [base](https://www.archlinux.org/packages/?name=base) 不含有任何网络管理工具，要安装希望使用的 [网络管理](/index.php/Network_management "Network management") 软件。
 
 ### Initramfs
 

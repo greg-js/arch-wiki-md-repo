@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=589005) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2020-01-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=594034) na versão em inglês.
 
 Artigos relacionados
 
@@ -37,7 +37,7 @@ A especificação UEFI determina o suporte para os sistemas de arquivos FAT12, F
 
 ## Verificar uma partição existente
 
-Se você estiver instalando o Arch Linux em um computador compatível com UEFI com um sistema operacional instalado, como [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") 10 por exemplo, é muito provável que você já tenha uma partição do sistema EFI.
+Se você estiver instalando o Arch Linux em um computador compatível com UEFI com um sistema operacional instalado, como [Windows](/index.php/Dual_boot_with_Windows_(Portugu%C3%AAs) "Dual boot with Windows (Português)") 10 por exemplo, é muito provável que você já tenha uma partição do sistema EFI.
 
 Para descobrir o esquema de partição de disco e a partição do sistema, use [fdisk](/index.php/Fdisk "Fdisk") como root no disco que você quer inicializar:
 
@@ -48,7 +48,7 @@ Para descobrir o esquema de partição de disco e a partição do sistema, use [
 
 O comando retorna:
 
-*   A tabela de partições do disco: indica `Tipo de rótulo do disco: gpt` se a tabela de partições for [GPT](/index.php/GPT "GPT") ou `Tipo de rótulo do disco: dos` se for [MBR](/index.php/MBR "MBR").
+*   A tabela de partições do disco: indica `Tipo de rótulo do disco: gpt` se a tabela de partições for [GPT](/index.php/GPT_(Portugu%C3%AAs) "GPT (Português)") ou `Tipo de rótulo do disco: dos` se for [MBR](/index.php/MBR_(Portugu%C3%AAs) "MBR (Português)").
 *   A lista de partições no disco: Procure a partição do sistema EFI na lista, é uma partição pequena (normalmente cerca de 100–550 MiB) com um tipo `Sistema EFI` ou `EFI (FAT-12/16/32)`. Para confirmar isso é a ESP, [monte](/index.php/Monte "Monte") e verifique se ela contém um diretório chamado `EFI`, se contiver é definitivamente a ESP.
 
 **Dica:** Para descobrir se é um sistema de arquivos FAT12, FAT16 ou FAT32, use `minfo` a partir de [mtools](https://www.archlinux.org/packages/?name=mtools).
@@ -67,13 +67,13 @@ As duas seções a seguir mostram como criar uma partição do sistema EFI (ESP)
 
 **Atenção:** A partição do sistema EFI deve ser uma partição física na tabela de partição principal do disco, não sob LVM ou software RAID, etc.
 
-**Nota:** Recomenda-se o uso de [GPT](/index.php/GPT "GPT"), pois alguns firmwares podem não suportar a inicialização via UEFI/MBR por não serem suportados pelo [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"). Veja também [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") para as vantagens da GPT em geral.
+**Nota:** Recomenda-se o uso de [GPT](/index.php/GPT_(Portugu%C3%AAs) "GPT (Português)"), pois alguns firmwares podem não suportar a inicialização via UEFI/MBR por não serem suportados pelo [Windows Setup](/index.php/Dual_boot_with_Windows_(Portugu%C3%AAs) "Dual boot with Windows (Português)"). Veja também [Particionamento#Escolhendo entre MBR e GPT](/index.php/Particionamento#Escolhendo_entre_MBR_e_GPT "Particionamento") para as vantagens da GPT em geral.
 
 Para fornecer espaço adequado para armazenar gerenciadores de boot e outros arquivos necessários para inicialização e para evitar problemas de interoperabilidade com outros sistemas operacionais[[1]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules)[[2]](https://superuser.com/questions/1310927/what-is-the-absolute-minimum-size-a-uefi-partition-can-be/1310938) a partição deve ter pelo menos 260 MiB. Para implementações de UEFI precoces e/ou com bugs, o tamanho de pelo menos 512 MiB pode ser necessário.[[3]](https://www.rodsbooks.com/efi-bootloaders/principles.html)
 
 ### Discos particionados em GPT
 
-Partição de sistema EFI em uma [Tabela de Partição GUID](/index.php/GUID_Partition_Table "GUID Partition Table") é identificada pelo [GUID de tipo de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
+Partição de sistema EFI em uma [Tabela de Partição GUID](/index.php/Tabela_de_Parti%C3%A7%C3%A3o_GUID "Tabela de Partição GUID") é identificada pelo [GUID de tipo de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
 
 **Escolha um** dos métodos a seguir para criar uma ESP para um disco particionado em GPT:
 
@@ -85,7 +85,7 @@ Continue com a seção [#Formatar a partição](#Formatar_a_partição) abaixo.
 
 ### Discos particionados em MBR
 
-A partição do sistema EFI em uma tabela de partição [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") é identificada pelo [ID de tipo de partição](https://en.wikipedia.org/wiki/pt:Tipo_de_parti%C3%A7%C3%A3o "wikipedia:pt:Tipo de partição") `EF`.
+A partição do sistema EFI em uma tabela de partição [Master Boot Record](/index.php/Master_Boot_Record_(Portugu%C3%AAs) "Master Boot Record (Português)") é identificada pelo [ID de tipo de partição](https://en.wikipedia.org/wiki/pt:Tipo_de_parti%C3%A7%C3%A3o "wikipedia:pt:Tipo de partição") `EF`.
 
 **Escolha um** dos métodos a seguir para criar uma ESP para um disco particionado em MBR:
 
@@ -115,7 +115,7 @@ Os kernels, os arquivos initramfs e, na maioria dos casos, o [microcódigo](/ind
 
 Os cenários mais simples para montar uma partição de sistema EFI são:
 
-*   [montar](/index.php/Monta "Monta") a ESP em `/efi` e usar um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") que tem um driver para seu sistema de arquivos raiz (p.ex., [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)"), [rEFInd](/index.php/REFInd "REFInd")).
+*   [montar](/index.php/Monta "Monta") a ESP em `/efi` e usar um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") que é capaz de acessar as imagens do kernel e initramfs que são armazenadas em outro local (normalmente [/boot](/index.php/Particionamento#/boot "Particionamento")). Consulte [Processo de inicialização do Arch#Gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") para obter mais informações sobre os requisitos e recursos do gerenciador de boot.
 *   [montar](/index.php/Monta "Monta") a ESP em `/boot`. Esse é o método preferível ao inicializar diretamente um kernel de [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)") do UEFI.
 
 **Dica:**

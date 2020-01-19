@@ -34,6 +34,7 @@ There are many ways to control brightness of a monitor, laptop or integrated pan
     *   [6.3 Unable to control eDP Panel brightness (Intel i915 only)](#Unable_to_control_eDP_Panel_brightness_(Intel_i915_only))
     *   [6.4 sysfs modified but no brightness change](#sysfs_modified_but_no_brightness_change)
     *   [6.5 Backlight not working in MATE](#Backlight_not_working_in_MATE)
+    *   [6.6 Backlight keys not working in Xfce](#Backlight_keys_not_working_in_Xfce)
 
 ## Hardware interfaces
 
@@ -390,3 +391,11 @@ done
 ### Backlight not working in MATE
 
 Make sure the [mate-power-manager](https://www.archlinux.org/packages/?name=mate-power-manager) package is [installed](/index.php/Install "Install").
+
+### Backlight keys not working in Xfce
+
+In xfce4, the Xfce4 Power Manager handles the brightness keys.
+
+In some installations of Xfce, the "Handle display brightness keys" setting may be turned off by default.
+
+To activate the brightness keys again, open [xfce4-power-manager-settings](https://www.archlinux.org/packages/?name=xfce4-power-manager-settings) and toggle on "Handle display brightness keys".

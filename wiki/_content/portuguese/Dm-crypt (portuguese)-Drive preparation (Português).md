@@ -143,7 +143,7 @@ Quando se apaga um cabeçalho com dados aleatórios tudo deixado no dispositivo 
 
 Esta seção somente se aplica a um sistema criptografado. Depois que o disco foi sobrescrito com segurança, um particionamento apropriado tem que ser escolhido, levando em conta os requisitos do dm-crypt e efeitos que as várias escolhas terão na manutenção do sistema resultante.
 
-É importante notar que em [quase](#Partição_de_boot_(GRUB)) todo caso é necessário uma partição separada para `/boot` que deve se manter não criptografada, porquê o gerenciador de boot precisa acessar o diretório}} para carregar o initramfs/módulos de encriptação necessários para o resto do sistema (veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para detalhes). Se preocupado com a segurança, veja [dm-crypt/Especificidades#Protegendo a partição de boot não criptografada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+É importante notar que em [quase](#Partição_de_boot_(GRUB)) todo caso é necessário uma partição separada para `/boot` que deve se manter não criptografada, porquê o gerenciador de boot precisa acessar o diretório}} para carregar o initramfs/módulos de encriptação necessários para o resto do sistema (veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para detalhes). Se preocupado com a segurança, veja [dm-crypt/Especificidades#Protegendo a partição de boot não criptografada](/index.php/Dm-crypt/Especificidades#Protegendo_a_partição_de_boot_não_criptografada "Dm-crypt/Especificidades").
 
 Outro fator importante a se levar em conta é como o swap e o sistema de suspensão serão tratados, veja [dm-crypt/Swap criptografado](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
@@ -153,7 +153,7 @@ No caso mais simples, as camadas criptografadas podem ser diretamente colocadas 
 
 ### Dispositivos de blocos empilhados
 
-Se mais flexibilidade é necessária, dm-crypt pode coexistir com outros dispositivos de blocos empilhadores como [LVM](/index.php/LVM "LVM") e [RAID](/index.php/RAID "RAID"). Os containers criptografados podem residir abaixo ou em cima de outros:
+Se mais flexibilidade é necessária, dm-crypt pode coexistir com outros dispositivos de blocos empilhadores como [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") e [RAID](/index.php/RAID "RAID"). Os containers criptografados podem residir abaixo ou em cima de outros:
 
 *   Se os dispositivos LVM/RAID são criados em cima da camada criptografada, será possível adicionar, remover ou redimensionar os sistemas de arquivos da mesma partição criptografada deliberadamente, e somente uma chave ou senha será necessária para todos. Desde que a camada criptografada reside na partição física não será possível se aproveitar da habilidade do LVM e RAID para expandir para múltiplos discos.
 *   Se a camada criptografada é criada em cima do LVM/RAID, ainda será possível reorganizar os sistemas de arquivos no futuro, mas com a complexidade adicionada, as camadas criptografadas terão que ser adaptadas de acordo. adicionalmente, senhas e chaves separadas serão necessárias para abrir cada dispositivo criptografado. Esta, no entanto, é a única escolha para sistemas que precisam criptografar sistemas de arquivos para múltiplos discos.

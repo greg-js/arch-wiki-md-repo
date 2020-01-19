@@ -852,7 +852,7 @@ The advantage of this method is you do not have to add sudo privileges to your u
 
 #### Basics
 
-VDE support can be [installed](/index.php/Pacman "Pacman") via the [vde2](https://www.archlinux.org/packages/?name=vde2) package.
+VDE support can be [installed](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") via the [vde2](https://www.archlinux.org/packages/?name=vde2) package.
 
 In our config, we use tun/tap to create a virtual interface on my host. Load the `tun` module (see [Kernel modules](/index.php/Kernel_modules "Kernel modules") for details):
 

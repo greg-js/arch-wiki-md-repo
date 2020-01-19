@@ -4,12 +4,12 @@
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Securing the unencrypted boot partition](#Securing_the_unencrypted_boot_partition)
-    *   [1.1 Booting from a removable device](#Booting_from_a_removable_device)
+*   [1 Protegendo a partição de boot não criptografada](#Protegendo_a_partição_de_boot_não_criptografada)
+    *   [1.1 Inicializando de um dispositivo removível](#Inicializando_de_um_dispositivo_removível)
     *   [1.2 chkboot](#chkboot)
     *   [1.3 mkinitcpio-chkcryptoboot](#mkinitcpio-chkcryptoboot)
-        *   [1.3.1 Installation](#Installation)
-        *   [1.3.2 Technical Overview](#Technical_Overview)
+        *   [1.3.1 Instalação](#Instalação)
+        *   [1.3.2 Visão geral técnica](#Visão_geral_técnica)
     *   [1.4 AIDE](#AIDE)
     *   [1.5 STARK](#STARK)
 *   [2 Usando keyfiles criptografadas com GPG, LUKS ou OpenSSL](#Usando_keyfiles_criptografadas_com_GPG,_LUKS_ou_OpenSSL)
@@ -26,7 +26,7 @@
         *   [5.1.2 Extendendo o volume lógico](#Extendendo_o_volume_lógico)
     *   [5.2 Modificando o hook encrypt para múltiplas partições](#Modificando_o_hook_encrypt_para_múltiplas_partições)
         *   [5.2.1 sistema de arquivos principal expandido para múltiplas partições](#sistema_de_arquivos_principal_expandido_para_múltiplas_partições)
-        *   [5.2.2 Multiple non-root partitions](#Multiple_non-root_partitions)
+        *   [5.2.2 Múltiplas partições não raiz](#Múltiplas_partições_não_raiz)
 *   [6 Sistema criptografado usando um cabeçalho LUKS desanexado](#Sistema_criptografado_usando_um_cabeçalho_LUKS_desanexado)
     *   [6.1 Usando o hook do systemd](#Usando_o_hook_do_systemd)
     *   [6.2 Modificando o hook encrypt](#Modificando_o_hook_encrypt)
@@ -38,46 +38,46 @@
         *   [7.2.1 Boot Loader](#Boot_Loader)
     *   [7.3 Changing the LUKS keyfile](#Changing_the_LUKS_keyfile)
 
-## Securing the unencrypted boot partition
+## Protegendo a partição de boot não criptografada
 
-The `/boot` partition and the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") are the two areas of the disk that are not encrypted, even in an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") configuration. They cannot usually be encrypted because the [boot loader](/index.php/Boot_loader "Boot loader") and BIOS (respectively) are unable to unlock a dm-crypt container in order to continue the boot process. An exception is [GRUB](/index.php/GRUB "GRUB"), which gained a feature to unlock a LUKS encrypted `/boot` - see [dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_(GRUB) "Dm-crypt/Encrypting an entire system").
+A partição `/boot` e o [Master Boot Record](/index.php/Particionamento#Master_Boot_Record "Particionamento") são duas áreas do disco que não são criptografadas até mesmo com a [raiz criptografada](/index.php/Dm-crypt/Criptografando_todo_um_sistema "Dm-crypt/Criptografando todo um sistema"). Estes não podem ser usualmente criptografados porquê o [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") e BIOS (respectivamente) não são capazes de abrir o container do dm-crypt para continuar o processo de inicialização. Uma exceção é o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)"), que tem a funcionalidade de abrir a partição `/boot` criptografada - veja [dm-crypt/Criptografando todo um sistema#Partição de boot criptografada (GRUB)](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Partição_de_boot_criptografada_(GRUB) "Dm-crypt/Criptografando todo um sistema").
 
-This section describes steps that can be taken to make the boot process more secure.
+Esta seção descreve passos que podem ser feitos para fazer o processo de inicialização mais seguro.
 
-**Warning:** Note that securing the `/boot` partition and MBR can mitigate numerous attacks that occur during the boot process, but systems configured this way may still be vulnerable to BIOS/UEFI/firmware tampering, hardware keyloggers, cold boot attacks, and many other threats that are beyond the scope of this article. For an overview of system-trust issues and how these relate to full-disk encryption, refer to [[1]](http://www.youtube.com/watch?v=pKeiKYA03eE).
+**Atenção:** Note que proteger a partição `/boot` e MBR pode mitigar numerosos ataques que ocorrem no processo de inicialização, mas sistemas configurados desta maneira ainda podem estar vuneráveis a adulteração da BIOS/UEFI/firmware, keyloggers de hardware, ataques cold boot, e outras ameaças que estão fora do escopo deste artigo. Para uma visão geral da confiabilidade do sistema e como estes são relacionados a encriptação total de sistema, veja [[1]](http://www.youtube.com/watch?v=pKeiKYA03eE).
 
-### Booting from a removable device
+### Inicializando de um dispositivo removível
 
-**Warning:** systemd version 230 cryptsetup generator emits `RequiresMountsFor` for crypto keyfile. Therefore, when the filesystem that holds this file is unmounted, it also stops cryptsetup service. This behavior is incorrect because the filesystem and cryptokey is required only once, when the crypto container is initially setup. See [systemd issue 3816](https://github.com/systemd/systemd/issues/3816).
+**Atenção:** O gerador do systemd versão 230 para o cryptsetup emite `RequiresMountsFor` para a keyfile. Quando o sistema de arquivos que possui este arquivo é desmontado, o serviço do cryptsetup também para. Este comportamento está correto porquê o sistema de arquivos e a chave criptografada são necessários somente quando o container criptografado é inicialmente aberto. Veja a [systemd issue 3816](https://github.com/systemd/systemd/issues/3816).
 
-Using a separate device to boot a system is a fairly straightforward procedure, and offers a significant security improvement against some kinds of attacks. Two vulnerable parts of a system employing an [encrypted root filesystem](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") are
+Usar um dispositivo separado para inicializar um sistema é um procedimento bastante simples, e oferece uma significante melhora na segunraça contra alguns tipos de ataques. Duas partes vulneráveis de um sistema com [raiz criptografada](/index.php/Dm-crypt/Criptografando_todo_um_sistema "Dm-crypt/Criptografando todo um sistema") são:
 
-*   the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"), and
-*   the `/boot` partition.
+*   o [Master Boot Record](/index.php/Particionamento#Master_Boot_Record "Particionamento"), e
+*   a partição `/boot`.
 
-These must be stored unencrypted in order for the system to boot. In order to protect these from tampering, it is advisable to store them on a removable medium, such as a USB drive, and boot from that drive instead of the hard disk. As long as you keep the drive with you at all times, you can be certain that those components have not been tampered with, making authentication far more secure when unlocking your system.
+Estas devem ser guardadas em forma não criptografada para o sistema inicializar. Para protegê-las de adulteração, é recomendado usar uma unidade de armazenamento removível, como um pendrive, e inicializar por meio desta ao invês do disco interno. Enquanto você cuidar e guardar consigo a unidade de armazenamento removível, vai ter certeza que esta não foi adulterada, fazendo a autentificação muito mais segura quando abrir seu sistema.
 
-It is assumed that you already have your system configured with a dedicated partition mounted at `/boot`. If you do not, please follow the steps in [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration"), substituting your hard disk for a removable drive.
+É assumido que você já configurou seu sistema e tem um partição dedicada montada em `/boot`. Se não, siga os passos em [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Gerenciador_de_boot "Dm-crypt/Configuração do sistema"), substituindo a sua unidade de armazenamento por uma removível.
 
-**Note:** You must make sure your system supports booting from the chosen medium, be it a USB drive, an external hard drive, an SD card, or anything else.
+**Nota:** Você deve ter certeza que seu sistema suporta a inicialização por uma unidade de armazenamento removível, seja esta um pendrive, HD externo, cartão SD, ou qualquer outra coisa.
 
-Prepare the removable drive (`/dev/sdx`).
+Prepare a unidade de armazenamento removível (`/dev/sdx`).
 
 ```
-# gdisk /dev/sdx #format if necessary. Alternatively, cgdisk, fdisk, cfdisk, gparted...
+# gdisk /dev/sdx # formate se necessário. Pode usar também cgdisk, fdisk, cfdisk, gparted...
 # mkfs.ext2 /dev/sdx1
 # mount /dev/sdx1 /mnt
 
 ```
 
-Copy your existing `/boot` contents to the new one.
+Copie o que tiver no `/boot` para o novo.
 
 ```
 # cp -ai /boot/* /mnt/
 
 ```
 
-Mount the new partition. Do not forget to update your [fstab](/index.php/Fstab "Fstab") file accordingly.
+Monte a nova partição. Não se esqueça de atualizar o [fstab](/index.php/Fstab "Fstab") de acordo.
 
 ```
 # umount /boot
@@ -87,25 +87,25 @@ Mount the new partition. Do not forget to update your [fstab](/index.php/Fstab "
 
 ```
 
-Update [GRUB](/index.php/GRUB "GRUB"). `grub-mkconfig` should detect the new partition UUID automatically, but custom menu entries may need to be updated manually.
+Atualize o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)"). `grub-mkconfig` deve detectar o novo UUID da partição automaticamente, mas entradas do menu customizadas precisam ser atualizadas manualmente.
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
-# grub-install /dev/sdx #install to the removable device, not the hard disk.
+# grub-install /dev/sdx # instale para a unidade de armazenamento removível, não a unidade de armazenamento interna.
 
 ```
 
-Reboot and test the new configuration. Remember to set your device boot order accordingly in your BIOS or [UEFI](/index.php/UEFI "UEFI"). If the system fails to boot, you should still be able to boot from the hard drive in order to correct the problem.
+Reinicie e teste a nova configuração. Se lembre de definir a entrada do dispositivo de boot de acordo com sua BIOS ou [UEFI](/index.php/UEFI "UEFI"). Se o sistema falhar na inicialização, você deve ainda conseguir inicializar pelo disco rígido e então corrigir o problema.
 
 ### chkboot
 
-**Warning:** chkboot makes a `/boot` partition **tamper-evident**, not **tamper-proof**. By the time the chkboot script is run, you have already typed your password into a potentially compromised boot loader, kernel, or initrd. If your system fails the chkboot integrity test, no assumptions can be made about the security of your data.
+**Atenção:** chkboot faz a partição `/boot` **tamper-evident** (adulterações evidentes), não **tamper-proof** (a prova de adulteração). Quando o script chkboot é executado, você já digitou a sua senha em um potencialmente compromissado gerenciador de boot, kernel ou initrd. Se seu sistema falhar o teste de integridade chkboot, nenhuma assunção pode ser feita sobre a segurança dos seus dados.
 
-Referring to an article from the ct-magazine (Issue 3/12, page 146, 01.16.2012, [[2]](http://www.heise.de/ct/inhalt/2012/03/6/)) the following script checks files under `/boot` for changes of SHA-1 hash, inode, and occupied blocks on the hard drive. It also checks the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). The script cannot prevent certain type of attacks, but a lot are made harder. No configuration of the script itself is stored in unencrypted `/boot`. With a locked/powered-off encrypted system, this makes it harder for some attackers because it is not apparent that an automatic checksum comparison of the partition is done upon boot. However, an attacker who anticipates these precautions can manipulate the firmware to run their own code on top of your kernel and intercept file system access, e.g. to `boot`, and present the untampered files. Generally, no security measures below the level of the firmware are able to guarantee trust and tamper evidence.
+Fazendo referência ao artigo (em inglês) da ct-magazine (em inglês, issue 3/12, página 146, 01.16.2012, [[2]](http://www.heise.de/ct/inhalt/2012/03/6/)) o seguinte script checa por mudanças do SHA-1 hash, inode, e blocos ocupados no disco dos arquivos no `/boot`. Também checa o [Master Boot Record](/index.php/Particionamento#Master_Boot_Record "Particionamento"). O script não pode prevenir certos tipos de ataques, mas o fazem mais difíceis. Nenhuma configuração do script é guardada no `/boot` não criptografado. Com o sistema criptografado fechado/desligado, não é aparente que uma comparação automática da soma de verificação da partição é feita na inicialização, dificultando para os atacantes. No entanto, um atacante que antecipar estas precauções pode manipular o firmware para rodar seu próprio código em cima do kernel e interceptar acessos ao sistema de arquivos, exemplo para `/boot`, e apresentar os arquivos intocados. Geralmente, nenhuma medida de segurança abaixo do nível do firmware pode garantir confiança e evidência de adulteração.
 
-The script with installation instructions is [available](ftp://ftp.heise.de/pub/ct/listings/1203-146.zip) (Author: Juergen Schmidt, ju at heisec.de; License: GPLv2). There is also package [chkboot](https://aur.archlinux.org/packages/chkboot/) to [install](/index.php/Install "Install").
+O script com instruções de instalação está disponível [aqui](ftp://ftp.heise.de/pub/ct/listings/1203-146.zip) (Autor: Juergen Schmidt, ju na heisec.de; Licença: GPLv2). Existe também o pacote [chkboot](https://aur.archlinux.org/packages/chkboot/) para [instalar](/index.php/Instala "Instala").
 
-After installation add a service file (the package includes one based on the following) and [enable](/index.php/Enable "Enable") it:
+Depois da instalação, adicione um arquivo de serviço (o pacote inclui um baseado no seguinte) e [habilite](/index.php/Habilite "Habilite")-o:
 
 ```
 [Unit]
@@ -122,44 +122,44 @@ WantedBy=multi-user.target
 
 ```
 
-There is a small caveat for systemd. At the time of writing, the original `chkboot.sh` script provided contains an empty space at the beginning of `#!/bin/bash` which has to be removed for the service to start successfully.
+Existe uma pequena ressalva para o systemd. No tempo de escrita, o script original provido, `chkboot.sh`, contém um espaço em branco no começo do `#!/bin/bash` que deve ser removido para o serviço começar com sucesso.
 
-As `/usr/local/bin/chkboot_user.sh` needs to be executed right after login, you need to add it to the [autostart](/index.php/Autostart "Autostart") (e.g. under KDE -> *System Settings -> Startup and Shutdown -> Autostart*; GNOME 3: *gnome-session-properties*).
+`/usr/local/bin/chkboot_user.sh` precisa ser executado depois do login, adicione-o para a [inicialização automática](/index.php/Inicializa%C3%A7%C3%A3o_autom%C3%A1tica "Inicialização automática") (exemplo, em inglês, no KDE -> *System Settings -> Startup and Shutdown -> Autostart*; GNOME 3: *gnome-session-properties*).
 
-With Arch Linux, changes to `/boot` are pretty frequent, for example by new kernels rolling-in. Therefore it may be helpful to use the scripts with every full system update. One way to do so:
+Com o Arch Linux, mudanças no `/boot` são frequentes, por exemplo atualizações do kernel. Assim, pode ser útil usar scripts com cada atualização total do sistema. Uma forma de fazer isso é:
 
 ```
 #!/bin/bash
 #
-# Note: Insert your <user>  and execute it with sudo for pacman & chkboot to work automagically
+# Nota: Insira seu <usuário> e execute isto com sudo para pacman e chkboot para funcionar automagicamente
 #
-echo "Pacman update [1] Quickcheck before updating" & 
-sudo -u <user> /usr/local/bin/chkboot_user.sh		# insert your logged on <user> 
+echo "Atualização [1] Checagem rápida antes dela" & 
+sudo -u <usuário> /usr/local/bin/chkboot_user.sh		# insira seu <usuário> logado
 /usr/local/bin/chkboot.sh
-sudo -u <user> /usr/local/bin/chkboot_user.sh		# insert your logged on <user> 
-echo "Pacman update [2] Syncing repos for pacman" 
+sudo -u <usuário> /usr/local/bin/chkboot_user.sh		# insira seu <usuário> logado
+echo "Atualização [2] Sincronizando repositórios com o pacman" 
 pacman -Syu
 /usr/local/bin/chkboot.sh
-sudo -u <user> /usr/local/bin/chkboot_user.sh		# insert your logged on <user>
-echo "Pacman update [3] All done, let us roll on ..."
+sudo -u <usuário> /usr/local/bin/chkboot_user.sh		# insira seu <usuário> logado
+echo "Atualização [3] Tudo feito, vamos continuar..."
 
 ```
 
 ### mkinitcpio-chkcryptoboot
 
-**Warning:** This hook does **not** encrypt [GRUB](/index.php/GRUB "GRUB")'s core (MBR) code or EFI stub, nor does it protect against situations where an attacker is able to modify the behaviour of the bootloader to compromise the kernel and/or initramfs at run-time.
+**Atenção:** Este hook **não** criptografa o código núcleo do [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") ou EFI stub, nem protege contra situações onde um atacante pode modificar o comportamento do gerenciador de boot para comprometer o kernel e/ou initramfs durante a execução.
 
-[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) is a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that performs integrity checks during early-userspace and advises the user not to enter their root partition password if the system appears to have been compromised. Security is achieved through an [encrypted boot partition](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_(GRUB) "Dm-crypt/Encrypting an entire system"), which is unlocked using [GRUB](/index.php/GRUB#Encrypted_/boot "GRUB")'s `cryptodisk.mod` module, and a root filesystem partition, which is encrypted with a password different from the former. This way, the [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") are secured against offline tampering, and the root partition can remain secure even if the `/boot` partition password is entered on a compromised machine (provided that the chkcryptoboot hook detects the compromise, and is not itself compromised at run-time).
+[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) é um hook do [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") que verifica a integridade durante o *** performs integrity checks during early-userspace e recomenda ao usuário não entrar com a senha da partição raiz criptografada se o sistema ter sido aparentemente comprometido. Segurança é conquistada atravês de uma [partição de boot criptografada](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Partição_de_boot_criptografada_(GRUB) "Dm-crypt/Criptografando todo um sistema"), que é aberta usando o módulo `cryptodisk.mod` do [GRUB](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)"), e a partição raiz criptografada tem uma senha diferente da anterior. Desta maneira, o [initramfs](/index.php/Initramfs "Initramfs") e o [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") são protegidos contra adulterações offline, e a partição raiz pode permanecer segura até mesmo se a senha da partição `/boot` seja entrada em uma máquina comprometida (desde que o hook chkcryptoboot detecte modificações, e não seja comprometido durante a execução).
 
-This hook requires [grub](https://www.archlinux.org/packages/?name=grub) release >=2.00 to function, and a dedicated, LUKS encrypted `/boot` partition with its own password in order to be secure.
+Este hook precisa do [grub](https://www.archlinux.org/packages/?name=grub) versão >= 2.00 para funcionar, e uma partição `/boot` criptografada com LUKS, com sua própria senha para ser segura.
 
-#### Installation
+#### Instalação
 
-[Install](/index.php/Install "Install") [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) and edit `/etc/default/chkcryptoboot.conf`. If you want the ability of detecting if your boot partition was bypassed, edit the `CMDLINE_NAME` and `CMDLINE_VALUE` variables, with values known only to you. You can follow the advice of using two hashes as is suggested right after the installation. Also, be sure to make the appropriate changes to the [kernel command line](/index.php/Kernel_command_line "Kernel command line") in `/etc/default/grub`. Edit the `HOOKS=` line in `/etc/mkinitcpio.conf`, and insert the `chkcryptoboot` hook **before** `encrypt`. When finished, [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+[Instale](/index.php/Instale "Instale") o [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) e edite `/etc/default/chkcryptoboot.conf`. Se você quer detectar se sua partição de boot foi modificada, edite as variáveis `CMDLINE_NAME` e `CMDLINE_VALUE`, com valores conhecidos somente por você. Você pode seguir o conselho de usar duas hash como é sugerido depois da instalação. Também, faça as mudanças apropriadas aos [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") em `/etc/default/grub`. Edite a linha `HOOKS=` em `/etc/mkinitcpio.conf`, e insira o hook `chkcryptoboot` **antes do** hook `encrypt`. Quando acabar, [gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
-#### Technical Overview
+#### Visão geral técnica
 
-[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) consists of an install hook and a run-time hook for mkinitcpio. The install hook runs every time the initramfs is rebuilt, and hashes the GRUB [EFI](/index.php/EFI "EFI") stub (`$esp/EFI/grub_uefi/grubx64.efi`) (in the case of [UEFI](/index.php/UEFI "UEFI") systems) or the first 446 bytes of the disk on which GRUB is installed (in the case of BIOS systems), and stores that hash inside the initramfs located inside the encrypted `/boot` partition. When the system is booted, GRUB prompts for the `/boot` password, then the run-time hook performs the same hashing operation and compares the resulting hashes before prompting for the root partition password. If they do not match, the hook will print an error like this:
+[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) consiste de um install e run-time hook para o mkinitcpio. O install hook é executado toda vez que o initramfs é gerado, e faz hash do [EFI](/index.php/EFI "EFI") stub do GRUB (`$esp/EFI/grub_uefi/grubx64.efi`) (para sistemas [UEFI](/index.php/UEFI "UEFI")) ou os primeiros 446 bytes do disco que o grub está instalado (para sistemas BIOS), e guarda esta hash dentro do initramfs localizado na partição `/boot` criptografada. Quando o sistema é inicializado, GRUB pede a senha para a partição `/boot`, e então o run-time hook executa a mesma operação de hash e compara o hash resultante antes de solicitar a senha para a partição raiz. Se eles não forem iguais, vai ser mostrado um erro como esse:
 
 ```
 CHKCRYPTOBOOT ALERT!
@@ -169,25 +169,25 @@ Please type uppercase yes to continue:
 
 ```
 
-In addition to hashing the boot loader, the hook also checks the parameters of the running kernel against those configured in `/etc/default/chkcryptoboot.conf`. This is checked both at run-time and after the boot process is done. This allows the hook to detect if GRUB's configuration was not bypassed at run-time and afterwards to detect if the entire `/boot` partition was not bypassed.
+Em adição a fazer hash do gerenciador de boot, o hook também verifica os parâmetros do kernel em execução com os configurados em `/etc/default/chkcryptoboot.conf`. Esta verificação é feita durante e depois do processo de inicialização. Isto permite detectar se a configuração do GRUB foi adulterada durante a execução e depois para verificar se toda a partição `/boot` foi modificada.
 
-For BIOS systems the hook creates a hash of GRUB's first stage bootloader (installed to the first 446 bytes of the bootdevice) to compare at the later boot processes. The main second-stage GRUB bootloader `core.img` is not checked.
+Para sistemas BIOS, o hook cria um hash do primeiro estágio do gerenciador de boot GRUB (instalado nos primeiros 446 bytes do dispositivo de inicialização) para comparar depois no processo de inicialização. O principal segundo estágio `core.img` não é verificado.
 
 ### AIDE
 
-Alternatively to above scripts, a hash check can be set up with [AIDE](/index.php/AIDE "AIDE") which can be customized via a very flexible configuration file.
+Uma alternativa aos scripts acima, é a checagem de hash feita com [AIDE](/index.php/AIDE "AIDE") que tem um arquivo de configuração muito flexível.
 
 ### STARK
 
-While one of these methods should serve the purpose for most users, they do not address all security problems associated with the unencrypted `/boot`. One approach which endeavours to provide a fully authenticated boot chain was published with POTTS as an academic thesis to implement the [STARK](https://www1.informatik.uni-erlangen.de/stark) authentication framework.
+Enquanto um destes métodos devem servir para a maioria do usuários, eles não resolvem todos os problemas de segurança associados com o `/boot` não criptografado. Uma abordagem que se esforça para prover uma cadeia de inicialização totalmente autentificada foi publicada como POTTS, uma tese acadêmica de implementação do framework de autentificação [STARK](https://www1.informatik.uni-erlangen.de/stark).
 
-The POTTS proof-of-concept uses Arch Linux as a base distribution and implements a system boot chain with:
+O proof-of-concept (prova de conceito) POTTS usa Arch Linux como distribuição base e implementa um sistema de inicialização em cadeia com:
 
-*   POTTS - a boot menu for a one-time authentication message prompt
-*   TrustedGrub - a [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") implementation which authenticates the kernel and initramfs against [TPM chip](/index.php/Trusted_Platform_Module "Trusted Platform Module") PCR registers
-*   TRESOR - a kernel patch which implements AES but keeps the master-key not in RAM but in CPU registers during runtime.
+*   POTTS - um menu de inicialização com caixa de diálogo para autentificação única por meio de mensagem.
+*   TrustedGrub - uma implementação do [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") que verifica o kernel e initramfs por meio de registradores PCR do [chip TPM](/index.php/Trusted_Platform_Module "Trusted Platform Module").
+*   TRESOR - um patch do kernel que implementa AES, mas mantém a chave mestre nos registradores da CPU ao invês da RAM enquanto está em execução.
 
-As part of the thesis [installation](https://13.tc/p/potts/manual.html) instructions based on Arch Linux (ISO as of 2013-01) have been published. If you want to try it, be aware these tools are not in standard repositories and the solution will be time consuming to maintain.
+Como parte da tese, as instruções de [instalação](https://13.tc/p/potts/manual.html) baseadas no Arch Linux (ISO de 2013-01) foi publicada. Se você quiser tentar, tenha em mente que estas ferramentas não estão nos repositórios padrão e a solução vai consumir tempo para manter.
 
 ## Usando keyfiles criptografadas com GPG, LUKS ou OpenSSL
 
@@ -388,7 +388,7 @@ rd.luks.options=discard
 
 ```
 
-{{Nota|`rd.luks.options=discard` não tem efeito nos dispositivos incluidos no arquivo `/etc/crypttab` da imagem do initramfs (`/etc/crypttab.initramfs` na raiz do sistema). Você deve especificar a opção `discard` no `/etc/crypttab.initramfs]}.`
+**Nota:** `rd.luks.options=discard` não tem efeito nos dispositivos incluidos no arquivo `/etc/crypttab` da imagem do initramfs (`/etc/crypttab.initramfs` na raiz do sistema). Você deve especificar a opção `discard` no `/etc/crypttab.initramfs`.
 
 Além disso, também é necessário periodicamente rodar `fstrim` ou montar o sistema de arquivos (exemplo, `/dev/mapper/raiz` neste exemplo) com a opção `discard` no `/etc/fstab`. Para detalhes, veja a página do [TRIM](/index.php/TRIM "TRIM").
 
@@ -438,7 +438,7 @@ As seções seguintes brevemente mostram alternativas para superar esta limitaç
 
 ### Expandindo LVM em múltiplos discos
 
-O gerenciamento de múltiplos discos é uma funcionalidade básica do [LVM](/index.php/LVM "LVM") e uma da razões por seu particionamento flexível. Pode ser usado com *dm-crypt*, mas somente se LVM é empregado como primeiro mapeador. Em uma configuração [LUKS dentro do LVM](/index.php/Dm-crypt/Criptografando_todo_um_sistema#LUKS_dentro_do_LVM "Dm-crypt/Criptografando todo um sistema"), os dispositivos criptografados são criados dentro de volumes lógicos (com uma senha/chave separada por volume). A seguir é mostrado como expandir para outro disco.
+O gerenciamento de múltiplos discos é uma funcionalidade básica do [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") e uma da razões por seu particionamento flexível. Pode ser usado com *dm-crypt*, mas somente se LVM é empregado como primeiro mapeador. Em uma configuração [LUKS dentro do LVM](/index.php/Dm-crypt/Criptografando_todo_um_sistema#LUKS_dentro_do_LVM "Dm-crypt/Criptografando todo um sistema"), os dispositivos criptografados são criados dentro de volumes lógicos (com uma senha/chave separada por volume). A seguir é mostrado como expandir para outro disco.
 
 **Atenção:** Faça backup! Enquanto redimensionar sistema de arquivos pode ser o padrão, tenha em mente que operções **podem** dar errado e não serem aplicáveis para uma configuração específica. Geralmente, extender um sistema de arquivos para usar o espaço livre é menos problemático que reduzí-lo. Isto é particularmente verdade quando mapeadores são empilhados, o caso do seguinte exemplo.
 
@@ -508,22 +508,22 @@ Note que a ação `cryptsetup resize` não afeta as chaves de encriptação, e e
 
 Adicione `cryptdevice2=` para suas opções de boot (e `cryptkey2=` se necessário), e adicione o hook `encrypt2` para seu [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") antes de gerar o initramfs. Veja [dm-crypt/Configuração do sistema](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema "Dm-crypt/Configuração do sistema").
 
-#### Multiple non-root partitions
+#### Múltiplas partições não raiz
 
-Maybe you have a requirement for using the `encrypt` hook on a non-root partition. Arch does not support this out of the box, however, you can easily change the cryptdev and cryptname values in `/lib/initcpio/hooks/encrypt` (the first one to your `/dev/sd*` partition, the second to the name you want to attribute). That should be enough.
+Talvez você precisa usar o hook `encrypt` em uma partição não raiz. Arch não suporta isto nativamente, no entanto, você pode facilmente mudar os valores cryptdev e cryptname em `/lib/initcpio/hooks/encrypt` (o primeiro para sua partição `/dev/sd*`, a segunda para o nome que você quer o atribuir). Isto deve bastar.
 
-The big advantage is you can have everything automated, while setting up `/etc/crypttab` with an external key file (i.e. the keyfile is not on any internal hard drive partition) can be a pain - you need to make sure the USB/FireWire/... device gets mounted before the encrypted partition, which means you have to change the order of `/etc/fstab` (at least).
+A grande vantagem é que você pode ter tudo automatizado, configurar o `/etc/crypttab` com uma keyfile externa (a keyfile não está numa partição do disco rígido interno) pode ser chato - você precisa ter certeza que o dispositivo USB/FireWire/... é montado antes da partição criptografada, isto significa que você tem de mudar a ordem do `/etc/fstab` (ao menos).
 
-Of course, if the [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) package gets upgraded, you will have to change this script again. Unlike `/etc/crypttab`, only one partition is supported, but with some further hacking one should be able to have multiple partitions unlocked.
+Se o pacote [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) for atualizado, você terá que mudar este script denovo. Diferente do `/etc/crypttab`, somente uma partição é suportada, mas com alguns hacks é possível abrir múltiplas partições.
 
-If you want to do this on a software RAID partition, there is one more thing you need to do. Just setting the `/dev/mdX` device in `/lib/initcpio/hooks/encrypt` is not enough; the `encrypt` hook will fail to find the key for some reason, and not prompt for a passphrase either. It looks like the RAID devices are not brought up until after the `encrypt` hook is run. You can solve this by putting the RAID array in `/boot/grub/menu.lst`, like
+Se você quer fazer isto em uma partição RAID de software, existe mais uma coisa que você precisa fazer. Somente definir o dispositivo `/dev/mdX` em `/lib/initcpio/hooks/encrypt` não é o bastante; o hook `encrypt` não vai encontrar a chave por algum motivo, e a senha não vai ser solicitada. Aparentemente, dispositivos RAID não são descobertos antes do hook `encrypt` rodar. Você pode resolver isto ao botar o arranjo RAID em `/boot/grub/menu.lst`, como:
 
 ```
 kernel /boot/vmlinuz-linux md=1,/dev/hda5,/dev/hdb5
 
 ```
 
-If you set up your root partition as a RAID, you will notice the similarities with that setup. [GRUB](/index.php/GRUB "GRUB") can handle multiple array definitions just fine:
+Se você usar sua partição raiz como RAID, você vai notar similaridades com esta configuração. [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") pode de forma simples manusear definições de múltiplos arranjos:
 
 ```
 kernel /boot/vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda1,/dev/sdb1 md=1,/dev/sda5,/dev/sdb5,/dev/sdc5
@@ -710,7 +710,7 @@ Pick an *offset* and *size* in bytes (8192 bytes is the maximum keyfile size for
 
 Follow [Preparing the logical volumes](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_logical_volumes "Dm-crypt/Encrypting an entire system") to set up LVM on LUKS.
 
-See [Partitioning#Discrete partitions](/index.php/Partitioning#Discrete_partitions "Partitioning") for recommendations on the size of your partitions.
+See [Particionamento#Partições discretas](/index.php/Particionamento#Partições_discretas "Particionamento") for recommendations on the size of your partitions.
 
 Once your root partition is mounted, `mount` your encrypted boot partition as `/mnt/boot` and your EFI system partition as `/mnt/efi`.
 
@@ -771,7 +771,7 @@ The `files=()` and `binaries=()` arrays are empty, and you should not have to re
 
 #### Boot Loader
 
-Finish the [Installation Guide](/index.php/Installation_guide#Initramfs "Installation guide") from the `mkinitcpio` step. To boot you would need either [GRUB](/index.php/GRUB "GRUB") or [efibootmgr](/index.php/Efibootmgr "Efibootmgr"). Note you can use [GRUB](/index.php/GRUB "GRUB") to support the encrypted disks by [Configuring the boot loader](/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_6 "Dm-crypt/Encrypting an entire system") but editing the `GRUB_CMDLINE_LINUX` is not necessary for this set up.
+Finish the [Installation Guide](/index.php/Installation_guide#Initramfs "Installation guide") from the `mkinitcpio` step. To boot you would need either [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") or [efibootmgr](/index.php/Efibootmgr "Efibootmgr"). Note you can use [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") to support the encrypted disks by [Configuring the boot loader](/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_6 "Dm-crypt/Encrypting an entire system") but editing the `GRUB_CMDLINE_LINUX` is not necessary for this set up.
 
 Or use Direct UEFI Secure boot by generating keys with [cryptboot](https://aur.archlinux.org/packages/cryptboot/) then signing the initramfs and kernel and creating a bootable *.efi* file for your EFI system partition with [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/). Before using cryptboot or sbupdate note this excerpt from [Secure Boot#Using your own keys](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot"):
 

@@ -16,4 +16,4 @@ If you are affected, please upvote [this](https://gitlab.freedesktop.org/drm/amd
 
 ### Uninstalling packages
 
-If you are in trouble, for example, you cannot login to your system due to black screen, you can revert all back by uninstalling all packages related to amdgpu pro. Switch to the tty2 (ctrl+alt+f2), login to the system and run `pacman -Qg Radeon_Software_for_Linux | cut -f2 -d" "` to get a list of installed packages of corresponding group. Then remove them with `pacman -R` and reboot.
+If you are in trouble, for example, you cannot login to your system due to black screen, you can revert all back by uninstalling all packages related to amdgpu pro. Switch to the tty2 (ctrl+alt+f2), login to the system and run `pacman -R $(pacman -Qg Radeon_Software_for_Linux | cut -f2 -d" ")` and reboot.

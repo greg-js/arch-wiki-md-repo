@@ -131,7 +131,7 @@ Later, the system clock is set again from the hardware clock by systemd, depende
 
 ### UTC in Windows
 
-To [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") it is recommended to configure Windows to use UTC, rather than Linux to use localtime. (Windows by default uses localtime: See [this](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx).)
+To [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") it is recommended to configure Windows to use UTC, rather than Linux to use localtime. (Windows by default uses localtime [[1]](https://devblogs.microsoft.com/oldnewthing/20040902-00/?p=37983).)
 
 It can be done by a simple registry fix: Open `regedit` and add a `DWORD` value for *32-bit* Windows, or `QWORD` for *64-bit* one, with hexadecimal value `1` to the registry:
 
@@ -177,7 +177,7 @@ If you are having issues with the offset of the time, try reinstalling [tzdata](
 For *really old* Windows, the above method fails, due to Windows bugs. More precisely,
 
 *   Before Vista SP2, there is a bug that resets the clock to *localtime* after resuming from the suspend/hibernation state.
-*   For XP and older, there's a bug related to the daylight saving time. See [[1]](https://support.microsoft.com/en-us/kb/2687252) for details.
+*   For XP and older, there's a bug related to the daylight saving time. See [[2]](https://support.microsoft.com/en-us/kb/2687252) for details.
 *   For *even older* versions of Windows, you might want to read [http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html) - the functionality was not even documented nor officially supported then.
 
 For these operating systems, it is recommended to use *localtime*.
@@ -231,6 +231,8 @@ See [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), 
 
 ### Setting based on geolocation
 
+**Note:** Some desktop environments have support for automatic time zone selection (e.g. see [GNOME#Date & time](/index.php/GNOME#Date_&_time "GNOME")).
+
 To set the timezone automatically based on the IP address location, one can use a geolocation API to retrieve the timezone, for example `curl https://ipapi.co/timezone`, and pass the output to `timedatectl set-timezone` for automatic setting. Some geo-IP APIs that provide free or partly free services are listed below:
 
 *   [https://freegeoip.app](https://freegeoip.app)
@@ -249,7 +251,7 @@ Create a [NetworkManager dispatcher script](/index.php/NetworkManager#Network_se
 #!/bin/sh
 case "$2" in
     up)
-        timedatectl set-timezone "$(curl --fail [https://ipapi.co/timezone](https://ipapi.co/timezone))"
+        timedatectl set-timezone "$(curl --fail https://ipapi.co/timezone)"
     ;;
 esac
 

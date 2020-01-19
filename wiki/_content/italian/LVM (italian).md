@@ -5,7 +5,11 @@ Articoli correlati
 
 Questo articolo fornirà un esempio su come installare e configurare Arch Linux utilizzando il Logical Volume Manager (LVM).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduzione](#Introduzione)
 *   [2 Vantaggi](#Vantaggi)

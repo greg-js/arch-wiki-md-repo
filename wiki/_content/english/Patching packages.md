@@ -1,6 +1,6 @@
 Related articles
 
-*   [ABS](/index.php/ABS "ABS")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
 
 This article covers how to create and how to apply patches to packages in the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") (ABS).
 

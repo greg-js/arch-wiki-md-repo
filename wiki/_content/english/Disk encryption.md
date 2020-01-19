@@ -42,6 +42,11 @@ For Full-disk encryption (FDE), see [dm-crypt/Encrypting an entire system](/inde
     *   [5.3 Cryptographic metadata](#Cryptographic_metadata)
     *   [5.4 Ciphers and modes of operation](#Ciphers_and_modes_of_operation)
     *   [5.5 Plausible deniability](#Plausible_deniability)
+*   [6 Backup for disk encryption scenarios](#Backup_for_disk_encryption_scenarios)
+    *   [6.1 Block device encryption](#Block_device_encryption_2)
+        *   [6.1.1 Backup of disk block device](#Backup_of_disk_block_device)
+        *   [6.1.2 Backup of the filesystem or files](#Backup_of_the_filesystem_or_files)
+        *   [6.1.3 LUKS header backup](#LUKS_header_backup)
 
 ## Why use encryption?
 
@@ -244,26 +249,29 @@ Among other things, you will need to answer the following questions:
 
 	What kind of "attacker" do you want to protect against?
 
-*   Casual computer user snooping around your disk when your system is turned off / stolen / etc.
+*   Casual computer user snooping around your disk when your system is turned off, stolen, etc.
 *   Professional cryptanalyst who can get repeated read/write access to your system before and after you use it
-*   Anything in between
+*   Anyone in between
 
 	What do you want to encrypt?
 
-*   only user data
-*   user data and system data
-*   something in between
+*   Only user data
+*   User data and system data
+*   Only confidential data, i.e. a subset of your data
 
 	How should swap, `/tmp`, etc. be taken care of?
 
-*   Ignore, and hope no data is leaked
 *   Disable or mount as ramdisk
-*   Encrypt *(as part of full disk encryption, or separately)*
+*   Encrypted swap
+    *   Swapfile as part of full disk encryption
+    *   Encrypt swap partition separately
 
 	How should encrypted parts of the disk be unlocked?
 
-*   Passphrase *(same as login password, or separate)*
-*   Keyfile *(e.g. on a USB stick, that you keep in a safe place or carry around with yourself)*
+*   Passphrase
+    *   Same as login password
+    *   Different to login password
+*   Keyfile (e.g. on a USB stick, that you keep in a safe place or carry around with yourself)
 *   Both
 
 	*When* should encrypted parts of the disk be unlocked?
@@ -276,8 +284,8 @@ Among other things, you will need to answer the following questions:
 	How should multiple users be accommodated?
 
 *   Not at all
-*   Using a shared passphrase/key
-*   Independently issued and revocable passphrases/keys for the same encrypted part of the disk
+*   Using a shared passphrase (or keyfile) known to every user
+*   Independently issued and revocable passphrases (or keyfiles) for the same encrypted part of the disk
 *   Separate encrypted parts of the disk for different users
 
 Then you can go on to make the required technical choices (see [#Available methods](#Available_methods) above, and [#How the encryption works](#How_the_encryption_works) below), regarding:
@@ -523,3 +531,39 @@ See also:
 ### Plausible deniability
 
 See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_deniability "wikipedia:Plausible deniability").
+
+## Backup for disk encryption scenarios
+
+Make a [backup](/index.php/Backup "Backup") of the user data to protect against data loss. In general the backup of your encrypted data should be encrypted as well.
+
+### Block device encryption
+
+There are multiple options, you can backup the disk block device where the encryption container resides as an image, e.g. `/dev/sd*x*`, or you can backup the filesystem inside of the encrypted container, e.g. `/dev/mapper/*dm_name*`, or you can backup the files, e.g. with [rsync](/index.php/Rsync "Rsync"). The following sections list the advantages and disadvantages of each option.
+
+#### Backup of disk block device
+
+A backup of the disk block device is:
+
+*   encrypted as is with the same level of security as the working copy
+*   contains your LUKS header
+*   always as large as the disk block device
+*   does not easily allow advanced backup strategies such as incremental backup, compression, or deduplication
+*   easily restored to a new disk as this also restores the encryption container
+
+#### Backup of the filesystem or files
+
+A backup of the filesystem or files is:
+
+*   *not* encrypted as is
+*   should be encrypted before transport over the network, or when saving to disk, requiring additional effort
+*   not necessarily encrypted with the same level of security as the working copy
+*   does not contain your LUKS header
+*   only as large as the used space on the filesystem, see e.g. [partclone](/index.php/Partclone "Partclone")
+*   allows advanced backup strategies such as incremental backup, compression, or deduplication
+*   requires manual restoration of the encryption container to a new disk, for example by restoring the LUKS header backup
+
+#### LUKS header backup
+
+If using LUKS it is possible to make a [backup of the LUKS headers](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption"): it can make sense to periodically check and synchronize those backups, especially if passphrases have been revoked.
+
+If however you have a backup of the data, and want to restore it, you can recreate the LUKS encrypted partition from scratch with cryptsetup and then restore the data, therefore backing up the LUKS header is less important than backing up the data.

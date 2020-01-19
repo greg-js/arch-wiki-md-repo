@@ -14,6 +14,7 @@
 *   [6 TouchScreen](#TouchScreen)
     *   [6.1 Screen Rotation](#Screen_Rotation)
         *   [6.1.1 Rotate on button press (Gnome)](#Rotate_on_button_press_(Gnome))
+        *   [6.1.2 Rotate on button press (i3)](#Rotate_on_button_press_(i3))
     *   [6.2 Multitouch](#Multitouch)
 *   [7 Sound](#Sound)
 *   [8 Webcam](#Webcam)
@@ -84,9 +85,34 @@ $ echo export MOZ_USE_XINPUT2=1 | sudo tee /etc/profile.d/firefox-scroll.sh
 
 You can use the button that the tablet has to lock or unlock he rotation. Also gnome has and option in the config menu (Up corner right)-
 
+#### Rotate on button press (i3)
+
+You can use the rotation lock button on i3 to rotate the screen by making a [bash](/index.php/Bash "Bash") script that runs when the button is pressed. Below is a script I use to do so. The script has a secondary outside file that holds a boolean that tells whether or not the screen is rotated. Make sure to replace */directory/* in the code with wherever one desires to place the secondary file.
+
+```
+#!/bin/bash
+#Script to rotate the screen when evoked
+
+#check a file and pass to a variable to see if the screen is already rotated
+rotated=$(< */directory/*rotation.txt)
+
+#if statement to rotate the screen the opposite way
+if [ $rotated -eq 0 ];then
+        xrandr --output eDP1 --rotate normal
+        xsetwacom set "Wacom ISDv4 EC Pen stylus" rotate none
+        xinput set-prop "pointer:Atmel Atmel maXTouch Digitizer" --type=float "Coordinate Transformation Matrix" 0 0 0 0 0 0 0 0 0
+        echo 1 > */directory/*rotation.txt
+else
+        xrandr --output eDP1 --rotate right
+        xsetwacom set "Wacom ISDv4 EC Pen stylus" rotate cw
+        xinput set-prop "pointer:Atmel Atmel maXTouch Digitizer" --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+        echo 0 > */directory/*rotation.txt
+fi
+```
+
 ### Multitouch
 
-Multitoich work fine out the box. For example you can manipulate the images on Eye of Gnome (Gnome Image Viewer)
+Multitouch works fine out the box. For example you can manipulate the images on Eye of Gnome (Gnome Image Viewer)
 
 ## Sound
 
@@ -94,7 +120,7 @@ After installing [GNOME](/index.php/GNOME "GNOME"), the sound works without any 
 
 ## Webcam
 
-The frontal camera doesnt work yet. But the other camera works fine with Cheese (if you are using Gnome)
+The frontal camera doesn't work yet. But the other camera works fine with Cheese (if you are using Gnome)
 
 ## Accessories
 
@@ -108,6 +134,6 @@ The tablet has a USB port so you can put a keyboard or a combo keyboard. With Bl
 
 ### Stylus
 
-If you have installed the wacom driver, the stylus works fine.
+If you have installed the Wacom driver, the stylus works fine.
 
 I use [xournal](https://aur.archlinux.org/packages/xournal/) for writing notes, and found enabling, "Use XInput", "Eraser Tip" and "Pressure sensitivity", as well as setting "Button 3 Mapping" to "Eraser" gave the best, and expected results.

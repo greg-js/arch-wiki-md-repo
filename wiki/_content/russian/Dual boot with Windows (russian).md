@@ -1,6 +1,10 @@
 Эта статья описывает способы установки и особенности совместного использования Arch Linux и Windows на одном компьютере.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Важная информация](#Важная_информация)
     *   [1.1 Особенности загрузки Windows на системах с UEFI и BIOS](#Особенности_загрузки_Windows_на_системах_с_UEFI_и_BIOS)

@@ -390,10 +390,34 @@ Also make sure you are not using fastboot mode (i915.fastboot kernel parameter),
 
 ### Corruption/Unresponsiveness in Chromium and Firefox
 
-If you experience corruption, unresponsiveness, lags or slow performance in Chromium and/or Firefox:
+If you experience corruption, unresponsiveness, lags or slow performance in Chromium and/or Firefox some possible solutions are:
 
-*   [Set the AccelMethod to "uxa"](#SNA_issues)
 *   [Disable VSYNC](#Disable_Vertical_Synchronization_(VSYNC))
+
+*   Enable "DRI2", "uxa" and "TearFree":
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+   Identifier "Intel Graphics"
+   Driver "intel"
+   Option "DRI" "2"
+   Option "TearFree" "true"
+   Option "AccelMethod" "uxa"
+EndSection
+```
+
+*   Disable "DRI" and acceleration method (tested on Intel Iris 10th generation):
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+  Identifier "Intel Graphics"
+  Driver "intel"
+  Option "NoAccel" "True"
+  Option "DRI" "False"
+EndSection
+```
 
 ### Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips
 

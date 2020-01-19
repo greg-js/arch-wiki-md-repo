@@ -4,7 +4,7 @@
 *   [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox")
 *   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
 
-[VirtualBox](https://www.virtualbox.org) - это [гипервизор](https://en.wikipedia.org/wiki/ru:%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%B2%D0%B8%D0%B7%D0%BE%D1%80 интерфейс, а также можно не управлять ими или управлять с помощью [SDL](https://en.wikipedia.org/wiki/ru:Simple_DirectMedia_Layer "wikipedia:ru:Simple DirectMedia Layer") утилит командной строки.
+[VirtualBox](https://www.virtualbox.org) — [гипервизор](https://en.wikipedia.org/wiki/ru:%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%B2%D0%B8%D0%B7%D0%BE%D1%80 интерфейс, а также можно не управлять ими или управлять с помощью [SDL](https://en.wikipedia.org/wiki/ru:Simple_DirectMedia_Layer "wikipedia:ru:Simple DirectMedia Layer") утилит командной строки.
 
 Чтобы интегрировать в гостевую систему функции хост системы, такие как общие папки и общий буфер обмена, видео ускорение и режим бесшовной интеграции окон, для некоторых гостевых операционных систем предоставляются *дополнения гостевой ОС*.
 
@@ -107,14 +107,12 @@
 
 ### Установка базовых пакетов
 
-Установите пакет [virtualbox](https://www.archlinux.org/packages/?name=virtualbox). [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) будет установлен в качестве необходимой зависимости. Также нужно установить пакеты с заголовками для установленных ядер [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html):
+Установите пакет [virtualbox](https://www.archlinux.org/packages/?name=virtualbox). Также необходимо выбрать пакет с модулями для хост-компьютера:
 
-*   [linux](https://www.archlinux.org/packages/?name=linux) kernel: [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)
-*   [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel: [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers)
-*   [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel: [linux-zen-headers](https://www.archlinux.org/packages/?name=linux-zen-headers)
-*   [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) kernel: [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers)
+*   для ядра [linux](https://www.archlinux.org/packages/?name=linux) выберите [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
+*   для других [ядер](/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel (Русский)") выберите [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
 
-Вы можете установить [qt4](https://aur.archlinux.org/packages/qt4/) в качестве опциональной зависимости для использования графического интерфейса, который базируется на [Qt](/index.php/Qt "Qt"). Это не обязательно, если вы хотите использовать VirtualBox только через консоль. [Смотрите ниже, чтобы узнать различия](#Правильное_использование_в_фронт-энде).
+Чтобы скомпилировать модули VirtualBox, предоставляемые [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms), необходимо также установить соответствующий пакет заголовков для установленного ядра (например, [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) для [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) При обновлении VirtualBox или ядра модули ядра будут автоматически перекомпилированы с помощью [DKMS](/index.php/DKMS "DKMS")-хука Pacman.
 
 ### Установка модулей ядра VirtualBox
 

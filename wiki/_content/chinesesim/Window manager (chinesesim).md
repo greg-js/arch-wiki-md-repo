@@ -7,16 +7,20 @@
 
 窗口管理器（window manager，简称WM）是图形用户界面的一部分。用户可以选择安装[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")，它们通常已经提供了完整的用户界面，包括图标、窗口、工具栏、壁纸和桌面部件。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 X窗口系统](#X.E7.AA.97.E5.8F.A3.E7.B3.BB.E7.BB.9F)
-*   [2 窗口管理器](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.1 类型](#.E7.B1.BB.E5.9E.8B)
-    *   [2.2 窗口管理器列表](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E5.88.97.E8.A1.A8)
-*   [3 窗口管理器列表](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E5.88.97.E8.A1.A8_2)
-    *   [3.1 堆叠式（悬浮式）窗口管理器](#.E5.A0.86.E5.8F.A0.E5.BC.8F.EF.BC.88.E6.82.AC.E6.B5.AE.E5.BC.8F.EF.BC.89.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [3.2 平铺式（瓦片式）窗口管理器](#.E5.B9.B3.E9.93.BA.E5.BC.8F.EF.BC.88.E7.93.A6.E7.89.87.E5.BC.8F.EF.BC.89.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [3.3 动态窗口管理器](#.E5.8A.A8.E6.80.81.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 X窗口系统](#X窗口系统)
+*   [2 窗口管理器](#窗口管理器)
+    *   [2.1 类型](#类型)
+    *   [2.2 窗口管理器列表](#窗口管理器列表)
+*   [3 窗口管理器列表](#窗口管理器列表_2)
+    *   [3.1 堆叠式（悬浮式）窗口管理器](#堆叠式（悬浮式）窗口管理器)
+    *   [3.2 平铺式（瓦片式）窗口管理器](#平铺式（瓦片式）窗口管理器)
+    *   [3.3 动态窗口管理器](#动态窗口管理器)
 
 ## X窗口系统
 

@@ -20,13 +20,13 @@
 
 ## 安装
 
-自alpha18开始，WPS已经有x86_64版本，故所有用户均可直接安装 [AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 中的 [wps-office](https://aur.archlinux.org/packages/wps-office/) 即可。
+WPS Office for Linux 分为国内版和国际版，国内版：[wps-office-cn](https://aur.archlinux.org/packages/wps-office-cn/)，国际版：[wps-office](https://aur.archlinux.org/packages/wps-office/)。
 
-当然，你也可以通过添加[archlinuxcn源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/)后用pacman安装(仅限64位arch用户）。
+中文使用者还需要安装中文语言包：[wps-office-mui-zh-cn](https://aur.archlinux.org/packages/wps-office-mui-zh-cn/)，此外可选安装 WPS 需要的符号字体：[ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/)。
 
-**注意:** 请留意自带字体的版权状况，可阅读 [WPS Office Linux 版最终用户协议](http://community.wps.cn/wiki/WPS_Office_Linux%E7%89%88%E6%9C%80%E7%BB%88%E7%94%A8%E6%88%B7%E5%8D%8F%E8%AE%AE) 第十四条
+当然，你也可以通过添加 [Arch Linux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/)后用 Pacman 安装。
 
-此外可选安装wps需要的符号字体：[ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/)。
+**注意:** 请留意自带字体的版权状况，可阅读 [WPS Office for Linux 最终用户协议](http://community.wps.cn/wiki/WPS_Office_Linux%E7%89%88%E6%9C%80%E7%BB%88%E7%94%A8%E6%88%B7%E5%8D%8F%E8%AE%AE) 第十四条
 
 ## 提示与技巧
 
@@ -128,7 +128,7 @@ function run()
 
 ### Office WPS for Linux 的启动命令是什么
 
-`wps`、`et`、`wpp` 分别为启动 WPS 文字、WPS 表格、WPP 演示的命令。
+`wps`、`et`、`wpp`、`wpspdf` 分别为启动 WPS 文字、WPS 表格、WPS 演示、金山 PDF 的命令。
 
 ### Zip 模板压缩包乱码
 

@@ -25,7 +25,9 @@ pass is a simple password manager for the command line. Pass is a shell script t
         *   [7.2.1 Install a bare Git repository for Pass on the server](#Install_a_bare_Git_repository_for_Pass_on_the_server)
         *   [7.2.2 Import authorized public SSH keys](#Import_authorized_public_SSH_keys)
         *   [7.2.3 On the client](#On_the_client)
-*   [8 See also](#See_also)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Encryption failed: Unusable public key](#Encryption_failed:_Unusable_public_key)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -35,7 +37,7 @@ An optional [Qt](/index.php/Qt "Qt") GUI is available via the [qtpass](https://w
 
 ## Basic usage
 
-**Note:** To be able to use pass, set up [GnuPG](/index.php/GnuPG "GnuPG").
+**Note:** To be able to use pass, set up [GnuPG](/index.php/GnuPG "GnuPG"). The trust level of the key used for pass must be "ultimate."
 
 To initialize the password store:
 
@@ -227,6 +229,24 @@ pass git push -u --all
 ```
 
 Now you can use the standard Git commands, prefixed by `pass`. For example: `pass git push`, or `pass git pull`. Pass will automatically create commits when you use it to modify your password store.
+
+## Troubleshooting
+
+### Encryption failed: Unusable public key
+
+The following error can occur when attempting to insert a new entry:
+
+```
+$ pass insert archlinux.org/wiki/username
+Enter password for archlinux.org/wiki/username:
+Retype password for archlinux.org/wiki/username:
+gpg: XXXXXXXXX: There is no assurance this key belongs to the named user
+gpg: [stdin]: encryption failed: Unusable public key
+Password encryption aborted.
+
+```
+
+This occurs if the trust level of the GnuPG key is set to anything other than "ultimate." Edit the key used for `pass` to set its trust level to "ultimate."
 
 ## See also
 

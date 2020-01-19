@@ -121,7 +121,7 @@ A PulseAudio restart is required for this change to take affect. Make sure to in
 Upgrading or reinstalling [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) will overwrite this file, and [PulseAudio doesn't appear to offer another way](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes/) to make this configuration change. To prevent pacman from overwriting the file, add the following line under `[options]` in `/etc/pacman.conf`:
 
 ```
-NoUpgrade = usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common
+NoUpgrade = /usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common
 
 ```
 

@@ -454,7 +454,7 @@ Stop `mariadb.service`. Issue the following command:
 Connect to the mysql server. Issue the following command:
 
 ```
-# mysql
+# mysql -u root
 
 ```
 

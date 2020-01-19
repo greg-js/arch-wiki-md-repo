@@ -67,7 +67,7 @@ $ free -h
 
 ## Partição swap
 
-Uma partição swap pode ser criada com a maioria das [ferramentas de particionamento](/index.php/Partitioning_tools "Partitioning tools") do GNU/Linux. Partições swap são tipicamente designadas como tipo `82`. Mesmo que seja possível usar qualquer tipo de partição como swap, é recomendado usar o tipo `82` na maioria dos casos, já que o [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") detectará e montará automaticamente (veja abaixo).
+Uma partição swap pode ser criada com a maioria das [ferramentas de particionamento](/index.php/Ferramentas_de_particionamento "Ferramentas de particionamento") do GNU/Linux. Partições swap são tipicamente designadas como tipo `82`. Mesmo que seja possível usar qualquer tipo de partição como swap, é recomendado usar o tipo `82` na maioria dos casos, já que o [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") detectará e montará automaticamente (veja abaixo).
 
 Para configurar uma partição como área swap do Linux, o comando `mkswap` é usado. Por exemplo:
 

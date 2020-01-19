@@ -7,7 +7,7 @@
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 21 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=592245).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 16 января 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=595004).
 
 Основную статью по настройке сети можно найти на странице [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
@@ -69,8 +69,9 @@
         *   [7.2.1 rtl8192cu](#rtl8192cu)
         *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae/rtl8723be)
         *   [7.2.3 rtl88xxau](#rtl88xxau)
-        *   [7.2.4 rtl8822bu](#rtl8822bu)
-        *   [7.2.5 rtl8xxxu](#rtl8xxxu)
+        *   [7.2.4 rtl8811cu/rtl8821cu](#rtl8811cu/rtl8821cu)
+        *   [7.2.5 rtl8822bu](#rtl8822bu)
+        *   [7.2.6 rtl8xxxu](#rtl8xxxu)
     *   [7.3 Atheros](#Atheros)
         *   [7.3.1 ath5k](#ath5k)
         *   [7.3.2 ath9k](#ath9k)
@@ -203,7 +204,7 @@
 
 ### Определение имени интерфейса
 
-**Совет:** В [официальной документации](http://wireless.kernel.org/en/users/Documentation/iw) утилиты *iw* можно найти дополнительные примеры.
+**Совет:** В [официальной документации](https://wireless.wiki.kernel.org/en/users/documentation/iw) утилиты *iw* можно найти дополнительные примеры.
 
 Чтобы узнать название беспроводного интерфейса, выполните:
 
@@ -389,7 +390,10 @@ $ iw reg get
 
 ```
 
-**Примечание:** По умолчанию ваше устройство может быть настроено на "страну 00", которая означает условный "мировой домен" и содержит обобщённые настройки. Если изменить этот параметр не удаётся, то скорее всего причиной неправильная настройка CRDA.
+**Примечание:**
+
+*   По умолчанию ваше устройство может быть настроено на "страну 00", которая означает условный "мировой домен" и содержит обобщённые настройки. Если изменить этот параметр не удаётся, то скорее всего причиной неправильная настройка CRDA.
+*   В соответствии с информацией из [CRDA's README](https://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/crda.git/tree/README), начиная с версии 4.15 ядро автоматически загружает регулятивную базу данных из прошивки. Однако [также нужно иметь в виду](https://bugs.gentoo.org/462032#c17), что для этого требуется особая настройка ядра.
 
 В некоторых случаях настройку *regdomain* изменить не получится. В некоторых устройствах параметр домена зашит в прошивку/EEPROM, что ограничивает поведение устройства. В данном случае изменение домена в ПО может только [ужесточить ограничения](http://wiki.openwrt.org/doc/howto/wireless.utilities#iw), но не ослабить их. Например, китайское (CN) устройство может быть настроено на домен US, но поднять максимум EIRP с 20дБм до разрешённого в США значения 30дБм не получится.
 
@@ -643,7 +647,13 @@ ieee80211 phy0: wlan0: No probe response from AP xx:xx:xx:xx:xx:xx after 500ms, 
 | rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | Рекомендуются только для rtl8812au версий 5.6.4.1 или 5.2.20. |
 | rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Возможно, работает также и для rtl8813au. Предположительно обладает лучшей работоспособностью, чем [rtl88xxau-aircrack-dkms-git](https://aur.archlinux.org/packages/rtl88xxau-aircrack-dkms-git/) |
 
-Воспользуйтесь [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)") чтобы убедиться, что установлены правильные заголовки ядра (kernel headers).
+Для этих модулей требуется фреймворк [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)"), поэтому убедитесь, что что необходимые заголовочные файлы ядра установлены.
+
+#### rtl8811cu/rtl8821cu
+
+Пакет [rtl8821cu-dkms-git](https://aur.archlinux.org/packages/rtl8821cu-dkms-git/) содержит модуль ядра для чипсетов Realtek 8811cu и 8821cu.
+
+Для него требуется фреймворк [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)"), поэтому убедитесь, что необходимые заголовочные файлы ядра установлены.
 
 #### rtl8822bu
 

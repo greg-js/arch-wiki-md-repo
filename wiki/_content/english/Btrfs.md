@@ -59,6 +59,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [6.4 Corruption recovery](#Corruption_recovery)
     *   [6.5 Booting into snapshots](#Booting_into_snapshots)
     *   [6.6 Use Btrfs subvolumes with systemd-nspawn](#Use_Btrfs_subvolumes_with_systemd-nspawn)
+    *   [6.7 Rootfs boot problems](#Rootfs_boot_problems)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 GRUB](#GRUB)
         *   [7.1.1 Partition offset](#Partition_offset)
@@ -542,6 +543,14 @@ In order to boot into a snapshot, the same procedure applies as for mounting a s
 ### Use Btrfs subvolumes with systemd-nspawn
 
 See the [Systemd-nspawn#Use Btrfs subvolume as container root](/index.php/Systemd-nspawn#Use_Btrfs_subvolume_as_container_root "Systemd-nspawn") and [Systemd-nspawn#Use temporary Btrfs snapshot of container](/index.php/Systemd-nspawn#Use_temporary_Btrfs_snapshot_of_container "Systemd-nspawn") articles.
+
+### Rootfs boot problems
+
+Similarly to the conversion from Ext3/4 tip, if you're booting a btrfs partition as / you may run into boot problems if your ramdisk does not include support for btrfs. The error would look like `mount: unknown filesystem`. To work around this issue, edit `/etc/mkinitcpio.conf`
+
+ `/etc/mkinitcpio.conf`  `MODULES=(fs_btrfs)` 
+
+Then, regenerate the ramdisk using `mkinitcpio -g /boot/initramfs-linux.img`. Please be careful though. It may be a good idea to backup the working ramdisk, get comfortable with your bootloader so you can pass a different ramdisk as boot arg if needed be, and read about [mkinitcpio](https://projects.archlinux.org/mkinitcpio.git/)in the wiki.
 
 ## Troubleshooting
 

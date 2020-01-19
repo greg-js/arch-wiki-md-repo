@@ -7,7 +7,7 @@
 *   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [iptables](/index.php/Iptables "Iptables"). Дата последней синхронизации: 17 октября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=585505).
+**Состояние перевода:** На этой странице представлен перевод статьи [iptables](/index.php/Iptables "Iptables"). Дата последней синхронизации: 16 января 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=594214).
 
 *iptables* — утилита командной строки для настройки интегрированного в ядро Linux [межсетевого экрана](/index.php/Firewall "Firewall"), разработка которого велась в рамках проекта [Netfilter](https://en.wikipedia.org/wiki/ru:Netfilter существует утилита *ip6tables*. В основном их синтаксис совпадает, но есть специфичные для каждого протокола опции.
 

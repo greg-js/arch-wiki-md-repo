@@ -1,5 +1,6 @@
 Related articles
 
+*   [Install Arch Linux on LVM](/index.php/Install_Arch_Linux_on_LVM "Install Arch Linux on LVM")
 *   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
 *   [dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system")
 *   [dm-crypt/Encrypting an entire system#LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system")
@@ -22,54 +23,45 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [1.3 Disadvantages](#Disadvantages)
     *   [1.4 Getting started](#Getting_started)
         *   [1.4.1 Graphical configuration](#Graphical_configuration)
-*   [2 Installing Arch Linux on LVM](#Installing_Arch_Linux_on_LVM)
-    *   [2.1 Create partitions](#Create_partitions)
-    *   [2.2 Create physical volumes](#Create_physical_volumes)
-    *   [2.3 Create volume group](#Create_volume_group)
-    *   [2.4 Create in one step](#Create_in_one_step)
-    *   [2.5 Create logical volumes](#Create_logical_volumes)
-    *   [2.6 Create file systems and mount logical volumes](#Create_file_systems_and_mount_logical_volumes)
-    *   [2.7 Configure mkinitcpio](#Configure_mkinitcpio)
-    *   [2.8 Kernel options](#Kernel_options)
-*   [3 Volume operations](#Volume_operations)
-    *   [3.1 Physical volumes](#Physical_volumes)
-        *   [3.1.1 Growing](#Growing)
-        *   [3.1.2 Shrinking](#Shrinking)
-            *   [3.1.2.1 Move physical extents](#Move_physical_extents)
-            *   [3.1.2.2 Resize physical volume](#Resize_physical_volume)
-            *   [3.1.2.3 Resize partition](#Resize_partition)
-    *   [3.2 Volume groups](#Volume_groups)
-        *   [3.2.1 Activating a volume group](#Activating_a_volume_group)
-        *   [3.2.2 Repairing a volume group](#Repairing_a_volume_group)
-        *   [3.2.3 Deactivating a volume group](#Deactivating_a_volume_group)
-        *   [3.2.4 Renaming a volume group](#Renaming_a_volume_group)
-        *   [3.2.5 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
-        *   [3.2.6 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
-    *   [3.3 Logical volumes](#Logical_volumes)
-        *   [3.3.1 Renaming a logical volume](#Renaming_a_logical_volume)
-        *   [3.3.2 Resizing the logical volume and file system in one go](#Resizing_the_logical_volume_and_file_system_in_one_go)
-        *   [3.3.3 Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately)
-        *   [3.3.4 Removing a logical volume](#Removing_a_logical_volume)
-*   [4 Logical volume types](#Logical_volume_types)
-    *   [4.1 Snapshots](#Snapshots)
-        *   [4.1.1 Configuration](#Configuration)
-    *   [4.2 LVM cache](#LVM_cache)
-        *   [4.2.1 Create cache](#Create_cache)
-        *   [4.2.2 Remove cache](#Remove_cache)
-    *   [4.3 RAID](#RAID)
-        *   [4.3.1 Setup RAID](#Setup_RAID)
-        *   [4.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Boot/Shutdown-problems because of disabled lvmetad](#Boot/Shutdown-problems_because_of_disabled_lvmetad)
-    *   [5.2 LVM commands do not work](#LVM_commands_do_not_work)
-    *   [5.3 Logical Volumes do not show up](#Logical_Volumes_do_not_show_up)
-    *   [5.4 LVM on removable media](#LVM_on_removable_media)
-        *   [5.4.1 Suspend/resume with LVM and removable media](#Suspend/resume_with_LVM_and_removable_media)
-    *   [5.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
-    *   [5.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_"grub-mkconfig"_reports_"unknown_filesystem"_errors)
-    *   [5.7 Thinly-provisioned root volume device times out](#Thinly-provisioned_root_volume_device_times_out)
-    *   [5.8 Delay on shutdown](#Delay_on_shutdown)
-*   [6 See also](#See_also)
+*   [2 Volume operations](#Volume_operations)
+    *   [2.1 Physical volumes](#Physical_volumes)
+        *   [2.1.1 Growing](#Growing)
+        *   [2.1.2 Shrinking](#Shrinking)
+            *   [2.1.2.1 Move physical extents](#Move_physical_extents)
+            *   [2.1.2.2 Resize physical volume](#Resize_physical_volume)
+            *   [2.1.2.3 Resize partition](#Resize_partition)
+    *   [2.2 Volume groups](#Volume_groups)
+        *   [2.2.1 Activating a volume group](#Activating_a_volume_group)
+        *   [2.2.2 Repairing a volume group](#Repairing_a_volume_group)
+        *   [2.2.3 Deactivating a volume group](#Deactivating_a_volume_group)
+        *   [2.2.4 Renaming a volume group](#Renaming_a_volume_group)
+        *   [2.2.5 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
+        *   [2.2.6 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
+    *   [2.3 Logical volumes](#Logical_volumes)
+        *   [2.3.1 Renaming a logical volume](#Renaming_a_logical_volume)
+        *   [2.3.2 Resizing the logical volume and file system in one go](#Resizing_the_logical_volume_and_file_system_in_one_go)
+        *   [2.3.3 Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately)
+        *   [2.3.4 Removing a logical volume](#Removing_a_logical_volume)
+*   [3 Logical volume types](#Logical_volume_types)
+    *   [3.1 Snapshots](#Snapshots)
+        *   [3.1.1 Configuration](#Configuration)
+    *   [3.2 LVM cache](#LVM_cache)
+        *   [3.2.1 Create cache](#Create_cache)
+        *   [3.2.2 Remove cache](#Remove_cache)
+    *   [3.3 RAID](#RAID)
+        *   [3.3.1 Setup RAID](#Setup_RAID)
+        *   [3.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Boot/Shutdown-problems because of disabled lvmetad](#Boot/Shutdown-problems_because_of_disabled_lvmetad)
+    *   [4.2 LVM commands do not work](#LVM_commands_do_not_work)
+    *   [4.3 Logical Volumes do not show up](#Logical_Volumes_do_not_show_up)
+    *   [4.4 LVM on removable media](#LVM_on_removable_media)
+        *   [4.4.1 Suspend/resume with LVM and removable media](#Suspend/resume_with_LVM_and_removable_media)
+    *   [4.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
+    *   [4.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_"grub-mkconfig"_reports_"unknown_filesystem"_errors)
+    *   [4.7 Thinly-provisioned root volume device times out](#Thinly-provisioned_root_volume_device_times_out)
+    *   [4.8 Delay on shutdown](#Delay_on_shutdown)
+*   [5 See also](#See_also)
 
 ## Background
 
@@ -152,234 +144,6 @@ Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [
 #### Graphical configuration
 
 There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/) covers most of the common operations, and provides simple visualizations of volume state. It can automatically resize many file systems when resizing logical volumes.
-
-## Installing Arch Linux on LVM
-
-You should create your LVM Volumes between the [partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the [installation procedure](/index.php/Installation_guide "Installation guide"). Instead of directly formatting a partition to be your root file system, the file system will be created inside a logical volume (LV).
-
-Refer to "Getting started" first.
-
-Quick overview:
-
-*   Create [partition(s)](/index.php/Partitioning "Partitioning") where your PV(s) will reside.
-*   Create your physical volumes (PVs). If you have one disk it is best to just create one PV in one large partition. If you have multiple disks you can create partitions on each of them and create a PV on each partition.
-*   Create your volume group (VG) and add all PVs to it.
-*   Create logical volumes (LVs) inside that VG.
-*   Continue with [Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide").
-*   When you reach the “Create initial ramdisk environment” step in the Installation guide, add the `lvm2` hook to `/etc/mkinitcpio.conf` (see below for details).
-
-**Warning:** `/boot` cannot reside in LVM when using a boot loader which does not support LVM; you must create a separate `/boot` partition and format it directly. Only [GRUB](/index.php/GRUB "GRUB") is known to support LVM.
-
-### Create partitions
-
-[Partition](/index.php/Partition "Partition") the device as required before configuring LVM.
-
-Create the partitions:
-
-*   If you use Master Boot Record partition table, set the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") to `8e` (partition type `Linux LVM` in *fdisk*).
-*   If you use GUID Partition Table, set the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") to `E6D6D379-F507-44C2-A23C-238F2A3DF928` (partition type `Linux LVM` in *fdisk* and `8e00` in *gdisk*).
-
-### Create physical volumes
-
-To list all your devices capable of being used as a physical volume:
-
-```
-# lvmdiskscan
-
-```
-
-**Warning:** Make sure you target the correct device, or below commands will result in data loss!
-
-Create a physical volume on them:
-
-```
-# pvcreate *DEVICE*
-
-```
-
-This command creates a header on each device so it can be used for LVM. As defined in [#LVM building blocks](#LVM_building_blocks), *DEVICE* can be any [block device](/index.php/Block_device "Block device"), e.g. a disk `/dev/sda`, a partition `/dev/sda2` or a loop back device. For example:
-
-```
-# pvcreate /dev/sda2
-
-```
-
-You can track created physical volumes with:
-
-```
-# pvdisplay
-
-```
-
-You can also get summary information on physical volumes with:
-
-```
-# pvscan
-
-```
-
-**Tip:** If you run into trouble with a pre-existing disk signature, you can delete it using [wipefs](/index.php/Wipefs "Wipefs").
-
-**Note:** If using a SSD without partitioning it first, use `pvcreate --dataalignment 1m /dev/sda` (for erase block size < 1 MiB), see e.g. [here](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
-
-### Create volume group
-
-The next step is to create a volume group on this physical volume.
-
-First you need to create a volume group on one of the physical volumes:
-
-```
-# vgcreate <*volume_group*> <*physical_volume*>
-
-```
-
-See [lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8) for a list of valid characters for volume group names.
-
-For example:
-
-```
-# vgcreate VolGroup00 /dev/sda2
-
-```
-
-Then add to it all other physical volumes you want to have in it:
-
-```
-# vgextend <*volume_group*> <*physical_volume*>
-# vgextend <*volume_group*> <*another_physical_volume*>
-# ...
-
-```
-
-For example:
-
-```
-# vgextend VolGroup00 /dev/sdb1
-# vgextend VolGroup00 /dev/sdc
-
-```
-
-You can track how your volume group grows with:
-
-```
-# vgdisplay
-
-```
-
-This is also what you would do if you wanted to add a disk to a RAID or mirror group with failed disks.
-
-**Note:** You can create more than one volume group if you need to, but then you will not have all your storage presented as one disk.
-
-### Create in one step
-
-LVM allows you to combine the creation of a volume group and the physical volumes in one easy step. For example, to create the group VolGroup00 with the three devices mentioned above, you can run:
-
-```
-# vgcreate VolGroup00 /dev/sda2 /dev/sdb1 /dev/sdc
-
-```
-
-This command will first set up the three partitions as physical volumes (if necessary) and then create the volume group with the three volumes. The command will warn you it detects an existing filesystem on any of the devices.
-
-### Create logical volumes
-
-**Tip:** If you wish to use snapshots, logical volume caching, thin provisioned logical volumes or RAID see [#Logical volume types](#Logical_volume_types).
-
-Now we need to create logical volumes on this volume group. You create a logical volume with the next command by giving the name of a new logical volume, its size, and the volume group it will live on:
-
-```
-# lvcreate -L <*size*> <*volume_group*> -n <*logical_volume*>
-
-```
-
-For example:
-
-```
-# lvcreate -L 10G VolGroup00 -n lvolhome
-
-```
-
-This will create a logical volume that you can access later with `/dev/VolGroup00/lvolhome`. Just like volume groups, you can use any name you want for your logical volume when creating it besides a few exceptions listed in [lvm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvm.8#VALID_NAMES).
-
-You can also specify one or more physical volumes to restrict where LVM allocates the data. For example, you may wish to create a logical volume for the root filesystem on your small SSD, and your home volume on a slower mechanical drive. Simply add the physical volume devices to the command line, for example:
-
-```
-# lvcreate -L 10G VolGroup00 -n lvolhome /dev/sdc1
-
-```
-
-If you want to fill all the free space left on a volume group, use the next command:
-
-```
-# lvcreate -l 100%FREE  <*volume_group*> -n <*logical_volume*>
-
-```
-
-You can track created logical volumes with:
-
-```
-# lvdisplay
-
-```
-
-**Note:** You may need to load the *device-mapper* kernel module (`modprobe dm_mod`) for the above commands to succeed.
-
-**Tip:** You can start out with relatively small logical volumes and expand them later if needed. For simplicity, leave some free space in the volume group so there is room for expansion.
-
-### Create file systems and mount logical volumes
-
-Your logical volumes should now be located in `/dev/*YourVolumeGroupName*/`. If you cannot find them, use the next commands to bring up the module for creating device nodes and to make volume groups available:
-
-```
-# modprobe dm_mod
-# vgscan
-# vgchange -ay
-
-```
-
-Now you can create file systems on logical volumes and mount them as normal partitions (if you are installing Arch linux, refer to [mounting the partitions](/index.php/Mount "Mount") for additional details):
-
-```
-# mkfs.<*fstype*> /dev/<*volume_group*>/<*logical_volume*>
-# mount /dev/<*volume_group*>/<*logical_volume*> /<*mountpoint*>
-
-```
-
-For example:
-
-```
-# mkfs.ext4 /dev/VolGroup00/lvolhome
-# mount /dev/VolGroup00/lvolhome /home
-
-```
-
-**Warning:** When choosing mountpoints, just select your newly created logical volumes (use: `/dev/Volgroup00/lvolhome`). Do **not** select the actual partitions on which logical volumes were created (do not use: `/dev/sda2`).
-
-### Configure mkinitcpio
-
-In case your root filesystem is on LVM, you will need to enable the appropriate [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hooks, otherwise your system might not boot. Enable:
-
-*   `udev` and `lvm2` for the default busybox based initramfs
-*   `systemd` and `sd-lvm2` for systemd based initramfs
-
-`udev` is there by default. Edit the file and insert `lvm2` between `block` and `filesystems` like so:
-
- `/etc/mkinitcpio.conf`  `HOOKS=(base **udev** ... block **lvm2** filesystems)` 
-
-For systemd based initramfs:
-
- `/etc/mkinitcpio.conf`  `HOOKS=(base **systemd** ... block **sd-lvm2** filesystems)` 
-
-Afterwards, you can continue in normal installation instructions with the [create an initial ramdisk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") step.
-
-**Tip:**
-
-*   The `lvm2` and `sd-lvm2` hooks are installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` or `sd-lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
-*   If your root filesystem is on LVM RAID see [#Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID).
-
-### Kernel options
-
-If the root file system resides in a logical volume, the `root=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") must be pointed to the mapped device, e.g `/dev/*vg-name*/*lv-name*`.
 
 ## Volume operations
 

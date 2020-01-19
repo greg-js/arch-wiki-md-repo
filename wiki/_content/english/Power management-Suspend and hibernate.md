@@ -99,7 +99,7 @@ Generally, it is preferred to use the same naming method for both the `resume` a
 
 Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`.
 
-**Note:** The `resume` parameter must point to the volume where the swap file resides. For a stacked block device, i.e. an encrypted container or RAID, or LVM, it means that `resume` must point to the unlocked/mapped device that contains the file system with the swap file.
+**Note:** The `resume` parameter must point to the [block device](/index.php/Block_device "Block device") where the swap file resides. For a stacked block device such as an encrypted container, RAID or LVM, it means that `resume` must point to the unlocked/mapped device that contains the file system with the swap file.
 
 The value of `*swap_file_offset*` can be obtained by running `filefrag -v *swap_file*`, the output is in a table format and the required value is located in the first row of the `physical_offset` column. For example:
 

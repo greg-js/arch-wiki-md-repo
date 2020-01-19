@@ -29,6 +29,7 @@ Related articles
     *   [3.2 Subsystem tracing](#Subsystem_tracing)
     *   [3.3 Manual Submission port authentication](#Manual_Submission_port_authentication)
     *   [3.4 "Helo command rejected: need fully-qualified hostname"](#"Helo_command_rejected:_need_fully-qualified_hostname")
+    *   [3.5 System users authentication failure](#System_users_authentication_failure)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -256,6 +257,19 @@ dXNlcm5hbWUAdXNlcm5hbWUAcGFzc3dvcmQ=
 ### "Helo command rejected: need fully-qualified hostname"
 
 When sending email, if you get this kind of messages, set your FQDN in the file `/etc/smtpd/mailname`. Otherwise, the server name is derived from the local [hostname](/index.php/Hostname "Hostname") returned by [gethostname(3p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gethostname.3p), either directly if it is a fully qualified domain name, or by retrieving the associated canonical name through [getaddrinfo(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getaddrinfo.3).
+
+### System users authentication failure
+
+If you are using the system users and the authentication with valid credentials fails, you have to configure [PAM](/index.php/PAM "PAM"):
+
+ `/etc/pam.d/smtpd` 
+```
+auth required pam_unix.so
+account required pam_unix.so
+password required pam_unix.so
+session required pam_unix.so
+
+```
 
 ## See also
 

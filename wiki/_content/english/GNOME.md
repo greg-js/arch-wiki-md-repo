@@ -210,6 +210,8 @@ $ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 
 
 If the system has a configured [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon"), it will be effective for GNOME as well. The synchronization can be set to manual control from the menu, if required.
 
+GNOME supports automatic time zone selection (can be enabled in *Date & Time* section of the system settings, given that location services are enabled (see *Privacy* section of the settings).
+
 To show the date in the top bar, execute:
 
 ```

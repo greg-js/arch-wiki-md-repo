@@ -4,27 +4,31 @@ Cały dysk twardy może być dostępny jako jedna partycja lub można podzielić
 
 Każda partycja musi zostać [sformatowana](/index.php/File_systems_(Polski) "File systems (Polski)") przed użyciem.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tablica partycji](#Tablica_partycji)
     *   [1.1 Master Boot Record](#Master_Boot_Record)
     *   [1.2 GUID Partition Table](#GUID_Partition_Table)
-    *   [1.3 Wybór pomiędzy GPT i MBR](#Wyb.C3.B3r_pomi.C4.99dzy_GPT_i_MBR)
-*   [2 Układ Partycji](#Uk.C5.82ad_Partycji)
+    *   [1.3 Wybór pomiędzy GPT i MBR](#Wybór_pomiędzy_GPT_i_MBR)
+*   [2 Układ Partycji](#Układ_Partycji)
     *   [2.1 Jedna partycja](#Jedna_partycja)
     *   [2.2 Oddzielanie partycji](#Oddzielanie_partycji)
     *   [2.3 Punkty montowania](#Punkty_montowania)
-        *   [2.3.1 Partycja Główna (root)](#Partycja_G.C5.82.C3.B3wna_.28root.29)
-        *   [2.3.2 /boot](#.2Fboot)
-        *   [2.3.3 /home](#.2Fhome)
-        *   [2.3.4 /var](#.2Fvar)
-        *   [2.3.5 /tmp](#.2Ftmp)
+        *   [2.3.1 Partycja Główna (root)](#Partycja_Główna_(root))
+        *   [2.3.2 /boot](#/boot)
+        *   [2.3.3 /home](#/home)
+        *   [2.3.4 /var](#/var)
+        *   [2.3.5 /tmp](#/tmp)
         *   [2.3.6 Swap](#Swap)
         *   [2.3.7 Rozmiary partycji](#Rozmiary_partycji)
-*   [3 Użycie GPT - nowoczesna metoda](#U.C5.BCycie_GPT_-_nowoczesna_metoda)
-    *   [3.1 Użycie gdisk](#U.C5.BCycie_gdisk)
-*   [4 Użycie MBR - stara metoda](#U.C5.BCycie_MBR_-_stara_metoda)
-    *   [4.1 Użycie fdisk](#U.C5.BCycie_fdisk)
+*   [3 Użycie GPT - nowoczesna metoda](#Użycie_GPT_-_nowoczesna_metoda)
+    *   [3.1 Użycie gdisk](#Użycie_gdisk)
+*   [4 Użycie MBR - stara metoda](#Użycie_MBR_-_stara_metoda)
+    *   [4.1 Użycie fdisk](#Użycie_fdisk)
 
 ## Tablica partycji
 
@@ -179,7 +183,7 @@ Podstawowe użycie *gdisk*:
 
 **Note:**
 
-*   Żeby uruchomić dysk spartycjonowany jako GPT na komputerze z BIOS musisz utworzyć, najlepiej na początku dysku [BIOS boot partition](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2") bez systemu plików i typem partycji `BIOS boot` lub `bios_grub` (`EF02`) dla bootowania z dysku przy użyciu [GRUB](/index.php?title=GRUB_(Polski)&action=edit&redlink=1 "GRUB (Polski) (page does not exist)"). Dla [Syslinux](/index.php?title=Syslinux_(Polski)&action=edit&redlink=1 "Syslinux (Polski) (page does not exist)"),musisz utworzyć partycję `bios_grub`, ale musi być oddzielona od partycji `/boot` i mieć włączoną opcję `Legacy BIOS Bootable partition` attribute for that partition (using *gdisk*).
+*   Żeby uruchomić dysk spartycjonowany jako GPT na komputerze z BIOS musisz utworzyć, najlepiej na początku dysku [BIOS boot partition](/index.php/GRUB2#GUID_Partition_Table_(GPT)_specific_instructions "GRUB2") bez systemu plików i typem partycji `BIOS boot` lub `bios_grub` (`EF02`) dla bootowania z dysku przy użyciu [GRUB](/index.php?title=GRUB_(Polski)&action=edit&redlink=1 "GRUB (Polski) (page does not exist)"). Dla [Syslinux](/index.php?title=Syslinux_(Polski)&action=edit&redlink=1 "Syslinux (Polski) (page does not exist)"),musisz utworzyć partycję `bios_grub`, ale musi być oddzielona od partycji `/boot` i mieć włączoną opcję `Legacy BIOS Bootable partition` attribute for that partition (using *gdisk*).
 *   [GRUB Legacy](/index.php?title=GRUB_Legacy_(Polski)&action=edit&redlink=1 "GRUB Legacy (Polski) (page does not exist)") nie wspiera GPT, należy użyć [BURG](/index.php/BURG "BURG"), GRUB lub Syslinux.
 
 **Warning:** Jeśli planujesz dual boot z systemem Windows w trybie BIOSu (to jedyna opcja dla 32-bitowych wersji Windows i 64-bitowego Windowsa XP) **nie** używaj GPT ponieważ Windows **nie** wspiera uruchamiania z dysku GPT w komputerze z BIOSem. Będziesz musiał użyć partycjonowania MBR i startowania w trybie BIOSu jak opisano poniżej. To ograniczenie nie dotyczy nowoczesnych 64-bitowych wersji Windows w trybie UEFI.

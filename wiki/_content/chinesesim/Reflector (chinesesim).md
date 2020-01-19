@@ -1,12 +1,16 @@
 Reflector 是一个脚本程序，从[镜像状态](https://www.archlinux.org/mirrors/status/)页面获取镜像列表，过滤出还在更新的页面并根据速度排列，然后覆盖文件`/etc/pacman.d/mirrorlist`。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 用法](#.E7.94.A8.E6.B3.95)
-    *   [2.1 示例](#.E7.A4.BA.E4.BE.8B)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 用法](#用法)
+    *   [2.1 示例](#示例)
     *   [2.2 Systemd Service](#Systemd_Service)
-    *   [2.3 Systemd 定时](#Systemd_.E5.AE.9A.E6.97.B6)
+    *   [2.3 Systemd 定时](#Systemd_定时)
         *   [2.3.1 AUR](#AUR)
             *   [2.3.1.1 reflector-timer](#reflector-timer)
             *   [2.3.1.2 reflector-timer-weekly](#reflector-timer-weekly)

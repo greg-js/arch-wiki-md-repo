@@ -375,6 +375,18 @@ Jul 22 20:27:40 almsi kernel: nvidia-modeset: ERROR: GPU:0: Failed to allocate m
 
 ```
 
+Issue caused by the Intel E2500 Wifi card.
+
+ `$ journalctl -f ` 
+```
+iwlwifi 0000:00:14.3: BIOS contains WGDS but no WRDS
+
+```
+
+Wifi card ask for a hardware reset. (System will freeze for +/- 10s)
+
+Fixed by replacing the Wifi card.
+
 ### Display outputs don't work after suspend
 
 If the laptop is suspended with another monitor connected, then on wake all display outputs do not recognise when an external display is connected to any port. This persists across reboots. Worryingly it also persists if you reboot into Windows.

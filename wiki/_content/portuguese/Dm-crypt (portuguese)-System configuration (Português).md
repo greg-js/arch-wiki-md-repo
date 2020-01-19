@@ -2,7 +2,7 @@
 
 **Dica:**
 
-*   Se precisa desbloquear remotamente o sistema de arquivos da partição raiz ou de outras partições na inicialização (máquinas sem monitor, servidores distantes...), siga instruções específicas em [dm-crypt/Especificidades#Desbloqueio remoto da partição raiz (ou outra)](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_(or_other)_partition "Dm-crypt/Specialties").
+*   Se precisa desbloquear remotamente o sistema de arquivos da partição raiz ou de outras partições na inicialização (máquinas sem monitor, servidores distantes...), siga instruções específicas em [dm-crypt/Especificidades#Desbloqueio remoto da partição raiz (ou outra)](/index.php/Dm-crypt/Especificidades#Desbloqueio_remoto_da_partição_raiz_(ou_outra) "Dm-crypt/Especificidades").
 *   Você pode querer instalar e usar [GNU Screen](/index.php/GNU_Screen "GNU Screen") depois de entrar no ambiente chroot para copiar e colar UUIDs mais facilmente.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -73,7 +73,7 @@ HOOKS=(base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt sd-
 
 Para habilitar a inicialização em uma partição raiz criptografada, um subconjunto dos seguintes parâmetros do kernel terão que ser configurados. Veja [Parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") para instruções específicas para seu [Gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot").
 
-Por exemplo, se está usando o [GRUB](/index.php/GRUB "GRUB"), os parâmetros relevantes são adicionados no `/etc/default/grub`, antes de [gerar o arquivo de configuração principal](/index.php/GRUB_(Portugu%C3%AAs)#Gerar_o_arquivo_de_configuração_principal "GRUB (Português)"). Veja também [GRUB#Aviso ao instalar em chroot](/index.php/GRUB_(Portugu%C3%AAs)#Aviso_ao_instalar_em_chroot "GRUB (Português)") como outro ponto a se atentar.
+Por exemplo, se está usando o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)"), os parâmetros relevantes são adicionados no `/etc/default/grub`, antes de [gerar o arquivo de configuração principal](/index.php/GRUB_(Portugu%C3%AAs)#Gerar_o_arquivo_de_configuração_principal "GRUB (Português)"). Veja também [GRUB#Aviso ao instalar em chroot](/index.php/GRUB_(Portugu%C3%AAs)#Aviso_ao_instalar_em_chroot "GRUB (Português)") como outro ponto a se atentar.
 
 Os parâmetros do kernel irão variar de acordo com qual hook (`encrypt` ou `sd-encrypt`) você vai usar.
 
@@ -94,7 +94,7 @@ root=*dispositivo*
 *   Se LVM vai ser ativado primeiro e contém um [volume lógico raiz criptografado](/index.php/Volume_l%C3%B3gico_raiz_criptografado "Volume lógico raiz criptografado"), a forma acima também é aplicável.
 *   Se o sistema de arquivos raiz está no volume lógico de uma [LVM criptografada](/index.php/LVM_criptografada "LVM criptografada"), o mapeador de dispositivos vai estar em sua forma genérica `root=/dev/*grupoDoVolume*/*volumeLógico*`.
 
-**Dica:** Se usa o [GRUB](/index.php/GRUB "GRUB") e está gerando o arquivo `grub.cfg` com *grub-mkconfig*, este parâmetro não precisa se especificado manualmente. *grub-mkconfig* determinará o UUID correto do sistema de arquivos raiz e automaticamente vai colocá-lo no `grub.cfg`.
+**Dica:** Se usa o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") e está gerando o arquivo `grub.cfg` com *grub-mkconfig*, este parâmetro não precisa se especificado manualmente. *grub-mkconfig* determinará o UUID correto do sistema de arquivos raiz e automaticamente vai colocá-lo no `grub.cfg`.
 
 #### resume
 
@@ -109,8 +109,8 @@ resume=*dispositivo*
 
 **Nota:** Comparado com o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt"), o hook `encrypt` tem algumas limitações. não suporta:
 
-*   Abrir [múltiplos discos criptografados](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties") ([FS#23182](https://bugs.archlinux.org/task/23182)). Somente **um** dispositivo pode ser aberto no initramfs.
-*   Usar um [cabeçalho LUKS desanexado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") ([FS#42851](https://bugs.archlinux.org/task/42851)).
+*   Abrir [múltiplos discos criptografados](/index.php/Dm-crypt/Especificidades#O_hook_encrypt_e_múltiplos_discos "Dm-crypt/Especificidades") ([FS#23182](https://bugs.archlinux.org/task/23182)). Somente **um** dispositivo pode ser aberto no initramfs.
+*   Usar um [cabeçalho LUKS desanexado](/index.php/Dm-crypt/Especificidades#Sistema_criptografado_usando_um_cabeçalho_LUKS_desanexado "Dm-crypt/Especificidades") ([FS#42851](https://bugs.archlinux.org/task/42851)).
 
 #### cryptdevice
 
@@ -125,7 +125,7 @@ cryptdevice=*dispositivo*:*nomedm*
 *   `*nomedm*` é o nome do **d**ispositivo **m**apeado que será dado ao container descriptografado, que estará disponível como `/dev/mapper/nomedm`.
 *   Se possui um [volume lógico raiz criptografado](/index.php/Volume_l%C3%B3gico_raiz_criptografado "Volume lógico raiz criptografado"), LVM vai ser ativado primeiro, o grupo de volumes e o volume lógico raiz serão o *dispositivo*. Coloque da seguinte forma `cryptdevice=*/dev/grupo_de_volumes/volume_lógico_raiz*:*nomedm*`.
 
-**Dica:** Você pode querer [habilitar suporte ao Discard/TRIM](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") para unidades de estado sólido (SSD).
+**Dica:** Você pode querer [habilitar suporte ao Discard/TRIM](/index.php/Dm-crypt/Especificidades#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD) "Dm-crypt/Especificidades") para unidades de estado sólido (SSD).
 
 #### cryptkey
 
@@ -378,7 +378,7 @@ Desde que `/dev/mapper/home` já é uma mapeação única, não existe a necessi
 
 Os geradores do systemd também processam automaticamente os dispositivos de bloco empilhados na inicialização.
 
-Por exemplo, você pode usar o cryptsetup numa configuração do [RAID](/index.php/RAID "RAID") e criar um volume lógico [LVM](/index.php/LVM "LVM") com o sistema de arquivos dentro de um dispositivo de bloco criptografado. Resultando em:
+Por exemplo, você pode usar o cryptsetup numa configuração do [RAID](/index.php/RAID "RAID") e criar um volume lógico [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") com o sistema de arquivos dentro de um dispositivo de bloco criptografado. Resultando em:
 
  `$ lsblk -f` 
 ```

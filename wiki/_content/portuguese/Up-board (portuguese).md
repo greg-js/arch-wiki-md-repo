@@ -21,7 +21,7 @@ A [UP Board](http://up-board.org) é um dispositivo SOC baseado em Intel da Aaeo
 
 A UP Board apresenta uma configuração somente [UEFI](/index.php/UEFI "UEFI") (sem emulação de BIOS). O processo de instalação padrão do UEFI pode ser seguido. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") funciona bem como um simples gerenciador de inicialização.
 
-**Nota:** O disco de instalação para a UP Board é `/dev/mmcblk0`. O tipo de partição recomendado é [GPT](/index.php/GPT "GPT").
+**Nota:** O disco de instalação para a UP Board é `/dev/mmcblk0`. O tipo de partição recomendado é [GPT](/index.php/GPT_(Portugu%C3%AAs) "GPT (Português)").
 
 ## GPIO
 

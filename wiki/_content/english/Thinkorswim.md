@@ -11,11 +11,20 @@ Install [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) be
 Execute the script by running:
 
 ```
-# sh thinkorswim_installer.sh
+$ sh thinkorswim_installer.sh
 
 ```
 
 When prompted, it is recommended to install thinkorswim into your `/home/$USER/thinkorswim` directory to avoid permissions issues, rather than `/opt/thinkorswim`.
+
+## Java environment versioning
+
+You may find it necessary to run `archlinux-java status` to list your installed java versions, and set `java-8-openjdk/jre` as the default by running
+
+```
+$ archlinux-java set java-8-openjdk/jre
+
+```
 
 ## Configuration
 

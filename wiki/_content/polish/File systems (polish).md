@@ -8,16 +8,20 @@ Za [Wikipedia](https://en.wikipedia.org/wiki/pl:System_plik%C3%B3w "wikipedia:pl
 
 Poszczególne partycje mogą używać jednego z wielu dostępnych systemów plików. Każdy z nich ma zalety, wady i unikalne cechy. Poniżej znajduje się jedynie krótki opis dostępnych systemów plików; dostępne są linki do wikipedii, które dostarczą więcej informacji.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Rodzaje systemów plików](#Rodzaje_system.C3.B3w_plik.C3.B3w)
-    *   [1.1 Księgowanie](#Ksi.C4.99gowanie)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Rodzaje systemów plików](#Rodzaje_systemów_plików)
+    *   [1.1 Księgowanie](#Księgowanie)
 *   [2 Formatowanie partycji](#Formatowanie_partycji)
     *   [2.1 Przygotowanie](#Przygotowanie)
-    *   [2.2 Krok 1: usunięcie starych partycji i stworzenie nowych](#Krok_1:_usuni.C4.99cie_starych_partycji_i_stworzenie_nowych)
-    *   [2.3 Krok 2: utworzenie systemu plików](#Krok_2:_utworzenie_systemu_plik.C3.B3w)
+    *   [2.2 Krok 1: usunięcie starych partycji i stworzenie nowych](#Krok_1:_usunięcie_starych_partycji_i_stworzenie_nowych)
+    *   [2.3 Krok 2: utworzenie systemu plików](#Krok_2:_utworzenie_systemu_plików)
         *   [2.3.1 W konsoli](#W_konsoli)
-    *   [2.4 Narzędzia graficzne](#Narz.C4.99dzia_graficzne)
+    *   [2.4 Narzędzia graficzne](#Narzędzia_graficzne)
 
 ## Rodzaje systemów plików
 

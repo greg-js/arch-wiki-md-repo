@@ -42,7 +42,11 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
         *   [1.5.1 Audio pop on shutdown and startup](#Audio_pop_on_shutdown_and_startup)
     *   [1.6 Fingerprint](#Fingerprint)
     *   [1.7 Webcam](#Webcam)
-    *   [1.8 TouchPad](#TouchPad)
+    *   [1.8 Keyboard](#Keyboard)
+    *   [1.9 Touchpad](#Touchpad)
+        *   [1.9.1 Acceleration](#Acceleration)
+        *   [1.9.2 Two-Finger Right Click](#Two-Finger_Right_Click)
+        *   [1.9.3 Tap Clicking](#Tap_Clicking)
 *   [2 Firmware](#Firmware)
 *   [3 Software](#Software)
     *   [3.1 Throttling fix](#Throttling_fix)
@@ -183,19 +187,50 @@ You should then be able to enroll your fingerprints with [Fprint#Configuration](
 
 The webcam in this laptop is capable of "Windows Hello" which has a Linux version called [Howdy](/index.php/Howdy "Howdy"). The device you should use to configure howdy on this laptop is `/dev/video0`.
 
-### TouchPad
+### Keyboard
 
-Touchpad works out-of-the-box with libinput, however speed will be very slow. You can adjust acceleration with:
+If you would like to enable the keyboard backlight, run:
+
+```
+# echo 2 | tee /sys/class/leds/tpacpi::kbd_backlight/brightness
+
+```
+
+The "2" represents the brightness and can be any value between 0 and 2 (inclusive) for the laptop. For example, to turn off the keyboard backlight, you would run:
+
+```
+# echo 0 | tee /sys/class/leds/tpacpi::kbd_backlight/brightness
+
+```
+
+### Touchpad
+
+The touchpad works out-of-the-box with libinput. However, it will be very insensitive.
+
+#### Acceleration
+
+You can adjust acceleration using the command:
 
 ```
 # xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.5
 
 ```
 
-Additionally if you wish to disable right click on TouchPad and only use two finger click as your right click use:
+#### Two-Finger Right Click
+
+Additionally, if you wish to disable right-clicking so that you use two finger click as your right click, run:
 
 ```
 # xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Click Method Enabled' 0 1    
+
+```
+
+#### Tap Clicking
+
+If you would like for a tap on the touchpad to be registered as a click, use:
+
+```
+# xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 
 ```
 

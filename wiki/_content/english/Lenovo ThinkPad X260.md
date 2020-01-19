@@ -18,9 +18,7 @@ The Lenovo ThinkPad X260 is the successor to the [Lenovo ThinkPad X240](/index.p
 
 ### Fingerprint
 
-Some X260's come with vfs (Validity Sensors) fingerprint readers. If this is the case then you will need to additionally install [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/), along with fprintd. See [fprint](/index.php/Fprint "Fprint") for details.
-
-**Note:** The VFS 5011 fingerprint sensor (USB vendor ID/product ID: 138a:0017) is supported as of libfprint v0.6.0 so the AUR package is no longer needed. ([source](https://www.thinkwiki.org/wiki/Integrated_Fingerprint_Reader)) This fingerprint reader has been successfully tested using [libfprint](https://www.archlinux.org/packages/?name=libfprint) v0.8.2-1
+Some X260's come with vfs (Validity Sensors) fingerprint readers. They are supported by [libfprint](https://www.archlinux.org/packages/?name=libfprint) version ≥0.6.0, though you may need to install [fprintd](https://www.archlinux.org/packages/?name=fprintd) as well. See [fprint](/index.php/Fprint "Fprint") for details.
 
 ### Use Print Key for Context Menu Key
 

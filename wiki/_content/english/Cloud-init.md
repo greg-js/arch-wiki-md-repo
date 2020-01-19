@@ -106,7 +106,7 @@ The above configuration tells OpenStack datasource to use the url `http://169.25
 
 ### Modules
 
-Cloud-init comes with a [set of modules](https://cloudinit.readthedocs.io/en/latest/topics/modules.html) the can be enabled or disabled in the configuration. The default config enables all modules that are known to work on Arch Linux. Omitted modules include e.g. those specific to other distributions or operating systems.
+Cloud-init comes with a [set of modules](https://cloudinit.readthedocs.io/en/latest/topics/modules.html) that can be enabled or disabled in the configuration. The default config enables all modules that are known to work on Arch Linux. Omitted modules include e.g. those specific to other distributions or operating systems.
 
 The fact that a module is enabled usually does not mean that it will actually do anything. It will however check if any configuration relevant to it was passed in, e.g. from the cloud environment via the data source. Only then it will attempt to act. As such, enabling all modules usually helps to maximize compatibility with cloud environments. Nevertheless, modules known to be not needed can be removed from configuration, e.g. to improve start-up times. You can use `cloud-init analyze` on a booted instance to see how much time was spent on individual modules.
 

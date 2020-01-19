@@ -1,6 +1,10 @@
 Un window manager (WM) è un componente dell'interfaccia grafica di un sistema (GUI) ad uso dell'utente. Molti potrebbero preferire l'installazione di un vero e proprio [Desktop environment](/index.php/Desktop_environment "Desktop environment"), che offre un'interfaccia utente completa, comprese icone, finestre, barre degli strumenti, sfondi e widget per il desktop.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 X Window System](#X_Window_System)
 *   [2 Window manager](#Window_manager)

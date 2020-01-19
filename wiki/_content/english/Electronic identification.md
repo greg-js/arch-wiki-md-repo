@@ -61,7 +61,7 @@ See [https://www.id.ee/?lang=en](https://www.id.ee/?lang=en)
 
 #### DigiDoc
 
-Once [ccid](https://www.archlinux.org/packages/?name=ccid) is installed and `pcscd.socket` is [started](/index.php/Start "Start"), install [qdigidoc4](https://aur.archlinux.org/packages/qdigidoc4/). One of the dependency [xml-security-c](https://aur.archlinux.org/packages/xml-security-c/) is [verified with a signature](/index.php/Makepkg#Signature_checking "Makepkg") that you have to import to your GnuPG keyring.
+Once [ccid](https://www.archlinux.org/packages/?name=ccid) is installed and `pcscd.socket` is [started](/index.php/Start "Start"), install [qdigidoc4](https://aur.archlinux.org/packages/qdigidoc4/). One of the dependency [xml-security-c](https://aur.archlinux.org/packages/xml-security-c/) is [verified with a signature](/index.php/Makepkg#Signature_checking "Makepkg") that you have to import to your GnuPG keyring. If you have an ACS card reader, [acsccid](https://www.archlinux.org/packages/?name=acsccid) is required.
 
 DigiDoc4 has an optional [GNOME/Files](/index.php/GNOME/Files "GNOME/Files") right click menu integration. Install [python2-nautilus](https://aur.archlinux.org/packages/python2-nautilus/) and restart Gnome Files using the command `pkill nautilus`.
 

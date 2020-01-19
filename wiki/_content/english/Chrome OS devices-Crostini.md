@@ -119,7 +119,7 @@ exit
 5\. Login to the container using regular user account you just configured:
 
 ```
-lxc console penguin
+lxc console arch
 
 ```
 

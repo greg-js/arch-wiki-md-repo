@@ -5,11 +5,15 @@ Related articles
 
 [Reflector](http://xyne.archlinux.ca/projects/reflector/) to skrypt, który pobriera najnowszą listę mirrorów ze strony [MirrorStatus](https://www.archlinux.org/mirrors/status/), filtruje najbardziej aktualne mirrory, sortuje je według szybkości i zastąpia plik `/etc/pacman.d/mirrorlist`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Instalacja](#Instalacja)
-*   [2 Użycie](#U.C5.BCycie)
-    *   [2.1 Przykłady](#Przyk.C5.82ady)
+*   [2 Użycie](#Użycie)
+    *   [2.1 Przykłady](#Przykłady)
     *   [2.2 Systemd Service](#Systemd_Service)
     *   [2.3 Systemd Timer](#Systemd_Timer)
         *   [2.3.1 Pakiet AUR](#Pakiet_AUR)

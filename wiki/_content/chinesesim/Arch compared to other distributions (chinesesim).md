@@ -48,7 +48,7 @@
 
 *   LFS（Linux From Scratch）只以文档形式存在，提供的文档指导用户如何从零开始构建一个完全个性化的操作系统：从如何获取构建一个基础操作系统所需的源代码，到如何编译，如何打补丁，如何对系统进行配置。总之，LFS 提供一个构建和定制基础系统的良好教程。
 *   LFS 不提供在线软件仓库；必须手动获取源代码，然后用 make 编译安装它们。（需要一些包管理方法,这点在 LFS Hints 里面提到过）
-*   Arch 基础系统除了提供和 LFS 一样的软件包，还包含 [systemd](/index.php/Systemd "Systemd")，[pacman](/index.php/Pacman "Pacman") 等一些额外的工具，并且这些软件都已经为 x86_64 架构编译过了。Arch 社区和开发者提供了数以千计的软件包，这些软件包可以通过 [pacman](/index.php/Pacman "Pacman") 或者 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 脚本进行安装（PKGBUILD 脚本需要和 [Arch Build System](/index.php/Arch_Build_System "Arch Build System") 一起使用）。除此之外，Arch 还包含了一个名叫 [makepkg](/index.php/Makepkg "Makepkg") 的工具来生成方便 pacman 使用的“.pkg.tar.xz/.pkg.tar.zst”格式的包。
+*   Arch 基础系统除了提供和 LFS 一样的软件包，还包含 [systemd](/index.php/Systemd "Systemd")，[pacman](/index.php/Pacman "Pacman") 等一些额外的工具，并且这些软件都已经为 x86_64 架构编译过了。Arch 社区和开发者提供了数以千计的软件包，这些软件包可以通过 [pacman](/index.php/Pacman "Pacman") 或者 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 脚本进行安装（PKGBUILD 脚本需要和 [Arch Build System](/index.php/Arch_Build_System "Arch Build System") 一起使用）。除此之外，Arch 还包含了一个名叫 [makepkg](/index.php/Makepkg "Makepkg") 的工具来生成便于 pacman 使用的软件包。
 *   Judd Vinet 从零开始构建了 Arch，然后使用 C 开发了 Pacman。所以，Arch 有些时候被幽默的描述为“外带一个优秀包管理器的 Linux ”。
 
 ### Gentoo/Funtoo Linux
@@ -78,7 +78,7 @@
 ### Fedora
 
 *   Fedora 由社区开发,并红帽提供公司级支持.它是红帽版的技术前导版,对新技术的采用非常激进. Fedora 的软件包和项目会被引入 RHEL 中,并最终被其他发行版采用.Arch 不像很多发行版一样提供测试分支,而是采用滚动方式进行升级.
-*   Fedora 采用 RPM 包,用 DNF 包管理器并且提供图形化的包管理工具. Arch 使用 [pacman](/index.php/Pacman "Pacman") 管理 .pkg.tar.xz/.pkg.tar.zst 软件包.
+*   Fedora 采用 RPM 包,用 DNF 包管理器并且提供图形化的包管理工具. Arch 使用 [pacman](/index.php/Pacman "Pacman") 管理软件包.
 *   Fedora 坚持开源理念,默认不提供有专利限制的软件,比如 MP3 支持(从 Fedora 25 开始已重新支持 MP3).一些第三方源提供这些内容. Arch 对于 MP3 及非自由软件更加宽松，将决定权交给用户。
 *   Fedora 提供很多安装选项,比如图形化安装和最小化安装.Fedora "spins" 还提供许多桌面环境以供用户选择(这些桌面环境都带一些默认的软件包).ARCH 仅提供了一些脚本来方便进行最小化系统安装
 *   Fedora 发行周期固定,但官方支持通过 dnf-plugin-system-upgrade (适合大部分的版本)或 rpm-ostree (适合 Fedora Atomic Host)工具进行跨版本升级. Arch 是滚动升级系统.

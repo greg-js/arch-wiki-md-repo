@@ -2,7 +2,11 @@ Del [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ) de Bumblebee:
 
 *Bumblebee es una solución para aprovechar la tecnología Nvidia Optimus, presente en los ordenadores portátiles habilitados, disponible para los sistemas GNU/Linux. Esta tecnología combina el uso de dos tarjetas gráficas con dos perfiles diferentes de consumo de energía, que están conectadas de una manera estratificada compartiendo un solo framebuffer*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bumblebee: Tecnología Optimus para Linux](#Bumblebee:_Tecnología_Optimus_para_Linux)
 *   [2 Instalación](#Instalación)
@@ -22,7 +26,7 @@ Del [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ) de Bumblebee:
 *   [6 Cambiar entre tarjeta dedicada e integrada como Windows](#Cambiar_entre_tarjeta_dedicada_e_integrada_como_Windows)
 *   [7 CUDA sin Bumblebee](#CUDA_sin_Bumblebee)
 *   [8 Solución de problemas](#Solución_de_problemas)
-    *   [8.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
+    *   [8.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
     *   [8.2 [ERROR]Cannot access secondary GPU](#[ERROR]Cannot_access_secondary_GPU)
         *   [8.2.1 Ningún dispositivo detectado](#Ningún_dispositivo_detectado)
         *   [8.2.2 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA(0):_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
@@ -123,7 +127,7 @@ $ optirun wine *aplicación de windows*.exe
 Utilizar NVIDIA Settings con Optimus:
 
 ```
-$ optirun nvidia-settings -c :8
+$ optirun nvidia-settings -c :8
 
 ```
 
@@ -419,7 +423,7 @@ EndSection  # Samsung 2494
 *   Tome nota de la posición de la pantalla VIRTUAL en la lista de salidas como se muestra por xrandr. El conteo comienza por cero, es decir, si es la tercera pantalla la que se muestra, se especificaría `-x 2` como parámetro para `screenclone`.
 *   Clonar el contenido de la pantalla VIRTUAL en el servidor X creado por bumblebee,que está conectado al monitor a través de DisplayPort y del chip de NVIDIA:
 
-	`screenclone -d :8 -x 2`
+	`screenclone -d :8 -x 2`
 
 Eso es todo, las tres pantallas deberían estar en funcionamiento ahora.
 
@@ -453,7 +457,7 @@ Esto no está bien documentado, pero no es necesario que Bumblebee utilice CUDA 
 
 **Nota:** Por favor, informe de los errores con el *trazador GitHub* del [Proyecto-Bumblebee](https://github.com/Bumblebee-Project/Bumblebee), como se describe en su [wiki](https://github.com/Bumblebee-Project/Bumblebee/wiki/Reporting-Issues).
 
-### [VGL] ERROR: Could not open display :8
+### [VGL] ERROR: Could not open display :8
 
 Hay un problema conocido con algunas aplicaciones que vienen lanzadas con wine que se bifurcan y matan el proceso padre sin hacer el seguimiento del problema (por ejemplo, la sesión libre del juego en línea "Runes of Magic")
 
@@ -539,7 +543,7 @@ Cambie `KeepUnusedXServer` en `/etc/bumblebee/bumblebee.conf` de `false` a `true
 
 El problema del lagrimeo en el vídeo es poco común utilizando Bumblebee. Para solucionarlo, necesita habilitar vsync. Debe venir activado por defecto en la tarjeta Intel, pero verifíquelo a partir de los registros de Xorg. Para comprobar si está o no habilitado para nvidia, ejecute:
 
- `$ optirun nvidia-settings -c :8 ` 
+ `$ optirun nvidia-settings -c :8 ` 
 
 Las entradas `X Server XVideo Settings -> Sync to VBlank` y `OpenGL Settings -> Sync to VBlank` deben estar también habilitadas. La tarjeta Intel tiene, en general, menos problemas de tearing, de modo que puede ser buena idea utilizarla para la reproducción de vídeo. En particular utilizando VA-API para la decodificación de vídeo (por ejemplo, `mplayer-vaapi` y con el parámetro `-vsync`).
 

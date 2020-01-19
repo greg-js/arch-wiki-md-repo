@@ -109,7 +109,7 @@ The [Android Support Library](https://developer.android.com/topic/libraries/supp
 
 #### Making /opt/android-sdk group-writeable
 
-The AUR packages install the SDK in `/opt/android-sdk/`. This directory has root [permissions](/index.php/Permissions "Permissions"), so keep in mind to run sdk manager as root. If you intend to use it as a regular user, create the Android sdk users group, add your user.
+The AUR packages install the SDK in `/opt/android-sdk/`. This directory has root [permissions](/index.php/Permissions "Permissions"), so keep in mind to run sdk manager as root. If you intend to use it as a regular user, create the android-sdk users group, add your user.
 
 ```
 # groupadd android-sdk

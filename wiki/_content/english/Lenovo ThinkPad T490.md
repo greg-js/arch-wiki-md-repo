@@ -1,6 +1,6 @@
 Related articles
 
-*   [Lenovo ThinkPad T490s](/index.php?title=Lenovo_ThinkPad_T490s&action=edit&redlink=1 "Lenovo ThinkPad T490s (page does not exist)")
+*   [Lenovo ThinkPad T490s](/index.php/Lenovo_ThinkPad_T490s "Lenovo ThinkPad T490s")
 *   [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480")
 *   [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s")
 *   [Lenovo ThinkPad T470](/index.php/Lenovo_ThinkPad_T470 "Lenovo ThinkPad T470")
@@ -149,13 +149,11 @@ Even after doing this, the mouse pointer still jumps around when clicking the bu
 
 ## Fingerprint Sensor
 
-Fingerprint sensor seems to work with some recent firmware and software updates (2019-12-15). Driver development info: [[1]](https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617)[[2]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
+The fingerprint sensor works with some recent firmware and software updates (2019-12-15). Driver development info: [[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
 
-1\. Use [fwupd](/index.php/Fwupd "Fwupd") to install the latest firmware for "Synaptics Prometheus Fingerprint Reader". The update might have to be done manually (the released firmware is in testing). [[3]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware)[[4]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config)
-
-2\. Latest fprintd and libfprint are required[[5]](https://fprint.freedesktop.org/). [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.
-
-3\. [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [PAM](/index.php/PAM "PAM") authentication for example.
+1.  Use [fwupd](/index.php/Fwupd "Fwupd") to install the latest firmware for "Synaptics Prometheus Fingerprint Reader". The update might have to be done manually as the released firmware is in testing; or you could [enable the testing remote in fwupd](https://github.com/fwupd/fwupd/wiki/LVFS-Testing-remote) to allow automated upgrade. The relevant firmwares are [Prometheus Fingerprint Reader](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware) and [Prometheus Fingerprint Reader Configuration](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config).
+2.  Latest [fprintd and libfprint](https://fprint.freedesktop.org/) are required. [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.
+3.  [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [PAM](/index.php/PAM "PAM") authentication for example.
 
 ## Known Issues
 
@@ -185,7 +183,7 @@ Pairing with a bluetooth speaker and the initial connect works. Connecting to an
 
 ```
 
-An issue for this already exists on the kernel bugtracker [[6]](https://bugzilla.kernel.org/show_bug.cgi?id=204765). It is not clear whether this relates to the connection problem.
+An issue for this already exists on the kernel bugtracker [[2]](https://bugzilla.kernel.org/show_bug.cgi?id=204765). It is not clear whether this relates to the connection problem.
 
 ### Slow wakeup after suspend
 

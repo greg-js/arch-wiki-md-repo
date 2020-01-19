@@ -32,7 +32,7 @@ Je dôležité si poznamenať, že 1024 cylinder obmedzuje staršie BIOSy. To zn
 
 3\. Ak sa inštaluje GRUB, musíte si nastaviť `/boot/grub/menu.lst`), a **uistiť sa, že GRUB sa inštaluje na `/boot` (alebo root (`/`) ak nevytvoríte oddelenú partíciu pre `/boot`)**. *Inštalovaním GRUB na vašu Windows partíciu, môžete sposobiť, že Windows nebude bootovať*. O tom hovoria 3 riadky na konci súboru, "chainloading" = zreťazenie pre bootovanie ostatných OS, môže byť všeobecne odkomentovaný, ak sledujete už hore popísaný postup, ktorý zahrnie windows bootovací bod pripojenia na hd0,0 alebo sda1\. Týmto dostanete niečo také:
 
-**Note:** Uvedené inštrukcie sú v konflikte s inštaláciou GRUB zdokumentované v [GRUB#Všeobecné poznámky pre inštaláciu bootloadera](/index.php/GRUB#V.C5.A1eobecn.C3.A9_pozn.C3.A1mky_pre_in.C5.A1tal.C3.A1ciu_bootloadera "GRUB"), ktoré hovoria, že GRUB by sa mal inštalovať na MBR alebo na prvú partíciu rozpoznanú väčšinou typov BIOSov.
+**Note:** Uvedené inštrukcie sú v konflikte s inštaláciou GRUB zdokumentované v [GRUB#Všeobecné poznámky pre inštaláciu bootloadera](/index.php/GRUB#Všeobecné_poznámky_pre_inštaláciu_bootloadera "GRUB"), ktoré hovoria, že GRUB by sa mal inštalovať na MBR alebo na prvú partíciu rozpoznanú väčšinou typov BIOSov.
 
 **Note:** Je tiež možné inštalovať GRUB na MBR (`/dev/sda`). Toto funguje najlepšie s Windows 7.
 

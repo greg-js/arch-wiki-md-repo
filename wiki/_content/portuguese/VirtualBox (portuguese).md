@@ -537,7 +537,7 @@ Uma vez que o espaço livre em disco tenha sido apagado, desligue sua máquina v
 Na próxima vez que você inicializar sua máquina virtual, é recomendável fazer uma verificação do sistema de arquivos.
 
 *   Em sistemas baseados em UNIX, você pode usar `fsck` manualmente;
-    *   Nos sistemas GNU/Linux e, portanto, no Arch Linux, você pode forçar uma verificação de disco na inicialização [graças a um parâmetro de inicialização do kernel](/index.php/Fsck#Forcing_the_check "Fsck");
+    *   Nos sistemas GNU/Linux e, portanto, no Arch Linux, você pode forçar uma verificação de disco na inicialização [graças a um parâmetro de inicialização do kernel](/index.php/Fsck_(Portugu%C3%AAs)#Forçando_a_verificação "Fsck (Português)");
 *   Nos sistemas Windows, você pode usar:
     *   `chkdsk *c:* /F` sendo que `*c:*` precisa ser substituído por cada disco que você precisa verificar e corrigir erros;
     *   ou `FsckDskAll` [daqui](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) que é basicamente o mesmo software que `chkdsk`, mas sem a necessidade de repetir o comando para todas as unidades;

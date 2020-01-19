@@ -141,6 +141,7 @@ This is the default behaviour. To change the setting open the `cinnamon-settings
 
 *   To add/remove languages: see [Locale](/index.php/Locale "Locale").
 *   To change between enabled languages: install the [mintlocale](https://aur.archlinux.org/packages/mintlocale/) package.
+*   For Cinnamon to correctly display another language: install the [cinnamon-translations](https://www.archlinux.org/packages/?name=cinnamon-translations) package.
 *   To change the keyboard layout: navigate to **System Settings > Hardware > Keyboard > Layouts**.
 
 ### Use a different window manager

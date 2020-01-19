@@ -186,7 +186,7 @@ initrd=/boot/initramfs-merged.img
 
 ```
 
-Это позволяет применять обновления микрокода после обновления [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) без перезагрузки системы. Вы можете даже автоматизировать это с помощью [pacman hook](/index.php/Pacman_hook "Pacman hook"), например:
+Это позволяет применять обновления микрокода после обновления [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) без перезагрузки системы. Вы можете даже автоматизировать это с помощью [хука pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Хуки "Pacman (Русский)"), например:
 
  `/etc/pacman.d/hooks/microcode_reload.hook` 
 ```

@@ -49,9 +49,10 @@ There are several UEFI boot managers which can provide additional options or sim
 
 UEFI is designed to remove the need for an intermediate bootloader such as [GRUB](/index.php/GRUB "GRUB"). If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") or UEFI Shell v2 to modify your motherboard's boot entries.
 
-**Note:** Outdated UEFI implementations may have compatibility issues with the Linux kernel. If there is a newer version of your UEFI with bug fixes, consider flashing it with the manufacturer's recommended tool.
+**Note:**
 
-**Tip:** Some firmware(like Dell) do not support EFI parameters [See forum](https://bbs.archlinux.org/viewtopic.php?id=178154).In that case,the parameters can be copied to the kernel binary as in [arch-efiboot](https://github.com/xdever/arch-efiboot/blob/master/README.md).
+*   Outdated UEFI implementations may have compatibility issues with the Linux kernel. If there is a newer version of your UEFI with bug fixes, consider flashing it with the manufacturer's recommended tool.
+*   Some firmwares do not pass command line parameters from the boot entries in NVRAM to the EFI binaries.[[1]](https://bbs.archlinux.org/viewtopic.php?id=178154) In that case, the kernel and the parameters can be combined into a [unified kernel image](https://systemd.io/BOOT_LOADER_SPECIFICATION/#type-2-efi-unified-kernel-images). See [systemd-boot#Preparing kernels for /EFI/Linux](/index.php/Systemd-boot#Preparing_kernels_for_/EFI/Linux "Systemd-boot").
 
 #### efibootmgr
 

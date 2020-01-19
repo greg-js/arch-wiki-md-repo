@@ -51,7 +51,7 @@ export NNN_CONTEXT_COLORS="2136"                        # use a different color 
 export NNN_TRASH=1                                      # trash (needs trash-cli) instead of delete
 ```
 
-The most important setting would be the `NNN_BMS` variable which lets you choose shortcuts to quickly jump to your bookmarked directories. By default they are reached with `<leader-key>` which is set to `,` (a comma). In the example configuration hitting the keys: `,D` would result in nnn jumping into `~/Downloads`. But all of these are optional, nnn will consistently behave the same on all of your machines.
+The most important setting would be the `NNN_BMS` variable which lets you choose shortcuts to quickly jump to your bookmarked directories. They are reached with `b` followed by one of the letters that you have specified. In the example configuration hitting the keys `bD` would result in nnn jumping into `~/Downloads`. But all of these are optional, nnn will consistently behave the same on all of your machines.
 
 #### Get selected files in terminal
 

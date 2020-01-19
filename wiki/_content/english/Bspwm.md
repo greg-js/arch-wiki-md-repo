@@ -235,6 +235,8 @@ Since the `bspwmrc` is a shell script, it allows you to do things like these:
 
 ```
 
+Note: [inetutils](https://www.archlinux.org/packages/?name=inetutils) is required to use hostname command.
+
 ### Set up a desktop where all windows are floating
 
 Here is how to setup the desktop 3 to have only floating windows. It can be useful for GIMP or other apps with multiple windows.

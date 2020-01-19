@@ -32,7 +32,7 @@ Veja [Btrfs#Snapshots](/index.php/Btrfs#Snapshots "Btrfs") e [Snapper](/index.ph
 
 ## Usando snapshots de LVM
 
-Veja [LVM#Snapshots](/index.php/LVM#Snapshots "LVM") e [Criar snapshots do sistema de arquivos raiz com LVM](/index.php/Create_root_filesystem_snapshots_with_LVM "Create root filesystem snapshots with LVM").
+Veja [LVM (Português)#Snapshots](/index.php/LVM_(Portugu%C3%AAs)#Snapshots "LVM (Português)") e [Criar snapshots do sistema de arquivos raiz com LVM](/index.php/Create_root_filesystem_snapshots_with_LVM "Create root filesystem snapshots with LVM").
 
 ## Usando rsync
 

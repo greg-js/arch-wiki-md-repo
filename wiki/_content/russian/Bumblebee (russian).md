@@ -344,7 +344,7 @@ modprobe: ERROR: could not insert 'nvidia': Exec format error
 
 ```
 
-Это происходит потому,что видеодрайвер не может синхронизироваться с ядром, к примеру,если вы установили последний драйвер nvidia, но не можете обновить ядро. Полное обновление системы поможет исправить эту проблему. Если проблема не ушла,то попробуйте вручную скомпилировать пакеты nvidia для своего ядра. Потребуются: [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) или скомпилированный [nvidia](https://www.archlinux.org/packages/?name=nvidia) из [ABS](/index.php/ABS "ABS").
+Это происходит потому,что видеодрайвер не может синхронизироваться с ядром, к примеру,если вы установили последний драйвер nvidia, но не можете обновить ядро. Полное обновление системы поможет исправить эту проблему. Если проблема не ушла,то попробуйте вручную скомпилировать пакеты nvidia для своего ядра. Потребуются: [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) или скомпилированный [nvidia](https://www.archlinux.org/packages/?name=nvidia) из [ABS](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)").
 
 #### NOUVEAU(0): [drm] failed to set drm interface version
 

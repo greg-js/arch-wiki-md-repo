@@ -35,6 +35,7 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
     *   [4.9 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_/etc/sudoers.d)
     *   [4.10 Editing files](#Editing_files)
     *   [4.11 Enable insults](#Enable_insults)
+    *   [4.12 Play sound on password prompt](#Play_sound_on_password_prompt)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSH TTY Problems](#SSH_TTY_Problems)
     *   [5.2 Permissive umask](#Permissive_umask)
@@ -125,7 +126,7 @@ To allow members of group `wheel` sudo access:
 
 ```
 
-**Note:** When creating new administrators, it is often desirable to enable sudo access for the `wheel` group and [add the user to it](/index.php/Users_and_Groups#Other_examples_of_user_management "Users and Groups"), since by default [Polkit](/index.php/Polkit#Administrator_identities "Polkit") treats the members of the `wheel` group as administrators. If the user is not a member of `wheel`, Polkit (i.e. GUI dialogs) may ask for the root password for admin authentication instead of the user password.
+**Tip:** When creating new administrators, it is often desirable to enable sudo access for the `wheel` group and [add the user to it](/index.php/Users_and_Groups#Other_examples_of_user_management "Users and Groups"), since by default [Polkit](/index.php/Polkit#Administrator_identities "Polkit") treats the members of the `wheel` group as administrators. If the user is not a member of `wheel`, software using Polkit may ask to authenticate using the root password instead of the user password.
 
 To disable asking for a password for user `USER_NAME`:
 
@@ -439,6 +440,12 @@ Users can enable insults easter egg in sudo by adding the following line in sudo
 Upon entering an incorrect password this will replace `Sorry, try again.` message with humorous insults.
 
  `/etc/sudoers`  `Defaults insults` 
+
+### Play sound on password prompt
+
+The following way can be used for [Zsh](/index.php/Zsh "Zsh"):
+
+ `/etc/zsh/zshrc`  `export SUDO_PROMPT=$'\a[sudo] password for %p: '` 
 
 ## Troubleshooting
 

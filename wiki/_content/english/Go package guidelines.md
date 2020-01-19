@@ -156,9 +156,15 @@ sha256sums=('1337deadbeef')
 build() {
   cd $pkgname-$pkgver
   go build \
+    -mod=vendor \
     -trimpath \
     -ldflags "-extldflags $LDFLAGS" \
     -o $pkgname .
+}
+
+check() {
+  cd $pkgname-$pkgver
+  go test -mod=vendor ./...
 }
 
 package() {

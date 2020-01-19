@@ -5,9 +5,12 @@ Related articles
 *   [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")
 *   [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)")
 *   [Dell XPS 13 (9370)](/index.php/Dell_XPS_13_(9370) "Dell XPS 13 (9370)")
+*   [Dell XPS 13 (7390)](/index.php/Dell_XPS_13_(7390) "Dell XPS 13 (7390)")
 *   [Dell XPS 13 2-in-1 (9365)](/index.php/Dell_XPS_13_2-in-1_(9365) "Dell XPS 13 2-in-1 (9365)")
 
 The New Dell XPS 13 2-in-1 (7390) is the model released in mid 2019 in most territories and is the second iteration of the Dell XPS 13 2-in-1 series, including an updated 10th generation Intel Ice Lake processor with Iris Plus integrated graphics. It can be used like a tablet when folding the display 180 degrees backwards and includes a enlarged 16:10 FHD+ or UHD touchscreen which should work out of the box. This includes support for Wacom pen technology (tested with the "Wacom Bamboo Ink Plus").
+
+As of kernel 5.4.6.arch3-1, no modifications (in particular regarding LPSS and WiFi) are necessary for the installation and normal operations.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -15,55 +18,41 @@ The New Dell XPS 13 2-in-1 (7390) is the model released in mid 2019 in most terr
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Installation](#Installation)
+*   [1 Additional features](#Additional_features)
+    *   [1.1 Automatic screen rotation under Gnome and Wayland](#Automatic_screen_rotation_under_Gnome_and_Wayland)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 First Boot](#First_Boot)
-    *   [2.2 Intel LPSS](#Intel_LPSS)
-    *   [2.3 Wifi & Bluetooth](#Wifi_&_Bluetooth)
-    *   [2.4 Camera and Fingerprint Reader](#Camera_and_Fingerprint_Reader)
+    *   [2.1 Intermittent display blackouts](#Intermittent_display_blackouts)
+    *   [2.2 Fingerprint Reader](#Fingerprint_Reader)
+    *   [2.3 Camera](#Camera)
 
-## Installation
+## Additional features
 
-Installation is similar to most other Dell XPS machines although without modifications the machine will freeze a few seconds into boot. These modifications are outlined in the troubleshooting section.
+### Automatic screen rotation under Gnome and Wayland
 
-It's recommended to update the kernel to 5.3 or higher once the system is bootable.
+Install the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) package. The screen will now automatically rotate and keyboard input will be disabled in tablet mode.
 
 ## Troubleshooting
 
-### First Boot
+### Intermittent display blackouts
 
-To boot fully without the boot process hanging one must blacklist the 'intel_lpss_pci' module, which can be done on a live media installation by selecting the boot option you want and pressing 'e', navigating to the end of the boot options string, and adding 'modprobe.blacklist=intel_lpss_pci'. This should allow booting into the full OS and further installation to the internal SSD.
+Issues with the screen going black for a second on certain audio events have been resolved with kernel 5.4.12-arch1\. You might need to update the kernel if you installed from older installation media.
 
-### Intel LPSS
+### Fingerprint Reader
 
-To fix the intel_lpss_module the patch from this paste must be applied to the kernel.
+There are currently no drivers available for the fingerprint reader. More information:
 
-[https://pastebin.com/R7FpCefm](https://pastebin.com/R7FpCefm) (last tested on linux 5.3.12.1-1)
+[[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues?scope=all&utf8=%E2%9C%93&state=opened&search=goodix) libfprint issues adressing Goodix devices
 
-Remember to be cautious about running code or installing patches from third party sources if you do not know what it does.
+[[2]](https://github.com/goodix) Older Goodix drivers
 
-This patch should enable the system to boot without blacklisting the module, further enabling access to the touchscreen.
+### Camera
 
-NOTE: The patch is no longer required as of 5.4.2.1-1, so upgrading your kernel after installation will resolve the LPSS issue.
+There are currently no drivers available for the camera. More information:
 
-### Wifi & Bluetooth
+[[3]](https://wiki.ubuntu.com/Dell/XPS/XPS-13-7390-2-in-1) Ubuntu Wiki page on the XPS 13 2-in-1.
 
-WiFi and Bluetooth should require at least linux 5.3 to work, alongside the latest linux-firmware package. However, there is a bug in the *iwlwifi* driver which affects all kernel versions from 5.4 up to and, as of writing, including 5.5rc2\. This bug loads the incorrect firmware onto the Killer AX1650i, causing a *Failed to run INIT ucode* error and breaks Wifi (see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1878902) for discussion).
+[[4]](https://github.com/intel/intel-camera-drivers/tree/master/drivers/media) IPU4 drivers that may be ported to the current kernel, needs a lot of work.
 
-Currently, three options are available:
+[[5]](https://github.com/endeavour/DellXps7390-2in1-Manjaro-Linux-Fixes/issues/6#issuecomment-552025852) Maybe IPU3 is enough?
 
-*   The mainline core/linux package as of 5.4.6-arch1-1 locally includes the patch which fixes this issue, allowing users of the standard linux package to continue working, otherwise, you can:
-*   Select an alternate *linux-** package which still runs using the 5.3.x branch; or
-*   Symlink the *c0-50* firmware to *b0-50*, which the driver will load in preference to *b0-48* (which is the current latest release of *b0* type firmware):
-
-```
- $ cd /lib/firmware
- $ ln -s iwlwifi-Qu-{c,b}0-hr-b0-50.ucode
-
-```
-
-Reboot your laptop and the correct firmware should now be loaded in preference. Your WiFi should connect now as expected.
-
-### Camera and Fingerprint Reader
-
-There are currently no drivers available for the camera and fingerprint reader. See [[2]](https://wiki.ubuntu.com/Dell/XPS/XPS-13-7390-2-in-1) for more information.
+[[6]](https://github.com/torvalds/linux/tree/5613970af3f5f8372c596b138bd64f3918513515/drivers/staging/media/ipu3) IPU3 driver in staging, needs some work.

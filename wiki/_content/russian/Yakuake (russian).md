@@ -2,7 +2,7 @@
 
 *   [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Yakuake](/index.php/Yakuake "Yakuake"). Дата последней синхронизации: 2 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Yakuake&diff=0&oldid=590474).
+**Состояние перевода:** На этой странице представлен перевод статьи [Yakuake](/index.php/Yakuake "Yakuake"). Дата последней синхронизации: 18 января 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Yakuake&diff=0&oldid=594473).
 
 [Yakuake](https://www.kde.org/applications/system/yakuake/) — выпадающий сверху эмулятор терминала для [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") в стиле [Guake (Русский)](/index.php/Guake_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Guake (Русский)") для [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"), [Tilda](/index.php/Tilda "Tilda") или консоли в игре Quake.
 
@@ -54,15 +54,15 @@ sleep 2
 TERMINAL_ID_0=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId 0)
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle 0 "user"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 0 "htop"
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight ${TERMINAL_ID_0}
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight "$TERMINAL_ID_0"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 1 "iotop
 
 # Запуск нескольких сессий root-пользователя в одной вкладке (сверху и снизу).                                                                                
 SESSION_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
-TERMINAL_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${SESSION_ID_1})
+TERMINAL_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId "$SESSION_ID_1")
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle 1 "root"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 2 "su"
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalTopBottom ${TERMINAL_ID_1}
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalTopBottom "$TERMINAL_ID_1"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 3 "su" 
 
 # Запуск irssi в отдельной вкладке.                                                                                          
@@ -72,10 +72,10 @@ qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 4 "ssh home -t 'tmu
 
 # Запуск нескольких терминалов SSH в одной вкладке.                                                                                   
 SESSION_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
-TERMINAL_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${SESSION_ID_2})
+TERMINAL_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId "$SESSION_ID_2")
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle 3 "work server"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 5 "ssh work"
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight ${TERMINAL_ID_2}
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight "$TERMINAL_ID_2"
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 6 "ssh work" 
 
 ```

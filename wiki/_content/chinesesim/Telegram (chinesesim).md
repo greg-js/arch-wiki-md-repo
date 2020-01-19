@@ -2,7 +2,11 @@
 
 部分内容来自[维基百科](https://zh.wikipedia.org/wiki/Telegram): Telegram Messenger是一个跨平台的实时通信软件，它的客户端是自由及开放源代码软件，但是它的服务器是专有软件。用户可以相互交换加密与自析构的消息，以及照片、视频、文件，支持所有的文件类型。官方网站有正式发布Android、iOS、Mac OS X与正在Beta的Windows Phone的版本；其他版本皆为非正式的版本，而且是由独立研发人员利用官方的应用程序接口来开发的。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 作为其它聊天软件的插件](#作为其它聊天软件的插件)

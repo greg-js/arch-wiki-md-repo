@@ -80,7 +80,7 @@
 
 ### Pacman hook
 
-Вы можете создать [pacman hook](/index.php/Pacman_hook "Pacman hook"), который будет запускать *reflector* и удалять файл *.pacnew* после каждого обновления [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist).
+Вы можете создать [хук pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Хуки "Pacman (Русский)"), который будет запускать *reflector* и удалять файл *.pacnew* после каждого обновления [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist).
 
  `/etc/pacman.d/hooks/mirrorupgrade.hook` 
 ```

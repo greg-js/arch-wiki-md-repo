@@ -141,7 +141,20 @@ Do not forget to format the partitions :
 
 You can now install GRUB to support both EFI + GPT and BIOS + GPT/MBR. The GRUB configuration (--boot-directory) can be kept in the same place.
 
-First, you need to mount the EFI system partition and the data partition of your USB drive. Then, you can install GRUB for UEFI with:
+First, you need to mount the EFI system partition and the data partition of your USB drive.
+
+An example of this would be as follows:
+
+```
+# mount /dev/sdX3 /mnt
+# mkdir -p /mnt/boot/EFI
+# mount /dev/sdX2 /mnt/boot/EFI
+
+```
+
+Then, you can install GRUB for UEFI with:
+
+In most cases `EFI_MOUNTPOINT` will correspond to the `/mnt/boot/EFI` subdirectory on your mounted USB disk.
 
 ```
 # grub-install --target=x86_64-efi --recheck --removable --efi-directory=/*EFI_MOUNTPOINT* --boot-directory=/*DATA_MOUNTPOINT*/boot

@@ -18,6 +18,7 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [3.1 Z97M Pro4](#Z97M_Pro4)
 *   [4 Dell](#Dell)
     *   [4.1 PowerEdge T30](#PowerEdge_T30)
+    *   [4.2 Latitude E7450](#Latitude_E7450)
 *   [5 MSI](#MSI)
     *   [5.1 B250M PRO-VH](#B250M_PRO-VH)
     *   [5.2 B150 PC MATE / B250 PC MATE / H110I PRO / Z370 GAMING PLUS](#B150_PC_MATE_/_B250_PC_MATE_/_H110I_PRO_/_Z370_GAMING_PLUS)
@@ -176,6 +177,10 @@ After this launch the UEFI Shell from the UEFI setup/menu (in ASROCK UEFI BIOS, 
 ### PowerEdge T30
 
 The Dell UEFI implementation needs the [UEFI firmware workaround](/index.php/GRUB/Tips_and_tricks#UEFI_firmware_workaround "GRUB/Tips and tricks") to load grub. Otherwise it will drop into a "no OS found" screen.
+
+### Latitude E7450
+
+In addition to the [UEFI firmware workaround](/index.php/GRUB/Tips_and_tricks#UEFI_firmware_workaround "GRUB/Tips and tricks") (without which GRUB isn't launched), the Dell Latitude seems to require to have the EFI system partition mounted on `/boot`. When ESP is mounted on `/efi`, GRUB fails to find the configuration files and launches the rescue console.
 
 ## MSI
 

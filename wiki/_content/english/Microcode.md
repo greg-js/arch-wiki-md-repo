@@ -20,6 +20,7 @@ Microcode updates are usually shipped with the motherboard's firmware and applie
         *   [1.2.1 Enabling early microcode loading in custom kernels](#Enabling_early_microcode_loading_in_custom_kernels)
         *   [1.2.2 GRUB](#GRUB)
         *   [1.2.3 systemd-boot](#systemd-boot)
+            *   [1.2.3.1 Unified kernel images](#Unified_kernel_images)
         *   [1.2.4 EFISTUB](#EFISTUB)
         *   [1.2.5 rEFInd](#rEFInd)
         *   [1.2.6 Syslinux](#Syslinux)
@@ -104,11 +105,14 @@ initrd  /initramfs-linux.img
 
 The latest microcode `*cpu_manufacturer*-ucode.img` must be available at boot time in your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) or [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/*cpu_manufacturer*-ucode.img` to your ESP at every update of the microcode package.
 
-For [kernels that have been generated as a single file](/index.php/Systemd-boot#Preparing_kernels_for_/EFI/Linux "Systemd-boot") containing all initrd, cmdline and kernel, first generate the initrd to integrate by creating a new one as follows:
+##### Unified kernel images
+
+For [unified kernel images](/index.php/Systemd-boot#Preparing_a_unified_kernel_image "Systemd-boot"), first generate the initrd to integrate by creating a new one as follows:
 
 ```
-cat /boot/*cpu_manufacturer*-ucode.img /boot/initramfs-linux.img > my_new_initrd
-objcopy ... --add-section .initrd=my_new_initrd
+$ cat /boot/*cpu_manufacturer*-ucode.img /boot/initramfs-linux.img > my_new_initrd.img
+$ objcopy ... --add-section .initrd=my_new_initrd .img
+
 ```
 
 #### EFISTUB

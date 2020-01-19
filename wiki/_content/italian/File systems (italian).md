@@ -10,7 +10,11 @@ Ogni singola partizione del disco può essere configurata utilizzando uno dei ta
 
 Prima di essere formattato, un disco deve essere [partizionato](/index.php/Partitioning_(Italiano) "Partitioning (Italiano)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tipi di File System](#Tipi_di_File_System)
     *   [1.1 Journaling](#Journaling)

@@ -14,7 +14,7 @@ The Arch build system is a *ports-like* system for building and packaging softwa
 
 *Ports* is a system used by *BSD to automate the process of building software from source code. The system uses a *port* to download, unpack, patch, compile, and install the given software. A *port* is merely a small directory on the user's computer, named after the corresponding software to be installed, that contains a few files with the instructions for building and installing the software from source. This makes installing software as simple as typing `make` or `make install clean` within the port's directory.
 
-ABS is a similar concept. ABS is made up of a directory tree that can be checked out using SVN. This tree represents, but does not contain, all official Arch software. Subdirectories do not contain the software package nor the source but rather a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file and sometimes other files. By issuing [makepkg](/index.php/Makepkg "Makepkg") inside a directory containing a PKGBUILD, the software is first compiled and then packaged within the build directory. Then you can use [pacman](/index.php/Pacman "Pacman") to install or upgrade your new package.
+ABS is a similar concept. A part of ABS is a SVN repository and an equivalent Git repository. The repository contains a directory corresponding to each package available in ArchLinux. The directories of the repository contain a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file (and sometimes other files), and do not contain the software source nor binary. By issuing [makepkg](/index.php/Makepkg "Makepkg") inside a directory, the software sources are downloaded, the software is compiled, and then packaged within the build directory. Then you can use [pacman](/index.php/Pacman "Pacman") to install the package.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -22,28 +22,31 @@ ABS is a similar concept. ABS is made up of a directory tree that can be checked
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 ABS overview](#ABS_overview)
-    *   [1.1 SVN tree](#SVN_tree)
-*   [2 Why would I want to use ABS?](#Why_would_I_want_to_use_ABS?)
-*   [3 How to use ABS](#How_to_use_ABS)
-    *   [3.1 Retrieve PKGBUILD source using SVN](#Retrieve_PKGBUILD_source_using_SVN)
-        *   [3.1.1 Prerequisites](#Prerequisites)
-        *   [3.1.2 Non-recursive checkout](#Non-recursive_checkout)
-        *   [3.1.3 Checkout a package](#Checkout_a_package)
-    *   [3.2 Retrieve PKGBUILD source using Git](#Retrieve_PKGBUILD_source_using_Git)
-    *   [3.3 Build package](#Build_package)
+*   [1 Overview](#Overview)
+    *   [1.1 Repository tree](#Repository_tree)
+*   [2 Use cases](#Use_cases)
+*   [3 Usage](#Usage)
+    *   [3.1 Retrieve PKGBUILD source](#Retrieve_PKGBUILD_source)
+        *   [3.1.1 Retrieve PKGBUILD source using SVN](#Retrieve_PKGBUILD_source_using_SVN)
+            *   [3.1.1.1 Prerequisites](#Prerequisites)
+            *   [3.1.1.2 Non-recursive checkout](#Non-recursive_checkout)
+            *   [3.1.1.3 Checkout a package](#Checkout_a_package)
+        *   [3.1.2 Retrieve PKGBUILD source using Git](#Retrieve_PKGBUILD_source_using_Git)
+    *   [3.2 Build package](#Build_package)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Preserve modified packages](#Preserve_modified_packages)
     *   [4.2 Checkout an older version of a package](#Checkout_an_older_version_of_a_package)
 *   [5 Other tools](#Other_tools)
 
-## ABS overview
+## Overview
 
 'ABS' may be used as an umbrella term since it includes and relies on several other components; therefore, though not technically accurate, 'ABS' can refer to the following tools as a complete toolkit:
 
-	SVN tree
+	Repository tree
 
 	The directory structure containing files needed to build all official packages but not the packages themselves nor the source files of the software. It is available in [svn](https://www.archlinux.org/svn/) and [git](https://projects.archlinux.org/svntogit/packages.git/) repositories.
+
+See section [#Repository tree](#Repository_tree) for more information.
 
 	[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
 
@@ -63,11 +66,11 @@ ABS is a similar concept. ABS is made up of a directory tree that can be checked
 
 **Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"). Building software on a *dirty* build system may fail or cause unexpected behaviour at runtime, because if the build system detects dependencies dynamically, the result depends on what packages are available on the build system.
 
-### SVN tree
+### Repository tree
 
-The *core*, *extra*, and *testing* [official repositories](/index.php/Official_repositories "Official repositories") are in the *packages* SVN repository for [checkout](#Non-recursive_checkout). The *community* and *multilib* repositories are in the *community* SVN repository.
+The *core*, *extra*, and *testing* [official repositories](/index.php/Official_repositories "Official repositories") are in the *packages* repository for [checkout](#Non-recursive_checkout). The *community* and *multilib* repositories are in the *community* repository.
 
-Each package has its own subdirectory. Within it there are `repos` and `trunk` directories. `repos` is further broken down by repository name (e.g., *core*) and architecture. PKGBUILD's and files found in `repos` are used in official builds. Files found in `trunk` are used by developers in preparation before being copied to `repos`.
+Each package has its own subdirectory. Within it there are `repos` and `trunk` directories. `repos` is further broken down by repository name (e.g., *core*) and architecture. PKGBUILDs and files found in `repos` are used in official builds. Files found in `trunk` are used by developers in preparation before being copied to `repos`.
 
 For example, the tree for [acl](https://www.archlinux.org/packages/?name=acl) looks like this:
 
@@ -85,31 +88,33 @@ acl/trunk/PKGBUILD
 
 The source code for the package is not present in the ABS directory. Instead, the `PKGBUILD` contains a URL that will download the source code when the package is built.
 
-## Why would I want to use ABS?
+## Use cases
 
-The Arch build system is used to:
+Use cases for ABS are:
 
-*   Compile or recompile a package, for any reason
+*   Any use case that requires you to compile or recompile a package
 *   Make and install new packages from source of software for which no packages are yet available (see [Creating packages](/index.php/Creating_packages "Creating packages"))
-*   Customize existing packages to fit your needs (enabling or disabling options, patching)
+*   Customize existing packages to fit your needs (e.g. enabling or disabling options, patching)
 *   Rebuild your entire system using your compiler flags, "à la FreeBSD" (e.g. with [pacman-src-git](https://aur.archlinux.org/packages/pacman-src-git/))
 *   Cleanly build and install your own custom kernel (see [Kernel compilation](/index.php/Kernels#Compilation "Kernels"))
-*   Get kernel modules working with your custom kernel
+*   Get kernel modules working with a custom kernel
 *   Easily compile and install a newer, older, beta, or development version of an Arch package by editing the version number in the PKGBUILD
 
-ABS is not necessary to use Arch Linux, but it is useful for automating certain tasks of source compilation.
+ABS automates certain tasks related to compilation from source. As an alternative to using ABS you could perform these tasks manually.
 
-## How to use ABS
+## Usage
 
 To retrieve the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") required to build a certain package from source, you can either use [SVN](/index.php/SVN "SVN") or a [Git](/index.php/Git "Git")-based approach using the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories. In the following, the svn-based method as well as the [git-based method](#Retrieve_PKGBUILD_source_using_Git) are described.
 
-### Retrieve PKGBUILD source using SVN
+### Retrieve PKGBUILD source
 
-#### Prerequisites
+#### Retrieve PKGBUILD source using SVN
+
+##### Prerequisites
 
 [Install](/index.php/Install "Install") the [subversion](https://www.archlinux.org/packages/?name=subversion) package.
 
-#### Non-recursive checkout
+##### Non-recursive checkout
 
 **Warning:** Do not download the whole repository; only follow the instructions below. The entire SVN repository is huge. Not only will it take an obscene amount of disk space, but it will also tax the archlinux.org server for you to download it. If you abuse this service, your address may be blocked. Never use the public SVN for any sort of scripting.
 
@@ -129,7 +134,7 @@ $ svn checkout --depth=empty svn://svn.archlinux.org/community
 
 In both cases, it simply creates an empty directory, but it does know that it is an svn checkout.
 
-#### Checkout a package
+##### Checkout a package
 
 In the directory containing the svn repository you checked out (i.e., *packages* or *community*), do:
 
@@ -155,9 +160,9 @@ $ svn update
 
 ```
 
-### Retrieve PKGBUILD source using Git
+#### Retrieve PKGBUILD source using Git
 
-As a precondition, [install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package.
+As a precondition, [install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package. [Asp](https://github.com/falconindy/asp) is a tool to manage the build source files used to create Arch Linux packages. Uses the git interface which offers more up to date sources. Also see the Archlinux BBS forum thread [[1]](https://bbs.archlinux.org/viewtopic.php?id=185075).
 
 To clone the svntogit-repository for a specific package, use:
 
@@ -181,9 +186,11 @@ $ asp export *pkgname*
 
 ### Build package
 
-See [makepkg#Configuration](/index.php/Makepkg#Configuration "Makepkg") on how to configure *makepkg* for building packages from the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")'s you have checked out.
+Configure *makepkg* for building packages from the [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") you have checked out, as given in article [makepkg#Configuration](/index.php/Makepkg#Configuration "Makepkg").
 
-Then, copy the directory containing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") you wish to modify to a new location. There, make the desired modifications and use *makepkg* there as described in [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg") to create and install the new package.
+Then, copy the directory containing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") you wish to modify to a new location.
+
+There, make the desired modifications and use *makepkg* there as described in [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg") to create and install the new package.
 
 ## Tips and tricks
 
@@ -231,4 +238,3 @@ It is possible to checkout packages at versions before they were moved to anothe
 ## Other tools
 
 *   [pbget](http://xyne.archlinux.ca/projects/pbget/) - retrieve PKGBUILDs for individual packages directly from the web interface. Includes AUR support.
-*   [asp](https://github.com/falconindy/asp) - a tool to manage the build source files used to create Arch Linux packages. Uses the git interface which offers more up to date sources.

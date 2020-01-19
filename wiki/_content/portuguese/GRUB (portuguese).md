@@ -3,8 +3,8 @@
 Artigos relacionados
 
 *   [Processo de inicialização do Arch](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch "Processo de inicialização do Arch")
-*   [Master Boot Record (Português)](/index.php/Master_Boot_Record_(Portugu%C3%AAs) "Master Boot Record (Português)")
-*   [Tabela de Partição GUID](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Master Boot Record](/index.php/Master_Boot_Record_(Portugu%C3%AAs) "Master Boot Record (Português)")
+*   [Tabela de Partição GUID](/index.php/Tabela_de_Parti%C3%A7%C3%A3o_GUID "Tabela de Partição GUID")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")
 *   [GRUB/Exemplos de EFI](/index.php/GRUB/EFI_examples "GRUB/EFI examples")
@@ -123,7 +123,7 @@ sendo `/dev/sd*X*` o disco no qual o GRUB deve ser instalado (por exemplo, o dis
 
 Agora, você deve [gerar o arquivo de configuração principal](#Gerar_o_arquivo_de_configuração_principal).
 
-Se você usa [LVM](/index.php/LVM "LVM") para seu `/boot`, você pode instalar o GRUB em vários discos físicos.
+Se você usa [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") para seu `/boot`, você pode instalar o GRUB em vários discos físicos.
 
 **Dica:** Veja [GRUB/Tips and tricks#Alternative installation methods](/index.php/GRUB/Tips_and_tricks#Alternative_installation_methods "GRUB/Tips and tricks") para outras formas de instalar o GRUB, tal como um pendrive USB.
 
@@ -242,7 +242,7 @@ Veja [Parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros d
 
 **Atenção:** O GRUB não possui suporte a volumes lógicos *thin-provisioned*.
 
-Se você usa [LVM](/index.php/LVM "LVM") para sua partição `/boot` ou `/`, certifique-se de que o módulo `lvm` esteja pré-carregado:
+Se você usa [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") para sua partição `/boot` ou `/`, certifique-se de que o módulo `lvm` esteja pré-carregado:
 
  `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... lvm"` 
 
@@ -280,7 +280,7 @@ sendo que o vetor RAID 1 contendo `/boot` está contido em ambos `/dev/sda` e `/
 
 #### /boot criptografado
 
-O GRUB também tem suporte especial para inicializar com um `/boot` criptografado. Isto é feito desbloqueando um dispositivo de bloco [LUKS](/index.php/LUKS_(Portugu%C3%AAs) "LUKS (Português)") para ler sua configuração e carregar qualquer [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") e [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") dele. Esta opção tenta resolver o problema de ter uma [partição de inicialização não criptografada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+O GRUB também tem suporte especial para inicializar com um `/boot` criptografado. Isto é feito desbloqueando um dispositivo de bloco [LUKS](/index.php/LUKS_(Portugu%C3%AAs) "LUKS (Português)") para ler sua configuração e carregar qualquer [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") e [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") dele. Esta opção tenta resolver o problema de ter uma [partição de inicialização não criptografada](/index.php/Dm-crypt/Especificidades#Protegendo_a_partição_de_boot_não_criptografada "Dm-crypt/Especificidades").
 
 **Nota:** `/boot` **não** precisa obrigatoriamente ser mantido em uma partição separada; ele também pode ficar sob a árvore de diretórios `/` da raiz do sistema.
 
@@ -441,7 +441,7 @@ menuentry "Outro Linux" {
 
 Este modo determina onde o carregador de boot do Windows reside e carrega-o após o GRUB quando a entrada do menu é selecionada. A principal tarefa aqui é encontrar a partição do sistema EFI e executar o carregador de boot a partir dela.
 
-**Nota:** Este entrada de menu funcionará apenas no modo de inicialização UEFI e somente se o *bitness* do Windows corresponder ao *bitstream* do UEFI. Não funcionará no GRUB instalado na BIOS. Veja [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") e [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") para mais informações.
+**Nota:** Este entrada de menu funcionará apenas no modo de inicialização UEFI e somente se o *bitness* do Windows corresponder ao *bitstream* do UEFI. Não funcionará no GRUB instalado na BIOS. Veja [Limitações do Windows em UEFI versus BIOS](/index.php/Dual_boot_with_Windows_(Portugu%C3%AAs)#Limitações_do_Windows_em_UEFI_versus_BIOS "Dual boot with Windows (Português)") e [Limitações do gerenciador de boot em UEFI versus BIOS](/index.php/Dual_boot_with_Windows_(Portugu%C3%AAs)#Limitações_do_gerenciador_de_boot_em_UEFI_versus_BIOS "Dual boot with Windows (Português)") para mais informações.
 
 ```
 if [ "${grub_platform}" == "efi" ]; then
@@ -477,7 +477,7 @@ Estes dois comandos presumem o uso da ESP do Windows montada em `*esp*`. Pode ha
 
 Ao longo desta seção, presume-se que sua partição do Windows é `/dev/sda1`. Uma partição diferente mudará todas as instâncias de `hd0,msdos1`.
 
-**Nota:** Este entrada de menu funcionará apenas no modo de inicialização BIOS. Não funcionará no GRUB instalado na UEFI. Veja [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") e [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
+**Nota:** Este entrada de menu funcionará apenas no modo de inicialização BIOS. Não funcionará no GRUB instalado na UEFI. Veja [Limitações do Windows em UEFI versus BIOS](/index.php/Dual_boot_with_Windows_(Portugu%C3%AAs)#Limitações_do_Windows_em_UEFI_versus_BIOS "Dual boot with Windows (Português)") e [Limitações do gerenciador de boot em UEFI versus BIOS](/index.php/Dual_boot_with_Windows_(Portugu%C3%AAs)#Limitações_do_gerenciador_de_boot_em_UEFI_versus_BIOS "Dual boot with Windows (Português)") .
 
 Em ambos exemplos `*XXXXXXXXXXXXXXXX*` é o UUID do sistema de arquivos que pode ser encontrado com o comando `lsblk --fs`.
 

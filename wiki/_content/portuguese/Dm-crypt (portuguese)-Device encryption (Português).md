@@ -794,7 +794,7 @@ Você pode montar o container novamente:
 
 ## Keyfiles
 
-**Nota:** Esta seção descreve o uso de keyfile em texto puro. Se desejar criptografar a keyfile para conseguir autentificação de dois fatores veja [Usando keyfiles criptografadas com GPG ou OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") para detalhes, mas ainda leia esta seção.
+**Nota:** Esta seção descreve o uso de keyfile em texto puro. Se desejar criptografar a keyfile para conseguir autentificação de dois fatores veja [Usando keyfiles criptografadas com GPG, LUKS ou OpenSSL](/index.php/Dm-crypt/Especificidades#Usando_keyfiles_criptografadas_com_GPG,_LUKS_ou_OpenSSL "Dm-crypt/Especificidades") para detalhes, mas ainda leia esta seção.
 
 **O que é uma keyfile?**
 

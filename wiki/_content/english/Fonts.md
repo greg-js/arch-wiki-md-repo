@@ -321,7 +321,7 @@ Relevant websites:
 #### Serif
 
 *   [Bodoni*](https://indestructibletype.com/Bodoni.html) ([otf-bodoni](https://aur.archlinux.org/packages/otf-bodoni/)) - An open-source [Bodoni](https://en.wikipedia.org/wiki/Bodoni "wikipedia:Bodoni") revival
-*   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/)) - An open-source [Garamond](https://en.wikipedia.org/wiki/Garamond "wikipedia:Garamond") revival
+*   [EB Garamond](https://github.com/octaviopardo/EBGaramond12) ([ebgaramond-otf](https://aur.archlinux.org/packages/ebgaramond-otf/)) - An open-source [Garamond](https://en.wikipedia.org/wiki/Garamond "wikipedia:Garamond") revival
 *   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([gentium-plus-font](https://www.archlinux.org/packages/?name=gentium-plus-font)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew

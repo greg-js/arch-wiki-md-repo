@@ -38,6 +38,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [30 GNOME Wayland session not available](#GNOME_Wayland_session_not_available)
 *   [31 gnome-control-center is empty and does not list any categories](#gnome-control-center_is_empty_and_does_not_list_any_categories)
 *   [32 Gnome freezes for a second after using a Function (Fn) key shortcut](#Gnome_freezes_for_a_second_after_using_a_Function_(Fn)_key_shortcut)
+*   [33 Zoom in/out keyboard shortcuts don't work on some apps](#Zoom_in/out_keyboard_shortcuts_don't_work_on_some_apps)
 
 ## Shell freezes
 
@@ -388,3 +389,9 @@ This is a problem with the brazilian portuguese ABNT 2 keyboard. If you have the
 ```
 
 And restart the session (log out and in).
+
+## Zoom in/out keyboard shortcuts don't work on some apps
+
+`Ctrl` + `+` and `Ctrl` + `-` keyboard shourtcuts for zoom in/out functions don't work out of the box on some Gnome apps, such as Files and Gnome-Terminal.
+
+In such cases, open up GNOME Tweaks ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)) and navigate to Keyboard & Mouse > Additional Layout Options button > Layout of numeric keypad. Change the `Disabled` value to `Hexadecimal`.

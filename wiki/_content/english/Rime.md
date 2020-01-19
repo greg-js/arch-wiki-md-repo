@@ -1,6 +1,10 @@
 **[Rime](https://rime.github.io/)** is an [input method](/index.php/Input_method "Input method") engine for entering Chinese characters supporting a wide range of input methods. Rime IME can be used with the [Fcitx](/index.php/Fcitx "Fcitx") and [IBus](/index.php/IBus "IBus") input method frameworks.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

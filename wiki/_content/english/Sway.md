@@ -36,6 +36,7 @@
     *   [5.4 Unable to retrieve socket path](#Unable_to_retrieve_socket_path)
     *   [5.5 Keybindings and keyboard layouts](#Keybindings_and_keyboard_layouts)
     *   [5.6 Java applications](#Java_applications)
+    *   [5.7 Scroll on border](#Scroll_on_border)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -399,7 +400,14 @@ Also `krunner` binary provided by [plasma-workspace](https://www.archlinux.org/p
 
 ### Virtualization
 
-Sway doesn't work well (or at all) under [VirtualBox](/index.php/VirtualBox "VirtualBox") or [VMware](/index.php/VMware "VMware") ESXi.
+Sway works with both [VirtualBox](/index.php/VirtualBox "VirtualBox") and [VMware](/index.php/VMware "VMware") ESXi.
+
+However, when using the VMSVGA graphics controller, the cursor is invisible. This can be fixed by using software cursors as discussed in [[2]](https://github.com/swaywm/sway/issues/3814):
+
+```
+$ export WLR_NO_HARDWARE_CURSORS=1
+
+```
 
 ### Sway socket not detected
 
@@ -462,6 +470,10 @@ bindsym --to-code {
 Some Java-based applications will display blank screen when opened, for example any Intellij editor. To mitigate this, the application can be started with the `_JAVA_AWT_WM_NONREPARENTING` environment variable set to 1.
 
 If you start the application from a launcher like [rofi](https://www.archlinux.org/packages/?name=rofi) or [dmenu](https://www.archlinux.org/packages/?name=dmenu), you might want to modify the application desktop entry as shown in [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
+
+### Scroll on border
+
+If using the mouse scroll wheel on an application's border crashes sway, you could use `border none` for the `app_id` (e.g. Firefox).
 
 ## See also
 

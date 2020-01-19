@@ -711,7 +711,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 	[http://brlcad.org/](http://brlcad.org/) || [brlcad](https://aur.archlinux.org/packages/brlcad/)
 
-*   **DraftSight** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them.
+*   **DraftSight** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them. Linux version has been [discontinued](https://twitter.com/DraftSight/status/1212857857240117248).
 
 	[https://www.3ds.com/products-services/draftsight-cad-software/](https://www.3ds.com/products-services/draftsight-cad-software/) || [draftsight](https://aur.archlinux.org/packages/draftsight/)
 

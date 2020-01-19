@@ -5,7 +5,7 @@
 | <small>1.2.1.</small> [Ajuda](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
 | <small>1.2.2.</small> [Listas](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(4)</small> |
 | <small>1.2.2.1.</small> [Listas de software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(11) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
-| <small>1.3.</small> [Processo de instalação](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(11)</small> |
+| <small>1.3.</small> [Processo de instalação](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(12)</small> |
 | <small>1.4.</small> [Sistemas Arch Live](/index.php/Category:Live_Arch_systems_(Portugu%C3%AAs) "Category:Live Arch systems (Português)") <small>(2)</small> |
 | <small>1.5.</small> [Equipes](/index.php/Category:Teams_(Portugu%C3%AAs) "Category:Teams (Português)") <small>(5)</small> |
 | <small>2.</small> [Desenvolvimento](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(4)</small> |
@@ -19,7 +19,7 @@
 | <small>3.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(0)</small> |
 | <small>3.1.</small> [CPU](/index.php/Category:CPU_(Portugu%C3%AAs) "Category:CPU (Português)") <small>(2)</small> |
 | <small>3.2.</small> [Gráficos](/index.php/Category:Graphics_(Portugu%C3%AAs) "Category:Graphics (Português)") <small>(1)</small> |
-| <small>3.3.</small> [Detecção e solução de problemas de hardware](/index.php/Category:Hardware_detection_and_troubleshooting_(Portugu%C3%AAs) "Category:Hardware detection and troubleshooting (Português)") <small>(2)</small> |
+| <small>3.3.</small> [Detecção e solução de problemas de hardware](/index.php/Category:Hardware_detection_and_troubleshooting_(Portugu%C3%AAs) "Category:Hardware detection and troubleshooting (Português)") <small>(3)</small> |
 | <small>3.4.</small> [Dispositivos de entrada](/index.php/Category:Input_devices_(Portugu%C3%AAs) "Category:Input devices (Português)") <small>(0) (também em [Entrada](/index.php/Category:Input_(Portugu%C3%AAs) "Category:Input (Português)"))</small> |
 | <small>3.4.1.</small> [Teclados](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(2)</small> |
 | <small>3.4.2.</small> [Mouses](/index.php/Category:Mice_(Portugu%C3%AAs) "Category:Mice (Português)") <small>(1)</small> |
@@ -85,7 +85,7 @@
 | <small>5.1.14.3.</small> [Software wiki](/index.php/Category:Wiki_software_(Portugu%C3%AAs) "Category:Wiki software (Português)") <small>(1)</small> |
 | <small>5.2.</small> [Linha de comando](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(4) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
 | <small>5.2.1.</small> [Shells de comando](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Linguagens de programação](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
-| <small>5.2.2.</small> [Comandos](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(18)</small> |
+| <small>5.2.2.</small> [Comandos](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(19)</small> |
 | <small>5.2.2.1.</small> [Aplicativos de console](/index.php/Category:Console_applications_(Portugu%C3%AAs) "Category:Console applications (Português)") <small>(1) (também em [Aplicativos](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>5.2.2.2.</small> [Internos de shell](/index.php/Category:Shell_builtins_(Portugu%C3%AAs) "Category:Shell builtins (Português)") <small>(3)</small> |
 | <small>5.2.2.3.</small> [Superseded commands](/index.php/Category:Superseded_commands_(Portugu%C3%AAs) "Category:Superseded commands (Português)") <small>(1)</small> |
@@ -110,13 +110,13 @@
 | <small>5.9.1.</small> [Comandos de Xorg](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Comandos](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
 | <small>6.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(5)</small> |
 | <small>6.1.</small> [Backup](/index.php/Category:Backup_(Portugu%C3%AAs) "Category:Backup (Português)") <small>(1)</small> |
-| <small>6.2.</small> [Processo de inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(9)</small> |
+| <small>6.2.</small> [Processo de inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(10)</small> |
 | <small>6.2.1.</small> [Gerenciadores de boot](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(2)</small> |
 | <small>6.2.2.</small> [Tela de inicialização](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)"))</small> |
 | <small>6.2.3.</small> [Init](/index.php/Category:Init_(Portugu%C3%AAs) "Category:Init (Português)") <small>(2)</small> |
 | <small>6.3.</small> [Linha de comando](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(4) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
 | <small>6.3.1.</small> [Shells de comando](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Linguagens de programação](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
-| <small>6.3.2.</small> [Comandos](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(18)</small> |
+| <small>6.3.2.</small> [Comandos](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(19)</small> |
 | <small>6.3.2.1.</small> [Aplicativos de console](/index.php/Category:Console_applications_(Portugu%C3%AAs) "Category:Console applications (Português)") <small>(1) (também em [Aplicativos](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>6.3.2.2.</small> [Internos de shell](/index.php/Category:Shell_builtins_(Portugu%C3%AAs) "Category:Shell builtins (Português)") <small>(3)</small> |
 | <small>6.3.2.3.</small> [Superseded commands](/index.php/Category:Superseded_commands_(Portugu%C3%AAs) "Category:Superseded commands (Português)") <small>(1)</small> |
@@ -131,9 +131,9 @@
 | <small>6.6.1.3.</small> [Servidor web](/index.php/Category:Web_server_(Portugu%C3%AAs) "Category:Web server (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |
 | <small>6.7.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(2)</small> |
 | <small>6.7.1.</small> [Tela de inicialização](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
-| <small>6.8.</small> [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(7)</small> |
-| <small>6.8.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(8) (também em [Encriptação](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)"))</small> |
-| <small>6.8.2.</small> [Virtualização de armazenamento](/index.php/Category:Storage_virtualization_(Portugu%C3%AAs) "Category:Storage virtualization (Português)") <small>(1)</small> |
+| <small>6.8.</small> [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(8)</small> |
+| <small>6.8.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(9) (também em [Encriptação](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)"))</small> |
+| <small>6.8.2.</small> [Virtualização de armazenamento](/index.php/Category:Storage_virtualization_(Portugu%C3%AAs) "Category:Storage virtualization (Português)") <small>(2)</small> |
 | <small>6.9.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(4)</small> |
 | <small>6.10.</small> [Interfaces gráficas de usuário](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(6)</small> |
 | <small>6.10.1.</small> [Toolkits de widget](/index.php/Category:Widget_toolkits_(Portugu%C3%AAs) "Category:Widget toolkits (Português)") <small>(1) (também em [Desenvolvimento](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
@@ -146,7 +146,7 @@
 | <small>6.11.1.1.</small> [Teclados](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(2)</small> |
 | <small>6.11.1.2.</small> [Mouses](/index.php/Category:Mice_(Portugu%C3%AAs) "Category:Mice (Português)") <small>(1)</small> |
 | <small>6.11.2.</small> [Configuração de teclado](/index.php/Category:Keyboard_configuration_(Portugu%C3%AAs) "Category:Keyboard configuration (Português)") <small>(2)</small> |
-| <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(4)</small> |
+| <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(5)</small> |
 | <small>6.13.</small> [Console Linux](/index.php/Category:Linux_console_(Portugu%C3%AAs) "Category:Linux console (Português)") <small>(3)</small> |
 | <small>6.14.</small> [Localização](/index.php/Category:Localization_(Portugu%C3%AAs) "Category:Localization (Português)") <small>(2)</small> |
 | <small>6.15.</small> [Registro log](/index.php/Category:Logging_(Portugu%C3%AAs) "Category:Logging (Português)") <small>(1)</small> |
@@ -154,13 +154,13 @@
 | <small>6.16.1.</small> [Monitoramento de rede](/index.php/Category:Network_monitoring_(Portugu%C3%AAs) "Category:Network monitoring (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
 | <small>6.16.2.</small> [Monitores de sistema](/index.php/Category:System_monitors_(Portugu%C3%AAs) "Category:System monitors (Português)") <small>(1) (também em [Aplicativos](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>6.17.</small> [Notificação](/index.php/Category:Notification_(Portugu%C3%AAs) "Category:Notification (Português)") <small>(1)</small> |
-| <small>6.18.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(23)</small> |
+| <small>6.18.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(24)</small> |
 | <small>6.19.</small> [Gerenciamento de energia](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(2)</small> |
 | <small>6.20.</small> [Segurança](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(10)</small> |
 | <small>6.20.1.</small> [Controle de acesso](/index.php/Category:Access_control_(Portugu%C3%AAs) "Category:Access control (Português)") <small>(1)</small> |
 | <small>6.20.2.</small> [Criptografia](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |
 | <small>6.20.2.1.</small> [Encriptação](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)") <small>(2)</small> |
-| <small>6.20.2.1.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(8) (também em [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)"))</small> |
+| <small>6.20.2.1.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(9) (também em [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)"))</small> |
 | <small>6.20.3.</small> [Sandboxing](/index.php/Category:Sandboxing_(Portugu%C3%AAs) "Category:Sandboxing (Português)") <small>(1)</small> |
 | <small>6.20.4.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(5) (também em [Protocolos](/index.php/Category:Protocols_(Portugu%C3%AAs) "Category:Protocols (Português)"))</small> |
 | <small>6.20.5.</small> [Rede Privada Virtual (VPN)](/index.php/Category:Virtual_Private_Network_(Portugu%C3%AAs) "Category:Virtual Private Network (Português)") <small>(2) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"), [Servidores](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |

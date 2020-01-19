@@ -98,43 +98,7 @@
 
 #### Network managers
 
-*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
-
-	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
-
-*   **dhclient** — DHCP client from the Internet Systems Consortium.
-
-	[https://www.isc.org/downloads/dhcp/](https://www.isc.org/downloads/dhcp/) || [dhclient](https://www.archlinux.org/packages/?name=dhclient)
-
-*   **[dhcpcd](/index.php/Dhcpcd "Dhcpcd")** — RFC2131 compliant DHCP client daemon.
-
-	[https://roy.marples.name/projects/dhcpcd](https://roy.marples.name/projects/dhcpcd) || [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)
-
-*   **[netctl](/index.php/Netctl "Netctl")** — Simple and robust tool to manage network connections via profiles. Intended for use with [systemd](/index.php/Systemd "Systemd").
-
-	[https://projects.archlinux.org/netctl.git/](https://projects.archlinux.org/netctl.git/) || [netctl](https://www.archlinux.org/packages/?name=netctl)
-
-*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Manager that provides wired, wireless, mobile broadband and OpenVPN detection with configuration and automatic connection.
-
-	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || CLI: [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), GUI: [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)
-
-*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev").
-
-	[https://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](https://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
-
-*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with ncurses and GTK interfaces.
-
-	[https://launchpad.net/wicd](https://launchpad.net/wicd) || CLI: [wicd](https://www.archlinux.org/packages/?name=wicd), GUI: [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk)
-
-*   **[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")** — *WiFi Radar* is a PyGTK (Python 2) utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
-
-	[http://wifi-radar.tuxfamily.org/](http://wifi-radar.tuxfamily.org/) || [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar)
-
-*   **wpa-cute** — Is a graphical Qt [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") front end to manage your wireless profiles *only*. It offer to change and add profiles or scan for networks and connect to them by [WPS](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Setup "wikipedia:Wi-Fi Protected Setup").
-
-	[https://github.com/loh-tar/wpa-cute](https://github.com/loh-tar/wpa-cute) || [wpa-cute](https://aur.archlinux.org/packages/wpa-cute/)
-
-See also [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
+See [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
 
 #### VPN clients
 
@@ -1707,7 +1671,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 
 *   **[Signal](https://en.wikipedia.org/wiki/Signal_(software) "wikipedia:Signal (software)")** — Signal Private Messenger for the Desktop. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://github.com/signalapp/Signal-Desktop](https://github.com/signalapp/Signal-Desktop) || [signal](https://aur.archlinux.org/packages/signal/)
+	[https://github.com/signalapp/Signal-Desktop](https://github.com/signalapp/Signal-Desktop) || [signal-desktop](https://www.archlinux.org/packages/?name=signal-desktop)
 
 *   **[Skype](https://en.wikipedia.org/wiki/Skype "wikipedia:Skype")** — Popular but proprietary application for voice and video communication. Based on the [Electron](https://electronjs.org/) platform.
 

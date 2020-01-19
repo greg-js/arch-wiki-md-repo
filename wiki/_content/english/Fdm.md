@@ -166,7 +166,7 @@ Description=Fetch mail using fdm
 # Uncomment to run the service two minutes after booting
 # OnBootSec=2m
 OnUnitActiveSec=15m
-Persistant=true
+Persistent=true
 
 [Install]
 WantedBy=timers.target
@@ -176,7 +176,7 @@ WantedBy=timers.target
 Finally:
 
 ```
-$ systemctl --user daemon-refresh
+$ systemctl --user daemon-reload
 $ systemctl --user start fdm.timer
 
 ```

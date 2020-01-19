@@ -36,11 +36,7 @@ This task is explained in detail in the [official documentation](https://docs.so
 
 ### Upgrading the firmware
 
-Managing your Solo, e.g. upgrading the firmware or setting a PIN, requires the [solo-python](https://aur.archlinux.org/packages/solo-python/) package.
-
-**Note:** The current version of solo-python (0.0.20) [does not compile](https://github.com/solokeys/solo-python/issues/49) with the current [python-fido2](https://www.archlinux.org/packages/?name=python-fido2). Until this is resolved, you need either to downgrade python-fido2 to 0.7.1-3 or apply the patch from [the respecting pull request](https://github.com/solokeys/solo-python/pull/47)
-
-After installing the package, first check if your key is detected.
+Managing your Solo, e.g. upgrading the firmware or setting a PIN, requires the [solo-python](https://aur.archlinux.org/packages/solo-python/) package. After installing the package, first check if your key is detected.
 
  `$ solo ls` 
 ```
@@ -82,6 +78,7 @@ Click the button of your Solo to confirm the key.
 If you own multiple keys, append them with
 
  `$ pamu2fcfg -o pam://hostname -i pam://hostname >> ~/.config/Yubico/u2f_keys` 
+**Note:** According to the PAM module [documentation](https://developers.yubico.com/pam-u2f/), multiple keys have to be formatted as: `<username>:<KeyHandle1>,<UserKey1>:<KeyHandle2>,<UserKey2>:...` 
 
 ### Passwordless sudo
 

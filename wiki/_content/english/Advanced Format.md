@@ -17,10 +17,28 @@ $ cat /sys/class/block/sd*X*/queue/logical_block_size
 
 Drives with a translation layer (see above) will usually report a logical block size of 512 (for backwards compatibility) and a physical block size of 4096 (indicating they are AF drives).
 
-Tools which will report the physical sector of a drive (provided the drive will report it correctly) includes
+Tools which will report the sector of a drive (provided the drive will report it correctly) includes:
 
-*   [smartmontools](/index.php/S.M.A.R.T. "S.M.A.R.T.") since 5.41: `smartctl -a /dev/sd*X* | grep 'Sector Size:'`
-*   [hdparm](/index.php/Hdparm "Hdparm") since 9.12: `hdparm -I /dev/sd*X* | grep 'Physical Sector size:'`
+*   [fdisk](/index.php/Fdisk "Fdisk"):
+
+```
+# fdisk -l /dev/sd*X* | grep 'Sector size'
+
+```
+
+*   [smartmontools](/index.php/S.M.A.R.T. "S.M.A.R.T.") since 5.41:
+
+```
+# smartctl -a /dev/sd*X* | grep 'Sector Sizes:'
+
+```
+
+*   [hdparm](/index.php/Hdparm "Hdparm") since 9.12:
+
+```
+# hdparm -I /dev/sd*X* | grep 'Sector size:'
+
+```
 
 Note that both works even for USB-attached discs (if the USB bridge supports SAT aka SCSI/ATA Translation, ANSI INCITS 431-2007).
 

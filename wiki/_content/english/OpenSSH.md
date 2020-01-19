@@ -600,6 +600,8 @@ $ ssh -J user1@bastion1,user2@intermediate2 user3@target
 
 Multiple hosts in the `-J` directive can be separted with a comma, they will be connected to in the order listed. The `user...@` part is not required, but can be used. The host specifications for `-J` use the ssh configuration file, so specific per-host options can be set there, if needed.
 
+An equivalent of the `-J` flag in the configuration file is the `ProxyJump` option, see [ssh_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5) for details.
+
 ### Reverse SSH through a relay
 
 The idea is that client connects to the server via another relay, while the server is connected to the same relay using a reverse SSH tunnel. This is for example useful when the server is behind a NAT and relay is a publicly accessible SSH server used as a proxy to which the user has access. So the prerequisite is that client's keys are authorized against both the relay and the server and server's need to be authorized against the relay as well for the reverse SSH connection.

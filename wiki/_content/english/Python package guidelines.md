@@ -87,14 +87,14 @@ build() {
 }
 
 package() {
-    *python* setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+    *python* setup.py install --root="$pkgdir" --optimize=1 --skip-build
 }
 ```
 
 where:
 
 *   *python* is replaced with the proper binary, `python` or `python2`
-*   `--root="$pkgdir/"` prevents trying to directly install in the host system instead of inside the package file, which would result in a permission error
+*   `--root="$pkgdir"` prevents trying to directly install in the host system instead of inside the package file, which would result in a permission error
 *   `--optimize=1` compiles optimized bytecode files (`.pyo` for Python 2, `opt-1.pyc` for Python 3) so they can be tracked by [pacman](/index.php/Pacman "Pacman").
 *   `--skip-build` optimizes away the unnecessary attempt to re-run the build steps already run in the `build()` function.
 

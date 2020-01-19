@@ -9,7 +9,7 @@ This article discusses the steps required for moving an Arch Linux system to new
 
 There are two different approaches to migrating an installation:
 
-1.  *Bottom to Top*: Install a fresh Arch Linux system on the new hardware, afterwards restore the installed packages and configuration files.
+1.  *Bottom to Top*: Install a fresh Arch Linux system on the new hardware, afterwards restore the installed packages and configuration files, e.g. as describedn in [dotfiles](/index.php/Dotfiles "Dotfiles").
 2.  *Top to Bottom*: Clone the old harddrive to the new harddrive, or place the old harddrive into the new system; modify configuration files where necessary.
 
 The Top to bottom approach gives a more exact reproduction of the original system than the Bottom to Top approach.

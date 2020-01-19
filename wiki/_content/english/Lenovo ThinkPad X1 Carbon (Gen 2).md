@@ -36,26 +36,26 @@ Related articles
     *   [2.6 Audio](#Audio)
     *   [2.7 Processor](#Processor)
     *   [2.8 BIOS UPDATE](#BIOS_UPDATE)
-*   [3 Add ALSA-Preamplifier](#Add_ALSA-Preamplifier)
-    *   [3.1 Network](#Network)
-        *   [3.1.1 Wired](#Wired)
-        *   [3.1.2 Wireless](#Wireless)
-    *   [3.2 Display](#Display)
-        *   [3.2.1 Touchscreen](#Touchscreen)
-        *   [3.2.2 GPU](#GPU)
-        *   [3.2.3 HiDPI](#HiDPI)
-        *   [3.2.4 Xbindkeys](#Xbindkeys)
-    *   [3.3 KMS](#KMS)
-    *   [3.4 Webcam](#Webcam)
-    *   [3.5 Fingerprint Reader](#Fingerprint_Reader)
-    *   [3.6 WWAN (Mobile broadband)](#WWAN_(Mobile_broadband))
-    *   [3.7 GPS](#GPS)
-    *   [3.8 Bluetooth](#Bluetooth)
-*   [4 Other hardware](#Other_hardware)
-    *   [4.1 Docking](#Docking)
-        *   [4.1.1 Audio](#Audio_2)
-        *   [4.1.2 Video](#Video)
-        *   [4.1.3 Other ports](#Other_ports)
+    *   [2.9 Add ALSA-Preamplifier](#Add_ALSA-Preamplifier)
+    *   [2.10 Network](#Network)
+        *   [2.10.1 Wired](#Wired)
+        *   [2.10.2 Wireless](#Wireless)
+    *   [2.11 Display](#Display)
+        *   [2.11.1 Touchscreen](#Touchscreen)
+        *   [2.11.2 GPU](#GPU)
+        *   [2.11.3 HiDPI](#HiDPI)
+        *   [2.11.4 Xbindkeys](#Xbindkeys)
+    *   [2.12 KMS](#KMS)
+    *   [2.13 Webcam](#Webcam)
+    *   [2.14 Fingerprint Reader](#Fingerprint_Reader)
+    *   [2.15 WWAN (Mobile broadband)](#WWAN_(Mobile_broadband))
+    *   [2.16 GPS](#GPS)
+    *   [2.17 Bluetooth](#Bluetooth)
+*   [3 Other hardware](#Other_hardware)
+    *   [3.1 Docking](#Docking)
+        *   [3.1.1 Audio](#Audio_2)
+        *   [3.1.2 Video](#Video)
+        *   [3.1.3 Other ports](#Other_ports)
 
 ## Model description
 
@@ -491,7 +491,7 @@ Since there is no CD drive, this method can be used (German):
 
 ```
 
-## Add ALSA-Preamplifier
+### Add ALSA-Preamplifier
 
 It is a common problem on laptops running linux that the sound, even on maximum, is not loud enough. This can be fixed by adding an ALSA preamplifier. Install alsa-utils:
 

@@ -2,7 +2,7 @@ Related articles
 
 *   [DNS over HTTPS servers](/index.php/DNS_over_HTTPS_servers "DNS over HTTPS servers")
 
-**DNS over HTTPS** (DNS Queries over HTTPS; **DoH**) wraps [DNS](/index.php/DNS "DNS") queries in [HTTPS](/index.php/TLS "TLS"). Therefore, privacy and integrity of the DNS response is guaranteed, and the system is protected agains man-in-the-middle attacks.
+**DNS over HTTPS** (DNS Queries over HTTPS; **DoH**) wraps [DNS](/index.php/DNS "DNS") queries in HTTPS. Therefore, privacy and integrity of the DNS response is guaranteed, and the system is protected agains man-in-the-middle attacks.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -17,7 +17,6 @@ Related articles
 *   [3 Local DNS server](#Local_DNS_server)
     *   [3.1 cloudflared](#cloudflared)
     *   [3.2 CoreDNS](#CoreDNS)
-    *   [3.3 dnscrypt-proxy](#dnscrypt-proxy)
 *   [4 See also](#See_also)
 
 ## Publicly available servers
@@ -92,12 +91,7 @@ Upstream documentation: [https://developers.cloudflare.com/1.1.1.1/dns-over-http
 
  `/etc/resolv.conf`  `nameserver 127.0.0.1` 
 
-### dnscrypt-proxy
-
-→ [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy")
-
 ## See also
 
 *   [wikipedia:DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS")
 *   [RFC 8484 - DNS Queries over HTTPS (DoH)](https://tools.ietf.org/html/rfc8484)
-*   DNS over TLS (DoT) from [RFC 7858](https://tools.ietf.org/html/rfc7858) provides similar protections.

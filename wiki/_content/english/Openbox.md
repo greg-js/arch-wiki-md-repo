@@ -128,7 +128,7 @@ The available options are discussed extensively below in the [#Menus](#Menus) se
 
 ### Autostart
 
-`openbox-session` provides two autostart mechanisms: [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") (which only works if [python2-xdg](https://www.archlinux.org/packages/?name=python2-xdg) is installed) and [Openbox's own autostart mechanism](http://openbox.org/wiki/Help:Autostart).
+`openbox-session` provides two autostart mechanisms: [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") (which only works if [python-xdg](https://www.archlinux.org/packages/?name=python-xdg) is installed) and [Openbox's own autostart mechanism](http://openbox.org/wiki/Help:Autostart).
 
 Openbox's own autostart mechanism:
 
@@ -172,7 +172,7 @@ The process of creating new or modifying existing themes is covered extensively 
 
 Several GUI applications are available to quickly and easily configure your Openbox desktop.
 
-*   **ObConf** — A GTK2 based configuration tool for the Openbox window manager.
+*   **ObConf** — A GTK3 based configuration tool for the Openbox window manager.
 
 	[http://openbox.org/wiki/ObConf:About](http://openbox.org/wiki/ObConf:About) || [obconf](https://www.archlinux.org/packages/?name=obconf)
 
@@ -443,7 +443,7 @@ To automatically iconify entries, the `-i` option would be added:
 To show icons next to menu entries, it will be necessary to ensure they are enabled in the `<menu>` section of the `~/.config/openbox/rc.xml` file:
 
 ```
-<applicationIcons>yes</applicationIcons>
+<showIcons>yes</showIcons>
 
 ```
 

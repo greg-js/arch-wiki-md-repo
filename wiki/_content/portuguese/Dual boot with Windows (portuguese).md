@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"). Data da última tradução: 2020-01-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&diff=0&oldid=594597) na versão em inglês.
+
 Este artigo detalha diferentes formas de se instalar Arch com Windows.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -9,7 +11,7 @@ Este artigo detalha diferentes formas de se instalar Arch com Windows.
 *   [1 Informação importante](#Informação_importante)
     *   [1.1 Limitações do Windows em UEFI versus BIOS](#Limitações_do_Windows_em_UEFI_versus_BIOS)
     *   [1.2 Limitações da mídia de instalação](#Limitações_da_mídia_de_instalação)
-    *   [1.3 Gerenciador de boot UEFI versus limitações do BIOS](#Gerenciador_de_boot_UEFI_versus_limitações_do_BIOS)
+    *   [1.3 Limitações do gerenciador de boot em UEFI versus BIOS](#Limitações_do_gerenciador_de_boot_em_UEFI_versus_BIOS)
     *   [1.4 UEFI Secure Boot](#UEFI_Secure_Boot)
     *   [1.5 Inicialização rápida](#Inicialização_rápida)
     *   [1.6 Limitações de nomes de arquivo no Windows](#Limitações_de_nomes_de_arquivo_no_Windows)
@@ -35,7 +37,7 @@ Este artigo detalha diferentes formas de se instalar Arch com Windows.
 
 A Microsoft impõe limitações em que o método de carregamento do sistema irá depender da circunstância em que cada tipo de firmware e esquema de particionamento podem ser suportados de acordo com a versão utilizada do Windows:
 
-*   Versões do **Windows XP**, ambos **x86 32-bit** e **x86_64** (também chamado de x64) (RTM e todos os Service Packs) não suportam inicialização em modo [UEFI](/index.php/UEFI "UEFI") (IA32 ou x86_64) de qualquer disco ([MBR](/index.php/MBR "MBR") ou [GPT](/index.php/GPT "GPT")), OU em mdoo BIOS a partir de um disco GPT. Estas versões somente suportam inicialização no modo BIOS à partir de um disco MBR.
+*   Versões do **Windows XP**, ambos **x86 32-bit** e **x86_64** (também chamado de x64) (RTM e todos os Service Packs) não suportam inicialização em modo [UEFI](/index.php/UEFI "UEFI") (IA32 ou x86_64) de qualquer disco ([MBR](/index.php/MBR_(Portugu%C3%AAs) "MBR (Português)") ou [GPT](/index.php/GPT_(Portugu%C3%AAs) "GPT (Português)")), OU em mdoo BIOS a partir de um disco GPT. Estas versões somente suportam inicialização no modo BIOS à partir de um disco MBR.
 *   Versões do **Windows Vista** ou **7** **x86 32-bit** (RTM e todos os Service Packs) somente suportam inicialização em modo BIOS à partir de discos MBR, não à partir de discos GPT. Elas não suportam inicializar pelo modo UEFI x86_64 ou UEFI IA32 (x86 32-bit). Somente suportam inicialização no modo BIOS e somente por discos MBR.
 *   Versões do **Windows Vista RTM x86_64** (e somente RTM) suportam inicializar em modo BIOS somente por discos MBR, não por discos GPT. Não suportam inicializar pelo modo UEFI x86_64 UEFI ou UEFI IA32 (x86 32-bit). Suporta somente inicializar no modo BIOS por discos MBR.
 *   Versões do **Windows Vista** (SP1 ou acima, não RTM) e **Windows 7** **x86_64** suportam inicialização no modo UEFI x86_64 UEFI por discos GPT; OU em modo BIOS por discos MBR. Não suportam o modo UEFI IA32 (x86 32-bit) por discos GPT/MBR, UEFI x86_64 por discos MBR nem modo BIOS por discos GPT.
@@ -54,7 +56,7 @@ A melhor maneira de detectar o modo em que o Windows está inicializando é a se
 *   Pressione `Win+R` para abrir a caixa de diálogo "Executar";
 *   Nela, digite `msinfo32.exe` e pressione Enter;
 *   Na janela **Informações do Sistema**, selecione *Resumo do Sistema* no lado esquerdo e veja o valor que está no item **Modo da BIOS**, no lado direito;
-*   Se o valor é `UEFI`, então o Windows está inicializando em modo UEFI/GPT. Se o valor é `Legado`, então o Windows está inicializando em modo BIOS/MBR.
+*   Se o valor é `UEFI`, então o Windows está inicializando em modo UEFI/GPT. Se o valor é `Herdado`, então o Windows está inicializando em modo BIOS/MBR.
 
 Em geral, o Windows força o esquema de particionamento (GPT ou MBR) dependendo do modo de firmware usado (UEFI ou BIOS), isto é, se o Windows está no modo UEFI, ele só pode estar em um disco GPT; se o Windows está no modo BIOS, só pode estar num disco MBR. Esta é uma limitação imposta pelo instalador do Windows, e desde abril de 2014 não há oficialmente (por parte da Microsoft) suporte à instalação do Windows nas combinações UEFI/MBR ou BIOS/GPT. Portanto, o Windows suporta apenas as combinações UEFI/GPT ou BIOS/MBR.
 
@@ -66,11 +68,11 @@ Esta limitação não é imposta pelo Linux kernel, mas depende somente de cada 
 
 Os tablets Intel Atom System-on-Chip (Clover trail e Bay Trail) fornecem apenas UEFI IA32 (32-bit) sem suporte ao Legacy BIOS (CSM) (diferente da maioria dos sistemas com UEFI x86_64), devido ao *Microsoft Connected Standby Guidelines para OEMs*. Com a falta do suporte ao Legacy BIOS nesses sistemas e a falta do suporte ao UEFI 32-bit na ISO oficial do Arch ([FS#53182](https://bugs.archlinux.org/task/53182)), a mídia oficial de instalação não pode inicializar esses sistemas. Veja [Unified Extensible Firmware Interface#UEFI firmware bitness](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface") para mais informações e possíveis soluções.
 
-### Gerenciador de boot UEFI versus limitações do BIOS
+### Limitações do gerenciador de boot em UEFI versus BIOS
 
 A maioria dos gerenciadores de boot para linux instalados para um tipo de firmware não podem lançar ou carregar em cadeia gerenciadores de boot para outros tipos de firmware. Isto quer dizer que, se o Arch está instalado em modo UEFI/GPT ou UEFI/MBR em um disco e Windows está instalado em modo BIOS/MBR em outro disco, o gerenciador de boot UEFI usado pelo Arch não poderá carregar, em cadeia, o gerenciador em BIOS do Windows que está no outro disco. Da mesma forma, se o Arch está instalado em modo BIOS/MBR ou BIOS/GPT em um disco e o Windows está instalado em modo UEFI/GPT em outro disco, o gerenciador de boot que está em BIOS usado pelo Arch Arch não será capaz de carregar, em cadeia, o Windows em modo UEFI do outro disco.
 
-As únicas exceções para isto são [GRUB](/index.php/GRUB "GRUB") em Macs da Apple, em que GRUB no modo UEFI pode inicializar um sistema operacional instalado em modo BIOS via comando `appleloader` (que não funciona em sistemas que não sejam Apple), e [rEFInd](/index.php/REFInd "REFInd") que tecnicamente suporta inicializar um sistema operacional em legacy BIOS em sistemas UEFI, mas [nem sempre legacy BIOS funciona em sistemas que não sejam Apple UEFI](http://rodsbooks.com/refind/using.html#), de acordo com seu autor Rod Smith.
+As únicas exceções para isto são [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") em Macs da Apple, em que GRUB no modo UEFI pode inicializar um sistema operacional instalado em modo BIOS via comando `appleloader` (que não funciona em sistemas que não sejam Apple), e [rEFInd](/index.php/REFInd "REFInd") que tecnicamente suporta inicializar um sistema operacional em legacy BIOS em sistemas UEFI, mas [nem sempre legacy BIOS funciona em sistemas que não sejam Apple UEFI](http://rodsbooks.com/refind/using.html#), de acordo com seu autor Rod Smith.
 
 Contudo, se o Arch está instalado em modo BIOS/GPT em um disco e o Windows está instalado em modo BIOS/MBR em outro disco, então o gerenciador de boot em BIOS usado pelo Arch **pode** inicializar o Windows em outro disco, se o gerenciador de boot usado suportar o carregamento à partir de outro disco.
 
@@ -167,7 +169,7 @@ Reincie e aproveite. No meu caso, estou usando o gerenciador de boot do Windows,
 
 #### Sistemas UEFI
 
-Se você já tiver o Windows instalado, então ele já criou algumas partições e preparou o disco no esquema [GPT](/index.php/Partitioning_(Portugu%C3%AAs)#GUID_Partition_Table "Partitioning (Português)"):
+Se você já tiver o Windows instalado, então ele já criou algumas partições e preparou o disco no esquema [GPT](/index.php/Particionamento#Tabela_de_Partição_GUID "Particionamento"):
 
 *   Uma partição contendo o [Windows Recovery Environment](https://en.wikipedia.org/wiki/Windows_Recovery_Environment "wikipedia:Windows Recovery Environment"), geralmente com 499 MiB de tamanho, contendo os arquivos necessários para inicializar o Windows (isto é, equivalente a `/boot` no Linux),
 *   uma [partição de sistema EFI](/index.php/EFI_system_partition_(Portugu%C3%AAs) "EFI system partition (Português)") com o sistema de arquivos [FAT32](/index.php/FAT32 "FAT32"),
@@ -179,7 +181,7 @@ Usando o utilitário *Gerenciamento de disco do Windows*, veja como as partiçõ
 
 **Atenção:** As 4 primeiras partições na lista acima são essenciais, não as remova.
 
-Você poderá prosseguir com o [particionamento](/index.php/Partitioning_(Portugu%C3%AAs) "Partitioning (Português)"), de acordo com suas necessidades. Tenha em mente que uma partição de sistema EFI (muitas vezes referida simplesmente como ESP) não deverá ser criada, o que poderá [impedir a inicialização do Windows](https://support.microsoft.com/en-us/help/2879602/unable-to-boot-if-more-than-one-efi-system-partition-is-present). Simplesmente [monte a partição existente](/index.php/EFI_system_partition_(Portugu%C3%AAs)#Montar_a_partição "EFI system partition (Português)").
+Você poderá prosseguir com o [particionamento](/index.php/Particionamento "Particionamento"), de acordo com suas necessidades. Tenha em mente que uma partição de sistema EFI (muitas vezes referida simplesmente como ESP) não deverá ser criada, o que poderá [impedir a inicialização do Windows](https://support.microsoft.com/en-us/help/2879602/unable-to-boot-if-more-than-one-efi-system-partition-is-present). Simplesmente [monte a partição existente](/index.php/EFI_system_partition_(Portugu%C3%AAs)#Montar_a_partição "EFI system partition (Português)").
 
 Deverá ser escolhido um gerenciador de boot capaz de inicializar em cadeia outras aplicações EFI para que o dual-boot entre Windows/Linux seja possível.
 

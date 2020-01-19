@@ -761,7 +761,7 @@ As the error message says, your locale is not correctly configured. See [Locale]
 
 ### Pacman does not honor proxy settings
 
-Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` etc.) are set up. If you use *pacman* with [sudo](/index.php/Sudo "Sudo"), you need to configure sudo to [pass these environment variables to pacman](/index.php/Sudo#Environment_variables "Sudo").
+Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` etc.) are set up. If you use *pacman* with [sudo](/index.php/Sudo "Sudo"), you need to configure sudo to [pass these environment variables to pacman](/index.php/Sudo#Environment_variables "Sudo"). Also, ensure the configuration of [dirmngr](/index.php/GnuPG#Use_a_keyserver "GnuPG") has `honor-http-proxy` in `/etc/pacman.d/gnupg/dirmngr.conf` to honor the proxy when refreshing the keys.
 
 ### How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?
 

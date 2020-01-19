@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=589334) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2020-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=595221) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Leitura](/index.php/Help:Leitura "Help:Leitura"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -171,26 +171,26 @@ Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositiv
 
 Resultados terminando em `rom`, `loop` ou `airoot` podem ser ignorados.
 
-As seguintes [partições](/index.php/Partition "Partition") são **exigidas** para um dispositivo escolhido:
+As seguintes [partições](/index.php/Parti%C3%A7%C3%B5es "Partições") são **exigidas** para um dispositivo escolhido:
 
 *   Uma partição para o diretório raiz `/`.
 *   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI").
 
-Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php/LVM "LVM"), [criptografia de sistema](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") ou [RAID](/index.php/RAID "RAID"), faça isso agora.
+Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)"), [criptografia de sistema](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") ou [RAID](/index.php/RAID "RAID"), faça isso agora.
 
 #### Exemplos de layouts
 
-| BIOS com [MBR](/index.php/MBR "MBR") |
+| BIOS com [MBR](/index.php/MBR_(Portugu%C3%AAs) "MBR (Português)") |
 | Ponto de montagem | Partição | [Tipo de partição](https://en.wikipedia.org/wiki/pt:Tipo_de_parti%C3%A7%C3%A3o "wikipedia:pt:Tipo de partição") | Tamanho sugerido |
 | `/mnt` | `/dev/sd*X*1` | Linux | Restante do dispositivo |
 | [SWAP] | `/dev/sd*X*2` | Swap Linux | Mais que 512 MiB |
-| UEFI com [GPT](/index.php/GPT "GPT") |
+| UEFI com [GPT](/index.php/GPT_(Portugu%C3%AAs) "GPT (Português)") |
 | Ponto de montagem | Partição | [Tipo de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
 | `/mnt/boot` ou `/mnt/efi` | `/dev/sd*X*1` | [Partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") | 260–512 MiB |
 | `/mnt` | `/dev/sd*X*2` | Linux x86-64 root (/) | Restante do dispositivo |
 | [SWAP] | `/dev/sd*X*3` | Linux swap | Mais que 512 MiB |
 
-Veja também [Partitioning#Example layouts](/index.php/Partitioning#Example_layouts "Partitioning").
+Veja também [Particionamento#Exemplos de leiaute](/index.php/Particionamento#Exemplos_de_leiaute "Particionamento").
 
 **Nota:**
 
@@ -252,7 +252,7 @@ Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/
 
 O pacote [base](https://www.archlinux.org/packages/?name=base) não inclui todas as ferramentas da instalação *live*. Então a instalação de outros pacotes pode ser necessário para um sistema base completamente funcional. Em especial, considere instalar:
 
-*   utilitários para acessar partições [RAID](/index.php/RAID "RAID") ou [LVM](/index.php/LVM "LVM"),
+*   utilitários para acessar partições [RAID](/index.php/RAID "RAID") ou [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)"),
 *   firmwares específicos para outros dispositivos não incluídos em [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware),
 *   softwares necessários para [rede](/index.php/Rede "Rede"),
 *   um editor de [editores de arquivos](/index.php/Text_editor "Text editor")
@@ -346,13 +346,13 @@ Adicione entradas correspondentes ao [hosts(5)](https://jlk.fjfi.cvut.cz/arch/ma
 
 Se o sistema tem um endereço IP permanente, ele deve ser usado em vez de `127.0.1.1`.
 
-Conclua a [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para o ambiente recém-instalado, que inclua [instala](/index.php/Instala "Instala")ção de pacotes como [iputils](https://www.archlinux.org/packages/?name=iputils) e seu software [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") preferido.
+Conclua a [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede") para o ambiente recém-instalado, o que inclui instalar seu software [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") preferido.
 
 ### Initramfs
 
 Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote de [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") com *pacstrap*.
 
-Para [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [criptografia de sistema](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique o [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
+Para [LVM](/index.php/LVM_(Portugu%C3%AAs)#Configurar_mkinitcpio "LVM (Português)"), [criptografia de sistema](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique o [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
 
 ```
 # mkinitcpio -P

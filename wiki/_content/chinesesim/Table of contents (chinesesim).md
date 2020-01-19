@@ -158,23 +158,26 @@
 | <small>8.5.1.</small> [Synchronization](/index.php/Category:Synchronization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Synchronization (简体中文)") <small>(1)</small> |
 | <small>8.5.1.1.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network Time Protocol (简体中文)") <small>(1) (同时还属于 [Protocols](/index.php/Category:Protocols_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Protocols (简体中文)"), [Servers](/index.php/Category:Servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Servers (简体中文)"))</small> |
 | <small>8.6.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphical user interfaces (简体中文)") <small>(1)</small> |
-| <small>8.7.</small> [国际化](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)") <small>(4)</small> |
-| <small>8.7.1.</small> [中文化](/index.php/Category:Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Localization (简体中文)") <small>(3)</small> |
-| <small>8.8.</small> [内核](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)") <small>(15)</small> |
-| <small>8.9.</small> [Linux console](/index.php/Category:Linux_console_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Linux console (简体中文)") <small>(1)</small> |
-| <small>8.10.</small> [Logging](/index.php/Category:Logging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Logging (简体中文)") <small>(2)</small> |
-| <small>8.11.</small> [Multimedia](/index.php/Category:Multimedia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia (简体中文)") <small>(10)</small> |
-| <small>8.11.1.</small> [Audio](/index.php/Category:Audio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio (简体中文)") <small>(1)</small> |
-| <small>8.11.2.</small> [Video](/index.php/Category:Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Video (简体中文)") <small>(1)</small> |
-| <small>8.12.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
-| <small>8.13.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(20)</small> |
-| <small>8.13.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(3)</small> |
-| <small>8.13.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Disk encryption (简体中文)") <small>(2) (同时还属于 [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)"))</small> |
-| <small>8.13.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>8.13.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>8.13.4.</small> [Sandboxing](/index.php/Category:Sandboxing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Sandboxing (简体中文)") <small>(2)</small> |
-| <small>8.13.5.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
-| <small>8.14.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(13)</small> |
-| <small>8.15.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(11)</small> |
-| <small>8.15.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(3)</small> |
+| <small>8.7.</small> [Input](/index.php/Category:Input_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input (简体中文)") <small>(0)</small> |
+| <small>8.7.1.</small> [Input methods](/index.php/Category:Input_methods_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input methods (简体中文)") <small>(1) (同时还属于 [中文化](/index.php/Category:Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Localization (简体中文)"))</small> |
+| <small>8.8.</small> [国际化](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)") <small>(4)</small> |
+| <small>8.8.1.</small> [中文化](/index.php/Category:Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Localization (简体中文)") <small>(3)</small> |
+| <small>8.8.1.1.</small> [Input methods](/index.php/Category:Input_methods_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input methods (简体中文)") <small>(1) (同时还属于 [Input](/index.php/Category:Input_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input (简体中文)"))</small> |
+| <small>8.9.</small> [内核](/index.php/Category:Kernel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Kernel (简体中文)") <small>(15)</small> |
+| <small>8.10.</small> [Linux console](/index.php/Category:Linux_console_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Linux console (简体中文)") <small>(1)</small> |
+| <small>8.11.</small> [Logging](/index.php/Category:Logging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Logging (简体中文)") <small>(2)</small> |
+| <small>8.12.</small> [Multimedia](/index.php/Category:Multimedia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia (简体中文)") <small>(10)</small> |
+| <small>8.12.1.</small> [Audio](/index.php/Category:Audio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio (简体中文)") <small>(1)</small> |
+| <small>8.12.2.</small> [Video](/index.php/Category:Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Video (简体中文)") <small>(1)</small> |
+| <small>8.13.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
+| <small>8.14.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(20)</small> |
+| <small>8.14.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(3)</small> |
+| <small>8.14.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Disk encryption (简体中文)") <small>(2) (同时还属于 [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)"))</small> |
+| <small>8.14.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
+| <small>8.14.3.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
+| <small>8.14.4.</small> [Sandboxing](/index.php/Category:Sandboxing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Sandboxing (简体中文)") <small>(2)</small> |
+| <small>8.14.5.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
+| <small>8.15.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(13)</small> |
+| <small>8.16.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(11)</small> |
+| <small>8.16.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(3)</small> |
 | <small>9.</small> [终端模拟器](/index.php/Category:Terminal_emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Terminal emulators (简体中文)") <small>(4) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |

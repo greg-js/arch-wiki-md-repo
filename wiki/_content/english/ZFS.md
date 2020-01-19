@@ -188,7 +188,7 @@ In order to mount ZFS filesystems automatically on boot you need to enable the f
 You can also use the zfs-mount-generator to create systemd mount units for your ZFS filesystems at boot. systemd will automatically mount the filesystems based on the mount units without having to use the `zfs-mount.service`. To do that, you need to:
 
 1.  Create the `/etc/zfs/zfs-list.cache` directory.
-2.  Enable the ZFS Event Daemon(ZED) script (called a ZEDLET) required to create a list of mountable ZFS filesystems. `# ln -s /usr/lib/zfs-0.8.0/zfs/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d` 
+2.  Enable the ZFS Event Daemon(ZED) script (called a ZEDLET) required to create a list of mountable ZFS filesystems. `# ln -s /usr/lib/zfs/zfs/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d` 
 3.  Enable and start the ZFS Event Daemon. This service is responsible for running the script in the previous step.
     ```
     # systemctl enable zfs-zed.service

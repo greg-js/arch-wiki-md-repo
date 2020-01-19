@@ -41,7 +41,9 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
         *   [5.2.2 Static huge pages](#Static_huge_pages)
         *   [5.2.3 Dynamic huge pages](#Dynamic_huge_pages)
     *   [5.3 CPU frequency governor](#CPU_frequency_governor)
-    *   [5.4 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
+    *   [5.4 Isolating pinned CPUs](#Isolating_pinned_CPUs)
+        *   [5.4.1 With isolcpus kernel parameter](#With_isolcpus_kernel_parameter)
+        *   [5.4.2 Dynamically isolating CPUs](#Dynamically_isolating_CPUs)
     *   [5.5 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
     *   [5.6 Further tuning](#Further_tuning)
 *   [6 Special procedures](#Special_procedures)
@@ -624,9 +626,13 @@ Theoretically, 1 GiB pages works as 2 MiB. But practically - no guaranteed way w
 
 Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU frequency scaling") is configured, the VM threads may not hit the CPU load thresholds for the frequency to ramp up. Indeed, KVM cannot actually change the CPU frequency on its own, which can be a problem if it does not scale up with vCPU usage as it would result in underwhelming performance. An easy way to see if it behaves correctly is to check if the frequency reported by `watch lscpu` goes up when running a CPU-intensive task on the guest. If you are indeed experiencing stutter and the frequency does not go up to reach its reported maximum, it may be due to [cpu scaling being controlled by the host OS](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678). In this case, try setting all cores to maximum frequency to see if this improves performance. Note that if you are using a modern intel chip with the default pstate driver, cpupower commands will be [ineffective](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling"), so monitor `/proc/cpuinfo` to make sure your cpu is actually at max frequency.
 
-### CPU pinning with isolcpus
+### Isolating pinned CPUs
 
-Alternatively, make sure that you have isolated CPUs properly. In this example, let us assume you are using CPUs 4-7. Use the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") `isolcpus nohz_full rcu_nocbs` to completely isolate the CPUs from the kernel. For example:
+CPU pinning by itself won't prevent other host processes from running on the pinned CPUs. Properly isolating the pinned CPUs can reduce latency in the guest VM.
+
+#### With isolcpus kernel parameter
+
+In this example, let us assume you are using CPUs 4-7. Use the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") `isolcpus nohz_full rcu_nocbs` to completely isolate the CPUs from the kernel. For example:
 
 ```
 isolcpus=4-7 nohz_full=4-7 rcu_nocbs=4-7
@@ -643,6 +649,12 @@ Then, run `qemu-system-x86_64` with taskset and chrt:
 The `chrt` command will ensure that the task scheduler will round-robin distribute work (otherwise it will all stay on the first cpu). For `taskset`, the CPU numbers can be comma- and/or dash-separated, like "0,1,2,3" or "0-4" or "1,7-8,10" etc.
 
 See [this Removeddit mirror of a Reddit thread](https://www.removeddit.com/r/VFIO/comments/6vgtpx/high_dpc_latency_and_audio_stuttering_on_windows/dm0sfto/) for more info. ([The original thread](https://www.reddit.com/r/VFIO/comments/6vgtpx/high_dpc_latency_and_audio_stuttering_on_windows/dm0sfto/) is worthless because of deleted comments.)
+
+#### Dynamically isolating CPUs
+
+The isolcpus kernel parameter will permanently reserve CPU cores, even when the guest isn't running. A more flexible alternative is to use the cset tool from [cpuset-git](https://aur.archlinux.org/packages/cpuset-git/) to dynamically isolate CPUs when starting the guest.
+
+See this [vfio-users post](https://www.redhat.com/archives/vfio-users/2016-September/msg00072.html) for more info, as well as this [blog post](https://rokups.github.io/#!pages/gaming-vm-performance.md) and this [script](https://github.com/PassthroughPOST/VFIO-Tools/blob/master/libvirt_hooks/hooks/cset.sh) for working examples.
 
 ### Improving performance on AMD CPUs
 
@@ -900,7 +912,7 @@ pcie_acs_override =
 
 ```
 
-The option `pcie_acs_override=downstream` is typically sufficient.
+The option `pcie_acs_override=downstream,multifunction` should break up as many devices as possible.
 
 After installation and configuration, reconfigure your [bootloader kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to load the new kernel with the `pcie_acs_override=` option enabled.
 

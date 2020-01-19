@@ -56,10 +56,7 @@ For additional functionality, you may wish to install the following:
 
 Append the following line to [Xinitrc](/index.php/Xinitrc "Xinitrc"):
 
-```
-exec startlxqt
-
-```
+ `~/.xinitrc`  `exec startlxqt` 
 
 ### Graphical login
 

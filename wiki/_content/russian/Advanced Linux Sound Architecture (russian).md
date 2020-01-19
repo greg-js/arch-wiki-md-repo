@@ -68,7 +68,7 @@ ALSA включена в стандартную сборку ядра Arch Linux
 
 ### Пользовательские утилиты
 
-[Установите](/index.php/Pacman "Pacman") пакет [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), который (помимо других утилит) содержит программу `alsamixer` и `amixer`.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), который (помимо других утилит) содержит программу `alsamixer` и `amixer`.
 
 ```
  # pacman -S alsa-lib alsa-utils

@@ -1,6 +1,10 @@
 [dmenu](http://tools.suckless.org/dmenu) er en hurtig og letvægtig dynamisk menu til X. Den læser tilfældig tekst fra standard input (stdin) og konstruerer en menu med et punkt per linje. Brugeren kan da vælge et punkt, ved brug af piletasterne eller ved at taste en del af navnet, og linjen printes til standard output (stdout). dmenu_run er et omslag (wrapper), der udgives sammen med dmenu distributionen, som gør det muligt at anvende dmenu som en programstarter (application launcher).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Konfiguration](#Konfiguration)

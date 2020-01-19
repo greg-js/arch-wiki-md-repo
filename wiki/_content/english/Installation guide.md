@@ -308,7 +308,7 @@ Add matching entries to [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ho
 
 If the system has a permanent IP address, it should be used instead of `127.0.1.1`.
 
-Complete the [network configuration](/index.php/Network_configuration "Network configuration") for the newly installed environment, that includes [installing](/index.php/Install "Install") packages such as [iputils](https://www.archlinux.org/packages/?name=iputils) and your preferred [network management](/index.php/Network_management "Network management") software.
+Complete the [network configuration](/index.php/Network_configuration "Network configuration") for the newly installed environment, that includes installing your preferred [network management](/index.php/Network_management "Network management") software.
 
 ### Initramfs
 

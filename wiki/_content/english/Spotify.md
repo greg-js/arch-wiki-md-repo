@@ -8,7 +8,7 @@
 
 *   [1 Installation](#Installation)
     *   [1.1 Third-party clients](#Third-party_clients)
-*   [2 Tips & tricks](#Tips_&_tricks)
+*   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Limit storage size](#Limit_storage_size)
     *   [2.2 Global media hotkeys](#Global_media_hotkeys)
         *   [2.2.1 MPRIS](#MPRIS)
@@ -16,7 +16,6 @@
             *   [2.2.1.2 Bluetooth](#Bluetooth)
             *   [2.2.1.3 D-Bus](#D-Bus)
         *   [2.2.2 pactl (pulseaudio)](#pactl_(pulseaudio))
-        *   [2.2.3 xdotool](#xdotool)
     *   [2.3 Disable track notifications](#Disable_track_notifications)
     *   [2.4 Show track notifications](#Show_track_notifications)
     *   [2.5 Skip overplayed radio tracks](#Skip_overplayed_radio_tracks)
@@ -75,7 +74,7 @@
 
 	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/) [tomahawk-git](https://aur.archlinux.org/packages/tomahawk-git/) [tomahawk-qt5](https://aur.archlinux.org/packages/tomahawk-qt5/)
 
-## Tips & tricks
+## Tips and tricks
 
 ### Limit storage size
 
@@ -116,50 +115,17 @@ Playerctl will send the command to the first player it finds, so this method wil
 
 An alternative to the above is to manually use [D-Bus](/index.php/D-Bus "D-Bus"), which should be available by default as it is a dependency of [systemd](/index.php/Systemd "Systemd").
 
-To play or pause the current song in Spotify:
+Use the following commands to control Spotify:
 
 ```
 $ dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+$ dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+$ dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+$ dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
 ```
 
-In order to bind this and the other commands to the media keys you need to install [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") and edit your .xbindkeysrc and add the following lines:
-
-```
-# Play/Pause
-"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-XF86AudioPlay
-
-# Next
-"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-XF86AudioNext
-
-# Previous
-"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-XF86AudioPrev
-
-# Stop
-"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
-XF86AudioStop
-
-```
-
-If the above commands do not work, try setting the dbus address:
-
-```
- USER=`whoami`
- PROCESS=spotify
- PID=`pgrep -o -u $USER $PROCESS`
- ENVIRON=/proc/$PID/environ
- if [ -e $ENVIRON ]
- then
-     export `grep -z DBUS_SESSION_BUS_ADDRESS $ENVIRON`
- else
-     echo "Unable to set DBUS_SESSION_BUS_ADDRESS."
-     exit 1
- fi
-
-```
+You can bind them to the multimedia keys, see [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts") for details.
 
 #### pactl (pulseaudio)
 
@@ -244,42 +210,6 @@ if app in pactl:
 ```
 
 You can save it to a .py file. The last line does the actual job, so you can adjust the command to lower the volume or toggle mute.
-
-#### xdotool
-
-With the help of `xdotool` it is possible to send your hotkeys to the application. The following script is an example of how to control Spotify from the outside:
-
-```
-#!/bin/sh
-
-case $1 in
-   "play")
-       key="XF86AudioPlay"
-       ;;
-   "next")
-       key="XF86AudioNext"
-       ;;
-   "prev")
-       key="XF86AudioPrev"
-       ;;
-   *)
-       echo "Usage: $0 play|next|prev"
-       exit 1
-        ;;
-esac
-xdotool key --window $(xdotool search --name "Spotify (Premium |Unlimited |Free )?- Linux Preview"|head -n1) $key
-exit 0
-
-```
-
-Let us call it `musickeys.sh`. Make the script executable:
-
-```
-$ chmod +x musickeys.sh
-
-```
-
-By executing `./musickeys.sh play` you can now toggle playing a song. Now you can bind this script to any tool that catches keypresses, such as [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
 ### Disable track notifications
 

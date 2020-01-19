@@ -20,9 +20,9 @@ Redmine is written using the [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on R
     *   [1.1 Ruby](#Ruby)
     *   [1.2 Database](#Database)
         *   [1.2.1 MariaDB 5.0 or higher (recommended)](#MariaDB_5.0_or_higher_(recommended))
-        *   [1.2.2 MySQL 5.0 or higher](#MySQL_5.0_or_higher)
-        *   [1.2.3 PostgreSQL 8.2 or higher](#PostgreSQL_8.2_or_higher)
-        *   [1.2.4 Microsoft SQL Server](#Microsoft_SQL_Server)
+        *   [1.2.2 MySQL 5.5 - 5.7](#MySQL_5.5_-_5.7)
+        *   [1.2.3 PostgreSQL 9.2 or higher](#PostgreSQL_9.2_or_higher)
+        *   [1.2.4 Microsoft SQL Server 2012 or higher](#Microsoft_SQL_Server_2012_or_higher)
         *   [1.2.5 SQLite 3](#SQLite_3)
     *   [1.3 Web Server](#Web_Server)
         *   [1.3.1 Apache](#Apache)
@@ -73,6 +73,9 @@ Although this guide will go through the entire installation process, this is not
 
 | Redmine version | Supported Ruby Versions | Rails version used |
 | 3.0.2 | **ruby** 1.9.3, 2.0.0, 2.1, 2.2 | **Rails** 4.2 |
+| 3.4 | **ruby** 1.9.3, 2.0.0, 2.1, 2.2, 2.3, 2.4 | **Rails** 4.2 |
+| 4.0 | **ruby** 2.2, 2.3, 2.4, 2.5, 2.6 | **Rails** 5.2 |
+| 4.1 | **ruby** 2.3, 2.4, 2.5, 2.6 | **Rails** 5.2 |
 
 There are two simple ways to install Ruby: installing the [ruby](https://www.archlinux.org/packages/?name=ruby) package as described in [ruby](/index.php/Ruby "Ruby") or installing RVM as described in [RVM](/index.php/RVM "RVM") **(recommended)**.
 
@@ -86,32 +89,38 @@ There are two simple ways to install Ruby: installing the [ruby](https://www.arc
 
 **Warning:** If you use RVM, pay attention to the single and multiple user differences! If you are not creating a hosting service, the multiple user (available for all users on the machine) should be the choice for simpler debuging.
 
+**Note:**  Redmine prior to 4.0.6 supports Ruby >= 2.2.2\. Redmine 4.0.6 and later don't support Ruby 2.2 ([see Redmine installation page](https://redmine.org/projects/redmine/wiki/RedmineInstall))
+
 ### Database
 
 Redmine [supports many different databases](http://www.redmine.org/projects/redmine/wiki/RedmineInstall#Database).
 
 #### MariaDB 5.0 or higher (recommended)
 
-MariaDB is a drop-in replacement for MySQL, in fact it was a fork of it and maintain binary compatibility. It is also [Arch Linux's default implementation of MySQL](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/).
+*   MariaDB is a drop-in replacement for MySQL, in fact it was a fork of it and maintain binary compatibility. It is also [Arch Linux's default implementation of MySQL](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/).
+*   MariaDB has known issues ([#19344](https://www.redmine.org/issues/19344), [#19395](https://www.redmine.org/issues/19395), [#17460](https://www.redmine.org/issues/17460)).
 
 To install [mariadb](https://www.archlinux.org/packages/?name=mariadb) simply refer to [MySQL](/index.php/MySQL "MySQL").
 
-#### MySQL 5.0 or higher
+#### MySQL 5.5 - 5.7
 
-[Oracle MySQL was dropped](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/) to the [AUR](/index.php/AUR "AUR").
+*   [Oracle MySQL was dropped](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/) to the [AUR](/index.php/AUR "AUR"). [mysql](https://aur.archlinux.org/packages/mysql/) in the [AUR](/index.php/AUR "AUR").
+*   MySQL 5.6 or higher has known issues ([#19344](https://www.redmine.org/issues/19344), [#19395](https://www.redmine.org/issues/19395), [#17460](https://www.redmine.org/issues/17460)).
+*   Redmine 3.x also supports MySQL 5.0 and 5.1
 
-[mysql](https://aur.archlinux.org/packages/mysql/) in the [AUR](/index.php/AUR "AUR").
+#### PostgreSQL 9.2 or higher
 
-#### PostgreSQL 8.2 or higher
+*   To install [postgresql](https://www.archlinux.org/packages/?name=postgresql) simply refer to [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
-To install [postgresql](https://www.archlinux.org/packages/?name=postgresql) simply refer to [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
-
-Make sure your database datestyle is set to ISO (Postgresql default setting). You can set it using:
+*   Make sure your database datestyle is set to ISO (Postgresql default setting). You can set it using:
 
  `ALTER DATABASE "redmine_db" SET datestyle="ISO,MDY";` 
+
+*   Redmine 3.x also supports PostgreSQL 8.3 - 9.1.
+
 **Note:** Some bugs in PostgreSQL 8.4.0 and 8.4.1 affect Redmine behavior ([#4259](http://www.redmine.org/issues/4259), [#4314](http://www.redmine.org/issues/4314)), they are fixed in PostgreSQL 8.4.2
 
-#### Microsoft SQL Server
+#### Microsoft SQL Server [2012 or higher](https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/blob/v4.2.3/README.md#activerecord-sql-server-adapter-for-sql-server-2012-and-higher)
 
 **Warning:** Support is temporarily broken (with ruby 2.0.0 under Windows because of [database adapter gem incompatibility](https://github.com/rails-sqlserver/tiny_tds/issues/110)).
 
@@ -142,23 +151,23 @@ To install [tomcat8](https://www.archlinux.org/packages/?name=tomcat8) or [tomca
 ### SCM (Source Code Management)
 
 | SCM | Supported versions | Comments |
-| [Git](http://git-scm.com) | >=1.5.4.2 |
-| [Subversion](http://subversion.apache.org) | 1.3, 1.4, 1.5, 1.6 & 1.7 | 1.3 or higher required.
+| [Git](http://git-scm.com) | 1.5.4.2 to 2.11.0 |
+| [Subversion](http://subversion.apache.org) | 1.3 to 1.9.7 | 1.3 or higher required.
 
 Does not support Ruby Bindings for Subversion.
 
 Subversion 1.7.0 and 1.7.1 contains bugs [#9541](http://www.redmine.org/issues/9541) |
-| [Mercurial](http://www.selenic.com/mercurial) | >=1.6 | Support bellow version 1.6 is droped as seen in [#9465](http://www.redmine.org/issues/9465). |
-| [Bazaar](http://bazaar-vcs.org) | >= 2.0.4 |
+| [Mercurial](http://www.selenic.com/mercurial) | 1.2 to 4.3.1 | Support bellow version 1.6 is droped as seen in [#9465](http://www.redmine.org/issues/9465). |
+| [Bazaar](http://bazaar-vcs.org) | 1.0.0.candidate.1 to 2.7.0 |
 | [Darcs](http://darcs.net) | >=1.0.7 |
-| [CVS](http://www.nongnu.org/cvs) | 1.12.12 | 1.12 required.
+| [CVS](http://www.nongnu.org/cvs) | 1.12.12, 1.12.13 | 1.12 required.
 Will not work with CVSNT. |
 
 More information can be read at [Redmine Repositories Wiki](http://www.redmine.org/projects/redmine/wiki/RedmineRepositories).
 
 ### ImageMagick (recommended)
 
-[ImageMagick](http://www.imagemagick.org) is necessary to enable Gantt export to a [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") file.
+[ImageMagick](http://www.imagemagick.org) is necessary to enable Gantt export to a [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics "wikipedia:Portable Network Graphics") file and thumbnails generation.
 
 To install [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) simply:
 
@@ -170,6 +179,8 @@ To install [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) s
 ### Ruby OpenID Library
 
 To enable [OpenID](http://janrain.com/openid-enabled) support, is required a version >= 2 of the library.
+
+The current version (as of 14th January 2020) is 0.9.4, which supports Redmine 4.
 
 ## Installation
 

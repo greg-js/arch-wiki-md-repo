@@ -11,7 +11,11 @@ This is an article detailing different methods of Arch/Windows coexistence.
     *   [1.2 Install media limitations](#Install_media_limitations)
     *   [1.3 Bootloader UEFI vs BIOS limitations](#Bootloader_UEFI_vs_BIOS_limitations)
     *   [1.4 UEFI Secure Boot](#UEFI_Secure_Boot)
-    *   [1.5 Fast Start-Up](#Fast_Start-Up)
+    *   [1.5 Fast Start-Up and Hibernation](#Fast_Start-Up_and_Hibernation)
+        *   [1.5.1 Windows settings](#Windows_settings)
+            *   [1.5.1.1 Disable Fast Startup and disable hibernation](#Disable_Fast_Startup_and_disable_hibernation)
+            *   [1.5.1.2 Disable Fast Startup and enable hibernation](#Disable_Fast_Startup_and_enable_hibernation)
+            *   [1.5.1.3 Enable Fast Startup and enable hibernation](#Enable_Fast_Startup_and_enable_hibernation)
     *   [1.6 Windows filenames limitations](#Windows_filenames_limitations)
 *   [2 Installation](#Installation)
     *   [2.1 Windows before Linux](#Windows_before_Linux)
@@ -84,11 +88,47 @@ Arch Linux install media does not support Secure Boot. See [Secure Boot#Booting 
 
 It is advisable to disable UEFI Secure Boot in the firmware setup manually before attempting to boot Arch Linux. Windows 8/8.1 SHOULD continue to boot fine even if Secure boot is disabled. The only issue with regards to disabling UEFI Secure Boot support is that it requires physical access to the system to disable secure boot option in the firmware setup, as Microsoft has explicitly forbidden presence of any method to remotely or programmatically (from within OS) disable secure boot in all Windows 8/8.1 pre-installed systems
 
-### Fast Start-Up
+### Fast Start-Up and Hibernation
 
-Fast Start-Up is a feature in Windows 8 and above that hibernates the computer rather than actually shutting it down to speed up boot times. Your system can lose data if Windows hibernates and you dual boot into another OS and make changes to files. Even if you do not intend to share filesystems, the EFI System Partition is likely to be damaged on an EFI system. Therefore, you should disable Fast Startup, as described [here for Windows 8](http://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html) and [here for Windows 10](http://www.tenforums.com/tutorials/4189-fast-startup-turn-off-windows-10-a.html), before you install Linux on any computer that uses Windows 8 or above.
+There are two OSs that can be hibernated, you can hibernate Windows and boot Linux (or another OS), or you can hibernate Linux and boot Linux, or hibernate both OSs.
 
-[ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) added a [safe-guard](http://sourceforge.net/p/ntfs-3g/ntfs-3g/ci/559270a8f67c77a7ce51246c23d2b2837bcff0c9/) to prevent read-write mounting of hibernated disks, but the NTFS driver within the Linux kernel has no such safeguard.
+**Warning:** Data loss can occur if Windows hibernates and you dual boot into another OS and make changes to files on a filesystem (such as NTFS) that can be read and written to by Windows and Linux, and that has been mounted by Windows [[2]](https://superuser.com/questions/39532/hibernating-and-booting-into-another-os-will-my-filesystems-be-corrupted/136814#136814). Similarly, data loss can occur if Linux hibernates, and you dual boot into another OS etc. Windows may hibernate even when you press shutdown, see section [#Windows settings](#Windows_settings).
+
+For the same reason, if you share one EFI System Partition between Windows and Linux, then the EFI System Partition may be damaged if you hibernate (or shutdown with Fast Startup enabled) and then start Linux, or hibernate Linux and then start Windows.
+
+[ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) added a [safe-guard](http://sourceforge.net/p/ntfs-3g/ntfs-3g/ci/559270a8f67c77a7ce51246c23d2b2837bcff0c9/) to prevent read-write mounting of hibernated NTFS filesystems, but the NTFS driver within the Linux kernel has no such safeguard.
+
+Windows can not read filesystems such as ext4 by default that are commonly used for Linux. These filesystems do not have to be considered, unless you install a Windows driver for them.
+
+#### Windows settings
+
+Fast Start-Up is a feature in Windows 8 and above that hibernates the computer rather than actually shutting it down to speed up boot times.
+
+There are multiple options regarding the Windows settings for Fast Startup and hibernation that are covered in the next sections.
+
+*   disable Fast Startup and disable hibernation
+*   disable Fast Startup and enable hibernation
+*   enable Fast Startup and enable hibernation
+
+The procedure of disabling Fast Startup is described [here for Windows 8](http://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html) and [here for Windows 10](http://www.tenforums.com/tutorials/4189-fast-startup-turn-off-windows-10-a.html). In any case if you disable a setting, make sure to disable the setting and then shut down Windows, before installing Linux; note that rebooting is not sufficient.
+
+##### Disable Fast Startup and disable hibernation
+
+This is the safest option, and recommended if you are unsure about the issue, as it requires the least amount of user awareness when rebooting from one OS into the other. You may share the same EFI System Partition between Windows and Linux.
+
+##### Disable Fast Startup and enable hibernation
+
+This option requires user awareness when rebooting from one OS into the other. If you want to start Linux while Windows is hibernated, which is a common use case, then
+
+*   you must use a separate EFI System Partition (ESP) for Windows and Linux, and ensure that Windows does not mount the ESP used for Linux. As there can only be one ESP per drive, the ESP used for Linux must be located on a separate drive than the ESP used for Windows. In this case Windows and Linux can still be installed on the same drive in different partitions, if you place the ESP used by linux on another drive than the Linux root partition.
+*   you can not read-write mount any filesystem in Linux, that is mounted by Windows while Windows is hibernated. You should be extremely careful about this, and also consider [Automount](/index.php/Automount "Automount") behaviour.
+*   If you shut down Windows fully, rather than hibernating, then you can read-write mount the filesystem.
+
+**Note:** You can avoid this issue for a drive by mounting a drive as an external drive in Windows and ejecting the drive in Windows before hibernating.
+
+##### Enable Fast Startup and enable hibernation
+
+The same considerations apply as in case "Disable Fast Startup and enable hibernation", but since Windows can not be shut down fully, only hibernated, you can never read-write mount any filesystem that was mounted by Windows while Windows is hibernated.
 
 ### Windows filenames limitations
 
@@ -198,7 +238,7 @@ Windows will use the already existing [EFI system partition](/index.php/EFI_syst
 Follows an outline, assuming [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled in the firmware.
 
 1.  Boot into windows installation. Watch to let it use only the intend partition, but otherwise let it do its work as if there is no Linux installation.
-2.  Follow the [#Fast Start-Up](#Fast_Start-Up) section.
+2.  Follow the [#Fast Start-Up and Hibernation](#Fast_Start-Up_and_Hibernation) section.
 3.  Fix the ability to load Linux at start up, perhaps by following [#Cannot boot Linux after installing Windows](#Cannot_boot_Linux_after_installing_Windows). It was already mentioned in [#UEFI systems](#UEFI_systems) that some Linux boot managers will autodetect *Windows Boot Manager*. Even though newer Windows installations have an advanced restart option, from which you can boot into Linux, it is advised to have other means to boot into Linux, such as an arch installation media or a live CD.
 
 ### Troubleshooting

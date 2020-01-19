@@ -17,8 +17,9 @@ This page is for those who prefer to limit the verbosity of their system to a st
 *   [5 startx](#startx)
 *   [6 fsck](#fsck)
 *   [7 Make GRUB silent](#Make_GRUB_silent)
-*   [8 Retaining or disabling the vendor logo from BIOS](#Retaining_or_disabling_the_vendor_logo_from_BIOS)
-    *   [8.1 Disabling deferred takeover](#Disabling_deferred_takeover)
+*   [8 Using some Effective Techniques](#Using_some_Effective_Techniques)
+*   [9 Retaining or disabling the vendor logo from BIOS](#Retaining_or_disabling_the_vendor_logo_from_BIOS)
+    *   [9.1 Disabling deferred takeover](#Disabling_deferred_takeover)
 
 ## Kernel parameters
 
@@ -151,6 +152,16 @@ GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT
 **Note:** If you set `GRUB_TIMEOUT=0` and `GRUB_HIDDEN_TIMEOUT=1` (or any positive value), set `GRUB_RECORDFAIL_TIMEOUT=$GRUB_HIDDEN_TIMEOUT` instead of `GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT`. Otherwise pressing `Esc` on boot to show GRUB menu will not work.
 
 Lastly, regenerate `grub.cfg` file.
+
+## Using some Effective Techniques
+
+There are many ways to shush the kernel messages as well as log messages, we will be discussing both, first off we need to hide the Booting Ramdisk messages completely, use any editor in sudo or root user mode to edit the /boot/grub/grub.cfg or /etc/grub.d/your_kernel entry and remove the echo values, we don't need to know if the kernel image and the ramdisk are loaded properly, trust me you'd know if they aren't now I don't know about the {ic|/etc/default/grub}}values but the {ic|/boot/grub/grub.cfg}} are reset every time you update grub
+
+I was using the Intel Clear Linux LTS Kernel and using the following I could boot directly from the grub menu to sddm without a logo or any messages, though I would like to, my system boots in 4s so I don't need any ricing, you can use Plymouth or similar stuff on your image. the errors did show if they're serious, So you're fine. Add the following to {ic|/etc/default/grub}} values:
+
+{ic|GRUB_CMDLINE_LINUX_DEFAULT="quiet vga=current splash loglevel=3 udev.log-priority=3 rd.systemd.show_status=autp rd.udev.logpriority=3 fastboot console=tty0 console=ttyS0,115200n8 cryptomgr.notests initcall_debug intel_iommu=igfx_off kvm-intel.nested=1 no_timer_check noreplace-smp rcu_nocbs=0-64 rcupdate.rcu_expedited=1 rootfstype=ext4 tsc=reliable rw"}}
+
+this will make the messages and some other stuff disappear, you may need to tweak the rootfstype according to your file system.
 
 ## Retaining or disabling the vendor logo from BIOS
 

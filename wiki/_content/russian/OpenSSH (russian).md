@@ -10,7 +10,7 @@
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
 *   [VPN over SSH](/index.php/VPN_over_SSH "VPN over SSH")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [OpenSSH](/index.php/OpenSSH "OpenSSH"). Дата последней синхронизации: 20 декабря 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=OpenSSH&diff=0&oldid=592116).
+**Состояние перевода:** На этой странице представлен перевод статьи [OpenSSH](/index.php/OpenSSH "OpenSSH"). Дата последней синхронизации: 16 января 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=OpenSSH&diff=0&oldid=594953).
 
 [OpenSSH](https://en.wikipedia.org/wiki/ru:OpenSSH "wikipedia:ru:OpenSSH") (OpenBSD Secure Shell) — набор программ, предоставляющих шифрование сеансов связи в компьютерных сетях по протоколу SSH ([Secure Shell](/index.php/Secure_Shell "Secure Shell")). OpenSSH разработан в рамках возглавляемого Тео де Раадтом (Theo de Raadt) проекта [OpenBSD](https://en.wikipedia.org/wiki/ru:OpenBSD "wikipedia:ru:OpenBSD") как открытая альтернатива проприетарному Secure Shell компании SSH Communications Security.
 
@@ -607,6 +607,8 @@ $ ssh -J *пользователь1*@*бастион1*,*пользователь
 ```
 
 Промежуточные хосты в директиве `-J` разделяются запятыми и располагаются в порядке установления соединения. Часть `*пользователь...*@` необязательна. При работе с опцией `-J` используется стандартный файл настроек SSH, поэтому при необходимости в нём можно указать настройки соединения для каждого хоста в отдельности.
+
+Опция `ProxyJump` в файле настроек эквивалентyна флагу командной строки `-J`, см. [ssh_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5).
 
 ### Обратный SSH через промежуточный узел
 

@@ -3,7 +3,7 @@ Artigos relacionados
 *   [Particionamento](/index.php/Particionamento "Particionamento")
 *   [Arquivo de dispositivo#lsblk](/index.php/Arquivo_de_dispositivo#lsblk "Arquivo de dispositivo")
 *   [Permissões e atributos de arquivo](/index.php/Permiss%C3%B5es_e_atributos_de_arquivo "Permissões e atributos de arquivo")
-*   [fsck](/index.php/Fsck "Fsck")
+*   [fsck](/index.php/Fsck_(Portugu%C3%AAs) "Fsck (Português)")
 *   [fstab](/index.php/Fstab "Fstab")
 *   [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications")
 *   [QEMU#Mounting a partition inside a raw disk image](/index.php/QEMU#Mounting_a_partition_inside_a_raw_disk_image "QEMU")
@@ -174,7 +174,7 @@ Um sistema de arquivos existente, se presente, vai ser mostrado na coluna `FSTYP
 
 ## Criar um sistema de arquivos
 
-Sistemas de arquivo são normalmente criados em uma [partição](/index.php/Parti%C3%A7%C3%A3o "Partição"), dentro de containers lógicos como [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") e [dm-crypt](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)"), ou em um arquivo normal (veja [Wikipedia:Loop device](https://en.wikipedia.org/wiki/Loop_device "wikipedia:Loop device")). Esta seção descreve o caso da partição.
+Sistemas de arquivo são normalmente criados em uma [partição](/index.php/Parti%C3%A7%C3%A3o "Partição"), dentro de containers lógicos como [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)"), [RAID](/index.php/RAID "RAID") e [dm-crypt](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)"), ou em um arquivo normal (veja [Wikipedia:Loop device](https://en.wikipedia.org/wiki/Loop_device "wikipedia:Loop device")). Esta seção descreve o caso da partição.
 
 **Nota:** Sistemas de arquivos podem ser escritos diretamente para o disco, isto é conhecido como *superfloppy* ou [disco sem partição](/index.php/Particionamento#Disco_sem_partição "Particionamento"). Existem certas limitações neste método, particularmente se [inicializar](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch "Processo de inicialização do Arch") por tal unidade de armazenamento. Veja [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") para um exemplo.
 

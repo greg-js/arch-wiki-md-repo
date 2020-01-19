@@ -293,7 +293,7 @@ $ ssh-copy-id username@remotehost
 
 ```
 
-**As root**, see that you can login to the remote server without entering a password:
+**As root**, see that you can login to the remote server:
 
 ```
 # ssh username@remotehost

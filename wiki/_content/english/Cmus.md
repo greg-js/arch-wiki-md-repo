@@ -11,7 +11,8 @@
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
     *   [3.1 Remote Control](#Remote_Control)
-*   [4 See also](#See_also)
+*   [4 Audio Scrobbling](#Audio_Scrobbling)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -85,6 +86,21 @@ To use cmus-remote in [Openbox](/index.php/Openbox "Openbox"), edit `~/.config/o
 ```
 
 Now when you use the `XF86AudioPlay` key on your keyboard, cmus will open up. If it is opened already it will then start playing. Using the XF86AudioNext and XF86AudioPrev keys will change tracks.
+
+## Audio Scrobbling
+
+Cmus doesn't support audio scrobbling itself, but there is [third party solutions](https://github.com/cmus/cmus/wiki/status-display-programs#audio-scrobbling-to-eg-lastfm-or-librefm). Install [cmusfm](https://aur.archlinux.org/packages/cmusfm/) for Last.fm or Libre.fm scrobbling. For initial configuration run `cmusfm init` and follow link to perform authentication.
+
+By default cmusfm scrobbles to the Last.fm service. However, it is possible to change this behavior by modifying **service-api-url** and **service-auth-url** options in the configuration file (`~/.config/cmus/cmusfm.conf`). Afterwards, one should reinitialize cmusfm `cmusfm init` in order to authenticate with new scrobbling service. In order to use Libre.fm as a scrobbling service, one shall use configuration as follows:
+
+ `~/.config/cmus/cmusfm.conf` 
+```
+service-api-url = "https://libre.fm/2.0/"
+service-auth-url = "https://libre.fm/api/auth"
+
+```
+
+Next step is to set cmusfm as *status program* for cmus. Execute command in main cmus window `:set status_display_program=cmusfm`
 
 ## See also
 

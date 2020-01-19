@@ -1,18 +1,20 @@
-Related articles
+Artigos relacionados
 
 *   [Sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos")
 *   [fdisk](/index.php/Fdisk "Fdisk")
 *   [gdisk](/index.php/Gdisk "Gdisk")
 *   [parted](/index.php/Parted "Parted")
 *   [fstab](/index.php/Fstab "Fstab")
-*   [LVM](/index.php/LVM "LVM")
-*   [Swap](/index.php/Swap "Swap")
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)")
+*   [Swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)")
+*   [Processo de inicialização do Arch](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch "Processo de inicialização do Arch")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+
+**Status de tradução:** Esse artigo é uma tradução de [Partitioning](/index.php/Partitioning "Partitioning"). Data da última tradução: 2020-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=594371) na versão em inglês.
 
 O [particionamento](https://en.wikipedia.org/wiki/Particionamento_de_disco ou para separar dados de maneira lógica como arquivos de áudio e vídeo.
 
-As informações necessárias são gravadas em um esquema de [tabela de partições](#Tabela_de_partições) que pode ser MBR ou GPT.
+As informações necessárias são gravadas em um esquema de [tabela de partição](#Tabela_de_partição) que pode ser MBR ou GPT.
 
 Tabelas de partições são criadas e modificadas usando uma de diversas ferramentas, a qual deve ser compatível com o esquema da tabela de partição escolhido. Ferramentas disponíveis estão listadas na seção [#Ferramentas de particionamento](#Ferramentas_de_particionamento).
 
@@ -24,11 +26,11 @@ Uma vez criada, uma partição deve ser formatada com um [sistema de arquivos](/
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Tabela de partições](#Tabela_de_partições)
+*   [1 Tabela de partição](#Tabela_de_partição)
     *   [1.1 Master Boot Record](#Master_Boot_Record)
         *   [1.1.1 Master Boot Record (código de inicialização)](#Master_Boot_Record_(código_de_inicialização))
         *   [1.1.2 Master Boot Record (tabela de partição)](#Master_Boot_Record_(tabela_de_partição))
-    *   [1.2 GUID Partition Table](#GUID_Partition_Table)
+    *   [1.2 Tabela de Partição GUID](#Tabela_de_Partição_GUID)
     *   [1.3 Escolhendo entre MBR e GPT](#Escolhendo_entre_MBR_e_GPT)
     *   [1.4 Disco sem partição](#Disco_sem_partição)
         *   [1.4.1 Particionamento Btrfs](#Particionamento_Btrfs)
@@ -57,15 +59,15 @@ Uma vez criada, uma partição deve ser formatada com um [sistema de arquivos](/
 *   [6 Truque para BIOS antigos inicializarem a partir de GPT](#Truque_para_BIOS_antigos_inicializarem_a_partir_de_GPT)
 *   [7 Veja também](#Veja_também)
 
-## Tabela de partições
+## Tabela de partição
 
 **Dica:** Para imprimir/listar tabelas existentes (de um dispositivo específico), execute `parted */dev/sda* print` ou `fdisk -l */dev/sda*`, onde `*/dev/sda*` é um nome de [dispositivo de bloco](/index.php/Dispositivo_de_bloco "Dispositivo de bloco").
 
-Há dois principais tipos de tabelas de partição disponíveis. Eles são descritos abaixo nas seções [#Master Boot Record](#Master_Boot_Record) (MBR) e [#GUID Partition Table](#GUID_Partition_Table) (GPT) juntos com uma discussão sobre como escolher um deles. Uma terceira alternativa, a menos comum, é usar um disco sem nenhuma partição, a qual também está discutida.
+Há dois principais tipos de tabelas de partição disponíveis. Eles são descritos abaixo nas seções [#Master Boot Record](#Master_Boot_Record) (MBR) e [#Tabela de Partição GUID](#Tabela_de_Partição_GUID) (GPT) juntos com uma discussão sobre como escolher um deles. Uma terceira alternativa, a menos comum, é usar um disco sem nenhuma partição, a qual também está discutida.
 
 ### Master Boot Record
 
-O [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record em sistemas [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS"). Veja [Wikipedia:Master boot record#Disk partitioning](https://en.wikipedia.org/wiki/Master_boot_record#Disk_partitioning "wikipedia:Master boot record") para conhecer a estrutura do MBR.
+O [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") (MBR) são os primeiros 512 bytes de um dispositivo de armazenamento. Contém um gerenciador de boot de sistema operacional e a tabela de partições do dispositivo de armazenamento. Desempenha um papel fundamental no [processo de inicialização](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch "Processo de inicialização do Arch") em sistemas [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS"). Veja [Wikipedia:Master boot record#Disk partitioning](https://en.wikipedia.org/wiki/Master_boot_record#Disk_partitioning "wikipedia:Master boot record") para conhecer a estrutura do MBR.
 
 **Nota:**
 
@@ -74,33 +76,33 @@ O [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record em siste
 
 #### Master Boot Record (código de inicialização)
 
-Os primeiros 440 bytes do MBR são a **área do codigo de inicialização**. Em sistemas BIOS, ela usualmente contém o primeiro estágio do carregador de inicialização. Este código pode ser armazenado em backup, restaurado ou apagado [usando dd](/index.php/Dd_(Portugu%C3%AAs)#Fazer_backup_e_restaurar_MBR "Dd (Português)").
+Os primeiros 440 bytes do MBR são a **área do código de inicialização**. Em sistemas BIOS, ela usualmente contém o primeiro estágio do carregador de inicialização. Este código pode ser armazenado em backup, restaurado ou apagado [usando dd](/index.php/Dd_(Portugu%C3%AAs)#Fazer_backup_e_restaurar_MBR "Dd (Português)").
 
 #### Master Boot Record (tabela de partição)
 
 Na tabela de partição MBR (também conhecida como tabela de partição MS-DOS) há três tipos de partições:
 
 *   Partição primária
-*   Partição extendida
+*   Partição estendida
     *   Unidade lógica
 
-**Partições primárias** podem ser inicializadas e são limitadas a quatro por disco ou volume RAID. Se a tabela de partição MBR requerer mais do que quatro partições, então uma das partições primárias deve ser substituída por uma **partição extendida** contendo uma **unidade lógica** ou mais dentro dela.
+**Partições primárias** podem ser inicializadas e são limitadas a quatro por disco ou volume RAID. Se a tabela de partição MBR requerer mais do que quatro partições, então uma das partições primárias deve ser substituída por uma **partição estendida** contendo uma **unidade lógica** ou mais dentro dela.
 
-Partições extendidas podem ser pensadas como contêineres para unidades lógicas. Um disco rígido não pode conter mais do que uma partição extendida. A partição extendida também é contada como uma partição primária, então se um disco possuir uma partição extendida, somente outras três partições primárias serão possíveis (isto é, três partições primárias e uma partição extendida). O número de unidades lógicas residentes dentro de uma partição extendida é ilimitado. Um sistema executado em dual-boot com Windows irá necessitar que o Windows esteja dentro de uma partição primária.
+Partições estendidas podem ser pensadas como contêineres para unidades lógicas. Um disco rígido não pode conter mais do que uma partição estendida. A partição estendida também é contada como uma partição primária, então se um disco possuir uma partição estendida, somente outras três partições primárias serão possíveis (isto é, três partições primárias e uma partição estendida). O número de unidades lógicas residentes dentro de uma partição estendida é ilimitado. Um sistema executado em dual-boot com Windows irá necessitar que o Windows esteja dentro de uma partição primária.
 
-Um esquema bem comum é criar partições primárias de *sda1* até *sda3* seguidas por uma partição extendida *sda4*. As unidades lógicas em *sda4* são numeradas como *sda5*, *sda6*, etc.
+Um esquema bem comum é criar partições primárias de *sda1* até *sda3* seguidas por uma partição estendida *sda4*. As unidades lógicas em *sda4* são numeradas como *sda5*, *sda6*, etc.
 
 **Dica:** Ao particionar um disco MBR, considere deixar ao menos 33 setores de 512 bytes cada (16.5 KiB) de espaço livre sem particionamento no final do disco para caso você decida [convertê-lo posteriormente para GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk"). Este espaço adicional será necessário para guardar o cabeçalho da GPT.
 
-### GUID Partition Table
+### Tabela de Partição GUID
 
-[GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) é um esquema de particionamento que é parte da especificação [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"); utiliza [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), ou UUIDs no universo Linux, para definir partições e [tipos de partição](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). Foi desenvolvido para suceder o esquema de particionamento [Master Boot Record](#Master_Boot_Record).
+[Tabela de Partição GUID](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID "wikipedia:pt:Tabela de Partição GUID") (GPT) é um esquema de particionamento que é parte da especificação [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"); utiliza [Identificadores Únicos Globalis](https://en.wikipedia.org/wiki/pt:Identificador_%C3%9Anico_Global "wikipedia:pt:Identificador Único Global") (GUIDs), ou UUIDs no universo Linux, para definir partições e [tipos de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID"). Foi desenvolvido para suceder o esquema de particionamento [Master Boot Record](#Master_Boot_Record).
 
-No início de uma tabela de partição GPT no disco, há um [protetor do registro-mestre de inicialização](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 a qual pode ser usada para inicializar sistemas usando esquemas BIOS/GPT em bootloaders que suportarem.
+No início de uma tabela de partição GPT no disco, há um [Master Boot record protetivo](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#MBR_antiquado_.28LBA_0.29 "wikipedia:pt:Tabela de Partição GUID") (PMBR) que protege a GPT de softwares maliciosos. Este MBR protetivo, assim como um MBR comum, possui uma [área de código de inicialização](#Master_Boot_Record_(código_de_inicialização)) a qual pode ser usada para inicializar sistemas usando esquemas BIOS/GPT em bootloaders que suportarem.
 
 ### Escolhendo entre MBR e GPT
 
-GUID Partition Table (GPT) é uma alternativa moderna de método de particionamento criada para substituir o antigo sistema de registro-mestre de inicialização (MBR). GPT possui algumas vantagens sobre o MBR, o qual data de tempos do MS-DOS. Com os recentes desenvolvimentos de ferramentas de formatação, é fácil obter performance e confiabilidade iguais tanto para GPT como para MBR.
+Tabela de Partição GUID (GPT) é uma alternativa moderna de método de particionamento criada para substituir o antigo Master Boot Record (MBR). GPT possui algumas vantagens sobre o MBR, o qual data de tempos do MS-DOS. Com os recentes desenvolvimentos de ferramentas de formatação, é fácil obter performance e confiabilidade iguais tanto para GPT como para MBR.
 
 **Nota:** Para que o GRUB possa inicializar a partir de um disco particionado no esquema GPT em um sistema baseado em BIOS, uma [partição de inicialização BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Instruções_específicas_de_Tabela_de_Partição_GUID_(GPT) "GRUB (Português)") é necessária.
 
@@ -108,21 +110,21 @@ Alguns pontos a serem considerar na escolha:
 
 *   Para dual-boot com Windows (ambos 32-bit e 64-bit) usando um sistema BIOS, será necessário escolher o esquema MBR.
 *   Para dual-boot com Windows 64-bit usando o modo [UEFI](/index.php/UEFI "UEFI") ao invés de BIOS, será necessário usar o esquema GPT.
-*   Se estiver instalando em hardware antigo, especialmente em laptops antigos, considere escolher MBR seu BIOS pode não suportar (mas [veja abaixo](/index.php/Partitioning_(Portugu%C3%AAs)#Truque_para_BIOS_antigos_inicializarem_a_partir_de_GPT "Partitioning (Português)") como contornar isso).
+*   Se estiver instalando em hardware antigo, especialmente em laptops antigos, considere escolher MBR seu BIOS pode não suportar (mas [veja abaixo](#Truque_para_BIOS_antigos_inicializarem_a_partir_de_GPT) como contornar isso).
 *   Se estiver particionando um disco de 2 TiB ou mais, será necessário usar o esquema GPT.
-*   É recomendável sempre usar GPT para incializar sistemas [UEFI](/index.php/UEFI "UEFI"), já que algumas implementações UEFI não suportam inicializar MBR.
+*   É recomendável sempre usar GPT para inicializar sistemas [UEFI](/index.php/UEFI "UEFI"), já que algumas implementações UEFI não suportam inicializar MBR.
 *   Se nenhuma das condições acima se aplicarem, será possível escolher livremente entre GPT e MBR. Uma vez que GPT é mais moderno, é recomendável usá-lo neste caso.
 
 Algumas vantagens do GPT sobre o MBR são:
 
-*   Fornece GUID de disco e GUID de partição ([PARTUUID](/index.php/Persistent_block_device_naming_(Portugu%C3%AAs)#by-partuuid "Persistent block device naming (Português)")) exclusivos para cada partição - uma boa prática de referenciar partições e discos para o sistema de arquivos.
-*   Fornece um nome de partição independente do sistema de arquivos ([PARTLABEL](/index.php/Persistent_block_device_naming_(Portugu%C3%AAs)#by-partlabel "Persistent block device naming (Português)")).
-*   Número arbitrário de partições - depende do espaço alocado para a tabela de partições - Não necessita de partições extendidas e unidades lógicas. Por padrão, a tabela de partições GPT contém espaço para difinir até 128 partições. Entretanto, se for desejável definir mais partições, é possível alocar mais espaço para a tabela de partições (atualmente apenas *gdisk* é reconhecido por suportar esse recurso).
+*   Fornece GUID de disco e GUID de partição ([PARTUUID](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco#by-partuuid "Nomeação persistente de dispositivo de bloco")) exclusivos para cada partição - uma boa prática de referenciar partições e discos para o sistema de arquivos.
+*   Fornece um nome de partição independente do sistema de arquivos ([PARTLABEL](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco#by-partlabel "Nomeação persistente de dispositivo de bloco")).
+*   Número arbitrário de partições - depende do espaço alocado para a tabela de partições - Não necessita de partições estendidas e unidades lógicas. Por padrão, a tabela de partições GPT contém espaço para definir até 128 partições. Entretanto, se for desejável definir mais partições, é possível alocar mais espaço para a tabela de partições (atualmente apenas *gdisk* é reconhecido por suportar esse recurso).
 *   Utiliza LBA de 64-bits para armazenar números de setores - permite endereçar discos de até 2 ZiB. O MBR é limitado a endereçar até 2 TiB de espaço por dispositivo.
 *   Armazena um cabeçalho de backup e uma tabela de partição no fim do disco que auxiliam na [recuperação](/index.php/Gdisk#Recover_GPT_header "Gdisk") no caso destas serem danificadas.
-*   Recurso CRC32 checksums para detectar erros e corrompimento do cabeçalho e da tabela de partições.
+*   Recurso de somas de verificação CRC32 para detectar erros e corrompimento do cabeçalho e da tabela de partições.
 
-A seção de [#Ferramentas de particionamento](#Ferramentas_de_particionamento) contém uma tabela indicando quais ferramentas estão disponívels para criar e modificar tabelas GPT e MBR.
+A seção de [#Ferramentas de particionamento](#Ferramentas_de_particionamento) contém uma tabela indicando quais ferramentas estão disponíveis para criar e modificar tabelas GPT e MBR.
 
 **Dica:** É possível converter entre MBR e GPT. Veja [gdisk#Convert between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk").
 
@@ -132,16 +134,16 @@ Um disco sem partição, também conhecido como [superfloppy](https://docs.micro
 
 #### Particionamento Btrfs
 
-[Btrfs](/index.php/Btrfs "Btrfs") pode ocupar um dispositivo de armazenamento inteiro e substituir os esquemas de particionamento [MBR](#Master_Boot_Record) ou [GPT](#GUID_Partition_Table). Veja as instruções em [Btrfs#File system on a single device](/index.php/Btrfs#File_system_on_a_single_device "Btrfs") para detalhes.
+[Btrfs](/index.php/Btrfs "Btrfs") pode ocupar um dispositivo de armazenamento inteiro e substituir os esquemas de particionamento [MBR](#Master_Boot_Record) ou [GPT](#Tabela_de_Partição_GUID). Veja as instruções em [Btrfs#File system on a single device](/index.php/Btrfs#File_system_on_a_single_device "Btrfs") para detalhes.
 
 ## Esquema de partição
 
-Não há regras estritas para particionar um disco rígido, embora o guia geral a seguir possa ser seguido. Um esquema de particionamento de disco é determinado por várioas razões como flexibilidade desejada, velocidade, segurança, bem como limitações impostas pelo espaço em disco disponível. É essencialmente uma preferência pessoal. Se pretende fazer dual-boot com Arch Linux e um sistema operacional Windows, veja [Dual boot com Windows](/index.php/Dual_boot_com_Windows "Dual boot com Windows").
+Não há regras estritas para particionar um disco rígido, embora o guia geral a seguir possa ser seguido. Um esquema de particionamento de disco é determinado por vários razões como flexibilidade desejada, velocidade, segurança, bem como limitações impostas pelo espaço em disco disponível. É essencialmente uma preferência pessoal. Se pretende fazer dual-boot com Arch Linux e um sistema operacional Windows, veja [Dual boot com Windows](/index.php/Dual_boot_com_Windows "Dual boot com Windows").
 
 **Nota:**
 
-*   Sistemas [UEFI](/index.php/UEFI "UEFI") requerem uma ESP, ou [partição de sistema EFI](/index.php/EFI_system_partition_(Portugu%C3%AAs) "EFI system partition (Português)").
-*   Sistemas BIOS que são particionados com [GPT](#GUID_Partition_Table) requerem uma [partição de inicialização BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Instruções_específicas_de_Tabela_de_Partição_GUID_(GPT) "GRUB (Português)") se [GRUB](/index.php/GRUB "GRUB") for o bootloader usado.
+*   Sistemas [UEFI](/index.php/UEFI "UEFI") requerem uma ESP, ou [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI").
+*   Sistemas BIOS que são particionados com [GPT](#Tabela_de_Partição_GUID) requerem uma [partição de inicialização BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Instruções_específicas_de_Tabela_de_Partição_GUID_(GPT) "GRUB (Português)") se [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") for o gerenciador de boot usado.
 
 **Dica:** Se estiver usando [Btrfs](/index.php/Btrfs "Btrfs"), subvolumes podem ser usados para imitar partições. Veja a seção [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
@@ -151,30 +153,30 @@ Este esquema é o mais simples e deve ser suficiente para a maioria dos casos. U
 
 ### Partições discretas
 
-Separar um diretório como uma partição permite selecionar diferentes sistemas de arquivos e opções de montagem. Em casos como o de partições de mídia, elas tambem podem ser compartilhados entre sistemas operacionais.
+Separar um diretório como uma partição permite selecionar diferentes sistemas de arquivos e opções de montagem. Em casos como o de partições de mídia, elas também podem ser compartilhados entre sistemas operacionais.
 
-A seguir, há alguns exemplos de esquemas que podem ser usados ao fazer um particionamento, e as subseções seguintes detalham um pouco diretorios os quais podem ter sua própria partição separada e seu ponto de montagem relativo a `/`. Veja [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para uma descrição completa do conteúdo destes diretórios.
+A seguir, há alguns exemplos de esquemas que podem ser usados ao fazer um particionamento, e as subseções seguintes detalham um pouco diretórios os quais podem ter sua própria partição separada e seu ponto de montagem relativo a `/`. Veja [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para uma descrição completa do conteúdo destes diretórios.
 
 #### /
 
-O diretório-raiz é o topo da hierarquia, o ponto onde o principal sistema de arquivos é montado e de cada outro sistema de arquivos reside. Todos os arquivos e diretórios aparecem sob o diretório-raiz `/`, mesmo se estiverem armazenados em outros dispositivos físicos. O conteúdo do sistema de arquivos raiz deve ser adequado para inicializar, restaurar, recuperar e/ou reparar o sistema. Portanto, alguns diretórios sob `/` não são cadidatos para partições separadas.
+O diretório raiz é o topo da hierarquia, o ponto onde o principal sistema de arquivos é montado e de cada outro sistema de arquivos reside. Todos os arquivos e diretórios aparecem sob o diretório raiz `/`, mesmo se estiverem armazenados em outros dispositivos físicos. O conteúdo do sistema de arquivos raiz deve ser adequado para inicializar, restaurar, recuperar e/ou reparar o sistema. Portanto, alguns diretórios sob `/` não são candidatos para partições separadas.
 
-A partição `/` ou partição-raiz é necessária e também a mais importante. As demais partições podem ser substituídas por ela.
+A partição `/` ou partição raiz é necessária e também a mais importante. As demais partições podem ser substituídas por ela.
 
-**Atenção:** Diretórios essenciais para inicialização (exceto para `/boot`) **devem** estar na mesma partição de `/` ou montados no mesmo espaço de usuário inicial da [initramfs](/index.php/Initramfs "Initramfs"). Estes diretórios essenciais são: `/etc` e `/usr` [[1]](https://freedesktop.org/wiki/Software/systemd/separate-usr-is-broken).
+**Atenção:** Diretórios essenciais para inicialização (exceto para `/boot`) **devem** estar na mesma partição de `/` ou montados no mesmo espaço de usuário inicial da [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)"). Estes diretórios essenciais são: `/etc` e `/usr` [[1]](https://freedesktop.org/wiki/Software/systemd/separate-usr-is-broken).
 
 `/` tradicionalmente contém o diretório `/usr`, o qual pode crescer significativamente à medida em que novo software for instalado. 15–20 GiB devem ser suficientes para a maioria dos usuários com modernos discos rígidos. Se planejar armazenar um arquivo de swap aqui, precisará de um tamanho de partição maior.
 
 #### /boot
 
-O diretório `/boot` contém as imagens do kernel e ramdisk, bem como o arquivo de configuração do bootloader. Também armazena os dados que são usados antes mesmo de o kernel começar a executar programas no espaço de usuário. `/boot` não é necessário na execução normal do sistema, apenas durante o processo de inicialização e durante atualização do kernel (quando as imagens do randisk precisam ser recriadas).
+O diretório `/boot` contém as imagens do kernel e ramdisk, bem como o arquivo de configuração do gerenciador de boot. Também armazena os dados que são usados antes mesmo de o kernel começar a executar programas no espaço de usuário. `/boot` não é necessário na execução normal do sistema, apenas durante o processo de inicialização e durante atualização do kernel (quando as imagens do ramdisk precisam ser recriadas).
 
 **Nota:**
 
-*   Uma partição `/boot` separada é somente necessária se o seu bootloader não for capaz de acessar o diretório `/boot` que reside dentro de `/`. Por exemplo, se o bootloader não suportar o sistema de arquivos ou se seu diretório `/` estiver em um dispositivo de bloco empilhado (por exemplo, [RAID](/index.php/RAID "RAID") via software, um [volume criptografado](/index.php/Dm-crypt "Dm-crypt") ou um [LVM](/index.php/LVM "LVM")) e se o bootloader não tiver drivers que suportem. Veja [Arch boot process (Português)#Gerenciador de boot](/index.php/Arch_boot_process_(Portugu%C3%AAs)#Gerenciador_de_boot "Arch boot process (Português)") para mais informações sobre pré-requisitos e capacidades de bootloaders.
-*   Se estiver inicializando um [boot loader](/index.php/Arch_boot_process_(Portugu%C3%AAs)#Gerenciador_de_boot "Arch boot process (Português)") UEFI que não possuir drivers para outros sistemas de arquivos, é recomendável montar a [partição de sistema EFI](/index.php/EFI_system_partition_(Portugu%C3%AAs) "EFI system partition (Português)") em `/boot`. Veja [EFI system partition (Português)#Montar a partição](/index.php/EFI_system_partition_(Portugu%C3%AAs)#Montar_a_partição "EFI system partition (Português)") para mais informações.
+*   Uma partição `/boot` separada é somente necessária se o seu gerenciador de boot não for capaz de acessar o diretório `/boot` que reside dentro de `/`. Por exemplo, se o gerenciador de boot não suportar o sistema de arquivos ou se seu diretório `/` estiver em um dispositivo de bloco empilhado (por exemplo, [RAID](/index.php/RAID "RAID") via software, um [volume criptografado](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") ou um [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)")) e se o gerenciador de boot não tiver drivers que suportem. Veja [Processo de inicialização do Arch#Gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") para mais informações sobre pré-requisitos e capacidades de gerenciadores de boot.
+*   Se estiver inicializando um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") UEFI que não possuir drivers para outros sistemas de arquivos, é recomendável montar a [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") em `/boot`. Veja [Partição de sistema EFI#Montar a partição](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI#Montar_a_partição "Partição de sistema EFI") para mais informações.
 
-Um tamanho sugerido para `/boot` é 200 MiB a menos que esteja usando uma [partição de sistema EFI](/index.php/EFI_system_partition_(Portugu%C3%AAs) "EFI system partition (Português)") como `/boot`, neste caso, no mímimo 260 MiB são recomendados.
+Um tamanho sugerido para `/boot` é 200 MiB a menos que esteja usando uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") como `/boot`, neste caso, no mímimo 260 MiB são recomendados.
 
 #### /home
 
@@ -192,7 +194,7 @@ Ela existe para que seja possível montar `/usr` como somente-leitura. Tudo que,
 
 **Nota:** `/var` contém muitos arquivos pequenos. A escolha de um tipo de sistema de arquivos deve considerar isso se uma partição exclusiva for usada.
 
-`/var` irá conter, entre outros dados, o cache do [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Manter estes pacotes é útil no caso de alguma atualização causar instabilidade, exigindo um [downgrade](/index.php/Downgrading_packages_(Portugu%C3%AAs) "Downgrading packages (Português)") para um pacote mais antigo arquivado. O cache do pacman irá aumentar à medida em que o sistema crescer e for atualizado, mas pode seguramente ser limpo se espaço se tornar um problema. 8–12 GiB em um sistema desktop deve ser suficiente para `/var`, dependendo da quantidade de software instalado.
+`/var` irá conter, entre outros dados, o cache do [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Manter estes pacotes é útil no caso de alguma atualização causar instabilidade, exigindo um [downgrade](/index.php/Fazendo_downgrade_de_pacotes "Fazendo downgrade de pacotes") para um pacote mais antigo arquivado. O cache do pacman irá aumentar à medida em que o sistema crescer e for atualizado, mas pode seguramente ser limpo se espaço se tornar um problema. 8–12 GiB em um sistema desktop deve ser suficiente para `/var`, dependendo da quantidade de software instalado.
 
 #### /data
 
@@ -208,13 +210,13 @@ Para usar hibernação (também referida como suspensão ao disco) é recomendad
 
 ### Exemplos de leiaute
 
-Os exemplos a seguir usam `/dev/sda` como exemplo de disco com `/dev/sda1` como sua primeira partição. O esquema de nomeamento do dispositivo de bloco poderá ser diferente se estiver particionando um disco [NVMe](/index.php/NVMe "NVMe") (por exemplo, `/dev/nvme0n1` com partições iniciando em `/dev/nvme0n1p1`), um catão SD ou disco eMMC (por exemplo `/dev/mmcblk0` com partições começando em `/dev/mmcblk0p1`). Veja [Device file (Português)#Nomes de dispositivos de bloco](/index.php/Device_file_(Portugu%C3%AAs)#Nomes_de_dispositivos_de_bloco "Device file (Português)") para mais informações.
+Os exemplos a seguir usam `/dev/sda` como exemplo de disco com `/dev/sda1` como sua primeira partição. O esquema de nomeamento do dispositivo de bloco poderá ser diferente se estiver particionando um disco [NVMe](/index.php/NVMe "NVMe") (por exemplo, `/dev/nvme0n1` com partições iniciando em `/dev/nvme0n1p1`), um catão SD ou disco eMMC (por exemplo `/dev/mmcblk0` com partições começando em `/dev/mmcblk0p1`). Veja [Arquivo de dispositivo#Nomes de dispositivos de bloco](/index.php/Arquivo_de_dispositivo#Nomes_de_dispositivos_de_bloco "Arquivo de dispositivo") para mais informações.
 
 **Nota:** Inicialização em UEFI não envolve qualquer bandeira "boot", este método de inicialização depende somente das entradas na NVRAM. [Parted](/index.php/Parted "Parted") e ferramentas similares de interface gráfica usam uma bandeira "boot" em GPT para indicar que esta partição é uma partição de sistema EFI.
 
 #### Leiaute de exemplo UEFI/GPT
 
-| Ponto de montagem no sistema instalado | Partição | [GUID e tipo de partição](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Atributos da partição](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2.E2.80.9333.29 "wikipedia:GUID Partition Table") | Tamanho sugerido |
+| Ponto de montagem no sistema instalado | Partição | [GUID e tipo de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | [Atributos da partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Entradas_de_parti.C3.A7.C3.A3o_.28LBA_2.E2.80.9333.29 "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
 | `/boot` ou `/efi` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [Partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") | 260 MiB |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23–32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") | Mais de 512 MiB |
@@ -222,14 +224,14 @@ Os exemplos a seguir usam `/dev/sda` como exemplo de disco com `/dev/sda1` como 
 
 #### Leiaute de exemplo BIOS/MBR
 
-| Ponto de montagem no sistema instalado | Partição | [ID e tipo de partição](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | [Bandeira de boot](https://en.wikipedia.org/wiki/Boot_flag "wikipedia:Boot flag") | Tamanho sugerido |
+| Ponto de montagem no sistema instalado | Partição | [ID e tipo de partição](https://en.wikipedia.org/wiki/pt:Tipo_de_parti%C3%A7%C3%A3o "wikipedia:pt:Tipo de partição") | [Sinalizador de inicialização](https://en.wikipedia.org/wiki/pt:Sinalizador_de_inicializa%C3%A7%C3%A3o "wikipedia:pt:Sinalizador de inicialização") | Tamanho sugerido |
 | `/` | `/dev/sda1` | `83`: Linux | Sim | 23–32 GiB |
 | `[SWAP]` | `/dev/sda2` | `82`: Linux [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") | Não | Mais de 512 MiB |
 | `/home` | `/dev/sda3` | `83`: Linux | Não | Restante do dispositivo |
 
 #### Leiaute de exemplo BIOS/GPT
 
-| Ponto de montagem no sistema instalado | Partição | [GUID e tipo de partição](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Atributos da partição](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2.E2.80.9333.29 "wikipedia:GUID Partition Table") | Tamanho sugerido |
+| Ponto de montagem no sistema instalado | Partição | [GUID e tipo de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | [Atributos da partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Entradas_de_parti.C3.A7.C3.A3o_.28LBA_2.E2.80.9333.29 "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
 | Nenhum | `/dev/sda1` | `21686148-6449-6E6F-744E-656564454649`: [Partição de inicialização BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Instruções_específicas_de_Master_Boot_Record_(MBR) "GRUB (Português)") | 1 MiB |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | `2`: BIOS inicializável | 23–32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") | Mais de 512 MiB |
@@ -278,7 +280,7 @@ partitionmanager |
 *gdisk* e seus utilitários estão descritos no artigo [gdisk](/index.php/Gdisk "Gdisk").
 
 *   [GPT fdisk](/index.php/GPT_fdisk "GPT fdisk") ([gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk))
-    *   [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) – Manipulador de [Tabela de partições GUID (GPT)](#GUID_Partition_Table) interativo.
+    *   [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) – Manipulador de [Tabela de partições GUID (GPT)](#Tabela_de_Partição_GUID) interativo.
     *   [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) – Variante do gdisk baseada na biblioteca Curses.
     *   [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) – Variante do gdisk.
 
@@ -363,11 +365,11 @@ Partition table entries are not in disk order.
 
 ## Veja também
 
-*   [Wikipedia:Disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "wikipedia:Disk partitioning")
-*   [Wikipedia:Binary prefix](https://en.wikipedia.org/wiki/Binary_prefix "wikipedia:Binary prefix")
+*   [Wikipedia:pt:Particionamento de disco](https://en.wikipedia.org/wiki/pt:Particionamento_de_disco "wikipedia:pt:Particionamento de disco")
+*   [Wikipedia:pt:Prefixo binário](https://en.wikipedia.org/wiki/pt:Prefixo_bin%C3%A1rio "wikipedia:pt:Prefixo binário")
 *   [Understanding Disk Drive Terminology](https://thestarman.pcministry.com/asm/mbr/DiskTerms.htm)
 *   [What is a Master Boot Record (MBR)?](https://kb.iu.edu/d/aijw)
-*   Rod Smith's page on [What's a GPT?](https://www.rodsbooks.com/gdisk/whatsgpt.html) and [Booting OSes from GPT](https://rodsbooks.com/gdisk/booting.html)
+*   Página de Rod Smith sobre [What's a GPT?](https://www.rodsbooks.com/gdisk/whatsgpt.html) e [Booting OSes from GPT](https://rodsbooks.com/gdisk/booting.html)
 *   [Make the most of large drives with GPT and Linux - IBM Developer](https://developer.ibm.com/tutorials/l-gpt/)
-*   [Microsoft's Windows and GPT FAQ](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq)
-*   [Partition Alignment](https://www.thomas-krenn.com/en/wiki/Partition_Alignment) (with examples)
+*   [Windows and GPT FAQ da Microsoft](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq)
+*   [Partition Alignment](https://www.thomas-krenn.com/en/wiki/Partition_Alignment) (com exemplos)

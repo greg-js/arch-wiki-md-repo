@@ -91,7 +91,7 @@
 
 ### Установка
 
-[Установите](/index.php/Pacman "Pacman") следующие пакеты:
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") следующие пакеты:
 
 *   [samba](https://www.archlinux.org/packages/?name=samba), см. [Samba](/index.php/Samba "Samba")
 *   [pam-krb5](https://www.archlinux.org/packages/?name=pam-krb5) из [AUR](/index.php/AUR "AUR")

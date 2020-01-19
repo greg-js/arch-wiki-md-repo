@@ -17,7 +17,7 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [2.1 Configuration files](#Configuration_files)
     *   [2.2 List of installed packages](#List_of_installed_packages)
     *   [2.3 Pacman database](#Pacman_database)
-    *   [2.4 LUKS headers](#LUKS_headers)
+    *   [2.4 Encryption metadata](#Encryption_metadata)
     *   [2.5 System and user data](#System_and_user_data)
 *   [3 Upgrading the system](#Upgrading_the_system)
     *   [3.1 Read before upgrading the system](#Read_before_upgrading_the_system)
@@ -87,9 +87,9 @@ See [Pacman tips#List of installed packages](/index.php/Pacman_tips#List_of_inst
 
 See [pacman/Tips and tricks#Backup the pacman database](/index.php/Pacman/Tips_and_tricks#Backup_the_pacman_database "Pacman/Tips and tricks").
 
-### LUKS headers
+### Encryption metadata
 
-It can make sense to periodically check and synchronize the backups of LUKS-encrypted partition headers, especially if passphrases have been revoked. See [Dm-crypt/Device encryption#Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
+See [Disk encryption#Backup for disk encryption scenarios](/index.php/Disk_encryption#Backup_for_disk_encryption_scenarios "Disk encryption").
 
 ### System and user data
 

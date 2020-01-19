@@ -9,9 +9,9 @@ Related articles
 
 Google Chrome has following notable built-in features over Chromium:
 
-*   [Flash player](https://en.wikipedia.org/wiki/Flash_player "wikipedia:Flash player"), also available via [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash).
 *   Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") for e.g. Netflix, also available via [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/).
-*   [Native client](https://en.wikipedia.org/wiki/Native_client "wikipedia:Native client") (NaCl). Support for native client (NaCl) has been dropped from Chromium packages since version 54, see [FS#51511](https://bugs.archlinux.org/task/51511).
+*   [Flash player](https://en.wikipedia.org/wiki/Flash_player "wikipedia:Flash player"), also available via [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash). (will be removed in [December 2020](https://www.chromium.org/flash-roadmap#TOC-Flash-Support-Removed-from-Chromium-Target:-Chrome-87---Dec-2020-))
+*   [Native client](https://en.wikipedia.org/wiki/Native_client "wikipedia:Native client") (NaCl). (will be removed in [June 2021](https://blog.chromium.org/2020/01/moving-forward-from-chrome-apps.html))
 
 See these two articles [[1]](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [[2]](https://www.howtogeek.com/202825/what%E2%80%99s-the-difference-between-chromium-and-chrome/) for an explanation of the differences between Chromium and Chrome.
 
@@ -30,8 +30,8 @@ See [List of applications/Internet#Blink-based](/index.php/List_of_applications/
     *   [2.3 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
     *   [2.4 Force GPU acceleration](#Force_GPU_acceleration)
     *   [2.5 Hardware video acceleration](#Hardware_video_acceleration)
-    *   [2.6 Flash Player plugin](#Flash_Player_plugin)
-    *   [2.7 PDF viewer plugin](#PDF_viewer_plugin)
+    *   [2.6 PDF viewer plugin](#PDF_viewer_plugin)
+    *   [2.7 Flash Player plugin](#Flash_Player_plugin)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Fonts](#Fonts)
@@ -44,6 +44,7 @@ See [List of applications/Internet#Blink-based](/index.php/List_of_applications/
     *   [4.5 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
     *   [4.6 Losing cookies and passwords when switching between desktop environments](#Losing_cookies_and_passwords_when_switching_between_desktop_environments)
     *   [4.7 Hang on startup when Google Sync enabled](#Hang_on_startup_when_Google_Sync_enabled)
+    *   [4.8 Shortcuts are not getting created](#Shortcuts_are_not_getting_created)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -117,17 +118,19 @@ To check if it's working play a video which is using a codec supported by your V
 
 Also chrome://gpu should read Video Decode: Hardware accelerated
 
+### PDF viewer plugin
+
+Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin. If you don't want to use this plugin, check *Open PDFs using a different application* in `chrome://settings/content/pdfDocuments`.
+
 ### Flash Player plugin
+
+**Note:** Support for Flash Player will be completely removed from Chromium and Google Chrome in [December 2020](https://www.chromium.org/flash-roadmap#TOC-Flash-Support-Removed-from-Chromium-Target:-Chrome-87---Dec-2020-).
 
 Flash Player is automatically installed when using Google Chrome.
 
 To install it for Chromium, [install](/index.php/Install "Install") the [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) package.
 
 Make sure Flash is allowed to run in `chrome://settings/content/flash`.
-
-### PDF viewer plugin
-
-Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin. If you don't want to use this plugin, check *Open PDFs using a different application* in `chrome://settings/content/pdfDocuments`.
 
 ## Tips and tricks
 
@@ -188,6 +191,10 @@ See [Chromium/Tips and tricks#Force a password store](/index.php/Chromium/Tips_a
 Try launching Chrome with `--password-store=basic` or another appropriate password store.
 
 See [Chromium/Tips and tricks#Force a password store](/index.php/Chromium/Tips_and_tricks#Force_a_password_store "Chromium/Tips and tricks").
+
+### Shortcuts are not getting created
+
+Install [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils).
 
 ## See also
 

@@ -1217,7 +1217,7 @@ Proceed to format the mapped device as described in [Btrfs#File system on a sing
 
 Finally, [mount](/index.php/Mount "Mount") the now-formatted mapped device (i.e., `/dev/mapper/cryptroot`) to `/mnt`.
 
-**Tip:** You may want to use the `compress=lzo` mount option. See [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs") for more information.
+**Tip:** You may want to use the `compress=zstd` mount option. See [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs") for more information.
 
 ### Creating btrfs subvolumes
 
@@ -1267,7 +1267,7 @@ Unmount the system partition at `/mnt`.
 Now mount the newly created `@` subvolume which will serve as `/` to `/mnt` using the `subvol=` mount option. Assuming the mapped device is named `cryptroot`, the command would look like:
 
 ```
-# mount -o compress=lzo,subvol=@ /dev/mapper/cryptroot /mnt
+# mount -o compress=zstd,subvol=@ /dev/mapper/cryptroot /mnt
 
 ```
 
@@ -1305,7 +1305,7 @@ After creating, adding, and embedding the key as described above, add the `encry
 
 ### Configuring the boot loader
 
-Install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda`. Then, edit `/etc/default/grub` as instructed in the [GRUB#Additional arguments](/index.php/GRUB#Additional_arguments "GRUB") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB"), following both the instructions for an encrypted root and boot partition. Finally, generate the GRUB configuration file.
+Install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda`. Then, edit `/etc/default/grub` as instructed in the [GRUB#Additional arguments](/index.php/GRUB#Additional_arguments "GRUB"), [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") and [dm-crypt/System configuration#Using encrypt hook](/index.php/Dm-crypt/System_configuration#Using_encrypt_hook "Dm-crypt/System configuration"), following both the instructions for an encrypted root and boot partition. Finally, generate the GRUB configuration file.
 
 ### Configuring swap
 

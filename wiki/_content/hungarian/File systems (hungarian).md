@@ -10,15 +10,19 @@ Különálló partícióink mindegyikén a sok különböző fájlrendszer valam
 
 Mielőtt formázunk, az adathordozónkat [particionálnunk](/index.php/Partitioning_(Magyar) "Partitioning (Magyar)") kell.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 A fájlrendszerek típusai](#A_f.C3.A1jlrendszerek_t.C3.ADpusai)
-    *   [1.1 Naplózás](#Napl.C3.B3z.C3.A1s)
-    *   [1.2 Arch Linux támogatás](#Arch_Linux_t.C3.A1mogat.C3.A1s)
-*   [2 Eszközök formázása](#Eszk.C3.B6z.C3.B6k_form.C3.A1z.C3.A1sa)
-    *   [2.1 Feltételek](#Felt.C3.A9telek)
-    *   [2.2 Eszközök konzolban](#Eszk.C3.B6z.C3.B6k_konzolban)
-    *   [2.3 Grafikus eszközök](#Grafikus_eszk.C3.B6z.C3.B6k)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 A fájlrendszerek típusai](#A_fájlrendszerek_típusai)
+    *   [1.1 Naplózás](#Naplózás)
+    *   [1.2 Arch Linux támogatás](#Arch_Linux_támogatás)
+*   [2 Eszközök formázása](#Eszközök_formázása)
+    *   [2.1 Feltételek](#Feltételek)
+    *   [2.2 Eszközök konzolban](#Eszközök_konzolban)
+    *   [2.3 Grafikus eszközök](#Grafikus_eszközök)
 
 ## A fájlrendszerek típusai
 

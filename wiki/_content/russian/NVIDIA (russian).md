@@ -89,7 +89,7 @@
 
 Если вы используете собственной ядро, то сборка модулей Nvidia может быть автоматизированна при помощи [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)").
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) (или специфичную ветку, например, [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/)). Модуль будет пересобираться после каждого обновления драйвера или ядра благодаря DKMS [Pacman Hook](/index.php/Pacman#Hooks "Pacman").
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) (или специфичную ветку, например, [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/)). Модуль будет пересобираться после каждого обновления драйвера или ядра благодаря DKMS [Pacman Hook](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Хуки "Pacman (Русский)").
 
 ### DRM kernel mode setting
 

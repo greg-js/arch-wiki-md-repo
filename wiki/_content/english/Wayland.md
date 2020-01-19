@@ -57,7 +57,6 @@ For the GPU driver and Wayland compositor to be compatible they must support the
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
 | Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. Not under development. [[1]](https://github.com/raspberrypi/maynard/issues/54#issuecomment-303422302)[[2]](https://github.com/raspberrypi/maynard/issues/55#issuecomment-373808518) |
 | Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a Wayland compositor to explore 3D windowing using virtual reality. |
-| Way Cooler | Tiling | [Way Cooler](https://github.com/way-cooler/way-cooler) is a customizable (Lua config files) Wayland compositor written in Rust and [rewritten in C](http://way-cooler.org/blog/2019/04/29/rewriting-way-cooler-in-c.html). Inspired by i3 and awesome. |
 | Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/imbavirus/mazecompositor) is a 3D Qt based Wayland compositor |
 | Cage | Kiosk | [Cage](https://www.hjdskes.nl/projects/cage/) is a Wayland compositor that displays a single fullscreen application |
 | Greenfield | Stacking | [Greenfield](https://github.com/udevbe/greenfield) is a Wayland compositor that runs in a web browser and can display remote applications |

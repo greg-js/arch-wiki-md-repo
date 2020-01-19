@@ -26,7 +26,6 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 UEFI](#UEFI)
-    *   [1.1 Firmware Update](#Firmware_Update)
 *   [2 Power Management](#Power_Management)
     *   [2.1 Suspend and Hibernate](#Suspend_and_Hibernate)
     *   [2.2 Fan and temperature monitoring and control](#Fan_and_temperature_monitoring_and_control)
@@ -54,6 +53,8 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [6.1 TB16](#TB16)
     *   [6.2 Dell Docks](#Dell_Docks)
 *   [7 Firmware updates](#Firmware_updates)
+    *   [7.1 Tooled](#Tooled)
+    *   [7.2 Manual](#Manual)
 *   [8 Fingerprint reader](#Fingerprint_reader)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 xorg freezes at startup](#xorg_freezes_at_startup)
@@ -72,18 +73,6 @@ Before installing it is necessary to modify some UEFI Settings. They can be acce
 *   Disable secure boot to allow Linux to boot.
 
 Installation of Arch Linux can proceed normally. Refer to the [Installation guide](/index.php/Installation_guide "Installation guide") for more information.
-
-### Firmware Update
-
-Firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-9560-laptop/drivers) as `XPS_15_9560_X.Y.Z.exe` files. In order to install:
-
-*   Download the desired firmware from section "Dell XPS 15 9560 System BIOS"
-*   Save it in `/boot/EFI/Dell/Bios/` (this path may vary, depending on your installation)
-*   Reboot the system, and enter the boot menu by pressing repeatedly `F12` on Dell logo
-*   Choose "Bios Flash Update"
-*   Select the file previously saved, and start the process
-
-The process will take about five minutes, during which the system will have some reboots and push fans at maximum speed. Finally the system will reboot normally.
 
 ## Power Management
 
@@ -322,9 +311,21 @@ A discussion around this issue can be found [here](https://www.displaylink.org/f
 
 ## Firmware updates
 
-Firmware updates are provided by Dell and can be installed with [fwupdate](https://aur.archlinux.org/packages/fwupdate/) or [fwupd](https://www.archlinux.org/packages/?name=fwupd). Available firmware versions can be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
+### Tooled
 
-Alternatively, firmware updates can be installed by copying the MS-DOS executable firmware file to a FAT32-formatted USB key (or directly to your EFI boot partition) and booting into "BIOS Flash Update" from the Boot Menu.
+Firmware updates are provided by Dell and can be installed with [fwupdate](https://aur.archlinux.org/packages/fwupdate/) or [fwupd](https://www.archlinux.org/packages/?name=fwupd).
+
+### Manual
+
+Alternatively, firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-9560-laptop/drivers) as `XPS_15_9560_X.Y.Z.exe` files. In order to install:
+
+*   Download the desired firmware from section "Dell XPS 15 9560 System BIOS"
+*   Save it in `/boot/EFI/Dell/Bios/` (this path may vary, depending on your installation) or to a FAT32-formatted USB key
+*   Reboot the system, and enter the boot menu by pressing repeatedly `F12` on Dell logo
+*   Choose "Bios Flash Update"
+*   Select the file previously saved, and start the process
+
+The process will take about five minutes, during which the system will have some reboots and push fans at maximum speed. Finally the system will reboot normally.
 
 ## Fingerprint reader
 

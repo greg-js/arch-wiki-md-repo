@@ -395,7 +395,10 @@ $ iw reg get
 
 ```
 
-**Note:** Your device may be set to country "00", which is the "world regulatory domain" and contains generic settings. If this cannot be unset, CRDA may be misconfigured.
+**Note:**
+
+*   Your device may be set to country "00", which is the "world regulatory domain" and contains generic settings. If this cannot be unset, CRDA may be misconfigured.
+*   Accroding to [CRDA's README](https://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/crda.git/tree/README), it is no longer needed since kernel v4.15 as kernel will automatically load regulatory database from firmware. However [it is also said](https://bugs.gentoo.org/462032#c17) specific kernel setup is needed for the loading to work.
 
 However, setting the regdomain may not alter your settings. Some devices have a regdomain set in firmware/EEPROM, which dictates the limits of the device, meaning that setting regdomain in software [can only increase restrictions](http://wiki.openwrt.org/doc/howto/wireless.utilities#iw), not decrease them. For example, a CN device could be set in software to the US regdomain, but because CN has an EIRP maximum of 20dBm, the device will not be able to transmit at the US maximum of 30dBm.
 

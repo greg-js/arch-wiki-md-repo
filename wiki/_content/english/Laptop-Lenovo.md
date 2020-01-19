@@ -228,9 +228,11 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Lenovo ThinkPad Yoga 14 | The Lenovo ThinkPad Yoga 14 (20FY) is a convertible 14-inch Ultrabook developed by Lenovo in 2015\. It is one of many iterations in the ThinkPad line. It's also known as P40 Yoga (type 20GR, 20GQ), S3 (20G0, 20G1) and Yoga 460 (20EM, 20EL). A [hardware maintenance manual is provided online](https://download.lenovo.com/pccbbs/mobiles_pdf/p40_yoga14_mt20fy_yoga460_hmm_en_sp40j47499_01.pdf). |
 | [Lenovo ThinkPad Yoga 260](/index.php/Lenovo_ThinkPad_Yoga_260 "Lenovo ThinkPad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | Yes | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
 | Lenovo Yoga 530 | 2019.09.01 | Yes | Yes | Not tested | Yes | Not tested | Not tested | Not tested | SD card (Not tested), Webcam (Yes), Fingerprint Reader (Not tested), Touchscreen (Yes), Tablet (Partial) | Trouble with touchpad, but worked with kernel parameters "i8042.noloop i8042.nomux i8042.nopnp i8042.reset" and xf86-input-synaptics |
 | Lenovo Yoga 710 | NA | Yes | Yes | Yes | Yes | Not tested | Yes | Not tested | SD card (Yes), Webcam (Yes), Touchscreen | Everything works |
+| Lenovo Yoga c930 | 2019.09.01 | Yes | Partially (Fix needed for hinge soundbar, bottom speakers not working. Microphone not working) | N/A | Yes | Not tested | Yes | N/A | Webcam (Yes), Touchscreen | See [https://github.com/droserasprout/lenovo-yoga-c930-linux](https://github.com/droserasprout/lenovo-yoga-c930-linux) for more information and fixes |
 
 #### Helix Series
 
@@ -333,7 +335,7 @@ install CD version
 | Lenovo V110-15ISK | ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Yes) |
 | Lenovo V130-15IKB | ??? | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card (Yes), USB 3.0 (Yes), HDMI Out (Yes), Touchpad (Yes), Webcam (Yes) |
 | Lenovo V330-15IKB | 2018.10.01 | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | Fingerprint (No, no driver exists for the Validity/Synaptics 06cb:0081 Fingerprint Reader), Touchpad (Yes), Webcam (Yes) |
-| Lenovo V330-14ARR | 2019.06.15 | Yes | Yes | Yes | Yes* | Yes | Yes | NA | SD-Card Reader (Yes) HDMI Out (Yes), USB 3.0 (Yes), Touchpad (Yes), Webcam (Yes) | DOS installable BIOS available* |
+| Lenovo V330-14ARR | 2019.06.15 | Yes | Yes | Yes | Yes[*](#Lenovo_IdeaPad_V330-14ARR) | Yes | Yes | NA | SD-Card Reader (Yes) HDMI Out (Yes), USB 3.0 (Yes), Touchpad (Yes), Webcam (Yes) | DOS installable BIOS available[*](#Lenovo_IdeaPad_V330-14ARR) |
 
 ### Y series
 
@@ -450,7 +452,7 @@ Solution: Update BIOS (at least 1.08).
 
 ### Lenovo IdeaPad V330-14ARR
 
-*   Lenovo only provide BIOS updates as a WinX64 package. The 3.07 release has been extracted and can be installed in DOS using H2OFFT-D.EXE and is available [online](https://drive.google.com/drive/folders/1IgwALJ_LLHY1nRbl3naNJU1QQ7l33Vrv?usp=sharing).
+*   Lenovo only provide BIOS updates as a WinX64 package. The 3.08 release has been extracted and can be installed in DOS (installation has been confirmed using freeDOS) using H2OFFT-D.EXE and is available [online](https://drive.google.com/drive/folders/1IgwALJ_LLHY1nRbl3naNJU1QQ7l33Vrv?usp=sharing), ensure you have an arch install media on hand to reset your bootloader.
 *   The installed wireless card (atheros based) has shown itself to be troublesome with many pci errors, most caught and corrected but very occasionally the card would fail to come up on boot or drop out during use. intel-9260 works with no errors (tested with bios 3.05) intel-9560 was not initialised by the bios.
 
 ## See also

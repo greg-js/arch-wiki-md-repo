@@ -11,7 +11,11 @@ Desde el 26 de abril de 2013, los paquetes de Catalyst ya no se ofrecen en los r
 
 En comparación con el controlador de código abierto, Catalyst tiene peor rendimiento en gráficos 2D, pero tiene un mejor soporte para la representación 3D. Los dispositivos soportados son las tarjetas de vídeo [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") con chipset R600 y más recientes (Radeon HD 2xxx y posteriores). Consulte [esta tabla](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units"), o Xorg [Decoder ring](http://www.x.org/wiki/RadeonFeature#Decoder_ring_for_engineering_vs_marketing_names) para relacionar nombres de *modelo* (X1900, HD4850) desde/con nombres de *chips* (R580, RV770, respectivamente).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Instalar el controlador](#Instalar_el_controlador)
@@ -944,7 +948,7 @@ Google introduce en blacklist el controlador Catalyst para Linux con el fin de d
 
 Puede obviar esto editando y añadiendo el parámetro `--ignore-gpu-blacklist` en la línea `Exec`, de modo que se vea así:
 
- `/usr/share/applications/chromium.desktop`  `Exec=chromium %U **--ignore-gpu-blacklist**` 
+ `/usr/share/applications/chromium.desktop`  `Exec=chromium %U **--ignore-gpu-blacklist**` 
 
 También puede ejecutar chromium desde consola con el mismo parámetro `--ignore-gpu-blacklist`:
 

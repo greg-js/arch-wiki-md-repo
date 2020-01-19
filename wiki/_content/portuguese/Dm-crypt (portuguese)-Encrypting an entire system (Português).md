@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Data da última tradução: 2019-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=591754) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Data da última tradução: 2020-01-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=595242) na versão em inglês.
 
 Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-crypt*. Eles explicam todas as adaptações que serão realizadas do [processo de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação"). Todas as ferramentas necessárias estão disponíveis na [imagem de instalação](https://www.archlinux.org/download/).
 
@@ -190,13 +190,13 @@ Veja [Dm-crypt/Preparando a unidade de armazenamento#Particionamento](/index.php
 
 Outra coisa a considerar é se deve usar uma partição swap criptografada e de qual forma. Veja [Dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") para alternativas.
 
-Se você antecipa a proteção de dados do sistema não somente contra roubo físico, como também contra adulteração lógica, veja [Dm-crypt/Especificidades#Protegendo a partição de boot não criptografada](/index.php/Dm-crypt/Especificidades#Securing_the_unencrypted_boot_partition "Dm-crypt/Especificidades") para possibilidades futuras após seguir um dos cenários.
+Se você antecipa a proteção de dados do sistema não somente contra roubo físico, como também contra adulteração lógica, veja [dm-crypt/Especificidades#Protegendo a partição de boot não criptografada](/index.php/Dm-crypt/Especificidades#Protegendo_a_partição_de_boot_não_criptografada "Dm-crypt/Especificidades") para possibilidades futuras após seguir um dos cenários.
 
 Para [SSDs](/index.php/Solid_state_drive "Solid state drive"), você pode considerar habilitar suporte ao TRIM, mas esteja ciente que, isto tem potenciais problemas de segurança. Veja [Dm-crypt/Especificidades#Suporte a discard/TRIM para unidades de estado sólido (SSD)](/index.php/Dm-crypt/Especificidades#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD) "Dm-crypt/Especificidades") para mais informações.
 
 **Atenção:**
 
-*   Em qualquer cenário, nunca diretamente repare um volume criptografado com ferramentas de reparação de sistema de arquivos como [fsck](/index.php/Fsck "Fsck"), ou isto destruirá qualquer chance de recuperar a chave usada para abrir seus arquivos. Tais ferramentas devem ser usadas no dispositivo desbloqueado (aberto).
+*   Em qualquer cenário, nunca diretamente repare um volume criptografado com ferramentas de reparação de sistema de arquivos como [fsck](/index.php/Fsck_(Portugu%C3%AAs) "Fsck (Português)"), ou isto destruirá qualquer chance de recuperar a chave usada para abrir seus arquivos. Tais ferramentas devem ser usadas no dispositivo desbloqueado (aberto).
 *   para o formato LUKS2:
 
 ```
@@ -294,7 +294,7 @@ HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf bloc
 
 ```
 
-Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** filesystems fsck)
@@ -312,7 +312,7 @@ cryptdevice=UUID=*UUID-da-partição-raiz*:cryptraiz root=/dev/mapper/cryptraiz
 
 ```
 
-Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt"), o seguinte precisa ser definido ao invês:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)"), o seguinte precisa ser definido ao invês:
 
 ```
 rd.luks.name=*UUID-da-partição-raiz*=cryptraiz root=/dev/mapper/cryptraiz
@@ -325,7 +325,7 @@ o `*UUID-da-partição-raiz*` é para ser substituído pelo UUID da partição r
 
 ## LVM dentro do LUKS
 
-O método mais direto é configurar o [LVM](/index.php/LVM "LVM") em cima da partição criptografada ao invés do contrário. Tecnicamente o LVM está dentro de um grande dispositivo de bloco criptografado. Em razão disso, o LVM não é transparente até que o dispositivo de bloco seja aberto e o volume estruturado abaixo seja escaneado e montado durante a inicialização.
+O método mais direto é configurar o [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") em cima da partição criptografada, e não o contrário. Tecnicamente o LVM está dentro de um grande dispositivo de bloco criptografado. Em razão disso, o LVM não é visível até que o dispositivo de bloco seja aberto e o volume estruturado abaixo seja escaneado e montado durante a inicialização.
 
 O design do disco neste exemplo é::
 
@@ -344,7 +344,7 @@ O design do disco neste exemplo é::
 
 ```
 
-**Nota:** Ao usar o hook `encrypt`, você não poderá utilizar volumes lógicos espalhados em múltiplos discos; use o [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") ou veja [dm-crypt/Especificidades#Modificando o hook encrypt para múltiplas partições](/index.php/Dm-crypt/Especificidades#Modificando_o_hook_encrypt_para_múltiplas_partições "Dm-crypt/Especificidades").
+**Nota:** Ao usar o hook `encrypt`, você não poderá utilizar volumes lógicos espalhados em múltiplos discos; use o [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)") ou veja [dm-crypt/Especificidades#Modificando o hook encrypt para múltiplas partições](/index.php/Dm-crypt/Especificidades#Modificando_o_hook_encrypt_para_múltiplas_partições "Dm-crypt/Especificidades").
 
 **Dica:** Duas variações dessa configuração:
 
@@ -465,7 +465,7 @@ HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf bloc
 
 ```
 
-Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
@@ -483,7 +483,7 @@ cryptdevice=UUID=*UUID-do-dispositivo*:cryptlvm root=/dev/MeuGrupoVol/raiz
 
 ```
 
-Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt"), o seguinte precisa ser definido ao invês:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)"), o seguinte precisa ser definido ao invês:
 
 ```
 rd.luks.name=*UUID-do-dispositivo*=cryptlvm root=/dev/MeuGrupoVol/raiz
@@ -496,7 +496,7 @@ Veja [dm-crypt/Configuração do sistema#Gerenciador de boot](/index.php/Dm-cryp
 
 ## LUKS dentro do LVM
 
-Você deve configurar os volumes do [LVM](/index.php/LVM "LVM") primeiro antes de usá-los como base para as partições criptografadas. Desta maneira, é possível fazer uma mistura de volumes/partições que são criptografadas ou não.
+Você deve configurar os volumes do [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)") primeiro antes de usá-los como base para as partições criptografadas. Desta maneira, é possível fazer uma mistura de volumes/partições que são criptografadas ou não.
 
 **Dica:** Diferente do [#LVM dentro do LUKS](#LVM_dentro_do_LUKS), este método permite usar volumes lógicos espalhados em múltiplos discos.
 
@@ -549,7 +549,7 @@ sobrescreva `/dev/sda2` de acordo com [dm-crypt/Preparando a unidade de armazena
 
 Mais informações sobre opções de encriptação podem ser encontradas em [dm-crypt/Encriptação de dispositivo#Opções de encriptação para o modo LUKS](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Opções_de_encriptação_para_o_modo_LUKS "Dm-crypt/Encriptação de dispositivo"). Note que `/home` será criptografada em [#Criptografando o volume lógico /home](#Criptografando_o_volume_lógico_/home).
 
-**Dica:** Se você precisar acessar a raiz criptografada pelo archiso, a ação `open` vai possibilitar a execução de comandos para [mostrar volumes do LVM](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
+**Dica:** Se você precisar acessar a raiz criptografada pelo archiso, a ação `open` vai possibilitar a execução de comandos para [mostrar volumes do LVM](/index.php/LVM_(Portugu%C3%AAs)#Volumes_lógicos_não_são_exibidos "LVM (Português)").
 
 ### Preparando a partição de boot
 
@@ -570,7 +570,7 @@ HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf bloc
 
 ```
 
-Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
@@ -588,7 +588,7 @@ cryptdevice=UUID=*UUID-do-dispositivo*:raiz root=/dev/mapper/raiz
 
 ```
 
-Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt"), o seguinte precisa ser definido ao invés:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)"), o seguinte precisa ser definido ao invés:
 
 ```
 rd.luks.name=*UUID-do-dispositivo*=raiz root=/dev/mapper/raiz
@@ -695,7 +695,7 @@ Tenha certeza de substituir eles com os dispositivos apropriados para sua situa�
 
 Antes de criar qualquer partição, você deve se informar sobre a importância e também métodos de como apagar o disco com segurança, descritos em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento").
 
-Para [sistemas BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_BIOS "GRUB (Português)") com GPT, crie uma [Partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS") com o tamanho de 1 MiB para o GRUB poder utilizá-lo no segundo estágio da inicialização da BIOS. Não monte a partição.
+Para [sistemas BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_BIOS "GRUB (Português)") com GPT, crie uma [Partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS") com o tamanho de 1 MiB para o GRUB poder utilizá-lo no segundo estágio da inicialização da BIOS. Não monte a partição. Para sistemas BIOS/MBR isto não é necessário.
 
 Para [sistemas UEFI](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_UEFI "GRUB (Português)") crie uma [Partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") com um tamanho apropriado, ela mais tarde será montada em `/efi`.
 
@@ -841,9 +841,9 @@ Se a encriptação total de disco não é necessária, os métodos usando LUKS d
 
 O modo *plain* pode ser mais resiliente a danos que o LUKS, devido a não depender de um chave mestre de encriptação, que se danificada resulta em falhas. No entanto, usar esse modo requer mais configuração manual de opções de encriptação para se chegar a mesma força criptográfica. Veja também [Criptografia de disco#Metadados criptográficos](/index.php/Criptografia_de_disco#Metadados_criptográficos "Criptografia de disco"). O uso desse modo também pode ser considerado se está preocupado com os problemas explicados em [dm-crypt/Especificidades#Suporte a discard/TRIM para unidades de estado sólido (SSD)](/index.php/Dm-crypt/Especificidades#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD) "Dm-crypt/Especificidades").
 
-**Dica:** Se deseja encriptação sem cabeçalho mas não está com certeza sobre a falta de derivação de chaves com o modo *plain*, então duas alternativas:
+**Dica:** Se deseja encriptação sem cabeçalho mas não está com certeza sobre a falta de derivação de chaves com o modo *plain*, pode usar uma destas duas alternativas:
 
-*   [dm-crypt modo LUKS com um cabeçalho desanexado](/index.php/Dm-crypt/Especificidades#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Especificidades"), usando a opção `--header`. Este método não pode ser usado com o hook *encrypt* padrão, mas sim com um modificado.
+*   [modo LUKS do dm-crypt com um cabeçalho desanexado](/index.php/Dm-crypt/Especificidades#Sistema_criptografado_usando_um_cabeçalho_LUKS_desanexado "Dm-crypt/Especificidades"), usando a opção `--header`. Este método não pode ser usado com o hook *encrypt* padrão, mas sim com um modificado.
 *   [tcplay](/index.php/Tcplay "Tcplay") que oferece a encriptação sem cabeçalho mas com a função PBKDF2.
 
 O cenário usa dois pendrives USB:
@@ -903,7 +903,7 @@ Podemos agora checar se a entrada de mapeamento foi feita para `/dev/mapper/cryp
 
 **Dica:** Uma alternativa simples para o LVM, em casos do FAQ do cryptsetup onde ele não é necessário, é somente criar um sistema de arquivos com todo o dispositivo mapeado.
 
-Agora, configure os volumes lógicos do [LVM](/index.php/LVM "LVM") no dispositivo mapeado. Veja [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") para maiores detalhes:
+Agora, configure os volumes lógicos do Volumes lógicos não são exibidos no dispositivo mapeado. Veja [LVM (Português)#Instalando Arch Linux em LVM](/index.php/LVM_(Portugu%C3%AAs)#Instalando_Arch_Linux_em_LVM "LVM (Português)") para maiores detalhes:
 
 ```
 # pvcreate /dev/mapper/cryptlvm
@@ -1017,7 +1017,7 @@ O Particionamento deste exemplo é:
 
 Antes de criar qualquer partição, você deve saber a importância e métodos de como apagar o disco com segurança, descrito em [dm-crypt/Preparando a unidade de armazenamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento "Dm-crypt/Preparando a unidade de armazenamento").
 
-Para [sistemas BIOS](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_BIOS "GRUB (Português)") crie uma [partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS") com o tamanho de 1 MiB para que o GRUB guarde o segundo estágio da inicialização BIOS. não monte a partição.
+Para [sistemas BIOS/GPT](/index.php/GRUB_(Portugu%C3%AAs)#Instruções_específicas_de_Tabela_de_Partição_GUID_(GPT) "GRUB (Português)") crie uma [partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS") com o tamanho de 1 MiB para que o GRUB guarde o segundo estágio da inicialização BIOS. não monte a partição. Para sistemas BIOS/MBR isto não é necessário.
 
 Para [sistemas UEFI](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_UEFI "GRUB (Português)") crie uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") com tamanho apropriado, será montada em `/efi`.
 
@@ -1092,7 +1092,7 @@ HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf bloc
 
 ```
 
-Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
+Se está usando o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)") com o initramfs baseado no systemd, o seguinte precisa ser definido ao invês:
 
 ```
 HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
@@ -1229,7 +1229,7 @@ Formate o dispositivo mapeado como descrito em [Btrfs#File system on a single de
 
 Finalmente, [monte](/index.php/Monte "Monte") o agora formatado dispositivo mapeado (i.e., `/dev/mapper/cryptraiz`) para `/mnt`.
 
-**Dica:** You pode querer usar a opção de montagem `compress=lzo`. Veja [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs") para mais informações.
+**Dica:** You pode querer usar a opção de montagem `compress=zstd`. Veja [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs") para mais informações.
 
 ### Criando subvolumes do btrfs
 
@@ -1279,7 +1279,7 @@ Desmonte a partição do sistema em `/mnt`.
 Agora monte os subvolumes `@` que irão servir como `/` para `/mnt` usando a opção de montagem `subvol=`. Assumindo que o nome do dispositivo mapeado é `cryptraiz`, o comando deve se parecer com:
 
 ```
-# mount -o compress=lzo,subvol=@ /dev/mapper/cryptraiz /mnt
+# mount -o compress=zstd,subvol=@ /dev/mapper/cryptraiz /mnt
 
 ```
 

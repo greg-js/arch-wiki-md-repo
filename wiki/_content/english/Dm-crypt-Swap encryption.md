@@ -108,7 +108,7 @@ If the swap volume is in a volume group that gets activated in initramfs, simply
 To resume from a encrypted swap partition, the encrypted partition must be unlocked in the initramfs.
 
 *   When using the default busybox-based initramfs with the [encrypt](/index.php/Dm-crypt/System_configuration#Using_encrypt_hook "Dm-crypt/System configuration") hook, follow the instructions in [#mkinitcpio hook](#mkinitcpio_hook).
-*   When using the systemd-based initramfs with the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") mkinitcpio hook, simply specify additional `rd.luks` kernel parateters to unlock the swap partition.
+*   When using the systemd-based initramfs with the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") mkinitcpio hook, simply specify additional `rd.luks` kernel parameters to unlock the swap partition.
 
 #### mkinitcpio hook
 

@@ -11,31 +11,35 @@ Egy merevlemez egyetlen partícióvá is alakítható, vagy a felhasználható t
 
 Minden partíciót valamilyen típusú [fájlrendszerre](/index.php/File_systems_(Magyar) "File systems (Magyar)") kell formázni, mielőtt használni lehet.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Partíciós tábla](#Part.C3.ADci.C3.B3s_t.C3.A1bla)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Partíciós tábla](#Partíciós_tábla)
     *   [1.1 Master Boot Record](#Master_Boot_Record)
-    *   [1.2 GUID Partíciós Tábla](#GUID_Part.C3.ADci.C3.B3s_T.C3.A1bla)
-    *   [1.3 Btrfs Particionálás](#Btrfs_Particion.C3.A1l.C3.A1s)
-    *   [1.4 Válasszunk GPT és MBR közül](#V.C3.A1lasszunk_GPT_.C3.A9s_MBR_k.C3.B6z.C3.BCl)
-*   [2 Partíciós séma](#Part.C3.ADci.C3.B3s_s.C3.A9ma)
-    *   [2.1 Egy root partíció](#Egy_root_part.C3.ADci.C3.B3)
-    *   [2.2 Különálló partíciók](#K.C3.BCl.C3.B6n.C3.A1ll.C3.B3_part.C3.ADci.C3.B3k)
-    *   [2.3 Csatolási pontok](#Csatol.C3.A1si_pontok)
-        *   [2.3.1 Root partíció](#Root_part.C3.ADci.C3.B3)
-        *   [2.3.2 /boot](#.2Fboot)
-        *   [2.3.3 /home](#.2Fhome)
-        *   [2.3.4 /var](#.2Fvar)
-        *   [2.3.5 /tmp](#.2Ftmp)
-        *   [2.3.6 Cserehely (Swap)](#Cserehely_.28Swap.29)
-        *   [2.3.7 Milyen méretűek legyenek a partíciók?](#Milyen_m.C3.A9ret.C5.B1ek_legyenek_a_part.C3.ADci.C3.B3k.3F)
-*   [3 Particionáló eszközök](#Particion.C3.A1l.C3.B3_eszk.C3.B6z.C3.B6k)
-*   [4 SSD paríció eltolása](#SSD_par.C3.ADci.C3.B3_eltol.C3.A1sa)
-*   [5 GPT használata- a modernebb módszer](#GPT_haszn.C3.A1lata-_a_modernebb_m.C3.B3dszer)
-    *   [5.1 A gdisk használatának összefoglalása](#A_gdisk_haszn.C3.A1lat.C3.A1nak_.C3.B6sszefoglal.C3.A1sa)
-*   [6 MBR használata - régi módszer](#MBR_haszn.C3.A1lata_-_r.C3.A9gi_m.C3.B3dszer)
-    *   [6.1 Az fdisk használatának összefoglalója](#Az_fdisk_haszn.C3.A1lat.C3.A1nak_.C3.B6sszefoglal.C3.B3ja)
-*   [7 Lásd még](#L.C3.A1sd_m.C3.A9g)
+    *   [1.2 GUID Partíciós Tábla](#GUID_Partíciós_Tábla)
+    *   [1.3 Btrfs Particionálás](#Btrfs_Particionálás)
+    *   [1.4 Válasszunk GPT és MBR közül](#Válasszunk_GPT_és_MBR_közül)
+*   [2 Partíciós séma](#Partíciós_séma)
+    *   [2.1 Egy root partíció](#Egy_root_partíció)
+    *   [2.2 Különálló partíciók](#Különálló_partíciók)
+    *   [2.3 Csatolási pontok](#Csatolási_pontok)
+        *   [2.3.1 Root partíció](#Root_partíció)
+        *   [2.3.2 /boot](#/boot)
+        *   [2.3.3 /home](#/home)
+        *   [2.3.4 /var](#/var)
+        *   [2.3.5 /tmp](#/tmp)
+        *   [2.3.6 Cserehely (Swap)](#Cserehely_(Swap))
+        *   [2.3.7 Milyen méretűek legyenek a partíciók?](#Milyen_méretűek_legyenek_a_partíciók?)
+*   [3 Particionáló eszközök](#Particionáló_eszközök)
+*   [4 SSD paríció eltolása](#SSD_paríció_eltolása)
+*   [5 GPT használata- a modernebb módszer](#GPT_használata-_a_modernebb_módszer)
+    *   [5.1 A gdisk használatának összefoglalása](#A_gdisk_használatának_összefoglalása)
+*   [6 MBR használata - régi módszer](#MBR_használata_-_régi_módszer)
+    *   [6.1 Az fdisk használatának összefoglalója](#Az_fdisk_használatának_összefoglalója)
+*   [7 Lásd még](#Lásd_még)
 
 ## Partíciós tábla
 
@@ -163,7 +167,7 @@ A partíciók mérete egyéni ízlésünk és szükségleteink szerint alakul, d
 
 	Régebben az a szokás uralkodott, hogy mérete a rendelkezésre álló fizikai RAM kétszerese legyen. Ahogy a számítógépek egyre több RAM befogadására váltak képessé, ez a szabály egyre elhanyagolhatóbbá vált. Ha legfeljebb 512MB RAM-mal rendelkezünk, a kétszeres szabályt még érdemes betartanunk. Ha elegendő (több mint 1024MB) a RAM-unk, kisebb, vagy akár semmiféle cserehely használata is lehetséges. Ha már több mint 2GB fizikai RAM-unk van, jó teljesítményre számíthatunk akár cserehely nélkül is.
 
-**Megjegyzés:** Ha azt tervezzük, hogy cserehelyre, vagy -fájlra hibernálunk, olvassuk át a [Felfüggesztés és Hibernálás#A cserehely/cserefájl méretéről](/index.php/Suspend_and_hibernate#About_swap_partition.2Ffile_size "Suspend and hibernate") cikket.
+**Megjegyzés:** Ha azt tervezzük, hogy cserehelyre, vagy -fájlra hibernálunk, olvassuk át a [Felfüggesztés és Hibernálás#A cserehely/cserefájl méretéről](/index.php/Suspend_and_hibernate#About_swap_partition/file_size "Suspend and hibernate") cikket.
 
 	/data - [változó] 
 
@@ -242,7 +246,7 @@ Ha GPT-t használunk, a megfelelő partíció-szerkesztő eszközünk a *gdisk* 
 
 **Megjegyzés:**
 
-*   A GPT partíciós táblát használó lemezről történő rendszerindításhoz létre kell hozni (lehetőleg a lemez elején) egy [BIOS boot partíciót](/index.php/GRUB2#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB2"), melyen nincs fájlrendszer, s melynek partíció típusa `BIOS boot` vagy `bios_grub` (*gdisk* a kódja `EF02`) ha a lemez [GRUB](/index.php/GRUB "GRUB")-ot használva indul. A [Syslinux](/index.php/Syslinux "Syslinux")-hoz nincs szükség ennek a `bios_grub` partíciónak létrehozására, de szükség lesz különálló `/boot` partícióra és engedélyezzük a `Legacy BIOS Bootable partition` attrbútumot ezen a partíción a (a *gdisk* használatával).
+*   A GPT partíciós táblát használó lemezről történő rendszerindításhoz létre kell hozni (lehetőleg a lemez elején) egy [BIOS boot partíciót](/index.php/GRUB2#GUID_Partition_Table_(GPT)_specific_instructions "GRUB2"), melyen nincs fájlrendszer, s melynek partíció típusa `BIOS boot` vagy `bios_grub` (*gdisk* a kódja `EF02`) ha a lemez [GRUB](/index.php/GRUB "GRUB")-ot használva indul. A [Syslinux](/index.php/Syslinux "Syslinux")-hoz nincs szükség ennek a `bios_grub` partíciónak létrehozására, de szükség lesz különálló `/boot` partícióra és engedélyezzük a `Legacy BIOS Bootable partition` attrbútumot ezen a partíción a (a *gdisk* használatával).
 *   A [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") nem támogatja a GPT-t, a felhsználóknak a [BURG](/index.php/BURG "BURG"), a GRUB vagy a Syslinux közül kell választania.
 
 **Figyelem:** Ha kettős bootolást tervezünk Windows-szal BIOS módban (ez az egyetlen lehetőség 32 bites Windows verziókkal, illetve 64 bites Windows XP-vel), **semmiképp se** használjunk GPT-t mivel a Windows **nem** támogatja a GPT lemezről való indítást BIOS rendszeren. Ilyenkor kénytelenek vagyunk MBR particionálást használni és BIOS módban indítani a rendszert, az alábbi leírás szerint. Ez a korlátozás nem érvényes a modernebb 64 bites Windows rendszerek UEFI módú indítására.

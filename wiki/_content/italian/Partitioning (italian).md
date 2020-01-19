@@ -11,7 +11,11 @@ Un intero disco rigido può essere assegnato a una singola partizione, oppure si
 
 Ogni partizione deve essere formattata per un [tipo di file system](/index.php/File_systems_(Italiano) "File systems (Italiano)") prima di essere utilizzato.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tabella delle partizioni](#Tabella_delle_partizioni)
     *   [1.1 Master Boot Record](#Master_Boot_Record)
@@ -22,12 +26,12 @@ Ogni partizione deve essere formattata per un [tipo di file system](/index.php/F
     *   [2.2 Partizioni separate](#Partizioni_separate)
     *   [2.3 Punti di montaggio](#Punti_di_montaggio)
         *   [2.3.1 Partizione root](#Partizione_root)
-        *   [2.3.2 /boot](#.2Fboot)
-        *   [2.3.3 /home](#.2Fhome)
-        *   [2.3.4 /var](#.2Fvar)
-        *   [2.3.5 /tmp](#.2Ftmp)
+        *   [2.3.2 /boot](#/boot)
+        *   [2.3.3 /home](#/home)
+        *   [2.3.4 /var](#/var)
+        *   [2.3.5 /tmp](#/tmp)
         *   [2.3.6 Swap](#Swap)
-        *   [2.3.7 Quanto grandi dovrebbero essere le mie partizioni?](#Quanto_grandi_dovrebbero_essere_le_mie_partizioni.3F)
+        *   [2.3.7 Quanto grandi dovrebbero essere le mie partizioni?](#Quanto_grandi_dovrebbero_essere_le_mie_partizioni?)
 *   [3 Strumenti di Partizionamento](#Strumenti_di_Partizionamento)
 *   [4 Allineamento delle partizioni](#Allineamento_delle_partizioni)
 *   [5 Utilizzando GPT - metodo moderno](#Utilizzando_GPT_-_metodo_moderno)
@@ -152,7 +156,7 @@ Una partizione di [Swap](/index.php/Swap "Swap") fornisce memoria che può esser
 
 	Storicamente, la regola generale per la dimensione della partizione di swap è stata quella di assegnare il doppio della quantità di RAM fisica. Come i computer hanno acquisito capacità di memoria sempre più grandi, questa regola è diventata obsoleta. Su macchine con fino a 512MB di RAM, la regola 2x è di solito sufficiente. Se una quantità sufficiente di RAM (più di 1024 MB) è disponibile, può essere possibile avere una partizione swap più piccola o addirittura eliminarla. Con più di 2 GB di RAM fisica, si può generalmente aspettarsi di avere buone prestazioni senza una partizione di swap.
 
-**Nota:** Se avete intenzione di utilizzare l'ibernazione utilizzando la partizione o un file di Swap, si dovrebbe vedere la pagina [Suspend and hibernate#About swap partition/file size](/index.php/Suspend_and_hibernate#About_swap_partition.2Ffile_size "Suspend and hibernate").
+**Nota:** Se avete intenzione di utilizzare l'ibernazione utilizzando la partizione o un file di Swap, si dovrebbe vedere la pagina [Suspend and hibernate#About swap partition/file size](/index.php/Suspend_and_hibernate#About_swap_partition/file_size "Suspend and hibernate").
 
 	/data - [variabile] 
 

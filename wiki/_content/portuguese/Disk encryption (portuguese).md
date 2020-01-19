@@ -13,9 +13,9 @@ Related articles
 
 **Status de tradução:** Esse artigo é uma tradução de [Disk encryption](/index.php/Disk_encryption "Disk encryption"). Data da última tradução: 2020-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=593622) na versão em inglês.
 
-Este artigo discute sobre software de [Criptografia de disco](https://en.wikipedia.org/wiki/disk_encryption "wikipedia:disk encryption"), que des-/criptografa dados escritos / lidos de um [dispositivo de bloco](/index.php/Dispositivo_de_bloco "Dispositivo de bloco"), [partição de disco](/index.php/Disk_partition "Disk partition") ou diretório. Exemplos de dispositivos de blocos são discos rígidos, unidade flash e DVDs.
+Este artigo discute sobre software de [Criptografia de disco](https://en.wikipedia.org/wiki/disk_encryption "wikipedia:disk encryption"), que des-/criptografa dados escritos / lidos de um [dispositivo de bloco](/index.php/Dispositivo_de_bloco "Dispositivo de bloco"), [partição de disco](/index.php/Parti%C3%A7%C3%A3o_de_disco "Partição de disco") ou diretório. Exemplos de dispositivos de blocos são discos rígidos, unidade flash e DVDs.
 
-Encriptação de disco deve ser somente vista como um complemento para mecânismos de segurança já existentes do sistema operacional - focado em prevenir acesso físico, enquanto confia em *outras* partes do sistema que proveem coisas como segurança de rede e acesso baseado no usuário.
+Encriptação de disco deve ser somente vista como um complemento para mecanismos de segurança já existentes do sistema operacional - focado em prevenir acesso físico, enquanto confia em *outras* partes do sistema que proveem coisas como segurança de rede e acesso baseado no usuário.
 
 Para encriptação total de disco (full-disk encryption, FDE), veja [dm-crypt/Criptografando todo um sistema](/index.php/Dm-crypt/Criptografando_todo_um_sistema "Dm-crypt/Criptografando todo um sistema").
 
@@ -79,13 +79,13 @@ Apesar de que criptografar somente os dados dos usuários (normalmente dentro do
     *   (soluções potenciais: desabilitar a troca rápida, swapping, ou usar [swap criptografada](/index.php/Encrypted_swap "Encrypted swap"))
 *   `/tmp` (arquivos temporários criados pelos programas do usuário)
     *   (soluções potenciais: evite tais programas; monte `/tmp` dentro de um [ramdisk](/index.php/Ramdisk "Ramdisk"))
-*   `/var` (arquivos de log e bancos de dados e semelhantes; por exemplo, [mlocate](/index.php/Mlocate "Mlocate") guarda um índice de todos os arquivos em `/var/lib/mlocate/mlocate.db`)
+*   `/var` (arquivos de log e bancos de dados e semelhantes; por exemplo, [mlocate](/index.php/Mlocate_(Portugu%C3%AAs) "Mlocate (Português)") guarda um índice de todos os arquivos em `/var/lib/mlocate/mlocate.db`)
 
 A solução é criptografar ambos o sistema e dados do usuário, prevenindo acesso físico não autorizado de dados privados. No entanto, isto vem com a desvantagem de abrir partes criptografadas do disco durante a inicialização. Outro benefício é que isto complica a instalação de malware como [keyloggers](https://en.wikipedia.org/wiki/Keystroke_logging "wikipedia:Keystroke logging") ou rootkits para alguém com acesso físico.
 
 ## Métodos disponíveis
 
-Todos os métodos de encriptação de disco operam de tal maneira que apesar do disco ter os dados criptografados, o sistema operacional e programas "veêm" isto como os dados normais correspondentes enquanto o container criptografado (exemplo, a parte lógica do disco que possui os dados criptografados) estiver "aberto" e montado.
+Todos os métodos de encriptação de disco operam de tal maneira que apesar do disco ter os dados criptografados, o sistema operacional e programas "veem" isto como os dados normais correspondentes enquanto o container criptografado (exemplo, a parte lógica do disco que possui os dados criptografados) estiver "aberto" e montado.
 
 Para isto acontecer, alguma "informação secreta" (normalmente em forma de uma keyfile e/ou senha) precisa ser dada pelo usuário, pela qual a chave de encriptação pode ser derivada (e guardada no chaveiro do kernel durante a sessão).
 
@@ -150,7 +150,7 @@ Para implicações práticas da camada de operação escolhida, veja [#Encripta�
 
 ### Tabela de comparação
 
-A coluna "dm-crypt +/- LUKS" denota funcionalidades do dm-crypt para os modos de encriptação LUKS ("+") e plain ("-"). Se uma funcionalidade específica precisa do LUKS, é indicado por "(com LUKS)". De mesmo modo "(sem LUKS)" indica que o uso do LUKS é contra-produtivo para a funcionalidade e o modo plain deve ser usado.
+A coluna "dm-crypt +/- LUKS" denota funcionalidades do dm-crypt para os modos de encriptação LUKS ("+") e plain ("-"). Se uma funcionalidade específica precisa do LUKS, é indicado por "(com LUKS)". De mesmo modo "(sem LUKS)" indica que o uso do LUKS é contraprodutivo para a funcionalidade e o modo plain deve ser usado.
 
 | Sumário | Loop-AES | [dm-crypt](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)") +/- LUKS | [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") | VeraCrypt | [eCryptfs](/index.php/ECryptfs "ECryptfs") | [EncFS](/index.php/EncFS "EncFS") | [gocryptfs](/index.php/Gocryptfs "Gocryptfs") | [fscrypt](/index.php/Fscrypt "Fscrypt") |
 | Tipo de encriptação | dispositivo de bloco | dispositivo de bloco | dispositivo de bloco | dispositivo de bloco | empilhado no sistema de arquivos | empilhado no sistema de arquivos | empilhado no sistema de arquivos | nativo do sistema de arquivos |

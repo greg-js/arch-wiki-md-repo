@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2020-01-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=594468) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2020-01-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=595362) na versão em inglês.
 
 *sway* é um compositor para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") feito para ser totalmente compatível com [i3](/index.php/I3 "I3"). De acordo com [o site oficial](https://swaywm.org):
 
@@ -411,7 +411,14 @@ O binário `krunner` provido pelo pacote [plasma-workspace](https://www.archlinu
 
 ### Virtualização
 
-Sway não funciona bem (ou de qualquer modo) no [VirtualBox](/index.php/VirtualBox_(Portugu%C3%AAs) "VirtualBox (Português)") ou [VMware](/index.php/VMware "VMware") ESXi.
+Sway funciona no [VirtualBox](/index.php/VirtualBox_(Portugu%C3%AAs) "VirtualBox (Português)") e [VMware](/index.php/VMware "VMware") ESXi.
+
+No entanto, quando usar o controlador de gráficos VMSVGA, o cursor vai estar invisível. Isto pode ser consertado ao declarar a seguinte váriavel de ambiente (como discutido em [[2]](https://github.com/swaywm/sway/issues/3814)):
+
+```
+$ export WLR_NO_HARDWARE_CURSORS=1
+
+```
 
 ### Sway socket não detectado
 

@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [{{{2}}}](/index.php/Sistemas_de_arquivos "Sistemas de arquivos")
+*   [Sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos")
 *   [Ext3](/index.php/Ext3 "Ext3")
 
 De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
@@ -186,10 +186,10 @@ Nas etapas a seguir, `/dev/sdxX` denota o caminho para a partição a ser conver
 5.  Se você quiser converter uma partição ext2, a primeira etapa de conversão é adicionar um [journal](/index.php/Sistemas_de_arquivos#Journaling "Sistemas de arquivos") executando `tune2fs -j /dev/sdxX` como root; fazendo dela uma partição ext3.
 6.  Execute `tune2fs -O extent,uninit_bg,dir_index /dev/sdxX` como root. Esse comando converte o sistema de arquivos ext3 para ext4 (irreversivelmente).
 7.  Execute `fsck -f /dev/sdxX` como root.
-    *   Esta etapa é necessário, do contrário o sistema de arquivos **ficará ilegível**. A execução de *fsck* é necessária para retornar o sistema de arquivos para um estado consistente. Ele vai encontrar erros de soma de verificação nos descritores de grupo - isso é esperado. A opção `-f` pede que o *fsck* verifique mesmo se o sistema de arquivos parecer limpo. A opção `-p` pode ser usada sobre a "reparação automática" (do contrário, o usuário será solicitado inserir para cada erro).
+    *   Esta etapa é necessária, do contrário o sistema de arquivos **ficará ilegível**. A execução de *fsck* é necessária para retornar o sistema de arquivos para um estado consistente. Ele vai encontrar erros de soma de verificação nos descritores de grupo - isso é esperado. A opção `-f` pede que o *fsck* verifique mesmo se o sistema de arquivos parecer limpo. A opção `-p` pode ser usada sobre a "reparação automática" (do contrário, o usuário será solicitado a intervir em cada erro).
 8.  Recomendado: monte a partição e execute `e4defrag -c -v /dev/sdxX` como root.
     *   Mesmo que o sistema de arquivos agora esteja convertido em ext4, todos os arquivos que foram escritos antes da conversão ainda não aproveitam a opção de extensão do ext4, que melhorará o desempenho de arquivos grandes e reduzirá a fragmentação e o tempo de verificação do sistema de arquivos. Para aproveitar plenamente o ext4, todos os arquivos teriam que ser reescritos no disco. Use *e4defrag* para cuidar desse problema.
-9.  Reinicie
+9.  Reinicie.
 
 ## Melhorando o desempenho
 

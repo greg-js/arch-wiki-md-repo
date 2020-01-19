@@ -13,36 +13,36 @@
     *   [2.2 Actionable](#Actionable_2)
     *   [2.3 Who](#Who_2)
 *   [3 Planet migration](#Planet_migration)
-*   [4 State](#State_3)
-*   [5 Actionable](#Actionable_3)
-*   [6 Who](#Who_3)
-*   [7 Mailman 3](#Mailman_3)
-    *   [7.1 State](#State_4)
-    *   [7.2 Actionable](#Actionable_4)
-    *   [7.3 Who](#Who_4)
-*   [8 Lack of overview of services/hosts](#Lack_of_overview_of_services/hosts)
-    *   [8.1 State](#State_5)
-    *   [8.2 Actionable](#Actionable_5)
-*   [9 Forum migration](#Forum_migration)
-    *   [9.1 State](#State_6)
-    *   [9.2 Actionable](#Actionable_6)
-    *   [9.3 Who](#Who_5)
-*   [10 Soyuz retirement](#Soyuz_retirement)
-    *   [10.1 State](#State_7)
-    *   [10.2 Actionable](#Actionable_7)
-    *   [10.3 Who](#Who_6)
-*   [11 Getting a storage box instead of vostok](#Getting_a_storage_box_instead_of_vostok)
-    *   [11.1 State](#State_8)
-    *   [11.2 Actionable](#Actionable_8)
-    *   [11.3 Who](#Who_7)
-*   [12 Backup the archive](#Backup_the_archive)
-    *   [12.1 State](#State_9)
-    *   [12.2 Actionable](#Actionable_9)
-    *   [12.3 Who](#Who_8)
-*   [13 Offsite backups](#Offsite_backups)
-    *   [13.1 State](#State_10)
-    *   [13.2 Actionable](#Actionable_10)
-    *   [13.3 Who](#Who_9)
+    *   [3.1 State](#State_3)
+    *   [3.2 Actionable](#Actionable_3)
+    *   [3.3 Who](#Who_3)
+*   [4 Mailman 3](#Mailman_3)
+    *   [4.1 State](#State_4)
+    *   [4.2 Actionable](#Actionable_4)
+    *   [4.3 Who](#Who_4)
+*   [5 Lack of overview of services/hosts](#Lack_of_overview_of_services/hosts)
+    *   [5.1 State](#State_5)
+    *   [5.2 Actionable](#Actionable_5)
+*   [6 Forum migration](#Forum_migration)
+    *   [6.1 State](#State_6)
+    *   [6.2 Actionable](#Actionable_6)
+    *   [6.3 Who](#Who_5)
+*   [7 Soyuz retirement](#Soyuz_retirement)
+    *   [7.1 State](#State_7)
+    *   [7.2 Actionable](#Actionable_7)
+    *   [7.3 Who](#Who_6)
+*   [8 Getting a storage box instead of vostok](#Getting_a_storage_box_instead_of_vostok)
+    *   [8.1 State](#State_8)
+    *   [8.2 Actionable](#Actionable_8)
+    *   [8.3 Who](#Who_7)
+*   [9 Backup the archive](#Backup_the_archive)
+    *   [9.1 State](#State_9)
+    *   [9.2 Actionable](#Actionable_9)
+    *   [9.3 Who](#Who_8)
+*   [10 Offsite backups](#Offsite_backups)
+    *   [10.1 State](#State_10)
+    *   [10.2 Actionable](#Actionable_10)
+    *   [10.3 Who](#Who_9)
 
 ## Mirroring of Arch Linux Archive
 
@@ -75,15 +75,15 @@
 
 ## Planet migration
 
-## State
+### State
 
 Planet is Python 2 which will become EOL
 
-## Actionable
+### Actionable
 
 *   Make planet.archlinux.org part of archweb
 
-## Who
+### Who
 
 *   jelle
 

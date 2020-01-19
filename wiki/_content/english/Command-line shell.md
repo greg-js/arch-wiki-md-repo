@@ -85,7 +85,7 @@ These shells can all be linked from `/usr/bin/sh`. When [Bash](/index.php/Bash "
 
 ## Changing your default shell
 
-After installing one the above shells, you can execute that shell inside of your current shell, by just running its executable. If you want to be served that shell when you login however, you will need to change your default shell.
+After installing one of the above shells, you can execute that shell inside of your current shell, by just running its executable. If you want to be served that shell when you login however, you will need to change your default shell.
 
 To list all installed shells, run:
 

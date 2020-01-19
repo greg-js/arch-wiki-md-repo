@@ -4,19 +4,23 @@
 
 Также примите во внимание [список GPU NVIDIA](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units") в Википедии.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Загрузка](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0)
-*   [3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Загрузка](#Загрузка)
+*   [3 Настройка](#Настройка)
 *   [4 KMS](#KMS)
-    *   [4.1 Отложенный запуск](#.D0.9E.D1.82.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
-    *   [4.2 Быстрый запуск](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D1.8B.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
-*   [5 Альтернативная установка](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+    *   [4.1 Отложенный запуск](#Отложенный_запуск)
+    *   [4.2 Быстрый запуск](#Быстрый_запуск)
+*   [5 Альтернативная установка](#Альтернативная_установка)
 *   [6 3D](#3D)
 *   [7 DualHead](#DualHead)
-*   [8 Примеры исправления проблем](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D0.B8.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [8.1 Виртуальное разрешение консоли не соответствует реальному](#.D0.92.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8_.D0.BD.D0.B5_.D1.81.D0.BE.D0.BE.D1.82.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D1.80.D0.B5.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC.D1.83)
+*   [8 Примеры исправления проблем](#Примеры_исправления_проблем)
+    *   [8.1 Виртуальное разрешение консоли не соответствует реальному](#Виртуальное_разрешение_консоли_не_соответствует_реальному)
 
 ## Установка
 
