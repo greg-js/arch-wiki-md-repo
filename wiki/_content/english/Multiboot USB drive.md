@@ -319,6 +319,10 @@ modprobe: ERROR: could not insert 'phram': Input/output error
 
 	[http://multibootusb.org/](http://multibootusb.org/) || [multibootusb](https://aur.archlinux.org/packages/multibootusb/)
 
+*   **GRUB2 Live ISO Multiboot (GLIM)** — A set of GRUB configuration files to turn a VFAT formatted USB memory stick with GNU/Linux distribution ISO images into a multiboot USB drive.
+
+	[https://github.com/thias/glim](https://github.com/thias/glim) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 ## See also
 
 *   GRUB:

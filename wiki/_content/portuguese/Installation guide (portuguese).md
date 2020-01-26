@@ -26,7 +26,6 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
     *   [1.10 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
 *   [2 Instalação](#Instalação)
     *   [2.1 Selecionar os espelhos](#Selecionar_os_espelhos)
-    *   [2.2 Instalar os pacotes essenciais](#Instalar_os_pacotes_essenciais)
 *   [3 Configurar o sistema](#Configurar_o_sistema)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
@@ -239,7 +238,7 @@ Quanto mais alto um espelho está posicionado na lista, mais prioritário ele se
 
 Esse arquivo será posteriormente copiado para o novo sistema por *pacstrap*, então é melhor fazer direito.
 
-### Instalar os pacotes essenciais
+,=== Instalar os pacotes essenciais ===
 
 Use o script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar o pacote [base](https://www.archlinux.org/packages/?name=base), um [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)") Linux e um firmware para hardwares comuns:
 
@@ -255,7 +254,7 @@ O pacote [base](https://www.archlinux.org/packages/?name=base) não inclui todas
 *   utilitários para acessar partições [RAID](/index.php/RAID "RAID") ou [LVM](/index.php/LVM_(Portugu%C3%AAs) "LVM (Português)"),
 *   firmwares específicos para outros dispositivos não incluídos em [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware),
 *   softwares necessários para [rede](/index.php/Rede "Rede"),
-*   um editor de [editores de arquivos](/index.php/Text_editor "Text editor")
+*   um [editor de texto](/index.php/Text_editor "Text editor"),
 *   pacotes necessários para acessar documentação em páginas [man](/index.php/Man_(Portugu%C3%AAs) "Man (Português)") e [info](/index.php/Info_(Portugu%C3%AAs) "Info (Português)"): [man-db](https://www.archlinux.org/packages/?name=man-db), [man-pages](https://www.archlinux.org/packages/?name=man-pages) and [texinfo](https://www.archlinux.org/packages/?name=texinfo).
 
 Para [instalar](/index.php/Instala "Instala") outros pacotes ou grupos de pacotes, acrescente os nomes ao comando *pacstrap* acima (separados por espaço) ou use o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") enquanto [estiver em chroot no novo sistema](#Chroot). Para uma comparação, pacotes disponíveis no sistema *live* podem ser encontrados em [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).

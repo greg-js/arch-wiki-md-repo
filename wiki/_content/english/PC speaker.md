@@ -22,8 +22,9 @@ Sounds from the computer can be heard from the built-in case speaker, the speake
     *   [1.3 Xorg](#Xorg)
     *   [1.4 ALSA](#ALSA)
     *   [1.5 GNOME](#GNOME)
-    *   [1.6 Cinnamon](#Cinnamon)
-    *   [1.7 GTK](#GTK)
+    *   [1.6 KDE Plasma](#KDE_Plasma)
+    *   [1.7 Cinnamon](#Cinnamon)
+    *   [1.8 GTK](#GTK)
 *   [2 Beep](#Beep)
     *   [2.1 Installation](#Installation)
     *   [2.2 Run as non-root user](#Run_as_non-root_user)
@@ -110,6 +111,10 @@ Using GSettings:
 $ gsettings set org.gnome.desktop.wm.preferences audible-bell false
 
 ```
+
+### KDE Plasma
+
+Bell notification settings can be modified in "System Settings"->"Accessibility Options"->"Bell".
 
 ### Cinnamon
 

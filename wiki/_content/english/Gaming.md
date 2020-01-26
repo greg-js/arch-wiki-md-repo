@@ -38,6 +38,7 @@ This page contains information about running games and related system configurat
         *   [5.4.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
 *   [6 Peripherals](#Peripherals)
     *   [6.1 Mouse](#Mouse)
+*   [7 See also](#See_also)
 
 ## Game environments
 
@@ -214,7 +215,7 @@ If your system is currently configured to properly insert its own cpu frequency 
 | [Dixper](https://dixper.gg/) | – | Yes | Windows-only | ? | ? | ? | – |
 | [LiquidSky](https://liquidsky.com/) | [liquidsky](https://aur.archlinux.org/packages/liquidsky/) | No | No | Yes | Yes | Yes | – |
 | [Moonlight](https://moonlight-stream.org/) | [moonlight-qt](https://aur.archlinux.org/packages/moonlight-qt/) | No | Windows-only | No | Yes | Yes | This is only a client. Host machine needs GeForce experience installed. |
-| [Parsec](https://ui.parsecgaming.com/) | [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/) | Yes (experimental) | Windows-only | Yes | Yes | Yes | – |
+| [Parsec](https://ui.parsecgaming.com/) | [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/) | Yes (experimental) | Windows-only | No | Yes | Yes | Cloud hosting [no longer available](https://support.parsecgaming.com/hc/en-us/articles/360031038112-Cloud-Computer-Update) |
 | [Playkey](https://playkey.net/) | [playkey-linux](https://aur.archlinux.org/packages/playkey-linux/) | ? | ? | ? | ? | ? | – |
 | [PlayStation Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) | Runs under [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton | No | No | – | No | Yes | Play PS4, PS3 and PS2 games on PC. Alternatively, you can use [emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). |
 | [Rainway](https://rainway.com/) | Coming in 2019 Q3 | Yes | Windows-only | No | Yes | ? | – |
@@ -330,3 +331,7 @@ You might want to set your [mouse acceleration](/index.php/Mouse_acceleration "M
 If your mouse have more than 3 buttons, you might want to see [Mouse buttons](/index.php/Mouse_buttons "Mouse buttons").
 
 If you are using a gaming mouse (especially Logitech and Steelseries), you may want configure your mouse such as DPI, LED... using [piper](https://www.archlinux.org/packages/?name=piper). See [this page](https://github.com/libratbag/libratbag/tree/master/data/devices) for a full list of supported devices.
+
+## See also
+
+*   [[1]](https://www.reddit.com/r/linux_gaming/) - Forum on reddit.com with gaming on linux as its topic, subpages: [Wiki](https://www.reddit.com/r/linux_gaming/wiki/index), [FAQ](https://www.reddit.com/r/linux_gaming/wiki/faq).

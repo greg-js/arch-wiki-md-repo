@@ -1,6 +1,6 @@
-Dependendo da necessidade, diferentes métodos podem ser usados para criptografar a partição [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)"). Uma configuração onde a partição swap é criptografada na inicialização oferece maior proteção dos dados, devido a evitar uma situação onde fragmentos de arquivos sensíveis colocados lá, e que não foram sobrescrevidos, estejam alcançáveis. No entanto, criptografar a swap em cada inicialização impossibilita a supensão para o disco.
+**Status de tradução:** Esse artigo é uma tradução de [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption"). Data da última tradução: 2020-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Swap_encryption&diff=0&oldid=595522) na versão em inglês.
 
-**Nota:** Os termos comentados no arquivo `/etc/crypttab`, e em outros locais convenientes, foram traduzidos para melhor didádica. No seu sistema estes devem aparecer em inglês.
+Dependendo da necessidade, diferentes métodos podem ser usados para criptografar a partição [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)"). Uma configuração onde a partição swap é criptografada na inicialização oferece maior proteção dos dados, devido a evitar uma situação onde fragmentos de arquivos sensíveis colocados lá, e que não foram sobrescrevidos, estejam alcançáveis. No entanto, criptografar a swap em cada inicialização impossibilita a supensão para o disco.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -13,7 +13,7 @@ Dependendo da necessidade, diferentes métodos podem ser usados para criptografa
 *   [2 Com suporte a suspender para o disco](#Com_suporte_a_suspender_para_o_disco)
     *   [2.1 LVM dentro do LUKS](#LVM_dentro_do_LUKS)
     *   [2.2 Usando uma partição swap](#Usando_uma_partição_swap)
-        *   [2.2.1 mkinitcpio hook](#mkinitcpio_hook)
+        *   [2.2.1 Hook do mkinitcpio](#Hook_do_mkinitcpio)
     *   [2.3 Usando um arquivo swap](#Usando_um_arquivo_swap)
 *   [3 Problemas conhecidos](#Problemas_conhecidos)
 
@@ -25,8 +25,8 @@ Para habilitar esta funcionalidade, simplesmente descomente a linha que começa 
 
  `/etc/crypttab` 
 ```
-# <nome>  <dispositivo>    <senha>        <opções>
-swap      /dev/sd*X#*        /dev/urandom   swap,cipher=aes-xts-plain64,size=256
+# <name>  <device>    <password>     <options>
+swap      /dev/sd*X#*   /dev/urandom   swap,cipher=aes-xts-plain64,size=256
 ```
 
 Isto vai mapear `/dev/sd*X#*` para `/dev/mapper/swap` e assim esta pode ser adicionada em `/etc/fstab` como uma swap normal. Se você tinha uma partição swap não criptografada antes, não se esqueça de desabilitá-la - ou reutilizar sua entrada do [fstab](/index.php/Fstab "Fstab") ao mudar o dispositivo para `/dev/mapper/swap`. As opções padrão devem ser o suficiente para a maioria dos usuários. Para outras opções e uma explicação de cada coluna, veja [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) e também [2.3 do FAQ do cryptsetup](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
@@ -52,7 +52,7 @@ Então o use como uma referência persistente para a partição (se dois resulta
 
  `/etc/crypttab` 
 ```
-# <nome>  <dispositivo>                                                    <senha>        <opções>
+# <name>  <device>                                                         <password>     <options>
 swap      /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX  /dev/urandom   swap,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
@@ -81,7 +81,7 @@ Com isso, `/dev/sdX#` agora pode facilmente ser identificada por ambos UUID ou L
 
  `/etc/crypttab` 
 ```
-# <nome> <dispositivo>        <senha>       <opções>
+# <name> <device>             <password>    <options>
 swap     LABEL=*cryptswap*      /dev/urandom  swap,offset=2048,cipher=aes-xts-plain64,size=512
 ```
 
@@ -89,8 +89,8 @@ Observe o *offset*: são 2048 setores de 512 bytes, então 1 MiB. Desta maneira 
 
  `/etc/fstab` 
 ```
-# <sistema de arquivos>    <diretório>  <tipo>  <opções>  <dump>  <pass>
-/dev/mapper/swap           none         swap    defaults   0       0
+# <filesystem>     <dir>  <type>  <options>  <dump>  <pass>
+/dev/mapper/swap   none   swap    defaults   0       0
 ```
 
 Ao usar esta configuração, o *cryptswap* vai somente usar a partição com o LABEL correspondente, independente do que o nome do dispositivo pode ser. Se você decidir formatar e usar a partição para outra coisa, o LABEL vai ser perdido, logo, na próxima inicialização nada deve ser sobrescrito.
@@ -112,90 +112,90 @@ Para resumir de uma partição swap criptografada, esta deve ser aberta durante 
 *   Quando usar o initramfs padrão baseado no busybox com o hook [encrypt](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Usando_o_hook_encrypt "Dm-crypt/Configuração do sistema"), siga as instruções em [#Hook do mkinitcpio](#Hook_do_mkinitcpio).
 *   Quando usar o initramfs baseado no systemd com o hook [sd-encrypt](/index.php/Sd-encrypt_(Portugu%C3%AAs) "Sd-encrypt (Português)"), adicione os parâmetros adicionais do `rd.luks` para abrir a partição swap.
 
-#### mkinitcpio hook
+#### Hook do mkinitcpio
 
-**Note:** This section is only applicable when using the `encrypt` hook, which can only unlock a single device ([FS#23182](https://bugs.archlinux.org/task/23182)). With `sd-encrypt` multiple devices may be unlocked, see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
+**Nota:** Esta seção é somente aplicável quando usar o hook `encrypt`, que pode abrir somente um dispositivo ([FS#23182](https://bugs.archlinux.org/task/23182)). Com o hook `sd-encrypt` múltiplos dispositivos podem ser abertos, veja [dm-crypt/Configuração do sistema#Usando o hook sd-encrypt](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Usando_o_hook_sd-encrypt "Dm-crypt/Configuração do sistema").
 
-If the swap device is on a different device from that of the root file system, it will not be opened by the `encrypt` hook, i.e. the resume will take place before `/etc/crypttab` can be used, therefore it is required to create a hook in `/etc/mkinitcpio.conf` to open the swap LUKS device before resuming.
+Se o swap está em um dispositivo diferente do sistema de arquivos da partição raiz, este não vai ser aberto pelo hook `encrypt`, o *resume* vai tomar lugar antes que o `/etc/crypttab` seja lido, por isso é necessário criar um hook e colocá-lo em `/etc/mkinitcpio.conf` para abrir o dispositivo swap criptografado com LUKS antes dessa situação.
 
-If you want to use a partition which is currently used by the system, you have to disable it first:
-
-```
-# swapoff /dev/<device>
+Se você deseja usar a partição que é atualmente usada pelo sistema, você vai ter que desativá-la primeiro:
 
 ```
-
-Also make sure you remove any line in `/etc/crypttab` pointing to this device.
-
-If you are reusing an existing swap [partition](/index.php/Partition "Partition"), and if the partition is on a GPT partition table, you will need use [gdisk](/index.php/Gdisk "Gdisk") to set the [partition attribute 63 "do not automount"](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk") on it. This will prevent systemd-gpt-auto-generator from discovering and enabling the partition at boot.
-
-The following setup has the disadvantage of having to insert an additional passphrase for the swap partition manually on every boot.
-
-**Warning:** Do not use this setup with a key file if `/boot` is unencrypted. Please read about the issue reported [here](https://wiki.archlinux.org/index.php?title=Talk:Dm-crypt&oldid=255742#Suspend_to_disk_instructions_are_insecure). Alternatively, use a gnupg-encrypted keyfile as per [https://bbs.archlinux.org/viewtopic.php?id=120181](https://bbs.archlinux.org/viewtopic.php?id=120181)
-
-To format the encrypted container for the swap partition, create a keyslot for a user-memorizable passphrase.
-
-```
-# cryptsetup luksFormat /dev/<device>
+# swapoff /dev/<dispositivo>
 
 ```
 
-Open the partition in `/dev/mapper`:
+Tenha certeza de remover qualquer linha em `/etc/crypttab` apontando para este dispositivo.
+
+Se você está usando uma [partição](/index.php/Parti%C3%A7%C3%A3o "Partição") swap existente, e esta está numa tabela de partição GPT, você vai precisar usar o [gdisk](/index.php/Gdisk "Gdisk") para definir o [atributo de partição 63 "do not automount"](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk") ("não monte automaticamente") nela. Isto vai prevenir o systemd-gpt-auto-generator de descobrir e habilitar a partição na inicialização.
+
+A seguinte configuração tem a desvantagem de inserir manualmente uma senha adicional para a partição swap toda vez que ligar o sistema.
+
+**Atenção:** Não use esta configuração com uma keyfile se `/boot` não está criptografado. Leia sobre o problema reportado [aqui](https://wiki.archlinux.org/index.php?title=Talk:Dm-crypt&oldid=255742#Suspend_to_disk_instructions_are_insecure) (em inglês). Alternativamente, use uma keyfile criptografada com gnupg, de acordo com [esta página no forum](https://bbs.archlinux.org/viewtopic.php?id=120181isto) (em inglês).
+
+Formate o container criptografado para a partição swap, crie um espaço de chave para uma senha memorizável.
 
 ```
-# cryptsetup open /dev/<device> swapDevice
+# cryptsetup luksFormat /dev/<dispositivo>
 
 ```
 
-Create a swap filesystem inside the mapped partition:
+Abra a partição em `/dev/mapper`:
 
 ```
-# mkswap /dev/mapper/swapDevice
+# cryptsetup open /dev/<dispositivo> dispositivoSwap
 
 ```
 
-Now you have to create a hook to open the swap at boot time. You can either [install](/index.php/Install "Install") and configure [mkinitcpio-openswap](https://aur.archlinux.org/packages/mkinitcpio-openswap/), or follow the following instructions. Create a hook file containing the open command:
+Crie o sistema de arquivos para a swap dentro da partição mapeada:
+
+```
+# mkswap /dev/mapper/dispositivoSwap
+
+```
+
+Agora faça um hook para abrir a swap na inicialização. Você pode [instalar](/index.php/Instala "Instala") e configurar o [mkinitcpio-openswap](https://aur.archlinux.org/packages/mkinitcpio-openswap/), ou seguir as seguintes instruções. Crie um arquivo contendo o seguinte comando de abertura:
 
  `/etc/initcpio/hooks/openswap` 
 ```
 run_hook ()
 {
-    cryptsetup open /dev/<device> swapDevice
+    cryptsetup open /dev/<dispositivo> dispositivoSwap
 }
 
 ```
 
-**Warning:** Mounting the file system [is dangerous and destructive](https://www.kernel.org/doc/Documentation/power/swsusp.txt). The keyfile should not be read from a file system that was mounted when the system was suspended.
+**Atenção:** Montar o sistema de arquivos [é perigoso e destrutivo](https://www.kernel.org/doc/Documentation/power/swsusp.txt). A keyfile não deve ser lida de um sistema de arquivos que estava montado quando o sistema foi suspenso.
 
-for opening the swap device by typing your password or
+Para abrir o dispositivo swap ao digitar a senha ou
 
  `/etc/initcpio/hooks/openswap` 
 ```
 run_hook ()
 {
-    ## Optional: To avoid race conditions
+    ## opcional: Para evitar condição de corrida
     x=0;
-    while [ ! -b /dev/mapper/<root-device> ] && [ $x -le 10 ]; do
+    while [ ! -b /dev/mapper/<dispositivo-raiz> ] && [ $x -le 10 ]; do
        x=$((x+1))
        sleep .2
     done
-    ## End of optional
+    ## Fim do opcional
 
-    mkdir crypto_key_device
-    mount /dev/mapper/<root-device> crypto_key_device
-    cryptsetup open --key-file crypto_key_device/<path-to-the-key> /dev/<device> swapDevice
-    umount crypto_key_device
+    mkdir dispositivo_da_chave
+    mount /dev/mapper/<dispositivo-raiz> dispositivo_da_chave
+    cryptsetup open --key-file dispositivo_da_chave/<caminho-para-a-chave> /dev/<dispositivo> dispositivoSwap
+    umount dispositivo_da_chave
 }
 
 ```
 
-for opening the swap device by loading a keyfile from a crypted root device.
+Para abrir o dispositivo swap com uma keyfile do dispositivo raiz criptografado.
 
-On some computers race conditions may occur when mkinitcpio tries to mount the device before the decryption process and device enumeration is completed. The commented *Optional* block will delay the boot process up to 2 seconds until the root device is ready to mount.
+Em alguns computadores, condições de corrida podem ocorrer quando o mkinitcpio tenta montar o dispositivo antes dele ser aberto e a enumeração de dispositivos ainda está incompleta. O bloco *opcional* vai atrasar o processo de inicialização em 2 segundos até que o dispositivo raiz esteja pronto para ser montado.
 
-**Note:** If swap is on a Solid State Disk (SSD) and Discard/TRIM is desired the option `--allow-discards` has to get added to the cryptsetup line in the openswap hook above. See [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") or [SSD](/index.php/SSD "SSD") for more information on discard. Additionally you have to add the mount option 'discard' to your fstab entry for the swap device.
+**Nota:** Se a swap está em um SSD e Discard/TRIM é desejado, a opção `--allow-discards` precisa ser adicionada para a linha do cryptsetup no hook openswap acima. Veja [Dm-crypt/Especificidades#Suporte a discard/TRIM para unidades de estado sólido (SSD)](/index.php/Dm-crypt/Especificidades#Suporte_a_discard/TRIM_para_unidades_de_estado_sólido_(SSD) "Dm-crypt/Especificidades") ou [SSD](/index.php/SSD "SSD") para mais informações sobre discard. Também adicione a opção de montagem 'discard' para a entrada do dispositivo swap no fstab.
 
-Then create and edit the hook setup file:
+Crie e edite o arquivo de configuração do hook:
 
  `/etc/initcpio/install/openswap` 
 ```
@@ -206,36 +206,36 @@ build ()
 help ()
 {
 cat<<HELPEOF
-  This opens the swap encrypted partition /dev/<device> in /dev/mapper/swapDevice
+  Isto abre a partição swap criptografada /dev/<dispositivo> em /dev/mapper/dispositivoSwap
 HELPEOF
 }
 
 ```
 
-Add the hook `openswap` in the `HOOKS` array in `/etc/mkinitcpio.conf`, before `filesystem` but after `encrypt`. Do not forget to add the `resume` hook after `openswap`.
+Adicione o hook `openswap` no arranjo `HOOKS` no `/etc/mkinitcpio.conf`, entre `encrypt` e `filesystems`. Não se esqueça de adicionar o hook `resume` depois de `openswap`
 
 ```
 HOOKS=(... encrypt openswap resume filesystems ...)
 
 ```
 
-[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+[Gere novamente o initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
-Add the mapped partition to `/etc/fstab` by adding the following line:
-
-```
-/dev/mapper/swapDevice swap swap defaults 0 0
+Coloque a partição mapeada no `/etc/fstab` ao adicionar a seguinte linha:
 
 ```
-
-Set up your system to resume from `/dev/mapper/swapDevice`. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add the kernel parameter `resume=/dev/mapper/swapDevice` to GRUB by appending it to the `GRUB_CMDLINE_LINUX_DEFAULT` variable in `/etc/default/grub`. A kernel line with encrypted root and swap partitions can look like this:
-
-```
-kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice resume=/dev/mapper/swapDevice ro
+/dev/mapper/dispositivoSwap swap swap defaults 0 0
 
 ```
 
-At boot time, the `openswap` hook will open the swap partition so the kernel resume may use it. If you use special hooks for resuming from hibernation, make sure they are placed **after** `openswap` in the `HOOKS` array. Please note that because of initrd opening swap, there is no entry for swapDevice in `/etc/crypttab` needed in this case.
+Configure seu sistema para resumir com o `/dev/mapper/dispositivoSwap`. Por exemplo, se você usa [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") com suporte a hibernação do kernel, adicione o parâmetro do kernel `resume=/dev/mapper/dispositivoSwap` na variável `GRUB_CMDLINE_LINUX_DEFAULT` em `/etc/default/grub`. Uma linha do kernel com a raiz e swap criptografada pode parecer com isso:
+
+```
+kernel /vmlinuz-linux cryptdevice=/dev/sda2:raiz root=/dev/mapper/raiz resume=/dev/mapper/dispositivoSwap ro
+
+```
+
+Na inicialização, o hook `openswap` vai abrir a partição swap para que o kernel possa usá-la. Se você usar hooks especiais para resumir da hibernação, tenha certeza de que eles estão **depois** do `openswap` no arranjo `HOOKS`. Note que devido ao initrd abrir a swap, não é necessário ter uma entrada para *dispositivoSwap* em `/etc/crypttab`.
 
 ### Usando um arquivo swap
 

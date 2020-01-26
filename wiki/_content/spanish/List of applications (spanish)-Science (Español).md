@@ -169,7 +169,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[RKWard](https://en.wikipedia.org/wiki/RKWard "wikipedia:RKWard")** — Frontend para el lenguaje estadístico R.
 
-	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://aur.archlinux.org/packages/rkward/)
+	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://www.archlinux.org/packages/?name=rkward)
 
 #### Evaluación de datos
 

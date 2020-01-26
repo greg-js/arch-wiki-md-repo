@@ -1,6 +1,10 @@
 Most mature terminal emulators permit users to copy or save their contents.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General approach](#General_approach)
     *   [1.1 Terminals without CLIPBOARD selection](#Terminals_without_CLIPBOARD_selection)
@@ -55,6 +59,7 @@ Unless the "Key combination" column states otherwise, the key combination is `Ct
 
 | Emulator | Select to PRIMARY | CLIPBOARD |
 | Key combination | Context menu | Window menu | Select |
+| [Alacritty](/index.php/Alacritty "Alacritty") | Yes | Yes | No | No | No |
 | [aterm](https://aur.archlinux.org/packages/aterm/) | Yes | No | No | No | No |
 | [eterm](https://aur.archlinux.org/packages/eterm/) | Yes | No | No | No | No |
 | [germinal](https://aur.archlinux.org/packages/germinal/) | Yes | Yes | Yes | No | No |

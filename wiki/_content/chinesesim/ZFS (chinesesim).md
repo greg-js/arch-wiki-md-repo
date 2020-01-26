@@ -7,7 +7,7 @@ Related articles
 
 [ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") ZFS，一个文件系统，拥有逻辑卷管理功能，最早源自于太阳微系统为Solaris操作系统开发的文件系统。ZFS是一个具有高存储容量、文件系统与卷管理概念集成、崭新的磁盘逻辑结构的轻量级文件系统，同时也是一个便捷的存储池管理系统。ZFS是一个使用通用开发与散布许可证授权的开源项目，这个商标名称现由甲骨文公司拥有。 ZFS的特性包括: 存储池 (不同于传统文件系统需要驻留于单独设备或者需要一个卷管理系统去使用一个以上的设备，ZFS创建在虚拟的，被称为“zpools”的存储池之上), [写时拷贝事务模型](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write"), [快照与克隆](https://en.wikipedia.org/wiki/Snapshot_(computer_storage) "wikipedia:Snapshot (computer storage)"), 数据自动校验与恢复(, [RAID-Z](https://en.wikipedia.org/wiki/RAID-Z "wikipedia:RAID-Z"),ZFS是一个128位的文件系统，这意味着它能存储1800亿亿（18.4 × 1018）倍于当前64位文件系统的数据。ZFS的设计如此超前以至于这个极限就当前现实实际可能永远无法遇到。
 
-ZOL是一个由[Lawrence Livermore National Laboratory](https://www.llnl.gov/)赞助的项目，诣在开发用于Linux计算机的ZFS阵列。
+ZOL是一个由[Lawrence Livermore National Laboratory](https://www.llnl.gov/)赞助的项目，旨在开发用于Linux计算机的ZFS阵列。
 
 **Note:** 由于ZFS所使用的CDDL协议与Linux Kernel所使用的GPL协议存在法律问题 ([[1]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS 的开发并不被Linux基金会支持。
 

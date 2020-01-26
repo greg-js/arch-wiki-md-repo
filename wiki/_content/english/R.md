@@ -226,7 +226,7 @@ You can then start R Commander from within R using the library command:
 
 ### RKWard frontend
 
-RKWard is an open-source frontend which allows for data import and browsing as well as running common statistical tests and plots. You can install [rkward](https://aur.archlinux.org/packages/rkward/) from [AUR](/index.php/AUR "AUR").
+RKWard is an open-source frontend which allows for data import and browsing as well as running common statistical tests and plots. You can install [rkward](https://www.archlinux.org/packages/?name=rkward) from [AUR](/index.php/AUR "AUR").
 
 ## Editors IDEs and notebooks with R support
 

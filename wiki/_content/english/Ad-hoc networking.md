@@ -9,7 +9,11 @@ An IBSS (Independent Basic Service Set) network, often called an ad-hoc network,
 
 For example, ad-hoc networking may be used to [share an internet connection](/index.php/Internet_sharing "Internet sharing").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requirements](#Requirements)
 *   [2 Wifi link layer](#Wifi_link_layer)
@@ -105,8 +109,6 @@ If you want to share an internet connection to the ad-hoc network, see [Internet
 ### Using NetworkManager
 
 If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), you can use *nm-applet* for ad-hoc network configuration instead of the manual method described above. See [NetworkManager#Sharing internet connection over Wi-Fi](/index.php/NetworkManager#Sharing_internet_connection_over_Wi-Fi "NetworkManager") for details.
-
-**Note:** NetworkManager does not support WPA encryption in ad-hoc mode.
 
 ### Custom systemd service (with wpa_supplicant and static IP)
 

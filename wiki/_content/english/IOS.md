@@ -11,71 +11,87 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Connecting to a device](#Connecting_to_a_device)
-    *   [1.1 Manual mounting](#Manual_mounting)
-*   [2 Changing iPod mountpoint](#Changing_iPod_mountpoint)
-*   [3 Importing videos and pictures](#Importing_videos_and_pictures)
-    *   [3.1 HTML5 videos](#HTML5_videos)
-    *   [3.2 Importing pictures and deleting them](#Importing_pictures_and_deleting_them)
-*   [4 Converting video for devices](#Converting_video_for_devices)
-    *   [4.1 Handbrake](#Handbrake)
-    *   [4.2 Avidemux](#Avidemux)
-    *   [4.3 Mencoder](#Mencoder)
-    *   [4.4 FFmpeg](#FFmpeg)
-*   [5 Device specific](#Device_specific)
-    *   [5.1 iPhone/iPod Touch](#iPhone/iPod_Touch)
-        *   [5.1.1 The iFuse Way](#The_iFuse_Way)
-        *   [5.1.2 Generating HashInfo file](#Generating_HashInfo_file)
-        *   [5.1.3 Unobfuscating the Database](#Unobfuscating_the_Database)
-    *   [5.2 iPod Classic/Nano (3rd generation)](#iPod_Classic/Nano_(3rd_generation))
-    *   [5.3 iPod Nano 5th generation](#iPod_Nano_5th_generation)
-    *   [5.4 iPod Nano 6th generation](#iPod_Nano_6th_generation)
-    *   [5.5 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
-    *   [5.6 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
-*   [6 iPod management apps](#iPod_management_apps)
-*   [7 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Connecting to a device](#Connecting_to_a_device)
+    *   [2.1 Usbmux daemon](#Usbmux_daemon)
+    *   [2.2 Pairing](#Pairing)
+    *   [2.3 Application integration](#Application_integration)
+    *   [2.4 Manual mounting](#Manual_mounting)
+*   [3 Changing iPod mountpoint](#Changing_iPod_mountpoint)
+*   [4 Importing videos and pictures](#Importing_videos_and_pictures)
+    *   [4.1 HTML5 videos](#HTML5_videos)
+    *   [4.2 Importing pictures and deleting them](#Importing_pictures_and_deleting_them)
+*   [5 Converting video for devices](#Converting_video_for_devices)
+    *   [5.1 Handbrake](#Handbrake)
+    *   [5.2 Avidemux](#Avidemux)
+    *   [5.3 Mencoder](#Mencoder)
+    *   [5.4 FFmpeg](#FFmpeg)
+*   [6 Device specific](#Device_specific)
+    *   [6.1 iPhone/iPod Touch](#iPhone/iPod_Touch)
+        *   [6.1.1 The iFuse Way](#The_iFuse_Way)
+        *   [6.1.2 Generating HashInfo file](#Generating_HashInfo_file)
+        *   [6.1.3 Unobfuscating the Database](#Unobfuscating_the_Database)
+    *   [6.2 iPod Classic/Nano (3rd generation)](#iPod_Classic/Nano_(3rd_generation))
+    *   [6.3 iPod Nano 5th generation](#iPod_Nano_5th_generation)
+    *   [6.4 iPod Nano 6th generation](#iPod_Nano_6th_generation)
+    *   [6.5 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
+    *   [6.6 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
+*   [7 iPod management apps](#iPod_management_apps)
+*   [8 See also](#See_also)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [libimobiledevice](https://www.archlinux.org/packages/?name=libimobiledevice) libraries and optionally [ifuse](https://www.archlinux.org/packages/?name=ifuse) the mounting utility
 
 ## Connecting to a device
 
-Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or media players (Rhythmbox) can interact with iOS devices after [installing](/index.php/Install "Install") the [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc) and [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) packages. Restarting the file manager or application might be needed. Also confirm that usbmuxd is running in the background if the device is still not being recognized by the file manager or application.
+### Usbmux daemon
 
-#### Manual mounting
+`usbmuxd` is required to make connections to iOS devices all. [systemd](/index.php/Systemd "Systemd") comes with udev rule to automatically start and stop this daemon so no user interaction is required.
 
-[Install](/index.php/Install "Install") the [ifuse](https://www.archlinux.org/packages/?name=ifuse), [libimobiledevice](https://www.archlinux.org/packages/?name=libimobiledevice) and [ideviceinstaller-git](https://aur.archlinux.org/packages/ideviceinstaller-git/) packages.
+Insert the iOS device and verify that `usbmuxd.service` automatically started.
 
-Make sure that you have the fuse module loaded by doing `modprobe fuse`, assuming that you do not have it in `/etc/modules-load.d/` already.
-
-**Note:** If your device has a screen password, unlock the device first
-
-Plug in the device and follow the following steps
-
+ `systemctl status usbmuxd.service` 
 ```
-# usbmuxd -f -v
-# idevice_id -l
-# ideviceinfo
-# ideviceinstaller -l
+*...*
+Active: active (running) since Sun 2020-01-19 19:23:18 UTC; 22s ago
+*...*
 
 ```
 
-The last command will provide the information regarding mounting with Fuse. For example to mount VLC installed on the device one can use the command:
+### Pairing
 
+In order to be allowed to connect to iOS device it must be paired with computer.
+
+**Note:** Device screen must be unlocked
+ `idevicepair pair` 
 ```
-# ifuse --documents org.videolan.vlc-ios <mountpoint>
-
-```
-
-The mountpoint field is where you want to have it mounted.
-
-And you are done! You should be able to transfer files.
-
-To unmount:
-
-```
-# umount <mountpoint>
+SUCCESS: Paired with device d8e8fca2dc0f896fd7cb4cb0031ba249
 
 ```
 
-**Note:** If an error is encountered during mounting, rebooting the device and repeating the steps can be helpful
+If you have multiple iOS devices connected `--uuid *ios_uuid*` parameter can be passed to target specific device.
+
+### Application integration
+
+Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or media players (Rhythmbox) can interact with iOS devices after [installing](/index.php/Install "Install") the [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc) and [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) packages. Restarting the file manager or application might be needed.
+
+### Manual mounting
+
+[Install](/index.php/Install "Install") the [ifuse](https://www.archlinux.org/packages/?name=ifuse) package.
+
+iOS has a concept of application documents which are user accessible files.
+
+For example, if VLC is installed on device to mount files that VLC can access:
+
+```
+# ifuse --documents org.videolan.vlc-ios *mountpoint*
+
+```
+
+`org.videolan.vlc-ios` is the bundle id .
+
+The *mountpoint* field is where you want to have it mounted.
 
 ## Changing iPod mountpoint
 

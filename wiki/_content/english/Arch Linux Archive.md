@@ -4,7 +4,7 @@ Related articles
 
 The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollback Machine** (a.k.a **ARM**), stores *official repositories snapshots*, *iso images* and *bootstrap tarballs* across time.
 
-**You can use it to**
+**You can use it to:**
 
 *   Downgrade to a previous version of one package (last version is broken, I want the previous one)
 *   Restore all your packages at a precise moment (my system is broken, I want to go back 2 months ago)
@@ -55,8 +55,8 @@ The [repos](https://archive.archlinux.org/repos) directory contains daily snapsh
 ```
 repos
 ├── 2013
-│   ├── 08
-│   │   └── 31
+│   ├── 08
+│   │   └── 31
 │   │       ├── community
 │   │       ├── community-staging
 │   │       ├── community-testing
@@ -71,23 +71,23 @@ repos
 │   │       ├── pool
 │   │       ├── staging
 │   │       └── testing
-│   ├── 09
-│   │   ├── 01
-│   │   ├── 02
-│   │   ├── ...
-│   │   ├── 21
-│   │   └── 22
-│   ├── 10
-│   │   ├── 01
-│   │   ├── 02
-│   │   ├── ...
+│   ├── 09
+│   │   ├── 01
+│   │   ├── 02
+│   │   ├── ...
+│   │   ├── 21
+│   │   └── 22
+│   ├── 10
+│   │   ├── 01
+│   │   ├── 02
+│   │   ├── ...
 │   │
-│   ├── 11
-│   └── 12
+│   ├── 11
+│   └── 12
 ├── 2014
 │   ├── 01
-│   │   ├── 01
-│   │   ├── 02
+│   │   ├── 01
+│   │   ├── 02
 │   │   ├── ...
 │   │
 │   ├── 02
@@ -103,7 +103,7 @@ repos
 
 ```
 
-Note: The last 3 special directories (**last**, **week** and **month**) which links respectively to the last synced repository, to the last monday and to the first of the current month.
+Note: The last 3 special directories (**last**, **week** and **month**) which links respectively to the last synced repository, to the last Monday and to the first of the current month.
 
 ### /packages
 
@@ -111,23 +111,23 @@ The [packages](https://archive.archlinux.org/packages) directory contains all ve
 
 ```
 ├── packages
-│   ├── a
-│   │   ├── awesome
-│   │   │   ├── awesome-3.5.0-1-i686.pkg.tar.xz
-│   │   │   ├── awesome-3.5.0-1-i686.pkg.tar.xz.sig
-│   │   │   ├── awesome-3.5.0-1-x86_64.pkg.tar.xz
-│   │   │   ├── awesome-3.5.0-1-x86_64.pkg.tar.xz.sig
-│   │   │   ├── awesome-3.5.1-1-i686.pkg.tar.xz
-│   │   │   ├── awesome-3.5.1-1-i686.pkg.tar.xz.sig
-│   │   │   ├── ...
-│   │   │ 
-│   │   ├── ...
-│   │   ├── awstats
-│   │   └── axel
-│   │   
-│   ├── b
-│   ├── ...
-│   └── z
+│   ├── a
+│   │   ├── awesome
+│   │   │   ├── awesome-3.5.0-1-i686.pkg.tar.xz
+│   │   │   ├── awesome-3.5.0-1-i686.pkg.tar.xz.sig
+│   │   │   ├── awesome-3.5.0-1-x86_64.pkg.tar.xz
+│   │   │   ├── awesome-3.5.0-1-x86_64.pkg.tar.xz.sig
+│   │   │   ├── awesome-3.5.1-1-i686.pkg.tar.xz
+│   │   │   ├── awesome-3.5.1-1-i686.pkg.tar.xz.sig
+│   │   │   ├── ...
+│   │   │
+│   │   ├── ...
+│   │   ├── awstats
+│   │   └── axel
+│   │   
+│   ├── b
+│   ├── ...
+│   └── z
 
 ```
 
@@ -136,11 +136,11 @@ You can use the magic subdirectory [.all](https://archive.archlinux.org/packages
 ```
 ├── packages
 │   ├── .all
-│   │   ├── awesome-3.5.1-1-i686.pkg.tar.xz
-│   │   ├── ...
-│   │   ├── zsh-5.0.2-3-i686.pkg.tar.xz
-│   │   ├── zsh-5.0.2-4-i686.pkg.tar.xz
-│   │   └── ...
+│   │   ├── awesome-3.5.1-1-i686.pkg.tar.xz
+│   │   ├── ...
+│   │   ├── zsh-5.0.2-3-i686.pkg.tar.xz
+│   │   ├── zsh-5.0.2-4-i686.pkg.tar.xz
+│   │   └── ...
 
 ```
 
@@ -235,7 +235,7 @@ Then update the database and force downgrade:
 
 ```
 
-If you get errors complaining about corrupted/invalid packages due to PGP signature, try to first update separately [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) and [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates). Alternatively, you can decide to temporairly [disable signature checking](/index.php/Pacman/Package_signing#Disabling_signature_checking "Pacman/Package signing") altogether.
+If you get errors complaining about corrupted/invalid packages due to PGP signature, try to first update separately [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) and [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates). Alternatively, you can decide to temporarily [disable signature checking](/index.php/Pacman/Package_signing#Disabling_signature_checking "Pacman/Package signing") altogether.
 
 **Note:** It's [not safe](/index.php/Partial_upgrades "Partial upgrades") to mix Archive and up-to-date mirrors. In case of a download failure, you will fall-back on an upstream package and you will have packages not from the same epoch in the rest of the system.
 
@@ -267,8 +267,8 @@ You can then access the details page of a package via its identifier, for instan
 It is also possible to run searches with the [archive.org Python client](https://github.com/jjjake/internetarchive):
 
 ```
-$ ia search subject:"archlinux package" subject:'mysql'                                                                                       
-{"identifier": "archlinux_pkg_ejabberd-mod_mysql"}                                                                                                           
+$ ia search subject:"archlinux package" subject:'mysql'
+{"identifier": "archlinux_pkg_ejabberd-mod_mysql"}
 {"identifier": "archlinux_pkg_ejabberd-mod_mysql-svn"}
 {"identifier": "archlinux_pkg_gambas3-gb-db-mysql"}
 {"identifier": "archlinux_pkg_gambas3-gb-mysql"}

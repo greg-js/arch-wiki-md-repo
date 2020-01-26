@@ -443,9 +443,12 @@ Upon entering an incorrect password this will replace `Sorry, try again.` messag
 
 ### Play sound on password prompt
 
-The following way can be used for [Zsh](/index.php/Zsh "Zsh"):
+To make a beep when the password prompt appears, set the `SUDO_PROMPT` [environment variable](/index.php/Environment_variable "Environment variable") and include the [bell character](https://en.wikipedia.org/wiki/Bell_character "wikipedia:Bell character") `\a`. For example:
 
- `/etc/zsh/zshrc`  `export SUDO_PROMPT=$'\a[sudo] password for %p: '` 
+```
+export SUDO_PROMPT=$'\a[sudo] password for %p: '
+
+```
 
 ## Troubleshooting
 

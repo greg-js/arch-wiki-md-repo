@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [lm_sensors](/index.php/Lm_sensors "Lm sensors"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Lm_sensors&diff=0&oldid=584661) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [lm_sensors](/index.php/Lm_sensors "Lm sensors"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Lm_sensors&diff=0&oldid=589372) na versão em inglês.
 
 Artigos relacionados
 
@@ -31,7 +31,7 @@ Artigos relacionados
     *   [6.1 Módulo K10Temp](#Módulo_K10Temp)
     *   [6.2 Placas-mãe Asus B450 com Ryzen CPU](#Placas-mãe_Asus_B450_com_Ryzen_CPU)
     *   [6.3 Placas-mãe Asus Z97/Z170](#Placas-mãe_Asus_Z97/Z170)
-    *   [6.4 Placas-mãe Gigabyte B250](#Placas-mãe_Gigabyte_B250)
+    *   [6.4 Placas-mãe Gigabyte B250/Z370](#Placas-mãe_Gigabyte_B250/Z370)
     *   [6.5 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
     *   [6.6 Problemas na tela do laptop após a execução de sensors-detect](#Problemas_na_tela_do_laptop_após_a_execução_de_sensors-detect)
 
@@ -510,7 +510,7 @@ Além disso, adicione-o aos parâmetros do kernel de inicialização:
 
 ```
 
-### Placas-mãe Gigabyte B250
+### Placas-mãe Gigabyte B250/Z370
 
 Algumas placa-mãe da Gigabyte usam o chip ITE IT8686E, ao qual o driver it87 do kernel não dá suporte, até maio de 2019 [[1]](https://www.kernel.org/doc/Documentation/hwmon/it87).
 

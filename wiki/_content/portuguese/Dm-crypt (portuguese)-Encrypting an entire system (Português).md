@@ -98,7 +98,7 @@ Consegue flexibilidade no particionamento ao usar LVM dentro de uma partição c
 *   Simples particionamento se sabe como usar LVM
 *   Somente uma chave para desbloquear todos os volumes (exemplo, configuração simples de resume-from-disk)
 *   design de volumes não é visível quando bloqueado
-*   Método mais fácil para [suspensão para o disco](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption")
+*   Método mais fácil para [suspensão para o disco](/index.php/Dm-crypt/Swap_criptografada#Com_suṕrte_a_suspender_para_o_disco "Dm-crypt/Swap criptografada")
 
  | 
 
@@ -188,7 +188,7 @@ Enquanto todos os cenários acima oferecem maior proteção contra ameaças exte
 
 Veja [Dm-crypt/Preparando a unidade de armazenamento#Particionamento](/index.php/Dm-crypt/Preparando_a_unidade_de_armazenamento#Particionamento "Dm-crypt/Preparando a unidade de armazenamento") para uma visão geral das estratégias de particionamento usadas nos cenários.
 
-Outra coisa a considerar é se deve usar uma partição swap criptografada e de qual forma. Veja [Dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") para alternativas.
+Outra coisa a considerar é se deve usar uma partição swap criptografada e de qual forma. Veja [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_criptografada "Dm-crypt/Swap criptografada") para alternativas.
 
 Se você antecipa a proteção de dados do sistema não somente contra roubo físico, como também contra adulteração lógica, veja [dm-crypt/Especificidades#Protegendo a partição de boot não criptografada](/index.php/Dm-crypt/Especificidades#Protegendo_a_partição_de_boot_não_criptografada "Dm-crypt/Especificidades") para possibilidades futuras após seguir um dos cenários.
 
@@ -1321,4 +1321,4 @@ Instale o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") em `/dev/
 
 ### Configurando a swap
 
-Se você criou uma partição para ser usada como swap criptografada, siga as instruções em [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") para configurá-la.
+Se você criou uma partição para ser usada como swap criptografada, siga as instruções em [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_criptografada "Dm-crypt/Swap criptografada") para configurá-la.

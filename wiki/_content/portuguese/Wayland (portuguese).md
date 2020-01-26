@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wayland](/index.php/Wayland "Wayland"). Data da última tradução: 2019-11-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wayland&diff=0&oldid=590154) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wayland](/index.php/Wayland "Wayland"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wayland&diff=0&oldid=596098) na versão em inglês.
 
 Artigos relacionados
 
@@ -24,16 +24,16 @@ Artigos relacionados
     *   [4.5 GLFW](#GLFW)
     *   [4.6 GLEW](#GLEW)
     *   [4.7 EFL](#EFL)
-*   [5 Solução de problemas](#Solução_de_problemas)
-    *   [5.1 GDM e drivers proprietários da NVIDIA](#GDM_e_drivers_proprietários_da_NVIDIA)
-    *   [5.2 Gama](#Gama)
-    *   [5.3 Falha de afirmação LLVM](#Falha_de_afirmação_LLVM)
-    *   [5.4 Tela lenta, glitches gráficos, e crashes](#Tela_lenta,_glitches_gráficos,_e_crashes)
-    *   [5.5 Cannot open display: :0 com programas feitos em Electron](#Cannot_open_display:_:0_com_programas_feitos_em_Electron)
-    *   [5.6 Gravar tela](#Gravar_tela)
-    *   [5.7 Exibição remota](#Exibição_remota)
-    *   [5.8 Captação de entradas nos jogos, desktop remoto e janelas VM](#Captação_de_entradas_nos_jogos,_desktop_remoto_e_janelas_VM)
-        *   [5.8.1 Protocolo inibidor de entrada wlroots](#Protocolo_inibidor_de_entrada_wlroots)
+    *   [4.8 winit](#winit)
+*   [5 Resolução de problemas](#Resolução_de_problemas)
+    *   [5.1 Gama](#Gama)
+    *   [5.2 Falha de afirmação LLVM](#Falha_de_afirmação_LLVM)
+    *   [5.3 Tela lenta, glitches gráficos, e crashes](#Tela_lenta,_glitches_gráficos,_e_crashes)
+    *   [5.4 Cannot open display: :0 com programas feitos em Electron](#Cannot_open_display:_:0_com_programas_feitos_em_Electron)
+    *   [5.5 Gravar tela](#Gravar_tela)
+    *   [5.6 Exibição remota](#Exibição_remota)
+    *   [5.7 Captação de entradas nos jogos, desktop remoto e janelas VM](#Captação_de_entradas_nos_jogos,_desktop_remoto_e_janelas_VM)
+        *   [5.7.1 Protocolo inibidor de entrada wlroots](#Protocolo_inibidor_de_entrada_wlroots)
 *   [6 Veja também](#Veja_também)
 
 ## Requerimentos
@@ -49,17 +49,16 @@ Para o driver GPU e o compositor Wayland serem compatíveis eles devem suportar 
 ## Compositores
 
 | Nome | Tipo | Descrição |
-| GNOME | Stacking | Veja [GNOME#Iniciando](/index.php/GNOME_(Portugu%C3%AAs)#Iniciando "GNOME (Português)"). |
+| Mutter | Stacking | Veja [GNOME#Iniciando](/index.php/GNOME_(Portugu%C3%AAs)#Iniciando "GNOME (Português)"). |
 | sway | Tiling | [Sway](/index.php/Sway_(Portugu%C3%AAs) "Sway (Português)") é um compositor e gerenciador de janelas compatível com o i3 para Wayland. [GitHub](https://github.com/SirCmpwn/sway). |
 | Enlightenment | Stacking e tiling | [Mais informações sobre](https://www.enlightenment.org/about-wayland). |
-| KDE Plasma | Stacking | Veja [KDE#Iniciando o Plasma](/index.php/KDE_(Portugu%C3%AAs)#Iniciando_o_Plasma "KDE (Português)"). |
+| KDE Kwin | Stacking | Veja [KDE#Iniciando o Plasma](/index.php/KDE_(Portugu%C3%AAs)#Iniciando_o_Plasma "KDE (Português)"). |
 | Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (antiga loliwm) é um projeto abandonado de tiling WM para Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") é um gerenciador de janelas simples baseado no swc. É inspirado por [dwm](/index.php/Dwm "Dwm") e [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) é um compositor Wayland e shell(mais semelhante a uma WM do que DE) usando Qt5 e Weston. O objetivo do projeto é construir um simples mas flexível e bonito desktop Wayland. |
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) É um shell para [Liri](/index.php/Liri "Liri"), construído com QtQuick e QtCompositor como um compositor para Wayland. |
 | Maynard | *(Incerto)* | [Maynard](https://github.com/raspberrypi/maynard) é um cliente shell desktop para Weston feito em GTK. Foi baseado no weston-gtk-shell, um projeto de Tiago Vignatti. Não está em desenvolvimento. [[1]](https://github.com/raspberrypi/maynard/issues/54#issuecomment-303422302)[[2]](https://github.com/raspberrypi/maynard/issues/55#issuecomment-373808518) |
 | Motorcar | *(Incerto)* | [Motorcar](https://github.com/evil0sheep/motorcar) é um compositor Wayland para exploração de janelas 3D usando realidade virtual. |
-| Way Cooler | Tiling | [Way Cooler](https://github.com/way-cooler/way-cooler) é um customizável (arquivos de configuração em Lua) compositor Wayland, escrito em Rust. Inspirado pelo i3 e awesome. |
 | Maze Compositor | Flutuante 3D | [Maze Compositor](https://github.com/imbavirus/mazecompositor) é um compositor Wayland 3D feito em Qt. |
 | Cage | Kiosk | [Cage](https://www.hjdskes.nl/projects/cage/) é um compositor Wayland que mostra somente um programa em tela cheia. |
 | Greenfield | Stacking | [Greenfield](https://github.com/udevbe/greenfield) é um compositor Wayland que roda no navegador e pode mostrar aplicações remotamente. |
@@ -75,10 +74,10 @@ Alguns destes acima podem ser suportados por [gerenciadores de janela](/index.ph
 Abaixo estão listados gerenciadores de login que suportam rodar compositores Wayland. A coluna Tipo indica se o gerenciador de login suporta ou não ser executado em Wayland.
 
 | Nome | Tipo | Descrição |
-| GDM | Roda em Wayland | Gerenciador de login do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"). |
-| LightDM | Roda em X11 | Gerenciador de login TUI escrito em C |
-| Ly | Roda no console | TUI display manager written in C |
-| SDDM | Roda em X11 | Gerenciador de login feito em QML. |
+| [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") | Roda em Wayland | Gerenciador de login do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"). |
+| [LightDM](/index.php/LightDM "LightDM") | Roda em X11 | Gerenciador de login TUI escrito em C |
+| [Ly](/index.php/Ly "Ly") | Roda no console | TUI display manager written in C |
+| [SDDM](/index.php/SDDM "SDDM") | Roda em X11 | Gerenciador de login feito em QML. |
 
 ## Bibliotecas GUI
 
@@ -118,18 +117,11 @@ Para usar GLEW com o backend Wayland, instale o pacote [glew-wayland](https://ww
 
 EFL tem suporte completo ao Wayland. Para rodar um programa EFL no Wayland, veja a [página do projeto](https://wayland.freedesktop.org/efl.html).
 
-## Solução de problemas
+### winit
 
-### GDM e drivers proprietários da NVIDIA
+Winit é uma biblioteca de gerenciamento de janela em Rust. Por padrão utiliza o backend Wayland, mas é possível forçar o uso do XWayland ao modificar a variável de ambiente: `WINIT_UNIX_BACKEND=x11`.
 
-Se você estiver usando o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA"), o [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") explicitamente [desabilita](https://bbs.archlinux.org/viewtopic.php?pid=1837424#p1837424) o suporte a Wayland. O [motivo](https://gitlab.gnome.org/GNOME/gdm/commit/5cd78602d3d4c8355869151875fc317e8bcd5f08) para esta decisão é que os aplicativos GLX atualmente não funcionam bem quando o driver proprietário da NVIDIA é usado com uma sessão de Wayland.
-
-Para habilitar forçadamente o Wayland, desabilite a regra de [udev](/index.php/Udev "Udev") responsável por desabilitar o Wayland no GDM:
-
-```
-# ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
-
-```
+## Resolução de problemas
 
 ### Gama
 
@@ -190,7 +182,7 @@ Esta mudança na captação de entrada quebra o atual comportamento dos programa
 *   Combinação de teclas e modificadores irão ser pegos pelo compositor e não serão enviados para o desktop remoto e janelas de máquina virtual.
 *   O mouse não irá ser restrito a janela da aplicação, isto pode causar um efeito de paralaxe onde a localização do ponteiro dentro da janela da máquina virtual ou desktop remoto é mal interpretado do host.
 
-Isto é resolvido adicionando extensões para o protocolo Wayland e XWayland. O suporte para estas extensões precisam ser adicionados para compositores Wayland. Os clientes nativos do Wayland, toolkits widget (exemplo GTK, QT) ou as próprias aplicações, se nenhum toolkit está sendo usado, também precisam suportar estas extensões. Programas Xorg não precisam de mudança devido a existência do XWayland.
+Isto é resolvido adicionando extensões para o protocolo Wayland e XWayland. O suporte para estas extensões precisam ser adicionados para compositores Wayland. Os clientes nativos do Wayland, toolkits widget (exemplo GTK, Qt) ou as próprias aplicações, se nenhum toolkit está sendo usado, também precisam suportar estas extensões. Programas Xorg não precisam de mudança devido a existência do XWayland.
 
 Estas extensões já estão incluídas no [wayland-protocols](https://www.archlinux.org/packages/?name=wayland-protocols), e suportadas por [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 1.20.
 

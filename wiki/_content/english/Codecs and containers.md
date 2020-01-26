@@ -30,8 +30,7 @@ This article deals only with codecs and application backends; see [List of appli
     *   [4.2 xine](#xine)
     *   [4.3 libavcodec](#libavcodec)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Install MPlayer binary codecs](#Install_MPlayer_binary_codecs)
-    *   [5.2 No H264, mpg4 or Musepack (.mpc) in Totem Player](#No_H264,_mpg4_or_Musepack_(.mpc)_in_Totem_Player)
+    *   [5.1 No H264, mpg4 or Musepack (.mpc) in Totem Player](#No_H264,_mpg4_or_Musepack_(.mpc)_in_Totem_Player)
 
 ## Requirements
 
@@ -233,7 +232,7 @@ See also [Wikipedia:Comparison of video container formats](https://en.wikipedia.
 
 ### GStreamer
 
-From [http://www.gstreamer.net/](http://www.gstreamer.net/):
+From [https://gstreamer.freedesktop.org/](https://gstreamer.freedesktop.org/):
 
 	GStreamer is a library for constructing graphs of media-handling components. The applications it supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing.
 
@@ -241,9 +240,9 @@ Simply, GStreamer is a *backend* or *framework* utilized by many media applicati
 
 ### xine
 
-From [http://www.xine-project.org/about](http://www.xine-project.org/about):
+From [https://sourceforge.net/projects/xine/](https://sourceforge.net/projects/xine/):
 
-	xine is a free (gpl-licensed) high-performance, portable and reusable multimedia playback engine. xine itself is a shared library with an easy to use, yet powerful API which is used by many applications for smooth video playback and video processing purposes.
+	xine is a free multimedia player. It plays back CDs, DVDs, BluRays and VCDs. It also decodes multimedia files like AVI, MOV, WMV, and MP3 from local disk drives, and displays multimedia streamed over the Internet.
 
 As an alternative to GStreamer, many media players can be configured to utilize the xine backend provided by [xine-lib](https://www.archlinux.org/packages/?name=xine-lib).
 
@@ -254,14 +253,6 @@ Note that the xine project itself provides a capable video player, [xine-ui](htt
 [libavcodec](https://ffmpeg.org/libavcodec.html) is part of the [FFmpeg](/index.php/FFmpeg "FFmpeg") project. It includes a large number of video and audio codecs. The libavcodec codecs are included with media players such as [MPlayer](/index.php/MPlayer "MPlayer") and [VLC](/index.php/VLC "VLC"), so you may not need to install the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package itself.
 
 ## Tips and tricks
-
-### Install MPlayer binary codecs
-
-As an ultimate solution, you can try to install MPlayer binary codecs.
-
-If you are not able to play some files go to [http://www.mplayerhq.hu/design7/dload.html](http://www.mplayerhq.hu/design7/dload.html), read the instructions and install the codec you need to play your files.
-
-The "essential" codecs pack, which consists of the cook, drvc and sipr codecs, can also be installed with the [codecs64](https://aur.archlinux.org/packages/codecs64/) package.
 
 ### No H264, mpg4 or Musepack (.mpc) in Totem Player
 

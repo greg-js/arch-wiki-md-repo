@@ -27,8 +27,8 @@ Related articles
     *   [5.2 Automatic lm_sensors deployment](#Automatic_lm_sensors_deployment)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 K10Temp module](#K10Temp_module)
-    *   [6.2 Asus B450 motherboards with Ryzen CPU](#Asus_B450_motherboards_with_Ryzen_CPU)
-    *   [6.3 Asus Z97/Z170 motherboards](#Asus_Z97/Z170_motherboards)
+    *   [6.2 Asus B450/X399/X470 motherboards with Ryzen CPU](#Asus_B450/X399/X470_motherboards_with_Ryzen_CPU)
+    *   [6.3 Asus Z97/Z170/X570 motherboards](#Asus_Z97/Z170/X570_motherboards)
     *   [6.4 Gigabyte B250/Z370 motherboards](#Gigabyte_B250/Z370_motherboards)
     *   [6.5 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
     *   [6.6 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
@@ -493,11 +493,13 @@ options k10temp force=1
 
 This will allow the module to load at boot.
 
-### Asus B450 motherboards with Ryzen CPU
+### Asus B450/X399/X470 motherboards with Ryzen CPU
 
-With some recent Asus motherboards, fan and voltage sensor access may require the it87 module. [Install](/index.php/Install "Install") [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/) and load the `it87` [kernel module](/index.php/Kernel_module "Kernel module").
+Some recent Asus motherboards use a ITE IT8665E chip, accessing the temperature, fan and voltage sensors may require the `asus-wmi-sensors` module. [Install](/index.php/Install "Install") [asus-wmi-sensors-dkms-git](https://aur.archlinux.org/packages/asus-wmi-sensors-dkms-git/) and load the `asus-wmi-sensors` [kernel module](/index.php/Kernel_module "Kernel module"), the module uses the UEFI interface and may require a BIOS update on some boards [[1]](https://github.com/electrified/asus-wmi-sensors#supported-hardware).
 
-### Asus Z97/Z170 motherboards
+Alternatively, the `it87` module reads the values from the chip directly, install [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/) and load the `it87` [kernel module](/index.php/Kernel_module "Kernel module").
+
+### Asus Z97/Z170/X570 motherboards
 
 With some recent Asus motherboards, fan and voltage sensor access may require the `nct6775` [kernel module](/index.php/Kernel_module "Kernel module") to be loaded.
 
@@ -510,11 +512,11 @@ Additionally, add to the kernel boot parameters:
 
 ### Gigabyte B250/Z370 motherboards
 
-Some Gigabyte motherboards use the ITE IT8686E chip, which is not supported by the it87 kernel driver, as of May 2019 [[1]](https://www.kernel.org/doc/Documentation/hwmon/it87). However, it is supported by the upstream version of the kernel driver [[2]](https://github.com/bbqlinux/it87/blob/master/it87.c#L24). The dkms variant is contained in [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/).
+Some Gigabyte motherboards use the ITE IT8686E chip, which is not supported by the it87 kernel driver, as of May 2019 [[2]](https://www.kernel.org/doc/Documentation/hwmon/it87). However, it is supported by the upstream version of the kernel driver [[3]](https://github.com/bbqlinux/it87/blob/master/it87.c#L24). The dkms variant is contained in [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/).
 
 ### Gigabyte GA-J1900N-D3V
 
-This motherboard uses the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E [[3]](https://hwmon.wiki.kernel.org/device_support_status_g_i) [[4]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part. However, as of August 2016, [[5]](https://www.kernel.org/doc/Documentation/hwmon/it87) lists the IT8620E as supported.
+This motherboard uses the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E [[4]](https://hwmon.wiki.kernel.org/device_support_status_g_i) [[5]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part. However, as of August 2016, [[6]](https://www.kernel.org/doc/Documentation/hwmon/it87) lists the IT8620E as supported.
 
 You can load the module at runtime with modprobe:
 

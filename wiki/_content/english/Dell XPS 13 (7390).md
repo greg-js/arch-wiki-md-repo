@@ -35,7 +35,7 @@ Related articles
 
 At the moment it is [not recommended](https://old.reddit.com/r/archlinux/comments/e30f09/complications_when_setting_up_arch_on_the_new/) to use [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel).
 
-Install [acpilight](https://aur.archlinux.org/packages/acpilight/) to set the display backlight with xbacklight. Add the following udev rule and your user to the `video` group:
+Install [acpilight](https://www.archlinux.org/packages/?name=acpilight) to set the display backlight with xbacklight. Add the following udev rule and your user to the `video` group:
 
  `/etc/udev/rules.d/90-backlight.rules` 
 ```
@@ -59,7 +59,7 @@ PrimaryBattChargeCfg=Custom:75-80
 
 ```
 
-To reset the thresholds at reboot simply add a cronjob:
+To reset the thresholds at reboot simply add a [cronjob](/index.php/Cron "Cron"):
 
 ```
 @reboot /opt/dell/dcc/cctk --PrimaryBattChargeCfg=custom:50-80
@@ -68,13 +68,13 @@ To reset the thresholds at reboot simply add a cronjob:
 
 ## Function/Multimedia Keys
 
-| Function Key | Status | Description | Note |
-| Fn + F1 | Working | Mute audio | [xbindkeys](/index.php/Xbindkeys "Xbindkeys") |
-| Fn + F2 | Working | Decrease volume | [xbindkeys](/index.php/Xbindkeys "Xbindkeys") |
-| Fn + F3 | Working | Increase volume | [xbindkeys](/index.php/Xbindkeys "Xbindkeys") |
-| Fn + F4 | ? | Play previous track/chapter |
-| Fn + F5 | ? | Play/Pause |
-| Fn + F6 | ? | Play next track/chapter |
+| Function Key | Status | Description | Key |
+| Fn + F1 | Working | Mute audio | `XF86AudioMute` |
+| Fn + F2 | Working | Decrease volume | `XF86AudioLowerVolume` |
+| Fn + F3 | Working | Increase volume | `XF86AudioRaiseVolume` |
+| Fn + F4 | Working | Play previous track/chapter | `XF86AudioPrev` |
+| Fn + F5 | Working | Play/Pause | `XF86AudioPlay` |
+| Fn + F6 | Working | Play next track/chapter | `XF86AudioNext` |
 | Fn + F7 | Working | Task view |
 | Fn + F8 | ? | Switch to external display |
 | Fn + F9 | Working | Search |

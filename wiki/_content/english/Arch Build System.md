@@ -14,7 +14,7 @@ The Arch build system is a *ports-like* system for building and packaging softwa
 
 *Ports* is a system used by *BSD to automate the process of building software from source code. The system uses a *port* to download, unpack, patch, compile, and install the given software. A *port* is merely a small directory on the user's computer, named after the corresponding software to be installed, that contains a few files with the instructions for building and installing the software from source. This makes installing software as simple as typing `make` or `make install clean` within the port's directory.
 
-ABS is a similar concept. A part of ABS is a SVN repository and an equivalent Git repository. The repository contains a directory corresponding to each package available in ArchLinux. The directories of the repository contain a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file (and sometimes other files), and do not contain the software source nor binary. By issuing [makepkg](/index.php/Makepkg "Makepkg") inside a directory, the software sources are downloaded, the software is compiled, and then packaged within the build directory. Then you can use [pacman](/index.php/Pacman "Pacman") to install the package.
+ABS is a similar concept. A part of ABS is a SVN repository and an equivalent Git repository. The repository contains a directory corresponding to each package available in Arch Linux. The directories of the repository contain a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file (and sometimes other files), and do not contain the software source nor binary. By issuing [makepkg](/index.php/Makepkg "Makepkg") inside a directory, the software sources are downloaded, the software is compiled, and then packaged within the build directory. Then you can use [pacman](/index.php/Pacman "Pacman") to install the package.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -162,7 +162,7 @@ $ svn update
 
 #### Retrieve PKGBUILD source using Git
 
-As a precondition, [install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package. [Asp](https://github.com/falconindy/asp) is a tool to manage the build source files used to create Arch Linux packages. Uses the git interface which offers more up to date sources. Also see the Archlinux BBS forum thread [[1]](https://bbs.archlinux.org/viewtopic.php?id=185075).
+As a precondition, [install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package. [Asp](https://github.com/falconindy/asp) is a tool to manage the build source files used to create Arch Linux packages. Uses the git interface which offers more up to date sources. Also see the Arch Linux BBS forum thread [[1]](https://bbs.archlinux.org/viewtopic.php?id=185075).
 
 To clone the svntogit-repository for a specific package, use:
 

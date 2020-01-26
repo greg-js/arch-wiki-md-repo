@@ -107,6 +107,10 @@ Using [rsync#As cp/mv alternative](/index.php/Rsync#As_cp/mv_alternative "Rsync"
 
 	[https://github.com/Peltoche/lsd](https://github.com/Peltoche/lsd) || [lsd](https://www.archlinux.org/packages/?name=lsd)
 
+*   **exa** — Another ls replacement with color support, tree view, git integration and other features. Also written in Rust.
+
+	[https://github.com/ogham/exa](https://github.com/ogham/exa) || [exa](https://www.archlinux.org/packages/?name=exa)
+
 ### find alternatives
 
 *   **fd** — Simple, fast and user-friendly alternative to find. Ignores hidden and `.gitignore`'d files by default.

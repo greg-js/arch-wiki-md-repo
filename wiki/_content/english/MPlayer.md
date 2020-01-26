@@ -26,6 +26,7 @@ Related articles
     *   [3.5 JACK support](#JACK_support)
     *   [3.6 Advanced Subtitles](#Advanced_Subtitles)
     *   [3.7 Internet radio](#Internet_radio)
+    *   [3.8 Additional binary codecs](#Additional_binary_codecs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 MPlayer fails to open files with spaces](#MPlayer_fails_to_open_files_with_spaces)
     *   [4.2 MPlayer has black or strange colored font for OSD and Subtitles](#MPlayer_has_black_or_strange_colored_font_for_OSD_and_Subtitles)
@@ -274,6 +275,10 @@ For more details on a running mplayer instance:
 $ ps -eo pcpu,pid,user,comm | grep -i "mplayer"$ | sed  "s/ mplayer$//m"
 
 ```
+
+### Additional binary codecs
+
+If you need to play media encoded with the cook, drvc or sipr codecs, you can install the "essentials" binary codec pack with the [codecs64](https://aur.archlinux.org/packages/codecs64/) package. See [http://www.mplayerhq.hu/design7/dload.html](http://www.mplayerhq.hu/design7/dload.html) for more information.
 
 ## Troubleshooting
 

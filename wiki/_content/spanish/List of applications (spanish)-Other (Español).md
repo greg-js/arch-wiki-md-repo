@@ -368,7 +368,7 @@ Un puñado de gestores de apagado están disponibles:
 
 *   **oblogout** — Un script con entorno gráfico para el cierre de sesión hecho para [Openbox](/index.php/Openbox "Openbox") que puede ser usado por otros gestores de ventanas.
 
-	[https://launchpad.net/oblogout](https://launchpad.net/oblogout) || [oblogout](https://www.archlinux.org/packages/?name=oblogout)
+	[https://launchpad.net/oblogout](https://launchpad.net/oblogout) || [oblogout](https://aur.archlinux.org/packages/oblogout/)
 
 *   **obshutdown** — Un gran gestor de apagado basado en GTK/Cairo para Openbox y otros gestores de ventanas.
 

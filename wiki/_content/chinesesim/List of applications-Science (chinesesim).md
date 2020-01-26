@@ -193,7 +193,7 @@
 
 *   **[RKWard](https://en.wikipedia.org/wiki/RKWard "wikipedia:RKWard")** — 统计语言R的前端。
 
-	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://aur.archlinux.org/packages/rkward/)
+	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://www.archlinux.org/packages/?name=rkward)
 
 *   **[RStudio](https://en.wikipedia.org/wiki/RStudio "wikipedia:RStudio")** — 为R构建的基于Qt的强大的产品级IDE 。
 

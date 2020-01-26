@@ -21,7 +21,7 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
     *   [4.2 Hyphenation rules](#Hyphenation_rules)
     *   [4.3 Thesaurus](#Thesaurus)
     *   [4.4 Grammar checking](#Grammar_checking)
-    *   [4.5 Offline help for en-US](#Offline_help_for_en-US)
+    *   [4.5 Offline help](#Offline_help)
 *   [5 Installing macros](#Installing_macros)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Font substitution](#Font_substitution)
@@ -64,10 +64,6 @@ LibreOffice will try to autodetect the most suitable VCL UI interface based on y
 
 *   When using the [LXDE](/index.php/LXDE "LXDE") desktop environment, setting `SAL_USE_VCLPLUGIN` in `/etc/profile.d/libreoffice-fresh.sh` has no effect since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment. [upstream bug](https://sourceforge.net/p/lxde/bugs/868/)
 *   In LibreOffice 6.4, the `kde5` backend will be [renamed](https://gerrit.libreoffice.org/plugins/gitiles/core/+/2113f3e7ee0ca5c07f224a54b627777b3a7b5fb0%5E%21/) to `kf5`.
-
-However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
-
-If that does not work immediately, you may need to change the icon set that is in use; this is also in the Options Dialog, under *LibreOffice > View* with two pop-up boxes for "Icon size and style" (the latter pop-up box should be changed to something other than "High-contrast").
 
 ### Disable startup logo
 
@@ -112,7 +108,10 @@ For Greek, instead of [mythes-el](https://aur.archlinux.org/packages/mythes-el/)
 
 ### Grammar checking
 
-For grammar checking, several tools are available. The most common is [LanguageTool](https://www.languagetool.org/). While the [languagetool](https://www.archlinux.org/packages/?name=languagetool) is available, it is not packaged as a LibreOffice extension. It is thus recommended to install the LibreOffice extension manually or with [libreoffice-extension-languagetool](https://aur.archlinux.org/packages/libreoffice-extension-languagetool/) instead. Even though the extension comes bundled with LanguageTool, this does not conflict with [languagetool](https://www.archlinux.org/packages/?name=languagetool).
+For grammar checking, several tools are available. The most common is [LanguageTool](https://www.languagetool.org/). You can either:
+
+*   install the [libreoffice-extension-languagetool](https://aur.archlinux.org/packages/libreoffice-extension-languagetool/) package, or
+*   download it from the [LibreOffice Extensions page](https://extensions.libreoffice.org/extensions/languagetool) and manually install it in LibreOffice through *Tools* --> *Extension*
 
 After this extension has been installed, please make sure you have a [Java](/index.php/Java "Java") 8 runtime installed ([jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk)). Indeed, Languagetool uses Java and may slow down or briefly hang LibreOffice, particularly while opening documents. Fortunately this is usually only when initially opening a document and is usually not apparent otherwise. Once installed, you want to enable it as the default environment for LibreOffice. To do that go to "Tools" --> "Options" --> "Advanced" and select the appropiate JRE (it will be shown as 1.8.0) then press "Ok". You will be prompted to restart the LibreOffice suite. Once restarted you will be able to install Languagetools without trouble.
 
@@ -122,9 +121,9 @@ Other grammar tools can also be found on the [LibrePlanet extension page](https:
 
 French-speaking users are advantaged here: they do not need to install LanguageTool nor Java. Dicollecte provides a nice Python extension, specifically designed for Frenchs. You can install it [from the website](https://www.dicollecte.org/grammalecte/telecharger.php) or via [libreoffice-extension-grammalecte-fr](https://aur.archlinux.org/packages/libreoffice-extension-grammalecte-fr/). In any case, this extensions also comes with the French dictionaries otherwise provided by [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr).
 
-### Offline help for en-US
+### Offline help
 
-As of version 5.2.2, [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) provides the offline help files for en-US. Help files for different locales is provided by the appropriate libreoffice language package, (i.e., [libreoffice-fresh-en-za](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-za) provides the help files for en-ZA locales).
+[libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) and [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) provide the offline help files for en-US. Help files for different locales is provided by the appropriate libreoffice language package, (i.e., [libreoffice-fresh-en-za](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-za) provides the help files for en-ZA locales).
 
 ## Installing macros
 
@@ -218,7 +217,7 @@ As an alternative workaround, run *libreoffice* with a light theme (e.g. with en
 
 If you do not want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in *Tools > Options > LibreOffice > View > Icon Style* to a readable one provided by LibreOffice.
 
-Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK](/index.php/GTK "GTK"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), and, if using a LibreOffice version < 5.3.0, the Breeze dark icons for LibreOffice, [libreoffice-breeze-icons](https://aur.archlinux.org/packages/libreoffice-breeze-icons/).
+Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK](/index.php/GTK "GTK"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk).
 
 Just enable "Breeze Dark" or another readable icon style in *Tools > Options > LibreOffice > View > Icon Style* then.
 

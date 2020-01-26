@@ -144,6 +144,8 @@ And then update fontconfig:
  `# fc-cache && mkfontscale && mkfontdir` 
 **Note:** This may cause conflicts with XeTeX/XeLaTeX if the same fonts are (separately) available to both TeX and Fontconfig, i.e. if multiple copies of the same font are available on the search path.
 
+**Note:** Type 1 fonts will not be available in LibreOffice 5.3 and later.
+
 ### Updating babelbib language definitions
 
 If you have the very specific problem of [babelbib](https://www.ctan.org/pkg/babelbib) not having the latest language definitions that you need, and you do not want to recompile everything, you can get them manually from [https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/](https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/) and put them in `/usr/share/texmf-dist/tex/latex/babelbib/`. For example:

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-11-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=587006) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=588718) na versão em inglês.
 
 Artigos relacionados
 
@@ -94,7 +94,7 @@ fi'
 
 *   Um pacote não pode já existir em qualquer um dos repositórios do Arch Linux. você deve tomar os cuidados necessários para se certificar que nenhum outro empacotador está no processo de promoção do mesmo pacote. Veja os comentários do pacote do AUR, leia os últimos títulos de assuntos no [aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general), pesquise [todos os projetos no rastreador de erro](https://bugs.archlinux.org/index.php?project=0&do=index&switch=1), use [grep](https://en.wikipedia.org/wiki/Grep "wikipedia:Grep") no [log do Subversion](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html) e envie uma mensagem rápida para o [canal IRC](/index.php/Canal_IRC "Canal IRC") privado de TUs.
 
-*   Auxiliares do AUR, como uma exceção especial, nunca serão permitidos.
+*   [Wrappers do pacman](/index.php/Auxiliares_do_AUR#Wrappers_do_pacman "Auxiliares do AUR"), como uma exceção especial, nunca serão permitidos. Se desejar adicionar um [auxiliar do AUR](/index.php?title=Auxiliar_do_AUR&action=edit&redlink=1 "Auxiliar do AUR (page does not exist)"), escreva um e-mail para `arch-dev-public` com a adição proposta e respeite as objeções fornecidas pelos membros da equipe.
 
 *   Somente pacotes "populares" podem entrar no repositório, sendo definido pelo 1% de uso no [pkgstats](https://www.archlinux.de/?page=PackageStatistics) ou 10 votos no AUR.
 

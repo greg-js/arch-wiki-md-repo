@@ -1718,7 +1718,7 @@ Requires [lib32-glew1.10](https://www.archlinux.org/packages/?name=lib32-glew1.1
 
 ### Life is Strange
 
-Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0), [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image), [gconf](https://aur.archlinux.org/packages/gconf/).
+Requires [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image) [librtmp0](https://www.archlinux.org/packages/?name=librtmp0) [libidn11](https://www.archlinux.org/packages/?name=libidn11) [gconf](https://aur.archlinux.org/packages/gconf/).
 
 ### Little Racers STREET
 

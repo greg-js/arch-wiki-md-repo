@@ -1947,7 +1947,7 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 *   **CPod** — Simple, beautiful podcast app. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://github.com/z-------------/cumulonimbus](https://github.com/z-------------/cumulonimbus) || [cpod-bin](https://aur.archlinux.org/packages/cpod-bin/)
+	[https://github.com/z-------------/cumulonimbus](https://github.com/z-------------/cumulonimbus) || [cpod](https://aur.archlinux.org/packages/cpod/)
 
 *   **GNOME Podcasts** — Podcast client for the GNOME Desktop written in Rust.
 

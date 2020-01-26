@@ -77,8 +77,7 @@ Click the button of your Solo to confirm the key.
 
 If you own multiple keys, append them with
 
- `$ pamu2fcfg -o pam://hostname -i pam://hostname >> ~/.config/Yubico/u2f_keys` 
-**Note:** According to the PAM module [documentation](https://developers.yubico.com/pam-u2f/), multiple keys have to be formatted as: `<username>:<KeyHandle1>,<UserKey1>:<KeyHandle2>,<UserKey2>:...` 
+ `$ pamu2fcfg -o pam://hostname -i pam://hostname -n >> ~/.config/Yubico/u2f_keys` 
 
 ### Passwordless sudo
 

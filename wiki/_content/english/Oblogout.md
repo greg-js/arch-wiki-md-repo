@@ -3,9 +3,13 @@ Related articles
 *   [Openbox](/index.php/Openbox "Openbox")
 *   [Window manager](/index.php/Window_manager "Window manager")
 
-[oblogout](https://www.archlinux.org/packages/?name=oblogout) is an optional, configurable logout script that presents a graphical interface (i.e. buttons) to `cancel`, `logout`, `restart`, `shutdown`, `suspend`, `hibernate`, and `lock` the screen.
+[oblogout](https://aur.archlinux.org/packages/oblogout/) is an optional, configurable logout script that presents a graphical interface (i.e. buttons) to `cancel`, `logout`, `restart`, `shutdown`, `suspend`, `hibernate`, and `lock` the screen.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Keybind](#Keybind)
@@ -18,7 +22,7 @@ Related articles
 
 **Tip:** Where using oblogout, it is best to have a compositor enabled to avoid screen distortion when executed. This is due to the default use of transparancy effects. Alternatively, it is also possible to edit `/etc/oblogout.conf` and amend the `opacity =` command setting to remove transparancy altogether.
 
-Although [oblogout](https://www.archlinux.org/packages/?name=oblogout) may be used with a range of [window managers](/index.php/Window_managers "Window managers"), this article will focus on its use with the [Openbox window manager](/index.php/Openbox "Openbox"). It may be executed as keybind and/or as a desktop menu entry.
+Although [oblogout](https://aur.archlinux.org/packages/oblogout/) may be used with a range of [window managers](/index.php/Window_managers "Window managers"), this article will focus on its use with the [Openbox window manager](/index.php/Openbox "Openbox"). It may be executed as keybind and/or as a desktop menu entry.
 
 ## Keybind
 

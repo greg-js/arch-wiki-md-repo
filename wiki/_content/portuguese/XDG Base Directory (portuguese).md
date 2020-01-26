@@ -796,7 +796,7 @@ Especifique `--init-file <arquivo>` como uma alternativa a `~/.bashrc` para shel
 | [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[140]](https://bugzil.la/259356) |
 | [Flatpak](/index.php/Flatpak_(Portugu%C3%AAs) "Flatpak (Português)") | `~/.var/` | [[141]](https://github.com/flatpak/flatpak/issues/46) [[142]](https://github.com/flatpak/flatpak.github.io/issues/191) [não vai corrigir](https://github.com/flatpak/flatpak/issues/1651) |
 | [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[143]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
-| [ghidra](https://aur.archlinux.org/packages/ghidra/) | [[144]](https://github.com/NationalSecurityAgency/ghidra/issues/908) |
+| [ghidra](https://www.archlinux.org/packages/?name=ghidra) | [[144]](https://github.com/NationalSecurityAgency/ghidra/issues/908) |
 | [Goldendict](/index.php/Goldendict "Goldendict") | `~/.goldendict/` | [[145]](https://github.com/goldendict/goldendict/issues/151) |
 | [gramps](https://www.archlinux.org/packages/?name=gramps) | `~/.gramps/` | [[146]](https://gramps-project.org/bugs/view.php?id=8025) |
 | [grsync](https://www.archlinux.org/packages/?name=grsync) | `~/.grsync/` | [[147]](https://sourceforge.net/p/grsync/feature-requests/15/) |

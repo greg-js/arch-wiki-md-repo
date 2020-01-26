@@ -159,7 +159,7 @@ Most settings for KDE applications are stored in `~/.config/`. However, configur
 
 [Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme).
 
-Plasma themes can also be installed through *System Settings > Workspace Theme > Plasma Theme > Get new themes from the Internet*.
+Plasma themes can also be installed through *System Settings > Global Theme > Get New Global Themes...*.
 
 The [KDE-Store](https://store.kde.org/) offers more Plasma customization's, like [SDDM](/index.php/SDDM "SDDM") themes and splash-screens.
 
@@ -871,5 +871,9 @@ When using TeamViewer, it may behave slowly if you use smooth animations (such a
 ## See also
 
 *   [KDE homepage](https://www.kde.org/)
-*   [KDE bug tracker](https://bugs.kde.org/)
+*   [KDE news](https://dot.kde.org/)
+*   [KDE Blogs](https://planet.kde.org/)
+*   [KDE Forums](https://forum.kde.org/)
+*   [KDE Wikis](https://wiki.kde.org/)
+*   [KDE bug tracker and reporter](https://bugs.kde.org/)
 *   [Martin Graesslin's blog](https://blog.martin-graesslin.com/blog/kategorien/kde/)

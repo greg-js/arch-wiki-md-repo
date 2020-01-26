@@ -15,8 +15,7 @@ From [sabnzbd.org](http://sabnzbd.org/):
     *   [1.2 Archive unpacking](#Archive_unpacking)
 *   [2 Usage](#Usage)
     *   [2.1 Global usage](#Global_usage)
-    *   [2.2 Starting SABnzbd as user](#Starting_SABnzbd_as_user)
-        *   [2.2.1 Using systemd](#Using_systemd)
+    *   [2.2 Running SABnzbd as a user w/ systemd](#Running_SABnzbd_as_a_user_w/_systemd)
     *   [2.3 Stopping SABnzbd](#Stopping_SABnzbd)
     *   [2.4 Accessing the web-interface](#Accessing_the_web-interface)
 *   [3 See also](#See_also)
@@ -52,39 +51,9 @@ Further configuration can be done from within the UI (adding additional servers,
 
 Add users to the `sabnzbd` [user group](/index.php/User_group "User group") to allow read/write access to SABnzbd files.
 
-### Starting SABnzbd as user
+### Running SABnzbd as a user w/ systemd
 
-Running `sabnzbd`, without any further configuration, results in two processes owned by the launching user: `/usr/bin/sabnzbd` and `/opt/sabnzbd/SABnzbd.py -f /home/**user**/.sabnzbd.ini`.
-
-Append the `-d` parameter to start SABnzbd as [daemon](/index.php/Daemon "Daemon"):
-
-```
-$ sabnzbd -d
-
-```
-
-Use `~/sabnzbd.ini/sabnzbd.ini` for configuration.
-
-#### Using systemd
-
-An alternative is to create an user [systemd](/index.php/Systemd "Systemd") service, e.g. `sabnzbd@.service`:
-
- `/etc/systemd/system/sabnzbd@.service` 
-```
-[Unit]
-Description=SABnzbd binary newsreader
-After=network.target
-
-[Service]
-User=%i
-Group=%i
-ExecStart=/opt/sabnzbd/SABnzbd.py -l0 -f /home/%i/.sabnzbd.ini
-
-[Install]
-WantedBy=multi-user.target
-```
-
-[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `sabnzbd@*myuser*.service` to run SABnzbd under the preferred user.
+Alternatively, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `sabnzbd@*myuser*.service` to run SABnzbd under the preferred user.
 
 ### Stopping SABnzbd
 

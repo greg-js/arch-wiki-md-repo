@@ -7,7 +7,7 @@ Artigos relacionados
 *   [Zswap](/index.php/Zswap "Zswap")
 *   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
 *   [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS")
-*   [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
+*   [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_criptografada "Dm-crypt/Swap criptografada")
 
 Essa página fornece uma introdução a [espaço swap e paginação](https://en.wikipedia.org/wiki/pt:Pagina%C3%A7%C3%A3o_de_mem%C3%B3ria "wikipedia:pt:Paginação de memória") no GNU/Linux. Ele cobre a criação e ativação de partições swap e arquivos swap.
 
@@ -207,7 +207,7 @@ Visite a página do [autor no GitHub](https://github.com/Nefelim4ag/systemd-swap
 
 ## Criptografia swap
 
-Veja [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+Veja [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_criptografada "Dm-crypt/Swap criptografada").
 
 ## Desempenho
 

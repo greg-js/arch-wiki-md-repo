@@ -562,17 +562,21 @@ With that said, if you are building a program which would host native *.so* VST 
 
 ## IRC
 
-*   #archlinux-proaudio on freenode.net: Arch Linux pro-audio channel
-*   #lau on freenode.net: General Linux Audio channel for users
-*   #lad on freenode.net: General Linux Audio channel for developers
-*   #jack on freenode.net: Development and support related to JACK audio system
-*   #lv2 on freenode.net: Development and support related to the LV2 plugin format
-*   #opensourcemusicians on freenode.net: Large general OSS musician discussion channel
+On [freenode](https://freenode.net/):
+
+*   #archlinux-proaudio - Arch Linux pro-audio channel
+*   #lau - General Linux Audio channel for users
+*   #lad - General Linux Audio channel for developers
+*   #jack - Development and support related to JACK audio system
+*   #lv2 - Development and support related to the LV2 plugin format
+*   #ardour - Discussion and support relating to the Ardour DAW
+*   #opensourcemusicians - Large general OSS musician discussion channel
 
 ## See also
 
 *   [Audio](/index.php/List_of_applications#Audio "List of applications") A comprehensive list of audio applications on Arch Linux
 *   [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel")
+*   AUR meta packages: [proaudio-meta](https://aur.archlinux.org/packages/proaudio-meta) and [soundfonts-aur-meta](https://aur.archlinux.org/packages/soundfonts-aur-meta)
 *   User repositories: [aur-av-bin](/index.php/Unofficial_user_repositories#aur-av-bin "Unofficial user repositories"), [coderkun-aur-audio](/index.php/Unofficial_user_repositories#coderkun-aur-audio "Unofficial user repositories") and [heftig](/index.php/Unofficial_user_repositories#heftig "Unofficial user repositories")
 *   [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) A list of software and resources for professional audio/video/live events production on the Linux platform
 *   [Realtime](https://wiki.linuxfoundation.org/realtime/start) The Linux Foundation wiki on the PREEMPT_RT patches

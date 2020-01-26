@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [bspwm](/index.php/Bspwm "Bspwm"). Data da última tradução: 2019-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bspwm&diff=0&oldid=587896) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [bspwm](/index.php/Bspwm "Bspwm"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bspwm&diff=0&oldid=596056) na versão em inglês.
 
 Related articles
 
@@ -23,6 +23,9 @@ Related articles
         *   [3.3.2 Usando yabar](#Usando_yabar)
         *   [3.3.3 Usando polybar](#Usando_polybar)
     *   [3.4 Scratchpad](#Scratchpad)
+        *   [3.4.1 Usando pid](#Usando_pid)
+        *   [3.4.2 Usando nome da classe](#Usando_nome_da_classe)
+        *   [3.4.3 Outro](#Outro)
     *   [3.5 Configurações diferentes de monitores para diferentes máquinas](#Configurações_diferentes_de_monitores_para_diferentes_máquinas)
     *   [3.6 Configurar um desktop onde todas as janelas estão flutuando](#Configurar_um_desktop_onde_todas_as_janelas_estão_flutuando)
     *   [3.7 Teclado](#Teclado)
@@ -32,8 +35,9 @@ Related articles
     *   [4.3 Caixa de janela maior que o aplicativo](#Caixa_de_janela_maior_que_o_aplicativo)
     *   [4.4 Problemas com aplicativos java](#Problemas_com_aplicativos_java)
     *   [4.5 Problemas com atalhos de teclado usando fish](#Problemas_com_atalhos_de_teclado_usando_fish)
-    *   [4.6 Mensagens de erro "Não foi possível pegar a chave 43 com modfield 68" no início](#Mensagens_de_erro_"Não_foi_possível_pegar_a_chave_43_com_modfield_68"_no_início)
-    *   [4.7 Menu de contexto do Firefox seleciona automaticamente a primeira opção no clique de botão direito](#Menu_de_contexto_do_Firefox_seleciona_automaticamente_a_primeira_opção_no_clique_de_botão_direito)
+    *   [4.6 Problemas de desempenho usando fish](#Problemas_de_desempenho_usando_fish)
+    *   [4.7 Mensagens de erro "Não foi possível pegar a chave 43 com modfield 68" no início](#Mensagens_de_erro_"Não_foi_possível_pegar_a_chave_43_com_modfield_68"_no_início)
+    *   [4.8 Menu de contexto do Firefox seleciona automaticamente a primeira opção no clique de botão direito](#Menu_de_contexto_do_Firefox_seleciona_automaticamente_a_primeira_opção_no_clique_de_botão_direito)
 *   [5 Veja também](#Veja_também)
 
 ## Instalação
@@ -141,7 +145,9 @@ O uso do painel de exemplo usando lemonbar requer que você defina seu ambiente 
 
 ### Scratchpad
 
-Voce pode emular um terminal suspenso (como o recurso de rascunho do i3 se voce colocar um terminal nele) usando as flags da janela do bspwm. Anexe o seguinte ao final do arquivo de configuração do bspwm (adapte-o ao seu próprio emulador de terminal):
+#### Usando pid
+
+Você pode emular um terminal suspenso (como o recurso de rascunho do i3 se você colocar um terminal nele) usando as flags da janela do bspwm. Anexe o seguinte ao final do arquivo de configuração do bspwm (adapte-o ao seu próprio emulador de terminal):
 
 ```
 bspc rule -a scratchpad sticky=on state=floating hidden=on
@@ -166,6 +172,44 @@ bspc node $id --flag hidden;bspc node -f $id
 
 ```
 
+#### Usando nome da classe
+
+Neste exemplo, vamos usar *termite* com um nome de classe personalizado como nosso terminal suspenso. Não precisa ser *termite*.
+
+Primeiro, crie um arquivo no seu caminho com o seguinte conteúdo e torne-o executável. Neste exemplo, vamos chamá-lo de `scratchpad.sh`
+
+```
+#!/usr/bin/bash
+
+if [ -z $1 ]; then
+    echo "Usage: $0 <name of hidden scratchpad window>"
+    exit 1
+fi
+
+pids=$(xdotool search --class ${1})
+for pid in $pids; do
+    echo "Toggle $pid"
+    bspc node $pid --flag hidden -f
+done
+
+```
+
+Então, adicione isso à sua configuração do bspwm.
+
+```
+...
+bspc rule -a dropdown sticky=on state=floating hidden=on
+termite --class dropdown -e "zsh -i" &
+...
+
+```
+
+Para alternar a janela, é necessária uma regra personalizada no [sxhkd](/index.php/Sxhkd "Sxhkd"). Dê como parâmetro o nome da classe personalizada.
+
+style="background: inherit; color: inherit; vertical-align: middle; text-align: center; "| super + u scratchpad.sh dropdown
+
+#### Outro
+
 Para um scratchpad que possa usar qualquer tipo de janela sem regras predefinidas, consulte [[1]](https://www.reddit.com/r/bspwm/comments/3xnwdf/i3_like_scratch_for_any_window_possible/cy6i585)
 
 Para um script de scratchpad mais sofisticado que tenha suporte a muitos terminais prontos para usar e tenha opções para fazer coisas como iniciar opcionalmente uma sessão tmuxinator/tmux, transformar qualquer janela em um scratchpad imediatamente e redimensionar automaticamente um scratchpad para ajustar-se ao monitor atual, instale [tdrop-git](https://aur.archlinux.org/packages/tdrop-git/).
@@ -188,6 +232,8 @@ Visto que `bspwmrc` seja um shell script, este permite que se faça coisas semel
  fi
 
 ```
+
+**Nota:** [inetutils](https://www.archlinux.org/packages/?name=inetutils) é necessário para usar o comando hostname.
 
 ### Configurar um desktop onde todas as janelas estão flutuando
 
@@ -262,6 +308,15 @@ $ set -U SXHKD_SHELL /usr/bin/bash
 ```
 
 Alternativamente, o caractere ^ pode ser escapado com uma barra invertida no seu arquivo sxhkdrc.
+
+### Problemas de desempenho usando fish
+
+[sxhkd](/index.php/Sxhkd "Sxhkd") usa o shell definido na variável de ambiente SHELL para executar comandos. [fish](/index.php/Fish "Fish") pode ter um longo tempo de inicialização devido a arquivos de configuração grandes ou configurados incorretamente; portanto, todos os comandos sxhkd podem levar muito mais tempo para serem executados do que com outros shells. Para corrigir isso sem alterar seu SHELL padrão, você pode dizer ao sxhkd para usar explicitamente o bash ou outro shell mais rápido para executar comandos (por exemplo, *sh*):
+
+```
+$ set -U SXHKD_SHELL sh
+
+```
 
 ### Mensagens de erro "Não foi possível pegar a chave 43 com modfield 68" no início
 

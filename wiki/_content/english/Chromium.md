@@ -199,7 +199,7 @@ Install [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils).
 ## See also
 
 *   [Chromium homepage](https://www.chromium.org/)
-*   [Google Chrome release notes](https://googlechromereleases.blogspot.com)
-*   [Chrome web store](https://chrome.google.com/webstore/category/home)
+*   [Google Chrome release notes](https://chromereleases.googleblog.com/)
+*   [Chrome web store](https://chrome.google.com/webstore/)
 *   [Differences between Chromium and Google Chrome](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Differences_from_Google_Chrome "wikipedia:Chromium (web browser)")
-*   [List of Chromium command-line switches](http://peter.sh/experiments/chromium-command-line-switches/)
+*   [List of Chromium command-line switches](https://peter.sh/experiments/chromium-command-line-switches/)

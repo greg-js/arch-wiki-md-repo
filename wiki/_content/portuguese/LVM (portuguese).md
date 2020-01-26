@@ -1,9 +1,10 @@
-**Status de tradução:** Esse artigo é uma tradução de [LVM](/index.php/LVM "LVM"). Data da última tradução: 2020-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=595401) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [LVM](/index.php/LVM "LVM"). Data da última tradução: 2020-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=595568) na versão em inglês.
 
 Related articles
 
 *   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
 *   [LUKS dentro do LVM](/index.php/Dm-crypt_(Portugu%C3%AAs)/Encrypting_an_entire_system_(Portugu%C3%AAs)#LUKS_dentro_do_LVM "Dm-crypt (Português)/Encrypting an entire system (Português)")
+*   [Instalar Arch Linux em LVM](/index.php/Install_Arch_Linux_on_LVM_(Portugu%C3%AAs) "Install Arch Linux on LVM (Português)")
 *   [Resizing LVM-on-LUKS](/index.php/Resizing_LVM-on-LUKS "Resizing LVM-on-LUKS")
 *   [Create root filesystem snapshots with LVM](/index.php/Create_root_filesystem_snapshots_with_LVM "Create root filesystem snapshots with LVM")
 
@@ -23,46 +24,44 @@ Da [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logi
     *   [1.3 Desvantagens](#Desvantagens)
     *   [1.4 Introdução](#Introdução)
         *   [1.4.1 Configuração por interface gráfica](#Configuração_por_interface_gráfica)
-*   [2 Instalando Arch Linux em LVM](#Instalando_Arch_Linux_em_LVM)
-*   [3 Operações com volumes](#Operações_com_volumes)
-    *   [3.1 Volumes físicos](#Volumes_físicos)
-        *   [3.1.1 Aumentando](#Aumentando)
-        *   [3.1.2 Diminuindo](#Diminuindo)
-            *   [3.1.2.1 Mover extensões físicas](#Mover_extensões_físicas)
-            *   [3.1.2.2 Redimensionar volumes físicos](#Redimensionar_volumes_físicos)
-            *   [3.1.2.3 Redimensionar partição](#Redimensionar_partição)
-    *   [3.2 Grupos de volumes](#Grupos_de_volumes)
-        *   [3.2.1 Ativando um grupo de volume](#Ativando_um_grupo_de_volume)
-        *   [3.2.2 Reparando um grupo de volumes](#Reparando_um_grupo_de_volumes)
-        *   [3.2.3 Desativando um grupo de volumes](#Desativando_um_grupo_de_volumes)
-        *   [3.2.4 Renomeando um grupo de volumes](#Renomeando_um_grupo_de_volumes)
-        *   [3.2.5 Adicionar um volume físico a um grupo de volumes](#Adicionar_um_volume_físico_a_um_grupo_de_volumes)
-        *   [3.2.6 Remover partições de um grupo de volumes](#Remover_partições_de_um_grupo_de_volumes)
-    *   [3.3 Volumes lógicos](#Volumes_lógicos)
-        *   [3.3.1 Renomeando um volume lógico](#Renomeando_um_volume_lógico)
-        *   [3.3.2 Redimensionando volumes lógicos e sistemas de arquivos de uma só vez](#Redimensionando_volumes_lógicos_e_sistemas_de_arquivos_de_uma_só_vez)
-        *   [3.3.3 Redimensionar volume lógico e sistema de arquivos separadamente](#Redimensionar_volume_lógico_e_sistema_de_arquivos_separadamente)
-        *   [3.3.4 Removendo um volume lógico](#Removendo_um_volume_lógico)
-*   [4 Tipos de volume lógico](#Tipos_de_volume_lógico)
-    *   [4.1 Snapshots](#Snapshots)
-        *   [4.1.1 Configuração](#Configuração)
-    *   [4.2 Cache LVM](#Cache_LVM)
-        *   [4.2.1 Criar cache](#Criar_cache)
-        *   [4.2.2 Remover cache](#Remover_cache)
-    *   [4.3 RAID](#RAID)
-        *   [4.3.1 Configurando RAID](#Configurando_RAID)
-        *   [4.3.2 Configurar mkinitcpio para RAID](#Configurar_mkinitcpio_para_RAID)
-*   [5 Solução de problemas](#Solução_de_problemas)
-    *   [5.1 Problemas de inicialização/desligamento causam a desativação de lvmetad](#Problemas_de_inicialização/desligamento_causam_a_desativação_de_lvmetad)
-    *   [5.2 Comandos LVM não funcionam](#Comandos_LVM_não_funcionam)
-    *   [5.3 Volumes lógicos não são exibidos](#Volumes_lógicos_não_são_exibidos)
-    *   [5.4 LVM em mídia removível](#LVM_em_mídia_removível)
-        *   [5.4.1 Suspensão/retorno com LVM e mídia removível](#Suspensão/retorno_com_LVM_e_mídia_removível)
-    *   [5.5 O redimensionamento de um volume lógico falha](#O_redimensionamento_de_um_volume_lógico_falha)
-    *   [5.6 Comando "grub-mkconfig" reporta o erro "unknown filesystem"](#Comando_"grub-mkconfig"_reporta_o_erro_"unknown_filesystem")
-    *   [5.7 Tempo esgotado em volumes de dispositivos da raiz](#Tempo_esgotado_em_volumes_de_dispositivos_da_raiz)
-    *   [5.8 Demora no desligamento](#Demora_no_desligamento)
-*   [6 Veja também](#Veja_também)
+*   [2 Operações com volumes](#Operações_com_volumes)
+    *   [2.1 Volumes físicos](#Volumes_físicos)
+        *   [2.1.1 Aumentando](#Aumentando)
+        *   [2.1.2 Diminuindo](#Diminuindo)
+            *   [2.1.2.1 Mover extensões físicas](#Mover_extensões_físicas)
+            *   [2.1.2.2 Redimensionar volumes físicos](#Redimensionar_volumes_físicos)
+            *   [2.1.2.3 Redimensionar partição](#Redimensionar_partição)
+    *   [2.2 Grupos de volumes](#Grupos_de_volumes)
+        *   [2.2.1 Ativando um grupo de volume](#Ativando_um_grupo_de_volume)
+        *   [2.2.2 Reparando um grupo de volumes](#Reparando_um_grupo_de_volumes)
+        *   [2.2.3 Desativando um grupo de volumes](#Desativando_um_grupo_de_volumes)
+        *   [2.2.4 Renomeando um grupo de volumes](#Renomeando_um_grupo_de_volumes)
+        *   [2.2.5 Adicionar um volume físico a um grupo de volumes](#Adicionar_um_volume_físico_a_um_grupo_de_volumes)
+        *   [2.2.6 Remover partições de um grupo de volumes](#Remover_partições_de_um_grupo_de_volumes)
+    *   [2.3 Volumes lógicos](#Volumes_lógicos)
+        *   [2.3.1 Renomeando um volume lógico](#Renomeando_um_volume_lógico)
+        *   [2.3.2 Redimensionando volumes lógicos e sistemas de arquivos de uma só vez](#Redimensionando_volumes_lógicos_e_sistemas_de_arquivos_de_uma_só_vez)
+        *   [2.3.3 Redimensionar volume lógico e sistema de arquivos separadamente](#Redimensionar_volume_lógico_e_sistema_de_arquivos_separadamente)
+        *   [2.3.4 Removendo um volume lógico](#Removendo_um_volume_lógico)
+*   [3 Tipos de volume lógico](#Tipos_de_volume_lógico)
+    *   [3.1 Snapshots](#Snapshots)
+        *   [3.1.1 Configuração](#Configuração)
+    *   [3.2 Cache LVM](#Cache_LVM)
+        *   [3.2.1 Criar cache](#Criar_cache)
+        *   [3.2.2 Remover cache](#Remover_cache)
+    *   [3.3 RAID](#RAID)
+        *   [3.3.1 Configurando RAID](#Configurando_RAID)
+*   [4 Solução de problemas](#Solução_de_problemas)
+    *   [4.1 Problemas de inicialização/desligamento causam a desativação de lvmetad](#Problemas_de_inicialização/desligamento_causam_a_desativação_de_lvmetad)
+    *   [4.2 Comandos LVM não funcionam](#Comandos_LVM_não_funcionam)
+    *   [4.3 Volumes lógicos não são exibidos](#Volumes_lógicos_não_são_exibidos)
+    *   [4.4 LVM em mídia removível](#LVM_em_mídia_removível)
+        *   [4.4.1 Suspensão/retorno com LVM e mídia removível](#Suspensão/retorno_com_LVM_e_mídia_removível)
+    *   [4.5 O redimensionamento de um volume lógico falha](#O_redimensionamento_de_um_volume_lógico_falha)
+    *   [4.6 Comando "grub-mkconfig" reporta o erro "unknown filesystem"](#Comando_"grub-mkconfig"_reporta_o_erro_"unknown_filesystem")
+    *   [4.7 Tempo esgotado em volumes de dispositivos da raiz](#Tempo_esgotado_em_volumes_de_dispositivos_da_raiz)
+    *   [4.8 Demora no desligamento](#Demora_no_desligamento)
+*   [5 Veja também](#Veja_também)
 
 ## Conceitos básicos
 
@@ -145,10 +144,6 @@ Certifique-se de ter [instalado](/index.php/Instalado "Instalado") o pacote [lvm
 #### Configuração por interface gráfica
 
 Não existe uma ferramenta "oficial" por interface gráfica para gerenciar volumes LVM, mas [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/) cobre a maioria das operações comuns e fornece visualizações simples do estado do volume. Pode automaticamente redimensionar muitos tipos de sistemas de arquivos ao redimensionar volumes lógicos.
-
-## Instalando Arch Linux em LVM
-
-Veja [Instalando Arch Linux em LVM](/index.php/Installing_Arch_linux_on_LVM_(Portugu%C3%AAs) "Installing Arch linux on LVM (Português)")
 
 ## Operações com volumes
 
@@ -384,7 +379,7 @@ E finalmente, se desejar usar a partição para algo mais, e quiser prevenir que
 
 ### Volumes lógicos
 
-**Nota:** [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) fornece mais ou menos as mesmas opções que os comandos especializados [lvextend(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvextend.8) e [lvreduce(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvreduce.8), enquanto permite fazer ambos os tipos de operação. Além disso, todos estes utilitários oferecem uma opção `-r`/`--resizefs` que permite redimensionar o sistema de arquivos juntamente com o LV usando [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* e [XFS](/index.php/XFS "XFS") suportados). Portanto pode ser mais fácil apenas usar `lvresize` para ambas operações e usar `--resizefs` para simplificar um pouco as coisas, exceto se você tiver necessidades específicas ou quiser controle completo sobre o processo.
+**Nota:** [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) fornece mais ou menos as mesmas opções que os comandos especializados [lvextend(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvextend.8) e [lvreduce(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvreduce.8), enquanto permite fazer ambos os tipos de operação. Além disso, todos estes utilitários oferecem uma opção `-r`/`--resizefs` que permite redimensionar o sistema de arquivos juntamente com o LV usando [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)"), *ReiserFS* e [XFS](/index.php/XFS "XFS") suportados). Portanto pode ser mais fácil apenas usar `lvresize` para ambas operações e usar `--resizefs` para simplificar um pouco as coisas, exceto se você tiver necessidades específicas ou quiser controle completo sobre o processo.
 
 **Atenção:** Aumentar um sistema de arquivos é uma operação que muitas vezes pode ser feita online (isto é, enquanto estiver montado), mesmo para a partição raiz, já diminuir irá sempre requerer a desmontagem do sistema de arquivos para prevenir perda de dados. Certifique-se de que seu sistema de arquivos suporta o que estiver pretendendo fazer.
 
@@ -406,7 +401,7 @@ Qualquer um dos comandos a seguir irão renomear o volume lógico `lvold` no gru
 
 #### Redimensionando volumes lógicos e sistemas de arquivos de uma só vez
 
-**Nota:** Somente os [sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos") *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* e [XFS](/index.php/XFS "XFS") são suportados. Para diferentes tipos de sistemas de arquivos, veja [#Redimensionar volume lógico e sistema de arquivos separadamente](#Redimensionar_volume_lógico_e_sistema_de_arquivos_separadamente).
+**Nota:** Somente os [sistemas de arquivos](/index.php/Sistemas_de_arquivos "Sistemas de arquivos") *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)"), *ReiserFS* e [XFS](/index.php/XFS "XFS") são suportados. Para diferentes tipos de sistemas de arquivos, veja [#Redimensionar volume lógico e sistema de arquivos separadamente](#Redimensionar_volume_lógico_e_sistema_de_arquivos_separadamente).
 
 Estender o volume lógico `mediavol` em `MyVolGroup` por 10 GiB e redimensionar seu sistema de arquivos *tudo de uma vez*:
 
@@ -442,14 +437,14 @@ Para estender o volume lógico `mediavol` contido no grupo de volumes `MyVolGrou
 
 ```
 
-Agora, para expandir o sistema de arquivos ([ext4](/index.php/Ext4 "Ext4") neste exemplo) para o tamanho máximo do volume lógico subjacente:
+Agora, para expandir o sistema de arquivos ([ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)") neste exemplo) para o tamanho máximo do volume lógico subjacente:
 
 ```
 # resize2fs /dev/MyVolGroup/mediavol
 
 ```
 
-Para reduzir o tamanho do volume lógico `mediavol` contido em `MyVolGroup` em 500 MiB, primeiro calcule o tamanho do sistema de arquivos resultante, depois diminuir o sistema de arquivos ([ext4](/index.php/Ext4 "Ext4") neste exemplo) para o novo tamanho:
+Para reduzir o tamanho do volume lógico `mediavol` contido em `MyVolGroup` em 500 MiB, primeiro calcule o tamanho do sistema de arquivos resultante, depois diminuir o sistema de arquivos ([ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)") neste exemplo) para o novo tamanho:
 
 ```
 # resize2fs /dev/MyVolGroup/mediavol *NovoTamanho*
@@ -463,7 +458,7 @@ Quando o sistema de arquivos for diminuído, reduza o tamanho do volume lógico:
 
 ```
 
-Para calcular o tamanho exato do volume lógico para sistemas de arquivos *ext2*, [ext3](/index.php/Ext3 "Ext3") e [ext4](/index.php/Ext4 "Ext4"), use uma simples fórmula: `LVM_EXTENTS = FS_BLOCKS × FS_BLOCKSIZE ÷ LVM_EXTENTSIZE`.
+Para calcular o tamanho exato do volume lógico para sistemas de arquivos *ext2*, [ext3](/index.php/Ext3 "Ext3") e [ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)"), use uma simples fórmula: `LVM_EXTENTS = FS_BLOCKS × FS_BLOCKSIZE ÷ LVM_EXTENTSIZE`.
 
  `# tune2fs -l /dev/MyVolGroup/mediavol | grep Block` 
 ```
@@ -666,26 +661,6 @@ Por exemplo:
 ```
 
 irá criar um volume lógico espelhado de 20 GiB chamado "myraid1vol" no grupo VolGroup00 em `/dev/sda2` e `/dev/sdb2`.
-
-#### Configurar mkinitcpio para RAID
-
-Se seu sistema de arquivos raiz está em um LVM RAID adicionalmente aos hooks `lvm2` ou `sd-lvm2`, será necessário adicionar `dm-raid` e os módulos RAID apropriados (por exemplo, `raid0`, `raid1`, `raid10` e/ou `raid456`) para a matriz MODULES em `mkinitcpio.conf`.
-
-Para initramfs baseada em busybox:
-
- `/etc/mkinitcpio.conf` 
-```
-MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
-HOOKS=(base **udev** ... block **lvm2** filesystems)
-```
-
-Para initramfs baseada em systemd:
-
- `/etc/mkinitcpio.conf` 
-```
-MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
-HOOKS=(base **systemd** ... block **sd-lvm2** filesystems)
-```
 
 ## Solução de problemas
 

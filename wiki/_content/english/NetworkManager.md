@@ -883,14 +883,16 @@ If the option was selected previously and you un-tick it, you may have to use th
 
 ### Sharing internet connection over Wi-Fi
 
-You can share your internet connection (e.g. 3G or wired) with a few clicks. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice). Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
+You can share your internet connection (e.g. 3G or wired) with a few clicks. Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
+
+You will need a Wi-Fi card which supports AP mode, see [Software access point#Wi-Fi device must support AP mode](/index.php/Software_access_point#Wi-Fi_device_must_support_AP_mode "Software access point") for details.
 
 [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
 
 Create the shared connection:
 
 *   Click on applet and choose *Create new wireless network*.
-*   Follow wizard (if using WEP, be sure to use 5 or 13 character long password, different lengths will fail).
+*   Follow wizard (chose WPA2 or higher, be sure to use at least 8 character long password, lower lengths will fail).
     *   Choose either [Hotspot](https://fedoraproject.org/wiki/Features/RealHotspot "fedora:Features/RealHotspot") or Ad-hoc as Wi-Fi mode.
 
 The connection will be saved and remain stored for the next time you need it.

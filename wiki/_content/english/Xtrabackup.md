@@ -23,7 +23,7 @@ It can back up data from InnoDB, XtraDB, and MyISAM tables on MySQL 5.0 and 5.1 
 
 ## Installation
 
-Install the [xtrabackup](https://www.archlinux.org/packages/?name=xtrabackup) from the [AUR](/index.php/AUR "AUR").
+Install the package [xtrabackup](https://www.archlinux.org/packages/?name=xtrabackup) from community.
 
 ## Usage Examples
 

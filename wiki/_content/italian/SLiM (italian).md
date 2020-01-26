@@ -4,7 +4,11 @@ Articoli correlati
 
 [SLiM](http://slim.berlios.de/) è l'acronimo di Simple Login Manager (semplice gestore di login). SLiM è un login manager semplice, leggero e facilmente configurabile, adatto per essere usato su piattaforme con poche risorse. SLiM è molto utile anche a chi vuole un login manager che non dipenda da [GNOME](/index.php/GNOME_(Italiano) "GNOME (Italiano)") o [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"), ed è perfetto per chi usa [Xfce](/index.php/Xfce_(Italiano) "Xfce (Italiano)"), [openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"), [fluxbox](/index.php/Fluxbox_(Italiano) "Fluxbox (Italiano)") ecc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
@@ -91,7 +95,7 @@ Per i dettagli su come avviare il proprio ambiente, fare riferimento alla relati
 Il file appena creato va reso eseguibile dando, da root:
 
 ```
-# chmod -x ~/.xinitrc
+# chmod +x ~/.xinitrc
 
 ```
 
@@ -120,8 +124,8 @@ Decommentare la riga e cambiare "no" in "yes" per abilitare l'autologin.
 Il comando di login di default non inizializza correttamente questo ambiente ([fonte](http://www.edsel.nu/2010/06/04/slim-simple-login-manager-on-freebsd/)). Cambiare quindi la riga `login_cmd` in:
 
 ```
-#login_cmd           exec /bin/sh - ~/.xinitrc %session
-login_cmd           exec /bin/zsh -l ~/.xinitrc %session
+#login_cmd           exec /bin/sh - ~/.xinitrc %session
+login_cmd           exec /bin/zsh -l ~/.xinitrc %session
 
 ```
 
@@ -285,8 +289,8 @@ sessionstart_cmd	/percorso/dell/immagine &
 Di default SLiM non stampa alcun log. Per abilitare i log modificare così `/etc/slim.conf`:
 
 ```
- sessionstart_cmd    /usr/bin/sessreg -a -l $DISPLAY %user
- sessionstop_cmd     /usr/bin/sessreg -d -l $DISPLAY %user
+ sessionstart_cmd    /usr/bin/sessreg -a -l $DISPLAY %user
+ sessionstop_cmd     /usr/bin/sessreg -d -l $DISPLAY %user
 
 ```
 
@@ -365,15 +369,15 @@ login_cmd allows **%session** e **%theme**
 | numlock |
 | daemon | `yes` |
 | xauth_path | `/usr/bin/xauth` |
-| login_cmd | `exec /bin/bash -login ~/.xinitrc %session` |
+| login_cmd | `exec /bin/bash -login ~/.xinitrc %session` |
 | halt_cmd | `/sbin/shutdown -h now` |
 | reboot_cmd | `/sbin/shutdown -r now` |
 | suspend_cmd |
 | sessionstart_cmd |
 | sessionstop_cmd |
-| console_cmd | `/usr/bin/xterm -C -fg white -bg black +sb -g %dx%d+%d+%d -fn %dx%d -T` |
+| console_cmd | `/usr/bin/xterm -C -fg white -bg black +sb -g %dx%d+%d+%d -fn %dx%d -T` |
 | screenshot_cmd | `import -window root /slim.png` |
-| welcome_msg | `Welcome to %host` |
+| welcome_msg | `Welcome to %host` |
 | session_msg | `Session:` |
 | default_user |
 | focus_password | `no` |

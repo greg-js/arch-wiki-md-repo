@@ -50,7 +50,6 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
         *   [3.2.2 Remove cache](#Remove_cache)
     *   [3.3 RAID](#RAID)
         *   [3.3.1 Setup RAID](#Setup_RAID)
-        *   [3.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Boot/Shutdown-problems because of disabled lvmetad](#Boot/Shutdown-problems_because_of_disabled_lvmetad)
     *   [4.2 LVM commands do not work](#LVM_commands_do_not_work)
@@ -661,26 +660,6 @@ For example:
 ```
 
 will create a 20 GiB mirrored logical volume named "myraid1vol" in VolGroup00 on `/dev/sda2` and `/dev/sdb2`.
-
-#### Configure mkinitcpio for RAID
-
-If your root filesystem is on LVM RAID additionally to `lvm2` or `sd-lvm2` hooks, you need to add `dm-raid` and the appropriate RAID modules (e.g. `raid0`, `raid1`, `raid10` and/or `raid456`) to the MODULES array in `mkinitcpio.conf`.
-
-For busybox based initramfs:
-
- `/etc/mkinitcpio.conf` 
-```
-MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
-HOOKS=(base **udev** ... block **lvm2** filesystems)
-```
-
-For systemd based initramfs:
-
- `/etc/mkinitcpio.conf` 
-```
-MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
-HOOKS=(base **systemd** ... block **sd-lvm2** filesystems)
-```
 
 ## Troubleshooting
 

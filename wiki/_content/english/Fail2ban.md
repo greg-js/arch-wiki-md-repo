@@ -67,7 +67,7 @@ Status for the jail: sshd
 
 ## Configuration
 
-Due to the possibility of the `/etc/fail2ban/jail.conf` file being overwritten or improved during a distribution update, it is recommended to [create](/index.php/Create "Create") `/etc/fail2ban/jail.local` file. For example to change default ban time to 1 day:
+Due to the possibility of the `/etc/fail2ban/jail.conf` file being overwritten or improved during a distribution update, it is recommended to [create](/index.php/Create "Create") a `/etc/fail2ban/jail.local` file. For example to change the default ban time to 1 day:
 
  `/etc/fail2ban/jail.local` 
 ```
@@ -112,7 +112,16 @@ action = %(action_mw)s
 
 ### Firewall and services
 
-Most [firewalls](/index.php/Firewalls "Firewalls") and services should work out of the box. See `/etc/fail2ban/action.d/` for examples, e.g. [ufw.conf](https://github.com/fail2ban/fail2ban/blob/master/config/action.d/ufw.conf).
+By default, Fail2ban uses [Iptables](/index.php/Iptables "Iptables"). However, configuration of most [firewalls](/index.php/Firewalls "Firewalls") and services is straightforward. For example, to use [Nftables](/index.php/Nftables "Nftables"):
+
+ `/etc/fail2ban/jail.local` 
+```
+[DEFAULT]
+banaction = nftables
+
+```
+
+See `/etc/fail2ban/action.d/` for other examples, e.g. [ufw.conf](https://github.com/fail2ban/fail2ban/blob/master/config/action.d/ufw.conf).
 
 ## Tips and tricks
 

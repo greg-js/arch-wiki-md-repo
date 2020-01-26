@@ -16,7 +16,7 @@
 | <small>2.4.1.</small> [Shells de comando](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Linha de comando](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)"))</small> |
 | <small>2.5.</small> [Editores de texto](/index.php/Category:Text_editors_(Portugu%C3%AAs) "Category:Text editors (Português)") <small>(1) (também em [Aplicativos](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>2.6.</small> [Toolkits de widget](/index.php/Category:Widget_toolkits_(Portugu%C3%AAs) "Category:Widget toolkits (Português)") <small>(1) (também em [Interfaces gráficas de usuário](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)"))</small> |
-| <small>3.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(0)</small> |
+| <small>3.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(1)</small> |
 | <small>3.1.</small> [CPU](/index.php/Category:CPU_(Portugu%C3%AAs) "Category:CPU (Português)") <small>(2)</small> |
 | <small>3.2.</small> [Gráficos](/index.php/Category:Graphics_(Portugu%C3%AAs) "Category:Graphics (Português)") <small>(1)</small> |
 | <small>3.3.</small> [Detecção e solução de problemas de hardware](/index.php/Category:Hardware_detection_and_troubleshooting_(Portugu%C3%AAs) "Category:Hardware detection and troubleshooting (Português)") <small>(3)</small> |
@@ -108,7 +108,7 @@
 | <small>5.8.3.</small> [KDE](/index.php/Category:KDE_(Portugu%C3%AAs) "Category:KDE (Português)") <small>(1) (também em [Ambientes de desktop](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)"))</small> |
 | <small>5.9.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(7)</small> |
 | <small>5.9.1.</small> [Comandos de Xorg](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Comandos](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
-| <small>6.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(5)</small> |
+| <small>6.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(6)</small> |
 | <small>6.1.</small> [Backup](/index.php/Category:Backup_(Portugu%C3%AAs) "Category:Backup (Português)") <small>(1)</small> |
 | <small>6.2.</small> [Processo de inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(10)</small> |
 | <small>6.2.1.</small> [Gerenciadores de boot](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(2)</small> |

@@ -63,6 +63,8 @@ En primer lugar, tendrá que [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#I
 
 Por otro lado, algunos paquetes del grupo [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) pueden ser útiles para realizar ciertas tareas de configuración, las cuales se señalan en la sección/página correspondiente.
 
+Además, se dispone del grupo [xorg](https://www.archlinux.org/groups/x86_64/xorg/), que incluye los paquetes mencionados anteriormente, así como fuentes.
+
 **Sugerencia:** El entorno X, por defecto, es bastante árido, y normalmente preferirá instalar un [Gestor de Ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") o un [Entorno de Escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") para complementar X.
 
 ### Instalación del controlador

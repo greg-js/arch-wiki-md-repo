@@ -320,40 +320,45 @@ The following packages use `btrfs send` and `btrfs receive` to send backups incr
 
 **Note:** The following layout is intended *not* to be used with `snapper rollback`, but is intended to mitigate inherent problems with restoring `/` with that command. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=194491).
 
-Here is a suggested file system layout for easily restoring your `/` to a previous snapshot:
+Here is a suggested file system layout for easily restoring the subvolume `@` that is mounted at root to a previous snapshot:
+
+<caption>Filesystem layout</caption>
+| Subvolume | Mountpoint |
+| @ | / |
+| @home | /home |
+| @snapshots | /.snapshots |
+| @/var/log | /var/log |
 
 ```
-subvolid=5
+ subvolid=5
    |
-   ├── @
-   |       |
+   ├── @ -|
+   |     contained directories:
    |       ├── /usr
-   |       |
    |       ├── /bin
-   |       |
    |       ├── /.snapshots
-   |       |
    |       ├── ...
    |
+   ├── @home
    ├── @snapshots
-   |
+   ├── @/var/log
    └── @...
 
 ```
 
-Where `/.snapshots` is a mountpoint for `@snapshots`. `@...` are subvolumes that you want to keep separate from the subvolume you will be mounting as `/` (`@`). When taking a snapshot of `/`, these other subvolumes are not included. However, you can still snapshot these other subvolumes separately by creating other snapper configurations for them. Additionally, if you were to restore your system to a previous snapshots of `/`, these other subvolumes will remain unaffected.
+The subvolumes `@...` are mounted to any other directory that should have its own subvolume.
 
-For example if you want to be able restore `/` to a previous snapshot but keep your `/home` intact, you should create a subvolume that will be mounted at `/home`. See [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
+**Note:** When taking a snapshot of `@` (mounted at the root `/`), other subvolumes are not included in the snapshot. Even if a subvolume is nested below `@`, a snapshot of `@` will *not* include it. Create snapper configurations for additional subvolumes besides `@` of which you want to keep snapshots .
+
+If you were to restore your system to a previous snapshots of `@`, these other subvolumes will remain unaffected. For example, this allows you to restore `@` to a previous snapshot while keeping your `/home` unchanged, because of the subvolume that is mounted at `/home`.
 
 This layout allows the snapper utility to take regular snapshots of `/`, while at the same time making it easy to restore `/` from an Arch Live CD if it becomes unbootable.
 
-In this sceneario, after the initial setup, snapper needs no changes, and will work as expected.
-
-**Note:** Even if a subvolume is nested below `@`, a snapshot of `/` will *not* include it. Be sure to set up snapper for any additional subvolumes you want to keep snapshots of besides the one mounted at `/`.
+In this scenario, after the initial setup, snapper needs no changes, and will work as expected.
 
 #### Configuration of snapper and mount point
 
-Make sure `/.snapshots` is *not* mounted and does *not* exist as folder.
+It is assumed that the subvolume `@` is mounted at root `/`. It is also assumed that `/.snapshots` is *not* mounted and does *not* exist as folder, this can be ensured by the commands:
 
 ```
  # umount /.snapshots
@@ -361,7 +366,19 @@ Make sure `/.snapshots` is *not* mounted and does *not* exist as folder.
 
 ```
 
-Then [#Create a new configuration](#Create_a_new_configuration) for `/`.
+Then [#Create a new configuration](#Create_a_new_configuration) for `/`. Snapper create-config automatically creates a subvolume `.snapshots` with the root subvolume @ as its parent, that is not needed for the suggested filesystem layout, and can be deleted.
+
+```
+ # btrfs subvolume delete /.snapshots
+
+```
+
+After deleting the subvolume, recreate the directory /.snapshots.
+
+```
+ # mkdir /.snapshots
+
+```
 
 Now [mount](/index.php/Mount "Mount") `@snapshots` to `/.snapshots`. For example, for a file system located on `/dev/sda1`:
 

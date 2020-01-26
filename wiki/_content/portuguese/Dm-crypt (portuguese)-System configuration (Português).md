@@ -103,7 +103,7 @@ resume=*dispositivo*
 
 ```
 
-*   `*dispositivo*` nesse caso é a swap decriptografada, este parâmetro é utilizado com o objetivo de [suspender para o disco](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate"). Se a swap está em uma partição separada, ela estará na forma de `/dev/mapper/partição_swap`. Veja também [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+*   `*dispositivo*` nesse caso é a swap descriptografada, este parâmetro é utilizado com o objetivo de [suspender para o disco](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate"). Se a swap está em uma partição separada, ela estará na forma de `/dev/mapper/partição_swap`. Veja também [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_criptografada "Dm-crypt/Swap criptografada").
 
 ### Usando o hook encrypt
 

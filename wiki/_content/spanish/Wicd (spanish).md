@@ -223,7 +223,7 @@ Véase [Network configuration#Troubleshooting](/index.php/Network_configuration#
 
 ### Fallo importando pynotify, notificaciones desactivadas
 
-Para el caso de que el paquete [python2-notify](https://www.archlinux.org/packages/?name=python2-notify) no se instale automáticamente. Puede [instalarlo](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Para el caso de que el paquete [python2-notify](https://aur.archlinux.org/packages/python2-notify/) no se instale automáticamente. Puede [instalarlo](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### Mensaje de error de conexión con Dbus
 

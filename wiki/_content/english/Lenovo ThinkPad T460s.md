@@ -28,6 +28,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.4 Function keys](#Function_keys)
     *   [2.5 Video Issues](#Video_Issues)
     *   [2.6 Smartcard Reader](#Smartcard_Reader)
+    *   [2.7 Sound](#Sound)
 *   [3 See also](#See_also)
 
 ## Hardware
@@ -128,6 +129,17 @@ Reader 0: Alcor Micro AU9560 00 00
   Card state: Card removed,
 
 ```
+
+### Sound
+
+If the sound quality is bad, updating `/etc/modprobe.d/modprobe.conf` with
+
+```
+options snd-hda-intel model=tpt460
+
+```
+
+may improve it. These options are documented [[6]](https://github.com/torvalds/linux/blob/131701c697e85d5d0726e6152219359639fae98f/Documentation/sound/hd-audio/models.rst#alc22x23x25x26927x28x29x-and-vendor-specific-alc3xxx-models)[[7]](https://github.com/torvalds/linux/blob/131701c697e85d5d0726e6152219359639fae98f/Documentation/sound/alsa-configuration.rst) in the Linux kernel.
 
 ## See also
 

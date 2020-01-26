@@ -258,6 +258,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://launchpad.net/deja-dup](https://launchpad.net/deja-dup) || [deja-dup](https://www.archlinux.org/packages/?name=deja-dup)
 
+*   **borg** — Deduplicating backup program with compression and authenticated encryption that supports backing up over ssh
+
+	[https://www.borgbackup.org](https://www.borgbackup.org) || [borg](https://www.archlinux.org/packages/?name=borg)
+
 *   **[Duplicati](https://en.wikipedia.org/wiki/Duplicati "wikipedia:Duplicati")** — Backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.
 
 	[https://www.duplicati.com/](https://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)

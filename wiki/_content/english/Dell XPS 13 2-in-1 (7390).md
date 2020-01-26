@@ -29,7 +29,8 @@ As of kernel 5.4.6.arch3-1, no modifications (in particular regarding LPSS and W
 
 ### Automatic screen rotation under Gnome and Wayland
 
-Install the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) package. The screen will now automatically rotate and keyboard input will be disabled in tablet mode.
+Install the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) package. The screen will now automatically rotate and keyboard input will be disabled in tablet mode
+If the screen doesn't rotate automatically, try `gsettings set org.gnome.settings-daemon.peripherals.touchscreen orientation-lock false` or simply use super key(windows key)+ o to toggle lock state
 
 ## Troubleshooting
 

@@ -237,7 +237,7 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 *   **[RKWard](https://en.wikipedia.org/wiki/RKWard "wikipedia:RKWard")** — Frontend for the statistical language R.
 
-	[https://rkward.kde.org/](https://rkward.kde.org/) || [rkward](https://aur.archlinux.org/packages/rkward/)
+	[https://rkward.kde.org/](https://rkward.kde.org/) || [rkward](https://www.archlinux.org/packages/?name=rkward)
 
 *   **[RStudio](https://en.wikipedia.org/wiki/RStudio "wikipedia:RStudio")** — A powerful and productive IDE for R written in Qt.
 

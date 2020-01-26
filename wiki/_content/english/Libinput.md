@@ -271,7 +271,7 @@ $ gem install fusuma
 
 ```
 
-Alternatively an outdated version is available in the AUR: [ruby-fusuma](https://aur.archlinux.org/packages/ruby-fusuma/).
+Alternatively, there is also [ruby-fusuma](https://aur.archlinux.org/packages/ruby-fusuma/).
 
 then in `~/.config/fusuma/config.yml` you can set something like:
 
@@ -305,7 +305,7 @@ interval:
 
 The swipe threshold is important for not swiping back too many pages.
 
-Notice that the config is for three fingers swipe.
+Notice that the config is for three fingers swipe. Two fingers swipe is not supported [[7]](https://github.com/iberianpig/fusuma/issues/104#issuecomment-434742767).
 
 #### Gebaar
 

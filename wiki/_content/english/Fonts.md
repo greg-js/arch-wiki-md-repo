@@ -434,7 +434,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 #### Hebrew
 
-*   [opensiddur-hebrew-fonts](https://aur.archlinux.org/packages/opensiddur-hebrew-fonts/) - Large collection of Open-source licensed Hebrew fonts
+*   [opensiddur-hebrew-fonts](https://aur.archlinux.org/packages/opensiddur-hebrew-fonts/) - Large collection of Open-source licensed Hebrew fonts. There are also few Latin, Greek, Cyrillic, Arabic, and Amharic.
 *   [culmus](https://aur.archlinux.org/packages/culmus/) - Nice collection of free Hebrew fonts
 
 #### Indic

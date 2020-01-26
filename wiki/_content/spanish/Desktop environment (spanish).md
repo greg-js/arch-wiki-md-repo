@@ -334,7 +334,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 | [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Gala](https://launchpad.net/gala)
 [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/) | [Plank](https://launchpad.net/plank)/[Wingpanel](https://launchpad.net/wingpanel)
-[plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://aur.archlinux.org/packages/wingpanel/) | [Pantheon Terminal](https://launchpad.net/pantheon-terminal)
+[plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://www.archlinux.org/packages/?name=wingpanel) | [Pantheon Terminal](https://launchpad.net/pantheon-terminal)
 [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) | [Pantheon Files](https://launchpad.net/pantheon-files)
 [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
 [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [Scratch](https://launchpad.net/scratch)

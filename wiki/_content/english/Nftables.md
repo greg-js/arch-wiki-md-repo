@@ -158,7 +158,7 @@ To delete a table do:
 
 ```
 
-Tables can only be deleted if there are no chains in them.
+This will destroy all chains in the table.
 
 #### Flush table
 
@@ -668,7 +668,7 @@ table ip my_nat {
 The output of `nft list ruleset` command is a valid input file for it as well. Current rule set can be saved to file and later loaded back in.
 
 ```
-$ nft list ruleset | tee *filename*
+$ nft -s list ruleset | tee *filename*
 
 ```
 

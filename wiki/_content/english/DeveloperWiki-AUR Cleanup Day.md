@@ -15,7 +15,7 @@
 
 ## About
 
-AUR Cleanup Day is a bi-yearly event on the 20th of September. The next one will be in 2019.
+AUR Cleanup Day is a bi-yearly event on the 20th of September. The next one will be in 2020.
 
 The [AUR](/index.php/AUR "AUR") has a large number of obsolete packages which could use cleaning up. Post suggestions of packages below, submit them to the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/), or file [requests](/index.php/AUR_submission_guidelines#Requests "AUR submission guidelines") directly. [Trusted Users](/index.php/Trusted_Users "Trusted Users") will get together and confirm which packages should be removed.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Window manager](/index.php/Window_manager "Window manager"). Data da última tradução: 2019-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Window_manager&diff=0&oldid=578212) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Window manager](/index.php/Window_manager "Window manager"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Window_manager&diff=0&oldid=596090) na versão em inglês.
 
 Artigos relacionados
 
@@ -53,10 +53,6 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 	[https://github.com/venam/2bwm](https://github.com/venam/2bwm) || [2bwm](https://aur.archlinux.org/packages/2bwm/)
 
-*   **aewm** — Gerenciador de janela moderno e minimalista para o X11\. Ele é controlado inteiramente com o mouse, mas não contém nenhuma interface do usuário visível além dos quadros de janela. O conjunto de comandos é como o vi: projetado no início dos tempos (1997) para extrair velocidade de máquinas com pouca memória, totalmente não-intuitivo e hostil ao usuário, mas rápido e elegante à sua própria maneira.
-
-	[http://www.red-bean.com/decklin/aewm/](http://www.red-bean.com/decklin/aewm/) || [aewm](https://aur.archlinux.org/packages/aewm/)
-
 *   **[AfterStep](https://en.wikipedia.org/wiki/AfterStep "wikipedia:AfterStep")** — Gerenciador de janela para o sistema Unix X Window. Originalmente baseado na aparência da interface NeXTStep, ele fornece aos usuários finais uma área de trabalho consistente, limpa e elegante. O objetivo do desenvolvimento do AfterStep é fornecer flexibilidade na configuração da área de trabalho, melhorando a estética e o uso eficiente dos recursos do sistema.
 
 	[http://www.afterstep.org/](http://www.afterstep.org/) || [afterstep-git](https://aur.archlinux.org/packages/afterstep-git/)
@@ -99,7 +95,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 *   **[Gala](http://elementaryos.org/journal/meet-gala-window-manager)** — Um belo gerenciador de janela do elementaryos, parte do [Pantheon](/index.php/Pantheon "Pantheon"). Também como gerenciador de composição, baseado no libmutter.
 
-	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala](https://aur.archlinux.org/packages/gala/), [gala-git](https://aur.archlinux.org/packages/gala-git/)
+	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala](https://www.archlinux.org/packages/?name=gala), [gala-git](https://aur.archlinux.org/packages/gala-git/)
 
 *   **Goomwwm** — Gerenciador de janela X11 implementado em C como um projeto de software de sala limpa. Ele gerencia janelas em um layout flutuante mínimo, enquanto fornece controles orientados por teclado flexíveis para troca de janela, dimensionamento, movimentação, marcação e colocação. Também é rápido, leve, sem modelagem, compatível com Xinerama e compatível com EWMH sempre que possível.
 

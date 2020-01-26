@@ -1,3 +1,8 @@
+Related articles
+
+*   [LVM](/index.php/LVM "LVM")
+*   [Installation guide](/index.php/Installation_guide "Installation guide")
+
 You should create your LVM Volumes between the [partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the [installation procedure](/index.php/Installation_guide "Installation guide"). Instead of directly formatting a partition to be your root file system, the file system will be created inside a logical volume (LV).
 
 Quick overview:
@@ -27,6 +32,7 @@ Quick overview:
     *   [1.5 Format and mount logical volumes](#Format_and_mount_logical_volumes)
 *   [2 Configure the system](#Configure_the_system)
     *   [2.1 Adding mkinitcpio hooks](#Adding_mkinitcpio_hooks)
+        *   [2.1.1 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
     *   [2.2 Kernel boot options](#Kernel_boot_options)
 
 ## Installation
@@ -236,7 +242,27 @@ Afterwards, you can continue in normal installation instructions with the [creat
 **Tip:**
 
 *   The `lvm2` and `sd-lvm2` hooks are installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` or `sd-lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
-*   If your root filesystem is on LVM RAID see [LVM#Configure mkinitcpio for RAID](/index.php/LVM#Configure_mkinitcpio_for_RAID "LVM").
+*   If your root filesystem is on LVM RAID see [#Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID).
+
+#### Configure mkinitcpio for RAID
+
+If your root filesystem is on LVM RAID additionally to `lvm2` or `sd-lvm2` hooks, you need to add `dm-raid` and the appropriate RAID modules (e.g. `raid0`, `raid1`, `raid10` and/or `raid456`) to the MODULES array in `mkinitcpio.conf`.
+
+For busybox based initramfs:
+
+ `/etc/mkinitcpio.conf` 
+```
+MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
+HOOKS=(base **udev** ... block **lvm2** filesystems)
+```
+
+For systemd based initramfs:
+
+ `/etc/mkinitcpio.conf` 
+```
+MODULES=(**dm-raid raid0 raid1 raid10 raid456**)
+HOOKS=(base **systemd** ... block **sd-lvm2** filesystems)
+```
 
 ### Kernel boot options
 

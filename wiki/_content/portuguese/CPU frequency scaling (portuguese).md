@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Data da última tradução: 2019-10-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&diff=0&oldid=585536) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&diff=0&oldid=588936) na versão em inglês.
 
 Artigos relacionados
 
@@ -96,7 +96,7 @@ $ cpupower frequency-info
 
 ### Configurando frequências máxima e mínima
 
-Em casos raros, pode ser necessário definir manualmente as frequências máxima e mínima.
+Em alguns casos, pode ser necessário definir manualmente as frequências máxima e mínima.
 
 Para definir a frequência máxima do relógio (`*freq_do_clock*` é uma frequência de relógio com unidades: GHz, MHz):
 
@@ -124,6 +124,15 @@ Para definir a CPU para executar em uma frequência especificada:
 *   Para ajustar apenas para um único core de CPU, acrescente `-c *número_do_core*`.
 *   As frequências máxima e mínima do regulador podem ser definidas em `/etc/default/cpupower`.
 
+Alternativamente, você pode definir a frequência manualmente:
+
+```
+# echo *valor* > /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq
+
+```
+
+Os valores disponíveis podem ser definidos em `/sys/devices/system/cpu/cpu*/cpufreq/scaling_available_frequencies` ou similar. [[1]](https://software.intel.com/sites/default/files/comment/1716807/how-to-change-frequency-on-linux-pub.txt)
+
 ### Desabilitando Turbo Boost
 
 #### intel_pstate
@@ -147,7 +156,7 @@ Os reguladores (veja a tabela abaixo) são esquemas de energia para a CPU. Apena
 | userspace | Execute a CPU nas frequências especificadas pelo usuário. |
 | ondemand | Escalona a frequência dinamicamente conforme a carga atual. Pula para a frequência mais alta e então volta conforme o tempo de ociosidade aumenta. |
 | conservative | Escalona a frequência dinamicamente conforme a carga atual. Escalona a frequência de forma mais gradual que o "ondemand". |
-| schedutil | Seleção de frequência da CPU controlada pelo agendador [[1]](https://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
+| schedutil | Seleção de frequência da CPU controlada pelo agendador [[2]](https://lwn.net/Articles/682391/), [[3]](https://lkml.org/lkml/2016/3/17/420). |
 
 Dependendo do driver de escalonamento, um dos reguladores serão carregados por padrão:
 
@@ -277,7 +286,7 @@ ac_adapter)
 
 ## Concessão de privilégios no GNOME
 
-**Nota:** systemd introduziu o logind que lida com ações consolekit e policykit. O código a seguir não funciona. Com logind, basta editar no arquivo `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` os elementos <defaults> conforme a suas necessidades e o manual do polkit [[3]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
+**Nota:** systemd introduziu o logind que lida com ações consolekit e policykit. O código a seguir não funciona. Com logind, basta editar no arquivo `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` os elementos <defaults> conforme a suas necessidades e o manual do polkit [[4]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
 
 [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") tem um miniaplicativo legal para mudar o regulador na hora. Para usá-lo sem a necessidade de inserir a senha de root, basta criar o seguinte arquivo:
 

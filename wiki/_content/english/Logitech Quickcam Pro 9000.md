@@ -2,7 +2,7 @@ The **Logitech QuickCam Pro 9000** is an expensive and fairly high-quality webca
 
 ## Building the Software
 
-[libwebcam](https://aur.archlinux.org/packages/libwebcam/) is the support library needed for AF control. [guvcview](https://www.archlinux.org/packages/?name=guvcview) is the viewer/capture application.
+[libwebcam](https://aur.archlinux.org/packages/libwebcam/)/[libwebcam-git](https://aur.archlinux.org/packages/libwebcam-git/) is the support library needed for AF control. [guvcview](https://www.archlinux.org/packages/?name=guvcview) is the viewer/capture application.
 
 Both applications are built easily using the AUR/ABS build system. In the case of libwebcam I used the patches and build scripts provided by esteemed member whitelynx.
 

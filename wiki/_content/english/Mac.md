@@ -102,7 +102,8 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
         *   [8.3.3 Mid 2012 13" — version 5,2](#Mid_2012_13"_—_version_5,2)
         *   [8.3.4 Mid 2012 11.5" — Version 5,1](#Mid_2012_11.5"_—_Version_5,1)
         *   [8.3.5 Mid 2011 — version 4,x](#Mid_2011_—_version_4,x)
-        *   [8.3.6 Early 2008 — version 1,1](#Early_2008_—_version_1,1)
+        *   [8.3.6 Mid 2009 — version 2,1](#Mid_2009_—_version_2,1)
+        *   [8.3.7 Early 2008 — version 1,1](#Early_2008_—_version_1,1)
 *   [9 See also](#See_also)
 
 ## Overview
@@ -1821,6 +1822,41 @@ and backtraces that causes X11 to crash. This might apply to Version 5,2 assumin
 #### Mid 2011 — version 4,x
 
 Works out-of-the-box since kernel 3.2\.
+
+#### Mid 2009 — version 2,1
+
+Everything works, except the WIFI. You need to instal [b43-fwcutter](https://www.archlinux.org/packages/?name=b43-fwcutter) package (or simply [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)).
+
+The b43-firmware package is not in the official repository it has to be installed from AUR.
+
+Installing from AUR:
+
+```
+    sudo pacman -S base-devel git
+    git clone [https://aur.archlinux.org/b43-firmware.git](https://aur.archlinux.org/b43-firmware.git)
+    cd b43-firmware
+    makepkg -sic
+
+```
+
+Installing manually:
+
+```
+    sudo pacman -S b43-fwcutter
+    wget [http://www.lwfinger.com/b43-firmware/broadcom-wl-6.30.163.46.tar.bz2](http://www.lwfinger.com/b43-firmware/broadcom-wl-6.30.163.46.tar.bz2)
+    tar xf broadcom-wl-6.30.163.46.tar.bz2
+    sudo b43-fwcutter -w /usr/lib/firmware/ broadcom-wl-6.30.163.46.wl_apsta.o
+
+```
+
+Add pio=1 and qos=0 to b43.conf helped Wifi to work correctly
+
+```
+    echo "options b43 pio=1 qos=0" >> /etc/modprobe.d/b43.conf
+
+```
+
+Tested on MacBookAir (Mid 2009).
 
 #### Early 2008 — version 1,1
 

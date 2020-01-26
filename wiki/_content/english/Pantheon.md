@@ -158,9 +158,9 @@ Wingpanel does not come with any indicators; they must be installed separately.
 
 At the minimum, you'll probably want to install:
 
-*   [pantheon-applications-menu](https://aur.archlinux.org/packages/pantheon-applications-menu/) or [pantheon-applications-menu-git](https://aur.archlinux.org/packages/pantheon-applications-menu-git/): Applications menu and "Run" dialog
-*   [wingpanel-indicator-datetime](https://aur.archlinux.org/packages/wingpanel-indicator-datetime/) or [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/): Clock and calendar widget
-*   [wingpanel-indicator-session](https://aur.archlinux.org/packages/wingpanel-indicator-session/) or [wingpanel-indicator-session-git](https://aur.archlinux.org/packages/wingpanel-indicator-session-git/): User and session menu (Switch user, Logout, Shutdown, etc.)
+*   [pantheon-applications-menu](https://www.archlinux.org/packages/?name=pantheon-applications-menu) or [pantheon-applications-menu-git](https://aur.archlinux.org/packages/pantheon-applications-menu-git/): Applications menu and "Run" dialog
+*   [wingpanel-indicator-datetime](https://www.archlinux.org/packages/?name=wingpanel-indicator-datetime) or [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/): Clock and calendar widget
+*   [wingpanel-indicator-session](https://www.archlinux.org/packages/?name=wingpanel-indicator-session) or [wingpanel-indicator-session-git](https://aur.archlinux.org/packages/wingpanel-indicator-session-git/): User and session menu (Switch user, Logout, Shutdown, etc.)
 
 #### Third-party indicators
 
@@ -168,11 +168,11 @@ At the minimum, you'll probably want to install:
 
 *   If launched by [~/.xinitrc](#Via_xinit), add third-party indicators to one of the start-up methods described [above](#Launching_Pantheon).
 
-*   [Ayatana Indicators](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana/) or [wingpanel-indicator-namarupa-git](https://aur.archlinux.org/packages/wingpanel-indicator-namarupa-git/) to appear in [wingpanel](https://aur.archlinux.org/packages/wingpanel/).
+*   [Ayatana Indicators](/index.php/Unity "Unity") require [wingpanel-indicator-ayatana](https://aur.archlinux.org/packages/wingpanel-indicator-ayatana/) or [wingpanel-indicator-namarupa-git](https://aur.archlinux.org/packages/wingpanel-indicator-namarupa-git/) to appear in [wingpanel](https://www.archlinux.org/packages/?name=wingpanel).
 
 #### Indicator-session menus unresponsive
 
-*   [wingpanel-indicator-session](https://aur.archlinux.org/packages/wingpanel-indicator-session/) needs [light-locker](/index.php/Light-locker "Light-locker") or [xscreensaver-dbus-screenlock](https://aur.archlinux.org/packages/xscreensaver-dbus-screenlock/) installed for the `Lock` menu item.
+*   [wingpanel-indicator-session](https://www.archlinux.org/packages/?name=wingpanel-indicator-session) needs [light-locker](/index.php/Light-locker "Light-locker") or [xscreensaver-dbus-screenlock](https://aur.archlinux.org/packages/xscreensaver-dbus-screenlock/) installed for the `Lock` menu item.
 
 ### Plank
 
@@ -200,7 +200,7 @@ To make [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-te
 
 #### Pantheon-terminal transparency
 
-Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentary OS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/), [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/) or add the following code to your theme's css or the override file in `~/.config/gtk-3.0/gtk.css`:
+Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentary OS theme. Either use [gtk-theme-elementary](https://www.archlinux.org/packages/?name=gtk-theme-elementary), [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/) or add the following code to your theme's css or the override file in `~/.config/gtk-3.0/gtk.css`:
 
 ```
 /************
@@ -215,7 +215,7 @@ PantheonTerminalPantheonTerminalWindow.background {
 
 #### Wingpanel transparency
 
-Wingpanel is transparent by design when using [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) or [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/), and becomes opaque when a maximized window occupies your screen. However, using other GTK themes will produce a solid panel most of the time.
+Wingpanel is transparent by design when using [gtk-theme-elementary](https://www.archlinux.org/packages/?name=gtk-theme-elementary) or [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/), and becomes opaque when a maximized window occupies your screen. However, using other GTK themes will produce a solid panel most of the time.
 
 To achieve the former behavior within another theme, add the following code to its css or the override file in `~/.config/gtk-3.0/gtk.css`:
 

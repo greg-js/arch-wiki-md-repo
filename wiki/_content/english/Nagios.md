@@ -81,17 +81,17 @@ Make owner/group for all the files you just copied and belong to root equal to n
 
 ```
 
-Create htpasswd.users file with a username and password, eg. nagiosadmin and secretpass
+If you have installed apache-tools, then create htpasswd.users file with a username (e.g. nagiosadmin). You will be prompted to add a password.
 
 ```
 # htpasswd -c /etc/nagios/htpasswd.users nagiosadmin
 
 ```
 
-If you do not want to install apache-tools, you can run following command
+Instead, if you do not want to install apache-tools, you can run the following command
 
 ```
-# echo -e "nagiosadmin:`perl -le 'print crypt("your-password","salt")'`" > /etc/nagios/htpasswd.users
+# echo -e "nagiosadmin:`perl -le 'print crypt("*your_password*","salt")'`" > /etc/nagios/htpasswd.users
 
 ```
 

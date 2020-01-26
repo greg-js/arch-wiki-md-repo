@@ -250,7 +250,7 @@ To disable the password protection, set a blank password.
 
 ### DNS over HTTPS
 
-Pi-Hole can be configured to use [DNS over HTTPS](/index.php/DNS_over_HTTPS "DNS over HTTPS"). Run a local DNS-server such as [cloudflared](/index.php/DNS_over_HTTPS#cloudflared "DNS over HTTPS") using the privacy-first DNS [1.1.1.1](https://1.1.1.1/) by Cloudflare, and use `127.0.0.1#5053` as a DNS server in Pi-Hole.
+Pi-Hole can be configured to use [DNS over HTTPS](/index.php/DNS_over_HTTPS "DNS over HTTPS"). Run a local DNS-server such as [cloudflared](/index.php/DNS_over_HTTPS#cloudflared "DNS over HTTPS") using the privacy-first DNS [1.1.1.1](https://1.1.1.1/) by Cloudflare, and use `127.0.0.1:5053` as a DNS server in Pi-Hole.
 
 ### Optimise for solid state drives
 

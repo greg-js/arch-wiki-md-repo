@@ -25,6 +25,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.14 Pi's vr-vm](#Pi's_vr-vm)
     *   [1.15 coghex's gaming box](#coghex's_gaming_box)
     *   [1.16 Roobre's VFIO setup](#Roobre's_VFIO_setup)
+    *   [1.17 laenco's VFIO setup](#laenco's_VFIO_setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -447,6 +448,29 @@ Issues:
 *   Synergy works really great. On some games (ones who take control of the mouse pointer, e.g. first-person), you need to lock the mouse cursor to the VM window to avoid issues (camera moving too fast).
 
 *   Do not forget to add the needed snippet for the nvidia driver to run ([PCI passthrough via OVMF#"Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](/index.php/PCI_passthrough_via_OVMF#"Error_43:_Driver_failed_to_load"_on_Nvidia_GPUs_passed_to_Windows_VMs "PCI passthrough via OVMF"))
+
+### laenco's VFIO setup
+
+Hardware:
+
+*   **CPU**: Ryzen 9 3950X @ 4.15Ghz all-cores via PBO
+*   **Motherboard**: Asus ROG STRIX X470-F GAMING (BIOS/UEFI Version: 5406)
+*   **GPU1 (Guest)**: Palit GeForce GTX 1080 8GB @ Stock
+*   **GPU2 (Host)**: MSI RX 570 8GB @ Stock
+*   **RAM**: 4 x 16GB (64GB) @ 3333 MHz
+
+Configuration:
+
+*   **Guest OS**: Windows 10 Pro
+*   **Kernel**: 5.4.13-arch1-1-gc (-ck is also good). No ACS patch.
+*   Using vanilla **QEMU 4.2.0**
+*   AMD Ryzen currently (2020.01.20) got bugged with smp threads option - VM stuck on start.
+*   Got classic Nvidia error 43 - classically fixed. But also added some cpu flags which are set automatically with kvm=on found here [https://github.com/qemu/qemu/blob/master/target/i386/cpu.c#L4008](https://github.com/qemu/qemu/blob/master/target/i386/cpu.c#L4008)
+*   As pure qemu have no option to pin cpu cores and self threads - using python script "cpu_affinity" - credits to [https://github.com/zegelin/qemu-affinity/](https://github.com/zegelin/qemu-affinity/) and also a copy in my repo. Requires debug-threads=on
+*   Using dynamically allocated hugepages 2Mb
+*   Hardly using VirtIO
+*   Using hardware usb switch like Aten US224-AT and hdmi switch "many-to-one", which allow me to have one monitor, mouse, keyboard and some usb devices, and switch them by button between host and guest.
+*   Repo with current major system config and script for VM could be found here [https://github.com/laenco/vfio-config](https://github.com/laenco/vfio-config)
 
 ## Adding your own setup
 

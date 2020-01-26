@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=585320) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2020-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=594877) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,7 +19,7 @@ Manutenção de sistema regular é necessário para o correto funcionamento do A
     *   [2.1 Arquivos de configuração](#Arquivos_de_configuração)
     *   [2.2 Lista de pacotes instalados](#Lista_de_pacotes_instalados)
     *   [2.3 Banco de dados do pacman](#Banco_de_dados_do_pacman)
-    *   [2.4 Cabeçalhos LUKS](#Cabeçalhos_LUKS)
+    *   [2.4 Metadados criptográficos](#Metadados_criptográficos)
     *   [2.5 Dados de sistema e de usuário](#Dados_de_sistema_e_de_usuário)
 *   [3 Atualizando o sistema](#Atualizando_o_sistema)
     *   [3.1 Leia antes de atualizar o sistema](#Leia_antes_de_atualizar_o_sistema)
@@ -54,7 +54,7 @@ $ systemctl --failed
 
 ```
 
-Veja [Systemd (Português)#Analisando o estado do sistema](/index.php/Systemd_(Portugu%C3%AAs)#Analisando_o_estado_do_sistema "Systemd (Português)") para mais informações.
+Veja [Systemd#Analisando o estado do sistema](/index.php/Systemd_(Portugu%C3%AAs)#Analisando_o_estado_do_sistema "Systemd (Português)") para mais informações.
 
 ### Arquivos de log
 
@@ -65,19 +65,19 @@ Procure por erros nos arquivos de log localizados em `/var/log`, bem como erros 
 
 ```
 
-Veja [systemd/Journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)") para mais informações.
+Veja [systemd/Journal](/index.php/Systemd_(Portugu%C3%AAs)/Journal_(Portugu%C3%AAs) "Systemd (Português)/Journal (Português)") para mais informações.
 
-Veja [Xorg (Português)#Troubleshooting](/index.php/Xorg_(Portugu%C3%AAs)#Troubleshooting "Xorg (Português)") para informações sobre onde e como o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") registra os erros.
+Veja [Xorg#Solução de problemas](/index.php/Xorg_(Portugu%C3%AAs)#Solução_de_problemas "Xorg (Português)") para informações sobre onde e como o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") registra os erros.
 
 ## Backup
 
 Crie backups de dados importante em intervalos regulares. Veja [Programas de sincronização e backup](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") para muitas alternativas de aplicativos que podem se adequar ao seu caso. Veja [Category:System recovery (Português)](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") para outros artigos de internet.
 
-Os backups podem ser automatizados com [systemd/Timers (Português)](/index.php/Systemd/Timers_(Portugu%C3%AAs) "Systemd/Timers (Português)").
+Os backups podem ser automatizados com [systemd/Timers](/index.php/Systemd_(Portugu%C3%AAs)/Timers_(Portugu%C3%AAs) "Systemd (Português)/Timers (Português)").
 
 ### Arquivos de configuração
 
-Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um [sistema de controle de versão](/index.php/Version_control_system "Version control system") (VCS); veja [dotfiles (Português)#Rastreando dotfiles diretamente com Git](/index.php/Dotfiles_(Portugu%C3%AAs)#Rastreando_dotfiles_diretamente_com_Git "Dotfiles (Português)") para mais.
+Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um [sistema de controle de versão](/index.php/Version_control_system "Version control system") (VCS); veja [dotfiles#Rastreando dotfiles diretamente com Git](/index.php/Dotfiles_(Portugu%C3%AAs)#Rastreando_dotfiles_diretamente_com_Git "Dotfiles (Português)") para mais.
 
 ### Lista de pacotes instalados
 
@@ -89,9 +89,9 @@ Veja [pacman/Dicas e truques#Lista de pacotes instalados](/index.php/Pacman/Dica
 
 Veja [pacman/Dicas e truques#Fazer backup da base de dados do pacman](/index.php/Pacman/Dicas_e_truques#Fazer_backup_da_base_de_dados_do_pacman "Pacman/Dicas e truques").
 
-### Cabeçalhos LUKS
+### Metadados criptográficos
 
-Pode fazer sentido verificar e sincronizar periodicamente os backups de cabeçalhos de partições criptografadas com LUKS, especialmente se palavras-chaves tiverem sido revogadas. Veja [Dm-crypt/Encriptação de dispositivo#Backup e restauração](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Backup_e_restauração "Dm-crypt/Encriptação de dispositivo").
+Veja [criptografia de disco#Backup para cenários de criptografia de disco](/index.php/Criptografia_de_disco#Backup_para_cenários_de_criptografia_de_disco "Criptografia de disco").
 
 ### Dados de sistema e de usuário
 
@@ -99,7 +99,7 @@ Veja [Backup do sistema](/index.php/Backup_do_sistema "Backup do sistema").
 
 ## Atualizando o sistema
 
-É recomendado realizar atualizações completas do sistema regularmente via [Pacman (Português)#Atualizando pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Atualizando_pacotes "Pacman (Português)"), para aproveitar as últimas correções de erros e atualizações de segurança, além de evitar de ter que lidar com muitas atualizações de pacotes que exigem intervenção manual de uma só vez. Ao solicitar suporte da comunidade, é geralmente presumido que o sistema esteja atualizado.
+É recomendado realizar atualizações completas do sistema regularmente via [Pacman#Atualizando pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Atualizando_pacotes "Pacman (Português)"), para aproveitar as últimas correções de erros e atualizações de segurança, além de evitar de ter que lidar com muitas atualizações de pacotes que exigem intervenção manual de uma só vez. Ao solicitar suporte da comunidade, é geralmente presumido que o sistema esteja atualizado.
 
 Certifique-se de que a mídia de instalação do Arch ou outro CD/USB "live" de Linux esteja disponível, de forma que você possa facilmente recuperar seu sistema se houver um problema após a atualização. Se você está usando o Arch em um ambiente de produção, ou não puder se dar o luxo de tê-lo indisponível por algum motivo, teste alterações aos arquivos de configurações, bem como atualizações de pacotes de software, em um sistema duplicata não crítico (i.e sistema de homologação) primeiro. Então, se tudo funcionar corretamente, aplique as alterações no sistema de produção.
 
@@ -114,6 +114,8 @@ Antes de atualizar, espera-se que os usuários visitem a [página inicial do Arc
 Antes de atualizar softwares fundamentais (como o [kernel](/index.php/Kernel_(Portugu%C3%AAs) "Kernel (Português)"), [xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") ou [glibc](https://www.archlinux.org/packages/?name=glibc)) para uma nova versão, procure pelo [fórum](https://bbs.archlinux.org/) apropriado por algum relato de problema.
 
 Da mesma forma, usuários devem estar cientes de que atualizar pacotes pode trazer problemas **inesperados** que podem precisar de intervenção imediata; portanto, é desencorajado atualizar um sistema estável logo antes dele ser necessário para realizar uma tarefa importante. Em vez disso, é sábio esperar ter tempo suficiente para poder lidar com possíveis problemas pós-atualização.
+
+**Dica:** Você pode usar um hook do pacman como [informant](https://aur.archlinux.org/packages/informant/) que impede a atualização caso houverem noticias recentes do Arch que não foram lidas desde a última atualização.
 
 ### Evite certos comandos do pacman
 
@@ -163,7 +165,7 @@ Além disso, alguns pacotes podem não estar nos repositórios remotos, mas eles
 
 O [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") faz um trabalho bem melhor do que você em manter rastro dos arquivos. Se você instalar coisas manualmente você *vai*, cedo ou tarde, esquecer o que você fez, esquecer onde você instalou, instalar softwares conflitantes, instalar as localizações erradas, etc.
 
-*   Instale pacotes dos repositórios oficiais usando o método na seção [Pacman (Português)#Instalando pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes "Pacman (Português)").
+*   Instale pacotes dos repositórios oficiais usando o método na seção [Pacman#Instalando pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes "Pacman (Português)").
 *   Se o programa que você deseja não estiver disponível, verifique se alguém criou um pacote no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Siga o método naquele artigo para instalação.
 *   Por último, se o programa que você deseja não se encontra nos repositórios oficiais ou no AUR, aprenda como [criar um pacote](/index.php/Criar_um_pacote "Criar um pacote") para ele.
 
@@ -196,7 +198,7 @@ Ao procurar por arquivos para remover, é importante localizar os arquivos que m
 
 Remova arquivos `.pkg` indesejados de `/var/cache/pacman/pkg/` para liberar espaço em disco.
 
-Veja [Pacman (Português)#Limpando o cache de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Limpando_o_cache_de_pacotes "Pacman (Português)") para mais informações.
+Veja [Pacman#Limpando o cache de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Limpando_o_cache_de_pacotes "Pacman (Português)") para mais informações.
 
 ### Pacotes não usados (órfãos)
 

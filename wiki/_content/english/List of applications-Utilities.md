@@ -106,7 +106,7 @@ Terminal emulators show a GUI Window that contains a terminal. Most emulate Xter
 
 For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.wikipedia.org/wiki/List_of_terminal_emulators "wikipedia:List of terminal emulators").
 
-*   **Alacritty** — A cross-platform, GPU-accelerated terminal emulator.
+*   **[Alacritty](/index.php/Alacritty "Alacritty")** — A cross-platform, GPU-accelerated terminal emulator.
 
 	[https://github.com/jwilm/alacritty](https://github.com/jwilm/alacritty) || [alacritty](https://www.archlinux.org/packages/?name=alacritty)
 
@@ -618,7 +618,7 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 *   **[KRename](https://en.wikipedia.org/wiki/KRename "wikipedia:KRename")** — Very powerful batch file renamer for the KDE desktop.
 
-	[http://www.krename.net](http://www.krename.net) || [krename](https://www.archlinux.org/packages/?name=krename)
+	[https://kde.org/applications/utilities/org.kde.krename](https://kde.org/applications/utilities/org.kde.krename) || [krename](https://www.archlinux.org/packages/?name=krename)
 
 *   **metamorphose2** — wxPython based batch renamer with support for regular expressions, renaming multimedia files according to their metadata, etc.
 

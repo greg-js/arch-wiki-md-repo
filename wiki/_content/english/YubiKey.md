@@ -50,9 +50,10 @@ This article describes how [Yubico](https://yubico.com)'s [YubiKey](https://en.w
         *   [5.3.6 Further reading](#Further_reading)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 YubiKey and LUKS encrypted partition/disk](#YubiKey_and_LUKS_encrypted_partition/disk)
-        *   [6.1.1 Challenge-Response mode for LUKS passphrase](#Challenge-Response_mode_for_LUKS_passphrase)
-        *   [6.1.2 OpenPGP applet](#OpenPGP_applet)
-        *   [6.1.3 HMAC Secret Extension of FIDO2 protocol](#HMAC_Secret_Extension_of_FIDO2_protocol)
+        *   [6.1.1 Challenge-Response mode for LUKS passphrase (udev/encrypt)](#Challenge-Response_mode_for_LUKS_passphrase_(udev/encrypt))
+        *   [6.1.2 Challenge-Response mode for LUKS passphrase (systemd/sd-encrypt)](#Challenge-Response_mode_for_LUKS_passphrase_(systemd/sd-encrypt))
+        *   [6.1.3 OpenPGP applet](#OpenPGP_applet)
+        *   [6.1.4 HMAC Secret Extension of FIDO2 protocol](#HMAC_Secret_Extension_of_FIDO2_protocol)
     *   [6.2 Yubikey and KeePass](#Yubikey_and_KeePass)
         *   [6.2.1 keepassx2](#keepassx2)
         *   [6.2.2 KeePassXC](#KeePassXC)
@@ -372,7 +373,7 @@ CCID mode should be enabled by default on all YubiKeys shipped since November 20
 
 ### PIV
 
-Starting from the fourth generation devices, the Yubikeys contain a PIV (Personal Identity Verification) application on the chip. PIV is a US government standard (FIPS 201) that specifies how a token using RSA or ECC (Elliptic Curve Cryptography) is used for personal electronic identification. The distinguishing characteristic of a PIV token is that it is built to protect private keys and operate on them on-chip. A private key never leaves the token after it has been installed on it. Optionally, the private key can even be generated on-chip with the aid of an on-chip random number generator. If generated on-chip, the private key is never handled outside of the chip, and there is no way to recover it from the token. When using the PIV mechanism, the Yubikey functions as a CCID device.
+Starting with the YubiKey NEO, the Yubikeys contain a PIV (Personal Identity Verification) application on the chip. PIV is a US government standard (FIPS 201) that specifies how a token using RSA or ECC (Elliptic Curve Cryptography) is used for personal electronic identification. The YubiKey NEO only supports RSA encryption, later models (YubiKey 4 and 5) support both RSA and ECC. The distinguishing characteristic of a PIV token is that it is built to protect private keys and operate on them on-chip. A private key never leaves the token after it has been installed on it. Optionally, the private key can even be generated on-chip with the aid of an on-chip random number generator. If generated on-chip, the private key is never handled outside of the chip, and there is no way to recover it from the token. When using the PIV mechanism, the Yubikey functions as a CCID device.
 
 ### Use OpenPGP smartcard mode
 
@@ -470,7 +471,7 @@ The default PIN code of the PIV application on the YubiKey is `123456`; you may 
 
 YubiKey can be used to strengthen the security of your [LUKS](/index.php/LUKS "LUKS") encrypted partition/disk. There are multiple ways to achieve it. But before enabling Yubikey as a 2FA device it is recommended to setup plain LUKS encryption first and make sure it works correctly.
 
-#### Challenge-Response mode for LUKS passphrase
+#### Challenge-Response mode for LUKS passphrase (udev/encrypt)
 
 One way to do it is to use a Challenge-Response mode for creating strong LUKS passphrases. First, install [yubikey-full-disk-encryption](https://www.archlinux.org/packages/?name=yubikey-full-disk-encryption) package. Using this tool you can add/modify/remove Yubikey-protected passphrases.
 
@@ -500,6 +501,50 @@ It will require the new and existing passphrases.
 And the last step is to add `ykfde` hook to `/etc/mkinitcpio.conf` file before or instead of `encrypt` hook. Then regenerate initramfs with `mkinitcpio -P`.
 
 **Warning:** As of December 2019 `sd-encrypt` enabled boot is [not supported](https://github.com/agherzan/yubikey-full-disk-encryption/issues/14) by [yubikey-full-disk-encryption](https://www.archlinux.org/packages/?name=yubikey-full-disk-encryption).
+
+#### Challenge-Response mode for LUKS passphrase (systemd/sd-encrypt)
+
+On systemd enabled systems full disk encryption is served by the package mkinitcpio-ykfde out of the AUR repository. First, install [mkinitcpio-ykfde](https://aur.archlinux.org/packages/mkinitcpio-ykfde/) or [mkinitcpio-ykfde-git](https://aur.archlinux.org/packages/mkinitcpio-ykfde-git/) package. Using this tool you can add Yubikey-protected luks slots.
+
+Make changes to `/etc/ykfde.conf` configuration file as as:
+
+*   general/device name: devicename (rd.luks.name) defined in `/etc/default/grub`
+*   key specific sections: map individual YubiKeys / slots to luks slots.
+
+Add ykfde challenges file to grub initrd `/etc/default/grub`:
+
+```
+ GRUB_EARLY_INITRD_LINUX_CUSTOM="ykfde-challenges.img"
+
+```
+
+Add `ykfde` hook to `/etc/mkinitcpio.conf` file before `sd-encrypt` hook.
+
+Enroll new luks slot:
+
+```
+# ykfde --ask-2nd-factor
+
+```
+
+Push challenges to /boot partition:
+
+```
+# ykfde-cpio
+
+```
+
+Rebuild initrd and update grub config:
+
+```
+ # mkinitcpio -P
+ # grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+
+If you want to unlock one single luks slot using multiple YubiKeys sharing the same challenge response configuration you have to enure ykfde uses the same challenge (stored in `/etc/ykfde.d/`).
+
+For further details please see the [project documentation](https://github.com/eworm-de/mkinitcpio-ykfde/blob/master/README-mkinitcpio.md).
 
 #### OpenPGP applet
 

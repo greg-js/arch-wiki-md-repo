@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Icons](/index.php/Icons "Icons"). Data da última tradução: 2019-10-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Icons&diff=0&oldid=585018) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Icons](/index.php/Icons "Icons"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Icons&diff=0&oldid=589861) na versão em inglês.
 
 Artigos relacionados
 
@@ -70,7 +70,7 @@ Se você não conseguir encontrar um pacote para o tema do ícone que está proc
 
 ## fstab / gvfs
 
-De acordo com este [documento](https://github.com/GNOME/gvfs/blob/master/monitor/udisks2/what-is-shown.txt), gerenciadores de arquivos que usam [GVFS](/index.php/GVFS_(Portugu%C3%AAs) "GVFS (Português)") (como [GNOME Arquivos](/index.php/GNOME_Files "GNOME Files") ou [Thunar](/index.php/Thunar "Thunar")) podem exibir ícones para locais personalizados, como compartilhamentos [NFS](/index.php/NFS "NFS"). Tudo o que você precisa são algumas opções de montagem estendidas dentro do `/etc/fstab` com nomes de ícones suportados pelo tema do ícone selecionado:
+De acordo com este [documento](https://github.com/GNOME/gvfs/blob/mainline/monitor/udisks2/what-is-shown.txt), gerenciadores de arquivos que usam [GVFS](/index.php/GVFS_(Portugu%C3%AAs) "GVFS (Português)") (como [GNOME Arquivos](/index.php/GNOME_Files "GNOME Files") ou [Thunar](/index.php/Thunar "Thunar")) podem exibir ícones para locais personalizados, como compartilhamentos [NFS](/index.php/NFS "NFS"). Tudo o que você precisa são algumas opções de montagem estendidas dentro do `/etc/fstab` com nomes de ícones suportados pelo tema do ícone selecionado:
 
  `/etc/fstab` 
 ```

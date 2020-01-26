@@ -47,10 +47,10 @@ For the GPU driver and Wayland compositor to be compatible they must support the
 ## Compositors
 
 | Name | Type | Description |
-| GNOME | Stacking | See [GNOME#Starting](/index.php/GNOME#Starting "GNOME"). |
+| Mutter | Stacking | See [GNOME#Starting](/index.php/GNOME#Starting "GNOME"). |
 | sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [GitHub](https://github.com/SirCmpwn/sway) |
 | Enlightenment | Stacking and tiling | [More Info](https://www.enlightenment.org/about-wayland) |
-| KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
+| KDE Kwin | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
 | Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is an abandoned tiling WM for Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell (more akin to a WM than a DE) using Qt5 and Weston. The goal of the project is to build a simple but flexible and good looking Wayland desktop. |
@@ -72,10 +72,10 @@ Some of the above may support [display managers](/index.php/Display_manager "Dis
 Below listed display managers which supports running Wayland compositors. The Type column indicates whether the display manager supports running on Wayland or not.
 
 | Name | Type | Description |
-| GDM | Runs on Wayland | [GNOME](/index.php/GNOME "GNOME") display manager. |
-| LightDM | Runs on X11 | Cross-desktop display manager. |
-| Ly | Runs in console | TUI display manager written in C |
-| SDDM | Runs on X11 | QML-based display manager. |
+| [GDM](/index.php/GDM "GDM") | Runs on Wayland | [GNOME](/index.php/GNOME "GNOME") display manager. |
+| [LightDM](/index.php/LightDM "LightDM") | Runs on X11 | Cross-desktop display manager. |
+| [Ly](/index.php/Ly "Ly") | Runs in console | TUI display manager written in C |
+| [SDDM](/index.php/SDDM "SDDM") | Runs on X11 | QML-based display manager. |
 
 ## GUI libraries
 

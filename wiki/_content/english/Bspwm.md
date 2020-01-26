@@ -172,9 +172,9 @@ bspc node $id --flag hidden;bspc node -f $id
 
 #### Using class name
 
-In this example we are going to use termite with a custom class name as our dropdown terminal. It does not have to be termite.
+In this example we are going to use *termite* with a custom class name as our dropdown terminal. It does not have to be *termite*.
 
-First create a file in your path with the following content and make it executable. In this example let's call it scratchpad.sh
+First create a file in your path with the following content and make it executable. In this example let's call it `scratchpad.sh`:
 
 ```
 #!/usr/bin/bash
@@ -202,7 +202,7 @@ termite --class dropdown -e "zsh -i" &
 
 ```
 
-To toggle the window a custom rule in sxhdk is necessary. Give as parameter the custom class name.
+To toggle the window a custom rule in [sxhkd](/index.php/Sxhkd "Sxhkd") is necessary. Give as parameter the custom class name.
 
 ```
 super + u
@@ -235,7 +235,7 @@ Since the `bspwmrc` is a shell script, it allows you to do things like these:
 
 ```
 
-Note: [inetutils](https://www.archlinux.org/packages/?name=inetutils) is required to use hostname command.
+**Note:** [inetutils](https://www.archlinux.org/packages/?name=inetutils) is required to use hostname command.
 
 ### Set up a desktop where all windows are floating
 

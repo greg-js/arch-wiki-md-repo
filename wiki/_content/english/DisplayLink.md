@@ -237,7 +237,7 @@ xrandr --addmode DVI-0 1368x768_59.90
 
 Then tell the monitor to use that mode for the DisplayLink monitor, and this should fix the redraw issues. Check the [Xrandr](/index.php/Xrandr "Xrandr") page for information on using a different mode.
 
-If this does not solve the problem (or if the correct modeline was already in place because of correct DDC data), it can help to run a compositor. E.g. when using plain i3, running [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr) or [compton](https://www.archlinux.org/packages/?name=compton) can mitigate the problem.
+If this does not solve the problem (or if the correct modeline was already in place because of correct DDC data), it can help to run a [compositor](/index.php/Compositor "Compositor").
 
 ### DisplayLink refresh rate is extremely slow with gnome 3
 

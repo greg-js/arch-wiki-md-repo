@@ -64,6 +64,7 @@ mksquashfs \
   -e \
   boot/efi \
   boot/grub \
+  boot/vmlinuz-linux \
   boot/initramfs-linux"*".img
 
 ```

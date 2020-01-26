@@ -138,7 +138,7 @@ In order to update the BIOS/UEFI using a USB key, follow this procedure (based o
 1.  Install [geteltorito](https://aur.archlinux.org/packages/geteltorito/)
 2.  Download ISO "BIOS Update (Bootable CD)" from [[3]](https://pcsupport.lenovo.com/at/en/products/LAPTOPS-AND-NETBOOKS/THINKPAD-T-SERIES-LAPTOPS/THINKPAD-T470S/downloads/DS120418)
 3.  `geteltorito.pl -o bios.img n1wur26w.iso`
-4.  {{ic|sudo dd if=bios.img of=<USB key> bs=1M
+4.  `sudo dd if=bios.img of=<USB key> bs=1M`
 
 ## See also
 

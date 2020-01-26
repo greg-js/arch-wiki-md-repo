@@ -1,8 +1,9 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=587883) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=594867) na versão em inglês.
 
 Artigos relacionados
 
 *   [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
+*   [DNS sobre HTTPS](/index.php/DNS_over_HTTPS "DNS over HTTPS")
 
 Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "wikipedia:pt:Domínio") representa um endereço IP e está associado a ele no [Sistema de Nomes de Domínio](https://en.wikipedia.org/wiki/pt:Sistema_de_Nomes_de_Dom%C3%ADnio "wikipedia:pt:Sistema de Nomes de Domínio"), ou *Domain Name System* (DNS). Esse artigo explica como para configurar resolução de nome de domínio e resolver nomes de domínio.
 
@@ -145,9 +146,11 @@ O resolvedor do Glibc não armazena em cache as consultas. Para implementar um c
 
 O protocolo DNS não é criptografado e não leva em conta a confidencialidade, integridade ou autenticação, portanto, se você usar uma rede não confiável ou um ISP mal-intencionado, suas consultas DNS poderão ser interceptadas e as respostas [manipuladas](https://en.wikipedia.org/wiki/pt:Ataque_man-in-the-middle "wikipedia:pt:Ataque man-in-the-middle"). Além disso, os servidores DNS podem realizar [redirecionamento de DNS](https://en.wikipedia.org/wiki/pt:DNS_hijacking "wikipedia:pt:DNS hijacking") (*DNS hijacking*).
 
-Você precisa confiar em seu servidor DNS para tratar suas consultas de maneira confidencial. Os servidores DNS são fornecidos por ISPs e [terceiros](#Serviços_DNS_de_terceiros). Como alternativa, você pode executar seu próprio servidor de nome recursivo, o que, no entanto, exige mais esforço. Se você usa um cliente [DHCP](/index.php/DHCP_(Portugu%C3%AAs) "DHCP (Português)") em redes não confiáveis, defina os servidores de nomes estáticos para evitar o uso e a sujeição a servidores DNS arbitrários. Para proteger sua comunicação com um servidor DNS remoto, você pode usar um protocolo criptografado, como [DNS por TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") ou [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"), desde que o servidor upstream e seu [resolvedor](#Servidores_DNS) possuam suporte ao protocolo. Para verificar se as respostas são realmente de [servidores de nome autoritativos](https://en.wikipedia.org/wiki/Authoritative_name_server "wikipedia:Authoritative name server"), você pode validar [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)"), desde que ambos os servidores upstream e seu [resolvedor](#Servidores_DNS) tenha suporte a isso.
+Você precisa confiar em seu servidor DNS para tratar suas consultas de maneira confidencial. Os servidores DNS são fornecidos por ISPs e [terceiros](#Serviços_DNS_de_terceiros). Como alternativa, você pode executar seu próprio servidor de nome recursivo, o que, no entanto, exige mais esforço. Se você usa um cliente [DHCP](/index.php/DHCP_(Portugu%C3%AAs) "DHCP (Português)") em redes não confiáveis, defina os servidores de nomes estáticos para evitar o uso e a sujeição a servidores DNS arbitrários. Para proteger sua comunicação com um servidor DNS remoto, você pode usar um protocolo criptografado, como [DNS sobre TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") ([RFC 7858](https://tools.ietf.org/html/rfc7858 "rfc:7858")), [DNS sobre HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") ([RFC 8484](https://tools.ietf.org/html/rfc8484 "rfc:8484")) ou [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"), desde que o servidor upstream e seu [resolvedor](#Servidores_DNS) possuam suporte ao protocolo. Para verificar se as respostas são realmente de [servidores de nome autoritativos](https://en.wikipedia.org/wiki/Authoritative_name_server "wikipedia:Authoritative name server"), você pode validar [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)"), desde que ambos os servidores upstream e seu [resolvedor](#Servidores_DNS) tenha suporte a isso.
 
 Esteja ciente de que o software cliente, como os principais navegadores da Web, também pode (começar a) implementar alguns dos protocolos do DNS criptografados. Embora a criptografia de consultas possa ser vista como um bônus, isso também significa que o software avisa sobre a configuração do resolvedor do sistema, [[2]](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/#trr-and-doh) [Mozilla propôs](https://support.mozilla.org/pt-BR/kb/configurando-redes-para-desativar-dns-sobre-https) desabilitar o DNS a nível de aplicativo se o resolvedor do sistema não puder resolver o domínio "[use-application-dns.net](http://use-application-dns.net/)". Atualmente, essa verificação está implementada apenas no [Firefox](/index.php/Firefox "Firefox").
+
+O Google optou por atualizar para o DNS por HTTPS no [Chromium](/index.php/Chromium "Chromium") versão 79+, se o provedor de serviços DNS usado do sistema tiver suporte ao protocolo. Mais informações sobre os planos do Google para DoH podem ser obtidas em [DNS over HTTPS (aka DoH)](https://www.chromium.org/developers/dns-over-https) e [DNS over HTTPS same-provider auto-upgrade in Chrome: heads-up about our post-experiment plan](https://groups.google.com/a/chromium.org/forum/#!msg/net-dev/lIm9esAFjQ0/vJ93oMbAAgAJ).
 
 ## Serviços DNS de terceiros
 
@@ -172,7 +175,7 @@ Os servidores [DNS](/index.php/DNS_(Portugu%C3%AAs) "DNS (Português)") podem se
 [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") | [DNS](https://en.wikipedia.org/wiki/pt:Sistema_de_Nomes_de_Dom%C3%ADnio "wikipedia:pt:Sistema de Nomes de Domínio") | [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") | [DNS
 por TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") | [DNS
 por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") |
-| [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) | Não | Não | Sim | Não | Não | Servidor | Resolvedor | Não | Resolvedor |
+| [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) | Não | Não | Sim | Não | Não | Servidor | Resolvedor | Não | Sim |
 | [Rescached](/index.php/Rescached "Rescached") | [rescached-git](https://aur.archlinux.org/packages/rescached-git/) | Não | Não | Sim | Não | [Sim](https://github.com/shuLhan/rescached-go#integration-with-openresolv) | Sim | Não | Não | Limitado |
 | [Stubby](/index.php/Stubby "Stubby") | [stubby](https://www.archlinux.org/packages/?name=stubby) | Não | Não | Não | Sim | Não | Servidor | Não | Resolvedor | Não |
 | [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | [systemd](https://www.archlinux.org/packages/?name=systemd) | Não | Não | Sim | Sim | [Sim](/index.php/Systemd-resolvconf "Systemd-resolvconf") | [servidor limitado](https://github.com/systemd/systemd/issues/4621#issuecomment-260050033) e resolvedor | Não | Resolvedor inseguro | [Não](https://github.com/systemd/systemd/issues/8639) |
@@ -181,21 +184,23 @@ por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTP
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | [knot-resolver](https://aur.archlinux.org/packages/knot-resolver/) | Sim | Sim | Sim | Sim | Não | Sim | Não | Sim | [Servidor](https://knot-resolver.readthedocs.io/en/stable/modules.html#dns-over-http-doh) |
 | [MaraDNS](https://en.wikipedia.org/wiki/MaraDNS "wikipedia:MaraDNS") | [maradns](https://aur.archlinux.org/packages/maradns/) | Sim | Sim | Sim | Não | Não | Sim | Não | Não | Não |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Sim | Sim | Permanente | Não | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | Não | Não |
-| [PowerDNS Recursor](https://www.powerdns.com/recursor.html) | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Sim | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | Não | Não |
+| [PowerDNS Recursor](https://en.wikipedia.org/wiki/PowerDNS#Recursor | Sim | Não | Não | Não |
 | [Unbound](/index.php/Unbound "Unbound") | [unbound](https://www.archlinux.org/packages/?name=unbound) | Sim | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Servidor | Sim | [Não](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
+| [Deadwood](https://maradns.samiam.org/deadwood/) | [deadwood](https://aur.archlinux.org/packages/deadwood/) | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| [CoreDNS](https://coredns.io/) | [coredns](https://aur.archlinux.org/packages/coredns/) ou [coredns-bin](https://aur.archlinux.org/packages/coredns-bin/) | ? | ? | ? | ? | ? | ? | ? | ? | ? |
 
 1.  Só encaminha usando DNS por HTTPS quando Rescached em si é consultado usando DNS por HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
 2.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que como o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".*[[4]](https://github.com/systemd/systemd/issues/9397)
-3.  Do [Wikipédia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software#cite_note-masqauth-25 "wikipedia:Comparison of DNS server software"): dnsmasq tem um suporte autoritativo limitado, sendo destinado a rede interna em vez de uso público na Internet.
+3.  Do [Wikipédia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software#cite_note-masqauth-28 "wikipedia:Comparison of DNS server software"): dnsmasq tem um suporte autoritativo limitado, sendo destinado a rede interna em vez de uso público na Internet.
 
 ### Servidores apenas autoritativos
 
 | Nome | Pacote | [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") | Balanceamento
 geográfico |
-| [gdnsd](https://gdnsd.org/) | [gdnsd](https://www.archlinux.org/packages/?name=gdnsd) | Não | Sim |
-| [Knot DNS](https://www.knot-dns.cz/) | [knot](https://www.archlinux.org/packages/?name=knot) | Sim | [Sim](https://www.knot-dns.cz/docs/2.7/singlehtml/#geoip-geography-based-responses) |
+| gdnsd | [gdnsd](https://www.archlinux.org/packages/?name=gdnsd) | Não | Sim |
+| [Knot DNS](https://en.wikipedia.org/wiki/Knot_DNS "wikipedia:Knot DNS") | [knot](https://www.archlinux.org/packages/?name=knot) | Sim | [Sim](https://www.knot-dns.cz/docs/2.7/singlehtml/#geoip-geography-based-responses) |
 | [NSD](/index.php/NSD "NSD") | [nsd](https://www.archlinux.org/packages/?name=nsd) | Não | Não |
-| [PowerDNS](https://www.powerdns.com/auth.html) | [powerdns](https://www.archlinux.org/packages/?name=powerdns) | Sim | Sim |
+| [PowerDNS](/index.php/PowerDNS "PowerDNS") | [powerdns](https://www.archlinux.org/packages/?name=powerdns) | Sim | Sim |
 
 ### Encaminhamento condicional
 

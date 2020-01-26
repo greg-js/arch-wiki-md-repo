@@ -477,6 +477,22 @@ Four network types exist that can be created to connect a domain to:
 
 **Note:** libvirt handles DHCP and DNS with [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq), launching a separate instance for every virtual network. It also adds iptables rules for proper routing, and enables the `ip_forward` kernel parameter. This also means that having dnsmasq running on the host system is not necessary to support libvirt requirements (and could interfere with libvirt dnsmasq instances).
 
+You could get VM ip address via (in case it connected to `*default*` network and receives IP address via dhcp):
+
+```
+$ virsh net-dhcp-leases default
+
+```
+
+command (replacing `*default*` with network name VM connected to), or if VM has `*qemu-guest-agent*` running via:
+
+```
+$ virsh domifaddr --source agent $vm
+
+```
+
+replacing `*$vm*` with actual virtual machine name (or domain id).
+
 #### IPv6
 
 When adding an IPv6 address through any of the configuration tools, you will likely receive the following error:

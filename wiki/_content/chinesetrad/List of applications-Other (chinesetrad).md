@@ -251,7 +251,7 @@ A few simple shutdown managers are available:
 
 *   **oblogout** — A graphical logout script for [Openbox](/index.php/Openbox "Openbox") that may be used with other WMs.
 
-	[https://launchpad.net/oblogou](https://launchpad.net/oblogou) || [oblogout](https://www.archlinux.org/packages/?name=oblogout)
+	[https://launchpad.net/oblogou](https://launchpad.net/oblogou) || [oblogout](https://aur.archlinux.org/packages/oblogout/)
 
 *   **obshutdown** — A great GTK/Cairo based shutdown manager for Openbox and other window managers.
 

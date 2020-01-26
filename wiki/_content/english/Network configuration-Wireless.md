@@ -360,7 +360,9 @@ WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with 
 
 ### WPA3 Personal
 
-To use WPA3 Personal with [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") it is necessary to [rebuild](/index.php/Arch_Build_System "Arch Build System") [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) with `CONFIG_SAE=y`. ([FS#57413](https://bugs.archlinux.org/task/57413))
+WPA3 Personal, a.k.a. WPA3-SAE, is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access").
+
+[wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") supports WPA3 Personal (`CONFIG_SAE` is enabled in [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) since version 2:2.9-4).
 
 ## Tips and tricks
 
@@ -772,7 +774,7 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 ##### Bluetooth coexistence
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[10]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[10]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wi-fibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Cursor themes](/index.php/Cursor_themes "Cursor themes"). Data da última tradução: 2019-11-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Cursor_themes&diff=0&oldid=587529) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Cursor themes](/index.php/Cursor_themes "Cursor themes"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Cursor_themes&diff=0&oldid=589053) na versão em inglês.
 
 O servidor de exibição é acompanhado por um *tema de cursor* padrão que ajuda em vários aspectos de navegação GUI e manipulação. Apesar disso, outros temas podem ser instalados e selecionados.
 

@@ -45,7 +45,7 @@ Veja [/Criptografando todo um sistema](/index.php/Dm-crypt_(Portugu%C3%AAs)/Crip
 
 ## Swap criptografada
 
-[/Swap criptografada](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") mostra como adicionar uma partição swap para um sistema criptografado, se necessário. A partição swap também deve ser criptografada para proteger qualquer informação colocada lá pelo sistema. Esta página detalha métodos [sem](/index.php/Dm-crypt/Swap_encryption#Without_suspend-to-disk_support "Dm-crypt/Swap encryption") e [com](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") suporte a suspensão para o disco.
+[/Swap criptografada](/index.php/Dm-crypt_(Portugu%C3%AAs)/Swap_criptografada "Dm-crypt (Português)/Swap criptografada") mostra como adicionar uma partição swap para um sistema criptografado, se necessário. A partição swap também deve ser criptografada para proteger qualquer informação colocada lá pelo sistema. Esta página detalha métodos [sem](/index.php/Dm-crypt_(Portugu%C3%AAs)/Swap_criptografada#Sem_suporte_a_suspender_para_o_disco "Dm-crypt (Português)/Swap criptografada") e [com](/index.php/Dm-crypt_(Portugu%C3%AAs)/Swap_criptografada#Com_suporte_a_suspender_para_o_disco "Dm-crypt (Português)/Swap criptografada") suporte a suspensão para o disco.
 
 ## Especificidades
 

@@ -31,12 +31,7 @@ Example:
 
 ## Installation
 
-Two packages are present in community:
-
-*   [mod_wsgi](https://www.archlinux.org/packages/?name=mod_wsgi) provides the module works with all common versions of Python (3.x)
-*   [mod_wsgi2](https://www.archlinux.org/packages/?name=mod_wsgi2) provides the module can only run with 2.x versions of Python
-
-When you use mod_wsgi with Python 2.x better to install [mod_wsgi2](https://www.archlinux.org/packages/?name=mod_wsgi2).
+[Install](/index.php/Install "Install") [mod_wsgi](https://www.archlinux.org/packages/?name=mod_wsgi) which provides the module working with all common versions of Python (3.x).
 
 ## Apache configuration
 

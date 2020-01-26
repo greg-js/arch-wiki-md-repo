@@ -45,7 +45,7 @@ There is also an official GTK front-end, available as [wicd-gtk](https://www.arc
 
 ### Notifications
 
-To enable visual notifications about network status, you need to install the packages [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon) and [python2-notify](https://www.archlinux.org/packages/?name=python2-notify).
+To enable visual notifications about network status, you need to install the packages [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon) and [python2-notify](https://aur.archlinux.org/packages/python2-notify/).
 
 If you are not using [GNOME](/index.php/GNOME "GNOME"), you may want to install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) instead of the notification-daemon, because it pulls a lot of unnecessary GNOME packages.
 
@@ -305,7 +305,7 @@ WantedBy=suspend.target
 
 ### Importing pynotify failed, notifications disabled
 
-In case the [python2-notify](https://www.archlinux.org/packages/?name=python2-notify) package did not get installed automatically. You can [install](/index.php/Install "Install") it from [official repositories](/index.php/Official_repositories "Official repositories").
+In case the [python2-notify](https://aur.archlinux.org/packages/python2-notify/) package did not get installed automatically. You can [install](/index.php/Install "Install") it from [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### D-Bus connection error message
 

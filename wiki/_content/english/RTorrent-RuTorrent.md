@@ -18,7 +18,7 @@ It is lightweight, highly extensible, and is designed to look similar to uTorren
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Web server configuration](#Web_server_configuration)
-    *   [3.1 Apache](#Apache)
+    *   [3.1 Apache 2.4](#Apache_2.4)
     *   [3.2 Nginx](#Nginx)
     *   [3.3 Lighttpd](#Lighttpd)
         *   [3.3.1 lighttpd](#lighttpd_2)
@@ -44,9 +44,11 @@ See upstream wiki [here](https://github.com/Novik/ruTorrent/wiki/Config). By def
 
 ## Web server configuration
 
-### Apache
+### Apache 2.4
 
 Install and configure Apache with PHP according to the [LAMP](/index.php/LAMP "LAMP") page.
+
+**Note:** The configuration examples below do not take your current Apache hosts into account. If you are, for example, using Virtual Hosts, you should adapt those accordingly.
 
 *   Edit the *open_basedir* value in /etc/php/php.ini to include:
 
@@ -55,38 +57,18 @@ Install and configure Apache with PHP according to the [LAMP](/index.php/LAMP "L
 
 ```
 
-Install [mod_scgi](https://aur.archlinux.org/packages/mod_scgi/) from the AUR.
+*   Enable the rTorrent XMLRPC interface on UNIX socket : [rTorrent#XMLRPC interface](/index.php/RTorrent#XMLRPC_interface "RTorrent")
 
-*   Load the SCGI module in `/etc/httpd/conf/httpd.conf`:
-
-```
-LoadModule scgi_module modules/mod_scgi.so
+*   Enable SCGI on the socket you chose for rTorrent by adding this to `/etc/httpd/conf/httpd.conf`:
 
 ```
-
-*   Enable the rTorrent XMLRPC interface: [rTorrent#XMLRPC interface](/index.php/RTorrent#XMLRPC_interface "RTorrent")
-
-*   Enable SCGI on the port you chose for rTorrent by adding this to `/etc/httpd/conf/httpd.conf`:
-
-```
-SCGIMount /RPC2 127.0.0.1:5000
+ProxyPass /RPC2 scgi:///path/to/rpc.socket
 
 ```
 
-*   Lastly, add the ruTorrent folder to `/etc/httpd/conf/httpd.conf` with something similar to this anywhere after the inital *</Directory>*:
+*   Lastly, add the ruTorrent folder to `/etc/httpd/conf/httpd.conf`
 
-```
-<IfModule alias_module>
-  Alias /rutorrent /usr/share/webapps/rutorrent
-  <Directory "/usr/share/webapps/rutorrent">
-    Order allow,deny
-    Allow from all
-  </Directory>
-</IfModule>
-
-```
-
-For Apache 2.4 the access control would be:
+As a directory alias
 
 ```
 <IfModule alias_module>
@@ -95,6 +77,21 @@ For Apache 2.4 the access control would be:
     Require all granted
   </Directory>
 </IfModule>
+
+```
+
+As a VirtualHost
+
+```
+<VirtualHost *:80>
+  ServerName torrent.yourwebsite.com
+  DocumentRoot /usr/share/webapps/rutorrent
+  <Directory "/usr/share/webapps/rutorrent">
+     Options -Indexes -MultiViews
+     Require all granted
+     AllowOverride all
+  </Directory>
+</VirtualHost>
 
 ```
 

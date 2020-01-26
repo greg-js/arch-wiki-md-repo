@@ -164,7 +164,7 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 *   **[RKWard](https://en.wikipedia.org/wiki/RKWard "wikipedia:RKWard")** — Frontend for the statistical language R.
 
-	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://aur.archlinux.org/packages/rkward/)
+	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://www.archlinux.org/packages/?name=rkward)
 
 #### 資料評估
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=570958) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=596093) na versão em inglês.
 
 Artigos relacionados
 
@@ -6,7 +6,7 @@ Artigos relacionados
 
 O **Arch Linux Archive** (também conhecido como **ALA**), antigamente conhecido como **Arch Linux Rollback Machine** (ou **ARM**), armazena *snapshots de repositórios oficiais*, *imagens iso* e *tarballs de bootstrap* ao longo do tempo.
 
-**Você pode usá-lo para**
+**Você pode usá-lo para:**
 
 *   Fazer downgrade para uma versão anterior de um pacote (última versão está quebrada, desejo usar a anterior)
 *   Restaurar todos seus pacotes para um momento específico (meu sistema está quebrado, desejo voltar para 2 meses atrás)
@@ -237,6 +237,8 @@ Então, atualize sua base de dados e force o downgrade:
 
 ```
 
+Se você receber erros reclamando de pacotes corrompidos/inválidos devido à assinatura PGP, tente primeiro atualizar separadamente [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) e [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates). Como alternativa, você pode decidir temporariamente [desabilitar verificação de assinatura](/index.php/Pacman/Assinatura_de_pacote#Desabilitando_verificação_de_assinatura "Pacman/Assinatura de pacote") completamente.
+
 **Nota:** [Não é seguro](/index.php/Atualiza%C3%A7%C3%B5es_parciais "Atualizações parciais") misturar os espelhos Archive e os atualizados. No caso de uma falha de download, você acabará ficando com um pacote de *upstream* e você terá pacotes não da mesma época do resto do sistema.
 
 ## Historical Archive
@@ -267,8 +269,8 @@ Você pode, então, acessar a página de detalhes de um pacote por meio de seu i
 Também é possível executar pesquisas com o [archive.org cliente Python](https://github.com/jjjake/internetarchive):
 
 ```
-$ ia search subject:"archlinux package" subject:'mysql'                                                                                       
-{"identifier": "archlinux_pkg_ejabberd-mod_mysql"}                                                                                                           
+$ ia search subject:"archlinux package" subject:'mysql'
+{"identifier": "archlinux_pkg_ejabberd-mod_mysql"}
 {"identifier": "archlinux_pkg_ejabberd-mod_mysql-svn"}
 {"identifier": "archlinux_pkg_gambas3-gb-db-mysql"}
 {"identifier": "archlinux_pkg_gambas3-gb-mysql"}

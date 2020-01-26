@@ -145,7 +145,7 @@ Esta seção somente se aplica a um sistema criptografado. Depois que o disco fo
 
 É importante notar que em [quase](#Partição_de_boot_(GRUB)) todo caso é necessário uma partição separada para `/boot` que deve se manter não criptografada, porquê o gerenciador de boot precisa acessar o diretório}} para carregar o initramfs/módulos de encriptação necessários para o resto do sistema (veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para detalhes). Se preocupado com a segurança, veja [dm-crypt/Especificidades#Protegendo a partição de boot não criptografada](/index.php/Dm-crypt/Especificidades#Protegendo_a_partição_de_boot_não_criptografada "Dm-crypt/Especificidades").
 
-Outro fator importante a se levar em conta é como o swap e o sistema de suspensão serão tratados, veja [dm-crypt/Swap criptografado](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+Outro fator importante a se levar em conta é como o swap e o sistema de suspensão serão tratados, veja [dm-crypt/Swap criptografada](/index.php/Dm-crypt/Swap_criptografada "Dm-crypt/Swap criptografada").
 
 ### Partições físicas
 
@@ -160,7 +160,7 @@ Se mais flexibilidade é necessária, dm-crypt pode coexistir com outros disposi
 
 ### Subvolumes do btrfs
 
-[Btrfs](/index.php/Btrfs "Btrfs") tem uma [funcionalidade de subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") que podem ser usados com dm-crypt, tirando a necessidade de usar LVM se nenhum outro sistema de arquivos for usado. No entanto, note que arquivos swap não são [suportados](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) pelo brtrfs antes do Linux 5.0, então uma partição [swap criptografada](/index.php/Encrypted_swap "Encrypted swap") necessária se quer usar [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") no Linux <5.0 (exemplo [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). Veja também [dm-crypt/Criptografando todo um sistema#Subvolumes do Btrfs com swap](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Subvolumes_do_Btrfs_com_swap "Dm-crypt/Criptografando todo um sistema").
+[Btrfs](/index.php/Btrfs "Btrfs") tem uma [funcionalidade de subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") que podem ser usados com dm-crypt, tirando a necessidade de usar LVM se nenhum outro sistema de arquivos for usado. No entanto, note que arquivos swap não são [suportados](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) pelo brtrfs antes do Linux 5.0, então uma partição [swap criptografada](/index.php/Swap_criptografada "Swap criptografada") necessária se quer usar [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") no Linux <5.0 (exemplo [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). Veja também [dm-crypt/Criptografando todo um sistema#Subvolumes do Btrfs com swap](/index.php/Dm-crypt/Criptografando_todo_um_sistema#Subvolumes_do_Btrfs_com_swap "Dm-crypt/Criptografando todo um sistema").
 
 ### Partição de boot (GRUB)
 

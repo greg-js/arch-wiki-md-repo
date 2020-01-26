@@ -30,13 +30,16 @@ The [ext4](/index.php/Ext4 "Ext4"), [F2FS](/index.php/F2FS "F2FS"), and [UBIFS](
 
 ## Alternatives to consider
 
-If you want to protect an entire file system with one password, then block device encryption with [dm-crypt](/index.php/Dm-crypt "Dm-crypt") is generally a better option, as it ensures that all file system metadata is encrypted. fscrypt is most useful if you only want to encrypt specific directories, or if you want different encrypted directories to be unlockable independently—for example, per-user encrypted home directories.
+If you want to protect an entire file system with one password, then block device encryption with [dm-crypt](/index.php/Dm-crypt "Dm-crypt") (LUKS) is generally a better option, as it ensures that **all** files on the filesystem are encrypted, and also that all file system metadata is encrypted. fscrypt is most useful if you only want to encrypt specific directories, or if you want different encrypted directories to be unlockable independently—for example, per-user encrypted home directories.
 
-Unlike [eCryptfs](/index.php/ECryptfs "ECryptfs"), fscrypt is not a stacked file system, i.e. it is supported by file systems natively. This makes fscrypt more memory-efficient. fscrypt also uses more up-to-date cryptography, and it does not require setuid binaries. Also, eCryptfs is no longer being actively developed, and its largest users have migrated to dm-crypt (Ubuntu) or to fscrypt (Android and Chrome OS).
+Unlike [eCryptfs](/index.php/ECryptfs "ECryptfs"), fscrypt is not a stacked file system, i.e. it is supported by file systems natively. This makes fscrypt more memory-efficient. fscrypt also uses more up-to-date cryptography than eCryptfs, and it does not require setuid binaries. Also, eCryptfs is no longer being actively developed, and its largest users have migrated to dm-crypt (Ubuntu) or to fscrypt (Chrome OS).
 
 See [disk encryption](/index.php/Disk_encryption "Disk encryption") for more information about other encryption solutions, and about what encryption does and does not do.
 
-**Note:** The `e4crypt` tool from [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) can be used as an alternative to the `fscrypt` tool. However, this is not recommended since `e4crypt` is missing many basic features and is no longer being actively developed.
+**Note:**
+
+*   It is possible to use fscrypt in combination with [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), with each encryption layer serving a different purpose. For example, the file system itself could be protected by dm-crypt using a less secure method, like a TPM tied into "secure boot" or a password known to all the system's users, while each user's home directory could also be protected by fscrypt using a password known only to that user.
+*   The `e4crypt` tool from [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) can be used as an alternative to the `fscrypt` tool. However, this is not recommended since `e4crypt` is missing many basic features and is no longer being actively developed.
 
 ## Preparations
 
@@ -45,6 +48,8 @@ See [disk encryption](/index.php/Disk_encryption "Disk encryption") for more inf
 All [officially supported kernels](/index.php/Kernel#Officially_supported_kernels "Kernel") support fscrypt on ext4, F2FS, and UBIFS.
 
 If you are using a custom kernel version 5.1 or later, make sure `CONFIG_FS_ENCRYPTION=y` is set. For older kernels, see [the documentation](https://github.com/google/fscrypt#runtime-dependencies).
+
+It is also helpful for the kernel version to be 5.4 or later, as this allows the use of v2 encryption policies. There are several [security](https://www.kernel.org/doc/html/latest/filesystems/fscrypt.html#limitations-of-v1-policies) and [usability](https://github.com/google/fscrypt#cant-log-in-with-ssh-even-when-users-encrypted-home-directory-is-unlocked) issues with v1 encryption policies.
 
 ### File system
 
@@ -106,6 +111,13 @@ where `*mountpoint*` is where the file system is mounted, e.g. `/home`.
 This creates the directory `*mountpoint*/.fscrypt` to store fscrypt policies and protectors.
 
 **Warning:** Never delete the `.fscrypt` directory; otherwise you will lose access to your encrypted files.
+
+If you are using kernel version 5.4 or later and you are okay with your files only being accessible with kernel version 5.4 or later, you should also enable v2 encryption policies. To do this, change the line in `/etc/fscrypt.conf` that says `"policy_version": "1"` to:
+
+```
+"policy_version": "2"
+
+```
 
 ### Auto-unlocking directories
 

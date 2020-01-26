@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2019-10-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=580621) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=596073) na versão em inglês.
 
 Artigos relacionados
 
@@ -16,7 +16,7 @@ O sistema de compilação do Arch *(Arch build system)* é um sistema *tipo port
 
 *Ports* é um sistema usado por *BSD para automatizar o processo de compilação de software a partir do código-fonte. O sistema usa um *port* para baixar, descompactar, patch, compilar e instalar o software dado. Um *port* é meramente um pequeno diretório no computador do usuário, nomeado pelo software correspondente para ser instalado, que contém uns poucos arquivos com as instruções para compilar e instalar o software a partir dos fontes. Isso torna a instalação de softwares tão simples quanto digitar `make` ou `make install clean` dentro de diretório de portação.
 
-ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usando o SVN. Essa árvore representa, mas não contém, todos os softwares oficiais do Arch. Subdiretórios não contêm o pacote de software nem o fonte, e sim um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e, algumas vezes, outros arquivos. Ao executar [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") dentro de um diretório contendo um PKGBUILD, o software é primeiro compilado e então empacotado dentro do diretório de compilação. Então, você pode usar [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para instalar ou atualizar seu novo pacote.
+ABS é um conceito similar. Uma parte do ABS é um repositório SVN e um repositório Git equivalente. O repositório contém um diretório correspondente a cada pacote disponível no Arch Linux. Os diretórios do repositório contêm um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") (e às vezes outros arquivos) e não contêm a fonte do software nem o binário. Ao emitir [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") dentro de um diretório, as fontes do software são baixadas, o software é compilado e empacotado no diretório de compilação. Então, você pode usar [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para instalar o pacote.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -24,28 +24,31 @@ ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode 
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Visão geral de ABS](#Visão_geral_de_ABS)
-    *   [1.1 Árvore SVN](#Árvore_SVN)
-*   [2 Por que eu iria querer usar o ABS?](#Por_que_eu_iria_querer_usar_o_ABS?)
-*   [3 Como usar o ABS](#Como_usar_o_ABS)
-    *   [3.1 Obtendo fonte de PKGBUILD usando SVN](#Obtendo_fonte_de_PKGBUILD_usando_SVN)
-        *   [3.1.1 Pré-requisitos](#Pré-requisitos)
-        *   [3.1.2 Checkout não-recursivo](#Checkout_não-recursivo)
-        *   [3.1.3 Fazer checkout de um pacote](#Fazer_checkout_de_um_pacote)
-    *   [3.2 Obtendo fonte de PKGBUILD usando Git](#Obtendo_fonte_de_PKGBUILD_usando_Git)
-    *   [3.3 Compilar pacote](#Compilar_pacote)
+*   [1 Visão geral](#Visão_geral)
+    *   [1.1 Árvore de repositório](#Árvore_de_repositório)
+*   [2 Casos de uso](#Casos_de_uso)
+*   [3 Uso](#Uso)
+    *   [3.1 Obtendo fonte de PKGBUILD](#Obtendo_fonte_de_PKGBUILD)
+        *   [3.1.1 Obtebdo fonte de PKGBUILD usando SVN](#Obtebdo_fonte_de_PKGBUILD_usando_SVN)
+            *   [3.1.1.1 Pré-requisitos](#Pré-requisitos)
+            *   [3.1.1.2 Checkout não-recursivo](#Checkout_não-recursivo)
+            *   [3.1.1.3 Fazer checkout de um pacote](#Fazer_checkout_de_um_pacote)
+        *   [3.1.2 Obtendo fonte de PKGBUILD usando Git](#Obtendo_fonte_de_PKGBUILD_usando_Git)
+    *   [3.2 Compilar pacote](#Compilar_pacote)
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Preserve pacotes modificados](#Preserve_pacotes_modificados)
     *   [4.2 Faça checkout de uma versão anterior de um pacote](#Faça_checkout_de_uma_versão_anterior_de_um_pacote)
 *   [5 Outras ferramentas](#Outras_ferramentas)
 
-## Visão geral de ABS
+## Visão geral
 
 "ABS" pode ser usado como um termo guarda-chuva já que ele inclui e depende de vários outros componentes; portanto, apesar de tecnicamente impreciso, "ABS" pode ser referir às seguintes ferramentas como um kit de ferramentas completos:
 
-	Árvore SVN
+	Árvore do repositório
 
 	A estrutura de diretório contendo arquivos necessários para compilar todos os pacotes oficiais, mas não os pacotes em si nem os arquivos fontes do software. Ela está disponível nos repositórios [svn](https://www.archlinux.org/svn/) e [git](https://projects.archlinux.org/svntogit/packages.git/).
+
+Consulte a seção [#Árvore de repositório](#Árvore_de_repositório) para mais informações.
 
 	[PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
 
@@ -65,9 +68,9 @@ ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode 
 
 **Atenção:** PKGBUILDs oficiais presumem que pacotes são [compilados em um *chroot* limpo](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"). Compilação de software em um sistema de compilação *sujo* pode falhar ou causar comportamentos inesperados em tempo de execução, porque se o sistema de compilação detecta dependências dinamicamente, o resultado depende de quais pacotes estão disponíveis no sistema de compilação.
 
-### Árvore SVN
+### Árvore de repositório
 
-Os [repositórios](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") *core*, *extra* e *testing* estão no repositório SVN *packages* para *[checkout](#Checkout_não-recursivo)*. Os repositórios *community* e *multilib* estão no repositório SVN *community*.
+Os [repositórios](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") *core*, *extra* e *testing* estão no repositório *packages* para *[checkout](#Checkout_não-recursivo)*. Os repositórios *community* e *multilib* estão no repositório *community*.
 
 Cada pacote possui seu próprio subdiretório. Dentro dele há diretórios `repos` e `trunk`. `repos` é expandido por nome de repositório (ex.: *core*) e arquitetura. PKGBUILDs e arquivos localizados em `repos` são usados em compilações oficiais. Arquivos localizados no `trunk` são usados pelos desenvolvedores na preparação antes de serem copiados para `repos`.
 
@@ -87,31 +90,33 @@ acl/trunk/PKGBUILD
 
 O código-fonte do pacote não está presente no diretório ABS. Em vez disso, o `PKGBUILD` contém uma URL que vai baixar o código-fonte quando o pacote é compilado.
 
-## Por que eu iria querer usar o ABS?
+## Casos de uso
 
-O sistema de compilação do Arch é usado para:
+Casos de uso do ABS são:
 
-*   Compilar ou recompilar um pacote, para qualquer motivo
+*   Em qualquer caso que você queria compilar ou recompilar um pacote
 *   *Make* e instalar novos pacotes de fontes de software para os quais nenhum pacote está instalado ainda (veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"))
-*   Personalizar pacotes existentes para atender suas necessidades (habilitar ou desabilitar opções, *patching*)
+*   Personalizar pacotes existentes para atender suas necessidades (por exemplo, habilitar ou desabilitar opções, *patching*)
 *   Recompilar todo o seu sistema usando suas *flags* de compilador, "à la FreeBSD" (ex.: com [pacman-src-git](https://aur.archlinux.org/packages/pacman-src-git/)))
 *   Compilar e instalar, sem interferências, seu próprio kernel personalizado (veja [Compilação de kernel](/index.php/Kernels_(Portugu%C3%AAs)#Compilação "Kernels (Português)"))
-*   Fazer com que módulos de kernel funcionem com seu kernel personalizado
+*   Fazer com que módulos de kernel funcionem com um kernel personalizado
 *   Compilar e instalar facilmente uma versão mais nova, antiga, beta ou de desenvolvimento de um pacote do Arch editando o número de versão no PKGBUILD
 
-ABS não é necessário para usar o Arch Linux, mas é útil para automatizar certas tarefas de compilação de fonte.
+O ABS automatiza determinadas tarefas relacionadas à compilação a partir do código-fonte. Como alternativa ao uso do ABS, você pode executar essas tarefas manualmente.
 
-## Como usar o ABS
+## Uso
 
 Para obter o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") necessário para compilar um certo pacote a partir do fonte, você pode usar uma abordagem baseada em [SVN](/index.php/SVN "SVN") ou [Git](/index.php/Git "Git") usando o pacote [asp](https://www.archlinux.org/packages/?name=asp) que é uma interface para os repositórios svntogit. A seguir, o método baseado em svn, bem como o [método baseado em git](#Obtendo_fonte_de_PKGBUILD_usando_Git), são descritos.
 
-### Obtendo fonte de PKGBUILD usando SVN
+### Obtendo fonte de PKGBUILD
 
-#### Pré-requisitos
+#### Obtebdo fonte de PKGBUILD usando SVN
+
+##### Pré-requisitos
 
 [Instale](/index.php/Instale "Instale") o pacote [subversion](https://www.archlinux.org/packages/?name=subversion).
 
-#### Checkout não-recursivo
+##### Checkout não-recursivo
 
 **Atenção:** Não baixe todo o repositório; siga apenas as instruções abaixo. O repositório SVN todo é gigantesco. Não apenas vai gastar uma quantidade absurda de espaço em disco, mas também vai ocupar o servidor do archlinux.org para você baixá-lo. Se você abusar desse serviço, seu endereço pode ser bloqueado. Nunca use o SVN público para qualquer tipo de *scripting*.
 
@@ -131,7 +136,7 @@ $ svn checkout --depth=empty svn://svn.archlinux.org/community
 
 Em ambos casos, ele cria um diretório vazio, mas ele sabe que é um *checkout* de svn.
 
-#### Fazer checkout de um pacote
+##### Fazer checkout de um pacote
 
 No diretório contendo o repositório svn que você fez checkout (isto é, *packages* ou *community*), faça:
 
@@ -157,7 +162,9 @@ $ svn update
 
 ```
 
-### Obtendo fonte de PKGBUILD usando Git
+#### Obtendo fonte de PKGBUILD usando Git
+
+Como pré-condição, [instale](/index.php/Instale "Instale") o pacote [asp](https://www.archlinux.org/packages/?name=asp). [Asp](https://github.com/falconindy/asp) é uma ferramenta para gerenciar os arquivos-fontes de compilação usados para criar pacotes do Arch Linux. Usa a interface git, que oferece fontes mais atualizadas. Consulte também o tópico do fórum do Arch Linux BBS [[1]](https://bbs.archlinux.org/viewtopic.php?id=185075).
 
 Para clonar o repositório svntogit para um pacote específico, use:
 
@@ -181,9 +188,11 @@ $ asp export *nome-pacote*
 
 ### Compilar pacote
 
-Veja [makepkg (Português)#Configuração](/index.php/Makepkg_(Portugu%C3%AAs)#Configuração "Makepkg (Português)") sobre como configurar o *makepkg* para compilar pacotes dos [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você fez *checkout*.
+Configure o *makepkg* para compilar pacotes dos [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você fez *checkout*, como dado em [makepkg (Português)#Configuração](/index.php/Makepkg_(Portugu%C3%AAs)#Configuração "Makepkg (Português)").
 
-Em seguida, copie o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você deseja modificar para uma nova localização. Então, faça as modificações desejadas e use *makepkg*, como descrito em [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)"), para criar e instalar o novo pacote.
+Em seguida, copie o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você deseja modificar para uma nova localização.
+
+Então, faça as modificações desejadas e use *makepkg*, como descrito em [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)"), para criar e instalar o novo pacote.
 
 ## Dicas e truques
 
@@ -231,4 +240,3 @@ Também é possível fazer *checkout* de pacotes nas versões antes de eles tere
 ## Outras ferramentas
 
 *   [pbget](http://xyne.archlinux.ca/projects/pbget/) - obtém PKGBUILDs de pacotes individuais diretamente da interface web. Inclui suporte ao AUR.
-*   [asp](https://github.com/falconindy/asp) - uma ferramenta para gerenciar a compilação de arquivos fontes usados para criar pacotes do Arch Linux. Usa a interface git que oferece fontes mais atualizados.

@@ -602,7 +602,7 @@ Explanation:
 
 *   **pdfrw** — A pure Python library that reads and writes PDFs.
 
-	[https://github.com/pmaupin/pdfrw](https://github.com/pmaupin/pdfrw) || [python-pdfrw](https://www.archlinux.org/packages/?name=python-pdfrw), [python2-pdfrw](https://www.archlinux.org/packages/?name=python2-pdfrw)
+	[https://github.com/pmaupin/pdfrw](https://github.com/pmaupin/pdfrw) || [python-pdfrw](https://www.archlinux.org/packages/?name=python-pdfrw), [python2-pdfrw](https://aur.archlinux.org/packages/python2-pdfrw/)
 
 *   **PyPDF2** — A pure-Python library built as a PDF toolkit.
 

@@ -24,7 +24,8 @@ The main use-case is to enable server-side hardware-accelerated 3D rendering for
     *   [5.4 Problem: vglrun fails with ERROR: Could not connect to VGL client.](#Problem:_vglrun_fails_with_ERROR:_Could_not_connect_to_VGL_client.)
     *   [5.5 Problem: Error messages about /etc/opt/VirtualGL/vgl_xauth_key not existing](#Problem:_Error_messages_about_/etc/opt/VirtualGL/vgl_xauth_key_not_existing)
     *   [5.6 Problem: vglrun fails with ERROR: VirtualGL attempted to load the real glXCreatePbuffer function and got the fake one instead.](#Problem:_vglrun_fails_with_ERROR:_VirtualGL_attempted_to_load_the_real_glXCreatePbuffer_function_and_got_the_fake_one_instead.)
-    *   [5.7 Problem: rendering glitches, unusually poor performance, or application errors](#Problem:_rendering_glitches,_unusually_poor_performance,_or_application_errors)
+    *   [5.7 Problem: All applications run with 1 frame per second](#Problem:_All_applications_run_with_1_frame_per_second)
+    *   [5.8 Problem: rendering glitches, unusually poor performance, or application errors](#Problem:_rendering_glitches,_unusually_poor_performance,_or_application_errors)
 *   [6 See also](#See_also)
 
 ## Installation and setup
@@ -293,6 +294,10 @@ so it only runs on the first X server fixed my problem.
 ### Problem: vglrun fails with ERROR: VirtualGL attempted to load the real glXCreatePbuffer function and got the fake one instead.
 
 This means that VirtualGL is trying to load a function from the wrong library. You can specify which OpenGL library to use by setting `LD_PRELOAD` to the path of the library. `/usr/lib/libGL.so` appears to work for 64-bit applications. Keep in mind that 32-bit applications (like Steam or Wine) will require 32-bit OpenGL. If you need to use both 32-bit and 64-bit libraries, you can load them both with `LD_PRELOAD="/path/to/libGL.so /path/to/lib32/libGL.so"`.
+
+### Problem: All applications run with 1 frame per second
+
+If you use newer Nvidia drivers (e.g., version 440) you might be affected by a screen locking problem, which will reduce the framerate to approx. 1 frame per second according to the [VirtualGL mailing list](https://groups.google.com/d/msg/virtualgl-users/d8k1ujwKJXo/2faAa9yNAQAJ). Instead of downgrading the Nvidia driver one workaround is to set `HardDPMS` to `false` in your X server configuration (see [NVIDIA/Troubleshooting#Driver 415: HardDPMS](/index.php/NVIDIA/Troubleshooting#Driver_415:_HardDPMS "NVIDIA/Troubleshooting") for details).
 
 ### Problem: rendering glitches, unusually poor performance, or application errors
 

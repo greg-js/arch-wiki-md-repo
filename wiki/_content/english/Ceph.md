@@ -12,9 +12,9 @@ From [Ceph.com](https://ceph.com/):
 
 	Ceph is a distributed object store and file system designed to provide excellent performance, reliability and scalability.
 
-**Warning:** The recommended installation method for Ceph is via an [upstream tool](https://github.com/ceph/ceph-deploy) which uses [SSH](/index.php/SSH "SSH") to connect to machines with the purpose of automatically installing, configuring, and managing Ceph. The upstream tool (ceph-deploy) does not currently support [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Until ceph-deploy includes support for Arch Linux, it is not possible to use the [quick installation method](http://ceph.com/docs/master/start/) due to the extensive use of the tool. The only other officially documented installation method is the [manual deployment guide](http://ceph.com/docs/master/install/manual-deployment/). This article therefore documents the manual procedure until Arch Linux is supported by the quick method.
+**Warning:** The recommended installation method for Ceph is via an [upstream tool](https://github.com/ceph/ceph-deploy) which uses [SSH](/index.php/SSH "SSH") to connect to machines with the purpose of automatically installing, configuring, and managing Ceph. The upstream tool (ceph-deploy) does not currently support [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Until ceph-deploy includes support for Arch Linux, it is not possible to use the [quick installation method](https://docs.ceph.com/docs/master/start/) due to the extensive use of the tool. The only other officially documented installation method is the [manual deployment guide](https://docs.ceph.com/docs/master/install/manual-deployment/). This article therefore documents the manual procedure until Arch Linux is supported by the quick method.
 
-The official documentation [states](http://ceph.com/docs/master/install/#deploy-a-cluster-manually) "the manual procedure is primarily for exemplary purposes for those developing deployment scripts with Chef, Juju, Puppet, etc.".
+The official documentation [states](https://docs.ceph.com/docs/master/install/#deploy-a-cluster-manually) "the manual procedure is primarily for exemplary purposes for those developing deployment scripts with Chef, Juju, Puppet, etc.".
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -32,7 +32,7 @@ The official documentation [states](http://ceph.com/docs/master/install/#deploy-
 
 ## Terminology
 
-**Note:** A full glossary is available in the [official documentation](http://ceph.com/docs/master/glossary/).
+**Note:** A full glossary is available in the [official documentation](https://docs.ceph.com/docs/master/glossary/).
 
 *   **Client** : Something which connects to a Ceph cluster to access data but is not part of the Ceph cluster itself.
 *   **MONs** : Also known as monitors, these store cluster state and maps containing information about the cluster such as running services and data locations.
@@ -51,7 +51,7 @@ Install [ceph](https://www.archlinux.org/packages/?name=ceph) on all nodes that 
 
 ### NTP Client
 
-**Warning:** You should synchronise the clocks on your monitor nodes to prevent clock drift (see [System time#Time skew](/index.php/System_time#Time_skew "System time") for details), which can degrade the performance of your cluster or stop it from functioning entirely. The [official documentation](http://docs.ceph.com/docs/master/rados/configuration/mon-config-ref/#clock:) recommends that nodes run some form of clock synchronisation.
+**Warning:** You should synchronise the clocks on your monitor nodes to prevent clock drift (see [System time#Time skew](/index.php/System_time#Time_skew "System time") for details), which can degrade the performance of your cluster or stop it from functioning entirely. The [official documentation](https://docs.ceph.com/docs/master/rados/configuration/mon-config-ref/#clock) recommends that nodes run some form of clock synchronisation.
 
 Install and run a time synchronisation client on the node. See [Time synchronization](/index.php/Time_synchronization "Time synchronization") for details.
 
@@ -61,7 +61,7 @@ Before a storage cluster can operate, the monitors for that cluster must be boot
 
 The upstream Ceph documentation is well-written and kept updated with the latest releases.
 
-To boostrap a storage cluster, follow the steps documented in the [official manual deployment guide](http://docs.ceph.com/docs/master/install/manual-deployment/#monitor-bootstrapping).
+To boostrap a storage cluster, follow the steps documented in the [official manual deployment guide](https://docs.ceph.com/docs/master/install/manual-deployment/#monitor-bootstrapping).
 
 ### Starting a monitor
 
@@ -73,7 +73,7 @@ As an example, for a monitor named `node1` start and enable `ceph-mon@node1.serv
 
 *   Official site
     *   [Homepage](https://ceph.com)
-    *   [Documentation](http://ceph.com/docs/master/)
+    *   [Documentation](https://docs.ceph.com/docs/master/)
 *   Official source code
     *   [GitHub organization](https://github.com/ceph)
     *   [Ceph](https://github.com/ceph/ceph)

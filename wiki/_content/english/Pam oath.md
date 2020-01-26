@@ -106,7 +106,14 @@ The last number is actually the code you can use to log in right now, but more i
 
 ```
 
-Of course change *user*, *machine* and *DK2DEFASV26A====* accordingly. Once done, you can visualize your qrcode with your preferred image visualizer application and use that to configure your phone. It is pretty straight forward to use FreeOTP to then take a screenshot of that *.png* and get it to display OTP pass when needed.
+Of course change *user*, *machine* and *DK2DEFASV26A====* accordingly. Once done, you can visualize your qrcode with your preferred image visualizer application and use that to configure your phone. Alternatively you may generate the QR code directly onto terminal with:
+
+```
+   qrencode -t UTF8 'otpauth://totp/*user*@*machine*?secret=*DK2DEFASV26A===='*
+
+```
+
+It is pretty straight forward to use FreeOTP to then take a screenshot of that *.png* (or ASCII-art like image) and get it to display OTP pass when needed.
 
 **Note:** The secret key of your users is the most important information in this system. Once you setup a phone to provide OTP, it does have that key. The qr code in that *.png* file does have that key. You need to take extra care of this file. They should only be stored on encrypted medium (Your phone need to be using encryption for any sane level of security). If not even confined in a sandbox like Samsung Knox to prevent third party application to potentially access them.
 

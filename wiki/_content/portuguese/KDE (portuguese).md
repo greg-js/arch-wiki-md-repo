@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [KDE](/index.php/KDE "KDE"). Data da última tradução: 2019-11-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=589703) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [KDE](/index.php/KDE "KDE"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=595656) na versão em inglês.
 
 Artigos relacionados
 
@@ -183,9 +183,7 @@ Alguns programas GTK2 como [vuescan-bin](https://aur.archlinux.org/packages/vues
 
 ##### Rosto
 
-O rosto do usuário pode ser definido por *Configurações do sistema > Detalhes da conta > Gerenciador de Usuários*.
-
-Se *Gerenciador de Usuários* não foi encontrado, instale [user-manager](https://www.archlinux.org/packages/?name=user-manager) para obtê-lo.
+O plasma e o [SDDM](/index.php/SDDM "SDDM") usarão um arquivo PNG encontrado em `~/.face.icon` como avatar do usuário. Para configurar com uma interface gráfica, você pode usar *Configurações do sistema > Detalhes da conta > Gerenciador de Usuários*, que pode precisar ser [instalado](/index.php/Instala "Instala") primeiro (consulte o pacote [user-manager](https://www.archlinux.org/packages/?name=user-manager)). O ícone padrão pode ser encontrado em `/usr/share/sddm/faces/`.
 
 ##### Widgets
 
@@ -561,7 +559,7 @@ A configuração através da interface gráfica pode ser complicada: se o númer
 
 Você precisará instalar o KDE Connect tanto no seu computador quanto no seu Android. Para o lado do PC, [instale](/index.php/Instale "Instale") o pacote [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect). Do lado do Android, instale o KDE Connect do [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) ou do [F-Droid](https://f-droid.org/packages/org.kde.kdeconnect_tp/). Se você quiser navegar pelo sistema de arquivos do seu telefone, você também precisa instalar o [sshfs](https://www.archlinux.org/packages/?name=sshfs) e configurar as exposições do sistema de arquivos em seu aplicativo Android.
 
-É possível usar o KDE Connect mesmo que você não use ao ambiente Plasma. Para ambientes de desktop que usam AppIndicators, como o Unity, instale também o pacote [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/). Para usuários do GNOME, uma melhor integração pode ser obtida instalando [gnome-shell-extension-gsconnect](https://aur.archlinux.org/packages/gnome-shell-extension-gsconnect/) em vez de [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect).
+É possível usar o KDE Connect mesmo que você não use ao ambiente Plasma. Para ambientes de desktop que usam AppIndicators, como o Unity, instale também o pacote [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/). Para usuários do GNOME, uma melhor integração pode ser obtida instalando [gnome-shell-extension-gsconnect](https://aur.archlinux.org/packages/gnome-shell-extension-gsconnect/) em vez de [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect). Para iniciar o daemon do KDE Connect manualmente, execute `/usr/lib/kdeconnectd`.
 
 Se você usa um [firewall](/index.php/Firewall "Firewall"), você precisa abrir as portas UDP e TCP `1714` até `1764`. Veja [https://community.kde.org/KDEConnect#Troubleshooting](https://community.kde.org/KDEConnect#Troubleshooting).
 
@@ -875,5 +873,9 @@ Ao usar o TeamViewer, ele pode se comportar lentamente se você usar animações
 ## Veja também
 
 *   [Site do KDE](https://www.kde.org/)
-*   [Rastreador de erros do KDE](https://bugs.kde.org/)
+*   [Notícias do KDE](https://dot.kde.org/)
+*   [KDE Blogs](https://planet.kde.org/)
+*   [KDE Forums](https://forum.kde.org/)
+*   [KDE Wikis](https://wiki.kde.org/)
+*   [Rastreador e relatador de erros do KDE](https://bugs.kde.org/)
 *   [Blog do Martin Graesslin](https://blog.martin-graesslin.com/blog/kategorien/kde/)

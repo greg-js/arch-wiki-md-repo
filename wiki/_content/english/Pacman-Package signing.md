@@ -228,7 +228,13 @@ error: *package-name*: signature from "*packager*" is unknown trust
 
 ```
 
-This occurs because the `*packager*`'s key used in the package `*package-name*` is not present and/or not trusted in the local pacman-key gpg database. Pacman does not seem to always be able to check if the key was received and marked as trusted before continuing. Mitigate by [manually signing the untrusted key locally](#Adding_unofficial_keys) or [resetting all the keys](#Resetting_all_the_keys).
+This occurs because the `*packager*`'s key used in the package `*package-name*` is not present and/or not trusted in the local pacman-key gpg database. Pacman does not seem to always be able to check if the key was received and marked as trusted before continuing. This could also be because a key has expired since it was added to your keychain.
+
+Mitigate by:
+
+*   Refreshing your keys with `pacman-key --refresh-keys`, or
+*   [manually signing the untrusted key locally](#Adding_unofficial_keys), or
+*   [resetting all the keys](#Resetting_all_the_keys).
 
 ### Updating keys via proxy
 

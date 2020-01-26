@@ -183,7 +183,7 @@
 
 *   **[RKWard](https://en.wikipedia.org/wiki/ru:RKWard "wikipedia:ru:RKWard")** — Фронтенд к статистическому языку R
 
-	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://aur.archlinux.org/packages/rkward/)
+	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://www.archlinux.org/packages/?name=rkward)
 
 *   **[RStudio](https://en.wikipedia.org/wiki/ru:RStudio "wikipedia:ru:RStudio")** — Мощная и продуктивная IDE для R, написанная на Qt
 

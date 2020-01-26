@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Xorg](/index.php/Xorg "Xorg"). Data da última tradução: 2020-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=594345) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Xorg](/index.php/Xorg "Xorg"). Data da última tradução: 2020-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=594367) na versão em inglês.
 
 Artigos relacionados
 
@@ -409,7 +409,7 @@ Alguns gerenciadores de janela (por exemplo: [compiz](/index.php/Compiz "Compiz"
 
 ### Lista de gerenciadores de composição
 
-*   **[Compton](/index.php/Compton "Compton")** — Compositor (um fork do xcompmgr-dana)
+*   **[Picom](/index.php/Picom "Picom")** — Compositor (um fork do Compton)
 
 	[https://github.com/yshui/picom](https://github.com/yshui/picom) || [picom](https://www.archlinux.org/packages/?name=picom)
 

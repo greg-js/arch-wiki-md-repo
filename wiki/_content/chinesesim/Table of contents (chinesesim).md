@@ -71,7 +71,7 @@
 | <small>4.7.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics tablet (简体中文)") <small>(1)</small> |
 | <small>4.7.2.</small> [键盘](/index.php/Category:Keyboards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Keyboards (简体中文)") <small>(5)</small> |
 | <small>4.7.3.</small> [鼠标](/index.php/Category:Mice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mice (简体中文)") <small>(3)</small> |
-| <small>4.8.</small> [笔记本电脑](/index.php/Category:Laptops_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Laptops (简体中文)") <small>(4)</small> |
+| <small>4.8.</small> [笔记本电脑](/index.php/Category:Laptops_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Laptops (简体中文)") <small>(5)</small> |
 | <small>4.8.1.</small> [Acer](/index.php/Category:Acer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Acer (简体中文)") <small>(1)</small> |
 | <small>4.8.2.</small> [Apple](/index.php/Category:Apple_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Apple (简体中文)") <small>(1)</small> |
 | <small>4.8.3.</small> [Dell](/index.php/Category:Dell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dell (简体中文)") <small>(1)</small> |

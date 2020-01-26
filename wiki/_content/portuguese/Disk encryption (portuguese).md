@@ -1,6 +1,6 @@
-Related articles
+Artigos relacionados
 
-*   [dm-crypt (Português)](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)")
+*   [dm-crypt](/index.php/Dm-crypt_(Portugu%C3%AAs) "Dm-crypt (Português)")
 *   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
 *   [eCryptfs](/index.php/ECryptfs "ECryptfs")
 *   [EncFS](/index.php/EncFS "EncFS")
@@ -11,7 +11,7 @@ Related articles
 *   [GnuPG](/index.php/GnuPG "GnuPG")
 *   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
 
-**Status de tradução:** Esse artigo é uma tradução de [Disk encryption](/index.php/Disk_encryption "Disk encryption"). Data da última tradução: 2020-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=593622) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Disk encryption](/index.php/Disk_encryption "Disk encryption"). Data da última tradução: 2020-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=594879) na versão em inglês.
 
 Este artigo discute sobre software de [Criptografia de disco](https://en.wikipedia.org/wiki/disk_encryption "wikipedia:disk encryption"), que des-/criptografa dados escritos / lidos de um [dispositivo de bloco](/index.php/Dispositivo_de_bloco "Dispositivo de bloco"), [partição de disco](/index.php/Parti%C3%A7%C3%A3o_de_disco "Partição de disco") ou diretório. Exemplos de dispositivos de blocos são discos rígidos, unidade flash e DVDs.
 
@@ -44,6 +44,11 @@ Para encriptação total de disco (full-disk encryption, FDE), veja [dm-crypt/Cr
     *   [5.3 Metadados criptográficos](#Metadados_criptográficos)
     *   [5.4 Cifras e modos de operação](#Cifras_e_modos_de_operação)
     *   [5.5 Negação plausível](#Negação_plausível)
+*   [6 Backup para cenários de criptografia de disco](#Backup_para_cenários_de_criptografia_de_disco)
+    *   [6.1 Encriptação do dispositivo de bloco](#Encriptação_do_dispositivo_de_bloco)
+        *   [6.1.1 Backup da encriptação do dispositivo de bloco](#Backup_da_encriptação_do_dispositivo_de_bloco)
+        *   [6.1.2 Backup do sistema de arquivos ou arquivos](#Backup_do_sistema_de_arquivos_ou_arquivos)
+        *   [6.1.3 Backup do cabeçalho do LUKS](#Backup_do_cabeçalho_do_LUKS)
 
 ## Porque criptografar?
 
@@ -76,7 +81,7 @@ Uma configuração de encriptação de disco muito forte (exemplo, encriptação
 Apesar de que criptografar somente os dados dos usuários (normalmente dentro do diretório home, ou em uma mídia removível como DVD), ser o mais simples e menos intrusivo método, existem pontos a ponderar. Em sistemas de operacionais modernos, muitos processos podem fazer cache e guardar informações sobre dados do usuário ou partes desses dados em areas não criptografadas, como:
 
 *   partições swap
-    *   (soluções potenciais: desabilitar a troca rápida, swapping, ou usar [swap criptografada](/index.php/Encrypted_swap "Encrypted swap"))
+    *   (soluções potenciais: desabilitar a troca rápida, swapping, ou usar [swap criptografada](/index.php/Swap_criptografada "Swap criptografada"))
 *   `/tmp` (arquivos temporários criados pelos programas do usuário)
     *   (soluções potenciais: evite tais programas; monte `/tmp` dentro de um [ramdisk](/index.php/Ramdisk "Ramdisk"))
 *   `/var` (arquivos de log e bancos de dados e semelhantes; por exemplo, [mlocate](/index.php/Mlocate_(Portugu%C3%AAs) "Mlocate (Português)") guarda um índice de todos os arquivos em `/var/lib/mlocate/mlocate.db`)
@@ -248,23 +253,26 @@ Entre outras coisas, você vai precisar responder as seguintes perguntas:
 
 *   Usuário casual bisbilhotando seu disco quando o sistema está desligado / foi roubado / etc.
 *   Um profissional que pode ter acesso de leitura/escrita repetidamente antes ou depois de você usar o seu sistema
-*   Qualquer coisa entre os dois
+*   Qualquer um entre os dois
 
 	O que você quer criptografar?
 
 *   Somente dados do usuário
 *   Dados do usuário e do sistema
-*   Algo entre os dois
+*   Somente dados sensíveis
 
 	Como swap, `/tmp`, etc. deveriam ser tratadas?
 
-*   Ignore, e espere que nenhum dado seja vazado
 *   Desabilite ou monte como ramdisk
-*   Criptografar *(como parte de uma encriptação total de disco, ou separadamente)*
+*   Swap criptografada como
+    *   Um arquivo swap, parte de uma encriptação total de disco
+    *   Uma partição separada
 
 	Como deveriam as partes criptografadas do disco serem abertas?
 
-*   Senhas *(como senha de login, ou separada)*
+*   Senhas
+    *   Mesma senha de login
+    *   Diferente e específica
 *   Keyfile *(exemplo, em um pendrive, que você mantém num local seguro ou carrega consigo)*
 *   Ambas
 
@@ -278,8 +286,8 @@ Entre outras coisas, você vai precisar responder as seguintes perguntas:
 	Como múltiplos usuários deveriam ser acomodados?
 
 *   De forma alguma
-*   Usando senha/chave compartilhada
-*   Senhas/chaves independentes e revogáveis para a mesma parte criptografada do disco
+*   Usando senha (ou keyfile) compartilhada entre todos os usuários
+*   Senhas (ou keyfile) independentes e revogáveis para a mesma parte criptografada do disco
 *   Partes criptografadas do disco separadas para diferentes usuários
 
 E então você pode fazer as escolhas técnicas necessárias (veja [#Métodos disponíveis](#Métodos_disponíveis) acima, e [#Como a criptografia funciona](#Como_a_criptografia_funciona) abaixo), de acordo com:
@@ -525,3 +533,39 @@ Veja também:
 ### Negação plausível
 
 Veja [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_deniability "wikipedia:Plausible deniability").
+
+## Backup para cenários de criptografia de disco
+
+Faça [backup](/index.php/Backup_(Portugu%C3%AAs) "Backup (Português)") dos dados do usuário para se proteger contra a perda destes. Normalmente, o backup deve ser criptografado também.
+
+### Encriptação do dispositivo de bloco
+
+Existem múltiplas opções, você pode fazer backup da encriptação do dispositivo de bloco onde o container criptografado reside como uma imagem, exemplo `/dev/sd*x*`, você pode copiar o sistema de arquivos dentro do container, exemplo `/dev/mapper/*nome_dm*`, ou fazer backup dos arquivos, com [rsync](/index.php/Rsync "Rsync") por exemplo. As seguintes seções listam as vantagens e desvantagens de cada opção.
+
+#### Backup da encriptação do dispositivo de bloco
+
+Um backup do dispositivo de bloco do disco é:
+
+*   criptografado com o mesmo nível de segurança do original
+*   contém seu cabeçalho do LUKS
+*   do mesmo tamanho do seu dispositivo de bloco do disco
+*   não permite, de forma fácil, estratégias de backup como backup incremental, compactação, ou eliminação de dados duplicados
+*   facilmente restaurado para um novo disco, e também para o container criptografado
+
+#### Backup do sistema de arquivos ou arquivos
+
+Um backup do sistema de arquivos ou arquivos:
+
+*   *não* é criptografado do jeito que está
+*   necessita de esforço adicional, deve ser criptografado antes de ser transferido pela rede, ou salvo no disco
+*   não é necessariamente criptografado com o mesmo nível de segurança do original
+*   não contém seu cabeçalho do LUKS
+*   seu tamanho máximo é o espaço usado no sistema de arquivos, por exemplo, veja [partclone](/index.php/Partclone "Partclone")
+*   permite estratégias avançadas como backup incremental, compactação ou eliminação de dados duplicados
+*   precisa de restauração manual do container criptografado para um novo disco, por exemplo ao restaurar o backup do cabeçalho do LUKS
+
+#### Backup do cabeçalho do LUKS
+
+Se está usando LUKS é possível fazer [backup do seu cabeçalho](/index.php/Dm-crypt/Encripta%C3%A7%C3%A3o_de_dispositivo#Backup_e_restauração "Dm-crypt/Encriptação de dispositivo"): faz sentido periodicamente checar e sincronizá-lo, especialmente se chaves foram removidas.
+
+Se no entanto, você tem um backup dos dados, e quer restaurá-los, você pode criar novamente a partição criptografada com LUKS e então restaurar, já que fazer backup do cabeçalho do LUKS é menos importante do que o dos dados.

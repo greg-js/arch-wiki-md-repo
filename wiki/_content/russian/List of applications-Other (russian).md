@@ -323,7 +323,7 @@
 
 *   **oblogout** — Графический скрипт завершения работы для [openbox](/index.php/Openbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Openbox (Русский)"), который также можно использовать с другими оконными менеджерами
 
-	[https://launchpad.net/oblogout](https://launchpad.net/oblogout) || [oblogout](https://www.archlinux.org/packages/?name=oblogout)
+	[https://launchpad.net/oblogout](https://launchpad.net/oblogout) || [oblogout](https://aur.archlinux.org/packages/oblogout/)
 
 *   **obshutdown** — Великолепный менеджер завершения работы, основанный на GTK/Cairo, для openbox и других оконных менеджеров
 

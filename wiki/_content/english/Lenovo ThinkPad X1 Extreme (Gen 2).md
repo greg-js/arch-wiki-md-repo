@@ -41,12 +41,16 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [1.5 Audio](#Audio)
         *   [1.5.1 Audio pop on shutdown and startup](#Audio_pop_on_shutdown_and_startup)
     *   [1.6 Fingerprint](#Fingerprint)
-    *   [1.7 Webcam](#Webcam)
-    *   [1.8 Keyboard](#Keyboard)
-    *   [1.9 Touchpad](#Touchpad)
-        *   [1.9.1 Acceleration](#Acceleration)
-        *   [1.9.2 Two-Finger Right Click](#Two-Finger_Right_Click)
-        *   [1.9.3 Tap Clicking](#Tap_Clicking)
+    *   [1.7 Card reader](#Card_reader)
+        *   [1.7.1 Installation](#Installation)
+        *   [1.7.2 Testing](#Testing)
+    *   [1.8 Webcam](#Webcam)
+    *   [1.9 Keyboard](#Keyboard)
+        *   [1.9.1 Backlight](#Backlight)
+    *   [1.10 Touchpad](#Touchpad)
+        *   [1.10.1 Acceleration](#Acceleration)
+        *   [1.10.2 Two-Finger Right Click](#Two-Finger_Right_Click)
+        *   [1.10.3 Tap Clicking](#Tap_Clicking)
 *   [2 Firmware](#Firmware)
 *   [3 Software](#Software)
     *   [3.1 Throttling fix](#Throttling_fix)
@@ -118,7 +122,7 @@ This allows easy switching between the PRIME offloading feature above, and a mod
 OLED screens have no backlight, brightness cannot be controlled by changing backlight power in the traditional way. Instead, it can be controlled using PWM by enabling following option:
 
 ```
-# echo "options i915 enable_dpcd_backlight=1" >> /etc/modprobe.d/i915.conf
+echo "options i915 enable_dpcd_backlight=1" >> /etc/modprobe.d/i915.conf
 
 ```
 
@@ -162,7 +166,7 @@ The firmware updates currently require the newest version of fwupd and you must 
 using the latest version of the fwupd tool you should be able to run:
 
 ```
-$ fwupdmgr get-devices
+fwupdmgr get-devices
 
 ```
 
@@ -171,7 +175,7 @@ and see a "Prometheus" device in the list.
 Install the firmware by running
 
 ```
-$ fwupdmgr install *.cab
+fwupdmgr install *.cab
 
 ```
 
@@ -183,23 +187,57 @@ You should then be able to enroll your fingerprints with [Fprint#Configuration](
 
 **Note:** For some reason, [the fprint.service can take some time to start. if fprint reports no devices, wait until fprint.service has completely stopped (it should become inactive in systemctl) To fix this, reset the fingerprint data in your bios settings](https://gitlab.freedesktop.org/libfprint/libfprint/issues/207)
 
+### Card reader
+
+The optional card reader that the Lenovo can install in your laptop is a Alcor Micro AU9560\. There are some tools you can use to test your card reader.
+
+#### Installation
+
+Install [ccid](https://www.archlinux.org/packages/?name=ccid) and [opensc](https://www.archlinux.org/packages/?name=opensc) from [official repositories](/index.php/Official_repositories "Official repositories"). Then, [Start](/index.php/Start "Start") and enable `pcscd.socket`.
+
+```
+pacman -S ccid opensc
+
+systemctl enable pcscd
+systemctl start pcscd
+
+```
+
+#### Testing
+
+First, verify that your card reader can be found by pcsc:
+
+```
+opensc-tool --list-readers
+
+```
+
+Now, insert a smart card and run the following to verify that pcsc is able to read your card:
+
+```
+pcsc_scan
+
+```
+
 ### Webcam
 
 The webcam in this laptop is capable of "Windows Hello" which has a Linux version called [Howdy](/index.php/Howdy "Howdy"). The device you should use to configure howdy on this laptop is `/dev/video0`.
 
 ### Keyboard
 
+#### Backlight
+
 If you would like to enable the keyboard backlight, run:
 
 ```
-# echo 2 | tee /sys/class/leds/tpacpi::kbd_backlight/brightness
+echo 2 | tee /sys/class/leds/tpacpi::kbd_backlight/brightness
 
 ```
 
 The "2" represents the brightness and can be any value between 0 and 2 (inclusive) for the laptop. For example, to turn off the keyboard backlight, you would run:
 
 ```
-# echo 0 | tee /sys/class/leds/tpacpi::kbd_backlight/brightness
+echo 0 | tee /sys/class/leds/tpacpi::kbd_backlight/brightness
 
 ```
 
@@ -212,7 +250,7 @@ The touchpad works out-of-the-box with libinput. However, it will be very insens
 You can adjust acceleration using the command:
 
 ```
-# xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.5
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.5
 
 ```
 
@@ -221,7 +259,7 @@ You can adjust acceleration using the command:
 Additionally, if you wish to disable right-clicking so that you use two finger click as your right click, run:
 
 ```
-# xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Click Method Enabled' 0 1    
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Click Method Enabled' 0 1    
 
 ```
 
@@ -230,7 +268,7 @@ Additionally, if you wish to disable right-clicking so that you use two finger c
 If you would like for a tap on the touchpad to be registered as a click, use:
 
 ```
-# xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 
 ```
 
@@ -247,7 +285,7 @@ The latest BIOS version, v1.26, is highly recommended. All information on this p
 You will see a dmesg error that talks about CPU throttling. To fix this install [throttled](https://www.archlinux.org/packages/?name=throttled), then run
 
 ```
-# systemctl enable --now lenovo_fix.service
+systemctl enable --now lenovo_fix.service
 
 ```
 

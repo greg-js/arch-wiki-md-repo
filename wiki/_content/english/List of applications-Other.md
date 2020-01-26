@@ -1077,4 +1077,4 @@ See [Clipboard#Managers](/index.php/Clipboard#Managers "Clipboard").
 
 *   **[oblogout](/index.php/Oblogout "Oblogout")** — Openbox logout script
 
-	[https://launchpad.net/oblogout](https://launchpad.net/oblogout) || [oblogout](https://www.archlinux.org/packages/?name=oblogout)
+	[https://launchpad.net/oblogout](https://launchpad.net/oblogout) || [oblogout](https://aur.archlinux.org/packages/oblogout/)

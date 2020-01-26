@@ -798,7 +798,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[142]](https://bugzil.la/259356) |
 | [Flatpak](/index.php/Flatpak "Flatpak") | `~/.var/` | [[143]](https://github.com/flatpak/flatpak/issues/46) [[144]](https://github.com/flatpak/flatpak.github.io/issues/191) [won't fix](https://github.com/flatpak/flatpak/issues/1651) |
 | [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[145]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
-| [ghidra](https://aur.archlinux.org/packages/ghidra/) | [[146]](https://github.com/NationalSecurityAgency/ghidra/issues/908) |
+| [ghidra](https://www.archlinux.org/packages/?name=ghidra) | [[146]](https://github.com/NationalSecurityAgency/ghidra/issues/908) |
 | [Goldendict](/index.php/Goldendict "Goldendict") | `~/.goldendict/` | [[147]](https://github.com/goldendict/goldendict/issues/151) |
 | [gramps](https://www.archlinux.org/packages/?name=gramps) | `~/.gramps/` | [[148]](https://gramps-project.org/bugs/view.php?id=8025) |
 | [grsync](https://www.archlinux.org/packages/?name=grsync) | `~/.grsync/` | [[149]](https://sourceforge.net/p/grsync/feature-requests/15/) |
@@ -843,6 +843,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/) | `~/.parsec` |
 | [pcsxr](https://aur.archlinux.org/packages/pcsxr/) | `~/.pcsxr` | A `-cfg` flag exists, but can only be set relative to `~/.pcsxr`. |
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:29](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L29). |
+| [perl](/index.php/Perl "Perl") | `~/.cpan` | Perl5's [CPAN](https://github.com/andk/cpanpm) expects `~/.cpan`. |
 | various [shells](/index.php/Shell "Shell") and [display managers](/index.php/Display_manager "Display manager") | `~/.profile` |
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
 | [Qt Designer](https://doc.qt.io/qt-5/qtdesigner-manual.html) | `~/.designer` |

@@ -194,7 +194,7 @@ Version 1 cgroups must be disabled for a non-root user to be allowed to manage r
 
 Arch Linux enables both v1 and v2 cgroups by default.
 
-To disable v1 cgroups, the `systemd.unified_cgroup_hierarchy` [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") can be used.
+To disable v1 cgroups, the `$ cgroup_no_v1="all"` [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") can be used.
 
 Verify that v1 cgroups have been disabled:
 

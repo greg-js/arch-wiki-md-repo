@@ -17,8 +17,7 @@ Related articles
 *   [2 Configure the live medium](#Configure_the_live_medium)
     *   [2.1 Installing packages](#Installing_packages)
         *   [2.1.1 Custom local repository](#Custom_local_repository)
-        *   [2.1.2 Preventing installation of packages belonging to base group](#Preventing_installation_of_packages_belonging_to_base_group)
-        *   [2.1.3 Installing packages from multilib](#Installing_packages_from_multilib)
+        *   [2.1.2 Installing packages from multilib](#Installing_packages_from_multilib)
     *   [2.2 Adding files to image](#Adding_files_to_image)
     *   [2.3 Boot Loader](#Boot_Loader)
         *   [2.3.1 UEFI Secure Boot](#UEFI_Secure_Boot)
@@ -89,18 +88,6 @@ SigLevel = Optional TrustAll
 Server = file:///home/**user**/customrepo/$arch
 ...
 ```
-
-#### Preventing installation of packages belonging to base group
-
-By default, `/usr/bin/mkarchiso`, a script which is used by `~/archlive/build.sh`, calls one of the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) named `pacstrap` without the `-i` flag, which causes [Pacman](/index.php/Pacman "Pacman") to not wait for user input during the installation process.
-
-When blacklisting base group packages by adding them to the `IgnorePkg` line in `~/archlive/pacman.conf`, [Pacman](/index.php/Pacman "Pacman") asks if they still should be installed, which means they will when user input is bypassed. To get rid of these packages there are several options:
-
-*   **Dirty**: Add the `-i` flag to each line calling `pacstrap` in `/usr/bin/mkarchiso`.
-
-*   **Clean**: Create a copy of `/usr/bin/mkarchiso` in which you add the flag and adapt `~/archlive/build.sh` so that it calls the modified version of the mkarchiso script.
-
-*   **Advanced**: Create a function for `~/archlive/build.sh` which explicitly removes the packages after the base installation. This would leave you the comfort of not having to type enter so much during the installation process.
 
 #### Installing packages from multilib
 

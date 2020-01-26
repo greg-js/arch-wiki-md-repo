@@ -279,4 +279,4 @@ polkit.addRule(function(action, subject) {
 ## See also
 
 *   [Polkit manual page](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html)
-*   [Authorization with PolKit](https://doc.opensuse.org/documentation/leap/security/html/book.security/cha.security.policykit.html) (openSUSE Leap 42.2 Security guide)
+*   [Authorization with PolKit](https://doc.opensuse.org/documentation/leap/security/html/book.security/cha-security-policykit.html) (openSUSE Leap 15.1 Security guide)

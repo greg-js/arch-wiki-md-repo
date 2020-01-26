@@ -64,7 +64,7 @@ proxy-dns-address: 0.0.0.0
 
 3\. [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `cloudflared@cloudflared.service`
 
-4\. Use `127.0.0.1#5053` as a DNS server
+4\. Use `127.0.0.1:5053` as a DNS server
 
 Upstream documentation: [https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/](https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/)
 

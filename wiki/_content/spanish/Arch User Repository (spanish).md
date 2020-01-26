@@ -194,7 +194,7 @@ Si no está seguro de ningún modo sobre el paquete o el proceso de compilación
 
 Al enviar un paquete, observe las siguientes reglas:
 
-*   Los PKGBUILD enviados no deben compilar aplicaciones **ya disponibles en cualquiera** de los **repositorios oficiales** con binarios bajo ninguna circunstancia. Compruebe la [base de datos de paquetes oficiales](https://www.archlinux.org/packages/) para ver el paquete. Si existe alguna versión de la misma, **no** envíe el paquete. Si el paquete oficial está desactualizado, márquelo como tal. Si el paquete oficial está roto o carece de una recurso, entonces presente un [informe de error](https://bugs.archlinux.org/).
+*   Los PKGBUILD enviados no deben compilar aplicaciones **ya disponibles en cualquiera** de los **repositorios oficiales** con binarios bajo ninguna circunstancia. Compruebe la [base de datos de paquetes oficiales](https://www.archlinux.org/packages/) para ver el paquete. Si existe alguna versión de la misma, **no** envíe el paquete. Si el paquete oficial está desactualizado, márquelo como tal. Si el paquete oficial está roto o carece de un recurso, entonces presente un [informe de error](https://bugs.archlinux.org/).
 
 	**Excepción** a esta regla estricta solo lo pueden ser aquellos paquetes que tengan **características adicionales** habilitadas y/o **parches** en comparación con las oficiales. En tal caso, `pkgname` debería ser diferente para expresar esa diferencia. Por ejemplo, un paquete para la GNU screen que contiene el parche de la barra lateral se podría llamar `screen-sidebar`. Además, el vector `provides=('screen')` se debe utilizar para evitar conflictos con el paquete oficial.
 
@@ -204,7 +204,7 @@ Al enviar un paquete, observe las siguientes reglas:
 
 	AUR y los repositorios oficiales están destinados a paquetes que instalan generalmente software y contenido relacionado con software, incluidos uno o más de los siguientes: ejecutables; archivo(s) de configuración; documentación en línea o fuera de línea para un software específico o para la distribución de Arch Linux en su conjunto; medios destinados a ser utilizados directamente por el software.
 
-*   No utilice `replaces` en un PKGBUILD de AUR a menos que se cambie el nombre del paquete, por ejemplo cuando *Ethereal* se convirtió en *Wireshar*. Si el paquete es una **versión alternativa de un paquete ya existente**, utilice `conflicts` (y ​​`provides` si ese paquete es requerido por otros). La principal diferencia es que después de la sincronización (-Sy), pacman inmediatamente quiere reemplazar un paquete 'ofensivo' instalado al encontrar un paquete con la coincidencia `replaces` en sus repositorios; `conflicts`, por otro lado, solo se evalúa al instalar el paquete, que generalmente es el comportamiento deseado porque es menos invasivo.
+*   No utilice `replaces` en un PKGBUILD de AUR a menos que se cambie el nombre del paquete, por ejemplo cuando *Ethereal* se convirtió en *Wireshark*. Si el paquete es una **versión alternativa de un paquete ya existente**, utilice `conflicts` (y ​​`provides` si ese paquete es requerido por otros). La principal diferencia es que después de la sincronización (-Sy), pacman inmediatamente quiere reemplazar un paquete 'ofensivo' instalado al encontrar un paquete con la coincidencia `replaces` en sus repositorios; `conflicts`, por otro lado, solo se evalúa al instalar el paquete, que generalmente es el comportamiento deseado porque es menos invasivo.
 
 *   El envío de **binarios** debe **evitarse** si las fuentes están disponibles. AUR no debe contener el tarball binario creado por makepkg, ni debe contener la lista de archivos.
 
@@ -229,7 +229,7 @@ Agregue una **línea de comentario** a la parte superior del archivo `PKGBUILD` 
 
 #### Verificación
 
-Para tener acceso de modificación en AUR necesita disponer de [emparejamiento de claves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)"). El contenido de la llave pública debe ser copiado en la pagina del perfil en la sección *My Account*, y la llave privada correspondiente debe ser configurada para el servidor `aur.archlinux.org`. Por ejemplo:
+Para tener acceso de modificación en AUR necesita disponer de [emparejamiento de claves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)"). El contenido de la llave pública debe ser copiado en la página del perfil en la sección *My Account*, y la llave privada correspondiente debe ser configurada para el servidor `aur.archlinux.org`. Por ejemplo:
 
  `~/.ssh/config` 
 ```
@@ -245,7 +245,7 @@ $ ssh-keygen -f ~/.ssh/aur
 
 ```
 
-**Sugerencia:** Se pueden agregar múltiples llaves en su perfil separandolas con una nueva línea.
+**Sugerencia:** Se pueden agregar múltiples llaves en su perfil separándolas con una nueva línea.
 
 #### Crear un paquete nuevo
 
@@ -258,7 +258,7 @@ warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
 
-**Nota:** Cuando un paquete es borrado de AUR, el repositorio git no es borrado, asi que al clonar el repositorio puede que no este vació si alguien quiere crear un paquete con el mismo nombre.
+**Nota:** Cuando un paquete es borrado de AUR, el repositorio git no es borrado, así que al clonar el repositorio puede que no este vació si alguien quiere crear un paquete con el mismo nombre.
 
 Si hay un repositorio git existente, simplemente se crea un *remote* para el repositorio git de AUR y luego *fetch* en el repositorio:
 
@@ -270,17 +270,17 @@ $ git fetch *nombre_remoto*
 
 Donde `*nombre_remoto*` es el nombre del *remote* a crear (*v.g.,* "origen"). Vea [Git#Using remotes](/index.php/Git#Using_remotes "Git") para mayor información.
 
-El paquete aparecerá en AUR después del primer *push*. Desde ese momento se pueden agregar archivos con codigo fuente a la copia local del repositorio git. Vea [#Subir paquetes](#Subir_paquetes).
+El paquete aparecerá en AUR después del primer *push*. Desde ese momento se pueden agregar archivos con código fuente a la copia local del repositorio git. Vea [#Subir paquetes](#Subir_paquetes).
 
-**Advertencia:** Sus AUR *commits* tendran como autor su usuario y correo electronico configurado en git, es muy dificil cambiar un *commit* después que ha sido subida (vea [FS#45425](https://bugs.archlinux.org/task/45425)). Si desea enviar paquetes con un autor/email diferente lo puede hacer con la orden `git config user.name [...]` y `git config user.email [...]`. Revise sus *commits* y documentos antes de subirlos!
+**Advertencia:** Sus AUR *commits* tendrán como autor su usuario y correo electrónico configurado en git. Es muy difícil cambiar un *commit* después que ha sido subido (vea [FS#45425](https://bugs.archlinux.org/task/45425)). Si desea enviar paquetes con un autor/email diferente, lo puede hacer con la orden `git config user.name [...]` y `git config user.email [...]`. ¡Revise sus *commits* y documentos antes de subirlos!
 
 #### Subir paquetes
 
 El procedimiento para subir paquetes a AUR es el mismo que para crear paquetes nuevos o para actualizaciones. Se necesita como mínimo un [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") y un [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") en el directorio de trabajo para subir (*push*) su paquete a AUR.
 
-**Nota:** se necesita generar el archivo `.SRCINFO` cada vez que se cambie la metainformación del `PKGBUILD`, por ejemplo al modificar [pkgver()](/index.php/PKGBUILD_(Espa%C3%B1ol)#Variables "PKGBUILD (Español)") en actualizaciones. De otra manera la web de AUR no va a mostrar las versiones actualizadas .
+**Nota:** se necesita generar el archivo `.SRCINFO` cada vez que se cambie la metainformación del `PKGBUILD`. Por ejemplo, al modificar [pkgver()](/index.php/PKGBUILD_(Espa%C3%B1ol)#Variables "PKGBUILD (Español)") en actualizaciones. De otra manera, la web de AUR no va a mostrar las versiones actualizadas .
 
-Para subir, añada el `PKGBUILD`, `.SRCINFO` y cualquier otro archivo necesario (como archivos `.install` o fuentes locales `.patch`) con `git add`, suba a su arbol local con un mensaje descriptivo `git commit`, y finalmente suba sus cambios a AUR con `git push`.
+Para subir, añada el `PKGBUILD`, `.SRCINFO` y cualquier otro archivo necesario (como archivos `.install` o fuentes locales `.patch`) con `git add`, suba a su árbol local con un mensaje descriptivo `git commit`, y finalmente suba sus cambios a AUR con `git push`.
 
 Ejemplo concreto:
 

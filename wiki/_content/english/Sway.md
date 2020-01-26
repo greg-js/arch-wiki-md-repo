@@ -32,6 +32,8 @@
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Application launchers](#Application_launchers)
     *   [5.2 Virtualization](#Virtualization)
+        *   [5.2.1 Unable to start Sway from tty](#Unable_to_start_Sway_from_tty)
+        *   [5.2.2 No visible cursor](#No_visible_cursor)
     *   [5.3 Sway socket not detected](#Sway_socket_not_detected)
     *   [5.4 Unable to retrieve socket path](#Unable_to_retrieve_socket_path)
     *   [5.5 Keybindings and keyboard layouts](#Keybindings_and_keyboard_layouts)
@@ -125,7 +127,7 @@ This line, which can be appended at the end of your sway configuration, sets a b
 
 Of course you have to replace the file name and path according to your wallpaper.
 
-You may use [azote](https://aur.archlinux.org/packages/azote/) as the GTK+3 frontend to swaybg.
+You may use [azote](https://aur.archlinux.org/packages/azote/) as the GTK3 frontend to swaybg.
 
 ### Input devices
 
@@ -402,7 +404,13 @@ Also `krunner` binary provided by [plasma-workspace](https://www.archlinux.org/p
 
 Sway works with both [VirtualBox](/index.php/VirtualBox "VirtualBox") and [VMware](/index.php/VMware "VMware") ESXi.
 
-However, when using the VMSVGA graphics controller, the cursor is invisible. This can be fixed by using software cursors as discussed in [[2]](https://github.com/swaywm/sway/issues/3814):
+#### Unable to start Sway from tty
+
+For ESXi, you need to enable 3D support under the *Hardware Configuration > Video card settings*. See also [VMware#Enable 3D graphics on Intel and Optimus](/index.php/VMware#Enable_3D_graphics_on_Intel_and_Optimus "VMware").
+
+#### No visible cursor
+
+When using the VMSVGA graphics controller, the cursor is invisible. This can be fixed by using software cursors as discussed in [[2]](https://github.com/swaywm/sway/issues/3814):
 
 ```
 $ export WLR_NO_HARDWARE_CURSORS=1

@@ -156,7 +156,7 @@ Si veda l'articolo principale: [List of applications/Documents (Italiano)#Docume
 
 *   **[RKWard](https://en.wikipedia.org/wiki/RKWard "wikipedia:RKWard")** — Frontend per il linguaggio R.
 
-	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://aur.archlinux.org/packages/rkward/)
+	[http://rkward.sourceforge.net/](http://rkward.sourceforge.net/) || [rkward](https://www.archlinux.org/packages/?name=rkward)
 
 #### Valutazione dei dati
 

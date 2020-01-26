@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2020-01-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=595362) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=596060) na versão em inglês.
 
 *sway* é um compositor para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") feito para ser totalmente compatível com [i3](/index.php/I3 "I3"). De acordo com [o site oficial](https://swaywm.org):
 
@@ -34,10 +34,13 @@
 *   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 Lançadores de aplicativos](#Lançadores_de_aplicativos)
     *   [5.2 Virtualização](#Virtualização)
+        *   [5.2.1 Não consegue iniciar o Sway pelo tty](#Não_consegue_iniciar_o_Sway_pelo_tty)
+        *   [5.2.2 Cursor invisível](#Cursor_invisível)
     *   [5.3 Sway socket não detectado](#Sway_socket_não_detectado)
     *   [5.4 Não foi possível pegar o caminho do socket](#Não_foi_possível_pegar_o_caminho_do_socket)
     *   [5.5 Atalhos e formato do teclado](#Atalhos_e_formato_do_teclado)
     *   [5.6 Programas java](#Programas_java)
+    *   [5.7 Rolar na borda](#Rolar_na_borda)
 *   [6 Veja também](#Veja_também)
 
 ## Instalação
@@ -52,7 +55,7 @@ Você pode instalar também [swaylock](https://www.archlinux.org/packages/?name=
 
 ### Pelo TTY
 
-Para iniciar o Sway, simplesmente digite "sway" no TTY.
+Para iniciar o Sway, simplesmente digite *sway* no TTY.
 
 ### Por um gerenciador de login
 
@@ -87,7 +90,7 @@ O teclado pode também ser configurado usando variáveis de ambiente (`XKB_DEFAU
 
 ### Barra de status
 
-Instalando o programa [i3status](https://www.archlinux.org/packages/?name=i3status) é uma maneira simples de conseguir uma pratica, padrão linha de status. Tudo que se tem a fazer é adicionar o seguinte trecho no final da sua configuração do sway:
+Instalando o programa [i3status](https://www.archlinux.org/packages/?name=i3status) é uma maneira simples de conseguir uma linha de status prática e padrão. Tudo que se tem a fazer é adicionar o seguinte trecho no final da sua configuração do sway:
 
  `~/.config/sway/config` 
 ```
@@ -126,7 +129,7 @@ Esta linha, que pode ser adicionada ao final da sua configuração do sway, defi
 
 Você tem que mudar o nome do arquivo e caminho de acordo com seu papel de parede.
 
-Você pode usar o [azote](https://aur.archlinux.org/packages/azote/) como um frontend GTK+3 para swaybg.
+Você pode usar o [azote](https://aur.archlinux.org/packages/azote/) como um frontend GTK3 para swaybg.
 
 ### Dispositivos de entrada
 
@@ -204,7 +207,7 @@ $ swaymsg -t get_tree | grep "app_id"
 
 ```
 
-Se o `app_id` for nulo para algumas janelas, você pode usar os atributos `class` e/ou o `instance`. Com isso você pode criar regras para seus programas gráficos.
+Se o `app_id` for nulo para algumas janelas, você pode usar os atributos `class` e/ou o `instance`. Com isso você pode criar regras para seus programas gráficos. Você pode pesquisar a saída e criar regras polidas para suas janelas.
 
  `~/.config/sway/config` 
 ```
@@ -270,7 +273,7 @@ input * xkb_numlock enable
 
 ### Alternar luz de fundo
 
-Para desligar (e ligar) suas telas com uma tecla (exemplo `Pause`), crie um atalho na sua `config` do Sway para o seguinte script:
+Para desligar (e ligar) suas telas com uma tecla (por exemplo, `Pause`), crie um atalho na sua `config` do Sway para o seguinte script:
 
 ```
 #!/bin/sh
@@ -376,17 +379,17 @@ Para definir [temas de cursor](/index.php/Temas_de_cursor "Temas de cursor") e t
 
  `~/.config/sway/config` 
 ```
-seat seat0 xcursor_theme "*tema_do_cursor*" "*tamanho_do_cursor*"
+seat seat0 xcursor_theme *tema_do_cursor* *tamanho_do_cursor*
 
 ```
 
-Onde `"*tema_do_cursor*"` pode ser definido ou trocado por um valor específico como `default`, `Adwaita` ou `Simple-and-Soft`, e `"*tamanho_do_cursor*"` um valor como `48`.
+Onde `*tema_do_cursor*` pode ser definido ou trocado por um valor específico como `default`, `Adwaita` ou `Simple-and-Soft`, e `*tamanho_do_cursor*` um valor como `48`.
 
 Você pode inspecionar os seus valores com `echo $XCURSOR_SIZE` e `echo $XCURSOR_THEME`.
 
 Você precisa reiniciar o programa para ver as mudanças.
 
-**Nota:** Wayland usa cursores do programa cliente. É possível que programas não usem os valores do $XCURSOR_SIZE e $XCURSOR_THEME.
+**Nota:** Wayland usa cursores do programa cliente. É possível que programas não usem os valores do `$XCURSOR_SIZE` e `$XCURSOR_THEME`.
 
 ## Solução de problemas
 
@@ -413,7 +416,13 @@ O binário `krunner` provido pelo pacote [plasma-workspace](https://www.archlinu
 
 Sway funciona no [VirtualBox](/index.php/VirtualBox_(Portugu%C3%AAs) "VirtualBox (Português)") e [VMware](/index.php/VMware "VMware") ESXi.
 
-No entanto, quando usar o controlador de gráficos VMSVGA, o cursor vai estar invisível. Isto pode ser consertado ao declarar a seguinte váriavel de ambiente (como discutido em [[2]](https://github.com/swaywm/sway/issues/3814)):
+#### Não consegue iniciar o Sway pelo tty
+
+Para ESXi, você precisa habilitar o suporte a 3D em *Hardware Configuration > Video card settings*. Veja também [VMware#Enable 3D graphics on Intel and Optimus](/index.php/VMware#Enable_3D_graphics_on_Intel_and_Optimus "VMware").
+
+#### Cursor invisível
+
+Quando usar o controlador de gráficos VMSVGA, o cursor vai ficar invisível. Para corrigir isto declare a seguinte váriavel de ambiente (como discutido em [[2]](https://github.com/swaywm/sway/issues/3814)):
 
 ```
 $ export WLR_NO_HARDWARE_CURSORS=1
@@ -481,6 +490,10 @@ bindsym --to-code {
 Alguns programas baseados no Java irão mostrar uma tela branca quando abertos, por exemplo qualquer editor Intellij. Para solucionar isto, o programa pode ser iniciado com a variável de ambiente `_JAVA_AWT_WM_NONREPARENTING` configurada para 1.
 
 Se você rodar o programa por um lançador como [rofi](https://www.archlinux.org/packages/?name=rofi) ou [dmenu](https://www.archlinux.org/packages/?name=dmenu), você pode querer modificar a entrada desktop do aplicativo como descrito em [Entradas de desktop#Modificar variáveis de ambiente](/index.php/Entradas_de_desktop#Modificar_variáveis_de_ambiente "Entradas de desktop").
+
+### Rolar na borda
+
+Se usar a roda de rolagem do mouse na borda de um aplicativo, você poderá usar `border none` para o `app_id` (por exemplo, Firefox).
 
 ## Veja também
 

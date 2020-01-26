@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2019-10-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=582696) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2020-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=594210) na versão em inglês.
 
 Artigos relacionados
 
@@ -137,7 +137,7 @@ Para mais informações, veja [makepkg(8)](https://www.archlinux.org/pacman/make
 
 ### Compilando binários otimizados
 
-Uma melhoria de desempenho do software empacotado pode ser conseguida ao habilitar otimizações do compilador para a máquina host. A desvantagem é que os binários compilados para uma arquitetura de processador específica não serão executados corretamente em outras máquinas. Nas máquinas x86_64, raramente existem ganhos de desempenho reais reais significativos que justificariam investir o tempo para reconstruir pacotes oficiais.
+Uma melhoria de desempenho do software empacotado pode ser conseguida ao habilitar otimizações do compilador para a máquina host. A desvantagem é que os binários compilados para uma arquitetura de processador específica não serão executados corretamente em outras máquinas. Nas máquinas x86_64, raramente existem ganhos de desempenho reais significativos que justificariam investir o tempo para reconstruir pacotes oficiais.
 
 No entanto, é muito fácil reduzir o desempenho usando *flags* de compilação "não padronizadas". Muitas otimizações de compilação só são úteis em certas situações e não devem ser aplicadas indiscriminadamente em cada pacote. A menos que você possa verificar/avaliar que algo é mais rápido, há uma chance muito boa de não ser! O [Guia de Otimização de Compilação](http://www.gentoo.org/doc/en/gcc-optimization.xml) e artigo wiki [CFLAGS Seguras](http://wiki.gentoo.org/wiki/Safe_CFLAGS) do Gentoo (ambos em inglês) fornecem mais informações detalhadas sobre a otimização do compilador.
 
@@ -248,6 +248,13 @@ COMPRESSBZ2 =(**pbzip2** -c -f)
 
 ```
 
+[zstd](https://www.archlinux.org/packages/?name=zstd) possui suporte a [multiprocessamento simétrico (SMP)](https://en.wikipedia.org/wiki/pt:Multiprocessamento_sim%C3%A9trico "wikipedia:pt:Multiprocessamento simétrico") por meio do sinalizador `--threads` para acelerar compressão. Por exemplo, para deixar o makepkg usar o máximo possível de núcleos de CPU para comprimir pacotes, edite o vetor `COMPRESSZST` em `/etc/makepkg.conf`:
+
+```
+COMPRESSZST=(zstd -c -z -q - **--threads=0**)
+
+```
+
 ### Mostrar pacotes com um empacotador específico
 
 Isso mostra todos os pacotes instalados no sistema com o empacotador chamado *nome-empacotador*:
@@ -323,7 +330,7 @@ Alternativamente, para uma configuração para todo sistema, você pode criar se
 
 ### Especificando diretório de instalação para pacotes baseados em QMAKE
 
-O makefile gerado pelo qmake usa a variável de ambiente INSTALL_ROOT para especificar onde o programa deve ser instalado. Então, essa função *package* deve funcionar:
+O makefile gerado pelo qmake usa a variável de ambiente `INSTALL_ROOT` para especificar onde o programa deve ser instalado. Então, essa função *package* deve funcionar:
 
  `PKGBUILD` 
 ```
@@ -338,7 +345,7 @@ package() {
 
 ```
 
-Note que o qmake também tem que ser configurado adequadamente. Por exemplo, coloque isso em seu arquivo .pro:
+Note que o qmake também tem que ser configurado adequadamente. Por exemplo, coloque isso em seu arquivo *.pro*:
 
  `SeuProjeto.pro` 
 ```

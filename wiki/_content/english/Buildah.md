@@ -30,15 +30,21 @@ The most widely known alternative for building containers is [docker](/index.php
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [buildah](https://www.archlinux.org/packages/?name=buildah) package or, for the development version, the [buildah-git](https://aur.archlinux.org/packages/buildah-git/) package.
+[Install](/index.php/Install "Install") the [buildah](https://www.archlinux.org/packages/?name=buildah) and [podman](https://www.archlinux.org/packages/?name=podman) packages or, for the development version, the [buildah-git](https://aur.archlinux.org/packages/buildah-git/) package.
 
 If you want to run as [non-root user](#Enable_support_to_build_unprivileged_containers), also install [fuse-overlayfs](https://aur.archlinux.org/packages/fuse-overlayfs/) for better performance and storage space efficiency.
+
+**Note:** [official podman tutorial](https://github.com/containers/libpod/blob/master/docs/tutorials/rootless_tutorial.md) mentions that V1 cgroups will not allow running rootless containers. In order to use cgroups V2 optional **crun** runtime should be used - check what cgroups you have by running **podman info --debug** and then look for **CgroupVersion**; Look at wiki [to disable V1 cgroups](https://wiki.archlinux.org/index.php/Cgroups#Disabling_v1_cgroups)
+
+**Note:** [official buildah installation guide](https://github.com/containers/buildah/blob/master/docs/tutorials/01-intro.md#rootless-user-configuration) points at [podman section](https://github.com/containers/libpod/blob/master/docs/tutorials/rootless_tutorial.md#ensure-fuse-overlayfs-is-installed) where advise is given to install fuse-overlays before installing podman
 
 ## Configuration
 
 #### Enable support to build unprivileged containers
 
 Users wishing to use Buildah to build *unprivileged* containers need to complete additional setup steps *before running podman for the first time*.
+
+**Note:** If you are building system dedicated for running unprivileged containers then follow below steps before adding any user - this way you won't have to edit **/etc/subuid** and **/etc/subgid** - **useradd** will do that for you, you only need to run **touch /etc/subgid** and **touch /etc/subuid** as root
 
 Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user.
 
@@ -58,6 +64,10 @@ buildah:100000:65536
 ```
 
 If you did run podman before applying the changes above, you will get errors when trying to pull images as an unprivileged user. Run `podman system migrate` to fix it.
+
+If everything went well then after logging out and logging back in `buildah images` should not result in error
+
+**Note:** If you see errors accessing **/run/user/0** then you have probably used **su** to become user you are using for test - you should log in as such user since **su** will not set **XDG_RUNTIME_DIR** and other environmental variables to correct values
 
 ## See also
 

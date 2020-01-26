@@ -35,6 +35,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   [18 Visual novels](#Visual_novels)
 *   [19 Comparison table](#Comparison_table)
 *   [20 See also](#See_also)
+    *   [20.1 Free, libre, open source games](#Free,_libre,_open_source_games)
 
 ## Action and adventure
 
@@ -1257,17 +1258,23 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 ## See also
 
+*   [PCGamingWiki](https://www.pcgamingwiki.com/) - "PCGamingWiki aims to list fixes and workarounds for every single PC game"
+*   [ProtonDB](https://www.protondb.com/) - "The goal of ProtonDB is to gather reports from other gamers as they test games with Proton on Linux and provide aggregate scores of how well games perform. A growing pool of [...] tweaks".
 *   [Linux Installers for Linux Gamers](http://liflg.org/)
 *   [The Linux Gamers' Game List](http://www.icculus.org/lgfaq/gamelist.php)
-*   [Libre Game Wiki](https://libregamewiki.org/List_of_games)
 *   [Linux game database](http://www.lgdb.org/)
 *   [Penguspy](http://www.penguspy.com/#/All/free_and_commercial/open_closed/sort=1/view=1/limit=0)
-*   [LGames - open source games for Linux](http://lgames.sourceforge.net/about.php)
 *   Debian [games portal](https://wiki.debian.org/Game/Links "debian:Game/Links"), [links](https://wiki.debian.org/Games/Links "debian:Games/Links"), and [suggested games](https://wiki.debian.org/Games/Suggested "debian:Games/Suggested")
 *   [./play.it list of games](https://wiki.dotslashplay.it/en/start)
 *   [Wikipedia:Category:Linux games](https://en.wikipedia.org/wiki/Category:Linux_games "wikipedia:Category:Linux games")
 *   [Wikipedia:Humble Bundle](https://en.wikipedia.org/wiki/Humble_Bundle "wikipedia:Humble Bundle")
 *   [Wikipedia:Game engine recreation](https://en.wikipedia.org/wiki/Game_engine_recreation "wikipedia:Game engine recreation")
-*   [Source ports](https://en.wikipedia.org/wiki/Source_port "wikipedia:Source port"): [Open Source Game Clones](https://osgameclones.com/), [Engine Reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)
 *   [itch.io Linux games](https://itch.io/games/platform-linux)
 *   [Steam Linux store](http://store.steampowered.com/browse/linux/), [List of Linux Steam games](https://steamdb.info/linux/)
+
+### Free, libre, open source games
+
+*   ["LibreGameWiki, the libre, opensource and free games encyclopedia"](https://libregamewiki.org/List_of_games)
+*   [reddit.com/r/linux list of free games](https://www.reddit.com/r/linux_gaming/wiki/freegames)
+*   [LGames - open source games for Linux](http://lgames.sourceforge.net/about.php)
+*   [Source ports](https://en.wikipedia.org/wiki/Source_port "wikipedia:Source port"): [Open Source Game Clones](https://osgameclones.com/), [Engine Reimplementations](http://rewiki.regengedanken.de/wiki/Links_to_engine_reimplementations)

@@ -355,7 +355,7 @@ Mailman 3 was designed in a modular fashion:
 *   [mailman-core](https://aur.archlinux.org/packages/mailman-core/) or [mailman-core-git](https://aur.archlinux.org/packages/mailman-core-git/) provides the core component of mailman.
 *   [python2-django-postorius](https://aur.archlinux.org/packages/python2-django-postorius/) or [python2-django-postorius-git](https://aur.archlinux.org/packages/python2-django-postorius-git/) provides a management interface for Mailman.
 *   [python2-django-hyperkitty](https://aur.archlinux.org/packages/python2-django-hyperkitty/) [python2-django-hyperkitty-git](https://aur.archlinux.org/packages/python2-django-hyperkitty-git/) is the interface to the mailing lists' archives.
-*   [python-mailmanclient](https://aur.archlinux.org/packages/python-mailmanclient/) and [python2-mailmanclient](https://aur.archlinux.org/packages/python2-mailmanclient/) provide python bindings to Mailman's REST API.
+*   [python-mailmanclient](https://www.archlinux.org/packages/?name=python-mailmanclient) and [python2-mailmanclient](https://aur.archlinux.org/packages/python2-mailmanclient/) provide python bindings to Mailman's REST API.
 *   [python-mailman-hyperkitty-plugin](https://aur.archlinux.org/packages/python-mailman-hyperkitty-plugin/) is a plugin that is used to forward emails to hyperkitty.
 
 In order to deploy postorius and/or hyperkitty django is needed. [mailman-suite-git](https://aur.archlinux.org/packages/mailman-suite-git/) provides a django project skeleton that can be used to deploy them. It also includes a README.md with instructions on how to deploy postorius and/or hyperkitty.

@@ -1,29 +1,33 @@
 XScreenSaver è uno screensaver e locker per il server X.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione di Xscreensaver](#Configurazione_di_Xscreensaver)
     *   [2.1 DPMS settings](#DPMS_settings)
 *   [3 Avvio di Xscreensaver](#Avvio_di_Xscreensaver)
     *   [3.1 Sistemi con utente unico](#Sistemi_con_utente_unico)
-    *   [3.2 Sistemi con più utenti](#Sistemi_con_pi.C3.B9_utenti)
+    *   [3.2 Sistemi con più utenti](#Sistemi_con_più_utenti)
 *   [4 Blocca schermo](#Blocca_schermo)
 *   [5 Disabilitare Xscreensaver per le applicazioni multimediali](#Disabilitare_Xscreensaver_per_le_applicazioni_multimediali)
     *   [5.1 mplayer](#mplayer)
     *   [5.2 XBMC](#XBMC)
-    *   [5.3 Adobe Flash/MPlayer/VLC](#Adobe_Flash.2FMPlayer.2FVLC)
+    *   [5.3 Adobe Flash/MPlayer/VLC](#Adobe_Flash/MPlayer/VLC)
 *   [6 Usare xscreensaver come wallpaper animato](#Usare_xscreensaver_come_wallpaper_animato)
     *   [6.1 Usare xscreensaver come wallpaper sotto xcompmgr](#Usare_xscreensaver_come_wallpaper_sotto_xcompmgr)
 *   [7 Temi](#Temi)
-*   [8 Cambio utente da "look screen"](#Cambio_utente_da_.22look_screen.22)
+*   [8 Cambio utente da "look screen"](#Cambio_utente_da_"look_screen")
     *   [8.1 LXDM](#LXDM)
     *   [8.2 Lightdm](#Lightdm)
 *   [9 Risorse esterne](#Risorse_esterne)
 
 ## Installazione
 
-Il pacchetto [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) è presente nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), quindi è facilmente con [Pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
+Il pacchetto [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) è presente nei [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), quindi è facilmente installabile con [Pacman](/index.php/Pacman_(Italiano) "Pacman (Italiano)").
 
 In alternativa, esiste una versione patchata con il logo Archlinux su [AUR](/index.php/Arch_User_Repository_(Italiano) "Arch User Repository (Italiano)") che si chiama [xscreensaver-arch-logo](https://aur.archlinux.org/packages/xscreensaver-arch-logo/). L'utilizzo di questo pacchetto al posto della versione del repository **extra** è vantaggioso per diversi motivi:
 

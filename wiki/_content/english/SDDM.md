@@ -31,7 +31,8 @@ From [Wikipedia:Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Si
     *   [2.5 Rotate display](#Rotate_display)
     *   [2.6 DPI settings](#DPI_settings)
     *   [2.7 Enable HiDPI](#Enable_HiDPI)
-    *   [2.8 Using a fingerprint reader](#Using_a_fingerprint_reader)
+    *   [2.8 Enable virtual keyboard](#Enable_virtual_keyboard)
+    *   [2.9 Using a fingerprint reader](#Using_a_fingerprint_reader)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Blank screen with cursor, but no greeter shows](#Blank_screen_with_cursor,_but_no_greeter_shows)
     *   [3.2 Long load time before SDDM shows the greeter](#Long_load_time_before_SDDM_shows_the_greeter)
@@ -183,6 +184,20 @@ EnableHiDPI=true
 [X11]
 EnableHiDPI=true
 ```
+
+### Enable virtual keyboard
+
+Install [qt5-virtualkeyboard](https://www.archlinux.org/packages/?name=qt5-virtualkeyboard).
+
+Create the following file:
+
+ `/etc/sddm.conf.d/virtualkbd.conf` 
+```
+[General]
+InputMethod=qtvirtualkeyboard
+```
+
+SDDM now displays a button in lower-left corner of login screen to open the virtual keyboard.
 
 ### Using a fingerprint reader
 

@@ -13,16 +13,13 @@
 
 ## Installation
 
-Two packages of Django are currently available in the [official repositories](/index.php/Official_repositories "Official repositories"). They can be [installed](/index.php/Pacman "Pacman") with the following packages:
-
-*   [python-django](https://www.archlinux.org/packages/?name=python-django) - Latest python support, with documentation in the [django-docs](https://aur.archlinux.org/packages/django-docs/) package from [AUR](/index.php/AUR "AUR").
-*   [python2-django](https://www.archlinux.org/packages/?name=python2-django) - Python 2 legacy support
+[Install](/index.php/Install "Install") the [python-django](https://www.archlinux.org/packages/?name=python-django) package which provides latest Python 3 support. Documentation can be installed with the [django-docs](https://aur.archlinux.org/packages/django-docs/) package.
 
 ### Database driver
 
-There are different DB backends available for Django:
+There are different database backends available for Django:
 
-*   For a [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") backend install [python-psycopg2](https://www.archlinux.org/packages/?name=python-psycopg2) package,
+*   For a [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") backend install the [python-psycopg2](https://www.archlinux.org/packages/?name=python-psycopg2) package,
 *   If you intend to use a [MySQL](/index.php/MySQL "MySQL") database as backend, install the [python-mysqlclient](https://www.archlinux.org/packages/?name=python-mysqlclient) package.
 
 ## Usage

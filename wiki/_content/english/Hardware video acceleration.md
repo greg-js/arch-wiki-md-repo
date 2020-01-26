@@ -344,7 +344,7 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_driver
 | [MPlayer](/index.php/MPlayer "MPlayer") | Yes | Yes | No | – | – | [MPlayer#Hardware video acceleration](/index.php/MPlayer#Hardware_video_acceleration "MPlayer") |
 | [Flash](/index.php/Flash "Flash") | No | Yes | No | – | – | [Browser plugins#Adobe Flash Player](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") |
 | [Chromium](/index.php/Chromium "Chromium") | Yes | No | No | – | – | [Chromium#Hardware video acceleration](/index.php/Chromium#Hardware_video_acceleration "Chromium") |
-| [Firefox](/index.php/Firefox "Firefox") | No | No | No | – | – | [Bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) |
+| [Firefox](/index.php/Firefox "Firefox") | No | No | No | – | – | [Bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726), [Bug report (wayland)](https://bugzilla.mozilla.org/show_bug.cgi?id=1610199) |
 
 *   GStreamer [uses a whitelist](https://blogs.igalia.com/vjaquez/2018/03/28/gstreamer-va-api-troubleshooting/) of VA-API drivers. To use other drivers like [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver), set [environment variable](/index.php/Environment_variable "Environment variable") `GST_VAAPI_ALL_DRIVERS=1`.
 *   NVDECODE/NVENCODE is [disabled in the Arch package](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gst-plugins-bad#n45).

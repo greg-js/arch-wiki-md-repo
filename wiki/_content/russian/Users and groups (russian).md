@@ -1,4 +1,4 @@
-Пользователи и группы пользователей используются на GNU/Linux для управления доступом — то есть, для управления доступом к системным файлам, каталогам и переферии. Linux предлагает относительно простые и грубые механизмы контроля доступа по умолчанию. Для более продвинутых вариантов, см. [ACL](/index.php/ACL "ACL") и [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication")
+Пользователи и группы пользователей используются на GNU/Linux для управления доступом — то есть, для управления доступом к системным файлам, каталогам и периферии. Linux предлагает относительно простые и грубые механизмы контроля доступа по умолчанию. Для более продвинутых вариантов, см. [ACL](/index.php/ACL "ACL") и [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication")
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

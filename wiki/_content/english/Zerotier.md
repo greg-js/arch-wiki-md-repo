@@ -1,5 +1,16 @@
 Zerotier is an open source, cross-platform and easy to use virtual LAN / Hamachi alternative, also available on Android, ios, Mac, Windows. A GUI is only available on Mac and Windows according to the developers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Installing](#Installing)
+*   [2 Configuration](#Configuration)
+*   [3 Manual configuration](#Manual_configuration)
+*   [4 Slow shutdown](#Slow_shutdown)
+
 ## Installing
 
 ZeroTier can be [installed](/index.php/Install "Install") with the [zerotier-one](https://www.archlinux.org/packages/?name=zerotier-one).
@@ -74,3 +85,25 @@ Manual configuration can be achieved by creating the file `local.conf` in the pr
 ```
 
 More information on the available configuration items is available on the [program's GitHub repo](https://github.com/zerotier/ZeroTierOne/tree/master/service#local-configuration-file)
+
+## Slow shutdown
+
+By default, zerotier-one will take 90 seconds for stopping the systemd service on system shutdown.
+
+To override this:
+
+```
+# /etc/systemd/system/zerotier-one.service.d/override.conf
+[Unit]
+# Wait for network connectivity (service not activated by default) before starting
+After=NetworkManager-wait-online.service
+
+# Shutdown zerotier before tearing down the network stack
+# https://github.com/zerotier/ZeroTierOne/pull/1093/commits/c9f07e855e2abac9c1a29cd412d888500a6a0bbb
+After=network.target
+
+[Service]
+# Override default 90 second timeout in pathological conditions
+TimeoutStopSec=5
+
+```

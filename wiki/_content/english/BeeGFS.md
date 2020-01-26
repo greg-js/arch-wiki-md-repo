@@ -87,11 +87,7 @@ From [BeeGFS.io](https://beegfs.io/):
 *   Kernel module to mount the file system
 *   Requires userspace helper daemon for logging and [hostname](/index.php/Hostname "Hostname") resolution
 
- | [beegfs-client](https://aur.archlinux.org/packages/beegfs-client/)
-
-[beegfs-helperd](https://aur.archlinux.org/packages/beegfs-helperd/)
-
- |
+ | [beegfs-client](https://aur.archlinux.org/packages/beegfs-client/) |
 
 In addition to the free and open-source packages described here, BeeGFS also offers a number of [Enterprise Features and Professional Support](https://www.beegfs.io/content/support/), which include:
 
@@ -254,7 +250,7 @@ The client service needs to know where it can mount the cluster storage, as well
 
 ### Utilities
 
-[Install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") the package [beegfs-utilies](https://aur.archlinux.org/packages/beegfs-utilies/).
+[Install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") the package [beegfs-utils](https://aur.archlinux.org/packages/beegfs-utils/).
 
 **Tip:** Best to install on either the management server or client node, or both. For the purposes of this example the client node is used.
 

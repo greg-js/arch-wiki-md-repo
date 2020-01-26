@@ -1,11 +1,15 @@
 [Fbsplash](http://fbsplash.berlios.de) (前身为 gensplash) 使用framebuffer layer为linux系统提供开关机splash.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
     *   [1.1 Fbsplash](#Fbsplash)
-    *   [1.2 附加包](#.E9.99.84.E5.8A.A0.E5.8C.85)
-    *   [1.3 主题](#.E4.B8.BB.E9.A2.98)
+    *   [1.2 附加包](#附加包)
+    *   [1.3 主题](#主题)
 *   [2 Configuration](#Configuration)
     *   [2.1 Kernel Command Line](#Kernel_Command_Line)
     *   [2.2 Configuration Files](#Configuration_Files)
