@@ -2,7 +2,11 @@ This page contains instructions, tips, pointers, and links for installing and co
 
 See previous generation [ASUS Zenbook UX31E](/index.php/ASUS_Zenbook_UX31E "ASUS Zenbook UX31E") page that has mostly orthogonal information to those here (may be only partially applicable to UX31A)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Boot from USB medium](#Boot_from_USB_medium)
@@ -28,8 +32,6 @@ See previous generation [ASUS Zenbook UX31E](/index.php/ASUS_Zenbook_UX31E "ASUS
     *   [8.1 Devices](#Devices)
     *   [8.2 Other Devices and Drivers](#Other_Devices_and_Drivers)
         *   [8.2.1 MEI](#MEI)
-        *   [8.2.2 watchdog](#watchdog)
-    *   [8.3 Problem with ACPI and gpio_ich](#Problem_with_ACPI_and_gpio_ich)
 *   [9 Additional resources](#Additional_resources)
 
 ## Installation
@@ -276,7 +278,7 @@ Add the following script as root:
 export XAUTHORITY=/home/$USER/.Xauthority
 export DISPLAY=:0
 
-/usr/bin/xrandr -display :0 --output eDP1 --auto --output HDMI1 --auto --above eDP1
+/usr/bin/xrandr -display :0 --output eDP1 --auto --output HDMI1 --auto --above eDP1
 ```
 
 then make it executable
@@ -328,59 +330,6 @@ To configure some power saving options and tools, see [Power saving](/index.php/
 ##### MEI
 
 If you know what you are doing and want to use the i7 MEI, you need the Intel Local Manageability Service. You can find it as [intel-lms](/index.php/AUR "AUR") in the AUR.
-
-##### watchdog
-
-The chipset also has an hardware watchdog:
-
-```
-root@asarum chris]# wdctl
-Device:        /dev/watchdog
-Identity:      iTCO_wdt [version 0]
-Timeout:       30 seconds
-Timeleft:       2 seconds
-FLAG           DESCRIPTION               STATUS BOOT-STATUS
-KEEPALIVEPING  Keep alive ping reply          0           0
-MAGICCLOSE     Supports magic close char      0           0
-SETTIMEOUT     Set timeout (in seconds)       0           0
-
-```
-
-Activating the watchdog under systemd is trivial, as systemd author Lennart Poettering explains in [this blog post](http://0pointer.de/blog/projects/watchdog.html).
-
-All you do is go into /etc/systemd/system.conf, uncomment the RuntimeWatchdogSec=0 line and change zero to how long the watchdog should go without receiving a ping before it reboots the system. I used 30s, which is the default setting for iTCO_wdt and seemed sane.
-
-```
-#RuntimeWatchdogSec=0
-RuntimeWatchdogSec=30
-
-```
-
-Check after next boot:
-
-```
-[root@asarum chris]# journalctl | grep -i watchdog
-Oct 06 06:36:27 asarum kernel: iTCO_wdt: Intel TCO WatchDog Timer Driver v1.10
-Oct 06 06:36:27 asarum systemd[1]: Hardware watchdog 'iTCO_wdt', version 0
-Oct 06 06:36:27 asarum systemd[1]: Set hardware watchdog to 30s.
-
-```
-
-#### Problem with ACPI and gpio_ich
-
-The gpio_ich module causes the following error:
-
-```
-ACPI Warning: 0x0000000000000428-0x000000000000042f SystemIO conflicts with Region \PMIO 2 (20120711/utaddress-251)
-ACPI Warning: 0x0000000000000500-0x000000000000053f SystemIO conflicts with Region \GPIO 1 (20120711/utaddress-251)
-ACPI Warning: 0x0000000000000500-0x000000000000053f SystemIO conflicts with Region \GP01 2 (20120711/utaddress-251)
-lpc_ich: Resource conflict(s) found affecting gpio_ich
-ACPI Warning: 0x000000000000f040-0x000000000000f05f SystemIO conflicts with Region \SMB0 1 (20120711/utaddress-251)
-ACPI Warning: 0x000000000000f040-0x000000000000f05f SystemIO conflicts with Region \_SB_.PCI0.SBUS.SMBI 2 (20120711/utaddress-251)
-
-```
-
-This is just a warning that the ACPI has reserved some memory regions for other use. Nothing to worry about!
 
 ## Additional resources
 

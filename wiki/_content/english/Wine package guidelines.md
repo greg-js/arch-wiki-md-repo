@@ -203,7 +203,7 @@ If you want to be more precise, you may add a message in the `.install` file tel
 
 ## Gecko and Mono
 
-Unless you know for sure, that software require browser of .NET runtime (packages [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) in official repositories), default wine installation prompts for Gecko/Mono are undesirable.
+Unless you know for sure, that software require browser of .NET runtime (packages [wine-gecko](https://www.archlinux.org/packages/?name=wine-gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) in official repositories), default wine installation prompts for Gecko/Mono are undesirable.
 
 To disable HTML rendering, bytecode support and the dialogs, you need to use a dlloverride in your script. For Gecko:
 

@@ -88,11 +88,11 @@ Artigos relacionados
 
 ### Instruções específicas de Tabela de Partição GUID (GPT)
 
-Em uma configuração de BIOS/[GPT](/index.php/Particionamento#GUID_Partition_Table "Particionamento"), é necessária uma [partição de inicialização de BIOS](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation). O GRUB incorpora seu `core.img` nessa partição.
+Em uma configuração de BIOS/[GPT](/index.php/Particionamento#Tabela_de_Partição_GUID "Particionamento"), é necessária uma [partição de inicialização de BIOS](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation). O GRUB incorpora seu `core.img` nessa partição.
 
 **Nota:**
 
-*   Antes de tentar este método, lembre-se de que nem todos os sistemas poderão ter suporte a este esquema de particionamento. Leia mais sobre [Particionamento#GUID Partition Table](/index.php/Particionamento#GUID_Partition_Table "Particionamento").
+*   Antes de tentar este método, lembre-se de que nem todos os sistemas poderão ter suporte a este esquema de particionamento. Leia mais sobre [Particionamento#Tabela de Partição GUID](/index.php/Particionamento#Tabela_de_Partição_GUID "Particionamento").
 *   A partição de inicialização de BIOS é necessária apenas pelo GRUB em uma configuração de BIOS/GPT. Em uma configuração de BIOS/MBR, o GRUB usa a lacuna pós-MBR para a incorporação do `core.img`. No GPT, no entanto, não há espaço não utilizado garantido antes da primeira partição.
 *   Para sistemas [UEFI](/index.php/UEFI "UEFI"), essa partição extra não é necessária, pois não há incorporação de setores de inicialização nesse caso. No entanto, os sistemas UEFI ainda requerem uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI").
 
@@ -133,7 +133,7 @@ Veja [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8
 
 **Nota:**
 
-*   É recomendável ler e entender as páginas [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [Particionamento#GUID Partition Table](/index.php/Particionamento#GUID_Partition_Table "Particionamento") e [Processo de inicialização do Arch#No UEFI](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#No_UEFI "Processo de inicialização do Arch").
+*   É recomendável ler e entender as páginas [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [Particionamento#Tabela de Partição GUID](/index.php/Particionamento#Tabela_de_Partição_GUID "Particionamento") e [Processo de inicialização do Arch#No UEFI](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#No_UEFI "Processo de inicialização do Arch").
 *   Ao instalar o UEFI, é importante inicializar a mídia de instalação no modo UEFI, caso contrário o *efibootmgr* não poderá adicionar a entrada de inicialização GRUB UEFI. A instalação no [caminho de inicialização reserva](#Caminho_de_inicialização_padrão/reserva) continuará funcionando mesmo no modo BIOS, já que ele não toca na NVRAM.
 *   Para inicializar a partir de um disco usando UEFI, é necessária uma partição de sistema EFI. Siga [Partição de sistema EFI#Verificar uma partição existente](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI#Verificar_uma_partição_existente "Partição de sistema EFI") para descobrir se você já tem uma, caso contrário você precisa criá-la.
 

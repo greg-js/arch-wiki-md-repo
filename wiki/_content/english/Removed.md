@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Pacman#Removing packages](/index.php/Pacman#Removing_packages "Pacman")
+*   [Remove](/index.php/Remove "Remove")

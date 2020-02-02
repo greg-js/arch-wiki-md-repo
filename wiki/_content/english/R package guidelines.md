@@ -18,10 +18,9 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 *   [4 Dependencies](#Dependencies)
 *   [5 Source](#Source)
 *   [6 Build and Package](#Build_and_Package)
-*   [7 Examples](#Examples)
-    *   [7.1 RcppEigen](#RcppEigen)
-    *   [7.2 XML](#XML)
-*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 CRAN](#CRAN)
+    *   [6.2 Bioconductor](#Bioconductor)
+*   [7 Tips and tricks](#Tips_and_tricks)
 
 ## Package naming
 
@@ -43,7 +42,7 @@ R packages listed in `Suggests` should be listed as [optdepends](/index.php/Optd
 
 Some packages require external tools, these are listed under `SystemRequirements`.
 
-[gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) is needed as a [makedepends](/index.php/Makedepends "Makedepends") for some packages but is not always listed in the `DESCRIPTION` file.
+[gcc](https://www.archlinux.org/packages/?name=gcc) is needed as a [makedepends](/index.php/Makedepends "Makedepends") if `DESCRIPTION` file tells that `NeedsCompilation: yes`. [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) is also needed as [depends](/index.php/PKGBUILD#depends "PKGBUILD") for some packages but is not always listed in the `DESCRIPTION` file.
 
 ## Source
 
@@ -51,72 +50,71 @@ All R packages available on CRAN are available at the website `https://cran.r-pr
 
 ## Build and Package
 
-R has built-in support for building packages, we just need to install and copy over the built package afterwards:
+R has built-in support for building packages. Here are two templates of `PKGBUILD`s for two repositories: CRAN and Bioconductor.
+
+### CRAN
 
 ```
- build(){
-     R CMD INSTALL pkg.tar.gz -l "$srcdir"
- }
- package() {
-     install -dm0775 "$pkgdir"/usr/lib/R/library
-     cp -a --no-preserve=ownership pkgname "$pkgdir"/usr/lib/R/library
- }
+_cranname=
+_cranver=
+pkgname=r-${_cranname,,}
+pkgver=${_cranver//[:-]/.}
+pkgrel=1
+pkgdesc=""
+arch=()
+url="[https://cran.r-project.org/package=${_cranname}](https://cran.r-project.org/package=${_cranname})"
+license=()
+depends=(r)
+makedepends=()
+optdepends=()
+source=("[https://cran.r-project.org/src/contrib/${_cranname}_${_cranver}.tar.gz](https://cran.r-project.org/src/contrib/${_cranname}_${_cranver}.tar.gz)")
+sha256sums=(*)*
 
-```
+build() {
+  cd "${srcdir}"
 
-## Examples
+  R CMD INSTALL ${_cranname}_${_cranver}.tar.gz -l ${srcdir}
+}
 
-### RcppEigen
+package() {
+  cd "${srcdir}"
 
-```
- pkgname=r-rcppeigen
- pkgver=0.3.3.4.0
- pkgrel=1
- pkgdesc="Rcpp Integration for the Eigen Templated Linear Algebra Library"
- arch=('x86_64')
- url="[https://cran.r-project.org/package=RcppEigen](https://cran.r-project.org/package=RcppEigen)"
- license=('GPL')
- depends=('r' 'r-rcpp')
- optdepends=('r-inline' 'r-runit' 'r-pkgkitten')
- source=("[https://cran.r-project.org/src/contrib/RcppEigen_$pkgver.tar.gz](https://cran.r-project.org/src/contrib/RcppEigen_$pkgver.tar.gz)")
- md5sums=('78ee1ef7c6043efa875434ae5fcea2ec')
-
- build(){
-     R CMD INSTALL RcppEigen_"$pkgver".tar.gz -l "$srcdir"
- }
- package() {
-     install -dm0755 "$pkgdir"/usr/lib/R/library
-     cp -a --no-preserve=ownership RcppEigen "$pkgdir"/usr/lib/R/library
- }
+  install -dm0755 "${pkgdir}/usr/lib/R/library"
+  cp -a --no-preserve=ownership "${_cranname}" "${pkgdir}/usr/lib/R/library"
+}
 
 ```
 
-### XML
-
-An example where the R package has characters not allowed in pkgver:
+### Bioconductor
 
 ```
- _cranver=3.98-1.11
- pkgname=r-xml
- pkgver=${_cranver//[:-]/.}
- pkgrel=1
- pkgdesc='Tools for Parsing and Generating XML Within R and S-Plus'
- arch=('x86_64')
- url='[https://cran.r-project.org/package=XML'](https://cran.r-project.org/package=XML')
- license=('BSD')
- depends=('r' 'libxml2')
- optdepends=('r-bitops' 'r-rcurl')
- replaces=('r-cran-xml')
- source=("[https://cran.r-project.org/src/contrib/XML_$_cranver.tar.gz](https://cran.r-project.org/src/contrib/XML_$_cranver.tar.gz)")
- md5sums=('6c67f5730ada3456372520773a920b8e')
+_bcname=
+_bcver=
+pkgname=r-${_bcname,,}
+pkgver=${_bcver//[:-]/.}
+pkgrel=1
+pkgdesc=""
+arch=()
+url="[https://bioconductor.org/packages/release/bioc/html/${_bcname}.html](https://bioconductor.org/packages/release/bioc/html/${_bcname}.html)"
+license=()
+depends=(r)
+makedepends=()
+optdepends=()
+source=("[https://bioconductor.org/packages/release/bioc/src/contrib/${_bcname}_${_bcver}.tar.gz](https://bioconductor.org/packages/release/bioc/src/contrib/${_bcname}_${_bcver}.tar.gz)")
+sha256sums=(*)*
 
- build(){
-     R CMD INSTALL XML_"$_cranver".tar.gz -l "$srcdir"
- }
- package() {
-     install -dm0755 "$pkgdir"/usr/lib/R/library
-     cp -a --no-preserve=ownership XML "$pkgdir"/usr/lib/R/library
- }
+build() {
+  cd "${srcdir}"
+
+  R CMD INSTALL ${_bcname}_${_bcver}.tar.gz -l ${srcdir}
+}
+
+package() {
+  cd "${srcdir}"
+
+  install -dm0755 "${pkgdir}/usr/lib/R/library"
+  cp -a --no-preserve=ownership "${_bcname}" "${pkgdir}/usr/lib/R/library"
+}
 
 ```
 

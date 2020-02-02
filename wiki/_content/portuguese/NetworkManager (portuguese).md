@@ -1183,7 +1183,7 @@ Como alternativa, se o roaming não for importante, o comportamento de varredura
 
 Há um problema com o módulo `ideapad_laptop` em alguns modelos da Lenovo, devido ao driver wi-fi relatar incorretamente um bloco virtual. A placa ainda pode ser manipulada com `netctl`, mas os gerenciadores como o NetworkManager quebram. Você pode verificar se este é o problema, verificando a saída de `rfkill list` depois de alternar sua chave de hardware e ver que o bloco de software persiste.
 
-[Descarregar](/index.php/Modprobe "Modprobe") o módulo `ideapad_laptop` deve corrigir isso. (**atenção**: isso também pode desabilitar o teclado e o touchpad do laptop!).
+[Descarregar](/index.php/Kernel_module_(Portugu%C3%AAs)#Manuseio_de_módulos_de_kernel "Kernel module (Português)") o módulo `ideapad_laptop` deve corrigir isso. (**atenção**: isso também pode desabilitar o teclado e o touchpad do laptop!).
 
 ### Desligar envido de hostname
 

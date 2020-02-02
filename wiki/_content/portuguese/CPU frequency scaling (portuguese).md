@@ -87,7 +87,7 @@ $ ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
 
 ```
 
-Carregue o módulo apropriado (veja [Módulos de kernel](/index.php/Kernel_modules "Kernel modules") para detalhes). Depois que o driver cpufreq apropriado é carregado, informações detalhadas sobre a(s) CPU(s) podem ser exibidas executando
+Carregue o módulo apropriado (veja [Módulos de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") para detalhes). Depois que o driver cpufreq apropriado é carregado, informações detalhadas sobre a(s) CPU(s) podem ser exibidas executando
 
 ```
 $ cpupower frequency-info
@@ -177,7 +177,7 @@ Para ativar um regulador em particular, execute:
 **Nota:**
 
 *   Para ajustar apenas para um único core de CPU, acrescente `-c *número_do_core*` ao comando acima.
-*   A ativação de um regulador requer que um [módulo de kernel](/index.php/Kernel_module "Kernel module") específico (chamado `cpufreq_*regulador*`) esteja carregado. Desde o kernel 3.4, esses módulos são carregados automaticamente.
+*   A ativação de um regulador requer que um [módulo de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") específico (chamado `cpufreq_*regulador*`) esteja carregado. Desde o kernel 3.4, esses módulos são carregados automaticamente.
 
 Alternativamente, você pode ativar um regulador a cada CPU disponível manualmente com:
 
@@ -234,7 +234,7 @@ Para definir o valor, execute:
 
 #### Tornar as alterações permanentes
 
-Para que o escalonamento desejado seja habilitado na inicialização, [opções de módulo do kernel](/index.php/Kernel_modules#Using_files_in_/etc/modprobe.d/ "Kernel modules") e [systemd (Português)#Arquivos temporários](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_temporários "Systemd (Português)") são métodos regulares.
+Para que o escalonamento desejado seja habilitado na inicialização, [opções de módulo do kernel](/index.php/Kernel_module_(Portugu%C3%AAs)#Usando_arquivos_em_/etc/modprobe.d/ "Kernel module (Português)") e [systemd (Português)#Arquivos temporários](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_temporários "Systemd (Português)") são métodos regulares.
 
 Por exemplo, alterar o up_threshold para 10:
 
@@ -332,7 +332,7 @@ Um parâmetro especial deve ser passado para o módulo do processador.
 
 Para tentar isso temporariamente, alerte o valor em `/sys/module/processor/parameters/ignore_ppc` de `0` para `1`.
 
-Para definir permanentemente, [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") descreve alternativas. Por exemplo, você pode adicionar `processor.ignore_ppc=1` à sua linha de inicialização de kernel ou crie
+Para definir permanentemente, [Kernel module (Português)#Opções de configuração de módulos](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)") descreve alternativas. Por exemplo, você pode adicionar `processor.ignore_ppc=1` à sua linha de inicialização de kernel ou crie
 
  `/etc/modprobe.d/ignore_ppc.conf` 
 ```

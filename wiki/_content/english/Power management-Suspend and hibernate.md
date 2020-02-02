@@ -119,7 +119,8 @@ In the example the value of `*swap_file_offset*` is the first `38912` with the t
 
 **Tip:**
 
-*   The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
+*   The following command may be used to identify `*swap_device*`: `findmnt -no SOURCE -T /swapfile`
+*   The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`
 *   The value of `*swap_file_offset*` can also be obtained by running `swap-offset *swap_file*`. The *swap-offset* binary is provided within the set of tools [uswsusp](/index.php/Uswsusp "Uswsusp"). If using this method, then these two parameters have to be provided in `/etc/suspend.conf` via the keys `resume device` and `resume offset`. No reboot is required in this case.
 
 **Note:** The kernel parameters will only take effect after rebooting. To be able to hibernate right away, obtain the volume's major and minor device numbers from [lsblk](/index.php/Lsblk "Lsblk") and echo them in format `*major*:*minor*` to `/sys/power/resume` and the resume offset to `/sys/power/resume_offset`. For example, if the swap file is on volume `8:2` and has the offset `38912`:

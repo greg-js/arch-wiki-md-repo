@@ -141,7 +141,7 @@ Além disso, você precisará manter os arquivos na ESP em dia com as atualizaç
 
 **Nota:** Se a ESP não estiver montada em `/boot`, certifique-se de não confiar no [mecanismo de automontagem do systemd](/index.php/Fstab#Automount_with_systemd "Fstab") (incluindo o de [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8)). Sempre monte-a manualmente antes de atualizar o sistema ou o kernel, caso contrário você pode não conseguir montá-la após a atualização, lhe travando no kernel em execução no momento sem a capacidade de atualizar a cópia do kernel na ESP.
 
-Alternativamente, [carregue antecipadamente os módulos de kernel necessários na inicialização](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module"), p.ex.:
+Alternativamente, [carregue antecipadamente os módulos de kernel necessários na inicialização](/index.php/Kernel_module_(Portugu%C3%AAs)#Carregamento_automático_de_módulos_com_systemd "Kernel module (Português)"), p.ex.:
 
  `/etc/modules-load.d/vfat.conf` 
 ```

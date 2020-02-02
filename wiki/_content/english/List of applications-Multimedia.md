@@ -1321,7 +1321,7 @@ This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine
 
 *   **guitarix** — Virtual guitar amplifier for JACK.
 
-	[https://guitarix.org/](https://guitarix.org/) || [guitarix2](https://www.archlinux.org/packages/?name=guitarix2)
+	[https://guitarix.org/](https://guitarix.org/) || [guitarix](https://www.archlinux.org/packages/?name=guitarix)
 
 *   **Rakarrack** — Richly featured multi-effects processor emulating a guitar effects pedalboard.
 

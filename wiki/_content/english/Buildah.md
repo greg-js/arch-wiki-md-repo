@@ -34,7 +34,7 @@ The most widely known alternative for building containers is [docker](/index.php
 
 If you want to run as [non-root user](#Enable_support_to_build_unprivileged_containers), also install [fuse-overlayfs](https://aur.archlinux.org/packages/fuse-overlayfs/) for better performance and storage space efficiency.
 
-**Note:** [official podman tutorial](https://github.com/containers/libpod/blob/master/docs/tutorials/rootless_tutorial.md) mentions that V1 cgroups will not allow running rootless containers. In order to use cgroups V2 optional **crun** runtime should be used - check what cgroups you have by running **podman info --debug** and then look for **CgroupVersion**; Look at wiki [to disable V1 cgroups](https://wiki.archlinux.org/index.php/Cgroups#Disabling_v1_cgroups)
+**Note:** [official podman tutorial](https://github.com/containers/libpod/blob/master/docs/tutorials/rootless_tutorial.md) mentions that V1 cgroups will not allow running rootless containers. In order to use cgroups V2 optional **crun** runtime should be used - check what cgroups you have by running **podman info --debug** and then look for **CgroupVersion**; Look at wiki [to disable V1 cgroups](/index.php/Cgroups#Disabling_v1_cgroups "Cgroups")
 
 **Note:** [official buildah installation guide](https://github.com/containers/buildah/blob/master/docs/tutorials/01-intro.md#rootless-user-configuration) points at [podman section](https://github.com/containers/libpod/blob/master/docs/tutorials/rootless_tutorial.md#ensure-fuse-overlayfs-is-installed) where advise is given to install fuse-overlays before installing podman
 

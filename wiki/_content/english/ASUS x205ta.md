@@ -5,12 +5,8 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Booting Arch install media](#Booting_Arch_install_media)
-    *   [1.1 Proper way of generating a bootia32.efi with grub.cfg included](#Proper_way_of_generating_a_bootia32.efi_with_grub.cfg_included)
-        *   [1.1.1 Creating bootia32.efi](#Creating_bootia32.efi)
-        *   [1.1.2 Creating a bootable USB](#Creating_a_bootable_USB)
-            *   [1.1.2.1 Unmount](#Unmount)
-    *   [1.2 OS Independent Method](#OS_Independent_Method)
-    *   [1.3 Booting the x205ta from USB](#Booting_the_x205ta_from_USB)
+    *   [1.1 OS Independent Method](#OS_Independent_Method)
+    *   [1.2 Booting the x205ta from USB](#Booting_the_x205ta_from_USB)
 *   [2 Install Arch](#Install_Arch)
     *   [2.1 Enable wifi](#Enable_wifi)
     *   [2.2 Install Arch](#Install_Arch_2)
@@ -38,124 +34,6 @@
 The Asus x205TA and x206HA have an exclusively 32-bit EFI bootloader. Since Arch does not include a 32-bit EFI loader in the standard install image, we need to add one. This procedure may work for other exclusively 32-bit EFI machines.
 
 The current image (ARCH_201801) does include the drivers for the x205TA's broadcom wireless modem, so we need to copy efivars during boot as explained below. Adding drivers to the image is not required anymore. Booting archlinux on the x205TA can be achieved in 2 (possibly more) ways: by creating a bootia32.efi loader and modifying an existing iso, or by adding a precompiled bootia32.efi and manually starting archlinux iso from there.
-
-### Proper way of generating a bootia32.efi with grub.cfg included
-
-#### Creating bootia32.efi
-
-Acquire the latest arch install ISO ([https://www.archlinux.org/download/](https://www.archlinux.org/download/)). Let us call this file <ISO-SOURCE>. Make note of its volume label. You can see this by running "file" on the iso file you downloaded and looking for the label in single quotes.
-
-```
-$ file <ISO-SOURCE> | sed -e "s/.*'\(.*\)'.*/\1/"
-
-```
-
-You will recognise it because the convention for arch labels is: 'ARCH_<YEAR><MONTH>'.
-
-Create a custom grub.cfg file, replacing <FS-LABEL> with the correct label for your iso.
-
- `grub.cfg ` 
-```
-insmod part_gpt
-insmod part_msdos
-insmod fat
-insmod efi_gop
-insmod efi_uga
-insmod video_bochs
-insmod video_cirrus
-insmod font
-
-if loadfont "${prefix}/fonts/unicode.pf2" ; then
-  insmod gfxterm
-  set gfxmode="1024x768x32;auto"
-  terminal_input console
-  terminal_output gfxterm
-fi
-
-menuentry "Arch Linux archiso x86_64" {
-  set gfxpayload=keep
-  search --no-floppy --set=root --label <FS-LABEL>
-  linux /arch/boot/x86_64/vmlinuz archisobasedir=arch archisolabel=<FS-LABEL> add_efi_memmap
-  initrd /arch/boot/x86_64/archiso.img
-}
-
-menuentry "UEFI Shell x86_64 v2" {
-  search --no-floppy --set=root --label <FS-LABEL>
-  chainloader /EFI/shellx64_v2.efi
-}
-
-menuentry "UEFI Shell x86_64 v1" {
-  search --no-floppy --set=root --label <FS-LABEL>
-  chainloader /EFI/shellx64_v1.efi
-}
-
-```
-
-Create a grub standalone image, replacing /LOCATION/OF/ with your own path:
-
-```
-$ grub-mkstandalone -d /usr/lib/grub/i386-efi/ -O i386-efi --modules="part_gpt part_msdos" --fonts="unicode" --locales="uk" --themes="" -o "/LOCATION/OF/bootia32.efi" "boot/grub/grub.cfg=/LOCATION/OF/grub.cfg" -v
-
-```
-
-#### Creating a bootable USB
-
-Follow the instructions listed [here](https://projects.archlinux.org/archiso.git/tree/docs/README.transfer#n105) under "PC-EFI (GPT) [x86_64 only]", but between steps 4 and 5, copy your custom bootia32.efi file to EFI/boot/bootia32.efi on your install medium, and add the x205ta's broadcom wifi driver to the appropriate squashfs.
-
-In detail, that is:
-
-Insert a usb storage device that you are happy to overwrite, noting its device node (e.g., /dev/sdb ; i.e., <DEV-TARGET>). Use gdisk to create a UFI bootable partition on the disk:
-
-```
-$ gdisk <DEV-TARGET>
-
-```
-
-Delete any existing partitions (repeatedly use the *d* command until they are all gone). Add a new partition (*n*) and set its type to "ef00" when prompted. Write the changes to disk (*w*).
-
-Update the kernel's awareness of the new partition
-
-```
-$ partprobe
-
-```
-
-Create a FAT32 file system on the new partition (e.g., /dev/sdb1 ; i.e., <DEV-TARGET-N>).
-
-```
-$ mkfs.vfat -F 32 -n <FS-LABEL> <DEV-TARGET-N>
-
-```
-
-Mount the partition (to <MNT-TARGET-N>)
-
-```
-$ mount <DEV-TARGET-N> <MNT-TARGET-N>
-
-```
-
-Extract the relevant parts of the arch install ISO (<ISO-SOURCE>) to your usb disk
-
-```
-$ bsdtar -x --exclude=isolinux/ --exclude=EFI/archiso/ --exclude=arch/boot/syslinux/ -f <ISO-SOURCE> -C <MNT-TARGET-N>
-
-```
-
-Copy your custom bootia32.efi to the usb disk
-
-```
-$ cp /LOCATION/OF/bootia32.efi <MNT-TARGET-N>/EFI/boot/bootia32.efi
-
-```
-
-##### Unmount
-
-Unmount the usb install medium partition
-
-```
-$ umount <DEV-TARGET-N>
-
-```
 
 ### OS Independent Method
 

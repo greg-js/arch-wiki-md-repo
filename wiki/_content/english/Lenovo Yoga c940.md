@@ -69,7 +69,7 @@ EndSection
 
 ```
 
-That said there seems to be issues with Chromium based GPU acceleration, so either disabling that via Chromium flags, or removing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Although you will face some tearing unless using [compton](https://www.archlinux.org/packages/?name=compton) or [picom](https://www.archlinux.org/packages/?name=picom).
+That said there seems to be issues with Chromium based GPU acceleration, so either disabling that via Chromium flags, or removing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel).
 
 ### Audio
 
@@ -84,20 +84,20 @@ However Audio is partially working as there are some limitations.
 
 #### Microphone
 
-Microphone requires the new SOF firmware, I've not experimented with this so I can't really say anything to that.
+Microphone requires the new SOF firmware. This is available in some pre-release kernels, but is still very much a work in progress.
 
 Bug reports for Microphone
 
 *   [https://bugzilla.kernel.org/show_bug.cgi?id=201251](https://bugzilla.kernel.org/show_bug.cgi?id=201251)
 *   [https://github.com/thesofproject/sof/issues/2134](https://github.com/thesofproject/sof/issues/2134)
 
-The microphone is working with a pre-release kernel. (The changes have been backported to Fedora 31, so copying what happened there might help for Arch.) There may also be signing issues so turning secure boot off might be necessary.
-
 #### Speakers
 
-Audio is OK, there are 5.1 speakers, 2.1 in the soundbar, and 2 under the palmrest on either side of the laptop. Only the 2 speakers in the soundbar works, and not the subwoofer. This isn't optimal, but Alsa/Pulseaudio report that its a 2 channel audio device. I have read in other articles from other Lenovo devices, like the X1 Yoga that they solve this by making the alsa/pulseaudio use 4 channels instead of 2.. I haven't tried this so I cannot report on it.
+Audio is OK, there are 5.1 speakers, 2.1 in the soundbar, and 2 under the palmrest on either side of the laptop. Only the 2 speakers in the soundbar work, and not the subwoofer. This isn't optimal, but Alsa/Pulseaudio report that its a 2 channel audio device. I have read in other articles from other Lenovo devices, like the X1 Yoga that they solve this by making the alsa/pulseaudio use 4 channels instead of 2\. I haven't tried this so I cannot report on it.
 
 Thread on Alsa-devel about 5.1 speakers [https://mailman.alsa-project.org/pipermail/alsa-devel/2018-November/142369.html](https://mailman.alsa-project.org/pipermail/alsa-devel/2018-November/142369.html)
+
+The problem appears to be that the amplifiers for the extra speakers are turned off by default and there is no available documentation on how to turn them on.
 
 ### Bluetooth
 

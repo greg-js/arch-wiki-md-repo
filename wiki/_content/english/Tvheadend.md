@@ -19,7 +19,7 @@
     *   [5.3 Use CAPMT (Linux Network DVBAPI) with OSCam](#Use_CAPMT_(Linux_Network_DVBAPI)_with_OSCam)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Unable to authenticate/play stream](#Unable_to_authenticate/play_stream)
-    *   [6.2 Not detecting channels when using DVB-T2 HD in Germany](#Not_detecting_channels_when_using_DVB-T2_HD_in_Germany)
+    *   [6.2 DVB-T2 HD in Germany](#DVB-T2_HD_in_Germany)
 
 ## Installation
 
@@ -99,6 +99,8 @@ The following settings may be used when using DVB-API as Conditional Access Clie
 | Connect port | 9000 |
 | CW Mode | Standard / auto |
 
+**Note:** See the official [Tvheadend docs](https://docs.tvheadend.org/webui/config_caclient/) about CAs for details.
+
 In OSCam create a user named *vdr* with *vdr* as password and set the *DVB Api* configuration to use at least the following parameters:
 
 | Parameter | Value |
@@ -117,6 +119,6 @@ Authentication issues can occur when using *digest* as *Authentication type*.
 
 Change this to *Both plain and digest* to allow browsers/players that don't support the digest protocol.
 
-### Not detecting channels when using DVB-T2 HD in Germany
+### DVB-T2 HD in Germany
 
-The German broadcast of DVB-T2 HD is a deviation of the official standard inasmuch as it is using the more modern H.265 codec. Somehow, tvheadend doesn’t detect the channels automatically. You first need to run the configuration wizard, choose no pre-defined muxes, just *--Generic--: auto-Default*. After the search run, save and go to *Configuration*, *DVB Inputs*, *Muxes*. Select all listed muxes (might be on two pages, batch selection via shift key possible) and edit them from *DVB-T* to *DVB-T2* – you need to check the *Delivery system* hook in the edit dialog. Then go to *Network*, select the DVB-T entry and click *Force scan*. Observe the rescan via the *Muxes* tab as many of the former "FAIL" results become "OK". This will get you the channels under *Services* which you can then select to create an actual channels list of the unencrypted TV channels.
+The German broadcast of DVB-T2 HD is a deviation of the official standard inasmuch as it is using the more modern H.265 codec. Somehow, tvheadend doesn’t detect the channels automatically. You first need to run the configuration wizard, choose no pre-defined muxes, just *--Generic--: auto-Default*. After the search run, save and go to *Configuration*, *DVB Inputs*, *Muxes*. Select all listed muxes (might be on two pages, batch selection via shift key possible) and edit them from *DVB-T* to *DVB-T2* – you need to check the *Delivery system* checkmark in the edit dialog. Then go to *Network*, select the DVB-T entry and click *Force scan*. Observe the rescan via the *Muxes* tab as many of the former "FAIL" results become "OK". This will get you the channels under *Services* which you can use to create an actual channels list of the unencrypted TV channels.

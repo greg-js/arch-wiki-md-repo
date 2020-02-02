@@ -45,12 +45,6 @@ The default installation of Arch provides Bash as shell interpreter and does not
 
 See [Bootsplash](/index.php/Bootsplash "Bootsplash").
 
-*   **Bootsplash** – the first and original implementation of a Linux kernel bootsplash, superseded by Splashy
-*   [Fbsplash](/index.php/Fbsplash "Fbsplash") - Gentoo implementation as bootsplash program
-*   [Plymouth](/index.php/Plymouth "Plymouth") – the new graphical boot process for Fedora, replacing the aging Red Hat Graphical Boot
-*   usplash – former bootsplash program used by Ubuntu
-*   [xsplash-bzr](https://aur.archlinux.org/packages/xsplash-bzr/) – new splash program used by Ubuntu starting from 9.10
-
 #### 指令 shell
 
 See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").

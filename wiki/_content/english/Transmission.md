@@ -310,4 +310,5 @@ These can be fixed by setting `net.core.rmem_max=4194304` and `net.core.wmem_max
 ## See also
 
 *   [Transmission wiki](https://trac.transmissionbt.com/wiki)
-*   [HeadlessUsage](https://trac.transmissionbt.com/wiki/HeadlessUsage/General)
+*   [Headless Usage](https://trac.transmissionbt.com/wiki/HeadlessUsage/General)
+*   [Transmission wiki on GitHub](https://github.com/transmission/transmission/wiki)

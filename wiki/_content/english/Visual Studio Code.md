@@ -56,6 +56,8 @@ Example:
 
 ```
 
+You might face weird prompts after setting the integrated shell arguments with external terminal, remove the line to solve the problem or use an external terminal.
+
 ### External terminal
 
 If you are using [Terminator](/index.php/Terminator "Terminator") as default terminal for Arch and you have an error on Visual Studio Code: `Unable to launch debugger worker process (vsdbg) through the terminal. spawn truecolor ENOENT`, you can change the terminal that will be used by Visual Studio to another terminal (e.g. [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)).

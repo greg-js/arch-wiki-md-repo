@@ -1486,7 +1486,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **Swift** — XMPP client written in C++ with Qt and Swiften.
 
-	[https://swift.im/](https://swift.im/) || [swift-im](https://aur.archlinux.org/packages/swift-im/)
+	[https://swift.im/](https://swift.im/) || [swift-im](https://www.archlinux.org/packages/?name=swift-im)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Easy to hack feature-rich XMPP client by the author of the ejabberd XMPP server.
 

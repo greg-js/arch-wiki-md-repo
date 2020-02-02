@@ -20,6 +20,7 @@
         *   [3.2.3 Sandboxes](#Sandboxes)
         *   [3.2.4 Removing packages](#Removing_packages)
     *   [3.3 Stack](#Stack)
+    *   [3.4 ghcup](#ghcup)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -120,6 +121,8 @@ $ stack install --system-ghc cabal-install
 
 This newly installed `cabal-install` has been compiled without shared libraries and won't use them when building packages by default. Also, this `cabal-install` will use the installed [ghc](https://www.archlinux.org/packages/?name=ghc) compiler.
 
+Alternatively, you can also use [ghcup-git](https://aur.archlinux.org/packages/ghcup-git/) to install an already compiled `cabal-install` binary and even a specific version of `ghc` compiler. See the [usage section](https://gitlab.haskell.org/haskell/ghcup#usage) to see the steps to follow.
+
 ### Haskell development tools
 
 To start developing in Haskell easily, one option is the [haskell-platform](http://www.haskell.org/platform/) bundle which is described as:
@@ -188,11 +191,19 @@ It is possible to install a package system-wide with the `--global` flag, but th
 
 Cabal sandboxes provide a *consistent* local package database and environment (similar to virtual-env in Python or rvm in Ruby). To create a sandbox in the current directory, run:
 
- `cabal sandbox init` It can be later removed using `cabal sandbox delete` 
+ `cabal sandbox init` 
+
+It can be later removed using
+
+ `cabal sandbox delete` 
 
 By default, if the current directory contains a sandbox, cabal will take advantage of it for installation, so you can follow the same steps as [#Installing packages user-wide](#Installing_packages_user-wide). If you want to use a sandbox elsewhere, you can – while the current directory contains the sandbox – run `cabal exec "$SHELL"` to start a sandbox-aware shell. Then you can change the directory to wherever you want, and cabal will still use the sandbox. Alternatively, you can pass the `--sandbox-config-file=*/somewhere*/cabal.sandbox.config` flag to cabal.
 
-To run executables within a cabal sandbox, you must also set `PATH=$PATH:$PWD/.cabal-sandbox/bin` or start a local shell with `cabal exec "$SHELL"`.
+To run executables within a cabal sandbox, you must also set
+
+ `PATH=$PATH:$PWD/.cabal-sandbox/bin` 
+
+or start a local shell with `cabal exec "$SHELL"`.
 
 #### Removing packages
 
@@ -207,6 +218,10 @@ If you want/can fix/reinstall whole user-wide Haskell package system - remove `~
 ### Stack
 
 [Stack](https://haskellstack.org) is a build tool that focuses on automatically curated, consistent package sets rather than dependency resolution. This means it's easy to install a set of packages without concern of version conflicts as long as they coexist within a given Stackage snapshot. It can be installed through either [stack](https://www.archlinux.org/packages/?name=stack), [stack-static](https://aur.archlinux.org/packages/stack-static/) or [stack-bin](https://aur.archlinux.org/packages/stack-bin/). The latter provides statically linked binaries, thereby avoiding dozens of `haskell-*` dependencies. More information can be found at [§ Install/upgrade # Arch Linux](https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux).
+
+### ghcup
+
+[ghcup](https://gitlab.haskell.org/haskell/ghcup) makes it easy to install specific versions of ghc and can also bootstrap a fresh Haskell developer environment from scratch. It follows the UNIX philosophy of do one thing and do it well. Similar in scope to rustup, pyenv and jenv.
 
 ## See also
 

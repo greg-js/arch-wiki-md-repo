@@ -783,7 +783,7 @@ command failed: Operation not supported (-95)
 
  `dmesg`  `Microcode SW error detected.  Restarting 0x2000000.` 
 
-Чтобы решить эту проблему, выполните [откат](/index.php/Downgrading_packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Downgrading packages (Русский)") пакета [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) или переименуйте последнюю версию прошивки вашего устройства, чтобы загрузилась старая версия (при условии, что пакет не входит в список [игнорируемых](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Пропуск_обновления_пакетов "Pacman (Русский)")).
+Чтобы решить эту проблему, выполните [откат](/index.php/Downgrading_packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Downgrading packages (Русский)") пакета [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) или переименуйте последнюю версию прошивки вашего устройства, чтобы загрузилась старая версия (при условии, что пакет не входит в список [игнорируемых](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Запрет_на_обновление_отдельных_пакетов "Pacman (Русский)")).
 
 #### Отключение мерцания LED-индикатора
 

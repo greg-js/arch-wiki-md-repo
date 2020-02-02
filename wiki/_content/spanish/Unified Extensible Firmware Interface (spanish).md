@@ -14,7 +14,11 @@ La [Unified Extensible Firmware Interface](http://www.uefi.org/) (UEFI o EFI par
 
 Es un método distito del comunmente usado «[código de arranque MBR](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning")» seguido por los sistemas [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS"). Consulte [Arch boot process](/index.php/Arch_boot_process "Arch boot process") para conocer sus diferencias y el proceso de arranque con UEFI. Para configurar los cargadores de arranque UEFI, vea [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Versiones de UEFI](#Versiones_de_UEFI)
 *   [2 Firmware de UEFI](#Firmware_de_UEFI)

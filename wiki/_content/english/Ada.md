@@ -19,15 +19,15 @@
 
 Additional packages:
 
-*   [gprbuild](https://aur.archlinux.org/packages/gprbuild/) - GPRbuild build system
-*   [xmlada](https://aur.archlinux.org/packages/xmlada/) - XML/Ada
+*   [gprbuild](https://aur.archlinux.org/packages/gprbuild/) or [gprbuild-git](https://aur.archlinux.org/packages/gprbuild-git/) - GPRbuild build system
+*   [xmlada](https://aur.archlinux.org/packages/xmlada/) or [xmlada-git](https://aur.archlinux.org/packages/xmlada-git/) - XML/Ada
 *   [ada-web-server](https://aur.archlinux.org/packages/ada-web-server/) - Ada Web Server
 *   [aunit](https://aur.archlinux.org/packages/aunit/) - Ada Unit Testing Framework
 *   GNATColl - GNAT Components Collection
-    *   [gnatcoll-core](https://aur.archlinux.org/packages/gnatcoll-core/)
+    *   [gnatcoll-core](https://aur.archlinux.org/packages/gnatcoll-core/) or [gnatcoll-core-git](https://aur.archlinux.org/packages/gnatcoll-core-git/)
     *   [gnatcoll-db2ada](https://aur.archlinux.org/packages/gnatcoll-db2ada/)
-    *   [gnatcoll-gmp](https://aur.archlinux.org/packages/gnatcoll-gmp/)
-    *   [gnatcoll-iconv](https://aur.archlinux.org/packages/gnatcoll-iconv/)
+    *   [gnatcoll-gmp](https://aur.archlinux.org/packages/gnatcoll-gmp/) or [gnatcoll-gmp-git](https://aur.archlinux.org/packages/gnatcoll-gmp-git/)
+    *   [gnatcoll-iconv](https://aur.archlinux.org/packages/gnatcoll-iconv/) or [gnatcoll-iconv-git](https://aur.archlinux.org/packages/gnatcoll-iconv-git/)
     *   [gnatcoll-postgres](https://aur.archlinux.org/packages/gnatcoll-postgres/)
     *   [gnatcoll-python](https://aur.archlinux.org/packages/gnatcoll-python/)
     *   [gnatcoll-readline](https://aur.archlinux.org/packages/gnatcoll-readline/)

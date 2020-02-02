@@ -515,6 +515,10 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 
 	[http://pauker.sourceforge.net/](http://pauker.sourceforge.net/) || [pauker](https://aur.archlinux.org/packages/pauker/)
 
+*   **OpenTeacher** — Open source application that helps you learn a variety of subjects
+
+	[http://openteacher.org/en/](http://openteacher.org/en/) || [openteacher](https://aur.archlinux.org/packages/openteacher/)
+
 #### Touch typing
 
 ##### Console
@@ -728,10 +732,6 @@ See the main article: [Window manager#List of window managers](/index.php/Window
 See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg").
 
 #### Window tilers
-
-*   **PyWO** — Allows you to easily organize windows on the desktop using keyboard shortcuts.
-
-	[https://code.google.com/archive/p/pywo/](https://code.google.com/archive/p/pywo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **QuickTile** — Lightweight standalone alternative to Compiz Grid plugin.
 

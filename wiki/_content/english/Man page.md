@@ -220,9 +220,9 @@ Caveats: Fonts are generally limited to Times at hardcoded sizes. There are no h
 
 There are several online databases of man pages, including:
 
-*   [man7.org](http://man7.org/linux/man-pages/index.html). Upstream for Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
-*   [Arch Linux man pages](https://jlk.fjfi.cvut.cz/arch/manpages/). Used for links from the wiki.
-*   [manned.org](https://manned.org/) — collection from various Linux distributions, BSD, etc., with multiple package versions
+*   [man7.org](http://man7.org/linux/man-pages/index.html)—The Linux man-pages project. Upstream of the [man-pages](https://www.archlinux.org/packages/?name=man-pages) package.
+*   [Arch manual pages](https://jlk.fjfi.cvut.cz/arch/manpages/)—contains man pages from Arch Linux packages. Used for [man page links](/index.php/Template:Man "Template:Man") from the wiki.
+*   [manned.org](https://manned.org/)—collection from various Linux distributions, BSD, etc., with multiple package versions
 *   [linux.die.net](https://linux.die.net/man/)
 *   [man.cx](https://man.cx/)
 *   [Debian man pages](https://manpages.debian.org/)
@@ -235,7 +235,7 @@ There are several online databases of man pages, including:
 *   [Plan 9 Manual — Volume 1](http://man.cat-v.org/plan_9/)
 *   [Inferno Manual — Volume 1](http://man.cat-v.org/inferno/)
 *   [Storage Foundation man pages](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
-*   [The UNIX and Linux forums man page repository](https://www.unix.com/man-page/OpenSolaris/1/man/)
+*   [The UNIX and Linux forums man page repository](https://www.unix.com/man-page-repository.php)
 
 **Tip:** You can use the `!archman` DuckDuckGo [!Bang](https://duckduckgo.com/bang.html) to search through the [Arch Linux man pages](https://jlk.fjfi.cvut.cz/arch/manpages/) directly.
 

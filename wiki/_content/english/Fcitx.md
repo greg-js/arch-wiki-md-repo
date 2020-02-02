@@ -108,7 +108,7 @@ Also please set the following environment variables to prefer IM modules for GTK
 
 ### Set environment variables for IM modules
 
-[Define](/index.php/Define "Define") the environment variables to register the input method modules and support xim programs.
+[Define](/index.php/Define "Define") the environment variables to register the input method modules. Without these variables, applications may fallback to XIM protocol, except for qt5 applications which don't have XIM support and require a IM module in place.
 
  `~/.pam_environment` 
 ```

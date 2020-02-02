@@ -95,11 +95,11 @@ A seção [#iw](#iw) descreve como gerenciar manualmente sua interface de rede s
 
 ## Driver de dispositivo
 
-O kernel padrão do Arch Linux é *modular*, o que significa que muitos dos drivers para hardware de máquina residem no disco rígido e estão disponíveis como [módulos](/index.php/Kernel_modules "Kernel modules"). Na inicialização, o [udev](/index.php/Udev "Udev") faz um inventário do seu hardware e carrega os módulos (drivers) apropriados para o hardware correspondente, o que, por sua vez, permite a criação de uma *interface* de rede.
+O kernel padrão do Arch Linux é *modular*, o que significa que muitos dos drivers para hardware de máquina residem no disco rígido e estão disponíveis como [módulos](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)"). Na inicialização, o [udev](/index.php/Udev "Udev") faz um inventário do seu hardware e carrega os módulos (drivers) apropriados para o hardware correspondente, o que, por sua vez, permite a criação de uma *interface* de rede.
 
 Alguns chipsets sem fio também exigem firmware, além de um driver correspondente. Muitas imagens de firmware são fornecidas pelo pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), no entanto, as imagens de firmware proprietárias não são incluídas e devem ser instaladas separadamente. Isso é descrito em [#Instalar driver/firmware](#Instalar_driver/firmware).
 
-**Nota:** Se o módulo apropriado não for carregado pelo udev na inicialização, basta [carregá-lo manualmente](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). Se o udev carrega mais de um driver para um dispositivo, o conflito resultante pode impedir a configuração seja bem-sucedida. Certifique-se de [colocar na lista negra](/index.php/Blacklist "Blacklist") o módulo indesejado.
+**Nota:** Se o módulo apropriado não for carregado pelo udev na inicialização, basta [carregá-lo manualmente](/index.php/Kernel_module_(Portugu%C3%AAs)#Manual_module_handling "Kernel module (Português)"). Se o udev carrega mais de um driver para um dispositivo, o conflito resultante pode impedir a configuração seja bem-sucedida. Certifique-se de [colocar na lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") o módulo indesejado.
 
 ### Verificar o status de driver
 
@@ -433,7 +433,7 @@ Uma configuração mais permanente do *regdomain* pode ser obtida através da ed
 
 Uma [suplicante WPA](/index.php/WPA_supplicant "WPA supplicant") também pode usar um *regdomain* na linha `country=` de `/etc/wpa_supplicant/wpa_supplicant.conf`.
 
-Também é possível configurar o módulo do kernel [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) para usar um *regdomain* específico adicionando, por exemplo, `options cfg80211 ieee80211_regdom=EU` como [opções do módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). No entanto, isso faz parte da [antiga implementação regulamentar](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
+Também é possível configurar o módulo do kernel [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) para usar um *regdomain* específico adicionando, por exemplo, `options cfg80211 ieee80211_regdom=EU` como [opções do módulo](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)"). No entanto, isso faz parte da [antiga implementação regulamentar](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
 
 Para mais informações, leia a [documentação regulatória no wireless.kernel.org](http://wireless.kernel.org/en/developers/Regulatory/).
 
@@ -456,9 +456,9 @@ Se a placa estiver com *hard blocked* ligado, use o botão de hardware (interrup
 
 ```
 
-**Nota:** É possível que a placa passe o estado de *hard blocked* ligado e *soft blocked* desligado para *hard blocked* desligado e *soft blocked* ligado, pressionando o botão de hardware (ou seja, o bit *soft blocked* está apenas ligado, independentemente). Isso pode ser modificado ajustando algumas opções do [módulo do kernel](/index.php/Kernel_module "Kernel module") `rfkill`.
+**Nota:** É possível que a placa passe o estado de *hard blocked* ligado e *soft blocked* desligado para *hard blocked* desligado e *soft blocked* ligado, pressionando o botão de hardware (ou seja, o bit *soft blocked* está apenas ligado, independentemente). Isso pode ser modificado ajustando algumas opções do [módulo do kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") `rfkill`.
 
-Os botões de hardware para ligar ou desligar placas de rede sem fio são tratadas por um [módulo de kernel](/index.php/Kernel_module "Kernel module") específico do fornecedor, frequentemente estes são módulos [WMI](https://lwn.net/Articles/391230/). Particularmente para modelos de hardware muito novos, acontece que o modelo ainda não é totalmente suportado no kernel estável mais recente. Neste caso, muitas vezes, ajuda a procurar informações sobre o rastreador de bugs do kernel e relatar o modelo ao mantenedor do módulo do respectivo kernel do fornecedor, caso isso ainda não tenha ocorrido.
+Os botões de hardware para ligar ou desligar placas de rede sem fio são tratadas por um [módulo de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") específico do fornecedor, frequentemente estes são módulos [WMI](https://lwn.net/Articles/391230/). Particularmente para modelos de hardware muito novos, acontece que o modelo ainda não é totalmente suportado no kernel estável mais recente. Neste caso, muitas vezes, ajuda a procurar informações sobre o rastreador de bugs do kernel e relatar o modelo ao mantenedor do módulo do respectivo kernel do fornecedor, caso isso ainda não tenha ocorrido.
 
 Veja também [[2]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
 
@@ -587,7 +587,7 @@ Se os canais Wi-Fi do computador não corresponderem aos do país do usuário, i
 
 Esta seção cobre métodos e procedimentos para instalar módulos do kernel e *firmware* para chipsets específicos, que diferem do método genérico.
 
-Veja [Módulos de kernel](/index.php/Kernel_modules "Kernel modules") para informações gerais sobre operações com módulos.
+Veja [Módulos de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") para informações gerais sobre operações com módulos.
 
 ### Ralink/Mediatek
 
@@ -690,7 +690,7 @@ Recursos externos:
 *   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
 *   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
 
-Se você encontrar páginas da Web sendo carregadas aleatoriamente muito lentamente ou se o dispositivo não puder conceder um endereço IP, tente alternar de criptografia de hardware para software carregando o módulo `ath5k` com `nohwcrypt=1` opção. Veja [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") para detalhes.
+Se você encontrar páginas da Web sendo carregadas aleatoriamente muito lentamente ou se o dispositivo não puder conceder um endereço IP, tente alternar de criptografia de hardware para software carregando o módulo `ath5k` com `nohwcrypt=1` opção. Veja [Kernel module (Português)#Opções de configuração de módulos](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)") para detalhes.
 
 Alguns laptops podem ter problemas com o indicador LED sem fio piscando em vermelho e azul. Para resolver esse problema, faça:
 
@@ -740,9 +740,9 @@ A solução é definir a opção `ps_enable=1` para o módulo `ath9k`:
 
 #### ipw2100 e ipw2200
 
-Esses módulos são totalmente suportados no kernel, mas requerem firmware adicional. Dependendo de qual dos chipsets você tem, [instale](/index.php/Instale "Instale") [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) ou [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Então [recarregue](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") o módulo apropriado.
+Esses módulos são totalmente suportados no kernel, mas requerem firmware adicional. Dependendo de qual dos chipsets você tem, [instale](/index.php/Instale "Instale") [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) ou [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Então [recarregue](/index.php/Kernel_module_(Portugu%C3%AAs)#Manuseio_manual_de_módulos_de_kernel "Kernel module (Português)") o módulo apropriado.
 
-**Dica:** Você pode usar as seguintes [opções de módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules"):
+**Dica:** Você pode usar as seguintes [opções de módulo](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)"):
 
 *   use a opção `rtap_iface=1` habilitar a interface radiotap
 *   use a opção `led=1` para habilitar um LED frontal indicando quando a rede sem-fio está conectada ou não
@@ -751,7 +751,7 @@ Esses módulos são totalmente suportados no kernel, mas requerem firmware adici
 
 O [iwlegacy](http://wireless.kernel.org/en/users/Drivers/iwlegacy) é o driver sem fio para os chips sem fio 3945 e 4965 da Intel. O firmware está incluído no pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
-[udev](/index.php/Udev "Udev") deve carregar automaticamente o driver, do contrário carregue `iwl3945` ou `iwl4965` manualmente. Veja [Módulos de kernel](/index.php/Kernel_modules "Kernel modules") para detalhes.
+[udev](/index.php/Udev "Udev") deve carregar automaticamente o driver, do contrário carregue `iwl3945` ou `iwl4965` manualmente. Veja [Módulos de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") para detalhes.
 
 Se você tiver problemas para se conectar a redes em geral, falhas aleatórias com seu cartão na inicialização ou a qualidade do seu link é muito fraca, tente desabilitar o 802.11n:
 
@@ -812,7 +812,7 @@ Para ver todos os valores possíveis para esse LED:
 
 ```
 
-**Dica:** Se você não tiver `/sys/class/leds/phy0-led`, você pode tentar usar a [opção de módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules") `led_mode="1"`. Deve ser válida para ambos drivers `iwlwifi` e `iwlegacy`.
+**Dica:** Se você não tiver `/sys/class/leds/phy0-led`, você pode tentar usar a [opção de módulo](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)") `led_mode="1"`. Deve ser válida para ambos drivers `iwlwifi` e `iwlegacy`.
 
 ### Broadcom
 
@@ -828,13 +828,13 @@ Trate essa placa Tenda como um dispositivo `rt2870sta`. Veja [#rt2x00](#rt2x00).
 
 Isso deve ser parte do pacote do kernel e já estar instalado.
 
-Alguns chipsets Orinoco são Hermes II. Você pode usar o driver `wlags49_h2_cs` em vez do `orinoco_cs` e ganhar suporte a WPA. Para usar o driver, [coloque em lista negra](/index.php/Blacklist "Blacklist") `orinoco_cs` primeiro.
+Alguns chipsets Orinoco são Hermes II. Você pode usar o driver `wlags49_h2_cs` em vez do `orinoco_cs` e ganhar suporte a WPA. Para usar o driver, [coloque em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") `orinoco_cs` primeiro.
 
 #### prism54
 
 O driver `p54` está incluído no kernel, mas você precisa fazer o download do firmware apropriado para sua placa [neste site](http://linuxwireless.org/en/users/Drivers/p54#firmware) e instalá-lo no diretório `/usr/lib/firmware`.
 
-**Nota:** Também existe um driver mais antigo e obsoleto `prism54`, que pode entrar em conflito com o driver mais recente (`p54pci` ou `p54usb`). Certifique-se de [colocar em lista negra](/index.php/Blacklist "Blacklist") `prism54`.
+**Nota:** Também existe um driver mais antigo e obsoleto `prism54`, que pode entrar em conflito com o driver mais recente (`p54pci` ou `p54usb`). Certifique-se de [colocar em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") `prism54`.
 
 #### ACX100/111
 
@@ -852,7 +852,7 @@ Veja o [wiki oficial](http://sourceforge.net/apps/mediawiki/acx100/index.php?tit
 
 [Host AP](http://hostap.epitest.fi/) é um driver Linux para placas de rede local sem fio baseado no chipset Prism2/2.5/3 da Intersil. O driver está incluído no kernel do Linux.
 
-**Nota:** Certifique-se de [colocar em lista negra](/index.php/Blacklist "Blacklist") o driver `orinico_cs`, pois pode causar problemas.
+**Nota:** Certifique-se de [colocar em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") o driver `orinico_cs`, pois pode causar problemas.
 
 ### ndiswrapper
 
@@ -888,7 +888,7 @@ $ ndiswrapper -l
 
 ```
 
-Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules") para carregar automaticamente o módulo na inicialização.
+Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [[Kernel module (Português)# Carregamento automático de módulos com systemd]] para carregar automaticamente o módulo na inicialização.
 
 A parte importante é certificar-se de que ndiswrapper existe nesta linha, por isso basta adicioná-lo ao lado dos outros módulos. Seria melhor testar se o ndiswrapper será carregado agora, então:
 

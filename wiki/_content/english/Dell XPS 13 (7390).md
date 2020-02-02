@@ -49,7 +49,7 @@ It might be necessary to supply the `acpi_backlight=vendor` kernel parameter, se
 
 ## Battery
 
-It is possible to set the start and stop charging thresholds similar to [tlp](/index.php/Tlp "Tlp") for ThinkPads using [dell-command-configure](https://aur.archlinux.org/packages/dell-command-configure/).
+It is possible to set the start and stop charging thresholds similar to [TLP](/index.php/TLP "TLP") for ThinkPads using [dell-command-configure](https://aur.archlinux.org/packages/dell-command-configure/).
 
 Example:
 

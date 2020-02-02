@@ -13,17 +13,16 @@ Follow the [Installation guide](/index.php/Installation_guide "Installation guid
     *   [1.2 Wacom serial panel](#Wacom_serial_panel)
     *   [1.3 Rotation](#Rotation)
 *   [2 Hibernation](#Hibernation)
-*   [3 Fbsplash](#Fbsplash)
-*   [4 Power Saving](#Power_Saving)
-    *   [4.1 Battery](#Battery)
-    *   [4.2 Fan control](#Fan_control)
-    *   [4.3 TLP](#TLP)
-    *   [4.4 Frequency Scaling](#Frequency_Scaling)
-    *   [4.5 Undervolting](#Undervolting)
-    *   [4.6 Bootloader kernel options](#Bootloader_kernel_options)
-        *   [4.6.1 grub2](#grub2)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Using non-Lenovo Network cards](#Using_non-Lenovo_Network_cards)
+*   [3 Power Saving](#Power_Saving)
+    *   [3.1 Battery](#Battery)
+    *   [3.2 Fan control](#Fan_control)
+    *   [3.3 TLP](#TLP)
+    *   [3.4 Frequency Scaling](#Frequency_Scaling)
+    *   [3.5 Undervolting](#Undervolting)
+    *   [3.6 Bootloader kernel options](#Bootloader_kernel_options)
+        *   [3.6.1 grub2](#grub2)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Using non-Lenovo Network cards](#Using_non-Lenovo_Network_cards)
 
 ## LCD
 
@@ -110,17 +109,13 @@ You can then bind them to a key to rotate/invert your screen using the hardware 
 
 See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
 
-## Fbsplash
-
-To make [fbsplash](/index.php/Fbsplash "Fbsplash") work, i915 has to be added to the modules array in mkinitcpio.conf:
-
- `/etc/mkinitcpio.conf`  `MODULES="i915"` 
-
 ## Power Saving
 
 ### Battery
 
-Install [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) and set your battery settings. They are located at: `/sys/devices/platform/smapi/BATx` 
+Install [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) and set your battery settings. They are located at:
+
+ `/sys/devices/platform/smapi/BATx` 
 
 BAT0 is the main battery attached to your laptop. BAT1 is the battery attached to the X200 Ultrabase.
 

@@ -24,8 +24,7 @@ Related articles
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Check kernel config](#Check_kernel_config)
     *   [4.2 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
-    *   [4.3 No ipv4 on unprivileged Arch container](#No_ipv4_on_unprivileged_Arch_container)
-    *   [4.4 Resource limits are not applied when viewed from inside a container](#Resource_limits_are_not_applied_when_viewed_from_inside_a_container)
+    *   [4.3 Resource limits are not applied when viewed from inside a container](#Resource_limits_are_not_applied_when_viewed_from_inside_a_container)
 *   [5 Uninstall](#Uninstall)
 *   [6 See also](#See_also)
 
@@ -33,7 +32,7 @@ Related articles
 
 ### Required software
 
-Install [LXC](/index.php/LXC "LXC") and the [lxd](https://aur.archlinux.org/packages/lxd/) package, then [start](/index.php/Start "Start") `lxd.service`.
+Install [LXC](/index.php/LXC "LXC") and the [lxd](https://www.archlinux.org/packages/?name=lxd) package, then [start](/index.php/Start "Start") `lxd.service`.
 
 See [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_(optional) "Linux Containers") if you want to run *unprivileged* containers. Otherwise see [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS).
 
@@ -148,7 +147,7 @@ $ lxc profile edit default
 
 Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `dnsmasq@lxd.service` and `netctl@lxd.service`.
 
-If you encounter issue with the provided example configuration, or have suggestions to improve it, please leave a comment on the [lxd](https://aur.archlinux.org/packages/lxd/) page.
+If you encounter issue with the provided example configuration, or have suggestions to improve it, please leave a comment on the [lxd](https://www.archlinux.org/packages/?name=lxd) page.
 
 ### Modify processes and files limit
 
@@ -209,17 +208,6 @@ Or to enable `security.privileged=true` for new containers, edit the config for 
 $ lxc profile edit default
 
 ```
-
-### No ipv4 on unprivileged Arch container
-
-This was tested and validated on LXD v.2.20\. The container can not start the `systemd-networkd` service so does not get a valid ipv4 address. A work-around was suggested by Stéphane Graber ([Github Issue](https://github.com/lxc/lxd/issues/4071)), execute on the host and restart the container:
-
-```
-$ lxc profile set default security.syscalls.blacklist "keyctl errno 38"
-
-```
-
-	stgraber: "The reason is that the networkd systemd unit somehow makes use of the kernel keyring, which doesn't work inside unprivileged containers right now. The line above makes that system call return not-implemented which is enough of a workaround to get things going again."
 
 ### Resource limits are not applied when viewed from inside a container
 

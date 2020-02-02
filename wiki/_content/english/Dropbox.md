@@ -42,6 +42,7 @@ Related articles
         *   [7.6.4 Locale caused errors](#Locale_caused_errors)
         *   [7.6.5 Filesystem monitoring problem](#Filesystem_monitoring_problem)
     *   [7.7 Proxy settings](#Proxy_settings)
+    *   [7.8 Missing tray icon in GNOME](#Missing_tray_icon_in_GNOME)
 
 ## Installation
 
@@ -418,3 +419,7 @@ export http_proxy=http://your.proxy.here:port
 ```
 
 **Note:** Dropbox will only use proxy settings of the form `http://your.proxy.here:port`, not `your.proxy.here:port` as some other applications do.
+
+### Missing tray icon in GNOME
+
+GNOME 3.26 removed support for tray icons in [bug 785956](https://bugzilla.gnome.org/show_bug.cgi?id=785956) which will prevent the Dropbox icon from showing. To restore tray icons an appropriate extension such as [App Indicator](https://extensions.gnome.org/extension/615/appindicator-support/) needs to be installed.

@@ -64,6 +64,7 @@ Note that certain font licenses may impose some legal limitations.
     *   [6.3 List installed fonts for a particular Unicode character](#List_installed_fonts_for_a_particular_Unicode_character)
     *   [6.4 Set terminal font on-the-fly](#Set_terminal_font_on-the-fly)
     *   [6.5 Application-specific font cache](#Application-specific_font_cache)
+    *   [6.6 Force color emoji](#Force_color_emoji)
 *   [7 See also](#See_also)
 
 ## Font formats
@@ -270,6 +271,7 @@ Works with pango 1.44:
 *   [Roboto](https://en.wikipedia.org/wiki/Roboto "wikipedia:Roboto") ([ttf-roboto](https://www.archlinux.org/packages/?name=ttf-roboto)) – default font for newer Android versions
 *   [Google Noto](https://en.wikipedia.org/wiki/Noto_fonts "wikipedia:Noto fonts") ([noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts)) – Unicode
 *   [Liberation fonts](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) – free metric-compatible substitute for the Arial, Arial Narrow, Times New Roman and Courier New fonts found in Windows and Microsoft Office products
+*   [IBM Plex](https://en.wikipedia.org/wiki/IBM_Plex "wikipedia:IBM Plex") ([ttf-ibm-plex](https://www.archlinux.org/packages/?name=ttf-ibm-plex)) – serif, sans-serif, condensed sans-serif and monospace with true italics
 *   [Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "wikipedia:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
 *   [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") ([ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/)) – Windows 10 fonts
 
@@ -311,7 +313,7 @@ Relevant websites:
 
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/))
 *   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
-*   [Inter UI](https://github.com/rsms/inter) ([otf-inter](https://aur.archlinux.org/packages/otf-inter/)) – designed for user interfaces
+*   [Inter UI](https://github.com/rsms/inter) ([inter-font](https://www.archlinux.org/packages/?name=inter-font)) – designed for user interfaces
 *   [Jost*](https://indestructibletype.com/Jost.html) ([otf-jost](https://aur.archlinux.org/packages/otf-jost/)) - An open-source typeface based on [Futura](https://en.wikipedia.org/wiki/Futura_(typeface) "wikipedia:Futura (typeface)")
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – free substitute for Times New Roman
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 major variations: normal, narrow, and caption - Unicode: Latin, Cyrillic
@@ -598,6 +600,32 @@ For terminal emulators that use [X resources](/index.php/X_resources "X resource
 ### Application-specific font cache
 
 Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `~/.matplotlib/fontList.cache`, `~/.cache/matplotlib/fontList.cache`, `~/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[1]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
+
+### Force color emoji
+
+If the default font includes some emoji characters, they will be used over the characters provided by a dedicated emoji font, resulting in inconsistent display. To override this behavior, the following fontconfig snippet can be added to `/etc/fonts/conf.d/90-emoji.conf`, using the [ttf-joypixels](https://www.archlinux.org/packages/?name=ttf-joypixels) font as an example:
+
+```
+<fontconfig>
+    <match>
+        <test name="family">
+            <string>sans-serif</string>
+        </test>
+        <edit mode="prepend" name="family" binding="strong">
+            <string>JoyPixels</string>
+        </edit>
+    </match>
+    <match>
+        <test name="family">
+            <string>serif</string>
+        </test>
+        <edit mode="prepend" name="family" binding="strong">
+            <string>JoyPixels</string>
+        </edit>
+    </match>
+</fontconfig>
+
+```
 
 ## See also
 

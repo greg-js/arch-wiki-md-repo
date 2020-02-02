@@ -51,7 +51,7 @@ Esta página mostra como utilizar *dm-crypt* pela linha de comando para criptogr
 
 ## Preparação
 
-Antes de usar [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup), tenha certeza que o [módulo do kernel](/index.php/Kernel_module "Kernel module") `dm_crypt` está carregado.
+Antes de usar [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup), tenha certeza que o [módulo do kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") `dm_crypt` está carregado.
 
 ## Uso do cryptsetup
 

@@ -27,7 +27,7 @@ Do [site do USB/IP](http://usbip.sourceforge.net/):
 
 ### Configuração do servidor
 
-O servidor deve ter um dispositivo USB conectado fisicamente a ele e o [módulo de kernel](/index.php/Kernel_module "Kernel module") de USP/IP `usbip_host` carregado. Então, [inicie](/index.php/Inicie "Inicie") e [habilite](/index.php/Habilite "Habilite") o serviço de systemd USB/IP `usbipd.service`.
+O servidor deve ter um dispositivo USB conectado fisicamente a ele e o [módulo de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") de USP/IP `usbip_host` carregado. Então, [inicie](/index.php/Inicie "Inicie") e [habilite](/index.php/Habilite "Habilite") o serviço de systemd USB/IP `usbipd.service`.
 
 Liste os dispositivos conectados:
 
@@ -80,7 +80,7 @@ Então, por exemplo, para compartilhar o dispositivo tendo *busid* 1-1, deve-se 
 
 ### Configuração do cliente
 
-Certifique-se que o [módulo de kernel](/index.php/Kernel_module "Kernel module") `vhci-hcd` está carregado.
+Certifique-se que o [módulo de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") `vhci-hcd` está carregado.
 
 Então, liste os dispositivos disponíveis no servidor:
 

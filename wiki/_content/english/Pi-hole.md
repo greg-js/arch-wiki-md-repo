@@ -313,13 +313,6 @@ This is [unofficial, community-supported configuration](https://docs.pi-hole.net
 
 [Install](/index.php/Install "Install") [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
 
-Edit `/etc/php/php-fpm.d/www.conf` and change the listen directive to the following:
-
-```
-listen = 127.0.0.1:9000  
-
-```
-
 Modify `/etc/nginx/nginx.conf` to contain the following in the **http** section:
 
 ```
@@ -336,6 +329,13 @@ Copy the package provided default config for Pi-hole:
 ```
 # mkdir /etc/nginx/conf.d
 # cp /usr/share/pihole/configs/nginx.example.conf /etc/nginx/conf.d/pihole.conf
+
+```
+
+Edit `/etc/nginx/conf.d/pihole.conf` and change the fastcgi_pass directive to the following:
+
+```
+fastcgi_pass  unix:/run/php-fpm/php-fpm.sock;  
 
 ```
 

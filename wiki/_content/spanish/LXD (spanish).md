@@ -36,7 +36,7 @@ Artículos relacionados
 
 ### Software requerido
 
-Instale [LXC](/index.php/LXC "LXC") y el paquete [lxd](https://aur.archlinux.org/packages/lxd/), entonces [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") `lxd.service`.
+Instale [LXC](/index.php/LXC "LXC") y el paquete [lxd](https://www.archlinux.org/packages/?name=lxd), entonces [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") `lxd.service`.
 
 Véase [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_(optional) "Linux Containers") si desea ejecutar contenedores *sin privilegios*. De lo contrario véase [#Lanzar un contenedor sin CONFIG_USER_NS](#Lanzar_un_contenedor_sin_CONFIG_USER_NS).
 
@@ -149,7 +149,7 @@ $ lxc profile edit default
 
 Finalmente, [active](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") e [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") `dnsmasq@lxd.service` y `netctl@lxd.service`.
 
-Si encuentra algún problema con la configuración de ejemplo proporcionada o si tiene sugerencias para mejorarla, deje un comentario en la página [lxd](https://aur.archlinux.org/packages/lxd/).
+Si encuentra algún problema con la configuración de ejemplo proporcionada o si tiene sugerencias para mejorarla, deje un comentario en la página [lxd](https://www.archlinux.org/packages/?name=lxd).
 
 ### Modificar procesos y limites de archivos
 

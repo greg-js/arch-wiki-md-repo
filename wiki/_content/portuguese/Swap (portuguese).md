@@ -268,7 +268,7 @@ Se duas ou mais áreas tiverem a mesma prioridade e for a prioridade mais alta d
 
 ### Usando zswap ou zram
 
-O [zswap](/index.php/Zswap "Zswap") é um recurso de kernel do Linux que fornece um cache de write-back compactado para páginas do swap. Isso aumenta o desempenho e diminui o operações de E/S. [ZRAM](/index.php/ZRAM "ZRAM") cria um arquivo swap compactado virtual na memória como alternativa a um arquivo swap no disco.
+O [zswap](/index.php/Zswap "Zswap") é um recurso de kernel do Linux que fornece um cache de write-back compactado para páginas do swap. Isso aumenta o desempenho e diminui o operações de E/S. [ZRAM](/index.php/ZRAM_(Portugu%C3%AAs) "ZRAM (Português)") cria um arquivo swap compactado virtual na memória como alternativa a um arquivo swap no disco.
 
 ### Distribuição
 

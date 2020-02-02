@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [Módulos de kernel](/index.php/Kernel_modules "Kernel modules")
+*   [Módulos de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)")
 *   [Compilar módulo de kernel](/index.php/Compile_kernel_module "Compile kernel module")
 *   [Kernel Panics](/index.php/Kernel_Panics "Kernel Panics")
 *   [sysctl](/index.php/Sysctl "Sysctl")

@@ -40,7 +40,6 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Archivo multiplataforma de sincronización con control de versión. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Escanedados fail2ban de archivos de registros y baneados de IP que muestran los elementos maliciosos. |
 | [Fan speed control](/index.php/Fan_speed_control "Fan speed control") | fancontrol | fancontrol.service | Demonio de control del ventilador (parte de lm_sensors) |
-| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *aún no implementado* | Pantalla de arranque gráfica para el usuario. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Sintetizador de software. |
 | [inetutils](https://www.archlinux.org/packages/?name=inetutils) | ftpd | ftpd.service | Demonio de ftp Inetutils. |
 | [GDM](/index.php/GDM "GDM") | gdm | gdm.service | Administrador de pantalla de Gnome. |

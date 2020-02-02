@@ -429,6 +429,8 @@ Configure the password plugin and make sure you alter the settings accordingly:
 
  `/usr/share/webapps/roundcubemail/plugins/password/config.inc.php` 
 ```
+<?php
+
 $config['password_driver'] = 'sql';
 $config['password_db_dsn'] = 'mysql://<postfix_database_user>:<password>@localhost/<postfix_database_name>';
 // for dovecot salted passwords only

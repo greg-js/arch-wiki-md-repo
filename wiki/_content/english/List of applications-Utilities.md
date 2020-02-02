@@ -1490,7 +1490,7 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 *   **WoeUSB** — Simple tool to create USB stick windows installer from an ISO image or a real DVD. (Fork of WinUSB).
 
-	[https://github.com/WoeUSB/WoeUSB-frontend-wxgtk](https://github.com/WoeUSB/WoeUSB-frontend-wxgtk) || [woeusb-git](https://aur.archlinux.org/packages/woeusb-git/)
+	[https://github.com/WoeUSB/WoeUSB-frontend-wxgtk](https://github.com/WoeUSB/WoeUSB-frontend-wxgtk) || [woeusb](https://aur.archlinux.org/packages/woeusb/) or [woeusb-git](https://aur.archlinux.org/packages/woeusb-git/)
 
 *   **windows2usb** — Windows 7/8/8.1/10 ISO to Flash Drive burning utility for Linux with MBR/GPT, BIOS/UEFI, FAT32/NTFS support
 

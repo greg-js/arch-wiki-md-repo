@@ -66,6 +66,10 @@
 
 	[https://github.com/librespot-org/librespot](https://github.com/librespot-org/librespot) || [librespot-git](https://aur.archlinux.org/packages/librespot-git/)
 
+*   **ncspot** — Cross-platform ncurses Spotify client written in Rust, inspired by ncmpc and the likes.
+
+	[https://github.com/hrkfdn/ncspot](https://github.com/hrkfdn/ncspot) || [ncspot](https://aur.archlinux.org/packages/ncspot/) [ncspot-git](https://aur.archlinux.org/packages/ncspot-git/)
+
 *   **Tizonia** — Command-line cloud music player for Linux with support for Spotify, Google Play Music, YouTube, SoundCloud, Plex servers and Chromecast devices..
 
 	[http://tizonia.org/docs/spotify/](http://tizonia.org/docs/spotify/) || [tizonia-all](https://aur.archlinux.org/packages/tizonia-all/)

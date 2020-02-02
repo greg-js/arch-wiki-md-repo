@@ -31,7 +31,7 @@
 | <small>3.7.</small> [Outros hardwares](/index.php/Category:Other_hardware_(Portugu%C3%AAs) "Category:Other hardware (Português)") <small>(2)</small> |
 | <small>3.8.</small> [Som](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Multimídia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)"))</small> |
 | <small>3.9.</small> [Armazenamento](/index.php/Category:Storage_(Portugu%C3%AAs) "Category:Storage (Português)") <small>(1)</small> |
-| <small>4.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(5)</small> |
+| <small>4.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(6)</small> |
 | <small>4.1.</small> [Sistema de Nomes de Domínio (DNS)](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(5)</small> |
 | <small>4.2.</small> [E-mail](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)") <small>(0)</small> |
 | <small>4.2.1.</small> [Servidor de e-mail](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(2) (também em [Servidores](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
@@ -108,7 +108,7 @@
 | <small>5.8.3.</small> [KDE](/index.php/Category:KDE_(Portugu%C3%AAs) "Category:KDE (Português)") <small>(1) (também em [Ambientes de desktop](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)"))</small> |
 | <small>5.9.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(7)</small> |
 | <small>5.9.1.</small> [Comandos de Xorg](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Comandos](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
-| <small>6.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(6)</small> |
+| <small>6.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(7)</small> |
 | <small>6.1.</small> [Backup](/index.php/Category:Backup_(Portugu%C3%AAs) "Category:Backup (Português)") <small>(1)</small> |
 | <small>6.2.</small> [Processo de inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(10)</small> |
 | <small>6.2.1.</small> [Gerenciadores de boot](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(2)</small> |
@@ -131,7 +131,7 @@
 | <small>6.6.1.3.</small> [Servidor web](/index.php/Category:Web_server_(Portugu%C3%AAs) "Category:Web server (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |
 | <small>6.7.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(2)</small> |
 | <small>6.7.1.</small> [Tela de inicialização](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
-| <small>6.8.</small> [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(8)</small> |
+| <small>6.8.</small> [Sistemas de arquivos](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(9)</small> |
 | <small>6.8.1.</small> [Encriptação de disco](/index.php/Category:Disk_encryption_(Portugu%C3%AAs) "Category:Disk encryption (Português)") <small>(9) (também em [Encriptação](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)"))</small> |
 | <small>6.8.2.</small> [Virtualização de armazenamento](/index.php/Category:Storage_virtualization_(Portugu%C3%AAs) "Category:Storage virtualization (Português)") <small>(2)</small> |
 | <small>6.9.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(4)</small> |
@@ -156,7 +156,7 @@
 | <small>6.17.</small> [Notificação](/index.php/Category:Notification_(Portugu%C3%AAs) "Category:Notification (Português)") <small>(1)</small> |
 | <small>6.18.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(24)</small> |
 | <small>6.19.</small> [Gerenciamento de energia](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(2)</small> |
-| <small>6.20.</small> [Segurança](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(10)</small> |
+| <small>6.20.</small> [Segurança](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(11)</small> |
 | <small>6.20.1.</small> [Controle de acesso](/index.php/Category:Access_control_(Portugu%C3%AAs) "Category:Access control (Português)") <small>(1)</small> |
 | <small>6.20.2.</small> [Criptografia](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |
 | <small>6.20.2.1.</small> [Encriptação](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)") <small>(2)</small> |

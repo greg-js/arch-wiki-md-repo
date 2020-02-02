@@ -68,8 +68,6 @@ The default Murmur config file is at `/etc/murmur.ini` and is heavily commented.
 
 Obtain either a self-signed certificate as described in [OpenSSL](/index.php/OpenSSL "OpenSSL"), or a publicly trusted one with [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt").
 
-Please note, that there is currently no released version with support for Elliptic Curve certificates, but [murmur-git](https://aur.archlinux.org/packages/murmur-git/) supports it.
-
 Edit `murmur.ini` and tell it where your key and cert are:
 
  `/etc/murmur.ini` 

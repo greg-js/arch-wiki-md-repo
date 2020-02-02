@@ -10,6 +10,7 @@
 | USB-C / Thunderbolt 3 | Working | intel_wmi_thunderbolt |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working | ? |
+| Fingerprint Reader | Unsupported | 27c6:538d Shenzhen Goodix |
 
 Related articles
 

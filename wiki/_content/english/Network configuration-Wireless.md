@@ -181,7 +181,7 @@ Note that some cards only support WEXT.
 
 ### iw and wireless_tools comparison
 
-The table below gives an overview of comparable commands for *iw* and *wireless_tools*. See [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples.
+The table below gives an overview of comparable commands for *iw* and *wireless_tools*. See [iw replaces iwconfig](https://wireless.wiki.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples.
 
 | *iw* command | *wireless_tools* command | Description |
 | iw dev *wlan0* link | iwconfig *wlan0* | Getting link status. |

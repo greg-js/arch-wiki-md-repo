@@ -35,7 +35,7 @@ This page uses a table to display the correspondence of [package management](htt
 | Install package(s) as dependency / without marking as explicitly required. | `pacman -S --asdeps` | `dnf install` and then `dnf mark remove` | `apt-mark auto` | `emerge -1` |
 | Only downloads the given package(s) without unpacking or installing them | `pacman -Sw` | `dnf download` | `apt install --download-only` (into the package cache) or `apt download` (bypass the package cache) | `zypper --download-only` | `emerge --fetchonly` |
 | Start a shell to enter multiple commands in one session | `apt-config shell` | `zypper shell` |
-| Show a log of actions taken by the software management. | read `/var/log/pacman.log` | `dnf history` | `read /var/log/dpkg.log` | read `/var/log/zypp/history` | see `/var/log/portage` |
+| Show a log of actions taken by the software management. | read `/var/log/pacman.log` | `dnf history` | read `/var/log/dpkg.log` | read `/var/log/zypp/history` | read `/var/log/portage` |
 | Get a dump of the whole system information - Prints, Saves or similar the current state of the package management system. Preferred output is text or XML. (Note: Why either-or here? No tool offers the option to choose the output format.) | see `/var/lib/pacman/local` | see `/var/lib/rpm/Packages` | `apt-cache stats` | `emerge --info` |
 | e-mail delivery of package changes | `apt install apt-listchanges` |
 

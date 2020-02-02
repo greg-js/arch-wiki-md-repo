@@ -456,7 +456,7 @@ If you happen to run several Arch boxes on your LAN, you can share packages so t
 
 #### Read-only cache
 
-If you are looking for a quick solution, you can simply run a standalone webserver which other computers can use as a first mirror:
+If you are looking for a quick solution, you can simply run a standalone webserver, e.g. [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd), which other computers can use as a first mirror:
 
 ```
 # ln -s /var/lib/pacman/sync/*.db /var/cache/pacman/pkg

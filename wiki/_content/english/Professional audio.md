@@ -576,7 +576,7 @@ On [freenode](https://freenode.net/):
 
 *   [Audio](/index.php/List_of_applications#Audio "List of applications") A comprehensive list of audio applications on Arch Linux
 *   [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel")
-*   AUR meta packages: [proaudio-meta](https://aur.archlinux.org/packages/proaudio-meta) and [soundfonts-aur-meta](https://aur.archlinux.org/packages/soundfonts-aur-meta)
+*   AUR meta packages: [proaudio-meta](https://aur.archlinux.org/packages/proaudio-meta/) and [soundfonts-aur-meta](https://aur.archlinux.org/packages/soundfonts-aur-meta/)
 *   User repositories: [aur-av-bin](/index.php/Unofficial_user_repositories#aur-av-bin "Unofficial user repositories"), [coderkun-aur-audio](/index.php/Unofficial_user_repositories#coderkun-aur-audio "Unofficial user repositories") and [heftig](/index.php/Unofficial_user_repositories#heftig "Unofficial user repositories")
 *   [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) A list of software and resources for professional audio/video/live events production on the Linux platform
 *   [Realtime](https://wiki.linuxfoundation.org/realtime/start) The Linux Foundation wiki on the PREEMPT_RT patches

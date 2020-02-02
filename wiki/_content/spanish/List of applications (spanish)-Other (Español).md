@@ -46,10 +46,6 @@ La instalación por defecto de Arch provee Bash como intérprete de comandos y n
 
 Vea también [Wikipedia:es:Bootsplash](https://en.wikipedia.org/wiki/es:Bootsplash "wikipedia:es:Bootsplash").
 
-*   **[Fbsplash](/index.php/Fbsplash "Fbsplash")** — Implementación de programa bootsplash de Gentoo
-
-	[http://wiki.gentoo.org/wiki/Fbsplash](http://wiki.gentoo.org/wiki/Fbsplash) || [fbsplash](https://aur.archlinux.org/packages/fbsplash/)
-
 *   **[Plymouth](/index.php/Plymouth "Plymouth")** — El nuevo proceso de arranque gráfico de Fedora, que sustituye al envejecido proceso de arranque de Red Hat
 
 	[http://www.freedesktop.org/wiki/Software/Plymouth/](http://www.freedesktop.org/wiki/Software/Plymouth/) || [plymouth](https://aur.archlinux.org/packages/plymouth/)

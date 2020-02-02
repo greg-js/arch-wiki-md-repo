@@ -52,10 +52,6 @@
 
 参见 [Wikipedia:Bootsplash](https://en.wikipedia.org/wiki/Bootsplash "wikipedia:Bootsplash").
 
-*   **[Fbsplash](/index.php/Fbsplash "Fbsplash")** — Gentoo开机动画程序
-
-	[http://wiki.gentoo.org/wiki/Fbsplash](http://wiki.gentoo.org/wiki/Fbsplash) || [fbsplash](https://aur.archlinux.org/packages/fbsplash/)
-
 *   **[Plymouth](/index.php/Plymouth "Plymouth")** — Fedora新开机动画程序,取代了Red Hat 的开机动画
 
 	[http://www.freedesktop.org/wiki/Software/Plymouth/](http://www.freedesktop.org/wiki/Software/Plymouth/) || [plymouth](https://aur.archlinux.org/packages/plymouth/)

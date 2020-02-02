@@ -145,7 +145,7 @@ Opções adicionais devem ser adicionadas pelo usuário nas linhas abaixo de: `D
 
 ## Opções baseadas em módulo
 
-O módulo do kernel `i915` permite configurações via [opções de módulos](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Algumas delas modificam as opções de economia de energia.
+O módulo do kernel `i915` permite configurações via [opções de módulos](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)"). Algumas delas modificam as opções de economia de energia.
 
 Uma lista com todas as opções, suas descrições e valores padrão podem ser geradas com o seguinte comando:
 
@@ -161,7 +161,7 @@ Para checar o que está ativado, digite:
 
 ```
 
-Muitas opções tomam por padrão a íntegra -1, que assume os padrões do hardware. Contudo, é possível configurar opções mais agressivas de economia de energia utilizando [opções de módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Também é possível desabilitar a economia de energia por completo.
+Muitas opções tomam por padrão a íntegra -1, que assume os padrões do hardware. Contudo, é possível configurar opções mais agressivas de economia de energia utilizando [opções de módulo](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)"). Também é possível desabilitar a economia de energia por completo.
 
 **Atenção:** Utilizar outras opções que não sejam as padrões dos chips é considerado experimental: [tainted](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fc9740cebc3ab7c65f3c5f6ce0caf3e4969013ca).
 

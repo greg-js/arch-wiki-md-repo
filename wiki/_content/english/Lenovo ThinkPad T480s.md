@@ -109,6 +109,7 @@ Without special configuration and with default firmware settings, power usage is
 **Warning:** Changing Thunderbolt BIOS options has been reported to irreversibly brick ThinkPads [[1]](https://forums.lenovo.com/t5/ThinkPad-P-and-W-Series-Mobile/Lenovo-P52-bricked-by-selecting-BIOS-thunderbolt-support-for/td-p/4207538) [[2]](https://www.notebookcheck.net/Some-recent-ThinkPads-can-be-destroyed-by-changing-a-UEFI-BIOS-setting.346156.0.html) [[3]](https://www.reddit.com/r/thinkpad/comments/9qmqd2/thinkpad_p1_serious_issue_with_bricked_bios/). This is a BIOS bug. Until there is more information available on that matter (or a fix underway), use these options with care.
 
 *   Set "Thunderbolt BIOS Assist Mode" to "Enabled" in the EFI firmware interface. This seems to reduce number of idle wakeups.
+    *   However, kernel versions since 4.19+ should support it natively ([[4]](https://forums.lenovo.com/t5/Other-Linux-Discussions/Thunderbolt-BIOS-Assist-Mode-clearification-needed/m-p/4589228/highlight/true#M14040)), and some power consumption improvements is reported if this is switched to "Disabled" [[5]](https://forums.lenovo.com/t5/Other-Linux-Discussions/Thunderbolt-Software-and-Firmware-updates-and-Linux/m-p/4631439/highlight/true#M14292).
 *   Disable unused peripherals under "Security" -> "I/O port access" in the firmware. This especially applies to the SD/MMC-cardreader, which seems to drain some power even when idle
 
 As of Kernel 4.15, DisplayPort PSR (Panel self refresh) is disabled by default and broken when forcibly enabled (system hangs after a few seconds, display lag). 4.17-rc1 seems to improve a lot in this regard, but PSR still sometimes causes the screen to freeze for a few seconds.
@@ -133,21 +134,21 @@ echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/bind
 
 ### Fingerprint Reader
 
-The fingerprint sensor `06cb:009a` is not supported by [libfprint](/index.php/Fprint "Fprint"). There is a project to reverse enginer the Windows driver.[[4]](https://github.com/nmikhailov/Validity90)
+The fingerprint sensor `06cb:009a` is not supported by [libfprint](/index.php/Fprint "Fprint"). There is a project to reverse enginer the Windows driver.[[6]](https://github.com/nmikhailov/Validity90)
 
 ## Troubleshooting
 
 ### Thermal Throttling
 
-There are reported throttling issues for Lenovo T480/T480s/X1C6 notebooks.[[5]](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)
+There are reported throttling issues for Lenovo T480/T480s/X1C6 notebooks.[[7]](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)
 
 This script forces the CPU package power limit (PL1/2) to 44 W (29 W on battery) and the temperature trip point to 95 'C (85 'C on battery) by overriding default values in MSR and MCHBAR every 5 seconds (30 on battery) to block the Embedded Controller from resetting these values to default.
 
-[Install](/index.php/Install "Install") the [throttled](https://www.archlinux.org/packages/?name=throttled) package and [enable](/index.php/Enable "Enable") the `lenovo_fix.service`.[[6]](https://github.com/erpalma/throttled)
+[Install](/index.php/Install "Install") the [throttled](https://www.archlinux.org/packages/?name=throttled) package and [enable](/index.php/Enable "Enable") the `lenovo_fix.service`.[[8]](https://github.com/erpalma/throttled)
 
 ### PrivacyGuard
 
-The PrivacyGuard feature is referred to as *LCD Shadow* [[7]](https://github.com/torvalds/linux/blob/master/Documentation/admin-guide/laptops/thinkpad-acpi.rst#lcd-shadow-control) and was introduced in Linux 5.4.[[8]](https://patchwork.kernel.org/patch/11109239/)
+The PrivacyGuard feature is referred to as *LCD Shadow* [[9]](https://github.com/torvalds/linux/blob/master/Documentation/admin-guide/laptops/thinkpad-acpi.rst#lcd-shadow-control) and was introduced in Linux 5.4.[[10]](https://patchwork.kernel.org/patch/11109239/)
 
 To enable or turn on the LCD shadow:
 

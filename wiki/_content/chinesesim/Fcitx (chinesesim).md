@@ -126,7 +126,7 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 ### 设置环境变量
 
-将下面内容加入桌面的启动脚本，以注册输入法模块并支持 xim 程序。
+将下面内容加入桌面的启动脚本，以注册输入法模块。没有这些环境变量的情况下，程序可能自己回落到 XIM 协议，除了 qt5 程序没有 XIM 支持并且必须使用输入法模块。
 
  `~/.pam_environment` 
 ```

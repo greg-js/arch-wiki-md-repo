@@ -205,6 +205,13 @@ $ swaymsg -t get_tree | grep "app_id"
 
 ```
 
+To get the `app_id` of the focused window use:
+
+```
+$ swaymsg -t get_tree | jq -r '..|try select(.focused == true)'
+
+```
+
 If the `app_id` happens to be null for some windows, you might have to use the `class` and/or the `instance` attributes to enable floating mode/window assignments. You can search the output and create fine grained rules for your windows.
 
  `~/.config/sway/config` 

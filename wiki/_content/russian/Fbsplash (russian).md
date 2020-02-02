@@ -1,14 +1,18 @@
 Этот документ пояснит вам как установить, настроить, и использовать Fbsplash.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Установка и Настройка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8_.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.1 /boot/grub/grub.cfg](#.2Fboot.2Fgrub.2Fgrub.cfg)
-    *   [2.2 /etc/mkinitcpio.conf](#.2Fetc.2Fmkinitcpio.conf)
-    *   [2.3 Декорация консоли](#.D0.94.D0.B5.D0.BA.D0.BE.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8)
-*   [3 Обновление](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
-*   [4 Используйте :D](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B9.D1.82.D0.B5_:D)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Установка и Настройка](#Установка_и_Настройка)
+    *   [2.1 /boot/grub/grub.cfg](#/boot/grub/grub.cfg)
+    *   [2.2 /etc/mkinitcpio.conf](#/etc/mkinitcpio.conf)
+    *   [2.3 Декорация консоли](#Декорация_консоли)
+*   [3 Обновление](#Обновление)
+*   [4 Используйте :D](#Используйте_:D)
 
 ### Установка
 
@@ -71,7 +75,7 @@ DAEMONS=(... fbcondecor ...)
 
 *   Не забудьте пересобрать образ initramfs после апгрейда fbsplash.
 
-### Используйте :D
+### Используйте :D
 
 *   Shutdown
 *   Boot up

@@ -7,7 +7,7 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
-    *   [1.1 Configure display manager](#Configure_display_manager)
+    *   [1.1 Configure PAM](#Configure_PAM)
 *   [2 Using the KDE Wallet to store ssh key passphrases](#Using_the_KDE_Wallet_to_store_ssh_key_passphrases)
 *   [3 Using the KDE Wallet to store Git credentials](#Using_the_KDE_Wallet_to_store_Git_credentials)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
@@ -32,7 +32,7 @@ Optional [install](/index.php/Install "Install") [kwalletmanager](https://www.ar
 
 **Tip:** An alternative is to use KWalletManager and set an empty Kwallet-password, thus preventing the need of entering a password to unlock a wallet. Simply do not enter a password on both fields in *Change Password..*. This may however lead to unwanted (read/write) access to the user's wallet. Enabling *Prompt when an application accesses a wallet* under *Access Control* is highly recommended to prevent unwanted access to the wallet.
 
-### Configure display manager
+### Configure PAM
 
 The following lines must be present under their corresponding sections:
 
@@ -41,11 +41,12 @@ auth            optional        pam_kwallet5.so
 session         optional        pam_kwallet5.so auto_start
 ```
 
-It may be needed to edit the [display manager](/index.php/Display_manager "Display manager") configuration:
+Edit the [PAM](/index.php/PAM "PAM") configuration corresponding to your situation:
 
 *   For [SDDM](/index.php/SDDM "SDDM") no further edits should be needed because the lines are already present in `/etc/pam.d/sddm`.
 *   For [GDM](/index.php/GDM "GDM") edit `/etc/pam.d/gdm-password` accordingly.
 *   For [LightDM](/index.php/LightDM "LightDM") edit `/etc/pam.d/lightdm` and `/etc/pam.d/lightdm-greeter` files:
+*   For unlocking on tty login (no display manager), edit `/etc/pam.d/login` accordingly.
 
  `/etc/pam.d/lightdm` 
 ```

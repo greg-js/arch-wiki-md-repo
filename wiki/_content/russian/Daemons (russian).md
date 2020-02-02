@@ -35,7 +35,6 @@ freshclamd.service | Антивирус для Unix. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Cross-platform file synchronisation with version control. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Fail2ban scans log files and bans IP addresses that show malicious activity. |
 | [Fan speed control](/index.php/Fan_speed_control "Fan speed control") | fancontrol | fancontrol.service | Демон контроля вентилятора (часть lm_sensors) |
-| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *not yet implemented* | Графический экран boot splash для пользователя. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Software synthesizer. |
  ftpd | ftpd.service | inetutils FTP daemon. |
 | [GDM](/index.php/GDM "GDM") | gdm | gdm.service | Экранный менеджер GNOME. |

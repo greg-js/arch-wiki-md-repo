@@ -346,7 +346,7 @@ Run `mkinitcpio -H net` for parameter explanation.
 
 ### Using LVM
 
-If your root device is on [LVM](/index.php/LVM "LVM"), see [LVM#Configure mkinitcpio](/index.php/LVM#Configure_mkinitcpio "LVM").
+If your root device is on [LVM](/index.php/LVM "LVM"), see [Install Arch Linux on LVM#Adding mkinitcpio hooks](/index.php/Install_Arch_Linux_on_LVM#Adding_mkinitcpio_hooks "Install Arch Linux on LVM").
 
 ### Using encrypted root
 

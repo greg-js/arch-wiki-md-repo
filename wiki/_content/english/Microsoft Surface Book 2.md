@@ -126,4 +126,4 @@ Using [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) wi
 
 ## Hibernation
 
-Hibernation with the jakeday kernel only works when the touchscreen firmware loading is disabled (adding `i915.enable_guc=0` to the kernel parameters).
+Hibernation with the qzed kernel only works when the touchscreen firmware loading is disabled (adding `i915.enable_guc=0` to the kernel parameters).

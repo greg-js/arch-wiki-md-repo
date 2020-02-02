@@ -185,13 +185,13 @@ If there are many processes making I/O requests to different storage parts, thou
 
 #### The scheduling algorithms
 
-One way to improve throughput is to linearize access: by ordering waiting requests by their logical address and grouping the closest ones. Historically this was the first Linux I/O scheduler called [elevator](https://en.wikipedia.org/wiki/Elevator_algorithm "w:Elevator algorithm").
+One way to improve throughput is to linearize access: by ordering waiting requests by their logical address and grouping the closest ones. Historically this was the first Linux I/O scheduler called [elevator](https://en.wikipedia.org/wiki/Elevator_algorithm "wikipedia:Elevator algorithm").
 
-One issue with the elevator algorithm is that it is not optimal for a process doing sequential access: reading a block of data, processing it for several microseconds then reading next block and so on. The elevator scheduler does not know that the process is about to read another block nearby and, thus, moves to another request by another process at some other location. The [anticipatory](https://en.wikipedia.org/wiki/Anticipatory_scheduling "w:Anticipatory scheduling") I/O scheduler overcomes the problem: it pauses for a few milliseconds in anticipation of another close-by read operation before dealing with another request.
+One issue with the elevator algorithm is that it is not optimal for a process doing sequential access: reading a block of data, processing it for several microseconds then reading next block and so on. The elevator scheduler does not know that the process is about to read another block nearby and, thus, moves to another request by another process at some other location. The [anticipatory](https://en.wikipedia.org/wiki/Anticipatory_scheduling "wikipedia:Anticipatory scheduling") I/O scheduler overcomes the problem: it pauses for a few milliseconds in anticipation of another close-by read operation before dealing with another request.
 
-While these schedulers try to improve total throughput, they might leave some unlucky requests waiting for a very long time. As an example, imagine the majority of processes make requests at the beginning of the storage space while an unlucky process makes a request at the other end of storage. This potentially infinite postponement of the process is called starvation. To improve fairness, the [deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "w:Deadline scheduler") algorithm was developed. It has a queue ordered by address, similar to the elevator, but if some request sits in this queue for too long then it moves to an "expired" queue ordered by expire time. The scheduler checks the expire queue first and processes requests from there and only then moves to the elevator queue. Note that this fairness has a negative impact on overall throughput.
+While these schedulers try to improve total throughput, they might leave some unlucky requests waiting for a very long time. As an example, imagine the majority of processes make requests at the beginning of the storage space while an unlucky process makes a request at the other end of storage. This potentially infinite postponement of the process is called starvation. To improve fairness, the [deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler") algorithm was developed. It has a queue ordered by address, similar to the elevator, but if some request sits in this queue for too long then it moves to an "expired" queue ordered by expire time. The scheduler checks the expire queue first and processes requests from there and only then moves to the elevator queue. Note that this fairness has a negative impact on overall throughput.
 
-The [Completely Fair Queuing *(CFQ)*](https://en.wikipedia.org/wiki/CFQ "w:CFQ") approaches the problem differently by allocating a timeslice and a number of allowed requests by queue depending on the priority of the process submitting them. It supports [cgroup](/index.php/Cgroup "Cgroup") that allows to reserve some amount of I/O to a specific collection of processes. It is in particular useful for shared and cloud hosting: users who paid for some IOPS want to get their share whenever needed. Also, it idles at the end of synchronous I/O waiting for other nearby operations, taking over this feature from the *anticipatory* scheduler and bringing some enhancements. Both the *anticipatory* and the *elevator* schedulers were decommissioned from the Linux kernel replaced by the more advanced alternatives presented above.
+The [Completely Fair Queuing *(CFQ)*](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") approaches the problem differently by allocating a timeslice and a number of allowed requests by queue depending on the priority of the process submitting them. It supports [cgroup](/index.php/Cgroup "Cgroup") that allows to reserve some amount of I/O to a specific collection of processes. It is in particular useful for shared and cloud hosting: users who paid for some IOPS want to get their share whenever needed. Also, it idles at the end of synchronous I/O waiting for other nearby operations, taking over this feature from the *anticipatory* scheduler and bringing some enhancements. Both the *anticipatory* and the *elevator* schedulers were decommissioned from the Linux kernel replaced by the more advanced alternatives presented above.
 
 The [Budget Fair Queuing *(BFQ)*](https://algo.ing.unimo.it/people/paolo/disk_sched/) is based on CFQ code and brings some enhancements. It does not grant the disk to each process for a fixed time-slice but assigns a "budget" measured in number of sectors to the process and uses heuristics. It is a relatively complex scheduler, it may be more adapted to rotational drives and slow SSDs because its high per-operation overhead, especially if associated with a slow CPU, can slow down fast devices. The objective of BFQ on personal systems is that for interactive tasks, the storage device is virtually as responsive as if it was idle. In its default configuration it focuses on delivering the lowest latency rather than achieving the maximum throughput.
 
@@ -202,7 +202,8 @@ The [Budget Fair Queuing *(BFQ)*](https://algo.ing.unimo.it/people/paolo/disk_sc
 While some of the early algorithms have now been decommissioned, the official Linux kernel supports a number of I/O schedulers which can be split into two categories:
 
 *   The **multi-queue schedulers** are available by default with the kernel. The [Multi-Queue Block I/O Queuing Mechanism *(blk-mq)*](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) maps I/O queries to multiple queues, the tasks are distributed across threads and therefore CPU cores. Within this framework the following schedulers are available:
-    *   *None*, no queuing algorithm is applied.
+
+*   *   *None*, no queuing algorithm is applied.
     *   *mq-deadline* is the adaptation of the deadline scheduler to multi-threading.
     *   *Kyber*
     *   *BFQ*
@@ -223,7 +224,11 @@ While some of the early algorithms have now been decommissioned, the official Li
 
 To list the available schedulers for a device and the active scheduler (in brackets):
 
- `$ cat /sys/block/***sda***/queue/scheduler`  `mq-deadline kyber [bfq] none` 
+ `$ cat /sys/block/***sda***/queue/scheduler` 
+```
+mq-deadline kyber [bfq] none
+
+```
 
 To list the available schedulers for all devices:
 
@@ -232,6 +237,7 @@ To list the available schedulers for all devices:
 none
 [mq-deadline] kyber bfq none
 mq-deadline kyber [bfq] none
+
 ```
 
 To change the active I/O scheduler to *bfq* for device *sda*, use:
@@ -318,7 +324,7 @@ See [ionice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) and [[2]](h
 
 ### Overclocking
 
-[Overclocking](https://en.wikipedia.org/wiki/Overclocking "w:Overclocking") improves the computational performance of the CPU by increasing its peak clock frequency. The ability to overclock depends on the combination of CPU model and motherboard model. It is most frequently done through the BIOS. Overclocking also has disadvantages and risks. It is neither recommended nor discouraged here.
+[Overclocking](https://en.wikipedia.org/wiki/Overclocking "wikipedia:Overclocking") improves the computational performance of the CPU by increasing its peak clock frequency. The ability to overclock depends on the combination of CPU model and motherboard model. It is most frequently done through the BIOS. Overclocking also has disadvantages and risks. It is neither recommended nor discouraged here.
 
 Many Intel chips will not correctly report their clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg, which can be avoided by unloading and blacklisting the kernel module `acpi_cpufreq`. To read their clock speed use *i7z* from the [i7z](https://www.archlinux.org/packages/?name=i7z) package. To check for correct operation of an overclocked CPU, it is recommended to do [stress testing](/index.php/Stress_testing "Stress testing").
 
@@ -328,7 +334,7 @@ See [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scal
 
 ### Alternative CPU schedulers
 
-The default CPU scheduler in the mainline Linux kernel is [CFS](https://en.wikipedia.org/wiki/Completely_Fair_Scheduler "w:Completely Fair Scheduler"). Alternative schedulers are available.
+The default CPU scheduler in the mainline Linux kernel is [CFS](https://en.wikipedia.org/wiki/Completely_Fair_Scheduler "wikipedia:Completely Fair Scheduler"). Alternative schedulers are available.
 
 One alternative scheduler focused on desktop interactivity and responsiveness is [MuQSS](http://ck.kolivas.org/patches/muqss/sched-MuQSS.txt), developed by [Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/). MuQSS is included in the [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) kernel package. It is also available as a stand-alone patch or as part of the wider **-ck** patchset. See [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") for more information on the patchset.
 
@@ -490,7 +496,7 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 
 ## Watchdogs
 
-According to [wikipedia:Watchdog_timer](https://en.wikipedia.org/wiki/Watchdog_timer "wikipedia:Watchdog timer"):
+According to [Wikipedia:Watchdog timer](https://en.wikipedia.org/wiki/Watchdog_timer "wikipedia:Watchdog timer"):
 
 	A watchdog timer [...] is an electronic timer that is used to detect and recover from computer malfunctions. During normal operation, the computer regularly resets the watchdog timer [...]. If, [...], the computer fails to reset the watchdog, the timer will elapse and generate a timeout signal [...] used to initiate corrective [...] actions [...] typically include placing the computer system in a safe state and restoring normal system operation.
 

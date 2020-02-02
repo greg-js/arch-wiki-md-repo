@@ -587,17 +587,17 @@ From [lvmcache(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7):
 
 #### Create cache
 
-The fast method is creating a PV (if necessary) on the fast disk and add it to the existing volume group:
+The fast method is creating a PV (if necessary) on the fast disk (replace X with your drive letter) and add it to the existing volume group:
 
 ```
-# vgextend dataVG /dev/sdx
+# vgextend dataVG /dev/sdX
 
 ```
 
-Create a cache pool with automatic meta data on sdb, and convert the existing logical volume (dataLV) to a cached volume, all in one step:
+Create a cache pool with automatic meta data on sdX, and convert the existing logical volume (dataLV) to a cached volume, all in one step:
 
 ```
-# lvcreate --type cache --cachemode writethrough -L 20G -n dataLV_cachepool dataVG/dataLV /dev/sdx
+# lvcreate --type cache --cachemode writethrough -L 20G -n dataLV_cachepool dataVG/dataLV /dev/sdX
 
 ```
 

@@ -1,4 +1,4 @@
-**翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2020-01-20。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid={{{3}}})查看英文頁面之後的變更。
+**翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2020-01-27。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid={{{3}}})查看英文頁面之後的變更。
 
 此文件是個引導你透過官方安裝映像的 Live 系統安裝 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 的教學。在安裝前，建議先閱讀 [FAQ](/index.php/FAQ "FAQ"). 關於此文件使用的慣例字詞，請閱讀 [Help:Reading](/index.php/Help:Reading "Help:Reading"). 一些情況下，範例程式碼可能包含佔位符（以`*斜體*`格式化），其需要手動替換。
 
@@ -316,7 +316,7 @@ live 環境可從 [USB 隨身碟](/index.php/USB_flash_installation_media "USB f
 
 一般不需要創建新的 *initramfs*, 因為在使用 *pacstrap* 安裝[核心](/index.php/Kernel "Kernel")時， [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 已經被自動執行。
 
-對於 [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") 或 [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), 更改 [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) 並重新生成 initramfs:
+要在 [LVM](/index.php/LVM#Adding_mkinitcpio_hooks "LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") 或 [RAID](/index.php/RAID#Configure_mkinitcpio "RAID") 上安裝 Arch Linux, 編輯 [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) 並重新生成 initramfs:
 
 ```
 # mkinitcpio -P

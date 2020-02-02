@@ -32,6 +32,7 @@ This article outlines the additional software packages necessary to expand the f
     *   [3.1 "Not Authorized" when attempting to mount drives](#"Not_Authorized"_when_attempting_to_mount_drives)
     *   [3.2 Password required to access partitions](#Password_required_to_access_partitions)
     *   [3.3 Directories are not opened in the file manager](#Directories_are_not_opened_in_the_file_manager)
+        *   [3.3.1 D-Bus](#D-Bus)
 
 ## Overview
 
@@ -211,3 +212,14 @@ where `*my_file_manager*.desktop` is the desktop entry for your file manager —
 [Default Applications]
 inode/directory=*my_file_manager*.desktop
 ```
+
+#### D-Bus
+
+Some other applications instead use the `org.freedesktop.FileManager1` D-Bus protocol ([Firefox](/index.php/Firefox "Firefox") for example). The following shows a list of currently installed services supporting this protocol:
+
+```
+$ grep -R FileManager1 /usr/share/dbus-1/services
+
+```
+
+To what file manager is opened, copy the file to `$XDG_DATA_HOME/dbus-1/services`. Additionally, before the changes become active, kill the program currently implementing the D-Bus service.

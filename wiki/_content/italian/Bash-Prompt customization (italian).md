@@ -150,7 +150,7 @@ bldblu='\e[1;34m' # Blu
 bldpur='\e[1;35m' # Viola
 bldcyn='\e[1;36m' # Ciano
 bldwht='\e[1;37m' # Bianco
-unkblk='\e[4;30m' # Nero - Underline
+undblk='\e[4;30m' # Nero - Underline
 undred='\e[4;31m' # Rosso
 undgrn='\e[4;32m' # Verde
 undylw='\e[4;33m' # Giallo
@@ -234,6 +234,16 @@ BIBlue='\e[1;94m'       # Blu
 BIPurple='\e[1;95m'     # Viola
 BICyan='\e[1;96m'       # Ciano
 BIWhite='\e[1;97m'      # Bianco
+
+# Underline High Intensty
+UIBlack='\e[4;90m'       # Nero
+UIRed='\e[4;91m'         # Rosso
+UIGreen='\e[4;92m'       # Verde
+UIYellow='\e[4;93m'      # Giallo
+UIBlue='\e[4;94m'        # Blu
+UIPurple='\e[4;95m'      # Viola
+UICyan='\e[4;96m'        # Ciano
+UIWhite='\e[4;97m'       # Bianco
 
 # High Intensty backgrounds
 On_IBlack='\e[0;100m'   # Nero

@@ -2051,6 +2051,8 @@ Add `-show-cursor` to QEMU's options to see a mouse cursor.
 
 If that still does not work, make sure you have set your display device appropriately, for example: `-vga qxl`.
 
+Another option to try is `-usb -device usb-tablet` as mentioned in [#Mouse integration](#Mouse_integration). This overrides the default PS/2 mouse emulation and synchronizes pointer location between host and guest as an added bonus.
+
 ### Two different mouse cursors are visible
 
 Apply the tip [#Mouse integration](#Mouse_integration).

@@ -55,6 +55,7 @@ The package you will need to install depends on the browser you use.
 
 *   The NPAPI version can be [installed](/index.php/Install "Install") with the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package.
 *   The PPAPI version can be [installed](/index.php/Install "Install") with the [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash) package.
+*   Standalone version can be [installed](/index.php/Install "Install") with the [flashplayer-standalone](https://aur.archlinux.org/packages/flashplayer-standalone/) package.
 
 **Note:**
 

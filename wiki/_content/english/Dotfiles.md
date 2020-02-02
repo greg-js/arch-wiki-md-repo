@@ -87,7 +87,7 @@ If you are uncomfortable with [Git](/index.php/Git "Git"), you may want to use o
 | [dotgit](https://github.com/kobus-v-schoor/dotgit) | [dotgit](https://aur.archlinux.org/packages/dotgit/) | Bash | filename-based | No |
 | [homeshick](https://github.com/andsens/homeshick) | [homeshick-git](https://aur.archlinux.org/packages/homeshick-git/) | Bash | repository-wise | No |
 | [homesick](https://github.com/technicalpickles/homesick) | [homesick](https://aur.archlinux.org/packages/homesick/) | Ruby | repository-wise | No |
-| [Pearl](https://github.com/pearl-core/pearl) | [pearl-git](https://aur.archlinux.org/packages/pearl-git/) | Bash | repository-wise | No |
+| [Pearl](https://github.com/pearl-core/pearl) | [pearl-git](https://aur.archlinux.org/packages/pearl-git/) | Python | repository-wise | No |
 | [vcsh](https://github.com/RichiH/vcsh) | [vcsh](https://aur.archlinux.org/packages/vcsh/) | Shell | repository-wise | No |
 | [yadm](https://thelocehiliosan.github.io/yadm/) | [yadm-git](https://aur.archlinux.org/packages/yadm-git/) | Shell | filename-based
 (by class, OS, hostname & user) [[3]](https://thelocehiliosan.github.io/yadm/docs/alternates) | Jinja2

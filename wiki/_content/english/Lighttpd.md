@@ -335,7 +335,7 @@ fastcgi.server = (
             # Launch (max-procs + (max-procs * PHP_FCGI_CHILDREN)) procs, where
             # max-procs are "watchers" and the rest are "workers". See:
             # https://redmine.lighttpd.net/projects/1/wiki/frequentlyaskedquestions#How-many-php-CGI-processes-will-lighttpd-spawn 
-            "max-procs" => 4, # default value
+            "max-procs" => "4", # default value
             "bin-environment" => (
                 "PHP_FCGI_CHILDREN" => "1" # default value
             )
@@ -406,7 +406,7 @@ fastcgi.server = (
         "socket" => "/run/lighttpd/fastcgi.python.socket",
          "bin-path" => "test.py",
          "check-local" => "disable",
-         "max-procs" => 1,
+         "max-procs" => "1",
         )
     )
 )

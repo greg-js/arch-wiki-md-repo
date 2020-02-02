@@ -164,7 +164,7 @@ You may encounter an issue where your headset microphone is not being detected. 
  `/etc/modprobe.d/fix_headset_microphone.conf` 
 ```
 # Fix an issue where your headset microphone is not being detected:
-options snd-hda-intel model=dell-headset-multi
+options snd-hda-intel model=alc255-asus
 
 ```
 

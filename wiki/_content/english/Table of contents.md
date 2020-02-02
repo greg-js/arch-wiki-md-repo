@@ -34,7 +34,7 @@
 | <small>3.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15) (also in [Input](/index.php/Category:Input "Category:Input"))</small> |
 | <small>3.8.1.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(7)</small> |
 | <small>3.8.2.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
-| <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(26)</small> |
+| <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(27)</small> |
 | <small>3.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(35)</small> |
 | <small>3.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>3.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
@@ -234,10 +234,10 @@
 | <small>5.8.8.</small> [OpenBSD](/index.php/Category:OpenBSD "Category:OpenBSD") <small>(4)</small> |
 | <small>5.8.9.</small> [Suckless](/index.php/Category:Suckless "Category:Suckless") <small>(5)</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(23)</small> |
-| <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(12)</small> |
+| <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(13)</small> |
 | <small>6.2.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(27)</small> |
 | <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
-| <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
+| <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(1) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
 | <small>6.2.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(8)</small> |
 | <small>6.3.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(5) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
 | <small>6.3.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
@@ -269,7 +269,7 @@
 | <small>6.6.1.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>6.6.1.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>6.7.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(28)</small> |
-| <small>6.7.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
+| <small>6.7.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(1) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
 | <small>6.7.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.8.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(5) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.9.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(51)</small> |
@@ -311,7 +311,7 @@
 | <small>6.22.</small> [Security](/index.php/Category:Security "Category:Security") <small>(40)</small> |
 | <small>6.22.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |
 | <small>6.22.2.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
-| <small>6.22.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(16)</small> |
+| <small>6.22.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(17)</small> |
 | <small>6.22.4.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(6)</small> |
 | <small>6.22.4.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(3) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.22.4.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(8)</small> |
@@ -327,7 +327,7 @@
 | <small>6.22.12.</small> [Surveillance](/index.php/Category:Surveillance "Category:Surveillance") <small>(3)</small> |
 | <small>6.22.13.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.22.13.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
-| <small>6.23.</small> [Synchronization](/index.php/Category:Synchronization "Category:Synchronization") <small>(7)</small> |
+| <small>6.23.</small> [Synchronization](/index.php/Category:Synchronization "Category:Synchronization") <small>(8)</small> |
 | <small>6.23.1.</small> [Cloud synchronization](/index.php/Category:Cloud_synchronization "Category:Cloud synchronization") <small>(3)</small> |
 | <small>6.23.2.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.24.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(19)</small> |

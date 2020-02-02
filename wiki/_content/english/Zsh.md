@@ -246,12 +246,8 @@ key[ShiftTab]="${terminfo[kcbt]}"
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	autoload -Uz add-zle-hook-widget
-	function zle_application_mode_start {
-		echoti smkx
-	}
-	function zle_application_mode_stop {
-		echoti rmkx
-	}
+	function zle_application_mode_start { echoti smkx }
+	function zle_application_mode_stop { echoti rmkx }
 	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
@@ -756,13 +752,9 @@ bindkey '^D' exit_zsh
 
 	[https://github.com/getantibody/antibody](https://github.com/getantibody/antibody) || [antibody](https://aur.archlinux.org/packages/antibody/)
 
-*   **zplug** — A next-generation plugin manager for Zsh. [ABANDONED](https://github.com/zplug/zplug/issues/403#issuecomment-477520784)
+*   **zinit (previously "zplugin")** — Flexible Zsh plugin manager with clean fpath, reports, completion management, turbo mode
 
-	[https://github.com/zplug/zplug](https://github.com/zplug/zplug) || [zplug](https://aur.archlinux.org/packages/zplug/)
-
-*   **zplugin** — Flexible Zsh plugin manager with clean fpath, reports, completion management, turbo mode
-
-	[http://github.com/zdharma/zplugin](http://github.com/zdharma/zplugin) || [zsh-zplugin-git](https://aur.archlinux.org/packages/zsh-zplugin-git/)
+	[http://github.com/zdharma/zinit](http://github.com/zdharma/zinit) || [zsh-zplugin-git](https://aur.archlinux.org/packages/zsh-zplugin-git/)
 
 *   **Antigen** — A plugin manager for Zsh, inspired by oh-my-zsh and vundle. [ABANDONED](https://github.com/zsh-users/antigen/issues/673)
 
@@ -772,9 +764,13 @@ bindkey '^D' exit_zsh
 
 	[https://github.com/tarjoilija/zgen](https://github.com/tarjoilija/zgen) || [zgen-git](https://aur.archlinux.org/packages/zgen-git/)
 
+*   **zplug** — A next-generation plugin manager for Zsh. [ABANDONED](https://github.com/zplug/zplug/issues/403#issuecomment-477520784)
+
+	[https://github.com/zplug/zplug](https://github.com/zplug/zplug) || [zplug](https://aur.archlinux.org/packages/zplug/)
+
 ### Fish-like syntax highlighting
 
-[Fish](/index.php/Fish "Fish") provides a very powerful shell syntax highlighting. To use this in Zsh, you can install [zsh-syntax-highlighting](https://www.archlinux.org/packages/?name=zsh-syntax-highlighting) from offical repository and add following to your zshrc:
+[Fish](/index.php/Fish "Fish") provides a very powerful shell syntax highlighting. To use this in Zsh, you can install [zsh-syntax-highlighting](https://www.archlinux.org/packages/?name=zsh-syntax-highlighting) and [source](/index.php/Source "Source") the provided script from your zshrc:
 
 ```
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

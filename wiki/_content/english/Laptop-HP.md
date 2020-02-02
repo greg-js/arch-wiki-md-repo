@@ -280,6 +280,15 @@ CPU frequency scaling: Untested
 Rotation sensor: Untested | Untested | Hot Keys: Working
 Webcam: Untested
 Keyboard backlight: Working | For WiFi you need to download an unofficial version from GitHub. |
+| [HP Omen 15](/index.php?title=HP_Omen_15&action=edit&redlink=1 "HP Omen 15 (page does not exist)") | 2020.01 | Intel Core i7-770HQ, Intel UHD Graphics 620 | Working | Working | Working | Working, not out of the box | ACPI: works
+Suspend to RAM: works
+Suspend to Disk: couldn't make it
+Battery: works
+Display dimming: works | N/A | Keyboard backlight: working
+Touchpad toggle: working
+Windows key toggle: working
+Mute button indicator: not working
+OMEN button: not working | HDMI and DP connected to NVIDIA card - one may need to run X server on it to use video outputs. HDMI and DP don't seem to work on wayland. Battery holds up to 4h of internet browsing via wifi |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

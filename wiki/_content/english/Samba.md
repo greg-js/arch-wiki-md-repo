@@ -430,7 +430,9 @@ Where the options are `-b` (`--broadcast`) to use broadcast instead of using the
 
 ### NetBIOS/WINS host names
 
-You may need to [start](/index.php/Start "Start") `winbind.service` in order to resolve host names with e.g., `mount.cifs`
+You may need to [start](/index.php/Start "Start") `winbind.service` and `nmb.service` in order to resolve host names with e.g., `mount.cifs`
+
+**Note:** Due to a current mistake in `winbind.service`, you may have to modify the unit file as described in this [bug-report](https://bugs.launchpad.net/ubuntu/+source/samba/+bug/1789097)
 
 If you are using apparmor and are unable to start winbind, you may need to add the below two lines to the apparmor profile for winbind:
 

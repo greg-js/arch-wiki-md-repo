@@ -110,7 +110,18 @@ keycode  49 = ugrave Ugrave ugrave Ugrave notsign notsign
 
 With German layout, circumflex/degree symbol and </> are exchanged. With French layout, @/# are exchanged. With the US layout, `/~ and </> are exchanged.
 
-To change the behavior temporarily, [overwrite](/index.php/Help:Reading#Append,_add,_create,_edit "Help:Reading") `/sys/module/hid_apple/parameters/iso_layout` with `0`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `iso_layout` option to 0.
+To change the behavior temporarily, [overwrite](/index.php/Help:Reading#Append,_add,_create,_edit "Help:Reading") `/sys/module/hid_apple/parameters/iso_layout` with `0`:
+
+```
+# echo "0" > /sys/module/hid_apple/parameters/iso_layout
+
+```
+
+To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `iso_layout` option to 0:
+
+ `/etc/modprobe.d/hid_apple.conf`  `options hid_apple iso_layout=0` 
+
+You then need to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ## PrintScreen and SysRq
 

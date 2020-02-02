@@ -39,7 +39,6 @@ freshclamd.service | Anti-virus para Unix. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Sistema de sincronização de arquivos e controle de versão. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Fail2ban verifica arquivos de log e bane endereços ip que demonstram atividade maliciosa. |
 | [Fan speed control](/index.php/Fan_speed_control "Fan speed control") | fancontrol | fancontrol.service | Daemon de controle de ventoinhas(parte do lm_sensors) |
-| [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *não implementado* | Ferramenta para configuração de boot gráfico. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Sintetizador via software. |
 | [inetutils](https://www.archlinux.org/packages/?name=inetutils) | ftpd | ftpd.service | Daemon ftp do inetutils. |
 | [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") | gdm | gdm.service | GNOME Display Manager. |
@@ -95,7 +94,7 @@ NetworkManager-wait-online.service | Daemon que provê a configuração e conex�
 | [Postgrey](/index.php/Postgrey "Postgrey") | postgrey | postgrey.service | Serviço de listas cinzas(greylisting) utilizado em conjunto ao postfix. |
 | [PPTP server](/index.php/PPTP_server "PPTP server") | pptpd | pptpd.service | Serviço de VPN baseada no PPTP(Point-to-Point tunneling protocol. |
 | [pppd](/index.php/Pppd "Pppd") | pppd | ppp@.service | Daemon que implementa o PPTP, para discagens automáticas. |
-| [preload](/index.php/Preload "Preload") | preload | preload.service | Faz aplicações carregarem mais rápido, fazendo a pré-carga de bibliotecas compartilhadas. |
+| [preload](/index.php/Preload_(Portugu%C3%AAs) "Preload (Português)") | preload | preload.service | Faz aplicações carregarem mais rápido, fazendo a pré-carga de bibliotecas compartilhadas. |
 | [Prosody](/index.php/Prosody "Prosody") | prosody | prosody.service | Servidor XMPP. |
 | [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") | psd | psd.service | Mantém os temporários do navegador no tmpfs, e periodicamente efetua a sincronização com um disco. |
  pure-ftpd | pure-ftpd.servicecups.service | Servidor FTP rápido, de alta qualidade e que obedece aos padrões(standards-compliant). |

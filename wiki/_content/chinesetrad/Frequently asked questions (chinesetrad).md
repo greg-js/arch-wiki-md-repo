@@ -119,7 +119,7 @@
 
 ### Q) 我的網路連線跟其他作業系統比起來慢上不少，這是為什麼啊？
 
-**A)** 您的網路有設定正確嗎？檢查一下新手指南的[網域名稱](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#域名 "Beginners' guide (正體中文)")和[設定網路](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#設定網路 "Beginners' guide (正體中文)")。
+**A)** 您的網路有設定正確嗎？檢查一下新手指南的[網域名稱](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#域名 "Beginners' guide (正體中文)")和[設定網路](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#配置網路 "Beginners' guide (正體中文)")。
 
 要注意的是 Arch Linux 並沒有啟用[流量整形](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping")功能。因此，只要有一個程式(無論是 P2P 或基本的主從式連線)因為某些原因佔滿了您的網路連線頻寬，您的網路就會堵塞，拖慢其他程式的執行，甚至出現逾時錯誤。解決方案之一是使用[防火牆](/index.php/Firewalls "Firewalls")(Shorewall 或 Vuurmuur)；[iproute2](https://www.archlinux.org/packages/?name=iproute2) 也有一些現成腳本(如[這份 Wondershaper 的衍生](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos))也可以幫忙為網路層塑身。
 

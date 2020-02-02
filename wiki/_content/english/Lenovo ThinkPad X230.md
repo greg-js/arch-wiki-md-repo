@@ -186,7 +186,7 @@ Note that the `acpi_backlight=vendor` kernel option also works with the standard
 
 ### Sound control buttons
 
-**Note:** Laptop has single TRRS CTIA/Apple 3.5 mm audio jack (sleeve for a mic).
+**Note:** Laptop has single TRRS CTIA/Apple 3.5 mm audio jack (sleeve for a microphone).
 
 Red LED mute indicators light up automatically, if corresponding channel *muted* in `[alsamixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")`. Easiest way to make buttons work is to install [PulseAudio](/index.php/PulseAudio "PulseAudio") and it's plugin for your [desktop environment](/index.php/Desktop_environment "Desktop environment").
 

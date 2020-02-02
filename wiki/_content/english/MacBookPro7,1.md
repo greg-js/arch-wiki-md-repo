@@ -29,6 +29,7 @@ This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro a
 *   [5 Backlight Control](#Backlight_Control)
 *   [6 Fan Control](#Fan_Control)
 *   [7 Audio](#Audio)
+*   [8 Additional Notes](#Additional_Notes)
 
 ## Preparation
 
@@ -270,3 +271,17 @@ For controlling the fans I recommend using mbpfan from the AUR ([mbpfan-git](htt
 ## Audio
 
 ~~In Linux kernel 5.1 (or was it 5.2?) the MacBook Pro 7,1 started having audio issues. I have yet to find a fix even though I've been looking for months. If anyone has a fix please edit this section with your fix in it. For now the temporary fix is just rolling back the kernel to Linux 4.19\. To do that we need the Linux-LTS package: ~~:[Install](/index.php/Install "Install") the packages [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) and [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers).~~ If you are using grub you need to regenerate your grub config, otherwise reconfigure your bootloader to point to /boot/vmlinuz-linux-lts.~~ Fixed since 5.4.6!
+
+## Additional Notes
+
+For XFCE use cases:
+
+If you have issues with rebooting/power off function with XFCE power manager, add acpi=force to GRUB_CMDLINE_LINUX_DEFAULT in /etc/default/grub.
+
+Older versions of XFCE power manager will break backlight key handling if you select "handle display brightness keys" after installing nvidia driver (even after re-adding "RegistryDwords" "EnableBrightnessControl=1" to /usr/share/X11/xorg.conf.d/10-nvidia-brightness.conf)
+
+The PCI bridge values (prior to installing nvidia drivers) should be manually set in /etc/grub.d/01_enable_vga.conf
+
+[Configuring PCI for installing NVIDIA drivers](https://askubuntu.com/questions/264247/proprietary-nvidia-drivers-with-efi-on-mac-to-prevent-overheating)
+
+[Enabling brightness function keys](https://askubuntu.com/questions/76081/brightness-not-working-after-installing-nvidia-driver)

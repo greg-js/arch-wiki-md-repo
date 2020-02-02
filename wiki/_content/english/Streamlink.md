@@ -4,7 +4,11 @@ This project was forked from [Livestreamer](https://github.com/chrippa/livestrea
 
 Support for various streaming services is provided by plugins, which can be easily added if needed. A lot of popular video streaming services are supported out of the box, including Dailymotion, Livestream, Twitch, UStream, YouTube Live and many more; see [Plugins](https://streamlink.github.io/plugin_matrix.html) for the full list.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -37,6 +41,13 @@ $ streamlink -p mpv dailymotion.com/embed/video/x1b1h6o worst
 ```
 
 See the `streamlink (1)` [man page](/index.php/Man_page "Man page") for the full list of available options.
+
+To save a stream to your HDD
+
+```
+$ streamlink -o ~/$current_time.m2t "STREAM URL" best,high
+
+```
 
 ### Twitch
 

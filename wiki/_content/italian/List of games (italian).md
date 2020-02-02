@@ -539,7 +539,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **GemRB** — Tentativo di implementare nuovamente il motore [Bioware's Infinity Engine](https://en.wikipedia.org/wiki/Infinity_Engine "wikipedia:Infinity Engine") sotto GNU GPL
 
-	[http://www.gemrb.org/](http://www.gemrb.org/) || [gemrb](https://www.archlinux.org/packages/?name=gemrb)
+	[http://www.gemrb.org/](http://www.gemrb.org/) || [gemrb](https://aur.archlinux.org/packages/gemrb/)
 
 *   **OpenMW** — Tentativo di reimplementare il popolare gioco di ruolo [Morrowind](https://en.wikipedia.org/wiki/Morrowind "wikipedia:Morrowind"). OpenMW mira ad essere completamente giocabile, un'implementazione open source del motore del gioco
 

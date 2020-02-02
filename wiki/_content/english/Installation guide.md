@@ -314,7 +314,7 @@ Complete the [network configuration](/index.php/Network_configuration "Network c
 
 Creating a new *initramfs* is usually not required, because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of the [kernel](/index.php/Kernel "Kernel") package with *pacstrap*.
 
-For [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modify [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) and recreate the initramfs image:
+For [LVM](/index.php/Install_Arch_Linux_on_LVM#Adding_mkinitcpio_hooks "Install Arch Linux on LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modify [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) and recreate the initramfs image:
 
 ```
 # mkinitcpio -P

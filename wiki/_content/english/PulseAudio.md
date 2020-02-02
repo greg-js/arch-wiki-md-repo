@@ -771,6 +771,17 @@ $ pactl load-module module-x11-bell sample=x11-bell display=$DISPLAY
 
 ```
 
+Or use configuration files `/etc/pulse/default.pa` or `~/.config/pulse/default.pa`:
+
+ `~/.config/pulse/default.pa` 
+```
+.include /etc/pulse/default.pa
+
+# audible bell
+load-sample-lazy x11-bell /usr/share/sounds/freedesktop/stereo/bell.oga
+load-module module-x11-bell sample=x11-bell
+```
+
 To adjust the volume of the X11 bell, run the following command:
 
 ```

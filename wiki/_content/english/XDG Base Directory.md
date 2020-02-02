@@ -56,11 +56,11 @@ Only `XDG_RUNTIME_DIR` is set by default through [pam_systemd](https://www.freed
 ### System directories
 
 *   `XDG_DATA_DIRS`
-    *   List of directories seperated by `:` (analogous to `PATH`).
+    *   List of directories separated by `:` (analogous to `PATH`).
     *   Should default to `/usr/local/share:/usr/share`.
 
 *   `XDG_CONFIG_DIRS`
-    *   List of directories seperated by `:` (analogous to `PATH`).
+    *   List of directories separated by `:` (analogous to `PATH`).
     *   Should default to `/etc/xdg`.
 
 ## Support

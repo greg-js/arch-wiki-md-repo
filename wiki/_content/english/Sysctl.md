@@ -114,7 +114,9 @@ net.core.somaxconn = 1024
 
 ```
 
-**Warning:** Increasing this value may only increase performance on high-loaded servers and may cause as slow processing rate (e.g. a single threaded blocking server) or insufficient number of worker threads/processes [[1]](https://serverfault.com/questions/518862/will-increasing-net-core-somaxconn-make-a-difference/519152).
+**Note:** Kernel 5.4 raised the default maximum to 4096 [[1]](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=19f92a030ca6d772ab44b22ee6a01378a8cb32d4)
+
+**Warning:** Increasing this value may only increase performance on high-loaded servers and may cause as slow processing rate (e.g. a single threaded blocking server) or insufficient number of worker threads/processes [[2]](https://serverfault.com/questions/518862/will-increasing-net-core-somaxconn-make-a-difference/519152).
 
 #### Increase the memory dedicated to the network interfaces
 
@@ -146,7 +148,7 @@ See the following sources for more information and recommend values:
 
 #### Enable TCP Fast Open
 
-TCP Fast Open is an extension to the transmission control protocol (TCP) that helps reduce network latency by enabling data to be exchanged during the sender’s initial TCP SYN [[2]](https://www.keycdn.com/support/tcp-fast-open/). Using the value `3` instead of the default `1` allows TCP Fast Open for both incoming and outgoing connections:
+TCP Fast Open is an extension to the transmission control protocol (TCP) that helps reduce network latency by enabling data to be exchanged during the sender’s initial TCP SYN [[3]](https://www.keycdn.com/support/tcp-fast-open/). Using the value `3` instead of the default `1` allows TCP Fast Open for both incoming and outgoing connections:
 
 ```
 net.ipv4.tcp_fastopen = 3
@@ -186,7 +188,7 @@ net.ipv4.tcp_tw_reuse = 1
 
 ```
 
-Specify how many seconds to wait for a final FIN packet before the socket is forcibly closed. This is strictly a violation of the TCP specification, but required to prevent denial-of-service attacks. In Linux 2.2, the default value was 180 [[3]](https://access.redhat.com/solutions/41776):
+Specify how many seconds to wait for a final FIN packet before the socket is forcibly closed. This is strictly a violation of the TCP specification, but required to prevent denial-of-service attacks. In Linux 2.2, the default value was 180 [[4]](https://access.redhat.com/solutions/41776):
 
 ```
 net.ipv4.tcp_fin_timeout = 10
@@ -230,7 +232,7 @@ See [https://blog.cloudflare.com/path-mtu-discovery-in-practice/](https://blog.c
 
 #### TCP timestamps
 
-**Warning:** TCP timestamps protect against wrapping sequence numbers (at gigabit speeds) and round trip time calculation implemented in TCP. It is not recommended to turn off TCP timestamps as it may cause a security risk [[4]](https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf).
+**Warning:** TCP timestamps protect against wrapping sequence numbers (at gigabit speeds) and round trip time calculation implemented in TCP. It is not recommended to turn off TCP timestamps as it may cause a security risk [[5]](https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf).
 
 Disabling timestamp generation will reduce spikes and may give a performance boost on gigabit networks:
 
@@ -277,7 +279,7 @@ net.ipv4.tcp_rfc1337 = 1
 
 By enabling reverse path filtering, the kernel will do source validation of the packets received from all the interfaces on the machine. This can protect from attackers that are using IP spoofing methods to do harm.
 
-The kernel's default value is `0` (no source validation), but systemd ships `/usr/lib/sysctl.d/50-default.conf` that sets `net.ipv4.conf.all.rp_filter` to `2` (loose mode)[[6]](https://github.com/systemd/systemd/pull/10971).
+The kernel's default value is `0` (no source validation), but systemd ships `/usr/lib/sysctl.d/50-default.conf` that sets `net.ipv4.conf.all.rp_filter` to `2` (loose mode)[[7]](https://github.com/systemd/systemd/pull/10971).
 
 The following will set the reverse path filtering mechanism to value `1` (strict mode):
 
@@ -293,7 +295,7 @@ The relationship and behavior of `net.ipv4.conf.default.*`, `net.ipv4.conf.*inte
 
 A [martian packet](https://en.wikipedia.org/wiki/Martian_packet "wikipedia:Martian packet") is an IP packet which specifies a source or destination address that is reserved for special-use by Internet Assigned Numbers Authority (IANA). See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses "wikipedia:Reserved IP addresses") for more details.
 
-Often martian and unroutable packet may be used for a dangerous purpose. Logging these packets for further inspection may be useful [[7]](https://www.cyberciti.biz/faq/linux-log-suspicious-martian-packets-un-routable-source-addresses/):
+Often martian and unroutable packet may be used for a dangerous purpose. Logging these packets for further inspection may be useful [[8]](https://www.cyberciti.biz/faq/linux-log-suspicious-martian-packets-un-routable-source-addresses/):
 
 ```
 net.ipv4.conf.default.log_martians = 1
@@ -424,7 +426,7 @@ vm.dirty_bytes = 4194304
 
 ### Long system freezes while swapping to disk
 
-Increase `vm.min_free_kbytes` to improve desktop responsiveness and reduce long pauses due to swapping to disk. One should increase this to `installed_mem / num_of_cores * 0.05`. See [[8]](https://askubuntu.com/a/45009) and [[9]](https://www.linbit.com/en/kernel-min_free_kbytes/) for more details.
+Increase `vm.min_free_kbytes` to improve desktop responsiveness and reduce long pauses due to swapping to disk. One should increase this to `installed_mem / num_of_cores * 0.05`. See [[9]](https://askubuntu.com/a/45009) and [[10]](https://www.linbit.com/en/kernel-min_free_kbytes/) for more details.
 
 ## See also
 

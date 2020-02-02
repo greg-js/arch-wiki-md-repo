@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Data da última tradução: 2020-01-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=595242) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Data da última tradução: 2020-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=596285) na versão em inglês.
 
 Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-crypt*. Eles explicam todas as adaptações que serão realizadas do [processo de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação"). Todas as ferramentas necessárias estão disponíveis na [imagem de instalação](https://www.archlinux.org/download/).
 
@@ -903,7 +903,7 @@ Podemos agora checar se a entrada de mapeamento foi feita para `/dev/mapper/cryp
 
 **Dica:** Uma alternativa simples para o LVM, em casos do FAQ do cryptsetup onde ele não é necessário, é somente criar um sistema de arquivos com todo o dispositivo mapeado.
 
-Agora, configure os volumes lógicos do Volumes lógicos não são exibidos no dispositivo mapeado. Veja [LVM (Português)#Instalando Arch Linux em LVM](/index.php/LVM_(Portugu%C3%AAs)#Instalando_Arch_Linux_em_LVM "LVM (Português)") para maiores detalhes:
+Agora, configure os volumes lógicos do Volumes lógicos não são exibidos no dispositivo mapeado. Veja [Instalar Arch Linux no LVM](/index.php/Instalar_Arch_Linux_no_LVM "Instalar Arch Linux no LVM") para maiores detalhes:
 
 ```
 # pvcreate /dev/mapper/cryptlvm
@@ -1317,7 +1317,7 @@ Depois de criar, adicionar e colocar a chave como descrito acima, adicione o hoo
 
 ### Configurando o gerenciador de boot
 
-Instale o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") em `/dev/sda`. Então, edite `/etc/default/grub` como sugerido em [GRUB#Argumentos adicionais](/index.php/GRUB_(Portugu%C3%AAs)#Argumentos_adicionais "GRUB (Português)") e [GRUB#/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)"), siga ambas as instruções para o sistema criptografado e a partição de boot. Depois, gere o arquivo de configuração do GRUB.
+Instale o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") em `/dev/sda`. Então, edite `/etc/default/grub` como sugerido em [GRUB#Argumentos adicionais](/index.php/GRUB_(Portugu%C3%AAs)#Argumentos_adicionais "GRUB (Português)"), [GRUB#/boot criptografado](/index.php/GRUB_(Portugu%C3%AAs)#/boot_criptografado "GRUB (Português)") e [dm-crypt/Configuração do sistema#Usando o hook encrypt](/index.php/Dm-crypt/Configura%C3%A7%C3%A3o_do_sistema#Usando_o_hook_encrypt "Dm-crypt/Configuração do sistema"), siga ambas as instruções para o sistema criptografado e a partição de boot. Depois, gere o arquivo de configuração do GRUB.
 
 ### Configurando a swap
 

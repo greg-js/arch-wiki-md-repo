@@ -26,12 +26,10 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
-*   [2 Backlight](#Backlight)
-*   [3 Power management](#Power_management)
-    *   [3.1 Suspend and resume](#Suspend_and_resume)
-    *   [3.2 TLP](#TLP)
-*   [4 Fingerprint Sensor](#Fingerprint_Sensor)
-*   [5 Known Issues](#Known_Issues)
+*   [2 Power management](#Power_management)
+    *   [2.1 Suspend and resume](#Suspend_and_resume)
+*   [3 Fingerprint Sensor](#Fingerprint_Sensor)
+*   [4 Known Issues](#Known_Issues)
 
 ## Hardware
 
@@ -102,45 +100,21 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
-## Backlight
-
-You need to add `acpi_backlight=native` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
-
 ## Power management
 
 ### Suspend and resume
 
 Users have reported that the laptop is waking up immediately after entering suspending (see [[1]](https://www.reddit.com/r/thinkpad/comments/ckkbej/t495_linux_avoid/) and [[2]](https://www.reddit.com/r/thinkpad/comments/cveeyl/linux_on_t495t495sx395_suspendresume_fix/)). However, this seems to be fixed in the latest kernel. Suspend and resume works fine out-of-the-box.
 
-### TLP
-
-If you have installed [TLP](/index.php/TLP "TLP") to enable advance power management, you might notice that USB ports will not work under battery mode. Disable [Runtime Power Management](https://linrunner.de/en/tlp/docs/tlp-configuration.html#runtimepm) for USB controllers to fix this. To get PCIe device addresses of USB controllers:
-
-```
-$ lspci | grep -i usb
-
-```
-
-The first column of the output is the address:
-
-```
-03:00.4 USB controller: Realtek Semiconductor Co., Ltd. Device 816d (rev 0e)
-07:00.3 USB controller: Advanced Micro Devices, Inc. [AMD] Raven USB 3.1
-07:00.4 USB controller: Advanced Micro Devices, Inc. [AMD] Raven USB 3.1
-
-```
-
-To disable runtime power management for these devices, edit `/etc/default/tlp`:
-
- `/etc/default/tlp`  `RUNTIME_PM_BLACKLIST="03:00.4 07:00.3 07:00.4"` 
+With a graphical session (as of today, kernel 5.4.15), some issues are still there (see [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1885545#p1885545)).
 
 ## Fingerprint Sensor
 
-Fingerprint sensor seems to work with some recent firmware and software updates (2019-12-15). Driver development info: [[3]](https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617)[[4]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
+Fingerprint sensor seems to work with some recent firmware and software updates (2019-12-15). Driver development info: [[4]](https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617)[[5]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
 
-1\. Use [fwupd](/index.php/Fwupd "Fwupd") to install the latest firmware for "Synaptics Prometheus Fingerprint Reader". The update might have to be done manually (the released firmware is in testing). [[5]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware)[[6]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config)
+1\. Use [fwupd](/index.php/Fwupd "Fwupd") to install the latest firmware for "Synaptics Prometheus Fingerprint Reader". The update might have to be done manually (the released firmware is in testing). [[6]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware)[[7]](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config)
 
-2\. Latest fprintd and libfprint are required[[7]](https://fprint.freedesktop.org/). [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.
+2\. Latest fprintd and libfprint are required[[8]](https://fprint.freedesktop.org/). [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.
 
 3\. [fprint](/index.php/Fprint "Fprint") has more details on how to setup the fingerprint for [PAM](/index.php/PAM "PAM") authentication for example.
 

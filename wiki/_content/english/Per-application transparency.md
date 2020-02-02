@@ -42,7 +42,7 @@ $ xcompmgr &
 
 ```
 
-**Note:** You do not need to pass any arguments to it, but if you would like some other effects, check out the [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") page. A fork of Xcompmgr available in the repositories, [compton](https://www.archlinux.org/packages/?name=compton), may provide a greater stability and less tearing issues.
+**Note:** You do not need to pass any arguments to it, but if you would like some other effects, check out the [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") page. Alternatively, other [compositors](/index.php/Compositor "Compositor") are available.
 
 ## Configuration
 

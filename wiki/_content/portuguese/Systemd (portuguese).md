@@ -483,7 +483,7 @@ w    /proc/acpi/wakeup     -    -    -    -   USBE
 
 Veja as páginas man [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) e [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) para detalhes.
 
-**Nota:** Este método pode não funcionar para definir as opções em `/sys` uma vez que o serviço *systemd-tmpfiles-setup* pode ser executado antes dos módulos de dispositivo apropriados serem carregados. Neste caso, você pode verificar se o módulo tem um parâmetro para a opção que pretende definir com `modinfo *módulo*` e definir essa opção com um [arquivo de configuração em /etc/modprobe.d](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Caso contrário, você terá que escrever uma [regra de udev](/index.php/Udev#About_udev_rules "Udev") para defeinir o atributo adequado logo que o dispositivo aparecer.
+**Nota:** Este método pode não funcionar para definir as opções em `/sys` uma vez que o serviço *systemd-tmpfiles-setup* pode ser executado antes dos módulos de dispositivo apropriados serem carregados. Neste caso, você pode verificar se o módulo tem um parâmetro para a opção que pretende definir com `modinfo *módulo*` e definir essa opção com um [arquivo de configuração em /etc/modprobe.d](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)"). Caso contrário, você terá que escrever uma [regra de udev](/index.php/Udev#About_udev_rules "Udev") para defeinir o atributo adequado logo que o dispositivo aparecer.
 
 ## Timers
 

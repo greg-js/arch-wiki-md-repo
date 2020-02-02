@@ -323,7 +323,7 @@ With the installation done, it is now possible to edit the hardware details in l
 
 ### Passing keyboard/mouse via Evdev
 
-If you do not have a spare mouse or keyboard to dedicate to your guest, and you do not want to suffer from the video overheard of Spice, you can setup evdev to swap control of your mouse and keyboard between the host and guest on the fly.
+If you do not have a spare mouse or keyboard to dedicate to your guest, and you do not want to suffer from the video overhead of Spice, you can setup evdev to swap control of your mouse and keyboard between the host and guest on the fly.
 
 First, modify the libvirt configuration
 

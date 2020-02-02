@@ -31,11 +31,9 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
     *   [6.5 Run .pps files in edit mode (without slideshow)](#Run_.pps_files_in_edit_mode_(without_slideshow))
     *   [6.6 Media support](#Media_support)
     *   [6.7 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
-    *   [6.8 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
-    *   [6.9 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze/Plasma_5_theme)
-    *   [6.10 LibreOffice Math formula editor unreadable with dark theme](#LibreOffice_Math_formula_editor_unreadable_with_dark_theme)
-    *   [6.11 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
-    *   [6.12 LibreOffice freezes](#LibreOffice_freezes)
+    *   [6.8 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze/Plasma_5_theme)
+    *   [6.9 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
+    *   [6.10 LibreOffice freezes](#LibreOffice_freezes)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -50,20 +48,18 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
 *   In the past, the installation of at least 1 language pack was required. Currently, LibreOffice detects your system defaults; manual installation of a language pack is no longer mandatory. See [help.libreoffice.org](https://help.libreoffice.org/Scalc/cui/ui/optlanguagespage/ignorelanguagechange#User_interface) for additional information.
 *   If you want the UK-English language pack, install [libreoffice-fresh-en-gb](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-gb), not [libreoffice-fresh-uk](https://www.archlinux.org/packages/?name=libreoffice-fresh-uk) (Ukrainian) or [libreoffice-fresh-br](https://www.archlinux.org/packages/?name=libreoffice-fresh-br) (Breton)!
 *   For SDK install [libreoffice-fresh-sdk](https://www.archlinux.org/packages/?name=libreoffice-fresh-sdk).
-*   For Qt and GTK visual integration, see [#Theme](#Theme).
 
 Check the optional dependencies pacman displays. If you use HSQLDB Embedded in LibreOffice Base, you must install a [Java Runtime Environment](/index.php/Java "Java"). You may need [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/) to use [some modules](https://wiki.documentfoundation.org/Base#Java_and_HSQLDB) in LibreOffice Base.
 
 ## Theme
 
+**Warning:** When using the [LXDE](/index.php/LXDE "LXDE") desktop environment, theming is broken. [upstream bug](https://sourceforge.net/p/lxde/bugs/868/)
+
 LibreOffice includes support for [GTK](/index.php/GTK "GTK") and [Qt](/index.php/Qt "Qt") theme integration. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-LibreOffice will try to autodetect the most suitable VCL UI interface based on your desktop environment. To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde5`, or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`.
+LibreOffice will try to autodetect the most suitable VCL UI interface based on your desktop environment. To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=gtk3`, or `SAL_USE_VCLPLUGIN=kf5` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`. See [vcl/README](https://github.com/LibreOffice/core/blob/master/vcl/README) for more information.
 
-**Note:**
-
-*   When using the [LXDE](/index.php/LXDE "LXDE") desktop environment, setting `SAL_USE_VCLPLUGIN` in `/etc/profile.d/libreoffice-fresh.sh` has no effect since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment. [upstream bug](https://sourceforge.net/p/lxde/bugs/868/)
-*   In LibreOffice 6.4, the `kde5` backend will be [renamed](https://gerrit.libreoffice.org/plugins/gitiles/core/+/2113f3e7ee0ca5c07f224a54b627777b3a7b5fb0%5E%21/) to `kf5`.
+**Note:** In LibreOffice 6.3 and older, the `kf5` option is called `kde5`.[[1]](https://bugs.documentfoundation.org/show_bug.cgi?id=125922)
 
 ### Disable startup logo
 
@@ -205,14 +201,6 @@ If the default paper size in blank Writer and Draw documents is persistently inc
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 
-### LibreOffice toolbars unreadable with dark themes
-
-See [https://bugs.documentfoundation.org/show_bug.cgi?id=94632](https://bugs.documentfoundation.org/show_bug.cgi?id=94632)
-
-To use toolbar icons compatible with dark themes, set [environment variable](/index.php/Environment_variable "Environment variable") `VCL_ICONS_FOR_DARK_THEME=1`
-
-As an alternative workaround, run *libreoffice* with a light theme (e.g. with environment variable `GTK_THEME=Adwaita:light`).
-
 ### LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme
 
 If you do not want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in *Tools > Options > LibreOffice > View > Icon Style* to a readable one provided by LibreOffice.
@@ -221,17 +209,7 @@ Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK](/in
 
 Just enable "Breeze Dark" or another readable icon style in *Tools > Options > LibreOffice > View > Icon Style* then.
 
-If that is not enough, ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
-
-If this still does not work correctly, try using the `gen` interface instead. [[1]](https://bbs.archlinux.org/viewtopic.php?id=206813)
-
-### LibreOffice Math formula editor unreadable with dark theme
-
-Text in formula editor is also unreadable if a dark theme is in use. There is an ongoing [bug report](https://bugs.documentfoundation.org/show_bug.cgi?id=90297).
-
-Some have had success with overriding text color in LibreOffice preferences, but that changes text color everywhere, such as the document itself, which is still white.
-
-Only workaround known is to override the theme to a light one (e.g. `GTK_THEME=Adwaita:light`).
+If that is not enough, ensure that LibreOffice starts using the `gtk3` or `gen` interface (see [#Theme](#Theme)).[[2]](https://bbs.archlinux.org/viewtopic.php?id=206813)
 
 ### AutoText expected default behaviour not functional in system locales other than en_US
 

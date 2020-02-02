@@ -5,6 +5,7 @@ Programs implement default application associations in different ways. While com
 | `/usr/bin/xdg-open` | By default | [Chromium](/index.php/Chromium "Chromium") |
 | custom | Usually not | [mc](/index.php/Mc "Mc"), [ranger](/index.php/Ranger "Ranger") |
 | [environment variables](/index.php/Environment_variables#Default_programs "Environment variables") | No | [man](/index.php/Man "Man"), [sudoedit](/index.php/Sudoedit "Sudoedit"), [systemctl](/index.php/Systemctl "Systemctl") |
+| [D-Bus](/index.php/D-Bus "D-Bus")'s FileManager1 | org.freedesktop.FileManager1 | [Firefox](/index.php/Firefox "Firefox") (Open containing folder) |
 
 Many [desktop environments](/index.php/Desktop_environment "Desktop environment") and graphical [file managers](/index.php/File_manager "File manager") provide a GUI for configuring default applications.
 

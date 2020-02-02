@@ -156,7 +156,7 @@ code | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#
 | [Linux swap](/index.php/Partitioning#Swap "Partitioning") | `[SWAP]` | `8200` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F` |
 | [Linux /home](/index.php/Partitioning#/home "Partitioning") | `/home` | `8302` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915` |
 | [Linux /srv](/index.php/Partitioning#Discrete_partitions "Partitioning") | `/srv` | `8306` | `3B8F8425-20E0-4F3B-907F-1A25A76F98E8` |
-| [Linux LVM](/index.php/LVM#Create_partitions "LVM") | Any | `8e00` | `E6D6D379-F507-44C2-A23C-238F2A3DF928` |
+| [Linux LVM](/index.php/Install_Arch_Linux_on_LVM#Create_partitions "Install Arch Linux on LVM") | Any | `8e00` | `E6D6D379-F507-44C2-A23C-238F2A3DF928` |
 | [Linux RAID](/index.php/RAID#GUID_Partition_Table "RAID") | Any | `fd00` | `A19D880F-05FC-4D3B-A006-743F0F84911E` |
 | [Linux LUKS](/index.php/Dm-crypt/Drive_preparation#Physical_partitions "Dm-crypt/Drive preparation") | Any | `8309` | `CA7D7CCB-63ED-4C53-861C-1742536059CC` |
 | [Linux dm-crypt](/index.php/Dm-crypt/Drive_preparation#Physical_partitions "Dm-crypt/Drive preparation") | Any | `8308` | `7FFEC5C9-2D00-49B7-8941-3EA10A5586B7` |

@@ -573,7 +573,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **GemRB** — Un intento de reimplementar el juego [Bioware's Infinity Engine](https://en.wikipedia.org/wiki/Infinity_Engine "wikipedia:Infinity Engine") bajo licencia GNU GPL.
 
-	[http://www.gemrb.org/](http://www.gemrb.org/) || [gemrb](https://www.archlinux.org/packages/?name=gemrb)
+	[http://www.gemrb.org/](http://www.gemrb.org/) || [gemrb](https://aur.archlinux.org/packages/gemrb/)
 
 *   **OpenMW** — Un intento de reimplementar el popular juego de rol [Morrowind](https://en.wikipedia.org/wiki/Morrowind "wikipedia:Morrowind"). OpenMW pretende ser una completamente jugable, con la implementación de código abierto del motor del juego.
 

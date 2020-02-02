@@ -254,7 +254,7 @@ Desde o Linux 4.1, o ext4 possui suporte nativo a criptografia de arquivos. A cr
 
 Quando um sistema de arquivos foi criado com o [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) 1.44 ou posterior, as somas de verificação de metadados já devem estar ativadas por padrão. Os sistemas de arquivos existentes podem ser convertidos para permitir o suporte à soma de verificação de metadados.
 
-Se o seu CPU tem suporte a SSE 4.2, certifique-se que o [módulo do kernel](/index.php/Kernel_module "Kernel module") `crc32c_intel` esteja carregado para habilitar o algoritmo CRC32C acelerado por hardware [[5]](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking). Caso contrário, você precisará carregar o módulo `crc32c_generic`.
+Se o seu CPU tem suporte a SSE 4.2, certifique-se que o [módulo do kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") `crc32c_intel` esteja carregado para habilitar o algoritmo CRC32C acelerado por hardware [[5]](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking). Caso contrário, você precisará carregar o módulo `crc32c_generic`.
 
 Para ler mais sobre metadados de somas de verificação, veja o [wiki do ext4](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
 

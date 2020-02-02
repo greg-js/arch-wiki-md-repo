@@ -52,7 +52,7 @@ UEFI is designed to remove the need for an intermediate bootloader such as [GRUB
 **Note:**
 
 *   Outdated UEFI implementations may have compatibility issues with the Linux kernel. If there is a newer version of your UEFI with bug fixes, consider flashing it with the manufacturer's recommended tool.
-*   Some firmwares do not pass command line parameters from the boot entries in NVRAM to the EFI binaries.[[1]](https://bbs.archlinux.org/viewtopic.php?id=178154) In that case, the kernel and the parameters can be combined into a [unified kernel image](https://systemd.io/BOOT_LOADER_SPECIFICATION/#type-2-efi-unified-kernel-images). See [systemd-boot#Preparing kernels for /EFI/Linux](/index.php/Systemd-boot#Preparing_kernels_for_/EFI/Linux "Systemd-boot").
+*   Some firmwares do not pass command line parameters from the boot entries in NVRAM to the EFI binaries.[[1]](https://bbs.archlinux.org/viewtopic.php?id=178154) In that case, the kernel and the parameters can be combined into a [unified kernel image](/index.php/Unified_kernel_image "Unified kernel image").
 
 #### efibootmgr
 

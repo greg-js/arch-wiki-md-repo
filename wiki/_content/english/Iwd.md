@@ -105,7 +105,12 @@ Finally, to connect to a network:
 
 ```
 
-If a passphrase is required, you will be prompted to enter it.
+If a passphrase is required, you will be prompted to enter it. Alternatively, you can supply as a command line argument:
+
+```
+$ iwctl --passphrase *passphrase* station *device* connect *SSID*
+
+```
 
 **Note:**
 

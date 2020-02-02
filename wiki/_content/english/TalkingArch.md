@@ -1,4 +1,4 @@
-This page describes a bootable CD / USB image customized for blind users. The modified version is mostly equivalent to the official Archiso image, but the system should start speaking as soon as you boot with it. Speech is provided via the sound card, using the eSpeak software synthesizer and the Speakup screenreader. It is also possible to use a braille display, via brltty. You can obtain the image [from this page](https://talkingarch.info/).
+This page describes a bootable CD / USB image customized for blind users. The modified version is mostly equivalent to the official Archiso image, but the system should start speaking as soon as you boot with it. Speech is provided via the sound card, using the eSpeak-ng software synthesizer and the Speakup screenreader. It is also possible to use a braille display, via brltty. You can obtain the image [from this page](https://talkingarch.info/).
 
 Like the Archiso image, this image is compatible with the x86_64 architecture. Also, it is suitable for either a recordable CD or a USB stick. Just download it and write it to the medium of your choice.
 
@@ -20,13 +20,15 @@ A detached GPG signature is provided on the download page.
 
 ### Credits
 
-The build system, which is a respin of the Archiso releng configuration, is maintained by Kelly Prescott and by Kyle, and the images and main website are hosted by Kyle. Thanks to Chris Brannon, the past maintainer, and to the following people for submitting valuable feedback regarding this project: Chuck Hallenbeck, Julien Claassen, Alastair Irving, Tyler Spivey, Keith Hinton, and many others. Thanks also go to Tyler Littlefield, who previously hosted the files.
+The build system, which is a respin of the Archiso releng configuration, is maintained by Alexander Epaneshnikov.
+
+Thanks to Kelly Prescott, Kyle and Chris Brannon, the past maintainers, and to the following people for submitting valuable feedback regarding this project: Chuck Hallenbeck, Julien Claassen, Alastair Irving, Tyler Spivey, Keith Hinton, and many others. Thanks also go to Tyler Littlefield, who previously hosted the files.
 
 ## Installing from the CD
 
 The following list of steps is a brief guide to installing Arch Linux using this CD. The instructions assume that your root partition will be mounted on `/mnt`.
 
-1.  You can just press `enter` at the boot prompt, or wait for the bootloader to time-out. The boot process will begin at that point. If you have a console speaker, you will hear a beep when the boot prompt is on screen. Otherwise, wait about 10 to 20 seconds after the CD starts spinning, or about 3 to 5 seconds after the system begins to boot from USB, and then press `enter` to boot the image.
+1.  You can just press `enter` at the boot prompt, or wait for the bootloader to time-out. The boot process will begin at that point. or you can, wait about 10 to 20 seconds after the CD starts spinning, or about 3 to 5 seconds after the system begins to boot from USB, and then press `enter` to boot the image.
 2.  You are strongly encouraged to read the Arch Linux documentation, especially the [Installation guide](/index.php/Installation_guide "Installation guide"). Do the installation procedure described in the [Installation guide](/index.php/Installation_guide "Installation guide"), as modified by the instructions below.
 3.  You'll need to install the `espeakup` and `alsa-utils` packages. The [Installation guide](/index.php/Installation_guide "Installation guide") mentions that you can install additional packages by appending their names to the pacstrap command. For example, `pacstrap /mnt base espeakup alsa-utils`
 4.  If you heard a voice recording informing you that multiple sound cards were detected, and you selected a card by pressing enter at the beep, a /etc/asound.conf file was generated that will configure ALSA to use your selected card as the default. You will need to copy this file by executing `cp /etc/asound.conf /mnt/etc`
@@ -42,7 +44,7 @@ The brltty boot-time parameter consists of three comma-separated fields: driver,
 For example, suppose that you have a device connected to /dev/ttyS0, the first serial port. You wish to use the US English text table, and the driver should be automatically detected. Here is what you should type at the boot prompt:
 
 ```
-arch32 brltty=auto,ttyS0,en_US
+brltty=auto,ttyS0,en_US
 
 ```
 
@@ -54,11 +56,11 @@ You shouldn't need to do anything extraordinary to maintain the installation. Ev
 
 ## Mastering speech-enabled ISO images
 
-This process is now fairly straightforward. Just grab and install the talkingarch-git package from the AUR. It depends on archiso-git, so you need that as well. See /usr/share/doc/talkingarch/README for full instructions.
+look at [talkingarch github page](https://github.com/alex19EP/talkingarch/)
 
 ## Further resources
 
-TalkingArch has an IRC channel at #talkingarch on irc.talkabout.cf. Feel free to drop in and talk to the maintainers or anyone else in the channel. You may also reach the maintainers by [email](mailto:support@talkingarch.tk).
+TalkingArch has an IRC channel at #talkingarch on irc.talkabout.cf. Feel free to drop in and talk to the maintainers or anyone else in the channel.
 
 ## Disclaimer
 

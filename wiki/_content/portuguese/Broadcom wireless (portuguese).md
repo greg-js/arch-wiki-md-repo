@@ -69,7 +69,7 @@ O kernel contém dois drivers código abertos embutidos: **brcmfmac** para FullM
 
 ### b43
 
-Dois drivers de código aberto de engenharia reversa são integrados ao kernel: **b43** e **b43legacy**. O b43 possui suporte aos chipsets Broadcom mais recentes, enquanto o driver b43legacy possui suporte apenas aos primeiros chipsets BCM4301 e BCM4306 rev.2\. Para evitar a detecção errônea do chipset da sua placa WiFi, coloque na [lista negra](/index.php/Blacklist "Blacklist") o driver não utilizado.
+Dois drivers de código aberto de engenharia reversa são integrados ao kernel: **b43** e **b43legacy**. O b43 possui suporte aos chipsets Broadcom mais recentes, enquanto o driver b43legacy possui suporte apenas aos primeiros chipsets BCM4301 e BCM4306 rev.2\. Para evitar a detecção errônea do chipset da sua placa WiFi, coloque na [lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") o driver não utilizado.
 
 Ambos os drivers exigem que o firmware não livre funcione. Instale [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) ou [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/).
 
@@ -117,7 +117,7 @@ Se o driver não funcionar neste momento, talvez seja necessário atualizar as d
 
 ```
 
-Para fazer com que o módulo seja carregado na inicialização, consulte [Módulos de kernel](/index.php/Kernel_modules "Kernel modules"). É recomendando que você coloque em [lista negra](/index.php/Blacklist "Blacklist") os módulos conflitantes.
+Para fazer com que o módulo seja carregado na inicialização, consulte [Módulos de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)"). É recomendando que você coloque em [lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") os módulos conflitantes.
 
 ## Solução de problemas
 
@@ -138,7 +138,7 @@ Para trabalhar no modo monitor, use essa interface de rede recém-criada.
 
 ### Dispositivo inacessível após atualização do kernel
 
-Desde o kernel 3.3.1, o módulo **bcma** foi introduzido. Se estiver usando um driver **brcm80211**, certifique-se de que ele não esteja em [lista negra](/index.php/Kernel_modules#Blacklisting "Kernel modules"). Deve ser negado se usar um driver **b43**.
+Desde o kernel 3.3.1, o módulo **bcma** foi introduzido. Se estiver usando um driver **brcm80211**, certifique-se de que ele não esteja em [lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)"). Deve ser negado se usar um driver **b43**.
 
 Se você estiver usando [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl), desinstale e reinstale-o após atualizar seu kernel, ou alterne para o pacote [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
 

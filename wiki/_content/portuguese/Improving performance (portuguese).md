@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Improving performance](/index.php/Improving_performance "Improving performance"). Data da última tradução: 2020-01-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Improving_performance&diff=0&oldid=596231) na versão em inglês.
+
 Artigos relacionados
 
 *   [Improving performance/Boot process](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")
@@ -5,7 +7,7 @@ Artigos relacionados
 *   [OpenSSH#Speeding up SSH](/index.php/OpenSSH#Speeding_up_SSH "OpenSSH")
 *   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
 *   [Laptop](/index.php/Laptop "Laptop")
-*   [Preload](/index.php/Preload "Preload")
+*   [Preload](/index.php/Preload_(Portugu%C3%AAs) "Preload (Português)")
 
 Este artigo oferece informação sobre diagnósticos básicos do sistema relacionados com desempenho e também passos que podem ser tomados para reduzir o consumo de recursos ou otimizar o sistema com o objetivo final de melhorias perceptíveis ou documentadas.
 
@@ -27,12 +29,12 @@ Este artigo oferece informação sobre diagnósticos básicos do sistema relacio
         *   [2.3.1 Opções de montagem](#Opções_de_montagem)
             *   [2.3.1.1 Reiserfs](#Reiserfs)
     *   [2.4 Parâmetros do kernel que melhoram o desempenho](#Parâmetros_do_kernel_que_melhoram_o_desempenho)
-    *   [2.5 Escalonador de input/output](#Escalonador_de_input/output)
+    *   [2.5 Escalonador de entrada/saída](#Escalonador_de_entrada/saída)
         *   [2.5.1 Informações básicas](#Informações_básicas)
-        *   [2.5.2 The scheduling algorithms](#The_scheduling_algorithms)
-        *   [2.5.3 Kernel's I/O schedulers](#Kernel's_I/O_schedulers)
-        *   [2.5.4 Changing I/O scheduler](#Changing_I/O_scheduler)
-        *   [2.5.5 Tuning I/O scheduler](#Tuning_I/O_scheduler)
+        *   [2.5.2 Os algoritmos de escalonamento de processos](#Os_algoritmos_de_escalonamento_de_processos)
+        *   [2.5.3 Escalonadores de E/S do kernel](#Escalonadores_de_E/S_do_kernel)
+        *   [2.5.4 Mudando o escalonador de E/S](#Mudando_o_escalonador_de_E/S)
+        *   [2.5.5 Otimizando o escalonador de E/S](#Otimizando_o_escalonador_de_E/S)
     *   [2.6 Configuração de gerenciamento de energia](#Configuração_de_gerenciamento_de_energia)
     *   [2.7 Reduzir leituras/escritas no disco](#Reduzir_leituras/escritas_no_disco)
         *   [2.7.1 Mostrar escritas no disco](#Mostrar_escritas_no_disco)
@@ -40,7 +42,7 @@ Este artigo oferece informação sobre diagnósticos básicos do sistema relacio
         *   [2.7.3 Sistema de arquivos](#Sistema_de_arquivos)
         *   [2.7.4 Espaço swap](#Espaço_swap)
         *   [2.7.5 Intervalo de writeback e tamanho do buffer](#Intervalo_de_writeback_e_tamanho_do_buffer)
-    *   [2.8 Agendando tarefas I/O com ionice](#Agendando_tarefas_I/O_com_ionice)
+    *   [2.8 Agendando tarefas de E/S com ionice](#Agendando_tarefas_de_E/S_com_ionice)
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
     *   [3.2 Escala de frequência](#Escala_de_frequência)
@@ -56,10 +58,10 @@ Este artigo oferece informação sobre diagnósticos básicos do sistema relacio
     *   [4.1 Configuração do Xorg](#Configuração_do_Xorg)
     *   [4.2 Configuração do Mesa](#Configuração_do_Mesa)
     *   [4.3 Overclocking](#Overclocking_2)
-*   [5 RAM and swap](#RAM_and_swap)
-    *   [5.1 Clock frequency and timings](#Clock_frequency_and_timings)
-    *   [5.2 Root on RAM overlay](#Root_on_RAM_overlay)
-    *   [5.3 Zram or zswap](#Zram_or_zswap)
+*   [5 RAM e swap](#RAM_e_swap)
+    *   [5.1 Tempos e frequência de clock](#Tempos_e_frequência_de_clock)
+    *   [5.2 Raiz na RAM](#Raiz_na_RAM)
+    *   [5.3 Zram ou zswap](#Zram_ou_zswap)
         *   [5.3.1 Swap na zRAM usando uma regra do udev](#Swap_na_zRAM_usando_uma_regra_do_udev)
     *   [5.4 Usando a RAM da placa de vídeo](#Usando_a_RAM_da_placa_de_vídeo)
 *   [6 Rede](#Rede)
@@ -88,14 +90,14 @@ $ free -h
 
 ```
 
-*   Se o carregamento da CPU é consistemente alto até mesmo com bastante RAM disponível, tente diminuir o uso da CPU ao desabilitar [daemons](/index.php/Daemons "Daemons") que estão rodando e/ou processos. Isto pode ser monitorado de algumas formas, por exemplo com [htop](https://www.archlinux.org/packages/?name=htop), `pstree` ou qualquer outra ferramenta de [monitoração do sistema](/index.php/List_of_applications#System_monitors "List of applications"):
+*   Se o carregamento da CPU é consistemente alto até mesmo com bastante RAM disponível, tente diminuir o uso da CPU ao desabilitar [daemons](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)") que estão rodando e/ou processos. Isto pode ser monitorado de algumas formas, por exemplo com [htop](https://www.archlinux.org/packages/?name=htop), `pstree` ou qualquer outra ferramenta de [monitoração do sistema](/index.php/List_of_applications#System_monitors "List of applications"):
 
 ```
 $ htop
 
 ```
 
-*   Se aplicações usam renderização direta estão lentas (exemplo, estas que usam a GPU, tais como players de vídeo, jogos, ou até mesmo um [gerenciador de janelas](/index.php/Window_manager "Window manager")), então melhorar o desempenho da GPU deve ajudar. O primeiro passo é verificar se a renderização direta está habilitada. Isto é indicado pelo comando `glxinfo`, parte do pacote [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos):
+*   Se aplicações usam renderização direta estão lentas (exemplo, estas que usam a GPU, tais como players de vídeo, jogos, ou até mesmo um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela")), então melhorar o desempenho da GPU deve ajudar. O primeiro passo é verificar se a renderização direta está habilitada. Isto é indicado pelo comando `glxinfo`, parte do pacote [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos):
 
  `$ glxinfo | grep "direct rendering"` 
 ```
@@ -103,7 +105,7 @@ direct rendering: Yes
 
 ```
 
-*   Ao usar um [ambiente de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop"), desabilitar efeitos visuais (não usados) pode reduzir o uso da GPU. Use um ambiente mais leve ou crie um [personalizado](/index.php/Ambientes_de_desktop#Ambientes_personalizados "Ambientes de desktop"), se o atual não é compatível com seu hardware e/ou preferências pessoais.
+*   Ao usar um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop"), desabilitar efeitos visuais (não usados) pode reduzir o uso da GPU. Use um ambiente mais leve ou crie um [personalizado](/index.php/Ambientes_de_desktop#Ambientes_personalizados "Ambientes de desktop"), se o atual não é compatível com seu hardware e/ou preferências pessoais.
 
 ### Fazer benchmark
 
@@ -171,99 +173,111 @@ Substitua o `/dev/sd**a1**` com a partição reservada para o journal, e `/dev/s
 
 Existem algumas chaves habilitáveis que afetam positivamente o desempenho de dispositivos de bloco, veja [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") para mais informações.
 
-### Escalonador de input/output
+### Escalonador de entrada/saída
 
 #### Informações básicas
 
-O escalonador (scheduler) de input/output *(I/O)* é o componente do kernel que decide em que ordem as operações de bloco I/O são submetidas para dispositivos de armazenamento. É útil se lembrar de algumas especificações dos dois principais tipos de unidades de armazenamento devido ao objetivo do escalonador I/O, que é otimizar a maneira de lidar com os pedidos de leitura:
+O escalonador (*scheduler*) de entrada/saída *(E/S)* (*input/output* ou *I/O*, em inglês) é o componente do kernel que decide em que ordem as operações de bloco de E/S são submetidas para dispositivos de armazenamento. É útil se lembrar de algumas especificações dos dois principais tipos de unidades de armazenamento devido ao objetivo do escalonador de E/S, que é otimizar a maneira de lidar com os pedidos de leitura:
 
-*   Um HDD tem discos giratórios e uma cabeça que se move fisicamente para a localização solicitada. Latência randômica é muito alta estando entre 3 e 12ms (não importando se é um dispositivo de armazenamento de um servidor de última geração ou de notebook e ignorando o buffer de escrita controlador do disco) enquanto o acesso sequencial oferece uma taxa de transferência muito maior. O HDD típico faz em torno de 200 operações I/O por segundo *(IOPS)*.
+*   Um HDD tem discos giratórios e uma cabeça que se move fisicamente para a localização solicitada. Latência randômica é muito alta estando entre 3 e 12ms (não importando se é um dispositivo de armazenamento de um servidor de última geração ou de notebook e ignorando o buffer de escrita controlador do disco) enquanto o acesso sequencial oferece uma taxa de transferência muito maior. O HDD típico faz em torno de 200 operações de E/S por segundo (*IOPS*, I/O operations per second).
 
-*   Um SSD não tem partes móveis, acesso randômico é tão rápido quanto sequencial, tipicamente abaixo de 0.1ms, e pode manusear múltiplas solicitações concorrentes. A velocidade de saída do SSD típico é maior que 10,000 IOPS, que é mais do que o necessário para situações comuns de grande trabalho.
+*   Um SSD não tem partes móveis, acesso randômico é tão rápido quanto sequencial, tipicamente abaixo de 0.1ms, e pode manusear múltiplas solicitações concorrentes. A velocidade de saída do SSD típico é maior que 10.000 IOPS, que é mais do que o necessário para situações comuns de grande trabalho.
 
-Se existem muitos processos fazendo solicitações I/O para diferentes partes do armazenamento, milhares de IOPS podem ser gerados enquanto o HDD típico pode manusear em torno de somente 200 IOPS. Existe uma fila de solicitações que terão de esperar para acessar o disco. Esta situação é onde escalonadores I/O entram com a tarefa de otimização.
+Se existem muitos processos fazendo solicitações de E/S para diferentes partes do armazenamento, milhares de IOPS podem ser gerados enquanto o HDD típico pode manusear em torno de somente 200 IOPS. Existe uma fila de solicitações que terão de esperar para acessar o disco. Esta situação é onde escalonadores de E/S entram com a tarefa de otimização.
 
-#### The scheduling algorithms
+#### Os algoritmos de escalonamento de processos
 
-One way to improve throughput is to linearize access: by ordering waiting requests by their logical address and grouping the closest ones. Historically this was the first Linux I/O scheduler called [elevator](https://en.wikipedia.org/wiki/Elevator_algorithm "w:Elevator algorithm").
+Uma maneira de melhorar a taxa de transferência é linearizar o acesso: ao ordenar as solicitações ociosas por seu endereço lógico e agrupar os mais próximos. Historicamente isto foi o primeiro escalonador de E/S chamado [elevator](https://en.wikipedia.org/wiki/Elevator_algorithm "wikipedia:Elevator algorithm") (elevador).
 
-One issue with the elevator algorithm is that it is not optimal for a process doing sequential access: reading a block of data, processing it for several microseconds then reading next block and so on. The elevator scheduler does not know that the process is about to read another block nearby and, thus, moves to another request by another process at some other location. The [anticipatory](https://en.wikipedia.org/wiki/Anticipatory_scheduling "w:Anticipatory scheduling") I/O scheduler overcomes the problem: it pauses for a few milliseconds in anticipation of another close-by read operation before dealing with another request.
+Um problema com o algoritmo *elevator* é sua falta de otimização para processos que fazem acessos sequenciais: lê um bloco de dados, o processa por alguns microssegundos, e então vai para o próximo. O *elevator* não sabe que o processo vai ler outro bloco próximo e, então, vai para a próxima solicitação de outro processo em outra localização. O escalonador de E/S [anticipatory](https://en.wikipedia.org/wiki/Anticipatory_scheduling "wikipedia:Anticipatory scheduling") (antecipatório) supera este problema: pausa por alguns milissegundos em antecipação de outra operação de leitura próxima antes de lidar com outras solicitações.
 
-While these schedulers try to improve total throughput, they might leave some unlucky requests waiting for a very long time. As an example, imagine the majority of processes make requests at the beginning of the storage space while an unlucky process makes a request at the other end of storage. This potentially infinite postponement of the process is called starvation. To improve fairness, the [deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "w:Deadline scheduler") algorithm was developed. It has a queue ordered by address, similar to the elevator, but if some request sits in this queue for too long then it moves to an "expired" queue ordered by expire time. The scheduler checks the expire queue first and processes requests from there and only then moves to the elevator queue. Note that this fairness has a negative impact on overall throughput.
+Enquanto estes escalonadores tentam melhorar a taxa de transferência total, eles podem deixar algumas solicitações sem sorte em espera por um longo período de tempo. Por exemplo, imagine que a maioria do processos fazem solicitações no começo do espaço de armazenamento enquanto um processo sem sorte faz um no final do espaço. O processo pode potencialmente ser adiado infinitamente, isto é chamado de inanição ou "starvation", em inglês. Pensando nesse problema, o algoritmo de [deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler") foi desenvolvido. Existe uma fila ordenada por endereço, similar ao *elevator*, mas se a solicitação fica em espera por muito tempo, ela é movida para a fila "expired", ordenada pelo tempo de expiração. O escalonador verifica a fila "expired" primeiro e processa os seus pedidos e somente então vai para a fila *elevator*. Note que isto tem um efeito negativo na taxa de transferência geral.
 
-The [Completely Fair Queuing *(CFQ)*](https://en.wikipedia.org/wiki/CFQ "w:CFQ") approaches the problem differently by allocating a timeslice and a number of allowed requests by queue depending on the priority of the process submitting them. It supports [cgroup](/index.php/Cgroup "Cgroup") that allows to reserve some amount of I/O to a specific collection of processes. It is in particular useful for shared and cloud hosting: users who paid for some IOPS want to get their share whenever needed. Also, it idles at the end of synchronous I/O waiting for other nearby operations, taking over this feature from the *anticipatory* scheduler and bringing some enhancements. Both the *anticipatory* and the *elevator* schedulers were decommissioned from the Linux kernel replaced by the more advanced alternatives presented above.
+O [Completely Fair Queuing *(CFQ)*](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") (fila completamente justa) aborda o problema diferentemente ao alocar um período fixo de tempo e um número de solicitações permitidas por vez dependendo da prioridade do processo submetendo elas. Suporta o [cgroup](/index.php/Cgroup "Cgroup") que permite a reserva de alguma quantidade de E/S para um grupo específico de processos. É particularmente útil para hosting compartilhado e nuvem: usuários que pagam por alguns IOPS querem sua parte quando necessários. Além disso, ele fica ocioso no final da E/S síncrona, aguardando outras operações próximas, assumindo esse recurso do escalonador *anticipatory* e trazendo algumas melhorias. Ambos, *anticipatory* e *elevator* foram descomissionados do kernel Linux e substituídos pelas alternativas mais avançadas apresentadas nesta seção.
 
-The [Budget Fair Queuing *(BFQ)*](https://algo.ing.unimo.it/people/paolo/disk_sched/) is based on CFQ code and brings some enhancements. It does not grant the disk to each process for a fixed time-slice but assigns a "budget" measured in number of sectors to the process and uses heuristics. It is a relatively complex scheduler, it may be more adapted to rotational drives and slow SSDs because its high per-operation overhead, especially if associated with a slow CPU, can slow down fast devices. The objective of BFQ on personal systems is that for interactive tasks, the storage device is virtually as responsive as if it was idle. In its default configuration it focuses on delivering the lowest latency rather than achieving the maximum throughput.
+O [Budget Fair Queuing *(BFQ)*](https://algo.ing.unimo.it/people/paolo/disk_sched/) (carteira de fila justa) é baseado no código do CFQ e trás algumas melhorias. Não garante o disco para cada processo por um período fixo de tempo mas uma "budget" (carteira) mensurada no número de setores para os processos e usa heurísticas. É relativamente complexo, pode ser mais adaptado a unidades de armazenamento rotacionais e SSDs lentos por causa de seu alto uso de recursos por operação, especialmente se associado com uma CPU lenta, pode diminuir o desempenho de dispositivos rápidos. O objetivo do BFQ em sistemas pessoais é esse, em tarefas interativas, o dispositivo de armazenamento é virtualmente tão responsivo quanto se estivesse ocioso. Na configuração padrão se foca em entregar a latência mais baixa do que a taxa de transferência máxima.
 
-[Kyber](https://lwn.net/Articles/720675/) is a recent scheduler inspired by active queue management techniques used for network routing. The implementation is based on "tokens" that serve as a mechanism for limiting requests. A queuing token is required to allocate a request, this is used to prevent starvation of requests. A dispatch token is also needed and limits the operations of a certain priority on a given device. Finally, a target read latency is defined and the scheduler tunes itself to reach this latency goal. The implementation of the algorithm is relatively simple and it is deemed efficient for fast devices.
+[Kyber](https://lwn.net/Articles/720675/) é um escalonador recente inspirado pelas técnicas de gerenciamento ativo de fila usado para roteamento de rede. A implementação é baseada em "tokens" que servem como um mecanismo para limitar solicitações. Um token de fila é necessário para alocar uma solicitação, para prevenir a inanição de solicitações. Um token de despacho é também necessário e limita as operações de certa prioridade para dado dispositivo. Finalmente, uma latência alvo de leitura é definida e o escalonador se otimiza para chegar nela. A implementação do algoritmo é relativamente simples e é considerada eficiente para dispositivos rápidos.
 
-#### Kernel's I/O schedulers
+#### Escalonadores de E/S do kernel
 
-While some of the early algorithms have now been decommissioned, the official Linux kernel supports a number of I/O schedulers which can be split into two categories:
+Enquanto alguns algoritmos iniciais já foram descomissionados, o kernel oficial do Linux suporta um número de escalonadores de E/S que podem ser divididos em duas categorias:
 
-*   The **multi-queue schedulers** are available by default with the kernel. The [Multi-Queue Block I/O Queuing Mechanism *(blk-mq)*](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) maps I/O queries to multiple queues, the tasks are distributed across threads and therefore CPU cores. Within this framework the following schedulers are available:
-    *   *None*, no queuing algorithm is applied.
-    *   *mq-deadline* is the adaptation of the deadline scheduler to multi-threading.
+*   Os **multi-queue schedulers** (escalonadores de filas múltiplas) estão disponíveis por padrão no kernel. O [Multi-Queue Block I/O Queuing Mechanism *(blk-mq)*](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)), em português mecanismo de empilhamento de blocos de E/S de várias filas, mapeia solicitações de E/S para múltiplas filas, as tarefas são distribuídas pelas threads, e consequentemente, núcleos da CPU. Os seguintes escalonadores estão disponíveis:
+
+*   *   *None*, nenhum algoritmo de fila é aplicado.
+    *   *mq-deadline* é o algoritmo do escalonador "deadline" para multithreads.
     *   *Kyber*
     *   *BFQ*
 
-*   The **single-queue schedulers** are legacy schedulers, they can be activated at boot time as described in [#Changing I/O scheduler](#Changing_I/O_scheduler):
-    *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "w:NOOP scheduler") is the simplest scheduler, it inserts all incoming I/O requests into a simple FIFO queue and implements request merging. In this algorithm, there is no re-ordering of the request based on the sector number. Therefore it can be used if the ordering is dealt with at another layer, at the device level for example, or if it does not matter, for SSDs for instance.
+*   Os **single-queue schedulers** (escalonadores de única fila) são datados, eles podem ser ativados na inicialização como descritos em [#Mudando o escalonador de E/S](#Mudando_o_escalonador_de_E/S):
+    *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") é o escalonador mais simples, ele insere todas as solicitações que chegam em uma simples fila FIFO e implementa a sua execução. Neste algoritmo, não existe reordenação da solicitação baseada no número do setor. Ela pode ser feita em outra camada, por exemplo no nível do dispositivo, ou se isto não importa, ignorada como em SSDs.
     *   *Deadline*
     *   *CFQ*
 
-**Note:** Single-queue schedulers [were removed from kernel since Linux 5.0](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f382fb0bcef4c37dc049e9f6963e3baf204d815c).
+**Nota:** escalonadores de fila única [foram removidos do kernel desde o Linux 5.0](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f382fb0bcef4c37dc049e9f6963e3baf204d815c).
 
-#### Changing I/O scheduler
+#### Mudando o escalonador de E/S
 
-**Note:**
+**Nota:**
 
-*   The block multi-queue *(blk-mq)* mode must be disabled at boot time to be able to access the legacy *CFQ* and *Deadline* schedulers. This is done by adding `scsi_mod.use_blk_mq=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). The multi-queue schedulers are no longer available once in this mode.
-*   The best choice of scheduler depends on both the device and the exact nature of the workload. Also, the throughput in MB/s is not the only measure of performance: deadline or fairness deteriorate the overall throughput but may improve system responsiveness. [Benchmarking](/index.php/Benchmarking "Benchmarking") may be useful to indicate each I/O scheduler performance.
+*   O modo do bloco de filas múltiplas *(blk-mq)* deve ser desabilitado na inicialização para ser possível usar os escalonadores datados *CFQ* e *Deadline*. Isto é feito ao adicionar `scsi_mod.use_blk_mq=0` nos [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel"). Os escalonadores de múltiplas filas não estão mais disponíveis neste modo.
+*   A melhor escolha de qual escalonador usar depende de ambos, o dispositivo e o que vai ser utilizado. Também, a taxa de transferência em MB/s não é o único fator para mensurar o desempenho: tempo limite ou igualdade para processos pioram a taxa de transferência geral mas podem melhorar a responsividade do sistema. Fazer [benchmark](/index.php/Benchmarking "Benchmarking") pode ser útil para indicar o desempenho de cada escalonador de E/S.
 
-To list the available schedulers for a device and the active scheduler (in brackets):
+Para listar os escalonadores disponíveis para um dispositivo e o atualmente ativo (em colchetes):
 
- `$ cat /sys/block/***sda***/queue/scheduler`  `mq-deadline kyber [bfq] none` 
+ `$ cat /sys/block/***sda***/queue/scheduler` 
+```
+mq-deadline kyber [bfq] none
 
-To list the available schedulers for all devices:
+```
+
+Para listar os escalonadores disponíveis para todos os dispositivos:
 
  `$ cat /sys/block/*****/queue/scheduler` 
 ```
 none
 [mq-deadline] kyber bfq none
 mq-deadline kyber [bfq] none
+
 ```
 
-To change the active I/O scheduler to *bfq* for device *sda*, use:
+Para mudar o escalonador ativo para *bfq* no dispositivo *sda*, execute:
 
 ```
 # echo ***bfq*** > /sys/block/***sda***/queue/scheduler
 
 ```
 
-The process to change I/O scheduler, depending on whether the disk is rotating or not can be automated and persist across reboots. For example the [udev](/index.php/Udev "Udev") rule below sets the scheduler to *none* for [NVMe](/index.php/NVMe "NVMe"), *mq-deadline* for [SSD](/index.php/SSD "SSD")/eMMC, and *bfq* for rotational drives:
+O processo para mudar o escalonador de E/S, dependendo se o disco é rotativo ou não, pode ser automatizado e persistir entre reinicializações. Por exemplo a regra do [udev](/index.php/Udev "Udev") abaixo define o escalonador como *none* para [NVMe](/index.php/NVMe "NVMe"), *mq-deadline* para [SSD](/index.php/SSD "SSD")/eMMC, e *bfq* para unidades de armazenamento rotativas:
 
  `/etc/udev/rules.d/60-ioschedulers.rules` 
 ```
-# set scheduler for NVMe
+# define o escalonador para NVMe
 ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none"
-# set scheduler for SSD and eMMC
+# define o escalonador para SSD e eMMC
 ACTION=="add|change", KERNEL=="sd[a-z]|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
-# set scheduler for rotating disks
+# define o escalonador para discos rotativos
 ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
 ```
 
-Reboot or force [udev#Loading new rules](/index.php/Udev#Loading_new_rules "Udev").
+Reinicie ou force o udev a [carregar as novas regras](/index.php/Udev#Loading_new_rules "Udev").
 
-#### Tuning I/O scheduler
+#### Otimizando o escalonador de E/S
 
-Each of the kernel's I/O scheduler has its own tunables, such as the latency time, the expiry time or the FIFO parameters. They are helpful in adjusting the algorithm to a particular combination of device and workload. This is typically to achieve a higher throughput or a lower latency for a given utilization. The tunables and their description can be found within the [kernel documentation files](https://www.kernel.org/doc/Documentation/block/).
+Cada um dos escalonadores de E/S do kernel tem suas próprias variáveis modificáveis, tais como tempo de latência, tempo de expiração ou parâmetros FIFO. Eles ajudam a ajustar o algoritmo para uma combinação particular do dispositivo e carga de trabalho. Isto é tipicamente usado para conseguir uma maior taxa de transferência ou diminuir a latência.
 
-To list the available tunables for a device, in the example below *sdb* which is using *deadline*, use:
+As variáveis modificáveis e suas descrições podem ser encontradas dentro dos [arquivos da documentação do kernel](https://www.kernel.org/doc/Documentation/block/).
 
- `$ ls /sys/block/***sdb***/queue/iosched`  `fifo_batch  front_merges  read_expire  write_expire  writes_starved` 
+Para listar as váriaveis modificáveis para um dispositivo, no exemplo abaixo é usado o *sdb* que está usando o *deadline*, execute:
 
-To improve *deadline'*s throughput at the cost of latency, one can increase `fifo_batch` with the command:
+ `$ ls /sys/block/***sdb***/queue/iosched` 
+```
+fifo_batch  front_merges  read_expire  write_expire  writes_starved
+
+```
+
+Para melhorar a taxa de transferência do *deadline* ao custo de latência, você pode aumentar o `fifo_batch` com o comando:
 
  `# echo *32* > /sys/block/***sdb***/queue/iosched/**fifo_batch**` 
 
@@ -275,7 +289,7 @@ Ao lidar com discos rotacionais tradicionais (HDDs) você pode querer [diminuir 
 
 Evitar acessos desnecessários em unidades de armazenamento lentas é bom para a performance e também aumenta a vida útil dos dispositivos, apesar que em hardware moderno a diferença é normalmente insignificante.
 
-**Nota:** Um SSD de 32GB com um fator medíocre de amplificação de escrita em 10 vezes, um padrão de 10000 ciclos de escrever/apagar, e **10GB de dados escritos por dia**, deve lhe dar uma **espectativa de vida útil de 8 anos**. Isto melhora com SSDs maiores e controladores modernos com menos amplificação de escrita. Também compare [[1]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) ao considerar se qualquer estratégia particular para limitar escritas no disco é, de verdade, necessária.
+**Nota:** Um SSD de 32GB com um fator medíocre de amplificação de escrita em 10 vezes, um padrão de 10000 ciclos de escrever/apagar, e **10GB de dados escritos por dia**, deve lhe dar uma **expectativa de vida útil de 8 anos**. Isto melhora com SSDs maiores e controladores modernos com menos amplificação de escrita. Também compare [[1]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) ao considerar se qualquer estratégia particular para limitar escritas no disco é, de verdade, necessária.
 
 #### Mostrar escritas no disco
 
@@ -301,11 +315,11 @@ Veja [swap#Desempenho](/index.php/Swap_(Portugu%C3%AAs)#Desempenho "Swap (Portug
 
 Veja [Sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") para detalhes.
 
-### Agendando tarefas I/O com ionice
+### Agendando tarefas de E/S com ionice
 
-Muitas tarefas como backup não dependem de um pequeno atraso I/O ou uma grande banda de armazenamento I/O para seu objetivo, eles podem ser classificados como tarefas de segundo plano. O I/O rápido é necessário para boa responsibilidade da interface do usuário no desktop. Então é benefíco reduzir a quantidade de banda de armazenamento disponível para tarefas de segundo plano, enquanto outras precisam de prioridade. Isto pode ser alcançado ao fazer uso do escalonador I/O CFQ do linux, que permite configurar diferentes prioridades para os processos.
+Muitas tarefas como backup não dependem de um pequeno atraso de E/S ou uma grande banda de armazenamento de E/S para seu objetivo, eles podem ser classificados como tarefas de segundo plano. O E/S rápido é necessário para boa responsividade da interface do usuário no desktop. Então, é benéfico reduzir a quantidade de banda de armazenamento disponível para tarefas de segundo plano, enquanto outras precisam de prioridade. Isto pode ser alcançado ao fazer uso do escalonador de E/S CFQ do linux, que permite configurar diferentes prioridades para os processos.
 
-A prioridade I/O de um processo de segundo plano pode ser reduzida para o nível "idle" (ocioso) com o comando:
+A prioridade de E/S de um processo de segundo plano pode ser reduzida para o nível "idle" (ocioso) com o comando:
 
 ```
 # ionice -c 3 *seu_comando_aqui*
@@ -318,7 +332,7 @@ Veja [ionice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) e [[2]](ht
 
 ### Overclocking
 
-[Overclocking](https://en.wikipedia.org/wiki/Overclocking "wikipedia:Overclocking") melhora a performance computacional da CPU ao aumentar o pico da frequência do clock. A habilidade para fazer overclock depende da combinação do modelo da CPU e placa-mãe. É mais frequentemente feito atravês da BIOS. Fazer overclock também tem desvantagens e riscos, não é nem recomendado nem desencorajado aqui.
+[Overclocking](https://en.wikipedia.org/wiki/Overclocking "wikipedia:Overclocking") melhora a performance computacional da CPU ao aumentar o pico da frequência do clock. A habilidade para fazer overclock depende da combinação do modelo da CPU e placa-mãe. É mais frequentemente feito através da BIOS. Fazer overclock também tem desvantagens e riscos, não é nem recomendado nem desencorajado aqui.
 
 Muitos chips da Intel não vão reportar corretamente a frequência do clock para acpi_cpufreq e a maioria dos utilitários. Isto resulta em excessivas mensagens no dmesg, que podem ser evitados ao descarregar ou colocar o módulo do kernel `apcu_cpufreq` na blacklist. Para ler a velocidade do seu clock, use *i7z* do pacote [i7z](https://www.archlinux.org/packages/?name=i7z). Para verificar se a CPU com overclock está operando corretamente, é recomendado fazer um [teste de estresse](/index.php/Stress_testing "Stress testing").
 
@@ -330,7 +344,7 @@ Veja [Escala de frequência do CPU](/index.php/Escala_de_frequ%C3%AAncia_do_CPU 
 
 O escalonador padrão da CPU que está na mainline do kernel Linux é o [CFS](https://en.wikipedia.org/wiki/Completely_Fair_Scheduler "wikipedia:Completely Fair Scheduler"). Existem alternativas.
 
-Um escalonador alternativo focado na interatividade e responsibilidade é o [MuQSS](http://ck.kolivas.org/patches/muqss/sched-MuQSS.txt), desenvolvido por [Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/). MuQSS está incluído no pacote do kernel [linux-zen](https://www.archlinux.org/packages/?name=linux-zen). Está também disponível como um patch independente ou como parte do conjunto de patches **-ck**. Veja [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") para mais informações sobre.
+Um escalonador alternativo focado na interatividade e responsividade é o [MuQSS](http://ck.kolivas.org/patches/muqss/sched-MuQSS.txt), desenvolvido por [Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/). MuQSS está incluído no pacote do kernel [linux-zen](https://www.archlinux.org/packages/?name=linux-zen). Está também disponível como um patch independente ou como parte do conjunto de patches **-ck**. Veja [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") para mais informações sobre.
 
 ### Real-time kernel
 
@@ -365,7 +379,7 @@ A proposta do [irqbalance](https://www.archlinux.org/packages/?name=irqbalance) 
 
 **Atenção:** Não aplique esta configuração sem considerar as vulnerabilidades que isto causa. Veja [isto](https://phoronix.com/scan.php?page=news_item&px=Linux-Improve-CPU-Spec-Switches) e [isto](https://linuxreviews.org/HOWTO_make_Linux_run_blazing_fast_(again)_on_Intel_CPUs) para mais informações.
 
-Desligar as mitigações de falhas da CPU melhoram a performance (algumas vezes mais de 50%). Use o [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") abaixo para desabilitá-los:
+Desligar as mitigações de falhas da CPU melhoram o desempenho (algumas vezes mais de 50%). Use o [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") abaixo para desabilitá-las:
 
 ```
 mitigations=off
@@ -378,7 +392,7 @@ A explicação de todos os switches que são passados está no [kernel.org](http
 
 ### Configuração do Xorg
 
-O desempenho gráfico pode depender da configurações presentes no [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5); veja os artigos da [NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI"), [AMDGPU](/index.php/AMDGPU "AMDGPU") e [Intel](/index.php/Intel "Intel"). Configurações erradas podem fazer o Xorg deixar de funcionar, tome cuidado.
+O desempenho gráfico pode depender das configurações presentes no [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5); veja os artigos da [NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI"), [AMDGPU](/index.php/AMDGPU "AMDGPU") e [Intel](/index.php/Intel "Intel"). Configurações erradas podem fazer o Xorg deixar de funcionar, tome cuidado.
 
 ### Configuração do Mesa
 
@@ -394,27 +408,27 @@ O desempenho dos drivers Mesa pode ser configurado com [drirc](https://dri.freed
 
 ### Overclocking
 
-Assim como acontece com CPUs, overclocking pode diretamente melhorar o desempenho, mas geralmente não é recomendado. Existem pacotes no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), tais como [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (placas antigas AMD/ATI), [rocm-smi](https://aur.archlinux.org/packages/rocm-smi/) (placas recentes AMD ), [nvclock](https://aur.archlinux.org/packages/nvclock/) (placas NVIDIA antigas - até o Geforce 9), e [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) para placas recentes da NVIDIA.
+Assim como acontece com CPUs, overclocking pode diretamente melhorar o desempenho, mas geralmente não é recomendado. Existem pacotes no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), tais como [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (placas antigas da AMD/ATI), [rocm-smi](https://aur.archlinux.org/packages/rocm-smi/) (placas recentes da AMD), [nvclock](https://aur.archlinux.org/packages/nvclock/) (placas antigas da NVIDIA - até o Geforce 9), e [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) para placas recentes da NVIDIA.
 
 Veja [AMDGPU#Overclocking](/index.php/AMDGPU#Overclocking "AMDGPU") ou [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks").
 
-## RAM and swap
+## RAM e swap
 
-### Clock frequency and timings
+### Tempos e frequência de clock
 
-RAM can run at different clock frequencies and timings, which can be configured in the BIOS. Memory performance depends on both values. Selecting the highest preset presented by the BIOS usually improves the performance over the default setting. Note that increasing the frequency to values not supported by both motherboard and RAM vendor is overclocking, and similar risks and disadvantages apply, see [#Overclocking](#Overclocking).
+A RAM pode rodar em diferentes tempos e clock, isto pode ser configurado na BIOS. O desempenho da memória depende de ambos os valores. Selecionar o valor mais alto presente na BIOS normalmente melhora o desempenho em comparação com o valor padrão. Note que aumentar a frequência para valores maiores que os suportados pelos fabricantes da placa-mãe e RAM é overclocking, riscos e desvantagens similares se aplicam nesse caso, veja [#Overclocking](#Overclocking).
 
-### Root on RAM overlay
+### Raiz na RAM
 
-If running off a slow writing medium (USB, spinning HDDs) and storage requirements are low, the root may be run on a RAM overlay ontop of read only root (on disk). This can vastly improve performance at the cost of a limited writable space to root. See [liveroot](https://aur.archlinux.org/packages/liveroot/).
+Se está usando um dispositivo com lenta capacidade de escrita (USB, HDDs rotativos) e os requerimentos de armazenamento são baixos, a raiz pode rodar na RAM em cima de uma raiz somente leitura (no disco). Isto pode aumentar significamente o desempenho ao custo de um limitado espaço modificável na raiz do sistema. Veja [liveroot](https://aur.archlinux.org/packages/liveroot/).
 
-### Zram or zswap
+### Zram ou zswap
 
-The [zram](https://www.kernel.org/doc/Documentation/blockdev/zram.txt) kernel module (previously called **compcache**) provides a compressed block device in RAM. If you use it as swap device, the RAM can hold much more information but uses more CPU. Still, it is much quicker than swapping to a hard drive. If a system often falls back to swap, this could improve responsiveness. Using zram is also a good way to reduce disk read/write cycles due to swap on SSDs.
+O módulo [zram](https://www.kernel.org/doc/Documentation/blockdev/zram.txt) do kernel (antigamente chamado de **compcache**) oferece um dispositivo de bloco comprimido na RAM. Se você usa isto como um dispositivo swap, A RAM pode guardar muito mais informações mas usa mais CPU. Apesar disso, é muito mais rápido que usar um disco rígido. Se um sistema regularmente recorre a swap, isto pode aumentar a responsibilidade. Usar zram é também uma boa maneira de reduzir ciclos de leitura/escrita no disco que ocorrem por causa da swap em SSDs.
 
-Similar benefits (at similar costs) can be achieved using [zswap](/index.php/Zswap "Zswap") rather than zram. The two are generally similar in intent although not operation: zswap operates as a compressed RAM cache and neither requires (nor permits) extensive userspace configuration.
+Benefícios similares (em custos similares) podem ser alcançados usando [zswap](/index.php/Zswap "Zswap"). Os dois são geralmente similares em intenção mas não em implementação: zswap opera como um cache da RAM comprimida e nem precisa (nem permite) extensiva configuração no userspace.
 
-Example: To set up one lz4 compressed zram device with 32GiB capacity and a higher-than-normal priority (only for the current session):
+Exemplo: Para definir um dispositivo zram com capacidade de 32GiB, comprimido com lz4 e prioridade maior que o normal (somente para a atual sessão):
 
 ```
 # modprobe zram
@@ -425,7 +439,7 @@ Example: To set up one lz4 compressed zram device with 32GiB capacity and a high
 
 ```
 
-To disable it again, either reboot or run
+Para desabilitá-lo, reinicie o sistema ou execute:
 
 ```
 # swapoff /dev/zram0
@@ -433,11 +447,11 @@ To disable it again, either reboot or run
 
 ```
 
-A detailed explanation of all steps, options and potential problems is provided in the official documentation of the module [here](https://www.kernel.org/doc/Documentation/blockdev/zram.txt).
+Uma explicação detalhada de todos os passos, opções e potenciais problemas pode ser encontrada na documentação oficial do [módulo](https://www.kernel.org/doc/Documentation/blockdev/zram.txt).
 
-The [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package provides a `systemd-swap.service` unit to automatically initialize zram devices. Configuration is possible in `/etc/systemd/swap.conf`.
+O pacote [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) oferece a unit `systemd-swap.service` para automaticamente inicializar dispositivos zram. É possível configurar em `/etc/systemd/swap.conf`.
 
-The package [zramswap](https://aur.archlinux.org/packages/zramswap/) provides an automated script for setting up such swap devices with optimal settings for your system (such as RAM size and CPU core number). The script creates one zram device per CPU core with a total space equivalent to the RAM available, so you will have a compressed swap with higher priority than regular swap, which will utilize multiple CPU cores for compressing data. To do this automatically on every boot, [enable](/index.php/Enable "Enable") `zramswap.service`.
+O pacote [zramswap](https://aur.archlinux.org/packages/zramswap/) oferece um script automatizado para configurar tais dispositivos swap com configurações ideais para seu sistema (tais como tamanho da RAM e número de núcleos da CPU). O script cria um dispositivo zram por núcleo da CPU com um espaço total equivalente a RAM disponível, então você vai ter uma swap comprimida com uma prioridade maior que a swap normal, que vai utilizar múltiplos núcleos da CPU para os dados comprimidos. Para fazer isto automaticamente em toda inicialização, [habilite](/index.php/Habilite "Habilite") o `zramswap.service`.
 
 #### Swap na zRAM usando uma regra do udev
 
@@ -490,7 +504,7 @@ No cenário pouco provável onde você tem pouca RAM e excedente memória de ví
 
 ## Watchdogs
 
-De acordo com [wikipedia:Watchdog_timer](https://en.wikipedia.org/wiki/Watchdog_timer "wikipedia:Watchdog timer") (traduzido):
+De acordo com [Wikipedia:Watchdog timer](https://en.wikipedia.org/wiki/Watchdog_timer "wikipedia:Watchdog timer") (traduzido):
 
 	Um watchdog timer [...] é um temporizador eletrônico que é usado para detectar e recuperar o computador de malfuncionamento. Durante a operação normal, o computador regularmente reseta o watchdog timer [...]. Se, [...], o computador falha para resetar o watchdog, o temporizador vai decorrer e gerar um sinal de timeout [...] usado parar iniciar ações corretivas [...] tipicamente incluindo colocar o sistema do computador em um estado seguro e restaurar a sua operação normal.
 
@@ -512,7 +526,7 @@ ou use:
 
 ```
 
-Depois que você desabilitou os watchdogs, você pode *opcionalmente* evitar o carregamento do módulo responsável pelo watchdog de hardware, também. Faã isso ao [blacklisting](/index.php/Blacklisting "Blacklisting") do módulo relacionado, exemplo `iTCO_wdt`.
+Depois que você desabilitou os watchdogs, você pode *opcionalmente* evitar o carregamento do módulo responsável pelo watchdog de hardware, também. Faça isso com o módulo relacionado [adicionando-o em lista-negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)"), exemplo `iTCO_wdt`.
 
 **Nota:** Alguns usuários [reportaram](https://bbs.archlinux.org/viewtopic.php?id=221239) que o parâmetro `nowatchdog` não funciona como esperado mas eles desabilitaram com sucesso (ao menos o de hardware) ao colocar o módulo citado acima no blacklist.
 

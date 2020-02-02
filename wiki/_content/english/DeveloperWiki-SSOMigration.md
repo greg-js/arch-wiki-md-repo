@@ -25,8 +25,8 @@ Move to Keycloak as identity and user management
 | Zabbix | [bug report](https://support.zabbix.com/browse/ZBXNEXT-3320) | Devops |
 | Mediawiki | [bug report](https://www.mediawiki.org/wiki/Extension:SimpleSAMLphp) | All |
 | AUR | not supported | not supported | All, with special status |
-| Patchwork | [django plugin?](https://github.com/fangli/django-saml2-auth) | [django openid plugin](https://github.com/juanifioren/django-oidc-provider) | Staff |
-| Archweb | [django plugin?](https://github.com/fangli/django-saml2-auth) | [django openid plugin](https://github.com/juanifioren/django-oidc-provider) | Staff |
+| Patchwork | [django plugin?](https://github.com/fangli/django-saml2-auth) | [django openid plugin](https://github.com/mozilla/mozilla-django-oidc) | gitlab | Staff |
+| Archweb | [django plugin?](https://github.com/fangli/django-saml2-auth) | [django openid plugin](https://github.com/mozilla/mozilla-django-oidc) | Staff |
 | Mailman | [bug report](https://gitlab.com/mailman/hyperkitty/issues/90) | All |
 | Kanboard | [reverse proxy](https://docs.kanboard.org/en/latest/admin_guide/reverse_proxy_authentication.html?highlight=sso) | Staff | Gitlab |
 | Gitlab | [supported](https://docs.gitlab.com/ee/user/group/saml_sso/scim_setup.html#gitlab-configuration) | All |

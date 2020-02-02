@@ -70,7 +70,7 @@ The boot time load message showing the initial configuration can be retrieved wi
 
 #### Using sysfs
 
-Each setting can be changed at runtime via the [sysfs](https://en.wikipedia.org/wiki/sysfs "wikipedia:sysfs") interface. For example using the following command to amend the first parameter of the list, `compressor`:
+Each setting can be changed at runtime via the [sysfs](https://en.wikipedia.org/wiki/sysfs "wikipedia:sysfs") interface. For example, to change the `compressor` paramater:
 
 ```
 # echo lz4 > /sys/module/zswap/parameters/compressor
@@ -79,7 +79,7 @@ Each setting can be changed at runtime via the [sysfs](https://en.wikipedia.org/
 
 #### Using kernel boot parameters
 
-To set the parameter permanently, the corresponding option, for example `zswap.compressor=lz4`, must be added to the kernel boot parameter. Therefore to set permanently all the above settings, the following kernel parameters must be added: `zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=z3fold`.
+To persist the parameter change, the corresponding option, for example `zswap.compressor=lz4`, must be added to the kernel boot parameter. Therefore to set permanently all the above settings, the following kernel parameters must be added: `zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=z3fold`.
 
 When changing the compression algorithm via boot parameter the corresponding kernel modules must be available, at least when using *lz4* (refer to [#Compression algorithm](#Compression_algorithm)).
 
@@ -99,7 +99,7 @@ A *zpool* of type *zbud* is created by default, use the kernel parameter `zswap.
 
 ### Compression algorithm
 
-For page compression, zswap uses compressor modules provided by the kernel's cryptographic API. It uses by default the *lzo* compression algorithm but this can be changed with `zswap.compressor`. *Lz4* can be used instead of *lzo* for faster compression and decompression for a slightly lower compression ratio. Other possible choices are *lz4hc* or *deflate*.
+For page compression, zswap uses compressor modules provided by the kernel's cryptographic API. It uses by default the *lzo* compression algorithm but this can be changed with `zswap.compressor`. *Lz4* can be used instead of *lzo* for faster compression and decompression for a slightly lower compression ratio. Other options include *deflate*, *lz4hc*, *lzo-rle*, and *zstd*.
 
 There is no issue setting the compression to *lz4* at runtime using *sysfs* or via *systemd-swap* but zswap starts in this case with *lzo* and switches at a later stage to *lz4*. To use zswap with *lz4* straight away, this must be defined in the kernel boot parameter and the *lz4* module must be loaded early by the kernel. This can be achieved by following these steps:
 

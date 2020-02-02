@@ -357,7 +357,7 @@ Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E62343
 
 ```
 
-Then, adjust permissions of `/etc/grub.d/40_custom` such that only root can read it and add the following to this file:
+Then, adjust permissions on `/etc/grub.d/40_custom` such that only root can read it and add the following to this file:
 
  `/etc/grub.d/40_custom` 
 ```

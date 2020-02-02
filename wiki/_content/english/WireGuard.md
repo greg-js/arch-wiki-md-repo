@@ -47,7 +47,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [wireguard-lts](https://www.archlinux.org/packages/?name=wireguard-lts) for the LTS [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
     *   [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) for the DKMS variant for other [kernels](/index.php/Kernel "Kernel").
 
-**Note:** WireGuard has been merged into net-next and is scheduled to be mainlined in kernel version 5.6\. [[2]](https://lists.zx2c4.com/pipermail/wireguard/2019-December/004704.html)
+**Note:** WireGuard has been merged in Linux 5.6\. [[2]](https://lists.zx2c4.com/pipermail/wireguard/2020-January/004906.html)
 
 **Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager "NetworkManager") both have native support for setting up WireGuard interfaces, they only require the kernel module.
 

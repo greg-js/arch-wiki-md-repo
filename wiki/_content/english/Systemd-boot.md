@@ -144,7 +144,7 @@ For Linux boot, you can also use `linux` instead of `efi`. Or `initrd` in additi
 
 *   `linux` and `initrd` followed by the relative path of the corresponding files in the ESP; e.g. `/vmlinuz-linux`; this will be automatically translated into `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
-**Note:** If `options` is present in a boot entry and [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled, the value of `options` will override any `.cmdline` string embedded in the EFI image that is specified by `efi` or `linux` (see [#Preparing kernels for /EFI/Linux](#Preparing_kernels_for_/EFI/Linux)). With Secure Boot, however, `options` (and any edits made to the kernel command line in the bootloader UI) will be ignored, and only the embedded `.cmdline` will be used.
+**Note:** If `options` is present in a boot entry and [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled, the value of `options` will override any `.cmdline` string embedded in the EFI image that is specified by `efi` or `linux` (see [#Preparing a unified kernel image](#Preparing_a_unified_kernel_image)). With Secure Boot, however, `options` (and any edits made to the kernel command line in the bootloader UI) will be ignored, and only the embedded `.cmdline` will be used.
 
 An example of a loader file to launch Arch from a partition with the label *arch_os* and loading the Intel CPU [microcode](/index.php/Microcode "Microcode") is:
 
@@ -161,7 +161,7 @@ options root=LABEL=*arch_os* rw
 
 **Note:**
 
-*   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
+*   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up_and_Hibernation "Dual boot with Windows") option.
 *   If you have an Intel or AMD CPU, load the *microcode* with `initrd` before other images, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
 *   The root partition can be identified with its `LABEL`, `PARTUUID` or `UUID` (see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming")). This is required only to identify the root partition, not the `*esp*`.
 

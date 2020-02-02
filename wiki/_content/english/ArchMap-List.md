@@ -35,7 +35,7 @@ Anything that satisfies [this regular expression](https://github.com/guyfawcus/A
 
 ### Yandex Maps
 
-Open [Yandex Maps](https://yandex.com.tr/maps) in your browser:
+Open [Yandex Maps](https://yandex.com/maps) in your browser:
 
 1.  Find your place and click the right mouse button.
 2.  Select "What's here?".
@@ -1142,5 +1142,6 @@ You can use the following website to get your device's coordinates along with a 
 40.7271164,-73.994756 "NedLudd" # New York, NY USA
 37.004127, 27.271187 "mergen" # Bodrum/Muğla, Turkey
 11.108233, 77.175904 "ilango100" # Coimbatore, TN, India
+48.394412, 135.122285 "Hills of eternity" # Khabarovsk, Russia
 
 ```

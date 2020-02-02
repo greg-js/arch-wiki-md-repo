@@ -233,14 +233,14 @@ Another use case is having different time zones set for different users of the s
 
 ### 时间显示的既不是UTC也不是本地时间
 
-This might be caused by a number of reasons. For example, if your hardware clock is running on local time, but `timedatectl` is set to assume it is in UTC, the result would be that your timezone's offset to UTC effectively gets applied twice, resulting in wrong values for your local time and UTC.
+这可能是由多种原因造成的。假如说你的硬件时间使用的是localtime，但`timedatectl`被设置为使用UTC，结果是你的时区偏移设置被应用了两次，导致系统显示的既不是UTC也不是本地时间。
 
-To force your clock to the correct time, and to also write the correct UTC to your hardware clock, follow these steps:
+要强制校准你的时钟，并且让系统写入正确的硬件时间，遵循下面几步：
 
-*   Setup [ntpd](/index.php/Ntpd "Ntpd") (enabling it as a service is not necessary).
-*   Set your [time zone](#Time_zone) correctly.
-*   Run `ntpd -qg` to manually synchronize your clock with the network, ignoring large deviations between local UTC and network UTC.
-*   Run `hwclock --systohc` to write the current software UTC time to the hardware clock.
+*   设置好[ntpd](/index.php/Ntpd "Ntpd")（不需要将其作为一个服务来运行）；
+*   正确设置你的[时区](#时区)；
+*   运行`ntpd -qg`，此时在系统和网络进行时间校正时，会忽略本地UTC时间与网络UTC时间之间过大的差异；
+*   运行`hwclock --systohc`，将当前的正确UTC时间写入硬件时间。
 
 ## 提示和技巧
 

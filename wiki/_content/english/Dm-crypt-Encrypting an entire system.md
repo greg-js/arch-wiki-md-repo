@@ -452,7 +452,7 @@ Mount the partition to `/mnt/boot`:
 
 ### Configuring mkinitcpio
 
-Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Install "Install") and add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
@@ -557,7 +557,7 @@ More information about the encryption options can be found in [dm-crypt/Device e
 
 ### Configuring mkinitcpio
 
-Add the `keyboard`, `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Install "Install") and add the `keyboard`, `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **lvm2** **encrypt** filesystems fsck)
@@ -892,7 +892,7 @@ We can now check a mapping entry has been made for `/dev/mapper/cryptlvm`:
 
 **Tip:** A simpler alternative to using LVM, advocated in the cryptsetup FAQ for cases where LVM is not necessary, is to just create a filesystem on the entirety of the mapped dm-crypt device.
 
-Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device. See [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") for further details:
+Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device. See [Install Arch Linux on LVM](/index.php/Install_Arch_Linux_on_LVM "Install Arch Linux on LVM") for further details:
 
 ```
 # pvcreate /dev/mapper/cryptlvm
@@ -931,7 +931,7 @@ Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition inten
 
 ### Configuring mkinitcpio
 
-Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Install "Install") and add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
@@ -1073,7 +1073,7 @@ sda                   8:0      0   200G  0 disk
 
 ### Configuring mkinitcpio
 
-Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Install "Install") and add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)

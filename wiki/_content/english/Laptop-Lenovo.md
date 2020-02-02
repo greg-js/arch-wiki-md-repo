@@ -183,6 +183,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Lenovo ThinkPad W500 | 2019.12 | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested January 2020 / Linux 5.4.11 |
 | Lenovo ThinkPad W510 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Touchscreen (Yes), Fingerprint Reader (Not tested) | Tested April 2017 / Linux 4.10.8 |
 | Lenovo ThinkPad W530 | 2016.03 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested April 2018 / Linux 4.15.15 |
 | Lenovo ThinkPad W540 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (Yes) | Tested April 2017 / Linux 4.10.8 |
@@ -221,6 +222,7 @@ install CD version
 | [Lenovo ThinkPad X1 Extreme](/index.php/Lenovo_ThinkPad_X1_Extreme "Lenovo ThinkPad X1 Extreme") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA | Fingerprint reader not supported, Thunderbolt ports not tested | Graphics requires some configuration to work correctly |
 | [Lenovo ThinkPad X1 Extreme (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Extreme_(Gen_2) "Lenovo ThinkPad X1 Extreme (Gen 2)") | NA | Yes | Yes | Unknown | Yes | Yes | Yes | NA | Fingerprint reader not supported [yet](https://github.com/nmikhailov/Validity90/issues/72), Thunderbolt ports not tested |
 | [Lenovo ThinkPad X1 Yoga (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Yoga_(Gen_3) "Lenovo ThinkPad X1 Yoga (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Partial | NA | SD card (Yes), Webcam (Yes), Fingerprint (No), Touchscreen (Yes), Accelerometer (Yes) |
+| [Lenovo ThinkPad X1 Yoga (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Yoga_(Gen_4) "Lenovo ThinkPad X1 Yoga (Gen 4)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | Webcam (Yes), Microphone (No), Fingerprint (No), Touchscreen (Yes), Accelerometer (Yes) |
 
 #### Yoga Series
 

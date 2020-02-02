@@ -120,7 +120,7 @@ Navegue até a pasta da árvore do kernel e execute o seguinte comando:
 
 **Nota:** Se você não quer que os módulos do VirtualBox sejam carregados automaticamente no momento da inicialização, você tem que usar [mask](/index.php/Mask_(Portugu%C3%AAs) "Mask (Português)") para mascarar o padrão `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (ou `/usr/lib/modules-load.d/virtualbox-host-dkms.conf`) criando um arquivo vazio (ou um link simbólico para `/dev/null`) com o mesmo nome em `/etc/modules-load.d/`.
 
-Entre os [módulos de kernel](/index.php/Kernel_module "Kernel module") que o VirtualBox usa, existe um módulo obrigatório chamado `vboxdrv`, que deve ser carregado antes que qualquer máquina virtual possa ser executada.
+Entre os [módulos de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") que o VirtualBox usa, existe um módulo obrigatório chamado `vboxdrv`, que deve ser carregado antes que qualquer máquina virtual possa ser executada.
 
 Para carregar o módulo manualmente, executar:
 

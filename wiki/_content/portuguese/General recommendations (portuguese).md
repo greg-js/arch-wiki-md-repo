@@ -146,7 +146,7 @@ Essa seção contém informações pertinentes ao processo de inicialização (*
 
 ### Autorreconhecimento de hardware
 
-Hardware deve ser detectado automaticamente pelo [udev](/index.php/Udev "Udev") durante o processo de inicialização por padrão. Uma melhoria potencial no tempo de inicialização pode ser atingido pela desabilitação de carregamento automático de módulos e especificação manual dos módulos necessários, como descrito em [Módulos de kernel](/index.php/Kernel_modules "Kernel modules"). Além disso, [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") deve ser capaz de detectar automaticamente drivers drivers necessários usando `udev`, mas os usuários também têm a opção de configurar o servidor X manualmente.
+Hardware deve ser detectado automaticamente pelo [udev](/index.php/Udev "Udev") durante o processo de inicialização por padrão. Uma melhoria potencial no tempo de inicialização pode ser atingido pela desabilitação de carregamento automático de módulos e especificação manual dos módulos necessários, como descrito em [Módulos de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)"). Além disso, [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") deve ser capaz de detectar automaticamente drivers drivers necessários usando `udev`, mas os usuários também têm a opção de configurar o servidor X manualmente.
 
 ### Microcódigo
 
@@ -288,7 +288,7 @@ Essa seção visa resumir ajustes, ferramentas e opções disponíveis úteis pa
 
 ### Melhorando o desempenho
 
-O artigo [Melhorando o desempenho](/index.php/Improving_performance "Improving performance") junta informações e é resumo básico sobre ganho de desempenho no Arch Linux.
+O artigo [Melhorando o desempenho](/index.php/Melhorando_o_desempenho "Melhorando o desempenho") junta informações e é resumo básico sobre ganho de desempenho no Arch Linux.
 
 ### Solid state drives
 

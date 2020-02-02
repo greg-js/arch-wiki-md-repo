@@ -40,11 +40,9 @@ freshclamd.service
 | [deluge-web](/index.php/Deluge "Deluge") | deluge-web.service | 跨平台的全功能 BitTorrent 客户端网页界面。 |
 | [fam](/index.php/FAM "FAM") | 已过时 | 文件变更监视器.(已过时) |
 | fancontrol | fancontrol.service | 风扇控制进程，lm_sensors的一部分 |
-| [fbsplash](/index.php/Fbsplash "Fbsplash") | 未实现 | 图形化启动屏幕 |
 | [fluidsynth](/index.php/FluidSynth "FluidSynth") | fluidsynth.service | Software synthesizer |
 | ftpd | 未实现 | Inetutils ftp daemon |
 | [gdm](/index.php/GDM "GDM") | gdm.service | Gnome 显示管理器 (登陆屏幕) |
-| [gensplash](/index.php/Fbsplash "Fbsplash") | 未实现 | (参见 fbsplash) |
 | [git-daemon](/index.php/Git "Git") | git-daemon.socket |
 | [gpm](/index.php/Console_mouse_support "Console mouse support") | gpm.service | 控制台鼠标支持 |
 | [hal](/index.php/HAL "HAL") | 以过时 | 硬件守护进程.(已过时) |
@@ -118,7 +116,7 @@ sshd@.service sshdgenkeys.service
 
  | OpenSSH (secure shell) 守护进程 |
 | stbd | 过时 | 以前 gnome-system-tools 需要此进程，gnome-tools 2.28 之后就不需要了 |
-| [stunnel](/index.php?title=Stunnel&action=edit&redlink=1 "Stunnel (page does not exist)") | stunnel.service | 将任意 TCP 连接用 SSL 加密. |
+| [stunnel](/index.php/Stunnel "Stunnel") | stunnel.service | 将任意 TCP 连接用 SSL 加密. |
 | svnserve | svnserve.service | Subversion 服务 |
 | syslogd | 过时 | 这是基本的，但比较老旧的系统日志记录守护进程. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng.service | 新一代系统日志记录守护进程. |

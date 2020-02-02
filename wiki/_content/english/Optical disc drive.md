@@ -676,7 +676,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **fre:ac** — Audio converter and CD ripper with support for various popular formats and encoders.
 
-	[https://freac.org/](https://freac.org/) || [freac](https://aur.archlinux.org/packages/freac/)
+	[https://freac.org/](https://freac.org/) || [freac-git](https://aur.archlinux.org/packages/freac-git/)
 
 *   **Goobox** — CD player and ripper for GNOME.
 

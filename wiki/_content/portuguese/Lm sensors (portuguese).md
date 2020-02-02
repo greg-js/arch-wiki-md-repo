@@ -118,7 +118,7 @@ temp2:        +37.4°C  (low  = -40.0°C, high = +70.0°C)
 
 ### Lendo valores SPD de módulos de memória (opcional)
 
-Para ler os valores de tempo de SPD de módulos de memória, instale o pacote [i2c-tools](https://www.archlinux.org/packages/?name=i2c-tools). Uma vez instalado, carregue [módulo de kernel](/index.php/Kernel_module "Kernel module") `eeprom`.
+Para ler os valores de tempo de SPD de módulos de memória, instale o pacote [i2c-tools](https://www.archlinux.org/packages/?name=i2c-tools). Uma vez instalado, carregue [módulo de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") `eeprom`.
 
 ```
 # modprobe eeprom
@@ -497,11 +497,11 @@ Isso vai permitir o módulo para carregar na inicialização.
 
 ### Placas-mãe Asus B450 com Ryzen CPU
 
-Com algumas placas-mãe recentes da Asus, acesso aos sensores de cooler e voltagem podem exigir o módulo it87\. [Instale](/index.php/Instale "Instale") [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/) e carregue o [módulo de kernel](/index.php/Kernel_module "Kernel module") `it87`.
+Com algumas placas-mãe recentes da Asus, acesso aos sensores de cooler e voltagem podem exigir o módulo it87\. [Instale](/index.php/Instale "Instale") [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/) e carregue o [módulo de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") `it87`.
 
 ### Placas-mãe Asus Z97/Z170
 
-Com algumas placas-mãe recentes da Asus, o acesso ao ventilador e ao sensor de tensão pode exigir que o [módulo de kernel](/index.php/Kernel_module "Kernel module") `nct6775` esteja carregado.
+Com algumas placas-mãe recentes da Asus, o acesso ao ventilador e ao sensor de tensão pode exigir que o [módulo de kernel](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") `nct6775` esteja carregado.
 
 Além disso, adicione-o aos parâmetros do kernel de inicialização:
 
@@ -529,7 +529,7 @@ $ modprobe it87 force_id=0x8728
 
 ```
 
-Ou você pode [carregar os módulos](/index.php/Kernel_modules "Kernel modules") durante o processo de inicialização criando os seguintes arquivos:
+Ou você pode [carregar os módulos](/index.php/Kernel_module_(Portugu%C3%AAs) "Kernel module (Português)") durante o processo de inicialização criando os seguintes arquivos:
 
  `/etc/modules-load.d/it87.conf`  `it87`  `/etc/modprobe.d/it87.conf`  `options it87 force_id=0x8603` 
 

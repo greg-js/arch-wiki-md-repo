@@ -154,8 +154,6 @@ This effectively makes the file empty and then read-only so Firefox cannot write
 
 Every object loaded (html page, jpeg image, css stylesheet, gif banner) is saved in the Firefox cache for future use without the need to download it again. It is estimated that only a fraction of these objects will be reused, usually about 30%. This is because of very short object expiration time, updates or simply user behavior (loading new pages instead of returning to the ones already visited). The Firefox cache is divided into memory and disk cache and the latter results in frequent disk writes: newly loaded objects are written to memory and older objects are removed.
 
-The disk cache can be turned off by enabling *Preferences > Privacy & Security > Cached Web Content - Override automatic cache management* and setting to `0` *Limit cache to ... MB of space*.
-
 An alternative approach is to use `about:config` settings:
 
 *   Set `browser.cache.disk.enable` to `false`

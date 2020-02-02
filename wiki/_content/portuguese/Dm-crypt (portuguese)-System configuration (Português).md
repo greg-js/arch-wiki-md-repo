@@ -2,7 +2,7 @@
 
 **Dica:**
 
-*   Se precisa desbloquear remotamente o sistema de arquivos da partição raiz ou de outras partições na inicialização (máquinas sem monitor, servidores distantes...), siga instruções específicas em [dm-crypt/Especificidades#Desbloqueio remoto da partição raiz (ou outra)](/index.php/Dm-crypt/Especificidades#Desbloqueio_remoto_da_partição_raiz_(ou_outra) "Dm-crypt/Especificidades").
+*   Se precisa desbloquear remotamente o sistema de arquivos da partição raiz ou de outras partições na inicialização (máquinas sem monitor, servidores distantes...), siga instruções específicas em [dm-crypt/Especificidades#Abrir remotamente a partição raiz (ou outra)](/index.php/Dm-crypt/Especificidades#Abrir_remotamente_a_partição_raiz_(ou_outra) "Dm-crypt/Especificidades").
 *   Você pode querer instalar e usar [GNU Screen](/index.php/GNU_Screen "GNU Screen") depois de entrar no ambiente chroot para copiar e colar UUIDs mais facilmente.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

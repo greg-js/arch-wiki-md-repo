@@ -124,6 +124,10 @@ $ sudo systemctl enable --now dell-bios-fan-control.service
 
 ```
 
+You may have to modify the modprobe options for `dell-smm-hwmon` to have the above work. See more at this reddit [thread](https://www.reddit.com/r/Dell/comments/9pdgid/configuring_the_xps_to_play_nice_with_linux/)
+
+ `options dell-smm-hwmon ignore_dmi=1` 
+
 ## Graphics
 
 ### kernel modules

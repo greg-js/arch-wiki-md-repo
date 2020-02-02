@@ -90,8 +90,6 @@ MrChromebox's firmware for Chromebooks and Chromeboxes has some differences comp
 
 *   Source code and build scripts available on [github](https://github.com/MrChromebox)
 
-The current major limitation of this firmware is the lack of proper UEFI NVRAM support, resulting in the impossibility of modifying [UEFI Variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface"). This means that it defaults to booting from external devices if a valid EFI partition with a boot EFI program at the default path is detected, and that it defaults to booting from `*esp*/EFI/Boot/BOOTX64.EFI` (`*esp*` being the [EFI system partition](/index.php/EFI_system_partition "EFI system partition")) with no option of changing this behaviour.
-
 #### Understanding the script
 
 ##### What MrChromebox's Firmware Utility Script script does ?

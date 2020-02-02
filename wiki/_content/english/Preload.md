@@ -22,10 +22,10 @@ Preloading is the action of putting and keeping target files into the RAM. The b
 
 ```
 
-For regular users, take ownership of `/usr/share/gopreload/enabled` and `/usr/share/gopreload/disabled`
+For regular users, take ownership of `/usr/share/gopreload/enabled` and `/usr/share/gopreload/disabled`:
 
 ```
-# chown username:users /usr/share/gopreload/enabled /usr/share/gopreload/disabled
+# chown *username*:users /usr/share/gopreload/enabled /usr/share/gopreload/disabled
 
 ```
 
@@ -40,7 +40,7 @@ Then, as instructed, press Enter when the program is fully loaded. This will add
 
 To disable the loading of a program, remove the appropriate list in `/usr/share/gopreload/enabled` or move it to `/usr/share/gopreload/disabled`.
 
-It is advised to run gopreload-prepare after system upgrades to refresh the file lists. For the task, the following batch tool come handy:
+It is advised to run *gopreload-prepare* after system upgrades to refresh the file lists. For the task, the following batch tool come handy:
 
 ```
 # gopreload-batch-refresh.sh
@@ -55,11 +55,11 @@ The configuration file is located in `/etc/gopreload.conf`
 
 ## Preload
 
-**preload** is a program written by Behdad Esfahbod which runs as a [daemon](/index.php/Daemon "Daemon") and records statistics about usage of programs using Markov chains; files of more frequently-used programs are, during a computer's spare time, loaded into memory. This results in faster startup times as less data needs to be fetched from disk.
+*preload* is a program written by Behdad Esfahbod which runs as a [daemon](/index.php/Daemon "Daemon") and records statistics about usage of programs using Markov chains; files of more frequently-used programs are, during a computer's spare time, loaded into memory. This results in faster startup times as less data needs to be fetched from disk.
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [preload](https://aur.archlinux.org/packages/preload/) package. You may now [start](/index.php/Daemon "Daemon") the [systemd](/index.php/Systemd "Systemd") service `preload`, and/or enable it in order to start at boot.
+[Install](/index.php/Install "Install") the [preload](https://aur.archlinux.org/packages/preload/) package. You may now [start](/index.php/Start "Start") the systemd service `preload`, and/or [enable](/index.php/Enable "Enable") it in order to start at boot.
 
 ### Configuration
 

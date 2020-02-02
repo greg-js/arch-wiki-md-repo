@@ -22,11 +22,10 @@ This page explains how to perform a regular Arch installation onto removable med
     *   [2.3 Syslinux](#Syslinux)
 *   [3 Tips](#Tips)
     *   [3.1 Using your portable install on multiple machines](#Using_your_portable_install_on_multiple_machines)
-        *   [3.1.1 Input drivers](#Input_drivers)
-        *   [3.1.2 Video drivers](#Video_drivers)
-        *   [3.1.3 Persistent block device naming](#Persistent_block_device_naming)
-        *   [3.1.4 Kernel parameters](#Kernel_parameters)
-        *   [3.1.5 Booting from USB 3 medium](#Booting_from_USB_3_medium)
+        *   [3.1.1 Video drivers](#Video_drivers)
+        *   [3.1.2 Persistent block device naming](#Persistent_block_device_naming)
+        *   [3.1.3 Kernel parameters](#Kernel_parameters)
+        *   [3.1.4 Booting from USB 3 medium](#Booting_from_USB_3_medium)
     *   [3.2 Compatibility](#Compatibility)
     *   [3.3 Minimizing disk access](#Minimizing_disk_access)
 *   [4 See also](#See_also)
@@ -107,12 +106,6 @@ LABEL Arch
 ## Tips
 
 ### Using your portable install on multiple machines
-
-#### Input drivers
-
-For laptop use (or use with a tactile screen) you will need the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package for the touchpad/touchscreen to work.
-
-For instructions on fine tuning or troubleshooting touchpad issues, see the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") article.
 
 #### Video drivers
 

@@ -35,7 +35,6 @@
         *   [2.2.6 -pf](#-pf)
     *   [2.3 Индивидуальные патчи](#Индивидуальные_патчи)
         *   [2.3.1 Reiser4](#Reiser4)
-        *   [2.3.2 fbsplash](#fbsplash)
 *   [3 Компиляция ядра](#Компиляция_ядра)
     *   [3.1 Используя Arch Build System (ABS)](#Используя_Arch_Build_System_(ABS))
     *   [3.2 Традиционный метод](#Традиционный_метод)
@@ -234,10 +233,6 @@ Grsecurity патчи можно посмотреть на [https://grsecurity.n
 #### Reiser4
 
 [Reiser4](/index.php/Reiser4 "Reiser4")
-
-#### fbsplash
-
-[fbsplash](/index.php/Fbsplash "Fbsplash")
 
 ## Компиляция ядра
 

@@ -1,6 +1,10 @@
 **Fbsplash** (anteriormente gensplash) es una implementación en espacio de usuario de una pantalla *splash* para sistemas Linux. Provee un ambiente gráfico durante el arranque del sistema usando la capa framebuffer de Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Fbsplash](#Fbsplash)
