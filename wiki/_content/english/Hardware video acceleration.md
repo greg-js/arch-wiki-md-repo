@@ -71,8 +71,9 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC"). For comprehensive o
 
 To get VA-API support when device driver provides none:
 
-*   [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) – VDPAU backend for VA-API.
-*   [libva-vdpau-driver-chromium](https://aur.archlinux.org/packages/libva-vdpau-driver-chromium/) – VDPAU backend for VA-API, patched to work with [Chromium](/index.php/Chromium "Chromium").
+*   [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) – VDPAU backend for VA-API;
+*   [libva-vdpau-driver-chromium](https://aur.archlinux.org/packages/libva-vdpau-driver-chromium/) – patched to work with [Chromium](/index.php/Chromium "Chromium");
+*   [libva-vdpau-driver-vp9-git](https://aur.archlinux.org/packages/libva-vdpau-driver-vp9-git/) – experimental VP9 support.
 
 To get VDPAU support when device driver provides none:
 
@@ -272,11 +273,11 @@ GeForce 8 and newer |
 | H.265/HEVC 10bit | Broxton and newer | Broxton/Apollo Lake and newer | Radeon 400 and newer |
 | VP8 | Broadwell and newer | Broadwell and newer | No | No |
 | VP9 8bit | Broxton and newer
-Hybrid: Broadwell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and newer | No |
+Hybrid: Broadwell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and newer | See [#VDPAU drivers](#VDPAU_drivers) |
 | VP9 10bit | Kaby Lake and newer | Kaby Lake and newer | No |
 | Encoding |
 | MPEG-2 | Ivy Bridge and newer | Broadwell and newer
-except Broxton/Apollo Lake | No | No |
+except Broxton/Apollo Lake | No | – |
 | H.264/MPEG-4 AVC | Sandy Bridge and newer | Broadwell and newer | Radeon HD 7000 and newer |
 | H.265/HEVC 8bit | Skylake and newer | Skylake and newer | Radeon 400 and newer |
 | H.265/HEVC 10bit | Kaby Lake and newer | Kaby Lake and newer | Raven Ridge and newer |
@@ -289,7 +290,7 @@ Hybrid: Haswell to Skylake | No |
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
 *   Hybrid VP8 encoder and VP9 decoder supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). [VP9 decoding on Haswell crashes](https://github.com/intel/intel-hybrid-driver/issues/21).
 *   MPEG-4 is disabled by default due to VAAPI limitations. Set the [environment variable](/index.php/Environment_variable "Environment variable") `VAAPI_MPEG4_ENABLED=true` to try to use it anyway.
-*   Not implemented in [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver), since it is not maintained by anyone upstream. See [#VDPAU drivers](#VDPAU_drivers).
+*   Experimental VP9 support provided by [libva-vdpau-driver-vp9-git](https://aur.archlinux.org/packages/libva-vdpau-driver-vp9-git/) instead.
 
 ### VDPAU drivers
 

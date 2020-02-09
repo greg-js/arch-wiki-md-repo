@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Data da última tradução: 2020-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=596285) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Data da última tradução: 2020-02-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=596419) na versão em inglês.
 
 Os exemplos a seguir são cenários comuns de um sistema criptografado com *dm-crypt*. Eles explicam todas as adaptações que serão realizadas do [processo de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação"). Todas as ferramentas necessárias estão disponíveis na [imagem de instalação](https://www.archlinux.org/download/).
 
@@ -458,7 +458,7 @@ Monte a partição para `/mnt/boot`:
 
 ### Configurando o mkinitcpio
 
-Adicione os hooks `keyboard`, `encrypt` e `lvm2` em [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Tenha certeza que o pacote [lvm2](https://www.archlinux.org/packages/?name=lvm2) está [instalado](/index.php/Instala "Instala"), e adicione os hooks `keyboard`, `encrypt` e `lvm2` em [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
@@ -563,7 +563,7 @@ Mais informações sobre opções de encriptação podem ser encontradas em [dm-
 
 ### Configurando o mkinitcpio
 
-Adicione os hooks `keyboard`, `lvm2` e `encrypt` em [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Tenha certeza que o pacote [lvm2](https://www.archlinux.org/packages/?name=lvm2) está [instalado](/index.php/Instala "Instala"), e adicione os hooks `keyboard`, `lvm2` e `encrypt` em [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **lvm2** **encrypt** filesystems fsck)
@@ -942,7 +942,7 @@ Coloque um [sistema de arquivos](/index.php/Sistema_de_arquivos "Sistema de arqu
 
 ### Configurando mkinitcpio
 
-Adicione os hooks `keyboard`, `encrypt` e `lvm2` no [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Tenha certeza que o pacote [lvm2](https://www.archlinux.org/packages/?name=lvm2) está [instalado](/index.php/Instala "Instala"), e adicione os hooks `keyboard`, `encrypt` e `lvm2` no [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
@@ -1085,7 +1085,7 @@ sda                      8:0    0   200G  0 disk
 
 ### Configurando o mkinitcpio
 
-Adicione os hooks `keyboard`, `encrypt` e `lvm2` no [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Tenha certeza que o pacote [lvm2](https://www.archlinux.org/packages/?name=lvm2) está [instalado](/index.php/Instala "Instala"), e adicione os hooks `keyboard`, `encrypt` e `lvm2` no [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
 HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)

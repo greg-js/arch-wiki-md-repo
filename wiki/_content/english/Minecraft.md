@@ -8,14 +8,15 @@
 
 *   [1 Client](#Client)
     *   [1.1 Installation](#Installation)
-    *   [1.2 Firewall configuration for LAN worlds](#Firewall_configuration_for_LAN_worlds)
+    *   [1.2 Firewall configuration for Client/LAN worlds](#Firewall_configuration_for_Client/LAN_worlds)
 *   [2 Server](#Server)
     *   [2.1 Installation](#Installation_2)
     *   [2.2 Setup](#Setup)
         *   [2.2.1 Introduction](#Introduction)
         *   [2.2.2 Starting the server](#Starting_the_server)
-        *   [2.2.3 Server management script](#Server_management_script)
-        *   [2.2.4 Tweaking](#Tweaking)
+        *   [2.2.3 Firewall Configuration for Server Worlds](#Firewall_Configuration_for_Server_Worlds)
+        *   [2.2.4 Server management script](#Server_management_script)
+        *   [2.2.5 Tweaking](#Tweaking)
     *   [2.3 Alternative servers](#Alternative_servers)
         *   [2.3.1 Spigot (respectively Craftbukkit)](#Spigot_(respectively_Craftbukkit))
         *   [2.3.2 Cuberite](#Cuberite)
@@ -40,12 +41,18 @@ The minecraft client can be installed via the [minecraft-launcher](https://aur.a
 
 Alternatively, it can also be installed via the [minecraft](https://aur.archlinux.org/packages/minecraft/) package.
 
-### Firewall configuration for LAN worlds
+### Firewall configuration for Client/LAN worlds
 
-To host a Minecraft world on the LAN you will need two ports to be open on your [firewall](/index.php/Firewall "Firewall"):
+Most shared Minecraft worlds are hosted using dedicated Minecraft server. If this is how you want to host, see Server section below.
 
-*   UDP port `4445`. If this port is closed, the game will hang when you save and exit from the world;
-*   the TCP port minecraft randomly picks after you open your world to LAN. If this port is closed, other players won't be able to join your world.
+A simpler way is to allow others to join your current Minecraft game. When playing, your Minecraft client also allows others to join the game in progress. Your client automatically broadcasts the info about your game on port 4445\. It will also listen for TCP connections on which other players join. This TCP listening port is picked at random every time you start Minecraft. This works well if you don't have a firewall. But if your firewall blocks incoming TCP connections, then it is very tricky to allow this random port in.
+
+In conclusion, to allow your client to host a local LAN game, your [firewall](/index.php/Firewall "Firewall") need to allow:
+
+*   UDP port `4445` to broadcast your game
+*   random incoming TCP port
+
+See [[1]](https://minecraft.gamepedia.com/Tutorials/Setting_up_a_LAN_world) for more information.
 
 ## Server
 
@@ -73,6 +80,22 @@ To start the server you may either use systemd or run it directly from the comma
 ```
 
 **Note:** If you run the server for the first time an [EULA](https://en.wikipedia.org/wiki/EULA "wikipedia:EULA") file residing under `/srv/minecraft/eula.txt` gets created. You will need to edit this file to state that you have agreed to the contract in order to run the server.
+
+#### Firewall Configuration for Server Worlds
+
+There are three settings in the `server.properties` which determine ports that your server will use.
+
+`server-port` determines the `TCP` port at which the server will listen for incoming connections. Default port is `25565`.
+
+`query.port` determines the `UDP` port at which the server will share game info/advertising information. Default port is `25565`. Note that since server and query ports are TCP and UDP, they can share the same port. To enable query, you also have to specify `enable-query=true`.
+
+`rcon.port` determines the `TCP` port if you choose to allow remote access to admin console. Default port is `25575`. To enable rcon, you also have to specify `enable-rcon=true` and `rcon.password=...`.
+
+You will need to allow incoming connections at least on the `server-port`. It is advisable to allow query and its `query.port`. On the other hand, enabling remote console access is a security risk, and you should be careful of allowing it.
+
+Above information is for the official Minecraft server. If you are using alternate server, please see its documentation for details about it's configuration.
+
+See [[2]](https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server) and [[3]](https://minecraft.gamepedia.com/Server.properties) for more information.
 
 #### Server management script
 
@@ -116,7 +139,8 @@ Be sure to read [#Setup](#Setup) and replace `minecraftd` with `papermc` whereve
 
 [Forge](https://minecraftforge.net) is a widely used Minecraft modding API. The following server packages are available:
 
-*   [forge-server](https://aur.archlinux.org/packages/forge-server/) for the latest Minecraft version
+*   [forge-server](https://aur.archlinux.org/packages/forge-server/) for the latest Minecraft version (1.15.2)
+*   [forge-server-1.14.4](https://aur.archlinux.org/packages/forge-server-1.14.4/) for Minecraft 1.14.4
 *   [forge-server-1.12.2](https://aur.archlinux.org/packages/forge-server-1.12.2/) for Minecraft 1.12.2
 *   [forge-server-1.11.2](https://aur.archlinux.org/packages/forge-server-1.11.2/) for Minecraft 1.11.2
 *   [forge-server-1.10.2](https://aur.archlinux.org/packages/forge-server-1.10.2/) for Minecraft 1.10.2

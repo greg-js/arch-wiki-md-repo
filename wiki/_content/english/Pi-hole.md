@@ -25,7 +25,8 @@ Related articles
         *   [2.2.1 FTL](#FTL)
         *   [2.2.2 Web interface](#Web_interface)
             *   [2.2.2.1 Set-up PHP](#Set-up_PHP)
-            *   [2.2.2.2 Set-up lighttpd](#Set-up_lighttpd)
+            *   [2.2.2.2 Explicitly permit directories for php-fpm](#Explicitly_permit_directories_for_php-fpm)
+            *   [2.2.2.3 Set-up lighttpd](#Set-up_lighttpd)
         *   [2.2.3 Update hosts file](#Update_hosts_file)
     *   [2.3 Making devices use Pi-hole](#Making_devices_use_Pi-hole)
 *   [3 Pi-hole standalone](#Pi-hole_standalone)
@@ -99,6 +100,8 @@ extension=sockets
 extension=sqlite3
 [...]
 ```
+
+##### Explicitly permit directories for php-fpm
 
 For security reasons, one can optionally populate the [PHP open_basedir](/index.php/PHP#Configuration "PHP") directive however, the Pi-hole administration web interface will need access to following files and directories:
 
@@ -337,6 +340,34 @@ Edit `/etc/nginx/conf.d/pihole.conf` and change the fastcgi_pass directive to th
 ```
 fastcgi_pass  unix:/run/php-fpm/php-fpm.sock;  
 
+```
+
+Since version 7.4 php-fpm is hardened per default and revokes read/write access on `/usr` (and sub-directories).
+
+Create an `override.conf` for `php-fpm`:
+
+```
+# systemctl edit php-fpm.service
+
+```
+
+Add and save following content.
+
+ `/etc/systemd/system/php-fpm.service.d/override.conf` 
+```
+[Service]
+ReadWritePaths = /srv/http/pihole
+ReadWritePaths = /run/pihole-ftl/pihole-FTL.port
+ReadWritePaths = /run/log/pihole/pihole.log
+ReadWritePaths = /run/log/pihole-ftl/pihole-FTL.log
+ReadWritePaths = /etc/pihole
+ReadWritePaths = /etc/hosts
+ReadWritePaths = /etc/hostname
+ReadWritePaths = /etc/dnsmasq.d/
+ReadWritePaths = /proc/meminfo
+ReadWritePaths = /proc/cpuinfo
+ReadWritePaths = /sys/class/thermal/thermal_zone0/temp
+ReadWritePaths = /tmp
 ```
 
 [Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.

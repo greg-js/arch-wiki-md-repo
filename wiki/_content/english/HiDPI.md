@@ -117,17 +117,10 @@ $ xrandr --output eDP1 --scale 1.25x1.25
 
 GNOME ignores X settings due to its xsettings Plugin in Gnome Settings Daemon, where DPI setting is hard coded. There is blog entry for [recompiling Gnome Settings Daemon](http://blog.drtebi.com/2012/12/changing-dpi-setting-on-gnome-34.html). In the source documentation there is another way mentioned to set X settings DPI:
 
-You can use the dconf Editor and navigate to key
+You can use the gsettings, just make sure to read previous setting first and merge it. In just simply set it with this command:
 
 ```
-/org/gnome/settings-daemon/plugins/xsettings/overrides
-
-```
-
-and complement the entry with the value
-
-```
-'Xft/DPI': <153600>
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Xft/DPI': <153600>}"
 
 ```
 

@@ -1,4 +1,4 @@
-**[LXD](https://linuxcontainers.org/lxd/)** is a container "hypervisor" and a new user experience for [Linux Containers](/index.php/Linux_Containers "Linux Containers").
+**[LXD](https://linuxcontainers.org/lxd/)** is a container and virtual-machine "hypervisor" and a new user experience for [Linux Containers](/index.php/Linux_Containers "Linux Containers").
 
 Related articles
 
@@ -15,18 +15,17 @@ Related articles
     *   [1.2 Alternative installation method](#Alternative_installation_method)
     *   [1.3 Configure LXD](#Configure_LXD)
     *   [1.4 Accessing LXD as a unprivileged user](#Accessing_LXD_as_a_unprivileged_user)
-*   [2 Basic usage](#Basic_usage)
+*   [2 Usage](#Usage)
     *   [2.1 Create container](#Create_container)
-*   [3 Advanced usage](#Advanced_usage)
-    *   [3.1 LXD Networking](#LXD_Networking)
-        *   [3.1.1 Example network configuration](#Example_network_configuration)
-    *   [3.2 Modify processes and files limit](#Modify_processes_and_files_limit)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Check kernel config](#Check_kernel_config)
-    *   [4.2 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
-    *   [4.3 Resource limits are not applied when viewed from inside a container](#Resource_limits_are_not_applied_when_viewed_from_inside_a_container)
-*   [5 Uninstall](#Uninstall)
-*   [6 See also](#See_also)
+    *   [2.2 LXD Networking](#LXD_Networking)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Check kernel config](#Check_kernel_config)
+    *   [3.2 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
+    *   [3.3 Resource limits are not applied when viewed from inside a container](#Resource_limits_are_not_applied_when_viewed_from_inside_a_container)
+    *   [3.4 Starting a VM fails](#Starting_a_VM_fails)
+    *   [3.5 No IPv4 with systemd-networkd](#No_IPv4_with_systemd-networkd)
+*   [4 Uninstall](#Uninstall)
+*   [5 See also](#See_also)
 
 ## Setup
 
@@ -65,7 +64,7 @@ By default the LXD daemon allows users in the `lxd` group access, so add your us
 
 **Warning:** Anyone added to the `lxd` group is root equivalent. More information [here](https://github.com/lxc/lxd#security) and [here](https://bugs.launchpad.net/ubuntu/+source/lxd/+bug/1829071).
 
-## Basic usage
+## Usage
 
 ### Create container
 
@@ -89,8 +88,6 @@ To create an amd64 Arch container:
 $ lxc launch images:archlinux/current/amd64 arch
 
 ```
-
-## Advanced usage
 
 ### LXD Networking
 
@@ -118,50 +115,6 @@ devices:
 ```
 
 You can set the `parent` parameter to whichever bridge you want LXD to attach the containers to by default.
-
-#### Example network configuration
-
-Thanks to @jpic, the LXD package now provides some example networking configuration in `/usr/share/lxd/`. To use this configuration run the following commands:
-
-```
-$ ln -s /usr/share/lxd/dnsmasq-lxd.conf /etc/dnsmasq-lxd.conf
-$ ln -s /usr/share/lxd/systemd/system/dnsmasq@lxd.service /etc/systemd/system/dnsmasq@lxd.service 
-$ ln -s /usr/share/lxd/netctl/lxd  /etc/netctl/lxd
-$ ln -s /usr/share/lxd/dbus-1/system.d/dnsmasq-lxd.conf /etc/dbus-1/system.d/dnsmasq-lxd.conf
-
-```
-
-If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), also symlink the following file:
-
-```
-$ ln -s /usr/share/lxd/NetworkManager/dnsmasq.d/lxd.conf /etc/NetworkManager/dnsmasq.d/lxd.conf
-
-```
-
-Change `parent: lxcbr0` to `parent: lxd`:
-
-```
-$ lxc profile edit default
-
-```
-
-Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `dnsmasq@lxd.service` and `netctl@lxd.service`.
-
-If you encounter issue with the provided example configuration, or have suggestions to improve it, please leave a comment on the [lxd](https://www.archlinux.org/packages/?name=lxd) page.
-
-### Modify processes and files limit
-
-You may want to increase file descriptor limit or max user processes limit, since default file descriptor limit is 1024 on Arch Linux.
-
-[Edit](/index.php/Edit "Edit") the `lxd.service`:
-
- `# systemctl edit lxd.service` 
-```
-[Service]
-LimitNOFILE=infinity
-LimitNPROC=infinity
-TasksMax=infinity
-```
 
 ## Troubleshooting
 
@@ -219,6 +172,33 @@ $ systemctl start lxcfs
 ```
 
 lxd will need to be restarted. Enable lxcfs for the service to be started at boot time.
+
+### Starting a VM fails
+
+Arch Linux does not distribute secure boot signed ovmf firmware, to boot VMs you need to disable secure boot for the time being.
+
+```
+$ lxc launch ubuntu:18.04 test-vm --vm -c security.secureboot=false
+
+```
+
+This can also be added to the default profile.
+
+### No IPv4 with systemd-networkd
+
+systemd version 244.1 detects if `/sys` is writeable by containers. If it is, udev is automatically started and breaks IPv4 in unprivileged containers. See [commit bf331d8](https://github.com/systemd/systemd-stable/commit/96d7083c5499b264ecebd6a30a92e0e8fda14cd5) and [discussion on linuxcontainers](https://discuss.linuxcontainers.org/t/no-ipv4-on-arch-linux-containers/6395).
+
+To work around this two ways;
+
+Add `raw.lxc: lxc.mount.auto = proc:rw sys:ro` in the profile to the container to ensure `/sys` is read-only.
+
+Or, override `systemd.networkd.service`;
+
+ `/etc/systemd/system/systemd-networkd.service.d/lxc.conf` 
+```
+[Service]
+BindReadOnlyPaths=/sys
+```
 
 ## Uninstall
 

@@ -21,69 +21,72 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [2.2 Maintaining passwords](#Maintaining_passwords)
     *   [2.3 Password hashes](#Password_hashes)
     *   [2.4 Enforcing strong passwords using pam_cracklib](#Enforcing_strong_passwords_using_pam_cracklib)
-*   [3 Memory](#Memory)
-    *   [3.1 Hardened malloc](#Hardened_malloc)
-*   [4 Storage](#Storage)
-    *   [4.1 Disk encryption](#Disk_encryption)
-    *   [4.2 File systems](#File_systems)
-        *   [4.2.1 Mount options](#Mount_options)
-    *   [4.3 File access permissions](#File_access_permissions)
-*   [5 User setup](#User_setup)
-    *   [5.1 Enforce a delay after a failed login attempt](#Enforce_a_delay_after_a_failed_login_attempt)
-    *   [5.2 Lockout user after three failed login attempts](#Lockout_user_after_three_failed_login_attempts)
-    *   [5.3 Limit amount of processes](#Limit_amount_of_processes)
-    *   [5.4 Run Xorg rootless](#Run_Xorg_rootless)
-*   [6 Restricting root](#Restricting_root)
-    *   [6.1 Use sudo instead of su](#Use_sudo_instead_of_su)
-        *   [6.1.1 Editing files using sudo](#Editing_files_using_sudo)
-    *   [6.2 Restricting root login](#Restricting_root_login)
-        *   [6.2.1 Allow only certain users](#Allow_only_certain_users)
-        *   [6.2.2 Denying SSH login](#Denying_SSH_login)
-        *   [6.2.3 Specify acceptable login combinations with access.conf](#Specify_acceptable_login_combinations_with_access.conf)
-*   [7 Mandatory access control](#Mandatory_access_control)
-    *   [7.1 Pathname MAC](#Pathname_MAC)
-    *   [7.2 Labels MAC](#Labels_MAC)
-    *   [7.3 Access Control Lists](#Access_Control_Lists)
-*   [8 Kernel hardening](#Kernel_hardening)
-    *   [8.1 Kernel self-protection / exploit mitigation](#Kernel_self-protection_/_exploit_mitigation)
-        *   [8.1.1 Userspace ASLR comparison](#Userspace_ASLR_comparison)
-            *   [8.1.1.1 64-bit processes](#64-bit_processes)
-            *   [8.1.1.2 32-bit processes (on an x86_64 kernel)](#32-bit_processes_(on_an_x86_64_kernel))
-    *   [8.2 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
-    *   [8.3 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
-    *   [8.4 BPF hardening](#BPF_hardening)
-    *   [8.5 ptrace scope](#ptrace_scope)
-        *   [8.5.1 Examples of broken functionality](#Examples_of_broken_functionality)
-    *   [8.6 hidepid](#hidepid)
-    *   [8.7 Restricting module loading](#Restricting_module_loading)
-    *   [8.8 Disable kexec](#Disable_kexec)
-    *   [8.9 Kernel lockdown mode](#Kernel_lockdown_mode)
-    *   [8.10 Disable hyper-threading](#Disable_hyper-threading)
-*   [9 Sandboxing applications](#Sandboxing_applications)
-    *   [9.1 Firejail](#Firejail)
-    *   [9.2 bubblewrap](#bubblewrap)
-    *   [9.3 chroots](#chroots)
-    *   [9.4 Linux containers](#Linux_containers)
-    *   [9.5 Other virtualization options](#Other_virtualization_options)
-*   [10 Network and firewalls](#Network_and_firewalls)
-    *   [10.1 Firewalls](#Firewalls)
-    *   [10.2 Kernel parameters](#Kernel_parameters)
-    *   [10.3 SSH](#SSH)
-    *   [10.4 DNS](#DNS)
-    *   [10.5 Proxies](#Proxies)
-    *   [10.6 Managing SSL certificates](#Managing_SSL_certificates)
-*   [11 Authenticating packages](#Authenticating_packages)
-*   [12 Follow vulnerability alerts](#Follow_vulnerability_alerts)
-*   [13 Physical security](#Physical_security)
-    *   [13.1 Locking down BIOS](#Locking_down_BIOS)
-    *   [13.2 Boot loaders](#Boot_loaders)
-        *   [13.2.1 Syslinux](#Syslinux)
-        *   [13.2.2 GRUB](#GRUB)
-    *   [13.3 Boot partition on removable flash drive](#Boot_partition_on_removable_flash_drive)
-    *   [13.4 Automatic logout](#Automatic_logout)
-    *   [13.5 Protect against rogue USB devices](#Protect_against_rogue_USB_devices)
-*   [14 Rebuilding packages](#Rebuilding_packages)
-*   [15 See also](#See_also)
+*   [3 CPU](#CPU)
+    *   [3.1 Microcode](#Microcode)
+    *   [3.2 Disable Hyper-Threading](#Disable_Hyper-Threading)
+*   [4 Memory](#Memory)
+    *   [4.1 Hardened malloc](#Hardened_malloc)
+*   [5 Storage](#Storage)
+    *   [5.1 Disk encryption](#Disk_encryption)
+    *   [5.2 File systems](#File_systems)
+        *   [5.2.1 Mount options](#Mount_options)
+    *   [5.3 File access permissions](#File_access_permissions)
+*   [6 User setup](#User_setup)
+    *   [6.1 Enforce a delay after a failed login attempt](#Enforce_a_delay_after_a_failed_login_attempt)
+    *   [6.2 Lockout user after three failed login attempts](#Lockout_user_after_three_failed_login_attempts)
+    *   [6.3 Limit amount of processes](#Limit_amount_of_processes)
+    *   [6.4 Run Xorg rootless](#Run_Xorg_rootless)
+*   [7 Restricting root](#Restricting_root)
+    *   [7.1 Use sudo instead of su](#Use_sudo_instead_of_su)
+        *   [7.1.1 Editing files using sudo](#Editing_files_using_sudo)
+    *   [7.2 Restricting root login](#Restricting_root_login)
+        *   [7.2.1 Allow only certain users](#Allow_only_certain_users)
+        *   [7.2.2 Denying SSH login](#Denying_SSH_login)
+        *   [7.2.3 Specify acceptable login combinations with access.conf](#Specify_acceptable_login_combinations_with_access.conf)
+*   [8 Mandatory access control](#Mandatory_access_control)
+    *   [8.1 Pathname MAC](#Pathname_MAC)
+    *   [8.2 Labels MAC](#Labels_MAC)
+    *   [8.3 Access Control Lists](#Access_Control_Lists)
+*   [9 Kernel hardening](#Kernel_hardening)
+    *   [9.1 Kernel self-protection / exploit mitigation](#Kernel_self-protection_/_exploit_mitigation)
+        *   [9.1.1 Userspace ASLR comparison](#Userspace_ASLR_comparison)
+            *   [9.1.1.1 64-bit processes](#64-bit_processes)
+            *   [9.1.1.2 32-bit processes (on an x86_64 kernel)](#32-bit_processes_(on_an_x86_64_kernel))
+    *   [9.2 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
+    *   [9.3 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
+    *   [9.4 BPF hardening](#BPF_hardening)
+    *   [9.5 ptrace scope](#ptrace_scope)
+        *   [9.5.1 Examples of broken functionality](#Examples_of_broken_functionality)
+    *   [9.6 hidepid](#hidepid)
+    *   [9.7 Restricting module loading](#Restricting_module_loading)
+    *   [9.8 Disable kexec](#Disable_kexec)
+    *   [9.9 Kernel lockdown mode](#Kernel_lockdown_mode)
+    *   [9.10 Disable hyper-threading](#Disable_hyper-threading_2)
+*   [10 Sandboxing applications](#Sandboxing_applications)
+    *   [10.1 Firejail](#Firejail)
+    *   [10.2 bubblewrap](#bubblewrap)
+    *   [10.3 chroots](#chroots)
+    *   [10.4 Linux containers](#Linux_containers)
+    *   [10.5 Other virtualization options](#Other_virtualization_options)
+*   [11 Network and firewalls](#Network_and_firewalls)
+    *   [11.1 Firewalls](#Firewalls)
+    *   [11.2 Kernel parameters](#Kernel_parameters)
+    *   [11.3 SSH](#SSH)
+    *   [11.4 DNS](#DNS)
+    *   [11.5 Proxies](#Proxies)
+    *   [11.6 Managing SSL certificates](#Managing_SSL_certificates)
+*   [12 Authenticating packages](#Authenticating_packages)
+*   [13 Follow vulnerability alerts](#Follow_vulnerability_alerts)
+*   [14 Physical security](#Physical_security)
+    *   [14.1 Locking down BIOS](#Locking_down_BIOS)
+    *   [14.2 Boot loaders](#Boot_loaders)
+        *   [14.2.1 Syslinux](#Syslinux)
+        *   [14.2.2 GRUB](#GRUB)
+    *   [14.3 Boot partition on removable flash drive](#Boot_partition_on_removable_flash_drive)
+    *   [14.4 Automatic logout](#Automatic_logout)
+    *   [14.5 Protect against rogue USB devices](#Protect_against_rogue_USB_devices)
+*   [15 Rebuilding packages](#Rebuilding_packages)
+*   [16 See also](#See_also)
 
 ## Concepts
 
@@ -98,20 +101,29 @@ Passwords are key to a secure Linux system. They secure your [user accounts](/in
 
 ### Choosing secure passwords
 
-When relying on a passphrase, it must be complex enough to not be easily guessed from e.g. personal information, or [cracked](https://en.wikipedia.org/wiki/Password_cracking "wikipedia:Password cracking") using methods like brute-force attacks. The tenets of strong passphrases are based on *length* and *randomness*. In cryptography the quality of a passphrase is referred to as its [entropic security](https://en.wikipedia.org/wiki/Entropic_security "wikipedia:Entropic security").
+Passwords must be complex enough to not be easily guessed from e.g. personal information, or [cracked](https://en.wikipedia.org/wiki/Password_cracking "wikipedia:Password cracking") using methods like social engineering or brute-force attacks. The tenets of strong passwords are based on *length* and *randomness*. In cryptography the quality of a password is referred to as its [entropic security](https://en.wikipedia.org/wiki/Entropic_security "wikipedia:Entropic security").
 
 Insecure passwords include those containing:
 
 *   Personally identifiable information (e.g., your dog's name, date of birth, area code, favorite video game)
-*   Simple character substitutions on words (e.g., `k1araj0hns0n`)
+*   Simple character substitutions on words (e.g., `k1araj0hns0n`), as modern dictionary attacks can easily work with these
 *   Root "words" or common strings followed or preceded by added numbers, symbols, or characters (e.g., `DG091101%`)
 *   Common phrases or short phrases of grammatically related words (e.g. `all of the lights`), and even with character substitution.
+*   Any of the [most common passwords](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords)
 
-The right choice for a password is something long (8-20 characters, depending on importance) and seemingly completely random. A good technique for building secure, seemingly random passwords is to base them on characters from every word in a sentence. Take for instance “the girl is walking down the rainy street” could be translated to `t6!WdtR5` or, less simply, `t&6!RrlW@dtR,57`. This approach could make it easier to remember a password, but note that the various letters have very different probabilities of being found at the start of words ([Wikipedia:Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_the_first_letters_of_a_word_in_the_English_language "wikipedia:Letter frequency")). Also consider the [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html) method, using a sufficient number of words.
+The best choice for a password is something long (8-64 characters, longer is better) and generated from a random source.
 
-A better approach is to generate pseudo-random passwords with tools like [pwgen](https://www.archlinux.org/packages/?name=pwgen) or [apg](https://aur.archlinux.org/packages/apg/): for memorizing them, one technique (for ones typed often) is to generate a long password and memorize a minimally secure number of characters, temporarily writing down the full generated string. Over time, increase the number of characters typed - until the password is ingrained in muscle memory and need not be remembered. This technique is more difficult, but can provide confidence that a password will not turn up in wordlists or "intelligent" brute force attacks that combine words and substitute characters.
+Tools like [pwgen](https://www.archlinux.org/packages/?name=pwgen) or [apg](https://aur.archlinux.org/packages/apg/) can generate random passwords. However, these passwords can be difficult to memorize. One memorization technique (for ones typed often) is to generate a long password and memorize a minimally secure number of characters, temporarily writing down the full generated string. Over time, increase the number of characters typed - until the password is ingrained in muscle memory and need not be remembered. This technique is more difficult, but can provide confidence that a password will not turn up in wordlists or "intelligent" brute force attacks that combine words and substitute characters.
 
-It is also very effective to combine these two techniques by saving long, complex random passwords with a [password manager](/index.php/Password_manager "Password manager"), which will be in turn accessed with a mnemonic password that will have to be used only for that purpose, especially avoiding to ever transmit it over any kind of network. This method of course limits the use of the stored passwords to the terminals where the database is available for reading (which on the other hand could be seen as an added security feature).
+There are also techniques for building memorable secure passwords.
+
+One technique is to use a mnemonic phase, where each word in the phase reminds you of the next character in the password. Take for instance “the girl is walking down the rainy street” could be translated to `t6!WdtR5` or, less simply, `t&6!RrlW@dtR,57`. This approach could make it easier to remember a password, but note that the various letters have very different probabilities of being found at the start of words ([Wikipedia:Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_the_first_letters_of_a_word_in_the_English_language "wikipedia:Letter frequency")).
+
+Another technique is to use a memorable long series of unrelated words as a password. If a sufficiently long phrase is used, the gained entropy from the password's length can counter the lost entropy from the use of dictionary words. This [XKCD comic](https://xkcd.com/936/) demonstrates the entropy tradeoff of this method. The [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html) method uses a long passphrase in combination with a random number generator (game dice).
+
+Another effective technique can be to write randomly generated passwords down and store them in a *safe* place, such as in a wallet, purse or document safe. Most people do a generally good job of protecting their physical valuables from attack, and it is easier for most people to understand physical security best practices compared to digital security practices. [Bruce Schneier has endorsed this technique](https://www.schneier.com/news/archives/2010/11/bruce_schneier_write.html).
+
+It is also very effective to combine the memorable and random technique by saving long randomly generated passwords with a [password manager](/index.php/Password_manager "Password manager"), which will be in turn accessed with a memorable "master password" that must be used only for that purpose. The master password must be memorized and never saved. This requires the password manager to be installed on a system to easily access the password (which could be seen as an inconvenience or a security feature, depending on the situation). Some password managers also have smartphone apps which can be used to display passwords for manual entry on systems without that password manager installed. This also introduces a single point of failure if you ever forget the master password.
 
 See Bruce Schneier's article [Choosing Secure Passwords](https://www.schneier.com/blog/archives/2014/03/choosing_secure_1.html), [The passphrase FAQ](https://www.iusmentis.com/security/passphrasefaq/) or [Wikipedia:Password strength](https://en.wikipedia.org/wiki/Password_strength "wikipedia:Password strength") for some additional background.
 
@@ -162,6 +174,18 @@ password required pam_unix.so use_authtok sha512 shadow
 The `password required pam_unix.so use_authtok` instructs the *pam_unix* module to not prompt for a password but rather to use the one provided by *pam_cracklib*.
 
 You can refer to the [pam_cracklib(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_cracklib.8) and [pam_unix(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8) man pages for more information.
+
+## CPU
+
+### Microcode
+
+See [microcode](/index.php/Microcode "Microcode") for information on how to install important security updates for your CPU's microcode.
+
+### Disable Hyper-Threading
+
+[Kernel Developer Greg Kroah-Hartman has endorsed disabling Hyper-Threading](https://www.youtube.com/watch?v=jI3YE3Jlgw8) as a security hardening option for systems running untrusted code. (Web browsers that enable Javascript are an example of untrusted code.) This may have a small performance impact.
+
+Hyper-Threading can be disabled in the kernel (see [#Disable_hyper-threading_2](#Disable_hyper-threading_2)), and often can also be disabled in your system's firmware. Consult your motherboard or system documentation for more information.
 
 ## Memory
 

@@ -17,7 +17,7 @@ Control groups can be accessed with various tools:
 
 [cgmanager](https://www.archlinux.org/packages/?name=cgmanager) is [deprecated](https://github.com/lxc/cgmanager/issues/32) and unsupported as it does not work with systemd versions 232 and above.
 
-For Arch Linux systemd is the perferred and easiest method of invoking and configuring cgroups as it is a part of default installation.
+For Arch Linux systemd is the preferred and easiest method of invoking and configuring cgroups as it is a part of default installation.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

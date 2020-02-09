@@ -2,7 +2,7 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
 
 Pairing and unpairing on Linux is supported by a number of tools, listed thereafter:
 
-[ltunify](https://lekensteyn.nl/logitech-unifying.html) is a command-line C program that can perform pairing, unpairing and listing of devices. [Solaar](http://pwr.github.io/Solaar/) is a graphical Python program that integrates in your system tray and allows you to configure additional features of your input device such as swapping the functionality of Fn keys. [libratbag](https://github.com/libratbag/libratbag) is a configurable mice daemon that allows you to configure your devices, it has a GTK based graphical frontend app, [piper](https://github.com/libratbag/piper).
+[ltunify](https://lekensteyn.nl/logitech-unifying.html) is a command-line C program that can perform pairing, unpairing and listing of devices. [Solaar](https://pwr-solaar.github.io/Solaar/) is a graphical Python program that integrates in your system tray and allows you to configure additional features of your input device such as swapping the functionality of Fn keys. [libratbag](https://github.com/libratbag/libratbag) is a configurable mice daemon that allows you to configure your devices, it has a GTK based graphical frontend app, [piper](https://github.com/libratbag/piper).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

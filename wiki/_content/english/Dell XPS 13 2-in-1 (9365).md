@@ -21,7 +21,8 @@ The Dell XPS 13 2-in-1 (9365) is the early 2017 model. It can be used like a tab
     *   [2.2 Screen not rotating](#Screen_not_rotating)
     *   [2.3 Fingerprint sensor](#Fingerprint_sensor)
     *   [2.4 Soundcard turning off and coil whine](#Soundcard_turning_off_and_coil_whine)
-    *   [2.5 Reduce throttling](#Reduce_throttling)
+    *   [2.5 Turbo Boost not working](#Turbo_Boost_not_working)
+    *   [2.6 Reduce throttling](#Reduce_throttling)
 
 ## Installation
 
@@ -69,6 +70,19 @@ The fingerprint sensor on this computer is not yet supported. [[4]](https://www.
 By default, the soundcard automatically turns of which leads to delays when there is a song to play (or distortion). This can also cause coil whine especially while scrolling with headphones plugged and sound muted. To solve this, you can force the soundcard to always stay awake :
 
  `/etc/modprobe.d/audio_no_powersave.conf`  `options snd_hda_intel power_save=0` 
+
+### Turbo Boost not working
+
+If the CPU is not reaching turbo boost clock speeds a possible solution can be to set activate HWP dynamic boost. Try
+
+```
+ $ echo 1 > /sys/devices/system/cpu/intel_pstate/hwp_dynamic_boost
+
+```
+
+If that works you can make the change permanent.
+
+ `/etc/tmpfiles.d/hwp.conf`  `w /sys/devices/system/cpu/intel_pstate/hwp_dynamic_boost - - - - 1` 
 
 ### Reduce throttling
 

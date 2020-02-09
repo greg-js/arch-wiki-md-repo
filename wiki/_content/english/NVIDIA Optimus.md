@@ -271,11 +271,11 @@ See [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun").
 
 ### Using optimus-manager
 
-[Optimus-manager](https://github.com/Askannz/optimus-manager) is one of the easiest solutions for graphics switching between NVIDIA and Intel with a single command. Graphical systray applet is also available.
+[Optimus-manager](https://github.com/Askannz/optimus-manager) is one of the easiest solutions for graphics switching between NVIDIA and Intel with a single command.
 
 #### Installation
 
-Install the required [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [optimus-manager](https://aur.archlinux.org/packages/optimus-manager/). Optionally install [optimus-manager-qt](https://aur.archlinux.org/packages/optimus-manager-qt/) for system tray applet.
+Install the required [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [optimus-manager](https://aur.archlinux.org/packages/optimus-manager/). Optionally, install [optimus-manager-qt](https://aur.archlinux.org/packages/optimus-manager-qt/) for a system tray applet.
 
 Also [start and enable](/index.php/Systemd#Using_units "Systemd") `optimus-manager.service`.
 

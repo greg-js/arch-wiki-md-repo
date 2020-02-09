@@ -34,7 +34,6 @@ The [official app](https://desktop.telegram.org/):
 
 *   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop), built by Arch Linux
 *   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/), built by upstream
-*   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) Experimental build of Telegram Desktop using system Qt and emojis replaced with those from [Noto Color Emoji](https://github.com/googlei18n/noto-emoji).
 
 **Tip:** Telegram uses Open Sans as the default font, which is provided by the optional dependency [ttf-opensans](https://www.archlinux.org/packages/?name=ttf-opensans).
 

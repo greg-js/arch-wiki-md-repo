@@ -32,24 +32,25 @@ Related articles
     *   [4.3 Set up PolicyKit permissions](#Set_up_PolicyKit_permissions)
     *   [4.4 Proxy settings](#Proxy_settings)
     *   [4.5 Checking connectivity](#Checking_connectivity)
-    *   [4.6 DHCP client](#DHCP_client)
-    *   [4.7 DNS management](#DNS_management)
-        *   [4.7.1 DNS caching and conditional forwarding](#DNS_caching_and_conditional_forwarding)
-            *   [4.7.1.1 dnsmasq](#dnsmasq)
-                *   [4.7.1.1.1 Custom dnsmasq configuration](#Custom_dnsmasq_configuration)
-                *   [4.7.1.1.2 IPv6](#IPv6)
-                *   [4.7.1.1.3 DNSSEC](#DNSSEC)
-            *   [4.7.1.2 systemd-resolved](#systemd-resolved)
-            *   [4.7.1.3 DNS resolver with an openresolv subscriber](#DNS_resolver_with_an_openresolv_subscriber)
-        *   [4.7.2 Custom DNS servers](#Custom_DNS_servers)
-            *   [4.7.2.1 Setting custom global DNS servers](#Setting_custom_global_DNS_servers)
-            *   [4.7.2.2 Setting custom DNS servers in a connection](#Setting_custom_DNS_servers_in_a_connection)
-                *   [4.7.2.2.1 Setting custom DNS servers in a connection (GUI)](#Setting_custom_DNS_servers_in_a_connection_(GUI))
-                *   [4.7.2.2.2 Setting custom DNS servers in a connection (nmcli / connection file)](#Setting_custom_DNS_servers_in_a_connection_(nmcli_/_connection_file))
-        *   [4.7.3 /etc/resolv.conf](#/etc/resolv.conf)
-            *   [4.7.3.1 Unmanaged /etc/resolv.conf](#Unmanaged_/etc/resolv.conf)
-            *   [4.7.3.2 Use openresolv](#Use_openresolv)
-    *   [4.8 Firewall](#Firewall)
+    *   [4.6 Captive portals](#Captive_portals)
+    *   [4.7 DHCP client](#DHCP_client)
+    *   [4.8 DNS management](#DNS_management)
+        *   [4.8.1 DNS caching and conditional forwarding](#DNS_caching_and_conditional_forwarding)
+            *   [4.8.1.1 dnsmasq](#dnsmasq)
+                *   [4.8.1.1.1 Custom dnsmasq configuration](#Custom_dnsmasq_configuration)
+                *   [4.8.1.1.2 IPv6](#IPv6)
+                *   [4.8.1.1.3 DNSSEC](#DNSSEC)
+            *   [4.8.1.2 systemd-resolved](#systemd-resolved)
+            *   [4.8.1.3 DNS resolver with an openresolv subscriber](#DNS_resolver_with_an_openresolv_subscriber)
+        *   [4.8.2 Custom DNS servers](#Custom_DNS_servers)
+            *   [4.8.2.1 Setting custom global DNS servers](#Setting_custom_global_DNS_servers)
+            *   [4.8.2.2 Setting custom DNS servers in a connection](#Setting_custom_DNS_servers_in_a_connection)
+                *   [4.8.2.2.1 Setting custom DNS servers in a connection (GUI)](#Setting_custom_DNS_servers_in_a_connection_(GUI))
+                *   [4.8.2.2.2 Setting custom DNS servers in a connection (nmcli / connection file)](#Setting_custom_DNS_servers_in_a_connection_(nmcli_/_connection_file))
+        *   [4.8.3 /etc/resolv.conf](#/etc/resolv.conf)
+            *   [4.8.3.1 Unmanaged /etc/resolv.conf](#Unmanaged_/etc/resolv.conf)
+            *   [4.8.3.2 Use openresolv](#Use_openresolv)
+    *   [4.9 Firewall](#Firewall)
 *   [5 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
     *   [5.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
     *   [5.2 Dispatcher examples](#Dispatcher_examples)
@@ -365,6 +366,8 @@ uri=http://nmcheck.gnome.org/check_network_status.txt
 
 ```
 
+### Captive portals
+
 For those behind a [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), the desktop manager may automatically open a window asking for credentials. If your desktop does not, you can use [capnet-assist](https://www.archlinux.org/packages/?name=capnet-assist) package (however, it currently it has a broken NetworkManager dispatcher script). Alternatively, you can create a NetworkManager dispatcher script with the following content:
 
  `/etc/NetworkManager/dispatcher.d/90-open_captive_portal` 
@@ -425,6 +428,8 @@ esac
 ```
 
 You will need to [restart](/index.php/Restart "Restart") `NetworkManager.service` or reboot for this to start working. Once you do, the dispatcher script should open a login window once it detects you are behind a captive portal.
+
+Another solution is [captive-browser-git](https://aur.archlinux.org/packages/captive-browser-git/) based on Google Chrome.
 
 ### DHCP client
 

@@ -207,7 +207,7 @@ $HTTP["url"] =~ "^/nagios" {
         }
 
         auth.backend = "htpasswd" 
-        auth.backend.htpasswd.userfile = "/etc/nagios/passwd" 
+        auth.backend.htpasswd.userfile = "/etc/nagios/htpasswd.users" 
         auth.require = ( "" => (
                 "method" => "basic",
                 "realm" => "nagios",

@@ -22,7 +22,9 @@
         *   [3.3.4 Disable WebGL](#Disable_WebGL)
     *   [3.4 dwb-like session handling](#dwb-like_session_handling)
     *   [3.5 Disable websites](#Disable_websites)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Unreadable tooltips](#Unreadable_tooltips)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -193,6 +195,32 @@ To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") wit
 ### Disable websites
 
 Put `c.content.host_blocking.lists.append( str(config.configdir) + "/blockedHosts")` in your `config.py`, and create a `blockedHosts` file in the same directory as the config file. Enter websites you want to block one by one; `127.0.0.1 www.youtube.com` for example. This will keep the built-in adblock list while adding the websites in. Restart qutebrowser, and run `:adblock-update`.
+
+## Troubleshooting
+
+### Unreadable tooltips
+
+Depending on your Qt theme, tooltips might be hard to read. In order to fix this, create a Qt Style Sheet file. For example:
+
+ `~/.local/share/qutebrowser/fix-tooltips.qss` 
+```
+QToolTip {
+	background-color: palette(highlight);
+	border: 2px solid palette(highlight);
+	color: palette(text);
+}
+```
+
+Then load the style sheet when launching qutebrowser:
+
+```
+qutebrowser --qt-arg stylesheet ~/.local/share/qutebrowser/fix-tooltips.qss
+
+```
+
+**Note:** The style sheet won't be applied if there's an instance of qutebrowser already running.
+
+**Tip:** You can use a [desktop entry](/index.php/Desktop_entries#Application_entry "Desktop entries") to create a convenient launcher when specifying extra arguments, such as in this instance.
 
 ## See also
 

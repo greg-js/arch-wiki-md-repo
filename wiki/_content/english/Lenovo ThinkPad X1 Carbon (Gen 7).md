@@ -27,11 +27,11 @@ ThinkPad X1 Carbon 7th
 | Native Ethernet with [dongle](https://www.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-Ethernet-Extension-Adapter-2/p/4X90Q84427) | Yes | ? |
 | Mobile broadband Fibocom | Yes¹ | ? |
 | Audio | Yes | snd_hda_intel |
-| Microphone | No⁴ | snd_sof, snd_sof_intel_hda |
+| Microphone | Yes⁴ | snd_sof |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |
-| [Fingerprint reader](/index.php/Fprint "Fprint") | Yes² | ? |
+| [Fingerprint reader](/index.php/Fprint "Fprint") | Partial² | ? |
 | [Power management](/index.php/Power_management "Power management") | Yes³ | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | Keyboard backlight | Yes | thinkpad_acpi |
@@ -63,11 +63,9 @@ ThinkPad X1 Carbon 7th
 *   [4 Power management/Throttling issues](#Power_management/Throttling_issues)
     *   [4.1 throttled](#throttled)
 *   [5 Audio](#Audio)
-    *   [5.1 Volume controls](#Volume_controls)
-        *   [5.1.1 Persistent fix](#Persistent_fix)
-    *   [5.2 Microphone](#Microphone)
-*   [6 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
-*   [7 Additional resources](#Additional_resources)
+*   [6 Fingerprint sensor](#Fingerprint_sensor)
+*   [7 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
+*   [8 Additional resources](#Additional_resources)
 
 ## Hardware
 
@@ -185,35 +183,34 @@ sudo systemctl enable --now lenovo_fix.service
 
 ## Audio
 
-As there are physically four loudspeakers, you need to configure to 4.0 audio output. When using PulseAudio there are various [configuration utilities](/index.php/PulseAudio#Front-ends "PulseAudio").
+The 4-channel audio and microphone works as of 5.5.1-arch1-1 using [SOF Firmware](https://github.com/thesofproject/sof). Steps to get it working:
 
-### Volume controls
+1\. Install `sof-firmware` (tested with 1.4.2-1)
 
-In order for volume controls to work correctly you must edit `/usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common` by adding the following above `[Element PCM]`:
+2\. Blacklist incompatible `hda_intel` and `soc_skl` modules:
 
+ `/etc/modprobe.d/blacklist.conf` 
 ```
-[Element Master]
-switch = mute
-volume = ignore
-
-```
-
-A PulseAudio restart is required for this change to take effect. Make sure to increase the "*Master*" channel volume to 100% for the top-firing speakers to work (using amixer or alsamixer, found in [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)).
-
-#### Persistent fix
-
-Upgrading or reinstalling [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) will overwrite this file, and [PulseAudio doesn't appear to offer another way](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes/) to make this configuration change. To prevent pacman from overwriting the file, add the following line under `[options]` in `/etc/pacman.conf`:
-
-```
-NoUpgrade = usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common
+blacklist snd_hda_intel
+blacklist snd_soc_skl
 
 ```
 
-### Microphone
+3\. Configure PulseAudio's to load Alsa modules with the correct `device` and `channnel` settings, by adding these two lines to `/etc/pulse/default.pa`:
 
-On kernel up to 5.2, the internal microphones are detected but [no audio is captured](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting"). Unfortunately even on the 5.3 kernels, the microphones still don't work out of the box.
+```
+load-module module-alsa-sink device=hw:0,0 channels=4
+load-module module-alsa-source device=hw:0,7 channels=4
 
-You might be able to get the microphones working by following the instructions in this [docx file](https://forums.lenovo.com/lnv/attachments/lnv/lx02_en/3061/1/sof-driver-guide.docx) from the Lenovo Forums. Also check out [this post](https://bbs.archlinux.org/viewtopic.php?id=249900) from the Arch Forums.
+```
+
+4\. Reboot, then use `alsamixer` to increase the "master" channel level.
+
+5\. If the output sounds tinny, try muting the "speaker" item in alsamixer.
+
+## Fingerprint sensor
+
+An official driver and a reverse engineered driver are in the works.[[4]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181)
 
 ## Disabling red LED in ThinkPad logo
 

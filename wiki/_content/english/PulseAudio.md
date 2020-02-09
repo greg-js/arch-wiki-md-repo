@@ -37,7 +37,6 @@ Related articles
     *   [4.5 libao](#libao)
 *   [5 Audio post-processing](#Audio_post-processing)
     *   [5.1 PulseEffects](#PulseEffects)
-        *   [5.1.1 Presets](#Presets)
     *   [5.2 Equalization](#Equalization)
         *   [5.2.1 LADSPA module](#LADSPA_module)
         *   [5.2.2 Integrated module](#Integrated_module)
@@ -448,11 +447,9 @@ PulseEffects is a GTK advanced utility for applying audio effects to application
 
 Effects for applications output are limiter, auto gain, expander, compressor, multiband compressor, equalizer, bass enhancer, exciter, crystalizer, reverberation, crossfeed, filter (lowpass, highpass, bandpass and bandreject modes), stereo tools, loudness, maximizer, pitch, gate, multiband gate, deesser and convolver. Effects applicable to input streams are gate, multiband gate, WebRTC, limiter, compressor, multiband compressor, equalizer, reverberation, pitch, filter (lowpass, highpass, bandpass and bandreject modes) and deesser.
 
-If PulseEffects plugins are greyed out after installing plugins, consider following the instruction in [here](https://github.com/wwmm/pulseeffects/issues/488#issuecomment-484101349).
+If PulseEffects plugins are greyed out after installing plugins, consider following the instruction in [[3]](https://github.com/wwmm/pulseeffects/issues/488#issuecomment-484101349).
 
-#### Presets
-
-A collection of PulseEffects presets can be found [here](https://github.com/wwmm/pulseeffects/wiki/Community-presets).
+A collection of PulseEffects presets can be found in [[4]](https://github.com/wwmm/pulseeffects/wiki/Community-presets).
 
 ### Equalization
 
@@ -608,7 +605,7 @@ $ nyxmms2 server config pulse.sink alsa_output.pci-0000_04_01.0.analog-stereo.mo
 
 ```
 
-See also the official guide [[3]](https://xmms2.org/wiki/Using_the_application).
+See also the official guide [[5]](https://xmms2.org/wiki/Using_the_application).
 
 ### KDE Plasma Workspaces and Qt4
 
@@ -663,7 +660,7 @@ And then either restarting PulseAudio or your computer will only idle the input 
 
 ## Networked audio
 
-Play sound through the outputs of another computer on the network. This method streams raw PCM audio over the network, which can use pretty much network bandwidth (around 1.4 Mb/s for CD-quality sound).[[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Network/)
+Play sound through the outputs of another computer on the network. This method streams raw PCM audio over the network, which can use pretty much network bandwidth (around 1.4 Mb/s for CD-quality sound).[[6]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Network/)
 
 ### Basic setup with direct connection
 

@@ -7,7 +7,7 @@ Links:
 
 ## Project Information
 
-| Project | Description | Languages | Developer | Links |
+| Project | Description | Languages | Maintainers | Links |
 | Pyalpm | alpm Python bindings | Python, C | Jelle | [GitHub](https://github.com/archlinux/pyalpm) |
 | Pacman | Package Manager | Bash, C | Allan, agregory | [cgit](https://git.archlinux.org/pacman.git/), [bugs](https://bugs.archlinux.org/index.php?project=3&do=index&switch=1) [IRC #archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) |
 | pacman-contrib | Contribution scripts to pacman | Bash, C | Demize, Polyzen | [GitHub](https://github.com/kyrias/pacman-contrib) |

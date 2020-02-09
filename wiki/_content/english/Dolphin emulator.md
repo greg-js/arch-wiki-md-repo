@@ -1,6 +1,10 @@
 Dolphin is a Nintendo GameCube and Wii emulator, currently supporting the x86_64 and AArch64 architectures. Dolphin is available for Linux, macOS, Windows, and Android. It is a free and open source, community-developed project. Dolphin was the first GameCube and Wii emulator, and currently the only one capable of playing commercial games.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -38,7 +42,7 @@ Install one of the following:
 
 **Tip:** Run `dolphin-emu -h` for help Dolphin's options.
 
-**Note:** Dolphin may override these settings on a per-game basis, such as when a setting is know to break a certain game. If absolutely sure a specific setting will not crash the game, you can disable or change these overrides by right-clicking the game and selecting *Properties*. Likewise, you can set per-game settings using this method.
+**Note:** Dolphin may override these settings on a per-game basis, such as when a setting is known to break a certain game. If absolutely sure a specific setting will not crash the game, you can disable or change these overrides by right-clicking the game and selecting *Properties*. Likewise, you can set per-game settings using this method.
 
 While no additional configuration is needed for the emulator to run (it is preconfigured with the default settings), altering the settings can improve performance and graphics alike. Settings are split to three main sections, *Config*, *Graphics* and *DSP*.
 

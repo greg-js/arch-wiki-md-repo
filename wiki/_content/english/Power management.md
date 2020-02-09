@@ -43,6 +43,8 @@ In Arch Linux, power management consists of two main parts:
 *   [3 Power saving](#Power_saving)
     *   [3.1 Processors with HWP (Hardware P-state) support](#Processors_with_HWP_(Hardware_P-state)_support)
     *   [3.2 Audio](#Audio)
+        *   [3.2.1 Kernel](#Kernel)
+        *   [3.2.2 PulseAudio](#PulseAudio)
     *   [3.3 Backlight](#Backlight)
     *   [3.4 Bluetooth](#Bluetooth)
     *   [3.5 Web camera](#Web_camera)
@@ -441,6 +443,8 @@ See the [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd
 
 ### Audio
 
+#### Kernel
+
 By default, audio power saving is turned off by most drivers. It can be enabled by setting the `power_save` parameter; a time (in seconds) to go into idle mode. To idle the audio card after one second, create the following file for Intel soundcards.
 
  `/etc/modprobe.d/audio_powersave.conf`  `options snd_hda_intel power_save=1` 
@@ -458,6 +462,17 @@ options snd_ac97_codec power_save=1
 *   Toggling the audio card's power state can cause a popping sound or noticeable latency on some broken hardware.
 
 It is also possible to further reduce the audio power requirements by disabling the HDMI audio output, which can done by [blacklisting](/index.php/Blacklisting "Blacklisting") the appropriate kernel modules (e.g. `snd_hda_codec_hdmi` in case of Intel hardware).
+
+#### PulseAudio
+
+By default, PulseAudio suspends any audio sources that have become idle for too long. When using an external USB microphone, recordings may start with a pop sound. As a workaround, comment out the following line in `/etc/pulse/default.pa`:
+
+```
+load-module module-suspend-on-idle
+
+```
+
+Afterwards, restart PulseAudio with `systemctl restart --user pulseaudio`.
 
 ### Backlight
 

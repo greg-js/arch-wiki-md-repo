@@ -749,6 +749,7 @@ An alternative is to load all possible keys:
 Description=Load encryption keys
 DefaultDependencies=no
 After=zfs-import.target
+Before=zfs-mount.service
 
 [Service]
 Type=oneshot

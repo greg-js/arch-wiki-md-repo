@@ -253,7 +253,7 @@ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power am
 
 **Note:** [kded_rotation](https://github.com/dos1/kded_rotation) is in early development stages and is a bit hacky. Use caution.
 
-Install [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/) and [kded-rotation-git](https://aur.archlinux.org/packages/kded-rotation-git/), then restart your kde session. Screen rotation should now just work.
+Install [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/) and [kded-rotation-git](https://aur.archlinux.org/packages/kded-rotation-git/), then restart your Plasma session. Screen rotation should now just work.
 
 For automatic touch screen rotation edit `/usr/bin/orientation-helper` script, changing the hardcoded input device name to match the one you have (choose from the output of `xinput list`).
 

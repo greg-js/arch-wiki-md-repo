@@ -90,7 +90,7 @@ See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot w
 
 A boot loader is a piece of software started by the firmware ([BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI")). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on configuration files. In the case of UEFI, the kernel itself can be directly launched by the UEFI using the EFI boot stub. A separate boot loader or boot manager can still be used for the purpose of editing kernel parameters before booting.
 
-**Warning:** A boot loader must be to be able to access the kernel and initramfs image(s), otherwise the system will not boot. Thus, in a typical setup, it must support accessing `/boot`. That means it must have support for everything starting from the block devices, stacked block devices (LVM, RAID, dm-crypt, LUKS, etc) and ending with the file system on which the kernel(s) and initramfs image(s) reside.
+**Warning:** A boot loader must be able to access the kernel and initramfs image(s), otherwise the system will not boot. Thus, in a typical setup, it must support accessing `/boot`. That means it must have support for everything starting from the block devices, stacked block devices (LVM, RAID, dm-crypt, LUKS, etc) and ending with the file system on which the kernel(s) and initramfs image(s) reside.
 
 **Note:** Loading [Microcode](/index.php/Microcode "Microcode") updates requires adjustments in boot loader configuration. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 

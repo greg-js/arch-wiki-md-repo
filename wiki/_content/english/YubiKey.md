@@ -455,7 +455,7 @@ Enter PIN for 'SSH Key'
 ssh-agent (see [SSH keys#SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys")) can also be used with the PKCS#11 library; in this case the PIN code is cached instead of the private key.
 
 ```
-$ ssh-add -s /usr/lib/pkcs11/opensc-pkcs11.so
+$ ssh-add -s /usr/lib/opensc-pkcs11.so
 
 ```
 
@@ -504,7 +504,7 @@ And the last step is to add `ykfde` hook to `/etc/mkinitcpio.conf` file before o
 
 #### Challenge-Response mode for LUKS passphrase (systemd/sd-encrypt)
 
-On systemd enabled systems full disk encryption is served by the package mkinitcpio-ykfde out of the AUR repository. First, install [mkinitcpio-ykfde](https://aur.archlinux.org/packages/mkinitcpio-ykfde/) or [mkinitcpio-ykfde-git](https://aur.archlinux.org/packages/mkinitcpio-ykfde-git/) package. Using this tool you can add Yubikey-protected luks slots.
+On systems which use `systemd` instead of `udev` hook in initramfs, full disk encryption can be served by the [mkinitcpio-ykfde](https://aur.archlinux.org/packages/mkinitcpio-ykfde/) package. Using this tool you can add Yubikey-protected luks slots. Note that this is similar but different project than one mentioned in paragraph above and they aren't compatible with each other.
 
 Make changes to `/etc/ykfde.conf` configuration file as as:
 

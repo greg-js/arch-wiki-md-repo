@@ -203,11 +203,7 @@ If the default paper size in blank Writer and Draw documents is persistently inc
 
 ### LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme
 
-If you do not want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in *Tools > Options > LibreOffice > View > Icon Style* to a readable one provided by LibreOffice.
-
-Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK](/index.php/GTK "GTK"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk).
-
-Just enable "Breeze Dark" or another readable icon style in *Tools > Options > LibreOffice > View > Icon Style* then.
+Change the icon style in *Tools > Options > LibreOffice > View > Icon Style* to "Breeze Dark" or another readable icon style. You may need to install the [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) package.
 
 If that is not enough, ensure that LibreOffice starts using the `gtk3` or `gen` interface (see [#Theme](#Theme)).[[2]](https://bbs.archlinux.org/viewtopic.php?id=206813)
 

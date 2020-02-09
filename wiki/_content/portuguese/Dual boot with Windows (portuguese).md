@@ -132,7 +132,7 @@ Com esta configuração, o gerenciador de boot do Windows carrega o GRUB, o qual
 
 A seguinte seção contém trechos de [http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/](http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/).
 
-De modo a garantir que o gerenciador de boot do Windows detecte a partição Linux, uma das partições linux criadas precisarão ser FAT32 (neste caso, `/dev/sda3`). O restante da instalação é similar a uma instalação típica. Algumas documentação alegam que a partição que será inicializada pelo Windows deverá ser uma partição primária, mas eu não tive problemas em fazê-lo com uma partição extendida.
+De modo a garantir que o gerenciador de boot do Windows detecte a partição Linux, uma das partições linux criadas precisarão ser FAT32 (neste caso, `/dev/sda3`). O restante da instalação é similar a uma instalação típica. Algumas documentações alegam que a partição que será inicializada pelo Windows deverá ser uma partição primária, mas eu não tive problemas em fazê-lo com uma partição extendida.
 
 *   Ao instalar o gerenciador de boot GRUB, instale-o em sua partição `/boot` ao invés de no MBR.
     **Nota:** Por exemplo, minha partição `/boot` é `/dev/sda5`. Então, eu instalei GRUB em `/dev/sda5` ao invés de `/dev/sda`. Para ajuda ao fazer isso, veja [GRUB/Tips and tricks#Install to partition or partitionless disk](/index.php/GRUB/Tips_and_tricks#Install_to_partition_or_partitionless_disk "GRUB/Tips and tricks").

@@ -46,7 +46,7 @@ GTK, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_Pr
     *   [6.5 Suppress warning about accessibility bus](#Suppress_warning_about_accessibility_bus)
     *   [6.6 Titlebar background color mismatch](#Titlebar_background_color_mismatch)
     *   [6.7 Wrong focus events with tiling window managers](#Wrong_focus_events_with_tiling_window_managers)
-    *   [6.8 Thumbnail support for GTK 2 file dialog](#Thumbnail_support_for_GTK_2_file_dialog)
+    *   [6.8 Thumbnail support for GTK file dialog](#Thumbnail_support_for_GTK_file_dialog)
     *   [6.9 Button and menu icons](#Button_and_menu_icons)
     *   [6.10 GTK 3 without polkit](#GTK_3_without_polkit)
     *   [6.11 Some GTK 2 themes only change the UI color palette](#Some_GTK_2_themes_only_change_the_UI_color_palette)
@@ -608,9 +608,9 @@ NautilusWindow {
 
 [Define](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` to use GTK2 style input, instead of xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
 
-### Thumbnail support for GTK 2 file dialog
+### Thumbnail support for GTK file dialog
 
-Install [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) to have the option to view files as thumbnails instead of list in the GTK file chooser.
+Install [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) and [gtk3-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk3-patched-filechooser-icon-view/) to have the option to view files as thumbnails instead of list in the GTK file chooser.
 
 ### Button and menu icons
 

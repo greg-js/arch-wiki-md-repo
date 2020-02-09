@@ -25,6 +25,8 @@ This is **not** a for sure list by any means. This is simply to keep the main de
 
 Alternatives system
 
+Parallel downloads
+
 Applied:
 
 ## New Feature Ideas

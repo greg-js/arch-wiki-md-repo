@@ -10,7 +10,11 @@ Related articles
 
 The New Dell XPS 13 2-in-1 (7390) is the model released in mid 2019 in most territories and is the second iteration of the Dell XPS 13 2-in-1 series, including an updated 10th generation Intel Ice Lake processor with Iris Plus integrated graphics. It can be used like a tablet when folding the display 180 degrees backwards and includes a enlarged 16:10 FHD+ or UHD touchscreen which should work out of the box. This includes support for Wacom pen technology (tested with the "Wacom Bamboo Ink Plus").
 
-As of kernel 5.4.6.arch3-1, no modifications (in particular regarding LPSS and WiFi) are necessary for the installation and normal operations.
+In order for Linux to see the internal NVMe SSD, it must be changed in the BIOS from the default "RAID mode" to "AHCI mode".
+
+GPU acceleration does not appear to work beyond the first frame while the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package is installed. The most visible symptom is that electron apps appear "frozen" in the first frame, only updating when the window size is changed. Support for the Gen11 Iris GPU is stable in the kernel as of 5.2.0, so the package is unnecessary. Especially users of arch derivatives may need to uninstall it manually.
+
+As of kernel 5.4.6.arch3-1, no further modifications (in particular regarding LPSS and WiFi) are necessary for the installation and normal operations.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

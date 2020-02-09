@@ -395,23 +395,23 @@ export __VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-0
 
 ##### Gaming using TwinView
 
-In case you want to play fullscreen games when using TwinView, you will notice that games recognize the two screens as being one big screen. While this is technically correct (the virtual X screen really is the size of your screens combined), you probably do not want to play on both screens at the same time.
+Если вы захотите сыграть в полноэкранные игры при использовании TwinView, вероятно вы заметите, что игры распознают два экрана как один большой экран. Хотя это технически правильно (виртуальный экран X в действительности соответствует размеру ваших экранов вместе), вы, вероятно, не захотите так играть.
 
-To correct this behavior for SDL, try:
+Чтобы исправить это для SDL, попробуйте:
 
 ```
 export SDL_VIDEO_FULLSCREEN_HEAD=1
 
 ```
 
-For OpenGL, add the appropriate Metamodes to your xorg.conf in section `Device` and restart X:
+Для OpenGL, добавьте Metamodes в свой xorg.conf в секции `Device` и перезапустите X:
 
 ```
 Option "Metamodes" "1680x1050,1680x1050; 1280x1024,1280x1024; 1680x1050,NULL; 1280x1024,NULL;"
 
 ```
 
-Another method that may either work alone or in conjunction with those mentioned above is [starting games in a separate X server](/index.php/Gaming#Starting_games_in_a_separate_X_server "Gaming").
+Еще один метод, который может работать самостоятельно, или в сочетании с упомянутыми выше: [Запуск игр в отдельном X сервере](/index.php/Gaming_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Запуск_игр_в_отдельном_X_сервере "Gaming (Русский)").
 
 #### Режим Mosaic
 

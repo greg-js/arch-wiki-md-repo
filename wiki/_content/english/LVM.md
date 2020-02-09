@@ -135,6 +135,7 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 
 *   Additional steps in setting up the system, more complicated.
 *   If dual-booting, note that Windows does not support LVM; you will be unable to access any LVM partitions from Windows.
+*   If your PVs are not on a RAID-1, RAID-5 or RAID-6 losing one disk *can* lose one or more LVs *if you span (or extend) your LVs across multiple non-redundant disks.*
 
 ### Getting started
 

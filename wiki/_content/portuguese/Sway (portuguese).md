@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2020-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=596060) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sway](/index.php/Sway "Sway"). Data da última tradução: 2020-02-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sway&diff=0&oldid=596868) na versão em inglês.
 
 *sway* é um compositor para [Wayland](/index.php/Wayland_(Portugu%C3%AAs) "Wayland (Português)") feito para ser totalmente compatível com [i3](/index.php/I3 "I3"). De acordo com [o site oficial](https://swaywm.org):
 
@@ -200,10 +200,17 @@ $ swaymsg -t get_tree
 
 ```
 
-Para conseguir somente o `app_id` de todas as janelas abertas, use:
+Para conseguir o `app_id` de todas as janelas abertas, use:
 
 ```
 $ swaymsg -t get_tree | grep "app_id"
+
+```
+
+Para conseguir o `app_id` da janela atualmente focada, use:
+
+```
+$ swaymsg -t get_tree | jq -r '..|try select(.focused == true)'
 
 ```
 
@@ -232,9 +239,9 @@ xwayland disable
 
 ```
 
-**Nota:** Alguns programas, como [Firefox](/index.php/Firefox#Wayland "Firefox"), [bemenu](#Lançadores_de_aplicativos) ou programas baseados no [Qt5](/index.php/Wayland_(Portugu%C3%AAs)#Qt_5 "Wayland (Português)"), também precisam de especificas variáveis de ambiente configuradas para rodarem nativamente em wayland.
+**Nota:** Alguns programas, como [Firefox](/index.php/Firefox#Wayland "Firefox"), [bemenu](#Lançadores_de_aplicativos) ou feitos em [Qt5](/index.php/Wayland_(Portugu%C3%AAs)#Qt_5 "Wayland (Português)"), também precisam de específicas variáveis de ambiente configuradas para rodarem nativamente em wayland.
 
-**Nota:** Numa recente instalação do Sway, você precisa mudar o menu e terminal padrão porquê eles dependem do XWayland.
+**Nota:** Numa recente instalação do Sway, você precisa mudar o menu padrão porquê ele depende do XWayland.
 
 ## Dicas e truques
 

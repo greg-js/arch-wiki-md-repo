@@ -511,7 +511,7 @@ innodb_use_native_aio = 0
 
 ### Cannot login through CLI, but phpmyadmin works well
 
-This may happen if you are using a long (>70-75) password. As for 5.5.36, for some reason, mysql CLI cannot handle that much characters in readline mode. So, if you are planning to use the recommended password input mode:
+This may happen if you are using a long (>70-75) password. As for 5.5.36, for some reason, mysql CLI cannot handle that many characters in readline mode. So, if you are planning to use the recommended password input mode:
 
 ```
 $ mysql -u <user> -p

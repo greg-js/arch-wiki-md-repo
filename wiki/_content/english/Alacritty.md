@@ -12,6 +12,8 @@
     *   [2.2 Font](#Font)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Spawn new instance in same directory](#Spawn_new_instance_in_same_directory)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Mouse not working properly in Vim](#Mouse_not_working_properly_in_Vim)
 
 ## Installation
 
@@ -76,3 +78,9 @@ key_bindings:
   - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
 
 ```
+
+## Troubleshooting
+
+### Mouse not working properly in Vim
+
+Add `ttymouse=sgr` to your `.vimrc` or switch to [Neovim](/index.php/Neovim "Neovim"). Also see [this issue](https://github.com/alacritty/alacritty/issues/803).

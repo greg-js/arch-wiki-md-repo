@@ -49,9 +49,9 @@ Artículos relacionados
         *   [5.3.1 Easy Tag](#Easy_Tag)
         *   [5.3.2 KID3](#KID3)
     *   [5.4 Cannot connect to mpd: host "localhost" not found: Temporary failure in name resolution](#Cannot_connect_to_mpd:_host_"localhost"_not_found:_Temporary_failure_in_name_resolution)
-    *   [5.5 Other issues when attempting to connect to mpd with a client](#Other_issues_when_attempting_to_connect_to_mpd_with_a_client)
-        *   [5.5.1 First fix](#First_fix)
-        *   [5.5.2 Second fix](#Second_fix)
+    *   [5.5 Otros errores intentando conectar con MPD](#Otros_errores_intentando_conectar_con_MPD)
+        *   [5.5.1 Primera solución](#Primera_solución)
+        *   [5.5.2 Segunda línea](#Segunda_línea)
     *   [5.6 Port 6600 already in use](#Port_6600_already_in_use)
     *   [5.7 Binding to IPV6 before IPV4](#Binding_to_IPV6_before_IPV4)
     *   [5.8 Crackling sound with some audio files](#Crackling_sound_with_some_audio_files)
@@ -704,16 +704,16 @@ Repite hasta que tu biblioteca musical este limpia. .
 
 ### Cannot connect to mpd: host "localhost" not found: Temporary failure in name resolution
 
-Cannot connect to MPD (with ncmpcpp), if you are disconnected from network. Solution is [disable IPv6](/index.php/IPv6_-_Disabling_the_Module "IPv6 - Disabling the Module") or add line to /etc/hosts
+Este error aparece cuando no puedes conectarte a MPD (con ncmpcpp) si estás desconectado de la red. La solución la encuentras en [disable IPv6](/index.php/IPv6_-_Disabling_the_Module "IPv6 - Disabling the Module"), como también puedes añadir estas lineas en /etc/hosts
 
 ```
 ::1 localhost.localdomain localhost
 
 ```
 
-### Other issues when attempting to connect to mpd with a client
+### Otros errores intentando conectar con MPD
 
-Some have reported being unable to access mpd with various clients, for example seeing errors like these:
+Algunos usuarios han reportado tener problemas conectando mpd con varios clientes.
 
 ```
 $ ncmpcpp
@@ -725,17 +725,17 @@ $ sonata
 
 ```
 
-Please see posts on ncmpcpp on the Arch Forums [HERE](https://bbs.archlinux.org/viewtopic.php?id=109962) and [HERE](https://bbs.archlinux.org/viewtopic.php?id=113493). Also see the Arch bug report on this issue [HERE](https://bugs.archlinux.org/task/22071).
+Por favor revisa los posts relacionados a ncmpcpp en el foro [aquí](https://bbs.archlinux.org/viewtopic.php?id=109962) y [aquí](https://bbs.archlinux.org/viewtopic.php?id=113493). También revisa el reporte de errores de Arch [aquí](https://bugs.archlinux.org/task/22071).
 
-#### First fix
+#### Primera solución
 
-Check `mpd.conf` for a line like `mpd.error` and remove it. The mpd error file is deprecated and has been removed.
+Revisa `mpd.conf` por una línea como `mpd.error` y bórrala. El archivo de error de mpd ha sido descontinuado.
 
-#### Second fix
+#### Segunda línea
 
-**Note:** I'm not so sure this is a good idea. There is a warning about changing the address to bind to in the default mpd.conf. If this does not help, you might want to comment out the changes.
+**Nota:** No estoy seguro si esto es una buena idea. Existe una advertencia acerca de cambiar la dirección de enlace en mpd.conf. Si esto no sirve, es probable que quieras comentar los cambios.
 
-If that doesn't help, add the following to `mpd.conf`:
+Si lo anterior no funciona, agrega las siguientes líneas a `mpd.conf`:
 
 ```
  bind_to_address "127.0.0.1"
@@ -743,7 +743,7 @@ If that doesn't help, add the following to `mpd.conf`:
 
 ```
 
-Afterwards, instruct your client to connect via 127.0.0.1\. For example, add the following to the ncmpcpp config file:
+Luego, dile a tu cliente que conecte a 127.0.0.1\. Por ejemplo, agrega esto a tu configuración de ncmpcpp:
 
 ```
  mpd_host "127.0.0.1"

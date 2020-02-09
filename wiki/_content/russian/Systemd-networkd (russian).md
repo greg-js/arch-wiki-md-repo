@@ -48,7 +48,11 @@
         *   [3.2.5 Результат](#Результат)
         *   [3.2.6 Уведомление](#Уведомление)
     *   [3.3 Статические IP-сети](#Статические_IP-сети)
-*   [4 Смотрите также](#Смотрите_также)
+*   [4 Советы и рекомендации](#Советы_и_рекомендации)
+    *   [4.1 Интеграция сетевого интерфейса и рабочего стола](#Интеграция_сетевого_интерфейса_и_рабочего_стола)
+    *   [4.2 Назначение IP-адреса на основании SSID](#Назначение_IP-адреса_на_основании_SSID)
+*   [5 Решение проблем](#Решение_проблем)
+*   [6 Смотрите также](#Смотрите_также)
 
 ## Основы использования
 
@@ -583,10 +587,54 @@ Gateway=192.168.1.254
 
 ```
 
+## Советы и рекомендации
+
+### Интеграция сетевого интерфейса и рабочего стола
+
+Systemd-networkd не имеет встроенной функциональности для интерактивного управления сетевыми интерфейсами, ни через графическое приложение, ни через командную строку. Тем не менее, существует ряд утилит для отображения состояния сети, изменения настроек или получения уведомлений.
+
+*   Утилита командной строки *networkctl* позволяет вывести информацию о сетевых интерфейсах.
+*   Когда networkd настраивается с помощью [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)"), утилитами *wpa_cli* и *wpa_gui* можно динамически настраивать WLAN-интерфейсы.
+*   Плагин [networkd-notify-git](https://aur.archlinux.org/packages/networkd-notify-git/) выводит уведомления при изменениях в работе интерфейса (например, при установлении соединения или его завершении).
+*   Демон [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) позволяет выполнять сценарии при изменении состояния интерфейса. Работает схожим образом с *NetworkManager-dispatcher*.
+*   Отобразить информацию о DNS-сервере для systemd-resolved можно командой `resolvectl status`.
+
+### Назначение IP-адреса на основании SSID
+
+Может возникнуть ситуация, когда дома вы используете беспроводную сеть с DHCP, а на работе — беспроводную же сеть, но со статическим IP-адресом. Пример смешанных настроек приведён ниже.
+
+**Примечание:** Номер в начале имени файла определяет порядок, в котором они будут обрабатываться. В разделе [Match] можно использовать параметры SSID, BSSID или оба одновременно.
+ `/etc/systemd/network/24-wireless-office.network` 
+```
+# отдельные настройки для сети WiFi на работе
+[Match]
+Name=wlp2s0
+SSID=название_точки_доступа
+#BSSID=aa:bb:cc:dd:ee:ff
+
+[Network]
+Address=10.1.10.9/24
+Gateway=10.1.10.1
+DNS=10.1.10.1
+#DNS=8.8.8.8
+
+```
+ `/etc/systemd/network/25-wireless-dhcp.network` 
+```
+# для остальных сетей используется DHCP
+[Match]
+Name=wlp2s0
+
+[Network]
+DHCP=ipv4
+
+```
+
+## Решение проблем
+
 ## Смотрите также
 
 *   [systemd.networkd man page](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html)
 *   [Tom Gundersen, main systemd-networkd developer, G+ home page](https://plus.google.com/u/0/+TomGundersen/posts)
 *   [Tom Gundersen posts on Core OS blog](https://coreos.com/blog/intro-to-systemd-networkd/)
 *   [How to set up systemd-networkd with wpa_supplicant](https://bbs.archlinux.org/viewtopic.php?pid=1393759#p1393759) (WonderWoofy's walkthrough on Arch forums)
-*   [Отключение обработки трафика netfilter, проходящего через мост](http://xgu.ru/wiki/Linux_Bridge#.D0.9A.D0.B0.D0.BA_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D1.84.D0.B8.D0.BB.D1.8C.D1.82.D1.80.D0.B0.D1.86.D0.B8.D1.8E_.D0.B8_.D0.BF.D1.80.D0.BE.D1.87.D1.83.D1.8E_.D0.BE.D0.B1.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D1.83_.D1.82.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.B0_netfilter.2C_.D0.BF.D1.80.D0.BE.D1.85.D0.BE.D0.B4.D1.8F.D1.89.D0.B5.D0.B3.D0.BE_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_.D0.BC.D0.BE.D1.81.D1.82.3F)

@@ -269,6 +269,10 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 	[http://converseen.fasterland.net/](http://converseen.fasterland.net/) || [converseen](https://www.archlinux.org/packages/?name=converseen)
 
+*   **cropgui** — Lossless JPEG crop without recompression
+
+	[https://github.com/jepler/cropgui](https://github.com/jepler/cropgui) || [cropgui](https://aur.archlinux.org/packages/cropgui/)
+
 *   **[dcraw](https://en.wikipedia.org/wiki/dcraw "wikipedia:dcraw")** — Converts many camera RAW formats.
 
 	[http://www.cybercom.net/~dcoffin/dcraw/](http://www.cybercom.net/~dcoffin/dcraw/) || [dcraw](https://www.archlinux.org/packages/?name=dcraw)

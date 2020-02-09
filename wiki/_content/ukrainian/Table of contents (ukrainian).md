@@ -62,7 +62,7 @@
  <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small> |
  <small>3.16.1.</small> [Optical disc](/index.php/Category:Optical_disc "Category:Optical disc") <small>(6)</small> |
  <small>3.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
- <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(52)</small> |
+ <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(53)</small> |
  <small>4.1.</small> [Directory services](/index.php/Category:Directory_services "Category:Directory services") <small>(3)</small> |
  <small>4.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(21) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
@@ -71,7 +71,7 @@
  <small>4.3.</small> [Email](/index.php/Category:Email "Category:Email") <small>(4)</small> |
  <small>4.3.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(11) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>4.3.1.1.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
- <small>4.3.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(25) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
+ <small>4.3.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(27) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(14) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
  <small>4.5.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(9) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>4.5.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(15) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
@@ -100,7 +100,7 @@
  <small>4.12.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(21) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>4.12.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
  <small>4.12.2.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
- <small>4.12.3.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(25) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
+ <small>4.12.3.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(27) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
  <small>4.12.4.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(13) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"), [Streaming](/index.php/Category:Streaming "Category:Streaming"))</small> |
  <small>4.12.4.1.</small> [Home theater](/index.php/Category:Home_theater "Category:Home theater") <small>(4)</small> |
  <small>4.12.5.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Synchronization](/index.php/Category:Synchronization "Category:Synchronization"))</small> |
@@ -119,7 +119,7 @@
  <small>4.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
  <small>4.16.</small> [Voice over IP](/index.php/Category:Voice_over_IP "Category:Voice over IP") <small>(8)</small> |
  <small>4.17.</small> [Web](/index.php/Category:Web "Category:Web") <small>(4)</small> |
- <small>4.17.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(35) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
+ <small>4.17.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(37) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>4.17.1.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
  <small>4.17.1.2.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System"))</small> |
  <small>4.17.1.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
@@ -181,7 +181,7 @@
  <small>5.1.17.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Monitoring](/index.php/Category:Monitoring "Category:Monitoring"))</small> |
  <small>5.1.18.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(18) (also in [Command-line](/index.php/Category:Command-line "Category:Command-line"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
  <small>5.1.19.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(16) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
- <small>5.1.20.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(35) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+ <small>5.1.20.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(37) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
  <small>5.1.20.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
  <small>5.1.20.2.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System"))</small> |
  <small>5.1.20.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
@@ -190,7 +190,7 @@
  <small>5.1.20.6.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
  <small>5.2.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(5) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
  <small>5.2.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
- <small>5.2.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(84)</small> |
+ <small>5.2.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(82)</small> |
  <small>5.2.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>5.2.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>5.2.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |
@@ -205,7 +205,7 @@
  <small>5.3.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(21) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>5.3.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
  <small>5.3.1.2.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
- <small>5.3.1.3.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(25) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
+ <small>5.3.1.3.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(27) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
  <small>5.3.1.4.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(13) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"), [Streaming](/index.php/Category:Streaming "Category:Streaming"))</small> |
  <small>5.3.1.4.1.</small> [Home theater](/index.php/Category:Home_theater "Category:Home theater") <small>(4)</small> |
  <small>5.3.1.5.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Synchronization](/index.php/Category:Synchronization "Category:Synchronization"))</small> |
@@ -241,7 +241,7 @@
  <small>6.2.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(8)</small> |
  <small>6.3.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(5) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
  <small>6.3.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
- <small>6.3.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(84)</small> |
+ <small>6.3.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(82)</small> |
  <small>6.3.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>6.3.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>6.3.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |
@@ -258,7 +258,7 @@
  <small>6.6.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(21) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>6.6.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
  <small>6.6.1.2.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
- <small>6.6.1.3.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(25) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
+ <small>6.6.1.3.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(27) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
  <small>6.6.1.4.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(13) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"), [Streaming](/index.php/Category:Streaming "Category:Streaming"))</small> |
  <small>6.6.1.4.1.</small> [Home theater](/index.php/Category:Home_theater "Category:Home theater") <small>(4)</small> |
  <small>6.6.1.5.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Synchronization](/index.php/Category:Synchronization "Category:Synchronization"))</small> |

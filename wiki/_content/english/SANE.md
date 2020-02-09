@@ -248,7 +248,7 @@ Your [webcam](/index.php/Webcam "Webcam") might also be listed as scanning devic
 
 If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff --output-file test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the `usblp` kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents `usblp` from loading to support scanning, not needed by xsane and related tools, might also [conflict with CUPS](/index.php/CUPS/Troubleshooting#Conflict_with_usblp "CUPS/Troubleshooting")). Reboot to finish. [[4]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
 
-In addition to this, some cannon printers return device busy if the scan mode to be set to "Computer". Setting this to "Remote Scanner" mode should fix the issue.[[5]](https://alioth-lists.debian.net/pipermail/sane-devel/2014-March/032169.html)
+In addition to this, some Cannon printers return "device busy" if the scan mode is set to "Computer". Setting this to the "Remote Scanner" mode should fix the issue.[[5]](https://alioth-lists.debian.net/pipermail/sane-devel/2014-March/032169.html)
 
 ### Permission problem
 

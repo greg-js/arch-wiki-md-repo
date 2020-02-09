@@ -746,7 +746,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 
 *   **[Bazaar](/index.php/Bazaar "Bazaar")** — Distributed version control system that helps you track project history over time and to collaborate easily with others.
 
-	[https://bazaar.canonical.com/](https://bazaar.canonical.com/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
+	[https://bazaar.canonical.com/](https://bazaar.canonical.com/) || [bzr](https://aur.archlinux.org/packages/bzr/)
 
 *   **[CVS](/index.php/CVS "CVS")** — Concurrent Versions System, a client-server revision control system.
 

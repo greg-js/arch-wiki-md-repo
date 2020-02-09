@@ -90,6 +90,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.15 QEMU via cli pulseaudio stuttering/delay](#QEMU_via_cli_pulseaudio_stuttering/delay)
     *   [10.16 Bluescreen at boot since Windows 10 1803](#Bluescreen_at_boot_since_Windows_10_1803)
     *   [10.17 AMD Ryzen / BIOS updates (AGESA) yields "Error: internal error: Unknown PCI header type ‘127’"](#AMD_Ryzen_/_BIOS_updates_(AGESA)_yields_"Error:_internal_error:_Unknown_PCI_header_type_‘127’")
+    *   [10.18 Host crashes when hotplugging Nvidia card with USB](#Host_crashes_when_hotplugging_Nvidia_card_with_USB)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -1326,6 +1327,8 @@ Before starting VM run following lines replacing IDs with actual from previous o
 
 **Note:** Probably setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `video=efifb:off` is required as well. [Source](https://pve.proxmox.com/wiki/Pci_passthrough#BAR_3:_can.27t_reserve_.5Bmem.5D_error)
 
+In addition try adding kernel parameter `pci=realloc` which also [helps with hotplugging issues](https://github.com/Dunedan/mbp-2016-linux/issues/60#issuecomment-396311301).
+
 ### UEFI (OVMF) compatibility in VBIOS
 
 With respect to [this article](https://pve.proxmox.com/wiki/Pci_passthrough#How_to_known_if_card_is_UEFI_.28ovmf.29_compatible):
@@ -1592,6 +1595,10 @@ options kvm ignore_msrs=1
 ### AMD Ryzen / BIOS updates (AGESA) yields "Error: internal error: Unknown PCI header type ‘127’"
 
 AMD users have been experiencing breakage of their KVM setups after updating the BIOS on their motherboard. There is a kernel [patch](https://clbin.com/VCiYJ), (see [Kernel/Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System") for instruction on compiling kernels with custom patches) that can resolve the issue as of now (7/28/19), but this is not the first time AMD has made an error of this very nature, so take this into account if you are considering updating your BIOS in the future as a VFIO user.
+
+### Host crashes when hotplugging Nvidia card with USB
+
+If attempting to hotplug an Nvidia card with a USB port, you may have to blacklist the `i2c_nvidia_gpu` driver. Do this by adding the line `blacklist i2c_nvidia_gpu` to `/etc/modprobe.d/blacklist.conf`.
 
 ## See also
 

@@ -48,4 +48,4 @@ Some popular applications that use RTL-SDR:
 
 *   [dump1090-git](https://aur.archlinux.org/packages/dump1090-git/) - a lightweight ModeS (1090Mhz) decoder
 *   [multimon-ng-git](https://aur.archlinux.org/packages/multimon-ng-git/) - a decoder for various digital modes
-*   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - A popular sdr radio reciver for linux
+*   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - a popular SDR receiver for Linux

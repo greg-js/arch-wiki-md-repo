@@ -30,7 +30,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 [Install](/index.php/Install "Install") the [tlp](https://www.archlinux.org/packages/?name=tlp) package. Installing the optional dependencies may help provide additional power saving.
 
-[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `tlp.service` and `tlp-sleep.service`.
+[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `tlp.service`.
 
 ### Radio Device Wizard (tlp-rdw)
 
@@ -57,7 +57,7 @@ Controlling the charge thresholds using D-Bus without root privileges is possibl
 
 ## Configuration
 
-The configuration file is located at `/etc/default/tlp` and provides a "largely" optimized power saving by default. For a full explanation of options see: [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html).
+The configuration file is located at `/etc/tlp.conf` and provides a "largely" optimized power saving by default. For a full explanation of options see: [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html).
 
 ### Force battery (BAT) configuration
 
@@ -65,7 +65,7 @@ When no power supply can be detected, the setting for AC will be used (e.g. on d
 
 You may want to force the battery (BAT) settings when using TLP on these devices to enable more power saving:
 
- `/etc/default/tlp` 
+ `/etc/tlp.conf` 
 ```
 # Operation mode when no power supply can be detected: AC, BAT.
 TLP_DEFAULT_MODE=BAT

@@ -7,7 +7,7 @@
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
 *   [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 16 января 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=595004).
+**Состояние перевода:** На этой странице представлен перевод статьи [Network configuration/Wireless](/index.php/Network_configuration/Wireless "Network configuration/Wireless"). Дата последней синхронизации: 2 февраля 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Network_configuration/Wireless&diff=0&oldid=596662).
 
 Основную статью по настройке сети можно найти на странице [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
@@ -33,14 +33,15 @@
     *   [3.4 Обнаружение точек доступа](#Обнаружение_точек_доступа)
     *   [3.5 Выбор режима работы](#Выбор_режима_работы)
     *   [3.6 Соединение с точкой доступа](#Соединение_с_точкой_доступа)
-*   [4 Wi-Fi Protected Access](#Wi-Fi_Protected_Access)
-    *   [4.1 WPA2 Personal](#WPA2_Personal)
-    *   [4.2 WPA2 Enterprise](#WPA2_Enterprise)
-        *   [4.2.1 eduroam](#eduroam)
-        *   [4.2.2 Ручная/автоматическая настройка](#Ручная/автоматическая_настройка)
-        *   [4.2.3 Проблемы](#Проблемы)
-            *   [4.2.3.1 MS-CHAPv2](#MS-CHAPv2)
-    *   [4.3 WPA3 Personal](#WPA3_Personal)
+*   [4 Аутентификация](#Аутентификация)
+    *   [4.1 Wi-Fi Protected Access](#Wi-Fi_Protected_Access)
+        *   [4.1.1 WPA2 Personal](#WPA2_Personal)
+        *   [4.1.2 WPA2 Enterprise](#WPA2_Enterprise)
+            *   [4.1.2.1 eduroam](#eduroam)
+            *   [4.1.2.2 Ручная/автоматическая настройка](#Ручная/автоматическая_настройка)
+            *   [4.1.2.3 Проблемы](#Проблемы)
+                *   [4.1.2.3.1 MS-CHAPv2](#MS-CHAPv2)
+        *   [4.1.3 WPA3 Personal](#WPA3_Personal)
 *   [5 Советы и рекомендации](#Советы_и_рекомендации)
     *   [5.1 Соответствие регламентам](#Соответствие_регламентам)
     *   [5.2 Предостережения Rfkill](#Предостережения_Rfkill)
@@ -181,7 +182,7 @@
 
 ### Сравнение iw и wireless_tools
 
-Ниже представлено сравнение некоторых команд утилит *iw* и *wireless_tools*. Дополнительные примеры можно найти в статье о [замене iwconfig на iw](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig).
+Ниже представлено сравнение некоторых команд утилит *iw* и *wireless_tools*. Дополнительные примеры можно найти в статье о [замене iwconfig на iw](https://wireless.wiki.kernel.org/en/users/Documentation/iw/replace-iwconfig).
 
 | Команда *iw* | Команда *wireless_tools* | Описание |
 | iw dev *wlan0* link | iwconfig *wlan0* | Получение состояния соединения. |
@@ -303,15 +304,17 @@ $ iw dev *интерфейс* station dump
 
 ```
 
-## Wi-Fi Protected Access
+## Аутентификация
 
-### WPA2 Personal
+### Wi-Fi Protected Access
+
+#### WPA2 Personal
 
 WPA2 Personal, или WPA2-PSK — одна из реализаций технологии [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/ru:WPA "wikipedia:ru:WPA").
 
 Выполнить вход в сеть WPA2 Personal можно посредством утилит [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)") или [iwd](/index.php/Iwd "Iwd"), а также с помощью [сетевого менеджера](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Сетевые_менеджеры "Network configuration (Русский)"). Если вы вошли в данную сеть впервые, то для создания нормально функционирующего соединения необходимо выполнить привязку IP-адреса(-ов) и маршрутов либо [вручную](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Статический_IP-адрес "Network configuration (Русский)"), либо с помощью [DHCP](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#DHCP "Network configuration (Русский)")-клиента.
 
-### WPA2 Enterprise
+#### WPA2 Enterprise
 
 *WPA2 Enterprise* — ещё одна реализация технологии [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/ru:WPA "wikipedia:ru:WPA"). Она предлагает лучшую безопасность и управление ключами по сравнению с *WPA2 Personal*, а также дополнительную функциональность корпоративного типа вроде VLAN и [NAP](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%B0_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0_%D0%BA_%D1%81%D0%B5%D1%82%D0%B8 "wikipedia:ru:Защита доступа к сети"). Для работы этой технологии требуется внешний аутентификационный сервер, [RADIUS](https://en.wikipedia.org/wiki/ru:RADIUS "wikipedia:ru:RADIUS"), обрабатывающий попытки аутентификации пользователей. Это отличает Enterprise-режим от режима Personal, которому не требуется ничего кроме маршрутизатора или точки доступа с одним паролем для всех пользователей.
 
@@ -325,7 +328,7 @@ WPA2 Personal, или WPA2-PSK — одна из реализаций техно
 
 **Важно:** Существует возможность использовать WPA2 Enterprise без проверки CA-сертификата сервера, однако использовать её не стоит. Без аутентификации точки доступа соединение может стать объектом атаки "человек посередине" ("man-in-the-middle"). Хотя "рукопожатия" обычно зашифрованы, передача пароля чаще всего производится открытым текстом или посредством ненадёжного протокола [#MS-CHAPv2](#MS-CHAPv2). В результате клиент может послать пароль чужой точке доступа, которая станет выполнять роль посредника (proxy) в соединении, прослушивая весь передаваемый через неё трафик.
 
-#### eduroam
+##### eduroam
 
 [eduroam](https://en.wikipedia.org/wiki/ru:eduroam "wikipedia:ru:eduroam") — международный роуминговый сервис на основе WPA2 Enterprise для лиц, занятых в сфере научно-исследовательской деятельности, высшего образования и дополнительного профессионального образования.
 
@@ -336,10 +339,10 @@ WPA2 Personal, или WPA2-PSK — одна из реализаций техно
 
 **Совет:** Настройки для утилит [NetworkManager](/index.php/NetworkManager "NetworkManager") и [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)") можно сгенерировать с помощью [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
 
-#### Ручная/автоматическая настройка
+##### Ручная/автоматическая настройка
 
 *   [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Расширенное_использование "WPA supplicant (Русский)") настраивается напрямую в его файле настроек или посредством интерфейса; используется вместе с клиентом DHCP. Примеры настроек приведены в файле `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf`.
-*   [NetworkManager](/index.php/NetworkManager "NetworkManager") может генерировать профили WPA2 Enterprise с помощью [графических интерфейсов](/index.php/NetworkManager#Front-ends "NetworkManager"). Утилиты *nmcli* и *mntui* эту возможность не поддерживают, но работают с готовыми профилями.
+*   [NetworkManager](/index.php/NetworkManager "NetworkManager") может создавать профили WPA2 Enterprise с помощью утилиты *nmcli* или [графических интерфейсов](/index.php/NetworkManager#Front-ends "NetworkManager"). Утилита *mntui* эту возможность не поддерживает, но работает с готовыми профилями.
 *   [ConnMan](/index.php/ConnMan "ConnMan") требует создания отдельного файла настроек перед [соединением](/index.php/ConnMan#Wi-Fi "ConnMan") с беспроводной сетью. Подробности можно найти в руководстве [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) и в статье [Connman#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam_.28802.1X.29 "ConnMan").
 *   [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)") может использовать настройки [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)") посредством блоков `WPAConfigSection=`. Детали вы найдёте в руководстве [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
 
@@ -347,15 +350,17 @@ WPA2 Personal, или WPA2-PSK — одна из реализаций техно
 
 **Совет:** Можно разрешить произвольный сертификат, добавив строку `'ca_cert="/path/to/special/certificate.cer"'` в блоке `WPAConfigSection`.
 
-#### Проблемы
+##### Проблемы
 
-##### MS-CHAPv2
+###### MS-CHAPv2
 
 Беспроводные сети WPA2-Enterprise, полагающиеся на аутентификацию MSCHAPv2 type-2 с использованием PEAP иногда требуют установки [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) помимо стандартного [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"), однако, работает "из коробки" без ppp-mppe. В любом случае, использование MSCHAPv2 не рекомендуется из-за ненадежности этого протокола, но другого варианта часто просто нет.
 
-### WPA3 Personal
+#### WPA3 Personal
 
-Чтобы WPA3 Personal работал с [WPA supplicant](/index.php/WPA_supplicant_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "WPA supplicant (Русский)"), необходимо [пересобрать](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") пакет [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) с параметром `CONFIG_SAE=y`. ([FS#57413](https://bugs.archlinux.org/task/57413))
+WPA3 Personal, или WPA3-SAE — один из режимов [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/ru:WPA "wikipedia:ru:WPA").
+
+[wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") поддерживает WPA3 Personal (опция `CONFIG_SAE` в [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) включена начиная с версии 2:2.9-4).
 
 ## Советы и рекомендации
 
@@ -773,7 +778,7 @@ command failed: Operation not supported (-95)
 
 ##### Bluetooth Coexistence
 
-Если у вас проблемы с подключением bluetooth-наушников и низкая скорость входящего соединения, попробуйте отключить режим Bluetooth Coexistence [[12]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+Если у вас проблемы с подключением bluetooth-наушников и низкая скорость входящего соединения, попробуйте отключить режим Bluetooth Coexistence [[12]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wi-fibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 

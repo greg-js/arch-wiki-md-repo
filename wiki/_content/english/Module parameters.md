@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Kernel module](/index.php/Kernel_module "Kernel module")
+*   [Kernel module#Setting module options](/index.php/Kernel_module#Setting_module_options "Kernel module")

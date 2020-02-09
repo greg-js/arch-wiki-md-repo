@@ -53,18 +53,13 @@ You can force dracut to use kernel command line parameters in the initramfs envi
 
 It is not necessary to specify the root block device for dracut. From [dracut.cmdline(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dracut.cmdline.7):
 
-```
-The root device used by the kernel is specified in the boot configuration file on the kernel command line, as always.
-
-```
+	The root device used by the kernel is specified in the boot configuration file on the kernel command line, as always.
 
 However, it may be useful to set some parameters early, and you can enable additional features like prompting for additional command like parameters. See [dracut.cmdline(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dracut.cmdline.7) for all options. Here are some example configuration options:
 
-Resume from a swap partition: `resume=UUID=80895b78-7312-45bc-afe5-58eb4b579422`
-
-Prompt for additional kernel command line parameters: `rd.cmdline=ask`
-
-Print informational output even if "quiet" is set: `rd.info`
+*   Resume from a swap partition: `resume=UUID=80895b78-7312-45bc-afe5-58eb4b579422`
+*   Prompt for additional kernel command line parameters: `rd.cmdline=ask`
+*   Print informational output even if "quiet" is set: `rd.info`
 
 Kernel command line options should be placed line-by-line similar to the `/etc/dracut.conf.d/` style, in a `*.conf` file in `/etc/cmdline.d/`. For example, your kernel command line options file could look like:
 
@@ -165,8 +160,8 @@ while read -r line; do
 		kver="${kver%'/pkgbase'}"
 
 		install -Dm0644 "/${line%'/pkgbase'}/vmlinuz" "/boot/vmlinuz-${pkgbase}"
-		dracut "${args[@]}" -f "/boot/initramfs-${pkgbase}.img" --kver "$kver"
-		dracut -N -f "/boot/initramfs-${pkgbase}-fallback.img" --kver "$kver"
+		dracut "${args[@]}" --force "/boot/initramfs-${pkgbase}.img" --kver "$kver"
+		dracut --no-hostonly --force "/boot/initramfs-${pkgbase}-fallback.img" --kver "$kver"
 	fi
 done
 

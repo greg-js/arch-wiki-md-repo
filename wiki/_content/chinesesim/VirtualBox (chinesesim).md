@@ -6,7 +6,7 @@
 *   [RemoteBox](/index.php/RemoteBox "RemoteBox")
 *   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
 
-**翻译状态：** 本文是英文页面 [VirtualBox](/index.php/VirtualBox "VirtualBox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-15，点击[这里](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=491411)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [VirtualBox](/index.php/VirtualBox "VirtualBox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2020-02-04，点击[这里](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=491411)可以查看翻译后英文页面的改动。
 
 **VirtualBox** 是运行于现有操作系统之上的虚拟机监视器，用途是在特制环境（即虚拟机）里运行操作系统。VirtualBox 处于活跃开发状态，时常会引入新功能。VirtualBox 支持 [Qt](/index.php/Qt "Qt")，[SDL](https://en.wikipedia.org/wiki/SDL "wikipedia:SDL") 与无界面模式运行虚拟机。也支持用 Qt 图形界面和命令行工具管理虚拟机。
 
@@ -78,7 +78,13 @@
     *   [5.23 Windows 8.x 出现错误代码 0x000000C4](#Windows_8.x_出现错误代码_0x000000C4)
     *   [5.24 Windows 8, 8.1 或 10 无法安装、启动或报错 "ERR_DISK_FULL"](#Windows_8,_8.1_或_10_无法安装、启动或报错_"ERR_DISK_FULL")
     *   [5.25 WinXP: 颜色深度不得多于 16 位](#WinXP:_颜色深度不得多于_16_位)
-*   [6 参阅](#参阅)
+    *   [5.26 Windows: 开启3D加速后屏幕闪烁](#Windows:_开启3D加速后屏幕闪烁)
+    *   [5.27 Arch Linux guest虚拟机中没有硬件3D加速](#Arch_Linux_guest虚拟机中没有硬件3D加速)
+    *   [5.28 无法在Wayland上启动VirtualBox：段错误](#无法在Wayland上启动VirtualBox：段错误)
+*   [6 已知问题](#已知问题)
+    *   [6.1 自动挂载不起作用](#自动挂载不起作用)
+    *   [6.2 缺少 vboximg-mount](#缺少_vboximg-mount)
+*   [7 参阅](#参阅)
 
 ## 在 Arch 里安装 VirtualBox
 
@@ -849,6 +855,62 @@ $ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
 ```
 
 然后再去“桌面属性”窗口里修改色深。如果还是不见效，强制让屏幕重绘（比如按 `Host+f` 进入全屏模式）试试。
+
+### Windows: 开启3D加速后屏幕闪烁
+
+VirtualBox > 4.3.14 has a regression in which Windows guests with 3D acceleration flicker.
+
+由于r120678补丁已经添加识别[environment variable](/index.php/Environment_variable "Environment variable")设置，可像如下启动VirtualBox：
+
+```
+$ CR_RENDER_FORCE_PRESENT_MAIN_THREAD=0 VirtualBox
+
+```
+
+请确保没有VirtualBox服务还在运行，并参考[VirtualBox bug 13653](https://www.virtualbox.org/ticket/13653)。
+
+### Arch Linux guest虚拟机中没有硬件3D加速
+
+[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils)软件包从5.2.16-2版开始不再包含文件`VBoxEGL.so`。这导致Arch Linux guest虚拟机没有适当的3D加速。参见[49752 FS# 49752](https://bugs.archlinux.org/task/)。
+
+要解决此问题，请应用位于[FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254)的补丁集。需要对补丁集进行一些修复，才能使其适用于5.2.16-2版。
+
+### 无法在Wayland上启动VirtualBox：段错误
+
+此问题通常是由Wayland上的Qt引起的，请参见[FS#58761](https://bugs.archlinux.org/task/58761)。
+
+最好的办法是，在不影响其余的Qt应用程序（通常在Wayland中正常运行）的情况下，取消在VirtualBox的[desktop entry](/index.php/Desktop_entry "Desktop entry")中的`QT_QPA_PLATFORM` [environment variable](/index.php/Environment_variable "Environment variable")设置。
+
+请按照[Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries")中的说明进行操作，并修改Exec：
+
+```
+Exec=VirtualBox ...
+
+```
+
+为
+
+```
+Exec=env -u QT_QPA_PLATFORM VirtualBox ...
+
+```
+
+如果不起作用，则可能需要将`QT_QPA_PLATFORM`设置为`xcb`：
+
+```
+Exec=env QT_QPA_PLATFORM=xcb VirtualBox ...
+
+```
+
+## 已知问题
+
+### 自动挂载不起作用
+
+从6.0.0-1版本开始，自动挂载不适用于guest additions包[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils)和[virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox)。参见[FS#61307](https://bugs.archlinux.org/task/61307)。
+
+### 缺少 vboximg-mount
+
+`vboximg-mount`文件未打包在[virtualbox](https://www.archlinux.org/packages/?name=virtualbox)包中。参见[FS#64961](https://bugs.archlinux.org/task/64961)。
 
 ## 参阅
 

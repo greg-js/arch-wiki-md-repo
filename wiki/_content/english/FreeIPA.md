@@ -84,7 +84,7 @@ On FreeIPA server, add the client to the IPA server ([From Fedora documentation]
 1.  Login and request and admin session `kinit admin`
 2.  Create a host entry `ipa host-add --force --ip-address=192.168.166.31 client1.example.com`
     (if the host does not have a static IP, use `ipa host-add client1.example.com`)
-3.  Set the client to be managed by IPA `ipa host-add-managedby --hosts=controller.example.com client1.example.com`
+3.  Set the client to be managed by IPA `ipa host-add-managedby --hosts=client1.example.com controller.example.com`
 4.  Generate keytab for the client `ipa-getkeytab -s controller.example.com -p host/client1.example.com -k /tmp/client1.keytab`
 
 Install the keytab on the client:

@@ -49,7 +49,14 @@ couchdb:
 And register them to CouchDB (replace `<couchdb_admin>` and `<couchdb_password>` with your CouchDB admin credentials):
 
 ```
-$ curl -X PUT http://<couchdb_admin>:<couchdb_password>@127.0.0.1:5984/_node/couchdb@localhost/_config/admins/<couch_user> -d "\"<couch_password>\""
+$ curl -X PUT http://<couchdb_admin>:<couchdb_password>@127.0.0.1:5984/_node/<node_name>/_config/admins/<couch_user> -d "\"<couch_password>\""
+
+```
+
+You can retrieve the correct node name with:
+
+```
+$ curl -X GET http://<couchdb_admin>:<couchdb_password>@127.0.0.1:5984/_membership
 
 ```
 

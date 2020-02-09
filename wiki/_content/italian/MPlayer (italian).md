@@ -1,10 +1,14 @@
 **MPlayer** è un famosissimo lettore multimediale per Linux. MPlayer supporta praticamente tutti i formati audio e video, risultando quindi un lettore molto versatile, anche se la maggior parte delle persone lo usa solo come lettore video.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Consigli di installazione addizionali](#Consigli_di_installazione_addizionali)
-    *   [2.1 Interfacce grafiche/GUI](#Interfacce_grafiche.2FGUI)
+    *   [2.1 Interfacce grafiche/GUI](#Interfacce_grafiche/GUI)
     *   [2.2 Integrazione con i Browser](#Integrazione_con_i_Browser)
         *   [2.2.1 Firefox](#Firefox)
         *   [2.2.2 Konqueror](#Konqueror)
@@ -13,21 +17,21 @@
     *   [3.1 Configurazione](#Configurazione)
     *   [3.2 Scorciatoie da tastiera](#Scorciatoie_da_tastiera)
 *   [4 Trucchi e consigli](#Trucchi_e_consigli)
-    *   [4.1 Riprendi da dove si è interrotta la visualizzazione](#Riprendi_da_dove_si_.C3.A8_interrotta_la_visualizzazione)
-    *   [4.2 Abilitare VDPAU (solo per schede grafiche nVidia moderne)](#Abilitare_VDPAU_.28solo_per_schede_grafiche_nVidia_moderne.29)
+    *   [4.1 Riprendi da dove si è interrotta la visualizzazione](#Riprendi_da_dove_si_è_interrotta_la_visualizzazione)
+    *   [4.2 Abilitare VDPAU (solo per schede grafiche nVidia moderne)](#Abilitare_VDPAU_(solo_per_schede_grafiche_nVidia_moderne))
         *   [4.2.1 Usare il file di configurazione](#Usare_il_file_di_configurazione)
         *   [4.2.2 Usare uno script](#Usare_uno_script)
     *   [4.3 Video traslucente con Radeon e Composite abilitato](#Video_traslucente_con_Radeon_e_Composite_abilitato)
     *   [4.4 Problemi video Smplayer](#Problemi_video_Smplayer)
-    *   [4.5 (S)mplayer fallisce la ripresa dopo una pausa](#.28S.29mplayer_fallisce_la_ripresa_dopo_una_pausa)
+    *   [4.5 (S)mplayer fallisce la ripresa dopo una pausa](#(S)mplayer_fallisce_la_ripresa_dopo_una_pausa)
     *   [4.6 Trasparenza di SMPlayer in GNOME con Composite abilitato](#Trasparenza_di_SMPlayer_in_GNOME_con_Composite_abilitato)
-    *   [4.7 SMPlayer: i font di OSD sono troppo grossi/i sottotitoli sono troppo piccoli](#SMPlayer:_i_font_di_OSD_sono_troppo_grossi.2Fi_sottotitoli_sono_troppo_piccoli)
+    *   [4.7 SMPlayer: i font di OSD sono troppo grossi/i sottotitoli sono troppo piccoli](#SMPlayer:_i_font_di_OSD_sono_troppo_grossi/i_sottotitoli_sono_troppo_piccoli)
     *   [4.8 Vedere video in streaming](#Vedere_video_in_streaming)
     *   [4.9 Abilitare il supporto a dvdnav](#Abilitare_il_supporto_a_dvdnav)
     *   [4.10 Andare avanti e indietro in un file in scaricamento](#Andare_avanti_e_indietro_in_un_file_in_scaricamento)
     *   [4.11 Incrementare il volume totale](#Incrementare_il_volume_totale)
     *   [4.12 Stream audio jack](#Stream_audio_jack)
-    *   [4.13 Mplayer fallisce nell'apertura di file con spazi o caratteri strani nel nome](#Mplayer_fallisce_nell.27apertura_di_file_con_spazi_o_caratteri_strani_nel_nome)
+    *   [4.13 Mplayer fallisce nell'apertura di file con spazi o caratteri strani nel nome](#Mplayer_fallisce_nell'apertura_di_file_con_spazi_o_caratteri_strani_nel_nome)
 *   [5 Links Esterni](#Links_Esterni)
 
 ## Installazione
@@ -346,7 +350,7 @@ $ mplayer -ao jack [path]/nomefile
 
 ### Mplayer fallisce nell'apertura di file con spazi o caratteri strani nel nome
 
-Se provate ad aprire un file con degli spazi nel nome (es "Il Film.avi") e mplayer fallisce, lamentandosi di non poter aprire il file (file:///Il%20Film.avi), dunque indicando tutti gli spazi convertiti in %20, allora aprite il file
+Se provate ad aprire un file con degli spazi nel nome (es "Il Film.avi") e mplayer fallisce, lamentandosi di non poter aprire il file (file:///Il%20Film.avi), dunque indicando tutti gli spazi convertiti in %20, allora aprite il file
 
 ```
 /usr/share/applications/mplayer.desktop
@@ -356,7 +360,7 @@ Se provate ad aprire un file con degli spazi nel nome (es "Il Film.avi") e mplay
 con permessi di root e cambiate la riga
 
 ```
-Exec=mplayer %U
+Exec=mplayer %U
 
 ```
 

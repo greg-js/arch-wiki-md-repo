@@ -31,14 +31,15 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
     *   [3.4 Discover access points](#Discover_access_points)
     *   [3.5 Set operating mode](#Set_operating_mode)
     *   [3.6 Connect to an access point](#Connect_to_an_access_point)
-*   [4 Wi-Fi Protected Access](#Wi-Fi_Protected_Access)
-    *   [4.1 WPA2 Personal](#WPA2_Personal)
-    *   [4.2 WPA2 Enterprise](#WPA2_Enterprise)
-        *   [4.2.1 eduroam](#eduroam)
-        *   [4.2.2 Manual/automatic setup](#Manual/automatic_setup)
-        *   [4.2.3 Troubleshooting](#Troubleshooting)
-            *   [4.2.3.1 MS-CHAPv2](#MS-CHAPv2)
-    *   [4.3 WPA3 Personal](#WPA3_Personal)
+*   [4 Authentication](#Authentication)
+    *   [4.1 Wi-Fi Protected Access](#Wi-Fi_Protected_Access)
+        *   [4.1.1 WPA2 Personal](#WPA2_Personal)
+        *   [4.1.2 WPA2 Enterprise](#WPA2_Enterprise)
+            *   [4.1.2.1 eduroam](#eduroam)
+            *   [4.1.2.2 Manual/automatic setup](#Manual/automatic_setup)
+            *   [4.1.2.3 Troubleshooting](#Troubleshooting)
+                *   [4.1.2.3.1 MS-CHAPv2](#MS-CHAPv2)
+        *   [4.1.3 WPA3 Personal](#WPA3_Personal)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
     *   [5.2 Rfkill caveat](#Rfkill_caveat)
@@ -308,15 +309,17 @@ Regardless of the method used, you can check if you have associated successfully
 
 ```
 
-## Wi-Fi Protected Access
+## Authentication
 
-### WPA2 Personal
+### Wi-Fi Protected Access
+
+#### WPA2 Personal
 
 WPA2 Personal, a.k.a. WPA2-PSK, is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access").
 
 You can authenticate to WPA2 Personal networks using [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") or [iwd](/index.php/Iwd "Iwd"), or connect using a [network manager](/index.php/Network_manager "Network manager"). If you only authenticated to the network, then to have a fully functional connection you will still need to assign the IP address(es) and routes either [manually](/index.php/Network_configuration#Static_IP_address "Network configuration") or using a [DHCP](/index.php/DHCP "DHCP") client.
 
-### WPA2 Enterprise
+#### WPA2 Enterprise
 
 *WPA2 Enterprise* is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access"). It provides better security and key management than *WPA2 Personal*, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
 
@@ -330,7 +333,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 **Warning:** It is possible to use WPA2 Enterprise without the client checking the server CA certificate. However, you should always seek to do so, because without authenticating the access point the connection can be subject to a man-in-the-middle attack. This may happen because while the connection handshake itself may be encrypted, the most widely used setups transmit the password itself either in plain text or the easily breakable [#MS-CHAPv2](#MS-CHAPv2). Hence, the client might send the password to a malicious access point which then proxies the connection.
 
-#### eduroam
+##### eduroam
 
 [eduroam](https://en.wikipedia.org/wiki/eduroam "wikipedia:eduroam") is an international roaming service for users in research, higher education and further education, based on WPA2 Enterprise.
 
@@ -339,26 +342,26 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 *   Check connection details **first** with your institution before applying any profiles listed in this section. Example profiles are not guaranteed to work or match any security requirements.
 *   When storing connection profiles unencrypted, it is recommended restrict read access to the root account by specifying `chmod 600 *profile*` as root.
 
-**Tip:** Configuration for [NetworkManager](/index.php/NetworkManager "NetworkManager") and [#wpa_supplicant](#wpa_supplicant) can be generated with the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
+**Tip:** Configuration for [NetworkManager](/index.php/NetworkManager "NetworkManager") can be generated with the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
 
-#### Manual/automatic setup
+##### Manual/automatic setup
 
 *   [WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") can be configured directly by its configuration file or using its CLI/GUI front ends and used in combination with a DHCP client. See the examples in `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` for configuring the connection details.
-*   [NetworkManager](/index.php/NetworkManager "NetworkManager") can generate WPA2 Enterprise profiles with [graphical front ends](/index.php/NetworkManager#Front-ends "NetworkManager"). *nmcli* and *nmtui* do not support this, but may use existing profiles.
-*   [ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [Connman#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam_.28802.1X.29 "ConnMan") for details.
-*   [netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) for details.
+*   [NetworkManager](/index.php/NetworkManager "NetworkManager") can create WPA2 Enterprise profiles with *nmcli* or the [graphical front ends](/index.php/NetworkManager#Front-ends "NetworkManager"). *nmtui* do not support this, but may use existing profiles.
+*   [ConnMan](/index.php/ConnMan "ConnMan") needs a separate configuration file before [connecting](/index.php/ConnMan#Wi-Fi "ConnMan") to the network. See [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [ConnMan#Connecting to eduroam (802.1X)](/index.php/ConnMan#Connecting_to_eduroam_(802.1X) "ConnMan") for details.
+*   [netctl](/index.php/Netctl "Netctl") supports wpa_supplicant configuration through blocks included with `WPAConfigSection=`. See [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) for details.
 
 **Warning:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5).
 
 **Tip:** Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
 
-#### Troubleshooting
+##### Troubleshooting
 
-##### MS-CHAPv2
+###### MS-CHAPv2
 
 WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option.
 
-### WPA3 Personal
+#### WPA3 Personal
 
 WPA3 Personal, a.k.a. WPA3-SAE, is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access").
 

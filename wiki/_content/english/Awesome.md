@@ -240,7 +240,7 @@ Alternatively, see [Keyboard configuration in Xorg](/index.php/Keyboard_configur
 The default theme is at `/usr/share/awesome/themes/default`. Copy it to `~/.config/awesome/themes/default` and change `theme_path` in `rc.lua`.
 
 ```
-beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
+beautiful.init(gears.filesystem.get_config_dir() .. "/themes/default/theme.lua")
 
 ```
 

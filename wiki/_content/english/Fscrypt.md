@@ -90,7 +90,7 @@ For [F2FS](/index.php/F2FS "F2FS"), use `fsck.f2fs -O encrypt` or `mkfs.f2fs -O 
 
 ### Userspace tool
 
-[Install](/index.php/Install "Install") [fscrypt-git](https://aur.archlinux.org/packages/fscrypt-git/), or if you previously installed it, upgrade to the latest version. Then run:
+[Install](/index.php/Install "Install") the [fscrypt](https://www.archlinux.org/packages/?name=fscrypt) package. Then run:
 
 ```
 # fscrypt setup

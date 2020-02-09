@@ -125,7 +125,7 @@ An array of architectures that the `PKGBUILD` is intended to build and work on. 
 
 There are two types of values the array can use:
 
-*   `arch=('any')` is a magic value that, used on its own, indicates the package can be built once on any architecture, and once built, is architecture-independent in its compiled state (shell scripts, fonts, themes, many types of extensions, etc.).
+*   `arch=('any')` indicates the package can be built once on any architecture, and once built, is architecture-independent in its compiled state (shell scripts, fonts, themes, many types of extensions, etc.).
 
 *   `arch=('x86_64')` with one or more architectures indicates the package can be compiled for any of the specified architectures, but is architecture-specific once compiled. For these packages, specify all architectures that the `PKGBUILD` officially supports. For official repository and AUR packages, this means *x86_64*. Optionally, AUR packages may choose to additionally support other known working architectures.
 

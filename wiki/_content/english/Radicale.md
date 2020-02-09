@@ -37,12 +37,13 @@ $ radicale --help
 
 ### Integration
 
-Radicale can be integrated with HTTP webservers like [Apache](/index.php/Apache "Apache") which support the mod_wsgi interface. This causes several options for the configuration of Radicale to be ignored, including: hosts, daemon, pid, ssl, certificate, key, protocol and ciphers keys in the [server] section of the config. Install the radicale module in the python path and write the .wsgi file (to document root).
+Radicale can be integrated with HTTP webservers like [Apache](/index.php/Apache "Apache") which support the WSGI interface. Install the [mod_wsgi](https://www.archlinux.org/packages/?name=mod_wsgi) Apache module.
+
+This causes several options for the configuration of Radicale to be ignored, including: hosts, daemon, pid, ssl, certificate, key, protocol and ciphers keys in the [server] section of the config. Install the radicale module in the python path and write the .wsgi file (to document root).
 
 ```
-# import radicale
-# radicale.log.start()
-# application = radicale.Application()
+from radicale import application
+
 ```
 
 The next step is to set up a virtual host for radicale. An example:
@@ -63,6 +64,15 @@ The next step is to set up a virtual host for radicale. An example:
     </Directory>
 </VirtualHost>
 ```
+
+If you installed the Radicale package via pacman, you must also change the ownership of this directory:
+
+```
+# chown http:http /var/lib/radicale
+
+```
+
+Otherwise, the wsgi script will fail on its first run.
 
 ## Client support
 

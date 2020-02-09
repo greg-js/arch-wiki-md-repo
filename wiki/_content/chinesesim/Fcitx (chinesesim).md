@@ -17,7 +17,7 @@ Related articles
 *   [1 安装](#安装)
     *   [1.1 输入法引擎](#输入法引擎)
         *   [1.1.1 中文](#中文)
-        *   [1.1.2 Japanese](#Japanese)
+        *   [1.1.2 日文](#日文)
         *   [1.1.3 其它语言](#其它语言)
     *   [1.2 输入法模块](#输入法模块)
     *   [1.3 其它](#其它)
@@ -75,10 +75,10 @@ Fcitx 内置的输入法支持中文 [拼音](https://en.wikipedia.org/wiki/Piny
 *   [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) 为 Fcitx 添加 chewing (繁体中文注音) 输入引擎支持。依赖 [libchewing](https://www.archlinux.org/packages/?name=libchewing).
 *   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) adds [Cangjie](https://en.wikipedia.org/wiki/Cangjie_input_method "wikipedia:Cangjie input method"), [Zhengma](https://en.wikipedia.org/wiki/Zhengma_method "wikipedia:Zhengma method"), [Boshiamy](https://en.wikipedia.org/wiki/Boshiamy_method "wikipedia:Boshiamy method") support.
 
-#### Japanese
+#### 日文
 
 *   [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc), 为 Fcitx 添加 mozc (日语) 输入引擎支持，mozc 是 Google 日语输入法的开源版本。
-*   [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc), a new Japanese Kana Kanji input engine, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
+*   [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc), 一款基于 [libkkc](https://www.archlinux.org/packages/?name=libkkc) 的日文假名与汉字输入引擎。
 *   [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy), 为 Fcitx 添加 anthy (日语) 输入引擎支持。
 
 #### 其它语言

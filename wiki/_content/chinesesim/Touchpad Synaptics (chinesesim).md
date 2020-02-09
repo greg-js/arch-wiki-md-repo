@@ -643,7 +643,7 @@ Occasionally touchpads will fail to work when the computer resumes from sleep or
 **Note:** You can use Ctrl-Alt-F1 through F8 to switch to a console without using the mouse.
 
 ```
-modprobe -r psmouse #psmouse happens to be the kernel module for my touchpad (Alps DualPoint)
+modprobe -r psmouse #psmouse happens to be the kernel module for my touchpad (Alps DualPoint)(有些电脑不是psmouse而是i2c_hid)
 modprobe psmouse
 
 ```
@@ -651,6 +651,49 @@ modprobe psmouse
 Now switch back to the tty that X is running on. If you chose the right module, your touchpad should be working again.
 
 如果您使用的是笔记本电脑，在合上笔记本电脑盖子后再次打开之后遇到这个问题，可以修改您的电源管理策略，将合上盖子的行为改为“关闭屏幕”，而不是”挂起“或者”休眠“
+
+**Note:** 当然禁用休眠不能很好的解决这个问题,下面提供一种更彻底的方法
+
+新建一个/usr/lib/systemd/system/mysleep
+
+```
+#!/bin/bash
+/usr/lib/systemd/systemd-sleep suspend && modprobe -r i2c_hid && modprobe i2c_hid(有些电脑不是i2c_hid而是psmouse)
+
+```
+
+添加权限
+
+```
+sudo chmod +x /usr/lib/systemd/system/mysleep
+
+```
+
+修改/usr/lib/systemd/system/systemd-suspend.service为
+
+```
+[Unit]
+Description=Suspend
+Documentation=man:systemd-suspend.service(8)
+DefaultDependencies=no
+Requires=sleep.target
+After=sleep.target
+
+[Service]
+Type=oneshot
+#ExecStart=/usr/lib/systemd/systemd-sleep suspend
+ExecStart=/usr/lib/systemd/system/mysleep
+
+```
+
+刷新系统服务:
+
+```
+sudo systemctl daemon-reload
+
+```
+
+再次休眠唤醒，触摸板应该可以正常工作了。 目前在Arch linux上测试有效。
 
 ### xorg.conf.d/70-synaptics.conf在 MATE 上失效
 

@@ -25,6 +25,7 @@ This article is an introduction to building custom kernels from **kernel.org sou
         *   [4.3.2 Manual method](#Manual_method)
     *   [4.4 Copy System.map](#Copy_System.map)
 *   [5 Bootloader configuration](#Bootloader_configuration)
+*   [6 See also](#See_also)
 
 ## Preparation
 
@@ -317,3 +318,7 @@ After completing all steps above, you should have the following 3 files and 1 so
 Add an entry for your new kernel in your bootloader's configuration file. See [Arch boot process#Feature comparison](/index.php/Arch_boot_process#Feature_comparison "Arch boot process") for possible boot loaders, their wiki articles and other information.
 
 **Tip:** Kernel sources include a script to automate the process for [LILO](/index.php/LILO "LILO"): `$ arch/x86/boot/install.sh`. Remember to type `lilo` as root at the prompt to update it.
+
+## See also
+
+*   [https://cateee.net/lkddb/web-lkddb/](https://cateee.net/lkddb/web-lkddb/) includes a comprehensive list of the kernel configuration strings and accompanying text, sorted alphabetically.

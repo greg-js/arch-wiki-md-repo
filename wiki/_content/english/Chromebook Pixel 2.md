@@ -14,6 +14,8 @@ This page details installing Arch Linux on the Google Chromebook Pixel (2015). I
     *   [2.1 Suspend](#Suspend)
 *   [3 Audio, Brightness, and Touch](#Audio,_Brightness,_and_Touch)
     *   [3.1 Audio scripts fail](#Audio_scripts_fail)
+    *   [3.2 Kernel 5.5 Audio Issues](#Kernel_5.5_Audio_Issues)
+    *   [3.3 Enable pulseaudio-alsa without scripts](#Enable_pulseaudio-alsa_without_scripts)
 *   [4 Keyboard Bindings](#Keyboard_Bindings)
 *   [5 Unresolved Issues](#Unresolved_Issues)
 *   [6 See Also](#See_Also)
@@ -83,6 +85,27 @@ options snd-hda-intel index=1
 ```
 
 and make sure to install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa)
+
+### Kernel 5.5 Audio Issues
+
+After Linux Kernel 5.5, there is an extra kernel options to enable SST audio driver for bdw-rt5677 (Which is initially disabled after 5.5). Add the following switches in the kernel boot parameters to enable audio
+
+```
+snd_intel_dspcfg.dsp_driver=2
+
+```
+
+### Enable pulseaudio-alsa without scripts
+
+The hardware and driver mismatch the left and right channel, and it is defaultly muted. Just open alsamixer, and turn on the following switches will make audio works
+
+```
+Stereo DAC MIXL DAC1 R
+Stereo DAC MIXR DAC1 L
+
+```
+
+This switches will make all audio works, and enable the autoswitch to headphone when connected. (If no other scripts make the audio works, linux-samus's sripts will make the autoswitch failed)
 
 ## Keyboard Bindings
 

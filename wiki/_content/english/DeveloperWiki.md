@@ -37,6 +37,7 @@
 *   [DeveloperWiki:Internal Projects](/index.php/DeveloperWiki:Internal_Projects "DeveloperWiki:Internal Projects")
 *   [DeveloperWiki:Roll Call](/index.php/DeveloperWiki:Roll_Call "DeveloperWiki:Roll Call")
 *   [DeveloperWiki:Linux Conferences](/index.php/DeveloperWiki:Linux_Conferences "DeveloperWiki:Linux Conferences")
+*   [DeveloperWiki:Google Summer of Code](/index.php/DeveloperWiki:Google_Summer_of_Code "DeveloperWiki:Google Summer of Code")
 
 ### Packaging Guidelines
 

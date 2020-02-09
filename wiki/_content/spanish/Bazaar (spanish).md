@@ -5,7 +5,7 @@ Este artículo es una traducción de [Bazaar](/index.php/Bazaar "Bazaar"), revis
 
 ## Instalación
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [bzr](https://www.archlinux.org/packages/?name=bzr). Para la versión de desarrollo, instale el paquete [bzr-bzr](https://aur.archlinux.org/packages/bzr-bzr/). El explorador de Bazaar lo proporciona el paquete [bzr-explorer](https://aur.archlinux.org/packages/bzr-explorer/).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [bzr](https://aur.archlinux.org/packages/bzr/). Para la versión de desarrollo, instale el paquete [bzr-bzr](https://aur.archlinux.org/packages/bzr-bzr/). El explorador de Bazaar lo proporciona el paquete [bzr-explorer](https://aur.archlinux.org/packages/bzr-explorer/).
 
 ## Utilización
 

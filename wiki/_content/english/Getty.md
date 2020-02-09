@@ -85,13 +85,22 @@ ExecStart=-/usr/bin/agetty --autologin *username* -s %I 115200,38400,9600 vt102
 
 ### Nspawn console
 
-To configure auto-login for a [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") container, override *console-getty* service:
+To configure auto-login for a [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") container, override `console-getty.service`:
 
  `/etc/systemd/system/console-getty.service.d/override.conf` 
 ```
 [Service]
 ExecStart=
 ExecStart=-/sbin/agetty --noclear --autologin *username* --keep-baud console 115200,38400,9600 $TERM
+```
+
+If `machinectl login *my-container*` method is used to access the container, also add `--autologin *username*` to `container-getty@.service` template that manages `pts/[0-9]` pseudo ttys:
+
+ `/etc/systemd/system/container-getty@.service.d/override.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty -o '-p -- \\u' --noclear --autologin *username* --keep-baud pts/%I 115200,38400,9600 $TERM
 ```
 
 ## Prompt only the password for a default user in virtual console login

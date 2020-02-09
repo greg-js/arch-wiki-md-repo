@@ -2,7 +2,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [bzr](https://www.archlinux.org/packages/?name=bzr) package. For the development version, install the [bzr-bzr](https://aur.archlinux.org/packages/bzr-bzr/) package. The Bazaar Explorer is provided by the [bzr-explorer](https://aur.archlinux.org/packages/bzr-explorer/) package.
+[Install](/index.php/Install "Install") the [bzr](https://aur.archlinux.org/packages/bzr/) package. For the development version, install the [bzr-bzr](https://aur.archlinux.org/packages/bzr-bzr/) package. The Bazaar Explorer is provided by the [bzr-explorer](https://aur.archlinux.org/packages/bzr-explorer/) package.
 
 ## Usage
 

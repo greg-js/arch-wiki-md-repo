@@ -197,7 +197,7 @@ XCURSOR_SIZE is optional if your cursor theme supports multiple sizes.
 
 If cursor themes are installed in `~/.local/share/icons`, in order to avoid possible issues, add that path to XCURSOR_PATH. For example:
 
- `~/.bash_profile`  `export XCURSOR_PATH=${$XCURSOR_PATH}:~/.local/share/icons` 
+ `~/.bash_profile`  `export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons` 
 
 ### Display managers
 

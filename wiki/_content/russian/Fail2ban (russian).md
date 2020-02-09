@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Fail2ban](/index.php/Fail2ban "Fail2ban"). Дата последней синхронизации: 6 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Fail2ban&diff=0&oldid=574713).
+**Состояние перевода:** На этой странице представлен перевод статьи [Fail2ban](/index.php/Fail2ban "Fail2ban"). Дата последней синхронизации: 2 февраля 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Fail2ban&diff=0&oldid=595700).
 
 [Fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page) сканирует лог-файлы (например, `/var/log/httpd/error_log`) и блокирует IP-адреса, которые ведут себя подозрительно, к примеру, делая слишком много попыток входа с неверным паролем в попытках найти уязвимости и т.п. Обычно Fail2ban используется для обновления правил с целью блокировки IP-адресов на определённое время, но можно настроить и другие действия — например, отправку письма по электронной почте.
 
@@ -109,7 +109,16 @@ action = %(action_mw)s
 
 ### Межсетевой экран и службы
 
-Большинство и служб должны работать по умолчанию. См. содержимое директории `/etc/fail2ban/action.d/` для получения примеров, например, [ufw.conf](https://github.com/fail2ban/fail2ban/blob/master/config/action.d/ufw.conf).
+По умолчанию Fail2ban использует [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)"). Однако, настройка большинства и служб не представляет трудности. Пример использования [nftables](/index.php/Nftables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nftables (Русский)"):
+
+ `/etc/fail2ban/jail.local` 
+```
+[DEFAULT]
+banaction = nftables
+
+```
+
+См. содержимое директории `/etc/fail2ban/action.d/` для получения других примеров, например, [ufw.conf](https://github.com/fail2ban/fail2ban/blob/master/config/action.d/ufw.conf).
 
 ## Советы и рекомендации
 

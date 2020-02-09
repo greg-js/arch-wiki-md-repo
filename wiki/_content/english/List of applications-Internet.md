@@ -2190,3 +2190,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 *   **[Xrdp](/index.php/Xrdp "Xrdp")** — A daemon that supports RDP. It uses Xvnc, X11rdp or xorgxrdp as a backend.
 
 	[http://xrdp.org/](http://xrdp.org/) || [xrdp](https://aur.archlinux.org/packages/xrdp/)
+
+*   **wayvnc** — VNC server for wlroots based wayland compositors (such as [sway](https://www.archlinux.org/packages/?name=sway)).
+
+	[https://github.com/any1/wayvnc](https://github.com/any1/wayvnc) || [wayvnc](https://aur.archlinux.org/packages/wayvnc/)

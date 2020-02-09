@@ -32,6 +32,7 @@
     *   [4.7 Non US keyboards](#Non_US_keyboards)
     *   [4.8 Use xinitrc to export](#Use_xinitrc_to_export)
     *   [4.9 Rescue from an iBus crash](#Rescue_from_an_iBus_crash)
+    *   [4.10 Firejail](#Firejail)
 *   [5 ibus-m17n](#ibus-m17n)
     *   [5.1 English international AltGr](#English_international_AltGr)
     *   [5.2 Trouble with Japanese](#Trouble_with_Japanese)
@@ -331,6 +332,28 @@ ibus-terminal -r &
 ```
 
 **The ending '&' is very important, else it will brake input when you stop it.**
+
+### Firejail
+
+Sandboxed programs may not work with some IBus input methods due to the input socket being invisible to the sandbox[[2]](https://github.com/netblue30/firejail/issues/116)[[3]](https://github.com/ibus/ibus/issues/2020)[[4]](https://github.com/netblue30/firejail/issues/1302). For example, Firefox sandboxed with Firejail may not register inputs given by IBus Anthy.
+
+A workaround is to make IBus use [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") by exporting the following environment variables
+
+```
+export GTK_IM_MODULE=xim
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=xim
+
+```
+
+and launching the IBus daemon with
+
+```
+ibus-daemon -drx
+
+```
+
+at login.
 
 ## ibus-m17n
 

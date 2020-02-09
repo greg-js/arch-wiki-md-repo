@@ -166,7 +166,7 @@ Make sure you haven't set GDK_BACKEND=wayland. Setting it globally will break El
 
 ### Remote display
 
-*   (20190503) [wlroots](https://www.archlinux.org/packages/?name=wlroots) (used by [sway](/index.php/Sway "Sway")) offers an RDP backend since version 0.6 [[4]](https://github.com/swaywm/wlroots/blob/master/docs/env_vars.md).
+*   (20200206) [wlroots](https://www.archlinux.org/packages/?name=wlroots) (used by [sway](/index.php/Sway "Sway")) offers an VNC backend via [wayvnc](https://aur.archlinux.org/packages/wayvnc/) since version 0.10\. RDP backend has been removed. [[4]](https://github.com/swaywm/wlroots/releases/tag/0.10.0).
 *   (20180401) [mutter](https://www.archlinux.org/packages/?name=mutter) has now remote desktop enabled at compile time, see [[5]](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [gnome-remote-desktop](https://www.archlinux.org/packages/?name=gnome-remote-desktop) for details.
 *   There was a merge of FreeRDP into Weston in 2013, enabled via a compile flag. The [weston](https://www.archlinux.org/packages/?name=weston) package has it enabled since version 6.0.0.
 *   [waypipe-git](https://aur.archlinux.org/packages/waypipe-git/) is a transparent proxy for Wayland applications, with a wrapper command to run over [SSH](/index.php/SSH "SSH")

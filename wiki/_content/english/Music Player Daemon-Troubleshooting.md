@@ -25,6 +25,7 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
         *   [1.8.1 High CPU usage with ALSA](#High_CPU_usage_with_ALSA)
         *   [1.8.2 Playing audio files with different rate (works for EMU 0202/0204/0404)](#Playing_audio_files_with_different_rate_(works_for_EMU_0202/0204/0404))
     *   [1.9 Changing user](#Changing_user)
+    *   [1.10 MPD includes music from hidden folders in database](#MPD_includes_music_from_hidden_folders_in_database)
 
 ## Troubleshooting
 
@@ -277,3 +278,7 @@ This is because the MPD users need to be part of the *audio* group to access sou
 # gpasswd -a 'MPD' audio
 
 ```
+
+### MPD includes music from hidden folders in database
+
+MPD includes hidden folders in it's database such as repetitive backups of music made by [syncthing](https://www.archlinux.org/packages/?name=syncthing) such as `.stfolder`. To correct for this, create a `.mpdignore` file in the same directory with a list of folders or files to ignore on each line as per the [mpd documentation](https://www.musicpd.org/doc/html/user.html#the-music-directory-and-the-database).

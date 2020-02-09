@@ -299,7 +299,7 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 
 **Note:**
 
-*   If you use a special keymap, a default GRUB installation will not know it. This is relevant for how to enter the passphrase to unlock the LUKS blockdevice.
+*   If you use a special keymap, a default GRUB installation will not know it. This is relevant for how to enter the passphrase to unlock the LUKS blockdevice. See [GRUB/Tips and tricks#Manual configuration of core image for early boot](/index.php/GRUB/Tips_and_tricks#Manual_configuration_of_core_image_for_early_boot "GRUB/Tips and tricks").
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling GRUB and appending `--modules="part_gpt part_msdos"` to the end of your `grub-install` command.
 
 **Tip:** You can use [pacman hooks](https://bbs.archlinux.org/viewtopic.php?id=234607) to automount your `/boot` when upgrades need to access related files.

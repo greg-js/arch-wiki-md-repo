@@ -16,7 +16,6 @@ Related articles
     *   [2.2 Google Chrome](#Google_Chrome)
 *   [3 Local DNS server](#Local_DNS_server)
     *   [3.1 cloudflared](#cloudflared)
-    *   [3.2 CoreDNS](#CoreDNS)
 *   [4 See also](#See_also)
 
 ## Publicly available servers
@@ -67,29 +66,6 @@ proxy-dns-address: 0.0.0.0
 4\. Use `127.0.0.1:5053` as a DNS server
 
 Upstream documentation: [https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/](https://developers.cloudflare.com/1.1.1.1/dns-over-https/cloudflared-proxy/)
-
-### CoreDNS
-
-1\. Install [coredns](https://aur.archlinux.org/packages/coredns/) or [coredns-bin](https://aur.archlinux.org/packages/coredns-bin/)
-
-2\. Configure CoreDNS to use Cloudflare, see [[4]](https://coredns.io/plugins/forward/) for details.
-
- `/etc/coredns/Corefile` 
-```
-. {
-    forward . tls://1.1.1.1 tls://1.0.0.1 {
-       tls_servername cloudflare-dns.com
-       health_check 5s
-    }
-    cache 30
-}
-```
-
-3\. [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `coredns.service`
-
-4\. Use CoreDNS as nameserver.
-
- `/etc/resolv.conf`  `nameserver 127.0.0.1` 
 
 ## See also
 

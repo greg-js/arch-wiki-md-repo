@@ -420,7 +420,7 @@ To remove users from a group:
 
 ```
 
-If the user is currently logged in, he must log out and in again for the change to take effect.
+**Note:** If the user is currently logged in, he must log out and in again for the change to take effect.
 
 The *grpck* command can be used to verify the integrity of the system's group files.
 

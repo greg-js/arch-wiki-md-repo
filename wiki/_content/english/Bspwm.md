@@ -48,8 +48,6 @@ Run `bspwm` using [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 
-**Important:** Make sure your [environment variable](/index.php/Environment_variable "Environment variable") `$XDG_CONFIG_HOME` is set or your bspwmrc will not be found. This can be done by adding `XDG_CONFIG_HOME="$HOME/.config"` and `export XDG_CONFIG_HOME` to your `~/.profile`.
-
 The example configuration is located in `/usr/share/doc/bspwm/examples/`.
 
 Copy `bspwmrc` from there into `~/.config/bspwm/` and `sxhkdrc` into `~/.config/sxhkd/`.
@@ -249,9 +247,9 @@ Put this script somewhere in your `$PATH` and call it from `.xinitrc` or similar
  # change the desktop number here
  FLOATING_DESKTOP_ID=$(bspc query -D -d '^3')
 
- bspc subscribe node_manage | while read -a msg ; do
+ bspc subscribe node_add | while read -a msg ; do
     desk_id=${msg[2]}
-    wid=${msg[3]}
+    wid=${msg[4]}
     [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
  done
 

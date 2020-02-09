@@ -353,6 +353,7 @@ install CD version
 [https://linux-hardware.org/index.php?computer=af3a4bc1494f](https://linux-hardware.org/index.php?computer=af3a4bc1494f)
 
  |
+| Lenovo Legion Y530 | 2020.02.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Webcam (Yes) USB & USB C (Yes) HDMI (Yes) TouchPad (Yes) NVMe SSD (Yes with AHCI in UEFI) Geforce GTX 1650 (Yes, with nvidia and nvidia-prime, with or without switchable/discrete graphics in UEFI) Mini Display Port (not tested) | Tested on 8 February 2020 with Linux 5.5.1 |
 
 ## Special Notes (*):
 

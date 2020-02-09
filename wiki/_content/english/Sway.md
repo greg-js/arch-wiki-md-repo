@@ -239,7 +239,7 @@ xwayland disable
 
 **Note:** Some programs, like [Firefox](/index.php/Firefox#Wayland "Firefox"), [bemenu](#Application_launchers) or [Qt5](/index.php/Wayland#Qt_5 "Wayland") based programs, also need specific environment variables set for them to run natively under Wayland.
 
-**Note:** In a fresh Sway install, you need to change the default menu and terminal applications because they depend on XWayland.
+**Note:** In a fresh Sway install with the default configuration, you need to change the default menu application because it depends on XWayland.
 
 ## Tips and tricks
 

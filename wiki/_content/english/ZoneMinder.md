@@ -7,20 +7,19 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 Installation using zoneminder package from AUR](#Installation_using_zoneminderAUR_package_from_AUR)
-*   [3 Manual installation](#Manual_installation)
-    *   [3.1 Apache](#Apache)
-    *   [3.2 PHP](#PHP)
-    *   [3.3 MySQL](#MySQL)
-        *   [3.3.1 Security](#Security)
-    *   [3.4 Starting](#Starting)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Flushing application data](#Flushing_application_data)
-        *   [4.1.1 Recreate the database](#Recreate_the_database)
-        *   [4.1.2 Flush the cache folders](#Flush_the_cache_folders)
-    *   [4.2 Local video devices](#Local_video_devices)
-    *   [4.3 Multiple local USB cameras](#Multiple_local_USB_cameras)
-*   [5 See also](#See_also)
+*   [2 Manual installation](#Manual_installation)
+    *   [2.1 Apache](#Apache)
+    *   [2.2 PHP](#PHP)
+    *   [2.3 MySQL](#MySQL)
+        *   [2.3.1 Security](#Security)
+    *   [2.4 Starting](#Starting)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Flushing application data](#Flushing_application_data)
+        *   [3.1.1 Recreate the database](#Recreate_the_database)
+        *   [3.1.2 Flush the cache folders](#Flush_the_cache_folders)
+    *   [3.2 Local video devices](#Local_video_devices)
+    *   [3.3 Multiple local USB cameras](#Multiple_local_USB_cameras)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -30,14 +29,6 @@
 
 **Warning:** The [zoneminder](https://aur.archlinux.org/packages/zoneminder/) package includes a comprehensive [install script](https://aur.archlinux.org/cgit/aur.git/tree/zoneminder.install?h=zoneminder) which will modify your web server and database configuration. It will also start ZoneMinder. Make sure you understand what this script does before installing the package.
 
-## Installation using [zoneminder](https://aur.archlinux.org/packages/zoneminder/) package from AUR
-
-This package now has most of the needed configuration and most of the manual configuration described below is not necessary anymore.
-
-[Install](/index.php/Install "Install") the [zoneminder](https://aur.archlinux.org/packages/zoneminder/) package.
-
-This package now pulls Nginx, MariaDB and PHP, Apache is no longer needed.
-
 Set up sql mode, otherwise strange sql-related errors will occur when saving various parts of configuration
 
  `/etc/mysql/my.cnf.d/zoneminder.cnf` 
@@ -45,8 +36,6 @@ Set up sql mode, otherwise strange sql-related errors will occur when saving var
 [mysqld]
 sql_mode=NO_ENGINE_SUBSTITUTION
 ```
-
-[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `nginx.service`, `zoneminder.service`, `fcgiwrap-multiwatch.service` and `php-fpm.service`.
 
 Once configuration below is completed and the system service started, the web interface will be accessible via [http://localhost:8095](http://localhost:8095)
 

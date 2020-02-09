@@ -13,7 +13,7 @@
 *   [Официальные репозитории](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории")
 *   [Пользовательский репозиторий Arch](/index.php/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9_Arch "Пользовательский репозиторий Arch")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [pacman](/index.php/Pacman "Pacman"). Дата последней синхронизации: 15 января 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=595130).
+**Состояние перевода:** На этой странице представлен перевод статьи [pacman](/index.php/Pacman "Pacman"). Дата последней синхронизации: 2 февраля 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=595383).
 
 [Система управления пакетами](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%D0%BC%D0%B8 и пакеты в двоичном формате. Цель *pacman* — организация удобного управления пакетами вне зависимости от того, взяты они из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") или же собраны самостоятельно.
 
@@ -66,7 +66,7 @@
     *   [3.10 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_"0123456789ABCDEF"_could_not_be_looked_up_remotely)
     *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_"User_<email@archlinux.org>"_is_invalid,_installation_failed)
     *   [3.12 Warning: current locale is invalid; using default "C" locale](#Warning:_current_locale_is_invalid;_using_default_"C"_locale)
-    *   [3.13 рacman игнорирует настройки прокси](#рacman_игнорирует_настройки_прокси)
+    *   [3.13 Pacman игнорирует настройки прокси](#Pacman_игнорирует_настройки_прокси)
     *   [3.14 Как переустановить все пакеты, сохранив информацию о том, какие из них установлены вручную, а какие — в качестве зависимостей?](#Как_переустановить_все_пакеты,_сохранив_информацию_о_том,_какие_из_них_установлены_вручную,_а_какие_—_в_качестве_зависимостей?)
     *   [3.15 Cannot open shared object file](#Cannot_open_shared_object_file)
     *   [3.16 Проблемы с загрузкой пакетов](#Проблемы_с_загрузкой_пакетов)
@@ -758,9 +758,9 @@ Errors occured, no packages were upgraded.
 
 Как сказано в сообщении ошибки, локаль системы настроена неправильно (см. [Locale](/index.php/Locale_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Locale (Русский)")).
 
-### рacman игнорирует настройки прокси
+### Pacman игнорирует настройки прокси
 
-Удостоверьтесь, что соответствующие переменные окружения (`$http_proxy`, `$ftp_proxy` и т.д.) заданы верно. Если вы используете *pacman* вместе с [sudo](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)"), необходимо настроить sudo на [передачу переменных окружения в pacman](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Переменные_окружения "Sudo (Русский)").
+Удостоверьтесь, что соответствующие переменные окружения (`$http_proxy`, `$ftp_proxy` и т.д.) заданы верно. Если вы используете *pacman* вместе с [sudo](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)"), необходимо настроить sudo на [передачу переменных окружения в pacman](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Переменные_окружения "Sudo (Русский)"). Также убедитесь, что настройки [dirmngr](/index.php/GnuPG#Use_a_keyserver "GnuPG") в файле `/etc/pacman.d/gnupg/dirmngr.conf` содержат параметр `honor-http-proxy`, отвечающий за использование прокси при обновлении ключей.
 
 ### Как переустановить все пакеты, сохранив информацию о том, какие из них установлены вручную, а какие — в качестве зависимостей?
 

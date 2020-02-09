@@ -52,6 +52,19 @@ Additional hardware information from `lsusb` and `lspci` can be found bellow:
 `lsusb`
 
 ```
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 06cb:00bd Synaptics, Inc. 
+Bus 001 Device 002: ID 04ca:7070 Lite-On Technology Corp. Integrated Camera
+Bus 001 Device 004: ID 8087:0aaa Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+`lspci`
+
+```
 00:00.0 Host bridge: Intel Corporation Coffee Lake HOST and DRAM Controller (rev 0c)
 00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620 (Whiskey Lake) (rev 02)
 00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 0c)
@@ -81,19 +94,6 @@ Additional hardware information from `lsusb` and `lspci` can be found bellow:
 
 ```
 
-`lspci`
-
-```
-Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 001 Device 003: ID 06cb:00bd Synaptics, Inc. 
-Bus 001 Device 002: ID 04ca:7070 Lite-On Technology Corp. Integrated Camera
-Bus 001 Device 004: ID 8087:0aaa Intel Corp. 
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-
-```
-
 ## BIOS
 
 ## FN Keys
@@ -109,9 +109,23 @@ Most FN keys should work out of the box, but if it doesn't, bind mentioned keys 
 
 Touchpad works. But some users have reported issues with the related [Lenovo ThinkPad T490#Touchpad](/index.php/Lenovo_ThinkPad_T490#Touchpad "Lenovo ThinkPad T490").
 
+Sometimes the kernel may use an incorrect mode for communicating with the touchpad, causing the touchpad to completely cease working. This could happen after upgrading the firmware in Windows. This could be indicated by something like following in the kernel log.
+
+ `# dmesg` 
+```
+[ 2.874664] elan_i2c 0-0015: 0-0015 supply vcc not found, using dummy regulator
+
+```
+
+A workaround is to load the psmouse module with `elantech_smbus=0` option. You can do so by creating a file `/etc/modprobe.d/psmouse.conf` with the following content:
+
+ `/etc/modprobe.d/psmouse.conf`  `options psmouse elantech_smbus=0` 
+
+or by applying the `psmouse.elantech_smbus=0` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://bugs.archlinux.org/task/59714) for more info.
+
 ## Fingerprint Sensor
 
-The fingerprint sensor works with some recent firmware and software updates (2019-12-15). Driver development info: [[2]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
+The fingerprint sensor works with some recent firmware and software updates (2019-12-15). Driver development info: [[3]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
 
 1.  Use [fwupd](/index.php/Fwupd "Fwupd") to install the latest firmware for "Synaptics Prometheus Fingerprint Reader". The update might have to be done manually as the released firmware is in testing; or you could [enable the testing remote in fwupd](https://github.com/fwupd/fwupd/wiki/LVFS-Testing-remote) to allow automated upgrade. The relevant firmwares are [Prometheus Fingerprint Reader](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware) and [Prometheus Fingerprint Reader Configuration](https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config).
 2.  Latest [fprintd and libfprint](https://fprint.freedesktop.org/) are required. [fprintd-libfprint2](https://aur.archlinux.org/packages/fprintd-libfprint2/) and [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/) can be useful here.

@@ -16,6 +16,7 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
 | [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
 | Native Ethernet with [dongle](https://www.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-Ethernet-Extension-Adapter-2/p/4X90Q84427) (sometimes not included) | Yes | ? |
+| Mobile broadband Fibocom | ? | ? |
 | Audio | Yes | snd_hda_intel |
 | Microphone | No³ | snd_sof, snd_sof_intel_hda |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
@@ -42,24 +43,72 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 BIOS](#BIOS)
-    *   [1.1 Updates](#Updates)
-        *   [1.1.1 Automatic (Linux Vendor Firmware Service)](#Automatic_(Linux_Vendor_Firmware_Service))
-    *   [1.2 BIOS hanging, not booting into bootloader](#BIOS_hanging,_not_booting_into_bootloader)
-    *   [1.3 Sleep/Suspend](#Sleep/Suspend)
-    *   [1.4 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
-    *   [1.5 Enabling S3](#Enabling_S3)
-*   [2 Audio](#Audio)
-    *   [2.1 Volume controls](#Volume_controls)
-        *   [2.1.1 Persistent fix](#Persistent_fix)
-*   [3 Tablet Functions](#Tablet_Functions)
-    *   [3.1 Stylus](#Stylus)
-    *   [3.2 Screen Rotation](#Screen_Rotation)
-        *   [3.2.1 Automatic Screen Rotation in Gnome](#Automatic_Screen_Rotation_in_Gnome)
-        *   [3.2.2 With Screen Rotator](#With_Screen_Rotator)
-*   [4 Touchpad](#Touchpad)
-*   [5 Fingerprint sensor](#Fingerprint_sensor)
-*   [6 Configuration](#Configuration)
+*   [1 Hardware](#Hardware)
+*   [2 BIOS](#BIOS)
+    *   [2.1 Updates](#Updates)
+        *   [2.1.1 Automatic (Linux Vendor Firmware Service)](#Automatic_(Linux_Vendor_Firmware_Service))
+    *   [2.2 BIOS hanging, not booting into bootloader](#BIOS_hanging,_not_booting_into_bootloader)
+    *   [2.3 Sleep/Suspend](#Sleep/Suspend)
+    *   [2.4 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
+    *   [2.5 Enabling S3](#Enabling_S3)
+*   [3 Audio](#Audio)
+*   [4 Tablet Functions](#Tablet_Functions)
+    *   [4.1 Stylus](#Stylus)
+    *   [4.2 Screen Rotation](#Screen_Rotation)
+        *   [4.2.1 Automatic Screen Rotation in Gnome](#Automatic_Screen_Rotation_in_Gnome)
+        *   [4.2.2 With Screen Rotator](#With_Screen_Rotator)
+*   [5 Touchpad](#Touchpad)
+*   [6 Fingerprint sensor](#Fingerprint_sensor)
+*   [7 Configuration](#Configuration)
+
+## Hardware
+
+Additional hardware information from `lsusb` and `lspci` can be found below when using the [linux](https://www.archlinux.org/packages/?name=linux) kernel 5.5.1:
+
+`lsusb`
+
+```
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 04f2:b67c Chicony Electronics Co., Ltd Integrated Camera
+Bus 001 Device 002: ID 056a:51b6 Wacom Co., Ltd Pen and multitouch sensor
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+`lspci`
+
+```
+00:00.0 Host bridge: Intel Corporation Coffee Lake HOST and DRAM Controller (rev 0c)
+00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620 (Whiskey Lake) (rev 02)
+00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 0c)
+00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model
+00:12.0 Signal processing controller: Intel Corporation Cannon Point-LP Thermal Controller (rev 11)
+00:13.0 Serial controller: Intel Corporation Cannon Point-LP Integrated Sensor Hub (rev 11)
+00:14.0 USB controller: Intel Corporation Cannon Point-LP USB 3.1 xHCI Controller (rev 11)
+00:14.2 RAM memory: Intel Corporation Cannon Point-LP Shared SRAM (rev 11)
+00:14.3 Network controller: Intel Corporation Cannon Point-LP CNVi [Wireless-AC] (rev 11)
+00:15.0 Serial bus controller [0c80]: Intel Corporation Cannon Point-LP Serial IO I2C Controller #0 (rev 11)
+00:15.1 Serial bus controller [0c80]: Intel Corporation Cannon Point-LP Serial IO I2C Controller #1 (rev 11)
+00:16.0 Communication controller: Intel Corporation Cannon Point-LP MEI Controller #1 (rev 11)
+00:1d.0 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #9 (rev f1)
+00:1d.4 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #13 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Cannon Point-LP LPC Controller (rev 11)
+00:1f.3 Audio device: Intel Corporation Cannon Point-LP High Definition Audio Controller (rev 11)
+00:1f.4 SMBus: Intel Corporation Cannon Point-LP SMBus Controller (rev 11)
+00:1f.5 Serial bus controller [0c80]: Intel Corporation Cannon Point-LP SPI Controller (rev 11)
+00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (6) I219-V (rev 11)
+03:00.0 Non-Volatile memory controller: Sandisk Corp Device 5006
+05:00.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+06:00.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+06:01.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+06:02.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+06:04.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+07:00.0 System peripheral: Intel Corporation JHL6540 Thunderbolt 3 NHI (C step) [Alpine Ridge 4C 2016] (rev 02)
+2d:00.0 USB controller: Intel Corporation JHL6540 Thunderbolt 3 USB Controller (C step) [Alpine Ridge 4C 2016] (rev 02)
+
+```
 
 ## BIOS
 
@@ -101,27 +150,20 @@ You should now see something like this:
 
 ## Audio
 
-As there are physically four loudspeakers, you need to configure to 4.0 audio output. When using PulseAudio there are various [configuration utilities](/index.php/PulseAudio#Front-ends "PulseAudio").
+Install the latest [linux](https://www.archlinux.org/packages/?name=linux)-kernel and [sof-firmware](https://www.archlinux.org/packages/?name=sof-firmware).
 
-### Volume controls
-
-In order for volume controls to work correctly you must edit `/usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common` by adding the following above `[Element PCM]`:
+Add to /etc/pulse/default.pa:
 
 ```
-[Element Master]
-switch = mute
-volume = ignore
+ load-module module-alsa-source device=hw:0,6 channels=4
+ load-module module-alsa-sink device=hw:0,0
 
 ```
 
-A PulseAudio restart is required for this change to take affect. Make sure to increase the "*Master*" channel volume to 100% for the top-firing speakers to work (using amixer or alsamixer, found in [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)).
-
-#### Persistent fix
-
-Upgrading or reinstalling [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) will overwrite this file, and [PulseAudio doesn't appear to offer another way](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes/) to make this configuration change. To prevent pacman from overwriting the file, add the following line under `[options]` in `/etc/pacman.conf`:
+Add to /etc/modprobe.d/alsa.conf:
 
 ```
-NoUpgrade = /usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common
+ options snd slots=,snd_usb_audio
 
 ```
 

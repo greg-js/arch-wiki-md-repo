@@ -92,13 +92,6 @@ Edit `/etc/webapps/gitlab/gitlab.yml` and setup at least the following parameter
 
 **Timezone (optional):** The `time_zone:` parameter is optional, but may be useful to force the zone of GitLab applications.
 
-Finally set the correct [permissions](/index.php/Permissions "Permissions") to the *uploads* directory:
-
-```
-# chmod 700 /var/lib/gitlab/uploads
-
-```
-
 ### Custom port for Unicorn
 
 GitLab Unicorn is the main component which processes most of the user requests. By default, it listens on the `127.0.0.1:8080` address which can be changed in the `/etc/webapps/gitlab/unicorn.rb` file:

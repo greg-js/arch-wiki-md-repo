@@ -98,7 +98,7 @@ The [randomart image](http://www.cs.berkeley.edu/~dawnsong/papers/randomart.pdf)
 You can also add an optional comment field to the public key with the `-C` switch, to more easily identify it in places such as `~/.ssh/known_hosts`, `~/.ssh/authorized_keys` and `ssh-add -L` output. For example:
 
 ```
-$ ssh-keygen -C "$(whoami)@$(hostname)-$(date -I)"
+$ ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)"
 
 ```
 

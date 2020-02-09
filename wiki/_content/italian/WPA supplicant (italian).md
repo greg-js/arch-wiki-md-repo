@@ -5,7 +5,11 @@ Articoli correlati
 
 [wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) è un [Supplicant](https://en.wikipedia.org/wiki/Supplicant_(computer) WPA multipiattaforma con supporto a WEP, WPA e WPA2 ([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN (Robust Secure Network)) adatto all'uso con PC desktop, portatili e sistemi embedded. `wpa_supplicant` è il componente IEEE 802.1X/WPA utilizzato dai client, implementa la negoziazione della chiave con un WPA Authenticator, controlla il roaming e l'associazione / autenticazione del driver wireless.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Panoramica](#Panoramica)
@@ -257,10 +261,10 @@ L'esempio che segue utilizza le [notifiche del desktop](/index.php/Desktop_notif
 case "$2" in
     CONNECTED)
         notify-send "WPA supplicant: connection established";
-        ;;
+        ;;
     DISCONNECTED)
         notify-send "WPA supplicant: connection lost";
-        ;;
+        ;;
 esac
 </nowiki>
 

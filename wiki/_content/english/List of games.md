@@ -1173,7 +1173,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://narcissu.insani.org/](http://narcissu.insani.org/) || [narcissu2-en](https://aur.archlinux.org/packages/narcissu2-en/)
 
-*   **Ren'Py** — Visual novel engine with a [rich repository](https://games.renpy.org/).
+*   **[Ren'Py](https://en.wikipedia.org/wiki/Ren%27Py "wikipedia:Ren'Py")** — Visual novel engine with a [rich repository](https://games.renpy.org/).
 
 	[https://www.renpy.org/](https://www.renpy.org/) || [renpy](https://www.archlinux.org/packages/?name=renpy)
 

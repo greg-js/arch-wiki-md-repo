@@ -1322,7 +1322,7 @@ Medium
 
 ### Ошибка "VT-x is not available. (VERR_VMX_NO_VMX)" и процессор без поддержки виртуализации
 
-С версии 6.1.0 [(released December 10 2019)](https://www.virtualbox.org/wiki/Changelog-6.1#v0) VirtualBox требует аппаратную поддержку виртуализации. Решение откатится либо установить версию старше <6.1\. Например [virtualbox-bin-5](https://aur.archlinux.org/packages/virtualbox-bin-5/).
+Начиная с версии 6.1.0 ([выпущенной 10 декабря 2019](https://www.virtualbox.org/wiki/Changelog-6.1#v0)), VirtualBox требует аппаратную поддержку виртуализации. Если же она отсутствует в процессоре, временным решением может быть установка более ранней версии VirtualBox, например, с помощью понижения версии пакета или установки [virtualbox-bin-5](https://aur.archlinux.org/packages/virtualbox-bin-5/), однако работоспособность на свежих ядрах Linux не гарантируется.
 
 ## Смотрите также
 

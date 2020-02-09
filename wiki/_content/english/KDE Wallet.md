@@ -11,7 +11,8 @@
 *   [2 Using the KDE Wallet to store ssh key passphrases](#Using_the_KDE_Wallet_to_store_ssh_key_passphrases)
 *   [3 Using the KDE Wallet to store Git credentials](#Using_the_KDE_Wallet_to_store_Git_credentials)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
-*   [5 See also](#See_also)
+*   [5 Query passwords from the terminal](#Query_passwords_from_the_terminal)
+*   [6 See also](#See_also)
 
 ## Unlock KDE Wallet automatically on login
 
@@ -126,6 +127,19 @@ See [gitcredentials(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitcredential
 ## KDE Wallet for Chrome and Chromium
 
 Chrome/Chromium has built in wallet integration. To enable it, run Chromium with the `--password-store=kwallet` or `--password-store=detect` argument. To make the change persistent, see [Chromium/Tips and tricks#Making flags persistent](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"). (Setting CHROMIUM_USER_FLAGS will not work.)
+
+## Query passwords from the terminal
+
+Instead of storing passwords in plain text files, you can manually add new entries in your wallet and retrieve them with *kwallet-query*.
+
+For example, if you want to log into the Docker Hub registry with Podman, which supports getting the passwords from stdin with the `--password-stdin` flag, you can use the following command to login:
+
+```
+$ kwallet-query -r folder_entry wallet_name -f folder_name | podman login docker.io -u dockerhub_username --password-stdin
+
+```
+
+This way, your password is not stored in any text file and neither is it stored in the terminal history file.
 
 ## See also
 

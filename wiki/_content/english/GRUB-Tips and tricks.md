@@ -549,7 +549,7 @@ For information on this, you can look at `info grub -n play`.
 
 If you require a special keymap or other complex steps that GRUB is not able to configure automatically in order to make `/boot` available to the GRUB environment, you can generate a core image yourself. On UEFI systems, the core image is the `grubx64.efi` file that is loaded by the firmware on boot. Building your own core image will allow you to embed any modules required for very early boot, as well as a configuration script to bootstrap GRUB.
 
-Firstly, taking as an example a requirement for the `dvorak` keymap embedded in early-boot in order to enter a password for a crypted `/boot` on a UEFI system:
+Firstly, taking as an example a requirement for the `dvorak` keymap embedded in early-boot in order to enter a password for an encrypted `/boot` on a UEFI system:
 
 Determine from the generated `/boot/grub/grub.cfg` file what modules are required in order to mount the crypted `/boot`. For instance, under your `menuentry` you should see lines similar to:
 
@@ -593,6 +593,8 @@ Finally, generate the core image, listing all of the modules determined to be re
 ```
 
 The generated EFI core image can now be used in the same way as the image that is generated automatically by `grub-install`: place it in your EFI partition and enable it with `efibootmgr`, or configure as appropriate for your system firmware.
+
+See also [Debian cryptsetup docs](https://cryptsetup-team.pages.debian.net/cryptsetup/encrypted-boot.html#using-a-custom-keyboard-layout).
 
 ## UEFI further reading
 

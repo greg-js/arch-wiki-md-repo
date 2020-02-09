@@ -12,8 +12,10 @@
     *   [3.2 TouchScreen and Stylus](#TouchScreen_and_Stylus)
     *   [3.3 Video](#Video)
     *   [3.4 Audio](#Audio)
-        *   [3.4.1 Microphone](#Microphone)
-        *   [3.4.2 Speakers](#Speakers)
+        *   [3.4.1 Pre linux 5.5](#Pre_linux_5.5)
+        *   [3.4.2 Linux 5.5 and later](#Linux_5.5_and_later)
+        *   [3.4.3 Microphone](#Microphone)
+        *   [3.4.4 Speakers](#Speakers)
     *   [3.5 Bluetooth](#Bluetooth)
     *   [3.6 Screen Rotation](#Screen_Rotation)
 *   [4 ACPI](#ACPI)
@@ -27,7 +29,7 @@ Most functionality works out of the box, a kernel of version 5.4 is recommended 
 | **Device** | **Status** | **Modules** |
 | Graphics | **Working** | i915 |
 | Wireless | **Working** | iwlwifi |
-| Audio | **Partially Working** | snd_hda_intel |
+| Audio | **Working** | snd_sof |
 | Touchscreen | **Working** | wacom |
 | Stylus | **Working** ¹ | wacom,usbhid |
 | Accelerometer | **Working** | hid_sensor_accel_3d |
@@ -73,6 +75,8 @@ That said there seems to be issues with Chromium based GPU acceleration, so eith
 
 ### Audio
 
+#### Pre linux 5.5
+
 Audio works when using the snd_hda_intel driver, so make a file in `/etc/modprobe.d/alsa-base.conf` with
 
 ```
@@ -82,9 +86,19 @@ options snd_hda_intel enable=1 index=1
 
 However Audio is partially working as there are some limitations.
 
+#### Linux 5.5 and later
+
+Audio and microphone works perfectly with [sof-firmware](https://www.archlinux.org/packages/?name=sof-firmware) and linux 5.5 just add the following to `/etc/modprobe.d/blacklist.conf`
+
+```
+blacklist snd_hda_intel
+blacklist snd_soc_skl
+
+```
+
 #### Microphone
 
-Microphone requires the new SOF firmware. This is available in some pre-release kernels, but is still very much a work in progress.
+Microphone requires [sof-firmware](https://www.archlinux.org/packages/?name=sof-firmware) and linux kernel 5.5\. blacklist the above and it will work.
 
 Bug reports for Microphone
 

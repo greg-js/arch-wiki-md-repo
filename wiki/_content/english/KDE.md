@@ -157,11 +157,11 @@ Most settings for KDE applications are stored in `~/.config/`. However, configur
 
 ##### Themes
 
-[Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme).
+[Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and Plasma widgets. For easy system-wide installation, some themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme).
 
 Plasma themes can also be installed through *System Settings > Global Theme > Get New Global Themes...*.
 
-The [KDE-Store](https://store.kde.org/) offers more Plasma customization's, like [SDDM](/index.php/SDDM "SDDM") themes and splash-screens.
+The [KDE Store](https://store.kde.org/) offers more Plasma customization's, like [SDDM](/index.php/SDDM "SDDM") themes and splash-screens.
 
 ###### Qt and GTK Applications Appearance
 

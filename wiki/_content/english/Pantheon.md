@@ -34,6 +34,9 @@
     *   [5.1 Appearance](#Appearance)
         *   [5.1.1 Pantheon-terminal transparency](#Pantheon-terminal_transparency)
         *   [5.1.2 Wingpanel transparency](#Wingpanel_transparency)
+    *   [5.2 Desktop crashes at login](#Desktop_crashes_at_login)
+        *   [5.2.1 "Oh no! Something has gone wrong."](#"Oh_no!_Something_has_gone_wrong.")
+        *   [5.2.2 Subsequent login attempts return to display manager](#Subsequent_login_attempts_return_to_display_manager)
 
 ## Project Status
 
@@ -234,3 +237,17 @@ To achieve the former behavior within another theme, add the following code to i
 }
 
 ```
+
+### Desktop crashes at login
+
+#### "Oh no! Something has gone wrong."
+
+One of the `RequiredComponents` in Pantheon's session file may be failing, causing gnome-session to crash as well.
+
+You may work around this by editing `/usr/share/gnome-session/sessions/pantheon.session`, removing `org.gnome.SettingsDaemon` and everything after it on that line.
+
+#### Subsequent login attempts return to display manager
+
+See [gnome-session crashes on session startup](/index.php/GNOME/Troubleshooting#gnome-shell_/_gnome-session_crashes_on_session_startup "GNOME/Troubleshooting").
+
+Most of the time, waiting a little longer to log in is sufficent to clear whatever blockage the previous session has left behind.

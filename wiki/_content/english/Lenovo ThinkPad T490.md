@@ -125,7 +125,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ### BIOS configurations
 
-*   `Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled"`. This setting is recommended for Linux.
+*   `Config -> Thunderbolt BIOS Assist Mode - Set to "Enabled"` if running a [Linux kernel older than 4.19](https://forums.lenovo.com/t5/Other-Linux-Discussions/Thunderbolt-BIOS-Assist-Mode-clearification-needed/m-p/4589228#M14040).
 
 ## FN Keys
 

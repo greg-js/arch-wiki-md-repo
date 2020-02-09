@@ -79,7 +79,7 @@ Define a [bash function](/index.php/Bash/Functions "Bash/Functions") for recover
     --log /dev/null   \
     --noscriptlet     \
     --dbonly          \
-    --force           \
+    --overwrite "*"   \
     --nodeps          \
     --needed
 }

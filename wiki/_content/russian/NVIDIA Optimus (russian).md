@@ -333,6 +333,20 @@ $ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK_LAYER_NV_o
 
 ```
 
+Чтобы облегчить использование длинной команды, доступен пакет [nvidia-prime](https://www.archlinux.org/packages/?name=nvidia-prime). Пример использования:
+
+```
+$ prime-run firefox
+
+```
+
+Также доступен пакет [prime](https://aur.archlinux.org/packages/prime/), который содержит в себе уже настроенный файл [xorg.conf (Русский)](/index.php/Xorg.conf_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg.conf (Русский)"). Пример использования:
+
+```
+$ prime firefox
+
+```
+
 ### Решение проблем
 
 #### Не запускается модуль Nvidia

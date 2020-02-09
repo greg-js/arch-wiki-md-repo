@@ -120,7 +120,9 @@ If you want to set up your machine as a NAT gateway, please look at [#Setting up
 
 ### The OUTPUT chain
 
-We have no intention of filtering any outgoing traffic, as this would make the setup much more complicated and would require some extra thought. In this simple case, we set the **OUTPUT** policy to **ACCEPT**.
+The OUTPUT chain can be a powerful tool for filtering outbound traffic, especially for servers and other devices which don't run web browsers or peer-to-peer tools that need to connect to arbitrary destinations on the internet. However, properly setting up an OUTPUT chain requires information about the intended use of the system. A secure set of rules for a desktop system, laptop system, cloud server and home/on-prem server would all be very different.
+
+In this simple example, we will allow all OUTPUT traffic by setting the the **OUTPUT** policy to **ACCEPT**. This is less secure, but is highly compatible with many systems.
 
 ```
 # iptables -P OUTPUT ACCEPT

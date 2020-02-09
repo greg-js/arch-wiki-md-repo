@@ -112,7 +112,7 @@ The `-s` parameter will download any additional dependencies used by recent kern
 **Note:**
 
 *   Kernel sources are [PGP signed](https://www.kernel.org/signature.html#kernel-org-web-of-trust), and makepkg will attempt to verify them. See [Makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg") for details.
-*   [Running compilation jobs simultaneously](/index.php/Makepkg#Parallel_compilation "Makepkg") can reduce compilation time significantly on multi-core systems.
+*   The compilation can take up to several hours to complete depending on the hardware performance. [Running compilation jobs simultaneously](/index.php/Makepkg#Parallel_compilation "Makepkg") can reduce compilation time significantly on multi-core systems.
 
 ## Installing
 
@@ -129,7 +129,7 @@ If you have modified `pkgbase` in order to have your new kernel installed alongs
 
 ## Updating
 
-Assuming one has an arch kernel source that he wants to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). Follows a concrete example. In what follows, the top kernel source directory is assumed at ~/build/linux/.
+Assuming one has an arch kernel source that they want to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). In what follows, the top kernel source directory is assumed at ~/build/linux/.
 
 In general, arch sets an arch kernel source with two local git repositories. The one at archlinux-linux/ is a local bare [git](/index.php/Git "Git") repository pointing to [git://git.archlinux.org/linux.git](git://git.archlinux.org/linux.git). The other one is at src/archlinux-linux/, pulling from the first repository. Possible local patches, and building, is expected at src/archlinux-linux/.
 

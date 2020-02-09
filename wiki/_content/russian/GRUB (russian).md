@@ -113,7 +113,7 @@ GRUB2 – [мультисистемный](https://ru.wikipedia.org/wiki/Multibo
     *   [7.2 Загрузка из syslinux](#Загрузка_из_syslinux)
 *   [8 Примеры исправления проблем](#Примеры_исправления_проблем)
     *   [8.1 Сообщение о невозможности встраивания в MBR](#Сообщение_о_невозможности_встраивания_в_MBR)
-*   [9 Ссылки](#Ссылки)
+*   [9 Смотрите также](#Смотрите_также)
 
 ## Предисловие
 
@@ -2112,10 +2112,13 @@ grub-setup: error: If you really want blocklists, use --force.
 
 Это также может случится, если первый раздел начинается сразу после [MBR](/index.php/MBR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MBR (Русский)"), без необходимого места в 60 блоков перед первым разделом.
 
-## Ссылки
+## Смотрите также
 
-*   [Официальное руководство GRUB2](http://www.gnu.org/software/grub/manual/) (английское)
-*   [Википедия об MBR](https://ru.wikipedia.org/wiki/MBR)
-*   [Википедия о GPT](https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2_GUID)
-*   [Википедия о BIOS](https://ru.wikipedia.org/wiki/BIOS)
-*   [Википедия об UEFI](https://ru.wikipedia.org/wiki/UEFI)
+*   [Статья о GNU GRUB на Википедии](https://en.wikipedia.org/wiki/ru:GNU_GRUB "wikipedia:ru:GNU GRUB")
+*   [Официальное руководство пользователя GRUB](https://www.gnu.org/software/grub/manual/grub.html) (англ.)
+*   [Статья о GRUB на Ubuntu Wiki](https://help.ubuntu.com/community/Grub2) (англ.)
+*   [Загрузка на UEFI-системах](https://help.ubuntu.com/community/UEFIBooting) (англ.)
+*   [Загрузочный раздел BIOS](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition") (англ.)
+*   [Настройка GRUB](http://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme) (англ.)
+*   [Загрузка с помощью GRUB](http://www.linuxjournal.com/article/4622) (англ.)
+*   [Определение EFI-файлов и их загрузка с помощью GRUB](https://forum.manjaro.org/t/detecting-efi-files-and-booting-them-from-grub/38083) (англ.)

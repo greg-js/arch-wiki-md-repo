@@ -1,12 +1,13 @@
 Ссылки по теме
 
-*   [Java package guidelines](/index.php/Java_package_guidelines "Java package guidelines")
+*   [Java Package Guidelines](/index.php/Java_Package_Guidelines "Java Package Guidelines")
+*   [Шрифты окружения Java Runtime](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_Java_Runtime "Шрифты окружения Java Runtime")
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Java "wikipedia:ru:Java"):
 
-"*Java — объектно-ориентированный язык программирования, разработанный компанией Sun Microsystems (в последующем приобретенной компанией Oracle). Приложения Java обычно транслируются в специальный байт-код, поэтому они могут работать на любой виртуальной Java-машине вне зависимости от компьютерной архитектуры. Дата официального выпуска — 23 мая 1995 года.*"
+	Java — строго типизированный объектно-ориентированный язык программирования, разработанный компанией Sun Microsystems (в последующем приобретённой компанией Oracle). Разработка ведётся сообществом, организованным через Java Community Process, язык и основные реализующие его технологии распространяются по лицензии GPL. Права на торговую марку принадлежат корпорации Oracle.
 
-Arch Linux официально поддерживает открытую реализацию [OpenJDK](http://openjdk.java.net/) версий 7 и 8\. Эти версии могут быть без проблем установлены одновременно, при этом переключение между ними производится с помощью специального скрипта `archlinux-java`. Несколько других реализаций доступны в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"), но они не поддерживаются официально.
+Arch Linux официально поддерживает [OpenJDK](https://en.wikipedia.org/wiki/ru:OpenJDK "wikipedia:ru:OpenJDK"), свободную реализацию Java SE, версий 7, 8, 10, 11 и 13\. Эти версии можно без проблем установить одновременно, а также переключаться между ними с помощью скрипта `archlinux-java`. Несколько других реализаций доступны в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"), но они не поддерживаются официально.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -15,89 +16,166 @@ Arch Linux официально поддерживает открытую реа
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
-    *   [1.1 Устаревание пакетов](#Устаревание_пакетов)
+    *   [1.1 OpenJDK](#OpenJDK)
+    *   [1.2 OpenJFX](#OpenJFX)
+    *   [1.3 Другие реализации](#Другие_реализации)
+    *   [1.4 Инструменты для разработки](#Инструменты_для_разработки)
+        *   [1.4.1 Декомпиляторы](#Декомпиляторы)
 *   [2 Переключение между средами](#Переключение_между_средами)
     *   [2.1 Получение списка установленных совместимых сред Java](#Получение_списка_установленных_совместимых_сред_Java)
     *   [2.2 Установка среды Java по умолчанию](#Установка_среды_Java_по_умолчанию)
-    *   [2.3 Сброс настроек среды Java по умолчанию](#Сброс_настроек_среды_Java_по_умолчанию)
-    *   [2.4 Исправление настроек среды Java по умолчанию](#Исправление_настроек_среды_Java_по_умолчанию)
-    *   [2.5 Запуск приложения с другой версией Java](#Запуск_приложения_с_другой_версией_Java)
+    *   [2.3 Удаление метки по умолчанию](#Удаление_метки_по_умолчанию)
+    *   [2.4 Исправление конфигурации Java](#Исправление_конфигурации_Java)
+    *   [2.5 Запуск приложений с окружением не установленным по умолчанию](#Запуск_приложений_с_окружением_не_установленным_по_умолчанию)
 *   [3 Требования к пакетам сред для поддержки archlinux-java](#Требования_к_пакетам_сред_для_поддержки_archlinux-java)
-*   [4 Неподдерживаемые среды Java из AUR](#Неподдерживаемые_среды_Java_из_AUR)
-    *   [4.1 Java SE](#Java_SE)
-        *   [4.1.1 Java SE 6/7](#Java_SE_6/7)
-    *   [4.2 Oracle JRockit](#Oracle_JRockit)
-    *   [4.3 VMkit](#VMkit)
-    *   [4.4 Parrot VM](#Parrot_VM)
-*   [5 Решение проблем](#Решение_проблем)
-    *   [5.1 MySQL](#MySQL)
-    *   [5.2 Маскировка под другой оконный менеджер](#Маскировка_под_другой_оконный_менеджер)
-    *   [5.3 Шрифты отображаются размыто](#Шрифты_отображаются_размыто)
-    *   [5.4 В некоторых приложениях отсутствует текст](#В_некоторых_приложениях_отсутствует_текст)
-    *   [5.5 Серое окно | Приложения не изменяют размер с WM | Меню сразу закрываются](#Серое_окно_|_Приложения_не_изменяют_размер_с_WM_|_Меню_сразу_закрываются)
-*   [6 Советы и рекомендации](#Советы_и_рекомендации)
-    *   [6.1 Улучшенное отображение шрифтов](#Улучшенное_отображение_шрифтов)
-    *   [6.2 Оформление GTK](#Оформление_GTK)
+*   [4 Решение проблем](#Решение_проблем)
+    *   [4.1 Не подключается MySQL](#Не_подключается_MySQL)
+    *   [4.2 Не запускается IntelliJ IDEA](#Не_запускается_IntelliJ_IDEA)
+    *   [4.3 Ошибки отрисовки приложений Java](#Ошибки_отрисовки_приложений_Java)
+    *   [4.4 Неразборчивый шрифт в приложениях Java](#Неразборчивый_шрифт_в_приложениях_Java)
+    *   [4.5 В некоторых приложениях отсутствует текст](#В_некоторых_приложениях_отсутствует_текст)
+    *   [4.6 Система зависает при дебаггинге](#Система_зависает_при_дебаггинге)
+    *   [4.7 Конструктор JavaFX MediaPlayer вылетает с ошибкой](#Конструктор_JavaFX_MediaPlayer_вылетает_с_ошибкой)
+    *   [4.8 В приложениях Java не открываются внешние ссылки](#В_приложениях_Java_не_открываются_внешние_ссылки)
+    *   [4.9 Ошибка инициализации QuantumRenderer: no suitable pipeline found](#Ошибка_инициализации_QuantumRenderer:_no_suitable_pipeline_found)
+*   [5 Советы и рекомендации](#Советы_и_рекомендации)
+    *   [5.1 Улучшенное отображение шрифтов](#Улучшенное_отображение_шрифтов)
+    *   [5.2 Удаление сообщения Picked up _JAVA_OPTIONS](#Удаление_сообщения_Picked_up_JAVA_OPTIONS)
+    *   [5.3 Оформление GTK](#Оформление_GTK)
+    *   [5.4 Ускорение отрисовки 2D](#Ускорение_отрисовки_2D)
 
 ## Установка
 
-Следующие пакеты доступны в официальных репозиториях:
+**Примечание:**
 
-*   OpenJDK 7:
+*   Официально поддерживается только [OpenJDK](#OpenJDK).
+*   После установки окружение Java должно быть определено в переменной `$PATH`, что можно сделать с помощью команды `source` или повторного входа в среду рабочего стола.
 
-| Пакет | Примечание |
-| [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | Исполняющая среда (*JRE*) без графических инструментов – версия 7 |
-| [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | Полная версия исполняющей среды (*JRE*) – версия 7 |
-| [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | Пакет разработки (*JDK*) – версия 7 |
-| [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | Документация OpenJDK (javadoc) – версия 7 |
-| [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) | Исходные коды OpenJDK – версия 7 |
+Существуют два главных пакета, которые являются зависимыми: [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) (содержит основные файлы для Java Runtime Environment — JRE) и [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) (содержит основные файлы для Java Development Kit — JDK). Переменная окружения `$PATH` в файле `/etc/profile.d/jre.sh` указывает на каталог `/usr/lib/jvm/default/bin`, заданный скриптом `archlinux-java`. Ссылки `/usr/lib/jvm/default` и `/usr/lib/jvm/default-runtime` следует менять только при помощи скрипта `archlinux-java`. Эти ссылки ведут на выбранное рабочее окружение Java в `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}` или JRE — `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}/jre`.
 
-*   OpenJDK 8:
+Большинство исполняемых файлов Java находятся в `/usr/bin`, остальные доступны через `$PATH`. Скрипт `/etc/profile.d/jdk.sh` больше не предоставляется ни одним из пакетов.
 
-| Пакет | Примечание |
-| [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | Исполняющая среда (*JRE*) без графических инструментов – версия 8 |
-| [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | Полная версия исполняющей среды (*JRE*) – версия 8 |
-| [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | Пакет разработки (*JDK*) – версия 8 |
-| [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | Документация OpenJDK (javadoc) – версия 8 |
-| [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) | Исходные коды OpenJDK – версия 8 |
+### OpenJDK
 
-*   OpenJDK 9:
+[OpenJDK](https://en.wikipedia.org/wiki/ru:OpenJDK "wikipedia:ru:OpenJDK") — свободная реализация [Java Platform, Standard Edition](https://en.wikipedia.org/wiki/ru:Java_Platform,_Standard_Edition "wikipedia:ru:Java Platform, Standard Edition") (Java SE).
 
-| Пакет | Примечание |
-| [jre9-openjdk-headless](https://www.archlinux.org/packages/?name=jre9-openjdk-headless) | Исполняющая среда (*JRE*) без графических инструментов – версия 9 |
-| [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) | Полная версия исполняющей среды (*JRE*) – версия 9 |
-| [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) | Пакет разработки (*JDK*) – версия 9 |
-| [openjdk9-doc](https://www.archlinux.org/packages/?name=openjdk9-doc) | Документация OpenJDK (javadoc) – версия 9 |
-| [openjdk9-src](https://www.archlinux.org/packages/?name=openjdk9-src) | Исходные коды OpenJDK – версия 9 |
+	Headless JRE
 
-**Примечание:** JDK имеет зависимость от JRE, поэтому при установке JDK будет также установлена JRE.
+	минимальная среда выполнения для Java; не поддерживает GUI.
 
-**Примечание:** После установки вам может понадобиться обновить переменную окружения `$PATH`. Для этого отредактируйте файл `/etc/profile` или перезайдите в среду рабочего стола.
+	Full JRE
 
-Общие для всех Java-пакетов пакеты [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) и [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) автоматически устанавливаются как зависимости и предоставляют файл настройки окружения `/etc/profile.d/jre.sh`. Этот файл содержит все переменные окружения, необходимые для работы Java-среды. Пакет [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) также предоставляет скрипт `archlinux-java`, который служит для установки Java-среды по умолчанию. Этот скрипт создает символические ссылки `/usr/lib/jvm/default` и `/usr/lib/jvm/default-runtime`, которые определяют текущую версию Java и текущую исполняемую среду (JVM) в `/usr/lib/jvm/java-${*мажорная_версия*}-${*имя_поставщика*`}. Для большинства исполняемых файлов среды Java создаются прямые ссылки в `/usr/bin`, остальные файлы доступны в `$PATH`.
+	полная среда выполнения, поддерживающая GUI и зависящая от *headless JRE*.
 
-**Важно:** Файл `/etc/profile.d/jdk.sh` больше не предоставляется ни одним из пакетов.
+	JDK
 
-#### Устаревание пакетов
+	[Java Development Kit](https://en.wikipedia.org/wiki/ru:Java_Development_Kit "wikipedia:ru:Java Development Kit"); необходим для разработки Java-приложений и зависит от *full JRE*.
 
-Хотя пакеты в Arch Linux могут иметь проприетарные версии пакетов в качестве зависимостей, открытая реализация имеет свою систему версий:
+| Версия | Headless JRE | Full JRE | JDK | Документация | Исходный код |
+| [OpenJDK 13](https://openjdk.java.net/projects/jdk/13/) | [jre-openjdk-headless](https://www.archlinux.org/packages/?name=jre-openjdk-headless) | [jre-openjdk](https://www.archlinux.org/packages/?name=jre-openjdk) | [jdk-openjdk](https://www.archlinux.org/packages/?name=jdk-openjdk) | [openjdk-doc](https://www.archlinux.org/packages/?name=openjdk-doc) | [openjdk-src](https://www.archlinux.org/packages/?name=openjdk-src) |
+| [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/) | [jre11-openjdk-headless](https://www.archlinux.org/packages/?name=jre11-openjdk-headless) | [jre11-openjdk](https://www.archlinux.org/packages/?name=jre11-openjdk) | [jdk11-openjdk](https://www.archlinux.org/packages/?name=jdk11-openjdk) | [openjdk11-doc](https://www.archlinux.org/packages/?name=openjdk11-doc) | [openjdk11-src](https://www.archlinux.org/packages/?name=openjdk11-src) |
+| [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
+| [OpenJDK 8](https://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
+| [OpenJDK 7](https://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
 
-*   Пакеты [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) и [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) должны помечаться как устаревшие в зависимости от [версии *IcedTea*](http://icedtea.wildebeest.org/download/source) (например, `2.4.3`), а не их версии реализации от Oracle (например `u45` в выпуске `7.u45_2.4.3-1`).
-*   Пакет [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web) должен помечаться как устаревший в зависимости от [версии *IcedTea Web*](http://icedtea.wildebeest.org/download/source) (например, `1.4.1`), и независимо от версии *IcedTea*.
+**OpenJDK GA** — свежая сборка OpenJDK General-Availability Release от Oracle.
+
+	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-bin](https://aur.archlinux.org/packages/java-openjdk-bin/)
+
+**OpenJDK EA** — свежая сборка OpenJDK Early-Access от Oracle.
+
+	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-ea-bin](https://aur.archlinux.org/packages/java-openjdk-ea-bin/)
+
+**IcedTea-Web** — Java Web Start и устаревший плагин Java для браузеров.
+
+	[https://icedtea.classpath.org/wiki/IcedTea-Web](https://icedtea.classpath.org/wiki/IcedTea-Web) || [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web)
+
+### OpenJFX
+
+[OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX) — свободная реализация [JavaFX](https://en.wikipedia.org/wiki/ru:JavaFX "wikipedia:ru:JavaFX"). Данный пакет включён в Java SE (реализация JRE и JDK от Oracle) и относится лишь к пользователям свободной реализации Java (OpenJDK).
+
+| Версия | Runtime и Developement Kit | Документация | Исходный код |
+| [OpenJFX 13](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) |
+| [OpenJFX 11](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java11-openjfx](https://www.archlinux.org/packages/?name=java11-openjfx) | [java11-openjfx-doc](https://www.archlinux.org/packages/?name=java11-openjfx-doc) | [java11-openjfx-src](https://www.archlinux.org/packages/?name=java11-openjfx-src) |
+| [OpenJFX 8](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java8-openjfx](https://www.archlinux.org/packages/?name=java8-openjfx) | [java8-openjfx-doc](https://www.archlinux.org/packages/?name=java8-openjfx-doc) | [java8-openjfx-src](https://www.archlinux.org/packages/?name=java8-openjfx-src) |
+
+**OpenJFX GA** — свежая сборка OpenJFX General-Availability Release от Gluon.
+
+	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-bin](https://aur.archlinux.org/packages/java-openjfx-bin/)
+
+**OpenJFX EA** — свежая сборка OpenJFX Early-Access от Gluon.
+
+	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-ea-bin](https://aur.archlinux.org/packages/java-openjfx-ea-bin/)
+
+### Другие реализации
+
+**Java SE** — реализация JRE и JDK от Oracle.
+
+	[https://www.oracle.com/technetwork/java/javase/downloads/index.html](https://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre6](https://aur.archlinux.org/packages/jre6/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
+
+**OpenJ9** — JRE от Eclipse, созданная при участии IBM.
+
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk-openj9-bin](https://aur.archlinux.org/packages/jdk-openj9-bin/) [jdk13-openj9-bin](https://aur.archlinux.org/packages/jdk13-openj9-bin/) [jdk12-openj9-bin](https://aur.archlinux.org/packages/jdk12-openj9-bin/) [jdk11-openj9-bin](https://aur.archlinux.org/packages/jdk11-openj9-bin/) [jdk10-openjdk-openj9-bin](https://aur.archlinux.org/packages/jdk10-openjdk-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
+
+**IBM J9** — реализация восьмой редакции JRE от IBM.
+
+	[https://developer.ibm.com/javasdk/](https://developer.ibm.com/javasdk/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/) [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
+
+**Parrot VM** — виртуальная машина с экспериментальной поддержкой [языков](http://trac.parrot.org/parrot/wiki/) Java при помощи двух методов — [Java VM bytecode translator](https://code.google.com/p/parrot-jvm/) или [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk).
+
+	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://aur.archlinux.org/packages/parrot/)
+
+**Примечание:** 32-битные версии Java SE имеют префикс `bin32-`, например, [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) и [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/). Они используют [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/), работая с [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) вместе с суффиксом `32`, например, `java32`. То же самое происходит и с [java32-environment-common](https://aur.archlinux.org/packages/java32-environment-common/), который используется только 32-битными пакетами JDK.
+
+### Инструменты для разработки
+
+См. [List of applications#Integrated development environments](/index.php/List_of_applications#Integrated_development_environments "List of applications") для получения списка IDE (в частности, секцию "Java IDEs").
+
+Чтобы усложнить процесс реверс-инжиниринга, можно воспользоваться обфускатором [proguard](https://aur.archlinux.org/packages/proguard/).
+
+#### Декомпиляторы
+
+*   **Bytecode Viewer** — пакет для [обратного инжиниринга](https://en.wikipedia.org/wiki/ru:%D0%9E%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0 "wikipedia:ru:Обратная разработка") Java-приложений, включающий в себя декомпилятор, редактор и дебаггер.
+
+	[https://bytecodeviewer.com](https://bytecodeviewer.com) || [bytecode-viewer](https://aur.archlinux.org/packages/bytecode-viewer/)
+
+*   **CFR** — декомпилятор Java, поддерживающий также новые возможности Java 9 и выше.
+
+	[https://www.benf.org/other/cfr/](https://www.benf.org/other/cfr/) || [cfr](https://aur.archlinux.org/packages/cfr/)
+
+*   **Fernflower** — аналитический декомпилятор Java-приложений, разработанный для [IntelliJ IDEA](/index.php/IntelliJ_IDEA "IntelliJ IDEA").
+
+	[https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine](https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine) || [fernflower-git](https://aur.archlinux.org/packages/fernflower-git/)
+
+*   **[JAD](https://en.wikipedia.org/wiki/JAD_(software) "wikipedia:JAD (software)")** — неподдерживаемый декомпилятор Java.
+
+	[https://varaneckas.com/jad](https://varaneckas.com/jad) || [jad](https://www.archlinux.org/packages/?name=jad)
+
+*   **JD-Core-java** — обёртка над [JD Decompiler](https://en.wikipedia.org/wiki/JD_Decompiler "wikipedia:JD Decompiler").
+
+	[https://github.com/nviennot/jd-core-java](https://github.com/nviennot/jd-core-java) || [jd-core-java](https://aur.archlinux.org/packages/jd-core-java/)
+
+*   **Krakatau** — декомпилятор, ассемблер и дизассемблер для Java.
+
+	[https://github.com/Storyyeller/Krakatau](https://github.com/Storyyeller/Krakatau) || [krakatau-git](https://aur.archlinux.org/packages/krakatau-git/)
+
+*   **Procyon decompiler** — экспериментальный декомпилятор Java, разработанный под влиянием ILSpy и Mono.Cecil.
+
+	[https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler](https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler) || [procyon-decompiler](https://aur.archlinux.org/packages/procyon-decompiler/), GUI: [luyten](https://aur.archlinux.org/packages/luyten/)
 
 ## Переключение между средами
 
-Для переключения между средами Java используется скрипт `archlinux-java`, который предоставляет следующие возможности:
+Для переключения используется скрипт `archlinux-java`
 
 ```
-archlinux-java *<COMMAND>*
+archlinux-java <COMMAND>
 
 COMMAND:
-   status              Вывести список установленных сред Java
-   get                 Вывести короткое имя среды Java, установленной по умолчанию
-   set *имя_среды*   Установить среду *имя_среды* в качестве среды по умолчанию
-   unset               Сбросить текущую установку среды Java по умолчанию
-   fix                 Исправить нарушенную конфигурацию среды Java по умолчанию
+       status          список установленных окружений Java и их статус
+       get             короткое название текущего окружения Java
+       set <JAVA_ENV>  устанавливает окружение <JAVA_ENV> по умолчанию
+       unset           удаляет метку `по умолчанию` с окружения Java
+       fix             исправляет ошибки конфигурации Java
 
 ```
 
@@ -106,28 +184,15 @@ COMMAND:
 ```
 $ archlinux-java status
 
-```
-
-Пример:
-
-```
-$ archlinux-java status
 Available Java environments:
   java-7-openjdk (default)
   java-8-openjdk/jre
 
 ```
 
-Обратите внимание на слово *(default)*, которым помечается текущая выбранная среда Java, в данном примере — `java-7-openjdk`. Запуск конкретного файла `java` и других исполняемых файлов среды зависит от этой настройки. Также обратите внимание, что в приведенном примере установлена только исполняющая среда (*JRE*) из состава OpenJDK 8.
+Метка `(default)` как раз и подписывает окружение, установленное по умолчанию. Выполнение `java` или других команд будет ссылаться на эту версию. Отметка `/jre` означает, что установлен только JRE.
 
 ### Установка среды Java по умолчанию
-
-```
-# archlinux-java set *имя_среды*
-
-```
-
-Пример:
 
 ```
 # archlinux-java set java-8-openjdk/jre
@@ -136,7 +201,7 @@ Available Java environments:
 
 **Совет:** Используйте команду `archlinux-java status` для отображения списка всех доступных сред Java.
 
-Обратите внимание, что, если имя указано с ошибкой, скрипт не выполнит никаких действий. В примере из предыдущего раздела, установлен пакет [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), но не [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk), поэтому имя среды `java-8-openjdk` в данном случае неверно:
+**Примечание:** Использование названия неустановленного или несуществующего окружения Java ведёт к ошибке `is not a valid Java environment path`.
 
 ```
 # archlinux-java set java-8-openjdk
@@ -144,129 +209,133 @@ Available Java environments:
 
 ```
 
-### Сброс настроек среды Java по умолчанию
+### Удаление метки `по умолчанию`
 
-Обычно, нет необходимости сбрасывать установку среды Java по умолчанию. Если вы все-таки хотите это сделать, используйте команду `unset`, чтобы никакая среда более не использовалась:
+Нет особой необходимости специально удалять метку, так как при работе с пакетами это происходит автоматически. Если необходимость всё же есть, используется команда `unset`.
 
 ```
 # archlinux-java unset
 
 ```
 
-### Исправление настроек среды Java по умолчанию
+### Исправление конфигурации Java
 
-Если в качестве среды по умолчанию установлена некорректная среда Java, команда `archlinux-java fix` попробует это исправить. Обратите внимание, что если не была задана среда Java по умолчанию, команда попытается установить одну из доступных. Официально поддерживаемые пакеты "OpenJDK 7" и "OpenJDK 8" имеют при этом больший приоритет (в таком порядке), чем неофициальные версии из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
+Если на какое-нибудь окружене Java задана неверная ссылка, команда `fix` попытается найти и исправить ошибку. Если окружение по умолчанию не задано, эта команда его установит на самый свежий доступный.
 
 ```
 # archlinux-java fix
 
 ```
 
-### Запуск приложения с другой версией Java
+### Запуск приложений с окружением не установленным по умолчанию
 
-Если вы хотите запускать отдельное приложение с какой-нибудь другой установленной версией Java, не обязательно каждый раз перед этим устанавливать ее в качестве среды по умолчанию: вы можете использовать простой скрипт, который настроит окружение специально для запуска вашего приложения. Например, если по умолчанию используется jre7, а вы хотите использовать jre8:
+Для таких случаев стоит написать скрипт. В примере ниже используется `java-8-openjdk/jre`
 
 ```
 #!/bin/sh
 
-export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH
-exec */path/to/application*
+export PATH="/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH"
+exec /path/to/application "$@"
 
 ```
 
 ## Требования к пакетам сред для поддержки `archlinux-java`
 
-Этот раздел предназначается для тех, кто осуществляет сборку пакетов с альтернативными выпусками JVM для [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"). Чтобы пакет соответствовал принятой в Arch Linux схеме с использованием скрипта `archlinux-java`, он должен:
+**Примечание:** Информация применима и к `archlinux32-java`, при отличии, что в названиях пакетов используется верное наименование с `32` (см. [выше](#Другие_реализации)).
 
-*   Помещать все файлы в `/usr/lib/jvm/java-${*номер_мажорной_версии*}-${*имя_поставщика*}` .
-*   Убедиться, что все исполняемые файлы для которых пакетами [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) и [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/) создаются ссылки присутствуют собираемом пакете.
-*   Предоставлять ссылки из `/usr/bin` к исполняемым файлам только если файлы ссылок не принадлежат пакетам [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) и [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/).
-*   Имена man-страниц должны оканчиваться на `-${*номер мажорной версии*}-${*имя поставщика*`} для избежания конфликтов (пример смотрите в [списке файлов jre8-openjdk](https://www.archlinux.org/packages/extra/x86_64/jre8-openjdk/files/), где имена man-страниц оканчиваются на `-openjdk8`).
-*   Не объявлять пакеты других сред Java, `java-runtime`, `java-runtime-headless` или `java-environment` как [конфликтующие](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#conflicts "PKGBUILD (Русский)"), а также в качестве [замещаемых](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#replaces "PKGBUILD (Русский)").
-*   Использовать `archlinux-java` в целях установки, чтобы установить среду Java по умолчанию **если в данный момент уже не установлена подходящая среда** (то есть, пакеты не должны принудительно устанавливать какую-либо среду Java по умолчанию). Используйте [исходные коды официально поддерживаемого пакета исполняемой среды Java](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/java7-openjdk) в качестве примера.
+Этот раздел предназначен для тех, кто хочет распространять свои пакеты JVM в [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ru:Arch User Repository") и использовать для управления `archlinux-java`. Пакеты должны соответствовать всем пунктам ниже:
 
-Также, пожалуйста, имейте в виду, что:
+*   все файлы пакета располагаются по адресу `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME`}
+*   все исполняемые файлы для [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) и [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/) имеют соответствующие ссылки
+*   исполняемые файл, не принадлежащие к [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) и [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/), имеют ссылки из `/usr/bin`
+*   суффиксы [манов](https://wiki.archlinux.org/index.php/man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ru:man page") такие: `-${VENDOR_NAME}${JAVA_MAJOR_VERSION`}; например, смотри [jre8-openjdk](https://www.archlinux.org/packages/extra/x86_64/jre8-openjdk/files/), где они имеют суффиксы `-openjdk8`
+*   не используется ни [PKGBUILD conflicts](https://wiki.archlinux.org/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#conflicts "ru:PKGBUILD"), ни [PKGBUILD replaces](https://wiki.archlinux.org/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#replaces "ru:PKGBUILD") с другими JDK, `java-runtime`, {ic|java-runtime-headless}} или `java-environment`
+*   используется скрипт `archlinux-java`, чтобы устанавливать окружение по умолчанию, если ни одно другое окружение не задано — то есть **не перезаписывается** значение по умолчанию
 
-*   Пакеты, которым нужна любая среда Java должны объявлять о зависимости к пакету `java-runtime`, `java-runtime-headless` или `java-environment`, как обычно.
-*   Пакеты, которым нужна конкретная среда Java должны объявить о зависимости к соответствующему пакету.
-*   Пакеты OpenJDK теперь объявляют о предоставлении функции `provides="java-runtime-openjdk=${pkgver}"`. Это позволяет сторонним пакетам объявлять о зависимости от OpenJDK без указания конкретной версии.
+Стоит принять во внимание и эти советы:
 
-## Неподдерживаемые среды Java из AUR
-
-**Важно:** Пакеты в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") могут не поддерживать `archlinux-java`.
-
-### Java SE
-
-Несколько пакетов в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") предоставляют реализации JDK и JRE от Oracle, из них основными являются [jre](https://aur.archlinux.org/packages/jre/) и [jdk](https://aur.archlinux.org/packages/jdk/).
-
-#### Java SE 6/7
-
-Предыдущие версии JRE и JDK доступны с пакетами [jre6](https://aur.archlinux.org/packages/jre6/)/[jre7](https://aur.archlinux.org/packages/jre7/) и [jdk6](https://aur.archlinux.org/packages/jdk6/)/[jdk7](https://aur.archlinux.org/packages/jdk7/) соответственно.
-
-### Oracle JRockit
-
-[JRockit](http://www.oracle.com/technetwork/middleware/jrockit/overview/index.html) — проприетарная реализация JVM с JIT от Oracle. Установку можно произвести через пакет [jrockit](https://aur.archlinux.org/packages/jrockit/).
-
-### VMkit
-
-[VMkit](http://vmkit.llvm.org/index.html) — основанный на LLVM фреймворк для виртуальных машин с JIT. В состав VMkit входит собственная JVM — J3\. J3 использует реализацию стандартной библиотеки Java GNU Classpath, но также может работать с реализациями от Apache.
-
-### Parrot VM
-
-[Parrot](http://www.parrot.org/) является виртуальной машиной, предоставляющей экспериментальную [поддержку Java](http://trac.parrot.org/parrot/wiki/Languages), которая реализуется двумя способами: либо посредством [транслятора байт-кода](http://code.google.com/p/parrot-jvm/), либо с помощью [компилятора Java с поддержкой формата Parrot](https://github.com/chrisdolan/perk). Пакет [parrot](https://aur.archlinux.org/packages/parrot/) доступен в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), а [parrot-git](https://aur.archlinux.org/packages/parrot-git/) — в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
+*   пакеты, которым нужно окружение Java должны объявить зависимости `java-runtime`, {ic|java-runtime-headless}} или `java-environment`
+*   пакеты, которым нужно определённое окружение Java должны объявить зависимости с необходимым суффиксом
+*   пакеты OpenJDK объявляют `provides="java-runtime-openjdk=${pkgver}"`, что позволяет стороннему пакету объявлять зависимость от OpenJDK **без указания версии**
 
 ## Решение проблем
 
-### MySQL
+### Не подключается MySQL
 
-По причине того факта, что JDBC-драйверы часто используют порт из URL для установки соединения с базой данных, это соединение считается удаленным (другими словами, MySQL не слушает на порту в соответствии с настройками по умолчанию), несмотря на то, что оно может быть на том же хосте. Таким образом, чтобы использовать JDBC и MySQL вам следует включить удаленный доступ к MySQL, следуя инструкциям на странице [MySQL#Grant remote access](/index.php/MySQL#Grant_remote_access "MySQL").
+В связи с тем, что драйверы JDBC часто используют порт в URI для установления соединения с базой данных, он считается «удаленным» (т. е. MySQL не прослушивает порт в соответствии с его настройками по умолчанию), несмотря на то, что, возможно, они работают на одном хосте. Таким образом, чтобы использовать JDBC и MySQL, вы должны разрешить удаленный доступ к MySQL, следуя инструкциям в статье [MySQL](https://wiki.archlinux.org/index.php/MySQL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Включение_удалённого_доступа "ru:MySQL").
 
-### Маскировка под другой оконный менеджер
+### Не запускается IntelliJ IDEA
 
-Можно воспользоваться утилитой [wmname](https://www.archlinux.org/packages/?name=wmname) от [suckless.org](https://tools.suckless.org/x/wmname), чтобы предоставить JVM название другого оконного менеджера. Это должно решить проблемы с отображением графических приложений на Java, которые появляются в оконных менеджерах вроде [awesome](/index.php/Awesome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Awesome (Русский)"), [Dwm](/index.php/Dwm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dwm (Русский)") или [Ratpoison](/index.php/Ratpoison "Ratpoison"). Попробуйте значения "compiz" или "LG3D":
+Если IntelliJ IDEA вылетает с ошибкой `The selected directory is not a valid home for JDK`, придётся установить другую JDK или использовать IntelliJ IDEA с JetBrains Runtime.
+
+### Ошибки отрисовки приложений Java
+
+В оконных менеджерах [Awesome](https://wiki.archlinux.org/index.php/Awesome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ru:Awesome"), [Dwm](https://wiki.archlinux.org/index.php/Dwm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ru:Dwm") и [Ratpoison](/index.php/Ratpoison "Ratpoison") возникают ошибки отрисовки GUI в Java, появляются серые окна, приложения не изменяют размер, меню мгновенно закрываются. Для того, чтобы JVM думала, что используется оконный менеджер, отличный от установленного, используется [wmname](https://www.archlinux.org/packages/?name=wmname). Задайте поддельное название оконного менеджера, например, `compiz` или `LG3D`
 
 ```
 $ wmname compiz
 
 ```
 
-После выполнения команды перезапустите Java-приложение.
+После выполнения команды нужно перезапустить приложение Java. Такое поведение обосновано тем, что в JVM прямо установлены известные оконные менеджеры, которые используют подход *non-re-parenting*.
 
-Это работает, потому что в JVM содержится закодированный список "non-re-parenting" оконных менеджеров. Что интересно, некоторые пользователи предпочитают маскировать свои менеджеры под `LG3D` [написанный Sun на Java](https://en.wikipedia.org/wiki/Project_Looking_Glass "wikipedia:Project Looking Glass"), однако также являющийся "non-re-parenting".
+Если установка поддельного оконного менеджера не применима, есть несколько советов:
 
-### Шрифты отображаются размыто
+*   для [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) и [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), добавьте строчку `export _JAVA_AWT_WM_NONREPARENTING=1` в `/etc/profile.d/jre.sh`, затем выполните его или перезайдите
+*   для свежих JVM работает добавление `export AWT_TOOLKIT=MToolkit` в `~/.xinitrc` перед командой запуска оконного менеджера
+*   для пакетов Oracle можно использовать [SetWMName](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName), однако, положительный эффект может быть сброшен при использовании пакета `XMonad.Hooks.EwmhDesktops` в приложении. В этом случае может помочь добавление строчки `>> setWMName "LG3D"` к `LogHook`.
 
-Даже после выполнения всех рекомендаций в разделе [#Улучшенное отображение шрифтов](#Улучшенное_отображение_шрифтов) некоторые шрифты все ещё могут отображаться размыто. Если это так, попробуйте установить шрифты от Microsoft. Установите [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
+Смотри также [Problems with Java applications, Applet java console](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) на Haskell.org.
+
+### Неразборчивый шрифт в приложениях Java
+
+Некоторые шрифты не читаются, поэтому следует установить другие, читаемые шрифты, например, [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).
 
 ### В некоторых приложениях отсутствует текст
 
-Если в приложении совсем не отображаются никакие надписи, посмотрите советы в разделе [#Советы и рекомендации](#Советы_и_рекомендации), как предлагается в [FS#40871](https://bugs.archlinux.org/task/40871).
+Далее в разделе [#Улучшенное отображение шрифтов](#Улучшенное_отображение_шрифтов) приводятся параметры; см. также [FS#40871](https://bugs.archlinux.org/task/40871).
 
-### Серое окно | Приложения не изменяют размер с WM | Меню сразу закрываются
+### Система зависает при дебаггинге
 
-Стандартный тулкит Java для графических приложений содержит закодированный список "non-re-parenting" оконных менеджеров. Если используется WM не из этого списка, то вы можете столкнуться с различными проблемами в Java-приложениях. Самые частые — это "серые окна", когда Java-приложение отрисовывает серое окно вместо самого интерфейса. Также возможна проблема, когда меню раскрывается при нажатии, но тут же пропадает.
+Используйте параметр JVM `-Dsun.awt.disablegrab=true`. Смотри также [страницу бага](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6714678) в JDK 6.
 
-Несколько способов выйти из ситуации:
+### Конструктор JavaFX MediaPlayer вылетает с ошибкой
 
-*   В случае с [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) или [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) добавьте строку `export _JAVA_AWT_WM_NONREPARENTING=1` в `/etc/profile.d/jre.sh`, после чего выполните `source` над файлом `/etc/profile.d/jre.sh` или перезайдите в свой аккаунт.
-*   В случае с последней версией JDK и приложениями на AWT (например, IntelliJ IDEA) добавьте строку `export AWT_TOOLKIT=MToolkit` в `~/.xinitrc` перед запуском оконного менеджера.
-*   Также можно попробовать воспользоваться [wmname](https://www.archlinux.org/packages/?name=wmname), указав `wmname compiz` в `~/.xinitrc`.
-*   В случае с Oracle JRE/JDK используйте [SetWMName](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName). Заметьте, что данный параметр может не вступить в силу при использовании `XMonad.Hooks.EwmhDesktops`. В таком случае добавьте `>> setWMName "LG3D"` в `LogHook`.
+При создании экземпляра класса `MediaPlayer` может появиться такая ошибка:
 
-См. [[1]](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) для получения более подробной информации.
+```
+... (i.e. FXMLLoader construction exceptions) ...
+Caused by: MediaException: UNKNOWN : com.sun.media.jfxmedia.MediaException: Could not create player! : com.sun.media.jfxmedia.MediaException: Could not create player!
+ at javafx.scene.media.MediaException.exceptionToMediaException(MediaException.java:146)
+ at javafx.scene.media.MediaPlayer.init(MediaPlayer.java:511)
+ at javafx.scene.media.MediaPlayer.<init>(MediaPlayer.java:414)
+ at <constructor call>
+...
+
+```
+
+это связано с несовеместимостью JavaFX и [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) из репозитория, поэтому следует установить [ffmpeg-compat-55](https://aur.archlinux.org/packages/ffmpeg-compat-55/). См. также [обсуждение](https://www.reddit.com/r/archlinux/comments/70o8o6) на Reddit.
+
+### В приложениях Java не открываются внешние ссылки
+
+Установите [gvfs](https://www.archlinux.org/packages/?name=gvfs); в приложении требуется реализовать метод `Desktop.Action.BROWSE`. См. также [обсуждение](https://bugs.launchpad.net/ubuntu/+source/openjdk-8/+bug/1574879/comments/2) на Launchpad.
+
+### Ошибка инициализации `QuantumRenderer`: `no suitable pipeline found`
+
+Либо отсутствует GTK2 — установите [gtk2](https://www.archlinux.org/packages/?name=gtk2), либо отсутствует OpenJFX — установите [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx).
 
 ## Советы и рекомендации
 
-**Примечание:** Советы в этом разделе подходят всем приложениям, использующим внешнюю среду Java, установленную отдельно. Некоторые приложения поставляются со встроенной сборкой Java, либо используют нестандартные способы работы с графическим интерфейсом, отрисовки шрифтов и т. д. Поэтому, нет гарантий, что эти советы на самом деле сработают.
+**Примечание:** Предложения в этом разделе применимы ко всем приложениям, использующим явно установленную (внешнюю) среду выполнения Java. Некоторые приложения связаны с собственной средой выполнения или используют собственную механику для графического интерфейса пользователя, рендеринга шрифтов и т. д., поэтому ни один из нижеприведённых советов не будет работать гарантированно.
 
-Поведением большинства приложений Java можно управлять, передавая переменные в исполняемую среду Java. Как предлагают [на форуме](https://bbs.archlinux.org/viewtopic.php?id=72892), сделать это можно добавлением указанной строки в ваш файл `~/.bashrc` (или `/etc/profile.d/jre.sh` для программ, при запуске которых среда не инициализируется из `~/.bashrc`, например, если программа запускается из Applications view в Gnome):
+Поведение большинства приложений Java можно контролировать, предоставляя предопределённые переменные для среды выполнения Java. Для этого нужно добавлять строчки в `~/.bashrc` или `/etc/profile.d/jre.sh`.
 
 ```
 export _JAVA_OPTIONS="-D**<option 1>** -D**<option 2>**..."
 
 ```
 
-Например, чтобы включить сглаживание шрифтов и оформление GTK по умолчанию:
+Например, предопределённое использование сглаженных шрифтов и GTK:
 
 ```
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
@@ -275,16 +344,34 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 
 ### Улучшенное отображение шрифтов
 
-Обе реализации Java, открытая и закрытая, имеют недостатки в реализации сглаживания шрифтов. Это может быть исправлено указанием следующих параметров:
+Установите параметры JVM `-Dawt.useSystemAAFontSettings=on`, `-Dswing.aatext=true`. См. статью [Java Runtime Environment fonts](https://wiki.archlinux.org/index.php/Java_Runtime_Environment_fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ru:Java Runtime Environment fonts")
 
-`awt.useSystemAAFontSettings=on`, `swing.aatext=true`
+### Удаление сообщения `Picked up _JAVA_OPTIONS`
 
-Смотрите также [Шрифты в исполняемой среде Java](/index.php/Java_Runtime_Environment_fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Java Runtime Environment fonts (Русский)") для получения подробной информации.
+При установке какого-либо параметра JVM появялестя сообщение вида `Picked up _JAVA_OPTIONS=...`. Чтобы избавиться от сообщения, используйте команды ниже
+
+```
+_SILENT_JAVA_OPTIONS="$_JAVA_OPTIONS"
+unset _JAVA_OPTIONS
+alias java='java "$_SILENT_JAVA_OPTIONS"'
+
+```
 
 ### Оформление GTK
 
-Если ваши Java-приложения выглядят отвратительно, вам, вероятно, сможет помочь смена оформления по умолчанию на тему GTK для компонентов Swing: `swing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`.
+Установите параметры JVM `swing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`. Некоторые приложения используют кроссплатформенный вид `Metal`; чтобы переопределить его, используйте параметр JVM `swing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`.
 
-Некоторые упрямые приложения требуют использования кроссплатформенного оформления. В некоторых таких случаях, вам удастся заставить эти приложения использовать оформление GTK, установив следующий параметр:
+	Поддержка GTK 3
 
-`swing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`.
+В версиях, предшествующих Java 9 использовался вид GTK 2\. Эта несовместимость между версиями GTK может нарушить работу приложений, использующих плагины Java с графическим интерфейсом, поскольку смешивание GTK 2 и GTK 3 в одном и том же процессе не поддерживается (например, LibreOffice 5.0). Начиная с Java 9 можно выбрать GTK `2`, `2.2` или `3`, но по умолчанию используется GTK 2; чтобы задать приоритет используйте параметр JVM `jdk.gtk.version=3`.
+
+### Ускорение отрисовки 2D
+
+Если доступно использование [OpenGL](https://wiki.archlinux.org/index.php/OpenGL_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ru:OpenGL"), его можно включить в приложениях Java, задав переменную окружения
+
+```
+export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
+
+```
+
+**Примечание:** Включение этого параметра может привести к неправильной работе пользовательского интерфейса таких программ, как все IDE от JetBrains, из-за чего они частично отрисовывают окна, всплывающие окна и панели инструментов.

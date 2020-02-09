@@ -628,10 +628,10 @@ Every installed package provides a `/var/lib/pacman/local/*package-version*/file
 
 ### "Failed to commit transaction (invalid or corrupted package)" error
 
-Look for *.part* files (partially downloaded packages) in `/var/cache/pacman/pkg` and remove them (often caused by usage of a custom `XferCommand` in `pacman.conf`).
+Look for *.part* files (partially downloaded packages) in `/var/cache/pacman/pkg/` and remove them (often caused by usage of a custom `XferCommand` in `pacman.conf`).
 
 ```
-# find /var/cache/pacman/pkg/ -iname "*.part" -exec rm {} \;
+# find /var/cache/pacman/pkg/ -iname "*.part" -delete
 
 ```
 

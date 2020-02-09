@@ -60,6 +60,8 @@ Since version [8.0.2-1](https://git.archlinux.org/svntogit/community.git/commit/
 *   `--enable-executable-dynamic` causes dynamic linking to be used for executables (if your project contains executables).
 *   `--ghc-options=-dynamic` adds the `-dynamic` flag to every invocation of GHC (e.g. if a package has a non-trivial `Setup.hs`).
 
+Note that if you've used [gchup](https://github.com/haskell/ghcup) to install cabal, adding these changes to your `$HOME/.cabal/config` should not be done. This can lead to errors such as `dieVerbatim: user error (cabal: '/home/user/.ghcup/bin/ghc'`.
+
 You can also set these flags in `~/.cabal/config` so that it applies to all projects by default:
 
  `~/.cabal/config` 

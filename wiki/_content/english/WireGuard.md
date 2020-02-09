@@ -37,6 +37,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [6.2 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
     *   [6.3 Endpoint with changing IP](#Endpoint_with_changing_IP)
     *   [6.4 Generate QR code](#Generate_QR_code)
+    *   [6.5 Enable debug logs](#Enable_debug_logs)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -531,6 +532,16 @@ If the client is a mobile device such as a phone, [qrencode](https://www.archlin
 
 ```
 $ qrencode -t ansiutf8 < client.conf
+
+```
+
+### Enable debug logs
+
+When using the Linux kernel module on a kernel that supports dynamic debugging, debugging information can be written into the kernel ring buffer (viewable with [dmesg](/index.php/Dmesg "Dmesg") and [journalctl](/index.php/Journalctl "Journalctl")) by running:
+
+```
+# modprobe wireguard 
+# echo module wireguard +p > /sys/kernel/debug/dynamic_debug/control
 
 ```
 

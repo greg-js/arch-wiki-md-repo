@@ -568,6 +568,8 @@ E: ID_PATH_TAG=pci-0000_00_15_1-platform-i2c_designware_1
 E: DEVLINKS=/dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse
 ```
 
+If you experience problems with the touch pad it might be worth disabling psmouse
+
 ## Thunderbolt docks
 
 ### TB16

@@ -44,6 +44,7 @@ To fix this problem compile the following program. It appends the given username
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <utmpx.h>
 
 int main(int argc, char ** argv) {

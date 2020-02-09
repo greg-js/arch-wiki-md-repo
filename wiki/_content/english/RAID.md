@@ -930,7 +930,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 *   [Chapter 15: Redundant Array of Independent Disks (RAID)](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-raid.html) of Red Hat Enterprise Linux 6 Documentation
 *   [Linux-RAID FAQ](http://tldp.org/FAQ/Linux-RAID-FAQ/x37.html) on the Linux Documentation Project
 *   [Dell.com Raid Tutorial](http://support.dell.com/support/topics/global.aspx/support/entvideos/raid?c=us&l=en&s=gen) - Interactive Walkthrough of Raid
-*   [BAARF](http://www.miracleas.com/BAARF/) including *[Why should I not use RAID 5?](http://www.miracleas.com/BAARF/RAID5_versus_RAID10.txt)* by Art S. Kagel
+*   [BAARF](https://web.archive.org/web/20160114023340/http://www.miracleas.com/BAARF/)(Archive.org) including *[Why should I not use RAID 5?](https://web.archive.org/web/20160112115539/http://www.miracleas.com/BAARF/RAID5_versus_RAID10.txt)*(Archive.org) by Art S. Kagel
 *   [Introduction to RAID](http://www.linux-mag.com/id/7924/), [Nested-RAID: RAID-5 and RAID-6 Based Configurations](http://www.linux-mag.com/id/7931/), [Intro to Nested-RAID: RAID-01 and RAID-10](http://www.linux-mag.com/id/7928/), and [Nested-RAID: The Triple Lindy](http://www.linux-mag.com/id/7932/) in Linux Magazine
 *   [HowTo: Speed Up Linux Software Raid Building And Re-syncing](http://www.cyberciti.biz/tips/linux-raid-increase-resync-rebuild-speed.html)
 *   [RAID5-Server to hold all your data](http://fomori.org/blog/?p=94)

@@ -124,7 +124,7 @@ Véase [Repositorios oficiales#kde-inestable](/index.php/Official_repositories#k
 
 ## Iniciar Plasma
 
-**Nota:** Aunque es posible iniciar Plasma en [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)"), faltan algunas características y hay algunos problemas conocidos a partir de Plasma 5.13\. Véase la [Plasma 5.13 Errata](https://community.kde.org/Plasma/5.13_Errata#Wayland) para ver una lista de problemas y la [Plasma on Wayland workboard](https://phabricator.kde.org/project/board/99/) para observar el estado actual de desarrollo. Utilize [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") para una experiencia más completa y estable.
+**Nota:** Aunque es posible iniciar Plasma en [Wayland](/index.php/Wayland "Wayland"), todavía existen problemas y faltan algunas características. Revisa [Wayland Showstoppers](https://community.kde.org/Plasma/Wayland_Showstoppers), allí encontrarás una lista de problemas sobre [Plasma en Wayland workboard](https://phabricator.kde.org/project/board/99/). Usa [Xorg](/index.php/Xorg "Xorg") para tener una experiencia más completa y estable.
 
 Plasma puede iniciarse usando o bien un [gestor de pantallas](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)"), o bien desde la consola.
 
@@ -133,14 +133,11 @@ Plasma puede iniciarse usando o bien un [gestor de pantallas](/index.php/Display
 *   Seleccione *Plasma* para iniciar una nueva sesión en [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)").
 *   [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) y seleccione *Plasma (Wayland)* para iniciar una nueva sesión en [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)").
 
-**Nota:** La implementación del controlador propietario [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)") para Wayland requiere EGLStreams. KDE no ha implementado EGLStreams en su [implementación](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not) de Wayland. Las siguientes soluciones están disponibles:
-
-*   Utilizar el controlador [Nouveau](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)").
-*   Utilizar la sesión de (por defecto) Xorg.
-
 ### Desde la consola
 
-Para iniciar Plasma con [xinit/startx](/index.php/Xinit_(Espa%C3%B1ol) "Xinit (Español)"), agregue `exec startplasma-x11` a su archivo `.xinitrc`. Si desea iniciar Xorg al iniciar sesión, véase [iniciar X al iniciar sesión](/index.php/Xinit_(Espa%C3%B1ol)#Inicio_automático_de_X_al_inicio_de_sesión "Xinit (Español)"). Para iniciar una sesión de Plasma en Wayland desde una consola, ejecute `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
+*   Para iniciar plasma con [xinit/startx](/index.php/Xinit "Xinit"), agrega `exec startplasma-x11` en tu archivo `.xinitrc`. Si quieres iniciar Xorg al iniciar sesión, revisa [Start X at login](/index.php/Start_X_at_login "Start X at login").
+
+*   Para iniciar plasma en una sesión Wayland desde la consola, ejecuta `XDG_SESSION_TYPE=wayland dbus-run-session startplasma-wayland`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Configuración
 

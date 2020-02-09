@@ -26,7 +26,8 @@ iwd can work in standalone mode or in combination with comprehensive network man
     *   [3.2 EAP-PEAP](#EAP-PEAP)
     *   [3.3 TTLS-PAP](#TTLS-PAP)
     *   [3.4 TLS Based EAP Methods on older kernels](#TLS_Based_EAP_Methods_on_older_kernels)
-    *   [3.5 Other cases](#Other_cases)
+    *   [3.5 Eduroam](#Eduroam)
+    *   [3.6 Other cases](#Other_cases)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
     *   [4.2 Disable periodic scan for available networks](#Disable_periodic_scan_for_available_networks)
@@ -197,7 +198,7 @@ EAP-PEAP-Phase2-Password=hunter2
 AutoConnect=true
 ```
 
-**Tip:** If you are planning on using *eduroam* and you are affiliated with a US-based institution, your CA is likely `Addtrust External CA Root`, as your institution probably issues certificates through Internet2's InCommon. However, you should always refer to your organization's help desk if in doubt.
+**Tip:** If you are planning on using *eduroam* and you are affiliated with a US-based institution, your CA is likely `Addtrust External CA Root`, as your institution probably issues certificates through Internet2's InCommon. However, you should always refer to your organization's help desk if in doubt. See also [Iwd#Eduroam](/index.php/Iwd#Eduroam "Iwd").
 
 ### TTLS-PAP
 
@@ -246,6 +247,21 @@ $ updpkgsums
 ```
 
 and build the package.
+
+### Eduroam
+
+Eduroam offers a [configuration assistant tool (CAT)](https://cat.eduroam.org/), which unfortunately does not support iwd. However, the installer, which you can download by clicking on the download button then selecting your university, is just a Python script. It is easy to extract the necessary configuration options, including the certificate and server domain mask.
+
+The following table contains a mapping of iwd configuration options to eduroam CAT install script variables.
+
+| Iwd Configuration Option | CAT Script Variable |
+| file name | one of `Config.ssids` |
+| `EAP-Method` | `Config.eap_outer` |
+| `EAP-Identity` | `Config.email` |
+| `EAP-PEAP-CACert` | `Config.CA` |
+| `EAP-PEAP-ServerDomainMask` | one of `Config.servers` |
+| `EAP-PEAP-Phase2-Method` | `Config.eap_inner` |
+| `EAP-PEAP-Phase2-Identity` | username@`Config.user_realm` |
 
 ### Other cases
 

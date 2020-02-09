@@ -26,7 +26,8 @@ Parameters either have the format `parameter` or `parameter=value`.
     *   [1.5 LILO](#LILO)
     *   [1.6 rEFInd](#rEFInd)
     *   [1.7 EFISTUB](#EFISTUB)
-    *   [1.8 Hijacking cmdline](#Hijacking_cmdline)
+    *   [1.8 dracut](#dracut)
+    *   [1.9 Hijacking cmdline](#Hijacking_cmdline)
 *   [2 Parameter list](#Parameter_list)
 *   [3 See also](#See_also)
 
@@ -146,6 +147,10 @@ For more information on configuring rEFInd, see the [rEFInd](/index.php/REFInd "
 ### EFISTUB
 
 See [EFISTUB#Using UEFI directly](/index.php/EFISTUB#Using_UEFI_directly "EFISTUB").
+
+### dracut
+
+[dracut](/index.php/Dracut "Dracut") is capable of embeding the kernel parameters in the initramfs, thus allowing to omit them from the boot loader configuration. See [dracut#Kernel command line options](/index.php/Dracut#Kernel_command_line_options "Dracut").
 
 ### Hijacking cmdline
 
