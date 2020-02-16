@@ -223,7 +223,7 @@ With that, the printer will restart, and the latest firmware will be installed a
 
 ## Canon
 
-There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [Gutenprint](/index.php/Gutenprint "Gutenprint"). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, [#UFRII](#UFRII) . Others use the [#CARPS](#CARPS), or [#cnijfilter](#cnijfilter) ([cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) / [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/)), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
+There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [Gutenprint](/index.php/Gutenprint "Gutenprint") and [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, [#UFRII](#UFRII) . Others use the [#CARPS](#CARPS), or [#cnijfilter](#cnijfilter) ([cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) / [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/)), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
 
 | Printer | Driver/filter | Notes |
 | iP4300 | [Gutenprint](/index.php/Gutenprint "Gutenprint") | Or use the [TurboPrint](http://www.turboprint.info/) driver. |

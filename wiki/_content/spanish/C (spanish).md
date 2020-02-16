@@ -1,9 +1,9 @@
 **Estado de la traducción**
-Este artículo es una traducción de [C](/index.php/C "C"), revisada por última vez el **2018-12-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=C&diff=0&oldid=560524) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [C](/index.php/C "C"), revisada por última vez el **2020-02-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=C&diff=0&oldid=560524) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 El kernel [Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)") y las herramientas de usuario [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") están escritos principalmente en [C](https://en.wikipedia.org/wiki/es:C_(lenguaje_de_programaci%C3%B3n) "wikipedia:es:C (lenguaje de programación)").
 
-Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) como la biblioteca estándar de C; es parte del [grupo base](/index.php/Base_group_(Espa%C3%B1ol) "Base group (Español)").
+Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU_C_Library [base](https://www.archlinux.org/packages/?name=base).
 
 Puede utilizar [toolchain de GNU](/index.php/GNU_toolchain_(Espa%C3%B1ol) "GNU toolchain (Español)") o [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") para desarrollar software en C, [C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++") u [Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C").
 
@@ -78,6 +78,7 @@ Véase también [Wikipedia:List of compilers#C compilers](https://en.wikipedia.o
 
 ## Bibliotecas
 
+*   [FFmpeg](/index.php/FFmpeg "FFmpeg") - incluye libav, la biblioteca de audio y vídeo (no debe confundirse con la bifurcación FFmpeg del mismo nombre).
 *   **[GLib](https://en.wikipedia.org/wiki/GLib "wikipedia:GLib")** — Biblioteca de sistema de bajo nivel por [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), incluye [GObject](https://en.wikipedia.org/wiki/GObject "wikipedia:GObject") y [GIO](https://en.wikipedia.org/wiki/GIO "wikipedia:GIO").
 
 	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib2](https://www.archlinux.org/packages/?name=glib2)
@@ -86,11 +87,12 @@ Véase también [Wikipedia:List of compilers#C compilers](https://en.wikipedia.o
 
 Véase también:
 
-*   [GTK+/Development#C](/index.php/GTK%2B/Development#C "GTK+/Development")
+*   [GTK/Development#C](/index.php/GTK/Development#C "GTK/Development")
 *   [Desktop notifications#C](/index.php/Desktop_notifications#C "Desktop notifications")
 *   [Libcanberra#C](/index.php/Libcanberra#C "Libcanberra")
 *   [Archiving and compression (Español)#Bibliotecas de compresión](/index.php/Archiving_and_compression_(Espa%C3%B1ol)#Bibliotecas_de_compresión "Archiving and compression (Español)")
 *   [Wikipedia:Category:C libraries](https://en.wikipedia.org/wiki/Category:C_libraries "wikipedia:Category:C libraries")
+*   [Listado de bibliotecas C de código abierto](https://en.cppreference.com/w/c/links/libs)
 
 ## Véase también
 

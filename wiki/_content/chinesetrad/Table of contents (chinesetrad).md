@@ -2,7 +2,7 @@
 
 若有空不妨協助翻譯各類文件，謝謝。
 
-| [正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文") <small>(71)</small> |
+| [正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文") <small>(72)</small> |
 | <small>1.</small> [關於 Arch](/index.php/Category:About_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:About Arch (正體中文)") <small>(9)</small> |
 | <small>1.1.</small> [Arch 開發](/index.php/Category:Arch_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Arch development (正體中文)") <small>(0) (還在 [開發](/index.php/Category:Development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Development (正體中文)"))</small> |
 | <small>1.1.1.</small> [軟體包開發](/index.php/Category:Package_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Package development (正體中文)") <small>(5)</small> |
@@ -28,13 +28,14 @@
 | <small>4.2.</small> [硬體偵測和疑難排解](/index.php/Category:Hardware_detection_and_troubleshooting_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Hardware detection and troubleshooting (正體中文)") <small>(1)</small> |
 | <small>4.3.</small> [輸入裝置](/index.php/Category:Input_devices_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Input devices (正體中文)") <small>(1)</small> |
 | <small>4.3.1.</small> [滑鼠](/index.php/Category:Mice_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mice (正體中文)") <small>(2)</small> |
-| <small>4.4.</small> [印表機](/index.php/Category:Printers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Printers (正體中文)") <small>(1)</small> |
-| <small>4.5.</small> [儲存裝置](/index.php/Category:Storage_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Storage (正體中文)") <small>(1)</small> |
+| <small>4.4.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mainboards and BIOS (正體中文)") <small>(1)</small> |
+| <small>4.5.</small> [印表機](/index.php/Category:Printers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Printers (正體中文)") <small>(1)</small> |
+| <small>4.6.</small> [儲存裝置](/index.php/Category:Storage_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Storage (正體中文)") <small>(1)</small> |
 | <small>5.</small> [網路](/index.php/Category:Networking_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Networking (正體中文)") <small>(2)</small> |
 | <small>5.1.</small> [網路應用程式](/index.php/Category:Internet_applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internet applications (正體中文)") <small>(2) (還在 [應用程式](/index.php/Category:Applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Applications (正體中文)"))</small> |
 | <small>5.1.1.</small> [Email clients](/index.php/Category:Email_clients_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Email clients (正體中文)") <small>(2)</small> |
 | <small>5.2.</small> [網頁伺服器](/index.php/Category:Web_server_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Web server (正體中文)") <small>(1)</small> |
-| <small>6.</small> [系統管理](/index.php/Category:System_administration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:System administration (正體中文)") <small>(1)</small> |
+| <small>6.</small> [系統管理](/index.php/Category:System_administration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:System administration (正體中文)") <small>(2)</small> |
 | <small>6.1.</small> [開機過程](/index.php/Category:Boot_process_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Boot process (正體中文)") <small>(2)</small> |
 | <small>6.1.1.</small> [開機載入程式](/index.php/Category:Boot_loaders_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Boot loaders (正體中文)") <small>(1)</small> |
 | <small>6.2.</small> [Daemons](/index.php/Category:Daemons_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Daemons (正體中文)") <small>(1)</small> |

@@ -67,7 +67,7 @@ Em adição, encriptação de disco pode também ser usada para adicionar alguma
 
 Você ainda vai ser vulnerável a:
 
-*   Atacantes podem entrar no seu sistema (exemplo, pela internet) depois que você já abriu e montou as partes criptografadas do disco.
+*   Atacantes que podem entrar no seu sistema (exemplo, pela internet) depois que você já abriu e montou as partes criptografadas do disco.
 *   Atacantes que conseguem acesso físico ao computador enquanto este está ligado (até mesmo se você usar um bloqueador de tela), ou um pouco *depois* que ele está ligado, se eles têm recursos para fazer um [cold boot attack](https://en.wikipedia.org/wiki/Cold_boot_attack "wikipedia:Cold boot attack").
 *   Uma entidade governamental, que não somente tem recursos para facilmente fazer as coisas citadas acima como também pode simplesmente forçar você a desistir de suas chaves/senhas usando várias técnicas de [coerção](https://en.wikipedia.org/wiki/pt:Coer%C3%A7%C3%A3o "wikipedia:pt:Coerção"). Na maioria dos países não democráticos, como também no EUA e Reino Unido, pode ser legal para agências que aplicam a lei fazer isso se eles suspeitam que você pode estar escondendo algo de interesse deles.
 *   [Rubber-hose cryptanalysis](https://en.wikipedia.org/wiki/Rubber-hose_cryptanalysis "wikipedia:Rubber-hose cryptanalysis"). Veja também [XKCD #538](https://xkcd.com/538/)

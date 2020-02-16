@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Core utilities](/index.php/Core_utilities "Core utilities"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=554173) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Core utilities](/index.php/Core_utilities "Core utilities"), revisada por última vez el **2020-02-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=595977) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -9,9 +9,9 @@ Artículos relacionados
 *   [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 *   [Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
 
-Las *utilidades principales* son las herramientas básicas y fundamentales de un sistema [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")/[Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)"). En Arch Linux se encuentran en el [grupo base](/index.php/Base_group_(Espa%C3%B1ol) "Base group (Español)"). Este artículo proporciona una visión general e incompleta de ellos, vincula su documentación y describe alternativas útiles. El alcance de este artículo incluye, pero no se limita, a [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). La mayoría de los servicios básicos son herramientas tradicionales [Unix](https://en.wikipedia.org/wiki/es:Unix "wikipedia:es:Unix") (véase [Heirloom](/index.php/Heirloom "Heirloom")) y muchos fueron estandarizados por [POSIX](https://en.wikipedia.org/wiki/es:POSIX "wikipedia:es:POSIX") pero se han seguido desarrollado para proporcionar más funciones.
+Las *utilidades principales* son las herramientas básicas y fundamentales de un sistema [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")/[Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)"). Este artículo proporciona una visión general e incompleta de ellos, vincula su documentación y describe alternativas útiles. El alcance de este artículo incluye, pero no se limita, a [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). La mayoría de los servicios básicos son herramientas tradicionales [Unix](https://en.wikipedia.org/wiki/es:Unix "wikipedia:es:Unix") (véase [Heirloom](/index.php/Heirloom "Heirloom")) y muchos fueron estandarizados por [POSIX](https://en.wikipedia.org/wiki/es:POSIX "wikipedia:es:POSIX") pero se han seguido desarrollado para proporcionar más funciones.
 
-La mayoría de las interfaces de línea de órdenes están documentadas en las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), las utilidades del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") están documentadas en los [manuales de información](/index.php/Info_manual_(Espa%C3%B1ol) "Info manual (Español)"), algunos intérpretes de línea de órdenes proporcionan una orden `help` para las órdenes incorporadas de la [línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"). Además, la mayoría de las utilidades imprimen su uso cuando se ejecutan con el indicador `--help`.
+La mayoría de las interfaces de línea de órdenes están documentadas en las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), las utilidades del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") están documentadas principalmente en los [manuales de información](/index.php/Info_manual_(Espa%C3%B1ol) "Info manual (Español)"), algunos intérpretes de línea de órdenes proporcionan una orden `help` para las órdenes incorporadas de la [línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"). Además, la mayoría de las utilidades imprimen su uso cuando se ejecutan con el indicador `--help`.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -23,11 +23,13 @@ La mayoría de las interfaces de línea de órdenes están documentadas en las [
     *   [1.1 Previniendo la pérdida de datos](#Previniendo_la_pérdida_de_datos)
 *   [2 No esenciales](#No_esenciales)
 *   [3 Alternativas](#Alternativas)
-    *   [3.1 Alternativas a find](#Alternativas_a_find)
-    *   [3.2 Alternativas a diff](#Alternativas_a_diff)
-    *   [3.3 Alternativas a grep](#Alternativas_a_grep)
-        *   [3.3.1 Buscadores de código](#Buscadores_de_código)
-        *   [3.3.2 Filtros interactivos](#Filtros_interactivos)
+    *   [3.1 Alternativas a cp](#Alternativas_a_cp)
+    *   [3.2 Alternativas a ls](#Alternativas_a_ls)
+    *   [3.3 Alternativas a find](#Alternativas_a_find)
+    *   [3.4 Alternativas a diff](#Alternativas_a_diff)
+    *   [3.5 Alternativas a grep](#Alternativas_a_grep)
+        *   [3.5.1 Buscadores de código](#Buscadores_de_código)
+        *   [3.5.2 Filtros interactivos](#Filtros_interactivos)
 *   [4 Véase también](#Véase_también)
 
 ## Esenciales
@@ -36,8 +38,8 @@ La siguiente tabla lista algunas utilidades importantes las cuales los usuarios 
 
 | Paquete | Utilidad | Descripción | Documentación | Alternativas |
 | incluido en la línea de órdenes | cd | cambia de directorio | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
-| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | lista el directorio | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
-| cat | concatena archivos a la salida estándar | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
+| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | lista el directorio | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [lsd](https://www.archlinux.org/packages/?name=lsd), [tree](https://www.archlinux.org/packages/?name=tree) |
+| cat | concatena archivos a la salida estándar | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1), [bat](https://www.archlinux.org/packages/?name=bat) |
 | mkdir | crea un directorio | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mkdir-invocation.html) |
 | rmdir | elimina un directorio vacío | [rmdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rmdir-invocation.html) |
 | rm | elimina archivos o directorios | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rm-invocation.html) | [shred](/index.php/Shred "Shred") |
@@ -67,7 +69,7 @@ La siguiente tabla lista algunas utilidades importantes las cuales los usuarios 
 
 ### Previniendo la pérdida de datos
 
-rm, mv, cp y las redirecciones de la línea de órdenes eliminan o sobrescriben archivos sin preguntar. rm, mv y cp son compatibles con el indicador `-i` para avisar al usuario antes de cada eliminación / sobreescritura. A algunos usuarios les gusta habilitar el indicador `-i` de forma predeterminada utilizando [alias](/index.php/Alias_(Espa%C3%B1ol) "Alias (Español)"). Sin embargo, estas configuraciones de la línea de órdenes son peligrosas porque te acostumbra a ellas, lo que da como resultado la posible pérdida de datos cuando utiliza otro sistema o usuario que no tiene dicho indicador. La mejor forma de evitar la pérdida de datos es hacer [copias de seguridad](/index.php/Backup "Backup").
+`rm`, `mv`, `cp` y las redirecciones de la línea de órdenes eliminan o sobrescriben archivos sin preguntar. `rm`, `mv`, y `cp` son compatibles con el indicador `-i` para avisar al usuario antes de cada eliminación / sobreescritura. A algunos usuarios les gusta habilitar el indicador `-i` de forma predeterminada utilizando [alias](/index.php/Alias_(Espa%C3%B1ol) "Alias (Español)"). Confiar en estas opciones de las línea de órdenes puede ser peligroso porque te acostumbra a ellas, lo que da como resultado la posible pérdida de datos cuando utiliza otro sistema o usuario que no tiene dicho indicador. La mejor forma de evitar la pérdida de datos es crear [copias de seguridad](/index.php/Backup "Backup").
 
 ## No esenciales
 
@@ -96,7 +98,21 @@ El paquete [moreutils](https://www.archlinux.org/packages/?name=moreutils) propo
 
 ## Alternativas
 
-Las alternativas a las utilidades principales del grupo [base](https://www.archlinux.org/packages/?name=base) son [BusyBox](/index.php/BusyBox "BusyBox"), [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) y [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
+La alternativa a las utilidades principales son proporcionadas por [BusyBox](/index.php/BusyBox "BusyBox"), [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) y [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
+
+### Alternativas a cp
+
+La utilización de [rsync (Español)#Como alternativa de cp/mv](/index.php/Rsync_(Espa%C3%B1ol)#Como_alternativa_de_cp/mv "Rsync (Español)") le permite reanudar una transferencia fallida, mostrar el estado de la transferencia, omitir archivos ya existentes y asegurarse de la integridad de los archivos de destino utilizando sumas de verificación.
+
+### Alternativas a ls
+
+*   **lsd** — Moderno ls con muchos colores bonitos e iconos increíbles. Escrito en Rust.
+
+	[https://github.com/Peltoche/lsd](https://github.com/Peltoche/lsd) || [lsd](https://www.archlinux.org/packages/?name=lsd)
+
+*   **exa** — Otro reemplazo de ls con soporte para colores, vista de árbol, integración de git y otras características. También escrito en Rust.
+
+	[https://github.com/ogham/exa](https://github.com/ogham/exa) || [exa](https://www.archlinux.org/packages/?name=exa)
 
 ### Alternativas a find
 
@@ -130,6 +146,10 @@ Mientras que [diffutils](https://www.archlinux.org/packages/?name=diffutils) no 
 *   **cwdiff** — Un envoltorio de wdiff de GNU que colorea el resultado.
 
 	[Https://github.com/junghans/cwdiff](Https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
+
+*   **icdiff** — Una herramienta diff coloreada escrita en Python. "Improved color diff" está destinado a complementar el uso normal de diff.
+
+	[https://github.com/jeffkaufman/icdiff](https://github.com/jeffkaufman/icdiff) || [icdiff](https://aur.archlinux.org/packages/icdiff/),[icdiff-git](https://aur.archlinux.org/packages/icdiff-git/)
 
 Véase también [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities").
 

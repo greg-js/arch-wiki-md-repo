@@ -915,6 +915,10 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/)
 
+*   **rlaunch** — An extremely fast and light-weight dmenu-like application launcher written in Rust
+
+	[https://github.com/PonasKovas/rlaunch](https://github.com/PonasKovas/rlaunch) || [rlaunch](https://aur.archlinux.org/packages/rlaunch/)
+
 *   **Runa** — Fast and light dmenu-driven desktop application launcher, suitable for use standalone, integrated into file manager context menus, or as an 'xdg-open' replacement. Favourite applications can also be configured.
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#runa](http://appstogo.mcfadzean.org.uk/linux.html#runa) || [runa](https://aur.archlinux.org/packages/runa/)

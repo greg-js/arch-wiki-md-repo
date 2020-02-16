@@ -4,7 +4,7 @@ Related articles
 *   [Kernels/Compilation](/index.php/Kernels/Compilation "Kernels/Compilation")
 *   [Kexec](/index.php/Kexec "Kexec")
 
-Kernel Live Patching (KLP) allows quick fixes to the kernel space without rebooting the whole system. Since version 4.0, related patches have been accepted [[1]](https://lwn.net/Articles/619390/)[[2]](https://lwn.net/Articles/622936/)[[3]](https://lwn.net/Articles/634649/), so one can configure his/her kernel to enable this feature. Generally, KLP is achieved by the following steps:
+Kernel Live Patching (KLP) allows quick fixes to the kernel space without rebooting the whole system. Since version 4.0, related patches have been accepted [[1]](https://lwn.net/Articles/619390/)[[2]](https://lwn.net/Articles/622936/)[[3]](https://lwn.net/Articles/634649/), so one can configure their kernel to enable this feature. Generally, KLP is achieved by the following steps:
 
 1.  Obtain the source tree of the running kernel
 2.  Prepare the patch against the kernel

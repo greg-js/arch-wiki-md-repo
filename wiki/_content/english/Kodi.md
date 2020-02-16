@@ -487,12 +487,12 @@ Restart Kodi and set port `80` in the configuration menu (*Services > Webserver 
 
 ### Using ALSA
 
-If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using [ALSA](/index.php/ALSA "ALSA") directly by starting Kodi with the `AE_SINK=ALSA` [environment variable](/index.php/Environment_variable "Environment variable"). The Kodi wiki for NUC devices provides [instructions](https://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)
+If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using [ALSA](/index.php/ALSA "ALSA") directly by starting Kodi with the `KODI_AE_SINK=ALSA` [environment variable](/index.php/Environment_variable "Environment variable"). The Kodi wiki for NUC devices provides [instructions](https://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)
 
 If using `kodi-standalone`, change the `APP` variable in `/usr/bin/kodi-standalone` to
 
 ```
-APP="${bindir}/pasuspender -- env AE_SINK=ALSA ${bindir}/${bin_name} --standalone $@"
+APP="${bindir}/pasuspender -- env KODI_AE_SINK=ALSA ${bindir}/${bin_name} --standalone $@"
 
 ```
 

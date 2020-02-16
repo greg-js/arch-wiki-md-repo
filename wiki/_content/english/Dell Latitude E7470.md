@@ -1,4 +1,4 @@
-The Dell Latitude E7470 is a 14" business notebook released in the first quarter of 2016.
+The Dell Latitude E7470 is a 14" sexy business ultrabook released in the first quarter of 2016.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

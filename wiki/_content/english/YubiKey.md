@@ -189,32 +189,32 @@ Which application on the key is chosen is determined by the host application and
 
 `ykman mode` will tell you what modes are currently activated/enabled/available. This could output something like
 
- `Current connection mode is: OTP+U2F+CCID` 
+ `Current connection mode is: OTP+FIDO+CCID` 
 
-Meaning that currently the OTP, U2F and CCID subsystem of the key are enabled.
+Meaning that currently the OTP, FIDO and CCID subsystem of the key are enabled.
 
 #### Set the enabled modes
 
 `ykman mode <MODE>` will allow you to define which modes should be activated/enabled/available.
 
-*   `<MODE>` can be a string, such as `OTP+U2F+CCID`, or a shortened form `o+u+c`.
+*   `<MODE>` can be a string, such as `OTP+FIDO+CCID`, or a shortened form `o+f+c`.
     With "+" you can combine multiple modes that you wish to be enabled.
 *   `<MODE>` can be a mode-number, which is one number that encodes several enabled modes (like flags) into one value.
     The only valid modes when using numbers is 0 - 6 ([see here](https://github.com/Yubico/yubikey-manager/blob/master/ykman/util.py#L94)). The extra flags are not part of the mode in that sense, they just need to be set at the same time as the mode is set.
 
 Usually what you want is to make all functionality available (you will still need to potentially configure stuff, see functionality sections below for more details). In order to do so you can use:
 
-`ykman mode c+u+o` or `ykman mode 6`
+`ykman mode c+f+o` or `ykman mode 6`
 
 **Note:** Using the "80" mode-number or the corresponding `--touch-eject` parameter of `ykman mode` can only be used when the device is *only* in CCID mode (by running `ykman mode ccid --touch-eject` for instance).
 
 Once the `--touch-eject` flag is set, you should be able to eject/insert the smartcard by pressing the button. The LED should indicate if the card is inserted or not as well.
 
-**Warning:** But using the 80 mode-number or the corresponding `--touch-eject` is not recommend as it would prevent you from using the U2F and OTP features of the YubiKey.
+**Warning:** But using the 80 mode-number or the corresponding `--touch-eject` is not recommend as it would prevent you from using the U2F/FIDO and OTP features of the YubiKey.
 
 **Note:** The often seen:
 
-`ykman mode c+u+o --touch-eject` or `ykman mode 86`
+`ykman mode c+f+o --touch-eject` or `ykman mode 86`
 
 will ignore the `--touch-eject` and be identical to the above recommended `ykman mode 6`.
 
@@ -242,7 +242,7 @@ The YubiKey has a small green LED able to communicate with you. Its message to y
 
 The possible messages are:
 
-*   *steady on*: Press now, to allow access. (typically (TODO exclusively?) U2F mode)
+*   *steady on*: Press now, to allow access. (typically (TODO exclusively?) FIDO mode)
 *   *slow blinking*: Power/setting up/ready for use (TODO explain)
 *   *rapid blinking*: Error, configuring driver (TODO explain)
 
@@ -367,7 +367,7 @@ To use a Challenge-Response slot (no matter which mode):
 
 ## CCID Smartcard
 
-CCID (Chip Card Interface Device) is a USB standard device class for use by USB devices that act as smart card readers or with security tokens that connect directly via USB, like the Yubikey. HID (Human Interface Device) and CCID are both USB device classes, i.e. they are in the same category of USB specifications. HID is a specification for computer peripherals, like keyboards. The Yubikey works like a USB (HID) keyboard when used in the OTP and U2F modes, but switches to the CCID protocol when using the PIV application, or as an OpenPGP device.
+CCID (Chip Card Interface Device) is a USB standard device class for use by USB devices that act as smart card readers or with security tokens that connect directly via USB, like the Yubikey. HID (Human Interface Device) and CCID are both USB device classes, i.e. they are in the same category of USB specifications. HID is a specification for computer peripherals, like keyboards. The Yubikey works like a USB (HID) keyboard when used in the OTP and FIDO modes, but switches to the CCID protocol when using the PIV application, or as an OpenPGP device.
 
 CCID mode should be enabled by default on all YubiKeys shipped since November 2015 [[1]](https://www.yubico.com/support/knowledge-base/categories/articles/use-yubikey-yubikey-windows-hello-app/). Enable at least the CCID mode. Please see [#Set the enabled modes](#Set_the_enabled_modes).
 

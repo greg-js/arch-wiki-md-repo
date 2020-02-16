@@ -520,6 +520,12 @@ $ export XCOMPOSECACHE="$XDG_CACHE_HOME"/X11/xcompose`
  |
 | [Mathematica](/index.php/Mathematica "Mathematica") | `~/.Mathematica` | `$ export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME"/mathematica` |
 | [mednafen](https://www.archlinux.org/packages/?name=mednafen) | `~/.mednafen` | `$ export MEDNAFEN_HOME="$XDG_CONFIG_HOME"/mednafen` |
+| [mitmproxy](https://www.archlinux.org/packages/?name=mitmproxy) | `~/.mitmproxy` | 
+
+`$ alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"
+$ alias mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy"`
+
+ |
 | [MOC](/index.php/MOC "MOC") | `~/.moc` | 
 
 `$ mocp -M "$XDG_CONFIG_HOME"/moc

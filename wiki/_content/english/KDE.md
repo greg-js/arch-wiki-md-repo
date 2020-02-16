@@ -173,11 +173,11 @@ Breeze is not directly available for Qt4 since it cannot be built without KDE 4 
 
 	GTK
 
-The recommended theme for a pleasant appearance in GTK applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), a GTK theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (part of the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) and select `Breeze` or `Breeze-Dark` as the GTK2/GTK3 theme in *System Settings > Application Style > GNOME/GTK Application Style*.
+The recommended theme for a pleasant appearance in GTK applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), a GTK theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (part of the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) and select `Breeze` or `Breeze-Dark` as the GTK2/GTK3 theme in *System Settings > Application Style > Configure GNOME/GTK Application Style...*.
 
 In some themes, tooltips in GTK applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`.
 
-Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) still look hardly usable due to invisible checkboxes with the Breeze or Adwaita skin in a Plasma session. To workaround this, install and select e.g. the Numix-Frost-Light skin of the [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) under *System Settings* > *Application Style* > *GNOME/GTK Application Style* > *GTK2 Theme:*. Numix-Frost-Light looks similar to Breeze.
+Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) still look hardly usable due to invisible checkboxes with the Breeze or Adwaita skin in a Plasma session. To workaround this, install and select e.g. the Numix-Frost-Light skin of the [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) under *System Settings* > *Application Style* > *Configure GNOME/GTK Application Style...* > *GTK2 theme:*. Numix-Frost-Light looks similar to Breeze.
 
 ##### Faces
 
@@ -312,7 +312,7 @@ Plasma can autostart applications and run scripts on startup and shutdown. To au
 
 	`~/.config/plasma-workspace/shutdown/`
 
-	for executing scripts on shutdown.
+	for executing scripts when Plasma exits.
 
 ### Phonon
 

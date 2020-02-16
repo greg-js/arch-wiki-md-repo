@@ -7,7 +7,7 @@ Related articles
 *   [Pdnsd](/index.php/Pdnsd "Pdnsd")
 *   [SSD](/index.php/SSD "SSD")
 
-[Profile-sync-daemon](https://aur.archlinux.org/packages/Profile-sync-daemon/) (psd) is a tiny pseudo-daemon designed to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD). This is accomplished by an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backup of the browser profile(s). Additionally, psd features several crash recovery features.
+[profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon) (psd) is a tiny pseudo-daemon designed to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD). This is accomplished by an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backup of the browser profile(s). Additionally, psd features several crash recovery features.
 
 **Note:** Occasionally, updates/changes are made to the default config file `/usr/share/psd/psd.conf` upstream. The user copy `$XDG_CONFIG_HOME/psd/psd.conf` will need to be diffed against it. On Arch Linux, pacman should notify the user to do this. Users of other package managers and/or distros will need to periodically diff the files manually.
 
@@ -53,7 +53,7 @@ Since the profile(s), browser cache*, etc. are relocated into [tmpfs](/index.php
 
 ## Setup and installation
 
-[Install](/index.php/Install "Install") the [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) package.
+[Install](/index.php/Install "Install") the [profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon) package.
 
 ### Edit the config file
 

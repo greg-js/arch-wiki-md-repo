@@ -39,7 +39,8 @@ Gitea requires the use of a database backend, the following are supported:
 *   [MariaDB](/index.php/MariaDB "MariaDB")/[MySQL](/index.php/MySQL "MySQL")
 *   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
 *   [SQLite](/index.php/SQLite "SQLite")
-*   [TiDB](https://github.com/pingcap/tidb) [tidb](https://aur.archlinux.org/packages/tidb/)
+*   [TiDB](https://github.com/pingcap/tidb) [tidb](https://aur.archlinux.org/packages/tidb/) (experimental, not recommended)
+*   MSSQL
 
 ## Configuration
 

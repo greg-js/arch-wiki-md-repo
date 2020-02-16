@@ -6,7 +6,7 @@ Related articles
 *   [PHPLOC](/index.php/PHPLOC "PHPLOC")
 *   [PhpDox](/index.php/PhpDox "PhpDox")
 
-**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-14，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=566895)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2020-02-14，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=594211)可以查看翻译后英文页面的改动。
 
 [PHP](https://secure.php.net/)是一种广泛使用的通用脚本语言，特别适合于 Web 开发，可嵌入到 HTML 中。
 
@@ -22,7 +22,7 @@ Related articles
 *   [4 扩展](#扩展)
     *   [4.1 gd](#gd)
     *   [4.2 imagemagick](#imagemagick)
-    *   [4.3 pthreads](#pthreads)
+    *   [4.3 多线程](#多线程)
     *   [4.4 PCNTL](#PCNTL)
     *   [4.5 MySQL/MariaDB](#MySQL/MariaDB)
     *   [4.6 Redis](#Redis)
@@ -62,7 +62,7 @@ Related articles
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [php](https://www.archlinux.org/packages/?name=php)。AUR 中也提供了老的版本，包括 [php53](https://aur.archlinux.org/packages/php53/), [php55](https://aur.archlinux.org/packages/php55/), [php56](https://aur.archlinux.org/packages/php56/), [php70](https://aur.archlinux.org/packages/php70/), [php71](https://aur.archlinux.org/packages/php71/) 和 [php72](https://aur.archlinux.org/packages/php72/).
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [php](https://www.archlinux.org/packages/?name=php)。AUR 中也提供了老的版本，包括 [php53](https://aur.archlinux.org/packages/php53/), [php55](https://aur.archlinux.org/packages/php55/), [php56](https://aur.archlinux.org/packages/php56/), [php70](https://aur.archlinux.org/packages/php70/), [php71](https://aur.archlinux.org/packages/php71/),[php72](https://aur.archlinux.org/packages/php72/) 和 [php73](https://aur.archlinux.org/packages/php73/).
 
 注意：要想像纯CGI那样运行PHP，你需要安装 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) 。
 
@@ -76,7 +76,7 @@ Related articles
 
 主要PHP配置位于 `/etc/php/php.ini`.
 
-*   I建议在`/etc/php/php.ini` 中设置所在时区([list of timezones](https://secure.php.net/manual/en/timezones.php)) 。如下:
+*   建议在`/etc/php/php.ini` 中设置所在时区([list of timezones](https://secure.php.net/manual/en/timezones.php)) 。如下:
 
 ```
 date.timezone = Europe/Berlin
@@ -90,10 +90,10 @@ display_errors=On
 
 ```
 
-*   [open_basedir](http://php.net/open-basedir) 限制 PHP 可以访问的目录，可以增加安全性。从 PHP 7.0 开始，和上游一样默认不再设置，要使用的用户请手动设置，例如：
+*   [open_basedir](http://php.net/open-basedir) 限制 PHP 可以访问的目录，可以增加安全性，但是会影响程序的正常执行。从 PHP 7.0 开始，和上游一样默认不再设置，要使用的用户请手动设置。符号链接会被解析，所以无法通过符号链接跳过限制。某些软件的 Arch 软件包，例如 `nextcloud` 和 `phpmyadmin` 安装在 `/usr/share/webapps`，然后在 `/etc/webapps` 中创建了配置文件的符号链接。设置 `open_basedir` 时请加入这两个目录。例如：
 
 ```
-open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/
+open_basedir = /srv/http/:/var/www/:/home/:/tmp/:/var/tmp/:/var/cache/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps/
 
 ```
 
@@ -128,9 +128,9 @@ extension=imagick.so
 
 ```
 
-### pthreads
+### 多线程
 
-要使用POSIX多线程，需要pthreads扩展 。要使用 `pecl` 安装 pthreads ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) 扩展，需要 PHP 在编译时启用线程安全选项 `--enable-maintainer-zts`. 当前最简单的方式是用需要的选项重新编译.
+要使用 POSIX 多线程，需要 pthreads 扩展 。用 `pecl` 安装 pthreads ([http://pecl.php.net/package/pthreads](http://pecl.php.net/package/pthreads)) 扩展，需要 PHP 在编译时启用线程安全选项`--enable-maintainer-zts`. 当前最简单的方式是用需要的选项重新编译.
 
 可在 [PHP pthreads extension](/index.php/PHP_pthreads_extension "PHP pthreads extension") 页面找到指令介绍。
 
@@ -158,7 +158,7 @@ extension=mysqli.so
 
 安装并配置 [Redis](/index.php/Redis "Redis")，然后安装 [phpredis-git](https://aur.archlinux.org/packages/phpredis-git/).
 
-在 `/etc/php/conf.d/redis.ini` 中取消 redis 扩展的注释。
+在 `/etc/php/conf.d/redis.ini` 中取消 redis 扩展的注释。同时在 `/etc/php/conf.d/igbinary.ini` 中启用(取消注释) igbinary 扩展。
 
 ### PostgreSQL
 
@@ -237,6 +237,10 @@ extension=apcu.so
 **Tip:** 可以将设置加入 APCu 自己的 `/etc/php/conf.d/apcu.ini` 或直接加到住配置文件，只需要注意不要同时加入。
 
 ## 开发工具
+
+*   **Visual Studio Code** — 支持 PHP 等多种语言的开发编辑器。
+
+	[https://code.visualstudio.com/](https://code.visualstudio.com/) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 
 ### Aptana Studio
 

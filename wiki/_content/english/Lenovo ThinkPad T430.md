@@ -18,17 +18,17 @@ The Lenovo ThinkPad T430 is a durable, business-style laptop that was made in 20
 
 [Install](/index.php/Install "Install") and enable the [tlp](https://www.archlinux.org/packages/?name=tlp) package. Installing the optional dependencies may help provide additional power saving.
 
-Refer to [Wiki:TLP](https://wiki.archlinux.org/index.php/TLP#rdw) for details for configuration and optimization.
+Refer to [Wiki:TLP](/index.php/TLP#rdw "TLP") for details for configuration and optimization.
 
 ### Method 1 (powertop & TLP)
 
 [Install](/index.php/Install "Install") the [powertop](https://www.archlinux.org/packages/?name=powertop) package.
 
-Refer to [Wiki:powertop](https://wiki.archlinux.org/index.php/Powertop#rdw) for details on configuration and optimization.
+Refer to [Wiki:powertop](/index.php/Powertop#rdw "Powertop") for details on configuration and optimization.
 
 ## HiDPI Displays
 
-HiDPI (High Dots Per Inch) displays, also known by Apple's "Retina Display" marketing name, are screens with a high resolution in a relatively small format. They are mostly found in high-end laptops and monitors. Not all software behaves well in high-resolution mode yet. Here are listed most common tweaks which make work on a HiDPI screen more pleasant. For configuration and usage with HiDPI displays, refer to the [HiDPI configuration](https://wiki.archlinux.org/index.php/HiDPI#Applications#rdw)
+HiDPI (High Dots Per Inch) displays, also known by Apple's "Retina Display" marketing name, are screens with a high resolution in a relatively small format. They are mostly found in high-end laptops and monitors. Not all software behaves well in high-resolution mode yet. Here are listed most common tweaks which make work on a HiDPI screen more pleasant. For configuration and usage with HiDPI displays, refer to the [HiDPI configuration](/index.php/HiDPI#Applications "HiDPI")
 
 ## Adjust trackpoint drift
 

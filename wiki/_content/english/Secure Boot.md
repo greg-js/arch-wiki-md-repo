@@ -34,6 +34,7 @@ In future, Evil Maid attack can be potentially prevented by using a [TPM](/index
         *   [2.2.1 Set up shim](#Set_up_shim)
             *   [2.2.1.1 shim with hash](#shim_with_hash)
             *   [2.2.1.2 shim with key](#shim_with_key)
+                *   [2.2.1.2.1 shim with key and GRUB](#shim_with_key_and_GRUB)
         *   [2.2.2 Remove shim](#Remove_shim)
 *   [3 Using your own keys](#Using_your_own_keys)
     *   [3.1 Custom keys](#Custom_keys)
@@ -293,6 +294,123 @@ Copy `MOK.cer` to a [FAT](/index.php/FAT "FAT") formatted file system (you can u
 Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MokList it will launch MokManager (`mmx64.efi`).
 
 In *MokManager* select *Enroll key from disk*, find `MOK.cer` and add it to MokList. When done select *Continue boot* and your boot loader will launch and it will be capable launching any binary signed with your Machine Owner Key.
+
+###### shim with key and GRUB
+
+In order to verify the kernels GRUB has to use the shim_lock module. The shim lock module forces GRUB to turn on signing. So we need to sign our GRUB settings, themes, modules, kernels and initramfs.
+
+With secureboot active GRUB can't chainload EFI binaries even if they are signed!
+
+Please bear in mind that if something with the signing did not work and the shim_lock module is loaded, you can't turn off signing in grub and boot. In case this happens you will have to boot arch from an usb stick, change your grub settings and reinstall grub.
+
+If you just want to test if the signing worked, do not insmod shim_lock and boot without secureboot first.
+
+For signing you can for example use the grub2-signing extension: [[2]](https://github.com/Bandie/grub2-signing-extension)
+
+There is also a package in the aur: [grub2-signing-extension](https://aur.archlinux.org/packages/grub2-signing-extension/)
+
+Run `gpg --gen-key` as root to create a keypair.
+
+If you get a permission denied error try:
+
+ `chown root:root $(tty)`  `export GPG_TTY=$(tty)` 
+
+Activate the gpg-agent for root so that you are able to sign and verify files in a su environment. To do that:
+
+Edit the file /root/.gnupg/gpg.conf and add the line `use-agent`.
+
+Create /root/.gnupg/gpg-agent.conf with the following content:
+
+```
+pinentry-program /usr/bin/pinentry
+no-grab
+default-cache-ttl 1800
+
+```
+
+Export your public key:
+
+ `gpg --export -o ~/pubkey` 
+
+Mount your boot partition. (Re)install GRUB2:
+
+```
+# grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB -k /root/pubkey --modules="gcry_sha256 gcry_dsa gcry_rsa"
+
+```
+
+Here the -k option adds your public key into the GRUB binary. It seems that you still need to tell GRUB to trust the key. So copy your publickey to your boot partiton.
+
+Edit your GRUB Config. Open /etc/grub.d/40_Custom with your prefered editor and add:
+
+ `/etc/grub.d/40_Custom` 
+```
+insmod verify
+insmod gcry_sha256
+insmod gcry_dsa gcry_rsa
+set check_signatures=enforce
+trust (crypto0)/pubkey
+insmod shim_lock
+```
+
+Here again: If you just want to test if the signing worked, do not `insmod shim_lock` and boot without secureboot first.
+
+The line `trust (crypto0)/pubkey` tells GRUB where the public key is and tells it to trust the key. This key has to be the same key as we installed with grub-install.
+
+`(crypt0)` is the name of the partition in GRUB. This is valid if you have an encrypted boot partiton.
+
+Otherwise you have to reboot und get into the GRUB command line (with the key c) and look with the ls command where grub mounts your boot partition.
+
+Rebuild your grub config.
+
+ `grub-mkconfig > /boot/grub/grub.cfg` 
+
+Ensure that you created a `MOK.key` and signed your `kernel` and `grubx64.efi` like described in **shim with key**. This needs to be done before signing GRUB with the gpg-key because the MOK signature is inside the binaries.
+
+Now we are ready to sign GRUB. Run `grub-sign`. This should automatically sign all files in the /boot folder.
+
+Run `grub-verify` and check if there are errors.
+
+In case of a kernel or initramfs update you need to first run grub-unsign. After a kernel or grub update you need to sign the new files with sbsign. Then you can sign everything again with grub-sign.
+
+Here is a simple unsign hook:
+
+ `10-unsign-grub-before-update.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = linux
+Target = linux-lts
+Target = linux-zen
+Target = grub
+Target = intel-ucode
+Target = amd-ucode
+
+[Action]
+Description = Unsigning GRUB
+When = PreTransaction
+Exec = /usr/bin/grub-unsign
+```
+
+And a bash script you can use to sign again after the update. You can add this to your bashrc.
+
+ ` .bashrc` 
+```
+function sign-update () {
+   /usr/bin/grub-unsign
+   if [ $? -ne 0 ]; then return 1; fi
+   /usr/bin/find /boot/ -maxdepth 1 -name 'vmlinuz-*' -not -name "*.sig" -exec /usr/bin/sh -c \
+   'if ! /usr/bin/sbverify --list {} 2>/dev/null | /usr/bin/grep -q "signature certificates"; \
+   then echo "Signing with sbsign."; /usr/bin/sbsign --key MOK.key --cert MOK.crt --output {} {}; fi' \;
+   /usr/bin/grub-sign
+   /usr/bin/find /boot/ -maxdepth 1 -name 'vmlinuz-*' -not -name "*.sig" -exec /usr/bin/sh -c \
+   'echo ""; echo {}; /usr/bin/sbverify --list {};' \;
+}
+
+```
 
 #### Remove shim
 

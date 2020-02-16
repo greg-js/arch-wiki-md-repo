@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Command-line shell](/index.php/Command-line_shell "Command-line shell"), revisada por última vez el **2018-10-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Command-line_shell&diff=0&oldid=551892) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Command-line shell](/index.php/Command-line_shell "Command-line shell"), revisada por última vez el **2020-02-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Command-line_shell&diff=0&oldid=594931) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -10,7 +10,11 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:Shell_de_Unix "wikipedia:es:Shel
 
 	Un intérprete de línea de órdenes de Unix proporciona una interfaz de usuario tradicional para el sistema operativo Unix y para sistemas similares a Unix. Los usuarios dirigen el funcionamiento de la computadora introduciendo órdenes como texto para que un intérprete de línea de órdenes ejecute o creando scripts de texto de uno o más órdenes de este tipo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Listado de intérpretes de línea de órdenes](#Listado_de_intérpretes_de_línea_de_órdenes)
     *   [1.1 Compatibles POSIX](#Compatibles_POSIX)
@@ -18,6 +22,7 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:Shell_de_Unix "wikipedia:es:Shel
 *   [2 Cambiar su intérprete de línea de órdenes predeterminado](#Cambiar_su_intérprete_de_línea_de_órdenes_predeterminado)
 *   [3 Archivos de configuración](#Archivos_de_configuración)
     *   [3.1 /etc/profile](#/etc/profile)
+    *   [3.2 Estandarización](#Estandarización)
 *   [4 Entrada y salida](#Entrada_y_salida)
 *   [5 Véase también](#Véase_también)
 
@@ -57,7 +62,7 @@ Todos estos intérpretes de línea de órdenes se pueden enlazar desde `/usr/bin
 
 	[https://elvish.io](https://elvish.io) || [elvish](https://aur.archlinux.org/packages/elvish/)
 
-*   **[fish](/index.php/Fish "Fish")** — Intérprete de línea de órdenes inteligente y amigable. Fish realiza el resaltado de sintaxis de la línea de órdenes a todo color, así como el resaltado y el completado de las órdenes y sus argumentos, la existencia del archivo y el historial. Soporta el completado-mientras-escribes del historial y las órdenes. Fish puede analizar las páginas del manual de las órdenes del sistema para determinar los argumentos para las órdenes, lo que le permite resaltar y completar las órdenes. Se puede hacer una fácil revisión de la última orden mediante `Alt+Arriba`. El demonio fish (fishd) facilita el historial sincronizado en todas las instancias de fish, así como las variables de entorno persistentes y universales..
+*   **[fish](/index.php/Fish "Fish")** — Intérprete de línea de órdenes inteligente y amigable. Fish realiza el resaltado de sintaxis de la línea de órdenes a todo color, así como el resaltado y el completado de las órdenes y sus argumentos, la existencia del archivo y el historial. Soporta el completado-mientras-escribes del historial y las órdenes. Fish puede analizar las páginas del manual de las órdenes del sistema para determinar los argumentos para las órdenes, lo que le permite resaltar y completar las órdenes. Se puede hacer una fácil revisión de la última orden mediante `Alt+Arriba`. El demonio fish (fishd) facilita el historial sincronizado en todas las instancias de fish, así como las variables de entorno persistentes y universales. Además, fish presenta una sintaxis de programación y un flujo de control significativamente simplificados (similar a ruby). Para más información, véase el [tutorial](http://fishshell.com/docs/current/tutorial).
 
 	[http://fishshell.com/](http://fishshell.com/) || [fish](https://www.archlinux.org/packages/?name=fish)
 
@@ -103,15 +108,23 @@ donde *ruta-completa-al-intérprete-de-línea-de-órdenes* es la ruta completa d
 
 Si ahora se desconecta y vuelve a iniciar sesión, será recibido por el otro intérprete de línea de órdenes.
 
+**Sugerencia:** chsh utiliza `/etc/shells` como referencia. Si un intérprete de línea de órdenes instalado recientemente no está presente en la lista, se puede añadir manualmente a este archivo.
+
 ## Archivos de configuración
 
 Para iniciar automáticamente los programas en la consola o al iniciar sesión, puede usar los archivos/directorios de inicio del intérprete de línea de órdenes. Lea la documentación de su intérprete de línea de órdenes o su artículo de ArchWiki, por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuración "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
-Véase también [Wikipedia:es:Shell de Unix#Archivos de configuración para shells](https://en.wikipedia.org/wiki/es:Shell_de_Unix#Archivos_de_configuraci.C3.B3n_para_shells "wikipedia:es:Shell de Unix").
+Véase también [Archivos de configuración](https://en.wikipedia.org/wiki/es:Shell_de_Unix#Archivos_de_configuraci.C3.B3n_para_shells "wikipedia:es:Shell de Unix").
 
 ### /etc/profile
 
 Al iniciar sesión, todas las cargas *(sources)* en `/etc/profile` compatibles con el intérprete de línea de órdenes Bourne, que a su vez cargan los archivos `*.sh` legible en `/etc/profile.d/`: estos scripts no requieren una directiva de intérprete, ni necesitan ser ejecutables. Se utilizan para configurar un entorno y definir configuraciones específicas de la aplicación.
+
+### Estandarización
+
+Es posible hacer que (algunos) archivos de configuración de los intérpretes de línea de órdenes sigan la misma convención de nomenclatura, así como admitir alguna configuración común entre los intérpretes de línea de órdenes.
+
+Véase [el artículo sobre esto](https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html) y el [repositorio relacionado](https://bitbucket.org/flowblok/shell-startup).
 
 ## Entrada y salida
 
@@ -136,7 +149,7 @@ EOF
 
 ## Véase también
 
-*   [Evolución de los intérpretes de línea de órdenes en Linux](http://www.ibm.com/developerworks/linux/library/l-linux-shells/index.html) en IBM developerWorks
+*   [Evolución de los intérpretes de línea de órdenes en Linux](https://developer.ibm.com/tutorials/l-linux-shells/) en IBM developerWorks
 *   [terminal.sexy](https://terminal.sexy/) — Diseñador de esquemas de color de terminal
 *   [Hyperpolyglot](http://hyperpolyglot.org/unix-shells) — Comparación lado-a-lado de las sintaxis del intérprete de línea de órdenes
 *   [UNIX Power Tools](http://docstore.mik.ua/orelly/unix/upt/index.htm) — Utilización general de la herramienta de línea de comandos

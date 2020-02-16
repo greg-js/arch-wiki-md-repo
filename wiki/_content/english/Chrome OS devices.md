@@ -472,7 +472,7 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 *   Use the `~/.asoundrc` file from [[13]](https://gist.githubusercontent.com/dhead666/52d6d7d97eff76935713/raw/5b32ee11a2ebbe7a3ee0f928e49b980361a57548/.asoundrc).
 
-*   If having problems with headphones (perhaps no audio playing), try `alsactl restore` in terminal. Now, ALSA should automatically switch between channels when using headphones/speakers.
+*   If having problems with headphones (perhaps no audio playing), try `alsactl restore` (requires [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)) in terminal. Now, ALSA should automatically switch between channels when using headphones/speakers.
 
 *   To fix [Flash](/index.php/Flash "Flash") audio with PulseAudio, use the `~/.asoundrc` file from [[14]](https://gist.githubusercontent.com/dhead666/0eebff16cd9578c5e035/raw/d4c974fcd50565bf116c57b1884170ecb47f8bf6/.asoundrc).
 

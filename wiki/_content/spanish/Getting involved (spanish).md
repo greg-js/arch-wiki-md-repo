@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Getting involved](/index.php/Getting_involved "Getting involved"), revisada por última vez el **2019-01-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=561969) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Getting involved](/index.php/Getting_involved "Getting involved"), revisada por última vez el **2020-02-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=583291) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -20,6 +20,7 @@ En este artículo se describe cómo los usuarios nuevos o experimentados en Arch
     *   [1.1 Publicar en los foros](#Publicar_en_los_foros)
     *   [1.2 Mejorar esta wiki](#Mejorar_esta_wiki)
     *   [1.3 Unirse a la sala de chat](#Unirse_a_la_sala_de_chat)
+    *   [1.4 Unirse a las listas de correo](#Unirse_a_las_listas_de_correo)
 *   [2 Empaquetado](#Empaquetado)
     *   [2.1 Informar sobre los paquetes instalados](#Informar_sobre_los_paquetes_instalados)
     *   [2.2 Arreglar y reportar errores](#Arreglar_y_reportar_errores)
@@ -50,6 +51,10 @@ Una de las maneras más fáciles de colaborar es participando en los [Foros de A
 ### Unirse a la sala de chat
 
 Puede ayudar a otros usuarios a resolver problemas a través del [canal IRC](/index.php/IRC_channel "IRC channel"). Es muy importante, sin embargo, que lea las secciones dedicadas a las [reglas de los canales](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de participar. Hay [más canales](/index.php/IRC_channel#Other_channels "IRC channel") disponibles para temas específicos.
+
+### Unirse a las listas de correo
+
+Únase al debate en una o varias [listas de correo](https://lists.archlinux.org/) públicas. Asegúrese de mantenerse en el tema como se proporciona en la descripción de la lista.
 
 ## Empaquetado
 
@@ -82,7 +87,7 @@ El [repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1o
 Regularmente hay eventos abiertos a la comunidad para la corrección de errores, la limpieza y otras actividades.
 
 *   [Bug Day](/index.php/Bug_Day "Bug Day")
-*   [Día de la limpieza de AUR](/index.php/DeveloperWiki:AUR_Cleanup_Day "DeveloperWiki:AUR Cleanup Day")
+*   [Día de la limpieza de AUR](/index.php/AUR_Cleanup_Day "AUR Cleanup Day")
 
 ## Proyectos software
 
@@ -108,15 +113,15 @@ Grupos específicos de Arch en los que puede participar.
 
 	El proyecto ArchMap crea un mapa de usuarios de Arch Linux en todo el mundo.
 
-	[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
+	[Arch Linux Subreddit](https://www.reddit.com/r/archlinux/)
 
-	Lugar para usuarios de reddit para discutir temas relacionados con Arch.
+	Lugar para usuarios de Reddit para discutir temas relacionados con Arch.
 
 	[Comunidades internacionales](/index.php/International_communities_(Espa%C3%B1ol) "International communities (Español)")
 
 	Comunidades locales y lugares de encuentro para los usuarios.
 
-	[Arch Women](http://archwomen.org/)
+	[Arch Women](https://archwomen.org/)
 
 	Grupo con la intención de resolver los obstáculos posibles para las usuarias femeninas de Arch ([hilo del foro](https://bbs.archlinux.org/viewtopic.php?id=136184)).
 
@@ -124,7 +129,7 @@ Grupos específicos de Arch en los que puede participar.
 
 Programas desarrollados por la comunidad centrado en Arch Linux.
 
-	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
+	[Xyne's Arch Linux Projects](https://xyne.archlinux.ca/projects/)
 
 	Un usuario de confianza de los proyectos relacionados con Arch.
 

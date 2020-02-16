@@ -10,7 +10,11 @@
 
 **注意:** 本文的目标群体是Linux用户，但是大多数内容也适用于其他使用 BSD ， Windows 和 Mac OS X 的用户。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 概述](#概述)
     *   [1.1 相比于机械硬盘的优点](#相比于机械硬盘的优点)
@@ -320,11 +324,11 @@ Security:
 
 人们可以*轻松*通过tmpfs把浏览器配置文件挂载入内存，如chromium, firefox, opera等，同时也使用rsync，同步与基于硬盘的备份。除了明显的速度的改进，用户也将节省他们的SSD读/写周期。
 
-AUR上有自动完成这些过程的软件，如 [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/)。
+AUR上有自动完成这些过程的软件，如 [profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon)。
 
 #### 其他
 
-同理频繁访问的目录如 `/srv/http` (如果正运行网页服务器)也可挂载入内存。 [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) 的姐妹课题是 [anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/)， 它允许用户将**任意** 目录使用相同的基本逻辑和安全防护措施同步入内存。
+同理频繁访问的目录如 `/srv/http` (如果正运行网页服务器)也可挂载入内存。 [profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon) 的姐妹课题是 [anything-sync-daemon](https://www.archlinux.org/packages/?name=anything-sync-daemon)， 它允许用户将**任意** 目录使用相同的基本逻辑和安全防护措施同步入内存。
 
 ### 在tmpfs里编译
 

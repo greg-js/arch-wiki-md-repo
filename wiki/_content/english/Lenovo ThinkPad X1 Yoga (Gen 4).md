@@ -59,7 +59,8 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
         *   [4.2.2 With Screen Rotator](#With_Screen_Rotator)
 *   [5 Touchpad](#Touchpad)
 *   [6 Fingerprint sensor](#Fingerprint_sensor)
-*   [7 Configuration](#Configuration)
+*   [7 NFC](#NFC)
+*   [8 Configuration](#Configuration)
 
 ## Hardware
 
@@ -221,6 +222,10 @@ Sometimes after a boot, the touchpad doesn't work. This was fixed in the latest 
 Warning : this is for testing only !
 
 Solution was found for the next version v2.0 of libfprint in [this issue](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181).
+
+## NFC
+
+See [https://github.com/nfc-tools/libnfc/issues/455](https://github.com/nfc-tools/libnfc/issues/455)
 
 ## Configuration
 

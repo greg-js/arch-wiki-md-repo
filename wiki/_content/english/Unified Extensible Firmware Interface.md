@@ -177,8 +177,9 @@ Linux kernel exposes UEFI variables data to userspace via **efivarfs** (**EFI** 
 
 If UEFI Variables support does not work even after the above conditions are satisfied, try the below workarounds:
 
-1.  If any userspace tool is unable to modify UEFI variable data, check for existence of `/sys/firmware/efi/efivars/dump-*` files. If they exist, delete them, reboot and retry again.
-2.  If the above step does not fix the issue, try booting with `efi_no_storage_paranoia` kernel parameter to disable kernel UEFI variable storage space check that may prevent writing/modification of UEFI variables.
+1.  If listing of the UEFI variables (`efivar -l`) leads to `efivar: error listing variables: Function not implemented` and the system is booted into a [realtime kernel](/index.php/Realtime_kernel "Realtime kernel"), add `efi=runtime` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") and reboot (efivarfs functionality is disabled by default on those kernels).
+2.  If any userspace tool is unable to modify UEFI variable data, check for existence of `/sys/firmware/efi/efivars/dump-*` files. If they exist, delete them, reboot and retry again.
+3.  If the above step does not fix the issue, try booting with `efi_no_storage_paranoia` kernel parameter to disable kernel UEFI variable storage space check that may prevent writing/modification of UEFI variables.
 
 **Warning:** `efi_no_storage_paranoia` should only be used when needed and should not be left as a normal boot option. The effect of this kernel command line parameter turns off a safeguard that was put in place to help avoid the bricking of machines when the NVRAM gets too full. See [FS#34641](https://bugs.archlinux.org/task/34641) for more information.
 

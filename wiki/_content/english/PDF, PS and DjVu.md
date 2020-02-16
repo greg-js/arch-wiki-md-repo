@@ -30,7 +30,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
     *   [5.10 Optimize, reduce size of a PDF](#Optimize,_reduce_size_of_a_PDF)
     *   [5.11 Rasterize a PDF](#Rasterize_a_PDF)
     *   [5.12 Splitting PDF pages](#Splitting_PDF_pages)
-    *   [5.13 Add signature.png or image to one of the pages in the pdf](#Add_signature.png_or_image_to_one_of_the_pages_in_the_pdf)
+    *   [5.13 Add signature.png or image to one of the pages in the PDF](#Add_signature.png_or_image_to_one_of_the_pages_in_the_PDF)
 *   [6 DjVu tools](#DjVu_tools)
     *   [6.1 Convert DjVu to images](#Convert_DjVu_to_images)
     *   [6.2 Processing images](#Processing_images)
@@ -251,7 +251,7 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 ## PDF tools
 
-*   **[PDFtk](https://en.wikipedia.org/wiki/PDFtk "wikipedia:PDFtk")** — Simple tool for doing everyday things with PDF documents
+*   **[PDFtk](https://en.wikipedia.org/wiki/PDFtk "wikipedia:PDFtk")** — Simple tool for doing everyday things with PDF documents.
 
 	[http://www.pdfhacks.com/pdftk](http://www.pdfhacks.com/pdftk) || [pdftk](https://www.archlinux.org/packages/?name=pdftk)
 
@@ -489,14 +489,14 @@ $ mutool poster -y 2 in.pdf out.pdf
 
 Can be used to undo simple [imposition](#Imposing_a_PDF).
 
-### Add signature.png or image to one of the pages in the pdf
+### Add signature.png or image to one of the pages in the PDF
 
-to add an image to any location in a pdf can be done with imagemagick (convert), xv, and pdftk. a [wrapper script is here](http://emmanuel.branlard.free.fr/work/linux/dev/SignPDF/SignPDF) . other hints are [here](https://unix.stackexchange.com/questions/85873/how-can-i-add-a-signature-png-to-a-pdf-in-linux).
+To add an image to any location in PDF can be done with [ImageMagick](/index.php/ImageMagick "ImageMagick") (convert), xv and pdftk. A wrapper script is [here](http://emmanuel.branlard.free.fr/work/linux/dev/SignPDF/SignPDF) and other hints are [here](https://unix.stackexchange.com/questions/85873/how-can-i-add-a-signature-png-to-a-pdf-in-linux).
 
 ## DjVu tools
 
 *   [DjVuLibre](#Engines) provides many command-line tools, like [ddjvu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ddjvu.1) for example.
-*   **img2djvu** — Single-pass DjVu encoder based on DjVu Libre and ImageMagick
+*   **img2djvu** — Single-pass DjVu encoder based on DjVu Libre and ImageMagick.
 
 	[https://github.com/ashipunov/img2djvu](https://github.com/ashipunov/img2djvu) || [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/)
 
@@ -579,10 +579,10 @@ $ ps2pdf -sPAPERSIZE=a4 -dOptimize=true -dEmbedAllFonts=true YourPSFile.ps
 Explanation:
 
 *   with `-sPAPERSIZE=something` you define the paper size. For valid PAPERSIZE values, see [[7]](http://ghostscript.com/doc/current/Use.htm#Known_paper_sizes).
-*   `-dOptimize=true` lets the created PDF be optimised for loading
-*   `-dEmbedAllFonts=true` makes the fonts look always nice
+*   `-dOptimize=true` lets the created PDF be optimised for loading.
+*   `-dEmbedAllFonts=true` makes the fonts look always nice.
 
-**Note:** You cannot choose the paper orientation in ps2pdf. If your input PS file is healthy, it already contains the orientation information. If you are trying to use an Encapsulated PS file, you will have problems, if it does not fit in the `-sPAPERSIZE` you specified, because EPS files usually do not contain paper orientation information. a workaround is creating a new paper in ghostscript settings (call it e.g. "slide") and use it as `-sPAPERSIZE=slide`.
+**Note:** You cannot choose the paper orientation in ps2pdf. If your input PS file is healthy, it already contains the orientation information. If you are trying to use an Encapsulated PS file, you will have problems, if it does not fit in the `-sPAPERSIZE` you specified, because EPS files usually do not contain paper orientation information. A workaround is creating a new paper in ghostscript settings (call it e.g. "slide") and use it as `-sPAPERSIZE=slide`.
 
 ## Libraries
 
@@ -614,7 +614,7 @@ Explanation:
 
 *   **ReportLab** — A proven industry-strength PDF generating solution
 
-	[https://bitbucket.org/rptlab/reportlab](https://bitbucket.org/rptlab/reportlab) || [python-reportlab](https://www.archlinux.org/packages/?name=python-reportlab), [python2-reportlab](https://www.archlinux.org/packages/?name=python2-reportlab)
+	[https://bitbucket.org/rptlab/reportlab](https://bitbucket.org/rptlab/reportlab) || [python-reportlab](https://www.archlinux.org/packages/?name=python-reportlab), [python2-reportlab](https://aur.archlinux.org/packages/python2-reportlab/)
 
 ## See also
 

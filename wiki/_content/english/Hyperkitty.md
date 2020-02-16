@@ -21,7 +21,7 @@
 
 ## Installation
 
-To use Hyperkitty, a working [web server](/index.php/Web_server "Web server") setup is required (e.g. using [Apache](/index.php/Apache "Apache") to forward to the [WSGI](https://en.wikipedia.org/wiki/Wsgi) directly, or using [Nginx](/index.php/Nginx "Nginx") forwarding requests to an application server such as [UWSGI](/index.php/UWSGI "UWSGI")).
+To use Hyperkitty, a working [web server](/index.php/Web_server "Web server") setup is required (e.g. using [Apache](/index.php/Apache "Apache") to forward to the [WSGI](https://en.wikipedia.org/wiki/Wsgi "wikipedia:Wsgi") directly, or using [Nginx](/index.php/Nginx "Nginx") forwarding requests to an application server such as [UWSGI](/index.php/UWSGI "UWSGI")).
 
 [Install](/index.php/Install "Install") the [hyperkitty](https://www.archlinux.org/packages/?name=hyperkitty) package.
 

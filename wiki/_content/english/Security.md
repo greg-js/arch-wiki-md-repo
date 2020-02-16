@@ -24,6 +24,7 @@ This article contains recommendations and best practices for [hardening](https:/
 *   [3 CPU](#CPU)
     *   [3.1 Microcode](#Microcode)
     *   [3.2 Disable Hyper-Threading](#Disable_Hyper-Threading)
+    *   [3.3 CPU Vulnerabilities](#CPU_Vulnerabilities)
 *   [4 Memory](#Memory)
     *   [4.1 Hardened malloc](#Hardened_malloc)
 *   [5 Storage](#Storage)
@@ -76,7 +77,9 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [11.5 Proxies](#Proxies)
     *   [11.6 Managing SSL certificates](#Managing_SSL_certificates)
 *   [12 Authenticating packages](#Authenticating_packages)
-*   [13 Follow vulnerability alerts](#Follow_vulnerability_alerts)
+*   [13 Upgrades](#Upgrades)
+    *   [13.1 Restart or Reboot after Upgrades](#Restart_or_Reboot_after_Upgrades)
+    *   [13.2 Follow vulnerability alerts](#Follow_vulnerability_alerts)
 *   [14 Physical security](#Physical_security)
     *   [14.1 Locking down BIOS](#Locking_down_BIOS)
     *   [14.2 Boot loaders](#Boot_loaders)
@@ -123,7 +126,7 @@ Another technique is to use a memorable long series of unrelated words as a pass
 
 Another effective technique can be to write randomly generated passwords down and store them in a *safe* place, such as in a wallet, purse or document safe. Most people do a generally good job of protecting their physical valuables from attack, and it is easier for most people to understand physical security best practices compared to digital security practices. [Bruce Schneier has endorsed this technique](https://www.schneier.com/news/archives/2010/11/bruce_schneier_write.html).
 
-It is also very effective to combine the memorable and random technique by saving long randomly generated passwords with a [password manager](/index.php/Password_manager "Password manager"), which will be in turn accessed with a memorable "master password" that must be used only for that purpose. The master password must be memorized and never saved. This requires the password manager to be installed on a system to easily access the password (which could be seen as an inconvenience or a security feature, depending on the situation). Some password managers also have smartphone apps which can be used to display passwords for manual entry on systems without that password manager installed. This also introduces a single point of failure if you ever forget the master password.
+It is also very effective to combine the memorable and random technique by saving long randomly generated passwords with a [password manager](/index.php/Password_manager "Password manager"), which will be in turn accessed with a memorable "master password" that must be used only for that purpose. The master password must be memorized and never saved. This requires the password manager to be installed on a system to easily access the password (which could be seen as an inconvenience or a security feature, depending on the situation). Some password managers also have smartphone apps which can be used to display passwords for manual entry on systems without that password manager installed. Note that a password manager introduces a single point of failure if you ever forget the master password.
 
 See Bruce Schneier's article [Choosing Secure Passwords](https://www.schneier.com/blog/archives/2014/03/choosing_secure_1.html), [The passphrase FAQ](https://www.iusmentis.com/security/passphrasefaq/) or [Wikipedia:Password strength](https://en.wikipedia.org/wiki/Password_strength "wikipedia:Password strength") for some additional background.
 
@@ -186,6 +189,10 @@ See [microcode](/index.php/Microcode "Microcode") for information on how to inst
 [Kernel Developer Greg Kroah-Hartman has endorsed disabling Hyper-Threading](https://www.youtube.com/watch?v=jI3YE3Jlgw8) as a security hardening option for systems running untrusted code. (Web browsers that enable Javascript are an example of untrusted code.) This may have a small performance impact.
 
 Hyper-Threading can be disabled in the kernel (see [#Disable_hyper-threading_2](#Disable_hyper-threading_2)), and often can also be disabled in your system's firmware. Consult your motherboard or system documentation for more information.
+
+### CPU Vulnerabilities
+
+In the wake of the Spectre/Meltdown vulnerabilities, certain configurable mitigations have been added to the kernel. Refer to [the kernel docs](https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/) for more details.
 
 ## Memory
 
@@ -703,11 +710,23 @@ To check the blacklisting works as intended, you may re-open your preferred brow
 
 [Attacks on package managers](https://www2.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#overview) are possible without proper use of package signing, and can affect even package managers with [proper signature systems](https://www2.cs.arizona.edu/stork/packagemanagersecurity/faq.html). Arch uses package signing by default and relies on a web of trust from 5 trusted master keys. See [Pacman-key](/index.php/Pacman-key "Pacman-key") for details.
 
-## Follow vulnerability alerts
+## Upgrades
+
+It is important to regularly [upgrade the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") .
+
+**Warning:** Do not be tempted to perform [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), as they are not supported by Arch Linux and may cause instability: the whole system should be upgraded when upgrading a component. Also note that infrequent system updates can complicate the update process.
+
+### Restart or Reboot after Upgrades
+
+Upgrades are typically not applied to existing processes. You must restart processes to fully apply the upgrade.
+
+The kernel is particularly difficult to patch without a reboot. A reboot is always the most secure option, but if this is very inconvenient [kernel live patching](/index.php/Kernel_live_patching "Kernel live patching") can be used to apply upgrades without a reboot.
+
+### Follow vulnerability alerts
 
 Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](https://nvd.nist.gov/download.cfm). The [Arch Linux Security Tracker](https://security.archlinux.org/) serves as a particularly useful resource in that it combines Arch Linux Security Advisory (ASA), Arch Linux Vulnerability Group (AVG) and CVE data sets in tabular format. See also [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team").
 
-**Warning:** Do not be tempted to perform [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), as they are not supported by Arch Linux and may cause instability: the whole system should be upgraded when upgrading a component. Also note that infrequent system updates can complicate the update process.
+You should also consider subscribing to the release notifications for software you use, especially if you install software through means other than the main repositories or AUR. Some software have mailing lists you can subscribe to for security notifications. Source code hosting sites often offer RSS feeds for new releases.
 
 ## Physical security
 

@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=552513) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"), revisada por última vez el **2020-02-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=585932) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -20,36 +20,33 @@ Esta página enumera las distribuciones que se derivan de Arch Linux **en su tot
 
 *   [1 Activas](#Activas)
 *   [2 Inactivas](#Inactivas)
-    *   [2.1 2017](#2017)
-    *   [2.2 2016](#2016)
-    *   [2.3 2015](#2015)
-    *   [2.4 2014](#2014)
-    *   [2.5 2013](#2013)
-    *   [2.6 2012](#2012)
-    *   [2.7 2011](#2011)
-    *   [2.8 2010](#2010)
-    *   [2.9 2009](#2009)
-    *   [2.10 2008](#2008)
-    *   [2.11 2007](#2007)
-    *   [2.12 2006](#2006)
-    *   [2.13 2004](#2004)
+    *   [2.1 2019](#2019)
+    *   [2.2 2018](#2018)
+    *   [2.3 2017](#2017)
+    *   [2.4 2016](#2016)
+    *   [2.5 2015](#2015)
+    *   [2.6 2014](#2014)
+    *   [2.7 2013](#2013)
+    *   [2.8 2012](#2012)
+    *   [2.9 2011](#2011)
+    *   [2.10 2010](#2010)
+    *   [2.11 2009](#2009)
+    *   [2.12 2008](#2008)
+    *   [2.13 2007](#2007)
+    *   [2.14 2006](#2006)
+    *   [2.15 2004](#2004)
 *   [3 Véase también](#Véase_también)
 
 ## Activas
 
 El asterisco indica el año de la primera versión pública basada en Arch Linux.
 
-*   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/) 
-*   [Anarchy Linux](https://anarchy-linux.org/) 
-*   [Antergos](https://sourceforge.net/projects/antergos/) 
+*   [Anarchy Linux](https://github.com/deadhead420/anarchy-linux) 
 *   [ArchBang](https://sourceforge.net/projects/archbang/) 
 *   [ArchEX](https://sourceforge.net/projects/archex/) 
 *   [Arch Hurd](https://archhurd.org/) 
-*   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
 *   [Arch Linux 32](https://archlinux32.org/) 
 *   [Arch Linux ARM](https://archlinuxarm.org/) 
-*   [Archman OS](https://sourceforge.net/projects/archman-os/) 
-*   [Archphile](https://sourceforge.net/projects/archphile/) 
 *   [ArchStrike](https://archstrike.org/) 
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/) 
 *   [ArcoLinux](https://sourceforge.net/projects/arcolinux/) 
@@ -65,24 +62,34 @@ El asterisco indica el año de la primera versión pública basada en Arch Linux
 *   [LinHES](http://linhes.org/) 
 *   [MagpieOS](https://sourceforge.net/projects/magpieos/) 
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/) 
-*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/) 
 *   [MSYS2](https://sourceforge.net/projects/msys2/) 
 *   [Namib](https://sourceforge.net/projects/namib-gnu-linux/) 
 *   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/) 
 *   [Obarun](https://web.obarun.org/) 
-*   [PacBSD](https://www.pacbsd.org/) 
 *   [Parabola](https://www.parabola.nu/) 
 *   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/) 
 *   [RaspArch](https://sourceforge.net/projects/rasparch/) 
 *   [Reborn OS](https://rebornos.org/) 
-*   [SwagArch](https://swagarch.gitlab.io/) 
 *   [TalkingArch](https://talkingarch.tk/) 
-*   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/) 
 *   [UBOS](http://ubos.net/) 
 
 ## Inactivas
 
 Estas distribuciones ya no se desarrollan, pero muestran algo de la historia que rodea a Arch Linux y la gran comunidad de FOSS. Las secciones muestran el año de la última versión.
+
+### 2019
+
+*   [Antergos](https://sourceforge.net/projects/antergos/) 
+*   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
+*   [BlueLight](https://github.com/BlueLightOS/bluelight) 
+*   [SwagArch](http://web.archive.org/web/20190125193812/https://swagarch.gitlab.io/) 
+
+### 2018
+
+*   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/) 
+*   [Archphile](https://sourceforge.net/projects/archphile/) 
+*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
+*   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/) 
 
 ### 2017
 
@@ -93,6 +100,7 @@ Estas distribuciones ya no se desarrollan, pero muestran algo de la historia que
 *   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [Audiophile Linux](http://www.ap-linux.com/) 
 *   [Feliz](https://sourceforge.net/projects/feliz/)
+*   [PacBSD](https://www.pacbsd.org/) 
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](http://nurunner.mkxt.net/index2.html)
 *   [Sonar](https://distrowatch.com/table.php?distribution=sonar) 

@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Network tools](/index.php/Network_tools "Network tools"), revisada por última vez el **2018-12-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Network_tools&diff=0&oldid=559049) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Network tools](/index.php/Network_tools "Network tools"), revisada por última vez el **2020-02-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Network_tools&diff=0&oldid=593921) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -27,7 +27,7 @@ Esta página lista varias herramientas de red. *ping* e *ip* son cubiertos en [C
 
 Hay varias implementaciones disponibles:
 
-*   [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8) de [iputils](https://www.archlinux.org/packages/?name=iputils) (parte de [base](https://www.archlinux.org/packages/?name=base))
+*   [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8) de [iputils](https://www.archlinux.org/packages/?name=iputils) (requerido por [base](https://www.archlinux.org/packages/?name=base))
 *   [traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) de [traceroute](https://www.archlinux.org/packages/?name=traceroute)
 *   **MTR** — Combina las funcionalidades de traceroute y ping en una sola herramienta.
 
@@ -37,17 +37,21 @@ Hay varias implementaciones disponibles:
 
 Véase también [Wikipedia:es:Netcat](https://en.wikipedia.org/wiki/es:Netcat "wikipedia:es:Netcat").
 
-*   **GNU Netcat** — Reescritura de netcat por GNU, la aplicación de canalización *(piping)* de red.
+*   **GNU Netcat** — Reescritura de netcat por GNU, la aplicación de canalización *(piping)* de red. No soporta IPv6.
 
 	[http://netcat.sourceforge.net/](http://netcat.sourceforge.net/) || [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat)
+
+*   **LibreSSL netcat** — Herramienta de conexión UDP/TCP de bajo nivel con soporte para el protocolo TLS.
+
+	[https://www.libressl.org](https://www.libressl.org) || [libressl-netcat](https://aur.archlinux.org/packages/libressl-netcat/)
+
+*   **Ncat** — Implementación Netcat del proyecto Nmap.
+
+	[https://nmap.org/ncat/](https://nmap.org/ncat/) || [nmap](https://www.archlinux.org/packages/?name=nmap)
 
 *   **openbsd-netcat** — Navaja suiza TCP/IP. Variante de OpenBSD.
 
 	[https://packages.debian.org/sid/netcat-openbsd](https://packages.debian.org/sid/netcat-openbsd) || [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat)
-
-*   **libressl-netcat** — Herramienta de conexión UDP/TCP de bajo nivel con soporte para el protocolo TLS.
-
-	[https://www.libressl.org](https://www.libressl.org) || [libressl-netcat](https://aur.archlinux.org/packages/libressl-netcat/)
 
 Una alternativa mas compleja es [socat](https://www.archlinux.org/packages/?name=socat).
 

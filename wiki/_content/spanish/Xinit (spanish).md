@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Xinit](/index.php/Xinit "Xinit"), revisada por última vez el **2018-11-15**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=555003) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Xinit](/index.php/Xinit "Xinit"), revisada por última vez el **2020-02-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=587457) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -26,11 +26,11 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:xinit "wikipedia:es:xinit"):
     *   [2.2 xserverrc](#xserverrc)
 *   [3 Utilización](#Utilización)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
+    *   [4.1 Sobrescribir xinitrc](#Sobrescribir_xinitrc)
 *   [5 Inicio automático de X al inicio de sesión](#Inicio_automático_de_X_al_inicio_de_sesión)
-    *   [5.1 Sobrescribir xinitrc](#Sobrescribir_xinitrc)
-    *   [5.2 Cambio entre entornos de escritorio/gestores de ventanas](#Cambio_entre_entornos_de_escritorio/gestores_de_ventanas)
-    *   [5.3 Iniciar solo aplicaciones](#Iniciar_solo_aplicaciones)
-    *   [5.4 Redirección de salida utilizando startx.](#Redirección_de_salida_utilizando_startx.)
+    *   [5.1 Cambio entre entornos de escritorio/gestores de ventanas](#Cambio_entre_entornos_de_escritorio/gestores_de_ventanas)
+    *   [5.2 Iniciar aplicaciones sin un gestor de ventanas](#Iniciar_aplicaciones_sin_un_gestor_de_ventanas)
+    *   [5.3 Redirección de salida utilizando startx.](#Redirección_de_salida_utilizando_startx.)
 
 ## Instalación
 
@@ -125,29 +125,6 @@ Véase también [signal(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7)
 
 ## Consejos y trucos
 
-## Inicio automático de X al inicio de sesión
-
-Asegúrese de que *startx* esté [configurado](#Configuración) correctamente.
-
-Para [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), añada lo siguiente al final de `~/.bash_profile`. Si el archivo no existe, copie una versión de la estructura de `/etc/skel/.bash_profile`. Para [Zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)"), añádalo a `~/.zprofile`.
-
-```
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
-
-```
-
-Puede reemplazar la comparación `-eq` con una como `-le 3` (para vt1 a vt3) si desea usar inicios de sesión gráficos en más de un terminal virtual.
-
-Las condiciones alternativas para detectar el terminal virtual incluyen `"$(tty)" = "/dev/tty1"`, que no permite la comparación con `-le`, y `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, que no funciona en [consolas en serie](/index.php/Serial_console "Serial console").
-
-Si desea permanecer conectado cuando finalice la sesión X, elimine `exec`.
-
-Véase también [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") e [inicio de sesión automático en Xorg sin gestor de pantallas](/index.php/Systemd/User_(Espa%C3%B1ol)#Inicio_de_sesión_automático_en_Xorg_sin_gestor_de_pantallas "Systemd/User (Español)").
-
-**Sugerencia:** Este método se puede combinar con el [inicio de sesión automático a la consola virtual](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)").
-
 ### Sobrescribir xinitrc
 
 Si tiene un `~/.xinitrc` en funcionamiento pero solo desea probar otro gestor de ventanas o entorno de escritorio, puede ejecutarlo introduciendo *startx* seguido de la ruta al gestor de ventanas:
@@ -173,7 +150,32 @@ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 Véase también [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
-**Sugerencia:** Esto se puede utilizar para iniciar programas gráficos normales pero sin ninguna de las funciones del gestor de ventanas básico. Véase también [#Iniciar solo aplicaciones](#Iniciar_solo_aplicaciones) y [Ejecutando programa en una pantalla X separada](/index.php/Running_program_in_separate_X_display "Running program in separate X display")
+**Nota:** La visualización debe especificarse (ya que se omite la carga de `/etc/X11/xinit/xinitrc.d/`) para que algunas operaciones funcionen (por ejemplo, demonios de notificación). [[2]](https://bbs.archlinux.org/viewtopic.php?id=202812)
+
+**Sugerencia:** Esto se puede utilizar para iniciar programas gráficos normales pero sin ninguna de las funciones del gestor de ventanas básico. Véase también [#Iniciar aplicaciones sin un gestor de ventanas](#Iniciar_aplicaciones_sin_un_gestor_de_ventanas) y [Ejecutando programa en una pantalla X separada](/index.php/Running_program_in_separate_X_display "Running program in separate X display")
+
+## Inicio automático de X al inicio de sesión
+
+Asegúrese de que *startx* esté [configurado](#Configuración) correctamente.
+
+Para [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), añada lo siguiente al final de `~/.bash_profile`. Si el archivo no existe, copie una versión de la estructura de `/etc/skel/.bash_profile`. Para [Zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)"), añádalo a `~/.zprofile`.
+
+```
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+
+```
+
+Puede reemplazar la comparación `-eq` con una como `-le 3` (para vt1 a vt3) si desea usar inicios de sesión gráficos en más de un terminal virtual.
+
+Las condiciones alternativas para detectar el terminal virtual incluyen `"$(tty)" = "/dev/tty1"`, que no permite la comparación con `-le`, y `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, que no funciona en [consolas en serie](/index.php/Serial_console "Serial console").
+
+Si desea permanecer conectado cuando finalice la sesión X, elimine `exec`.
+
+Véase también [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") e [inicio de sesión automático en Xorg sin gestor de pantallas](/index.php/Systemd/User_(Espa%C3%B1ol)#Inicio_de_sesión_automático_en_Xorg_sin_gestor_de_pantallas "Systemd/User (Español)").
+
+**Sugerencia:** Este método se puede combinar con el [inicio de sesión automático a la consola virtual](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)").
 
 ### Cambio entre entornos de escritorio/gestores de ventanas
 
@@ -190,7 +192,7 @@ session=${1:-xfce}
 
 case $session in
     i3|i3wm           ) exec i3;;
-    kde               ) exec startkde;;
+    kde               ) exec startplasma-x11;;
     xfce|xfce4        ) exec startxfce4;;
     # No hay sesión conocida, intento ejecutarlo como orden
     *                 ) exec $1;;
@@ -212,7 +214,7 @@ $ startx ~/.xinitrc *session*
 
 ```
 
-### Iniciar solo aplicaciones
+### Iniciar aplicaciones sin un gestor de ventanas
 
 Es posible iniciar solo aplicaciones específicas sin un gestor de ventanas, aunque lo más probable es que esto solo sea útil con una sola aplicación que se muestre en modo de pantalla completa. Por ejemplo:
 

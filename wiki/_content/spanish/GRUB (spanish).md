@@ -243,7 +243,7 @@ Consulte [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1
 
 **Advertencia:** GRUB no admite volúmenes lógicos de aprovisionamiento.
 
-Si utiliza [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") para `/boot` o para la partición raíz `/` , asegúrese de que el módulo `lvm` se carga antes:
+Si utiliza [LVM](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") para `/boot` o para la partición raíz `/` , asegúrese de que el módulo `lvm` se carga antes:
 
  `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... lvm"` 
 

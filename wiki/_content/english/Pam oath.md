@@ -1,4 +1,4 @@
-The [OATH Toolkit](http://www.nongnu.org/oath-toolkit/index.html) provides a two-step authentication procedure using one-time passcodes (OTP). It complies to two OTP method RFC standards ([HOTP](https://en.wikipedia.org/wiki/HMAC-based_One-time_Password_Algorithm "w:HMAC-based One-time Password Algorithm"), [TOTP](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm "w:Time-based One-time Password Algorithm")). The OTP generator applications are available for iOS, Android, Blackberry and other devices. Similar to [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") the authentication mechanism integrates into the Linux [PAM](/index.php/PAM "PAM") system. This guide shows the installation and configuration of this mechanism.
+The [OATH Toolkit](http://www.nongnu.org/oath-toolkit/index.html) provides one-time password (OTP) components for authentication systems. It contains a PAM authentication module that supports [HOTP](https://en.wikipedia.org/wiki/HMAC-based_One-time_Password_Algorithm "w:HMAC-based One-time Password Algorithm") and [TOTP](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm "w:Time-based One-time Password Algorithm") as described by their *informational* RFC, RFC [4226](https://tools.ietf.org/html/rfc4226) and [6328](https://tools.ietf.org/html/rfc6238) respectively. The OTP generator applications are available for iOS, Android, Blackberry and other devices. Similar to [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") the authentication mechanism integrates into the Linux [PAM](/index.php/PAM "PAM") system. This guide shows the installation and configuration of this mechanism.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -14,31 +14,34 @@ The [OATH Toolkit](http://www.nongnu.org/oath-toolkit/index.html) provides a two
 
 ## Installation
 
-Install the [oath-toolkit](https://www.archlinux.org/packages/?name=oath-toolkit) package.
+[Install](/index.php/Install "Install") the [oath-toolkit](https://www.archlinux.org/packages/?name=oath-toolkit) package.
 
 ## Setting up the oath
 
 The oath seed is an hexadecimal number that should be unique per user. To generate a new seed for a user, you could use the following command line:
 
+ `$ head -10 /dev/urandom | sha512sum | cut -b 1-30` 
 ```
-$ head -10 /dev/urandom | sha512sum | cut -b 1-30
 1ab4321412aebcw
 
 ```
 
-Note the above output seed is used as example seed in this article and **must not** be used. There needs to be one oath per user and link to it in a configuration file `/etc/users.oath`. While being root create the file and insert the user seed:
+**Note:** The above output seed is used as example seed in this article and **must not** be used.
+
+There needs to be one oath per user and link to it in a configuration file `/etc/users.oath`. While being root create the file and insert the user seed:
 
  `/etc/users.oath` 
 ```
 # Option User Prefix Seed
 HOTP/T30/6 *user* - *1ab4321412aebcw*
+
 ```
 
 Make sure that the file can only be accessed by root:
 
 ```
- # chmod 600 /etc/users.oath
- # chown root /etc/users.oath
+# chmod 600 /etc/users.oath
+# chown root /etc/users.oath
 
 ```
 
@@ -47,69 +50,66 @@ Make sure that the file can only be accessed by root:
 To enable oath for a specific service only, like ssh, you can edit the file `/etc/pam.d/sshd` and add at the beginning of the file the following line:
 
 ```
- auth	  sufficient pam_oath.so usersfile=/etc/users.oath window=30 digits=6
+auth	  sufficient pam_oath.so usersfile=/etc/users.oath window=30 digits=6
 
 ```
 
 This will allow authentication if you just enter the right oath code. You can make it a requirement and let the rest of the pam stack be processed if you use the following line instead:
 
 ```
- auth	  required pam_oath.so usersfile=/etc/users.oath window=30 digits=6
+auth	  required pam_oath.so usersfile=/etc/users.oath window=30 digits=6
 
 ```
 
 For ssh login to work make sure that both `ChallengeResponseAuthentication` and `UsePAM` options are enabled:
 
 ```
- ChallengeResponseAuthentication yes
- UsePAM yes
+ChallengeResponseAuthentication yes
+UsePAM yes
 
 ```
 
 If you want to force OATH request-response even if there is a working public/private key authentication also add the following:
 
 ```
- AuthenticationMethods publickey,keyboard-interactive
- PasswordAuthentication yes
+AuthenticationMethods publickey,keyboard-interactive
+PasswordAuthentication yes
 
 ```
 
 ## Logging with an oath pass
 
-Run the following command if you are logging in and need the current oath pass :
+Run the following command if you are logging in and need the current oath pass:
 
 ```
- oathtool -v -d6 *1ab4321412aebcw*
-
-```
-
-Of course replace *1ab4321412aebcw* by the seed corresponding to your user. It will display something like that :
-
-```
- Hex secret: 1ab4321412aebc
- Base32 secret: DK2DEFASV26A====
- Digits: 6
- Window size: 0
- Start counter: 0x0 (0)
+$ oathtool -v -d6 *1ab4321412aebcw*
 
 ```
 
-```
- 820170
+Of course replace `*1ab4321412aebcw*` by the seed corresponding to your user. It will display something like that:
 
 ```
+Hex secret: 1ab4321412aebc
+Base32 secret: DK2DEFASV26A====
+Digits: 6
+Window size: 0
+Start counter: 0x0 (0)
 
-The last number is actually the code you can use to log in right now, but more interestingly the Base32 secret, is actually what we need to generate a qr code for this user. To do so install the package [qrencode](https://www.archlinux.org/packages/?name=qrencode) to run the following command :
-
-```
- qrencode -o *user*.png 'otpauth://totp/*user*@*machine*?secret=*DK2DEFASV26A===='*
-
-```
-
-Of course change *user*, *machine* and *DK2DEFASV26A====* accordingly. Once done, you can visualize your qrcode with your preferred image visualizer application and use that to configure your phone. Alternatively you may generate the QR code directly onto terminal with:
+820170
 
 ```
-   qrencode -t UTF8 'otpauth://totp/*user*@*machine*?secret=*DK2DEFASV26A===='*
+
+The last number is actually the code you can use to log in right now, but more interestingly the Base32 secret, is actually what we need to generate a QR code for this user. To do so install the package [qrencode](https://www.archlinux.org/packages/?name=qrencode) to run the following command:
+
+```
+$ qrencode -o *user*.png 'otpauth://totp/*user*@*machine*?secret=*DK2DEFASV26A===='*
+
+```
+
+Of course change *user*, *machine* and `*DK2DEFASV26A====*` accordingly. Once done, you can visualize your QR code with your preferred image visualizer application and use that to configure your phone. Alternatively you may generate the QR code directly onto terminal with:
+
+```
+$ qrencode -t UTF8 'otpauth://totp/*user*@*machine*?secret=*DK2DEFASV26A===='*
 
 ```
 
@@ -120,4 +120,4 @@ It is pretty straight forward to use FreeOTP to then take a screenshot of that *
 ## See also
 
 *   [Two-factor time based (TOTP) SSH authentication with pam_oath and Google Authenticator](http://spod.cx/blog/two-factor-ssh-auth-with-pam_oath-google-authenticator.shtml)
-*   [pam_oath man page](http://www.nongnu.org/oath-toolkit/pam_oath.html)
+*   [pam_oath manual](http://www.nongnu.org/oath-toolkit/pam_oath.html)

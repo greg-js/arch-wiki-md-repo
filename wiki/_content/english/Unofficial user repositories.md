@@ -661,7 +661,7 @@ Server = https://repo.nah.nz/$repo
 
 ### nickcao
 
-*   **Maintainer:** [NickCao](https://nichi.co/about)
+*   **Maintainer:** [NickCao](https://nichi.co/)
 *   **Description:** Some (useful for some) packages from me, and some aur packages I personally use.
 *   **Key-ID:** 09CC69622E8D4EE343B4E8954D0BA456DF028C15
 

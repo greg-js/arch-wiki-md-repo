@@ -102,7 +102,7 @@ Relocate the browser profile to a [tmpfs](https://en.wikipedia.org/wiki/Tmpfs "w
 
 Use an active profile management script for maximal reliability and ease of use.
 
-[profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) is such a script and is directly available from the [AUR](/index.php/AUR "AUR"). It symlinks and syncs the browser profile directories to RAM. Refer to the [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") wiki article for additional information on it.
+[profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon) is such a script and is directly available from the [AUR](/index.php/AUR "AUR"). It symlinks and syncs the browser profile directories to RAM. Refer to the [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") wiki article for additional information on it.
 
 ### Launch a new browser instance
 
@@ -216,7 +216,7 @@ To enable the dark theme, normally used for incognito mode, [append](/index.php/
 
 Chromium uses [SQLite](/index.php/SQLite "SQLite") databases to manage history and the like. Sqlite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve startup and some other bookmarks- and history-related tasks is to defragment and trim unused space from these databases.
 
-[profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/) and [browser-vacuum](https://aur.archlinux.org/packages/browser-vacuum/) in the [AUR](/index.php/AUR "AUR") do just this.
+[profile-cleaner](https://www.archlinux.org/packages/?name=profile-cleaner) and [browser-vacuum](https://aur.archlinux.org/packages/browser-vacuum/) in the [AUR](/index.php/AUR "AUR") do just this.
 
 ## Security
 

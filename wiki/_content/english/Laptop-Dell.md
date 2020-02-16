@@ -12,6 +12,7 @@
 *   [4 Studio](#Studio)
 *   [5 Vostro](#Vostro)
 *   [6 XPS](#XPS)
+*   [7 G3](#G3)
 
 ## Inspiron
 
@@ -119,3 +120,11 @@ install CD version
 | [XPS 13 (7390)](/index.php/Dell_XPS_13_(7390) "Dell XPS 13 (7390)") | – | Yes | Yes | No Ethernet Port | Yes | Yes | – | – | Fingerprint not tested as the developer version does not have one. | This is the regular XPS 13, not the 2-in-1\. Only tested with Wayland (Sway WM) ecosystem. |
 | [XPS 13 2-in-1 (7390)](/index.php/Dell_XPS_13_2-in-1_(7390) "Dell XPS 13 2-in-1 (7390)") | 2019.09.01 | Yes | Yes | No Ethernet Port | Yes | Yes (Requires Drivers) | – | No Modem | Camera, Fingerprint Sensor not working | System freezes on boot. See device page for fix. |
 | [Dell XPS 15](/index.php/Dell_XPS_15 "Dell XPS 15") | – | Intel HD 530 works with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) i915 and GTX 960M works with [nvidia](https://www.archlinux.org/packages/?name=nvidia) | Yes | No Ethernet Port | Yes | Yes | Yes | No Modem | – | Everything basically works out-of-the-box with a reasonably up-to-date kernel. |
+
+## G3
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| G3 15 3590 | 5.5.2-arch1-1 | Intel UHD 630 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) and NVIDIA GP107M (GTX 1050) [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) and [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | NVIDIA GP107GL High Definition Audio Controller with ALSA and PulseAudio [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) worked after writting `options snd_hda_intel dmic_detect=0` into `/etc/modprobe.d/hda_fix.conf` | Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller | Qualcomm Atheros QCA9377 802.11ac Wireless Network Adapter | Untested | Untested | – | XFS data format | – |

@@ -281,7 +281,7 @@ The numerical libraries that comes with the R (generic [blas](https://www.archli
 
 **If your processors are Intel**, you can use the [Intel math Kernel Library](http://software.intel.com/en-us/intel-mkl). The **MKL**, beyond the capabilities of multithreading, also has specific optimizations for Intel processors. Keep in mind that they can [potentially interfere with the standard R functionality for parallel processing](http://blog.revolutionanalytics.com/2015/10/edge-cases-in-using-the-intel-mkl-and-parallel-programming.html).
 
-Please first [Install](/index.php/Install "Install") the [intel-mkl](https://aur.archlinux.org/packages/intel-mkl/) package available from [AUR](/index.php/AUR "AUR"), then the [r-mkl](https://aur.archlinux.org/packages/r-mkl/) package.
+Please first [Install](/index.php/Install "Install") the [intel-mkl](https://www.archlinux.org/packages/?name=intel-mkl) package available from [AUR](/index.php/AUR "AUR"), then the [r-mkl](https://aur.archlinux.org/packages/r-mkl/) package.
 
 **Note:**
 

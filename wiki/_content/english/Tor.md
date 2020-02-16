@@ -37,9 +37,10 @@ Related articles
         *   [7.2.2 Extension](#Extension)
     *   [7.3 Luakit](#Luakit)
 *   [8 HTTP proxy](#HTTP_proxy)
-    *   [8.1 Firefox](#Firefox_2)
-    *   [8.2 Polipo](#Polipo)
-    *   [8.3 Privoxy](#Privoxy)
+    *   [8.1 Tor](#Tor)
+    *   [8.2 Firefox](#Firefox_2)
+    *   [8.3 Polipo](#Polipo)
+    *   [8.4 Privoxy](#Privoxy)
 *   [9 Instant messaging](#Instant_messaging)
     *   [9.1 Pidgin](#Pidgin)
     *   [9.2 Irssi](#Irssi)
@@ -53,7 +54,7 @@ Related articles
     *   [12.3 Running a Tor exit node](#Running_a_Tor_exit_node)
         *   [12.3.1 Configuration](#Configuration_4)
         *   [12.3.2 +100Mbps Exit Relay configuration example](#+100Mbps_Exit_Relay_configuration_example)
-            *   [12.3.2.1 Tor](#Tor)
+            *   [12.3.2.1 Tor](#Tor_2)
                 *   [12.3.2.1.1 Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors)
                 *   [12.3.2.1.2 Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports)
                 *   [12.3.2.1.3 Tor configuration](#Tor_configuration)
@@ -77,7 +78,7 @@ Related articles
 
 Users of the Tor network run an onion proxy on their machine. This software connects out to Tor, periodically negotiating a virtual circuit through the Tor network. Tor employs cryptography in a layered manner (hence the 'onion' analogy), ensuring perfect forward secrecy between routers. At the same time, the onion proxy software presents a SOCKS interface to its clients. SOCKS-aware applications may be pointed at Tor, which then multiplexes the traffic through a Tor virtual circuit.
 
-**Warning:** Tor by itself is *not* all you need to maintain your anonymity. There are several major pitfalls to watch out for (see: [Want Tor to really work?](https://people.torproject.org/~sysrqb/webwml/download/download-easy.html.en#warning)).
+**Warning:** Tor by itself is *not* all you need to maintain your anonymity. There are several major pitfalls to watch out for (see: [Want Tor To Really Work?](https://en.calameo.com/read/005242387ef11d44d4ae7)).
 
 Through this process the onion proxy manages networking traffic for end-user anonymity. It keeps a user anonymous by encrypting traffic, sending it through other nodes of the Tor network, and decrypting it at the last node to receive your traffic before forwarding it to the server you specified. One trade off that has to be made for the anonymity Tor provides is that it can be considerably slower than a regular direct connection, due to the large amount of traffic re-routing. Additionally, although Tor provides protection against traffic analysis it cannot prevent traffic confirmation at the boundaries of the Tor network (i.e. the traffic entering and exiting the network).
 
@@ -480,7 +481,15 @@ $ torsocks luakit
 
 ## HTTP proxy
 
-Tor can be used with an HTTP proxy like [Polipo](/index.php/Polipo "Polipo") or [Privoxy](/index.php/Privoxy "Privoxy"), however the Tor dev team recommends using the SOCKS5 library since browsers directly support it.
+Tor since version [0.3.2.1](https://blog.torproject.org/tor-0321-alpha-released-support-next-gen-onion-services-and-kist-scheduler) offers a builtin tunneled HTTP proxy and also can be used with an HTTP proxy like [Polipo](/index.php/Polipo "Polipo") or [Privoxy](/index.php/Privoxy "Privoxy"), however the Tor dev team recommends using the SOCKS5 library since browsers directly support it.
+
+### Tor
+
+Add following line to your `torrc` file to set port `8118` on your `localhost` as http proxy:
+
+ `HTTPTunnelPort 127.0.0.1:8118` 
+
+Refer to [tor manual](https://www.torproject.org/docs/tor-manual.html.en#HTTPTunnelPort) for further information.
 
 ### Firefox
 

@@ -526,7 +526,7 @@ ou use:
 
 ```
 
-Depois que você desabilitou os watchdogs, você pode *opcionalmente* evitar o carregamento do módulo responsável pelo watchdog de hardware, também. Faça isso com o módulo relacionado [adicionando-o em lista-negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)"), exemplo `iTCO_wdt`.
+Depois que você desabilitou os watchdogs, você pode *opcionalmente* evitar o carregamento do módulo responsável pelo watchdog de hardware, também. Faça isso com o módulo relacionado [adicionando-o em lista-negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista_negra_(Blacklisting) "Kernel module (Português)"), exemplo `iTCO_wdt`.
 
 **Nota:** Alguns usuários [reportaram](https://bbs.archlinux.org/viewtopic.php?id=221239) que o parâmetro `nowatchdog` não funciona como esperado mas eles desabilitaram com sucesso (ao menos o de hardware) ao colocar o módulo citado acima no blacklist.
 

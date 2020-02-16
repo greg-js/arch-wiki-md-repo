@@ -25,6 +25,7 @@ Related articles
     *   [2.6 Running Docker with a manually-defined network on systemd-networkd](#Running_Docker_with_a_manually-defined_network_on_systemd-networkd)
     *   [2.7 Images location](#Images_location)
     *   [2.8 Insecure registries](#Insecure_registries)
+    *   [2.9 User namespace remapping](#User_namespace_remapping)
 *   [3 Images](#Images)
     *   [3.1 Arch Linux](#Arch_Linux)
     *   [3.2 Debian](#Debian)
@@ -197,6 +198,27 @@ If you decide to use a self signed certificate for your private registry, Docker
 ExecStart=
 ExecStart=/usr/bin/dockerd -H fd:// --insecure-registry my.registry.name:5000
 ```
+
+### User namespace remapping
+
+By default, containers run as the same user both inside and outside the container. This maximizes compatibility, but poses a security risk if a container privilege escalation vulnerability is discovered. The impact of such a vulnerability can be reduced by enabling [user namespace remapping](https://docs.docker.com/engine/security/userns-remap/). This maps any user inside the container to a different user on the host which has little or no permissions.
+
+Note that there are some [limitations](https://docs.docker.com/engine/security/userns-remap/#user-namespace-known-limitations) when enabling this feature. Notably, [Kubernetes currently does not work with this feature](https://github.com/kubernetes/enhancements/issues/127).
+
+Configure `userns-remap` in `/etc/docker/daemon.json`. `default` is a special value that will automatically create a user and group named `dockremap` for use with remapping.
+
+ `/etc/docker/daemon.json` 
+```
+{
+  "userns-remap": "default"
+}
+```
+
+Configure `/etc/subuid` and `/etc/subgid` with a username/group name, starting UID/GID and UID/GID range size to allocate to the remap user and group. This example allocates a range of 4096 UIDs and GIDs starting at 165536 to the `dockremap` user and group.
+
+ `/etc/subuid`  `dockremap:165536:4096`  `/etc/subgid`  `dockremap:165536:4096` 
+
+Restart `docker.service` to apply changes.
 
 ## Images
 

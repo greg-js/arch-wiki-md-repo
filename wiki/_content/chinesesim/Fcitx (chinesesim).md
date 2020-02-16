@@ -41,14 +41,15 @@ Related articles
 *   [5 故障排除](#故障排除)
     *   [5.1 停用或修改 *Extra key for trigger input method*](#停用或修改_Extra_key_for_trigger_input_method)
     *   [5.2 首先诊断问题所在](#首先诊断问题所在)
-    *   [5.3 Emacs 无法使用输入法](#Emacs_无法使用输入法)
-    *   [5.4 Firefox 右键菜单不弹出](#Firefox_右键菜单不弹出)
-    *   [5.5 在 GTK2 程序中用 Ctrl + Space 不能调出输入法](#在_GTK2_程序中用_Ctrl_+_Space_不能调出输入法)
-    *   [5.6 在 gnome-terminal中 Ctrl + Space 不能调出输入法](#在_gnome-terminal中_Ctrl_+_Space_不能调出输入法)
-    *   [5.7 Ctrl + ; 会调出 Fcitx 的剪贴板](#Ctrl_+_;_会调出_Fcitx_的剪贴板)
-    *   [5.8 fcitx-sogoupinyin 卡死、联想失败](#fcitx-sogoupinyin_卡死、联想失败)
-    *   [5.9 在某些程序下输入法总是被切换到美语键盘](#在某些程序下输入法总是被切换到美语键盘)
-    *   [5.10 Gnome On Wayland 用户无法使用 fcitx](#Gnome_On_Wayland_用户无法使用_fcitx)
+    *   [5.3 kde(plasma)桌面中kde自带应用（启动器，文件管理器）等无法使用fcitx中文输入](#kde(plasma)桌面中kde自带应用（启动器，文件管理器）等无法使用fcitx中文输入)
+    *   [5.4 Emacs 无法使用输入法](#Emacs_无法使用输入法)
+    *   [5.5 Firefox 右键菜单不弹出](#Firefox_右键菜单不弹出)
+    *   [5.6 在 GTK2 程序中用 Ctrl + Space 不能调出输入法](#在_GTK2_程序中用_Ctrl_+_Space_不能调出输入法)
+    *   [5.7 在 gnome-terminal中 Ctrl + Space 不能调出输入法](#在_gnome-terminal中_Ctrl_+_Space_不能调出输入法)
+    *   [5.8 Ctrl + ; 会调出 Fcitx 的剪贴板](#Ctrl_+_;_会调出_Fcitx_的剪贴板)
+    *   [5.9 fcitx-sogoupinyin 卡死、联想失败](#fcitx-sogoupinyin_卡死、联想失败)
+    *   [5.10 在某些程序下输入法总是被切换到美语键盘](#在某些程序下输入法总是被切换到美语键盘)
+    *   [5.11 Gnome On Wayland 用户无法使用 fcitx](#Gnome_On_Wayland_用户无法使用_fcitx)
 *   [6 参见](#参见)
 
 ## 安装
@@ -328,6 +329,15 @@ autocmd InsertEnter * call Fcitx2zh()
 ### 首先诊断问题所在
 
 当你遇到任何 fcitx 有关的问题，比如 ctrl+space 在有的程序中不能工作，首先应该用 `fcitx-diagnose` 命令诊断问题的原因。 `fcitx-diagnose` 会列出所有 fcitx 正常运行所需的前提条件，从输出结果中通常可以找到问题的原因。 在网上（比如在 irc 或者论坛里）询问别人关于 fcitx 配置的问题时，也请首先提供你的 `fcitx-diagnose` 输出结果（比如贴到 pastebin 服务），这将加速别人帮你找到问题所在。
+
+### kde(plasma)桌面中kde自带应用（启动器，文件管理器）等无法使用fcitx中文输入
+
+```
+sudo pacman -S kcm-fcitx fcitx-qt5
+
+```
+
+注销之后重新登录即可解决
 
 ### Emacs 无法使用输入法
 

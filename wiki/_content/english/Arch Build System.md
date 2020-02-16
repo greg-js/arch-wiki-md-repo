@@ -27,11 +27,11 @@ ABS is a similar concept. A part of ABS is a SVN repository and an equivalent Gi
 *   [2 Use cases](#Use_cases)
 *   [3 Usage](#Usage)
     *   [3.1 Retrieve PKGBUILD source](#Retrieve_PKGBUILD_source)
-        *   [3.1.1 Retrieve PKGBUILD source using SVN](#Retrieve_PKGBUILD_source_using_SVN)
-            *   [3.1.1.1 Prerequisites](#Prerequisites)
-            *   [3.1.1.2 Non-recursive checkout](#Non-recursive_checkout)
-            *   [3.1.1.3 Checkout a package](#Checkout_a_package)
-        *   [3.1.2 Retrieve PKGBUILD source using Git](#Retrieve_PKGBUILD_source_using_Git)
+        *   [3.1.1 Retrieve PKGBUILD source using Git](#Retrieve_PKGBUILD_source_using_Git)
+        *   [3.1.2 Retrieve PKGBUILD source using SVN](#Retrieve_PKGBUILD_source_using_SVN)
+            *   [3.1.2.1 Prerequisites](#Prerequisites)
+            *   [3.1.2.2 Non-recursive checkout](#Non-recursive_checkout)
+            *   [3.1.2.3 Checkout a package](#Checkout_a_package)
     *   [3.2 Build package](#Build_package)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Preserve modified packages](#Preserve_modified_packages)
@@ -108,6 +108,32 @@ To retrieve the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") required to build a c
 
 ### Retrieve PKGBUILD source
 
+There are two methods to retrieve PKGBUILD from source, the first is to use Git via svntogit and the second is to use SVN directly.
+
+#### Retrieve PKGBUILD source using Git
+
+As a precondition, [install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package. [Asp](https://github.com/falconindy/asp) is a tool to manage the build source files used to create Arch Linux packages. Uses the git interface which offers more up to date sources. Also see the Arch Linux BBS forum thread [[1]](https://bbs.archlinux.org/viewtopic.php?id=185075).
+
+To clone the svntogit-repository for a specific package, use:
+
+```
+$ asp checkout *pkgname*
+
+```
+
+This will clone the git repository for the given package into a directory named like the package.
+
+To update the cloned git repository, run `asp update` followed by `git pull` inside the git repository.
+
+Furthermore, you can use all other git commands to checkout an older version of the package or to track custom changes. For more information on git usage, see the [git](/index.php/Git "Git") page.
+
+If you just want to copy a snapshot of the current [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for a specific package, use:
+
+```
+$ asp export *pkgname*
+
+```
+
 #### Retrieve PKGBUILD source using SVN
 
 ##### Prerequisites
@@ -157,30 +183,6 @@ You should periodically update all of your checked out packages if you wish to p
 
 ```
 $ svn update
-
-```
-
-#### Retrieve PKGBUILD source using Git
-
-As a precondition, [install](/index.php/Install "Install") the [asp](https://www.archlinux.org/packages/?name=asp) package. [Asp](https://github.com/falconindy/asp) is a tool to manage the build source files used to create Arch Linux packages. Uses the git interface which offers more up to date sources. Also see the Arch Linux BBS forum thread [[1]](https://bbs.archlinux.org/viewtopic.php?id=185075).
-
-To clone the svntogit-repository for a specific package, use:
-
-```
-$ asp checkout *pkgname*
-
-```
-
-This will clone the git repository for the given package into a directory named like the package.
-
-To update the cloned git repository, run `asp update` followed by `git pull` inside the git repository.
-
-Furthermore, you can use all other git commands to checkout an older version of the package or to track custom changes. For more information on git usage, see the [git](/index.php/Git "Git") page.
-
-If you just want to copy a snapshot of the current [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for a specific package, use:
-
-```
-$ asp export *pkgname*
 
 ```
 

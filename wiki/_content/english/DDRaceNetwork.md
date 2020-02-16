@@ -2,7 +2,7 @@
 
 From the official website [ddnet.tw](https://ddnet.tw):
 
-	DDraceNetwork (DDNet) is an actively maintained version of DDRace, a Teeworlds modification with a unique cooperative gameplay. Help each other play through custom maps with up to 64 players, compete against the best in international tournaments, design your own maps, or run your own server. The official servers are located in Germany, Russia, USA, Canada, China, Chile, Brazil and South Africa. All ranks made on official servers are available worldwide and you can collect points!
+	DDraceNetwork (DDNet) is an actively maintained version of DDRace, a Teeworlds modification with a unique cooperative gameplay. Help each other play through custom maps with up to 64 players, compete against the best in international tournaments, design your own maps, or run your own server. The official servers are located in Germany, Russia, USA, China, Chile and South Africa. All ranks made on official servers are available worldwide and you can collect points!
 
 You control a *tee*, a ball-shaped 2D character, using your keyboard and mouse to shoot, grapple hook and jump around to interact with other players and the environment in the map with the finish line as target.
 
@@ -32,11 +32,11 @@ The game works in a client–server model, where the user plays using a Client w
 *   [5 Extra tools](#Extra_tools)
     *   [5.1 config_retrieve](#config_retrieve)
     *   [5.2 config_store](#config_store)
-    *   [5.3 confusables](#confusables)
-    *   [5.4 crapnet](#crapnet)
-    *   [5.5 dilate](#dilate)
-    *   [5.6 dummy_map](#dummy_map)
-    *   [5.7 fake_server](#fake_server)
+    *   [5.3 crapnet](#crapnet)
+    *   [5.4 dilate](#dilate)
+    *   [5.5 dummy_map](#dummy_map)
+    *   [5.6 fake_server](#fake_server)
+    *   [5.7 map_convert_07](#map_convert_07)
     *   [5.8 map_diff](#map_diff)
     *   [5.9 map_extract](#map_extract)
     *   [5.10 map_replace_image](#map_replace_image)
@@ -46,7 +46,8 @@ The game works in a client–server model, where the user plays using a Client w
     *   [5.14 tileset_borderfix](#tileset_borderfix)
     *   [5.15 tileset_borderrem](#tileset_borderrem)
     *   [5.16 tileset_borderset](#tileset_borderset)
-    *   [5.17 uuid](#uuid)
+    *   [5.17 unicode_confusables](#unicode_confusables)
+    *   [5.18 uuid](#uuid)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Build failed, MYSQL_CPPCONN_INCLUDEDIR and MYSQL_CPPCONN_LIBRARY not found](#Build_failed,_MYSQL_CPPCONN_INCLUDEDIR_and_MYSQL_CPPCONN_LIBRARY_not_found)
     *   [6.2 Build failed, no such file boost/shared_ptr.hpp](#Build_failed,_no_such_file_boost/shared_ptr.hpp)
@@ -227,19 +228,6 @@ Available since DDNet version 9.0.
 
 **Note:** If there is no difference between the configuration to stored and the configuration embedded in the map, then operation will be cancelled with message `configs coincide, not updating map`.
 
-### confusables
-
-```
-$ /usr/lib/ddnet/confusables *string1* *string2*
-
-```
-
-Compare *string1* with *string2* and report if they are "confusable", i.e. if the characters are "equal" and could cause confusion. For this to work, the characters with accents or other things around them are considered the "confusable" with the base character. Therefore, *aa* and *aá* are confusable (*á* was considered as *a*), while *aa* and *ab* are not.
-
-If they are confusable, it returns `not_confusable=0`, otherwise, returns `not_confusable=1`.
-
-Available since DDNet version 10.3.5.
-
 ### crapnet
 
 ```
@@ -277,6 +265,24 @@ $ /usr/lib/ddnet/fake_server
 ```
 
 Creates a fake server for testing.
+
+### map_convert_07
+
+```
+$ /usr/lib/ddnet/map_convert_07 *mapfilesrc.map* *mapfiledest.map*
+
+```
+
+Makes `*mapfiledest.map*` compatible with Teeworlds version 7.x that otherwise would be compatible **only** to Teeworlds version 6.x. If successfully, it creates a valid 07-compatible destination map; otherwise, it returns the following:
+
+*   an usage message if incorrect arguments are provided,
+*   `failed to open source map` if en error happens when opening the source map
+*   `failed to open destination map` if en error happens when opening the destination map
+*   `error loading storage` if failed to open storage for some reason
+*   `failed to open image file` if error happens on opening PNG image
+*   `invalid image format` if incorrectly formatted PNG.
+
+Available since DDNet since 12.9.
 
 ### map_diff
 
@@ -380,6 +386,19 @@ $ /usr/lib/ddnet/tileset_borderset tileset1 [tileset2 ...]
 This is a graphic tool, mainly useful for mappers. It does pretty much the same as [#tileset_borderadd](#tileset_borderadd) but expects 1024x1024 images instead of 960x960, and the border will be done in place. So each 60x60 tile should be placed inside a 64x64 tile.
 
 Returns 255 with a usage message if less than 1 argument is provided, returns 1 if the image is not a RGBA image (i.e. invalid tileset file), and return 0 for success operation.
+
+### unicode_confusables
+
+```
+$ /usr/lib/ddnet/unicode_confusables *string1* *string2*
+
+```
+
+Compare *string1* with *string2* and report if they are "confusable", i.e. if the characters are "equal" and could cause confusion. For this to work, the characters with accents or other things around them are considered the "confusable" with the base character. Therefore, *aa* and *aá* are confusable (*á* was considered as *a*), while *aa* and *ab* are not.
+
+If they are confusable, it returns `not_confusable=0`, otherwise, returns `not_confusable=1`.
+
+Available since DDNet version 10.3.5\. Since DDNet version 12.19, supports Unicode 12.0 and the tool name was renamed from *confusables* to *unicode_confusables*.
 
 ### uuid
 

@@ -38,7 +38,8 @@
             *   [1.7.2.1 Digital logic](#Digital_logic)
             *   [1.7.2.2 HDL](#HDL)
             *   [1.7.2.3 MCU IDE and programmers](#MCU_IDE_and_programmers)
-            *   [1.7.2.4 Schematic capture editor](#Schematic_capture_editor)
+            *   [1.7.2.4 Electronic circuit simulation and schematic capture editing](#Electronic_circuit_simulation_and_schematic_capture_editing)
+            *   [1.7.2.5 Electronic design and schematic capture editing](#Electronic_design_and_schematic_capture_editing)
     *   [1.8 Telecommunication](#Telecommunication)
         *   [1.8.1 Amateur radio](#Amateur_radio)
     *   [1.9 Simulation modeling](#Simulation_modeling)
@@ -775,6 +776,14 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[https://www.altera.com/products/design-software/overview.html](https://www.altera.com/products/design-software/overview.html) || see [Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")
 
+*   **[Lattice Diamond](/index.php/Lattice_Diamond "Lattice Diamond")** — A set of design tools for Lattice's FPGA chips.
+
+	[https://www.latticesemi.com](https://www.latticesemi.com) || [lattice-diamond](https://aur.archlinux.org/packages/lattice-diamond/)
+
+*   **[Microsemi Libero](/index.php/Microsemi_Libero "Microsemi Libero")** — Development tools for designing with Microsemi's PolarFire, IGLOO2, SmartFusion2, RTG4, SmartFusion, IGLOO, ProASIC3 and Fusion families.
+
+	[https://www.microsemi.com/product-directory/design-resources/1750-libero-soc#overview](https://www.microsemi.com/product-directory/design-resources/1750-libero-soc#overview) || see [Microsemi Libero](/index.php/Microsemi_Libero "Microsemi Libero")
+
 *   **[Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")** — FPGA programmable logic design suit.
 
 	[https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || see [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")
@@ -797,7 +806,57 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[http://rayer.g6.cz/programm/programe.htm](http://rayer.g6.cz/programm/programe.htm) || [spipgm-bin](https://aur.archlinux.org/packages/spipgm-bin/)
 
-##### Schematic capture editor
+##### Electronic circuit simulation and schematic capture editing
+
+*   **easy_spice** — Electronic circuit simulator. SPICE frontend, using gschem for schematics and ngspice as simulator.
+
+	[http://easy-spice.sourceforge.net](http://easy-spice.sourceforge.net) || [easy_spice](https://aur.archlinux.org/packages/easy_spice/)
+
+*   **eispice** — clone of the Berkley SPICE 3 Simulation Engine. It was originally targeted toward PCB level Signal Integrity Simulation; simulating IBIS model defined devices, transmission lines, and passive termination but the scope of the tool has been slowly expanding to include more general purpose circuit simulation features. Python interface.
+
+	[https://charleseidsness.github.io/eispice/](https://charleseidsness.github.io/eispice/) [https://github.com/charleseidsness/eispice](https://github.com/charleseidsness/eispice) || [python2-eispice-git](https://aur.archlinux.org/packages/python2-eispice-git/)
+
+*   **[gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package")** — GNU circuit simulator.
+
+	[http://gnucap.org](http://gnucap.org) || [gnucap](https://aur.archlinux.org/packages/gnucap/)
+
+*   **gspiceui** — GUI to various freely available Spice electronic ciruit simulators.
+
+	[http://users.tpg.com.au/micksw012/gspiceui.html](http://users.tpg.com.au/micksw012/gspiceui.html) || [gspiceui](https://aur.archlinux.org/packages/gspiceui/)
+
+*   **JSpice** — Java SPICE-inspired analog circuit simulator with an emphasis on simulating memristors and analog circuits containing memristors. Not to be confused with some other simulators also called JSPICE (there is a FORTRAN JSPICE, for example).
+
+	[https://github.com/Knowm/jspice](https://github.com/Knowm/jspice) [https://knowm.org/open-source/](https://knowm.org/open-source/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Graphical software application for schematic capture and simulation of electrical circuits. The actual simulation is done by the [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") or [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package") engines.
+
+	[https://github.com/drahnr/oregano](https://github.com/drahnr/oregano) || [oregano](https://aur.archlinux.org/packages/oregano/)
+
+*   **[ngspice](https://en.wikipedia.org/wiki/ngspice "wikipedia:ngspice")** — The established circuit simulator. Open source successor of [spice3f5](https://en.wikipedia.org/wiki/SPICE "wikipedia:SPICE"). Someone new to circuit simulators (maybe someone wishing to learn about electronics or electrical engineering) should probably start with this simulator.
+
+	[http://ngspice.sourceforge.net/](http://ngspice.sourceforge.net/) || [ngspice](https://www.archlinux.org/packages/?name=ngspice)
+
+*   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Electronics circuit simulator application that gives you the ability to set up a circuit with a graphical user interface and simulate its large-signal, small-signal and noise behaviour.
+
+	[http://qucs.sourceforge.net](http://qucs.sourceforge.net) || [qucs](https://aur.archlinux.org/packages/qucs/)
+
+*   **qucs-s** — Electronics circuit simulator that gives you the ability to set up a circuit with a GUI and simulate it. Fork of qucs that uses external, better, programs to do actual simulation.
+
+	[https://ra3xdh.github.io/](https://ra3xdh.github.io/) || [qucs-s](https://aur.archlinux.org/packages/qucs-s/)
+
+*   **SPICE Opus** — General purpose circuit simulator specially suited for optimization loops.
+
+	[http://spiceopus.si/spice/](http://spiceopus.si/spice/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **xyce** — SANDIA SPICE-compatible, high-performance analog circuit simulator, capable of solving extremely large circuit problems by supporting large-scale parallel computing platforms. It also supports serial execution on all common desktop platforms, and small-scale parallel runs on Unix-like systems. In addition to analog electronic simulation, Xyce has also been used to investigate more general network systems, such as neural networks and power grids.
+
+	[https://xyce.sandia.gov](https://xyce.sandia.gov) [https://github.com/Xyce/Xyce](https://github.com/Xyce/Xyce) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+##### Electronic design and schematic capture editing
+
+*   **asco** — SPICE Circuit Optimizer.
+
+	[http://asco.sourceforge.net](http://asco.sourceforge.net) || [asco](https://aur.archlinux.org/packages/asco/)
 
 *   **freeroute** — Automatic PCB track router for KiCad written by Alfons Wirtz.
 
@@ -815,21 +874,9 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[http://kicad-pcb.org/](http://kicad-pcb.org/) || [kicad](https://www.archlinux.org/packages/?name=kicad)
 
-*   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Graphical software application for schematic capture and simulation of electrical circuits. The actual simulation is done by the [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") or [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package") engines.
-
-	[https://github.com/drahnr/oregano](https://github.com/drahnr/oregano) || [oregano](https://aur.archlinux.org/packages/oregano/)
-
 *   **QElectroTech** — Application used to draw advanced electrical circuits.
 
 	[https://qelectrotech.org/](https://qelectrotech.org/) || [qelectrotech](https://aur.archlinux.org/packages/qelectrotech/)
-
-*   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Electronics circuit simulator application that gives you the ability to set up a circuit with a graphical user interface and simulate its large-signal, small-signal and noise behaviour.
-
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
-
-*   **[ngspice](https://en.wikipedia.org/wiki/ngspice "wikipedia:ngspice")** — Application used to simulate circuits. Open source successor of [spice3f5](https://en.wikipedia.org/wiki/SPICE "wikipedia:SPICE")
-
-	[http://ngspice.sourceforge.net/](http://ngspice.sourceforge.net/) || [ngspice](https://www.archlinux.org/packages/?name=ngspice)
 
 ### Telecommunication
 

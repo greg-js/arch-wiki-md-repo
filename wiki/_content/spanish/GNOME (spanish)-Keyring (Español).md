@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), revisada por última vez el **2018-01-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME/Keyring&diff=0&oldid=562490) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), revisada por última vez el **2020-02-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME/Keyring&diff=0&oldid=592609) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [GNOME Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) (*llavero de GNOME*) es "una colección de componentes en GNOME que almacenan secretos, contraseñas, claves, certificados y los ponen a disposición de las aplicaciones".
 
@@ -120,27 +120,6 @@ export SSH_AUTH_SOCK
 
 Véase [Xfce#SSH agents](/index.php/Xfce#SSH_agents "Xfce") para utilizarlo en Xfce.
 
-Si utiliza [i3](/index.php/I3 "I3") y ssh no está mostrando la solicitud de contraseña, dando el siguiente error
-
-```
-sign_and_send_pubkey: signing failed: agent refused operation
-Permission denied (publickey).
-
-```
-
-necesita añadir la variable de entorno DISPLAY a dbus-daemon en su .xinitrc, tal que así:
-
- `~/.xinitrc` 
-```
-dbus-update-activation-environment --systemd DISPLAY
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-
-...
-exec i3
-
-```
-
 ### Con un gestor de pantalla
 
 Cuando se utiliza un gestor de pantalla, el llavero funciona de manera inmediata para la mayoría de los casos. Los siguientes gestores de pantalla desbloquean automáticamente el llavero una vez que inicie sesión:
@@ -160,6 +139,12 @@ if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
+```
+ `~/.config/fish/config.fish` 
+```
+if test -n "$DESKTOP_SESSION"
+    set (gnome-keyring-daemon --start | string split "=")
+end
 ```
 
 ## Claves SSH
@@ -210,7 +195,7 @@ $ sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-ssh.desktop
 
 ### Desactivar los componentes del demonio del llavero
 
-Si desea ejecutar un agente SSH alternativo (por ejemplo, [ssh-agent](/index.php/SSH_keys_(Espa%C3%B1ol)#ssh-agent "SSH keys (Español)") o [gpg-agent](/index.php/GnuPG_(Espa%C3%B1ol)#gpg-agent "GnuPG (Español)"), debe desactivar el componente `ssh` del llavero de GNOME. Para hacerlo de una manera local en una cuenta, copie `/etc/xdg/autostart/gnome-keyring-ssh.desktop` a `~/.config/autostart` y luego añada la línea `Hidden=true` al archivo copiado. A continuación, cierre la sesión.
+Si desea ejecutar un agente SSH alternativo (por ejemplo, [ssh-agent](/index.php/SSH_keys_(Espa%C3%B1ol)#ssh-agent "SSH keys (Español)") o [gpg-agent](/index.php/GnuPG_(Espa%C3%B1ol)#gpg-agent "GnuPG (Español)")), debe desactivar el componente `ssh` del llavero de GNOME. Para hacerlo de una manera local en una cuenta, copie `/etc/xdg/autostart/gnome-keyring-ssh.desktop` a `~/.config/autostart` y luego añada la línea `Hidden=true` al archivo copiado. A continuación, cierre la sesión.
 
 **Nota:** En caso de que utilice [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") 3.24 o anterior en [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)"), gnome-shell sobrescribirá `SSH_AUTH_SOCK` para apuntar a gnome-keyring sin importar si se está ejecutando o no. Para evitar esto, debe configurar la variable de entorno GSM_SKIP_SSH_AGENT_WORKAROUND antes de iniciar gnome-shell. Una forma de hacer esto es añadiendo la línea `GSM_SKIP_SSH_AGENT_WORKAROUND DEFAULT=1` a `~/.pam_environment`.
 

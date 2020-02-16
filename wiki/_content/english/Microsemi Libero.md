@@ -2,7 +2,7 @@ From [[1]](https://www.microsemi.com/product-directory/design-resources/1750-lib
 
 	Libero® SoC Design Suite offers high productivity with its comprehensive, easy-to-learn, easy-to-adopt development tools for designing with Microsemi's PolarFire, IGLOO2, SmartFusion2, RTG4, SmartFusion, IGLOO, ProASIC3 and Fusion families.
 
-This article shows how to install the Microsemi Libero Toolchain on Arch Linux.
+This article shows how to install the Microsemi Libero FPGA Design Toolchain on Arch Linux.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

@@ -2,25 +2,29 @@ Related articles
 
 *   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
 
-[anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/) (asd) is a tiny pseudo-daemon designed to manage user specified directories referred to as sync targets from here on out, in tmpfs and to periodically sync them back to the physical disc (HDD/SSD). This is accomplished via a symlinking step and an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backups. Additionally, asd features several crash recovery features.
+[anything-sync-daemon](https://www.archlinux.org/packages/?name=anything-sync-daemon) (asd) is a tiny pseudo-daemon designed to manage user specified directories referred to as sync targets from here on out, in tmpfs and to periodically sync them back to the physical disc (HDD/SSD). This is accomplished via a symlinking step and an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backups. Additionally, asd features several crash recovery features.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 Asd or Psd?](#Asd_or_Psd.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Asd or Psd?](#Asd_or_Psd?)
 *   [2 Benefits of Asd](#Benefits_of_Asd)
 *   [3 Setup and Installation](#Setup_and_Installation)
-    *   [3.1 Edit /etc/asd.conf](#Edit_.2Fetc.2Fasd.conf)
+    *   [3.1 Edit /etc/asd.conf](#Edit_/etc/asd.conf)
     *   [3.2 Using asd](#Using_asd)
-    *   [3.3 Preview mode (parse)](#Preview_mode_.28parse.29)
+    *   [3.3 Preview mode (parse)](#Preview_mode_(parse))
     *   [3.4 Clean mode](#Clean_mode)
     *   [3.5 Running asd](#Running_asd)
-    *   [3.6 Sync at more frequent intervals (optional)](#Sync_at_more_frequent_intervals_.28optional.29)
+    *   [3.6 Sync at more frequent intervals (optional)](#Sync_at_more_frequent_intervals_(optional))
 *   [4 FAQ](#FAQ)
-    *   [4.1 What is overlayfs and why do I want to use it?](#What_is_overlayfs_and_why_do_I_want_to_use_it.3F)
-    *   [4.2 My system crashed and did not sync back. What do I do?](#My_system_crashed_and_did_not_sync_back._What_do_I_do.3F)
-    *   [4.3 Where can I find this snapshot?](#Where_can_I_find_this_snapshot.3F)
-    *   [4.4 How can I restore the snapshot?](#How_can_I_restore_the_snapshot.3F)
-    *   [4.5 Can asd delete the snapshots automatically?](#Can_asd_delete_the_snapshots_automatically.3F)
+    *   [4.1 What is overlayfs and why do I want to use it?](#What_is_overlayfs_and_why_do_I_want_to_use_it?)
+    *   [4.2 My system crashed and did not sync back. What do I do?](#My_system_crashed_and_did_not_sync_back._What_do_I_do?)
+    *   [4.3 Where can I find this snapshot?](#Where_can_I_find_this_snapshot?)
+    *   [4.4 How can I restore the snapshot?](#How_can_I_restore_the_snapshot?)
+    *   [4.5 Can asd delete the snapshots automatically?](#Can_asd_delete_the_snapshots_automatically?)
 *   [5 Support](#Support)
 
 ## Asd or Psd?
@@ -39,7 +43,7 @@ Since the sync target(s) is relocated into tmpfs (RAM disk), the corresponding o
 
 ## Setup and Installation
 
-[Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/) is available for download from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [anything-sync-daemon](https://www.archlinux.org/packages/?name=anything-sync-daemon) package.
 
 ### Edit /etc/asd.conf
 
@@ -144,7 +148,7 @@ OnUnitActiveSec=10min
 
 ```
 
-See [systemd.timer(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5) for additional options.
+See [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5) for additional options.
 
 ## FAQ
 

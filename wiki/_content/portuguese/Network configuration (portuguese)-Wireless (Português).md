@@ -99,7 +99,7 @@ O kernel padrão do Arch Linux é *modular*, o que significa que muitos dos driv
 
 Alguns chipsets sem fio também exigem firmware, além de um driver correspondente. Muitas imagens de firmware são fornecidas pelo pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), no entanto, as imagens de firmware proprietárias não são incluídas e devem ser instaladas separadamente. Isso é descrito em [#Instalar driver/firmware](#Instalar_driver/firmware).
 
-**Nota:** Se o módulo apropriado não for carregado pelo udev na inicialização, basta [carregá-lo manualmente](/index.php/Kernel_module_(Portugu%C3%AAs)#Manual_module_handling "Kernel module (Português)"). Se o udev carrega mais de um driver para um dispositivo, o conflito resultante pode impedir a configuração seja bem-sucedida. Certifique-se de [colocar na lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") o módulo indesejado.
+**Nota:** Se o módulo apropriado não for carregado pelo udev na inicialização, basta [carregá-lo manualmente](/index.php/Kernel_module_(Portugu%C3%AAs)#Manual_module_handling "Kernel module (Português)"). Se o udev carrega mais de um driver para um dispositivo, o conflito resultante pode impedir a configuração seja bem-sucedida. Certifique-se de [colocar na lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista_negra_(Blacklisting) "Kernel module (Português)") o módulo indesejado.
 
 ### Verificar o status de driver
 
@@ -740,7 +740,7 @@ A solução é definir a opção `ps_enable=1` para o módulo `ath9k`:
 
 #### ipw2100 e ipw2200
 
-Esses módulos são totalmente suportados no kernel, mas requerem firmware adicional. Dependendo de qual dos chipsets você tem, [instale](/index.php/Instale "Instale") [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) ou [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Então [recarregue](/index.php/Kernel_module_(Portugu%C3%AAs)#Manuseio_manual_de_módulos_de_kernel "Kernel module (Português)") o módulo apropriado.
+Esses módulos são totalmente suportados no kernel, mas requerem firmware adicional. Dependendo de qual dos chipsets você tem, [instale](/index.php/Instale "Instale") [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) ou [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Então [recarregue](/index.php/Kernel_module_(Portugu%C3%AAs)#Manuseio_de_módulos_de_kernel "Kernel module (Português)") o módulo apropriado.
 
 **Dica:** Você pode usar as seguintes [opções de módulo](/index.php/Kernel_module_(Portugu%C3%AAs)#Opções_de_configuração_de_módulos "Kernel module (Português)"):
 
@@ -828,13 +828,13 @@ Trate essa placa Tenda como um dispositivo `rt2870sta`. Veja [#rt2x00](#rt2x00).
 
 Isso deve ser parte do pacote do kernel e já estar instalado.
 
-Alguns chipsets Orinoco são Hermes II. Você pode usar o driver `wlags49_h2_cs` em vez do `orinoco_cs` e ganhar suporte a WPA. Para usar o driver, [coloque em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") `orinoco_cs` primeiro.
+Alguns chipsets Orinoco são Hermes II. Você pode usar o driver `wlags49_h2_cs` em vez do `orinoco_cs` e ganhar suporte a WPA. Para usar o driver, [coloque em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista_negra_(Blacklisting) "Kernel module (Português)") `orinoco_cs` primeiro.
 
 #### prism54
 
 O driver `p54` está incluído no kernel, mas você precisa fazer o download do firmware apropriado para sua placa [neste site](http://linuxwireless.org/en/users/Drivers/p54#firmware) e instalá-lo no diretório `/usr/lib/firmware`.
 
-**Nota:** Também existe um driver mais antigo e obsoleto `prism54`, que pode entrar em conflito com o driver mais recente (`p54pci` ou `p54usb`). Certifique-se de [colocar em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") `prism54`.
+**Nota:** Também existe um driver mais antigo e obsoleto `prism54`, que pode entrar em conflito com o driver mais recente (`p54pci` ou `p54usb`). Certifique-se de [colocar em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista_negra_(Blacklisting) "Kernel module (Português)") `prism54`.
 
 #### ACX100/111
 
@@ -852,7 +852,7 @@ Veja o [wiki oficial](http://sourceforge.net/apps/mediawiki/acx100/index.php?tit
 
 [Host AP](http://hostap.epitest.fi/) é um driver Linux para placas de rede local sem fio baseado no chipset Prism2/2.5/3 da Intersil. O driver está incluído no kernel do Linux.
 
-**Nota:** Certifique-se de [colocar em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") o driver `orinico_cs`, pois pode causar problemas.
+**Nota:** Certifique-se de [colocar em lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista_negra_(Blacklisting) "Kernel module (Português)") o driver `orinico_cs`, pois pode causar problemas.
 
 ### ndiswrapper
 
@@ -888,7 +888,7 @@ $ ndiswrapper -l
 
 ```
 
-Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [[Kernel module (Português)# Carregamento automático de módulos com systemd]] para carregar automaticamente o módulo na inicialização.
+Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [Kernel module (Português)#Carregamento automático de módulos com systemd](/index.php/Kernel_module_(Portugu%C3%AAs)#Carregamento_automático_de_módulos_com_systemd "Kernel module (Português)") para carregar automaticamente o módulo na inicialização.
 
 A parte importante é certificar-se de que ndiswrapper existe nesta linha, por isso basta adicioná-lo ao lado dos outros módulos. Seria melhor testar se o ndiswrapper será carregado agora, então:
 

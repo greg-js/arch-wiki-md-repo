@@ -203,7 +203,7 @@ install CD version
 | [Lenovo ThinkPad X200](/index.php/Lenovo_ThinkPad_X200 "Lenovo ThinkPad X200") | Yes | Yes | Yes | Yes | Yes | Yes | NA | Yes |
 | [Lenovo ThinkPad X200S](/index.php/Lenovo_ThinkPad_X200S "Lenovo ThinkPad X200S") | Yes | Yes | Yes | Yes | Yes | Yes | NA | Yes | Everything worked out of the box. However, fingerprint, SD card and webcam were not tested. Modem needs reset after sleep (sometimes). |
 | [Lenovo ThinkPad X201](/index.php/Lenovo_ThinkPad_X201 "Lenovo ThinkPad X201") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested |
-| [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes) |
+| [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes) | Intel Centrino Advanced-N 6205 [Taylor Peak] requires [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) |
 | [Lenovo ThinkPad X230](/index.php/Lenovo_ThinkPad_X230 "Lenovo ThinkPad X230") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), UMTS Modem (Yes), Accelerometer (No) |
 | [Lenovo ThinkPad X240](/index.php/Lenovo_ThinkPad_X240 "Lenovo ThinkPad X240") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | WWAN LTE (yes) | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |

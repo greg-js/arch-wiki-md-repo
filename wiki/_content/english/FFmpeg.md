@@ -58,7 +58,7 @@ For the development version, install the [ffmpeg-git](https://aur.archlinux.org/
 **Note:**
 
 *   It is important parameters are specified in the correct order (e.g. input, video, filters, audio, output), failing to do so may cause parameters being skipped or will prevent FFmpeg from executing.
-*   FFmpeg should automatically choose the number of CPU threads available. However you may want to force the number of threads available by the parameter `-threads <number>`.
+*   FFmpeg should automatically choose the number of CPU threads available. However you may want to force the number of threads available by the parameter `-threads *number*`.
 
 ### Screen capture
 
@@ -148,9 +148,12 @@ Both examples will provide the same quality output.
 
 ### x265
 
-In encoding x265 files, you may need to specify the aspect ratio of the file via `-aspect <width:height>`. Example :
+In encoding x265 files, you may need to specify the aspect ratio of the file via `-aspect *width*:*height*`. Example :
 
- ` ffmpeg -i input -c:v libx265 -aspect 1920:1080 -preset veryslow -x265-params crf=20 output` 
+```
+$ ffmpeg -i input -c:v libx265 -aspect 1920:1080 -preset veryslow -x265-params crf=20 output
+
+```
 
 ### Single-pass MPEG-2 (near lossless)
 
@@ -205,19 +208,8 @@ Video stablization using the vid.stab plugin entails two passes.
 
 The first pass records stabilization parameters to a file and/or a test video for visual analysis.
 
-*   Records stabilization parameters to a file only
-
-```
-$ ffmpeg -i input -vf vidstabdetect=stepsize=4:mincontrast=0:result=transforms.trf -f null -
-
-```
-
-*   Records stabilization parameters to a file and create test video "output-stab" for visual analysis
-
-```
-$ ffmpeg -i input -vf vidstabdetect=stepsize=4:mincontrast=0:result=transforms.trf -f output-stab
-
-```
+*   Records stabilization parameters to a file only `$ ffmpeg -i input -vf vidstabdetect=stepsize=4:mincontrast=0:result=transforms.trf -f null -` 
+*   Records stabilization parameters to a file and create test video "output-stab" for visual analysis `$ ffmpeg -i input -vf vidstabdetect=stepsize=4:mincontrast=0:result=transforms.trf -f output-stab` 
 
 #### Second pass
 
@@ -273,7 +265,7 @@ $ ffmpeg -i foo.mkv -c:s srt foo.srt
 
 ```
 
-When dealing with multiple subtitles, you may need to specify the stream that needs to be extracted using the `-map <key>:<stream>` parameter:
+When dealing with multiple subtitles, you may need to specify the stream that needs to be extracted using the `-map *key*:*stream*` parameter:
 
 ```
 $ ffmpeg -i foo.mkv -map 0:2 foo.ssa
@@ -284,7 +276,7 @@ $ ffmpeg -i foo.mkv -map 0:2 foo.ssa
 
 (instructions based on [HowToBurnSubtitlesIntoVideo](http://trac.ffmpeg.org/wiki/HowToBurnSubtitlesIntoVideo) at the FFmpeg wiki)
 
-[Hardsubbing](https://en.wikipedia.org/wiki/Hardsub "wikipedia:Hardsub") entails merging subtitles with the video. Hardsubs can't be disabled, nor language switched.
+[Hardsubbing](https://en.wikipedia.org/wiki/Hardsub "wikipedia:Hardsub") entails merging subtitles with the video. Hardsubs cannot be disabled, nor language switched.
 
 *   Overlay `foo.mpg` with the subtitles in `foo.ssa`:
 
@@ -403,7 +395,7 @@ $ ffmpeg -threads 1 -i file.ext -vaapi_device /dev/dri/renderD128 -vcodec h264_v
 
 #### NVIDIA NVENC/NVDEC
 
-[NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC") and [NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") can be used for encoding/decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from [600 series](https://en.wikipedia.org/wiki/GeForce_600_series "wikipedia:GeForce 600 series"), see [Hardware video acceleration#NVIDIA](/index.php/Hardware_video_acceleration#NVIDIA "Hardware video acceleration") for details.
+[NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "wikipedia:Nvidia NVENC") and [NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "wikipedia:Nvidia NVDEC") can be used for encoding/decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from [600 series](https://en.wikipedia.org/wiki/GeForce_600_series "wikipedia:GeForce 600 series"), see [Hardware video acceleration#NVIDIA](/index.php/Hardware_video_acceleration#NVIDIA "Hardware video acceleration") for details.
 
 The [following gist](https://gist.github.com/Brainiarc7/8b471ff91319483cdb725f615908286e) provides some techniques. NVENC is somewhat similar to [CUDA](/index.php/CUDA "CUDA"), thus it works even from terminal session. Depending on hardware NVENC is several times faster than Intel's VA-API encoders.
 

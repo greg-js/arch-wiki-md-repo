@@ -11,7 +11,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 	Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer.
 
-**Note:** Bumblebee not only has significant performance issues[[1]](https://github.com/Witko/nvidia-xrun/issues/4#issuecomment-153386837)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1822926), but also has no plans to support [Vulkan](/index.php/Vulkan "Vulkan")[[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/769#issuecomment-218016574). See [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") for alternative solutions.
+**Note:** Bumblebee has significant performance issues[[1]](https://github.com/Witko/nvidia-xrun/issues/4#issuecomment-153386837)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1822926). See [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") for alternative solutions.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -28,6 +28,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [4.1 Optimizing speed](#Optimizing_speed)
         *   [4.1.1 Using VirtualGL as bridge](#Using_VirtualGL_as_bridge)
         *   [4.1.2 Primusrun](#Primusrun)
+        *   [4.1.3 Pvkrun](#Pvkrun)
     *   [4.2 Power management](#Power_management)
         *   [4.2.1 Default power state of NVIDIA card using bbswitch](#Default_power_state_of_NVIDIA_card_using_bbswitch)
         *   [4.2.2 Enable NVIDIA card during shutdown](#Enable_NVIDIA_card_during_shutdown)
@@ -168,6 +169,13 @@ You can configure the behaviour of Bumblebee to fit your needs. Fine tuning like
 
 ### Optimizing speed
 
+One disadvantage of the offscreen rendering methods is performance. The following table gives a raw overview of a [Lenovo_ThinkPad_T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") in an eGPU setup with NVIDIA GTX 1060 6GB using the internal Display and [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/) benchmark (1920x1080, max settings):
+
+| Command | FPS | Score | Min FPS | Max FPS |
+| optirun unigine-heaven | 20.7 | 521 | 6.9 | 26.6 |
+| primusrun unigine-heaven | 36.9 | 930 | 15.3 | 44.1 |
+| unigine-heaven # in [Nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") | 51.3 | 1293 | 8.4 | 95.6 |
+
 #### Using VirtualGL as bridge
 
 Bumblebee renders frames for your Optimus NVIDIA card in an invisible X Server with VirtualGL and transports them back to your visible X Server. Frames will be compressed before they are transported - this saves bandwidth and can be used for speed-up optimization of bumblebee:
@@ -253,6 +261,15 @@ $ optirun -b primus glxgears
 Or, set `Bridge=primus` in `/etc/bumblebee/bumblebee.conf` and you will not have to specify it on the command line.
 
 **Tip:** Refer to [#Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_(disable_VSYNC)) if you want to disable `VSYNC`. It can also remove mouse input delay lag and slightly increase the performance.
+
+#### Pvkrun
+
+The package [primus_vk](https://www.archlinux.org/packages/?name=primus_vk) is a drop-in replacement for `primusrun` that enables to run Vulkan-based applications.
+
+```
+$ pvkrun wine witcher3.exe # for the DXVK enabled version
+
+```
 
 ### Power management
 
@@ -454,7 +471,7 @@ EndSection
 
 ```
 
-See [[4]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configurations to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
+See [[3]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configurations to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
 
 If you do not want to use intel-virtual-output, another option is to configure Bumblebee to leave the discrete GPU on and directly configure X to use both the screens, as it will be able to detect them.
 
@@ -774,7 +791,7 @@ Performance comparison:
 
 ### Primus issues under compositing window managers
 
-Since compositing hurts performance, invoking primus when a compositing WM is active is not recommended.[[5]](https://github.com/amonakov/primus#issues-under-compositing-wms) If you need to use primus with compositing and see flickering or bad performance, synchronizing primus' display thread with the application's rendering thread may help:
+Since compositing hurts performance, invoking primus when a compositing WM is active is not recommended.[[4]](https://github.com/amonakov/primus#issues-under-compositing-wms) If you need to use primus with compositing and see flickering or bad performance, synchronizing primus' display thread with the application's rendering thread may help:
 
 ```
 $ PRIMUS_SYNC=1 primusrun ...
@@ -834,7 +851,7 @@ As a workaround, add `pcie_port_pm=off` to your [Kernel parameters](/index.php/K
 
 Alternatively, if you are only interested in power saving (and perhaps use of external monitors), remove bbswitch and rely on [Nouveau](/index.php/Nouveau "Nouveau") runtime power-management (which supports the new method).
 
-**Note:** Some tools such as `powertop --auto-tune` automatically enable power management on PCI devices, which leads to the same problem [[6]](https://github.com/Bumblebee-Project/bbswitch/issues/159). Use the same workaround or do not use the all-in-one tools.
+**Note:** Some tools such as `powertop --auto-tune` automatically enable power management on PCI devices, which leads to the same problem [[5]](https://github.com/Bumblebee-Project/bbswitch/issues/159). Use the same workaround or do not use the all-in-one tools.
 
 ### Lockup issue (lspci hangs)
 
@@ -842,7 +859,7 @@ See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup
 
 ### Discrete card always on and acpi warnings
 
-Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [[7]](https://github.com/Bumblebee-Project/Bumblebee/issues/592) and [[8]](https://github.com/Bumblebee-Project/bbswitch/issues/112) for more information.
+Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [[6]](https://github.com/Bumblebee-Project/Bumblebee/issues/592) and [[7]](https://github.com/Bumblebee-Project/bbswitch/issues/112) for more information.
 
 ### Screen 0 deleted because of no matching config section
 
@@ -862,7 +879,7 @@ If Bumblebee starts/works in a random manner, check that you have set your [Netw
 
 ### Discrete card always on and nvidia driver cannot be unloaded
 
-Make sure `nvidia-persistenced.service` is disabled and not currently active. It is intended to keep the `nvidia` driver running at all times [[9]](https://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/README/nvidia-persistenced.html), which prevents the card being turned off.
+Make sure `nvidia-persistenced.service` is disabled and not currently active. It is intended to keep the `nvidia` driver running at all times [[8]](https://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/README/nvidia-persistenced.html), which prevents the card being turned off.
 
 ### Discrete card is silently activated when egl is requested by some application
 

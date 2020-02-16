@@ -20,7 +20,7 @@
 *   [3 Certificates](#Certificates)
     *   [3.1 Self-signed certificate](#Self-signed_certificate)
     *   [3.2 Let's Encrypt certificate](#Let's_Encrypt_certificate)
-        *   [3.2.1 Install](#Install)
+        *   [3.2.1 Configure](#Configure)
         *   [3.2.2 Obtain a certificate](#Obtain_a_certificate)
         *   [3.2.3 Auto renewal](#Auto_renewal)
             *   [3.2.3.1 Automation with cron](#Automation_with_cron)
@@ -180,11 +180,14 @@ As this solution does not use an official certificate authority (CA), a security
 
 ### Let's Encrypt certificate
 
-#### Install
+#### Configure
 
-Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion using the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") v2 protocol and therefore supporting wildcard domains such as **.my-domain.org*.
+Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion using the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") v2 protocol.
 
-A configuration file example `letsencrypt.conf` is provided in the directory `/usr/lib/hiawatha/letsencrypt`. The user's configuration must be saved in `~/.letsencrypt/`.
+A configuration file example `letsencrypt.conf` is provided in the directory `/usr/lib/hiawatha/letsencrypt`. Two steps are needed to setup *lefh*:
+
+1.  Copy the sample configuration file to the user's area `~/.letsencrypt/`.
+2.  Edit the settings, in particular replace the value of `ACCOUNT_EMAIL_ADDRESS` by the chosen email address, *lefh* will not run with the default email address.
 
 #### Obtain a certificate
 

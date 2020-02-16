@@ -32,13 +32,6 @@ RNGD_OPTS="-o /dev/random -r /dev/urandom"
 ```
 Of course, this is a [really bad idea](https://lwn.net/Articles/525459/), since you are simply filling the kernel entropy pool with entropy coming from the kernel itself! If your system does not have an available TRNG consider using [haveged](/index.php/Haveged "Haveged") instead. See [FS#34580](https://bugs.archlinux.org/task/34580) for details.
 
-If your system does not have a [TPM module](https://en.wikipedia.org/wiki/Trusted_Platform_Module "wikipedia:Trusted Platform Module"), you may pass `"--no-tpm=1"` to `RNGD_OPTS` to suppress the following warning message from log:
-
-```
-Unable to open file: /dev/tpm0
-
-```
-
 By default *rngd* fills the entropy pool until at least 2048 bits of entropy are available. This is to avoid the TRNG to dominate the contents of the pool. You can override this setting if you really **trust** your TRNG. To do this, pass `"--fill-watermark=4096"` to `RNGD_OPTS`, for example (4096 is the maximum size of kernel's entropy pool by default, you shouldn't pass a value greater than the maximum either). Doing so may increase the performance of `/dev/random` even further, at the expense of maybe lower random number quality. However, it should be noted that the default setting is already sufficient for the majority of user cases.
 
 ## Testing and usage

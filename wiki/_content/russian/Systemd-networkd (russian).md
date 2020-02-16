@@ -8,7 +8,7 @@
 *   [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети")
 *   [Category:Network configuration (Русский)](/index.php/Category:Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Network configuration (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"). Дата последней синхронизации: 28 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd-networkd&diff=0&oldid=423358).
+**Состояние перевода:** На этой странице представлен перевод статьи [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"). Дата последней синхронизации: 9 февраля 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd-networkd&diff=0&oldid=595945).
 
 *systemd-networkd* — системный демон для управления сетевыми настройками. Его задачей является обнаружение и настройка сетевых устройств по мере их появления, а также создание виртуальных сетевых устройств. Эта служба особенно полезна при работе со сложными сетевыми настройками контейнера [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") или виртуальной машины, но вполне подойдёт и для простых соединений.
 
@@ -28,30 +28,35 @@
         *   [1.2.5 Переименование интерфейса](#Переименование_интерфейса)
 *   [2 Файлы настроек](#Файлы_настроек)
     *   [2.1 Файлы network](#Файлы_network)
-        *   [2.1.1 [Match] раздел](#[Match]_раздел)
-        *   [2.1.2 [Network] раздел](#[Network]_раздел)
-        *   [2.1.3 [Address] раздел](#[Address]_раздел)
-        *   [2.1.4 [Route] раздел](#[Route]_раздел)
-    *   [2.2 Файлы NetDev](#Файлы_NetDev)
-        *   [2.2.1 [Match] раздел](#[Match]_раздел_2)
-        *   [2.2.2 [Netdev] раздел](#[Netdev]_раздел)
+        *   [2.1.1 [Match]](#[Match])
+        *   [2.1.2 [Link]](#[Link])
+        *   [2.1.3 [Network]](#[Network])
+        *   [2.1.4 [Address]](#[Address])
+        *   [2.1.5 [Route]](#[Route])
+        *   [2.1.6 [DHCP]](#[DHCP])
+    *   [2.2 Файлы netdev](#Файлы_netdev)
+        *   [2.2.1 [Match]](#[Match]_2)
+        *   [2.2.2 [Netdev]](#[Netdev])
     *   [2.3 Файлы link](#Файлы_link)
-        *   [2.3.1 [Match] раздел](#[Match]_раздел_3)
-        *   [2.3.2 [Link] раздел](#[Link]_раздел)
+        *   [2.3.1 [Match]](#[Match]_3)
+        *   [2.3.2 [Link]](#[Link]_2)
 *   [3 Использование с контейнерами](#Использование_с_контейнерами)
-    *   [3.1 Основная DHCP сеть](#Основная_DHCP_сеть)
-    *   [3.2 DHCP с двумя различными IP](#DHCP_с_двумя_различными_IP)
+    *   [3.1 Простая DHCP-сеть](#Простая_DHCP-сеть)
+    *   [3.2 DHCP-сеть с отдельными IP-адресами](#DHCP-сеть_с_отдельными_IP-адресами)
         *   [3.2.1 Интерфейс моста](#Интерфейс_моста)
-        *   [3.2.2 Привязать Ethernet для моста](#Привязать_Ethernet_для_моста)
-        *   [3.2.3 Сетевой мост](#Сетевой_мост)
-        *   [3.2.4 Добавить опцию для загрузки контейнера](#Добавить_опцию_для_загрузки_контейнера)
+        *   [3.2.2 Привязка Ethernet к мосту](#Привязка_Ethernet_к_мосту)
+        *   [3.2.3 Сеть моста](#Сеть_моста)
+        *   [3.2.4 Добавление моста в команду запуска контейнера](#Добавление_моста_в_команду_запуска_контейнера)
         *   [3.2.5 Результат](#Результат)
-        *   [3.2.6 Уведомление](#Уведомление)
-    *   [3.3 Статические IP-сети](#Статические_IP-сети)
+        *   [3.2.6 Замечания](#Замечания)
+    *   [3.3 Сеть со статическими IP-адресами](#Сеть_со_статическими_IP-адресами)
 *   [4 Советы и рекомендации](#Советы_и_рекомендации)
     *   [4.1 Интеграция сетевого интерфейса и рабочего стола](#Интеграция_сетевого_интерфейса_и_рабочего_стола)
     *   [4.2 Назначение IP-адреса на основании SSID](#Назначение_IP-адреса_на_основании_SSID)
 *   [5 Решение проблем](#Решение_проблем)
+    *   [5.1 Службы монтирования при неудачной загрузке](#Службы_монтирования_при_неудачной_загрузке)
+    *   [5.2 systemd-resolved не может найти локальный домен](#systemd-resolved_не_может_найти_локальный_домен)
+    *   [5.3 Подключённый компьютер не использует мост](#Подключённый_компьютер_не_использует_мост)
 *   [6 Смотрите также](#Смотрите_также)
 
 ## Основы использования
@@ -179,182 +184,150 @@ Name=ethusb0
 
 ## Файлы настроек
 
-Файлы настроек расположены в `/usr/lib/systemd/network`, в динамическом каталоге выполнения сети `/run/systemd/network` и локальном каталоге сетевого администрирования `/etc/systemd/network`. Файлы в `/etc/systemd/network` имеют самый высокий приоритет.
+Файлы настроек могут находиться в следующих каталогах (в порядке увеличения приоритета):
+
+*   `/usr/lib/systemd/network` — системный сетевой каталог.
+*   `/run/systemd/network` — runtime-каталог сетевых программ.
+*   `/etc/systemd/network` — локальный каталог системного администрирования.
 
 Существуют три типа файлов настройки.
 
-*   **.network** файлы. Они будут применять сетевую настройку для *matching* (совпадения) устройства
-*   **.netdev** файлы. Они создадут *virtual network device* для среды *matching*
-*   **.link** файлы. Когда появится сетевое устройство, [udev](/index.php/Udev "Udev") сначала посмотрит *matching* файла **.link**
+*   Файлы ***.network*** — настройки (профили) сетевых интерфейсов.
+*   Файлы ***.netdev*** — настройки (профили) виртуальных сетевых интерфейсов.
+*   Файлы ***.link*** — настройки, которые использует менеджер устройств [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") при обнаружении нового интерфейса.
 
-Все они следуют тем же правилам:
+Для этих файлов действуют следующие правила:
 
-*   Если **все** условия в `[Match]` разделе совпали, профиль будет активирован
-*   Пустая секция `[Match]` означает, что профиль будет применяться в любом случае (можно сравнить с шуткой `*`)
-*   Каждая запись с синтаксисом `NAME=VALUE` является ключевой
-*   все файлы настроек вместе сортируются и обрабатываются в лексическом порядке, независимо от каталога, в котором они живут
-*   файлы с одинаковым именем сменяют друг друга
+*   Профиль активируется, если совпали **все** условия в разделе `[Match]`.
+*   Если в разделе `[Match]` не указано ничего, то профиль применяется для всех устройств (можно сравнить с подстановочным символом `*`).
+*   Файлы настроек сортируются по названиям и обрабатываются в лексическом порядке, независимо от каталога, в котором они расположены.
+*   Файлы с одинаковыми названиями заменяют друг друга — в порядке приоритета каталогов, в которых они находятся.
 
 **Совет:**
 
-*   переопределить системный файл `/usr/lib/systemd/network` на постоянную основу (то есть даже после обновления) можно поместив файл с таким же именем в каталог `/etc/systemd/network` и создав для него символьную ссылку в `/dev/null`
-*   символ `*` можно использовать в `VALUE` (например, значению `en*` будет соответствовать любое устройство Ethernet)
-*   в соответствии с информацией, данной в [этом сообщении Arch-general](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), лучше всего выставлять параметры для конкретных сетевых контейнеров *внутри контейнера* при помощи файлов **networkd**
+*   Чтобы не дать системе использовать файл настроек в `/usr/lib/systemd/network`, в том числе и после обновления, создайте в каталоге `/etc/systemd/network` символическую ссылку на `/dev/null` с таким же именем.
+*   В значениях параметров можно использовать подстановочный символ `*`. Например, шаблон `en*` будет соответствовать любому Ethernet-интерфейсу.
+*   Согласно [этому сообщению](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), сетевые настройки контейнера лучше задавать файлами networkd *внутри контейнера*.
+*   Systemd понимает значения `1, true, yes, on` как логическое *true*, а `0, false, no, off` — как *false*.
 
 ### Файлы network
 
-Эти файлы направлены на установку переменных сетевых настроек, в основном для серверов и контейнеров.
+В network-файлах задаются сетевые настройки, чаще всего — для серверов и контейнеров.
 
-Ниже приводится основная структура файла `*МойПрофиль*.network`:
+Файлы *.network* могут содержать разделы `[Match]`, `[Link]`, `[Network]`, `[Address]`, `[Route]` и `[DHCP]`. Ниже приведены основные параметры для каждого раздела. Подробнее смотрите [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
 
- `/etc/systemd/network/*МойПрофиль*.network` 
-```
-[Match]
-*вертикальный список ключей*
+#### [Match]
 
-[Network]
-*вертикальный список ключей*
+Наиболее распространенные ключи для поиска совпадающего устройства:
 
-[Address]
-*вертикальный список ключей*
+| Параметр | Описание | Возможные значения | Значение по умолчанию |
+| `Name=` | Поиск интерфейса по названию, например: `en*`. Символ `!` в начале инвертирует результаты поиска. | Разделённые пробелами названия интерфейсов (можно указывать шаблоны с подстановочными символами в стиле командной оболочки), логическое отрицание (`!`). |
+| `MACAddress=` | Поиск интерфейса по MAC-адресу, например: `MACAddress=01:23:45:67:89:ab 00-11-22-33-44-55 AABB.CCDD.EEFF` | Разделённые пробелами MAC-адреса в шестнадцатеричном формате; в качестве внутреннего разделителя в адресах можно использовать двоеточия, дефисы и точки. |
+| `Host=` | Поиск по имени хоста или machine ID. | Имя хоста (в том числе в виде шаблона), [machine ID](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-id.5.en) |
+| `Virtualization=` | Проверка на работу в виртуальном окружении. `Virtualization=false` — для хост-системы, `Virtualization=true` — для работы в контейнере или виртуальной машине. Есть возможность проверить тип виртуализации и реализацию. | булевские, логическое отрицание (`!`), тип (`vm` и `container`), реализация (`qemu`, `kvm`, `zvm`, `vmware`, `microsoft`, `oracle`, `xen`, `bochs`, `uml`, `bhyve`, `qnx`, `openvz`, `lxc`, `lxc-libvirt`, `systemd-nspawn`, `docker`, `podman`, `rkt`, `wsl`, `acrn`) |
 
-[Route]
-*вертикальный список ключей*
+#### [Link]
 
-```
+*   `MACAddress=` — [замена MAC-адреса](/index.php/MAC_address_spoofing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Способ_1:_systemd-networkd "MAC address spoofing (Русский)").
+*   `MTUBytes=` — большее значение MTU (например, при использовании [jumbo frames](/index.php/Jumbo_frames "Jumbo frames")) может повысить скорость передачи данных.
+*   `Multicast=` — [групповая передача](https://en.wikipedia.org/wiki/ru:%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%B2%D0%B5%D1%89%D0%B0%D0%BD%D0%B8%D0%B5 "wikipedia:ru:Мультивещание") для интерфейса(-ов).
 
-#### [Match] раздел
+#### [Network]
 
-Наиболее распространенные ключи:
+| Параметр | Описание | Допустимые значения | Значение по умолчанию |
+| `DHCP=` | Поддержка DHCPv4- и/или DHCPv6-клиента. | булевское, `ipv4`, `ipv6`. | `false` |
+| `DHCPServer=` | Запуск сервера DHCPv4. | булевское | `false` |
+| `MulticastDNS=` | Поддержка [multicast DNS](https://tools.ietf.org/html/rfc6762). Если задать значение `resolve`, то включится только разрешение имён, но не регистрация и объявление хостов/служб. | булевское, `resolve` | `false` |
+| `DNSSEC=` | Поддержка DNSSEC. Если задать значение `allow-downgrade`, то DNSSEC будет автоматически отключаться в не-DNSSEC сетях, что повысит совместимость. | булевское, `allow-downgrade` | `false` |
+| `DNS=` | Адрес [DNS](/index.php/DNS "DNS")-сервера. Может указываться больше одного раза. | [`inet_pton`](http://man7.org/linux/man-pages/man3/inet_pton.3.html) |
+| `Domains=` | Список доменов, которые должны разрешаться с использованием DNS-сервера ([подробнее](https://www.freedesktop.org/software/systemd/man/systemd.network.html#Domains=)) | имя домена (в том числе с символом (`~`) в начале) |
+| `IPForward=` | Пересылка входящих пакетов на другой интерфейс в соответствии с таблицей маршрутизации. | булевское, `ipv4`, `ipv6` | `false` |
+| `IPv6PrivacyExtensions=` | Использование временных IPv6-адресов в соответствии с [RFC 4941](https://tools.ietf.org/html/rfc4941). Если задать значение `prefer-public`, то privacy extensions включатся, но предпочтение будет отдаваться использованию публичных адресов, а не временных. Если задать значение `kernel`, то будут использоваться настройки ядра. | булевское, `prefer-public`, `kernel` | `false` |
 
-*   `Name=` имя устройства (например Br0, enp4s0, en*)
-*   `Host=` имя хоста машины
-*   `Virtualization=` проверить, является ли система выполненной в виртуализированной среде или нет. `Virtualization=no` ключ будет применяться только на вашей машине, в то время как `Virtualization=yes` применяются к любому контейнеру или VM.
+#### [Address]
 
-#### [Network] раздел
+*   `Address=` — статический адрес интерфейса. Если не используется DHCP, то эта опция **обязательна**.
 
-Наиболее распространенные ключи:
+#### [Route]
 
-*   `DHCP=` включает поддержку [DHCPv4](https://en.wikipedia.org/wiki/ru:DHCP "wikipedia:ru:DHCP") и/или DHCPv6\. Принимает: `yes`, `no`, `ipv4` или `ipv6`
-*   `DNS=` является [DNS](https://en.wikipedia.org/wiki/ru:DNS "wikipedia:ru:DNS") адрес сервера. Вы можете указать этот параметр более одного раза
-*   `Bridge=` это имя моста, чтобы добавить ссылку на
-*   `IPForward=` по умолчанию `no`. Это разрешает IP forwarding, выполняя пересылку в соответствии с таблицей маршрутизации и необходим для настройк [Internet sharing](/index.php/Internet_sharing "Internet sharing"). Заметим, что включение `IPForward=` относится ко *всем* сетевым интерфейсам.
-*   `Domains=` список доменов, используемых для разрешения имен DNS хоста.
+*   `Gateway=` — адрес шлюза. Если не используется DHCP, то эта опция **обязательна**.
+*   `Destination=` — префикс сети назначения.
 
-Для подробностей, смотрите `systemd.network(5)`.
+Если параметр `Destination` не задан, то используется маршрут по умолчанию.
 
-#### [Address] раздел
+**Совет:** Если в разделах `[Address]` и `[Route]` заданы только параметры `Address=` и `Gateway=` соответственно, то для краткости оба эти параметра можно перенести в раздел `[Network]`.
 
-Большинство общих ключ в разделе `[Address]`:
+#### [DHCP]
 
-*   `Address=` статический **IPv4** или **IPv6** адрес и его длина префикса, разделенных символом `/` (например `192.168.1.90/24`). Эта опция **обязательна**, если не используется DHCP
+| Параметр | Описание | Допустимые значения | Значение по умолчанию |
+| `UseDNS=` | Объявление DNS-сервера при работе DHCP-сервера. | булевское | `true` |
+| `Anonymize=` | Если задать значение `true`, посылаемые DHCP-серверу параметры будут соответствовать [RFC7844](https://tools.ietf.org/html/rfc7844) (Anonymity Profiles for DHCP Clients) для сокрытия идентифицирующей информации. | булевское | `false` |
+| `UseDomains=` | Использование полученного от DHCP-сервера домена в качестве адреса для DNS-поиска. Если задать значение `route`, полученное доменное имя будет использоваться только для маршрутизации DNS-запросов, но не для поиска. Эта опция может повлиять на локальное разрешение имён с помощью [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"). | булевское, `route` | `false` |
 
-#### [Route] раздел
+### Файлы netdev
 
-Большинство общих ключ в разделе `[Route]`:
+В файлах netdev описывается создание виртуальных сетевых интерфейсов. В нём два раздела, `[Match]` и `[NetDev]`. Ниже приведены некоторые важные параметры. Подробнее смотрите [systemd.netdev(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.netdev.5).
 
-*   `Gateway=` это адрес шлюза вашей машины. Эта опция **обязательна** если не используется DHCP.
+#### [Match]
 
-Обратитесь к `systemd.network(5)` для исчерпывающего списка ключей.
+*   `Host=` — поиск по имени хоста.
+*   `Virtualization=` — проверка на виртуализацию.
 
-**Совет:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `Address=` contains only an Address key and `Gateway=` section contains only a Gateway key
-
-### Файлы NetDev
-
-Эти файлы будут создавать виртуальные сетевые устройства.
-
-Ниже приводится основная структура файла*Mydevice*.netdev:
-
- `/etc/systemd/network/*MyDevice*.netdev` 
-```
-[Match]
-*вертикальный список ключей*
-
-[NetDev]
-*вертикальный список ключей*
-
-```
-
-#### [Match] раздел
-
-Большинство общих ключ в `Host=` и `Virtualization=`
-
-#### [Netdev] раздел
+#### [Netdev]
 
 Наиболее распространенные ключи:
 
-*   `Name=` это имя интерфейса, используемое при создании netdev. Эта опция **обязательна**
-*   `Kind=` это вид netdev. Например, поддерживаются: *bridge*, *bond*, *vlan*, *veth*, *sit*, и т.д. Эта опция **обязательна**
-
-Чтобы увидеть исчерпывающий перечень ключей, обратитесь к странице справочного руководства `systemd.netdev(5)`
+*   `Name=` — имя интерфейса. Опция **обязательна**.
+*   `Kind=` — вид интерфейса. Например, *bridge*, *bond*, *vlan*, *veth*, *sit* и т.д. Опция **обязательна**.
 
 ### Файлы link
 
-Эти файлы являются альтернативой пользовательским правилам [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") и будут применяться при как появлении устройства.
+Файлы link выступают в качестве альтернативы пользовательским правилам [udev](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") и применяются при обнаружении менеджером нового устройства. Файл состоит из двух разделов, `[Match]` и `[Link]`. Ниже приведены основные параметры обоих разделов. Подробнее смотрите [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5).
 
-Ниже приводится основная структура файла *МоеУстройство*.link:
+**Совет:** Для выявления проблем с *.link*-файлами используйте команду `# udevadm test-builtin net_setup_link /sys/*путь/к/сетевому/устройству*` .
 
- `/etc/systemd/network/*МоеУстройство*.link` 
-```
-[Match]
-*вертикальный список ключей*
+#### [Match]
 
-[Link]
-*вертикальный список ключей*
+*   `MACAddress=` — поиск по MAC-адресу.
+*   `Host=` — поиск по имени хоста.
+*   `Virtualization=` — проверка на виртуализацию.
+*   `Type=` — поиск по типу интерфейса (например, vlan).
 
-```
+#### [Link]
 
-Раздел `[Match]` будет определять, если данный связующий файл может быть применён к данному устройству, когда раздел `[Link]` определяет настройку устройства.
+*   `MACAddressPolicy=` — использование постоянных или же случайных адресов.
+*   `MACAddress=` — использование конкретного адреса.
 
-#### [Match] раздел
-
-Наиболее распространенные ключи `MACAddress=`, `Host=` и `Virtualization=`.
-
-`Type=` тип устройства (например vlan)
-
-#### [Link] раздел
-
-Наиболее распространенные ключи:
-
-`MACAddressPolicy=` либо *persistent* когда оборудование имеет постоянный MAC-адрес (должно быть на большинстве аппаратных) или *random*, который даёт случайный MAC-адрес устройства.
-
-`MACAddress=` должен использоваться, когда не указан `MACAddressPolicy=`
-
-**Примечание:** Системе, как правило, `/usr/lib/systemd/network/99-default.link` достаточно для большинства случаев.
+**Примечание:** Настроек в системном файле `/usr/lib/systemd/network/99-default.link`, как правило, в большинстве случаев вполне достаточно.
 
 ## Использование с контейнерами
 
-Служба доступна с [systemd](https://www.archlinux.org/packages/?name=systemd) >= 210\. Хотите сипользовать [#Основы использования systemctl|включение и запуск](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") `systemd-networkd.service` на хосте и контейнере.
+В [systemd](https://www.archlinux.org/packages/?name=systemd) входит заранее настроенная служба `systemd-networkd.service`. Необходимо [включить](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустить](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") этот юнит на хосте и в контейнере.
 
-Для отладки, настоятельно рекомендуется [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") пакеты [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) и [iproute2](https://www.archlinux.org/packages/?name=iproute2).
+При отладке сетевых настроек также понадобятся пакеты [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) и [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
-Если вы используете *systemd-nspawn*, вам, возможно, потребуется изменить `systemd-nspawn@.service` и добавить параметры загрузки в строку `ExecStart`. Для исчерпывающего списка варианттов, обратитесь к [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1). Обратите внимание, если вы хотите, использовать автоматическую настройку DNS от DHCP, то Вам необходимо включить `systemd-resolved` и символьную ссылку `/run/systemd/resolve/resolv.conf` на `/etc/resolv.conf`. Для большей информации, смотрите `systemd-resolved.service(8)`.
+Если вы собираетесь в качестве средства контейнеризации использовать [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn"), то добавьте загрузочные параметры в строку `ExecStart` файла юнита `systemd-nspawn@.service`. Подробнее о параметрах смотрите [systemd-nspawn(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-nspawn.1).
 
-Before you start to configure your container network, it is useful to:
+Если вы хотите использовать DHCP для автоматической настройки DNS, то включите `systemd-resolved` и создайте символическую ссылку `/run/systemd/resolve/resolv.conf` на файл `/etc/resolv.conf`. Подробнее смотрите [systemd-resolved.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.service.8).
 
-*   disable all your [netctl](/index.php/Netctl "Netctl") services. This will avoid any potential conflicts with `systemd-networkd` and make all your configurations easier to test. Furthermore, odds are high you will end with few or even no [netctl](/index.php/Netctl "Netctl") activated profiles. The `netctl list` command will output a list of all your profiles, with the activated one being starred.
-*   disable the `systemd-nspawn@.service` and use the `systemd-nspawn -bnD /path_to/your_container/` command as root to boot the container. To log off and shutdown inside the container `systemctl poweroff` is used as root. Once the network setting meets your requirements, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-nspawn@.service`
-*   disable the `dhcpcd.service` if enabled on your system, since it activates *dhcpcd* on **all** interfaces
-*   make sure you have no [netctl](/index.php/Netctl "Netctl") profiles activated in the container, and ensure that `systemd-networkd.service` is neither enabled nor started
-*   make sure you do not have any [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") rules which can block traffic
-*   * make sure *packet forwarding* is [enabled](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") if you want to let containers access the internet. Make sure that your `.network` file does not accidentally turn off forwarding because if you do not have a `IPForward=1` setting in it, `systemd-networkd` will turn off forwarding on this interface, even if you have it enabled globally.
-*   when the daemon is started the systemd `networkctl` command displays the status of network interfaces.
+Перед началом настройки сети контейнера сделайте следующее:
 
-}}
+*   отключите все службы [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)") (на хосте и контейнере), [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)") (на хосте и контейнере), systemd-networkd (только в контейнере) и `systemd-nspawn@.service` (только на хосте). Это позволит избежать конфликтов и упростит отладку.
+*   включите [пересылку пакетов](/index.php/Internet_sharing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Разрешите_пересылку_пакетов "Internet sharing (Русский)"), чтобы контейнер имел доступ в интернет. Убедитесь, что в файлах *.network* пересылка не отключена, потому что с параметром `IPForward=1` `systemd-networkd` отключит пересылку для указанного интерфейса, даже если она разрешена глобально для всей системы.
+*   убедитесь, что правила [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") не блокируют трафик.
+*   убедитесь, что после запуска демона команда `networkctl` выводит список сетевых интерфейсов.
 
-For the set-up described below,
+В примерах ниже:
 
-*   we will limit the output of the `ip a` command to the concerned interfaces
-*   we assume the *host* is your main OS you are booting to and the *container* is your guest virtual machine
-*   all interface names and IP addresses are only examples
+*   вывод команды `ip a` будет ограничен только рассматриваемыми интерфейсами.
+*   *хост* будет означать вашу основную ОС, а *контейнер* — гостевую виртуальную машину.
+*   все названия сетевых интерфейсов и IP-адреса приведены в качестве примера.
 
-}}
+### Простая DHCP-сеть
 
-### Основная DHCP сеть
+Эта настройка включит DHCP для хоста и контейнера. В этом случае обе системы будут иметь одинаковый IP, поскольку они разделяют один и тот же интерфейс.
 
-Такая настройка включит DHCP IP для хоста и контейнера. В этом случае, обе системы будут иметь одинаковый IP, поскольку они разделяют одни и те же интерфейсы.
-
- `/etc/systemd/network/*MyDhcp*.network` 
+ `/etc/systemd/network/*мой_DHCP*.network` 
 ```
 [Match]
 Name=en*
@@ -364,11 +337,11 @@ DHCP=ipv4
 
 ```
 
-Когда, [включен](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Включить_юнит_в_автозапуск_при_загрузке_системы "Systemd (Русский)") и запущен `systemd-networkd.service` в вашем контейнере.
+Затем [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") `systemd-networkd.service` в контейнере.
 
-Вы, конечно, можете заменить `en*` на полное имя вашего сетевого устройства, получив его на выходе команды `ip link`.
+Разумеется, `en*` можно заменить полным названием вашего Ethernet-интерфейса, который можно узнать командой `ip link`.
 
-*   на хосте и контейнере:
+*   на хосте и в контейнере:
 
  `$ ip a` 
 ```
@@ -381,41 +354,42 @@ DHCP=ipv4
 
 ```
 
-По умолчанию имя хоста, полученное от DHCP-сервера будет использоваться в качестве переходного хоста.
+По умолчанию DHCP-сервер назначает хосту временное (transient) имя. Чтобы этого не происходило, задайте параметр `UseHostname=false` в разделе `[DHCPv4]`:
 
-Чтобы изменить его добавьте `UseHostname=false` в раздел `[DHCPv4]`
-
- `/etc/systemd/network/*MyDhcp*.network` 
+ `/etc/systemd/network/*мой_DHCP*.network` 
 ```
 [DHCPv4]
 UseHostname=false
 
 ```
 
-Если вы не хотите настраивать DNS в `/etc/resolv.conf` и хотите полагаться на DHCP для его настройки, вам нужно [включить](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Включить_юнит_в_автозапуск_при_загрузке_системы "Systemd (Русский)") `systemd-resolved.service` и сделать символическую ссылку `/run/systemd/resolve/resolv.conf` на `/etc/resolv.conf`
+Если вы не хотите настраивать DNS в файле `/etc/resolv.conf` и желаете полагаться только на DHCP в этом вопросе, [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") `systemd-resolved.service` и создайте символическую ссылку `/etc/resolv.conf` на файл `/run/systemd/resolve/resolv.conf`:
 
 ```
 # ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 ```
 
-Для подробной информации смотрите `systemd-resolved.service(8)`.
+Подробнее смотрите [systemd-resolved.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.service.8).
 
-### DHCP с двумя различными IP
+**Примечание:** Если вы подключились к системному разделу через `arch-chroot`, то символическую ссылку необходимо создать именно на нём, а не в chroot-окружении. В противном случае arch-chroot создаст ссылку на файл в live-окружении.
+
+### DHCP-сеть с отдельными IP-адресами
 
 #### Интерфейс моста
 
-Создайте интерфейс виртуального мост
+Первым делом необходимо создать виртуальный интерфейс моста. С помощью systemd создаём устройство-мост `br0`:
 
- `/etc/systemd/network/*MyBridge*.netdev` 
+ `/etc/systemd/network/*мой_мост*.netdev` 
 ```
 [NetDev]
 Name=br0
 Kind=bridge
-
 ```
 
-На хосте и контейнере:
+[Перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") `systemd-networkd.service`, чтобы настройки вступили в силу.
+
+*   на хосте и контейнере:
 
  `$ ip a` 
 ```
@@ -424,48 +398,48 @@ Kind=bridge
 
 ```
 
-Обратите внимание что интерфейс br0 в списке, но не работает (DOWN).
+Обратите внимание, что интерфейс `br0` обнаружен, но он всё ещё выключен (DOWN).
 
-#### Привязать Ethernet для моста
+#### Привязка Ethernet к мосту
 
-Измените `/etc/systemd/network/*MyDhcp*.network`, чтобы удалить DHCP, мосту необходим интерфейс для привязки не с IP, а также добавьте ключ, чтобы связать это устройство для BR0, давайте изменим свое название на одно более актуальное.
+Следующий шаг — выполнить привязку реального сетевого интерфейса к виртуальному мосту. В примере ниже мы привязываем любой интерфейс, название которого совпадает с шаблоном `en*`.
 
- `/etc/systemd/network/*MyEth*.network` 
+ `/etc/systemd/network/*привязка*.network` 
 ```
 [Match]
 Name=en*
 
 [Network]
 Bridge=br0
-
 ```
 
-#### Сетевой мост
+Выбранному проводному интерфейсу не должно быть назначено никакого IP-адреса, поскольку для привязки необходим интерфейс без оного. Если необходимо, отредактируйте файл `/etc/systemd/network/*мой_Eth*.network` соответствующим образом.
 
-Создание сетевого профиля для моста
+#### Сеть моста
 
- `/etc/systemd/network/*MyBridge*.network` 
+Теперь, поскольку мост создан и привязан к существующему сетевому интерфейсу, необходимо создать настройки IP. Это определяется в файле *.network*:
+
+ `/etc/systemd/network/*мой_мост*.network` 
 ```
 [Match]
 Name=br0
 
 [Network]
 DHCP=ipv4
-
 ```
 
-#### Добавить опцию для загрузки контейнера
+#### Добавление моста в команду запуска контейнера
 
-Поскольку мы хотим, дать выделенный IP для хоста и контейнера, мы должны *Отключить* сеть контейнера от хоста. Чтобы сделать это, добавьте опцию `--network-bridge=br0` в вашу команду загрузки контейнера.
+Поскольку мы собираемся назначить отдельные IP-адреса для хоста и контейнера, то нужно отделить сеть контейнера от хоста. Чтобы это сделать, добавьте параметр `--network-bridge=br0` к команде запуска контейнера.
 
 ```
-# systemd-nspawn --network-bridge=br0 -bD /path_to/my_container
+# systemd-nspawn --network-bridge=br0 -bD */путь/к/контейнеру*
 
 ```
 
 #### Результат
 
-*   на хосте
+*   для хоста
 
  `$ ip a` 
 ```
@@ -475,14 +449,14 @@ DHCP=ipv4
        valid_lft forever preferred_lft forever
     inet6 fe80::16da:e9ff:feb5:7a88/64 scope link 
        valid_lft forever preferred_lft forever
-6: vb-*MyContainer*: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP group default qlen 1000
+6: vb-*мой_контейнер*: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP group default qlen 1000
     link/ether d2:7c:97:97:37:25 brd ff:ff:ff:ff:ff:ff
     inet6 fe80::d07c:97ff:fe97:3725/64 scope link 
        valid_lft forever preferred_lft forever
 
 ```
 
-*   на контейнере
+*   для контейнера
 
  `$ ip a` 
 ```
@@ -495,22 +469,23 @@ DHCP=ipv4
 
 ```
 
-#### Уведомление
+#### Замечания
 
-*   we have now one IP address for Br0 on the host, and one for host0 in the container
-*   two new interfaces have appeared: `vb-*MyContainer*` in the host and `host0` in the container. This comes as a result of the `--network-bridge=br0` option. This option *implies* another option, `--network-veth`. This means a *virtual Ethernet link* has been created between host and container.
-*   the DHCP address on `host0` comes from the system `/usr/lib/systemd/network/80-container-host0.network` file.
+*   теперь задан один IP-адрес для интерфейса `br0` на хосте, и один для интерфейса `host0` в контейнере.
+*   появилось два новых интерфейса: `vb-*мой_контейнер*` на хосте и `host0` в контейнере. Это результат опции `--network-bridge=br0`, которая включает в себя другую — `--network-veth`, которая создаёт виртуальный Ethernet-канал между хостом и контейнером.
+*   DHCP-адрес интерфейса `host0` был выдан на основании файла `/usr/lib/systemd/network/80-container-host0.network`.
+
 *   на хосте
 
  `$ brctl show` 
 ```
 bridge name	bridge id		STP enabled	interfaces
 br0		8000.14dae9b57a88	no		enp7s0
-							vb-*MyContainer*
+							vb-*мой_контейнер*
 
 ```
 
-Приведенный выше вывод команды подтверждает, что мы имеем мост с двумя переплетёнными/связанными интерфейсами.
+Выше показано, что в системе есть мост с двумя связанными интерфейсами.
 
 *   на хосте
 
@@ -530,7 +505,7 @@ default via 192.168.1.254 dev host0
 
 ```
 
-the above command outputs confirm we have activated `br0` and `host0` interfaces with an IP address and Gateway 192.168.1.254\. The gateway address has been automatically grabbed by *systemd-networkd*
+А здесь видно, что были активированы интерфейсы `br0` и `host0` с отдельными IP-адресами и шлюзом по умолчанию 192.168.1.254\. Адрес шлюза был автоматически назначен systemd-networkd.
 
  `$ cat /run/systemd/resolve/resolv.conf` 
 ```
@@ -538,30 +513,25 @@ nameserver 192.168.1.254
 
 ```
 
-### Статические IP-сети
+### Сеть со статическими IP-адресами
 
-Установка статического IP для каждого устройства может быть полезна в случае развертывания веб-служб (например, FTP, HTTP, SSH). Each device will keep the same MAC address across reboots if your system `/usr/lib/systemd/network/99-default.link` file has the `MACAddressPolicy=persistent` option (it has by default). Thus, you will easily route any service on your Gateway to the desired device. First, we shall get rid of the system `/usr/lib/systemd/network/80-container-host0.network` file. To do it in a permanent way (e.g even after upgrades), do the following on container. This will mask the file `/usr/lib/systemd/network/80-container-host0.network` since files of the same name in `/etc/systemd/network` take priority over `/usr/lib/systemd/network`.
+Настройка статического IP-адреса может быть удобной в случае развёртывания веб-сервисов (например, FTP, http, SSH). Если в файле `/usr/lib/systemd/network/99-default.link` задан параметр `MACAddressPolicy=persistent` (значение по умолчанию), то устройствам будут назначены постоянные MAC-адреса. Следовательно, будет несложно настроить маршрутизацию сервисов от шлюза на разные интерфейсы.
 
-```
-# ln -sf /dev/null /etc/systemd/network/80-container-host0.network
-
-```
-
-Then, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-networkd` on your container.
-
-The needed configuration files:
+Выполните следующие настройки:
 
 *   на хосте
 
-```
-/etc/systemd/network/*MyBridge*.netdev
-/etc/systemd/network/*MyEth*.network
+Настройка очень похожа на настройку [#DHCP-сеть с отдельными IP-адресами](#DHCP-сеть_с_отдельными_IP-адресами). Во-первых, нужно создать виртуальный мост и привязать к нему физический интерфейс. Эта делается с помощью двух файлов настроек, содержание которых аналогично файлам из раздела о DHCP.
 
 ```
+/etc/systemd/network/*мой_мост*.netdev
+/etc/systemd/network/*мой_Eth*.network
 
-Измените *MyBridge*.network
+```
 
- `/etc/systemd/network/*MyBridge*.network` 
+Далее, необходимо настроить IP и DNS для моста. Пример настройки:
+
+ `/etc/systemd/network/*мой_мост*.network` 
 ```
 [Match]
 Name=br0
@@ -575,7 +545,16 @@ Gateway=192.168.1.254
 
 *   на контейнере
 
- `/etc/systemd/network/*MyVeth*.network` 
+Первым делом нужно избавиться от файла `/usr/lib/systemd/network/80-container-host0.network`, в котором содержится конфигурация DHCP для сетевого интерфейса контейнера по умолчанию. Чтобы сделать изменение постоянным (например, даже после обновления пакета [systemd](https://www.archlinux.org/packages/?name=systemd)), создайте символическую ссылку с таким же именем на `/dev/null`. Это замаскирует файл `/usr/lib/systemd/network/80-container-host0.network` поскольку файлы с тем же именем в каталоге `/etc/systemd/network` имеют приоритет перед `/usr/lib/systemd/network`. Однако если вы хотите, чтобы у хоста был статический IP-адрес, а у контейнера — выданный DHCP динамический, то этот файл нужно оставить.
+
+```
+# ln -sf /dev/null /etc/systemd/network/80-container-host0.network
+
+```
+
+Наконец, настройте статический IP для стандартного сетевого интерфейса `host0` и [запустите/включите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5/%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Запустите/включите") службу `systemd-networkd.service` в контейнере. Пример конфигурации:
+
+ `/etc/systemd/network/*мой_вирт_Eth*.network` 
 ```
 [Match]
 Name=host0
@@ -631,6 +610,35 @@ DHCP=ipv4
 ```
 
 ## Решение проблем
+
+### Службы монтирования при неудачной загрузке
+
+Если при автозапуске службы вроде [Samba](/index.php/Samba "Samba")/[NFS](/index.php/NFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NFS (Русский)") загружаются слишком рано, до запуска сетевых служб, то стоит [включить](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `systemd-networkd-wait-online.service`. Тем не менее, такое случается достаточно редко, потому что чаще всего сетевые демоны запускются даже без настроенной сети.
+
+### systemd-resolved не может найти локальный домен
+
+[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") не может осуществить поиск локального домена по одному имени хоста, даже с параметрами `UseDomains=yes` и `Domains=[domain-list]` в файле *.network*, причём в файле `resolv.conf` задано `search [domain-list]`. Выполните `networkctl status` или `resolvectl status` чтобы убедиться, что домены поиска действительно используются.
+
+Возможные решения:
+
+*   Отключите [LLMNR](/index.php/Systemd-resolved#LLMNR "Systemd-resolved"), чтобы systemd-resolved мог работать с DNS-суффиксами.
+*   Проверьте базу данных `hosts` в файле `/etc/nsswitch.conf` (например, удалите параметр `[!UNAVAIL=return]` для службы `resolve`).
+*   Переключитесь на использование полных доменных имён.
+*   Используйте файл `/etc/hosts` для разрешения имён хостов.
+*   Воспользуйтесь службой `dns` библиотеки glibc вместо службы входящей в systemd службы `resolve`.
+
+### Подключённый компьютер не использует мост
+
+Первый компьютер подключён к двум локальным сетям. Второй — ещё к одной сети и к первому компьютеру через мост. Выполните следующие команды, чтобы второй компьютер получил доступ к сетям первого за мостовым интерфейсом:
+
+```
+# sysctl net.bridge.bridge-nf-filter-pppoe-tagged=0
+# sysctl net.bridge.bridge-nf-filter-vlan-tagged=0
+# sysctl net.bridge.bridge-nf-call-ip6tables=0
+# sysctl net.bridge.bridge-nf-call-iptables=0
+# sysctl net.bridge.bridge-nf-call-arptables=0
+
+```
 
 ## Смотрите также
 

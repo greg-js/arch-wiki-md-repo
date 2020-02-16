@@ -1,7 +1,7 @@
 **Estado de la traducción**
-Este artículo es una traducción de [LXD](/index.php/LXD "LXD"), revisada por última vez el **2019-03-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=LXD&diff=0&oldid=568311) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [LXD](/index.php/LXD "LXD"), revisada por última vez el **2020-02-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=LXD&diff=0&oldid=597151) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-**[LXD](https://linuxcontainers.org/lxd/)** es un «hipervisor» de contenedores y una nueva experiencia de usuario para los [contenedores de Linux](/index.php/Linux_Containers "Linux Containers").
+**[LXD](https://linuxcontainers.org/lxd/)** es un «hipervisor» de contenedores y máquinas virtuales, además de una nueva experiencia de usuario para los [contenedores de Linux](/index.php/Linux_Containers "Linux Containers").
 
 Artículos relacionados
 
@@ -18,19 +18,18 @@ Artículos relacionados
     *   [1.2 Método alternativo de instalación](#Método_alternativo_de_instalación)
     *   [1.3 Configurar LXD](#Configurar_LXD)
     *   [1.4 Accediendo a LXD como un usuario sin privilegios](#Accediendo_a_LXD_como_un_usuario_sin_privilegios)
-*   [2 Utilización básica](#Utilización_básica)
+*   [2 Utilización](#Utilización)
     *   [2.1 Crear contenedor](#Crear_contenedor)
-*   [3 Utilización avanzada](#Utilización_avanzada)
-    *   [3.1 Redes en LXD](#Redes_en_LXD)
-        *   [3.1.1 Ejemplo de configuración de red](#Ejemplo_de_configuración_de_red)
-    *   [3.2 Modificar procesos y limites de archivos](#Modificar_procesos_y_limites_de_archivos)
-*   [4 Solución de problemas](#Solución_de_problemas)
-    *   [4.1 Comprobar la configuración del kernel](#Comprobar_la_configuración_del_kernel)
-    *   [4.2 Lanzar un contenedor sin CONFIG_USER_NS](#Lanzar_un_contenedor_sin_CONFIG_USER_NS)
-    *   [4.3 Sin ipv4 en un contenedor Arch no privilegiado](#Sin_ipv4_en_un_contenedor_Arch_no_privilegiado)
-    *   [4.4 Los límites de recursos no se aplican cuando se ven desde dentro de un contenedor](#Los_límites_de_recursos_no_se_aplican_cuando_se_ven_desde_dentro_de_un_contenedor)
-*   [5 Desinstalar](#Desinstalar)
-*   [6 Véase también](#Véase_también)
+    *   [2.2 Redes en LXD](#Redes_en_LXD)
+    *   [2.3 lxd-agent dentro de una VM](#lxd-agent_dentro_de_una_VM)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 Comprobar la configuración del kernel](#Comprobar_la_configuración_del_kernel)
+    *   [3.2 Lanzar un contenedor sin CONFIG_USER_NS](#Lanzar_un_contenedor_sin_CONFIG_USER_NS)
+    *   [3.3 Los límites de recursos no se aplican cuando se ven desde dentro de un contenedor](#Los_límites_de_recursos_no_se_aplican_cuando_se_ven_desde_dentro_de_un_contenedor)
+    *   [3.4 Fallo en el inicio de una VM](#Fallo_en_el_inicio_de_una_VM)
+    *   [3.5 Sin IPv4 con systemd-networkd](#Sin_IPv4_con_systemd-networkd)
+*   [4 Desinstalar](#Desinstalar)
+*   [5 Véase también](#Véase_también)
 
 ## Preparación
 
@@ -67,7 +66,9 @@ Por defecto, el demonio LXD permite el acceso a los usuarios del grupo `lxd`, as
 
 ```
 
-## Utilización básica
+**Advertencia:** Cualquiera añadido al grupo `lxd` es equivalente al superusuario. Más información [aquí](https://github.com/lxc/lxd#security) y [aquí](https://bugs.launchpad.net/ubuntu/+source/lxd/+bug/1829071).
+
+## Utilización
 
 ### Crear contenedor
 
@@ -91,8 +92,6 @@ Para crear un contenedor Arch de amd64:
 $ lxc launch images:archlinux/current/amd64 arch
 
 ```
-
-## Utilización avanzada
 
 ### Redes en LXD
 
@@ -121,49 +120,34 @@ devices:
 
 Puede establecer el parámetro `parent` al puente que desee que LXD conecte los contenedores de forma predeterminada.
 
-#### Ejemplo de configuración de red
+### lxd-agent dentro de una VM
 
-Gracias a @jpic, el paquete LXD proporciona ahora algunos ejemplos de configuración de red en `/usr/share/lxd/`. Para utilizar esta configuración ejecute las siguientes órdenes:
-
-```
-$ ln -s /usr/share/lxd/dnsmasq-lxd.conf /etc/dnsmasq-lxd.conf
-$ ln -s /usr/share/lxd/systemd/system/dnsmasq@lxd.service /etc/systemd/system/dnsmasq@lxd.service 
-$ ln -s /usr/share/lxd/netctl/lxd  /etc/netctl/lxd
-$ ln -s /usr/share/lxd/dbus-1/system.d/dnsmasq-lxd.conf /etc/dbus-1/system.d/dnsmasq-lxd.conf
+Dentro de las VMs `lxd-agent` no está instalado por defecto en el sistema operativo. Este se puede instalar en el equipo montando un recurso de red compartido `9p`. Esto requiere acceso a la consola con un usuario válido.
 
 ```
+   $ lxc console v1
+   To detach from the console, press: <ctrl>+a q
 
-Si utiliza [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)"), haga también un enlace simbólico al siguiente archivo:
+   Ubuntu 18.04.3 LTS v1 ttyS0
+
+   v1 login: ubuntu
+   Password: 
+   Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-74-generic x86_64)
+
+   ubuntu@v1:~$ sudo -i
+   root@v1:~# mount -t 9p config /mnt/
+   root@v1:~# cd /mnt/
+   root@v1:/mnt# ./install.sh 
+   Created symlink /etc/systemd/system/multi-user.target.wants/lxd-agent.service → /lib/systemd/system/lxd-agent.service.
+   Created symlink /etc/systemd/system/multi-user.target.wants/lxd-agent-9p.service → /lib/systemd/system/lxd-agent-9p.service.
+
+   LXD agent has been installed, reboot to confirm setup.
+   To start it now, unmount this filesystem and run: systemctl start lxd-agent-9p lxd-agent
+   root@v1:/mnt# reboot
 
 ```
-$ ln -s /usr/share/lxd/NetworkManager/dnsmasq.d/lxd.conf /etc/NetworkManager/dnsmasq.d/lxd.conf
 
-```
-
-Cambie `parent: lxcbr0` a `parent: lxd`:
-
-```
-$ lxc profile edit default
-
-```
-
-Finalmente, [active](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") e [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") `dnsmasq@lxd.service` y `netctl@lxd.service`.
-
-Si encuentra algún problema con la configuración de ejemplo proporcionada o si tiene sugerencias para mejorarla, deje un comentario en la página [lxd](https://www.archlinux.org/packages/?name=lxd).
-
-### Modificar procesos y limites de archivos
-
-Es posible que desee aumentar el límite del descriptor de archivo o el límite máximo de procesos de usuario, ya que el límite del descriptor de archivo predeterminado es 1024 en Arch Linux.
-
-[Edite](/index.php/Edit_(Espa%C3%B1ol) "Edit (Español)") `lxd.service`:
-
- `# systemctl edit lxd.service` 
-```
-[Service]
-LimitNOFILE=infinity
-LimitNPROC=infinity
-TasksMax=infinity
-```
+Tras esto `lxd-agent` estará disponible y `lxc exec` funcionará dentro de la VM.
 
 ## Solución de problemas
 
@@ -211,17 +195,6 @@ $ lxc profile edit default
 
 ```
 
-### Sin ipv4 en un contenedor Arch no privilegiado
-
-Esto fue probado y validado en LXD v.2.20\. El contenedor no puede iniciar el servicio `systemd-networkd` por lo que no obtiene una dirección ipv4 válida. Stéphane Graber ([Problema en Github](https://github.com/lxc/lxd/issues/4071)) sugirió una solución alternativa, ejecute en el host y reinicie el contenedor:
-
-```
-$ lxc profile set default security.syscalls.blacklist "keyctl errno 38"
-
-```
-
-	stgraber: "La razón es que la unidad networkd de systemd de alguna manera hace uso del llavero del núcleo, que no funciona dentro de contenedores sin privilegios en este momento. La línea anterior hace que la llamada al sistema devuelva no-implementado, lo cual es una solución suficiente para que las cosas vuelvan a funcionar."
-
 ### Los límites de recursos no se aplican cuando se ven desde dentro de un contenedor
 
 El servicio lxcfs (encontrado en el repositorio Community) necesita ser instalado e iniciado:
@@ -232,6 +205,31 @@ $ systemctl start lxcfs
 ```
 
 lxd tendrá que ser reiniciado. Active lxcfs para que el servicio se inicie en el arranque.
+
+### Fallo en el inicio de una VM
+
+Arch Linux no distribuye el firmware ovmf firmado para inicio seguro, así que para arrancar máquinas virtuales debe desactivar el arranque seguro por el momento.
+
+```
+$ lxc launch ubuntu:18.04 test-vm --vm -c security.secureboot=false
+
+```
+
+Esto también se puede añadir al perfil predeterminado.
+
+### Sin IPv4 con systemd-networkd
+
+A partir de la versión 244.1, systemd detecta si los contenedores pueden escribir en `/sys`. Si es así, udev se inicia automáticamente y rompe IPv4 en contenedores sin privilegios. Véase [commit bf331d8](https://github.com/systemd/systemd-stable/commit/96d7083c5499b264ecebd6a30a92e0e8fda14cd5) y el [debate en linuxcontainers](https://discuss.linuxcontainers.org/t/no-ipv4-on-arch-linux-containers/6395).
+
+En los contenedores creados a partir de 2020, ya debería haber un anulador de `systemd.networkd.service` para solucionar este problema, debe crearlo si no es así:
+
+ `/etc/systemd/system/systemd-networkd.service.d/lxc.conf` 
+```
+[Service]
+BindReadOnlyPaths=/sys
+```
+
+También podría solucionar este problema estableciendo `raw.lxc: lxc.mount.auto = proc:rw sys:ro` en el perfil del contenedor para asegurarse de que `/sys` es de solo lectura para todo el contenedor, aunque esto podría ser problemático, según el debate vinculado arriba.
 
 ## Desinstalar
 

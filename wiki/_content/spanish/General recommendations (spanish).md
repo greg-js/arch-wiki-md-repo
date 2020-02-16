@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [General recommendations](/index.php/General_recommendations "General recommendations"), revisada por última vez el **2019-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=585928) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [General recommendations](/index.php/General_recommendations "General recommendations"), revisada por última vez el **2020-02-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=592574) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -68,14 +68,14 @@ Este documento es un índice con anotaciones a otros artículos populares e info
 *   [11 Apariencia](#Apariencia)
     *   [11.1 Tipos de letra](#Tipos_de_letra)
     *   [11.2 Temas para GTK y Qt](#Temas_para_GTK_y_Qt)
-*   [12 Mejoras para la línea de comandos](#Mejoras_para_la_línea_de_comandos)
+*   [12 Mejoras para la línea de órdenes](#Mejoras_para_la_línea_de_órdenes)
     *   [12.1 Mejoras de autocompletado con tabulador](#Mejoras_de_autocompletado_con_tabulador)
     *   [12.2 Alias](#Alias)
     *   [12.3 Intérpretes de línea de órdenes alternativos](#Intérpretes_de_línea_de_órdenes_alternativos)
     *   [12.4 Complementos para bash](#Complementos_para_bash)
     *   [12.5 Salida coloreada](#Salida_coloreada)
     *   [12.6 Archivos comprimidos](#Archivos_comprimidos)
-    *   [12.7 Indicador de la línea de comandos](#Indicador_de_la_línea_de_comandos)
+    *   [12.7 Indicador de la línea de órdenes](#Indicador_de_la_línea_de_órdenes)
     *   [12.8 Intérprete de línea de órdenes emacs](#Intérprete_de_línea_de_órdenes_emacs)
     *   [12.9 Soporte del ratón](#Soporte_del_ratón)
     *   [12.10 Búfer de desplazamiento hacia atrás](#Búfer_de_desplazamiento_hacia_atrás)
@@ -93,11 +93,11 @@ Los usuarios y grupos son un mecanismo para el *control de acceso*; los administ
 
 ### Elevación de privilegios
 
-Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. *su* por defecto inicia un intérprete de línea de órdenes interactivo como superusuario (root), y *sudo* le concede temporalmente privilegios de root para un solo comando. Véase sus respectivos artículos para las diferencias.
+Las órdenes [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar órdenes como otro usuario. *su* por defecto inicia un intérprete de línea de órdenes interactivo como superusuario (root), y *sudo* le concede temporalmente privilegios de root para una sola orden. Véase sus respectivos artículos para las diferencias. [opendoas](https://www.archlinux.org/packages/?name=opendoas) es una alternativa más ligera de *sudo*.
 
 ### Administración de servicios
 
-Arch Linux usa [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso [init](/index.php/Init "Init"), que es un administrador de sistemas y servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, es una buena idea aprender los conceptos básicos al respecto. La interacción con *systemd* se realiza a través del comando *systemctl*. Véase [Utilización básica de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Utilización_básica_de_systemctl "Systemd (Español)") para obtener más información.
+Arch Linux usa [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso [init](/index.php/Init "Init"), que es un administrador de sistemas y servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, es una buena idea aprender los conceptos básicos al respecto. La interacción con *systemd* se realiza a través de la orden *systemctl*. Véase [Utilización básica de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Utilización_básica_de_systemctl "Systemd (Español)") para obtener más información.
 
 ### Mantenimiento del sistema
 
@@ -131,15 +131,15 @@ Véase el artículo sobre [réplicas](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors
 
 ### Sistema de construcción de Arch
 
-Los *ports* son un sistema usado inicialmente por distribuciones BSD que consisten en secuencias de comandos *(scripts)* de compilación que se encuentran en un árbol de directorios en el sistema local. En pocas palabras, cada *port* contiene una secuencia de comandos dentro de un directorio con un nombre intuitivo que hace referencia a la aplicación de terceros instalable.
+Los *ports* son un sistema usado inicialmente por distribuciones BSD que consisten en secuencias de órdenes *(scripts)* de compilación que se encuentran en un árbol de directorios en el sistema local. En pocas palabras, cada *port* contiene una secuencia de órdenes dentro de un directorio con un nombre intuitivo que hace referencia a la aplicación de terceros instalable.
 
-El [sistema de construcción de Arch](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") (ABS, *Arch Build System*) ofrece la misma funcionalidad al proporcionar unas secuencias de comandos de compilación llamadas [PKGBUILDs](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)"), que se cargan con información conocida para una determinada pieza de software: control de la integridad, URL del proyecto, versión, licencia e instrucciones de compilación. Estos PKGBUILDs son analizados por [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)"), el programa que actualmente genera paquetes que son gestionado limpiamente por *pacman*.
+El [sistema de construcción de Arch](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") (ABS, *Arch Build System*) ofrece la misma funcionalidad al proporcionar unas secuencias de órdenes de compilación llamadas [PKGBUILDs](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)"), que se cargan con información conocida para una determinada pieza de software: control de la integridad, URL del proyecto, versión, licencia e instrucciones de compilación. Estos PKGBUILDs son analizados por [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)"), el programa que actualmente genera paquetes que son gestionado limpiamente por *pacman*.
 
 Cada paquete de los repositorios junto con los presentes en AUR están sujetos a recompilación con makepkg.
 
 ### Repositorio de usuario de Arch
 
-Si bien el sistema de construcción de Arch (ABS) permite la posibilidad de construir los programas disponibles en los repositorios oficiales, el [repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") (AUR, *Arch User Repository*) es el equivalente para los paquetes enviados por los usuarios. Es un repositorio sin soporte oficial de secuencias de comandos de compilación, accesibles a través de la [interfaz web](https://aur.archlinux.org/) o a través de la interfaz [Aurweb RPC](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
+Si bien el sistema de construcción de Arch (ABS) permite la posibilidad de construir los programas disponibles en los repositorios oficiales, el [repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") (AUR, *Arch User Repository*) es el equivalente para los paquetes enviados por los usuarios. Es un repositorio sin soporte oficial de secuencias de órdenes de compilación, accesibles a través de la [interfaz web](https://aur.archlinux.org/) o a través de la interfaz [Aurweb RPC](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
 
 ## Arranque
 
@@ -301,13 +301,13 @@ Esta sección se relaciona con los [demonios](/index.php/Daemons_(Espa%C3%B1ol) 
 
 ### Índice de archivos y búsqueda
 
-La mayoría de las distribuciones tienen un comando de localización (*locate*) disponible para poder buscar rápidamente los archivos. Para obtener esta funcionalidad en Arch Linux, se recomienda la instalación de [mlocate](https://www.archlinux.org/packages/?name=mlocate). Después de la instalación, se debe ejecutar *updatedb* para indexar los sistemas de archivos.
+La mayoría de las distribuciones tienen una orden de localización (*locate*) disponible para poder buscar rápidamente los archivos. Para obtener esta funcionalidad en Arch Linux, se recomienda la instalación de [mlocate](https://www.archlinux.org/packages/?name=mlocate). Después de la instalación, se debe ejecutar *updatedb* para indexar los sistemas de archivos.
 
 Los [motores de búsqueda de escritorio](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol)#Gestores_de_archivos "List of applications/Utilities (Español)") ofrecen un servicio similar, mientras están mejor integrados en los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)").
 
 ### Entrega de correo electrónico local
 
-Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, véase [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)"). Otras opciones son [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm_(Espa%C3%B1ol) "Fdm (Español)").
+Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Una listado de agentes de entrega de correo está disponible en el artículo [Servidor de correo](/index.php/Mail_server_(Espa%C3%B1ol) "Mail server (Español)").
 
 ### Impresión
 
@@ -329,9 +329,9 @@ Si pasa una cantidad significativa de tiempo trabajando desde la consola virtual
 
 Una gran parte de las aplicaciones con una interfaz gráfica para sistemas Linux se basan en los kits de herramientas [GTK](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") o [Qt](/index.php/Qt "Qt"). Véase dichos artículos y [Apariencia uniforme para aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)") para obtener ideas de como mejorar la apariencia de los programas instalados y adaptarlos a su gusto.
 
-## Mejoras para la línea de comandos
+## Mejoras para la línea de órdenes
 
-Esta sección contiene pequeñas modificaciones que mejoran la usabilidad de los programas de línea de comandos. Para obtener más información, véase la categoría [Command shells](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)").
+Esta sección contiene pequeñas modificaciones que mejoran la usabilidad de los programas de línea de órdenes. Para obtener más información, véase la categoría [Command shells](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)").
 
 ### Mejoras de autocompletado con tabulador
 
@@ -339,7 +339,7 @@ Se recomienda configurar correctamente el [[Wikipedia:Command-line_completion|co
 
 ### Alias
 
-Crear alias para un comando, o un grupo del mismo, es una forma de ahorrar tiempo al usar la línea de comandos. Esto es especialmente útil para tareas repetitivas que no requieren una alteración significativa de sus parámetros entre ejecuciones. Los alias más comunes que ahorran tiempo se pueden encontrar en [alias](/index.php/Bash_(Espa%C3%B1ol)#Alias "Bash (Español)"), que son fáciles de extrapolar también a [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)").
+Crear alias para una orden, o un grupo del mismo, es una forma de ahorrar tiempo al usar la línea de órdenes. Esto es especialmente útil para tareas repetitivas que no requieren una alteración significativa de sus parámetros entre ejecuciones. Los alias más comunes que ahorran tiempo se pueden encontrar en [alias](/index.php/Bash_(Espa%C3%B1ol)#Alias "Bash (Español)"), que son fáciles de extrapolar también a [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)").
 
 ### Intérpretes de línea de órdenes alternativos
 
@@ -357,9 +357,9 @@ Esta sección se desarrolla en [Color output in console](/index.php/Color_output
 
 Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_utilities_(Espa%C3%B1ol)#Esenciales "Core utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Véase el artículo [archivado y compresión](/index.php/Archiving_and_compression_(Espa%C3%B1ol) "Archiving and compression (Español)").
 
-### Indicador de la línea de comandos
+### Indicador de la línea de órdenes
 
-El indicador de la línea de comandos (PS1, o *console prompt*) se puede personalizar en gran medida. Véase [personalización del indicador de Bash](/index.php/Bash/Prompt_customization "Bash/Prompt customization") o [indficadores de Zsh](/index.php/Zsh_(Espa%C3%B1ol)#Prompts "Zsh (Español)") si usa Bash o Zsh, respectivamente.
+El indicador de la línea de órdenes (`PS1`, o *console prompt* en inglés) se puede personalizar en gran medida. Véase [personalización del indicador de Bash](/index.php/Bash/Prompt_customization "Bash/Prompt customization") o [indficadores de Zsh](/index.php/Zsh_(Espa%C3%B1ol)#Prompts "Zsh (Español)") si usa Bash o Zsh, respectivamente.
 
 ### Intérprete de línea de órdenes emacs
 
@@ -367,7 +367,7 @@ Emacs es conocido por ofrecer opciones más allá de los usuales en la edición 
 
 ### Soporte del ratón
 
-Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Véase [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulator "Terminal emulator") con el [portapapeles](/index.php/Clipboard_(Espa%C3%B1ol) "Clipboard (Español)").
+Se puede preferir utilizar un ratón con la línea de órdenes para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Véase [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulator "Terminal emulator") con el [portapapeles](/index.php/Clipboard_(Espa%C3%B1ol) "Clipboard (Español)").
 
 ### Búfer de desplazamiento hacia atrás
 

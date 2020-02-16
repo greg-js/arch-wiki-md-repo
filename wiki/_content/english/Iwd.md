@@ -198,7 +198,7 @@ EAP-PEAP-Phase2-Password=hunter2
 AutoConnect=true
 ```
 
-**Tip:** If you are planning on using *eduroam* and you are affiliated with a US-based institution, your CA is likely `Addtrust External CA Root`, as your institution probably issues certificates through Internet2's InCommon. However, you should always refer to your organization's help desk if in doubt. See also [Iwd#Eduroam](/index.php/Iwd#Eduroam "Iwd").
+**Tip:** If you are planning on using *eduroam* and you are affiliated with a US-based institution, your CA is likely `Addtrust External CA Root`, as your institution probably issues certificates through Internet2's InCommon. However, you should always refer to your organization's help desk if in doubt. See also [#Eduroam](#Eduroam).
 
 ### TTLS-PAP
 

@@ -275,6 +275,19 @@ PPPoEIP6=yes
 
 Prefix delegation is a common IPv6 deployment technique used by many ISPs. It is a method of assigning a network prefix to a user site (ie. local network). A router can be configured to assign different network prefixes to various subnetworks. The ISP hands out a network prefix using DHCPv6 (usually a `/56` or `/64`) and a dhcp client assigns the prefixes to the local network. For a simple two interface gateway it practically assigns an IPv6 prefix to the interface connected to to the local network from an address acquired through the interface connected to WAN (or a pseudo-interface such as ppp).
 
+DHCPv6 requires the client to receive incoming connections on port 546 UDP. For an [nftables](/index.php/Nftables "Nftables")-based firewall, that can be configured with one line in the input chain in `/etc/nftables.conf`:
+
+```
+table inet filter {
+  chain input {
+    udp dport dhcpv6-client accept
+    ...
+  }
+...
+}
+
+```
+
 ### With dibbler
 
 [Dibbler](http://klub.com.pl/dhcpv6/) is a portable DHCPv6 client and server which can be used for Prefix delegation. It can be [installed](/index.php/Install "Install") with [dibbler](https://aur.archlinux.org/packages/dibbler/) package.

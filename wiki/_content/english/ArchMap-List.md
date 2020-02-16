@@ -1144,5 +1144,6 @@ You can use the following website to get your device's coordinates along with a 
 11.108233, 77.175904 "ilango100" # Coimbatore, TN, India
 48.394412, 135.122285 "Hills of eternity" # Khabarovsk, Russia
 43.7202028,11.4452723 "plarpoon" # Firenze, Italy
+33.286549, -86.810925 "ratcheer" # Pelham, AL USA
 
 ```

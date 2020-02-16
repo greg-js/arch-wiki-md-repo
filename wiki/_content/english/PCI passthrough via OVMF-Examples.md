@@ -26,6 +26,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.15 coghex's gaming box](#coghex's_gaming_box)
     *   [1.16 Roobre's VFIO setup](#Roobre's_VFIO_setup)
     *   [1.17 laenco's VFIO setup](#laenco's_VFIO_setup)
+    *   [1.18 Poncho's VFIO setup](#Poncho's_VFIO_setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -471,6 +472,38 @@ Configuration:
 *   Hardly using VirtIO
 *   Using hardware usb switch like Aten US224-AT and hdmi switch "many-to-one", which allow me to have one monitor, mouse, keyboard and some usb devices, and switch them by button between host and guest.
 *   Repo with current major system config and script for VM could be found here [https://github.com/laenco/vfio-config](https://github.com/laenco/vfio-config)
+
+### Poncho's VFIO setup
+
+**Hardware:**
+
+*   **CPU**: Ryzen 7 2700x @ stock (PBO)
+*   **Motherboard**: MSI B450-A PRO MAX (BIOS/UEFI version: 7B86vM5)
+*   **GPU1 (Guest)**: MSI GeForce GTX 1660 Ti Gaming X 6GB @ Stock
+*   **GPU2 (Host)**: AsRock RX 570 8GB @ Stock
+*   **RAM**: 2 x 16GB @ (currently) 2666MHz
+
+**Configuration:**
+
+*   **Guest OS**: Windows 10 Home
+*   **Kernel**: 5.4.17-1-MANJARO vanilla, no ACS patch
+*   **libvirt 5.10.0/QEMU 4.2.0**: [win10.xml gist](https://gist.github.com/jp1995/7427b00eae14aba91a6ee2ab0d17df0a/)
+
+**Issues I have encountered:**
+
+The main issue that plagued me for a while was stuttering / heavy performance loss while simultaneously running processes (read 30 firefox tabs and a twitch stream) on the host. I also had crashes. The crashes were occurring more often in more demanding games, and less often when the host was as idle as possible. I finally solved this by changing my RAM speed from 3466MHz to 2666MHz. I have had no crashes for 2 days of gaming and the performance loss when using the host is also less significant. I'll try slowly bumping the RAM speed back up step by step to find the point of instability and I'll edit this once I've found it.
+
+**Describing setup loosely:**
+
+*   On the hardware side, my 620 Watt PSU is perfectly adequate, despite some early concerns.
+*   16 PCI lanes for the Guest card, 4 for the Host card. 8+8 is also a solution but I haven't had the need to try this.
+*   Regarding the VM setup, I pinned and isolated 12 logical processors, leaving 4 to the host. The isolation was achieved using [these scripts.](https://rokups.github.io/#!pages/gaming-vm-performance.md/) I needed the git version of cpuset for it to work. The pinning alone didn't change performance at all.
+*   Audio passthrough is done through the usual pulseaudio solution, I have no demonic interference, works almost perfectly. I have to plug my headset directly into the VM when I want my mic to not sound garbage. ICH9.
+*   I did try enabling MSI on the GPU in an attempt to fix the crashes described above, but all I got was a small but significant reduction in performance.
+*   Regarding input, I got a bit lucky. My motherboard has two USB 3 ports all alone in a single IOMMU group. I got a 4 port USB switch and the only complaint I have with it is that sometimes it doesn't pick up my mouse when switching back to the host
+*   No trouble at all getting the NVIDIA gpu to run in a VM, used the general solution in the wiki, including <kvm><hidden state='on'/></kvm>
+*   As for storage, I just gave the VM a whole raw SATA SSD. Benchmarking shows about a 50% performance drop, but I haven't really noticed significantly longer loading times in games. In the future I might try reinstalling windows on a virtual image for cloning purposes and use the SSD as a game drive.
+*   All in all, there is about a 10% performance loss in CPU intensive games, compared to bare metal. This is acceptable and I'm pretty happy with the system :)
 
 ## Adding your own setup
 

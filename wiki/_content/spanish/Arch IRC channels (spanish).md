@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [IRC channel](/index.php/IRC_channel "IRC channel"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=553406) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [IRC channel](/index.php/IRC_channel "IRC channel"), revisada por última vez el **2020-02-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=593802) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -9,7 +9,7 @@ Artículos relacionados
 
 **Nota:** No modifique esta página a menos que sea un operador de canal en #archlinux. Le invitamos a que use la página de discusión.
 
-Para utilizar [Internet Relay Chat](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") (IRC), necesita un [cliente IRC](/index.php/List_of_applications/Internet_(Espa%C3%B1ol)#Clientes_IRC "List of applications/Internet (Español)"). El [medio de instalación](/index.php/Getting_and_installing_Arch "Getting and installing Arch") incluye el cliente [Irssi](/index.php/Irssi_(Espa%C3%B1ol) "Irssi (Español)").
+Para utilizar [Internet Relay Chat](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") (IRC), necesita un [cliente IRC](/index.php/List_of_applications/Internet_(Espa%C3%B1ol)#Clientes_IRC "List of applications/Internet (Español)"). El [medio de instalación](/index.php/Installation_guide "Installation guide") incluye el cliente [Irssi](/index.php/Irssi_(Espa%C3%B1ol) "Irssi (Español)").
 
 Debe familiarizarse con nuestro [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") y en particular con el de [IRC](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de unirse a cualquiera de los canales oficiales. Para obtener una lista de las abreviaturas comúnmente utilizadas, véase [terminología de Arch](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") y [jerga de IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 
@@ -58,7 +58,7 @@ Para registrarse en NickServ, siga el [FAQ de freenode](https://freenode.net/kb/
 
 Los operadores de arco son operaciones tanto en **#archlinux** como en **#archlinux-offtopic**. Véase la lista a continuación o ejecute `/msg phrik listops` en freenode.
 
-Si por algún motivo necesita la ayuda de un operador, no dude en `/query` o `/msg` a nosotros. Aquí está la lista de operadores a 1 de noviembre de 2018:
+Si por algún motivo necesita la ayuda de un operador, no dude en `/query` o `/msg` a nosotros. Aquí está la lista de operadores a 18 de diciembre de 2019:
 
 *   alad
 *   amcrae
@@ -69,62 +69,58 @@ Si por algún motivo necesita la ayuda de un operador, no dude en `/query` o `/m
 *   jelle
 *   MrElendig / Mion
 *   Namarrgon
-*   pid1
 *   tigrmesh / tigr
-*   vodik
 *   wonder / ioni
 
 ## Otros canales
 
 El tamaño de nuestra comunidad condujo a la creación de múltiples canales de IRC. Para obtener una lista de todos los canales en **[chat.freenode.net](ircs://chat.freenode.net)** que contienen `archlinux` en su nombre, utilice el comando `/query alis list *archlinux*`.
 
-| Canal | Descripción |
-| [#archlinux64](ircs://chat.freenode.net/archlinux64) | Debate específico para x86_64, principalmente en inglés. |
-| [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) | Debate general sobre [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"). |
-| [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) | Debate sobre el desarrollo de [aurweb](https://projects.archlinux.org/aurweb.git/). |
-| [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Debate centrado en errores. |
-| [#archlinux-classroom](ircs://chat.freenode.net/archlinux-classroom) | Un proyecto que desarrolla y aloja clases para la comunidad Arch Linux. |
-| [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) | Debate sobre la infraestructura interna de Arch Linux y devops. |
-| [#archlinux-multilib](ircs://chat.freenode.net/archlinux-multilib) | Debate sobre el proyecto Arch Linux Multilib y empaquetado. |
-| [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) | Un espacio para aprender, probar cosas nuevas y pedir ayuda sin temor al ridículo. |
-| [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) | Debate y desarrollo de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"). |
-| [#archlinux-projects](ircs://chat.freenode.net/archlinux-projects) | Debate y desarrollo de proyectos (mkinitcpio, abs, dbscripts, devtools, ...) |
-| [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) | Debate para lograr compilaciones reproducibles. |
-| [#archlinux-security](ircs://chat.freenode.net/archlinux-security) | Debate de problemas de seguridad dentro de los paquetes de Arch. |
-| [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) | Debate sobre los repositorios de prueba. |
-| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Debate sobre [ArchWiki](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)"), sus artículos y [foros](https://bbs.archlinux.org/). |
-| [#archlinux-women](ircs://chat.freenode.net/archlinux-women) | Debate sobre género e igualdad, principalmente en inglés. |
-| [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) | Debate sobre [audio profesional](/index.php/Professional_audio "Professional audio") en Arch. También en el canal no oficial #archaudio. |
+*   [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) — Debate general sobre [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)");
+*   [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) — Debate sobre el desarrollo de [aurweb](https://projects.archlinux.org/aurweb.git/);
+*   [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) — Debate centrado en errores;
+*   [#archlinux-classroom](ircs://chat.freenode.net/archlinux-classroom) — Un proyecto que desarrolla y aloja clases para la comunidad Arch Linux;
+*   [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) — Debate sobre la infraestructura interna de Arch Linux y devops;
+*   [#archlinux-multilib](ircs://chat.freenode.net/archlinux-multilib) — Debate sobre el proyecto Arch Linux Multilib y empaquetado;
+*   [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) — Un espacio para aprender, probar cosas nuevas y pedir ayuda sin temor al ridículo;
+*   [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) — Debate y desarrollo de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)");
+*   [#archlinux-projects](ircs://chat.freenode.net/archlinux-projects) — Debate y desarrollo de proyectos (mkinitcpio, abs, dbscripts, devtools...);
+*   [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) — Debate para lograr compilaciones reproducibles;
+*   [#archlinux-security](ircs://chat.freenode.net/archlinux-security) — Debate de problemas de seguridad dentro de los paquetes de Arch;
+*   [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) — Debate sobre los repositorios de prueba;
+*   [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) — Debate sobre [ArchWiki](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)"), sus artículos y [foros](https://bbs.archlinux.org/);
+*   [#archlinux-women](ircs://chat.freenode.net/archlinux-women) — Debate sobre género e igualdad, principalmente en inglés;
+*   [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) — Debate sobre [audio profesional](/index.php/Professional_audio "Professional audio") en Arch. También en el canal no oficial #archaudio.
 
 ### Canales IRC internacionales
 
 Los debates internacionales están disponibles en los siguientes canales, también ubicados en la red IRC **[chat.freenode.net](ircs://chat.freenode.net)**, a menos que se indique lo contrario.
 
-| Canal | Descripción |
-| [#archlinux-za](ircs://chat.freenode.net/archlinux-za) | Debate (Afrikaans, English) |
-| [#archlinux-br](ircs://chat.freenode.net/archlinux-br) | Debate (Brasileño) |
-| [#archlinux-cn](ircs://chat.freenode.net/archlinux-cn) | Debate (Chino); también en **[irc.oftc.net#arch-cn](ircs://irc.oftc.net/arch-cn)** |
-| [#archlinux-cr](ircs://chat.freenode.net/archlinux-cr) | Debate (Costa Rica) |
-| [#archlinux.cz](ircs://chat.freenode.net/archlinux.cz) | Debate (Checo) |
-| [#archlinux.dk](ircs://chat.freenode.net/archlinux.dk) | Debate (Danés) |
-| [#archlinux.fi](ircs://chat.freenode.net/archlinux.fi) | Debate (Finlandés) |
-| [#archlinux-fr](ircs://chat.freenode.net/archlinux-fr) | Debate (Francés) |
-| [#archlinux-gaelic](ircs://chat.freenode.net/archlinux-gaelic) | Debate (Gaélico) |
-| [#archlinux.de](ircs://chat.freenode.net/archlinux.de) | Debate (Alemán) |
-| [#archlinux-greece](ircs://chat.freenode.net/archlinux-greece) | Debate (Griego) |
-| [#archlinux-il](ircs://chat.freenode.net/archlinux-il) | Debate (Hebreo) |
-| [#archlinux.hu](ircs://chat.freenode.net/archlinux.hu) | Debate (Húngaro) |
-| [#archlinux-it](ircs://chat.freenode.net/archlinux-it) | Debate (Italiano); también en **[irc.azzurra.org#archlinux](irc://irc.azzurra.org/archlinux)** |
-| [#archlinux-nordics](ircs://chat.freenode.net/archlinux-nordics) | Debate (los nórdicos: danés, finlandés, noruego y sueco) |
-| [#archlinux-kr](ircs://chat.freenode.net/archlinux-kr) | Debate (Koreano) |
-| [#archlinux-ir](ircs://chat.freenode.net/archlinux-ir) | Debate (Persa) |
-| [#archlinux.org.pl](ircs://chat.freenode.net/archlinux.org.pl) | Debate (Polaco) |
-| [#archlinux-pt](ircs://chat.freenode.net/archlinux-pt) | Debate (Portugués) |
-| [#archlinux.ro](ircs://chat.freenode.net/archlinux.ro) | Debate (Rumano) |
-| [#archlinux-ru](ircs://chat.freenode.net/archlinux-ru) | Debate (Ruso); también en **[irc.mibbit.net#archlinux-ru](irc://irc.mibbit.net/archlinux-ru)** |
-| [#archlinux-rs](ircs://chat.freenode.net/archlinux-rs) | Debate (Serbio) |
-| [#archlinux-es](ircs://chat.freenode.net/archlinux-es) | Debate (Español) |
-| [#archlinux.se](ircs://chat.freenode.net/archlinux.se) | Debate (Sueco) |
-| [#archlinux-tr](ircs://chat.freenode.net/archlinux-tr) | Debate (Turko) |
-| [#archlinux-ve](ircs://chat.freenode.net/archlinux-ve) | Debate (Venezolano) |
-| [#archlinuxvn](ircs://chat.freenode.net/archlinuxvn) | Debate (Vietnamita, Tiếng Việt) |
+*   [#archlinux-za](ircs://chat.freenode.net/archlinux-za) — Afrikaans, English;
+*   [#archlinux-br](ircs://chat.freenode.net/archlinux-br) — Brasileño;
+*   [#archlinux-cn](ircs://chat.freenode.net/archlinux-cn) — Chino; también en [irc.oftc.net#arch-cn](ircs://irc.oftc.net/arch-cn);
+*   [#archlinux-cr](ircs://chat.freenode.net/archlinux-cr) — Costa Rica;
+*   [#archlinux.cz](ircs://chat.freenode.net/archlinux.cz) — Checo;
+*   [#archlinux.dk](ircs://chat.freenode.net/archlinux.dk) — Danés;
+*   [#archlinux.fi](ircs://chat.freenode.net/archlinux.fi) — Finlandés;
+*   [#archlinux-fr](ircs://chat.freenode.net/archlinux-fr) — Francés;
+*   [#archlinux-gaelic](ircs://chat.freenode.net/archlinux-gaelic) — Gaélico;
+*   [#archlinux.de](ircs://chat.freenode.net/archlinux.de) — Alemán;
+*   [#archlinux-greece](ircs://chat.freenode.net/archlinux-greece) — Griego;
+*   [#archlinux-il](ircs://chat.freenode.net/archlinux-il) — Hebreo;
+*   [#archlinux.hu](ircs://chat.freenode.net/archlinux.hu) — Húngaro;
+*   [#archlinux-it](ircs://chat.freenode.net/archlinux-it) — Italiano; también en [irc.azzurra.org#archlinux](irc://irc.azzurra.org/archlinux);
+*   [#archlinux-nordics](ircs://chat.freenode.net/archlinux-nordics) — los nórdicos: danés, finlandés, noruego y sueco;
+*   [#archlinux-kr](ircs://chat.freenode.net/archlinux-kr) — Koreano;
+*   [#archlinux-ir](ircs://chat.freenode.net/archlinux-ir) — Persa;
+*   [#archlinux.org.pl](ircs://chat.freenode.net/archlinux.org.pl) — Polaco;
+*   [#archlinux-pt](ircs://chat.freenode.net/archlinux-pt) — Portugués;
+*   [#archlinux.ro](ircs://chat.freenode.net/archlinux.ro) — Rumano;
+*   [#archlinux-tg](ircs://chat.freenode.net/archlinux-tg) — Ruso; puente entre IRC y el grupo Telegram [Arch Linux RU](https://t.me/ArchLinuxChatRU);
+*   [#archlinux-ru](ircs://chat.freenode.net/archlinux-ru) — Ruso; también en [irc.mibbit.net#archlinux-ru](irc://irc.mibbit.net/archlinux-ru);
+*   [#archlinux-rs](ircs://chat.freenode.net/archlinux-rs) — Serbio;
+*   [#archlinux-es](ircs://chat.freenode.net/archlinux-es) — Español;
+*   [#archlinux.se](ircs://chat.freenode.net/archlinux.se) — Sueco;
+*   [#archlinux-tr](ircs://chat.freenode.net/archlinux-tr) — Turko;
+*   [#archlinux-ve](ircs://chat.freenode.net/archlinux-ve) — Venezolano;
+*   [#archlinuxvn](ircs://chat.freenode.net/archlinuxvn) — Vietnamita, Tiếng Việt;

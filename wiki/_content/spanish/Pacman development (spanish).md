@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Pacman development](/index.php/Pacman_development "Pacman development"), revisada por última vez el **2018-10-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Pacman_development&diff=0&oldid=549328) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Pacman development](/index.php/Pacman_development "Pacman development"), revisada por última vez el **2020-02-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Pacman_development&diff=0&oldid=593147) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 ¿Interesado en el desarrollo de Pacman? Esta página debería ayudarle a comenzar.
 
@@ -15,6 +15,7 @@ Recuerde que si **usted** piensa que algo pertenece a esta página, ¡añádalo!
 *   [2 Repositorios del desarrollador](#Repositorios_del_desarrollador)
     *   [2.1 Allan McRae](#Allan_McRae)
     *   [2.2 Andrew Gregory](#Andrew_Gregory)
+    *   [2.3 Eli Schwartz](#Eli_Schwartz)
 *   [3 Consejos de Git](#Consejos_de_Git)
 
 ## Referencias y enlaces
@@ -46,6 +47,11 @@ Clone: [https://projects.archlinux.org/git/users/allan/pacman.git](https://proje
 
 Web: [https://github.com/andrewgregory/pacman/](https://github.com/andrewgregory/pacman/)
 Clone: [https://github.com/andrewgregory/pacman.git](https://github.com/andrewgregory/pacman.git)
+
+### Eli Schwartz
+
+Web: [https://git.archlinux.org/users/eschwartz/pacman.git](https://git.archlinux.org/users/eschwartz/pacman.git)
+Clone: [git://git.archlinux.org/users/eschwartz/pacman.git](git://git.archlinux.org/users/eschwartz/pacman.git)
 
 ## Consejos de Git
 

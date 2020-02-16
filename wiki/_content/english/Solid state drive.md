@@ -46,7 +46,7 @@ This article covers special topics for operating [solid state drives](https://en
 
 ### TRIM
 
-Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. A [techspot article](https://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html) shows performance benchmark examples of before and after filling an SSD with data.
+Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. A [TechSpot article](https://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html) shows performance benchmark examples of before and after filling an SSD with data.
 
 As of Linux kernel version 3.8 onwards, support for TRIM was continually added for the different [filesystems](/index.php/Filesystems "Filesystems"). See the following table for an indicative overview:
 

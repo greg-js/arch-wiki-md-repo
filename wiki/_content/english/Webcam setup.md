@@ -228,10 +228,10 @@ When running multiple webcams on a single USB bus, they may saturate the bandwid
 
 ### Invert the video stream
 
-If your video stream is inverted, you can make a new virtual viedo camera which inverts the inverted video. You need to [install](/index.php/Install "Install") [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils) and also [v4l2loopback-dkms](https://aur.archlinux.org/packages/v4l2loopback-dkms/). Create the virtual viedo camera:
+If your video stream is inverted, you can make a new virtual video camera which inverts the inverted video. You need to [install](/index.php/Install "Install") [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils) and also [v4l2loopback-dkms](https://aur.archlinux.org/packages/v4l2loopback-dkms/). Create the virtual video camera:
 
 ```
-$ sudo modprobe v4l2loopback
+# modprobe v4l2loopback
 
 ```
 
@@ -244,11 +244,11 @@ Dummy video device (0x0000) (platform:v4l2loopback-000):
 
 ```
 
-Then you can run [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) to read from your actual webcam (here /dev/video0) and invert it and feed it to the virtual camera:
+Then you can run [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) to read from your actual webcam (here `/dev/video0`) and invert it and feed it to the virtual camera:
 
 ```
 $ ffmpeg -f v4l2 -i /dev/video0 -vf "vflip" -f v4l2 /dev/video1
 
 ```
 
-You can use the Dummy camera in your applications instead of the Integrated camera.
+You can use the "Dummy" camera in your applications instead of the "Integrated" camera.

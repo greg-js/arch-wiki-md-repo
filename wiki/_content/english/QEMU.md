@@ -119,6 +119,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [14.9.1 Fast startup](#Fast_startup)
         *   [14.9.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
     *   [14.10 Clone Linux system installed on physical equipment](#Clone_Linux_system_installed_on_physical_equipment)
+    *   [14.11 Chrooting into arm/arm64 environment from x86_64](#Chrooting_into_arm/arm64_environment_from_x86_64)
 *   [15 Troubleshooting](#Troubleshooting)
     *   [15.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
     *   [15.2 No visible Cursor](#No_visible_Cursor)
@@ -2031,6 +2032,82 @@ $ xfreerdp -g 2048x1152 localhost:5555 -z -x lan
 ### Clone Linux system installed on physical equipment
 
 Linux system installed on physical equipment can be cloned for running on QEMU vm. See [Clone Linux system from hardware for QEMU virtual machine](https://coffeebirthday.wordpress.com/2018/09/14/clone-linux-system-for-qemu-virtual-machine/)
+
+### Chrooting into arm/arm64 environment from x86_64
+
+Sometimes it is easier to work directly on a disk image instead of the real ARM based device. This can be achieved by mounting an SD card/storage containing the *root* partition and chrooting into it. From the chroot it should be possible to run *pacman* and install more packages, compile large libraries etc. Since the executables are for the ARM architecture, the translation to x86 needs to be performed by <a class="mw-selflink selflink">QEMU</a>.
+
+Install [binfmt-qemu-static](https://aur.archlinux.org/packages/binfmt-qemu-static/) and [qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) from the [AUR](/index.php/AUR "AUR") on the x86_64 machine/host. **binfmt-qemu-static** will take care of registering the qemu binaries to binfmt service.
+
+Restart the systemd-binfmt service:
+
+```
+# systemctl restart systemd-binfmt.service
+
+```
+
+[qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) is needed to allow the execution of compiled programs from other architectures. This is similar to what is provided by [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra), but the "static" variant is required for chroot. Examples:
+
+```
+qemu-arm-static path_to_sdcard/usr/bin/ls
+qemu-aarch64-static path_to_sdcard/usr/bin/ls
+
+```
+
+These two lines execute the `ls` command compiled for 32-bit ARM and 64-bit ARM respectively. Note that this will not work without chrooting, because it will look for libraries not present in the host system.
+
+[qemu-user-static](https://aur.archlinux.org/packages/qemu-user-static/) allows automatically prefixing the ARM exectuable with `qemu-arm-static` or `qemu-aarch64-static`.
+
+Make sure that the ARM executable support is active:
+
+```
+$ ls /proc/sys/fs/binfmt_misc
+qemu-aarch64  qemu-arm	  qemu-cris  qemu-microblaze  qemu-mipsel  qemu-ppc64	    qemu-riscv64  qemu-sh4    qemu-sparc	qemu-sparc64  status
+qemu-alpha    qemu-armeb  qemu-m68k  qemu-mips	      qemu-ppc	   qemu-ppc64abi32  qemu-s390x	  qemu-sh4eb  qemu-sparc32plus	register
+
+```
+
+Each executable must be listed.
+
+If it is not active, reinstall *binfmt-qemu-static* and restart *systemd-binfmt*.
+
+Mount the SD card to `/mnt/scdard` (the device name may be different).
+
+```
+# mkdir -p /mnt/sdcard
+# mount /dev/mmcblk0p2 /mnt/sdcard
+
+```
+
+Mount boot partition if needed (again, use the suitable device name):
+
+```
+# mount /dev/mmcblk0p1 /mnt/sdcard/boot
+
+```
+
+Finally **chroot** into the SD card root as described in [Change root#Using chroot](/index.php/Change_root#Using_chroot "Change root"):
+
+```
+# chroot /mnt/sdcard /bin/bash
+
+```
+
+Alternatively, you can use **arch-chroot** from [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), as it will provide an easier way to get network support:
+
+```
+# arch-chroot /mnt/sdcard /bin/bash
+
+```
+
+You can also use **systemd-nspawn** to chroot into the ARM environment:
+
+```
+# systemd-nspawn -D /mnt/sdcard -M myARMMachine --bind-root=/etc/resolv.conf
+
+```
+
+`--bind-ro=/etc/resolv.conf` is optional and gives a working network DNS inside the chroot
 
 ## Troubleshooting
 

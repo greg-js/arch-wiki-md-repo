@@ -188,9 +188,11 @@ Option "TearFree" "true"
 You can also enable TearFree temporarily with [xrandr](/index.php/Xrandr "Xrandr"):
 
 ```
-# xrandr --output *output* --set TearFree on
+$ xrandr --output *output* --set TearFree on
 
 ```
+
+Where `*output*` should look like `DisplayPort-0` or `HDMI-A-0` and can be acquired by running `xrandr -q`.
 
 ### DRI level
 
@@ -220,14 +222,14 @@ Monitoring your GPU is often used to check the temperature and also the P-states
 To check your GPU's P-states, execute:
 
 ```
-# cat /sys/class/drm/card0/device/pp_od_clk_voltage
+$ cat /sys/class/drm/card0/device/pp_od_clk_voltage
 
 ```
 
 To monitor your GPU, execute:
 
 ```
-# watch -n 0.5  cat /sys/kernel/debug/dri/0/amdgpu_pm_info
+$ watch -n 0.5  cat /sys/kernel/debug/dri/0/amdgpu_pm_info
 
 ```
 

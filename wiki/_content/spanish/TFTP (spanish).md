@@ -1,9 +1,13 @@
 **Estado de la traducción**
-Este artículo es una traducción de [TFTP](/index.php/TFTP "TFTP"), revisada por última vez el **2018-10-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=TFTP&diff=0&oldid=549262) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [TFTP](/index.php/TFTP "TFTP"), revisada por última vez el **2020-02-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=TFTP&diff=0&oldid=591966) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 El [Protocolo de transferencia de archivos trivial](https://en.wikipedia.org/wiki/es:TFTP o para actualizar la configuración y el firmware en dispositivos con memoria limitada, como enrutadores, teléfonos IP e impresoras.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Servidor](#Servidor)
     *   [1.1 tftp-hpa](#tftp-hpa)
@@ -24,6 +28,8 @@ Hay varias implementaciones del servidor TFTP, algunas se listan a continuación
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) y después [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") `tftpd.service`.
 
 Para cambiar los parámetros del servicio modifique `/etc/conf.d/tftpd`.
+
+[tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa) requiere rutas absolutas en tus tftp gets. Si la ruta absoluta no es posible por alguna razón, considere utilizar en su lugar [atftp](https://www.archlinux.org/packages/?name=atftp).
 
 ### atftp
 
@@ -51,6 +57,15 @@ $ tftp
 El estándar [curl](https://www.archlinux.org/packages/?name=curl) tiene la capacidad de conectarse a un servidor TFTP y subir un archivo mediante:
 
 ```
-$ curl -T *archivo* tftp://*servidor*
+$ curl -T ARCHIVO tftp://SERVIDOR
 
 ```
+
+O descargar un archivo mediante:
+
+```
+$ curl -o DESTINO tftp://SERVIDOR/archivo
+
+```
+
+Donde `archivo` es relativo al directorio raíz de TFTP.

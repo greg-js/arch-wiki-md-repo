@@ -61,7 +61,10 @@ vmc container termina arch [https://us.images.linuxcontainers.org](https://us.im
 
 Following error will be shown after completion:
 
-[Template:"Error: routine at frontends/vmc.rs:403 `container setup user(vm name,user id hash,container name,username)` failed: timeout while waiting for signal"](/index.php?title=Template:%22Error:_routine_at_frontends/vmc.rs:403_%60container_setup_user(vm_name,user_id_hash,container_name,username)%60_failed:_timeout_while_waiting_for_signal%22&action=edit&redlink=1 "Template:"Error: routine at frontends/vmc.rs:403 `container setup user(vm name,user id hash,container name,username)` failed: timeout while waiting for signal" (page does not exist)")
+```
+"Error: routine at frontends/vmc.rs:403 `container_setup_user(vm_name,user_id_hash,container_name,username)` failed: timeout while waiting for signal"
+
+```
 
 This is expected behavior, proceed with following steps.
 

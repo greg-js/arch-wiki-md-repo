@@ -208,6 +208,15 @@ $ gsettings set org.gnome.login-screen logo '*/path/to/logo.png*'
 
 #### Changing the cursor theme
 
+Change the cursor theme by typing the following, replacing the last word:
+
+```
+# sudo -u gdm dbus-launch gsettings set org.gnome.desktop.interface cursor-theme ExampleCursorTheme
+
+```
+
+If this did not work, continue reading this section
+
 GDM disregards [GNOME](/index.php/GNOME "GNOME") cursor theme settings and it also ignores the cursor theme set according to the [XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes"). To change the cursor theme used in GDM, either create the following keyfile
 
  `/etc/dconf/db/gdm.d/10-cursor-settings` 

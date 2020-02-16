@@ -60,12 +60,13 @@ ThinkPad X1 Carbon 7th
     *   [2.3 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
     *   [2.4 BIOS configurations](#BIOS_configurations)
 *   [3 Touchpad issues](#Touchpad_issues)
-*   [4 Power management/Throttling issues](#Power_management/Throttling_issues)
-    *   [4.1 throttled](#throttled)
-*   [5 Audio](#Audio)
-*   [6 Fingerprint sensor](#Fingerprint_sensor)
-*   [7 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
-*   [8 Additional resources](#Additional_resources)
+*   [4 Freeze when suspending](#Freeze_when_suspending)
+*   [5 Power management/Throttling issues](#Power_management/Throttling_issues)
+    *   [5.1 throttled](#throttled)
+*   [6 Audio](#Audio)
+*   [7 Fingerprint sensor](#Fingerprint_sensor)
+*   [8 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
+*   [9 Additional resources](#Additional_resources)
 
 ## Hardware
 
@@ -166,6 +167,10 @@ Due to a bug in a touchpad firmware, the touchpad might not work with following 
 
 The solution is to update touchpad firmware (version `1.3.3013412` works correctly).
 
+## Freeze when suspending
+
+There are reports of the system freezing after initiating a suspend or hibernate. Adding `snd_hda_intel.dmic_detect=0` to your kernel parameters seems to fix the problem. see [[4]](https://www.reddit.com/r/archlinux/comments/e5oe4p/systemctl_suspend_causes_freeze/fa8mzft/)
+
 ## Power management/Throttling issues
 
 A [bug](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489/highlight/true) causes the CPU to consume less power than under Windows and throttle at 80°C instead of 97°.
@@ -210,7 +215,7 @@ load-module module-alsa-source device=hw:0,7 channels=4
 
 ## Fingerprint sensor
 
-An official driver and a reverse engineered driver are in the works.[[4]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181)
+An official driver and a reverse engineered driver are in the works.[[5]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181)
 
 ## Disabling red LED in ThinkPad logo
 

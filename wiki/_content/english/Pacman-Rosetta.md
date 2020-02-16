@@ -45,7 +45,7 @@ This page uses a table to display the correspondence of [package management](htt
 | Show all or most information about a package. The tools' verbosity for the default command vary. But with options, the tools are on par with each other. | `pacman -Si` or `pacman -Qi` | `dnf list` or `dnf info` | `apt show` or `apt-cache policy` | `zypper info` or `zypper if` | `emerge -S`, `emerge -pv` or `eix` |
 | Display local package information: Name, version, description, etc. | `pacman -Qi` | `rpm -qi` / `dnf info installed` | `dpkg -s` or `aptitude show` | `zypper info` or `rpm -qi` | `emerge -pv` or `emerge -S` |
 | Display remote package information: Name, version, description, etc. | `pacman -Si` | `dnf info` | `apt-cache show` or `aptitude show` | `zypper info` | `emerge -pv` and `emerge -S` or `equery meta` |
-| Display files provided by local package | `pacman -Ql` | `rpm -ql` | `dpkg -L` | `rpm -Ql` | `equery files` or `qlist` |
+| Display files provided by local package | `pacman -Ql` | `rpm -ql` | `dpkg -L` | `rpm -ql` | `equery files` or `qlist` |
 | Display files provided by a remote package | `pacman -Fl` | `dnf repoquery -l` or `repoquery -l` (from package yum-utils) | `apt-file list` | `pfl` |
 | Query the package which provides FILE | `pacman -Qo` | `rpm -qf` (installed only) or `dnf provides` (everything) or `repoquery -f` (from package yum-utils) | `dpkg -S` or `dlocate` | `zypper search -f` | `equery belongs` or `qfile` |
 | List the files that the package holds. Again, this functionality can be mimicked by other more complex commands. | `pacman -Ql` or `pacman -Fl` | `dnf repoquery -l` | `dpkg-query -L` | `rpm -ql` | `equery files` or `qlist` |

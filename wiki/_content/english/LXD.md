@@ -18,6 +18,7 @@ Related articles
 *   [2 Usage](#Usage)
     *   [2.1 Create container](#Create_container)
     *   [2.2 LXD Networking](#LXD_Networking)
+    *   [2.3 lxd-agent inside VM](#lxd-agent_inside_VM)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Check kernel config](#Check_kernel_config)
     *   [3.2 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
@@ -116,6 +117,35 @@ devices:
 
 You can set the `parent` parameter to whichever bridge you want LXD to attach the containers to by default.
 
+### lxd-agent inside VM
+
+Inside VMs `lxd-agent` is not installed by default on the OS. This can be installed on the host by mounting a `9p` network share. This requires console access with a valid user.
+
+```
+   $ lxc console v1
+   To detach from the console, press: <ctrl>+a q
+
+   Ubuntu 18.04.3 LTS v1 ttyS0
+
+   v1 login: ubuntu
+   Password: 
+   Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-74-generic x86_64)
+
+   ubuntu@v1:~$ sudo -i
+   root@v1:~# mount -t 9p config /mnt/
+   root@v1:~# cd /mnt/
+   root@v1:/mnt# ./install.sh 
+   Created symlink /etc/systemd/system/multi-user.target.wants/lxd-agent.service → /lib/systemd/system/lxd-agent.service.
+   Created symlink /etc/systemd/system/multi-user.target.wants/lxd-agent-9p.service → /lib/systemd/system/lxd-agent-9p.service.
+
+   LXD agent has been installed, reboot to confirm setup.
+   To start it now, unmount this filesystem and run: systemctl start lxd-agent-9p lxd-agent
+   root@v1:/mnt# reboot
+
+```
+
+Afterwards the `lxd-agent` is available and `lxc exec` works inside the VM.
+
 ## Troubleshooting
 
 ### Check kernel config
@@ -186,19 +216,17 @@ This can also be added to the default profile.
 
 ### No IPv4 with systemd-networkd
 
-systemd version 244.1 detects if `/sys` is writeable by containers. If it is, udev is automatically started and breaks IPv4 in unprivileged containers. See [commit bf331d8](https://github.com/systemd/systemd-stable/commit/96d7083c5499b264ecebd6a30a92e0e8fda14cd5) and [discussion on linuxcontainers](https://discuss.linuxcontainers.org/t/no-ipv4-on-arch-linux-containers/6395).
+Starting with version version 244.1, systemd detects if `/sys` is writable by containers. If it is, udev is automatically started and breaks IPv4 in unprivileged containers. See [commit bf331d8](https://github.com/systemd/systemd-stable/commit/96d7083c5499b264ecebd6a30a92e0e8fda14cd5) and [discussion on linuxcontainers](https://discuss.linuxcontainers.org/t/no-ipv4-on-arch-linux-containers/6395).
 
-To work around this two ways;
-
-Add `raw.lxc: lxc.mount.auto = proc:rw sys:ro` in the profile to the container to ensure `/sys` is read-only.
-
-Or, override `systemd.networkd.service`;
+On containers created past 2020, there should already be a `systemd.networkd.service` override to work around this issue, create it if it is not:
 
  `/etc/systemd/system/systemd-networkd.service.d/lxc.conf` 
 ```
 [Service]
 BindReadOnlyPaths=/sys
 ```
+
+You could also work around this issue by setting `raw.lxc: lxc.mount.auto = proc:rw sys:ro` in the profile of the container to ensure `/sys` is read-only for the entire container, although this may be problematic, as per the linked discussion above.
 
 ## Uninstall
 

@@ -19,7 +19,7 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 基本用法](#基本用法)
-    *   [1.1 必须的服务和设置](#必须的服务和设置)
+    *   [1.1 必需的服务和设置](#必需的服务和设置)
     *   [1.2 配置样例](#配置样例)
         *   [1.2.1 使用 DHCP 的有线适配器](#使用_DHCP_的有线适配器)
         *   [1.2.2 使用静态 IP 的有线适配器](#使用静态_IP_的有线适配器)
@@ -59,18 +59,18 @@
 
 ## 基本用法
 
-[systemd](https://www.archlinux.org/packages/?name=systemd) 是默认 Arch 安装的一部分，包含操作有线网络所需所有文件。本文后面介绍的无线适配器可以通过其他服务配置，比如 [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") 或者 [iwd](/index.php/Iwd "Iwd")。
+[systemd](https://www.archlinux.org/packages/?name=systemd) 是默认 Arch 安装的一部分，包含操作有线网络所需的所有文件。无线适配器可以通过其他服务（比如 [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") 或者 [iwd](/index.php/Iwd "Iwd")）来配置，本文后面的部分也会介绍相关内容。
 
-### 必须的服务和设置
+### 必需的服务和设置
 
 [start/enable](/index.php/Start/enable "Start/enable") `systemd-networkd.service` 以使用 *systemd-networkd*。
 
-[start/enable](/index.php/Start/enable "Start/enable") `systemd-resolved.service` 是可选的，它是本地应用程序的网络名称解析服务，考虑到下列因素：
+[start/enable](/index.php/Start/enable "Start/enable") `systemd-resolved.service` 是可选的，它为本地应用程序提供网络名称（DNS）解析服务。是否使用它可以考虑下面几条：
 
-*   如果 *.network* 文件中指定了 DNS 条目，[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") 服务是必须的，
-*   它能够被用来自动的从 DHCP 客户端获取 DNS 地址，
-*   重要的是要了解 [resolv.conf](/index.php/Resolv.conf "Resolv.conf") 和 *systemd-resolved* 如何进行交互以正确配置将要使用的 DNS，[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") 中提供了一些解释，
-*   注意 *systemd-resolved* 也能够在离开 *systemd-networkd* 的情况下使用。
+*   如果 *.network* 文件中指定了 DNS 条目，[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") 服务是必需的
+*   它能够自动地从 DHCP 客户端获取 DNS 地址
+*   请搞明白 [resolv.conf](/index.php/Resolv.conf "Resolv.conf") 和 *systemd-resolved* 如何互相影响，以便正确配置要使用的 DNS 服务器。更多相关信息可以参见 [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved")
+*   注意：即使没有启用 *systemd-networkd*， *systemd-resolved* 也能够提供服务。
 
 ### 配置样例
 

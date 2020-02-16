@@ -8,7 +8,11 @@ Related articles
 
 This article describes how to setup a [Linux Container](/index.php/Linux_Container "Linux Container") to run [OpenVPN](/index.php/OpenVPN "OpenVPN") in server mode for secure/private internet use. Doing so offers a distinct advantage over using full-blown virtualization like [VirtualBox](/index.php/VirtualBox "VirtualBox") or [QEMU](/index.php/QEMU "QEMU") in that the resource overhead is minimal by comparison and able to run on low powered devices.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Host setup](#Host_setup)
 *   [2 Container setup](#Container_setup)

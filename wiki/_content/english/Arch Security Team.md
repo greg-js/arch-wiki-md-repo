@@ -106,13 +106,13 @@ The following tasks must be performed by team members:
 
 	Subscribe: bugtraq-subscribe(at)securityfocus.com
 
-	Full-disclosure
+	Full Disclosure
 
 	Another full-disclosure mailing-list (noisy).
 
-	Info: [http://lists.grok.org.uk/full-disclosure-charter.html](http://lists.grok.org.uk/full-disclosure-charter.html)
+	Info: [https://nmap.org/mailman/listinfo/fulldisclosure](https://nmap.org/mailman/listinfo/fulldisclosure)
 
-	Subscribe: full-disclosure-request(at)lists.grok.org.uk
+	Subscribe: full-disclosure-request(at)seclists.org
 
 Also consider following the mailing lists for specific packages, such as LibreOffice, X.org, Puppetlabs, ISC, etc.
 

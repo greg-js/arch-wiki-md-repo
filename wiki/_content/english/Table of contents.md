@@ -10,7 +10,7 @@
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(25)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
-| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
+| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(38)</small> |
 | <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
 | <small>2.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
 | <small>2.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
@@ -135,7 +135,7 @@
 | <small>5.1.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small> |
 | <small>5.1.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(12)</small> |
 | <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
-| <small>5.1.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(7)</small> |
+| <small>5.1.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(8)</small> |
 | <small>5.1.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(15)</small> |
 | <small>5.1.5.1.</small> [Relational DBMSs](/index.php/Category:Relational_DBMSs "Category:Relational DBMSs") <small>(4)</small> |
 | <small>5.1.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(3)</small> |
@@ -234,7 +234,7 @@
 | <small>5.8.8.</small> [OpenBSD](/index.php/Category:OpenBSD "Category:OpenBSD") <small>(4)</small> |
 | <small>5.8.9.</small> [Suckless](/index.php/Category:Suckless "Category:Suckless") <small>(5)</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(23)</small> |
-| <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(13)</small> |
+| <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(14)</small> |
 | <small>6.2.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(27)</small> |
 | <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
 | <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(1) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |

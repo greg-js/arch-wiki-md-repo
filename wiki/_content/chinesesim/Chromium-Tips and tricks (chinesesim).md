@@ -1,18 +1,27 @@
+相关文章
+
+*   [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")
+*   [Firefox Tweaks](/index.php/Firefox_Tweaks "Firefox Tweaks")
+
 **翻译状态：** 本文是英文页面 [Chromium_Tips_and_Tweaks](/index.php/Chromium_Tips_and_Tweaks "Chromium Tips and Tweaks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-10-07，点击[这里](https://wiki.archlinux.org/index.php?title=Chromium_Tips_and_Tweaks&diff=0&oldid=226108)可以查看翻译后英文页面的改动。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 浏览体验](#.E6.B5.8F.E8.A7.88.E4.BD.93.E9.AA.8C)
-    *   [1.1 chrome://xxx](#chrome:.2F.2Fxxx)
-    *   [1.2 下载标签图标错误](#.E4.B8.8B.E8.BD.BD.E6.A0.87.E7.AD.BE.E5.9B.BE.E6.A0.87.E9.94.99.E8.AF.AF)
-    *   [1.3 鼠标的滚动速度](#.E9.BC.A0.E6.A0.87.E7.9A.84.E6.BB.9A.E5.8A.A8.E9.80.9F.E5.BA.A6)
-    *   [1.4 搜索引擎](#.E6.90.9C.E7.B4.A2.E5.BC.95.E6.93.8E)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 浏览体验](#浏览体验)
+    *   [1.1 chrome://xxx](#chrome://xxx)
+    *   [1.2 下载标签图标错误](#下载标签图标错误)
+    *   [1.3 鼠标的滚动速度](#鼠标的滚动速度)
+    *   [1.4 搜索引擎](#搜索引擎)
     *   [1.5 Tmpfs](#Tmpfs)
-        *   [1.5.1 tmpfs 作为缓存](#tmpfs_.E4.BD.9C.E4.B8.BA.E7.BC.93.E5.AD.98)
-        *   [1.5.2 tmpfs 保存配置](#tmpfs_.E4.BF.9D.E5.AD.98.E9.85.8D.E7.BD.AE)
-*   [2 安全](#.E5.AE.89.E5.85.A8)
-    *   [2.1 沙箱中运行](#.E6.B2.99.E7.AE.B1.E4.B8.AD.E8.BF.90.E8.A1.8C)
-    *   [2.2 用户终端信息](#.E7.94.A8.E6.88.B7.E7.BB.88.E7.AB.AF.E4.BF.A1.E6.81.AF)
+        *   [1.5.1 tmpfs 作为缓存](#tmpfs_作为缓存)
+        *   [1.5.2 tmpfs 保存配置](#tmpfs_保存配置)
+*   [2 安全](#安全)
+    *   [2.1 沙箱中运行](#沙箱中运行)
+    *   [2.2 用户终端信息](#用户终端信息)
 
 ## 浏览体验
 
@@ -73,7 +82,7 @@ Cache 应该都是临时保存，重启后会丢失。
 
 将浏览器配置放到 [tmpfs](https://en.wikipedia.org/wiki/Tmpfs "wikipedia:Tmpfs") 文件系统如 `/tmp` 或 `/dev/shm` 可以提高程序的响应速度，因为全部内容都保存在内存。
 
-为了简化使用，可以使用动态脚本进行管理，可以从 AUR 获得[profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/),更多信息请参考 [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")。
+为了简化使用，可以使用动态脚本进行管理，可以从 AUR 获得[profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon),更多信息请参考 [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")。
 
 ## 安全
 

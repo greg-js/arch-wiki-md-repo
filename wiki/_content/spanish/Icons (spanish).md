@@ -1,10 +1,10 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Icons](/index.php/Icons "Icons"), revisada por última vez el **2019-03-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Icons&diff=0&oldid=569497) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Icons](/index.php/Icons "Icons"), revisada por última vez el **2020-02-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Icons&diff=0&oldid=597379) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Related articles
 
-*   [Cursor themes (Español)](/index.php/Cursor_themes_(Espa%C3%B1ol) "Cursor themes (Español)")
-*   [Xfce (Español)](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)")
+*   [Cursor themes](/index.php/Cursor_themes_(Espa%C3%B1ol) "Cursor themes (Español)")
+*   [Xfce](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)")
 
 El proyecto freedesktop proporciona la [Especificación de Tema de Iconos](https://specifications.freedesktop.org/icon-theme-spec/latest/), que se aplica a la mayoría de los entornos de escritorio de linux e intenta unificar el aspecto de un montón de iconos en un *tema de iconos*. Freedesktop proporciona además la [Especificación de Nombre de Iconos](https://specifications.freedesktop.org/icon-naming-spec/latest/), la cual define un esquema de denominación estándar para los iconos que se cree serán instalados en cualquier sistema. El tema por defecto *hicolor* debe incluirlos todos.
 

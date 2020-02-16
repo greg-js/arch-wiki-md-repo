@@ -27,7 +27,7 @@ I2P доступен с пакетом [i2p](https://aur.archlinux.org/packages/
 Ставим i2p командой
 
 ```
-yaourt -S i2p 
+yay -S i2p 
 
 ```
 

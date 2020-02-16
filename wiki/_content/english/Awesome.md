@@ -159,7 +159,19 @@ Several extensions are available for awesome:
 
 ### Autostart
 
-To autorun programs, create a shell script via
+To implement the XDG autostart specification, add to `~/.config/awesome/rc.lua` the lines
+
+```
+   awful.spawn.with_shell(
+       'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..
+       'xrdb -merge <<< "awesome.started:true";' ..
+       -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
+       'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- [https://github.com/jceb/dex](https://github.com/jceb/dex)
+       )
+
+```
+
+Alternatively, create a shell script via
 
 ```
 $ touch ~/.config/awesome/autorun.sh
@@ -222,7 +234,7 @@ $ setxkbmap -layout "us,de" -option "grp:alt_shift_toggle"
 Or you can use Awesome itself to switch(from v.4). Add the following line in the keybindings section of rc.lua:
 
 ```
-awful.key({ "Shift" }, "Alt_L", function ) mykeyboardlayout.next_layout(); end) 
+awful.key({ "Shift" }, "Alt_L", function ) mykeyboardlayout.next_layout(); end)
 awful.key({ "Mod1" }, "Shift_L", function ) mykeyboardlayout.next_layout(); end)
 
 ```
@@ -260,7 +272,7 @@ Beautiful can handle your wallpaper, thus you do not need to set it up in your `
 With version 3.5 Awesome no longer provides a awsetbg command, instead it has a gears module. You can set your wallpaper inside `theme.lua` with
 
 ```
-theme.wallpaper = "~/.config/awesome/themes/awesome-wallpaper.png" 
+theme.wallpaper = "~/.config/awesome/themes/awesome-wallpaper.png"
 
 ```
 
@@ -469,7 +481,7 @@ However, you may want to be able to toggle the titlebar on or off. You can do th
 
 ```
    -- working toggle titlebar
-   awful.key({ modkey, "Control" }, "t", function (c) awful.titlebar.toggle(c)         end, 
+   awful.key({ modkey, "Control" }, "t", function (c) awful.titlebar.toggle(c)         end,
              {description = "Show/Hide Titlebars", group="client"}),
 
 ```

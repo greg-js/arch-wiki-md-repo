@@ -18,6 +18,7 @@
     *   [4.4 Unable to open .csproj with OmniSharp server, invalid Microsoft.Common.props location](#Unable_to_open_.csproj_with_OmniSharp_server,_invalid_Microsoft.Common.props_location)
     *   [4.5 Error from OmniSharp that MSBuild cannot be located](#Error_from_OmniSharp_that_MSBuild_cannot_be_located)
     *   [4.6 Saving with "Retry as Sudo" does not work](#Saving_with_"Retry_as_Sudo"_does_not_work)
+    *   [4.7 Keyboard variants or keymappings do not map](#Keyboard_variants_or_keymappings_do_not_map)
 
 ## Installation
 
@@ -148,3 +149,14 @@ You might be able to build anyway (possibly depending whether you have [mono](ht
 This feature does not work in the [code](https://www.archlinux.org/packages/?name=code) package, because Microsoft does not support the way the Arch package is packaged (native instead of bundled Electron). See [FS#61516](https://bugs.archlinux.org/task/61516) and the [upstream bug report](https://github.com/Microsoft/vscode/issues/70403) for more information.
 
 The binary release [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) does not have this issue, and the feature works there.
+
+### Keyboard variants or keymappings do not map
+
+As per the [wiki on github](https://github.com/Microsoft/vscode/wiki/Keybinding-Issues#troubleshoot-linux-keybindings):
+
+	Switching keyboard layouts under some Linux window managers does not result in a change in the low level X window APIs VS Code uses to read the current keyboard layout. This means that VS Code ends up sometimes reading one of the other configured keyboard layouts and not the current active one. PR welcome...
+
+Per the wiki, there are two possible solutions:
+
+1.  make sure setxkbmap -query returns as the first keyboard layout the one you want to work with in VS Code.
+2.  use "keyboard.dispatch": "keyCode" in your settings and restart VS Code. This will prevent VS Code from trying to determine your keyboard layout whatsoever.

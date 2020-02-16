@@ -53,7 +53,7 @@ Pule para a próxima sessão caso o driver tenha sido carregado com sucesso. Cas
 
 ### Carregando o módulo
 
-Pesquise na internet pelo modelo/driver para o seu chipset. Algumas módulos comuns são `8139too` para as placas com um chipset da Realtek, ou `sis900` para placas com um chipset da SiS. Assim que descobrir qual módulo deve usar, tente [carregar o módulo manualmente](/index.php/Kernel_module_(Portugu%C3%AAs)#Manuseio_manual_de_módulos_de_kernel "Kernel module (Português)"). Caso você esbarre com algum erro dizendo que o módulo não foi encontrado, é possível que o driver não foi incluído no kernel do Arch Linux. Tente procurar no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") pelo nome do módulo.
+Pesquise na internet pelo modelo/driver para o seu chipset. Algumas módulos comuns são `8139too` para as placas com um chipset da Realtek, ou `sis900` para placas com um chipset da SiS. Assim que descobrir qual módulo deve usar, tente [carregar o módulo manualmente](/index.php/Kernel_module_(Portugu%C3%AAs)#Manuseio_de_módulos_de_kernel "Kernel module (Português)"). Caso você esbarre com algum erro dizendo que o módulo não foi encontrado, é possível que o driver não foi incluído no kernel do Arch Linux. Tente procurar no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") pelo nome do módulo.
 
 Caso o udev não detecte ou não carregue o módulo de forma apropriada e automaticamente durante o boot, veja [Kernel module (Português)#Carregamento automático de módulos com systemd](/index.php/Kernel_module_(Portugu%C3%AAs)#Carregamento_automático_de_módulos_com_systemd "Kernel module (Português)").
 
@@ -195,7 +195,7 @@ softdep tg3 pre: broadcom
 
 ```
 
-O adaptador deve ser reconhecido pelo módulo `r8169`. No entanto, com algumas revisões de chips, a conexão pode cair e voltar o tempo todo. A alternativa [r8168](https://www.archlinux.org/packages/?name=r8168) deve ser usada para uma conexão confiável neste caso. [Lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista-negra_(Blacklisting) "Kernel module (Português)") `r8169`, se [r8168](https://www.archlinux.org/packages/?name=r8168) não for carregado automaticamente pelo [udev](/index.php/Udev "Udev"), veja [Kernel module (Português)#Carregamento automático de módulos com systemd](/index.php/Kernel_module_(Portugu%C3%AAs)#Carregamento_automático_de_módulos_com_systemd "Kernel module (Português)").
+O adaptador deve ser reconhecido pelo módulo `r8169`. No entanto, com algumas revisões de chips, a conexão pode cair e voltar o tempo todo. A alternativa [r8168](https://www.archlinux.org/packages/?name=r8168) deve ser usada para uma conexão confiável neste caso. [Lista negra](/index.php/Kernel_module_(Portugu%C3%AAs)#Adicionar_um_módulo_em_uma_lista_negra_(Blacklisting) "Kernel module (Português)") `r8169`, se [r8168](https://www.archlinux.org/packages/?name=r8168) não for carregado automaticamente pelo [udev](/index.php/Udev "Udev"), veja [Kernel module (Português)#Carregamento automático de módulos com systemd](/index.php/Kernel_module_(Portugu%C3%AAs)#Carregamento_automático_de_módulos_com_systemd "Kernel module (Português)").
 
 Outra falha nos drivers para algumas revisões deste adaptador é um suporte fraco de IPv6\. [IPv6 (Português)#Desabilitar funcionalidade](/index.php/IPv6_(Portugu%C3%AAs)#Desabilitar_funcionalidade "IPv6 (Português)") pode ser útil se você encontrar problemas como pendurar páginas da web e velocidades lentas.
 

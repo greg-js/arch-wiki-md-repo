@@ -3,16 +3,17 @@
 *   [Модули ядра](/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0 "Модули ядра")
 *   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
 *   [Kernel Panics](/index.php/Kernel_Panics "Kernel Panics")
-*   [Linux-ck (Русский)](/index.php/Linux-ck_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Linux-ck (Русский)")
 *   [sysctl](/index.php/Sysctl "Sysctl")
 
 **Состояние перевода:** На этой странице представлен перевод статьи [Kernels](/index.php/Kernels "Kernels"). Дата последней синхронизации: 29 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Kernels&diff=0&oldid=428531).
 
-Из [Wikipedia](https://ru.wikipedia.org/wiki/Ядро_операционной_системы):
+Из Википедии:
 
-	Ядро́ — центральная часть операционной системы (ОС), обеспечивающая приложениям координированный доступ к ресурсам компьютера, таким как процессорное время, память, внешнее аппаратное обеспечение, внешнее устройство ввода и вывода информации. Также обычно ядро предоставляет сервисы файловой системы и сетевых протоколов.
+	[Ядро Linux](https://en.wikipedia.org/wiki/ru:%D0%AF%D0%B4%D1%80%D0%BE_Linux "wikipedia:ru:Ядро Linux") — монолитное [ядро](https://en.wikipedia.org/wiki/ru:%D0%AF%D0%B4%D1%80%D0%BE_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "wikipedia:ru:Ядро операционной системы") Unix-подобной операционной системы с открытым исходным кодом.
 
-Существуют различные альтернативные доступные ядра Arch Linux в дополнение к основным Linux ядрам. В этой статье перечислены некоторые из вариантов имеющихся в репозиториях, с кратким описанием каждого из них. Существует также описание патчей, которые могут быть применены к ядру. Статья заканчивается обзором пользовательской компиляции ядра со ссылками на различные методы.
+Дистрибутив [Arch Linux](/index.php/Arch_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Linux (Русский)") основан на ядре Linux. Помимо основной стабильной (stable) версии в Arch Linux можно использовать некоторые альтернативные ядра. В статье описываются доступные в официальных репозиториях версии ядер, возможные патчи, а также способы, которыми пользователи могут скомпилировать собственное ядро.
+
+Пакет ядра [устанавливается](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") на файловую систему в разделе `/boot/`. Для загрузки нужного ядра при запуске системы небходимо соответствующим образом настроить [загрузчик](/index.php/Boot_loader "Boot loader").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -20,145 +21,85 @@
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Предварительно скомпилированные ядра](#Предварительно_скомпилированные_ядра)
-    *   [1.1 Официальные пакеты](#Официальные_пакеты)
-    *   [1.2 Неофициальные пользовательские репозитории с готовыми, собранными ядрами Linux](#Неофициальные_пользовательские_репозитории_с_готовыми,_собранными_ядрами_Linux)
-    *   [1.3 AUR пакеты](#AUR_пакеты)
-*   [2 Патчи и наборы патчей (патчсеты)](#Патчи_и_наборы_патчей_(патчсеты))
-    *   [2.1 Как установить](#Как_установить)
-    *   [2.2 Основные патчи и патчсеты](#Основные_патчи_и_патчсеты)
-        *   [2.2.1 -ck](#-ck)
-        *   [2.2.2 -rt](#-rt)
-        *   [2.2.3 -bld](#-bld)
-        *   [2.2.4 -grsecurity](#-grsecurity)
-        *   [2.2.5 Tiny-Патчи](#Tiny-Патчи)
-        *   [2.2.6 -pf](#-pf)
-    *   [2.3 Индивидуальные патчи](#Индивидуальные_патчи)
-        *   [2.3.1 Reiser4](#Reiser4)
-*   [3 Компиляция ядра](#Компиляция_ядра)
-    *   [3.1 Используя Arch Build System (ABS)](#Используя_Arch_Build_System_(ABS))
-    *   [3.2 Традиционный метод](#Традиционный_метод)
-    *   [3.3 Проприетарный драйвер NVIDIA](#Проприетарный_драйвер_NVIDIA)
-*   [4 Смотрите также](#Смотрите_также)
-    *   [4.1 Тесты и обзоры](#Тесты_и_обзоры)
+*   [1 Официально поддерживаемые пакеты](#Официально_поддерживаемые_пакеты)
+*   [2 Компиляция](#Компиляция)
+*   [3 Ядра с сайта kernel.org](#Ядра_с_сайта_kernel.org)
+*   [4 Патчи и наборы патчей (патчсеты)](#Патчи_и_наборы_патчей_(патчсеты))
+    *   [4.1 Как установить](#Как_установить)
+    *   [4.2 Основные патчи и патчсеты](#Основные_патчи_и_патчсеты)
+        *   [4.2.1 -ck](#-ck)
+        *   [4.2.2 -rt](#-rt)
+        *   [4.2.3 -bld](#-bld)
+        *   [4.2.4 -grsecurity](#-grsecurity)
+        *   [4.2.5 Tiny-Патчи](#Tiny-Патчи)
+        *   [4.2.6 -pf](#-pf)
+    *   [4.3 Индивидуальные патчи](#Индивидуальные_патчи)
+        *   [4.3.1 Reiser4](#Reiser4)
+*   [5 Смотрите также](#Смотрите_также)
 
-## Предварительно скомпилированные ядра
+## Официально поддерживаемые пакеты
 
-### Официальные пакеты
-
-*   **Stable** — Официальное ядро и модули Linux с несколькими патчами.
+*   **Stable** — "Ванильное" ядро Linux с модулями и некоторыми патчами.
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-*   **Hardened** — Ориентированная на безопасность версия ядра Linux с набором защитных патчей, устраняющих эксплойты ядра и пространства пользователя. Внедрение защитных возможностей для этой версии ядра происходит быстрее, чем для [linux](https://www.archlinux.org/packages/?name=linux).
+*   **Hardened** — Ориентированная на безопасность версия с набором патчей, защищающих от эксплойтов ядра и пространства пользователя. Внедрение защитных возможностей в этом ядре происходит быстрее, чем в [linux](https://www.archlinux.org/packages/?name=linux).
 
 	[https://github.com/anthraxx/linux-hardened](https://github.com/anthraxx/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 
-*   **Longterm** — Версия ядра Linux и модулей с долгосрочной поддержкой (Long Term Support, LTS).
+*   **Longterm** — Версия ядра и модулей с долгосрочной поддержкой (Long Term Support, LTS).
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
-*   **Zen Kernel** — Результат коллективных усилий исследователей ядра с целью создать лучшее из возможных ядер Linux для повседневных систем. Подробности проекта находятся на сайте [liquorix.net](https://liquorix.net/) (там же можно найти двоичные файлы Zen-ядра для Debian).
+*   **Zen Kernel** — Результат коллективных усилий исследователей с целью создать лучшее из возможных ядер Linux для систем общего назначения. Подробности проекта можно найти на сайте [liquorix.net](https://liquorix.net/) (там же можно скачать двоичные файлы Zen-ядра для Debian).
 
 	[https://github.com/zen-kernel/zen-kernel](https://github.com/zen-kernel/zen-kernel) || [linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
-### Неофициальные пользовательские репозитории с готовыми, собранными ядрами Linux
+## Компиляция
 
-Рекомендуется посмотреть[этот раздел](/index.php/Unofficial_user_repositories "Unofficial user repositories")
+В Arch Linux есть два способа компиляции собственного ядра.
 
-### AUR пакеты
+	[/Arch Build System](/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel (Русский)/Arch Build System (Русский)")
 
-	[linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
+	Преимущества — наличие готового [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") для пакета [linux](https://www.archlinux.org/packages/?name=linux) и удобство использования системы [управления пакетами](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%D0%BC%D0%B8 "wikipedia:ru:Система управления пакетами").
 
-	AUFS-совместимое ядро Linux и модули, полезно при использовании [Docker](/index.php/Docker_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Docker (Русский)")
+	[Традиционная компиляция](/index.php/Kernel/Traditional_compilation "Kernel/Traditional compilation")
 
-	[linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
+	Ручная загрузка архива файлов с исходными кодами ядра и их компиляция.
 
-	Linux ядро с включенными возможностями [AppArmor](/index.php/AppArmor "AppArmor")
+## Ядра с сайта kernel.org
 
-	[linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)
+*   **Git** — Ядро Linux, собранное из файлов с исходным кодом из git-репозитория Линуса Торвальдса.
 
-	Ядро Linux и модули с [Brain Fuck Scheduler](https://en.wikipedia.org/wiki/ru:Brain_Fuck_Scheduler "wikipedia:ru:Brain Fuck Scheduler") (BFS) - созданное Коном Коливасом (Con Kolivas) для PC с меньшим, чем 4096 ядрами, и BFQ I/O планировщиком в качестве дополнительного
+	[https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git) || [linux-git](https://aur.archlinux.org/packages/linux-git/)
 
-	[linux-chromebook](https://aur.archlinux.org/packages/linux-chromebook/)
+*   **Mainline** — Версии ядра с добавлением новых функций. Выходят каждые 2-3 месяца.
 
-	Ядро Linux с добавлением аппаратной поддержки [chromebook](/index.php/Chromebook "Chromebook")
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
 
-[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/)
+*   **Next** — Новейшие версии ядра, с улучшениями, которые будут добавлены в следующий mainline-выпуск.
 
-	Ядро Linux, доступное в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"), которое позволяет пользователям запускать [ядро с набором патчей Кона Коливаса](https://en.wikipedia.org/wiki/Linux-ck_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "wikipedia:Linux-ck (Русский)"), включая "Brain Fuck Scheduler" (BFS)
+	[https://www.kernel.org/doc/man-pages/linux-next.html](https://www.kernel.org/doc/man-pages/linux-next.html) || [linux-next-git](https://aur.archlinux.org/packages/linux-next-git/)
 
-	Эти патчи предназначены для улучшения отклика системы с особым упором на PC, подходят для любого PC
+*   **Longterm 3.16** — LTS-ядро версии 3.16.
 
-	[linux-eee-ck](https://aur.archlinux.org/packages/linux-eee-ck/)
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts316](https://aur.archlinux.org/packages/linux-lts316/)
 
-	Ядро Linux и модули для Asus Eee PC 701, собранные с ck1-патчами Кона Коливаса (Con Kolivas)
+*   **Longterm 4.4** — LTS-ядро версии 4.4.
 
-	[linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts44](https://aur.archlinux.org/packages/linux-lts44/)
 
-	Ядро Linux и модули с [fbcondecor поддержкой](/index.php/Fbsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fbsplash (Русский)").
+*   **Longterm 4.9** — LTS-ядро версии 4.9.
 
-	[linux-git](https://aur.archlinux.org/packages/linux-git/)
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts49](https://aur.archlinux.org/packages/linux-lts49/)
 
-	Ядро Linux и модули собранное с [Linus Torvalds' Git репозитория](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git).
+*   **Longterm 4.14** — LTS-ядро версии 4.14.
 
-	[linux-ice](https://aur.archlinux.org/packages/linux-ice/)
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts414](https://aur.archlinux.org/packages/linux-lts414/)
 
-	Ядро Linux и модули с gentoo-sources патчами и [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") поддержкой.
+*   **Longterm 4.19** — LTS-ядро версии 4.19.
 
-	[linux-libre](https://aur.archlinux.org/packages/linux-libre/), [linux-libre-lts](https://aur.archlinux.org/packages/linux-libre-lts/), [linux-libre-grsec](https://aur.archlinux.org/packages/linux-libre-grsec/), [linux-libre-rt](https://aur.archlinux.org/packages/linux-libre-rt/), [linux-libre-xen](https://aur.archlinux.org/packages/linux-libre-xen/)
-
-	Ядро Linux без "binary blobs".
-
-	[linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
-
-	[Liquorix](http://liquorix.net) - ядро, построенное с использованием Debian-конфигурации и ZEN-патчей. Предназначено для рабочего стола, мультимедийных, игровых и рабочих станций, часто используется в качестве замены ядра Debian Linux
-
-Damentz, - сопровождающий набор патчей Liquorix, является также разработчиком для набора патчей ZEN
-
-	[linux-lts34](https://aur.archlinux.org/packages/linux-lts34/)
-
-	Ядро Linux 3.4 с долгосрочной поддержкой (LTS - Long Term Support).
-
-	[linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
-
-	Ядро Linux 3.10 с долгосрочной поддержкой (LTS - Long Term Support).
-
-	[linux-lts312](https://aur.archlinux.org/packages/linux-lts312/)
-
-	Ядро Linux 3.12 с долгосрочной поддержкой (LTS - Long Term Support).
-
-	[linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
-
-	Ядро Linux-mainline.
-
-	[linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)
-
-	Ядро Linux и модули с поддержкой [Multipath TCP](http://multipath-tcp.org/)
-
-	[kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/)
-
-	Статичное ядро для нетбуков с Intel Atom N270/N280/N450/N550, таких как Eee PC, с добавлением внешней прошивки ([broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)) и наборами патчей (BFS + TuxOnIce + BFQ опцией); только для Intel GPU
-
-	[linux-pax](https://aur.archlinux.org/packages/linux-pax/)
-
-	Ядро Linux и модули с [PaX](/index.php/PaX "PaX") патчами для повышенной безопасности.
-
-	[linux-pf](https://aur.archlinux.org/packages/linux-pf/)
-
-	Ядро Linux и модули с pf-патчами ядра [-ck патчи (BFS included), TuxOnIce, BFQ] и aufs3.
-
-Это ядро также доступно (уже собранное)[из неофициального пользовательского репозитория](/index.php/Unofficial_user_repositories#Linux-pf "Unofficial user repositories").
-
-	[linux-tresor](https://aur.archlinux.org/packages/linux-tresor/)/[linux-lts-tresor](https://aur.archlinux.org/packages/linux-lts-tresor/)
-
-	Текущее/LTS Linux ядро и модули со встроенным [патчем TRESOR](https://www1.informatik.uni-erlangen.de/tresor)
-
-	[linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)/[linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
-
-	Ядро Linux и несколько патчей написанных Алексом Уильямсон (Alex Williamson) (переопределяющих acs и i915) предоставляющих возможность сделать PCI Passthrough с KVM на некоторых машинах.
-
-Используется для хранения ключей шифрования AES не в ОЗУ, а в регистрах CPU, [подробнее тут](http://www.opennet.ru/tips/2617_tresor_aes_crypt_cpu_cryptsetup_dmcrypt.shtml).
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts419](https://aur.archlinux.org/packages/linux-lts419/)
 
 ## Патчи и наборы патчей (патчсеты)
 
@@ -234,34 +175,7 @@ Grsecurity патчи можно посмотреть на [https://grsecurity.n
 
 [Reiser4](/index.php/Reiser4 "Reiser4")
 
-## Компиляция ядра
-
-Arch Linux предусматривает несколько методов компиляции ядра.
-
-### Используя Arch Build System (ABS)
-
-Используя [ABS](/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Build System (Русский)") воспользуетесь высоким качеством существующих [linux](https://www.archlinux.org/packages/?name=linux) [PKGBUILD](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PKGBUILD (Русский)") и преимущества [менеджера пакетов Pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"). PKGBUILD структурирован таким образом, что вы можете остановить сборку после получения исходного кода, и сконфигурировать ядро.
-
-Смотрите [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System").
-
-### Традиционный метод
-
-Это загрузка архива с исходным кодом, распаковка, и компиляция. После компиляции доступны два способа установки: традиционный ручной метод, или[Makepkg](/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Makepkg (Русский)") + [Pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)").
-
-Преимуществом установки традиционным методом является то, что вы не привязаны к какому-либо дистрибутиву.
-
-Смотрите [Kernels/Compilation/Traditional](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional").
-
-### Проприетарный драйвер NVIDIA
-
-Смотрите [NVIDIA#Alternate install: custom kernel](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA")  инструкцию по использованию пропиетарного драйвера NVIDIA с патченным ядром.
-
 ## Смотрите также
 
-*   [O'Reilly - Linux Kernel in a Nutshell](http://www.kroah.com/lkn/) (свободная электронная книга)
-
-### Тесты и обзоры
-
-*   [Есть ли польза от кастомных ядер](http://habrahabr.ru/post/131263/)
-*   [Тест планировщика ввода/вывода BFQ](http://www.youtube.com/watch?v=J-e7LnJblm8)
-*   [бенчмарки BFQ](http://algogroup.unimore.it/people/paolo/disk_sched/results.php)
+*   [O'Reilly — Linux Kernel in a Nutshell](http://www.kroah.com/lkn/) — электронная книга "Ядро Linux в двух словах".
+*   [Какую из stable-версий ядра лучше использовать?](http://kroah.com/log/blog/2018/08/24/what-stable-kernel-should-i-use/) от Greg Kroah-Hartman.

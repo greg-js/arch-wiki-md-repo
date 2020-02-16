@@ -9,7 +9,7 @@ Este artículo es una traducción de [Clojure](/index.php/Clojure "Clojure"), re
 
 ## REPL
 
-Para ejecutar el REPL, instale [leiningen](http://leiningen.org/) del paquete [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") [leiningen](https://aur.archlinux.org/packages/leiningen/). Entonces escriba en un terminal
+Para ejecutar el REPL, instale [leiningen](http://leiningen.org/) del paquete [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") [leiningen](https://www.archlinux.org/packages/?name=leiningen). Entonces escriba en un terminal
 
 ```
 lein repl

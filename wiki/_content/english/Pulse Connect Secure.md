@@ -55,7 +55,7 @@ The [OpenConnect](/index.php/OpenConnect "OpenConnect") VPN client also supports
 To use, install [openconnect](https://www.archlinux.org/packages/?name=openconnect). If your Juniper VPN setup doesn't require any input after connecting you can use this command in order to connect
 
 ```
-# openconnect --juniper https://vpn.example.com/
+# openconnect --protocol=pulse https://vpn.example.com/
 
 ```
 

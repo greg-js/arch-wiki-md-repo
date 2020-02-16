@@ -14,7 +14,8 @@
     *   [3.2 Asian language support](#Asian_language_support)
     *   [3.3 Self-hosted sync server](#Self-hosted_sync_server)
     *   [3.4 Dark theme](#Dark_theme)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -57,6 +58,15 @@ AnkiWeb is a proprietary service. If you prefer a self-hosted free (as in freedo
 ### Dark theme
 
 Anki UI may me unreadable with dark GTK theme. You may want to install an addon to fix that (e.g. [1496166067](https://ankiweb.net/shared/info/1496166067) and *View > Nigh mode > Enable night mode*).
+
+## Troubleshooting
+
+If Anki core dumps at launch with error "qt: No suitable graphics backend found" the following [may resolve](https://anki.tenderapp.com/discussions/ankidesktop/34554-instalation-not-run-after-install):
+
+```
+echo auto > ~/.local/share/Anki2/gldriver
+
+```
 
 ## See also
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Install Arch Linux on a USB key](/index.php/Install_Arch_Linux_on_a_USB_key "Install Arch Linux on a USB key"). Data da última tradução: 2019-12-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_Arch_Linux_on_a_USB_key&diff=0&oldid=591950) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Install Arch Linux on a USB key](/index.php/Install_Arch_Linux_on_a_USB_key "Install Arch Linux on a USB key"). Data da última tradução: 2020-02-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_Arch_Linux_on_a_USB_key&diff=0&oldid=596242) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,7 +8,7 @@ Artigos relacionados
 *   [Instalar Arch Linux do VirtualBox](/index.php/Install_Arch_Linux_from_VirtualBox "Install Arch Linux from VirtualBox")
 *   [Unidades de estado sólido](/index.php/Solid_State_Drives "Solid State Drives")
 
-Esta página explica como realizar uma instalação normal do Arch em um pendrive (também conhecido como "unidade flash" ou, em inglês, de *USB key*). Em contraste com o fato de ter um LiveUSB coberto em [Mídia de instalação em flash USB](/index.php/M%C3%ADdia_de_instala%C3%A7%C3%A3o_em_flash_USB "Mídia de instalação em flash USB"), o resultado será uma instalação persistente idêntica à instalação normal em HDD, mas em uma unidade flash USB.
+Esta página explica como realizar uma instalação normal do Arch em uma mídia removível (como um pendrive ou, em inglês, de *USB key*). Em contraste com o fato de ter um LiveUSB coberto em [Mídia de instalação em flash USB](/index.php/M%C3%ADdia_de_instala%C3%A7%C3%A3o_em_flash_USB "Mídia de instalação em flash USB"), o resultado será uma instalação persistente idêntica à instalação normal em HDD.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -23,12 +23,11 @@ Esta página explica como realizar uma instalação normal do Arch em um pendriv
     *   [2.2 GRUB](#GRUB)
     *   [2.3 Syslinux](#Syslinux)
 *   [3 Dicas](#Dicas)
-    *   [3.1 Usando sua instalação USB em múltiplas máquinas](#Usando_sua_instalação_USB_em_múltiplas_máquinas)
-        *   [3.1.1 Drivers de entrada](#Drivers_de_entrada)
-        *   [3.1.2 Drivers de vídeo](#Drivers_de_vídeo)
-        *   [3.1.3 Nomenclatura de dispositivos de bloco persistentes](#Nomenclatura_de_dispositivos_de_bloco_persistentes)
-        *   [3.1.4 Parâmetros do kernel](#Parâmetros_do_kernel)
-        *   [3.1.5 Inicializando de mídia USB 3.0](#Inicializando_de_mídia_USB_3.0)
+    *   [3.1 Usando sua instalação portátil em múltiplas máquinas](#Usando_sua_instalação_portátil_em_múltiplas_máquinas)
+        *   [3.1.1 Drivers de vídeo](#Drivers_de_vídeo)
+        *   [3.1.2 Nomenclatura de dispositivos de bloco persistentes](#Nomenclatura_de_dispositivos_de_bloco_persistentes)
+        *   [3.1.3 Parâmetros do kernel](#Parâmetros_do_kernel)
+        *   [3.1.4 Inicializando de mídia USB 3.0](#Inicializando_de_mídia_USB_3.0)
     *   [3.2 Compatibilidade](#Compatibilidade)
     *   [3.3 Minimizando o acesso a disco](#Minimizando_o_acesso_a_disco)
 *   [4 Veja também](#Veja_também)
@@ -37,36 +36,36 @@ Esta página explica como realizar uma instalação normal do Arch em um pendriv
 
 **Nota:** Recomenda-se pelo menos 2 GB de espaço de armazenamento. Um conjunto modesto de pacotes vai caber, deixando um pouco de espaço livre para armazenamento.
 
-Existem várias maneiras de instalar o Arch em um pendrive, dependendo do sistema operacional disponível:
+Existem várias maneiras de instalar o Arch em uma mídia removível, dependendo do sistema operacional disponível:
 
 *   Se você tem outro computador Linux disponível (não precisa ser o Arch), você pode seguir as instruções em [Instalar a partir de um Linux existente](/index.php/Instalar_a_partir_de_um_Linux_existente "Instalar a partir de um Linux existente").
-*   Um Arch Linux CD/USB pode ser usado para instalar o Arch no pendrive, através da inicialização do CD/USB e seguindo o [guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação"). Se for inicializar de um Live USB, a instalação terá que ser feita em um pendrive diferente.
-*   Se você usar Windows ou OS X, faça o download do VirtualBox, instale as VirtualBox Extensions, adicione a unidade USB a uma máquina virtual executando o Arch (por exemplo, executando a partir de uma ISO), aponte a instalação para a unidade USB enquanto usa as instruções no [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação").
+*   Um Arch Linux CD/USB pode ser usado para instalar o Arch na mídia removível, através da inicialização do CD/USB e seguindo o [guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação"). Se for inicializar de um Live USB, a instalação não poderá ser feita no mesmo pendrive por meio do qual você inicializando.
+*   Se você usar Windows ou OS X, faça o download do VirtualBox, instale as VirtualBox Extensions, conecte sua mídia removível a uma máquina virtual executando o Arch (por exemplo, executando a partir de uma ISO), aponte a instalação para a unidade agora conectada enquanto usa as instruções no [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação").
 
 ### Ajustes na instalação
 
 *   Antes de [criar o disco de RAM inicial](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio"), em `/etc/mkinitcpio.conf` mova os hooks `block` e `keyboard` antes do hook `autodetect`. Isso é necessário para permitir a inicialização em vários sistemas. cada um exigindo módulos diferentes no espaço do usuário anterior.
-*   É altamente recomendável revisar o artigo wiki sobre [redução leitura/escrita de disco](/index.php/Melhorando_o_desempenho#Reduzir_leituras/escritas_no_disco "Melhorando o desempenho") antes de selecionar um sistema de arquivos. Resumindo, [ext4 sem um jornal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) está bom, o qual pode ser criado com `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. A desvantagem óbvia de usar um sistema de arquivos com o *journaling* desativado é a perda de dados como resultado de uma desmontagem desajeitada. Reconheça que o flash tem um número limitado de gravações, e um sistema de arquivos com *journaling* levará alguns deles à medida que o journal for atualizado. Por esse mesmo motivo, é melhor nem pensar a partição swap. Observe que isso não afeta a instalação em um disco rígido USB.
-*   Se você quiser continuar a usar o dispositivo de armazenamento USB como uma unidade removível multiplataforma, isso pode ser feito criando uma partição que hospede um sistema de arquivos apropriado (provavelmente NTFS ou exFAT). Observe que a partição de dados pode precisar ser a primeira partição no dispositivo, pois o Windows pressupõe que só pode haver uma partição em um dispositivo removível e, de outra forma, terá uma montagem automática de uma partição do sistema EFI. Lembre-se de instalar [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) e [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Algumas ferramentas estão disponíveis on-line que podem permitir que você mude o bit de mídia removível (RMB) em seu dispositivo de armazenamento USB. Isso faria com que os sistemas operacionais tratassem seu dispositivo de armazenamento USB como um disco rígido externo e permitisse que você usasse qualquer esquema de particionamento escolhido.
+*   É altamente recomendável revisar o artigo [Melhorando o desempenho#Reduzir leituras/escritas no disco](/index.php/Melhorando_o_desempenho#Reduzir_leituras/escritas_no_disco "Melhorando o desempenho") antes de selecionar um sistema de arquivos. Resumindo, para mídias baseadas em flash tal como pendrive e cartões SD, [ext4 sem um jornal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) está bom, o qual pode ser criado com `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. A desvantagem óbvia de usar um sistema de arquivos com o *journaling* desativado é a perda de dados como resultado de uma desmontagem desajeitada. Reconheça que o flash tem um número limitado de gravações, e um sistema de arquivos com *journaling* levará alguns deles à medida que o journal for atualizado. Por esse mesmo motivo, é melhor nem pensar a partição swap. Observe que isso não afeta a instalação em um disco rígido portátil.
+*   Se você escolher instalar o Arch Linux em um dispositivo de armazenamento de massa USB e deseja continuar a usá-lo como armazenamento uma unidade removível multiplataforma, isso pode ser feito criando uma partição que hospede um sistema de arquivos apropriado (provavelmente NTFS ou exFAT). Observe que a partição de dados pode precisar ser a primeira partição no dispositivo, pois o Windows pressupõe que só pode haver uma partição em um dispositivo removível e, de outra forma, terá uma montagem automática de uma partição do sistema EFI. Lembre-se de instalar [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) e [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Algumas ferramentas estão disponíveis on-line que podem permitir que você mude o Bit de Mídia Removível (RMB) em seu dispositivo de armazenamento USB. Isso faria com que os sistemas operacionais tratassem seu dispositivo de armazenamento USB como um disco rígido externo e permitisse que você usasse qualquer esquema de particionamento escolhido.
 
-**Atenção:** Não é possível mudar o bit de mídia removível (RMB) em todos os dispositivos de armazenamento USB e tentar usar software incompatível com o dispositivo pode danificá-lo. A tentativa de mudar o bit de mídia removível **não** é recomendada.
+**Atenção:** Não é possível mudar o Bit de Mídia Removível (RMB) em todos os dispositivos de armazenamento USB e tentar usar software incompatível com o dispositivo pode danificá-lo. A tentativa de mudar o RMB **não** é recomendada.
 
 ## Configuração
 
-*   Certifique-se de que `/etc/fstab` inclua as informações de partição corretas para `/` e para quaisquer outras partições no pendrive. Se o pendrive for inicializado em várias máquinas, é bem provável que os dispositivos e o número de discos rígidos disponíveis variem. Por isso, é aconselhável usar o UUID ou o rótulo.
+*   Certifique-se de que `/etc/fstab` inclua as informações de partição corretas para `/` e para quaisquer outras partições no disco. Se a unidade for inicializado em várias máquinas, é bem provável que os dispositivos e o número de discos rígidos disponíveis variem. Por isso, é aconselhável usar o [UUID](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") ou o rótulo.
 
-Para obter os UUIDs adequados para sua partição, emita **blkid**
+Para obter os UUIDs adequados para sua partição, use *lsblk* do *blkid*. Veja [Nomeação persistente de dispositivo de bloco#by-uuid](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco#by-uuid "Nomeação persistente de dispositivo de bloco") para mais informações.
 
 **Nota:**
 
-*   Quando o GRUB é instalado no pendrive, o pendrive sempre será `hd0,0`.
+*   Quando o GRUB é instalado no disco, o disco sempre será `hd0,0`.
 *   Parece que as versões atuais do GRUB serão automaticamente padronizadas para usar o uuid. As instruções a seguir são para GRUB legado.
 
 ### GRUB legado
 
 `menu.lst`, o arquivo de configuração do GRUB legado, deve ser editado para (mais ou menos) corresponder às configurações a seguir.
 
-Quando estiver usando rótulo, seu menu.lst deve se parecer com isso:
+Quando estiver usando rótulos de sistema de arquivos, seu `menu.lst` deve se parecer com isso:
 
 ```
 root (hd0,0)
@@ -108,13 +107,7 @@ LABEL Arch
 
 ## Dicas
 
-### Usando sua instalação USB em múltiplas máquinas
-
-#### Drivers de entrada
-
-Para o uso de laptop (ou use com uma tela tátil) você precisará do pacote [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) para o touchpad/touchscreen funcionar.
-
-Para obter instruções sobre ajuste fino ou solução de problemas do touchpad, consulte o artigo [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
+### Usando sua instalação portátil em múltiplas máquinas
 
 #### Drivers de vídeo
 
@@ -126,7 +119,7 @@ Para obter suporte às GPUs mais comuns, instale [xf86-video-vesa](https://www.a
 
 Recomenda-se usar o [UUID](/index.php/UUID_(Portugu%C3%AAs) "UUID (Português)") tanto na configuração do [fstab](/index.php/Fstab "Fstab") quanto na do gerenciador de inicialização. Veja [Nomeação persistente de dispositivo de bloco](/index.php/Nomea%C3%A7%C3%A3o_persistente_de_dispositivo_de_bloco "Nomeação persistente de dispositivo de bloco") para detalhes.
 
-Alternativamente, você pode criar a regra do udev para criar um link simbólico personalizado para seu pendrive. Em seguida, use este link simbólico na configuração do fstab e do gerenciador de inicialização. Veja [udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev") para detalhes.
+Alternativamente, você pode criar a regra do udev para criar um link simbólico personalizado para seu disco. Em seguida, use este link simbólico na configuração do [fstab](/index.php/Fstab "Fstab") e do gerenciador de inicialização. Veja [udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev") para detalhes.
 
 #### Parâmetros do kernel
 
@@ -153,7 +146,7 @@ Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   Para desabilitar `fsync` e chamadas de sistema relacionadas em navegadores web e outros aplicativos que não escrevem dados essenciais, use o comando *eatmydata* do [libeatmydata](https://www.archlinux.org/packages/?name=libeatmydata) para evitar tais chamadas de sistema:
+*   Para desabilitar `fsync` e chamadas de sistema relacionadas em navegadores web e outros aplicativos que não escrevem dados essenciais, use o comando `eatmydata` do [libeatmydata](https://www.archlinux.org/packages/?name=libeatmydata) para evitar tais chamadas de sistema:
 
 ```
 $ eatmydata firefox

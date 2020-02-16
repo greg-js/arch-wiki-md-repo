@@ -6,6 +6,8 @@ Related articles
 
 This article aims to help in creating a debugging Arch package and using it to provide trace and debug information for reporting software bugs to developers.
 
+Usually, executable files are stripped of human readable context to make them smaller. Not only that, enhanced debugging information is usually not added to the executable in the first place, which drastically reduces the quality of the trace. So, before getting traces with debug information, one has to rebuild the package without stripping and with debugging information.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -28,7 +30,9 @@ This article aims to help in creating a debugging Arch package and using it to p
 
 ## Package names
 
-When looking at debug messages, such as:
+The first thing to do is to obtain the names of the packages require rebuilding.
+
+When looking at debug messages, such as by using [gdb](https://www.archlinux.org/packages/?name=gdb) on a [core dump](/index.php/Core_dump "Core dump"):
 
 ```
 [...]
@@ -59,7 +63,7 @@ The package is called [glibc](https://www.archlinux.org/packages/?name=glibc) in
 
 ## PKGBUILD
 
-In order to build a package from source, the PKGBUILD file is required. See [ABS](/index.php/ABS "ABS") for packages in the [official repositories](/index.php/Official_repositories "Official repositories"), and [AUR#Acquire build files](/index.php/AUR#Acquire_build_files "AUR") for packages in the [AUR](/index.php/AUR "AUR").
+In order to build a package from source, the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file is required. See [ABS](/index.php/ABS "ABS") for packages in the [official repositories](/index.php/Official_repositories "Official repositories"), and [AUR#Acquire build files](/index.php/AUR#Acquire_build_files "AUR") for packages in the [AUR](/index.php/AUR "AUR").
 
 ## Compilation settings
 

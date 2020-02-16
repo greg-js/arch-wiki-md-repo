@@ -312,7 +312,7 @@ It is recommended to [enable caching](https://docs.nextcloud.com/server/latest/a
 
 ## Security Hardening
 
-See the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/harden_server.html) and [Security](/index.php/Security "Security"). Nextcloud additionally provides a [Security scanner](https://scan.nextcloud.com/).
+See the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html) and [Security](/index.php/Security "Security"). Nextcloud additionally provides a [Security scanner](https://scan.nextcloud.com/).
 
 ### uWSGI
 
@@ -505,7 +505,7 @@ If you have customized your Nextcloud installation and your filepaths are differ
 
 ### Desktop
 
-The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) or [nextcloud-client](https://www.archlinux.org/packages/?name=nextcloud-client) package. Alternative versions are available in the [AUR](/index.php/AUR "AUR"): [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/).
+The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) or [nextcloud-client](https://www.archlinux.org/packages/?name=nextcloud-client) package. Alternative versions are available in the [AUR](/index.php/AUR "AUR"): [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/). All of them use [qtkeychain](https://www.archlinux.org/packages/?name=qtkeychain) to store and retrieve account-specific access tokens. To achieve auto-login when the client starts, one of optional dependencies of *qtkeychain* should be installed as well. Moreover, if you choose [libsecret](https://www.archlinux.org/packages/?name=libsecret) as the backend for *qtkeychain*, a service that provides `org.freedesktop.secrets` should be running when the client starts.
 
 #### Calendar
 

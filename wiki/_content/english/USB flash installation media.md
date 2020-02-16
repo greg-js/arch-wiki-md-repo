@@ -58,7 +58,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 
 **Note:** This method is recommended due to its simplicity. If it does not work, switch to the alternative method [#Using manual formatting](#Using_manual_formatting) below.
 
-**Warning:** This will irrevocably destroy all data on `/dev/**sdx**`. To restore the USB drive as an empty, usable storage device after using the Arch ISO image, the ISO 9660 filesystem signature needs to be removed by running `wipefs --all /dev/**sdx**` as root, before [repartitioning](/index.php/Repartition "Repartition") and [reformating](/index.php/Reformat "Reformat") the USB drive.
+**Warning:** This will irrevocably destroy all data on `/dev/**sdx**`. To restore the USB drive as an empty, usable storage device after using the Arch ISO image, the ISO 9660 filesystem signature needs to be removed by running `wipefs --all /dev/**sdx**` as root, before [repartitioning](/index.php/Repartition "Repartition") and [reformatting](/index.php/Reformat "Reformat") the USB drive.
 
 **Tip:** Find out the name of your USB drive with `lsblk`. Make sure that it is **not** mounted.
 
@@ -75,7 +75,7 @@ See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more informatio
 
 ##### Using etcher
 
-[Etcher](https://etcher.io/) is a OS image flasher built with node.js and Electron, capable of flashing an SDCard or USB drive. It protects you from accidentally writing to your hard-drives and ensures every byte of data was written correctly. There are 6 related packages in the AUR.
+[Etcher](https://etcher.io/) is a OS image flasher built with node.js and Electron, capable of flashing an SDCard or USB drive. It protects you from accidentally writing to your hard-drives and ensures every byte of data was written correctly. There are [5 related packages](https://aur.archlinux.org/packages/?SeB=n&K=etcher) in the AUR.
 
 ##### Using Kindd
 

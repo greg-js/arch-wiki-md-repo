@@ -225,7 +225,9 @@ You should stop [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") from creating a
 
 ### Spaces in kernel parameters
 
-dracut does not support quoted values with spaces in the `root=` and `resume=` [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). For example `root="PARTLABEL=Arch Linux"`. You will need to specify the parameters using a different block device naming scheme like [UUID](/index.php/UUID "UUID").
+dracut does not support quoted values with spaces in the `root=` and `resume=` [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). For example `root="PARTLABEL=Arch Linux"`. See [dracut issue 720](https://github.com/dracutdevs/dracut/issues/720).
+
+You will need to specify the parameters using a different block device naming scheme like [UUID](/index.php/UUID "UUID").
 
 ## See also
 

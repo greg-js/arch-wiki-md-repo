@@ -178,6 +178,10 @@ DHCP=yes
 KeepConfiguration=yes
 ```
 
+To avoid delays at boot time disable systemd-networkd-wait-online
+
+ `systemctl disable systemd-networkd-wait-online` 
+
 #### Manually Setting the iSCSI Target
 
 If you are not using an iBFT compatible boot rom you must explicitly setup the network and the iscsi target manually.
@@ -234,6 +238,10 @@ Name=eth0
 DHCP=yes
 KeepConfiguration=yes
 ```
+
+To avoid delays at boot time disable systemd-networkd-wait-online
+
+ `systemctl disable systemd-networkd-wait-online` 
 
 The iscsi kernel driver cannot handle any network error without the iscsid daemon running, so it is important to make sure that when the network restarts the same ip address will be used, for example with a static lease. To make sure that systemd doesn't kill iscsid too soon an fstab line like this can be used:
 

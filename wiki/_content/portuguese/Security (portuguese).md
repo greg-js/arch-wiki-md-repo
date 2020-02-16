@@ -17,7 +17,7 @@ Este artigo contém recomendações e melhores práticas para [aumentar a segura
 
 *   [1 Conceitos](#Conceitos)
 *   [2 Senhas](#Senhas)
-    *   [2.1 Choosing secure passwords](#Choosing_secure_passwords)
+    *   [2.1 Escolhendo senhas seguras](#Escolhendo_senhas_seguras)
     *   [2.2 Maintaining passwords](#Maintaining_passwords)
     *   [2.3 Password hashes](#Password_hashes)
     *   [2.4 Enforcing strong passwords using pam_cracklib](#Enforcing_strong_passwords_using_pam_cracklib)
@@ -96,24 +96,24 @@ Este artigo contém recomendações e melhores práticas para [aumentar a segura
 
 Senhas são a chave para proteger seu sistema Linux. Elas protegem suas [contas de usuário](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos"), [sistema de arquivos criptografado](/index.php/Criptografia_de_disco "Criptografia de disco"), e chaves [SSH](/index.php/SSH_keys "SSH keys")/[GPG](/index.php/GPG "GPG"). Elas são a maneira principal de permitir o acesso do computador, então grande parte da segurança é sobre escolher senhas seguras e protegê-las.
 
-### Choosing secure passwords
+### Escolhendo senhas seguras
 
-When relying on a passphrase, it must be complex enough to not be easily guessed from e.g. personal information, or [cracked](https://en.wikipedia.org/wiki/Password_cracking "wikipedia:Password cracking") using methods like brute-force attacks. The tenets of strong passphrases are based on *length* and *randomness*. In cryptography the quality of a passphrase is referred to as its [entropic security](https://en.wikipedia.org/wiki/Entropic_security "wikipedia:Entropic security").
+Quando depender de uma senha, esta deve ser complexa o bastante para não ser facilmente adivinhada com, por exemplo, informação pessoal, ou [quebrada](https://en.wikipedia.org/wiki/Password_cracking "wikipedia:Password cracking") usando métodos como ataques de força bruta. A base de uma senha forte são o *tamanho* e *randômicidade*. Na criptografia a qualidade de uma senha é referida como sua [segurança entrópica](https://en.wikipedia.org/wiki/Entropic_security "wikipedia:Entropic security").
 
-Insecure passwords include those containing:
+Senhas inseguras possuem:
 
-*   Personally identifiable information (e.g., your dog's name, date of birth, area code, favorite video game)
-*   Simple character substitutions on words (e.g., `k1araj0hns0n`)
-*   Root "words" or common strings followed or preceded by added numbers, symbols, or characters (e.g., `DG091101%`)
-*   Common phrases or short phrases of grammatically related words (e.g. `all of the lights`), and even with character substitution.
+*   Informações pessoais identificáveis (exemplo, o nome do seu cachorro, data de nascimento, CEP, jogo favorito)
+*   Substituição de caracteres simples em palavras (exemplo, `k1araj0hns0n`)
+*   Iniciais de *palavras* ou linhas comuns seguidas ou precedidas de números, símbolos ou caracteres (exemplo, `DG091101%`)
+*   Frases comuns ou curtas de palavras gramaticamente relacionadas (e.g. `todas as luzes`), e até mesmo com substituição de caracteres.
 
-The right choice for a password is something long (8-20 characters, depending on importance) and seemingly completely random. A good technique for building secure, seemingly random passwords is to base them on characters from every word in a sentence. Take for instance “the girl is walking down the rainy street” could be translated to `t6!WdtR5` or, less simply, `t&6!RrlW@dtR,57`. This approach could make it easier to remember a password, but note that the various letters have very different probabilities of being found at the start of words ([Wikipedia:Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_the_first_letters_of_a_word_in_the_English_language "wikipedia:Letter frequency")). Also consider the [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html) method, using a sufficient number of words.
+A escolha certa para uma senha é algo longo (8-20 caracteres, dependendo da importância) e esta ser aparentemente randômica. Uma boa técnica para construí-la, é ter como base caracteres de todas as palavras em uma sequência. Por exemplo, “the girl is walking down the rainy street” pode ser traduzido para `t6!WdtR5` ou, de forma menos simples, `t&6!RrlW@dtR,57`. Esta abordagem ajuda a se lembrar da senha, mas note que várias letras tem diferentes probabilidades de serem encontradas no início de palavras ([Wikipedia:Frequência de letras](https://en.wikipedia.org/wiki/pt:Frequ%C3%AAncia_de_letras#Frequ.C3.AAncias_relativas_das_primeiras_letras_de_uma_palavra_no_idioma_Ingl.C3.AAs_e_Portugu.C3.AAs "wikipedia:pt:Frequência de letras")). Também considere o método de senha [Diceware](http://world.std.com/~reinhold/diceware.html), usando um número suficiente de palavras.
 
-A better approach is to generate pseudo-random passwords with tools like [pwgen](https://www.archlinux.org/packages/?name=pwgen) or [apg](https://aur.archlinux.org/packages/apg/): for memorizing them, one technique (for ones typed often) is to generate a long password and memorize a minimally secure number of characters, temporarily writing down the full generated string. Over time, increase the number of characters typed - until the password is ingrained in muscle memory and need not be remembered. This technique is more difficult, but can provide confidence that a password will not turn up in wordlists or "intelligent" brute force attacks that combine words and substitute characters.
+Uma melhor abordagem é gerar senhas pseudo-randômicas com ferramentas como [pwgen](https://www.archlinux.org/packages/?name=pwgen) ou [apg](https://aur.archlinux.org/packages/apg/): para memorizá-las, uma técnica (para as digitadas geralmente) é gerar uma longa senha e memorizar um número minimamente seguro de caracteres, e temporariamente escrevê-la em algum lugar. Com o passar do tempo, aumente o número de caracteres que você digita - até que a senha esteja na sua memória muscular e não precisa mais ser lembrada. Esta técnica é mais difícil, mas pode oferecer confiança que a senha não vai aparecer em listas de palavras ou ataques de força bruta "inteligentes" que combinam palavras e substituem caracteres.
 
-It is also very effective to combine these two techniques by saving long, complex random passwords with a [password manager](/index.php/Password_manager "Password manager"), which will be in turn accessed with a mnemonic password that will have to be used only for that purpose, especially avoiding to ever transmit it over any kind of network. This method of course limits the use of the stored passwords to the terminals where the database is available for reading (which on the other hand could be seen as an added security feature).
+É também muito efetivo combinar estas duas técnicas ao salvar longas, complexas senhas randômicas com um [gerenciador de senhas](/index.php/Password_manager "Password manager"), que serão acessadas com uma senha mnemônica que vai ser usada para somente esta proposta, especialmente evite transmití-la em qualquer tipo de rede. Este método limita o uso de senhas guardadas para locais onde o banco de dados está disponível para leitura (que pode ser visto como uma camada extra de segurança).
 
-See Bruce Schneier's article [Choosing Secure Passwords](https://www.schneier.com/blog/archives/2014/03/choosing_secure_1.html), [The passphrase FAQ](https://www.iusmentis.com/security/passphrasefaq/) or [Wikipedia:Password strength](https://en.wikipedia.org/wiki/Password_strength "wikipedia:Password strength") for some additional background.
+Veja o artigo (em inglês) de Bruce Schneier [Escolhendo Senhas Seguras](https://www.schneier.com/blog/archives/2014/03/choosing_secure_1.html), o [FAQ de senha](https://www.iusmentis.com/security/passphrasefaq/) ou [Wikipedia:Password strength](https://en.wikipedia.org/wiki/Password_strength "wikipedia:Password strength") para conhecimento base adicional.
 
 ### Maintaining passwords
 

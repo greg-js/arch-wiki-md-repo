@@ -177,7 +177,9 @@ You should be able to see that the hardware has been partitioned into two seats:
 
 ## Setting up Xorg
 
-Since you can attach devices to seats with `loginctl` there is no need to have an specific [Xorg configuration](/index.php/Xorg "Xorg"). Anyway you can create parts of or the entire configuration set for two server layouts, each assigned with their own keyboard, mouse, video card and monitor.
+Since you can attach devices to seats with *loginctl* there is no need to have an specific [Xorg configuration](/index.php/Xorg "Xorg"), so if you attached devices via *loginctl* creating Xorg configuration files may be skipped. Also note that setting `ServerFlags "AutoAdd*"` options to `false` forces Xorg to just ignore most of the *loginctl* attachments.
+
+Anyway you can create parts of or the entire configuration set for two server layouts, each assigned with their own keyboard, mouse, video card and monitor.
 
  `xorg.conf.d tree example:` 
 ```

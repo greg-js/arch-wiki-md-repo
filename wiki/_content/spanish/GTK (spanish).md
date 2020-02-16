@@ -1,18 +1,18 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **2018-12-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=559719) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GTK](/index.php/GTK "GTK"), revisada por última vez el **2020-02-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK&diff=0&oldid=596719) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
 *   [Uniformidad en aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)")
 *   [Qt](/index.php/Qt "Qt")
 *   [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")
-*   [GTK+/Development](/index.php/GTK%2B/Development "GTK+/Development")
+*   [GTK/Development](/index.php/GTK/Development "GTK/Development")
 
-De la [web de GTK+](http://www.gtk.org):
+De la [web de GTK](https://www.gtk.org):
 
-	GTK+, o GIMP Toolkit, es un conjunto de herramientas multiplataforma para crear interfaces gráficas de usuario. Al ofrecer un conjunto completo de widgets, GTK+ es adecuado para proyectos que van desde pequeñas herramientas con funcionalidad reducida hasta completas suites de aplicaciones.
+	GTK, o GIMP Toolkit, es un conjunto de herramientas multiplataforma para crear interfaces gráficas de usuario. Al ofrecer un conjunto completo de widgets, GTK es adecuado para proyectos que van desde pequeñas herramientas con funcionalidad reducida hasta completas suites de aplicaciones.
 
-GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") para [GIMP](/index.php/GIMP "GIMP"), pero ahora es un conjunto de herramientas popular con conectores a múltiples lenguajes de programación. Este artículo explora las herramientas utilizadas para configurar el tema GTK+, el estilo, los iconos, las fuentes y sus tamaños, y también detalla la configuración manual.
+GTK (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") para [GIMP](/index.php/GIMP "GIMP"), pero ahora es un conjunto de herramientas popular con conectores a múltiples lenguajes de programación. Este artículo explora las herramientas utilizadas para configurar el tema GTK, el estilo, los iconos, las fuentes y sus tamaños, y también detalla la configuración manual.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -22,7 +22,7 @@ GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GN
 
 *   [1 Instalación](#Instalación)
 *   [2 Temas](#Temas)
-    *   [2.1 GTK+ y Qt](#GTK+_y_Qt)
+    *   [2.1 GTK y Qt](#GTK_y_Qt)
 *   [3 Herramientas de configuración](#Herramientas_de_configuración)
 *   [4 Configuración](#Configuración)
     *   [4.1 Configuración básica del tema](#Configuración_básica_del_tema)
@@ -42,34 +42,36 @@ GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GN
     *   [6.1 Backend de Broadway](#Backend_de_Broadway)
     *   [6.2 Backend de Wayland](#Backend_de_Wayland)
 *   [7 Solución de problemas](#Solución_de_problemas)
-    *   [7.1 Diferentes temas entre aplicaciones GTK+ 2 y GTK+ 3](#Diferentes_temas_entre_aplicaciones_GTK+_2_y_GTK+_3)
+    *   [7.1 Diferentes temas entre aplicaciones GTK 2 y GTK 3](#Diferentes_temas_entre_aplicaciones_GTK_2_y_GTK_3)
     *   [7.2 Tema no aplicado en aplicaciones del superusuario](#Tema_no_aplicado_en_aplicaciones_del_superusuario)
     *   [7.3 Decoraciones del lado del cliente](#Decoraciones_del_lado_del_cliente)
     *   [7.4 Cedilla ç/Ç en lugar de ć/Ć](#Cedilla_ç/Ç_en_lugar_de_ć/Ć)
     *   [7.5 Suprimir advertencia referente al bus de accesibilidad](#Suprimir_advertencia_referente_al_bus_de_accesibilidad)
     *   [7.6 Falta de coincidencia del color de fondo de la barra de título](#Falta_de_coincidencia_del_color_de_fondo_de_la_barra_de_título)
     *   [7.7 Eventos de enfoque incorrecto con administradores de ventanas de mosaico](#Eventos_de_enfoque_incorrecto_con_administradores_de_ventanas_de_mosaico)
-    *   [7.8 Soporte de miniaturas para el diálogo del archivo GTK+ 2](#Soporte_de_miniaturas_para_el_diálogo_del_archivo_GTK+_2)
+    *   [7.8 Soporte de miniaturas para el diálogo del archivo GTK](#Soporte_de_miniaturas_para_el_diálogo_del_archivo_GTK)
     *   [7.9 Iconos de botón y menú](#Iconos_de_botón_y_menú)
-    *   [7.10 GTK+ 3 sin polkit](#GTK+_3_sin_polkit)
-    *   [7.11 Algunos temas de GTK+ 2 solo cambian la paleta de colores de la interfaz de usuario](#Algunos_temas_de_GTK+_2_solo_cambian_la_paleta_de_colores_de_la_interfaz_de_usuario)
+    *   [7.10 GTK 3 sin polkit](#GTK_3_sin_polkit)
+    *   [7.11 Algunos temas de GTK 2 solo cambian la paleta de colores de la interfaz de usuario](#Algunos_temas_de_GTK_2_solo_cambian_la_paleta_de_colores_de_la_interfaz_de_usuario)
+    *   [7.12 Parchear el selector de archivos GTK para utilizar el tipo regular antes](#Parchear_el_selector_de_archivos_GTK_para_utilizar_el_tipo_regular_antes)
 *   [8 Véase también](#Véase_también)
 
 ## Instalación
 
-Dos versiones de GTK+ estan disponibles en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Se pueden [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") con los siguientes paquetes:
+Dos versiones de GTK estan disponibles en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Se pueden [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") con los siguientes paquetes:
 
-*   **GTK+ 3.x** disponible con el paquete [gtk3](https://www.archlinux.org/packages/?name=gtk3).
-*   **GTK+ 2.x** disponible con el paquete [gtk2](https://www.archlinux.org/packages/?name=gtk2).
-*   **GTK+ 1.x** disponible con el paquete [gtk](https://aur.archlinux.org/packages/gtk/).
+*   **GTK 3.x** disponible con el paquete [gtk3](https://www.archlinux.org/packages/?name=gtk3).
+*   **GTK 2.x** disponible con el paquete [gtk2](https://www.archlinux.org/packages/?name=gtk2).
+
+**GTK 1.x** disponible con el paquete [gtk](https://aur.archlinux.org/packages/gtk/).
 
 ## Temas
 
-En GTK+ 2, el tema predeterminado es Raleigh, pero Arch Linux tiene un archivo de configuración personalizado en `/usr/share/gtk-2.0/gtkrc`, que establece Adwaita como el tema predeterminado. En GTK+ 3, el tema predeterminado es Adwaita, pero también se incluyen HighContrast, HighContrastInverse y Raleigh.
+En GTK 2, el tema predeterminado es Raleigh, pero Arch Linux tiene un archivo de configuración personalizado en `/usr/share/gtk-2.0/gtkrc`, que establece Adwaita como el tema predeterminado. En GTK 3, el tema predeterminado es Adwaita, pero también se incluyen HighContrast, HighContrastInverse y Raleigh.
 
 Para forzar un tema específico, establezca las siguientes [variables de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)").
 
-*   Para GTK+ 2, utilice `GTK2_RC_FILES`. Por ejemplo para lanzar [GIMP](/index.php/GIMP "GIMP") con el tema Raleigh:
+*   Para GTK 2, utilice `GTK2_RC_FILES`. Por ejemplo para lanzar [GIMP](/index.php/GIMP "GIMP") con el tema Raleigh:
 
 ```
 $ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc gimp
@@ -78,7 +80,7 @@ $ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc gimp
 
 **Sugerencia:** `gtkrc` puede ser también un archivo personalizado en su directorio de inicio creado por cualquiera de las [#Herramientas de configuración](#Herramientas_de_configuración). Véase [#Ejemplos](#Ejemplos).
 
-*   Para GTK+ 3, utilice `GTK_THEME`. Por ejemplo para lanzar la calculadora de GNOME con la variante oscura de Adwaita:
+*   Para GTK 3, utilice `GTK_THEME`. Por ejemplo para lanzar la calculadora de GNOME con la variante oscura de Adwaita:
 
 ```
 $ GTK_THEME=Adwaita:dark gnome-calculator
@@ -89,9 +91,9 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"). Los temas extraídos manualmente van en el directorio `~/.themes/` o `~/.local/share/themes/`.
 
-**Compatibles con GTK+ 2 y GTK+ 3.20 o posterior:**
+**Compatibles con GTK 2 y GTK 3.20 o posterior:**
 
-*   **Adapta** — Un tema Gtk+ adaptativo basado en las guías de diseño de Material Design. Incluye: Adapta, Adapta-Eta, Adapta-Nokto, Adapta-Nokto-Eta
+*   **Adapta** — Un tema GTK adaptativo basado en las guías de diseño de Material Design. Incluye: Adapta, Adapta-Eta, Adapta-Nokto, Adapta-Nokto-Eta
 
 	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://www.archlinux.org/packages/?name=adapta-gtk-theme)
 
@@ -103,7 +105,7 @@ Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/in
 
 	[https://github.com/shimmerproject/Bluebird](https://github.com/shimmerproject/Bluebird) || [xfce-theme-bluebird](https://aur.archlinux.org/packages/xfce-theme-bluebird/)
 
-*   **Breeze** — Versión GTK+ del tema predeterminado de KDE. Incluye: Breeze, Breeze-Dark
+*   **Breeze** — Versión GTK del tema predeterminado de KDE. Incluye: Breeze, Breeze-Dark
 
 	[https://cgit.kde.org/breeze-gtk.git](https://cgit.kde.org/breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
 
@@ -129,7 +131,7 @@ Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/in
 
 *   **Numix** — Un tema plano y ligero con un aspecto moderno (GNOME, Openbox, Unity, Xfce). Incluye: Numix
 
-	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://aur.archlinux.org/packages/numix-gtk-theme/)
+	[https://github.com/numixproject/numix-gtk-theme](https://github.com/numixproject/numix-gtk-theme) || [numix-gtk-theme-git](https://aur.archlinux.org/packages/numix-gtk-theme-git/)
 
 *   **Vertex** — Tema para GTK3, GTK2, Gnome-Shell y Cinnamon.
 
@@ -139,17 +141,17 @@ Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/in
 
 	[Https://github.com/lassekongo83/zuki-themes](Https://github.com/lassekongo83/zuki-themes) || [zuki-themes](https://aur.archlinux.org/packages/zuki-themes/)
 
-Hay una serie de temas GTK+ adicionales en AUR, por ejemplo: [búsqueda de gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme).
+Hay una serie de temas GTK adicionales en AUR, por ejemplo: [búsqueda de gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme).
 
-**Nota:** Debido a que GTK+ 3 cambia rápidamente, los temas GTK+ 3 a menudo requieren una revisión después de una nueva versión GTK+ 3\. Por esta razón, no todos los temas de GTK+ 3 se muestran como se pretendía cuando se utilizó con la última versión de GTK+ 3.
+**Nota:** Debido a que GTK 3 cambia rápidamente, los temas GTK 3 a menudo requieren una revisión después de una nueva versión GTK 3\. Por esta razón, no todos los temas de GTK 3 se muestran como se pretendía cuando se utilizó con la última versión de GTK 3.
 
-### GTK+ y Qt
+### GTK y Qt
 
-Si tiene aplicaciones GTK+ y Qt (KDE) en su escritorio, entonces sabe que sus apariencias no combinan bien. Si desea que los estilos GTK+ coincidan con los estilos Qt, véase [unificación de aspectos para las aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)").
+Si tiene aplicaciones GTK y Qt (KDE) en su escritorio, entonces sabe que sus apariencias no combinan bien. Si desea que los estilos GTK coincidan con los estilos Qt, véase [unificación de aspectos para las aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)").
 
 ## Herramientas de configuración
 
-La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") proporcionan herramientas para configurar el tema GTK+, los iconos, la tipografía y el tamaño de la misma, y administrar estas configuraciones a través de [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html):
+La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") proporcionan herramientas para configurar el tema GTK, los iconos, la tipografía y el tamaño de la misma, y administrar estas configuraciones a través de [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-latest.html):
 
 *   Si utiliza [Cinnamon](/index.php/Cinnamon "Cinnamon"), emplee la herramienta Temas (*cinnamon-settings themes*): diríjase a *Configuración del sistema > Temas*.
 *   Si utiliza [Enlightenment](/index.php/Enlightenment_(Espa%C3%B1ol) "Enlightenment (Español)"): diríjase a *Configuración > Todos > Aspecto > Tema de aplicación*.
@@ -159,56 +161,56 @@ La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa
 
 Otras herramientas del GUI generalmente sobrescriben los [archivos de configuración](#Configuración).
 
-**Compatibles con GTK+ 2 y GTK+ 3:**
+**Compatibles con GTK 2 y GTK 3:**
 
-*   **KDE GTK Configurator** — Aplicación que le permite cambiar el estilo y la tipografía de las aplicaciones GTK+ 2 y Gtk+ 3.
+*   **KDE GTK Configurator** — Aplicación que le permite cambiar el estilo y la tipografía de las aplicaciones GTK 2 y GTK 3.
 
 	[Https://cgit.kde.org/kde-gtk-config.git](Https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-	Después de la instalación, `kde-gtk-config` se puede encontrar también en *Configuración del sistema > Estilo de aplicación > GTK*.
+	Después de la instalación, `kde-gtk-config` se puede encontrar también en *Configuración del sistema > Estilo de aplicación > Estilo de aplicación GNOME/GTK*.
 
-*   **LXAppearance** — Herramienta independiente del escritorio de configuración de estilo GTK+ 2 y GTK+ 3 del proyecto LXDE (no requiere otras partes del escritorio LXDE).
+*   **LXAppearance** — Herramienta independiente del escritorio de configuración de estilo GTK 2 y GTK 3 del proyecto LXDE (no requiere otras partes del escritorio LXDE).
 
 	[Http://wiki.lxde.org/en/LXAppearance](Http://wiki.lxde.org/en/LXAppearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
 
-*   **Oo-mox** — Aplicación gráfica para generar diferentes variaciones de color de los temas Numix y Flat-Plat (GTK+ 2 y 3), Archdroid y Gnome-Colors. También permite generar temas GTK+ 2 pre-escalados para pantallas HiDPI.
+*   **Oo-mox** — Aplicación gráfica para generar diferentes variaciones de color de los temas Numix y Flat-Plat (GTK 2 y 3), Archdroid y Gnome-Colors. También permite generar temas GTK 2 pre-escalados para pantallas HiDPI.
 
 	[https://github.com/actionless/oomox](https://github.com/actionless/oomox) || [oomox](https://aur.archlinux.org/packages/oomox/)
 
-**Compatible solo con GTK+ 2:**
+**Compatible solo con GTK 2:**
 
-*   **GTK+ Change Theme** — Pequeño programa que le permite cambiar su tema GTK+ 2.0 (considerada una mejor alternativa a *switch2*).
+*   **GTK Change Theme** — Pequeño programa que le permite cambiar su tema GTK 2.0 (considerada una mejor alternativa a *switch2*).
 
 	[Http://plasmasturm.org/code/gtk-chtheme/](Http://plasmasturm.org/code/gtk-chtheme/) || [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme)
 
-*   **GTK+ Preference Tool** — Selector de temas GTK+ y cambio de tipografía.
+*   **GTK Preference Tool** — Selector de temas GTK y cambio de tipografía.
 
 	[Http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool](Http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool) || [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/)
 
-*   **GTK+ Theme Switch** — Intercambiador simple de temas GTK+.
+*   **GTK Theme Switch** — Intercambiador simple de temas GTK.
 
 	[http://muhri.net/nav.php3?node=gts](http://muhri.net/nav.php3?node=gts) || [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2)
 
 ## Configuración
 
-Los ajustes de GTK+ se puede especificar manualmente en los archivos de configuración, pero los entornos de escritorio y las aplicaciones pueden anular esta configuración. Dependiendo de la versión GTK+, estos archivos se encuentran en:
+Los ajustes de GTK se puede especificar manualmente en los archivos de configuración, pero los entornos de escritorio y las aplicaciones pueden anular esta configuración. Dependiendo de la versión GTK, estos archivos se encuentran en:
 
-*   GTK+ 2 específico del usuario: `~/.gtkrc-2.0`
-*   GTK+ 2 en todo el sistema: `/etc/gtk-2.0/gtkrc`
-*   GTK+ 3 específico del usuario: `$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, o `$HOME/.config/gtk-3.0/settings.ini` si `$XDG_CONFIG_HOME` no está establecido
-*   GTK+ 3 en todo el sistema: `/etc/gtk-3.0/settings.ini`
+*   GTK 2 específico del usuario: `~/.gtkrc-2.0`
+*   GTK 2 en todo el sistema: `/etc/gtk-2.0/gtkrc`
+*   GTK 3 específico del usuario: `$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, o `$HOME/.config/gtk-3.0/settings.ini` si `$XDG_CONFIG_HOME` no está establecido
+*   GTK 3 en todo el sistema: `/etc/gtk-3.0/settings.ini`
 
 **Nota:**
 
-*   Véase [Propiedades *GtkSettings* de GTK+ 3](http://library.gnome.org/devel/gtk3/stable/GtkSettings.html#GtkSettings.properties) (y [Propiedades de GTK+ 2](http://library.gnome.org/devel/gtk2/stable/GtkSettings.html#GtkSettings.properties)) en el manual de referencia de programación de GTK+ para ver la lista completa de las opciones de configuración actualmente admitidas de GTK+.
-*   Algunas de las configuraciones que se describen a continuación (como `gtk-icon-size`) están en desuso y se ignoran desde GTK+ 3.10.
-*   Si edita sus archivos de configuración GTK+, solo las aplicaciones recién iniciadas mostrarán los cambios.
+*   Véase [Propiedades *GtkSettings* de GTK 3](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings.properties) (y [Propiedades de GTK 2](https://developer.gnome.org/gtk2/stable/GtkSettings.html#GtkSettings.properties)) en el manual de referencia de programación de GTK para ver la lista completa de las opciones de configuración actualmente admitidas de GTK.
+*   Algunas de las configuraciones que se describen a continuación (como `gtk-icon-size`) están en desuso y se ignoran desde GTK 3.10.
+*   Si edita sus archivos de configuración GTK, solo las aplicaciones recién iniciadas mostrarán los cambios.
 
 ### Configuración básica del tema
 
-Para cambiar manualmente el tema, los iconos, la tipografía y el tamaño de la fuente GTK+, añada lo siguiente a los archivos de configuración, por ejemplo:
+Para cambiar manualmente el tema, los iconos, la tipografía y el tamaño de la fuente GTK, añada lo siguiente a los archivos de configuración, por ejemplo:
 
-*   GTK+ 2:
+*   GTK 2:
 
  `~/.gtkrc-2.0` 
 ```
@@ -217,7 +219,7 @@ gtk-theme-name = "Adwaita"
 gtk-font-name = "DejaVu Sans 11"
 ```
 
-*   GTK+ 3:
+*   GTK 3:
 
  `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
 ```
@@ -227,11 +229,11 @@ gtk-theme-name = Adwaita
 gtk-font-name = DejaVu Sans 11
 ```
 
-**Nota:** El nombre del tema del icono es el nombre definido en el archivo de índice del tema, *no* el nombre de su directorio.
+**Nota:** El nombre del tema del icono es el mismo que su directorio, *no* la propiedad *name* de su `index.theme`.
 
 ### Variante oscura del tema
 
-Algunos temas de GTK+ 3 contienen una variante oscura del tema, pero solo se usa de forma predeterminada cuando la aplicación lo solicita explícitamente. Para usar la variante oscura del tema con todas las aplicaciones GTK+ 3, establezca:
+Algunos temas de GTK 3 contienen una variante oscura del tema, pero solo se usa de forma predeterminada cuando la aplicación lo solicita explícitamente. Para usar la variante oscura del tema con todas las aplicaciones GTK 3, establezca:
 
 ```
 gtk-application-prefer-dark-theme = true
@@ -240,7 +242,7 @@ gtk-application-prefer-dark-theme = true
 
 ### Atajos de teclado
 
-Los atajos de teclado (también conocidos como "aceleradores" en GTK+ o métodos abreviados de teclado) se pueden cambiar al colocar el ratón sobre el elemento del menú correspondiente y presionar la combinación de teclas deseada. Para habilitar esta característica, establezca:
+Los atajos de teclado (también conocidos como "aceleradores" en GTK o métodos abreviados de teclado) se pueden cambiar al colocar el ratón sobre el elemento del menú correspondiente y presionar la combinación de teclas deseada. Para habilitar esta característica, establezca:
 
 ```
 gtk-can-change-accels = 1
@@ -249,7 +251,7 @@ gtk-can-change-accels = 1
 
 #### Combinaciones de teclas Emacs
 
-Para tener combinaciones de teclas similares a Emacs en aplicaciones GTK+, añada lo siguiente:
+Para tener combinaciones de teclas similares a Emacs en aplicaciones GTK, añada lo siguiente:
 
  `~/.gtkrc-2.0`  `gtk-key-theme-name = "Emacs"`  `~/.config/gtk-3.0/settings.ini` 
 ```
@@ -257,7 +259,7 @@ Para tener combinaciones de teclas similares a Emacs en aplicaciones GTK+, añad
 gtk-key-theme-name = Emacs
 ```
 
-Para GTK+3 ejecute también:
+Para GTK 3 ejecute también:
 
 ```
 $ gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
@@ -341,7 +343,7 @@ gtk-enable-primary-paste=false
 
 Abra el selector de archivos dentro del **directorio de trabajo actual** y no en la ubicación **reciente**. Normalmente, el **directorio de trabajo actual** es el **directorio personal**.
 
-**GTK+ 3**
+**GTK 3**
 
 Cambie el [ajuste](/index.php/GNOME_(Espa%C3%B1ol)#Configuración "GNOME (Español)") con la orden siguiente:
 
@@ -350,7 +352,7 @@ $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
 
 ```
 
-**GTK+ 2**
+**GTK 2**
 
 Añada lo siguiente a `~/.config/gtk-2.0/gtkfilechooser.ini`:
 
@@ -361,11 +363,11 @@ StartupMode=cwd
 
 ### Comportamiento de desplazamiento heredado
 
-**Nota:** Esta configuración no es obedecida por todas las aplicaciones GTK+.
+**Nota:** Esta configuración no es obedecida por todas las aplicaciones GTK.
 
 **Sugerencia:** El comportamiento de desplazamiento heredado se puede lograr de manera segura pulsando simplemente con el botón derecho en lugar de pulsar con el botón izquierdo.
 
-Antes de GTK+ 3.6, pulsando a cada lado del control deslizante en la barra de desplazamiento movía la barra de desplazamiento aproximadamente una página en la dirección donde pulsaba. Desde GTK+ 3.6, el control deslizante se mueve directamente a la posición donde se pulsa. Este comportamiento se puede revertir en algunas aplicaciones creando el archivo con el contenido siguiente:
+Antes de GTK 3.6, pulsando a cada lado del control deslizante en la barra de desplazamiento movía la barra de desplazamiento aproximadamente una página en la dirección donde pulsaba. Desde GTK 3.6, el control deslizante se mueve directamente a la posición donde se pulsa. Este comportamiento se puede revertir en algunas aplicaciones creando el archivo con el contenido siguiente:
 
  `~/.config/gtk-3.0/settings.ini` 
 ```
@@ -376,9 +378,9 @@ gtk-primary-button-warps-slider = false
 
 ### Deshabilitar las barras de desplazamiento superpuestas
 
-Desde GTK+ 3.15, las barras de desplazamiento superpuestas están habilitadas de forma predeterminada, lo que significa que las barras de desplazamiento se mostrarán solo al pasar el ratón en las aplicaciones de GTK+ 3\. Este comportamiento se puede revertir configurando la siguiente variable de entorno: `GTK_OVERLAY_SCROLLING=0`. Véase [Aplicaciones gráficas](/index.php/Environment_variables_(Espa%C3%B1ol)#Aplicaciones_gráficas "Environment variables (Español)").
+Desde GTK 3.15, las barras de desplazamiento superpuestas están habilitadas de forma predeterminada, lo que significa que las barras de desplazamiento se mostrarán solo al pasar el ratón en las aplicaciones de GTK 3\. Este comportamiento se puede revertir configurando la siguiente variable de entorno: `GTK_OVERLAY_SCROLLING=0`. Véase [Aplicaciones gráficas](/index.php/Environment_variables_(Espa%C3%B1ol)#Aplicaciones_gráficas "Environment variables (Español)").
 
-GTK+ 4 ya no admitirá `GTK_OVERLAY_SCROLLING`. Ya ha sido [eliminado](https://github.com/GNOME/gtk/commit/e49615184a9d85bb0bb4e289b3ee8252adee3813#diff-3cf94c6e1eb009e20985034bc2210bfd) de la rama principal de desarrollo. A partir de GTK+ 4, la naturaleza de superposición de las barras de desplazamiento es parte del kit de herramientas. Se ha eliminado el conmutador general para evitar que los desarrolladores rompan aplicaciones que no han sido probadas con ambas combinaciones. Para permitir que los desarrolladores de aplicaciones decidan qué aspecto deberían tener sus aplicaciones, en su lugar, el kit de herramientas proporciona un mecanismo para excluir o añadir una configuración para los usuarios. La función [gtk_scrolled_window_set_overlay_scrolling()](https://developer.gnome.org/gtk3/stable/GtkScrolledWindow.html#gtk-scrolled-window-setlay-scrolling) se puede usar para habilitar/deshabilitar las barras de desplazamiento superpuestas *por cada usuario*. Los desarrolladores de aplicaciones pueden utilizar opcionalmente [GSettings](https://blog.gtk.org/2017/05/01/first-steps-with-gsettings/) para que el usuario tenga una configuración vinculada a esta propiedad.
+GTK 4 ya no admitirá `GTK_OVERLAY_SCROLLING`. Ya ha sido [eliminado](https://github.com/GNOME/gtk/commit/e49615184a9d85bb0bb4e289b3ee8252adee3813#diff-3cf94c6e1eb009e20985034bc2210bfd) de la rama principal de desarrollo. A partir de GTK 4, la naturaleza de superposición de las barras de desplazamiento es parte del kit de herramientas. Se ha eliminado el conmutador general para evitar que los desarrolladores rompan aplicaciones que no han sido probadas con ambas combinaciones. Para permitir que los desarrolladores de aplicaciones decidan qué aspecto deberían tener sus aplicaciones, en su lugar, el kit de herramientas proporciona un mecanismo para excluir o añadir una configuración para los usuarios. La función [gtk_scrolled_window_set_overlay_scrolling()](https://developer.gnome.org/gtk3/stable/GtkScrolledWindow.html#gtk-scrolled-window-setlay-scrolling) se puede usar para habilitar/deshabilitar las barras de desplazamiento superpuestas *por cada usuario*. Los desarrolladores de aplicaciones pueden utilizar opcionalmente [GSettings](https://blog.gtk.org/2017/05/01/first-steps-with-gsettings/) para que el usuario tenga una configuración vinculada a esta propiedad.
 
 #### Eliminar indicadores de la barra de desplazamiento de superposición
 
@@ -386,14 +388,14 @@ Las posiciones de las barras de desplazamiento de superposición se indican medi
 
  `~/.config/gtk-3.0/gtk.css` 
 ```
-/* Remove dotted lines from GTK+ 3 applications */
+/* Remove dotted lines from GTK 3 applications */
 undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
 
 ```
 
 ## Ejemplos
 
-Ejemplo de configuración de GTK+:
+Ejemplo de configuración de GTK:
 
 **Nota:** Puede ser ignorado por algunos [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") (por ejemplo, [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)")).
  `~/.gtkrc-2.0` 
@@ -438,11 +440,11 @@ gtk-decoration-layout=menu:close
 
 ## Backends de GDK
 
-GDK (la capa de abstracción subyacente de GTK+) admite varios backends para mostrar aplicaciones de GTK+. El backend predeterminado es *x11*.
+GDK (la capa de abstracción subyacente de GTK) admite varios backends para mostrar aplicaciones de GTK. El backend predeterminado es *x11*.
 
 ### Backend de Broadway
 
-El backend de GDK Broadway proporciona soporte para mostrar aplicaciones GTK+ en un navegador web, utilizando HTML5 y sockets web. [[4]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
+El backend de GDK Broadway proporciona soporte para mostrar aplicaciones GTK en un navegador web, utilizando HTML5 y sockets web. [[4]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
 
 Cuando use broadwayd, especifique el número de pantalla a emplear, con el prefijo de dos puntos, similar a X. El número de pantalla predeterminado es 1.
 
@@ -489,11 +491,11 @@ El backend de GDK [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español
 
 ## Solución de problemas
 
-### Diferentes temas entre aplicaciones GTK+ 2 y GTK+ 3
+### Diferentes temas entre aplicaciones GTK 2 y GTK 3
 
-En general, si un tema seleccionado es compatible con GTK+ 2 y GTK+ 3, este se aplicará a todas las aplicaciones GTK+ 2 y GTK+ 3\. Si un tema seleccionado solo es compatible con GTK+ 2, se utilizará para las aplicaciones de GTK+ 2 y el tema predeterminado de GTK+ se utilizará para las aplicaciones de GTK+ 3\. Si el tema seleccionado solo es compatible con GTK+ 3, se utilizará para las aplicaciones de GTK+ 3 y el tema predeterminado de GTK+ se utilizará para las aplicaciones de GTK+ 2\. Por lo tanto, para la consistencia del tema de la aplicación, es mejor utilizar un tema que sea compatible con GTK+ 2 y GTK+ 3.
+En general, si un tema seleccionado es compatible con GTK 2 y GTK 3, este se aplicará a todas las aplicaciones GTK 2 y GTK 3\. Si un tema seleccionado solo es compatible con GTK 2, se utilizará para las aplicaciones de GTK 2 y el tema predeterminado de GTK se utilizará para las aplicaciones de GTK 3\. Si el tema seleccionado solo es compatible con GTK 3, se utilizará para las aplicaciones de GTK 3 y el tema predeterminado de GTK se utilizará para las aplicaciones de GTK 2\. Por lo tanto, para la consistencia del tema de la aplicación, es mejor utilizar un tema que sea compatible con GTK 2 y GTK 3.
 
-Puede encontrar qué temas instalados en su sistema tienen las versiones GTK+ 2 y GTK+ 3 mediante esta orden (no funciona con nombres que contengan espacios):
+Puede encontrar qué temas instalados en su sistema tienen las versiones GTK 2 y GTK 3 mediante esta orden (no funciona con nombres que contengan espacios):
 
 ```
 find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.*\)\/gtk-3.0$/\1/") -wholename "*/gtk-2.0" | sed -e "s/.*\/\(.*\)\/gtk-2.0/\1"/
@@ -512,7 +514,7 @@ Como los archivos de temas del usuario (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`,
 
 ```
 
-*   Configurar los archivos de temas en todo el sistema: `/etc/gtk-3.0/settings.ini` (GTK+ 3) o `/etc/gtk-2.0/gtkrc` (GTK+ 2)
+*   Configurar los archivos de temas en todo el sistema: `/etc/gtk-3.0/settings.ini` (GTK 3) o `/etc/gtk-2.0/gtkrc` (GTK 2)
 *   Ajustar el tema como superusuario:
 
 ```
@@ -524,7 +526,7 @@ Como los archivos de temas del usuario (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`,
 
 ### Decoraciones del lado del cliente
 
-GTK 3.12 introdujo las [decoraciones del lado del cliente](http://blogs.gnome.org/mclasen/2013/12/05/client-side-decorations-in-themes/), que separa la barra de título del administrador de ventanas. Esto puede presentar problemas como las [dobles barras de títulos](http://redmine.audacious-media-player.org/boards/1/topics/1135), la no existencia de estas o las [sombras dobles](https://github.com/chjj/compton/issues/189) con la composición habilitada.
+GTK 3.12 introdujo las [decoraciones del lado del cliente](https://blogs.gnome.org/mclasen/2013/12/05/client-side-decorations-in-themes/), que separa la barra de título del administrador de ventanas. Esto puede presentar problemas como las [dobles barras de títulos](http://redmine.audacious-media-player.org/boards/1/topics/1135), la no existencia de estas o las [sombras dobles](https://github.com/chjj/compton/issues/189) con la composición habilitada.
 
 Para eliminar la sombra y la brecha alrededor de las ventanas (por ejemplo, en combinación con un administrador de ventanas de mosaico), cree el siguiente archivo:
 
@@ -585,7 +587,7 @@ Para suprimir estas advertencias, ejecute los programas con `NO_AT_BRIDGE=1` o c
 
 ### Falta de coincidencia del color de fondo de la barra de título
 
-Si está utilizando un [administrador de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") que utiliza un tema de decoración de ventanas que imita el color de fondo del tema GTK+, es posible que el color de la barra de título ya no coincida completamente con el color de la aplicación en algunas aplicaciones GTK+ 3\. Como solución, cree el siguiente archivo:
+Si está utilizando un [administrador de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") que utiliza un tema de decoración de ventanas que imita el color de fondo del tema GTK, es posible que el color de la barra de título ya no coincida completamente con el color de la aplicación en algunas aplicaciones GTK 3\. Como solución, cree el siguiente archivo:
 
  `~/.config/gtk-3.0/gtk.css` 
 ```
@@ -612,17 +614,17 @@ NautilusWindow {
 
 ### Eventos de enfoque incorrecto con administradores de ventanas de mosaico
 
-**Nota:** Esto deshabilita el soporte de la pantalla táctil para aplicaciones GTK+ 3\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
+**Nota:** Esto desactiva el soporte de la pantalla táctil y el desplazamiento suave para aplicaciones GTK 3\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
 
-[Defina](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` para utilizar la entrada de estilo GTK+ 2, en lugar de xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
+[Defina](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` para utilizar la entrada de estilo GTK 2, en lugar de xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
 
-### Soporte de miniaturas para el diálogo del archivo GTK+ 2
+### Soporte de miniaturas para el diálogo del archivo GTK
 
-Instale [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) para tener la opción de ver los archivos como miniaturas en lugar de la lista en el selector de archivos de GTK+.
+Instale [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) y [gtk3-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk3-patched-filechooser-icon-view/) para tener la opción de ver los archivos como miniaturas en lugar de la lista en el selector de archivos de GTK.
 
 ### Iconos de botón y menú
 
-Para algunas aplicaciones en la sesión de Wayland de GNOME. Su archivo `~/.config/gtk-3.0/settings.ini` está mal configurado. Esto puede ocurrir si prueba otros entornos de escritorio basados ​​en GTK+. Estos son los valores afectados:
+Para algunas aplicaciones en la sesión de Wayland de GNOME. Su archivo `~/.config/gtk-3.0/settings.ini` está mal configurado. Esto puede ocurrir si prueba otros entornos de escritorio basados ​​en GTK. Estos son los valores afectados:
 
  `~/.config/gtk-3.0/settings.ini` 
 ```
@@ -633,15 +635,21 @@ gtk-menu-images=1
 
 Simplemente cámbielos a 0 o elimine todo el archivo para usar los valores predeterminados de GNOME.
 
-### GTK+ 3 sin polkit
+### GTK 3 sin polkit
 
-GTK+ 3 depende del polkit a través de colord, que es requerido para imprimir. Sin embargo, la impresión funciona bien sin polkit instalado; al menos con una impresora monocromática y versiones de paquete gtk3-print-backends=3.22.19-2 y colord=1.4.1-1.
+GTK 3 depende del polkit a través de colord, que es requerido para imprimir. Sin embargo, la impresión funciona bien sin polkit instalado; al menos con una impresora monocromática y versiones de paquete gtk3-print-backends=3.22.19-2 y colord=1.4.1-1.
 
-### Algunos temas de GTK+ 2 solo cambian la paleta de colores de la interfaz de usuario
+### Algunos temas de GTK 2 solo cambian la paleta de colores de la interfaz de usuario
 
-Según el tema elegido compatible con GTK+ 2, los controles de la interfaz de usuario pueden tener la apariencia predeterminada de Raleigh, posiblemente con una paleta de colores diferente. Esto se debe a que estos temas requieren el motor Murrine de GTK+ 2, que no está disponible (los programas GTK+ 2 deben avisar de ello en su salida de error estándar). Instale el paquete [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine).
+Según el tema elegido compatible con GTK 2, los controles de la interfaz de usuario pueden tener la apariencia predeterminada de Raleigh, posiblemente con una paleta de colores diferente. Esto se debe a que estos temas requieren el motor Murrine de GTK 2, que no está disponible (los programas GTK 2 deben avisar de ello en su salida de error estándar). Instale el paquete [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine).
+
+### Parchear el selector de archivos GTK para utilizar el tipo regular antes
+
+El selector de archivos GTK utiliza la misma característica de búsqueda anticipada que [GNOME/Files](/index.php/GNOME_(Espa%C3%B1ol)/Files_(Espa%C3%B1ol) "GNOME (Español)/Files (Español)"). Esto puede ser muy discordante y no encajar muy bien con otros entornos de escritorio.
+
+Algunas aplicaciones admiten XDG-desktop-portal que permite que la aplicación utilice el selector de archivos nativo. Si eso no funciona, puede restaurar la funcionalidad de escritura anticipada utilizando un GTK parcheado, por ejemplo [gtk3-mushrooms](https://aur.archlinux.org/packages/gtk3-mushrooms/).
 
 ## Véase también
 
-*   [Web oficial de GTK+](http://www.gtk.org/)
-*   [Artículo en Wikipedia sobre GTK+](https://en.wikipedia.org/wiki/es:GTK%2B "wikipedia:es:GTK+")
+*   [Web oficial de GTK](https://www.gtk.org/)
+*   [Artículo en Wikipedia sobre GTK](https://en.wikipedia.org/wiki/es:GTK "wikipedia:es:GTK")

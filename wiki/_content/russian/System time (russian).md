@@ -1,6 +1,10 @@
 В операционной системе время (часы) определяется четыремя понятиями: значение времени, стандарт времени, часовой пояс и, если необходимо, летнее время (Daylight Saving Time (DST)). В этой статье рассказывается о каждом из них, а также как прочитать/установить их значения.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Введение](#Введение)
 *   [2 Стандарты времени](#Стандарты_времени)

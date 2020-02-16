@@ -314,6 +314,13 @@ NetworkManager is [controlled](/index.php/Systemd#Using_units "Systemd") with th
 
 NetworkManager has a global configuration file at `/etc/NetworkManager/NetworkManager.conf`. Addition configuration files can be placed in `/etc/NetworkManager/conf.d/`. Usually no configuration needs to be done to the global defaults.
 
+After editing a configuration file, the changes can be applied by running:
+
+```
+# nmcli general reload
+
+```
+
 ### Enable NetworkManager Wait Online
 
 If you have services which fail if they are started before the network is up, you may use `NetworkManager-wait-online.service` in addition to `NetworkManager.service`. This is, however, rarely necessary because most networked daemons start up okay, even if the network has not been configured yet.
@@ -471,7 +478,7 @@ Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been i
 dns=dnsmasq
 ```
 
-Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The original DNS servers can be found in `/run/NetworkManager/no-stub-resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `drill example.com` and verifying the server and query times.
+Now run `nmcli general reload` as root. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The original DNS servers can be found in `/run/NetworkManager/no-stub-resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `drill example.com` and verifying the server and query times.
 
 **Note:**
 
@@ -1066,7 +1073,7 @@ unmanaged-devices=mac:00:22:68:1c:59:b1;mac:00:1E:65:30:D1:C4;interface-name:eth
 
 ```
 
-After you have put this in, [restart](/index.php/Restart "Restart") `NetworkManager.service`, and you should be able to configure interfaces without NetworkManager altering what you have set.
+After editing the file, run `nmcli general reload` as root. Afterwards you should be able to configure interfaces without NetworkManager altering what you have set.
 
 ### Configuring MAC address randomization
 

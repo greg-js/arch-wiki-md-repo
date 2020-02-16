@@ -80,8 +80,6 @@ After installing [chrome-token-signing](https://aur.archlinux.org/packages/chrom
 
 To enable PIN 1 authentication in [Firefox](/index.php/Firefox "Firefox") you should install [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/) and [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/). After restarting the browser make sure that "Firefox PKCS11 loader" extension is enabled. You can also follow manual instructions at [Smartcards#Mozilla Firefox](/index.php/Smartcards#Mozilla_Firefox "Smartcards").
 
-For [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) and other other Firefox forks you can use [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
-
 #### For new cards issued since December 2018
 
 The [opensc-git](https://aur.archlinux.org/packages/opensc-git/) package provides drivers for EstEID 2018+ [[2]](https://github.com/OpenSC/OpenSC/pull/1635).

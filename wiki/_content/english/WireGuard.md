@@ -327,7 +327,7 @@ peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
 
 ### Routes are periodically reset
 
-If you are not configuring WireGuard from [NetworkManager](/index.php/NetworkManager "NetworkManager"), make sure that NetworkManager is not managing the WireGuard interface(s):
+Users of [NetworkManager](/index.php/NetworkManager "NetworkManager") should make sure that it [is not managing](/index.php/NetworkManager#Ignore_specific_devices "NetworkManager") the WireGuard interface(s). For example, create the following configuration file:
 
  `/etc/NetworkManager/conf.d/unmanaged.conf` 
 ```
@@ -343,9 +343,9 @@ By default *wg-quick* uses *resolvconf* to register new [DNS](/index.php/DNS "DN
 
 The solution is to use networking software that supports [resolvconf](/index.php/Resolvconf "Resolvconf").
 
-**Note:** If you are using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), make sure that [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) is [installed](/index.php/Install "Install").
+**Note:** Users of [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") should make sure that [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) is [installed](/index.php/Install "Install").
 
-In case of [NetworkManager](/index.php/NetworkManager "NetworkManager"), it does not use resolvconf by default. This will not be an issue when using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), but if you do not use systemd-resolved, [install](/index.php/Install "Install") [openresolv](https://www.archlinux.org/packages/?name=openresolv) and configure NetworkManager to use it: [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
+Users of [NetworkManager](/index.php/NetworkManager "NetworkManager") should know that it does not use resolvconf by default. It is recommended to use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"). If this is undesirable, [install](/index.php/Install "Install") [openresolv](https://www.archlinux.org/packages/?name=openresolv) and configure NetworkManager to use it: [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
 
 ### Low MTU
 
@@ -495,9 +495,9 @@ If the WireGuard server is frequently changing its IP-address due DHCP, Dyndns, 
 
 Also be aware, if the endpoint is ever going to change its address (for example when moving to a new provider/datacenter), just updating DNS will not be enough, so periodically running reresolve-dns might make sense on any DNS-based setup.
 
-Luckily, [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) provides an example script `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh`, that parses WG configuration files and automatically resets the endpoint address.
+Luckily, [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) provides an example script `/usr/share/wireguard-tools/examples/reresolve-dns/reresolve-dns.sh`, that parses WG configuration files and automatically resets the endpoint address.
 
-One needs to run the `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh /etc/wireguard/wg.conf` periodically to recover from an endpoint that has changed its IP.
+One needs to run the `/usr/share/wireguard-tools/examples/reresolve-dns/reresolve-dns.sh /etc/wireguard/wg.conf` periodically to recover from an endpoint that has changed its IP.
 
 One way of doing so is by updating all WireGuard endpoints once every thirty seconds[[3]](https://git.zx2c4.com/WireGuard/tree/contrib/examples/reresolve-dns/README) via a systemd timer:
 
@@ -521,7 +521,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do /usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh "$i"; done'
+ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do /usr/share/wireguard-tools/examples/reresolve-dns/reresolve-dns.sh "$i"; done'
 ```
 
 Afterwards [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `wireguard_reresolve-dns.timer`

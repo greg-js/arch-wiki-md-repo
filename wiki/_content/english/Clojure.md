@@ -6,7 +6,7 @@
 
 ## REPL
 
-To run the REPL, install [leiningen](http://leiningen.org/) from [leiningen](https://aur.archlinux.org/packages/leiningen/) [AUR](/index.php/AUR "AUR") package. Then in a terminal type
+To run the REPL, install [leiningen](http://leiningen.org/) from [leiningen](https://www.archlinux.org/packages/?name=leiningen) [AUR](/index.php/AUR "AUR") package. Then in a terminal type
 
 ```
 lein repl

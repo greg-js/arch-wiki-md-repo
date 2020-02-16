@@ -23,6 +23,7 @@ Related articles
         *   [5.2.2 At boot (systemd)](#At_boot_(systemd))
             *   [5.2.2.1 802.1x/radius](#802.1x/radius)
     *   [5.3 wpa_cli action script](#wpa_cli_action_script)
+    *   [5.4 Roaming](#Roaming)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 nl80211 driver not supported on some hardware](#nl80211_driver_not_supported_on_some_hardware)
     *   [6.2 Problem with mounted network shares (cifs) and shutdown](#Problem_with_mounted_network_shares_(cifs)_and_shutdown)
@@ -334,6 +335,21 @@ Remember to make the script executable, then use the `-a` flag to pass the scrip
 $ wpa_cli -a */path/to/script*
 
 ```
+
+### Roaming
+
+When connected to a wireless network with multiple access points, *wpa_supplicant* is typically responsible for roaming between access points. Choosing a new access point requires *wpa_supplicant* to perform a scan of available networks, which causes a brief interruption in connectivity to the current access point while the wireless radio scans other frequencies. After a scan, if *wpa_supplicant* detects a closer access point (BSSID) in the current network (SSID), in terms of signal strength (RSSI), it will re-associate to the closer access point.
+
+The default configuration of *wpa_supplicant* has relatively timid roaming: it will rescan only when the association to the current access point is lost. This means that, if a client moves far away from its current access point, but not far enough to completely lose signal, the client will keep using the weak signal instead of roaming to a closer access point.
+
+To make *wpa_supplicant* more aggressive about roaming, set the `bgscan` parameter in the configuration file, such as:
+
+```
+bgscan="simple:30:-70:3600"
+
+```
+
+The above example will cause *wpa_supplicant* to scan every 30 seconds when the signal is weak (below -70), and every 3600 seconds otherwise. `bgscan` can be specified either in specific `network` blocks or globally for all networks.
 
 ## Troubleshooting
 

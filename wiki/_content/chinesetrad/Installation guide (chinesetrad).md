@@ -1,4 +1,4 @@
-**翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2020-01-27。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid={{{3}}})查看英文頁面之後的變更。
+**翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2020-02-11。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid={{{3}}})查看英文頁面之後的變更。
 
 此文件是個引導你透過官方安裝映像的 Live 系統安裝 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 的教學。在安裝前，建議先閱讀 [FAQ](/index.php/FAQ "FAQ"). 關於此文件使用的慣例字詞，請閱讀 [Help:Reading](/index.php/Help:Reading "Help:Reading"). 一些情況下，範例程式碼可能包含佔位符（以`*斜體*`格式化），其需要手動替換。
 
@@ -109,13 +109,13 @@ live 環境可從 [USB 隨身碟](/index.php/USB_flash_installation_media "USB f
 
 按以下步驟連線到網際網路：
 
-*   確認網路界面被列出且已被啓用，如使用 [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
+*   確認網路介面被列出且已被啓用，如使用 [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
 *   連線到忘記網路。插入乙太網路線或[連線到無線網路](/index.php/Wireless_network_configuration "Wireless network configuration")。
 *   設定網路連線：
     *   [靜態 IP](/index.php/Network_configuration#Static_IP_address "Network configuration")
     *   動態 IP：使用 [DHCP](/index.php/DHCP "DHCP").
 
-    **注意:** 在引導時，安裝鏡像會自動啓動 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*界面*.service`) 來設定[有線網路設備](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)。
+    **注意:** 在引導時，安裝鏡像會自動啓動 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*介面*.service`) 來設定[有線網路設備](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)。
 
 *   連線狀態可使用 [ping](https://en.wikipedia.org/wiki/ping "wikipedia:ping") 來確認： `# ping archlinux.org` 
 
@@ -316,7 +316,7 @@ live 環境可從 [USB 隨身碟](/index.php/USB_flash_installation_media "USB f
 
 一般不需要創建新的 *initramfs*, 因為在使用 *pacstrap* 安裝[核心](/index.php/Kernel "Kernel")時， [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 已經被自動執行。
 
-要在 [LVM](/index.php/LVM#Adding_mkinitcpio_hooks "LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") 或 [RAID](/index.php/RAID#Configure_mkinitcpio "RAID") 上安裝 Arch Linux, 編輯 [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) 並重新生成 initramfs:
+要在 [LVM](/index.php/Install_Arch_Linux_on_LVM#Adding_mkinitcpio_hooks "Install Arch Linux on LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") 或 [RAID](/index.php/RAID#Configure_mkinitcpio "RAID") 上安裝 Arch Linux, 編輯 [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) 並重新生成 initramfs:
 
 ```
 # mkinitcpio -P

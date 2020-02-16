@@ -79,6 +79,6 @@ It includes almost all features tomb offers, but is still in active development 
 ## See also
 
 *   [manpage](http://tomb.dyne.org/manual.html)
-*   [home page](http://tomb.dyne.org/)
+*   [home page](https://www.dyne.org/software/tomb/)
 *   [quickstart](https://github.com/dyne/Tomb/wiki/Quickstart)
 *   [advanced features](https://github.com/dyne/Tomb/wiki/Advancedfeatures)

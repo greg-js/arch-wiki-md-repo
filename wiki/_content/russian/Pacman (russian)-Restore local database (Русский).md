@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Дата последней синхронизации: 1 августа 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=578662).
+**Состояние перевода:** На этой странице представлен перевод статьи [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Дата последней синхронизации: 13 февраля 2020\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=596951).
 
 Несколько признаков необходимости восстановления локальной базы данных pacman:
 
@@ -81,7 +81,7 @@ $ comm -23 <(pacman -Sgq base | sort) pkglist.orig >> pkglist
     --log /dev/null   \
     --noscriptlet     \
     --dbonly          \
-    --force           \
+    --overwrite "*"   \
     --nodeps          \
     --needed
 }

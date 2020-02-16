@@ -55,7 +55,7 @@ Dzen have a lot of options, follow below some of them:
 *   `-w` Width of the window.
 *   `-v` Version.
 
-**Warning:** The *-u* option is depprecated.
+**Warning:** The *-u* option is deprecated.
 
 ## Making a pop-up with dzen
 

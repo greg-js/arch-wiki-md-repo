@@ -11,7 +11,7 @@
 *   [2 See also](#See_also)
     *   [2.1 Language](#Language)
     *   [2.2 Tools](#Tools)
-    *   [2.3 Libraries](#Libraries)
+    *   [2.3 Library Docs](#Library_Docs)
 
 ## Installation
 
@@ -34,6 +34,7 @@ Additional packages:
     *   [gnatcoll-sql](https://aur.archlinux.org/packages/gnatcoll-sql/)
     *   [gnatcoll-sqlite](https://aur.archlinux.org/packages/gnatcoll-sqlite/)
     *   [gnatcoll-xref](https://aur.archlinux.org/packages/gnatcoll-xref/)
+*   [gtkada](https://aur.archlinux.org/packages/gtkada/) - Ada bindings for the Gtk+ library
 
 ### Test your installation
 
@@ -76,6 +77,7 @@ Hello, Arch!
 *   [Ada 2012 Language Reference Manual](http://www.ada-auth.org/standards/ada12_w_tc1.html)
 *   [Ada Programming at Wikibooks](https://en.wikibooks.org/wiki/Ada_Programming)
 *   [Interactive learning platform Learn.adacore.com](https://learn.adacore.com/)
+*   [Wikipedia:SPARK (programming language)](https://en.wikipedia.org/wiki/SPARK_(programming_language) "wikipedia:SPARK (programming language)")
 
 ### Tools
 
@@ -83,9 +85,10 @@ Hello, Arch!
 *   [GNAT Reference Manual](https://gcc.gnu.org/onlinedocs/gnat_rm/)
 *   [GPRbuild and GPR Companion Tools User’s Guide](https://docs.adacore.com/live/wave/gprbuild/html/gprbuild_ug/gprbuild_ug.html)
 
-### Libraries
+### Library Docs
 
 *   [XML/Ada: The Unicode and XML Library for Ada](https://docs.adacore.com/live/wave/xmlada/html/xmlada_ug/index.html)
 *   [AWS: The Ada Web Server](https://docs.adacore.com/live/wave/aws/html/aws_ug/index.html)
 *   [AUnit Cookbook](https://docs.adacore.com/live/wave/aunit/html/aunit_cb/aunit_cb.html)
 *   [GNAT Reusable Components](https://docs.adacore.com/live/wave/gnatcoll/html/gnatcoll_ug/index.html)
+*   [GtkAda User’s Guide](https://docs.adacore.com/gtkada-docs/gtkada_ug/_build/html/index.html)

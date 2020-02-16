@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing"), revisada por última vez el **2019-01-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=MAC_address_spoofing&diff=0&oldid=563556) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [MAC address spoofing](/index.php/MAC_address_spoofing "MAC address spoofing"), revisada por última vez el **2020-02-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=MAC_address_spoofing&diff=0&oldid=588944) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Este artículo proporciona varios métodos para falsificar una dirección de control de acceso al medio (MAC).
 
@@ -22,6 +22,8 @@ Este artículo proporciona varios métodos para falsificar una dirección de con
         *   [2.3.2 Activar el servicio](#Activar_el_servicio)
     *   [2.4 Interfaces netctl](#Interfaces_netctl)
     *   [2.5 NetworkManager](#NetworkManager)
+    *   [2.6 wpa_supplicant](#wpa_supplicant)
+    *   [2.7 iwd](#iwd)
 *   [3 Solución de problemas](#Solución_de_problemas)
     *   [3.1 La conexión a la red DHCPv4 falla](#La_conexión_a_la_red_DHCPv4_falla)
 *   [4 Véase también](#Véase_también)
@@ -224,6 +226,29 @@ Fuente: [akendo.eu](https://blog.akendo.eu/archlinuxrandom-mac-address-for-new-w
 ### NetworkManager
 
 Véase [NetworkManager#Configuring MAC address randomization](/index.php/NetworkManager#Configuring_MAC_address_randomization "NetworkManager").
+
+### wpa_supplicant
+
+wpa_supplicant puede utilizar una dirección MAC aleatoria para cada conexión ESS (AP) (véase [[1]](https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf) for details).
+
+Añada esto a su configuración:
+
+ `/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` 
+```
+mac_addr=1
+preassoc_mac_addr=1
+gas_rand_mac_addr=1
+```
+
+### iwd
+
+Para aleatorizar la dirección MAC cuando se inicia iwd (véase [iwd.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iwd.config.5) para más detalles):
+
+ `/etc/iwd/main.conf` 
+```
+[General]
+AddressRandomization=once
+```
 
 ## Solución de problemas
 

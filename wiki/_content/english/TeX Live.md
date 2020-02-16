@@ -17,8 +17,9 @@ TeX Live includes the [tex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tex.1)
 
 *   [1 Installation](#Installation)
     *   [1.1 tllocalmgr](#tllocalmgr)
-    *   [1.2 Package documentation](#Package_documentation)
-    *   [1.3 Manual installation](#Manual_installation)
+    *   [1.2 tlmgr](#tlmgr)
+    *   [1.3 Package documentation](#Package_documentation)
+    *   [1.4 Manual installation](#Manual_installation)
 *   [2 Usage](#Usage)
     *   [2.1 texmf trees and Kpathsea](#texmf_trees_and_Kpathsea)
 *   [3 Important information](#Important_information)
@@ -49,6 +50,45 @@ To determine which [CTAN](https://www.ctan.org/) packages are included in each *
 
 The *tllocalmgr* utility, provided by [tllocalmgr-git](https://aur.archlinux.org/packages/tllocalmgr-git/), lets you install (and update) packages from CTAN as [pacman](/index.php/Pacman "Pacman") packages, see [its usage](https://git.archlinux.org/users/remy/texlive-localmanager.git/tree/tllocalmgr#n809) (`-h`) for details.
 
+### tlmgr
+
+**Note:**
+
+*   While [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) provides the [tlmgr](https://www.tug.org/texlive/tlmgr.html) script in *TEXMFDIST*, it is broken. You can either fix it as described below or use [tllocalmgr](#tllocalmgr) instead.
+*   The [texconfig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/texconfig.1) command is mostly broken because it partially depends on *tlmgr* ([FS#59094](https://bugs.archlinux.org/task/59094)). The interactive mode of `texconfig` requires [dialog](https://www.archlinux.org/packages/?name=dialog).
+
+The *tlmgr* utility is the standard way of installing and updating packages from CTAN. It requires minor fixes as follows:
+
+First, edit **TEXMFDIST/scripts/texlive/tlmgr.pl** and replace **$Master = "$Master/../..;"** with **$Master = "$Master/../../..";**
+
+Create an alias for the perl script (which you can add in ~/.bash_aliases or equivalent for other shells):
+
+```
+ alias tlmgr='$TEXMFDIST/scripts/texlive/tlmgr.pl --usermode'
+
+```
+
+Now you can initialize it in user mode (which will use **~/texmf** as install prefix):
+
+```
+ tlmgr init-usertree
+
+```
+
+Set your preferred [mirror](https://www.ctan.org/mirrors), for example:
+
+```
+ tlmgr option repository [http://mirrors.rit.edu/CTAN/systems/texlive/tlnet](http://mirrors.rit.edu/CTAN/systems/texlive/tlnet)
+
+```
+
+Now you can install CTAN packages as usual:
+
+```
+ tlmgr install <package_name>
+
+```
+
 ### Package documentation
 
 The packages in the official repositories do not contain the documentation or source files of font/macro packages.
@@ -66,11 +106,6 @@ You can also access the documentation online at:
 Alternatively you can install TeX Live with the upstream installer, which is packaged as [texlive-installer](https://aur.archlinux.org/packages/texlive-installer/). For more information, see the [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live "wikibooks:LaTeX/Installation") and the [TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003).
 
 ## Usage
-
-**Note:**
-
-*   While [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) provides the [tlmgr](https://www.tug.org/texlive/tlmgr.html) script in *TEXMFDIST*, it is broken. For package installations you can use [tllocalmgr](#tllocalmgr) instead.
-*   The [texconfig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/texconfig.1) command is mostly broken because it partially depends on *tlmgr* ([FS#59094](https://bugs.archlinux.org/task/59094)). The interactive mode of `texconfig` requires [dialog](https://www.archlinux.org/packages/?name=dialog).
 
 See the following resources:
 

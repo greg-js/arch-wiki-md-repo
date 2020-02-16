@@ -192,15 +192,9 @@ $ makepkg -ci
 
 ### 最小配置模式
 
-用根用户创建一个基本的配置文件`/etc/X11/xorg.conf`：
+用root用户创建一个配置文件`20-nvidia.conf`(或 `/etc/X11/xorg.conf`)：
 
-```
-# vi /etc/X11/xorg.conf
-
-```
-
-把英伟达的驱动添加到配置文件里面去：
-
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
 ```
 Section "Device"
    Identifier     "Device0"

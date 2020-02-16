@@ -341,11 +341,11 @@ If these do not resolve the problem or cause other issues, [file a bug report](/
 
 Довольно просто можно перенести профили браузеров, таких как chromium, firefox, opera, и т.д. в оперативную память через tmpfs и использовать rsync для синхронизации с копиями на диске. Таким образом можно так же заметно сократить количество операций чтения/записи.
 
-В AUR есть несколько пакетов для автоматизации этой операции, например [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/).
+В AUR есть несколько пакетов для автоматизации этой операции, например [profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon).
 
 #### Другие файлы
 
-По этой же вышеописанной причине можно расположить в оперативной памяти раздел `/srv/http` (если запущен web-сервер). Аналогом [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) здесь будет [anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/), который позволяет определить **любую** директорию для синхронизации с оперативной памятью.
+По этой же вышеописанной причине можно расположить в оперативной памяти раздел `/srv/http` (если запущен web-сервер). Аналогом [profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon) здесь будет [anything-sync-daemon](https://www.archlinux.org/packages/?name=anything-sync-daemon), который позволяет определить **любую** директорию для синхронизации с оперативной памятью.
 
 **Важно:** Не пытайтесь добавлять /var/log в anything-sync-daemon. Systemd очень разозлится на это.
 

@@ -507,16 +507,9 @@ $ dtach -a  /home/sam/run/dtach_fifos/fifo -e "^T"
 
 ### Pre-allocation
 
-The rTorrent package in the community repository lacks pre-allocation. Compiling rTorrent with pre-allocation allows files to be allocated before downloading the torrent. The major benefit is that it limits and avoids fragmentation of the filesystem. However, this introduces a delay during the pre-allocation if the filesystem does not support the fallocate syscall natively.
+rTorrent has the ability to pre-allocate space for a torrent. The major benefit is that it limits and avoids fragmentation of the filesystem. However, this introduces a delay during the pre-allocation if the filesystem does not support the fallocate syscall natively.
 
-Therefore this switch is recommended for xfs, ext4 and btrfs filesystems, which have native fallocate syscall support. They will see no delay during preallocation and no fragmented filesystem. Pre-allocation on others filesystems will cause a delay but will not fragment the files.
-
-To make pre-allocation available, recompile libTorrent from the [ABS](/index.php/ABS "ABS") tree with the following new switch:
-
-```
- $ ./configure --prefix=/usr --disable-debug --with-posix-fallocate
-
-```
+Therefore this switch is recommended for xfs, ext4, btrfs and ocfs2 filesystems, which have native fallocate syscall support. They will see no delay during preallocation and no fragmented filesystem. Pre-allocation on others filesystems will cause a delay but will not fragment the files.
 
 To enable it, add the following to your `~/rtorrent.rc`:
 
@@ -526,6 +519,15 @@ To enable it, add the following to your `~/rtorrent.rc`:
   system.file.allocate = 1
 
 ```
+
+To make pre-allocation available on filesystems other than the above - albeit at a delay - you can recompile libTorrent from the [ABS](/index.php/ABS "ABS") tree with the following new switch:
+
+```
+ $ ./configure --prefix=/usr --disable-debug --with-posix-fallocate
+
+```
+
+See [the upstream documentation for further information](https://github.com/rakshasa/rtorrent/wiki/Performance-Tuning#disk-allocation)
 
 ### Manage completed files
 

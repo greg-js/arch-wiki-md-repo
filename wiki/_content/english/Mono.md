@@ -2,7 +2,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Mono_(software) "wikipedia:Mono (
 
 	Mono is a [...] project to create a [.NET Framework](https://en.wikipedia.org/wiki/.NET_Framework compiler and a [Common Language Runtime](https://en.wikipedia.org/wiki/Common_Language_Runtime "wikipedia:Common Language Runtime").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running Mono applications](#Running_Mono_applications)

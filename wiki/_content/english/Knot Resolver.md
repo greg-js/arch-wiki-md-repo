@@ -2,7 +2,7 @@ Related articles
 
 *   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
 
-[Knot Resolver](https://www.knot-resolver.cz/) is a full (recursive), caching DNS resolver. It is designed to scale from small home-office networks to providing DNS servers at the scale of ISPs. Knot Resolver supports [DNSSEC](/index.php/DNSSEC "DNSSEC").
+[Knot Resolver](https://www.knot-resolver.cz/) is a full (recursive), caching DNS resolver. It is designed to scale from small home-office networks to providing DNS servers at the scale of ISPs. Knot Resolver supports [DNSSEC](/index.php/DNSSEC "DNSSEC"), which is enabled by default.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -21,20 +21,13 @@ Related articles
 
 ## Configuration
 
-[Start/enable](/index.php/Start/enable "Start/enable") `kresd.socket`.
+[Start/enable](/index.php/Start/enable "Start/enable") `kresd@1.service`.
 
-To use the DNS server locally, use the `127.0.0.1` nameserver, see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution").
+To use Knot Resolver as the local resolver, configure `127.0.0.1` as your nameserver (see see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")).
 
-By default, the resolver will listen on localhost, port `53`. If the resolver should be accessible from other hosts, extend the `kresd.socket` definition by [editing](/index.php/Edit "Edit") `kresd.socket` or `kresd-tls.socket` (for DNS-over-TLS connections) and add the appropriate directives, for example:
+By default, the resolver will listen on localhost, port `53`. If the resolver should be accessible from other hosts, configure other network interfaces in `/etc/knot-resolver/kresd.conf` with `net.listen()`. Refer to [Knot Resolver documentation](https://knot-resolver.readthedocs.io/en/stable/) for more information.
 
-```
-[Socket]
-ListenDatagram=192.0.2.115:53
-ListenStream=192.0.2.115:53
-
-```
-
-**Note:** Unless you specifically want to run an open DNS resolver, do not listen on a public (internet-facing) IP address.
+**Note:** Unless you specifically want to run an open DNS resolver, do not configure the resolver to listen on a public (internet-facing) IP address.
 
 If the resolver should respect entries from the `/etc/hosts` file, add a `hints.add_hosts()` line to `/etc/knot-resolver/kresd.conf`.
 
@@ -46,5 +39,6 @@ Note that a default configuration of dnsmasq will clash with the default configu
 
 ## See also
 
+*   [kresd(8)](https://www.mankier.com/8/kresd)
 *   [kresd.systemd(7)](https://www.mankier.com/7/kresd.systemd)
-*   [Knot Resolver documentation](https://knot-resolver.readthedocs.io/en/stable/daemon.html)
+*   [Knot Resolver documentation](https://knot-resolver.readthedocs.io/en/stable/)

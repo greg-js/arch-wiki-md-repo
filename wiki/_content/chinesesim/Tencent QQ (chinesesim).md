@@ -169,7 +169,7 @@ Categories=Network;
 
 执行 `winecfg`，在打开的窗口中切换到**显示**选项卡并调整 DPI。
 
-**注意:** 如果您使用的不是默认的 Wine 容器（例如使用了deepin QQ/TIM），那么需要在执行 `winecfg` 时指定`WINEPREFIX` 变量。例如`env WINEPREFIX=$HOME/.deepinwine/Deepin-QQ winecfg` 或是 `env WINEPREFIX=$HOME/.deepinwine/Deepin-TIM winecfg`。
+**注意:** 如果您使用的不是默认的 Wine 容器（例如使用了deepin QQ/TIM），那么需要在执行 `winecfg` 时指定`WINEPREFIX` 变量。例如`env WINEPREFIX=$HOME/.deepinwine/Deepin-QQ deepin-wine winecfg` 或是 `env WINEPREFIX=$HOME/.deepinwine/Deepin-TIM deepin-wine winecfg`。
 
 ### 平铺式窗口管理器下的配置
 

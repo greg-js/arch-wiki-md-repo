@@ -87,6 +87,10 @@ Arch Linux provides two methods to compile your own kernel.
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts414](https://aur.archlinux.org/packages/linux-lts414/)
 
+*   **Longterm 4.19** — Long-term support (LTS) Linux 4.19 kernel and modules.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts419](https://aur.archlinux.org/packages/linux-lts419/)
+
 ## Patches and patchsets
 
 There are lots of reasons to patch your kernel, the major ones are for performance or support for non-mainline features. Other reasons might include fun and to see how it is done and what the improvements are.

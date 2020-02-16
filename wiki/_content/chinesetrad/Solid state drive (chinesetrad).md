@@ -4,14 +4,18 @@
 *   [SSD Memory Cell Clearing](/index.php/SSD_Memory_Cell_Clearing "SSD Memory Cell Clearing")
 *   [profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 概觀](#.E6.A6.82.E8.A7.80)
-    *   [1.1 介紹](#.E4.BB.8B.E7.B4.B9)
-    *   [1.2 和一般硬碟相比的優勢](#.E5.92.8C.E4.B8.80.E8.88.AC.E7.A1.AC.E7.A2.9F.E7.9B.B8.E6.AF.94.E7.9A.84.E5.84.AA.E5.8B.A2)
-    *   [1.3 目前的限制](#.E7.9B.AE.E5.89.8D.E7.9A.84.E9.99.90.E5.88.B6)
-    *   [1.4 購買前的注意事項](#.E8.B3.BC.E8.B2.B7.E5.89.8D.E7.9A.84.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A0.85)
-        *   [1.4.1 參考連結](#.E5.8F.83.E8.80.83.E9.80.A3.E7.B5.90)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 概觀](#概觀)
+    *   [1.1 介紹](#介紹)
+    *   [1.2 和一般硬碟相比的優勢](#和一般硬碟相比的優勢)
+    *   [1.3 目前的限制](#目前的限制)
+    *   [1.4 購買前的注意事項](#購買前的注意事項)
+        *   [1.4.1 參考連結](#參考連結)
 *   [2 Tips for Maximizing SSD Performance](#Tips_for_Maximizing_SSD_Performance)
     *   [2.1 Partition Alignment](#Partition_Alignment)
     *   [2.2 TRIM](#TRIM)
@@ -20,14 +24,14 @@
         *   [2.2.3 Apply TRIM via cron](#Apply_TRIM_via_cron)
         *   [2.2.4 Apply TRIM via a systemd service](#Apply_TRIM_via_a_systemd_service)
             *   [2.2.4.1 Enable TRIM for LVM](#Enable_TRIM_for_LVM)
-        *   [2.2.5 Enable TRIM With mkfs.ext4 or tune2fs (Discouraged)](#Enable_TRIM_With_mkfs.ext4_or_tune2fs_.28Discouraged.29)
-    *   [2.3 I/O Scheduler](#I.2FO_Scheduler)
-        *   [2.3.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
-        *   [2.3.2 Using the sys virtual filesystem (for multiple devices)](#Using_the_sys_virtual_filesystem_.28for_multiple_devices.29)
-        *   [2.3.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
+        *   [2.2.5 Enable TRIM With mkfs.ext4 or tune2fs (Discouraged)](#Enable_TRIM_With_mkfs.ext4_or_tune2fs_(Discouraged))
+    *   [2.3 I/O Scheduler](#I/O_Scheduler)
+        *   [2.3.1 Kernel parameter (for a single device)](#Kernel_parameter_(for_a_single_device))
+        *   [2.3.2 Using the sys virtual filesystem (for multiple devices)](#Using_the_sys_virtual_filesystem_(for_multiple_devices))
+        *   [2.3.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD/SSD_mixed_environment)
     *   [2.4 Swap Space on SSDs](#Swap_Space_on_SSDs)
     *   [2.5 SSD Memory Cell Clearing](#SSD_Memory_Cell_Clearing)
-*   [3 Tips for Minimizing SSD Read/Writes](#Tips_for_Minimizing_SSD_Read.2FWrites)
+*   [3 Tips for Minimizing SSD Read/Writes](#Tips_for_Minimizing_SSD_Read/Writes)
     *   [3.1 Intelligent Partition Scheme](#Intelligent_Partition_Scheme)
     *   [3.2 noatime Mount Flag](#noatime_Mount_Flag)
     *   [3.3 Locate High-Use Files to RAM](#Locate_High-Use_Files_to_RAM)
@@ -345,11 +349,11 @@ Using this flag in one's `/etc/fstab` halts the logging of read accesses to the 
 
 One can *easily* mount browser profile(s) such as chromium, firefox, opera, etc. into RAM via tmpfs and also use rsync to keep them synced with HDD-based backups. In addition to the obvious speed enhancements, users will also save read/write cycles on their SSD by doing so.
 
-The AUR contains several packages to automate this process, for example [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/).
+The AUR contains several packages to automate this process, for example [profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon).
 
 #### Others
 
-For the same reasons a browser's profile can be relocated to RAM, so can highly used directories such as `/srv/http` (if running a web server). A sister project to [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) is [anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/), which allows users to define **any** directory to sync to RAM using the same underlying logic and safe guards.
+For the same reasons a browser's profile can be relocated to RAM, so can highly used directories such as `/srv/http` (if running a web server). A sister project to [profile-sync-daemon](https://www.archlinux.org/packages/?name=profile-sync-daemon) is [anything-sync-daemon](https://www.archlinux.org/packages/?name=anything-sync-daemon), which allows users to define **any** directory to sync to RAM using the same underlying logic and safe guards.
 
 ### Compiling in tmpfs
 

@@ -1,11 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts"), revisada por última vez el **2019-04-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Microsoft_fonts&diff=0&oldid=570808) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts"), revisada por última vez el **2020-02-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Microsoft_fonts&diff=0&oldid=597377) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Related articles
 
 *   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
-*   [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)")
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [Fonts](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)")
+*   [Font configuration](/index.php/Font_configuration_(Espa%C3%B1ol) "Font configuration (Español)")
 *   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
 
 Éste artículo explica cómo instalar las fuentes TrueType de Microsoft y emular la renderización de fuentes de Windows.

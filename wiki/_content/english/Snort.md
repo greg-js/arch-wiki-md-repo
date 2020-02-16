@@ -2,7 +2,11 @@ From the project [home page](http://www.snort.org/):
 
 	Snort® is an open source network intrusion prevention and detection system ([IDS](https://en.wikipedia.org/wiki/Intrusion_detection_system "wikipedia:Intrusion detection system")/IPS) developed by Sourcefire. Combining the benefits of signature, protocol, and anomaly-based inspection, Snort is the most widely deployed IDS/IPS technology worldwide. With millions of downloads and nearly 400,000 registered users, Snort has become the de facto standard for IPS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General Setup and Notes](#General_Setup_and_Notes)
 *   [2 Installation](#Installation)
@@ -79,9 +83,9 @@ Description=Snort IDS system listening on '%I'
 
 [Service]
 Type=simple
-ExecStartPre=/usr/sbin/ip link set up dev %I
-ExecStartPre=/usr/bin/ethtool -K %I gro off
-ExecStart=/usr/bin/snort --daq-dir /usr/lib/daq/ -A fast -b -p -u snort -g snort -c /etc/snort/snort.conf -i %I -Q
+ExecStartPre=/usr/sbin/ip link set up dev %I
+ExecStartPre=/usr/bin/ethtool -K %I gro off
+ExecStart=/usr/bin/snort --daq-dir /usr/lib/daq/ -A fast -b -p -u snort -g snort -c /etc/snort/snort.conf -i %I -Q
 
 [Install]
 Alias=multi-user.target.wants/snort@%i.service
@@ -183,7 +187,7 @@ pulledpork.pl -c /etc/pulledpork/pulledpork.conf  -P
 
 ## Update the rules: Oinkmaster
 
-If you want to be able to download Snort's latest rules, you will need a subscription. This costs money. If you are happy enough with 5 days old rules, you just need to register for free. If you do not, the only updates you will get are the new rules distributed with a new Snort release. Go ahead and register at [Snort](https://www.snort.org/signup). If you really do not want to register, you can use the rules from [BleedingSnort.com](http://www.bleedingsnort.com/). They are bleeding edge, meaning they have not been tested thoroughly.
+There are two sets of rules distributed by Snort: "Community Ruleset" and "Snort Subscriber Rule Set". The former one is freely available to all of the users. The latter one is made available to subscribed and registered users. Paid subscribers receive rulesets in real-time as they are released. Registered users will receive rulesets 30 days after the subscribers. Registration is free. Go ahead and register at [Snort](https://www.snort.org/signup). If you really do not want to register, you can use the rules from [BleedingSnort.com](http://www.bleedingsnort.com/). They are bleeding edge, meaning they have not been tested thoroughly.
 
 [oinkmaster](https://aur.archlinux.org/packages/oinkmaster/) is available as [AUR](/index.php/AUR "AUR") package.
 

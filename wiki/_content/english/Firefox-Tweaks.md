@@ -184,7 +184,7 @@ The HTTP `Referer` header can be extensively configured via `about:config`. See 
 
 Firefox keeps bookmarks, history, passwords in SQLite databases. SQLite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve start-up and some other bookmarks and history related tasks is to defragment and trim unused space from these databases.
 
-You can use [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/) to do this, while Firefox is **not** running:
+You can use [profile-cleaner](https://www.archlinux.org/packages/?name=profile-cleaner) to do this, while Firefox is **not** running:
 
 <caption>profile-cleaner usage example:</caption>
 | SQLite database | Size Before | Size After | % change |

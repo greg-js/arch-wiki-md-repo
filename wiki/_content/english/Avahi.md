@@ -232,7 +232,7 @@ Avahi along with [CUPS](/index.php/CUPS "CUPS") also provides the capability to 
 
 ```
 
-Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airprint-generate.py](https://raw.github.com/tjfontaine/airprint-generate/master/airprint-generate.py) can be used to generate Avahi service files. It depends on [python2](https://www.archlinux.org/packages/?name=python2) and [python2-pycups](https://www.archlinux.org/packages/?name=python2-pycups). The script can be run using:
+Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airprint-generate.py](https://raw.github.com/tjfontaine/airprint-generate/master/airprint-generate.py) can be used to generate Avahi service files. It depends on [python2](https://www.archlinux.org/packages/?name=python2) and [python2-pycups](https://aur.archlinux.org/packages/python2-pycups/). The script can be run using:
 
 ```
 # python2 airprint-generate.py -d /etc/avahi/services

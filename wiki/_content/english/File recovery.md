@@ -105,6 +105,8 @@ See also [Wikipedia:List of data recovery software#File Recovery](https://en.wik
 
 ## Extundelete
 
+**Warning:** extundelete doesn't work with ext4 filesystems that have `metadata_csum` enabled. Please use [#Ext4Magic](#Ext4Magic) instead.
+
 **[Extundelete](http://extundelete.sourceforge.net/)** is a terminal-based utility designed to recover deleted files from ext3 and ext4 partitions. It can recover all the recently deleted files from a partition and/or a specific file(s) given by relative path or inode information. Note that it works only when the partition is unmounted. The recovered files are saved in the current directory under the folder named `RECOVERED_FILES/`.
 
 ### Installation

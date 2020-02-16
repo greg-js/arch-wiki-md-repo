@@ -36,8 +36,9 @@ Related articles
         *   [6.1.1 Using the built-in package manager](#Using_the_built-in_package_manager)
         *   [6.1.2 Using a plugin manager](#Using_a_plugin_manager)
         *   [6.1.3 From Arch repositories](#From_Arch_repositories)
-    *   [6.2 cscope](#cscope)
-    *   [6.3 Taglist](#Taglist)
+    *   [6.2 Notable plugins](#Notable_plugins)
+        *   [6.2.1 cscope](#cscope)
+        *   [6.2.2 Taglist](#Taglist)
 *   [7 See also](#See_also)
     *   [7.1 Official](#Official)
     *   [7.2 Tutorials](#Tutorials)
@@ -298,7 +299,7 @@ Vim 8 added the possibility to load third-party plugins natively. It is possible
 
 #### Using a plugin manager
 
-A plugin manager installs and manages Vim plugins in a similar way independent of which platform on you are running Vim. It is a plugin that acts as a package manager for other Vim plugins.
+A plugin manager is a plugin that installs, manages and updates Vim plugins. This can be useful if you are also using Vim on platforms other than Arch Linux and want a consistent method of updating plugins.
 
 *   [Vundle](https://github.com/gmarik/Vundle.vim) is currently the most popular plugin manager for Vim, available as [vundle](https://aur.archlinux.org/packages/vundle/) or [vundle-git](https://aur.archlinux.org/packages/vundle-git/).
 *   [Vim-plug](https://github.com/junegunn/vim-plug) is a minimalist Vim plugin manager with many features like on-demand plugin loading and parallel updating, available as [vim-plug](https://aur.archlinux.org/packages/vim-plug/) or [vim-plug-git](https://aur.archlinux.org/packages/vim-plug-git/).
@@ -309,7 +310,9 @@ A plugin manager installs and manages Vim plugins in a similar way independent o
 
 The [vim-plugins](https://www.archlinux.org/groups/x86_64/vim-plugins/) group provides many various plugins. Use `pacman -Sg vim-plugins` command to list available packages which you can then [install](/index.php/Install "Install") with pacman.
 
-### cscope
+### Notable plugins
+
+#### cscope
 
 [Cscope](http://cscope.sourceforge.net/) is a tool for browsing a project. By navigating to a word/symbol/function and calling cscope (usually with shortcut keys) it can find: functions calling the function, the function definition, and more.
 
@@ -369,7 +372,7 @@ nnoremap <C-c> :cs find c <C-R>=expand("<cword>")<CR><CR>
 
 ```
 
-### Taglist
+#### Taglist
 
 [Taglist](http://vim-taglist.sourceforge.net/) provides an overview of the structure of source code files and allows you to efficiently browse through source code files in different programming languages.
 

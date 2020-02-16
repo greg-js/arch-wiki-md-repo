@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=547713) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"), revisada por última vez el **2020-02-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=585843) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -95,7 +95,7 @@ Involúcrese, contribuya con el código/solución a la comunidad. Si está bien 
 
 ### ¿Para cuándo la nueva versión disponible?
 
-Los lanzamientos de Arch Linux son simplemente un entorno live para la instalación o el rescate, que incluyen el grupo [base](https://www.archlinux.org/packages/?name=base) y unos pocos [paquetes adicionales](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both). Las versiones se liberan, por lo general, en la primera mitad de cada mes.
+Los lanzamientos de Arch Linux son simplemente un entorno live para la instalación o el rescate, que incluyen el [meta-paquete](/index.php/Meta_package_(Espa%C3%B1ol) "Meta package (Español)") [base](https://www.archlinux.org/packages/?name=base) y unos pocos [paquetes adicionales](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64). Las versiones se liberan, por lo general, en la primera mitad de cada mes.
 
 ### ¿Es Arch Linux una distribución estable? ¿Tiene problemas con frecuencia?
 
@@ -163,7 +163,7 @@ pacman es el front-end para [libalpm](https://www.archlinux.org/pacman/libalpm.3
 
 ### Pacman necesita la *«característica X»*
 
-Si piensa que su idea tiene interés, entonces puede optar por debatirla en [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/). También le recomendamos que compruebe [https://bugs.archlinux.org](https://bugs.archlinux.org) por si encuentra peticiones de características similares.
+Si piensa que su idea tiene interés, entonces puede optar por debatirla en [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/). También le recomendamos que compruebe [https://bugs.archlinux.org/index.php?project=3](https://bugs.archlinux.org/index.php?project=3) por si encuentra peticiones de características similares.
 
 Sin embargo, la mejor manera de obtener una característica adicional a pacman o a Arch Linux es implementarla por si mismo. El parche o código puede o no ser admitido oficialmente, pero quizás otros apreciarán, probarán y contribuirán a su esfuerzo.
 
@@ -217,6 +217,8 @@ En su lugar, utilice/escriba por ejemplo un [paquete de compatibilidad](https://
 ## Instalación
 
 ### Arch necesita un instalador. ¿Tal vez una instalación a través de GUI?
+
+Arch solía tener un instalador con una interfaz de usuario basada en texto llamada Arch Installation Framework (AIF). Después del [abandono del último mantenedor](https://lists.archlinux.org/pipermail/arch-releng/2012-July/002628.html), fue [en desuso a favor de Arch Install Scripts](/index.php/Arch_Linux_(Espa%C3%B1ol)#Scripts_de_instalación_de_Arch "Arch Linux (Español)").
 
 Dado que la instalación no se produce con frecuencia (léase el resto de este artículo para saber más acerca de lo que significa *lanzamiento continuo*), no es una alta prioridad para los desarrolladores o usuarios. La [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") ha sido completamente actualizada para utilizar el método de línea de comandos.
 

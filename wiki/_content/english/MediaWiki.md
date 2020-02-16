@@ -109,10 +109,10 @@ location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
    log_not_found off;
 }
 # Restrictions based on the .htaccess files
-location ^~ ^/(cache|includes|maintenance|languages|serialized|tests|images/deleted)/ {
+location ~ ^/(cache|includes|maintenance|languages|serialized|tests|images/deleted)/ {
    deny all;
 }
-location ^~ ^/(bin|docs|extensions|includes|maintenance|mw-config|resources|serialized|tests)/ {
+location ~ ^/(bin|docs|extensions|includes|maintenance|mw-config|resources|serialized|tests)/ {
    internal;
 }
 location ^~ /images/ {

@@ -222,6 +222,8 @@ qutebrowser --qt-arg stylesheet ~/.local/share/qutebrowser/fix-tooltips.qss
 
 **Tip:** You can use a [desktop entry](/index.php/Desktop_entries#Application_entry "Desktop entries") to create a convenient launcher when specifying extra arguments, such as in this instance.
 
+See the [bug report](https://github.com/qutebrowser/qutebrowser/issues/4520) for details.
+
 ## See also
 
 *   [GitHub repository](https://github.com/qutebrowser/qutebrowser)

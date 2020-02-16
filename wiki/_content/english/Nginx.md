@@ -384,7 +384,7 @@ server {
 If it is needed to process other extensions with PHP (e.g. *.html* and *.htm*):
 
 ```
-location ~ [^/]\.php**|html|htm**(/|$) {
+location ~ [^/]\.(php|html|htm)(/|$) {
     ...
 }
 

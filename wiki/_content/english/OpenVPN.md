@@ -280,6 +280,7 @@ The OpenVPN HowTo's linked below go further by creating a dedicated non-privileg
 
 *   The [OpenVPN HowTo](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains another way how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
 *   It is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser) (howto). The howto assumes the presence of System V init, rather than [Systemd](/index.php/Systemd "Systemd") and does not cover the handling of `--up`/`--down` scripts - those should be handled the same way as the *ip* command, with additional attention to access rights.
+*   It is also possible to run OpenVPN from within unprivileged podman container, see [this section of OpenVPN HowTo](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser#RunOpenVPNwithinunprivilegedpodmancontainer)
 
 **Tip:** [#openvpn-unroot](#openvpn-unroot) describes a tool to automate above setup.
 
@@ -562,14 +563,14 @@ To apply the changes. [reload](/index.php/Reload "Reload")/[restart](/index.php/
 In order to allow VPN traffic through an [iptables](/index.php/Iptables "Iptables") firewall, first create an iptables rule for NAT forwarding [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server. An example (assuming the interface to forward to is named `eth0`):
 
 ```
-iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+# iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
 If running multiple servers on different IP pools, add a corresponding line for each one, for example:
 
 ```
-iptables -t nat -A POSTROUTING -s 10.8.1.0/24 -o eth0 -j MASQUERADE
+# iptables -t nat -A POSTROUTING -s 10.8.1.0/24 -o eth0 -j MASQUERADE
 
 ```
 
@@ -578,14 +579,23 @@ If the server cannot be pinged through the VPN, one may need to add explicit rul
 **Warning:** There are security implications for the following rules if one does not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
 ```
-iptables -A INPUT -i tun+ -j ACCEPT
-iptables -A FORWARD -i tun+ -j ACCEPT
-iptables -A INPUT -i tap+ -j ACCEPT
-iptables -A FORWARD -i tap+ -j ACCEPT
+# iptables -A INPUT -i tun+ -j ACCEPT
+# iptables -A FORWARD -i tun+ -j ACCEPT
+# iptables -A INPUT -i tap+ -j ACCEPT
+# iptables -A FORWARD -i tap+ -j ACCEPT
 
 ```
 
-Additionally be sure to accept connections from the OpenVPN port (default 1194) and through the physical interface.
+Additionally be sure to accept connections from the OpenVPN port (default 1194) and through the physical interface:
+
+```
+# iptables -A INPUT -i eth0 -m state --state NEW -p udp --dport 1194 -j ACCEPT
+# iptables -A FORWARD -i tun+ -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+# iptables -A FORWARD -i eth0 -o tun+ -m state --state RELATED,ESTABLISHED -j ACCEPT
+# iptables -A FORWARD -i tap+ -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+# iptables -A FORWARD -i eth0 -o tap+ -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+```
 
 When satisfied, make the changes permanent as shown in [iptables#Configuration and usage](/index.php/Iptables#Configuration_and_usage "Iptables").
 

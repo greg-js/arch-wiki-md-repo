@@ -13,7 +13,8 @@ A [core dump](https://en.wikipedia.org/wiki/Core_dump "wikipedia:Core dump") is 
 *   [2 Making a core dump](#Making_a_core_dump)
     *   [2.1 Where do they go?](#Where_do_they_go?)
 *   [3 Examining a core dump](#Examining_a_core_dump)
-*   [4 See also](#See_also)
+*   [4 Cleanup of core dump files](#Cleanup_of_core_dump_files)
+*   [5 See also](#See_also)
 
 ## Disabling automatic core dumps
 
@@ -38,9 +39,11 @@ To apply the setting immediately, use `sysctl`:
 
 ### Using ulimit
 
-The maximum core dump size is enforced by ulimit. Setting it to zero disables core dumps entirely. [[2]](http://www.cyberciti.biz/faq/linux-disable-core-dumps/)
+The maximum core dump size for users logged in via [PAM](/index.php/PAM "PAM") is enforced by [limits.conf](/index.php/Limits.conf "Limits.conf"). Setting it to zero disables core dumps entirely. [[2]](http://www.cyberciti.biz/faq/linux-disable-core-dumps/)
 
  `/etc/security/limits.conf`  `* hard core 0` 
+
+ulimit sometimes referred to as obsolete [ulimit(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ulimit.3). The shell usually also have a builtin `ulimit` command.
 
 ### Using systemd
 
@@ -126,6 +129,10 @@ When *gdb* is started, use the `bt` command to print the backtrace:
 ```
 
 See [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces") if debugging symbols are requested, but not found.
+
+## Cleanup of core dump files
+
+The core dump files stored in `/var/lib/systemd/coredump/` will be automatically cleaned by `systemd-tmpfiles --clean`, which is triggered daily with `systemd-tmpfiles-clean.timer`. Core dumps are configured to persist for at least 3 days, see `systemd-tmpfiles --cat-config`.
 
 ## See also
 
