@@ -57,12 +57,12 @@ Polkit может контролировать отдельные действи
 
 Polkit definitions can be divided into two kinds:
 
-*   **Actions** are defined in XML `.policy` files located in `/usr/share/polkit-1/actions`. Each action has a set of default permissions attached to it (e.g. you need to identify as an administrator to use the GParted action). The defaults can be overruled but editing the actions files is NOT the correct way.
+*   **Actions** are defined in XML `.policy` files located in `/usr/share/polkit-1/actions`. Each action has a set of default permissions attached to it (e.g. you need to identify as an administrator to use the GParted action). Значения по умолчанию могут быть отменены, но редактирование файлов действий - это неправильный способ.
 *   **Authorization rules** are defined in JavaScript `.rules` files. They are found in two places: 3rd party packages can use `/usr/share/polkit-1/rules.d` (though few if any do) and `/etc/polkit-1/rules.d` is for local configuration.
 
-Polkit operates on top of the existing permissions systems in Linux – group membership, administrator status – it does not replace them. The .rules files designate a subset of users, refer to one (or more) of the actions specified in the actions files and determine with what restrictions these actions can be taken by that/those user(s). As an example, a rules file could overrule the default requirement for all users to authenticate as an admin when using GParted, determining that some specific user doesn't need to. Or isn't allowed to use GParted at all.
+Polkit работает поверх существующих в Linux систем разрешений – членства в группах, статуса администратора – но не заменяет их. Файлы .rules определяют подмножество пользователей, ссылаются на одно (или более) из действий, указанных в файлах actions, и определяют, с какими ограничениями эти действия могут выполняться этим пользователем (ами). Например, файл правил может отменить требование по умолчанию для всех пользователей проходить аутентификацию в качестве администратора при использовании GParted, определение того, что какому-то конкретному пользователю не нужно. Or isn't allowed to use GParted at all.
 
-**Note:** This does not preclude running GParted by means which do not respect polkit, such as the command line. Therefore, polkit should be used to expand access to privileged services for unprivileged users, rather than try to curtail the rights of (semi-)privileged users. For security purposes, [sudoers](/index.php/Sudo "Sudo") is still the way to go.
+**Note:** Это не исключает запуска GParted средствами, которые не поддерживают polkit, такими как командная строка. Следовательно, polkit следует использовать для расширения доступа к привилегированным сервисам для непривилегированных пользователей, а не пытаться ограничить права (полу-)привилегированных пользователей. For security purposes, [sudoers](/index.php/Sudo "Sudo") is still the way to go.
 
 ### Actions
 
@@ -103,16 +103,16 @@ Each action is defined in an `<action>` tag in a .policy file. The `org.archlinu
 
 The attribute **id** is the actual command sent to [D-Bus](/index.php/D-Bus "D-Bus"), the **message** tag is the explanation to the user when authentication is required and the **icon_name** is sort of obvious.
 
-The **defaults** tag is where the permissions or lack thereof are located. It contains three settings: **allow_any**, **allow_inactive**, and **allow_active**. Inactive sessions are generally remote sessions (SSH, VNC, etc.) whereas active sessions are logged directly into the machine on a TTY or an X display. allow_any is the setting encompassing both scenarios.
+The **defaults** тег - это место, где находятся разрешения или их отсутствие. It contains three settings: **allow_any**, **allow_inactive**, and **allow_active**. Inactive sessions are generally remote sessions (SSH, VNC, etc.) whereas active sessions are logged directly into the machine on a TTY or an X display. allow_any is the setting encompassing both scenarios.
 
 For each of these settings the following options are available:
 
 *   *no*: The user is not authorized to carry out the action. There is therefore no need for authentication.
-*   *yes*: The user is authorized to carry out the action without any authentication.
-*   *auth_self*: Authentication is required but the user need not be an administrative user.
+*   *yes*: Пользователь имеет право выполнять это действие без какой-либо аутентификации.
+*   *auth_self*: Authentication требуется, но пользователь не обязательно должен быть администратором.
 *   *auth_admin*: Authentication as an administrative user is required.
-*   *auth_self_keep*: The same as auth_self but, like sudo, the authorization lasts a few minutes.
-*   *auth_admin_keep*: The same as auth_admin but, like sudo, the authorization lasts a few minutes.
+*   *auth_self_keep*: The same as auth_self but, like sudo, авторизация длится несколько минут.
+*   *auth_admin_keep*: The same as auth_admin but, like sudo, авторизация длится несколько минут.
 
 These are default setting and unless overruled in later configuration will be valid for all users.
 
@@ -122,7 +122,7 @@ As can be seen from the GParted action, users are required to authenticate as ad
 
 Authorization rules that overrule the default settings are laid out in a set of directories as described above. For all purposes relating to personal configuration of a single system, only `/etc/polkit-1/rules.d` should be used.
 
-The `addRule()` method is used for adding a function that may be called whenever an authorization check for action and subject is performed. Functions are called in the order they have been added until one of the functions returns a value. Hence, to add an authorization rule that is processed before other rules, put it in a file in `/etc/polkit-1/rules.d` with a name that sorts before other rules files, for example `00-early-checks.rules`.
+The `addRule()` метод используется для добавления функции, которая может быть вызвана всякий раз, когда выполняется проверка авторизации для действия и субъекта. Функции вызываются в порядке их добавления, пока одна из функций не вернет значение. Следовательно, чтобы добавить правило авторизации, которое обрабатывается раньше других правил, поместите его в файл внутри `/etc/polkit-1/rules.d` с именем, которое сортируется перед другими файлами правил, например `00-early-checks.rules`.
 
 The layout of the .rules files is fairly self-explanatory:
 
@@ -141,7 +141,7 @@ Inside the function, we check for the specified action ID *(org.archlinux.pkexec
 
 ### Administrator identities
 
-The `addAdminRule()` method is used for adding a function that may be called whenever administrator authentication is required. The function is used to specify what identities may be used for administrator authentication for the authorization check identified by action and subject. Functions added are called in the order they have been added until one of the functions returns a value.
+The `addAdminRule()` метод используется для добавления функции, которая может вызываться всякий раз, когда требуется аутентификация администратора. Функция используется для указания того, какие идентификаторы могут использоваться для аутентификации администратора при проверке авторизации, определенной по действию и субъекту. Добавленные функции вызываются в том порядке, в котором они были добавлены, до тех пор, пока одна из функций не вернет значение.
 
 The default configuration for administrator identities is contained in the file `50-default.rules` so any changes to that configuration should be made by copying the file to, say, `40-default.rules` and editing that file.
 
@@ -152,9 +152,9 @@ polkit.addAdminRule(function(action, subject) {
 });
 ```
 
-The only part to edit (once copied) is the return array of the function: as whom should a user authenticate when asked to authenticate as an administrative user? If she herself is a member of the group designated as admins, she only need enter her own password. If some other user, e.g. root, is the only admin identity, she would need to enter in root's password. The format of the user identification is the same as the one used in designating authorities.
+Единственная часть, которую нужно отредактировать (после копирования), - это возвращаемый массив функции: от имени кого пользователь должен проходить аутентификацию, когда его попросят пройти аутентификацию в качестве администратора? Если он сам является членом группы, обозначенной как "администраторы", ему нужно только ввести свой собственный пароль. Если какой-либо другой пользователь, например root, является единственным администратором, ему нужно будет ввести пароль root. Формат идентификации пользователя такой же, как и тот, который используется при назначении полномочий.
 
-The Arch default is to make all members of the group **wheel** administrators. A rule like below will have polkit ask for the root password instead of the users password for Admin authentication.
+По умолчанию Arch назначает администраторами всех участников группы wheel. В соответствии с приведенным ниже правилом polkit будет запрашивать пароль root вместо пароля пользователя для аутентификации администратора.
 
  `/etc/polkit-1/rules.d/49-rootpw_global.rules` 
 ```
@@ -245,13 +245,13 @@ polkit.addRule(function(action, subject) {
 
 The `action.id`s selected here are just (working) examples for GParted and [Libvirt](/index.php/Libvirt "Libvirt"), but you can replace them by any other of your liking as long as they exist (custom made or supplied by a package), and so can you define any group instead of `wheel`.
 
-The `||` operator is used to delimit actions (logical OR), and `&&` means logical AND and must be kept as the last operator.
+The `||` оператор используется для разграничения действий (logical OR), and `&&` means logical AND and must be kept as the last operator.
 
 #### Udisks
 
 [File managers](/index.php/File_manager "File manager") may ask for a password when trying to mount a storage device, or yield a *Not authorized* or similar error. See [Udisks#Configuration](/index.php/Udisks#Configuration "Udisks") for details.
 
-### Allow management of individual systemd units by regular users
+### Разрешить управление отдельными systemd units обычным пользователям
 
 By checking for certain values passed to the polkit policy check, you can give specific users or groups the ability to manage specific units. As an example, you might want regular users to start and stop [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"):
 
